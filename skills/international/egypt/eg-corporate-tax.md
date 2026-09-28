@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Egyptian corporate income tax f
 version: 0.1
 jurisdiction: EG
 tax_year: 2025
-last_updated: 2026-09-15
+last_updated: 2026-09-28
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -28,7 +28,7 @@ This skill covers Egyptian corporate income tax (ضريبة الدخل على ا
 
 ## What this file is
 
-The declared `income-tax-workflow-base` dependency is not supplied in this repository. This content guide cannot provide that missing workflow; a reviewer must supply and verify it before using the guide to prepare a return. It provides Egypt-specific CIT rates, deductions, loss rules, thin-cap rules, and filing mechanics.
+This guide loads on top of `income-tax-workflow-base` (in `skills/foundation/`), which supplies the order of operations, the output specification and the self-checks; this guide supplies the Egyptian rules only. Neither file on its own is a complete tax-computation or return-preparation process — load both, and have the output reviewed before filing. It provides Egypt-specific CIT rates, deductions, loss rules, thin-cap rules, and filing mechanics.
 
 **Tax year coverage.** This skill is current for **tax year 2025** as of its currency date.
 

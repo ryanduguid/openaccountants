@@ -36,8 +36,10 @@
 29. `financial-statements-workflow-base.md`
 30. `transfer-pricing-workflow-base.md`
 31. `crypto-tax-workflow-base.md`
-32. `spain-guided-intake.md`
-33. `spain-return-assembly.md`
+32. `income-tax-workflow-base.md`
+33. `social-contributions-workflow-base.md`
+34. `spain-guided-intake.md`
+35. `spain-return-assembly.md`
 
 ## Also known as
 

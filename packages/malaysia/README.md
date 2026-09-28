@@ -17,6 +17,7 @@
 10. `my-tax-overview.md`
 11. `einvoice-workflow-base.md`
 12. `company-formation-workflow-base.md`
+13. `income-tax-workflow-base.md`
 
 ## Also known as
 

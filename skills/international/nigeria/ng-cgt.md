@@ -3,7 +3,7 @@ name: ng-cgt
 description: Use this skill whenever asked about Nigerian Capital Gains Tax. Trigger on phrases like "Nigeria CGT", "Capital Gains Tax Nigeria", "sale of shares Nigeria", "property gains Nigeria", "10% CGT Nigeria", "CGTA Nigeria", "disposal of chargeable assets Nigeria", "Section 30 CGTA", "rollover relief Nigeria", "NGX share disposal tax", "₦100M share threshold", "non-resident CGT Nigeria", or any question about computing, filing, or reporting capital gains on Nigerian chargeable assets. Scope covers CGT computation for chargeable assets (real property, shares, business assets, intangibles), statutory exemptions, rollover relief on replacement of business assets, the Finance Act 2021 share disposal threshold, and the NTA 2025 consolidation of CGT into the general income tax framework. ALWAYS read this skill before touching Nigerian CGT work.
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-28
 reviewed_by: Omolola Fasasi
 review_status: current
 tier: 2
@@ -238,16 +238,6 @@ The CGT is reported with the 2025 PIT return. If Mrs Okonkwo had reinvested ≥ 
 ## End of Skill — Nigeria CGT v1.0
 
 End of Skill — Nigeria CGT v1.0
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

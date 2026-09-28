@@ -30,8 +30,10 @@
 23. `financial-statements-workflow-base.md`
 24. `transfer-pricing-workflow-base.md`
 25. `crypto-tax-workflow-base.md`
-26. `japan-guided-intake.md`
-27. `japan-return-assembly.md`
+26. `income-tax-workflow-base.md`
+27. `vat-workflow-base.md`
+28. `japan-guided-intake.md`
+29. `japan-return-assembly.md`
 
 ## Also known as
 

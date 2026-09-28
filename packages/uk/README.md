@@ -37,8 +37,10 @@
 30. `financial-statements-workflow-base.md`
 31. `transfer-pricing-workflow-base.md`
 32. `crypto-tax-workflow-base.md`
-33. `uk-guided-intake.md`
-34. `uk-return-assembly.md`
+33. `income-tax-workflow-base.md`
+34. `social-contributions-workflow-base.md`
+35. `uk-guided-intake.md`
+36. `uk-return-assembly.md`
 
 ## Also known as
 

@@ -17,6 +17,8 @@
 10. `bosnia-vat.md`
 11. `payroll-workflow-base.md`
 12. `company-formation-workflow-base.md`
+13. `income-tax-workflow-base.md`
+14. `social-contributions-workflow-base.md`
 
 ## How to use
 

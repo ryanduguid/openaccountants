@@ -16,6 +16,7 @@
 9. `colombia-iva.md`
 10. `formalizing-small-informal-businesses-in-colombia.md`
 11. `company-formation-workflow-base.md`
+12. `vat-workflow-base.md`
 
 ## Also known as
 

@@ -34,6 +34,19 @@ Checks (ERROR = exit 1, WARN = printed summary only):
      build-packages.py --out) must match the committed tree file for file,
      the hand-authored packages/us-federal/ excepted.
      Fix with: python3 scripts/build-packages.py
+  9. Every `depends_on` entry must be the `name` of a guide under skills/ or
+     packages/us-federal/ — ERROR otherwise. Like the freshness checks, this
+     describes the whole tree, so it runs over every guide in every mode but
+     --derived-only: a pull request that deletes or renames a base breaks the
+     unchanged guides that name it. (238 entries once named
+     `income-tax-workflow-base`, `social-contributions-workflow-base` and
+     `foundation` while no guide carried those names.)
+  10. The closing CTA block (scripts/cta_block.py): at most one "Talk to a
+     verified accountant" section per guide, and the
+     `<!-- openaccountants-cta-block -->` marker must be present and introduce
+     that section — ERROR otherwise, except that the template directories in
+     cta_block.OPTIONAL_DIRS may omit the block. Repair with:
+     python3 scripts/normalize-cta-block.py --apply
 
 Checks 5, 7 and 8 are the derived-tree freshness checks. The derived trees
 have exactly one writer: whoever edits skills/ runs the three generators and
@@ -41,8 +54,8 @@ commits their output in the same change. Nothing else regenerates them.
 
 Flags:
   --changed-only    per-guide checks (1-3b) only on files changed vs
-                    origin/main (PR mode). The freshness checks still run:
-                    they describe the whole tree, not the diff.
+                    origin/main (PR mode). The freshness checks and check 9
+                    still run: they describe the whole tree, not the diff.
   --no-index-check  skip the freshness checks (CI's `validate` job; the
                     `guard-derived-trees` job runs them with --derived-only)
   --derived-only    run only the freshness checks (5, 6, 7, 8)
@@ -60,6 +73,10 @@ import subprocess
 import sys
 import tempfile
 
+from cta_block import MARKER as CTA_MARKER
+from cta_block import find_markers as cta_markers
+from cta_block import has_cta_link, is_cta_heading
+from cta_block import is_optional as cta_optional
 from frontmatter_yaml import FrontmatterError, load_frontmatter
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -243,6 +260,106 @@ def check_packages_frontmatter(bi, errors, only_files=None):
     print(f"checked {checked} generated package frontmatter block(s)")
 
 
+def collect_guide_names(bi):
+    """The `name` of every guide in every tree, validated or not.
+
+    `depends_on` is a cross-file invariant: a slug is valid only if some guide
+    carries it, so the lookup set comes from the whole tree even in
+    --changed-only mode, where only the dependents in the diff are checked.
+    Uses the tolerant key reader so one malformed block elsewhere cannot hide a
+    name; the strict parse of that block reports its own error.
+    """
+    names = set()
+    for rel in bi.guide_files():
+        with open(os.path.join(REPO_ROOT, rel), encoding="utf-8", errors="replace") as fh:
+            block = bi.extract_frontmatter(fh.read())
+        if block is None:
+            continue
+        name = bi.parse_known_keys(block)["name"]
+        if name:
+            names.add(name)
+    return names
+
+
+def check_depends_on(bi, errors, known_names=None):
+    """Every `depends_on` slug must be the `name` of a guide that exists.
+
+    A whole-tree check, run in every mode but --derived-only: the slug lives
+    in one file and the name in another, so a pull request that deletes or
+    renames a base breaks guides it never touched, and a diff-scoped check
+    would pass them. Blocks the strict parser rejects are skipped here;
+    check_guides reports those on their own. Before this check, 238 entries
+    named `income-tax-workflow-base`, `social-contributions-workflow-base`
+    and `foundation` while no guide carried those names, so an agent
+    following the dependency found nothing.
+    """
+    if known_names is None:
+        known_names = collect_guide_names(bi)
+    entries = 0
+    for rel in bi.guide_files():
+        with open(os.path.join(REPO_ROOT, rel), encoding="utf-8", errors="replace") as fh:
+            block = bi.extract_frontmatter(fh.read())
+        if block is None:
+            continue
+        try:
+            metadata = load_frontmatter(block)
+        except FrontmatterError:
+            continue
+        for slug in metadata.get("depends_on") or []:
+            entries += 1
+            if slug.strip() not in known_names:
+                errors.append(
+                    f"{rel}: `depends_on` names `{slug}`, but no guide under skills/ or "
+                    "packages/us-federal/ carries that `name` — fix the slug or add the "
+                    "missing base"
+                )
+    print(f"checked {entries} depends_on entries against {len(known_names)} guide names")
+
+
+def check_cta_block(rel, text, errors):
+    """One CTA section, and the marker directly introduces it (scripts/cta_block.py).
+
+    "Directly" is cta_block.find_markers' reading, shared with the normalizer:
+    after the marker, only blank lines or a `---` rule may precede the "Talk
+    to a verified accountant" heading, and the section under it must carry
+    the network or Calendly link the repo stamps. Placement is not checked:
+    the hand-authored packages/us-federal/ guides carry a further
+    marker-introduced section after the block. Before this check, 591 guides
+    carried the older Calendly section *and* the marker block, and 116
+    carried no marker at all.
+    """
+    repair = "run: python3 scripts/normalize-cta-block.py --apply"
+    lines = text.split("\n")
+    markers = cta_markers(lines)
+    headings = [index for index, line in enumerate(lines) if is_cta_heading(line)]
+    if len(markers) > 1:
+        errors.append(f"{rel}: {len(markers)} `{CTA_MARKER}` markers — keep one ({repair})")
+    if len(headings) > 1:
+        errors.append(
+            f"{rel}: {len(headings)} \"Talk to a verified accountant\" sections — "
+            f"keep only the marker block ({repair})"
+        )
+    if len(markers) != 1:
+        if not markers and not cta_optional(rel):
+            errors.append(
+                f"{rel}: missing the `{CTA_MARKER}` CTA block that ends every "
+                f"published guide ({repair})"
+            )
+        return  # several markers are reported above; the normalizer keeps the last block
+    _, heading, end = markers[0]
+    if heading is None:
+        errors.append(
+            f"{rel}: `{CTA_MARKER}` must directly introduce the \"Talk to a verified "
+            f"accountant\" section — only blank lines or a `---` rule may sit between "
+            f"them ({repair})"
+        )
+    elif not has_cta_link("\n".join(lines[heading:end])):
+        errors.append(
+            f"{rel}: the \"Talk to a verified accountant\" section under `{CTA_MARKER}` "
+            f"has no openaccountants.com or calendly.com link — not the stamped block ({repair})"
+        )
+
+
 def check_guides(bi, errors, warnings, only_files=None):
     warn_counts = {"jurisdiction (jurisdiction-agnostic dirs)": 0}
     guides = skipped = 0
@@ -298,6 +415,7 @@ def check_guides(bi, errors, warnings, only_files=None):
                 warn_counts["jurisdiction (jurisdiction-agnostic dirs)"] += 1
             else:
                 errors.append(f"{rel}: missing required frontmatter key `jurisdiction`")
+        check_cta_block(rel, text, errors)
     for key, count in sorted(warn_counts.items()):
         if count:
             warnings.append(f"{count} guides missing `{key}`")
@@ -540,6 +658,7 @@ def main():
             check_guides(bi, errors, warnings, only_files=only)
             check_packages_frontmatter(bi, errors, only_files=only)
         check_us_federal_deletions(errors)
+        check_depends_on(bi, errors)
     check_no_deprecated_manifests(errors)
     if derived_only or not no_index_check:
         check_index_fresh(errors)

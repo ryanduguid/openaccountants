@@ -3,7 +3,7 @@ name: bc-eht
 description: Use this skill for British Columbia Employer Health Tax — replaced MSP premiums in 2019. Different structure from Ontario EHT. Triggers "BC EHT", "British Columbia Employer Health Tax", "BC payroll tax", "EHT BC $1.5M threshold", "eTaxBC EHT". ALWAYS read alongside canada-payroll.
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -146,16 +146,6 @@ At $2M flat-band payroll the effective rate is 1.95%. Output of $39,000 matches 
 - Income Tax Act (Canada), s. 248(1) and para. 149(1)(l) — definitions of registered charity and qualifying non-profit, applied by reference.
 
 Companion skills — always read alongside canada-payroll (federal T4 and source-deduction context) and, where the employer has Ontario PEs as well, the Ontario EHT skill so the two regimes are not conflated.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

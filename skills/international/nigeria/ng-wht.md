@@ -3,7 +3,7 @@ name: ng-wht
 description: "Use this skill whenever asked to compute, classify, or review Nigerian Withholding Tax (WHT) obligations payable by a business on its outgoing payments to suppliers, landlords, contractors, lenders, shareholders, professionals, or non-resident recipients. Trigger on phrases like \"Nigeria WHT\", \"Withholding Tax Nigeria\", \"FIRS WHT\", \"WHT rates Nigeria\", \"deduct WHT contract Nigeria\", \"PSC WHT\", \"NTA 2025 WHT\", \"WHT credit note\", \"WHT receipt FIRS\", \"WHT remittance Nigeria\", \"WHT on dividends Nigeria\", \"WHT on royalties Nigeria\", \"non-resident WHT Nigeria\", \"treaty WHT Nigeria\", \"petroleum WHT\", or any request involving the classification, deduction, or remittance of Nigerian withholding tax. This skill covers WHT under the Withholding Tax Regulations 1997 (as amended by S.I. 1997 No. 28 and subsequent FIRS notices) for both residents (companies and individuals) and non-residents, including the 2025 transitional regime ahead of the Nigeria Tax Act 2025 (NTA 2025) which will replace and consolidate WHT into a single \"tax-at-source\" Schedule from 1 January 2026. Out of scope: PAYE (Pay-As-You-Earn on employment income — see ng-paye); VAT withholding by listed government MDAs and oil & gas operators (separate from income-tax WHT — see ng-vat-return); Capital Gains Tax withholding on share disposals; specialist upstream petroleum royalty mechanics beyond standard PSC WHT; bespoke FIRS administrative arrangements for individual taxpayers under the SIRS (state) regime. ALWAYS read this skill before touching any Nigerian WHT work."
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Omolola Fasasi 
 review_status: current
 tier: 1
@@ -366,21 +366,6 @@ The general principle: withhold the higher rate when in doubt and let the recipi
 ## Nigeria — Withholding Tax (WHT) — Skill v1.0
 
 *Skill version 1.0. Tax year 2025. Pending sign-off by a qualified Nigerian tax practitioner (CITN-registered or ICAN with tax practice licence). NTA 2025 implementing regulations TBC — do not file WHT returns or commit to post-1-January-2026 mechanics based solely on this skill without credentialed local review.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

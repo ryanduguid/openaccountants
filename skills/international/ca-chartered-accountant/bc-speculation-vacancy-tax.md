@@ -3,7 +3,7 @@ name: bc-speculation-vacancy-tax
 description: Use this skill for BC Speculation and Vacancy Tax on residential properties in designated areas. Triggers "BC SVT", "BC speculation tax", "vacant home tax BC", "0.5% SVT BC", "2% SVT foreign", "speculation tax declaration BC". DIFFERENT from federal Underused Housing Tax (UHT) which also applies.
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -290,21 +290,6 @@ All three authorities act independently. Late filing of any one of them triggers
 ## End of skill v1.0
 
 *End of skill v1.0. Verification status: pending. Do not file an SVT declaration based solely on this skill without sign-off from a BC-credentialed adviser (CPA-BC or BC-licensed lawyer).*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

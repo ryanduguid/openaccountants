@@ -12,6 +12,8 @@
 5. `algeria-social-contributions.md`
 6. `algeria-vat.md`
 7. `payroll-workflow-base.md`
+8. `income-tax-workflow-base.md`
+9. `social-contributions-workflow-base.md`
 
 ## How to use
 

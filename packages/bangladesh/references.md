@@ -2,7 +2,7 @@
 name: bangladesh-references
 jurisdiction: BD
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 version: 1.0
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
@@ -22,3 +22,21 @@ OpenAccountants is AGPL-3.0. MPL-2.0, MIT, and Apache-2.0 are all compatible lic
 - Scope: Bangladesh personal income tax calculator implementing NBR tax slabs, salary component exemptions (house rent 50% capped, medical 10% capped, conveyance), investment rebate calculation (tiered 15%/12%/10% based on income level), and taxpayer category-based thresholds (male, female, 65+, specially-abled, freedom fighter).
 - Why it matters: Most-starred Bangladesh-specific tax calculator on GitHub. Implements the real NBR slab structure and exemption logic used by Bangladeshi taxpayers.
 - Integration approach: Tax slab rates, exemption thresholds per taxpayer category, salary component tax-free limits, and investment rebate logic directly incorporated into the OpenAccountants skill.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

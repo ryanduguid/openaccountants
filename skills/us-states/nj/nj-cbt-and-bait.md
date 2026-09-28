@@ -3,7 +3,7 @@ name: nj-cbt-and-bait
 description: New Jersey Corporation Business Tax (CBT) and Business Alternative Income Tax (BAIT)
 jurisdiction: US-NJ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -427,21 +427,6 @@ For a NJ accounting practice, the key entity-choice questions in 2025: C-corp un
 Reviewer must confirm each rate, bracket, and form name against the current-year Division of Taxation publications and the GIT-DEP / CBT-200 instruction booklets before signing off. The Corporate Transit Fee is particularly liable to legislative change (renewal, threshold change, sunset adjustment) — verify 2025 and 2026 status separately.
 
 End of skill. Tax year 2025.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

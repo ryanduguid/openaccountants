@@ -23,6 +23,7 @@
 16. `payroll-workflow-base.md`
 17. `financial-statements-workflow-base.md`
 18. `crypto-tax-workflow-base.md`
+19. `income-tax-workflow-base.md`
 
 ## Also known as
 

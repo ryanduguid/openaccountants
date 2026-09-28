@@ -3,7 +3,7 @@ name: oh-payroll
 description: Tier 2 Ohio content skill for employer payroll compliance covering tax year 2025. Includes the OH PIT brackets up to 3.5% (phasing down), IT 941 quarterly withholding, OH SUI wage base $9,000 with rates 0.30-9.80%, the 600+ municipal income tax system collected via RITA (Regional Income Tax Agency, ~330 cities) and CCA (Central Collection Agency, ~50 cities) with direct-file cities like Cincinnati/Columbus/Dayton/Toledo, the 20-day work-in-municipality threshold under SB 22 (2021) triggering non-resident withholding, and BWC mandatory state-fund workers' compensation.
 jurisdiction: US-OH
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -384,21 +384,6 @@ The post-2022 remote-work environment has produced a new high-audit-risk pattern
 6. Verify supplemental wage 3.5% flat-rate guidance is still endorsed by ODT's 2025 Withholding Tax Guide
 
 ## End of skill.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

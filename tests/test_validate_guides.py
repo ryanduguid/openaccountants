@@ -27,8 +27,11 @@ def _load(name: str, filename: str):
 validate_guides = _load("validate_guides", "validate-guides.py")
 build_index = _load("build_index_for_validator_tests", "build-index.py")
 
+from cta_block import CANONICAL_BLOCK, MARKER as CTA_MARKER  # noqa: E402  (needs SCRIPTS on sys.path)
 
-GOOD = """---
+
+#: A guide with everything but the closing CTA block — the shape 116 guides had.
+GOOD_WITHOUT_CTA = """---
 name: synthetic-guide
 description: Synthetic guide used by the validator tests.
 jurisdiction: MT
@@ -41,6 +44,17 @@ last_updated: 2026-01-02
 # Synthetic guide
 
 Body.
+"""
+
+GOOD = GOOD_WITHOUT_CTA + "\n" + CANONICAL_BLOCK
+
+#: The older Calendly-linked section that 591 guides carried beside the marker block.
+OLD_CTA_SECTION = """## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
 """
 
 #: `depends_on: - x` is the shape the tolerant regex reader accepts and PyYAML
@@ -79,12 +93,14 @@ class _ValidatorCase(unittest.TestCase):
             path.write_text(text, encoding="utf-8")
         return root
 
-    def _check_guides(self, files):
+    def _check_guides(self, files, only_files=None):
         root = self._tree(files)
         errors, warnings = [], []
         with mock.patch.object(validate_guides, "REPO_ROOT", str(root)):
             with contextlib.redirect_stdout(io.StringIO()):
-                validate_guides.check_guides(_Trees(files), errors, warnings)
+                validate_guides.check_guides(
+                    _Trees(files), errors, warnings, only_files=only_files
+                )
         return errors
 
     def _check_packages(self, files, guide_files=()):
@@ -93,6 +109,14 @@ class _ValidatorCase(unittest.TestCase):
         with mock.patch.object(validate_guides, "REPO_ROOT", str(root)):
             with contextlib.redirect_stdout(io.StringIO()):
                 validate_guides.check_packages_frontmatter(_Trees(guide_files), errors)
+        return errors
+
+    def _check_depends_on(self, files):
+        root = self._tree(files)
+        errors = []
+        with mock.patch.object(validate_guides, "REPO_ROOT", str(root)):
+            with contextlib.redirect_stdout(io.StringIO()):
+                validate_guides.check_depends_on(_Trees(files), errors)
         return errors
 
 
@@ -249,6 +273,7 @@ class ValidatorModeTests(unittest.TestCase):
         "check_guides",
         "check_packages_frontmatter",
         "check_us_federal_deletions",
+        "check_depends_on",
         "check_no_deprecated_manifests",
         "check_index_fresh",
         "check_llms_full_fresh",
@@ -276,6 +301,7 @@ class ValidatorModeTests(unittest.TestCase):
         calls = self._run(["--changed-only"], changed=["docs/QUALITY-TIERS.md"])
 
         self.assertNotIn("check_guides", calls)
+        self.assertIn("check_depends_on", calls)  # whole-tree, like freshness
         for name in self.FRESHNESS:
             self.assertIn(name, calls)
 
@@ -327,6 +353,168 @@ class GeneratedPackagesTreeTests(_ValidatorCase):
         )
 
         self.assertEqual(errors, [])
+
+
+def _with_depends_on(text, *slugs):
+    return text.replace(
+        "tier: 2\n", "tier: 2\ndepends_on:\n" + "".join(f"  - {slug}\n" for slug in slugs)
+    )
+
+
+class DependsOnTests(_ValidatorCase):
+    """`depends_on` is a promise that a guide exists. 238 entries broke it: no
+    guide carried `income-tax-workflow-base`, `social-contributions-workflow-
+    base` or `foundation`, and nothing noticed. The check reads the whole
+    tree, never the diff: the slug and the name live in different files."""
+
+    def test_dangling_depends_on_is_an_error(self) -> None:
+        errors = self._check_depends_on(
+            {"skills/dependent.md": _with_depends_on(GOOD, "no-such-base")}
+        )
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("`depends_on` names `no-such-base`", errors[0])
+
+    def test_depends_on_resolves_against_both_guide_trees(self) -> None:
+        files = {
+            "skills/dependent.md": _with_depends_on(GOOD, "workflow-base", "us-form-1040"),
+            "skills/foundation/workflow-base.md": GOOD.replace("synthetic-guide", "workflow-base"),
+            "packages/us-federal/us-form-1040.md": GOOD.replace("synthetic-guide", "us-form-1040"),
+        }
+
+        self.assertEqual(self._check_depends_on(files), [])
+
+    def test_a_deleted_base_is_caught_without_touching_its_dependents(self) -> None:
+        # PR mode runs the per-guide checks on the diff only. A pull request
+        # that deletes a base changes nothing in the guides that name it, so
+        # those guides are outside the diff — and the dangling slug must still
+        # be reported. The per-guide loop therefore does not own this check.
+        files = {"skills/dependent.md": _with_depends_on(GOOD, "workflow-base")}
+
+        self.assertEqual(self._check_guides(files, only_files=set()), [])
+        errors = self._check_depends_on(files)
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("workflow-base", errors[0])
+
+    def test_a_dependent_cannot_satisfy_itself_with_a_filename(self) -> None:
+        # The slug must match a `name`, not a path stem.
+        files = {"skills/foundation/other-base.md": _with_depends_on(GOOD, "other-base")}
+
+        errors = self._check_depends_on(files)
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("other-base", errors[0])
+
+    def test_a_malformed_block_is_left_to_the_per_guide_checks(self) -> None:
+        # check_guides reports the YAML error; this check must not double up
+        # or crash on the block it cannot read.
+        files = {
+            "skills/bad.md": MALFORMED,
+            "skills/dependent.md": _with_depends_on(GOOD, "synthetic-guide"),
+        }
+
+        self.assertEqual(self._check_depends_on(files), [])
+
+
+class CtaBlockTests(_ValidatorCase):
+    """Every published guide ends with the marker followed by exactly one
+    "Talk to a verified accountant" section. 591 guides had two sections and
+    116 had no marker before scripts/normalize-cta-block.py swept them."""
+
+    def test_the_canonical_block_passes(self) -> None:
+        self.assertEqual(self._check_guides({"skills/good.md": GOOD}), [])
+
+    def test_a_second_cta_section_is_an_error(self) -> None:
+        doubled = GOOD_WITHOUT_CTA + "\n" + OLD_CTA_SECTION + "\n" + CANONICAL_BLOCK
+
+        errors = self._check_guides({"skills/doubled.md": doubled})
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn('2 "Talk to a verified accountant" sections', errors[0])
+
+    def test_a_missing_marker_is_an_error(self) -> None:
+        errors = self._check_guides({"skills/bare.md": GOOD_WITHOUT_CTA})
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn(f"missing the `{CTA_MARKER}` CTA block", errors[0])
+
+    def test_an_old_section_without_the_marker_is_still_a_missing_marker(self) -> None:
+        errors = self._check_guides(
+            {"skills/old.md": GOOD_WITHOUT_CTA + "\n" + OLD_CTA_SECTION}
+        )
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("missing the", errors[0])
+
+    def test_template_directories_may_omit_the_block(self) -> None:
+        files = {
+            "skills/templates/crypto-template.md": GOOD_WITHOUT_CTA,
+            "skills/cross-border/treaty-corridors/_templates/dtt-template.md": GOOD_WITHOUT_CTA,
+        }
+
+        self.assertEqual(self._check_guides(files), [])
+
+    def test_template_directories_still_cannot_carry_two_sections(self) -> None:
+        doubled = GOOD_WITHOUT_CTA + "\n" + OLD_CTA_SECTION + "\n" + CANONICAL_BLOCK
+
+        errors = self._check_guides({"skills/templates/crypto-template.md": doubled})
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("2 \"Talk to a verified accountant\" sections", errors[0])
+
+    def test_the_marker_must_introduce_the_section(self) -> None:
+        # Marker present, but the only section sits above it — the marker no
+        # longer marks anything.
+        inverted = GOOD_WITHOUT_CTA + "\n" + OLD_CTA_SECTION + "\n" + CTA_MARKER + "\n"
+
+        errors = self._check_guides({"skills/inverted.md": inverted})
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("must directly introduce", errors[0])
+
+    def test_content_between_the_marker_and_the_section_is_an_error(self) -> None:
+        # A marker above unrelated content, with the section further down, is
+        # not a marked block: only blank lines or a rule may separate them.
+        drifted = (
+            GOOD_WITHOUT_CTA + "\n" + CTA_MARKER + "\n\n## Section 9 — Appendix\n\nText.\n\n"
+            + CANONICAL_BLOCK.replace(CTA_MARKER + "\n\n", "")
+        )
+
+        errors = self._check_guides({"skills/drifted.md": drifted})
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("must directly introduce", errors[0])
+
+    def test_an_empty_section_under_the_marker_is_an_error(self) -> None:
+        empty = GOOD_WITHOUT_CTA + "\n" + CTA_MARKER + "\n\n## Talk to a verified accountant\n"
+
+        errors = self._check_guides({"skills/empty.md": empty})
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("no openaccountants.com or calendly.com link", errors[0])
+
+    def test_the_hand_authored_federal_shape_passes(self) -> None:
+        # packages/us-federal/ guides carry the marker, a blank line, the
+        # Calendly text, and then a further marker-introduced section after
+        # the block. Placement is theirs to decide; the block is still one.
+        federal = (
+            GOOD_WITHOUT_CTA + "\n" + CTA_MARKER + "\n\n" + OLD_CTA_SECTION
+            + "\n<!-- openaccountants-mcp-cta -->\n\n## The accountant-verified version lives in the connector\n\nText.\n"
+        )
+
+        self.assertEqual(self._check_guides({"packages/us-federal/us-form-1040.md": federal}), [])
+
+    def test_two_markers_are_an_error(self) -> None:
+        errors = self._check_guides({"skills/twice.md": GOOD + "\n" + CTA_MARKER + "\n"})
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("2 `<!-- openaccountants-cta-block -->` markers", errors[0])
+
+    def test_a_prose_mention_is_not_a_section(self) -> None:
+        mentioned = GOOD.replace("Body.\n", "Body. See the Talk to a verified accountant section below.\n")
+
+        self.assertEqual(self._check_guides({"skills/prose.md": mentioned}), [])
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 name: chile-references
 jurisdiction: CL
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 version: 1.0
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
@@ -94,3 +94,21 @@ OpenAccountants is AGPL-3.0. All projects below have compatible licenses.
 | AFC Chile | https://www.afc.cl | Seguro de Cesantía funding and rates |
 | PREVIRED | https://www.previred.com | Previsional indicators, cotización tracking |
 | Superintendencia de Salud | https://www.supersalud.gob.cl | Fonasa/Isapre health contribution rules |
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

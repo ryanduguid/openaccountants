@@ -7,7 +7,7 @@ description: >
   transaction report, payout report, or mentions Stripe, Stripe payments, or Stripe CSV.
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 ---
 
 # Stripe Integration Skill v1.0
@@ -188,3 +188,21 @@ txn_5KL6mN7oP8qR9sTu,2026-03-18 10:00,2026-03-18,usd,-2831.82,0.00,-2831.82,payo
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

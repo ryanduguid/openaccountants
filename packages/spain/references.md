@@ -2,7 +2,7 @@
 name: spain-references
 jurisdiction: ES
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 version: 1.0
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
@@ -47,3 +47,21 @@ OpenAccountants is AGPL-3.0. All projects listed below have compatible licenses 
 1. **Foral territory rules** from declaracion-renta-espana — País Vasco (Álava, Bizkaia, Gipuzkoa) and Navarra have completely separate IRPF regimes with different brackets, deductions, and filing authorities. These are the biggest gap in the current OpenAccountants Spain package.
 2. **Deduction updates** from larenta — cross-reference the 377 deductions against the current `es-irpf-deductions.md` to catch any we're missing or that changed for 2025.
 3. **XML field mapping** from hacienda-cli — understanding the Modelo 100 XML structure makes the return assembly skill more precise about what fields the asesor fiscal actually needs to fill.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

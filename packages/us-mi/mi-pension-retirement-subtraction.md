@@ -3,7 +3,7 @@ name: mi-pension-retirement-subtraction
 description: Use this skill whenever asked about Michigan's pension/retirement income subtraction on Form MI-1040, the Form 4884 "Michigan Pension Schedule", the Lowering MI Costs Plan / Public Act 4 of 2023 phase-in, the three birth-year tiers (pre-1946 / 1946-1952 / 1953+), the all-income age 67+ Michigan Standard Deduction ($20,000 single / $40,000 MFJ), or how retired public-safety officers elect their subtraction. Trigger on phrases like "Michigan pension subtraction", "Form 4884", "MI retirement tax", "PA 4 of 2023", "Lowering MI Costs Plan", "pension tax repeal", "retirement subtraction tier", "Michigan Standard Deduction age 67", or "Section A/B/C/D of Form 4884". Federal Social Security, railroad retirement, military retirement, and Michigan National Guard retirement are addressed in passing because they interact with the Form 4884 caps, but are reported on Schedule 1 line 11 (not on Form 4884) and are fully exempt from Michigan tax regardless of tier.
 jurisdiction: US-MI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -416,16 +416,6 @@ Still forward-looking rather than unverified:
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. The Form 4884 "claim the most beneficial subtraction" architecture requires per-taxpayer optimization that no software output can substitute for a credentialed review. All outputs must be reviewed and signed off by a qualified Michigan-licensed CPA or Enrolled Agent before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

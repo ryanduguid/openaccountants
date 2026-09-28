@@ -3,7 +3,7 @@ name: ga-formation
 description: Tier 2 Georgia content skill for entity formation covering tax year 2025. Includes the GA LLC $100 Articles of Organization, $50 Annual Registration due April 1 (administrative dissolution after 60 days non-compliance), GA C-Corp Certificate of Incorporation $100 plus $40 publication notice, PLLC for licensed professionals, foreign qualification Certificate of Authority $225, GA DOR sales tax and withholding registrations, the doing-business thresholds (post-Wayfair $100k sales / 200 transactions for sales tax + income tax sourcing), and Atlanta-specific local business license requirements.
 jurisdiction: US-GA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -564,21 +564,6 @@ The reviewer signs off on the brief before any document is filed with the Secret
 ## End of Georgia Entity Formation skill.
 
 End of Georgia Entity Formation skill.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

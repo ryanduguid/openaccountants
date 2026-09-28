@@ -2,7 +2,7 @@
 name: ghana-references
 jurisdiction: GH
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 version: 1.0
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
@@ -22,3 +22,21 @@ OpenAccountants is AGPL-3.0. Projects below are used as reference for tax rate d
 - Scope: Most popular Ghana income tax calculator on GitHub. Implements GRA PAYE (Pay As You Earn) monthly tax brackets with historical rate tables from 2021 through 2024. Includes SSNIT (Social Security) contribution calculation at 5.5%.
 - Why it matters: Actively maintained with bracket updates tracking GRA announcements. 32 stars indicates real usage among Ghanaian developers and taxpayers.
 - Integration approach: Monthly PAYE bracket tables and SSNIT rate used as reference for the income tax skill. Rate data (public domain tax law) incorporated with attribution.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

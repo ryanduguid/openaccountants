@@ -23,6 +23,8 @@
 16. `references.md`
 17. `einvoice-workflow-base.md`
 18. `company-formation-workflow-base.md`
+19. `vat-workflow-base.md`
+20. `workflow-base.md`
 
 ## Also known as
 

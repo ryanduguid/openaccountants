@@ -3,7 +3,7 @@ name: mb-rst
 description: Use this skill for Manitoba Retail Sales Tax (RST) — 7% sales tax (NOT harmonized with federal GST). Triggers "Manitoba RST", "Manitoba PST 7%", "MB sales tax", "TAXcess Manitoba", "Manitoba sales tax online sales".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -223,10 +223,6 @@ Self-assessed RST on out-of-province purchases used in MB: Cloud hosting from a 
 ## Skill version footer
 
 *Skill version 1.0 — tax year 2025. Verification pending (Canadian provincial sales tax specialist). Federal GST/HST handled by the CRA / `canada-gst-hst` skill; this skill covers Manitoba RST only.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts. To speak with one of the licensed accountants who verifies skills for your jurisdiction — **no liability on either side until you and the accountant sign a formal engagement letter** — book a free 30-minute call: **→ [Book a call](https://calendly.com/openaccountants-info/30min)** We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

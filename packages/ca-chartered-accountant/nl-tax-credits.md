@@ -3,7 +3,7 @@ name: nl-tax-credits
 description: Use this skill for Newfoundland and Labrador provincial tax credits + NL Insurance Premium Tax. Includes NL Low-Income Tax Reduction, NL Income Supplement, NL Seniors' Benefit, Volunteer Firefighters Tax Credit, NL Direct Equity Tax Credit (35%), NL Film & Video Industry Tax Credit, plus the NL Insurance Premium Tax (15% on commercial insurance — unique to NL). Triggers "Newfoundland tax credits", "NL Income Supplement", "NL Direct Equity Tax Credit", "Newfoundland Insurance Premium Tax", "NL IPT 15%", "Form NL428".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-15
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -280,21 +280,6 @@ Maya's NL personal credits (separate).
 - NL Department of Industry, Energy and Technology — DETC EBC registration portal
 
 ## End of skill.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

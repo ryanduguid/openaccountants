@@ -16,6 +16,8 @@
 9. `ethiopia-vat.md`
 10. `payroll-workflow-base.md`
 11. `company-formation-workflow-base.md`
+12. `income-tax-workflow-base.md`
+13. `social-contributions-workflow-base.md`
 
 ## How to use
 

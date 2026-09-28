@@ -2,7 +2,7 @@
 name: israel-references
 jurisdiction: IL
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 version: 1.0
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
@@ -60,3 +60,21 @@ OpenAccountants is AGPL-3.0. MIT and Apache-2.0 content can be incorporated with
   - Treat as reference-only until the license is confirmed as compatible.
   - Use as a cross-validation source for income tax bracket boundaries, credit point values, and Bituach Leumi rate tiers.
   - Compare output against `il-income-tax-returns.md` bracket tables for consistency checks.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

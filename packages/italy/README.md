@@ -30,6 +30,8 @@
 23. `financial-statements-workflow-base.md`
 24. `transfer-pricing-workflow-base.md`
 25. `crypto-tax-workflow-base.md`
+26. `income-tax-workflow-base.md`
+27. `social-contributions-workflow-base.md`
 
 ## Also known as
 

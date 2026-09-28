@@ -14,6 +14,8 @@
 7. `tw-nhi.md`
 8. `tw-tax-overview.md`
 9. `company-formation-workflow-base.md`
+10. `income-tax-workflow-base.md`
+11. `vat-workflow-base.md`
 
 ## Also known as
 

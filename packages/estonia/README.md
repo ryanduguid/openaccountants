@@ -18,6 +18,8 @@
 11. `eu-vat-directive.md`
 12. `payroll-workflow-base.md`
 13. `company-formation-workflow-base.md`
+14. `income-tax-workflow-base.md`
+15. `social-contributions-workflow-base.md`
 
 ## How to use
 

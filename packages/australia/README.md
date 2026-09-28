@@ -50,8 +50,9 @@
 43. `financial-statements-workflow-base.md`
 44. `transfer-pricing-workflow-base.md`
 45. `crypto-tax-workflow-base.md`
-46. `australia-guided-intake.md`
-47. `australia-return-assembly.md`
+46. `income-tax-workflow-base.md`
+47. `australia-guided-intake.md`
+48. `australia-return-assembly.md`
 
 ## Also known as
 

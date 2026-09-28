@@ -17,6 +17,8 @@
 10. `nz-tax-residency.md`
 11. `references.md`
 12. `crypto-tax-workflow-base.md`
+13. `income-tax-workflow-base.md`
+14. `vat-workflow-base.md`
 
 ## Also known as
 

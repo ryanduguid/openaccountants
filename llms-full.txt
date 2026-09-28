@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1953 guides, 244 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (1955 guides, 244 jurisdictions, 164 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -272,7 +272,9 @@ https://www.openaccountants.com
 - einvoice-workflow-base | GLOBAL | tier 2 | reviewed_by -
 - excise-tax-workflow-base | GLOBAL | tier 2 | reviewed_by -
 - financial-statements-workflow-base | GLOBAL | tier 2 | reviewed_by -
+- income-tax-workflow-base | GLOBAL | tier 2 | reviewed_by -
 - payroll-workflow-base | GLOBAL | tier 2 | reviewed_by -
+- social-contributions-workflow-base | GLOBAL | tier 2 | reviewed_by -
 - statutory-audit-workflow-base | GLOBAL | tier 2 | reviewed_by -
 - transfer-pricing-workflow-base | GLOBAL | tier 2 | reviewed_by -
 - us-tax-workflow-base | US | tier 2 | reviewed_by James Wallach

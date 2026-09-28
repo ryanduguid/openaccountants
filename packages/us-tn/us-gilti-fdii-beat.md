@@ -3,7 +3,7 @@ name: us-gilti-fdii-beat
 description: Tier 2 US federal international tax content skill for the TCJA-era provisions §951A GILTI, §250 FDII, §59A BEAT, plus surviving Subpart F. Covers tax year 2025 including the 50% §250 GILTI deduction (effective 10.5% rate for C-corps), the 37.5% FDII deduction (effective 13.125%), and the BEAT 10% rate on modified taxable income for corps with >$500M average gross receipts and >3% base erosion percentage; for tax years beginning after Dec. 31, 2025, OBBBA shifts GILTI/FDII to NCTI/FDDEI with 40% and 33.34% §250 deductions and a 10.5% BEAT rate, the §962 election for individual US shareholders of CFCs, Form 5471 / 8992 / 8993 / 8991 compliance, the §965 transition-tax final installments through 2025, and the Pillar Two GloBE non-adoption with UTPR exposure.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -843,16 +843,6 @@ The following are out of scope for this skill and the assistant must refuse and 
 - **R-INTL-8** — US trust / foreign trust / §6048 reporting — refer to international trust specialist.  _(R-INTL-8)_
 - **R-INTL-9** — PFIC (§1291 / §1297) analysis or QEF / mark-to-market elections — refer to PFIC specialist skill (not yet authored).  _(R-INTL-9)_
 - **R-INTL-10** — Cross-border M&A tax structuring — outside content-skill scope; full advisory engagement.  _(R-INTL-10)_
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

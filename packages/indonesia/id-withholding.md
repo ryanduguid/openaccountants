@@ -3,7 +3,7 @@ name: id-withholding
 description: "Use this skill whenever asked to compute, classify, or review Indonesian withholding tax obligations payable by a business on its outgoing payments to suppliers, landlords, contractors, lenders, shareholders, or non-resident recipients. Trigger on phrases like \"Indonesia withholding tax\", \"PPh 23\", \"PPh 26\", \"PPh 4(2) Final\", \"PPh Final\", \"Bukti Potong\", \"Bupot\", \"e-Bupot Unifikasi\", \"SPT Masa Unifikasi\", \"potong pajak supplier Indonesia\", \"withhold tax on supplier Indonesia\", \"rental withholding Indonesia\", \"construction services withholding\", \"royalty withholding Indonesia\", \"interest withholding Indonesia\", \"DGT Form\", \"P3B\", \"tax treaty Indonesia\", \"Coretax withholding\". This skill covers the three main withholding regimes that businesses operate when paying their counterparties — PPh 23 (services and passive income to Indonesian residents), PPh 26 (payments to non-residents), and PPh 4(2) Final (rental of land/building, construction services, bank interest, lottery prizes, IDX share sales, government bonds, etc.). Out of scope: PPh 21 employee/personnel withholding (covered separately in id-payroll-pph21), PPh 22 import/luxury goods withholding, PPh 15 special sectors (shipping/airlines), and the transfer of land/building (PPh 4(2) on disposal — mention only). ALWAYS read this skill before withholding tax on any Indonesian supplier payment."
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -388,21 +388,6 @@ The general principle: withhold the higher rate when in doubt and let the recipi
 ## Footer notice
 
 *Skill version 1.0. Tax year 2025. Pending sign-off by a qualified Indonesian Konsultan Pajak. Do not file a withholding tax return based solely on this skill without credentialed local review.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

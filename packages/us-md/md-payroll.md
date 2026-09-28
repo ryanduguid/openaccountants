@@ -3,7 +3,7 @@ name: md-payroll
 description: Tier 2 Maryland content skill for employer payroll compliance covering tax year 2025. Includes the MD PIT brackets up to 5.75% state plus county tax 2.25-3.20% (effective combined 4.25-8.95%), MW507 state W-4, MW-506 quarterly withholding, MD SUI wage base $8,500 with rates 0.30-7.50%, the 24-county + Baltimore City local tax structure (highest counties Howard/Montgomery/PG/Baltimore City at 3.20%), Maryland Healthy Working Families Act (Sick & Safe Leave 1 hour per 30 hours), reciprocal agreements with DC/PA/VA/WV exempting non-residents, and ABC contractor classification test.
 jurisdiction: US-MD
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -367,21 +367,6 @@ Before delivering a Maryland payroll computation or compliance memo to a reviewe
 ## 15. Refusals
 
 - **Refusals list** — This skill will NOT: - Provide federal income tax, FICA, or FUTA computations (refer to us-federal-payroll). - Compute Maryland income tax for the EMPLOYEE's Form 502 (refer to a future md-individual-income-tax skill). - Cover Maryland Paid Family and Medical Leave Insurance (FAMLI) premiums until the contribution schedule is finalized in regulation. - Cover Maryland household employer special rules. - Cover multi-state UI Localization-of-Work analyses where the employee works in 3+ states (refer to a credentialed cross-border payroll specialist). - Substitute for credentialed reviewer sign-off under Circular 230 or under Maryland Board of Individual Tax Preparers oversight.  _(Skill scope definition)_
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

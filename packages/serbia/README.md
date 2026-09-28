@@ -15,6 +15,8 @@
 8. `serbia-tax-optimization.md`
 9. `serbia-vat.md`
 10. `payroll-workflow-base.md`
+11. `income-tax-workflow-base.md`
+12. `social-contributions-workflow-base.md`
 
 ## How to use
 

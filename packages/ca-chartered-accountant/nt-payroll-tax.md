@@ -3,7 +3,7 @@ name: nt-payroll-tax
 description: Use this skill for the Northwest Territories Payroll Tax — 2% employer-paid payroll tax (with refundable Cost of Living Tax Credit for residents). Unique to NWT. Triggers "NWT payroll tax", "Northwest Territories payroll tax", "NWT 2% payroll", "Cost of Living Offset NWT", "Form NWT401".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -226,21 +226,6 @@ See `packages/canada/northwest-territories/nt-individual-return.md` for the NWT-
 ## End of skill notice
 
 *End of skill — nt-payroll-tax v1.0 (2025 tax year, pending verification).*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

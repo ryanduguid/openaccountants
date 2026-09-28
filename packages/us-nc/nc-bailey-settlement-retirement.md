@@ -3,7 +3,7 @@ name: nc-bailey-settlement-retirement
 description: Use this skill whenever asked about North Carolina state taxation of retirement income for an individual on Form D-400 — specifically the Bailey settlement exclusion for vested NC state/local government, federal, and military retirees, plus the broader NC retirement income treatment (Social Security exemption, military retirement exemption under S.L. 2021-180, private-pension and IRA/401(k) treatment). Trigger on phrases like "Bailey settlement", "Bailey-protected", "TSERS retiree", "LGERS retiree", "CSRS retiree", "FERS retiree", "NC military retirement", "vested by August 12 1989", "NC pension exclusion", or any D-400 Schedule S Part B Line 20 or Line 21 question.
 jurisdiction: US-NC
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -414,16 +414,6 @@ After the MFJ standard deduction of $25,500, NC taxable income = $6,500. NC tax 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — **no liability on either side until you and the accountant sign a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

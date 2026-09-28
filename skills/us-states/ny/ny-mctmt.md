@@ -3,7 +3,7 @@ name: ny-mctmt
 description: "The NY Metropolitan Commuter Transportation Mobility Tax (MCTMT, Tax Law Article 23) is a payroll-and-self-employment tax on employers and self-employed individuals doing business in the Metropolitan Commuter Transportation District (MCTD): the five NYC boroughs (Zone 1) and the suburban counties of Dutchess, Nassau, Orange, Putnam, Rockland, Suffolk, and Westchester (Zone 2). Quarterly payroll brackets run from 0.11% up to 0.60% in Zone 1 and 0.34% in Zone 2. Self-employed individuals owe MCTMT only when MCTD-allocated net earnings exceed $50,000 annually, paid via Form MTA-6 quarterly estimates and reconciled on the NY personal return. Employers file quarterly through NYS-45 (which absorbed Form MTA-305). Exemptions cover federal government, certain NY state employees, agricultural employers, public school districts, and household employers."
 jurisdiction: US-NY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -360,21 +360,6 @@ Last updated: 2025-11-15. Next scheduled review: prior to 2026 tax-filing season
 - **us-ny-return-assembly** — Final assembly of the NY filing package; MCTMT output feeds this skill.
 - **us-quarterly-estimated-tax** — Federal Form 1040-ES; parallel quarterly cadence; do NOT include MCTMT in the federal estimate base.
 - **us-self-employed-retirement** — SEP-IRA / Solo 401(k) contributions reduce Schedule C net profit but do NOT reduce the §1402 net SE earnings base used for MCTMT (retirement contributions reduce AGI but not SE tax or MCTMT base).
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

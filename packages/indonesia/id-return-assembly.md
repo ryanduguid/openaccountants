@@ -3,7 +3,7 @@ name: id-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package an Indonesian annual tax return. Trigger on phrases like "assemble Indonesian return", "prepare SPT 1770", "prepare SPT 1771", "Indonesia annual tax return", "Indonesian working paper", "Indonesian tax filing package", "finalize SPT Tahunan", or "Coretax filing package". This is the capstone orchestrator that pulls together outputs from id-pph-final-umkm, id-income-tax, id-corporate-tax, id-payroll-pph21, indonesia-vat, id-withholding, and id-bookkeeping into a single SPT working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line SPT working paper, generates kode billing payment instructions for Coretax, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing an Indonesian tax return.
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -668,16 +668,6 @@ v1.0 (May 2026): Initial release. Modelled on mt-return-assembly and us-ca-retur
 ## Footer disclaimer
 
 OpenAccountants — open-source accounting skills for AI. This is not tax advice. All outputs must be reviewed and signed off by a qualified Indonesian tax consultant (Konsultan Pajak bersertifikat) before filing via Coretax DJP.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 ### 2.1 Individual return (SPT 1770) — inputs
 

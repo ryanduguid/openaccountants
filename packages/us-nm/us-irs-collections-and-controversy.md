@@ -3,7 +3,7 @@ name: us-irs-collections-and-controversy
 description: Tier 2 US federal content skill for IRS notices, audits, collections, and controversy procedures. Covers common notices (CP2000, CP14, CP504, LT11/CP90), the 30-day Collection Due Process window under §6330 (Form 12153), the 10-year Collection Statute Expiration Date under §6502, collection alternatives (installment agreement, currently-not-collectible, offer in compromise, partial-pay IA), audit types and the §7430 attorney fees rule, Tax Court / District Court / Claims Court forum choice, §6662 accuracy and §6663 fraud penalties, First-Time Abatement (Notice 2014-2), and §6015 innocent spouse relief. Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -778,16 +778,6 @@ pending. This skill has not been reviewed by a Circular 230 practitioner. All do
 ## End of skill
 
 End of skill `us-irs-collections-and-controversy` v0.1.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

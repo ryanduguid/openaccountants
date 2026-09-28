@@ -3,7 +3,7 @@ name: id-tax-optimization
 description: "Use this skill whenever asked about Indonesian tax planning, regime selection, or year-end optimization for self-employed individuals (Orang Pribadi) and small businesses. Trigger on phrases like \"Indonesia tax planning\", \"PPh Final vs progressive Indonesia\", \"UMKM 0.5% break-even\", \"PP 55/2022\", \"optimize Indonesian tax\", \"PTKP planning\", \"Indonesian tax savings\", \"NPPN vs pembukuan\", \"PT Perorangan vs OP\", \"perencanaan pajak Indonesia\", \"hemat pajak\", \"tarif final UMKM\". Covers regime selection (UMKM Final 0.5%, NPPN deemed-profit, pembukuan), entity choice (OP vs PT Perorangan vs PT), Pasal 6/Pasal 9 deduction planning, PTKP optimization, PPh Final Pasal 4(2) for rental and construction, BPJS wage-cap planning, year-end timing. Out of scope: aggressive avoidance, treaty shopping, transfer pricing, paper-PT structures, CFC planning, and anything caught by UU KUP substance rules or Pasal 18 UU PPh. ALWAYS read this skill before advising on Indonesian tax planning."
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 2
@@ -483,16 +483,6 @@ PER-17/PJ/2015 (NPPN rates); PER-25/PJ/2018 (beneficial owner); PER-37/PJ/2022 (
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (Konsultan Pajak bersertifikat A/B/C, Akuntan Publik, or other Indonesian-licensed practitioner) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

@@ -3,7 +3,7 @@ name: nv-formation
 description: Tier 2 Nevada content skill for entity formation covering tax year 2025. Includes the NV LLC $75 filing fee + $150 Initial List of Managers + $200 State Business License (first-year total $425), no state PIT, no corporate income tax (only Commerce Tax over $4M), charging-order asset protection, Domestic Asset Protection Trust (DAPT) availability, Series LLC permitted, and authorized-shares structure for NV C-Corp franchise calculation.
 jurisdiction: US-NV
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -488,21 +488,6 @@ Per `us-tax-workflow-base v0.2`, this skill emits a reviewer-oriented output pac
 - 0.1 (2025-11-15): Initial draft covering LLC formation, C-corp formation, charging-order protection, DAPT, Series LLC, NV vs WY vs DE comparison, foreign qualification, and three worked examples. Awaiting verification by Nevada-credentialed reviewer.
 
 End of nv-formation.md.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

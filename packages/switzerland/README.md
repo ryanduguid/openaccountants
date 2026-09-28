@@ -19,6 +19,7 @@
 12. `switzerland-vat.md`
 13. `company-formation-workflow-base.md`
 14. `crypto-tax-workflow-base.md`
+15. `income-tax-workflow-base.md`
 
 ## Also known as
 

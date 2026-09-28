@@ -3,7 +3,7 @@ name: ca-llc-fee-and-tax
 description: Tier 2 California content skill for Form 568 — the $800 annual minimum tax (R&TC § 17941) plus the tiered LLC fee on gross receipts (§ 17942). Covers every LLC classified as a partnership or disregarded entity that is organized, registered, or doing business in California, the four fee brackets at $250k / $500k / $1M / $5M of total income from all sources reportable to California, the Form 3522 ($800 minimum tax voucher) due April 15 and the Form 3536 (estimated LLC fee voucher) due June 15, disregarded SMLLC treatment, multi-member partnership filings, the corporation election carve-out, and economic / doing-business nexus under the § 23101 factor presence test. Tax year 2025.
 jurisdiction: US-CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -511,21 +511,6 @@ No skill output may be released to a client without sign-off by a Circular 230 f
 Where this skill conflicts with an FTB Notice issued after 2025-11-15, the FTB Notice controls. Where this skill conflicts with a published court decision issued after 2025-11-15, the court decision controls. The reviewer is the final authority on the engagement.
 
 — End of skill —
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — no liability on either side until you and the accountant sign
-a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

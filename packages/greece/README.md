@@ -18,6 +18,7 @@
 11. `eu-vat-directive.md`
 12. `einvoice-workflow-base.md`
 13. `company-formation-workflow-base.md`
+14. `income-tax-workflow-base.md`
 
 ## Also known as
 

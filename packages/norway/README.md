@@ -17,6 +17,7 @@
 10. `norway-mva.md`
 11. `norway-to-switzerland-wealth-tax-exit.md`
 12. `company-formation-workflow-base.md`
+13. `income-tax-workflow-base.md`
 
 ## Also known as
 

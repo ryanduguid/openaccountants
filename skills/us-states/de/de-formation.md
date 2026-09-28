@@ -3,7 +3,7 @@ name: de-formation
 description: Tier 2 Delaware content skill for entity formation covering tax year 2025. Includes the Court of Chancery and DGCL advantages making Delaware the standard for VC-backed startups, $90 LLC Certificate of Formation, $89 C-Corp Certificate of Incorporation, $300 annual LLC tax (June 1 deadline), the "startup standard" 10M-share / $0.0001 par value structure that optimizes franchise tax under the Assumed Par Value method, Series LLC firewalling, Statutory Trusts, Public Benefit Corporations, foreign qualification requirements in operating states, and the §83(b) 30-day election trap for founder restricted stock.
 jurisdiction: US-DE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -666,21 +666,6 @@ Before signing off on a Delaware entity formation engagement, the credentialed r
 | 0.1 | 2025-11-15 | OpenAccountants engineering | Initial draft — Tier 2 content for tax year 2025 |
 
 - **0.1** — 2025-11-15  _(Initial draft — Tier 2 content for tax year 2025)_
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

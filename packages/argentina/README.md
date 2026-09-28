@@ -17,6 +17,8 @@
 10. `argentina-iva.md`
 11. `references.md`
 12. `company-formation-workflow-base.md`
+13. `income-tax-workflow-base.md`
+14. `vat-workflow-base.md`
 
 ## Also known as
 

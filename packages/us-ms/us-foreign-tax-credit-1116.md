@@ -3,7 +3,7 @@ name: us-foreign-tax-credit-1116
 description: Tier 2 US federal content skill for §901 Foreign Tax Credit (Form 1116) covering tax year 2025. Includes the basket separation under §904 (passive, general, GILTI, foreign branch, §901(j) sanctioned countries), the §904(a) limitation formula, the $300/$600 de minimis no-Form-1116 election, §904(j) high-tax kick-out for passive income, the 2022 T.D. 9959 attribution/nexus/cost-recovery requirements with Notice 2023-55/2024-44 (and successor) relief, the FEIE-vs-FTC strategic choice for US expats, 1-year back / 10-year forward credit carries, and the AMT FTC computation. Schedule A itemized deduction alternative when credit isn't useful.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -421,21 +421,6 @@ Drafted: 2025-11-15
 Tax year covered: 2025
 Reviewer status: pending credentialed reviewer (Circular 230 — EA, CPA, or attorney) sign-off before any output is delivered to a taxpayer or filed with the IRS.
 Open verification items: Form 1116 line 18 qualified-dividend/LTCG rate adjustment de minimis thresholds and any post-publication IRS Form 1116 developments.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — no liability on either side until you and the accountant sign
-a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

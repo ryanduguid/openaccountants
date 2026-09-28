@@ -4,7 +4,7 @@ description: "VAT, GST, and sales tax compliance for international digital busin
 version: 1.0
 jurisdiction: INTL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 category: international
 tier: 2
@@ -289,16 +289,6 @@ If you have no US nexus: you may not need to collect (rules evolving)
 *Data reflects 2024–2026 rules. VAT/GST thresholds, rates, and registration requirements change frequently. Verify all figures with official sources and a qualified indirect tax advisor.*
 *Original content: [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise) — MIT License.*
 *OpenAccountants — open-source accounting skills for AI — info@openaaccountants.com*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — **no liability on either side until you and the accountant sign a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

@@ -3,7 +3,7 @@ name: us-education-credits-8863
 description: Tier 2 US federal content skill for education tax benefits — the American Opportunity Tax Credit (AOTC, $2,500 per student, 40% refundable, $80k/$160k MAGI phaseout) under §25A(i), the Lifetime Learning Credit ($2,000 per return) under §25A, the §221 student loan interest deduction, §529 Qualified Tuition Programs including the 2024 §126 SECURE 2.0 $35,000 lifetime 529-to-Roth rollover, K-12 tuition expansion, §527 Coverdell ESA, §117 scholarship treatment, and §127 employer-provided educational assistance ($5,250/year including student loan repayments). Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -525,21 +525,6 @@ Verification jurisdiction: federal-tax-us
 Verified by lead accountant: pending
 
 Next review trigger: (a) Q4 2025 OBBBA technical corrections; (b) IRS release of 2025 Form 8863 instructions; (c) IRS guidance on §529 credentialing and 2026 Form 8863 SSN implementation.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

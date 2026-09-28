@@ -3,7 +3,7 @@ name: us-form-1040-individual-return
 description: Tier 2 US federal content skill for preparing Form 1040 — the standard individual income tax return for non-freelance taxpayers (W-2 employees, retirees, investors, families). Covers tax year 2025 under OBBBA including the $40k SALT cap, the $15,750/$31,500/$23,625 standard deduction, capital gains brackets (0/15/20%), the §1411 3.8% NIIT, AMT post-TCJA, Schedule 1/2/3 walkthrough, dependents and filing status, kiddie tax §1(g), and itemized deduction Schedule A. Distinct from us-federal-return-assembly which orchestrates Schedule C freelance returns. Federal only.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -916,21 +916,6 @@ The reviewer must confirm:
 ## End of skill note
 
 *End of skill. Load alongside `us-tax-workflow-base`. Refer downstream to state assembly skills as applicable.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

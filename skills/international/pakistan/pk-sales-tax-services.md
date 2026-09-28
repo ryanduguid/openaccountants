@@ -3,7 +3,7 @@ name: pk-sales-tax-services
 description: "Source-cited tax guide for PK: pk sales tax services. Unverified draft, pending local-accountant review."
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-13
+last_updated: 2026-09-28
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -228,16 +228,6 @@ FBR IRIS: iris.fbr.gov.pk
 Pakistan Software Export Board (PSEB): pseb.org.pk
 
 Citation discipline: Each provincial Act has been amended multiple times by successive Finance Acts. Always cite the section number AND the year of the Finance Act version in force on the date of the relevant supply. Rates and Schedules in this skill reflect the position as of tax year 2025-26 and must be re-verified against the current Schedule before any filing.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

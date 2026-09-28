@@ -3,7 +3,7 @@ name: nd-return-assembly
 description: "Final capstone orchestrator that assembles the complete federal + North Dakota filing package for a full-year North Dakota-resident sole proprietor or single-member LLC disregarded for federal tax. Consumes outputs from every upstream federal and North Dakota content skill (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC, nd-income-tax, nd-estimated-tax, nd-payroll, nd-corporate-tax routing checks, and nd-sales-tax for closing out the indirect-tax year) to produce a single unified reviewer package: every worksheet, every form, every cross-skill reconciliation, the final taxpayer action list with payment and filing instructions, the next-year ND-1ES voucher schedule, and the reviewer brief. This skill does NOT recompute tax — it ORCHESTRATES. Trigger on phrases like \"assemble the North Dakota return\", \"final ND package\", \"ND-1 reviewer package\", \"ND return assembly\", or \"package up the Dakota return\". MUST be loaded alongside us-tax-workflow-base v0.2 or later and every content skill listed in Section 5. North Dakota full-year residents only. Sole proprietors and single-member LLCs disregarded for federal tax only."
 jurisdiction: US-ND
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -941,23 +941,6 @@ The most up-to-date, verified version of this skill is maintained at
 [openaccountants.com](https://openaccountants.com). Log in to access
 the latest version, request a professional review from a licensed
 accountant, and track updates as tax law changes.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation
-is different, and the rules in the skill may not match your specific
-facts.
-
-To speak with one of the licensed accountants who verifies skills for
-your jurisdiction — **no liability on either side until you and the
-accountant sign a formal engagement letter** — book a free 30-minute
-call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state.
-You can also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

@@ -13,6 +13,8 @@
 6. `kosovo-tax-optimization.md`
 7. `kosovo-vat.md`
 8. `payroll-workflow-base.md`
+9. `income-tax-workflow-base.md`
+10. `social-contributions-workflow-base.md`
 
 ## How to use
 

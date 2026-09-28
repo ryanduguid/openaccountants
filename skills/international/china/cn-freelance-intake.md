@@ -3,7 +3,7 @@ name: cn-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with Chinese tax compliance AND mentions freelancing, self-employment, software developer, contractor, individual industrial commercial household (个体工商户), limited liability company (有限公司), or WFOE in China. Trigger phrases (mixed Chinese + English) "中国个税年度汇算", "中国 SME 税务", "上海公司报税", "深圳 freelancer 税务", "WFOE 报税", "金税四期 合规", "个体工商户经营所得", "China tax filing", "China freelance tax", "China comprehensive income annual reconciliation", "WFOE annual return". REQUIRED entry point — downstream cn-iit, cn-corporate-tax, cn-vat, cn-fapiao-einvoice, cn-social-insurance, cn-withholding, cn-stamp-tax, cn-formation, cn-return-assembly. ALWAYS-read closer in Chinese 在开始任何中国税务工作流前必须先阅读本技能.
 jurisdiction: CN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -411,21 +411,6 @@ cn-freelance-intake（本技能）
 *OpenAccountants — 面向 AI 的开源会计技能*
 *本输出在申报或据以行动之前必须经具备资质的专业人士复核。*
 *最新已验证技能：openaccountants.com | 错误反馈：github.com/openaccountants/openaccountants*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 ## 一、决策树速查
 

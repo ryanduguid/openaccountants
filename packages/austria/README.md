@@ -16,6 +16,7 @@
 9. `austria-vat-return.md`
 10. `eu-vat-directive.md`
 11. `company-formation-workflow-base.md`
+12. `income-tax-workflow-base.md`
 
 ## Also known as
 

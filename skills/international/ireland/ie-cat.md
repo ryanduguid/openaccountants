@@ -3,7 +3,7 @@ name: ie-cat
 description: Use this skill whenever asked about Irish Capital Acquisitions Tax (CAT) on gifts and inheritances. Trigger on phrases like "Ireland CAT", "Irish inheritance tax", "Irish gift tax", "Group A Ireland", "Group B threshold Ireland", "Group C threshold Ireland", "Dwelling House Exemption", "Section 86 CATCA", "Business Relief Ireland", "Agricultural Relief Ireland", "active farmer test", "Form IT38", "valuation date Ireland", "small gift exemption €3,000", "CAT 33%", "aggregation rule CAT", "foreign gift Ireland", or any question about computing, filing, or reporting Irish CAT for a donee or beneficiary. Scope covers CAT computation under the Capital Acquisitions Tax Consolidation Act 2003 (CATCA 2003) as amended by successive Finance Acts, the three group thresholds (A/B/C), the cumulative aggregation rule back to 5 December 1991, the principal reliefs (Dwelling House, Business, Agricultural), foreign-element situs and residence rules, valuation date mechanics, and the Form IT38 pay-and-file obligation via ROS. ALWAYS read this skill before touching Irish CAT work.
 jurisdiction: IE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -371,21 +371,6 @@ When information is incomplete and a position must still be taken for planning p
 ### Sign-off requirement
 
 This skill output requires sign-off by a qualified Irish Chartered Tax Adviser (CTA, Irish Tax Institute) or a Chartered Accountant (Chartered Accountants Ireland, ACCA Ireland, or CPA Ireland) with CAT competence before being relied on by a taxpayer or filed with Revenue. The `verified_by` frontmatter remains **pending** until a credentialed reviewer signs off.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

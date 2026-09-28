@@ -15,6 +15,8 @@
 8. `sd-vat-gst.md`
 9. `payroll-workflow-base.md`
 10. `company-formation-workflow-base.md`
+11. `income-tax-workflow-base.md`
+12. `vat-workflow-base.md`
 
 ## How to use
 

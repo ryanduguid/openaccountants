@@ -3,7 +3,7 @@ name: us-form-5472-foreign-owned-us
 description: Tier 2 US federal content skill for Form 5472 — Information Return of a 25% Foreign-Owned US Corporation or US Trade-or-Business of a Foreign Corp under IRC §§6038A and 6038C. Covers tax year 2025 including the 2017 T.D. 9796 expansion treating foreign-owned single-member US LLCs as separate "reporting corporations" requiring annual Form 5472 plus a pro forma Form 1120, the $25,000 per-year automatic penalty, reportable related-party transactions with NO de minimis threshold, the §482 transfer pricing nexus, indirect ownership via §318 with §6038A modifications, and the 7-year recordkeeping obligation for foreign owners.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -433,16 +433,6 @@ This skill is marked verified_by: pending. It must be reviewed by a Circular 230
 - Watch for changes to the §6038A(d) penalty amount (currently $25,000; could change by statute).
 - Watch for changes to the SMLLC pro forma 1120 filing channel (e-file may become available in future).
 - Confirm treaty rates for FDAP withholding on dividends / royalties / interest paid to foreign related parties (separate Form 1042 workstream, but informs 5472 reporting amounts).
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

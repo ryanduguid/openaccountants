@@ -3,7 +3,7 @@ name: ga-net-worth-tax
 description: Tier 2 Georgia content skill for the Net Worth Tax under Form 600 Part II — a separate capital/equity tax distinct from corporate income tax. Covers tax year 2025 including the application to C-corporations, S-corporations, and LLCs taxed as corporations (NOT to sole props, partnerships, or multi-member LLCs taxed as partnerships), the tax base as the greater of issued+outstanding capital stock+paid-in-capital or net worth (assets minus liabilities), the graduated rate structure with cap at $5,000, apportionment for multistate corporations, and filing combined with the corporate income tax Form 600.
 jurisdiction: US-GA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -572,16 +572,6 @@ When this skill is invoked, produce a reviewer-ready package containing:
 ## 16. Reviewer Sign-Off Required
 
 - **Sign-off requirement** — Every output of this skill requires sign-off by a Circular 230-credentialed reviewer (Enrolled Agent, CPA, or attorney) before filing. Georgia-specific sign-off should come from a reviewer with current Georgia experience — the bracket cliffs, apportionment subtleties, and the dual-base computation are easy to misapply without local familiarity. Per the verification model, Georgia state-tax outputs require the Georgia lead accountant or a contributor accountant sign-off in addition to the general federal reviewer.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

@@ -6,7 +6,7 @@ version: 0.1
 jurisdiction: MA
 tax_year: 2026
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 category: orchestrator
 depends_on:
   - ma-freelance-intake
@@ -122,3 +122,21 @@ All SIMPL filings are electronic; payment is electronic (télépaiement) at fili
 This skill performs **orchestration and assembly only** — it computes no tax figure. All amounts originate from the Morocco content skills (`ma-freelance-intake`, `ma-auto-entrepreneur`, `ma-cpu`, `ma-income-tax`, `ma-social-contributions`, `morocco-vat`) and **must be reviewed and signed off by a qualified Moroccan expert-comptable** before anything is filed with the DGI, CNSS, or the auto-entrepreneur platform. Deadlines, forms, thresholds, and regime rules change; verify every flagged item against the DGI (simpl.tax.gov.ma) at filing time. Nothing here is tax, legal, or financial advice.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

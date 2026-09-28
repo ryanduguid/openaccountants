@@ -3,7 +3,7 @@ name: us-form-5471-cfc-information
 description: US federal content skill for Form 5471 — US Information Return for Controlled Foreign Corporations and other foreign corps requiring US-shareholder reporting under §§6038 and 6046. Covers tax year 2025 including the five filing categories (Cat 1 SFC, Cat 2 officer/director, Cat 3 acquisition/disposition, Cat 4 controller >50%, Cat 5 CFC shareholder), the §958(b)(4) repeal expanding the CFC universe through downward attribution, the eleven schedules (A through Q), §951 Subpart F + §951A GILTI inclusion mechanics, §959 PTEP tracking, §954(b)(4) high-tax exception, the $10,000 per-failure-per-year §6038 penalty, and reasonable-cause defense paths including Streamlined Foreign Offshore Procedures.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -393,21 +393,6 @@ Three practitioner disciplines reduce penalty exposure to near-zero:
 3. **High-tax election analysis** — every CFC with effective foreign tax above 18.9% should have a documented analysis of the §954(b)(4) election, with the run-the-math comparison of (a) GILTI + §250 + §960 vs. (b) high-tax exclusion + §245A. The wrong choice — silently defaulting to "no election" because no one ran the analysis — costs real money on high-tax-jurisdiction CFCs.
 
 A reviewer Circular 230 sign-off on a Form 5471 should confirm: filing category correctly identified, all required schedules present, Schedule I reconciles to Schedule J PTEP movements, Schedule E-1 deemed-paid FTC ties to Schedule Q income groups, Schedule M intercompany transactions reconcile to the underlying intercompany agreements, the §954(b)(4) election (or its absence) is documented with the effective rate computation, and any §962 election by an individual shareholder is signed and attached. The skill defers all amount computations to the underlying corporate accounting records and the reviewer's substantive review; this skill provides the structural map.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

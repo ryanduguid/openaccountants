@@ -1,6 +1,6 @@
 # Frontmatter spec — the canonical reference
 
-**This section is THE frontmatter spec for every skill/Guide file in this repo.** Other docs (`CLAUDE.md`, `CONTRIBUTING.md`) link here rather than restating it. CI enforces it: `scripts/validate-guides.py` hard-fails on malformed frontmatter, a missing `name`/`description`, a non-integer `tax_year`, a missing or invalid `tier` (must be 1 or 2), a missing or malformed `last_updated` (YYYY-MM-DD), and a missing `jurisdiction` (except in a small allowlist of jurisdiction-agnostic directories, where it warns).
+**This section is THE frontmatter spec for every skill/Guide file in this repo.** Other docs (`CLAUDE.md`, `CONTRIBUTING.md`) link here rather than restating it. CI enforces it: `scripts/validate-guides.py` hard-fails on malformed frontmatter, a missing `name`/`description`, a non-integer `tax_year`, a missing or invalid `tier` (must be 1 or 2), a missing or malformed `last_updated` (YYYY-MM-DD), a missing `jurisdiction` (except in a small allowlist of jurisdiction-agnostic directories, where it warns), a `depends_on` slug that no guide carries as its `name`, and a missing or duplicated closing CTA block (see [Closing CTA block](#closing-cta-block)).
 
 ## Required keys — CI fails without these
 
@@ -28,7 +28,7 @@ These two were previously listed as required. They are not: `scripts/validate-gu
 | `tax_year_notes` | quoted string | The human-readable tax-year label when a bare year can't express it: `"2025-26"`, `"FY 2026-27 (AY 2027-28)"`, `"2025 (with confirmed 2026 figures noted)"` |
 | `verified_by` | `pending` or `Name, Credential` | e.g. `Michael Cutajar, CPA (Malta)`. Stored identifier — the field name stays `verified_by` even though the display language is "reviewed". A real name here does **not** imply `tier: 1`; set `tier: 1` explicitly as well. CI errors if `tier: 2` carries a real `verified_by` |
 | `reviewed_by` | `Name, Credential` | Used on the hand-authored `packages/us-federal/` guides (e.g. `Christopher Aryee, CPA`) |
-| `depends_on` | YAML list of slugs | Workflow base or country skill this loads on top of |
+| `depends_on` | YAML list of slugs | Workflow base or country skill this loads on top of. Each slug must be the `name` of a guide that exists under `skills/` or `packages/us-federal/` — CI errors on a dangling one. The generated `foundation.md` is not a guide; name `workflow-base` instead |
 | `version` | numeric dotted value, e.g. `0.1` | Content version, bumped on substantive change when present. Keep any body-heading version in step |
 
 ## Sync integrity rules
@@ -67,6 +67,30 @@ This is the vocabulary actually in use across the repo's guides (by count), not 
 | `integration` | Platform export formats, column mappings | ~20 |
 
 Legacy synonyms still present in older files — do **not** use for new files: `federal-tax` (use `federal`), `state` / `us-states` (use `state-tax`), `financial-reporting` (use `financial-statements`), plus stragglers `template`, `pattern(s)`, `intelligence`.
+
+## Closing CTA block
+
+Every published guide ends with the `<!-- openaccountants-cta-block -->` marker followed by exactly one "Talk to a verified accountant" section — the block below, verbatim. The marker is what makes a bulk re-stamp idempotent. CI errors on a guide with no marker (the template directories `skills/templates/` and `skills/cross-border/treaty-corridors/_templates/` are exempt) and on a guide with more than one such section; `python3 scripts/normalize-cta-block.py --apply` repairs both and bumps `last_updated`. The canonical text lives in `scripts/cta_block.py`.
+
+```markdown
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
+```
 
 ## Template
 

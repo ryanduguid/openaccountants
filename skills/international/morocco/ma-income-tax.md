@@ -19,7 +19,7 @@ version: 1.0
 jurisdiction: MA
 tax_year: 2026
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 category: international
 depends_on:
   - income-tax-workflow-base
@@ -490,3 +490,21 @@ floor, RNS ceilings, and filing deadlines change with each Loi de Finances and m
 be **re-verified** before use. Nothing here is a substitute for advice from a
 licensed Moroccan expert-comptable or the DGI. Part of **openaccountants.com** —
 open-source tax skills for the self-employed.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -3,7 +3,7 @@ name: va-payroll
 description: Tier 2 Virginia content skill for employer payroll compliance covering tax year 2025. Includes the VA PIT brackets up to 5.75%, VA-4 state W-4, VA-15 quarterly and VA-5 monthly withholding returns, VA-16 wage report annual reconciliation, VA SUI wage base $8,000 (among lowest in US) with rates 0.10-6.20%, reciprocal agreements with DC/KY/MD/PA/WV exempting non-resident employees, workers' compensation mandatory for 3+ employees, and the absence of state-level paid sick leave (with city-level mandates in Alexandria).
 jurisdiction: US-VA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -521,21 +521,6 @@ Before producing a reviewer-facing Virginia payroll work product, confirm:
 - **R-VA-5** — Will not produce a Virginia payroll work product for a household domestic employer paying below the federal Schedule H threshold ($2,800 FICA / $1,000-quarter FUTA) unless the household has voluntarily elected coverage — refer the user to the federal Schedule H skill.  _(17. Refusal Catalogue (Virginia-specific additions to base R-US refusals))_
 - **R-VA-6** — Will not provide BPOL guidance — refer-out to `va-corporate-tax-and-bpol`.  _(17. Refusal Catalogue (Virginia-specific additions to base R-US refusals))_
 - **R-VA-7** — Will not produce a Virginia individual income tax return (Form 760) — refer-out to `va-income-tax`.  _(17. Refusal Catalogue (Virginia-specific additions to base R-US refusals))_
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — no liability on either side until you and the accountant sign
-a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

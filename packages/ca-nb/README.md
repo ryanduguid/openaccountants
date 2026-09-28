@@ -37,9 +37,11 @@ financial statements, transfer pricing, tax optimization) plus
 25. `transfer-pricing-workflow-base.md`
 26. `crypto-tax-workflow-base.md`
 27. `nb-individual-return.md`
-28. `ca-freelance-intake.md`
-29. `ca-return-assembly.md`
-30. `global-router.md`
+28. `income-tax-workflow-base.md`
+29. `social-contributions-workflow-base.md`
+30. `ca-freelance-intake.md`
+31. `ca-return-assembly.md`
+32. `global-router.md`
 
 ## How to use
 
