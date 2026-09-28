@@ -1,9 +1,9 @@
 ---
 name: leaving-australia-tax-residency-cgt
-description: Ceasing Australian tax residency triggers one of tax's strangest decisions — CGT event I1 deems you to sell your entire share portfolio the day you leave, unless you elect otherwise. Add the loss of the main-residence exemption for non-residents, the death of the tax-free threshold, HECS repayments that chase worldwide income, and super you cannot touch, and 'moving overseas' becomes a sequencing problem. This Guide sequences it.
+description: "Use for planning departure from Australia: tax residency, CGT event I1 and its individual choice, main-residence CGT, part-year income tax, HELP and superannuation obligations."
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-03
+last_updated: 2026-09-14
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,9 +13,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Why this corridor needs a guide.** Australians leave in large numbers — to the UK, the
 Gulf, Singapore, the US — and the departure rules are unusually decision-heavy: the day you
-cease residency, the law **deems you to have sold your non-property assets** (unless you
-choose otherwise), your **family home quietly loses its lifetime tax exemption** if you sell
-while away, the **tax-free threshold disappears** for the Australian income you keep, and
+cease residency, **CGT event I1 applies to covered assets**, subject to its exceptions and
+the individual choice, your **family home quietly loses its lifetime tax exemption** if you sell
+while away, the **tax-free threshold is adjusted for a part-year resident**, and
 your **HECS debt starts chasing your foreign payslip**. None of these are avoidable by
 ignorance and all of them are manageable by sequencing. Our own connector data shows
 capital-gains questions from Australia going unanswered more than almost anywhere — this
@@ -28,15 +28,17 @@ tests still govern, but watch this space before relying on edge cases.
 
 ## Part 2 — CGT event I1: the deemed disposal, and the election
 
-The centrepiece. On ceasing residency, **CGT event I1** deems you to dispose of all your CGT
-assets **except taxable Australian property (TAP)** — broadly, Australian real estate and
-mining interests, plus significant stakes (10%+) in land-rich entities — at market value on
-the cessation date. Your share portfolio, managed funds, foreign assets, crypto: all deemed
-sold, gains taxable in your final resident return, *without any cash changing hands*.
+**CGT event I1** occurs when you cease Australian tax residency, for assets owned just
+before that time, using market value at cessation. TAP is generally excluded, but this
+exception does not exclude indirect Australian real property interests or options or
+rights to acquire them. Disregard gains or losses on assets acquired before 20 September
+1985. Report covered gains and losses in the income year of cessation, even though no
+actual sale provides cash to pay the tax.
 
-**The election (the "I1 choice"):** you may instead elect to treat those assets as TAP —
-**deferring** tax until actual sale, but keeping those assets inside the Australian CGT net
-while non-resident, with two costs baked in:
+**The individual choice (s 104-165):** you may disregard all gains and losses covered by
+I1. This applies to all covered assets, not selected assets. They are then treated as TAP
+until the earlier of a subsequent CGT event or resuming Australian residency. For assets
+sold while still non-resident:
 - the **50% CGT discount is frozen** for periods of foreign residency (post-May-2012
   apportionment), so long absences erode the discount on eventual sale; and
 - Australia taxes the *entire* eventual gain, even growth that happened while you lived in a
@@ -94,8 +96,9 @@ within a 6-year window) rarely helps a planned move.
   poor value for non-residents), be careful with **SMSFs** — a trustee moving abroad can break
   the fund's Australian-residency conditions and render it non-complying (penalty tax at the
   top rate on the fund); professional trustees or winding up are the standard fixes.
-- **Australian-source income keeps its own rules:** rent (taxable by assessment at
-  non-resident rates; negative-gearing losses carry forward), **fully franked dividends**
+- **Australian-source income keeps its own rules:** rent (taxable by assessment; resident
+  rates with an adjusted tax-free threshold apply in a part-year departure year, and
+  foreign-resident rates in a full non-resident year; negative-gearing losses carry forward), **fully franked dividends**
   (no further Australian tax for non-residents — franking does the job; unfranked: 30%
   withholding, treaty-reduced), **interest** (10% final withholding). Bank and broker
   paperwork: update tax-residency declarations so the right withholding applies at source.
@@ -129,8 +132,9 @@ collide). Two destination-specific notes our corridor data keeps surfacing:
 2. Market-value every CGT asset for that date; run the **I1 pay-vs-elect** comparison.
 3. Decide the **house** strategy while still resident: sell now (exempt), or rent with a
    first-income valuation and a documented plan for the eventual sale.
-4. Time income: bonuses/invoices before cessation use the resident thresholds; after, 30%
-   from dollar one.
+4. Determine when bonuses and business income are derived and their source. In a part-year
+   departure year, resident rates apply with a tax-free threshold adjusted for resident
+   months. Payment after cessation does not automatically mean 30% from the first dollar.
 5. Super: consolidate, review insurance, fix SMSF trusteeship.
 
 **Departure year**
@@ -157,13 +161,15 @@ collide). Two destination-specific notes our corridor data keeps surfacing:
 | Electing deferral, forgetting the discount freeze | Years abroad shave the 50% discount on eventual sale; the deferral isn't free. |
 | SMSF trustee on a plane | Residency conditions breach → non-complying fund → top-rate tax on the fund's assets. |
 | HECS silence | Worldwide-income reporting is mandatory; the debt indexes and penalties accrue while you look away. |
-| Bonus paid a week after cessation | Non-resident rates from the first dollar; timing was worth thousands. |
+| Bonus paid a week after cessation | Check derivation and source. In a part-year departure year, resident rates apply with an adjusted tax-free threshold. |
 | Assuming a UAE treaty exists | There is none — no tie-breaker to rescue a messy dual-status year. |
 | Returning with an offshore portfolio, no re-basing plan | Market-value entry on resuming residency is automatic; realising gains just before return (in a zero-tax country) versus just after is a five-figure difference. |
 
 ---
 
 ## Sources (primary, verify current figures)
+
+[ATO: your tax residency, including part-year changes](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency).
 
 ITAA 1997 s.104-160 (CGT event I1) and the TAP definition (s.855); ATO guidance on residency
 (TR 2023/1, incorporating Harding); main-residence exemption denial for foreign residents

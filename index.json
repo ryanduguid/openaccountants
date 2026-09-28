@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-09T14:53:22+00:00",
+ "generated_at": "2026-09-28T06:06:36+00:00",
  "counts": {
   "guides": 1953,
   "jurisdictions": 244,
-  "accountant_reviewed": 171
+  "accountant_reviewed": 164
  },
  "guides": [
   {
@@ -568,7 +568,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "non-eu-export-services",
@@ -739,7 +739,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "dtt-summary",
+   "slug": "eg-ae-dtt-corridor",
    "path": "skills/cross-border/treaty-corridors/eg-ae/dtt-summary.md",
    "name": "eg-ae-dtt-corridor",
    "jurisdiction": "EG-AE",
@@ -751,7 +751,7 @@
    "last_updated": "2026-08-02"
   },
   {
-   "slug": "dtt-summary",
+   "slug": "eg-sa-dtt-corridor",
    "path": "skills/cross-border/treaty-corridors/eg-sa/dtt-summary.md",
    "name": "eg-sa-dtt-corridor",
    "jurisdiction": "EG-SA",
@@ -772,7 +772,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "eu-intra-rates",
@@ -1012,7 +1012,7 @@
    "verified_by": null,
    "reviewed_by": "James Wallach",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "us-estate-gift-706-709",
@@ -1024,7 +1024,7 @@
    "verified_by": null,
    "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "us-fbar-and-fatca-8938",
@@ -1360,7 +1360,7 @@
    "verified_by": null,
    "reviewed_by": "James Wallach",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "us-self-employed-health-insurance",
@@ -1516,7 +1516,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "financial-reporting-workflow-base",
@@ -1588,7 +1588,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "company-formation-workflow-base",
@@ -1684,7 +1684,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "payroll-workflow-base",
@@ -2020,7 +2020,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "albania-social-contributions",
@@ -2044,7 +2044,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "albania-vat",
@@ -2116,7 +2116,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "ad-corporate-income-tax",
@@ -2128,7 +2128,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ad-income-tax",
@@ -2140,7 +2140,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "ad-payroll-social",
@@ -2164,7 +2164,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "andorra-igi",
@@ -2176,7 +2176,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "ao-company-formation",
@@ -2200,7 +2200,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ao-income-tax",
@@ -2212,7 +2212,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "ao-payroll-social",
@@ -2272,7 +2272,7 @@
    "verified_by": null,
    "reviewed_by": "Maria Valeria Benvenuti",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ar-income-tax",
@@ -2350,25 +2350,25 @@
    "slug": "references",
    "path": "skills/international/argentina/references.md",
    "name": "references",
-   "jurisdiction": "VN",
+   "jurisdiction": "AR",
    "category": null,
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "am-company-formation",
    "path": "skills/international/armenia/am-company-formation.md",
    "name": "am-company-formation",
    "jurisdiction": "AM",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "am-corporate-income-tax",
@@ -2380,7 +2380,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "am-tax-overview",
@@ -2392,7 +2392,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "armenia-income-tax",
@@ -2404,7 +2404,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "armenia-payroll",
@@ -2416,7 +2416,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "armenia-social-contributions",
@@ -2428,7 +2428,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "armenia-tax-optimization",
@@ -2440,7 +2440,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "armenia-vat",
@@ -2464,7 +2464,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-company-tax",
@@ -2476,7 +2476,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-crypto-tax",
@@ -2488,7 +2488,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-deceased-estates",
@@ -2500,7 +2500,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-div7a",
@@ -2524,7 +2524,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-fbt",
@@ -2536,7 +2536,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-02"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-foreign-income",
@@ -2548,7 +2548,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-gst-bas",
@@ -2560,7 +2560,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-08-11"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-gst-property",
@@ -2572,7 +2572,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-individual-return",
@@ -2584,7 +2584,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2024",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-land-tax",
@@ -2596,7 +2596,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-medicare-levy",
@@ -2608,7 +2608,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2024",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-nonresident-cgt",
@@ -2620,7 +2620,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-not-for-profit",
@@ -2632,7 +2632,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-partnerships",
@@ -2644,7 +2644,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-payg-instalments",
@@ -2656,7 +2656,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-psi",
@@ -2668,7 +2668,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-rates-2026-27",
@@ -2680,7 +2680,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "au-rd-incentive",
@@ -2692,7 +2692,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-rental-property",
@@ -2704,7 +2704,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-small-business-cgt",
@@ -2716,7 +2716,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-smsf",
@@ -2728,7 +2728,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-sole-trader-schedule",
@@ -2740,7 +2740,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-stamp-duty",
@@ -2752,7 +2752,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-super-guarantee",
@@ -2764,7 +2764,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-02"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-tax-residency",
@@ -2776,7 +2776,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "au-trust-distributions",
@@ -2788,7 +2788,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "australia-bookkeeping",
@@ -2800,7 +2800,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "australia-financial-statements",
@@ -2812,7 +2812,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "australia-formation",
@@ -2824,7 +2824,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "australia-gst",
@@ -2836,7 +2836,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "australia-payroll",
@@ -2848,7 +2848,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-08-02"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "australia-tax-optimization",
@@ -2860,7 +2860,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "australia-transfer-pricing",
@@ -2872,7 +2872,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "leaving-australia-tax-residency-cgt",
@@ -2884,10 +2884,10 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-08-03"
+   "last_updated": "2026-09-14"
   },
   {
-   "slug": "references",
+   "slug": "australia-references",
    "path": "skills/international/australia/references.md",
    "name": "australia-references",
    "jurisdiction": "AU",
@@ -2896,7 +2896,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-08-20"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "at-company-formation",
@@ -2920,7 +2920,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "at-income-tax",
@@ -3004,7 +3004,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "az-tax-overview",
@@ -3172,7 +3172,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bh-corporate-income-tax",
@@ -3208,7 +3208,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bh-tax-overview",
@@ -3244,7 +3244,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "bd-bookkeeping",
@@ -3263,12 +3263,12 @@
    "path": "skills/international/bangladesh/bd-company-formation.md",
    "name": "bd-company-formation",
    "jurisdiction": "BD",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bd-corporate-income-tax",
@@ -3280,7 +3280,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "bd-crypto-tax",
@@ -3328,7 +3328,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bd-it-freelancer-tax",
@@ -3403,7 +3403,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "bangladesh-references",
    "path": "skills/international/bangladesh/references.md",
    "name": "bangladesh-references",
    "jurisdiction": "BD",
@@ -3436,7 +3436,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bb-corporate-income-tax",
@@ -3448,7 +3448,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bb-income-tax",
@@ -3628,7 +3628,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "belgium-bookkeeping",
@@ -3700,7 +3700,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "bz-company-formation",
@@ -3712,7 +3712,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "bz-corporate-income-tax",
@@ -3724,7 +3724,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bz-income-tax",
@@ -3779,12 +3779,12 @@
    "path": "skills/international/benin/bj-company-formation.md",
    "name": "bj-company-formation",
    "jurisdiction": "BJ",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "bj-corporate-income-tax",
@@ -3796,7 +3796,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bj-income-tax",
@@ -3808,7 +3808,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bj-payroll-social",
@@ -3820,7 +3820,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bj-tax-overview",
@@ -3832,7 +3832,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bj-vat-gst",
@@ -3844,7 +3844,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bermuda-tax",
@@ -3856,7 +3856,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "bm-company-formation",
@@ -3904,7 +3904,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bm-tax-overview",
@@ -3952,7 +3952,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bt-income-tax",
@@ -4000,7 +4000,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bolivia-income-tax",
@@ -4012,7 +4012,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bolivia-iva",
@@ -4036,7 +4036,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bolivia-social-contributions",
@@ -4048,7 +4048,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bolivia-tax-optimization",
@@ -4084,7 +4084,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ba-tax-overview",
@@ -4144,7 +4144,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "bosnia-vat",
@@ -4204,7 +4204,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bw-tax-overview",
@@ -4216,7 +4216,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bw-vat-gst",
@@ -4228,7 +4228,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "br-estimated-tax",
@@ -4252,7 +4252,7 @@
    "verified_by": null,
    "reviewed_by": "Ariane Marrocos",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "br-indirect-tax",
@@ -4348,10 +4348,10 @@
    "verified_by": null,
    "reviewed_by": "Ariane Marrocos",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
-   "slug": "references",
+   "slug": "brazil-references",
    "path": "skills/international/brazil/references.md",
    "name": "brazil-references",
    "jurisdiction": "BR",
@@ -4384,7 +4384,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "vg-payroll-social",
@@ -4528,7 +4528,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "bg-tax-overview",
@@ -4552,7 +4552,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "bulgaria-payroll",
@@ -4564,7 +4564,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "bulgaria-social-contributions",
@@ -4576,7 +4576,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "bulgaria-tax-optimization",
@@ -4607,12 +4607,12 @@
    "path": "skills/international/burkina-faso/bf-company-formation.md",
    "name": "bf-company-formation",
    "jurisdiction": "BF",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "bf-corporate-tax",
@@ -4708,31 +4708,31 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "bi-corporate-income-tax",
    "path": "skills/international/burundi/bi-corporate-income-tax.md",
    "name": "bi-corporate-income-tax",
    "jurisdiction": "BI",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bi-income-tax",
    "path": "skills/international/burundi/bi-income-tax.md",
    "name": "bi-income-tax",
    "jurisdiction": "BI",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "bi-payroll-social",
@@ -4744,7 +4744,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "bi-tax-overview",
@@ -4756,19 +4756,19 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bi-vat-gst",
    "path": "skills/international/burundi/bi-vat-gst.md",
    "name": "bi-vat-gst",
    "jurisdiction": "BI",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bvi-tax",
@@ -4816,7 +4816,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "bc-speculation-vacancy-tax",
@@ -4864,7 +4864,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "ns-tax-credits",
@@ -4900,7 +4900,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "on-eht",
@@ -5032,7 +5032,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kh-tax-overview",
@@ -5443,7 +5443,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "canada-references",
    "path": "skills/international/canada/references.md",
    "name": "canada-references",
    "jurisdiction": "CA",
@@ -5483,12 +5483,12 @@
    "path": "skills/international/cape-verde/cv-company-formation.md",
    "name": "cv-company-formation",
    "jurisdiction": "CV",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "cv-corporate-income-tax",
@@ -5524,7 +5524,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cv-tax-overview",
@@ -5560,7 +5560,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ky-company-formation",
@@ -5591,12 +5591,12 @@
    "path": "skills/international/cayman-islands/ky-payroll-social.md",
    "name": "ky-payroll-social",
    "jurisdiction": "KY",
-   "category": null,
+   "category": "payroll",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ky-tax-overview",
@@ -5627,12 +5627,12 @@
    "path": "skills/international/central-african-republic/cf-company-formation.md",
    "name": "cf-company-formation",
    "jurisdiction": "CF",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "cf-corporate-income-tax",
@@ -5644,7 +5644,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cf-income-tax",
@@ -5656,7 +5656,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "cf-payroll-social",
@@ -5668,7 +5668,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cf-tax-overview",
@@ -5680,7 +5680,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cf-vat-gst",
@@ -5692,19 +5692,19 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "td-company-formation",
    "path": "skills/international/chad/td-company-formation.md",
    "name": "td-company-formation",
    "jurisdiction": "TD",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "td-corporate-income-tax",
@@ -5788,7 +5788,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cl-corporate-income-tax",
@@ -5812,7 +5812,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "cl-social-contributions",
@@ -5824,7 +5824,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "cl-tax-overview",
@@ -5836,7 +5836,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cl-vat-return",
@@ -5851,7 +5851,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "chile-references",
    "path": "skills/international/chile/references.md",
    "name": "chile-references",
    "jurisdiction": "CL",
@@ -6019,7 +6019,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "china-references",
    "path": "skills/international/china/references.md",
    "name": "china-references",
    "jurisdiction": "CN",
@@ -6052,7 +6052,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "co-income-tax",
@@ -6268,7 +6268,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "hr-tax-overview",
@@ -6280,7 +6280,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "cu-company-formation",
@@ -6316,7 +6316,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cu-payroll-social",
@@ -6328,7 +6328,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cu-tax-overview",
@@ -6340,7 +6340,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cu-vat-gst",
@@ -6364,7 +6364,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cw-corporate-income-tax",
@@ -6376,7 +6376,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cw-income-tax",
@@ -6388,7 +6388,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cw-payroll-social",
@@ -6412,7 +6412,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cw-vat-gst",
@@ -6424,7 +6424,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cy-non-dom",
@@ -6448,7 +6448,7 @@
    "verified_by": null,
    "reviewed_by": "Christos Thoma",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cyprus-payroll",
@@ -6508,7 +6508,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cz-corporate-income-tax",
@@ -6520,7 +6520,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "cz-income-tax",
@@ -6583,9 +6583,9 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "czech-republic-references",
    "path": "skills/international/czech-republic/references.md",
-   "name": "czech_republic-references",
+   "name": "czech-republic-references",
    "jurisdiction": "CZ",
    "category": null,
    "tier": 2,
@@ -6643,7 +6643,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "denmark-references",
    "path": "skills/international/denmark/references.md",
    "name": "denmark-references",
    "jurisdiction": "DK",
@@ -6659,12 +6659,12 @@
    "path": "skills/international/djibouti/dj-company-formation.md",
    "name": "dj-company-formation",
    "jurisdiction": "DJ",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "dj-corporate-income-tax",
@@ -6676,7 +6676,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "dj-income-tax",
@@ -6700,7 +6700,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "dj-tax-overview",
@@ -6712,7 +6712,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "dj-vat-gst",
@@ -6772,7 +6772,7 @@
    "verified_by": null,
    "reviewed_by": "Miguel Lantigua",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "do-customs",
@@ -6916,7 +6916,7 @@
    "verified_by": null,
    "reviewed_by": "Miguel Lantigua",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-26"
   },
   {
    "slug": "do-withholding-tax",
@@ -6995,12 +6995,12 @@
    "path": "skills/international/dr-congo/cd-company-formation.md",
    "name": "cd-company-formation",
    "jurisdiction": "CD",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "cd-corporate-income-tax",
@@ -7048,19 +7048,19 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "cd-vat-gst",
    "path": "skills/international/dr-congo/cd-vat-gst.md",
    "name": "cd-vat-gst",
    "jurisdiction": "CD",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ec-company-formation",
@@ -7072,7 +7072,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ec-corporate-income-tax",
@@ -7168,7 +7168,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "eg-corporate-tax",
@@ -7180,7 +7180,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-22"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "eg-crypto-tax",
@@ -7192,7 +7192,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "eg-financial-statements",
@@ -7216,7 +7216,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "eg-income-tax",
@@ -7228,7 +7228,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "eg-payroll",
@@ -7240,7 +7240,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "eg-real-estate-tax",
@@ -7264,7 +7264,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "eg-social-insurance",
@@ -7324,7 +7324,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-22"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "egypt-vat",
@@ -7336,7 +7336,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "el-salvador-income-tax",
@@ -7403,12 +7403,12 @@
    "path": "skills/international/equatorial-guinea/gq-company-formation.md",
    "name": "gq-company-formation",
    "jurisdiction": "GQ",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "gq-corporate-income-tax",
@@ -7468,7 +7468,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "er-company-formation",
@@ -7492,7 +7492,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "er-income-tax",
@@ -7504,7 +7504,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "er-payroll-social",
@@ -7516,7 +7516,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "er-tax-overview",
@@ -7528,7 +7528,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "er-vat-gst",
@@ -7564,7 +7564,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ee-tax-overview",
@@ -7720,7 +7720,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "et-corporate-income-tax",
@@ -7732,7 +7732,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "et-tax-overview",
@@ -7744,7 +7744,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ethiopia-income-tax",
@@ -7792,7 +7792,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "eu-vat-base",
@@ -7852,7 +7852,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "fj-income-tax",
@@ -7888,7 +7888,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "fi-company-formation",
@@ -7924,7 +7924,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "fi-prepayments",
@@ -7948,7 +7948,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "fi-yel-social",
@@ -7984,7 +7984,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "fr-capital-gains",
@@ -8080,7 +8080,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "france-bookkeeping",
@@ -8092,7 +8092,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "france-einvoice",
@@ -8152,7 +8152,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "france-transfer-pricing",
@@ -8176,7 +8176,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "leaving-france-exit-tax",
@@ -8191,7 +8191,7 @@
    "last_updated": "2026-08-03"
   },
   {
-   "slug": "references",
+   "slug": "france-references",
    "path": "skills/international/france/references.md",
    "name": "france-references",
    "jurisdiction": "FR",
@@ -8207,12 +8207,12 @@
    "path": "skills/international/gabon/ga-company-formation.md",
    "name": "ga-company-formation",
    "jurisdiction": "GA",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ga-corporate-income-tax",
@@ -8320,7 +8320,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gm-vat-gst",
@@ -8356,7 +8356,7 @@
    "verified_by": null,
    "reviewed_by": "Gvantsa Amiridze, ACCA",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ge-tax-overview",
@@ -8368,7 +8368,7 @@
    "verified_by": null,
    "reviewed_by": "Gvantsa Amiridze, ACCA",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "georgia-income-tax",
@@ -8548,7 +8548,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "germany-bookkeeping",
@@ -8572,7 +8572,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "germany-financial-statements",
@@ -8656,10 +8656,10 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
-   "slug": "references",
+   "slug": "germany-references",
    "path": "skills/international/germany/references.md",
    "name": "germany-references",
    "jurisdiction": "DE",
@@ -8743,7 +8743,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "ghana-references",
    "path": "skills/international/ghana/references.md",
    "name": "ghana-references",
    "jurisdiction": "GH",
@@ -8776,7 +8776,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gr-efka",
@@ -8800,7 +8800,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gr-tax-overview",
@@ -8812,7 +8812,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gr-vat-return",
@@ -8824,7 +8824,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "greece-einvoice",
@@ -8848,7 +8848,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "gt-company-formation",
@@ -8872,7 +8872,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gt-tax-overview",
@@ -8939,12 +8939,12 @@
    "path": "skills/international/guinea-bissau/gw-company-formation.md",
    "name": "gw-company-formation",
    "jurisdiction": "GW",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "gw-corporate-income-tax",
@@ -8956,7 +8956,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gw-income-tax",
@@ -8968,7 +8968,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gw-payroll-social",
@@ -8980,7 +8980,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gw-tax-overview",
@@ -8992,7 +8992,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gw-vat-gst",
@@ -9004,19 +9004,19 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "gn-company-formation",
    "path": "skills/international/guinea/gn-company-formation.md",
    "name": "gn-company-formation",
    "jurisdiction": "GN",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "gn-corporate-income-tax",
@@ -9028,7 +9028,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "gn-income-tax",
@@ -9040,7 +9040,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "gn-payroll-social",
@@ -9052,7 +9052,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "gn-tax-overview",
@@ -9064,7 +9064,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "gn-vat-gst",
@@ -9076,7 +9076,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "gy-company-formation",
@@ -9160,7 +9160,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "hn-corporate-income-tax",
@@ -9292,7 +9292,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "hk-vat-gst",
@@ -9352,7 +9352,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "hungary-einvoice",
@@ -9376,7 +9376,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "iceland-income-tax",
@@ -9460,7 +9460,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "is-tax-overview",
@@ -9568,7 +9568,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-04"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "in-pf-esi-employer",
@@ -9603,8 +9603,8 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "in-tds-freelance",
@@ -9727,7 +9727,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "india-references",
    "path": "skills/international/india/references.md",
    "name": "india-references",
    "jurisdiction": "IN",
@@ -9883,7 +9883,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "indonesia-references",
    "path": "skills/international/indonesia/references.md",
    "name": "indonesia-references",
    "jurisdiction": "ID",
@@ -10024,7 +10024,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "iq-vat-gst",
@@ -10084,7 +10084,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "ie-formation",
@@ -10096,7 +10096,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "ie-freelance-intake",
@@ -10108,7 +10108,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ie-income-tax-form11",
@@ -10180,7 +10180,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ie-usc",
@@ -10339,7 +10339,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "israel-references",
    "path": "skills/international/israel/references.md",
    "name": "israel-references",
    "jurisdiction": "IL",
@@ -10384,7 +10384,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "it-inps-contributions",
@@ -10408,7 +10408,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "italy-bookkeeping",
@@ -10432,7 +10432,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "italy-einvoice",
@@ -10468,7 +10468,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "italy-payroll",
@@ -10480,7 +10480,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "italy-tax-optimization",
@@ -10492,7 +10492,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "italy-transfer-pricing",
@@ -10516,10 +10516,10 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
-   "slug": "references",
+   "slug": "italy-references",
    "path": "skills/international/italy/references.md",
    "name": "italy-references",
    "jurisdiction": "IT",
@@ -10540,7 +10540,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ivory-coast-payroll",
@@ -10552,7 +10552,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ivory-coast-social-contributions",
@@ -10816,7 +10816,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "jp-nonpermanent-resident",
@@ -10843,7 +10843,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "japan-references",
    "path": "skills/international/japan/references.md",
    "name": "japan-references",
    "jurisdiction": "JP",
@@ -10864,7 +10864,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "jo-corporate-income-tax",
@@ -10936,7 +10936,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "kz-bookkeeping",
@@ -10948,7 +10948,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kz-company-formation",
@@ -10960,7 +10960,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kz-corporate-income-tax",
@@ -10972,7 +10972,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "kz-crypto-tax",
@@ -11032,7 +11032,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kz-payroll-social",
@@ -11044,7 +11044,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kz-payroll",
@@ -11056,7 +11056,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kz-simplified-regime",
@@ -11152,7 +11152,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ke-income-tax-2",
@@ -11284,7 +11284,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kosovo-payroll",
@@ -11339,12 +11339,12 @@
    "path": "skills/international/kuwait/kuwait-tax.md",
    "name": "kuwait-tax",
    "jurisdiction": "KW",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "kw-company-formation",
@@ -11363,12 +11363,12 @@
    "path": "skills/international/kuwait/kw-corporate-income-tax.md",
    "name": "kw-corporate-income-tax",
    "jurisdiction": "KW",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "kw-payroll-social",
@@ -11392,7 +11392,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "kw-vat-gst",
@@ -11428,7 +11428,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kg-income-tax",
@@ -11452,7 +11452,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kg-tax-overview",
@@ -11464,7 +11464,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "kg-vat-gst",
@@ -11500,7 +11500,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "la-payroll-social",
@@ -11512,7 +11512,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "la-tax-overview",
@@ -11524,7 +11524,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "laos-vat",
@@ -11536,7 +11536,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "latvia-income-tax",
@@ -11620,7 +11620,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "lv-tax-overview",
@@ -11723,12 +11723,12 @@
    "path": "skills/international/lesotho/ls-corporate-income-tax.md",
    "name": "ls-corporate-income-tax",
    "jurisdiction": "LS",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ls-income-tax",
@@ -11740,7 +11740,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ls-payroll-social",
@@ -11764,7 +11764,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ls-vat-gst",
@@ -11824,7 +11824,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "lr-tax-overview",
@@ -11872,7 +11872,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ly-income-tax",
@@ -11908,7 +11908,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ly-vat-gst",
@@ -11932,7 +11932,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "li-corporate-income-tax",
@@ -11956,7 +11956,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "li-payroll-social",
@@ -11968,7 +11968,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "li-tax-overview",
@@ -12040,7 +12040,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "lt-payroll-social",
@@ -12067,7 +12067,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "lithuania-references",
    "path": "skills/international/lithuania/references.md",
    "name": "lithuania-references",
    "jurisdiction": "LT",
@@ -12172,7 +12172,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mo-tax-overview",
@@ -12184,7 +12184,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mo-vat-gst",
@@ -12292,7 +12292,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mw-income-tax",
@@ -12304,7 +12304,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mw-payroll-social",
@@ -12340,7 +12340,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "malaysia-einvoice",
@@ -12388,7 +12388,7 @@
    "verified_by": null,
    "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "my-epf-socso",
@@ -12472,7 +12472,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mv-income-tax",
@@ -12508,19 +12508,19 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ml-company-formation",
    "path": "skills/international/mali/ml-company-formation.md",
    "name": "ml-company-formation",
    "jurisdiction": "ML",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ml-corporate-income-tax",
@@ -12556,7 +12556,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ml-tax-overview",
@@ -12844,7 +12844,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mr-tax-overview",
@@ -12904,7 +12904,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "mu-income-tax",
@@ -12916,7 +12916,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mu-payroll-social",
@@ -13051,7 +13051,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "mexico-references",
    "path": "skills/international/mexico/references.md",
    "name": "mexico-references",
    "jurisdiction": "MX",
@@ -13180,7 +13180,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mc-income-tax",
@@ -13276,7 +13276,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mongolia-vat",
@@ -13396,7 +13396,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ma-bookkeeping",
@@ -13408,7 +13408,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ma-cpu",
@@ -13420,7 +13420,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ma-crypto-tax",
@@ -13432,7 +13432,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ma-einvoice",
@@ -13492,7 +13492,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ma-tax-optimization",
@@ -13528,7 +13528,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "morocco-vat",
@@ -13540,7 +13540,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "mozambique-income-tax",
@@ -13552,7 +13552,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "mozambique-payroll",
@@ -13600,7 +13600,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "mm-income-tax",
@@ -13612,7 +13612,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mm-payroll-social",
@@ -13636,7 +13636,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "mm-vat-gst",
@@ -13660,7 +13660,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "na-company-formation",
@@ -13684,7 +13684,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "na-income-tax",
@@ -13888,7 +13888,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "netherlands-vat-return",
@@ -13924,7 +13924,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "nl-deductions",
@@ -13999,7 +13999,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "netherlands-references",
    "path": "skills/international/netherlands/references.md",
    "name": "netherlands-references",
    "jurisdiction": "NL",
@@ -14107,9 +14107,9 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "new-zealand-references",
    "path": "skills/international/new-zealand/references.md",
-   "name": "new_zealand-references",
+   "name": "new-zealand-references",
    "jurisdiction": "NZ",
    "category": null,
    "tier": 2,
@@ -14123,12 +14123,12 @@
    "path": "skills/international/nicaragua/ni-company-formation.md",
    "name": "ni-company-formation",
    "jurisdiction": "NI",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ni-corporate-income-tax",
@@ -14207,12 +14207,12 @@
    "path": "skills/international/niger/ne-company-formation.md",
    "name": "ne-company-formation",
    "jurisdiction": "NE",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ne-corporate-income-tax",
@@ -14272,7 +14272,7 @@
    "verified_by": null,
    "reviewed_by": "Omolola Fasasi",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ng-cit",
@@ -14284,7 +14284,7 @@
    "verified_by": null,
    "reviewed_by": "Omolola Fasasi",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ng-formation",
@@ -14296,7 +14296,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ng-freelance-intake",
@@ -14315,12 +14315,12 @@
    "path": "skills/international/nigeria/ng-income-tax.md",
    "name": "ng-income-tax",
    "jurisdiction": "NG",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ng-payroll",
@@ -14344,7 +14344,7 @@
    "verified_by": null,
    "reviewed_by": "Omolola Fasasi",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ng-return-assembly",
@@ -14364,23 +14364,23 @@
    "name": "ng-vat-return",
    "jurisdiction": "NG",
    "category": "international",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Omolola Fasasi",
+   "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ng-vat",
    "path": "skills/international/nigeria/ng-vat.md",
    "name": "ng-vat",
    "jurisdiction": "NG",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Omolola Fasasi",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ng-wht",
@@ -14404,10 +14404,10 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
-   "slug": "references",
+   "slug": "nigeria-references",
    "path": "skills/international/nigeria/references.md",
    "name": "nigeria-references",
    "jurisdiction": "NG",
@@ -14428,7 +14428,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "mk-corporate-income-tax",
@@ -14440,7 +14440,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "mk-tax-overview",
@@ -14452,7 +14452,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "north-macedonia-income-tax",
@@ -14488,7 +14488,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "north-macedonia-tax-optimization",
@@ -14536,7 +14536,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "no-corporate-income-tax",
@@ -14644,7 +14644,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "om-income-tax",
@@ -14656,7 +14656,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "om-payroll-social",
@@ -14668,7 +14668,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "om-tax-overview",
@@ -14680,7 +14680,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "oman-vat",
@@ -14692,7 +14692,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "pakistan-sales-tax",
@@ -14704,7 +14704,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "pk-bookkeeping",
@@ -14724,11 +14724,11 @@
    "name": "pk-cgt",
    "jurisdiction": "PK",
    "category": null,
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "pk-corporate-tax",
@@ -14736,11 +14736,11 @@
    "name": "pk-corporate-tax",
    "jurisdiction": "PK",
    "category": null,
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "pk-crypto-tax",
@@ -14784,11 +14784,11 @@
    "name": "pk-formation",
    "jurisdiction": "PK",
    "category": "international",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "pk-income-tax",
@@ -14796,11 +14796,11 @@
    "name": "pk-income-tax",
    "jurisdiction": "PK",
    "category": "international",
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "pk-it-export-tax",
@@ -14824,7 +14824,7 @@
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "pk-payroll",
@@ -14848,7 +14848,7 @@
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "pk-sales-tax-services",
@@ -14860,7 +14860,7 @@
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "pk-social-contributions",
@@ -14896,7 +14896,7 @@
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "panama-income-tax",
@@ -14968,7 +14968,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "pg-income-tax",
@@ -15028,7 +15028,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "paraguay-iva",
@@ -15052,7 +15052,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "paraguay-social-contributions",
@@ -15064,7 +15064,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "pe-company-formation",
@@ -15124,7 +15124,7 @@
    "verified_by": null,
    "reviewed_by": "Maria Clemencia Valverde Rios",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "peru-payroll",
@@ -15307,7 +15307,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "poland-references",
    "path": "skills/international/poland/references.md",
    "name": "poland-references",
    "jurisdiction": "PL",
@@ -15400,7 +15400,7 @@
    "verified_by": null,
    "reviewed_by": "Mário Jorge da costa Vale",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "portugal-vat-return",
@@ -15412,7 +15412,7 @@
    "verified_by": null,
    "reviewed_by": "Mário Jorge da costa Vale",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "pt-corporate-tax",
@@ -15460,7 +15460,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "pt-return-assembly",
@@ -15472,7 +15472,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "pt-social-contributions",
@@ -15484,7 +15484,7 @@
    "verified_by": null,
    "reviewed_by": "Mário Jorge da costa Vale",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "pt-vat-return",
@@ -15496,7 +15496,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "qa-company-formation",
@@ -15508,7 +15508,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "qa-corporate-income-tax",
@@ -15520,19 +15520,19 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "qa-payroll-social",
    "path": "skills/international/qatar/qa-payroll-social.md",
    "name": "qa-payroll-social",
    "jurisdiction": "QA",
-   "category": null,
+   "category": "payroll",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "qa-tax-overview",
@@ -15575,12 +15575,12 @@
    "path": "skills/international/republic-of-congo/cg-company-formation.md",
    "name": "cg-company-formation",
    "jurisdiction": "CG",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "cg-corporate-income-tax",
@@ -15640,10 +15640,10 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
-   "slug": "references",
+   "slug": "romania-references",
    "path": "skills/international/romania/references.md",
    "name": "romania-references",
    "jurisdiction": "RO",
@@ -15688,7 +15688,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ro-income-tax",
@@ -15700,7 +15700,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ro-payroll-social",
@@ -15772,7 +15772,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ru-crypto-tax",
@@ -15868,7 +15868,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ru-tax-optimization",
@@ -15904,7 +15904,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "rw-company-formation",
@@ -16012,7 +16012,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "st-corporate-income-tax",
@@ -16036,7 +16036,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "st-payroll-social",
@@ -16168,7 +16168,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sm-income-tax",
@@ -16192,7 +16192,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sm-tax-overview",
@@ -16204,7 +16204,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sm-vat-gst",
@@ -16216,12 +16216,12 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
-   "slug": "references",
+   "slug": "saudi-arabia-references",
    "path": "skills/international/saudi-arabia/references.md",
-   "name": "saudi_arabia-references",
+   "name": "saudi-arabia-references",
    "jurisdiction": "SA",
    "category": null,
    "tier": 2,
@@ -16240,7 +16240,7 @@
    "verified_by": null,
    "reviewed_by": "Mehran Habib",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "sa-excise-tax",
@@ -16415,12 +16415,12 @@
    "path": "skills/international/senegal/sn-company-formation.md",
    "name": "sn-company-formation",
    "jurisdiction": "SN",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "sn-corporate-income-tax",
@@ -16552,7 +16552,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "sc-payroll-social",
@@ -16576,7 +16576,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sc-vat-gst",
@@ -16607,12 +16607,12 @@
    "path": "skills/international/sierra-leone/sl-corporate-income-tax.md",
    "name": "sl-corporate-income-tax",
    "jurisdiction": "SL",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sl-income-tax",
@@ -16624,7 +16624,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sl-payroll-social",
@@ -16648,7 +16648,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sl-vat-gst",
@@ -16783,7 +16783,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "slovakia-references",
    "path": "skills/international/slovakia/references.md",
    "name": "slovakia-references",
    "jurisdiction": "SK",
@@ -16816,7 +16816,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sk-payroll-social",
@@ -16828,7 +16828,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sk-tax-overview",
@@ -17044,7 +17044,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "leaving-south-africa-tax-emigration",
@@ -17080,7 +17080,7 @@
    "verified_by": null,
    "reviewed_by": "Werner Britz",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "za-capital-gains",
@@ -17104,7 +17104,7 @@
    "verified_by": null,
    "reviewed_by": "Werner Britz",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "za-provisional-tax",
@@ -17140,7 +17140,7 @@
    "verified_by": null,
    "reviewed_by": "Werner Britz",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "kr-income-tax",
@@ -17167,9 +17167,9 @@
    "last_updated": "2026-06-12"
   },
   {
-   "slug": "references",
+   "slug": "south-korea-references",
    "path": "skills/international/south-korea/references.md",
-   "name": "south_korea-references",
+   "name": "south-korea-references",
    "jurisdiction": "KR",
    "category": null,
    "tier": 2,
@@ -17332,7 +17332,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "es-estimated-tax",
@@ -17416,10 +17416,10 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
-   "slug": "references",
+   "slug": "spain-references",
    "path": "skills/international/spain/references.md",
    "name": "spain-references",
    "jurisdiction": "ES",
@@ -17536,7 +17536,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "sri-lanka-betting-gaming-excise",
@@ -17556,11 +17556,11 @@
    "name": "sri-lanka-capital-gains-tax",
    "jurisdiction": "LK",
    "category": null,
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
    "reviewed_by": "Lal kumarasiri",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sri-lanka-corporate-tax",
@@ -17580,11 +17580,11 @@
    "name": "sri-lanka-income-tax",
    "jurisdiction": "LK",
    "category": null,
-   "tier": 1,
+   "tier": 2,
    "verified_by": null,
    "reviewed_by": "Lal kumarasiri",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sri-lanka-payroll",
@@ -17788,7 +17788,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "sr-vat-gst",
@@ -17800,10 +17800,10 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
-   "slug": "references",
+   "slug": "sweden-references",
    "path": "skills/international/sweden/references.md",
    "name": "sweden-references",
    "jurisdiction": "SE",
@@ -17944,7 +17944,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ch-corporate-income-tax",
@@ -18016,7 +18016,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "switzerland-vat",
@@ -18064,7 +18064,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "tw-income-tax",
@@ -18100,7 +18100,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "tj-company-formation",
@@ -18247,7 +18247,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "thailand-references",
    "path": "skills/international/thailand/references.md",
    "name": "thailand-references",
    "jurisdiction": "TH",
@@ -18280,7 +18280,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "th-payroll-social",
@@ -18292,7 +18292,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "th-tax-overview",
@@ -18304,7 +18304,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "thailand-pit",
@@ -18407,12 +18407,12 @@
    "path": "skills/international/togo/tg-company-formation.md",
    "name": "tg-company-formation",
    "jurisdiction": "TG",
-   "category": null,
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "tg-corporate-income-tax",
@@ -18424,7 +18424,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "tg-income-tax",
@@ -18436,7 +18436,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "tg-payroll-social",
@@ -18448,7 +18448,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "tg-tax-overview",
@@ -18460,7 +18460,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "tg-vat-gst",
@@ -18472,7 +18472,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "to-company-formation",
@@ -18520,7 +18520,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "to-tax-overview",
@@ -18532,7 +18532,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "to-vat-gst",
@@ -18544,7 +18544,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "trinidad-vat",
@@ -18580,7 +18580,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "tt-income-tax",
@@ -18703,7 +18703,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "turkey-references",
    "path": "skills/international/turkey/references.md",
    "name": "turkey-references",
    "jurisdiction": "TR",
@@ -18736,7 +18736,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "tr-payroll-social",
@@ -18796,7 +18796,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "tm-corporate-income-tax",
@@ -18808,7 +18808,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "tm-income-tax",
@@ -18820,7 +18820,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "tm-payroll-social",
@@ -18832,7 +18832,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "tm-tax-overview",
@@ -18844,7 +18844,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "tm-vat-gst",
@@ -18856,7 +18856,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "ae-corporate-tax",
@@ -19015,7 +19015,7 @@
    "last_updated": "2026-07-27"
   },
   {
-   "slug": "references",
+   "slug": "uk-references",
    "path": "skills/international/uk/references.md",
    "name": "uk-references",
    "jurisdiction": "GB",
@@ -19108,7 +19108,7 @@
    "verified_by": null,
    "reviewed_by": "James Power",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "uk-national-insurance",
@@ -19132,7 +19132,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "uk-payments-on-account",
@@ -19144,7 +19144,7 @@
    "verified_by": null,
    "reviewed_by": "James Power",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "uk-payroll",
@@ -19168,7 +19168,7 @@
    "verified_by": null,
    "reviewed_by": "James Power",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-12"
   },
   {
    "slug": "uk-self-employment-sa103",
@@ -19204,7 +19204,7 @@
    "verified_by": null,
    "reviewed_by": "James Power",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "uk-tax-optimization",
@@ -19312,7 +19312,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ua-crypto-tax",
@@ -19444,7 +19444,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-13"
   },
   {
    "slug": "ae-company-formation",
@@ -19456,7 +19456,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "ae-vat-return",
@@ -19480,7 +19480,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "uruguay-iva",
@@ -19504,7 +19504,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "uruguay-social-contributions",
@@ -19516,7 +19516,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "uy-company-formation",
@@ -19540,7 +19540,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "uy-tax-overview",
@@ -19552,7 +19552,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "us-capital-gains",
@@ -19612,7 +19612,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "uz-tax-overview",
@@ -19708,7 +19708,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "vu-income-tax",
@@ -19732,7 +19732,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "vu-tax-overview",
@@ -19744,7 +19744,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "vu-vat-gst",
@@ -19819,7 +19819,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "vietnam-references",
    "path": "skills/international/vietnam/references.md",
    "name": "vietnam-references",
    "jurisdiction": "VN",
@@ -19864,7 +19864,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "vn-corporate-income-tax",
@@ -19876,7 +19876,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "vn-payroll-social",
@@ -19888,7 +19888,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "vn-tax-overview",
@@ -19924,7 +19924,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "zm-corporate-income-tax",
@@ -19960,7 +19960,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "zm-tax-overview",
@@ -20008,7 +20008,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "zw-income-tax",
@@ -20056,7 +20056,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "au-return-assembly",
@@ -20068,7 +20068,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "bd-freelance-intake",
@@ -20284,7 +20284,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "fr-return-assembly",
@@ -20296,7 +20296,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-10"
   },
   {
    "slug": "global-router",
@@ -20548,7 +20548,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "pk-return-assembly",
@@ -20884,7 +20884,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-09-23"
   },
   {
    "slug": "estimated-provisional-tax-template",
@@ -21067,7 +21067,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "ca-540-es-estimated-tax",
+   "slug": "ca-estimated-tax-540es",
    "path": "skills/us-states/ca/ca-540-es-estimated-tax.md",
    "name": "ca-estimated-tax-540es",
    "jurisdiction": "US-CA",
@@ -21103,7 +21103,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "ca-income-tax",
+   "slug": "ca-540-individual-return",
    "path": "skills/us-states/ca/ca-income-tax.md",
    "name": "ca-540-individual-return",
    "jurisdiction": "US-CA",
@@ -21127,7 +21127,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "ca-sales-use-tax",
+   "slug": "california-sales-tax",
    "path": "skills/us-states/ca/ca-sales-use-tax.md",
    "name": "california-sales-tax",
    "jurisdiction": "US-CA",
@@ -21328,7 +21328,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-11"
   },
   {
    "slug": "fl-annual-report",
@@ -21355,7 +21355,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "fl-sales-tax",
+   "slug": "fl-sales-use-tax",
    "path": "skills/us-states/fl/fl-sales-tax.md",
    "name": "fl-sales-use-tax",
    "jurisdiction": "US-FL",
@@ -21964,7 +21964,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-14"
   },
   {
    "slug": "mi-homestead-credit",
@@ -22603,7 +22603,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "ny-income-tax",
+   "slug": "ny-it-201-resident-return",
    "path": "skills/us-states/ny/ny-income-tax.md",
    "name": "ny-it-201-resident-return",
    "jurisdiction": "US-NY",
@@ -22615,7 +22615,7 @@
    "last_updated": "2026-06-12"
   },
   {
-   "slug": "ny-llc-filing-fee",
+   "slug": "ny-llc-filing-fee-it-204-ll",
    "path": "skills/us-states/ny/ny-llc-filing-fee.md",
    "name": "ny-llc-filing-fee-it-204-ll",
    "jurisdiction": "US-NY",
@@ -22639,7 +22639,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "ny-sales-tax",
+   "slug": "new-york-sales-tax",
    "path": "skills/us-states/ny/ny-sales-tax.md",
    "name": "new-york-sales-tax",
    "jurisdiction": "US-NY",
@@ -22651,7 +22651,7 @@
    "last_updated": "2026-06-12"
   },
   {
-   "slug": "nyc-ubt",
+   "slug": "nyc-unincorporated-business-tax",
    "path": "skills/us-states/ny/nyc-ubt.md",
    "name": "nyc-unincorporated-business-tax",
    "jurisdiction": "US-NY",
@@ -22867,7 +22867,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "references",
+   "slug": "us-states-references",
    "path": "skills/us-states/references.md",
    "name": "us-states-references",
    "jurisdiction": "US",
@@ -22975,7 +22975,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "tx-sales-tax",
+   "slug": "tx-sales-use-tax",
    "path": "skills/us-states/tx/tx-sales-tax.md",
    "name": "tx-sales-use-tax",
    "jurisdiction": "US-TX",
@@ -23107,7 +23107,7 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "wa-b-and-o-tax",
+   "slug": "wa-business-occupation-tax",
    "path": "skills/us-states/wa/wa-b-and-o-tax.md",
    "name": "wa-business-occupation-tax",
    "jurisdiction": "US-WA",
@@ -23140,7 +23140,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-15"
   },
   {
    "slug": "wa-sales-tax",

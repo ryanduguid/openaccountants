@@ -3,7 +3,7 @@ name: kg-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Kyrgyzstan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: KG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Corporate profit tax in Kyrgyzstan is levied at a flat 10% on net profit (income less documented deductible expenses). Reduced and zero rates apply to special regimes such as the High Technology Park and approved investment projects.
 
-- **Standard corporate profit tax rate** — 10% percent  _([Tax Code of the Kyrgyz Republic](https://kgaccount.com/en/income-tax-2/))_
+- **Standard corporate profit tax rate** — 10% percent  _(Tax Code of the Kyrgyz Republic (as described at [kgaccount.com](https://kgaccount.com/en/income-tax-2/)))_
 - **High Technology Park (HTP) resident rate** — Reduced regime (approx 1%–2% turnover-based) for accredited HTP residents percent ((approx — confirm))  _(Law on the High Technology Park of the Kyrgyz Republic)_
 - **Priority/investment project rate** — 0% for qualifying priority-sector investment projects under state programmes percent ((approx — confirm))  _(Tax Code of the Kyrgyz Republic)_
 - **Tax base** — Net profit = gross income less documented, economically justified deductible expenses  _(Tax Code of the Kyrgyz Republic)_

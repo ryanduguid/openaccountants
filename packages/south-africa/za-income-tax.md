@@ -4,7 +4,7 @@ description: Use this skill whenever asked about South African income tax for se
 version: 2.0
 jurisdiction: ZA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Werner Britz
 review_status: current
 tier: 1
@@ -26,10 +26,11 @@ Reviewed against the cited tax authorities by Werner Britz on 2026-06-12. Items 
 - **Primary legislation** — Income Tax Act 58 of 1962
 - **Supporting legislation** — Tax Administration Act 28 of 2011; Sixth Schedule (Turnover Tax); Fourth Schedule (Provisional Tax)
 - **Tax authority** — SARS
-- **Filing portal** — Correct portal but URL is sarsefiling.gov.za / efiling.sars.gov.za. The www.sarsefiling.co.za address is the older registered domain that redirects, but for documentation use https://www.sarsefiling.gov.za or https://www.sars.gov.za.  _(SARS website)_
+- **Filing portal** — ⚠ **This row previously had it backwards and sent readers to a hostname that does not exist.** It directed documentation to `https://www.sarsefiling.gov.za` and called `www.sarsefiling.co.za` *"the older registered domain that redirects"*. **Neither `www.sarsefiling.gov.za` nor `efiling.sars.gov.za` resolves in DNS at all.** `https://www.sarsefiling.co.za` answers 200, redirects to `https://secure.sarsefiling.co.za/landing` and serves a page titled **"SARS eFiling"** — it is the live portal, and the redirect is the ordinary hop to a login landing, not evidence of retirement. Use **https://www.sarsefiling.co.za** for eFiling and **https://www.sars.gov.za** for the authority site  _(checked by DNS resolution and HTTP fetch, 11 September 2026)_
 - **Currency** — ZAR only
 - **Tax year** — 1 March - 28 February  _(Income Tax Act s 1, definition)_
 - **Return form** — ITR12
+- **Filing season** — Set by SARS each year and published before it opens. For the 2026 year of assessment (1 March 2025 to 28 February 2026): auto-assessment notices 1 to 12 July 2026, manual filing opens 13 July, and the **non-provisional deadline is 23 October 2026**. Provisional taxpayers and trusts have until **22 January 2027**. Disagreeing with an auto-assessment does not extend either date: the corrected ITR12 is due on the same deadline  _(SARS Filing Season 2026 notice)_
 - **Provisional tax** — IRP6 (1st: 31 Aug, 2nd: last day Feb, 3rd voluntary: 30 Sep)  _(Income Tax Act Fourth Schedule)_
 - **Primary rebate** — 2026/27 year of assessment: R17,820. 2025/26 was R17,235 but we are now in YOA 2027 from 1 March 2026. All rebates and thresholds in the skill need to be updated to 2026/27.  _(SARS Budget 2026 Tax Guide)_
 - **Secondary rebate (65+)** — 2026/27: R9,768.  _(SARS Budget 2026 Tax Guide)_
@@ -353,7 +354,7 @@ All tests use 2025/26 rates and the R350k RA cap. Re-run on 2026/27 basis to val
 
 ### SARS eFiling URL
 
-Current canonical URLs: https://www.sarsefiling.gov.za or https://www.sars.gov.za.
+Current canonical URLs: **https://www.sarsefiling.co.za** (eFiling; redirects to `secure.sarsefiling.co.za/landing`) and **https://www.sars.gov.za** (authority site). The `sarsefiling.gov.za` and `efiling.sars.gov.za` forms this file previously gave **do not resolve**.
 
 ### Disclaimer
 

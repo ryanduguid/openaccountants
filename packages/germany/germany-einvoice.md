@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German e-invoicing, XRechnung, 
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 depends_on:
   - einvoice-workflow-base
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Current XRechnung version | 3.0.1 (mandatory from 1 February 2024) |
 | Governing body | Bundesministerium der Finanzen (BMF) |
 | Standards body | Koordinierungsstelle für IT-Standards (KoSIT) |
-| Key legislation | E-Rechnungsverordnung (ERechV); Wachstumschancengesetz (Growth Opportunities Act); §14 UStG; GoBD (updated 14 July 2025) |
+| Key legislation | **§14 Abs. 1 and Abs. 2 Satz 2 Nr. 1 UStG** (definition and the B2B obligation); **§27 Abs. 38 UStG** (the transitional relief that produces the 2027 and 2028 dates — previously not cited here, though every date below comes from it); §19 UStG (Kleinunternehmer); §33 UStDV (small amounts); E-Rechnungsverordnung (ERechV); Wachstumschancengesetz; GoBD (updated 14 July 2025) |
 | B2G portal | OZG-RE (Online-Zugangsgesetz-konforme Rechnungseingangsplattform) -- replaced ZRE in September 2025 |
 | B2G mandatory since | 27 November 2020 (federal level) |
 | B2B reception mandatory | 1 January 2025 |
@@ -54,14 +54,50 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | B2C | Not mandated -- consumer invoices may continue as paper or PDF |
 | Exemptions (B2B) | Small-amount invoices under EUR 250 (§33 UStDV); passenger transport tickets; tax-free supplies under §4 Nr. 8--29 UStG; businesses under §19 UStG (Kleinunternehmer — from 1 January 2025 the limits are EUR 25,000 prior-year and EUR 100,000 current-year turnover, up from EUR 22,000 / EUR 50,000) |
 
+> **Checked against the statute, and it holds.** Every date and figure in the two tables
+> above was verified against the consolidated text on `gesetze-im-internet.de` in
+> September 2026. Recording that explicitly because a guide being *right* is worth
+> knowing as precisely as a guide being wrong:
+>
+> - **§14 Abs. 1 UStG** defines an *elektronische Rechnung* as one "issued, transmitted
+>   and received in a structured electronic format enabling electronic processing", and
+>   makes transmission subject to the recipient's consent **except where an obligation
+>   under Abs. 2 Satz 2 Nr. 1 exists**.
+> - **§14 Abs. 2 Satz 2 Nr. 1 UStG** is that obligation: for a supply to another
+>   business for its business, the invoice **must** be issued as an electronic invoice
+>   where supplier and recipient are both established in Germany (or a §1 Abs. 3
+>   territory). Invoices under this head are due **within six months** of the supply.
+> - **Why reception binds from 1 January 2025 while issuance does not.**
+>   §27 Abs. 38 UStG relieves only what **may be transmitted** — the *issuer's* side.
+>   It gives the recipient no corresponding right to refuse, and §14 Abs. 1 removes the
+>   consent requirement wherever the Abs. 2 obligation applies. **A business must
+>   therefore be able to receive a compliant e-invoice from 1 January 2025 even though
+>   its counterparties may still send paper.** That asymmetry is the single most
+>   misread part of the German regime.
+> - **§27 Abs. 38 Nr. 1** permits paper — or, with consent, a non-EN 16931 electronic
+>   format — until **31 December 2026**, for supplies carried out after 31 December 2024
+>   and before 1 January 2027. Note paper needs **no** consent; only a non-compliant
+>   electronic format does.
+> - **§27 Abs. 38 Nr. 2** extends that to **31 December 2027** for supplies after
+>   31 December 2026 and before 1 January 2028 **only where the issuing business's total
+>   turnover (§19 Abs. 2) in the preceding calendar year was not more than EUR 800,000**.
+>   The threshold is tested on the **issuer**, not the recipient, and on the **preceding**
+>   calendar year.
+> - **§27 Abs. 38 Nr. 3** separately preserves EDI, with the recipient's consent, on the
+>   same 31 December 2027 horizon.
+> - **§19 Abs. 1 UStG** — Kleinunternehmer: prior calendar year **EUR 25,000** not
+>   exceeded and current calendar year **EUR 100,000** not exceeded. Confirmed.
+> - **§33 UStDV** — an invoice whose total does not exceed **EUR 250** needs only the
+>   reduced particulars. Confirmed.
+
 ### Transitional Rules (2025--2027)
 
 **Transitional Rules table**
 
 | Period | Rule |
 | --- | --- |
-| 2025--2026 | Businesses may still issue paper invoices or non-EN 16931 EDI invoices with buyer consent |
-| 2027 | Issuance mandatory for larger businesses; smaller businesses may still use paper with buyer consent if their turnover ≤ EUR 800,000 |
+| 2025--2026 | Businesses may still issue **paper** invoices — **no buyer consent needed** — or a non-EN 16931 electronic format **with** buyer consent (§27 Abs. 38 Nr. 1 UStG). The consent condition attaches to the electronic format, not to paper |
+| 2027 | Issuance mandatory for larger issuers; an issuer whose **prior calendar year** turnover (§19 Abs. 2) was **≤ EUR 800,000** may still use paper without consent, or a non-compliant electronic format with consent, until 31 December 2027 (§27 Abs. 38 Nr. 2). EDI is separately preserved on the same horizon, with consent (Nr. 3) |
 | 2028 onward | All domestic B2B invoices must be EN 16931-compliant structured electronic invoices |
 
 ### Timeline Summary

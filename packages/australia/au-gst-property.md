@@ -9,18 +9,18 @@ description: >
   on "GST withholding", "GST at settlement", "margin scheme", "going concern", "new residential
   premises", "subdivision GST". Covers classification, withholding mechanics, worked arithmetic
   and escalation lines. ALWAYS read this skill before touching any property GST work.
-version: 1.0
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia GST and Real Property Skill v1.0
+# Australia GST and Real Property Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, or contracts. Do not rely on it to file, pay, settle, or take a tax position without review by a qualified professional.
 
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | New residential premises | s 40-75(1): not previously sold as residential premises / no previous long-term lease (50+ years); or created by substantial renovations; or built to replace demolished premises |
 | 5-year rule | s 40-75(2): premises stop being "new" after at least 5 years used ONLY for input-taxed residential rent (para 40-35(1)(a)) |
 | Margin scheme agreement | In writing, on or before making the supply (settlement) -- s 75-5(1A); Commissioner may allow further period (PS LA 2005/16) |
-| Div 129 adjustment periods | Non-business-finance acquisitions: 2 (<= $5,000), 5 (> $5,000 and < $500,000), 10 (>= $500,000) -- s 129-20(3) |
+| Div 129 adjustment periods | Non-business-finance acquisitions: No general Div 129 adjustment at <= $1,000 GST-exclusive; 2 (> $1,000 and <= $5,000), 5 (> $5,000 and < $500,000), 10 (>= $500,000) -- s 129-20(3) |
 | Div 135 clawback | Increasing adjustment = 1/10 x supply price x proportion of non-creditable use (s 135-5) |
 | Penalty unit | $364 (from 1 July 2026) |
 | FRCGW (separate regime) | Foreign resident capital gains withholding: 15%, NO price threshold, from 1 January 2025. Income tax withholding, not GST -- different forms; both can apply to one settlement |
@@ -111,7 +111,7 @@ RW re-plumbs **payment**, not liability: the purchaser pays part of the price to
 
 | Step | Who | What |
 |---|---|---|
-| 1 | Supplier | Written **supplier notification** before settlement -- required for any sale of residential premises or potential residential land, even to say "no withholding required". If withholding applies, must state: names + ABNs of all suppliers, GST branch number (if any), the amount, when payable, and the GST-inclusive contract price. Standard land contracts in every state (not NT) embed it |
+| 1 | Supplier | Written **supplier notification** before settlement -- required for residential premises or potential residential land, even to say "no withholding required", except commercial residential premises and potential residential land bought by a GST-registered purchaser for a creditable purpose. If withholding applies, must state: names + ABNs of all suppliers, GST branch number (if any), the amount, when payable, and the GST-inclusive contract price. Standard land contracts in every state (not NT) embed it |
 | 2 | Purchaser | Lodge **Form one** online any time after exchange, up to the payment due date -- returns a **PRN** (payment reference) and **LRN** (lodgment reference) |
 | 3 | Purchaser | Lodge **Form two** within 2 business days before settlement, on the day, or the next business day after (instalment contracts: keyed to the first payment other than the deposit) |
 | 4 | Purchaser | Pay the withheld amount at settlement quoting the PRN (or hand the supplier's bank cheque process per the ATO supplier guide) |
@@ -129,7 +129,7 @@ GST on an eligible taxable sale of real property may be worked out as **1/11th o
 - **Written agreement.** Supplier and recipient must agree in writing that the margin scheme applies, **on or before the making of the supply** -- settlement, not exchange (s 75-5(1), (1A)). The Commissioner can allow a later agreement (reviewable decision; PS LA 2005/16) but never plan on it. The clause lives in the contract: sight it, never draft it (R-AU-GP-1).
 - **Eligibility.** Not available if the supplier acquired the entire interest through a supply that was *ineligible for the margin scheme* -- centrally, a fully taxable supply on which GST was worked out **without** the margin scheme (s 75-5(2), (3)). Eligible acquisition histories include: purchases from unregistered vendors, input-taxed purchases (existing residential), pre-1 July 2000 holdings, GST-free going concern or farmland acquisitions (special margin rules in s 75-11 apply -- often the vendor's acquisition cost carries through), and purchases that themselves used the margin scheme.
 - **Margin** = consideration for the sale minus consideration for the acquisition (s 75-10(2)). Development, construction, and holding costs do NOT increase the acquisition consideration -- they are recovered only through ordinary ITCs.
-- **Pre-1 July 2000 holdings:** the margin may instead be sale price minus an **approved valuation** of the property, generally as at 1 July 2000 (day of registration if registered later) -- s 75-10(3). An approved valuation must meet MSV 2020/1 (professional valuer, signed certificate, made by the required date). Valuations are refusal territory: R-AU-GP-2.
+- **Pre-1 July 2000 holdings:** the margin may instead be sale price minus an **approved valuation** of the property, generally as at 1 July 2000 (day of registration if registered later) -- s 75-10(3). An approved valuation must meet MSV 2020/1 and the applicable date and method conditions. The Library permits a professional written valuation meeting recognised valuation standards; qualifying arm's length contract consideration where the contract was signed or exchanged before the valuation date; or the most recent qualifying government rating or land-tax valuation before that date. The contract method cannot be used for land held by government and unimproved on 1 July 2000 but improved later. Method and date selection, including the required completion date, remain referral matters: R-AU-GP-2.
 - **The purchaser gets NO input tax credit** on a margin scheme acquisition (s 75-20), and no tax invoice showing GST exists. Price the deal accordingly.
 - **Flow-on:** because the purchaser's acquisition was not a fully-taxable-without-margin supply, the purchaser can itself use the margin scheme on a later taxable resale (fresh written agreement required). A full-GST purchase permanently kills margin eligibility for that interest.
 - **RW interaction:** withholding on a margin scheme sale is 7% of the contract price, credited against the actual margin GST in the supplier's BAS -- over-withholding refunds through the BAS (Example 2).
@@ -158,8 +158,8 @@ Increasing adjustment = 1/10 x supply price x proportion of non-creditable use
 
 The **build-to-sell-then-rent trap**: a developer claims full ITCs during construction (intended 100% taxable sales), then the market softens and unsold apartments are rented out. Renting is input taxed, so the extent of creditable purpose has changed -- Div 129 requires **increasing adjustments**.
 
-- **Adjustment periods (s 129-20):** the first is the tax period ending on or nearest 30 June starting at least 12 months after the acquisition's tax period; thereafter annually. Number of periods for non-business-finance acquisitions: **2** where the GST-exclusive value is $5,000 or less; **5** where more than $5,000 but under $500,000; **10** where $500,000 or more. Apartment-scale construction acquisitions are almost always in the 10-period band -- a decade of annual true-ups.
-- **Mechanic:** at each adjustment period, compare the ITC actually claimed (intended application) with the ITC that reflects **actual application** to date. Actual application below intended -> increasing adjustment (label 1A side); a later taxable sale within the adjustment periods lifts actual application and can produce decreasing adjustments.
+- **Adjustment periods (s 129-20):** the first is the tax period ending on or nearest 30 June starting at least 12 months after the acquisition's tax period; thereafter annually. Number of periods for non-business-finance acquisitions: First exclude acquisitions with GST-exclusive value of $1,000 or less from this general Div 129 adjustment. For remaining acquisitions: **2** where the value is more than $1,000 and at most $5,000; **5** where more than $5,000 but under $500,000; **10** where $500,000 or more. Apartment-scale construction acquisitions are almost always in the 10-period band -- a decade of annual true-ups.
+- **Mechanic:** at the first adjustment period, compare cumulative **actual application** with intended application. After a previous Div 129 adjustment, use that adjustment's actual application as the baseline. A fall in creditable application produces an increasing adjustment (label 1A); a rise can produce a decreasing adjustment. Record the previous and current cumulative percentages and the resulting change for each acquisition.
 - **Dual concurrent use:** while a rented apartment is still genuinely held for sale, the application is split between taxable-sale purpose and input-taxed renting. GSTR 2009/4 accepts fair and reasonable methods (e.g. expected sale proceeds vs total expected consideration, or time-based weighting). Method choice is judgement-heavy -- compute a sketch, flag the method, and escalate sign-off.
 - **Interaction with the 5-year rule:** if the developer stops marketing and rents solely, the 5-year clock starts; once premises stop being new, the eventual sale is input taxed and adjustments trend the credits toward nil. Selling while still new keeps the sale taxable (and RW applies).
 
@@ -209,7 +209,9 @@ BuildCo claimed $55,000 of ITCs per apartment on development costs of $550,000 (
 Increasing adjustment = 4 x $55,000 x (100% - 80%) = $44,000
 ```
 
-Repeated (recomputed on cumulative actual use) at each of the remaining adjustment periods. If an apartment sells as new residential premises in 2029, that sale is taxable (RW applies) and later periods can throw off decreasing adjustments; if BuildCo instead delists and rents solely for 5+ years, the premises stop being new, the sale becomes input taxed, and the credits unwind toward nil. Method selection and the register need tax agent sign-off -- sketch, flag, escalate.
+At the next adjustment period, cumulative actual use of 80% is compared with the previous 80%, so the adjustment is nil. If cumulative use then rises to 90%, the decreasing adjustment is $220,000 x (90% - 80%) = $22,000. Retain each previous adjustment's actual application in the register; do not reuse the original 100% after an adjustment. If an apartment sells as new residential premises in 2029, that sale is taxable (RW applies) and later periods can throw off decreasing adjustments; if BuildCo instead delists and rents solely for 5+ years, the premises stop being new, the sale becomes input taxed, and the credits unwind toward nil. Method selection and the register need tax agent sign-off -- sketch, flag, escalate.
+
+A $660 GST-inclusive desk is below the $1,000 GST-exclusive exclusion, so a change from wholly business use to half private use does not create a general Div 129 adjustment. A separate $4,400 GST-inclusive computer falls in the two-period band. Apply the threshold per acquisition and check other adjustment provisions separately. (Library, GST/GST Adjustments.)
 
 ### Example 5 -- Subdivision enterprise assessment
 
@@ -236,7 +238,7 @@ Property GST problems surface in the ledger before anyone mentions them:
 If a trigger fires: stop, output the message, escalate. These sit on top of the base skill's R-AU-1 to R-AU-5.
 
 - **R-AU-GP-1 -- Contract clause drafting.** Trigger: any request to draft, amend, or "fix" a margin scheme clause, going concern clause, GST gross-up, or supplier notification wording. Message: "GST clauses in land contracts are legal drafting with settlement-critical consequences -- a defective margin scheme or going concern clause changes the tax by 1/11th of the price and cannot always be repaired after settlement. Please have the clause drafted or reviewed by a property lawyer; a registered tax agent can confirm the GST position it needs to achieve."
-- **R-AU-GP-2 -- Margin scheme valuations.** Trigger: any request to estimate, produce, or bless a valuation (especially as at 1 July 2000) for Div 75. Message: "Margin scheme valuations must be approved valuations meeting MSV 2020/1, made by a professional valuer with a signed certificate. I cannot estimate historical land values. Please engage a registered valuer and have a registered tax agent confirm the method and date."
+- **R-AU-GP-2 -- Margin scheme valuations.** Trigger: any request to estimate, produce, or bless a valuation (especially as at 1 July 2000) for Div 75. Message: "Margin scheme valuations must meet MSV 2020/1. Qualifying contract consideration and government rating or land-tax valuations are alternatives to the professional-valuer method, subject to their conditions. I cannot estimate historical land values or select the method and date. Have a registered tax agent confirm those matters and engage a valuer if the professional-valuer method is required."
 - **R-AU-GP-3 -- GST grouping / joint venture property structures.** Trigger: property held or moved within a Div 48 GST group or Div 51 joint venture, or restructure proposals. Message: "Intra-group and joint venture supplies have special rules (including disregarded supplies that preserve 'new' status under s 40-75(2A)). This requires structure-level advice from a registered tax agent."
 - **R-AU-GP-4 -- Commercial residential classification.** Trigger: hotels, motels, boarding houses, serviced apartments, student accommodation, caravan parks -- any question of whether premises are commercial residential. Message: "Commercial residential classification under GSTR 2012/6 is fact-intensive and heavily contested; it flips supplies between taxable, input taxed, and the Div 87 concession. Please escalate to a registered tax agent."
 - **R-AU-GP-5 -- Retirement villages.** Trigger: retirement village entry payments, deferred management fees, serviced apartments in villages. Message: "Retirement village GST sits under its own rulings and concessions and interacts with state retirement villages legislation. Out of scope -- specialist advice required."

@@ -3,7 +3,8 @@ name: bw-vat-gst
 description: "Source-cited draft: vat / gst for Botswana (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BW
 tax_year: 2025
-last_updated: 2026-07-13
+version: 0.1
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,16 +14,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## VAT rates
 
-- **Standard VAT rate** — 14%. A rise to 15% was proposed for 1 April 2025 and cannot be confirmed as enacted: PwC's Worldwide Tax Summaries VAT chart still shows 14% for Botswana in 2026, and BURS serves a bot check rather than its rate page. Treat 14% as operative and confirm with BURS before relying on it for a period after 1 April 2025  _(Value Added Tax Act (Cap. 50:03) — https://taxsummaries.pwc.com/botswana/corporate/other-taxes)_
+- **Standard VAT rate** — 14%. The rise to 15% proposed for 1 April 2025 appears never to have taken effect. As recorded in the September 2026 research pass, PwC's 2026 VAT chart, a BURS zero-rated foodstuffs notice issued under the VAT Act, and the bulk of 2026 secondary sources all give 14%. One outlier still describes a 15% rate from 1 April 2025; it is alone and later sources do not follow it. Use 14%, and confirm with BURS before relying on it for a period after 1 April 2025  _(Value Added Tax Act (Cap. 50:03) — https://taxsummaries.pwc.com/botswana/corporate/other-taxes)_
 - **Zero-rated supplies** — 0% % (e.g. exports and certain basic foodstuffs (e.g. sorghum, maize meal, certain agricultural inputs) — Confirm the current zero-rated schedule)  _(Value Added Tax Act (Cap. 50:03) — https://www.burs.org.bw/index.php/tax/value-added-tax)_
 - **Exempt supplies** — Exempt (no VAT, no input credit) — e.g. prescribed financial services, residential accommodation, certain education and medical services (Confirm the current exempt schedule)  _(Value Added Tax Act (Cap. 50:03) — https://www.burs.org.bw/index.php/tax/value-added-tax)_
 
-Botswana levies VAT under the Value Added Tax Act. The standard rate is 14% (a rise to 15% from 1 April 2025 was proposed; PwC, reviewed January 2026, still lists 14% — confirm the applicable rate with BURS). Certain supplies are zero-rated or exempt.
+Botswana levies VAT under the Value Added Tax Act. The standard rate is **14%**; the rise to 15% proposed for 1 April 2025 appears never to have taken effect, with PwC's 2026 chart and a BURS notice under the VAT Act both giving 14% well over a year on. Certain supplies are zero-rated or exempt.
 
 ## Registration
 
 - **Compulsory registration threshold** — 1,000,000 BWP (of annual taxable turnover)  _(Value Added Tax Act (Cap. 50:03) — https://taxsummaries.pwc.com/botswana/corporate/other-taxes)_
-- **Voluntary registration** — Permitted below the BWP 1,000,000 threshold BWP  _(Value Added Tax Act (Cap. 50:03) — https://www.doingbusiness.co.bw/registering-for-vat)_
+- **Voluntary registration** — Permitted below the BWP 1,000,000 threshold BWP (source replaced, claim not re-verified: this was cited to a `doingbusiness.co.bw` page that now returns "Under Construction" and a shopping cart. The Botswana Unified Revenue Service publishes the domestic-tax legislation and its rulings and directives; confirm the provision there)  _(Value Added Tax Act (Cap. 50:03) — Botswana Unified Revenue Service, https://www.burs.org.bw/)_
 - **Non-resident remote-services registration** — 500,000 BWP (of taxable supplies over 12 months (remote/electronic services); Introduced via the 2025 VAT amendment for digital services — confirm commencement date)  _(Value Added Tax (Amendment) Act, 2025 — https://bw.andersen.com/botswanas-value-added-tax-amendment-bill-2025-modernising-the-vat-landscape/)_
 
 Compulsory VAT registration applies once taxable turnover crosses the threshold; smaller businesses may register voluntarily.

@@ -6,7 +6,7 @@ version: 1.0
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027 (1 April 2026 - 31 March 2027)"
-last_updated: 2026-08-02
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -198,7 +198,9 @@ Expense payment/property/residual/loan benefits: taxable value reduced by what t
 
 ### Rule 11 -- LAFHA (standard cases only)
 
-Concessional LAFHA treatment: employee maintains an Australian home they're living away from, first 12 months at a location (FIFO/DIDO excepted from both), declaration held. Exempt food component limited to the reasonable amounts in TD 2026/2 (year ending 31 March 2027: $353/week one adult within Australia; $530 two adults; statutory food amount $42/week adult, $21/week child under 12 deducted first). Within reasonable amounts -> no substantiation of food; above -> full substantiation. Travelling-vs-LAFH boundary: MT 2030's 21-day rule is WITHDRAWN; TR 2021/4 governs, with PCG 2021/3 safe harbour (<= 21 continuous days away and < 90 days at one location in the year) the practical screen.
+Concessional LAFHA treatment: employee maintains an Australian home they're living away from, first 12 months at a location (FIFO/DIDO excepted from both), declaration held. Exempt food component limited to the reasonable amounts in TD 2026/2 (year ending 31 March 2027: $353/week one adult within Australia; $530 two adults; statutory food amount $42/week adult, $21/week child under 12 deducted first). Within reasonable amounts -> no substantiation of food; above -> full substantiation.
+
+Travelling-vs-LAFH boundary: MT 2030's 21-day rule is WITHDRAWN; TR 2021/4 governs. The PCG 2021/3 compliance approach permits no more than 21 continuous calendar days per stay and no more than 90 calendar days in total at the same work location in the FBT year. Count departure days as directed in paragraph 13. The employee must be away from their normal residence for work, outside FIFO/DIDO arrangements, and return when practicable. Paragraph 12 also requires the employer's qualifying allowance or expense payment, no salary packaging or additional-remuneration option, appropriate reporting and withholding, and substantiating records. Six qualifying 15-day stays meet the numerical limits. Failing the guideline alone does not establish LAFHA treatment; apply TR 2021/4 to the facts.
 
 ### Rule 12 -- Record-keeping exemption and loan benchmark
 
@@ -293,7 +295,7 @@ REVIEWER FLAGS
 1. Sweep the accounts in Section 3.1 for the FULL FBT year (1 Apr - 31 Mar) -- not the income year; a July-June income-year export misses Q1 of the FBT year (April-June 2026, the prior income year's final quarter). Export 1 April to 31 March exactly.
 2. Entertainment split first: sustenance out, client share identified, per-head amounts for the minor benefit test.
 3. Motor vehicles: match every vehicle carrying costs in the GL to the car register; a car with running costs but no register entry is the classic missed benefit.
-4. Reimbursements and round-dollar payments to employees: expense payment benefits until shown otherwise-deductible.
+4. Separate actual-expense reimbursements from ordinary fixed cash allowances. Reimbursements may be expense payment benefits with supported otherwise-deductible reductions; ordinary allowances are employee assessable income requiring payroll treatment. Classify LAFHA and kilometre-based car reimbursements separately before applying FBT rules.
 5. Directors' debit loans: route via Div 7A first (T2-6).
 
 ---

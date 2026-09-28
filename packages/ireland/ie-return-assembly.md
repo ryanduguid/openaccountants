@@ -3,7 +3,7 @@ name: ie-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package an Irish annual tax return. Trigger on phrases like "Ireland tax return assembly", "Form 11 final", "CT1 final filing", "ROS submission Ireland", "preliminary tax Ireland", "31 October Ireland", "assemble Irish return", "prepare Form 11", "prepare Form 12", "finalize Irish self-assessment", or "Revenue Online Service pay and file". This is the capstone orchestrator that pulls together outputs from ie-income-tax-form11, ie-preliminary-tax, ie-prsi-class-s, ie-usc, ireland-vat-return, ie-corporation-tax, ie-paye, ie-payroll, ie-cgt, ie-cat, and ie-formation into a single Form 11 / Form 12 / CT1 working paper plus payment and filing instructions for the Revenue Online Service (ROS). It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line working paper, generates ROS payment instructions, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing an Irish tax return.
 jurisdiction: IE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -599,7 +599,7 @@ The capstone produces a forward-looking section so the taxpayer arrives at next 
 
 ### 10.4 R&D tax credit (corporates)
 
-- **R&D credit rules** — - Standard rate 25% on qualifying R&D expenditure (s766 TCA 1997) - **First €75,000** of qualifying expenditure attracts uplift to **30%** (Finance Act 2024 — TBC; verify current Finance Act language) - Three-year payable in cash refund (if no CT liability to offset) - Documentation: scientific narrative + financial schedule must be retained  _(s766 TCA 1997; Finance Act 2024)_
+- **R&D credit rules** — - **35%** of qualifying R&D expenditure for accounting periods **beginning on or after 1 January 2026** (Finance Act 2025). It was **30%** for periods commencing on or after 1 January 2024 (Finance (No. 2) Act 2023, up from 25%). - The **€87,500** figure is the **first-instalment payment threshold**, not a rate band: where the claim does not exceed it the whole credit is paid in the first instalment. Finance Act 2025 raised that threshold from €75,000, which itself replaced €50,000 under Finance Act 2024. - Otherwise payable in cash over three instalments where there is no CT liability to offset. - Documentation: scientific narrative + financial schedule must be retained. **This bullet previously read "standard rate 25% ... first €75,000 of qualifying expenditure attracts uplift to 30%", which conflated the payment threshold with a rate band and was two Finance Acts behind. It also contradicted `ie-corporation-tax`, which had the 30% right.**  _(s766 TCA 1997; Finance (No. 2) Act 2023; Finance Act 2024; Finance Act 2025)_
 
 ### 10.5 Pillar Two (in-scope groups only)
 

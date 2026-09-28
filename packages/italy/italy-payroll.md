@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Italian payroll processing for 
 version: 1.0
 jurisdiction: IT
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -310,7 +310,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Item | Detail |
 | --- | --- |
 | Modello 730 (assisted tax return) | Submission windows: April -- September; employer/CAF processes refund/debit in July--November payroll |
-| Modello Redditi PF | Alternative to 730; deadline 30 November |
+| Modello Redditi PF | Alternative to 730; deadline **31 October** (30 November was the deadline before the 2024 filing season) |
 
 ## Section 9 -- Common Payroll Patterns
 

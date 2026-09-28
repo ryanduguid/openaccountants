@@ -3,7 +3,7 @@ name: ng-personal-income-tax
 description: Use this skill whenever asked about Nigerian Personal Income Tax (PIT) for individuals and sole traders / self-employed professionals filing an annual self-assessment return. Trigger on phrases like "Nigeria PIT", "Personal Income Tax Nigeria", "annual return Nigeria", "self-employed Nigeria tax", "self-assessment Nigeria", "PITA self-employed", "NTA 2025 individuals", "Nigeria Tax Act 2025 individuals", "consolidated relief allowance Nigeria", "CRA Nigeria", "minimum tax Nigeria", "state IRS filing", "SIRS annual return", "FIRS individual return FCT", "income tax Lagos", "income tax Abuja", or "Nigerian sole trader tax return". Covers tax year 2025 under PITA (Cap P8 LFN 2004 as amended through Finance Act 2023) plus the transitional treatment of the Nigeria Tax Act 2025 (effective 1 January 2026) for forward planning, including progressive brackets (7-24%), Consolidated Relief Allowance, minimum tax floor, capital allowances under the Fifth Schedule, WHT credits, life-insurance / pension / NHF / NHIS reliefs, and annual self-assessment filing to the State Internal Revenue Service (SIRS) — with FIRS jurisdiction reserved for FCT residents, members of the armed forces and police, foreign-service officers, and non-residents earning Nigeria-source income. Out of scope — employer-side payroll PAYE mechanics, PAYE return preparation, monthly PAYE remittance and statutory deductions (see ng-paye); corporate income tax / companies (CIT) and dividend WHT (see ng-cit); petroleum profits tax; partial-year residency and treaty tie-breaker analysis. ALWAYS read this skill before touching any Nigerian PIT work for individuals.
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 reviewed_by: Omolola Fasasi
 review_status: current
 tier: 2
@@ -54,7 +54,7 @@ Nigeria — Personal Income Tax (PIT) — Skill v1.0
 | Currency | NGN (Nigerian Naira) only — no kobo on the return |
 | Tax year | Calendar year (1 January – 31 December) |
 | Primary legislation (FY 2025) | Personal Income Tax Act, Cap P8 LFN 2004, as amended by Finance Acts 2019, 2020, 2021, 2023 |
-| Successor legislation | **Nigeria Tax Act 2025 (NTA 2025)** — assented June 2025; effective **1 January 2026**. **FY 2025 is the final year under PITA**. NTA 2025 figures herein are flagged "TBC under NTA 2025 implementing regulations" pending final commencement. |
+| Successor legislation | **Nigeria Tax Act 2025 (NTA 2025)** — assented June 2025, **commenced 1 January 2026 and now in force**. FY 2025 was the final year under PITA. Which law applies is a date test: periods ending before 1 January 2026 take the repealed laws, periods ending from that date take NTA 2025. Remaining "TBC" markers in this pack predate both commencement and the Federal Ministry of Finance Transition Guidelines — check those before treating one as still open. |
 | Filing authority — residents outside FCT | State Internal Revenue Service (SIRS) of the state of residence (Lagos LIRS, Rivers RIRS, Kano KIRS, etc.) |
 | Filing authority — FCT residents | Federal Inland Revenue Service (FIRS) |
 | Filing authority — armed forces, police, foreign-service officers, non-residents with Nigeria-source income | FIRS (PITA s 2(1)(b)) |
@@ -78,7 +78,7 @@ Nigeria — Personal Income Tax (PIT) — Skill v1.0
 | Next 1,600,000 (1,600,001 – 3,200,000) | 21% | 560,000 |
 | Above 3,200,000 | 24% | — |
 
-### Progressive Tax Rates — NTA 2025 (effective FY 2026 onward — forward-planning only)
+### Progressive Tax Rates — NTA 2025 (in force from 1 January 2026 — the current-year table)
 
 **Progressive Tax Rates — NTA 2025, Fourth Schedule (in force from 1 January 2026)**
 
@@ -278,7 +278,11 @@ Under NTA 2025 (FY 2026 onward), CRA is replaced by a higher tax-free threshold 
 | Self-employed / sole trader | Treated identically to other individuals for PIT | Continues; with simplified small-business presumptive option (TBC) |
 | Commencement | — | 1 January 2026 |
 
-**Action for FY 2025 returns:** Always apply PITA. Use NTA 2025 only to flag what changes in FY 2026 for client planning. Where a question concerns FY 2026 specifically, mark every NTA 2025 figure with "TBC — verify against the gazetted NTA 2025 implementing regulations" and defer to a Nigerian tax practitioner for final confirmation.
+**Which law applies is a date test, not a year label.** NTA 2025 **commenced on 1 January 2026** and is in force. Returns for accounting periods ending **before** 1 January 2026 are filed under the repealed laws (PITA and the rest); returns for periods ending **from** 1 January 2026 onward are administered under NTA 2025. Liabilities, assessments, audits, investigations and disputes relating to pre-2026 periods also stay under the repealed laws.
+
+This paragraph previously read "**Action for FY 2025 returns:** Always apply PITA. Use NTA 2025 only to flag what changes in FY 2026 for client planning." That was right when it was written and describes the minority case now — FY 2026 is the current year, so most work in front of a reader today falls under NTA 2025, not PITA. Establish the accounting period end before choosing a law.
+
+Where a figure is still uncertain, mark it "TBC — verify against the gazetted NTA 2025 text and implementing regulations" and defer to a Nigerian tax practitioner. Note that the Federal Ministry of Finance has since issued **General / Transition Guidelines** for the Tax Acts 2025, covering income taxes, transaction taxes, incentives, exemptions, record-keeping and transactions spanning both regimes. The TBC markers in this pack were written before those guidelines existed, so check them there first  _(Nigeria Tax Act 2025, commencement 1 January 2026; Federal Ministry of Finance, Transition Guidelines for the Tax Acts 2025)_
 
 ## Section 6 — Worked Example
 

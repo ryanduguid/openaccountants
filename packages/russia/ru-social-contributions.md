@@ -4,7 +4,7 @@ description: Use this skill whenever asked about insurance contributions (стр
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -70,7 +70,7 @@ Every ИП pays a **single fixed contribution** for the year covering both об�
 
 ### 2.2 The additional 1% (взнос с дохода свыше 300 000 ₽)
 
-- **1% contribution formula** — 1% contribution = (annual income − 300,000 ₽) × 1% capped at 321,818 ₽ for 2026   (verify current value)
+- **1% contribution formula** — 1% contribution = (annual income − 300,000 ₽) × 1%, capped at **321,818 ₽** for 2026. Confirmed. It sits on top of the fixed contribution of **57,390 ₽** for 2026, and the 1% part is due by **1 July of the following year** while the fixed part is due by 28 December
 
 On top of the fixed part, an ИП pays **1% of annual income exceeding 300,000 ₽**, credited to pension insurance (ОПС) only.
 

@@ -3,7 +3,7 @@ name: om-income-tax
 description: "Source-cited draft: personal income tax for Oman (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: OM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ For tax year 2025 Oman levies NO personal income tax on individuals — there ar
 - **Individual residence test (from 2028)** — Resident if present in Oman for 183 days or more in the tax year (or an Omani citizen) (approx — confirm exact day-count rule in Executive Regulations)  _([Personal Income Tax Law (Royal Decree No. 56/2025)](https://www.ey.com/en_gl/technical/tax-alerts/oman-to-introduce-personal-income-tax-from-january-2028))_
 - **Exempt income types (from 2028)** — Gain on sale of a primary residence, certain foreign salary, gifts, and inheritance are expected to be excluded (approx — confirm; detailed exemptions await Executive Regulations)  _([Personal Income Tax Law (Royal Decree No. 56/2025)](https://www.deloitte.com/middle-east/en/services/tax/perspectives/oman-personal-income-tax-law-issued.html))_
 - **Deductions / reliefs (from 2028)** — The law contemplates deductions for items such as education, healthcare, housing, zakat/donations and other social allowances (approx — confirm; specifics await Executive Regulations)  _([Personal Income Tax Law (Royal Decree No. 56/2025)](https://www.deloitte.com/middle-east/en/services/tax/perspectives/oman-personal-income-tax-law-issued.html))_
-- **Executive Regulations timing** — Detailed procedures, forms and timelines expected within one year of the law's publication (by ~30 June 2026) (approx — confirm)  _([Personal Income Tax Law (Royal Decree No. 56/2025)](https://kpmg.com/xx/en/our-insights/gms-flash-alert/flash-alert-2025-122.html))_
+- **Executive Regulations timing — the deadline has passed** — The PIT Law was published in the Official Gazette on **30 June 2025**, so the Executive Regulations were due within twelve months, by **29 June 2026**. That date is behind us and **no Executive Regulations have been identified as issued as at September 2026**. Every "(approx — confirm; awaits Executive Regulations)" hedge above is therefore still live rather than about to resolve, and should not be read as a formality that has since been settled. The Oman Tax Authority also announced phased guidance manuals — **residency rules (Q4 2025)**, **deductions and exemptions (Q2 2026)** and **payroll withholding standards (Q4 2026)** — which are a separate track from the Regulations and may answer some of these points sooner. Check the Tax Authority portal for both before advising  _([Personal Income Tax Law (Royal Decree No. 56/2025), Official Gazette 30 June 2025](https://kpmg.com/xx/en/our-insights/gms-flash-alert/flash-alert-2025-122.html); Oman Tax Authority phased guidance schedule)_
 - **Non-resident individual tax (2025)** — None — non-residents pay no personal income tax on Oman-source employment income in 2025  _([Personal Income Tax Law (Royal Decree No. 56/2025)](https://taxsummaries.pwc.com/oman/individual/taxes-on-personal-income))_
 - **Capital gains (individuals, 2025)** — No separate capital gains tax on individuals' personal investments in 2025 (approx — confirm)  _([Personal Income Tax Law (Royal Decree No. 56/2025)](https://taxsummaries.pwc.com/oman/individual/other-taxes))_
 

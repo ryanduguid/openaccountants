@@ -4,7 +4,7 @@ description: Use this skill whenever asked about North Macedonia (Republic of No
 version: 0.1
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -107,7 +107,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-MK-SSC-1 -- Self-employed / sole trader contributions** — Trigger: worker is self-employed (трговец поединец / sole proprietor) rather than an employee. Message: "Self-employed contribution bases and the annual self-employed return (due 15 March, settlement 30 June) follow a different ceiling (MKD 757,848/month) and advance-payment regime. Confirm the regime with a North Macedonia tax professional before computing."  _(UJP via Bloomberg Tax; PwC)_
 - **R-MK-SSC-2 -- Penalty / arrears quantification** — Trigger: client asks for the exact fine for late or missing MPIN/contribution filing. Message: "Penalty amounts for payroll/contribution non-compliance follow case-by-case statutory formulas under the General Tax Procedure Law; the illustrative figures in this skill are drawn from the VAT misdemeanour scale and are NOT contribution-specific. Escalate to a North Macedonia tax professional." [RESEARCH GAP — reviewer to confirm exact misdemeanour fines for late MPIN/contribution filing against the current statute]  _(KPMG; PwC)_
 - **R-MK-SSC-3 -- Expat / cross-border / posted workers** — Trigger: worker is a non-resident, posted worker, or covered by a totalisation/social-security agreement. Message: "Residency (worldwide vs Macedonia-sourced) and totalisation-agreement coverage change the contribution and PIT outcome materially. Residents are taxed on worldwide income; non-residents only on Macedonia-sourced income. Escalate to a North Macedonia tax professional."  _(PwC)_
-- **R-MK-SSC-4 -- Pillar Two / corporate top-up tax** — Trigger: client asks how the 15% minimum tax interacts with payroll. Message: "The Pillar Two domestic minimum top-up tax of 15% for in-scope MNE groups (Official Gazette No. 3/2025, effective 1 Jan 2025) is a corporate-level tax and does not change employee social contributions or the flat 10% PIT. Escalate corporate-tax questions to a North Macedonia tax professional."  _(KPMG; Mondaq)_
+- **R-MK-SSC-4 -- Pillar Two / corporate top-up tax** — Trigger: client asks how the 15% minimum tax interacts with payroll. Message: "The minimum global profit tax of 15% for in-scope MNE groups and large domestic groups (*Закон за минимален глобален данок на добивка*, Official Gazette of RNM No. 3 of 3 January 2025) is a corporate-level tax and does not change employee social contributions or the flat 10% PIT. Escalate corporate-tax questions to a North Macedonia tax professional." **The date previously given here — "effective 1 Jan 2025" — was wrong.** Article 59(1) applies the Act to fiscal years beginning **1 January 2024**; only the undertaxed profits rule in articles 14–16 starts from 1 January 2025 (art. 59(2)). See `mk-corporate-income-tax`  _(Law on the Minimum Global Profit Tax, arts. 59 and 61 — https://ujp.gov.mk/mk/regulativa/opis/437)_
 
 ## Section 4 -- Payment pattern library
 
@@ -466,7 +466,7 @@ If the client provides only a bank statement and no other information:
 | Personal income tax (employment & most income) | 10% flat | Effective 1 Jan 2023; replaced 10%/18% progressive | PwC; KPMG |
 | Capital gains on securities/shares held > 2 years | 0% | Exempt if held over 2 years | PwC |
 | Games of chance | 15% | n/a | PwC |
-| Corporate income tax | 10% flat | Pillar Two 15% minimum top-up for in-scope MNE groups from 1 Jan 2025 (Official Gazette 3/2025) | KPMG; Mondaq |
+| Corporate income tax | 10% flat | Minimum global profit tax: 15% for in-scope MNE groups **and large domestic groups**, applying to fiscal years beginning **1 January 2024** (art. 59(1)); the undertaxed profits rule only from 1 January 2025 (art. 59(2)). Published Official Gazette of RNM No. 3 of 3 January 2025 | Law on the Minimum Global Profit Tax, via ujp.gov.mk |
 
 ### Forms
 

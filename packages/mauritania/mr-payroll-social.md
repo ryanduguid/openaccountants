@@ -3,7 +3,7 @@ name: mr-payroll-social
 description: "Source-cited draft: payroll & social contributions for Mauritania (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Employers withhold salary income tax (ITS) under PAYE-style rules and pay social-security contributions to the CNSS, plus health-insurance contributions to the CNAM. Contributions are computed on capped monthly wages.
 
-- **CNSS employer contribution (total)** — 15% of capped gross salary percent  _(Code de la Sécurité Sociale (Social Security Code) — https://taxsummaries.pwc.com/mauritania/corporate/other-taxes)_
+> **The employer total does not equal its own components.** The four employer
+> branches listed below are 5% + 4% + 5% + 2% = **16%**, against a stated **15%**.
+> Neither figure has been checked against the CNSS, so which one is wrong cannot
+> be settled from this file. Do not adjust a branch to make the addition work —
+> get the CNSS schedule and replace the block.
+
+- **CNSS employer contribution (total)** — 15% of capped gross salary percent (see the note above; this does not equal its listed branches)  _(Code de la Sécurité Sociale (Social Security Code) — https://taxsummaries.pwc.com/mauritania/corporate/other-taxes)_
 - **CNSS employer — retirement/old age** — 5% percent  _(Code de la Sécurité Sociale (Social Security Code) — https://taxsummaries.pwc.com/mauritania/corporate/other-taxes)_
 - **CNSS employer — family allowances** — 4% percent  _(Code de la Sécurité Sociale (Social Security Code) — https://taxsummaries.pwc.com/mauritania/corporate/other-taxes)_
 - **CNSS employer — work accidents** — 5% percent  _(Code de la Sécurité Sociale (Social Security Code) — https://taxsummaries.pwc.com/mauritania/corporate/other-taxes)_

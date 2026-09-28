@@ -3,13 +3,21 @@ name: gr-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Greek VAT return (Periodiki Dilosi FPA) for a self-employed individual or small business in Greece. Trigger on phrases like "prepare VAT return", "do the VAT", "Greek VAT", "FPA", "myAADE", "TAXISnet", or any request involving Greece VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Greece only and only standard normal-regime registrations. Small business exemption (Art. 39), farmers flat-rate (Art. 41), travel agent scheme (Art. 43), and VAT groups are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Greek VAT work.
 jurisdiction: GR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-13
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # greece-vat-return
+
+<!-- einvoice-xref -->
+> **This pack has a separate e-invoicing guide: `greece-einvoice`.** This guide does not
+> cover it. Where a jurisdiction operates a mandatory electronic-invoicing or
+> real-time-reporting regime, the obligations and any consequences for input-tax
+> recovery sit in that guide — read it alongside this one before filing or advising.
+> **No claim about that jurisdiction's regime is made here**; this is a pointer only.
+
 
 ## Section 1 — Quick reference
 

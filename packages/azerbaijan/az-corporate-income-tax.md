@@ -3,7 +3,7 @@ name: az-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Azerbaijan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +20,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Withholding tax on dividends** — 5% percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
 - **Withholding tax on interest** — 10% percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
 - **Withholding tax on royalties** — 14% percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
-- **Withholding on other non-resident Azerbaijan-source income / services** — 10% percent ((approx — confirm) varies by income type; treaty relief may apply)  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
+- **Withholding on other non-resident Azerbaijan-source income / services** — **10%** on Azerbaijani-source income of a non-resident not connected with a permanent establishment where no more specific category applies. Management and service fees are not a separate head in the Tax Code, so they land here at 10%. Treaty relief may reduce it percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
+- **Withholding on rent (movable and immovable property)** — **14%** — the same rate as royalties, and three times the insurance rate, so the characterisation of an equipment payment as rent rather than a service matters percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
+- **Withholding on risk insurance and reinsurance premiums** — **4%** percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
+- **Withholding on telecommunications and international transport services** — **6%** percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
+- **Payments to favourable-tax-regime jurisdictions** — A direct **or indirect** payment to a person in a country with a favourable tax regime is **deemed to be Azerbaijani-source income** and withheld at **10%**. This catches payments that would otherwise sit outside the charge entirely, so the payee's jurisdiction has to be checked before concluding no Azerbaijani withholding arises percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
 - **Annual profit tax return filing deadline** — 31 March of the year following the tax year  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/tax-administration)_
 - **Final profit tax payment deadline** — 31 March (same date as the return)  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/tax-administration)_
 - **Quarterly advance (current) payments** — Due by the 15th day of the month following each quarter; instalments must total at least 75% of accrued tax  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/tax-administration)_

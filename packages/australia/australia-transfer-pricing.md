@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australia transfer pricing rule
 version: 1.0
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-14
 review_status: pending_review
 depends_on:
   - transfer-pricing-workflow-base
@@ -28,8 +28,8 @@ Australia Transfer Pricing Skill v1.0
 | Country | Australia (Commonwealth of Australia) |
 | Tax authority | Australian Taxation Office (ATO) |
 | Key TP legislation | Subdivision 815-B, Income Tax Assessment Act 1997 (ITAA 1997) |
-| Documentation | Subdivision 815-D ITAA 1997; Division 284-E, Schedule 1, Tax Administration Act 1953 (TAA 1953) |
-| CbCR legislation | Division 815-E ITAA 1997 |
+| Documentation | Subdivision 284-E, Schedule 1, *Taxation Administration Act 1953* (TAA 1953), for special penalty documentation. Subdivision 815-D ITAA 1997 applies the TP rules to trusts and partnerships |
+| CbCR legislation | Subdivision 815-E ITAA 1997 |
 | OECD member? | Yes |
 | BEPS signatory? | Yes |
 | Currency | AUD |
@@ -44,15 +44,20 @@ Australia Transfer Pricing Skill v1.0
 
 | Item | Detail |
 | --- | --- |
-| Required? | Yes -- all taxpayers with international related-party dealings must keep records demonstrating arm's length conditions |
-| Timing | Contemporaneous -- prepared before lodging income tax return |
-| Penalty relevance | Without contemporaneous documentation, cannot establish "reasonably arguable position" (RAP) |
+| General records | Keep records required by the general tax record-keeping rules. These duties remain separate from the special TP penalty-documentation rules |
+| Special TP documentation | Subdivision 284-E does not itself mandate preparing or keeping this documentation. Meeting it is necessary to rely on a reasonably arguable position (RAP) for the relevant penalty treatment |
+| Timing and content for that treatment | Prepare before lodging the relevant return, in English or readily accessible and convertible into English. Explain the application or non-application of Subdivision 815-B or 815-C and consistency with the relevant guidance |
+| Penalty relevance | Without compliant records, RAP is unavailable for that treatment. Having records does not itself prove RAP |
 
-### 2.2 Three-Tier Documentation (Significant Global Entities)
+The special documentation treatment does not remove general record-keeping or mandatory CBC filing obligations. See [PS LA 2014/2 paragraphs 8AM to 8AT](https://www.ato.gov.au/law/view/document?docid=%22PSR%2FPS20142%2FNAT%2FATO%2F00001%22).
 
-Applies to entities in groups with consolidated annual global income ≥ AUD 1 billion:
+### 2.2 Three-tier documentation: CBC reporting entities
 
-**Three-Tier Documentation (Significant Global Entities)**
+For periods starting on or after 1 July 2019, test CBC reporting entity status separately from significant global entity (SGE) status. A CBC reporting entity is a CBC reporting parent or a member of its accounting-consolidated or notional listed company group. The parent's annual global income must be at least AUD 1 billion. Individuals cannot be CBC reporting parents or entities.
+
+CBC reporting entities form a subset of SGEs. Investment-entity consolidation exceptions can apply differently, so the SGE test alone is insufficient. CBC reporting for an income year is triggered by status in the previous income year. Establish the relevant period, applicable exemptions and which documents must be lodged before assigning the following duties. See [ATO CBC reporting entity rules](https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/public-business-and-international/country-by-country-reporting-entities).
+
+**Three-tier documents, where required**
 
 | Document | Detail |
 | --- | --- |
@@ -74,7 +79,7 @@ Applies to entities in groups with consolidated annual global income ≥ AUD 1 b
 
 ### 2.4 Short Form Local File
 
-- **Short Form Local File availability** — Available for entities with lower-risk or less material international related-party dealings that still meet the AUD 1 billion threshold.  _(unsure)_
+- **Short Form Local File availability**: First establish CBC reporting obligations under section 2.2. Then use the relevant year's local-file instructions to determine whether the short form alone is sufficient or full local-file information is required. Group income or SGE status alone does not determine this.
 
 ## Section 3 -- Arm's Length Standard
 
@@ -103,6 +108,17 @@ Applies to entities in groups with consolidated annual global income ≥ AUD 1 b
 
 - **Self-assessment system** — Australia operates a self-assessment system -- taxpayers must determine and apply arm's length conditions without prior ATO approval.  _(unsure)_
 
+### 3.5 Unresolved country requirements
+
+The foundation workflow requires the following country-specific fields. They remain unresolved in this guide:
+
+| Required field | Missing information |
+| --- | --- |
+| Benchmarking requirements | Australian versus regional comparables, acceptable databases and refresh frequency for the relevant transaction and period |
+| Currency and exchange rates | The AUD output label does not establish whether to use spot, average or year-end rates, or the official rate source for each calculation |
+
+Obtain the applicable Australian source and document the selected approach before benchmarking or converting amounts. Record these gaps in the reviewer brief and leave the affected analysis pending. Do not invent comparables, default the exchange-rate basis or mark the documentation complete or ready for filing while either required field is unresolved. The foundation's data, method and ten completion checks remain mandatory.
+
 ## Section 4 -- Filing Obligations
 
 **Filing Obligations**
@@ -110,9 +126,9 @@ Applies to entities in groups with consolidated annual global income ≥ AUD 1 b
 | Obligation | Detail |
 | --- | --- |
 | International Dealings Schedule (IDS) | Filed with income tax return |
-| Master File (SGEs) | Electronic lodgment within 12 months of year-end |
-| Local File (SGEs) | Electronic lodgment within 12 months of year-end |
-| CbC Report (SGEs) | Electronic lodgment within 12 months of year-end |
+| Master File (where required under CBC rules) | Electronic lodgement within 12 months of year-end, subject to applicable exemptions or extensions |
+| Local File (where required under CBC rules) | Electronic lodgement within 12 months of year-end, subject to applicable exemptions or extensions |
+| CbC Report (where required under CBC rules) | Electronic lodgement within 12 months of year-end, subject to applicable exemptions or extensions |
 | Reportable Tax Position (RTP) | Large taxpayers must disclose TP positions |
 | Income tax return | Annual self-assessment |
 
@@ -122,9 +138,9 @@ Applies to entities in groups with consolidated annual global income ≥ AUD 1 b
 
 | Item | Deadline |
 | --- | --- |
-| TP documentation preparation | Before lodging income tax return |
+| Special TP documentation for RAP treatment | Before lodging the relevant income tax return; see section 2.1. This is not a universal mandatory filing deadline |
 | IDS filing | With income tax return (varies by entity type; generally 15 January for large) |
-| Master/Local/CbC Report | 12 months after end of income year |
+| Master/Local/CbC Report | Where required under section 2.2, 12 months after end of income year, subject to applicable exemptions or extensions |
 | Income tax return (companies) | Generally due by 15 January following year (for 30 June year-end) with extensions |
 
 ## Section 6 -- Penalties
@@ -135,15 +151,22 @@ Applies to entities in groups with consolidated annual global income ≥ AUD 1 b
 
 | Scenario | Penalty Rate |
 | --- | --- |
-| Reasonably arguable position (RAP) established | No penalty |
-| No RAP, no dominant tax purpose | 25% of tax shortfall |
-| No RAP, dominant tax purpose | 50% of tax shortfall |
-| Uplift for repeat behaviour | Additional 20% |
-| SGE multiplier | Doubled penalties for SGEs |
+| RAP, no sole or dominant tax purpose | Base penalty: 10% of transfer-pricing shortfall |
+| RAP, sole or dominant tax purpose | Base penalty: 25% |
+| No RAP, no sole or dominant tax purpose | Base penalty: 25% |
+| No RAP, sole or dominant tax purpose | Base penalty: 50% |
+| Adjustment for specified conduct or previous penalty | Increase base penalty by 20% under s 284-220 where a condition applies; the increase is not cumulative |
+| Voluntary disclosure | Apply any reduction under s 284-225 according to timing and conditions |
+| SGE increase | Double the adjusted penalty where the entity is an SGE **and has no RAP**, for relevant years starting on or after 1 July 2015 |
+| Remission | A separate decision can leave the penalty unchanged or remit it partly or fully. RAP alone does not guarantee nil |
+
+These rates apply where the scheme shortfall exceeds the reasonably arguable threshold and the other penalty conditions are met. The threshold is the greater of $20,000 and 2% of net income for a trust or partnership; for other entities, the greater of $10,000 and 1% of income tax payable. A shortfall at or below the threshold does not attract this TP penalty.
+
+For a $100,000 shortfall above the threshold, RAP gives a **$10,000** base penalty without a sole or dominant tax purpose, or **$25,000** with that purpose. Apply adjustments and remission separately. The ATO's likely nil-remission example requires a reasonable good-faith compliance attempt, best efforts to document the treatment and no tax avoidance purpose. See [PS LA 2014/2 paragraphs 5C to 5E, 8E to 8I and 10A to 12M](https://www.ato.gov.au/law/view/document?docid=%22PSR%2FPS20142%2FNAT%2FATO%2F00001%22).
 
 ### 6.2 Documentation Impact
 
-- **Documentation impact on RAP** — Without contemporaneous TP documentation prepared before lodging the return, a taxpayer is statutorily denied a reasonably arguable position.  _(unsure)_
+- **Documentation impact on RAP**: Without records meeting Subdivision 284-E, an entity cannot rely on RAP for the relevant transfer-pricing penalty treatment. Compliant records permit consideration of RAP; they do not establish it. See section 2.1.
 
 ### 6.3 Failure to Lodge (SGEs)
 
@@ -151,18 +174,18 @@ Applies to entities in groups with consolidated annual global income ≥ AUD 1 b
 
 | Offence | Penalty |
 | --- | --- |
-| Failure to lodge Local File, Master File, or CbC Report | Up to AUD 825,000 per failure |
+| Failure to lodge a required Local File, Master File, or CbC Report | Up to AUD 825,000 per failure |
 | Shortfall interest charge | Applies on underpaid tax |
 
 ## Section 7 -- Advance Pricing Agreements (APA)
 
-**Advance Pricing Agreements (APA)**  _(TR 95/23; PCG 2019/1)_
+**Advance pricing arrangements (APA)**: Procedure is set out in [PS LA 2015/4](https://www.ato.gov.au/law/view/document?DocID=PSR/PS20154/NAT/ATO/00001&PiT=99991231235958). TR 95/23 was withdrawn on 10 March 2011. PCG 2019/1 addresses inbound-distributor compliance risk and refers to PS LA 2015/4 for APA procedures; it is not the general APA procedure. See the [withdrawal notice](https://www.ato.gov.au/law/view/document?LocID=%22TXR%2FTR9523%2FNAT%2FATO%22&PiT=20201210000001) and [PCG 2019/1 paragraph 58](https://www.ato.gov.au/law/view/view.htm?docid=%22cog/pcg20191/nat/ato/00001%22).
 
 | Item | Detail |
 | --- | --- |
 | Availability | Yes (well-established program) |
 | Types | Unilateral, Bilateral, Multilateral |
-| Governing guidance | TR 95/23; Practical Compliance Guideline PCG 2019/1 |
+| Governing guidance | PS LA 2015/4; see the [ATO APA program](https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/pricing/advance-pricing-arrangements/advance-pricing-arrangement-apa-program) |
 | Application | To ATO; Expression of Interest followed by formal application |
 | Duration | Typically 3-5 years prospective; rollback possible |
 | Fees | No formal fee |
@@ -192,7 +215,7 @@ ATO publishes Practical Compliance Guidelines indicating risk zones for various 
 | --- | --- |
 | 2024-2025 | Updated Local File instructions (Part A and Part B) |
 | 2024 | Enhanced ATO compliance focus on intangibles and financial transactions |
-| 2023 | Pillar Two (GloBE) legislation enacted |
+| 10 December 2024 | Pillar Two primary legislation received royal assent. Detailed subordinate rules were registered on 23 December 2024. The IIR and domestic minimum tax apply to fiscal years starting from 1 January 2024; UTPR starts from 1 January 2025. Application dates are separate from enactment. See [ATO Pillar Two implementation](https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/multinationals/global-and-domestic-minimum-tax) |
 | 2022 | Multinational Tax Integrity Package -- increased penalties for SGEs |
 | Ongoing | ATO PCGs on profit allocation to permanent establishments |
 | Ongoing | OECD Amount B: Australia participating in design; implementation timeline TBC |

@@ -3,7 +3,7 @@ name: gw-tax-overview
 description: "Source-cited draft: tax overview for Guinea-Bissau (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,8 +18,8 @@ Guinea-Bissau is a WAEMU/UEMOA member state that uses the West African CFA franc
 - **Standard tax (fiscal) year** — 1 January – 31 December (approx — confirm)  _(Código Geral Tributário (General Tax Code) — https://taxatlas.io/country/guinea-bissau)_
 - **Official currency** — West African CFA franc (XOF / FCFA)  _(WAEMU/UEMOA monetary union framework (BCEAO) — https://taxatlas.io/country/guinea-bissau)_
 - **National tax authority** — Direction Générale des Contributions et Impôts (DGCI)  _(Ministério das Finanças — DGCI mandate — https://taxatlas.io/country/guinea-bissau)_
-- **Basis of taxation for residents** — Residents taxed on worldwide income; non-residents taxed on Guinea-Bissau-source income only (approx — confirm)  _(Imposto sobre o Rendimento das Pessoas Singulares (IRPS) statute)_
-- **Top marginal personal income tax (IRPS) rate** — 20 percent  _(Imposto sobre o Rendimento das Pessoas Singulares (IRPS) statute — https://taxatlas.io/country/guinea-bissau)_
+- **Basis of taxation for residents** — Residents taxed on worldwide income; non-residents taxed on Guinea-Bissau-source income only (approx — confirm; not located in the consolidated Código do Imposto Profissional, which defines the charge by where the activity is exercised)  _(Código Geral Tributário — https://kontaktu.mef.gw/legislation)_
+- **Top marginal personal income tax rate — the tax is the Imposto Profissional, not an "IRPS"** — **20%**, on employment income above XOF 18,000,000 a year, and the rate is **marginal**. Guinea-Bissau has no Imposto sobre o Rendimento das Pessoas Singulares; the self-employed are on a separate three-band scale topping out at **25%** above XOF 9,999,996. See `gw-income-tax`  _(Código do Imposto Profissional, art. 27.º nos 1–3, wording given by Lei nº 1/2021 art. 10º — https://kontaktu.mef.gw/legislation)_
 - **Standard corporate income tax rate** — 25 percent  _([Imposto sobre o Rendimento das Pessoas Colectivas (IRPC) / Contribuição Industrial statute](https://taxatlas.io/country/guinea-bissau))_
 - **Does Guinea-Bissau have VAT?** — Yes — VAT (IVA) was introduced effective 1 January 2025, replacing the former 19% general sales tax (Imposto Geral sobre Vendas e Serviços)  _(Código do Imposto sobre o Valor Acrescentado (IVA) — https://www.vatupdate.com/2025/01/16/guinea-bissau-introduction-of-the-vat-regime/)_
 - **Standard VAT (IVA) rate** — 19 percent  _(Código do Imposto sobre o Valor Acrescentado (IVA) — https://www.vatupdate.com/2025/01/16/guinea-bissau-introduction-of-the-vat-regime/)_

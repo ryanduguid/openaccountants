@@ -3,7 +3,7 @@ name: mi-estimated-tax
 description: Use this skill whenever asked about Michigan quarterly estimated income tax for individuals — sole proprietors, single-member LLCs, freelancers, and high-income wage earners with insufficient withholding. Trigger on phrases like "Michigan estimated tax", "MI-1040ES", "MI quarterly payments", "Michigan underpayment penalty", "MI-2210", "MCL 206.301", "Michigan estimated tax safe harbor".
 jurisdiction: US-MI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-14
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -393,7 +393,7 @@ Schedule four ACH debits via MTO at sign-up; no further action required.
 
 **Facts.** Single filer; consultant; total 2026 net profit $140,000 but landed in this distribution: $8,000 by Mar 31; $15,000 by May 31; $90,000 by Aug 31; $140,000 by Dec 31. TY 2025 prior tax was $3,200.
 
-**Regular installment method would require** $140,000 × ~4% MI = ~$5,950 annual tax × 90% ÷ 4 = **$1,339/quarter** — but the taxpayer earned only $8,000 by Mar 31, so $1,339 due April 15 is roughly 67% of all income earned to that date. Painful.
+**Regular installment method would require** $140,000 × ~4% MI = ~$5,950 annual tax × 90% ÷ 4 = **$1,339/quarter** — but the taxpayer earned only $8,000 by Mar 31, so $1,339 due April 15 is about **16.74%** of the $8,000 earned to that date ($1,339 ÷ $8,000 × 100). This ratio uses the example's assumed instalment; the underlying tax estimate requires separate verification.
 
 **Annualized method (MI-2210 Part 3):**
 
