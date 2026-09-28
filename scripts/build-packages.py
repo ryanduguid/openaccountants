@@ -45,11 +45,16 @@ import re
 import shutil
 import sys
 
-from frontmatter_yaml import FrontmatterError, load_frontmatter
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:  # scripts/ on sys.path when this file is loaded by path, not run
+    sys.path.insert(0, _HERE)
 
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKILLS_DIR = os.path.join(REPO_ROOT, "skills")
-PACKAGES_DIR = os.path.join(REPO_ROOT, "packages")
+from oa_tools import paths  # noqa: E402
+from oa_tools.frontmatter import FrontmatterError, extract_frontmatter, load_frontmatter  # noqa: E402
+
+REPO_ROOT = paths.REPO_ROOT
+SKILLS_DIR = paths.SKILLS_DIR
+PACKAGES_DIR = paths.PACKAGES_DIR  # main() points this at --out DIR instead
 
 # ============================================================================
 # HAND-AUTHORED PACKAGES — DO NOT WIPE, DO NOT REGENERATE.
@@ -58,9 +63,10 @@ PACKAGES_DIR = os.path.join(REPO_ROOT, "packages")
 # guides, rates.*.json reference data, runbooks). They have NO builder in this
 # script: if the packages/ wipe deletes them, the content is PERMANENTLY LOST.
 # The rebuild in main() must always skip these directories, and no builder may
-# ever write into them.
+# ever write into them. The list itself is scripts/oa_tools/paths.py's, so the
+# validator's freshness check skips exactly the same directories.
 # ============================================================================
-HAND_AUTHORED_PACKAGES = {"us-federal"}
+HAND_AUTHORED_PACKAGES = paths.HAND_AUTHORED_PACKAGES
 
 # Country code → display name mapping
 COUNTRY_NAMES = {
@@ -1012,24 +1018,6 @@ def build_all_canada_packages():
     return results
 
 
-# Mirrors scripts/build-index.py's extract_frontmatter so the generator judges
-# its output by the same rule its consumers do.
-_FM_END_RE = re.compile(r"^(---|\.\.\.)\s*$", re.MULTILINE)
-
-
-def _frontmatter_block(text):
-    """Return the raw frontmatter block, or None when the file has none."""
-    if not text.startswith("---"):
-        return None
-    first_nl = text.find("\n")
-    if first_nl == -1 or text[:first_nl].strip() != "---":
-        return None
-    end = _FM_END_RE.search(text[first_nl + 1:])
-    if not end:
-        return None
-    return text[first_nl + 1: first_nl + 1 + end.start()]
-
-
 _LEGACY_DEPENDS_ON_RE = re.compile(r"^(depends_on):[ \t]+(- .+)$", re.MULTILINE)
 
 
@@ -1050,7 +1038,7 @@ def declared_foundation_bases(skill_paths):
     bases = set()
     for path in skill_paths:
         with open(path, encoding="utf-8", errors="replace") as fh:
-            block = _frontmatter_block(fh.read())
+            block = extract_frontmatter(fh.read())
         if block is None:
             continue
         folded = _LEGACY_DEPENDS_ON_RE.sub(lambda m: f"{m.group(1)}:\n  {m.group(2)}", block)
@@ -1098,7 +1086,7 @@ def validate_generated_frontmatter():
             rel = "packages/" + os.path.relpath(path, PACKAGES_DIR).replace(os.sep, "/")
             with open(path, encoding="utf-8", errors="replace") as fh:
                 text = fh.read()
-            block = _frontmatter_block(text)
+            block = extract_frontmatter(text)
             if block is None:
                 if text.startswith("---"):
                     failures.append(f"{rel}: frontmatter opens with --- but never closes")

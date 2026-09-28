@@ -13,8 +13,10 @@ the repo root:
                 "verified_by", "reviewed_by", "tax_year", "last_updated" }, ... ]
 }
 
-Dependency-free (stdlib only). Frontmatter is parsed with a simple ---block
-line scanner; malformed YAML is tolerated by regex-extracting the known keys.
+Dependency-free (stdlib only). Guide discovery and the tolerant frontmatter
+reader are the shared ones in scripts/oa_tools/ (guides.py, frontmatter.py);
+malformed YAML is tolerated by regex-extracting the known keys, so a guide with
+a broken block still lands in the inventory with whatever it does carry.
 
 Usage:
     python3 scripts/build-index.py            # write index.json at repo root
@@ -27,94 +29,32 @@ import re
 import sys
 from datetime import datetime, timezone
 
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:  # this file is loaded by path (importlib) as well as run
+    sys.path.insert(0, _HERE)
 
-# Directories walked for guide files.
-GUIDE_TREES = [
-    "skills",
-    os.path.join("packages", "us-federal"),
-]
+from oa_tools import guides, paths  # noqa: E402
+# Both are used below and re-exported on purpose: the one-off metadata scripts
+# (backfill-metadata.py, normalize-tax-year.py) load this module by path and
+# reach the tolerant reader as `bi.extract_frontmatter` / `bi.parse_known_keys`.
+from oa_tools.frontmatter import extract_frontmatter, parse_known_keys  # noqa: E402
 
-# Frontmatter keys lifted into the index (in output order).
-KNOWN_KEYS = [
-    "name",
-    "jurisdiction",
-    "category",
-    "tier",
-    "verified_by",
-    "reviewed_by",
-    "tax_year",
-    "last_updated",
-]
+REPO_ROOT = paths.REPO_ROOT
 
-# `key: value` at column 0. Tolerates malformed YAML elsewhere in the block.
-KEY_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):[ \t]*(.*)$")
+# Directories walked for guide files (scripts/oa_tools/paths.py).
+GUIDE_TREES = list(paths.GUIDE_TREES)
 
 # Jurisdiction values that look like codes get uppercased (MT, US, US-CA, CA-ON).
 CODE_RE = re.compile(r"^[A-Za-z]{2,3}(-[A-Za-z0-9]{1,4})*$")
 
 
-def extract_frontmatter(text):
-    """Return the raw frontmatter block (str) or None if the file has none."""
-    if not text.startswith("---"):
-        return None
-    first_nl = text.find("\n")
-    if first_nl == -1 or text[:first_nl].strip() != "---":
-        return None
-    end = re.search(r"^(---|\.\.\.)\s*$", text[first_nl + 1:], re.MULTILINE)
-    if not end:
-        return None
-    return text[first_nl + 1: first_nl + 1 + end.start()]
-
-
-def clean_value(raw):
-    """Normalize a scalar frontmatter value; None for empty/block scalars."""
-    value = raw.strip()
-    if value in ("", ">", "|", ">-", "|-", ">+", "|+"):
-        return None
-    # Strip a trailing YAML comment only when the value is unquoted.
-    if value[0] in "\"'":
-        quote = value[0]
-        if len(value) >= 2 and value.rstrip().endswith(quote):
-            value = value.strip()[1:-1].strip()
-    else:
-        value = re.sub(r"\s+#.*$", "", value).strip()
-    if value == "" or value.lower() in ("null", "~"):
-        return None
-    return value
-
-
-def parse_known_keys(block):
-    """Regex-extract KNOWN_KEYS from a frontmatter block, malformed or not."""
-    fields = {key: None for key in KNOWN_KEYS}
-    for line in block.splitlines():
-        match = KEY_RE.match(line)
-        if not match:
-            continue
-        key = match.group(1)
-        if key not in fields or fields[key] is not None:
-            continue
-        fields[key] = clean_value(match.group(2))
-    return fields
-
-
 def guide_files():
-    """Yield repo-relative paths of candidate guide files, sorted."""
-    paths = []
-    for tree in GUIDE_TREES:
-        base = os.path.join(REPO_ROOT, tree)
-        if not os.path.isdir(base):
-            continue
-        for dirpath, dirnames, filenames in os.walk(base):
-            dirnames.sort()
-            for filename in sorted(filenames):
-                if not filename.endswith(".md"):
-                    continue
-                if filename.lower().startswith("readme"):
-                    continue
-                full = os.path.join(dirpath, filename)
-                paths.append(os.path.relpath(full, REPO_ROOT).replace(os.sep, "/"))
-    return sorted(set(paths))
+    """Repo-relative paths of candidate guide files under REPO_ROOT, sorted.
+
+    A wrapper rather than a re-export so that a test which points this
+    module's REPO_ROOT at a temporary tree indexes that tree.
+    """
+    return guides.guide_files(REPO_ROOT, GUIDE_TREES)
 
 
 def build_index():
@@ -180,8 +120,18 @@ def build_index():
 def main():
     out_path = os.path.join(REPO_ROOT, "index.json")
     if "--out" in sys.argv:
-        out_path = sys.argv[sys.argv.index("--out") + 1]
+        flag = sys.argv.index("--out")
+        if flag + 1 >= len(sys.argv) or sys.argv[flag + 1].startswith("--"):
+            sys.exit("error: --out requires a file path")
+        out_path = sys.argv[flag + 1]
     index = build_index()
+    if not index["guides"]:
+        # A wrong root or a broken checkout must not overwrite the inventory
+        # with an empty one that every consumer would read as "no guides".
+        sys.exit(
+            f"error: no guides found under {REPO_ROOT} "
+            f"(looked in {', '.join(GUIDE_TREES)}); not writing {out_path}"
+        )
     with open(out_path, "w", encoding="utf-8") as fh:
         json.dump(index, fh, indent=1, ensure_ascii=False)
         fh.write("\n")

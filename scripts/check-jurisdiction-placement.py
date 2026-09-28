@@ -53,8 +53,8 @@ Exit status is always 0: this is a review aid, not a gate.
 """
 import collections, glob, os, signal, sys
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
-from frontmatter_yaml import load_frontmatter  # noqa: E402
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.frontmatter import FrontmatterError, read_frontmatter  # noqa: E402
 
 try:
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
@@ -75,17 +75,12 @@ STATES = {
 
 
 def frontmatter(path):
-    text = open(path, encoding='utf-8', errors='replace').read()
-    if not text.startswith('---'):
-        return None
-    end = text.find('\n---', 3)
-    if end < 0:
-        return None
+    with open(path, encoding='utf-8', errors='replace') as fh:
+        text = fh.read()
     try:
-        data = load_frontmatter(text[3:end])
-    except Exception:
+        return read_frontmatter(text, strict=True)
+    except FrontmatterError:
         return None
-    return data if isinstance(data, dict) else None
 
 
 def main():

@@ -50,7 +50,11 @@ import os
 import re
 import sys
 
-from cta_block import (
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:  # the tests load this file by path
+    sys.path.insert(0, _HERE)
+
+from cta_block import (  # noqa: E402
     CANONICAL_BLOCK,
     MARKER,
     find_markers,
@@ -59,29 +63,12 @@ from cta_block import (
     is_optional,
     section_end,
 )
+from oa_tools import paths  # noqa: E402
+from oa_tools.frontmatter import split_frontmatter  # noqa: E402
 
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO_ROOT = paths.REPO_ROOT
 
-_FM_CLOSE_RE = re.compile(r"^(---|\.\.\.)[ \t]*$", re.MULTILINE)
 _LAST_UPDATED_RE = re.compile(r"^last_updated:[ \t]*.*$", re.MULTILINE)
-
-
-def split_frontmatter(text: str) -> tuple[str | None, str]:
-    """Return (frontmatter including both delimiters and the newline after the
-    closing one, body), or (None, text) when the file has no frontmatter.
-    Mirrors scripts/build-index.py's opener rule: `---` at byte 0."""
-    if not text.startswith("---"):
-        return None, text
-    first_nl = text.find("\n")
-    if first_nl == -1 or text[:first_nl].strip() != "---":
-        return None, text
-    close = _FM_CLOSE_RE.search(text, first_nl + 1)
-    if close is None:
-        return None, text
-    end = close.end()
-    if end < len(text) and text[end] == "\n":
-        end += 1
-    return text[:end], text[end:]
 
 
 def _strip_trailing_blank(lines: list[str]) -> None:

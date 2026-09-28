@@ -27,8 +27,8 @@ Precision over recall: lines carrying several distinct values for one concept
 (three-year comparison tables, "was X, now Y" changelog prose) are treated as
 comparison prose and never used as claim sources.
 
-Dependency-free (stdlib only). Frontmatter parsing is reused from
-scripts/build-index.py via importlib.
+Dependency-free (stdlib only). Frontmatter parsing is the shared tolerant
+reader in scripts/oa_tools/frontmatter.py, the one build-index.py uses.
 
 Usage:
     python3 scripts/detect-contradictions.py --all
@@ -37,7 +37,6 @@ Usage:
 """
 
 import argparse
-import importlib.util
 import json
 import os
 import re
@@ -47,14 +46,11 @@ from datetime import datetime, timezone
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Reuse the tolerant frontmatter parser from build-index.py.
-_spec = importlib.util.spec_from_file_location(
-    "build_index", os.path.join(os.path.dirname(os.path.abspath(__file__)), "build-index.py")
-)
-_build_index = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(_build_index)
-extract_frontmatter = _build_index.extract_frontmatter
-parse_known_keys = _build_index.parse_known_keys
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:  # the tests load this file by path
+    sys.path.insert(0, _HERE)
+
+from oa_tools.frontmatter import extract_frontmatter, parse_known_keys  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Scope

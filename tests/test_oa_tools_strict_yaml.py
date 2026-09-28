@@ -8,7 +8,7 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
-from frontmatter_yaml import FrontmatterError, load_frontmatter  # noqa: E402
+from oa_tools.frontmatter import FrontmatterError, load_frontmatter  # noqa: E402
 
 
 class FrontmatterYamlTests(unittest.TestCase):

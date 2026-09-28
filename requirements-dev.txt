@@ -1,0 +1,14 @@
+# Everything a contributor needs to run the generators, the CI gates and the
+# tests: `python3 -m pip install -r requirements-dev.txt` (or `make install`).
+# CI installs only scripts/requirements-validation.txt plus ./mcp, per job.
+-r scripts/requirements-validation.txt
+
+# The suites run under unittest (`make test`); pytest runs them too, for
+# anyone who prefers it.
+pytest==9.1.1
+
+# scripts/build-verification-workbook.py and tools/workbooks/ write .xlsx.
+openpyxl==3.1.5
+
+# The MCP server, editable, so mcp/tests/ exercise the working copy.
+-e ./mcp

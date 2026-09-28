@@ -95,6 +95,7 @@ Which file to edit: [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
 | LLM entry point | [`llms.txt`](llms.txt) |
 | Python MCP server, self-hostable | [`mcp/`](mcp/) (the [PyPI release](https://pypi.org/project/openaccountants-mcp/) is upstream's) |
 | Repo architecture | [`docs/REPO-LAYOUT.md`](docs/REPO-LAYOUT.md); [`docs/WEBSITE-SYNC.md`](docs/WEBSITE-SYNC.md) is upstream's retired sync contract, kept for reference |
+| Reproduce CI locally | `python3 -m pip install -r requirements-dev.txt`, then `make check`; the targets are mapped to the CI jobs in [CONTRIBUTING.md](CONTRIBUTING.md#reproduce-ci-locally) |
 
 ---
 
