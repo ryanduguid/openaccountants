@@ -60,11 +60,17 @@ class VersionConsistencyTests(unittest.TestCase):
             self.assertEqual(package["version"], version)
 
     def test_changelog_has_an_entry_for_the_current_version(self) -> None:
-        changelog = REPO_ROOT / "CHANGELOG.md"
+        """The package keeps its own version line in mcp/CHANGELOG.md; the
+        repository's CHANGELOG.md carries the repository's versions only."""
+        changelog = MCP_DIR / "CHANGELOG.md"
         if not changelog.is_file():
-            self.skipTest("CHANGELOG.md lives at the repository root; not in an sdist")
+            self.skipTest("mcp/CHANGELOG.md is not part of this install")
         heading = f"## [{openaccountants_mcp.__version__}]"
         self.assertIn(heading, changelog.read_text(encoding="utf-8"))
+        root = REPO_ROOT / "CHANGELOG.md"
+        if root.is_file():
+            self.assertNotIn(heading, root.read_text(encoding="utf-8"),
+                             "package versions belong in mcp/CHANGELOG.md, not the repository line")
 
 
 class RegistryManifestTests(unittest.TestCase):
