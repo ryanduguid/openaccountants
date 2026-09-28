@@ -3,6 +3,7 @@ name: us-form-1120-c-corp
 description: Tier 2 US federal content skill for preparing Form 1120 — the US C-corporation income tax return. Covers tax year 2025 under OBBBA including the 21% flat rate, DRD tiers (50/65/100%), §163(j) interest limit, §174 R&D capitalization, §250 GILTI/FDII deduction at 50%/37.5%, the 15% Corporate AMT on AFSI > $1B (IRA 2022), required schedules (B, C, J, K, L, M-1/M-3, O, UTP), and common attached forms (4562, 4626, 5471/5472 refer-out, 6765, 8993, 1125-A, 1125-E). Filing due 15th day of 4th month; Form 7004 6-month extension; quarterly estimated 25/25/25/25 with no 110% safe harbor for corps.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: Christopher Aryee, CPA
 review_status: current
@@ -48,7 +49,7 @@ This skill covers the preparation of **Form 1120, U.S. Corporation Income Tax Re
 - **Forms 8990/8991 BEAT** — complex; refer to `us-gilti-fdii-beat`.
 - **Form 6765 R&D credit and §174 capitalization mechanics** — refer to `us-r-and-d-section-174-and-41`.
 - **Stock buyback excise tax (IRC §4501) and Form 7208** — refer to `us-stock-buyback-excise`.
-- **State and local corporate income, franchise, gross receipts, and minimum taxes** — route to state skills (e.g., `us-ca-form-100`, `tx-franchise-tax`, `us-de-franchise`, `us-ny-form-ct-3`).
+- **State and local corporate income, franchise, gross receipts, and minimum taxes** — route to state skills (e.g., `us-ca-form-100`, `us-tx-franchise-tax`, `us-de-franchise`, `us-ny-form-ct-3`).
 
 ### 1.1 Consolidated returns — quick refusal note
 

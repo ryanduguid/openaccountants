@@ -11,9 +11,8 @@
 4. `cz-income-tax.md`
 5. `cz-social-health.md`
 6. `cz-tax-overview.md`
-7. `cz-vat-return.md`
-8. `czech-republic-vat-return.md`
-9. `references.md`
+7. `czech-republic-vat-return.md`
+8. `references.md`
 
 ## Shared files this package needs
 

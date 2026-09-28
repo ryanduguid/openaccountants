@@ -5,7 +5,7 @@
   "skills": [
     {
       "tab": "Sales & Use Tax (DR-15)",
-      "slug": "fl-sales-use-tax",
+      "slug": "us-fl-sales-use-tax",
       "version": "1.0",
       "sections": [
         {
@@ -88,7 +88,7 @@
     },
     {
       "tab": "Corporate Income Tax (F-1120)",
-      "slug": "fl-corporate-income-tax",
+      "slug": "us-fl-corporate-income-tax",
       "version": "0.1",
       "sections": [
         {
@@ -173,7 +173,7 @@
     },
     {
       "tab": "Annual Report (Sunbiz)",
-      "slug": "fl-annual-report",
+      "slug": "us-fl-annual-report",
       "version": "1.0",
       "sections": [
         {

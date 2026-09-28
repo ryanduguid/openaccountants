@@ -12,9 +12,8 @@
 5. `no-income-tax.md`
 6. `no-social-contributions.md`
 7. `no-tax-overview.md`
-8. `no-vat-return.md`
-9. `norway-mva.md`
-10. `norway-to-switzerland-wealth-tax-exit.md`
+8. `norway-mva.md`
+9. `norway-to-switzerland-wealth-tax-exit.md`
 
 ## Shared files this package needs
 

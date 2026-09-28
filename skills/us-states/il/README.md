@@ -14,12 +14,11 @@
 
 | File | What it covers |
 |---|---|
-| `il-income-tax.md` | Individual income tax for self-employed / sole proprietors |
-| `il-estimated-tax.md` | Estimated tax payments |
-| `il-sales-tax.md` | State and local sales & use tax compliance |
-| `il-payroll.md` | Illinois content skill for employer payroll compliance covering tax year 2025 |
-| `il-pprt.md` | Illinois Personal Property Replacement Tax under 35 ILCS 5/201(c) and (d): 2.5% on C-corporations (and... |
-| `illinois-sales-tax.md` | Illinois sales and use tax, Retailers' Occupation Tax (ROT), Illinois use tax, Service Occupation Tax,... |
+| `us-il-income-tax.md` | Individual income tax for self-employed / sole proprietors |
+| `us-il-estimated-tax.md` | Estimated tax payments |
+| `us-il-sales-tax.md` | State and local sales & use tax compliance |
+| `us-il-payroll.md` | Illinois content skill for employer payroll compliance covering tax year 2025 |
+| `us-il-pprt.md` | Illinois Personal Property Replacement Tax under 35 ILCS 5/201(c) and (d): 2.5% on C-corporations (and... |
 
 ## What's NOT covered
 - Property tax (administered at county level)

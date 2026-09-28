@@ -122,7 +122,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (1927 guides, 244 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (1867 guides, 243 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -175,6 +175,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - no-sales-tax-states | US | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by James Wallach
 - us-1099-nec-issuance | US | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
+- us-capital-gains | US | tier 2 | reviewed_by James Wallach
 - us-citizen-moving-abroad-tax | US | tier 2 | reviewed_by -
 - us-crypto-income-events | US | tier 1 | reviewed_by Christopher Aryee, CPA
 - us-crypto-reporting | US | tier 1 | reviewed_by Christopher Aryee, CPA
@@ -197,6 +198,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - us-irs-collections-and-controversy | US | tier 2 | reviewed_by James Wallach
 - us-multi-state-residency-and-allocation | US | tier 2 | reviewed_by James Wallach
 - us-nft-tax | US | tier 2 | reviewed_by James Wallach
+- us-nonresident-cgt | US | tier 2 | reviewed_by James Wallach
 - us-pl-86-272-income-tax-nexus | US | tier 2 | reviewed_by James Wallach
 - us-pte-state-matrix | US | tier 2 | reviewed_by James Wallach
 - us-qbi-deduction | US | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
@@ -217,6 +219,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - us-state-formation-matrix | US | tier 2 | reviewed_by James Wallach
 - us-state-new-hire-reporting-matrix | US | tier 2 | reviewed_by James Wallach
 - us-state-payroll-matrix | US | tier 2 | reviewed_by James Wallach
+- us-tax-residency | US | tier 2 | reviewed_by James Wallach
 - ifrs3-business-combinations | GLOBAL | tier 2 | reviewed_by -
 - us-gaap-asc805-business-combinations | US | tier 2 | reviewed_by James Wallach
 - ias32-debt-vs-equity | GLOBAL | tier 2 | reviewed_by -
@@ -344,7 +347,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - at-income-tax | AT | tier 2 | reviewed_by -
 - at-svs-contributions | AT | tier 2 | reviewed_by -
 - at-tax-overview | AT | tier 2 | reviewed_by -
-- at-vat-return | AT | tier 2 | reviewed_by -
 - austria-vat-return | AT | tier 2 | reviewed_by -
 - az-company-formation | AZ | tier 2 | reviewed_by -
 - az-corporate-income-tax | AZ | tier 2 | reviewed_by -
@@ -399,7 +401,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - be-capital-gains | BE | tier 2 | reviewed_by -
 - be-income-tax | BE | tier 2 | reviewed_by -
 - be-social-contributions | BE | tier 2 | reviewed_by -
-- be-vat-return | BE | tier 2 | reviewed_by -
 - belgium-bookkeeping | BE | tier 2 | reviewed_by -
 - belgium-crypto-tax | BE | tier 2 | reviewed_by -
 - belgium-einvoice | BE | tier 2 | reviewed_by -
@@ -461,6 +462,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - brazil-transfer-pricing | BR | tier 1 | reviewed_by Ariane Marrocos
 - brazil-vat | BR | tier 1 | reviewed_by Ariane Marrocos
 - brazil-references | BR | tier 2 | reviewed_by -
+- bvi-tax | VG | tier 2 | reviewed_by -
 - vg-company-formation | VG | tier 2 | reviewed_by -
 - vg-corporate-income-tax | VG | tier 2 | reviewed_by -
 - vg-payroll-social | VG | tier 2 | reviewed_by -
@@ -495,23 +497,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - bi-payroll-social | BI | tier 2 | reviewed_by -
 - bi-tax-overview | BI | tier 2 | reviewed_by -
 - bi-vat-gst | BI | tier 2 | reviewed_by -
-- bvi-tax | VG | tier 2 | reviewed_by -
-- ab-corporate-tax | CA | tier 2 | reviewed_by -
-- bc-eht | CA | tier 2 | reviewed_by -
-- bc-pst | CA | tier 2 | reviewed_by -
-- bc-speculation-vacancy-tax | CA | tier 2 | reviewed_by -
-- mb-rst | CA | tier 2 | reviewed_by -
-- nb-tax-credits | CA | tier 2 | reviewed_by -
-- nl-tax-credits | CA | tier 2 | reviewed_by -
-- ns-tax-credits | CA | tier 2 | reviewed_by -
-- nt-payroll-tax | CA | tier 2 | reviewed_by -
-- nu-tax-credits | CA | tier 2 | reviewed_by -
-- on-eht | CA | tier 2 | reviewed_by -
-- on-tax-credits | CA | tier 2 | reviewed_by -
-- pe-tax-credits | CA | tier 2 | reviewed_by -
-- qc-employer-contributions | CA | tier 2 | reviewed_by -
-- sk-pst | CA | tier 2 | reviewed_by -
-- yt-tax-credits | CA | tier 2 | reviewed_by -
 - cambodia-vat | KH | tier 2 | reviewed_by -
 - kh-company-formation | KH | tier 2 | reviewed_by -
 - kh-corporate-income-tax | KH | tier 2 | reviewed_by -
@@ -522,8 +507,12 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - cameroon-payroll | CM | tier 2 | reviewed_by Nkinyam Courage Ndasi
 - cameroon-social-contributions | CM | tier 2 | reviewed_by Nkinyam Courage Ndasi
 - cameroon-vat | CM | tier 2 | reviewed_by Nkinyam Courage Ndasi
+- ab-corporate-tax | CA | tier 2 | reviewed_by -
 - ab-individual-return | CA | tier 2 | reviewed_by -
+- bc-eht | CA | tier 2 | reviewed_by -
 - bc-individual-return | CA | tier 2 | reviewed_by -
+- bc-pst | CA | tier 2 | reviewed_by -
+- bc-speculation-vacancy-tax | CA | tier 2 | reviewed_by -
 - ca-capital-gains | CA | tier 2 | reviewed_by -
 - ca-crypto-tax | CA | tier 1 | reviewed_by Edgar Lautsyus
 - ca-fed-cpp-ei | CA | tier 1 | reviewed_by Edgar Lautsyus
@@ -541,19 +530,31 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - canada-tax-optimization | CA | tier 1 | reviewed_by Edgar Lautsyus
 - canada-transfer-pricing | CA | tier 1 | reviewed_by Edgar Lautsyus
 - mb-individual-return | CA | tier 2 | reviewed_by -
+- mb-rst | CA | tier 2 | reviewed_by -
 - nb-individual-return | CA | tier 2 | reviewed_by -
+- nb-tax-credits | CA | tier 2 | reviewed_by -
 - nl-individual-return | CA | tier 2 | reviewed_by -
+- nl-tax-credits | CA | tier 2 | reviewed_by -
 - nt-individual-return | CA | tier 2 | reviewed_by -
+- nt-payroll-tax | CA | tier 2 | reviewed_by -
 - ns-individual-return | CA | tier 2 | reviewed_by -
+- ns-tax-credits | CA | tier 2 | reviewed_by -
 - nu-individual-return | CA | tier 2 | reviewed_by -
+- nu-tax-credits | CA | tier 2 | reviewed_by -
+- on-eht | CA | tier 2 | reviewed_by -
 - on-individual-return | CA | tier 2 | reviewed_by -
+- on-tax-credits | CA | tier 2 | reviewed_by -
 - pe-individual-return | CA | tier 2 | reviewed_by -
+- pe-tax-credits | CA | tier 2 | reviewed_by -
 - qc-corporate-tax-co17 | CA | tier 2 | reviewed_by -
+- qc-employer-contributions | CA | tier 2 | reviewed_by -
 - qc-individual-return | CA | tier 2 | reviewed_by -
 - qc-qst-return | CA | tier 2 | reviewed_by -
 - canada-references | CA | tier 2 | reviewed_by -
 - sk-individual-return | CA | tier 2 | reviewed_by -
+- sk-pst | CA | tier 2 | reviewed_by -
 - yt-individual-return | CA | tier 2 | reviewed_by -
+- yt-tax-credits | CA | tier 2 | reviewed_by -
 - cv-company-formation | CV | tier 2 | reviewed_by -
 - cv-corporate-income-tax | CV | tier 2 | reviewed_by -
 - cv-income-tax | CV | tier 2 | reviewed_by -
@@ -584,7 +585,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - cl-income-tax | CL | tier 2 | reviewed_by -
 - cl-social-contributions | CL | tier 2 | reviewed_by -
 - cl-tax-overview | CL | tier 2 | reviewed_by -
-- cl-vat-return | CL | tier 2 | reviewed_by -
 - chile-references | CL | tier 2 | reviewed_by -
 - china-pit | CN | tier 2 | reviewed_by -
 - china-to-singapore-relocation-tax | CN | tier 2 | reviewed_by -
@@ -597,7 +597,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - cn-return-assembly | CN | tier 2 | reviewed_by -
 - cn-social-insurance | CN | tier 2 | reviewed_by -
 - cn-stamp-tax | CN | tier 2 | reviewed_by -
-- cn-vat | CN | tier 2 | reviewed_by -
 - cn-withholding | CN | tier 2 | reviewed_by -
 - china-references | CN | tier 2 | reviewed_by -
 - co-company-formation | CO | tier 2 | reviewed_by -
@@ -605,7 +604,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - co-income-tax | CO | tier 2 | reviewed_by -
 - co-social-contributions | CO | tier 2 | reviewed_by -
 - co-tax-overview | CO | tier 2 | reviewed_by -
-- co-vat-return | CO | tier 2 | reviewed_by -
 - colombia-iva | CO | tier 2 | reviewed_by -
 - formalizing-small-informal-businesses-in-colombia | CO | tier 2 | reviewed_by -
 - costa-rica-income-tax | CR | tier 2 | reviewed_by -
@@ -644,13 +642,11 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - cz-income-tax | CZ | tier 2 | reviewed_by -
 - cz-social-health | CZ | tier 2 | reviewed_by -
 - cz-tax-overview | CZ | tier 2 | reviewed_by -
-- cz-vat-return | CZ | tier 2 | reviewed_by -
 - czech-republic-vat-return | CZ | tier 2 | reviewed_by -
 - czech-republic-references | CZ | tier 2 | reviewed_by -
 - denmark-vat-return | DK | tier 2 | reviewed_by -
 - dk-capital-gains | DK | tier 2 | reviewed_by -
 - dk-income-tax | DK | tier 2 | reviewed_by -
-- dk-vat-return | DK | tier 2 | reviewed_by -
 - denmark-references | DK | tier 2 | reviewed_by -
 - dj-company-formation | DJ | tier 2 | reviewed_by -
 - dj-corporate-income-tax | DJ | tier 2 | reviewed_by -
@@ -832,7 +828,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - gr-efka | GR | tier 2 | reviewed_by -
 - gr-income-tax | GR | tier 2 | reviewed_by -
 - gr-tax-overview | GR | tier 2 | reviewed_by -
-- gr-vat-return | GR | tier 2 | reviewed_by -
 - greece-einvoice | GR | tier 2 | reviewed_by -
 - greece-vat-return | GR | tier 2 | reviewed_by -
 - gt-company-formation | GT | tier 2 | reviewed_by -
@@ -876,7 +871,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - hong-kong-tax | HK | tier 2 | reviewed_by -
 - hu-income-tax | HU | tier 2 | reviewed_by -
 - hu-social-contributions | HU | tier 2 | reviewed_by -
-- hu-vat-return | HU | tier 2 | reviewed_by -
 - hungary-einvoice | HU | tier 2 | reviewed_by -
 - hungary-vat-return | HU | tier 2 | reviewed_by -
 - iceland-income-tax | IS | tier 2 | reviewed_by -
@@ -887,13 +881,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - is-company-formation | IS | tier 2 | reviewed_by -
 - is-corporate-income-tax | IS | tier 2 | reviewed_by -
 - is-tax-overview | IS | tier 2 | reviewed_by -
-- im-company-formation | IM | tier 2 | reviewed_by -
-- im-corporate-income-tax | IM | tier 2 | reviewed_by -
-- im-income-tax | IM | tier 2 | reviewed_by -
-- im-payroll-social | IM | tier 2 | reviewed_by -
-- im-tax-overview | IM | tier 2 | reviewed_by -
 - in-advance-tax | IN | tier 1 | reviewed_by Mayur Deokar
-- in-gst-return | IN | tier 2 | reviewed_by -
 - in-income-tax | IN | tier 2 | reviewed_by -
 - in-pf-esi-employer | IN | tier 1 | reviewed_by Mayur Deokar
 - in-professional-tax | IN | tier 1 | reviewed_by Mayur Deokar
@@ -947,8 +935,12 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - ie-prsi-class-s | IE | tier 2 | reviewed_by -
 - ie-return-assembly | IE | tier 2 | reviewed_by -
 - ie-usc | IE | tier 2 | reviewed_by -
-- ie-vat-return | IE | tier 2 | reviewed_by -
 - ireland-vat-return | IE | tier 2 | reviewed_by -
+- im-company-formation | IM | tier 2 | reviewed_by -
+- im-corporate-income-tax | IM | tier 2 | reviewed_by -
+- im-income-tax | IM | tier 2 | reviewed_by -
+- im-payroll-social | IM | tier 2 | reviewed_by -
+- im-tax-overview | IM | tier 2 | reviewed_by -
 - isle-of-man-vat | IM | tier 2 | reviewed_by -
 - il-corporate-tax | IL | tier 2 | reviewed_by -
 - il-crypto-tax | IL | tier 2 | reviewed_by -
@@ -993,7 +985,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - japan-payroll | JP | tier 2 | reviewed_by -
 - japan-tax-optimization | JP | tier 2 | reviewed_by -
 - japan-transfer-pricing | JP | tier 2 | reviewed_by -
-- jp-bookkeeping | JP | tier 2 | reviewed_by -
 - jp-consumption-tax | JP | tier 2 | reviewed_by -
 - jp-estimated-tax | JP | tier 2 | reviewed_by -
 - jp-etax-filing | JP | tier 2 | reviewed_by -
@@ -1184,7 +1175,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - mx-estimated-tax | MX | tier 2 | reviewed_by -
 - mx-imss | MX | tier 2 | reviewed_by -
 - mx-income-tax | MX | tier 2 | reviewed_by -
-- mx-vat-return | MX | tier 2 | reviewed_by -
 - mexico-references | MX | tier 2 | reviewed_by -
 - md-company-formation | MD | tier 2 | reviewed_by -
 - md-corporate-income-tax | MD | tier 2 | reviewed_by -
@@ -1262,7 +1252,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - nl-income-tax | NL | tier 2 | reviewed_by -
 - nl-payroll-tax | NL | tier 2 | reviewed_by -
 - nl-tax-objection | NL | tier 2 | reviewed_by -
-- nl-vat-return | NL | tier 2 | reviewed_by -
 - nl-zzp-deductions | NL | tier 2 | reviewed_by -
 - netherlands-references | NL | tier 2 | reviewed_by -
 - new-zealand-crypto-tax | NZ | tier 2 | reviewed_by -
@@ -1313,7 +1302,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - no-income-tax | NO | tier 2 | reviewed_by -
 - no-social-contributions | NO | tier 2 | reviewed_by -
 - no-tax-overview | NO | tier 2 | reviewed_by -
-- no-vat-return | NO | tier 2 | reviewed_by -
 - norway-mva | NO | tier 2 | reviewed_by -
 - norway-to-switzerland-wealth-tax-exit | NO | tier 2 | reviewed_by -
 - om-company-formation | OM | tier 2 | reviewed_by -
@@ -1369,7 +1357,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - philippines-vat | PH | tier 2 | reviewed_by Jonathan I. Ruiz, CPA
 - pl-capital-gains | PL | tier 2 | reviewed_by -
 - pl-income-tax | PL | tier 2 | reviewed_by -
-- pl-vat-return | PL | tier 2 | reviewed_by -
 - pl-zus-contributions | PL | tier 2 | reviewed_by -
 - poland-einvoice | PL | tier 2 | reviewed_by -
 - poland-vat-return | PL | tier 2 | reviewed_by -
@@ -1388,7 +1375,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - pt-nhr-ifici | PT | tier 2 | reviewed_by -
 - pt-return-assembly | PT | tier 2 | reviewed_by -
 - pt-social-contributions | PT | tier 1 | reviewed_by Mário Jorge da costa Vale
-- pt-vat-return | PT | tier 2 | reviewed_by -
 - qa-company-formation | QA | tier 2 | reviewed_by -
 - qa-corporate-income-tax | QA | tier 2 | reviewed_by -
 - qa-payroll-social | QA | tier 2 | reviewed_by -
@@ -1408,7 +1394,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - ro-income-tax | RO | tier 2 | reviewed_by -
 - ro-payroll-social | RO | tier 2 | reviewed_by -
 - ro-tax-overview | RO | tier 2 | reviewed_by -
-- ro-vat-return | RO | tier 2 | reviewed_by -
 - romania-einvoice | RO | tier 2 | reviewed_by -
 - romania-vat-return | RO | tier 2 | reviewed_by -
 - ru-bookkeeping | RU | tier 2 | reviewed_by -
@@ -1425,18 +1410,11 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - russia-vat | RU | tier 2 | reviewed_by -
 - rw-company-formation | RW | tier 2 | reviewed_by -
 - rw-corporate-income-tax | RW | tier 2 | reviewed_by -
-- rw-income-tax | RW | tier 2 | reviewed_by -
 - rw-tax-overview | RW | tier 2 | reviewed_by -
 - rwanda-income-tax | RW | tier 2 | reviewed_by -
 - rwanda-payroll | RW | tier 2 | reviewed_by -
 - rwanda-social-contributions | RW | tier 2 | reviewed_by -
 - rwanda-vat | RW | tier 2 | reviewed_by -
-- st-company-formation | ST | tier 2 | reviewed_by -
-- st-corporate-income-tax | ST | tier 2 | reviewed_by -
-- st-income-tax | ST | tier 2 | reviewed_by -
-- st-payroll-social | ST | tier 2 | reviewed_by -
-- st-tax-overview | ST | tier 2 | reviewed_by -
-- st-vat-gst | ST | tier 2 | reviewed_by -
 - ws-company-formation | WS | tier 2 | reviewed_by -
 - ws-corporate-income-tax | WS | tier 2 | reviewed_by -
 - ws-income-tax | WS | tier 2 | reviewed_by -
@@ -1449,6 +1427,12 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - sm-payroll-social | SM | tier 2 | reviewed_by -
 - sm-tax-overview | SM | tier 2 | reviewed_by -
 - sm-vat-gst | SM | tier 2 | reviewed_by -
+- st-company-formation | ST | tier 2 | reviewed_by -
+- st-corporate-income-tax | ST | tier 2 | reviewed_by -
+- st-income-tax | ST | tier 2 | reviewed_by -
+- st-payroll-social | ST | tier 2 | reviewed_by -
+- st-tax-overview | ST | tier 2 | reviewed_by -
+- st-vat-gst | ST | tier 2 | reviewed_by -
 - saudi-arabia-references | SA | tier 2 | reviewed_by -
 - sa-corporate-tax | SA | tier 2 | reviewed_by Mehran Habib
 - sa-excise-tax | SA | tier 1 | reviewed_by Mehran Habib
@@ -1487,7 +1471,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - sl-tax-overview | SL | tier 2 | reviewed_by -
 - sl-vat-gst | SL | tier 2 | reviewed_by -
 - sg-cpf-medisave | SG | tier 2 | reviewed_by -
-- sg-gst-return | SG | tier 2 | reviewed_by -
 - sg-income-tax | SG | tier 2 | reviewed_by -
 - sg-tax-residency | SG | tier 2 | reviewed_by -
 - sg-zero-cgt | SG | tier 2 | reviewed_by -
@@ -1548,7 +1531,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - es-modelo-111 | ES | tier 2 | reviewed_by -
 - es-rental-income | ES | tier 2 | reviewed_by -
 - es-social-contributions | ES | tier 2 | reviewed_by -
-- es-vat-return | ES | tier 2 | reviewed_by -
 - spain-references | ES | tier 2 | reviewed_by -
 - spain-bookkeeping | ES | tier 2 | reviewed_by -
 - spain-crypto-tax | ES | tier 2 | reviewed_by -
@@ -1585,7 +1567,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - se-capital-gains | SE | tier 2 | reviewed_by -
 - se-income-tax | SE | tier 2 | reviewed_by -
 - se-social-contributions | SE | tier 2 | reviewed_by -
-- se-vat-return | SE | tier 2 | reviewed_by -
 - sweden-bookkeeping | SE | tier 2 | reviewed_by -
 - sweden-crypto-tax | SE | tier 2 | reviewed_by -
 - sweden-payroll | SE | tier 2 | reviewed_by -
@@ -1597,7 +1578,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - ch-federal-income-tax | CH | tier 2 | reviewed_by -
 - ch-lump-sum | CH | tier 2 | reviewed_by -
 - ch-tax-overview | CH | tier 2 | reviewed_by -
-- ch-vat-return | CH | tier 2 | reviewed_by -
 - switzerland-crypto-tax | CH | tier 2 | reviewed_by -
 - switzerland-vat | CH | tier 2 | reviewed_by -
 - taiwan-vat | TW | tier 2 | reviewed_by -
@@ -1669,12 +1649,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - tm-payroll-social | TM | tier 2 | reviewed_by -
 - tm-tax-overview | TM | tier 2 | reviewed_by -
 - tm-vat-gst | TM | tier 2 | reviewed_by -
-- ae-corporate-tax | AE | tier 1 | reviewed_by Mehran Habib
-- ae-income-tax | AE | tier 2 | reviewed_by -
-- ae-payroll-social | AE | tier 2 | reviewed_by -
-- ae-tax-overview | AE | tier 2 | reviewed_by -
-- ae-tax-residency | AE | tier 1 | reviewed_by Mehran Habib
-- uae-vat | AE | tier 1 | reviewed_by Mehran Habib
 - ug-company-formation | UG | tier 2 | reviewed_by -
 - ug-corporate-income-tax | UG | tier 2 | reviewed_by -
 - ug-income-tax | UG | tier 2 | reviewed_by -
@@ -1719,7 +1693,12 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - ua-tax-overview | UA | tier 2 | reviewed_by -
 - ukraine-vat | UA | tier 2 | reviewed_by -
 - ae-company-formation | AE | tier 2 | reviewed_by -
-- ae-vat-return | AE | tier 2 | reviewed_by -
+- ae-corporate-tax | AE | tier 1 | reviewed_by Mehran Habib
+- ae-income-tax | AE | tier 2 | reviewed_by -
+- ae-payroll-social | AE | tier 2 | reviewed_by -
+- ae-tax-overview | AE | tier 2 | reviewed_by -
+- ae-tax-residency | AE | tier 1 | reviewed_by Mehran Habib
+- uae-vat | AE | tier 1 | reviewed_by Mehran Habib
 - uruguay-income-tax | UY | tier 2 | reviewed_by -
 - uruguay-iva | UY | tier 2 | reviewed_by -
 - uruguay-payroll | UY | tier 2 | reviewed_by -
@@ -1727,9 +1706,6 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - uy-company-formation | UY | tier 2 | reviewed_by -
 - uy-corporate-income-tax | UY | tier 2 | reviewed_by -
 - uy-tax-overview | UY | tier 2 | reviewed_by -
-- us-capital-gains | US | tier 2 | reviewed_by James Wallach
-- us-nonresident-cgt | US | tier 2 | reviewed_by James Wallach
-- us-tax-residency | US | tier 2 | reviewed_by James Wallach
 - uz-company-formation | UZ | tier 2 | reviewed_by -
 - uz-corporate-income-tax | UZ | tier 2 | reviewed_by -
 - uz-tax-overview | UZ | tier 2 | reviewed_by -
@@ -1774,13 +1750,8 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - bd-return-assembly | BD | tier 2 | reviewed_by -
 - br-freelance-intake | BR | tier 2 | reviewed_by -
 - br-return-assembly | BR | tier 2 | reviewed_by -
-- ca-540-individual-return | US-CA | tier 2 | reviewed_by -
-- ca-estimated-tax-540es | US-CA | tier 2 | reviewed_by -
 - ca-freelance-intake | CA | tier 2 | reviewed_by -
-- ca-llc-fee-and-tax | US-CA | tier 2 | reviewed_by -
-- ca-pte-elective-tax | US-CA | tier 2 | reviewed_by -
 - ca-return-assembly | CA | tier 2 | reviewed_by -
-- california-sales-tax | US-CA | tier 2 | reviewed_by -
 - de-freelance-intake | DE | tier 2 | reviewed_by -
 - de-return-assembly | DE | tier 2 | reviewed_by -
 - eg-freelance-intake | EG | tier 2 | reviewed_by -
@@ -1804,17 +1775,10 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - mx-return-assembly | MX | tier 2 | reviewed_by -
 - nl-freelance-intake | NL | tier 2 | reviewed_by -
 - nl-return-assembly | NL | tier 2 | reviewed_by -
-- ny-corporate-franchise-article-9a | US-NY | tier 2 | reviewed_by -
-- ny-it-201-resident-return | US-NY | tier 2 | reviewed_by -
-- ny-llc-filing-fee-it-204-ll | US-NY | tier 2 | reviewed_by -
-- ny-payroll | US-NY | tier 2 | reviewed_by -
-- ny-pte-tax-ptet | US-NY | tier 2 | reviewed_by -
 - pk-freelance-intake | PK | tier 2 | reviewed_by -
 - pk-return-assembly | PK | tier 2 | reviewed_by -
 - ru-freelance-intake | RU | tier 2 | reviewed_by -
 - ru-return-assembly | RU | tier 2 | reviewed_by -
-- texas-sales-tax | US-TX | tier 2 | reviewed_by -
-- tx-margin-tax | US-TX | tier 2 | reviewed_by -
 - ua-freelance-intake | UA | tier 2 | reviewed_by -
 - ua-return-assembly | UA | tier 2 | reviewed_by -
 - uk-freelance-intake | GB | tier 2 | reviewed_by -
@@ -1840,203 +1804,179 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - employer-payroll-template | - | tier 2 | reviewed_by -
 - estimated-provisional-tax-template | - | tier 2 | reviewed_by -
 - rental-property-income-template | - | tier 2 | reviewed_by -
-- ak-sales-tax | US-AK | tier 2 | reviewed_by -
-- al-income-tax | US-AL | tier 2 | reviewed_by -
-- al-sales-tax | US-AL | tier 2 | reviewed_by -
-- alabama-income-tax | US-AL | tier 2 | reviewed_by -
-- alabama-sales-tax | US-AL | tier 2 | reviewed_by -
-- ar-income-tax | US-AR | tier 2 | reviewed_by -
-- ar-sales-tax | US-AR | tier 2 | reviewed_by -
-- arkansas-sales-tax | US-AR | tier 2 | reviewed_by -
-- arizona-sales-tax | US-AZ | tier 2 | reviewed_by -
-- az-income-tax | US-AZ | tier 2 | reviewed_by -
-- az-payroll | US-AZ | tier 2 | reviewed_by -
-- az-sales-tax | US-AZ | tier 2 | reviewed_by -
-- az-transaction-privilege-tax | US-AZ | tier 2 | reviewed_by -
-- ca-estimated-tax-540es | US-CA | tier 2 | reviewed_by -
-- ca-form-3853-coverage | US-CA | tier 2 | reviewed_by -
-- ca-formation | US-CA | tier 2 | reviewed_by -
-- ca-540-individual-return | US-CA | tier 2 | reviewed_by -
-- ca-payroll | US-CA | tier 2 | reviewed_by -
-- california-sales-tax | US-CA | tier 2 | reviewed_by -
-- ca-smllc-form-568 | US-CA | tier 2 | reviewed_by -
-- co-income-tax | US-CO | tier 2 | reviewed_by -
-- co-payroll | US-CO | tier 2 | reviewed_by -
-- co-retail-delivery-and-suts | US-CO | tier 2 | reviewed_by -
-- co-sales-tax | US-CO | tier 2 | reviewed_by -
-- colorado-sales-tax | US-CO | tier 2 | reviewed_by -
-- connecticut-sales-tax | US-CT | tier 2 | reviewed_by -
-- ct-income-tax | US-CT | tier 2 | reviewed_by -
-- ct-payroll | US-CT | tier 2 | reviewed_by -
-- ct-sales-tax | US-CT | tier 2 | reviewed_by -
-- dc-income-tax | US-DC | tier 2 | reviewed_by -
-- dc-sales-tax | US-DC | tier 2 | reviewed_by -
-- de-formation | US-DE | tier 2 | reviewed_by -
-- de-franchise-tax-and-llc | US-DE | tier 2 | reviewed_by -
-- de-gross-receipts-tax | US-DE | tier 2 | reviewed_by -
-- de-income-tax | US-DE | tier 2 | reviewed_by -
-- fl-annual-report | US-FL | tier 1 | reviewed_by Rob Hoffman
-- fl-corporate-income-tax | US-FL | tier 1 | reviewed_by Rob Hoffman
-- fl-sales-use-tax | US-FL | tier 2 | reviewed_by -
-- fl-sales-use-tax-surtax | US-FL | tier 1 | reviewed_by Rob Hoffman
-- fl-sales-use-tax | US-FL | tier 1 | reviewed_by Rob Hoffman
-- fl-transient-rental-tax | US-FL | tier 1 | reviewed_by Rob Hoffman
-- ga-corporate-and-ptet | US-GA | tier 2 | reviewed_by -
-- ga-estimated-tax-depth | US-GA | tier 2 | reviewed_by -
-- ga-formation | US-GA | tier 2 | reviewed_by -
-- ga-income-tax | US-GA | tier 2 | reviewed_by -
-- ga-net-worth-tax | US-GA | tier 2 | reviewed_by -
-- ga-payroll | US-GA | tier 2 | reviewed_by -
-- ga-sales-tax | US-GA | tier 2 | reviewed_by -
-- georgia-corporate-income-tax-returns-form-600 | US-GA | tier 2 | reviewed_by -
-- georgia-individual-tax-return-form-500 | US-GA | tier 2 | reviewed_by -
-- georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation | US-GA | tier 2 | reviewed_by -
-- hi-income-tax | US-HI | tier 2 | reviewed_by -
-- hi-sales-tax | US-HI | tier 2 | reviewed_by -
-- ia-income-tax | US-IA | tier 2 | reviewed_by -
-- ia-sales-tax | US-IA | tier 2 | reviewed_by -
-- id-sales-tax | US-ID | tier 2 | reviewed_by -
-- idaho-sales-tax | US-ID | tier 2 | reviewed_by -
-- il-estimated-tax | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
-- il-income-tax | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
-- il-payroll | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
-- il-pprt | US-IL | tier 2 | reviewed_by -
-- il-sales-tax | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
-- illinois-sales-tax | US-IL | tier 2 | reviewed_by -
-- in-payroll | US-IN | tier 2 | reviewed_by -
-- in-sales-tax | US-IN | tier 2 | reviewed_by -
-- indiana-sales-tax | US-IN | tier 2 | reviewed_by -
-- ks-income-tax | US-KS | tier 2 | reviewed_by -
-- ks-sales-tax | US-KS | tier 2 | reviewed_by -
-- ky-income-tax | US-KY | tier 2 | reviewed_by -
-- ky-payroll | US-KY | tier 2 | reviewed_by -
-- ky-sales-tax | US-KY | tier 2 | reviewed_by -
-- la-income-tax | US-LA | tier 2 | reviewed_by -
-- la-sales-tax | US-LA | tier 2 | reviewed_by -
-- ma-corporate-excise | US-MA | tier 2 | reviewed_by -
-- ma-income-tax | US-MA | tier 2 | reviewed_by -
-- ma-payroll | US-MA | tier 2 | reviewed_by -
-- ma-sales-tax | US-MA | tier 2 | reviewed_by -
-- massachusetts-sales-tax | US-MA | tier 2 | reviewed_by -
-- maryland-sales-tax | US-MD | tier 2 | reviewed_by -
-- md-income-tax | US-MD | tier 2 | reviewed_by -
-- md-payroll | US-MD | tier 2 | reviewed_by -
-- md-sales-tax | US-MD | tier 2 | reviewed_by -
-- maine-sales-tax | US-ME | tier 2 | reviewed_by -
-- me-income-tax | US-ME | tier 2 | reviewed_by -
-- me-sales-tax | US-ME | tier 2 | reviewed_by -
-- mi-corporate-income-tax | US-MI | tier 2 | reviewed_by -
-- mi-detroit-individual-return | US-MI | tier 2 | reviewed_by -
-- mi-estimated-tax | US-MI | tier 2 | reviewed_by -
-- mi-homestead-credit | US-MI | tier 2 | reviewed_by -
-- mi-income-tax | US-MI | tier 2 | reviewed_by -
-- mi-payroll | US-MI | tier 2 | reviewed_by -
-- mi-pension-retirement-subtraction | US-MI | tier 2 | reviewed_by -
-- mi-return-assembly | US-MI | tier 2 | reviewed_by -
-- mi-sales-tax | US-MI | tier 2 | reviewed_by -
-- minnesota-sales-tax | US-MN | tier 2 | reviewed_by -
-- mn-corporate-and-pte | US-MN | tier 2 | reviewed_by -
-- mn-income-tax | US-MN | tier 2 | reviewed_by -
-- mn-payroll | US-MN | tier 2 | reviewed_by -
-- mn-sales-tax | US-MN | tier 2 | reviewed_by -
-- missouri-sales-tax | US-MO | tier 2 | reviewed_by -
-- mo-income-tax | US-MO | tier 2 | reviewed_by -
-- mo-payroll | US-MO | tier 2 | reviewed_by -
-- mo-sales-tax | US-MO | tier 2 | reviewed_by -
-- mississippi-sales-tax | US-MS | tier 2 | reviewed_by -
-- ms-income-tax | US-MS | tier 2 | reviewed_by -
-- ms-sales-tax | US-MS | tier 2 | reviewed_by -
-- mt-income-tax | US-MT | tier 2 | reviewed_by -
-- nc-bailey-settlement-retirement | US-NC | tier 2 | reviewed_by -
-- nc-corporate-tax | US-NC | tier 2 | reviewed_by -
-- nc-estimated-tax | US-NC | tier 2 | reviewed_by -
-- nc-income-tax | US-NC | tier 2 | reviewed_by -
-- nc-payroll | US-NC | tier 2 | reviewed_by -
-- nc-return-assembly | US-NC | tier 2 | reviewed_by -
-- nc-sales-tax | US-NC | tier 2 | reviewed_by -
-- nd-corporate-tax | US-ND | tier 2 | reviewed_by -
-- nd-estimated-tax | US-ND | tier 2 | reviewed_by -
-- nd-income-tax | US-ND | tier 2 | reviewed_by -
-- nd-payroll | US-ND | tier 2 | reviewed_by -
-- nd-return-assembly | US-ND | tier 2 | reviewed_by -
-- nd-sales-tax | US-ND | tier 2 | reviewed_by -
-- ne-income-tax | US-NE | tier 2 | reviewed_by -
-- ne-sales-tax | US-NE | tier 2 | reviewed_by -
-- nh-bpt-bet | US-NH | tier 2 | reviewed_by -
-- nh-interest-dividends-note | US-NH | tier 2 | reviewed_by -
-- new-jersey-sales-tax | US-NJ | tier 2 | reviewed_by -
-- nj-cbt-and-bait | US-NJ | tier 2 | reviewed_by -
-- nj-income-tax | US-NJ | tier 2 | reviewed_by -
-- nj-payroll | US-NJ | tier 2 | reviewed_by -
-- nj-sales-tax | US-NJ | tier 2 | reviewed_by -
-- new-mexico-sales-tax | US-NM | tier 2 | reviewed_by -
-- nm-income-tax | US-NM | tier 2 | reviewed_by -
-- nm-sales-tax | US-NM | tier 2 | reviewed_by -
-- nevada-sales-tax | US-NV | tier 2 | reviewed_by -
-- nv-commerce-and-mbt | US-NV | tier 2 | reviewed_by -
-- nv-commerce-tax | US-NV | tier 2 | reviewed_by -
-- nv-formation | US-NV | tier 2 | reviewed_by -
-- nv-sales-tax | US-NV | tier 2 | reviewed_by -
-- nyc-unincorporated-business-tax | US-NY-NYC | tier 2 | reviewed_by -
-- new-york-sales-tax | US-NY | tier 2 | reviewed_by -
-- ny-estimated-tax | US-NY | tier 2 | reviewed_by -
-- ny-formation | US-NY | tier 2 | reviewed_by -
-- ny-it-201-resident-return | US-NY | tier 2 | reviewed_by -
-- ny-llc-filing-fee-it-204-ll | US-NY | tier 2 | reviewed_by -
-- ny-mctmt | US-NY | tier 2 | reviewed_by -
-- new-york-sales-tax | US-NY | tier 2 | reviewed_by -
-- nyc-unincorporated-business-tax | US-NY | tier 2 | reviewed_by -
-- oh-cat-tax | US-OH | tier 2 | reviewed_by -
-- oh-cat | US-OH | tier 2 | reviewed_by -
-- oh-income-tax | US-OH | tier 2 | reviewed_by -
-- oh-payroll | US-OH | tier 2 | reviewed_by -
-- oh-sales-tax | US-OH | tier 2 | reviewed_by -
-- ohio-sales-tax | US-OH | tier 2 | reviewed_by -
-- ok-income-tax | US-OK | tier 2 | reviewed_by -
-- ok-sales-tax | US-OK | tier 2 | reviewed_by -
-- oklahoma-sales-tax | US-OK | tier 2 | reviewed_by -
-- or-cat | US-OR | tier 2 | reviewed_by -
-- or-income-tax | US-OR | tier 2 | reviewed_by -
-- or-payroll | US-OR | tier 2 | reviewed_by -
-- pa-income-tax | US-PA | tier 2 | reviewed_by -
-- pa-local-eit | US-PA | tier 2 | reviewed_by -
-- pa-payroll | US-PA | tier 2 | reviewed_by -
-- pa-sales-tax | US-PA | tier 2 | reviewed_by -
-- pennsylvania-sales-tax | US-PA | tier 2 | reviewed_by -
+- us-ak-sales-tax | US-AK | tier 2 | reviewed_by -
+- us-al-income-tax | US-AL | tier 2 | reviewed_by -
+- us-al-sales-tax | US-AL | tier 2 | reviewed_by -
+- us-ar-income-tax | US-AR | tier 2 | reviewed_by -
+- us-ar-sales-tax | US-AR | tier 2 | reviewed_by -
+- us-az-income-tax | US-AZ | tier 2 | reviewed_by -
+- us-az-payroll | US-AZ | tier 2 | reviewed_by -
+- us-az-sales-tax | US-AZ | tier 2 | reviewed_by -
+- us-az-transaction-privilege-tax | US-AZ | tier 2 | reviewed_by -
+- us-ca-540-individual-return | US-CA | tier 2 | reviewed_by -
+- us-ca-estimated-tax-540es | US-CA | tier 2 | reviewed_by -
+- us-ca-form-3853-coverage | US-CA | tier 2 | reviewed_by -
+- us-ca-formation | US-CA | tier 2 | reviewed_by -
+- us-ca-llc-fee-and-tax | US-CA | tier 2 | reviewed_by -
+- us-ca-payroll | US-CA | tier 2 | reviewed_by -
+- us-ca-pte-elective-tax | US-CA | tier 2 | reviewed_by -
+- us-ca-sales-tax | US-CA | tier 2 | reviewed_by -
+- us-ca-smllc-form-568 | US-CA | tier 2 | reviewed_by -
+- us-co-income-tax | US-CO | tier 2 | reviewed_by -
+- us-co-payroll | US-CO | tier 2 | reviewed_by -
+- us-co-retail-delivery-and-suts | US-CO | tier 2 | reviewed_by -
+- us-co-sales-tax | US-CO | tier 2 | reviewed_by -
+- us-ct-income-tax | US-CT | tier 2 | reviewed_by -
+- us-ct-payroll | US-CT | tier 2 | reviewed_by -
+- us-ct-sales-tax | US-CT | tier 2 | reviewed_by -
+- us-dc-income-tax | US-DC | tier 2 | reviewed_by -
+- us-dc-sales-tax | US-DC | tier 2 | reviewed_by -
+- us-de-formation | US-DE | tier 2 | reviewed_by -
+- us-de-franchise-tax-and-llc | US-DE | tier 2 | reviewed_by -
+- us-de-gross-receipts-tax | US-DE | tier 2 | reviewed_by -
+- us-de-income-tax | US-DE | tier 2 | reviewed_by -
+- us-fl-annual-report | US-FL | tier 1 | reviewed_by Rob Hoffman
+- us-fl-corporate-income-tax | US-FL | tier 1 | reviewed_by Rob Hoffman
+- us-fl-sales-use-tax-surtax | US-FL | tier 1 | reviewed_by Rob Hoffman
+- us-fl-sales-use-tax | US-FL | tier 1 | reviewed_by Rob Hoffman
+- us-fl-transient-rental-tax | US-FL | tier 1 | reviewed_by Rob Hoffman
+- us-ga-corporate-and-ptet | US-GA | tier 2 | reviewed_by -
+- us-ga-corporate-income-tax-returns-form-600 | US-GA | tier 2 | reviewed_by -
+- us-ga-estimated-tax-depth | US-GA | tier 2 | reviewed_by -
+- us-ga-formation | US-GA | tier 2 | reviewed_by -
+- us-ga-income-tax | US-GA | tier 2 | reviewed_by -
+- us-ga-individual-tax-return-form-500 | US-GA | tier 2 | reviewed_by -
+- us-ga-net-worth-tax | US-GA | tier 2 | reviewed_by -
+- us-ga-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation | US-GA | tier 2 | reviewed_by -
+- us-ga-payroll | US-GA | tier 2 | reviewed_by -
+- us-ga-sales-tax | US-GA | tier 2 | reviewed_by -
+- us-hi-income-tax | US-HI | tier 2 | reviewed_by -
+- us-hi-sales-tax | US-HI | tier 2 | reviewed_by -
+- us-ia-income-tax | US-IA | tier 2 | reviewed_by -
+- us-ia-sales-tax | US-IA | tier 2 | reviewed_by -
+- us-id-sales-tax | US-ID | tier 2 | reviewed_by -
+- us-il-estimated-tax | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
+- us-il-income-tax | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
+- us-il-payroll | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
+- us-il-pprt | US-IL | tier 2 | reviewed_by -
+- us-il-sales-tax | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
+- us-in-payroll | US-IN | tier 2 | reviewed_by -
+- us-in-sales-tax | US-IN | tier 2 | reviewed_by -
+- us-ks-income-tax | US-KS | tier 2 | reviewed_by -
+- us-ks-sales-tax | US-KS | tier 2 | reviewed_by -
+- us-ky-income-tax | US-KY | tier 2 | reviewed_by -
+- us-ky-payroll | US-KY | tier 2 | reviewed_by -
+- us-ky-sales-tax | US-KY | tier 2 | reviewed_by -
+- us-la-income-tax | US-LA | tier 2 | reviewed_by -
+- us-la-sales-tax | US-LA | tier 2 | reviewed_by -
+- us-ma-corporate-excise | US-MA | tier 2 | reviewed_by -
+- us-ma-income-tax | US-MA | tier 2 | reviewed_by -
+- us-ma-payroll | US-MA | tier 2 | reviewed_by -
+- us-ma-sales-tax | US-MA | tier 2 | reviewed_by -
+- us-md-income-tax | US-MD | tier 2 | reviewed_by -
+- us-md-payroll | US-MD | tier 2 | reviewed_by -
+- us-md-sales-tax | US-MD | tier 2 | reviewed_by -
+- us-me-income-tax | US-ME | tier 2 | reviewed_by -
+- us-me-sales-tax | US-ME | tier 2 | reviewed_by -
+- us-mi-corporate-income-tax | US-MI | tier 2 | reviewed_by -
+- us-mi-detroit-individual-return | US-MI | tier 2 | reviewed_by -
+- us-mi-estimated-tax | US-MI | tier 2 | reviewed_by -
+- us-mi-homestead-credit | US-MI | tier 2 | reviewed_by -
+- us-mi-income-tax | US-MI | tier 2 | reviewed_by -
+- us-mi-payroll | US-MI | tier 2 | reviewed_by -
+- us-mi-pension-retirement-subtraction | US-MI | tier 2 | reviewed_by -
+- us-mi-return-assembly | US-MI | tier 2 | reviewed_by -
+- us-mi-sales-tax | US-MI | tier 2 | reviewed_by -
+- us-mn-corporate-and-pte | US-MN | tier 2 | reviewed_by -
+- us-mn-income-tax | US-MN | tier 2 | reviewed_by -
+- us-mn-payroll | US-MN | tier 2 | reviewed_by -
+- us-mn-sales-tax | US-MN | tier 2 | reviewed_by -
+- us-mo-income-tax | US-MO | tier 2 | reviewed_by -
+- us-mo-payroll | US-MO | tier 2 | reviewed_by -
+- us-mo-sales-tax | US-MO | tier 2 | reviewed_by -
+- us-ms-income-tax | US-MS | tier 2 | reviewed_by -
+- us-ms-sales-tax | US-MS | tier 2 | reviewed_by -
+- us-mt-income-tax | US-MT | tier 2 | reviewed_by -
+- us-nc-bailey-settlement-retirement | US-NC | tier 2 | reviewed_by -
+- us-nc-corporate-tax | US-NC | tier 2 | reviewed_by -
+- us-nc-estimated-tax | US-NC | tier 2 | reviewed_by -
+- us-nc-income-tax | US-NC | tier 2 | reviewed_by -
+- us-nc-payroll | US-NC | tier 2 | reviewed_by -
+- us-nc-return-assembly | US-NC | tier 2 | reviewed_by -
+- us-nc-sales-tax | US-NC | tier 2 | reviewed_by -
+- us-nd-corporate-tax | US-ND | tier 2 | reviewed_by -
+- us-nd-estimated-tax | US-ND | tier 2 | reviewed_by -
+- us-nd-income-tax | US-ND | tier 2 | reviewed_by -
+- us-nd-payroll | US-ND | tier 2 | reviewed_by -
+- us-nd-return-assembly | US-ND | tier 2 | reviewed_by -
+- us-nd-sales-tax | US-ND | tier 2 | reviewed_by -
+- us-ne-income-tax | US-NE | tier 2 | reviewed_by -
+- us-ne-sales-tax | US-NE | tier 2 | reviewed_by -
+- us-nh-bpt-bet | US-NH | tier 2 | reviewed_by -
+- us-nh-interest-dividends-note | US-NH | tier 2 | reviewed_by -
+- us-nj-cbt-and-bait | US-NJ | tier 2 | reviewed_by -
+- us-nj-income-tax | US-NJ | tier 2 | reviewed_by -
+- us-nj-payroll | US-NJ | tier 2 | reviewed_by -
+- us-nj-sales-tax | US-NJ | tier 2 | reviewed_by -
+- us-nm-income-tax | US-NM | tier 2 | reviewed_by -
+- us-nm-sales-tax | US-NM | tier 2 | reviewed_by -
+- us-nv-commerce-and-mbt | US-NV | tier 2 | reviewed_by -
+- us-nv-commerce-tax | US-NV | tier 2 | reviewed_by -
+- us-nv-formation | US-NV | tier 2 | reviewed_by -
+- us-nv-sales-tax | US-NV | tier 2 | reviewed_by -
+- us-ny-corporate-franchise-article-9a | US-NY | tier 2 | reviewed_by -
+- us-ny-estimated-tax | US-NY | tier 2 | reviewed_by -
+- us-ny-formation | US-NY | tier 2 | reviewed_by -
+- us-ny-it-201-resident-return | US-NY | tier 2 | reviewed_by -
+- us-ny-llc-filing-fee-it-204-ll | US-NY | tier 2 | reviewed_by -
+- us-ny-mctmt | US-NY | tier 2 | reviewed_by -
+- us-ny-nyc-unincorporated-business-tax | US-NY | tier 2 | reviewed_by -
+- us-ny-payroll | US-NY | tier 2 | reviewed_by -
+- us-ny-pte-tax-ptet | US-NY | tier 2 | reviewed_by -
+- us-ny-sales-tax | US-NY | tier 2 | reviewed_by -
+- us-oh-cat-tax | US-OH | tier 2 | reviewed_by -
+- us-oh-cat | US-OH | tier 2 | reviewed_by -
+- us-oh-income-tax | US-OH | tier 2 | reviewed_by -
+- us-oh-payroll | US-OH | tier 2 | reviewed_by -
+- us-oh-sales-tax | US-OH | tier 2 | reviewed_by -
+- us-ok-income-tax | US-OK | tier 2 | reviewed_by -
+- us-ok-sales-tax | US-OK | tier 2 | reviewed_by -
+- us-or-cat | US-OR | tier 2 | reviewed_by -
+- us-or-income-tax | US-OR | tier 2 | reviewed_by -
+- us-or-payroll | US-OR | tier 2 | reviewed_by -
+- us-pa-income-tax | US-PA | tier 2 | reviewed_by -
+- us-pa-local-eit | US-PA | tier 2 | reviewed_by -
+- us-pa-payroll | US-PA | tier 2 | reviewed_by -
+- us-pa-sales-tax | US-PA | tier 2 | reviewed_by -
 - us-states-references | US | tier 2 | reviewed_by -
-- ri-income-tax | US-RI | tier 2 | reviewed_by -
-- ri-sales-tax | US-RI | tier 2 | reviewed_by -
-- sc-income-tax | US-SC | tier 2 | reviewed_by -
-- sc-sales-tax | US-SC | tier 2 | reviewed_by -
-- sd-sales-tax | US-SD | tier 2 | reviewed_by -
-- tn-sales-tax | US-TN | tier 2 | reviewed_by -
-- tx-formation | US-TX | tier 2 | reviewed_by -
-- tx-franchise-tax | US-TX | tier 2 | reviewed_by -
-- tx-sales-use-tax | US-TX | tier 2 | reviewed_by -
-- tx-sales-use-tax | US-TX | tier 2 | reviewed_by -
-- ut-income-tax | US-UT | tier 2 | reviewed_by -
-- ut-sales-tax | US-UT | tier 2 | reviewed_by -
-- utah-sales-tax | US-UT | tier 2 | reviewed_by -
-- va-corporate-tax-and-bpol | US-VA | tier 2 | reviewed_by -
-- va-income-tax | US-VA | tier 2 | reviewed_by -
-- va-payroll | US-VA | tier 2 | reviewed_by -
-- va-sales-tax | US-VA | tier 2 | reviewed_by -
-- vt-income-tax | US-VT | tier 2 | reviewed_by -
-- vt-sales-tax | US-VT | tier 2 | reviewed_by -
-- wa-business-occupation-tax | US-WA | tier 2 | reviewed_by -
-- wa-bo-tax | US-WA | tier 2 | reviewed_by -
-- wa-business-occupation-tax | US-WA | tier 2 | reviewed_by -
-- wa-sales-tax | US-WA | tier 2 | reviewed_by -
-- washington-sales-tax | US-WA | tier 2 | reviewed_by -
-- wi-income-tax | US-WI | tier 2 | reviewed_by -
-- wi-payroll | US-WI | tier 2 | reviewed_by -
-- wi-sales-tax | US-WI | tier 2 | reviewed_by -
-- wisconsin-sales-tax | US-WI | tier 2 | reviewed_by -
-- wv-income-tax | US-WV | tier 2 | reviewed_by -
-- wv-sales-tax | US-WV | tier 2 | reviewed_by -
-- wy-formation | US-WY | tier 2 | reviewed_by -
-- wy-sales-tax | US-WY | tier 2 | reviewed_by -
-- wyoming-sales-tax | US-WY | tier 2 | reviewed_by -
+- us-ri-income-tax | US-RI | tier 2 | reviewed_by -
+- us-ri-sales-tax | US-RI | tier 2 | reviewed_by -
+- us-sc-income-tax | US-SC | tier 2 | reviewed_by -
+- us-sc-sales-tax | US-SC | tier 2 | reviewed_by -
+- us-sd-sales-tax | US-SD | tier 2 | reviewed_by -
+- us-tn-sales-tax | US-TN | tier 2 | reviewed_by -
+- us-tx-formation | US-TX | tier 2 | reviewed_by -
+- us-tx-franchise-tax | US-TX | tier 2 | reviewed_by -
+- us-tx-margin-tax | US-TX | tier 2 | reviewed_by -
+- us-tx-sales-use-tax | US-TX | tier 2 | reviewed_by -
+- us-ut-income-tax | US-UT | tier 2 | reviewed_by -
+- us-ut-sales-tax | US-UT | tier 2 | reviewed_by -
+- us-va-corporate-tax-and-bpol | US-VA | tier 2 | reviewed_by -
+- us-va-income-tax | US-VA | tier 2 | reviewed_by -
+- us-va-payroll | US-VA | tier 2 | reviewed_by -
+- us-va-sales-tax | US-VA | tier 2 | reviewed_by -
+- us-vt-income-tax | US-VT | tier 2 | reviewed_by -
+- us-vt-sales-tax | US-VT | tier 2 | reviewed_by -
+- us-wa-bo-tax | US-WA | tier 2 | reviewed_by -
+- us-wa-business-occupation-tax | US-WA | tier 2 | reviewed_by -
+- us-wa-sales-tax | US-WA | tier 2 | reviewed_by -
+- us-wi-income-tax | US-WI | tier 2 | reviewed_by -
+- us-wi-payroll | US-WI | tier 2 | reviewed_by -
+- us-wi-sales-tax | US-WI | tier 2 | reviewed_by -
+- us-wv-income-tax | US-WV | tier 2 | reviewed_by -
+- us-wv-sales-tax | US-WV | tier 2 | reviewed_by -
+- us-wy-formation | US-WY | tier 2 | reviewed_by -
+- us-wy-sales-tax | US-WY | tier 2 | reviewed_by -
 - banking-sector | GLOBAL | tier 2 | reviewed_by -
 - charity-nonprofit | GLOBAL | tier 2 | reviewed_by -
 - construction-sector | GLOBAL | tier 2 | reviewed_by -
@@ -2160,7 +2100,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-Everything else in this repo — 1,763 of the 1,927 indexed guides, covering 189 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
+Everything else in this repo — 1,703 of the 1,867 indexed guides, covering 184 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
 
 ---
 

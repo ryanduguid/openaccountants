@@ -15,7 +15,7 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
    `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py`
 5. Open a PR with a description of what tax forms/schedules the skill covers
 
-> **Important:** write in `skills/**`, never by hand in `packages/`, `index.json` or `llms-full.txt` — those are generated. But do commit the regenerated copies: nothing else rebuilds them, and CI (`guard-derived-trees`) rebuilds all three and fails when the committed copies are stale. One exception: **`packages/us-federal/`** (the federal rates JSONs and their runbook) is hand-authored and may be edited directly.
+> **Important:** write in `skills/**`, never by hand in `packages/`, `index.json` or `llms-full.txt` — those are generated. But do commit the regenerated copies: nothing else rebuilds them, and CI (`guard-derived-trees`) rebuilds all three and fails when the committed copies are stale. One exception: **`packages/us-federal/`** (the federal rates JSONs and their runbook) is hand-authored and may be edited directly. Renaming or deleting a guide needs an entry in `docs/guide-migrations.json` (`from`, `to` or null, `slug`, `replacement`) in the same change, with every reference repointed to the replacement slug; the sync-integrity gate fails an unrecorded deletion or rename.
 
 ## Repo layout
 
@@ -62,7 +62,7 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 |-----------------|-------------|---------|
 | Country-specific (Malta crypto, UK VAT, Germany payroll) | `skills/international/[country]/` | `skills/international/malta/mt-crypto-tax.md` |
 | US federal | `skills/federal/` | `skills/federal/us-crypto-tax.md` |
-| US state | `skills/us-states/[code]/` | `skills/us-states/ny/ny-income-tax.md` |
+| US state | `skills/us-states/[code]/` | `skills/us-states/ny/us-ny-it-201-resident-return.md` |
 | Global / cross-border (not one country) | `skills/cross-border/` + `jurisdiction:` in frontmatter | `skills/cross-border/oecd-model-treaty-defaults.md` with `jurisdiction: INTL` |
 | Industry vertical (developer, e-commerce) | `skills/verticals/` + `jurisdiction: GLOBAL` | `skills/verticals/freelance-developer.md` |
 | Platform integration (Stripe, Xero) | `skills/integrations/` + `jurisdiction: GLOBAL` | `skills/integrations/stripe-integration.md` |

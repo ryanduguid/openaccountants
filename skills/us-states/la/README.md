@@ -13,8 +13,8 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `la-income-tax.md` | Louisiana individual income tax (flat 3% effective 2025) for self-employed / sole proprietors. Form IT-540. |
-| `la-sales-tax.md` | Louisiana sales and use tax — 4.45% state rate plus parish taxes (among the highest combined rates in the US). |
+| `us-la-income-tax.md` | Louisiana individual income tax (flat 3% effective 2025) for self-employed / sole proprietors. Form IT-540. |
+| `us-la-sales-tax.md` | Louisiana sales and use tax — 4.45% state rate plus parish taxes (among the highest combined rates in the US). |
 
 ## What's NOT covered
 - Corporate income tax (Form CIFT-620)

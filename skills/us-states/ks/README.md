@@ -13,8 +13,8 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `ks-income-tax.md` | Kansas individual income tax (two-bracket progressive: 5.20%–5.58%) for self-employed / sole proprietors. Form K-40. |
-| `ks-sales-tax.md` | Kansas sales and use tax — 6.5% state rate plus local taxes. |
+| `us-ks-income-tax.md` | Kansas individual income tax (two-bracket progressive: 5.20%–5.58%) for self-employed / sole proprietors. Form K-40. |
+| `us-ks-sales-tax.md` | Kansas sales and use tax — 6.5% state rate plus local taxes. |
 
 ## What's NOT covered
 - Corporate income tax (Form K-120)

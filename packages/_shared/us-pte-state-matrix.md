@@ -3,6 +3,7 @@ name: us-pte-state-matrix
 description: Tier 2 US federal-level reference skill providing the comprehensive state-by-state matrix of Pass-Through Entity Tax (PTET) elections under the SALT-cap workaround blessed by IRS Notice 2020-75 and codified state-by-state from 2021 onward. Covers election deadlines, rates, eligibility, owner-credit refundability, estimated-tax requirements, and resident-credit interactions for the 35+ states that have enacted PTET regimes. Includes a 5-step decision framework for electing PTET and common-trap callouts for CA, NY, GA, NC, IL, MN, VA. Tax year 2025 under OBBBA.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
@@ -22,7 +23,7 @@ This is a **reference skill**, not a procedural skill. Practitioners consult it 
 - "Is electing PTET worth it for my client?"
 - "If my client's home state is A and the PTE files PTET in state B, will A grant a resident credit?"
 
-It does **not** itself execute a PTET filing — actual return preparation is delegated to the appropriate state-specific skill (e.g., `ca-540-individual-return`, `us-ny-it-204-pte`, etc., where they exist) or handled by the credentialed reviewer.
+It does **not** itself execute a PTET filing — actual return preparation is delegated to the appropriate state-specific skill (e.g., `us-ca-540-individual-return`, `us-ny-it-204-pte`, etc., where they exist) or handled by the credentialed reviewer.
 
 **In scope:**
 - The 35 US states (plus DC) that have enacted PTET regimes through tax year 2025.

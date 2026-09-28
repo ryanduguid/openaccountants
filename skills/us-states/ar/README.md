@@ -14,9 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| `ar-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form AR1000F) |
-| `ar-sales-tax.md` | State and local sales & use tax compliance |
-| `arkansas-sales-tax.md` | Arkansas sales and use tax |
+| `us-ar-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form AR1000F) |
+| `us-ar-sales-tax.md` | State and local sales & use tax compliance |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes

@@ -8,9 +8,8 @@
 1. `intake.md`
 2. `hu-income-tax.md`
 3. `hu-social-contributions.md`
-4. `hu-vat-return.md`
-5. `hungary-einvoice.md`
-6. `hungary-vat-return.md`
+4. `hungary-einvoice.md`
+5. `hungary-vat-return.md`
 
 ## Shared files this package needs
 

@@ -1,7 +1,7 @@
 ---
 name: us-tx-return-assembly
 description: Final orchestrator skill that assembles the complete federal and Texas compliance filing package for Texas resident sole proprietors and single-member LLCs disregarded for federal tax. Consumes outputs from all federal content skills (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC) and Texas compliance skills (franchise tax Form 05-102 or 05-158/05-169, sales tax where applicable) to produce a single unified reviewer package. Texas has no state income tax, so the assembly focuses on federal return accuracy plus Texas franchise tax filing and sales tax compliance verification. Reconciles federal return totals with Texas franchise tax total revenue computation and verifies sales tax obligations are met.
-version: 1.0
+version: 1.1
 jurisdiction: US-TX
 tax_year: 2025
 last_updated: 2026-09-28
@@ -43,7 +43,7 @@ Produces the complete federal + Texas compliance package for:
 0. **Step 6** — us-federal-return-assembly
 0. **Step 7** — us-quarterly-estimated-tax
 0. **Step 8** — us-1099-nec-issuance
-0. **Step 9** — tx-franchise-tax
+0. **Step 9** — us-tx-franchise-tax
 0. **Step 10** — tx-sales-tax-compliance
 0. **Step 11** — THIS SKILL — final assembly and verification
 

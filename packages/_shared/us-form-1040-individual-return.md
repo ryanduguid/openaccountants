@@ -3,6 +3,7 @@ name: us-form-1040-individual-return
 description: Tier 2 US federal content skill for preparing Form 1040 — the standard individual income tax return for non-freelance taxpayers (W-2 employees, retirees, investors, families). Covers tax year 2025 under OBBBA including the $40k SALT cap, the $15,750/$31,500/$23,625 standard deduction, capital gains brackets (0/15/20%), the §1411 3.8% NIIT, AMT post-TCJA, Schedule 1/2/3 walkthrough, dependents and filing status, kiddie tax §1(g), and itemized deduction Schedule A. Distinct from us-federal-return-assembly which orchestrates Schedule C freelance returns. Federal only.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: Christopher Aryee, CPA
 review_status: current
@@ -45,7 +46,7 @@ This skill prepares **Form 1040** and its three core schedules (1, 2, 3) plus **
 | Estate / gift returns (Form 706 / 709) | `us-estate-gift-706-709` |
 | Partnership K-1 with material participation issues | `us-form-1065-partnership` |
 | S-corp election analysis | `us-s-corp-election-decision` |
-| State returns | State-specific skill (e.g. `ca-540-individual-return`) |
+| State returns | State-specific skill (e.g. `us-ca-540-individual-return`) |
 
 ### 1.3 Refusal catalogue
 
@@ -690,7 +691,7 @@ Student loan interest paid: $1,800
 
 ### 19.2 Example B — MFJ with kids, mortgage, HSA, large itemized
 
-Marcus and Priya, MFJ, both age 41, California residents (refer to `ca-540-individual-return` for CA portion — this skill covers federal only)
+Marcus and Priya, MFJ, both age 41, California residents (refer to `us-ca-540-individual-return` for CA portion — this skill covers federal only)
 Marcus W-2 wages: $185,000; withholding $32,000
 Priya W-2 wages: $95,000; withholding $11,000
 Combined Social Security wages exceed $176,100 only on Marcus alone (so no excess SS tax issue)

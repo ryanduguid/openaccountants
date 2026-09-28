@@ -14,10 +14,10 @@
 
 | File | What it covers |
 |---|---|
-| `va-corporate-tax-and-bpol.md` | Source-cited tax guide for US-VA: va corporate tax and bpol |
-| `va-income-tax.md` | Virginia individual income tax, Virginia Form 760, Virginia graduated tax rates, Virginia self-employment... |
-| `va-payroll.md` | Virginia content skill for employer payroll compliance covering tax year 2025 |
-| `va-sales-tax.md` | Virginia sales tax, Virginia use tax, Virginia sales tax nexus, Virginia sales tax returns, Virginia... |
+| `us-va-corporate-tax-and-bpol.md` | Source-cited tax guide for US-VA: va corporate tax and bpol |
+| `us-va-income-tax.md` | Virginia individual income tax, Virginia Form 760, Virginia graduated tax rates, Virginia self-employment... |
+| `us-va-payroll.md` | Virginia content skill for employer payroll compliance covering tax year 2025 |
+| `us-va-sales-tax.md` | Virginia sales tax, Virginia use tax, Virginia sales tax nexus, Virginia sales tax returns, Virginia... |
 
 ## What's NOT covered
 

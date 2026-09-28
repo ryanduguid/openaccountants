@@ -13,9 +13,8 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `in-sales-tax.md` | Indiana sales and use tax — 7% flat statewide rate, no local sales taxes. |
-| `in-payroll.md` | Indiana Payroll Skill |
-| `indiana-sales-tax.md` | Indiana sales and use tax |
+| `us-in-sales-tax.md` | Indiana sales and use tax — 7% flat statewide rate, no local sales taxes. |
+| `us-in-payroll.md` | Indiana Payroll Skill |
 
 ## What's NOT covered
 - Corporate income tax (Form IT-20)

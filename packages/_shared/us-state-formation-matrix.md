@@ -3,6 +3,7 @@ name: us-state-formation-matrix
 description: Tier 2 US federal-level reference skill providing the 50-state at-a-glance entity formation matrix for LLCs and corporations — initial filing fees, annual report fees, minimum franchise and privilege taxes (CA $800, DE $300 LLC, TN $100 minimum, NV $325 + business license), registered agent requirements, foreign qualification thresholds, publication requirements (NY, AZ, NE), Series LLC availability (DE/IL/TX/TN/NV/UT and others), Professional Service Entity rules (PLLC/PC), and the Corporate Transparency Act / BOI status (currently stayed per December 2024 federal injunction). Tax year 2025.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
@@ -460,9 +461,9 @@ In outer counties (e.g., Albany, Erie), cost can be $200–$500.
 | Sales tax nexus 50-state matrix | us-sales-tax-nexus-50-state-matrix |
 | Pass-through entity tax matrix | us-pte-state-matrix |
 | Section 1202 QSBS | us-section-1202-qsbs |
-| California Form 568 (CA SMLLC) | ca-smllc-form-568 |
-| California Form 540 | ca-540-individual-return |
-| Texas Franchise Tax (PIR + EZ) | tx-franchise-tax |
+| California Form 568 (CA SMLLC) | us-ca-smllc-form-568 |
+| California Form 540 | us-ca-540-individual-return |
+| Texas Franchise Tax (PIR + EZ) | us-tx-franchise-tax |
 
 ## 13. Provenance
 

@@ -12,8 +12,9 @@ financial statements, transfer pricing, tax optimization), which are shared file
 listed below. Upload all of them together.
 
 1. `intake.md`
-2. `qc-individual-return.md`
-3. `qc-qst-return.md`
+2. `qc-employer-contributions.md`
+3. `qc-individual-return.md`
+4. `qc-qst-return.md`
 
 ## Shared files this package needs
 

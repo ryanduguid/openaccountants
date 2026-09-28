@@ -9,8 +9,7 @@
 2. `denmark-vat-return.md`
 3. `dk-capital-gains.md`
 4. `dk-income-tax.md`
-5. `dk-vat-return.md`
-6. `references.md`
+5. `references.md`
 
 ## Shared files this package needs
 

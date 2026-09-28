@@ -16,19 +16,18 @@
 9. `es-modelo-111.md`
 10. `es-rental-income.md`
 11. `es-social-contributions.md`
-12. `es-vat-return.md`
-13. `references.md`
-14. `spain-bookkeeping.md`
-15. `spain-crypto-tax.md`
-16. `spain-einvoice.md`
-17. `spain-financial-statements.md`
-18. `spain-formation.md`
-19. `spain-payroll.md`
-20. `spain-tax-optimization.md`
-21. `spain-transfer-pricing.md`
-22. `spain-vat-return.md`
-23. `spain-guided-intake.md`
-24. `spain-return-assembly.md`
+12. `references.md`
+13. `spain-bookkeeping.md`
+14. `spain-crypto-tax.md`
+15. `spain-einvoice.md`
+16. `spain-financial-statements.md`
+17. `spain-formation.md`
+18. `spain-payroll.md`
+19. `spain-tax-optimization.md`
+20. `spain-transfer-pricing.md`
+21. `spain-vat-return.md`
+22. `spain-guided-intake.md`
+23. `spain-return-assembly.md`
 
 ## Shared files this package needs
 

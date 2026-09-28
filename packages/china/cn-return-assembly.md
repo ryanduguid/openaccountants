@@ -1,8 +1,9 @@
 ---
 name: cn-return-assembly
-description: 本技能用于汇总组装中国税务申报与年度汇算清缴的最终复核包。触发短语包括："中国税务报表汇总"、"年度汇算清缴"、"企业所得税年度申报"、"个税综合所得汇算"、"电子税务局提交"、"国家税务总局 申报"、"China tax return assembly"、"China annual reconciliation"、"China CIT annual filing"、"China year-end tax"。这是终稿汇总（capstone）技能，统一整合 cn-iit、cn-corporate-tax、cn-vat、cn-fapiao-einvoice、cn-social-insurance、cn-withholding、cn-stamp-tax、cn-formation 等上游技能的输出，产生一份完整的复核包：工作底稿、税额汇总、对账明细、复核简报、纳税人最终动作清单。本技能不重新计算任何税额，仅做汇总、对账、复核与提交准备。完成中国税务申报工作时务必最后阅读本技能。
+description: 本技能用于汇总组装中国税务申报与年度汇算清缴的最终复核包。触发短语包括："中国税务报表汇总"、"年度汇算清缴"、"企业所得税年度申报"、"个税综合所得汇算"、"电子税务局提交"、"国家税务总局 申报"、"China tax return assembly"、"China annual reconciliation"、"China CIT annual filing"、"China year-end tax"。这是终稿汇总（capstone）技能，统一整合 cn-iit、cn-corporate-tax、china-vat、cn-fapiao-einvoice、cn-social-insurance、cn-withholding、cn-stamp-tax、cn-formation 等上游技能的输出，产生一份完整的复核包：工作底稿、税额汇总、对账明细、复核简报、纳税人最终动作清单。本技能不重新计算任何税额，仅做汇总、对账、复核与提交准备。完成中国税务申报工作时务必最后阅读本技能。
 jurisdiction: CN
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
@@ -11,7 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # CN Return Assembly
 
-## 中国 — 申报与汇算清缴 — 终稿组装 — 技能 v1.0
+## 中国 — 申报与汇算清缴 — 终稿组装 — 技能 v1.1
 
 ## 关键执行指令 — 请先阅读
 
@@ -89,7 +90,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- |
 | `cn-iit` | 个税综合所得：工资薪金、劳务报酬、稿酬、特许权使用费；经营所得（个体工商户、个独）；分类所得（利息、股息、财产租赁、财产转让、偶然所得） | 个税APP 综合所得年度汇算页面；经营所得申报表（B表） |
 | `cn-withholding` | 单位代扣代缴个税明细，按月扣缴申报 | 综合所得汇算预填字段；扣缴申报表 |
-| `cn-vat` | （仅个体工商户、个独）增值税申报与发票核对 | 与经营所得交叉核对 |
+| `china-vat` | （仅个体工商户、个独）增值税申报与发票核对 | 与经营所得交叉核对 |
 | `cn-fapiao-einvoice` | 取得 / 开具的发票明细，包括数电发票 | 经营所得收入与成本费用佐证 |
 | `cn-social-insurance` | 个人缴纳的"三险一金"（养老、医疗、失业 + 住房公积金） | 综合所得专项扣除栏 |
 | `cn-stamp-tax` | （仅个体工商户、个独）印花税缴纳记录 | 经营所得费用扣除 |
@@ -103,7 +104,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- |
 | `cn-corporate-tax` | 企业所得税年度计算：会计利润 → 应纳税所得额（A105000系列纳税调整明细表）；适用税率（25% / 高新技术15% / 小型微利5% / 小型微利20%超过300万部分）；研发费用加计扣除（A107012）；资产损失（A105090） | 年度纳税申报表 A100000 + A105000系列附表 |
 | `cn-withholding` | 代扣代缴义务履行情况：非居民企业所得税、对外支付预提所得税、代扣个税 | 扣缴申报表交叉核对 |
-| `cn-vat` | 增值税申报合计（销项、进项、应纳税额、期末留抵） | 与所得税营业收入交叉核对 |
+| `china-vat` | 增值税申报合计（销项、进项、应纳税额、期末留抵） | 与所得税营业收入交叉核对 |
 | `cn-fapiao-einvoice` | 全年发票流水（销项发票、进项发票、红字发票、作废发票） | 与营业收入、成本费用对账 |
 | `cn-social-insurance` | 单位缴纳的"五险一金"（养老、医疗、失业、工伤、生育 + 住房公积金） | 工资附表 A105050 工资薪金支出与"三项经费"扣除限额验证 |
 | `cn-stamp-tax` | 全年印花税分项明细（合同、营业账簿、产权转移书据等） | 期间费用 — 税金及附加 |
@@ -148,7 +149,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 劳务报酬 | cn-iit / cn-withholding | 综合所得 — 劳务报酬栏 |
 | 稿酬 | cn-iit | 综合所得 — 稿酬栏（按70%计入） |
 | 特许权使用费 | cn-iit | 综合所得 — 特许权使用费栏 |
-| 经营所得 | cn-iit + cn-vat + cn-fapiao-einvoice | 经营所得申报表 B表 |
+| 经营所得 | cn-iit + china-vat + cn-fapiao-einvoice | 经营所得申报表 B表 |
 | 利息股息红利 | cn-withholding | 分类所得 — 不并入综合所得 |
 | 财产租赁 | cn-iit | 分类所得 |
 | 财产转让 | cn-iit | 分类所得（股权转让按20%） |
@@ -245,7 +246,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | 来源 | 金额 | 规则 |
 | --- | --- | --- |
-| 增值税月度（季度）申报销项收入合计 | cn-vat | 锚定数 |
+| 增值税月度（季度）申报销项收入合计 | china-vat | 锚定数 |
 | 企业所得税年报 A101010 营业收入 | cn-corporate-tax | 应与增值税销售收入接近（差异：视同销售、不征税收入、价外费用、跨期收入等） |
 | 差异分析表 | 工作底稿 | 每项差异均须列示依据 |
 
@@ -255,7 +256,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- |
 | 销项发票（含数电发票）合计金额 | cn-fapiao-einvoice | 锚定数 |
 | 银行收款流水 | 客户提供 | 与发票开具时点的差异通过应收账款解释 |
-| 申报销售收入 | cn-vat | 与发票合计调节（含未开票收入） |
+| 申报销售收入 | china-vat | 与发票合计调节（含未开票收入） |
 
 **对账3 — 社保公积金缴费基数合计 vs. 工资薪金支出**
 
@@ -279,7 +280,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | 来源 | 金额 | 规则 |
 | --- | --- | --- |
-| 12月增值税申报表期末留抵税额 | cn-vat | 锚定数 |
+| 12月增值税申报表期末留抵税额 | china-vat | 锚定数 |
 | 是否符合增量留抵退税条件 | 财税政策 | 制造业等先进制造业按月退还增量留抵 |
 
 **对账6 — 代扣代缴义务对账**
@@ -289,7 +290,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 全年代扣个税申报数 | cn-withholding | 锚定数 |
 | 全年代扣个税入库数 | 完税凭证 | 须等于申报数 |
 | 对外支付预提所得税 | cn-withholding | 非居民企业所得税（一般10%或税收协定优惠税率） |
-| 跨境服务费 / 特许权使用费的增值税扣缴 | cn-vat | 6% / 9% / 13% 适用税率 |
+| 跨境服务费 / 特许权使用费的增值税扣缴 | china-vat | 6% / 9% / 13% 适用税率 |
 
 **对账7 — 关联交易披露（适用集团企业）**
 
@@ -471,7 +472,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 本人已审阅：
 [ ] 个税综合所得 / 经营所得计算（cn-iit）
 [ ] 企业所得税计算与纳税调整（cn-corporate-tax）
-[ ] 增值税申报与发票核对（cn-vat、cn-fapiao-einvoice）
+[ ] 增值税申报与发票核对（china-vat、cn-fapiao-einvoice）
 [ ] 社保公积金缴费基数与工资薪金对账（cn-social-insurance）
 [ ] 印花税分项申报（cn-stamp-tax）
 [ ] 代扣代缴义务履行情况（cn-withholding）
@@ -666,7 +667,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-CN-ASM-5** — 超出范围：非居民个人、跨境派遣 / 双重居民身份、外籍员工（5年豁免规则、税收协定居民身份判定）、需做 152 条 / 156 条 / 第六条特殊处理的非居民个人所得。转交专业税务师；本技能假定全年中国税务居民身份，除非 cn-iit 明确处理非居民附表。  _(R-CN-ASM-5)_
 - **R-CN-ASM-6** — Intake 不完整。指出具体缺失字段（统一社会信用代码、身份证号、电子税务局登录信息、纳税人类型、纳税信用等级、主管税务机关）。补全前不能完成申报终稿。  _(R-CN-ASM-6)_
 - **R-CN-ASM-7** — 要求代为提交申报。本技能产出工作底稿。提交是纳税人（或其授权税务师事务所 / 代理记账机构）的责任，须在中国注册会计师 / 税务师签字复核后通过电子税务局完成。礼貌拒绝；提供提交说明而非代为操作。  _(R-CN-ASM-7)_
-- **R-CN-ASM-8** — 要求确认税率 / 优惠政策 / 备案号而无可靠依据。转回 cn-iit / cn-corporate-tax / cn-vat 等上游技能（它们承载验证过的最新政策）。本汇总技能引用的任何具体数字均标记为"以上游技能现行版本为准"。  _(R-CN-ASM-8)_
+- **R-CN-ASM-8** — 要求确认税率 / 优惠政策 / 备案号而无可靠依据。转回 cn-iit / cn-corporate-tax / china-vat 等上游技能（它们承载验证过的最新政策）。本汇总技能引用的任何具体数字均标记为"以上游技能现行版本为准"。  _(R-CN-ASM-8)_
 - **R-CN-ASM-9** — 涉及虚开发票、虚假申报、阴阳合同、对私户收款逃税等违法行为。直接拒绝。提示纳税人主动补申报 + 滞纳金可减轻处罚（《税收征收管理法》第六十三条），构成犯罪须移送司法机关。  _(《税收征收管理法》第六十三条)_
 
 ## 自检（Self-checks）
@@ -712,12 +713,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 2. 不生成电子税务局可直接导入的 XML / 标准数据文件；由 ERP 或第三方税务软件处理；
 3. 审计报告附件由纳税人 / 会计师事务所负责，本技能仅标记审计要求；
 4. 转让定价同期资料的本地文档 / 主体文档详细内容由 cn-corporate-tax 处理，本汇总仅引用；
-5. 出口退税申报为单独流程（电子税务局出口退税申报系统），本汇总不涵盖（须配合 cn-vat 出口退税专项处理）；
+5. 出口退税申报为单独流程（电子税务局出口退税申报系统），本汇总不涵盖（须配合 china-vat 出口退税专项处理）；
 6. 房产税、土地使用税、车船税、契税、土地增值税、烟叶税、资源税、消费税等地方税与特定行业税种不属于本汇总范围；
 7. 海关进口环节增值税、关税单独由海关代征，不在电子税务局体系内；
 8. 个体工商户、个独企业的个税"经营所得"与企业所得税"小型微利企业"政策选择由 cn-iit / cn-corporate-tax 上游处理；
 9. 跨境员工税务（个税 5年豁免、税收协定居民身份）超出本技能范围；
-10. 2026年《增值税法》施行的细则、实施条例尚未全部发布，须在上游 cn-vat 技能中持续跟进。
+10. 2026年《增值税法》施行的细则、实施条例尚未全部发布，须在上游 china-vat 技能中持续跟进。
 
 ### 变更日志
 - v1.0（2026年5月）：首次发布。参照 pk-return-assembly 与 us-ca-return-assembly 结构，针对中国大陆电子税务局申报、年度汇算清缴、PSID 类似机制（中国为完税凭证）、纳税信用等级、金税四期合规自检、《增值税法》2026.1.1施行过渡期等情形进行适配。协调 8 个中国上游税务技能。

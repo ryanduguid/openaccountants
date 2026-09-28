@@ -14,8 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| `vt-income-tax.md` | Vermont individual income tax, Vermont Form IN-111, Vermont graduated tax rates, Vermont self-employment... |
-| `vt-sales-tax.md` | Vermont sales tax, Vermont use tax, Vermont Tax Dept sales tax filing, Vermont local option tax, Vermont... |
+| `us-vt-income-tax.md` | Vermont individual income tax, Vermont Form IN-111, Vermont graduated tax rates, Vermont self-employment... |
+| `us-vt-sales-tax.md` | Vermont sales tax, Vermont use tax, Vermont Tax Dept sales tax filing, Vermont local option tax, Vermont... |
 
 ## What's NOT covered
 

@@ -14,7 +14,7 @@
 
 | File | What it covers |
 |---|---|
-| `tn-sales-tax.md` | Tennessee sales tax, Tennessee use tax, Tennessee sales tax nexus, Tennessee sales tax returns, Tennessee... |
+| `us-tn-sales-tax.md` | Tennessee sales tax, Tennessee use tax, Tennessee sales tax nexus, Tennessee sales tax returns, Tennessee... |
 
 ## What's NOT covered
 

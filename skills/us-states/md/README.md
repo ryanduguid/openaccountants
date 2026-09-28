@@ -13,10 +13,9 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `md-income-tax.md` | Maryland individual income tax (graduated 2%–6.50% state + county piggyback 2.25%–3.20%) for self-employed / sole proprietors. Form 502. |
-| `md-sales-tax.md` | Maryland sales and use tax — 6% state rate. |
-| `maryland-sales-tax.md` | Maryland sales and use tax |
-| `md-payroll.md` | Maryland content skill for employer payroll compliance covering tax year 2025 |
+| `us-md-income-tax.md` | Maryland individual income tax (graduated 2%–6.50% state + county piggyback 2.25%–3.20%) for self-employed / sole proprietors. Form 502. |
+| `us-md-sales-tax.md` | Maryland sales and use tax — 6% state rate. |
+| `us-md-payroll.md` | Maryland content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
 - Corporate income tax (Form 500)

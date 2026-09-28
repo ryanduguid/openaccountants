@@ -17,14 +17,14 @@ of `index.json` carries the first three rows.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,927** |
-| Distinct `jurisdiction` codes | **244** |
+| Guide files indexed | **1,867** |
+| Distinct `jurisdiction` codes | **243** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,763** |
+| `tier: 2` (source-cited draft) | **1,703** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **189** |
-| US jurisdiction codes (`US` + 50 states + DC + `US-NY-NYC`) | **53** |
-| Generated bundles under `packages/` | **256** |
+| Country directories under `skills/international/` | **184** |
+| US jurisdiction codes (`US` + 50 states + DC) | **52** |
+| Generated bundles under `packages/` | **252** |
 
 US coverage is complete at state level: all 50 states plus DC are present.
 

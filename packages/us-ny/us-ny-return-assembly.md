@@ -1,7 +1,7 @@
 ---
 name: us-ny-return-assembly
 description: Final orchestrator skill that assembles the complete federal and New York State filing package for New York resident sole proprietors and single-member LLCs disregarded for federal tax. Consumes outputs from all federal content skills (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC) and all New York content skills (IT-201 individual return, NYC UBT Form NYC-202 where applicable, NY estimated tax IT-2105, MCTMT) to produce a single unified reviewer package. Handles reconciliation between federal AGI and NY AGI adjustments, NY itemized vs standard deduction election, NYC income tax surcharge, NYC UBT credit against personal income tax, and MCTMT computation. New York full-year residents only.
-version: 1.0
+version: 1.1
 jurisdiction: US-NY
 tax_year: 2025
 last_updated: 2026-09-28
@@ -46,7 +46,7 @@ Produces the complete federal + New York filing package for:
 0. **Step 9** — ny-it-201-individual-return
 0. **Step 10** — nyc-ubt-form-202
 0. **Step 11** — ny-estimated-tax-it-2105
-0. **Step 12** — ny-mctmt
+0. **Step 12** — us-ny-mctmt
 0. **Step 13** — THIS SKILL — final assembly and verification
 
 ### Federal internal consistency

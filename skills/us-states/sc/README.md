@@ -14,8 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| `sc-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form SC1040) |
-| `sc-sales-tax.md` | State and local sales & use tax compliance |
+| `us-sc-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form SC1040) |
+| `us-sc-sales-tax.md` | State and local sales & use tax compliance |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes

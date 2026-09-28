@@ -14,8 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| `wv-income-tax.md` | West Virginia individual income tax, West Virginia Form IT-140, West Virginia graduated tax rates, West... |
-| `wv-sales-tax.md` | West Virginia sales tax, WV use tax, West Virginia Tax Division filing, West Virginia SaaS tax, West... |
+| `us-wv-income-tax.md` | West Virginia individual income tax, West Virginia Form IT-140, West Virginia graduated tax rates, West... |
+| `us-wv-sales-tax.md` | West Virginia sales tax, WV use tax, West Virginia Tax Division filing, West Virginia SaaS tax, West... |
 
 ## What's NOT covered
 

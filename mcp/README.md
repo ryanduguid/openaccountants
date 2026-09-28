@@ -2,7 +2,7 @@
 
 <!-- mcp-name: io.github.openaccountants/openaccountants-mcp -->
 
-A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to the open-source accounting skills in a checkout of this repository — at the time of writing 1,841 skills from 187 country packages, 51 US state packages (50 states + DC) sharing the federal set in `packages/_shared/`, 13 Canadian province/territory packages, and the `_cross-border`, `_verticals` and `_integrations` bundles, across tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border and more — no manual file uploads.
+A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to the open-source accounting skills in a checkout of this repository — at the time of writing 1,810 skills from 182 country packages, 51 US state packages (50 states + DC) sharing the federal set in `packages/_shared/`, 13 Canadian province/territory packages, and the `_cross-border`, `_verticals` and `_integrations` bundles, across tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border and more — no manual file uploads.
 
 > **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown in a checkout of this repository. The **hosted server** at `https://www.openaccountants.com/api/mcp` belongs to the upstream project: it reads the production database and exposes a larger surface that includes the **accountant-reviewed** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is upstream's product; this self-hosted one is the open research base.
 
@@ -29,14 +29,14 @@ US states work the same way. Federal guides carry `jurisdiction: US`, so `US-CA`
 ```
 You:    "Help me with my California taxes. Here's my bank statement."
           ↓
-Claude: calls list_skills(jurisdiction="US-CA") → ca-540-individual-return, california-sales-tax, ca-payroll, …
+Claude: calls list_skills(jurisdiction="US-CA") → us-ca-540-individual-return, us-ca-sales-tax, us-ca-payroll, …
 Claude: calls list_skills(jurisdiction="US")    → us-form-1040-individual-return, us-quarterly-estimated-tax, …
-Claude: calls get_skill("ca-540-individual-return") → state rules loaded
+Claude: calls get_skill("us-ca-540-individual-return") → state rules loaded
           ↓
 Claude: now processes with federal AND California rules
 ```
 
-(Slugs come from each guide's `name:` frontmatter, not its file name: `packages/us-ca/ca-income-tax.md` is `ca-540-individual-return`.)
+(Slugs come from each guide's `name:` frontmatter, not its file name: `packages/us-ca/us-ca-540-individual-return.md` is `us-ca-540-individual-return`.)
 
 Special packages are also available:
 

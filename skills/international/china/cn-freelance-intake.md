@@ -1,8 +1,9 @@
 ---
 name: cn-freelance-intake
-description: ALWAYS USE THIS SKILL when a user asks for help with Chinese tax compliance AND mentions freelancing, self-employment, software developer, contractor, individual industrial commercial household (个体工商户), limited liability company (有限公司), or WFOE in China. Trigger phrases (mixed Chinese + English) "中国个税年度汇算", "中国 SME 税务", "上海公司报税", "深圳 freelancer 税务", "WFOE 报税", "金税四期 合规", "个体工商户经营所得", "China tax filing", "China freelance tax", "China comprehensive income annual reconciliation", "WFOE annual return". REQUIRED entry point — downstream cn-iit, cn-corporate-tax, cn-vat, cn-fapiao-einvoice, cn-social-insurance, cn-withholding, cn-stamp-tax, cn-formation, cn-return-assembly. ALWAYS-read closer in Chinese 在开始任何中国税务工作流前必须先阅读本技能.
+description: ALWAYS USE THIS SKILL when a user asks for help with Chinese tax compliance AND mentions freelancing, self-employment, software developer, contractor, individual industrial commercial household (个体工商户), limited liability company (有限公司), or WFOE in China. Trigger phrases (mixed Chinese + English) "中国个税年度汇算", "中国 SME 税务", "上海公司报税", "深圳 freelancer 税务", "WFOE 报税", "金税四期 合规", "个体工商户经营所得", "China tax filing", "China freelance tax", "China comprehensive income annual reconciliation", "WFOE annual return". REQUIRED entry point — downstream cn-iit, cn-corporate-tax, china-vat, cn-fapiao-einvoice, cn-social-insurance, cn-withholding, cn-stamp-tax, cn-formation, cn-return-assembly. ALWAYS-read closer in Chinese 在开始任何中国税务工作流前必须先阅读本技能.
 jurisdiction: CN
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
@@ -11,7 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # CN Freelance Intake
 
-## 中国 — 自由职业者与中小企业税务承接 — 技能 v1.0
+## 中国 — 自由职业者与中小企业税务承接 — 技能 v1.1
 
 ## 本文件用途
 
@@ -28,25 +29,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
        |
        +-- 个体工商户 / 个人独资
        |     -> cn-iit（经营所得 5 级累进 5%-35%）
-       |     -> cn-vat（一般为小规模纳税人 1%/3%）
+       |     -> china-vat（一般为小规模纳税人 1%/3%）
        |     -> cn-social-insurance
        |
        +-- 有限公司 — 小规模纳税人（年销售额 ≤ 500 万元）
        |     -> cn-corporate-tax（25% / 小型微利 5% / 高新技术 15%）
-       |     -> cn-vat（1% 征收率）
+       |     -> china-vat（1% 征收率）
        |     -> cn-fapiao-einvoice（数电发票）
        |     -> cn-social-insurance
        |
        +-- 有限公司 — 一般纳税人（年销售额 > 500 万元 或主动登记）
        |     -> cn-corporate-tax（25% / 5% / 15%）
-       |     -> cn-vat（13% / 9% / 6% 进销项抵扣）
+       |     -> china-vat（13% / 9% / 6% 进销项抵扣）
        |     -> cn-fapiao-einvoice（数电发票）
        |     -> cn-social-insurance
        |     -> cn-withholding（如有跨境付款）
        |
        +-- 外商投资企业（WFOE）
              -> cn-corporate-tax
-             -> cn-vat
+             -> china-vat
              -> cn-fapiao-einvoice
              -> cn-withholding（跨境付款代扣代缴 10%）
              -> cn-social-insurance
@@ -108,19 +109,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 4.1 个体工商户 / 个人独资企业
 
-- **税务规则** — 不缴企业所得税，生产经营所得适用 5 级超额累进 5%-35%（个人所得税法附件二）。增值税：原则上小规模纳税人，征收率 1%（2027 年底前减按 1%，财政部 税务总局公告 2023 年第 19 号 → 复核 2025 年延续公告）。月销售额 ≤ 10 万元（季度 ≤ 30 万元） → 增值税免税（财政部 税务总局公告 2023 年第 19 号）。印花税：合同金额按比例。路由：`cn-iit` + `cn-vat` + `cn-fapiao-einvoice` + `cn-social-insurance` + `cn-stamp-tax`。  _(个人所得税法附件二；财政部 税务总局公告 2023 年第 19 号)_
+- **税务规则** — 不缴企业所得税，生产经营所得适用 5 级超额累进 5%-35%（个人所得税法附件二）。增值税：原则上小规模纳税人，征收率 1%（2027 年底前减按 1%，财政部 税务总局公告 2023 年第 19 号 → 复核 2025 年延续公告）。月销售额 ≤ 10 万元（季度 ≤ 30 万元） → 增值税免税（财政部 税务总局公告 2023 年第 19 号）。印花税：合同金额按比例。路由：`cn-iit` + `china-vat` + `cn-fapiao-einvoice` + `cn-social-insurance` + `cn-stamp-tax`。  _(个人所得税法附件二；财政部 税务总局公告 2023 年第 19 号)_
 
 ### 4.2 有限责任公司 — 小规模纳税人
 
-- **税务规则** — 年应税销售额 ≤ 500 万元（财税[2018]33 号）。增值税征收率 3%（减按 1% 至 2027 年底）。企业所得税 25%；小型微利企业（应纳税所得额 ≤ 300 万元、从业人数 ≤ 300、资产总额 ≤ 5000 万元）减按 5% 实际税率（财政部 税务总局公告 2023 年第 12 号、2024 年第 23 号 → 复核 2025 延续）。路由：`cn-corporate-tax` + `cn-vat` + `cn-fapiao-einvoice` + `cn-social-insurance` + `cn-stamp-tax`。  _(财税[2018]33 号；财政部 税务总局公告 2023 年第 12 号、2024 年第 23 号)_
+- **税务规则** — 年应税销售额 ≤ 500 万元（财税[2018]33 号）。增值税征收率 3%（减按 1% 至 2027 年底）。企业所得税 25%；小型微利企业（应纳税所得额 ≤ 300 万元、从业人数 ≤ 300、资产总额 ≤ 5000 万元）减按 5% 实际税率（财政部 税务总局公告 2023 年第 12 号、2024 年第 23 号 → 复核 2025 延续）。路由：`cn-corporate-tax` + `china-vat` + `cn-fapiao-einvoice` + `cn-social-insurance` + `cn-stamp-tax`。  _(财税[2018]33 号；财政部 税务总局公告 2023 年第 12 号、2024 年第 23 号)_
 
 ### 4.3 有限责任公司 — 一般纳税人
 
-- **税务规则** — 年应税销售额 > 500 万元，或主动申请。增值税：货物销售 13%、不动产 / 建筑 / 交通 / 邮政 9%、服务 / 无形资产 6%；进项税额可抵扣。出口退税：免、抵、退；适用增值税出口退税率表。企业所得税 25%；高新技术企业 15%（科技部 财政部 税务总局国科发火[2016]32 号、国税函[2009]203 号）。路由：`cn-corporate-tax` + `cn-vat` + `cn-fapiao-einvoice` + `cn-social-insurance` + `cn-stamp-tax`（+ `cn-withholding` 如有跨境）。  _(国科发火[2016]32 号；国税函[2009]203 号)_
+- **税务规则** — 年应税销售额 > 500 万元，或主动申请。增值税：货物销售 13%、不动产 / 建筑 / 交通 / 邮政 9%、服务 / 无形资产 6%；进项税额可抵扣。出口退税：免、抵、退；适用增值税出口退税率表。企业所得税 25%；高新技术企业 15%（科技部 财政部 税务总局国科发火[2016]32 号、国税函[2009]203 号）。路由：`cn-corporate-tax` + `china-vat` + `cn-fapiao-einvoice` + `cn-social-insurance` + `cn-stamp-tax`（+ `cn-withholding` 如有跨境）。  _(国科发火[2016]32 号；国税函[2009]203 号)_
 
 ### 4.4 外商投资企业（WFOE）
 
-- **税务规则** — 自 2020 年 1 月 1 日《外商投资法》施行起，WFOE / 中外合资统一适用《公司法》。税务身份与境内有限公司一致（小规模 / 一般纳税人）。跨境付款：股息预提 10%（协定可降至 5%）、特许权使用费 10%（协定降至 6%-10%）、利息 10%。外汇登记：每笔超过等值 5 万美元跨境付款需办理税务备案表（《服务贸易等项目对外支付税务备案表》）。路由：`cn-corporate-tax` + `cn-vat` + `cn-fapiao-einvoice` + `cn-withholding` + `cn-social-insurance` + `cn-formation` + `cn-stamp-tax`。  _(《外商投资法》（自 2020 年 1 月 1 日起施行）)_
+- **税务规则** — 自 2020 年 1 月 1 日《外商投资法》施行起，WFOE / 中外合资统一适用《公司法》。税务身份与境内有限公司一致（小规模 / 一般纳税人）。跨境付款：股息预提 10%（协定可降至 5%）、特许权使用费 10%（协定降至 6%-10%）、利息 10%。外汇登记：每笔超过等值 5 万美元跨境付款需办理税务备案表（《服务贸易等项目对外支付税务备案表》）。路由：`cn-corporate-tax` + `china-vat` + `cn-fapiao-einvoice` + `cn-withholding` + `cn-social-insurance` + `cn-formation` + `cn-stamp-tax`。  _(《外商投资法》（自 2020 年 1 月 1 日起施行）)_
 
 ## 五、问题清单（按 ask_user_input_v0 风格批量收集）
 
@@ -142,8 +143,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Q2 自然人 / 个体 / 个独 | 路由 `cn-iit`（经营所得） |
 | Q2 有限公司 / 股份 / WFOE | 路由 `cn-corporate-tax` |
 | Q2 不确定 | 先路由 `cn-formation` |
-| Q4 小规模 | 路由 `cn-vat`（1%/3% 减按 1%） |
-| Q4 一般纳税人 | 路由 `cn-vat`（13/9/6 进销项） |
+| Q4 小规模 | 路由 `china-vat`（1%/3% 减按 1%） |
+| Q4 一般纳税人 | 路由 `china-vat`（13/9/6 进销项） |
 | Q5 高新 / 小微 / 研发加计 | 在 `cn-corporate-tax` 中应用对应税率与扣除 |
 
 ### 5.2 第二批 — 营业规模与运营（单次调用，5 题）
@@ -158,13 +159,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | 回答 | 行动 |
 | --- | --- |
-| Q6 ≤ 10 万 / 月 | 增值税免税；仍需 `cn-vat` 申报 0 |
-| Q6 10 万 - 500 万 | 小规模纳税人；`cn-vat` 1% |
+| Q6 ≤ 10 万 / 月 | 增值税免税；仍需 `china-vat` 申报 0 |
+| Q6 10 万 - 500 万 | 小规模纳税人；`china-vat` 1% |
 | Q6 500 万 - 5000 万 | 一般纳税人或临近门槛；标记复核 |
 | Q6 > 5 亿元 | **拒绝** — 超 SME 范围 |
 | Q7 ≥ 1 人 | 路由 `cn-iit`（工资薪金代扣代缴）+ `cn-social-insurance` |
 | Q7 > 200 人 | **拒绝** — 超 SME 范围 |
-| Q8 出口 / 跨境付款 | 路由 `cn-vat`（出口退税）+ `cn-withholding`（跨境预提） |
+| Q8 出口 / 跨境付款 | 路由 `china-vat`（出口退税）+ `cn-withholding`（跨境预提） |
 | Q9 加计扣除 | 在 `cn-corporate-tax` 中应用 R&D 加计 |
 | Q10 上市 / Pre-IPO | **拒绝** |
 
@@ -200,8 +201,8 @@ cn-freelance-intake（本技能）
    │     └── 有限公司 / 股份 / WFOE → cn-corporate-tax
    │
    ├── 增值税
-   │     ├── 小规模纳税人 → cn-vat（1%/3% 减按 1%）
-   │     └── 一般纳税人 → cn-vat（13/9/6 进销项）
+   │     ├── 小规模纳税人 → china-vat（1%/3% 减按 1%）
+   │     └── 一般纳税人 → china-vat（13/9/6 进销项）
    │
    ├── 发票 → cn-fapiao-einvoice（数电发票）
    ├── 员工 → cn-iit（工资薪金）+ cn-social-insurance
@@ -216,9 +217,9 @@ cn-freelance-intake（本技能）
 
 | 触发条件 | 必调用 | 可选 |
 | --- | --- | --- |
-| 个体工商户 / 个独 | cn-iit, cn-vat, cn-social-insurance, cn-stamp-tax | cn-fapiao-einvoice（如开票） |
-| 有限公司（小规模） | cn-corporate-tax, cn-vat, cn-fapiao-einvoice, cn-social-insurance, cn-stamp-tax | cn-withholding |
-| 有限公司（一般纳税人） | cn-corporate-tax, cn-vat, cn-fapiao-einvoice, cn-social-insurance, cn-stamp-tax | cn-withholding |
+| 个体工商户 / 个独 | cn-iit, china-vat, cn-social-insurance, cn-stamp-tax | cn-fapiao-einvoice（如开票） |
+| 有限公司（小规模） | cn-corporate-tax, china-vat, cn-fapiao-einvoice, cn-social-insurance, cn-stamp-tax | cn-withholding |
+| 有限公司（一般纳税人） | cn-corporate-tax, china-vat, cn-fapiao-einvoice, cn-social-insurance, cn-stamp-tax | cn-withholding |
 | WFOE | 全部 | — |
 
 ## 七、金税四期合规清单
@@ -381,7 +382,7 @@ cn-freelance-intake（本技能）
 
 ### 11.2 交接示例（个体工商户，深圳，年营业额 80 万元，无员工）
 
-> 承接完成。张明，个体工商户，统一社会信用代码 91440300MA5xxxxxxx，深圳市福田区税务局主管，行业代码 6210（软件开发），纳税人识别号同 USCC。2025 年营业收入 80 万元，居民个人，无员工。增值税：小规模纳税人，征收率 1%（财政部 税务总局公告 2023 年第 19 号），月销售额超 10 万元免税门槛 → 按 1% 申报；个人所得税：经营所得 5 级累进 5%-35%，应纳税所得额 = 收入 - 成本 - 费用 - 损失（含 6 万元投资者本人减除费用 + 专项附加扣除）；专项附加扣除：子女教育 + 赡养老人（独生）共 5000 元 / 月。运行：cn-iit, cn-vat, cn-fapiao-einvoice（数电发票）, cn-social-insurance, cn-stamp-tax, cn-return-assembly。不运行：cn-corporate-tax（非企业主体）、cn-withholding（无跨境）、cn-formation（已设立）。需税务师（CTA）在电子税务局申报前签字。开始装配。
+> 承接完成。张明，个体工商户，统一社会信用代码 91440300MA5xxxxxxx，深圳市福田区税务局主管，行业代码 6210（软件开发），纳税人识别号同 USCC。2025 年营业收入 80 万元，居民个人，无员工。增值税：小规模纳税人，征收率 1%（财政部 税务总局公告 2023 年第 19 号），月销售额超 10 万元免税门槛 → 按 1% 申报；个人所得税：经营所得 5 级累进 5%-35%，应纳税所得额 = 收入 - 成本 - 费用 - 损失（含 6 万元投资者本人减除费用 + 专项附加扣除）；专项附加扣除：子女教育 + 赡养老人（独生）共 5000 元 / 月。运行：cn-iit, china-vat, cn-fapiao-einvoice（数电发票）, cn-social-insurance, cn-stamp-tax, cn-return-assembly。不运行：cn-corporate-tax（非企业主体）、cn-withholding（无跨境）、cn-formation（已设立）。需税务师（CTA）在电子税务局申报前签字。开始装配。
 
 ### 11.3 自检清单（承接前 14 项必过）
 

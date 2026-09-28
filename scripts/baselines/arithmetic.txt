@@ -32,6 +32,6 @@ skills/international/slovenia/slovenia-social-contributions.md::(54,178.00-27,08
 skills/international/slovenia/slovenia-social-contributions.md::(78,016.32-54,178.00) x 39% = 24,358.42
 skills/international/slovenia/slovenia-social-contributions.md::38.20% (22.10% + 16.10%) x 8,876.11 = 3,390.67
 skills/international/uk/uk-self-employment-sa103.md::(12,000 + 2,400 + 480) = 2,976
-skills/us-states/ma/ma-payroll.md::15,000 × 0.34% = $1,530
-skills/us-states/mi/mi-corporate-income-tax.md::12,000,000 ÷ $40,000,000 = 30.0%
-skills/us-states/va/va-corporate-tax-and-bpol.md::17,000 × 5.75% = $10,738
+skills/us-states/ma/us-ma-payroll.md::15,000 × 0.34% = $1,530
+skills/us-states/mi/us-mi-corporate-income-tax.md::12,000,000 ÷ $40,000,000 = 30.0%
+skills/us-states/va/us-va-corporate-tax-and-bpol.md::17,000 × 5.75% = $10,738

@@ -9,13 +9,12 @@
 2. `be-capital-gains.md`
 3. `be-income-tax.md`
 4. `be-social-contributions.md`
-5. `be-vat-return.md`
-6. `belgium-bookkeeping.md`
-7. `belgium-crypto-tax.md`
-8. `belgium-einvoice.md`
-9. `belgium-financial-statements.md`
-10. `belgium-payroll.md`
-11. `belgium-vat-return.md`
+5. `belgium-bookkeeping.md`
+6. `belgium-crypto-tax.md`
+7. `belgium-einvoice.md`
+8. `belgium-financial-statements.md`
+9. `belgium-payroll.md`
+10. `belgium-vat-return.md`
 
 ## Shared files this package needs
 

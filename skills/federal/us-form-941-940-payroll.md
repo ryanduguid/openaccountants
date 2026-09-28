@@ -3,6 +3,7 @@ name: us-form-941-940-payroll
 description: Tier 2 US federal content skill for employer payroll tax compliance — Forms 941 (quarterly), 940 (annual FUTA), W-2 (employee), W-3 (SSA transmittal). Covers tax year 2025 including the $176,100 Social Security wage base, the 0.9% Additional Medicare withholding threshold, monthly vs semiweekly vs next-day deposit schedules under IRC §6302, the $7,000 FUTA wage base and 5.4% state UI credit (0.6% effective in non-credit-reduction states), W-2 Box 1/3/5 reconciliation traps with §125, HSA, retirement, and the 10+ W-2 electronic-filing mandate from the 2024 IRS final regs.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
@@ -32,7 +33,7 @@ In scope:
 
 Out of scope (refusal-eligible):
 
-- State income tax withholding (covered separately by state-specific skills such as `ca-540-individual-return`'s payroll-adjacent state filings)
+- State income tax withholding (covered separately by state-specific skills such as `us-ca-540-individual-return`'s payroll-adjacent state filings)
 - State unemployment insurance (SUI) returns — covered by state skills; the federal skill computes only the FUTA portion and the credit for state UI taxes paid
 - Local payroll taxes (city, county, school district)
 - Multi-employer pension plan reporting

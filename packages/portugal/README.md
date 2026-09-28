@@ -20,7 +20,6 @@
 13. `pt-nhr-ifici.md`
 14. `pt-return-assembly.md`
 15. `pt-social-contributions.md`
-16. `pt-vat-return.md`
 
 ## Shared files this package needs
 

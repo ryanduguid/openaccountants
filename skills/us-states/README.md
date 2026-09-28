@@ -3,7 +3,7 @@ name: README
 description: "jurisdiction: US-WY"
 jurisdiction: US-WY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | File | What it covers |
 | --- | --- |
-| `wy-sales-tax.md` | State and local sales & use tax compliance |
+| `us-wy-sales-tax.md` | State and local sales & use tax compliance |
 
 ## What's NOT covered
 

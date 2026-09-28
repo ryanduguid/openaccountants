@@ -14,14 +14,16 @@
 
 | File | What it covers |
 |---|---|
-| `ny-income-tax.md` | Individual income tax for self-employed / sole proprietors |
-| `ny-estimated-tax.md` | Estimated tax payments |
-| `ny-sales-tax.md` | State and local sales & use tax compliance |
-| `ny-llc-filing-fee.md` | Annual LLC filing fee |
-| `nyc-ubt.md` | New York City Unincorporated Business Tax |
-| `new-york-sales-tax.md` | New York sales and use tax, NYS DTF filings, NYC sales tax, New York exemptions, New York clothing... |
-| `ny-formation.md` | New York content skill for entity formation covering tax year 2025 |
-| `ny-mctmt.md` | The NY Metropolitan Commuter Transportation Mobility Tax (MCTMT, Tax Law Article 23) is a... |
+| `us-ny-it-201-resident-return.md` | Individual income tax for self-employed / sole proprietors |
+| `us-ny-estimated-tax.md` | Estimated tax payments |
+| `us-ny-sales-tax.md` | State and local sales & use tax compliance |
+| `us-ny-llc-filing-fee-it-204-ll.md` | Annual LLC filing fee |
+| `us-ny-nyc-unincorporated-business-tax.md` | New York City Unincorporated Business Tax |
+| `us-ny-formation.md` | New York content skill for entity formation covering tax year 2025 |
+| `us-ny-mctmt.md` | The NY Metropolitan Commuter Transportation Mobility Tax (MCTMT, Tax Law Article 23) is a... |
+| `us-ny-corporate-franchise-article-9a.md` | Tier 2 content skill for New York State Corporate Franchise Tax under Tax Law Article 9-A |
+| `us-ny-payroll.md` | Tier 2 New York content skill for employer payroll compliance covering tax year 2025 |
+| `us-ny-pte-tax-ptet.md` | NY Pass-Through Entity Tax (PTET) — Article 24-A |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes

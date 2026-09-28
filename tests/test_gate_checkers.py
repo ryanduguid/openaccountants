@@ -281,7 +281,7 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
         ("`tier: 2` (source-cited draft)", 1),
         ("Distinct `reviewed_by` values", 1),
         ("Country directories under `skills/international/`", 1),
-        ("US jurisdiction codes (`US` + 50 states + DC + `US-NY-NYC`)", 1),
+        ("US jurisdiction codes (`US` + 50 states + DC)", 1),
         ("Generated bundles under `packages/`", 1),
     ]
 

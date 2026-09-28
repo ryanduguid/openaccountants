@@ -12,8 +12,7 @@
 5. `cl-income-tax.md`
 6. `cl-social-contributions.md`
 7. `cl-tax-overview.md`
-8. `cl-vat-return.md`
-9. `references.md`
+8. `references.md`
 
 ## Shared files this package needs
 

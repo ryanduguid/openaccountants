@@ -13,9 +13,9 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `ky-income-tax.md` | Kentucky individual income tax (flat 3.5% for 2026) for self-employed / sole proprietors. Form 740. |
-| `ky-sales-tax.md` | Kentucky sales and use tax — 6% flat statewide rate. |
-| `ky-payroll.md` | Kentucky content skill for employer payroll compliance covering tax year 2025 |
+| `us-ky-income-tax.md` | Kentucky individual income tax (flat 3.5% for 2026) for self-employed / sole proprietors. Form 740. |
+| `us-ky-sales-tax.md` | Kentucky sales and use tax — 6% flat statewide rate. |
+| `us-ky-payroll.md` | Kentucky content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
 - Corporate income tax (Form 720)

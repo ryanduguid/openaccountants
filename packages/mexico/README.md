@@ -14,10 +14,9 @@
 7. `mx-estimated-tax.md`
 8. `mx-imss.md`
 9. `mx-income-tax.md`
-10. `mx-vat-return.md`
-11. `references.md`
-12. `mexico-guided-intake.md`
-13. `mexico-return-assembly.md`
+10. `references.md`
+11. `mexico-guided-intake.md`
+12. `mexico-return-assembly.md`
 
 ## Shared files this package needs
 

@@ -6,13 +6,20 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `isle-of-man-vat.md`
+2. `im-company-formation.md`
+3. `im-corporate-income-tax.md`
+4. `im-income-tax.md`
+5. `im-payroll-social.md`
+6. `im-tax-overview.md`
+7. `isle-of-man-vat.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 
 
 ## How to use

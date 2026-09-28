@@ -13,6 +13,7 @@ listed below. Upload all of them together.
 
 1. `intake.md`
 2. `sk-individual-return.md`
+3. `sk-pst.md`
 
 ## Shared files this package needs
 

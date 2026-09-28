@@ -14,7 +14,7 @@
 
 | File | What it covers |
 |---|---|
-| `sd-sales-tax.md` | South Dakota sales tax, South Dakota use tax, South Dakota DOR filing, South Dakota Wayfair, South Dakota... |
+| `us-sd-sales-tax.md` | South Dakota sales tax, South Dakota use tax, South Dakota DOR filing, South Dakota Wayfair, South Dakota... |
 
 ## What's NOT covered
 

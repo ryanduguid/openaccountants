@@ -3,6 +3,7 @@ name: us-state-payroll-matrix
 description: Tier 2 US federal-level reference skill providing the 50-state at-a-glance payroll matrix covering income-tax withholding registration, quarterly return forms and due dates, SUTA wage base and rate ranges, new-hire reporting agencies and 20-day deadlines under §453A, state disability and paid family/medical leave mandates (CA SDI, NY/NJ DBL, CO FAMLI, MA PFML, WA PFML, OR Paid Leave, CT PFML, DC PFL), local payroll taxes (PA Act 32 EIT, OH RITA/CCA, NYC, CA SDI), and state-specific quirks (CalSavers mandate, OR TriMet transit tax, WA Cares Fund). Tax year 2025.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
@@ -324,8 +325,8 @@ This matrix is a starting reference. Every state agency may revise rates, wage b
 - `us-form-941-940-payroll.md` — Federal employer payroll obligations
 - `us-multi-state-allocation.md` — W-2 wage allocation for multi-state employees
 - `us-1099-nec-issuance.md` — Contractor reporting
-- `ca-540-individual-return.md` — California state return (resident perspective)
-- `tx-franchise-tax.md` — Texas state-level reporting
+- `us-ca-540-individual-return.md` — California state return (resident perspective)
+- `us-tx-franchise-tax.md` — Texas state-level reporting
 - `us-tax-workflow-base.md` — Workflow runbook (load alongside)
 
 <!-- openaccountants-cta-block -->

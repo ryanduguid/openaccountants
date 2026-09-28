@@ -13,8 +13,8 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `ia-income-tax.md` | Individual income tax (Form IA 1040) — flat 3.8% (2025), self-employed focus |
-| `ia-sales-tax.md` | Sales and use tax obligations (6% state rate) |
+| `us-ia-income-tax.md` | Individual income tax (Form IA 1040) — flat 3.8% (2025), self-employed focus |
+| `us-ia-sales-tax.md` | Sales and use tax obligations (6% state rate) |
 
 ## What's NOT covered
 - Corporate income tax

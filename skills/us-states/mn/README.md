@@ -14,11 +14,10 @@
 
 | File | What it covers |
 |---|---|
-| `mn-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form M1) |
-| `mn-sales-tax.md` | Sales and use tax obligations and rates |
-| `minnesota-sales-tax.md` | Minnesota sales and use tax |
-| `mn-corporate-and-pte.md` | Minnesota Corporate Franchise Tax and Pass-Through Entity Tax |
-| `mn-payroll.md` | Minnesota Payroll Compliance Skill (Tax Year 2025) |
+| `us-mn-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form M1) |
+| `us-mn-sales-tax.md` | Sales and use tax obligations and rates |
+| `us-mn-corporate-and-pte.md` | Minnesota Corporate Franchise Tax and Pass-Through Entity Tax |
+| `us-mn-payroll.md` | Minnesota Payroll Compliance Skill (Tax Year 2025) |
 
 ## What's NOT covered
 

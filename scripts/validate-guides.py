@@ -290,6 +290,34 @@ def collect_guide_names(bi):
     return names
 
 
+def check_unique_names(bi, errors):
+    """Every guide `name` is unique: it is the index slug and the MCP slug.
+
+    A duplicate slipped through as two index rows and an MCP catalogue that
+    silently dropped the slug. Eight did until 2026-09-28: four state guides
+    that reused a country code (`de-income-tax` was Delaware and Germany) and
+    four same-slug pairs inside one state folder. A whole-tree check, like
+    check_depends_on: the two files that share a name are rarely both in the
+    diff.
+    """
+    owners = {}
+    for rel in bi.guide_files():
+        with open(os.path.join(REPO_ROOT, rel), encoding="utf-8", errors="replace") as fh:
+            block = bi.extract_frontmatter(fh.read())
+        if block is None:
+            continue
+        name = bi.parse_known_keys(block)["name"]
+        if name:
+            owners.setdefault(name, []).append(rel)
+    for name, files in sorted(owners.items()):
+        if len(files) > 1:
+            errors.append(
+                f"`name: {name}` is carried by {len(files)} guides ({', '.join(files)}); "
+                "a slug must be unique across the repository"
+            )
+    print(f"checked {len(owners)} guide names for uniqueness")
+
+
 def check_depends_on(bi, errors, known_names=None):
     """Every `depends_on` slug must be the `name` of a guide that exists.
 
@@ -368,6 +396,31 @@ def check_cta_block(rel, text, errors):
         )
 
 
+US_STATE_GUIDE = re.compile(r"^skills/us-states/([a-z]{2})/[^/]+\.md$")
+
+
+def check_state_naming(rel, name, errors):
+    """A US-state guide is `us-<state>-<topic>` and its file is `<name>.md`.
+
+    Twenty-one state codes are also ISO country codes in use here (DE is
+    Delaware and Germany, CA California and Canada), so a bare `de-income-tax`
+    collided with Germany's and dropped out of the MCP catalogue. Since
+    2026-09-28 every state guide carries the `us-<code>-` namespace, the one
+    the packages (`us-de/`), the jurisdiction codes (`US-DE`) and the state
+    orchestrators (`us-ca-freelance-intake`) already use.
+    """
+    match = US_STATE_GUIDE.match(rel)
+    if not match or not name:
+        return
+    prefix = f"us-{match.group(1)}-"
+    stem = os.path.splitext(os.path.basename(rel))[0]
+    if not name.startswith(prefix) or stem != name:
+        errors.append(
+            f"{rel}: a US-state guide's `name` starts `{prefix}` and its file is named "
+            f"`<name>.md` (got `name: {name}` in `{stem}.md`; see docs/skill-template.md)"
+        )
+
+
 def check_guides(bi, errors, warnings, only_files=None):
     warn_counts = {"jurisdiction (jurisdiction-agnostic dirs)": 0}
     guides = skipped = 0
@@ -398,6 +451,7 @@ def check_guides(bi, errors, warnings, only_files=None):
         fields = bi.parse_known_keys(block)
         if not fields["name"]:
             errors.append(f"{rel}: missing required frontmatter key `name`")
+        check_state_naming(rel, fields["name"], errors)
         has_description = re.search(r"^description:", block, re.MULTILINE)
         if not has_description and rel not in LEGACY_MISSING_DESCRIPTION:
             errors.append(f"{rel}: missing required frontmatter key `description`")
@@ -677,6 +731,7 @@ def main():
             check_packages_frontmatter(bi, errors, only_files=only)
         check_us_federal_deletions(errors)
         check_depends_on(bi, errors)
+        check_unique_names(bi, errors)
     check_no_deprecated_manifests(errors)
     if derived_only or not no_index_check:
         check_index_fresh(errors)

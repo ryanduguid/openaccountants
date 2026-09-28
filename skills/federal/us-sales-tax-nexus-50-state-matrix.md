@@ -3,6 +3,7 @@ name: us-sales-tax-nexus-50-state-matrix
 description: Tier 2 US federal-level reference skill providing the post-Wayfair economic-nexus threshold table for every US state plus DC and Puerto Rico. Covers sales/transaction thresholds, effective dates, lookback periods, marketplace facilitator laws, the SaaS-taxability list (HI/MA/NY/OH/PA/RI/SC/TN/TX/UT/WA/WV), the no-sales-tax NOMAD states (NH/OR/MT/AK/DE), Amazon FBA physical-presence nexus through inventory in 3PL warehouses, the difference between sales-tax and income-tax nexus, voluntary disclosure agreement (VDA) lookback limits, and home-rule states (CO/AL/LA/AK) requiring separate local registrations. Tax year 2025.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
@@ -31,8 +32,8 @@ This reference skill is the single lookup table for **economic sales tax nexus**
 - Income tax for businesses generally — see `us-form-1120-c-corp`, `us-form-1065-partnership`, `us-sole-prop-bookkeeping`
 - Arizona TPT mechanics — see `az-tpt`
 - Colorado SUTS portal — see `co-suts`
-- Washington B&O — see `wa-bo-tax`
-- California sales tax line-level preparation — see `california-sales-tax`
+- Washington B&O — see `us-wa-bo-tax`
+- California sales tax line-level preparation — see `us-ca-sales-tax`
 - Texas sales tax line-level preparation — see `tx-sales-tax`
 - US federal income tax — see other Tier 2 skills in this package
 - Use tax on consumer purchases (these are 50 separate compliance projects for individual taxpayers)
@@ -130,7 +131,7 @@ Within 18 months of Wayfair, every state with a sales tax enacted some form of e
 | 45 | **Utah** | 1 Jan 2019 | $100,000 | 200 | OR | PY or CY | 1 Oct 2019 | 4.85% | Retail | SST member |
 | 46 | **Vermont** | 1 Jul 2018 | $100,000 | 200 | OR | PY (12 mo) | 1 Jun 2019 | 6.00% | Retail | SST member |
 | 47 | **Virginia** | 1 Jul 2019 | $100,000 | 200 | OR | PY or CY | 1 Jul 2019 | 5.30% (combined state) | Retail | Includes 1% local in state base |
-| 48 | **Washington** | 1 Oct 2018 | $100,000 | — (200 prong repealed Mar 2020) | — (sales only) | PY or CY | 1 Jan 2018 | 6.50% | Yes | Plus B&O; see `wa-bo-tax`; first major MPF law |
+| 48 | **Washington** | 1 Oct 2018 | $100,000 | — (200 prong repealed Mar 2020) | — (sales only) | PY or CY | 1 Jan 2018 | 6.50% | Yes | Plus B&O; see `us-wa-bo-tax`; first major MPF law |
 | 49 | **West Virginia** | 1 Jan 2019 | $100,000 | 200 | OR | PY or CY | 1 Jul 2019 | 6.00% | Yes | SST member |
 | 50 | **Wisconsin** | 1 Oct 2018 | $100,000 | — (200 prong repealed Feb 2021) | — (sales only) | PY or CY | 1 Jan 2020 | 5.00% | Yes | SST member |
 | 51 | **Wyoming** | 1 Feb 2019 | $100,000 | — (200 prong repealed Jul 2024) | — (sales only) | PY or CY | 1 Jul 2019 | 4.00% | Yes | SST member |

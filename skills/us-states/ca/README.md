@@ -14,13 +14,15 @@
 
 | File | What it covers |
 |---|---|
-| `ca-income-tax.md` | Individual income tax for self-employed / sole proprietors |
-| `ca-540-es-estimated-tax.md` | Estimated tax payments (Form 540-ES) |
-| `ca-form-3853-coverage.md` | Health coverage mandate / individual shared responsibility penalty (Form 3853) |
-| `ca-smllc-form-568.md` | Single-member LLC annual tax & fee (Form 568) |
-| `ca-sales-use-tax.md` | State and district sales & use tax compliance |
-| `ca-formation.md` | California content skill for entity formation covering tax year 2025 |
-| `ca-payroll.md` | California content skill for employer payroll compliance covering tax year 2025 |
+| `us-ca-540-individual-return.md` | Individual income tax for self-employed / sole proprietors |
+| `us-ca-estimated-tax-540es.md` | Estimated tax payments (Form 540-ES) |
+| `us-ca-form-3853-coverage.md` | Health coverage mandate / individual shared responsibility penalty (Form 3853) |
+| `us-ca-smllc-form-568.md` | Single-member LLC annual tax & fee (Form 568) |
+| `us-ca-sales-tax.md` | State and district sales & use tax compliance |
+| `us-ca-formation.md` | California content skill for entity formation covering tax year 2025 |
+| `us-ca-payroll.md` | California content skill for employer payroll compliance covering tax year 2025 |
+| `us-ca-llc-fee-and-tax.md` | Tier 2 California content skill for Form 568 — the $800 annual minimum tax (R&TC § 17941) plus the t... |
+| `us-ca-pte-elective-tax.md` | Tier 2 California content skill for the Pass-Through Entity Elective Tax (R&TC §§ 17052.10, 19900-19... |
 
 ## What's NOT covered
 - Property tax (administered at county level)

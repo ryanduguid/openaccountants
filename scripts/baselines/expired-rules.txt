@@ -4,7 +4,7 @@
 # it with: python3 scripts/check-expired-rules.py --update-baseline
 skills/federal/us-education-credits-8863.md::### 13.4 Pending IRS guidance to watch — snapshot dated November 2025, restated September 2026
 skills/federal/us-estate-gift-706-709.md::| ETG-12 | State estate or inheritance tax preparation | Refer to state-specific Tier 2 skill (not yet released) |
-skills/international/ca-chartered-accountant/pe-tax-credits.md::When parameters are ambiguous or the 2025 PEI Finance bulletin has not yet been published in final form, apply these defaults:
+skills/international/canada/pei/pe-tax-credits.md::When parameters are ambiguous or the 2025 PEI Finance bulletin has not yet been published in final form, apply these defaults:
 skills/international/indonesia/id-einvoice-coretax.md::| SPT Tahunan 1770 / 1771 | Tax year 2024 (filed Q1 2025) | **DJP Online** — the 2024 annual returns filed in early 2025 mostly remained on the legacy portal (TBC — confirm against current D
 skills/international/indonesia/id-pph-final-umkm.md::| MAP/KJS payment code | **411128 / 420** — TBC, verify with Indonesian accountant |
 skills/international/morocco/ma-crypto-tax.md::- **Draft law 42.25 status** — Since around **late 2024**, the authorities have signalled a **change of doctrine** toward **regulating** rather than simply prohibiting crypto. The vehicle is
