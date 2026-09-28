@@ -17,6 +17,7 @@ import hashlib
 import importlib.util
 import io
 import json
+import re
 import sys
 import unittest
 from collections import defaultdict
@@ -55,6 +56,22 @@ class AssembleTests(SyntheticTreeCase):
         self.assertEqual((out_dir / "zz-vat.md").read_text(encoding="utf-8"), GUIDE)
         self.assertEqual((out_dir / "vat-workflow-base.md").read_text(encoding="utf-8"), BASE)
         self.assertIn("zzland: 5 files -> ", output)
+
+    def test_the_bundled_readme_links_to_the_files_beside_it(self) -> None:
+        out_dir = self.root / "dist" / "zzland"
+        self.run_main("zzland", "--out", str(out_dir))
+        readme = (out_dir / "README.md").read_text(encoding="utf-8")
+        self.assertNotIn("../_shared/", readme)
+        self.assertIn("are included in this folder:", readme)
+        self.assertIn("- [`vat-workflow-base.md`](vat-workflow-base.md)", readme)
+        self.assertIn("(the shared files listed above are included)", readme)
+        for target in re.findall(r"\]\(([^)]+)\)", readme):
+            if target.startswith(("http://", "https://", "mailto:", "#")):
+                continue
+            self.assertTrue((out_dir / target).is_file(), f"README links to {target}, which the bundle lacks")
+        # the checked-in README keeps the repository's layout
+        checked_in = (self.packages / "zzland" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("](../_shared/vat-workflow-base.md)", checked_in)
 
     def test_list_names_every_package_and_nothing_else(self) -> None:
         listed = self.run_main("--list").split()

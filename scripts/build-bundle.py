@@ -13,6 +13,10 @@ two together:
     python3 scripts/build-bundle.py --list           # every package name
     make bundle JURISDICTION=us-ca                   # the same, from the Makefile
 
+The package README is rewritten on the way: in the repository it links its
+shared files at ../_shared/, where they live; in the bundle they sit beside
+it, so the links point there.
+
 The output folder must not exist or must be empty. Exit status is 1 for an
 unknown package, a missing bundles.json (run build-packages.py first) or a
 file that bundles.json names but the tree does not hold.
@@ -42,8 +46,26 @@ def load_bundles(packages_dir):
     return document["packages"], document.get("shared_dir", "_shared")
 
 
+def localize_readme(text, shared_dir):
+    """The package README as it reads inside a bundle.
+
+    build-packages.py writes the README for the repository, where the shared
+    files live in ../<shared_dir>/; the three strings rewritten here are the
+    ones it emits for that layout (shared_section and UPLOAD_STEP there).
+    """
+    text = text.replace(
+        f"live once in [`../{shared_dir}/`](../{shared_dir}/):",
+        "are included in this folder:",
+    )
+    text = text.replace(f"](../{shared_dir}/", "](")
+    return text.replace(
+        "Upload ALL files in this folder AND the shared files listed above to your AI assistant",
+        "Upload ALL files in this folder (the shared files listed above are included) to your AI assistant",
+    )
+
+
 def assemble(package, packages_dir, out_dir):
-    """Copy the package's own files and its shared files into out_dir; returns the paths copied."""
+    """Copy the package's own files and its shared files into out_dir; returns the paths written."""
     packages, shared_dir = load_bundles(packages_dir)
     if package not in packages:
         sys.exit(f"error: unknown package {package!r}; --list shows the {len(packages)} available")
@@ -57,14 +79,20 @@ def assemble(package, packages_dir, out_dir):
         sys.exit("error: bundles.json names files the tree does not hold (rebuild packages/): "
                  + ", ".join(missing[:5]))
     os.makedirs(out_dir, exist_ok=True)
-    copied = []
+    written = []
     for src, name in sources:
         dest = os.path.join(out_dir, name)
         if os.path.exists(dest):
             sys.exit(f"error: {name} appears twice in the bundle for {package}")
-        shutil.copy2(src, dest)
-        copied.append(dest)
-    return copied
+        if name == "README.md":
+            with open(src, encoding="utf-8") as fh:
+                text = fh.read()
+            with open(dest, "w", encoding="utf-8") as fh:
+                fh.write(localize_readme(text, shared_dir))
+        else:
+            shutil.copy2(src, dest)
+        written.append(dest)
+    return written
 
 
 def main(argv=None):

@@ -75,18 +75,17 @@ Bump `legislative_basis` whenever Congress passes new tax legislation. Bump `sou
 
 Most skills should cite `rates.YYYY.json` and pull live values. But in practice some skills bake numbers inline (especially state skills with their own brackets, and any skill written before the rates-JSON infrastructure existed).
 
-Run this from the repo root before publishing:
+Run this from the repo root before publishing. Search the sources under `skills/`: the federal guides live in `skills/federal/` and the state guides in `skills/us-states/<code>/`, and `packages/_shared/` and `packages/us-*/` are regenerated from them (`make build`), so an edit goes into `skills/` and the build carries it into every package.
 
 ```bash
 # Find any 2025-stamped reference still living in skill markdown
-grep -rn "2025" packages/us-federal/ packages/us-ca/ packages/us-ny/ \
-                packages/us-il/ packages/us-ma/ packages/us-nj/ \
-                packages/us-mn/ packages/us-nc/ packages/us-ga/ \
-                | grep -v rates.2025.json | grep -v rates.2026.json
+grep -rn "2025" skills/federal/ skills/us-states/ca/ skills/us-states/ny/ \
+                skills/us-states/il/ skills/us-states/ma/ skills/us-states/nj/ \
+                skills/us-states/mn/ skills/us-states/nc/ skills/us-states/ga/
 
 # Find hardcoded specific 2025 dollar amounts in skills
 grep -rn -E '\$?(15,000|30,000|176,100|23,500|7,000|70,000|19,000|13,990,000|130,000|241,950|394,600|483,900|197,300|626,350|751,600)' \
-        packages/us-federal/ packages/us-*/
+        skills/federal/ skills/us-states/
 ```
 
 Review each hit. Bump the year reference. If the number is also changing (most will), update to 2026 figure. If a number is still inline that should live in JSON, that's a refactor opportunity — extract it now.
