@@ -1,40 +1,26 @@
 # OpenAccountants
 
-> [!IMPORTANT]
-> **Frozen snapshot of the upstream project.** This fork's `main` is a copy of
-> [`openaccountants/openaccountants`](https://github.com/openaccountants/openaccountants)
-> from before upstream rewrote its history. The two no longer share commits, so
-> GitHub can neither compare nor sync them. It is not a maintained or
-> authoritative tax source: the guides, generated packages, badges, counts,
-> hosted-service links and examples below may be stale. GitHub Actions still run
-> this fork's checks, but nothing here publishes to or syncs with the platform.
+> [!NOTE]
+> **This is a maintained fork.** `ryanduguid/openaccountants` carries the guide
+> corpus of [`openaccountants/openaccountants`](https://github.com/openaccountants/openaccountants)
+> as it stood before upstream rewrote its history, plus the corrections and
+> tooling merged here since. The two repositories share no commits and nothing
+> syncs between them in either direction. Changes land here through pull
+> requests to this repository's `main`, gated by the checks in
+> `.github/workflows/`; a change you also want in the upstream project needs a
+> separate pull request there.
 >
-> Contributions go on branches cut from upstream `main`, with pull requests to
-> [`openaccountants/openaccountants`](https://github.com/openaccountants/openaccountants/pulls).
-> This `main` takes no further merges.
+> Not operated from this fork: the hosted MCP endpoint and website at
+> openaccountants.com, the `openaccountants-mcp` release on PyPI, the booking
+> link in guide footers, and the platform sync bot. The MCP server in `mcp/`
+> can be self-hosted from this checkout. Maintainer: [@ryanduguid](https://github.com/ryanduguid).
 
-<details>
-<summary><strong>Conditions for merging into this fork's main again</strong></summary>
-
-Only merge into this `main` again when all of these conditions are met:
-
-- a named maintainer owns releases, security response, and ongoing review;
-- the authoritative guide corpus is identified and reconciled with upstream;
-- a real, access-controlled sync destination replaces the retired publication path;
-- unit, MCP, full-guide validation, and sync-integrity checks pass within documented bounds; and
-- every publication verifies the expected source commit before writing, so a stale job cannot overwrite newer work.
-
-</details>
-
-Named, licensed accountants put their name, credential and review date on the tax guides in the upstream project. This fork holds a point-in-time copy of those guides and does not publish or sync them.
+Named, licensed accountants put their name, credential and review date on the guides they reviewed. Those names travelled with the guides into this tree and are the basis of every "accountant-reviewed" count below. No review is re-performed here: a guide only becomes accountant-reviewed in this fork when a named, licensed accountant signs it off in a pull request.
 
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-047857)](LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/openaccountants-mcp?label=openaccountants-mcp&color=047857)](https://pypi.org/project/openaccountants-mcp/)
-[![smithery badge](https://smithery.ai/badge/info-ood9/openaccountants)](https://smithery.ai/servers/info-ood9/openaccountants)
-[![GitHub stars](https://img.shields.io/github/stars/openaccountants/openaccountants?style=social)](https://github.com/openaccountants/openaccountants/stargazers)
 
 <!-- oa-stats:start -->
-**1,953 Guides** across **244 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,955 Guides** across **244 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 <sub>Derived from `index.json` in this checkout and verified by
 `scripts/check-coverage-claims.py`. "Accountant-reviewed" and "named
@@ -55,11 +41,12 @@ restated here.</sub>
 
 ## Hosted product
 
-The MCP endpoint, connect flow, and nightly stats belong to
-[openaccountants/openaccountants](https://github.com/openaccountants/openaccountants)
-and [openaccountants.com](https://www.openaccountants.com/). They are not
-operated from this fork. A checkout of this tree still contains `packages/`,
-`index.json`, and `mcp/` as they stood when the fork was taken.
+The MCP endpoint, connect flow, bundle API and usage statistics belong to the
+upstream project and [openaccountants.com](https://www.openaccountants.com/).
+They are not operated from this fork. This tree contains everything needed to
+use the guides without them: the per-jurisdiction bundles in `packages/`, the
+inventory in `index.json`, and the self-hostable MCP server in `mcp/` (see
+[mcp/README.md](mcp/README.md)).
 
 ---
 
@@ -69,7 +56,7 @@ Every Guide is in exactly one state — and the repo greps honestly:
 
 | State | Meaning |
 |---|---|
-| **Accountant-reviewed** | A named, licensed accountant reviewed the complete Guide. Their name is in the frontmatter (`reviewed_by:`) and on [the public roster](VERIFIERS.md) |
+| **Accountant-reviewed** | A named, licensed accountant reviewed the complete Guide. Their name is in the frontmatter (`reviewed_by:`) and on [the roster](PARTNERS.md) |
 | **Source-cited draft** | Written from primary legislation, every figure cited to its source — not yet professionally reviewed |
 
 ⚠️ **General reference, not advice.** Guides may be incomplete, outdated, or wrong for your facts. Have a qualified professional review outputs before filing, payment, or action.
@@ -78,18 +65,23 @@ Every Guide is in exactly one state — and the repo greps honestly:
 
 ## Accountant roster
 
-Guide review happens on the upstream project. The roster file frozen in this
-tree is [VERIFIERS.md](VERIFIERS.md). Do not treat it as current.
+Each guide's frontmatter (`tier: 1` with `reviewed_by`) is the record of who
+reviewed what, and `index.json` derives the counts above from it.
+[PARTNERS.md](PARTNERS.md) is a per-jurisdiction view and
+[VERIFIERS.md](VERIFIERS.md) is upstream's roster as of 2026-08-22; neither is
+regenerated here, so where they disagree with the frontmatter, the frontmatter
+wins.
 
 ---
 
 ## Contributing
 
-This fork is archived history. Send guide and code changes to
-[openaccountants/openaccountants](https://github.com/openaccountants/openaccountants).
-
-Upstream still edits `skills/` only; generated files regenerate there. See
-[CONTRIBUTING.md](CONTRIBUTING.md) and [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
+Pull requests to this repository are welcome: guide corrections, new guides,
+tooling. Edit `skills/`, regenerate the derived trees, open a PR; CI checks the
+frontmatter, the metadata bump, derived-tree freshness and the unit tests.
+There is no contributor licence agreement here: a contribution is accepted
+under the licence of the files it changes. Process: [CONTRIBUTING.md](CONTRIBUTING.md).
+Which file to edit: [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
 
 ---
 
@@ -101,16 +93,14 @@ Upstream still edits `skills/` only; generated files regenerate there. See
 | Per-country bundles (generated) | [`packages/`](packages/) |
 | Machine-readable inventory | [`index.json`](index.json) |
 | LLM entry point | [`llms.txt`](llms.txt) |
-| Python MCP server | [`mcp/`](mcp/) · [PyPI](https://pypi.org/project/openaccountants-mcp/) |
-| Repo architecture + sync | [`docs/REPO-LAYOUT.md`](docs/REPO-LAYOUT.md) · [`docs/WEBSITE-SYNC.md`](docs/WEBSITE-SYNC.md) |
-
-API and platform integrations: [openaccountants.com/for-developers](https://www.openaccountants.com/for-developers)
+| Python MCP server, self-hostable | [`mcp/`](mcp/) (the [PyPI release](https://pypi.org/project/openaccountants-mcp/) is upstream's) |
+| Repo architecture | [`docs/REPO-LAYOUT.md`](docs/REPO-LAYOUT.md); [`docs/WEBSITE-SYNC.md`](docs/WEBSITE-SYNC.md) is upstream's retired sync contract, kept for reference |
 
 ---
 
 ## License
 
-- **Code** (mcp/, scripts/, tools/): [AGPL-3.0](LICENSE)
-- **Guide content**: OpenAccountants Guide License v1.0 — see [LICENSING.md](LICENSING.md); commercial options in [COMMERCIAL-LICENSING.md](COMMERCIAL-LICENSING.md)
+- **Code** (`mcp/`, `scripts/`, `tools/`, `plugins/`, `docs/`, `.github/`): [AGPL-3.0-only](LICENSE)
+- **Guide content** (`skills/`, `packages/`, `workflows/`, `index.json`, `llms*.txt`): OpenAccountants Guide License v1.0, licensed by Glimpse Ltd — see [LICENSING.md](LICENSING.md); commercial options in [COMMERCIAL-LICENSING.md](COMMERCIAL-LICENSING.md)
 
-**Contact:** info@openaccountants.com · [Security policy](SECURITY.md) · [Cite this repo](CITATION.cff)
+**Contact:** the maintainer through [issues](https://github.com/ryanduguid/openaccountants/issues) · [Security policy](SECURITY.md) · questions about the Guide License and the commercial track go to its licensor, Glimpse Ltd (info@openaccountants.com) · [Cite this repo](CITATION.cff)

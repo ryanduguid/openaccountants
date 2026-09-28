@@ -198,8 +198,8 @@ def packages_files():
 
     build-index.py's GUIDE_TREES covers skills/ and the hand-authored
     packages/us-federal only, so the rest of the generated tree was validated by
-    nothing, while sync-mcp.yml mirrors it to the MCP repo on every push to
-    main.
+    nothing, even while upstream's mirror job shipped it to the MCP repo on
+    every push to main.
     """
     paths = []
     base = os.path.join(REPO_ROOT, "packages")

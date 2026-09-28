@@ -64,7 +64,7 @@ python3 -m unittest discover -s tests -p "test_*.py"                # (or `pytho
 (cd mcp && python3 -m unittest discover -s tests -p "test_*.py")
 ```
 
-`validate.yml` runs the first two (as `guard-derived-trees` and `validate`); `sync-integrity.yml` runs the rest; `no-ai-attribution.yml` enforces the commit policy below; `cla.yml` is upstream's CLA bot; CodeQL scans the workflows. `sync-mcp.yml` is upstream's mirror job: as written it fires on every push to `main` that touches `packages/` and pushes the tree to `openaccountants/openaccountants-mcp` with a deploy key this fork does not hold. Its runs are switched off in this repository's Actions settings (every run before that failed on the missing key), so the file is inert here; do not re-enable it or rely on it.
+`validate.yml` runs the first two (as `guard-derived-trees` and `validate`); `sync-integrity.yml` runs the rest; `no-ai-attribution.yml` enforces the commit policy below; CodeQL scans the workflows. Upstream's CLA bot (`cla.yml`) and its MCP mirror job (`sync-mcp.yml`) were removed from this fork: there is no CLA here, and nothing mirrors `packages/` anywhere.
 
 Review aids: the other `scripts/check-*.py` and `scripts/list-*.py` files (arithmetic, bracket tables, fact conflicts, expired rules, stale futures, citation hosts, reviewer roster, ...) print findings and, except for `check-expired-rules.py`, always exit 0. Run the relevant ones whenever you touch rates or tables and read what they print; a clean exit code proves nothing. `check-cited-hosts.py` and `list-citation-rot.py` need network access.
 
@@ -72,7 +72,7 @@ Review aids: the other `scripts/check-*.py` and `scripts/list-*.py` files (arith
 
 - Commits carry the human author's identity. Do **not** add `Co-Authored-By: Claude` (or any AI) trailers, "Generated with Claude Code" lines, session links or similar AI-attribution lines to commit messages, and do not put them in the PR description: `no-ai-attribution.yml` fails the PR on any of them, in commit identities, commit messages or the description. Transparency about AI involvement belongs in README content and public posts, not in per-commit attribution.
 - One logical change per commit; regenerated output travels with the source edit that caused it.
-- The PR template's CLA checkbox is the author's to tick.
+- There is no contributor licence agreement in this fork. The PR template's licensing checkbox records that the contribution is licensed under the licence of the files it changes (`CONTRIBUTING.md`, "Licensing of contributions"); it is the author's to tick.
 
 ## Annual update infrastructure
 

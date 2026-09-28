@@ -1,5 +1,7 @@
 # Contributor License Agreement — Open Accountants
 
+> **Status in this fork:** this is the upstream project's agreement between contributors and Glimpse Ltd, kept for reference because [LICENSING.md](LICENSING.md) and [COMMERCIAL-LICENSING.md](COMMERCIAL-LICENSING.md) refer to it. `ryanduguid/openaccountants` does not collect it: contributions to this fork are licensed under the licence of the files they change, as described in [CONTRIBUTING.md](CONTRIBUTING.md#licensing-of-contributions).
+
 Version 1.0 — Effective April 2026
 
 ---

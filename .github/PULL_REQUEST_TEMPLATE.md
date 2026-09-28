@@ -6,13 +6,9 @@
 
 <!-- e.g., Malta, Germany, all EU -->
 
-## Legal — Contributor License Agreement (CLA)
+## Licensing of this contribution
 
-OpenAccountants is dual-licensed (AGPL-3.0 + commercial). We need a clear **yes** from you before we can merge your contribution.
-
-- [ ] **I have read [CLA.md](https://github.com/openaccountants/openaccountants/blob/main/CLA.md) and agree to the Contributor License Agreement** for everything included in this pull request. *(Checking this box is your explicit opt-in.)*
-
-If you cannot agree, do not open this PR — contact **info@openaccountants.com** to discuss alternatives (including a formal signed agreement).
+- [ ] This contribution is my own work or I have the right to submit it, and I agree that it is licensed under the licence of the files it changes: AGPL-3.0-only for software, the OA Guide License for guides (see [CONTRIBUTING.md → Licensing of contributions](https://github.com/ryanduguid/openaccountants/blob/main/CONTRIBUTING.md#licensing-of-contributions)). I keep my copyright.
 
 ## Checklist
 
@@ -21,8 +17,8 @@ If you cannot agree, do not open this PR — contact **info@openaccountants.com*
 - [ ] File is in `skills/` (not only `packages/`)
 - [ ] Jurisdiction is clear (folder path or `jurisdiction:` in frontmatter)
 - [ ] I edited `skills/**` (never `packages/`, `index.json` or `llms-full.txt` by hand) and committed the regenerated output of `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py`
+- [ ] If a guide's body changed, its `last_updated` (or `version`) is advanced
 - [ ] **Name for attribution** (as it should appear on the guide): ______
-- [ ] My OpenAccountants profile GitHub username matches this account (optional — set it at openaccountants.com/profile for full credit)
 
 ### Content quality
 

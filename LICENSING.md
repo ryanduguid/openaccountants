@@ -42,9 +42,14 @@ additional/unknown licences — that is expected for a mixed-licence repo.
 
 ## Contributions
 
-All contributions are governed by the [Contributor License Agreement](CLA.md),
-which grants Glimpse Ltd the right to distribute contributions under **both** the
-AGPL and the Guide/commercial tracks. You keep your copyright.
+Contributions to this fork are accepted under the licence of the files they
+change: AGPL-3.0-only for software, the OA Guide License for Guides and their
+exports. Contributors keep their copyright. The upstream project's
+[Contributor License Agreement](CLA.md), which grants Glimpse Ltd the right to
+distribute contributions under both the AGPL and the Guide/commercial tracks,
+governed the contributions made to upstream and is kept here for reference;
+this fork does not collect it and cannot grant commercial licences to the
+Guides, which remain Glimpse Ltd's to license.
 
 ## Third-party copyleft material
 
