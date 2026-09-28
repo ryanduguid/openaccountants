@@ -26,8 +26,13 @@ from oa_tools import findings  # noqa: E402
 from oa_tools.findings import Finding, Report  # noqa: E402
 
 
+SKILLS = str(REPO_ROOT / "skills")
+
+
 def _args(**overrides):
-    values = {"json": False, "baseline": None, "no_baseline": False, "update_baseline": False, "roots": ["skills"]}
+    """A parsed-arguments stand-in. Roots default to the repository's skills/
+    by absolute path, so the tests do not depend on the working directory."""
+    values = {"json": False, "baseline": None, "no_baseline": False, "update_baseline": False, "roots": [SKILLS]}
     values.update(overrides)
     return argparse.Namespace(**values)
 
@@ -173,27 +178,38 @@ class ReportTests(unittest.TestCase):
         findings.write_baseline(self.baseline, "demo", [
             Finding("skills/federal/f.md", "k", "s"), Finding("skills/international/i.md", "k", "s"),
         ])
-        report = self._report(roots=["skills/federal"])
+        report = self._report(roots=[os.path.join(SKILLS, "federal")])
         report.add(Finding("skills/federal/f.md", "k", "s"))
         self.assertEqual(report.finish(), 0, self.out.getvalue())
         self.assertNotIn("no longer reproduce", self.out.getvalue())
 
         self.out.seek(0), self.out.truncate()
-        report = self._report(roots=["skills"])
+        report = self._report(roots=[SKILLS])
         report.add(Finding("skills/federal/f.md", "k", "s"))
         self.assertEqual(report.finish(), 1, "a full-tree run still sees the missing international entry")
         self.assertIn("    skills/international/i.md::k", self.out.getvalue())
 
         self.out.seek(0), self.out.truncate()
-        report = self._report(roots=["./skills/federal/"])
+        report = self._report(roots=[os.path.join(SKILLS, ".", "federal") + os.sep])
         report.add(Finding("skills/federal/f.md", "k", "s"))
         self.assertEqual(report.finish(), 0, "roots are canonicalized like paths")
+
+    def test_a_root_that_is_not_a_directory_is_an_error_not_an_empty_pass(self) -> None:
+        """A misspelled root scans nothing and would put every baseline entry
+        out of scope, so without this it would report gate: PASS."""
+        findings.write_baseline(self.baseline, "demo", [Finding("skills/federal/f.md", "k", "s")])
+        for roots in ([os.path.join(SKILLS, "fedral")], [SKILLS, str(REPO_ROOT / "nowhere")]):
+            with self.subTest(roots=roots), self.assertRaises(SystemExit) as caught:
+                self._report(roots=roots)
+            self.assertIn("not a directory", str(caught.exception))
+            self.assertIn("nowhere" if "nowhere" in roots[-1] else "fedral", str(caught.exception))
+        self.assertEqual(self.out.getvalue(), "")
 
     def test_scoped_update_keeps_the_entries_outside_its_roots(self) -> None:
         findings.write_baseline(self.baseline, "demo", [
             Finding("skills/federal/old.md", "k", "s"), Finding("skills/international/i.md", "k", "s"),
         ])
-        report = self._report(roots=["skills/federal"], update_baseline=True)
+        report = self._report(roots=[os.path.join(SKILLS, "federal")], update_baseline=True)
         report.add(Finding("skills/federal/new.md", "k", "s"))
         self.assertEqual(report.finish(), 0)
         self.assertIn("baseline written: 2 fingerprint(s) (1 outside the scanned roots kept)", self.out.getvalue())

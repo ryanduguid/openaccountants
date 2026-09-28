@@ -147,6 +147,19 @@ class ArithmeticGateTests(GateCheckerMixin, unittest.TestCase):
         )
         self.assertEqual(self.run_checker().returncode, 0, "the full-tree gate still passes")
 
+    def test_a_misspelled_root_is_an_error_and_touches_nothing(self) -> None:
+        self.write({"skills/federal/f.md": guide("f", "- Tax: 100 x 10% = 20\n")})
+        self.assertEqual(self.run_checker("--update-baseline").returncode, 0)
+        before = self.baseline.read_text(encoding="utf-8")
+        for args in (("skills/fedral",), ("skills", "nowhere"), ("skills/fedral", "--update-baseline"), ("skills/fedral", "--json")):
+            with self.subTest(args=args):
+                result = self.run_checker(*args)
+                self.assertNotEqual(result.returncode, 0, args)
+                self.assertIn("not a directory", result.stderr)
+                self.assertNotIn("gate: PASS", result.stdout)
+                self.assertEqual(result.stdout, "", "nothing is scanned or reported")
+        self.assertEqual(self.baseline.read_text(encoding="utf-8"), before, "the baseline was not rewritten")
+
     def test_finding_detail_and_correct_arithmetic(self) -> None:
         self.write({"skills/international/zz/zz-vat.md": guide("zz-vat", "- Tax due: 100 x 10% = 20\n- Ok: 100 x 10% = 10\n")})
         code, document = self.run_json()

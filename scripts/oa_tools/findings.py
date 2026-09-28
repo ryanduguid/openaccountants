@@ -27,7 +27,11 @@ and an absolute path to the same directory produce the same fingerprints.
 A run scoped to part of the tree (positional roots, ``check-arithmetic.py
 skills/federal``) is judged against the baseline entries under those roots
 only, and ``--update-baseline`` on such a run rewrites only those entries and
-keeps the rest. A checker without roots covers the whole baseline.
+keeps the rest. A checker without roots covers the whole baseline. A root
+that is not a directory (a typo, or the wrong working directory) is an
+error before anything is scanned, never an empty pass: with nothing scanned
+and nothing in scope a misspelled root would otherwise gate nothing and
+report success.
 """
 
 import argparse
@@ -217,6 +221,13 @@ class Report:
         self.notes = []
         self.json = bool(getattr(args, "json", False))
         roots = getattr(args, "roots", None)
+        if roots is not None:
+            missing = [root for root in roots if not os.path.isdir(root)]
+            if missing:
+                raise SystemExit(
+                    f"error: not a directory: {', '.join(missing)} "
+                    "(roots are relative to the working directory; run from the repository root)"
+                )
         self.roots = None if roots is None else [canonical_path(root) for root in roots]
         if getattr(args, "no_baseline", False):
             self.baseline_path = None
@@ -283,7 +294,7 @@ class Report:
         document = {
             "checker": self.checker,
             "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
-            "roots": list(getattr(self.args, "roots", []) or []),
+            "roots": list(self.roots or []),
             "baseline": None if self.baseline is None else _display_path(self.baseline_path),
             "counts": {
                 "findings": len(self.findings),
