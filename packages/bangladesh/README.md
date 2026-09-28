@@ -31,7 +31,6 @@
 24. `crypto-tax-workflow-base.md`
 25. `income-tax-workflow-base.md`
 26. `social-contributions-workflow-base.md`
-27. `workflow-base.md`
 
 ## How to use
 
