@@ -51,6 +51,7 @@ Install scripts/requirements-validation.txt, then run:
 python3 scripts/validate-guides.py
 """
 
+import filecmp
 import importlib.util
 import json
 import os
@@ -404,51 +405,65 @@ def check_llms_full_fresh(errors):
 
 
 def package_tree_files(root, skip_dirs=()):
-    """Relative posix paths of every file under a packages tree.
+    """Entries under a packages tree, keyed by relative posix path.
 
-    Top-level entries named in skip_dirs (the hand-authored packages) are left
-    out. A missing root is an empty tree.
+    The value is True for a regular file and False for anything else: a
+    symlink (to a file or a directory), a device, a socket. Top-level entries
+    named in skip_dirs (the hand-authored packages) are left out. A missing
+    root is an empty tree. Nothing is opened here and symlinks are never
+    followed, so a link pointing outside the tree costs nothing to list.
     """
-    files = set()
+    entries = {}
     if not os.path.isdir(root):
-        return files
+        return entries
+
+    def record(path):
+        rel = os.path.relpath(path, root).replace(os.sep, "/")
+        entries[rel] = not os.path.islink(path) and os.path.isfile(path)
+
     for entry in sorted(os.listdir(root)):
         if entry in skip_dirs:
             continue
         full = os.path.join(root, entry)
-        if os.path.isfile(full):
-            files.add(entry)
+        if os.path.islink(full) or not os.path.isdir(full):
+            record(full)
             continue
-        for dirpath, dirnames, filenames in os.walk(full):
+        for dirpath, dirnames, filenames in os.walk(full):  # never follows links
             dirnames.sort()
-            for filename in filenames:
-                rel = os.path.relpath(os.path.join(dirpath, filename), root)
-                files.add(rel.replace(os.sep, "/"))
-    return files
+            for name in dirnames:
+                sub = os.path.join(dirpath, name)
+                if os.path.islink(sub):
+                    record(sub)  # listed as an entry, never entered
+            for name in filenames:
+                record(os.path.join(dirpath, name))
+    return entries
 
 
 def compare_package_trees(committed_root, fresh_root, skip_dirs=()):
     """Paths where the committed packages tree and a fresh build disagree.
 
-    Each entry is `<relative path> (<why>)`: present on one side only, or
-    present on both with different bytes. Empty means the committed tree is
-    exactly what the generator produces today.
+    Each entry is `<relative path> (<why>)`: present on one side only, not a
+    regular file (the generator only ever writes regular files, and a symlink
+    in the checkout is reported without following it), or present on both
+    with different bytes. Contents are compared in bounded chunks, never read
+    whole into memory. Empty means the committed tree is exactly what the
+    generator produces today.
     """
     committed = package_tree_files(committed_root, skip_dirs)
     fresh = package_tree_files(fresh_root, skip_dirs)
     differing = []
-    for rel in sorted(committed | fresh):
-        if rel not in committed:
+    for rel in sorted(set(committed) | set(fresh)):
+        in_committed, in_fresh = committed.get(rel), fresh.get(rel)
+        if in_committed is False or in_fresh is False:
+            differing.append(f"{rel} (not a regular file; a fresh build only writes regular files)")
+        elif in_committed is None:
             differing.append(f"{rel} (a fresh build produces it; packages/ lacks it)")
-        elif rel not in fresh:
+        elif in_fresh is None:
             differing.append(f"{rel} (in packages/; a fresh build does not produce it)")
-        else:
-            with open(os.path.join(committed_root, rel), "rb") as a:
-                a_bytes = a.read()
-            with open(os.path.join(fresh_root, rel), "rb") as b:
-                b_bytes = b.read()
-            if a_bytes != b_bytes:
-                differing.append(f"{rel} (content differs)")
+        elif not filecmp.cmp(
+            os.path.join(committed_root, rel), os.path.join(fresh_root, rel), shallow=False
+        ):
+            differing.append(f"{rel} (content differs)")
     return differing
 
 

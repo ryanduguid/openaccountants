@@ -3,6 +3,7 @@ from __future__ import annotations
 import contextlib
 import importlib.util
 import io
+import os
 import sys
 import tempfile
 import unittest
@@ -207,6 +208,36 @@ class PackagesFreshnessTests(_ValidatorCase):
             validate_guides.compare_package_trees(committed, fresh, skip_dirs={"us-federal"}),
             [],
         )
+
+    def _symlink(self, target, link):
+        try:
+            os.symlink(target, link)
+        except (OSError, NotImplementedError):  # pragma: no cover - platform limit
+            self.skipTest("symlinks are not available here")
+
+    def test_a_symlinked_file_is_reported_without_being_followed(self) -> None:
+        # The check runs against a pull request's checkout, so a committed link
+        # to something large outside the tree must be reported, not read. The
+        # link here points at a byte-identical regular file: following it would
+        # compare equal and report nothing.
+        committed, fresh = self._trees(
+            {"albania/a.md": GOOD}, {"albania/a.md": GOOD, "albania/b.md": GOOD}
+        )
+        self._symlink(os.path.join(fresh, "albania", "b.md"), os.path.join(committed, "albania", "b.md"))
+
+        differing = validate_guides.compare_package_trees(committed, fresh)
+
+        self.assertEqual(len(differing), 1, differing)
+        self.assertTrue(differing[0].startswith("albania/b.md (not a regular file"), differing)
+
+    def test_a_symlinked_directory_is_reported_without_being_entered(self) -> None:
+        committed, fresh = self._trees({"albania/a.md": GOOD}, {"albania/a.md": GOOD})
+        self._symlink(os.path.join(fresh, "albania"), os.path.join(committed, "bulgaria"))
+
+        differing = validate_guides.compare_package_trees(committed, fresh)
+
+        self.assertEqual(len(differing), 1, differing)
+        self.assertTrue(differing[0].startswith("bulgaria (not a regular file"), differing)
 
 
 class ValidatorModeTests(unittest.TestCase):
