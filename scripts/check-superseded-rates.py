@@ -16,10 +16,9 @@ In all three the corpus already contained the right answer. It was in the wrong
 file, or in the wrong half of the right file, and the copy that a reader would
 actually load to do the work was the stale one.
 
-check-tree-divergence.py cannot see this: it compares skills/ against packages/
-and agent-skills/, and here all three trees carry the same stale guide. This
-compares SIBLINGS INSIDE a jurisdiction instead, which is the axis nothing else
-covers.
+check-tree-divergence.py cannot see this: it compares copies of one guide
+across trees, and every copy carries the same stale guide. This compares
+SIBLINGS INSIDE a jurisdiction instead, which is the axis nothing else covers.
 
 Method: find sentences that record a rate change -- "rises to 16% from 1 January
 2026", "24% (from 1 July 2025; was 22%)", "raised from 17% to 18%", "abolished

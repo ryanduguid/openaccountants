@@ -13,7 +13,11 @@
 > Not operated from this fork: the hosted MCP endpoint and website at
 > openaccountants.com, the `openaccountants-mcp` release on PyPI, the booking
 > link in guide footers, and the platform sync bot. The MCP server in `mcp/`
-> can be self-hosted from this checkout. Maintainer: [@ryanduguid](https://github.com/ryanduguid).
+> can be self-hosted from this checkout. Upstream's `agent-skills/` tree (guide
+> copies in the Agent Skills `SKILL.md` format) is not carried here either: it
+> was a hand-maintained third copy with no generator and was removed on
+> 2026-09-28 (see [CHANGELOG.md](CHANGELOG.md)); `packages/` and the MCP
+> server are the ways to consume the guides. Maintainer: [@ryanduguid](https://github.com/ryanduguid).
 
 Named, licensed accountants put their name, credential and review date on the guides they reviewed. Those names travelled with the guides into this tree and are the basis of every "accountant-reviewed" count below. No review is re-performed here: a guide only becomes accountant-reviewed in this fork when a named, licensed accountant signs it off in a pull request.
 

@@ -48,7 +48,7 @@ import os, re, sys, glob, json, time, socket, ipaddress, collections
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TREES = ('skills', 'agent-skills')
+TREES = ('skills',)
 
 # Stop at whitespace and at the delimiters markdown wraps links in. The
 # trailing-punctuation strip below handles "see https://x.gov/y." sentences.

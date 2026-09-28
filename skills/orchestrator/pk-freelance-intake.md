@@ -1,7 +1,7 @@
 ---
 name: pk-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with their Pakistan taxes AND mentions freelancing, self-employment, sole proprietorship, IT exports, or being a business individual in Pakistan. Trigger on phrases like "help me with my Pakistan taxes", "I'm a freelancer in Pakistan", "I export IT services", "file my FBR return", "I'm self-employed in Pakistan". This is the REQUIRED entry point for the Pakistan self-employed workflow — downstream skills (pk-it-export-tax, pk-income-tax, pk-social-contributions, pakistan-sales-tax, pk-return-assembly) depend on it. Upload-first; Pakistan-resident individuals only.
-version: 0.1
+version: 1.1
 jurisdiction: PK
 tax_year: 2025
 last_updated: 2026-09-28
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Freelance Intake
 
-## Pakistan — Freelance / SME Intake — Skill v1.0
+## Pakistan — Freelance / SME Intake — Skill v1.1
 
 > **How to read every "TBC — verify against Finance Act 2025" marker in this
 > guide: as naming the wrong Act.**
@@ -34,12 +34,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > year being computed"**. The markers still do their job — they say a figure was
 > not confirmed — but they do not tell you which Act to open, and for a 2026-27
 > computation the answer is FA 2026, not FA 2025.
->
-> The same wording appears in this guide's `agent-skills/` counterpart, which is
-> a separate hand-maintained tree rather than a generated copy. That copy now
-> carries this block too. It does not inherit it — nothing in `agent-skills/` is
-> generated from `skills/` — so the correction had to be written there by hand,
-> and an earlier revision of this note recorded that it had not been.
 
 
 ## What this file is

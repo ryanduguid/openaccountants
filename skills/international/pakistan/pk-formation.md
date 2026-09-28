@@ -1,7 +1,7 @@
 ---
 name: pk-formation
 description: "Use this skill whenever asked about forming, incorporating, or registering a business in Pakistan. Trigger on phrases like \"Pakistan company formation\", \"SECP registration\", \"Pvt Ltd Pakistan\", \"AOP Pakistan\", \"PSEB IT registration\", \"Pakistan sole proprietor\", \"SMC-Pvt Pakistan\", \"incorporate Pakistan\", \"register company Pakistan\", \"FBR NTN\", \"STRN\", \"Companies Act 2017\", or any question about choosing or registering a Pakistani entity. Covers entity comparison (Sole Proprietorship, AOP / Partnership, Single Member Company SMC-Pvt, Private Limited Pvt Ltd, Public Limited PLC, NPO), SECP eServices portal registration steps, FBR NTN and STRN tax registration, sector-specific licensing (SBP for banking and fintech, PTA for telecom, NEPRA for power, SECP for capital markets), the **critical PSEB (Pakistan Software Export Board) registration** that unlocks the 0.25% / 1% concessional final tax on IT and IT-enabled services exports, and tax treatment by entity type. Out of scope: immigration / work visa / POC / NICOP sponsorship, bank account opening procedures (high-level only), full corporate governance and shareholders' agreement drafting, deep sector-specific regulatory licensing beyond signposting, and listing on the PSX. ALWAYS read this skill before advising on Pakistani entity formation."
-version: 1.0
+version: 1.1
 jurisdiction: PK
 tax_year: 2025
 last_updated: 2026-09-28
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Formation
 
-## Pakistan — Business Formation & Entity Selection — Skill v1.0
+## Pakistan — Business Formation & Entity Selection — Skill v1.1
 
 > **How to read every "TBC — verify against Finance Act 2025" marker in this
 > guide: as naming the wrong Act.**
@@ -39,12 +39,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > year being computed"**. The markers still do their job — they say a figure was
 > not confirmed — but they do not tell you which Act to open, and for a 2026-27
 > computation the answer is FA 2026, not FA 2025.
->
-> The same wording appears in this guide's `agent-skills/` counterpart, which is
-> a separate hand-maintained tree rather than a generated copy. That copy now
-> carries this block too. It does not inherit it — nothing in `agent-skills/` is
-> generated from `skills/` — so the correction had to be written there by hand,
-> and an earlier revision of this note recorded that it had not been.
 
 
 ## Verified rates & thresholds (accountant-reviewed)
