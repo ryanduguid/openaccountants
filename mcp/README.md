@@ -2,7 +2,7 @@
 
 <!-- mcp-name: io.github.openaccountants/openaccountants-mcp -->
 
-A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to the open-source accounting skills in a checkout of this repository — at the time of writing 1,835 skills from 187 country packages, 51 US state packages (50 states + DC) plus `us-federal`, 13 Canadian province/territory packages, and the `_cross-border`, `_verticals` and `_integrations` bundles, across tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border and more — no manual file uploads.
+A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to the open-source accounting skills in a checkout of this repository — at the time of writing 1,841 skills from 187 country packages, 51 US state packages (50 states + DC) plus `us-federal`, 13 Canadian province/territory packages, and the `_cross-border`, `_verticals` and `_integrations` bundles, across tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border and more — no manual file uploads.
 
 > **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown in a checkout of this repository. The **hosted server** at `https://www.openaccountants.com/api/mcp` belongs to the upstream project: it reads the production database and exposes a larger surface that includes the **accountant-reviewed** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is upstream's product; this self-hosted one is the open research base.
 
@@ -42,8 +42,8 @@ Special packages are also available:
 
 | Package | What's inside |
 |---------|--------------|
-| `_cross-border` | 40 skills — multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, 70+ treaty corridor WHT rates |
-| `_verticals` | 14 industry-specific skills — banking, charity / nonprofit, construction, consultant, content creator, e-commerce, freelance developer, insurance, investment funds / REITs, medical, oil & gas, property investor, SaaS, shipping / aviation |
+| `_cross-border` | 41 skills — multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, 70+ treaty corridor WHT rates |
+| `_verticals` | 15 skills — 14 industry-specific (banking, charity / nonprofit, construction, consultant, content creator, e-commerce, freelance developer, insurance, investment funds / REITs, medical, oil & gas, property investor, SaaS, shipping / aviation) plus the corporate income tax workflow base they depend on |
 | `_integrations` | 10 platform export formats — Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon, Shopify, FreeAgent, Sage |
 
 ## Tools
