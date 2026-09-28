@@ -3,6 +3,7 @@ name: pk-corporate-tax
 description: "ALWAYS read this skill before touching any Pakistan corporate income tax (CIT) work. Use this skill whenever asked about Pakistan corporate tax for a resident Pakistani company. Trigger on phrases like \"Pakistan CIT\", \"Pakistan company tax\", \"Pvt Ltd Pakistan\", \"super tax Pakistan\", \"small company Pakistan tax\", \"PSEB IT export\", \"Finance Act 2025 corporate\", \"Section 4C super tax\", \"Section 113 minimum tax\", \"Section 113C ACT\", \"Section 147 advance tax\", \"IRIS return Pakistan\", \"group taxation Pakistan\", \"Section 59AA\", \"Section 59B\". Covers the 29% standard CIT rate under the Income Tax Ordinance 2001 (ITO 2001) as amended by Finance Act 2024 and Finance Act 2025, the 39% banking-company rate, the 20% small-company rate (turnover ≤ Rs 250M plus the other Section 2(59A) conditions), Section 4C super tax progressive bands (1%–10%) on income above Rs 150M, Section 113 minimum tax on turnover at 1.25%, Section 113C Alternative Corporate Tax (higher of normal tax or 17% of accounting income), the PSEB-registered IT/ITeS exports concessional regime (1% final tax — flag any FA 2025 changes as TBC), Section 59AA group relief and Section 59B group taxation, Section 147 quarterly advance tax computation and payment, and annual return filing via IRIS by 31 December. Out of scope: AOPs and individuals (separate regime), permanent establishments / branches of non-residents, oil and gas exploration and production, insurance company life/non-life special regimes, modarabas, NPOs and trusts, the special economic zone (SEZ) regimes, mutual funds, REITs, and any sales tax / FED matter (see pakistan-sales-tax)."
 jurisdiction: PK
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: Ibrar Ali
 review_status: pending_review
@@ -14,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Corporate Tax
 
-## Pakistan — Corporate Income Tax — Skill v1.0
+## Pakistan — Corporate Income Tax — Skill v1.1
 
 > **How to read every "TBC — verify against Finance Act 2025" marker in this
 > guide: as naming the wrong Act.**
@@ -35,12 +36,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > year being computed"**. The markers still do their job — they say a figure was
 > not confirmed — but they do not tell you which Act to open, and for a 2026-27
 > computation the answer is FA 2026, not FA 2025.
->
-> The same wording appears in this guide's `agent-skills/` counterpart, which is
-> a separate hand-maintained tree rather than a generated copy. That copy now
-> carries this block too. It does not inherit it — nothing in `agent-skills/` is
-> generated from `skills/` — so the correction had to be written there by hand,
-> and an earlier revision of this note recorded that it had not been.
 
 
 > **Produced by OpenAccountants (openaccountants.com)**

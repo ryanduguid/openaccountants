@@ -2,14 +2,18 @@
 """Compare labelled numeric facts between copies of the same guide in different trees.
 
 Internal checks cannot catch a guide that is self-consistent and simply wrong.
-Comparing two copies of the same guide can: where `skills/`, `agent-skills/` and
-the hand-authored `packages/us-federal/` all carry a version of one guide, any
+Comparing two copies of the same guide can: where `skills/federal/` and the
+hand-authored `packages/us-federal/` both carry a version of one guide, any
 figure that differs means at most one side is right.
 
-This is how the Belgian self-employed brackets were caught. Both trees said
-"2025" and each was internally consistent, so nothing local flagged them; only
-the cross-tree comparison showed 73,447.52/108,238.40 against
-73,947.40/109,152.35.
+Until 2026-09-28 this also compared `skills/` against the hand-maintained
+`agent-skills/` tree, which is how the Belgian self-employed brackets were
+caught: both trees said "2025" and each was internally consistent, so nothing
+local flagged them; only the cross-tree comparison showed
+73,447.52/108,238.40 against 73,947.40/109,152.35. That tree was removed (it
+was a third copy with no generator), so the federal twins are the one pair
+left; the generated `packages/` are byte copies of `skills/` and cannot
+diverge.
 
 Reading the output — two cautions learned the hard way:
 
@@ -66,12 +70,6 @@ def facts(path):
     return out
 
 pairs=[]
-# skills/** <-> agent-skills/<name>/SKILL.md
-for dp,dn,fn in os.walk('skills'):
-    for f in fn:
-        if not f.endswith('.md'): continue
-        a=os.path.join(dp,f); b=f'agent-skills/{f[:-3]}/SKILL.md'
-        if os.path.exists(b): pairs.append((a,b))
 # skills/federal/** <-> packages/us-federal/**
 for f in sorted(os.listdir('skills/federal')):
     if f.endswith('.md') and os.path.exists(f'packages/us-federal/{f}'):

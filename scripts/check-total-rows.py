@@ -20,8 +20,8 @@ Found two real errors:
     examples and a freelance-intake guide inherited it.
 
 It cannot tell a component from a mutually exclusive alternative, and that is
-the whole of its false-positive rate. All 16 flags remaining in skills/ and
-agent-skills/ are of that kind:
+the whole of its false-positive rate. All the flags remaining in skills/ are
+of that kind:
 
   * spain-payroll lists indefinido 1.55% and temporal 1.60% unemployment as
     separate rows. They are alternatives, and each totals correctly on its own

@@ -84,8 +84,8 @@ class ArgumentParserTests(unittest.TestCase):
         self.assertEqual(args.roots, ["skills"])
         self.assertEqual(args.baseline, str(REPO_ROOT / "scripts" / "baselines" / "demo.txt"))
         self.assertFalse(args.json or args.no_baseline or args.update_baseline)
-        args = parser.parse_args(["packages", "agent-skills", "--json", "--no-baseline"])
-        self.assertEqual(args.roots, ["packages", "agent-skills"])
+        args = parser.parse_args(["packages", "skills/federal", "--json", "--no-baseline"])
+        self.assertEqual(args.roots, ["packages", "skills/federal"])
         self.assertTrue(args.json and args.no_baseline)
 
     def test_checker_without_roots(self) -> None:

@@ -75,7 +75,7 @@ before calling one an artefact.
 Usage:
     python3 scripts/check-arithmetic.py            # defaults to skills/
     python3 scripts/check-arithmetic.py skills
-    python3 scripts/check-arithmetic.py skills packages agent-skills
+    python3 scripts/check-arithmetic.py skills packages
 
 Gate: exits 1 on any mismatch not listed in scripts/baselines/arithmetic.txt
 and on any baseline entry that no longer reproduces. --json, --baseline PATH,

@@ -35,8 +35,6 @@ for dp, _, fns in os.walk('skills'):
     for fn in fns:
         if fn.endswith('.md'):
             names.add(fn[:-3])
-if os.path.isdir('agent-skills'):
-    names |= {d for d in os.listdir('agent-skills') if os.path.isdir(os.path.join('agent-skills', d))}
 
 bad, loc = collections.Counter(), {}
 for dp, _, fns in os.walk('skills'):
