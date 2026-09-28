@@ -31,7 +31,7 @@ Every skill is a single Markdown file with YAML frontmatter. **The canonical fro
 
 After the frontmatter, the skill body is structured as numbered sections covering Scope, Topic-specific rules, Worked examples, Provenance, and a Circular 230 §10.37 disclosure for US skills.
 
-Every published skill ends with the `<!-- openaccountants-cta-block -->` marker followed by a "Talk to a verified accountant" CTA with a Calendly link. The marker makes the stamp idempotent — bulk re-stamps skip files that already have it.
+Every published skill ends with the `<!-- openaccountants-cta-block -->` marker followed by exactly one "Talk to a verified accountant" CTA section (canonical text in `scripts/cta_block.py`). The marker makes the stamp idempotent — bulk re-stamps skip files that already have it. `scripts/validate-guides.py` errors on a guide with no marker (templates exempt) or with more than one CTA section; `python3 scripts/normalize-cta-block.py --apply` repairs both. It also errors on any `depends_on` slug that no guide carries as its `name`.
 
 ## AUDIT FLASH POINT convention
 

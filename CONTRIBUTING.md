@@ -42,7 +42,7 @@ Full details: [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md)
 
 ## Skill structure and frontmatter
 
-**The canonical spec for skill files — required/optional frontmatter keys, formats, the `category` vocabulary, and the body section order — is [docs/skill-template.md](docs/skill-template.md).** Don't restate it; follow it. CI validates required guide schema with `scripts/validate-guides.py` and synchronization metadata with `scripts/check-sync-integrity.py`; citation quality and body structure still require reviewer judgment.
+**The canonical spec for skill files — required/optional frontmatter keys, formats, the `category` vocabulary, and the body section order — is [docs/skill-template.md](docs/skill-template.md).** Don't restate it; follow it. CI validates required guide schema with `scripts/validate-guides.py` and synchronization metadata with `scripts/check-sync-integrity.py`; citation quality and body structure still require reviewer judgment. Two structural rules the validator also enforces: every `depends_on` slug must be the `name` of a guide that exists, and every guide ends with exactly one `<!-- openaccountants-cta-block -->` CTA section (`python3 scripts/normalize-cta-block.py --apply` repairs a missing or duplicated block; templates are exempt).
 
 One-line summary: YAML frontmatter (`name`, `description`, `jurisdiction`, `category`, `tax_year`, `tier`, `last_updated`, plus optional keys), then a body that runs scope → filing requirements → rates with citations → step-by-step computation rules → edge cases → self-checks → disclaimer.
 

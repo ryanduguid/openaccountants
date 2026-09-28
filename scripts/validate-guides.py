@@ -28,6 +28,17 @@ Checks (ERROR = exit 1, WARN = printed summary only):
   6. ERROR if a deprecated inventory file reappears (skills/manifest.json,
      packages/manifest.json). index.json is the single canonical inventory;
      the old manifests had no consumers and were removed so they can't drift.
+  7. Every `depends_on` entry must be the `name` of a guide under skills/ or
+     packages/us-federal/ — ERROR otherwise. The lookup set always comes from
+     the whole tree, even in --changed-only mode. (238 entries once named
+     `income-tax-workflow-base`, `social-contributions-workflow-base` and
+     `foundation` while no guide carried those names.)
+  8. The closing CTA block (scripts/cta_block.py): at most one "Talk to a
+     verified accountant" section per guide, and the
+     `<!-- openaccountants-cta-block -->` marker must be present and introduce
+     that section — ERROR otherwise, except that the template directories in
+     cta_block.OPTIONAL_DIRS may omit the block. Repair with:
+     python3 scripts/normalize-cta-block.py --apply
 
 Install scripts/requirements-validation.txt, then run:
 python3 scripts/validate-guides.py
@@ -41,6 +52,9 @@ import subprocess
 import sys
 import tempfile
 
+from cta_block import HEADING_RE as CTA_HEADING_RE
+from cta_block import MARKER as CTA_MARKER
+from cta_block import is_optional as cta_optional
 from frontmatter_yaml import FrontmatterError, load_frontmatter
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -211,7 +225,76 @@ def check_packages_frontmatter(bi, errors, only_files=None):
     print(f"checked {checked} generated package frontmatter block(s)")
 
 
-def check_guides(bi, errors, warnings, only_files=None):
+def collect_guide_names(bi):
+    """The `name` of every guide in every tree, validated or not.
+
+    `depends_on` is a cross-file invariant: a slug is valid only if some guide
+    carries it, so the lookup set comes from the whole tree even in
+    --changed-only mode, where only the dependents in the diff are checked.
+    Uses the tolerant key reader so one malformed block elsewhere cannot hide a
+    name; the strict parse of that block reports its own error.
+    """
+    names = set()
+    for rel in bi.guide_files():
+        with open(os.path.join(REPO_ROOT, rel), encoding="utf-8", errors="replace") as fh:
+            block = bi.extract_frontmatter(fh.read())
+        if block is None:
+            continue
+        name = bi.parse_known_keys(block)["name"]
+        if name:
+            names.add(name)
+    return names
+
+
+def check_depends_on(rel, metadata, known_names, errors):
+    """Every `depends_on` slug must be the `name` of a guide that exists.
+
+    load_frontmatter has already guaranteed a list of non-empty strings. Before
+    this check, 238 entries named `income-tax-workflow-base`,
+    `social-contributions-workflow-base` and `foundation` while no guide
+    carried those names, so an agent following the dependency found nothing.
+    """
+    for slug in metadata.get("depends_on") or []:
+        if slug.strip() not in known_names:
+            errors.append(
+                f"{rel}: `depends_on` names `{slug}`, but no guide under skills/ or "
+                "packages/us-federal/ carries that `name` — fix the slug or add the "
+                "missing base"
+            )
+
+
+def check_cta_block(rel, text, errors):
+    """Exactly one CTA section, introduced by the marker (see scripts/cta_block.py).
+
+    Before this check, 591 guides carried the older Calendly section *and* the
+    marker block, and 116 carried no marker at all.
+    """
+    repair = "run: python3 scripts/normalize-cta-block.py --apply"
+    markers = text.count(CTA_MARKER)
+    headings = [m.start() for m in CTA_HEADING_RE.finditer(text)]
+    if markers > 1:
+        errors.append(f"{rel}: {markers} `{CTA_MARKER}` markers — keep one ({repair})")
+    if len(headings) > 1:
+        errors.append(
+            f"{rel}: {len(headings)} \"Talk to a verified accountant\" sections — "
+            f"keep only the marker block ({repair})"
+        )
+    if markers == 0:
+        if not cta_optional(rel):
+            errors.append(
+                f"{rel}: missing the `{CTA_MARKER}` CTA block that ends every "
+                f"published guide ({repair})"
+            )
+    elif not any(position > text.index(CTA_MARKER) for position in headings):
+        errors.append(
+            f"{rel}: `{CTA_MARKER}` must be followed by the \"Talk to a verified "
+            f"accountant\" section ({repair})"
+        )
+
+
+def check_guides(bi, errors, warnings, only_files=None, known_names=None):
+    if known_names is None:
+        known_names = collect_guide_names(bi)
     warn_counts = {"jurisdiction (jurisdiction-agnostic dirs)": 0}
     guides = skipped = 0
     for rel in bi.guide_files():
@@ -234,7 +317,7 @@ def check_guides(bi, errors, warnings, only_files=None):
             continue
         guides += 1
         try:
-            load_frontmatter(block)
+            metadata = load_frontmatter(block)
         except FrontmatterError as exc:
             errors.append(f"{rel}: invalid YAML frontmatter: {exc}")
             continue
@@ -266,6 +349,8 @@ def check_guides(bi, errors, warnings, only_files=None):
                 warn_counts["jurisdiction (jurisdiction-agnostic dirs)"] += 1
             else:
                 errors.append(f"{rel}: missing required frontmatter key `jurisdiction`")
+        check_depends_on(rel, metadata, known_names, errors)
+        check_cta_block(rel, text, errors)
     for key, count in sorted(warn_counts.items()):
         if count:
             warnings.append(f"{count} guides missing `{key}`")
