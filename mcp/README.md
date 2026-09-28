@@ -43,7 +43,7 @@ Special packages are also available:
 | Package | What's inside |
 |---------|--------------|
 | `_cross-border` | 41 skills — multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, 70+ treaty corridor WHT rates |
-| `_verticals` | 15 skills — 14 industry-specific (banking, charity / nonprofit, construction, consultant, content creator, e-commerce, freelance developer, insurance, investment funds / REITs, medical, oil & gas, property investor, SaaS, shipping / aviation) plus the corporate income tax workflow base they depend on |
+| `_verticals` | 15 skills — 14 industry-specific (banking, charity / nonprofit, construction, consultant, content creator, e-commerce, freelance developer, insurance, investment funds / REITs, medical, oil & gas, property investor, SaaS, shipping / aviation) plus the corporate income tax workflow base that some of them declare as a dependency |
 | `_integrations` | 10 platform export formats — Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon, Shopify, FreeAgent, Sage |
 
 ## Tools
