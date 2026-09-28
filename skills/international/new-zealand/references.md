@@ -2,7 +2,7 @@
 name: new_zealand-references
 jurisdiction: NZ
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 version: 1.0
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
@@ -31,3 +31,21 @@ OpenAccountants is AGPL-3.0. AGPL-3.0 projects below are same-license family —
 - Stars: 11
 - Scope: Continuation/fork of the BetterRules project with additional legislation coverage.
 - Integration approach: Same as above — supplementary NZ rules and updated parameters.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -3,7 +3,7 @@ name: cn-social-insurance
 description: 处理中国大陆员工社会保险与住房公积金（五险一金）相关工作时必读本技能。涉及"中国社保"、"五险一金"、"养老保险"、"医疗保险"、"失业保险"、"生育保险"、"工伤保险"、"住房公积金"、"社保基数"、"缴费比例"、"社保申报"、"公积金缴存"、"社保税务征收"、"金税四期"、"外籍员工社保"、"延迟退休"等中文表述时触发；同时在英文场景下出现 "China social insurance"、"five insurances and one fund"、"Chinese pension"、"housing fund"、"China shebao gongjijin"、"China payroll statutory deductions"、"PRC social security"、"China provident fund" 等表述时也应触发。本技能为编排器（orchestrator），按月编制中国员工五险一金的缴费基数、单位与个人缴费金额、申报与缴纳节奏，并给出与个人所得税专项扣除的衔接口径。涵盖《社会保险法》《住房公积金管理条例》及各省/直辖市/计划单列市实施细则的通用框架；具体比例与基数上下限以"参保地"最新文件为准。
 jurisdiction: CN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -446,21 +446,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 *OpenAccountants — 面向 AI 的开源会计技能集*
 *本文件不构成法律意见或税务咨询。所有工资单、社保申报、公积金汇缴在出具或缴款前，必须经具有中国大陆人力资源 / 税务 / 社保 专业资质的人员复核。各地实际比例、基数上下限、调整时点必须以"参保地"最新公告为准。*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

@@ -3,7 +3,7 @@ name: sa-gosi-saudization
 description: ALWAYS read this skill before touching any Saudi Arabia employer compliance work — social insurance contributions, Saudization quotas, or monthly wage filings. Use whenever asked to compute, review, or advise on Saudi private-sector payroll obligations — General Organization for Social Insurance (GOSI) contributions split between the Annuity (retirement) branch, the Occupational Hazards branch, and the SANED unemployment insurance branch; Saudization compliance under the Nitaqat program administered by the Ministry of Human Resources and Social Development (MHRSD); and the Wage Protection System (WPS) submitted monthly via the Mudad platform. Trigger on phrases like "Saudi GOSI", "Saudization Nitaqat", "Wage Protection System Saudi", "Mudad WPS", "9% GOSI Saudi", "SANED unemployment", "Saudi employer compliance", "Saudi labor law", "Saudi expat 2% GOSI", "Nitaqat Platinum Green Yellow Red", "iqama renewal Saudi", "MHRSD quota", or any request involving running monthly payroll, hiring Saudis vs expats, or assessing Nitaqat tier impact on visa quotas for a private-sector establishment in the Kingdom of Saudi Arabia. This skill is the ORCHESTRATOR for SA employer compliance — it sequences GOSI registration, monthly contribution calculation, Nitaqat tier monitoring, and WPS filing into the correct order, and flags when sector-specific Saudization quotas need verification against the current MHRSD notification.
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Mehran Habib
 review_status: current
 tier: 1
@@ -343,21 +343,6 @@ If a Saudi senior manager earns contractual basic SAR 50,000 + housing SAR 12,00
 - **Civil Pension and Social Insurance Schemes reform** — phased adjustments to annuity contribution rates for Saudis first registered on or after 3 July 2024; verify current rate per cohort.
 
 > **Verification discipline:** Before completing any Saudi employer compliance task, verify on the official portals (GOSI, Qiwa, Mudad, MHRSD) that the rates, caps, sector quotas, and size bands quoted in this skill have not been superseded by a subsequent notification. Saudi compliance changes frequently and the cost of relying on stale figures is high.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — no liability on either side until you and the accountant sign
-a formal engagement letter — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 ### 3.2 Computation order
 

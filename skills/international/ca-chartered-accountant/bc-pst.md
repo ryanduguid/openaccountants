@@ -3,7 +3,7 @@ name: bc-pst
 description: Use this skill for British Columbia Provincial Sales Tax — 7% non-harmonized retail sales tax separate from federal GST 5%. Triggers "BC PST", "British Columbia sales tax", "PST registration BC", "PST 7%", "FIN 400", "eTaxBC", "MRDT BC", "BC PST online sales". ALWAYS read this skill for BC sellers / online platforms with BC customers (NOT included in canada-gst-hst).
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -252,21 +252,6 @@ Ontario and US customers are charged GST/HST as applicable (5% GST for US zero-r
 - **Form FIN 490** — Certificate of Exemption — General.
 
 > **Coordinate with:** `canada-gst-hst` (5% federal GST overlay on every BC taxable sale), `bc-individual-return` (BC personal income tax — separate regime), and any sector-specific skill for liquor, cannabis, or fuel tax which fall outside this skill's scope.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

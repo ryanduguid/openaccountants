@@ -3,7 +3,7 @@ name: or-cat
 description: Oregon Corporate Activity Tax is a gross receipts tax (not an income tax) imposed under ORS Chapter 317A on persons with Oregon commercial activity. The tax equals $250 plus 0.57% of taxable commercial activity above $1 million, after a subtraction of 35% of the greater of Oregon-apportioned cost of goods sold or Oregon-apportioned labor costs. Market-based sourcing applies. Registration is required at $750,000 of Oregon commercial activity. Quarterly estimated payments are due; annual return (Form OR-CAT) is due April 15. Grocery sales are excluded. Tax year 2025.
 jurisdiction: US-OR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -453,21 +453,6 @@ This skill is derived from the following primary sources:
 This skill is at tier 2 (content). It must be loaded alongside us-tax-workflow-base v0.2 or later. It does not replace credentialed Oregon CPA or attorney sign-off and is not a substitute for direct consultation of current statutory text.
 
 Verified by: pending. Last updated: 2025-11-15. Version 0.1.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

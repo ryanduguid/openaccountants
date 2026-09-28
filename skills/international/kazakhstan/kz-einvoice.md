@@ -10,7 +10,7 @@ version: 1.0
 jurisdiction: KZ
 tax_year: 2026
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 category: international
 depends_on:
   - income-tax-workflow-base
@@ -59,3 +59,21 @@ For goods subject to traceability (imports, excisable, virtual-warehouse items),
 
 ## Disclaimer
 Informational only; not advice. Verify ЭСФ scope, deadlines, and ККМ rules with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before relying on them. Maintained at [openaccountants.com](https://www.openaccountants.com).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

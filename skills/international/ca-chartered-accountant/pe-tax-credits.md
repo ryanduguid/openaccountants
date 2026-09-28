@@ -3,7 +3,7 @@ name: pe-tax-credits
 description: Use this skill for Prince Edward Island provincial tax credits — PEI Low-Income Tax Reduction, PEI Sales Tax Credit, PEI Volunteer Firefighter / Ground Search and Rescue Tax Credit, Teacher School Supply Amount (PEI), PEI Equity Tax Credit (35%), PEI Innovation and Development Labour Rebate. Triggers "PEI tax credits", "Prince Edward Island credits", "PEI Equity Tax Credit", "Form PE428", "PEI ITC".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -269,21 +269,6 @@ When parameters are ambiguous or the 2025 PEI Finance bulletin has not yet been 
 - **PEI Provincial Budget 2025** — annual revisions to credit parameters, thresholds, and program caps.
 
 *All figures should be confirmed against the final 2025 PE428 and the PEI Finance bulletin issued for the 2025 tax year before any return is filed. This skill is reviewer-supervised and is not a substitute for credentialed PEI tax practitioner signoff.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

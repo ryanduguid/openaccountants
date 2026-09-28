@@ -3,7 +3,7 @@ name: mi-return-assembly
 description: "Final capstone orchestrator that assembles the complete federal + Michigan filing package for a full-year Michigan-resident sole proprietor or single-member LLC disregarded for federal tax. Consumes outputs from every upstream federal and Michigan content skill (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC, MI-1040 income tax, MI-1040ES estimates, Form 4884 pension subtraction, MI-1040CR / CR-7 credits, and Detroit Form 5118 where applicable) to produce a single unified reviewer package: every worksheet, every form, every cross-skill reconciliation, the final taxpayer action list with payment and filing instructions, the next-year MI-1040ES voucher schedule, and the reviewer brief. This skill does NOT recompute tax — it ORCHESTRATES. Trigger on phrases like \"assemble the Michigan return\", \"final MI package\", \"MI-1040 reviewer package\", \"Detroit return package\", or \"Michigan return assembly\". MUST be loaded alongside us-tax-workflow-base v0.2 or later and every content skill listed in Section 5. Michigan full-year residents only."
 jurisdiction: US-MI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -705,16 +705,6 @@ This is one Detroit-resident sole prop's full reviewer package, abbreviated to ~
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — **no liability on either side until you and the accountant sign a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 ## Section 5 — Skill-loading order (canonical execution sequence)
 

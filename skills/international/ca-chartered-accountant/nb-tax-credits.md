@@ -3,7 +3,7 @@ name: nb-tax-credits
 description: Use this skill for New Brunswick provincial tax credits — NB Low-Income Tax Reduction, NB Harmonized Sales Tax Credit, Seniors' Home Renovation Tax Credit, Tuition Amount, NB Small Business Investor Tax Credit (refundable 50% for individuals), NB Film Tax Credit. Triggers "New Brunswick tax credits", "Form NB428", "NB Small Business Investor Tax Credit", "NB seniors home renovation".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -238,21 +238,6 @@ Refundable credit of $85,200 after offsetting NB tax.
 - Opportunities NB — NB Film Tax Credit program guide (2025).
 - Income Tax Act (Canada), RSC 1985, c 1 (5th Supp), s. 120.4 (tax on split income) and Part XVII — coordination with federal computation.
 - Federal–Provincial Tax Collection Agreement (NB schedule) — administration of personal NB credits via CRA.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — no liability on either side until you and the accountant sign
-a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

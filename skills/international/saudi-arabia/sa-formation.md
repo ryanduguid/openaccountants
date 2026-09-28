@@ -3,7 +3,7 @@ name: sa-formation
 description: "ALWAYS read this skill whenever asked about forming, incorporating, registering, or licensing a business in the Kingdom of Saudi Arabia. Trigger on phrases like \"Saudi company formation\", \"MISA license Saudi\", \"Saudi LLC\", \"Saudi JSC\", \"Commercial Registration Saudi\", \"MoC Saudi\", \"100% foreign ownership Saudi\", \"MEEM license\", \"Saudization Nitaqat\", \"ZATCA registration\", \"Saudi branch office\", \"Regional Headquarters Saudi\", \"RHQ program\", \"open Saudi office\", \"incorporate Saudi Arabia\", \"Sole Establishment Saudi\", \"Mu'assasah Fardiyyah\", \"Sharikah dhāt mas'uliyyah\", \"GOSI registration\", \"Mudad payroll Saudi\", or any question about choosing or registering a Saudi entity. Covers entity comparison (Sole Establishment, LLC, Closed JSC, Open JSC, Branch of foreign company), MISA (Ministry of Investment) foreign investment licensing and the negative list, Commercial Registration from the Ministry of Commerce, sector-specific licensing (SAMA fintech and banking, CMA capital markets, CITC telecoms, MEEM Saudi Standards retail/import license), ZATCA Zakat and corporate income tax registration, GOSI social insurance registration and Mudad payroll setup, the 2022 Companies Law modernisation under Royal Decree No. M/132, and the Vision 2030 Regional Headquarters (RHQ) Program offering 30-year corporate tax and withholding tax incentives. Out of scope: immigration / iqama / work-visa sponsorship beyond signposting, deep Saudization (Nitaqat) tier mapping (covered in sa-gosi-saudization), bank account opening procedures, listing on Tadawul, sector-deep regulatory licensing beyond signposting, and full RHQ Program application drafting. ALWAYS read this skill before advising on Saudi entity formation."
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Mehran Habib
 review_status: current
 tier: 2
@@ -740,16 +740,6 @@ The MISA Negative List is amended periodically — confirm currency before issui
 ## End of Skill v1.0 — sa-formation.
 
 End of Skill v1.0 — sa-formation.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ Book a call (https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at openaccountants.com/network.
 
 <!-- openaccountants-cta-block -->
 

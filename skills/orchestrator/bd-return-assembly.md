@@ -10,7 +10,7 @@ version: 0.1
 jurisdiction: BD
 tax_year: 2026
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 category: orchestrator
 depends_on:
   - bd-freelance-intake
@@ -54,3 +54,21 @@ The capstone for a Bangladesh-resident freelancer/sole proprietor. It sequences 
 
 ## Disclaimer
 Informational only; not advice. Verify forms and deadlines with the NBR. All outputs must be reviewed and signed off by a qualified Bangladeshi tax practitioner before filing. Maintained at [openaccountants.com](https://www.openaccountants.com).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

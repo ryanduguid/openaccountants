@@ -3,7 +3,7 @@ name: cn-return-assembly
 description: 本技能用于汇总组装中国税务申报与年度汇算清缴的最终复核包。触发短语包括："中国税务报表汇总"、"年度汇算清缴"、"企业所得税年度申报"、"个税综合所得汇算"、"电子税务局提交"、"国家税务总局 申报"、"China tax return assembly"、"China annual reconciliation"、"China CIT annual filing"、"China year-end tax"。这是终稿汇总（capstone）技能，统一整合 cn-iit、cn-corporate-tax、cn-vat、cn-fapiao-einvoice、cn-social-insurance、cn-withholding、cn-stamp-tax、cn-formation 等上游技能的输出，产生一份完整的复核包：工作底稿、税额汇总、对账明细、复核简报、纳税人最终动作清单。本技能不重新计算任何税额，仅做汇总、对账、复核与提交准备。完成中国税务申报工作时务必最后阅读本技能。
 jurisdiction: CN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -727,21 +727,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 OpenAccountants — 面向 AI 的开源会计技能集
 
 本技能产出物不构成税务建议。所有产出物须经具备资质的复核员（中国注册会计师 CICPA / 税务师 CTA / ACCA-CN 中国执业人士）审核签字后，由纳税人或其授权代理人通过电子税务局（https://etax.chinatax.gov.cn）完成提交。本技能不替代法定审计、税务鉴证或专业税务师事务所服务。
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — no liability on either side until you and the accountant sign
-a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

@@ -3,7 +3,7 @@ name: co-payroll
 description: Tier 2 Colorado content skill for employer payroll compliance covering tax year 2025. Includes the 4.4% flat PIT phasing from 4.55%, DR 1098 state withholding form, DR 1094 annual reconciliation, CO SUTA wage base $24,800 with rates 0.50-10.39%, the FAMLI Paid Family and Medical Leave program effective January 2024 (0.9% total payroll tax split between employer and employee for 10+ employees), Healthy Families and Workplaces Act 48-hour paid sick leave, Equal Pay for Equal Work Act salary range disclosure requirements, and ABC contractor classification.
 jurisdiction: US-CO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -448,16 +448,6 @@ Before producing reviewer output that incorporates this skill's content, verify:
 ## 15. Skill Slot Contract
 
 - **Slot satisfaction and dependencies** — This skill SATISFIES the `state-payroll` slot for jurisdiction US-CO in the us-tax-workflow-base v0.2 workflow. It DEPENDS ON: - `us-tax-workflow-base` v0.2 or later (workflow architecture). - `us-payroll-fundamentals` (federal payroll baseline; planned). It is COMPLEMENTED BY (load alongside for full Colorado payroll): - `co-income-tax` (employee/owner-side Colorado PIT — already in the package). - `co-local-opt` (Denver/Aurora/Glendale/Greenwood Village/Sheridan occupational privilege taxes; planned). - `co-securesavings` (state retirement registration mandate; planned). - `co-prevailing-wage` (HB 21-1264 prevailing wage; planned). End of co-payroll v0.1.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

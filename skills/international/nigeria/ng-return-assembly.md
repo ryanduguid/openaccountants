@@ -3,7 +3,7 @@ name: ng-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package a Nigerian annual tax return. Trigger on phrases like "assemble Nigerian return", "Nigeria SPT package", "final review Nigerian tax", "FIRS Tax Pro-Max submission", "year-end Nigeria", "prepare CIT return", "prepare PIT return", "Nigeria filing package", "Form A annual return", "Form H1 reconciliation", or "Nigerian working paper". This is the capstone orchestrator that pulls together outputs from ng-cit, ng-personal-income-tax, ng-paye, ng-statutory-deductions, ng-wht, ng-cgt, ng-vat, ng-payroll, and ng-formation into a single unified working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line return working paper, generates Tax Pro-Max / Remita payment instructions, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last — it's the capstone.
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Omolola Fasasi
 review_status: current
 tier: 2
@@ -1097,21 +1097,6 @@ If execution runs out of context mid-build, complete the computation work first 
 
 *OpenAccountants — open-source accounting skills for AI*
 *This is not tax advice. All outputs must be reviewed and signed off by a Chartered Accountant in Nigeria (ICAN or ANAN member, and where tax-specific opinions are required, also CITN-registered) before filing via FIRS Tax Pro-Max or the relevant State Internal Revenue Service portal.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

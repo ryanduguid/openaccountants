@@ -5,7 +5,7 @@ version: 2.2
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2024-25, 2025-26 and 2026-27; 2026-27 reconciled to Finance Act 2026 (c. 11)"
-last_updated: 2026-09-12
+last_updated: 2026-09-28
 reviewed_by: James Power
 review_status: pending_review
 depends_on:
@@ -627,21 +627,6 @@ This skill and its outputs are provided for informational and computational purp
 The 2026-27 figures in this skill are as enacted. The Finance Bill following the Autumn Budget of 26 November 2025 received Royal Assent on 18 March 2026 as **Finance Act 2026 (c. 11)**, and the figures here have been reconciled to it. Read the commencement dates rather than the announcement: the dividend uplift runs from 6 April 2026 (s.4), while the savings and property uplifts run from 6 April 2027 (ss.5, 7) and do not touch a 2026-27 return. Scottish rates and bands for 2026-27 are as set at the Scottish Budget.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — no liability on either side until you and the accountant sign
-a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

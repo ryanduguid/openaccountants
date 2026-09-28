@@ -3,7 +3,7 @@ name: id-pph-final-umkm
 description: "Use this skill whenever asked to compute, review, or advise on Indonesia PPh Final UMKM — the 0.5% final income tax on gross turnover available to micro, small, and medium enterprises (UMKM) under PP 23/2018 and PP 55/2022 (as revised). Trigger on phrases like \"PPh Final UMKM\", \"0.5 percent tax Indonesia\", \"PP 23/2018\", \"PP 55/2022\", \"MSME tax Indonesia\", \"pajak final UMKM\", \"tarif 0,5%\", \"peredaran bruto\", \"Pengusaha Kecil PPh\", or any question about whether a sole trader, PT Perorangan, CV, Firma, or Koperasi can use the 0.5% regime. Covers eligibility, the IDR 4.8 billion turnover threshold, time limits, the pekerjaan bebas (professional services) exclusion, opt-out mechanics, monthly self-deposit through Coretax DJP, annual SPT reporting, and the interaction with PPN/VAT and NIK-as-NPWP. Out of scope: corporate income tax under PPh Badan progressive rates (see PPh 25/29 workflows), partial-year regime changes, PPh 21 employment withholding (see id-payroll-pph21), PPN/VAT (see indonesia-vat), and any taxpayer above the IDR 4.8 billion threshold. ALWAYS read this skill before touching any PPh Final UMKM work."
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -340,21 +340,6 @@ NEVER assume the Coretax DJP entry URL is unchanged — verify before filing.
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for errors, omissions, or outcomes arising from use of this skill. All outputs must be reviewed and signed off by a licensed Indonesian tax consultant (Konsultan Pajak) before filing or acting. Indonesian tax law — and in particular the PP 55/2022 framework, the Coretax DJP rollout, and the kode billing MAP/KJS structure — has been changing rapidly in 2023–2025; always verify with primary sources.
 
 The up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review, and track updates as Indonesian tax law changes.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

@@ -2,7 +2,7 @@
 name: saudi_arabia-references
 jurisdiction: SA
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-28
 version: 1.0
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
@@ -76,3 +76,21 @@ None of the three repos contain withholding tax rate tables or zakat computation
 
 - **Withholding tax (WHT):** 5% on management fees, 15% on royalties, 5% on rent, 20% on payments for services rendered in KSA — rates set by the Income Tax Law (Royal Decree No. M/1). A WHT skill would need to be authored from ZATCA's published WHT rate schedules, not from these e-invoicing repos.
 - **Zakat:** 2.5% on the zakat base (net adjusted assets × Saudi/GCC ownership percentage) — governed by the Zakat Collection Regulations. These e-invoicing repos do not touch zakat computation. A zakat skill would need to be authored from ZATCA's zakat guidelines and the Implementing Regulations.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

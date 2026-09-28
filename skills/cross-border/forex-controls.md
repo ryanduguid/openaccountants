@@ -4,7 +4,7 @@ description: "Foreign exchange controls and cross-border money movement rules by
 version: 1.0
 jurisdiction: INTL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 category: international
 tier: 2
@@ -295,21 +295,6 @@ When receiving a CRS inquiry letter from Chinese tax authorities:
 *Data reflects 2024–2026 rules. Forex regulations are enforced with increasing rigor worldwide. Verify current limits and procedures with your bank and a qualified advisor before large cross-border transfers.*
 *Original content: [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise) — MIT License.*
 *OpenAccountants — open-source accounting skills for AI — info@openaaccountants.com*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

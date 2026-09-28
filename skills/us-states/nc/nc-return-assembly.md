@@ -3,7 +3,7 @@ name: nc-return-assembly
 description: "Final capstone orchestrator that assembles the complete federal + North Carolina filing package for a full-year North Carolina-resident sole proprietor or single-member LLC disregarded for federal tax. Consumes outputs from every upstream federal and North Carolina content skill (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC, nc-income-tax, nc-estimated-tax, nc-bailey-settlement-retirement where applicable, and nc-sales-tax for closing out the indirect-tax year) to produce a single unified reviewer package: every worksheet, every form, every cross-skill reconciliation, the final taxpayer action list with payment and filing instructions, the next-year NC-40 voucher schedule, and the reviewer brief. This skill does NOT recompute tax — it ORCHESTRATES. Trigger on phrases like \"assemble the North Carolina return\", \"final NC package\", \"D-400 reviewer package\", \"NC return assembly\", or \"package up the Carolina return\". MUST be loaded alongside us-tax-workflow-base v0.2 or later and every content skill listed in Section 5. North Carolina full-year residents only. Sole proprietors and single-member LLCs disregarded for federal tax only."
 jurisdiction: US-NC
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -826,16 +826,6 @@ This is one NC-resident sole prop with Bailey-protected pension, full reviewer p
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — **no liability on either side until you and the accountant sign a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 ## Section 5 — Skill-loading order (canonical execution sequence)
 

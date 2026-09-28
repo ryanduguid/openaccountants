@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Pakistan Capital Gains Tax. Tri
 jurisdiction: PK
 tax_year: 2025
 version: 1.0
-last_updated: 2026-09-10
+last_updated: 2026-09-28
 reviewed_by: Ibrar Ali
 review_status: pending_review
 tier: 2
@@ -417,21 +417,6 @@ Mr. Iqbal, a resident filer, acquired BTC in 2023 for Rs. 2,000,000 (equivalent 
 12. **FBR Information Circulars on Capital Gains** — including the post-FA 2024 circulars clarifying the flat-rate regime on PSX securities.
 
 ## End of Skill — Pakistan CGT v1.0
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

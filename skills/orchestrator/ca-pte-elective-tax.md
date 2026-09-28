@@ -3,7 +3,7 @@ name: ca-pte-elective-tax
 description: Tier 2 California content skill for the Pass-Through Entity Elective Tax (R&TC §§ 17052.10, 19900-19906; AB 150). Applies to S-corps, partnerships, and LLCs taxed as partnerships with at least one consenting individual, fiduciary, estate, or trust owner. Computes the 9.3% tax on qualified net income (each consenting owner's distributive share of CA-sourced income), produces Form 3804 entity election and Form 3804-CR owner-level nonrefundable credit, schedules the mandatory June 15 prepayment (greater of $1,000 or 50% of prior-year PTE tax) and the balance due by the original return due date, and flags the post-2025 sunset and the federal Notice 2020-75 SALT-cap workaround treatment. Tax year 2025.
 jurisdiction: US-CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -460,21 +460,6 @@ The verified, country-signed-off version of this skill is maintained at [openacc
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

@@ -3,7 +3,7 @@ name: sa-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with Saudi tax/Zakat compliance and mentions freelancing, self-employment, sole establishment (mu'assasah fardiyyah), LLC, JSC, branch of a foreign company, or any commercial activity in the Kingdom of Saudi Arabia (KSA). Trigger on phrases like "Saudi tax compliance", "ZATCA registration", "Saudi VAT", "Saudi Zakat return", "MISA license", "freelance Saudi tax", "Riyadh business", "Jeddah company tax", "Saudi corporate income tax", "SAR turnover threshold", "Fatoorah Phase 2", "GOSI registration", "Saudization Nitaqat", "Saudi withholding tax", "RETT", "real estate transaction tax Saudi", "Saudi excise tax", "Hijri vs Gregorian tax year", "mixed ownership Saudi entity", "GCC owner Zakat", "non-resident Saudi tax", or any similar phrasing where the user is operating or planning to operate a business in KSA. This is the REQUIRED entry point for the Saudi freelance/SME workflow — every downstream skill in the stack (sa-zakat, sa-corporate-tax, sa-withholding-tax, sa-rett, sa-gosi-saudization, sa-excise-tax, sa-formation, saudi-arabia-vat, saudi-einvoice, sa-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Saudi tax/Zakat residents and foreign-owned KSA entities only. ALWAYS read this skill first when starting any Saudi freelance/SME tax or Zakat workflow.
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -462,21 +462,6 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 *OpenAccountants — open-source accounting skills for AI*
 *This output must be reviewed by a qualified professional before filing or acting upon.*
 *Latest verified skills: openaccountants.com | Report errors: github.com/openaccountants/openaccountants*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 ## Section 2 — Workflow runbook (order of operations)
 
