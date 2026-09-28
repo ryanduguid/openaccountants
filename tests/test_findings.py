@@ -39,6 +39,29 @@ class FindingTests(unittest.TestCase):
         self.assertEqual(finding.fingerprint, "skills/x.md::100 x 10% = 20")
         self.assertEqual(finding.rendered(), "skills/x.md:7  sum")
 
+    def test_equivalent_spellings_of_a_repository_path_share_one_fingerprint(self) -> None:
+        """`./skills`, an absolute path and `../skills` from scripts/ name the
+        same file as `skills`, so they must not make every baseline entry look
+        stale and every finding new."""
+        expected = "skills/x.md"
+        spellings = [
+            "skills/x.md",
+            "./skills/x.md",
+            "skills/../skills/x.md",
+            os.path.join(str(REPO_ROOT), "skills", "x.md"),
+            os.path.join(os.path.relpath(str(REPO_ROOT), os.getcwd()), "skills", "x.md"),
+        ]
+        for spelling in spellings:
+            self.assertEqual(Finding(spelling, "k", "s").path, expected, spelling)
+        self.assertEqual(findings.canonical_path("./skills"), "skills")
+        self.assertEqual(findings.canonical_path(str(REPO_ROOT / "scripts" / ".." / "skills")), "skills")
+
+    def test_paths_outside_the_repository_are_normalized_as_given(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outside = os.path.join(tmp, "corpus", "skills", "x.md")
+            self.assertEqual(Finding(outside, "k", "s").path, outside.replace(os.sep, "/"))
+        self.assertEqual(findings.canonical_path("corpus/./skills/../skills/x.md"), "corpus/skills/x.md")
+
     def test_text_overrides_the_default_rendering_and_json_carries_everything(self) -> None:
         finding = Finding("a.md", "k", "s", detail={"values": [1, 2]}, text="custom\n    block")
         self.assertEqual(finding.rendered(), "custom\n    block")
@@ -110,12 +133,12 @@ class ReportTests(unittest.TestCase):
         self.assertIn("--update-baseline", text)
 
     def test_stale_baseline_entries_fail_and_are_listed(self) -> None:
-        findings.write_baseline(self.baseline, "demo", [Finding("a.md", "fixed", "s")])
+        findings.write_baseline(self.baseline, "demo", [Finding("skills/a.md", "fixed", "s")])
         report = self._report()
         self.assertEqual(report.finish(), 1)
         text = self.out.getvalue()
         self.assertIn("1 baseline entry no longer reproduce(s)", text)
-        self.assertIn("    a.md::fixed", text)
+        self.assertIn("    skills/a.md::fixed", text)
         self.assertIn("gate: FAIL", text)
 
     def test_no_baseline_flag_ignores_the_file(self) -> None:
@@ -144,24 +167,69 @@ class ReportTests(unittest.TestCase):
         report.add(Finding("b.md", "z", "s"))
         self.assertEqual(report.finish(), 0)
 
+    def test_scoped_run_judges_only_the_baseline_entries_under_its_roots(self) -> None:
+        """`check-arithmetic.py skills/federal` must not call the international
+        entries stale just because it did not scan them."""
+        findings.write_baseline(self.baseline, "demo", [
+            Finding("skills/federal/f.md", "k", "s"), Finding("skills/international/i.md", "k", "s"),
+        ])
+        report = self._report(roots=["skills/federal"])
+        report.add(Finding("skills/federal/f.md", "k", "s"))
+        self.assertEqual(report.finish(), 0, self.out.getvalue())
+        self.assertNotIn("no longer reproduce", self.out.getvalue())
+
+        self.out.seek(0), self.out.truncate()
+        report = self._report(roots=["skills"])
+        report.add(Finding("skills/federal/f.md", "k", "s"))
+        self.assertEqual(report.finish(), 1, "a full-tree run still sees the missing international entry")
+        self.assertIn("    skills/international/i.md::k", self.out.getvalue())
+
+        self.out.seek(0), self.out.truncate()
+        report = self._report(roots=["./skills/federal/"])
+        report.add(Finding("skills/federal/f.md", "k", "s"))
+        self.assertEqual(report.finish(), 0, "roots are canonicalized like paths")
+
+    def test_scoped_update_keeps_the_entries_outside_its_roots(self) -> None:
+        findings.write_baseline(self.baseline, "demo", [
+            Finding("skills/federal/old.md", "k", "s"), Finding("skills/international/i.md", "k", "s"),
+        ])
+        report = self._report(roots=["skills/federal"], update_baseline=True)
+        report.add(Finding("skills/federal/new.md", "k", "s"))
+        self.assertEqual(report.finish(), 0)
+        self.assertIn("baseline written: 2 fingerprint(s) (1 outside the scanned roots kept)", self.out.getvalue())
+        self.assertEqual(
+            findings.load_baseline(self.baseline),
+            {"skills/federal/new.md::k", "skills/international/i.md::k"},
+        )
+
+    def test_checker_without_roots_covers_the_whole_baseline(self) -> None:
+        findings.write_baseline(self.baseline, "demo", [Finding("docs/COVERAGE.md", "row", "s")])
+        args = _args(baseline=self.baseline)
+        del args.roots
+        report = Report("demo", args, out=self.out)
+        self.assertEqual(report.finish(), 1)
+        self.assertIn("    docs/COVERAGE.md::row", self.out.getvalue())
+
     def test_load_baseline_skips_comments_and_blank_lines(self) -> None:
         Path(self.baseline).write_text("# header\n\na.md::k\n  \n# trailing\nb.md::k\n", encoding="utf-8")
         self.assertEqual(findings.load_baseline(self.baseline), {"a.md::k", "b.md::k"})
         self.assertIsNone(findings.load_baseline(self.baseline + ".missing"))
 
     def test_json_document(self) -> None:
-        findings.write_baseline(self.baseline, "demo", [Finding("a.md", "known", "s"), Finding("z.md", "gone", "s")])
+        findings.write_baseline(self.baseline, "demo", [
+            Finding("skills/a.md", "known", "s"), Finding("skills/z.md", "gone", "s"),
+        ])
         report = self._report(json=True)
         report.note("scanned 2 files")
-        report.add(Finding("a.md", "known", "old", line=1, detail={"v": 1}))
-        report.add(Finding("b.md", "fresh", "new", line=2))
+        report.add(Finding("skills/a.md", "known", "old", line=1, detail={"v": 1}))
+        report.add(Finding("skills/b.md", "fresh", "new", line=2))
         self.assertEqual(report.finish(), 1)
         document = json.loads(self.out.getvalue())
         self.assertEqual(document["checker"], "demo")
         self.assertFalse(document["ok"])
         self.assertEqual(document["counts"], {"findings": 2, "new": 1, "known": 1, "stale_baseline": 1})
         self.assertEqual(document["notes"], ["scanned 2 files"])
-        self.assertEqual(document["stale_baseline"], ["z.md::gone"])
+        self.assertEqual(document["stale_baseline"], ["skills/z.md::gone"])
         self.assertEqual([f["new"] for f in document["findings"]], [False, True])
         self.assertEqual(document["findings"][0]["detail"], {"v": 1})
         self.assertEqual(document["roots"], ["skills"])

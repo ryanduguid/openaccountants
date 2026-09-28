@@ -112,6 +112,41 @@ class ArithmeticGateTests(GateCheckerMixin, unittest.TestCase):
         right = {"skills/international/zz/zz-vat.md": guide("zz-vat", "- Tax due: 100 x 10% = 10\n")}
         self.assert_gate_lifecycle(wrong, right, "skills/international/zz/zz-vat.md", "100 x 10% = 20")
 
+    def test_scoped_runs_and_root_spellings_agree_with_the_baseline(self) -> None:
+        """Qodo's three findings on the first cut, as one scenario: record two
+        directories, then scan one of them, spell the root differently, and
+        update the baseline from the scoped run."""
+        self.write({
+            "skills/federal/f.md": guide("f", "- Tax: 100 x 10% = 20\n"),
+            "skills/international/zz/i.md": guide("i", "- Tax: 200 x 10% = 30\n"),
+        })
+        self.assertEqual(self.run_checker("--update-baseline").returncode, 0)
+        recorded = set(self.baseline.read_text(encoding="utf-8").splitlines()) - set()
+        self.assertIn("skills/federal/f.md::100 x 10% = 20", recorded)
+        self.assertIn("skills/international/zz/i.md::200 x 10% = 30", recorded)
+
+        for root in ("skills/federal", "./skills/federal", "skills/../skills/federal/"):
+            code, document = self.run_json(root)
+            self.assertEqual(code, 0, (root, document))
+            self.assertEqual(document["counts"], {"findings": 1, "new": 0, "known": 1, "stale_baseline": 0}, root)
+            self.assertEqual(document["findings"][0]["path"], "skills/federal/f.md", root)
+        code, document = self.run_json("./skills")
+        self.assertEqual(code, 0, document)
+        self.assertEqual(document["counts"]["known"], 2)
+
+        self.write({"skills/federal/f.md": guide("f", "- Tax: 100 x 10% = 10\n")})
+        code, document = self.run_json("skills/federal")
+        self.assertEqual(code, 1)
+        self.assertEqual(document["stale_baseline"], ["skills/federal/f.md::100 x 10% = 20"])
+        update = self.run_checker("skills/federal", "--update-baseline")
+        self.assertEqual(update.returncode, 0, update.stderr)
+        self.assertIn("(1 outside the scanned roots kept)", update.stdout)
+        self.assertEqual(
+            [line for line in self.baseline.read_text(encoding="utf-8").splitlines() if not line.startswith("#")],
+            ["skills/international/zz/i.md::200 x 10% = 30"],
+        )
+        self.assertEqual(self.run_checker().returncode, 0, "the full-tree gate still passes")
+
     def test_finding_detail_and_correct_arithmetic(self) -> None:
         self.write({"skills/international/zz/zz-vat.md": guide("zz-vat", "- Tax due: 100 x 10% = 20\n- Ok: 100 x 10% = 10\n")})
         code, document = self.run_json()

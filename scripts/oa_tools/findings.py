@@ -19,7 +19,15 @@ is the review-aid view of the whole queue.
 
 A fingerprint is ``path::key`` where ``key`` is chosen by the checker to
 survive edits elsewhere in the file: the expression, the two table rows, the
-label. Line numbers are reported but never part of the fingerprint.
+label. Line numbers are reported but never part of the fingerprint. The path
+is canonical (:func:`canonical_path`): repository-relative with forward
+slashes when the file is inside the repository, so ``skills``, ``./skills``
+and an absolute path to the same directory produce the same fingerprints.
+
+A run scoped to part of the tree (positional roots, ``check-arithmetic.py
+skills/federal``) is judged against the baseline entries under those roots
+only, and ``--update-baseline`` on such a run rewrites only those entries and
+keeps the rest. A checker without roots covers the whole baseline.
 """
 
 import argparse
@@ -46,12 +54,39 @@ def default_baseline_path(checker):
     return os.path.join(BASELINE_DIR, f"{checker}.txt")
 
 
+def _inside_repo(absolute):
+    return absolute == REPO_ROOT or absolute.startswith(REPO_ROOT + os.sep)
+
+
+def canonical_path(path):
+    """A path as the fingerprints spell it.
+
+    Repository-relative with forward slashes when the path (resolved against
+    the working directory) is inside the repository, so ``skills``,
+    ``./skills``, ``../skills`` from ``scripts/`` and an absolute path all
+    agree. A path outside the repository (a throwaway corpus) is normalized as
+    given, so ``./skills/x.md`` and ``skills/x.md`` still agree.
+    """
+    text = str(path)
+    absolute = os.path.abspath(text)
+    if _inside_repo(absolute):
+        return os.path.relpath(absolute, REPO_ROOT).replace(os.sep, "/")
+    return os.path.normpath(text).replace(os.sep, "/")
+
+
 def _display_path(path):
     """A baseline path as the messages show it: repo-relative when it is inside the repo."""
     absolute = os.path.abspath(path)
-    if absolute == REPO_ROOT or absolute.startswith(REPO_ROOT + os.sep):
+    if _inside_repo(absolute):
         return os.path.relpath(absolute, REPO_ROOT).replace(os.sep, "/")
     return absolute
+
+
+def _under(path, root):
+    """True when ``path`` is ``root`` or inside it (both canonical)."""
+    if root in (".", ""):
+        return True
+    return path == root or path.startswith(root + "/")
 
 
 class Finding:
@@ -68,7 +103,7 @@ class Finding:
     __slots__ = ("path", "key", "summary", "line", "detail", "text")
 
     def __init__(self, path, key, summary, *, line=None, detail=None, text=None):
-        self.path = str(path).replace(os.sep, "/")
+        self.path = canonical_path(path)
         self.key = normalize_key(key)
         self.summary = summary
         self.line = line
@@ -145,9 +180,10 @@ def load_baseline(path):
     return entries
 
 
-def write_baseline(path, checker, findings):
-    """Write the sorted, de-duplicated fingerprints of ``findings``; returns how many."""
-    fingerprints = sorted({finding.fingerprint for finding in findings})
+def write_baseline(path, checker, findings, keep=()):
+    """Write the sorted, de-duplicated fingerprints of ``findings`` plus the
+    ``keep`` entries (those outside a scoped run's roots); returns how many."""
+    fingerprints = sorted({finding.fingerprint for finding in findings} | set(keep))
     directory = os.path.dirname(os.path.abspath(path))
     os.makedirs(directory, exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
@@ -167,8 +203,10 @@ class Report:
     baseline is in use and does not list it) and stores it. ``note`` prints a
     free line (a count, a heading) the same way. ``finish`` prints the summary
     (or the whole JSON document) and returns the exit code: 0 when every
-    finding is in the baseline and every baseline entry reproduced, else 1.
-    With ``--update-baseline`` it writes the baseline instead and returns 0.
+    finding is in the baseline and every in-scope baseline entry reproduced,
+    else 1. With ``--update-baseline`` it writes the baseline instead and
+    returns 0. "In scope" means under the run's positional roots; a checker
+    without roots has the whole baseline in scope.
     """
 
     def __init__(self, checker, args, *, out=None):
@@ -178,6 +216,8 @@ class Report:
         self.findings = []
         self.notes = []
         self.json = bool(getattr(args, "json", False))
+        roots = getattr(args, "roots", None)
+        self.roots = None if roots is None else [canonical_path(root) for root in roots]
         if getattr(args, "no_baseline", False):
             self.baseline_path = None
         else:
@@ -186,6 +226,13 @@ class Report:
 
     def is_new(self, finding):
         return self.baseline is None or finding.fingerprint not in self.baseline
+
+    def in_scope(self, fingerprint):
+        """Whether a baseline entry lies under this run's roots."""
+        if self.roots is None:
+            return True
+        path = fingerprint.split("::", 1)[0]
+        return any(_under(path, root) for root in self.roots)
 
     def add(self, finding):
         self.findings.append(finding)
@@ -203,18 +250,28 @@ class Report:
 
     def finish(self):
         if self.args.update_baseline:
-            count = write_baseline(self.args.baseline, self.checker, self.findings)
+            # A scoped run rewrites only the entries under its roots; the rest
+            # of the file is kept as it was.
+            existing = load_baseline(self.args.baseline) or set()
+            kept = {fingerprint for fingerprint in existing if not self.in_scope(fingerprint)}
+            count = write_baseline(self.args.baseline, self.checker, self.findings, keep=kept)
             shown = _display_path(self.args.baseline)
             if self.json:
-                json.dump({"checker": self.checker, "baseline": shown, "written": count}, self.out, indent=1)
+                json.dump(
+                    {"checker": self.checker, "baseline": shown, "written": count, "kept_outside_roots": len(kept)},
+                    self.out, indent=1,
+                )
                 self.out.write("\n")
             else:
-                print(f"baseline written: {count} fingerprint(s) -> {shown}", file=self.out)
+                outside = f" ({len(kept)} outside the scanned roots kept)" if kept else ""
+                print(f"baseline written: {count} fingerprint(s){outside} -> {shown}", file=self.out)
             return 0
 
         new = [finding for finding in self.findings if self.is_new(finding)]
         present = {finding.fingerprint for finding in self.findings}
-        stale = sorted(self.baseline - present) if self.baseline is not None else []
+        stale = []
+        if self.baseline is not None:
+            stale = sorted(fp for fp in self.baseline if self.in_scope(fp) and fp not in present)
         ok = not new and not stale
         if self.json:
             self._write_json(new, stale, ok)
