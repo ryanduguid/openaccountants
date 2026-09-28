@@ -447,10 +447,13 @@ class CtaBlockTests(_ValidatorCase):
         self.assertEqual(len(errors), 1, errors)
         self.assertIn("missing the", errors[0])
 
-    def test_template_directories_may_omit_the_block(self) -> None:
+    def test_exempt_directories_may_omit_the_block(self) -> None:
+        # Templates are scaffolding; integrations are platform guides, not tax
+        # guides, and carry no accountant CTA.
         files = {
             "skills/templates/crypto-template.md": GOOD_WITHOUT_CTA,
             "skills/cross-border/treaty-corridors/_templates/dtt-template.md": GOOD_WITHOUT_CTA,
+            "skills/integrations/stripe-integration.md": GOOD_WITHOUT_CTA,
         }
 
         self.assertEqual(self._check_guides(files), [])

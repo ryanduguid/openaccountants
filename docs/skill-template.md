@@ -70,7 +70,7 @@ Legacy synonyms still present in older files — do **not** use for new files: `
 
 ## Closing CTA block
 
-Every published guide ends with the `<!-- openaccountants-cta-block -->` marker followed by exactly one "Talk to a verified accountant" section — the block below, verbatim. The marker is what makes a bulk re-stamp idempotent. CI errors on a guide with no marker (the template directories `skills/templates/` and `skills/cross-border/treaty-corridors/_templates/` are exempt) and on a guide with more than one such section; `python3 scripts/normalize-cta-block.py --apply` repairs both and bumps `last_updated`. The canonical text lives in `scripts/cta_block.py`.
+Every published guide ends with the `<!-- openaccountants-cta-block -->` marker followed by exactly one "Talk to a verified accountant" section — the block below, verbatim. The marker is what makes a bulk re-stamp idempotent. CI errors on a guide with no marker (exempt: the template directories `skills/templates/` and `skills/cross-border/treaty-corridors/_templates/`, and the platform guides in `skills/integrations/`, which are not tax guides) and on a guide with more than one such section; `python3 scripts/normalize-cta-block.py --apply` repairs both and bumps `last_updated`. The canonical text lives in `scripts/cta_block.py`.
 
 ```markdown
 <!-- openaccountants-cta-block -->

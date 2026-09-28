@@ -1,6 +1,6 @@
 ---
 name: xero-integration
-version: 1.0
+version: 1.0.1
 category: integration
 description: >
   Integration skill for Xero accounting software exports. Activate when the user uploads a Xero bank statement CSV,
@@ -10,7 +10,7 @@ tier: 2
 last_updated: 2026-09-28
 ---
 
-# Xero Integration Skill v1.0
+# Xero Integration Skill v1.0.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -182,21 +182,3 @@ Widget Corp,INV-1043,05/03/2026,04/04/2026,Keyword research addon,1,200.00,200,2
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
-
-<!-- openaccountants-cta-block -->
-
----
-
-## Talk to a verified accountant
-
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
-
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
-
-> **General reference only.** This document does not constitute tax, legal, or
-> financial advice. Verify figures against the cited primary sources or with a
-> licensed professional before relying on them.

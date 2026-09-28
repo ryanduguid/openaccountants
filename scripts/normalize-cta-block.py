@@ -23,7 +23,8 @@ This script repairs both, and nothing else:
    no CTA section) is dropped.
 3. A guide left with no marker gets the canonical block appended (a trailing
    horizontal rule is folded into the block's own), unless it lives in one of
-   the template directories listed in scripts/cta_block.py.
+   the exempt directories listed in scripts/cta_block.py (the template
+   directories and skills/integrations/).
 4. `last_updated` is set to --date (default: today, UTC) on every guide whose
    body changed, because scripts/check-sync-integrity.py --strict-metadata
    fails a body change that advances neither the date nor the version.
