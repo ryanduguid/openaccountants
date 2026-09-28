@@ -3,7 +3,7 @@ name: ct-payroll
 description: Tier 2 Connecticut content skill for employer payroll compliance covering tax year 2025. Includes the CT PIT brackets up to 6.99%, CT-W4 state W-4, CT-941 quarterly withholding, CT-W3 annual reconciliation, CT UI wage base $25,000 with rates 0.50-6.20%, CT Paid Leave 0.5% employee-paid contribution effective January 2022, the post-2024 expansion of Paid Sick Leave to all 50+ employer industries, no reciprocal agreement with NY, and the convenience-of-employer rule for CT employers with remote out-of-state workers.
 jurisdiction: US-CT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -595,21 +595,6 @@ Before delivering a Connecticut payroll work product to the reviewer, confirm ea
 ## End of Connecticut Payroll Skill, version 0.1, last updated 2025-11-15.
 
 End of Connecticut Payroll Skill, version 0.1, last updated 2025-11-15.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

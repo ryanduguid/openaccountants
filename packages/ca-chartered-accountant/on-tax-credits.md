@@ -3,7 +3,7 @@ name: on-tax-credits
 description: Use this skill for Ontario personal tax credits — Ontario Trillium Benefit (OTB), OEPTC (Ontario Energy and Property Tax Credit), Ontario Sales Tax Credit (OSTC), NOEC (Northern Ontario Energy Credit), Ontario Child Care Tax Credit (CARE), Ontario Senior Homeowners Property Tax Grant, Ontario Senior Care at Home Credit. Triggers "Ontario Trillium", "OTB", "OEPTC Ontario", "CARE credit Ontario", "Form ON479". ALWAYS read alongside ca-fed-t1-return.
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -262,16 +262,6 @@ CRA — Form ON-BEN (2025): T1 General — Provincial Worksheet, Form ON-BEN
 CRA — Form ON479 (2025) and Schedule ON479-A (2025)
 CRA — Form ON428 (2025) and Schedule ON428-A (2025)
 Taxation Act, 2007 (Ontario), S.O. 2007, c. 11, Schedule A — sections governing OEPTC, OSTC, NOEC, CARE, OSHPTG, Senior Care at Home
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

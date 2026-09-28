@@ -3,7 +3,7 @@ name: pt-return-assembly
 description: "Utilizar esta skill sempre que for solicitada a montagem, finalização ou consolidação de um pacote fiscal anual português — IRS (pessoas singulares) e/ou IRC (sociedades). Acionar com expressões como \"preparar declaração IRS final\", \"preparar Modelo 22 final\", \"pacote contabilista certificado\", \"working paper Portugal\", \"submissão Portal das Finanças\", \"consolidação fiscal Portugal\", \"fechar a declaração\", \"montar dossier fiscal\", \"review final antes de submeter no Portal das Finanças\", \"pacote OCC para revisão\", \"encerramento do ano fiscal português\", \"preparar IES\", \"preparar SAF-T anual\", \"consolidar Modelo 3 e Anexos\", \"consolidar Modelo 22 e Anexos\", ou pedidos equivalentes em inglês: \"Portugal return assembly\", \"Portugal final tax package\", \"Portugal working paper\", \"Portugal IRS/IRC submission package\", \"Portuguese tax return capstone\". Esta é a skill capstone orquestradora que consolida os outputs de pt-income-tax, pt-nhr-ifici, pt-foreign-source-treaties, pt-corporate-tax, portugal-vat-return, pt-social-contributions, portugal-payroll, portugal-bookkeeping, portugal-financial-statements e portugal-crypto-tax num único working paper unificado, com reconciliações cross-skill, instruções de pagamento via Portal das Finanças (Multibanco / MBWay / IBAN), instruções de submissão (Modelo 3 / Modelo 22 / IES / SAF-T) e lista final de ações do contribuinte. Não recalcula nada — apenas reconcilia, monta e empacota para o revisor. LER SEMPRE este skill em ÚLTIMO LUGAR — é o capstone que consolida todos os outputs upstream."
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -1118,16 +1118,6 @@ Se a execução esgotar o contexto a meio da construção, completar primeiro o 
 
 OpenAccountants — skills de contabilidade open-source para IA
 Isto não constitui aconselhamento fiscal. Todos os outputs devem ser revistos e assinados por um Contabilista Certificado (membro da OCC — Ordem dos Contabilistas Certificados) com Cédula Profissional ativa e seguro de responsabilidade civil profissional, antes de submissão no Portal das Finanças, no portal da Segurança Social Direta, ou em qualquer outra plataforma oficial.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

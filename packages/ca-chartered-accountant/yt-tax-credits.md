@@ -3,7 +3,7 @@ name: yt-tax-credits
 description: Use this skill for Yukon provincial tax credits — Yukon First Nations Tax Credit, Yukon Small Business Investment Tax Credit (25%), Yukon Research and Development Tax Credit (15%), Yukon Manufacturing and Processing Profits Tax Credit, Yukon Mineral Exploration Tax Credit (25%). Triggers "Yukon tax credits", "Yukon First Nations Tax Credit", "Form YT428", "Yukon SBITC", "Yukon mineral exploration".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -233,21 +233,6 @@ Yukon harmonizes most personal non-refundable credit definitions with the federa
 ## End of skill marker
 
 *End of skill — Yukon Provincial Tax Credits & Incentives v1.0.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

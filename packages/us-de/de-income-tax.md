@@ -4,7 +4,7 @@ description: "Coverage gap for Delaware individual income tax for tax year 2025.
 version: "0.2"
 jurisdiction: US-DE
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,3 +23,21 @@ that separate tax.
 
 > General reference only. Have a qualified Delaware tax professional review any
 > working paper before filing or acting on it.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

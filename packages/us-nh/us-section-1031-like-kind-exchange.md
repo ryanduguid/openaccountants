@@ -3,7 +3,7 @@ name: us-section-1031-like-kind-exchange
 description: Tier 2 US federal content skill for IRC §1031 like-kind exchange of real property post-TCJA (real property only since 2018). Covers the 45-day identification and 180-day exchange windows, qualified intermediary requirement, the 3-property / 200% / 95% identification rules, reverse exchanges under Rev. Proc. 2000-37, build-to-suit improvement exchanges, basis carryover and boot taxation, related-party 2-year rule under §1031(f), TIC structure per Rev. Proc. 2002-22, drop-and-swap partnership workarounds, §121 primary-residence rollover under §121(d)(10), Form 8824 reporting, and California's FTB Form 3840 claw-back annual reporting requirement. Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -405,21 +405,6 @@ Before the relinquished property closes, confirm:
 Tax Year Reference: Tax year 2025. Includes 2025 Form 8824 timing/reporting references and T.D. 9935 incidental-property guidance. Last updated 2025-11-15. Version 0.1. Verification pending Circular 230 review.
 
 — End of skill —
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

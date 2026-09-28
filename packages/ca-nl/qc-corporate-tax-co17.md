@@ -3,7 +3,7 @@ name: qc-corporate-tax-co17
 description: "Use this skill whenever asked about Quebec corporate income tax. Quebec administers its own CIT (separate from federal T2) via the CO-17 return filed with Revenu Québec under the Quebec Taxation Act (Loi sur les impôts, RLRQ c. I-3). Trigger on phrases like \"Quebec CIT\", \"CO-17\", \"QC corporate tax\", \"Quebec small business deduction SBD\", \"Quebec tax credits R&D Quebec\", \"C3i credit\", \"C3I investment credit\", \"Crédit d'impôt à l'investissement et l'innovation\", \"Revenu Québec corporate\", \"déclaration de revenus des sociétés\", \"Quebec corporate instalments\", \"taxable income earned in Quebec\", \"TIEQ\", \"Quebec allocation\", \"Quebec compensation tax financial institutions\", \"Quebec CCPC rate\", or \"Quebec 5500 hour test\". Covers the 11.5% Quebec general CIT rate under Section 771 of the Quebec Taxation Act (combined with federal 15% = 26.5% combined), the Quebec Small Business Deduction (SBD) reducing the rate to 3.2% on the first $500,000 of active business income for Canadian-Controlled Private Corporations (CCPC) subject to the 5,500 paid-hours test under Section 771.1, the C3i credit (Crédit d'impôt à l'investissement et l'innovation) for qualified property at rates of 20-40% depending on territorial zone (high-economic-vitality vs. intermediate vs. low-economic-vitality regions), the Quebec R&D tax credit stack on top of federal SR&ED, and the CO-17 filing mechanics including 6-month filing deadline, 2-month payment deadline, instalment regime, and coordination with the federal T2 return. Out of scope: federal T2 corporate tax (use canada-corporate-tax-t2), Quebec personal income tax TP-1 (use qc-individual-return), Quebec QST (use qc-qst-return), Quebec compensation tax on financial institutions, mining duties under the Mining Tax Act, Quebec source deductions and employer contributions (TPZ-1015), insurance premium tax, logging tax, and specialised sector regimes (cooperatives, mutual funds, insurance corporations). ALWAYS read this skill alongside canada-formation and the federal CIT files (canada-corporate-tax-t2) — Quebec CIT is computed in parallel with, not as a substitute for, federal CIT."
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -712,16 +712,6 @@ Other
 ## Disclaimer
 
 This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Quebec tax adviser (CPA auditeur with Quebec corporate tax experience, or a tax lawyer admitted to the Barreau du Québec with corporate tax specialisation) before filing or acting upon. Quebec administers its corporate income tax separately from the federal government — a corporation with a permanent establishment in Quebec must file both the federal T2 with the CRA and the CO-17 with Revenu Québec; these returns are not interchangeable, and reliance on one does not satisfy the other. The latest verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

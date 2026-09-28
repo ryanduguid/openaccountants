@@ -3,7 +3,7 @@ name: us-sales-tax-nexus-50-state-matrix
 description: Tier 2 US federal-level reference skill providing the post-Wayfair economic-nexus threshold table for every US state plus DC and Puerto Rico. Covers sales/transaction thresholds, effective dates, lookback periods, marketplace facilitator laws, the SaaS-taxability list (HI/MA/NY/OH/PA/RI/SC/TN/TX/UT/WA/WV), the no-sales-tax NOMAD states (NH/OR/MT/AK/DE), Amazon FBA physical-presence nexus through inventory in 3PL warehouses, the difference between sales-tax and income-tax nexus, voluntary disclosure agreement (VDA) lookback limits, and home-rule states (CO/AL/LA/AK) requiring separate local registrations. Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -393,16 +393,6 @@ This skill compiles publicly available state DOR guidance, the Sales Tax Institu
 **Thresholds and effective dates change frequently.** This matrix reflects rules in force for tax year 2025 as of November 15, 2025. Verify against state DOR primary source for any specific compliance decision. The annual update runbook (see `ANNUAL-UPDATE-RUNBOOK.md` in this package) prompts re-verification of every threshold each November.
 
 **Verified-by status: pending.** This skill awaits country-level sign-off review per the verification model. Multiple US-credentialed accountants (CPA, EA, or attorney admitted in a US jurisdiction) should review before deployment to production.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

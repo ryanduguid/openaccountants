@@ -3,7 +3,7 @@ name: us-fbar-and-fatca-8938
 description: Tier 2 US federal content skill for the dual foreign financial account disclosure regimes — FinCEN Form 114 (FBAR) under 31 USC §5314 and Form 8938 (FATCA) under IRC §6038D. Covers tax year 2025 including the $10,000 aggregate FBAR threshold (per Bittner 2023 non-willful penalty is per-form not per-account), Form 8938 specified person and SFFA thresholds ($50k/$100k/$200k/$400k tiers), the differences in coverage (signature authority for FBAR, ownership for 8938, foreign mutual funds for 8938 only), willful and non-willful penalty severity, and the Streamlined Foreign Offshore / Domestic Offshore compliance paths for catching up.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -480,21 +480,6 @@ This skill does **not** address:
 - **State income tax treatment of foreign account income** — State income tax treatment of foreign account income — refer to state skills
 
 For any matter outside the scope above, refer to the appropriate dedicated skill or external specialist.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

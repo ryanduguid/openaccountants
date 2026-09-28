@@ -3,7 +3,7 @@ name: us-1099-k-and-payment-processors
 description: "Tier 2 US federal content skill for Form 1099-K reporting under IRC §6050W for tax year 2025. Covers the current federal TPSO threshold restored by OBBBA: more than $20,000 and more than 200 transactions, reconciliation between gross 1099-K amounts and Schedule C / Schedule 1 / Schedule D reporting, IRS-recommended treatment of personal items sold at loss (Schedule 1 Lines 8z + 24z offset), hobby vs business §183 determination, PayPal/Venmo Friends-and-Family vs Goods-and-Services categorization, marketplace facilitator sales-tax exclusion under Wayfair, ride-share and content-creator double-form scenarios (1099-K + 1099-NEC), the 2025 1099-DA digital asset transition, and IRS CP2000 matching defense."
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -554,21 +554,6 @@ Before signing off on a return that includes any 1099-K, verify:
 - **IRS Schedule 1 (Form 1040) Instructions, 2024 version** — Line 8z and Line 24z guidance  _(IRS Schedule 1 (Form 1040) Instructions, 2024 version)_
 - **Form 1099-K Instructions, 2025 version** — Form 1099-K Instructions, 2025 version  _(Form 1099-K Instructions, 2025 version)_
 - **Form 1099-DA Instructions, 2025 version** — issued draft August 2024, final pending  _(Form 1099-DA Instructions, 2025 version)_
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

@@ -3,7 +3,7 @@ name: us-foreign-earned-income-2555
 description: Tier 2 US federal content skill for §911 Foreign Earned Income Exclusion (Form 2555) for US citizens and green card holders living abroad. Covers tax year 2025 including the $130,000 FEIE cap, the Bona Fide Residence vs Physical Presence (330 days in 12 months) qualifying tests, the §911(c) housing exclusion/deduction (16% base, 30% cap with location-specific Notice 2024-44 successor adjustments), the stacked tax computation under §911(f), the SE-tax trap (FEIE excludes income tax only — 15.3% SE tax still owed), the election-revocation 5-year lockout, and the strategic choice between §911 and Foreign Tax Credit (Form 1116). June 15 automatic extension under §6072(c).
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -522,21 +522,6 @@ Tax-Court / case law (selected):
 Skill author's note: Every numeric figure in this skill (the $130,000 cap, the 16% base, the 30% cap, the locality figures, the bracket amounts) MUST be verified against the IRS-published 2025 instructions and the successor to Notice 2024-44 before any return is filed. Inflation indexing and locality updates are published annually; this skill captures the 2025 expected values but the reviewer overrides on any discrepancy.
 
 End of skill.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

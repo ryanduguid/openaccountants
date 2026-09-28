@@ -4,7 +4,7 @@ description: Use this skill whenever asked about the legal status or taxation of
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-09-15
+last_updated: 2026-09-28
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # EG Crypto Tax
 
-The declared `income-tax-workflow-base` dependency is not supplied in this repository. This guide does not provide that workflow and must not be treated as a complete tax-computation or return-preparation process. A reviewer must supply and verify the missing workflow before using it for that purpose.
+This guide loads on top of `income-tax-workflow-base` (in `skills/foundation/`), which supplies the order of operations, the output specification and the self-checks; this guide supplies the Egyptian rules only. Neither file on its own is a complete tax-computation or return-preparation process — load both, and have the output reviewed before filing.
 
 ## Egypt Cryptocurrency — Legal Status & Tax (العملات المشفرة) Skill v1.0
 

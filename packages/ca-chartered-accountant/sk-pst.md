@@ -3,7 +3,7 @@ name: sk-pst
 description: Use this skill for Saskatchewan Provincial Sales Tax — 6% non-harmonized sales tax. Triggers "Saskatchewan PST", "SK PST 6%", "SETS Saskatchewan", "Saskatchewan eTaxBC equivalent", "SK PST online sales".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -221,21 +221,6 @@ Prairie Threads Inc., a Regina-based online clothing retailer, in Q2 2025:
 - *Government of Saskatchewan — Finance — Taxes — Provincial Sales Tax* policy pages.
 
 **Verification status.** `verified_by: pending` — this skill must be reviewed and signed off by a Saskatchewan-credentialed practitioner before being relied upon for a client engagement. Conservative defaults are applied throughout, but rates, thresholds, and the scope of taxable services are subject to legislative and administrative change; always reconcile against the current SETS portal and Ministry bulletins at the time of filing.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

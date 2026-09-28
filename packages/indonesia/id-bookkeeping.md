@@ -3,7 +3,7 @@ name: id-bookkeeping
 description: "Use this skill whenever asked about Indonesian bookkeeping or transaction classification for income tax purposes. Trigger on phrases like \"Indonesia bookkeeping\", \"Pembukuan\", \"Pencatatan\", \"NPPN\", \"Norma Penghitungan\", \"Norma Penghitungan Penghasilan Neto\", \"classify transactions Indonesia\", \"bank statement Indonesia tax\", \"SPT 1770 classification\", \"SPT 1771 classification\", \"PPh OP bookkeeping\", \"PPh Badan bookkeeping\", \"KLU coefficient\", \"deemed profit Indonesia\", \"pembukuan vs pencatatan\". Covers the Pasal 28 UU KUP obligation, the pembukuan-vs-NPPN choice, KLU coefficient norms, transaction classification mapping to SPT 1770 Lampiran appendices and SPT 1771 Lampiran I, record retention, cash-vs-accrual election, and the Pasal 9 UU PPh non-deductible catalogue. Out of scope: the tax calculations themselves (those live in id-income-tax / id-corporate-tax), PPN/VAT classification (see indonesia-vat), PPh 21 payroll (see id-payroll-pph21), and final-tax PP 23 / PP 55 micro regimes are referenced but not computed here. ALWAYS read this skill before classifying transactions for an Indonesian SPT."
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -371,21 +371,6 @@ No SPT figure leaves this skill without a numbered citation. No NPPN coefficient
 ## End of skill.
 
 *End of skill.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

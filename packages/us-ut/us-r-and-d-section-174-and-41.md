@@ -3,7 +3,7 @@ name: us-r-and-d-section-174-and-41
 description: Tier 2 US federal content skill for the §174 mandatory R&E capitalization regime (TCJA, eff. 1/1/2022, 5-year domestic / 15-year foreign amortization, half-year convention) and the §41 R&D Credit (Regular Credit 20% / Alternative Simplified Credit 14%, four-part test, contract research at 65%, IUS software hurdle), including the §41(h) payroll tax credit election for Qualified Small Businesses (< $5M gross, no prior receipts beyond Immediate expensing unless §174A(c) amortization election is made) — increased to $500k by IRA 2022 — applied against Form 941 via Form 8974. Tax year 2025 (§174 capitalization remains law absent year-end extender). Federal only.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -476,10 +476,6 @@ Before the reviewer signs off on a §174/§41 workpaper, run the following self-
 verified_by: pending — this skill has not yet been signed off by a credentialed §41/§174 specialist. The lead US Federal verifier should review Sections 5 (four-part test), 7 (§41(h) mechanics), and 11 (worked examples) for accuracy before promotion to verified_by: <name>.
 
 2026-07-10. Next mandatory re-review: April 1, 2026 (after the 2025 filing season and any IRS implementation guidance under §174A/Rev. Proc. 2025-28).
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts. To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call: → [Book a call](https://calendly.com/openaccountants-info/30min) We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

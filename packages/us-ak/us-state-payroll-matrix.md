@@ -3,7 +3,7 @@ name: us-state-payroll-matrix
 description: Tier 2 US federal-level reference skill providing the 50-state at-a-glance payroll matrix covering income-tax withholding registration, quarterly return forms and due dates, SUTA wage base and rate ranges, new-hire reporting agencies and 20-day deadlines under §453A, state disability and paid family/medical leave mandates (CA SDI, NY/NJ DBL, CO FAMLI, MA PFML, WA PFML, OR Paid Leave, CT PFML, DC PFL), local payroll taxes (PA Act 32 EIT, OH RITA/CCA, NYC, CA SDI), and state-specific quirks (CalSavers mandate, OR TriMet transit tax, WA Cares Fund). Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -327,21 +327,6 @@ This matrix is a starting reference. Every state agency may revise rates, wage b
 - `ca-540-individual-return.md` — California state return (resident perspective)
 - `tx-franchise-tax.md` — Texas state-level reporting
 - `us-tax-workflow-base.md` — Workflow runbook (load alongside)
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — no liability on either side until you and the accountant sign
-a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

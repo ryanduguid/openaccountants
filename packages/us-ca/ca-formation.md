@@ -3,7 +3,7 @@ name: ca-formation
 description: Tier 2 California content skill for entity formation covering tax year 2025. Includes the CA LLC Form LLC-1 $70 filing fee, $800 annual minimum franchise tax under R&TC §17941 (first-year exemption AB 85/SB 818 expired 2024), tiered LLC fee on gross receipts under §17942 (Form 3536), 15-day rule for short first year, Statement of Information LLC-12, the "doing business in CA" threshold of $711,538 receipts / $71,154 payroll / $71,154 property triggering registration obligations for out-of-state entities, foreign qualification mechanics, and the C-corp formation overlay with $800 + 8.84% income tax.
 jurisdiction: US-CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -445,21 +445,6 @@ All outputs include the standard reviewer disclaimer: this is a draft for review
 ## *End of ca-formation skill, version 0.1, last updated 2025-11-15. Federal-overlay, California-state only. Reviewer signoff required.*
 
 *End of ca-formation skill, version 0.1, last updated 2025-11-15. Federal-overlay, California-state only. Reviewer signoff required.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

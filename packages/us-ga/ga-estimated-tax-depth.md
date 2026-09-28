@@ -3,7 +3,7 @@ name: ga-estimated-tax-depth
 description: Tier 2 Georgia content skill for individual and corporate estimated tax payments covering tax year 2025. Includes Form 500-ES quarterly installment schedule (Apr 15 / Jun 15 / Sep 15 / Jan 15), safe-harbor rules (100% prior year tax or 70% current year, with 110% prior-year safe harbor for high-income taxpayers with AGI over $150,000), Form GA-8453 underpayment penalty computation, the annualized income method for seasonal income, GA Department of Revenue interest rate for underpayment penalty calculation, and interaction with the GA PTE election under O.C.G.A. §48-7-23.
 jurisdiction: US-GA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -380,21 +380,6 @@ Before signing off on a Georgia estimated tax plan, the reviewer must affirmativ
 ## End of document footer
 
 *End of ga-estimated-tax-depth.md (v0.1, 2025-11-15). Pending review by Charlie Barmore and at least one additional Georgia-credentialed contributor per the multi-accountant verification model.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

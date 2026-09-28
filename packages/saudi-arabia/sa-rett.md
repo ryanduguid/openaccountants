@@ -3,7 +3,7 @@ name: sa-rett
 description: Use this skill whenever asked about the Saudi Arabian Real Estate Transaction Tax (RETT). Trigger on phrases like "Saudi RETT", "Real Estate Transaction Tax KSA", "5% RETT Saudi", "Saudi property transfer tax", "ZATCA RETT", "Royal Decree A/84 RETT", "Saudi first-home exemption", "KSA notarisation tax", "ZATCA real estate", "disposal of Saudi real estate", or any question about computing, declaring, or paying RETT on a Saudi real-estate disposal. Scope covers the 5% RETT rate, taxable transactions and persons, taxable value rules, the Saudi-national first-home exemption (up to SAR 1,000,000 — verify current cap), inheritance and first-degree-relative gift exemptions, Waqf endowments, sale-leaseback and sukuk arrangements, declaration on the ZATCA portal before notarisation, and the interaction with the pre-October-2020 15% VAT-on-real-estate regime that RETT replaced. ALWAYS read this skill before touching any Saudi RETT work.
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Mehran Habib
 review_status: current
 tier: 1
@@ -268,16 +268,6 @@ The fact that the property was acquired by inheritance does NOT carry forward an
 10. **ZATCA Information Circulars and FAQs on RETT** — periodic clarifications on edge cases (sale-leaseback, sukuk, restructuring, mixed-use, non-resident sellers).
 11. **Saudi Vision 2030 Housing Programme** documentation — policy context for the first-home exemption.
 12. **GAZT-era guidance (pre-merger)** retained in archived form for transactions in the transitional 2020–2021 window when GAZT became ZATCA.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

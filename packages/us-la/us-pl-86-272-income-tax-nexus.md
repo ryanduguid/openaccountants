@@ -3,7 +3,7 @@ name: us-pl-86-272-income-tax-nexus
 description: Tier 2 US federal content skill for Public Law 86-272 (15 USC §§381-384) — the federal statute that prevents states from imposing income tax on out-of-state sellers whose only activity is solicitation of tangible personal property orders shipped from out of state. Covers the 2021/2024 MTC revised statement that erodes P.L. 86-272 protection for nearly all internet-era activities (customer accounts, live chat, online reviews, post-sale service), California's FTB Legal Rulings 2022-01/02, New York's 2023 adoption, the Wisconsin v. Wrigley solicitation safe harbor, the factor-presence economic nexus model ($50k payroll, $500k receipts), and voluntary disclosure agreement processes. Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -467,21 +467,6 @@ START: Is the in-state activity TPP-sales-related?
 All output of this skill must be reviewed and signed off by a Circular 230 practitioner (EA, CPA, or attorney) before delivery to the taxpayer or any state revenue department. The MTC interpretation is contested; constitutional defenses should be preserved in protective filings; voluntary disclosure decisions involve material commercial judgment beyond the scope of this skill.
 
 **Skill version:** 0.1. **Last updated:** 2025-11-15. **Verified by:** pending. The pending status reflects (a) ACMA litigation not yet final, (b) ongoing state adoption of the MTC framework, and (c) annual updates required as states publish indexed economic-nexus thresholds.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

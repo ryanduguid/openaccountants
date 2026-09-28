@@ -3,7 +3,7 @@ name: us-form-1120-c-corp
 description: Tier 2 US federal content skill for preparing Form 1120 — the US C-corporation income tax return. Covers tax year 2025 under OBBBA including the 21% flat rate, DRD tiers (50/65/100%), §163(j) interest limit, §174 R&D capitalization, §250 GILTI/FDII deduction at 50%/37.5%, the 15% Corporate AMT on AFSI > $1B (IRA 2022), required schedules (B, C, J, K, L, M-1/M-3, O, UTP), and common attached forms (4562, 4626, 5471/5472 refer-out, 6765, 8993, 1125-A, 1125-E). Filing due 15th day of 4th month; Form 7004 6-month extension; quarterly estimated 25/25/25/25 with no 110% safe harbor for corps.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -800,21 +800,6 @@ This skill provides a structured walkthrough for preparing Form 1120 for tax yea
 **State tax warning:** Federal taxable income is the starting point for most state corporate income tax computations, but virtually every state adjusts away from federal in specific areas (state-specific decoupling from bonus depreciation, §163(j), §168(k), §250, §174). Always run the state return alongside the federal, not after.
 
 **End of skill.**
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

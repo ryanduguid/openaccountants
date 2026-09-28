@@ -3,7 +3,7 @@ name: us-form-1041-trust-and-estate-income
 description: Tier 2 US federal content skill for Form 1041 — US Income Tax Return for Estates and Trusts. Covers tax year 2025 including the compressed bracket structure (37% at $15,650; LTCG 20% at $15,200; NIIT 3.8% same threshold), Distributable Net Income under §643, distribution deduction §651 (simple) and §661 (complex), the §663(b) 65-day rule, §645 election to combine estate + revocable trust, §691 income in respect of decedent, §642(g) election to deduct on 706 vs 1041, fiscal-year for estates only, Schedule K-1 character flow-through to beneficiaries, and §1361 ESBTs.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -770,16 +770,6 @@ Year-specific figures verified against:
 ## End of skill footer
 
 *End of skill. ~62 KB. Federal only. Reviewer signoff required before filing.*
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — **no liability on either side until you and the accountant sign a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

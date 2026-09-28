@@ -3,7 +3,7 @@ name: us-form-1065-partnership
 description: US federal content skill for preparing Form 1065 — the US partnership return. Covers tax year 2025 including the March 15 due date and Form 7004 6-month extension, the $245-per-partner-per-month §6698 penalty even for no-tax-due returns, the tax basis capital account reporting requirement, the Centralized Partnership Audit Regime (CPAR/BBA) and the Schedule B-2 election out, Schedule K-1 preparation including §199A passthrough codes, Schedules K-2 and K-3 for international items, §704(b) special allocations, §704(c) contributed property, §752 liability share, basis/at-risk/passive limits, and the post-Soroban scrutiny on limited-partner SE exemption.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -698,10 +698,6 @@ However: if the FLP also had a side business of "property management services" c
 This skill produces a reviewer-oriented draft of Form 1065 and supporting schedules. A credentialed tax practitioner under Circular 230 (Enrolled Agent, CPA, or attorney) must review and sign the return before it is filed. The skill is conservative by default; it flags rather than auto-decides on ambiguous allocations, SE tax characterizations, §704(c) methods, and CPAR election questions. The 2025 indexed amounts (§6698 penalty, §199A thresholds, §461(l) thresholds, §163(j) small-business gross-receipts threshold) must be verified against the final Rev. Proc. 2024-40 (or its successor) before final filing. This skill is federal-only. State partnership returns, state pass-through entity tax (PTET) elections, and state withholding on nonresident partners are out of scope and must be handled by the relevant state skill or a state-licensed practitioner. The skill does not, and cannot, replace partnership counsel for drafting allocation provisions, DRO clauses, QIO provisions, partnership-representative indemnification, or §704(c) method elections. Where the skill flags a structural issue, the reviewer should refer to qualified partnership-law counsel.
 
 — End of skill —
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts. To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call: **→ [Book a call](https://calendly.com/openaccountants-info/30min)**. We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

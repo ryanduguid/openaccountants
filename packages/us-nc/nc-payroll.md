@@ -3,7 +3,7 @@ name: nc-payroll
 description: Tier 2 North Carolina content skill for employer payroll compliance covering tax year 2025. Includes the 4.5% flat PIT phasing down toward 2.49% by 2030 contingent on revenue triggers, NC-4 state W-4, NC-5 monthly withholding voucher, NC-3 annual reconciliation, NC SUI wage base $32,600 with rates 0.06-5.76%, the absence of state-mandated paid leave or sick leave, and DHHS new-hire reporting within 20 days under PRWORA §453A.
 jurisdiction: US-NC
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -507,16 +507,6 @@ Before finalizing any NC payroll deliverable produced under this skill, the cred
 - IRC §3509 (reduced employment tax for misclassification)
 - IRS Rev. Rul. 87-41 (20-factor common-law test)
 - Section 530 of the Revenue Act of 1978 (federal safe harbor)
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

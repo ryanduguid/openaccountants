@@ -2,7 +2,7 @@
 name: australia-references
 jurisdiction: AU
 tier: 2
-last_updated: 2026-09-14
+last_updated: 2026-09-28
 version: 1.1
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
@@ -84,3 +84,21 @@ Before incorporating material, check its exact licence, the proposed use and the
   - Check the MIT terms for the relevant software and any separate rights in source data or reproduced content before reuse.
   - Reference for adding a benchmark-screen step to sole trader workflows.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

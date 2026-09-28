@@ -3,7 +3,7 @@ name: ny-formation
 description: Tier 2 New York content skill for entity formation covering tax year 2025. Includes the NY LLC $200 Articles of Organization, the unique LLC publication requirement under LLC Law §206 (2 newspapers, 6 consecutive weeks, costing $1,000-$2,000+ in NYC vs $50-$200 outside), $50 biennial Statement, NY C-Corp $125 Certificate of Incorporation with no publication requirement, NYC Unincorporated Business Tax 4%, biennial DOS-1357 ($9), and the NY-specific S-Corp election separate from federal §1362.
 jurisdiction: US-NY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -425,21 +425,6 @@ Do not cite secondary sources (treatises, blog posts, online formation services)
 - **R-NY-FORM-7** — Advice that recommends ignoring the LLC publication requirement on the theory that "no one enforces it"  _(R-NY-FORM-7)_
 
 Every output produced under this skill must be reviewed and signed off by a credentialed reviewer (NY-admitted attorney, CPA, or Enrolled Agent operating within Circular 230 scope where federal items intersect) before reaching the client or being acted upon.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — no liability on either side until you and the accountant sign
-a formal engagement letter — book a free 30-minute call:
-
-→ [Book a call](https://calendly.com/openaccountants-info/30min)
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

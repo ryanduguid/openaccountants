@@ -3,7 +3,7 @@ name: us-estate-gift-706-709
 description: Tier 2 US federal content skill for the unified estate, gift, and generation-skipping transfer tax under §§ 2001 et seq., including Form 706 (estate), Form 709 (gift), and the GST regime. Covers tax year 2025 with the $13.99M per-individual basic exclusion amount, the 40% top rate, the $19,000 annual exclusion, §2513 gift splitting, §2010(c) portability and DSUE with the Rev. Proc. 2022-32 5-year late-election relief, §2503(e) unlimited medical/tuition direct payments, §529 5-year frontload election ($95k/donee), §2032 alternate valuation, §1014 stepped-up basis, the GST regime under § 2601, and the permanent $15,000,000 basic exclusion amount from 2026 under OBBBA (P.L. 119-21, § 70106), which replaced the scheduled December 31, 2025 sunset, with anti-clawback T.D. 9884.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-28
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -752,10 +752,6 @@ Last updated 2025-11-15 for tax year 2025 figures. Verify the OBBBA P.L. 119-21 
 ## End of skill notice
 
 End of skill. Combine with us-tax-workflow-base v0.2+ before producing any output. All outputs require Circular 230 practitioner sign-off.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts. To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call: → [Book a call](https://calendly.com/openaccountants-info/30min) We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

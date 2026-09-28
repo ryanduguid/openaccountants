@@ -3,7 +3,7 @@ name: us-section-1202-qsbs
 description: Tier 2 US federal content skill for IRC §1202 Qualified Small Business Stock gain exclusion. Covers OBBBA P.L. 119-21 (July 2025) expansion including the new tiered exclusion (50% at 3 years, 75% at 4 years, 100% at 5 years), the $75M gross-asset cap (raised from $50M), the $15M per-issuer cap (raised from $10M), the §1202(e)(3) SSTB exclusion list, §1045 rollover with 60-day reinvestment, AMT treatment for post-2010 stock, state conformity (CA non-conforming), QSBS-destroying events (S-corp conversion, buyback, recapitalization edge cases), family stacking strategies, SAFE/convertible note conversion treatment, and Form 8949 Code Q reporting. Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -487,10 +487,6 @@ The §1202 position is high-value, high-scrutiny. Take the conservative position
 ## *End of skill. Tax year 2025. Last updated 2025-11-15. Version 0.1. Verified by: pending.*
 
 End of skill. Tax year 2025. Last updated 2025-11-15. Version 0.1. Verified by: pending.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts. To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call: → [Book a call](https://calendly.com/openaccountants-info/30min) We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 

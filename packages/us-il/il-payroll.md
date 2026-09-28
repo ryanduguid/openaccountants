@@ -3,7 +3,7 @@ name: il-payroll
 description: Tier 2 Illinois content skill for employer payroll compliance covering tax year 2025. Includes the 4.95% flat PIT, supplemental 4.95%, IL-941 quarterly withholding, IL UI wage base $13,590 with rates 0.85-8.65%, the Secure Choice Savings Program auto-enroll mandate for 5+ employees (5% default deferral if no qualified retirement plan offered), Chicago Fair Workweek Ordinance predictive scheduling for 10+ employees in covered industries, Cook County paid sick leave, and the One Day Rest in Seven Act.
 jurisdiction: US-IL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
@@ -515,21 +515,6 @@ This skill is marked `verified_by: pending`. Before publication, the reviewer mu
 5. Sign off as an Illinois-credentialed reviewer (CPA, EA with Illinois practice, or licensed payroll specialist).
 
 End of skill.
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
 
 <!-- openaccountants-cta-block -->
 
