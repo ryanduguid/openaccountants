@@ -5,25 +5,31 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `ab-corporate-tax.md`
-4. `bc-eht.md`
-5. `bc-pst.md`
-6. `bc-speculation-vacancy-tax.md`
-7. `mb-rst.md`
-8. `nb-tax-credits.md`
-9. `nl-tax-credits.md`
-10. `ns-tax-credits.md`
-11. `nt-payroll-tax.md`
-12. `nu-tax-credits.md`
-13. `on-eht.md`
-14. `on-tax-credits.md`
-15. `pe-tax-credits.md`
-16. `qc-employer-contributions.md`
-17. `sk-pst.md`
-18. `yt-tax-credits.md`
-19. `payroll-workflow-base.md`
+1. `intake.md`
+2. `ab-corporate-tax.md`
+3. `bc-eht.md`
+4. `bc-pst.md`
+5. `bc-speculation-vacancy-tax.md`
+6. `mb-rst.md`
+7. `nb-tax-credits.md`
+8. `nl-tax-credits.md`
+9. `ns-tax-credits.md`
+10. `nt-payroll-tax.md`
+11. `nu-tax-credits.md`
+12. `on-eht.md`
+13. `on-tax-credits.md`
+14. `pe-tax-credits.md`
+15. `qc-employer-contributions.md`
+16. `sk-pst.md`
+17. `yt-tax-credits.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`foundation.md`](../_shared/foundation.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+
 
 ## Also known as
 
@@ -33,7 +39,7 @@ Tax authority: **Canada Revenue Agency (CRA)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Canada taxes. Here's my bank statement."**

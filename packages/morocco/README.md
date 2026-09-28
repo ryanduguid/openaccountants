@@ -5,33 +5,39 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `ma-auto-entrepreneur.md`
-4. `ma-bookkeeping.md`
-5. `ma-cpu.md`
-6. `ma-crypto-tax.md`
-7. `ma-einvoice.md`
-8. `ma-financial-statements.md`
-9. `ma-formation.md`
-10. `ma-income-tax.md`
-11. `ma-social-contributions.md`
-12. `ma-tax-optimization.md`
-13. `morocco-income-tax.md`
-14. `morocco-payroll.md`
-15. `morocco-vat.md`
-16. `bookkeeping-workflow-base.md`
-17. `einvoice-workflow-base.md`
-18. `payroll-workflow-base.md`
-19. `company-formation-workflow-base.md`
-20. `financial-statements-workflow-base.md`
-21. `crypto-tax-workflow-base.md`
-22. `income-tax-workflow-base.md`
-23. `social-contributions-workflow-base.md`
+1. `intake.md`
+2. `ma-auto-entrepreneur.md`
+3. `ma-bookkeeping.md`
+4. `ma-cpu.md`
+5. `ma-crypto-tax.md`
+6. `ma-einvoice.md`
+7. `ma-financial-statements.md`
+8. `ma-formation.md`
+9. `ma-income-tax.md`
+10. `ma-social-contributions.md`
+11. `ma-tax-optimization.md`
+12. `morocco-income-tax.md`
+13. `morocco-payroll.md`
+14. `morocco-vat.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Morocco taxes. Here's my bank statement."**

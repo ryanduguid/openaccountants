@@ -5,21 +5,27 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `ch-ahv-iv.md`
-4. `ch-cantonal-tax.md`
-5. `ch-company-formation.md`
-6. `ch-corporate-income-tax.md`
-7. `ch-federal-income-tax.md`
-8. `ch-lump-sum.md`
-9. `ch-tax-overview.md`
-10. `ch-vat-return.md`
-11. `switzerland-crypto-tax.md`
-12. `switzerland-vat.md`
-13. `company-formation-workflow-base.md`
-14. `crypto-tax-workflow-base.md`
-15. `income-tax-workflow-base.md`
+1. `intake.md`
+2. `ch-ahv-iv.md`
+3. `ch-cantonal-tax.md`
+4. `ch-company-formation.md`
+5. `ch-corporate-income-tax.md`
+6. `ch-federal-income-tax.md`
+7. `ch-lump-sum.md`
+8. `ch-tax-overview.md`
+9. `ch-vat-return.md`
+10. `switzerland-crypto-tax.md`
+11. `switzerland-vat.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+
 
 ## Also known as
 
@@ -29,7 +35,7 @@ Tax authority: **Eidgenössische Steuerverwaltung (ESTV) / AFC**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Switzerland taxes. Here's my bank statement."**

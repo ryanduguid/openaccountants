@@ -1,6 +1,7 @@
 # PR contract:
-#   - Edit skills/** (and the hand-authored packages/us-federal/). Then run the
-#     three generators and commit their output in the same change:
+#   - Edit skills/** (packages/us-federal/ holds only the hand-authored federal
+#     rates JSONs and their runbook). Then run the three generators and commit
+#     their output in the same change:
 #         python3 scripts/build-packages.py
 #         python3 scripts/build-index.py
 #         python3 scripts/build-llms-full.py

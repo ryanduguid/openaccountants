@@ -2,44 +2,49 @@
 """
 Build per-jurisdiction packages from source skills.
 
-Each package contains:
-1. foundation.md — Universal execution framework (same for every country)
-2. intake.md — Universal onboarding flow (same for every country)
-3. [country]-[obligation].md — Country-specific content skills
-4. Every workflow base those skills declare in `depends_on` (for example
-   income-tax-workflow-base, social-contributions-workflow-base), plus the
-   keyword-matched domain bases (payroll, bookkeeping, e-invoicing, ...)
+Each package folder holds the files specific to that jurisdiction:
+1. intake.md — Universal onboarding flow with the country filled in
+2. [country]-[obligation].md — Country-specific content skills
+3. Country orchestrator files, where they exist
+4. README.md — what is in the folder, and which shared files it needs
 
-US state packages (packages/us-[code]/) additionally include:
-4. us-tax-workflow-base.md — US-specific workflow foundation
-5. All federal skills from skills/federal/
-6. Core US orchestrator files
-7. State-specific skills from skills/us-states/[code]/
+Everything a package needs that is not specific to it is written ONCE to
+packages/_shared/ and listed in the package README and in packages/bundles.json:
+- foundation.md — Universal execution framework (same for every country)
+- every workflow base the package's skills declare in `depends_on` (for
+  example income-tax-workflow-base, social-contributions-workflow-base) or
+  match by keyword (payroll, bookkeeping, e-invoicing, ...), and
+  eu-vat-directive.md for EU members
+- for US state packages: us-tax-workflow-base.md, every federal skill from
+  skills/federal/ and the core US orchestrators
+- for Canadian packages: the federal Canadian skills and core orchestrators
+
+scripts/build-bundle.py (`make bundle JURISDICTION=<dir>`) assembles a package
+and its shared files into one self-contained upload folder.
 
 Usage:
     python3 scripts/build-packages.py           # rebuild all packages
-    python3 scripts/build-packages.py --us-only # rebuild only US state packages
     python3 scripts/build-packages.py --out DIR # build the full tree into DIR (must
                                                 # not exist or be empty) instead of
                                                 # packages/. validate-guides.py uses
                                                 # this to check packages/ is fresh.
 
 Output:
+    packages/_shared/          — every shared file, once, plus a README
+    packages/bundles.json      — per package: its own files and its shared files
     packages/[country]/
         ├── README.md
-        ├── foundation.md
         ├── intake.md
         ├── [country]-vat.md (or gst, iva, etc.)
         ├── [country]-income-tax.md (if available)
         └── [country]-ssc.md (if available)
     packages/us-[code]/
         ├── README.md
-        ├── us-tax-workflow-base.md
-        ├── us-*.md (federal skills)
-        ├── us-federal-return-assembly.md
-        └── [code]-*.md (state-specific skills)
+        ├── [code]-*.md (state-specific skills)
+        └── us-[code]-*.md (state orchestrators, where they exist)
 """
 
+import json
 import os
 import re
 import shutil
@@ -67,6 +72,132 @@ PACKAGES_DIR = paths.PACKAGES_DIR  # main() points this at --out DIR instead
 # validator's freshness check skips exactly the same directories.
 # ============================================================================
 HAND_AUTHORED_PACKAGES = paths.HAND_AUTHORED_PACKAGES
+
+# ============================================================================
+# SHARED FILES
+#
+# A file that is not specific to one jurisdiction (the universal foundation,
+# the workflow bases, the federal sets, the core orchestrators, the EU VAT
+# base) used to be copied into every package that needed it: 3,647 copies of
+# 2,307 distinct files, and a one-line edit to a base touched 170 of them.
+# Each such file is now written once to packages/_shared/. Every package lists
+# the shared files it needs in its README and in packages/bundles.json, and
+# scripts/build-bundle.py assembles a self-contained folder from that list.
+# ============================================================================
+SHARED_DIR_NAME = "_shared"
+BUNDLES_FILE = "bundles.json"
+
+# basename -> (absolute source path or None, generated text or None). Filled
+# by the builders through share(), written once by write_shared_dir().
+_SHARED = {}
+
+
+def share(dest_name, src_path=None, text=None):
+    """Register a shared file under the basename packages use for it.
+
+    Returns the name so callers can append it to their `shared` list. The same
+    name registered twice must mean the same content, or one package would
+    silently receive another's file.
+    """
+    entry = (os.path.abspath(src_path) if src_path else None, text)
+    previous = _SHARED.get(dest_name)
+    if previous is not None and previous != entry:
+        sys.exit(f"error: shared file {dest_name!r} registered with two different contents")
+    _SHARED[dest_name] = entry
+    return dest_name
+
+
+def shared_source_label(src):
+    """Where a shared file comes from, as the README states it."""
+    if src is None:
+        return "generated by scripts/build-packages.py"
+    rel = os.path.relpath(src, SKILLS_DIR).replace(os.sep, "/")
+    if rel.startswith("../"):
+        return os.path.basename(src)
+    return f"skills/{rel}"
+
+
+def build_shared_readme(entries):
+    """entries: (name, source label, number of packages that list the file)."""
+    listed = "\n".join(
+        f"- `{name}` — {source}; listed by {uses} package{'s' if uses != 1 else ''}"
+        for name, source, uses in entries
+    )
+    return (
+        "# Shared files\n\n"
+        "Every file here is part of more than one package and is kept once: the\n"
+        "universal `foundation.md`, the workflow bases from `skills/foundation/`,\n"
+        "the US federal guides from `skills/federal/`, the federal Canadian guides,\n"
+        "the core orchestrators and the EU VAT base. A package's `README.md` lists\n"
+        "the shared files it needs, and `packages/bundles.json` records the same\n"
+        "list for tools; `make bundle JURISDICTION=<package>` (scripts/build-bundle.py)\n"
+        "copies a package and its shared files into one ready-to-upload folder.\n\n"
+        "Generated by `scripts/build-packages.py` from `skills/`; do not edit here.\n\n"
+        f"{listed}\n"
+    )
+
+
+def write_shared_dir(results):
+    """Write every registered shared file (and this directory's README) once."""
+    uses = {}
+    for result in results:
+        for name in result.get("shared", []):
+            uses[name] = uses.get(name, 0) + 1
+    shared_dir = os.path.join(PACKAGES_DIR, SHARED_DIR_NAME)
+    os.makedirs(shared_dir, exist_ok=True)
+    names = sorted(_SHARED)
+    entries = []
+    for name in names:
+        src, text = _SHARED[name]
+        dest = os.path.join(shared_dir, name)
+        if src is not None:
+            shutil.copy2(src, dest)
+        else:
+            with open(dest, "w") as fh:
+                fh.write(text)
+        entries.append((name, shared_source_label(src), uses.get(name, 0)))
+    with open(os.path.join(shared_dir, "README.md"), "w") as fh:
+        fh.write(build_shared_readme(entries))
+    return names
+
+
+def write_bundles(results):
+    """packages/bundles.json: for every package, its own files and its shared files."""
+    packages = {}
+    for result in results:
+        packages[result["package_dir"]] = {
+            "jurisdiction": result["jurisdiction"],
+            "name": result["name"],
+            "files": list(result["files"]),
+            "shared": sorted(result.get("shared", [])),
+        }
+    document = {
+        "generated_by": "scripts/build-packages.py",
+        "shared_dir": SHARED_DIR_NAME,
+        "packages": dict(sorted(packages.items())),
+    }
+    with open(os.path.join(PACKAGES_DIR, BUNDLES_FILE), "w", encoding="utf-8") as fh:
+        json.dump(document, fh, indent=1, ensure_ascii=False)
+        fh.write("\n")
+
+
+def shared_section(shared):
+    """The README section listing a package's shared files, or '' when it has none."""
+    if not shared:
+        return ""
+    listed = "\n".join(f"- [`{name}`](../{SHARED_DIR_NAME}/{name})" for name in sorted(shared))
+    return (
+        "\n## Shared files this package needs\n\n"
+        f"These are part of this package and live once in [`../{SHARED_DIR_NAME}/`](../{SHARED_DIR_NAME}/):\n\n"
+        f"{listed}\n"
+    )
+
+
+UPLOAD_STEP = (
+    "1. Upload ALL files in this folder AND the shared files listed above to your AI "
+    "assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle "
+    "JURISDICTION=<folder>` puts them together in one ready-to-upload folder"
+)
 
 # Country code → display name mapping
 COUNTRY_NAMES = {
@@ -404,9 +535,9 @@ Then proceed to classification using the loaded country skills.
 """
 
 
-def build_readme(country_name, files, practitioner_title, jurisdiction_code):
+def build_readme(country_name, files, practitioner_title, jurisdiction_code, shared=()):
     """Build per-jurisdiction README with keyword enrichment and accountant CTA."""
-    file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)])
+    file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)]) + "\n" + shared_section(shared)
 
     meta = COUNTRY_METADATA.get(jurisdiction_code, {})
     tax_authority = meta.get("tax_authority", "your national tax authority")
@@ -439,7 +570,7 @@ Tax authority: **{tax_authority}**
 {keywords_section}
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+{UPLOAD_STEP}
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 {country_name} taxes. Here's my bank statement."**
@@ -562,29 +693,27 @@ def build_package(country_dir_name, country_dir):
     pkg_dir = os.path.join(PACKAGES_DIR, country_dir_name)
     os.makedirs(pkg_dir, exist_ok=True)
 
-    # Write foundation
-    with open(os.path.join(pkg_dir, "foundation.md"), 'w') as f:
-        f.write(build_foundation())
+    # The universal foundation is the same for every package: shared.
+    shared = [share("foundation.md", text=build_foundation())]
 
-    # Write intake
+    # Write intake (country-specific: it names the country and the practitioner)
     with open(os.path.join(pkg_dir, "intake.md"), 'w') as f:
         f.write(build_intake(name, practitioner, code))
 
     # Copy content skills
-    copied_files = ["foundation.md", "intake.md"]
+    copied_files = ["intake.md"]
     for filename, filepath in content_skills:
         dest = os.path.join(pkg_dir, filename)
         shutil.copy2(filepath, dest)
         copied_files.append(filename)
 
-    # Copy EU VAT base if EU member
+    # EU VAT base if EU member: shared under the name packages always used
     if code in EU_MEMBERS:
         eu_vat = os.path.join(SKILLS_DIR, "international", "eu", "eu-vat-base.md")
         if os.path.exists(eu_vat):
-            shutil.copy2(eu_vat, os.path.join(pkg_dir, "eu-vat-directive.md"))
-            copied_files.append("eu-vat-directive.md")
+            shared.append(share("eu-vat-directive.md", eu_vat))
 
-    # Copy domain-specific workflow bases when matching skills exist
+    # Domain-specific workflow bases when matching skills exist: shared
     DOMAIN_BASES = {
         "bookkeeping": "bookkeeping-workflow-base.md",
         "einvoice": "einvoice-workflow-base.md",
@@ -599,13 +728,12 @@ def build_package(country_dir_name, country_dir):
         if base_file and any(keyword in f for f, _ in content_skills):
             base_path = os.path.join(SKILLS_DIR, "foundation", base_file)
             if os.path.exists(base_path):
-                shutil.copy2(base_path, os.path.join(pkg_dir, base_file))
-                copied_files.append(base_file)
+                shared.append(share(base_file, base_path))
 
-    # Copy every other base the content skills declare in `depends_on`
-    copy_declared_bases([path for _, path in content_skills], pkg_dir, copied_files)
+    # Every other base the content skills declare in `depends_on`: shared
+    share_declared_bases([path for _, path in content_skills], shared)
 
-    # Copy orchestrator files if they exist
+    # Copy orchestrator files if they exist (country-specific)
     intake_file, assembly_file = find_orchestrator_files(country_dir_name)
     if intake_file and os.path.exists(intake_file):
         shutil.copy2(intake_file, os.path.join(pkg_dir, f"{country_dir_name}-guided-intake.md"))
@@ -616,7 +744,8 @@ def build_package(country_dir_name, country_dir):
 
     # Write README
     with open(os.path.join(pkg_dir, "README.md"), 'w') as f:
-        f.write(build_readme(name, copied_files, practitioner, code))
+        f.write(build_readme(name, copied_files, practitioner, code, shared))
+    copied_files.append("README.md")
 
     # Count actual computation skills (not metadata like references.md)
     tax_skills = [s for s in content_skills if s[0] != "references.md"]
@@ -633,7 +762,9 @@ def build_package(country_dir_name, country_dir):
     return {
         "jurisdiction": code,
         "name": name,
+        "package_dir": country_dir_name,
         "files": copied_files,
+        "shared": sorted(set(shared)),
         "has_orchestrator": intake_file is not None,
         "skill_count": len(tax_skills),
         "has_bookkeeping": has_bookkeeping,
@@ -678,9 +809,9 @@ US_STATE_NAMES = {
 }
 
 
-def build_us_state_readme(state_name, state_code, files):
+def build_us_state_readme(state_name, state_code, files, shared=()):
     """Build README for a US state package with accountant CTA."""
-    file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)])
+    file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)]) + "\n" + shared_section(shared)
     return f"""# {state_name} ({state_code.upper()}) — AI Tax Assistant | OpenAccountants
 
 > Open-source federal + {state_name} state tax skills for AI.
@@ -688,14 +819,15 @@ def build_us_state_readme(state_name, state_code, files):
 
 ## What's in this folder
 
-This package contains **federal** tax skills (which apply to all US states) plus
-**{state_name}-specific** state tax skills. Upload all files together.
+This package is the **{state_name}-specific** state tax skills in this folder plus
+the **federal** tax skills (which apply to all US states) and the US workflow base,
+which are shared files listed below. Upload all of them together.
 
 {file_list}
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+{UPLOAD_STEP}
 2. Attach your 2025 bank statement (CSV or PDF)
 3. Say: **"Help me with my 2025 taxes. I'm based in {state_name}. Here's my bank statement."**
 
@@ -750,29 +882,27 @@ def build_us_state_package(state_code):
     os.makedirs(pkg_dir, exist_ok=True)
 
     copied_files = []
+    shared = []
 
-    # 1. US workflow base (foundation equivalent)
+    # 1. US workflow base (foundation equivalent): shared by every state
     us_base = os.path.join(SKILLS_DIR, "foundation", "us-tax-workflow-base.md")
     if os.path.isfile(us_base):
-        shutil.copy2(us_base, os.path.join(pkg_dir, "us-tax-workflow-base.md"))
-        copied_files.append("us-tax-workflow-base.md")
+        shared.append(share("us-tax-workflow-base.md", us_base))
 
-    # 2. All federal skills
+    # 2. All federal skills: shared by every state
     federal_dir = os.path.join(SKILLS_DIR, "federal")
     if os.path.isdir(federal_dir):
         for f in sorted(os.listdir(federal_dir)):
             if f.endswith(".md"):
-                shutil.copy2(os.path.join(federal_dir, f), os.path.join(pkg_dir, f))
-                copied_files.append(f)
+                shared.append(share(f, os.path.join(federal_dir, f)))
 
-    # 3. Core US orchestrator files
+    # 3. Core US orchestrator files: shared by every state
     orch_dir = os.path.join(SKILLS_DIR, "orchestrator")
     core_orch = ["us-federal-return-assembly.md", "global-router.md"]
     for f in core_orch:
         src = os.path.join(orch_dir, f)
         if os.path.isfile(src):
-            shutil.copy2(src, os.path.join(pkg_dir, f))
-            copied_files.append(f)
+            shared.append(share(f, src))
 
     # 4. State-specific orchestrator files (CA, NY, TX)
     state_orch_map = {
@@ -796,18 +926,18 @@ def build_us_state_package(state_code):
                 copied_files.append(f)
                 state_skill_count += 1
 
-    # 5b. Bases the federal and state skills declare in `depends_on`
+    # 5b. Bases the federal and state skills declare in `depends_on`: shared
     declared_from = []
     if os.path.isdir(federal_dir):
         declared_from += [os.path.join(federal_dir, f) for f in sorted(os.listdir(federal_dir)) if f.endswith(".md")]
     if os.path.isdir(state_dir):
         declared_from += [os.path.join(state_dir, f) for f in sorted(os.listdir(state_dir))
                           if f.endswith(".md") and f != "README.md"]
-    copy_declared_bases(declared_from, pkg_dir, copied_files)
+    share_declared_bases(declared_from, shared)
 
     # 6. Generate README
     with open(os.path.join(pkg_dir, "README.md"), "w") as fh:
-        fh.write(build_us_state_readme(state_name, state_code, copied_files))
+        fh.write(build_us_state_readme(state_name, state_code, copied_files, shared))
     copied_files.append("README.md")
 
     return {
@@ -815,6 +945,7 @@ def build_us_state_package(state_code):
         "name": f"United States — {state_name}",
         "package_dir": f"us-{state_code}",
         "files": copied_files,
+        "shared": sorted(set(shared)),
         "state_skills": state_skill_count,
         "has_orchestrator": state_code == "ca",
     }
@@ -855,9 +986,9 @@ CA_PROVINCE_DIRS = {
 }
 
 
-def build_canada_province_readme(province_name, province_code, files):
+def build_canada_province_readme(province_name, province_code, files, shared=()):
     """Build README for a Canadian province/territory package."""
-    file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)])
+    file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)]) + "\n" + shared_section(shared)
     return f"""# {province_name} ({province_code.upper()}) — AI Tax Assistant | OpenAccountants
 
 > Open-source federal + {province_name} provincial/territorial tax skills for AI.
@@ -865,16 +996,17 @@ def build_canada_province_readme(province_name, province_code, files):
 
 ## What's in this folder
 
-This package contains **federal Canadian** tax and accounting skills (T1, T2125,
+This package is the **{province_name}-specific** provincial/territorial tax skills
+in this folder plus the **federal Canadian** tax and accounting skills (T1, T2125,
 CPP/EI, instalments, GST/HST, T1135, crypto, bookkeeping, payroll, formation,
-financial statements, transfer pricing, tax optimization) plus
-**{province_name}-specific** provincial/territorial tax skills. Upload all files together.
+financial statements, transfer pricing, tax optimization), which are shared files
+listed below. Upload all of them together.
 
 {file_list}
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+{UPLOAD_STEP}
 2. Attach your 2025 bank statement (CSV or PDF)
 3. Say: **"Help me with my 2025 taxes. I'm based in {province_name}. Here's my bank statement."**
 
@@ -931,26 +1063,26 @@ def build_canada_province_package(province_code):
 
     copied_files = []
 
-    # 1. Universal foundation
-    with open(os.path.join(pkg_dir, "foundation.md"), "w") as fh:
-        fh.write(build_foundation())
-    copied_files.append("foundation.md")
+    # 1. Universal foundation: shared
+    shared = [share("foundation.md", text=build_foundation())]
 
-    # 2. Canada-flavoured intake
+    # 2. Canada-flavoured intake (the same text for every province, but it is
+    #    the package's onboarding file and stays with it)
     with open(os.path.join(pkg_dir, "intake.md"), "w") as fh:
         fh.write(build_intake("Canada", "CPA", "CA"))
     copied_files.append("intake.md")
 
-    # 3. Federal Canadian skills (top-level .md files in skills/international/canada/)
+    # 3. Federal Canadian skills (top-level .md files in skills/international/canada/): shared
     canada_root = os.path.join(SKILLS_DIR, "international", "canada")
+    federal_files = []
     if os.path.isdir(canada_root):
         for f in sorted(os.listdir(canada_root)):
             full = os.path.join(canada_root, f)
             if os.path.isfile(full) and f.endswith(".md"):
-                shutil.copy2(full, os.path.join(pkg_dir, f))
-                copied_files.append(f)
+                shared.append(share(f, full))
+                federal_files.append(f)
 
-    # 4. Domain workflow bases for any domains present in the federal pool
+    # 4. Domain workflow bases for any domains present in the federal pool: shared
     DOMAIN_BASES = {
         "bookkeeping": "bookkeeping-workflow-base.md",
         "payroll": "payroll-workflow-base.md",
@@ -960,11 +1092,10 @@ def build_canada_province_package(province_code):
         "crypto": "crypto-tax-workflow-base.md",
     }
     for keyword, base_file in DOMAIN_BASES.items():
-        if any(keyword in f for f in copied_files):
+        if any(keyword in f for f in federal_files):
             base_path = os.path.join(SKILLS_DIR, "foundation", base_file)
-            if os.path.isfile(base_path) and base_file not in copied_files:
-                shutil.copy2(base_path, os.path.join(pkg_dir, base_file))
-                copied_files.append(base_file)
+            if os.path.isfile(base_path) and base_file not in shared:
+                shared.append(share(base_file, base_path))
 
     # 5. Province-specific skill files
     province_source = os.path.join(canada_root, province_dir_name)
@@ -976,7 +1107,7 @@ def build_canada_province_package(province_code):
                 copied_files.append(f)
                 province_skill_count += 1
 
-    # 5b. Bases the federal and province skills declare in `depends_on`
+    # 5b. Bases the federal and province skills declare in `depends_on`: shared
     declared_from = []
     if os.path.isdir(canada_root):
         declared_from += [os.path.join(canada_root, f) for f in sorted(os.listdir(canada_root))
@@ -984,19 +1115,18 @@ def build_canada_province_package(province_code):
     if os.path.isdir(province_source):
         declared_from += [os.path.join(province_source, f) for f in sorted(os.listdir(province_source))
                           if f.endswith(".md") and f != "README.md"]
-    copy_declared_bases(declared_from, pkg_dir, copied_files)
+    share_declared_bases(declared_from, shared)
 
-    # 6. Core orchestrator files (Canada freelance intake + return assembly, global router)
+    # 6. Core orchestrator files (Canada freelance intake + return assembly, global router): shared
     orch_dir = os.path.join(SKILLS_DIR, "orchestrator")
     for orch_file in ("ca-freelance-intake.md", "ca-return-assembly.md", "global-router.md"):
         src = os.path.join(orch_dir, orch_file)
         if os.path.isfile(src):
-            shutil.copy2(src, os.path.join(pkg_dir, orch_file))
-            copied_files.append(orch_file)
+            shared.append(share(orch_file, src))
 
     # 7. Generate README
     with open(os.path.join(pkg_dir, "README.md"), "w") as fh:
-        fh.write(build_canada_province_readme(province_name, province_code, copied_files))
+        fh.write(build_canada_province_readme(province_name, province_code, copied_files, shared))
     copied_files.append("README.md")
 
     return {
@@ -1004,6 +1134,7 @@ def build_canada_province_package(province_code):
         "name": f"Canada — {province_name}",
         "package_dir": f"ca-{province_code}",
         "files": copied_files,
+        "shared": sorted(set(shared)),
         "province_skills": province_skill_count,
         "has_orchestrator": True,
     }
@@ -1055,13 +1186,23 @@ def declared_foundation_bases(skill_paths):
     return sorted(bases)
 
 
-def copy_declared_bases(skill_paths, pkg_dir, copied_files):
-    """Copy the bases `skill_paths` declare into pkg_dir, skipping any already there."""
+def source_guides(directory):
+    """The guide files in a source directory, sorted: every .md except a README.
+
+    skills/cross-border/ and skills/verticals/ carry a README.md for readers
+    of the source tree; copying it as a guide listed it as a skill ("Available
+    verticals: Readme, ...") and, once bundles.json recorded each package's
+    files, listed README.md twice.
+    """
+    return sorted(f for f in os.listdir(directory)
+                  if f.endswith(".md") and not f.lower().startswith("readme"))
+
+
+def share_declared_bases(skill_paths, shared):
+    """Register the bases `skill_paths` declare as shared files of this package."""
     for base_file in declared_foundation_bases(skill_paths):
-        if base_file in copied_files:
-            continue
-        shutil.copy2(os.path.join(SKILLS_DIR, "foundation", base_file), os.path.join(pkg_dir, base_file))
-        copied_files.append(base_file)
+        if base_file not in shared:
+            shared.append(share(base_file, os.path.join(SKILLS_DIR, "foundation", base_file)))
 
 
 def validate_generated_frontmatter():
@@ -1116,188 +1257,190 @@ def output_dir(argv):
     return out
 
 
+def reject_unknown_options(argv):
+    """Every build is a full build: `--us-only` went with the shared directory,
+    and an option this script does not know must not silently mean 'build
+    everything'."""
+    for arg in argv:
+        if arg.startswith("--") and arg != "--out":
+            sys.exit(f"error: unknown option {arg}; usage: build-packages.py [--out DIR]")
+
+
 def main():
     global PACKAGES_DIR
-    us_only = "--us-only" in sys.argv
+    reject_unknown_options(sys.argv[1:])
     out = output_dir(sys.argv[1:])
     if out is not None:
-        if us_only:
-            sys.exit("error: --out builds the whole tree; it cannot be combined with --us-only")
         PACKAGES_DIR = out
+    _SHARED.clear()
 
-    if not us_only:
-        # Clean packages directory — but NEVER remove hand-authored packages
-        # (see HAND_AUTHORED_PACKAGES at the top of this file). A whole-dir
-        # rmtree here previously deleted packages/us-federal, which has no
-        # builder and cannot be regenerated.
-        os.makedirs(PACKAGES_DIR, exist_ok=True)
-        for entry in sorted(os.listdir(PACKAGES_DIR)):
-            if entry in HAND_AUTHORED_PACKAGES:
-                continue
-            path = os.path.join(PACKAGES_DIR, entry)
-            if os.path.isdir(path):
-                shutil.rmtree(path)
-            else:
-                os.remove(path)
-    else:
-        # Only clean US state packages
-        os.makedirs(PACKAGES_DIR, exist_ok=True)
-        for code in US_STATE_CODES:
-            assert f"us-{code}" not in HAND_AUTHORED_PACKAGES, f"us-{code} is hand-authored"
-            pkg = os.path.join(PACKAGES_DIR, f"us-{code}")
-            if os.path.isdir(pkg):
-                shutil.rmtree(pkg)
+    # Clean packages directory — but NEVER remove hand-authored packages
+    # (see HAND_AUTHORED_PACKAGES at the top of this file). A whole-dir
+    # rmtree here previously deleted packages/us-federal, which has no
+    # builder and cannot be regenerated. The shared directory and
+    # bundles.json are generated and go with the rest.
+    os.makedirs(PACKAGES_DIR, exist_ok=True)
+    for entry in sorted(os.listdir(PACKAGES_DIR)):
+        if entry in HAND_AUTHORED_PACKAGES:
+            continue
+        path = os.path.join(PACKAGES_DIR, entry)
+        if os.path.isdir(path):
+            shutil.rmtree(path)
+        else:
+            os.remove(path)
 
     # ---- International packages ----
     intl_results = []
-    if not us_only:
-        intl_dir = os.path.join(SKILLS_DIR, "international")
-        for country_dir_name in sorted(os.listdir(intl_dir)):
-            country_dir = os.path.join(intl_dir, country_dir_name)
-            if not os.path.isdir(country_dir):
-                continue
-            if country_dir_name == "eu":
-                continue  # EU is a regional layer, not a jurisdiction
-            if country_dir_name == "canada":
-                continue  # Canada is split into per-province packages (ca-{code}/), see build_all_canada_packages()
+    intl_dir = os.path.join(SKILLS_DIR, "international")
+    for country_dir_name in sorted(os.listdir(intl_dir)):
+        country_dir = os.path.join(intl_dir, country_dir_name)
+        if not os.path.isdir(country_dir):
+            continue
+        if country_dir_name == "eu":
+            continue  # EU is a regional layer, not a jurisdiction
+        if country_dir_name == "canada":
+            continue  # Canada is split into per-province packages (ca-{code}/), see build_all_canada_packages()
 
-            result = build_package(country_dir_name, country_dir)
-            if result:
-                intl_results.append(result)
+        result = build_package(country_dir_name, country_dir)
+        if result:
+            intl_results.append(result)
 
-        full = [r for r in intl_results if r["has_orchestrator"]]
-        multi = [r for r in intl_results if r["skill_count"] >= 3 and not r["has_orchestrator"]]
-        single = [r for r in intl_results if r["skill_count"] < 3]
-        with_bookkeeping = [r for r in intl_results if r.get("has_bookkeeping")]
-        with_einvoice = [r for r in intl_results if r.get("has_einvoice")]
-        with_payroll = [r for r in intl_results if r.get("has_payroll")]
-        with_formation = [r for r in intl_results if r.get("has_formation")]
-        with_fin_stmts = [r for r in intl_results if r.get("has_financial_statements")]
-        with_tp = [r for r in intl_results if r.get("has_transfer_pricing")]
-        with_tax_opt = [r for r in intl_results if r.get("has_tax_optimization")]
-        with_crypto = [r for r in intl_results if r.get("has_crypto")]
+    full = [r for r in intl_results if r["has_orchestrator"]]
+    multi = [r for r in intl_results if r["skill_count"] >= 3 and not r["has_orchestrator"]]
+    single = [r for r in intl_results if r["skill_count"] < 3]
+    with_bookkeeping = [r for r in intl_results if r.get("has_bookkeeping")]
+    with_einvoice = [r for r in intl_results if r.get("has_einvoice")]
+    with_payroll = [r for r in intl_results if r.get("has_payroll")]
+    with_formation = [r for r in intl_results if r.get("has_formation")]
+    with_fin_stmts = [r for r in intl_results if r.get("has_financial_statements")]
+    with_tp = [r for r in intl_results if r.get("has_transfer_pricing")]
+    with_tax_opt = [r for r in intl_results if r.get("has_tax_optimization")]
+    with_crypto = [r for r in intl_results if r.get("has_crypto")]
 
-        print(f"\nInternational packages built: {len(intl_results)}")
-        print(f"  Full (with orchestrator): {len(full)} — {', '.join(r['name'] for r in full)}")
-        print(f"  Multi-skill (3+ skills): {len(multi)}")
-        print(f"  Single-skill (1-2 skills): {len(single)}")
-        print(f"  With bookkeeping: {len(with_bookkeeping)}")
-        print(f"  With e-invoicing: {len(with_einvoice)}")
-        print(f"  With payroll: {len(with_payroll)}")
-        print(f"  With company formation: {len(with_formation)}")
-        print(f"  With financial statements: {len(with_fin_stmts)}")
-        print(f"  With transfer pricing: {len(with_tp)}")
-        print(f"  With tax optimization: {len(with_tax_opt)}")
-        print(f"  With crypto tax: {len(with_crypto)}")
+    print(f"\nInternational packages built: {len(intl_results)}")
+    print(f"  Full (with orchestrator): {len(full)} — {', '.join(r['name'] for r in full)}")
+    print(f"  Multi-skill (3+ skills): {len(multi)}")
+    print(f"  Single-skill (1-2 skills): {len(single)}")
+    print(f"  With bookkeeping: {len(with_bookkeeping)}")
+    print(f"  With e-invoicing: {len(with_einvoice)}")
+    print(f"  With payroll: {len(with_payroll)}")
+    print(f"  With company formation: {len(with_formation)}")
+    print(f"  With financial statements: {len(with_fin_stmts)}")
+    print(f"  With transfer pricing: {len(with_tp)}")
+    print(f"  With tax optimization: {len(with_tax_opt)}")
+    print(f"  With crypto tax: {len(with_crypto)}")
 
     # ---- Cross-border package ----
     xb_result = None
-    if not us_only:
-        xb_dir = os.path.join(SKILLS_DIR, "cross-border")
-        if os.path.isdir(xb_dir):
-            xb_pkg = os.path.join(PACKAGES_DIR, "_cross-border")
-            os.makedirs(xb_pkg, exist_ok=True)
-            xb_files = []
-            # Copy top-level cross-border skills
-            for f in sorted(os.listdir(xb_dir)):
-                if f.endswith(".md"):
-                    shutil.copy2(os.path.join(xb_dir, f), os.path.join(xb_pkg, f))
-                    xb_files.append(f)
-            # Copy treaty corridor files from subdirectory
-            corridors_dir = os.path.join(xb_dir, "treaty-corridors")
-            if os.path.isdir(corridors_dir):
-                for f in sorted(os.listdir(corridors_dir)):
-                    if f.endswith(".md"):
-                        shutil.copy2(os.path.join(corridors_dir, f), os.path.join(xb_pkg, f))
-                        xb_files.append(f)
-            # Copy cross-border workflow base from foundation
-            xb_base = os.path.join(SKILLS_DIR, "foundation", "cross-border-workflow-base.md")
-            if os.path.isfile(xb_base):
-                shutil.copy2(xb_base, os.path.join(xb_pkg, "cross-border-workflow-base.md"))
-                xb_files.append("cross-border-workflow-base.md")
-            declared_from = [os.path.join(xb_dir, f) for f in sorted(os.listdir(xb_dir)) if f.endswith(".md")]
-            if os.path.isdir(corridors_dir):
-                declared_from += [os.path.join(corridors_dir, f) for f in sorted(os.listdir(corridors_dir))
-                                  if f.endswith(".md")]
-            copy_declared_bases(declared_from, xb_pkg, xb_files)
-            if xb_files:
-                with open(os.path.join(xb_pkg, "README.md"), "w") as fh:
-                    fh.write("# Cross-Border Accounting Skills\n\n"
-                             "Multi-jurisdiction orchestrator for international transactions: "
-                             "tax residency, VAT place of supply, withholding tax treaties, "
-                             "social security coordination, PE risk, transfer pricing, "
-                             "cross-border payroll, and e-invoicing compliance.\n\n"
-                             "These skills supplement country packages when a taxpayer "
-                             "has cross-border activity. Load alongside the relevant "
-                             "country packages for each jurisdiction involved.\n")
-                xb_files.append("README.md")
-                xb_result = {
-                    "jurisdiction": "CROSS-BORDER",
-                    "name": "Cross-Border",
-                    "files": xb_files,
-                    "has_orchestrator": True,
-                    "skill_count": len(xb_files) - 1,
-                }
-                print(f"\nCross-border package built: {len(xb_files) - 1} skills")
+    xb_dir = os.path.join(SKILLS_DIR, "cross-border")
+    if os.path.isdir(xb_dir):
+        xb_pkg = os.path.join(PACKAGES_DIR, "_cross-border")
+        os.makedirs(xb_pkg, exist_ok=True)
+        xb_files = []
+        xb_shared = []
+        # Copy top-level cross-border skills
+        for f in source_guides(xb_dir):
+            shutil.copy2(os.path.join(xb_dir, f), os.path.join(xb_pkg, f))
+            xb_files.append(f)
+        # Copy treaty corridor files from subdirectory
+        corridors_dir = os.path.join(xb_dir, "treaty-corridors")
+        if os.path.isdir(corridors_dir):
+            for f in source_guides(corridors_dir):
+                shutil.copy2(os.path.join(corridors_dir, f), os.path.join(xb_pkg, f))
+                xb_files.append(f)
+        # The cross-border workflow base from foundation: shared
+        xb_base = os.path.join(SKILLS_DIR, "foundation", "cross-border-workflow-base.md")
+        if os.path.isfile(xb_base):
+            xb_shared.append(share("cross-border-workflow-base.md", xb_base))
+        declared_from = [os.path.join(xb_dir, f) for f in source_guides(xb_dir)]
+        if os.path.isdir(corridors_dir):
+            declared_from += [os.path.join(corridors_dir, f) for f in source_guides(corridors_dir)]
+        share_declared_bases(declared_from, xb_shared)
+        if xb_files:
+            with open(os.path.join(xb_pkg, "README.md"), "w") as fh:
+                fh.write("# Cross-Border Accounting Skills\n\n"
+                         "Multi-jurisdiction orchestrator for international transactions: "
+                         "tax residency, VAT place of supply, withholding tax treaties, "
+                         "social security coordination, PE risk, transfer pricing, "
+                         "cross-border payroll, and e-invoicing compliance.\n\n"
+                         "These skills supplement country packages when a taxpayer "
+                         "has cross-border activity. Load alongside the relevant "
+                         "country packages for each jurisdiction involved.\n"
+                         + shared_section(xb_shared))
+            xb_files.append("README.md")
+            xb_result = {
+                "jurisdiction": "CROSS-BORDER",
+                "name": "Cross-Border",
+                "package_dir": "_cross-border",
+                "files": xb_files,
+                "shared": sorted(set(xb_shared)),
+                "has_orchestrator": True,
+                "skill_count": len(xb_files) - 1,
+            }
+            print(f"\nCross-border package built: {len(xb_files) - 1} skills")
 
     # ---- Industry verticals package ----
     vert_result = None
-    if not us_only:
-        vert_dir = os.path.join(SKILLS_DIR, "verticals")
-        if os.path.isdir(vert_dir):
-            vert_pkg = os.path.join(PACKAGES_DIR, "_verticals")
-            os.makedirs(vert_pkg, exist_ok=True)
-            vert_files = []
-            for f in sorted(os.listdir(vert_dir)):
-                if f.endswith(".md"):
-                    shutil.copy2(os.path.join(vert_dir, f), os.path.join(vert_pkg, f))
-                    vert_files.append(f)
-            copy_declared_bases([os.path.join(vert_dir, f) for f in vert_files], vert_pkg, vert_files)
-            if vert_files:
-                with open(os.path.join(vert_pkg, "README.md"), "w") as fh:
-                    fh.write("# Industry Vertical Skills\n\n"
-                             "Industry-specific accounting patterns for freelancers and small businesses.\n"
-                             "Load alongside your country package for industry-aware tax classification.\n\n"
-                             "Available verticals: " + ", ".join(f.replace('.md', '').replace('-', ' ').title() for f in vert_files) + "\n")
-                vert_files.append("README.md")
-                vert_result = {
-                    "jurisdiction": "VERTICALS",
-                    "name": "Industry Verticals",
-                    "files": vert_files,
-                    "has_orchestrator": False,
-                    "skill_count": len(vert_files) - 1,
-                }
-                print(f"\nIndustry verticals package built: {len(vert_files) - 1} skills")
+    vert_dir = os.path.join(SKILLS_DIR, "verticals")
+    if os.path.isdir(vert_dir):
+        vert_pkg = os.path.join(PACKAGES_DIR, "_verticals")
+        os.makedirs(vert_pkg, exist_ok=True)
+        vert_files = []
+        vert_shared = []
+        for f in source_guides(vert_dir):
+            shutil.copy2(os.path.join(vert_dir, f), os.path.join(vert_pkg, f))
+            vert_files.append(f)
+        share_declared_bases([os.path.join(vert_dir, f) for f in vert_files], vert_shared)
+        if vert_files:
+            with open(os.path.join(vert_pkg, "README.md"), "w") as fh:
+                fh.write("# Industry Vertical Skills\n\n"
+                         "Industry-specific accounting patterns for freelancers and small businesses.\n"
+                         "Load alongside your country package for industry-aware tax classification.\n\n"
+                         "Available verticals: " + ", ".join(f.replace('.md', '').replace('-', ' ').title() for f in vert_files) + "\n"
+                         + shared_section(vert_shared))
+            vert_files.append("README.md")
+            vert_result = {
+                "jurisdiction": "VERTICALS",
+                "name": "Industry Verticals",
+                "package_dir": "_verticals",
+                "files": vert_files,
+                "shared": sorted(set(vert_shared)),
+                "has_orchestrator": False,
+                "skill_count": len(vert_files) - 1,
+            }
+            print(f"\nIndustry verticals package built: {len(vert_files) - 1} skills")
 
     # ---- Integrations package ----
     integ_result = None
-    if not us_only:
-        integ_dir = os.path.join(SKILLS_DIR, "integrations")
-        if os.path.isdir(integ_dir):
-            integ_pkg = os.path.join(PACKAGES_DIR, "_integrations")
-            os.makedirs(integ_pkg, exist_ok=True)
-            integ_files = []
-            for f in sorted(os.listdir(integ_dir)):
-                if f.endswith(".md"):
-                    shutil.copy2(os.path.join(integ_dir, f), os.path.join(integ_pkg, f))
-                    integ_files.append(f)
-            copy_declared_bases([os.path.join(integ_dir, f) for f in integ_files], integ_pkg, integ_files)
-            if integ_files:
-                with open(os.path.join(integ_pkg, "README.md"), "w") as fh:
-                    fh.write("# Software & Platform Integration Skills\n\n"
-                             "Column mappings, export formats, and reconciliation guides for popular\n"
-                             "accounting software and payment platforms.\n\n"
-                             "Load alongside your country package so the AI knows how to read your\n"
-                             "Stripe CSV, Xero export, PayPal download, or bank statement format.\n")
-                integ_files.append("README.md")
-                integ_result = {
-                    "jurisdiction": "INTEGRATIONS",
-                    "name": "Software Integrations",
-                    "files": integ_files,
-                    "has_orchestrator": False,
-                    "skill_count": len(integ_files) - 1,
-                }
-                print(f"\nIntegrations package built: {len(integ_files) - 1} skills")
+    integ_dir = os.path.join(SKILLS_DIR, "integrations")
+    if os.path.isdir(integ_dir):
+        integ_pkg = os.path.join(PACKAGES_DIR, "_integrations")
+        os.makedirs(integ_pkg, exist_ok=True)
+        integ_files = []
+        integ_shared = []
+        for f in source_guides(integ_dir):
+            shutil.copy2(os.path.join(integ_dir, f), os.path.join(integ_pkg, f))
+            integ_files.append(f)
+        share_declared_bases([os.path.join(integ_dir, f) for f in integ_files], integ_shared)
+        if integ_files:
+            with open(os.path.join(integ_pkg, "README.md"), "w") as fh:
+                fh.write("# Software & Platform Integration Skills\n\n"
+                         "Column mappings, export formats, and reconciliation guides for popular\n"
+                         "accounting software and payment platforms.\n\n"
+                         "Load alongside your country package so the AI knows how to read your\n"
+                         "Stripe CSV, Xero export, PayPal download, or bank statement format.\n"
+                         + shared_section(integ_shared))
+            integ_files.append("README.md")
+            integ_result = {
+                "jurisdiction": "INTEGRATIONS",
+                "name": "Software Integrations",
+                "package_dir": "_integrations",
+                "files": integ_files,
+                "shared": sorted(set(integ_shared)),
+                "has_orchestrator": False,
+                "skill_count": len(integ_files) - 1,
+            }
+            print(f"\nIntegrations package built: {len(integ_files) - 1} skills")
 
     # ---- US state packages ----
     us_results = build_all_us_packages()
@@ -1357,6 +1500,13 @@ def main():
     # the MCP server indexes packages/**/*.md frontmatter directly.
     special_pkgs = [xb_result, vert_result, integ_result]
     all_results = intl_results + [r for r in special_pkgs if r] + us_results + ca_results
+
+    # ---- Shared files and the bundle composition ----
+    shared_names = write_shared_dir(all_results)
+    write_bundles(all_results)
+    uses = sum(len(r.get("shared", [])) for r in all_results)
+    print(f"\nShared files written once to packages/{SHARED_DIR_NAME}/: {len(shared_names)} "
+          f"(used {uses} times across the packages); composition in packages/{BUNDLES_FILE}")
 
     print(f"\nTotal packages: {len(all_results)}")
     print("packages/manifest.json is deprecated and not written — index.json is the canonical inventory.")

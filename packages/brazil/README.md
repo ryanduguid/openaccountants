@@ -5,26 +5,32 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `br-estimated-tax.md`
-4. `br-income-tax.md`
-5. `br-indirect-tax.md`
-6. `br-inss.md`
-7. `br-simples-nacional.md`
-8. `brazil-crypto-tax.md`
-9. `brazil-einvoice.md`
-10. `brazil-payroll.md`
-11. `brazil-transfer-pricing.md`
-12. `brazil-vat.md`
-13. `references.md`
-14. `einvoice-workflow-base.md`
-15. `payroll-workflow-base.md`
-16. `transfer-pricing-workflow-base.md`
-17. `crypto-tax-workflow-base.md`
-18. `income-tax-workflow-base.md`
-19. `brazil-guided-intake.md`
-20. `brazil-return-assembly.md`
+1. `intake.md`
+2. `br-estimated-tax.md`
+3. `br-income-tax.md`
+4. `br-indirect-tax.md`
+5. `br-inss.md`
+6. `br-simples-nacional.md`
+7. `brazil-crypto-tax.md`
+8. `brazil-einvoice.md`
+9. `brazil-payroll.md`
+10. `brazil-transfer-pricing.md`
+11. `brazil-vat.md`
+12. `references.md`
+13. `brazil-guided-intake.md`
+14. `brazil-return-assembly.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+
 
 ## Also known as
 
@@ -34,7 +40,7 @@ Tax authority: **Receita Federal do Brasil**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Brazil taxes. Here's my bank statement."**

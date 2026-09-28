@@ -5,19 +5,25 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `cz-company-formation.md`
-4. `cz-corporate-income-tax.md`
-5. `cz-income-tax.md`
-6. `cz-social-health.md`
-7. `cz-tax-overview.md`
-8. `cz-vat-return.md`
-9. `czech-republic-vat-return.md`
-10. `references.md`
-11. `eu-vat-directive.md`
-12. `company-formation-workflow-base.md`
-13. `income-tax-workflow-base.md`
+1. `intake.md`
+2. `cz-company-formation.md`
+3. `cz-corporate-income-tax.md`
+4. `cz-income-tax.md`
+5. `cz-social-health.md`
+6. `cz-tax-overview.md`
+7. `cz-vat-return.md`
+8. `czech-republic-vat-return.md`
+9. `references.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+
 
 ## Also known as
 
@@ -27,7 +33,7 @@ Tax authority: **Finanční správa České republiky**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Czech Republic taxes. Here's my bank statement."**

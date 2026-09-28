@@ -5,26 +5,32 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `china-pit.md`
-4. `china-to-singapore-relocation-tax.md`
-5. `china-vat.md`
-6. `cn-corporate-tax.md`
-7. `cn-fapiao-einvoice.md`
-8. `cn-formation.md`
-9. `cn-freelance-intake.md`
-10. `cn-iit.md`
-11. `cn-return-assembly.md`
-12. `cn-social-insurance.md`
-13. `cn-stamp-tax.md`
-14. `cn-vat.md`
-15. `cn-withholding.md`
-16. `references.md`
-17. `einvoice-workflow-base.md`
-18. `company-formation-workflow-base.md`
-19. `income-tax-workflow-base.md`
-20. `vat-workflow-base.md`
+1. `intake.md`
+2. `china-pit.md`
+3. `china-to-singapore-relocation-tax.md`
+4. `china-vat.md`
+5. `cn-corporate-tax.md`
+6. `cn-fapiao-einvoice.md`
+7. `cn-formation.md`
+8. `cn-freelance-intake.md`
+9. `cn-iit.md`
+10. `cn-return-assembly.md`
+11. `cn-social-insurance.md`
+12. `cn-stamp-tax.md`
+13. `cn-vat.md`
+14. `cn-withholding.md`
+15. `references.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
+
 
 ## Also known as
 
@@ -34,7 +40,7 @@ Tax authority: **State Taxation Administration (国家税务总局)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 China taxes. Here's my bank statement."**

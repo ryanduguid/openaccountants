@@ -5,18 +5,24 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `leaving-south-africa-tax-emigration.md`
-4. `south-africa-transfer-pricing.md`
-5. `south-africa-vat.md`
-6. `za-capital-gains.md`
-7. `za-income-tax.md`
-8. `za-provisional-tax.md`
-9. `za-tax-residency.md`
-10. `za-vat-return.md`
-11. `transfer-pricing-workflow-base.md`
-12. `vat-workflow-base.md`
+1. `intake.md`
+2. `leaving-south-africa-tax-emigration.md`
+3. `south-africa-transfer-pricing.md`
+4. `south-africa-vat.md`
+5. `za-capital-gains.md`
+6. `za-income-tax.md`
+7. `za-provisional-tax.md`
+8. `za-tax-residency.md`
+9. `za-vat-return.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`foundation.md`](../_shared/foundation.md)
+- [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
+
 
 ## Also known as
 
@@ -26,7 +32,7 @@ Tax authority: **South African Revenue Service (SARS)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 South Africa taxes. Here's my bank statement."**

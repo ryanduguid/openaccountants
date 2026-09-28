@@ -4,9 +4,9 @@ One page on how this repo is organized, what is generated vs hand-maintained, an
 
 ## The one rule
 
-**`skills/` is the editable source. `packages/` is generated from it — except `packages/us-federal/`, which is hand-authored.**
+**`skills/` is the editable source. `packages/` is generated from it — except `packages/us-federal/`, which is hand-authored (the federal rates JSONs and their runbook).**
 
-`scripts/build-packages.py` reads `skills/` and rebuilds the per-jurisdiction bundles under `packages/`. Anything you write directly into a generated package will be overwritten on the next build. The build never touches hand-authored packages (see `HAND_AUTHORED_PACKAGES` in `scripts/oa_tools/paths.py`, the list the build and the validator share), so `packages/us-federal/` is safe to edit in place.
+`scripts/build-packages.py` reads `skills/` and rebuilds the per-jurisdiction packages under `packages/`. A package folder holds only the files specific to its jurisdiction; every file that several packages need (the universal `foundation.md`, the workflow bases from `skills/foundation/`, the US federal set from `skills/federal/`, the federal Canadian set, the core orchestrators, the EU VAT base) is written once to `packages/_shared/`. Each package's `README.md` lists the shared files it needs, `packages/bundles.json` records the same composition for tools, and `scripts/build-bundle.py` (`make bundle JURISDICTION=<folder>`) assembles a package and its shared files into one upload-ready folder under `dist/bundles/`. Anything you write directly into a generated package will be overwritten on the next build. The build never touches hand-authored packages (see `HAND_AUTHORED_PACKAGES` in `scripts/oa_tools/paths.py`, the list the build and the validator share), so `packages/us-federal/` is safe to edit in place.
 
 **Regenerate after every source edit, and commit the output with the edit:**
 
@@ -32,14 +32,18 @@ skills/                    # SOURCE — edit tax content here
   intelligence/            #   deadline engine, threshold alerts, optimisation advisor
   patterns/, templates/    #   shared authoring patterns and file templates
 
-packages/                  # GENERATED per-jurisdiction bundles — do not edit (one exception)
+packages/                  # GENERATED per-jurisdiction packages — do not edit (one exception)
   <jurisdiction>/          #   one folder per country / US state / CA province (malta/, us-ca/, ...)
+                           #   holding only that jurisdiction's files; its README lists the shared ones
+  _shared/                 #   every file several packages need, once (foundation.md, workflow
+                           #   bases, the US federal set, the federal Canadian set, orchestrators)
+  bundles.json             #   per package: its own files and its shared files (make bundle reads it)
   _cross-border/           #   cross-border and multi-jurisdiction bundles
   _verticals/              #   industry-specific bundles
   _integrations/           #   platform-integration bundles
-  us-federal/              #   EXCEPTION — HAND-AUTHORED. US federal form guides +
-                           #   rates.2025.json / rates.2026.json (OBBBA corrections
-                           #   reviewed by Christopher Aryee, CPA). Never regenerated.
+  us-federal/              #   EXCEPTION — HAND-AUTHORED. rates.2025.json / rates.2026.json
+                           #   (OBBBA corrections reviewed by Christopher Aryee, CPA) and their
+                           #   runbook. Never regenerated. The federal guides live in skills/federal/.
 
 workflows/                 # Guided 6-phase advisor workflows (cross-border intake, UK CGT, ...)
 mcp/                       # Python MCP server source (openaccountants-mcp on PyPI)
@@ -66,8 +70,9 @@ requirements-dev.txt       # Everything the generators, the gates and the tests 
 | Path | Status | Regenerate with |
 |------|--------|-----------------|
 | `skills/**` | Hand-maintained source | — |
-| `packages/**` (except `us-federal/`) | Generated | `python3 scripts/build-packages.py` |
-| `packages/us-federal/**` | **Hand-authored** — form guides + rates JSONs | — (see `ANNUAL-UPDATE-RUNBOOK.md` there) |
+| `packages/**` (except `us-federal/`), including `_shared/` and `bundles.json` | Generated | `python3 scripts/build-packages.py` |
+| `packages/us-federal/**` | **Hand-authored** — rates JSONs + runbook | — (see `ANNUAL-UPDATE-RUNBOOK.md` there) |
+| `dist/bundles/<package>/` | Build output, gitignored — one package plus its shared files | `make bundle JURISDICTION=<package>` |
 | `index.json` | Generated | `python3 scripts/build-index.py` |
 | `llms-full.txt` | Generated (embeds `llms.txt`, the index inventory, `START-HERE.md`, `docs/QUALITY-TIERS.md`) | `python3 scripts/build-llms-full.py` (after `build-index.py`) |
 | `workflows/`, `mcp/`, `docs/`, `scripts/` | Hand-maintained | — |
@@ -88,11 +93,11 @@ If you need a machine-readable listing, read `index.json` or run `python3 script
 
 - **Fix a rate or rule for a country (Malta VAT, Germany payroll, ...):** `skills/international/<country>/`, then regenerate (the three commands above) and commit the output.
 - **Fix a US state skill:** `skills/us-states/<code>/`, then regenerate.
-- **Fix a US federal form guide or federal rates JSON:** `packages/us-federal/` directly. Do NOT look for a source in `skills/federal/` for these — the us-federal package is the source.
-- **Add a US federal source skill (non-form-guide):** `skills/federal/`, then regenerate.
+- **Fix a US federal guide (form guides included):** `skills/federal/`, then regenerate; the build writes it once to `packages/_shared/` for every US package.
+- **Fix a federal rates JSON:** `packages/us-federal/` directly (hand-authored; see the runbook there).
 - **Cross-border / treaty rules:** `skills/cross-border/`, then regenerate.
 - **A guided workflow:** `workflows/`.
 - **The MCP server:** `mcp/`.
-- **Anything under `packages/` other than `us-federal/`:** don't — edit the source in `skills/` and regenerate.
+- **Anything under `packages/` other than `us-federal/` (`_shared/` and `bundles.json` included):** don't — edit the source in `skills/` and regenerate.
 
 Contribution process and frontmatter conventions: [CONTRIBUTING.md](../CONTRIBUTING.md). [WEBSITE-SYNC.md](WEBSITE-SYNC.md) is upstream's retired sync contract, kept for reference.

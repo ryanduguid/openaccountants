@@ -5,33 +5,39 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `it-estimated-tax.md`
-4. `it-impatriati.md`
-5. `it-income-tax.md`
-6. `it-inps-contributions.md`
-7. `it-irap.md`
-8. `italy-bookkeeping.md`
-9. `italy-crypto-tax.md`
-10. `italy-einvoice.md`
-11. `italy-financial-statements.md`
-12. `italy-formation.md`
-13. `italy-payroll.md`
-14. `italy-tax-optimization.md`
-15. `italy-transfer-pricing.md`
-16. `italy-vat-return.md`
-17. `references.md`
-18. `eu-vat-directive.md`
-19. `bookkeeping-workflow-base.md`
-20. `einvoice-workflow-base.md`
-21. `payroll-workflow-base.md`
-22. `company-formation-workflow-base.md`
-23. `financial-statements-workflow-base.md`
-24. `transfer-pricing-workflow-base.md`
-25. `crypto-tax-workflow-base.md`
-26. `income-tax-workflow-base.md`
-27. `social-contributions-workflow-base.md`
+1. `intake.md`
+2. `it-estimated-tax.md`
+3. `it-impatriati.md`
+4. `it-income-tax.md`
+5. `it-inps-contributions.md`
+6. `it-irap.md`
+7. `italy-bookkeeping.md`
+8. `italy-crypto-tax.md`
+9. `italy-einvoice.md`
+10. `italy-financial-statements.md`
+11. `italy-formation.md`
+12. `italy-payroll.md`
+13. `italy-tax-optimization.md`
+14. `italy-transfer-pricing.md`
+15. `italy-vat-return.md`
+16. `references.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+- [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+
 
 ## Also known as
 
@@ -41,7 +47,7 @@ Tax authority: **Agenzia delle Entrate**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Italy taxes. Here's my bank statement."**

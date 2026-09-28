@@ -5,24 +5,30 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `references.md`
-4. `sk-company-formation.md`
-5. `sk-corporate-income-tax.md`
-6. `sk-payroll-social.md`
-7. `sk-tax-overview.md`
-8. `slovakia-pit.md`
-9. `slovakia-vat-registration-4-7-7a.md`
-10. `slovakia-vat-return.md`
-11. `eu-vat-directive.md`
-12. `payroll-workflow-base.md`
-13. `company-formation-workflow-base.md`
-14. `income-tax-workflow-base.md`
+1. `intake.md`
+2. `references.md`
+3. `sk-company-formation.md`
+4. `sk-corporate-income-tax.md`
+5. `sk-payroll-social.md`
+6. `sk-tax-overview.md`
+7. `slovakia-pit.md`
+8. `slovakia-vat-registration-4-7-7a.md`
+9. `slovakia-vat-return.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Slovakia taxes. Here's my bank statement."**

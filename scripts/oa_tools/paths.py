@@ -20,14 +20,16 @@ PACKAGES_DIR = os.path.join(REPO_ROOT, "packages")
 
 #: Directories under ``packages/`` that are maintained by hand and have no
 #: builder in ``build-packages.py``: the build must never wipe or write into
-#: them, and the validator treats them as source. ``docs/REPO-LAYOUT.md`` is the
-#: human-readable statement of the same rule.
+#: them. Since 2026-09-28 ``us-federal`` holds only the federal rates JSONs
+#: and their runbook; the federal guides live in ``skills/federal/`` and are
+#: shared into every US package. ``docs/REPO-LAYOUT.md`` is the human-readable
+#: statement of the same rule.
 HAND_AUTHORED_PACKAGES = frozenset({"us-federal"})
 
 #: The trees walked for guide files, relative to :data:`REPO_ROOT`: the source
-#: tree plus the hand-authored federal set. Generated packages are excluded on
-#: purpose; ``validate-guides.py`` checks those separately against the source.
-GUIDE_TREES = ("skills", os.path.join("packages", "us-federal"))
+#: tree. Generated packages are excluded on purpose; ``validate-guides.py``
+#: checks those separately against the source.
+GUIDE_TREES = ("skills",)
 
 
 def repo_root():

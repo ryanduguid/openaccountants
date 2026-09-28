@@ -5,54 +5,60 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `au-capital-gains.md`
-4. `au-company-tax.md`
-5. `au-crypto-tax.md`
-6. `au-deceased-estates.md`
-7. `au-div7a.md`
-8. `au-fbt-year.md`
-9. `au-fbt.md`
-10. `au-foreign-income.md`
-11. `au-gst-bas.md`
-12. `au-gst-property.md`
-13. `au-individual-return.md`
-14. `au-land-tax.md`
-15. `au-medicare-levy.md`
-16. `au-nonresident-cgt.md`
-17. `au-not-for-profit.md`
-18. `au-partnerships.md`
-19. `au-payg-instalments.md`
-20. `au-psi.md`
-21. `au-rates-2026-27.md`
-22. `au-rd-incentive.md`
-23. `au-rental-property.md`
-24. `au-small-business-cgt.md`
-25. `au-smsf.md`
-26. `au-sole-trader-schedule.md`
-27. `au-stamp-duty.md`
-28. `au-super-guarantee.md`
-29. `au-tax-residency.md`
-30. `au-trust-distributions.md`
-31. `australia-bookkeeping.md`
-32. `australia-financial-statements.md`
-33. `australia-formation.md`
-34. `australia-gst.md`
-35. `australia-payroll.md`
-36. `australia-tax-optimization.md`
-37. `australia-transfer-pricing.md`
-38. `leaving-australia-tax-residency-cgt.md`
-39. `references.md`
-40. `bookkeeping-workflow-base.md`
-41. `payroll-workflow-base.md`
-42. `company-formation-workflow-base.md`
-43. `financial-statements-workflow-base.md`
-44. `transfer-pricing-workflow-base.md`
-45. `crypto-tax-workflow-base.md`
-46. `income-tax-workflow-base.md`
-47. `australia-guided-intake.md`
-48. `australia-return-assembly.md`
+1. `intake.md`
+2. `au-capital-gains.md`
+3. `au-company-tax.md`
+4. `au-crypto-tax.md`
+5. `au-deceased-estates.md`
+6. `au-div7a.md`
+7. `au-fbt-year.md`
+8. `au-fbt.md`
+9. `au-foreign-income.md`
+10. `au-gst-bas.md`
+11. `au-gst-property.md`
+12. `au-individual-return.md`
+13. `au-land-tax.md`
+14. `au-medicare-levy.md`
+15. `au-nonresident-cgt.md`
+16. `au-not-for-profit.md`
+17. `au-partnerships.md`
+18. `au-payg-instalments.md`
+19. `au-psi.md`
+20. `au-rates-2026-27.md`
+21. `au-rd-incentive.md`
+22. `au-rental-property.md`
+23. `au-small-business-cgt.md`
+24. `au-smsf.md`
+25. `au-sole-trader-schedule.md`
+26. `au-stamp-duty.md`
+27. `au-super-guarantee.md`
+28. `au-tax-residency.md`
+29. `au-trust-distributions.md`
+30. `australia-bookkeeping.md`
+31. `australia-financial-statements.md`
+32. `australia-formation.md`
+33. `australia-gst.md`
+34. `australia-payroll.md`
+35. `australia-tax-optimization.md`
+36. `australia-transfer-pricing.md`
+37. `leaving-australia-tax-residency-cgt.md`
+38. `references.md`
+39. `australia-guided-intake.md`
+40. `australia-return-assembly.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+
 
 ## Also known as
 
@@ -62,7 +68,7 @@ Tax authority: **Australian Taxation Office (ATO)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Australia taxes. Here's my bank statement."**

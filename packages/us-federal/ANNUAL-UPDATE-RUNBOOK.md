@@ -6,7 +6,7 @@ Maintainer-facing operational guide. Update once per year in early December.
 
 ## 1. Why this file exists
 
-Every US federal skill in `us-federal/` and every US-state skill in `us-XX/` carries dozens of indexed dollar amounts: bracket thresholds, standard deduction, FEIE cap, 401(k) deferral, SS wage base, gift exclusion, AMT exemption, §179, depreciation caps, mileage, FBAR, 1099 thresholds. If those numbers live inline in the markdown, one IRS Rev. Proc. release in October triggers ~150 edits across ~80 skills. That is how stale rates leak into production.
+Every US federal skill in `skills/federal/` (served to every US package from `packages/_shared/`) and every US-state skill in `us-XX/` carries dozens of indexed dollar amounts: bracket thresholds, standard deduction, FEIE cap, 401(k) deferral, SS wage base, gift exclusion, AMT exemption, §179, depreciation caps, mileage, FBAR, 1099 thresholds. If those numbers live inline in the markdown, one IRS Rev. Proc. release in October triggers ~150 edits across ~80 skills. That is how stale rates leak into production.
 
 The rates.YYYY.json files are the single source of truth for indexed amounts. Skills cite the markdown for the *rule* and *citation*; they pull the *number* from `rates.YYYY.json`. One annual edit refreshes the whole stack.
 
@@ -142,7 +142,7 @@ When adding a new flash point, add it here too.
 
 Files that always carry year-stamped content. After updating `rates.YYYY+1.json`, walk this list to bump year references in markdown:
 
-### `us-federal/`
+### `skills/federal/` (the federal set; `packages/_shared/` carries the generated copy)
 - `us-form-1040-self-employed-positions.md`
 - `us-sole-prop-bookkeeping.md`
 - `us-schedule-c-and-se-computation.md`

@@ -22,7 +22,7 @@ WORKFLOWS = REPO_ROOT / ".github" / "workflows"
 #: The workflows that run this repository's own checks.
 GATES = ("validate.yml", "sync-integrity.yml")
 DISCOVER = 'unittest discover -s tests -p "test_*.py"'
-TARGETS = ("help", "install", "build", "validate", "sync-check", "checkers", "baselines", "test", "check")
+TARGETS = ("help", "install", "build", "bundle", "validate", "sync-check", "checkers", "baselines", "test", "check")
 #: The gate checkers (scripts/oa_tools/findings.py), as CI and the Makefile name them.
 GATE_CHECKERS = ("arithmetic", "bracket-tables", "expired-rules", "fact-conflicts", "coverage-claims")
 
@@ -100,6 +100,12 @@ class MakefileTests(unittest.TestCase):
         for name in baselines:
             head = (REPO_ROOT / "scripts" / "baselines" / f"{name}.txt").read_text(encoding="utf-8").splitlines()[0]
             self.assertIn(f"scripts/check-{name}.py", head)
+
+    def test_bundle_needs_a_jurisdiction_and_runs_the_assembler(self) -> None:
+        result = _make("bundle")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("pass JURISDICTION=<package>", result.stderr)
+        self.assertIn('scripts/build-bundle.py "us-ca"', _dry_run("bundle", "JURISDICTION=us-ca"))
 
     def test_help_lists_every_target(self) -> None:
         result = _make("help")

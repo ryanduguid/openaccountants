@@ -15,11 +15,11 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
    `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py`
 5. Open a PR with a description of what tax forms/schedules the skill covers
 
-> **Important:** write in `skills/**`, never by hand in `packages/`, `index.json` or `llms-full.txt` — those are generated. But do commit the regenerated copies: nothing else rebuilds them, and CI (`guard-derived-trees`) rebuilds all three and fails when the committed copies are stale. One exception: **`packages/us-federal/`** is hand-authored and may be edited directly.
+> **Important:** write in `skills/**`, never by hand in `packages/`, `index.json` or `llms-full.txt` — those are generated. But do commit the regenerated copies: nothing else rebuilds them, and CI (`guard-derived-trees`) rebuilds all three and fails when the committed copies are stale. One exception: **`packages/us-federal/`** (the federal rates JSONs and their runbook) is hand-authored and may be edited directly.
 
 ## Repo layout
 
-`skills/` is the editable source; `packages/` is generated from it by `scripts/build-packages.py` (except the hand-authored `packages/us-federal/`); `index.json` at the repo root is the machine-readable inventory of every Guide. The one-page canonical answer to "which file do I edit?" is [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
+`skills/` is the editable source; `packages/` is generated from it by `scripts/build-packages.py` (each package holds its own files and lists the shared ones, which live once in `packages/_shared/`; the hand-authored `packages/us-federal/` holds the federal rates JSONs); `index.json` at the repo root is the machine-readable inventory of every Guide. The one-page canonical answer to "which file do I edit?" is [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
 
 ## No website sync
 

@@ -5,18 +5,24 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `co-company-formation.md`
-4. `co-corporate-income-tax.md`
-5. `co-income-tax.md`
-6. `co-social-contributions.md`
-7. `co-tax-overview.md`
-8. `co-vat-return.md`
-9. `colombia-iva.md`
-10. `formalizing-small-informal-businesses-in-colombia.md`
-11. `company-formation-workflow-base.md`
-12. `vat-workflow-base.md`
+1. `intake.md`
+2. `co-company-formation.md`
+3. `co-corporate-income-tax.md`
+4. `co-income-tax.md`
+5. `co-social-contributions.md`
+6. `co-tax-overview.md`
+7. `co-vat-return.md`
+8. `colombia-iva.md`
+9. `formalizing-small-informal-businesses-in-colombia.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
+
 
 ## Also known as
 
@@ -26,7 +32,7 @@ Tax authority: **DIAN (Dirección de Impuestos y Aduanas Nacionales)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Colombia taxes. Here's my bank statement."**

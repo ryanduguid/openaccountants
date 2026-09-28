@@ -5,20 +5,26 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `new-zealand-crypto-tax.md`
-4. `new-zealand-gst.md`
-5. `nz-acc-levies.md`
-6. `nz-capital-gains.md`
-7. `nz-gst-return.md`
-8. `nz-income-tax-ir3.md`
-9. `nz-provisional-tax.md`
-10. `nz-tax-residency.md`
-11. `references.md`
-12. `crypto-tax-workflow-base.md`
-13. `income-tax-workflow-base.md`
-14. `vat-workflow-base.md`
+1. `intake.md`
+2. `new-zealand-crypto-tax.md`
+3. `new-zealand-gst.md`
+4. `nz-acc-levies.md`
+5. `nz-capital-gains.md`
+6. `nz-gst-return.md`
+7. `nz-income-tax-ir3.md`
+8. `nz-provisional-tax.md`
+9. `nz-tax-residency.md`
+10. `references.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
+
 
 ## Also known as
 
@@ -28,7 +34,7 @@ Tax authority: **Inland Revenue (IRD)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 New Zealand taxes. Here's my bank statement."**

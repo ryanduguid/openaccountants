@@ -5,25 +5,31 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `be-capital-gains.md`
-4. `be-income-tax.md`
-5. `be-social-contributions.md`
-6. `be-vat-return.md`
-7. `belgium-bookkeeping.md`
-8. `belgium-crypto-tax.md`
-9. `belgium-einvoice.md`
-10. `belgium-financial-statements.md`
-11. `belgium-payroll.md`
-12. `belgium-vat-return.md`
-13. `eu-vat-directive.md`
-14. `bookkeeping-workflow-base.md`
-15. `einvoice-workflow-base.md`
-16. `payroll-workflow-base.md`
-17. `financial-statements-workflow-base.md`
-18. `crypto-tax-workflow-base.md`
-19. `income-tax-workflow-base.md`
+1. `intake.md`
+2. `be-capital-gains.md`
+3. `be-income-tax.md`
+4. `be-social-contributions.md`
+5. `be-vat-return.md`
+6. `belgium-bookkeeping.md`
+7. `belgium-crypto-tax.md`
+8. `belgium-einvoice.md`
+9. `belgium-financial-statements.md`
+10. `belgium-payroll.md`
+11. `belgium-vat-return.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+
 
 ## Also known as
 
@@ -33,7 +39,7 @@ Tax authority: **SPF Finances / FOD Financiën**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Belgium taxes. Here's my bank statement."**

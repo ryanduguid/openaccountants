@@ -16,8 +16,8 @@ In all three the corpus already contained the right answer. It was in the wrong
 file, or in the wrong half of the right file, and the copy that a reader would
 actually load to do the work was the stale one.
 
-check-tree-divergence.py cannot see this: it compares copies of one guide
-across trees, and every copy carries the same stale guide. This compares
+A cross-tree comparison (the retired check-tree-divergence.py) could not see
+this: every copy of one guide carries the same stale rate. This compares
 SIBLINGS INSIDE a jurisdiction instead, which is the axis nothing else covers.
 
 Method: find sentences that record a rate change -- "rises to 16% from 1 January

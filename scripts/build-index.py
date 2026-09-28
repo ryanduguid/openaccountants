@@ -2,9 +2,8 @@
 """
 Build index.json — a machine-readable inventory of every Guide in the repo.
 
-Walks skills/**/*.md and packages/us-federal/*.md (the hand-authored federal
-set), skips READMEs and files without frontmatter, and writes index.json at
-the repo root:
+Walks skills/**/*.md (the source tree; packages/ is generated from it), skips
+READMEs and files without frontmatter, and writes index.json at the repo root:
 
 {
   "generated_at": "<UTC ISO>",

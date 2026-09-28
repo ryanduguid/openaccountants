@@ -5,19 +5,25 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `malaysia-einvoice.md`
-4. `malaysia-sst.md`
-5. `my-company-formation.md`
-6. `my-corporate-income-tax.md`
-7. `my-epf-socso.md`
-8. `my-income-tax.md`
-9. `my-pcb.md`
-10. `my-tax-overview.md`
-11. `einvoice-workflow-base.md`
-12. `company-formation-workflow-base.md`
-13. `income-tax-workflow-base.md`
+1. `intake.md`
+2. `malaysia-einvoice.md`
+3. `malaysia-sst.md`
+4. `my-company-formation.md`
+5. `my-corporate-income-tax.md`
+6. `my-epf-socso.md`
+7. `my-income-tax.md`
+8. `my-pcb.md`
+9. `my-tax-overview.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+
 
 ## Also known as
 
@@ -27,7 +33,7 @@ Tax authority: **Inland Revenue Board of Malaysia (LHDN)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Malaysia taxes. Here's my bank statement."**

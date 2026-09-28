@@ -17,7 +17,10 @@ scanner = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
 SPEC.loader.exec_module(scanner)
 
-US_FEDERAL = REPO_ROOT / "packages" / "us-federal"
+#: The federal guides the scanner reads, and the rates JSONs it takes the
+#: default tax year from.
+FEDERAL_GUIDES = REPO_ROOT / "skills" / "federal"
+US_FEDERAL_RATES = REPO_ROOT / "packages" / "us-federal"
 
 
 def populated(year: int) -> dict:
@@ -188,29 +191,43 @@ class BindingYearWindowTests(unittest.TestCase):
         )
 
 
-class RealPackagesTreeTests(unittest.TestCase):
+class RealFederalTreeTests(unittest.TestCase):
     """Behaviour on the corpus the scanner actually reads.
 
     Every other test here builds its own temporary tree, which is why the
-    migration of 157 of 196 packages/us-federal claims from 2025 to 2026 got
-    through CI: nothing looked at the real guides.
+    migration of 157 of 196 federal claims from 2025 to 2026 got through CI:
+    nothing looked at the real guides. Those were the untagged, hand-authored
+    packages/us-federal guides, retired on 2026-09-28 in favour of
+    skills/federal, every guide of which carries a frontmatter `tax_year`.
+    A tagged guide binds to its tag, so the prose inference that relabelled
+    the old set cannot reach these; what can still go wrong is a tag that
+    disagrees with the year the guide says it covers, or a claim that binds
+    away from the tag.
     """
 
     #: The coverage year each guide states in its own frontmatter description
     #: ("Covers tax year 2025 under OBBBA ..."). An independent signal from the
-    #: one content_tax_year derives, so this is a check and not a restatement.
+    #: `tax_year` tag, so this is a check and not a restatement.
     STATED_YEAR_RE = re.compile(r"tax year\s+(20\d\d)", re.IGNORECASE)
+    TAGGED_YEAR_RE = re.compile(r"^tax_year:\s*(20\d\d)\s*$", re.MULTILINE)
 
     def _guides(self) -> list[Path]:
-        guides = sorted(US_FEDERAL.glob("*.md"))
-        self.assertTrue(guides, "packages/us-federal has no guides to check")
+        guides = sorted(FEDERAL_GUIDES.glob("*.md"))
+        self.assertTrue(guides, "skills/federal has no guides to check")
         return guides
+
+    @staticmethod
+    def _frontmatter(text: str) -> str:
+        return text.split("---", 2)[1] if text.startswith("---") else ""
 
     def _stated_year(self, text: str) -> int | None:
         """The single coverage year a guide declares, or None if it declares none."""
-        frontmatter = text.split("---", 2)[1] if text.startswith("---") else ""
-        stated = set(self.STATED_YEAR_RE.findall(frontmatter))
+        stated = set(self.STATED_YEAR_RE.findall(self._frontmatter(text)))
         return int(stated.pop()) if len(stated) == 1 else None
+
+    def _tagged_year(self, text: str) -> int | None:
+        match = self.TAGGED_YEAR_RE.search(self._frontmatter(text))
+        return int(match.group(1)) if match else None
 
     @staticmethod
     def _fresh_stats() -> dict:
@@ -219,18 +236,16 @@ class RealPackagesTreeTests(unittest.TestCase):
              "ambiguous_year_dropped", "historical_dropped"), 0
         )
 
-    def test_us_federal_guides_carry_no_frontmatter_tax_year(self) -> None:
+    def test_federal_guides_carry_a_frontmatter_tax_year(self) -> None:
         """The premise the rest of this class rests on; assert it, don't assume."""
-        tagged = [
+        untagged = [
             g.name for g in self._guides()
-            if re.search(r"^tax_year:", g.read_text(encoding="utf-8"), re.MULTILINE)
+            if self._tagged_year(g.read_text(encoding="utf-8")) is None
         ]
 
-        self.assertEqual(tagged, [])
+        self.assertEqual(untagged, [])
 
-    def test_untagged_guides_bind_to_the_year_they_say_they_cover(self) -> None:
-        default = scanner.resolve_tax_year()
-        binding = scanner.binding_years(default)
+    def test_guides_are_tagged_with_the_year_they_say_they_cover(self) -> None:
         checked = 0
         for guide in self._guides():
             text = guide.read_text(encoding="utf-8")
@@ -240,27 +255,24 @@ class RealPackagesTreeTests(unittest.TestCase):
             checked += 1
             with self.subTest(guide=guide.name):
                 self.assertEqual(
-                    scanner.content_tax_year(text, default, binding), stated,
-                    f"{guide.name} binds to a year other than the one it covers",
+                    self._tagged_year(text), stated,
+                    f"{guide.name} is tagged with a year other than the one it covers",
                 )
         self.assertGreater(checked, 20, "expected most guides to state their year")
 
-    def test_a_future_default_never_drags_undated_claims_forward(self) -> None:
+    def test_a_future_default_never_drags_tagged_claims_forward(self) -> None:
         """The structural regression, exercised through extract_claims.
 
         Once next year's rates file is populated the default year advances, but
-        a guide whose prose is still this year's must not advance with it, or a
-        real drift against its twin in skills/federal silently stops being
-        reported.
+        a guide tagged with this year must not advance with it, or a real
+        contradiction between two guides silently stops being reported.
         """
         compiled = scanner.compile_concepts()
         ahead = scanner.resolve_tax_year() + 1
         checked = 0
         for guide in self._guides():
             text = guide.read_text(encoding="utf-8")
-            stated = self._stated_year(text)
-            if stated is None:
-                continue
+            tagged = self._tagged_year(text)
             claims = scanner.extract_claims(
                 str(guide), text, "US", compiled, self._fresh_stats(), ahead
             ) or []
@@ -270,8 +282,8 @@ class RealPackagesTreeTests(unittest.TestCase):
             checked += 1
             with self.subTest(guide=guide.name):
                 self.assertEqual(
-                    inferred, {stated},
-                    f"{guide.name} binds undated claims away from tax year {stated}",
+                    inferred, {tagged},
+                    f"{guide.name} binds undated claims away from tax year {tagged}",
                 )
         self.assertGreater(checked, 10, "expected real undated claims to check")
 
@@ -279,7 +291,7 @@ class RealPackagesTreeTests(unittest.TestCase):
         """ANNUAL-UPDATE-RUNBOOK.md has next year's skeleton created in December,
         before the markdown is refreshed, so max(rates year) structurally leads
         the content every year unless skeletons are excluded."""
-        rates = sorted(US_FEDERAL.glob("rates.*.json"))
+        rates = sorted(US_FEDERAL_RATES.glob("rates.*.json"))
         self.assertTrue(rates, "packages/us-federal has no canonical rates files")
         canonical = scanner.available_rate_years()
         for path in rates:

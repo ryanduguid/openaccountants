@@ -5,17 +5,23 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `pl-capital-gains.md`
-4. `pl-income-tax.md`
-5. `pl-vat-return.md`
-6. `pl-zus-contributions.md`
-7. `poland-einvoice.md`
-8. `poland-vat-return.md`
-9. `references.md`
-10. `eu-vat-directive.md`
-11. `einvoice-workflow-base.md`
+1. `intake.md`
+2. `pl-capital-gains.md`
+3. `pl-income-tax.md`
+4. `pl-vat-return.md`
+5. `pl-zus-contributions.md`
+6. `poland-einvoice.md`
+7. `poland-vat-return.md`
+8. `references.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`foundation.md`](../_shared/foundation.md)
+
 
 ## Also known as
 
@@ -25,7 +31,7 @@ Tax authority: **Krajowa Administracja Skarbowa (KAS)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Poland taxes. Here's my bank statement."**

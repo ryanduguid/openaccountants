@@ -5,20 +5,26 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `bt-company-formation.md`
-4. `bt-corporate-income-tax.md`
-5. `bt-income-tax.md`
-6. `bt-payroll-social.md`
-7. `bt-tax-overview.md`
-8. `bt-vat-gst.md`
-9. `payroll-workflow-base.md`
-10. `company-formation-workflow-base.md`
+1. `intake.md`
+2. `bt-company-formation.md`
+3. `bt-corporate-income-tax.md`
+4. `bt-income-tax.md`
+5. `bt-payroll-social.md`
+6. `bt-tax-overview.md`
+7. `bt-vat-gst.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Bahrain taxes. Here's my bank statement."**

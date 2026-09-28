@@ -5,20 +5,26 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `ar-company-formation.md`
-4. `ar-corporate-income-tax.md`
-5. `ar-income-tax.md`
-6. `ar-monotributo.md`
-7. `ar-social-contributions.md`
-8. `ar-tax-overview.md`
-9. `ar-vat-return.md`
-10. `argentina-iva.md`
-11. `references.md`
-12. `company-formation-workflow-base.md`
-13. `income-tax-workflow-base.md`
-14. `vat-workflow-base.md`
+1. `intake.md`
+2. `ar-company-formation.md`
+3. `ar-corporate-income-tax.md`
+4. `ar-income-tax.md`
+5. `ar-monotributo.md`
+6. `ar-social-contributions.md`
+7. `ar-tax-overview.md`
+8. `ar-vat-return.md`
+9. `argentina-iva.md`
+10. `references.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
+
 
 ## Also known as
 
@@ -28,7 +34,7 @@ Tax authority: **AFIP (Administración Federal de Ingresos Públicos)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Argentina taxes. Here's my bank statement."**

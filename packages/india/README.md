@@ -5,35 +5,41 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `in-advance-tax.md`
-4. `in-gst-return.md`
-5. `in-income-tax.md`
-6. `in-pf-esi-employer.md`
-7. `in-professional-tax.md`
-8. `in-tax-residency.md`
-9. `in-tds-freelance.md`
-10. `india-crypto-tax.md`
-11. `india-einvoice.md`
-12. `india-financial-statements.md`
-13. `india-formation.md`
-14. `india-gst.md`
-15. `india-payroll.md`
-16. `india-tax-optimization.md`
-17. `india-to-uae-singapore-nri-tax.md`
-18. `india-transfer-pricing.md`
-19. `references.md`
-20. `einvoice-workflow-base.md`
-21. `payroll-workflow-base.md`
-22. `company-formation-workflow-base.md`
-23. `financial-statements-workflow-base.md`
-24. `transfer-pricing-workflow-base.md`
-25. `crypto-tax-workflow-base.md`
-26. `bookkeeping-workflow-base.md`
-27. `income-tax-workflow-base.md`
-28. `india-guided-intake.md`
-29. `india-return-assembly.md`
+1. `intake.md`
+2. `in-advance-tax.md`
+3. `in-gst-return.md`
+4. `in-income-tax.md`
+5. `in-pf-esi-employer.md`
+6. `in-professional-tax.md`
+7. `in-tax-residency.md`
+8. `in-tds-freelance.md`
+9. `india-crypto-tax.md`
+10. `india-einvoice.md`
+11. `india-financial-statements.md`
+12. `india-formation.md`
+13. `india-gst.md`
+14. `india-payroll.md`
+15. `india-tax-optimization.md`
+16. `india-to-uae-singapore-nri-tax.md`
+17. `india-transfer-pricing.md`
+18. `references.md`
+19. `india-guided-intake.md`
+20. `india-return-assembly.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+
 
 ## Also known as
 
@@ -43,7 +49,7 @@ Tax authority: **Income Tax Department / CBDT / GSTN**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 India taxes. Here's my bank statement."**
