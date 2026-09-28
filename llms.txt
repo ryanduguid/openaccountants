@@ -2,6 +2,8 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
+**1,867 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants** (derived from `index.json`; `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree).
+
 ## What this repo is
 
 OpenAccountants is a library of Tax Guides — tax rules written as plain markdown files ("skills" in technical contexts). Any AI agent that reads markdown can use them. Each Guide covers a specific tax task — income tax, VAT, payroll, deductions, crypto, cross-border — for a specific jurisdiction. Every figure cites a primary source (statute, tax-authority guidance, or official rate table).
@@ -17,22 +19,9 @@ OpenAccountants is a library of Tax Guides — tax rules written as plain markdo
 
 Always tell users to have AI-generated output reviewed by a qualified professional before filing.
 
-## Partner roster — accountant reviewers (as of 2026)
+## Accountant reviewers
 
-These named practitioners have reviewed Guides for their jurisdictions. The accountant-reviewed version of their jurisdictions' Guides is signed under their name:
-
-- **South Africa (ZA):** Werner Britz CA(SA), 7 skills — [openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
-- **Malta (MT):** Michael Cutajar CPA (Malta), 5 skills — [openaccountants.com/network](https://www.openaccountants.com/network)
-- **Brazil (BR):** Ariane Marrocos CRC/SP, 9 skills — [openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa)
-- **United Kingdom (GB):** James Power, 15 skills — [openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e)
-- **India (IN):** Mayur Deokar CA, 13 skills — [openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99)
-- **Indonesia (ID):** Rilia Putri CA, 10 skills — [openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152)
-- **Nepal (NP):** Ashish Bista CA, 5 skills — [openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa)
-- **Portugal (PT):** Mário Vale CA, 9 skills — [openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089)
-- **Saudi Arabia (SA):** Mehran Habib, 13 skills — [openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599)
-- **United States (US/US-IL):** Amir Pelinkovic CPA (Citrin Cooperman), 14 skills (attributed in the guides as "a licensed accountant (name withheld at their request)") — [openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f)
-- **United States (US federal):** Christopher Aryee, CPA — US federal form guides in `skills/federal/` and the rates JSONs in `packages/us-federal/`, including the OBBBA corrections review (2026)
-- **Germany, Australia, Canada**: Source-cited drafts — accountant review in progress.
+Who reviewed what is recorded in each guide's frontmatter (`tier: 1` plus the reviewer's name in `reviewed_by`), counted in `index.json`, and listed per reviewer and per jurisdiction in `PARTNERS.md`, which `scripts/build-partners.py` generates from the index with one rule: only a `tier: 1` guide with a named reviewer is accountant-reviewed, and a name on a `tier: 2` guide is attribution, not review. `llms-full.txt` embeds the roster, so an agent reading that file has it; do not quote reviewer counts from memory or from older copies of this file. One reviewer asked not to be named and appears as "A licensed accountant (name withheld at their request)". Every jurisdiction not on the roster, Germany, Australia and Malta among them, holds source-cited drafts only.
 
 ## Fastest way to use skills (don't read GitHub folder pages)
 
@@ -40,7 +29,7 @@ GitHub folder pages (github.com/.../tree/...) are JavaScript-rendered and will n
 
 **Machine-readable inventory:** the complete machine-readable inventory of every Guide lives at `index.json` in the repo root: https://raw.githubusercontent.com/ryanduguid/openaccountants/main/index.json
 
-**Expanded index for LLMs:** `llms-full.txt` (repo root) is the long-form companion to this file, listing every Guide.
+**Expanded index for LLMs:** `llms-full.txt` (repo root) is the long-form companion to this file: it embeds this file, one line per Guide from `index.json`, `START-HERE.md`, `docs/QUALITY-TIERS.md` and the `PARTNERS.md` roster.
 
 **Option 1 — Read the checkout (recommended):** every jurisdiction's guides are bundled in `packages/<jurisdiction>/`; the `README.md` in each folder lists its files and the shared files it needs, which live once in `packages/_shared/` (`packages/bundles.json` records the same composition per package). Example: https://raw.githubusercontent.com/ryanduguid/openaccountants/main/packages/malta/README.md
 
@@ -67,6 +56,7 @@ workflows/          # Structured 6-phase advisor workflow definitions (see below
 mcp/                # MCP server source (self-hostable; the PyPI release is upstream's)
 docs/               # Repo documentation — see docs/REPO-LAYOUT.md
 index.json          # Machine-readable inventory of every Guide (generated)
+PARTNERS.md         # Roster of the accountants on record (generated from index.json)
 llms.txt            # This file; llms-full.txt = expanded per-Guide index
 ```
 
@@ -77,6 +67,10 @@ When a user's situation matches one of these workflows, fetch the bundle and fol
 ### Cross-border / multi-jurisdiction → `workflows/cross-border-intake.md`
 Trigger: any situation involving more than one country — relocation, exit, dual residency, foreign trust, company sale while moving.
 Trigger phrases: "I'm moving to [country]", "I'm a US citizen in [country]", "I'm relocating from A to B", "How do I structure my exit?", any mention of two or more countries.
+
+### Australia sole trader / freelancer → `workflows/australia-sole-trader.md`
+Trigger: Australian sole trader, ABN holder, freelancer or contractor asking about income tax, GST/BAS or PAYG instalments.
+Trigger phrases: "I'm a sole trader in Australia", "ABN tax return", "myTax business income", "BAS and income tax", "do I need to register for GST".
 
 ### UK self-employed / sole trader → `workflows/uk-self-employed.md`
 Trigger: UK freelancer, contractor, sole trader, or self-employed person asking about their taxes.
@@ -103,6 +97,10 @@ Trigger phrases: "self-employed in Portugal", "NHR Portugal", "IFICI", "IRS Port
 ### UK capital gains → `workflows/uk-capital-gains.md`
 Trigger: UK taxpayer who has sold shares, crypto, residential property, or other chargeable assets.
 Trigger phrases: "capital gains UK", "sold shares UK", "crypto tax UK", "SA108", "CGT UK".
+
+### Australia small company and trust → `workflows/australia-company-trust.md`
+Trigger: Australian Pty Ltd, family trust or bucket-company structure: base rate entity, franking, trust distributions, Div 7A, small business CGT concessions, PSI.
+Trigger phrases: "my company's tax return Australia", "Pty Ltd tax", "base rate entity", "franking my dividend", "family trust distribution", "Div 7A loan".
 
 ## For accountants
 

@@ -19,6 +19,9 @@ import unittest
 from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
+sys.path.insert(0, str(SCRIPTS))
+
+from oa_tools import roster  # noqa: E402
 
 GUIDE_HEAD = "---\nname: {name}\njurisdiction: ZZ\ntier: 2\nlast_updated: 2026-01-02\n---\n\n# {name}\n\n"
 
@@ -285,7 +288,9 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
         ("Generated bundles under `packages/`", 1),
     ]
 
-    def corpus(self, **overrides: int) -> dict[str, str]:
+    PROFILES = {"reviewers": {"Jane Doe, CPA": {"public_record": "https://example.test/jane"}}}
+
+    def corpus(self, **overrides) -> dict[str, str]:
         rows = []
         for label, value in self.ROWS:
             value = overrides.get(label, value)
@@ -295,11 +300,18 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
             "# Coverage\n\n## This repository (derived from `index.json`)\n\n"
             "| Measure | This tree |\n|---|---|\n" + "\n".join(rows) + "\n\n## Upstream\n\nFrozen.\n"
         )
-        headline = overrides.get("headline", "**2 Guides** across **2 jurisdictions** · **1 accountant-reviewed** · **1 named accountants**")
+        correct = "**2 Guides** across **2 jurisdictions** · **1 accountant-reviewed** · **1 named accountants**"
+        partners, _ = roster.render_partners(self.INDEX, self.PROFILES["reviewers"])
         return {
             "index.json": json.dumps(self.INDEX),
             "docs/COVERAGE.md": coverage,
-            "README.md": "# Repo\n\n" + headline + "\n",
+            # the headline line sits under prose that also says "Guides" and
+            # "accountant-reviewed", as it does in the real files
+            "README.md": "# Repo\n\nTax Guides, some accountant-reviewed.\n\n" + overrides.get("headline", correct) + "\n",
+            "llms.txt": "# Repo\n\n" + overrides.get("llms", correct) + "\n",
+            "docs/QUALITY-TIERS.md": "# Tiers\n\n## Current inventory\n\n" + overrides.get("tiers", correct) + "\n",
+            "docs/partners.json": json.dumps(self.PROFILES),
+            "PARTNERS.md": partners,
             "skills/international/zz/zz-vat.md": guide("zz-vat", "Body.\n"),
             "packages/zz/zz-vat.md": guide("zz-vat", "Body.\n"),
         }
@@ -314,7 +326,29 @@ class CoverageClaimsGateTests(GateCheckerMixin, unittest.TestCase):
         code, document = self.run_json(baseline=False)
         self.assertEqual(code, 0, document)
         self.assertEqual(document["counts"]["findings"], 0)
-        self.assertIn("derived coverage rows disagreeing with the tree: 0", document["notes"])
+        self.assertIn("claims disagreeing with the tree: 0", document["notes"])
+
+    def test_every_headline_file_is_checked_by_the_bold_figures(self) -> None:
+        self.write(self.corpus(
+            llms="**5 Guides** across **2 jurisdictions** · **1 accountant-reviewed** · **1 named accountants**",
+            tiers="No figures here, only the words Guides and accountant-reviewed.",
+        ))
+        code, document = self.run_json(baseline=False)
+        self.assertEqual(code, 1)
+        keys = {(f["path"], f["key"]) for f in document["findings"]}
+        self.assertEqual(keys, {("llms.txt", "Guides"), ("docs/QUALITY-TIERS.md", "headline")})
+
+    def test_a_hand_edited_roster_and_a_ghost_profile_are_findings(self) -> None:
+        files = self.corpus()
+        files["PARTNERS.md"] = files["PARTNERS.md"].replace("| Jane Doe, CPA |", "| Jane Doe, CPA (edited) |")
+        files["docs/partners.json"] = json.dumps({"reviewers": {
+            **self.PROFILES["reviewers"], "Ghost": {"public_record": "https://example.test/ghost"},
+        }})
+        self.write(files)
+        code, document = self.run_json(baseline=False)
+        self.assertEqual(code, 1)
+        keys = {(f["path"], f["key"]) for f in document["findings"]}
+        self.assertEqual(keys, {("PARTNERS.md", "stale"), ("docs/partners.json", "Ghost")})
 
     def test_headline_and_row_drift_are_separate_findings(self) -> None:
         self.write(self.corpus(**{

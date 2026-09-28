@@ -51,8 +51,10 @@ Checks (ERROR = exit 1, WARN = printed summary only):
      python3 scripts/normalize-cta-block.py --apply
 
 Checks 5, 7 and 8 are the derived-tree freshness checks. The derived trees
-have exactly one writer: whoever edits skills/ runs the three generators and
-commits their output in the same change. Nothing else regenerates them.
+have exactly one writer: whoever edits skills/ runs the generators (`make
+build`) and commits their output in the same change. Nothing else regenerates
+them. PARTNERS.md, the fourth generated file, is checked by
+scripts/check-coverage-claims.py rather than here.
 
 Flags:
   --changed-only    per-guide checks (1-3b) only on files changed vs
@@ -561,9 +563,10 @@ def check_no_deprecated_manifests(errors):
 
 
 def check_llms_full_fresh(errors):
-    """llms-full.txt embeds llms.txt, the index inventory, START-HERE, and
-    QUALITY-TIERS — it drifts silently when any of those change. Regenerate to
-    a temp file and compare, mirroring the index.json staleness check."""
+    """llms-full.txt embeds llms.txt, the index inventory, START-HERE,
+    QUALITY-TIERS and PARTNERS.md — it drifts silently when any of those
+    change. Regenerate to a temp file and compare, mirroring the index.json
+    staleness check."""
     import subprocess
     import tempfile
 
