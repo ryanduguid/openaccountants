@@ -38,10 +38,9 @@ must not decrease either value. A substantive body change should advance the
 date, the version, or both, and a heading such as `v1.1` must agree with the
 frontmatter version.
 
-These values are not synchronization tokens. The platform exporter must still
-compare its stored Git blob hash with the current repository blob before it
-rewrites an existing `skills/**` file. See [WEBSITE-SYNC.md](WEBSITE-SYNC.md)
-for the fail-closed compare-and-swap contract and pre-push command.
+These values are content metadata, not synchronization tokens:
+`scripts/check-sync-integrity.py --strict-metadata` fails a pull request whose
+body edit advances neither, and nothing else reads them as a version.
 
 ## Category vocabulary (the real one)
 
@@ -119,7 +118,7 @@ verified_by: pending       # or "Name, Credential" — stored field name stays v
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Jurisdiction is required.** Set `jurisdiction:` in frontmatter even when the folder path implies it (e.g. `skills/international/malta/` → still use `jurisdiction: MT`). Sync to openaccountants.com skips files without a resolvable jurisdiction. See [WEBSITE-SYNC.md](WEBSITE-SYNC.md).
+> **Jurisdiction is required.** Set `jurisdiction:` in frontmatter even when the folder path implies it (e.g. `skills/international/malta/` → still use `jurisdiction: MT`). The validator requires it, and the package build and the MCP server use it to place the guide.
 
 ## What this file is
 

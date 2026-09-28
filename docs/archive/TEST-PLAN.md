@@ -1,6 +1,8 @@
 # OpenAccountants — Test Plan
 
-> **Note:** Predates the two-tier quality model. References to "Q4 stub" should be read as "skill not yet at source-cited-draft standard" — current quality model in [QUALITY-TIERS.md](QUALITY-TIERS.md).
+> **Archived.** A 15-scenario manual test plan from the four-tier era, written for a clone into `~/.claude/skills`. No run was ever recorded, and the flows predate the `packages/` layout and the MCP server. The automated checks are `make check` ([CONTRIBUTING.md → Reproduce CI locally](../../CONTRIBUTING.md#reproduce-ci-locally)). Moved to `docs/archive/` on 2026-09-28; kept as a record and not maintained.
+
+> **Note:** Predates the two-tier quality model. References to "Q4 stub" should be read as "skill not yet at source-cited-draft standard" — current quality model in [QUALITY-TIERS.md](../QUALITY-TIERS.md).
 
 15 real-world test cases across different countries, business types, and complexity levels. Each simulates a real user who cloned the repo into Claude Code and starts a conversation.
 

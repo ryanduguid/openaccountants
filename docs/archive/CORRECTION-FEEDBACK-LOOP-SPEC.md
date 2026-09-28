@@ -1,5 +1,7 @@
 # Correction Feedback Loop Specification v0.1
 
+> **Archived.** A May 2026 proposal (v0.1 draft) for capturing practitioner corrections as structured data. Nothing implements it: this repository has no `correction_id`, no capture endpoint and no recorded score. Corrections arrive as pull requests and issues ([CONTRIBUTING.md](../../CONTRIBUTING.md)). Moved to `docs/archive/` on 2026-09-28; kept as a record and not maintained.
+
 Status: **DRAFT**
 Author: OpenAccountants core
 Last revised: 2026-05-22

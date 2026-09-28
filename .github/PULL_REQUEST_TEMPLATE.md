@@ -16,7 +16,7 @@
 
 - [ ] File is in `skills/` (not only `packages/`)
 - [ ] Jurisdiction is clear (folder path or `jurisdiction:` in frontmatter)
-- [ ] I edited `skills/**` (never `packages/`, `index.json` or `llms-full.txt` by hand) and committed the regenerated output of `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py`
+- [ ] I edited `skills/**` (never `packages/`, `index.json`, `PARTNERS.md` or `llms-full.txt` by hand) and committed the regenerated output of `make build` (`scripts/build-packages.py`, `build-index.py`, `build-partners.py`, `build-llms-full.py`)
 - [ ] If a guide's body changed, its `last_updated` (or `version`) is advanced
 - [ ] **Name for attribution** (as it should appear on the guide): ______
 

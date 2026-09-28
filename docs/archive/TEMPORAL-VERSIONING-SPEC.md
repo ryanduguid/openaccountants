@@ -1,5 +1,7 @@
 # Temporal Versioning Specification v0.1
 
+> **Archived.** A May 2026 proposal (v0.1 draft) for time-bounded rate files (`*.rates.yaml` and a `rates_lint.py`). None of it exists in this tree; the only structured rate files are `packages/us-federal/rates.2025.json` and `rates.2026.json`, maintained by hand under their runbook. Moved to `docs/archive/` on 2026-09-28; kept as a record and not maintained.
+
 Status: **DRAFT**
 Author: OpenAccountants core
 Last revised: 2026-05-22
