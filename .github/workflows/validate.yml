@@ -1,12 +1,21 @@
 # PR contract:
-#   - Contributors edit skills/** ONLY. Guides are validated file-by-file.
-#   - index.json, llms-full.txt and packages/** (except the us-federal carve-out,
-#     until it too becomes generated) are DERIVED: the platform's daily sync is
-#     their only writer. A PR touching them fails with an explanation instead of
-#     forcing every contributor to regenerate 586KB of JSON that conflicts with
-#     every other open PR.
-#   - Push-to-main runs guide validation only; derived-tree freshness is checked
-#     where it can actually be a bug: inside the sync that generates them.
+#   - Edit skills/** (and the hand-authored packages/us-federal/). Then run the
+#     three generators and commit their output in the same change:
+#         python3 scripts/build-packages.py
+#         python3 scripts/build-index.py
+#         python3 scripts/build-llms-full.py
+#   - packages/** (except us-federal), index.json and llms-full.txt are DERIVED.
+#     Nothing outside a pull request regenerates them in this repository, so the
+#     change that edits a source is the change that regenerates them. The
+#     guard-derived-trees job rebuilds all three into a temp dir and fails when
+#     the committed copies differ — on pull requests and on push to main alike.
+#   - The validate job checks guide frontmatter: changed files on a pull
+#     request, the whole tree on push to main.
+#
+# The job id guard-derived-trees is kept from the previous contract (it used to
+# reject any pull request touching the derived trees, on the theory that a
+# platform sync would regenerate them; no such sync exists here) so that an
+# existing branch-protection rule naming that context keeps working.
 
 name: Validate Guides
 
@@ -15,62 +24,25 @@ on:
   push:
     branches: [main]
 
-# Least privilege by default. Only the job that posts a contributor comment gets
-# write access, and only to issues. Without this the workflow inherits whatever
-# the repository default happens to be.
+# Least privilege: nothing in this workflow needs to write. Without this the
+# workflow inherits whatever the repository default happens to be.
 permissions:
   contents: read
 
 jobs:
   guard-derived-trees:
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: write # the "Explain in a comment" step below
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          fetch-depth: 0
           persist-credentials: false
-      - name: Fail if the PR edits generated files
-        id: guard
-        env:
-          BASE_REF: ${{ github.base_ref }}
-        run: |
-          BASE="origin/$BASE_REF"
-          git fetch origin "$BASE_REF" --depth 50
-          BAD=$(git diff --name-only "$BASE"...HEAD -- \
-            'index.json' 'llms-full.txt' 'packages/**' \
-            ':(exclude)packages/us-federal/**' | head -20)
-          if [ -n "$BAD" ]; then
-            echo "generated_files_touched<<EOM" >> "$GITHUB_OUTPUT"
-            echo "$BAD" >> "$GITHUB_OUTPUT"
-            echo "EOM" >> "$GITHUB_OUTPUT"
-            echo "::error::This PR edits generated files. Edit skills/** only — index.json, llms-full.txt and packages/ are rebuilt by the scheduled platform sync after confirmed source ingestion."
-            exit 1
-          fi
-          echo "clean"
-      - name: Explain in a comment
-        if: failure() && steps.guard.outputs.generated_files_touched != ''
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
-        env:
-          # Filenames come from the PR's diff, so they are attacker-controlled.
-          # Interpolating them straight into the script body would let a crafted
-          # filename run as JavaScript. Pass through the environment instead.
-          GENERATED_FILES_TOUCHED: ${{ steps.guard.outputs.generated_files_touched }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
-          script: |
-            const files = process.env.GENERATED_FILES_TOUCHED.trim();
-            await github.rest.issues.createComment({
-              ...context.repo,
-              issue_number: context.issue.number,
-              body: [
-                "Thanks for the contribution! One fix needed: this PR touches **generated files** —",
-                "```", files, "```",
-                "`index.json`, `llms-full.txt` and `packages/` are rebuilt by the scheduled platform sync after confirmed source ingestion, so please revert those paths and keep only your `skills/**` changes. No generator scripts to run — your guide edits are all that's needed. 🙌",
-              ].join("\n"),
-            });
+          python-version: "3.11"
+      - name: Install validation dependencies
+        run: python3 -m pip install -r scripts/requirements-validation.txt
+      - name: Rebuild packages/, index.json and llms-full.txt and compare with the committed copies
+        run: python3 scripts/validate-guides.py --derived-only
 
   validate:
     runs-on: ubuntu-latest
@@ -85,6 +57,7 @@ jobs:
       - name: Install validation dependencies
         run: python3 -m pip install -r scripts/requirements-validation.txt
       - name: Validate changed guides (PR) / all guides (main)
+        # --no-index-check: the freshness checks run in guard-derived-trees.
         env:
           BASE_REF: ${{ github.base_ref }}
           EVENT_NAME: ${{ github.event_name }}

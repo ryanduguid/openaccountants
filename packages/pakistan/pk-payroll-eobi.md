@@ -3,7 +3,7 @@ name: pk-payroll-eobi
 description: ALWAYS read this skill before touching any Pakistan payroll work. Use whenever asked to compute, review, or advise on Pakistan monthly payroll — salary tax withholding under Section 149 of the Income Tax Ordinance 2001, Employees' Old-Age Benefits Institution (EOBI) federal pension contributions, provincial social security (SESSI Sindh, PESSI Punjab, KPESSI Khyber Pakhtunkhwa, BESSI Balochistan), Workers Welfare Fund (WWF), and Workers Profit Participation Fund (WPPF). Trigger on phrases like "Pakistan payroll", "salary tax Pakistan", "EOBI Pakistan", "PESSI Punjab", "SESSI Sindh", "PAYE Pakistan", "monthly statement Section 149", "WWF Pakistan", "WPPF Pakistan", "Section 165 statement", "Karachi payroll", "Lahore payroll", or any request involving running monthly payroll for one or more employees in Pakistan. This skill is the ORCHESTRATOR — it pulls salary bracket rates from `pk-income-tax` and sequences statutory deductions into the correct computation order.
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-13
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -389,7 +389,7 @@ Not run through this payslip — computed annually on profit-before-tax in the c
 | Employees' Old-Age Benefits Act 1976 | EOBI |
 | EOBI portal | https://eobi.gov.pk |
 | Provincial Employees' Social Security Ordinance 1965 (as adapted by Sindh, Punjab, KP, Balochistan) | Provincial gazettes |
-| Sindh Employees Social Security Institution (SESSI) | https://sessi.gos.pk |
+| Sindh Employees Social Security Institution (SESSI) | https://sessi.gov.pk — the `sessi.gos.pk` form previously given here is a typo (`gos` for `gov`) and does not resolve |
 | Punjab Employees Social Security Institution (PESSI) | https://pessi.punjab.gov.pk |
 | Khyber Pakhtunkhwa Employees Social Security Institution (KPESSI) | KP provincial portal |
 | Balochistan Employees Social Security Institution (BESSI) | Balochistan provincial portal |

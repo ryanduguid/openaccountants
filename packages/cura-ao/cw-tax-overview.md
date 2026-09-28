@@ -3,7 +3,7 @@ name: cw-tax-overview
 description: "Source-cited draft: tax overview for Curacao (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Does VAT/GST exist?** — No EU-style VAT. Curacao levies a turnover tax (Omzetbelasting, OB), a sales/turnover tax, not a creditable VAT  _(Turnover Tax Ordinance (Landsverordening omzetbelasting 1999))_
 - **Standard turnover tax (OB) rate** — 6% percent  _(Turnover Tax Ordinance (Landsverordening omzetbelasting 1999))_
 - **Personal income tax return deadline** — Generally within the period stated on the assessment notice; typically by 31 May following the tax year (extensions available) ((approx — confirm exact date on notice))  _(General National Ordinance on National Taxes (Algemene landsverordening Landsbelastingen))_
-- **Withholding taxes** — Curacao levies no withholding tax on dividends, interest, or royalties  _([Profit Tax Ordinance (Landsverordening op de winstbelasting 1940) — https://hbnlawtax.com/tax-instant-news/end-of-the-year-tax-tips-curacao/](https://hbnlawtax.com/tax-instant-news/end-of-the-year-tax-tips-curacao/))_
+- **Withholding taxes** — Curacao levies no withholding tax on dividends, interest, or royalties  _(Profit Tax Ordinance (Landsverordening op de winstbelasting 1940) (as described at [hbnlawtax.com](https://hbnlawtax.com/tax-instant-news/end-of-the-year-tax-tips-curacao/)))_
 
 <!-- openaccountants-cta-block -->
 

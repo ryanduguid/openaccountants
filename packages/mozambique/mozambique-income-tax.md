@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Mozambique personal income tax 
 version: 0.1
 jurisdiction: MZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -52,6 +52,28 @@ Regime note. The 2025 tax year and earlier follow the long-standing CIRPS. Law N
 - **IRPS calculation mechanism** — tax = (annual income × bracket rate) − deductible amount (parcela a abater) for the bracket  _(PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income)_
 
 [RESEARCH GAP — reviewer to confirm] The published deductible amounts for the 25% bracket (MZN 37,500) and 32% bracket (MZN 141,540) do not produce perfectly continuous brackets (strict continuity would require 35,700 and 143,340 respectively). The published "parcela a abater" values are the figures AT applies and are used in this skill as authoritative; reviewer to verify against the official CIRPS schedule. The cumulative-tax column above is computed using the published deductible amounts.
+
+> **⚠ Do not "fix" the 340,500 in the table above — it is correct, and this repo's own
+> checker disagrees with it.** `scripts/check-derived-columns.py` reports the 25% row as a
+> mismatch: *"bands give 342,300.00, column says 340,500.00"*. Both figures are right for
+> different formulas, and the difference is exactly the discontinuity described above.
+>
+> - **Accumulating the marginal bands**: 4,200 + 18,900 + 67,200 + (1,008,000 × 25%) =
+>   **342,300**. This is what the checker computes, because it assumes a continuous schedule.
+> - **The formula AT actually applies**, stated in the row below the table: income × bracket
+>   rate − parcela a abater = 1,512,000 × 25% − 37,500 = **340,500**. This is what the
+>   column states.
+>
+> The two agree only where the parcela is the continuity-preserving value (35,700), and
+> Mozambique's published one is not. So the checker's assumption fails here rather than the
+> table being wrong, and changing the column to 342,300 would introduce an error while
+> silencing the warning.
+>
+> **The authority still cannot be reached.** The citation above records a TLS error from an
+> earlier attempt; retried on **11 September 2026**, `www.at.gov.mz` now **resets the
+> connection** — both the site root and the IRPS rates page — so the failure mode has
+> changed but the result has not. The parcelas remain corroborated only by a commercial
+> summary, and the research gap stands.
 
 - **Non-residents withholding rate** — 20% percent (flat withholding on Mozambique-source income (including employment))  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income)_
 
@@ -290,7 +312,7 @@ Classification: EXCLUDE.
 
 - **Double-taxation relief credit** — Double-taxation relief credit is also available.  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/deductions)_
 
-[RESEARCH GAP — reviewer to confirm] These are legacy values and may be revised by the pending Law 11/2025 regulations; not yet confirmed for 2026.
+[RESEARCH GAP — reviewer to confirm] **Status as at September 2026.** These are legacy values. **Lei n.º 11/2025, de 29 de dezembro** (Boletim da República n.º 248), which amends the IRPS Code approved by Lei n.º 33/2007, **entered into force on 1 January 2026** — it is no longer "pending". The Government had **180 days, to June 2026**, to approve the complementary regulations, and that window has now closed. So these deductions are not merely unconfirmed for 2026: the law that may have changed them has been in force for the whole of the year, and the regulation deadline has passed. Confirm against the amended IRPS Code and the Autoridade Tributária before applying any figure in this table to a 2026 computation, and note that the companion **Lei n.º 12/2025** made the equivalent amendments to the IRPC Code.
 
 ### 5.5 The Wholly-and-Exclusively Test (2nd category)
 

@@ -3,7 +3,7 @@ name: hn-company-formation
 description: "Source-cited draft: company formation & entity choice for Honduras (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: HN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,8 +15,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Sociedad Anonima (S.A.)** — Stock corporation with shares; minimum two shareholders, no statutory maximum; liability limited to capital contributed  _(Codigo de Comercio (Commercial Code))_
 - **Sociedad de Responsabilidad Limitada (S. de R.L.)** — Limited liability company; maximum 25 partners; 100% foreign ownership permitted  _(Codigo de Comercio (Commercial Code))_
-- **Minimum capital - S.A.** — HNL 25,000 (approx USD 1,000) HNL  _([Codigo de Comercio (Commercial Code) — https://www.bizlatinhub.com/types-legal-entities-honduras/](https://www.bizlatinhub.com/types-legal-entities-honduras/))_
-- **Minimum capital - S. de R.L.** — HNL 5,000 ((approx - confirm)) HNL  _([Codigo de Comercio (Commercial Code) — https://www.bizlatinhub.com/types-legal-entities-honduras/](https://www.bizlatinhub.com/types-legal-entities-honduras/))_
+- **Minimum capital - S.A.** — HNL 25,000 (approx USD 1,000) HNL  _(Codigo de Comercio (Commercial Code) (as described at [bizlatinhub.com](https://www.bizlatinhub.com/types-legal-entities-honduras/)))_
+- **Minimum capital - S. de R.L.** — HNL 5,000 ((approx - confirm)) HNL  _(Codigo de Comercio (Commercial Code) (as described at [bizlatinhub.com](https://www.bizlatinhub.com/types-legal-entities-honduras/)))_
 - **Constitution by public deed** — Articles of incorporation (escritura de constitucion) executed before a notary; reviewed by the Registro Mercantil before legal personality is granted  _(Codigo de Comercio (Commercial Code))_
 - **Step 1 - Deposit capital** — Open a Honduran bank account and deposit the initial share capital  _(Codigo de Comercio (Commercial Code))_
 - **Step 2 - Register articles** — Register the articles of incorporation with the Registro Mercantil (Chamber of Commerce)  _(Codigo de Comercio (Commercial Code))_

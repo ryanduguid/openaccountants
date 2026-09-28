@@ -3,7 +3,7 @@ name: mo-payroll-social
 description: "Source-cited draft: payroll & social contributions for Macau (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **FSS remittance frequency** — Quarterly; paid during the designated contribution months (e.g. January, April, July, October) ((approx — confirm) exact contribution months)  _([Macau Social Security System Law](https://www.fss.gov.mo/en))_
 - **Non-resident worker employment levy** — Employers of non-resident workers pay a monthly levy (around MOP 200 per worker) MOP ((approx — confirm) levy amount and rules) MOP  _(Macau Law on Employment of Non-Resident Workers (Law 21/2009))_
 - **Professional tax withholding (PAYE)** — Employer withholds professional tax from each employee's pay and remits it; this is the PAYE-equivalent  _(Macau Professional Tax Regulation)_
-- **Professional tax remittance deadline** — Quarterly — by 15 April, 15 July, 15 October and 15 January for the preceding quarter  _([Macau Professional Tax Regulation](https://www.mdme.com/en/knowledge/taxation-doing-business-in-macau-2025/22402/))_
+- **Professional tax remittance deadline** — Quarterly — by 15 April, 15 July, 15 October and 15 January for the preceding quarter  _(Macau Professional Tax Regulation (as described at [mdme.com](https://www.mdme.com/en/knowledge/taxation-doing-business-in-macau-2025/22402/)))_
 - **Employer annual employee return (M3/M4)** — Employer files an annual statement of employees and remuneration with the DSF (by 31 January for the prior year) ((approx — confirm) form references and exact date)  _(Macau Professional Tax Regulation)_
 
 <!-- openaccountants-cta-block -->

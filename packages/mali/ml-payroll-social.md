@@ -3,7 +3,7 @@ name: ml-payroll-social
 description: "Source-cited draft: payroll & social contributions for Mali (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: ML
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Social security (INPS / AMO) and payroll taxes
 
-- **INPS employer contribution** — Approximately 14.4% – 17.4% of gross salary (varies with work-accident risk class) percent (approx — confirm exact split per branch with INPS)  _([Code de Prévoyance Sociale du Mali (INPS)](https://remotepeople.com/countries/mali/employer-of-record/payroll-tax/))_
+- **INPS employer contribution** — Approximately 14.4% – 17.4% of gross salary (varies with work-accident risk class) percent (approx — confirm exact split per branch with INPS)  _(Code de Prévoyance Sociale du Mali (INPS) (as described at [remotepeople.com](https://remotepeople.com/countries/mali/employer-of-record/payroll-tax/)))_
 - **INPS employee contribution** — 3.6% of gross salary (old-age pension) percent (approx — confirm)  _(Code de Prévoyance Sociale du Mali (INPS))_
 - **AMO (mandatory health insurance) employer contribution** — 3.5% of gross salary percent (approx — confirm with CANAM)  _(Loi instituant l'Assurance Maladie Obligatoire (AMO) — CANAM)_
 - **AMO employee contribution** — 3.06% of gross salary percent (approx — confirm with CANAM)  _(Loi instituant l'Assurance Maladie Obligatoire (AMO) — CANAM)_

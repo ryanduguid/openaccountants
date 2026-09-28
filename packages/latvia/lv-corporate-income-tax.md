@@ -3,7 +3,7 @@ name: lv-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Latvia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: LV
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,7 +19,7 @@ Latvia operates a distribution-based (Estonian-style) corporate income tax: prof
 - **CIT rate on retained / reinvested profits** — 0% (tax is deferred until profit is distributed) %  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums) — https://taxsummaries.pwc.com/latvia/corporate/taxes-on-corporate-income)_
 - **Tax base** — Distributed profits, deemed distributions, non-business expenses, and certain transfer-pricing/excess-debt adjustments — not annual accounting profit as such  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums) — https://taxsummaries.pwc.com/latvia/corporate/income-determination)_
 - **CIT calculation** — CIT = (net distribution ÷ 0.8) × 20%  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums) — https://taxsummaries.pwc.com/latvia/corporate/taxes-on-corporate-income)_
-- **Alternative regime for individual-owned companies (from 2026)** — Distributed profits taxed at 15% CIT (15/85 of net) plus 6% PIT withheld from the individual (approx — confirm; takes effect 1 January 2026) % (approx — confirm; takes effect 1 January 2026)  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums) — https://taxsummaries.pwc.com/latvia/corporate/taxes-on-corporate-income)_
+- **Alternative regime for individual-owned companies** — In force since **1 January 2026**, confirmed. Distributed profits are taxed at 15% CIT (15/85 of the net distribution) plus 6% PIT withheld from the individual. Two conditions decide whether it is available: **every shareholder must be a natural person**, and it is **optional**, so the standard 20% regime with no tax on reinvested profits continues alongside it. Its purpose is to let a non-resident individual credit or exempt the Latvian PIT in their home state %  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums) — https://taxsummaries.pwc.com/latvia/corporate/taxes-on-corporate-income)_
 - **Withholding tax on dividends to non-residents** — 0% (general); 20% if paid to a company in a listed low-tax/non-cooperative jurisdiction %  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums) — https://taxsummaries.pwc.com/latvia/corporate/withholding-taxes)_
 - **Withholding tax on interest to non-residents** — 0% (general); 20% if paid to a company in a listed low-tax/non-cooperative jurisdiction %  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums) — https://taxsummaries.pwc.com/latvia/corporate/withholding-taxes)_
 - **Withholding tax on royalties to non-residents** — 0% (general); 20% if paid to a company in a listed low-tax/non-cooperative jurisdiction %  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums) — https://taxsummaries.pwc.com/latvia/corporate/withholding-taxes)_

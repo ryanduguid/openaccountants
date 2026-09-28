@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Bulgaria payroll processing for
 version: 0.1
 jurisdiction: BG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -45,7 +45,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **1. Income tax is a FLAT 10%.** There is no progressive band and no general personal allowance for ordinary salary. The 10% applies to **gross pay minus the employee's own mandatory social and health contributions** -- not to raw gross. (ZDDFL; mi.government.bg)
 >
-> **2. Contributions are capped.** Both employer and employee social/health contributions stop at the **maximum monthly insurable income** ceiling (BGN 4,130 from 1 Apr 2025 ≈ EUR 2,111.64). Above the ceiling only the 10% income tax continues to apply. (mi.government.bg; PwC)
+> **2. Contributions are capped.** Both employer and employee social/health contributions stop at the **maximum monthly insurable income** ceiling: BGN 4,130 from 1 Apr 2025, EUR 2,111.64 from 1 Jan 2026, and **EUR 2,300 from 1 August 2026**. Above the ceiling only the 10% income tax continues to apply. (mi.government.bg; PwC; State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026)
 >
 > **3. Work-accident contribution is the only variable.** The Accident at Work and Occupational Disease Fund (TZPB) rate is 0.4%--1.1%, set by the employer's economic-activity risk class, and is paid ENTIRELY by the employer. It is the sole reason the employer/total rate is a band. (PwC)
 
@@ -119,8 +119,8 @@ For persons born before 1960 the pension is **19.8%** to the state Pension Fund 
 
 | Threshold | 1 Jan -- 31 Mar 2025 | 1 Apr -- 31 Dec 2025 | From 1 Jan 2026 (EUR) | Source |
 | --- | --- | --- | --- | --- |
-| Minimum monthly insurable income (general floor = min wage) | BGN 933 | BGN 1,077 | -- | mi.government.bg |
-| Maximum monthly insurable income (cap, all funds) | BGN 3,750 | BGN 4,130 | ≈ EUR 2,111.64 | mi.government.bg / PwC |
+| Minimum monthly insurable income (employees) | BGN 933 | BGN 1,077 | A **range by economic activity and occupation group** (Annexes 1 and 1A): EUR 550.66–901.41 to 31 Jul 2026; **EUR 620.20–1,532.41 from 1 Aug 2026** | mi.government.bg / State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
+| Maximum monthly insurable income (cap, all funds) | BGN 3,750 | BGN 4,130 | EUR 2,111.64 to 31 Jul 2026; **EUR 2,300 from 1 Aug 2026** | mi.government.bg / PwC / State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
 
 Occupation-specific minimum insurance thresholds (минимални осигурителни доходи) may set a **higher** floor per profession than the general minimum wage. (mi.government.bg)
 
@@ -132,8 +132,8 @@ Occupation-specific minimum insurance thresholds (минимални осигу�
 | --- | --- | --- |
 | Work-accident (TZPB) employer rate unknown | Use **1.1%** (top of band) -> employer 19.62%, combined 33.40% | Avoids under-withholding; the actual 0.4%--1.1% rate is set by economic-activity code (PwC) |
 | Employee birth-year / pension scheme unknown | Assume **born on/after 1 Jan 1960** (14.8% pension + 5% Universal Pension Fund) | Pre-1960 employees are now past statutory retirement age; the 19.8% single-fund treatment is increasingly rare |
-| Minimum insurable base unclear | Use the higher **occupation-specific** minimum insurance threshold where applicable, otherwise the BGN 1,077 (from 1 Apr 2025) floor | Contributions must be on at least the profession's minimum осигурителен доход, not just the general minimum wage (mi.government.bg) |
-| Income above the ceiling | Cap insurable income at **BGN 4,130 / EUR 2,111.64**; income above bears 10% PIT but NO further contributions | The ceiling is a hard cap on all funds (mi.government.bg) |
+| Minimum insurable base unclear | Use the **occupation-specific** minimum insurance threshold from the Budget Act annex for the employer's activity and the employee's occupation class. Only if that cannot be established, fall back to the period floor: BGN 1,077 (1 Apr–31 Dec 2025), EUR 550.66 (1 Jan–31 Jul 2026), EUR 620.20 (from 1 Aug 2026) | Contributions must be on at least the profession's minimum осигурителен доход, not just the general floor — for 2026 the annex range runs as high as EUR 1,532.41, so the floor is rarely the right answer (mi.government.bg; SSB Act 2026, Annexes 1 and 1A) |
+| Income above the ceiling | Cap insurable income at the ceiling for the month — **EUR 2,111.64** to 31 Jul 2026, **EUR 2,300** from 1 Aug 2026; income above bears 10% PIT but NO further contributions | The ceiling is a hard cap on all funds (mi.government.bg) |
 | Currency for 2026 runs | Convert BGN thresholds at **1.95583** and apply EUR equivalents from 1 Jan 2026 | Euro becomes sole legal tender; dual circulation Jan 2026, BGN cash ends 1 Feb 2026 (ECB) |
 | Unknown employment status | Assume employee (employer withholds 13.78% and adds the employer share) | Employment income has no de-minimis threshold; default to the withholding obligation |
 
@@ -273,14 +273,14 @@ Same employee as Example 1 (gross BGN 3,000) but the employer's economic-activit
 `25.02.2026 ; НАП ОСИГУРОВКИ 01/2026 ; DEBIT ; OSIGUROVKI + DDFL ; -619.83 ; EUR`
 
 **Reasoning:**
-From 1 Jan 2026 all amounts are EUR-denominated at the fixed 1.95583 rate. Gross EUR 1,500 is below the EUR 2,111.64 cap.
+From 1 Jan 2026 all amounts are EUR-denominated at the fixed 1.95583 rate. Gross EUR 1,500 is below the cap either way (EUR 2,111.64 to 31 Jul 2026, EUR 2,300 from 1 Aug), so the ceiling does not bite in this example.
 - Employee contributions = 13.78% × 1,500 = **EUR 206.70**
 - Employer contributions (0.4%) = 18.92% × 1,500 = **EUR 283.80**
 - PIT base = 1,500 − 206.70 = EUR 1,293.30; PIT = 10% × 1,293.30 = **EUR 129.33**
 - **Net pay** = 1,500 − 206.70 − 129.33 = **EUR 1,163.97**
 - Combined NRA remittance = 206.70 + 283.80 + 129.33 = **EUR 619.83**.
 
-**Classification:** EUR-denominated; the 2025 ceiling/rates carry over as EUR equivalents. [RESEARCH GAP -- the 2026 EUR thresholds (max base ≈ EUR 2,111.64, min wage ≈ EUR 620.20) are derived/secondary; reviewer to confirm against the 2026 State Social Insurance Budget Act once published.]
+**Classification:** EUR-denominated. The 2025 ceiling carried over as an EUR equivalent only until 31 July 2026; the 2026 State Social Insurance Budget Act (gazetted 28 July 2026) raised the maximum insurable income to **EUR 2,300** and the self-employed minimum to **EUR 620.20** from **1 August 2026**. The minimum wage is EUR 620.20 per month from 1 January 2026.
 
 ### Example 6 -- New hire requiring Art. 62 registration
 
@@ -302,11 +302,11 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 2 -- Contribution formula (employee born after 1959)
 
-- **Contribution formula** — insurable_income     = clamp(gross_remuneration, minimum_insurable, maximum_insurable) employee_contribution = insurable_income x 13.78% employer_contribution = insurable_income x (18.92% .. 19.62%)   # TZPB 0.4%–1.1% total_contribution    = insurable_income x (32.70% .. 33.40%) Where (1 Apr -- 31 Dec 2025): minimum_insurable = BGN 1,077 (or the higher occupation floor); maximum_insurable = BGN 4,130 = EUR 2,111.64.  _(mi.government.bg / PwC)_
+- **Contribution formula** — insurable_income     = clamp(gross_remuneration, minimum_insurable, maximum_insurable) employee_contribution = insurable_income x 13.78% employer_contribution = insurable_income x (18.92% .. 19.62%)   # TZPB 0.4%–1.1% total_contribution    = insurable_income x (32.70% .. 33.40%) Where (1 Apr -- 31 Dec 2025): minimum_insurable = BGN 1,077 (or the higher occupation floor); maximum_insurable = BGN 4,130 = EUR 2,111.64. Where (1 Jan -- 31 Jul 2026): minimum_insurable = the Annex 1/1A figure for the activity and occupation, floor EUR 550.66; maximum_insurable = EUR 2,111.64. Where (1 Aug -- 31 Dec 2026): floor EUR 620.20; maximum_insurable = EUR 2,300.  _(mi.government.bg / PwC)_
 
 ### Rule 3 -- Contributions apply only between the floor and the ceiling
 
-- **Floor/ceiling application** — Income above BGN 4,130 / EUR 2,111.64 bears NO social or health contributions; income below the minimum is brought up to the minimum insurable income.  _(mi.government.bg)_
+- **Floor/ceiling application** — Income above the ceiling for the month bears NO social or health contributions; income below the minimum is brought up to the minimum insurable income. The ceiling is BGN 4,130 (Apr--Dec 2025), EUR 2,111.64 (Jan--Jul 2026) and EUR 2,300 (Aug--Dec 2026).  _(mi.government.bg)_
 
 ### Rule 4 -- Health insurance is 8% of the same base
 
@@ -338,7 +338,7 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 9 -- Euro changeover (1 Jan 2026)
 
-- **Euro changeover rule** — From 1 Jan 2026 all amounts are EUR-denominated at the fixed irrevocable rate 1.95583 BGN = 1 EUR; dual circulation runs in January 2026 and BGN cash ends 1 February 2026. The 2025 ceiling BGN 4,130 = EUR 2,111.64.  _(ECB; Leinonen)_
+- **Euro changeover rule** — From 1 Jan 2026 all amounts are EUR-denominated at the fixed irrevocable rate 1.95583 BGN = 1 EUR; dual circulation runs in January 2026 and BGN cash ends 1 February 2026. The 2025 ceiling BGN 4,130 = EUR 2,111.64, and that euro figure carried into 2026 only until 31 July, when the 2026 Budget Act replaced it with EUR 2,300.  _(ECB; Leinonen)_
 
 ### Rule 10 -- Employer registration / no de-minimis
 
@@ -360,9 +360,9 @@ Trigger: employee born before 1 Jan 1960. Issue: state Pension Fund is 19.8% wit
 
 Trigger: employee in a profession with a minimum osiguritelen dohod above the general minimum wage. Issue: using the BGN 1,077 floor understates contributions. Action: flag for reviewer; apply the higher occupation floor.
 
-### T2-4 -- 2026 EUR thresholds not yet confirmed from the budget
+### T2-4 -- 2026 thresholds confirmed, and they change on 1 August 2026
 
-Trigger: computation for 2026. Issue: the EUR equivalents (max base ≈ EUR 2,111.64, min wage ≈ EUR 620.20, self-employed min base ≈ EUR 550.66) are derived/secondary. Action: flag for reviewer; confirm against the 2026 State Social Insurance Budget Act once published. [RESEARCH GAP.]
+Trigger: computation for 2026. Issue: the thresholds are no longer derived and no longer constant across the year. The 2026 State Social Insurance Budget Act was gazetted on 28 July 2026 and moved two of them from **1 August 2026**: maximum monthly insurable income **EUR 2,111.64 → EUR 2,300**, self-employed minimum insurable income **EUR 550.66 → EUR 620.20**. The minimum wage is **EUR 620.20** per month (EUR 3.74 per hour) from 1 January 2026. Action: fix the month before the figures; a January-to-July computation and an August-onward one use different ceilings.
 
 ### T2-5 -- Dual status (employee who is also self-employed)
 
@@ -392,8 +392,12 @@ INPUT DATA
   Occupation min insurable floor:[____]   (if higher than the general minimum)
 
 INSURABLE INCOME
-  Minimum monthly insurable:     [BGN 1,077 / occupation floor]
-  Maximum monthly insurable cap: [BGN 4,130 / EUR 2,111.64]
+  Period (year AND month):       [____]   <- fix this first; 2025 moved on 1 Apr, 2026 on 1 Aug
+  Minimum monthly insurable:     [occupation floor from the Budget Act annex; else
+                                  BGN 1,077 (Apr-Dec 2025) / EUR 550.66 (Jan-Jul 2026) /
+                                  EUR 620.20 (Aug-Dec 2026)]
+  Maximum monthly insurable cap: [BGN 4,130 (Apr-Dec 2025) / EUR 2,111.64 (Jan-Jul 2026) /
+                                  EUR 2,300 (Aug-Dec 2026)]
   Insurable income (clamped):    [____]
 
 CONTRIBUTIONS (employee born after 1959)
@@ -451,7 +455,7 @@ References commonly appear in Cyrillic; some banks transliterate to Latin. From 
 1. Contribution/PIT debits are always outgoing (DEBIT) to the NRA; recur monthly around the 25th.
 2. A single NRA debit may bundle social + health + the 10% PIT -- split by reference (ОСИГУРОВКИ = contributions; ДДФЛ/ДОД = income tax).
 3. Net wage to the employee (ЗАПЛАТА outgoing) is separate from the NRA remittance.
-4. Income above the BGN 4,130 / EUR 2,111.64 ceiling produces no additional contribution.
+4. Income above the ceiling for the month (BGN 4,130 Apr--Dec 2025; EUR 2,111.64 Jan--Jul 2026; EUR 2,300 Aug--Dec 2026) produces no additional contribution.
 5. Do not confuse outgoing contribution debits with incoming NSSI benefit credits (ПЕНСИЯ pension, ОБЕЗЩЕТЕНИЕ benefit).
 
 ## Section 12 -- Onboarding Fallback
@@ -460,7 +464,7 @@ If the client provides only a bank statement and no other information:
 
 1. **Scan for NRA debits** -- identify all outgoing payments matching Section 6 patterns (НАП / ОСИГУРОВКИ / НЗОК / ДОО / УПФ / ДДФЛ).
 2. **Separate contributions from PIT** -- tag ОСИГУРОВКИ/ДОО/НЗОК/УПФ as social/health contributions; tag ДДФЛ/ДОД as the 10% PIT.
-3. **Reverse-engineer the base** -- for an employer remittance that excludes PIT, divide the contribution by the combined rate (0.3270 at the 0.4% class, up to 0.3340 at 1.1%) to estimate insurable income; check against the BGN 4,130 / EUR 2,111.64 ceiling. If the implied base equals the ceiling exactly, the employee is at or above the cap.
+3. **Reverse-engineer the base** -- for an employer remittance that excludes PIT, divide the contribution by the combined rate (0.3270 at the 0.4% class, up to 0.3340 at 1.1%) to estimate insurable income; check against the ceiling for that month (BGN 4,130 Apr--Dec 2025; EUR 2,111.64 Jan--Jul 2026; EUR 2,300 Aug--Dec 2026). If the implied base equals the ceiling exactly, the employee is at or above the cap.
 4. **Match the net wage** -- a ЗАПЛАТА outgoing equals gross minus employee contributions minus PIT.
 5. **Flag for reviewer:** "Payroll figures derived from bank statement amounts only. Employment status, birth year, work-accident class, and insurable income have not been independently verified. Reviewer must confirm before filing Declaration 1/6."
 
@@ -489,10 +493,10 @@ If the client provides only a bank statement and no other information:
 | --- | --- | --- |
 | Income tax rate | 10% flat | mi.government.bg |
 | Minimum monthly wage 2025 | BGN 1,077 (from 1 Jan 2025; was BGN 933 in 2024); hourly ≈ BGN 6.49 | mi.government.bg |
-| Minimum monthly wage 2026 (EUR) | ≈ EUR 620.20/month (≈ EUR 3.74/hr) | Leinonen **[RESEARCH GAP -- confirm against 2026 budget]** |
-| Minimum monthly insurable income | BGN 933 (Jan--Mar 2025) then BGN 1,077 (Apr--Dec 2025); higher per occupation | mi.government.bg |
-| Maximum monthly insurable income | BGN 3,750 (Jan--Mar 2025) then BGN 4,130 (Apr--Dec 2025) ≈ EUR 2,111.64 | mi.government.bg / PwC |
-| Self-employed min monthly insurable base 2026 | ≈ EUR 550.66 (= BGN 1,077) | PwC **[RESEARCH GAP -- confirm against 2026 budget]** |
+| Minimum monthly wage 2026 (EUR) | EUR 620.20/month (EUR 3.74/hr) from 1 Jan 2026 | Council of Ministers Decree No. 243 of 13.11.2025 |
+| Minimum monthly insurable income (employees) | BGN 933 (Jan--Mar 2025) then BGN 1,077 (Apr--Dec 2025); 2026 is a range by activity and occupation: EUR 550.66--901.41 (Jan--Jul), **EUR 620.20--1,532.41 (Aug--Dec)** | mi.government.bg / SSB Act 2026, Annexes 1 and 1A |
+| Maximum monthly insurable income | BGN 3,750 (Jan--Mar 2025) then BGN 4,130 (Apr--Dec 2025) = EUR 2,111.64; **EUR 2,300 from 1 Aug 2026** | mi.government.bg / PwC / SSB Act 2026 |
+| Self-employed min monthly insurable base 2026 | EUR 550.66 (= BGN 1,077) to 31 Jul 2026; **EUR 620.20 from 1 Aug 2026** | PwC / SSB Act 2026, State Gazette No. 68 of 28 July 2026 |
 | Euro changeover | 1 Jan 2026 at fixed 1.95583 BGN/EUR | ECB |
 
 ### Penalties
@@ -522,7 +526,7 @@ If the client provides only a bank statement and no other information:
 
 **Test 5:** Employee born 1955 (pre-1960). -> State Pension Fund 19.8%, NO 2nd pillar. Flag for reviewer to confirm the pre-1960 split. **[RESEARCH GAP.]**
 
-**Test 6:** 2026 computation, gross EUR 1,500, employee born 1990. -> Ceiling EUR 2,111.64; rates unchanged. Employee 13.78% = EUR 206.70; employer 18.92% = EUR 283.80; PIT base = 1,293.30; PIT = EUR 129.33; net = EUR 1,163.97.
+**Test 6:** 2026 computation dated before 1 Aug 2026, gross EUR 1,500, employee born 1990. -> Ceiling EUR 2,111.64 (EUR 2,300 from 1 Aug, but the gross is below both so the result is unchanged); rates unchanged. Employee 13.78% = EUR 206.70; employer 18.92% = EUR 283.80; PIT base = 1,293.30; PIT = EUR 129.33; net = EUR 1,163.97.
 
 **Test 7:** New hire starting work without an Art. 62 notification filed. -> Compliance breach; employee may only start after NRA confirmation. Flag the penalty exposure (refusal R-BG-PAY-3).
 
@@ -550,7 +554,7 @@ If the client provides only a bank statement and no other information:
 ## PROHIBITIONS
 
 - **PIT base exclusion of mandatory contributions** — NEVER apply the 10% PIT to raw gross -- the base is gross MINUS the employee's mandatory contributions  _(PROHIBITIONS)_
-- **Hard contribution ceiling** — NEVER compute contributions on income above the monthly ceiling (BGN 4,130 / EUR 2,111.64) -- the cap is hard  _(PROHIBITIONS)_
+- **Hard contribution ceiling** — NEVER compute contributions on income above the monthly ceiling -- the cap is hard. Take the ceiling for the **month being run**: BGN 4,130 (Apr--Dec 2025), EUR 2,111.64 (Jan--Jul 2026), EUR 2,300 (from Aug 2026)  _(PROHIBITIONS)_
 - **No scaling beyond ceiling** — NEVER tell a high earner that contributions scale with their full salary -- they stop at the ceiling  _(PROHIBITIONS)_
 - **TZPB employer-only** — NEVER withhold the work-accident (TZPB) contribution from the employee -- it is employer-only  _(PROHIBITIONS)_
 - **2nd pillar age restriction** — NEVER apply the 5% Universal Pension Fund (2nd pillar) to a person born before 1960 -- they pay 19.8% to the state Pension Fund with no 2nd pillar  _(PROHIBITIONS)_
@@ -558,7 +562,7 @@ If the client provides only a bank statement and no other information:
 - **PIT vs contributions separation** — NEVER conflate the 10% flat PIT with social/health contributions -- they are separate even though both go to the NRA  _(PROHIBITIONS)_
 - **Art. 62 notification before start** — NEVER let a new employee start work before the Art. 62 employment-contract notification is confirmed by the NRA  _(PROHIBITIONS)_
 - **25th-of-month deadline** — NEVER miss the 25th-of-following-month deadline for Declaration 1, Declaration 6, and payment -- interest and fines apply  _(PROHIBITIONS)_
-- **2026 figures unconfirmed** — NEVER treat any contested or unpublished 2026 figure as confirmed -- use the carried-over 2025 EUR equivalents and flag the RESEARCH GAP  _(PROHIBITIONS)_
+- **2026 figures are confirmed, and they move on 1 August** — NEVER apply one set of 2026 insurable-income figures across the whole year. The 2025 amounts carried over only to **31 July 2026**; the State Social Security Budget Act 2026 (State Gazette No. 68 of 28 July 2026) raised the ceiling to **EUR 2,300** and the self-insured minimum to **EUR 620.20** from **1 August 2026**. This prohibition previously said to use the carried-over 2025 equivalents and flag a research gap; that instruction has expired and following it now understates contributions for August onward  _(PROHIBITIONS)_
 - **No quantifying arrears without NRA statement** — NEVER quantify payroll arrears, interest, or fines without an NRA statement -- escalate to a qualified accountant  _(PROHIBITIONS)_
 - **Estimated label required** — NEVER present payroll computations as definitive -- always label as estimated and direct to a licensed Bulgarian accountant  _(PROHIBITIONS)_
 

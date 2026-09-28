@@ -28,22 +28,41 @@ Checks (ERROR = exit 1, WARN = printed summary only):
   6. ERROR if a deprecated inventory file reappears (skills/manifest.json,
      packages/manifest.json). index.json is the single canonical inventory;
      the old manifests had no consumers and were removed so they can't drift.
-  7. Every `depends_on` entry must be the `name` of a guide under skills/ or
+  7. ERROR if llms-full.txt is stale: regenerated copy must match the
+     committed one. Fix with: python3 scripts/build-llms-full.py
+  8. ERROR if packages/** is stale: a fresh build into a temp dir (via
+     build-packages.py --out) must match the committed tree file for file,
+     the hand-authored packages/us-federal/ excepted.
+     Fix with: python3 scripts/build-packages.py
+  9. Every `depends_on` entry must be the `name` of a guide under skills/ or
      packages/us-federal/ — ERROR otherwise. The lookup set always comes from
      the whole tree, even in --changed-only mode. (238 entries once named
      `income-tax-workflow-base`, `social-contributions-workflow-base` and
      `foundation` while no guide carried those names.)
-  8. The closing CTA block (scripts/cta_block.py): at most one "Talk to a
+  10. The closing CTA block (scripts/cta_block.py): at most one "Talk to a
      verified accountant" section per guide, and the
      `<!-- openaccountants-cta-block -->` marker must be present and introduce
      that section — ERROR otherwise, except that the template directories in
      cta_block.OPTIONAL_DIRS may omit the block. Repair with:
      python3 scripts/normalize-cta-block.py --apply
 
+Checks 5, 7 and 8 are the derived-tree freshness checks. The derived trees
+have exactly one writer: whoever edits skills/ runs the three generators and
+commits their output in the same change. Nothing else regenerates them.
+
+Flags:
+  --changed-only    per-guide checks (1-3b) only on files changed vs
+                    origin/main (PR mode). The freshness checks still run:
+                    they describe the whole tree, not the diff.
+  --no-index-check  skip the freshness checks (CI's `validate` job; the
+                    `guard-derived-trees` job runs them with --derived-only)
+  --derived-only    run only the freshness checks (5, 6, 7, 8)
+
 Install scripts/requirements-validation.txt, then run:
 python3 scripts/validate-guides.py
 """
 
+import filecmp
 import importlib.util
 import json
 import os
@@ -59,6 +78,11 @@ from frontmatter_yaml import FrontmatterError, load_frontmatter
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD_INDEX = os.path.join(REPO_ROOT, "scripts", "build-index.py")
+BUILD_PACKAGES = os.path.join(REPO_ROOT, "scripts", "build-packages.py")
+BUILD_LLMS_FULL = os.path.join(REPO_ROOT, "scripts", "build-llms-full.py")
+
+#: How many differing paths a stale-packages error lists before "... and N more".
+MAX_LISTED_DIFFS = 10
 
 # Legacy guides that predate the description requirement. Grandfathered so CI
 # can be strict for everything new. Never add to this list — remove entries as
@@ -87,6 +111,14 @@ JURISDICTION_OPTIONAL_DIRS = {
 
 def load_build_index():
     spec = importlib.util.spec_from_file_location("build_index", BUILD_INDEX)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_build_packages():
+    """The generator module, for HAND_AUTHORED_PACKAGES (its list, not a copy)."""
+    spec = importlib.util.spec_from_file_location("build_packages", BUILD_PACKAGES)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -438,8 +470,7 @@ def check_llms_full_fresh(errors):
         tmp = tf.name
     try:
         result = subprocess.run(
-            [sys.executable, os.path.join(REPO_ROOT, "scripts", "build-llms-full.py"),
-             "--out", tmp],
+            [sys.executable, BUILD_LLMS_FULL, "--out", tmp],
             capture_output=True, text=True,
         )
         if result.returncode != 0:
@@ -458,36 +489,147 @@ def check_llms_full_fresh(errors):
         os.unlink(tmp)
 
 
+def package_tree_files(root, skip_dirs=()):
+    """Entries under a packages tree, keyed by relative posix path.
+
+    The value is True for a regular file and False for anything else: a
+    symlink (to a file or a directory), a device, a socket. Top-level entries
+    named in skip_dirs (the hand-authored packages) are left out. A missing
+    root is an empty tree. Nothing is opened here and symlinks are never
+    followed, so a link pointing outside the tree costs nothing to list.
+    """
+    entries = {}
+    if not os.path.isdir(root):
+        return entries
+
+    def record(path):
+        rel = os.path.relpath(path, root).replace(os.sep, "/")
+        entries[rel] = not os.path.islink(path) and os.path.isfile(path)
+
+    for entry in sorted(os.listdir(root)):
+        if entry in skip_dirs:
+            continue
+        full = os.path.join(root, entry)
+        if os.path.islink(full) or not os.path.isdir(full):
+            record(full)
+            continue
+        for dirpath, dirnames, filenames in os.walk(full):  # never follows links
+            dirnames.sort()
+            for name in dirnames:
+                sub = os.path.join(dirpath, name)
+                if os.path.islink(sub):
+                    record(sub)  # listed as an entry, never entered
+            for name in filenames:
+                record(os.path.join(dirpath, name))
+    return entries
+
+
+def compare_package_trees(committed_root, fresh_root, skip_dirs=()):
+    """Paths where the committed packages tree and a fresh build disagree.
+
+    Each entry is `<relative path> (<why>)`: present on one side only, not a
+    regular file (the generator only ever writes regular files, and a symlink
+    in the checkout is reported without following it), or present on both
+    with different bytes. Contents are compared in bounded chunks, never read
+    whole into memory. Empty means the committed tree is exactly what the
+    generator produces today.
+    """
+    committed = package_tree_files(committed_root, skip_dirs)
+    fresh = package_tree_files(fresh_root, skip_dirs)
+    differing = []
+    for rel in sorted(set(committed) | set(fresh)):
+        in_committed, in_fresh = committed.get(rel), fresh.get(rel)
+        if in_committed is False or in_fresh is False:
+            differing.append(f"{rel} (not a regular file; a fresh build only writes regular files)")
+        elif in_committed is None:
+            differing.append(f"{rel} (a fresh build produces it; packages/ lacks it)")
+        elif in_fresh is None:
+            differing.append(f"{rel} (in packages/; a fresh build does not produce it)")
+        elif not filecmp.cmp(
+            os.path.join(committed_root, rel), os.path.join(fresh_root, rel), shallow=False
+        ):
+            differing.append(f"{rel} (content differs)")
+    return differing
+
+
+def check_packages_fresh(errors):
+    """packages/** must equal a fresh build, hand-authored directories aside.
+
+    build-packages.py rebuilds in place, so the comparison goes through its
+    --out flag into a temp dir. The tree is the copy the MCP server and every
+    downloader read; a stale copy serves rules and tiers the sources no longer
+    carry (five guides demoted to tier 2 were still served as tier 1 when this
+    check was added).
+    """
+    committed = os.path.join(REPO_ROOT, "packages")
+    if not os.path.isdir(committed):
+        errors.append("packages/ missing — run: python3 scripts/build-packages.py")
+        return
+    skip = load_build_packages().HAND_AUTHORED_PACKAGES
+    with tempfile.TemporaryDirectory() as tmp:
+        fresh = os.path.join(tmp, "packages")
+        result = subprocess.run(
+            [sys.executable, BUILD_PACKAGES, "--out", fresh],
+            cwd=REPO_ROOT, capture_output=True, text=True,
+        )
+        if result.returncode != 0:
+            tail = result.stderr.strip().splitlines()[-5:]
+            errors.append(
+                "build-packages.py failed while checking freshness: " + " | ".join(tail)
+            )
+            return
+        differing = compare_package_trees(committed, fresh, skip_dirs=skip)
+    if differing:
+        listed = differing[:MAX_LISTED_DIFFS]
+        more = len(differing) - len(listed)
+        detail = "\n    ".join(listed) + (f"\n    ... and {more} more" if more else "")
+        errors.append(
+            f"packages/ is stale ({len(differing)} file(s) differ from a fresh build) "
+            "— regenerate with: python3 scripts/build-packages.py\n    " + detail
+        )
+
+
 def main():
-    # PR mode (--changed-only --no-index-check): validate only the files the PR
-    # touches, and skip the derived-tree freshness checks. Rationale: index.json
-    # and llms-full.txt are GENERATED by the platform's daily sync — the sync is
-    # their only legitimate writer, so their staleness is the sync's bug, never a
-    # contributor's. The old byte-match here made every two concurrent guide PRs
-    # conflict on a 586KB generated file, and failed every doc-following external
-    # PR. Full mode (no flags) is unchanged for the nightly/sync context.
+    # Modes:
+    #   (no flags)        per-guide checks on every guide, the us-federal deletion
+    #                     guard, and the derived-tree freshness checks
+    #   --changed-only    per-guide checks only on files changed vs origin/main
+    #                     (PR mode). The freshness checks still run: they describe
+    #                     the whole tree, and a PR that changed no guide can still
+    #                     have left index.json or llms-full.txt stale (both embed
+    #                     docs/ and llms.txt).
+    #   --no-index-check  skip the freshness checks. CI's `validate` job passes
+    #                     this because its sibling `guard-derived-trees` job runs
+    #                     them with --derived-only; skipping them anywhere else
+    #                     hides the one class of staleness nothing else catches.
+    #   --derived-only    only the freshness checks (and the deprecated-manifest
+    #                     check, which is about the same trees)
     changed_only = "--changed-only" in sys.argv
     no_index_check = "--no-index-check" in sys.argv
+    derived_only = "--derived-only" in sys.argv
+    if derived_only and no_index_check:
+        sys.exit("error: --derived-only and --no-index-check cancel each other out")
 
     errors, warnings = [], []
     bi = load_build_index()
-    only = None
-    if changed_only:
-        changed = changed_files_vs_main()
-        if changed is not None:
-            only = {f for f in changed if f.startswith(("skills/", "packages/"))}
-            print(f"changed-only mode: validating {len(only)} changed guide file(s)")
-            if not only:
-                print("no guide files changed — validation passed")
-                return
-    check_guides(bi, errors, warnings, only_files=only)
-    check_packages_frontmatter(bi, errors, only_files=only)
-    check_us_federal_deletions(errors)
-    if not no_index_check:
-        check_index_fresh(errors)
+    if not derived_only:
+        only = None
+        if changed_only:
+            changed = changed_files_vs_main()
+            if changed is not None:
+                only = {f for f in changed if f.startswith(("skills/", "packages/"))}
+                print(f"changed-only mode: validating {len(only)} changed guide file(s)")
+        if only is not None and not only:
+            print("no guide files changed — skipping the per-guide checks")
+        else:
+            check_guides(bi, errors, warnings, only_files=only)
+            check_packages_frontmatter(bi, errors, only_files=only)
+        check_us_federal_deletions(errors)
     check_no_deprecated_manifests(errors)
-    if not no_index_check:
+    if derived_only or not no_index_check:
+        check_index_fresh(errors)
         check_llms_full_fresh(errors)
+        check_packages_fresh(errors)
 
     for warning in warnings:
         print(f"WARN: {warning}")

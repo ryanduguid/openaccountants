@@ -1,10 +1,10 @@
 ---
 name: australia-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Australian taxpayers — individuals, sole traders, and small business owners. Trigger on phrases like "reduce my tax", "tax planning Australia", "salary vs dividends", "negative gearing", "instant asset write-off", "superannuation strategy", "CGT discount", "trust distribution", "income splitting", "GAAR", "Part IVA", or any question about structuring affairs to legally minimize Australian tax. Covers entity selection, deduction optimization, capital allowances, loss utilization, timing strategies, GST planning, superannuation, and red lines. ALWAYS read this skill before giving Australian tax optimization advice.
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-14
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -68,8 +68,8 @@ Plus 2% Medicare levy on total taxable income. Medicare levy surcharge (1%–1.5
 Discretionary (family) trusts allow income distribution to adult family members in lower brackets. The trustee resolution must be made before 30 June. Key constraints:
 
 - **Section 100A reimbursement agreements** — trust distributions to low-income beneficiaries who redirect funds back to the primary earner are void.  _(Section 100A (ITAA 1936))_
-- **Family Trust Election (FTE)** — required to access franking credits and carry forward losses.
-- **Minor beneficiaries penalty rates** — Minor beneficiaries (under 18) taxed at penalty rates on unearned income (Division 6AA) — effectively 66% on amounts above $416.  _(Division 6AA)_
+- **Family trust election (FTE)**: Assess whether an election is needed for the intended treatment. It can help a discretionary trust meet the at-risk holding requirements for franking credits where no exception applies. Eligible beneficiaries may instead use the small-shareholder exception. Losses can be carried forward under the ordinary trust-loss rules; an FTE simplifies their use through a modified income-injection test. An election does not automatically establish entitlement to credits or deductions. Consider the lasting family-group distribution restrictions before electing. (Library, Tax/Trusts, paragraphs 9-020 and the advantages of family trust elections.)
+- **Minor beneficiaries:** For a resident prescribed person under Division 6AA, eligible income up to $416 is tax-free; $417-$1,307 is taxed at 66% of the excess over $416; $1,308 or more is taxed at 45% of the whole eligible amount. Check excepted-person and excepted-income rules separately. (Division 6AA; Library, Tax/Trusts.)
 
 ### Superannuation as Income Splitting
 
@@ -82,17 +82,19 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 | Deduction | Legislation | Notes |
 | --- | --- | --- |
-| Home office running expenses | s 8-1 ITAA 1997 | Fixed rate 67c/hour (revised method from 1 July 2022) or actual cost. Must keep contemporaneous records (timesheets, diary) |
-| Self-education expenses | s 8-1 | Must have sufficient connection to current employment/business. First $250 non-deductible for employees (not self-employed) |
+| Home office running expenses | s 8-1 ITAA 1997 | Fixed rate 70c/hour for 2025-26 or actual cost. Must keep contemporaneous records (timesheets, diary) |
+| Self-education expenses | s 8-1 | Must have sufficient connection to current employment/business. The former $250 reduction was removed from 2022-23 |
 | Phone and internet | s 8-1 | Apportion business use %. ATO accepts a representative 4-week diary |
 | Income protection insurance | s 8-1 | Premiums for policies replacing lost income are deductible |
 | Professional memberships and subscriptions | s 8-1 | CPA Australia, CA ANZ, industry bodies |
 | Tax agent fees | s 25-5 | Cost of managing tax affairs including prior-year amendments |
 | Union fees | s 8-1 | Full deduction |
-| Tools and equipment (≤$300) | s 8-1 | Immediately deductible if cost ≤$300 and used for income |
+| Tools and equipment: immediate deduction | s 40-80(2) ITAA 1997 | Specific depreciating-asset provision. Amount and scope remain unresolved against the Library; apply the hold below before claiming |
 | Travel between workplaces | s 8-1 | Deductible (but NOT home-to-work commuting) |
 | Donations to DGRs | Div 30 | Deductible gifts to Deductible Gift Recipients |
 | Prepaid expenses ≤12 months | s 82KZM ITAA 1936 | Non-business individuals can prepay deductible expenses before 30 June for immediate deduction |
+
+**Equipment deduction hold**: The ATO text of [section 40-80(2)](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/40-80) specifies a cost no greater than $300, predominant use for non-business assessable income, and limits for sets and identical or substantially identical assets acquired in the same income year. The Library, Tax/Depreciation paragraph 6-280, instead describes a below-$100 immediate write-off in a business-pooling example. The Library is final for this work, so the amount and application cannot be settled by substituting the ATO amount. Leave the immediate-deduction decision pending until this conflict is resolved; do not claim under s 8-1 or assume either amount applies.
 
 ## Section 4 — Capital Allowances Optimization
 
@@ -110,19 +112,19 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | Diminishing value | Base value × (days held / 365) × (200% / effective life) |
 | Prime cost (straight-line) | Cost × (days held / 365) × (100% / effective life) |
 
-- **Effective life determination** — Effective life determined by ATO schedule (TR 2024/3) or taxpayer's own reasonable estimate. Self-assessed life must be supportable if audited.  _(TR 2024/3)_
+- **Effective life determination**: Use the applicable asset entry and period in the *Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025*, made under s 40-100(1), or a permitted, supportable self-assessment. Confirm the asset description and industry before selecting its life. TR 2024/3 concerns self-education deductions and is not the effective-life schedule. (Library, Depreciation Rates, Determination 2025.)
 
 ### Motor Vehicles
 
 - **Car cost limit for depreciation (2025–26)** — $69,674 AUD (Only the business-use portion of this amount can be depreciated)
-- **Business-use substantiation** — Business-use percentage must be substantiated via logbook (minimum continuous 12-week period, valid for 5 years) or cents-per-km method (85c/km, max 5,000 business km = $4,250).
+- **Business-use substantiation** — Business-use percentage must be substantiated via logbook (minimum continuous 12-week period, valid for 5 years) or cents-per-km method (88c/km, max 5,000 business km = $4,400).
 
 ## Section 5 — Loss Utilization
 
 ### Individual/Sole Trader Losses
 
 - **Loss carry forward** — Tax losses carry forward indefinitely (s 36-15 ITAA 1997). No carry-back for individuals.  _(s 36-15 ITAA 1997)_
-- **Non-commercial loss rules (Division 35) — four tests** — business losses can only offset non-business income if one of four tests is met: 1. Assessable income ≥$20,000 from the activity; 2. Profit in 3 of the last 5 years (including current year); 3. Real property used ≥$500,000; 4. Other assets used ≥$100,000. If no test is met AND adjusted taxable income >$250,000, loss is quarantined. Commissioner discretion may apply.  _(Division 35)_
+- **Non-commercial loss rules:** For the four-test route, income for Division 35 must be less than $250,000 AND at least one test must pass: activity assessable income of at least $20,000; a profit in 3 of 5 years including the current year; qualifying real property of at least $500,000; or qualifying other assets of at least $100,000. Apply the asset exclusions. The income measure includes taxable income calculated before the business loss, reportable fringe benefits, reportable super contributions and total net investment losses. Otherwise defer the loss unless an exception or the Commissioner's discretion applies. Primary production and professional arts have an exception where assessable income from other sources, excluding net capital gains, is less than $40,000. (ITAA 1997 Division 35; Library, Tax/Assessable Income.)
 
 ### Company Losses
 
@@ -130,7 +132,9 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 ### Loss Carry-Back (Companies)
 
-- **Loss carry-back eligibility** — Companies with aggregated turnover <$5bn can carry back tax losses to offset tax paid in prior income years, generating a refundable tax offset. Capped by available franking account balance.
+- **2025-26**: The original temporary loss carry-back scheme does not cover losses made in this income year. Do not apply the former $5 billion threshold as a current entitlement.
+- **Original temporary scheme**: Eligible corporate entities could use losses from 2019-20 to 2022-23, claiming in 2020-21 to 2022-23 returns against eligible earlier liabilities. The turnover test used a $5 billion small-business-entity threshold. Apply the original entity, loss, lodgement and franking-account conditions. See [ATO original scheme](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/loss-carry-back-tax-offset/how-loss-carry-back-tax-offsets-work) and [original eligibility rules](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/loss-carry-back-tax-offset/eligibility-for-the-tax-offset).
+- **Income years starting on or after 1 July 2026**: The new scheme allows eligible corporate tax entities with aggregated annual global turnover below $1 billion to carry revenue losses back to either or both of the preceding 2 income years. The refundable offset is limited by the franking-account balance. First claims are in 2026-27 returns. This is separate from the 2025-26 planning period. See [ATO 2026 reform](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-tax-loss-carry-back).
 
 ## Section 6 — Timing Strategies
 
@@ -144,7 +148,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | Concessional super contribution | Maximise contributions before 30 June — $30,000 cap (2025–26). Carry-forward unused cap available if total super balance <$500,000 |
 | Capital gains harvest | Realise capital losses before 30 June to offset gains. Wash sale rules: ATO will scrutinise buybacks of substantially similar assets |
 | Defer capital gains | Hold assets >12 months to access 50% CGT discount (individuals and trusts) |
-| Small business CGT concessions | Div 152: 15-year exemption, 50% active asset reduction, retirement exemption ($500k lifetime cap), rollover. Net assets <$6m or aggregated turnover <$2m |
+| Small business CGT concessions | Div 152: 15-year exemption, 50% active asset reduction, retirement exemption ($500k lifetime cap), rollover. Maximum net asset value no more than $6 million immediately before the CGT event, or the qualifying turnover route below $2 million. Apply aggregation, exclusions, the active-asset test and all other concession conditions; see `au-small-business-cgt` |
 
 ## Section 7 — GST Optimization
 
@@ -173,8 +177,10 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | Non-concessional contributions | Cap $120,000/year (or $360,000 under bring-forward rule over 3 years). Not deductible, but earnings taxed at max 15% in super | s 292-85 |
 | Salary sacrifice | Pre-tax super contributions reduce assessable income. Counted towards concessional cap |  |
 | Spouse contribution offset | Contribute to low-income spouse's super for tax offset up to $540 | s 290-230 |
-| Government co-contribution | Contribute to low-income earner's super; government matches up to $500 (income <$45,400) | s 12A SGAA |
+| Government co-contribution | For 2025-26, eligible undeducted personal contributions attract a 50% match, up to $500. Lower income threshold $47,488; a reduced amount may apply above it and below $62,488. Apply the eligibility checks below | *Superannuation (Government Co-contribution for Low Income Earners) Act 2003* (Cth) |
 | Division 293 tax | Additional 15% contributions tax on individuals with income + concessional contributions >$250,000 | Div 293 |
+
+**Co-contribution eligibility**: Check eligible personal contributions to the person's own complying fund or RSA, the 10% employment/business income test, tax-return lodgement, contribution-cap compliance, prior-30 June total super balance, age below 71 at year end and temporary-visa restrictions and exceptions. Use the co-contribution income measure, including its business-deduction adjustment; salary alone may not be the relevant amount. Deducted contributions and spouse contributions do not qualify. For an otherwise eligible person with $46,000 relevant income and $1,000 eligible undeducted contributions in 2025-26, the co-contribution is **$500**. (Library, Superannuation/Contributions to Superannuation Funds and RSAs, paragraphs 6-700 to 6-740.)
 
 ### Medicare Levy Surcharge Avoidance
 
@@ -189,8 +195,10 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | CGT 50% discount | Individuals and trusts — hold assets >12 months for 50% discount on net capital gain |
 | Negative gearing | Investment property/share portfolio borrowing costs exceed income → net loss offsets other income. No cap in Australia |
 | Franking credits | Australian company dividends carry franking credits. Excess credits refundable for individuals and super funds |
-| Super in pension phase | Earnings on assets supporting income streams in pension phase are tax-free (up to transfer balance cap of $1.9m, indexed) |
-| Transition to retirement (TTR) | Access super as income stream from preservation age while still working. Earnings in TTR taxed at 15% (not tax-free) |
+| Super in pension phase | The 2025-26 general transfer balance cap is $2 million. Establish the member's personal cap and previous retirement-phase use separately. The cap limits transfers into retirement phase, not later investment earnings. Earnings supporting qualifying retirement-phase income streams may be exempt, subject to the fund and pension conditions |
+| Transition to retirement (TTR) | Access super as an income stream from preservation age while still working. A TTR income stream outside retirement phase generally has fund earnings taxed at 15%. It can enter retirement phase automatically at age 65, after a qualifying release condition is notified to the provider, or when paid to a reversionary beneficiary. The existing stream need not restart to qualify for the earnings exemption; check the conditions below |
+
+**TTR retirement-phase conditions**: A benefit must be currently payable. Before age 65, the notified release condition must be retirement, terminal medical condition or permanent incapacity with a nil cashing restriction. Reversionary beneficiaries have a separate entry route. Apply the transfer-balance rules and remaining pension/exempt-current-pension-income conditions; entering retirement phase does not waive them. The stream remains a TRIS. (Library, Contributions to Superannuation Funds and RSAs, paragraph 6-425; Taxation of Superannuation Funds, ADFs and PSTs, TRIS and reversionary beneficiaries.)
 
 ## Section 10 — Red Lines (GAAR & Scrutiny Triggers)
 
@@ -206,7 +214,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | --- | --- |
 | Trust distributions to low-income beneficiaries with reimbursement agreements | s 100A — voided, trustee taxed at top rate |
 | Division 7A non-complying loans | Deemed unfranked dividend |
-| Non-commercial losses claimed without meeting 4 tests | Loss quarantined, amended assessment |
+| Non-commercial losses claimed without the required income gate and a test, exception or discretion | Review Division 35 deferral and amend if necessary |
 | Large work-related deductions vs income | Risk of audit |
 | Wash sales around 30 June | CGT loss disallowed |
 | Artificial income splitting via interposed entities | Part IVA application |
@@ -242,9 +250,9 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 ### Example 1 — Sole Trader Incorporates
 
-**Before:** Sole trader, $180,000 net profit. Tax: ~$51,067 + $3,600 Medicare = $54,667.
+**Before:** Sole trader, $180,000 taxable income. Under the 2025-26 resident bands, tax before offsets is $4,288 + $90,000 x 30% + $45,000 x 37% = $47,938, plus $3,600 Medicare = $51,538.
 
-**After:** Pty Ltd, pays $80,000 salary + $12,000 super. Retains $88,000 in company at 25% = $22,000 company tax. Personal tax on $80,000 salary: ~$16,788 + $1,600 Medicare = $18,388. **Total tax: $40,388. Saving: ~$14,279.**
+**After:** Assume the company qualifies for the 25% rate, deducts an $80,000 salary and $12,000 super contribution, and has $88,000 taxable profit. Company tax is $22,000. Personal tax before offsets on the salary is $14,788 plus $1,600 Medicare. Combined company and personal income tax is $38,388, a $13,150 difference before offsets, contributions tax, administration costs and any later tax on extracting retained profits. This is a retained-profit illustration; it does not establish a final saving from incorporation.
 
 ### Example 2 — Maximising Super Contributions
 
@@ -256,7 +264,7 @@ Small business buys 3 laptops at $2,500 each and a vehicle at $18,000. Total: $2
 
 ### Example 4 — Negative Gearing Investment Property
 
-Employee earns $120,000. Investment property: $25,000 rent less $35,000 expenses (interest, rates, depreciation) = $10,000 net loss. Taxable income: $110,000. Tax saving at 30% marginal: **$3,000 cash refund via PAYG variation.**
+Employee earns $120,000. Investment property: $25,000 rent less $35,000 expenses (interest, rates, depreciation) = $10,000 net loss. Taxable income: $110,000. Income-tax reduction at the assumed 30% marginal rate: **$3,000**, before Medicare and other adjustments. An ATO-approved downward PAYG withholding variation can reduce future withholding from the next available payday once the payer receives the official notice. It does not itself pay a $3,000 refund. The return determines the actual liability and any refund or amount payable. See [ATO withholding variations](https://www.ato.gov.au/individuals-and-families/jobs-and-employment-types/varying-your-payg-withholding).
 
 ## Disclaimer
 

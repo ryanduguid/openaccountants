@@ -20,7 +20,7 @@ If you cannot agree, do not open this PR — contact **info@openaccountants.com*
 
 - [ ] File is in `skills/` (not only `packages/`)
 - [ ] Jurisdiction is clear (folder path or `jurisdiction:` in frontmatter)
-- [ ] I only edited files under `skills/**` (generated trees rebuild automatically)
+- [ ] I edited `skills/**` (never `packages/`, `index.json` or `llms-full.txt` by hand) and committed the regenerated output of `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py`
 - [ ] **Name for attribution** (as it should appear on the guide): ______
 - [ ] My OpenAccountants profile GitHub username matches this account (optional — set it at openaccountants.com/profile for full credit)
 

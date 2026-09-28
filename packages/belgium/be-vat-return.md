@@ -3,13 +3,21 @@ name: be-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Belgian VAT return (déclaration périodique TVA / periodieke BTW-aangifte) for a self-employed individual or small business in Belgium. Trigger on phrases like "prepare Belgian VAT return", "Belgian BTW", "déclaration TVA Belgique", "BTW-aangifte", "classify transactions for Belgian VAT", or any request involving Belgium VAT filing. This skill covers Belgium only, standard regime (normal/normal simplifié). Régime forfaitaire, partial exemption, margin scheme, and VAT units are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Belgian VAT work.
 jurisdiction: BE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-13
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # belgium-vat-return
+
+<!-- einvoice-xref -->
+> **This pack has a separate e-invoicing guide: `belgium-einvoice`.** This guide does not
+> cover it. Where a jurisdiction operates a mandatory electronic-invoicing or
+> real-time-reporting regime, the obligations and any consequences for input-tax
+> recovery sit in that guide — read it alongside this one before filing or advising.
+> **No claim about that jurisdiction's regime is made here**; this is a pointer only.
+
 
 ## Belgium VAT Return Skill (Déclaration Périodique / Periodieke Aangifte) v2.0
 

@@ -3,7 +3,7 @@ name: bd-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Bangladesh (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BD
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,9 +23,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Withholding taxes and filing
 
-- **Dividend WHT — resident company recipient** — 20% percent ((approx — taxed at company rate; confirm))  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_
-- **Dividend WHT — resident individual** — 10% with e-TIN, 15% without e-TIN percent  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_
-- **Dividend WHT — non-resident** — 20% (company/fund/trust); 30% (other persons) percent (subject to reduction under an applicable tax treaty)  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_
+- **Dividend WHT — resident company recipient** — **20%** ("in case of person other than a natural person"). Whether it is creditable against the recipient company's own liability is not settled by the source this guide cites; what that source does settle is the non-resident position below, so do not read the two as the same percent  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_
+- **Dividend WHT — resident individual** — **15%** ("in case of a natural person"). This line previously read "10% with e-TIN, 15% without e-TIN", which is the pre-2023 Ordinance structure; the current table carries a flat 15% for a natural person with no e-TIN split. Withhold 15% and confirm with the NBR before applying 10% to anyone, because the reduction is the position that is no longer supported percent  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_
+- **Dividend WHT — non-resident** — **20%** for a company, fund or trust; **25%** for any other person — not 30%, which is what this line used to say and which its own cited source does not carry. Subject to reduction under an applicable tax treaty percent  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_
+- **Withholding from a non-resident without a PE is the final tax** — Tax withheld from a non-resident payee that has no permanent establishment in Bangladesh **is the final tax liability** and cannot be set off against other claims. That is what separates the non-resident columns above from the resident ones, and it means an over-deduction is not recovered through a return percent  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_
 - **Interest WHT — resident** — 10% (20% on company/trust/AoP savings and fixed deposits) percent  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_
 - **Interest WHT — non-resident** — 20% percent (subject to reduction under an applicable tax treaty)  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_
 - **Royalty WHT — resident** — 10% percent  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/withholding-taxes)_

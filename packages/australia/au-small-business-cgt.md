@@ -6,7 +6,7 @@ version: 1.0
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -71,7 +71,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Rule 1 -- The gateway: s 152-10
 
-A capital gain (except from CGT events D1, H2, J5, J6 for gateway purposes -- J5/J6 have their own path) may be reduced or disregarded if: (a) a CGT event happens to your asset; (b) the event would otherwise produce a gain; (c) you satisfy ONE of: CGT small business entity (< $2m aggregated turnover), the $6m MNAV test, the passively-held asset rules (s 152-10(1A)/(1B)), or the partner rules; and (d) the asset passes the active asset test. Shares/units carry extra conditions (Rules 7-8). Test everything at the time of the CGT event -- for a sale contract, the CONTRACT date.
+A capital gain (except from CGT events H2, J5, J6 for gateway purposes -- J5/J6 have their own path) may be reduced or disregarded if: (a) a CGT event happens to your asset; (b) the event would otherwise produce a gain; (c) you satisfy ONE of: CGT small business entity (< $2m aggregated turnover), the $6m MNAV test, the passively-held asset rules (s 152-10(1A)/(1B)), or the partner rules; and (d) the asset passes the active asset test. Shares/units carry extra conditions (Rules 7-8). Test everything at the time of the CGT event -- for a sale contract, the CONTRACT date. **CGT event D1** has a modified active asset test: the created right must be inherently connected with another CGT asset that meets the active asset test. Apply the remaining eligibility conditions. D1 does not qualify for the separate general CGT discount.
 
 ### Rule 2 -- CGT small business entity: aggregated turnover < $2 million
 
@@ -95,7 +95,7 @@ The asset must be active for at least **half of the ownership period** (acquisit
 
 ### Rule 6 -- Excluded assets and the rent nuance
 
-**Never active:** assets whose main use is to derive rent, interest, an annuity, royalties or foreign exchange gains; financial instruments (loans, debentures, futures); shares and trust interests (unless the 80% test below is met); subdivided vacant land held passively.
+**Generally excluded:** assets whose main use is to derive rent, interest, an annuity, royalties or foreign exchange gains; financial instruments (loans, debentures, futures); shares and trust interests (unless the 80% test below is met); subdivided vacant land held passively. The passive-income exclusion has an exception for an intangible asset whose market value has substantially increased through the owner's improvement or development. A substantially developed business trademark can therefore qualify despite royalty income, subject to the remaining active asset and eligibility conditions. Apply the rental qualifications below separately.
 
 **The rent carve-out that saves most premises:** in working out "main use", **disregard rent derived from your affiliate or a connected entity that uses the asset in its business** (s 152-40(4A)) -- premises leased to your own trading company or trust ARE active. Rent from unrelated tenants counts against you: a building mainly let to third parties fails even if the business occupies part. Temporary rental use is also disregarded. Short-stay accommodation with substantial services and no exclusive possession (motel-style) may not be "rent" at all -- degree-of-control analysis (TD 2006/78); flag, don't assume.
 
@@ -133,7 +133,9 @@ Basic conditions only -- no extra tests. The remaining gain (after losses and th
 
 ### Rule 11 -- Retirement exemption (Subdiv 152-D)
 
-Disregard a chosen "CGT exempt amount" up to a **$500,000 lifetime limit per individual** (per CGT concession stakeholder for company/trust claimants -- also $500,000 each, reduced by earlier use). No requirement to actually retire or stop working. Keep a written record of every amount chosen. **Individuals under 55 just before making the choice** (the choice is generally made when the return is lodged -- turning 55 before then removes the requirement) must contribute the exempt amount to a complying super fund or RSA by the later of making the choice and receiving the proceeds. **Company/trust claimants** must PAY the exempt amount to at least one CGT concession stakeholder (capped by participation percentage) by 7 days after the later of making the choice and receiving capital proceeds; if the stakeholder is under 55 just before the payment, the entity must pay it into super on their behalf. The payment is NANE income of the stakeholder, not a dividend. Gains from CGT events J5/J6 can use this exemption without re-meeting the basic conditions.
+Disregard a chosen "CGT exempt amount" up to a **$500,000 lifetime limit per individual** (per CGT concession stakeholder for company/trust claimants -- also $500,000 each, reduced by earlier use). No requirement to actually retire or stop working. Keep a written record of every amount chosen. **Individuals under 55 just before making the choice** (the choice is generally made when the return is lodged -- turning 55 before then removes the requirement) must contribute the exempt amount to a complying super fund or RSA by the later of making the choice and receiving the proceeds.
+
+**Company/trust claimants** must record the exempt amount and, if there is more than one CGT concession stakeholder, each stakeholder's allocation percentage in writing under s 152-315(5). These percentages may include zero and must total 100%; they need not match participation percentages. Payments under s 152-325 follow those allocations, subject to each stakeholder's unused $500,000 lifetime limit and the remaining conditions. For eligible 20% and 80% stakeholders with sufficient unused limits, a $300,000 exempt amount can be allocated entirely to the 20% stakeholder. Keep this separate from Rule 9's participation-based 15-year-exemption payment limit. Pay within 7 days after the later of making the choice and receiving capital proceeds; if the stakeholder is under 55 just before the payment, the entity must pay it into super on their behalf. The payment is NANE income of the stakeholder, not a dividend. Gains from CGT events J5/J6 can use this exemption without re-meeting the basic conditions.
 
 ### Rule 12 -- Replacement asset rollover (Subdiv 152-E; CGT events J2/J5/J6)
 

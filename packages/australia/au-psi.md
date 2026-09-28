@@ -13,7 +13,7 @@ version: 1.0
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -82,7 +82,7 @@ PSI work starts with the ledger and the debtor list, not the client's self-asses
 | Dividends/distributions to non-working spouse or family members | Higher-risk income splitting | Rule 11; document services actually provided; escalate (R-AU-PSI-6) |
 | Rent, mortgage interest, rates paid to the individual/associate for their residence | Denied: s 85-15 / s 86-60 | Add back in the attribution computation |
 | Salary or "admin fee" to an associate | Deductible only for principal work (s 85-20); admin support denied | Add back non-principal amounts; test reasonableness |
-| Two or more cars with private use by the individual | One-car limit (s 85-25 / s 86-70) | Add back the excess |
+| Two or more cars with private use by the individual | PSE one-car limit (s 86-70) | Add back the excess |
 | Nil PAYG remitted but attribution applies | TAA Sch 1 Div 13 breach | Quantify; flag urgently |
 | Contract income billed hourly with timesheets | Results test likely failing | Evidence check before any PSB claim |
 
@@ -110,7 +110,7 @@ Attributed PSI (s 86-15, reduced per s 86-20)
 Dev's assessable income = $100,000 salary + $113,700 attribution = $213,700
 ```
 
-The attributed $113,700 is neither assessable nor exempt income of BitWorks (s 86-30). BitWorks must have remitted PAYG on the attributed income quarterly under TAA 1953 Sch 1 Div 13 and reports the attributed amount to Dev. The spouse's $20,000 stays assessable to the spouse even though the company's deduction is denied -- flag the double-tax sting for the reviewer.
+The attributed $113,700 is neither assessable nor exempt income of BitWorks (s 86-30). BitWorks must have remitted PAYG on the attributed income quarterly under TAA 1953 Sch 1 Div 13 and reports the attributed amount to Dev. Under the Library's comparable non-principal associate-payment example, the spouse's $20,000 is not deductible to the payer and is not taxable to the spouse. Keep the attribution arithmetic above unchanged. (Library, Tax/Assessable Income, lines 928 to 932.)
 
 ### Example 2 -- Consultant passing the unrelated clients test
 
@@ -167,7 +167,7 @@ Both limbs, in the income year: (a) PSI from **2 or more clients** who are not a
 
 ### Rule 6 -- Employment test (s 87-25)
 
-Met if the entity/individual engages one or more others who perform **at least 20% (by market value) of the principal work** for the year, or has **one or more apprentices for at least half the year**. The test individual never counts toward it; for individuals, non-individual associates count only where the work is performed by others. "Principal work" is the work generating the PSI, not administration or bookkeeping.
+For the market-value limb, the governing Library requires **at least 20% of the work to be performed by entities that are not the individual's associates**. Count principal work that generates the PSI, excluding administration and bookkeeping. A spouse performing 25% does not satisfy that Library rule. Apply the separate apprentice limb where one or more apprentices are engaged for at least half the year. Keep the results test, 80% rule and any PSB determination separate. (Library, Tax/Assessable Income, line 968.)
 
 ### Rule 7 -- Business premises test (s 87-30)
 
@@ -193,7 +193,7 @@ The organising principle: **no better than an employee**. Against PSI, the indiv
 
 - **rent, mortgage interest, rates, land tax** for the residence of the individual or an associate used for PSI work (s 85-15) -- the classic home-office occupancy claim;
 - **payments to associates** (salary, super) for **non-principal work** -- admin, bookkeeping, secretarial support (s 85-20); payments to associates for principal work remain deductible;
-- **car expenses beyond one car** used partly privately at a time (s 85-25; s 86-70);
+- **PSE car expenses:** for cars with private use, s 86-70 permits one car at a time for the same individual's PSI; the entity chooses that car until it ceases to hold it. Cars used solely for business are treated separately under s 86-70(1). Section 85-25 concerns associate super contributions for non-principal work, not the car limit. See [ATO legal database: s 86-70](https://www.ato.gov.au/law/view/document?DocID=PAC/19970038/86-70);
 - general entity running costs beyond **entity maintenance deductions** -- the allowed list is narrow: financial-institution account fees, s 25-5 tax-related expenses, Corporations Act document/lodgment costs, statutory fees (s 86-65, applied first against the entity's other income).
 
 Still DEDUCTIBLE (s 85-10(2) and TR 2022/3): costs of gaining work (advertising, tendering, quoting), insuring against income loss, public liability and professional indemnity premiums, GST-related amounts, engaging others (non-associates, or associates for principal work), super for those workers, and the employee-style claims themselves (running expenses for a home work area, tools, self-education with nexus). s 85-30 switches Div 85 off where the individual is conducting a PSB; s 85-35 keeps employees and office-holders out of Div 85 entirely.
@@ -262,7 +262,8 @@ STEP 2 -- PSB TESTS (per test individual)
   Results test: % of PSI meeting result + tools + defect liability: [__%]  (need >= 75%)
   Client concentration: largest client + associates share: [__%]  (>= 80% blocks other tests)
   Unrelated clients: 2+ non-associated clients? [Y/N]  Offers to public evidenced? [Y/N]
-  Employment: others perform >= 20% of principal work by market value? [Y/N]
+  Employment: non-associates perform >= 20% of principal work by market value? [Y/N]
+  Associate status checked under the governing Library rule? [Y/N]
   Business premises: mainly-PSI / exclusive / separate from home / separate from client,
     at ALL times? [Y/N x 4]
   PSBD in force? [Y/N -- years covered]
@@ -311,7 +312,7 @@ REVIEWER FLAGS
 | "Mainly" threshold (PSI definition) | More than 50% of the reward (s 84-5) |
 | Results test coverage | >= 75% of the individual's PSI, all 3 conditions (s 87-18) |
 | 80% rule | < 80% from one client + associates to self-assess the other tests (s 87-15(3)) |
-| Employment test | >= 20% of principal work by market value, or apprentice(s) >= half the year (s 87-25) |
+| Employment test | Library market-value limb: non-associates perform >= 20% of principal work; separate apprentice limb: apprentice(s) >= half the year (s 87-25) |
 | Business premises test | All 4 conditions at all times in the year (s 87-30) |
 | Salary carve-out from attribution | Paid as salary within 14 days after the PAYG payment period (s 86-15(4)) |
 | Agents regime commission floor | >= 75% commission/results-based (s 87-40) |
@@ -338,7 +339,7 @@ REVIEWER FLAGS
 
 **Test 3:** Four unrelated clients (largest 40%) all sourced from a recruiter's panel. -> 80% rule met but s 87-20(2) defeats the offers-to-public limb; unrelated clients test fails.
 
-**Test 4:** Contractor's spouse does 25% (market value) of the principal design work as an employee. -> Employment test met; PSB if <80% concentration.
+**Test 4:** Contractor's spouse does 25% (market value) of the principal design work as an employee. Under the Library's non-associate rule, this does not pass the market-value employment limb. An unrelated employee performing 25% would satisfy that limb; self-assessment still requires less than 80% client concentration if the results test is not met.
 
 **Test 5:** "Business premises" is a dedicated home-office wing. -> Fails s 87-30(c) physical separation; test not met.
 

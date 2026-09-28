@@ -3,7 +3,7 @@ name: cw-vat-gst
 description: "Source-cited draft: vat / gst for Curacao (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Annual filing threshold (2025 change)** — 30,000 ANG (Businesses with turnover under ANG 30,000 may file OB annually)  _([Turnover Tax Ordinance (Landsverordening omzetbelasting 1999)](https://www.grantthornton.com.cw/insights/TaxLawChanges2025/))_
 - **Quarterly filing band (2025 change)** — 30,000 to 75,000 ANG (Businesses with turnover ANG 30,000 to 75,000 may file OB quarterly; larger businesses file monthly)  _([Turnover Tax Ordinance (Landsverordening omzetbelasting 1999)](https://www.grantthornton.com.cw/insights/TaxLawChanges2025/))_
 - **Default filing frequency** — Monthly OB return and payment, generally by the 15th day of the following month (approx — confirm exact due day)  _(Turnover Tax Ordinance (Landsverordening omzetbelasting 1999))_
-- **OB on imported / foreign digital services** — OB applies to services supplied from abroad to Curacao recipients, levied via a reverse-charge / self-assessment mechanism  _([Turnover Tax Ordinance (Landsverordening omzetbelasting 1999)](https://www.vatcalc.com/curacao/curacao-sales-tax-on-foreign-digital-services/))_
+- **OB on imported / foreign digital services** — OB applies to services supplied from abroad to Curacao recipients, levied via a reverse-charge / self-assessment mechanism  _(Turnover Tax Ordinance (Landsverordening omzetbelasting 1999) (as described at [vatcalc.com](https://www.vatcalc.com/curacao/curacao-sales-tax-on-foreign-digital-services/)))_
 - **Registration** — Entrepreneurs making taxable supplies in Curacao must register with the Inspectorate of Taxes; no general de minimis turnover exemption for registration (approx — confirm small-entrepreneur relief)  _(Turnover Tax Ordinance (Landsverordening omzetbelasting 1999))_
 
 <!-- openaccountants-cta-block -->

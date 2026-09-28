@@ -4,7 +4,7 @@ description: "version: 1.0"
 version: 1.0
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Jurisdiction | Emerging and frontier markets |
 | Corridors Covered | UAE-IN, SA-UK, ZA-UK, ZA-NL, IN-SG, IN-MU, TR-DE, TR-NL, IL-US, KE-UK |
 | Number of Corridors | 10 |
-| Last Verified | May 2026 |
+| Last Verified | May 2026, except Turkey → Germany (September 2026, Turkish domestic rates). Read the per-corridor "Last verified" line, not this one — it is the oldest of them |
 | Key Note | Several corridors involve jurisdictions with no/low income tax (UAE) or special regimes (Mauritius). India-Mauritius is one of the most scrutinised treaty corridors globally due to treaty shopping concerns. |
 
 ## UAE → India
@@ -144,15 +144,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 15% | Art 10 | TR domestic WHT 10-15% |
+| Dividends — portfolio | 15% | Art 10 | TR domestic WHT 15% — treaty gives no reduction |
 | Dividends — substantial (≥25% capital) | 5% | Art 10 | Higher threshold |
-| Interest | 10% | Art 11 | TR domestic WHT 10% — no treaty reduction |
+| Interest | 10% | Art 11 | TR domestic WHT 10% — but check the 0% for licensed banks first |
 | Royalties | 10% | Art 12 | TR domestic WHT 20% — treaty reduces |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** Turkey-Germany Convention. PwC Germany and Turkey WHT tables.
-**Special provisions:** Large Turkish diaspora in Germany creates substantial cross-border flows. Turkey domestic WHT on dividends is 10% (recently increased from 7.5%). Interest WHT at 10% matches domestic rate — no treaty benefit. Royalties reduced from 20% domestic to 10% treaty. 25% threshold for reduced dividends is higher than modern standard.
-**Last verified:** May 2026
+**Source:** Turkey-Germany Convention. PwC Germany and Turkey WHT tables. Turkish domestic rates re-checked September 2026 against Presidential Decree No. 9286 and `tr-corporate-income-tax.md`.
+**Special provisions:** Large Turkish diaspora in Germany creates substantial cross-border flows. Turkey's domestic WHT on dividends is **15%**, raised from 10% by Presidential Decree No. 9286 published and effective 22 December 2024, which reversed the reduction from 15% to 10% made on 22 December 2021. This block previously read "10% (recently increased from 7.5%)", which understated the rate by five points and had the direction of the last change backwards. The practical consequence of the correction: at 15% domestic the treaty's 15% portfolio rate is no longer a reduction, so a portfolio shareholder gains nothing from the treaty and only the ≥25% substantial holding at 5% is worth claiming. Royalties still reduce from 20% domestic to 10% by treaty. On interest the treaty's 10% matches the domestic 10% and so adds nothing — but Turkish domestic law withholds **0%** on cross-border lending by a licensed non-resident bank or financial institution, which beats the treaty; if the German lender is a bank, check that before deducting 10%. Turkish rates sit in Presidential Decrees and move often, so confirm the decree in force on the payment date. The 25% threshold for reduced dividends is higher than the modern standard.
+**Last verified:** September 2026 (Turkish domestic rates only; the German side and the treaty articles were not re-checked)
 
 ## Turkey → Netherlands
 
@@ -270,7 +270,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | South Africa | 20% | 15% | 15% | DWT on dividends |
 | India | 20% | 20% | 10% | IT Act s.115A (excl. surcharge/cess) |
 | Mauritius | 0% | 15% | 15% | No dividend WHT |
-| Turkey | 10-15% | 10% | 20% | Recently increased dividend WHT |
+| Turkey | 15% | 10% | 20% | 15% since Presidential Decree 9286, 22 Dec 2024; 0% interest to licensed banks |
 | Israel | 25-30% | 15-25% | Various | High domestic rates |
 | Kenya | 15% | 15% | 20% | Management fees 20% |
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Kosovo personal income tax for 
 version: 0.1
 jurisdiction: XK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Personal Income Tax (Tatimi mbi te Ardhurat Personale / TAP) |
 | Currency | EUR only |
 | Tax year | Calendar year (1 January -- 31 December) [PwC Tax administration] |
-| Primary legislation | Law No. 08/L-110 on Personal Income Tax, as amended by Law No. 08/L-142 (PIT rate amendment, in force 23 August 2024) [Orbitax; ATK] |
+| Primary legislation | **Law No. 05/L-028 on Personal Income Tax** (Official Gazette, published 14 August 2015), as amended by Law No. 08/L-142 (Official Gazette 18/2024, published and in force 23 August 2024). The amending law's own record on the Official Gazette lists the five laws it amends, and 05/L-028 is the tax one — [gzk.rks-gov.net](https://gzk.rks-gov.net/ActDetail.aspx?ActID=96360). **Law No. 08/L-110, cited here previously, is the Law on the Kosovo Accreditation Agency and has nothing to do with tax** |
 | Supporting legislation | Law No. 06/L-105 on Corporate Income Tax; Law No. 04/L-101 on Pension Funds of Kosovo; Law on VAT (Law No. 05/L-037); Law on Tax Administration and Procedures [Orbitax; PwC] |
 | Tax authority | Tax Administration of Kosovo (Administrata Tatimore e Kosoves, ATK/TAK) -- atk-ks.org |
 | Filing portal | ATK EDI e-filing portal (edideklarimi.atk-ks.org) |
@@ -63,12 +63,18 @@ Brackets are stated as **annual** amounts in the law. ATK applies them via month
 
 | Method | Eligibility | Rate | Reference |
 | --- | --- | --- | --- |
-| Gross-income (turnover) method -- trade | Annual gross income up to EUR 50,000 [caveat: see RESEARCH GAP below] | 3% of gross receipts (trade, transport, agriculture and similar) | PwC Corporate other taxes / income determination |
-| Gross-income (turnover) method -- services | Annual gross income up to EUR 50,000 [caveat: see RESEARCH GAP below] | 9% of gross receipts (services, professional, vocational, entertainment and similar) | PwC Corporate other taxes / income determination |
+| Gross-income (turnover) method -- trade | Annual gross income up to EUR 50,000 (PIT Law 05/L-028; see the note below on the three thresholds) | 3% of gross receipts (trade, transport, agriculture and similar) | PwC Corporate other taxes / income determination |
+| Gross-income (turnover) method -- services | Annual gross income up to EUR 50,000 (PIT Law 05/L-028; see the note below on the three thresholds) | 9% of gross receipts (services, professional, vocational, entertainment and similar) | PwC Corporate other taxes / income determination |
 | Real-income method | Annual gross income over EUR 50,000 (mandatory), or elected voluntarily below the threshold | 10% on net taxable profit; business deductions follow corporate rules | PwC Deductions / Corporate |
 | Minimum quarterly payment (gross-income method) | Applies under the gross-income method | EUR 37.50 per quarter | PwC Corporate other taxes |
 
-> **[RESEARCH GAP -- reviewer to confirm]** Most sources (PwC corporate/individual summaries, secondary payroll guides) state the gross-income-method election ceiling is **EUR 50,000** annual gross income. A **EUR 30,000** figure also appears in some sources for the CIT/VAT context (small-business turnover and VAT registration). Confirm against the consolidated text of PIT Law No. 08/L-110 whether the gross-income election ceiling is EUR 50,000 (used here) or EUR 30,000.
+> **Resolved.** Kosovo has three thresholds that are easy to run together, and they are three different numbers in three different laws:
+>
+> - **EUR 50,000** — the gross-income-method ceiling for an individual under the **Personal Income Tax** Law (05/L-028). Above it, the real-income method at the progressive rates is mandatory. This is the one that governs this guide.
+> - **EUR 30,000** — the flat gross-receipts threshold for small taxpayers under the **Corporate Income Tax** Law (06/L-105, published 27 July 2019), which *reduced* it from EUR 50,000. The old corporate figure and the current personal one are both 50,000, which is how the two get conflated.
+> - **EUR 30,000** — **VAT** registration (Law 05/L-037), unrelated to either.
+>
+> The earlier note here sent a reviewer to "the consolidated text of PIT Law No. 08/L-110" to settle it. That law is the Kosovo Accreditation Agency Act.
 
 ### Conservative Defaults
 
@@ -78,7 +84,7 @@ Brackets are stated as **annual** amounts in the law. ATK applies them via month
 | --- | --- |
 | Residency status unknown | STOP -- do not compute without confirming Kosovo tax residency (worldwide vs Kosovo-source) |
 | Self-employed activity ambiguous between trade (3%) and services (9%) | Apply 9% services rate (conservative) |
-| Annual gross income exceeds EUR 50,000 | Real-income method (10% on net profit) -- mandatory above threshold [caveat: see RESEARCH GAP] |
+| Annual gross income exceeds EUR 50,000 | Real-income method (10% on net profit) -- mandatory above threshold (PIT Law 05/L-028) |
 | Secondary employment | Withhold flat 10% (no 0%/8% bands) |
 | Unknown business-use % (vehicle, phone, home) | 0% deduction |
 | Unknown expense category | Not deductible |
@@ -318,7 +324,7 @@ Dividends received by residents and non-residents are **exempt** from PIT [PwC I
 
 ### 5.1 Residency and Scope
 
-- **Residency and Scope** — Residents are taxed on worldwide income; non-residents only on Kosovo-source income. Confirm residency before any computation.  _(Law No. 08/L-110; PwC Residence / Taxes on personal income)_
+- **Residency and Scope** — Residents are taxed on worldwide income; non-residents only on Kosovo-source income. Confirm residency before any computation.  _(Law No. 05/L-028 on Personal Income Tax — [gzk.rks-gov.net](https://gzk.rks-gov.net/ActDetail.aspx?ActID=96360); PwC Residence / Taxes on personal income)_
 
 ### 5.2 Graduated PIT Rates (employment / general income)
 
@@ -586,7 +592,7 @@ ONBOARDING QUESTIONS -- KOSOVO PERSONAL INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| PIT rates and rules | Law No. 08/L-110, as amended by Law No. 08/L-142 (in force 23 Aug 2024) [Orbitax; ATK] |
+| PIT rates and rules | Law No. 05/L-028, as amended by Law No. 08/L-142 (in force 23 Aug 2024) — [gzk.rks-gov.net](https://gzk.rks-gov.net/ActDetail.aspx?ActID=96360) |
 | Corporate / small-business gross-receipts rules | Law No. 06/L-105 [PwC Corporate] |
 | Pension contributions | Law No. 04/L-101; BQK pension framework [BQK] |
 | VAT | Law No. 05/L-037 [PwC; Grant Thornton] |

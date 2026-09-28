@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Bulgaria personal income tax (�
 version: 0.1
 jurisdiction: BG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -112,7 +112,7 @@ Self-insured persons pay ALL contributions themselves on a self-declared insurab
 | Unknown employer accident-fund risk class | Use the low-end 0.4% accident rate (employer total 18.92%) and flag the exact NACE-keyed rate for the reviewer (see caveat) |
 | Unknown birth year | Assume born after 1959 (2nd-pillar universal pension applies) |
 | Unknown maternity-coverage election (self-insured) | Assume maternity NOT elected -- use 27.8% mandatory minimum |
-| Unknown insurable-income band period | Use 1 Apr -- 31 Dec 2025 band (min BGN 1,077 / max BGN 4,130) for full-year modelling |
+| Unknown insurable-income band period | Establish the **year first**, then the month -- the bands moved on 1 Apr in 2025 and on 1 Aug in 2026. For 2025 full-year modelling use the 1 Apr -- 31 Dec 2025 band (min BGN 1,077 / max BGN 4,130); for 2026 use the 1 Aug -- 31 Dec band (self-insured min EUR 620.20 / max EUR 2,300) and flag that Jan--Jul sat lower. Never model 2026 on a BGN figure |
 | Unknown VAT registration status | Assume NOT registered (gross = cost) until turnover confirmed |
 | Unknown residency | STOP -- residency determines worldwide vs Bulgarian-source scope |
 
@@ -251,7 +251,7 @@ Freelancer professional fee, not VAT-registered. Full BGN 9,600 is gross busines
 
 ### Example 2 -- Annual freelancer computation (Art. 50 return, 10% PIT)
 
-**Inputs:** General freelancer (25% normative deduction), gross annual income BGN 48,000. Self-insured, declares insurable income of BGN 2,000/month (within the BGN 1,077--4,130 Apr--Dec band), with maternity coverage opted in (31.3%).
+**Inputs:** General freelancer (25% normative deduction), gross annual income BGN 48,000. Self-insured, declares insurable income of BGN 2,000/month (within the BGN 1,077--4,130 Apr--Dec **2025** band; from 2026 the equivalent band is euro-denominated and moves again on 1 August), with maternity coverage opted in (31.3%).
 
 **Reasoning (PwC, *Deductions* / *Taxes on personal income* / *Other taxes*; Ruskov & Kollegen):**
 - Normative deduction 25% = BGN 48,000 x 25% = **BGN 12,000**
@@ -285,7 +285,7 @@ Dividends carry a **5% final withholding tax**. On gross BGN 20,000 the WHT is B
 
 ### Example 5 -- Employee monthly payroll (10% PIT on net base)
 
-**Inputs:** Employee (Category III, born after 1959), gross monthly remuneration BGN 3,000 (within the BGN 1,077--4,130 Apr--Dec insurable band). Employee contribution rate **13.78%** (PwC, *Other taxes*; Ministry of Economy).
+**Inputs:** Employee (Category III, born after 1959), gross monthly remuneration BGN 3,000 (within the BGN 1,077--4,130 Apr--Dec **2025** insurable band). Employee contribution rate **13.78%** (PwC, *Other taxes*; Ministry of Economy).
 
 **Reasoning (PwC, *Other taxes*; Ministry of Economy):**
 The monthly PIT base = gross pay minus mandatory EMPLOYEE social-security and health contributions; the 10% is then applied and withheld by the employer:
@@ -345,14 +345,31 @@ Child relief for two children reduces the annual taxable base by **BGN 12,000**.
 
 **Insurable-Income Bands table**  _(Public Social Insurance Budget Act; KSO)_
 
+**2025 — bands moved on 1 April**
+
 | Band (2025) | 1 Jan -- 31 Mar | 1 Apr -- 31 Dec | Source |
 | --- | --- | --- | --- |
 | Minimum monthly insurable income (employees) | BGN 933 (EUR 477.04) | BGN 1,077 (EUR 550.66) | Eurofast |
-| Maximum monthly insurable income (cap) | BGN 3,750 (EUR 1,917.34) | BGN 4,130 (EUR 2,111.64) | PwC, *Other taxes* |
-| Self-employed minimum base | -- | BGN 1,077 (EUR 550.66) | PwC, *Other taxes* |
-| Self-employed maximum base | -- | BGN 4,130 (EUR 2,111.64) | PwC, *Other taxes* |
+| Maximum monthly insurable income (cap) | BGN 3,750 (EUR 1,917.34) | BGN 4,130 (EUR 2,111.64) | Eurofast |
+| Self-employed minimum base | BGN 933 (EUR 477.04) | BGN 1,077 (EUR 550.66) | Eurofast |
+| Self-employed maximum base | BGN 3,750 (EUR 1,917.34) | BGN 4,130 (EUR 2,111.64) | Eurofast |
 
-- **2026 insurable-income figures** — maximum monthly insurable income EUR 2,111.64; self-employed minimum EUR 550.66  _(PwC, *Other taxes*)_
+**2026 — bands moved on 1 August, and euro-denominated throughout**
+
+| Band (2026) | 1 Jan -- 31 Jul | 1 Aug -- 31 Dec | Source |
+| --- | --- | --- | --- |
+| Minimum monthly insurable income (employees) | **A range, EUR 550.66 to EUR 901.41**, by economic activity and occupation group | **A range, EUR 620.20 to EUR 1,532.41** | State Social Security Budget Act 2026, Annexes 1 and 1A, State Gazette No. 68 of 28 July 2026 |
+| Maximum monthly insurable income (cap) | EUR 2,111.64 | **EUR 2,300** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
+| Self-employed minimum base | EUR 550.66 | **EUR 620.20** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
+| Self-employed maximum base | EUR 2,111.64 | **EUR 2,300** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
+
+- **2026 insurable-income figures — split on 1 August 2026** — The State Social Security Budget Act for 2026 was passed on 22 July 2026 and gazetted on **28 July 2026**, and moved every band mid-year. A 2026 computation needs the **month**, not just the year  _(State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026)_
+
+- **The employee minimum is a range, not a number** — This is the trap in the table above. For **self-insured** persons there is one minimum base and it is the same for everybody. For **employees** the minimum insurable income is set per **economic activity and occupation group** in Annexes 1 and 1A to the Act, running from EUR 550.66 up to EUR 901.41 for January–July 2026 and from EUR 620.20 up to EUR 1,532.41 for August–December. Contributing at the bottom of the range for an occupation the annex places higher under-declares the base and under-pays the contributions. Read the applicable minimum off the annex row for the employer's NACE activity code and the employee's occupation class; do not take the floor as the answer  _(State Social Security Budget Act 2026, Annexes 1 and 1A)_
+
+- **Confirm the six-cent figure before a payroll run** — Two independent secondary sources render the January–July 2026 employee range floor as **EUR 550.60**, not EUR 550.66. EUR 550.66 is the exact conversion of BGN 1,077 at the fixed rate of 1.95583 and is the figure both sources give for the self-insured minimum over the same period, which is why it is used above. The difference is six cents a month and will not change a tax answer, but it will fail a reconciliation against a payroll system. Confirm against Annex 1 of the gazetted text before relying on either  _(State Gazette No. 68 of 28 July 2026)_
+
+- **The minimum wage and the minimum insurable income diverged in 2026** — The 2026 minimum wage rose to BGN 1,213 / **EUR 620.20** from **1 January 2026**, but the insurable-income annexes kept the 2025 floor of EUR 550.66 until **31 July 2026** because the 2026 Budget Act was not passed until July. For the first seven months of 2026 the statutory minimum wage therefore sat *above* the annex floor. Where the two conflict for an employee on the minimum wage, the contribution base cannot be below actual remuneration — confirm the treatment with the NRA before running January–July 2026 payroll retrospectively  _(State Social Security Budget Act 2026; Council of Ministers minimum wage decree for 2026)_
 
 ### 5.6 Dividends
 
@@ -581,8 +598,8 @@ ONBOARDING QUESTIONS -- BULGARIA INCOME TAX
 | --- | --- | --- |
 | Euro adoption | From 1 Jan 2026, EUR replaces BGN at 1 EUR = 1.95583 BGN | PwC, *Other taxes*; BTA |
 | Minimum wage 2026 | BGN 1,213 / **EUR 620.20** per month; minimum hourly EUR 3.74 (~12.6% increase) | BTA |
-| Maximum insurable income 2026 | EUR 2,111.64/month | PwC, *Other taxes* |
-| Self-employed minimum base 2026 | EUR 550.66/month | PwC, *Other taxes* |
+| Maximum insurable income 2026 | EUR 2,111.64/month to 31 Jul; **EUR 2,300/month from 1 Aug 2026** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
+| Self-employed minimum base 2026 | EUR 550.66/month to 31 Jul; **EUR 620.20/month from 1 Aug 2026** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
 | Late-payment interest formula | ECB rate + 8 pp (replaces BNB + 10 pp) | Penkov, Markov & Partners |
 
 > **[RESEARCH GAP -- reviewer to confirm]** NRA/NSSI primary-source pages (nra.bg, nssi.bg) were not directly fetched; figures rely on PwC Worldwide Tax Summaries and official Ministry of Economy/Finance pages (authoritative and mutually consistent). The exact 2026 insurable-income bands beyond those published in EUR should be re-verified against the finalised 2026 Public Social Insurance Budget Act. Late-payment interest fluctuates with the BNB/ECB base rate each half-year.

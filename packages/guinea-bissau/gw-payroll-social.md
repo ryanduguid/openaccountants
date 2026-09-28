@@ -3,7 +3,7 @@ name: gw-payroll-social
 description: "Source-cited draft: payroll & social contributions for Guinea-Bissau (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,13 +18,29 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Combined INPS contribution rate** — 22% of gross salary (14% employer + 8% employee) percent  _(Instituto Nacional de Previdência Social (INPS) contribution rules — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/)_
 - **Contribution wage base / ceiling** — No minimum or maximum earnings ceiling reported — contributions apply to full gross salary ((approx — confirm))  _(Instituto Nacional de Previdência Social (INPS) contribution rules — https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/guinea-bissau.html)_
 - **Work-accident / occupational risk insurance** — Additional employer surcharge of roughly 2%–10% depending on sector/risk class percent ((approx — confirm sector rates))  _(Instituto Nacional de Previdência Social (INPS) / labour-accident insurance rules — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/)_
-- **Payroll income-tax withholding (PAYE-equivalent)** — Employer withholds IRPS on salaries each month using the progressive IRPS scale  _(Imposto sobre o Rendimento das Pessoas Singulares (IRPS) statute — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/)_
-- **Monthly remittance deadline (INPS and withheld IRPS)** — By the 15th of the following month ((approx — confirm))  _(INPS contribution rules; Código Geral Tributário (withholding remittance) — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/)_
+- **Payroll income-tax withholding (PAYE-equivalent)** — The employer withholds the **Imposto Profissional**, not an "IRPS": Guinea-Bissau has no Imposto sobre o Rendimento das Pessoas Singulares, and the word appears nowhere in the tax authority's consolidated legislation. Two points that change the amount withheld: the scale is **marginal**, and there are **two different schedules** — nine bands from 1% for employees, three bands from 10% for the self-employed and holders of copyright income. See `gw-income-tax` for both tables, the *parcela a abater*, and the discontinuity at XOF 400,501  _(Código do Imposto Profissional, arts. 18.º and 27.º — https://kontaktu.mef.gw/legislation)_
+- **Monthly remittance — the two halves have different deadlines, and the tax half is not the 15th** — The withheld **Imposto Profissional** is paid over by *guia* processed in triplicate **within the 10 days following the end of the month** it relates to. The previous version gave "by the 15th of the following month" for both the tax and INPS; for the tax the statute says 10 days. [RESEARCH GAP — reviewer to confirm the INPS remittance deadline against INPS itself, which is a separate body from the DGCI and whose site did not resolve from this network.]  _(Código do Imposto Profissional, art. 29.º — https://kontaktu.mef.gw/legislation)_
 - **Periodic payroll statements** — Quarterly statements due within 15 days of quarter-end ((approx — confirm))  _(INPS / DGCI payroll reporting rules — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/)_
 - **Annual payroll/withholding summary filing** — 31 March of the following year ((approx — confirm))  _(DGCI annual payroll reconciliation rules — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/)_
 - **Employer registration obligation** — Employers must register with INPS and obtain a NIF before running payroll  _(INPS registration rules; DGCI NIF rules — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/)_
 
-Social security in Guinea-Bissau is administered by the Instituto Nacional de Previdência Social (INPS). Employers withhold both the employee INPS contribution and IRPS (PAYE-equivalent) from wages and remit them, together with the employer contribution, on a monthly basis.
+> **The INPS figures below could not be verified against an authority.** Guinea-Bissau's tax
+> legislation is published in consolidated form by the Direcção Geral das Contribuições e
+> Impostos at `kontaktu.mef.gw`, and that is where the Imposto Profissional rules above come
+> from. INPS is a separate institution and carries its own legislation; no INPS host resolved
+> from this network. The 14% / 8% / 22% split, the work-accident surcharge band and the
+> reporting deadlines therefore still rest on one commercial source and are marked
+> accordingly. They are not asserted as checked.
+>
+> The contribution-ceiling line is the one exception, and it is no better off. It cites the
+> US Social Security Administration's *Social Security Programs Throughout the World*, which
+> is a government publication rather than a commercial one — but `ssa.gov` returns **403 at
+> its edge** to this network, on both a plain request and a browser user-agent, so that
+> citation could not be opened either. It is a government source that happens to be
+> unreachable, not a checked one. [RESEARCH GAP — reviewer to confirm whether any minimum or
+> maximum earnings apply, against INPS or the SSA volume from a network that can reach it.]
+
+Social security in Guinea-Bissau is administered by the Instituto Nacional de Previdência Social (INPS). Employers withhold both the employee INPS contribution and the Imposto Profissional (PAYE-equivalent) from wages and remit them, together with the employer contribution, on a monthly basis.
 
 <!-- openaccountants-cta-block -->
 

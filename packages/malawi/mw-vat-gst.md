@@ -3,7 +3,7 @@ name: mw-vat-gst
 description: "Source-cited draft: vat / gst for Malawi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 Malawi operates a Value Added Tax under the Value Added Tax Act, administered by the MRA. The standard rate is 17.5%, raised from 16.5% by the Value Added Tax (Amendment) Act 2025 and announced in the Mid-Year Budget Review of 21 November 2025 (MRA, New Tax Measures). Apply 16.5% only to supplies made up to the end of 2025.
 
 - **Standard VAT rate** — 17.5 percent (raised from 16.5% by the Value Added Tax (Amendment) Act 2025; 16.5% applies only to supplies up to the end of 2025)  _([Value Added Tax Act (Cap 42:02)](https://www.mra.mw/individuals/value-added-tax-vat))_
-- **Standard VAT rate from 31 Dec 2025** — 17.5 percent  _([Value Added Tax (Amendment) Act 2025](https://www.vatupdate.com/2026/01/07/malawi-raises-vat-to-17-5-following-presidential-assent-to-value-added-amendment-act-2025/))_
+- **Standard VAT rate from 31 Dec 2025** — 17.5 percent  _(Value Added Tax (Amendment) Act 2025 (as described at [vatupdate.com](https://www.vatupdate.com/2026/01/07/malawi-raises-vat-to-17-5-following-presidential-assent-to-value-added-amendment-act-2025/)))_
 - **Zero-rated supplies** — 0 percent (exports and specified goods/services (e.g. certain basic foodstuffs and medicines) ((approx — confirm current zero-rated schedule items)))  _(Value Added Tax Act (Cap 42:02), Schedules)_
 - **Exempt supplies** — Specified supplies are exempt (no VAT, no input credit) — e.g. certain financial, health and education services ((approx — confirm current exempt schedule))  _(Value Added Tax Act (Cap 42:02), Schedules)_
 - **Mandatory registration threshold** — 25,000,000 MWK/year (of taxable supplies per annum)  _([Value Added Tax Act (Cap 42:02), Section 11](https://www.mra.mw/individuals/value-added-tax-vat))_

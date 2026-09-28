@@ -1,5 +1,5 @@
 ---
-name: saudi_arabia-references
+name: saudi-arabia-references
 jurisdiction: SA
 tier: 2
 last_updated: 2026-09-28

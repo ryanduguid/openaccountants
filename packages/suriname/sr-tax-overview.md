@@ -3,7 +3,7 @@ name: sr-tax-overview
 description: "Source-cited draft: tax overview for Suriname (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: SR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,7 +17,8 @@ Suriname operates a Dutch-derived direct-tax system administered by the Belastin
 
 - **Tax year** — Calendar year (1 January – 31 December)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
 - **Currency** — Surinamese dollar (SRD)  _(Bank of the Republic of Suriname (Centrale Bank van Suriname))_
-- **Tax authority** — Belastingdienst Suriname (Tax Administration of Suriname)  _(Belastingdienst Suriname (https://belastingdienst.sr/))_
+- **Tax authority** — Belastingdienst Suriname (Tax Administration of Suriname), publishing BTW, Loonbelasting and Inkomstenbelasting guidance together with the Wetten and its Beschikkingen at `belastingdienst.sr`  _(Belastingdienst Suriname — https://belastingdienst.sr/belastingen/)_
+- **Wage tax is an advance levy, not a separate charge** — Loonbelasting is a direct tax on employment income withheld by the employer from gross pay, and is a *voorheffing* (advance levy) **on the income tax**, filed together with the Premie A.O.V. An employer paying wages is an *inhoudingsplichtige* under **article 6 of the Wet Loonbelasting**  _(Belastingdienst Suriname — Loonbelasting — https://belastingdienst.sr/belastingen/loonbelasting/)_
 - **Residence basis of taxation** — Residents taxed on worldwide income; non-residents taxed on Suriname-source income only. Residence is based on domicile in Suriname.  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
 - **Headline personal income tax top rate** — 38% percent (top marginal band; progressive 8%–38%)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
 - **Headline corporate income tax rate** — 36% percent  _(Income Tax Act 1922 (Inkomstenbelasting 1922), corporate provisions)_

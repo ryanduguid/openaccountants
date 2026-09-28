@@ -3,7 +3,7 @@ name: pk-sales-tax-services
 description: "Source-cited tax guide for PK: pk sales tax services. Unverified draft, pending local-accountant review."
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-13
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -11,6 +11,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # PK Sales Tax Services
+
+<!-- einvoice-xref -->
+> **This pack has a separate e-invoicing guide: `pk-einvoice`.** This guide does not
+> cover it. Where a jurisdiction operates a mandatory electronic-invoicing or
+> real-time-reporting regime, the obligations and any consequences for input-tax
+> recovery sit in that guide — read it alongside this one before filing or advising.
+> **No claim about that jurisdiction's regime is made here**; this is a pointer only.
+
 
 ## Pakistan — Provincial Sales Tax on Services — Skill v1.0
 

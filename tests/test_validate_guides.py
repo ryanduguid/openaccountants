@@ -3,6 +3,7 @@ from __future__ import annotations
 import contextlib
 import importlib.util
 import io
+import os
 import sys
 import tempfile
 import unittest
@@ -183,6 +184,129 @@ class MisplacedFrontmatterTests(_ValidatorCase):
 
     def test_a_doc_opening_on_a_horizontal_rule_is_still_skipped(self) -> None:
         self.assertEqual(self._check_guides({"skills/notes.md": PLAIN_DOC}), [])
+
+
+class PackagesFreshnessTests(_ValidatorCase):
+    """Nothing compared packages/ to skills/: build-packages.py rebuilds in
+    place, so a stale copy of a corrected guide sat in packages/ (and was served
+    by the MCP server) until someone happened to rebuild."""
+
+    def _trees(self, committed, fresh):
+        root = self._tree(
+            {f"committed/{rel}": text for rel, text in committed.items()}
+            | {f"fresh/{rel}": text for rel, text in fresh.items()}
+        )
+        return str(root / "committed"), str(root / "fresh")
+
+    def test_identical_trees_have_no_differences(self) -> None:
+        committed, fresh = self._trees({"albania/a.md": GOOD}, {"albania/a.md": GOOD})
+
+        self.assertEqual(validate_guides.compare_package_trees(committed, fresh), [])
+
+    def test_changed_missing_and_extra_files_are_all_reported(self) -> None:
+        committed, fresh = self._trees(
+            {"albania/a.md": GOOD, "albania/old.md": GOOD},
+            {"albania/a.md": GOOD.replace("Body.", "Changed."), "bulgaria/new.md": GOOD},
+        )
+
+        differing = validate_guides.compare_package_trees(committed, fresh)
+
+        self.assertEqual(
+            [entry.split(" ", 1)[0] for entry in differing],
+            ["albania/a.md", "albania/old.md", "bulgaria/new.md"],
+        )
+
+    def test_hand_authored_directories_are_not_compared(self) -> None:
+        # packages/us-federal has no builder, so a fresh build never contains it.
+        committed, fresh = self._trees({"us-federal/form.md": GOOD}, {})
+
+        self.assertEqual(
+            validate_guides.compare_package_trees(committed, fresh, skip_dirs={"us-federal"}),
+            [],
+        )
+
+    def _symlink(self, target, link):
+        try:
+            os.symlink(target, link)
+        except (OSError, NotImplementedError):  # pragma: no cover - platform limit
+            self.skipTest("symlinks are not available here")
+
+    def test_a_symlinked_file_is_reported_without_being_followed(self) -> None:
+        # The check runs against a pull request's checkout, so a committed link
+        # to something large outside the tree must be reported, not read. The
+        # link here points at a byte-identical regular file: following it would
+        # compare equal and report nothing.
+        committed, fresh = self._trees(
+            {"albania/a.md": GOOD}, {"albania/a.md": GOOD, "albania/b.md": GOOD}
+        )
+        self._symlink(os.path.join(fresh, "albania", "b.md"), os.path.join(committed, "albania", "b.md"))
+
+        differing = validate_guides.compare_package_trees(committed, fresh)
+
+        self.assertEqual(len(differing), 1, differing)
+        self.assertTrue(differing[0].startswith("albania/b.md (not a regular file"), differing)
+
+    def test_a_symlinked_directory_is_reported_without_being_entered(self) -> None:
+        committed, fresh = self._trees({"albania/a.md": GOOD}, {"albania/a.md": GOOD})
+        self._symlink(os.path.join(fresh, "albania"), os.path.join(committed, "bulgaria"))
+
+        differing = validate_guides.compare_package_trees(committed, fresh)
+
+        self.assertEqual(len(differing), 1, differing)
+        self.assertTrue(differing[0].startswith("bulgaria (not a regular file"), differing)
+
+
+class ValidatorModeTests(unittest.TestCase):
+    """The freshness checks describe the whole tree, so PR mode must not skip
+    them when the PR changed no guide file (the old early return did), and
+    --derived-only must run nothing else."""
+
+    CHECKS = (
+        "check_guides",
+        "check_packages_frontmatter",
+        "check_us_federal_deletions",
+        "check_no_deprecated_manifests",
+        "check_index_fresh",
+        "check_llms_full_fresh",
+        "check_packages_fresh",
+    )
+    FRESHNESS = ("check_index_fresh", "check_llms_full_fresh", "check_packages_fresh")
+
+    def _run(self, argv, changed):
+        calls: list[str] = []
+        with contextlib.ExitStack() as stack:
+            for name in self.CHECKS:
+                stack.enter_context(mock.patch.object(
+                    validate_guides, name,
+                    side_effect=lambda *a, _name=name, **k: calls.append(_name),
+                ))
+            stack.enter_context(mock.patch.object(
+                validate_guides, "changed_files_vs_main", return_value=changed,
+            ))
+            stack.enter_context(mock.patch.object(sys, "argv", ["validate-guides.py", *argv]))
+            stack.enter_context(contextlib.redirect_stdout(io.StringIO()))
+            validate_guides.main()
+        return calls
+
+    def test_changed_only_with_no_guide_changes_still_checks_freshness(self) -> None:
+        calls = self._run(["--changed-only"], changed=["docs/QUALITY-TIERS.md"])
+
+        self.assertNotIn("check_guides", calls)
+        for name in self.FRESHNESS:
+            self.assertIn(name, calls)
+
+    def test_derived_only_runs_only_the_freshness_checks(self) -> None:
+        calls = self._run(["--derived-only"], changed=None)
+
+        self.assertEqual(set(calls), {"check_no_deprecated_manifests", *self.FRESHNESS})
+
+    def test_no_index_check_runs_everything_but_freshness(self) -> None:
+        calls = self._run(["--no-index-check"], changed=None)
+
+        self.assertIn("check_guides", calls)
+        self.assertIn("check_us_federal_deletions", calls)
+        for name in self.FRESHNESS:
+            self.assertNotIn(name, calls)
 
 
 class GeneratedPackagesTreeTests(_ValidatorCase):

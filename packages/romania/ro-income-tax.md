@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Romanian income tax for self-em
 version: 2.0
 jurisdiction: RO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -334,7 +334,7 @@ Branches by method: sistem real or norma de venit. Includes CAS/CASS tier determ
 - NEVER forget to prorate for part-year
 - NEVER advise on crypto, international income, or transfer pricing
 - NEVER present calculations as definitive
-- NEVER assume micro EUR 250,000 threshold is stable (drops to EUR 100,000 in 2026)
+- NEVER use the EUR 250,000 micro threshold: it is EUR 100,000 from 1 January 2026
 
 ### Sources
 

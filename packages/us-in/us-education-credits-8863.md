@@ -3,7 +3,7 @@ name: us-education-credits-8863
 description: Tier 2 US federal content skill for education tax benefits — the American Opportunity Tax Credit (AOTC, $2,500 per student, 40% refundable, $80k/$160k MAGI phaseout) under §25A(i), the Lifetime Learning Credit ($2,000 per return) under §25A, the §221 student loan interest deduction, §529 Qualified Tuition Programs including the 2024 §126 SECURE 2.0 $35,000 lifetime 529-to-Roth rollover, K-12 tuition expansion, §527 Coverdell ESA, §117 scholarship treatment, and §127 employer-provided educational assistance ($5,250/year including student loan repayments). Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -504,7 +504,9 @@ Form 709 — Gift tax return for 529 5-year-front-load election
 
 Same topic
 
-### 13.4 Pending IRS guidance to watch (as of Nov 2025)
+### 13.4 Pending IRS guidance to watch — snapshot dated November 2025, restated September 2026
+
+**Ten months old.** Nothing below has been re-verified in this pass; check each against the IRS Priority Guidance Plan before relying on it. The comparable section in `us-secure-2-and-retirement-updates` carried an item that had already been resolved two months *before* its own snapshot date, so a "pending" list is not evidence that anything is still pending.
 
 §529(c)(6)(C) 529-to-Roth rollover: regulations clarifying 15-year clock on beneficiary changes, treatment of contributions in last 5 years.
 

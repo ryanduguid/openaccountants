@@ -1,40 +1,49 @@
 ---
 name: references
-description: Primary source references and related open-source projects for this jurisdiction.
-version: 1.0
-jurisdiction: VN
+description: "Reference entry for Argentine tax research and electronic invoicing. Identifies ARCA as the federal tax and customs authority and lists pyafipws and PyARCA as external software references for government web services and Monotributo invoicing. Use when locating Argentine source material, checking an AFIP-to-ARCA reference or assessing an invoicing integration. The consolidated legislative texts and resolution numbers remain a documented research gap. Consult each tax guide and the authority before relying on a rule. Check the actual upstream licence and OpenAccountants licensing policy before copying or distributing third-party material."
+version: 1.2
+jurisdiction: AR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 # References
 
-## Vietnam — Related Open-Source Projects
+## National tax authority
 
-OpenAccountants is AGPL-3.0. All projects below have compatible licenses.
+- **ARCA — Agencia de Recaudación y Control Aduanero** is the federal tax and
+  customs authority, created by Decreto 953/2024 in place of AFIP. Its portal
+  identifies itself as ARCA throughout and the former `afip.gob.ar` domain now
+  resolves to the same site  _(ARCA, portal principal — https://www.arca.gob.ar/landing/default.asp)_
 
-## googlesky/thue-2026
+## Related open-source projects
 
-- **googlesky/thue-2026** — Repository: googlesky/thue-2026 (https://github.com/googlesky/thue-2026). License: MIT. Language: Vietnamese. Scope: Vietnam 2026 personal income tax (thuế TNCN) computation data. Contains the new 5-bracket progressive rate schedule and updated personal/dependent deduction amounts per Luật số 109/2025/QH15 (effective 01/01/2026). Integration: MIT. Tax bracket data and deduction amounts directly used in the vietnam-pit skill.  _(https://github.com/googlesky/thue-2026)_
+OpenAccountants uses separate licences for software and Guides. See
+[LICENSING.md](../../../LICENSING.md). These projects are references, not blanket
+permission to copy their code or documentation. Check the upstream licence for
+the material and intended use; attribution alone does not satisfy every licence
+condition.
 
-## thangtd-0050/pit
+### pyafipws
 
-- **thangtd-0050/pit** — Repository: thangtd-0050/pit (https://github.com/thangtd-0050/pit). License: Open source. Language: Vietnamese / JavaScript. Scope: Vietnam personal income tax (PIT) calculator implementation. Computes progressive tax from gross salary including social insurance deductions and dependent allowances. Integration: Reference implementation for PIT computation logic and validation of bracket calculations.  _(https://github.com/thangtd-0050/pit)_
+- **reingart/pyafipws**: Repository: https://github.com/reingart/pyafipws. Licence: LGPL-3.0. Language: Python. Scope: *Factura Electrónica AFIP y otros servicios web*: interfaces, tools and apps for Argentina's government web services (SOAP, COM/DLL, PDF, DBF, XML, JSON). Reference for web-service integration, e-invoice generation and authentication flows; assess reuse against the upstream licence  _(https://github.com/reingart/pyafipws)_
+
+### PyARCA
+
+- **GeraCollante/PyARCA**: Repository: https://github.com/GeraCollante/PyARCA. Licence: LGPL-3.0. Language: Python. Scope: *CLI para facturación electrónica Monotributo (ARCA/ex-AFIP)*, a fork of pyafipws focused on Monotributo invoicing. Reference for Monotributo-specific invoicing workflows and ARCA interactions; assess reuse against the upstream licence  _(https://github.com/GeraCollante/PyARCA)_
 
 ## Key legislative sources
 
-**Key legislative sources**  _(Luật số 109/2025/QH15; Luật Thuế TNCN No. 04/2007/QH12; Thông tư 111/2013/TT-BTC; Nghị quyết 954/2020/UBTVQH14; Luật Quản lý Thuế No. 38/2019/QH14)_
-
-| Reference | Description |
-| --- | --- |
-| Luật số 109/2025/QH15 | 2026 PIT reform — reduces brackets from 7 to 5, increases personal deduction to 15,500,000 VND/month, dependent deduction to 6,200,000 VND/month |
-| Luật Thuế TNCN No. 04/2007/QH12 | Original PIT Law (amended 2012, 2014) |
-| Thông tư 111/2013/TT-BTC | Implementation circular for PIT |
-| Nghị quyết 954/2020/UBTVQH14 | CPI-triggered deduction adjustment mechanism |
-| Luật Quản lý Thuế No. 38/2019/QH14 | Tax administration law |
+The Argentine guides in this pack cite the Impuesto a las Ganancias, IVA and
+Monotributo régimes and ARCA's *Resoluciones Generales*. [RESEARCH GAP — this file
+does not yet list the consolidated texts and RG numbers those guides rely on. A
+reviewer should populate it from ARCA's own *Biblioteca Electrónica*, and the
+per-guide citations should then point at entries here.]
 
 <!-- openaccountants-cta-block -->
 
