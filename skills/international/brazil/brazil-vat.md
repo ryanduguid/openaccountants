@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Brazilian indirect taxes, VAT, 
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-13
 reviewed_by: Ariane Marrocos
 review_status: current
 tier: 1
