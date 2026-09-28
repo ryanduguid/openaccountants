@@ -36,9 +36,20 @@ Only tables whose first column is a strictly ascending set of thresholds are
 considered, which removes most but not all of these.
 
 Usage: python3 scripts/check-bracket-tables.py [dir ...]   (default: skills)
-Exit status is always 0: this is a review aid, not a gate.
+
+Gate: exits 1 on any repeated pair not listed in
+scripts/baselines/bracket-tables.txt and on any baseline entry that no longer
+reproduces. --json, --baseline PATH, --no-baseline and --update-baseline are
+described in scripts/oa_tools/findings.py. The fingerprint is the file plus
+the two rows, so the legitimate repeats above stay accepted until one of
+their rows changes.
 """
 import os, re, sys, glob
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools import findings  # noqa: E402
 
 PCT = re.compile(r'(\d{1,2}(?:[.,]\d+)?)\s*%')
 NUM = re.compile(r'\d[\d,. ]*\d|\d')
@@ -107,11 +118,20 @@ def scan(path):
     return hits
 
 
-roots = sys.argv[1:] or ['skills']
-total = 0
-for root in roots:
-    for path in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True)):
-        for hdr, a, b in scan(path):
-            print('%s\n    under: %s\n    %s\n    %s' % (path, hdr, a, b))
-            total += 1
-print('adjacent same-rate band pairs:', total)
+def main(argv=None):
+    parser = findings.argument_parser('bracket-tables', __doc__.split('\n\n')[0])
+    args = parser.parse_args(argv)
+    report = findings.Report('bracket-tables', args)
+    for root in args.roots:
+        for path in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True)):
+            for hdr, a, b in scan(path):
+                report.add(findings.Finding(
+                    path, '%s / %s' % (a, b), 'adjacent bands at one rate under "%s"' % hdr,
+                    detail={'header': hdr, 'rows': [a, b]},
+                    text='%s\n    under: %s\n    %s\n    %s' % (path, hdr, a, b)))
+    report.note('\nadjacent same-rate band pairs: %d' % len(report.findings))
+    return report.finish()
+
+
+if __name__ == '__main__':
+    sys.exit(main())

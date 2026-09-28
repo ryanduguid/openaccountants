@@ -41,11 +41,13 @@ class CheckerCase(unittest.TestCase):
 class FactCheckerTests(CheckerCase):
 
     def test_percentage_conflicts_include_tables_and_bullets(self):
+        # A gate now: a conflict with no baseline to excuse it exits 1, and
+        # --no-baseline keeps the repository's own baseline out of the corpus.
         output = self.run_checker("check-fact-conflicts.py", {
             "example/overview.md": "- **Standard VAT rate** - 20%\n",
             "example/vat.md": "| Standard VAT rate | 25% |\n",
             "other/overview.md": "| Standard VAT rate | 30% |\n",
-        })
+        }, expect_code=1, extra_args=["--no-baseline"])
         self.assertIn("labelled percentage facts extracted: 3", output)
         self.assertIn("keys where files disagree: 1", output)
         self.assertIn('int:example :: "standard vat"', output)

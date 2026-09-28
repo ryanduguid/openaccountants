@@ -1,0 +1,31 @@
+# Baseline for scripts/check-expired-rules.py: the findings known when it was written.
+# One fingerprint per line (path::key). The gate fails on a finding not listed
+# here and on an entry that no longer reproduces. After fixing findings, regenerate
+# it with: python3 scripts/check-expired-rules.py --update-baseline
+skills/federal/us-education-credits-8863.md::### 13.4 Pending IRS guidance to watch — snapshot dated November 2025, restated September 2026
+skills/federal/us-estate-gift-706-709.md::| ETG-12 | State estate or inheritance tax preparation | Refer to state-specific Tier 2 skill (not yet released) |
+skills/international/ca-chartered-accountant/pe-tax-credits.md::When parameters are ambiguous or the 2025 PEI Finance bulletin has not yet been published in final form, apply these defaults:
+skills/international/indonesia/id-einvoice-coretax.md::| SPT Tahunan 1770 / 1771 | Tax year 2024 (filed Q1 2025) | **DJP Online** — the 2024 annual returns filed in early 2025 mostly remained on the legacy portal (TBC — confirm against current D
+skills/international/indonesia/id-pph-final-umkm.md::| MAP/KJS payment code | **411128 / 420** — TBC, verify with Indonesian accountant |
+skills/international/morocco/ma-crypto-tax.md::- **Draft law 42.25 status** — Since around **late 2024**, the authorities have signalled a **change of doctrine** toward **regulating** rather than simply prohibiting crypto. The vehicle is
+skills/international/nigeria/ng-cit.md::> **TBC — verify under NTA 2025 Sixth Schedule final text** whether any rate has been revised. Conservative default: apply the legacy CITA Second Schedule rates pending confirmation.
+skills/international/nigeria/ng-cit.md::> **TBC — verify under NTA 2025 final implementing regulations** for any revisions to penalty quanta and interest mechanics.
+skills/international/nigeria/ng-cit.md::> **TBC — verify under NTA 2025 final implementing regulations:** the precise top-up mechanism (Domestic Top-up Tax / Qualified Domestic Minimum Top-up Tax — QDMTT), the Income Inclusion Rul
+skills/international/nigeria/ng-cit.md::> **TBC — verify under NTA 2025** whether retained.
+skills/international/nigeria/ng-formation.md::Where a specific monetary threshold or sectoral capital floor is uncertain at the time of advice, mark as TBC and verify against the current NTA 2025 schedule, the latest CBN / SEC / NAICOM
+skills/international/nigeria/ng-personal-income-tax.md::Where a figure is still uncertain, mark it "TBC — verify against the gazetted NTA 2025 text and implementing regulations" and defer to a Nigerian tax practitioner. Note that the Federal Mini
+skills/international/pakistan/pk-corporate-tax.md::**TBC** — verify whether FA 2025 has amended the rate, scope, or the final-vs-minimum tax characterisation. Flag for reviewer.
+skills/international/pakistan/pk-corporate-tax.md::- NEVER quote FA 2025 specifics without verifying the gazetted text — mark **TBC** where uncertain.
+skills/international/pakistan/pk-corporate-tax.md::| FA 2025 change uncertain | Mark **TBC** and flag for reviewer to verify against current Finance Act text |
+skills/international/pakistan/pk-corporate-tax.md::| FA 2025 specifics where unconfirmed | Mark **TBC** and flag for reviewer to verify against gazetted text |
+skills/international/pakistan/pk-formation.md::Where a specific monetary threshold, slab rate, or sectoral capital floor is uncertain at the time of advice, mark as **TBC** and verify against the current **Finance Act 2025** schedule, th
+skills/international/pakistan/pk-income-tax.md::- **Late filer tier** — The "late filer" tier introduced by Finance Act 2024 applies an intermediate rate for certain codes (notably property transactions under §236C/§236K). TBC — verify Fi
+skills/international/saudi-arabia/sa-excise-tax.md::"Dammam Dairy" produces a 250ml chocolate-flavoured milk drink. Sugar is added during production. RSP is SAR 3.00; ZATCA has not yet published a standard price for this exact SKU. In Decembe
+skills/international/saudi-arabia/sa-rett.md::| Inheritance certificate not yet issued | STOP — wait for Sharia court certificate before declaring exemption |
+skills/orchestrator/pk-freelance-intake.md::- **PSEB IT-export final tax** — If individual / AOP / Pvt Ltd is a PSEB-registered IT or ITES exporter AND export proceeds are received in convertible foreign exchange through the normal ba
+skills/orchestrator/pk-freelance-intake.md::- `pk-cgt` — s.37 immovable property gains; s.37A securities gains; crypto / virtual-asset treatment (verify FA 2025 — TBC).
+skills/orchestrator/pk-freelance-intake.md::| FA 2025 rate / threshold ambiguity | Use FA 2024 rate + flag (TBC) for reviewer to confirm |
+skills/orchestrator/pk-freelance-intake.md::| | tax on export proceeds — verify FA 2025 current rate (TBC)
+skills/orchestrator/pk-return-assembly.md::**TBC — verify against Finance Act 2025 because bands and rates may have shifted.**
+skills/orchestrator/pk-return-assembly.md::- Surcharge for ATL late activation (TY 2026): Rs [TBC — verify current schedule] for [filer category]
+skills/orchestrator/pk-return-assembly.md::| Investment tax credit / pension fund credit (section 63 historic — now largely repealed; verify) | pk-income-tax | TBC — verify under Finance Act 2025 |

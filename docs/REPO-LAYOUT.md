@@ -44,7 +44,9 @@ packages/                  # GENERATED per-jurisdiction bundles — do not edit 
 workflows/                 # Guided 6-phase advisor workflows (cross-border intake, UK CGT, ...)
 mcp/                       # Python MCP server source (openaccountants-mcp on PyPI)
 scripts/                   # Build + maintenance scripts (build-packages.py, build-index.py, ...)
-  oa_tools/                #   shared helpers: repo paths, guide discovery, the frontmatter reader
+  oa_tools/                #   shared helpers: repo paths, guide discovery, the frontmatter reader,
+                           #   and findings.py, the gate checkers' baseline and exit-code core
+  baselines/               #   the gate checkers' accepted findings (regenerate: make baselines)
 docs/                      # Repo documentation (this file, quality tiers, website sync, ...)
 tools/workbooks/           # Verification-workbook generator (out/ is gitignored build output)
 plugins/ + .claude-plugin/ # Claude Code plugin marketplace manifest + commands
