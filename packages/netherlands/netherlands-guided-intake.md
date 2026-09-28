@@ -1,7 +1,7 @@
 ---
 name: nl-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Netherlands tax returns AND mentions freelancing, self-employment, ZZP, eenmanszaak, or sole proprietorship. Trigger on phrases like "help me do my taxes", "prepare my IB-aangifte", "I'm a ZZP'er in the Netherlands", "I'm a freelancer in the Netherlands", "do my taxes as a contractor", "prepare my BTW return and income tax", or any similar phrasing where the user is a Netherlands-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Netherlands self-employed tax workflow -- every other skill in the stack (nl-btw-return, nl-income-tax, nl-zvw, nl-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Netherlands full-year residents only; self-employed individuals and sole proprietors.
-version: 1.0
+version: 1.1
 jurisdiction: NL
 tax_year: 2025
 last_updated: 2026-09-28
@@ -573,7 +573,7 @@ For an unprepared user (has to go fetch documents):
 **Outputs:** Structured intake package consumed by `nl-return-assembly`.
 
 **Downstream skills triggered (via nl-return-assembly):**
-- `nl-vat-return` -- BTW-aangifte (quarterly/monthly or KOR annual)
+- `netherlands-vat-return` -- BTW-aangifte (quarterly/monthly or KOR annual)
 - `nl-income-tax` -- Aangifte inkomstenbelasting (Box 1/2/3)
 - `nl-zvw` -- Zorgverzekeringswet bijdrage reconciliation
 

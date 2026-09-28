@@ -1,7 +1,7 @@
 ---
 name: us-federal-return-assembly
 description: Tier 2 orchestrator skill that assembles the complete federal income tax return package for US freelance software developers filing as sole proprietors or single-member LLCs disregarded for federal tax. Sequences the upstream content skills (bookkeeping, SE computation, retirement, SE health insurance, QBI, estimated tax) in dependency order, resolves circular computations between SE health insurance and retirement contributions, produces Form 1040 with all required schedules (Schedule 1, Schedule 2, Schedule 3, Schedule C, Schedule SE, Schedule D if needed, Form 8829, Form 4562, Form 8995 or 8995-A, Form 8962 if marketplace coverage, Form 2210 if penalty, Form 7206), performs cross-form reconciliation checks, and produces the final reviewer package. Does not itself compute tax amounts — delegates to upstream content skills. MUST be loaded alongside us-tax-workflow-base v0.2 or later and all content skills it orchestrates. Federal only.
-version: 0.2
+version: 0.3
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-09-28
@@ -352,7 +352,7 @@ After the federal return is assembled, the taxpayer's state return must be prepa
 
 ### California-specific handoff (detailed)
 
-- **California-specific handoff (detailed)** — If the taxpayer is a California resident, the handoff includes additional detail: - Federal AGI → CA Schedule CA (540) Part I Line 11 - Federal QBI deduction → CA Schedule CA (540) add-back (CA does not allow §199A) - Federal §179 deduction and bonus depreciation → CA Schedule CA (540) add-back (CA §179 limit is $25,000) - Federal Schedule C net profit → CA Schedule CA Part I - Federal Schedule SE → CA does not have SE tax at state level, but AGI reconciliation needs this - Federal Schedule 1 Line 17 (SE health insurance) → CA conforms; no adjustment - Federal Schedule 1 Line 16 (retirement) → CA conforms; no adjustment - Federal Form 8962 (PTC) → CA uses its own state subsidy computation if Covered California - Federal estimated tax payments → flag for CA 540-ES comparison This California handoff is consumed by the `ca-540-individual-return` skill (in `skills/us-states/ca/ca-income-tax.md`).
+- **California-specific handoff (detailed)** — If the taxpayer is a California resident, the handoff includes additional detail: - Federal AGI → CA Schedule CA (540) Part I Line 11 - Federal QBI deduction → CA Schedule CA (540) add-back (CA does not allow §199A) - Federal §179 deduction and bonus depreciation → CA Schedule CA (540) add-back (CA §179 limit is $25,000) - Federal Schedule C net profit → CA Schedule CA Part I - Federal Schedule SE → CA does not have SE tax at state level, but AGI reconciliation needs this - Federal Schedule 1 Line 17 (SE health insurance) → CA conforms; no adjustment - Federal Schedule 1 Line 16 (retirement) → CA conforms; no adjustment - Federal Form 8962 (PTC) → CA uses its own state subsidy computation if Covered California - Federal estimated tax payments → flag for CA 540-ES comparison This California handoff is consumed by the `us-ca-540-individual-return` skill (in `skills/us-states/ca/us-ca-540-individual-return.md`).
 
 ### No-income-tax states
 

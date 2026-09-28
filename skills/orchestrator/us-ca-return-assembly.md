@@ -1,7 +1,7 @@
 ---
 name: us-ca-return-assembly
 description: Final orchestrator skill that assembles the complete federal and California filing package for California resident sole proprietors and single-member LLCs disregarded for federal tax. Consumes outputs from all federal content skills (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC) and all California content skills (540 individual return, 540-ES estimated tax, 568 SMLLC where applicable, 3853 coverage) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final taxpayer action list with payment instructions, filing instructions, and 2026 planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside us-tax-workflow-base v0.2 or later and all content skills listed above. California residents only.
-version: 0.2
+version: 0.3
 jurisdiction: US-CA
 tax_year: 2025
 last_updated: 2026-09-28
@@ -56,10 +56,10 @@ The skill enforces the following execution order and refuses to proceed if any s
 6. `us-federal-return-assembly`
 7. `us-quarterly-estimated-tax` (needs federal total tax)
 8. `us-1099-nec-issuance` (parallel, only needs bookkeeping)
-9. `ca-540-individual-return` (needs federal assembly)
-10. `ca-smllc-form-568` (if SMLLC; parallel with 540)
-11. `ca-estimated-tax-540es` (needs CA 540 total tax)
-12. `ca-form-3853-coverage` (parallel, needs coverage intake)
+9. `us-ca-540-individual-return` (needs federal assembly)
+10. `us-ca-smllc-form-568` (if SMLLC; parallel with 540)
+11. `us-ca-estimated-tax-540es` (needs CA 540 total tax)
+12. `us-ca-form-3853-coverage` (parallel, needs coverage intake)
 13. **THIS SKILL** — final assembly and verification
 
 If any of the above has not produced validated output, the skill refuses with a specific message identifying the missing step.
@@ -72,10 +72,10 @@ If any of the above has not produced validated output, the skill refuses with a 
 0. **Step 6** — us-federal-return-assembly
 0. **Step 7** — us-quarterly-estimated-tax
 0. **Step 8** — us-1099-nec-issuance
-0. **Step 9** — ca-540-individual-return
-0. **Step 10** — ca-smllc-form-568
-0. **Step 11** — ca-estimated-tax-540es
-0. **Step 12** — ca-form-3853-coverage
+0. **Step 9** — us-ca-540-individual-return
+0. **Step 10** — us-ca-smllc-form-568
+0. **Step 11** — us-ca-estimated-tax-540es
+0. **Step 12** — us-ca-form-3853-coverage
 0. **Step 13** — us-ca-return-assembly
 
 ## Section 3 — Verification matrix
@@ -148,17 +148,17 @@ If any of the above has not produced validated output, the skill refuses with a 
 [Content from us-federal-return-assembly brief]
 
 ## California Return
-[Content from ca-540-individual-return brief]
+[Content from us-ca-540-individual-return brief]
 
 ## California SMLLC (if applicable)
-[Content from ca-smllc-form-568 brief]
+[Content from us-ca-smllc-form-568 brief]
 
 ## Individual Mandate
-[Content from ca-form-3853-coverage brief]
+[Content from us-ca-form-3853-coverage brief]
 
 ## Estimated Tax
 [Content from us-quarterly-estimated-tax brief]
-[Content from ca-estimated-tax-540es brief]
+[Content from us-ca-estimated-tax-540es brief]
 
 ## 1099 Issuance
 [Content from us-1099-nec-issuance brief]
@@ -242,20 +242,20 @@ If any of the above has not produced validated output, the skill refuses with a 
 
 ## California Return
 
-[Content from ca-540-individual-return brief]
+[Content from us-ca-540-individual-return brief]
 
 ## California SMLLC (if applicable)
 
-[Content from ca-smllc-form-568 brief]
+[Content from us-ca-smllc-form-568 brief]
 
 ## Individual Mandate
 
-[Content from ca-form-3853-coverage brief]
+[Content from us-ca-form-3853-coverage brief]
 
 ## Estimated Tax
 
 [Content from us-quarterly-estimated-tax brief]
-[Content from ca-estimated-tax-540es brief]
+[Content from us-ca-estimated-tax-540es brief]
 
 ## 1099 Issuance
 

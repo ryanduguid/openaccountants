@@ -212,7 +212,7 @@ COUNTRY_NAMES = {
     "LU": "Luxembourg", "CY": "Cyprus", "IS": "Iceland", "JP": "Japan",
     "SG": "Singapore", "KR": "South Korea", "NZ": "New Zealand",
     "BR": "Brazil", "MX": "Mexico", "AR": "Argentina", "CL": "Chile",
-    "CO": "Colombia", "PE": "Peru", "AE": "UAE", "SA": "Saudi Arabia",
+    "CO": "Colombia", "PE": "Peru", "AE": "United Arab Emirates", "SA": "Saudi Arabia",
     "ZA": "South Africa", "KE": "Kenya", "NG": "Nigeria", "IL": "Israel",
     "EG": "Egypt", "TR": "Turkey", "UA": "Ukraine", "RU": "Russia",
     "TH": "Thailand", "VN": "Vietnam", "ID": "Indonesia", "PH": "Philippines",
@@ -234,8 +234,8 @@ COUNTRY_NAMES = {
     "LB": "Lebanon", "FJ": "Fiji", "PG": "Papua New Guinea", "MN": "Mongolia",
     "KH": "Cambodia", "LA": "Laos", "MV": "Maldives", "NP": "Nepal",
     "MM": "Myanmar", "BN": "Brunei", "AD": "Andorra", "LI": "Liechtenstein",
-    "MC": "Monaco", "IM": "Isle of Man", "BM": "Bermuda", "VG": "BVI",
-    "KY": "Cayman Islands",
+    "MC": "Monaco", "IM": "Isle of Man", "BM": "Bermuda", "VG": "British Virgin Islands",
+    "KY": "Cayman Islands", "CW": "Curaçao", "ST": "São Tomé and Príncipe",
 }
 
 # Practitioner titles by country
@@ -263,7 +263,7 @@ DIR_TO_CODE = {
     "cyprus": "CY", "iceland": "IS", "japan": "JP", "singapore": "SG",
     "south-korea": "KR", "new-zealand": "NZ", "brazil": "BR", "mexico": "MX",
     "argentina": "AR", "chile": "CL", "colombia": "CO", "peru": "PE",
-    "uae": "AE", "saudi-arabia": "SA", "south-africa": "ZA", "kenya": "KE",
+    "united-arab-emirates": "AE", "saudi-arabia": "SA", "south-africa": "ZA", "kenya": "KE",
     "nigeria": "NG", "israel": "IL", "egypt": "EG", "turkey": "TR",
     "ukraine": "UA", "russia": "RU", "thailand": "TH", "vietnam": "VN",
     "indonesia": "ID", "philippines": "PH", "malaysia": "MY",
@@ -286,7 +286,8 @@ DIR_TO_CODE = {
     "mongolia": "MN", "cambodia": "KH", "laos": "LA", "maldives": "MV",
     "nepal": "NP", "myanmar": "MM", "brunei": "BN", "andorra": "AD",
     "liechtenstein": "LI", "monaco": "MC", "isle-of-man": "IM",
-    "bermuda": "BM", "bvi": "VG", "cayman-islands": "KY",
+    "bermuda": "BM", "british-virgin-islands": "VG", "cayman-islands": "KY",
+    "curacao": "CW", "sao-tome-and-principe": "ST",
     "algeria": "DZ",
 }
 
@@ -678,9 +679,27 @@ def find_orchestrator_files(country_dir_name):
     return intake, assembly
 
 
+def declared_jurisdiction(country_dir):
+    """The code the folder's guides declare most often, or None.
+
+    Guessing a code from the folder's first two letters mistook one country
+    for another: british-virgin-islands became BR and its package was titled
+    Brazil. A folder missing from DIR_TO_CODE takes the code its own guides
+    carry, and only a folder whose guides declare none falls back to the guess.
+    """
+    counts = {}
+    for _, path in find_country_skills(country_dir):
+        with open(path, encoding="utf-8", errors="replace") as fh:
+            block = extract_frontmatter(fh.read())
+        match = re.search(r"^jurisdiction:\s*([A-Za-z][A-Za-z-]*)\s*$", block or "", re.M)
+        if match:
+            counts[match.group(1).upper()] = counts.get(match.group(1).upper(), 0) + 1
+    return max(counts, key=counts.get) if counts else None
+
+
 def build_package(country_dir_name, country_dir):
     """Build a complete package for one jurisdiction."""
-    code = DIR_TO_CODE.get(country_dir_name, country_dir_name.upper()[:2])
+    code = DIR_TO_CODE.get(country_dir_name) or declared_jurisdiction(country_dir) or country_dir_name.upper()[:2]
     name = COUNTRY_NAMES.get(code, country_dir_name.replace('-', ' ').title())
     practitioner = PRACTITIONER_TITLES.get(code, "qualified tax professional")
 
@@ -1481,16 +1500,25 @@ def main():
             "See the repo [README](../../README.md) for upload instructions.\n"
         )
 
-    # Regenerate US index (packages/us/README.md)
+    # Regenerate US index (packages/us/README.md): one row per state package.
+    # (skills/international/us/ was a country package here until 2026-09-28; its
+    # three federal-level guides moved to skills/federal/ and are shared.)
     us_index_dir = os.path.join(PACKAGES_DIR, "us")
     os.makedirs(us_index_dir, exist_ok=True)
-    us_index_src = os.path.join(PACKAGES_DIR, "us", "README.md")
-    # Preserve the existing index if present; it's maintained in the repo
-    if not os.path.isfile(us_index_src):
-        with open(us_index_src, "w") as fh:
-            fh.write("# United States — Tax Skills Index\n\n"
-                     "Pick your state package under `packages/us-[code]/`.\n"
-                     "See the repo README for details.\n")
+    with open(os.path.join(us_index_dir, "README.md"), "w") as fh:
+        rows = "\n".join(
+            f"| {US_STATE_NAMES.get(c, c.upper())} | `US-{c.upper()}` | [`packages/us-{c}/`](../us-{c}/) |"
+            for c in US_STATE_CODES
+        )
+        fh.write(
+            "# United States — Tax Skills Index\n\n"
+            "Pick your state package below. Each holds that state's guides and lists the\n"
+            "federal guides it needs (from `skills/federal/`, kept once in `packages/_shared/`).\n\n"
+            "| State | Code | Package |\n"
+            "|---|---|---|\n"
+            f"{rows}\n\n"
+            "See the repo [README](../../README.md) for upload instructions.\n"
+        )
 
     # ---- Summary ----
     # NOTE: packages/manifest.json is DEPRECATED and no longer written. The

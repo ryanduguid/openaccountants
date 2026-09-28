@@ -6,7 +6,7 @@
 
 | Key | Format | Notes |
 |-----|--------|-------|
-| `name` | slug, `[country-or-topic]-[domain]` | e.g. `malta-income-tax` |
+| `name` | slug, `[country-or-topic]-[domain]`; unique across the repo. A US-state guide is `us-[state]-[topic]` and its file is `[name].md` | e.g. `malta-income-tax`, `us-ny-sales-tax` |
 | `description` | 80-100 words | What it covers, entity types, jurisdiction, tax year, plus trigger phrases the AI should match |
 | `jurisdiction` | ISO code | `MT`, `GB`, `DE`, `US`, `US-CA`, `GLOBAL`, `INTL`, `EU-27`. Required even when the folder path implies it. Quote `"NO"` because YAML 1.1 otherwise reads Norway's code as boolean `false`. A **warning**, not an error, inside the small allowlist of jurisdiction-agnostic directories |
 | `tier` | `1` or `2` | `1` = **accountant-reviewed** (a named licensed accountant fully reviewed and signed off); `2` = **source-cited draft** (drafted from primary sources, awaiting review). These are the only two quality states |

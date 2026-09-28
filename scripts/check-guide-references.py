@@ -9,7 +9,7 @@ human wastes the time it takes to search.
 This found 47 distinct dangling references across 88 uses. Most were naming
 drift rather than missing content: the guide existed under a different slug
 (`us-federal-payroll` for `us-form-941-940-payroll`, `nl-btw-return` for
-`nl-vat-return`, `us-federal-ny-return-assembly` for `us-ny-return-assembly`).
+`netherlands-vat-return`, `us-federal-ny-return-assembly` for `us-ny-return-assembly`).
 Those were repaired. The rest name guides this repository does not contain and
 are now marked as such in place, so the pointer still tells a reader what they
 need while making clear it is not here.
@@ -20,7 +20,7 @@ Do not resolve these by string distance. A fuzzy matcher offered
 actually exists.
 
 Known false positive: a backticked token can be a workflow *slot* name rather
-than a guide — `state-payroll` in co-payroll.md is one.
+than a guide — `state-payroll` in us-co-payroll.md is one.
 
 Usage: python3 scripts/check-guide-references.py
 """

@@ -14,8 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| `ri-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form RI-1040) |
-| `ri-sales-tax.md` | State sales & use tax compliance |
+| `us-ri-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form RI-1040) |
+| `us-ri-sales-tax.md` | State sales & use tax compliance |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes

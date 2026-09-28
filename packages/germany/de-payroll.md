@@ -1,7 +1,7 @@
 ---
 name: de-payroll
-description: Use this skill whenever asked about German payroll tax (Lohnsteuer) computation for EMPLOYEES. Trigger on phrases like "Lohnsteuer", "Gehaltsabrechnung", "payslip Germany", "Steuerklasse", "Brutto Netto", "Solidaritaetszuschlag on wages", "Kirchensteuer on payroll", "Sozialversicherungsbeitraege employee", "Arbeitnehmeranteil", "Arbeitgeberanteil", "Beitragsbemessungsgrenze", "Lohnabrechnung", "Nettolohn", "payroll withholding Germany", "German wage tax", "Lohnsteuerklasse I II III IV V VI", or any question about computing employee payroll deductions in Germany. Covers Lohnsteuer (income tax withholding), Solidaritatszuschlag, Kirchensteuer, and all four branches of Sozialversicherung (RV, KV, PV, AV) from an employer/employee split perspective. This is SEPARATE from the self-employed income tax skill (de-income-tax.md). ALWAYS read this skill before computing any German employee payroll.
-version: 1.0
+description: Use this skill whenever asked about German payroll tax (Lohnsteuer) computation for EMPLOYEES. Trigger on phrases like "Lohnsteuer", "Gehaltsabrechnung", "payslip Germany", "Steuerklasse", "Brutto Netto", "Solidaritaetszuschlag on wages", "Kirchensteuer on payroll", "Sozialversicherungsbeitraege employee", "Arbeitnehmeranteil", "Arbeitgeberanteil", "Beitragsbemessungsgrenze", "Lohnabrechnung", "Nettolohn", "payroll withholding Germany", "German wage tax", "Lohnsteuerklasse I II III IV V VI", or any question about computing employee payroll deductions in Germany. Covers Lohnsteuer (income tax withholding), Solidaritatszuschlag, Kirchensteuer, and all four branches of Sozialversicherung (RV, KV, PV, AV) from an employer/employee split perspective. This is SEPARATE from the self-employed income tax skill (us-de-income-tax.md). ALWAYS read this skill before computing any German employee payroll.
+version: 1.1
 jurisdiction: DE
 tax_year: 2025
 last_updated: 2026-09-28
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # DE Payroll
 
-## Germany Payroll Tax (Lohnsteuer) -- Employee Skill v1.0
+## Germany Payroll Tax (Lohnsteuer) -- Employee Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -154,7 +154,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal Catalogue
 
-- **R-DE-P-1 -- Self-employed / Freiberufler** — This skill covers employee payroll (Lohnsteuer). Self-employed persons compute Einkommensteuer, not Lohnsteuer. Use de-income-tax.md.  _(R-DE-P-1)_
+- **R-DE-P-1 -- Self-employed / Freiberufler** — This skill covers employee payroll (Lohnsteuer). Self-employed persons compute Einkommensteuer, not Lohnsteuer. Use us-de-income-tax.md.  _(R-DE-P-1)_
 - **R-DE-P-2 -- Mini-job (geringfugige Beschaftigung)** — Mini-jobs up to EUR 556/month have flat-rate taxation (2% pauschale Lohnsteuer or individual). Separate rules apply.  _(R-DE-P-2)_
 - **R-DE-P-3 -- Cross-border workers (Grenzganger)** — Cross-border employment requires DBA analysis and potentially foreign social security. Escalate to Steuerberater.  _(R-DE-P-3)_
 - **R-DE-P-4 -- Board members / Geschaftsfuhrer of GmbH** — Managing directors have special social security rules. Escalate.  _(R-DE-P-4)_
@@ -437,7 +437,7 @@ All computations should match [bmf-steuerrechner.de](https://www.bmf-steuerrechn
 | Scenario | Skill to Use |
 | --- | --- |
 | Employee payroll (Lohnsteuer) | **This skill (de-payroll.md)** |
-| Self-employed income tax (Einkommensteuer) | de-income-tax.md |
+| Self-employed income tax (Einkommensteuer) | us-de-income-tax.md |
 | Self-employed social contributions | de-social-contributions.md |
 | Gewerbesteuer (trade tax) | de-trade-tax.md |
 | Umsatzsteuer / VAT return | germany-vat-return.md |

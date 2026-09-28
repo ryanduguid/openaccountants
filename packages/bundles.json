@@ -170,7 +170,7 @@
    ]
   },
   "angola": {
-   "jurisdiction": "AN",
+   "jurisdiction": "AO",
    "name": "Angola",
    "files": [
     "intake.md",
@@ -301,7 +301,6 @@
     "at-income-tax.md",
     "at-svs-contributions.md",
     "at-tax-overview.md",
-    "at-vat-return.md",
     "austria-vat-return.md",
     "README.md"
    ],
@@ -458,7 +457,6 @@
     "be-capital-gains.md",
     "be-income-tax.md",
     "be-social-contributions.md",
-    "be-vat-return.md",
     "belgium-bookkeeping.md",
     "belgium-crypto-tax.md",
     "belgium-einvoice.md",
@@ -479,8 +477,8 @@
    ]
   },
   "belize": {
-   "jurisdiction": "BE",
-   "name": "Belgium",
+   "jurisdiction": "BZ",
+   "name": "Belize",
    "files": [
     "intake.md",
     "bz-company-formation.md",
@@ -493,14 +491,13 @@
    ],
    "shared": [
     "company-formation-workflow-base.md",
-    "eu-vat-directive.md",
     "foundation.md",
     "payroll-workflow-base.md"
    ]
   },
   "benin": {
-   "jurisdiction": "BE",
-   "name": "Belgium",
+   "jurisdiction": "BJ",
+   "name": "Benin",
    "files": [
     "intake.md",
     "bj-company-formation.md",
@@ -513,7 +510,6 @@
    ],
    "shared": [
     "company-formation-workflow-base.md",
-    "eu-vat-directive.md",
     "foundation.md",
     "payroll-workflow-base.md"
    ]
@@ -538,8 +534,8 @@
    ]
   },
   "bhutan": {
-   "jurisdiction": "BH",
-   "name": "Bahrain",
+   "jurisdiction": "BT",
+   "name": "Bhutan",
    "files": [
     "intake.md",
     "bt-company-formation.md",
@@ -599,8 +595,8 @@
    ]
   },
   "botswana": {
-   "jurisdiction": "BO",
-   "name": "Bolivia",
+   "jurisdiction": "BW",
+   "name": "Botswana",
    "files": [
     "intake.md",
     "bw-company-formation.md",
@@ -647,10 +643,11 @@
    ]
   },
   "british-virgin-islands": {
-   "jurisdiction": "BR",
-   "name": "Brazil",
+   "jurisdiction": "VG",
+   "name": "British Virgin Islands",
    "files": [
     "intake.md",
+    "bvi-tax.md",
     "vg-company-formation.md",
     "vg-corporate-income-tax.md",
     "vg-payroll-social.md",
@@ -709,7 +706,7 @@
    ]
   },
   "burkina-faso": {
-   "jurisdiction": "BU",
+   "jurisdiction": "BF",
    "name": "Burkina Faso",
    "files": [
     "intake.md",
@@ -730,7 +727,7 @@
    ]
   },
   "burundi": {
-   "jurisdiction": "BU",
+   "jurisdiction": "BI",
    "name": "Burundi",
    "files": [
     "intake.md",
@@ -748,23 +745,12 @@
     "payroll-workflow-base.md"
    ]
   },
-  "bvi": {
-   "jurisdiction": "VG",
-   "name": "BVI",
-   "files": [
-    "intake.md",
-    "bvi-tax.md",
-    "README.md"
-   ],
-   "shared": [
-    "foundation.md"
-   ]
-  },
   "ca-ab": {
    "jurisdiction": "CA-AB",
    "name": "Canada — Alberta",
    "files": [
     "intake.md",
+    "ab-corporate-tax.md",
     "ab-individual-return.md",
     "README.md"
    ],
@@ -806,7 +792,10 @@
    "name": "Canada — British Columbia",
    "files": [
     "intake.md",
+    "bc-eht.md",
     "bc-individual-return.md",
+    "bc-pst.md",
+    "bc-speculation-vacancy-tax.md",
     "README.md"
    ],
    "shared": [
@@ -842,40 +831,13 @@
     "transfer-pricing-workflow-base.md"
    ]
   },
-  "ca-chartered-accountant": {
-   "jurisdiction": "CA",
-   "name": "Canada",
-   "files": [
-    "intake.md",
-    "ab-corporate-tax.md",
-    "bc-eht.md",
-    "bc-pst.md",
-    "bc-speculation-vacancy-tax.md",
-    "mb-rst.md",
-    "nb-tax-credits.md",
-    "nl-tax-credits.md",
-    "ns-tax-credits.md",
-    "nt-payroll-tax.md",
-    "nu-tax-credits.md",
-    "on-eht.md",
-    "on-tax-credits.md",
-    "pe-tax-credits.md",
-    "qc-employer-contributions.md",
-    "sk-pst.md",
-    "yt-tax-credits.md",
-    "README.md"
-   ],
-   "shared": [
-    "foundation.md",
-    "payroll-workflow-base.md"
-   ]
-  },
   "ca-mb": {
    "jurisdiction": "CA-MB",
    "name": "Canada — Manitoba",
    "files": [
     "intake.md",
     "mb-individual-return.md",
+    "mb-rst.md",
     "README.md"
    ],
    "shared": [
@@ -917,6 +879,7 @@
    "files": [
     "intake.md",
     "nb-individual-return.md",
+    "nb-tax-credits.md",
     "README.md"
    ],
    "shared": [
@@ -958,6 +921,7 @@
    "files": [
     "intake.md",
     "nl-individual-return.md",
+    "nl-tax-credits.md",
     "README.md"
    ],
    "shared": [
@@ -999,6 +963,7 @@
    "files": [
     "intake.md",
     "ns-individual-return.md",
+    "ns-tax-credits.md",
     "README.md"
    ],
    "shared": [
@@ -1040,6 +1005,7 @@
    "files": [
     "intake.md",
     "nt-individual-return.md",
+    "nt-payroll-tax.md",
     "README.md"
    ],
    "shared": [
@@ -1081,6 +1047,7 @@
    "files": [
     "intake.md",
     "nu-individual-return.md",
+    "nu-tax-credits.md",
     "README.md"
    ],
    "shared": [
@@ -1121,7 +1088,9 @@
    "name": "Canada — Ontario",
    "files": [
     "intake.md",
+    "on-eht.md",
     "on-individual-return.md",
+    "on-tax-credits.md",
     "README.md"
    ],
    "shared": [
@@ -1163,6 +1132,7 @@
    "files": [
     "intake.md",
     "pe-individual-return.md",
+    "pe-tax-credits.md",
     "README.md"
    ],
    "shared": [
@@ -1203,6 +1173,7 @@
    "name": "Canada — Quebec",
    "files": [
     "intake.md",
+    "qc-employer-contributions.md",
     "qc-individual-return.md",
     "qc-qst-return.md",
     "README.md"
@@ -1247,6 +1218,7 @@
    "files": [
     "intake.md",
     "sk-individual-return.md",
+    "sk-pst.md",
     "README.md"
    ],
    "shared": [
@@ -1288,6 +1260,7 @@
    "files": [
     "intake.md",
     "yt-individual-return.md",
+    "yt-tax-credits.md",
     "README.md"
    ],
    "shared": [
@@ -1361,8 +1334,8 @@
    ]
   },
   "cape-verde": {
-   "jurisdiction": "CA",
-   "name": "Canada",
+   "jurisdiction": "CV",
+   "name": "Cape Verde",
    "files": [
     "intake.md",
     "cv-company-formation.md",
@@ -1399,7 +1372,7 @@
    ]
   },
   "central-african-republic": {
-   "jurisdiction": "CE",
+   "jurisdiction": "CF",
    "name": "Central African Republic",
    "files": [
     "intake.md",
@@ -1418,8 +1391,8 @@
    ]
   },
   "chad": {
-   "jurisdiction": "CH",
-   "name": "Switzerland",
+   "jurisdiction": "TD",
+   "name": "Chad",
    "files": [
     "intake.md",
     "td-company-formation.md",
@@ -1447,7 +1420,6 @@
     "cl-income-tax.md",
     "cl-social-contributions.md",
     "cl-tax-overview.md",
-    "cl-vat-return.md",
     "references.md",
     "README.md"
    ],
@@ -1473,7 +1445,6 @@
     "cn-return-assembly.md",
     "cn-social-insurance.md",
     "cn-stamp-tax.md",
-    "cn-vat.md",
     "cn-withholding.md",
     "references.md",
     "README.md"
@@ -1496,7 +1467,6 @@
     "co-income-tax.md",
     "co-social-contributions.md",
     "co-tax-overview.md",
-    "co-vat-return.md",
     "colombia-iva.md",
     "formalizing-small-informal-businesses-in-colombia.md",
     "README.md"
@@ -1570,9 +1540,9 @@
     "payroll-workflow-base.md"
    ]
   },
-  "cura-ao": {
-   "jurisdiction": "CU",
-   "name": "Cura Ao",
+  "curacao": {
+   "jurisdiction": "CW",
+   "name": "Curaçao",
    "files": [
     "intake.md",
     "cw-company-formation.md",
@@ -1620,7 +1590,6 @@
     "cz-income-tax.md",
     "cz-social-health.md",
     "cz-tax-overview.md",
-    "cz-vat-return.md",
     "czech-republic-vat-return.md",
     "references.md",
     "README.md"
@@ -1640,7 +1609,6 @@
     "denmark-vat-return.md",
     "dk-capital-gains.md",
     "dk-income-tax.md",
-    "dk-vat-return.md",
     "references.md",
     "README.md"
    ],
@@ -1708,7 +1676,7 @@
    ]
   },
   "dr-congo": {
-   "jurisdiction": "DR",
+   "jurisdiction": "CD",
    "name": "Dr Congo",
    "files": [
     "intake.md",
@@ -1805,7 +1773,7 @@
    ]
   },
   "equatorial-guinea": {
-   "jurisdiction": "EQ",
+   "jurisdiction": "GQ",
    "name": "Equatorial Guinea",
    "files": [
     "intake.md",
@@ -1867,8 +1835,8 @@
    ]
   },
   "eswatini": {
-   "jurisdiction": "ES",
-   "name": "Spain",
+   "jurisdiction": "SZ",
+   "name": "Eswatini",
    "files": [
     "intake.md",
     "sz-company-formation.md",
@@ -1881,7 +1849,6 @@
    ],
    "shared": [
     "company-formation-workflow-base.md",
-    "eu-vat-directive.md",
     "foundation.md",
     "payroll-workflow-base.md"
    ]
@@ -2009,7 +1976,7 @@
    ]
   },
   "gambia": {
-   "jurisdiction": "GA",
+   "jurisdiction": "GM",
    "name": "Gambia",
    "files": [
     "intake.md",
@@ -2124,7 +2091,6 @@
     "gr-efka.md",
     "gr-income-tax.md",
     "gr-tax-overview.md",
-    "gr-vat-return.md",
     "greece-einvoice.md",
     "greece-vat-return.md",
     "README.md"
@@ -2160,7 +2126,7 @@
    ]
   },
   "guinea": {
-   "jurisdiction": "GU",
+   "jurisdiction": "GN",
    "name": "Guinea",
    "files": [
     "intake.md",
@@ -2179,7 +2145,7 @@
    ]
   },
   "guinea-bissau": {
-   "jurisdiction": "GU",
+   "jurisdiction": "GW",
    "name": "Guinea Bissau",
    "files": [
     "intake.md",
@@ -2198,7 +2164,7 @@
    ]
   },
   "guyana": {
-   "jurisdiction": "GU",
+   "jurisdiction": "GY",
    "name": "Guyana",
    "files": [
     "intake.md",
@@ -2266,7 +2232,6 @@
     "intake.md",
     "hu-income-tax.md",
     "hu-social-contributions.md",
-    "hu-vat-return.md",
     "hungary-einvoice.md",
     "hungary-vat-return.md",
     "README.md"
@@ -2301,31 +2266,12 @@
     "social-contributions-workflow-base.md"
    ]
   },
-  "im": {
-   "jurisdiction": "IM",
-   "name": "Isle of Man",
-   "files": [
-    "intake.md",
-    "im-company-formation.md",
-    "im-corporate-income-tax.md",
-    "im-income-tax.md",
-    "im-payroll-social.md",
-    "im-tax-overview.md",
-    "README.md"
-   ],
-   "shared": [
-    "company-formation-workflow-base.md",
-    "foundation.md",
-    "payroll-workflow-base.md"
-   ]
-  },
   "india": {
    "jurisdiction": "IN",
    "name": "India",
    "files": [
     "intake.md",
     "in-advance-tax.md",
-    "in-gst-return.md",
     "in-income-tax.md",
     "in-pf-esi-employer.md",
     "in-professional-tax.md",
@@ -2442,7 +2388,6 @@
     "ie-prsi-class-s.md",
     "ie-return-assembly.md",
     "ie-usc.md",
-    "ie-vat-return.md",
     "ireland-vat-return.md",
     "README.md"
    ],
@@ -2459,11 +2404,18 @@
    "name": "Isle of Man",
    "files": [
     "intake.md",
+    "im-company-formation.md",
+    "im-corporate-income-tax.md",
+    "im-income-tax.md",
+    "im-payroll-social.md",
+    "im-tax-overview.md",
     "isle-of-man-vat.md",
     "README.md"
    ],
    "shared": [
-    "foundation.md"
+    "company-formation-workflow-base.md",
+    "foundation.md",
+    "payroll-workflow-base.md"
    ]
   },
   "israel": {
@@ -2575,7 +2527,6 @@
     "japan-payroll.md",
     "japan-tax-optimization.md",
     "japan-transfer-pricing.md",
-    "jp-bookkeeping.md",
     "jp-consumption-tax.md",
     "jp-estimated-tax.md",
     "jp-etax-filing.md",
@@ -2718,8 +2669,8 @@
    ]
   },
   "kyrgyzstan": {
-   "jurisdiction": "KY",
-   "name": "Cayman Islands",
+   "jurisdiction": "KG",
+   "name": "Kyrgyzstan",
    "files": [
     "intake.md",
     "kg-company-formation.md",
@@ -2798,7 +2749,7 @@
    ]
   },
   "lesotho": {
-   "jurisdiction": "LE",
+   "jurisdiction": "LS",
    "name": "Lesotho",
    "files": [
     "intake.md",
@@ -2817,8 +2768,8 @@
    ]
   },
   "liberia": {
-   "jurisdiction": "LI",
-   "name": "Liechtenstein",
+   "jurisdiction": "LR",
+   "name": "Liberia",
    "files": [
     "intake.md",
     "lr-company-formation.md",
@@ -2836,8 +2787,8 @@
    ]
   },
   "libya": {
-   "jurisdiction": "LI",
-   "name": "Liechtenstein",
+   "jurisdiction": "LY",
+   "name": "Libya",
    "files": [
     "intake.md",
     "ly-company-formation.md",
@@ -2916,8 +2867,8 @@
    ]
   },
   "macau": {
-   "jurisdiction": "MA",
-   "name": "Morocco",
+   "jurisdiction": "MO",
+   "name": "Macau",
    "files": [
     "intake.md",
     "mo-company-formation.md",
@@ -2934,8 +2885,8 @@
    ]
   },
   "madagascar": {
-   "jurisdiction": "MA",
-   "name": "Morocco",
+   "jurisdiction": "MG",
+   "name": "Madagascar",
    "files": [
     "intake.md",
     "mg-company-formation.md",
@@ -2953,8 +2904,8 @@
    ]
   },
   "malawi": {
-   "jurisdiction": "MA",
-   "name": "Morocco",
+   "jurisdiction": "MW",
+   "name": "Malawi",
    "files": [
     "intake.md",
     "mw-company-formation.md",
@@ -3013,8 +2964,8 @@
    ]
   },
   "mali": {
-   "jurisdiction": "MA",
-   "name": "Morocco",
+   "jurisdiction": "ML",
+   "name": "Mali",
    "files": [
     "intake.md",
     "ml-company-formation.md",
@@ -3072,8 +3023,8 @@
    ]
   },
   "mauritania": {
-   "jurisdiction": "MA",
-   "name": "Morocco",
+   "jurisdiction": "MR",
+   "name": "Mauritania",
    "files": [
     "intake.md",
     "mr-company-formation.md",
@@ -3122,7 +3073,6 @@
     "mx-estimated-tax.md",
     "mx-imss.md",
     "mx-income-tax.md",
-    "mx-vat-return.md",
     "references.md",
     "mexico-guided-intake.md",
     "mexico-return-assembly.md",
@@ -3345,7 +3295,6 @@
     "nl-income-tax.md",
     "nl-payroll-tax.md",
     "nl-tax-objection.md",
-    "nl-vat-return.md",
     "nl-zzp-deductions.md",
     "references.md",
     "netherlands-guided-intake.md",
@@ -3410,8 +3359,8 @@
    ]
   },
   "niger": {
-   "jurisdiction": "NI",
-   "name": "Nicaragua",
+   "jurisdiction": "NE",
+   "name": "Niger",
    "files": [
     "intake.md",
     "ne-company-formation.md",
@@ -3488,7 +3437,6 @@
     "no-income-tax.md",
     "no-social-contributions.md",
     "no-tax-overview.md",
-    "no-vat-return.md",
     "norway-mva.md",
     "norway-to-switzerland-wealth-tax-exit.md",
     "README.md"
@@ -3660,7 +3608,6 @@
     "intake.md",
     "pl-capital-gains.md",
     "pl-income-tax.md",
-    "pl-vat-return.md",
     "pl-zus-contributions.md",
     "poland-einvoice.md",
     "poland-vat-return.md",
@@ -3692,7 +3639,6 @@
     "pt-nhr-ifici.md",
     "pt-return-assembly.md",
     "pt-social-contributions.md",
-    "pt-vat-return.md",
     "README.md"
    ],
    "shared": [
@@ -3726,7 +3672,7 @@
    ]
   },
   "republic-of-congo": {
-   "jurisdiction": "RE",
+   "jurisdiction": "CG",
    "name": "Republic Of Congo",
    "files": [
     "intake.md",
@@ -3756,7 +3702,6 @@
     "ro-income-tax.md",
     "ro-payroll-social.md",
     "ro-tax-overview.md",
-    "ro-vat-return.md",
     "romania-einvoice.md",
     "romania-vat-return.md",
     "README.md"
@@ -3808,7 +3753,6 @@
     "intake.md",
     "rw-company-formation.md",
     "rw-corporate-income-tax.md",
-    "rw-income-tax.md",
     "rw-tax-overview.md",
     "rwanda-income-tax.md",
     "rwanda-payroll.md",
@@ -3824,28 +3768,9 @@
     "social-contributions-workflow-base.md"
    ]
   },
-  "s-o-tom-and-pr-ncipe": {
-   "jurisdiction": "S-",
-   "name": "S O Tom And Pr Ncipe",
-   "files": [
-    "intake.md",
-    "st-company-formation.md",
-    "st-corporate-income-tax.md",
-    "st-income-tax.md",
-    "st-payroll-social.md",
-    "st-tax-overview.md",
-    "st-vat-gst.md",
-    "README.md"
-   ],
-   "shared": [
-    "company-formation-workflow-base.md",
-    "foundation.md",
-    "payroll-workflow-base.md"
-   ]
-  },
   "samoa": {
-   "jurisdiction": "SA",
-   "name": "Saudi Arabia",
+   "jurisdiction": "WS",
+   "name": "Samoa",
    "files": [
     "intake.md",
     "ws-company-formation.md",
@@ -3863,8 +3788,8 @@
    ]
   },
   "san-marino": {
-   "jurisdiction": "SA",
-   "name": "Saudi Arabia",
+   "jurisdiction": "SM",
+   "name": "San Marino",
    "files": [
     "intake.md",
     "sm-company-formation.md",
@@ -3873,6 +3798,25 @@
     "sm-payroll-social.md",
     "sm-tax-overview.md",
     "sm-vat-gst.md",
+    "README.md"
+   ],
+   "shared": [
+    "company-formation-workflow-base.md",
+    "foundation.md",
+    "payroll-workflow-base.md"
+   ]
+  },
+  "sao-tome-and-principe": {
+   "jurisdiction": "ST",
+   "name": "São Tomé and Príncipe",
+   "files": [
+    "intake.md",
+    "st-company-formation.md",
+    "st-corporate-income-tax.md",
+    "st-income-tax.md",
+    "st-payroll-social.md",
+    "st-tax-overview.md",
+    "st-vat-gst.md",
     "README.md"
    ],
    "shared": [
@@ -3950,8 +3894,8 @@
    ]
   },
   "seychelles": {
-   "jurisdiction": "SE",
-   "name": "Sweden",
+   "jurisdiction": "SC",
+   "name": "Seychelles",
    "files": [
     "intake.md",
     "sc-company-formation.md",
@@ -3963,14 +3907,13 @@
    ],
    "shared": [
     "company-formation-workflow-base.md",
-    "eu-vat-directive.md",
     "foundation.md",
     "payroll-workflow-base.md"
    ]
   },
   "sierra-leone": {
-   "jurisdiction": "SI",
-   "name": "Slovenia",
+   "jurisdiction": "SL",
+   "name": "Sierra Leone",
    "files": [
     "intake.md",
     "sl-company-formation.md",
@@ -3983,7 +3926,6 @@
    ],
    "shared": [
     "company-formation-workflow-base.md",
-    "eu-vat-directive.md",
     "foundation.md",
     "payroll-workflow-base.md"
    ]
@@ -3994,7 +3936,6 @@
    "files": [
     "intake.md",
     "sg-cpf-medisave.md",
-    "sg-gst-return.md",
     "sg-income-tax.md",
     "sg-tax-residency.md",
     "sg-zero-cgt.md",
@@ -4121,7 +4062,7 @@
    ]
   },
   "south-sudan": {
-   "jurisdiction": "SO",
+   "jurisdiction": "SS",
    "name": "South Sudan",
    "files": [
     "intake.md",
@@ -4154,7 +4095,6 @@
     "es-modelo-111.md",
     "es-rental-income.md",
     "es-social-contributions.md",
-    "es-vat-return.md",
     "references.md",
     "spain-bookkeeping.md",
     "spain-crypto-tax.md",
@@ -4206,7 +4146,7 @@
    ]
   },
   "sudan": {
-   "jurisdiction": "SU",
+   "jurisdiction": "SD",
    "name": "Sudan",
    "files": [
     "intake.md",
@@ -4227,7 +4167,7 @@
    ]
   },
   "suriname": {
-   "jurisdiction": "SU",
+   "jurisdiction": "SR",
    "name": "Suriname",
    "files": [
     "intake.md",
@@ -4254,7 +4194,6 @@
     "se-capital-gains.md",
     "se-income-tax.md",
     "se-social-contributions.md",
-    "se-vat-return.md",
     "sweden-bookkeeping.md",
     "sweden-crypto-tax.md",
     "sweden-payroll.md",
@@ -4281,7 +4220,6 @@
     "ch-federal-income-tax.md",
     "ch-lump-sum.md",
     "ch-tax-overview.md",
-    "ch-vat-return.md",
     "switzerland-crypto-tax.md",
     "switzerland-vat.md",
     "README.md"
@@ -4314,7 +4252,7 @@
    ]
   },
   "tajikistan": {
-   "jurisdiction": "TA",
+   "jurisdiction": "TJ",
    "name": "Tajikistan",
    "files": [
     "intake.md",
@@ -4373,7 +4311,7 @@
    ]
   },
   "timor-leste": {
-   "jurisdiction": "TI",
+   "jurisdiction": "TL",
    "name": "Timor Leste",
    "files": [
     "intake.md",
@@ -4392,7 +4330,7 @@
    ]
   },
   "togo": {
-   "jurisdiction": "TO",
+   "jurisdiction": "TG",
    "name": "Togo",
    "files": [
     "intake.md",
@@ -4491,7 +4429,7 @@
    ]
   },
   "turkmenistan": {
-   "jurisdiction": "TU",
+   "jurisdiction": "TM",
    "name": "Turkmenistan",
    "files": [
     "intake.md",
@@ -4505,24 +4443,6 @@
    ],
    "shared": [
     "company-formation-workflow-base.md",
-    "foundation.md",
-    "payroll-workflow-base.md"
-   ]
-  },
-  "uae": {
-   "jurisdiction": "AE",
-   "name": "UAE",
-   "files": [
-    "intake.md",
-    "ae-corporate-tax.md",
-    "ae-income-tax.md",
-    "ae-payroll-social.md",
-    "ae-tax-overview.md",
-    "ae-tax-residency.md",
-    "uae-vat.md",
-    "README.md"
-   ],
-   "shared": [
     "foundation.md",
     "payroll-workflow-base.md"
    ]
@@ -4624,17 +4544,23 @@
    ]
   },
   "united-arab-emirates": {
-   "jurisdiction": "UN",
+   "jurisdiction": "AE",
    "name": "United Arab Emirates",
    "files": [
     "intake.md",
     "ae-company-formation.md",
-    "ae-vat-return.md",
+    "ae-corporate-tax.md",
+    "ae-income-tax.md",
+    "ae-payroll-social.md",
+    "ae-tax-overview.md",
+    "ae-tax-residency.md",
+    "uae-vat.md",
     "README.md"
    ],
    "shared": [
     "company-formation-workflow-base.md",
-    "foundation.md"
+    "foundation.md",
+    "payroll-workflow-base.md"
    ]
   },
   "uruguay": {
@@ -4660,25 +4586,11 @@
     "vat-workflow-base.md"
    ]
   },
-  "us": {
-   "jurisdiction": "US",
-   "name": "Us",
-   "files": [
-    "intake.md",
-    "us-capital-gains.md",
-    "us-nonresident-cgt.md",
-    "us-tax-residency.md",
-    "README.md"
-   ],
-   "shared": [
-    "foundation.md"
-   ]
-  },
   "us-ak": {
    "jurisdiction": "US-AK",
    "name": "United States — Alaska",
    "files": [
-    "ak-sales-tax.md",
+    "us-ak-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -4687,6 +4599,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -4710,6 +4623,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -4730,6 +4644,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -4737,10 +4652,8 @@
    "jurisdiction": "US-AL",
    "name": "United States — Alabama",
    "files": [
-    "al-income-tax.md",
-    "al-sales-tax.md",
-    "alabama-income-tax.md",
-    "alabama-sales-tax.md",
+    "us-al-income-tax.md",
+    "us-al-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -4749,6 +4662,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -4772,6 +4686,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -4792,6 +4707,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -4799,9 +4715,8 @@
    "jurisdiction": "US-AR",
    "name": "United States — Arkansas",
    "files": [
-    "ar-income-tax.md",
-    "ar-sales-tax.md",
-    "arkansas-sales-tax.md",
+    "us-ar-income-tax.md",
+    "us-ar-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -4810,6 +4725,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -4833,6 +4749,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -4853,6 +4770,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -4860,11 +4778,10 @@
    "jurisdiction": "US-AZ",
    "name": "United States — Arizona",
    "files": [
-    "arizona-sales-tax.md",
-    "az-income-tax.md",
-    "az-payroll.md",
-    "az-sales-tax.md",
-    "az-transaction-privilege-tax.md",
+    "us-az-income-tax.md",
+    "us-az-payroll.md",
+    "us-az-sales-tax.md",
+    "us-az-transaction-privilege-tax.md",
     "README.md"
    ],
    "shared": [
@@ -4873,6 +4790,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -4896,6 +4814,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -4916,6 +4835,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -4925,13 +4845,15 @@
    "files": [
     "us-ca-freelance-intake.md",
     "us-ca-return-assembly.md",
-    "ca-540-es-estimated-tax.md",
-    "ca-form-3853-coverage.md",
-    "ca-formation.md",
-    "ca-income-tax.md",
-    "ca-payroll.md",
-    "ca-sales-use-tax.md",
-    "ca-smllc-form-568.md",
+    "us-ca-540-individual-return.md",
+    "us-ca-estimated-tax-540es.md",
+    "us-ca-form-3853-coverage.md",
+    "us-ca-formation.md",
+    "us-ca-llc-fee-and-tax.md",
+    "us-ca-payroll.md",
+    "us-ca-pte-elective-tax.md",
+    "us-ca-sales-tax.md",
+    "us-ca-smllc-form-568.md",
     "README.md"
    ],
    "shared": [
@@ -4940,6 +4862,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -4963,6 +4886,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -4983,6 +4907,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -4990,11 +4915,10 @@
    "jurisdiction": "US-CO",
    "name": "United States — Colorado",
    "files": [
-    "co-income-tax.md",
-    "co-payroll.md",
-    "co-retail-delivery-and-suts.md",
-    "co-sales-tax.md",
-    "colorado-sales-tax.md",
+    "us-co-income-tax.md",
+    "us-co-payroll.md",
+    "us-co-retail-delivery-and-suts.md",
+    "us-co-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5003,6 +4927,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5026,6 +4951,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5046,6 +4972,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5053,10 +4980,9 @@
    "jurisdiction": "US-CT",
    "name": "United States — Connecticut",
    "files": [
-    "connecticut-sales-tax.md",
-    "ct-income-tax.md",
-    "ct-payroll.md",
-    "ct-sales-tax.md",
+    "us-ct-income-tax.md",
+    "us-ct-payroll.md",
+    "us-ct-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5065,6 +4991,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5088,6 +5015,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5108,6 +5036,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5115,8 +5044,8 @@
    "jurisdiction": "US-DC",
    "name": "United States — District of Columbia",
    "files": [
-    "dc-income-tax.md",
-    "dc-sales-tax.md",
+    "us-dc-income-tax.md",
+    "us-dc-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5125,6 +5054,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5148,6 +5078,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5168,6 +5099,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5175,10 +5107,10 @@
    "jurisdiction": "US-DE",
    "name": "United States — Delaware",
    "files": [
-    "de-formation.md",
-    "de-franchise-tax-and-llc.md",
-    "de-gross-receipts-tax.md",
-    "de-income-tax.md",
+    "us-de-formation.md",
+    "us-de-franchise-tax-and-llc.md",
+    "us-de-gross-receipts-tax.md",
+    "us-de-income-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5187,6 +5119,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5210,6 +5143,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5230,6 +5164,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5237,12 +5172,11 @@
    "jurisdiction": "US-FL",
    "name": "United States — Florida",
    "files": [
-    "fl-annual-report.md",
-    "fl-corporate-income-tax.md",
-    "fl-sales-tax.md",
-    "fl-sales-use-tax-surtax.md",
-    "fl-sales-use-tax.md",
-    "fl-transient-rental-tax.md",
+    "us-fl-annual-report.md",
+    "us-fl-corporate-income-tax.md",
+    "us-fl-sales-use-tax-surtax.md",
+    "us-fl-sales-use-tax.md",
+    "us-fl-transient-rental-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5251,6 +5185,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5274,6 +5209,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5294,6 +5230,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5301,16 +5238,16 @@
    "jurisdiction": "US-GA",
    "name": "United States — Georgia",
    "files": [
-    "ga-corporate-and-ptet.md",
-    "ga-estimated-tax-depth.md",
-    "ga-formation.md",
-    "ga-income-tax.md",
-    "ga-net-worth-tax.md",
-    "ga-payroll.md",
-    "ga-sales-tax.md",
-    "georgia-corporate-income-tax-returns-form-600.md",
-    "georgia-individual-tax-return-form-500.md",
-    "georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation.md",
+    "us-ga-corporate-and-ptet.md",
+    "us-ga-corporate-income-tax-returns-form-600.md",
+    "us-ga-estimated-tax-depth.md",
+    "us-ga-formation.md",
+    "us-ga-income-tax.md",
+    "us-ga-individual-tax-return-form-500.md",
+    "us-ga-net-worth-tax.md",
+    "us-ga-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation.md",
+    "us-ga-payroll.md",
+    "us-ga-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5319,6 +5256,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5342,6 +5280,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5362,6 +5301,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5369,8 +5309,8 @@
    "jurisdiction": "US-HI",
    "name": "United States — Hawaii",
    "files": [
-    "hi-income-tax.md",
-    "hi-sales-tax.md",
+    "us-hi-income-tax.md",
+    "us-hi-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5379,6 +5319,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5402,6 +5343,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5422,6 +5364,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5429,8 +5372,8 @@
    "jurisdiction": "US-IA",
    "name": "United States — Iowa",
    "files": [
-    "ia-income-tax.md",
-    "ia-sales-tax.md",
+    "us-ia-income-tax.md",
+    "us-ia-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5439,6 +5382,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5462,6 +5406,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5482,6 +5427,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5489,8 +5435,7 @@
    "jurisdiction": "US-ID",
    "name": "United States — Idaho",
    "files": [
-    "id-sales-tax.md",
-    "idaho-sales-tax.md",
+    "us-id-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5499,6 +5444,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5522,6 +5468,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5542,6 +5489,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5549,12 +5497,11 @@
    "jurisdiction": "US-IL",
    "name": "United States — Illinois",
    "files": [
-    "il-estimated-tax.md",
-    "il-income-tax.md",
-    "il-payroll.md",
-    "il-pprt.md",
-    "il-sales-tax.md",
-    "illinois-sales-tax.md",
+    "us-il-estimated-tax.md",
+    "us-il-income-tax.md",
+    "us-il-payroll.md",
+    "us-il-pprt.md",
+    "us-il-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5563,6 +5510,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5586,6 +5534,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5606,6 +5555,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5613,9 +5563,8 @@
    "jurisdiction": "US-IN",
    "name": "United States — Indiana",
    "files": [
-    "in-payroll.md",
-    "in-sales-tax.md",
-    "indiana-sales-tax.md",
+    "us-in-payroll.md",
+    "us-in-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5624,6 +5573,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5647,6 +5597,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5667,6 +5618,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5674,8 +5626,8 @@
    "jurisdiction": "US-KS",
    "name": "United States — Kansas",
    "files": [
-    "ks-income-tax.md",
-    "ks-sales-tax.md",
+    "us-ks-income-tax.md",
+    "us-ks-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5684,6 +5636,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5707,6 +5660,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5727,6 +5681,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5734,9 +5689,9 @@
    "jurisdiction": "US-KY",
    "name": "United States — Kentucky",
    "files": [
-    "ky-income-tax.md",
-    "ky-payroll.md",
-    "ky-sales-tax.md",
+    "us-ky-income-tax.md",
+    "us-ky-payroll.md",
+    "us-ky-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5745,6 +5700,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5768,6 +5724,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5788,6 +5745,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5795,8 +5753,8 @@
    "jurisdiction": "US-LA",
    "name": "United States — Louisiana",
    "files": [
-    "la-income-tax.md",
-    "la-sales-tax.md",
+    "us-la-income-tax.md",
+    "us-la-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5805,6 +5763,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5828,6 +5787,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5848,6 +5808,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5855,11 +5816,10 @@
    "jurisdiction": "US-MA",
    "name": "United States — Massachusetts",
    "files": [
-    "ma-corporate-excise.md",
-    "ma-income-tax.md",
-    "ma-payroll.md",
-    "ma-sales-tax.md",
-    "massachusetts-sales-tax.md",
+    "us-ma-corporate-excise.md",
+    "us-ma-income-tax.md",
+    "us-ma-payroll.md",
+    "us-ma-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5869,6 +5829,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5892,6 +5853,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5912,6 +5874,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5919,10 +5882,9 @@
    "jurisdiction": "US-MD",
    "name": "United States — Maryland",
    "files": [
-    "maryland-sales-tax.md",
-    "md-income-tax.md",
-    "md-payroll.md",
-    "md-sales-tax.md",
+    "us-md-income-tax.md",
+    "us-md-payroll.md",
+    "us-md-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5931,6 +5893,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -5954,6 +5917,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -5974,6 +5938,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -5981,9 +5946,8 @@
    "jurisdiction": "US-ME",
    "name": "United States — Maine",
    "files": [
-    "maine-sales-tax.md",
-    "me-income-tax.md",
-    "me-sales-tax.md",
+    "us-me-income-tax.md",
+    "us-me-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -5992,6 +5956,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6015,6 +5980,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6035,6 +6001,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6042,15 +6009,15 @@
    "jurisdiction": "US-MI",
    "name": "United States — Michigan",
    "files": [
-    "mi-corporate-income-tax.md",
-    "mi-detroit-individual-return.md",
-    "mi-estimated-tax.md",
-    "mi-homestead-credit.md",
-    "mi-income-tax.md",
-    "mi-payroll.md",
-    "mi-pension-retirement-subtraction.md",
-    "mi-return-assembly.md",
-    "mi-sales-tax.md",
+    "us-mi-corporate-income-tax.md",
+    "us-mi-detroit-individual-return.md",
+    "us-mi-estimated-tax.md",
+    "us-mi-homestead-credit.md",
+    "us-mi-income-tax.md",
+    "us-mi-payroll.md",
+    "us-mi-pension-retirement-subtraction.md",
+    "us-mi-return-assembly.md",
+    "us-mi-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6059,6 +6026,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6082,6 +6050,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6102,6 +6071,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6109,11 +6079,10 @@
    "jurisdiction": "US-MN",
    "name": "United States — Minnesota",
    "files": [
-    "minnesota-sales-tax.md",
-    "mn-corporate-and-pte.md",
-    "mn-income-tax.md",
-    "mn-payroll.md",
-    "mn-sales-tax.md",
+    "us-mn-corporate-and-pte.md",
+    "us-mn-income-tax.md",
+    "us-mn-payroll.md",
+    "us-mn-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6122,6 +6091,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6145,6 +6115,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6165,6 +6136,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6172,10 +6144,9 @@
    "jurisdiction": "US-MO",
    "name": "United States — Missouri",
    "files": [
-    "missouri-sales-tax.md",
-    "mo-income-tax.md",
-    "mo-payroll.md",
-    "mo-sales-tax.md",
+    "us-mo-income-tax.md",
+    "us-mo-payroll.md",
+    "us-mo-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6184,6 +6155,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6207,6 +6179,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6227,6 +6200,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6234,9 +6208,8 @@
    "jurisdiction": "US-MS",
    "name": "United States — Mississippi",
    "files": [
-    "mississippi-sales-tax.md",
-    "ms-income-tax.md",
-    "ms-sales-tax.md",
+    "us-ms-income-tax.md",
+    "us-ms-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6245,6 +6218,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6268,6 +6242,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6288,6 +6263,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6295,7 +6271,7 @@
    "jurisdiction": "US-MT",
    "name": "United States — Montana",
    "files": [
-    "mt-income-tax.md",
+    "us-mt-income-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6304,6 +6280,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6327,6 +6304,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6347,6 +6325,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6354,13 +6333,13 @@
    "jurisdiction": "US-NC",
    "name": "United States — North Carolina",
    "files": [
-    "nc-bailey-settlement-retirement.md",
-    "nc-corporate-tax.md",
-    "nc-estimated-tax.md",
-    "nc-income-tax.md",
-    "nc-payroll.md",
-    "nc-return-assembly.md",
-    "nc-sales-tax.md",
+    "us-nc-bailey-settlement-retirement.md",
+    "us-nc-corporate-tax.md",
+    "us-nc-estimated-tax.md",
+    "us-nc-income-tax.md",
+    "us-nc-payroll.md",
+    "us-nc-return-assembly.md",
+    "us-nc-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6369,6 +6348,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6392,6 +6372,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6412,6 +6393,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6419,12 +6401,12 @@
    "jurisdiction": "US-ND",
    "name": "United States — North Dakota",
    "files": [
-    "nd-corporate-tax.md",
-    "nd-estimated-tax.md",
-    "nd-income-tax.md",
-    "nd-payroll.md",
-    "nd-return-assembly.md",
-    "nd-sales-tax.md",
+    "us-nd-corporate-tax.md",
+    "us-nd-estimated-tax.md",
+    "us-nd-income-tax.md",
+    "us-nd-payroll.md",
+    "us-nd-return-assembly.md",
+    "us-nd-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6433,6 +6415,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6456,6 +6439,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6476,6 +6460,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6483,8 +6468,8 @@
    "jurisdiction": "US-NE",
    "name": "United States — Nebraska",
    "files": [
-    "ne-income-tax.md",
-    "ne-sales-tax.md",
+    "us-ne-income-tax.md",
+    "us-ne-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6493,6 +6478,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6516,6 +6502,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6536,6 +6523,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6543,8 +6531,8 @@
    "jurisdiction": "US-NH",
    "name": "United States — New Hampshire",
    "files": [
-    "nh-bpt-bet.md",
-    "nh-interest-dividends-note.md",
+    "us-nh-bpt-bet.md",
+    "us-nh-interest-dividends-note.md",
     "README.md"
    ],
    "shared": [
@@ -6553,6 +6541,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6576,6 +6565,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6596,6 +6586,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6603,11 +6594,10 @@
    "jurisdiction": "US-NJ",
    "name": "United States — New Jersey",
    "files": [
-    "new-jersey-sales-tax.md",
-    "nj-cbt-and-bait.md",
-    "nj-income-tax.md",
-    "nj-payroll.md",
-    "nj-sales-tax.md",
+    "us-nj-cbt-and-bait.md",
+    "us-nj-income-tax.md",
+    "us-nj-payroll.md",
+    "us-nj-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6616,6 +6606,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6639,6 +6630,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6659,6 +6651,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6666,9 +6659,8 @@
    "jurisdiction": "US-NM",
    "name": "United States — New Mexico",
    "files": [
-    "new-mexico-sales-tax.md",
-    "nm-income-tax.md",
-    "nm-sales-tax.md",
+    "us-nm-income-tax.md",
+    "us-nm-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6677,6 +6669,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6700,6 +6693,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6720,6 +6714,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6727,11 +6722,10 @@
    "jurisdiction": "US-NV",
    "name": "United States — Nevada",
    "files": [
-    "nevada-sales-tax.md",
-    "nv-commerce-and-mbt.md",
-    "nv-commerce-tax.md",
-    "nv-formation.md",
-    "nv-sales-tax.md",
+    "us-nv-commerce-and-mbt.md",
+    "us-nv-commerce-tax.md",
+    "us-nv-formation.md",
+    "us-nv-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6740,6 +6734,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6763,6 +6758,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6783,6 +6779,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6792,14 +6789,16 @@
    "files": [
     "us-ny-freelance-intake.md",
     "us-ny-return-assembly.md",
-    "new-york-sales-tax.md",
-    "ny-estimated-tax.md",
-    "ny-formation.md",
-    "ny-income-tax.md",
-    "ny-llc-filing-fee.md",
-    "ny-mctmt.md",
-    "ny-sales-tax.md",
-    "nyc-ubt.md",
+    "us-ny-corporate-franchise-article-9a.md",
+    "us-ny-estimated-tax.md",
+    "us-ny-formation.md",
+    "us-ny-it-201-resident-return.md",
+    "us-ny-llc-filing-fee-it-204-ll.md",
+    "us-ny-mctmt.md",
+    "us-ny-nyc-unincorporated-business-tax.md",
+    "us-ny-payroll.md",
+    "us-ny-pte-tax-ptet.md",
+    "us-ny-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6808,6 +6807,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6831,6 +6831,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6851,6 +6852,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6858,12 +6860,11 @@
    "jurisdiction": "US-OH",
    "name": "United States — Ohio",
    "files": [
-    "oh-cat-tax.md",
-    "oh-cat.md",
-    "oh-income-tax.md",
-    "oh-payroll.md",
-    "oh-sales-tax.md",
-    "ohio-sales-tax.md",
+    "us-oh-cat-tax.md",
+    "us-oh-cat.md",
+    "us-oh-income-tax.md",
+    "us-oh-payroll.md",
+    "us-oh-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6872,6 +6873,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6895,6 +6897,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6915,6 +6918,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6922,9 +6926,8 @@
    "jurisdiction": "US-OK",
    "name": "United States — Oklahoma",
    "files": [
-    "ok-income-tax.md",
-    "ok-sales-tax.md",
-    "oklahoma-sales-tax.md",
+    "us-ok-income-tax.md",
+    "us-ok-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -6933,6 +6936,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -6956,6 +6960,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -6976,6 +6981,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -6983,9 +6989,9 @@
    "jurisdiction": "US-OR",
    "name": "United States — Oregon",
    "files": [
-    "or-cat.md",
-    "or-income-tax.md",
-    "or-payroll.md",
+    "us-or-cat.md",
+    "us-or-income-tax.md",
+    "us-or-payroll.md",
     "README.md"
    ],
    "shared": [
@@ -6994,6 +7000,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7017,6 +7024,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7037,6 +7045,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7044,11 +7053,10 @@
    "jurisdiction": "US-PA",
    "name": "United States — Pennsylvania",
    "files": [
-    "pa-income-tax.md",
-    "pa-local-eit.md",
-    "pa-payroll.md",
-    "pa-sales-tax.md",
-    "pennsylvania-sales-tax.md",
+    "us-pa-income-tax.md",
+    "us-pa-local-eit.md",
+    "us-pa-payroll.md",
+    "us-pa-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7057,6 +7065,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7080,6 +7089,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7100,6 +7110,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7107,8 +7118,8 @@
    "jurisdiction": "US-RI",
    "name": "United States — Rhode Island",
    "files": [
-    "ri-income-tax.md",
-    "ri-sales-tax.md",
+    "us-ri-income-tax.md",
+    "us-ri-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7117,6 +7128,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7140,6 +7152,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7160,6 +7173,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7167,8 +7181,8 @@
    "jurisdiction": "US-SC",
    "name": "United States — South Carolina",
    "files": [
-    "sc-income-tax.md",
-    "sc-sales-tax.md",
+    "us-sc-income-tax.md",
+    "us-sc-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7177,6 +7191,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7200,6 +7215,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7220,6 +7236,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7227,7 +7244,7 @@
    "jurisdiction": "US-SD",
    "name": "United States — South Dakota",
    "files": [
-    "sd-sales-tax.md",
+    "us-sd-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7236,6 +7253,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7259,6 +7277,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7279,6 +7298,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7286,7 +7306,7 @@
    "jurisdiction": "US-TN",
    "name": "United States — Tennessee",
    "files": [
-    "tn-sales-tax.md",
+    "us-tn-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7295,6 +7315,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7318,6 +7339,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7338,6 +7360,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7347,10 +7370,10 @@
    "files": [
     "us-tx-freelance-intake.md",
     "us-tx-return-assembly.md",
-    "tx-formation.md",
-    "tx-franchise-tax.md",
-    "tx-sales-tax.md",
-    "tx-sales-use-tax.md",
+    "us-tx-formation.md",
+    "us-tx-franchise-tax.md",
+    "us-tx-margin-tax.md",
+    "us-tx-sales-use-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7359,6 +7382,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7382,6 +7406,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7402,6 +7427,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7409,9 +7435,8 @@
    "jurisdiction": "US-UT",
    "name": "United States — Utah",
    "files": [
-    "ut-income-tax.md",
-    "ut-sales-tax.md",
-    "utah-sales-tax.md",
+    "us-ut-income-tax.md",
+    "us-ut-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7420,6 +7445,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7443,6 +7469,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7463,6 +7490,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7470,10 +7498,10 @@
    "jurisdiction": "US-VA",
    "name": "United States — Virginia",
    "files": [
-    "va-corporate-tax-and-bpol.md",
-    "va-income-tax.md",
-    "va-payroll.md",
-    "va-sales-tax.md",
+    "us-va-corporate-tax-and-bpol.md",
+    "us-va-income-tax.md",
+    "us-va-payroll.md",
+    "us-va-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7482,6 +7510,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7505,6 +7534,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7525,6 +7555,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7532,8 +7563,8 @@
    "jurisdiction": "US-VT",
    "name": "United States — Vermont",
    "files": [
-    "vt-income-tax.md",
-    "vt-sales-tax.md",
+    "us-vt-income-tax.md",
+    "us-vt-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7542,6 +7573,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7565,6 +7597,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7585,6 +7618,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7592,11 +7626,9 @@
    "jurisdiction": "US-WA",
    "name": "United States — Washington",
    "files": [
-    "wa-b-and-o-tax.md",
-    "wa-bo-tax.md",
-    "wa-business-occupation-tax.md",
-    "wa-sales-tax.md",
-    "washington-sales-tax.md",
+    "us-wa-bo-tax.md",
+    "us-wa-business-occupation-tax.md",
+    "us-wa-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7605,6 +7637,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7628,6 +7661,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7648,6 +7682,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7655,10 +7690,9 @@
    "jurisdiction": "US-WI",
    "name": "United States — Wisconsin",
    "files": [
-    "wi-income-tax.md",
-    "wi-payroll.md",
-    "wi-sales-tax.md",
-    "wisconsin-sales-tax.md",
+    "us-wi-income-tax.md",
+    "us-wi-payroll.md",
+    "us-wi-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7667,6 +7701,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7690,6 +7725,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7710,6 +7746,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7717,8 +7754,8 @@
    "jurisdiction": "US-WV",
    "name": "United States — West Virginia",
    "files": [
-    "wv-income-tax.md",
-    "wv-sales-tax.md",
+    "us-wv-income-tax.md",
+    "us-wv-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7727,6 +7764,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7750,6 +7788,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7770,6 +7809,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7777,9 +7817,8 @@
    "jurisdiction": "US-WY",
    "name": "United States — Wyoming",
    "files": [
-    "wy-formation.md",
-    "wy-sales-tax.md",
-    "wyoming-sales-tax.md",
+    "us-wy-formation.md",
+    "us-wy-sales-tax.md",
     "README.md"
    ],
    "shared": [
@@ -7788,6 +7827,7 @@
     "no-sales-tax-states.md",
     "us-1099-k-and-payment-processors.md",
     "us-1099-nec-issuance.md",
+    "us-capital-gains.md",
     "us-citizen-moving-abroad-tax.md",
     "us-crypto-income-events.md",
     "us-crypto-reporting.md",
@@ -7811,6 +7851,7 @@
     "us-irs-collections-and-controversy.md",
     "us-multi-state-residency-and-allocation.md",
     "us-nft-tax.md",
+    "us-nonresident-cgt.md",
     "us-pl-86-272-income-tax-nexus.md",
     "us-pte-state-matrix.md",
     "us-qbi-deduction.md",
@@ -7831,6 +7872,7 @@
     "us-state-formation-matrix.md",
     "us-state-new-hire-reporting-matrix.md",
     "us-state-payroll-matrix.md",
+    "us-tax-residency.md",
     "us-tax-workflow-base.md"
    ]
   },
@@ -7859,7 +7901,7 @@
    ]
   },
   "vanuatu": {
-   "jurisdiction": "VA",
+   "jurisdiction": "VU",
    "name": "Vanuatu",
    "files": [
     "intake.md",

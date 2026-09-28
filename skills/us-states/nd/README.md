@@ -14,12 +14,12 @@
 
 | File | What it covers |
 |---|---|
-| `nd-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form ND-1) |
-| `nd-sales-tax.md` | State and local sales & use tax compliance |
-| `nd-corporate-tax.md` | North Dakota Corporate Income Tax |
-| `nd-estimated-tax.md` | North Dakota individual quarterly estimated income tax for self-employed individuals, sole proprietors,... |
-| `nd-payroll.md` | North Dakota employer payroll compliance — state income tax withholding, Form 306 quarterly returns, Form... |
-| `nd-return-assembly.md` | Final capstone orchestrator that assembles the complete federal + North Dakota filing package for a... |
+| `us-nd-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form ND-1) |
+| `us-nd-sales-tax.md` | State and local sales & use tax compliance |
+| `us-nd-corporate-tax.md` | North Dakota Corporate Income Tax |
+| `us-nd-estimated-tax.md` | North Dakota individual quarterly estimated income tax for self-employed individuals, sole proprietors,... |
+| `us-nd-payroll.md` | North Dakota employer payroll compliance — state income tax withholding, Form 306 quarterly returns, Form... |
+| `us-nd-return-assembly.md` | Final capstone orchestrator that assembles the complete federal + North Dakota filing package for a... |
 
 ## What's NOT covered
 - Property tax (administered at county level)

@@ -108,8 +108,8 @@ check("MT includes malta-vat-return (no own frontmatter jurisdiction)",
 usca = S.list_skills(jurisdiction="US-CA")
 check("US-CA filter works (sub-national dir)", len(usca["skills"]) > 0, f"got {len(usca['skills'])}")
 usca_slugs = {s["slug"] for s in usca["skills"]}
-check("US-CA includes ca-540-individual-return (packages/us-ca/ca-income-tax.md)",
-      "ca-540-individual-return" in usca_slugs, str(sorted(usca_slugs)))
+check("US-CA includes us-ca-540-individual-return (packages/us-ca/us-ca-540-individual-return.md)",
+      "us-ca-540-individual-return" in usca_slugs, str(sorted(usca_slugs)))
 us_slugs = {s["slug"] for s in S.list_skills(jurisdiction="US")["skills"]}
 check("federal guides carry jurisdiction US, not US-CA",
       "us-form-1040-individual-return" in us_slugs

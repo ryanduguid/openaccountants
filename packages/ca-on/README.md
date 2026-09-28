@@ -12,7 +12,9 @@ financial statements, transfer pricing, tax optimization), which are shared file
 listed below. Upload all of them together.
 
 1. `intake.md`
-2. `on-individual-return.md`
+2. `on-eht.md`
+3. `on-individual-return.md`
+4. `on-tax-credits.md`
 
 ## Shared files this package needs
 

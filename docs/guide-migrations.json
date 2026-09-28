@@ -1,0 +1,1937 @@
+{
+ "_comment": "Deletions and renames of guides under skills/, recorded so that scripts/check-sync-integrity.py --strict-metadata accepts them and so that a consumer holding an old slug can find the replacement. Every entry is reviewed by a human in the pull request that adds it. from/to are repository paths (to is null for a deletion); slug is the identifier that disappeared and replacement the one to use instead.",
+ "migrations": [
+  {
+   "id": "2026-09-28-naming",
+   "date": "2026-09-28",
+   "reason": "Roadmap item 13: US-state guides moved to the us-<code>- namespace so a state slug can never collide with a country slug; the alias country folders were merged into their real ones; the international/us guides joined skills/federal; and 60 duplicate guides (orchestrator copies of state guides, the ny-nyc copy, the full-name state files that had a code-prefixed sibling, the same-slug pairs, 24 code-prefixed VAT/GST twins) were deleted in favour of the reviewed, versioned or newer copy.",
+   "entries": [
+    {
+     "from": "skills/international/bvi/bvi-tax.md",
+     "to": "skills/international/british-virgin-islands/bvi-tax.md",
+     "slug": "bvi-tax",
+     "replacement": "bvi-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/ab-corporate-tax.md",
+     "to": "skills/international/canada/alberta/ab-corporate-tax.md",
+     "slug": "ab-corporate-tax",
+     "replacement": "ab-corporate-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/bc-eht.md",
+     "to": "skills/international/canada/british-columbia/bc-eht.md",
+     "slug": "bc-eht",
+     "replacement": "bc-eht",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/bc-pst.md",
+     "to": "skills/international/canada/british-columbia/bc-pst.md",
+     "slug": "bc-pst",
+     "replacement": "bc-pst",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/bc-speculation-vacancy-tax.md",
+     "to": "skills/international/canada/british-columbia/bc-speculation-vacancy-tax.md",
+     "slug": "bc-speculation-vacancy-tax",
+     "replacement": "bc-speculation-vacancy-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/mb-rst.md",
+     "to": "skills/international/canada/manitoba/mb-rst.md",
+     "slug": "mb-rst",
+     "replacement": "mb-rst",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/nb-tax-credits.md",
+     "to": "skills/international/canada/new-brunswick/nb-tax-credits.md",
+     "slug": "nb-tax-credits",
+     "replacement": "nb-tax-credits",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/nl-tax-credits.md",
+     "to": "skills/international/canada/newfoundland/nl-tax-credits.md",
+     "slug": "nl-tax-credits",
+     "replacement": "nl-tax-credits",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/ns-tax-credits.md",
+     "to": "skills/international/canada/nova-scotia/ns-tax-credits.md",
+     "slug": "ns-tax-credits",
+     "replacement": "ns-tax-credits",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/nt-payroll-tax.md",
+     "to": "skills/international/canada/northwest-territories/nt-payroll-tax.md",
+     "slug": "nt-payroll-tax",
+     "replacement": "nt-payroll-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/nu-tax-credits.md",
+     "to": "skills/international/canada/nunavut/nu-tax-credits.md",
+     "slug": "nu-tax-credits",
+     "replacement": "nu-tax-credits",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/on-eht.md",
+     "to": "skills/international/canada/ontario/on-eht.md",
+     "slug": "on-eht",
+     "replacement": "on-eht",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/on-tax-credits.md",
+     "to": "skills/international/canada/ontario/on-tax-credits.md",
+     "slug": "on-tax-credits",
+     "replacement": "on-tax-credits",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/pe-tax-credits.md",
+     "to": "skills/international/canada/pei/pe-tax-credits.md",
+     "slug": "pe-tax-credits",
+     "replacement": "pe-tax-credits",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/qc-employer-contributions.md",
+     "to": "skills/international/canada/quebec/qc-employer-contributions.md",
+     "slug": "qc-employer-contributions",
+     "replacement": "qc-employer-contributions",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/sk-pst.md",
+     "to": "skills/international/canada/saskatchewan/sk-pst.md",
+     "slug": "sk-pst",
+     "replacement": "sk-pst",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/ca-chartered-accountant/yt-tax-credits.md",
+     "to": "skills/international/canada/yukon/yt-tax-credits.md",
+     "slug": "yt-tax-credits",
+     "replacement": "yt-tax-credits",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/cura-ao/cw-company-formation.md",
+     "to": "skills/international/curacao/cw-company-formation.md",
+     "slug": "cw-company-formation",
+     "replacement": "cw-company-formation",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/cura-ao/cw-corporate-income-tax.md",
+     "to": "skills/international/curacao/cw-corporate-income-tax.md",
+     "slug": "cw-corporate-income-tax",
+     "replacement": "cw-corporate-income-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/cura-ao/cw-income-tax.md",
+     "to": "skills/international/curacao/cw-income-tax.md",
+     "slug": "cw-income-tax",
+     "replacement": "cw-income-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/cura-ao/cw-payroll-social.md",
+     "to": "skills/international/curacao/cw-payroll-social.md",
+     "slug": "cw-payroll-social",
+     "replacement": "cw-payroll-social",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/cura-ao/cw-tax-overview.md",
+     "to": "skills/international/curacao/cw-tax-overview.md",
+     "slug": "cw-tax-overview",
+     "replacement": "cw-tax-overview",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/cura-ao/cw-vat-gst.md",
+     "to": "skills/international/curacao/cw-vat-gst.md",
+     "slug": "cw-vat-gst",
+     "replacement": "cw-vat-gst",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/im/im-company-formation.md",
+     "to": "skills/international/isle-of-man/im-company-formation.md",
+     "slug": "im-company-formation",
+     "replacement": "im-company-formation",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/im/im-corporate-income-tax.md",
+     "to": "skills/international/isle-of-man/im-corporate-income-tax.md",
+     "slug": "im-corporate-income-tax",
+     "replacement": "im-corporate-income-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/im/im-income-tax.md",
+     "to": "skills/international/isle-of-man/im-income-tax.md",
+     "slug": "im-income-tax",
+     "replacement": "im-income-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/im/im-payroll-social.md",
+     "to": "skills/international/isle-of-man/im-payroll-social.md",
+     "slug": "im-payroll-social",
+     "replacement": "im-payroll-social",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/im/im-tax-overview.md",
+     "to": "skills/international/isle-of-man/im-tax-overview.md",
+     "slug": "im-tax-overview",
+     "replacement": "im-tax-overview",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/s-o-tom-and-pr-ncipe/st-company-formation.md",
+     "to": "skills/international/sao-tome-and-principe/st-company-formation.md",
+     "slug": "st-company-formation",
+     "replacement": "st-company-formation",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/s-o-tom-and-pr-ncipe/st-corporate-income-tax.md",
+     "to": "skills/international/sao-tome-and-principe/st-corporate-income-tax.md",
+     "slug": "st-corporate-income-tax",
+     "replacement": "st-corporate-income-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/s-o-tom-and-pr-ncipe/st-income-tax.md",
+     "to": "skills/international/sao-tome-and-principe/st-income-tax.md",
+     "slug": "st-income-tax",
+     "replacement": "st-income-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/s-o-tom-and-pr-ncipe/st-payroll-social.md",
+     "to": "skills/international/sao-tome-and-principe/st-payroll-social.md",
+     "slug": "st-payroll-social",
+     "replacement": "st-payroll-social",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/s-o-tom-and-pr-ncipe/st-tax-overview.md",
+     "to": "skills/international/sao-tome-and-principe/st-tax-overview.md",
+     "slug": "st-tax-overview",
+     "replacement": "st-tax-overview",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/s-o-tom-and-pr-ncipe/st-vat-gst.md",
+     "to": "skills/international/sao-tome-and-principe/st-vat-gst.md",
+     "slug": "st-vat-gst",
+     "replacement": "st-vat-gst",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/uae/ae-corporate-tax.md",
+     "to": "skills/international/united-arab-emirates/ae-corporate-tax.md",
+     "slug": "ae-corporate-tax",
+     "replacement": "ae-corporate-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/uae/ae-income-tax.md",
+     "to": "skills/international/united-arab-emirates/ae-income-tax.md",
+     "slug": "ae-income-tax",
+     "replacement": "ae-income-tax",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/uae/ae-payroll-social.md",
+     "to": "skills/international/united-arab-emirates/ae-payroll-social.md",
+     "slug": "ae-payroll-social",
+     "replacement": "ae-payroll-social",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/uae/ae-tax-overview.md",
+     "to": "skills/international/united-arab-emirates/ae-tax-overview.md",
+     "slug": "ae-tax-overview",
+     "replacement": "ae-tax-overview",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/uae/ae-tax-residency.md",
+     "to": "skills/international/united-arab-emirates/ae-tax-residency.md",
+     "slug": "ae-tax-residency",
+     "replacement": "ae-tax-residency",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/uae/uae-vat.md",
+     "to": "skills/international/united-arab-emirates/uae-vat.md",
+     "slug": "uae-vat",
+     "replacement": "uae-vat",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/us/us-capital-gains.md",
+     "to": "skills/federal/us-capital-gains.md",
+     "slug": "us-capital-gains",
+     "replacement": "us-capital-gains",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/us/us-nonresident-cgt.md",
+     "to": "skills/federal/us-nonresident-cgt.md",
+     "slug": "us-nonresident-cgt",
+     "replacement": "us-nonresident-cgt",
+     "note": "moved"
+    },
+    {
+     "from": "skills/international/us/us-tax-residency.md",
+     "to": "skills/federal/us-tax-residency.md",
+     "slug": "us-tax-residency",
+     "replacement": "us-tax-residency",
+     "note": "moved"
+    },
+    {
+     "from": "skills/orchestrator/ca-llc-fee-and-tax.md",
+     "to": "skills/us-states/ca/us-ca-llc-fee-and-tax.md",
+     "slug": "ca-llc-fee-and-tax",
+     "replacement": "us-ca-llc-fee-and-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/orchestrator/ca-pte-elective-tax.md",
+     "to": "skills/us-states/ca/us-ca-pte-elective-tax.md",
+     "slug": "ca-pte-elective-tax",
+     "replacement": "us-ca-pte-elective-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/orchestrator/ny-corporate-franchise-article-9a.md",
+     "to": "skills/us-states/ny/us-ny-corporate-franchise-article-9a.md",
+     "slug": "ny-corporate-franchise-article-9a",
+     "replacement": "us-ny-corporate-franchise-article-9a",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/orchestrator/ny-payroll.md",
+     "to": "skills/us-states/ny/us-ny-payroll.md",
+     "slug": "ny-payroll",
+     "replacement": "us-ny-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/orchestrator/ny-pte-tax-ptet.md",
+     "to": "skills/us-states/ny/us-ny-pte-tax-ptet.md",
+     "slug": "ny-pte-tax-ptet",
+     "replacement": "us-ny-pte-tax-ptet",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/orchestrator/tx-margin-tax.md",
+     "to": "skills/us-states/tx/us-tx-margin-tax.md",
+     "slug": "tx-margin-tax",
+     "replacement": "us-tx-margin-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ak/ak-sales-tax.md",
+     "to": "skills/us-states/ak/us-ak-sales-tax.md",
+     "slug": "ak-sales-tax",
+     "replacement": "us-ak-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/al/al-income-tax.md",
+     "to": "skills/us-states/al/us-al-income-tax.md",
+     "slug": "al-income-tax",
+     "replacement": "us-al-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/al/al-sales-tax.md",
+     "to": "skills/us-states/al/us-al-sales-tax.md",
+     "slug": "al-sales-tax",
+     "replacement": "us-al-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ar/ar-income-tax.md",
+     "to": "skills/us-states/ar/us-ar-income-tax.md",
+     "slug": "ar-income-tax",
+     "replacement": "us-ar-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ar/ar-sales-tax.md",
+     "to": "skills/us-states/ar/us-ar-sales-tax.md",
+     "slug": "ar-sales-tax",
+     "replacement": "us-ar-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/az/az-income-tax.md",
+     "to": "skills/us-states/az/us-az-income-tax.md",
+     "slug": "az-income-tax",
+     "replacement": "us-az-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/az/az-payroll.md",
+     "to": "skills/us-states/az/us-az-payroll.md",
+     "slug": "az-payroll",
+     "replacement": "us-az-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/az/az-sales-tax.md",
+     "to": "skills/us-states/az/us-az-sales-tax.md",
+     "slug": "az-sales-tax",
+     "replacement": "us-az-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/az/az-transaction-privilege-tax.md",
+     "to": "skills/us-states/az/us-az-transaction-privilege-tax.md",
+     "slug": "az-transaction-privilege-tax",
+     "replacement": "us-az-transaction-privilege-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ca/ca-540-es-estimated-tax.md",
+     "to": "skills/us-states/ca/us-ca-estimated-tax-540es.md",
+     "slug": "ca-estimated-tax-540es",
+     "replacement": "us-ca-estimated-tax-540es",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ca/ca-form-3853-coverage.md",
+     "to": "skills/us-states/ca/us-ca-form-3853-coverage.md",
+     "slug": "ca-form-3853-coverage",
+     "replacement": "us-ca-form-3853-coverage",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ca/ca-formation.md",
+     "to": "skills/us-states/ca/us-ca-formation.md",
+     "slug": "ca-formation",
+     "replacement": "us-ca-formation",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ca/ca-income-tax.md",
+     "to": "skills/us-states/ca/us-ca-540-individual-return.md",
+     "slug": "ca-540-individual-return",
+     "replacement": "us-ca-540-individual-return",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ca/ca-payroll.md",
+     "to": "skills/us-states/ca/us-ca-payroll.md",
+     "slug": "ca-payroll",
+     "replacement": "us-ca-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ca/ca-sales-use-tax.md",
+     "to": "skills/us-states/ca/us-ca-sales-tax.md",
+     "slug": "california-sales-tax",
+     "replacement": "us-ca-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ca/ca-smllc-form-568.md",
+     "to": "skills/us-states/ca/us-ca-smllc-form-568.md",
+     "slug": "ca-smllc-form-568",
+     "replacement": "us-ca-smllc-form-568",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/co/co-income-tax.md",
+     "to": "skills/us-states/co/us-co-income-tax.md",
+     "slug": "co-income-tax",
+     "replacement": "us-co-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/co/co-payroll.md",
+     "to": "skills/us-states/co/us-co-payroll.md",
+     "slug": "co-payroll",
+     "replacement": "us-co-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/co/co-retail-delivery-and-suts.md",
+     "to": "skills/us-states/co/us-co-retail-delivery-and-suts.md",
+     "slug": "co-retail-delivery-and-suts",
+     "replacement": "us-co-retail-delivery-and-suts",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/co/co-sales-tax.md",
+     "to": "skills/us-states/co/us-co-sales-tax.md",
+     "slug": "co-sales-tax",
+     "replacement": "us-co-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ct/ct-income-tax.md",
+     "to": "skills/us-states/ct/us-ct-income-tax.md",
+     "slug": "ct-income-tax",
+     "replacement": "us-ct-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ct/ct-payroll.md",
+     "to": "skills/us-states/ct/us-ct-payroll.md",
+     "slug": "ct-payroll",
+     "replacement": "us-ct-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ct/ct-sales-tax.md",
+     "to": "skills/us-states/ct/us-ct-sales-tax.md",
+     "slug": "ct-sales-tax",
+     "replacement": "us-ct-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/dc/dc-income-tax.md",
+     "to": "skills/us-states/dc/us-dc-income-tax.md",
+     "slug": "dc-income-tax",
+     "replacement": "us-dc-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/dc/dc-sales-tax.md",
+     "to": "skills/us-states/dc/us-dc-sales-tax.md",
+     "slug": "dc-sales-tax",
+     "replacement": "us-dc-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/de/de-formation.md",
+     "to": "skills/us-states/de/us-de-formation.md",
+     "slug": "de-formation",
+     "replacement": "us-de-formation",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/de/de-franchise-tax-and-llc.md",
+     "to": "skills/us-states/de/us-de-franchise-tax-and-llc.md",
+     "slug": "de-franchise-tax-and-llc",
+     "replacement": "us-de-franchise-tax-and-llc",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/de/de-gross-receipts-tax.md",
+     "to": "skills/us-states/de/us-de-gross-receipts-tax.md",
+     "slug": "de-gross-receipts-tax",
+     "replacement": "us-de-gross-receipts-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/de/de-income-tax.md",
+     "to": "skills/us-states/de/us-de-income-tax.md",
+     "slug": "de-income-tax",
+     "replacement": "us-de-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/fl/fl-annual-report.md",
+     "to": "skills/us-states/fl/us-fl-annual-report.md",
+     "slug": "fl-annual-report",
+     "replacement": "us-fl-annual-report",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/fl/fl-corporate-income-tax.md",
+     "to": "skills/us-states/fl/us-fl-corporate-income-tax.md",
+     "slug": "fl-corporate-income-tax",
+     "replacement": "us-fl-corporate-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/fl/fl-sales-use-tax-surtax.md",
+     "to": "skills/us-states/fl/us-fl-sales-use-tax-surtax.md",
+     "slug": "fl-sales-use-tax-surtax",
+     "replacement": "us-fl-sales-use-tax-surtax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/fl/fl-sales-use-tax.md",
+     "to": "skills/us-states/fl/us-fl-sales-use-tax.md",
+     "slug": "fl-sales-use-tax",
+     "replacement": "us-fl-sales-use-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/fl/fl-transient-rental-tax.md",
+     "to": "skills/us-states/fl/us-fl-transient-rental-tax.md",
+     "slug": "fl-transient-rental-tax",
+     "replacement": "us-fl-transient-rental-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/ga-corporate-and-ptet.md",
+     "to": "skills/us-states/ga/us-ga-corporate-and-ptet.md",
+     "slug": "ga-corporate-and-ptet",
+     "replacement": "us-ga-corporate-and-ptet",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/ga-estimated-tax-depth.md",
+     "to": "skills/us-states/ga/us-ga-estimated-tax-depth.md",
+     "slug": "ga-estimated-tax-depth",
+     "replacement": "us-ga-estimated-tax-depth",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/ga-formation.md",
+     "to": "skills/us-states/ga/us-ga-formation.md",
+     "slug": "ga-formation",
+     "replacement": "us-ga-formation",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/ga-income-tax.md",
+     "to": "skills/us-states/ga/us-ga-income-tax.md",
+     "slug": "ga-income-tax",
+     "replacement": "us-ga-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/ga-net-worth-tax.md",
+     "to": "skills/us-states/ga/us-ga-net-worth-tax.md",
+     "slug": "ga-net-worth-tax",
+     "replacement": "us-ga-net-worth-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/ga-payroll.md",
+     "to": "skills/us-states/ga/us-ga-payroll.md",
+     "slug": "ga-payroll",
+     "replacement": "us-ga-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/ga-sales-tax.md",
+     "to": "skills/us-states/ga/us-ga-sales-tax.md",
+     "slug": "ga-sales-tax",
+     "replacement": "us-ga-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/georgia-corporate-income-tax-returns-form-600.md",
+     "to": "skills/us-states/ga/us-ga-corporate-income-tax-returns-form-600.md",
+     "slug": "georgia-corporate-income-tax-returns-form-600",
+     "replacement": "us-ga-corporate-income-tax-returns-form-600",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/georgia-individual-tax-return-form-500.md",
+     "to": "skills/us-states/ga/us-ga-individual-tax-return-form-500.md",
+     "slug": "georgia-individual-tax-return-form-500",
+     "replacement": "us-ga-individual-tax-return-form-500",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ga/georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation.md",
+     "to": "skills/us-states/ga/us-ga-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation.md",
+     "slug": "georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation",
+     "replacement": "us-ga-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/hi/hi-income-tax.md",
+     "to": "skills/us-states/hi/us-hi-income-tax.md",
+     "slug": "hi-income-tax",
+     "replacement": "us-hi-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/hi/hi-sales-tax.md",
+     "to": "skills/us-states/hi/us-hi-sales-tax.md",
+     "slug": "hi-sales-tax",
+     "replacement": "us-hi-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ia/ia-income-tax.md",
+     "to": "skills/us-states/ia/us-ia-income-tax.md",
+     "slug": "ia-income-tax",
+     "replacement": "us-ia-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ia/ia-sales-tax.md",
+     "to": "skills/us-states/ia/us-ia-sales-tax.md",
+     "slug": "ia-sales-tax",
+     "replacement": "us-ia-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/id/id-sales-tax.md",
+     "to": "skills/us-states/id/us-id-sales-tax.md",
+     "slug": "id-sales-tax",
+     "replacement": "us-id-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/il/il-estimated-tax.md",
+     "to": "skills/us-states/il/us-il-estimated-tax.md",
+     "slug": "il-estimated-tax",
+     "replacement": "us-il-estimated-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/il/il-income-tax.md",
+     "to": "skills/us-states/il/us-il-income-tax.md",
+     "slug": "il-income-tax",
+     "replacement": "us-il-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/il/il-payroll.md",
+     "to": "skills/us-states/il/us-il-payroll.md",
+     "slug": "il-payroll",
+     "replacement": "us-il-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/il/il-pprt.md",
+     "to": "skills/us-states/il/us-il-pprt.md",
+     "slug": "il-pprt",
+     "replacement": "us-il-pprt",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/il/il-sales-tax.md",
+     "to": "skills/us-states/il/us-il-sales-tax.md",
+     "slug": "il-sales-tax",
+     "replacement": "us-il-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/in/in-payroll.md",
+     "to": "skills/us-states/in/us-in-payroll.md",
+     "slug": "in-payroll",
+     "replacement": "us-in-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/in/in-sales-tax.md",
+     "to": "skills/us-states/in/us-in-sales-tax.md",
+     "slug": "in-sales-tax",
+     "replacement": "us-in-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ks/ks-income-tax.md",
+     "to": "skills/us-states/ks/us-ks-income-tax.md",
+     "slug": "ks-income-tax",
+     "replacement": "us-ks-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ks/ks-sales-tax.md",
+     "to": "skills/us-states/ks/us-ks-sales-tax.md",
+     "slug": "ks-sales-tax",
+     "replacement": "us-ks-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ky/ky-income-tax.md",
+     "to": "skills/us-states/ky/us-ky-income-tax.md",
+     "slug": "ky-income-tax",
+     "replacement": "us-ky-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ky/ky-payroll.md",
+     "to": "skills/us-states/ky/us-ky-payroll.md",
+     "slug": "ky-payroll",
+     "replacement": "us-ky-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ky/ky-sales-tax.md",
+     "to": "skills/us-states/ky/us-ky-sales-tax.md",
+     "slug": "ky-sales-tax",
+     "replacement": "us-ky-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/la/la-income-tax.md",
+     "to": "skills/us-states/la/us-la-income-tax.md",
+     "slug": "la-income-tax",
+     "replacement": "us-la-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/la/la-sales-tax.md",
+     "to": "skills/us-states/la/us-la-sales-tax.md",
+     "slug": "la-sales-tax",
+     "replacement": "us-la-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ma/ma-corporate-excise.md",
+     "to": "skills/us-states/ma/us-ma-corporate-excise.md",
+     "slug": "ma-corporate-excise",
+     "replacement": "us-ma-corporate-excise",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ma/ma-income-tax.md",
+     "to": "skills/us-states/ma/us-ma-income-tax.md",
+     "slug": "ma-income-tax",
+     "replacement": "us-ma-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ma/ma-payroll.md",
+     "to": "skills/us-states/ma/us-ma-payroll.md",
+     "slug": "ma-payroll",
+     "replacement": "us-ma-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ma/ma-sales-tax.md",
+     "to": "skills/us-states/ma/us-ma-sales-tax.md",
+     "slug": "ma-sales-tax",
+     "replacement": "us-ma-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/md/md-income-tax.md",
+     "to": "skills/us-states/md/us-md-income-tax.md",
+     "slug": "md-income-tax",
+     "replacement": "us-md-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/md/md-payroll.md",
+     "to": "skills/us-states/md/us-md-payroll.md",
+     "slug": "md-payroll",
+     "replacement": "us-md-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/md/md-sales-tax.md",
+     "to": "skills/us-states/md/us-md-sales-tax.md",
+     "slug": "md-sales-tax",
+     "replacement": "us-md-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/me/me-income-tax.md",
+     "to": "skills/us-states/me/us-me-income-tax.md",
+     "slug": "me-income-tax",
+     "replacement": "us-me-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/me/me-sales-tax.md",
+     "to": "skills/us-states/me/us-me-sales-tax.md",
+     "slug": "me-sales-tax",
+     "replacement": "us-me-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mi/mi-corporate-income-tax.md",
+     "to": "skills/us-states/mi/us-mi-corporate-income-tax.md",
+     "slug": "mi-corporate-income-tax",
+     "replacement": "us-mi-corporate-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mi/mi-detroit-individual-return.md",
+     "to": "skills/us-states/mi/us-mi-detroit-individual-return.md",
+     "slug": "mi-detroit-individual-return",
+     "replacement": "us-mi-detroit-individual-return",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mi/mi-estimated-tax.md",
+     "to": "skills/us-states/mi/us-mi-estimated-tax.md",
+     "slug": "mi-estimated-tax",
+     "replacement": "us-mi-estimated-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mi/mi-homestead-credit.md",
+     "to": "skills/us-states/mi/us-mi-homestead-credit.md",
+     "slug": "mi-homestead-credit",
+     "replacement": "us-mi-homestead-credit",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mi/mi-income-tax.md",
+     "to": "skills/us-states/mi/us-mi-income-tax.md",
+     "slug": "mi-income-tax",
+     "replacement": "us-mi-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mi/mi-payroll.md",
+     "to": "skills/us-states/mi/us-mi-payroll.md",
+     "slug": "mi-payroll",
+     "replacement": "us-mi-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mi/mi-pension-retirement-subtraction.md",
+     "to": "skills/us-states/mi/us-mi-pension-retirement-subtraction.md",
+     "slug": "mi-pension-retirement-subtraction",
+     "replacement": "us-mi-pension-retirement-subtraction",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mi/mi-return-assembly.md",
+     "to": "skills/us-states/mi/us-mi-return-assembly.md",
+     "slug": "mi-return-assembly",
+     "replacement": "us-mi-return-assembly",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mi/mi-sales-tax.md",
+     "to": "skills/us-states/mi/us-mi-sales-tax.md",
+     "slug": "mi-sales-tax",
+     "replacement": "us-mi-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mn/mn-corporate-and-pte.md",
+     "to": "skills/us-states/mn/us-mn-corporate-and-pte.md",
+     "slug": "mn-corporate-and-pte",
+     "replacement": "us-mn-corporate-and-pte",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mn/mn-income-tax.md",
+     "to": "skills/us-states/mn/us-mn-income-tax.md",
+     "slug": "mn-income-tax",
+     "replacement": "us-mn-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mn/mn-payroll.md",
+     "to": "skills/us-states/mn/us-mn-payroll.md",
+     "slug": "mn-payroll",
+     "replacement": "us-mn-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mn/mn-sales-tax.md",
+     "to": "skills/us-states/mn/us-mn-sales-tax.md",
+     "slug": "mn-sales-tax",
+     "replacement": "us-mn-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mo/mo-income-tax.md",
+     "to": "skills/us-states/mo/us-mo-income-tax.md",
+     "slug": "mo-income-tax",
+     "replacement": "us-mo-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mo/mo-payroll.md",
+     "to": "skills/us-states/mo/us-mo-payroll.md",
+     "slug": "mo-payroll",
+     "replacement": "us-mo-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mo/mo-sales-tax.md",
+     "to": "skills/us-states/mo/us-mo-sales-tax.md",
+     "slug": "mo-sales-tax",
+     "replacement": "us-mo-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ms/ms-income-tax.md",
+     "to": "skills/us-states/ms/us-ms-income-tax.md",
+     "slug": "ms-income-tax",
+     "replacement": "us-ms-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ms/ms-sales-tax.md",
+     "to": "skills/us-states/ms/us-ms-sales-tax.md",
+     "slug": "ms-sales-tax",
+     "replacement": "us-ms-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/mt/mt-income-tax.md",
+     "to": "skills/us-states/mt/us-mt-income-tax.md",
+     "slug": "mt-income-tax",
+     "replacement": "us-mt-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nc/nc-bailey-settlement-retirement.md",
+     "to": "skills/us-states/nc/us-nc-bailey-settlement-retirement.md",
+     "slug": "nc-bailey-settlement-retirement",
+     "replacement": "us-nc-bailey-settlement-retirement",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nc/nc-corporate-tax.md",
+     "to": "skills/us-states/nc/us-nc-corporate-tax.md",
+     "slug": "nc-corporate-tax",
+     "replacement": "us-nc-corporate-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nc/nc-estimated-tax.md",
+     "to": "skills/us-states/nc/us-nc-estimated-tax.md",
+     "slug": "nc-estimated-tax",
+     "replacement": "us-nc-estimated-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nc/nc-income-tax.md",
+     "to": "skills/us-states/nc/us-nc-income-tax.md",
+     "slug": "nc-income-tax",
+     "replacement": "us-nc-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nc/nc-payroll.md",
+     "to": "skills/us-states/nc/us-nc-payroll.md",
+     "slug": "nc-payroll",
+     "replacement": "us-nc-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nc/nc-return-assembly.md",
+     "to": "skills/us-states/nc/us-nc-return-assembly.md",
+     "slug": "nc-return-assembly",
+     "replacement": "us-nc-return-assembly",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nc/nc-sales-tax.md",
+     "to": "skills/us-states/nc/us-nc-sales-tax.md",
+     "slug": "nc-sales-tax",
+     "replacement": "us-nc-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nd/nd-corporate-tax.md",
+     "to": "skills/us-states/nd/us-nd-corporate-tax.md",
+     "slug": "nd-corporate-tax",
+     "replacement": "us-nd-corporate-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nd/nd-estimated-tax.md",
+     "to": "skills/us-states/nd/us-nd-estimated-tax.md",
+     "slug": "nd-estimated-tax",
+     "replacement": "us-nd-estimated-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nd/nd-income-tax.md",
+     "to": "skills/us-states/nd/us-nd-income-tax.md",
+     "slug": "nd-income-tax",
+     "replacement": "us-nd-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nd/nd-payroll.md",
+     "to": "skills/us-states/nd/us-nd-payroll.md",
+     "slug": "nd-payroll",
+     "replacement": "us-nd-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nd/nd-return-assembly.md",
+     "to": "skills/us-states/nd/us-nd-return-assembly.md",
+     "slug": "nd-return-assembly",
+     "replacement": "us-nd-return-assembly",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nd/nd-sales-tax.md",
+     "to": "skills/us-states/nd/us-nd-sales-tax.md",
+     "slug": "nd-sales-tax",
+     "replacement": "us-nd-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ne/ne-income-tax.md",
+     "to": "skills/us-states/ne/us-ne-income-tax.md",
+     "slug": "ne-income-tax",
+     "replacement": "us-ne-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ne/ne-sales-tax.md",
+     "to": "skills/us-states/ne/us-ne-sales-tax.md",
+     "slug": "ne-sales-tax",
+     "replacement": "us-ne-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nh/nh-bpt-bet.md",
+     "to": "skills/us-states/nh/us-nh-bpt-bet.md",
+     "slug": "nh-bpt-bet",
+     "replacement": "us-nh-bpt-bet",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nh/nh-interest-dividends-note.md",
+     "to": "skills/us-states/nh/us-nh-interest-dividends-note.md",
+     "slug": "nh-interest-dividends-note",
+     "replacement": "us-nh-interest-dividends-note",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nj/nj-cbt-and-bait.md",
+     "to": "skills/us-states/nj/us-nj-cbt-and-bait.md",
+     "slug": "nj-cbt-and-bait",
+     "replacement": "us-nj-cbt-and-bait",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nj/nj-income-tax.md",
+     "to": "skills/us-states/nj/us-nj-income-tax.md",
+     "slug": "nj-income-tax",
+     "replacement": "us-nj-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nj/nj-payroll.md",
+     "to": "skills/us-states/nj/us-nj-payroll.md",
+     "slug": "nj-payroll",
+     "replacement": "us-nj-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nj/nj-sales-tax.md",
+     "to": "skills/us-states/nj/us-nj-sales-tax.md",
+     "slug": "nj-sales-tax",
+     "replacement": "us-nj-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nm/nm-income-tax.md",
+     "to": "skills/us-states/nm/us-nm-income-tax.md",
+     "slug": "nm-income-tax",
+     "replacement": "us-nm-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nm/nm-sales-tax.md",
+     "to": "skills/us-states/nm/us-nm-sales-tax.md",
+     "slug": "nm-sales-tax",
+     "replacement": "us-nm-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nv/nv-commerce-and-mbt.md",
+     "to": "skills/us-states/nv/us-nv-commerce-and-mbt.md",
+     "slug": "nv-commerce-and-mbt",
+     "replacement": "us-nv-commerce-and-mbt",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nv/nv-commerce-tax.md",
+     "to": "skills/us-states/nv/us-nv-commerce-tax.md",
+     "slug": "nv-commerce-tax",
+     "replacement": "us-nv-commerce-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nv/nv-formation.md",
+     "to": "skills/us-states/nv/us-nv-formation.md",
+     "slug": "nv-formation",
+     "replacement": "us-nv-formation",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/nv/nv-sales-tax.md",
+     "to": "skills/us-states/nv/us-nv-sales-tax.md",
+     "slug": "nv-sales-tax",
+     "replacement": "us-nv-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ny/ny-estimated-tax.md",
+     "to": "skills/us-states/ny/us-ny-estimated-tax.md",
+     "slug": "ny-estimated-tax",
+     "replacement": "us-ny-estimated-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ny/ny-formation.md",
+     "to": "skills/us-states/ny/us-ny-formation.md",
+     "slug": "ny-formation",
+     "replacement": "us-ny-formation",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ny/ny-income-tax.md",
+     "to": "skills/us-states/ny/us-ny-it-201-resident-return.md",
+     "slug": "ny-it-201-resident-return",
+     "replacement": "us-ny-it-201-resident-return",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ny/ny-llc-filing-fee.md",
+     "to": "skills/us-states/ny/us-ny-llc-filing-fee-it-204-ll.md",
+     "slug": "ny-llc-filing-fee-it-204-ll",
+     "replacement": "us-ny-llc-filing-fee-it-204-ll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ny/ny-mctmt.md",
+     "to": "skills/us-states/ny/us-ny-mctmt.md",
+     "slug": "ny-mctmt",
+     "replacement": "us-ny-mctmt",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ny/ny-sales-tax.md",
+     "to": "skills/us-states/ny/us-ny-sales-tax.md",
+     "slug": "new-york-sales-tax",
+     "replacement": "us-ny-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ny/nyc-ubt.md",
+     "to": "skills/us-states/ny/us-ny-nyc-unincorporated-business-tax.md",
+     "slug": "nyc-unincorporated-business-tax",
+     "replacement": "us-ny-nyc-unincorporated-business-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/oh/oh-cat-tax.md",
+     "to": "skills/us-states/oh/us-oh-cat-tax.md",
+     "slug": "oh-cat-tax",
+     "replacement": "us-oh-cat-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/oh/oh-cat.md",
+     "to": "skills/us-states/oh/us-oh-cat.md",
+     "slug": "oh-cat",
+     "replacement": "us-oh-cat",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/oh/oh-income-tax.md",
+     "to": "skills/us-states/oh/us-oh-income-tax.md",
+     "slug": "oh-income-tax",
+     "replacement": "us-oh-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/oh/oh-payroll.md",
+     "to": "skills/us-states/oh/us-oh-payroll.md",
+     "slug": "oh-payroll",
+     "replacement": "us-oh-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/oh/oh-sales-tax.md",
+     "to": "skills/us-states/oh/us-oh-sales-tax.md",
+     "slug": "oh-sales-tax",
+     "replacement": "us-oh-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ok/ok-income-tax.md",
+     "to": "skills/us-states/ok/us-ok-income-tax.md",
+     "slug": "ok-income-tax",
+     "replacement": "us-ok-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ok/ok-sales-tax.md",
+     "to": "skills/us-states/ok/us-ok-sales-tax.md",
+     "slug": "ok-sales-tax",
+     "replacement": "us-ok-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/or/or-cat.md",
+     "to": "skills/us-states/or/us-or-cat.md",
+     "slug": "or-cat",
+     "replacement": "us-or-cat",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/or/or-income-tax.md",
+     "to": "skills/us-states/or/us-or-income-tax.md",
+     "slug": "or-income-tax",
+     "replacement": "us-or-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/or/or-payroll.md",
+     "to": "skills/us-states/or/us-or-payroll.md",
+     "slug": "or-payroll",
+     "replacement": "us-or-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/pa/pa-income-tax.md",
+     "to": "skills/us-states/pa/us-pa-income-tax.md",
+     "slug": "pa-income-tax",
+     "replacement": "us-pa-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/pa/pa-local-eit.md",
+     "to": "skills/us-states/pa/us-pa-local-eit.md",
+     "slug": "pa-local-eit",
+     "replacement": "us-pa-local-eit",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/pa/pa-payroll.md",
+     "to": "skills/us-states/pa/us-pa-payroll.md",
+     "slug": "pa-payroll",
+     "replacement": "us-pa-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/pa/pa-sales-tax.md",
+     "to": "skills/us-states/pa/us-pa-sales-tax.md",
+     "slug": "pa-sales-tax",
+     "replacement": "us-pa-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ri/ri-income-tax.md",
+     "to": "skills/us-states/ri/us-ri-income-tax.md",
+     "slug": "ri-income-tax",
+     "replacement": "us-ri-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ri/ri-sales-tax.md",
+     "to": "skills/us-states/ri/us-ri-sales-tax.md",
+     "slug": "ri-sales-tax",
+     "replacement": "us-ri-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/sc/sc-income-tax.md",
+     "to": "skills/us-states/sc/us-sc-income-tax.md",
+     "slug": "sc-income-tax",
+     "replacement": "us-sc-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/sc/sc-sales-tax.md",
+     "to": "skills/us-states/sc/us-sc-sales-tax.md",
+     "slug": "sc-sales-tax",
+     "replacement": "us-sc-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/sd/sd-sales-tax.md",
+     "to": "skills/us-states/sd/us-sd-sales-tax.md",
+     "slug": "sd-sales-tax",
+     "replacement": "us-sd-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/tn/tn-sales-tax.md",
+     "to": "skills/us-states/tn/us-tn-sales-tax.md",
+     "slug": "tn-sales-tax",
+     "replacement": "us-tn-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/tx/tx-formation.md",
+     "to": "skills/us-states/tx/us-tx-formation.md",
+     "slug": "tx-formation",
+     "replacement": "us-tx-formation",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/tx/tx-franchise-tax.md",
+     "to": "skills/us-states/tx/us-tx-franchise-tax.md",
+     "slug": "tx-franchise-tax",
+     "replacement": "us-tx-franchise-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/tx/tx-sales-tax.md",
+     "to": "skills/us-states/tx/us-tx-sales-use-tax.md",
+     "slug": "tx-sales-use-tax",
+     "replacement": "us-tx-sales-use-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ut/ut-income-tax.md",
+     "to": "skills/us-states/ut/us-ut-income-tax.md",
+     "slug": "ut-income-tax",
+     "replacement": "us-ut-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/ut/ut-sales-tax.md",
+     "to": "skills/us-states/ut/us-ut-sales-tax.md",
+     "slug": "ut-sales-tax",
+     "replacement": "us-ut-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/va/va-corporate-tax-and-bpol.md",
+     "to": "skills/us-states/va/us-va-corporate-tax-and-bpol.md",
+     "slug": "va-corporate-tax-and-bpol",
+     "replacement": "us-va-corporate-tax-and-bpol",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/va/va-income-tax.md",
+     "to": "skills/us-states/va/us-va-income-tax.md",
+     "slug": "va-income-tax",
+     "replacement": "us-va-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/va/va-payroll.md",
+     "to": "skills/us-states/va/us-va-payroll.md",
+     "slug": "va-payroll",
+     "replacement": "us-va-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/va/va-sales-tax.md",
+     "to": "skills/us-states/va/us-va-sales-tax.md",
+     "slug": "va-sales-tax",
+     "replacement": "us-va-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/vt/vt-income-tax.md",
+     "to": "skills/us-states/vt/us-vt-income-tax.md",
+     "slug": "vt-income-tax",
+     "replacement": "us-vt-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/vt/vt-sales-tax.md",
+     "to": "skills/us-states/vt/us-vt-sales-tax.md",
+     "slug": "vt-sales-tax",
+     "replacement": "us-vt-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wa/wa-b-and-o-tax.md",
+     "to": "skills/us-states/wa/us-wa-business-occupation-tax.md",
+     "slug": "wa-business-occupation-tax",
+     "replacement": "us-wa-business-occupation-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wa/wa-bo-tax.md",
+     "to": "skills/us-states/wa/us-wa-bo-tax.md",
+     "slug": "wa-bo-tax",
+     "replacement": "us-wa-bo-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wa/wa-sales-tax.md",
+     "to": "skills/us-states/wa/us-wa-sales-tax.md",
+     "slug": "wa-sales-tax",
+     "replacement": "us-wa-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wi/wi-income-tax.md",
+     "to": "skills/us-states/wi/us-wi-income-tax.md",
+     "slug": "wi-income-tax",
+     "replacement": "us-wi-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wi/wi-payroll.md",
+     "to": "skills/us-states/wi/us-wi-payroll.md",
+     "slug": "wi-payroll",
+     "replacement": "us-wi-payroll",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wi/wi-sales-tax.md",
+     "to": "skills/us-states/wi/us-wi-sales-tax.md",
+     "slug": "wi-sales-tax",
+     "replacement": "us-wi-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wv/wv-income-tax.md",
+     "to": "skills/us-states/wv/us-wv-income-tax.md",
+     "slug": "wv-income-tax",
+     "replacement": "us-wv-income-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wv/wv-sales-tax.md",
+     "to": "skills/us-states/wv/us-wv-sales-tax.md",
+     "slug": "wv-sales-tax",
+     "replacement": "us-wv-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wy/wy-formation.md",
+     "to": "skills/us-states/wy/us-wy-formation.md",
+     "slug": "wy-formation",
+     "replacement": "us-wy-formation",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/us-states/wy/wy-sales-tax.md",
+     "to": "skills/us-states/wy/us-wy-sales-tax.md",
+     "slug": "wy-sales-tax",
+     "replacement": "us-wy-sales-tax",
+     "note": "renamed to the us-<code>- namespace"
+    },
+    {
+     "from": "skills/international/austria/at-vat-return.md",
+     "to": null,
+     "slug": "at-vat-return",
+     "replacement": "austria-vat-return",
+     "note": "duplicate of skills/international/austria/austria-vat-return.md"
+    },
+    {
+     "from": "skills/international/belgium/be-vat-return.md",
+     "to": null,
+     "slug": "be-vat-return",
+     "replacement": "belgium-vat-return",
+     "note": "duplicate of skills/international/belgium/belgium-vat-return.md"
+    },
+    {
+     "from": "skills/international/chile/cl-vat-return.md",
+     "to": null,
+     "slug": "cl-vat-return",
+     "replacement": "chile-iva",
+     "note": "duplicate of skills/international/chile/chile-iva.md"
+    },
+    {
+     "from": "skills/international/china/cn-vat.md",
+     "to": null,
+     "slug": "cn-vat",
+     "replacement": "china-vat",
+     "note": "duplicate of skills/international/china/china-vat.md"
+    },
+    {
+     "from": "skills/international/colombia/co-vat-return.md",
+     "to": null,
+     "slug": "co-vat-return",
+     "replacement": "colombia-iva",
+     "note": "duplicate of skills/international/colombia/colombia-iva.md"
+    },
+    {
+     "from": "skills/international/czech-republic/cz-vat-return.md",
+     "to": null,
+     "slug": "cz-vat-return",
+     "replacement": "czech-republic-vat-return",
+     "note": "duplicate of skills/international/czech-republic/czech-republic-vat-return.md"
+    },
+    {
+     "from": "skills/international/denmark/dk-vat-return.md",
+     "to": null,
+     "slug": "dk-vat-return",
+     "replacement": "denmark-vat-return",
+     "note": "duplicate of skills/international/denmark/denmark-vat-return.md"
+    },
+    {
+     "from": "skills/international/greece/gr-vat-return.md",
+     "to": null,
+     "slug": "gr-vat-return",
+     "replacement": "greece-vat-return",
+     "note": "duplicate of skills/international/greece/greece-vat-return.md"
+    },
+    {
+     "from": "skills/international/hungary/hu-vat-return.md",
+     "to": null,
+     "slug": "hu-vat-return",
+     "replacement": "hungary-vat-return",
+     "note": "duplicate of skills/international/hungary/hungary-vat-return.md"
+    },
+    {
+     "from": "skills/international/india/in-gst-return.md",
+     "to": null,
+     "slug": "in-gst-return",
+     "replacement": "india-gst",
+     "note": "duplicate of skills/international/india/india-gst.md"
+    },
+    {
+     "from": "skills/international/ireland/ie-vat-return.md",
+     "to": null,
+     "slug": "ie-vat-return",
+     "replacement": "ireland-vat-return",
+     "note": "duplicate of skills/international/ireland/ireland-vat-return.md"
+    },
+    {
+     "from": "skills/international/japan/jp-bookkeeping.md",
+     "to": null,
+     "slug": "jp-bookkeeping",
+     "replacement": "japan-bookkeeping",
+     "note": "duplicate of skills/international/japan/japan-bookkeeping.md"
+    },
+    {
+     "from": "skills/international/mexico/mx-vat-return.md",
+     "to": null,
+     "slug": "mx-vat-return",
+     "replacement": "mexico-iva",
+     "note": "duplicate of skills/international/mexico/mexico-iva.md"
+    },
+    {
+     "from": "skills/international/netherlands/nl-vat-return.md",
+     "to": null,
+     "slug": "nl-vat-return",
+     "replacement": "netherlands-vat-return",
+     "note": "duplicate of skills/international/netherlands/netherlands-vat-return.md"
+    },
+    {
+     "from": "skills/international/norway/no-vat-return.md",
+     "to": null,
+     "slug": "no-vat-return",
+     "replacement": "norway-mva",
+     "note": "duplicate of skills/international/norway/norway-mva.md"
+    },
+    {
+     "from": "skills/international/poland/pl-vat-return.md",
+     "to": null,
+     "slug": "pl-vat-return",
+     "replacement": "poland-vat-return",
+     "note": "duplicate of skills/international/poland/poland-vat-return.md"
+    },
+    {
+     "from": "skills/international/portugal/pt-vat-return.md",
+     "to": null,
+     "slug": "pt-vat-return",
+     "replacement": "portugal-vat-return",
+     "note": "duplicate of skills/international/portugal/portugal-vat-return.md"
+    },
+    {
+     "from": "skills/international/romania/ro-vat-return.md",
+     "to": null,
+     "slug": "ro-vat-return",
+     "replacement": "romania-vat-return",
+     "note": "duplicate of skills/international/romania/romania-vat-return.md"
+    },
+    {
+     "from": "skills/international/rwanda/rw-income-tax.md",
+     "to": null,
+     "slug": "rw-income-tax",
+     "replacement": "rwanda-income-tax",
+     "note": "duplicate of skills/international/rwanda/rwanda-income-tax.md"
+    },
+    {
+     "from": "skills/international/singapore/sg-gst-return.md",
+     "to": null,
+     "slug": "sg-gst-return",
+     "replacement": "singapore-gst",
+     "note": "duplicate of skills/international/singapore/singapore-gst.md"
+    },
+    {
+     "from": "skills/international/spain/es-vat-return.md",
+     "to": null,
+     "slug": "es-vat-return",
+     "replacement": "spain-vat-return",
+     "note": "duplicate of skills/international/spain/spain-vat-return.md"
+    },
+    {
+     "from": "skills/international/sweden/se-vat-return.md",
+     "to": null,
+     "slug": "se-vat-return",
+     "replacement": "sweden-vat-return",
+     "note": "duplicate of skills/international/sweden/sweden-vat-return.md"
+    },
+    {
+     "from": "skills/international/switzerland/ch-vat-return.md",
+     "to": null,
+     "slug": "ch-vat-return",
+     "replacement": "switzerland-vat",
+     "note": "duplicate of skills/international/switzerland/switzerland-vat.md"
+    },
+    {
+     "from": "skills/international/united-arab-emirates/ae-vat-return.md",
+     "to": null,
+     "slug": "ae-vat-return",
+     "replacement": "uae-vat",
+     "note": "duplicate of skills/international/united-arab-emirates/uae-vat.md"
+    },
+    {
+     "from": "skills/orchestrator/ca-540-individual-return.md",
+     "to": null,
+     "slug": "ca-540-individual-return",
+     "replacement": "us-ca-540-individual-return",
+     "note": "duplicate of skills/us-states/ca/us-ca-540-individual-return.md"
+    },
+    {
+     "from": "skills/orchestrator/ca-estimated-tax-540es.md",
+     "to": null,
+     "slug": "ca-estimated-tax-540es",
+     "replacement": "us-ca-estimated-tax-540es",
+     "note": "duplicate of skills/us-states/ca/us-ca-estimated-tax-540es.md"
+    },
+    {
+     "from": "skills/orchestrator/california-sales-tax.md",
+     "to": null,
+     "slug": "california-sales-tax",
+     "replacement": "us-ca-sales-tax",
+     "note": "duplicate of skills/us-states/ca/us-ca-sales-tax.md"
+    },
+    {
+     "from": "skills/orchestrator/ny-it-201-resident-return.md",
+     "to": null,
+     "slug": "ny-it-201-resident-return",
+     "replacement": "us-ny-it-201-resident-return",
+     "note": "duplicate of skills/us-states/ny/us-ny-it-201-resident-return.md"
+    },
+    {
+     "from": "skills/orchestrator/ny-llc-filing-fee-it-204-ll.md",
+     "to": null,
+     "slug": "ny-llc-filing-fee-it-204-ll",
+     "replacement": "us-ny-llc-filing-fee-it-204-ll",
+     "note": "duplicate of skills/us-states/ny/us-ny-llc-filing-fee-it-204-ll.md"
+    },
+    {
+     "from": "skills/orchestrator/texas-sales-tax.md",
+     "to": null,
+     "slug": "texas-sales-tax",
+     "replacement": "us-tx-sales-use-tax",
+     "note": "duplicate of skills/us-states/tx/us-tx-sales-use-tax.md"
+    },
+    {
+     "from": "skills/us-states/al/alabama-income-tax.md",
+     "to": null,
+     "slug": "alabama-income-tax",
+     "replacement": "us-al-income-tax",
+     "note": "duplicate of skills/us-states/al/us-al-income-tax.md"
+    },
+    {
+     "from": "skills/us-states/al/alabama-sales-tax.md",
+     "to": null,
+     "slug": "alabama-sales-tax",
+     "replacement": "us-al-sales-tax",
+     "note": "duplicate of skills/us-states/al/us-al-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/ar/arkansas-sales-tax.md",
+     "to": null,
+     "slug": "arkansas-sales-tax",
+     "replacement": "us-ar-sales-tax",
+     "note": "duplicate of skills/us-states/ar/us-ar-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/az/arizona-sales-tax.md",
+     "to": null,
+     "slug": "arizona-sales-tax",
+     "replacement": "us-az-sales-tax",
+     "note": "duplicate of skills/us-states/az/us-az-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/co/colorado-sales-tax.md",
+     "to": null,
+     "slug": "colorado-sales-tax",
+     "replacement": "us-co-sales-tax",
+     "note": "duplicate of skills/us-states/co/us-co-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/ct/connecticut-sales-tax.md",
+     "to": null,
+     "slug": "connecticut-sales-tax",
+     "replacement": "us-ct-sales-tax",
+     "note": "duplicate of skills/us-states/ct/us-ct-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/fl/fl-sales-tax.md",
+     "to": null,
+     "slug": "fl-sales-use-tax",
+     "replacement": "us-fl-sales-use-tax",
+     "note": "duplicate of skills/us-states/fl/us-fl-sales-use-tax.md"
+    },
+    {
+     "from": "skills/us-states/id/idaho-sales-tax.md",
+     "to": null,
+     "slug": "idaho-sales-tax",
+     "replacement": "us-id-sales-tax",
+     "note": "duplicate of skills/us-states/id/us-id-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/il/illinois-sales-tax.md",
+     "to": null,
+     "slug": "illinois-sales-tax",
+     "replacement": "us-il-sales-tax",
+     "note": "duplicate of skills/us-states/il/us-il-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/in/indiana-sales-tax.md",
+     "to": null,
+     "slug": "indiana-sales-tax",
+     "replacement": "us-in-sales-tax",
+     "note": "duplicate of skills/us-states/in/us-in-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/ma/massachusetts-sales-tax.md",
+     "to": null,
+     "slug": "massachusetts-sales-tax",
+     "replacement": "us-ma-sales-tax",
+     "note": "duplicate of skills/us-states/ma/us-ma-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/md/maryland-sales-tax.md",
+     "to": null,
+     "slug": "maryland-sales-tax",
+     "replacement": "us-md-sales-tax",
+     "note": "duplicate of skills/us-states/md/us-md-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/me/maine-sales-tax.md",
+     "to": null,
+     "slug": "maine-sales-tax",
+     "replacement": "us-me-sales-tax",
+     "note": "duplicate of skills/us-states/me/us-me-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/mn/minnesota-sales-tax.md",
+     "to": null,
+     "slug": "minnesota-sales-tax",
+     "replacement": "us-mn-sales-tax",
+     "note": "duplicate of skills/us-states/mn/us-mn-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/mo/missouri-sales-tax.md",
+     "to": null,
+     "slug": "missouri-sales-tax",
+     "replacement": "us-mo-sales-tax",
+     "note": "duplicate of skills/us-states/mo/us-mo-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/ms/mississippi-sales-tax.md",
+     "to": null,
+     "slug": "mississippi-sales-tax",
+     "replacement": "us-ms-sales-tax",
+     "note": "duplicate of skills/us-states/ms/us-ms-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/nj/new-jersey-sales-tax.md",
+     "to": null,
+     "slug": "new-jersey-sales-tax",
+     "replacement": "us-nj-sales-tax",
+     "note": "duplicate of skills/us-states/nj/us-nj-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/nm/new-mexico-sales-tax.md",
+     "to": null,
+     "slug": "new-mexico-sales-tax",
+     "replacement": "us-nm-sales-tax",
+     "note": "duplicate of skills/us-states/nm/us-nm-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/nv/nevada-sales-tax.md",
+     "to": null,
+     "slug": "nevada-sales-tax",
+     "replacement": "us-nv-sales-tax",
+     "note": "duplicate of skills/us-states/nv/us-nv-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/ny-nyc/nyc-unincorporated-business-tax.md",
+     "to": null,
+     "slug": "nyc-unincorporated-business-tax",
+     "replacement": "us-ny-nyc-unincorporated-business-tax",
+     "note": "duplicate of skills/us-states/ny/us-ny-nyc-unincorporated-business-tax.md"
+    },
+    {
+     "from": "skills/us-states/ny/new-york-sales-tax.md",
+     "to": null,
+     "slug": "new-york-sales-tax",
+     "replacement": "us-ny-sales-tax",
+     "note": "duplicate of skills/us-states/ny/us-ny-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/oh/ohio-sales-tax.md",
+     "to": null,
+     "slug": "ohio-sales-tax",
+     "replacement": "us-oh-sales-tax",
+     "note": "duplicate of skills/us-states/oh/us-oh-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/ok/oklahoma-sales-tax.md",
+     "to": null,
+     "slug": "oklahoma-sales-tax",
+     "replacement": "us-ok-sales-tax",
+     "note": "duplicate of skills/us-states/ok/us-ok-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/pa/pennsylvania-sales-tax.md",
+     "to": null,
+     "slug": "pennsylvania-sales-tax",
+     "replacement": "us-pa-sales-tax",
+     "note": "duplicate of skills/us-states/pa/us-pa-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/tx/tx-sales-use-tax.md",
+     "to": null,
+     "slug": "tx-sales-use-tax",
+     "replacement": "us-tx-sales-use-tax",
+     "note": "duplicate of skills/us-states/tx/us-tx-sales-use-tax.md"
+    },
+    {
+     "from": "skills/us-states/ut/utah-sales-tax.md",
+     "to": null,
+     "slug": "utah-sales-tax",
+     "replacement": "us-ut-sales-tax",
+     "note": "duplicate of skills/us-states/ut/us-ut-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/wa/wa-business-occupation-tax.md",
+     "to": null,
+     "slug": "wa-business-occupation-tax",
+     "replacement": "us-wa-business-occupation-tax",
+     "note": "duplicate of skills/us-states/wa/us-wa-business-occupation-tax.md"
+    },
+    {
+     "from": "skills/us-states/wa/washington-sales-tax.md",
+     "to": null,
+     "slug": "washington-sales-tax",
+     "replacement": "us-wa-sales-tax",
+     "note": "duplicate of skills/us-states/wa/us-wa-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/wi/wisconsin-sales-tax.md",
+     "to": null,
+     "slug": "wisconsin-sales-tax",
+     "replacement": "us-wi-sales-tax",
+     "note": "duplicate of skills/us-states/wi/us-wi-sales-tax.md"
+    },
+    {
+     "from": "skills/us-states/wy/wyoming-sales-tax.md",
+     "to": null,
+     "slug": "wyoming-sales-tax",
+     "replacement": "us-wy-sales-tax",
+     "note": "duplicate of skills/us-states/wy/us-wy-sales-tax.md"
+    }
+   ]
+  }
+ ]
+}

@@ -3,6 +3,7 @@ name: us-section-1031-like-kind-exchange
 description: Tier 2 US federal content skill for IRC §1031 like-kind exchange of real property post-TCJA (real property only since 2018). Covers the 45-day identification and 180-day exchange windows, qualified intermediary requirement, the 3-property / 200% / 95% identification rules, reverse exchanges under Rev. Proc. 2000-37, build-to-suit improvement exchanges, basis carryover and boot taxation, related-party 2-year rule under §1031(f), TIC structure per Rev. Proc. 2002-22, drop-and-swap partnership workarounds, §121 primary-residence rollover under §121(d)(10), Form 8824 reporting, and California's FTB Form 3840 claw-back annual reporting requirement. Tax year 2025.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
@@ -40,7 +41,7 @@ Out of scope (refusal catalogue):
 - Partnership interest exchanges (categorically barred by §1031(a)(2) even post-TCJA for entity interests)
 - Inventory / dealer property (§1221(a)(1) ordinary income property)
 
-This skill MUST be loaded alongside `us-tax-workflow-base` v0.2+. For depreciation recapture mechanics, also load `us-sole-prop-bookkeeping` and `us-schedule-c-and-se-computation`. For California-resident taxpayers, also load `ca-540-individual-return`.
+This skill MUST be loaded alongside `us-tax-workflow-base` v0.2+. For depreciation recapture mechanics, also load `us-sole-prop-bookkeeping` and `us-schedule-c-and-se-computation`. For California-resident taxpayers, also load `us-ca-540-individual-return`.
 
 ## 2. The Statutory Rule — IRC §1031(a)(1)
 
@@ -389,7 +390,7 @@ Before the relinquished property closes, confirm:
 - `us-tax-workflow-base` — workflow scaffold and reviewer-sign-off requirement
 - `us-sole-prop-bookkeeping` — Schedule C / rental classification, §168 depreciation
 - `us-schedule-c-and-se-computation` — recapture flow to Form 4797 → Schedule 1
-- `ca-540-individual-return` — California Form 540 reporting; Schedule CA adjustments
+- `us-ca-540-individual-return` — California Form 540 reporting; Schedule CA adjustments
 - `us-form-1065-partnership` — drop-and-swap partnership-level mechanics
 - `us-foreign-tax-credit-1116` — for cross-border deferral context (§1031(h) bar)
 

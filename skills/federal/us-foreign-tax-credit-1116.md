@@ -3,6 +3,7 @@ name: us-foreign-tax-credit-1116
 description: Tier 2 US federal content skill for §901 Foreign Tax Credit (Form 1116) covering tax year 2025. Includes the basket separation under §904 (passive, general, GILTI, foreign branch, §901(j) sanctioned countries), the §904(a) limitation formula, the $300/$600 de minimis no-Form-1116 election, §904(j) high-tax kick-out for passive income, the 2022 T.D. 9959 attribution/nexus/cost-recovery requirements with Notice 2023-55/2024-44 (and successor) relief, the FEIE-vs-FTC strategic choice for US expats, 1-year back / 10-year forward credit carries, and the AMT FTC computation. Schedule A itemized deduction alternative when credit isn't useful.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
@@ -275,7 +276,7 @@ A US citizen or resident alien living abroad faces a binary decision: claim the 
 
 A US expat in Germany who is fully relieved at the federal level by the FTC may still owe California or New York state tax on the foreign wages if state residency persists. Resolving state residency (severing domicile, establishing a new domicile) is the primary state-tax planning move for expats — not the FTC.
 
-State-specific conformity is handled by the state-tax skills (e.g., `ca-540-individual-return` for California, where the foreign tax is generally a non-event and the foreign income remains in California taxable income for residents).
+State-specific conformity is handled by the state-tax skills (e.g., `us-ca-540-individual-return` for California, where the foreign tax is generally a non-event and the foreign income remains in California taxable income for residents).
 
 ## 16. Worked examples
 
@@ -415,7 +416,7 @@ Reason: no UAE tax to credit on the wages → §911 is the only way to reduce US
 - **§951A GILTI carry and deemed-paid credit rate** — §951A GILTI: no carry; 80% deemed-paid (corporate)  _(§951A)_
 - **§250 deduction rate** — 50% for 2025 → 37.5% post-2025 (verify) percent  _(§250)_
 
-`us-tax-workflow-base` v0.2+ (load alongside); `us-sole-prop-bookkeeping` (Schedule C inputs for general basket); `us-schedule-c-and-se-computation` (taxable income inputs); `us-qbi-deduction` (taxable income denominator); `us-federal-return-assembly` (orchestration); `ca-540-individual-return` and other state skills (state conformity); `us-quarterly-estimated-tax` (estimated tax accounting for projected FTC)
+`us-tax-workflow-base` v0.2+ (load alongside); `us-sole-prop-bookkeeping` (Schedule C inputs for general basket); `us-schedule-c-and-se-computation` (taxable income inputs); `us-qbi-deduction` (taxable income denominator); `us-federal-return-assembly` (orchestration); `us-ca-540-individual-return` and other state skills (state conformity); `us-quarterly-estimated-tax` (estimated tax accounting for projected FTC)
 
 Drafted: 2025-11-15
 Tax year covered: 2025

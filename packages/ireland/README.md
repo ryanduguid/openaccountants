@@ -18,8 +18,7 @@
 11. `ie-prsi-class-s.md`
 12. `ie-return-assembly.md`
 13. `ie-usc.md`
-14. `ie-vat-return.md`
-15. `ireland-vat-return.md`
+14. `ireland-vat-return.md`
 
 ## Shared files this package needs
 

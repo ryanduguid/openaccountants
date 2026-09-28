@@ -13,11 +13,10 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `ma-income-tax.md` | Massachusetts individual income tax (flat 5% + 4% surtax over ~$1M) for self-employed / sole proprietors. Form 1. |
-| `ma-sales-tax.md` | Massachusetts sales and use tax — 6.25% state rate. |
-| `ma-corporate-excise.md` | Massachusetts Corporate Excise and 4% Individual Surtax |
-| `ma-payroll.md` | Massachusetts content skill for employer payroll compliance covering tax year 2025 |
-| `massachusetts-sales-tax.md` | Massachusetts sales and use tax |
+| `us-ma-income-tax.md` | Massachusetts individual income tax (flat 5% + 4% surtax over ~$1M) for self-employed / sole proprietors. Form 1. |
+| `us-ma-sales-tax.md` | Massachusetts sales and use tax — 6.25% state rate. |
+| `us-ma-corporate-excise.md` | Massachusetts Corporate Excise and 4% Individual Surtax |
+| `us-ma-payroll.md` | Massachusetts content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
 - Corporate excise tax (Form 355)

@@ -13,9 +13,8 @@
 6. `ro-income-tax.md`
 7. `ro-payroll-social.md`
 8. `ro-tax-overview.md`
-9. `ro-vat-return.md`
-10. `romania-einvoice.md`
-11. `romania-vat-return.md`
+9. `romania-einvoice.md`
+10. `romania-vat-return.md`
 
 ## Shared files this package needs
 

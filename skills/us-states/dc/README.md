@@ -13,8 +13,8 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `dc-income-tax.md` | Individual income tax (Form D-40) — graduated 4%–10.75%, self-employed focus |
-| `dc-sales-tax.md` | Sales and use tax obligations (6% general rate) |
+| `us-dc-income-tax.md` | Individual income tax (Form D-40) — graduated 4%–10.75%, self-employed focus |
+| `us-dc-sales-tax.md` | Sales and use tax obligations (6% general rate) |
 
 ## What's NOT covered
 - Corporate franchise tax (Form D-20)

@@ -13,6 +13,7 @@ listed below. Upload all of them together.
 
 1. `intake.md`
 2. `mb-individual-return.md`
+3. `mb-rst.md`
 
 ## Shared files this package needs
 

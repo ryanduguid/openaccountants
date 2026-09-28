@@ -17,13 +17,13 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form 40` | `README`, `al-income-tax`, `alabama-income-tax` |
+| `Form 40` | `README`, `us-al-income-tax` |
 
 ## ar
 
 | Form | Guides |
 |---|---|
-| `Form AR1000F` | `README`, `ar-income-tax` |
+| `Form AR1000F` | `README`, `us-ar-income-tax` |
 
 ## armenia
 
@@ -31,17 +31,11 @@ instance took.
 |---|---|
 | `HO-165` | `armenia-income-tax`, `armenia-payroll` |
 
-## austria
-
-| Form | Guides |
-|---|---|
-| `AT-2026` | `at-vat-return`, `austria-vat-return` |
-
 ## az
 
 | Form | Guides |
 |---|---|
-| `Form 140` | `README`, `az-income-tax`, `az-transaction-privilege-tax` |
+| `Form 140` | `README`, `us-az-income-tax`, `us-az-transaction-privilege-tax` |
 
 ## bangladesh
 
@@ -54,12 +48,6 @@ instance took.
 | Form | Guides |
 |---|---|
 | `Form 4-fund` | `belarus-payroll`, `belarus-social-contributions` |
-
-## belgium
-
-| Form | Guides |
-|---|---|
-| `BE-2026` | `be-vat-return`, `belgium-vat-return` |
 
 ## belize
 
@@ -92,26 +80,25 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `CDTFA-401` | `ca-formation`, `ca-sales-use-tax` |
-| `Form 100` | `README`, `ca-formation`, `ca-smllc-form-568` |
-| `Form 100S` | `README`, `ca-smllc-form-568` |
-| `Form 3522` | `ca-540-es-estimated-tax`, `ca-smllc-form-568` |
-| `Form 3536` | `ca-540-es-estimated-tax`, `ca-formation`, `ca-smllc-form-568` |
-| `Form 3853` | `README`, `ca-form-3853-coverage`, `ca-income-tax` |
-| `Form 540` | `ca-form-3853-coverage`, `ca-income-tax`, `ca-payroll`, `ca-sales-use-tax` |
-| `Form 540-ES` | `README`, `ca-540-es-estimated-tax`, `ca-payroll` |
-| `Form 540NR` | `ca-formation`, `ca-income-tax` |
-| `Form 568` | `README`, `ca-formation`, `ca-income-tax`, `ca-smllc-form-568` |
-| `Form 5805` | `ca-540-es-estimated-tax`, `ca-payroll` |
-| `Form DE` | `ca-formation`, `ca-payroll` |
-| `Form FTB` | `ca-form-3853-coverage`, `ca-formation` |
-
-## ca-chartered-accountant
-
-| Form | Guides |
-|---|---|
-| `Form T2` | `ns-tax-credits`, `nu-tax-credits` |
-| `PD7A` | `nt-payroll-tax`, `qc-employer-contributions` |
+| `CDTFA-401` | `us-ca-formation`, `us-ca-sales-tax` |
+| `Form 100` | `README`, `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
+| `Form 100S` | `README`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
+| `Form 1065` | `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax` |
+| `Form 1120` | `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax` |
+| `Form 2553` | `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax` |
+| `Form 3522` | `us-ca-estimated-tax-540es`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
+| `Form 3536` | `us-ca-estimated-tax-540es`, `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-smllc-form-568` |
+| `Form 3853` | `README`, `us-ca-540-individual-return`, `us-ca-form-3853-coverage` |
+| `Form 540` | `us-ca-540-individual-return`, `us-ca-form-3853-coverage`, `us-ca-llc-fee-and-tax`, `us-ca-payroll`, `us-ca-pte-elective-tax`, `us-ca-sales-tax` |
+| `Form 540-ES` | `README`, `us-ca-estimated-tax-540es`, `us-ca-llc-fee-and-tax`, `us-ca-payroll`, `us-ca-pte-elective-tax` |
+| `Form 540NR` | `us-ca-540-individual-return`, `us-ca-formation`, `us-ca-pte-elective-tax` |
+| `Form 568` | `README`, `us-ca-540-individual-return`, `us-ca-formation`, `us-ca-llc-fee-and-tax`, `us-ca-pte-elective-tax`, `us-ca-smllc-form-568` |
+| `Form 5805` | `us-ca-estimated-tax-540es`, `us-ca-payroll` |
+| `Form 8832` | `us-ca-formation`, `us-ca-llc-fee-and-tax` |
+| `Form DE` | `us-ca-formation`, `us-ca-payroll` |
+| `Form FTB` | `us-ca-form-3853-coverage`, `us-ca-formation` |
+| `Form LLC-1` | `us-ca-formation`, `us-ca-llc-fee-and-tax` |
+| `Form LLC-5` | `us-ca-formation`, `us-ca-llc-fee-and-tax` |
 
 ## canada
 
@@ -119,23 +106,33 @@ instance took.
 |---|---|
 | `CPP1` | `ca-fed-cpp-ei`, `canada-tax-optimization` |
 | `CPP2` | `ab-individual-return`, `ca-fed-cpp-ei`, `ca-fed-t1-return`, `ca-fed-t2125`, `canada-bookkeeping`, `canada-payroll`, `canada-tax-optimization` |
-| `Form T1` | `ca-nonresident-cgt`, `ca-tax-residency` |
-| `QPP2` | `ca-fed-cpp-ei`, `ca-fed-t1-return`, `qc-individual-return` |
-| `RL-1` | `canada-payroll`, `qc-individual-return` |
-| `TP-1` | `qc-corporate-tax-co17`, `qc-individual-return` |
+| `Form NB428` | `nb-individual-return`, `nb-tax-credits` |
+| `Form NL428` | `nl-individual-return`, `nl-tax-credits` |
+| `Form NL479` | `nl-individual-return`, `nl-tax-credits` |
+| `Form NS428` | `ns-individual-return`, `ns-tax-credits` |
+| `Form PE428` | `pe-individual-return`, `pe-tax-credits` |
+| `Form T1` | `ca-nonresident-cgt`, `ca-tax-residency`, `nu-tax-credits` |
+| `Form T2` | `ns-tax-credits`, `nu-tax-credits` |
+| `GST34` | `canada-gst-hst`, `sk-pst` |
+| `NT479` | `nt-individual-return`, `nt-payroll-tax` |
+| `NU428` | `nu-individual-return`, `nu-tax-credits` |
+| `ON428` | `on-individual-return`, `on-tax-credits` |
+| `ON479` | `on-individual-return`, `on-tax-credits` |
+| `PD7A` | `canada-payroll`, `nt-payroll-tax`, `qc-employer-contributions` |
+| `QPP2` | `ca-fed-cpp-ei`, `ca-fed-t1-return`, `qc-employer-contributions`, `qc-individual-return` |
+| `RL-1` | `canada-payroll`, `qc-employer-contributions`, `qc-individual-return` |
+| `TD1` | `canada-payroll`, `qc-employer-contributions` |
+| `TP-1` | `qc-corporate-tax-co17`, `qc-employer-contributions`, `qc-individual-return` |
+| `TPZ-1015` | `qc-corporate-tax-co17`, `qc-employer-contributions` |
+| `YT428` | `yt-individual-return`, `yt-tax-credits` |
+| `YT479` | `yt-individual-return`, `yt-tax-credits` |
 
 ## co
 
 | Form | Guides |
 |---|---|
-| `Form 104` | `co-income-tax`, `co-retail-delivery-and-suts` |
-| `Form DR` | `README`, `co-income-tax`, `co-retail-delivery-and-suts` |
-
-## colombia
-
-| Form | Guides |
-|---|---|
-| `AB12` | `co-vat-return`, `colombia-iva` |
+| `Form 104` | `us-co-income-tax`, `us-co-retail-delivery-and-suts` |
+| `Form DR` | `README`, `us-co-income-tax`, `us-co-retail-delivery-and-suts` |
 
 ## croatia
 
@@ -162,8 +159,8 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `CT-1040` | `ct-income-tax`, `ct-payroll` |
-| `Form CT-1040` | `README`, `ct-income-tax`, `ct-payroll` |
+| `CT-1040` | `us-ct-income-tax`, `us-ct-payroll` |
+| `Form CT-1040` | `README`, `us-ct-income-tax`, `us-ct-payroll` |
 
 ## cyprus
 
@@ -176,23 +173,15 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form D-30` | `README`, `dc-income-tax` |
-| `Form D-40` | `README`, `dc-income-tax` |
+| `Form D-30` | `README`, `us-dc-income-tax` |
+| `Form D-40` | `README`, `us-dc-income-tax` |
 
 ## de
 
 | Form | Guides |
 |---|---|
-| `Form 1120` | `de-formation`, `de-franchise-tax-and-llc` |
-| `Form PIT-RES` | `README`, `de-income-tax` |
-
-## denmark
-
-| Form | Guides |
-|---|---|
-| `DK-2026` | `denmark-vat-return`, `dk-vat-return` |
-| `DK2026` | `denmark-vat-return`, `dk-vat-return` |
-| `HI3G` | `denmark-vat-return`, `dk-vat-return` |
+| `Form 1120` | `us-de-formation`, `us-de-franchise-tax-and-llc` |
+| `Form PIT-RES` | `README`, `us-de-income-tax` |
 
 ## dominican-republic
 
@@ -239,9 +228,9 @@ instance took.
 |---|---|
 | `CP2000` | `us-1099-k-and-payment-processors`, `us-education-credits-8863`, `us-form-1040-individual-return`, `us-irs-collections-and-controversy` |
 | `Form 05-102` | `us-state-bonus-depreciation-conformity-matrix`, `us-state-formation-matrix` |
-| `Form 1040` | `us-1099-k-and-payment-processors`, `us-citizen-moving-abroad-tax`, `us-crypto-reporting`, `us-crypto-tax`, `us-education-credits-8863`, `us-estate-gift-706-709`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116`, `us-form-1040-individual-return`, `us-form-1041-trust-and-estate-income`, `us-form-1065-partnership`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-form-941-940-payroll`, `us-gilti-fdii-beat`, `us-irs-collections-and-controversy`, `us-multi-state-residency-and-allocation`, `us-pte-state-matrix`, `us-qbi-deduction`, `us-quarterly-estimated-tax`, `us-r-and-d-section-174-and-41`, `us-schedule-c-and-se-computation`, `us-section-1031-like-kind-exchange`, `us-secure-2-and-retirement-updates`, `us-self-employed-health-insurance`, `us-sole-prop-bookkeeping`, `us-state-bonus-depreciation-conformity-matrix`, `us-state-formation-matrix` |
+| `Form 1040` | `us-1099-k-and-payment-processors`, `us-capital-gains`, `us-citizen-moving-abroad-tax`, `us-crypto-reporting`, `us-crypto-tax`, `us-education-credits-8863`, `us-estate-gift-706-709`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116`, `us-form-1040-individual-return`, `us-form-1041-trust-and-estate-income`, `us-form-1065-partnership`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-form-941-940-payroll`, `us-gilti-fdii-beat`, `us-irs-collections-and-controversy`, `us-multi-state-residency-and-allocation`, `us-pte-state-matrix`, `us-qbi-deduction`, `us-quarterly-estimated-tax`, `us-r-and-d-section-174-and-41`, `us-schedule-c-and-se-computation`, `us-section-1031-like-kind-exchange`, `us-secure-2-and-retirement-updates`, `us-self-employed-health-insurance`, `us-sole-prop-bookkeeping`, `us-state-bonus-depreciation-conformity-matrix`, `us-state-formation-matrix`, `us-tax-residency` |
 | `Form 1040-ES` | `us-foreign-earned-income-2555`, `us-form-941-940-payroll`, `us-quarterly-estimated-tax`, `us-state-estimated-tax-safe-harbors-matrix` |
-| `Form 1040-NR` | `us-foreign-tax-credit-1116`, `us-form-1040-individual-return` |
+| `Form 1040-NR` | `us-foreign-tax-credit-1116`, `us-form-1040-individual-return`, `us-nonresident-cgt`, `us-tax-residency` |
 | `Form 1040-X` | `us-foreign-tax-credit-1116`, `us-form-1040-individual-return` |
 | `Form 1041` | `us-estate-gift-706-709`, `us-form-1041-trust-and-estate-income`, `us-sole-prop-bookkeeping` |
 | `Form 1042` | `us-form-5472-foreign-owned-us`, `us-form-941-940-payroll`, `us-gilti-fdii-beat` |
@@ -295,16 +284,16 @@ instance took.
 | `Form 8824` | `us-federal-section-1031-like-kind-exchange`, `us-section-1031-like-kind-exchange` |
 | `Form 8829` | `us-qbi-deduction`, `us-schedule-c-and-se-computation`, `us-sole-prop-bookkeeping` |
 | `Form 8832` | `us-form-1065-partnership`, `us-form-1120-c-corp`, `us-s-corp-election-decision`, `us-section-1202-qsbs` |
-| `Form 8833` | `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116` |
+| `Form 8833` | `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116`, `us-nonresident-cgt`, `us-tax-residency` |
 | `Form 8854` | `us-citizen-moving-abroad-tax`, `us-foreign-earned-income-2555` |
 | `Form 8857` | `us-form-1040-individual-return`, `us-irs-collections-and-controversy` |
 | `Form 8858` | `us-fbar-and-fatca-8938`, `us-foreign-tax-credit-1116`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-gilti-fdii-beat` |
 | `Form 8863` | `us-education-credits-8863`, `us-form-1040-individual-return` |
 | `Form 8865` | `us-fbar-and-fatca-8938`, `us-foreign-tax-credit-1116`, `us-form-1065-partnership`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-gilti-fdii-beat` |
 | `Form 8938` | `us-citizen-moving-abroad-tax`, `us-crypto-reporting`, `us-crypto-tax`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555`, `us-form-1040-individual-return`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-gilti-fdii-beat`, `us-secure-2-and-retirement-updates`, `us-sole-prop-bookkeeping` |
-| `Form 8949` | `us-1099-k-and-payment-processors`, `us-crypto-reporting`, `us-crypto-tax`, `us-form-1040-individual-return`, `us-section-1202-qsbs`, `us-sole-prop-bookkeeping` |
+| `Form 8949` | `us-1099-k-and-payment-processors`, `us-capital-gains`, `us-crypto-reporting`, `us-crypto-tax`, `us-form-1040-individual-return`, `us-section-1202-qsbs`, `us-sole-prop-bookkeeping` |
 | `Form 8959` | `us-form-1040-individual-return`, `us-form-941-940-payroll`, `us-schedule-c-and-se-computation` |
-| `Form 8960` | `us-form-1040-individual-return`, `us-form-941-940-payroll` |
+| `Form 8960` | `us-capital-gains`, `us-form-1040-individual-return`, `us-form-941-940-payroll` |
 | `Form 8962` | `us-form-1040-individual-return`, `us-secure-2-and-retirement-updates`, `us-self-employed-health-insurance` |
 | `Form 8974` | `us-form-941-940-payroll`, `us-r-and-d-section-174-and-41` |
 | `Form 8975` | `us-form-1120-c-corp`, `us-form-5471-cfc-information`, `us-gilti-fdii-beat` |
@@ -319,6 +308,7 @@ instance took.
 | `Form 990` | `990-returns`, `us-form-1120-c-corp` |
 | `Form DE` | `us-state-new-hire-reporting-matrix`, `us-state-payroll-matrix` |
 | `Form FTB` | `us-pte-state-matrix`, `us-r-and-d-section-174-and-41` |
+| `Form I-407` | `us-foreign-earned-income-2555`, `us-tax-residency` |
 | `Form SS-4` | `us-form-1041-trust-and-estate-income`, `us-form-1120-c-corp`, `us-form-5472-foreign-owned-us`, `us-section-1202-qsbs` |
 | `Form W-2` | `us-form-1040-individual-return`, `us-form-941-940-payroll`, `us-multi-state-residency-and-allocation`, `us-state-new-hire-reporting-matrix` |
 | `Form W-2c` | `us-form-1040-individual-return`, `us-form-941-940-payroll` |
@@ -330,16 +320,10 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `CY2026` | `README`, `fl-sales-use-tax-surtax` |
-| `DR-13` | `fl-sales-tax`, `fl-sales-use-tax` |
-| `DR-14A` | `fl-sales-tax`, `fl-sales-use-tax` |
-| `DR-15` | `fl-sales-tax`, `fl-sales-use-tax` |
-| `Form DR-1` | `fl-sales-tax`, `fl-sales-use-tax` |
-| `Form DR-15` | `README`, `fl-sales-tax`, `fl-sales-use-tax` |
-| `Form DR-15DSS` | `fl-sales-tax`, `fl-sales-use-tax`, `fl-sales-use-tax-surtax` |
-| `Form DR-15EZ` | `fl-sales-tax`, `fl-sales-use-tax` |
-| `Form DR-700016` | `fl-sales-tax`, `fl-sales-use-tax` |
-| `Form F-1120` | `fl-annual-report`, `fl-corporate-income-tax` |
+| `CY2026` | `README`, `us-fl-sales-use-tax-surtax` |
+| `Form DR-15` | `README`, `us-fl-sales-use-tax` |
+| `Form DR-15DSS` | `us-fl-sales-use-tax`, `us-fl-sales-use-tax-surtax` |
+| `Form F-1120` | `us-fl-annual-report`, `us-fl-corporate-income-tax` |
 
 ## foundation
 
@@ -359,19 +343,19 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form 1040` | `ga-estimated-tax-depth`, `ga-formation`, `ga-income-tax` |
-| `Form 1120` | `ga-formation`, `ga-net-worth-tax`, `georgia-corporate-income-tax-returns-form-600` |
-| `Form 2553` | `ga-formation`, `ga-net-worth-tax` |
-| `Form 500` | `README`, `ga-corporate-and-ptet`, `ga-estimated-tax-depth`, `ga-formation`, `ga-income-tax`, `ga-net-worth-tax`, `ga-payroll`, `georgia-individual-tax-return-form-500` |
-| `Form 500-ES` | `ga-estimated-tax-depth`, `ga-income-tax`, `ga-payroll` |
-| `Form 501` | `ga-corporate-and-ptet`, `ga-estimated-tax-depth` |
-| `Form 600` | `README`, `ga-corporate-and-ptet`, `ga-estimated-tax-depth`, `ga-formation`, `ga-net-worth-tax`, `georgia-corporate-income-tax-returns-form-600` |
-| `Form 600-UET` | `ga-corporate-and-ptet`, `ga-estimated-tax-depth` |
-| `Form 600S` | `ga-corporate-and-ptet`, `ga-estimated-tax-depth`, `ga-formation`, `ga-net-worth-tax`, `georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation` |
-| `Form 602-ES` | `ga-corporate-and-ptet`, `ga-net-worth-tax` |
-| `Form 700` | `ga-corporate-and-ptet`, `georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation` |
-| `Form 7004` | `ga-corporate-and-ptet`, `ga-net-worth-tax` |
-| `Form IT-303` | `ga-corporate-and-ptet`, `ga-income-tax`, `ga-net-worth-tax` |
+| `Form 1040` | `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-income-tax` |
+| `Form 1120` | `us-ga-corporate-income-tax-returns-form-600`, `us-ga-formation`, `us-ga-net-worth-tax` |
+| `Form 2553` | `us-ga-formation`, `us-ga-net-worth-tax` |
+| `Form 500` | `README`, `us-ga-corporate-and-ptet`, `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-income-tax`, `us-ga-individual-tax-return-form-500`, `us-ga-net-worth-tax`, `us-ga-payroll` |
+| `Form 500-ES` | `us-ga-estimated-tax-depth`, `us-ga-income-tax`, `us-ga-payroll` |
+| `Form 501` | `us-ga-corporate-and-ptet`, `us-ga-estimated-tax-depth` |
+| `Form 600` | `README`, `us-ga-corporate-and-ptet`, `us-ga-corporate-income-tax-returns-form-600`, `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-net-worth-tax` |
+| `Form 600-UET` | `us-ga-corporate-and-ptet`, `us-ga-estimated-tax-depth` |
+| `Form 600S` | `us-ga-corporate-and-ptet`, `us-ga-estimated-tax-depth`, `us-ga-formation`, `us-ga-net-worth-tax`, `us-ga-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation` |
+| `Form 602-ES` | `us-ga-corporate-and-ptet`, `us-ga-net-worth-tax` |
+| `Form 700` | `us-ga-corporate-and-ptet`, `us-ga-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation` |
+| `Form 7004` | `us-ga-corporate-and-ptet`, `us-ga-net-worth-tax` |
+| `Form IT-303` | `us-ga-corporate-and-ptet`, `us-ga-income-tax`, `us-ga-net-worth-tax` |
 
 ## germany
 
@@ -380,12 +364,6 @@ instance took.
 | `MST5` | `de-payroll`, `germany-payroll` |
 | `MT940` | `de-income-tax`, `germany-bookkeeping` |
 | `UPTAB25` | `de-payroll`, `references` |
-
-## greece
-
-| Form | Guides |
-|---|---|
-| `GR-2026` | `gr-vat-return`, `greece-vat-return` |
 
 ## guatemala
 
@@ -399,9 +377,9 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form N-11` | `README`, `hi-income-tax` |
-| `Form N-15` | `README`, `hi-income-tax` |
-| `Form N-30` | `README`, `hi-income-tax` |
+| `Form N-11` | `README`, `us-hi-income-tax` |
+| `Form N-15` | `README`, `us-hi-income-tax` |
+| `Form N-30` | `README`, `us-hi-income-tax` |
 
 ## honduras
 
@@ -415,52 +393,38 @@ instance took.
 |---|---|
 | `BIR60` | `hk-mpf`, `hk-salaries-tax`, `hk-tax-overview`, `hong-kong-tax` |
 
-## hungary
-
-| Form | Guides |
-|---|---|
-| `Form 2565` | `hu-vat-return`, `hungary-vat-return` |
-
 ## ia
 
 | Form | Guides |
 |---|---|
-| `Form IA` | `README`, `ia-income-tax` |
+| `Form IA` | `README`, `us-ia-income-tax` |
 
 ## il
 
 | Form | Guides |
 |---|---|
-| `Form IL-1040` | `il-income-tax`, `il-pprt` |
-| `Form IL-1040-ES` | `il-estimated-tax`, `il-income-tax` |
-| `Form IL-1120` | `il-income-tax`, `il-pprt` |
-| `IL-1040` | `il-estimated-tax`, `il-income-tax`, `il-payroll`, `il-pprt` |
-| `IL-1120` | `il-income-tax`, `il-pprt` |
-| `ST-1` | `il-sales-tax`, `illinois-sales-tax` |
+| `Form IL-1040` | `us-il-income-tax`, `us-il-pprt` |
+| `Form IL-1040-ES` | `us-il-estimated-tax`, `us-il-income-tax` |
+| `Form IL-1120` | `us-il-income-tax`, `us-il-pprt` |
+| `IL-1040` | `us-il-estimated-tax`, `us-il-income-tax`, `us-il-payroll`, `us-il-pprt` |
+| `IL-1120` | `us-il-income-tax`, `us-il-pprt` |
 
 ## india
 
 | Form | Guides |
 |---|---|
 | `AOC-4` | `india-financial-statements`, `india-formation` |
-| `CMP-08` | `in-gst-return`, `india-gst` |
 | `Form 130` | `india-payroll`, `india-tax-optimization` |
 | `Form 16` | `in-income-tax`, `in-professional-tax`, `india-payroll`, `india-tax-optimization` |
 | `Form 16A` | `in-income-tax`, `in-tds-freelance` |
-| `Form 26AS` | `in-gst-return`, `in-income-tax`, `in-tds-freelance`, `india-crypto-tax`, `india-gst` |
+| `Form 26AS` | `in-income-tax`, `in-tds-freelance`, `india-crypto-tax`, `india-gst` |
 | `Form 26AS/AIS` | `in-advance-tax`, `in-tds-freelance`, `india-crypto-tax` |
-| `GSTR-1` | `in-gst-return`, `india-einvoice`, `india-formation`, `india-gst`, `references` |
-| `GSTR-2B` | `in-gst-return`, `india-einvoice`, `india-gst`, `india-tax-optimization` |
-| `GSTR-3B` | `in-gst-return`, `india-formation`, `india-gst`, `references` |
-| `GSTR-4` | `in-gst-return`, `india-gst` |
-| `GSTR-8` | `in-gst-return`, `india-gst` |
-| `GSTR-9` | `in-gst-return`, `india-einvoice`, `india-gst` |
+| `GSTR-1` | `india-einvoice`, `india-formation`, `india-gst`, `references` |
+| `GSTR-2B` | `india-einvoice`, `india-gst`, `india-tax-optimization` |
+| `GSTR-3B` | `india-formation`, `india-gst`, `references` |
+| `GSTR-9` | `india-einvoice`, `india-gst` |
 | `ITR-1` | `in-income-tax`, `in-professional-tax` |
 | `ITR-3` | `in-income-tax`, `india-crypto-tax` |
-| `ONE97` | `in-gst-return`, `india-gst` |
-| `PMT-06` | `in-gst-return`, `india-gst` |
-| `RFD-01` | `in-gst-return`, `india-gst` |
-| `RFD-11` | `in-gst-return`, `india-gst` |
 
 ## indonesia
 
@@ -513,11 +477,10 @@ instance took.
 | `Form CT1` | `ie-corporation-tax`, `ie-formation`, `ie-income-tax-form11` |
 | `Form TR1` | `ie-formation`, `ie-freelance-intake`, `ie-prsi-class-s` |
 | `Form TR2` | `ie-formation`, `ie-freelance-intake` |
-| `IE-2026` | `ie-vat-return`, `ireland-vat-return` |
 | `IT38` | `ie-cat`, `ie-return-assembly` |
 | `TR1` | `ie-formation`, `ie-freelance-intake`, `ie-return-assembly` |
 | `TR2` | `ie-formation`, `ie-freelance-intake` |
-| `VAT3` | `ie-corporation-tax`, `ie-freelance-intake`, `ie-preliminary-tax`, `ie-return-assembly`, `ie-vat-return`, `ireland-vat-return` |
+| `VAT3` | `ie-corporation-tax`, `ie-freelance-intake`, `ie-preliminary-tax`, `ie-return-assembly`, `ireland-vat-return` |
 
 ## israel
 
@@ -549,25 +512,25 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form K-40` | `README`, `ks-income-tax` |
+| `Form K-40` | `README`, `us-ks-income-tax` |
 
 ## ky
 
 | Form | Guides |
 |---|---|
-| `Form 720` | `README`, `ky-income-tax` |
-| `Form 725` | `README`, `ky-income-tax` |
-| `Form 740` | `README`, `ky-income-tax`, `ky-payroll` |
-| `Form 740-ES` | `ky-income-tax`, `ky-payroll` |
-| `Form 740-NP` | `README`, `ky-income-tax` |
+| `Form 720` | `README`, `us-ky-income-tax` |
+| `Form 725` | `README`, `us-ky-income-tax` |
+| `Form 740` | `README`, `us-ky-income-tax`, `us-ky-payroll` |
+| `Form 740-ES` | `us-ky-income-tax`, `us-ky-payroll` |
+| `Form 740-NP` | `README`, `us-ky-income-tax` |
 
 ## la
 
 | Form | Guides |
 |---|---|
-| `CIFT-620` | `README`, `la-income-tax` |
-| `Form IT-540` | `README`, `la-income-tax` |
-| `Form IT-540B` | `README`, `la-income-tax` |
+| `CIFT-620` | `README`, `us-la-income-tax` |
+| `Form IT-540` | `README`, `us-la-income-tax` |
+| `Form IT-540B` | `README`, `us-la-income-tax` |
 
 ## latvia
 
@@ -579,12 +542,11 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form 1-ES` | `ma-corporate-excise`, `ma-income-tax` |
-| `Form 1-NR/PY` | `README`, `ma-corporate-excise`, `ma-income-tax` |
-| `Form 1040` | `ma-income-tax`, `ma-payroll` |
-| `Form 355` | `README`, `ma-corporate-excise`, `ma-income-tax` |
-| `Form M-4` | `ma-corporate-excise`, `ma-payroll` |
-| `ST-9` | `ma-sales-tax`, `massachusetts-sales-tax` |
+| `Form 1-ES` | `us-ma-corporate-excise`, `us-ma-income-tax` |
+| `Form 1-NR/PY` | `README`, `us-ma-corporate-excise`, `us-ma-income-tax` |
+| `Form 1040` | `us-ma-income-tax`, `us-ma-payroll` |
+| `Form 355` | `README`, `us-ma-corporate-excise`, `us-ma-income-tax` |
+| `Form M-4` | `us-ma-corporate-excise`, `us-ma-payroll` |
 
 ## malaysia
 
@@ -619,70 +581,63 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form 500` | `README`, `md-income-tax` |
-| `Form 502` | `README`, `md-income-tax`, `md-payroll` |
-| `Form 505` | `README`, `md-income-tax` |
-| `Form 510` | `README`, `md-income-tax` |
+| `Form 500` | `README`, `us-md-income-tax` |
+| `Form 502` | `README`, `us-md-income-tax`, `us-md-payroll` |
+| `Form 505` | `README`, `us-md-income-tax` |
+| `Form 510` | `README`, `us-md-income-tax` |
 
 ## me
 
 | Form | Guides |
 |---|---|
-| `Form 1040ME` | `README`, `me-income-tax` |
-| `Form 1120ME` | `README`, `me-income-tax` |
-
-## mexico
-
-| Form | Guides |
-|---|---|
-| `FE-2026` | `mexico-iva`, `mx-vat-return` |
-| `MX-2026` | `mexico-iva`, `mx-vat-return` |
+| `Form 1040ME` | `README`, `us-me-income-tax` |
+| `Form 1120ME` | `README`, `us-me-income-tax` |
 
 ## mi
 
 | Form | Guides |
 |---|---|
-| `CR-7` | `mi-homestead-credit`, `mi-return-assembly` |
-| `Form 1040` | `mi-detroit-individual-return`, `mi-estimated-tax`, `mi-income-tax`, `mi-pension-retirement-subtraction`, `mi-return-assembly` |
-| `Form 1040-ES` | `mi-estimated-tax`, `mi-income-tax`, `mi-return-assembly` |
-| `Form 1065` | `mi-corporate-income-tax`, `mi-return-assembly` |
-| `Form 1120-S` | `mi-corporate-income-tax`, `mi-return-assembly` |
-| `Form 2210` | `mi-detroit-individual-return`, `mi-estimated-tax`, `mi-return-assembly` |
-| `Form 4884` | `README`, `mi-pension-retirement-subtraction`, `mi-return-assembly` |
-| `Form 4913` | `mi-corporate-income-tax`, `mi-estimated-tax` |
-| `Form 5118` | `mi-detroit-individual-return`, `mi-return-assembly` |
-| `Form 5119` | `mi-detroit-individual-return`, `mi-return-assembly` |
-| `Form 5121` | `mi-detroit-individual-return`, `mi-return-assembly` |
-| `Form 5297` | `mi-corporate-income-tax`, `mi-detroit-individual-return` |
-| `Form 5321` | `mi-detroit-individual-return`, `mi-payroll` |
-| `Form 5323` | `mi-detroit-individual-return`, `mi-payroll` |
-| `Form 8829` | `mi-homestead-credit`, `mi-return-assembly` |
-| `Form D-1040` | `mi-detroit-individual-return`, `mi-payroll` |
-| `Form MI-1040` | `README`, `mi-corporate-income-tax`, `mi-homestead-credit`, `mi-income-tax`, `mi-pension-retirement-subtraction`, `mi-return-assembly` |
-| `Form MI-1040CR` | `mi-detroit-individual-return`, `mi-homestead-credit` |
-| `Form MI-1040CR-7` | `mi-homestead-credit`, `mi-return-assembly` |
-| `Form MI-1040ES` | `mi-estimated-tax`, `mi-income-tax` |
-| `Form MI-2210` | `mi-detroit-individual-return`, `mi-estimated-tax` |
-| `Form W-4` | `mi-estimated-tax`, `mi-payroll` |
-| `MI-1040` | `mi-detroit-individual-return`, `mi-estimated-tax`, `mi-homestead-credit`, `mi-income-tax`, `mi-payroll`, `mi-pension-retirement-subtraction`, `mi-return-assembly` |
+| `CR-7` | `us-mi-homestead-credit`, `us-mi-return-assembly` |
+| `Form 1040` | `us-mi-detroit-individual-return`, `us-mi-estimated-tax`, `us-mi-income-tax`, `us-mi-pension-retirement-subtraction`, `us-mi-return-assembly` |
+| `Form 1040-ES` | `us-mi-estimated-tax`, `us-mi-income-tax`, `us-mi-return-assembly` |
+| `Form 1065` | `us-mi-corporate-income-tax`, `us-mi-return-assembly` |
+| `Form 1120-S` | `us-mi-corporate-income-tax`, `us-mi-return-assembly` |
+| `Form 2210` | `us-mi-detroit-individual-return`, `us-mi-estimated-tax`, `us-mi-return-assembly` |
+| `Form 4884` | `README`, `us-mi-pension-retirement-subtraction`, `us-mi-return-assembly` |
+| `Form 4913` | `us-mi-corporate-income-tax`, `us-mi-estimated-tax` |
+| `Form 5118` | `us-mi-detroit-individual-return`, `us-mi-return-assembly` |
+| `Form 5119` | `us-mi-detroit-individual-return`, `us-mi-return-assembly` |
+| `Form 5121` | `us-mi-detroit-individual-return`, `us-mi-return-assembly` |
+| `Form 5297` | `us-mi-corporate-income-tax`, `us-mi-detroit-individual-return` |
+| `Form 5321` | `us-mi-detroit-individual-return`, `us-mi-payroll` |
+| `Form 5323` | `us-mi-detroit-individual-return`, `us-mi-payroll` |
+| `Form 8829` | `us-mi-homestead-credit`, `us-mi-return-assembly` |
+| `Form D-1040` | `us-mi-detroit-individual-return`, `us-mi-payroll` |
+| `Form MI-1040` | `README`, `us-mi-corporate-income-tax`, `us-mi-homestead-credit`, `us-mi-income-tax`, `us-mi-pension-retirement-subtraction`, `us-mi-return-assembly` |
+| `Form MI-1040CR` | `us-mi-detroit-individual-return`, `us-mi-homestead-credit` |
+| `Form MI-1040CR-7` | `us-mi-homestead-credit`, `us-mi-return-assembly` |
+| `Form MI-1040ES` | `us-mi-estimated-tax`, `us-mi-income-tax` |
+| `Form MI-2210` | `us-mi-detroit-individual-return`, `us-mi-estimated-tax` |
+| `Form W-4` | `us-mi-estimated-tax`, `us-mi-payroll` |
+| `MI-1040` | `us-mi-detroit-individual-return`, `us-mi-estimated-tax`, `us-mi-homestead-credit`, `us-mi-income-tax`, `us-mi-payroll`, `us-mi-pension-retirement-subtraction`, `us-mi-return-assembly` |
 
 ## mn
 
 | Form | Guides |
 |---|---|
-| `Form M1` | `README`, `mn-corporate-and-pte`, `mn-income-tax`, `mn-payroll` |
-| `Form M4` | `README`, `mn-corporate-and-pte`, `mn-income-tax` |
-| `Form M706` | `README`, `mn-income-tax` |
+| `Form M1` | `README`, `us-mn-corporate-and-pte`, `us-mn-income-tax`, `us-mn-payroll` |
+| `Form M4` | `README`, `us-mn-corporate-and-pte`, `us-mn-income-tax` |
+| `Form M706` | `README`, `us-mn-income-tax` |
 
 ## mo
 
 | Form | Guides |
 |---|---|
-| `Form MO-1040` | `README`, `mo-income-tax` |
-| `Form MO-1040P` | `README`, `mo-income-tax` |
-| `Form MO-1120` | `README`, `mo-income-tax` |
-| `MO-1040` | `mo-income-tax`, `mo-payroll` |
-| `MO-1120S` | `README`, `mo-income-tax` |
+| `Form MO-1040` | `README`, `us-mo-income-tax` |
+| `Form MO-1040P` | `README`, `us-mo-income-tax` |
+| `Form MO-1120` | `README`, `us-mo-income-tax` |
+| `MO-1040` | `us-mo-income-tax`, `us-mo-payroll` |
+| `MO-1120S` | `README`, `us-mo-income-tax` |
 
 ## moldova
 
@@ -702,72 +657,70 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form 80-105` | `README`, `ms-income-tax` |
-| `Form 80-205` | `README`, `ms-income-tax` |
-| `Form 83-100` | `README`, `ms-income-tax` |
+| `Form 80-105` | `README`, `us-ms-income-tax` |
+| `Form 80-205` | `README`, `us-ms-income-tax` |
+| `Form 83-100` | `README`, `us-ms-income-tax` |
 
 ## mt
 
 | Form | Guides |
 |---|---|
-| `Form CIT` | `README`, `mt-income-tax` |
+| `Form CIT` | `README`, `us-mt-income-tax` |
 
 ## nc
 
 | Form | Guides |
 |---|---|
-| `CD-401S` | `nc-corporate-tax`, `nc-return-assembly` |
-| `CD-405` | `nc-corporate-tax`, `nc-income-tax`, `nc-return-assembly` |
-| `Form 1040` | `nc-bailey-settlement-retirement`, `nc-income-tax`, `nc-return-assembly` |
-| `Form 1040-ES` | `nc-estimated-tax`, `nc-return-assembly` |
-| `Form 1120-S` | `nc-corporate-tax`, `nc-return-assembly` |
-| `Form 2210` | `nc-estimated-tax`, `nc-return-assembly` |
-| `Form CD-429` | `nc-corporate-tax`, `nc-estimated-tax` |
-| `Form D-400` | `README`, `nc-bailey-settlement-retirement`, `nc-corporate-tax`, `nc-estimated-tax`, `nc-income-tax`, `nc-payroll`, `nc-return-assembly` |
-| `Form D-407` | `nc-estimated-tax`, `nc-income-tax` |
-| `Form D-422` | `nc-estimated-tax`, `nc-return-assembly` |
-| `Form NC-40` | `nc-estimated-tax`, `nc-income-tax`, `nc-return-assembly` |
-| `Form W-2` | `nc-bailey-settlement-retirement`, `nc-payroll` |
-| `NC-3` | `nc-payroll`, `nc-return-assembly` |
-| `NC-4` | `nc-estimated-tax`, `nc-payroll`, `nc-return-assembly` |
-| `NC-40` | `nc-estimated-tax`, `nc-income-tax`, `nc-payroll`, `nc-return-assembly` |
-| `SF-50` | `nc-bailey-settlement-retirement`, `nc-return-assembly` |
+| `CD-401S` | `us-nc-corporate-tax`, `us-nc-return-assembly` |
+| `CD-405` | `us-nc-corporate-tax`, `us-nc-income-tax`, `us-nc-return-assembly` |
+| `Form 1040` | `us-nc-bailey-settlement-retirement`, `us-nc-income-tax`, `us-nc-return-assembly` |
+| `Form 1040-ES` | `us-nc-estimated-tax`, `us-nc-return-assembly` |
+| `Form 1120-S` | `us-nc-corporate-tax`, `us-nc-return-assembly` |
+| `Form 2210` | `us-nc-estimated-tax`, `us-nc-return-assembly` |
+| `Form CD-429` | `us-nc-corporate-tax`, `us-nc-estimated-tax` |
+| `Form D-400` | `README`, `us-nc-bailey-settlement-retirement`, `us-nc-corporate-tax`, `us-nc-estimated-tax`, `us-nc-income-tax`, `us-nc-payroll`, `us-nc-return-assembly` |
+| `Form D-407` | `us-nc-estimated-tax`, `us-nc-income-tax` |
+| `Form D-422` | `us-nc-estimated-tax`, `us-nc-return-assembly` |
+| `Form NC-40` | `us-nc-estimated-tax`, `us-nc-income-tax`, `us-nc-return-assembly` |
+| `Form W-2` | `us-nc-bailey-settlement-retirement`, `us-nc-payroll` |
+| `NC-3` | `us-nc-payroll`, `us-nc-return-assembly` |
+| `NC-4` | `us-nc-estimated-tax`, `us-nc-payroll`, `us-nc-return-assembly` |
+| `NC-40` | `us-nc-estimated-tax`, `us-nc-income-tax`, `us-nc-payroll`, `us-nc-return-assembly` |
+| `SF-50` | `us-nc-bailey-settlement-retirement`, `us-nc-return-assembly` |
 
 ## nd
 
 | Form | Guides |
 |---|---|
-| `Form 1040` | `nd-income-tax`, `nd-return-assembly` |
-| `Form 1040-ES` | `nd-estimated-tax`, `nd-return-assembly` |
-| `Form 1120-S` | `nd-corporate-tax`, `nd-return-assembly` |
-| `Form 2210` | `nd-estimated-tax`, `nd-return-assembly` |
-| `Form 306` | `README`, `nd-payroll`, `nd-return-assembly` |
-| `Form 307` | `nd-payroll`, `nd-return-assembly` |
-| `Form 38` | `nd-income-tax`, `nd-return-assembly` |
-| `Form 40` | `nd-corporate-tax`, `nd-income-tax`, `nd-return-assembly` |
-| `Form 40-ES` | `nd-corporate-tax`, `nd-estimated-tax` |
-| `Form 40-UT` | `nd-corporate-tax`, `nd-estimated-tax` |
-| `Form 58` | `nd-corporate-tax`, `nd-return-assembly` |
-| `Form 60` | `nd-corporate-tax`, `nd-return-assembly` |
-| `Form ND-1` | `README`, `nd-corporate-tax`, `nd-estimated-tax`, `nd-income-tax`, `nd-payroll`, `nd-return-assembly` |
-| `Form ND-1ES` | `nd-estimated-tax`, `nd-income-tax`, `nd-payroll`, `nd-return-assembly` |
-| `ND-1` | `nd-corporate-tax`, `nd-estimated-tax`, `nd-income-tax`, `nd-payroll`, `nd-return-assembly` |
+| `Form 1040` | `us-nd-income-tax`, `us-nd-return-assembly` |
+| `Form 1040-ES` | `us-nd-estimated-tax`, `us-nd-return-assembly` |
+| `Form 1120-S` | `us-nd-corporate-tax`, `us-nd-return-assembly` |
+| `Form 2210` | `us-nd-estimated-tax`, `us-nd-return-assembly` |
+| `Form 306` | `README`, `us-nd-payroll`, `us-nd-return-assembly` |
+| `Form 307` | `us-nd-payroll`, `us-nd-return-assembly` |
+| `Form 38` | `us-nd-income-tax`, `us-nd-return-assembly` |
+| `Form 40` | `us-nd-corporate-tax`, `us-nd-income-tax`, `us-nd-return-assembly` |
+| `Form 40-ES` | `us-nd-corporate-tax`, `us-nd-estimated-tax` |
+| `Form 40-UT` | `us-nd-corporate-tax`, `us-nd-estimated-tax` |
+| `Form 58` | `us-nd-corporate-tax`, `us-nd-return-assembly` |
+| `Form 60` | `us-nd-corporate-tax`, `us-nd-return-assembly` |
+| `Form ND-1` | `README`, `us-nd-corporate-tax`, `us-nd-estimated-tax`, `us-nd-income-tax`, `us-nd-payroll`, `us-nd-return-assembly` |
+| `Form ND-1ES` | `us-nd-estimated-tax`, `us-nd-income-tax`, `us-nd-payroll`, `us-nd-return-assembly` |
+| `ND-1` | `us-nd-corporate-tax`, `us-nd-estimated-tax`, `us-nd-income-tax`, `us-nd-payroll`, `us-nd-return-assembly` |
 
 ## ne
 
 | Form | Guides |
 |---|---|
-| `Form 1040N` | `README`, `ne-income-tax` |
-| `Form 1120N` | `README`, `ne-income-tax` |
+| `Form 1040N` | `README`, `us-ne-income-tax` |
+| `Form 1120N` | `README`, `us-ne-income-tax` |
 
 ## netherlands
 
 | Form | Guides |
 |---|---|
 | `BW2` | `netherlands-bookkeeping`, `netherlands-financial-statements` |
-| `DEL2026` | `netherlands-vat-return`, `nl-vat-return` |
 | `MT940` | `netherlands-bookkeeping`, `nl-income-tax` |
-| `NL-2026` | `netherlands-vat-return`, `nl-vat-return` |
 
 ## new-zealand
 
@@ -797,83 +750,85 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form NJ-1040` | `README`, `nj-cbt-and-bait`, `nj-income-tax` |
-| `Form PTE-150` | `nj-cbt-and-bait`, `nj-payroll` |
-| `NJ-1040` | `nj-cbt-and-bait`, `nj-income-tax`, `nj-payroll` |
-| `PTE-100` | `nj-cbt-and-bait`, `nj-payroll` |
-| `PTE-150` | `nj-cbt-and-bait`, `nj-payroll` |
+| `Form NJ-1040` | `README`, `us-nj-cbt-and-bait`, `us-nj-income-tax` |
+| `Form PTE-150` | `us-nj-cbt-and-bait`, `us-nj-payroll` |
+| `NJ-1040` | `us-nj-cbt-and-bait`, `us-nj-income-tax`, `us-nj-payroll` |
+| `PTE-100` | `us-nj-cbt-and-bait`, `us-nj-payroll` |
+| `PTE-150` | `us-nj-cbt-and-bait`, `us-nj-payroll` |
 
 ## nm
 
 | Form | Guides |
 |---|---|
-| `Form PIT-1` | `README`, `nm-income-tax` |
-
-## norway
-
-| Form | Guides |
-|---|---|
-| `LOV-2009` | `no-vat-return`, `norway-mva` |
+| `Form PIT-1` | `README`, `us-nm-income-tax` |
 
 ## nv
 
 | Form | Guides |
 |---|---|
-| `Form 1040` | `nv-commerce-and-mbt`, `nv-formation` |
+| `Form 1040` | `us-nv-commerce-and-mbt`, `us-nv-formation` |
 
 ## ny
 
 | Form | Guides |
 |---|---|
-| `Form 1065` | `ny-formation`, `ny-mctmt` |
-| `Form 1120` | `ny-formation`, `ny-llc-filing-fee`, `ny-mctmt` |
-| `Form 2553` | `ny-formation`, `ny-llc-filing-fee` |
-| `Form 8832` | `ny-formation`, `ny-llc-filing-fee` |
-| `Form IT-201` | `ny-estimated-tax`, `ny-formation`, `ny-income-tax`, `ny-llc-filing-fee`, `nyc-ubt` |
-| `Form IT-201-ATT` | `ny-income-tax`, `nyc-ubt` |
-| `Form IT-203` | `ny-income-tax`, `ny-llc-filing-fee` |
-| `Form IT-203-A` | `ny-income-tax`, `ny-llc-filing-fee` |
-| `Form IT-204` | `ny-formation`, `ny-llc-filing-fee` |
-| `Form IT-204-LL` | `ny-formation`, `ny-income-tax`, `ny-llc-filing-fee` |
-| `Form IT-2105` | `ny-estimated-tax`, `ny-income-tax`, `ny-mctmt` |
-| `Form IT-219` | `ny-income-tax`, `nyc-ubt` |
-| `Form NYC-202` | `ny-formation`, `ny-income-tax`, `ny-llc-filing-fee`, `nyc-ubt` |
-| `Form ST-124` | `new-york-sales-tax`, `ny-sales-tax` |
-| `IT-201` | `ny-estimated-tax`, `ny-formation`, `ny-income-tax`, `ny-llc-filing-fee`, `ny-mctmt`, `nyc-ubt` |
-| `IT-203` | `ny-income-tax`, `ny-mctmt` |
-| `IT-204` | `ny-formation`, `ny-income-tax`, `ny-llc-filing-fee` |
-| `IT-2105` | `ny-estimated-tax`, `ny-income-tax`, `ny-mctmt` |
-| `IT-219` | `ny-estimated-tax`, `ny-income-tax`, `nyc-ubt` |
-| `NYC-202` | `ny-formation`, `ny-income-tax`, `nyc-ubt` |
-| `NYC-202S` | `ny-income-tax`, `ny-llc-filing-fee`, `nyc-ubt` |
-| `ST-100` | `new-york-sales-tax`, `ny-sales-tax` |
-| `ST-119` | `new-york-sales-tax`, `ny-sales-tax` |
-| `ST-120` | `new-york-sales-tax`, `ny-sales-tax` |
-| `ST-124` | `new-york-sales-tax`, `ny-sales-tax` |
-| `ST-809` | `new-york-sales-tax`, `ny-sales-tax` |
-| `ST-810` | `new-york-sales-tax`, `ny-sales-tax` |
+| `CT-3` | `us-ny-corporate-franchise-article-9a`, `us-ny-pte-tax-ptet` |
+| `CT-400` | `us-ny-corporate-franchise-article-9a`, `us-ny-estimated-tax` |
+| `Form 1040-ES` | `us-ny-mctmt`, `us-ny-pte-tax-ptet` |
+| `Form 1065` | `us-ny-formation`, `us-ny-mctmt`, `us-ny-pte-tax-ptet` |
+| `Form 1120` | `us-ny-corporate-franchise-article-9a`, `us-ny-formation`, `us-ny-llc-filing-fee-it-204-ll`, `us-ny-mctmt` |
+| `Form 1120-S` | `us-ny-mctmt`, `us-ny-pte-tax-ptet` |
+| `Form 2553` | `us-ny-formation`, `us-ny-llc-filing-fee-it-204-ll` |
+| `Form 8832` | `us-ny-formation`, `us-ny-llc-filing-fee-it-204-ll` |
+| `Form CT-3` | `us-ny-corporate-franchise-article-9a`, `us-ny-llc-filing-fee-it-204-ll` |
+| `Form CT-3-S` | `us-ny-llc-filing-fee-it-204-ll`, `us-ny-pte-tax-ptet` |
+| `Form CT-34-SH` | `us-ny-formation`, `us-ny-pte-tax-ptet` |
+| `Form CT-6` | `us-ny-formation`, `us-ny-pte-tax-ptet` |
+| `Form IT-201` | `us-ny-estimated-tax`, `us-ny-formation`, `us-ny-it-201-resident-return`, `us-ny-llc-filing-fee-it-204-ll`, `us-ny-nyc-unincorporated-business-tax`, `us-ny-payroll`, `us-ny-pte-tax-ptet` |
+| `Form IT-201-ATT` | `us-ny-it-201-resident-return`, `us-ny-nyc-unincorporated-business-tax` |
+| `Form IT-203` | `us-ny-it-201-resident-return`, `us-ny-llc-filing-fee-it-204-ll`, `us-ny-payroll`, `us-ny-pte-tax-ptet` |
+| `Form IT-203-A` | `us-ny-it-201-resident-return`, `us-ny-llc-filing-fee-it-204-ll` |
+| `Form IT-204` | `us-ny-formation`, `us-ny-llc-filing-fee-it-204-ll`, `us-ny-pte-tax-ptet` |
+| `Form IT-204-LL` | `us-ny-formation`, `us-ny-it-201-resident-return`, `us-ny-llc-filing-fee-it-204-ll` |
+| `Form IT-2105` | `us-ny-estimated-tax`, `us-ny-it-201-resident-return`, `us-ny-mctmt` |
+| `Form IT-219` | `us-ny-it-201-resident-return`, `us-ny-nyc-unincorporated-business-tax` |
+| `Form IT-225` | `us-ny-it-201-resident-return`, `us-ny-pte-tax-ptet` |
+| `Form MTA-305` | `us-ny-mctmt`, `us-ny-payroll` |
+| `Form MTA-6` | `us-ny-mctmt`, `us-ny-payroll` |
+| `Form NYC-202` | `us-ny-formation`, `us-ny-it-201-resident-return`, `us-ny-llc-filing-fee-it-204-ll`, `us-ny-nyc-unincorporated-business-tax` |
+| `Form NYS-45` | `us-ny-mctmt`, `us-ny-payroll` |
+| `Form W-2` | `us-ny-mctmt`, `us-ny-payroll` |
+| `IT-201` | `us-ny-estimated-tax`, `us-ny-formation`, `us-ny-it-201-resident-return`, `us-ny-llc-filing-fee-it-204-ll`, `us-ny-mctmt`, `us-ny-nyc-unincorporated-business-tax`, `us-ny-payroll` |
+| `IT-203` | `us-ny-it-201-resident-return`, `us-ny-mctmt`, `us-ny-payroll`, `us-ny-pte-tax-ptet` |
+| `IT-204` | `us-ny-formation`, `us-ny-it-201-resident-return`, `us-ny-llc-filing-fee-it-204-ll`, `us-ny-pte-tax-ptet` |
+| `IT-2105` | `us-ny-estimated-tax`, `us-ny-it-201-resident-return`, `us-ny-mctmt` |
+| `IT-219` | `us-ny-estimated-tax`, `us-ny-it-201-resident-return`, `us-ny-nyc-unincorporated-business-tax` |
+| `IT-225` | `us-ny-it-201-resident-return`, `us-ny-pte-tax-ptet` |
+| `MTA-305` | `us-ny-mctmt`, `us-ny-payroll` |
+| `NYC-202` | `us-ny-formation`, `us-ny-it-201-resident-return`, `us-ny-nyc-unincorporated-business-tax` |
+| `NYC-202S` | `us-ny-it-201-resident-return`, `us-ny-llc-filing-fee-it-204-ll`, `us-ny-nyc-unincorporated-business-tax` |
+| `NYS-45` | `us-ny-mctmt`, `us-ny-payroll` |
+| `NYS-50` | `us-ny-it-201-resident-return`, `us-ny-payroll` |
 
 ## oh
 
 | Form | Guides |
 |---|---|
-| `Form CAT` | `oh-cat`, `oh-cat-tax` |
-| `Form IT` | `README`, `oh-income-tax`, `oh-payroll` |
-| `IT-1040` | `oh-sales-tax`, `ohio-sales-tax` |
-| `UST-1` | `oh-sales-tax`, `ohio-sales-tax` |
+| `Form CAT` | `us-oh-cat`, `us-oh-cat-tax` |
+| `Form IT` | `README`, `us-oh-income-tax`, `us-oh-payroll` |
 
 ## ok
 
 | Form | Guides |
 |---|---|
-| `Form 511` | `README`, `ok-income-tax` |
+| `Form 511` | `README`, `us-ok-income-tax` |
 
 ## or
 
 | Form | Guides |
 |---|---|
-| `Form OR-40` | `README`, `or-cat`, `or-income-tax` |
-| `OR-40` | `or-cat`, `or-income-tax` |
+| `Form OR-40` | `README`, `us-or-cat`, `us-or-income-tax` |
+| `OR-40` | `us-or-cat`, `us-or-income-tax` |
 
 ## orchestrator
 
@@ -882,48 +837,28 @@ instance took.
 | `CA12` | `ca-return-assembly`, `fr-freelance-intake`, `fr-return-assembly` |
 | `CA3` | `ca-return-assembly`, `fr-freelance-intake`, `fr-return-assembly` |
 | `CPP2` | `ca-freelance-intake`, `ca-return-assembly` |
-| `CT-3` | `ny-corporate-franchise-article-9a`, `ny-pte-tax-ptet`, `us-ny-freelance-intake` |
-| `Form 05-102` | `tx-margin-tax`, `us-tx-freelance-intake`, `us-tx-return-assembly` |
-| `Form 05-169` | `tx-margin-tax`, `us-tx-freelance-intake`, `us-tx-return-assembly` |
-| `Form 100` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax` |
-| `Form 100S` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax` |
-| `Form 1040` | `ca-540-individual-return`, `ny-it-201-resident-return`, `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
-| `Form 1040-ES` | `ny-pte-tax-ptet`, `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
-| `Form 1065` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `ny-pte-tax-ptet`, `tx-margin-tax`, `us-ca-freelance-intake`, `us-ny-freelance-intake`, `us-tx-freelance-intake` |
-| `Form 1120` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `ny-corporate-franchise-article-9a`, `ny-llc-filing-fee-it-204-ll`, `tx-margin-tax`, `us-ca-freelance-intake` |
-| `Form 1120-S` | `ca-pte-elective-tax`, `ny-pte-tax-ptet`, `tx-margin-tax`, `us-ca-freelance-intake` |
+| `Form 05-102` | `us-tx-freelance-intake`, `us-tx-return-assembly` |
+| `Form 05-169` | `us-tx-freelance-intake`, `us-tx-return-assembly` |
+| `Form 1040` | `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
+| `Form 1040-ES` | `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
+| `Form 1065` | `us-ca-freelance-intake`, `us-ny-freelance-intake`, `us-tx-freelance-intake` |
 | `Form 16A` | `in-freelance-intake`, `in-return-assembly` |
 | `Form 2210` | `us-ca-freelance-intake`, `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
-| `Form 2553` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `ny-llc-filing-fee-it-204-ll`, `us-ca-freelance-intake`, `us-ny-freelance-intake`, `us-tx-freelance-intake` |
+| `Form 2553` | `us-ca-freelance-intake`, `us-ny-freelance-intake`, `us-tx-freelance-intake` |
 | `Form 26AS` | `in-freelance-intake`, `in-return-assembly` |
-| `Form 3522` | `ca-estimated-tax-540es`, `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `us-ca-return-assembly` |
-| `Form 3536` | `ca-estimated-tax-540es`, `ca-llc-fee-and-tax`, `us-ca-freelance-intake`, `us-ca-return-assembly` |
-| `Form 3853` | `ca-540-individual-return`, `ny-it-201-resident-return`, `us-ca-return-assembly` |
+| `Form 3536` | `us-ca-freelance-intake`, `us-ca-return-assembly` |
 | `Form 4562` | `us-ca-return-assembly`, `us-federal-return-assembly` |
-| `Form 540` | `ca-540-individual-return`, `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `california-sales-tax`, `us-ca-return-assembly` |
-| `Form 540-ES` | `ca-estimated-tax-540es`, `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `us-ca-return-assembly` |
-| `Form 540NR` | `ca-540-individual-return`, `ca-pte-elective-tax`, `us-ca-freelance-intake` |
-| `Form 568` | `ca-540-individual-return`, `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `global-router`, `us-ca-return-assembly` |
-| `Form 5805` | `ca-estimated-tax-540es`, `us-ca-freelance-intake`, `us-ca-return-assembly` |
+| `Form 568` | `global-router`, `us-ca-return-assembly` |
+| `Form 5805` | `us-ca-freelance-intake`, `us-ca-return-assembly` |
 | `Form 7206` | `us-ca-return-assembly`, `us-federal-return-assembly` |
 | `Form 8829` | `us-ca-return-assembly`, `us-federal-return-assembly` |
-| `Form 8832` | `ca-llc-fee-and-tax`, `ny-llc-filing-fee-it-204-ll` |
 | `Form 8949` | `global-router`, `us-ca-freelance-intake` |
 | `Form 8962` | `us-ca-return-assembly`, `us-federal-return-assembly` |
-| `Form 8995` | `ca-540-individual-return`, `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
+| `Form 8995` | `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
 | `Form 8995-A` | `us-ca-freelance-intake`, `us-ca-return-assembly`, `us-federal-return-assembly` |
-| `Form CT-3` | `ny-corporate-franchise-article-9a`, `ny-llc-filing-fee-it-204-ll` |
-| `Form CT-3-S` | `ny-llc-filing-fee-it-204-ll`, `ny-pte-tax-ptet` |
-| `Form IT-201` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `ny-payroll`, `ny-pte-tax-ptet`, `us-ny-freelance-intake` |
-| `Form IT-203` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `ny-payroll`, `ny-pte-tax-ptet`, `us-ny-freelance-intake` |
-| `Form IT-203-A` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll` |
-| `Form IT-204` | `ny-llc-filing-fee-it-204-ll`, `ny-pte-tax-ptet` |
-| `Form IT-204-LL` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll` |
-| `Form IT-2105` | `ny-it-201-resident-return`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
-| `Form IT-225` | `ny-it-201-resident-return`, `ny-pte-tax-ptet` |
-| `Form MTA-6` | `ny-payroll`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
-| `Form NYC-202` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
-| `Form W-2` | `ny-payroll`, `tx-margin-tax` |
+| `Form IT-2105` | `us-ny-freelance-intake`, `us-ny-return-assembly` |
+| `Form MTA-6` | `us-ny-freelance-intake`, `us-ny-return-assembly` |
+| `Form NYC-202` | `us-ny-freelance-intake`, `us-ny-return-assembly` |
 | `GST34` | `ca-freelance-intake`, `ca-return-assembly` |
 | `GSTR-1` | `in-freelance-intake`, `in-return-assembly` |
 | `GSTR-3B` | `global-router`, `in-freelance-intake`, `in-return-assembly` |
@@ -940,16 +875,11 @@ instance took.
 | `IN7` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
 | `IN8` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
 | `IN9` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
-| `IT-201` | `global-router`, `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `ny-payroll`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
-| `IT-203` | `ny-it-201-resident-return`, `ny-payroll`, `ny-pte-tax-ptet`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
-| `IT-204` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `ny-pte-tax-ptet` |
-| `IT-2105` | `ny-it-201-resident-return`, `us-ny-return-assembly` |
-| `IT-225` | `ny-it-201-resident-return`, `ny-pte-tax-ptet`, `us-ny-return-assembly` |
+| `IT-201` | `global-router`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
+| `IT-203` | `us-ny-freelance-intake`, `us-ny-return-assembly` |
 | `ITR-3` | `global-router`, `in-freelance-intake`, `in-return-assembly` |
 | `ITR-4` | `in-freelance-intake`, `in-return-assembly` |
-| `NYC-202` | `ny-it-201-resident-return`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
-| `NYC-202S` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll` |
-| `NYS-50` | `ny-it-201-resident-return`, `ny-payroll` |
+| `NYC-202` | `us-ny-freelance-intake`, `us-ny-return-assembly` |
 | `SA100` | `global-router`, `uk-freelance-intake`, `uk-return-assembly` |
 | `SA102` | `uk-freelance-intake`, `uk-return-assembly` |
 | `SA103` | `global-router`, `uk-freelance-intake`, `uk-return-assembly` |
@@ -963,13 +893,11 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `CLGS-32` | `pa-local-eit`, `pa-payroll` |
-| `Form 941` | `pa-local-eit`, `pa-payroll` |
-| `Form CLGS-32-6` | `pa-local-eit`, `pa-payroll` |
-| `Form PA-40` | `README`, `pa-income-tax`, `pa-payroll` |
-| `PA-3` | `pa-sales-tax`, `pennsylvania-sales-tax` |
-| `PA-40` | `pa-income-tax`, `pa-local-eit` |
-| `REV-1220` | `pa-sales-tax`, `pennsylvania-sales-tax` |
+| `CLGS-32` | `us-pa-local-eit`, `us-pa-payroll` |
+| `Form 941` | `us-pa-local-eit`, `us-pa-payroll` |
+| `Form CLGS-32-6` | `us-pa-local-eit`, `us-pa-payroll` |
+| `Form PA-40` | `README`, `us-pa-income-tax`, `us-pa-payroll` |
+| `PA-40` | `us-pa-income-tax`, `us-pa-local-eit` |
 
 ## patterns
 
@@ -997,22 +925,18 @@ instance took.
 | `PIT-36` | `pl-income-tax`, `pl-zus-contributions`, `poland-einvoice` |
 | `PIT-36L` | `pl-income-tax`, `pl-zus-contributions`, `poland-einvoice` |
 | `PIT-38` | `pl-capital-gains`, `references` |
-| `PIT-4R` | `pl-vat-return`, `poland-vat-return` |
-| `PL-2026` | `pl-vat-return`, `poland-vat-return` |
-| `VAT-26` | `pl-vat-return`, `poland-vat-return` |
 
 ## portugal
 
 | Form | Guides |
 |---|---|
 | `DAC8` | `portugal-crypto-tax`, `pt-return-assembly` |
-| `PT-2026` | `portugal-vat-return`, `pt-vat-return` |
 
 ## ri
 
 | Form | Guides |
 |---|---|
-| `Form RI-1040` | `README`, `ri-income-tax` |
+| `Form RI-1040` | `README`, `us-ri-income-tax` |
 
 ## romania
 
@@ -1025,15 +949,13 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form SC1040` | `README`, `sc-income-tax`, `sc-sales-tax` |
+| `Form SC1040` | `README`, `us-sc-income-tax`, `us-sc-sales-tax` |
 
 ## singapore
 
 | Form | Guides |
 |---|---|
-| `CT-2026` | `sg-gst-return`, `singapore-gst` |
 | `Form B1` | `sg-income-tax`, `singapore-crypto-tax` |
-| `SG-2026` | `sg-gst-return`, `singapore-gst` |
 
 ## slovenia
 
@@ -1064,7 +986,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `ES-2026` | `es-vat-return`, `spain-vat-return` |
 | `TC1` | `es-social-contributions`, `spain-payroll` |
 | `TC2` | `es-social-contributions`, `spain-payroll` |
 
@@ -1072,14 +993,7 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `OKQ8` | `se-income-tax`, `se-vat-return`, `sweden-vat-return` |
-| `SE-2026` | `se-vat-return`, `sweden-vat-return` |
-
-## switzerland
-
-| Form | Guides |
-|---|---|
-| `CH-2026` | `ch-vat-return`, `switzerland-vat` |
+| `OKQ8` | `se-income-tax`, `sweden-vat-return` |
 
 ## tanzania
 
@@ -1125,11 +1039,17 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form 01-114` | `README`, `tx-formation`, `tx-sales-tax`, `tx-sales-use-tax` |
-| `Form 05-102` | `tx-formation`, `tx-franchise-tax` |
-| `Form 05-163` | `tx-formation`, `tx-franchise-tax` |
-| `Form 05-169` | `tx-formation`, `tx-franchise-tax` |
-| `Form 14-117` | `tx-sales-tax`, `tx-sales-use-tax` |
+| `Form 01-114` | `us-tx-formation`, `us-tx-sales-use-tax` |
+| `Form 05-102` | `us-tx-formation`, `us-tx-franchise-tax`, `us-tx-margin-tax` |
+| `Form 05-158-A` | `us-tx-franchise-tax`, `us-tx-margin-tax` |
+| `Form 05-163` | `us-tx-formation`, `us-tx-franchise-tax`, `us-tx-margin-tax` |
+| `Form 05-164` | `us-tx-formation`, `us-tx-margin-tax` |
+| `Form 05-167` | `us-tx-franchise-tax`, `us-tx-margin-tax` |
+| `Form 05-169` | `us-tx-formation`, `us-tx-franchise-tax`, `us-tx-margin-tax` |
+| `Form 1065` | `us-tx-formation`, `us-tx-margin-tax` |
+| `Form 1120` | `us-tx-formation`, `us-tx-margin-tax` |
+| `Form 304` | `us-tx-formation`, `us-tx-margin-tax` |
+| `Form 401` | `us-tx-formation`, `us-tx-margin-tax` |
 
 ## uk
 
@@ -1156,14 +1076,6 @@ instance took.
 |---|---|
 | `Form 1102/1103` | `uruguay-payroll`, `uruguay-social-contributions` |
 
-## us
-
-| Form | Guides |
-|---|---|
-| `Form 1040` | `us-capital-gains`, `us-tax-residency` |
-| `Form 1040-NR` | `us-nonresident-cgt`, `us-tax-residency` |
-| `Form 8833` | `us-nonresident-cgt`, `us-tax-residency` |
-
 ## us-expat
 
 | Form | Guides |
@@ -1175,17 +1087,16 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form TC-20` | `README`, `ut-income-tax` |
-| `Form TC-40` | `README`, `ut-income-tax` |
-| `TC-62S` | `ut-sales-tax`, `utah-sales-tax` |
+| `Form TC-20` | `README`, `us-ut-income-tax` |
+| `Form TC-40` | `README`, `us-ut-income-tax` |
 
 ## va
 
 | Form | Guides |
 |---|---|
-| `Form 500` | `va-corporate-tax-and-bpol`, `va-income-tax` |
-| `Form 760` | `README`, `va-corporate-tax-and-bpol`, `va-income-tax`, `va-payroll`, `va-sales-tax` |
-| `Form 763` | `va-corporate-tax-and-bpol`, `va-income-tax`, `va-payroll` |
+| `Form 500` | `us-va-corporate-tax-and-bpol`, `us-va-income-tax` |
+| `Form 760` | `README`, `us-va-corporate-tax-and-bpol`, `us-va-income-tax`, `us-va-payroll`, `us-va-sales-tax` |
+| `Form 763` | `us-va-corporate-tax-and-bpol`, `us-va-income-tax`, `us-va-payroll` |
 
 ## verticals
 
@@ -1197,22 +1108,14 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `Form CO-411` | `README`, `vt-income-tax` |
-| `Form IN-111` | `README`, `vt-income-tax` |
-
-## wi
-
-| Form | Guides |
-|---|---|
-| `Form S-211` | `wi-sales-tax`, `wisconsin-sales-tax` |
-| `Form S-211E` | `wi-sales-tax`, `wisconsin-sales-tax` |
-| `Form ST-12` | `wi-sales-tax`, `wisconsin-sales-tax` |
+| `Form CO-411` | `README`, `us-vt-income-tax` |
+| `Form IN-111` | `README`, `us-vt-income-tax` |
 
 ## wv
 
 | Form | Guides |
 |---|---|
-| `Form IT-140` | `README`, `wv-income-tax` |
+| `Form IT-140` | `README`, `us-wv-income-tax` |
 
 ## zimbabwe
 
@@ -1223,4 +1126,4 @@ instance took.
 
 ---
 
-115 jurisdictions, 633 shared form identifiers.
+103 jurisdictions, 596 shared form identifiers.

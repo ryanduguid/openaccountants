@@ -87,7 +87,7 @@ SKIP_DIRS = ('orchestrator', 'cross-border', 'verticals', 'integrations')
 # withholding. `us-states` is the one that matters: a US state does not charge
 # withholding on dividends, interest or royalties paid abroad -- that is
 # federal -- so all 52 directories under it are guaranteed noise, and the queue
-# was carrying Indiana because `in-payroll.md` mentions an interest rate on
+# was carrying Indiana because `us-in-payroll.md` mentions an interest rate on
 # unpaid PAYE withholding. The other three hold workflow bases and templates
 # with no jurisdiction of their own.
 SKIP_TREES = ('us-states', 'foundation', 'templates', 'patterns')

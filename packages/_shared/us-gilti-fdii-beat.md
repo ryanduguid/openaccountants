@@ -3,7 +3,7 @@ name: us-gilti-fdii-beat
 description: Tier 2 US federal international tax content skill for the TCJA-era provisions §951A GILTI, §250 FDII, §59A BEAT, plus surviving Subpart F. Covers tax year 2025 including the 50% §250 GILTI deduction (effective 10.5% rate for C-corps), the 37.5% FDII deduction (effective 13.125%), and the BEAT 10% rate on modified taxable income for corps with >$500M average gross receipts and >3% base erosion percentage; for tax years beginning after Dec. 31, 2025, OBBBA shifts GILTI/FDII to NCTI/FDDEI with 40% and 33.34% §250 deductions and a 10.5% BEAT rate, the §962 election for individual US shareholders of CFCs, Form 5471 / 8992 / 8993 / 8991 compliance, the §965 transition-tax final installments through 2025, and the Pillar Two GloBE non-adoption with UTPR exposure.
 jurisdiction: US
 tax_year: 2025
-version: 1.1
+version: 1.2
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
@@ -659,7 +659,7 @@ Form 5471 (Cat. 5), Schedule I-1 with tested income, QBAI. Form 8992 with Sarah'
 
 1. Confirm the §962 election is timely (must be on a timely-filed return with extensions).
 2. Confirm the basis-and-PTEP tracking. §962 PTEP accounts are notoriously poorly maintained and the consequences (in years 3, 5, 10 when distribution occurs) are severe.
-3. State conformity: California has historically taxed GILTI inclusions at the individual level without the §250 deduction (CA non-conformity). The federal §962 election does not automatically flow into California — separate analysis needed. Consult `ca-540-individual-return`.
+3. State conformity: California has historically taxed GILTI inclusions at the individual level without the §250 deduction (CA non-conformity). The federal §962 election does not automatically flow into California — separate analysis needed. Consult `us-ca-540-individual-return`.
 4. Watch the Singapore Pillar Two QDMTT situation — Singapore enacted a 15% QDMTT effective Jan 1, 2025 for groups within Pillar Two scope. Sarah's solo-shareholder CFC is well below €750M and not within Pillar Two, so this doesn't bite here, but is worth flagging for larger fact patterns.
 
 ### Example 3 — Large MNE BEAT computation

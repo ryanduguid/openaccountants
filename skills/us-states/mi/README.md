@@ -14,15 +14,15 @@
 
 | File | What it covers |
 |---|---|
-| `mi-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form MI-1040) |
-| `mi-sales-tax.md` | Sales and use tax obligations and rates |
-| `mi-corporate-income-tax.md` | Source-cited tax guide for US-MI: mi corporate income tax |
-| `mi-detroit-individual-return.md` | Detroit (Michigan) city individual income tax for residents, non-residents who work in Detroit, or... |
-| `mi-estimated-tax.md` | Michigan quarterly estimated income tax for individuals — sole proprietors, single-member LLCs,... |
-| `mi-homestead-credit.md` | the Michigan Homestead Property Tax Credit for full-year Michigan residents who own or rent their... |
-| `mi-payroll.md` | Michigan content skill for employer payroll compliance covering tax year 2025 |
-| `mi-pension-retirement-subtraction.md` | Michigan's pension/retirement income subtraction on Form MI-1040, the Form 4884 "Michigan Pension... |
-| `mi-return-assembly.md` | Final capstone orchestrator that assembles the complete federal + Michigan filing package for a full-year... |
+| `us-mi-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form MI-1040) |
+| `us-mi-sales-tax.md` | Sales and use tax obligations and rates |
+| `us-mi-corporate-income-tax.md` | Source-cited tax guide for US-MI: mi corporate income tax |
+| `us-mi-detroit-individual-return.md` | Detroit (Michigan) city individual income tax for residents, non-residents who work in Detroit, or... |
+| `us-mi-estimated-tax.md` | Michigan quarterly estimated income tax for individuals — sole proprietors, single-member LLCs,... |
+| `us-mi-homestead-credit.md` | the Michigan Homestead Property Tax Credit for full-year Michigan residents who own or rent their... |
+| `us-mi-payroll.md` | Michigan content skill for employer payroll compliance covering tax year 2025 |
+| `us-mi-pension-retirement-subtraction.md` | Michigan's pension/retirement income subtraction on Form MI-1040, the Form 4884 "Michigan Pension... |
+| `us-mi-return-assembly.md` | Final capstone orchestrator that assembles the complete federal + Michigan filing package for a full-year... |
 
 ## What's NOT covered
 

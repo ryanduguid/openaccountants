@@ -35,6 +35,10 @@ from oa_tools.frontmatter import load_frontmatter  # noqa: E402
 SYNC_BOT_NAMES = {"openaccountants-sync[bot]"}
 SYNC_BOT_EMAILS = {"sync@openaccountants.com"}
 SOURCE_PREFIX = "skills/"
+#: The human-reviewed record of guide deletions and renames. A deletion or
+#: rename under skills/ passes the strict audit only when it is listed here
+#: at the candidate revision (see load_migrations).
+MIGRATIONS_PATH = "docs/guide-migrations.json"
 VERSION_RE = re.compile(r"^\d+(?:\.\d+)*$")
 HEADING_VERSION_RE = re.compile(r"\bv(\d+(?:\.\d+)+)\b", re.IGNORECASE)
 UNCERTAINTY_PATTERNS = (
@@ -285,6 +289,45 @@ def parse_guide(text: str, *, strict_yaml: bool = True) -> Guide:
 def is_guide_document(text: str | None) -> bool:
     """Match the repository validator: Markdown without frontmatter is a doc."""
     return text is not None and text.startswith("---")
+
+
+def load_migrations(repo: Path, head: str | None) -> tuple[set[str], dict[str, str]]:
+    """The recorded deletions and renames: (removed paths, {from path: to path}).
+
+    Read from the candidate revision (or the working tree), so the record
+    travels with the change it authorises. ``docs/guide-migrations.json``
+    holds one object per migration with an ``entries`` list; an entry's
+    ``from`` is the path that went away and ``to`` its new path, or null for
+    a deletion. ``slug`` and ``replacement`` are for consumers and are not
+    read here. An absent record means nothing is authorised.
+    """
+    if head is not None:
+        result = subprocess.run(
+            ["git", "show", f"{head}:{MIGRATIONS_PATH}"],
+            cwd=repo, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False,
+        )
+        text = result.stdout.decode("utf-8") if result.returncode == 0 else None
+    else:
+        candidate = repo / MIGRATIONS_PATH
+        text = candidate.read_text(encoding="utf-8") if candidate.is_file() else None
+    if text is None:
+        return set(), {}
+    try:
+        document = json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise IntegrityError(f"{MIGRATIONS_PATH} is not valid JSON: {exc}") from exc
+    removed: set[str] = set()
+    renamed: dict[str, str] = {}
+    for migration in document.get("migrations", []):
+        for entry in migration.get("entries", []):
+            source = entry.get("from")
+            if not isinstance(source, str):
+                continue
+            if isinstance(entry.get("to"), str):
+                renamed[source] = entry["to"]
+            else:
+                removed.add(source)
+    return removed, renamed
 
 
 def normalize_body(body: str) -> str:
@@ -760,6 +803,7 @@ def run_integrity_check(
     strict_metadata: bool = False,
 ) -> tuple[list[Finding], int]:
     changes = changed_guides(repo, base, head)
+    removed, renamed = load_migrations(repo, head)
     findings: list[Finding] = []
     guide_changes: list[Change] = []
 
@@ -782,17 +826,49 @@ def run_integrity_check(
             continue
 
         guide_changes.append(change)
-        if change.status in {"D", "R"} or (before_is_guide and not after_is_guide):
-            severity = "error" if mode == "sync" or strict_metadata else "warning"
+        severity = "error" if mode == "sync" or strict_metadata else "warning"
+        if change.status == "D" or (before_is_guide and not after_is_guide):
+            if change.before_path in removed or change.before_path in renamed:
+                findings.append(
+                    Finding(
+                        "notice",
+                        "source-removal-migrated",
+                        change.display_path,
+                        f"source-guide removal recorded in {MIGRATIONS_PATH}",
+                    )
+                )
+            else:
+                findings.append(
+                    Finding(
+                        severity,
+                        "source-removal-needs-review",
+                        change.display_path,
+                        "source-guide deletion requires an explicit human-reviewed migration "
+                        f"(record it in {MIGRATIONS_PATH})",
+                    )
+                )
+            continue
+        if change.status == "R":
+            if renamed.get(change.before_path) != change.after_path:
+                findings.append(
+                    Finding(
+                        severity,
+                        "source-removal-needs-review",
+                        change.display_path,
+                        "source-guide rename requires an explicit human-reviewed migration "
+                        f"(record it in {MIGRATIONS_PATH})",
+                    )
+                )
+                continue
             findings.append(
                 Finding(
-                    severity,
-                    "source-removal-needs-review",
+                    "notice",
+                    "source-rename-migrated",
                     change.display_path,
-                    "source-guide deletion or rename requires an explicit human-reviewed migration",
+                    f"source-guide rename recorded in {MIGRATIONS_PATH}; the guide's "
+                    "metadata rules still apply to any body change",
                 )
             )
-            continue
 
         path = change.after_path
         assert path is not None

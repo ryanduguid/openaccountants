@@ -1,6 +1,6 @@
-# Morocco — AI Accounting Assistant | OpenAccountants
+# Macau — AI Accounting Assistant | OpenAccountants
 
-> Open-source accounting skills for Morocco. Upload to Claude, ChatGPT, or any AI assistant.
+> Open-source accounting skills for Macau. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
 ## What's in this folder
@@ -26,10 +26,10 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
-   - **"Help me with my 2025 Morocco taxes. Here's my bank statement."**
+   - **"Help me with my 2025 Macau taxes. Here's my bank statement."**
    - **"Classify my transactions and prepare my books."**
    - **"Run payroll for my employee."**
-   - **"Help me set up a company in Morocco."**
+   - **"Help me set up a company in Macau."**
    - **"Prepare my annual accounts."**
 
 The AI will:
@@ -48,7 +48,7 @@ The most up-to-date, verified version of these skills is maintained at [openacco
 
 ## Are you a qualified tax professional?
 
-These Morocco tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
+These Macau tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 
 **You don't need to use GitHub.** Just:
 

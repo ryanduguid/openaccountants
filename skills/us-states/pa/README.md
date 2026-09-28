@@ -14,11 +14,10 @@
 
 | File | What it covers |
 |---|---|
-| `pa-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form PA-40) |
-| `pa-sales-tax.md` | State and local sales & use tax compliance |
-| `pa-local-eit.md` | Pennsylvania Local Earned Income Tax (LEIT) — Act 32 of 2008 |
-| `pa-payroll.md` | Pennsylvania content skill for employer payroll compliance covering tax year 2025 |
-| `pennsylvania-sales-tax.md` | Pennsylvania sales and use tax, PA DOR filings, Pennsylvania clothing exemption, Philadelphia sales tax,... |
+| `us-pa-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form PA-40) |
+| `us-pa-sales-tax.md` | State and local sales & use tax compliance |
+| `us-pa-local-eit.md` | Pennsylvania Local Earned Income Tax (LEIT) — Act 32 of 2008 |
+| `us-pa-payroll.md` | Pennsylvania content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
 - Local earned income tax (EIT) — over 2,500 jurisdictions with rates typically 1%–3.9%

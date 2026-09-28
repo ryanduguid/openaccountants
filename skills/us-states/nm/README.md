@@ -14,9 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| `nm-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form PIT-1) |
-| `nm-sales-tax.md` | Gross Receipts Tax (GRT) — New Mexico's equivalent of sales tax |
-| `new-mexico-sales-tax.md` | New Mexico Gross Receipts Tax (GRT) |
+| `us-nm-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form PIT-1) |
+| `us-nm-sales-tax.md` | Gross Receipts Tax (GRT) — New Mexico's equivalent of sales tax |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes

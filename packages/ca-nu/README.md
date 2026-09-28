@@ -13,6 +13,7 @@ listed below. Upload all of them together.
 
 1. `intake.md`
 2. `nu-individual-return.md`
+3. `nu-tax-credits.md`
 
 ## Shared files this package needs
 

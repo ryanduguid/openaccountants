@@ -11,10 +11,10 @@ which are shared files listed below. Upload all of them together.
 
 1. `us-tx-freelance-intake.md`
 2. `us-tx-return-assembly.md`
-3. `tx-formation.md`
-4. `tx-franchise-tax.md`
-5. `tx-sales-tax.md`
-6. `tx-sales-use-tax.md`
+3. `us-tx-formation.md`
+4. `us-tx-franchise-tax.md`
+5. `us-tx-margin-tax.md`
+6. `us-tx-sales-use-tax.md`
 
 ## Shared files this package needs
 
@@ -25,6 +25,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`no-sales-tax-states.md`](../_shared/no-sales-tax-states.md)
 - [`us-1099-k-and-payment-processors.md`](../_shared/us-1099-k-and-payment-processors.md)
 - [`us-1099-nec-issuance.md`](../_shared/us-1099-nec-issuance.md)
+- [`us-capital-gains.md`](../_shared/us-capital-gains.md)
 - [`us-citizen-moving-abroad-tax.md`](../_shared/us-citizen-moving-abroad-tax.md)
 - [`us-crypto-income-events.md`](../_shared/us-crypto-income-events.md)
 - [`us-crypto-reporting.md`](../_shared/us-crypto-reporting.md)
@@ -48,6 +49,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`us-irs-collections-and-controversy.md`](../_shared/us-irs-collections-and-controversy.md)
 - [`us-multi-state-residency-and-allocation.md`](../_shared/us-multi-state-residency-and-allocation.md)
 - [`us-nft-tax.md`](../_shared/us-nft-tax.md)
+- [`us-nonresident-cgt.md`](../_shared/us-nonresident-cgt.md)
 - [`us-pl-86-272-income-tax-nexus.md`](../_shared/us-pl-86-272-income-tax-nexus.md)
 - [`us-pte-state-matrix.md`](../_shared/us-pte-state-matrix.md)
 - [`us-qbi-deduction.md`](../_shared/us-qbi-deduction.md)
@@ -68,6 +70,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`us-state-formation-matrix.md`](../_shared/us-state-formation-matrix.md)
 - [`us-state-new-hire-reporting-matrix.md`](../_shared/us-state-new-hire-reporting-matrix.md)
 - [`us-state-payroll-matrix.md`](../_shared/us-state-payroll-matrix.md)
+- [`us-tax-residency.md`](../_shared/us-tax-residency.md)
 - [`us-tax-workflow-base.md`](../_shared/us-tax-workflow-base.md)
 
 

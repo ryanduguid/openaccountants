@@ -59,7 +59,7 @@ def actual():
         'Distinct `reviewed_by` values': len(reviewers),
         'Country directories under `skills/international/`':
             len([p for p in glob.glob(os.path.join('skills', 'international', '*')) if os.path.isdir(p)]),
-        'US jurisdiction codes (`US` + 50 states + DC + `US-NY-NYC`)':
+        'US jurisdiction codes (`US` + 50 states + DC)':
             len({g['jurisdiction'] for g in guides if (g.get('jurisdiction') or '').startswith('US')}),
         # packages/_shared/ holds the files the bundles share; it is not a bundle.
         'Generated bundles under `packages/`':

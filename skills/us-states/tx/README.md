@@ -14,10 +14,10 @@
 
 | File | What it covers |
 |---|---|
-| `tx-franchise-tax.md` | Franchise (margin) tax for taxable entities |
-| `tx-sales-tax.md` | State and local sales & use tax compliance |
-| `tx-formation.md` | Texas content skill for entity formation covering tax year 2025 |
-| `tx-sales-use-tax.md` | Texas Sales and Use Tax return (Form 01-114) for self-employed individuals and small businesses |
+| `us-tx-franchise-tax.md` | Franchise (margin) tax for taxable entities |
+| `us-tx-sales-use-tax.md` | State and local sales & use tax compliance |
+| `us-tx-formation.md` | Texas content skill for entity formation covering tax year 2025 |
+| `us-tx-margin-tax.md` | Deep content skill for the Texas Franchise (Margin) Tax imposed under Texas Tax Code Chapter 171 |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes (Texas has no state income tax withholding)

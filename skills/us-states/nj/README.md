@@ -14,11 +14,10 @@
 
 | File | What it covers |
 |---|---|
-| `nj-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form NJ-1040) |
-| `nj-sales-tax.md` | State sales & use tax compliance |
-| `new-jersey-sales-tax.md` | New Jersey sales and use tax |
-| `nj-cbt-and-bait.md` | New Jersey Corporation Business Tax (CBT) and Business Alternative Income Tax (BAIT) |
-| `nj-payroll.md` | New Jersey content skill for employer payroll compliance covering tax year 2025 |
+| `us-nj-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form NJ-1040) |
+| `us-nj-sales-tax.md` | State sales & use tax compliance |
+| `us-nj-cbt-and-bait.md` | New Jersey Corporation Business Tax (CBT) and Business Alternative Income Tax (BAIT) |
+| `us-nj-payroll.md` | New Jersey content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
 - Corporation Business Tax (CBT)

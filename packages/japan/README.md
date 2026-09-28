@@ -14,17 +14,16 @@
 7. `japan-payroll.md`
 8. `japan-tax-optimization.md`
 9. `japan-transfer-pricing.md`
-10. `jp-bookkeeping.md`
-11. `jp-consumption-tax.md`
-12. `jp-estimated-tax.md`
-13. `jp-etax-filing.md`
-14. `jp-income-tax.md`
-15. `jp-incorporation.md`
-16. `jp-nonpermanent-resident.md`
-17. `jp-social-insurance.md`
-18. `references.md`
-19. `japan-guided-intake.md`
-20. `japan-return-assembly.md`
+10. `jp-consumption-tax.md`
+11. `jp-estimated-tax.md`
+12. `jp-etax-filing.md`
+13. `jp-income-tax.md`
+14. `jp-incorporation.md`
+15. `jp-nonpermanent-resident.md`
+16. `jp-social-insurance.md`
+17. `references.md`
+18. `japan-guided-intake.md`
+19. `japan-return-assembly.md`
 
 ## Shared files this package needs
 

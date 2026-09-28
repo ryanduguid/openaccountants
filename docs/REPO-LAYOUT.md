@@ -52,6 +52,8 @@ scripts/                   # Build + maintenance scripts (build-packages.py, bui
                            #   and findings.py, the gate checkers' baseline and exit-code core
   baselines/               #   the gate checkers' accepted findings (regenerate: make baselines)
 docs/                      # Repo documentation (this file, quality tiers, website sync, ...)
+  guide-migrations.json    #   the reviewed record of guide deletions and renames under skills/
+                           #   (from, to, slug, replacement); the sync-integrity gate reads it
 tools/workbooks/           # Verification-workbook generator (out/ is gitignored build output)
 plugins/ + .claude-plugin/ # Claude Code plugin marketplace manifest + commands
 .github/                   # CI: guide validation + derived-tree freshness (validate.yml),
@@ -92,7 +94,8 @@ If you need a machine-readable listing, read `index.json` or run `python3 script
 ## Which file do I edit?
 
 - **Fix a rate or rule for a country (Malta VAT, Germany payroll, ...):** `skills/international/<country>/`, then regenerate (the three commands above) and commit the output.
-- **Fix a US state skill:** `skills/us-states/<code>/`, then regenerate.
+- **Fix a US state skill:** `skills/us-states/<code>/`, then regenerate. A state guide is named `us-<code>-<topic>` with its file named after the slug (`us-ny-sales-tax.md`); the validator enforces both.
+- **Rename or delete a guide:** record it in `docs/guide-migrations.json` (`from`, `to` or null, `slug`, `replacement`) in the same change and repoint every reference to the replacement slug; the sync-integrity gate fails an unrecorded deletion or rename.
 - **Fix a US federal guide (form guides included):** `skills/federal/`, then regenerate; the build writes it once to `packages/_shared/` for every US package.
 - **Fix a federal rates JSON:** `packages/us-federal/` directly (hand-authored; see the runbook there).
 - **Cross-border / treaty rules:** `skills/cross-border/`, then regenerate.

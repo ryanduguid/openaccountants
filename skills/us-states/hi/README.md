@@ -13,8 +13,8 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `hi-income-tax.md` | Individual income tax (Form N-11) — graduated 1.4%–11%, self-employed focus |
-| `hi-sales-tax.md` | General Excise Tax (GET) obligations for businesses |
+| `us-hi-income-tax.md` | Individual income tax (Form N-11) — graduated 1.4%–11%, self-employed focus |
+| `us-hi-sales-tax.md` | General Excise Tax (GET) obligations for businesses |
 
 ## What's NOT covered
 - Corporate income tax (Form N-30)

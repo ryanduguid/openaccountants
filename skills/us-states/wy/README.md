@@ -14,9 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| `wy-sales-tax.md` | State and local sales & use tax compliance |
-| `wy-formation.md` | Wyoming content skill for entity formation covering tax year 2025 |
-| `wyoming-sales-tax.md` | Wyoming sales tax, Wyoming use tax, Wyoming DOR sales tax filing, or Wyoming sales tax compliance |
+| `us-wy-sales-tax.md` | State and local sales & use tax compliance |
+| `us-wy-formation.md` | Wyoming content skill for entity formation covering tax year 2025 |
 
 ## What's NOT covered
 - Property tax (administered at county level)

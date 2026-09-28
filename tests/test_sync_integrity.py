@@ -550,6 +550,76 @@ class GitBackedIntegrityTests(unittest.TestCase):
         self.assertEqual(1, count)
         self.assertIn("source-removal-needs-review", codes(findings, "error"))
 
+    def _record_migration(self, entries: list[dict]) -> None:
+        """docs/guide-migrations.json is the human-reviewed record the gate reads."""
+        record = self.repo / "docs" / "guide-migrations.json"
+        record.parent.mkdir(exist_ok=True)
+        record.write_text(
+            json.dumps({"migrations": [{"id": "test", "date": "2026-09-28", "reason": "test", "entries": entries}]}),
+            encoding="utf-8",
+            newline="\n",
+        )
+        self.git("add", "docs/guide-migrations.json")
+
+    def test_a_recorded_deletion_passes_the_strict_audit(self) -> None:
+        self._record_migration(
+            [{"from": self.path, "to": None, "slug": "synthetic-guide", "replacement": "other-guide"}]
+        )
+        self.git("rm", "-q", self.path)
+        self.git("commit", "-m", "retire the synthetic guide")
+        head = self.git("rev-parse", "HEAD").strip()
+
+        findings, count = sync_integrity.run_integrity_check(
+            self.repo, self.base, head, "audit", strict_metadata=True
+        )
+
+        self.assertEqual(1, count)
+        self.assertNotIn("source-removal-needs-review", codes(findings))
+        self.assertIn("source-removal-migrated", codes(findings, "notice"))
+        self.assertEqual([], [f for f in findings if f.severity == "error"])
+
+    def test_a_recorded_rename_passes_and_a_body_change_still_needs_a_bump(self) -> None:
+        renamed = "skills/foundation/renamed-synthetic-guide.md"
+        self._record_migration(
+            [{"from": self.path, "to": renamed, "slug": "synthetic-guide", "replacement": "renamed-synthetic-guide"}]
+        )
+        self.git("mv", self.path, renamed)
+        self.git("commit", "-m", "rename the synthetic guide")
+        head = self.git("rev-parse", "HEAD").strip()
+
+        findings, count = sync_integrity.run_integrity_check(
+            self.repo, self.base, head, "audit", strict_metadata=True
+        )
+        self.assertEqual(1, count)
+        self.assertEqual([], [f for f in findings if f.severity == "error"])
+        self.assertIn("source-rename-migrated", codes(findings, "notice"))
+
+        # The rename is recorded, but the guide is still the same guide: an
+        # edit to its body without a metadata bump fails as it always did.
+        (self.repo / renamed).write_text(guide(body="Edited after the rename."), encoding="utf-8", newline="\n")
+        self.git("add", renamed)
+        self.git("commit", "-m", "edit without a bump")
+        head = self.git("rev-parse", "HEAD").strip()
+
+        findings, _ = sync_integrity.run_integrity_check(
+            self.repo, self.base, head, "audit", strict_metadata=True
+        )
+        self.assertIn("unversioned-body-change", codes(findings, "error"))
+
+    def test_a_rename_recorded_to_another_path_is_not_authorised(self) -> None:
+        renamed = "skills/foundation/renamed-synthetic-guide.md"
+        self._record_migration(
+            [{"from": self.path, "to": "skills/foundation/somewhere-else.md", "slug": "synthetic-guide", "replacement": "x"}]
+        )
+        self.git("mv", self.path, renamed)
+        self.git("commit", "-m", "rename to a path the record does not name")
+        head = self.git("rev-parse", "HEAD").strip()
+
+        findings, _ = sync_integrity.run_integrity_check(
+            self.repo, self.base, head, "audit", strict_metadata=True
+        )
+        self.assertIn("source-removal-needs-review", codes(findings, "error"))
+
     def test_merge_base_excludes_unrelated_main_only_changes(self) -> None:
         self.git("checkout", "-b", "feature")
         self.write_candidate(

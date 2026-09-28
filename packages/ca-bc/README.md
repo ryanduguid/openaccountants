@@ -12,7 +12,10 @@ financial statements, transfer pricing, tax optimization), which are shared file
 listed below. Upload all of them together.
 
 1. `intake.md`
-2. `bc-individual-return.md`
+2. `bc-eht.md`
+3. `bc-individual-return.md`
+4. `bc-pst.md`
+5. `bc-speculation-vacancy-tax.md`
 
 ## Shared files this package needs
 

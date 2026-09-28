@@ -14,7 +14,7 @@
 
 | File | What it covers |
 |---|---|
-| `mt-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 2) |
+| `us-mt-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 2) |
 
 ## What's NOT covered
 

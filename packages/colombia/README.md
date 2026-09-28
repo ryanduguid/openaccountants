@@ -11,9 +11,8 @@
 4. `co-income-tax.md`
 5. `co-social-contributions.md`
 6. `co-tax-overview.md`
-7. `co-vat-return.md`
-8. `colombia-iva.md`
-9. `formalizing-small-informal-businesses-in-colombia.md`
+7. `colombia-iva.md`
+8. `formalizing-small-informal-businesses-in-colombia.md`
 
 ## Shared files this package needs
 

@@ -7,15 +7,14 @@
 
 1. `intake.md`
 2. `sg-cpf-medisave.md`
-3. `sg-gst-return.md`
-4. `sg-income-tax.md`
-5. `sg-tax-residency.md`
-6. `sg-zero-cgt.md`
-7. `singapore-crypto-tax.md`
-8. `singapore-formation.md`
-9. `singapore-gst.md`
-10. `singapore-tax-optimization.md`
-11. `singapore-transfer-pricing.md`
+3. `sg-income-tax.md`
+4. `sg-tax-residency.md`
+5. `sg-zero-cgt.md`
+6. `singapore-crypto-tax.md`
+7. `singapore-formation.md`
+8. `singapore-gst.md`
+9. `singapore-tax-optimization.md`
+10. `singapore-transfer-pricing.md`
 
 ## Shared files this package needs
 

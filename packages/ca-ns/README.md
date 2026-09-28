@@ -13,6 +13,7 @@ listed below. Upload all of them together.
 
 1. `intake.md`
 2. `ns-individual-return.md`
+3. `ns-tax-credits.md`
 
 ## Shared files this package needs
 

@@ -1,14 +1,14 @@
 ---
 name: company-formation-workflow-base
 description: Universal company formation and entity selection workflow base that defines the entity comparison, registration checklist, and ongoing compliance runbook for all jurisdictions. Contains no jurisdiction-specific content — no entity type names, no registration fees, no filing portals. This skill MUST be loaded alongside a country-specific formation skill that provides the entity types, registration authorities, and local requirements. This skill alone cannot produce any output.
-version: 1.0
+version: 1.1
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
 last_updated: 2026-09-28
 ---
 
-# Company Formation Workflow Base Skill v1.0
+# Company Formation Workflow Base Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -16,7 +16,7 @@ last_updated: 2026-09-28
 
 **This file contains workflow architecture only.** It defines how Claude should approach a company formation advisory task: the order of operations, how to compare entity types, how to build a registration checklist, how to identify ongoing compliance obligations, what to produce as output, what to check before delivering. It contains no entity type names, no registration fees, no share capital requirements, no filing portals, no notary fee schedules, no specific tax rates.
 
-**This file must always be loaded with a country-specific formation skill** that provides the available entity types, registration authorities, capital requirements, and local compliance rules (e.g., `uk-formation`, `australia-formation`, `de-formation`). This file alone cannot produce an entity comparison, a registration checklist, or a compliance calendar. Loading it without a companion is a configuration error and Claude must refuse to proceed.
+**This file must always be loaded with a country-specific formation skill** that provides the available entity types, registration authorities, capital requirements, and local compliance rules (e.g., `uk-formation`, `australia-formation`, `germany-formation`). This file alone cannot produce an entity comparison, a registration checklist, or a compliance calendar. Loading it without a companion is a configuration error and Claude must refuse to proceed.
 
 **This file is the contract.** When a country formation skill says it conforms to v1.0 of this base, it means: it fills the country slots specified in Section 5, it produces outputs in the format specified in Section 3, its recommendations can be validated by the self-checks in Section 4, and it participates in the workflow in Section 1.
 

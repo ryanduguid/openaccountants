@@ -14,8 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| `ne-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 1040N) |
-| `ne-sales-tax.md` | State and local sales & use tax compliance |
+| `us-ne-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 1040N) |
+| `us-ne-sales-tax.md` | State and local sales & use tax compliance |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes

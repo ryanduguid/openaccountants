@@ -7,7 +7,12 @@
 
 1. `intake.md`
 2. `ae-company-formation.md`
-3. `ae-vat-return.md`
+3. `ae-corporate-tax.md`
+4. `ae-income-tax.md`
+5. `ae-payroll-social.md`
+6. `ae-tax-overview.md`
+7. `ae-tax-residency.md`
+8. `uae-vat.md`
 
 ## Shared files this package needs
 
@@ -15,7 +20,14 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 
+
+## Also known as
+
+VAT, corporate tax, tax agent, TRN, free zone
+
+Tax authority: **Federal Tax Authority (FTA)**
 
 ## How to use
 
@@ -49,7 +61,7 @@ These United Arab Emirates tax skills need your eye. Every rate, threshold, and 
 **You don't need to use GitHub.** Just:
 
 1. Download the files in this folder
-2. Check the rates against your national tax authority's website
+2. Check the rates against Federal Tax Authority (FTA)'s website
 3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
 We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).

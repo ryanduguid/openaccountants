@@ -13,8 +13,7 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `id-sales-tax.md` | Sales and use tax obligations (6% state rate) |
-| `idaho-sales-tax.md` | Idaho sales and use tax |
+| `us-id-sales-tax.md` | Sales and use tax obligations (6% state rate) |
 
 ## What's NOT covered
 - Corporate income tax

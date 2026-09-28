@@ -3,6 +3,7 @@ name: us-pl-86-272-income-tax-nexus
 description: Tier 2 US federal content skill for Public Law 86-272 (15 USC §§381-384) — the federal statute that prevents states from imposing income tax on out-of-state sellers whose only activity is solicitation of tangible personal property orders shipped from out of state. Covers the 2021/2024 MTC revised statement that erodes P.L. 86-272 protection for nearly all internet-era activities (customer accounts, live chat, online reviews, post-sale service), California's FTB Legal Rulings 2022-01/02, New York's 2023 adoption, the Wisconsin v. Wrigley solicitation safe harbor, the factor-presence economic nexus model ($50k payroll, $500k receipts), and voluntary disclosure agreement processes. Tax year 2025.
 jurisdiction: US
 tax_year: 2025
+version: 1.1
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: current
@@ -40,7 +41,7 @@ Combined / unitary reporting consequences once income tax nexus is established.
 
 Voluntary disclosure agreement (VDA) mechanics: typical 3–4 year lookback, penalty waiver, anonymous front-loaded negotiation.
 
-- **Scope exclusions (refusal catalogue)** — State sales tax registration, collection, remittance — see the relevant state sales tax skill (e.g., texas-sales-tax, california-sales-use-tax). Federal income tax computation under Subchapter C or Subchapter S — see us-form-1120-c-corp, the partnership skill, or the sole-prop skills. State-specific income tax return preparation — see ca-540-individual-return, ca-smllc-form-568, and other state skills. Foreign (non-U.S.) income tax nexus, permanent establishment, treaty-based positions — see treaty / PE skills. Property tax, payroll/withholding tax, unemployment insurance, occupational license — not covered. Local (city / county) income tax (e.g., Portland Multnomah BIT, New York City UBT, Philadelphia BIRT) — P.L. 86-272 does NOT apply to local income taxes, only state income taxes. If the client has Philadelphia or NYC exposure, refer the question out. Banks, insurance companies, common carriers — P.L. 86-272 explicitly excludes these from the protection it provides (15 U.S.C. §381(c)). Tax planning that crosses into a recommended-tax-shelter analysis under Circular 230 §10.35.  _(15 U.S.C. §381(c); Circular 230 §10.35)_
+- **Scope exclusions (refusal catalogue)** — State sales tax registration, collection, remittance — see the relevant state sales tax skill (e.g., us-tx-sales-use-tax, california-sales-use-tax). Federal income tax computation under Subchapter C or Subchapter S — see us-form-1120-c-corp, the partnership skill, or the sole-prop skills. State-specific income tax return preparation — see us-ca-540-individual-return, us-ca-smllc-form-568, and other state skills. Foreign (non-U.S.) income tax nexus, permanent establishment, treaty-based positions — see treaty / PE skills. Property tax, payroll/withholding tax, unemployment insurance, occupational license — not covered. Local (city / county) income tax (e.g., Portland Multnomah BIT, New York City UBT, Philadelphia BIRT) — P.L. 86-272 does NOT apply to local income taxes, only state income taxes. If the client has Philadelphia or NYC exposure, refer the question out. Banks, insurance companies, common carriers — P.L. 86-272 explicitly excludes these from the protection it provides (15 U.S.C. §381(c)). Tax planning that crosses into a recommended-tax-shelter analysis under Circular 230 §10.35.  _(15 U.S.C. §381(c); Circular 230 §10.35)_
 
 Assumed reviewer: A Circular 230 practitioner (EA, CPA, or attorney) admitted in at least one U.S. jurisdiction, who reviews and signs off on every output before it reaches the client or any state revenue department. This skill produces working-paper memoranda — not advice that goes directly to a taxpayer.
 
@@ -459,9 +460,9 @@ START: Is the in-state activity TPP-sales-related?
 - `us-form-1120-c-corp` — C-corporation income tax computation.
 - `us-form-1065-partnership` — partnership income flow-through.
 - `us-pte-state-matrix` — state pass-through entity tax election framework.
-- `ca-540-individual-return`, `ca-smllc-form-568` — California taxpayer-side compliance.
-- `texas-sales-tax`, `tx-franchise-tax` — Texas state tax companions.
-- `california-sales-tax` — California sales/use tax companion.
+- `us-ca-540-individual-return`, `us-ca-smllc-form-568` — California taxpayer-side compliance.
+- `us-tx-sales-use-tax`, `us-tx-franchise-tax` — Texas state tax companions.
+- `us-ca-sales-tax` — California sales/use tax companion.
 - `us-tax-workflow-base` — Tier 1 workflow runbook (load first).
 
 All output of this skill must be reviewed and signed off by a Circular 230 practitioner (EA, CPA, or attorney) before delivery to the taxpayer or any state revenue department. The MTC interpretation is contested; constitutional defenses should be preserved in protective filings; voluntary disclosure decisions involve material commercial judgment beyond the scope of this skill.

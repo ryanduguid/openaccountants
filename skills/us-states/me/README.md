@@ -14,9 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| `me-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 1040ME) |
-| `me-sales-tax.md` | Sales and use tax obligations and rates |
-| `maine-sales-tax.md` | Maine sales and use tax |
+| `us-me-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 1040ME) |
+| `us-me-sales-tax.md` | Sales and use tax obligations and rates |
 
 ## What's NOT covered
 

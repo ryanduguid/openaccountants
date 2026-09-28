@@ -13,6 +13,7 @@ listed below. Upload all of them together.
 
 1. `intake.md`
 2. `nb-individual-return.md`
+3. `nb-tax-credits.md`
 
 ## Shared files this package needs
 

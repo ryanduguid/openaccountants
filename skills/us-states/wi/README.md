@@ -14,10 +14,9 @@
 
 | File | What it covers |
 |---|---|
-| `wi-income-tax.md` | Wisconsin individual income tax, Wisconsin Form 1, Wisconsin graduated tax rates, Wisconsin... |
-| `wi-payroll.md` | Wisconsin Payroll Skill (Tax Year 2025) |
-| `wi-sales-tax.md` | Wisconsin sales tax, Wisconsin use tax, Wisconsin sales tax nexus, Wisconsin sales tax returns, Wisconsin... |
-| `wisconsin-sales-tax.md` | Wisconsin sales tax, Wisconsin use tax, Wisconsin sales tax nexus, Wisconsin sales tax returns, Wisconsin... |
+| `us-wi-income-tax.md` | Wisconsin individual income tax, Wisconsin Form 1, Wisconsin graduated tax rates, Wisconsin... |
+| `us-wi-payroll.md` | Wisconsin Payroll Skill (Tax Year 2025) |
+| `us-wi-sales-tax.md` | Wisconsin sales tax, Wisconsin use tax, Wisconsin sales tax nexus, Wisconsin sales tax returns, Wisconsin... |
 
 ## What's NOT covered
 

@@ -8,12 +8,11 @@
 1. `intake.md`
 2. `rw-company-formation.md`
 3. `rw-corporate-income-tax.md`
-4. `rw-income-tax.md`
-5. `rw-tax-overview.md`
-6. `rwanda-income-tax.md`
-7. `rwanda-payroll.md`
-8. `rwanda-social-contributions.md`
-9. `rwanda-vat.md`
+4. `rw-tax-overview.md`
+5. `rwanda-income-tax.md`
+6. `rwanda-payroll.md`
+7. `rwanda-social-contributions.md`
+8. `rwanda-vat.md`
 
 ## Shared files this package needs
 

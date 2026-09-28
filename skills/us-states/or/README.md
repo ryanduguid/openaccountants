@@ -14,9 +14,9 @@
 
 | File | What it covers |
 |---|---|
-| `or-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form OR-40) |
-| `or-cat.md` | Oregon Corporate Activity Tax is a gross receipts tax (not an income tax) imposed under ORS Chapter 317A... |
-| `or-payroll.md` | Oregon content skill for employer payroll compliance covering tax year 2025 |
+| `us-or-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form OR-40) |
+| `us-or-cat.md` | Oregon Corporate Activity Tax is a gross receipts tax (not an income tax) imposed under ORS Chapter 317A... |
+| `us-or-payroll.md` | Oregon content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
 - Corporate Activity Tax (CAT) — applies to businesses with >$1M in Oregon taxable commercial activity; $250 + 0.57% of taxable commercial activity over $1M
