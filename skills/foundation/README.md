@@ -9,7 +9,9 @@ Tier-1 workflow architectures. Every domain has a base that explains *how* the w
 | [`workflow-base.md`](workflow-base.md) | Universal cross-domain workflow contract — output format, classification contract, conservative defaults |
 | [`us-tax-workflow-base.md`](us-tax-workflow-base.md) | US federal tax workflow — IRC navigation, federal/state interaction, OBBBA coverage |
 | [`vat-workflow-base.md`](vat-workflow-base.md) | VAT return preparation lifecycle for any country |
+| [`income-tax-workflow-base.md`](income-tax-workflow-base.md) | Personal income tax computation lifecycle — individuals, sole traders, freelancers |
 | [`corporate-income-tax-workflow-base.md`](corporate-income-tax-workflow-base.md) | Corporate income tax computation lifecycle |
+| [`social-contributions-workflow-base.md`](social-contributions-workflow-base.md) | Social security / health / pension contributions — bases, floors, ceilings, shares, remittance reconciliation |
 | [`crypto-tax-workflow-base.md`](crypto-tax-workflow-base.md) | Crypto-asset taxation lifecycle |
 | [`wealth-estate-tax-workflow-base.md`](wealth-estate-tax-workflow-base.md) | Wealth / estate / IHT / gift / property transfer tax |
 | [`customs-duties-workflow-base.md`](customs-duties-workflow-base.md) | Customs declaration lifecycle |

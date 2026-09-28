@@ -139,12 +139,20 @@ Platforms: Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon Seller Centra
 
 ## Part 2 — Infrastructure skills
 
-### Foundation workflow bases (10 files)
+### Foundation workflow bases (18 files)
 
 | File | Domain | Purpose |
 |------|--------|---------|
 | `workflow-base.md` | Universal | Core principles: conservative defaults, reviewer assumption, output spec, prohibitions |
 | `vat-workflow-base.md` | Tax (VAT) | VAT/GST-specific classification and return workflow |
+| `income-tax-workflow-base.md` | Tax (personal income) | Individual / sole-trader computation ladder, allowances, credits, settlement |
+| `corporate-income-tax-workflow-base.md` | Tax (corporate) | Book-to-tax reconciliation, credits, Pillar Two overlay, deferred tax |
+| `social-contributions-workflow-base.md` | Social contributions | Bases, floors, ceilings, employee/employer shares, remittance reconciliation |
+| `crypto-tax-workflow-base.md` | Tax (crypto) | Disposal and income classification for crypto-assets |
+| `wealth-estate-tax-workflow-base.md` | Tax (wealth/estate) | Wealth, estate, inheritance, gift and property transfer taxes |
+| `customs-duties-workflow-base.md` | Customs | Customs declaration lifecycle |
+| `excise-tax-workflow-base.md` | Excise | Excise duty on alcohol, tobacco, fuel, plastic, sugar |
+| `statutory-audit-workflow-base.md` | Audit | ISA-aligned audit lifecycle |
 | `us-tax-workflow-base.md` | Tax (US) | US federal/state tax workflow (IRS-specific) |
 | `bookkeeping-workflow-base.md` | Bookkeeping | Double-entry posting, chart of accounts, P&L/BS |
 | `einvoice-workflow-base.md` | E-invoicing | Format validation, mandatory fields, transmission |

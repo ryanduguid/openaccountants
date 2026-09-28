@@ -4,10 +4,10 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 1.0
 jurisdiction: CN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-28
 review_status: pending_review
 depends_on:
-  - foundation
+  - workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
