@@ -156,10 +156,14 @@ class AppendTests(unittest.TestCase):
 
         self.assertEqual(new_text, NORMAL_BUMPED)
 
-    def test_template_guides_are_left_without_a_block(self) -> None:
+    def test_exempt_guides_are_left_without_a_block(self) -> None:
         text = FRONTMATTER + BODY
 
-        for rel in ("skills/templates/x.md", "skills/cross-border/treaty-corridors/_templates/dtt-template.md"):
+        for rel in (
+            "skills/templates/x.md",
+            "skills/cross-border/treaty-corridors/_templates/dtt-template.md",
+            "skills/integrations/stripe-integration.md",
+        ):
             with self.subTest(rel=rel):
                 new_text, actions, _ = run(text, rel=rel)
                 self.assertEqual(new_text, text)

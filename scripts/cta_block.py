@@ -58,12 +58,16 @@ version (and the professional behind it) is at
 > licensed professional before relying on them.
 """
 
-#: Directories whose guides are scaffolding for new guides, not published
-#: guides: they may omit the block. (They must still not carry two.) Any other
-#: guide under skills/ or packages/us-federal/ must carry the marker.
+#: Directories whose guides may omit the block. (They must still not carry
+#: two.) The template directories hold scaffolding for new guides, not
+#: published guides; skills/integrations/ holds platform guides (export
+#: formats, column mappings, reconciliation) that are not tax guides and carry
+#: no accountant CTA, by the maintainer's decision after #40 stamped them. Any
+#: other guide under skills/ or packages/us-federal/ must carry the marker.
 OPTIONAL_DIRS = (
     "skills/templates",
     "skills/cross-border/treaty-corridors/_templates",
+    "skills/integrations",
 )
 
 

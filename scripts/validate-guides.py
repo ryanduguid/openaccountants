@@ -44,8 +44,9 @@ Checks (ERROR = exit 1, WARN = printed summary only):
   10. The closing CTA block (scripts/cta_block.py): at most one "Talk to a
      verified accountant" section per guide, and the
      `<!-- openaccountants-cta-block -->` marker must be present and introduce
-     that section — ERROR otherwise, except that the template directories in
-     cta_block.OPTIONAL_DIRS may omit the block. Repair with:
+     that section — ERROR otherwise, except that the directories in
+     cta_block.OPTIONAL_DIRS (templates, integrations) may omit the block.
+     Repair with:
      python3 scripts/normalize-cta-block.py --apply
 
 Checks 5, 7 and 8 are the derived-tree freshness checks. The derived trees
