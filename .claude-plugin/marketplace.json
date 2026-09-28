@@ -8,7 +8,7 @@
     {
       "name": "openaccountants",
       "source": "./plugins/openaccountants",
-      "description": "Accountant-verified tax skills for AI — connects the hosted OpenAccountants MCP (190+ jurisdictions) and adds a /openaccountants command."
+      "description": "Tax guides for AI agents via the self-hosted OpenAccountants MCP server (stdio; needs `pip install ./mcp` and OPENACCOUNTANTS_ROOT pointing at a checkout) plus a /openaccountants command."
     }
   ]
 }

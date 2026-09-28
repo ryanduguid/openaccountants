@@ -2,9 +2,11 @@
 
 <!-- mcp-name: io.github.openaccountants/openaccountants-mcp -->
 
-A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to 134 countries + 51 US state packages + 13 Canadian provinces/territories of open-source accounting skills across 10 domains (tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border, and more) — no manual file uploads.
+A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to the open-source accounting skills in a checkout of this repository — at the time of writing 1,835 skills from 187 country packages, 51 US state packages (50 states + DC) plus `us-federal`, 13 Canadian province/territory packages, and the `_cross-border`, `_verticals` and `_integrations` bundles, across tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border and more — no manual file uploads.
 
-> **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown bundled with the package (or in your local checkout). The **hosted server** at `https://www.openaccountants.com/api/mcp` reads the production database and exposes a larger surface that includes the **accountant-reviewed** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is the product; this self-hosted one is the open research base.
+> **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown in a checkout of this repository. The **hosted server** at `https://www.openaccountants.com/api/mcp` belongs to the upstream project: it reads the production database and exposes a larger surface that includes the **accountant-reviewed** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is upstream's product; this self-hosted one is the open research base.
+
+> **This fork.** The hosted endpoint is not operated from this fork (see the [root README](../README.md)), and a wheel built from `mcp/` here ships **only the server code — no guides**. Run the server from a checkout of this repository, or point `OPENACCOUNTANTS_ROOT` at one. If it cannot find `packages/`, it logs a warning when it first builds the catalogue and every tool says so explicitly — an `error` field from `list_skills` / `search_skills`, `status: "error"` from `start`, a raised error from `get_skill` — instead of answering with an empty catalogue as if that were the corpus.
 
 ## Why this exists
 
@@ -22,22 +24,25 @@ Claude: walks you through entity selection, registration, and tax setup
 
 Install once, configure once — skills are available in every conversation from that point on.
 
-US states work the same way:
+US states work the same way. Federal guides carry `jurisdiction: US`, so `US-CA` returns only the California package's own skills; ask for `US` separately:
 
 ```
 You:    "Help me with my California taxes. Here's my bank statement."
           ↓
-Claude: calls list_skills(jurisdiction="US-CA") → federal + CA state skills
-Claude: calls get_skill("ca-income-tax") → state rules loaded
+Claude: calls list_skills(jurisdiction="US-CA") → ca-540-individual-return, california-sales-tax, ca-payroll, …
+Claude: calls list_skills(jurisdiction="US")    → us-form-1040-individual-return, us-quarterly-estimated-tax, …
+Claude: calls get_skill("ca-540-individual-return") → state rules loaded
           ↓
 Claude: now processes with federal AND California rules
 ```
+
+(Slugs come from each guide's `name:` frontmatter, not its file name: `packages/us-ca/ca-income-tax.md` is `ca-540-individual-return`.)
 
 Special packages are also available:
 
 | Package | What's inside |
 |---------|--------------|
-| `_cross-border` | 37 skills — multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, 70+ treaty corridor WHT rates |
+| `_cross-border` | 40 skills — multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, 70+ treaty corridor WHT rates |
 | `_verticals` | 14 industry-specific skills — banking, charity / nonprofit, construction, consultant, content creator, e-commerce, freelance developer, insurance, investment funds / REITs, medical, oil & gas, property investor, SaaS, shipping / aviation |
 | `_integrations` | 10 platform export formats — Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon, Shopify, FreeAgent, Sage |
 
@@ -93,13 +98,13 @@ Guided workflows that turn the skills into a tax engine, not just a library:
 
 > Note: the on-disk server reads the open-source markdown in `packages/`. Most skill files don't carry a `jurisdiction` field, so it's inherited from the package directory (the folder name for `us-XX`/`ca-XX`, otherwise the code its siblings declare). Quality tier is derived from a file's explicit `tier` frontmatter: only `tier: 1` **plus** a named reviewer (`reviewed_by`, or the legacy `verified_by`) reports as accountant-verified. A reviewer name on its own no longer implies tier 1, and a non-tier-1 file's reviewer is not exposed as `verified_by`.
 
-> **Canadian users on a development (clone) install — important:** the `ca-XX/` provincial packages (`ca-on`, `ca-qc`, `ca-bc`, …) are **generated**, not checked in. After cloning, run `python3 scripts/build-packages.py` once to materialise them. Until you do, the MCP won't return Canadian provincial skills via `list_skills(jurisdiction="CA-ON")` — only the federal Canadian files visible under `packages/canada/`. (The PyPI wheel ships with the packages already built.)
+> **Canadian packages:** the `ca-XX/` provincial packages (`ca-on`, `ca-qc`, `ca-bc`, …) are checked in to this tree, so a clone needs no build step to serve them (after editing `skills/`, regenerate with `python3 scripts/build-packages.py`). Their guides declare `jurisdiction: CA` in frontmatter, and a declared code beats the folder name, so filter with `list_skills(jurisdiction="CA")` — `list_skills(jurisdiction="CA-ON")` currently returns nothing. Copies shared byte-for-byte by several provinces are listed once. `packages/canada/` holds only a README.
 
 ## Quick start
 
 Three ways to install, easiest first.
 
-### Option 1 — Hosted endpoint (1 step, nothing to install)
+### Option 1 — Hosted endpoint (upstream's; not operated from this fork)
 
 Point any remote-capable MCP client at:
 
@@ -107,20 +112,21 @@ Point any remote-capable MCP client at:
 https://www.openaccountants.com/api/mcp
 ```
 
-That's it. The hosted server is the full product surface (live database, accountant-reviewed tier, `request_accountant_review`, `get_rates`, and more — see the note at the top).
+The hosted server is the upstream project's full product surface (live database, accountant-reviewed tier, `request_accountant_review`, `get_rates`, and more — see the note at the top). It is not run from this fork, and its behaviour may differ from the code in this tree.
 
-### Option 2 — Install from PyPI (no clone needed)
+### Option 2 — Install from PyPI (upstream's package)
 
-Requires **Python 3.10+**. The wheel bundles all skill packages — you do not need a checkout of this repo:
+Requires **Python 3.10+**. Upstream publishes `openaccountants-mcp` from a separate repository ([`openaccountants/openaccountants-mcp`](https://github.com/openaccountants/openaccountants-mcp)) that vendors a copy of `packages/`. This fork does not publish to PyPI, and a wheel built from this tree contains only the server code (see the note at the top), so if the server reports an empty catalogue, point it at a checkout:
 
 ```bash
 pip install openaccountants-mcp
+export OPENACCOUNTANTS_ROOT=/path/to/openaccountants   # a checkout containing packages/
 ```
 
 Or run it directly with `uvx`:
 
 ```bash
-uvx openaccountants-mcp
+OPENACCOUNTANTS_ROOT=/path/to/openaccountants uvx openaccountants-mcp
 ```
 
 Then connect your AI client (next section) using the `openaccountants-mcp` command.
@@ -132,14 +138,16 @@ For contributors, or if you want the server to read your local, editable checkou
 ```bash
 git clone https://github.com/openaccountants/openaccountants.git
 cd openaccountants
-pip install ./mcp
+pip install -e ./mcp
 ```
 
 Or with `uv`:
 
 ```bash
-uv pip install ./mcp
+uv pip install -e ./mcp
 ```
+
+Use an **editable** install (`-e`) or set `OPENACCOUNTANTS_ROOT`. A plain `pip install ./mcp` copies only the code into site-packages; the server then looks for `packages/` two directories above the installed module, finds nothing, and reports an empty catalogue on every call (with a warning on stderr saying where it looked). `uv run --directory mcp openaccountants-mcp` from the repo root also works without installing anything.
 
 The server reads `packages/` from the repo root (override with `OPENACCOUNTANTS_ROOT`, see environment variables below).
 
@@ -155,11 +163,14 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
 {
   "mcpServers": {
     "openaccountants": {
-      "command": "openaccountants-mcp"
+      "command": "openaccountants-mcp",
+      "env": { "OPENACCOUNTANTS_ROOT": "/path/to/openaccountants" }
     }
   }
 }
 ```
+
+`OPENACCOUNTANTS_ROOT` is only required when the install is not editable (see above), but it never hurts: the server reads `$OPENACCOUNTANTS_ROOT/packages/`.
 
 If installed in a virtualenv or with `uv`:
 
@@ -182,11 +193,16 @@ Add to `.cursor/mcp.json` in the project (or via Cursor Settings > MCP):
 {
   "mcpServers": {
     "openaccountants": {
-      "command": "openaccountants-mcp"
+      "command": "openaccountants-mcp",
+      "env": { "OPENACCOUNTANTS_ROOT": "/path/to/openaccountants" }
     }
   }
 }
 ```
+
+#### Claude Code plugin
+
+The repo root is a Claude Code plugin marketplace (`.claude-plugin/marketplace.json`) with one plugin, `openaccountants`, that registers the same `openaccountants-mcp` stdio command and adds a `/openaccountants` slash command. Install the server first (`pip install -e ./mcp`, or any install plus `OPENACCOUNTANTS_ROOT` exported in the shell that launches Claude Code), then add the marketplace from your checkout.
 
 #### Any other MCP client
 
@@ -222,11 +238,31 @@ Docker example above deliberately sets `MCP_HOST=0.0.0.0` **inside the container
 while binding the published host port to `127.0.0.1`. That keeps the endpoint
 available only to local clients.
 
-Remote network binding is an explicit operator choice, not a default:
+FastMCP validates the `Host` and `Origin` headers (its DNS-rebinding protection)
+on its own **only for loopback binds**. With any other `MCP_HOST` it validates
+nothing unless told what to accept, so a spoofed `Host` or `Origin` is served
+like a genuine one. `MCP_ALLOWED_HOSTS` / `MCP_ALLOWED_ORIGINS` supply that list:
+requests carrying another `Host` get HTTP 421 and a disallowed `Origin` gets
+HTTP 403. The image ships with both set to the localhost patterns the example
+above needs (`localhost:*,127.0.0.1:*,[::1]:*` and their `http://` forms), so the
+`0.0.0.0` bind inside the container is as protected as a loopback bind. When you
+bind beyond loopback without an allow-list, the server logs a warning at startup.
+
+Remote network binding is an explicit operator choice, not a default. Name the
+hosts clients will use (a trailing `:*` accepts any port) and, for browser-based
+clients, their origins; non-browser MCP clients send no `Origin` header and are
+always accepted:
 
 ```bash
-MCP_TRANSPORT=streamable-http MCP_HOST=0.0.0.0 openaccountants-mcp
+MCP_TRANSPORT=streamable-http MCP_HOST=0.0.0.0 \
+MCP_ALLOWED_HOSTS=mcp.example.com \
+MCP_ALLOWED_ORIGINS=https://app.example.com \
+openaccountants-mcp
 ```
+
+The same variables apply to a loopback bind: a local reverse proxy that forwards
+its public `Host` header to `127.0.0.1:8000` needs that name in
+`MCP_ALLOWED_HOSTS`, or every request is answered with 421.
 
 This package does not add an authentication layer. Only use a non-loopback
 `MCP_HOST` behind an authenticated, TLS-terminating reverse proxy or equivalent
@@ -247,11 +283,13 @@ The default stdio transport (`pip install ./mcp && openaccountants-mcp`) is unch
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `OPENACCOUNTANTS_ROOT` | Auto-detected repo root (parent of `mcp/`) | Path to your OpenAccountants checkout. The server reads `$OPENACCOUNTANTS_ROOT/packages/`. |
+| `OPENACCOUNTANTS_ROOT` | Auto-detected repo root (two directories above the installed module, i.e. the parent of `mcp/` for an editable install) | Path to your OpenAccountants checkout. The server reads `$OPENACCOUNTANTS_ROOT/packages/`. An empty value counts as unset. When that directory is missing or holds no skill files, the server logs a warning and every tool reports the problem instead of serving an empty catalogue. |
 | `MCP_TRANSPORT` | `stdio` | `stdio`, `streamable-http`, or `sse`. HTTP transports let remote MCP clients connect via a reverse proxy. |
 | `MCP_HOST` | `127.0.0.1` | Bind host for HTTP transports. Set explicitly, for example to `0.0.0.0`, only when an authenticated reverse proxy or equivalent network boundary is intentionally exposing the service. |
 | `MCP_PORT` | `8000` | Bind port for HTTP transports. |
 | `MCP_STREAMABLE_HTTP_PATH` | `/mcp` | Path the Streamable-HTTP endpoint is mounted at. Set to `/` when behind a proxy that strips the upstream prefix. |
+| `MCP_ALLOWED_HOSTS` | unset (FastMCP protects loopback binds itself; other binds validate nothing) | Comma-separated `Host` header values to accept on HTTP transports, e.g. `localhost:*,127.0.0.1:*` or `mcp.example.com`; `:*` accepts any port. Other hosts get HTTP 421. |
+| `MCP_ALLOWED_ORIGINS` | unset | Comma-separated `Origin` header values to accept, e.g. `http://localhost:*`; only meaningful together with `MCP_ALLOWED_HOSTS`. Other origins get HTTP 403; requests without an `Origin` header are always accepted. |
 
 ## What changes vs manual upload
 
@@ -270,7 +308,7 @@ Run from the repo root to verify everything works:
 python mcp/smoke_test.py
 ```
 
-All checks should pass (path safety, tool outputs, jurisdiction count, US state discovery).
+All checks should pass (path safety, tool outputs, catalogue invariants — every skill file parsed, total = distinct slugs minus ambiguous ones — US state and federal discovery, and the explicit error every tool returns when `packages/` is missing). The unit tests live in `mcp/tests/` and run with `python -m pytest mcp/tests -q` (or `python -m unittest discover -s mcp/tests`); the HTTP tests start the server on a free port and check the 421/403 answers to spoofed `Host`/`Origin` headers.
 
 ## Disclaimer
 

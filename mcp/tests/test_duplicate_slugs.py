@@ -189,6 +189,8 @@ class DuplicateSlugTests(unittest.TestCase):
         self.assertEqual(
             server._duplicate_report(),
             {
+                "packages_dir": str(self.packages),
+                "packages_dir_exists": True,
                 "skill_files": 3,
                 "slugs": 2,
                 "duplicate_slugs": 1,
