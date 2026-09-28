@@ -6,7 +6,7 @@ A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server th
 
 > **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown in a checkout of this repository. The **hosted server** at `https://www.openaccountants.com/api/mcp` belongs to the upstream project: it reads the production database and exposes a larger surface that includes the **accountant-reviewed** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is upstream's product; this self-hosted one is the open research base.
 
-> **This fork.** The hosted endpoint is not operated from this fork (see the [root README](../README.md)), and a wheel built from `mcp/` here ships **only the server code — no guides**. Run the server from a checkout of this repository, or point `OPENACCOUNTANTS_ROOT` at one. If it cannot find `packages/`, it logs a warning when it first builds the catalogue and every tool says so explicitly — an `error` field from `list_skills` / `search_skills`, `status: "error"` from `start`, a raised error from `get_skill` — instead of answering with an empty catalogue as if that were the corpus.
+> **This fork.** The hosted endpoint is not operated from this fork (see the [root README](../README.md)), and a wheel built from `mcp/` here ships **only the server code — no guides**. Point `OPENACCOUNTANTS_ROOT` at a checkout of this repository, or install the server editable from one (`pip install -e ./mcp`); the working directory is not consulted. If it cannot find `packages/`, it logs a warning when it first builds the catalogue and every tool says so explicitly — an `error` field from `list_skills` / `search_skills`, `status: "error"` from `start`, a raised error from `get_skill` — instead of answering with an empty catalogue as if that were the corpus.
 
 ## Why this exists
 
@@ -147,7 +147,7 @@ Or with `uv`:
 uv pip install -e ./mcp
 ```
 
-Use an **editable** install (`-e`) or set `OPENACCOUNTANTS_ROOT`. A plain `pip install ./mcp` copies only the code into site-packages; the server then looks for `packages/` two directories above the installed module, finds nothing, and reports an empty catalogue on every call (with a warning on stderr saying where it looked). `uv run --directory mcp openaccountants-mcp` from the repo root also works without installing anything.
+Use an **editable** install (`-e`) or set `OPENACCOUNTANTS_ROOT`. A plain `pip install ./mcp` copies only the code into site-packages; the server then looks for `packages/` two directories above the installed module, whatever directory you launch it from, finds nothing, and reports an empty catalogue on every call (with a warning on stderr saying where it looked). `uv run --directory mcp openaccountants-mcp` from the repo root also works without installing anything.
 
 The server reads `packages/` from the repo root (override with `OPENACCOUNTANTS_ROOT`, see environment variables below).
 

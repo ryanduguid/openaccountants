@@ -15,8 +15,10 @@ This mirrors the tool/prompt surface of the hosted server at
 Where the hosted server reads from the OpenAccountants database, this one
 reads the open-source markdown packages on disk, so results reflect whatever
 checkout you point it at.  The package itself ships no guides: a wheel built
-from this tree contains only the server code, so an install that is not
-run from (or pointed at) a checkout has nothing to serve.  The server then
+from this tree contains only the server code, so an install whose code is
+not loaded from a checkout (an editable install) and that is not pointed at
+one with ``OPENACCOUNTANTS_ROOT`` has nothing to serve, whatever the working
+directory.  The server then
 logs a warning when it builds the catalogue and every tool reports the
 problem explicitly (an ``error`` field, ``status: "error"`` from ``start``,
 or a raised error from ``get_skill``) instead of answering with an empty
@@ -90,8 +92,9 @@ PACKAGES_DIR = REPO_ROOT / "packages"
 _CONTENT_HINT = (
     "The openaccountants-mcp package ships only the server code, not the "
     "guides: set OPENACCOUNTANTS_ROOT to a checkout of the repository (the "
-    "directory that contains packages/) or run the server from inside that "
-    "checkout, then restart it."
+    "directory that contains packages/) and restart the server. The working "
+    "directory is not consulted; only an editable install (pip install -e "
+    "./mcp) or `uv run --directory mcp` reads the checkout without it."
 )
 
 MAX_FILE_BYTES = 2 * 1024 * 1024  # 2 MB safety cap
