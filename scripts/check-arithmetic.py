@@ -77,10 +77,19 @@ Usage:
     python3 scripts/check-arithmetic.py skills
     python3 scripts/check-arithmetic.py skills packages agent-skills
 
-Exit status is always 0: this is a review aid, not a gate.
+Gate: exits 1 on any mismatch not listed in scripts/baselines/arithmetic.txt
+and on any baseline entry that no longer reproduces. --json, --baseline PATH,
+--no-baseline and --update-baseline are described in
+scripts/oa_tools/findings.py. The fingerprint is the file plus the expression,
+so an edit elsewhere in the guide does not disturb it.
 """
 import os,re,sys,warnings
 warnings.filterwarnings('ignore')
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools import findings  # noqa: E402
 CUR='€£$¥₹'
 CURWORD=re.compile(r'(?:EUR|GBP|USD|AUD|CAD|NZD|SGD|CHF|SEK|NOK|DKK|PLN|ZAR|INR|IDR|NPR|MYR|THB|PHP|VND|BRL|MXN|JPY|CNY|HKD|AED|SAR|ILS|TRY|RUB|UAH|KES|NGN|GHS|TZS|LKR|PKR|BDT|EGP|MAD|RON|CZK|HUF|ISK|GEL|Rp|Rs|RM)\.?')
 SPAN=re.compile(r'[0-9(][0-9,\.\s%×x\*\+\-−/÷\(\)=' + CUR + r']*=[\s' + CUR + r']*[0-9,\.\s%×x\*\+\-−/÷\(\)=' + CUR + r']*[0-9%\)]')
@@ -144,58 +153,69 @@ def close(a,b):
     if m>1e14: return True
     return abs(a-b)<=max(0.51,m*0.011)
 
-bad=[];checked=0
-# Run bare, this used to walk nothing and print "expressions evaluated: 0,
-# mismatches: 0", which reads exactly like a clean pass. The file above warns
-# that a filter silently discarding input reports a run it has not earned, and
-# an empty argv was doing that to the whole script. Defaults to skills/ now,
-# as every other check-*.py here does.
-for root in (sys.argv[1:] or ['skills']):
-    for dp,dn,fn in os.walk(root):
-        if '.git' in dp: continue
-        for f in sorted(fn):
-            if not f.endswith('.md'): continue
-            p=os.path.join(dp,f)
-            for i,line in enumerate(open(p,encoding='utf-8',errors='replace'),1):
-                if '=' not in line: continue
-                if re.search(r'\b(min|max|round|floor|ceil|if|where|up to|per|of the)\b',line,re.I): continue
-                EURO[0]=bool(re.search(r'\d\.\d{3},\d|\d+,\d{1,2}\b(?!\d)', line)) and not re.search(r'\d,\d{3}(?!\d)', line)
-                for cell in line.split('|'):
-                    cell=CURWORD.sub(' ',cell)
-                    # `**` around a bolded answer is markdown, not exponentiation;
-                    # left in place it makes eval raise and the span is dropped in
-                    # silence. A real operator is whitespace-delimited (OPSP), so
-                    # an asterisk touching a digit is emphasis too.
-                    cell=cell.replace('**','')
-                    cell=re.sub(r'\*(?=[\d(])|(?<=[\d%)])\*', ' ', cell)
-                    for m in SPAN.finditer(cell):
-                        span=m.group(0)
-                        sides=[s for s in span.split('=') if s.strip()]
-                        if len(sides)<2: continue
-                        # first side must be a real computation: >=2 numeric literals AND an operator
-                        lits=re.findall(r'\d[\d,\.]*', sides[0])
-                        if len(lits)<2 or not OPSP.search(sides[0]): continue
-                        # every later side must be a single literal or a computation
-                        if any(not s.strip() for s in sides[1:]): continue
-                        pct_rhs = '%' not in sides[0] and re.fullmatch(r'[\s]*[\d\.,]+\s?%[\s]*', sides[-1])
-                        if pct_rhs:
-                            sides=[s.replace('%','') for s in sides]
-                        vals=[ev(s) for s in sides]
-                        if pct_rhs and vals and all(v is not None for v in vals):
-                            # `A / B = R%`: the left is a ratio, the right a percentage.
-                            # `a + b + c = R%`: both are already percentages.
-                            if '/' in sides[0] and abs(vals[0]) <= 1.0001:
-                                vals=[vals[0]*100]+list(vals[1:])
-                        if any(v is None for v in vals): continue
-                        if all(v==0 for v in vals): continue
-                        # The asserted claim is the final `= answer`. Earlier segments of a
-                        # chain ("(A - B) = C x r = D") are narrative restatement, not a
-                        # claim that A-B equals C*r.
-                        if len(re.findall(r'\d[\d,\.]*', sides[-1]))!=1: continue
-                        checked+=1
-                        if not close(vals[-2],vals[-1]):
-                            bad.append((p,i,span.strip(),vals))
-print(f'expressions evaluated: {checked}')
-print(f'mismatches: {len(bad)}\n')
-for p,i,span,vals in bad:
-    print(f'{p}:{i}\n    {span}\n    -> {[round(v,2) for v in vals]}')
+def main(argv=None):
+    parser = findings.argument_parser('arithmetic', __doc__.split('\n\n')[0])
+    args = parser.parse_args(argv)
+    report = findings.Report('arithmetic', args)
+    checked = 0
+    # Run bare, this used to walk nothing and print "expressions evaluated: 0,
+    # mismatches: 0", which reads exactly like a clean pass. The file above warns
+    # that a filter silently discarding input reports a run it has not earned, and
+    # an empty argv was doing that to the whole script. Defaults to skills/ now,
+    # as every other check-*.py here does.
+    for root in args.roots:
+        for dp,dn,fn in os.walk(root):
+            if '.git' in dp: continue
+            for f in sorted(fn):
+                if not f.endswith('.md'): continue
+                p=os.path.join(dp,f)
+                for i,line in enumerate(open(p,encoding='utf-8',errors='replace'),1):
+                    if '=' not in line: continue
+                    if re.search(r'\b(min|max|round|floor|ceil|if|where|up to|per|of the)\b',line,re.I): continue
+                    EURO[0]=bool(re.search(r'\d\.\d{3},\d|\d+,\d{1,2}\b(?!\d)', line)) and not re.search(r'\d,\d{3}(?!\d)', line)
+                    for cell in line.split('|'):
+                        cell=CURWORD.sub(' ',cell)
+                        # `**` around a bolded answer is markdown, not exponentiation;
+                        # left in place it makes eval raise and the span is dropped in
+                        # silence. A real operator is whitespace-delimited (OPSP), so
+                        # an asterisk touching a digit is emphasis too.
+                        cell=cell.replace('**','')
+                        cell=re.sub(r'\*(?=[\d(])|(?<=[\d%)])\*', ' ', cell)
+                        for m in SPAN.finditer(cell):
+                            span=m.group(0)
+                            sides=[s for s in span.split('=') if s.strip()]
+                            if len(sides)<2: continue
+                            # first side must be a real computation: >=2 numeric literals AND an operator
+                            lits=re.findall(r'\d[\d,\.]*', sides[0])
+                            if len(lits)<2 or not OPSP.search(sides[0]): continue
+                            # every later side must be a single literal or a computation
+                            if any(not s.strip() for s in sides[1:]): continue
+                            pct_rhs = '%' not in sides[0] and re.fullmatch(r'[\s]*[\d\.,]+\s?%[\s]*', sides[-1])
+                            if pct_rhs:
+                                sides=[s.replace('%','') for s in sides]
+                            vals=[ev(s) for s in sides]
+                            if pct_rhs and vals and all(v is not None for v in vals):
+                                # `A / B = R%`: the left is a ratio, the right a percentage.
+                                # `a + b + c = R%`: both are already percentages.
+                                if '/' in sides[0] and abs(vals[0]) <= 1.0001:
+                                    vals=[vals[0]*100]+list(vals[1:])
+                            if any(v is None for v in vals): continue
+                            if all(v==0 for v in vals): continue
+                            # The asserted claim is the final `= answer`. Earlier segments of a
+                            # chain ("(A - B) = C x r = D") are narrative restatement, not a
+                            # claim that A-B equals C*r.
+                            if len(re.findall(r'\d[\d,\.]*', sides[-1]))!=1: continue
+                            checked+=1
+                            if not close(vals[-2],vals[-1]):
+                                rounded=[round(v,2) for v in vals]
+                                report.add(findings.Finding(
+                                    p, span.strip(), f'{span.strip()} -> {rounded}', line=i,
+                                    detail={'expression': span.strip(), 'values': rounded},
+                                    text=f'{p}:{i}\n    {span.strip()}\n    -> {rounded}'))
+    report.note(f'\nexpressions evaluated: {checked}')
+    report.note(f'mismatches: {len(report.findings)}')
+    return report.finish()
+
+
+if __name__ == '__main__':
+    sys.exit(main())

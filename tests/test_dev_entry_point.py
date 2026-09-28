@@ -22,7 +22,9 @@ WORKFLOWS = REPO_ROOT / ".github" / "workflows"
 #: The workflows that run this repository's own checks.
 GATES = ("validate.yml", "sync-integrity.yml")
 DISCOVER = 'unittest discover -s tests -p "test_*.py"'
-TARGETS = ("help", "install", "build", "validate", "sync-check", "test", "check")
+TARGETS = ("help", "install", "build", "validate", "sync-check", "checkers", "baselines", "test", "check")
+#: The gate checkers (scripts/oa_tools/findings.py), as CI and the Makefile name them.
+GATE_CHECKERS = ("arithmetic", "bracket-tables", "expired-rules", "fact-conflicts", "coverage-claims")
 
 
 def _yaml(path: Path) -> dict:
@@ -70,7 +72,34 @@ class MakefileTests(unittest.TestCase):
         self.assertEqual(set(phony.group(1).split()), set(TARGETS))
 
     def test_check_runs_every_gate(self) -> None:
-        self.assertRegex(self.text, r"(?m)^check:\s*validate sync-check test\b")
+        self.assertRegex(self.text, r"(?m)^check:\s*validate sync-check checkers test\b")
+
+    def test_checkers_target_matches_the_gate_job_and_the_baselines(self) -> None:
+        """One list of gate checkers, in three places that must agree: the
+        Makefile's `checkers` and `baselines` recipes, validate.yml's
+        gate-checkers job, and the baseline files under scripts/baselines/."""
+        make_checkers = re.findall(r"scripts/check-([a-z-]+)\.py", _dry_run("checkers"))
+        self.assertEqual(tuple(make_checkers[:-1]), GATE_CHECKERS)
+        self.assertIn("check-cited-hosts.py --selftest", _dry_run("checkers"))
+        make_baselines = re.findall(r"scripts/check-([a-z-]+)\.py --update-baseline", _dry_run("baselines"))
+        self.assertEqual(set(make_baselines), set(GATE_CHECKERS) - {"coverage-claims"},
+                         "coverage-claims has no standing queue and so no baseline")
+
+        job = _yaml(WORKFLOWS / "validate.yml")["jobs"].get("gate-checkers")
+        self.assertIsNotNone(job, "validate.yml must have a gate-checkers job")
+        run = "\n".join(step.get("run", "") for step in job["steps"])
+        loop = re.search(r"for checker in ([a-z -]+); do", run)
+        self.assertIsNotNone(loop, "the job loops over the checkers so every one runs")
+        self.assertEqual(tuple(loop.group(1).split()), GATE_CHECKERS)
+        self.assertIn("check-cited-hosts.py --selftest", run)
+        self.assertIn("|| status=1", run)
+        self.assertIn('exit "$status"', run)
+
+        baselines = sorted(p.stem for p in (REPO_ROOT / "scripts" / "baselines").glob("*.txt"))
+        self.assertEqual(baselines, sorted(make_baselines))
+        for name in baselines:
+            head = (REPO_ROOT / "scripts" / "baselines" / f"{name}.txt").read_text(encoding="utf-8").splitlines()[0]
+            self.assertIn(f"scripts/check-{name}.py", head)
 
     def test_help_lists_every_target(self) -> None:
         result = _make("help")
@@ -164,14 +193,20 @@ class WorkflowHygieneTests(unittest.TestCase):
             for name, job in _yaml(WORKFLOWS / workflow)["jobs"].items():
                 self.assertIsInstance(job.get("timeout-minutes"), int, f"{workflow}: job {name} has no timeout-minutes")
 
-    def test_setup_python_caches_pip(self) -> None:
+    def test_setup_python_caches_pip_wherever_pip_installs(self) -> None:
+        checked = 0
         for workflow in GATES:
             for name, job in _yaml(WORKFLOWS / workflow)["jobs"].items():
+                installs = any("pip install" in step.get("run", "") for step in job["steps"])
                 setups = [s for s in job["steps"] if str(s.get("uses", "")).startswith("actions/setup-python@")]
                 self.assertTrue(setups, f"{workflow}: job {name} does not set up Python")
+                if not installs:
+                    continue  # stdlib-only job (gate-checkers): nothing to cache
+                checked += 1
                 for step in setups:
                     self.assertEqual(step.get("with", {}).get("cache"), "pip", f"{workflow}: job {name}")
                     self.assertIn("cache-dependency-path", step.get("with", {}), f"{workflow}: job {name}")
+        self.assertGreaterEqual(checked, 3)
 
 
 if __name__ == "__main__":

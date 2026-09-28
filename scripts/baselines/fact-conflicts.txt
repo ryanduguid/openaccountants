@@ -1,0 +1,149 @@
+# Baseline for scripts/check-fact-conflicts.py: the findings known when it was written.
+# One fingerprint per line (path::key). The gate fails on a finding not listed
+# here and on an entry that no longer reproduces. After fixing findings, regenerate
+# it with: python3 scripts/check-fact-conflicts.py --update-baseline
+skills/cross-border::andaluc
+skills/cross-border::dividends
+skills/cross-border::dividends general
+skills/cross-border::dividends portfolio
+skills/cross-border::dividends substantial
+skills/cross-border::fees included services
+skills/cross-border::fees technical services
+skills/cross-border::france
+skills/cross-border::galicia
+skills/cross-border::germany
+skills/cross-border::interest
+skills/cross-border::interest banks fis
+skills/cross-border::interest general
+skills/cross-border::madrid
+skills/cross-border::malaysia
+skills/cross-border::murcia
+skills/cross-border::royalties
+skills/cross-border::royalties equipment use
+skills/cross-border::royalties other
+skills/cross-border::technical services
+skills/cross-border::turkey
+skills/federal::deduction
+skills/federal::medicare
+skills/international/albania::combined
+skills/international/albania::health insurance
+skills/international/albania::social insurance
+skills/international/algeria::retirement
+skills/international/algeria::social insurance
+skills/international/australia::standard
+skills/international/azerbaijan::above azn
+skills/international/belarus::reduced
+skills/international/belarus::standard
+skills/international/bosnia::health insurance
+skills/international/bosnia::pension disability insurance
+skills/international/bosnia::unemployment insurance
+skills/international/brazil::acima de r
+skills/international/brazil::de r r
+skills/international/brazil::minas gerais
+skills/international/brazil::s o paulo
+skills/international/bulgaria::health insurance
+skills/international/bulgaria::unemployment
+skills/international/burkina-faso::standard
+skills/international/ca-chartered-accountant::general
+skills/international/ca-chartered-accountant::liquor
+skills/international/ca-chartered-accountant::passenger vehicles
+skills/international/ca-chartered-accountant::phase out
+skills/international/ca-chartered-accountant::standard pst
+skills/international/canada::alberta
+skills/international/canada::credit
+skills/international/canada::employee
+skills/international/canada::less basic personal credit
+skills/international/canada::less cpp credit
+skills/international/canada::less ei credit
+skills/international/canada::ontario
+skills/international/canada::reduction
+skills/international/canada::subtract non refundable tax credits
+skills/international/china::reduced
+skills/international/colombia::casilla
+skills/international/costa-rica::banco popular y de desarrollo comunal
+skills/international/cyprus::employer
+skills/international/cyprus::general healthcare system
+skills/international/cyprus::social insurance
+skills/international/fiji::late payment penalty
+skills/international/france::allocations familiales
+skills/international/germany::children
+skills/international/germany::pension
+skills/international/honduras::ihss em
+skills/international/honduras::ihss ivm
+skills/international/hong-kong::remainder
+skills/international/india::employee contribution
+skills/international/india::restaurant
+skills/international/indonesia::no npwp surcharge
+skills/international/indonesia::retail trade
+skills/international/ireland::above eur
+skills/international/ireland::reduced
+skills/international/israel::nis nis month
+skills/international/israel::up nis month
+skills/international/italy::standard
+skills/international/ivory-coast::maternity
+skills/international/japan::health insurance
+skills/international/latvia::employee vsaoi
+skills/international/latvia::employer vsaoi
+skills/international/latvia::standard
+skills/international/luxembourg::accident insurance
+skills/international/luxembourg::family benefits
+skills/international/luxembourg::occupational health
+skills/international/luxembourg::pension
+skills/international/montenegro::labour fund
+skills/international/montenegro::pension disability insurance
+skills/international/mozambique::inss total
+skills/international/netherlands::above eur
+skills/international/netherlands::buildings
+skills/international/nicaragua::enfermedad y maternidad
+skills/international/nigeria::finance act
+skills/international/nigeria::late payment
+skills/international/nigeria::minimum tax
+skills/international/norway::standard
+skills/international/pakistan::above rs
+skills/international/panama::educational insurance
+skills/international/panama::from mar
+skills/international/paraguay::employee
+skills/international/paraguay::employer
+skills/international/peru::habitat
+skills/international/peru::integra
+skills/international/peru::profuturo
+skills/international/philippines::late payment
+skills/international/philippines::regular corporate income tax
+skills/international/portugal::acima de
+skills/international/portugal::presta o de servi os
+skills/international/portugal::seguran social
+skills/international/romania::fuel vehicle
+skills/international/rwanda::maternity leave benefits
+skills/international/rwanda::occupational hazards
+skills/international/slovenia::injury work occupational disease
+skills/international/slovenia::pension disability
+skills/international/slovenia::unemployment
+skills/international/spain::contingencias comunes
+skills/international/spain::general
+skills/international/sudan::standard
+skills/international/sweden::arbetsmarknadsavgift
+skills/international/sweden::egenavgifter
+skills/international/sweden::sjukf rs kringsavgift
+skills/international/tunisia::reduced
+skills/international/uk::additional
+skills/international/uk::higher
+skills/international/ukraine::group single tax
+skills/international/uruguay::employee fonasa
+skills/international/uruguay::fonasa
+skills/international/uzbekistan::turnover tax
+skills/international/venezuela::paro forzoso
+skills/international/vietnam::unemployment insurance
+skills/international/zimbabwe::standard corporate income tax
+skills/orchestrator::late filing
+skills/us-states/ct::clothing
+skills/us-states/il::springfield
+skills/us-states/md::allegany county
+skills/us-states/md::calvert county
+skills/us-states/md::cecil county
+skills/us-states/md::dorchester county
+skills/us-states/md::st mary s county
+skills/us-states/md::washington county
+skills/us-states/me::prepared food
+skills/us-states/me::short term auto rental
+skills/us-states/mi::detroit
+skills/us-states/pa::resident

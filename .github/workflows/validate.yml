@@ -11,6 +11,12 @@
 #     the committed copies differ — on pull requests and on push to main alike.
 #   - The validate job checks guide frontmatter: changed files on a pull
 #     request, the whole tree on push to main.
+#   - The gate-checkers job runs the five gate checkers (arithmetic, bracket
+#     tables, expired rules, fact conflicts, coverage claims) against their
+#     committed baselines in scripts/baselines/, plus the cited-hosts checker's
+#     offline selftest. A finding the baseline does not list, or a baseline
+#     entry that no longer reproduces, fails the job; scripts/oa_tools/findings.py
+#     documents the flags and CLAUDE.md the workflow for updating a baseline.
 #
 # The job id guard-derived-trees is kept from the previous contract (it used to
 # reject any pull request touching the derived trees, on the theory that a
@@ -81,3 +87,26 @@ jobs:
           else
             python3 scripts/validate-guides.py --no-index-check
           fi
+
+  gate-checkers:
+    # The gate checkers are stdlib-only, so nothing is installed. Every checker
+    # runs even after one fails, so a red job shows the whole picture.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+      - name: Run the gate checkers against their baselines and the cited-hosts selftest
+        run: |
+          status=0
+          for checker in arithmetic bracket-tables expired-rules fact-conflicts coverage-claims; do
+            echo "== scripts/check-$checker.py"
+            python3 "scripts/check-$checker.py" || status=1
+          done
+          echo "== scripts/check-cited-hosts.py --selftest"
+          python3 scripts/check-cited-hosts.py --selftest || status=1
+          exit "$status"

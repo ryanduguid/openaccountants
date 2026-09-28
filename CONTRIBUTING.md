@@ -103,8 +103,12 @@ make check                                       # validate + sync-check + test:
 | `make build` | the three generators: `scripts/build-packages.py`, `scripts/build-index.py`, `scripts/build-llms-full.py` | none: you commit the output |
 | `make validate` | `scripts/validate-guides.py`: the frontmatter contract and derived-tree freshness | `validate.yml` |
 | `make sync-check` | `scripts/check-sync-integrity.py --mode audit --strict-metadata` from the merge base with `origin/main` (fetch it first, or pass `BASE=<rev>`) | `sync-integrity.yml`, `compare` |
+| `make checkers` | the five gate checkers (`check-arithmetic.py`, `check-bracket-tables.py`, `check-expired-rules.py`, `check-fact-conflicts.py`, `check-coverage-claims.py`) against `scripts/baselines/`, plus `check-cited-hosts.py --selftest` | `validate.yml`, `gate-checkers` |
+| `make baselines` | rewrites the four baselines from the current tree, for use after reading the findings your change added or fixed | none: you commit the result |
 | `make test` | `unittest discover` over `tests/` and `mcp/tests/` | `sync-integrity.yml`, `unit-tests` |
-| `make check` | `validate`, `sync-check` and `test` | all of the above |
+| `make check` | `validate`, `sync-check`, `checkers` and `test` | all of the above |
+
+A gate checker fails on a finding its baseline does not list and on a baseline entry that no longer reproduces. If your change fixes an arithmetic error, a repeated bracket rate, an expired rule or a conflicting figure, its baseline entry goes stale: run `make baselines` and commit the smaller file. If your change adds a finding, fix the guide, or, when you have read the finding and it is a false positive, record it the same way and say so in the pull request. `CLAUDE.md` ("Checks") has the details and the flags each checker takes (`--json`, `--baseline`, `--no-baseline`, `--update-baseline`).
 
 `make help` lists the targets. Without `make` (Windows), run the commands the table names: `make -n <target>` prints them exactly. Run everything from the repository root; the review aids under `scripts/` resolve paths relative to the working directory and report nothing from anywhere else.
 

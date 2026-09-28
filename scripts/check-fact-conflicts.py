@@ -21,7 +21,14 @@ deliberate multi-year tables rather than competing claims.
 Usage:
     python3 scripts/check-fact-conflicts.py
 
-Exit status is always 0: this is a review aid, not a gate.
+Gate: exits 1 on any conflicting (pack, label) not listed in
+scripts/baselines/fact-conflicts.txt and on any baseline entry that no longer
+reproduces. --json, --baseline PATH, --no-baseline and --update-baseline are
+described in scripts/oa_tools/findings.py. The fingerprint is the pack's
+directory plus the label, so a conflict stays the same conflict while its
+values are argued over, and a new label in a pack is a new finding. Every
+conflict is reported (an earlier version stopped at forty), because a gate
+that hides part of its queue cannot be baselined.
 
 Do not narrow this to penalty and interest rates as a separate checker; that
 was tried and every one of its four hits was correct. Two shapes defeat it,
@@ -46,6 +53,12 @@ figures belong to; earlier triage does not cover the newly included tables.
 
 """
 import os,re,sys,collections
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools import findings  # noqa: E402
+
 LABELLED=[
  re.compile(r'^\s*[-*]\s+\*\*(?P<lab>[^*]{4,70}?)\*\*\s*[—–-]+\s*(?P<val>[^_\n]{1,60})'),
  re.compile(r'^\s*\|\s*(?P<lab>[^|]{4,70}?)\s*\|\s*(?P<val>[^|]{1,60}?)\s*\|'),
@@ -64,37 +77,60 @@ def pack_of(path):
     if p[0]=='skills' and p[1]=='us-states': return 'us:'+p[2]
     if p[0]=='skills': return 'skills:'+p[1]
     return None
-facts=collections.defaultdict(list)
-for dp,dn,fn in os.walk('skills'):
-    for f in sorted(fn):
-        if not f.endswith('.md'): continue
-        path=os.path.join(dp,f); pack=pack_of(path)
-        if not pack: continue
-        for i,line in enumerate(open(path,encoding='utf-8',errors='replace'),1):
-            if '%' not in line: continue
-            for rx in LABELLED:
-                m=rx.match(line)
-                if not m: continue
-                lab=norm_label(m.group('lab')); val=m.group('val')
-                if len(lab)<6: break
-                pcts=PCT.findall(val)
-                # single unambiguous percentage only; skip ranges/lists/year-tagged
-                if len(pcts)!=1 or STOP.search(val): break
-                v=pcts[0].replace(',','.')
-                facts[(pack,lab)].append((float(v), path, i, line.strip()[:120]))
-                break
-conflicts=[]
-for k,v in facts.items():
-    vals={x[0] for x in v}
-    files={x[1] for x in v}
-    if len(vals)>1 and len(files)>1: conflicts.append((k,v,vals))
-print(f'labelled percentage facts extracted: {sum(len(v) for v in facts.values())}')
-print(f'distinct (pack,label) keys: {len(facts)}')
-print(f'keys where files disagree: {len(conflicts)}\n')
-for (pack,lab),v,vals in sorted(conflicts, key=lambda c:-len({x[1] for x in c[1]}))[:40]:
-    print(f'### {pack} :: "{lab}"  -> {sorted(vals)}')
-    seen=set()
-    for val,path,i,txt in v:
-        if (val,path) in seen: continue
-        seen.add((val,path))
-        print(f'      {val:>7}%  {path}:{i}')
+PACK_DIRS={'int': os.path.join('skills','international'), 'us': os.path.join('skills','us-states'), 'skills': 'skills'}
+def pack_dir(pack):
+    """The directory a pack id names: int:germany -> skills/international/germany."""
+    kind,_,name=pack.partition(':')
+    return os.path.join(PACK_DIRS[kind], name)
+
+def collect(root='skills'):
+    """(pack, label) -> [(value, path, line, text)] for every labelled single-percentage fact."""
+    facts=collections.defaultdict(list)
+    for dp,dn,fn in os.walk(root):
+        for f in sorted(fn):
+            if not f.endswith('.md'): continue
+            path=os.path.join(dp,f); pack=pack_of(path)
+            if not pack: continue
+            for i,line in enumerate(open(path,encoding='utf-8',errors='replace'),1):
+                if '%' not in line: continue
+                for rx in LABELLED:
+                    m=rx.match(line)
+                    if not m: continue
+                    lab=norm_label(m.group('lab')); val=m.group('val')
+                    if len(lab)<6: break
+                    pcts=PCT.findall(val)
+                    # single unambiguous percentage only; skip ranges/lists/year-tagged
+                    if len(pcts)!=1 or STOP.search(val): break
+                    v=pcts[0].replace(',','.')
+                    facts[(pack,lab)].append((float(v), path, i, line.strip()[:120]))
+                    break
+    return facts
+
+def main(argv=None):
+    parser=findings.argument_parser('fact-conflicts', __doc__.split('\n\n')[0], roots=False)
+    args=parser.parse_args(argv)
+    report=findings.Report('fact-conflicts', args)
+    facts=collect()
+    conflicts=[]
+    for k,v in facts.items():
+        vals={x[0] for x in v}
+        files={x[1] for x in v}
+        if len(vals)>1 and len(files)>1: conflicts.append((k,v,vals))
+    report.note(f'labelled percentage facts extracted: {sum(len(v) for v in facts.values())}')
+    report.note(f'distinct (pack,label) keys: {len(facts)}')
+    report.note(f'keys where files disagree: {len(conflicts)}\n')
+    for (pack,lab),v,vals in sorted(conflicts, key=lambda c:(-len({x[1] for x in c[1]}), c[0])):
+        sites=[]; seen=set()
+        for val,path,i,txt in v:
+            if (val,path) in seen: continue
+            seen.add((val,path))
+            sites.append({'value': val, 'path': path.replace(os.sep,'/'), 'line': i})
+        text=f'### {pack} :: "{lab}"  -> {sorted(vals)}\n'+'\n'.join(
+            f'      {s["value"]:>7}%  {s["path"]}:{s["line"]}' for s in sites)
+        report.add(findings.Finding(
+            pack_dir(pack), lab, f'"{lab}" -> {sorted(vals)}',
+            detail={'pack': pack, 'values': sorted(vals), 'sites': sites}, text=text))
+    return report.finish()
+
+if __name__=='__main__':
+    sys.exit(main())

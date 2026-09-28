@@ -129,12 +129,25 @@ a publication verb and "verify" was not in the list; adding it took the queue
 from 37 to 51 and surfaced the UK savings-allowance cells this branch then
 resolved.
 
-Exit status is 1 when anything is reported, so this can gate CI once the
-standing queue is worked down.
+Gate: exits 1 on any hit not listed in scripts/baselines/expired-rules.txt and
+on any baseline entry that no longer reproduces, so the standing queue is
+accepted line by line and a new expired rule fails the pull request that
+introduces it. --json, --baseline PATH, --no-baseline and --update-baseline
+are described in scripts/oa_tools/findings.py. The fingerprint is the file
+plus the rule's text. This check is driven by the calendar: a rule that waits
+on a date expires the day the calendar passes it, with no edit anywhere, so
+the gate can turn red on a date rather than on a change. That is the point of
+the check; read the new hits and either fix the rule or record it with
+--update-baseline.
 
 Usage: python3 scripts/check-expired-rules.py [--selftest] [path ...]
 """
 import os, re, sys, datetime, calendar
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools import findings  # noqa: E402
 
 TODAY = datetime.date.today()
 
@@ -441,9 +454,16 @@ def selftest():
 HEADER = re.compile(r'^\s*\|.*\|\s*$')
 
 
-def main(roots):
-    hits = 0
-    for root in roots:
+def main(argv=None):
+    parser = findings.argument_parser('expired-rules', __doc__.split('\n\n')[0])
+    parser.add_argument('--selftest', action='store_true',
+                        help='run the built-in regression checks instead of scanning')
+    args = parser.parse_args(argv)
+    if args.selftest:
+        selftest()
+        return 0
+    report = findings.Report('expired-rules', args)
+    for root in args.roots:
         for dp, _, fns in os.walk(root):
             for fn in sorted(fns):
                 if not fn.endswith('.md'):
@@ -459,14 +479,13 @@ def main(roots):
                         context = None
                     year = expired(line, context=context)
                     if year:
-                        print('%s:%d  (waited on %d)\n    %s' % (p, i, year, line.strip()[:190]))
-                        hits += 1
-    print('\nrules that have outlived what they were waiting for:', hits)
-    return hits
+                        rule = line.strip()[:190]
+                        report.add(findings.Finding(
+                            p, rule, 'waited on %d' % year, line=i, detail={'waited_on': year},
+                            text='%s:%d  (waited on %d)\n    %s' % (p, i, year, rule)))
+    report.note('\nrules that have outlived what they were waiting for: %d' % len(report.findings))
+    return report.finish()
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
-        selftest()
-    else:
-        sys.exit(1 if main([a for a in sys.argv[1:] if not a.startswith('-')] or ['skills']) else 0)
+    sys.exit(main())
