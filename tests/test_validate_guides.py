@@ -321,8 +321,8 @@ class ValidatorModeTests(unittest.TestCase):
 
 class GeneratedPackagesTreeTests(_ValidatorCase):
     """packages/** was validated by nothing: build-index.py's GUIDE_TREES stops
-    at skills/ plus the hand-authored packages/us-federal, and sync-mcp.yml
-    mirrors the rest to the MCP repo on every push to main."""
+    at skills/ plus the hand-authored packages/us-federal, and upstream's
+    mirror job used to ship the rest to the MCP repo on every push to main."""
 
     def test_malformed_generated_frontmatter_is_an_error(self) -> None:
         errors = self._check_packages({"packages/albania/albania-income-tax.md": MALFORMED})

@@ -1,5 +1,7 @@
 # Website ↔ repo sync
 
+> **Status:** this document describes the upstream project's platform ↔ repository sync. Nothing in `ryanduguid/openaccountants` runs it: there is no platform, no sync bot and no mirror job here, and the derived trees are regenerated in pull requests (see [REPO-LAYOUT.md](REPO-LAYOUT.md)). It is kept as the record of the contract and its controls.
+
 The platform database (openaccountants.com) is the operational source for
 website guide content. This repository is its public projection, and merged
 external changes to `skills/**` must be ingested back into the platform before

@@ -1079,10 +1079,11 @@ def copy_declared_bases(skill_paths, pkg_dir, copied_files):
 def validate_generated_frontmatter():
     """Fail closed on our own output.
 
-    Nothing downstream re-checks this tree before it ships: build-index.py
-    walks skills/ and the hand-authored packages/us-federal only, and
-    sync-mcp.yml mirrors packages/** to the MCP repo on every push to main. A
-    malformed block written here used to travel the whole way unchecked.
+    build-index.py walks skills/ and the hand-authored packages/us-federal
+    only, so this is the first check the generated tree gets. Upstream's
+    mirror job used to ship packages/** onward on every push to main with no
+    check at all, and a malformed block written here travelled the whole way
+    unchecked.
     """
     failures = []
     for dirpath, dirnames, filenames in os.walk(PACKAGES_DIR):

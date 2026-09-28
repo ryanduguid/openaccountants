@@ -1,21 +1,12 @@
-# Contributing to OpenAccountants
+# Contributing to OpenAccountants (this fork)
 
-Thanks for your interest in contributing. Here's how it works.
+Thanks for your interest in contributing. This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the [README](README.md) explains the relationship. Contributions land here through pull requests. There is no website submission form, no platform sync and no contributor licence agreement in this fork. A change you also want in the upstream project needs a separate pull request there, under upstream's own process.
 
 ## Who can contribute
 
-Anyone. You don't need to be an accountant to write a skill. You need to know your country's rules well enough to cite the statutes — whether that's tax rates, payroll obligations, e-invoicing specs, or company formation steps. Partners — licensed accountants — then review what you wrote.
+Anyone. You don't need to be an accountant to write a skill. You need to know your country's rules well enough to cite the statutes — whether that's tax rates, payroll obligations, e-invoicing specs, or company formation steps. Licensed accountants can then review what you wrote (see [Review](#review)).
 
 ## How to contribute a skill
-
-### Option 1: Via the website
-
-1. Go to [openaccountants.com](https://www.openaccountants.com)
-2. Sign up for an account
-3. Use the submission form to upload your skill
-4. It goes live immediately as a **source-cited draft**
-
-### Option 2: Via GitHub PR
 
 1. Fork this repo
 2. Create your skill in the appropriate **source** directory (`skills/federal/`, `skills/us-states/[code]/`, `skills/international/[country]/`, etc.)
@@ -30,16 +21,9 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 
 `skills/` is the editable source; `packages/` is generated from it by `scripts/build-packages.py` (except the hand-authored `packages/us-federal/`); `index.json` at the repo root is the machine-readable inventory of every Guide. The one-page canonical answer to "which file do I edit?" is [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
 
-## Website sync rule
+## No website sync
 
-Every skill in `skills/` that should appear on [openaccountants.com](https://www.openaccountants.com) must either:
-
-1. Live in a **recognized country folder** (`skills/international/<country>/`, `skills/federal/`, `skills/us-states/<code>/`), **or**
-2. Include **`jurisdiction:` in YAML frontmatter** (e.g. `MT`, `GB`, `US`, `US-CA`, `GLOBAL`, `INTL`)
-
-Guide changes made on openaccountants.com land here through the scheduled sync, committed under the responsible accountant's name. A merged pull request must be ingested and verified in the platform before the next outbound export; until automated inbound ingestion ships, a maintainer performs that step manually. The exporter must fail closed if its stored Git blob does not match the current source guide. Frontmatter uses `reviewed_by` + `review_status` (the legacy `verified_by` key is being retired automatically). Want your platform edits credited to your GitHub account? Set your GitHub username in your accountant profile on openaccountants.com.
-
-Full details: [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md)
+This fork has no sync with openaccountants.com in either direction: nothing here publishes to the platform, and nothing on the platform writes into this repository. `jurisdiction:` in the frontmatter is still required (the validator checks it). [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md) is kept only as a record of upstream's retired sync contract.
 
 ## Skill structure and frontmatter
 
@@ -93,7 +77,7 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 | US federal skills | `skills/federal/` |
 | US state skills | `skills/us-states/[two-letter code]/` |
 | International country skills (all domains) | `skills/international/[country-slug]/` |
-| Foundation workflow bases | `skills/foundation/` (usually MCP/packages only, not website sync) |
+| Foundation workflow bases | `skills/foundation/` (bundled into packages by the build) |
 | Cross-border / treaty corridor rules | `skills/cross-border/` (subdirectory `treaty-corridors/` for WHT rates) |
 | Industry vertical skills | `skills/verticals/` |
 | Platform integration skills | `skills/integrations/` |
@@ -105,21 +89,12 @@ If you add a `references.md` to a country's source directory, it will be include
 
 ## Review
 
-After you submit, Partners — licensed accountants — review your skill on [openaccountants.com](https://www.openaccountants.com). When the full review is approved, the skill becomes **accountant-reviewed** (Tier 1). Your name stays on it as the author.
+Pull requests are reviewed here, on GitHub. A guide is a **source-cited draft** (`tier: 2`) until a named, licensed accountant has reviewed the complete guide and signs it off in a pull request that sets `tier: 1` and puts their name and credential in `reviewed_by`; see [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md). Maintainers do not set `tier: 1` on anyone's behalf, and a reviewer name on a `tier: 2` guide does not make it reviewed.
 
-## Contributor License Agreement (CLA)
+## Licensing of contributions
 
-OpenAccountants is a **mixed-licence** project: software is **AGPL-3.0-only** and the Guides are under the source-available **OA Guide License**, with a commercial track for both (see [LICENSING.md](LICENSING.md)). The [Contributor License Agreement](CLA.md) lets Glimpse Ltd distribute your contribution under **all** of these tracks. You **retain copyright**; you are granting a license, not handing over ownership.
+This is a mixed-licence repository: software is **AGPL-3.0-only** and the Guides are under the source-available **OA Guide License** (see [LICENSING.md](LICENSING.md)). This fork does not collect a contributor licence agreement. By opening a pull request you confirm that the contribution is your own work or that you have the right to submit it, and you agree that it is licensed under the licence of the files it changes: AGPL-3.0-only for software, the OA Guide License for guides and their exports. You keep your copyright. [CLA.md](CLA.md) is the upstream project's agreement with Glimpse Ltd, kept for reference; it is not collected here and does not apply to contributions made to this fork.
 
-**GitHub pull requests:** we rely on an **explicit opt-in**. When you open a PR, you must **tick the CLA checkbox** in the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) (and leave it checked on updates to the same PR). That single action is how you record agreement. Maintainers should not merge PRs where the contributor has not confirmed the CLA.
+## Credit
 
-**Website / other channels:** follow whatever acceptance flow that channel provides, or contact **info@openaccountants.com** for a formal signed agreement.
-
-If anything in [CLA.md](CLA.md) is unclear, ask before contributing.
-
-## What you get
-
-- Your name on the skill, linked to your contributor profile
-- Public contributor profile showing all your contributions
-- Accountant review — real professionals review your work
-- The knowledge that thousands of freelancers and small businesses are using your skill to manage their accounting
+Your name is on the commit and the pull request. A reviewer's name goes in the guide's frontmatter as described under [Review](#review).
