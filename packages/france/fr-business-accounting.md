@@ -4,7 +4,7 @@ description: French business accounting, VAT declarations, invoicing, and e-invo
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -51,7 +51,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Regime | Condition | Declaration |
 | --- | --- | --- |
-| Franchise en base (art. 293 B CGI) | Services CA ≤ EUR 36,800 (tolerance EUR 39,100); Sales CA ≤ EUR 91,900 (tolerance EUR 101,000) | No TVA collected or deducted. Mandatory mention: "TVA non applicable, art. 293 B du CGI" |
+| Franchise en base (art. 293 B CGI) | Services CA ≤ EUR 37,500 (tolerance EUR 41,250); Sales CA ≤ EUR 85,000 (tolerance EUR 93,500). These replaced EUR 36,800 / 39,100 and EUR 91,900 / 101,000. Crossing the tolerance ends the franchise immediately, not from the following January | No TVA collected or deducted. Mandatory mention: "TVA non applicable, art. 293 B du CGI" |
 | Régime réel simplifié | CA < EUR 840,000 (goods) or EUR 254,000 (services) | CA12 annual + quarterly advances |
 | Régime réel normal | Above simplified thresholds | CA3 monthly (or quarterly if TVA < EUR 4,000/year) |
 

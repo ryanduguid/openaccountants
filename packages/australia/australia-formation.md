@@ -4,7 +4,7 @@ description: Use this skill whenever asked about forming, incorporating, or regi
 version: 1.1
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-14
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -41,11 +41,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Liability | Unlimited | Unlimited (joint and several) | Limited to share capital | Limited | Trustee liability (limited if Pty Ltd trustee) |
 | Min. founders | 1 | 2 | 1 shareholder + 1 director | 1 shareholder + 3 directors + 1 secretary | 1 settlor + 1 trustee |
 | Min. share capital | N/A | N/A | No minimum (commonly $1) | No minimum | N/A |
-| Max. shareholders | 1 | N/A | 50 (non-employee) | Unlimited | N/A |
+| Max. shareholders | 1 | N/A | 50 counted non-employee holders, excluding qualifying CSF holders as explained below | Unlimited | N/A |
 | Tax treatment | Personal income tax | Partners taxed individually | Company tax rate | Company tax rate | Trust distributions taxed in beneficiaries' hands |
 | Admin burden | Very low | Low | Medium | High | Medium--High |
 | ASIC registration | No | No (ABN only) | Yes ($611) | Yes | Only if trustee is a company |
-| Audit required | No | No | Only if large proprietary | Yes | No (unless regulated) |
+| Audit required | No | No | Usually if large; small-company foreign control, CSF proceeds and audit directions can also require an audit, subject to applicable relief | Yes | No (unless regulated) |
+
+For the 50-holder limit, exclude holders issued shares under a crowd-sourced funding (CSF) offer. Also exclude purchasers of shares originally issued under a CSF offer while the company's shares have not started trading on a financial market in Australia or overseas. That secondary-holder exclusion ends when market trading starts; original CSF holders remain excluded for their qualifying shares (ASIC RG 261 paragraphs 305 to 308). Thus 50 counted holders plus 100 qualifying CSF holders do not breach the limit merely because there are 150 holders.
+
+Check the preparation, lodgement and audit conditions in `australia-financial-statements.md`, including the cumulative CSF proceeds threshold of at least $3 million. Small size alone does not remove an audit obligation.
 
 **Recommended default:** Proprietary company limited by shares (Pty Ltd) for most commercial purposes.
 
@@ -170,7 +174,7 @@ Commonwealth Bank (CBA), Westpac, ANZ, NAB (Big 4); Macquarie, Bendigo (mid-tier
 - **R-AU-F1 -- No Australian-resident director** — Every Pty Ltd must have at least one director who ordinarily resides in Australia. A company cannot be registered without this. Advise the client to appoint a local director or use a resident director service (with proper governance).  _(R-AU-F1)_
 - **R-AU-F2 -- Failing to pay ASIC annual review fee** — ASIC charges $329/year. If the annual review is not completed and fee is not paid, ASIC will deregister the company. Late fees apply: $98 within 1 month, $411 after 1 month.  _(R-AU-F2)_
 - **R-AU-F3 -- GST threshold ignorance** — If annual turnover reaches $75,000, GST registration is mandatory. Failing to register when required results in penalties and backdated GST assessments.  _(R-AU-F3)_
-- **R-AU-F4 -- Superannuation non-compliance** — Employers must pay at least 11.5% (2025--26) superannuation guarantee on top of ordinary time earnings. Non-payment results in the Superannuation Guarantee Charge (SGC), which is not tax-deductible.  _(R-AU-F4)_
+- **R-AU-F4 -- Superannuation non-compliance** — For 2025-26, employers must contribute at least 12% of the eligible ordinary time earnings base under SGAA s 23(2), including sacrificed ordinary time earnings. The 2024-25 rate was 11.5%. On a $100,000 eligible base, the 2025-26 contribution is $12,000. Non-payment results in the Superannuation Guarantee Charge (SGC), which is not tax-deductible.  _(R-AU-F4)_
 - **R-AU-F5 -- Shell company without substance** — This skill will not assist in forming a company with no genuine business activity in Australia. ASIC and the ATO actively pursue sham structures.  _(R-AU-F5)_
 
 ## Section 10 -- Timeline

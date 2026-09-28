@@ -19,8 +19,8 @@ of `index.json` carries the first three rows.
 |---|---|
 | Guide files indexed | **1,953** |
 | Distinct `jurisdiction` codes | **244** |
-| `tier: 1` (accountant-reviewed) | **171** |
-| `tier: 2` (source-cited draft) | **1,782** |
+| `tier: 1` (accountant-reviewed) | **164** |
+| `tier: 2` (source-cited draft) | **1,789** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
 | Country directories under `skills/international/` | **189** |
 | US jurisdiction codes (`US` + 50 states + DC + `US-NY-NYC`) | **53** |
@@ -77,10 +77,10 @@ OpenAccountants has two quality tiers (see [QUALITY-TIERS.md](QUALITY-TIERS.md))
 
 | Tier | What it means | Published count | Where it lives |
 |---|---|---|---|
-| **Accountant-reviewed** (Tier 1) | A licensed practitioner has reviewed and signed off; named on the Guide unless they asked for their name to be withheld | **85** | **MCP server**, plus 171 `tier: 1` Guides in this repo (see the derived table above) |
+| **Accountant-reviewed** (Tier 1) | A licensed practitioner has reviewed and signed off; named on the Guide unless they asked for their name to be withheld | **85** | **MCP server**, plus 164 `tier: 1` Guides in this repo (see the derived table above) |
 | **Source-cited draft** (Tier 2) | Every rate/threshold/form drafted from authoritative sources, awaiting a full accountant review | **1,013** | **This repo**, which holds 1,782 `tier: 2` Guides (see the derived table above) |
 
-**Correct headline phrasing:** _"Mostly source-cited drafts in this repo, with 171 accountant-reviewed Guides. Accountant-reviewed Guides are also served via the MCP connector."_
+**Correct headline phrasing:** _"Mostly source-cited drafts in this repo, with 164 accountant-reviewed Guides. Accountant-reviewed Guides are also served via the MCP connector."_
 
 ## Jurisdiction breakdown
 

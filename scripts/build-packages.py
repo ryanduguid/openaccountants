@@ -16,6 +16,10 @@ US state packages (packages/us-[code]/) additionally include:
 Usage:
     python3 scripts/build-packages.py           # rebuild all packages
     python3 scripts/build-packages.py --us-only # rebuild only US state packages
+    python3 scripts/build-packages.py --out DIR # build the full tree into DIR (must
+                                                # not exist or be empty) instead of
+                                                # packages/. validate-guides.py uses
+                                                # this to check packages/ is fresh.
 
 Output:
     packages/[country]/
@@ -1018,7 +1022,8 @@ def validate_generated_frontmatter():
             if filename.lower().startswith("readme"):
                 continue
             path = os.path.join(dirpath, filename)
-            rel = os.path.relpath(path, REPO_ROOT).replace(os.sep, "/")
+            # Reported as packages/<...> whether the build went in place or to --out.
+            rel = "packages/" + os.path.relpath(path, PACKAGES_DIR).replace(os.sep, "/")
             with open(path, encoding="utf-8", errors="replace") as fh:
                 text = fh.read()
             block = _frontmatter_block(text)
@@ -1033,8 +1038,32 @@ def validate_generated_frontmatter():
     return failures
 
 
+def output_dir(argv):
+    """The directory named by --out (absolute), or None for an in-place build.
+
+    The directory must not exist yet or must be empty: the build starts by
+    clearing its target, and pointing that at a populated directory by mistake
+    would delete unrelated files.
+    """
+    if "--out" not in argv:
+        return None
+    index = argv.index("--out")
+    if index + 1 >= len(argv) or argv[index + 1].startswith("--"):
+        sys.exit("error: --out requires a directory path")
+    out = os.path.abspath(argv[index + 1])
+    if os.path.exists(out) and (not os.path.isdir(out) or os.listdir(out)):
+        sys.exit(f"error: --out directory must not exist or must be empty: {out}")
+    return out
+
+
 def main():
+    global PACKAGES_DIR
     us_only = "--us-only" in sys.argv
+    out = output_dir(sys.argv[1:])
+    if out is not None:
+        if us_only:
+            sys.exit("error: --out builds the whole tree; it cannot be combined with --us-only")
+        PACKAGES_DIR = out
 
     if not us_only:
         # Clean packages directory — but NEVER remove hand-authored packages

@@ -1,5 +1,5 @@
 ---
-name: new_zealand-references
+name: new-zealand-references
 jurisdiction: NZ
 tier: 2
 last_updated: 2026-06-12

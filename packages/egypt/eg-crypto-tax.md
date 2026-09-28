@@ -4,7 +4,7 @@ description: Use this skill whenever asked about the legal status or taxation of
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-15
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -14,6 +14,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # EG Crypto Tax
+
+The declared `income-tax-workflow-base` dependency is not supplied in this repository. This guide does not provide that workflow and must not be treated as a complete tax-computation or return-preparation process. A reviewer must supply and verify the missing workflow before using it for that purpose.
 
 ## Egypt Cryptocurrency — Legal Status & Tax (العملات المشفرة) Skill v1.0
 
@@ -151,7 +153,7 @@ When asked something covered above, the correct answer is **"this is not establi
 
 ### References (verify before relying)
 
-- **Reference list** — - **CBE — Central Bank of Egypt** (cbe.org.eg): Banking Law No. 194 of 2020, Art. 206; public warnings against crypto dealing. - **ETA — Egyptian Tax Authority** (eta.gov.eg): Income Tax Law No. 91 of 2005 (as amended) — the general framework; **no crypto-specific guidance**. - **PwC Worldwide Tax Summaries** (taxsummaries.pwc.com/egypt) — general Egyptian tax background. - **Dar al-Ifta / Grand Mufti** — 2018 fatwa (religious opinion, not law). - Companion skills: `eg-income-tax` (brackets, filing), `eg-bookkeeping`, `egypt-vat`, `income-tax-workflow-base`.  _(CBE cbe.org.eg; ETA eta.gov.eg; PwC Worldwide Tax Summaries taxsummaries.pwc.com/egypt; Dar al-Ifta / Grand Mufti 2018 fatwa)_
+- **Reference list** — - **CBE — Central Bank of Egypt** (cbe.org.eg): Banking Law No. 194 of 2020, Art. 206; public warnings against crypto dealing. - **ETA — Egyptian Tax Authority** (eta.gov.eg): Income Tax Law No. 91 of 2005 (as amended) — the general framework; **no crypto-specific guidance**. - **PwC Worldwide Tax Summaries** (taxsummaries.pwc.com/egypt) — general Egyptian tax background. - **Dar al-Ifta / Grand Mufti** — 2018 fatwa (religious opinion, not law). - Companion skills: `eg-income-tax` (brackets, filing), `eg-bookkeeping`, `egypt-vat`. The declared `income-tax-workflow-base` dependency is unavailable.  _(CBE cbe.org.eg; ETA eta.gov.eg; PwC Worldwide Tax Summaries taxsummaries.pwc.com/egypt; Dar al-Ifta / Grand Mufti 2018 fatwa)_
 
 ## PROHIBITIONS (محظورات)
 

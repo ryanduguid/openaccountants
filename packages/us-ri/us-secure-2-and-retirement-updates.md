@@ -3,7 +3,7 @@ name: us-secure-2-and-retirement-updates
 description: Tier 2 US federal content skill for SECURE Act 2.0 (Division T of CAA 2023) retirement plan changes plus IRS guidance through 2025. Covers the RMD age 73 (born 1951-1959) / 75 (born 1960+) transition, the $11,250 super catch-up for ages 60-63 effective 2025, the 2026 Roth-mandatory catch-up for $145k+ wage earners (delayed from 2024), the inherited-IRA annual RMDs during the 10-year rule effective 2025 per the July 2024 final regs, Saver's Match replacing Saver's Credit in 2027, Solo 401(k) ability to establish + fund by extended return due date, emergency-savings within plans, $1,000 emergency distribution, $10k domestic-abuse withdrawal, 529-to-Roth $35k lifetime rollover, the $108,000 QCD limit for 2025, Roth SEP and Roth SIMPLE, and the backdoor / mega-backdoor Roth mechanics with §408(d)(2) pro-rata.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 reviewed_by: James Wallach
 review_status: current
 tier: 2
@@ -773,11 +773,13 @@ A reviewer should verify the following for any 2025 federal return where retirem
 
 ## 21. Open Issues and Pending Guidance
 
-As of November 2025, the following SECURE 2.0 provisions remain partially or fully unaddressed by IRS guidance:
+**This section was a snapshot taken in November 2025 and is restated here as at September 2026.** Ten months have passed; treat every item below as needing a fresh check against the IRS Priority Guidance Plan before relying on it, and note that item 1 was already out of date when the snapshot was written.
 
-1. §603 Roth catch-up final regs: proposed regs January 10, 2025 (REG-100669-24). Final regs expected during 2026. Plan sponsors operating in 2026 must navigate proposed-reg rules.
+The following SECURE 2.0 provisions were, or remain, unaddressed by IRS guidance:
+
+1. **§603 Roth catch-up — RESOLVED, and this entry was wrong when written.** Treasury and the IRS issued **final regulations on 15 September 2025** (T.D. 10033, published in the Federal Register 16 September 2025), two months *before* the November 2025 snapshot that said they were "expected during 2026". Plan sponsors operating in 2026 are governed by the final regulations, not the proposed ones this entry pointed them to. Three points the entry did not carry and that matter now: mandatory Roth treatment applies where the employee's **prior-year FICA wages exceed the threshold** ($145,000 for 2025, indexed); compliance is generally required from **1 January 2026**, with **reasonable good-faith compliance relief through 1 January 2027**; and the **plan amendment deadline is 31 December 2026**, with a good-faith interpretation standard for plan years beginning before 1 January 2027. That amendment deadline falls inside the current year.
 2. §325 lifetime Roth 401(k) RMD elimination: clarification needed on coordination with rollovers from Roth 401(k) to Roth IRA.
-3. §334 LTC distribution: regs not yet issued. Effective 2026.
+3. §334 long-term care distributions: **the provision is now in effect** — it applied from 2026 and this entry still described it as forthcoming. No regulations were identified as issued in this pass, so the provision operates without them; confirm current guidance before advising on a distribution.
 4. §603 application to self-employed: open question whether self-employment net earnings will ultimately be deemed analogous to FICA wages for §603 purposes. Conservative position: NO (sole proprietors retain pre-tax catch-up capability).
 5. §126 529-to-Roth and beneficiary-change clock reset: unclear whether changing the 529 beneficiary resets the 15-year clock. IRS has not addressed.
 6. §109 super catch-up for SIMPLE plans: confirmed in IRS Notice 2024-2 but practical implementation by SIMPLE-IRA providers was inconsistent through 2024.

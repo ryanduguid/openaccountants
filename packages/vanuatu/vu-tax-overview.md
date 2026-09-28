@@ -3,7 +3,7 @@ name: vu-tax-overview
 description: "Source-cited draft: tax overview for Vanuatu (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: VU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Overview of Vanuatu tax system** — Vanuatu is a long-standing low-tax jurisdiction with no personal income tax, no corporate income tax, no capital gains tax, and no inheritance or wealth tax. Government revenue is raised mainly through Value Added Tax (VAT), import duties, business licence fees, a rent tax on rental income, and other indirect levies.
 - **National currency** — Vanuatu vatu (VUV / VT)  _(Reserve Bank of Vanuatu Act)_
 - **Principal tax authority** — Department of Customs and Inland Revenue (DCIR)  _([Value Added Tax Act — https://customsinlandrevenue.gov.vu/taxes-and-licensing.html](https://customsinlandrevenue.gov.vu/taxes-and-licensing.html))_
-- **Personal income tax** — None — Vanuatu levies no tax on personal income, salaries or wages ((approx — confirm))  _([Vanuatu tax legislation (no Income Tax Act in force) — https://www.globalcitizensolutions.com/vanuatu-taxes/](https://www.globalcitizensolutions.com/vanuatu-taxes/))_
+- **Personal income tax** — None — Vanuatu levies no tax on personal income, salaries or wages ((approx — confirm))  _(Vanuatu tax legislation (no Income Tax Act in force) (as described at [globalcitizensolutions.com](https://www.globalcitizensolutions.com/vanuatu-taxes/)))_
 - **Corporate income tax** — None — no tax on company profits, dividends or capital gains  _([Vanuatu tax legislation (no corporate income tax statute) — https://www.globalcitizensolutions.com/vanuatu-taxes/](https://www.globalcitizensolutions.com/vanuatu-taxes/))_
 - **Capital gains, inheritance and wealth tax** — None  _([Vanuatu tax legislation — https://www.globalcitizensolutions.com/vanuatu-taxes/](https://www.globalcitizensolutions.com/vanuatu-taxes/))_
 - **Value Added Tax (VAT)** — Yes — standard rate 15% %  _([Value Added Tax Act — https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html](https://customsinlandrevenue.gov.vu/taxes-and-licensing/taxes/value-added-tax-vat/introduction.html))_

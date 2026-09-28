@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: ET
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -93,7 +93,8 @@ Net: Boxes 16-18 (net, credit b/f, net payable).
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-- **Filing frequency and deadline** — Monthly. Last day of following month.
+- **Filing frequency and deadline** — Monthly. Last day of the following calendar month — VAT Proclamation No. 1341/2024 art. 58(1), which also requires the return whether or not net VAT is payable (art. 58(2)); payment falls due on the same date (art. 59(1)).
+- **Twelve accounting periods, not thirteen** — Art. 2 aggregates **August and Pagumen** and treats them as one calendar month. Pagumen is the 5- or 6-day thirteenth month of the Ethiopian calendar, so a filing calendar built from thirteen months invents a period that does not exist.
 - **Late filing penalty** — ETB 5,000/month ETB per month
 - **Late payment penalty** — 2%/month % per month
 - **Failure to register penalty** — 100% of tax due %

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Chilean income tax for self-emp
 version: 2.0
 jurisdiction: CL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -141,7 +141,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Gastos presuntos vs efectivos unclear | STOP — choice fundamentally changes computation |
 | UTA value uncertain | Verify December UTA at www.sii.cl |
-| Withholding rate unknown | Use 14.5% for 2025 boletas |
+| Withholding rate unknown | Use the rate for the boleta's YEAR from the schedule above — 15.25% for 2026. Never carry last year's rate: Ley 21.133 raises it every year to 2028 |
 | Gastos efectivos without documentation | Reject — only documented expenses qualify |
 | APV regime (A vs B) unclear | Do NOT apply deduction — flag for reviewer |
 | Cotizaciones not provided | Estimate at standard rates on 80% gross; flag |
@@ -376,7 +376,7 @@ PPM credit likely covers entire tax. Probable refund.
 ## Section 5 — Tier 1 Rules (Apply Directly)
 
 - **T1-CL-1 — Gastos presuntos capped at 15 UTA** — The 30% deemed expense deduction cannot exceed 15 UTA regardless of how high the gross income is. Always check the cap. Use the December UTA of the tax year.  _(T1-CL-1)_
-- **T1-CL-2 — Withholding rate is 14.5% for 2025** — Boletas de honorarios issued in 2025 attract a 14.5% withholding. This covers both PPM (income tax advance) and cotizaciones previsionales. Do not use rates from other years.  _(T1-CL-2)_
+- **T1-CL-2 — The withholding rate changes every year; read it off the boleta's year** — Ley 21.133 raises the boleta de honorarios retention annually to 2028: **13.75% (2024), 14.5% (2025), 15.25% (2026), 16% (2027), 17% (2028)**. The rate for a boleta is the rate for the year it was issued. It covers both PPM (income tax advance) and cotizaciones previsionales. This rule previously read "the withholding rate is 14.5% for 2025" and told the reader not to use rates from other years, which is the right instruction attached to a rate that had itself become another year's.  _(T1-CL-2; Ley 21.133)_
 - **T1-CL-3 — PPM is a credit, not income reduction** — The withholding on boletas (after cotizaciones are deducted) is a credit against the annual IGC. It does not reduce gross income. Excess PPM is refunded during Operación Renta.  _(T1-CL-3)_
 - **T1-CL-4 — Cotizaciones previsionales are mandatory** — Under Ley 21.133, trabajadores a honorarios must contribute to AFP, salud, SIS, and ATEP. Cotizaciones are deducted from the boleta withholding before PPM is calculated. They are deductible from gross income for IGC purposes.  _(T1-CL-4; Ley 21.133)_
 - **T1-CL-5 — December UTA only for IGC computation** — The IGC table uses the December UTA of the tax year. Never use January or any other month's UTA. Verify at www.sii.cl.  _(T1-CL-5; www.sii.cl)_
@@ -455,7 +455,7 @@ SECTION I — REVIEWER FLAGS
 [ ] Expense method confirmed (presuntos vs efectivos)?
 [ ] Gastos presuntos cap checked (15 UTA)?
 [ ] December UTA verified at www.sii.cl?
-[ ] Withholding rate 14.5% confirmed for 2025?
+[ ] Withholding rate matched to the boleta's year (15.25% for 2026) — not carried over from last year?
 [ ] Cotizaciones verified against receipts?
 [ ] APV regime confirmed (A or B)?
 [ ] Boletas electrónicas cross-checked with SII portal?
@@ -528,7 +528,7 @@ SECTION I — REVIEWER FLAGS
 > "Trabajadores a honorarios are required to make social security contributions (AFP, salud, SIS, ATEP) under Ley 21.133. These are deducted from your boleta withholding. Do you have records of cotizaciones paid? You can check at www.previred.com or your AFP's website."
 
 **PPM reconciliation:**
-> "The boleta withholding (14.5% in 2025) covers both cotizaciones and PPM (income tax advance). After cotizaciones are deducted, the remaining amount is your PPM credit against the annual IGC. Do you have your Formulario 29 payment receipts for months where you self-withheld? I need to reconcile total PPM for the year."
+> "The boleta withholding (15.25% in 2026, 14.5% in 2025) covers both cotizaciones and PPM (income tax advance). After cotizaciones are deducted, the remaining amount is your PPM credit against the annual IGC. Do you have your Formulario 29 payment receipts for months where you self-withheld? I need to reconcile total PPM for the year."
 
 **APV regime:**
 > "I see you may have voluntary pension contributions (APV). APV Régimen A deducts the contribution from taxable income now (taxed later on withdrawal). Régimen B gives no deduction now but provides a 15% state bonus. The optimal choice depends on your marginal IGC rate. Can you confirm which regime your APV is under?"

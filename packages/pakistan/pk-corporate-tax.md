@@ -3,16 +3,45 @@ name: pk-corporate-tax
 description: "ALWAYS read this skill before touching any Pakistan corporate income tax (CIT) work. Use this skill whenever asked about Pakistan corporate tax for a resident Pakistani company. Trigger on phrases like \"Pakistan CIT\", \"Pakistan company tax\", \"Pvt Ltd Pakistan\", \"super tax Pakistan\", \"small company Pakistan tax\", \"PSEB IT export\", \"Finance Act 2025 corporate\", \"Section 4C super tax\", \"Section 113 minimum tax\", \"Section 113C ACT\", \"Section 147 advance tax\", \"IRIS return Pakistan\", \"group taxation Pakistan\", \"Section 59AA\", \"Section 59B\". Covers the 29% standard CIT rate under the Income Tax Ordinance 2001 (ITO 2001) as amended by Finance Act 2024 and Finance Act 2025, the 39% banking-company rate, the 20% small-company rate (turnover ≤ Rs 250M plus the other Section 2(59A) conditions), Section 4C super tax progressive bands (1%–10%) on income above Rs 150M, Section 113 minimum tax on turnover at 1.25%, Section 113C Alternative Corporate Tax (higher of normal tax or 17% of accounting income), the PSEB-registered IT/ITeS exports concessional regime (1% final tax — flag any FA 2025 changes as TBC), Section 59AA group relief and Section 59B group taxation, Section 147 quarterly advance tax computation and payment, and annual return filing via IRIS by 31 December. Out of scope: AOPs and individuals (separate regime), permanent establishments / branches of non-residents, oil and gas exploration and production, insurance company life/non-life special regimes, modarabas, NPOs and trusts, the special economic zone (SEZ) regimes, mutual funds, REITs, and any sales tax / FED matter (see pakistan-sales-tax)."
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-12
 reviewed_by: Ibrar Ali
-review_status: current
-tier: 1
+review_status: pending_review
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
+
+> This revision includes changes made after the recorded accountant review and awaits a new review.
 
 # PK Corporate Tax
 
 ## Pakistan — Corporate Income Tax — Skill v1.0
+
+> **How to read every "TBC — verify against Finance Act 2025" marker in this
+> guide: as naming the wrong Act.**
+>
+> Those markers were written while the Finance Act 2025 was still pending. Both
+> it and the Finance Act 2026 are now enacted, so an instruction to "verify
+> against FA 2025" is two Acts behind for anyone computing a current year.
+> Pakistan's tax year runs 1 July to 30 June, and the Act that governs it is the
+> one enacted immediately before it starts:
+>
+> | Tax year | Period | Governing Finance Act |
+> | --- | --- | --- |
+> | TY 2024-25 | 1 Jul 2024 – 30 Jun 2025 | Finance Act 2024 |
+> | TY 2025-26 | 1 Jul 2025 – 30 Jun 2026 | Finance Act 2025 |
+> | TY 2026-27 | 1 Jul 2026 – 30 Jun 2027 | **Finance Act 2026** (gazetted 26 June 2026) |
+>
+> So read each TBC as **"verify against the Finance Act in force for the tax
+> year being computed"**. The markers still do their job — they say a figure was
+> not confirmed — but they do not tell you which Act to open, and for a 2026-27
+> computation the answer is FA 2026, not FA 2025.
+>
+> The same wording appears in this guide's `agent-skills/` counterpart, which is
+> a separate hand-maintained tree rather than a generated copy. That copy now
+> carries this block too. It does not inherit it — nothing in `agent-skills/` is
+> generated from `skills/` — so the correction had to be written there by hand,
+> and an earlier revision of this note recorded that it had not been.
+
 
 > **Produced by OpenAccountants (openaccountants.com)**
 >
@@ -213,7 +242,7 @@ The Seventh Schedule overrides much of the general computational framework — d
 
 ### 4.3 Alternative Corporate Tax (ACT) — Section 113C
 
-- **ACT rate** — 17% of accounting income (post-FA 2024 — confirm FA 2025 as TBC)  _(Section 113C ITO 2001)_
+- **ACT rate** — **17%** of adjusted accounting income under section 113C. Checked September 2026 against sources published after both Finance Act 2025 and Finance Act 2026: **no amendment to the rate or to section 113C was identified**, and ACT continues to be described as an active provision. Accounting income is accounting profit before tax per the financial statements, excluding share of an associate recognised under the equity method. ACT does **not** apply to insurance companies, banking companies, companies in petroleum exploration and production, or companies enjoying a reduced rate of tax. This is a negative finding rather than a confirmation from the gazette — the absence of a reported change is weaker evidence than a gazette read, so verify before relying on it for a filing  _(Section 113C ITO 2001)_
 - **Higher of test** — A company's tax liability for a tax year is the higher of: 1. Corporate Tax — normal CIT at the applicable rate (29% / 20% / 39%); or 2. Alternative Corporate Tax (ACT) — 17% of accounting income (accounting income as defined in Section 113C, broadly profit before tax as per the financial statements with prescribed adjustments).  _(Section 113C ITO 2001)_
 - **ACT liability formula** — Liability = max ( Corporate Tax, 17% × Accounting Income )  _(Section 113C ITO 2001)_
 - **Accounting income nuance** — "Accounting income" for Section 113C is defined with carve-outs (e.g., exempt income, income subject to final tax regimes, share of profit from AOPs already taxed). The precise adjustment list is in Section 113C — apply it carefully, do not equate "accounting income" with raw PBT.  _(Section 113C ITO 2001)_
@@ -394,7 +423,7 @@ Plus applicable super tax under Section 4C (banking-sector specific bands may ap
 - **Self-assessment** under Section 120 — return as filed becomes the assessment unless selected for audit.
 - **Audit selection** under Section 177 / 214C — Commissioner may select; risk-based or parametric.
 - **Amendment of assessment** under Section 122 — up to **5 years** from end of the financial year in which the original assessment was made (extendable in cases of concealment).
-- **Appeals** — Commissioner (Appeals) → Appellate Tribunal Inland Revenue (ATIR) → High Court reference → Supreme Court appeal.
+- **Appeals**: Finance Act 2025 section 10(22) omits ITO section 126A's monetary-threshold route. Sections 10(23) and 10(25) amend sections 127 and 131 so an eligible taxpayer can surrender the Commissioner (Appeals) stage and appeal directly to ATIR. State-owned enterprises have separate restrictions. Section 10(26) changes the High Court reference period to sixty days and removes mixed questions of law and fact. Obtain specialist advice on the applicable order, route and time limit. Source: [Finance Act 2025](https://download1.fbr.gov.pk/Docs/2025629106147620FInanceAct2025.pdf) (PDF pages 68–69).
 
 ### 6.6 Common Penalty Headings (Section 182 and others)
 
@@ -467,7 +496,7 @@ Plus applicable super tax under Section 4C (banking-sector specific bands may ap
   - Seventh Schedule — banking (out of scope except 39% rate reference).
   - Second Schedule, Part I — exemptions (incl. IT exports clauses, historical Clause 133).
 - **Finance Act 2024** — amended rates, super tax bands, minimum tax, ACT settings.
-- **Finance Act 2025** — current-year amendments (verify gazetted text; **TBC** where uncertain).
+- **Finance Act 2025 and Finance Act 2026** — Finance Act 2025 was enacted 27 June 2025 with effect from 1 July 2025; **Finance Act 2026 was passed 23 June 2026, gazetted 26 June 2026 and took effect 1 July 2026**, and is the current-year law for TY 2026-27. Every "TBC — verify under Finance Act 2025" marker in this pack was written before either was gazetted, so check both texts before treating one as still open. Among the changes: FA 2026 **abolished** the high-income surcharge on individuals (see `pk-income-tax`).
 
 **Subordinate Legislation**
 

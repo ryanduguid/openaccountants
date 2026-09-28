@@ -1,9 +1,9 @@
 ---
 name: ie-corporation-tax
-description: "Use this skill whenever asked about Irish Corporation Tax for a resident Irish company or branch of a non-resident company carrying on a trade in Ireland. Trigger on phrases like \"Ireland CT\", \"Ireland corporation tax\", \"12.5% Ireland\", \"Irish trading rate\", \"Pillar Two Ireland\", \"Irish CT1 return\", \"Revenue Online Service CT\", \"ROS CT1\", \"Section 21 TCA\", \"Section 21A passive income\", \"Knowledge Development Box\", \"KDB\", \"R&D tax credit Ireland\", \"Section 766\", \"Section 110 SPV\", \"group relief Ireland\", \"preliminary CT\", \"iXBRL accounts\", \"QDMTT Ireland\", \"IIR Ireland\", or \"UTPR Ireland\". Covers the 12.5% trading rate (Section 21 TCA 1997), the 25% non-trading rate (Section 21A) on passive income, the Pillar Two 15% effective minimum tax for in-scope MNEs implemented via Finance (No. 2) Act 2023 (IIR, QDMTT, UTPR), the R&D tax credit at 30% under Section 766 TCA (as raised by FA 2024) refundable in three instalments, the Knowledge Development Box at 6.25% effective rate, Section 110 securitisation SPV rules, group relief at the 75% threshold, trading loss relief (one-year carry-back, indefinite carry-forward), preliminary tax (90% current year or 100% prior year), and final CT1 filing within 9 months of year-end (by the 23rd of that month for ROS users) with iXBRL-tagged financial statements via Revenue Online Service. Out of scope: personal income tax (use ie-income-tax-form11), USC (use ie-usc), PRSI Class S (use ie-prsi-class-s), VAT (use ireland-vat-return), preliminary income tax (use ie-preliminary-tax), partnerships and unincorporated businesses, foreign branch trading profits taxed under Section 25 attribution rules, banking and insurance sector specific regimes, life assurance Case I/IV computations, REIT (Section 705A) and IREF (Section 739K) specific returns, petroleum and mineral extraction profits, and Irish Collective Asset-management Vehicles (ICAVs). ALWAYS read this skill before touching any Irish Corporation Tax work."
+description: "Use this skill whenever asked about Irish Corporation Tax for a resident Irish company or branch of a non-resident company carrying on a trade in Ireland. Trigger on phrases like \"Ireland CT\", \"Ireland corporation tax\", \"12.5% Ireland\", \"Irish trading rate\", \"Pillar Two Ireland\", \"Irish CT1 return\", \"Revenue Online Service CT\", \"ROS CT1\", \"Section 21 TCA\", \"Section 21A passive income\", \"Knowledge Development Box\", \"KDB\", \"R&D tax credit Ireland\", \"Section 766\", \"Section 110 SPV\", \"group relief Ireland\", \"preliminary CT\", \"iXBRL accounts\", \"QDMTT Ireland\", \"IIR Ireland\", or \"UTPR Ireland\". Covers the 12.5% trading rate (Section 21 TCA 1997), the 25% non-trading rate (Section 21A) on passive income, the Pillar Two 15% effective minimum tax for in-scope MNEs implemented via Finance (No. 2) Act 2023 (IIR, QDMTT, UTPR), the R&D tax credit at 35% under Section 766 TCA for accounting periods beginning on or after 1 January 2026 (30% for periods from 1 January 2024) refundable in three instalments, the Knowledge Development Box at 10% effective rate, Section 110 securitisation SPV rules, group relief at the 75% threshold, trading loss relief (one-year carry-back, indefinite carry-forward), preliminary tax (90% current year or 100% prior year), and final CT1 filing within 9 months of year-end (by the 23rd of that month for ROS users) with iXBRL-tagged financial statements via Revenue Online Service. Out of scope: personal income tax (use ie-income-tax-form11), USC (use ie-usc), PRSI Class S (use ie-prsi-class-s), VAT (use ireland-vat-return), preliminary income tax (use ie-preliminary-tax), partnerships and unincorporated businesses, foreign branch trading profits taxed under Section 25 attribution rules, banking and insurance sector specific regimes, life assurance Case I/IV computations, REIT (Section 705A) and IREF (Section 739K) specific returns, petroleum and mineral extraction profits, and Irish Collective Asset-management Vehicles (ICAVs). ALWAYS read this skill before touching any Irish Corporation Tax work."
 jurisdiction: IE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-12
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -11,7 +11,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # IE Corporation Tax
 
-## Ireland — Corporation Tax — Skill v1.0
+## Ireland — Corporation Tax — Skill v1.1
 
 > **Produced by OpenAccountants (openaccountants.com)**
 >
@@ -28,15 +28,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | EUR (functional currency election available under Section 402 TCA 1997) |
 | Tax authority | Revenue Commissioners (An Coimisiún Ioncaim) |
 | Primary legislation | **Taxes Consolidation Act 1997 (TCA 1997)** as amended by annual Finance Acts |
-| Recent Finance Acts | Finance Act 2023 (Pillar Two introduction); Finance Act 2024 (R&D credit raised to 30%); Finance Act 2025 (annual updates) |
+| Recent Finance Acts | Finance (No. 2) Act 2023 (Pillar Two introduction; R&D credit 25% → 30%); Finance Act 2024 (R&D first-instalment threshold €50,000 → €75,000); **Finance Act 2025 (R&D credit 30% → 35%, threshold → €87,500)** |
 | **Trading rate** | **12.5%** of trading income — **Section 21 TCA 1997** |
 | **Non-trading rate** | **25%** of passive (non-trading) income — **Section 21A TCA 1997** |
 | **Capital gains rate (companies)** | 33% on chargeable gains (Section 28 TCA) |
 | **Close-company surcharge** | 20% on undistributed investment / rental income; 15% on undistributed professional service income (Sections 440, 441 TCA) |
 | **Pillar Two — IIR / QDMTT** | Effective minimum tax **15%** for MNEs with consolidated revenue **> €750M** for at least 2 of the previous 4 financial years — Part 4A TCA 1997 (inserted by Finance (No. 2) Act 2023); effective for fiscal years beginning on or after 31 December 2023 |
 | **Pillar Two — UTPR** | Undertaxed Profits Rule, effective for fiscal years beginning on or after 31 December 2024 |
-| **R&D Tax Credit** | **30%** of qualifying R&D expenditure (raised from 25% by Finance Act 2024) — Section 766 TCA; refundable in 3 instalments |
-| **Knowledge Development Box (KDB)** | Effective rate **6.25%** (i.e. half the 12.5% rate) on qualifying IP-derived income — Section 769G-R TCA; extended to accounting periods beginning before 1 January 2027 (FA 2024) |
+| **R&D Tax Credit** | **35%** for accounting periods beginning on or after 1 January 2026 (Finance Act 2025); **30%** for periods commencing on or after 1 January 2024 — Section 766 TCA; refundable in 3 instalments, or in full in the first instalment where the claim does not exceed **€87,500** |
+| **Knowledge Development Box (KDB)** | Effective rate **10%** (12.5% on profits after a 20% deduction) on qualifying IP-derived income — Section 769G-R TCA; extended to accounting periods beginning before 1 January 2027 (Finance Act 2022) |
 | **Group relief threshold** | **75%** ownership (effective beneficial); Sections 411–429 TCA |
 | **Loss relief** | Trading losses: 1-year carry-back (Section 396A); indefinite carry-forward against same trade (Section 396) |
 | **Preliminary tax (large companies)** | 50% of current year OR 100% of prior year, in 2 instalments (large company = CT liability > €200,000 in preceding period) |
@@ -60,7 +60,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Passive-income source unclear | Section 21A (25%) |
 | Pillar Two scope unclear | Out of scope until consolidated revenue > €750M for 2 of last 4 FYs is confirmed |
 | R&D qualification unclear | No credit until BERD test + Frascati Manual criteria documented |
-| KDB qualification unclear | Do not apply 6.25%; default to 12.5% trading rate |
+| KDB qualification unclear | Do not apply 10%; default to 12.5% trading rate |
 | Group relationship unclear | No group relief |
 | Close company status unclear | Treat as close company; surcharge potentially in scope |
 | Accounting period > 12 months | Split into two CT accounting periods (first 12 + remainder) — Section 27 TCA |
@@ -223,7 +223,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 R&D Tax Credit — Section 766 TCA
 
-- **R&D credit rate (FA 2024 onwards)** — 30% of qualifying R&D expenditure (raised from 25%). Applies to accounting periods commencing on or after 1 January 2024. percent  _(Section 766 TCA)_
+- **R&D credit rate** — **35%** of qualifying R&D expenditure for accounting periods **beginning on or after 1 January 2026** (Finance Act 2025). **30%** for periods commencing on or after 1 January 2024, raised from 25% by Finance (No. 2) Act 2023 — this line previously attributed that increase to Finance Act 2024 and stopped there. The rate has moved twice in three years, so read it off the accounting period rather than from memory percent  _(Section 766 TCA; Finance (No. 2) Act 2023; Finance Act 2025)_
 - **Qualifying expenditure** — - Salaries of R&D staff (apportioned to qualifying time). - Consumables used in R&D. - Plant and machinery used wholly and exclusively for R&D (capital allowances accelerated where used in R&D). - Subcontracted R&D (Section 766(1)(b)(vii)) capped at 15% of in-house R&D spend or €100,000 (whichever greater). - Outsourced to a third-level institution capped at 5% of in-house spend.  _(Section 766(1)(b)(vii) TCA)_
 - **Qualifying activity** — Must satisfy the Frascati Manual definition (systematic, investigative, creative, novel, uncertain). Must be in a "field of science or technology" (Section 766(1)(a)). Software development qualifies where it meets the technological-uncertainty test (Revenue R&D Guidelines).  _(Section 766(1)(a) TCA)_
 - **Refundability — Section 766C** — The credit can be (i) offset against CT of the claim period, (ii) carried forward, or (iii) paid as a cash refund in 3 instalments over 33 months: - Instalment 1: Greater of €75,000 (FA 2024 raised threshold) or 50% of the credit — payable on filing. - Instalment 2: 60% of the remaining balance — 12 months later. - Instalment 3: Final balance — 24 months later.  _(Section 766C TCA)_
@@ -232,10 +232,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.2 Knowledge Development Box — Sections 769G–769R TCA
 
-- **KDB effective rate** — 6.25% on qualifying profits from qualifying intellectual property (patents, copyrighted software, IP equivalent to a patentable invention for small companies). percent  _(Sections 769G–769R TCA)_
+KDB changed from a 50% deduction (6.25% effective) to a 20% deduction (10%
+effective) from 1 October 2023 under Finance Act 2022 section 40. Revenue
+confirms that relief covers accounting periods commencing before 1 January
+2027. Apply the nexus and qualifying-asset rules; the rate alone does not
+establish eligibility. Source: [Revenue KDB guidance](https://www.revenue.ie/en/companies-and-charities/reliefs-and-exemptions/knowledge-development-box-kdb/index.aspx).
+
+- **KDB effective rate** — 10% on qualifying profits from qualifying intellectual property (patents, copyrighted software, IP equivalent to a patentable invention for small companies). percent  _(Sections 769G–769R TCA)_
 - **OECD modified nexus approach** — Qualifying profits are restricted by the nexus fraction = (qualifying R&D expenditure × 1.3) / total expenditure on the IP asset. The 30% uplift is the OECD-permitted "up-lift" for outsourcing or acquisition costs.
-- **Mechanism** — Election made in the CT1; profits from qualifying IP are computed using a tracking-and-tracing methodology; the qualifying profit is taxed at the standard 12.5%, with a deduction equal to 50% of the qualifying profit giving an effective 6.25% rate.
-- **Extension** — FA 2024 extended KDB to accounting periods beginning before 1 January 2027.
+- **Mechanism** — Election made in the CT1; profits from qualifying IP are computed using a tracking-and-tracing methodology; the qualifying profit is taxed at the standard 12.5%, with a deduction equal to 20% of qualifying profit giving an effective 10% rate from 1 October 2023.
+- **Extension** — Finance Act 2022 section 40 extended KDB to accounting periods beginning before 1 January 2027.
 - **Conservative default** — Do not elect KDB without a documented IP asset, nexus computation, and tracking-and-tracing system in place. The compliance burden is material; benefit only arises for material qualifying IP profits.
 
 ### 5.3 Section 110 Securitisation SPVs
@@ -546,7 +552,7 @@ Total liability                              57,000
 - **Schedule 24 TCA 1997** — double taxation relief / foreign tax credit pooling.
 
 - **Finance (No. 2) Act 2023** — introduction of Part 4A Pillar Two (IIR, QDMTT, transitional safe harbours).
-- **Finance Act 2024** — UTPR effective 31 December 2024; R&D credit raised to 30%; KDB extended to 31 December 2026; Section 831B participation exemption; Section 486C start-up relief extension.
+- **Finance Act 2024** — UTPR effective 31 December 2024; Section 831B participation exemption; Section 486C start-up relief extension.
 - **Finance Act 2025** — annual updates (subject to confirmation at signing).
 
 - **Council Directive (EU) 2022/2523** of 14 December 2022 — Pillar Two minimum tax directive.

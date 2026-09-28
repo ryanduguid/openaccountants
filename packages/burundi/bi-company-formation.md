@@ -3,7 +3,7 @@ name: bi-company-formation
 description: "Source-cited draft: company formation & entity choice for Burundi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,14 +13,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Company formation and compliance
 
-Business registration in Burundi is centralised through the Agence de Promotion des Investissements (API) one-stop shop, with company law based on the OHADA-style commercial framework. The SARL (limited liability company) is the most common vehicle for small and medium businesses.
+Business registration in Burundi is centralised through the Agence de Promotion des Investissements (API) one-stop shop, with company law **of its own**. **Burundi is not an OHADA member state** — OHADA's register lists seventeen and Burundi is not among them — so "OHADA-style" should not be read as meaning the Uniform Acts apply. [RESEARCH GAP — Burundi's own company law is the source this guide needs.] _(OHADA, Les Etats membres de l'OHADA — https://www.ohada.org/les-etats-membres-de-lohada/)_ The SARL (limited liability company) is the most common vehicle for small and medium businesses.
 
-- **Most common entity type** — Société à Responsabilité Limitée (SARL) — private limited liability company  _([Code des sociétés privées et à participation publique (Burundi company law)](https://www.expanship.com/bi/blog/types-of-companies-in-burundi.html))_
+- **Most common entity type** — Société à Responsabilité Limitée (SARL) — private limited liability company  _(Code des sociétés privées et à participation publique (Burundi company law) (as described at [expanship.com](https://www.expanship.com/bi/blog/types-of-companies-in-burundi.html)))_
 - **Public/larger company type** — Société Anonyme (SA) — public limited company, used for larger ventures  _(Code des sociétés privées et à participation publique (Burundi company law))_
 - **Foreign company presence** — Foreign companies may register a branch or a subsidiary  _(Code des sociétés privées et à participation publique (Burundi company law))_
-- **Minimum share capital for a SARL** — No meaningful statutory minimum (effectively nominal — cited as low as the equivalent of US$1) ((approx — confirm))  _([Code des sociétés privées et à participation publique (Burundi company law)](https://www.healyconsultants.com/burundi-company-registration/setup-llc/))_
-- **Minimum shareholders and directors (SARL)** — At least 1 director and 1 shareholder (a corporate shareholder generally requires 2 shareholders); any nationality permitted  _([Code des sociétés privées et à participation publique (Burundi company law)](https://www.healyconsultants.com/burundi-company-registration/setup-llc/))_
-- **Registration authority** — Agence de Promotion des Investissements (API) — one-stop business registration  _([Loi portant création de l'API (Investment Promotion Agency)](https://www.expanship.com/bi/blog/incorporation-requirements-in-burundi))_
+- **Minimum share capital for a SARL** — No meaningful statutory minimum (effectively nominal — cited as low as the equivalent of US$1) ((approx — confirm))  _(Code des sociétés privées et à participation publique (Burundi company law) (as described at [healyconsultants.com](https://www.healyconsultants.com/burundi-company-registration/setup-llc/)))_
+- **Minimum shareholders and directors (SARL)** — At least 1 director and 1 shareholder (a corporate shareholder generally requires 2 shareholders); any nationality permitted  _(Code des sociétés privées et à participation publique (Burundi company law) (as described at [healyconsultants.com](https://www.healyconsultants.com/burundi-company-registration/setup-llc/)))_
+- **Registration authority** — Agence de Promotion des Investissements (API) — one-stop business registration  _(Loi portant création de l'API (Investment Promotion Agency) (as described at [expanship.com](https://www.expanship.com/bi/blog/incorporation-requirements-in-burundi)))_
 - **Incorporation steps** — Reserve company name with API, draft articles of association, deposit capital in a corporate bank account, file the registration application with API, obtain the registration certificate (RC) and tax identification number (NIF)  _([Agence de Promotion des Investissements (API) procedures](https://www.expanship.com/bi/blog/incorporation-requirements-in-burundi))_
 - **Incorporation timeline** — Approximately 1 to 2 weeks via the API one-stop shop ((approx — confirm))  _([Agence de Promotion des Investissements (API) procedures](https://www.healyconsultants.com/burundi-company-registration/incorporation-steps/))_
 - **Indicative company registration fee** — Around BIF 40,000 (varies by entity type) BIF ((approx — confirm)) BIF  _([Agence de Promotion des Investissements (API) fee schedule](https://www.expanship.com/bi/blog/incorporation-requirements-in-burundi))_

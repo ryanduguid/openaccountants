@@ -3,7 +3,7 @@ name: my-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Malaysia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636
 review_status: current
 tier: 2
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Withholding tax on dividends paid to non-residents** — 0% (no withholding tax under the single-tier system) %  _([Income Tax Act 1967](https://taxsummaries.pwc.com/malaysia/corporate/withholding-taxes))_
 - **Withholding tax on interest paid to non-residents** — 15% (may be reduced by treaty) %  _([Income Tax Act 1967, Section 109](https://www.hasil.gov.my/en/legislation/withholding-tax/))_
 - **Withholding tax on royalties paid to non-residents** — 10% (may be reduced by treaty) %  _([Income Tax Act 1967, Section 109](https://www.hasil.gov.my/en/legislation/withholding-tax/))_
-- **Withholding tax on technical/service fees to non-residents (Section 4A)** — 10% (may be reduced by treaty) % (approx — confirm scope of Section 4A income)  _(Income Tax Act 1967, Section 109B)_
+- **Withholding tax on technical/service fees to non-residents (Section 4A)** — **10%** on payments to non-residents for the provision of any **advice, assistance or services performed in Malaysia**, and on the **rental of movable property** — the third limb this line did not carry. Treaty relief may reduce it. The territorial test answers the scope question the line used to hedge: it is services *performed in Malaysia*, so a non-resident advising entirely from abroad falls outside this head percent  _(Income Tax Act 1967, Sections 4A and 109B — https://taxsummaries.pwc.com/malaysia/corporate/withholding-taxes)_
 - **Estimate of tax payable (Form CP204)** — Companies must submit an estimate of tax payable not later than 30 days before the start of the basis period  _(Income Tax Act 1967, Section 107C)_
 - **Payment of estimated tax** — Paid in monthly instalments (generally 12) by the 15th of each month during the basis period  _(Income Tax Act 1967, Section 107C)_
 - **Annual return filing (Form C)** — Within 7 months after the close of the financial year-end (via e-Filing)  _([Income Tax Act 1967, Section 77A](https://www.pwc.com/my/en/publications/mtb/important-filing-furnishing-dates.html))_

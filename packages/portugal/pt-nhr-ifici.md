@@ -1,10 +1,10 @@
 ---
 name: pt-nhr-ifici
-description: "Utilizar este skill sempre que questões envolvam o regime do Residente Não Habitual (RNH) em Portugal ou o seu sucessor, o Incentivo Fiscal à Investigação Científica e Inovação (IFICI). Acionar perante expressões como \"RNH\", \"Residente Não Habitual\", \"IFICI\", \"Incentivo Fiscal à Investigação Científica e Inovação\", \"20% taxa fixa\", \"nómadas digitais Portugal\", \"isenção rendimentos estrangeiros\", \"Modelo 3 anexo L\", \"Atividades de Elevado Valor Acrescentado\", \"AEVA\", \"Portaria 187/2024\", \"EBF artigo 58.º-A\", \"Despacho 230/2019\", \"pensões estrangeiras Portugal\", \"convenções dupla tributação Portugal\". Também acionar em pedidos formulados em inglês: \"Portugal NHR regime\", \"Portugal digital nomad tax\", \"non-habitual resident Portugal\", \"IFICI scheme Portugal\", \"20% flat rate Portugal\", \"foreign income exemption Portugal\", \"Portugal pension tax 10%\", \"Portugal tax residency\", \"NHR replacement Portugal\". Cobre o RNH legado criado pelo DL 249/2009 (fechado a novos pedidos desde 1 jan 2024 pela Lei 82/2023), o IFICI introduzido pela Portaria n.º 187/2024/1 ao abrigo do art.º 58.º-A do EBF, a taxa fixa de 20% sobre rendimentos das categorias A e B em Atividades de Elevado Valor Acrescentado, a matriz de isenção de rendimentos de fonte estrangeira por tipo de rendimento e país, o tratamento das pensões estrangeiras (incluindo a tributação a 10% introduzida pelo OE 2020), mais-valias e dividendos estrangeiros, convenções de dupla tributação aplicáveis (~80 acordos), processo de candidatura no Portal das Finanças até 31 de março do ano seguinte ao da residência, perda de estatuto por interrupção da residência, e preenchimento do Anexo L do Modelo 3. LER SEMPRE este skill antes de tratar fiscalidade RNH/IFICI em Portugal."
+description: "Utilizar este skill sempre que questões envolvam o regime do Residente Não Habitual (RNH) em Portugal ou o seu sucessor, o Incentivo Fiscal à Investigação Científica e Inovação (IFICI). Acionar perante expressões como \"RNH\", \"Residente Não Habitual\", \"IFICI\", \"Incentivo Fiscal à Investigação Científica e Inovação\", \"20% taxa fixa\", \"nómadas digitais Portugal\", \"isenção rendimentos estrangeiros\", \"Modelo 3 anexo L\", \"Atividades de Elevado Valor Acrescentado\", \"AEVA\", \"Portaria 352/2024/1\", \"EBF artigo 58.º-A\", \"Despacho 230/2019\", \"pensões estrangeiras Portugal\", \"convenções dupla tributação Portugal\". Também acionar em pedidos formulados em inglês: \"Portugal NHR regime\", \"Portugal digital nomad tax\", \"non-habitual resident Portugal\", \"IFICI scheme Portugal\", \"20% flat rate Portugal\", \"foreign income exemption Portugal\", \"Portugal pension tax 10%\", \"Portugal tax residency\", \"NHR replacement Portugal\". Cobre o RNH legado criado pelo DL 249/2009 (fechado a novos pedidos desde 1 jan 2024 pela Lei 82/2023), o IFICI introduzido pela Portaria n.º 352/2024/1 ao abrigo do art.º 58.º-A do EBF, a taxa fixa de 20% sobre rendimentos das categorias A e B em Atividades de Elevado Valor Acrescentado, a matriz de isenção de rendimentos de fonte estrangeira por tipo de rendimento e país, o tratamento das pensões estrangeiras (incluindo a tributação a 10% introduzida pelo OE 2020), mais-valias e dividendos estrangeiros, convenções de dupla tributação aplicáveis (~80 acordos), processo de candidatura no Portal das Finanças até 31 de março do ano seguinte ao da residência, perda de estatuto por interrupção da residência, e preenchimento do Anexo L do Modelo 3. LER SEMPRE este skill antes de tratar fiscalidade RNH/IFICI em Portugal."
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - pt-income-tax
@@ -26,7 +26,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Moeda | EUR (Euro) |
 | Ano fiscal | Ano civil (1 de janeiro a 31 de dezembro) |
 | Legislação RNH | Decreto-Lei n.º 249/2009, de 23 de setembro (criação); CIRS art.º 16.º n.º 8 a 12 |
-| Legislação IFICI | Estatuto dos Benefícios Fiscais (EBF), art.º 58.º-A; Portaria n.º 187/2024/1 |
+| Legislação IFICI | Estatuto dos Benefícios Fiscais (EBF), art.º 58.º-A; **Portaria n.º 352/2024/1, de 23 de dezembro**, alterada pela **Portaria n.º 52-A/2025** |
+| Correção de citação (setembro 2026) | Este guia citava a **Portaria n.º 187/2024** como base regulamentar do IFICI em 24 lugares. Essa Portaria é do Ministério da Saúde e aprova a atualização do programa de formação especializada no internato médico de oftalmologia — não tem qualquer relação com matéria fiscal. Todas as referências foram corrigidas para a Portaria n.º 352/2024/1 |
 | Lei de encerramento do RNH | Lei n.º 82/2023, de 29 de dezembro (Orçamento do Estado para 2024) |
 | Autoridade fiscal | Autoridade Tributária e Aduaneira (AT) |
 | Portal | Portal das Finanças (https://www.portaldasfinancas.gov.pt) |
@@ -44,11 +45,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Característica | RNH (legado, até 31 dez 2023) | IFICI (a partir de 1 jan 2024) | Regime geral IRS |
 | --- | --- | --- | --- |
-| Base legal | DL 249/2009; CIRS art.º 16.º n.º 8-12 | EBF art.º 58.º-A; Portaria 187/2024/1 | CIRS (todo) |
+| Base legal | DL 249/2009; CIRS art.º 16.º n.º 8-12 | EBF art.º 58.º-A; Portaria 352/2024/1 | CIRS (todo) |
 | Aberto a novos pedidos? | **Não — fechado desde 1 jan 2024** (Lei 82/2023). Pedidos transitórios admitidos durante 2024 sob condições específicas. | Sim, para pedidos a partir de 1 jan 2024 | Sempre aplicável por defeito |
 | Duração | 10 anos | 10 anos | Sem limite |
 | Taxa sobre rendimentos das categorias A e B em AEVA exercidas em Portugal | 20% taxa fixa | 20% taxa fixa | Tabela progressiva 13% — 48% (escalões IRS 2025) + sobretaxa de solidariedade 2,5% / 5% |
-| Lista de Atividades de Elevado Valor Acrescentado (AEVA) | Despacho n.º 230/2019, de 4 de julho (lista ampla — engenheiros, médicos, gestores, profissionais TIC, etc.) | Portaria n.º 187/2024/1 (lista restrita — investigação científica, ensino superior, indústrias de elevada qualificação) | Não aplicável |
+| Lista de Atividades de Elevado Valor Acrescentado (AEVA) | Despacho n.º 230/2019, de 4 de julho (lista ampla — engenheiros, médicos, gestores, profissionais TIC, etc.) | Portaria n.º 352/2024/1 (lista restrita — investigação científica, ensino superior, indústrias de elevada qualificação) | Não aplicável |
 | Isenção de rendimentos de fonte estrangeira (cat. E, F, G, H) | Ampla — isenção se sujeitos a tributação no Estado da fonte ao abrigo de CDT ou Modelo OCDE | Mais restrita — isenção para certos tipos (categoria B AEVA, E, F, G) se sujeitos a tributação no Estado da fonte; pensões e algumas mais-valias **excluídas** | Tributação mundial — englobamento ou taxa especial (28% capital), com crédito por dupla tributação internacional (art.º 81.º CIRS) |
 | Pensões estrangeiras (categoria H) | **Isentas até 31 mar 2020**; tributadas a **10% taxa fixa** para pedidos a partir de 1 abr 2020 (alteração do OE 2020) | **Não cobertas** — pensões estrangeiras tributadas pelo regime geral (englobamento progressivo) | Englobamento, tabela progressiva IRS |
 | Profissão / atividade requerida | Não obrigatório exercer AEVA (taxa 20% só se aplicava a quem exercesse; isenção de rendimentos estrangeiros independente) | **Obrigatório** — o requerente tem de exercer efetivamente uma atividade qualificada constante da Portaria | Não aplicável |
@@ -87,7 +88,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-PT-NHR-5** — Pedido de RNH apresentado após o prazo legal (31 mar do ano N+1) sem reclamação tempestiva  _(Caducidade do direito ao pedido)_
 - **R-PT-NHR-6** — Pensão estrangeira sob RNH com inscrição a partir de 1 abr 2020 a ser tratada como isenta  _(OE 2020 alterou para 10% taxa fixa — não isenta)_
 - **R-PT-NHR-7** — Aplicação simultânea de RNH e IFICI  _(Regimes mutuamente exclusivos)_
-- **R-PT-NHR-8** — Pedido de classificação como AEVA para atividade não constante das listas oficiais (Despacho 230/2019 ou Portaria 187/2024)  _(Não enquadrável; tributar no regime geral)_
+- **R-PT-NHR-8** — Pedido de classificação como AEVA para atividade não constante das listas oficiais (Despacho 230/2019 ou Portaria 352/2024/1)  _(Não enquadrável; tributar no regime geral)_
 - **R-PT-NHR-9** — Tributação no Estado da fonte invocada para isenção sem documento de suporte (declaração fiscal estrangeira, certificado de retenção)  _(Sem prova, presumir não tributação no estrangeiro e indeferir isenção)_
 - **R-PT-NHR-10** — Mais-valias de criptoativos detidos < 365 dias sob RNH/IFICI  _(Regime cripto (Lei 24-D/2022) tributa a 28% — RNH/IFICI não alteram esta regra para detenções curtas)_
 - **R-PT-NHR-11** — Contribuinte de nacionalidade portuguesa que regressa a Portugal e pede RNH/IFICI sem cumprir o requisito dos 5 anos  _(Nacionalidade portuguesa não isenta do requisito de não-residência prévia; verificar registo histórico na AT)_
@@ -134,15 +135,15 @@ Este skill **não cobre**: regime fiscal das stock options para trabalhadores qu
 
 ### 4.1 Base legal
 
-- **Base legal IFICI** — Estatuto dos Benefícios Fiscais (EBF), art.º 58.º-A — aditado pela Lei n.º 82/2023, de 29 de dezembro. Portaria n.º 187/2024/1, de 30 de julho — define a lista de atividades qualificadas, as entidades certificadoras e os procedimentos de candidatura. Em vigor para pedidos de inscrição como residente a partir de 1 de janeiro de 2024.  _(EBF art.º 58.º-A; Portaria n.º 187/2024/1, de 30 de julho)_
+- **Base legal IFICI** — Estatuto dos Benefícios Fiscais (EBF), art.º 58.º-A — aditado pela Lei n.º 82/2023, de 29 de dezembro. Portaria n.º 352/2024/1, de 23 de dezembro de 2024, alterada pela Portaria n.º 52-A/2025 — define a lista de atividades qualificadas, as entidades certificadoras e os procedimentos de candidatura. Em vigor para pedidos de inscrição como residente a partir de 1 de janeiro de 2024.  _(EBF art.º 58.º-A; Portaria n.º 352/2024/1, de 23 de dezembro de 2024)_
 
 ### 4.2 Requisitos de elegibilidade
 
-- **Requisitos IFICI** — 1. Tornar-se residente fiscal em Portugal (mesmo critério do art.º 16.º n.º 1 CIRS). 2. Não ter sido residente fiscal em Portugal nos 5 anos anteriores. 3. Exercer efetivamente uma das atividades qualificadas constantes da Portaria n.º 187/2024, mediante certificação por uma das entidades competentes. 4. Não ter beneficiado anteriormente do RNH nem do regime do art.º 12.º-A do CIRS (regime do "ex-residente" — Programa Regressar).  _(CIRS art.º 16.º n.º 1; Portaria n.º 187/2024)_
+- **Requisitos IFICI** — 1. Tornar-se residente fiscal em Portugal (mesmo critério do art.º 16.º n.º 1 CIRS). 2. Não ter sido residente fiscal em Portugal nos 5 anos anteriores. 3. Exercer efetivamente uma das atividades qualificadas constantes da Portaria n.º 352/2024/1, mediante certificação por uma das entidades competentes. 4. Não ter beneficiado anteriormente do RNH nem do regime do art.º 12.º-A do CIRS (regime do "ex-residente" — Programa Regressar).  _(CIRS art.º 16.º n.º 1; Portaria n.º 352/2024/1)_
 
-### 4.3 Atividades qualificadas (Portaria 187/2024)
+### 4.3 Atividades qualificadas (Portaria 352/2024/1)
 
-**Atividades qualificadas (Portaria 187/2024)**  _(Portaria n.º 187/2024)_
+**Atividades qualificadas (Portaria 352/2024/1)**  _(Portaria n.º 352/2024/1, de 23 de dezembro, alterada pela Portaria n.º 52-A/2025)_
 
 | Categoria | Atividade | Entidade certificadora |
 | --- | --- | --- |
@@ -165,7 +166,7 @@ A lista é claramente mais restrita do que a do Despacho 230/2019 — exclui pro
 
 ### 4.6 Procedimento de candidatura ao IFICI
 
-- **Procedimento de candidatura ao IFICI** — 1. Inscrição como residente fiscal em Portugal no Portal das Finanças (obtenção do NIF + alteração de morada). 2. Obtenção da certificação da atividade qualificada junto da entidade competente (FCT, ANI, AICEP, IAPMEI, ou Startup Portugal). Esta certificação deve ser obtida até 15 de janeiro do ano seguinte ao da inscrição como residente. 3. Submissão do pedido de inscrição como beneficiário do IFICI no Portal das Finanças — até 15 de janeiro do ano seguinte ao da inscrição como residente (prazo da Portaria 187/2024). **TBC — confirmar se o prazo se mantém em 31 de março após alterações regulamentares.** 4. A entidade certificadora comunica a certificação à AT até 15 de fevereiro do ano seguinte. 5. A AT confirma a inscrição e o estatuto produz efeitos no ano da inscrição como residente.  _(Portaria n.º 187/2024)_
+- **Procedimento de candidatura ao IFICI** — 1. Inscrição como residente fiscal em Portugal no Portal das Finanças (obtenção do NIF + alteração de morada). 2. Obtenção da certificação da atividade qualificada junto da entidade competente (FCT, ANI, AICEP, IAPMEI, ou Startup Portugal). Esta certificação deve ser obtida até 15 de janeiro do ano seguinte ao da inscrição como residente. 3. Submissão do pedido de inscrição como beneficiário do IFICI no Portal das Finanças — **até 15 de janeiro do ano seguinte àquele em que se torne residente**. **O prazo de março era uma excepção transitória e já não se aplica:** apenas quem se tornou residente em **2025** pôde apresentar o pedido até **15 de março de 2025**. Para quem se torne residente em 2026, o prazo é 15 de janeiro de 2027. A dúvida que esta linha registava ("confirmar se o prazo se mantém em 31 de março") fica assim resolvida, e a data de 31 de março não corresponde a nenhum dos dois prazos. **Nota sobre a base legal:** o regime está regulamentado pela **Portaria n.º 352/2024/1, de 23 de dezembro, alterada pela Portaria n.º 52-A/2025** — e não pela Portaria 352/2024/1 que esta linha citava. 4. A entidade certificadora comunica a certificação à AT até 15 de fevereiro do ano seguinte (confirmar contra a Portaria 352/2024/1 — as fontes consultadas referem que a entidade onde a atividade é exercida tem competência para comprovar os requisitos **até 15 de março do ano da inscrição**, o que pode ser um passo distinto deste). 5. A AT confirma a inscrição e o estatuto produz efeitos no ano da inscrição como residente.  _(Portaria n.º 352/2024/1)_
 
 ## Secção 5 — Taxa Fixa 20% — Atividades de Elevado Valor Acrescentado (AEVA)
 
@@ -193,9 +194,9 @@ A lista é claramente mais restrita do que a do Despacho 230/2019 — exclui pro
 
 A lista completa contém ~50 códigos. Profissões fora da lista (assistentes administrativos, vendedores, condutores, etc.) não beneficiam da taxa de 20%.
 
-### 5.3 Lista AEVA aplicável ao IFICI — Portaria n.º 187/2024
+### 5.3 Lista AEVA aplicável ao IFICI — Portaria n.º 352/2024/1
 
-- **Exclusões relevantes face ao RNH** — Mais restrita — apenas as 5 categorias listadas na Secção 4.3. Exemplos de exclusões relevantes face ao RNH: Médico em clínica privada por conta própria (sem vínculo a entidade certificada): excluído do IFICI. Dentista em consultório próprio: excluído. Arquiteto a título individual sem vínculo a entidade certificada: excluído. Programador freelancer sem vínculo a startup certificada ou entidade RFAI: excluído do IFICI mas pode ter beneficiado do RNH.  _(Portaria n.º 187/2024)_
+- **Exclusões relevantes face ao RNH** — Mais restrita — apenas as 5 categorias listadas na Secção 4.3. Exemplos de exclusões relevantes face ao RNH: Médico em clínica privada por conta própria (sem vínculo a entidade certificada): excluído do IFICI. Dentista em consultório próprio: excluído. Arquiteto a título individual sem vínculo a entidade certificada: excluído. Programador freelancer sem vínculo a startup certificada ou entidade RFAI: excluído do IFICI mas pode ter beneficiado do RNH.  _(Portaria n.º 352/2024/1)_
 
 ### 5.4 Operacionalização
 
@@ -321,7 +322,7 @@ O termo correto em português europeu é "receção" (não "recepção"), confor
 
 ### 9.3 Procedimento IFICI
 
-- **Procedimento IFICI** — 1. Inscrição como residente fiscal no Portal das Finanças. 2. Obtenção da certificação da atividade qualificada junto da entidade competente: FCT — investigação científica e docência ensino superior. ANI — centros tecnológicos, SIFIDE, startups (em articulação com IAPMEI). AICEP / IAPMEI — RFAI, atividades relevantes para a economia nacional. Startup Portugal / IAPMEI — startups certificadas Lei 21/2023. A certificação é solicitada à entidade competente com documentação da atividade, contrato de trabalho / contrato de prestação de serviços, CV, etc. Cada entidade tem o seu próprio procedimento e prazos. 3. Submissão do pedido de inscrição como beneficiário IFICI no Portal das Finanças — até 15 de janeiro do ano seguinte ao da inscrição como residente (prazo da Portaria 187/2024). 4. A entidade certificadora comunica diretamente à AT a certificação, até 15 de fevereiro do ano seguinte. 5. A AT confirma a inscrição ou indefere; comunica decisão via Portal das Finanças.  _(Portaria n.º 187/2024)_
+- **Procedimento IFICI** — 1. Inscrição como residente fiscal no Portal das Finanças. 2. Obtenção da certificação da atividade qualificada junto da entidade competente: FCT — investigação científica e docência ensino superior. ANI — centros tecnológicos, SIFIDE, startups (em articulação com IAPMEI). AICEP / IAPMEI — RFAI, atividades relevantes para a economia nacional. Startup Portugal / IAPMEI — startups certificadas Lei 21/2023. A certificação é solicitada à entidade competente com documentação da atividade, contrato de trabalho / contrato de prestação de serviços, CV, etc. Cada entidade tem o seu próprio procedimento e prazos. 3. Submissão do pedido de inscrição como beneficiário IFICI no Portal das Finanças — até 15 de janeiro do ano seguinte ao da inscrição como residente (prazo da Portaria 352/2024/1). 4. A entidade certificadora comunica diretamente à AT a certificação, até 15 de fevereiro do ano seguinte. 5. A AT confirma a inscrição ou indefere; comunica decisão via Portal das Finanças.  _(Portaria n.º 352/2024/1)_
 
 ### 9.4 Declaração anual — Modelo 3 + Anexo L
 
@@ -362,7 +363,7 @@ O Anexo L inclui: Indicação do regime aplicável (RNH ou IFICI). Identificaç�
 
 **Análise**:
 1. **Residência fiscal**: Jane permanece > 183 dias em Portugal em 2025 → residente fiscal em Portugal pelo ano completo (com aplicação do art.º 16.º n.º 2 sobre residência parcial verificar — mas para este exemplo simplifica-se).
-2. **Elegibilidade IFICI**: cumpre o requisito de não-residência anterior. A atividade de consultoria à startup certificada qualifica-se na categoria 5 da Portaria 187/2024 (postos de trabalho / membros de órgãos sociais em startups certificadas). Obtém certificação via Startup Portugal/IAPMEI. **Importante**: o salário americano (W-2) não está abrangido pela atividade qualificada IFICI — apenas a consultoria à startup PT.
+2. **Elegibilidade IFICI**: cumpre o requisito de não-residência anterior. A atividade de consultoria à startup certificada qualifica-se na categoria 5 da Portaria 352/2024/1 (postos de trabalho / membros de órgãos sociais em startups certificadas). Obtém certificação via Startup Portugal/IAPMEI. **Importante**: o salário americano (W-2) não está abrangido pela atividade qualificada IFICI — apenas a consultoria à startup PT.
 3. **Tributação dos honorários portugueses (EUR 36.000)** — categoria B, atividade qualificada IFICI: **taxa fixa de 20%** = EUR 7.200.
 4. **Tributação do salário americano (EUR 134.000)** — categoria A, rendimento estrangeiro:
    - Sob CDT EUA-Portugal (art.º 15), salários de trabalho dependente exercido fisicamente nos EUA são tributáveis nos EUA. **Mas**: Jane trabalha **a partir de Lisboa** (remotamente) — sob a CDT, o trabalho é considerado exercido em Portugal. Portugal tem poder de tributação. Os EUA tributam pela cidadania (saving clause).
@@ -413,7 +414,7 @@ O Anexo L inclui: Indicação do regime aplicável (RNH ou IFICI). Identificaç�
 - Dividendos de fundos de investimento holandeses: EUR 2.300.
 
 **Análise**:
-1. **Elegibilidade IFICI**: cumpre o requisito de não-residência anterior. A atividade de investigação na Universidade do Porto qualifica-se na **categoria 1 da Portaria 187/2024** (docência no ensino superior e investigação científica). Obtém certificação via FCT.
+1. **Elegibilidade IFICI**: cumpre o requisito de não-residência anterior. A atividade de investigação na Universidade do Porto qualifica-se na **categoria 1 da Portaria 352/2024/1** (docência no ensino superior e investigação científica). Obtém certificação via FCT.
 2. **Salário Universidade do Porto (EUR 58.000)** — categoria A, atividade qualificada IFICI: **taxa fixa de 20%** = EUR 11.600.
 3. **Royalties espanholas (EUR 7.500)**: CDT Portugal-Espanha (art.º 12) atribui tributação partilhada (taxa máxima de 5% no Estado da fonte) → critério verifica-se → **isenção sob IFICI** em Portugal. A retenção espanhola de 19% pode estar acima da taxa CDT (5%) — recomendar pedido de reembolso ao Estado espanhol.
 4. **Dividendos holandeses (EUR 2.300)**: CDT Portugal-Países Baixos (art.º 10) — tributação partilhada → **isenção sob IFICI**.
@@ -440,7 +441,7 @@ Comparação com regime geral: o IRS sobre EUR 58.000 às taxas progressivas 202
 | Mais-valia estrangeira mobiliária | Default — **tributar a 28% em Portugal** (Modelo OCDE atribui poder exclusivo ao Estado da residência); isenção só se CDT específica atribuir poder de tributação ao Estado da fonte | Maioria dos casos não cumpre o critério de isenção |
 | Mais-valia de criptoativos sob RNH/IFICI (detenção < 365 dias) | Tributar a 28% (regime cripto não se sobrepõe ao RNH/IFICI) | Lei 24-D/2022 prevalece sobre RNH/IFICI |
 | Contribuinte chega após 31 mar do ano N+1 com pedido de RNH transitório | Indeferir; aconselhar pedido tempestivo em ano fiscal seguinte ou regime geral | Caducidade do direito |
-| IFICI — atividade certificada mas com vínculo laboral em entidade não-certificada | Não aplicar IFICI; o vínculo tem de ser com entidade certificada (não basta a atividade ser do tipo qualificado) | Portaria 187/2024 exige certificação da entidade empregadora / contratante |
+| IFICI — atividade certificada mas com vínculo laboral em entidade não-certificada | Não aplicar IFICI; o vínculo tem de ser com entidade certificada (não basta a atividade ser do tipo qualificado) | Portaria 352/2024/1 exige certificação da entidade empregadora / contratante |
 | Suécia — pensões pós-2022 sob RNH | Tributar a 10% em Portugal (RNH pós-2020) **mais** atender que a denúncia da CDT pode mudar o tratamento. Recomendar parecer específico. | Denúncia da CDT alterou o equilíbrio |
 | Sobretaxa de solidariedade IRS sobre rendimentos a 20% IFICI/RNH | Não aplicar — a sobretaxa só incide sobre englobamento | Art.º 68.º-A CIRS limita ao englobamento |
 | Cumulação RNH + Programa Regressar | Não permitida — apenas um regime aplicável | Lei 71/2018 estabelece exclusão |
@@ -462,7 +463,7 @@ Comparação com regime geral: o IRS sobre EUR 58.000 às taxas progressivas 202
 ### Legislação complementar (portarias, despachos)
 
 - **Despacho n.º 230/2019, de 4 de julho** — lista de Atividades de Elevado Valor Acrescentado (AEVA) para efeitos do RNH.
-- **Portaria n.º 187/2024/1, de 30 de julho** — regulamentação do IFICI: atividades qualificadas, entidades certificadoras, procedimentos.
+- **Portaria n.º 352/2024/1, de 23 de dezembro de 2024**, alterada pela **Portaria n.º 52-A/2025** — regulamentação do IFICI: atividades qualificadas, entidades certificadoras, procedimentos. (A data "30 de julho" que aqui constava pertencia à citação errada da Portaria 187/2024.)
 - **Portaria n.º 12/2010, de 7 de janeiro** — lista AEVA original (revogada pelo Despacho 230/2019).
 - **Portaria n.º 150/2004, de 13 de fevereiro** — lista de países, territórios e regiões com regimes de tributação privilegiada (paraísos fiscais), e suas alterações posteriores.
 
@@ -509,9 +510,9 @@ Lista completa das ~80 CDT em vigor: Portal das Finanças → Acordos Internacio
 - **Data**: 2025 (ano fiscal de referência: 2025; declarações apresentadas em 2026).
 - **Validação pendente**: requer revisão por Contabilista Certificado inscrito na OCC ou advogado fiscalista registado na Ordem dos Advogados, com prática comprovada em fiscalidade internacional e regime RNH/IFICI.
 - **TBC (To Be Confirmed)**:
-  - Prazo exato de submissão IFICI no Portal das Finanças (15 janeiro vs 31 março) — Portaria 187/2024 indica 15 janeiro mas práticas administrativas têm-se ajustado.
+  - ~~Prazo exato de submissão IFICI (15 janeiro vs 31 março)~~ **RESOLVIDO (setembro 2026):** o prazo é **15 de janeiro** do ano seguinte ao da inscrição como residente. O prazo de **15 de março** foi uma excepção transitória aplicável apenas a quem se tornou residente em **2025**. A data de 31 de março não corresponde a nenhum dos dois.
   - Texto final do art.º 236.º da Lei 82/2023 com alterações posteriores em OE 2025 (Lei n.º 45-A/2024).
-  - Lista exaustiva de profissões abrangidas pela categoria 3 da Portaria 187/2024 (entidades RFAI / relevantes para a economia).
+  - Lista exaustiva de profissões abrangidas pela categoria 3 da Portaria 352/2024/1 (entidades RFAI / relevantes para a economia).
 
 ## Talk to a verified accountant
 

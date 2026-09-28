@@ -3,7 +3,7 @@ name: mu-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Mauritius (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,16 @@ Resident companies are taxed at a flat 15% on net chargeable income, with reduce
 - **Qualified Domestic Minimum Top-up Tax (QDMTT)** — Top-up to a 15% effective rate for Mauritius members of MNE groups with consolidated revenue of EUR 750m+ in 2 of the last 4 fiscal years percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/taxes-on-corporate-income))_
 - **Withholding tax on dividends** — 0% — dividends paid by Mauritius resident companies are not subject to WHT percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
 - **Withholding tax on interest** — 15% on interest paid (other than by banks/deposit-taking institutions) to persons other than a Mauritius-resident company percent (May be reduced by an applicable double tax treaty)  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
-- **Withholding tax on royalties** — 15% on royalties paid to a non-resident percent (May be reduced by treaty; exemption where paid out of foreign-source income)  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax on royalties** — **15%** to a non-resident and **10%** to a resident; the resident rate was missing from this line until September 2026. May be reduced by treaty; exempt where paid out of foreign-source income percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax on rent** — **7.5%** to a resident and **10%** to a non-resident percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax on management fees** — **5%** to a resident and **10%** to a non-resident percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax on services to non-residents (general)** — **10%** percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax on payments to contractors and sub-contractors** — **0.75%** — the lowest rate in the table, and low enough that treating a construction payment as an ordinary service fee at 5% or 10% over-deducts several times over percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax on professional service providers** — **5%** on payments to an accountant or accounting firm, architect, attorney or solicitor, and tax adviser or representative percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax on owners or agents of immovable property** — **5%** percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax on non-resident entertainers and sportspersons** — **10%** percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax at 3% — commission and specified trades** — **3%** on commission, on consultants, on security, cleaning and pest-management services, and on motor surveyors percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
+- **Withholding tax on government procurement payments** — **1%** on goods and services above MUR 300,000 and on goods above MUR 100,000; **3%** on services above MUR 30,000. These are threshold-based, so the size of the contract decides whether anything is withheld percent  _([Income Tax Act](https://taxsummaries.pwc.com/mauritius/corporate/withholding-taxes))_
 - **Advance Payment System (APS)** — Companies pay tax quarterly under APS, with a final return after year-end  _([Income Tax Act](https://www.mra.mu/important-dates))_
 - **Corporate return filing & payment deadline** — Within 6 months of the accounting year-end (e.g. 29 December where the year ends in June; APS-opt cases extended to early February)  _([Income Tax Act](https://www.mra.mu/important-dates))_
 

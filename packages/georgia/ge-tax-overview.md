@@ -3,7 +3,7 @@ name: ge-tax-overview
 description: "Source-cited draft: tax overview for Georgia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Gvantsa Amiridze, ACCA
 review_status: current
 tier: 2
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Headline personal income tax rate** — 20% percent  _([Tax Code of Georgia (https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income)](https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income))_
 - **Standard corporate income tax rate** — 15% percent (on distributed profit)  _(Tax Code of Georgia — https://taxsummaries.pwc.com/georgia/corporate/taxes-on-corporate-income)_
 - **Does VAT exist? Standard VAT rate** — Yes — standard VAT rate 18% percent  _([Tax Code of Georgia (https://taxsummaries.pwc.com/georgia/corporate/other-taxes)](https://taxsummaries.pwc.com/georgia/corporate/other-taxes))_
-- **Annual personal/profit (small business) return deadline** — 31 March of the year following the reporting year  _([Tax Code of Georgia (https://expathub.ge/annual-tax-return-georgia/)](https://expathub.ge/annual-tax-return-georgia/))_
+- **Annual personal/profit (small business) return deadline** — 31 March of the year following the reporting year  _(Tax Code of Georgia (as described at [expathub.ge](https://expathub.ge/annual-tax-return-georgia/)))_
 - **Corporate (profit) tax filing frequency** — Monthly — return due by the 15th day of the month following the month of the taxable transaction/distribution  _([Tax Code of Georgia (https://taxsummaries.pwc.com/georgia/corporate/tax-administration)](https://taxsummaries.pwc.com/georgia/corporate/tax-administration))_
 - **VAT filing frequency** — Monthly — return and payment due by the 15th day of the following month (approx — confirm; some sources cite a 15th-of-month VAT deadline while others reference quarterly excise reporting)  _(Tax Code of Georgia)_
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about South African VAT returns for s
 version: 2.1
 jurisdiction: ZA
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-13
 reviewed_by: Werner Britz
 review_status: current
 depends_on:

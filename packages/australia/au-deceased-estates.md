@@ -13,7 +13,7 @@ version: 1.0
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Date-of-death (final) return | 1 July to date of death; FULL tax-free threshold (not pro-rated); Medicare levy applies as for a normal individual year; paper form or via appointed tax agent -- never myTax |
 | If no final return needed | Non-lodgment advice marked 'DECEASED' + date of death |
 | Estate trust returns | LPR/executor is "trustee" (s 6(1) ITAA 1936); estate needs its OWN TFN; first income year = day after death to 30 June |
-| Estate years 1-3 (s 99) | Resident individual rates WITH full $18,200 tax-free threshold; NO Medicare levy; NO tax offsets (no LITO) |
+| Estate years 1-3 (s 99) | Resident individual rates WITH full $18,200 tax-free threshold; NO Medicare levy; no LITO; eligible franking offsets may apply |
 | Estate year 4+ (s 99) | Compressed bands -- threshold collapses to $416 (2025-26: $417-$611 at 50% of excess; $612-$45,000 at $97.76 + 16% of excess over $611, whole amount taxed from $0 once over $611) |
 | Death and CGT | NOT a CGT event where the asset passes to the LPR or a beneficiary (Div 128 rollover); K3 override for exempt entities, super funds and foreign-resident beneficiaries |
 | Inherited main residence | Full exemption if contract settles within 2 years of death (s 118-195); PCG 2019/5 automatic safe harbour extension up to 18 months |
@@ -103,7 +103,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Estate income year | Rates |
 |---|---|
-| Years 1-3 (year 1 = day after death to 30 June) | Resident individual rates + FULL $18,200 threshold; NO Medicare levy; NO offsets (no LITO); applied for in the first trust return; cannot be extended past year 3 |
+| Years 1-3 (year 1 = day after death to 30 June) | Resident individual rates + FULL $18,200 threshold; NO Medicare levy; no LITO; eligible franking offsets may apply; applied for in the first trust return; cannot be extended past year 3 |
 | Year 4 onwards (2024-25 and 2025-26 published table) | $0-$416 nil; $417-$611 50% of excess over $416; $612-$45,000 $97.76 + 16% of excess over $611 (once over $611 the WHOLE amount is effectively taxed at 16%); $45,001-$135,000 $7,200 + 30%; $135,001-$190,000 $34,200 + 37%; $190,001+ $54,550 + 45%. NO Medicare levy |
 | Year 4 onwards, 2026-27 | 16% -> 15% rate cut is LAW; ATO has not yet republished the compressed band boundaries (the $611/$97.76 shade-in constants derive from the 16% rate and will change) -- verify QC 49909 before lodging any 2026-27 estate return |
 
@@ -181,7 +181,9 @@ Death severs all pre-death agent authorisations. Sequence: notify the ATO -> obt
 
 ### Rule 5 -- s 99 rates: three concessional years, then compression
 
-Apply for the concessional rate in the estate's FIRST trust return: resident individual rates with the full threshold for the first three income years (the short period to the first 30 June counts as year 1), no Medicare levy, no offsets, no extension beyond year 3, and the concession can be lost on material changes to the estate's circumstances (e.g. assets injected -- also a s 99A(2) trigger). From year 4 the published bands compress (Section 3.2): $416 nil band, 50% shade-in to $611, then $97.76 + 16% to $45,000 with the whole amount effectively at 16% once over $611, then the ordinary 30/37/45 brackets -- still no Medicare levy. **2026-27 caution:** the 15% second rate is law and mechanically shifts the shade-in constants; the ATO table (QC 49909) is published only to 2025-26 as at 20 August 2026 -- re-verify before lodging 2026-27.
+Apply for the concessional rate in the estate's FIRST trust return: resident individual rates with the full threshold for the first three income years (the short period to the first 30 June counts as year 1), no Medicare levy, no LITO, no extension beyond year 3, and the concession can be lost on material changes to the estate's circumstances (e.g. assets injected -- also a s 99A(2) trigger). From year 4 the published bands compress (Section 3.2): $416 nil band, 50% shade-in to $611, then $97.76 + 16% to $45,000 with the whole amount effectively at 16% once over $611, then the ordinary 30/37/45 brackets -- still no Medicare levy. **2026-27 caution:** the 15% second rate is law and mechanically shifts the shade-in constants; the ATO table (QC 49909) is published only to 2025-26 as at 20 August 2026 -- re-verify before lodging 2026-27.
+
+For a section 99 estate assessment, eligible imputation credits can offset tax liability. Include the corresponding dividend gross-up in assessable income and test franking-credit eligibility. For example, $30,000 taxable income already including the gross-up produces $1,888 tax at the 2025-26 year-2 rates; an eligible $600 franking offset reduces that to $1,288. This does not give the estate LITO or establish refundability of every excess credit. (Library, Tax/Trusts, paragraph 9-080.)
 
 ### Rule 6 -- Death is not a CGT event (Div 128)
 
@@ -329,7 +331,7 @@ If engaged mid-administration with a shoebox:
 | Item | Value |
 |---|---|
 | Final return threshold / Medicare levy | Full $18,200 threshold, no pro-rating; Medicare levy at 2% with full-year low-income thresholds |
-| Estate years 1-3 (s 99) | Individual rates + $18,200 threshold; NO Medicare levy; NO offsets |
+| Estate years 1-3 (s 99) | Individual rates + $18,200 threshold; NO Medicare levy; no LITO; eligible franking offsets may apply |
 | Estate year 4+ bands (2024-25/2025-26) | $0-$416 nil; $417-$611 50% of excess; $612-$45,000 $97.76 + 16% over $611 (whole amount at 16% once over $611); then $7,200+30% / $34,200+37% ($135k) / $54,550+45% ($190k) |
 | 2026-27 flow-through | 15% second rate is LAW; year-4+ boundaries not yet republished by ATO -- verify QC 49909 |
 | Inherited dwelling window | 2 years from death to settlement; PCG 2019/5 automatic extension <= 18 months if all 5 conditions met |
@@ -355,7 +357,7 @@ If engaged mid-administration with a shoebox:
 
 ### Test suite
 
-**Test 1:** Died 31 October; income to DOD $50,000 incl. $600 franking credit. -> Tax $5,788 + $1,000 ML − $600 offset = $6,188; full threshold, no pro-rating.
+**Test 1:** Died 31 October 2025; income to date of death $50,000 including a $600 franking credit. Using Example 1's 2025-26 rates and assumed $1,000 Medicare levy: $5,788 tax - $250 LITO + $1,000 levy - $600 franking offset = $5,938. With $9,000 withheld, the refund is $3,062. The tax-free threshold is not prorated; assess any Medicare exemption separately.
 
 **Test 2:** Estate year 2, $30,000, no present entitlement. -> s 99 at individual rates: $1,888 (2025-26), no Medicare levy, no LITO.
 

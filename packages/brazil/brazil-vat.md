@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Brazilian indirect taxes, VAT, 
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-13
 reviewed_by: Ariane Marrocos
 review_status: current
 tier: 1
@@ -12,6 +12,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Brazil VAT
+
+<!-- einvoice-xref -->
+> **This pack has a separate e-invoicing guide: `brazil-einvoice`.** This guide does not
+> cover it. Where a jurisdiction operates a mandatory electronic-invoicing or
+> real-time-reporting regime, the obligations and any consequences for input-tax
+> recovery sit in that guide — read it alongside this one before filing or advising.
+> **No claim about that jurisdiction's regime is made here**; this is a pointer only.
+
 
 ## Brasil — Tributos Indiretos (Sistema Antigo PIS/Cofins/ICMS/IPI/ISS + Sistema Novo CBS/IBS) — Skill v3.0
 

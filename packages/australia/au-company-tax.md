@@ -13,7 +13,7 @@ version: 1.0
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -198,7 +198,7 @@ The SBT conclusion is a judgement call -- document the four LCR 2019/1 factors a
 
 ### Rule 1 -- The rate: two limbs, tested every year (ITRA ss 23AA-23AB)
 
-25% applies for an income year only if BOTH: (1) aggregated turnover for THAT year (company + connected entities + affiliates, worked out at year end) < $50m; and (2) BREPI <= 80% of the company's own assessable income. Otherwise 30%. BREPI (s 23AB): corporate distributions and their franking credits; royalties and rent; interest (limited exceptions); gains on qualifying securities; net capital gains; and trust/partnership amounts traceable to any of those. No Commissioner discretion exists. Limb 2 tests the company's OWN income only; limb 1 is the grouped test. Companies taxed at special rates (NFP shade-in, life insurance, PDFs) are outside this skill.
+25% applies for an income year only if BOTH: (1) aggregated turnover for THAT year (company + connected entities + affiliates, worked out at year end) < $50m; and (2) BREPI <= 80% of the company's own assessable income. Otherwise 30%. BREPI (s 23AB): corporate distributions and their franking credits, excluding a non-portfolio dividend paid directly to a company with at least 10% voting interest in the payer and its attached credit; royalties and rent; interest (limited exceptions); gains on qualifying securities; net capital gains; and trust/partnership amounts traceable to any of those. No Commissioner discretion exists. Limb 2 tests the company's OWN income only; limb 1 is the grouped test. Companies taxed at special rates (NFP shade-in, life insurance, PDFs) are outside this skill.
 
 ### Rule 2 -- Trust and partnership distributions keep their character
 
@@ -234,7 +234,7 @@ Company income tax is full self-assessment: payment is due with lodgment per the
 
 ### Rule 10 -- PAYG instalments interaction
 
-Companies enter automatically with instalment income >= $2m in the latest return, notional tax >= $500, or as head of a consolidated group. Default quarterly (typically 28 October / 28 February / 28 April / 28 July); instalment income > $20m -> monthly (21st of the following month); notional tax < $8,000 -> annual option (conditions apply). Amount method instalments are uplifted by the GDP factor: **5% for 2026-27** (4% for 2025-26). Variation is allowed but a variation below 85% of the actual liability attracts GIC on the shortfall. Instalments are credited against the assessed tax in the calculation statement -- reconcile the ICA before finalising; the 2026-27 instalments raised after the 2025-26 assessment are based on that return.
+Companies enter automatically with instalment income >= $2m in the latest return, notional tax >= $500, or as head of a consolidated group. Default quarterly (typically 28 October / 28 February / 28 April / 28 July); instalment income > $20m -> monthly (21st of the following month); notional tax < $8,000 -> annual option (conditions apply). Amount method instalments are uplifted by the GDP factor: **5% for 2026-27** (4% for 2025-26). Variation below 85% of benchmark tax may attract GIC. Calculate benchmark tax separately: for companies it excludes capital gains and disregards certain offsets under ss 45-365 to 45-375. For example, $9,000 varied instalments against $10,000 benchmark tax is 90%, even if total tax including a capital gain is $20,000. The 45% comparison with total tax is inapplicable. Instalments are credited against the assessed tax in the calculation statement -- reconcile the ICA before finalising; the 2026-27 instalments raised after the 2025-26 assessment are based on that return.
 
 ### Rule 11 -- Return mechanics and add-backs
 
@@ -270,7 +270,7 @@ Any payment, loan, debt forgiveness or private asset use flowing from the compan
 
 ### T2-6 -- Instalment variations in a falling year
 
-**Trigger:** client wants instalments varied down mid-year. **Issue:** variation below 85% of actual attracts GIC -- now non-deductible. **Action:** model the full-year estimate before varying; document the basis.
+**Trigger:** client wants instalments varied down mid-year. **Issue:** variation below 85% of benchmark tax may attract GIC, now non-deductible. **Action:** model benchmark tax separately from total tax, excluding capital gains and applying the offset adjustments; document the estimate and any applicable relief.
 
 ---
 
@@ -284,7 +284,9 @@ Prepared: [date]
 RATE TEST (CURRENT YEAR -- Rule 1)
   Aggregated turnover (co + connected + affiliates): AUD [____]  < $50m? [Y/N]
   Assessable income:               AUD [____]
-  BREPI (dividends+credits, rent, royalties, interest,
+  Direct non-portfolio dividend and attached credit excluded from BREPI:
+    AUD [____]  Direct company receipt and >= 10% voting interest checked? [Y/N]
+  BREPI (other dividends+credits, rent, royalties, interest,
          net capital gain, traceable trust/partnership amounts): AUD [____]
   BREPI %:                         [____]%  <= 80%? [Y/N]
   RATE: [25% / 30%]

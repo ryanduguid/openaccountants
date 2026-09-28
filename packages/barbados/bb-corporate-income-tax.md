@@ -3,7 +3,7 @@ name: bb-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Barbados (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BB
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,9 +23,9 @@ Barbados moved to a 9% general corporation tax rate from 1 January 2024, with re
 - **Qualified Domestic Minimum Top-Up Tax (Pillar Two)** — 15% top-up tax on in-scope resident members of MNE groups with consolidated revenue of EUR 750 million or more %  _([Corporation Top-up Tax Act, 2024-16](https://bra.gov.bb/About/Legislation-Regulations/Corporation-Top-up-Tax-Act-2024-16))_
 - **Tax base** — Resident companies taxed on worldwide income; non-resident companies on Barbados-source income only  _([Income Tax Act, Cap. 73](https://taxsummaries.pwc.com/barbados/corporate/taxes-on-corporate-income))_
 - **WHT on dividends (resident recipients)** — 0% to companies; 15% to individuals %  _([Income Tax Act, Cap. 73](https://taxsummaries.pwc.com/barbados/corporate/withholding-taxes))_
-- **WHT on dividends (non-resident recipients)** — 0% / 5% (0% where paid out of non-Barbados-source income), before treaty relief ((confirm domestic non-treaty rate)) %  _([Income Tax Act, Cap. 73](https://taxsummaries.pwc.com/barbados/corporate/withholding-taxes))_
+- **WHT on dividends (non-resident recipients)** — **0% or 5%**: 0% where the dividend is paid out of income earned from sources outside Barbados, 5% otherwise, before treaty relief. Grandfathered international business companies and ISRLs are exempt from withholding on payments to non-residents %  _([Income Tax Act, Cap. 73](https://taxsummaries.pwc.com/barbados/corporate/withholding-taxes))_
 - **WHT on interest** — 15% to resident individuals (0% for pensioners aged 60+); 0% domestic rate to non-residents before treaty %  _([Income Tax Act, Cap. 73](https://taxsummaries.pwc.com/barbados/corporate/withholding-taxes))_
-- **WHT on royalties (non-residents)** — 0% domestic rate before treaty relief ((confirm — historically royalties to non-residents carried a domestic WHT; verify current rate)) %  _([Income Tax Act, Cap. 73](https://taxsummaries.pwc.com/barbados/corporate/withholding-taxes))_
+- **WHT on royalties (non-residents)** — **0%** domestic rate before treaty relief, which is what PwC publishes. **Sources conflict and the payer carries the risk:** older summaries and some secondary pages still give 15%, the rate before the 2019 convergence of the domestic and international regimes. Confirm with the Barbados Revenue Authority before paying a royalty gross, because an under-deduction is the payer's liability, not the recipient's %  _([Income Tax Act, Cap. 73](https://taxsummaries.pwc.com/barbados/corporate/withholding-taxes))_
 - **Corporate income tax prepayments** — From income year 2025, all companies (except approved small businesses) prepay monthly 1/12 of the tax payable on taxable income of the income year before the preceding year, due by the 15th of each month  _([Income Tax Act, Cap. 73](https://bra.gov.bb/Popular-Topics/Companies/Filing-and-Payment))_
 - **Corporation tax return deadline** — Generally within 3-6 months of fiscal year end; BRA set 31 July 2025 for income year 2024 returns ((deadlines subject to BRA extension notices — confirm current year))  _([Income Tax Act, Cap. 73](https://bra.gov.bb/Popular-Topics/Companies/Filing-and-Payment))_
 

@@ -5,7 +5,7 @@ version: 1.0
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-14
 ---
 
 # Bookkeeping Workflow Base Skill v1.0
@@ -97,9 +97,9 @@ Before building any output, present Tier 3 items to the user grouped by category
 - Name the transaction(s) explicitly (date, counterparty, amount)
 - Explain what information is needed
 - Offer 2-4 options where possible
-- Always include a "Don't know — apply conservative default" option
+- Include a "Don't know" option. Explain whether Section 2 provides a supported default or the classification must remain unresolved.
 
-Wait for the user's answers. Apply them to the classification. Any items where the user selects "don't know" receive the conservative default from Section 2 and are flagged in the reviewer brief.
+Wait for the user's answers. Apply them to the classification. For "don't know" answers, use a supported Section 2 default where one exists and flag it for review. If capitalisation or prepayment facts remain missing, keep the item at Tier 3, record the missing evidence and seek reviewer input. Pause posting and financial-statement completion until that classification is resolved; do not drop the transaction or invent a deduction to satisfy the completeness check.
 
 ### Step 6 — Double-entry posting
 
@@ -177,11 +177,11 @@ The transaction cannot be classified without information only the user possesses
 
 ### Conservative defaults — universal principles
 
-When uncertain, apply the treatment that is most conservative from a tax and financial reporting perspective:
+Use the country skill's applicable recognition and deduction rules. A treatment that lowers reported profit can overstate tax deductions; there is no automatic expense default for uncertain capital costs or prepayments.
 
-- **Expense vs. capitalize:** Expense it. Capitalizing creates an asset that may be overstated; expensing is immediately prudent.
+- **Expense vs capitalise:** obtain the asset, expenditure and business-use facts needed by the country rules. If they are missing, keep the classification at Tier 3. Do not claim immediate expensing as a conservative tax treatment.
 - **Business vs. personal:** Treat as personal (exclude from business accounts). Including a personal expense in business accounts overstates deductions.
-- **Current period vs. prepaid:** Recognize in the current period. Deferring may understate current-period expenses.
+- **Current period vs prepaid:** establish the service period, expenditure character and any applicable exception before choosing immediate deduction or spreading. Missing facts leave the classification unresolved at Tier 3.
 - **Revenue vs. non-revenue receipt:** Treat as revenue. Non-revenue treatment (loan, owner injection) understates income.
 - **Cost of goods sold vs. operating expense:** Operating expense. COGS misclassification affects gross margin but not net profit; operating expense is the safer category.
 - **Current liability vs. long-term:** Current. Treating a current obligation as long-term overstates working capital.

@@ -3,7 +3,7 @@ name: cu-income-tax
 description: "Source-cited draft: personal income tax for Cuba (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **MIPYME partners — personal income tax on dividends** — Progressive scale with a maximum marginal rate of 20% on dividends distributed to MIPYME partners (per DL93/2024 scale) % ((approx — confirm))  _([Decreto-Ley No. 93/2024 (https://www.mep.gob.cu/en/node/1381)](https://www.mep.gob.cu/en/node/1381))_
 - **Deductible expenses** — Documented expenses for carrying on the activity, taxes paid relating to the activity, rental payments to authorized state entities, and restoration/preservation contributions are deducted from gross income before the scale applies  _(Ley No. 113 del Sistema Tributario)_
 - **Annual filing deadline (Declaración Jurada)** — 30 April of the year following the fiscal year  _(Ley No. 113 del Sistema Tributario)_
-- **Early-payment bonus** — 5% bonus (reduction) for paying the annual settlement before 28 February %  _([Decreto-Ley No. 93/2024 (https://ivacalculator.com/cuba/impuestos-mipymes-empresas-privadas/)](https://ivacalculator.com/cuba/impuestos-mipymes-empresas-privadas/))_
+- **Early-payment bonus** — 5% bonus (reduction) for paying the annual settlement before 28 February %  _(Decreto-Ley No. 93/2024 (as described at [ivacalculator.com](https://ivacalculator.com/cuba/impuestos-mipymes-empresas-privadas/)))_
 - **Advance payments** — Self-employed and individual taxpayers make periodic (monthly/quarterly) advance payments during the year, reconciled in the annual Declaración Jurada ((approx — confirm))  _(Ley No. 113 del Sistema Tributario)_
 - **Non-resident taxation** — Non-residents are taxed only on Cuban-source income; employment income earned through Cuban entities is subject to withholding ((approx — confirm))  _(Ley No. 113 del Sistema Tributario)_
 

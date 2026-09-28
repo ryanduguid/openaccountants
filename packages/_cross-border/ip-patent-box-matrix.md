@@ -1,10 +1,10 @@
 ---
 name: ip-patent-box-matrix
 description: "Use this skill whenever a company holding intellectual property asks about preferential tax regimes for income derived from that IP. Trigger on phrases like \"patent box\", \"IP box\", \"innovation box\", \"nexus approach\", \"qualifying IP income\", \"qualifying expenditure\", \"uplift expenditure\", \"modified nexus\", \"BEPS Action 5\", \"Cyprus IP box\", \"Dutch innovation box\", \"UK patent box\", \"Italian patent box\", \"Belgian innovation income deduction\", \"Luxembourg IP box\", \"Irish KDB\", \"knowledge development box\", \"Swiss patent box\", \"Hungary patent box\", \"Singapore IDI\", \"China HNTE\", \"qualifying IP\", \"embedded IP income\", or any request to assess whether a company's IP income qualifies for a preferential tax rate, and to compute the effective rate under the OECD modified nexus approach. Covers 18+ in-force IP regimes that satisfy the BEPS Action 5 modified nexus approach plus historical grandfathering. Does NOT cover: R&D tax credits (see rd-tax-credits-matrix), depreciation of IP assets, withholding tax on royalties (see withholding-tax-matrix), or transfer pricing of IP (see transfer-pricing-workflow-base). ALWAYS read this skill before advising on IP regime eligibility, computing the effective rate, or designing an IP holding structure."
-version: 0.1
+version: 0.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-12
 review_status: pending_review
 depends_on:
   - cross-border-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # IP Patent Box Matrix
 
-## IP / Patent Box Regimes Matrix v0.1
+## IP / Patent Box Regimes Matrix v0.2
 
 ## What this file is
 
@@ -78,7 +78,7 @@ This skill does NOT cover:
 | Country | Statutory rate | Effective IP rate | Mechanism | Scope |
 | --- | --- | --- | --- | --- |
 | **Cyprus** | 12.5% CIT | ~2.5% | 80% deduction of qualifying profits | Patents, copyrighted software, other-IP-equivalent-to-patent. Strict nexus tracking. |
-| **Ireland — KDB** | 12.5% CIT | 6.25% | 50% deduction (income halved) | Patents, copyrighted software. The IDA's Knowledge Development Box certified for use in family-by-family tracking. |
+| **Ireland: KDB** | 12.5% CIT | 10% from 1 October 2023 | 20% deduction of qualifying profits | Patents, copyrighted software and other qualifying assets, subject to nexus and eligibility rules. Accounting periods must commence before 1 January 2027. See [Revenue KDB guidance](https://www.revenue.ie/en/companies-and-charities/reliefs-and-exemptions/knowledge-development-box-kdb/index.aspx). |
 | **United Kingdom — Patent Box** | 25% CIT | 10% | Reduced rate of 10% on qualifying patent profits | Patents granted by UKIPO, EPO, EEA states. Strict MNA tracking. Streaming or formulary apportionment for income identification. |
 | **Netherlands — Innovation Box** | 25.8% CIT (2025) | 9% | Reduced rate of 9% (was 7% pre-2021) | Patents, plant breeder rights, copyrighted software, R&D-WBSO certificates. |
 | **Luxembourg — IP Regime (Article 50ter)** | 17% CIT + municipal | ~5.2% (Luxembourg City) | 80% exemption of qualifying net income (i.e., 20% taxed) | Patents, utility models, supplementary protection certificates, copyrighted software. |
@@ -94,7 +94,7 @@ This skill does NOT cover:
 | **Slovakia — Patent Box** | 21% CIT (large) / 15% (small) | 10.5% / 7.5% | 50% exemption of qualifying income | Patents, utility models, copyrighted software (R&D-derived). |
 
 - ****Cyprus**** — 12.5% CIT  _(Patents, copyrighted software, other-IP-equivalent-to-patent. Strict nexus tracking.)_
-- ****Ireland — KDB**** — 12.5% CIT  _(Patents, copyrighted software. The IDA's Knowledge Development Box certified for use in family-by-family tracking.)_
+- **Ireland KDB**: 10% effective on qualifying profits after the 20% deduction. See the sourced table above.
 - ****United Kingdom — Patent Box**** — 25% CIT  _(Patents granted by UKIPO, EPO, EEA states. Strict MNA tracking. Streaming or formulary apportionment for income identification.)_
 - ****Netherlands — Innovation Box**** — 25.8% CIT (2025)  _(Patents, plant breeder rights, copyrighted software, R&D-WBSO certificates.)_
 - ****Luxembourg — IP Regime (Article 50ter)**** — 17% CIT + municipal  _(Patents, utility models, supplementary protection certificates, copyrighted software.)_

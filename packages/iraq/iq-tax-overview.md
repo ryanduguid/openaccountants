@@ -3,7 +3,7 @@ name: iq-tax-overview
 description: "Source-cited draft: tax overview for Iraq (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: IQ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Territorial income tax system administered by GCT; KRI separate administration** — Iraq taxes income on a territorial basis under the Income Tax Law, administered by the General Commission for Taxes. The economy is oil-dependent and the Kurdistan Region (KRI) runs a separate tax administration with its own rates and procedures.
 - **Tax (assessment) year** — Calendar year (1 January to 31 December)  _(Income Tax Law No. 113 of 1982 (https://taxsummaries.pwc.com/iraq))_
 - **National currency** — Iraqi dinar (IQD)  _(Central Bank of Iraq (https://taxsummaries.pwc.com/iraq))_
-- **Federal tax authority** — General Commission for Taxes (GCT)  _(Income Tax Law No. 113 of 1982 (https://taxsummaries.pwc.com/iraq))_
+- **Federal tax authority** — General Commission of Taxes (الهيئة العامة للضرائب), under the Ministry of Finance. It publishes at `tax.mof.gov.iq` and gives `info@tax.mof.gov.iq` as its contact  _(General Commission of Taxes — https://tax.mof.gov.iq/)_
+- **Governing statute** — Income Tax Law **No. 113 of 1982, as amended** (قانون ضريبة الدخل رقم 113 لسنة 1982 المعدل). The GCT's own income-tax guide names this as the law in force and states that the Minister of Finance may propose the tax scale and the level of allowances within the State budget  _(General Commission of Taxes — دليل ضريبة الدخل — https://tax.mof.gov.iq/دليل-ضريبة-الدخل/)_
+- **Exemptions** — Set out in **article 7** of the Income Tax Law, granted for social, economic or political reasons or to avoid double taxation  _(General Commission of Taxes — دليل ضريبة الدخل — https://tax.mof.gov.iq/دليل-ضريبة-الدخل/)_
+- **Deductions** — A taxpayer may deduct what was spent to obtain the income in the year it arose, where supported by acceptable documents: interest on loans used to obtain the income, rent, sums spent maintaining plant and machinery, and life-insurance premiums among others  _(General Commission of Taxes — دليل ضريبة الدخل — https://tax.mof.gov.iq/دليل-ضريبة-الدخل/)_
 - **Kurdistan Region tax administration** — The Kurdistan Region of Iraq (KRI) operates a separate tax authority with distinct rates and procedures  _(Kurdistan Region Income Tax administration (https://taxsummaries.pwc.com/iraq/corporate/withholding-taxes))_
 - **Basis of taxation** — Territorial — all income derived from Iraq is taxable regardless of the recipient's residence  _(Income Tax Law No. 113 of 1982 (https://taxsummaries.pwc.com/iraq/individual/taxes-on-personal-income))_
 - **Top personal income tax rate** — 15% percent  _(Income Tax Law No. 113 of 1982 (https://taxsummaries.pwc.com/iraq/individual/taxes-on-personal-income))_

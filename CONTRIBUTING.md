@@ -20,10 +20,11 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 1. Fork this repo
 2. Create your skill in the appropriate **source** directory (`skills/federal/`, `skills/us-states/[code]/`, `skills/international/[country]/`, etc.)
 3. Follow the [skill template](docs/skill-template.md)
-4. Do **not** run any generator scripts — `index.json`, `llms-full.txt` and `packages/` rebuild in the scheduled platform sync after the source change is ingested
+4. Regenerate the derived trees and commit them with your change:
+   `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py`
 5. Open a PR with a description of what tax forms/schedules the skill covers
 
-> **Important:** edit `skills/**` only. `packages/`, `index.json` and `llms-full.txt` are generated — CI will ask you to revert any changes to them, and the scheduled platform sync regenerates them after confirmed source ingestion. One exception for now: **`packages/us-federal/`** is hand-authored and may be edited directly.
+> **Important:** write in `skills/**`, never by hand in `packages/`, `index.json` or `llms-full.txt` — those are generated. But do commit the regenerated copies: nothing else rebuilds them, and CI (`guard-derived-trees`) rebuilds all three and fails when the committed copies are stale. One exception: **`packages/us-federal/`** is hand-authored and may be edited directly.
 
 ## Repo layout
 
@@ -96,7 +97,7 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 | Platform integration skills | `skills/integrations/` |
 | Orchestrator files (router, intake, assembly) | `skills/orchestrator/` |
 
-You never need to run the generators: the scheduled platform sync regenerates every derived tree after your source change has been ingested.
+After editing, run the three generators (`python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py`) and commit the regenerated `packages/`, `index.json` and `llms-full.txt` together with your source change. CI rebuilds them and fails on any difference; `python3 scripts/validate-guides.py --derived-only` runs the same check locally.
 
 If you add a `references.md` to a country's source directory, it will be included in the generated package automatically.
 

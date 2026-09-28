@@ -3,7 +3,7 @@ name: sc-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Seychelles (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: SC
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,10 +23,12 @@ Seychelles taxes company profits under the Business Tax Act. Standard rates are 
 
 ## Withholding tax and filing
 
-- **Withholding tax on dividends (to non-residents)** — 15% on dividends paid out of Seychelles-sourced income to a non-resident ((approx — confirm))  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
-- **Withholding tax on interest (to non-residents)** — 15% on interest paid (non-banking companies) to a non-resident ((approx — confirm))  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
-- **Withholding tax on royalties (to non-residents)** — 15% on royalties paid to a non-resident ((approx — confirm))  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
-- **Withholding tax on technical/management service fees (to non-residents)** — 15% on technical and managerial service fees paid to a non-resident ((approx — confirm))  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
+- **Withholding tax on dividends (to non-residents)** — **15%** on dividends paid out of Seychelles-sourced income to a non-resident, before treaty relief  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
+- **Withholding tax on interest (to non-residents)** — **15%** on interest paid by a company **other than a banking institution** to a non-resident, before treaty relief  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
+- **Withholding tax on royalties (to non-residents)** — **15%** on royalties for rights used in Seychelles paid to a non-resident, before treaty relief  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
+- **Withholding tax on technical/management service fees (to non-residents)** — **15%** on technical and managerial service fees paid to a non-resident. Read this one alongside the three above: service fees are the category most often paid gross by mistake, because the payer treats the payment as buying a service rather than as Seychelles-source income of the recipient  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
+- **Withholding tax on natural resource payments (to non-residents)** — The withholding also reaches the **gross** amount of **natural resource** payments to a non-resident. This is the one category in the Business Tax Act list the guide did not carry  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
+- **Verification status of the Seychelles withholding rates** — Each 15% figure above previously carried a bare "(approx — confirm)", which tells a reader nothing they can act on. All now match the published description of the Business Tax Act withholding regime, but SRC's own tax-system page was unreachable on both attempts during this check (a 503, then a bot-verification interstitial), so they rest on secondary reporting of it rather than on SRC. A reviewer should confirm the rates and the category list against the Business Tax Act itself before any of this is relied on for a payment  _(Business Tax Act; SRC — https://src.gov.sc/seychelles-tax-system/)_
 - **Annual business tax return deadline** — 31 March of the year following the tax year (1 Jan – 31 Dec)  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
 - **Withholding tax remittance** — Withheld tax remitted to SRC via the Business Activity Statement (BAS)  _(Business Tax Act — https://src.gov.sc/seychelles-tax-system/)_
 

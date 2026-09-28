@@ -3,13 +3,21 @@ name: pt-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Portuguese VAT return (Declaração Periódica de IVA) for a self-employed individual or small business in Portugal. Trigger on phrases like "prepare Declaração Periódica", "Portuguese VAT return", "IVA Portugal", "classify transactions for Portuguese VAT", or any request involving Portugal VAT filing. This skill covers Continental Portugal only (standard regime). Madeira/Azores reduced rates, regime de isenção, partial exemption, margin scheme (regime da margem), and VAT groups are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Portuguese VAT work.
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-13
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # portugal-vat-return
+
+<!-- einvoice-xref -->
+> **This pack has a separate e-invoicing guide: `portugal-einvoice`.** This guide does not
+> cover it. Where a jurisdiction operates a mandatory electronic-invoicing or
+> real-time-reporting regime, the obligations and any consequences for input-tax
+> recovery sit in that guide — read it alongside this one before filing or advising.
+> **No claim about that jurisdiction's regime is made here**; this is a pointer only.
+
 
 ## Portugal VAT Return Skill (Declaração Periódica de IVA) v2.0
 

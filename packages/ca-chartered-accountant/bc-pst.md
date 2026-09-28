@@ -3,7 +3,7 @@ name: bc-pst
 description: Use this skill for British Columbia Provincial Sales Tax — 7% non-harmonized retail sales tax separate from federal GST 5%. Triggers "BC PST", "British Columbia sales tax", "PST registration BC", "PST 7%", "FIN 400", "eTaxBC", "MRDT BC", "BC PST online sales". ALWAYS read this skill for BC sellers / online platforms with BC customers (NOT included in canada-gst-hst).
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ British Columbia did NOT harmonize with the federal Goods and Services Tax (GST)
 - **Registration threshold (BC sales)** — CAD 10,000 in a 12-month period
 - **Foreign seller / marketplace economic nexus** — CAD 10,000 (in force since 1 April 2021)
 - **Filing form** — FIN 400 — Provincial Sales Tax Return
-- **Filing portal** — eTaxBC (https://etax.gov.bc.ca)
+- **Filing portal** — eTaxBC — ⚠ **this address does not resolve** (no DNS record); the `www.` form resolves but returns 404. See *eTaxBC* in the resources section below before quoting a URL
 - **Filing frequency** — Monthly / quarterly / semi-annual / annual (set by Ministry based on tax collected)
 - **Due date** — Last day of the month following the reporting period
 - **Statutory basis** — Provincial Sales Tax Act, SBC 2012, c. 35
@@ -36,7 +36,7 @@ British Columbia did NOT harmonize with the federal Goods and Services Tax (GST)
 | Registration threshold (BC sales) | **CAD 10,000** in a 12-month period |
 | Foreign seller / marketplace economic nexus | **CAD 10,000** (in force since 1 April 2021) |
 | Filing form | **FIN 400** — Provincial Sales Tax Return |
-| Filing portal | **eTaxBC** (https://etax.gov.bc.ca) |
+| Filing portal | **eTaxBC** — ⚠ address unverified, see resources section |
 | Filing frequency | Monthly / quarterly / semi-annual / annual (set by Ministry based on tax collected) |
 | Due date | Last day of the month following the reporting period |
 | Statutory basis | Provincial Sales Tax Act, SBC 2012, c. 35 |
@@ -231,7 +231,7 @@ Ontario and US customers are charged GST/HST as applicable (5% GST for US zero-r
 - **Provincial Sales Tax Act, SBC 2012, c. 35** — primary legislation.
 - **Provincial Sales Tax Exemption and Refund Regulation, BC Reg 97/2013** — exemption details and exemption certificate rules.
 - **Provincial Sales Tax Regulation, BC Reg 96/2013** — registration, commission, returns.
-- **eTaxBC** — https://www.etax.gov.bc.ca — registration, filing, payment.
+- **eTaxBC** — ⚠ **neither spelling of this host serves a working root page, and this file uses both.** The bare `etax.gov.bc.ca` given above at *Filing portal* **has no DNS record**. The `www.etax.gov.bc.ca` form used here **does resolve** (142.34.208.225) but returns **HTTP 404 "Not Found"** at the root. Resolving is not serving, so neither address should be handed to a reader as the portal. The correct entry point should be taken from the **gov.bc.ca** PST pages rather than guessed from either of these — registration, filing and payment [RESEARCH GAP].
 - **BC Ministry of Finance Bulletins** (selected):
   - PST 001 — Registering to Collect PST.
   - PST 002 — Charging, Collecting and Remitting PST.

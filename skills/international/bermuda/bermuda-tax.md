@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Bermuda taxation, payroll tax, 
 version: 2.0
 jurisdiction: BM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-13
 review_status: pending_review
 category: international
 tier: 2

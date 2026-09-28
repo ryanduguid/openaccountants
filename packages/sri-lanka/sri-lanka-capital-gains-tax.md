@@ -3,24 +3,33 @@ name: sri-lanka-capital-gains-tax
 description: Sri Lanka Capital Gains Tax on realisation of investment assets — rates, exemptions, calculation and filing (Inland Revenue Act No. 24 of 2017, as amended by Act No. 11 of 2026).
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-07-13
+tax_year_notes: "Rates in this guide span the IRA (Amendment) Act No. 11 of 2026, enacted 3 June 2026. The date of realisation, not the year of assessment, selects the rate: 10% before 3 June 2026, and 15% / 30% by class of taxpayer on or after it."
+last_updated: 2026-09-10
 reviewed_by: Lal kumarasiri
-review_status: current
-tier: 1
+review_status: pending_review
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
+
+> This revision includes changes made after the recorded accountant review and awaits a new review.
 
 # Sri Lanka Capital Gains Tax (CGT)
 
 ## 
 
-- **General CGT rate on transfer of investment assets** — 10% percent (On gains from transfer (sale, gift, redemption, destruction, expiry, or loss) of investment assets including real estate, shares (listed and unlisted), and other capital assets)  _(IRA s 50–s 57; Sixth Schedule)_
+- **General CGT rate on transfer of investment assets** — **There is no single general rate from 3 June 2026, and 10% is no longer any taxpayer's rate.** The charge applies to gains from transfer (sale, gift, redemption, destruction, expiry, or loss) of investment assets including real estate, shares (listed and unlisted) and other capital assets, but the rate now depends on who realises the gain: **individuals and partnerships 15%**, **trusts, unit trusts, mutual funds and NGOs 30%**, **companies 30%** as part of assessable income at the CIT rate. 10% was the general rate from 1 April 2018 until **2 June 2026** and still governs realisations completed before 3 June 2026 — see the transition rule in the timing section  _(IRA s 50–s 57; Sixth Schedule; IRA (Amendment) Act No. 11 of 2026)_
+
+> **Corrected: 10% is a pre-3-June-2026 rate, not the current general rate.** This
+> bullet stated a flat 10% while the three bullets below it — added when the 2026
+> amendment was recorded — put every class of taxpayer this guide names at 15% or
+> 30%. Nobody was left at 10%, so an agent reading the first rate bullet and
+> answering "Sri Lanka CGT is 10%" understated an individual's liability by a
+> third and a trust's by two thirds.
 - **Exempt assets** — Primary/principal residence held for more than 3 years; movable assets used exclusively for personal use; gains below the de minimis threshold; transfers pursuant to reorganisations meeting specific conditions; assets of deceased persons in certain circumstances.  _(IRA s 52; Sixth Schedule)_
-- **Filing** — Declared in the annual income tax return. Withheld at source (10%) by the paying entity for listed share transactions through the Colombo Stock Exchange (CSE) and reported to IRD.  _(IRA s 50–s 57; CSE Rules)_
+- **Filing** — Declared in the annual income tax return. Withheld at source by the paying entity for listed share transactions through the Colombo Stock Exchange (CSE) and reported to IRD. The withholding rate followed the headline rate up from 10% with the 2026 amendment, so use **15%** for an individual or partnership realising on or after 3 June 2026 and 10% for a realisation completed before it. [RESEARCH GAP — reviewer to confirm the CSE withholding rate against the amended IRA and current CSE Rules: this guide said 10% here and 15% in the listed-share section, and a withholding rate does not always track the final rate it collects against.]  _(IRA s 50–s 57; CSE Rules; IRA (Amendment) Act No. 11 of 2026)_
 - **Individuals and partnerships CGT rate** — 15% percent (On net capital gains from realisation of investment assets. INCREASED from 10% by IRA (Amendment) Act No. 11 of 2026, effective from the date of enactment (3 June 2026). Previously 10% since 1 April 2018.)  _(IRA (Amendment) Act No. 11 of 2026 s [CGT provision]; IRA s 50–s 57)_
 - **Trusts, unit trusts, mutual funds and NGOs CGT rate** — 30% percent (On net capital gains from realisation of investment assets. INCREASED substantially from 10% by IRA (Amendment) Act No. 11 of 2026, effective from date of enactment (3 June 2026).)  _(IRA (Amendment) Act No. 11 of 2026)_
 - **Companies CGT rate** — 30% percent (Taxed at the standard corporate income tax rate (not a separate CGT rate). Capital gains form part of assessable income and are subject to CIT at 30% (or applicable concessional rate if eligible).)  _(IRA s 59; First Schedule; IRD CGT page)_
-- **Individuals and partnerships CGT rate** — 15% percent (On net capital gains from realisation of investment assets. INCREASED from 10% by IRA (Amendment) Act No. 11 of 2026, effective from the date of enactment (3 June 2026). Previously 10% since 1 April 2018.)  _(IRA (Amendment) Act No. 11 of 2026 s [CGT provision]; IRA s 50–s 57)_
 - **Investment asset** — An investment asset is a capital asset held by the owner as part of an investment. Defined in IRA s 195 (definitions) and Chapter IV (s 36–s 57). Includes: land and buildings; membership interest in a company, partnership, or trust (listed and unlisted shares); security or other financial asset; option, right, or other interest in any of the above.  _(IRA s 36; s 195 (definitions); IRD CGT page)_
 - **Land and buildings (non-primary residence)** — Any immovable property that is not the owner's qualifying primary/principal place of residence is an investment asset subject to CGT on realisation (sale, gift, transfer, etc.).  _(IRA s 36; s 45; Sixth Schedule)_
 - **Condominium apartments** — Condominium units (other than qualifying primary residence) are investment assets subject to CGT.  _(IRA s 36)_

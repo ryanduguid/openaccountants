@@ -34,14 +34,14 @@ Named, licensed accountants put their name, credential and review date on the ta
 [![GitHub stars](https://img.shields.io/github/stars/openaccountants/openaccountants?style=social)](https://github.com/openaccountants/openaccountants/stargazers)
 
 <!-- oa-stats:start -->
-**1,953 Guides** across **244 jurisdictions** · **171 accountant-reviewed** · **22 named accountants**
+**1,953 Guides** across **244 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 <sub>Derived from `index.json` in this checkout and verified by
 `scripts/check-coverage-claims.py`. "Accountant-reviewed" and "named
 accountants" use the index builder's own rule: an explicit `tier: 1` plus a
 named reviewer. Counting every reviewer name in the corpus gives 28 people, but
 most of those names sit on tier-2 guides, where the builder is explicit that a
-name alone never implies sign-off — so 28 beside "171 accountant-reviewed"
+name alone never implies sign-off — so 28 beside "164 accountant-reviewed"
 would overstate the assurance. One tier-1 reviewer asked not to be named and is
 excluded from the 22.</sub>
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about incorporating in Japan -- trans
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-14
 review_status: pending_review
 depends_on:
   - jp-income-tax
@@ -305,8 +305,10 @@ A corporation can pay salaries to family members as employees or directors, achi
 | Nursing care (age 40--64) | 1.59% | Split 50/50 |
 | Employees' pension (厚生年金) | 18.3% | Split 50/50 |
 | Child-rearing contribution | 0.36% | 100% employer |
-| **Total (under 40)** | **~28.66%** | **~14.33% each** |
-| **Total (40 and over)** | **~30.25%** | **~15.125% each** |
+| **Total (under 40)** | **~28.66%** | **~14.15% employee; ~14.51% employer** |
+| **Total (age 40--64, with nursing care)** | **~30.25%** | **~14.945% employee; ~15.305% employer** |
+
+The totals use the component rates and allocation assumptions above. Split health, nursing care where applicable, and pension equally; add the 0.36% child-rearing contribution only to the employer share. These are arithmetic reconciliations, not independent verification of the applicable 2025 statutory rates.
 
 ### 6.3 Social Insurance Cap
 

@@ -3,7 +3,7 @@ name: mc-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Monaco (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MC
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,9 +23,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **New business relief — year 5** — Tax charged on 75% of profit (effective rate approx 18.75%) percent  _(Sovereign Ordinance no. 3.152 of 19 March 1964 (new-activity relief) - https://monentreprise.gouv.mc/en/themes/accounting-obligations-and-tax/tax/other-taxes-and-duties/corporate-income-tax)_
 - **New business relief — year 6 onward** — Tax charged on 100% of profit at the full 25% rate percent  _(Sovereign Ordinance no. 3.152 of 19 March 1964 (new-activity relief) - https://monentreprise.gouv.mc/en/themes/accounting-obligations-and-tax/tax/other-taxes-and-duties/corporate-income-tax)_
 - **Tax base** — Net taxable profit after deducting all business expenditure, including reasonable remuneration of entrepreneurs/executives; a capped deduction scale applies where turnover is under EUR 3.5m (services) or EUR 7m (other activities)  _(Sovereign Ordinance no. 3.152 of 19 March 1964 - https://monentreprise.gouv.mc/en/themes/accounting-obligations-and-tax/tax/other-taxes-and-duties/corporate-income-tax)_
-- **Withholding tax on dividends** — 0% — Monaco imposes no withholding tax on outbound dividends ((approx — confirm)) percent  _(Monaco tax code (no dividend withholding))_
-- **Withholding tax on interest** — 0% — Monaco imposes no withholding tax on outbound interest ((approx — confirm)) percent  _(Monaco tax code (no interest withholding))_
-- **Withholding tax on royalties** — 0% — Monaco imposes no withholding tax on outbound royalties ((approx — confirm)) percent  _(Monaco tax code (no royalty withholding))_
+- **Withholding tax on dividends** — **0%**, confirmed. Monaco levies no withholding tax on outbound dividends, interest or royalties  _(Monaco tax code; Legal 500 Monaco tax guide, "no withholding tax on cross-border payments of dividends, interest and royalties")_
+- **Withholding tax on interest** — **0%**, confirmed  _(Monaco tax code; Legal 500 Monaco tax guide, "no withholding tax on cross-border payments of dividends, interest and royalties")_
+- **Withholding tax on royalties** — **0%**, confirmed. The limit of all three: income arriving in Monaco from abroad is still subject to withholding in its source country, so a zero rate here is not a zero rate on the payment  _(Monaco tax code; Legal 500 Monaco tax guide, "no withholding tax on cross-border payments of dividends, interest and royalties")_
 - **ISB return filing deadline** — Annual return due within 3 months of the financial year-end ((approx — confirm with Direction des Services Fiscaux))  _(Sovereign Ordinance no. 3.152 of 19 March 1964)_
 
 <!-- openaccountants-cta-block -->

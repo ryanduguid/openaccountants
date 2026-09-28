@@ -4,7 +4,7 @@ description: "Utilize esta skill ao aconselhar sobre estratégias LEGAIS de mini
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 depends_on:
@@ -200,7 +200,7 @@ peça sempre NIF em todas as compras profissionais. A diferença entre €4.587,
 
 - **Taxa** — 21,4% sobre o rendimento relevante
 - **Cálculo do rendimento relevante** — trimestral, com base nos rendimentos brutos do trimestre anterior × coeficiente (tipicamente 70% para serviços, 20% para venda de bens)
-- **Limite máximo anual** — 12 × IAS (Indexante dos Apoios Sociais). IAS 2026 = €522,50 → limite ~€75.240/ano
+- **Limite máximo da base de incidência** — 12 × IAS (Indexante dos Apoios Sociais) é o tecto **mensal**, não anual. **IAS 2026 = €537,13** (€522,50 em 2025) → tecto mensal **€6.445,56**, equivalente a **€77.346,72/ano**. O valor de ~€75.240/ano que circulava era o anual de 2025 (12 × €522,50 × 12)
 - **Pagamentos trimestrais** — Janeiro, Abril, Julho, Outubro
 
 ### Isenções e Reduções
@@ -211,7 +211,7 @@ peça sempre NIF em todas as compras profissionais. A diferença entre €4.587,
 | --- | --- |
 | Primeiros 12 meses de actividade | Isenção total (apenas para primeira inscrição como trabalhador independente) |
 | Meses 13–24 | Redução de 50% |
-| Acumulação trabalho dependente + independente | Se for trabalhador por conta de outrem com descontos para SS e o rendimento do trabalho independente for <4× IAS (~€2.090/mês), pode estar dispensado de contribuições como independente |
+| Acumulação trabalho dependente + independente | Se for trabalhador por conta de outrem com descontos para SS e o rendimento do trabalho independente for <4× IAS — **€2.148,52/mês em 2026** (4 × €537,13); €2.090/mês em 2025 — pode estar dispensado de contribuições como independente |
 | Cônjuge do empresário | Se genuinamente trabalha no negócio, pode ser registado como trabalhador por conta de outrem com contribuições do empregador |
 
 ### Estratégias de Optimização

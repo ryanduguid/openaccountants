@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Italy cryptocurrency or digital
 version: 1.0
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - it-income-tax
@@ -212,7 +212,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Payment vehicle | Modello F24 |
 | Code | 1727 (IVCA tax), 1728 (interest), 1729 (penalties) |
-| Deadline | Same as balance due for Modello Redditi PF (30 June, or 31 July with 0.4% surcharge) |
+| Deadline | Same as balance due for Modello Redditi PF (30 June, or 30 July with 0.40% surcharge) |
 
 ### 7.4 DAC8 / CARF (from 2026)
 

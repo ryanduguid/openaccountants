@@ -1,5 +1,5 @@
 ---
-name: south_korea-references
+name: south-korea-references
 jurisdiction: KR
 tier: 2
 last_updated: 2026-06-12

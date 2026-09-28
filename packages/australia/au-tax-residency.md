@@ -4,7 +4,7 @@ description: "Use this skill for any question about Australian tax residency. Tr
 version: 1.0
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Australia |
 | Residency tests | 4 tests — resident if ANY test is satisfied |
 | Key test for most individuals | Resides test (facts and circumstances) |
-| Exit CGT | Deemed disposal of most non-TAP CGT assets on departure |
+| Exit CGT | CGT event I1 at cessation, subject to asset exceptions and the individual choice |
 | Primary legislation | ITAA 1936 s.6(1) definition of "resident" |
 | Tax authority | ATO (ato.gov.au) |
 | Verified by | Pending — Australian CPA/CA sign-off required |
@@ -45,7 +45,7 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 
 ### Test 4: Superannuation Test
 
-- **Superannuation Test** — Australian Government employees contributing to a Commonwealth public sector superannuation scheme are residents. Rarely relevant outside government employment.
+- **Superannuation test:** This applies to qualifying contributing members of the Public Sector Superannuation Scheme (PSS) or Commonwealth Superannuation Scheme (CSS), and their spouses and children under 16. Membership of the Public Sector Superannuation Accumulation Plan (PSSAP) does not qualify. A retired pension recipient who no longer contributes does not qualify merely because they receive a Commonwealth pension. Check the other residency tests separately.
 
 ## Section 3 — Ceasing Australian Tax Residency
 
@@ -53,9 +53,9 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 
 ## Section 4 — Exit CGT: The Departure Tax
 
-- **Exit CGT deemed disposal** — When you cease to be an Australian tax resident, you are treated as having disposed of most CGT assets at market value on the day before you stopped being a resident. This triggers CGT on any unrealised gains in those assets.
-- **Exceptions — no deemed disposal on exit** — Taxable Australian Property (TAP): Australian real property, shares deriving value from Australian real property. Australia retains taxing rights on TAP when actually sold. Assets used in an Australian permanent establishment.
-- **Election to defer** — You can elect to NOT trigger exit CGT and instead remain subject to Australian CGT when the assets are eventually sold (even as a non-resident). This defers the tax but means ongoing Australian filing obligations.
+- **Exit CGT deemed disposal:** CGT event I1 occurs when you cease Australian tax residency, for assets you owned just before that time. Use market value at cessation and report the event in that income year. For example, cessation on 1 July 2026 falls in 2026-27, not 2025-26.
+- **Asset exceptions:** Taxable Australian property (TAP) is generally excluded from I1, but indirect Australian real property interests and options or rights to acquire those interests are not excluded by that exception. Australian real property and assets used in an Australian permanent establishment remain outside I1. Disregard gains or losses on assets acquired before 20 September 1985.
+- **Individual choice:** Under s 104-165, an individual may choose to disregard all gains and losses covered by I1. The choice applies to all covered assets, not selected assets. Treat them as TAP until the earlier of a subsequent CGT event or resuming Australian residency; later disposals can create Australian filing obligations.
 
 ## Section 5 — Dual Residency
 
@@ -63,7 +63,7 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 
 ## Section 6 — Partial-Year Residency
 
-- **Partial-year residency treatment** — In the year of departure or arrival, a person may be a resident for only part of the year. Australian-source income: always taxable in Australia, regardless of residency status. Foreign-source income: only taxable during the period of Australian residency. CGT assets: exit CGT applies to non-TAP assets from the date residency ceases; any subsequent gains on those assets (if sold after) generally not taxable in Australia (unless TAP).
+- **Partial-year residency treatment:** If you change from resident to foreign resident during an income year, resident rates apply to taxable income for that year, with a tax-free threshold adjusted for the resident months. A bonus paid after cessation does not automatically attract full-year foreign-resident rates. Determine when income is derived and its source. Foreign-source income after cessation is generally excluded, and Australian interest, dividends and royalties subject to final non-resident withholding are excluded from the return. Apply I1 and any choice as described above; later CGT treatment depends on whether the asset remains TAP.
 
 ## Section 7 — Sources
 
@@ -71,6 +71,8 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 - ATO: ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency
 - ATO Taxation Ruling TR 98/17 — residency tests
 - ATO: Capital gains tax (CGT) and ceasing to be an Australian resident
+- Income Tax Assessment Act 1997 (Cth) ss 104-160, 104-165
+- [ATO: residency, the superannuation test](https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-superannuation-test)
 
 > **Working paper only.** Residency determination is highly fact-specific. Engage an Australian tax adviser for a formal residency opinion before making decisions that rely on non-resident status.
 

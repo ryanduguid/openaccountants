@@ -1,10 +1,10 @@
 ---
 name: cayman-tax
 description: Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like "Cayman tax", "Cayman Islands VAT", "Cayman Islands income tax", "Cayman corporate tax", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work.
-version: 2.0
+version: 2.1
 jurisdiction: KY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | N/A -- no direct tax filing |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Cayman practitioner |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Tax Landscape
 
@@ -95,7 +95,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Obligation | Amount/Rate | Notes |
 | --- | --- | --- |
-| Pension (mandatory) | 10% (5% employer + 5% employee) | National Pensions Act |
+| Pension (defined contribution) | Required total 10%; employer at least 5% | Subject to coverage, earnings cap and member-consent rules; see §5.3 |
 | Health insurance | Employer must provide | Minimum coverage prescribed |
 | Work permit fees | Varies by category | Non-Caymanian workers |
 | Payroll tax | None |  |
@@ -132,7 +132,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Example 2 -- Employment Obligations
 
-**Input:** Employee at KYD 60,000/year, non-Caymanian.
+**Input:** Employee at KYD 60,000/year, non-Caymanian, age 30, employed continuously in Cayman for two years, not a household domestic. Assume a defined-contribution plan with a 5% employer share.
 
 **Classification:** No income tax. No payroll tax. Pension: KYD 6,000 (5%+5%). Health insurance: mandatory. Work permit: required, annual fee.
 
@@ -154,7 +154,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.3 Pension and Health Insurance
 
-- **Pension and health insurance mandatory** — Mandatory for all employees aged 18-65. Pension: 10% split equally. Health insurance: employer must provide compliant plan.
+- **Pension and health insurance mandatory**: Enrolment runs from age 18 to the normal age of pension entitlement (65, subject to a qualifying election for 60 within the prescribed period). Required defined-contribution pension contributions total **10%** of earnings up to **CI$87,000**: 5% is an employer *floor* and a member limit without express consent, not a fixed 50/50 split: an employer paying more than 5% reduces the member's share correspondingly. Employees who are neither Caymanian nor permanent residents are excluded while working nine months or less, and household domestics qualify only on the same status condition. Additional voluntary contributions are permitted. Health insurance: the employer is liable for the **whole** premium and may recover **up to 50%** from the employee (100% for dependants' cover under s.8). High-risk employee recovery follows the separate s.7(ii) comparator. See `ky-payroll-social` for the full treatment  _(National Pensions Act (2024 Revision), ss.3, 25 and 47: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf; Health Insurance Act (2021 Revision), ss.7–8: https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf)_
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 

@@ -5,7 +5,7 @@ version: "1.0"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 duty year"
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -66,7 +66,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Mortgage duty is abolished in every jurisdiction. Direct transfers of shares and units are no longer dutiable anywhere in Australia -- land held through an entity is instead caught by the **landholder** regimes (§7.1). Never tell a client "there is no duty on the share sale" without running the landholder test.
 
-**SA's qualifying-land carve-out**: South Australia abolished duty on **non-residential, non-primary-production** land ("qualifying land" -- commercial, industrial, institutional, most vacant non-residential lots, per s 71DC *Stamp Duties Act 1923*), decided by land use code. An Adelaide warehouse purchase attracts **nil** conveyance duty; the same purchase in Sydney or Melbourne is fully dutiable. Confirm the land use code before quoting SA duty.
+**SA's qualifying-land carve-out**: South Australia abolished duty on **non-residential, non-primary-production** land ("qualifying land" -- commercial, industrial, institutional, most vacant non-residential lots, per s 71DC *Stamp Duties Act 1923*), decided by land use code. An Adelaide warehouse purchase attracts **nil** conveyance duty; a Sydney purchase is ordinarily dutiable. For Melbourne, first check whether the property has entered Victoria's commercial and industrial property tax (CIPT) reform and the transfer qualifies for relief. Confirm the land use code before quoting SA duty.
+
+**Victoria CIPT relief**: A standard subsequent transfer can be exempt where the property has a qualifying use and meets the entry-interest or timing conditions. These include a 100% entry interest, qualifying combined or matching interests, or a contract at least 3 years after entry. Partial relief can apply to some interests. For example, SRO's 100% entry on 1 January 2025 followed by a qualifying-use resale on 1 January 2026 is exempt; a 3-year wait is not required in that case. A $1 million resale on those facts has nil transfer duty, instead of the ordinary $55,000. Check the actual entry and transfer history, and the separate rules for non-standard transactions. Relief does not eliminate future CIPT liabilities. See [SRO dealings with properties in the reform](https://www.sro.vic.gov.au/businesses-and-organisations/commercial-and-industrial-property-tax/dealings-properties-have-entered-reform).
 
 ### 2.2 Related-Party and Non-Arm's-Length Transfers
 
@@ -154,9 +156,11 @@ WA also has a separate concessional **residential rate** for lower-value homes a
 | ACT | $1,000,001 -- $1,455,000 | $33,958 + $6.40 per $100 over $1,000,000 |
 | ACT | Over $1,455,000 | Flat $4.54 per $100 of the **whole** transaction value |
 | NT | Up to $525,000 | D = (0.06571441 × V²) + 15V, where V = dutiable value ÷ 1,000 |
-| NT | $525,001 -- $3,000,000 | 4.95% of dutiable value |
-| NT | $3,000,001 -- $5,000,000 | 5.75% of dutiable value |
-| NT | Over $5,000,000 | 5.95% of dutiable value |
+| NT | Over $525,000 and below $3,000,000 | 4.95% of dutiable value |
+| NT | $3,000,000 to below $5,000,000 | 5.75% of dutiable value |
+| NT | $5,000,000 and above | 5.95% of dutiable value |
+
+At exactly $3 million, NT duty is **$172,500** (5.75%); at exactly $5 million it is **$297,500** (5.95%). These endpoints match the [NT conveyance calculator](https://nt.gov.au/property/buying-and-selling-a-home/settle-the-sale/stamp-duty-buying-or-selling-a-home/conveyance-calculator) for 15 August 2026. Use the calculator for the final payable amount and rounding.
 
 ACT rates above are the eligible owner-occupier scale (unchanged from 1 July 2025); non-owner-occupiers pay a higher scale. ACT is phasing conveyance duty out over 20 years in favour of general rates -- from 1 July 2026 commercial property with a dutiable value of $2,100,000 or less pays **no** conveyance duty, with a flat 5% above that.
 
@@ -283,7 +287,7 @@ Duty is charged at the ordinary transfer duty scale on the proportion of the lan
 Contract 15 August 2026, existing home in Newcastle, price **$800,000**, both buyers eligible under FHBAS.
 
 - General duty: $11,602 + 4.5% × ($800,000 − $387,000) = $11,602 + $18,585 = **$30,187**. FHBAS gives a full exemption at $800,000 or less → duty payable **$0**.
-- **Saving: $30,187.** At $800,001 the concessional (not exempt) scale begins — one dollar of price is worth tens of thousands.
+- **Saving: $30,187.** At $800,001 the concession continues: the [Revenue NSW FHBAS calculator](https://www.apps09.revenue.nsw.gov.au/erevenue/calculators/fhba.php) gives **$20 duty** for the same 15 August 2026 existing-home purchase, with no shared equity and all eligibility conditions met. The $1 price increase raises duty by $20 in this case.
 
 ### Example 2 -- VIC first home buyer, tapered concession
 
@@ -304,7 +308,7 @@ One purchaser buys two adjoining vacant lots from the same vendor under one arra
 A foreign-owned company contracts on 10 August 2026 to buy a Brisbane residential unit for **$1,300,000**. No home concession (not a residence).
 
 - Transfer duty: $38,025 + 5.75% × ($1,300,000 − $1,000,000) = $38,025 + $17,250 = **$55,275**. AFAD: 8% × $1,300,000 = **$104,000**.
-- **Total duty: $159,275** — the surcharge adds 65% again on top of base duty. An Australian resident individual occupying the unit would instead use the home concession scale: $30,850 + 5.75% × $300,000 = **$48,100**.
+- **Total duty: $159,275**. The $104,000 surcharge adds about **188%** of the $55,275 base duty; it represents about 65% of the total. An Australian resident individual occupying the unit would instead use the home concession scale: $30,850 + 5.75% × $300,000 = **$48,100**.
 
 ### Example 5 -- NSW landholder duty, 60% share acquisition
 

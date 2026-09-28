@@ -3,7 +3,9 @@ name: sl-income-tax
 description: "Source-cited draft: personal income tax for Sierra Leone (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: SL
 tax_year: 2025
-last_updated: 2026-07-13
+tax_year_notes: "Retains 2025 coverage, with separately labelled Finance Act 2026 changes. Do not back-apply 2026 rates."
+version: 0.1
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,9 +21,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Fourth band (monthly)** — Next NLe 600 (NLe 1,801–2,400) taxed at 25% percent  _(Income Tax Act 2000)_
 - **Top band (monthly)** — Income above NLe 2,400 per month taxed at 30% percent  _(Income Tax Act 2000)_
 - **Annual tax-free threshold** — First NLe 7,200 per year taxed at 0% ((approx — confirm)) NLe  _(Income Tax Act 2000)_
-- **Non-resident employment income** — Taxed at a flat 25% (withheld at source) percent  _([Income Tax Act 2000](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/))_
+- **Non-resident employment income** — **25%**, withheld at source. This is the Second Schedule Part II line for employment income under s.116, and it is one of the few non-resident rates the Finance Act 2026 left alone — contractors, dividends, interest and management fees all went to 20%  _(Income Tax Act 2000, Second Schedule Part II, as replaced by Finance Act 2024, s.12(b) — https://www.nra.gov.sl/tax-laws)_
 - **Residence test for individuals** — An individual is resident if present in Sierra Leone for 183 days or more in the tax year, or is a government official posted abroad ((approx — confirm))  _(Income Tax Act 2000)_
-- **Tax-free allowances cap** — Allowances exceeding NLe 500 per month are included in taxable income and subject to PAYE NLe  _([Income Tax Act 2000](https://thebettsfirmsl.com/blog/pay-as-you-earn-paye-compliance-management-in-sierra-leone))_
+- **Tax-free allowances cap** — Allowances exceeding NLe 500 per month are included in taxable income and subject to PAYE NLe  _(Income Tax Act 2000 (as described at [thebettsfirmsl.com](https://thebettsfirmsl.com/blog/pay-as-you-earn-paye-compliance-management-in-sierra-leone)))_
 - **NASSIT relief** — Employee NASSIT contributions (5%) are deductible before computing PAYE ((approx — confirm))  _(National Social Security and Insurance Trust Act 2001)_
 - **PAYE remittance deadline** — Employer remits PAYE by the 15th of the following month  _([Income Tax Act 2000](https://mail.nra.gov.sl/businesses-and-organisations/pay-you-earn-paye))_
 - **Individual annual return** — Self-assessment return due within 120 days of year end (by 30 April) for those with non-PAYE income ((approx — confirm))  _(Income Tax Act 2000)_
