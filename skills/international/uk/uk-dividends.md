@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK dividend income taxation. Tr
 version: 1.1
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -20,25 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Changelog: v1.1 — standardised on 3-year structure (2024-25 prior, 2025-26 current, 2026-27 from 6 April 2026); promoted Autumn Budget 2025 dividend rate hike (10.75% / 35.75%) into full Quick Reference table, added combined comparison table and a 2026-27 worked example.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by James Power on 2026-06-03. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Dividends
-
-- **Dividend allowance 2025-26** — £500  _(ITA 2007 s.13A)_
-- **Dividend allowance 2024-25** — £500  _(ITA 2007 s.13A)_
-- **Basic rate** — 8.75%  _(ITA 2007)_
-- **Higher rate (£50,271--£125,140)** — 33.75%  _(https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past)_
-- **Additional rate** — 39.35%  _(ITA 2007)_
-- **Optimal salary** — £12,570 (PA level) or £5,000 (ST level)  _(Tax planning)_
-- **Employer NIC secondary threshold** — £5,000/year  _(SSCBA 1992)_
-- **Basic rate (2026-27)** — 10.75% (up from 8.75%)  _(Finance (No.2) Bill 2024-26)_
-- **Higher rate (2026-27)** — 35.75% (up from 33.75%)  _(Finance (No.2) Bill 2024-26)_
-- **Additional rate (2026-27)** — 39.35% (unchanged)  _(Finance (No.2) Bill 2024-26)_
-- **Dividend allowance (2026-27)** — £500 (unchanged)  _(ITA 2007 s.13A)_
-- **Combined CT + higher-rate dividend (2026-27)** — ~51.78% (up from ~50.28%)  _(Calculated)_
-- **Impact on salary-vs-dividend** — Dividend advantage over salary narrows materially from 6 April 2026  _(Tax planning note)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

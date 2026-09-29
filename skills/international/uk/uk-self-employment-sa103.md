@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK self-employment income for s
 version: 3.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -20,27 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Three-year scope:** Prior 2024-25 | Current 2025-26 | From April 2026 (2026-27)
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Self-Employment SA103
-
-- **SA103S (short form)** — Turnover below £90,000  _(HMRC guidance)_
-- **Trading allowance** — £1,000  _(ITTOIA 2005)_
-- **AIA (Annual Investment Allowance)** — £1,000,000  _(CAA 2001)_
-- **Cash basis** — Default from 2024/25 (no upper limit)  _(Finance Act 2024)_
-- **Below £12,570** — 0%  _(SSCBA 1992)_
-- **£12,570 – £50,270** — 6%  _(SSCBA 1992)_
-- **Above £50,270** — 2%  _(SSCBA 1992)_
-- **Car/van: first 10,000 miles** — 45p/mile  _(ITTOIA s.94A)_
-- **Car/van: over 10,000 miles** — 25p/mile  _(ITTOIA s.94A)_
-- **Motorcycle** — 24p/mile  _(ITTOIA s.94A)_
-- **Home office: 25-50 hrs/month** — £10/month  _(ITTOIA s.94B)_
-- **Home office: 51-100 hrs/month** — £18/month  _(ITTOIA s.94B)_
-- **Home office: 101+ hrs/month** — £26/month  _(ITTOIA s.94B)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

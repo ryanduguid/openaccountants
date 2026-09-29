@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in the UK, tax pla
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: James Power
 review_status: current
 depends_on: []
@@ -17,29 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## UK Tax Optimization -- Self-Employed Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Tax Optimisation
-
-- **AIA** — £1,000,000 (100% first-year)  _(CAA 2001)_
-- **Main pool WDA (2025-26)** — 18% reducing balance  _(CAA 2001)_
-- **Main pool WDA (from Apr 2026)** — 14%  _(Finance Act 2025)_
-- **Special rate pool** — 6%  _(CAA 2001)_
-- **Electric car (0 g/km)** — 100% FYA  _(CAA 2001)_
-- **Car 1-50 g/km** — Main pool (18%/14%)  _(CAA 2001)_
-- **Car over 50 g/km** — Special rate pool (6%)  _(CAA 2001)_
-- **Sideways (s.64)** — Against total income same/prior year; cap £50,000 or 25%  _(ITA 2007 s.64)_
-- **Carry-forward (s.83)** — Unlimited, no time limit, same trade only  _(ITA 2007 s.83)_
-- **Early trade (s.72)** — First 4 years losses carried back 3 years  _(ITA 2007 s.72)_
-- **Terminal (s.89)** — Final 12 months, back 3 years (no cap)  _(ITA 2007 s.89)_
-- **When to consider** — Profits consistently £40,000-£50,000+  _(Tax planning)_
-- **Corp tax — small profits** — 19% (taxable profits ≤ £50,000)  _(CTA 2010)_
-- **Corp tax — main rate** — 25% (profits > £250,000)  _(CTA 2010)_
-- **Corp tax — marginal** — 26.5% effective (£50,001 – £250,000)  _(CTA 2010)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -79,6 +57,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Profits over £50,270 | Income tax 40% + NIC Class 4 (2%) | Corporation tax 25% + salary/dividend mix |
 | When to incorporate | Generally when profits consistently exceed £40,000-£50,000 and can be retained or extracted via dividends | Requires Companies House filing, accounts, employer PAYE |
 
+- **Corporation tax rates (financial years from 1 April 2023, unchanged for FY2025 and FY2026)** — 19% small profits rate on taxable profits up to £50,000; 25% main rate on profits above £250,000; between £50,001 and £250,000 marginal relief (fraction 3/200) makes the effective rate on each pound in the band 26.5%, so a company with £100,000 of profits pays £22,750 (25% × £100,000 − 3/200 × £150,000), 22.75% overall. The limits are divided by the number of associated companies plus one and pro-rated for accounting periods shorter than 12 months.  _(CTA 2010 Part 3A, ss. 18A–18N)_
 - **Legislation** — Companies Act 2006; Corporation Tax Act 2009; ITEPA 2003 (dividend taxation)  _(Companies Act 2006; Corporation Tax Act 2009; ITEPA 2003)_
 
 ### Salary vs Dividends (for Ltd companies)

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about forming, incorporating, or regi
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -20,28 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Company Formation
-
-- **Pvt Ltd — min shareholders** — 1 shareholder + 1 director  _(CA 2006)_
-- **Pvt Ltd — min capital** — £1 (no statutory minimum)  _(CA 2006)_
-- **PLC — min paid-up** — £50,000 (25% = £12,500 paid up)  _(CA 2006)_
-- **LLP — min members** — 2 designated members  _(LLP Act 2008)_
-- **Online incorporation** — £100  _(Companies House)_
-- **Same-day (software)** — £156  _(Companies House)_
-- **Paper** — £124  _(Companies House)_
-- **Annual confirmation statement** — £50 online / £110 paper  _(Companies House)_
-- **Annual accounts filing** — 9 months after year-end (private)  _(CA 2006 s.442)_
-- **CT600 filing** — 12 months after accounting period  _(CTA 2010)_
-- **CT payment** — 9 months + 1 day after period end  _(CTA 2010)_
-- **Confirmation statement** — Every 12 months  _(CA 2006)_
-- **PSC register** — Update within 14 days of changes  _(CA 2006)_
-- **VAT threshold** — £90,000  _(VATA 1994)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

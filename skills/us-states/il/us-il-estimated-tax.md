@@ -4,7 +4,7 @@ description: "Illinois Estimated Income Tax (Form IL-1040-ES) for self-employed 
 version: 1.0
 jurisdiction: US-IL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 depends_on:
@@ -18,30 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Illinois Estimated Tax (IL-1040-ES) v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### IL Estimated Tax
-
-- **Threshold** — $1,000 of expected IL tax after withholding/credits (TY ending on/after 12/31/2019); $500 was the prior threshold and now applies only to the PTE-tax election context  _(35 ILCS 5/803; IDOR Pub-105; IL-1040-ES instr.)_
-- **Safe harbor — current year** — 90% of current-year liability  _(35 ILCS 5/803; IL-2210.)_
-- **Safe harbor — prior year** — 100% of prior-year liability; IL has no high-income 110% rule  _(35 ILCS 5/803; IL-2210; IL-1040-ES instr.)_
-- **110% rule** — Confirmed - IL uses 100% prior-year regardless of income  _(IL-2210 instr.)_
-- **IL flat rate** — 4.95%  _(35 ILCS 5/201.)_
-- **Personal exemption — Single** — $2,850 for 2025 (the same exemption applies to IL-1040, estimated tax, and withholding)  _(IDOR FY2025-16; IL-1040-ES instr.)_
-- **Personal exemption — MFJ** — $5,700 for 2025  _(IDOR FY2025-16.)_
-- **Q1** — April 15, 2025  _(2025 IL-1040-ES.)_
-- **Q2** — Statutory June 15; June 15, 2025 falls on a Sunday, so the effective due date is June 16, 2025  _(2025 IL-1040-ES; 5 ILCS 70/1.11.)_
-- **Q3** — September 15, 2025  _(2025 IL-1040-ES.)_
-- **Q4** — January 15, 2026  _(2025 IL-1040-ES.)_
-- **Instalment split** — Four equal 25% installments  _(IL-1040-ES; IL-2210.)_
-- **Underpayment rate** — IL interest tracks the IRC 6621 underpayment rate (federal short-term + 3 points for individuals) and is set SEMI-ANNUALLY (Jan 1 and Jul 1), not federal short-term + 2% quarterly.  _(35 ILCS 735/3-2; IDOR Pub-103.)_
-- **Estimated tax exemption** — IL-1040-ES uses $2,850 (S) / $5,700 (MFJ) for 2025 - the same as IL-1040  _(IDOR FY2025-16; IL-1040-ES instr.)_
-- **Income tax exemption** — $2,850 (S) / $5,700 (MFJ)  _(IDOR FY2025-16.)_
-- **VERIFY** — They do NOT differ: both IL-1040 and IL-1040-ES use $2,850 (S) / $5,700 (MFJ) for 2025. The $2,625/$5,250 figures in rows 8-9 and 19 are erroneous (older amounts).  _(IDOR FY2025-16.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## What this file is
 
@@ -73,7 +50,7 @@ This is a Tier 2 content skill for computing quarterly estimated Illinois income
 
 ### Who must make estimated payments
 
-- **Estimated payment requirement** — An individual must make estimated payments if: 1. The taxpayer expects to owe $500 or more in Illinois income tax after subtracting Illinois withholding and credits, AND 2. The taxpayer expects Illinois withholding and credits to be less than the smaller of: (a) 90% of the current year tax liability, or (b) 100% of the prior year tax liability.  _(35 ILCS 5/803(a); 86 Ill. Admin. Code 100.8010.)_
+- **Estimated payment requirement** — An individual must make estimated payments if: 1. The taxpayer expects to owe more than $1,000 in Illinois income tax after subtracting Illinois withholding and credits (the threshold for tax years ending on or after December 31, 2019; $500 was the earlier threshold and now applies only in the pass-through entity tax election context), AND 2. The taxpayer expects Illinois withholding and credits to be less than the smaller of: (a) 90% of the current year tax liability, or (b) 100% of the prior year tax liability.  _(35 ILCS 5/803(a); IDOR Publication 105; IL-1040-ES instr.; 86 Ill. Admin. Code 100.8010.)_
 
 ### Payment schedule
 
@@ -82,7 +59,7 @@ This is a Tier 2 content skill for computing quarterly estimated Illinois income
 | Installment | Period covered | Due date | Source |
 | --- | --- | --- | --- |
 | 1st quarter | Jan 1 -- Mar 31 | April 15, 2025 | 35 ILCS 5/803(b) |
-| 2nd quarter | Apr 1 -- May 31 | June 15, 2025 | 35 ILCS 5/803(b) |
+| 2nd quarter | Apr 1 -- May 31 | June 16, 2025 (the statutory June 15 falls on a Sunday) | 35 ILCS 5/803(b); 5 ILCS 70/1.11 |
 | 3rd quarter | Jun 1 -- Aug 31 | September 15, 2025 | 35 ILCS 5/803(b) |
 | 4th quarter | Sep 1 -- Dec 31 | January 15, 2026 | 35 ILCS 5/803(b) |
 
@@ -90,16 +67,16 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ## Section 3 -- Rates and thresholds
 
-**Rates and thresholds**  _(35 ILCS 5/201(b)(5.4); 35 ILCS 5/803(a); 35 ILCS 5/204 (2025); 35 ILCS 5/804; 35 ILCS 5/804(c))_
+**Rates and thresholds**  _(35 ILCS 5/201(b)(5.4); 35 ILCS 5/803(a); 35 ILCS 5/204 (2025); 35 ILCS 5/804; 35 ILCS 735/3-2)_
 
 | Item | Amount | Source |
 | --- | --- | --- |
 | Illinois flat income tax rate | 4.95% | 35 ILCS 5/201(b)(5.4) |
-| Estimated tax threshold | $500 | 35 ILCS 5/803(a) |
-| Personal exemption | $2,625 (single); $5,250 (MFJ) | 35 ILCS 5/204 (2025) |
-| Safe harbour -- current year | 90% of current year tax | 35 ILCS 5/804 |
-| Safe harbour -- prior year | 100% of prior year tax | 35 ILCS 5/804 |
-| Underpayment penalty rate | Varies (set by IDOR quarterly, tied to federal short-term rate + 2%) | 35 ILCS 5/804(c) |
+| Estimated tax threshold | More than $1,000 expected tax after withholding and credits | 35 ILCS 5/803(a); IDOR Pub-105; IL-1040-ES instr. |
+| Personal exemption (2025) | $2,850 (single, HoH, MFS); $5,700 (MFJ); the same amount applies to the IL-1040, to IL-1040-ES and to withholding | 35 ILCS 5/204; IDOR Informational Bulletin FY 2025-16; IL-1040-ES instr. |
+| Safe harbour -- current year | 90% of current year tax | 35 ILCS 5/804; IL-2210 |
+| Safe harbour -- prior year | 100% of prior year tax (no 110% high-income rule) | 35 ILCS 5/804; IL-2210 instr. |
+| Underpayment interest rate | The federal underpayment rate under IRC §6621 (federal short-term rate plus 3 points for individuals), set semi-annually on January 1 and July 1 | 35 ILCS 735/3-2; IDOR Publication 103 |
 
 **Note:** Illinois does NOT have a 110% prior-year safe harbour for high-income taxpayers as the IRS does. The prior-year safe harbour is always 100%.
 
@@ -111,7 +88,7 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ### Step 2: Subtract personal exemption
 
-0. **Step 2** — - Single/HoH: $2,625 - MFJ: $5,250 - MFS: $2,625 - Result = Illinois net income (equivalent to Illinois taxable income for individuals).
+0. **Step 2** — - Single/HoH: $2,850 - MFJ: $5,700 - MFS: $2,850 - plus $2,850 per dependent and $1,000 per age-65-or-blind condition (2025 amounts; the exemptions are disallowed in full when federal AGI exceeds $250,000, or $500,000 MFJ) - Result = Illinois net income (equivalent to Illinois taxable income for individuals).
 
 ### Step 3: Compute estimated annual tax
 
@@ -123,7 +100,7 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ### Step 5: Determine if estimated payments are required
 
-0. **Step 5** — If the result from Step 4 is $500 or more, estimated payments are required.
+0. **Step 5** — If the result from Step 4 is more than $1,000, estimated payments are required.
 
 ### Step 6: Determine safe harbour amount
 
@@ -168,12 +145,12 @@ Illinois follows the same quarterly schedule as the IRS.
 ### Test 1: Standard freelancer
 
 - **Input:** Single filer, IL resident all year. Expected net income from Schedule C: $100,000. No withholding. No credits other than personal exemption.
-- **Expected:** IL taxable income: $100,000 - $2,625 = $97,375. Tax: $97,375 x 4.95% = $4,820.06. Quarterly payment: $4,820.06 / 4 = $1,205.02 per quarter.
+- **Expected:** IL taxable income: $100,000 - $2,850 = $97,150. Tax: $97,150 x 4.95% = $4,808.93. Quarterly payment: $4,808.93 / 4 = $1,202.23 per quarter.
 
 ### Test 2: Below threshold
 
 - **Input:** Part-year freelancer. Expected IL taxable income: $8,000. Tax: $8,000 x 4.95% = $396. With withholding of $0.
-- **Expected:** $396 < $500 threshold. No estimated payments required.
+- **Expected:** $396 is not more than the $1,000 threshold. No estimated payments required.
 
 ### Test 3: Safe harbour using prior year
 
@@ -182,13 +159,13 @@ Illinois follows the same quarterly schedule as the IRS.
 
 ### Test 4: MFJ with W-2 withholding
 
-- **Input:** MFJ. Combined income: $150,000. W-2 withholding (spouse): $3,200. Estimated tax: ($150,000 - $5,250) x 4.95% = $7,170.23. Net after withholding: $7,170.23 - $3,200 = $3,970.23.
-- **Expected:** $3,970.23 > $500. Quarterly: $3,970.23 / 4 = $992.56.
+- **Input:** MFJ. Combined income: $150,000. W-2 withholding (spouse): $3,200. Estimated tax: ($150,000 - $5,700) x 4.95% = $7,142.85. Net after withholding: $7,142.85 - $3,200 = $3,942.85.
+- **Expected:** $3,942.85 > $1,000. Quarterly: $3,942.85 / 4 = $985.71.
 
 ### Test 5: Property tax credit
 
 - **Input:** Single filer, IL taxable income $80,000. Property taxes paid: $6,000.
-- **Expected:** Tax: ($80,000 - $2,625) x 4.95% = $3,830.06. Property tax credit: $6,000 x 5% = $300. Net: $3,530.06. Quarterly: $882.52.
+- **Expected:** Tax: ($80,000 - $2,850) x 4.95% = $3,818.93. Property tax credit: $6,000 x 5% = $300. Net: $3,518.93. Quarterly: $879.73.
 
 ## Section 7 -- Prohibitions
 
@@ -203,8 +180,8 @@ Before delivering output, verify:
 
 - [ ] Federal AGI correctly adjusted for Illinois modifications (Schedule M)
 - [ ] Flat rate of 4.95% applied (not a graduated rate)
-- [ ] Personal exemption of $2,625 (single) or $5,250 (MFJ) deducted
-- [ ] $500 threshold applied to determine filing requirement
+- [ ] Personal exemption of $2,850 (single) or $5,700 (MFJ) deducted (2025 amounts)
+- [ ] "More than $1,000" threshold applied to determine the payment requirement
 - [ ] Safe harbour computed using the lesser of 90% current / 100% prior
 - [ ] 100% prior year rule used (not 110%)
 - [ ] Bonus depreciation add-back included if applicable

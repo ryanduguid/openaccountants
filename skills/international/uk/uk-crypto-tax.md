@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK cryptocurrency or digital as
 version: 2.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -20,27 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Covers three UK tax years: **2024-25**, **2025-26**, and **2026-27**, including the mid-year CGT rate change on 30 October 2024 and the introduction of the Crypto Asset Reporting Framework (CARF) from April 2026.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Crypto Tax
-
-- **Basic rate taxpayer** — 18%  _(TCGA 1992)_
-- **Higher/additional rate** — 24%  _(TCGA 1992)_
-- **AEA** — £3,000  _(TCGA 1992)_
-- **Required method** — S104 pooling (weighted average)  _(TCGA 1992 s.104)_
-- **FIFO** — NOT permitted  _(HMRC CRYPTO22200)_
-- **Specific identification** — NOT permitted for crypto  _(HMRC CRYPTO22200)_
-- **1st: Same-day** — Match same-day acquisitions  _(TCGA s.105(1))_
-- **2nd: 30-day rule** — Match acquisitions within 30 days AFTER disposal  _(TCGA s.106A)_
-- **3rd: S104 pool** — Average cost from pool  _(TCGA s.104)_
-- **Mining (hobbyist)** — Miscellaneous income at FMV  _(ITTOIA s.687)_
-- **Staking rewards** — Miscellaneous income at FMV  _(HMRC CRYPTO21200)_
-- **Airdrop (service performed)** — Miscellaneous income at FMV  _(HMRC CRYPTO21250)_
-- **Airdrop (unsolicited)** — Not income; CGT on disposal from zero cost  _(HMRC CRYPTO21250)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick Reference
 

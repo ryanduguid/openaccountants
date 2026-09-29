@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T01:06:03+00:00",
+ "generated_at": "2026-09-29T02:01:45+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -19933,7 +19933,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-crypto-tax",
@@ -19946,7 +19946,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-dividends",
@@ -19959,7 +19959,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-financial-statements",
@@ -19972,7 +19972,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-formation",
@@ -19985,7 +19985,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-income-tax-sa100",
@@ -20011,7 +20011,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-non-dom",
@@ -20037,7 +20037,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-payroll",
@@ -20050,7 +20050,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-rental-sa105",
@@ -20076,7 +20076,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-statutory-residence-test",
@@ -20102,7 +20102,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-tax-optimization",
@@ -20115,7 +20115,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-to-italy-flat-tax-relocation",
@@ -20154,7 +20154,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "uk-vat-return",
@@ -20167,7 +20167,7 @@
    "reviewed_by": "James Power",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "vat-returns-for-small-businesses-in-the-uk",
@@ -22494,7 +22494,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-il-income-tax",
@@ -22507,7 +22507,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-il-payroll",
@@ -22520,7 +22520,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-il-pprt",
@@ -22533,7 +22533,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-il-sales-tax",
@@ -22546,7 +22546,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-in-payroll",
