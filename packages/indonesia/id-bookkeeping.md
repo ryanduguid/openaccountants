@@ -327,7 +327,7 @@ This worked example is for illustration only. The actual rate, PTKP, and percent
 | PER-17/PJ/2015 | NPPN notification procedure; segregated pencatatan by activity |
 | PMK 196/PMK.03/2007 (as amended) | USD bookkeeping permission |
 | PMK 213/PMK.03/2016 | Transfer pricing documentation refusal trigger |
-| PP 23/2018 + PP 55/2022 | UMKM 0.5% final-tax regime + time limits |
+| PP 23/2018 + PP 55/2022 (as amended by PP 20/2026) | UMKM 0.5% final-tax regime, its eligible forms and the remaining time limits |
 | PMK 66/PMK.03/2023 | In-kind benefit (natura) carve-outs |
 | PMK 81/PMK.03/2024 | Coretax filing channel from 2025 |
 | PMK 169/PMK.010/2015 | Thin-cap DER 4:1 |

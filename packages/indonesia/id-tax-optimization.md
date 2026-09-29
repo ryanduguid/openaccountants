@@ -83,7 +83,7 @@ Indonesian self-employed individuals (Orang Pribadi) generally choose between th
 
 | Regime | Legislation | Mechanics |
 | --- | --- | --- |
-| **UMKM Final 0.5%** | PP 55/2022 | 0.5% × gross monthly turnover, paid monthly; no expense deduction; final tax. OP ≤ IDR 4.8B turnover; no time limit for OP and PT Perorangan since PP 20/2026; 3 years for a PT, 4 years for CV/Firma/Koperasi/BUMDes. |
+| **UMKM Final 0.5%** | PP 55/2022 | 0.5% × gross monthly turnover, paid monthly; no expense deduction; final tax. Since 22 April 2026 (PP 20/2026) open only to individuals, PT Perorangan and koperasi with turnover ≤ IDR 4.8B: no time limit for individuals and PT Perorangan, 4 years for a koperasi; the IDR 4.8B test combines the individual's turnover with their spouse's and with every PT Perorangan they founded (PP 55/2022 Art. 57(2)(e) as amended). CV, firma, ordinary PT and BUMDes can no longer enter the regime; one registered before 22 April 2026 keeps it only until its PP 55/2022 window ends (3 years PT, 4 years CV/firma/BUMDes; PP 20/2026 Art. II(e)). |
 | **Progressive with NPPN** (deemed net income) | Pasal 14(2) UU PPh; PER-17/PJ/2015 | DJP-published deemed-profit % × gross revenue, then PTKP, then progressive brackets. Requires notification to DJP within first 3 months of tax year. |
 | **Progressive with Pembukuan** | Pasal 14(1); Pasal 28 KUP | Full accrual bookkeeping; Pasal 6 deductions / Pasal 9 add-backs; PTKP; progressive. Mandatory above IDR 4.8B. Only regime allowing 5-year loss carry-forward (Pasal 6(2)). |
 
@@ -311,12 +311,12 @@ Indonesian social security comes in two branches:
 
 ### 8.2 BPJS Ketenagakerjaan (employment) -- UU 24/2011 + PP 44/45/46 2015
 
-**BPJS Ketenagakerjaan programme table**  _(UU 24/2011 + PP 44/45/46 2015)_
+**BPJS Ketenagakerjaan programme table**  _(UU 24/2011; PP 44/45/46 2015, PP 44/2015 as amended by PP 49/2023)_
 
 | Programme | Employer | Employee | Wage cap |
 | --- | --- | --- | --- |
-| JKK (work accident) | 0.24% -- 1.74% (risk class) | 0 | None |
-| JKM (death) | 0.30% | 0 | None |
+| JKK (work accident) | 0.10% -- 1.60% by risk grade (PP 49/2023 Art. 16A; grade 2, e.g. retail and hospitality, 0.40%) | 0 | None |
+| JKM (death) | 0.20% (PP 49/2023 Art. 18A) | 0 | None |
 | JHT (old age) | 3.7% | 2% | None |
 | JP (pension) | 2% | 1% | **IDR ~10,547,400/month** (2025; adjusted annually -- TBC against latest Permenaker) |
 
@@ -402,7 +402,7 @@ Single OP software developer, Jakarta:
 
 UMKM Final dominates because (1) high actual margin (~83%), (2) revenue under IDR 4.8B ceiling, (3) first IDR 500M at 0%.
 
-**Forward-looking planning:** PP 20/2026 removed the individual 7-year cap on UMKM, so this developer stays in the regime while turnover remains ≤ IDR 4.8B; the cliff now comes when turnover crosses IDR 4.8B, after which the same income bears NPPN (IDR 107.8M) or pembukuan (IDR 227.8M) tax.
+**Forward-looking planning:** PP 20/2026 removed the individual time limit, so this developer stays in the regime while turnover (own, spouse's and any PT Perorangan founded, combined) remains ≤ IDR 4.8B. Crossing IDR 4.8B ends the regime, and because NPPN also requires prior-year turnover below IDR 4.8B it leaves pembukuan as the only regime: at the same margin the progressive tax on IDR 5B of revenue would be roughly IDR 1.3B (35% on most of a IDR 4.15B net), against IDR 3.5M here, so model the crossing year before it happens rather than reusing the figures above.
 
 ### Break-even rules of thumb (Jakarta NPPN 50%, TK/0)
 

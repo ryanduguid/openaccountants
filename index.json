@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T03:59:50+00:00",
+ "generated_at": "2026-09-29T04:10:48+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -10105,7 +10105,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-income-tax",
@@ -10157,7 +10157,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-tax-optimization",

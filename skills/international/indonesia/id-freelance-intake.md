@@ -3,7 +3,7 @@ name: id-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing a 2025 Indonesian tax return AND mentions freelancing, self-employment, online seller, kontraktor, pekerjaan bebas, sole proprietor (Usaha Dagang), or a PT Perorangan in Indonesia. Trigger on phrases like "siapkan SPT Tahunan", "lapor pajak freelance Indonesia", "PPh Final UMKM 0,5%", "PP 55/2022", "PT Perorangan tax return", "online seller Indonesia tax", "kontraktor pajak", "pekerjaan bebas", "Usaha Dagang", "Coretax SPT", "NPWP 16 digit", or any similar phrasing where the user is an Indonesia-resident self-employed individual, sole proprietor, or micro-PT founder. This is the REQUIRED entry point for the Indonesian freelance/SME workflow — every downstream skill in the stack (id-pph-final-umkm, id-income-tax, id-corporate-tax, id-withholding, id-payroll-pph21, indonesia-vat, id-bookkeeping, id-einvoice-coretax, id-formation, id-tax-optimization, id-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Indonesian residents only (full-year tax residents and foreigners with > 183 days permanent presence). ALWAYS read this skill first when starting an Indonesian freelance/SME tax workflow.
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -84,7 +84,7 @@ All thresholds 2025-effective.
 ### 4.3 Turnover threshold gate — PP 55/2022 art. 56, 60; PMK 164/2023
 
 - **UMKM Final availability threshold** — Peredaran bruto ≤ Rp4.8B + not pekerjaan bebas → UMKM Final 0.5% available (optional; taxpayer may elect progressive instead). > Rp4.8B → UMKM Final not available; progressive PPh OP + mandatory pembukuan under UU 28/2007 art. 28. IDR  _(PP 55/2022 art. 56, 60; PMK 164/2023; UU 28/2007 art. 28)_
-- **UMKM clock** — OP / UD = 7 years; PT = 4 years; CV / Firma / Koperasi / BUMDes = 3 years. Counted from first applied year (or PP 23/2018 effectivity if on regime in 2018).  _(PP 55/2022 art. 59)_
+- **UMKM clock** — None since PP 20/2026 (in force 22 April 2026): an OP / UD or PT Perorangan stays in the regime while turnover (the individual's, the spouse's and every PT Perorangan founded, combined — art. 57(2)(e)) is ≤ Rp4.8B; a koperasi has 4 years; CV, firma, ordinary PT and BUMDes can no longer use it (one registered before 22 April 2026 keeps it until its old window ends, art. II(e)). Before PP 20/2026, PP 55/2022 art. 59 set 7 years (OP), 3 (PT) and 4 (CV / firma / koperasi / BUMDes) from the first applied year.  _(PP 55/2022 art. 57 and 59 as amended by PP 20/2026)_
 - **Rp500m OP band** — OP on UMKM Final 0.5% has first Rp500m of annual turnover exempt from 0.5% final tax. OP only — not badan. IDR  _(UU 7/2021 art. 7(2a))_
 - **Routing** — → Route `id-pph-final-umkm` with monthly calc + Rp500m logic.  _(PP 55/2022)_
 

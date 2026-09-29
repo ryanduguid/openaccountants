@@ -192,12 +192,12 @@ A self-employed Orang Pribadi has three mutually exclusive regimes for business 
 | Loss carry-forward? | No | No | Yes, 5 years |
 | Monthly obligation | Final 0.5% setoran each month | PPh 25 instalment | PPh 25 instalment |
 | Bookkeeping | Pencatatan (simple records) | Pencatatan only | Full pembukuan (accrual) |
-| Time limit | None for individuals: PP 20/2026 removed the 7-year cap of PP 55/2022 (Art. 59 deleted); 3 years for a PT, 4 years for CV/Firma/Koperasi/BUMDes | None (per-year election) | None |
+| Time limit | None for individuals and PT Perorangan: PP 20/2026 (in force 22 April 2026) deleted PP 55/2022 Art. 59; a koperasi has 4 years; CV, firma, ordinary PT and BUMDes can no longer enter the regime, and one registered before 22 April 2026 keeps it only until its old window ends (3 years PT, 4 years CV/firma/BUMDes; PP 20/2026 Art. II(e)) | None (per-year election) | None |
 | Reference skill | `id-pph-final-umkm` | This skill, Section 6 | This skill |
 
 ### 5.2 Decision flow
 
-- **Decision flow** — 1. Is current-year gross turnover > IDR 4.8B? → Must use Pembukuan. Skip to Section 7. 2. Has client elected UMKM Final 0.5% and is still eligible (turnover ≤ IDR 4.8B, not pekerjaan bebas; no time limit for individuals since PP 20/2026)? → Route to `id-pph-final-umkm`. Stop. 3. Did client notify DJP of NPPN election within 3 months of the tax year (i.e. by 31 March of the tax year)? → NPPN is available. Compare NPPN vs Pembukuan; the client may use NPPN. 4. No NPPN notification on file and not UMKM Final? → Pembukuan is mandatory by default (UU PPh Art. 14(2)).  _(UU PPh Art. 14(2))_
+- **Decision flow** — 1. Is current-year gross turnover > IDR 4.8B? → Must use Pembukuan. Skip to Section 7. 2. Has client elected UMKM Final 0.5% and is still eligible (turnover ≤ IDR 4.8B counting the individual's, their spouse's and every PT Perorangan they founded together — PP 55/2022 Art. 57(2)(e) as amended by PP 20/2026; not pekerjaan bebas; no time limit for individuals since PP 20/2026)? → Route to `id-pph-final-umkm`. Stop. 3. Did client notify DJP of NPPN election within 3 months of the tax year (i.e. by 31 March of the tax year)? → NPPN is available. Compare NPPN vs Pembukuan; the client may use NPPN. 4. No NPPN notification on file and not UMKM Final? → Pembukuan is mandatory by default (UU PPh Art. 14(2)).  _(UU PPh Art. 14(2))_
 
 ### 5.3 When NPPN typically wins
 

@@ -217,7 +217,7 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.7 SaaS — international suppliers (PMSE — Perdagangan Melalui Sistem Elektronik)
 
-DJP has a system for foreign digital service providers (PMSE) to register and collect 11% PPN directly from Indonesian B2C customers. A foreign provider must register as a PMSE collector once its sales to Indonesian customers exceed IDR 600 million a year or it has more than 12,000 Indonesian users a year (PMK 81/2024 Arts. 332 to 339). For B2B: PKP buyers can claim input credit if the foreign provider is PMSE-registered and issues a valid commercial document (kuitansi).
+DJP has a system for foreign digital service providers (PMSE) to register and collect 11% PPN directly from Indonesian B2C customers. DJP designates a foreign provider as a PMSE collector once its sales to Indonesian customers exceed IDR 600 million a year or IDR 50 million a month, or its Indonesian traffic exceeds 12,000 users a year or 1,000 a month (PMK 81/2024 Arts. 332 to 339); the thresholds are designation criteria, and the designated provider then registers and collects. For B2B: PKP buyers can claim input credit if the foreign provider is PMSE-registered and issues a valid commercial document (kuitansi).
 
 **3.7 SaaS — international suppliers table**
 
@@ -337,7 +337,7 @@ Purchase of rice (beras) and sugar (gula) from a grocery. Basic food staples (ba
 
 ### 5.4 Faktur Pajak (tax invoice) requirements
 
-- **Faktur Pajak requirements** — Issued via e-Faktur application (mandatory for all PKPs since 2016). Must be issued within: (a) end of month of delivery/payment for regular transactions. Required fields: seller NPWP, buyer NPWP, Faktur Pajak serial number (16-digit), date, description, DPP (tax base), PPN amount. Late issuance penalty: 2% of DPP per Faktur.
+- **Faktur Pajak requirements** — Issued via e-Faktur application (mandatory for all PKPs since 2016). Must be issued within: (a) end of month of delivery/payment for regular transactions. Required fields: seller NPWP, buyer NPWP, Faktur Pajak serial number (16-digit), date, description, DPP (tax base), PPN amount. Late issuance penalty: 1% of the DPP (UU KUP Art. 14(4) as amended by UU 7/2021; 2% before 29 October 2021) per Faktur.
 
 ### 5.5 Input credit eligibility
 
@@ -372,8 +372,6 @@ Purchase of rice (beras) and sugar (gula) from a grocery. Basic food staples (ba
 | Late payment of PPN | 2% per month of the unpaid tax (UU KUP Art. 9(2a), Art. 13(2)) |
 | Late or missing Faktur Pajak | 1% of the DPP per Faktur (UU KUP Art. 14(4)) |
 | Input credit window | An input Faktur may still be credited in the 3 tax periods after its own (UU PPN Art. 9(9)) |
-| Late payment | 2% per month of unpaid tax |
-| Late Faktur Pajak | 2% of DPP per Faktur |
 | Underpayment detected by audit | 100% of underpaid tax |
 | Fraudulent Faktur | Criminal liability |
 

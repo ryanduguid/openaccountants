@@ -3,7 +3,7 @@ name: id-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package an Indonesian annual tax return. Trigger on phrases like "assemble Indonesian return", "prepare SPT 1770", "prepare SPT 1771", "Indonesia annual tax return", "Indonesian working paper", "Indonesian tax filing package", "finalize SPT Tahunan", or "Coretax filing package". This is the capstone orchestrator that pulls together outputs from id-pph-final-umkm, id-income-tax, id-corporate-tax, id-payroll-pph21, indonesia-vat, id-withholding, and id-bookkeeping into a single SPT working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line SPT working paper, generates kode billing payment instructions for Coretax, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing an Indonesian tax return.
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -293,7 +293,7 @@ The working paper is built around the structure of Form 1770 (the full form for 
 
 ### 5.3 UMKM PPh Final treatment on 1771
 
-- **UMKM treatment on 1771 and window durations** — If the entity used PP 55/2022 UMKM 0.5% during 2025: The UMKM window is time-limited: 3 years for PT, 4 years for CV/Firma/Koperasi, 7 years for individuals (Orang Pribadi) measured from the start year of UMKM utilisation (PP 55/2022 Pasal 59). Revenue under UMKM goes to Lampiran IV (PPh Final), not the main PKP computation. The reviewer must confirm the entity is within its UMKM window. If 2025 is the final eligible year, this must be flagged so 2026 planning reflects the switch to standard 22% regime.  _(PP 55/2022 Pasal 59)_
+- **UMKM treatment on 1771 and window durations** — If the entity used PP 55/2022 UMKM 0.5% during 2025: For 2025 the UMKM window was time-limited under PP 55/2022 Pasal 59 (3 years for PT, 4 years for CV/Firma/Koperasi, 7 years for individuals) measured from the start year of utilisation; from 22 April 2026 PP 20/2026 deletes that article, removes the limit for individuals and PT Perorangan, keeps 4 years for a koperasi, and closes the regime to CV, firma, ordinary PT and BUMDes registered from that date (earlier registrations keep it until their old window ends, Pasal II(e)). Revenue under UMKM goes to Lampiran IV (PPh Final), not the main PKP computation. The reviewer must confirm the entity is within its UMKM window. If 2025 is the final eligible year, this must be flagged so 2026 planning reflects the switch to standard 22% regime.  _(PP 55/2022 Pasal 59)_
 
 ## Section 6 — Payment instructions: kode billing & SSP via Coretax
 

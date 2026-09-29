@@ -177,7 +177,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Tax treatment
 
-- **PT Perorangan tax treatment** — Treated as a Badan -- subject to **PPh Badan 22%**. May opt into the **PP 55/2022** final-tax MSME regime (0.5% on turnover up to IDR 4.8B) for up to 3 years from registration if eligible.  _(PP 55/2022)_
+- **PT Perorangan tax treatment** — Treated as a Badan -- subject to **PPh Badan 22%**. May use the **PP 55/2022** final-tax MSME regime (0.5% on turnover up to IDR 4.8B) with no time limit since PP 20/2026 (22 April 2026); the IDR 4.8B test combines the founder's own turnover, their spouse's and every PT Perorangan they founded (Art. 57(2)(e)).  _(PP 55/2022 as amended by PP 20/2026)_
 
 ### Annual obligations
 
@@ -231,10 +231,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Entity | Income tax regime | Statutory rate | Final MSME option (PP 55/2022) | Reporting form |
 | --- | --- | --- | --- | --- |
-| UD / Orang Pribadi | PPh Orang Pribadi (progressive) | 5% / 15% / 25% / 30% / 35% on bands per UU 7/2021 | 0.5% final on turnover up to IDR 4.8B (first IDR 500M tax-free for Orang Pribadi); 7-year window | SPT Tahunan PPh OP (1770 / 1770S / 1770SS) |
-| CV | PPh Badan (CV treated as Badan) | 22% | 0.5% final on turnover up to IDR 4.8B; 4-year window for non-PT badan | SPT Tahunan PPh Badan (1771) |
-| PT (standard) | PPh Badan | 22%; 50% reduction on portion of taxable income up to IDR 4.8B if turnover ≤ IDR 50B (Pasal 31E) | 0.5% final on turnover up to IDR 4.8B; 3-year window for PT | SPT Tahunan PPh Badan (1771) |
-| PT Perorangan | PPh Badan | 22% | 0.5% final on turnover up to IDR 4.8B; 3-year window | SPT Tahunan PPh Badan (1771) |
+| UD / Orang Pribadi | PPh Orang Pribadi (progressive) | 5% / 15% / 25% / 30% / 35% on bands per UU 7/2021 | 0.5% final on turnover up to IDR 4.8B (first IDR 500M tax-free for Orang Pribadi); no time limit since PP 20/2026, with the turnover of the spouse and of any PT Perorangan founded counted in | SPT Tahunan PPh OP (1770 / 1770S / 1770SS) |
+| CV | PPh Badan (CV treated as Badan) | 22% | Not available to a CV registered from 22 April 2026 (PP 20/2026); one registered earlier keeps the 0.5% regime until its 4-year window ends | SPT Tahunan PPh Badan (1771) |
+| PT (standard) | PPh Badan | 22%; 50% reduction on portion of taxable income up to IDR 4.8B if turnover ≤ IDR 50B (Pasal 31E) | Not available to a PT registered from 22 April 2026 (PP 20/2026); one registered earlier keeps the 0.5% regime until its 3-year window ends | SPT Tahunan PPh Badan (1771) |
+| PT Perorangan | PPh Badan | 22% | 0.5% final on turnover up to IDR 4.8B; no time limit since PP 20/2026 | SPT Tahunan PPh Badan (1771) |
 | PMA | PPh Badan | 22%; potential tax holiday/allowance for pioneer sectors | Not normally applicable (capital and turnover exceed MSME thresholds by design) | SPT Tahunan PPh Badan (1771) |
 
 - **VAT rate and PKP registration** — The nominal PPN rate is **12%** from 1 January 2025 (UU 7/2021 / HPP Law), but PMK 131/2024 sets the tax base (DPP nilai lain) for non-luxury goods and services at 11/12 of the selling price, so the **effective rate stays 11%**. The full 12% applies only to PPnBM-listed luxury goods, on the full base from 1 February 2025. The 11% rate applied to everything from 1 April 2022 to 31 December 2024. VAT registration (PKP) is mandatory when turnover exceeds IDR 4,800,000,000.  _(UU 7/2021 / HPP Law)_
