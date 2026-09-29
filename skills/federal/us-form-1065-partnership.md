@@ -4,9 +4,9 @@ description: US federal content skill for preparing Form 1065 — the US partner
 jurisdiction: US
 category: federal
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-30
 reviewed_by: Christopher Aryee, CPA
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 depends_on:
@@ -250,6 +250,8 @@ The 2025 Schedule K-1 (Form 1065) has the following major sections:
 
 ### 8.2 Default mechanics
 
+**AUDIT FLASH POINT**: BBA centralised partnership audits. The default below assesses the imputed underpayment against the partnership at the highest rate and lands it on the current-year partners; the §6226 push-out election has a 45-day window from the final partnership adjustment (18.1), the §6225(c) modification must be requested, and the Schedule B-2 election out (§9) is the only way to keep an examination partner by partner. Confirm the Partnership Representative designation (8.3) for each year subject to BBA; no designation is required for a year with a valid election out. For a BBA year, the representative binds the partnership and its partners. ([IRS, Designate or change a partnership representative](https://www.irs.gov/businesses/partnerships/designate-or-change-a-partnership-representative))
+
 - **CPAR default audit mechanics** — Under CPAR, an IRS audit of a partnership return results in: 1. Determination of an "imputed underpayment" at the partnership level for the reviewed year (the year being audited). 2. The imputed underpayment is assessed against and collected from the partnership in the adjustment year (the year the audit concludes), at the highest individual or corporate rate (37% for individuals in 2025 / 21% for C corps; the partnership default uses the highest applicable rate). 3. Current-year partners bear the economic burden — even if they were not partners in the reviewed year. This is the default. It is harsh and often inappropriate when the partner roster has changed. The statute provides two safety valves: Section 6226 push-out election — within 45 days of the final partnership adjustment, the partnership can elect to push the adjustment out to the reviewed-year partners, who report the adjustment on their own returns for the adjustment year (with interest at AFR + 2%). The reviewed-year partners then pay, not the partnership. Modification of imputed underpayment under §6225(c) — e.g., tax-exempt partners' allocable share is removed, lower rates for C corp partners' share, etc. Election out of CPAR entirely — Schedule B-2 (see §9).  _(§6226; §6225(c))_
 
 ### 8.3 Partnership Representative (PR) — §6223
@@ -410,6 +412,8 @@ The reviewer brief should include:
 
 ### 15.4 Post-Soroban posture for 2025 returns
 
+**AUDIT FLASH POINT** — §1402(a)(13) after Soroban. Box 14 code A is the most examined K-1 line (6.4), and the functional test of 15.3 reaches any state-law limited partner or LLC member who performs services; the default below includes only guaranteed payments for such a partner, and any exclusion of distributive share from SE earnings needs the reviewer's documented sign-off.
+
 - **Recommended conservative SE position and alternatives** — The IRS treats §1402(a)(13) as available only to truly passive limited partners. For working LP/LLC members: Conservative position (recommended for 2025 returns): subject the distributive share to SE tax to the extent it reflects compensation for services. This may mean a partial inclusion — e.g., the portion in excess of a reasonable return on capital is SE income. Aggressive position: continue to rely on §1402(a)(13) for state-law limited partners. High risk of audit; reviewer must confirm and document. Hybrid position (proposed Regs. 1.1402(a)-2, never finalized — the "1997 proposed regulations"): treat a partner as a "limited partner" only if (i) the partner has no personal liability for partnership debts, (ii) the partner has no authority to contract for the partnership, and (iii) the partner does not provide more than 500 hours of service per year. Many practitioners follow this informally. This skill flags any partner labeled limited but apparently providing material services and asks the reviewer to confirm SE treatment. The default Box 14A computation for limited partners includes only guaranteed payments for services; any deviation requires reviewer sign-off and documentation.  _(§1402(a)(13); proposed Regs. 1.1402(a)-2)_
 
 ### 15.5 LLC member-managers
@@ -424,8 +428,8 @@ The reviewer brief should include:
 
 ### 16.1 Background
 
-- **§199A QBI deduction rate for tax year 2025** — 20% percent (tax years beginning after Dec 31, 2024)  _(§199A, OBBBA P.L. 119-21 §70105)_
-- **§199A QBI deduction rate for tax year 2026+** — 20% (OBBBA § 70105 made § 199A permanent at 20%; the enacted law did not adopt the proposed 23% rate. From 2026 it also adds a $400 minimum deduction, inflation-adjusted, for applicable taxpayers with at least $1,000 of aggregate active QBI) percent (tax years beginning after Dec 31, 2025)  _(OBBBA P.L. 119-21 §70105)_
+- **§199A QBI deduction rate for tax year 2025**: 20% (tax years beginning after 31 December 2024)  _([26 USC §199A(a)-(b)](https://uscode.house.gov/view.xhtml?req=(title:26%20section:199a%20edition:prelim)))_
+- **§199A QBI deduction rate for tax year 2026+**: 20% (OBBBA § 70105 made § 199A permanent at 20%; the enacted law did not adopt the proposed 23% rate. From 2026 it also adds a $400 minimum deduction for applicable taxpayers with at least $1,000 of aggregate active QBI; both dollar amounts are indexed for taxable years beginning after 2026) (tax years beginning after 31 December 2025)  _([26 USC §199A(i) and the 2025 amendment effective-date note](https://uscode.house.gov/view.xhtml?req=(title:26%20section:199a%20edition:prelim)))_
 - **§199A deduction** — Provides a deduction up to 20% of qualified business income (QBI) from a domestic trade or business operated as a sole proprietorship, partnership, S corporation, trust, or estate. For partnerships, QBI flows out to partners on K-1.  _(§199A (enacted by TCJA, made permanent at 20% by OBBBA P.L. 119-21 §70105))_
 
 ### 16.2 What the partnership reports
