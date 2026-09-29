@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Canada transfer pricing rules, 
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
 review_status: current
 depends_on:
@@ -18,36 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Canada Transfer Pricing Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Transfer Pricing
-
-- **TP provision** — Section 247, ITA  _(ITA s.247; CRA — Transfer pricing — canada.ca)_
-- **Arm's length standard** — ITA s.247(2)  _(ITA s.247(2))_
-- **Recharacterization power** — ITA s.247(2)(b)(c)(d)  _(ITA s.247(2)(b)(c)(d))_
-- **Documentation threshold** — Aggregate transactions > CAD $1M with any single non-resident related party  _(ITA s.247(4); CRA — Transfer pricing memorandum TPM-09)_
-- **Timing** — By documentation-due date (tax return filing deadline)  _(ITA s.247(4)(a))_
-- **Provision to CRA on request** — 3 months (30 days for years beginning after 4 Nov 2025)  _(ITA s.247(4)(b); Finance Canada draft legislation Aug 2025)_
-- **Form T106** — If aggregate NR related-party transactions > $1M  _(ITA s.233.1; Form T106 instructions)_
-- **Form T106 deadline** — 6 months after taxation year-end  _(ITA s.233.1(4))_
-- **CbCR (Form RC4649)** — EUR 750M+ consolidated group revenue  _(ITA Part XVIII; Form RC4649 instructions)_
-- **CbCR deadline** — 12 months after fiscal year-end  _(ITA s.233.8(3))_
-- **TP penalty threshold** — The skill correctly states the threshold is being updated. For taxation years beginning BEFORE November 4, 2025: lesser of $5M or 10% of gross revenue. For years beginning AFTER November 4, 2025: lesser of $10M or 10% of gross revenue.  _(ITA s.247(3); Finance Canada draft legislation Aug 2025)_
-- **Penalty rate** — 10% of TP adjustment above threshold  _(ITA s.247(3))_
-- **Reasonable efforts defence** — No penalty if reasonable efforts made  _(ITA s.247(3); CRA — IC 87-2R)_
-- **Documentation failure** — Deemed NOT reasonable efforts  _(ITA s.247(3)(b))_
-- **Late T106** — $25/day, min $100, max $2,500  _(ITA s.162(7); CRA)_
-- **Types** — Unilateral, Bilateral, Multilateral  _(CRA — Advance pricing arrangement — canada.ca; IC 94-4R)_
-- **Duration** — Typically 5 years prospective; rollback up to 5 prior years  _(CRA — IC 94-4R)_
-- **Application fee** — None  _(CRA — IC 94-4R)_
-- **Processing time** — 2–4 years (bilateral longer)  _(CRA — APA program statistics)_
-- **Formal safe harbour?** — None — Canada has no statutory TP safe harbour  _(ITA s.247; CRA — IC 87-2R)_
-- **Low-value services** — No formal rule; CRA may accept 5% cost-plus in low-risk  _(CRA — IC 87-2R; OECD TP Guidelines Chapter VII)_
-- **Form T106 de minimis** — ≤ $1M aggregate: no filing required  _(ITA s.233.1)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

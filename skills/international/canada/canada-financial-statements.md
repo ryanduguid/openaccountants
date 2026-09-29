@@ -4,7 +4,7 @@ description: Use this skill when preparing, reviewing, or advising on annual fin
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
 review_status: current
 depends_on:
@@ -18,31 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Canada Financial Statements Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Financial Statements
-
-- **PAE (publicly accountable)** — IFRS (Part I)  _(CPA Canada Handbook Part I; IAS 1)_
-- **Private enterprise** — ASPE (Part II)  _(CPA Canada Handbook Part II)_
-- **Not-for-profit** — ASNPO (Part III)  _(CPA Canada Handbook Part III)_
-- **Goodwill** — ASPE Section 3064: goodwill is not normally amortised as it has an unlimited useful life. Recent updates allow companies to amortise goodwill over 5 years, or a maximum of 10 years.  _(CPA Canada Handbook — ASPE Section 3064.87 (maximum useful life = 40 years); CPA Canada ASPE Briefing)_
-- **Leases** — ASPE: finance/operating; IFRS: right-of-use (IFRS 16)  _(CPA Canada Handbook ASPE s.3065; IFRS 16)_
-- **Revenue** — ASPE: risks/rewards; IFRS: five-step (IFRS 15)  _(CPA Canada Handbook ASPE s.3400; IFRS 15)_
-- **CBCA** — Unanimous shareholder consent (s.163)  _(Canada Business Corporations Act s.163)_
-- **OBCA (Ontario)** — Unanimous shareholder consent (s.148)  _(Ontario Business Corporations Act s.148)_
-- **CNCA (federal NPO)** — Audit req unless revenue < $50K; review < $250K  _(Canada Not-for-profit Corporations Act s.172–180)_
-- **Charity** — Audit if revenue > $250,000  _(CRA — T3010 guide — canada.ca; ITA s.149.1)_
-- **Audit** — CAS  _(CPA Canada Handbook — CAS)_
-- **Review** — CSRE 2400  _(CPA Canada Handbook — CSRE 2400)_
-- **Compilation (NTR)** — CSRS 4200  _(CPA Canada Handbook — CSRS 4200)_
-- **T2 corporate return** — 6 months after fiscal year-end  _(ITA s.150(1)(a))_
-- **GIFI** — General Index of Financial Information — CRA standard codes  _(CRA — GIFI — canada.ca)_
-- **Annual return (CBCA)** — Within 60 days of anniversary  _(CBCA s.263; Corporations Canada)_
-- **Late T2 penalty** — 5% of unpaid tax + 1%/month (max 12)  _(ITA s.162(1))_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

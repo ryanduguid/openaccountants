@@ -4,7 +4,7 @@ description: Use this skill whenever asked about a Canadian federal T1 General i
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
 review_status: current
 depends_on:
@@ -18,39 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Canada T1 General Individual Return -- Self-Employed Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### T1 Return
-
-- **$0–$57,375** — 14.5% (blended: 15% Jan-Jun, 14% Jul-Dec)  _(https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/income-tax/reducing-remuneration-subject-income-tax.html)_
-- **$58,524–$117,045** — 20.5%  _(CRA 2026 indexed brackets (T4032))_
-- **$114,751–$177,882** — 26%  _(https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/income-tax/reducing-remuneration-subject-income-tax.html)_
-- **$177,883–$253,414** — 29%  _(https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/income-tax/reducing-remuneration-subject-income-tax.html)_
-- **$253,415+** — 33%  _(https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/income-tax/reducing-remuneration-subject-income-tax.html)_
-- **BPA — net income ≤$177,882** — $16,129  _(https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-30000-basic-personal-amount.html)_
-- **BPA — net income ≥$253,414** — $14,538  _(https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-30000-basic-personal-amount.html)_
-- **BPA reduction formula** — $16,129 − $1,591 × (NI − $177,882) / $75,532  _(https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-d1/5000-d1-25e.pdf)_
-- **CPP rate (both portions)** — 11.9%  _(CRA — CPP contribution rates — canada.ca; Canada Pension Plan Act s.10)_
-- **CPP2 rate (both portions)** — 8.0%
-- **First ceiling (YMPE)** — $71,300  _(CRA — CPP contribution rates, maximums and exemptions — canada.ca)_
-- **Second ceiling (YAMPE)** — $81,200  _(CRA — CPP contribution rates, maximums and exemptions — canada.ca)_
-- **Basic exemption** — $3,500  _(Canada Pension Plan Act s.20; CRA — Schedule 8)_
-- **Max CPP contribution** — $8,068.20
-- **Max QPP2 contribution** — $792.00
-- **CPP deductible portion** — 50% (line 22200)  _(ITA s.60(e); CRA — Line 22200)_
-- **EI rate** — $1.64/$100  _(CRA — EI premium rates and maximums — canada.ca; Employment Insurance Act Part VII.1)_
-- **Max EI premium** — $1,077.48  _(CRA — EI premium rates and maximums — canada.ca)_
-- **Quebec EI rate** — $1.30/$100  _(CRA — EI premium rates and maximums — canada.ca)_
-- **Waiting period** — 12 months  _(Employment Insurance Act s.152.07; CRA — Self-employed EI — canada.ca)_
-- **Self-employed filing** — June 15  _(ITA s.150(1)(d))_
-- **Payment due** — April 30 (interest from May 1)  _(ITA s.156.1(1); CRA — Paying income tax — canada.ca)_
-- **Late filing penalty** — 5% + 1%/month (max 12)  _(ITA s.162(1))_
-- **Repeat offender penalty** — 10% + 2%/month (max 20)  _(ITA s.162(2))_
-- **Net tax owing threshold** — > $3,000 current year AND either of two prior years  _(ITA s.156(1); CRA — Instalments for individuals — canada.ca)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T02:56:23+00:00",
+ "generated_at": "2026-09-29T02:57:11+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -5087,7 +5087,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ca-fed-cpp-ei",
@@ -5100,7 +5100,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ca-fed-instalments",
@@ -5113,7 +5113,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ca-fed-t1-return",
@@ -5126,7 +5126,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ca-fed-t1135",
@@ -5139,7 +5139,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ca-fed-t2125",
@@ -5152,7 +5152,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ca-nonresident-cgt",
@@ -5204,7 +5204,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "canada-formation",
@@ -5217,7 +5217,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "canada-gst-hst",
@@ -5243,7 +5243,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "canada-tax-optimization",
@@ -5256,7 +5256,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "canada-transfer-pricing",
@@ -5269,7 +5269,7 @@
    "reviewed_by": "Edgar Lautsyus",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "mb-individual-return",

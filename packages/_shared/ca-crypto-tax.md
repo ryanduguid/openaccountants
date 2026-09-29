@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Canadian cryptocurrency taxatio
 version: "1.0"
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
 review_status: current
 category: international
@@ -16,34 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Canada Crypto Tax -- Capital Gains & Business Income Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Crypto Tax (CA)
-
-- **CRA treatment** — Commodity (not currency)  _(CRA — Cryptocurrency and your income tax obligations — canada.ca)_
-- **Cost basis method** — Weighted average cost (mandatory under ITA s.47)  _(ITA s.47; CRA — Adjusted cost base (ACB) — canada.ca)_
-- **First $250K of net gains** — 50% inclusion  _(ITA s.38(a); CRA — Capital gains — canada.ca)_
-- **Above $250K** — The 66.67% inclusion rate above $250K was CANCELLED. PM Carney announced cancellation March 21, 2025. Budget 2025 formally confirmed. The 50% inclusion rate applies to ALL net capital gains for 2025 — no $250K threshold distinction. Change to: '50% inclusion — same rate as first $250K; the proposed 66.67% increase was cancelled March 21, 2025.'  _(PM Carney announcement March 21, 2025 (pmc.gc.ca); Budget 2025 (canada.ca); CRA — Cancellation of proposed capital gains inclusion rate increase — canada.ca)_
-- **Corporations/trusts** — The 66.67% rate for corporations/trusts was also CANCELLED. The 50% inclusion rate applies to all capital gains for corporations and most trusts in 2025. Change to: '50% on all gains — the proposed 66.67% rate was cancelled.'  _(PM Carney announcement March 21, 2025; Budget 2025 (canada.ca); CRA capital gains cancellation notice)_
-- **Sell for fiat** — YES — disposition  _(CRA — crypto guidance; ITA s.39)_
-- **Crypto-to-crypto swap** — YES — barter transaction  _(CRA — crypto guidance; ITA s.39)_
-- **Purchase goods/services** — YES — at FMV  _(CRA — crypto guidance)_
-- **Gift crypto** — YES — deemed disposition at FMV  _(ITA s.69(1)(b))_
-- **Transfer between own wallets** — NO — same beneficial owner  _(CRA — crypto guidance)_
-- **Death** — YES — deemed disposition at FMV  _(ITA s.70(5))_
-- **Window** — 30 days before or after sale  _(ITA s.40(2)(g); ITA s.54 (definition of superficial loss))_
-- **Effect** — Loss denied; added to ACB of repurchased property  _(ITA s.53(1)(f))_
-- **Staking — active business** — T2125 business income at FMV  _(ITA s.9; CRA — crypto guidance)_
-- **Staking — passive** — Other income Line 13000  _(ITA s.12(1)(c); CRA — crypto guidance)_
-- **Mining — business scale** — Business income at FMV; expenses deductible  _(ITA s.9; CRA — crypto guidance)_
-- **Mining — hobby** — $0 ACB; CGT on disposition  _(CRA — crypto guidance)_
-- **Buying/selling crypto for fiat** — No GST/HST (financial instrument)  _(ETA Schedule V Part VII (financial services); CRA — GST/HST and cryptocurrency)_
-- **Using crypto to buy taxable goods** — GST/HST applies to the goods  _(ETA s.153; CRA — GST/HST and cryptocurrency)_
-- **Period** — 6 years from end of tax year  _(ITA s.230(4))_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
