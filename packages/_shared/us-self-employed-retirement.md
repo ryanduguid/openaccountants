@@ -4,7 +4,7 @@ description: Tier 2 content skill for computing the self-employed retirement con
 version: 0.2
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
@@ -15,18 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## US Self-Employed Retirement Skill v0.2
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### SE Retirement
-
-- **Solo 401k 2025 402(g) elective deferral limit** — $23,500  _(IRS Notice 2024-80.)_
-- **§415(c) 2025 total defined-contribution 415(c) limit** — $70,000  _(IRS Notice 2024-80.)_
-- **IRA 2025 IRA limit** — $7,000 (+$1,000 catch-up age 50+)  _(IRS Notice 2024-80.)_
-- **Roth S 2025 Roth IRA phase-out, Single/HoH** — $150,000-$165,000  _(IRS Notice 2024-80.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## What this file is, and what it is not
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about US federal quarterly estimated 
 version: 2.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 depends_on:
@@ -18,19 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## US Quarterly Estimated Tax (Form 1040-ES) -- Self-Employed Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Estimated Tax (1040-ES)
-
-- **Threshold** — Owe >= $1,000 after withholding/credits  _(IRC 6654; Form 1040-ES.)_
-- **≤$150K** — Prior-year AGI <= $150,000 -> 100% prior-year safe harbor  _(IRC 6654(d).)_
-- **>$150K** — Prior-year AGI > $150,000 -> 110% prior-year safe harbor  _(IRC 6654(d)(1)(C).)_
-- **Current** — 90% of current-year tax  _(IRC 6654(d).)_
-- **Rate** — Federal underpayment rate was 7% for all four quarters of 2025 (set quarterly = federal short-term + 3 points)  _(IRC 6621; IRS Pub 505; quarterly rev. rulings.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 

@@ -4,7 +4,7 @@ description: Tier 2 content skill for computing the self-employed health insuran
 version: 0.2
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
@@ -13,19 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # US Self Employed Health Insurance
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### SE Health Insurance
-
-- **≤40** — $480 (age 40 or less)  _(Rev. Proc. 2024-40.)_
-- **41-50** — $900 (41-50)  _(Rev. Proc. 2024-40.)_
-- **51-60** — $1,800 (51-60; discrepancy noted in prose: '2025 limit is $1,800 (51-60), not $1,790')  _(Rev. Proc. 2024-40.)_
-- **61-70** — $4,810 (61-70; discrepancy noted in prose: '2025 limit is $4,810 (61-70), not $4,770')  _(Rev. Proc. 2024-40.)_
-- **70+** — $6,020 (age > 70; discrepancy noted in prose: '2025 limit is $6,020 (age > 70), not $5,960')  _(Rev. Proc. 2024-40.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## What this file is, and what it is not
 
@@ -107,9 +95,9 @@ This skill does NOT cover:
 | --- | --- | --- |
 | 40 or under | $480 | Rev. Proc. 2024-40; IRC §213(d)(10) |
 | 41-50 | $900 | Rev. Proc. 2024-40 |
-| 51-60 | $1,790 | Rev. Proc. 2024-40 |
-| 61-70 | $4,770 | Rev. Proc. 2024-40 |
-| Over 70 | $5,960 | Rev. Proc. 2024-40 |
+| 51-60 | $1,800 | Rev. Proc. 2024-40 |
+| 61-70 | $4,810 | Rev. Proc. 2024-40 |
+| Over 70 | $6,020 | Rev. Proc. 2024-40 |
 
 ### Other figures
 
@@ -158,7 +146,7 @@ This skill does NOT cover:
 
 ### Qualified long-term care insurance
 
-- **LTC eligibility and example** — Long-term care insurance premiums are eligible but subject to the age-based limits under §213(d)(10). Only the portion of premiums up to the age-based limit is treated as medical care for §162(l) purposes. **Example:** A 55-year-old sole prop pays $3,000/year in long-term care premiums. The 2025 limit for age 51-60 is $1,790. Only $1,790 qualifies for the §162(l) deduction.  _(IRC §213(d)(10))_
+- **LTC eligibility and example** — Long-term care insurance premiums are eligible but subject to the age-based limits under §213(d)(10). Only the portion of premiums up to the age-based limit is treated as medical care for §162(l) purposes. **Example:** A 55-year-old sole prop pays $3,000/year in long-term care premiums. The 2025 limit for age 51-60 is $1,800. Only $1,800 qualifies for the §162(l) deduction.  _(IRC §213(d)(10))_
 
 ### Medicare premiums
 
@@ -381,11 +369,11 @@ Reported on: Schedule 1, Line 17 = $5,280
 ```
 Medical insurance:     $12,000 (fully eligible)
 LTC premium paid:      $6,000
-LTC age-based limit:   $4,770 (age 61-70)
-LTC eligible:          $4,770
+LTC age-based limit:   $4,810 (age 61-70)
+LTC eligible:          $4,810
 
-Total §162(l) deduction: $12,000 + $4,770 = $16,770
-Excess LTC ($1,230):     Not deductible under §162(l); may qualify on Schedule A
+Total §162(l) deduction: $12,000 + $4,810 = $16,810
+Excess LTC ($1,190):     Not deductible under §162(l); may qualify on Schedule A
 ```
 
 ## Section 16 — Edge cases
@@ -435,7 +423,7 @@ Excess LTC ($1,230):     Not deductible under §162(l); may qualify on Schedule 
 ### Test 5 — Long-term care with age limit
 
 **Input:** Schedule C net profit $100,000; medical insurance $10,000/year; LTC premium $5,000/year; age 55; no employer plan.
-**Expected:** LTC limit (age 51-60) = $1,790. Eligible LTC = $1,790. Total §162(l) = $10,000 + $1,790 = $11,790.
+**Expected:** LTC limit (age 51-60) = $1,800. Eligible LTC = $1,800. Total §162(l) = $10,000 + $1,800 = $11,800.
 
 ### Test 6 — Net SE earnings = $0
 
