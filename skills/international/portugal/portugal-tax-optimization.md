@@ -4,7 +4,7 @@ description: "Utilize esta skill ao aconselhar sobre estratégias LEGAIS de mini
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 depends_on:
@@ -18,32 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Portugal — Optimização Fiscal — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Otimização Fiscal
-
-- **Despesas gerais familiares** — 35% com NIF, máx €250/contribuinte  _(CIRS)_
-- **Saúde** — 15% das despesas, máx €1.000  _(CIRS)_
-- **Educação** — 30% das despesas, máx €800  _(CIRS)_
-- **Habitação (renda)** — 15%, máx €502  _(CIRS)_
-- **Habitação (juros)** — 15%, máx €296  _(CIRS)_
-- **Lares** — 25%, máx €403,75  _(CIRS)_
-- **IVA/fatura** — 15% do IVA (restauração, cabeleireiros, etc.), máx €250  _(CIRS)_
-- **Edifícios comerciais** — Edifícios comerciais - 2% ; Edifícios industriais - 5%  _(DR 25/2009)_
-- **Mobiliário de escritório** — 12,5%  _(Decreto Regulamentar n.º 25/2009)_
-- **Equipamento informático** — 33,33%  _(Decreto Regulamentar n.º 25/2009)_
-- **Software** — 33,33%  _(Decreto Regulamentar n.º 25/2009)_
-- **Viaturas ligeiras de passageiros** — 25%  _(Decreto Regulamentar n.º 25/2009)_
-- **PPR — dedução IRS** — 20% das contribuições (limite por idade)  _(CIRS)_
-- **Juros depósitos** — 28% taxa autónoma (ou englobamento)  _(CIRS)_
-- **Dividendos (englobamento)** — 50% incluído no rendimento (efetivo máx 24%)  _(CIRS)_
-- **Mais-valias mobiliárias** — 28% taxa autónoma; perdas compensáveis 5 anos  _(CIRS)_
-- **Mais-valias imobiliárias** — 50% do ganho incluído no rendimento; reinvestimento HPP 36 meses  _(CIRS Art. 10.º n.º 5)_
-- **Rendas (Cat. F)** — taxa autónoma 25% para habitação própria e permanente e 28% outros casos, ou englobamento  _(CIRS artº 72º)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mário Jorge da costa Vale** on 2026-06-04; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Secção 1 — Referência Rápida
 
@@ -134,7 +109,8 @@ peça sempre NIF em todas as compras profissionais. A diferença entre €4.587,
 
 | Categoria de Activo | Taxa |
 | --- | --- |
-| Edifícios (comerciais) | 2%–5% |
+| Edifícios comerciais e administrativos | 2% |
+| Edifícios industriais | 5% |
 | Mobiliário de escritório | 12,5% |
 | Equipamento informático | 33,33% |
 | Software | 33,33% |

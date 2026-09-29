@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Portuguese self-employed social
 version: 2.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-29
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 tier: 1
@@ -15,25 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Portugal Social Contributions -- Self-Employed Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Segurança Social
-
-- **Trabalhador independente** — 21,4%  _(Código Contributivo Art. 163)_
-- **Empresário em nome individual** — 25,2%  _(Código Contributivo)_
-- **Rendimento relevante — serviços** — 70% do bruto  _(Código Contributivo Art. 162)_
-- **Rendimento relevante — bens** — 20% do bruto  _(Código Contributivo Art. 162)_
-- **Base mínima mensal (IAS)** — €522,50  _(Portaria n.º 6-B/2025/1, de 6 de janeiro)_
-- **Base máxima mensal (12×IAS)** — €6.270,00  _(Código Contributivo Art.º 163º, nº 5)_
-- **Primeiros 12 meses** — Isento de contribuições  _(Código Contributivo)_
-- **Emprego concorrente (< 4×IAS)** — Isento se rendimento relevante < 4 x IAS/mês, ou seja **€2.148,52 em 2026** com o IAS a €537,13 (em 2025 eram 4 x €522,50 = €2.090). O limite é fixado em IAS, por isso recalcule todos os anos em vez de guardar o valor em euros  _(Código Contributivo Art.º 157º, nº 1, a))_
-- **Declaração trimestral** — Janeiro (out-dez), abril (jan-mar), julho (abr-jun), outubro (jul-set)  _(Código Contributivo)_
-- **Pagamento mensal** — Entre 10 e 20 do mês  _(Código Contributivo)_
-- **Dedutibilidade fiscal** — SIM — dedutíveis do IRS  _(CIRS)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mário Jorge da costa Vale** on 2026-06-04; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 
@@ -49,8 +31,8 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Empresário em nome individual rate | 25.2% |
 | Relevant income -- services | 70% of gross |
 | Relevant income -- goods | 20% of gross |
-| Minimum monthly base (IAS, 2025) | EUR 480.43 |
-| Maximum monthly base (12x IAS) | EUR 5,765.16 |
+| Minimum monthly base (IAS) | EUR 522.50 in 2025 (Portaria n.º 6-B/2025/1); EUR 537.13 in 2026 (Portaria n.º 480-A/2025/1) |
+| Maximum monthly base (12x IAS) | EUR 6,270.00 in 2025; EUR 6,445.56 in 2026 |
 | First 12 months | Exempt from contributions |
 | Declaration frequency | Quarterly |
 | Payment frequency | Monthly (between 10th and 20th) |
@@ -72,7 +54,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### Prohibitions
 
-- **Prohibitions list** — NEVER apply 21.4% to gross income directly -- the relevant income percentage (70% for services, 20% for goods) must be applied first. NEVER forget the first 12 months exemption for new self-employed. NEVER ignore the minimum base of EUR 480.43 (IAS) -- even with zero income, this minimum applies after the exemption period. NEVER confuse the self-employed rate (21.4%) with the empresário rate (25.2%). NEVER present quarterly declaration income as the contribution base -- it must be converted to monthly. NEVER forget to clamp at the maximum of 12 x IAS (EUR 5,765.16). NEVER state that contributions are NOT tax-deductible -- they ARE deductible from IRS income. NEVER advise on concurrent employment exemption without verifying the 4 x IAS threshold.
+- **Prohibitions list** — NEVER apply 21.4% to gross income directly -- the relevant income percentage (70% for services, 20% for goods) must be applied first. NEVER forget the first 12 months exemption for new self-employed. NEVER ignore the minimum base of one IAS (EUR 522.50 in 2025; EUR 537.13 in 2026) -- even with zero income, this minimum applies after the exemption period. NEVER confuse the self-employed rate (21.4%) with the empresário rate (25.2%). NEVER present quarterly declaration income as the contribution base -- it must be converted to monthly. NEVER forget to clamp at the maximum of 12 x IAS (EUR 6,270.00 in 2025; EUR 6,445.56 in 2026). NEVER state that contributions are NOT tax-deductible -- they ARE deductible from IRS income. NEVER advise on concurrent employment exemption without verifying the 4 x IAS threshold.
 
 ## Section 3 -- Relevant income calculation
 
@@ -115,10 +97,10 @@ Legislation: Código Contributivo, art. 163, 168
 
 | Bound | Amount |
 | --- | --- |
-| Minimum monthly base (IAS) | EUR 480.43 |
-| Maximum monthly base (12x IAS) | EUR 5,765.16 |
+| Minimum monthly base (IAS) | EUR 522.50 (2025); EUR 537.13 (2026) |
+| Maximum monthly base (12x IAS) | EUR 6,270.00 (2025); EUR 6,445.56 (2026) |
 
-- **Monthly base clamp formula** — monthly_base = clamp(480.43, monthly_relevant_income, 5,765.16)
+- **Monthly base clamp formula** — monthly_base = clamp(IAS, monthly_relevant_income, 12 x IAS): clamp(522.50, monthly_relevant_income, 6,270.00) for 2025 and clamp(537.13, monthly_relevant_income, 6,445.56) for 2026 (Código Contributivo art. 163.º; IAS by Portaria n.º 6-B/2025/1 and Portaria n.º 480-A/2025/1). The bounds are fixed in IAS, so recompute them every January rather than storing the euro amounts.
 
 ## Section 5 -- Computation steps
 
@@ -139,7 +121,7 @@ Legislation: Código Contributivo, art. 163, 168
 
 ### Step 5.3 -- Apply bounds and calculate
 
-- **Apply bounds and calculate contribution** — monthly_base = max(480.43, min(relevant_income, 5,765.16)) monthly_contribution = monthly_base x 21.4%
+- **Apply bounds and calculate contribution** — monthly_base = max(IAS, min(relevant_income, 12 x IAS)): max(522.50, min(relevant_income, 6,270.00)) for 2025 and max(537.13, min(relevant_income, 6,445.56)) for 2026 (IAS by Portaria n.º 6-B/2025/1 and Portaria n.º 480-A/2025/1). monthly_contribution = monthly_base x 21.4%
 
 ### Step 5.4 -- Contributions apply for the next quarter
 
@@ -161,7 +143,7 @@ Legislation: Código Contributivo, art. 163, 168
 ### Exemptions
 
 - **First 12 months** — new self-employed workers are exempt from contributions for the first 12 months of activity.
-- **Concurrent employment exemption** — if the self-employed person also has employment where the employer pays at least the minimum contribution base: If employment income >= IAS: self-employed contributions may be reduced or exempt. If self-employed income >= 4 x IAS (EUR 1,921.72): exemption does NOT apply
+- **Concurrent employment exemption** — if the self-employed person also has employment where the employer pays at least the minimum contribution base: If employment income >= IAS: self-employed contributions may be reduced or exempt. If self-employed relevant income >= 4 x IAS (EUR 2,090.00 in 2025; EUR 2,148.52 in 2026): exemption does NOT apply (Código Contributivo art. 157.º n.º 1 a))
 
 ### Tax deductibility
 
@@ -191,11 +173,11 @@ Situation: Client opened activity in March 2025. Resolution: Exempt from contrib
 
 ### EC2 -- Services income below minimum
 
-Situation: Client provides services with quarterly gross EUR 1,000. Resolution: Relevant income = EUR 1,000 x 70% / 3 = EUR 233.33/month. Below minimum. Monthly contribution = EUR 480.43 x 21.4% = EUR 102.81.
+Situation: Client provides services with quarterly gross EUR 1,000. Resolution: Relevant income = EUR 1,000 x 70% / 3 = EUR 233.33/month. Below minimum. Monthly contribution (2025) = EUR 522.50 x 21.4% = EUR 111.82.
 
 ### EC3 -- Very high income
 
-Situation: Client earns EUR 30,000/quarter from services. Resolution: Relevant income = EUR 7,000/month. Capped at EUR 5,765.16. Monthly contribution = EUR 5,765.16 x 21.4% = EUR 1,233.74.
+Situation: Client earns EUR 30,000/quarter from services. Resolution: Relevant income = EUR 7,000/month. Capped at EUR 6,270.00 (2025). Monthly contribution = EUR 6,270.00 x 21.4% = EUR 1,341.78.
 
 ### EC4 -- Mixed services and goods
 
@@ -239,11 +221,11 @@ Input: Quarterly gross services EUR 9,000, no employment, established. Expected 
 
 ### Test 2 -- Minimum base applies
 
-Input: Quarterly gross services EUR 1,500. Expected output: Relevant income = EUR 350/month. Below minimum. Base = EUR 480.43. Contribution = EUR 102.81/month.
+Input: Quarterly gross services EUR 1,500. Expected output: Relevant income = EUR 350/month. Below minimum. Base = EUR 522.50 (IAS 2025). Contribution = EUR 111.82/month.
 
 ### Test 3 -- Maximum base applies
 
-Input: Quarterly gross services EUR 30,000. Expected output: Relevant income = EUR 7,000/month. Capped at EUR 5,765.16. Contribution = EUR 1,233.74/month.
+Input: Quarterly gross services EUR 30,000. Expected output: Relevant income = EUR 7,000/month. Capped at EUR 6,270.00 (12 x IAS 2025). Contribution = EUR 1,341.78/month.
 
 ### Test 4 -- First year exempt
 

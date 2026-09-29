@@ -4,7 +4,7 @@ description: Use esta skill sempre que for questionado sobre nota fiscal eletrô
 version: 1.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ariane Marrocos
 review_status: current
 depends_on:
@@ -18,27 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Brasil — Notas Fiscais Eletrônicas e Coretax (NF-e/NFS-e/CT-e) — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Nota Fiscal Eletrônica
-
-- **NF-e (modelo 55)** — Venda B2B de mercadorias, interestadual — SEFAZ  _(Ajuste SINIEF 07/2005)_
-- **NFC-e (modelo 65)** — Varejo B2C ponto de venda — SEFAZ  _(Ajuste SINIEF 19/2016)_
-- **NFS-e** — Serviços — municipal → SNNFSe nacional  _(LC 116/2003)_
-- **CT-e** — Frete/transporte — SEFAZ  _(Ajuste SINIEF 09/2007)_
-- **2026 (fase teste) — CBS+IBS** — CBS 0,9% + IBS 0,1% = 1% simbólico nos documentos  _(Emenda Constitucional nº 132/2023 Lei Complementar nº 214/2025 Nota Técnica 2025.002)_
-- **2027 — CBS plena** — CBS plena; PIS/Cofins extintos dos campos da NF  _(LC 214/2025)_
-- **2033 — ICMS/ISS extintos** — ICMS/ISS totalmente extintos dos documentos  _(Emenda Constitucional nº 132/2023 Lei Complementar nº 214/2025)_
-- **ICP-Brasil A1** — Arquivo .pfx, validade 1 ano  _(ICP-Brasil)_
-- **ICP-Brasil A3** — Certificado Digital ICP-Brasil A3: certificado armazenado em token criptográfico ou smart card, com validade definida pela Autoridade Certificadora, geralmente entre 1 e 5 anos.  _(ICP-Brasil)_
-- **Assinatura** — XMLDSig enveloped, SHA-256  _(World Wide Web Consortium (W3C) ICP-Brasil Manual de Orientação do Contribuinte da NF-e)_
-- **Composição** — 44 dígitos: UF(2) + AAMM(4) + CNPJ(14) + Modelo(2) + Série(3) + Número(9) + tpEmis(1) + Código(8) + DV(1)  _(Manual de Orientação do Contribuinte da NF-e Ajuste SINIEF 07/2005)_
-- **Cancelamento (110111)** — Prazo definido pela legislação estadual (tradicionalmente 24 horas após autorização).  _(Ajuste SINIEF 07/2005; legislação da UF)_
-- **Carta de Correção (110110)** — Correção de erros não financeiros e sem impacto tributário  _(Ajuste SINIEF 07/2005)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Seção 1 — Referência Rápida
 
@@ -232,7 +212,7 @@ Exemplo (estrutura simplificada do grupo CBS/IBS por item):
 | Tipo | Descrição |
 | --- | --- |
 | ICP-Brasil A1 | Certificado em software (arquivo .pfx); validade de 1 ano |
-| ICP-Brasil A3 | Certificado em hardware (smart card/token); validade de 3 anos |
+| ICP-Brasil A3 | Certificado em hardware (smart card/token); validade definida pela Autoridade Certificadora, em geral entre 1 e 5 anos (ITI, perguntas frequentes sobre certificação digital) — planeie a renovação pela data de expiração do próprio certificado |
 | Assinatura | XMLDSig enveloped; SHA-256 recomendado |
 | Certificado no XML | Elemento X509Certificate dentro de `<Signature>` |
 

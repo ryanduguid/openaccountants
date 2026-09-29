@@ -4,7 +4,7 @@ description: "Utilize esta skill sempre que for solicitada informação sobre a 
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 depends_on:
@@ -18,23 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Portugal — Tributação de Criptoativos — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-- **Verified block note** — Reviewed against the cited tax authorities by Mário Jorge da costa Vale on 2026-06-04. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### Cripto
-
-- **Detido < 365 dias** — 28% taxa autónoma (ou englobamento)  _(CIRS Art. 10.º)_
-- **Detido ≥ 365 dias** — ISENTO de IRS  _(CIRS Art. 10.º n.º 17)_
-- **Cripto-para-cripto (swap)** — NÃO é evento tributável  _(CIRS)_
-- **Taxa autónoma padrão** — 28%  _(CIRS Art. 72.º)_
-- **Jurisdição na lista negra** — 35%  _(Portaria 150/2004)_
-- **Englobamento** — 12,5% a 48% (progressivo)  _(CIRS Art. 22.º e 68º)_
-- **Recebidos em fiat** — 28% no ano de recebimento  _(CIRS Cat. E)_
-- **Recebidos em cripto** — Não tributável até conversão em fiat  _(CIRS Cat. E)_
-- **Mineração habitual** — Cat. B — taxas progressivas  _(CIRS Cat. B)_
-- **Método obrigatório** — FIFO  _(CIRS Art. 44.º/48.º)_
-- **Regime simplificado** — Coeficiente 0,95 (campo 422 Anexo B)  _(CIRS Art. 31.º)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mário Jorge da costa Vale** on 2026-06-04; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Secção 1 — Referência Rápida
 
@@ -75,8 +59,8 @@ Esta exclusão aplica-se a criptoativos que NÃO sejam qualificados como valores
 | Mais-valias em cripto detido < 365 dias | Categoria G (Mais-valias) | 28% autónoma ou taxas progressivas (englobamento) |
 | Mais-valias em cripto detido ≥ 365 dias | Categoria G — isento | 0% (mas declaração obrigatória no Anexo G1) |
 | Recompensas de staking / lending / yield farming | Categoria E (Rendimentos de capitais) | 28% autónoma ou taxas progressivas (englobamento) |
-| Mineração / emissão de criptoativos | Categoria B (Rendimentos empresariais e profissionais) | Taxas progressivas 14,5%–53% |
-| Trading habitual/profissional de cripto | Categoria B | Taxas progressivas 14,5%–53% |
+| Mineração / emissão de criptoativos | Categoria B (Rendimentos empresariais e profissionais) | Taxas progressivas 12,5%–48% (art. 68.º CIRS), mais adicional de solidariedade (art. 68.º-A) |
+| Trading habitual/profissional de cripto | Categoria B | Taxas progressivas 12,5%–48% (art. 68.º CIRS), mais adicional de solidariedade (art. 68.º-A) |
 | Permuta cripto-por-cripto | NÃO é facto tributário | O valor de aquisição transita para o novo ativo |
 | Rendimentos de NFT | Excluídos do regime de criptoativos | Ver Secção 6 |
 
@@ -119,21 +103,23 @@ Esta exclusão aplica-se a criptoativos que NÃO sejam qualificados como valores
 | --- | --- | --- |
 | Taxa autónoma | **28%** | Por defeito — vantajosa quando o rendimento total ficaria num escalão marginal > 28% |
 | Taxa autónoma (jurisdição constante da lista) | **35%** | Se a contraparte estiver em jurisdição de tributação privilegiada (Portaria 150/2004) |
-| Englobamento (agregação com taxas progressivas) | **14,5%–53%** | Vantajoso quando o rendimento total anual (incluindo mais-valias cripto) < ~€23.000 |
+| Englobamento (agregação com taxas progressivas) | **12,5%–48%** (+ adicional de solidariedade acima de €80.000) | Vantajoso quando o rendimento coletável total (incluindo as mais-valias cripto) fica abaixo do limite do 4.º escalão (€22.306 em 2025; €23.089 em 2026), acima do qual a taxa marginal (31,4% / 31,1%) já excede 28% |
 
-**Taxas Progressivas de IRS 2025 (para englobamento)**
+**Taxas Progressivas de IRS 2025 (para englobamento — art. 68.º n.º 1 do CIRS na redação da Lei n.º 55-A/2025, de 22 de julho)**
 
-| Rendimento Coletável | Taxa |
+| Rendimento Coletável (2025) | Taxa |
 | --- | --- |
-| Até €7.703 | 14,5% |
-| €7.704 – €11.623 | 21% |
-| €11.624 – €16.472 | 26,5% |
-| €16.473 – €21.321 | 28,5% |
-| €21.322 – €27.146 | 35% |
-| €27.147 – €39.791 | 37% |
-| €39.792 – €51.997 | 43,5% |
-| €51.998 – €81.199 | 45% |
-| Superior a €81.199 | 48% (+ sobretaxa de solidariedade de 2,5% > €80.000 e 5% > €250.000 = efetiva até 53%) |
+| Até €8.059 | 12,5% |
+| €8.059 – €12.160 | 16% |
+| €12.160 – €17.233 | 21,5% |
+| €17.233 – €22.306 | 24,4% |
+| €22.306 – €28.400 | 31,4% |
+| €28.400 – €41.629 | 34,9% |
+| €41.629 – €44.987 | 43,1% |
+| €44.987 – €83.696 | 44,6% |
+| Superior a €83.696 | 48% (+ adicional de solidariedade de 2,5% sobre o rendimento coletável entre €80.000 e €250.000 e 5% acima de €250.000 — art. 68.º-A CIRS) |
+
+Para rendimentos de 2026 aplica-se a tabela da Lei n.º 73-A/2025, de 30 de dezembro (OE2026): limites atualizados em 3,5% (€8.342 … €86.634) e taxas do 2.º ao 5.º escalão reduzidas em 0,3 p.p. (15,7%, 21,2%, 24,1%, 31,1%); ver `pt-income-tax`.
 
 - **Citação** — Código do IRS, artigo 72.º, n.º 1, alínea d) (taxa de 28%); artigo 68.º (taxas progressivas); Lei n.º 24-D/2022 (disposições do OE 2023 sobre cripto).  _(Código do IRS, artigo 72.º, n.º 1, alínea d); artigo 68.º; Lei n.º 24-D/2022)_
 
@@ -159,7 +145,7 @@ Esta exclusão aplica-se a criptoativos que NÃO sejam qualificados como valores
 | --- | --- | --- |
 | Regime simplificado (volume de negócios < €200.000) | 15% da receita bruta cripto é tratada como rendimento tributável (coeficiente 0,15 para vendas; 0,95 para serviços) | Taxas progressivas sobre o rendimento presumido |
 | Regime simplificado — mineração em específico | Campo 422 do Quadro 4-A do Anexo B | Taxas progressivas |
-| Contabilidade organizada | Lucro real = receita − despesas documentadas | Taxas progressivas 14,5%–53% |
+| Contabilidade organizada | Lucro real = receita − despesas documentadas | Taxas progressivas 12,5%–48%, mais adicional de solidariedade |
 
 - **Nota** — No regime simplificado, apenas 15% das receitas de vendas de cripto é considerada tributável (dedução automática de 85%), o que resulta numa taxa efetiva muito baixa. Esta regra aplica-se, contudo, apenas a atividades genuinamente enquadráveis na Categoria B. Especificamente para mineração, o coeficiente é de 0,95 (campo 422), ou seja, 95% é tributável.
 - **Citação** — CIRS artigo 31.º (coeficientes do regime simplificado); artigo 28.º (âmbito da Categoria B).  _(CIRS artigo 31.º; artigo 28.º)_
@@ -209,7 +195,7 @@ Esta exclusão aplica-se a criptoativos que NÃO sejam qualificados como valores
 | Cenário | Categoria | Tratamento |
 | --- | --- | --- |
 | Mineração ocasional (hobby) | Provável Categoria E | 28% na conversão para fiat |
-| Mineração habitual (infraestrutura dedicada) | Categoria B | Taxas progressivas 14,5%–53%, declarada no Anexo B |
+| Mineração habitual (infraestrutura dedicada) | Categoria B | Taxas progressivas 12,5%–48% (mais adicional de solidariedade), declarada no Anexo B |
 | Mineração especificamente | Categoria B, campo 422 | Coeficiente 0,95 no regime simplificado |
 
 - **Sobreposição de categorias** — A Categoria B sobrepõe-se à Categoria E quando a atividade é habitual. Nos termos do CIRS, havendo padrão profissional/empresarial estabelecido, este prevalece.

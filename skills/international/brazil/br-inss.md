@@ -3,41 +3,17 @@ name: br-inss
 description: Use this skill whenever asked about Brazilian INSS social contributions for self-employed individuals (contribuinte individual). Trigger on phrases like "INSS autônomo", "contribuinte individual", "GPS pagamento", "INSS 20%", "INSS simplificado 11%", "teto INSS", "previdência autônomo", or any question about Brazilian social security obligations for self-employed persons. Covers the 20% normal plan, 11% simplified plan, 5% MEI plan, contribution ceiling (teto), GPS payment mechanics, and edge cases. ALWAYS read this skill before touching any Brazilian INSS work.
 version: 2.0
 jurisdiction: BR
-tax_year: 2025
-last_updated: 2026-07-13
+tax_year: 2026
+last_updated: 2026-09-29
 reviewed_by: Ariane Marrocos
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # BR Inss
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Ariane Marrocos on 2026-06-03.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### INSS Autônomo
-
-- **Salário mínimo** — R$ 1.630,00  _(Legislação federal do salário mínimo 2026)_
-- **Teto INSS** — R$ 8.475,55  _(Portaria Interministerial MPS/MF nº 13/2026.)_
-- **Plano Normal (20%)** — 20% da renda (mín. R$ 326,00 / máx. R$ 1.695,11) — GPS código 1007  _(Lei 8.212/1991 Art. 21)_
-- **Plano Simplificado (11%)** — 11% do salário mínimo = R$ 179,30 (fixo) — GPS código 1163  _(Lei 8.212/1991 Art. 21)_
-- **MEI (5%)** — 5% do salário mínimo = R$ 81,50 (fixo) — recolhido via DAS-MEI  _(Lei Complementar nº 123/2006 – Art. 18-A.)_
-- **Contribuição mínima (20%)** — R$ 326,00  _(Lei 8.212/1991 Art. 21)_
-- **Contribuição máxima (20%)** — R$ 1.695,11  _(Lei 8.212/1991 Art. 21)_
-- **1007** — Contribuinte individual — Normal (20%)  _(Lei 8.212/1991)_
-- **1163** — Contribuinte individual — Simplificado (11%)  _(Lei 8.212/1991)_
-- **1104** — Contribuinte Individual – Prestador de serviços a pessoa jurídica (com retenção previdenciária). Observação: o percentual efetivamente retido pode variar conforme a situação e a legislação previdenciária aplicável.  _(Lei 8.212/1991)_
-- **1295** — Complementação (de 11% para 20% retroativa)  _(Lei 8.212/1991)_
-- **Vencimento GPS** — Dia 15 do mês seguinte  _(Lei 8.212/1991)_
-- **Multa por atraso** — 0,33% ao dia (limitada a 20%) + SELIC acumulada e 1% no mês do pagamento  _(Lei 8.212/1991; Lei 9.430/1996)_
-- **Cobrança retroativa** — Até 5 anos  _(CTN Arts. 173 e 174)_
-- **Duplo vínculo CLT+autônomo** — Total limitado ao teto; se CLT atinge o teto, sem GPS adicional  _(Lei 8.212/1991)_
-- **Mês sem renda** — Sem contribuição obrigatória; pode recolher como facultativo  _(Lei nº 8.212/1991 Lei nº 8.213/1991)_
-- **Plano 11% → aposentadoria por tempo** — Não conta para benefícios que exijam contribuição integral, salvo complementação para 20%  _(Lei 8.212/1991)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. Since that review the body moved to the 2026 figures of Decreto nº 12.797/2025 (minimum wage R$ 1.621, where the list said R$ 1.630) and Portaria Interministerial MPS/MF nº 13/2026, which the review did not cover, so `review_status` is `pending_review` until the revised text is re-reviewed: `tier: 1` and the roster record the June 2026 review, not a sign-off on the current figures.
 
 ## Seção 1 — Referência rápida
 
@@ -52,12 +28,12 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Alíquota do Plano Normal | 20% da renda (entre salário mínimo e teto) |
 | Alíquota do Plano Simplificado | 11% do salário mínimo (fixo) |
 | Alíquota MEI | 5% do salário mínimo (fixo) |
-| Salário mínimo (2025) | R$ 1.518,00 |
-| Teto INSS (2025) | R$ 8.157,41 |
-| Contribuição mínima (20%) | R$ 303,60 |
-| Contribuição máxima (20%) | R$ 1.631,48 |
-| Simplificado (11%) | R$ 166,98 |
-| MEI (5%) | R$ 75,90 |
+| Salário mínimo (2026) | R$ 1.621,00 (Decreto nº 12.797/2025); em 2025: R$ 1.518,00 |
+| Teto INSS (2026) | R$ 8.475,55 (Portaria Interministerial MPS/MF nº 13/2026); em 2025: R$ 8.157,41 |
+| Contribuição mínima (20%) | R$ 324,20 (2026); R$ 303,60 (2025) |
+| Contribuição máxima (20%) | R$ 1.695,11 (2026); R$ 1.631,48 (2025) |
+| Simplificado (11%) | R$ 178,31 (2026); R$ 166,98 (2025) |
+| MEI (5%) | R$ 81,05 (2026); R$ 75,90 (2025) |
 | Vencimento da GPS | Dia 15 do mês seguinte |
 | Moeda | Apenas BRL |
 | Contribuidor | Open Accountants |
@@ -95,11 +71,11 @@ A Reforma Tributária 2026 (EC 132/2023, LC 214/2025) reforma apenas tributos so
 
 ### Plano Normal (20%)
 
-- **Fórmula Plano Normal** — contribution = min(monthly_income, teto_INSS) x 20% contribution = clamp(R$ 303.60, contribution, R$ 1,631.48)
+- **Fórmula Plano Normal** — contribution = min(monthly_income, teto_INSS) x 20% contribution = clamp(R$ 324.20, contribution, R$ 1,695.11) (2026 bounds: 20% of the minimum wage and of the ceiling)
 
 ### Plano Simplificado (11%)
 
-- **Fórmula Plano Simplificado** — contribution = R$ 1,518.00 x 11% = R$ 166.98 (fixed)
+- **Fórmula Plano Simplificado** — contribution = R$ 1,621.00 x 11% = R$ 178.31 (fixed, 2026)
 - **Base fixa** — Sempre baseado no salário mínimo, independentemente da renda efetiva.
 
 ### Retenção de PJ (serviços prestados a empresas)
@@ -182,7 +158,7 @@ Resolução: Mudar para 20% ou pagar complementação (código 1295) referente a
 
 ### EC2 — Duplo vínculo, emprego no teto
 
-Situação: Salário CLT de R$ 8.157,41, com renda adicional como autônomo.
+Situação: Salário CLT de R$ 8.475,55 (teto de 2026), com renda adicional como autônomo.
 Resolução: O vínculo empregatício já atinge o teto. Nenhuma GPS adicional.
 
 ### EC3 — Retenção de PJ + plano de 20%
@@ -193,16 +169,16 @@ Resolução: Devido R$ 1.200. Retido R$ 660. GPS de R$ 540.
 ### EC4 — Renda abaixo do mínimo
 
 Situação: Renda de R$ 800.
-Resolução: Base mínima de R$ 1.518. Contribuição de R$ 303,60 (20%) ou R$ 166,98 (11%).
+Resolução: Base mínima de R$ 1.621 (2026). Contribuição de R$ 324,20 (20%) ou R$ 178,31 (11%).
 
 ### EC5 — Várias PJs, retenção excedente
 
 Situação: R$ 5.000 da PJ-A + R$ 5.000 da PJ-B. Ambas retêm 11%.
-Resolução: Total de R$ 10.000, mas teto de R$ 8.157,41. Retenção máxima = R$ 897,32. Pode ter havido pagamento a maior. Solicitar restituição.
+Resolução: Total de R$ 10.000, mas teto de R$ 8.475,55 (2026). Retenção máxima = R$ 932,31. Pode ter havido pagamento a maior. Solicitar restituição.
 
 ### EC6 — Mês sem renda
 
-Situação: Sem renda em março/2025.
+Situação: Sem renda em março/2026.
 Resolução: Sem contribuição obrigatória. Pode-se pagar como facultativo.
 
 ## Seção 9 — Protocolo de escalonamento ao revisor
@@ -241,12 +217,12 @@ Saída esperada: R$ 800,00. GPS 1007.
 ### Teste 2 — Excede o teto
 
 Entrada: Renda de R$ 12.000. Normal (20%).
-Saída esperada: Base limitada a R$ 8.157,41. Contribuição de R$ 1.631,48.
+Saída esperada: Base limitada a R$ 8.475,55. Contribuição de R$ 1.695,11.
 
 ### Teste 3 — Simplificado
 
 Entrada: Renda de R$ 5.000. Simplificado (11%).
-Saída esperada: R$ 166,98 (fixo sobre o mínimo). GPS 1163.
+Saída esperada: R$ 178,31 (fixo sobre o mínimo de 2026). GPS 1163.
 
 ### Teste 4 — Retenção de PJ + diferença de 20%
 
@@ -255,18 +231,18 @@ Saída esperada: Devido R$ 1.200. GPS de R$ 540.
 
 ### Teste 5 — Duplo vínculo, no teto
 
-Entrada: CLT R$ 8.157,41 + autônomo R$ 3.000.
+Entrada: CLT R$ 8.475,55 + autônomo R$ 3.000.
 Saída esperada: Nenhuma GPS adicional.
 
 ### Teste 6 — Sem renda
 
-Entrada: Sem renda em março/2025.
+Entrada: Sem renda em março/2026.
 Saída esperada: Sem contribuição obrigatória.
 
 ### Teste 7 — Renda mínima
 
 Entrada: Renda de R$ 800. Normal (20%).
-Saída esperada: Base de R$ 1.518. Contribuição de R$ 303,60.
+Saída esperada: Base de R$ 1.621. Contribuição de R$ 324,20.
 
 ## Aviso legal
 

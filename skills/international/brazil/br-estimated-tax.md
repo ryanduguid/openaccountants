@@ -4,9 +4,9 @@ description: "Use esta skill sempre que for solicitado a tratar de pagamentos me
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ariane Marrocos
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -18,26 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Brasil — Carnê-Leão e Estimativa Mensal — Skill v2.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Ariane Marrocos on 2026-06-03. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### Carnê-Leão
-
-- **Até R$ 2.259,20** — 0% BRL (parcela R$ 0,00)  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
-- **R$ 2.259,21 – R$ 2.826,65** — 7,5% BRL (parcela R$ 169,44)  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
-- **R$ 2.826,66 – R$ 3.751,05** — 15% BRL (parcela R$ 381,44)  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
-- **R$ 3.751,06 – R$ 4.664,68** — 22,5% BRL (parcela R$ 662,77)  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
-- **Acima de R$ 4.664,68** — 27,5% BRL (parcela R$ 896,00)  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
-- **Por dependente** — Na apuração mensal do Carnê-Leão, é permitida a dedução de R$ 189,59 por dependente, conforme previsto na Lei nº 9.250/1995.  _(Lei nº 9.250/1995. Complementar com o Decreto nº 9.580/2018.)_
-- **INSS contribuinte individual** — Na apuração do Carnê-Leão, é dedutível da base de cálculo do imposto o valor da contribuição previdenciária oficial efetivamente paga pelo contribuinte individual no período.  _(Complementar com as Lei nº 9.250/1995 e Decreto nº 9.580/2018.)_
-- **Livro caixa** — No Carnê-Leão, podem ser deduzidas as despesas escrituradas em livro-caixa, necessárias à percepção da receita e à manutenção da atividade profissional, desde que devidamente comprovadas, não sendo permitida a apuração de base de cálculo negativa.  _(Lei nº 9.250/1995 – Art. 8º. O tema do livro-caixa está mais diretamente disciplinado em: Lei nº 8.134/1990 e Decreto nº 9.580/2018 Complementarmente na Lei nº 9.250/1995 Portanto, a indicada não é a mais específica para o tema.)_
-- **Pensão alimentícia judicial** — Na apuração do Carnê-Leão, é dedutível o valor da pensão alimentícia efetivamente pago em cumprimento de decisão judicial, acordo homologado judicialmente ou escritura pública, conforme previsto na legislação do Imposto de Renda.  _(Decreto nº 9.580/2018 Lei nº 9.250/1995.)_
-- **Desconto simplificado mensal** — BRL 564,80 (Na apuração mensal do IRPF/Carnê-Leão, o contribuinte pode optar pelo desconto simplificado mensal de R$ 564,80 em substituição às deduções legais, conforme a legislação vigente.)  _(Lei nº 14.663/2023.)_
-- **Código DARF** — O imposto apurado no Carnê-Leão deve ser recolhido mediante DARF código 0190, conforme as regras da Receita Federal.  _(Decreto nº 9.580/2018)_
-- **Vencimento** — O imposto apurado no Carnê-Leão deve ser recolhido até o último dia útil do mês subsequente ao do recebimento dos rendimentos sujeitos à tributação.  _(Embora a Lei nº 7.713/1988 seja uma das bases do IRPF, a mais utilizada para o vencimento do Carnê-Leão é: Decreto nº 9.580/2018.)_
-- **Multa de mora** — O pagamento em atraso do DARF do Carnê-Leão sujeita o contribuinte à multa de mora de 0,33% por dia de atraso, limitada a 20% do imposto devido, além de juros calculados com base na taxa SELIC.  _(CTN – Art. 161 (juros de mora). A multa de mora de 0,33% por dia limitada a 20% decorre principalmente da Lei nº 9.430/1996 - Art. 61. Complementares Código Tributário Nacional – art. 161 e Decreto nº 9.580/2018.)_
-- **Juros de mora** — O pagamento em atraso do DARF do Carnê-Leão sujeita o contribuinte à multa de mora de 0,33% por dia de atraso, limitada a 20% do imposto devido, além de juros calculados com base na taxa SELIC.  _(CTN Art. 161 estabelece a incidência de juros de mora, mas a regra específica de utilização da SELIC para tributos federais decorre principalmente de Lei nº 9.430/1996 Art. 61, §3º. Complementares Código Tributário Nacional – art. 161 e Decreto nº 9.580/2018.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. Since that review the body moved to the monthly IRRF table in force since May 2025 (Lei nº 15.191/2025) and the 2026 reduction of Lei nº 15.270/2025, where the list carried the January–April 2025 table, so `review_status` is `pending_review` until the revised text is re-reviewed: `tier: 1` and the roster record the June 2026 review, not a sign-off on the current figures.
 
 ## Seção 1 — Referência rápida
 
@@ -62,15 +43,18 @@ Reviewed against the cited tax authorities by Ariane Marrocos on 2026-06-03. Ite
 
 A reforma do consumo introduzida pela EC 132/2023, LC 214/2025 e LC 227/2026 afeta apenas tributos sobre o consumo (CBS, IBS, Imposto Seletivo e os antigos ICMS/ISS/PIS/COFINS/IPI). Ela NÃO altera o Carnê-Leão (IRPF mensal) nem a estimativa mensal de PJ (IRPJ). A estrutura do imposto de renda permanece inalterada.
 
-**Tabela progressiva (2025 — confirmar quando publicada)**
+**Tabela progressiva mensal (vigente desde maio de 2025 e mantida em 2026 — Lei nº 11.482/2007, art. 1º, na redação da Lei nº 15.191/2025)**
 
 | Renda mensal tributável (BRL) | Alíquota | Parcela a deduzir (BRL) |
 | --- | --- | --- |
-| Até 2.259,20 | 0% | 0,00 |
-| 2.259,21 — 2.826,65 | 7,5% | 169,44 |
-| 2.826,66 — 3.751,05 | 15% | 381,44 |
-| 3.751,06 — 4.664,68 | 22,5% | 662,77 |
-| Acima de 4.664,68 | 27,5% | 896,00 |
+| Até 2.428,80 | 0% | 0,00 |
+| 2.428,81 — 2.826,65 | 7,5% | 182,16 |
+| 2.826,66 — 3.751,05 | 15% | 394,16 |
+| 3.751,06 — 4.664,68 | 22,5% | 675,49 |
+| Acima de 4.664,68 | 27,5% | 908,73 |
+
+- De janeiro a abril de 2025 vigorou a tabela anterior (Lei nº 14.848/2024): isenção até 2.259,20 e parcelas a deduzir de 169,44 / 381,44 / 662,77 / 896,00.
+- **Desde 1º de janeiro de 2026** (Lei nº 15.270/2025, que acrescentou o art. 3º-A à Lei nº 9.250/1995), o imposto apurado pela tabela na incidência mensal é reduzido: rendimentos tributáveis do mês até R$ 5.000,00 — redução igual ao imposto apurado (imposto devido zero); de R$ 5.000,01 a R$ 7.350,00 — redução de R$ 978,62 − (0,133145 × rendimentos tributáveis), limitada ao imposto apurado e decrescente até zero; acima de R$ 7.350,00 — sem redução. A tabela em si não mudou.
 
 **Defaults conservadores**
 
@@ -159,14 +143,16 @@ Entrada: Renda mensal BRL 8.000 de clientes pessoas físicas. INSS = BRL 877,24.
 | (-) Livro caixa | BRL 1.200,00 |
 | Renda tributável | BRL 5.733,17 |
 | Imposto (27,5%) | BRL 1.576,62 |
-| (-) Parcela a deduzir | BRL 896,00 |
-| **Carnê-Leão devido** | **BRL 680,62** |
+| (-) Parcela a deduzir | BRL 908,73 |
+| **Carnê-Leão devido** | **BRL 667,89** |
+
+Exemplo do ano-calendário 2025 (tabela de maio de 2025). Em 2026 o resultado é o mesmo: com rendimentos tributáveis de BRL 8.000 no mês, acima de BRL 7.350, não há redução da Lei nº 15.270/2025.
 
 ### Exemplo 2 — Abaixo do limite de isenção
 
 Entrada: Renda mensal BRL 2.000 após deduções.
 
-Resultado: Renda tributável BRL 2.000 < BRL 2.259,20. Alíquota 0%. Sem imposto devido.
+Resultado: Renda tributável BRL 2.000 < BRL 2.428,80. Alíquota 0%. Sem imposto devido.
 
 ### Exemplo 3 — Fontes de renda mistas
 
@@ -202,7 +188,7 @@ Classificação: Pagamento de Carnê-Leão referente aos rendimentos de janeiro 
 | INSS (contribuinte individual) | Valor efetivamente pago |
 | Despesas de livro caixa | Despesas efetivas documentadas |
 | Pensão alimentícia judicial | Valor efetivamente pago |
-| Desconto simplificado mensal | BRL 564,80 (alternativa ao itemizado) |
+| Desconto simplificado mensal | BRL 607,20 desde maio de 2025 (25% do limite de isenção; BRL 564,80 de janeiro a abril de 2025) — alternativa ao itemizado (Lei nº 14.663/2023; Lei nº 15.191/2025) |
 
 ### 5.3 Regras do livro caixa
 
@@ -256,11 +242,11 @@ EC2 — Rendimentos do exterior. Sujeitos ao Carnê-Leão. Converter pela taxa P
 
 EC3 — Sem renda no mês. Sem obrigação de Carnê-Leão. Sem DARF.
 
-EC4 — Renda abaixo do limite de isenção. Renda tributável após deduções abaixo de BRL 2.259,20: alíquota 0%, sem imposto devido.
+EC4 — Renda abaixo do limite de isenção. Renda tributável após deduções abaixo de BRL 2.428,80: alíquota 0%, sem imposto devido.
 
 EC5 — Livro caixa supera a renda. Deduções não podem gerar renda tributável negativa. O piso é BRL 0.
 
-EC6 — Desconto simplificado vs itemizado. O cliente pode optar pela alternativa que resulte em menor renda tributável: simplificado BRL 564,80 ou deduções itemizadas.
+EC6 — Desconto simplificado vs itemizado. O cliente pode optar pela alternativa que resulte em menor renda tributável: simplificado BRL 607,20 ou deduções itemizadas.
 
 ## Seção 9 — Self-checks
 
@@ -282,7 +268,7 @@ Antes de entregar o resultado, verificar:
 ### Teste 1 — Cálculo mensal padrão
 
 Entrada: Renda BRL 8.000. INSS BRL 877,24. 1 dependente. Livro caixa BRL 1.200.
-Esperado: Tributável = BRL 5.733,17. Imposto = BRL 680,62.
+Esperado: Tributável = BRL 5.733,17. Imposto = BRL 667,89.
 
 ### Teste 2 — Abaixo do limite de isenção
 
@@ -301,8 +287,8 @@ Esperado: Sem obrigação.
 
 ### Teste 5 — Pagamento em atraso
 
-Entrada: BRL 680,62 com vencimento em 28/fev. Pago com 45 dias de atraso. SELIC acumulada = 0,92%.
-Esperado: Multa = BRL 680,62 x 0,33% x 45 = BRL 101,07 (teto de 20% = BRL 136,12, portanto aplica-se BRL 101,07). Juros = BRL 680,62 x (0,92% + 1%) = BRL 13,07.
+Entrada: BRL 667,89 com vencimento em 28/fev. Pago com 45 dias de atraso. SELIC acumulada = 0,92%.
+Esperado: Multa = BRL 667,89 x 0,33% x 45 = BRL 99,18 (teto de 20% = BRL 133,58, portanto aplica-se BRL 99,18). Juros = BRL 667,89 x (0,92% + 1%) = BRL 12,82.
 
 ### Teste 6 — Renda do exterior
 

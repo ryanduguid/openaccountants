@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Brazilian indirect taxes, VAT, 
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ariane Marrocos
 review_status: current
 tier: 1
@@ -20,44 +20,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > recovery sit in that guide — read it alongside this one before filing or advising.
 > **No claim about that jurisdiction's regime is made here**; this is a pointer only.
 
-
 ## Brasil — Tributos Indiretos (Sistema Antigo PIS/Cofins/ICMS/IPI/ISS + Sistema Novo CBS/IBS) — Skill v3.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Tributos Indiretos (PIS-Cofins-
-
-- **PIS não cumulativo (Lucro Real)** — 1,65% sobre o total das receitas auferidas pela pessoa jurídica, com créditos previstos no art. 3º da Lei nº 10.637/2002; aplicável predominantemente a Lucro Real percent  _(Lei 10.637/2002)_
-- **Cofins não cumulativo** — 7,60% incidente sobre o total das receitas auferidas pela pessoa jurídica, admitindo créditos previstos no art. 3º da Lei nº 10.833/2003 percent  _(Lei 10.833/2003)_
-- **PIS+Cofins não cumulativo combinado** — 9,25% (com créditos de entrada) percent  _(Leis 10.637/10.833)_
-- **PIS cumulativo (Lucro Presumido)** — 0,65% sobre receita bruta, sem direito a créditos, aplicável em regra às pessoas jurídicas tributadas pelo Lucro Presumido percent  _(Lei nº 10.637/2002 instituiu a sistemática não cumulativa do PIS. Principal fundamento: Lei nº 9.718/1998)_
-- **Cofins cumulativo** — 3,00% sobre receita bruta, sem direito a créditos, aplicável em regra às pessoas jurídicas tributadas pelo Lucro Presumido percent  _(Lei nº 10.833/2003 (Art. 1º base de cálculo; Art. 2º alíquota 7,6%; Art. 3º créditos); Principal fundamento: Lei nº 9.718/1998)_
-- **PIS+Cofins cumulativo combinado** — 3,65% (sem créditos) percent  _(Lei nº 10.637/2002; Lei nº 10.833/2003; Lei nº 9.718/1998; Lei nº 9.715/1998)_
-- **Sao Paulo** — 18%
-- **Rio de Janeiro (RJ)** — A alíquota interna geral do ICMS no Estado do Rio de Janeiro é de 20%, acrescida em regra do adicional de 2% destinado ao FECP, resultando em carga tributária geral de 22%. percent  _(Lei Estadual nº 2.657/1996 Art. 14; Lei Estadual nº 10.253/2023; LC Estadual nº 210/2023)_
-- **Minas Gerais** — 18%
-- **Bahia (BA)** — A alíquota interna geral do ICMS no Estado da Bahia é de 20,5%, conforme a Lei nº 14.629/2023, aplicável quando não houver previsão de alíquota específica percent  _(Lei nº 7.014/1996; Lei nº 14.629/2023)_
-- **Paraná (PR)** — A alíquota interna geral do ICMS no Estado do Paraná é de 19,5%, aplicável quando não houver previsão específica, conforme o art. 17, inciso V, do RICMS/PR percent  _(RICMS/PR Art. 17, inciso V; Lei nº 11.580/1996)_
-- **Rio Grande do Sul (RS)** — 17%
-- **Santa Catarina (SC)** — 17%
-- **Sul/Sudeste → Sul/Sudeste (exceto ES)** — 12% percent  _(CF Art. 155; Resolução SF 22/89)_
-- **South/Southeast to North/Northeast/Center-West/ES** — 7%
-- **N/NE/CO/ES → qualquer estado** — Nas operações interestaduais originadas nos estados das regiões Norte, Nordeste, Centro-Oeste e no Espírito Santo, aplica-se, como regra geral, a alíquota interestadual de 12% percent  _(Constituição Federal de 1988; Resolução do Senado Federal nº 22/1989; CF Art. 155)_
-- **Mercadorias importadas (interestadual)** — Aplica-se a alíquota interestadual de 4% às operações com bens e mercadorias importados do exterior ou com conteúdo de importação superior a 40%, observadas as exceções previstas na Resolução do Senado Federal nº 13/2012 percent  _(Resolução do Senado Federal nº 13/2012; Lei Complementar nº 87/1996)_
-- **Alíquota ISS** — 2% a 5% (definida por município, mínimo 2%) percent  _(LC 116/2003; LC 157/2016)_
-- **Alíquota IPI** — 0% a 300%+ (por NCM via tabela TIPI). As alíquotas do IPI são definidas por NCM na TIPI, variando conforme o produto, observadas as regras do RIPI percent  _(Decreto nº 7.212/2010 (RIPI); TIPI - Tabela de Incidência do IPI)_
-- **CBS alíquota-teste 2026** — 0,9% percent  _(EC 132/2023; LC 214/2025)_
-- **IBS alíquota-teste 2026** — 0,1% percent  _(EC 132/2023; LC 214/2025)_
-- **CBS+IBS estimada (plena)** — ~26,5% (sujeita a ajuste), podendo sofrer ajustes conforme os mecanismos de revisão previstos na Reforma Tributária e na LC nº 214/2025 percent  _(Emenda Constitucional nº 132/2023; Lei Complementar nº 214/2025)_
-- **CBS plena (extinção PIS/Cofins)** — A partir de 2027, a CBS passa a substituir o PIS/Pasep e a COFINS, que serão extintos, conforme as regras de transição estabelecidas pela EC nº 132/2023 e regulamentadas pela LC nº 214/2025  _(Emenda Constitucional nº 132/2023; Lei Complementar nº 214/2025)_
-- **ICMS/ISS totalmente extintos** — O ICMS e o ISS serão gradualmente substituídos pelo IBS durante o período de transição da Reforma Tributária, sendo totalmente extintos em 2033  _(Emenda Constitucional nº 132/2023; Lei Complementar nº 214/2025)_
-- **MEI** — Até R$ 81.000/ano BRL  _(LC 123/2006)_
-- **Sublimite ICMS/ISS** — O sublimite para recolhimento de ICMS e ISS no âmbito do Simples Nacional é de R$ 3.600.000,00 BRL  _(Lei Complementar nº 123/2006 Arts. 19 e 20)_
-- **Limite EPP** — R$ 4.800.000 BRL  _(LC 123/2006 Art. 3)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Seção 1 — Referência rápida
 
@@ -114,10 +79,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Estado | Alíquota interna padrão |
 | --- | --- |
 | São Paulo (SP) | 18% |
-| Rio de Janeiro (RJ) | 20% (18% + FECP 2%) |
+| Rio de Janeiro (RJ) | 22% (20% + FECP 2% — Lei nº 2.657/1996, art. 14, na redação da Lei nº 10.253/2023; LC estadual nº 210/2023) |
 | Minas Gerais (MG) | 18% |
-| Bahia (BA) | 19% |
-| Paraná (PR) | 19% |
+| Bahia (BA) | 20,5% (Lei nº 7.014/1996, na redação da Lei nº 14.629/2023) |
+| Paraná (PR) | 19,5% (Lei nº 11.580/1996; RICMS/PR, art. 17, V) |
 | Rio Grande do Sul (RS) | 17% |
 | Santa Catarina (SC) | 17% |
 | Demais estados | 17% a 20% (média) |
@@ -519,12 +484,12 @@ Fatura de energia. Sujeita a ICMS na alíquota interna de SP (18% geral, mas a e
 
 ### Exemplo 8 — Venda interestadual SP → BA com DIFAL
 
-**Entrada:** Empresa de SP vende R$ 10.000 em mercadorias para empresa BA. Alíquota interestadual 7%. Alíquota interna BA 19%.
+**Entrada:** Empresa de SP vende R$ 10.000 em mercadorias para empresa BA. Alíquota interestadual 7%. Alíquota interna BA 20,5%.
 
 **Cômputo:**
 - ICMS destacado na NF-e: R$ 10.000 × 7% = R$ 700 (vendedor recolhe à SEFAZ-SP)
-- Se B2B (comprador é contribuinte): comprador recolhe DIFAL de 12% (19% − 7%) à BA
-- Se B2C (consumidor final não contribuinte): vendedor coleta o DIFAL de 12% e remete à BA (partilha estadual conforme EC 87/2015, atualmente integralmente devida ao estado de destino)
+- Se B2B (comprador é contribuinte): comprador recolhe DIFAL de 13,5% (20,5% − 7%) à BA
+- Se B2C (consumidor final não contribuinte): vendedor coleta o DIFAL de 13,5% e remete à BA (partilha estadual conforme EC 87/2015, atualmente integralmente devida ao estado de destino)
 
 ### Exemplo 9 — Retenção de ISS na fonte
 

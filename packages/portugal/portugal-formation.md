@@ -4,7 +4,7 @@ description: "Utilize esta skill sempre que lhe perguntarem sobre constituição
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 depends_on:
@@ -18,29 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Portugal — Constituição de Empresa e Selecção de Entidade — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Constituição de Empresa
-
-- **Lda — capital mínimo** — €1 por quota (mín. €2 total)  _(CSC)_
-- **Unipessoal Lda — capital** — €1  _(CSC)_
-- **SA — capital mínimo** — €50.000 (30% à constituição)  _(CSC)_
-- **ENI** — Sem personalidade jurídica, responsabilidade ilimitada
-- **Empresa na Hora (padrão)** — €360  _(DL 111/2005)_
-- **Empresa Online (pacto pré-aprovado)** — €220  _(gov.pt)_
-- **Empresa Online (pacto customizado)** — €360  _(gov.pt)_
-- **Certificado de admissibilidade** — €75 (online) / €150 (urgente)  _(RNPC)_
-- **IES** — Até 15 julho do ano seguinte  _(AT)_
-- **IRC (Modelo 22)** — Até 31 maio do ano seguinte  _(AT)_
-- **RCBE (beneficiário efetivo)** — Na constituição + confirmação anual  _(IRN)_
-- **Declaração início atividade** — 15 dias  _(AT)_
-- **Contabilista Certificado** — Obrigatório (responsabilidade legal)  _(DL 158/2009)_
-- **Taxa normal** — 2025: 20% ; 2026: 19%  _(Código IRC)_
-- **PME — primeiros €50.000** — 2025: 16% ; 2026: 15%  _(Código IRC)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mário Jorge da costa Vale** on 2026-06-04; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Secção 1 -- Referência Rápida
 

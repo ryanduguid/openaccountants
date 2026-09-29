@@ -37,8 +37,6 @@ skills/international/belarus::standard
 skills/international/bosnia::health insurance
 skills/international/bosnia::pension disability insurance
 skills/international/bosnia::unemployment insurance
-skills/international/brazil::acima de r
-skills/international/brazil::de r r
 skills/international/brazil::minas gerais
 skills/international/brazil::s o paulo
 skills/international/bulgaria::health insurance
@@ -106,7 +104,6 @@ skills/international/peru::profuturo
 skills/international/philippines::late payment
 skills/international/philippines::regular corporate income tax
 skills/international/portugal::acima de
-skills/international/portugal::presta o de servi os
 skills/international/portugal::seguran social
 skills/international/rwanda::maternity leave benefits
 skills/international/rwanda::occupational hazards

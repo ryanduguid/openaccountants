@@ -4,7 +4,7 @@ description: "Utilize esta skill na preparação, revisão ou aconselhamento sob
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 depends_on:
@@ -18,35 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Portugal — Demonstrações Financeiras (SNC) — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Demonstrações Financeiras
-
-- **Micro — balanço** — ≤ €350.000  _(DL 158/2009)_
-- **Micro — volume negócios** — ≤ €700.000  _(DL 158/2009)_
-- **Micro — empregados** — ≤ 10  _(DL 158/2009)_
-- **Pequena — balanço** — ≤ €4.000.000  _(DL 98/2015)_
-- **Pequena — volume negócios** — ≤ €8.000.000  _(DL 98/2015)_
-- **Pequena — empregados** — ≤ 50  _(DL 98/2015)_
-- **Micro — balanço** — ≤ €450.000  _(DL 126-B/2025)_
-- **Micro — volume negócios** — ≤ €900.000  _(DL 126-B/2025)_
-- **Pequena — balanço** — ≤ €5.000.000  _(DL 126-B/2025)_
-- **Pequena — volume negócios** — ≤ €10.000.000  _(DL 126-B/2025)_
-- **Média — balanço** — ≤ €25.000.000  _(DL 126-B/2025)_
-- **Média — volume negócios** — ≤ €50.000.000  _(DL 126-B/2025)_
-- **Teste** — 2 de 3 critérios no ano corrente + anterior  _(DL 158/2009)_
-- **IES — prazo** — 15.º dia do 7.º mês após encerramento (15 julho)  _(Código IRC)_
-- **Taxa de registo** — €80  _(IRN)_
-- **Multa atraso** — €150–€3.750  _(RGIT)_
-- **Balanço** — > €1.500.000  _(CSC)_
-- **Volume de negócios** — > €3.000.000  _(CSC)_
-- **Empregados** — > 50  _(CSC)_
-- **Teste** — 2 de 3 por dois anos consecutivos  _(CSC)_
-- **SA (Sociedade Anónima)** — Sempre obrigatória  _(CSC)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mário Jorge da costa Vale** on 2026-06-04; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Secção 1 — Referência Rápida
 

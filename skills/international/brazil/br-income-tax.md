@@ -4,7 +4,7 @@ description: "Use esta skill sempre que for solicitado sobre o imposto de renda 
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ariane Marrocos
 review_status: current
 tier: 1
@@ -15,26 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Brasil — Imposto de Renda (IRPF e IRPJ) — Skill v2.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### IRPF Autônomo
-
-- **Até R$ 28.467,20** — Isento (dedução R$ 0)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
-- **De R$ 28.467,21 até R$ 33.919,80** — 7,5% (dedução R$ 2.135,04)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
-- **De R$ 33.919,81 até R$ 45.012,60** — 15% (dedução R$ 4.679,03)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
-- **De R$ 45.012,61 até R$ 55.976,16** — 22,5% (dedução R$ 8.054,97)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
-- **Acima de R$ 55.976,16** — 27,5% (dedução R$ 10.853,78)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
-- **Limite MEI anual** — R$ 81.000  _(LC 123/2006)_
-- **DIRPF obrigatória acima de** — R$ 33.888 de rendimentos tributáveis  _(Instrução Normativa RFB nº 2.255/2025.)_
-- **Prazo da DIRPF** — Fixado a cada ano pela Receita Federal por Instrução Normativa, e a data muda: a DIRPF 2026 foi entregue de **23 de março a 29 de maio de 2026**, prazo mais curto que o do ano anterior; a DIRPF 2025 encerrou em 30 de maio de 2025. Não trate "30 de maio" como regra permanente — confirme a IN do ano corrente  _(Instrução Normativa RFB nº 2.255/2025 e IN do exercício corrente; Receita Federal)_
-- **IRRF sobre serviços PJ** — 1,5% (padrão para serviços profissionais)  _(Decreto nº 9.580/2018 - art. 647. Os pagamentos efetuados por pessoa jurídica a outra pessoa jurídica pela prestação de serviços profissionais previstos no art. 647 do RIR/2018 estão sujeitos à retenção do IRRF à alíquota de 1,5%, observadas as exceções legais e o regime tributário do prestador.)_
-- **INSS retido por PJ** — INSS retido na (11% sobre o valor bruto da nota fiscal/fatura de serviços sujeitos à retenção previdenciária (cessão de mão de obra ou empreitada))  _(art. 31 da Lei nº 8.212/1991)_
-- **Obrigatoriedade** — A pessoa física residente no Brasil que receber rendimentos de outras pessoas físicas ou de (s situadas no exterior deve apurar mensalmente o imposto devido por meio do Carnê-Leão, observadas as regras do RIR/2018 e da Receita Federal.)  _(Decreto nº 9.580/2018 Lei nº 7.713/1988)_
-- **Rendimentos de PJ** — NÃO geram Carnê-Leão (sujeitos a IRRF)  _(Decreto nº 9.580/2018 Lei nº 7.713/1988 Os rendimentos pagos por pessoa jurídica à pessoa física, em regra, não estão sujeitos ao Carnê-Leão, pois são submetidos ao regime de retenção e controle pela; pagadora, conforme as regras do RIR/2018.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Seção 1 — Referência rápida
 
@@ -44,17 +25,18 @@ A Reforma Tributária de 2026 (EC 132/2023, LC 214/2025, LC 227/2026) substitui 
 
 ### Faixas do IRPF 2025 (ano-calendário janeiro–dezembro 2025)
 
-**Faixas do IRPF 2025**
+**Faixas do IRPF 2025 (tabela anual do ano-calendário 2025, DIRPF 2026 — Lei nº 11.482/2007, art. 1º, na redação da Lei nº 14.848/2024 para janeiro a abril e da Lei nº 15.191/2025 para maio a dezembro; Receita Federal, tabelas de 2025)**
 
 | Faixa de renda anual tributável (BRL) | Alíquota | Dedução (Anual) |
 | --- | --- | --- |
-| Até 26.963,60 | Isento | 0 |
-| 26.963,61 – 33.919,80 | 7,5% | 2.022,17 |
-| 33.919,81 – 45.012,60 | 15% | 4.566,23 |
-| 45.012,61 – 55.976,16 | 22,5% | 7.942,19 |
-| Acima de 55.976,16 | 27,5% | 10.740,98 |
+| Até 28.467,20 | Isento | 0 |
+| 28.467,21 – 33.919,80 | 7,5% | 2.135,04 |
+| 33.919,81 – 45.012,60 | 15% | 4.679,03 |
+| 45.012,61 – 55.976,16 | 22,5% | 8.054,97 |
+| Acima de 55.976,16 | 27,5% | 10.853,78 |
 
 - **Fórmula (anual)** — Imposto = (renda tributável × alíquota) − dedução
+- **Ano-calendário 2026 (DIRPF 2027)** — A tabela progressiva mantém-se, mas a Lei nº 15.270/2025 (art. 11-A da Lei nº 9.250/1995) reduz o imposto anual de modo a zerá-lo para rendimentos tributáveis até R$ 60.000,00 e, entre R$ 60.000,01 e R$ 88.200,00, em R$ 8.429,73 − (0,095575 × rendimentos tributáveis sujeitos ao ajuste anual), decrescente até zero; institui ainda a tributação mínima das altas rendas. Não aplicar estas reduções ao ano-calendário 2025.
 
 **Faixas mensais do Carnê-Leão** (dividir os limites anuais por 12; tabela mensal específica é publicada pela Receita Federal a cada ano — sempre confirmar a tabela mensal vigente do Carnê-Leão).
 
@@ -235,13 +217,13 @@ Renda tributável:       BRL 56.314,80
 ```
 
 ```
-BRL 56.314,80 × 27,5% − BRL 10.740,98 = BRL 15.486,57 − BRL 10.740,98 = BRL 4.745,59
+BRL 56.314,80 × 27,5% − BRL 10.853,78 = BRL 15.486,57 − BRL 10.853,78 = BRL 4.632,79
 ```
 
 ```
 IRRF retido pelas PJs (1,5% × BRL 65.000):     BRL 975,00
 Carnê-Leão pago:                                BRL 850,00 × meses pagos
-Saldo de IRPF a pagar:                          BRL 4.745,59 − BRL 975 − BRL [total carnê]
+Saldo de IRPF a pagar:                          BRL 4.632,79 − BRL 975 − BRL [total carnê]
 ```
 
 ### Exemplo 2 — Bradesco (Rio de Janeiro, Arquiteta — desconto simplificado)
@@ -303,7 +285,7 @@ Livro caixa (despesas reais ~BRL 8.000): simplificado é melhor (teto BRL 16.754
 
 Tributável: BRL 119.500 − BRL 16.754,34 = BRL 102.745,66
 
-IRPF: BRL 102.745,66 × 27,5% − BRL 10.740,98 = BRL 28.254,56 − BRL 10.740,98 = **BRL 17.513,58**
+IRPF: BRL 102.745,66 × 27,5% − BRL 10.853,78 = BRL 28.255,06 − BRL 10.853,78 = **BRL 17.401,28**
 
 (−) IRRF das plataformas. Alerta: DIRPF obrigatória (bruto > BRL 33.888).
 
@@ -319,7 +301,7 @@ Consolidação na DIRPF:
 - Autônomo (livro caixa): BRL 60.000 − BRL 22.000 (despesas) = BRL 38.000
 
 Tributável total: BRL 48.000 + BRL 38.000 = BRL 86.000
-IRPF: BRL 86.000 × 27,5% − BRL 10.740,98 = BRL 23.650 − BRL 10.740,98 = **BRL 12.909,02**
+IRPF: BRL 86.000 × 27,5% − BRL 10.853,78 = BRL 23.650 − BRL 10.853,78 = **BRL 12.796,22**
 (−) IRRF salário: BRL 4.800 + Carnê-Leão pago + INSS empregador
 
 Renda dupla — sinalizar: DIRPF complexa com Ficha de Rendimentos das duas fontes.

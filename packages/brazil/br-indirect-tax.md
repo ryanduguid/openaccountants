@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Brazilian indirect tax obligati
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -53,7 +53,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | State | Standard Rate |
 | --- | --- |
 | Sao Paulo | 18% |
-| Rio de Janeiro | 20% (18% + FECP 2%) |
+| Rio de Janeiro | 22% (20% + FECP 2%; Lei nº 10.253/2023) |
 | Minas Gerais | 18% |
 | Most states | 17-20% |
 
