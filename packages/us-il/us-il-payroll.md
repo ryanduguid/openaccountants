@@ -128,7 +128,7 @@ Illinois has only two payment schedules, monthly and semi-weekly. There is no an
 
 ### 2.8 IL-W-3 annual reconciliation
 
-- **IL-W-3 reconciliation process** — The IL-W-3 (Annual Withholding Income Tax Return Reconciliation) is reconciled on the Q4 IL-941 (there is no separate IL-W-3 form for 2025 — the reconciliation is built into the fourth-quarter return and the W-2 transmittal). Employers must: 1. File the Q4 IL-941 by February 2, 2026. 2. Electronically file W-2 (and W-2c, W-2G) copies with IL via MyTax Illinois by January 31, 2026; a waiver from electronic filing is requested on Form IL-900-EW. 3. Electronically file the required 1099 types with IL via MyTax Illinois (only those with IL withholding or IL income): Form 1099-NEC by January 31, 2026, and most other 1099s by March 31, 2026, in line with the federal e-file dates. The W-2 totals must reconcile to the sum of the four IL-941s for the year. A mismatch generates a notice from IL DOR Compliance Division and triggers a desk audit.
+- **IL-W-3 reconciliation process** — The IL-W-3 (Annual Withholding Income Tax Return Reconciliation) is reconciled on the Q4 IL-941 (there is no separate IL-W-3 form for 2025 — the reconciliation is built into the fourth-quarter return and the W-2 transmittal). Employers must: 1. File the Q4 IL-941 by February 2, 2026. 2. Electronically file W-2 (and W-2c) copies with IL, through MyTax Illinois or the W-2 Electronic Transmission Program. Original W-2s are due by January 31 of the following year, or the next business day when that date falls on a weekend or federally observed holiday, so 2025 W-2s must be accepted by IDOR by February 2, 2026; a federal extension to file W-2s applies automatically for Illinois; a waiver from electronic filing (no internet access, or hardship) is requested on Form IL-900-EW, and filing on paper without one carries a $5 penalty per form. W-2Gs are due by March 31, 2026. 3. File Forms 1099-K issued to payees with an Illinois address, where the IRS requires the payer to e-file 1099-Ks or the payee had four or more transactions totalling more than $1,000, through the Illinois FIRE Electronic Transmission Program by March 31, 2026 (MyTax Illinois does not take 1099-K). No other Form 1099 (1099-NEC and 1099-MISC included) has to be filed with Illinois unless IDOR requests it; a payer may file 1099s that report Illinois withholding voluntarily. The withholding on the W-2s (and any W-2Gs and 1099s) must reconcile to Line 2 of the four IL-941s for the year. A mismatch generates a notice from IL DOR Compliance Division and triggers a desk audit.  _(IDOR Publication 110 (R-01/26); 2025 IL-941 instr.)_
 
 ## 3. Illinois Unemployment Insurance (IL UI)
 
@@ -347,7 +347,7 @@ Under 820 ILCS 80/85, the Department of Revenue assesses penalties for non-compl
 9. **One Day Rest in Seven Act**: Applies to all 25 Calumet City employees, including the 15 Indiana residents who work in IL.
 
 10. **Net IL payroll tax burden for 2025** (Calumet City facility only, illustrative):
-    - IL PIT withheld on 25 employees: depends on wages, but at $50,000 average gross and the $2,850 personal exemption, withholding ≈ 4.95% × ($50,000 – $2,850) = $2,333.93 per employee × 25 = **$58,348.13 IL PIT remitted via IL-941**.
+    - IL PIT withheld on 25 employees: depends on wages, but at $50,000 average gross and the $2,850 personal exemption, withholding ≈ 4.95% × ($50,000 – $2,850) = $2,333.925, rounded to $2,333.93 per employee (the method rounds each employee's withholding to the cent, §2.2); $2,333.93 × 25 = **$58,348.25 IL PIT remitted via IL-941**.
     - IL UI: **$12,698.35** as computed above (year 1; will adjust).
     - Total IL employer-side cost: $12,698.35 UI plus Secure Choice administrative facilitation (no employer cost).
 
@@ -421,8 +421,9 @@ Under 820 ILCS 80/85, the Department of Revenue assesses penalties for non-compl
 | ABC test | All 3 prongs required | 820 ILCS 405/212 |
 | Construction misclassification penalty | $1,500/day/worker first; $2,500 subsequent | 820 ILCS 185/40 |
 | IL-941 due date | Last day of the month following the quarter (April 30, July 31, October 31, January 31) | 2025 IL-941 instr.; 86 Ill. Adm. Code 100.7300 |
-| W-2 e-file with IL | January 31 (waiver via Form IL-900-EW) | 2025 IL-941 instr.; IDOR Pub-110 |
-| 1099 e-file with IL | March 31 for most types; January 31 for Form 1099-NEC | IDOR Pub-110 |
+| W-2 e-file with IL | January 31 of the following year, next business day if a weekend or holiday (2025 W-2s: February 2, 2026); waiver via Form IL-900-EW | IDOR Pub-110 (R-01/26); 2025 IL-941 instr. |
+| W-2G and 1099-K e-file with IL | March 31, 2026, via the FIRE program; only 1099-Ks to Illinois payees under the IRS e-file mandate or with 4+ transactions over $1,000 are required | IDOR Pub-110 (R-01/26) |
+| Other 1099s (1099-NEC, 1099-MISC, ...) | Not required unless IDOR requests them; voluntary filing of 1099s reporting IL withholding | IDOR Pub-110 (R-01/26) |
 | Pay frequency | Semi-monthly minimum | 820 ILCS 115/3 |
 
 ## 11. Provenance and Citations
