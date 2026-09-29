@@ -217,7 +217,7 @@ class BracketTablesGateTests(GateCheckerMixin, unittest.TestCase):
         self.assert_gate_lifecycle(
             {path: guide("zz-income-tax", self.CUMULATIVE.format(fixed="3,500"))},
             {path: guide("zz-income-tax", self.CUMULATIVE.format(fixed="3,000"))},
-            path, "cumulative: | over 20,000 | 3,500 + 30% of excess over 20,000 |",
+            path, "cumulative: | 10,001 - 20,000 | 1,000 + 20% of excess over 10,000 | / | over 20,000 | 3,500 + 30% of excess over 20,000 |",
         )
 
     def test_cumulative_detail_and_a_band_written_another_way(self) -> None:
@@ -242,6 +242,22 @@ class BracketTablesGateTests(GateCheckerMixin, unittest.TestCase):
         )})
         code, document = self.run_json()
         self.assertEqual([f["path"] for f in document["findings"]], ["skills/international/zz/zz-income-tax.md"])
+
+
+    def test_a_changed_preceding_band_is_a_new_finding(self) -> None:
+        # The fingerprint carries both rows: a baseline that accepted one
+        # mismatch does not accept the different mismatch that appears when
+        # the band above changes while the failing row stays as it was.
+        path = "skills/international/zz/zz-income-tax.md"
+        self.write({path: guide("zz-income-tax", self.CUMULATIVE.format(fixed="3,500"))})
+        self.assertEqual(self.run_checker("--update-baseline").returncode, 0)
+        self.assertEqual(self.run_checker().returncode, 0)
+        self.write({path: guide("zz-income-tax", self.CUMULATIVE.format(fixed="3,500").replace("1,000 + 20%", "1,000 + 15%"))})
+        code, document = self.run_json()
+        self.assertEqual(code, 1, document)
+        self.assertEqual(document["counts"]["new"], 1, document)
+        self.assertEqual(len(document["stale_baseline"]), 1)
+        self.assertEqual(document["findings"][0]["detail"]["expected"], 2500.0)
 
 
 class ExpiredRulesGateTests(GateCheckerMixin, unittest.TestCase):

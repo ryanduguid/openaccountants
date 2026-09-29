@@ -97,7 +97,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 **Notes:**
 - **Intra-EU royalties** are generally 0% under the EU Interest and Royalties Directive (2003/49/EC) for associated companies. This does NOT automatically apply to unrelated freelancers -- the directive requires a 25% shareholding relationship.
 - **US domestic WHT on royalties** is 30% (IRC §§ 871(a) and 881(a)), reduced by treaty on Form W-8BEN. The US has no income tax treaty with Singapore or Brazil, so the 30% stands for those payees; the US–Malta DTA (2008) Art. 12 gives 10%; the US–Spain DTA as amended by the 2013 Protocol (in force 27 November 2019) gives 0%.
-- **UK–Singapore and UK–Malta.** The UK withholds 20% on royalties (ITA 2007 s 906) and on yearly interest (s 874); the UK–Singapore DTA (1997) as amended by the 2012 Protocol reduces royalties to 8% (Art. 12) and interest to 5% (Art. 11), and the UK–Malta DTA (1994) reduces both to 10% (Arts. 11 and 12). Malta itself exempts royalties and interest paid to non-residents (Income Tax Act art. 12(1)(c)), and Singapore's domestic 10% on royalties (ITA 1947 s 45A) falls to 8% for a UK payee. The Australia–Singapore DTA (1969, as amended) Art. 10 leaves royalties at 10% in both directions.
+- **UK–Singapore and UK–Malta.** The UK withholds 20% on royalties (ITA 2007 s 906) and on yearly interest (s 874); the UK–Singapore DTA (1997) as amended by the 2012 Protocol reduces royalties to 8% (Art. 12) and interest to 5% (Art. 11), and the UK–Malta DTA (1994) caps both at 10% (Arts. 11(2) and 12(2)) only where the Maltese beneficial owner is subject to tax on the receipt in Malta; where it is not, the treaty cap is unavailable and the UK's 20% domestic rate applies unless another exemption does, so the Malta payee's UK cells are the treaty maximum, not an unconditional rate. Malta itself exempts royalties and interest paid to non-residents (Income Tax Act art. 12(1)(c)), and Singapore's domestic 10% on royalties (ITA 1947 s 45A) falls to 8% for a UK payee. The Australia–Singapore DTA (1969, as amended) Art. 10 leaves royalties at 10% in both directions.
 - **India** taxes royalties and fees for technical services paid to non-residents at 20% under s 115A(1)(b) (Finance Act 2023; 10% before 1 April 2023), plus surcharge and the 4% cess, and s 206AA applies 20% where the payee has no PAN. Treaties cap it at 10% (Germany, France, Malta, Singapore, South Africa) or 15% (UK Art. 13(2)(a); US Art. 12(2)(a); 10% for equipment royalties under both) on a TRC and Form 10F.
 - **Software licences:** Many countries dispute whether a software licence fee is a "royalty" (subject to WHT) or "business profits" (no WHT without PE). OECD position: payment for a software copy for personal use = business profits (no WHT). Payment for the right to reproduce/distribute = royalty (WHT may apply). [T2]
 
@@ -122,7 +122,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **DE, FR, NL, CH and MT** withhold nothing on ordinary loan interest paid to a non-resident (Germany only on profit-linked or convertible instruments, France only to non-cooperative states, the Netherlands only under the 2021 conditional withholding tax on payments to low-tax jurisdictions, Switzerland only on bank deposits and bonds, Malta not at all under Income Tax Act art. 12(1)(c)), so a treaty rate above zero in those columns never bites.
 - **India** withholds under s 195 at the rates in force (20% plus surcharge and cess under s 115A(1)(a) for foreign-currency loans; more for rupee loans); the treaties cap it at 15% (UK Art. 12, US Art. 11, Singapore Art. 11, Australia Art. 11; 10% for bank lenders) or 10% (Germany, France, Netherlands, Malta, Japan, Switzerland). Singapore's domestic 15% (ITA 1947 s 45) falls to 5% for a UK lender under Art. 11 of the UK–Singapore DTA.
 - **Intra-EU interest** is generally 0% under the EU Interest and Royalties Directive for associated companies (same 25% shareholding requirement as royalties).
-- **UK** abolished domestic WHT on interest for most payments. Treaty rarely needed.
+- **UK** withholds 20% on yearly interest paid to a non-resident (ITA 2007 s 874) unless an exemption (quoted Eurobonds, interest paid by banks and others) or a treaty applies; the UK–Malta cap of 10% (Art. 11(2)) applies only where the Maltese beneficial owner is subject to tax on the interest in Malta.
 - **AE and SA** have 0% income tax, so no WHT on interest.
 
 ## Step 5: How to Claim Treaty Benefits [T1]
@@ -165,7 +165,7 @@ The following country pairs have 0% WHT on professional/technical services under
 | DE ↔ NL | 0% | 0% | 0% |
 | SG ↔ UK | 0% | 8% | 5% |
 | SG ↔ NL | 0% | 0% | 0% |
-| MT ↔ UK | 0% | 0% from Malta, 10% from the UK | 0% from Malta, 10% from the UK |
+| MT ↔ UK | 0% | 0% from Malta; from the UK a 10% treaty cap, conditional on Maltese tax on the receipt (Art. 12(2)) | 0% from Malta; from the UK a 10% treaty cap, same condition (Art. 11(2)) |
 | MT ↔ DE | 0% | 0% | 0% |
 | CH ↔ UK | 0% | 0% | 0% |
 | AE ↔ (any) | 0% (no income tax) | 0% | 0% |

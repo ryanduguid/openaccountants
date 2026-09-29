@@ -58,9 +58,9 @@ Gate: exits 1 on any repeated pair or cumulative mismatch not listed in
 scripts/baselines/bracket-tables.txt and on any baseline entry that no longer
 reproduces. --json, --baseline PATH, --no-baseline and --update-baseline are
 described in scripts/oa_tools/findings.py. The fingerprint is the file plus
-the two rows (or, for a cumulative mismatch, the file plus the failing row),
-so the legitimate repeats above stay accepted until one of their rows
-changes.
+the two rows (a same-rate pair, or a cumulative row with the band above it
+that it is checked against), so a legitimate finding stays accepted until
+either of its rows changes.
 """
 import os, re, sys, glob
 
@@ -218,7 +218,7 @@ def main(argv=None):
                     _, prev, row, stated, expected = hit
                     mismatches += 1
                     report.add(findings.Finding(
-                        path, 'cumulative: %s' % row,
+                        path, 'cumulative: %s / %s' % (prev, row),
                         'fixed amount %s, but the previous band gives %s' % (
                             ('%.2f' % stated).rstrip('0').rstrip('.'),
                             ('%.2f' % expected).rstrip('0').rstrip('.')),
