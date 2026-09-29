@@ -4,7 +4,7 @@ description: Use this skill when preparing, reviewing, or advising on annual fin
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -20,30 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Financial Statements
-
-- **Micro — turnover** — ≤ £1,000,000  _(CA 2006 s.384A)_
-- **Micro — balance sheet** — ≤ £500,000  _(CA 2006)_
-- **Micro — employees** — ≤ 10  _(CA 2006)_
-- **Small — turnover** — ≤ £15,000,000  _(CA 2006 s.382)_
-- **Small — balance sheet** — ≤ £7,500,000  _(CA 2006)_
-- **Small — employees** — ≤ 50  _(CA 2006)_
-- **Medium — turnover** — ≤ £54,000,000  _(CA 2006 s.465)_
-- **Medium — balance sheet** — ≤ £27,000,000  _(CA 2006)_
-- **Medium — employees** — ≤ 250  _(CA 2006)_
-- **Test** — 2 out of 3 criteria in current + preceding year  _(CA 2006)_
-- **Private company deadline** — 9 months after year-end  _(CA 2006 s.442)_
-- **Public company deadline** — 6 months after year-end  _(CA 2006)_
-- **Late filing penalty (private)** — £150 to £1,500  _(CA 2006 s.453)_
-- **Micro/small company** — Exempt from audit  _(CA 2006 s.477)_
-- **Medium/large company** — Required  _(CA 2006)_
-- **10% shareholder request** — Overrides small company exemption  _(CA 2006 s.476)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

@@ -10,8 +10,8 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 
 | Reviewer (as recorded in the guides) | Jurisdictions | Guides | Edited since review | Latest guide update | Public record |
 |---|---|---|---|---|---|
-| James Power | GB | 15 | 2 | 2026-09-28 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
-| A licensed accountant (name withheld at their request) | US (10), US-IL (4) | 14 | — | 2026-09-28 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
+| James Power | GB | 15 | 2 | 2026-09-29 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
+| A licensed accountant (name withheld at their request) | US (10), US-IL (4) | 14 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
 | Miguel Lantigua | DO | 14 | — | 2026-09-26 | — |
 | Mayur Deokar | IN | 13 | — | 2026-09-28 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
 | Edgar Lautsyus | CA | 11 | — | 2026-09-28 | — |

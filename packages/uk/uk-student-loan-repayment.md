@@ -5,7 +5,7 @@ version: 2.1
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2025-26 primary; 2024-25 and 2026-27 thresholds also tabulated (2026-27 column filled from GOV.UK, outside the recorded accountant review)"
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -19,22 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## UK Student Loan Repayment -- Self-Employed Skill v2.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Student Loan Repayment
-
-- **Plan 1 (pre-2012)** — £26,065 / 9%  _(SL Regs 2009)_
-- **Plan 2 (post-2012)** — £28,470 / 9%  _(SL Regs 2009)_
-- **Plan 4 (Scotland)** — £32,745 / 9%  _(SL Regs 2009)_
-- **Plan 5 (post-2023)** — £25,000 / 9%  _(SL Regs 2009)_
-- **Postgraduate Loan** — £21,000 / 6%  _(SL Regs)_
-- **Tax-deductible?** — NO — not a business expense  _(ITA 2007)_
-- **CGT included?** — NO — capital gains excluded  _(SL Regs)_
-- **Unearned income included?** — Only if total unearned > £2,000  _(SL Regs)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 
