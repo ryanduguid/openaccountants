@@ -4,7 +4,7 @@ description: Use this skill whenever asked about South Africa transfer pricing r
 version: 1.0
 jurisdiction: ZA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Werner Britz
 review_status: pending_review
 depends_on:
@@ -17,6 +17,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 # South Africa Transfer Pricing
 
 ## South Africa Transfer Pricing Skill v1.0
+
+> **Source-cited draft (tier 2), not accountant-reviewed.** The frontmatter names **Werner Britz** from the review of 2026-06-12, but that review recorded no verified facts for this guide (its "Verified rates & thresholds" list was empty and was removed on 2026-09-29) and is not a sign-off on the text: a reviewer's name on a tier 2 guide does not make it reviewed, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Every figure below carries its own citation and should be confirmed against it.
 
 ## Section 1 -- Quick Reference
 
@@ -219,12 +221,6 @@ South Africa does not have formal safe harbour rules for transfer pricing.
 | Secondary adjustment (s.31(3)) | Deemed loan with interest implications |
 | Exchange control | Cross-border pricing has exchange control implications (SARB) |
 | CbCR | SARS uses CbCR for risk assessment and audit selection |
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Werner Britz** on 2026-06-12.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
 ## Disclaimer
 

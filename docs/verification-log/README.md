@@ -120,3 +120,4 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 | 2026-09-12 | [12 September 2026: Andorra form 900 and correction of the earlier IGI correction](2026-09-12-12-september-2026-andorra-form-900-and-correction-of-the.md) |
 | 2026-09-12 | [12 September 2026: Pakistan, UK and Ireland repeal and transition checks](2026-09-12-12-september-2026-pakistan-uk-and-ireland-repeal-and.md) |
 | 2026-09-12 | [Kuwait Zakat consistency correction, 13 September 2026](2026-09-12-kuwait-zakat-consistency-correction-13-september-2026.md) |
+| 2026-09-29 | [South Africa: the reviewed 2026/27 table did not match SARS](2026-09-29-south-africa-the-reviewed-2026-27-table-did-not-match-sars.md) |

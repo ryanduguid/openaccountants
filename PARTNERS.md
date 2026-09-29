@@ -4,7 +4,7 @@
 
 Every row is derived from the guides' frontmatter with one rule: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name in `reviewed_by` (or the legacy `verified_by`), and a reviewer is on this roster when at least one guide names them that way. A name on a `tier: 2` guide is attribution, not review, and does not count. The rule is `reviewer_of` in `scripts/oa_tools/roster.py`; `index.json`, the README headline and the coverage gate use the same one, so these figures agree with them by construction.
 
-**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 243 jurisdictions · 3 reviewed guides edited since their review.**
+**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 243 jurisdictions · 5 reviewed guides edited since their review.**
 
 ## Reviewers
 
@@ -28,7 +28,7 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | Rob Hoffman | US-FL | 5 | — | 2026-09-28 | — |
 | Ibrar Ali | PK | 4 | 1 | 2026-09-28 | — |
 | Maria Clemencia Valverde Rios | PE | 4 | — | 2026-09-29 | — |
-| Werner Britz | ZA | 4 | — | 2026-09-28 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
+| Werner Britz | ZA | 4 | 2 | 2026-09-29 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
 | Maria Valeria Benvenuti | AR | 3 | — | 2026-09-28 | — |
 | Yeong Min Lee | KR | 3 | — | 2026-09-28 | — |
 | Omolola Fasasi | NG | 2 | — | 2026-09-28 | — |
