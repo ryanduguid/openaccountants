@@ -204,6 +204,61 @@ class BracketTablesGateTests(GateCheckerMixin, unittest.TestCase):
         self.assertIn("under: Taxable income", text)
         self.assertIn("adjacent same-rate band pairs: 1", text)
 
+    CUMULATIVE = (
+        "| Taxable income | Tax |\n"
+        "|---|---|\n"
+        "| 0 - 10,000 | 10% |\n"
+        "| 10,001 - 20,000 | 1,000 + 20% of excess over 10,000 |\n"
+        "| over 20,000 | {fixed} + 30% of excess over 20,000 |\n"
+    )
+
+    def test_lifecycle_of_a_cumulative_amount(self) -> None:
+        path = "skills/international/zz/zz-income-tax.md"
+        self.assert_gate_lifecycle(
+            {path: guide("zz-income-tax", self.CUMULATIVE.format(fixed="3,500"))},
+            {path: guide("zz-income-tax", self.CUMULATIVE.format(fixed="3,000"))},
+            path, "cumulative: | 10,001 - 20,000 | 1,000 + 20% of excess over 10,000 | / | over 20,000 | 3,500 + 30% of excess over 20,000 |",
+        )
+
+    def test_cumulative_detail_and_a_band_written_another_way(self) -> None:
+        self.write({"skills/international/zz/zz-income-tax.md": guide("zz-income-tax", self.CUMULATIVE.format(fixed="3,500"))})
+        code, document = self.run_json()
+        self.assertEqual(code, 1)
+        detail = document["findings"][0]["detail"]
+        self.assertEqual((detail["stated"], detail["expected"]), (3500.0, 3000.0))
+        self.assertEqual(detail["rows"][1], "| over 20,000 | 3,500 + 30% of excess over 20,000 |")
+        text = self.run_checker().stdout
+        self.assertIn("stated 3500, expected 3000 from the previous band", text)
+        self.assertIn("cumulative amount mismatches: 1", text)
+        # A band written as a flat percentage between two cumulative rows is not bridged.
+        self.write({"skills/international/zz/zz-stamp-duty.md": guide(
+            "zz-stamp-duty",
+            "| Dutiable value | Duty |\n"
+            "|---|---|\n"
+            "| 0 - 25,000 | 1.4% of the value |\n"
+            "| 25,001 - 130,000 | 350 + 2.4% over 25,000 |\n"
+            "| 130,001 - 960,000 | 5.5% of the whole value |\n"
+            "| over 960,000 | 52,800 + 6.5% over 960,000 |\n",
+        )})
+        code, document = self.run_json()
+        self.assertEqual([f["path"] for f in document["findings"]], ["skills/international/zz/zz-income-tax.md"])
+
+
+    def test_a_changed_preceding_band_is_a_new_finding(self) -> None:
+        # The fingerprint carries both rows: a baseline that accepted one
+        # mismatch does not accept the different mismatch that appears when
+        # the band above changes while the failing row stays as it was.
+        path = "skills/international/zz/zz-income-tax.md"
+        self.write({path: guide("zz-income-tax", self.CUMULATIVE.format(fixed="3,500"))})
+        self.assertEqual(self.run_checker("--update-baseline").returncode, 0)
+        self.assertEqual(self.run_checker().returncode, 0)
+        self.write({path: guide("zz-income-tax", self.CUMULATIVE.format(fixed="3,500").replace("1,000 + 20%", "1,000 + 15%"))})
+        code, document = self.run_json()
+        self.assertEqual(code, 1, document)
+        self.assertEqual(document["counts"]["new"], 1, document)
+        self.assertEqual(len(document["stale_baseline"]), 1)
+        self.assertEqual(document["findings"][0]["detail"]["expected"], 2500.0)
+
 
 class ExpiredRulesGateTests(GateCheckerMixin, unittest.TestCase):
     script = "check-expired-rules.py"

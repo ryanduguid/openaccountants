@@ -3,7 +3,7 @@ name: withholding-tax-matrix
 description: Use this skill whenever a freelancer or small business receives or makes a cross-border payment and the question is whether withholding tax (WHT) applies. Trigger on phrases like "withholding tax", "WHT", "tax withheld", "double tax treaty", "treaty rate", "certificate of residence", "tax residency certificate", "form W-8BEN", "royalty withholding", "interest withholding", "TDS on services", or any request involving tax deducted at source on cross-border payments for services, royalties, or interest. This skill contains the withholding tax matrix for the top 30 country pairs, treaty rate lookups, certificate of residence requirements, and zero-WHT corridors. ALWAYS read this skill before advising on any cross-border withholding tax question.
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **How to read:** If your client is in [Source Country] and you (the freelancer) are in [Residence Country], the WHT rate on professional services is shown at the intersection.
 
-**Important:** Many developed countries do NOT withhold on service fees (indicated by "0/None" below). Countries that DO impose domestic WHT on services include India (10%), Brazil (15-25%), South Africa (15% for management fees), and Korea (22% for certain services).
+**Important:** Many developed countries do NOT withhold on service fees (indicated by "0/None" below). Countries that DO impose domestic WHT on services include India (20% on fees for technical services under s 115A, before treaty relief), Brazil (15-25%), South Africa (15% for management fees), and Korea (22% for certain services).
 
 **WHT Matrix -- Professional/Technical Services**
 
@@ -58,19 +58,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Payee ↓** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | US | -- | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 15 | 0 | 0 | 0 | 0 | 0 | 0 |
-| UK | 0 | -- | 0 | 0 | 0 | 0 | 0 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 0 |
+| UK | 0 | -- | 0 | 0 | 0 | 0 | 0 | 0 | 15 | 0 | 0 | 0 | 0 | 0 | 0 |
 | DE | 0 | 0 | -- | 0 | 0 | 0 | 0 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 0 |
 | FR | 0 | 0 | 0 | -- | 0 | 0 | 0 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 0 |
 | MT | 0 | 0 | 0 | 0 | 0 | 0 | 0 | -- | 10 | 0 | 0 | 0 | 0 | 0 | 0 |
 | AU | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10 | 0 | -- | 0 | 0 | 0 | 0 |
-| IN | 15 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | -- | 10 | 10 | 15 | 10 | 0 | 10 |
-| BR | 15 | 15 | 15 | 15 | 15 | 15 | 15 | 15 | 15 | 15 | 15 | 15 | 15 | 0 | 15 |
+| IN | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | -- | 0 | 0 | 0 | 0 | 0 | 0 |
+| BR | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 15 | 0 | 0 | 0 | 0 | 0 | 0 |
 | SG | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10 | -- | 0 | 0 | 0 | 0 | 0 |
 | ZA | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 **Notes:**
 - **US, UK, DE, FR, NL, CH, SG, AU, CA, JP, AE** generally do NOT impose WHT on service fees under their domestic law. Treaty irrelevant for this payment type.
-- **India** imposes 10% WHT on technical/professional services (Section 195 / 206C of the Income Tax Act) -- treaty may reduce this.
+- The zeros in those columns assume the work is performed outside the source country. Several of them withhold on services performed on their territory by a non-resident (Canada 15% under Regulation 105, Japan 20.42%, Spain 24% under the IRNR, Italy 30% under art. 25 DPR 600/1973, the US 30% on US-source personal-services income unless a treaty exemption is claimed on Form 8233), and the treaty's independent-personal-services or business-profits article then decides. A payee row is never the source: an Indian or Brazilian freelancer paid by a client in one of those countries suffers no withholding there.
+- **India** taxes fees for technical services paid to non-residents at 20% under s 115A(1)(b) of the Income-tax Act 1961 (Finance Act 2023; 10% before 1 April 2023), plus surcharge and the 4% cess, withheld under s 195. A treaty rate applies on a Tax Residency Certificate and Form 10F: 10% under the German, French, Maltese, Singaporean and South African treaties; 15% under the UK and US treaties (India–UK DTA Art. 13(2)(a); India–US DTA Art. 12(2)(a)), whose 10% is only for services ancillary to equipment rental.
 - **Brazil** imposes 15% (general) or 25% (tax haven list) WHT on service fees (IRRF). Treaties may not eliminate this entirely.
 - **AE (UAE) and SA (Saudi Arabia)** have 0% income tax (UAE) or 0% on non-resident services (Saudi, if no PE). Treaty is irrelevant for UAE.
 - **Korea** imposes 22% WHT on certain personal services but many treaties reduce to 0% for independent personal services without a fixed base.
@@ -82,21 +83,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Source → | US | UK | DE | FR | IT | ES | NL | MT | IN | SG | AU | CA | JP | AE | CH |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Payee ↓** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| US | -- | 0 | 0 | 0 | 5 | 5 | 0 | 0 | 10 | 0 | 5 | 0 | 0 | 0 | 0 |
-| UK | 0 | -- | 0 | 0 | 5 | 0 | 0 | 0 | 10 | 0 | 5 | 0 | 0 | 0 | 0 |
+| US | -- | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 15 | 0 | 5 | 0 | 0 | 0 | 0 |
+| UK | 0 | -- | 0 | 0 | 5 | 0 | 0 | 0 | 15 | 8 | 5 | 0 | 0 | 0 | 0 |
 | DE | 0 | 0 | -- | 0 | 5 | 0 | 0 | 0 | 10 | 0 | 5 | 0 | 0 | 0 | 0 |
 | FR | 0 | 0 | 0 | -- | 5 | 0 | 0 | 0 | 10 | 0 | 5 | 0 | 0 | 0 | 0 |
-| MT | 0 | 0 | 0 | 0 | 0 | 5 | 0 | -- | 10 | 0 | 10 | 0 | 10 | 0 | 0 |
+| MT | 10 | 10 | 0 | 0 | 0 | 5 | 0 | -- | 10 | 0 | 10 | 0 | 10 | 0 | 0 |
 | IN | 15 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | -- | 10 | 10 | 10 | 10 | 10 | 10 |
-| SG | 0 | 0 | 0 | 0 | 5 | 5 | 0 | 0 | 10 | -- | 5 | 0 | 0 | 0 | 0 |
-| AU | 5 | 5 | 5 | 5 | 10 | 5 | 5 | 10 | 10 | 5 | -- | 10 | 5 | 0 | 5 |
-| BR | 15 | 15 | 15 | 15 | 15 | 10 | 15 | 15 | 15 | 15 | 15 | 15 | 12.5 | 15 | 10 |
+| SG | 30 | 8 | 0 | 0 | 5 | 5 | 0 | 0 | 10 | -- | 10 | 0 | 0 | 0 | 0 |
+| AU | 5 | 5 | 5 | 5 | 10 | 5 | 5 | 10 | 10 | 10 | -- | 10 | 5 | 0 | 5 |
+| BR | 30 | 15 | 15 | 15 | 15 | 10 | 15 | 15 | 15 | 15 | 15 | 15 | 12.5 | 15 | 10 |
 | JP | 0 | 0 | 0 | 0 | 10 | 10 | 0 | 10 | 10 | 0 | 5 | 10 | -- | 0 | 0 |
 
 **Notes:**
 - **Intra-EU royalties** are generally 0% under the EU Interest and Royalties Directive (2003/49/EC) for associated companies. This does NOT automatically apply to unrelated freelancers -- the directive requires a 25% shareholding relationship.
-- **US domestic WHT on royalties** is 30% (no treaty) or reduced via treaty + Form W-8BEN.
-- **India** domestic rate on royalties is 10% (with PAN) or 20% (without PAN). Treaties typically cap at 10-15%.
+- **US domestic WHT on royalties** is 30% (IRC §§ 871(a) and 881(a)), reduced by treaty on Form W-8BEN. The US has no income tax treaty with Singapore or Brazil, so the 30% stands for those payees; the US–Malta DTA (2008) Art. 12 gives 10%; the US–Spain DTA as amended by the 2013 Protocol (in force 27 November 2019) gives 0%.
+- **UK–Singapore and UK–Malta.** The UK withholds 20% on royalties (ITA 2007 s 906) and on yearly interest (s 874); the UK–Singapore DTA (1997) as amended by the 2012 Protocol reduces royalties to 8% (Art. 12) and interest to 5% (Art. 11), and the UK–Malta DTA (1994) caps both at 10% (Arts. 11(2) and 12(2)) only where the Maltese beneficial owner is subject to tax on the receipt in Malta; where it is not, the treaty cap is unavailable and the UK's 20% domestic rate applies unless another exemption does, so the Malta payee's UK cells are the treaty maximum, not an unconditional rate. Malta itself exempts royalties and interest paid to non-residents (Income Tax Act art. 12(1)(c)), and Singapore's domestic 10% on royalties (ITA 1947 s 45A) falls to 8% for a UK payee. The Australia–Singapore DTA (1969, as amended) Art. 10 leaves royalties at 10% in both directions.
+- **India** taxes royalties and fees for technical services paid to non-residents at 20% under s 115A(1)(b) (Finance Act 2023; 10% before 1 April 2023), plus surcharge and the 4% cess, and s 206AA applies 20% where the payee has no PAN. Treaties cap it at 10% (Germany, France, Malta, Singapore, South Africa) or 15% (UK Art. 13(2)(a); US Art. 12(2)(a); 10% for equipment royalties under both) on a TRC and Form 10F.
 - **Software licences:** Many countries dispute whether a software licence fee is a "royalty" (subject to WHT) or "business profits" (no WHT without PE). OECD position: payment for a software copy for personal use = business profits (no WHT). Payment for the right to reproduce/distribute = royalty (WHT may apply). [T2]
 
 ## Step 4: WHT Matrix -- Interest [T1]
@@ -106,19 +108,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Source → | US | UK | DE | FR | NL | MT | IN | SG | AU | CA | JP | CH |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Payee ↓** |  |  |  |  |  |  |  |  |  |  |  |  |
-| US | -- | 0 | 0 | 0 | 0 | 0 | 10 | 0 | 10 | 10 | 10 | 0 |
-| UK | 0 | -- | 0 | 0 | 0 | 0 | 10 | 0 | 10 | 10 | 10 | 0 |
+| US | -- | 0 | 0 | 0 | 0 | 0 | 15 | 0 | 10 | 0 | 0 | 0 |
+| UK | 0 | -- | 0 | 0 | 0 | 0 | 15 | 5 | 10 | 10 | 10 | 0 |
 | DE | 0 | 0 | -- | 0 | 0 | 0 | 10 | 0 | 10 | 10 | 10 | 0 |
 | FR | 0 | 0 | 0 | -- | 0 | 0 | 10 | 0 | 10 | 10 | 10 | 0 |
-| MT | 0 | 0 | 0 | 0 | 0 | -- | 10 | 0 | 10 | 10 | 10 | 0 |
-| IN | 15 | 10 | 10 | 10 | 10 | 10 | -- | 10 | 15 | 15 | 10 | 10 |
-| SG | 0 | 0 | 0 | 0 | 0 | 0 | 10 | -- | 10 | 10 | 10 | 0 |
-| AU | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | -- | 10 | 10 | 10 |
+| MT | 10 | 10 | 0 | 0 | 0 | -- | 10 | 0 | 10 | 10 | 10 | 0 |
+| IN | 15 | 15 | 0 | 0 | 0 | 0 | -- | 15 | 15 | 15 | 10 | 0 |
+| SG | 30 | 5 | 0 | 0 | 0 | 0 | 15 | -- | 10 | 10 | 10 | 0 |
+| AU | 10 | 10 | 0 | 0 | 0 | 0 | 15 | 10 | -- | 10 | 10 | 0 |
 
 **Notes:**
-- **US domestic WHT on interest** is 30% (no treaty). Treaty rates range from 0% (UK, DE, FR, NL) to 15%.
+- **US domestic WHT on interest** is 30% (no treaty), before the portfolio-interest exemption of IRC §§ 871(h) and 881(c), which takes most interest on registered debt held by an unrelated non-bank lender out of withholding altogether. Treaty rates range from 0% (UK, DE, FR, NL; Canada since the Fifth Protocol, in force 15 December 2008; Japan since the 2013 Protocol, in force 30 August 2019; Spain since the 2013 Protocol, in force 27 November 2019) to 15% (India, Art. 11(2)(b) of the India–US DTA; 10% for bank loans). No treaty covers Singapore or Brazil, so the 30% stands unless the portfolio-interest exemption applies; the US–Malta DTA gives 10% (Art. 11).
+- **DE, FR, NL, CH and MT** withhold nothing on ordinary loan interest paid to a non-resident (Germany only on profit-linked or convertible instruments, France only to non-cooperative states, the Netherlands only under the 2021 conditional withholding tax on payments to low-tax jurisdictions, Switzerland only on bank deposits and bonds, Malta not at all under Income Tax Act art. 12(1)(c)), so a treaty rate above zero in those columns never bites.
+- **India** withholds under s 195 at the rates in force (20% plus surcharge and cess under s 115A(1)(a) for foreign-currency loans; more for rupee loans); the treaties cap it at 15% (UK Art. 12, US Art. 11, Singapore Art. 11, Australia Art. 11; 10% for bank lenders) or 10% (Germany, France, Netherlands, Malta, Japan, Switzerland). Singapore's domestic 15% (ITA 1947 s 45) falls to 5% for a UK lender under Art. 11 of the UK–Singapore DTA.
 - **Intra-EU interest** is generally 0% under the EU Interest and Royalties Directive for associated companies (same 25% shareholding requirement as royalties).
-- **UK** abolished domestic WHT on interest for most payments. Treaty rarely needed.
+- **UK** withholds 20% on yearly interest paid to a non-resident (ITA 2007 s 874) unless an exemption (quoted Eurobonds, interest paid by banks and others) or a treaty applies; the UK–Malta cap of 10% (Art. 11(2)) applies only where the Maltese beneficial owner is subject to tax on the interest in Malta.
 - **AE and SA** have 0% income tax, so no WHT on interest.
 
 ## Step 5: How to Claim Treaty Benefits [T1]
@@ -159,24 +163,24 @@ The following country pairs have 0% WHT on professional/technical services under
 | UK ↔ NL | 0% | 0% | 0% |
 | DE ↔ FR | 0% | 0% | 0% |
 | DE ↔ NL | 0% | 0% | 0% |
-| SG ↔ UK | 0% | 0% | 0% |
+| SG ↔ UK | 0% | 8% | 5% |
 | SG ↔ NL | 0% | 0% | 0% |
-| MT ↔ UK | 0% | 0% | 0% |
+| MT ↔ UK | 0% | 0% from Malta; from the UK a 10% treaty cap, conditional on Maltese tax on the receipt (Art. 12(2)) | 0% from Malta; from the UK a 10% treaty cap, same condition (Art. 11(2)) |
 | MT ↔ DE | 0% | 0% | 0% |
 | CH ↔ UK | 0% | 0% | 0% |
 | AE ↔ (any) | 0% (no income tax) | 0% | 0% |
 | IE ↔ UK | 0% | 0% | 0% |
 
-**The "golden corridors" for freelancers:** US-UK, US-DE, UK-DE, UK-NL, SG-UK, MT-UK. These pairs have zero WHT on all three categories.
+**The "golden corridors" for freelancers:** US-UK, US-DE, UK-DE, UK-NL. These pairs have zero WHT on all three categories. SG-UK and MT-UK are zero on services only: the UK–Singapore treaty leaves 8% on royalties and 5% on interest, and the UK–Malta treaty 10% on both when the UK is the source.
 
 ## Step 7: Practical Guidance for Freelancers [T1]
 
 ### If your client is in [country] and you are in [country]:
 
 - **Client in US, you in UK:** 0% WHT on services. No form required for services (W-8BEN for royalties/interest). You receive 100% of the invoice.
-- **Client in US, you in India:** 15% WHT on services (treaty rate). Provide W-8BEN + Indian TRC. You receive 85% of the invoice; claim credit in India.
-- **Client in India, you in UK:** 10% WHT on services (treaty rate, Section 195). Provide Form 10F + UK CoR. You receive 90%; claim credit in UK via self-assessment.
-- **Client in India, you in US:** 15% WHT on services. Provide Form 10F + US CoR. You receive 85%; claim foreign tax credit on Form 1116.
+- **Client in US, you in India:** 0% WHT when the work is performed outside the US: the fee is foreign-source income outside Chapter 3 withholding (IRC § 861(a)(3); Treas. Reg. § 1.1441-4(a)), so give the client Form W-8BEN to document foreign status and invoice 100%. Work performed in the US is US-source: 30% withholding unless Form 8233 claims Art. 15 of the India–US DTA (independent personal services: no fixed base and under 90 days in the US).
+- **Client in India, you in UK:** 15% WHT on fees for technical services (India–UK DTA Art. 13(2)(a); the domestic rate is 20% plus surcharge and cess under s 115A, withheld under s 195). Provide Form 10F + UK CoR. You receive 85%; claim credit in UK via self-assessment.
+- **Client in India, you in US:** 15% WHT on fees for included services (India–US DTA Art. 12(2)(a)). Provide Form 10F + US CoR. You receive 85%; claim foreign tax credit on Form 1116.
 - **Client in Germany, you in Malta:** 0% WHT on services (Germany does not impose WHT on service fees). You receive 100%.
 - **Client in Brazil, you in any country:** 15% IRRF on service fees (25% if payee is in a "tax haven"). Limited treaty network. You receive 85%; claim credit in home country.
 - **Client in UAE, you in any country:** 0% (UAE has no income tax). You receive 100%.
