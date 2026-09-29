@@ -4,7 +4,7 @@ description: "Japan non-permanent resident regime: foreign income taxed only if 
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 review_status: pending_review
 category: international
 tier: 2
@@ -71,6 +71,8 @@ This is a cliff-edge change: plan carefully around the 5-year mark.
 | 9,000,001 – 18,000,000 | 33% |
 | 18,000,001 – 40,000,000 | 40% |
 | Above 40,000,000 | 45% |
+
+Source: NTA Tax Answer No. 2260 所得税の税率 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm.
 
 - **Resident Tax (municipal/prefectural)** — 10% percent (Plus 2.1% surtax; effective combined top rate ~55%)
 - **Surtax** — 2.1% percent (Effective combined top rate ~55%)

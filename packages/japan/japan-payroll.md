@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japanese payroll, income tax wi
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -67,6 +67,8 @@ These are the annual rates applied at year-end adjustment (年末調整) or fina
 | 18,000,001 -- 40,000,000 | 40% | ¥2,796,000 |
 | 40,000,001+ | 45% | ¥4,796,000 |
 
+Source: NTA Tax Answer No. 2260 所得税の税率 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm.
+
 - **Reconstruction surtax and resident tax** — Plus 2.1% reconstruction surtax on calculated tax. Plus separate resident tax (住民税) at approximately 10% (municipal + prefectural), withheld from June of the following year.
 
 ### Employment Income Deduction (給与所得控除 -- 2026)
@@ -75,12 +77,13 @@ These are the annual rates applied at year-end adjustment (年末調整) or fina
 
 | Gross Employment Income (JPY) | Deduction |
 | --- | --- |
-| Up to 1,625,000 | ¥650,000 (minimum, raised from ¥550,000 in 2026) |
-| 1,625,001 -- 1,800,000 | Income × 40% - ¥100,000 |
-| 1,800,001 -- 3,600,000 | Income × 30% + ¥80,000 |
+| Up to 2,200,000 | ¥740,000 (minimum) |
+| 2,200,001 -- 3,600,000 | Income × 30% + ¥80,000 |
 | 3,600,001 -- 6,600,000 | Income × 20% + ¥440,000 |
 | 6,600,001 -- 8,500,000 | Income × 10% + ¥1,100,000 |
 | 8,500,001+ | ¥1,950,000 (cap) |
+
+Source: NTA Tax Answer No. 1410 給与所得控除 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm. These are the amounts for 2026 and 2027 (令和8年分・令和9年分; in force from 1 December 2026 and applied to the whole of 2026 through the year-end adjustment); for incomes from ¥691,000 to under ¥2,200,000 the employment income is set by the special table on that page (from ¥741,000 to under ¥2,191,000: income minus ¥740,000). For 2025 (令和7年分) the minimum was ¥650,000 up to ¥1,900,000, then income × 30% + ¥80,000 to ¥3,600,000 and the same bands above. Until 2026-09-29 this table carried the 2020-2024 schedule (¥550,000 up to ¥1,625,000 and a 40% band to ¥1,800,000) under a 2026 heading.
 
 ### Year-End Adjustment (年末調整)
 
@@ -101,6 +104,8 @@ Japanese social insurance premiums are split approximately 50/50 between employe
 | Welfare pension (厚生年金) | 9.150% | SMR | Grade 32: ¥650,000/month |
 | Employment insurance (雇用保険) | 0.50% (from Apr 2026) | Total wages | No ceiling |
 | Child-rearing support (子ども・子育て支援金) | 0.115% (from Apr 2026) | SMR | Same as health |
+
+Sources: 協会けんぽ FY2026 prefectural rates (Tokyo 9.85%; nursing care 1.62%; child-rearing support 0.23%, from the April 2026 premium) — https://www.kyoukaikenpo.or.jp/about/business/insurance_rate/rate_prefectures/r08; 日本年金機構 厚生年金保険料額表 (18.3%) — https://www.nenkin.go.jp/service/kounen/hokenryo/ryogaku/ryogakuhyo/20200825.html; 厚生労働省 雇用保険料率 FY2026 (general business 13.5/1,000: employee 5.0, employer 8.5) — https://www.mhlw.go.jp/content/001692566.pdf.
 
 - **Prefecture variation note** — **Health insurance rates vary by prefecture and insurer.** The Tokyo rate shown (9.85% total / 4.925% employee) is illustrative. Each prefecture's Kyōkai Kenpō (協会けんぽ) publishes its own rate.
 
@@ -147,18 +152,20 @@ Japanese social insurance premiums are split approximately 50/50 between employe
 
 ### Minimum Wage
 
-- **Minimum wage system** — Japan has no single national minimum wage. Each prefecture sets its own rate annually (effective October). The national weighted average reached ¥1,121/hour in October 2025.
+- **Minimum wage system** — Japan has no single national minimum wage. Each prefecture sets its own rate annually, and each rate takes effect on its own date between early October and early December. The national weighted average was ¥1,121/hour for FY2025 and is ¥1,177/hour (¥1,176.93) for FY2026.
 
-**Minimum Wage by Prefecture (Oct 2025)**
+**Minimum Wage by Prefecture (FY2025 and FY2026)**
 
-| Prefecture | Rate (JPY/hour, Oct 2025) |
-| --- | --- |
-| Tokyo | ¥1,163 |
-| Kanagawa | ¥1,162 |
-| Osaka | ¥1,114 |
-| Aichi | ¥1,077 |
-| Fukuoka | ¥1,004 |
-| Okinawa | ¥952 |
+| Prefecture | FY2025 rate (JPY/hour) | In force from | FY2026 rate (JPY/hour) | In force from |
+| --- | --- | --- | --- | --- |
+| Tokyo | ¥1,226 | 3 Oct 2025 | ¥1,280 | 1 Oct 2026 |
+| Kanagawa | ¥1,225 | 4 Oct 2025 | ¥1,279 | 1 Oct 2026 |
+| Osaka | ¥1,177 | 16 Oct 2025 | ¥1,231 | 1 Oct 2026 |
+| Aichi | ¥1,140 | 18 Oct 2025 | ¥1,195 | 1 Oct 2026 |
+| Fukuoka | ¥1,057 | 16 Nov 2025 | ¥1,114 | 4 Oct 2026 |
+| Okinawa | ¥1,023 | 1 Dec 2025 | ¥1,086 | 2 Dec 2026 |
+
+Source: 厚生労働省 地域別最低賃金の全国一覧 (the FY2026 list, and the revision history from FY2002 to FY2026 in the workbook linked on the same page) — https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/minimumichiran/index.html. The FY2025 rate applies until the FY2026 rate takes effect in the prefecture.
 
 The government targets ¥1,500/hour by the late 2020s.
 
@@ -175,6 +182,8 @@ The government targets ¥1,500/hour by the late 2020s.
 | Statutory holiday work (法定休日) | 135% (35% premium) | Art. 37(1) |
 | Statutory holiday + late-night | 160% (35% + 25%) | Combined |
 
+Source: 労働基準法 (Labour Standards Act) art. 37 — para. 1 (overtime and statutory-holiday work, with the proviso of at least 50% for overtime beyond 60 hours in a month) and para. 4 (work from 22:00 to 05:00, at least 25%) — https://laws.e-gov.go.jp/law/322AC0000000049. The 25% overtime and 35% statutory-holiday premiums are set by Cabinet Order No. 5 of 1994 (労働基準法第三十七条第一項の時間外及び休日の割増賃金に係る率の最低限度を定める政令) — https://laws.e-gov.go.jp/law/406CO0000000005. The 60-hour rate has applied to every employer, small businesses included, since 1 April 2023. Family allowances, commuting allowances and the other pay named in the Ministry's ordinance are left out of the wage the premium is computed on (art. 37 para. 5).
+
 ### 36 Agreement (三六協定)
 
 - **36 Agreement requirement** — Overtime requires a written labour-management agreement (36 Agreement) filed with the Labour Standards Inspection Office. Limits:
@@ -183,11 +192,13 @@ The government targets ¥1,500/hour by the late 2020s.
 
 | Limit | Standard | Special Clause |
 | --- | --- | --- |
-| Monthly | 45 hours | Up to 100 hours (incl. holiday work) |
+| Monthly | 45 hours | Under 100 hours (incl. holiday work) |
 | Annual | 360 hours | Up to 720 hours |
 | Multi-month average | -- | Must not exceed 80 hrs/month over any 2--6 month window |
 
 - **36 Agreement violation penalty** — Violations can result in penalties of up to ¥300,000 fine or 6 months imprisonment.
+
+Source: 労働基準法 art. 36 paras. 4 to 6 (the 45-hour and 360-hour limits; the special clause of up to 720 hours a year, with the month above 45 hours allowed in at most 6 months a year, under 100 hours in any month including holiday work, and an average of at most 80 hours a month over any 2 to 6 consecutive months including holiday work) and art. 119 item 1 (up to 6 months' imprisonment or a fine of up to ¥300,000 for breaching para. 6 or art. 37) — https://laws.e-gov.go.jp/law/322AC0000000049.
 
 ## Section 6 -- Mandatory Benefits
 
@@ -204,6 +215,8 @@ The government targets ¥1,500/hour by the late 2020s.
 | 4.5 years | 16 days |
 | 5.5 years | 18 days |
 | 6.5+ years | 20 days (maximum) |
+
+Source: 労働基準法 art. 39 para. 1 (10 days after 6 months' service with at least 80% attendance), para. 2 (the table of additional days for each year of service), para. 3 (a proportionate number for employees working few days a week) and para. 7 (at least 5 days a year fixed by the employer where 10 or more are due), and art. 115 (2-year limitation) — https://laws.e-gov.go.jp/law/322AC0000000049.
 
 - **Attendance and usage requirements** — Requires 80% attendance in the preceding year. Employers must ensure employees take at least 5 days per year. Unused leave expires after 2 years.
 

@@ -234,6 +234,13 @@ NON_GOV_AUTHORITY = frozenset((
                           # contribution rates and ceilings
     'bund.de',            # the federal government domain (xrechnung.bund.de
                           # carries the e-invoicing standard)
+    # Japan (the same pass, Japanese tranche)
+    'kyoukaikenpo.or.jp', # Japan Health Insurance Association, the statutory
+                          # insurer that sets the prefectural health and
+                          # nursing-care rates
+    'lg.jp',              # every Japanese local government (the Tokyo tax
+                          # bureau at tax.metro.tokyo.lg.jp); the .go.jp
+                          # national bodies match the government rule
     'skatteverket.se',    # Swedish Tax Agency
     'skatteetaten.no',    # Norwegian Tax Administration
     'belastingdienst.nl', # Netherlands Tax Administration
