@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T02:57:11+00:00",
+ "generated_at": "2026-09-29T03:33:11+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -5150,7 +5150,7 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Edgar Lautsyus",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-09-29"
   },

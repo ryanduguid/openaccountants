@@ -6,7 +6,7 @@ jurisdiction: CA
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
