@@ -75,6 +75,15 @@ def selftest():
     assert classify('canada.gc.ca') == 'authority'
     assert classify('estv.admin.ch') == 'authority'
     assert classify('kra.go.ke') == 'authority'
+    assert classify('fin.gov.nt.ca') == 'authority'       # Canadian province
+    assert classify('www.finances.gouv.qc.ca') == 'authority'
+    assert classify('nts.go.kr') == 'authority'
+    assert classify('eur-lex.europa.eu') == 'authority'
+    assert classify('www.gov.scot') == 'authority'
+    # the government label counts only where the registry puts it
+    assert classify('irs.gov.example.com') == 'secondary'
+    assert classify('gov.uk.example.com') == 'secondary'
+    assert classify('www.gov.example.com') == 'secondary'
     assert classify('taxsummaries.pwc.com') == 'secondary'
     assert classify('ey.com') == 'secondary'
     assert classify('rivermate.com') == 'secondary'

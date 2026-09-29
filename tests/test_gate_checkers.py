@@ -11,6 +11,7 @@ the gate until the baseline is regenerated; a clean corpus passes.
 
 from __future__ import annotations
 
+import importlib.util
 import json
 import subprocess
 import sys
@@ -272,13 +273,43 @@ class SourcingFloorGateTests(GateCheckerMixin, unittest.TestCase):
         "\nSource: {source}\n"
     )
 
+    TABLE_KEY = ("rate table without a tax-authority or statute citation: "
+                 "| Taxable income | Rate | / | 0 - 10,000 | 10% |")
+    SECOND_TABLE = (
+        "| Contribution | Employee | Employer |\n"
+        "|---|---|---|\n"
+        "| Pension | 6% | 12% |\n"
+        "| Health | 2% | 4% |\n"
+        "| Unemployment | 1% | 1% |\n"
+    )
+
     def test_lifecycle_of_a_table_without_an_authority(self) -> None:
         path = "skills/international/zz/zz-income-tax.md"
         self.assert_gate_lifecycle(
             {path: guide("zz-income-tax", self.TABLE.format(source="https://taxsummaries.pwc.com/zz"))},
             {path: guide("zz-income-tax", self.TABLE.format(source="https://taxsummaries.pwc.com/zz and https://www.zz.gov/rates"))},
-            path, "rate table without a tax-authority or statute citation",
+            path, self.TABLE_KEY,
         )
+
+    def test_a_second_unsourced_table_is_a_new_finding(self) -> None:
+        # One finding per table, keyed on its rows: a table added to a guide
+        # already in the queue is not covered by the guide's existing entry.
+        path = "skills/international/zz/zz-income-tax.md"
+        self.write({path: guide("zz-income-tax", self.TABLE.format(source="https://taxsummaries.pwc.com/zz"))})
+        self.assertEqual(self.run_checker("--update-baseline").returncode, 0)
+        self.assertEqual(self.run_checker().returncode, 0)
+        self.write({path: guide("zz-income-tax", self.SECOND_TABLE + "\n" + self.TABLE.format(source="https://taxsummaries.pwc.com/zz"))})
+        code, document = self.run_json()
+        self.assertEqual(code, 1, document)
+        self.assertEqual(document["counts"]["new"], 1, document)
+        self.assertEqual(document["stale_baseline"], [])
+        new = [f for f in document["findings"] if f["new"]][0]
+        self.assertEqual(new["detail"]["rows"], ["| Contribution | Employee | Employer |", "| Pension | 6% | 12% |"])
+        # one authority link clears both tables: two stale entries, nothing new
+        self.assertEqual(self.run_checker("--update-baseline").returncode, 0)
+        self.write({path: guide("zz-income-tax", self.SECOND_TABLE + "\n" + self.TABLE.format(source="https://www.zz.gov/rates"))})
+        code, document = self.run_json()
+        self.assertEqual((code, document["counts"]["new"], len(document["stale_baseline"])), (1, 0, 2), document)
 
     def test_what_clears_the_floor_and_what_is_not_a_rate_table(self) -> None:
         self.write({
@@ -305,17 +336,56 @@ class SourcingFloorGateTests(GateCheckerMixin, unittest.TestCase):
             "skills/international/zz/zz-g.md": guide("zz-g", "".join(
                 "- **Fact %d** — %s  _(https://taxsummaries.pwc.com/zz)_\n" % (n, "10%" if n < 3 else "text")
                 for n in range(12))),
+            # a government label inside someone else's domain is not a government host
+            "skills/international/zz/zz-h.md": guide("zz-h", self.TABLE.format(source="https://irs.gov.example.com/rates")),
+            # percentages in the label or the prose are not rates: business advice, worked arithmetic
+            "skills/verticals/zz-i.md": guide("zz-i", (
+                "- **>50% from one platform:** vulnerable to algorithm changes — diversify\n"
+                "- **>50% from sponsorships:** vulnerable to budget cycles — build owned revenue\n"
+                "- **>50% from one client:** possible worker-classification issues — diversify\n"
+                "- Employer contribution 1.5% × 300,000 = 4,500\n"
+                "- Employee contribution 1.0% × 300,000 = 3,000\n"
+                "- Net pay = 300,000 − 3,000 − 30,000 = 267,000\n")),
         })
         code, document = self.run_json()
         self.assertEqual(code, 1, document)
         self.assertEqual([f["path"] for f in document["findings"]],
-                         ["skills/international/zz/zz-d.md", "skills/international/zz/zz-f.md"])
-        self.assertEqual(document["findings"][0]["detail"], {"tables": 1, "hosts": []})
-        self.assertEqual(document["findings"][1]["detail"], {"tables": 1, "hosts": ["taxsummaries.pwc.com"]})
+                         ["skills/international/zz/zz-d.md", "skills/international/zz/zz-f.md",
+                          "skills/international/zz/zz-h.md"])
+        self.assertEqual(document["findings"][0]["detail"],
+                         {"kind": "table", "rows": ["| Taxable income | Rate |", "| 0 - 10,000 | 10% |"], "hosts": []})
+        self.assertEqual(document["findings"][1]["detail"], {
+            "kind": "list",
+            "rows": ["- **Income up to 12,000** — 0%  _(https://taxsummaries.pwc.com/zz)_",
+                     "- **Income 12,001–30,000** — 10%  _(https://taxsummaries.pwc.com/zz)_"],
+            "hosts": ["taxsummaries.pwc.com"]})
+        self.assertEqual(document["findings"][2]["detail"]["hosts"], ["irs.gov.example.com"])
         text = self.run_checker().stdout
-        self.assertIn("1 rate table(s) or list(s); cites 0 host(s), none a tax authority or statute", text)
-        self.assertIn("cites 1 host(s), none a tax authority or statute: taxsummaries.pwc.com", text)
-        self.assertIn("guides scanned: 6; with a rate table or list: 4; without an authority or statute citation: 2", text)
+        self.assertIn("rate table without a tax-authority or statute citation (| Taxable income | Rate |); "
+                      "the guide cites 0 host(s), none a tax authority or statute", text)
+        self.assertIn("the guide cites 1 host(s), none a tax authority or statute: taxsummaries.pwc.com", text)
+        self.assertIn("guides scanned: 8; with a rate table or list: 5; "
+                      "without an authority or statute citation: 3 (3 table(s) or list(s))", text)
+
+    def test_which_bullets_are_rate_lines(self) -> None:
+        spec = importlib.util.spec_from_file_location("check_sourcing_floor", SCRIPTS / "check-sourcing-floor.py")
+        module = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(module)
+        rate_line = module.rate_line
+        for line in ("- **Standard rate** — 20%  _(Act s 5)_",
+                     "- **Reduced rate** — 5% (food, books)",
+                     "- 10% on the first 1,000",
+                     "- Dividends: 0% if the beneficial owner holds at least 10% of the capital; 5% otherwise",
+                     "* Income TOP 12,001-30,000 -- 10%",
+                     "- **Standard rate** — 10%  _(Income Tax Act 1970 (https://www.gov.im/x))_"):
+            self.assertTrue(rate_line(line), line)
+        for line in ("- **>50% from one platform:** vulnerable to algorithm changes — diversify",
+                     "- Employer contribution 1.5% × 300,000 = 4,500",
+                     "- The standard rate of 20% applies to most supplies of goods and services",
+                     "- **Filing deadline** — 31 March",
+                     "- [ ] Flat rate of 4.95% applied (not a graduated rate)"):
+            self.assertFalse(rate_line(line), line)
 
 
 class ExpiredRulesGateTests(GateCheckerMixin, unittest.TestCase):

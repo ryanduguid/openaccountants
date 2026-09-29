@@ -52,11 +52,18 @@ HOSTNAME = re.compile(
 
 # Government domains across the naming conventions this corpus actually cites:
 # irs.gov, gov.uk, gouv.fr, gob.mx, govt.nz, gc.ca, admin.ch, gv.at, europa.eu,
-# and the go.<cc> form used across east Africa and Japan.
+# the go.<cc> form used across east Africa and Japan, and Canada's provincial
+# gov.<province>.ca. The government label must sit where the registry puts it:
+# as the top-level domain (.gov) or directly under a country code (gov.uk,
+# gob.mx) or under a Canadian province; a label elsewhere in the name
+# (irs.gov.example.com, gov.uk.example.com) is whatever registered the domain
+# after it, and until 2026-09-29 the pattern matched it anywhere.
 GOV = re.compile(
-    r'(?:^|\.)(?:gov|gouv|gob|govt|gub|gv|government|etat|public)(?:\.|$)'
-    r'|(?:^|\.)(?:gc\.ca|admin\.ch|europa\.eu|gouv\.qc\.ca)$'
-    r'|(?:^|\.)go\.[a-z]{2}$', re.I)
+    r'(?:^|\.)gov$'
+    r'|(?:^|\.)(?:gov|gouv|gob|govt|gub|gv|go|government|etat|public)\.[a-z]{2}$'
+    r'|(?:^|\.)gov\.(?:wales|scot)$'
+    r'|(?:^|\.)(?:gc\.ca|admin\.ch|europa\.eu)$'
+    r'|(?:^|\.)(?:gov|gouv)\.(?:ab|bc|mb|nb|nl|ns|nt|nu|on|pe|qc|sk|yk)\.ca$', re.I)
 
 # Authorities that do not sit on a government domain. Kept short and specific:
 # each was added because a real authority publication was being counted as
