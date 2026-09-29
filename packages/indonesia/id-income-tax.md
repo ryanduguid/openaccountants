@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Indonesian individual income ta
 version: "0.1"
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: RILIA PUTRI
 review_status: current
 category: international
@@ -16,57 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Indonesia Individual Income Tax — PPh Orang Pribadi Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Income Tax (PPh OP)
-
-- **0 – IDR 60,000,000** — 5% — cumulative tax IDR 3,000,000  _(UU HPP Art. 17(1)(a))_
-- **60,000,001 – 250,000,000** — 15% — cumulative IDR 31,500,000  _(UU HPP Art. 17(1)(a))_
-- **250,000,001 – 500,000,000** — 25% — cumulative IDR 94,000,000  _(UU HPP Art. 17(1)(a))_
-- **500,000,001 – 5,000,000,000** — 30% — cumulative IDR 1,444,000,000  _(UU HPP Art. 17(1)(a))_
-- **Above 5,000,000,000** — 35%  _(UU HPP Art. 17(1)(a))_
-- **Non-NPWP surcharge** — Taxpayers without valid NPWP/NIK taxpayer identification may be subject to withholding rates 20% higher than standard rates under Article 21(5a) of the Indonesian Income Tax Law, subject to prevailing NIK-NPWP integration rules.  _(UU PPh Art. 21(5a) as amended by UU HPP No. 7/2021.; PMK-112/PMK.03/2022; PER-6/PJ/2024)_
-- **PKP rounding** — Rounded DOWN to nearest IDR 1,000  _(UU PPh Art. 17(4))_
-- **TK/0 — Single, no dependents** — IDR 54,000,000  _(UU PPh Art. 7(1); PMK 101 Art. 1(1))_
-- **TK/1** — IDR 58,500,000  _(UU PPh Art. 7(1); PMK 101 Art. 1(1))_
-- **TK/2** — IDR 63,000,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
-- **TK/3** — IDR 67,500,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
-- **K/0 — Married, no dependents** — IDR 58,500,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
-- **K/1** — IDR 63,000,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
-- **K/2** — IDR 67,500,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
-- **K/3** — IDR 72,000,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
-- **K/I/0 — Combined income** — IDR 112,500,000  _(UU PPh Art. 8, PMK 101/PMK.010/2016 |; note: UU PPh as amended by UU HPP No. 7/2021.)_
-- **K/I/1** — IDR 117,000,000  _(UU PPh Art. 8; PMK 101/PMK.010/2016; PP 50/2022 Art. 2(4)–(6).)_
-- **K/I/2** — IDR 121,500,000  _(UU PPh Art. 8; PMK 101/PMK.010/2016; PP 50/2022 Art. 2(4)–(6).)_
-- **K/I/3** — IDR 126,000,000  _(UU PPh Art. 8; PMK 101/PMK.010/2016; PP 50/2022 Art. 2(4)–(6).)_
-- **Max dependents** — 3 (regardless of actual number)  _(UU PPh Art. 7(1))_
-- **PTKP determination date** — 1 January of the tax year  _(UU PPh Art. 7(2))_
-- **1770** — Business income / self-employed  _(PER-19/PJ/2014 jo PER-30/PJ/2017 (Annual Individual Tax Return Forms and Instructions))_
-- **1770 S** — Employee, gross > IDR 60m  _(PER-19/PJ/2014 jo PER-30/PJ/2017 (Annual Individual Tax Return Forms and Instructions))_
-- **1770 SS** — Employee, gross ≤ IDR 60m, single employer  _(PER-19/PJ/2014 jo PER-30/PJ/2017 (Annual Individual Tax Return Forms and Instructions))_
-- **NPPN source regulation** — Deemed-profit (NPPN) framework for qualifying individual taxpayers  _(UU PPh Art. 14(2); PER-17/PJ/2015)_
-- **NPPN eligibility** — Individual taxpayers only; prior-year gross turnover below IDR 4.8 billion; notification submitted within statutory deadline  _(UU PPh Art. 14(2))_
-- **Professional services NPPN** — Approximate deemed-profit coefficients may apply for qualifying professional/self-employed service  _(UU PPh Art. 14(2); PER-17/PJ/2015)_
-- **SPT Tahunan PPh OP** — 31 March of following year  _(UU KUP Art. 3(3)(b))_
-- **PPh 29 payment** — Before SPT is filed (by 31 March)  _(UU KUP Art. 9(2)(c))_
-- **PPh 25 monthly instalment** — Generally due by the 15th of the following month  _(PMK 81/2024 Art. 94(2) as amended by PMK 1/2026)_
-- **NPPN election deadline** — Within 3 months of start of tax year (by 31 March)  _(UU PPh Art. 14(2))_
-- **SPT extension** — Extension generally available up to 2 months upon notification/request before filing deadline  _(UU KUP Art. 3(4)  as amended by UU HPP No. 7/2021.; PMK 81/2024)_
-- **Late SPT filing (individual)** — IDR 100,000 fine  _(UU KUP Art. 7)_
-- **Late PPh 29 payment** — Monthly interest at MoF-published rate, max 24 months  _(UU KUP Art. 9(2a-b))_
-- **Failure after warning** — SKPKB jabatan + 50% surcharge  _(UU KUP Art. 13(3) as amended by UU HPP No. 7/2021)_
-- **PPh 21 credit** — BPA1 (formerly 1721-A1) — bukti pemotongan PPh Pasal 21 for permanent employees/periodic pensioners, per PER-11/PJ/2025  _([UU PPh Art. 21](https://www.pajak.go.id/en/node/118937))_
-- **PPh 22 credit** — Imports, government procurement — bukti pungut  _(UU PPh Art. 22)_
-- **PPh 23 credit** — Services, royalties, dividends — 2%/15%  _(UU PPh Art. 23)_
-- **PPh 24 credit** — Foreign tax — per-country cap, no carry-forward  _(UU PPh Art. 24)_
-- **PPh 25 credit** — Monthly instalments paid during the year  _(UU PPh Art. 25; PMK 81/PMK.03/2024 |; note: UU PPh as amended by UU HPP No. 7/2021.)_
-- **Duration** — 5 years from the year the loss arose  _(UU PPh Art. 6(2))_
-- **Available under NPPN?** — No  _(UU PPh Art. 14)_
-- **Available under UMKM Final?** — Tax loss carry-forward is generally unavailable under the UMKM Final income tax regime because tax is imposed on gross turnover rather than net taxable income. Loss carry-forward facilities apply under the ordinary income-tax regime with bookkeeping and taxable-income computation.  _(UU PPh Art. 4(2); UU PPh Art. 6(2); PP 55/2022 as amended by PP 20/2026.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **RILIA PUTRI** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick Reference
 
@@ -242,12 +192,12 @@ A self-employed Orang Pribadi has three mutually exclusive regimes for business 
 | Loss carry-forward? | No | No | Yes, 5 years |
 | Monthly obligation | Final 0.5% setoran each month | PPh 25 instalment | PPh 25 instalment |
 | Bookkeeping | Pencatatan (simple records) | Pencatatan only | Full pembukuan (accrual) |
-| Time limit | 7 years (individuals) under PP 55/2022 | None (per-year election) | None |
+| Time limit | None for individuals: PP 20/2026 removed the 7-year cap of PP 55/2022 (Art. 59 deleted); 3 years for a PT, 4 years for CV/Firma/Koperasi/BUMDes | None (per-year election) | None |
 | Reference skill | `id-pph-final-umkm` | This skill, Section 6 | This skill |
 
 ### 5.2 Decision flow
 
-- **Decision flow** — 1. Is current-year gross turnover > IDR 4.8B? → Must use Pembukuan. Skip to Section 7. 2. Has client elected UMKM Final 0.5% and is still within the 7-year window? → Route to `id-pph-final-umkm`. Stop. 3. Did client notify DJP of NPPN election within 3 months of the tax year (i.e. by 31 March of the tax year)? → NPPN is available. Compare NPPN vs Pembukuan; the client may use NPPN. 4. No NPPN notification on file and not UMKM Final? → Pembukuan is mandatory by default (UU PPh Art. 14(2)).  _(UU PPh Art. 14(2))_
+- **Decision flow** — 1. Is current-year gross turnover > IDR 4.8B? → Must use Pembukuan. Skip to Section 7. 2. Has client elected UMKM Final 0.5% and is still eligible (turnover ≤ IDR 4.8B, not pekerjaan bebas; no time limit for individuals since PP 20/2026)? → Route to `id-pph-final-umkm`. Stop. 3. Did client notify DJP of NPPN election within 3 months of the tax year (i.e. by 31 March of the tax year)? → NPPN is available. Compare NPPN vs Pembukuan; the client may use NPPN. 4. No NPPN notification on file and not UMKM Final? → Pembukuan is mandatory by default (UU PPh Art. 14(2)).  _(UU PPh Art. 14(2))_
 
 ### 5.3 When NPPN typically wins
 
@@ -255,7 +205,7 @@ A self-employed Orang Pribadi has three mutually exclusive regimes for business 
 
 ### 5.4 Switching regimes
 
-- **Switching regimes** — UMKM Final to Progressive: triggered automatically when the 7-year window expires or when turnover > IDR 4.8B in the prior year. NPPN to Pembukuan: voluntary at any year boundary; once on Pembukuan, return to NPPN requires fresh notification within the 3-month window. Pembukuan to NPPN: requires the 3-month notification AND turnover must be < IDR 4.8B in the prior year.
+- **Switching regimes** — UMKM Final to Progressive: triggered when turnover > IDR 4.8B in the prior year (the individual 7-year window was removed by PP 20/2026). NPPN to Pembukuan: voluntary at any year boundary; once on Pembukuan, return to NPPN requires fresh notification within the 3-month window. Pembukuan to NPPN: requires the 3-month notification AND turnover must be < IDR 4.8B in the prior year.
 
 ## Section 6 — NPPN (Norma Penghitungan Penghasilan Neto)
 
@@ -471,7 +421,7 @@ The MoF interest rate is published monthly and depends on the type of breach (be
 
 ### UMKM Final 0.5%
 
-- **PP No. 55/2022** — Penyesuaian Pengaturan di Bidang Pajak Penghasilan; covers the 0.5% final regime and its 7-year individual window. Handled in `id-pph-final-umkm` (not this skill).
+- **PP No. 55/2022** — Penyesuaian Pengaturan di Bidang Pajak Penghasilan; covers the 0.5% final regime; its 7-year individual window was removed by PP 20/2026. Handled in `id-pph-final-umkm` (not this skill).
 
 ### Withholding regimes
 

@@ -3,7 +3,7 @@ name: id-bookkeeping
 description: "Use this skill whenever asked about Indonesian bookkeeping or transaction classification for income tax purposes. Trigger on phrases like \"Indonesia bookkeeping\", \"Pembukuan\", \"Pencatatan\", \"NPPN\", \"Norma Penghitungan\", \"Norma Penghitungan Penghasilan Neto\", \"classify transactions Indonesia\", \"bank statement Indonesia tax\", \"SPT 1770 classification\", \"SPT 1771 classification\", \"PPh OP bookkeeping\", \"PPh Badan bookkeeping\", \"KLU coefficient\", \"deemed profit Indonesia\", \"pembukuan vs pencatatan\". Covers the Pasal 28 UU KUP obligation, the pembukuan-vs-NPPN choice, KLU coefficient norms, transaction classification mapping to SPT 1770 Lampiran appendices and SPT 1771 Lampiran I, record retention, cash-vs-accrual election, and the Pasal 9 UU PPh non-deductible catalogue. Out of scope: the tax calculations themselves (those live in id-income-tax / id-corporate-tax), PPN/VAT classification (see indonesia-vat), PPh 21 payroll (see id-payroll-pph21), and final-tax PP 23 / PP 55 micro regimes are referenced but not computed here. ALWAYS read this skill before classifying transactions for an Indonesian SPT."
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -18,31 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This skill classifies money movements. It does NOT compute the tax. For PPh Orang Pribadi (individual) calculations see `id-income-tax`. For PPh Badan (corporate) calculations see `id-corporate-tax`. For PPN see `indonesia-vat`.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Bookkeeping
-
-- **Badan (all corporations)** — Full pembukuan mandatory  _(UU KUP Art. 28(1))_
-- **OP turnover > IDR 4.8B** — Full pembukuan mandatory  _(UU KUP Art. 28(2))_
-- **OP turnover ≤ IDR 4.8B** — Individual taxpayers with annual gross turnover not exceeding IDR 4.8 billion may maintain records (pencatatan) and elect NPPN treatment by submitting notification to DJP within the prescribed period. Taxpayers meeting UMKM Final eligibility requirements may alternatively apply the final income tax regime under prevailing regulations.  _(UU PPh Art. 14(2) as amended by UU HPP No. 7/2021; PER-17/PJ/2015; PP 55/2022 as amended by PP 20/2026.)_
-- **Record retention** — 10 years from end of tax year  _(UU KUP Art. 28(11))_
-- **Language & currency** — Bahasa Indonesia and IDR; bilingual/forex requires DJP approval  _(UU KUP Art. 28(4) as amended by UU HPP No. 7/2021.; PMK 81/2024)_
-- **Cash vs accrual** — Elected at start; must be consistent; change requires DJP approval  _(UU KUP Art. 28(5))_
-- **Inventory valuation** — FIFO or Weighted Average only; LIFO prohibited  _(UU PPh Art. 10(6) as amended by UU HPP No. 7/2021.)_
-- **Retail trade** — Retail-trading NPPN coefficients generally range around 20%–35% depending on detailed KLU classification and region category  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
-- **Restaurants / food service** — Restaurant and food-service NPPN coefficients generally range around 20%–30% depending on activity classification and region  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
-- **Professional services** — Professional-service activities generally subject to NPPN coefficients around 45%–50% depending on profession type  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
-- **Software / IT freelance** — Certain IT consulting and software freelance activities generally follow professional-service NPPN classifications around 50%  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
-- **Doctor / medical practice** — Medical professional services generally subject to NPPN coefficients around 50%  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
-- **Lawyer / notary** — Legal and notarial services generally subject to NPPN coefficients around 50%  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
-- **Construction** — ~20-25%  _(KEP-536/PJ./2000 — TBC)_
-- **Agriculture / fisheries** — Agriculture and fisheries activities generally subject to NPPN coefficients around 10%–20% depending on commodity and activity classification  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
-- **Manufacturing — garments** — Garment manufacturing activities generally subject to NPPN coefficients around 12.5%–15% depending on manufacturing classification and region  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
-- **Pembukuan → NPPN** — Changes between bookkeeping and deemed-profit recording methods must follow consistency requirements and generally require DJP approval under prevailing tax regulations.  _(UU KUP Art. 28(5) as amended by UU HPP; PMK 81/2024.)_
-- **NPPN → Pembukuan** — Individual taxpayers previously using NPPN may transition to full bookkeeping starting from the following tax year in accordance with prevailing tax administration rules.  _(UU PPh Art. 14; PER-17/PJ/2015.)_
-- **Either → PP 55 final tax** — Application of the UMKM Final income tax regime (0.5%) is subject to taxpayer eligibility requirements, turnover thresholds, and exclusion criteria under prevailing regulations. Eligibility provisions were significantly amended by PP 20/2026.  _(UU PPh Art. 4(2) as amended by UU HPP; PP 55/2022 Arts. 56–58 as amended by PP 20/2026; PMK 164/PMK.03/2023.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **RILIA PUTRI** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -82,7 +58,7 @@ Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03. Ite
 
 ### Decision tree -- which regime applies
 
-- **Decision tree** — Badan (PT, CV, koperasi, yayasan, BUT)? ├── YES → MANDATORY Pembukuan. SPT 1771. No NPPN option. │         PP 23 unavailable for PT after 3 yrs / CV after 4 yrs (PP 55/2022). └── NO (orang pribadi): prior-year gross turnover from usaha/pekerjaan bebas? ├── > IDR 4.8b  → MANDATORY Pembukuan. SPT 1770. No NPPN. No PP 23. └── ≤ IDR 4.8b  → THREE options: ├── (a) Pembukuan voluntarily (actual deductions) ├── (b) Pencatatan + NPPN: notify DJP in writing within 3 months │       of the start of the tax year (Pasal 14(2) UU PPh, │       PER-17/PJ/2015). Without timely notification, NPPN is │       invalid -- 50% uplift risk under Pasal 14(5). └── (c) PP 23/2018 0.5% final tax on gross (separate regime; classified in `id-income-tax`, not here).  _(Pasal 14(2) UU PPh; PER-17/PJ/2015; PP 55/2022)_
+- **Decision tree** — Badan (PT, CV, koperasi, yayasan, BUT)? ├── YES → MANDATORY Pembukuan. SPT 1771. No NPPN option. │         PP 23 unavailable for PT after 3 yrs / CV after 4 yrs (PP 55/2022 as amended by PP 20/2026, which removed the time limit for OP and PT Perorangan). └── NO (orang pribadi): prior-year gross turnover from usaha/pekerjaan bebas? ├── > IDR 4.8b  → MANDATORY Pembukuan. SPT 1770. No NPPN. No PP 23. └── ≤ IDR 4.8b  → THREE options: ├── (a) Pembukuan voluntarily (actual deductions) ├── (b) Pencatatan + NPPN: notify DJP in writing within 3 months │       of the start of the tax year (Pasal 14(2) UU PPh, │       PER-17/PJ/2015). Without timely notification, NPPN is │       invalid -- 50% uplift risk under Pasal 14(5). └── (c) PP 23/2018 0.5% final tax on gross (separate regime; classified in `id-income-tax`, not here).  _(Pasal 14(2) UU PPh; PER-17/PJ/2015; PP 55/2022)_
 
 ### Switching regimes
 
@@ -195,6 +171,8 @@ Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03. Ite
 | Online retail seller (e-commerce) | 47911 | ~30% (TBC -- post-KEP-536 KBLI; use retail proxy) |
 | Restaurants & cafés (restoran) | 56101 | ~25% (TBC) |
 | Construction -- residential building | 41011 | ~20-25% (TBC) |
+| Agriculture / fisheries (pertanian, perikanan) | 01xxx / 03xxx | ~10-20% (TBC) |
+| Garment manufacturing (industri pakaian jadi) | 14111 | ~12.5-15% (TBC) |
 | Land transport -- taxi / ride-hail | 49429 | ~20% (TBC) |
 | Vehicle rental without driver | 77100 | ~25% (TBC) |
 | Hairdressing & beauty (salon) | 96021 | ~40% (TBC) |

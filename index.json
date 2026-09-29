@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T03:49:19+00:00",
+ "generated_at": "2026-09-29T03:59:50+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -10053,7 +10053,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-corporate-tax",
@@ -10066,7 +10066,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-einvoice-coretax",
@@ -10079,7 +10079,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-formation",
@@ -10092,7 +10092,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-freelance-intake",
@@ -10118,7 +10118,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-payroll-pph21",
@@ -10131,7 +10131,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-pph-final-umkm",
@@ -10144,7 +10144,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-return-assembly",
@@ -10170,7 +10170,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "id-withholding",
@@ -10183,7 +10183,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "indonesia-vat",
@@ -10196,7 +10196,7 @@
    "reviewed_by": "RILIA PUTRI",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "indonesia-references",
