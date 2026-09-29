@@ -1,6 +1,6 @@
 ---
 name: us-ca-540-individual-return
-description: Tier 2 content skill for preparing California Form 540 (Resident Income Tax Return) for US sole proprietors and single-member LLCs who are California residents. Covers tax year 2025 California personal income tax including the Schedule CA (540) decoupling adjustments from federal AGI, California's non-conformity with OBBBA bonus depreciation and section 174 R&E expensing, the nine-bracket rate structure (1% through 12.3% plus the 1% Mental Health Services Tax surcharge above $1M), standard and itemized deductions, California tax credits (renter's credit, CalEITC, young child tax credit), SDI/VPDI treatment, and California's own AMT. Defers estimated tax to us-ca-estimated-tax-540es, SMLLC franchise tax to us-ca-smllc-form-568, and health coverage mandate to us-ca-form-3853-coverage. MUST be loaded alongside us-tax-workflow-base v0.1 or later and us-federal-return-assembly. California full-year residents only.
+description: Tier 2 content skill for preparing California Form 540 (Resident Income Tax Return) for US sole proprietors and single-member LLCs who are California residents. Covers tax year 2025 California personal income tax including the Schedule CA (540) decoupling adjustments from federal AGI, California's non-conformity with OBBBA bonus depreciation and section 174 R&E expensing, the nine-bracket rate structure (1% through 12.3% plus the 1% Mental Health Services Tax surcharge above $1M), standard and itemised deductions, California tax credits (renter's credit, CalEITC, young child tax credit), SDI/VPDI treatment, and California's own AMT. Defers estimated tax to us-ca-estimated-tax-540es, SMLLC franchise tax to us-ca-smllc-form-568, and health coverage mandate to us-ca-form-3853-coverage. MUST be loaded alongside us-tax-workflow-base v0.1 or later and us-federal-return-assembly. California full-year residents only.
 version: 0.3
 jurisdiction: US-CA
 category: state-tax
@@ -437,7 +437,7 @@ For a payment labelled VPDI, identify the plan and payment type and obtain the r
 - The stated expenses total $16,000, above the $15,750 federal standard deduction in this example. Review the federal election separately; do not assume the standard deduction is better.
 - CA standard deduction: only $5,706.
 - CA itemized: $8,000 property tax (fully deductible, no SALT cap) + $6,000 mortgage + $2,000 charitable = $16,000.
-- Taxpayer should itemize on CA return ($16,000 > $5,706).
+- Taxpayer should itemise on CA return ($16,000 > $5,706).
 - The election is independent -- taxpayer CAN take federal standard and CA itemized.
 - **Flag for reviewer:** Confirm independent election is optimal.
 
@@ -473,7 +473,7 @@ For a payment labelled VPDI, identify the plan and payment type and obtain the r
 ### Test 540-6 -- Independent deduction election (federal standard, CA itemized)
 
 **Input:** Single, federal AGI $95,000. Takes federal standard deduction ($15,750). Has $9,000 property tax, $7,000 mortgage interest, $3,000 charitable.
-**Expected:** CA standard deduction = $5,706. CA itemized = $9,000 + $7,000 + $3,000 = $19,000 (no SALT cap, no CA income tax deduction needed). Taxpayer should itemize on CA ($19,000 > $5,706). Federal and CA elections are independent.
+**Expected:** CA standard deduction = $5,706. CA itemised = $9,000 + $7,000 + $3,000 = $19,000 (no SALT cap, no CA income tax deduction needed). Taxpayer should itemise on CA ($19,000 > $5,706). Federal and CA elections are independent.
 
 ### Test 540-7 -- Large §179 difference
 
