@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Saudi Arabia e-invoicing, ZATCA
 version: 1.0
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mehran Habib
 review_status: pending_review
 depends_on:
@@ -18,22 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Saudi Arabia ZATCA E-Invoice (FATOORA) Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### E-Invoice (FATOORA)
-
-- **Phase 1 (Generation)** — All VAT-registered since 4 Dec 2021  _(E-Invoicing Regulation, First: Scope of application)_
-- **Phase 2 (Integration)** — Rolling waves from 1 Jan 2023 by revenue  _(E-Invoicing Regulation, Sixth: Integration)_
-- **Format** — XML format or PDF/A-3 format (with embedded XML)  _(E-Invoicing Regulation, Second Requirements and details for Generation of Electronic Invoices and Electronic Notes - 2)_
-- **Signing** — ECDSA secp256k1 + SHA-256  _(E-Invoicing Regulation, Annex 1 Technical Requirements of E-invoice Generation Solutions)_
-- **B2B clearance** — Real-time before sharing with buyer  _(E-Invoicing Regulation, Annex 1 Technical Requirements of E-invoice Generation Solutions)_
-- **B2C reporting** — Within 24 hours  _(E-Invoicing Regulation, Second Requirements and details for Generation of Electronic Invoices and Electronic Notes - 3(B))_
-- **Non-issuance of e-invoice** — SAR 5,000–50,000 per violation  _(VAT Law, Article 45)_
-- **Modification after issuance** — SAR 10,000–50,000 per violation  _(VAT Law, Article 45)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-06 Mehran Habib checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

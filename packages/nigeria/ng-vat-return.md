@@ -4,7 +4,7 @@ description: "Archived Nigerian VAT guide retained for historical comparison and
 version: 2.1
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -26,47 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Nigeria VAT Return -- Archived Self-Employed Skill v2.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Omolola Fasasi** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### ng-vat-return
-
-- **Standard VAT rate** — 7.5%  _(NIGERIAN TAX ACT 2025)_
-- **Zero rate — exports, diplomatic supplies, humanitarian goods** — 0%  _(VATA)_
-- **Exempt supplies — basic food, medical, educational, agricultural, financial services, residential rent, public transport** — Exempt (no VAT)  _(VATA First Schedule)_
-- **Pre-2020 (superseded) VAT rate — no longer applicable** — 5%  _(Finance Act 2020)_
-- **VAT registration exemption threshold (annual turnover)** — NGN 25,000,000 or less  _(NIGERIAN TAX ACT 2025)_
-- **Filing frequency** — Monthly  _(NIGERIAN TAX ACT 2025)_
-- **VAT return filing deadline** — 21st of the following month  _(NIGERIAN TAX ACT 2025)_
-- **VAT payment deadline** — Same as filing deadline — 21st of the following month  _(NIGERIAN TAX ACT 2025)_
-- **Nil returns — required even with no transactions** — Must be filed  _(NIGERIAN TAX ACT 2025)_
-- **Filing portal** — TaxPro Max (taxpromax.firs.gov.ng)  _(NIGERIAN TAX ACT 2025)_
-- **Penalty — failure to register (first month)** — NGN 50,000  _(NIGERIAN TAX ACT 2025)_
-- **Penalty — failure to register (each subsequent month)** — NGN 25,000 per subsequent month  _(NIGERIAN TAX ACT 2025)_
-- **Penalty — late filing (percentage)** — A flat 10% per annum penalty is generally added to any unpaid or unremited tax amount  _(NIGERIAN TAX ACT 2025)_
-- **Penalty — late filing (fixed)** — NGN 50,000 for the first month and NGN 25,000 for every subsequent month  _(NIGERIAN TAX ACT 2025)_
-- **Penalty — late payment (percentage)** — 10% penalty on the unpaid tax amount, plus interest calculated at the prevailing CBN MPR.  _(NIGERIAN TAX ACT 2025)_
-- **Penalty — late payment (interest rate)** — CBN Monetary Policy Rate (MPR)  _(NIGERIAN TAX ACT 2025)_
-- **Penalty — failure to issue VAT invoice** — 50% of the cost of the goods or services for which the invoice was not issued  _(NIGERIAN TAX ACT 2025)_
-- **Penalty — failure to collect VAT (surcharge)** — 150% of the uncollected amount,  _(NIGERIAN TAX ACT 2025)_
-- **Penalty — failure to collect VAT (interest)** — 5% per annum above the Central Bank of Nigeria (CBN) Monetary Policy Rate  _(NIGERIAN TAX ACT 2025)_
-- **VAT invoice retention period (minimum)** — 6 years  _(NIGERIAN TAX ACT 2025)_
-- **Output VAT formula** — OUTPUT VAT = TAXABLE SALES × VAT RATE  _(NIGERIAN TAX ACT 2025)_
-- **Net VAT formula** — NET VAT = OUTPUT VAT - INPUT VAT  _(NIGERIAN TAX ACT 2025)_
-- **Input VAT restriction — exempt supplies** — Under the Nigeria Tax Act (NTA), you cannot recover or offset Input VAT incurred on purchases that directly relate to VAT-exempt supplies. Because you do not charge Output VAT on exempt sales, any Input VAT paid becomes a non-recoverable cost and should be expensed or capitalized.  _(NIGERIAN TAX ACT 2025)_
-- **Input VAT claim — invoice requirement** — Not claimable without a valid VAT invoice  _(NIGERIAN TAX ACT 2025)_
-- **Input VAT apportionment method — residual (no direct attribution)** — Taxable revenue / Total revenue x Total residual input VAT  _(NIGERIAN TAX ACT 2025)_
-- **Default VAT rate when supply classification is unknown** — 7.5% (standard-rated)  _(NIGERIAN TAX ACT 2025)_
-- **Default for mixed supply apportionment — disputed portion** — Under the Nigeria Tax Act (NTA), the default for mixed supply apportionment requires separating considerations based on market value or FIRS-approved methods. For disputed mixed supply portions, the taxpayer is advised to apportion using a fair and reasonable method, pending resolution. Taxpayers should pay output VAT on the non-disputed standard-rated portion to avoid penalties and interest  _(NIGERIAN TAX ACT 2025)_
-- **VAT self-accounting rate — non-resident digital services not charged by supplier** — 7.5%  _(NIGERIAN TAX ACT 2025)_
-- **Exchange rate to use for VAT computation on foreign currency invoices** — CBN exchange rate on the date of supply  _(NIGERIAN TAX ACT 2025)_
-- **Primary legislation reference** — Value Added Tax Act (VATA), Cap V1 LFN 2004, as amended by Finance Act 2020  _(VATA Cap V1 LFN 2004)_
-- **Supporting legislation** — Finance Act 2021, Finance Act 2023; Nigerian tax act 2025
-- **Mandatory VAT invoice fields** — Supplier name, TIN, description of goods/services, quantity, price exclusive of VAT, VAT amount, total, date, sequential number  _(VATA s 10)_
-- **Bank interest classification** — Exempt — not a taxable supply  _(VATA First Schedule)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Omolola Fasasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

@@ -3,7 +3,7 @@ name: sa-zakat
 description: "Use this skill whenever asked about Saudi Arabian Zakat — the religious-origin wealth levy administered by ZATCA (Zakat, Tax and Customs Authority) on Saudi/GCC-owned business activity in the Kingdom of Saudi Arabia. Trigger on phrases like \"Saudi Zakat\", \"ZATCA Zakat\", \"Zakatable base Saudi\", \"2.5% Zakat KSA\", \"Implementing Regulations Zakat\", \"Saudi GCC zakat\", \"mixed entity Saudi\", \"Zakat return KSA\", \"Saudi Hijri filing\", \"Zakat working capital base\", \"Zakat net adjusted profit\", \"mixed ownership Saudi Zakat CIT split\", or \"ZATCA 120 days return\". Covers the 2.5% Hijri rate (2.577% Gregorian-equivalent), Zakatable persons (Saudi/GCC nationals and Saudi/GCC-owned share of capital), the higher-of net adjusted profit vs working capital base computation under the Implementing Regulations issued under Ministerial Resolution 2082 of 1438H (2017) as amended, mixed-entity Saudi/GCC vs foreign proportional split (Zakat on Saudi/GCC share; CIT 20% on foreign share — see sa-corporate-tax), passive entities, financing/banking sector specials, accounting-basis adjustments, and ZATCA portal annual filing within 120 days of fiscal year-end. Out of scope: pure CIT on 100%-foreign-owned entities (see sa-corporate-tax), Withholding Tax (see sa-wht), VAT (see saudi-arabia-vat), e-invoicing (see saudi-einvoice), Excise Tax, Real Estate Transaction Tax (RETT), Customs, oil and hydrocarbon sector special regimes, natural gas investment tax, Saudi Aramco special rate, and individual personal Zakat on non-commercial wealth (mosque/charitable Zakat al-mal outside ZATCA scope). ALWAYS read this skill before touching any Saudi Zakat work."
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mehran Habib
 review_status: pending_review
 tier: 2
@@ -18,21 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 >
 > This skill is for informational purposes only and does not constitute tax, legal, religious, or financial advice. All outputs must be reviewed and signed off by a Saudi-licensed Zakat advisor (SOCPA member or ZATCA-approved consultant) before filing or acting upon. Zakat carries both a fiscal and a religious dimension; this skill addresses only the fiscal compliance administered by ZATCA.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Zakat
-
-- **Zakat rate (Hijri year)** — 2.5%  _(Section 1 Article 15(1) Percentage of Zakat - Zakat Implementing Regulation)_
-- **Gregorian-equivalent rate** — 2.5772% (adjusted for 354/365 days)  _(Section 1 Article 15(2) Percentage of Zakat - Zakat Implementing Regulation)_
-- **Saudi nationals — commercial activity** — Subject to Zakat  _(Royal Decree 8634; Zakat Collection in the Kingdom of Saudi Arabia - A FIQH based Perspective)_
-- **GCC nationals — commercial in KSA** — Subject to Zakat (treated as Saudi)  _(Defined in Saudi Definition - Zakat Implementing Regulations)_
-- **Foreign-owned companies** — NOT Zakat — CIT 20% instead  _(Chapter Three - Article 7(A) Tax Rates - Income Tax Law)_
-- **Mixed ownership** — Saudi/GCC share → Zakat; foreign share → CIT 20%  _(Article 2 & 6 of Zakat Implementing Regulations)_
-- **Deadline** — 120 days after fiscal year-end  _(Chapter Five - Article 102(1) Submission of Zakat Return - Zakat Implementing Regulations)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-06 Mehran Habib checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick Reference
 

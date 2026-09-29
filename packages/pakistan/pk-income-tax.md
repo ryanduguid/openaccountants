@@ -5,7 +5,7 @@ version: 1.2
 jurisdiction: PK
 tax_year: 2025
 tax_year_notes: "2025 (salaried bracket table and surcharge restated for TY 2026-27 under Finance Act 2026, gazetted 26 June 2026)"
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ibrar Ali
 review_status: pending_review
 depends_on:
@@ -41,40 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > not confirmed — but they do not tell you which Act to open, and for a 2026-27
 > computation the answer is FA 2026, not FA 2025.
 
-
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Ibrar Ali** on 2026-06-12.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### pk-income-tax
-
-- **Salary brackets (TY 2025-26, Finance Act 2025)** — 0 – 600,000 = 0; 600,001 – 1,200,000 = 1% on amount > 600,000; 1,200,001 – 2,200,000 = 11% on excess + 6,000; 2,200,001 – 3,200,000 = 23% on excess + 116,000; 3,200,001 – 4,100,000 = 30% on excess + 346,000; > 4,100,000 = 35% on excess + 616,000  _(First Schedule, Pt I, Div I)_
-- **Salary table applies** — Where salary income is more than 75% of total taxable income  _(First Schedule, Pt I, Div I)_
-- **Non-salary brackets — business / AOP (TY 2024-25 baseline — TBC FA 2025)** — 0 – 600,000 = 0; 600,001 – 1,200,000 = 15% on amount > 600,000; 1,200,001 – 1,600,000 = 20% on excess + 90,000; 1,600,001 – 3,200,000 = 30% on excess + 170,000; 3,200,001 – 5,600,000 = 40% on excess + 650,000; > 5,600,000 = 45% on excess + 1,610,000  _(First Schedule, Pt I, Div I)_
-- **High-income surcharge**: Finance Act 2026 exempts salaried taxpayers covered by the s.4AB proviso from 1 July 2026. The 10% charge for other individuals and AOPs above PKR 10 million remains. Prior salaried rates were 10% under FA 2024 and 9% under FA 2025. _(ITO s.4AB; Finance Act 2026, p.558)_
-- **Minimum tax on turnover §113** — 1.25% where turnover > PKR 100,000,000 (TBC)  _(ITO 2001 §113)_
-- **Default surcharge §205** — Change to: Higher of 12% per annum or KIBOR + 3%  _(ITO 2001 §205)_
-- **Super tax §4C** — Separate charge above PKR 150M (out of this skill's scope)  _(ITO 2001 §4C)_
-- **Resident individual** — Present in Pakistan ≥ 183 days in the tax year  _(ITO 2001 §82)_
-- **Tax year** — 1 July – 30 June  _(ITO 2001 §7)_
-- **Return deadline — AOP** — 30 September following close of tax year  _(ITO 2001 §118(3))_
-- **Return deadline — AOP** — 30 September following close of tax year  _(ITO 2001 §118(3))_
-- **Wealth statement** — Mandatory for every resident individual filing a return  _(ITO 2001 §116)_
-- **Advance tax instalments** — Quarterly: 15 Sept, 15 Dec, 15 March, 15 June  _(ITO 2001 §147(5) & §147(5A))_
-- **Advance tax threshold** — Latest assessed taxable income > PKR 1,000,000 (TBC)  _(ITO 2001 §147)_
-- **§154A IT/ITeS export final tax (PSEB-registered)**: 0.25% of qualifying export proceeds through the banking channel, excluded from the bracket computation. Confirm the final-tax treatment and s.4AB taxable-income base for the period. The salaried surcharge exemption does not exempt a freelancer merely because receipts arise from services. _(ITO ss.4AB, 154A)_
-- **Non-PSEB IT export rate** — 1% (TBC)  _(ITO 2001 §154A)_
-- **§61 charitable donation credit** — Up to 30% of taxable income (individuals & AOPs) / 20% (Companies)  _(ITO 2001 §61)_
-- **§62 listed shares / sukuk credit** — Omitted  _(ITO 2001 §62)_
-- **§63 voluntary pension contribution** — 20% of taxable income (age uplift available)  _(ITO 2001 §63)_
-- **§103 foreign tax credit** — Lesser of foreign tax paid or Pakistan tax on that income; no carry-forward  _(ITO 2001 §103)_
-- **AOP member share of profit** — Exempt at member level (AOP has already paid the tax)  _(ITO 2001 §92)_
-- **ATL surcharge to regain filer status** — PKR 1,000 individual / 10,000 AOP / 20,000 company (TBC)  _(ITO 2001 (FA-set))_
-- **Non-filer withholding** — Increased by 100% to 500%+ depending on the transaction code  _(ITO 2001 Tenth Schedule)_
-- **Late filing penalty §182** — 0.1% per day, capped at 50% of tax payable (Minimum PKR 40,000 applies)  _(ITO 2001 §182)_
-- **Business loss carry-forward** — 6 years  _(ITO 2001 §57)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-12 Ibrar Ali checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick Reference
 

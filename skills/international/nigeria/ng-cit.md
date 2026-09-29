@@ -3,7 +3,7 @@ name: ng-cit
 description: "Use this skill whenever asked about Nigerian Companies Income Tax (CIT) for a resident Nigerian company. Trigger on phrases like \"Nigeria CIT\", \"Companies Income Tax Nigeria\", \"FIRS CIT\", \"Nigeria Tax Act 2025 corporate\", \"NTA 2025\", \"CITA\", \"small company CIT Nigeria\", \"medium company tax Nigeria\", \"large company tax Nigeria\", \"Nigeria minimum tax\", \"development levy Nigeria\", \"TET Nigeria\", \"Pillar Two Nigeria\", \"Tax Pro-Max\", \"Nigeria capital allowances\", or \"Nigeria CIT return\". Covers the transitional 2025 regime under the legacy Companies Income Tax Act (CITA, Cap. C21 LFN 2004 as amended) AND the new Nigeria Tax Act 2025 (NTA 2025) regime taking effect 1 January 2026, including the small-company 0% rate (turnover ≤ ₦100M and asset base ≤ ₦250M under NTA s.202), the flat 30% rate on every other company with the medium-company 20% band abolished, the unified 4% Development Levy replacing TET/NITDA/NASENI/Police Trust Fund, the 15% Minimum Effective Tax Rate with separate domestic and MNE scope tests under s.57, capital allowances under the Sixth Schedule, indefinite loss carry-forward, monthly minimum tax interaction, the 6-month annual filing deadline via FIRS Tax Pro-Max, and TIN registration. Out of scope: personal income tax (use ng-income-tax), VAT (use ng-vat-return / nigeria-vat), petroleum profits tax / hydrocarbon tax, upstream oil & gas under PIA 2021, banking and insurance sector returns, capital gains on share disposals beyond ordinary CIT scope, free trade zone enterprises, NEPZA / OGFZA regimes, transfer pricing controversy, and pioneer status / industrial development income tax relief processing. ALWAYS read this skill before touching any Nigerian corporate income tax work."
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Omolola Fasasi 
 review_status: current
 tier: 1
@@ -18,23 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 >
 > This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a Nigerian chartered tax practitioner (ICAN / ANAN / CITN) before filing or acting upon.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Omolola Fasasi** on 2026-06-21.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### ng-cit
-
-- **Small company — CIT rate** — 0% CIT, and exempt from CGT and the development levy. NTA 2025 s.202 defines a small company as one with gross turnover of **₦100,000,000 or less** per annum **and** total fixed assets **not exceeding ₦250,000,000**.  _(NTA 2025 ss.56, 202)_
-- **Every other company — CIT rate** — **30%**, plus the 4% development levy. NTA 2025 s.56 has only two bands: small companies at 0% and everything else at 30%. **There is no medium-company 20% band from 1 January 2026** — that band belonged to CITA as amended by Finance Act 2019/2020 and does not survive into NTA 2025.  _(NTA 2025 ss.56, 59)_
-- **Development levy** — **4%** of assessable profits on every company chargeable under Chapters Two and Three of NTA 2025 other than small companies and non-resident companies. It replaces the Tertiary Education Tax (3%), NITDA levy (1%), NASENI levy (0.25%) and Police Trust Fund levy (0.005%) from 1 January 2026.  _(NTA 2025 s.59)_
-- **Tertiary Education Tax (TET) rate — periods before 2026** — 3% of assessable profit. The rate ran 2% under the Education Tax Act 1993, 2.5% under Finance Act 2021 (from 1 January 2022) and 3% under Finance Act 2023 (from September 2023).  _(TETFund Act; Finance Acts 2021, 2023)_
-- **Minimum tax (where CIT < minimum)** — 15% minimum effective tax rate (ETR) targeted at large corporations and multinationals enterprises (MNEs)  _(NIGERIAN TAX ACT 2025)_
-- **CIT return filing deadline** — 6 months after accounting year end or 18 months from incorporation for new companies  _(NIGERIAN TAX ACT 2025)_
-- **Initial allowance — plant & machinery** — 10% Category: Assets in this bracket generally include buildings, infrastructure, and long-term structures.20% Category: Assets in this bracket typically cover industrial equipment, furniture, and heavy machinery (e.g., qualifying petroleum rights are also set at 20%).25% Category: Assets in this bracket apply to fast-depreciating property like motor vehicles, computers, and office technology  _(NIGERIAN TAX ACT 2025)_
-- **Annual allowance — plant & machinery** —   _(NIGERIAN TAX ACT 2025)_
-- **Annual allowance — industrial buildings** —   _(NIGERIAN TAX ACT 2025)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Omolola Fasasi** on 2026-06-21; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick Reference
 
@@ -65,7 +49,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Small | Turnover ≤ ₦25M (CITA s.40 as amended Finance Act 2019) | **0%** |
 | Medium | ₦25M < Turnover ≤ ₦100M | **20%** |
 | Large | Turnover > ₦100M | **30%** |
-| Tertiary Education Tax (TET) | All companies except small | 3% of assessable profit (Tertiary Education Trust Fund Act) |
+| Tertiary Education Tax (TET) — periods before 2026 | All companies except small | 3% of assessable profit (Tertiary Education Trust Fund Act; the rate ran 2% under the Education Tax Act 1993, 2.5% from 1 January 2022 under Finance Act 2021 and 3% from September 2023 under Finance Act 2023; replaced by the 4% Development Levy from 1 January 2026) |
 | NITDA levy | Companies with turnover ≥ ₦100M in specified sectors | 1% of profit before tax |
 | NASENI levy | Companies with turnover ≥ ₦100M in specified sectors | 0.25% of profit before tax |
 | Police Trust Fund levy | All companies | 0.005% of net profit |

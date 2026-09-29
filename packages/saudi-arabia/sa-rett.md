@@ -3,7 +3,7 @@ name: sa-rett
 description: Use this skill whenever asked about the Saudi Arabian Real Estate Transaction Tax (RETT). Trigger on phrases like "Saudi RETT", "Real Estate Transaction Tax KSA", "5% RETT Saudi", "Saudi property transfer tax", "ZATCA RETT", "Royal Decree A/84 RETT", "Saudi first-home exemption", "KSA notarisation tax", "ZATCA real estate", "disposal of Saudi real estate", or any question about computing, declaring, or paying RETT on a Saudi real-estate disposal. Scope covers the 5% RETT rate, taxable transactions and persons, taxable value rules, the Saudi-national first-home exemption (up to SAR 1,000,000 — verify current cap), inheritance and first-degree-relative gift exemptions, Waqf endowments, sale-leaseback and sukuk arrangements, declaration on the ZATCA portal before notarisation, and the interaction with the pre-October-2020 15% VAT-on-real-estate regime that RETT replaced. ALWAYS read this skill before touching any Saudi RETT work.
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mehran Habib
 review_status: current
 tier: 1
@@ -12,19 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # SA RETT
 
-## Verified rates & thresholds (accountant-reviewed)
-
-- **RETT rate** — 5% on transaction value or FMV (higher)  _(RETT Bylaws, Article 4.1 & 4.2 Detailed Guidelines for RETT)_
-- **Effective from** — 1 October 2020 (replaced 15% VAT on RE)  _(RETT Bylaws + VAT law)_
-- **First-degree relative gift** — Exempt (parent, child, spouse)  _(RETT Bylaws, Article 5.1.7 Detailed Guidelines for RETT)_
-- **Inheritance** — Exempt  _(RETT Bylaws, Article 5.1.1 Detailed Guidelines for RETT)_
-- **First home (Saudi national)** — Exempt up to SAR 1,000,000  _(RETT Bylaws, Article 6 Detailed Guidelines for RETT)_
-- **Waqf (endowment)** — Exempt  _(RETT Bylaws, Article 5.1.2 Detailed Guidelines for RETT)_
-- **Long lease ≥ 50 years** — Subject to RETT on total lease value  _(RETT Bylaws, Article 1.3 Detailed Guidelines for RETT)_
-- **Declaration** — Via ZATCA portal BEFORE notarisation  _(RETT Bylaws, Article 4.3 Detailed Guidelines for RETT)_
-- **Taxpayer** — Seller (transferor) is the legal taxpayer  _(Royal Decree A/84, Article 4.5 Detailed Guidelines for RETT)_
-
-Reviewed against the cited tax authorities by Mehran Habib on 2026-06-06. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mehran Habib** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference
 

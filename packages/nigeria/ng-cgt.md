@@ -3,7 +3,7 @@ name: ng-cgt
 description: Use this skill whenever asked about Nigerian Capital Gains Tax. Trigger on phrases like "Nigeria CGT", "Capital Gains Tax Nigeria", "sale of shares Nigeria", "property gains Nigeria", "10% CGT Nigeria", "CGTA Nigeria", "disposal of chargeable assets Nigeria", "Section 30 CGTA", "rollover relief Nigeria", "NGX share disposal tax", "₦100M share threshold", "non-resident CGT Nigeria", or any question about computing, filing, or reporting capital gains on Nigerian chargeable assets. Scope covers CGT computation for chargeable assets (real property, shares, business assets, intangibles), statutory exemptions, rollover relief on replacement of business assets, the Finance Act 2021 share disposal threshold, and the NTA 2025 consolidation of CGT into the general income tax framework. ALWAYS read this skill before touching Nigerian CGT work.
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Omolola Fasasi
 review_status: pending_review
 tier: 2
@@ -14,17 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Nigeria — Capital Gains Tax (CGT) — Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-- **CGT rate - companies** — 0.3  _(NIGERIA TAX ACT 2025)_
-- **CGT rate - individuals** — 0% - 25%  _(NIGERIA TAX ACT 2025)_
-- **Gain on disposal of principal private residence** — Exempt  _(NIGERIA TAX ACT 2025)_
-- **Gains on Nigerian government securities** — Exempt  _(NIGERIA TAX ACT 2025)_
-- **Gains from life assurance policies** — Exempt  _(NIGERIA TAX ACT 2025)_
-- **CGT return filing deadline** — returns mus be filed bi - annually by 30th june  _(NIGERIA TAX ACT 2025)_
-- **Indexation allowance available** — The Nigeria Tax Act (NTA) completely eliminates inflation indexation allowances when computing Capital Gains Tax. The new law explicitly prohibits the indexation of asset base costs for inflation and rules out capital losses for offset. [1]  _(NIGERIA TAX ACT 2025)_
-- **Capital losses — offset rule** — capital losses to be offset against gains of the same asset class and carried forward  _(NIGERIA TAX ACT 2025)_
-- **CGT - share sale exemption threshold proceeds <#150m and gains <#10m in 12 consecutive months** — Exempt  _(NIGERIA TAX ACT 2025)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Omolola Fasasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; that fact check confirmed the 30% company rate under NTA 2025, which the body now states alongside the 10% CGTA rate for periods to 2025, and its corrections are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick reference
 
@@ -39,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation (pre-NTA) | Capital Gains Tax Act (CGTA) Cap C1, LFN 2004 |
 | Amending legislation | Finance Act 2019; Finance Act 2020; Finance Act 2021; Finance Act 2022; Finance Act 2023 |
 | Post-2025 framework | Nigeria Tax Act (NTA) 2025 — CGT consolidated into the general income tax framework (implementing regulations pending) |
-| Headline rate | **10%** on chargeable gains |
+| Headline rate | **10%** on chargeable gains under the CGTA for periods to 31 December 2025; from 1 January 2026 chargeable gains are taxed as income under NTA 2025 — companies at 30% (s 56), individuals at the s 58 progressive rates |
 | Tax authority (residents) | **Nigeria Revenue Service (NRS)** — the Federal Inland Revenue Service (FIRS) was renamed and re-established as the NRS by the Nigeria Revenue Service (Establishment) Act 2025, with effect from **1 January 2026**, for companies and non-residents; relevant State Internal Revenue Service (SIRS) for resident individuals |
 | Filing | Lodged with the annual income tax return — CIT (companies) or PIT (individuals) |
 | Validated by | Verified by Omolola Fasasi (MB058950) on 2026-06-21 |
@@ -57,6 +47,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Business assets (plant, goodwill, intangibles) | 10% | Rollover relief may apply (see §4) |
 | Listed shares disposed of via NGX, below threshold | 0% | Pre-Finance Act 2021 blanket exemption now restricted to the ₦100M threshold |
 | Non-resident on Nigerian-situs assets | 10% | Buyer / payment agent may be required to withhold |
+
+The 10% rates above are the CGTA rates for periods to 31 December 2025. From 1 January 2026, NTA 2025 taxes chargeable gains as income: companies at 30% (s 56), individuals at the s 58 progressive rates (see §4.4).
 
 ## Section 2 — Required inputs & refusal catalogue
 
@@ -133,7 +125,10 @@ The following are exempt from CGT:
 
 ### 4.4 NTA 2025 — consolidation of CGT into the income tax framework
 
-- **NTA 2025 consolidation** - From 1 January 2026, gains fall within the new income-tax framework. Company rates follow section 56 and individual rates follow section 58 and the Fourth Schedule. The historical 10% CGTA rate is not a general 2026 rate. The pre-2026 rules and examples in this guide must remain labelled for their period. [Nigeria Tax Act 2025, ss.56, 59 and 202](https://nass.gov.ng/documents/download/11249)
+- **NTA 2025 consolidation** - From 1 January 2026, gains fall within the new income-tax framework. Company rates follow section 56 (30%) and individual rates follow section 58 and the Fourth Schedule (0% to 25%). The historical 10% CGTA rate is not a general 2026 rate. The pre-2026 rules and examples in this guide must remain labelled for their period. [Nigeria Tax Act 2025, ss.56, 59 and 202](https://nass.gov.ng/documents/download/11249)
+- **What the NTA changes in the computation** — The base cost is never indexed for inflation (the Act rules indexation out), capital losses are offset only against gains of the same asset class and carried forward, and gains on a principal private residence, on Nigerian government securities and under life assurance policies stay exempt.  _(Nigeria Tax Act 2025)_
+- **Shares from 2026** — A disposal of shares is exempt where the aggregate proceeds in any 12 consecutive months are below ₦150 million and the chargeable gain does not exceed ₦10 million (s.34(1)(a)(i)); where the shares are transferred between an approved borrower and lender in a regulated securities-lending transaction (s.34(1)(a)(ii)); and where the proceeds are reinvested in the shares of the same or another Nigerian company within the same year of assessment, with the tax applying proportionately to any part not reinvested (s.34(1)(a)(iii)). Outside those exemptions the gain is taxed at the s 56 or s 58 rate. This replaces the ₦100 million proceeds test of the Finance Act 2021 in §4.2 for 2026 disposals.  _(Nigeria Tax Act 2025, s.34(1)(a))_
+- **Returns** — CGT returns are filed bi-annually, the first by 30 June, as the review recorded.  _(Nigeria Tax Act 2025)_
 
 ## Section 5 — Worked examples
 

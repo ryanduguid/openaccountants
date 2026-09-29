@@ -3,7 +3,7 @@ name: tanzania-tax-optimization
 description: Tanzania Mainland tax-optimization, statutory reliefs, and incentive regimes administered by TRA and EPZA.
 jurisdiction: TZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Baraka Cassian
 review_status: current
 tier: 1
@@ -16,32 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Scope note.** This skill covers **Tanzania Mainland** tax-optimization, statutory reliefs, and incentive regimes administered by the **Tanzania Revenue Authority (TRA)**, plus the Export Processing Zones Authority (EPZA) for zone-based incentives. All figures are TZS (Tanzanian Shilling) unless stated. Tax year = calendar year (1 January – 31 December) unless an entity has an approved substituted accounting period. **Zanzibar** runs a separate administration (Zanzibar Revenue Authority — ZRA) with its own VAT/levy regime; Zanzibar differentials are flagged where relevant but Zanzibar-specific filings are out of scope — escalate. Several positions below changed under the **Finance Act 2025 (in force 1 July 2025 unless a later date is stated)** — those are flagged **FA2025**.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Baraka Cassian** on 2026-06-12.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### tanzania-tax-optimization
-
-- **DSE listing relief** — CIT 25% for 3 years where >=25% of shares issued to the public  _(Income Tax Act, Cap 332, First Schedule)_
-- **New assembler relief** — CIT 10% for first 5 years (vehicles, tractors, fishing boats)  _(Income Tax Act, Cap 332, First Schedule)_
-- **New pharmaceutical/leather manufacturer relief** — CIT 20% for first 5 years with Government performance agreement  _(Income Tax Act, Cap 332, First Schedule)_
-- **EPZ/SEZ incentives** — Income tax holiday (10 years) and WHT/indirect tax reliefs for qualifying export-oriented investors under the EPZ and SEZ regimes; FA2025 REMOVED income tax exemption for EPZ/SEZ sales into the domestic market  _(EPZ Act, Cap 373; SEZ Act, Cap 420; Finance Act 2025 (in force 1 Jul 2025 unless stated))_
-- **Agriculture - immediate expensing** — 100% first-year write-off of plant and machinery used in agriculture (Class 8); agricultural improvement expenditure also immediately deductible  _(Income Tax Act, Cap 332, Third Schedule)_
-- **EFD purchase write-off** — 100% write-off of electronic fiscal devices purchased by non-VAT-registered traders  _(Income Tax Act, Cap 332, Third Schedule Class 8)_
-- **Manufacturing/fish farming/tourist hotel enhanced allowance** — 50% allowance on qualifying plant and machinery spread equally over first two years  _(Income Tax Act, Cap 332, Third Schedule)_
-- **Loss utilisation planning** — Losses carry forward indefinitely but shelter only 60% of taxable profit per year; 3 consecutive loss years trigger 1% AMT on turnover  _(Income Tax Act, Cap 332, s.19; AMT provisions)_
-- **Retained earnings exposure** — Distribute or formally apply after-tax profits within 12 months of year-end; otherwise CG may deem 30% distributed and levy 10% WHT  _(Income Tax Act, Cap 332 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Charitable/CSR deduction** — Up to 2% of taxable income for approved charitable and social development contributions  _(Income Tax Act, Cap 332, s.16)_
-- **Bond market reliefs** — WHT exemption on corporate, municipal and DSE-listed bonds of at least 3 years issued from 1 Jul 2021; government bonds per exemption terms  _(Income Tax Act, Cap 332 exemptions)_
-- **Presumptive regime (small individual traders)** — Turnover <= TZS 100m taxed on presumptive bands (top band 3.5% of turnover) - no full accounts or CIT computations  _(Income Tax Act, Cap 332, First Schedule para 2)_
-- **VAT input recovery planning** — Keep taxable supplies above 90% of total supplies for full input credit; exporters in consistent refund positions may apply for monthly refund lodgement  _(Value Added Tax Act, Cap 148)_
-- **Electronic payments VAT rate** — B2C supplies paid via bank/approved electronic systems attract 16% instead of 18% from 1 Sep 2025 - relevant to retail pricing and EFD configuration  _(Value Added Tax Act, Cap 148 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Treaty structuring** — 9 DTTs (Canada, Denmark, Finland, India, Italy, Norway, South Africa, Sweden, Zambia); lower of treaty/domestic WHT with residence certificate  _(DTT network)_
-- **Zanzibar differentials** — Zanzibar: VAT 15%, SDL 5%, VAT threshold TZS 100m - separate administration (ZRA) for Zanzibar-based operations  _(Zanzibar legislation)_
-- **CGT exemptions in exits** — Resident disposals of DSE-listed shares exempt; non-resident exempt if holding <25%; private residence (gain <= TZS 15m) and small agricultural land (MV <= TZS 10m) exempt  _(Income Tax Act, Cap 332 exemptions)_
-- **AMT-exempt sectors** — Agriculture, health and education businesses exempt from AMT (tea processing exempt to 30 Jun 2027)  _(Income Tax Act, Cap 332 AMT provisions)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Baraka Cassian** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick Reference
 

@@ -3,7 +3,7 @@ name: tanzania-withholding-tax
 description: Tanzania Mainland withholding tax (WHT) on payments, resident & non-resident rates, TRA administration under Income Tax Act Cap. 332 and Tax Administration Act Cap. 438.
 jurisdiction: TZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Baraka Cassian
 review_status: current
 tier: 1
@@ -16,41 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Scope note. This skill covers Tanzania Mainland withholding tax (WHT) administered by the Tanzania Revenue Authority (TRA) under the Income Tax Act, Cap. 332 and the Tax Administration Act, Cap. 438. WHT is a tax deducted at source by the payer (the withholding agent) when making a payment of a specified type, and remitted to the TRA. Some WHT is a final tax (no further return required on that income); other WHT is non-final and is creditable against the recipient's final income-tax liability. All figures are TZS (Tanzanian Shilling). Tax year = calendar year (1 January – 31 December). Zanzibar administers income tax on the same WHT bases under the union income-tax framework, but Zanzibar-specific indirect taxes are out of scope — escalate. Where a rate changed under the Finance Act 2025 (FA2025), the change is flagged and the effective date stated (in force 1 July 2025 unless otherwise stated).
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Baraka Cassian on 2026-06-12. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### tanzania-withholding-tax
-
-- **Dividends - general** — Resident 10% / Non-resident 10% (final for resident individuals)  _(Income Tax Act, Cap 332, s.82, s.86)_
-- **Dividends - DSE-listed company** — 5% / 5%  _(Income Tax Act, Cap 332, s.82, First Schedule)_
-- **Dividends - to resident company controlling >=25% of voting power and >=25% of shares** — 5% (resident recipient); 10% non-resident  _(Income Tax Act, Cap 332)_
-- **Interest** — 10% / 10% (final for resident individuals unless business income)  _(Income Tax Act, Cap 332, s.82, s.86)_
-- **Rent - land and buildings** — 10% / 10% (final WHT for resident individuals where not business income)  _(Income Tax Act, Cap 332, s.82)_
-- **Rent - aircraft lease** — 10% / 10%  _(Income Tax Act, Cap 332)_
-- **Rent - construction equipment or machinery** — 10% / 10%  _(Income Tax Act, Cap 332)_
-- **Rent - hired motor vehicles** — 10% non-final WHT (new)  _(Income Tax Act, Cap 332 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Rent - other assets** — 0% resident / 10% non-resident  _(Income Tax Act, Cap 332)_
-- **Royalties** — 15% / 15%; 10% where payment is for use of cinematography film, videotape or sound recording; 5% to resident sports entities/Tanzania Football Federation  _(Income Tax Act, Cap 332, s.82)_
-- **Natural resource payments** — 15% / 15%  _(Income Tax Act, Cap 332)_
-- **Service fees (professional/consultancy)** — 5% resident / 15% non-resident  _(Income Tax Act, Cap 332, s.83)_
-- **Technical/management services to mining, oil and gas entities** — Resident provider: 10% FINAL (FA2025, up from 5%); non-resident: 15%  _(Income Tax Act, Cap 332 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Director fees (non-full-time directors)** — 15% / 15%  _(Income Tax Act, Cap 332)_
-- **Insurance premiums** — 0% resident / 10% non-resident FINAL (increased from 5% by FA2025)  _(Income Tax Act, Cap 332 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Money transfer agent commission** — 10% (residents)  _(Income Tax Act, Cap 332)_
-- **Fees to commercial bank agents and digital payment agents** — 10% (residents)  _(Income Tax Act, Cap 332)_
-- **Commission for gaming advertisement or promotion** — 10% (new, FA2025)  _(Income Tax Act, Cap 332 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Payments to digital content creators** — 5% (residents)  _(Income Tax Act, Cap 332 (introduced by Finance Act 2023))_
-- **Digital asset exchange/transfer payments** — 3% withheld by platform owner/facilitator (including non-resident platforms)  _(Income Tax Act, Cap 332 (Finance Act 2024))_
-- **Payments for goods by government institutions** — 2% (residents)  _(Income Tax Act, Cap 332)_
-- **Minerals purchased from primary mining licence holders / artisanal miners** — 2%  _(Income Tax Act, Cap 332)_
-- **Verified carbon emission reduction payments** — 10%  _(Income Tax Act, Cap 332)_
-- **Deemed distribution of undistributed profits** — 10% on 30% of profits CG deems distributed 12 months after year-end (FA2025)  _(Income Tax Act, Cap 332 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **WHT payment deadline** — Within 7 days after the end of the month of deduction  _(Income Tax Act, Cap 332, s.84)_
-- **WHT return** — Monthly; due the 7th day of the following month  _(Tax Administration Act, Cap 438; ITA s.84)_
-- **Failure to withhold** — Withholding agent is personally liable for the unwithheld tax (may recover from payee); interest and penalties apply  _(Income Tax Act, Cap 332, s.84(3); Tax Administration Act, Cap 438)_
-- **DTT network** — 9 treaties in force: Canada, Denmark, Finland, India, Italy, Norway, South Africa, Sweden, Zambia  _(Double tax treaties (per TRA))_
-- **WHT exemptions (selected)** — SEZ/EPZ investors; strategic investors; certain government-project loans; corporate, municipal and DSE-listed bonds of >=3 years issued from 1 Jul 2021; certain loans from non-resident financial institutions to resident financial institutions; interest on government loans from non-resident banks/governments (retrospective to 1 Jun 2017)  _(Income Tax Act, Cap 332 exemption provisions)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Baraka Cassian** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

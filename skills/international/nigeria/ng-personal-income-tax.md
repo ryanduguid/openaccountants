@@ -3,7 +3,7 @@ name: ng-personal-income-tax
 description: Use this skill whenever asked about Nigerian Personal Income Tax (PIT) for individuals and sole traders / self-employed professionals filing an annual self-assessment return. Trigger on phrases like "Nigeria PIT", "Personal Income Tax Nigeria", "annual return Nigeria", "self-employed Nigeria tax", "self-assessment Nigeria", "PITA self-employed", "NTA 2025 individuals", "Nigeria Tax Act 2025 individuals", "consolidated relief allowance Nigeria", "CRA Nigeria", "minimum tax Nigeria", "state IRS filing", "SIRS annual return", "FIRS individual return FCT", "income tax Lagos", "income tax Abuja", or "Nigerian sole trader tax return". Covers tax year 2025 under PITA (Cap P8 LFN 2004 as amended through Finance Act 2023) plus the transitional treatment of the Nigeria Tax Act 2025 (effective 1 January 2026) for forward planning, including progressive brackets (7-24%), Consolidated Relief Allowance, minimum tax floor, capital allowances under the Fifth Schedule, WHT credits, life-insurance / pension / NHF / NHIS reliefs, and annual self-assessment filing to the State Internal Revenue Service (SIRS) — with FIRS jurisdiction reserved for FCT residents, members of the armed forces and police, foreign-service officers, and non-residents earning Nigeria-source income. Out of scope — employer-side payroll PAYE mechanics, PAYE return preparation, monthly PAYE remittance and statutory deductions (see ng-paye); corporate income tax / companies (CIT) and dividend WHT (see ng-cit); petroleum profits tax; partial-year residency and treaty tie-breaker analysis. ALWAYS read this skill before touching any Nigerian PIT work for individuals.
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Omolola Fasasi
 review_status: pending_review
 tier: 2
@@ -20,28 +20,7 @@ Nigeria — Personal Income Tax (PIT) — Skill v1.0
 
 **Relationship to `ng-income-tax.md`.** A prior skill `ng-income-tax.md` (v2.0) existed in this package covering the same self-employed PIT territory with a strong bookkeeping / bank-statement bias. This new skill is the canonical "Personal Income Tax for individuals and sole traders" reference and should be treated as the primary source going forward. The older `ng-income-tax.md` retains useful Nigerian bank-statement reading guidance and a transaction pattern library, which remain valid as a bookkeeping companion. Where the two skills overlap (CRA computation, progressive brackets, minimum tax, capital allowances, filing authority), this skill controls. Recommendation: retire `ng-income-tax.md` once the bank-statement pattern library has been re-homed into a separate `ng-bookkeeping.md` skill; until then, treat `ng-income-tax.md` as deprecated for tax-rule purposes and load it only for its bank-narration patterns.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Omolola Fasasi** on 2026-06-21.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### ng-personal-income-tax
-
-- **NGN 0 - 800,000** — 0  _(NIGERIAN TAX ACT 2025)_
-- **NGN 800,001 - 3,000,000** — 0.15  _(NIGERIAN TAX ACT 2025)_
-- **NGN 3,000,001 - 12,000,000** — 0.18  _(NIGERIAN TAX ACT 2025)_
-- **NGN 12,000,001 - 25,000,000** — 0.21  _(NIGERIAN TAX ACT 2025)_
-- **NGN 25,000,00I - 50,000,000** — 0.23  _(PITA s 37, Third Schedule)_
-- **Above NGN 50,000,000** — 0.25  _(NIGERIAN TAX ACT 2025)_
-- **Consolidated Relief Allowance (CRA)** — #800k Tax- free threshold + rent relief (20% of rent, max #500k)  _(NIGERIAN TAX ACT 2025)_
-- **Minimum tax (where computed tax < minimum)** — ABOLISHED UNDER NIGERIAN TAX 2025  _(NIGERIAN TAX ACT 2025)_
-- **Employee pension contribution (PRA 2014)** — 8% of monthly emolument  _(NIGERIAN TAX ACT 2025)_
-- **Employer pension contribution (PRA 2014)** — 10% of monthly emolument  _(NIGERIAN TAX ACT 2025)_
-- **National Housing Fund (NHF) contribution** — 2.5% of basic monthly salary  _(NIGERIAN TAX ACT 2025)_
-- **Annual PIT return filing deadline** — 31 March of the following year  _(NIGERIAN TAX ACT 2025)_
-- **PAYE remittance to state tax authority** — 10th day of following month  _(NIGERIAN TAX ACT 2025)_
-- **Gratuity taxability** — Gratuity is now fully taxable (unless within #50M exemption threshold  _(NIGERIAN TAX ACT 2025)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Omolola Fasasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick Reference
 

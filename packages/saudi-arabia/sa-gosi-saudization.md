@@ -3,7 +3,7 @@ name: sa-gosi-saudization
 description: ALWAYS read this skill before touching any Saudi Arabia employer compliance work — social insurance contributions, Saudization quotas, or monthly wage filings. Use whenever asked to compute, review, or advise on Saudi private-sector payroll obligations — General Organization for Social Insurance (GOSI) contributions split between the Annuity (retirement) branch, the Occupational Hazards branch, and the SANED unemployment insurance branch; Saudization compliance under the Nitaqat program administered by the Ministry of Human Resources and Social Development (MHRSD); and the Wage Protection System (WPS) submitted monthly via the Mudad platform. Trigger on phrases like "Saudi GOSI", "Saudization Nitaqat", "Wage Protection System Saudi", "Mudad WPS", "9% GOSI Saudi", "SANED unemployment", "Saudi employer compliance", "Saudi labor law", "Saudi expat 2% GOSI", "Nitaqat Platinum Green Yellow Red", "iqama renewal Saudi", "MHRSD quota", or any request involving running monthly payroll, hiring Saudis vs expats, or assessing Nitaqat tier impact on visa quotas for a private-sector establishment in the Kingdom of Saudi Arabia. This skill is the ORCHESTRATOR for SA employer compliance — it sequences GOSI registration, monthly contribution calculation, Nitaqat tier monitoring, and WPS filing into the correct order, and flags when sector-specific Saudization quotas need verification against the current MHRSD notification.
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mehran Habib
 review_status: current
 tier: 1
@@ -18,30 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 >
 > **Tax year 2025 note:** Contribution rates below reflect the structure in force following the GOSI reforms phased in from 2024 onward. The **9%/9% annuity split** is the pre-reform baseline for existing Saudi insured workers; newly insured Saudis (first GOSI registration on or after 3 July 2024) are subject to a phased increase under the Civil Pension and Social Insurance Schemes reform: the annuity rate went to 9.5% each from July 2025 and rises 0.5 points each July to 11% each by 2028. Establish the cohort for every Saudi employee before computing — see the two-cohort table in §1.1. **SANED unemployment insurance** has applied to Saudi nationals since 2014. **Wage base cap** of SAR 45,000/month is the long-standing ceiling — verify against the current GOSI portal before filing. **Saudization quotas were tightened across multiple sectors in 2024–2025** (engineering, accounting, dentistry, pharmacy, retail outlets, telecom retail, real estate brokerage, project management, customer service, etc.) — always flag "verify current sector quota against the latest MHRSD notification" before relying on a percentage.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### GOSI and Saudization
-
-- **Annuity (retirement) — employer** — 9%  _(GOSI Law)_
-- **Annuity (retirement) — employee** — 9%  _(GOSI Law)_
-- **Occupational Hazards — employer (Expatriate)** — 2%  _(GOSI Law)_
-- **SANED (unemployment) — employer** — 0.0075  _(GOSI Law)_
-- **SANED (unemployment) — employee** — 0.0075  _(GOSI Law)_
-- **Total — Saudi employer** — 0.1175  _(GOSI Law)_
-- **Total — Saudi employee** — 0.0975  _(GOSI Law)_
-- **Occupational Hazards — employer (Expatriate)** — 2%  _(GOSI Law)_
-- **Employee contribution (Expatriate)** — 0%  _(GOSI Law)_
-- **Contributory wage cap** — SAR 45,000/month  _(GOSI Law, Part 1 Article 8(2))_
-- **GOSI Contribution Base** — Basic salary + housing allowance  _(GOSI Law, Part 1 Article 8(1))_
-- **Nitaqat — Platinum tier** — Exceeds target — maximum benefits  _(MHRSD / Qiwa — Nitaqat Mutawar Program procedural guidelines)_
-- **Nitaqat — High/Mid/Low Green tier** — Meets target — standard to limited  _(MHRSD / Qiwa — Nitaqat Mutawar Program procedural guidelines)_
-- **Nitaqat — Red tier** — Well below — no visas, no iqama renewals  _(MHRSD / Qiwa — Nitaqat Mutawar Program procedural guidelines)_
-- **WPS Platform** — Mudad (mudad.com.sa)  _(MHRSD — Wage Protection System)_
-- **WPS Requirement** — All salaries via Saudi bank IBAN  _(MHRSD — Wage Protection System, ref. 1.8.4 (59 - ACC))_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mehran Habib** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference: contribution + Saudization table
 

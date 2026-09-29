@@ -3,7 +3,7 @@ name: tanzania-income-tax
 description: Use this skill whenever asked about Tanzania (Mainland) personal income tax, PAYE, or self-employed/sole-trader tax. Trigger on phrases like "how much PAYE do I pay", "Tanzania income tax", "TRA return", "ITX 201", "presumptive tax", "turnover tax Tanzania", "NSSF deduction", "SDL", "Skills Development Levy", "PSSSF", "WCF", "chargeable income TZS", "provisional tax Tanzania", "Return of Income individual", or any question about computing or filing personal income tax for an employee or self-employed individual in Tanzania. Also trigger when preparing or reviewing an ITX 201.01.E return, computing PAYE on a salary, applying the presumptive (turnover-based) regime, or advising on statutory contributions (NSSF/PSSSF/SDL/WCF). This skill covers the resident PAYE bands, non-resident flat rate, presumptive tax, social-security and statutory contributions, filing forms and deadlines, registration thresholds, and penalties. ALWAYS read this skill before touching any Tanzania income tax work.
 jurisdiction: TZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Baraka Cassian
 review_status: current
 tier: 1
@@ -16,60 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Tanzania **does** levy a personal income tax administered by the **Tanzania Revenue Authority (TRA)**. This skill covers **Tanzania Mainland**. The TRA also administers Zanzibar PAYE on the same income bands, but Zanzibar runs its own VAT/levy regime — treat Zanzibar-specific indirect taxes as out of scope and escalate. All figures are TZS (Tanzanian Shilling). Tax year = calendar year (1 January – 31 December).
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Baraka Cassian** on 2026-06-12.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### tanzania-income-tax
-
-- **Resident individual rates (annual)** — 0% to TZS 3,240,000; 8% 3,240,001-6,240,000; 20% 6,240,001-9,120,000; 25% 9,120,001-12,000,000; 30% above 12,000,000  _(Income Tax Act, Cap 332, First Schedule)_
-- **Non-resident individual - employment income** — 15% flat, final  _(Income Tax Act, Cap 332)_
-- **CIT standard rate** — 30% (resident corporations and PEs of non-residents)  _(Income Tax Act, Cap 332, First Schedule)_
-- **CIT - newly DSE-listed companies** — 25% for three consecutive years from listing; minimum 25% of shares issued to the public  _(Income Tax Act, Cap 332, First Schedule)_
-- **CIT - new assemblers of vehicles/tractors/fishing boats** — 10% for first five years from commencement  _(Income Tax Act, Cap 332, First Schedule)_
-- **CIT - new manufacturers of pharmaceuticals or leather products** — 20% for first five years (performance agreement with Government required)  _(Income Tax Act, Cap 332, First Schedule)_
-- **Alternative minimum tax (AMT)** — 1% of turnover for entities with perpetual unrelieved tax losses for the current and preceding two income years  _(Income Tax Act, Cap 332 (AMT provisions, as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Extractive-sector service fees (residents)** — 10% FINAL withholding on technical and management services provided to mining, oil and gas entities by residents (increased from 5%)  _(Income Tax Act, Cap 332 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Presumptive regime eligibility** — Resident individuals with business turnover not exceeding TZS 100,000,000 per annum (no presumptive for entities)  _(Income Tax Act, Cap 332, First Schedule para 2)_
-- **Presumptive band 1** — Turnover below TZS 4,000,000: NIL tax  _(Income Tax Act, Cap 332, First Schedule para 2)_
-- **Presumptive band 2** — TZS 4m-7m: TZS 100,000 (no records) OR 3% of turnover above TZS 4m (records kept)  _(Income Tax Act, Cap 332, First Schedule para 2)_
-- **Presumptive band 3** — TZS 7m-11m: TZS 250,000 (no records) OR TZS 90,000 + 3% of turnover above TZS 7m (records kept)  _(Income Tax Act, Cap 332, First Schedule para 2)_
-- **Presumptive band 4** — TZS 11m-100m: 3.5% of turnover (records required)  _(Income Tax Act, Cap 332, First Schedule para 2)_
-- **Presumptive tax - transporters (selected)** — Vehicle-based annual amounts, e.g. passenger vehicles up to 5 seats TZS 120,000 up to TZS 2,200,000 (>65 seats); taxis TZS 180,000; ride-hailing TZS 350,000; ride-sharing TZS 450,000; special hire TZS 750,000; goods vehicles TZS 120,000-2,200,000 by tonnage  _(Income Tax Act, Cap 332, First Schedule (transport presumptive schedule))_
-- **CGT - disposal of investment (individuals)** — Tanzanian-source investment: 10% resident / 30% non-resident (single instalment basis)  _(Income Tax Act, Cap 332, s.90)_
-- **CGT - corporations** — Gains on realisation of investments included in income and taxed at 30%  _(Income Tax Act, Cap 332)_
-- **Realisation of land/buildings - compliance** — Single instalment payable within 30 days of realisation; notify Commissioner within 14 days  _(Income Tax Act, Cap 332, s.90; Tax Administration Act, Cap 438)_
-- **Realisation without cost records (resident individuals)** — 3% of the GREATER of incomings or the approved asset value (instead of 10% of gain) for land/buildings  _(Income Tax Act, Cap 332, s.90 (as amended))_
-- **CGT exemptions (selected)** — Private residence where gain <= TZS 15m; agricultural land with market value <= TZS 10m; DSE-listed shares held by a resident; DSE-listed shares of a non-resident holding <25%  _(Income Tax Act, Cap 332, s.9 / Second Schedule exemptions)_
-- **Taxation of undistributed profits (deemed distribution)** — CG may treat 30% of after-tax profits as distributed where not distributed within 12 months after year-end; 10% dividend WHT applies on the deemed distribution  _(Income Tax Act, Cap 332 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Tax loss carryforward** — Indefinite carryforward; BUT brought-forward losses may shelter only 60% of taxable profits in a year (excess carried forward). 60% cap does not apply to agriculture, health and education businesses  _(Income Tax Act, Cap 332, s.19 (as amended))_
-- **Loss ring-fencing** — Agricultural, mining-licence-area, petroleum-licence-area, foreign-source, investment and speculative losses offset only against income of the same category/area  _(Income Tax Act, Cap 332, s.19)_
-- **Depreciation - Class 1 (37.5% reducing balance)** — Computers and data handling equipment; automobiles/buses/minibuses <30 passengers; goods vehicles <7 tonnes; construction and earth-moving equipment  _(Income Tax Act, Cap 332, Third Schedule)_
-- **Depreciation - Class 2 (25% reducing balance)** — Buses >=30 passengers; heavy/specialised trucks and trailers; rail, vessels, aircraft; plant and machinery used in agriculture or manufacturing; public utility plant  _(Income Tax Act, Cap 332, Third Schedule)_
-- **Depreciation - Class 3 (12.5% reducing balance)** — Office furniture, fixtures and equipment; any asset not in another class  _(Income Tax Act, Cap 332, Third Schedule)_
-- **Depreciation - buildings** — Class 6: 5% straight line (general buildings/structures); Class 5: 20% straight line (agriculture/livestock/fish-farming buildings, dams, fences)  _(Income Tax Act, Cap 332, Third Schedule)_
-- **Depreciation - intangibles (Class 7)** — Straight line over useful life of the asset  _(Income Tax Act, Cap 332, Third Schedule)_
-- **Depreciation - Class 8 (100%)** — Plant and machinery used in agriculture; electronic fiscal devices purchased by non-VAT-registered traders  _(Income Tax Act, Cap 332, Third Schedule)_
-- **Enhanced allowance - manufacturing/fish farming/tourist hotels** — 50% allowance on qualifying plant and machinery enjoyed equally in the first and second years; normal rates on the remaining balance thereafter  _(Income Tax Act, Cap 332, Third Schedule)_
-- **Mineral/petroleum operations expenditure** — 20% per year straight line  _(Income Tax Act, Cap 332, Third Schedule)_
-- **Charitable contributions deduction** — Approved charitable/social development contributions deductible up to 2% of taxable income (before the deduction); Education Fund, LGA statutory community obligations and AIDS Trust Fund contributions also deductible  _(Income Tax Act, Cap 332, s.16)_
-- **Statement of estimated tax** — Due within 3 months from start of the accounting period; instalments payable by end of months 3, 6, 9 and 12  _(Income Tax Act, Cap 332, ss.88-89)_
-- **Final income tax return** — Within 6 months after accounting period end (public sector entities: within 9 months)  _(Income Tax Act, Cap 332, s.91; Tax Administration Act, Cap 438)_
-- **Late filing penalty** — Per month or part-month, the HIGHER of 2.5% of unpaid tax or 15 currency points (TZS 300,000) for entities; 5 currency points (TZS 100,000) for individuals  _(Tax Administration Act, Cap 438, s.78)_
-- **Interest on late payment** — Statutory rate (Bank of Tanzania discount rate), compounded monthly  _(Tax Administration Act, Cap 438, s.76)_
-- **Statute of limitations** — TRA may adjust a return within 5 years of the final-return due date; NO limit for fraud, wilful neglect or serious omission  _(Tax Administration Act, Cap 438, s.48)_
-- **Objection deposit** — Higher of tax not in dispute or one-third of assessed tax; FA2025 adds CG power to demand 100% deposit where objector is a flight risk  _(Tax Administration Act, Cap 438, s.51 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Objection determination time limit** — If TRA issues no determination within 6 months of admitting an objection, the assessment/decision is treated as confirmed and taxpayer may appeal to the Board  _(Tax Administration Act, Cap 438, s.52 (as amended))_
-- **Appeal route** — TRA objection -> Tax Revenue Appeals Board (TRAB) -> Tax Revenue Appeals Tribunal (TRAT) -> Court of Appeal  _(Tax Revenue Appeals Act, Cap 408)_
-- **CPA certification of returns** — Returns of corporations with gross income above TZS 100m and individuals with turnover above TZS 500m must be prepared or certified by a CPA in public practice  _(Tax Administration Act, Cap 438 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Audited financial statements (sole traders)** — Required where annual turnover is TZS 100m or more  _(Tax Administration Act, Cap 438)_
-- **Digital service tax (non-residents)** — 2% of turnover (excl. VAT) for non-resident providers of electronic services; monthly return and payment by the 20th of the following month  _(Income Tax Act, Cap 332; Income Tax (Registration of Non-Resident Electronic Service Suppliers) Regulations 2022)_
-- **Digital asset withholding tax** — 3% on payments to residents for exchange/transfer of digital assets; withheld by platform owners/facilitators including non-residents (simplified registration required)  _(Income Tax Act, Cap 332 (as amended by Finance Act 2024))_
-- **Forest produce single instalment** — 2% of gross payment remitted before transporting forest produce (timber, logs, mirunda, poles); base = greatest of farm-gate price, purchase price or TFS-determined value  _(Income Tax Act, Cap 332 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Functional currency** — TZS; Commissioner may permit quantification in convertible foreign currency on written application  _(Income Tax Act, Cap 332; Tax Administration Act, Cap 438)_
-- **Tax year** — Calendar year default; entities may apply to use their own accounting period  _(Income Tax Act, Cap 332, s.20-21)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Baraka Cassian** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -130,6 +77,20 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | 11,000,001 – 100,000,000 | 3.5% of turnover | 3.5% of turnover |
 
 Applies to **resident individuals** with annual business turnover **not exceeding TZS 100,000,000** who are **not VAT-registered**. **Arithmetic check:** complete-records band 2 at TZS 7,000,000 = 3% × 3,000,000 = 90,000, which is the base of band 3 — consistent. Turnover **above TZS 100,000,000**: taxed on net profit under the standard regime (full accounts required), NOT presumptive (TRA).
+
+**Presumptive tax — transport operators (selected annual amounts per vehicle)**  _(Income Tax Act, Cap 332, First Schedule, transport presumptive schedule)_
+
+| Vehicle | Annual tax (TZS) |
+| --- | --- |
+| Passenger vehicles, up to 5 seats | 120,000 |
+| Passenger vehicles, over 65 seats | 2,200,000 (seat bands in between carry intermediate amounts) |
+| Taxis | 180,000 |
+| Ride-hailing vehicles | 350,000 |
+| Ride-sharing vehicles | 450,000 |
+| Special hire | 750,000 |
+| Goods vehicles | 120,000 to 2,200,000 by tonnage |
+
+Transport operators pay these vehicle-based amounts instead of the turnover bands above; confirm the seat and tonnage band of the vehicle against the current First Schedule before quoting a figure.
 
 ### Statutory Contributions (Quick View)
 
@@ -401,11 +362,33 @@ Records "complete" → use the lower complete-records column; "incomplete" → h
 | Non-resident — Tanzanian-source investment | 30% (PwC) |
 | Resident — overseas-source investment | 30% (PwC) |
 
-Out of scope for routine PAYE/turnover work — flag for specialist.
+Out of scope for routine PAYE/turnover work — flag for specialist. The rules the review verified, for when a client does realise an investment:
+
+- **Realisation of land or buildings — payment and notice** — The tax is a single instalment payable within 30 days of the realisation, and the Commissioner must be notified within 14 days.  _(Income Tax Act, Cap 332, s.90; Tax Administration Act, Cap 438)_
+- **Resident individual without cost records** — For land or buildings, 3% of the greater of the incomings and the approved value of the asset, in place of 10% of the gain.  _(Income Tax Act, Cap 332, s.90 as amended)_
+- **Exemptions (selected)** — A private residence where the gain is TZS 15,000,000 or less; agricultural land with a market value of TZS 10,000,000 or less; DSE-listed shares held by a resident, and DSE-listed shares of a non-resident holding under 25%.  _(Income Tax Act, Cap 332, s.9 and Second Schedule)_
+- **Corporations** — Gains on the realisation of investments are included in income and taxed at 30%.  _(Income Tax Act, Cap 332)_
 
 ### 5.6 The Wholly-and-Exclusively Principle (Standard Regime)
 
 - **Wholly-and-exclusively principle** — Under the standard net-profit regime, an expense is deductible only if incurred wholly and exclusively in the production of income (Income Tax Act, Cap. 332). Mixed-use expenses must be apportioned on a reasonable, documented basis. Entertainment, private living costs, fines/penalties, income tax itself, and drawings are not deductible.  _(Income Tax Act, Cap. 332)_
+
+### 5.6.1 Losses, Donations and Administration (Standard Regime)
+
+The remaining rules the review verified for a self-employed person under the standard regime, and the entity-level rules a sole trader meets when the business incorporates:
+
+- **Loss carryforward** — Indefinite, but brought-forward losses shelter at most 60% of a year's taxable profit (the excess carries forward); the 60% cap does not apply to agriculture, health and education businesses.  _(Income Tax Act, Cap 332, s.19 as amended)_
+- **Loss ring-fencing** — Agricultural, mining-licence-area, petroleum-licence-area, foreign-source, investment and speculative losses are offset only against income of the same category or area.  _(Income Tax Act, Cap 332, s.19)_
+- **Charitable contributions** — Approved charitable or social-development contributions are deductible up to 2% of taxable income before the deduction; Education Fund, LGA statutory community obligations and AIDS Trust Fund contributions are also deductible.  _(Income Tax Act, Cap 332, s.16)_
+- **Alternative minimum tax (entities)** — 1% of turnover for an entity with unrelieved tax losses in the current and the two preceding years of income; it does not apply to an individual.  _(Income Tax Act, Cap 332, AMT provisions as amended by Finance Act 2025, in force 1 July 2025)_
+- **Extractive-sector service fees** — 10% final withholding on technical and management services a resident provides to mining, oil and gas entities (5% before Finance Act 2025).  _(Income Tax Act, Cap 332, as amended by Finance Act 2025)_
+- **Digital services and assets** — A non-resident provider of electronic services pays a digital service tax of 2% of turnover excluding VAT, with a monthly return and payment by the 20th of the following month; payments to residents for the exchange or transfer of digital assets bear 3% withholding, deducted by the platform owner or facilitator (a non-resident platform registers under the simplified regime).  _(Income Tax Act, Cap 332; Income Tax (Registration of Non-Resident Electronic Service Suppliers) Regulations 2022; Finance Act 2024)_
+- **Forest produce** — 2% of the gross payment is remitted as a single instalment before timber, logs, mirunda or poles are transported; the base is the greatest of the farm-gate price, the purchase price and the value the Tanzania Forest Services determines.  _(Income Tax Act, Cap 332, as amended by Finance Act 2025)_
+- **Corporate rates (context)** — 30% standard for resident corporations and PEs; 25% for three consecutive years from a DSE listing with at least 25% of the shares issued to the public; 10% for the first five years for new assemblers of vehicles, tractors and fishing boats; 20% for the first five years for new manufacturers of pharmaceuticals or leather products under a performance agreement with the Government. Where profits are not distributed within 12 months of year-end, the Commissioner General may treat 30% of the after-tax profit as distributed, with 10% dividend withholding on the deemed distribution.  _(Income Tax Act, Cap 332, First Schedule; Finance Act 2025)_
+- **Entity filing** — Statement of estimated tax within 3 months of the start of the accounting period, instalments by the end of months 3, 6, 9 and 12; final return within 6 months of the period end (9 months for public-sector entities).  _(Income Tax Act, Cap 332, ss.88–89 and s.91; Tax Administration Act, Cap 438)_
+- **Certification and audit** — The return of a corporation with gross income above TZS 100,000,000, or of an individual with turnover above TZS 500,000,000, must be prepared or certified by a CPA in public practice; a sole trader with turnover of TZS 100,000,000 or more needs audited financial statements.  _(Tax Administration Act, Cap 438, as amended by Finance Act 2025)_
+- **Assessments, objections and appeals** — TRA may adjust a return within 5 years of the final-return due date, with no limit for fraud, wilful neglect or serious omission (s.48). An objection needs a deposit of the higher of the tax not in dispute and one-third of the assessed tax, and Finance Act 2025 lets the Commissioner General demand 100% where the objector is a flight risk (s.51); an objection not determined within 6 months of admission is treated as confirmed and may be appealed (s.52). The route is TRA objection, then the Tax Revenue Appeals Board, the Tax Revenue Appeals Tribunal and the Court of Appeal.  _(Tax Administration Act, Cap 438, ss.48, 51 and 52; Tax Revenue Appeals Act, Cap 408)_
+- **Currency and year** — Accounts are kept in TZS unless the Commissioner permits a convertible foreign currency on written application; the year of income is the calendar year, and an entity may apply to use its own accounting period.  _(Income Tax Act, Cap 332, ss.20–21; Tax Administration Act, Cap 438)_
 
 ### 5.7 Statutory Contributions
 
@@ -486,7 +469,21 @@ Out of scope for routine PAYE/turnover work — flag for specialist.
 
 ### 6.7 Capital Allowances / Depreciation (Standard Regime)
 
-- **Capital allowances / depreciation** — Depreciation classes and rates under the ITA Cap. 332 Third Schedule are not enumerated in this skill. [RESEARCH GAP — reviewer to apply the correct Tanzanian depreciation class and rate for each asset.]
+**Depreciation classes and rates**  _(Income Tax Act, Cap 332, Third Schedule)_
+
+| Class | Rate and method | Assets |
+| --- | --- | --- |
+| 1 | 37.5% reducing balance | Computers and data-handling equipment; automobiles, buses and minibuses of fewer than 30 passengers; goods vehicles under 7 tonnes; construction and earth-moving equipment |
+| 2 | 25% reducing balance | Buses of 30 passengers or more; heavy and specialised trucks and trailers; rail, vessels and aircraft; plant and machinery used in agriculture or manufacturing; public utility plant |
+| 3 | 12.5% reducing balance | Office furniture, fixtures and equipment; any asset not in another class |
+| 5 | 20% straight line | Buildings, dams and fences used in agriculture, livestock or fish farming |
+| 6 | 5% straight line | Other buildings and structures |
+| 7 | Straight line over useful life | Intangible assets |
+| 8 | 100% | Plant and machinery used in agriculture; electronic fiscal devices bought by non-VAT-registered traders |
+
+- **Enhanced allowance** — Manufacturing, fish farming and tourist hotels: a 50% allowance on qualifying plant and machinery, taken equally in the first and second years, with the normal class rate on the remaining balance thereafter.  _(Income Tax Act, Cap 332, Third Schedule)_
+- **Mineral and petroleum operations** — Expenditure is written off at 20% a year, straight line.  _(Income Tax Act, Cap 332, Third Schedule)_
+- **Reviewer judgement** — Which class an asset falls in (a pickup under 7 tonnes is Class 1, a specialised truck Class 2) and whether plant is "used in" agriculture or manufacturing are reviewer calls; the rates are not.
 
 ## Section 7 -- Excel Working Paper Template
 

@@ -1,9 +1,9 @@
 ---
 name: sa-corporate-tax
-description: "ALWAYS read this skill before touching any Saudi Arabian corporate income tax (CIT) work. Use this skill whenever asked about Saudi CIT for a resident company with non-Saudi/non-GCC shareholders, a Saudi PE of a non-resident, or a \"mixed\" entity owned partly by Saudi/GCC nationals and partly by foreigners. Trigger on phrases like \"Saudi CIT\", \"Saudi corporate income tax\", \"Saudi corporate tax\", \"ZATCA CIT 20%\", \"Saudi mixed entity\", \"Saudi PE tax\", \"Saudi Income Tax Law\", \"Royal Decree M/1\", \"Saudi non-resident tax\", \"Saudi natural gas tax\", \"Saudi hydrocarbons tax\", \"Saudi 50%/85% tax\", \"Article 21 ITL\", \"Article 12 ITL interest limitation\", \"Saudi transfer pricing\", \"Saudi Pillar Two\", \"Saudi DMTT\", \"Saudi 120 days filing\". Covers the 20% standard rate under the Income Tax Law (Royal Decree M/1 dated 15/1/1425H — 6 March 2004) and its Implementing Regulations on foreign-shareholder taxable income, the 30% natural gas rate, the tiered 50%–85% oil and other hydrocarbons rates depending on capital base, the mixed-entity Zakat/CIT split for partly Saudi/GCC-owned companies, Saudi PE attribution for non-residents, the indefinite loss carry-forward capped at 25% of annual taxable income (Article 21), the 50% of EBITDA interest deduction limitation (Article 12), the transfer-pricing Bylaws (2019) with BEPS Action 13 MF/LF/CbCR thresholds, the Pillar Two Domestic Minimum Top-up Tax track (no Saudi DMTT identified as enacted as at September 2026), the ZATCA portal filing within 120 days of fiscal year-end, and quarterly advance CIT instalments where applicable. Out of scope: Zakat-only entities (Saudi/GCC-owned — see sa-zakat), the Real Estate Transaction Tax, withholding tax compliance detail (see sa-withholding-tax), VAT and e-invoicing (see saudi-arabia-vat and saudi-einvoice), group consolidated returns outside specific share-deal structures, special economic zones (e.g., RHQ Program 30-year exemption, ILBZ, KAEC, Ras Al-Khair, NEOM), bank/insurance specialised computational regimes beyond the rate reference, mutual funds and investment funds, and any ZATCA dispute or appellate proceedings."
+description: "ALWAYS read this skill before touching any Saudi Arabian corporate income tax (CIT) work. Use this skill whenever asked about Saudi CIT for a resident company with non-Saudi/non-GCC shareholders, a Saudi PE of a non-resident, or a \"mixed\" entity owned partly by Saudi/GCC nationals and partly by foreigners. Trigger on phrases like \"Saudi CIT\", \"Saudi corporate income tax\", \"Saudi corporate tax\", \"ZATCA CIT 20%\", \"Saudi mixed entity\", \"Saudi PE tax\", \"Saudi Income Tax Law\", \"Royal Decree M/1\", \"Saudi non-resident tax\", \"Saudi natural gas tax\", \"Saudi hydrocarbons tax\", \"Saudi 50%/85% tax\", \"Article 21 ITL\", \"Article 12 ITL interest limitation\", \"Saudi transfer pricing\", \"Saudi Pillar Two\", \"Saudi DMTT\", \"Saudi 120 days filing\". Covers the 20% standard rate under the Income Tax Law (Royal Decree M/1 dated 15/1/1425H — 6 March 2004) and its Implementing Regulations on foreign-shareholder taxable income, the 20% natural gas rate (30% before 2018), the tiered 50%–85% oil and other hydrocarbons rates depending on capital base, the mixed-entity Zakat/CIT split for partly Saudi/GCC-owned companies, Saudi PE attribution for non-residents, the indefinite loss carry-forward capped at 25% of annual taxable income (Article 21), the 50% of EBITDA interest deduction limitation (Article 12), the transfer-pricing Bylaws (2019) with BEPS Action 13 MF/LF/CbCR thresholds, the Pillar Two Domestic Minimum Top-up Tax track (no Saudi DMTT identified as enacted as at September 2026), the ZATCA portal filing within 120 days of fiscal year-end, and quarterly advance CIT instalments where applicable. Out of scope: Zakat-only entities (Saudi/GCC-owned — see sa-zakat), the Real Estate Transaction Tax, withholding tax compliance detail (see sa-withholding-tax), VAT and e-invoicing (see saudi-arabia-vat and saudi-einvoice), group consolidated returns outside specific share-deal structures, special economic zones (e.g., RHQ Program 30-year exemption, ILBZ, KAEC, Ras Al-Khair, NEOM), bank/insurance specialised computational regimes beyond the rate reference, mutual funds and investment funds, and any ZATCA dispute or appellate proceedings."
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mehran Habib
 review_status: pending_review
 tier: 2
@@ -18,23 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 >
 > This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a Saudi-licensed tax professional (SOCPA member or ZATCA-recognised tax adviser) before filing or acting upon. The latest verified version is maintained at [openaccountants.com](https://openaccountants.com).
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Corporate Tax (CIT)
-
-- **Standard CIT** — 20% on foreign-share taxable income  _(Income Tax Law Art. 7 (Chapter Three, Article 7(A)))_
-- **Natural gas investment** — 0.2  _(Income Tax Law (Chapter Three, Article 7(B)))_
-- **Oil and hydrocarbons** — 0.85  _(Income Tax Law (Chapter Three, Article 7(C)))_
-- **Loss carry-forward** — Indefinite, capped at 25% of taxable income per year  _(ITL Art. 21 (Chapter Five, Article 21(A)))_
-- **Interest deduction limit** — The deductible amount of interest is limited to the Lower of Actual Loan Charges (Interest expense) incurred during the tax year if related to income subject to tax OR The resultant of the following formula: Interest Income + 50% of (A - B) where A = income subject to tax other than interest income, B = expenses allowed under the Law other than interest expense.  _(ITL Art. 12)_
-- **TP documentation (CbCR)** — Group revenue > SAR 3.2 billion  _(TP Guidelines ZATCA (Third Edition) 2019 bylaws)_
-- **Record retention** — 10 years  _(Income Tax Law Art. 58)_
-- **Annual return** — 120 days after FYE  _(ITL Chapter Twelve, Article 60(B))_
-- **Late payment penalty** — 5% per month, capped at 25%  _(ITL Chapter Fourteen, Article 76(B))_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-06 Mehran Habib checked the rates, thresholds and deadlines listed for this guide against the cited authorities; that fact check corrected the natural gas investment rate to 20% (30% before 2018), and its corrections are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick Reference
 
@@ -50,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting rules | Implementing Regulations to the ITL; Transfer Pricing Bylaws (2019); Ministerial decisions; ZATCA circulars and guides |
 | **Taxable persons** | (a) Non-Saudi/non-GCC **shareholders** in resident companies (on their share of taxable income); (b) **non-residents** earning Saudi-source income (PE or specific transactions); (c) **Saudi PEs of non-residents**. Saudi and GCC nationals are NOT subject to CIT — they pay **Zakat** (see `sa-zakat`). |
 | **Standard CIT rate** | **20%** on adjusted taxable income (foreign-share portion / non-resident PE) |
-| **Natural gas investment** | **30%** on taxable income from natural gas investment activities |
+| **Natural gas investment** | **20%** on taxable income from natural gas investment activities, computed on its own tax base (30% until 31 December 2017; Article 7(b) ITL as amended with effect from 1 January 2018) |
 | **Oil and other hydrocarbons** | **Tiered 50%–85%** depending on capital base (see §4.2) |
 | **Banks / insurance** | Special computational provisions exist, but the **standard 20%** rate generally applies on the non-Saudi/GCC share — sector-specific computational rules are largely out of scope (R-SA-CT-2) |
 | **Mixed entities** | Foreign shares → **CIT** (proportional); Saudi/GCC shares → **Zakat** (proportional) |
@@ -76,7 +60,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Ambiguity | Default |
 | --- | --- |
 | Shareholder nationality unclear | Treat as foreign (CIT applies) until Saudi/GCC nationality is documented |
-| Resident-company sector unclear | Default to standard 20% (not 30% gas, not 50–85% oil); flag |
+| Resident-company sector unclear | Default to standard 20% (natural gas investment is also 20% since 2018, on a separate base; not 50–85% oil); flag |
 | Activity boundary unclear (e.g., upstream vs downstream hydrocarbons) | Default to standard 20% and flag for reviewer; do not apply the elevated rates without confirmation |
 | Mixed-entity ownership percentages unverified | Use Commercial Registration / shareholder register as filed; do not assume |
 | Loss carry-forward cap | Always apply the 25% annual cap under Article 21 |
@@ -122,7 +106,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Standard CIT rate** — 20% of adjusted taxable income for: the foreign-shareholder share in a resident company; Saudi PEs of non-residents; non-resident persons earning Saudi-source business income.  _(Article 7(a) ITL)_
 - **CIT standard formula** — CIT = 20% × Adjusted Taxable Income (foreign-share portion or PE attributable income)  _(Article 7(a) ITL)_
-- **Scope of standard rate** — This rate applies to all sectors except (i) natural gas investment (30%), (ii) oil and other hydrocarbons (tiered 50%–85%), and (iii) any specific incentive regimes (out of scope).  _(Article 7(a) ITL)_
+- **Scope of standard rate** — This rate applies to all sectors except (i) natural gas investment (20% since 1 January 2018, 30% before, on a separate tax base), (ii) oil and other hydrocarbons (tiered 50%–85%), and (iii) any specific incentive regimes (out of scope).  _(Article 7(a) ITL)_
 
 ### 3.3 Taxable Base — Adjusted Taxable Income
 
@@ -168,10 +152,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 4 — Tier 2 — Sectoral Rates, Transfer Pricing, Pillar Two, Group Taxation
 
-### 4.1 Natural Gas Investment — 30%
+### 4.1 Natural Gas Investment — 20%
 
-- **Natural gas investment rate** — Taxable income from natural gas investment activities is taxed at 30%. This rate covers upstream natural gas exploration, development, and production where the activity is classified as "natural gas investment" under the ITL and ZATCA guidance.  _(Article 7(b) ITL)_
-- **Natural gas CIT formula** — Natural Gas CIT = 30% × Taxable income from natural gas investment activities  _(Article 7(b) ITL)_
+- **Natural gas investment rate** — Taxable income from natural gas investment activities is taxed at 20% (30% until 31 December 2017; Article 7(b) ITL as amended with effect from 1 January 2018), on a tax base computed separately from any oil and hydrocarbon activity. This rate covers upstream natural gas exploration, development, and production where the activity is classified as "natural gas investment" under the ITL and ZATCA guidance.  _(Article 7(b) ITL)_
+- **Natural gas CIT formula** — Natural Gas CIT = 20% × Taxable income from natural gas investment activities  _(Article 7(b) ITL)_
 - **Scope narrow** — Scope is narrow — verify with ZATCA / reviewer whether the activity is classified as natural gas investment or falls under standard 20% or the hydrocarbons tier. Activity boundary uncertainty defaults to 20% with a flag (do not apply elevated rates without confirmation).
 
 ### 4.2 Oil and Other Hydrocarbons — Tiered 50%–85%
@@ -400,7 +384,7 @@ PE CIT = 20% × 7,000,000 = SAR 1,400,000
 | Item | Default |
 | --- | --- |
 | Shareholder nationality unverified | Treat as foreign (CIT applies) |
-| Sector unclear | Standard 20% (not 30% gas, not 50–85% oil) |
+| Sector unclear | Standard 20% (natural gas investment is also 20%, on its own base; not 50–85% oil) |
 | Activity boundary unclear | Default 20%, flag — do not apply elevated rates |
 | Mixed-entity ownership | Use CR snapshot at FYE; flag mid-year changes |
 | Loss carry-forward | Indefinite, **always cap offset at 25% of annual taxable income** (Article 21) |
@@ -423,7 +407,7 @@ PE CIT = 20% × 7,000,000 = SAR 1,400,000
   - Article 1–4 — taxable persons, residency, permanent establishment.
   - Article 5 — separate-enterprise principle for PEs.
   - Article 6 — gross income.
-  - Article 7 — rates (a) 20% standard, (b) 30% natural gas, (c) 50%–85% oil and other hydrocarbons.
+  - Article 7 — rates (a) 20% standard, (b) 20% natural gas (30% until 31 December 2017), (c) 50%–85% oil and other hydrocarbons.
   - Articles 8–17 — allowable deductions.
   - Article 12 — interest deduction limitation (50% of EBITDA).
   - Article 13 — bad debts, donations, and specific deduction conditions.
@@ -455,7 +439,7 @@ PE CIT = 20% × 7,000,000 = SAR 1,400,000
 ## PROHIBITIONS
 
 - NEVER apply Saudi CIT to Saudi or GCC nationals' share — that share is subject to **Zakat** (see `sa-zakat`).
-- NEVER apply the standard 20% rate to taxable income from **natural gas investment** (30%) or **oil and other hydrocarbons** (tiered 50%–85%) — but equally, **do not apply elevated rates without confirmation of activity classification** (default to 20% with a flag).
+- NEVER apply the standard 20% rate to taxable income from **natural gas investment** (20%, on its own tax base) or **oil and other hydrocarbons** (tiered 50%–85%) — but equally, **do not apply elevated rates without confirmation of activity classification** (default to 20% with a flag).
 - NEVER omit the **Article 21 25% annual cap** on loss carry-forward offset — losses are indefinite but cannot eliminate more than 25% of any year's taxable income.
 - NEVER deduct interest in excess of **50% of EBITDA** under Article 12 — track the disallowed amount as a carry-forward.
 - NEVER produce a Saudi consolidated/group return — Saudi tax law does not generally permit it (R-SA-CT-3).

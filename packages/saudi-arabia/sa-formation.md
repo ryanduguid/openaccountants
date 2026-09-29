@@ -3,7 +3,7 @@ name: sa-formation
 description: "ALWAYS read this skill whenever asked about forming, incorporating, registering, or licensing a business in the Kingdom of Saudi Arabia. Trigger on phrases like \"Saudi company formation\", \"MISA license Saudi\", \"Saudi LLC\", \"Saudi JSC\", \"Commercial Registration Saudi\", \"MoC Saudi\", \"100% foreign ownership Saudi\", \"MEEM license\", \"Saudization Nitaqat\", \"ZATCA registration\", \"Saudi branch office\", \"Regional Headquarters Saudi\", \"RHQ program\", \"open Saudi office\", \"incorporate Saudi Arabia\", \"Sole Establishment Saudi\", \"Mu'assasah Fardiyyah\", \"Sharikah dhāt mas'uliyyah\", \"GOSI registration\", \"Mudad payroll Saudi\", or any question about choosing or registering a Saudi entity. Covers entity comparison (Sole Establishment, LLC, Closed JSC, Open JSC, Branch of foreign company), MISA (Ministry of Investment) foreign investment licensing and the negative list, Commercial Registration from the Ministry of Commerce, sector-specific licensing (SAMA fintech and banking, CMA capital markets, CITC telecoms, MEEM Saudi Standards retail/import license), ZATCA Zakat and corporate income tax registration, GOSI social insurance registration and Mudad payroll setup, the 2022 Companies Law modernisation under Royal Decree No. M/132, and the Vision 2030 Regional Headquarters (RHQ) Program offering 30-year corporate tax and withholding tax incentives. Out of scope: immigration / iqama / work-visa sponsorship beyond signposting, deep Saudization (Nitaqat) tier mapping (covered in sa-gosi-saudization), bank account opening procedures, listing on Tadawul, sector-deep regulatory licensing beyond signposting, and full RHQ Program application drafting. ALWAYS read this skill before advising on Saudi entity formation."
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mehran Habib
 review_status: pending_review
 tier: 2
@@ -14,20 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Saudi Arabia — Business Formation & Entity Selection — Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Mehran Habib on 2026-06-06. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Company Formation
-
-- **Sole Establishment** — Saudi/GCC only; unlimited liability; Zakat 2.5%  _(Commercial Registration Regulations)_
-- **LLC** — 1-50 members; no statutory min capital (since 2022); Zakat/CIT split  _(Companies Law, Part 6 Article 156)_
-- **Closed JSC** — 2+ shareholders; min SAR 500,000 paid-up  _(Companies Law, Article 59)_
-- **Open/Listed JSC** — Min SAR 10,000,000 paid-up  _(Companies Law + CMA, Article 41(e) of Listing Rules)_
-- **Branch of foreign company** — MISA licence required; CIT 20% on branch profits  _(MISA + Income Tax Law (ITL))_
-- **MISA (Foreign Investment) – Required for** — Any foreign or mixed ownership  _(New Investment Law 2024)_
-- **VAT Registration – Mandatory threshold** — SAR 375,000  _(VAT Implementing Regulations, Chapter 2 Article 3; ZATCA VAT Guidelines 7.1.1)_
-- **Voluntary threshold** — SAR 187,500  _(VAT Implementing Regs; Chapter two - Article 7 (ZATCA VAT Implementing Regulations) + ZATCA VAT Guidelines 7.2.1 & 7.2.2)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-06 Mehran Habib checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick Reference Entity Comparison
 

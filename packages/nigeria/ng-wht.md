@@ -3,7 +3,7 @@ name: ng-wht
 description: "Use this skill whenever asked to compute, classify, or review Nigerian Withholding Tax (WHT) obligations payable by a business on its outgoing payments to suppliers, landlords, contractors, lenders, shareholders, professionals, or non-resident recipients. Trigger on phrases like \"Nigeria WHT\", \"Withholding Tax Nigeria\", \"FIRS WHT\", \"WHT rates Nigeria\", \"deduct WHT contract Nigeria\", \"PSC WHT\", \"NTA 2025 WHT\", \"WHT credit note\", \"WHT receipt FIRS\", \"WHT remittance Nigeria\", \"WHT on dividends Nigeria\", \"WHT on royalties Nigeria\", \"non-resident WHT Nigeria\", \"treaty WHT Nigeria\", \"petroleum WHT\", or any request involving the classification, deduction, or remittance of Nigerian withholding tax. This skill covers WHT under the Withholding Tax Regulations 1997 (as amended by S.I. 1997 No. 28 and subsequent FIRS notices) for both residents (companies and individuals) and non-residents, including the 2025 transitional regime ahead of the Nigeria Tax Act 2025 (NTA 2025) which will replace and consolidate WHT into a single \"tax-at-source\" Schedule from 1 January 2026. Out of scope: PAYE (Pay-As-You-Earn on employment income — see ng-paye); VAT withholding by listed government MDAs and oil & gas operators (separate from income-tax WHT — see ng-vat-return); Capital Gains Tax withholding on share disposals; specialist upstream petroleum royalty mechanics beyond standard PSC WHT; bespoke FIRS administrative arrangements for individual taxpayers under the SIRS (state) regime. ALWAYS read this skill before touching any Nigerian WHT work."
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Omolola Fasasi 
 review_status: current
 tier: 1
@@ -12,30 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # NG Wht
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Omolola Fasasi** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### ng-wht
-
-- **Dividends — company recipient** — 10%  _(CITA s 78)_
-- **Interest — company recipient** — 10%  _(CITA s 78)_
-- **Royalties — company recipient** — 10%  _(CITA s 78)_
-- **Rent — company recipient** — 10%  _(CITA s 78)_
-- **Directors' fees — company recipient** — 10%  _(CITA s 78)_
-- **Construction contracts — company recipient** — 2.5%  _(CITA s 78; Finance Act 2020)_
-- **Consulting / professional fees — company recipient** — 5%  _(CITA s 78)_
-- **Management services — company recipient** — 5% or 10%  _(CITA s 78)_
-- **Commission / agency fees — company recipient** — 10%  _(CITA s 78)_
-- **Dividends — individual recipient** — 10%  _(PITA s 69)_
-- **Interest — individual recipient** — 10%  _(PITA s 69)_
-- **Royalties — individual recipient** — 10%  _(PITA s 69)_
-- **Construction contracts — individual recipient** — 5%  _(PITA s 69)_
-- **Consulting / professional fees — company recipient** — 5%  _(CITA s 78)_
-- **WHT remittance deadline** — 21st day of month following deduction  _(CITA s 78(3))_
-- **WHT- small company exemption** — Small companies exempt from WHT deduction on transactions ≤₦2M/month and on payments to their suppliers. Must be added.
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Omolola Fasasi** on 2026-06-21; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference (rate table by transaction type)
 

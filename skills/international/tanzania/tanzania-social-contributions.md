@@ -3,7 +3,7 @@ name: tanzania-social-contributions
 description: Use this skill whenever asked about Tanzania (Mainland) payroll taxes and social security contributions for employers and employees. Trigger on phrases like "Tanzania PAYE", "how much NSSF do I pay", "NSSF contribution", "PSSSF", "Skills and Development Levy", "SDL Tanzania", "Workers Compensation Fund", "WCF Tanzania", "TZS payroll", "Tanzania payroll deductions", "PAYE bracket Tanzania", "social security Tanzania", "pension contribution Tanzania", or any question about Tanzanian employer/employee statutory contributions. Also trigger when classifying bank statement transactions that relate to TRA payments, NSSF/PSSSF pension debits, SDL, or WCF remittances from CRDB, NMB, NBC, or other Tanzanian banks. This skill covers PAYE progressive brackets, NSSF/PSSSF pension splits, SDL, WCF, monthly remittance deadlines, penalties, minimum wage, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Tanzanian payroll or contributions work.
 jurisdiction: TZ
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Baraka Cassian
 review_status: current
 tier: 1
@@ -14,29 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Tanzania (Mainland) Social Security & Payroll Contributions Skill v0.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Baraka Cassian** on 2026-06-12.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### tanzania-social-contributions
-
-- **NSSF - total contribution (private sector)** — 20% of employee's monthly wages (joint employer/employee)  _(NSSF Act, Cap 50, s.13)_
-- **NSSF - split** — Employee share capped at 10% of monthly wage; standard splits 10% employer / 10% employee, or 15% / 5%  _(NSSF Act, Cap 50, s.13)_
-- **NSSF - payment deadline** — Within one month after the end of the month to which the contribution relates  _(NSSF Act, Cap 50, s.14)_
-- **NSSF - late payment penalty** — 5% of the unpaid amount for each month or part of a month after the due date  _(NSSF Act, Cap 50, ss.14-15)_
-- **NSSF - registration** — Employers must register with NSSF and register all employees (membership mandatory for private-sector employees)  _(NSSF Act, Cap 50)_
-- **PSSSF - public service scheme** — 20% of salary: employer 15% / employee 5%  _(Public Service Social Security Fund Act No. 2 of 2018 (Cap 371 RE 2023), Part IV - contributions)_
-- **WCF - tariff rate** — 0.5% of cash sums paid to employees - both private and public sector employers  _(Workers Compensation Act, Cap 263; Tariff Regulations)_
-- **WCF - payment deadline** — Monthly; payable within the contribution month or not later than the end of the following month  _(Workers Compensation (Payment of Tariff) Regulations)_
-- **WCF - late payment interest** — 2% of the unpaid amount per month of delay  _(WCF regulations/notices)_
-- **SDL - cross reference** — 3.5% of gross emoluments, employers with 10+ employees, monthly by the 7th (see tanzania-payroll sheet)  _(VETA Act, Cap 82 (as amended by Finance Act 2023))_
-- **HESLB - employer deduction** — 15% of monthly salary of each loan beneficiary; remit by the 15th day of the following month  _(HESLB Act, Cap 178)_
-- **HESLB - employer penalty** — 10% of the monthly deduction amount for failure to deduct/remit on time  _(HESLB Act, Cap 178)_
-- **NHIF - public service** — 6% of basic salary: 3% employer / 3% employee (mandatory for public servants)  _(National Health Insurance Fund Act, Cap 395)_
-- **Employer statutory on-cost (private sector summary)** — NSSF 10% + SDL 3.5% + WCF 0.5% = 14% of gross payroll (SDL-liable employers, 10/10 NSSF split)  _(Derived)_
-- **Employee statutory deductions (typical)** — NSSF 10% of wages + PAYE per bands (+ 15% HESLB if loan beneficiary)  _(Derived)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Baraka Cassian** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 
@@ -62,8 +40,9 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Tax-free threshold | First TZS 270,000/month (TRA) |
 | NSSF total | 20% of gross wage — 10% employer / 10% employee (NSSF) |
 | PSSSF total | 20% of gross wage — 15% employer / 5% employee (secondary; see gap) |
+| NHIF (public service) | 6% of basic salary — 3% employer / 3% employee, mandatory for public servants (NHIF Act, Cap 395) |
 | SDL | 3.5% of gross emoluments, employer ≥10 employees (TRA) |
-| WCF | 0.5%–0.6% of cash paid to employees, employer-only (see gap) |
+| WCF | 0.5% of cash paid to employees, employer-only, private and public sector alike (Workers Compensation Act, Cap 263; Tariff Regulations) |
 | Currency | TZS only |
 | Validated by | Pending — requires sign-off by a Tanzanian tax practitioner |
 | Validation date | Verified by Baraka Cassian (ACPA 3158) on 2026-06-12 |
@@ -75,7 +54,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | PAYE | — | 0%–30% progressive | — | Monthly income after pension | TRA |
 | NSSF pension | 10% | 10% | 20% | Gross wage | NSSF |
 | SDL | 3.5% | — | 3.5% | Gross emoluments (if ≥10 employees) | TRA |
-| WCF | 0.5%–0.6% | — | 0.5%–0.6% | Cash paid to employees | PwC / WCF [RESEARCH GAP — reviewer to confirm tariff] |
+| WCF | 0.5% | — | 0.5% | Cash paid to employees | Workers Compensation Act, Cap 263; Tariff Regulations; WCF |
 
 **Conservative defaults**
 
@@ -84,7 +63,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Unknown residency status | Assume resident (progressive PAYE); ask before applying 15% flat |
 | Unknown sector (private vs public) | Assume private → NSSF (10%/10%); confirm before PSSSF |
 | Unknown employee headcount for SDL | If unknown, flag — SDL only applies at ≥10 employees (TRA) |
-| Unknown WCF tariff | Use 0.6% private / 0.5% public and FLAG [RESEARCH GAP] |
+| Sector unknown for WCF | 0.5% either way: the tariff is the same for private and public employers (WCF) |
 | Unknown whether pension already deducted before PAYE | Deduct mandatory pension before computing PAYE base (TRA) |
 | Zanzibar vs Mainland not stated | Assume Mainland; STOP on levies if Zanzibar (different regime) |
 
@@ -102,7 +81,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 - **R-TZ-SC-1 — Gross wage unknown** — Trigger: monthly gross wage not provided. Message: "Monthly gross wage in TZS is mandatory for PAYE and pension computation. PAYE is progressive and pension is a percentage of gross. Cannot proceed without this figure."
 - **R-TZ-SC-2 — Zanzibar payroll levies** — Trigger: employment located in Zanzibar. Message: "PAYE brackets are identical in Zanzibar per TRA, but SDL and certain social levies operate under a separate Zanzibar regime. Do not apply Mainland SDL/levy figures to Zanzibar without confirming the Zanzibar schedule. Escalate to a practitioner."
-- **R-TZ-SC-3 — WCF tariff confirmation** — Trigger: a definitive WCF figure is required for filing. Message: "The current private-sector WCF tariff is unconfirmed from WCF's own publications (PwC states 0.5%; other sources state 0.6%). Do not present a definitive WCF charge without confirming the tariff directly with WCF."
+- **R-TZ-SC-3 — WCF arrears** — Trigger: a WCF statement shows arrears or an assessment that differs from 0.5% of cash paid. Message: "The tariff is 0.5% of cash sums paid to employees for private and public employers (Workers Compensation Act, Cap 263; Tariff Regulations); a different figure on a WCF statement is arrears, an assessment or interest at 2% of the unpaid amount per month, not a rate. Reconcile against the WCF statement before paying; escalate if the assessment is disputed."
 - **R-TZ-SC-4 — Arrears / penalty quantification** — Trigger: client has unpaid PAYE, NSSF, SDL, or WCF from prior periods. Message: "Statutory penalties (TRA 2.5%/month, NSSF 5%/month) compound on unpaid amounts. Do not attempt to quantify arrears without official statements. Escalate to a practitioner."
 - **R-TZ-SC-5 — Presumptive tax / non-PAYE individuals** — Trigger: individual under the presumptive regime (turnover ≤ TZS 100 million). Message: "The presumptive income tax regime is outside the scope of this payroll skill and its rate bands are not captured here. Escalate to a practitioner. [RESEARCH GAP — presumptive bands not extracted]"
 
@@ -140,7 +119,7 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| WCF, WORKERS COMPENSATION FUND | EXCLUDE — employer levy | 0.5%–0.6%, employer-only |
+| WCF, WORKERS COMPENSATION FUND | EXCLUDE — employer levy | 0.5%, employer-only |
 | MFUKO WA FIDIA KWA WAFANYAKAZI | EXCLUDE — WCF | Swahili: "workers compensation fund" |
 
 ### 3.4 Salary and payroll (exclude from contributions classification)
@@ -175,9 +154,9 @@ Six bank statement / payroll classifications for a hypothetical private-sector e
 - PAYE base = 800,000 − 80,000 = 720,000.
 - PAYE: falls in band 520,001–760,000 → 20,000 + 20% × (720,000 − 520,000) = 20,000 + 20% × 200,000 = 20,000 + 40,000 = **60,000**.
 - Net pay = 800,000 − 80,000 (NSSF ee) − 60,000 (PAYE) = **660,000**.
-- Employer also bears: NSSF 80,000 + SDL 3.5% × 800,000 = 28,000 + WCF 0.6% × 800,000 = 4,800.
+- Employer also bears: NSSF 80,000 + SDL 3.5% × 800,000 = 28,000 + WCF 0.5% × 800,000 = 4,000.
 
-**Classification:** PAYE 60,000 and NSSF ee 80,000 withheld; NSSF er 80,000, SDL 28,000, WCF 4,800 employer-borne. All statutory remittances EXCLUDE from VAT.
+**Classification:** PAYE 60,000 and NSSF ee 80,000 withheld; NSSF er 80,000, SDL 28,000, WCF 4,000 employer-borne. All statutory remittances EXCLUDE from VAT.
 
 ### Example 2 — Top-bracket employee PAYE
 
@@ -265,11 +244,12 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 5 — NSSF (private sector) contribution
 
-- **NSSF total contribution and split** — Total NSSF = 20% of gross monthly wage, joint employer/employee. Standard split: 10% employer / 10% employee (employee share capped at 10%). Permitted alternative: 15% employer / 5% employee; employer may remit the full 20% without deducting from the employee. The legal obligation to remit rests on the employer. No published floor or ceiling on the contribution base.  _(NSSF; PwC)_
+- **NSSF total contribution and split** — Total NSSF = 20% of gross monthly wage, joint employer/employee. Standard split: 10% employer / 10% employee (employee share capped at 10%). Permitted alternative: 15% employer / 5% employee; employer may remit the full 20% without deducting from the employee. The legal obligation to remit rests on the employer. No published floor or ceiling on the contribution base. Employers must register with NSSF and register every employee; membership is mandatory for private-sector employees.  _(NSSF Act, Cap 50, s.13; NSSF; PwC)_
 
 ### Rule 6 — PSSSF (public sector) contribution
 
 - **PSSSF total contribution and split** — Total PSSSF = 20%, split 15% employer / 5% employee, under the Public Service Social Security Act, 2018. [RESEARCH GAP — split sourced from secondary material; reviewer to confirm against PSSSF official documentation.]  _(Public Service Social Security Act, 2018)_
+- **NHIF (public service)** — Public servants also contribute to the National Health Insurance Fund: 6% of basic salary, 3% employer and 3% employee, mandatory.  _(National Health Insurance Fund Act, Cap 395)_
 
 ### Rule 7 — Skills and Development Levy (SDL)
 
@@ -277,7 +257,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 8 — Workers Compensation Fund (WCF)
 
-- **WCF rate and treatment** — WCF is employer-borne only (not deducted from employees), payable monthly on cash paid to employees. Rate: PwC (Jan 2026) states 0.5%; other sources state 0.6% private / 0.5% public (0.6% private effective July 2021). [RESEARCH GAP — exact current private-sector tariff unconfirmed from WCF's own publications; default to 0.6% private / 0.5% public and FLAG before filing.]  _(PwC / WCF)_
+- **WCF rate and treatment** — WCF is employer-borne only (not deducted from employees), payable monthly on cash sums paid to employees, at 0.5% for private and public employers alike (the earlier 1% private tariff was harmonised to 0.5%). It is payable within the contribution month or by the end of the following month; late payment carries interest of 2% of the unpaid amount per month of delay.  _(Workers Compensation Act, Cap 263; Workers Compensation (Payment of Tariff) Regulations; WCF)_
 
 ### Rule 9 — Monthly remittance deadlines
 
@@ -286,8 +266,9 @@ These rules apply when payroll data is clear and all required inputs are availab
 | Item | Deadline | Source |
 | --- | --- | --- |
 | PAYE + SDL (TRA) | 7th day of the month following the payroll month | TRA |
-| WCF | Monthly (with cash paid) | PwC |
+| WCF | Within the contribution month or by the end of the following month | Workers Compensation (Payment of Tariff) Regulations |
 | NSSF | Within one month after the end of the month it relates to (NSSF Act s.14); practitioners cite end of following month | NSSF Act Cap. 50 |
+| HESLB | 15th of the month following the deduction | HESLB Act Cap. 178 |
 
 ### Rule 10 — Penalties
 
@@ -297,6 +278,8 @@ These rules apply when payroll data is clear and all required inputs are availab
 | --- | --- | --- |
 | PAYE/SDL late (TRA) | Higher of 2.5% of unpaid tax per month (or part) or 15 currency points (body corporate); plus interest | TRA |
 | NSSF late | 5% of unpaid amount per month or part-month | NSSF Act Cap. 50 |
+| WCF late | Interest of 2% of the unpaid amount per month of delay | WCF regulations |
+| HESLB late or not deducted | 10% of the monthly deduction | HESLB Act Cap. 178 |
 
 ### Rule 11 — Minimum wage (private sector, effective 1 Jan 2026)
 
@@ -305,6 +288,10 @@ These rules apply when payroll data is clear and all required inputs are availab
 ### Rule 12 — Statutory remittances are not VATable supplies
 
 - **VAT treatment of statutory remittances** — PAYE, NSSF, PSSSF, SDL, and WCF remittances are EXCLUDED from any VAT return. Employer shares of pension/SDL/WCF are deductible business costs; employee withholdings are not employer expenses.
+
+### Rule 13 — HESLB loan deductions
+
+- **HESLB deduction** — The employer deducts 15% of the monthly salary of each Higher Education Students' Loans Board beneficiary and remits it by the 15th of the following month; failure to deduct or remit on time incurs a penalty of 10% of the monthly deduction. The deduction comes after PAYE and the pension contribution and is not an employer cost.  _(Higher Education Students' Loans Board Act, Cap 178)_
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -322,9 +309,9 @@ When payroll data is ambiguous or client circumstances are unclear, flag these s
 
 - **SDL headcount near threshold** — Trigger: Employer headcount is around 9–11, or fluctuates across months. Issue: SDL applies only at 10 or more employees (TRA). Crossing the threshold mid-year changes SDL liability. Action: Flag for reviewer. Confirm the monthly headcount basis.
 
-### T2-4 — WCF tariff (0.5% vs 0.6%)
+### T2-4 — WCF arrears and assessments
 
-- **WCF tariff ambiguity** — Trigger: A definitive WCF charge is needed. Issue: PwC states 0.5%; other sources state 0.6% private / 0.5% public. The exact current private tariff is unconfirmed from WCF's own publications. Action: Flag for reviewer. Confirm the tariff directly with WCF before filing. [RESEARCH GAP]
+- **WCF arrears** — Trigger: the employer's WCF account shows arrears or an assessment that does not equal 0.5% of cash paid. Issue: the tariff is 0.5% for every employer (Workers Compensation Act, Cap 263; Tariff Regulations), so a different figure is arrears, an assessment or interest (2% of the unpaid amount per month of delay), not a rate. Action: reconcile the statement to the payroll month by month before paying; escalate a disputed assessment.
 
 ### T2-5 — Public vs private sector / fund selection
 
@@ -370,7 +357,7 @@ PAYE (resident progressive; base = gross - employee pension)
 
 EMPLOYER LEVIES
   SDL (3.5% of gross emoluments, if >= 10 staff): TZS [____]
-  WCF (0.5%-0.6% of cash paid) [CONFIRM TARIFF]:  TZS [____]
+  WCF (0.5% of cash paid):  TZS [____]
 
 NET PAY
   Gross:                         TZS [____]
@@ -452,7 +439,9 @@ If the client provides only a bank statement and no other information:
 | NSSF total | 20% (10% er / 10% ee) | NSSF |
 | PSSSF total | 20% (15% er / 5% ee) [GAP — secondary] | Public Service SSA 2018 |
 | SDL | 3.5%, employer ≥10 staff | TRA |
-| WCF | 0.5%–0.6% [GAP — confirm] | PwC / WCF |
+| WCF | 0.5% (private and public) | Workers Compensation Act, Cap 263; WCF |
+| NHIF (public service) | 6% of basic salary (3% er / 3% ee) | NHIF Act, Cap 395 |
+| HESLB | 15% of a loan beneficiary's monthly salary, by the 15th of the following month | HESLB Act, Cap 178 |
 | Minimum wage (1 Jan 2026) | TZS 358,322/month avg; TZS 175,000 uncovered sectors | GN 605A/2025; PKF |
 | Corporate income tax (context) | 30% standard; 25% newly DSE-listed 3 yrs | PwC / TRA |
 
@@ -464,6 +453,8 @@ If the client provides only a bank statement and no other information:
 | --- | --- | --- |
 | PAYE/SDL late (TRA) | Higher of 2.5%/month (or part) of unpaid tax or 15 currency points (body corporate) + interest | TRA |
 | NSSF late | 5% of unpaid amount per month or part-month | NSSF Act Cap. 50 |
+| WCF late | 2% of the unpaid amount per month of delay | WCF regulations |
+| HESLB late or not deducted | 10% of the monthly deduction | HESLB Act Cap. 178 |
 
 ### Test suite
 
@@ -479,7 +470,7 @@ If the client provides only a bank statement and no other information:
 
 **Test 6:** Non-resident, gross 4,000,000. → PAYE = 15%×4,000,000 = 600,000 (final tax).
 
-**Test 7:** Private employer, total payroll 50,000,000, 30 staff. → SDL = 3.5%×50,000,000 = 1,750,000 (employer-borne). WCF (0.6%) = 300,000 [confirm tariff].
+**Test 7:** Private employer, total payroll 50,000,000, 30 staff. → SDL = 3.5%×50,000,000 = 1,750,000 (employer-borne). WCF (0.5%) = 250,000.
 
 **Test 8:** Public-sector employee, gross 1,200,000, PSSSF 15/5. → PSSSF ee 5% = 60,000; PSSSF er 15% = 180,000; total 20% = 240,000 [GAP — confirm PSSSF split].
 
