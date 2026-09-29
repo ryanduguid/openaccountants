@@ -5,7 +5,7 @@ version: 0.3
 jurisdiction: US-CA
 category: state-tax
 tier: 2
-last_updated: 2026-09-29
+last_updated: 2026-09-30
 depends_on:
   - us-circular-230-disclosure
 ---
@@ -69,11 +69,11 @@ This skill does NOT cover:
 - FTB Publication 1001 (2025) -- Supplemental Guidelines to California Adjustments
 - FTB Form 540 Instructions (2025)
 - FTB Schedule CA (540) Instructions (2025)
-- FTB Notice 2025-XX (2025 inflation adjustments) -- (verify exact notice number)
+- FTB 2025 Tax Rate Schedules and Form 540 instructions (brackets and standard deductions checked 30 September 2026)
 
 **Currency limitations:**
 - California conformity to the IRC is generally fixed at January 1, 2015 with selective post-2015 conformity enacted by specific California legislation. OBBBA provisions (July 4, 2025) are NOT conformed to unless California enacts separate legislation. As of the currency date, no such legislation has been enacted.
-- Some 2025 inflation-adjusted figures (brackets, standard deduction) are based on FTB announcements. Where the FTB has not yet published final figures, the skill uses projected amounts and flags them with "(verify 2025)".
+- The brackets and standard deductions below use the final 2025 FTB publications. Other figures still labelled "verify 2025" remain unverified and require review before use.
 
 ---
 
@@ -81,31 +81,34 @@ This skill does NOT cover:
 
 All dollar thresholds, rates, and indexed figures in one place.
 
-**AUDIT FLASH POINT** — Head of household. The status is claimed with the Head of Household Filing Status Schedule (FTB 3532) and is denied where the qualifying person lived with the taxpayer for 183 days or fewer, two returns claim the same person or address, a married taxpayer claims a qualifying relative, the qualifying relative's income exceeds the limit, or the schedule is missing (FTB, Head of household filing status; Publication 1540). Attach the schedule and keep the residence evidence in the file.  _([FTB, Head of household](https://www.ftb.ca.gov/file/personal/filing-status/head-of-household.html))_
+**AUDIT FLASH POINT**: Head of household. Attach FTB 3532 and retain evidence of eligibility. For 2025, more than half the 365-day year is at least 183 days, subject to the rules for temporary absences and birth or death during the year. A qualifying parent need not live with the taxpayer if the separate household requirements are met. Check the qualifying person's relationship, residence, support and income where applicable, the taxpayer's marital status and competing claims. A shared address alone does not decide eligibility. ([FTB, 2025 Form 3532 instructions](https://www.ftb.ca.gov/forms/2025/2025-3532-instructions.html))
 
-### Tax rate schedule -- Single, Head of Household, Married Filing Separately (verify 2025)
+### 2025 tax rate schedule: Single and Married Filing Separately
 
-| Bracket | Taxable income range (Single) | Rate |
+Use the 2025 Tax Table for taxable income of $100,000 or less. For taxable income over $100,000, use the applicable tax rate schedule. Schedule X below covers Single and Married Filing Separately; Head of Household uses Schedule Z, and Married Filing Jointly or Qualifying Surviving Spouse uses Schedule Y. ([FTB, 2025 Form 540 instructions, line 31](https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html); [2025 Tax Rate Schedules X, Y and Z](https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf))
+
+| Bracket | Taxable income range (Single / MFS) | Marginal rate |
 |---|---|---|
-| 1 | $0 -- $10,756 | 1% |
-| 2 | $10,757 -- $25,499 | 2% |
-| 3 | $25,500 -- $40,245 | 4% |
-| 4 | $40,246 -- $55,866 | 6% |
-| 5 | $55,867 -- $70,612 | 8% |
-| 6 | $70,613 -- $360,659 | 9.3% |
-| 7 | $360,660 -- $432,791 | 10.3% |
-| 8 | $432,792 -- $721,314 | 11.3% |
-| 9 | $721,315 and above | 12.3% |
-| MHST | Above $1,000,000 | +1% (13.3% effective marginal) |
+| 1 | $0 to $11,079 | 1% |
+| 2 | Over $11,079 to $26,264 | 2% |
+| 3 | Over $26,264 to $41,452 | 4% |
+| 4 | Over $41,452 to $57,542 | 6% |
+| 5 | Over $57,542 to $72,724 | 8% |
+| 6 | Over $72,724 to $371,479 | 9.3% |
+| 7 | Over $371,479 to $445,771 | 10.3% |
+| 8 | Over $445,771 to $742,953 | 11.3% |
+| 9 | Over $742,953 | 12.3% |
 
-**Note:** Married Filing Jointly brackets are double the single brackets. The $1,000,000 MHST threshold is statutory and NOT doubled for MFJ. (verify 2025 -- historically California has NOT doubled the MHST threshold for MFJ; confirm current status.)
+The separate 1% Mental Health Services Tax applies to taxable income over $1,000,000, including on a joint return. ([FTB, 2025 Form 540 instructions, line 62](https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html))
 
-### Standard deduction (verify 2025)
+### 2025 standard deduction
 
 | Filing status | Standard deduction |
 |---|---|
-| Single / MFS | $5,540 |
-| MFJ / QSS / HOH | $11,080 |
+| Single / MFS | $5,706 |
+| MFJ / QSS / HOH | $11,412 |
+
+A taxpayer whom someone else can claim as a dependent uses the separate worksheet. ([FTB, 2025 Form 540 instructions, line 18](https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html))
 
 ### California personal exemption credit (verify 2025)
 
@@ -231,7 +234,7 @@ California conforms to the IRC generally as of January 1, 2015, with selective u
 The taxpayer may choose independently for California. A taxpayer who itemizes federally may take the CA standard deduction, and vice versa. However:
 
 - If MFS and spouse itemizes, the other spouse MUST also itemize on the CA return (R&TC section 17073.5).
-- CA standard deduction is much lower than federal ($5,540 single vs. $15,000 federal for 2025). Most self-employed taxpayers with mortgage interest, property tax, or charitable contributions will benefit from itemizing on the CA return.
+- CA standard deduction is much lower than federal ($5,706 single vs. $15,000 federal for 2025). Most self-employed taxpayers with mortgage interest, property tax, or charitable contributions will benefit from itemizing on the CA return.
 
 ### 6.2 -- Itemized deduction differences from federal
 
@@ -254,8 +257,8 @@ The taxpayer may choose independently for California. A taxpayer who itemizes fe
 
 ### 7.1 -- Regular tax
 
-1. Start with California taxable income (CA AGI minus deductions minus exemption credits basis).
-2. Apply the nine-bracket rate schedule from Section 3.
+1. Start with California taxable income (CA AGI minus the applicable deduction).
+2. Use the 2025 Tax Table for taxable income of $100,000 or less, or the applicable Schedule X, Y or Z above $100,000 (Section 3).
 3. Subtract personal exemption credits.
 4. Result is regular tax before credits.
 
@@ -428,10 +431,10 @@ Apply credits in the following order (R&TC section 17039):
 **Situation:** Single filer takes the federal standard deduction ($15,000) but has $8,000 in property taxes, $6,000 in mortgage interest, and $2,000 in charitable contributions.
 
 **Resolution:**
-- Federal: standard deduction is higher ($15,000 > $16,000 itemized less SALT cap complications).
-- CA standard deduction: only $5,540.
+- The stated expenses total $16,000, above the $15,000 federal standard deduction in this example. Review the federal election separately; do not assume the standard deduction is better.
+- CA standard deduction: only $5,706.
 - CA itemized: $8,000 property tax (fully deductible, no SALT cap) + $6,000 mortgage + $2,000 charitable = $16,000.
-- Taxpayer should itemize on CA return ($16,000 > $5,540).
+- Taxpayer should itemize on CA return ($16,000 > $5,706).
 - The election is independent -- taxpayer CAN take federal standard and CA itemized.
 - **Flag for reviewer:** Confirm independent election is optimal.
 
@@ -442,7 +445,7 @@ Apply credits in the following order (R&TC section 17039):
 ### Test 540-1 -- Basic single filer, no OBBBA complications
 
 **Input:** Single, CA resident, federal AGI $85,000. No QBI. No bonus depreciation. No HSA. Standard deduction on CA return.
-**Expected:** CA AGI = $85,000. CA taxable income = $85,000 - $5,540 = $79,460. Tax computed using brackets 1-6. Personal exemption credit of $144 applied. No MHST (under $1M).
+**Expected:** CA AGI = $85,000. CA taxable income = $85,000 - $5,706 = $79,294. Tax computed using the 2025 Tax Table. Apply the personal exemption credit after checking the applicable amount and phase-out. No MHST (under $1M).
 
 ### Test 540-2 -- QBI add-back
 
@@ -467,7 +470,7 @@ Apply credits in the following order (R&TC section 17039):
 ### Test 540-6 -- Independent deduction election (federal standard, CA itemized)
 
 **Input:** Single, federal AGI $95,000. Takes federal standard deduction ($15,000). Has $9,000 property tax, $7,000 mortgage interest, $3,000 charitable.
-**Expected:** CA standard deduction = $5,540. CA itemized = $9,000 + $7,000 + $3,000 = $19,000 (no SALT cap, no CA income tax deduction needed). Taxpayer should itemize on CA ($19,000 > $5,540). Federal and CA elections are independent.
+**Expected:** CA standard deduction = $5,706. CA itemized = $9,000 + $7,000 + $3,000 = $19,000 (no SALT cap, no CA income tax deduction needed). Taxpayer should itemize on CA ($19,000 > $5,706). Federal and CA elections are independent.
 
 ### Test 540-7 -- Large §179 difference
 

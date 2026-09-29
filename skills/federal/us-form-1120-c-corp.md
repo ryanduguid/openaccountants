@@ -5,9 +5,9 @@ jurisdiction: US
 category: federal
 tax_year: 2025
 version: 1.1
-last_updated: 2026-09-29
+last_updated: 2026-09-30
 reviewed_by: Christopher Aryee, CPA
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 depends_on:
