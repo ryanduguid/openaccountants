@@ -5,7 +5,7 @@ jurisdiction: US
 category: payroll
 tax_year: 2025
 version: 1.1
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
@@ -123,6 +123,10 @@ Common 941-X scenarios:
 - Reclassification of a fringe benefit (e.g., personal use of company car that was missed during the year — also corrected via W-2c if W-2 was already issued)
 
 Form 941-X is filed separately, not attached to the next Form 941.
+
+### 2.4.1 Employee Retention Credit claims on Form 941-X
+
+**AUDIT FLASH POINT** — ERC clawbacks. The 2020 and 2021 credit is claimed or corrected only on an adjusted employment tax return (Form 941-X for quarterly filers), and the IRS is examining those claims: as of the week ending 29 August 2026 about 14,900 remained in process, 3,600 of them under audit, with disallowances issued on Letter 105-C and appealable to the Independent Office of Appeals. For the third and fourth quarters of 2021 (IRC §3134), OBBBA §70605 (P.L. 119-21, 4 July 2025) bars any credit or refund on a claim filed after 31 January 2024, extends the assessment period for an amount attributable to the credit to six years after the latest of the original return's filing, its deemed filing date under §6501(b)(2) and the claim date (new §3134(l)), keeps the refund period for the disallowed wage deduction open for the same time, extends the §6676 erroneous-refund penalty to employment tax and adds a $1,000-per-failure due-diligence penalty on percentage-fee promoters. An employer that received an ineligible credit repays it with interest and penalties; one whose claim is unpaid, or whose check is uncashed, can withdraw it. A credit reduces the wage deduction for the same period, so the income tax return (Form 1040, 1065 or 1120) usually needs amending as well (Notice 2021-20 Q&A 60; Notice 2021-49 §IV.C).  _([IRS, Employee Retention Credit](https://www.irs.gov/coronavirus/employee-retention-credit); [P.L. 119-21 §70605](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm))_
 
 - **Adjusted return process** — Interest-free under §6205 — used to correct administrative errors (wrong wages, wrong tax) that resulted in either an underpayment or overpayment, when the period of limitation on assessment has not expired and the employer is correcting a §3402 income tax withholding or §3121 FICA error. Generally filed by April 15 of the calendar year following the year the error was discovered.  _(IRC §6205)_
 - **Claim for refund process** — Under §6402 — used when the employer is claiming a refund of overcollected employee tax. Requires written consent from each affected employee (or evidence the employer reimbursed the employee) per Treas. Reg. §31.6402(a)-2.  _(IRC §6402; Treas. Reg. §31.6402(a)-2)_
@@ -509,6 +513,8 @@ The classification of a worker as an employee (W-2) or independent contractor (1
 3. **Relationship type** — Written contracts, employee-type benefits (insurance, pension, vacation), permanency of relationship, services as a key activity of the business
 
 - **DOL 2024 Worker Classification Rule** — 29 C.F.R. Part 795, effective March 11, 2024 — applies for FLSA (wage-and-hour) purposes, not directly for FICA/FUTA, but is persuasive. The rule uses a six-factor "economic realities" test: 1. Opportunity for profit or loss depending on managerial skill 2. Investments by the worker and the potential employer 3. Degree of permanence of the work relationship 4. Nature and degree of control 5. Extent to which the work performed is integral to the potential employer's business 6. Skill and initiative For payroll tax purposes the IRS common-law test under §3121(d) controls. However, the DOL rule is a useful corroborating analysis, and a worker classified as an employee under the FLSA economic-realities test almost certainly will be classified as an employee for FICA purposes.  _(29 C.F.R. Part 795; IRC §3121(d))_
+**AUDIT FLASH POINT** — Worker misclassification. An examination that reclassifies 1099 contractors as employees assesses the employer's share of FICA and FUTA and the tax it should have withheld; §3509 caps the withheld-tax liability at 1.5% of the wages and the employee FICA at 20% of the normal amount where Forms 1099 were filed (3% and 40% where they were not), and the caps are lost for intentional disregard. Section 530 relief below is the defence file, and the VCSP is the exit before an examination starts.  _([IRC §3509](https://www.law.cornell.edu/uscode/text/26/3509))_
+
 - **Section 530 relief** — Revenue Act of 1978, P.L. 95-600 §530, never codified in IRC: An employer may avoid retroactive payroll tax liability for misclassification if: 1. The employer had a reasonable basis (judicial precedent, IRS ruling, prior IRS audit on the same issue, or long-standing industry practice) 2. The employer consistently treated the worker (and similar workers) as independent contractors 3. The employer filed all required information returns (Form 1099-NEC) on a basis consistent with treating the worker as an independent contractor  _(Revenue Act of 1978, P.L. 95-600 §530)_
 - **Voluntary Classification Settlement Program (VCSP)** — Allows an employer to reclassify workers as employees going forward with reduced past-period liability (about 10% of one year's employment tax). Application via Form 8952.  _(Form 8952)_
 
@@ -528,6 +534,8 @@ For independent contractor reporting (1099-NEC), see `us-1099-nec-issuance`. Tha
 - **Penalty applies per deposit** — The penalty applies to each deposit, not to the cumulative shortfall. So an employer who is 16 days late on the first deposit of the quarter and 3 days late on the second deposit owes 10% on the first underpayment and 2% on the second.  _(IRC §6656(b)(1))_
 - **§6651 failure-to-file penalty** — 5% per month, max 25%, if Form 941 itself is filed late  _(IRC §6651)_
 - **§6651 failure-to-pay penalty** — 0.5% per month, max 25%, if the tax shown on the return is not paid by the due date  _(IRC §6651)_
+**AUDIT FLASH POINT** — Trust fund recovery. Withheld income tax and employee FICA are the government's money in the employer's hands; a deposit shortfall is pursued personally against every responsible person who willfully let it go unpaid (§6672 below), it survives bankruptcy, and officers, payroll signatories and anyone with check-signing authority are the usual targets.
+
 - **§6672 Trust Fund Recovery Penalty (TFRP)** — 100% of the employee-portion of withheld tax (federal income tax withheld + employee FICA) assessed personally against any "responsible person" who willfully failed to collect, account for, or pay over. This is a personal liability that survives bankruptcy. Common targets: corporate officers, payroll service signatories, anyone with check-signing authority.  _(IRC §6672)_
 - **Reasonable cause exception** — Under §6656(a) and §6724 — penalty may be abated if the employer can show the failure was due to reasonable cause and not willful neglect. Documentation matters: documented banking error, EFTPS outage with same-day re-attempt, payroll service failure with employer due diligence.  _(IRC §6656(a); IRC §6724)_
 - **First-Time Abatement (FTA)** — Administrative relief under IRM 20.1.1.3.6.1 for employers with a clean compliance history (no penalties in the prior three tax years). One-time relief per taxpayer.  _(IRM 20.1.1.3.6.1)_

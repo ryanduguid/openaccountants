@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal
 tax_year: 2025
 version: 1.1
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -515,6 +515,8 @@ Prior year overpayment, current-year estimated tax, Form 7004 extension payment,
 - **Form 1125-E contents and flow** — Form 1125-E discloses: - Name and SSN of each officer (or top-paid officers if many). - Percent of time devoted to the business. - Percent of voting stock owned. - Amount of compensation paid (cash + non-cash). The total from Form 1125-E flows to Form 1120 Line 12.  _(Form 1120 instructions)_
 
 ### 15.1 Reasonable compensation issue
+
+**AUDIT FLASH POINT** — Officer compensation in a closely held C corporation. The line 12 deduction is examined for pay that is a dividend in disguise (§162(a)(1)); the factors and the independent-investor test below are the file the reviewer needs before Form 1125-E is signed, and a recharacterization taxes the amount twice, at 21% in the corporation and again to the shareholder.
 
 - **Reasonable compensation — overpayment issue** — Unlike S-corps (where reasonable compensation is an issue about underpayment — owners trying to recharacterize wages as distributions to avoid payroll tax), C-corps face a reasonable compensation issue under §162(a) about overpayment — owner-employees paying themselves excessive salary to convert nondeductible dividends into deductible wages. The IRS may recharacterize "excessive" compensation as a constructive dividend, disallowing the corporation's deduction (creating taxable income at 21%) and treating it as a dividend to the shareholder (taxed again at qualified dividend rates of 0/15/20% plus 3.8% NIIT). The classic case law factors (Mayson Mfg., Charles Schneider, Exacto Spring, Menard) examine: - Role and responsibility. - Time and effort. - Comparison with industry comp data. - Internal pay consistency. - Whether unrelated executives would accept the same comp. - The "independent investor test" — would a hypothetical outside investor accept the salary level given the return on equity? (Exacto Spring, 7th Cir. 1999.) For closely-held C-corps with material owner-employee comp, flag this for reviewer if comp exceeds industry norms.  _(§162(a); Mayson Mfg.; Charles Schneider; Exacto Spring (7th Cir. 1999); Menard)_
 

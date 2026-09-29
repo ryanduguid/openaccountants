@@ -5,7 +5,7 @@ version: 0.3
 jurisdiction: US-CA
 category: state-tax
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 depends_on:
   - us-circular-230-disclosure
 ---
@@ -52,6 +52,8 @@ This skill does NOT cover:
 - Community property adjustments for RDP/same-sex couples (flag for reviewer)
 - Any federal computation -- those are upstream
 
+**AUDIT FLASH POINT** — Residency. Full-year residency is this skill's precondition, not a finding it makes. A resident is taxed on all income regardless of source; a resident is anyone present in California for other than a temporary or transitory purpose, or domiciled in California and away for a temporary or transitory purpose (R&TC §17014; FTB Publication 1031), and a client who arrived, left or keeps a home in another state during the year is a Form 540NR question the FTB decides on the facts. Route that client out rather than file a 540 on a full-year assumption.  _([FTB, Residency status](https://www.ftb.ca.gov/file/personal/residency-status/index.html))_
+
 ---
 
 ## Section 2 -- Year coverage and currency
@@ -78,6 +80,8 @@ This skill does NOT cover:
 ## Section 3 -- Year-specific figures table for tax year 2025
 
 All dollar thresholds, rates, and indexed figures in one place.
+
+**AUDIT FLASH POINT** — Head of household. The status is claimed with the Head of Household Filing Status Schedule (FTB 3532) and is denied where the qualifying person lived with the taxpayer for 183 days or fewer, two returns claim the same person or address, a married taxpayer claims a qualifying relative, the qualifying relative's income exceeds the limit, or the schedule is missing (FTB, Head of household filing status; Publication 1540). Attach the schedule and keep the residence evidence in the file.  _([FTB, Head of household](https://www.ftb.ca.gov/file/personal/filing-status/head-of-household.html))_
 
 ### Tax rate schedule -- Single, Head of Household, Married Filing Separately (verify 2025)
 
