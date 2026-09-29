@@ -328,7 +328,7 @@ For a payment labelled VPDI, identify the plan and payment type and obtain the r
 
 **P-540-3.** NEVER assume California conforms to OBBBA. As of the currency date, California has not enacted OBBBA conformity legislation. Every OBBBA-specific federal deduction or exclusion must be evaluated for CA add-back.
 
-**P-540-4.** NEVER deduct California state income tax as an itemized deduction on the California return. Only other states' income taxes are deductible on Schedule CA.
+**P-540-4.** Do not deduct state or local income taxes on the California return, including income taxes paid to other states. Remove any federal itemised deduction for those taxes under Schedule CA Part II, line 5a.
 
 **P-540-5.** NEVER double the $1,000,000 MHST threshold for MFJ filers. The threshold is $1,000,000 regardless of filing status.
 
@@ -379,7 +379,7 @@ For a payment labelled VPDI, identify the plan and payment type and obtain the r
 
 ### EC-540-4 -- HSA contributions add-back
 
-**Situation:** Taxpayer contributed $4,300 to an HSA and deducted it on federal Form 1040 Line 13 (via Schedule 1).
+**Situation:** Taxpayer contributed $4,300 to an HSA and deducted it on Schedule 1 (Form 1040), line 13.
 
 **Resolution:**
 - CA does not recognize HSAs. Add back $4,300 on Schedule CA Column B.
@@ -484,9 +484,9 @@ For a payment labelled VPDI, identify the plan and payment type and obtain the r
 
 ## Section 12 -- Self-checks
 
-**Check 200 -- Federal AGI flows to Schedule CA.** Verify that federal AGI on Schedule CA Line 37 matches the federal Form 1040 Line 11.
+**Check 200 -- Federal AGI flows to Schedule CA.** Verify that Schedule CA Part I, line 27, column A matches federal Form 1040, line 11b.
 
-**Check 201 -- Every OBBBA add-back is documented.** For each OBBBA provision used on the federal return, verify a corresponding Schedule CA addition exists.
+**Check 201 -- California treatment of each OBBBA provision is documented.** For each OBBBA provision used on the federal return, document whether an AGI, itemised-deduction or other adjustment is required. Do not require an AGI addition for deductions taken after federal AGI.
 
 **Check 202 -- QBI does not change the AGI starting point.** If the federal return claims QBI, confirm it has neither been added to federal AGI nor deducted in the California taxable-income calculation.
 
