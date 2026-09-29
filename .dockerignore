@@ -1,23 +1,16 @@
-.git
-.github
-.claude
-.venv
-__pycache__
-*.pyc
-*.pyo
-.DS_Store
+# The build context is the server package and the packaged guides, nothing
+# else: the root-anchored list this replaced let skills/, docs/ and the
+# tests through (a 240 MB context), and its unanchored `.venv` and
+# `__pycache__` entries matched only at the root, so mcp/.venv and every
+# nested __pycache__ shipped in the image.
+*
+!mcp
+!packages
+mcp/tests
+mcp/.venv
+mcp/uv.lock
+mcp/smoke_test.py
+**/__pycache__
+**/*.py[co]
+**/.pytest_cache
 **/.DS_Store
-docs
-CHANGELOG.md
-CLA.md
-COMMERCIAL-LICENSING.md
-CONTRIBUTING.md
-LICENSE
-LICENSES
-LICENSING.md
-REUSE.toml
-README.md
-START-HERE.md
-glama.json
-Dockerfile
-.dockerignore
