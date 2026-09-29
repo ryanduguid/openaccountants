@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T02:01:45+00:00",
+ "generated_at": "2026-09-29T02:08:13+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -17905,7 +17905,7 @@
    "reviewed_by": "Werner Britz",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "south-africa-vat",
@@ -17918,7 +17918,7 @@
    "reviewed_by": "Werner Britz",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "za-capital-gains",
@@ -17931,7 +17931,7 @@
    "reviewed_by": "Werner Britz",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "za-income-tax",
@@ -17942,9 +17942,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Werner Britz",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "za-provisional-tax",
@@ -17955,9 +17955,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Werner Britz",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "za-tax-residency",
@@ -17970,7 +17970,7 @@
    "reviewed_by": "Werner Britz",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "za-vat-return",
@@ -17983,7 +17983,7 @@
    "reviewed_by": "Werner Britz",
    "review_status": "current",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "kr-income-tax",

@@ -4,9 +4,9 @@ description: Use this skill whenever asked about South African income tax for se
 version: 2.0
 jurisdiction: ZA
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-29
 reviewed_by: Werner Britz
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -15,458 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## South African Income Tax -- Self-Employed Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Werner Britz on 2026-06-12. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### Income Tax
-
-- **Country** — South Africa
-- **Tax type** — Income tax (normal tax) on trade income
-- **Primary legislation** — Income Tax Act 58 of 1962
-- **Supporting legislation** — Tax Administration Act 28 of 2011; Sixth Schedule (Turnover Tax); Fourth Schedule (Provisional Tax)
-- **Tax authority** — SARS
-- **Filing portal** — ⚠ **This row previously had it backwards and sent readers to a hostname that does not exist.** It directed documentation to `https://www.sarsefiling.gov.za` and called `www.sarsefiling.co.za` *"the older registered domain that redirects"*. **Neither `www.sarsefiling.gov.za` nor `efiling.sars.gov.za` resolves in DNS at all.** `https://www.sarsefiling.co.za` answers 200, redirects to `https://secure.sarsefiling.co.za/landing` and serves a page titled **"SARS eFiling"** — it is the live portal, and the redirect is the ordinary hop to a login landing, not evidence of retirement. Use **https://www.sarsefiling.co.za** for eFiling and **https://www.sars.gov.za** for the authority site  _(checked by DNS resolution and HTTP fetch, 11 September 2026)_
-- **Currency** — ZAR only
-- **Tax year** — 1 March - 28 February  _(Income Tax Act s 1, definition)_
-- **Return form** — ITR12
-- **Filing season** — Set by SARS each year and published before it opens. For the 2026 year of assessment (1 March 2025 to 28 February 2026): auto-assessment notices 1 to 12 July 2026, manual filing opens 13 July, and the **non-provisional deadline is 23 October 2026**. Provisional taxpayers and trusts have until **22 January 2027**. Disagreeing with an auto-assessment does not extend either date: the corrected ITR12 is due on the same deadline  _(SARS Filing Season 2026 notice)_
-- **Provisional tax** — IRP6 (1st: 31 Aug, 2nd: last day Feb, 3rd voluntary: 30 Sep)  _(Income Tax Act Fourth Schedule)_
-- **Primary rebate** — 2026/27 year of assessment: R17,820. 2025/26 was R17,235 but we are now in YOA 2027 from 1 March 2026. All rebates and thresholds in the skill need to be updated to 2026/27.  _(SARS Budget 2026 Tax Guide)_
-- **Secondary rebate (65+)** — 2026/27: R9,768.  _(SARS Budget 2026 Tax Guide)_
-- **Tertiary rebate (75+)** — 2026/27: R3,252.  _(SARS Budget 2026 Tax Guide)_
-- **Retirement fund deduction** — Cap increased from R350,000 to R430,000 for years of assessment commencing on or after 1 March 2026 (Budget 2026). The 27.5% rate and "greater of remuneration or taxable income" base remain.  _(Income Tax Act s 11F; SARS Budget 2026 Tax Guide)_
-- **Turnover tax** — Turnover limit increased to R2,300,000 from 1 March 2026 (aligned with new VAT registration threshold). Brackets also moved - see Section 1 turnover tax row below.  _(Income Tax Act Sixth Schedule; SARS Budget 2026 Tax Guide)_
-- **Contributor** — Open Accountants Community
-
-Update after sign-off by Werner Britz CA(SA).
-
-- **R1 - R237,100 (skill)** — 2026/27: R1 - R245,200 at 18%. Brackets adjusted by approximately 3.4% for inflation.  _(SARS Budget 2026 Tax Guide)_
-- **R237,101 - R370,500 (skill)** — 2026/27: R245,201 - R383,000. Tax R44,136 + 26% of excess.  _(SARS Budget 2026 Tax Guide)_
-- **R370,501 - R512,800** — 2026/27: R383,001 - R530,200. Tax R79,884 + 31%.  _(SARS Budget 2026 Tax Guide)_
-- **R512,801 - R673,000** — 2026/27: R530,201 - R695,800. Tax R125,516 + 36%.  _(SARS Budget 2026 Tax Guide)_
-- **R673,001 - R857,900** — 2026/27: R695,801 - R887,100. Tax R185,132 + 39%.  _(SARS Budget 2026 Tax Guide)_
-- **R857,901 - R1,817,000** — 2026/27: R887,101 - R1,878,300. Tax R259,739 + 41%.  _(SARS Budget 2026 Tax Guide)_
-- **R1,817,001+** — 2026/27: R1,878,301+. Tax R666,131 + 45%.  _(SARS Budget 2026 Tax Guide)_
-- **Below 65** — 2026/27: R99,000.  _(SARS Budget 2026 Tax Guide)_
-- **65 - 74** — 2026/27: R153,278.  _(SARS Budget 2026 Tax Guide)_
-- **75+** — 2026/27: R171,355.  _(SARS Budget 2026 Tax Guide)_
-- **Main member monthly** — 2026/27: R376.  _(SARS Budget 2026 Tax Guide)_
-- **First dependant monthly** — 2026/27: R376.  _(SARS Budget 2026 Tax Guide)_
-- **Each additional monthly** — 2026/27: R254.  _(SARS Budget 2026 Tax Guide)_
-- **R0 - R335,000** — 2026/27: R0 - R600,000 at 0%. Major rebanding effective 1 March 2026.  _(Income Tax Act Sixth Schedule; SARS Budget 2026 Tax Guide)_
-- **R335,001 - R500,000** — 2026/27: R600,001 - R950,000 at 1% above R600,000.  _(Sixth Schedule; SARS Budget 2026 Tax Guide)_
-- **R500,001 - R750,000** — 2026/27: R950,001 - R1,400,000 at R3,500 + 2% above R950,000.  _(Sixth Schedule; SARS Budget 2026 Tax Guide)_
-- **R750,001 - R1,000,000** — 2026/27: R1,400,001 - R2,300,000 at R12,500 + 3% above R1,400,000. Turnover ceiling raised from R1m to R2.3m.  _(Sixth Schedule; SARS Budget 2026 Tax Guide)_
-- **Unknown age** — STOP - age determines rebates and threshold
-- **Unknown expense category** — Not deductible
-- **Unknown business-use proportion** — 0%
-- **Unknown whether home office qualifies** — Not deductible (IN 28 strict)  _(SARS IN 28 (Issue 3, March 2022))_
-- **Entertainment expenses** — See summary critical finding #8. s 23(m) restricts deductions against EMPLOYMENT income and income from holding an OFFICE; it does NOT restrict deductions against trade income of a sole proprietor. Entertainment for a sole proprietor is tested under the general deduction formula (s 11(a) plus s 23(g)): is the expenditure actually incurred in the production of income and not of a domestic, private, or capital nature? Client lunches that are bona fide marketing or business development may be deductible. The VAT block on entertainment (s 17(2)(a) VAT Act) is a separate rule and applies to all vendors. Reword the default to: "Entertainment: critically review under s 11(a) and s 23(g); conservatively disallow if no clear nexus to income production".  _(Income Tax Act s 11(a), s 23(g), s 23(m); VAT Act s 17(2)(a))_
-
-Bank statement for the tax year. Acceptable from: FNB, Standard Bank, Nedbank, Absa, Capitec, Investec, Discovery Bank, TymeBank, fintech (Revolut, Wise)
-
-Invoices, IRP6 payment records, medical aid statements, RA contribution certificates, vehicle logbook
-
-Complete bookkeeping, prior year ITR12, IT34 (assessment), asset register
-
-- **R-ZA-1: Company/CC/Trust** — This skill covers sole proprietors only. Companies file ITR14 at 27%. Trusts file ITR12T.  _(Income Tax Act s 5 and rates schedule)_
-- **R-ZA-2: Foreign income** — Correct as refusal but reference is to s 10(1)(o)(ii) - the exemption for employment income earned outside SA for more than 183 days. Note the R1.25m cap was introduced in 2020. For sole proprietor trade income earned outside SA, residency and DTA rules apply (s 9D for CFCs). Different rule.  _(Income Tax Act s 10(1)(o)(ii); s 6quat; relevant DTAs)_
-- **R-ZA-3: Capital gains tax** — Reasonable refusal as scope decision, but CGT events on business assets are common in sole prop work (disposal of equipment, sale of practice). Even if computation is outside scope, the skill should flag CGT triggers. Annual exclusion R40,000 (R300,000 in year of death); inclusion rate 40% for individuals. Primary residence exclusion R2m (R3m from 1 March 2026).  _(Income Tax Act Eighth Schedule; SARS Budget 2026 Tax Guide)_
-- **R-ZA-4: Age unknown** — Cannot compute without age  _(Income Tax Act s 6 and s 10(1)(i))_
-- **FNB, FIRST NATIONAL BANK - Bank charges** — Deductible. Business account fees  _(Income Tax Act s 11(a))_
-- **STANDARD BANK, SBSA** — Bank charges deductible
-- **NEDBANK** — Bank charges deductible
-- **ABSA** — Bank charges deductible
-- **CAPITEC** — Bank charges deductible
-- **INVESTEC** — Bank charges deductible
-- **DISCOVERY BANK, TYMEBANK** — Bank charges deductible
-- **REVOLUT, WISE (fees)** — Deductible. Fintech fees
-- **INTEREST (credit)** — Taxable income up to exemption (R23,800 <65; R34,500 65+); excess taxable  _(Income Tax Act s 10(1)(i))_
-- **INTEREST (debit)** — Deductible if business loan; personal not deductible  _(Income Tax Act s 11(a), s 24J)_
-- **LOAN, HOME LOAN (principal)** — EXCLUDE - principal movement
-- **SARS** — EXCLUDE. Tax payment (provisional/income)
-- **UIF, UNEMPLOYMENT INSURANCE** — Deductible if employer contribution. Employee-related  _(Unemployment Insurance Contributions Act)_
-- **COIDA, COMPENSATION FUND** — Deductible  _(COIDA s 80)_
-- **CIPC** — CIPC fees specifically related to ongoing trade (annual returns for the trade form, name changes, etc.) are deductible. Initial CIPC fees for incorporation are CAPITAL and not deductible (s 23(g)). For a sole proprietor, this is less relevant - sole props do not register with CIPC. The skill seems to assume the sole prop has a company, which would put them outside scope per R-ZA-1.  _(Income Tax Act s 23(g))_
-- **ESKOM, CITY POWER, CITY OF [JHB/CPT/DBN]** — Conflates two different items. (1) ELECTRICITY (Eskom or municipal): deductible to the extent used in production of income; apportion home use. (2) RATES (property rates on a municipal bill): only deductible to the extent the property is used for trade, in proportion. For a home office user, rates are deductible only to the extent of the qualifying office area. Bundle on a single municipal bill: split rates from electricity from water from refuse.  _(Income Tax Act s 11(a); SARS IN 28)_
-- **RAND WATER** — Deductible if business premises. Water  _(Income Tax Act s 11(a))_
-- **VODACOM, MTN, CELL C, TELKOM, RAIN** — Deductible: business phone/internet. Mixed: apportion  _(Income Tax Act s 11(a))_
-- **HOLLARD, SANTAM, OLD MUTUAL, MOMENTUM, OUTSURANCE** — Skill's row covers asset and short-term business insurance correctly. Three important related items are NOT addressed and frequently asked: KEY-PERSON / KEY-MAN insurance, income protection, and group risk cover. KEY-PERSON INSURANCE - s 11(w) framework (post-1 March 2012): three structures with very different consequences. (1) Section 11(w)(i) - "employer-paid for benefit of employee" (group life, etc.): Premiums DEDUCTIBLE for employer. Premium amount taxed as fringe benefit to the employee under para 2(k) Seventh Schedule. Effectively neutral (deduction = fringe benefit value). Proceeds taxed in employee's hands (or estate) depending on structure. (2) Section 11(w)(ii) - "conforming" key-person policy (employer is policyholder AND beneficiary): Requires (a) pure risk policy with NO cash or surrender value; (b) policy is property of the employer at time of premium payment (may be ceded as security to creditor but not assigned to employee); (c) policy agreement EXPLICITLY states that s 11(w)(ii) applies (or addendum to that effect for pre-March 2012 policies, by 31 August 2012). If election made: Premiums DEDUCTIBLE. Proceeds INCLUDED IN GROSS INCOME under para (m) of the "gross income" definition - fully taxable to the employer. (3) "Non-conforming" policy - DEFAULT if no s 11(w)(ii) election is made: Premiums NOT deductible. Proceeds EXEMPT under s 10(1)(gH) - tax-free to the employer. This is the more common structure since the 2012 amendments because (a) the cover amount needed is lower (no need to gross up for tax on payout); (b) insurers default to this unless client specifically opts in. Practitioner decision matrix: Choose CONFORMING (s 11(w)(ii)) if: company has high taxable income now wanting current deduction; expected to pay out relatively soon; comfortable that proceeds will be taxable. Choose NON-CONFORMING if: client wants tax-free payout (most cases); cash flow is fine without the upfront premium deduction; intention is to use proceeds to recover the loss of the key person (capital in nature). CONTINGENT LIABILITY POLICIES (surety cover): Post-March 2012, generally NOT deductible (SARS treats as capital expenditure). ASISA/Sanlam Group withdrew tax-deductible contingent liability plans after the 2012 amendments. BUY-AND-SELL POLICIES (funding shareholder buy-out): Typically structured as non-conforming. Premiums non-deductible; proceeds tax-free; policy excluded from deceased's estate under s 3(3)(a)(iA) Estate Duty Act if requirements met (risk policy with no surrender value, all premiums paid by partners/co-shareholders, proceeds used to acquire the interest). INCOME PROTECTION INSURANCE: NOT deductible under s 23(p) (specific prohibition since 2015). Proceeds (when paid) are exempt under s 10(1)(gI). The opposite of the pre-2015 position. SHORT-TERM ASSET INSURANCE (Hollard, Santam, OUTsurance covering business vehicles, premises, public liability, etc.): Deductible under s 11(a) where directly relating to trade. Insurance proceeds for damaged business assets are recoupments under s 8(4)(a) - taxable to extent of allowances previously claimed. PERSONAL LIFE INSURANCE / RETIREMENT ANNUITY (NOT key-person): premiums NOT deductible (RA is separately deductible under s 11F up to the cap). Proceeds tax-free.  _(Income Tax Act s 11(w)(i) and s 11(w)(ii); s 10(1)(gH); s 23(p); s 8(4)(a); s 11F; para (m) of "gross income" definition; Seventh Schedule para 2(k); Estate Duty Act s 3(3)(a)(iA); PKF SA "Key man insurance policy tax"; SAICA Integritax 1209; Dommisse Attorneys (2020); G&S Insurance Consultants commentary; SAIT "Taxation of benefits in respect of insurance policies")_
-- **DISCOVERY HEALTH, BONITAS, GEMS, MEDIHELP** — NOT deductible from income. Medical = s6A/s6B credits  _(Income Tax Act s 6A and s 6B)_
-- **GOOGLE, MICROSOFT, ADOBE, META** — Deductible expense. Foreign SaaS  _(Income Tax Act s 11(a))_
-- **GITHUB, OPENAI, ANTHROPIC** — Deductible expense. Non-EU
-- **SLACK, ZOOM, ATLASSIAN** — Deductible expense. Check entity
-- **ACCOUNTANT, AUDIT, CA(SA)** — Deductible. Accounting/audit fees  _(Income Tax Act s 11(a))_
-- **ATTORNEY, ADVOCATE, LAW FIRM** — Legal fees in respect of trade income are deductible. Capital-nature legal fees (acquisition of business, defence of title to capital asset) are not deductible under the s 23(g) prohibition on capital expenditure. Litigation costs of an income-producing nature are deductible (e.g. recovering trade debts) but defending a personal claim is not.  _(Income Tax Act s 11(a), s 23(g); Port Elizabeth Electric Tramway Co Ltd v CIR)_
-- **TAX PRACTITIONER** — Deductible. Tax advisory  _(Income Tax Act s 11(a); SARS Tax Practitioner page)_
-- **ALLAN GRAY, CORONATION, 10X, SYGNIA, NINETY ONE** — Cap R430,000 from 1 March 2026 (Budget 2026). Rate 27.5% unchanged. Base is "greater of remuneration or taxable income" - for sole props, remuneration is typically zero so taxable income is the base. Note: the s 11F deduction is calculated AFTER s 11A and BEFORE the s 18A donations deduction.  _(Income Tax Act s 11F; SARS Budget 2026 Tax Guide)_
-- **OLD MUTUAL RA, MOMENTUM RA, LIBERTY RA** — Same. Cap R430,000.  _(Income Tax Act s 11F)_
-- **KULULA, FLYSAFAIR, AIRLINK, SAA** — For INCOME TAX (the focus of this skill): full ticket cost deductible to the extent for business travel under s 11(a). Logbook or business purpose evidence required. NOTE on VAT cross-reference: input VAT on the ticket needs to be SPLIT by component - not all lines on the e-ticket carry VAT (base fare + fuel + PSC + insurance = 15%; SACAA + ATNS + Air Passenger Tax = no VAT). Income tax deduction does not depend on this split. Update for carriers: Kulula ceased 2022, Mango ceased 2021. Add: Lift, CemAir, FlyAirlink, FlyNamibia for regional/SA carriers.  _(Income Tax Act s 11(a); VAT Act s 11(2)(a) and s 12 (cross-reference); Customs and Excise Act s 47B)_
-- **UBER, BOLT** — For income tax (which the skill addresses): rider fares deductible to the extent for trade purposes, fine. Need invoice plus business-purpose evidence. NOTE on VAT (cross-reference): the Uber/Bolt fare is EXEMPT under s 12(g) of the VAT Act, so no input VAT is claimable on the fare even by a VAT-registered business rider. Practical only for income tax. Drivers themselves: their fare income is also exempt from VAT, so they register for VAT only if they have non-fare income (incentives, referrals, marketing services) exceeding the threshold. Source: VAT Act s 12(g); Uber SA driver tax page.  _(Income Tax Act s 11(a); VAT Act s 12(g) and s 54 (cross-reference))_
-- **ENGEN, SHELL, BP, SASOL, CALTEX, TOTAL** — Deductible: business vehicle portion only. Fuel; requires logbook  _(Income Tax Act s 11(a))_
-- **AVIS, EUROPCAR, HERTZ** — For income tax: deductible to the extent for business. NOTE for VAT: input VAT on car rental of a "motor car" is BLOCKED under s 17(2)(c) VAT Act. The skill is income tax only and the income tax position is correct, but a practitioner should flag the VAT block when reviewing the same expense under both regimes.  _(Income Tax Act s 11(a); VAT Act s 17(2)(c) (cross-reference))_
-- **SANRAL, E-TOLL** — e-tolls were effectively discontinued on the Gauteng Freeway Improvement Project (GFIP) on 12 April 2024. SANRAL toll plaza fees on the N1, N2, N3 etc. still apply.
-- **INCREDIBLE CONNECTION, MATRIX, TAKEALOT** — Refined rule: ITEMS COSTING R7,000 OR LESS each: full write-off in year of acquisition under SARS BGR 7 (small-value assets full write-off). The asset is brought into use for purposes of trade and is not part of a set. CRITICAL "SET" RULE under BGR 7: cannot artificially break a single asset/set into sub-components to bring them below R7,000. A "set" is a number of items that function as a single unit (e.g. a dining table with six matching chairs; a set of matching office furniture; a complete computer with its specific monitor, keyboard, and mouse all purchased together as a configured unit). The cost of the set is aggregated for the R7,000 test. Items that are independently functional and not part of a configured set (e.g. five separate laptops bought at the same time for five employees, each functionally independent) are tested individually. ITEMS COSTING ABOVE R7,000 each (or sets aggregated above R7,000): wear-and-tear under s 11(e), straight-line over the SARS useful life per IN 47 (Issue 5). Common useful lives: computers 3 years; office furniture 6 years; office equipment 5 years; cellular phones 2 years; printers 3 years. Apportion for part-year use. ENHANCED ALLOWANCES (where applicable): s 12C for manufacturing plant (40/20/20/20 over four years for new/unused); s 12E for Small Business Corporations on new manufacturing plant (100% in year of acquisition - but s 12E is for companies, not sole proprietors); s 12B for renewable energy assets (see new row below).  _(Income Tax Act s 11(e); SARS BGR 7 (small-value assets); SARS IN 47 (Issue 5, March 2023); s 12B; s 12C; s 12E)_
-- **OFFICE NATIONAL, WALTONS** — Deductible. Stationery
-- **POSTNET, SA POST OFFICE** — SA Post Office was placed in business rescue in mid-2023 and provisional liquidation in mid-2025. Practical availability is limited. PostNet and TCG (The Courier Guy) still operate.
-- **MAKRO, GAME** — Deductible if business supplies. Verify business purpose
-- **PICK N PAY, WOOLWORTHS, CHECKERS, SPAR, SHOPRITE** — For a sole proprietor, the right test is the general deduction formula (s 11(a) read with s 23(g)): is the expenditure actually incurred in the production of income and not of a domestic, private, or capital nature? DEDUCTIBLE for income tax (sole prop) where genuine trade purpose exists: - Office tea, coffee, milk, sugar, biscuits provided to clients during consultations or meetings, or to staff during working hours (staff sustenance) - Bottled water in client meeting rooms - Refreshments at training sessions, workshops - Catering for client functions where the function is business development - Supplies for a catering business, restaurant, B&B (resale stock) NOT DEDUCTIBLE: pure personal grocery shopping; family meals; entertainment with no business nexus; alcohol for staff without trade purpose. CROSS-REFERENCE - VAT TREATMENT IS DIFFERENT: even where income tax allows the deduction (legitimate office tea/coffee), the VAT INPUT is BLOCKED under s 17(2)(a) as entertainment UNLESS the vendor is in the entertainment trade. So a typical sole prop deducts office groceries for income tax but cannot claim the VAT input. The two regimes do not move together. PRACTICAL: keep proper records - itemised receipts and notes confirming business purpose. SARS may query large grocery deductions for individuals.  _(Income Tax Act s 11(a) and s 23(g); VAT Act s 17(2)(a) (cross-reference); SARS Comprehensive Guide to the ITR12)_
-- **RESTAURANT (any)** — See critical finding #8: s 23(m) does NOT apply to sole proprietors - it restricts deductions against employment income and income from holding an office. Sole prop restaurant spending tested under s 11(a) and s 23(g). DEDUCTIBLE for income tax (sole prop) where genuine trade purpose: bona fide client business development meals; meetings with clients where business is the substantial purpose; subsistence while travelling on business away from usual place of work. Practitioner should retain: date, who attended, business purpose, what was discussed. NOT DEDUCTIBLE: pure personal/social meals labelled as "client entertainment" without real business purpose; meals with family branded as business. CROSS-REFERENCE - VAT: restaurant VAT input is BLOCKED under s 17(2)(a) entertainment for the buying business. Only the restaurant itself can claim its own input on its inputs (since it IS in the entertainment trade). Income tax deduction does not depend on VAT treatment.  _(Income Tax Act s 11(a) and s 23(g); VAT Act s 17(2)(a))_
-- **OWN TRANSFER, INTERNAL** — EXCLUDE - internal movement
-- **DRAWINGS, OWNER** — EXCLUDE - personal drawings
-- **DEPOSIT, OWN DEPOSIT** — EXCLUDE - capital injection
-- **MISSING: CGT events** — Even with CGT excluded from scope (R-ZA-3), the skill should flag CGT triggers: vehicle sale, equipment disposal, sale of practice, sale of property used in trade. Pattern: large CREDIT from VEHICLE TRADER, AUCTION HOUSE, BUSINESS BUYER. Mark as "review for CGT".  _(Income Tax Act Eighth Schedule)_
-- **MISSING: Donations** — Section 18A donations: deductible up to 10% of taxable income for donations to qualifying PBOs with a s 18A receipt. Common pattern: GIVENGAIN, BACKABUDDY, donation to specific charities. Need s 18A receipt with PBO number.  _(Income Tax Act s 18A)_
-- **MISSING: Rental income (residential)** — Rental income from residential property is gross income for individuals. Deductions: bond interest, rates, levies, repairs (not improvements), insurance, agent commission. Add to patterns: CREDIT from "TENANT", "RENT", "PAY PROP", "RENT PROPERTY MANAGEMENT". This is a common sole prop income source.  _(Income Tax Act s 11(a); SARS IN 53 (rental))_
-
-### Example 1: Mid-range
-
-Computation is logically right for 2025/26 rates but uses old brackets and rebates. Re-run on 2026/27 rates: net profit R420k; s 11F = 27.5% x R420k = R115,500 (within R430k cap); taxable R304,500; tax R44,136 + 26% x (R304,500 - R245,200) = R44,136 + R15,418 = R59,554; less rebate R17,820 = R41,734; less medical credit R9,024 (R376 x 2 x 12) = R32,710; less provisional R40,000 = refund R7,290.
-
-### Example 2: Turnover tax
-
-2026/27: R650,000 turnover falls within the new R600,001 - R950,000 bracket at 1% above R600,000. Tax = 1% x R50,000 = R500. Significant reduction under new brackets.
-
-### Example 3: Entertainment disallowed
-
-See critical finding #8. s 23(m) does not block entertainment for sole proprietors. Test instead under s 11(a) and s 23(g). A bona fide marketing dinner with a real client where the purpose is income production may be deductible (subject to evidence). Personal social meals branded as "entertainment" are not. The right answer is "review the nexus", not "block on s 23(m)".
-
-### Example 4: Retirement cap exceeded
-
-2026/27 cap: R430,000. Re-run: 27.5% x R2m = R550,000, capped at R430,000. Deduction R430,000. Excess R170,000 carries forward (or adds to tax-free retirement lump sum).
-
-### 5.1 Progressive rates
-
-- **5.1 Progressive rates** — Apply rate table. One table for all individuals regardless of marital status  _(Income Tax Act s 5 and rates schedule)_
-
-### 5.2 Rebates
-
-- **5.2 Rebates** — 2026/27: Primary R17,820; Secondary R9,768 (additional, total 65+ = R27,588); Tertiary R3,252 (additional, total 75+ = R30,840). Credits against tax confirmed.  _(Income Tax Act s 6; SARS Budget 2026 Tax Guide)_
-
-### 5.3 Interest exemption
-
-- **5.3 Interest exemption** — R23,800 (under 65). R34,500 (65+). Excess taxable.  _(Income Tax Act s 10(1)(i))_
-
-### 5.4 s11F retirement deduction
-
-- **5.4 s11F retirement deduction** — Cap R430,000 from 1 March 2026. Tax-free retirement lump sum R550,000 unchanged. Note: the "greater of" base is correctly stated, but for sole props it's almost always taxable income.  _(Income Tax Act s 11F; SARS Budget 2026)_
-
-### 5.5 Medical tax credits (s6A)
-
-- **5.5 Medical tax credits (s6A)** — 2026/27: R376/R376/R254.  _(Income Tax Act s 6A; SARS Budget 2026)_
-
-### 5.6 Provisional tax (IRP6)
-
-- **5.6 Provisional tax (IRP6)** — See Provisional Tax sheet for detail. From years of assessment commencing on or after 1 March 2026, the basic-amount safe harbour threshold is R1.8m (up from R1m). The 20% underestimation penalty also applies where the estimate is within tolerance but the payment is late (Budget 2026).  _(Income Tax Act Fourth Schedule; SARS Budget 2026)_
-
-### 5.7 Turnover tax
-
-- **5.7 Turnover tax** — Turnover ceiling R2.3m from 1 March 2026 (aligned with VAT registration threshold). The "non-professional services" framing is rough: the exclusion is for personal service providers (s 12E and Sixth Schedule). Turnover tax DOES replace income tax and CGT - the dividends tax inclusion is correct only insofar as dividends paid to shareholders of a micro business company carry tax under the special rules. Turnover tax does NOT replace VAT - a turnover tax taxpayer can still register voluntarily for VAT if they meet the criteria, although typically they would not register as they fall below the threshold.  _(Income Tax Act Sixth Schedule; s 12E)_
-
-### 5.8 Wear-and-tear (s11(e))
-
-- **5.8 Wear-and-tear (s11(e))** — IN 47 useful life IS straight-line over the period, just that the period is taken from the IN 47 table rather than being chosen by the taxpayer. The correct framing: the deduction is "such sum as the Commissioner thinks just and reasonable" representing wear-and-tear, by reference to IN 47 useful lives applied straight-line. Apportionment for part-year use. Small assets <R7,000 fully written off in year of acquisition under BGR 7.  _(Income Tax Act s 11(e); SARS IN 47; BGR 7)_
-
-### 5.9 Entertainment
-
-- **5.9 Entertainment** — See critical finding #8 and rows above. s 23(m) restricts EMPLOYMENT and OFFICE-HOLDER deductions, not sole prop trade deductions. Sole prop entertainment is tested under s 11(a) and s 23(g): bona fide trade purpose, not domestic/private.  _(Income Tax Act s 11(a), s 23(g), s 23(m))_
-
-### 5.10 Home office
-
-- **5.10 Home office** — Substantive position correct but list of expenses missing. s 23(b) requirements: (1) part of a residence occupied for trade; (2) specifically equipped for trade; (3) regularly and exclusively used for trade; (4) (for salaried employees only) duties are mainly performed there. Permitted expenses (apportioned): rent OR bond INTEREST (not capital repayments); rates and taxes; levies; electricity; water; cleaning; repairs to office portion; wear-and-tear on office-only equipment claimed in full. Formula: A/B x premises costs where A=area of office, B=total area of residence. CRITICAL CGT CONSEQUENCE (missing from skill): the area used for trade is "tainted" - on disposal of the residence, the primary residence exclusion (R2m / R3m from 1 March 2026) does NOT apply to the tainted portion; the gain is apportioned by area and period of trade use, and the tainted portion is fully subject to CGT with only the annual exclusion (R40k) available. Practitioners must warn clients before they first claim home office. Many clients consider claiming home office and then find on sale that they have generated CGT that exceeds the lifetime income tax savings.  _(Income Tax Act s 11(a), s 23(b); SARS IN 28 (Issue 3, March 2022); Eighth Schedule para 47)_
-
-### 5.11 Record keeping
-
-- **5.11 Record keeping** — 5 years from submission. Invoices, receipts, bank statements, logbooks, asset register.  _(TAA s 29 to s 32)_
-
-### 6.1 Home office qualification
-
-- **6.1 Home office qualification** — Add the CGT consequence (see 5.10 above). Also add the four s 23(b) requirements explicitly.  _(Income Tax Act s 23(b); IN 28)_
-
-### 6.2 Motor vehicle logbook
-
-- **6.2 Motor vehicle logbook** — Default 0% business use. Question: do you have logbook?  _(SARS Travel Allowance Guide; Income Tax Act s 8(1))_
-
-### 6.3 Turnover tax vs normal tax
-
-Depends on expense level and qualification. Present both.
-
-### 6.4 s6B additional medical expenses
-
-- **6.4 s6B additional medical expenses** — Formula: (a) 65+ or qualifying disability: 33.3% of medical scheme contributions in excess of 3 x s 6A credit, PLUS 33.3% of qualifying out-of-pocket medical. (b) Under 65 without disability: 25% of (excess medical scheme + qualifying OOP) over 7.5% of taxable income. Computational rule should be in the skill rather than escalated wholesale.  _(Income Tax Act s 6B)_
-
-### 6.5 Bad debts
-
-- **6.5 Bad debts** — Add: s 11(i) bad debt deduction - amount must have been included in income (so cash-basis taxpayer cannot claim bad debt; only accrual-basis taxpayers). Doubtful debt allowance under s 11(j) (revised in 2019 - now formulaic based on age of debt: 25% of debt aged 60-90 days, 40% over 90 days, with conditions). Provide the rule, not just "escalate".  _(Income Tax Act s 11(i) and s 11(j); SARS Notice 1209 (15 Nov 2019))_
-
-### MISSING: Wear-and-tear and small assets
-
-- **MISSING: Wear-and-tear and small assets** — Add a Tier 2 entry walking through the s 11(e) decision: (a) is it a capital asset used in trade? (b) cost under R7,000 - full write-off in year (BGR 7); (c) over R7,000 - IN 47 useful life, straight-line; (d) section 12C accelerated 40/20/20/20 for manufacturing plant; (e) s 12E small business corporation 100% on new manufacturing plant.  _(Income Tax Act s 11(e), s 12C, s 12E; SARS IN 47; BGR 7)_
-
-### MISSING: Travel allowance / motor vehicle deduction
-
-- **MISSING: Travel allowance / motor vehicle deduction** — For sole props using a personal vehicle for trade: deduct actual business-portion costs (fuel, repairs, insurance, finance interest, wear-and-tear at 4-year SARS rate). Maintain logbook. Alternative deemed cost: vehicle cost x fixed cost rate per Government Gazette tables. For employees with a travel allowance, different rules apply (s 8(1)(b)) but those are outside scope.  _(Income Tax Act s 11(a); SARS Travel Allowance Guide)_
-
-### Transactions sheet structure
-
-Columns: Date, Counterparty, Description, Amount, Category, Deductible amount, Default, Question, Notes
-
-### ITR12 Computation sheet
-
-Step-by-step per Section 5: gross income, deductions, taxable income, tax, rebates, medical credits, provisional tax offset
-
-### CSV formats
-
-FNB DD/MM/YYYY comma. Standard Bank semicolons. Nedbank, Absa various.
-
-### DEBICHECK
-
-- **DEBICHECK** — Authenticated debit order
-
-### MAGTAPE
-
-- **MAGTAPE** — Batch payment
-
-### SASWITCH
-
-- **SASWITCH** — ATM network
-
-### PREPAID
-
-- **PREPAID** — Likely personal (airtime top-up)
-
-### MUNICIPALITY
-
-- **MUNICIPALITY** — Same nuance as utilities: municipality bill typically combines rates (deductible to extent of trade use) with electricity/water/refuse (deductible to extent of trade use). Split the line.
-
-### Provisional tax payments
-
-- **Provisional tax payments** — EXCLUDE - tax payment not expense
-
-### Medical aid debits
-
-- **Medical aid debits** — NOT income deduction - generate s6A credits  _(Income Tax Act s 6A)_
-
-### RA contributions
-
-- **RA contributions** — Cap R430,000 from 1 March 2026.  _(Income Tax Act s 11F)_
-
-### 9.1 Age
-
-Update to "28 February 2027" for the current tax year of assessment.
-
-### 9.2 Residency
-
-- **9.2 Residency** — SA bank accounts suggest resident. Ask: are you a SA tax resident?  _(Income Tax Act s 1, definition of "resident")_
-
-### 9.3 Business type
-
-From counterparty patterns. Ask: trade/profession?
-
-### 9.4 Turnover tax election
-
-- **9.4 Turnover tax election** — Ask: have you elected turnover tax?  _(Sixth Schedule)_
-
-### 9.5 Medical aid
-
-Ask: medical aid, how many dependants?
-
-### 9.6 RA contributions
-
-Monthly RA debits inference. Ask: RA contributions?
-
-### 9.7 Provisional tax paid
-
-Ask: IRP6 amounts paid?
-
-### MISSING: Other income sources
-
-- **MISSING: Other income sources** — Add: dividends (DWT or exempt SA), rental, royalties, annuities, foreign income, capital gains, sale of business. These all affect taxable income.
-
-### MISSING: Spouse and dependants
-
-- **MISSING: Spouse and dependants** — Spouse status affects: medical credits (often combined); donations between spouses (free); CGT primary residence exclusion (one per family unit); some other reliefs.  _(Income Tax Act s 6A, s 56, Eighth Schedule)_
-
-### MISSING: Section 18A donations
-
-- **MISSING: Section 18A donations** — Section 18A deduction up to 10% of taxable income. Often missed.  _(Income Tax Act s 18A)_
-
-### Test suite
-
-All tests use 2025/26 rates and the R350k RA cap. Re-run on 2026/27 basis to validate the skill at current rates.
-
-### Edge case registry
-
-- **Edge case registry** — EC9 (entertainment under s 23(m)) is wrong - see critical finding #8. EC4 (home office dual use) is right on income tax but should also flag CGT consequence. EC10 (assessed loss) is correct - s 20 ring-fencing rules apply (s 20A for high-income individuals - taxable income over R1.99m with prescribed loss-making trades).  _(Income Tax Act s 20, s 20A, s 23(m))_
-
-### NEVER compute without knowing age
-
-- **NEVER compute without knowing age** — NEVER compute without knowing age
-
-### NEVER apply tax below age-threshold
-
-- **NEVER apply tax below age-threshold** — NEVER apply tax below age-threshold
-
-### NEVER allow entertainment deductions for sole proprietors
-
-- **NEVER allow entertainment deductions for sole proprietors** — See critical finding #8. Sole prop entertainment may be deductible under s 11(a) where bona fide for trade. Should be: "Critically review entertainment against s 11(a) and s 23(g); block under VAT s 17(2)(a) is a separate issue".  _(Income Tax Act s 11(a), s 23(g))_
-
-### NEVER deduct RA above R350,000 cap
-
-- **NEVER deduct RA above R350,000 cap** — Cap R430,000 from 1 March 2026.  _(Income Tax Act s 11F)_
-
-### NEVER allow turnover tax for professional services
-
-- **NEVER allow turnover tax for professional services** — NEVER allow turnover tax for professional services  _(Sixth Schedule)_
-
-### NEVER use prior year income for provisional tax
-
-- **NEVER use prior year income for provisional tax** — Prior year income is the "basic amount" benchmark for the safe harbour and underestimation penalty calculation - it is used as a reference, not as the literal estimate. The skill's underlying point (must estimate current year, not blindly reuse prior year) is correct.  _(Fourth Schedule para 19 and para 20)_
-
-### NEVER treat medical credits as income deductions
-
-- **NEVER treat medical credits as income deductions** — NEVER treat medical credits as income deductions
-
-### NEVER allow home office for dual-use rooms
-
-- **NEVER allow home office for dual-use rooms** — NEVER allow home office for dual-use rooms  _(SARS IN 28)_
-
-### NEVER allow income tax as a deduction
-
-- **NEVER allow income tax as a deduction** — NEVER allow income tax as a deduction  _(Income Tax Act s 23(d))_
-
-### NEVER present calculations as definitive
-
-- **NEVER present calculations as definitive** — NEVER present calculations as definitive
-
-### MISSING prohibition: home office CGT consequence
-
-- **MISSING prohibition: home office CGT consequence** — Add: "Never claim home office without warning the client of the CGT consequence on disposal of the residence."  _(Eighth Schedule para 47)_
-
-### Income Tax Act 58 of 1962
-
-### Tax Administration Act 28 of 2011
-
-### SARS Interpretation Notes (IN 28, IN 47, IN 14)
-
-- **SARS Interpretation Notes (IN 28, IN 47, IN 14)** — Add: IN 47 (wear-and-tear) currently in Issue 5 (March 2023). IN 28 (home office) Issue 3 (March 2022). IN 14 (allowances and reimbursements) Issue 4. Also add: IN 1 (provisional tax estimates), IN 33 (assessed losses), BGR 7 (small assets), BGR 9 (utility apportionment), BGR 24 (allowances and reimbursements).  _(SARS Legal Counsel publications)_
-
-### SARS eFiling URL
-
-Current canonical URLs: **https://www.sarsefiling.co.za** (eFiling; redirects to `secure.sarsefiling.co.za/landing`) and **https://www.sars.gov.za** (authority site). The `sarsefiling.gov.za` and `efiling.sars.gov.za` forms this file previously gave **do not resolve**.
-
-### Disclaimer
-
-Standard wording.
-
-### MISSING: s 11A - Pre-trade expenditure
-
-- **MISSING: s 11A - Pre-trade expenditure** — Section 11A allows expenditure incurred before commencement of trade to be deductible to the extent it would have been deductible under s 11 had it been incurred during the trade. Includes pre-incorporation costs, market research, initial professional fees, lease deposits (where deductible portion), opening stock, etc. The deduction is limited to income from the trade in the year it is brought to account. Any unutilised amount carries forward as an assessed loss. Common new sole prop issue.  _(Income Tax Act s 11A; SARS IN 51 (Issue 5))_
-
-### MISSING: s 11(cA) - Restraint of trade payments
-
-- **MISSING: s 11(cA) - Restraint of trade payments** — Section 11(cA): a taxpayer paying a restraint of trade to a natural person, labour broker, or personal service provider may deduct the payment over the LESSER of the restraint period OR 3 years (in equal annual instalments). For sole props this most commonly arises when acquiring a practice or buying out a competitor. Recipient: amount is taxable as "gross income" under para (cA) - now included in gross income since 2000 amendment. Note: for personal service provider companies, restraint may be subject to PAYE.  _(Income Tax Act s 11(cA); para (cA) of "gross income" definition)_
-
-### MISSING: s 11D - Research and Development
-
-- **MISSING: s 11D - Research and Development** — Section 11D: 150% deduction (100% + 50% additional) for qualifying R&D expenditure. Requires pre-approval from the Department of Science and Innovation. Aimed at innovation and new product/process development. Less commonly relevant for typical sole props but highly valuable for engineering consultants, scientific advisors, software developers producing genuine new technology. Sunset date 31 December 2033 (extended via 2024 Budget).  _(Income Tax Act s 11D; SARS IN 50)_
-
-### MISSING: s 12B - Renewable energy assets
-
-- **MISSING: s 12B - Renewable energy assets** — Section 12B: accelerated wear-and-tear for plant/machinery used in renewable energy generation. SOLAR PV under 1MW capacity: 100% write-off in year of bring into use - full deduction in year of acquisition under s 12B(1)(h). SOLAR PV 1MW+ and OTHER RENEWABLES (wind, hydro under 30MW, biomass): 50/30/20 over three years. TEMPORARY ENHANCED s 12BA: 125% allowance for solar PV brought into use during the limited window from 1 March 2023 to 28 February 2025 (NOW EXPIRED). Sole props with home offices or rented business premises who installed solar before 28 February 2025 should check if s 12BA was claimed. APPORTIONMENT for sole prop with home office: only the portion of solar attributable to business use (typically by reference to the home office floor area ratio under IN 28) is deductible. The household portion is private and not deductible. RECOUPMENT: on disposal of the solar asset (e.g. selling the house), recoupment applies to the business portion. Important warning to clients.  _(Income Tax Act s 12B and s 12BA; SARS Renewable Energy Tax Incentive FAQ)_
-
-### MISSING: s 12C - Manufacturing plant accelerated wear and tear
-
-- **MISSING: s 12C - Manufacturing plant accelerated wear and tear** — Section 12C: accelerated wear-and-tear for new or unused plant and machinery used in a process of manufacture. NEW OR UNUSED: 40% in year of acquisition + 20% in each of the next three years (40/20/20/20). USED PLANT: 20% straight-line over five years. Applies to manufacturing as defined - production, processing, transforming raw materials. Includes some hotel keepers and aircraft/ship owners (special sub-categories). Few sole props are in manufacturing but where applicable (workshop owners, food processing, light manufacturing), substantially better than s 11(e). Recoupment under s 8(4)(a) on disposal to extent allowances claimed.  _(Income Tax Act s 12C; SARS IN 14)_
-
-### MISSING: s 12E - Small Business Corporation rules (cross-reference)
-
-- **MISSING: s 12E - Small Business Corporation rules (cross-reference)** — Section 12E provides graduated tax rates and 100% wear-and-tear on new manufacturing plant for "Small Business Corporations". IMPORTANT: s 12E is available ONLY to companies and CCs (not sole proprietors and not trusts). However, the skill should mention this when discussing structure choice: a sole prop considering incorporation should weigh s 12E benefits. SBC must meet conditions: gross income under R20m; all shareholders are natural persons holding no interests in other companies; not a "personal service" provider; not more than 20% of receipts from investment income or personal services. 2026/27 SBC rates: 0% up to R95,750; 7% to R365,000; 21% to R550,000; 27% above.  _(Income Tax Act s 12E; SARS Budget 2026)_
-
-### MISSING: s 12H - Learnership allowance
-
-- **MISSING: s 12H - Learnership allowance** — Section 12H: additional tax deduction for employers (companies AND individuals including sole proprietors with employees) who enter into registered learnership agreements with a SETA under the Skills Development Act. Two components: annual allowance and completion allowance. Sunset date currently 31 March 2027 (extended Budget 2024). AMOUNTS for years of assessment ending on or after 1 March 2024: NQF 1-6 (lower priority NQF levels, more incentivised): R40,000 annual allowance per learner (pro-rated for part of year) PLUS R40,000 completion allowance. Total potential over a 1-year learnership: R80,000 per able-bodied learner. NQF 7-10 (higher priority - less incentive needed): R20,000 annual + R20,000 completion. Total R40,000. LEARNERS WITH DISABILITY: R60,000 annual + R60,000 completion for NQF 1-6; R50,000 + R50,000 for NQF 7-10. Requirements: (a) registered with relevant SETA before commencement (or registered within 12 months of year-end); (b) learnership pursuant to trade carried on by employer; (c) employee actually employed under formal employment contract; (d) "lead employer" claims (not the "host" employer where these are different); (e) not linked to SDL - available even to employers exempt from SDL. Allowance is IN ADDITION to the normal s 11(a) deduction for the learner's salary - so the employer effectively gets the salary deduction plus R40k-R120k per learner depending on qualifying type. Highly valuable for sole props with apprentices or learners.  _(Income Tax Act s 12H; SARS IN 20 (Issue 9, April 2025); SARS Guide on the Tax Incentive for Learnership Agreements)_
-
-### MISSING: s 12L - Energy efficiency savings
-
-- **MISSING: s 12L - Energy efficiency savings** — Section 12L: deduction of 95c per kWh of verified energy savings. Requires SANEDI (South African National Energy Development Institute) verification and certification. Specialist area; usually only worth pursuing for larger industrial energy users. Less common for typical sole props but should be flagged for manufacturing/processing operations.  _(Income Tax Act s 12L; Regulations on Energy Efficiency Savings)_
-
-### MISSING: s 13 - Commercial / industrial buildings
-
-- **MISSING: s 13 - Commercial / industrial buildings** — Section 13: 5% straight-line annual allowance on new buildings used wholly or mainly for manufacturing/research, hotel operations, qualifying purposes. Section 13quin: 5% on new commercial buildings (offices, retail, warehouses) - costs incurred from 1 April 2007. Section 13sex: residential rental units - 5% (10% in low-cost housing context) on new units owned by the taxpayer for letting where the taxpayer owns at least 5 such units. Section 13quat: 20% / 8% UDZ allowance in urban development zones (sunset date 31 March 2025 - now expired). All apportion for part-year use.  _(Income Tax Act s 13, s 13quat, s 13quin, s 13sex)_
-
-### MISSING: s 13sex - Residential rental properties (specific)
-
-- **MISSING: s 13sex - Residential rental properties (specific)** — Section 13sex specifically: 5% per annum allowance on the cost of new and unused residential units (or improvements to existing units), owned by the taxpayer, used solely for trade (residential letting), where the taxpayer owns at least 5 such units. Higher rates (10%) for low-cost residential units. Common for sole proprietors with rental portfolios - if they meet the 5-unit threshold, the s 13sex allowance is highly valuable as it is in addition to normal expenses like bond interest, rates, insurance, repairs. Cost basis is acquisition cost (not market value). Recoupment on disposal.  _(Income Tax Act s 13sex)_
-
-### MISSING: s 18A - Donations to PBOs (expanded)
-
-- **MISSING: s 18A - Donations to PBOs (expanded)** — Section 18A donation deduction: cash or kind donations to qualifying Public Benefit Organisations (PBOs), Public Institutions, and qualifying conduit PBOs. Deduction capped at 10% of taxable income (before s 18A but after other deductions including s 11F). Excess carries forward to subsequent years (carry-forward introduced 2014). MUST hold a valid s 18A receipt showing PBO/PI number, date of receipt, amount or description of donation, and confirmation that the donation will be used solely for s 18A purposes. From 1 March 2023, the PBO must also submit IT3(d) returns of donations to SARS, and donations are pre-populated on the donor's ITR12.  _(Income Tax Act s 18A; SARS Guide for Approved PBOs)_
-
-### MISSING: s 20 - Assessed losses (and ring-fencing s 20A)
-
-- **MISSING: s 20 - Assessed losses (and ring-fencing s 20A)** — Section 20: assessed losses from a trade carry forward to subsequent years and may be set off against future income from any trade (subject to s 20(2A) requirement that the taxpayer carries on the trade in the year of set-off, OR an exception applies). For COMPANIES, the s 20 loss set-off is now limited to the greater of R1m and 80% of taxable income before set-off (effective for years commencing on or after 1 April 2022). This 80% cap does NOT apply to natural persons (sole props). Section 20A: RING-FENCING for natural persons. High-income individuals (taxable income before set-off above the top marginal rate threshold - currently R1,878,300 for 2026/27) engaged in certain "suspect trades" or trades that have shown losses in 3 of the last 5 years are subject to ring-fencing: the loss can only be set off against future profits from the same trade, not other income. Suspect trades include: farming, animal-showing, rental of residential property, sport, art, racing, gambling, dealing in collectibles, rental of vehicles, aircraft or boats. Important for high-income sole props with side activities.  _(Income Tax Act s 20 and s 20A)_
-
-### MISSING: Tax residence
-
-- **MISSING: Tax residence** — A natural person is "resident" under s 1 of the ITA if: (a) ordinarily resident in SA, OR (b) meets the physical presence test (91 full days in current year of assessment + 91 full days in each of preceding 5 years + 915 days in aggregate over the 5 preceding years). "Ordinarily resident" is fact-based (settled home, family, intentions). Residents are taxed on WORLDWIDE income; non-residents only on SA-source. Cessation of residence triggers deemed disposal under s 9H for CGT (exit charge), excluding immovable SA property and certain other items. Important to ask sole prop client about overseas time and intentions.  _(Income Tax Act s 1 (definition) and s 9H; SARS IN 4 (Issue 5))_
-
-### MISSING: Foreign tax credit (s 6quat)
-
-- **MISSING: Foreign tax credit (s 6quat)** — A SA resident pays SA tax on worldwide income but may credit foreign taxes paid on foreign-source income, limited to SA tax attributable to that foreign income (per-country / per-source basket rules). Excess foreign tax credits carry forward 7 years. Alternative deduction under s 6quat(1C) in limited circumstances (e.g. SA-source income that another country has improperly taxed). Common for sole props with foreign clients, foreign rental property, or dividends from foreign companies.  _(Income Tax Act s 6quat; SARS Guide on Foreign Tax Credits)_
-
-### MISSING: CGT depth
-
-- **MISSING: CGT depth** — Sole prop work routinely involves CGT events: sale of business equipment, vehicle disposal, sale of practice, sale of trade premises, cessation of trade with retention of assets, death. Skill should at minimum identify CGT events and flag for specialist review. Basic 2026/27 rules for individuals: inclusion rate 40% (so effective rate up to 18% at top marginal rate of 45%). Annual exclusion R50,000 (up from R40k). Death exclusion R440,000. Primary residence exclusion R3 million (up from R2m) on first R3m of gain (NOT first R3m of proceeds). Small business CGT exclusion (s 10(1)(zJ)): R2.7m lifetime (up from R1.8m) where small business asset disposed of by person 55+, where business gross value below R15m (up from R10m). Effective from 1 March 2026.  _(Income Tax Act Eighth Schedule; s 10(1)(zJ); SARS Budget 2026)_
-
-### MISSING: Donations tax
-
-- **MISSING: Donations tax** — Sole prop transferring assets to family or to trusts often hits donations tax. Flat 20% on cumulative donations (since 1 March 2018) up to R30m; 25% above. Annual exemption R150,000 for natural persons (from 1 March 2026; up from R100,000 - first increase since 2007). Key exemptions: donations between spouses (RESTRICTED from 25 February 2026 to spouses who are SA tax resident at time of donation); donations to approved PBOs; donations between companies in same SA group of companies; donations under s 56 specific items. Filed on IT144 within 30 days after the end of the month in which the donation was made. 10% late payment penalty plus interest. Donee jointly and severally liable if donor fails to pay.  _(Income Tax Act s 54 to s 64; s 56; SARS Budget 2026)_
-
-### MISSING: Estate duty interaction
-
-- **MISSING: Estate duty interaction** — Estate duty levied on dutiable estate of SA residents (worldwide) and non-residents (SA-situated property only). Rate 20% to R30m, 25% above. Abatement R3.5m per estate (portable to surviving spouse - unused balance inherited - effective combined R7m). Section 4(q) full deduction for bequests to surviving spouse. Sole prop-specific issues: business assets included in estate; life insurance proceeds often deemed property (s 3(3)); key-man policies and buy-and-sell policies may be exempt if structured under s 3(3)(a)(iA); future tax liabilities deductible. Section 4A primary abatement plus s 4(p) settlement provisions.  _(Estate Duty Act 45 of 1955; SARS Estate Duty page)_
-
-### MISSING: Tax-Free Savings Account (TFSA)
-
-- **MISSING: Tax-Free Savings Account (TFSA)** — TFSA under s 12T. Contributions R46,000 per year (from 1 March 2026; up from R36,000 - first increase since 2021), R500,000 lifetime cap. Returns (interest, dividends, capital gains) inside the account are exempt. Withdrawals do not free up cap. Penalty 40% on contributions over the cap. Available to all SA residents including sole props. Routinely omitted from sole prop tax planning conversations.  _(Income Tax Act s 12T; SARS Budget 2026)_
-
-### MISSING: Section 7 attribution rules
-
-- **MISSING: Section 7 attribution rules** — Section 7 attributes income earned by certain related persons back to the donor where the income arises from a donation, settlement or other disposition. Critical for sole props who try to split income with spouses or minor children (e.g. by gifting income-producing assets or making low-interest loans). Key sub-rules: s 7(2) - income from donation by one spouse to another retained tax in donor's hands where solely or mainly tax-driven. s 7(3) and (4) - income for benefit of minor child of donor attributed back to donor. s 7(5) - conditional donations: income accrues but enjoyment deferred. s 7(8) - attribution where donor is non-resident and donee uses the asset. s 7C - low or no-interest loans to trusts: deemed donation equal to interest foregone (reference: SARS official rate currently 9.00%).  _(Income Tax Act s 7 and s 7C; SARS IN 96 (s 7C))_
-
-### MISSING: Dividends and dividends tax
-
-- **MISSING: Dividends and dividends tax** — Dividends from SA-resident companies (and non-resident companies listed on JSE) are EXEMPT from income tax in the hands of the recipient (s 10(1)(k)). Instead, the company declaring the dividend deducts dividends withholding tax at 20% under s 64E to s 64N. Net dividend received is what reaches the shareholder. Foreign dividends: not exempt from income tax. Partial exemption mechanism under s 10B - effectively brings the top marginal rate (45%) down to 20% by reducing the inclusion to 25/45 (or 8/27 for companies). For sole props who hold shares in their personal capacity: dividends tax is withheld at source; for tax purposes the dividend is exempt under s 10(1)(k). For sole prop with a rental property held in a company: dividends to extract profits suffer 20% DWT.  _(Income Tax Act s 10(1)(k); s 10B; s 64E to s 64N)_
-
-### MISSING: Skills Development Levy
-
-- **MISSING: Skills Development Levy** — SDL is 1% of leviable payroll (broadly remuneration). Payable monthly with PAYE/UIF on EMP201. Exempt if total annual payroll under R500,000 (most small sole props with under 5 staff are exempt). Levy goes to SETAs. Deductible under s 11(a). Note: a sole prop without employees does not pay SDL on themselves.  _(Skills Development Levies Act 9 of 1999; SARS SDL Guide)_
-
-### MISSING: Withholding taxes paid by SA sole prop
-
-- **MISSING: Withholding taxes paid by SA sole prop** — A SA sole prop making payments to non-residents may be required to withhold tax: (a) Royalties (s 49B): 15% on royalties paid to non-residents (may be reduced by DTA). (b) Interest (s 50B): 15% on SA-source interest paid to non-residents (exemptions for interest from SA government, banks, listed debt). (c) Sale of SA immovable property (s 35A) by non-resident seller: purchaser (or conveyancer) withholds 7.5%/10%/15% depending on seller type. (d) Foreign entertainers/sportspersons (s 47B): 15% on gross. Sole prop must register with SARS for the relevant tax type, withhold, declare on specific returns (e.g. WTI for interest, WTR for royalties), and pay over by month-end after payment.  _(Income Tax Act s 35A, s 47, s 49A-H, s 50A-H)_
-
-### MISSING: Trust distributions to sole prop
-
-- **MISSING: Trust distributions to sole prop** — Sole prop who is a beneficiary of a discretionary trust may receive distributions that are taxable in their hands under s 25B (the "conduit principle"). Income distributed by the trust during the year is taxed in the beneficiary's hands; retained income is taxed in the trust at the flat trust rate of 45%. Capital distributions follow para 80 of the Eighth Schedule. Anti-avoidance under s 7 may attribute distributed income back to the donor/settlor. Important consideration where sole prop family structures involve trusts.  _(Income Tax Act s 25B; Eighth Schedule para 80; s 7)_
-
-### MISSING: Section 11(c) legal expenses
-
-- **MISSING: Section 11(c) legal expenses** — s 11(c) deduction for legal expenses (including arbitration costs) actually incurred by a taxpayer in respect of any claim, dispute or action at law arising in the course of trade or in connection with income earned. Excludes capital-nature legal costs (acquisition of business, defence of title to capital asset). Common items: debt recovery from a customer; defence against a customer claim; employment dispute (subject to s 23(m)); regulatory compliance matter. Cross-references s 11(a) for general trade test.  _(Income Tax Act s 11(c); SARS IN 12)_
-
-### MISSING: Personal Service Provider (PSP) detection
-
-- **MISSING: Personal Service Provider (PSP) detection** — Where a sole prop incorporates a Pty Ltd or CC to provide services to a single client and the relationship is substantially employment-like, the entity may be a Personal Service Provider under the Fourth Schedule definition. Consequences: PAYE deduction at 27% (or 45% for trust); restricted deductions under s 23(k) (essentially only direct costs of services, salary, training, refunds, contributions to retirement funds, expenses related to the premises). Common practitioner trap when a contracting sole prop sets up a company. Tests: work performed mainly at client premises; client controls/supervises; the sole prop is one of three or fewer full-time employees of the entity.  _(Income Tax Act Fourth Schedule definition; s 23(k); SARS PSP Guide)_
-
-### MISSING: Pre-paid expenses (s 23H)
-
-- **MISSING: Pre-paid expenses (s 23H)** — s 23H limits deduction of pre-paid expenses where benefit extends beyond 6 months after year-end. Deductible to the extent the benefit relates to the current year; excess deferred to subsequent year(s). De minimis: R100,000 in aggregate per year may be claimed without apportionment. Common for sole props paying annual subscriptions, insurance, rent in advance, etc.  _(Income Tax Act s 23H)_
-
-### MISSING: Contingent liabilities (s 23(e))
-
-- **MISSING: Contingent liabilities (s 23(e))** — s 23(e) specifically prohibits deduction of contingent liabilities (amounts not unconditionally due). Provisions for warranty, leave pay, bonuses, employee benefits, etc. must be actually incurred to be deductible. Accounting accruals do not generally match the tax position. Sole prop preparing tax return from accounting records must add back provisions.  _(Income Tax Act s 23(e); leading case Edgars Stores Ltd v CIR)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Werner Britz** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. On 2026-09-29 the 2026/27 income tax table, the secondary and tertiary rebates and the 65+ tax thresholds were corrected against SARS's published tables, which differ from the Budget-day figures the review recorded (bounds R245,100 not R245,200, R383,100 not R383,000, R887,000 not R887,100, R1,878,600 not R1,878,300; rebates R9,765 and R3,249; thresholds R153,250 and R171,300), the worked example was recomputed, and Section 10 was added from the review's own list of missing rules; `review_status` is therefore `pending_review` until the reviewer confirms the corrected text.
 
 ## Section 1 -- Quick reference
 
@@ -479,56 +28,61 @@ Standard wording.
 | Primary legislation | Income Tax Act 58 of 1962 |
 | Supporting legislation | Tax Administration Act 28 of 2011; Sixth Schedule (Turnover Tax); Fourth Schedule (Provisional Tax) |
 | Tax authority | SARS (South African Revenue Service) |
-| Filing portal | SARS eFiling (www.sars.gov.za) |
+| Filing portal | SARS eFiling (https://www.sarsefiling.co.za); the authority site is https://www.sars.gov.za |
 | Currency | ZAR only |
 | Tax year | 1 March -- 28 February |
 | Return form | ITR12 |
+| Filing season (2026 year of assessment, 1 March 2025 -- 28 February 2026) | Auto-assessment notices 1--12 July 2026; manual filing opens 13 July 2026; non-provisional taxpayers file by 23 October 2026; provisional taxpayers and trusts by 22 January 2027. Disagreeing with an auto-assessment does not extend the date (SARS Filing Season 2026 notice) |
 | Provisional tax | IRP6 (1st: 31 Aug, 2nd: last day Feb, 3rd voluntary: 30 Sep) |
-| Primary rebate | R17,820 |
-| Secondary rebate (65+) | R9,768 |
-| Tertiary rebate (75+) | R3,252 |
-| Retirement fund deduction | 27.5% of greater of remuneration/taxable income, cap R430,000 |
-| Turnover tax | Available for non-professional services, turnover up to R2,300,000 |
+| Primary rebate (2026/27) | R17,820 |
+| Secondary rebate (65+, additional) | R9,765 |
+| Tertiary rebate (75+, additional) | R3,249 |
+| Retirement fund deduction | 27.5% of the greater of remuneration or taxable income, capped at R430,000 for years of assessment commencing on or after 1 March 2026 (R350,000 before) |
+| Turnover tax | Micro businesses other than personal service providers, taxable turnover up to R2,300,000 from 1 March 2026 |
 | Contributor | Open Accountants Community |
 | Validated by | Werner Britz CA(SA), Spurwing CFO |
 | Validation date | May 2026 |
 
-**Progressive tax table (2026/2027 year of assessment)**
+**Progressive tax table (2026/2027 year of assessment, 1 March 2026 -- 28 February 2027)**  _(SARS, Rates of tax for individuals, 2027 year of assessment)_
 
 | Taxable income (ZAR) | Rate |
 | --- | --- |
-| 1--245,200 | 18% |
-| 245,201--383,000 | R44,136 + 26% above R245,200 |
-| 383,001--530,200 | R79,884 + 31% above R383,000 |
-| 530,201--695,800 | R125,516 + 36% above R530,200 |
-| 695,801--887,100 | R185,132 + 39% above R695,800 |
-| 887,101--1,878,300 | R259,739 + 41% above R887,100 |
-| 1,878,301+ | R666,131 + 45% above R1,878,300 |
+| 1--245,100 | 18% |
+| 245,101--383,100 | R44,118 + 26% above R245,100 |
+| 383,101--530,200 | R79,998 + 31% above R383,100 |
+| 530,201--695,800 | R125,599 + 36% above R530,200 |
+| 695,801--887,000 | R185,215 + 39% above R695,800 |
+| 887,001--1,878,600 | R259,783 + 41% above R887,000 |
+| 1,878,601+ | R666,339 + 45% above R1,878,600 |
 
-**Tax thresholds (below = no tax)**
+The 2025/26 table was unchanged from 2024/25 (no inflation adjustment in Budget 2025); the 2026/27 bounds and fixed amounts above are SARS's published figures, which differ from the Budget-day figures the June 2026 review recorded (see the provenance note at the top of this guide).
+
+**Tax thresholds (below = no tax)**  _(SARS, Rates of tax for individuals, 2027)_
 
 | Age | Threshold |
 | --- | --- |
 | Below 65 | R99,000 |
-| 65--74 | R153,278 |
-| 75+ | R171,355 |
+| 65--74 | R153,250 |
+| 75+ | R171,300 |
 
-**Medical tax credits (s6A, 2026/2027)**  _(s6A)_
+**Medical tax credits (s6A, 2026/2027)**  _(s6A; SARS, Medical scheme fees tax credit rates, 2027)_
 
 | Member | Monthly |
 | --- | --- |
 | Main member | R376 |
-| First dependant | R376 |
+| First dependant | R376 (SARS states the two-person figure as R752) |
 | Each additional | R254 |
 
-**Turnover tax table (Sixth Schedule)**  _(Sixth Schedule)_
+**Turnover tax table (Sixth Schedule, 2026/2027)**  _(Sixth Schedule; SARS, Turnover tax rates, 2027)_
 
-| Turnover (ZAR) | Rate |
+| Taxable turnover (ZAR) | Rate |
 | --- | --- |
 | 0--600,000 | 0% |
 | 600,001--950,000 | 1% above R600,000 |
 | 950,001--1,400,000 | R3,500 + 2% above R950,000 |
-| 1,400,001--2,300,000 | R12,500 + 3% above R1,400,000 |
+| 1,400,001--2,300,000 (the qualifying turnover limit) | R12,500 + 3% above R1,400,000 |
+
+The bands were re-set from 1 March 2026 (2025/26: 0% to R335,000; 1% to R500,000; R1,650 + 2% to R750,000; R6,650 + 3% above), and the qualifying turnover limit rose from R1,000,000 to R2,300,000 in line with the VAT registration threshold.
 
 **Conservative defaults**
 
@@ -553,8 +107,8 @@ Standard wording.
 ### Refusal catalogue
 
 - **R-ZA-1 -- Company/CC/Trust** — This skill covers sole proprietors only. Companies file ITR14 at 27% corporate rate. Trusts file ITR12T. (Trigger: client is a company, close corporation, or trust.)
-- **R-ZA-2 -- Foreign income** — Foreign income, s10(1)(o)(ii) exemption, and DTA analysis are outside scope. Consult a registered tax practitioner. (Trigger: significant foreign income.)
-- **R-ZA-3 -- Capital gains tax** — Capital gains tax is outside scope. (Trigger: disposal of capital assets.)
+- **R-ZA-2 -- Foreign income** — Foreign income and DTA analysis are outside scope; consult a registered tax practitioner. (Trigger: significant foreign income.) For the record: the s 10(1)(o)(ii) exemption is for employment income earned outside South Africa during more than 183 days (60 of them continuous) in any 12-month period, capped at R1.25 million since 1 March 2020; it does not cover a sole proprietor's trade income, which a resident is taxed on worldwide with relief under s 6quat and the relevant DTA (Section 10.15 and 10.16).  _(Income Tax Act s 10(1)(o)(ii), s 6quat)_
+- **R-ZA-3 -- Capital gains tax** — The CGT computation is outside scope, but flag every CGT trigger: sale of a vehicle, equipment, the practice, or property used in trade, and cessation of trade with assets retained (Section 10.1). (Trigger: disposal of capital assets.)  _(Income Tax Act Eighth Schedule)_
 - **R-ZA-4 -- Age unknown** — I cannot compute without knowing your age -- it determines rebates and tax threshold. (Trigger: age not provided.)
 
 ## Section 3 -- Transaction pattern library (the lookup table)
@@ -586,7 +140,7 @@ Standard wording.
 | SARS | EXCLUDE | Tax payment (provisional/income) |
 | UIF, UNEMPLOYMENT INSURANCE | Deductible if employer contribution | Employee-related |
 | COIDA, COMPENSATION FUND | Deductible | Workers compensation |
-| CIPC | Deductible | Company/IP registration |
+| CIPC | Deductible only for fees of the ongoing trade (annual returns, name changes); incorporation fees are capital and not deductible (s 23(g)) | A sole proprietor does not register with CIPC; a CIPC debit usually means a company, which is outside scope (R-ZA-1) |
 
 ### 3.3 SA utilities and telecoms
 
@@ -594,7 +148,7 @@ Standard wording.
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| ESKOM, CITY POWER, CITY OF [JHB/CPT/DBN] | Deductible if business premises | Electricity/rates; apportion if home |
+| ESKOM, CITY POWER, CITY OF [JHB/CPT/DBN] | Split the bill: electricity, water and refuse are deductible to the extent used in the production of income; property rates only in proportion to the part of the property used for trade (the qualifying office area for a home office) | A municipal bill bundles rates with electricity, water and refuse; apportion each line (s 11(a); IN 28) |
 | RAND WATER | Deductible if business premises | Water |
 | VODACOM, MTN, CELL C, TELKOM, RAIN | Deductible: business phone/internet | Mixed: apportion |
 
@@ -604,7 +158,7 @@ Standard wording.
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| HOLLARD, SANTAM, OLD MUTUAL, MOMENTUM, OUTSURANCE | Deductible if business insurance | Personal: NOT deductible |
+| HOLLARD, SANTAM, OLD MUTUAL, MOMENTUM, OUTSURANCE | Short-term asset and liability cover for the trade (vehicles, premises, public liability): deductible under s 11(a); proceeds for damaged business assets are recouped under s 8(4)(a) to the extent of allowances claimed. Personal cover: NOT deductible | Key-person and other risk policies follow s 11(w): premiums are deductible only under a "conforming" s 11(w)(ii) policy (pure risk, no surrender value, owned by the employer, policy states that s 11(w)(ii) applies), and its proceeds are then gross income; a non-conforming policy, the default, has non-deductible premiums and proceeds exempt under s 10(1)(gH). Income protection premiums are not deductible (s 23(p)) and the benefits are exempt (s 10(1)(gI)). Personal life cover: not deductible; an RA is deductible only under s 11F |
 | DISCOVERY HEALTH, BONITAS, GEMS, MEDIHELP | NOT deductible from income | Medical = s6A/s6B credits (against tax, not income) |
 
 ### 3.5 SaaS and software -- international
@@ -624,7 +178,7 @@ Standard wording.
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
 | ACCOUNTANT, AUDIT, CA(SA) | Deductible | Accounting/audit fees |
-| ATTORNEY, ADVOCATE, LAW FIRM | Deductible if business | Legal fees |
+| ATTORNEY, ADVOCATE, LAW FIRM | Deductible where the fees relate to trade income (debt recovery, a customer dispute, a regulatory matter: s 11(a) and s 11(c)); NOT deductible where capital in nature (acquiring a business, defending title to a capital asset, s 23(g)) or personal | Legal fees (Port Elizabeth Electric Tramway Co Ltd v CIR; SARS IN 12) |
 | TAX PRACTITIONER | Deductible | Tax advisory |
 
 ### 3.7 Retirement contributions
@@ -642,11 +196,11 @@ Standard wording.
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| KULULA, FLYSAFAIR, AIRLINK, SAA | Deductible if business travel | Flights |
-| UBER, BOLT | Deductible if business | Ride services |
+| FLYSAFAIR, LIFT, CEMAIR, AIRLINK (FLYAIRLINK), SAA, FLYNAMIBIA | Full ticket cost deductible to the extent of business travel (s 11(a)); keep the business-purpose evidence | Kulula (2022) and Mango (2021) no longer operate. VAT cross-reference: input VAT on a domestic ticket must be split by component (base fare, fuel, PSC and insurance carry 15%; SACAA, ATNS and Air Passenger Tax carry none); the income tax deduction does not depend on that split |
+| UBER, BOLT | Deductible to the extent of trade use; keep the invoice and the business purpose | VAT cross-reference: the fare is exempt under s 12(g) of the VAT Act, so no input VAT is claimable on it even by a VAT-registered rider |
 | ENGEN, SHELL, BP, SASOL, CALTEX, TOTAL | Deductible: business vehicle portion only | Fuel; requires logbook |
-| AVIS, EUROPCAR, HERTZ | Deductible if business | Rental car |
-| SANRAL, E-TOLL | Deductible: business travel portion | Toll fees |
+| AVIS, EUROPCAR, HERTZ | Deductible to the extent of business use | Rental car. VAT cross-reference: input VAT on the rental of a "motor car" is blocked under s 17(2)(c) of the VAT Act |
+| SANRAL toll plazas (N1, N2, N3 and others) | Deductible: business travel portion | Gauteng e-tolls were discontinued on 12 April 2024; toll plaza fees still apply |
 
 ### 3.9 Office and supplies
 
@@ -654,9 +208,9 @@ Standard wording.
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| INCREDIBLE CONNECTION, MATRIX, TAKEALOT | Deductible or wear-and-tear depending on value | IT equipment |
+| INCREDIBLE CONNECTION, MATRIX, TAKEALOT | Item costing R7,000 or less: full write-off in the year of acquisition (BGR 7). Above R7,000: wear-and-tear under s 11(e), straight-line over the IN 47 useful life (computers 3 years, office furniture 6, office equipment 5, cellular phones 2, printers 3), apportioned for part-year use | The R7,000 test is applied to a set: items that function as one unit (a configured computer with its monitor, keyboard and mouse; matching furniture) are aggregated and cannot be split to get under the limit; independently functional items bought together (five laptops for five staff) are tested one by one (s 11(e); BGR 7; IN 47 Issue 5) |
 | OFFICE NATIONAL, WALTONS | Deductible | Stationery |
-| POSTNET, SA POST OFFICE | Deductible | Postage/courier |
+| POSTNET, THE COURIER GUY (TCG), SA POST OFFICE | Deductible | Postage/courier. The SA Post Office went into business rescue in 2023 and provisional liquidation in 2025, so its availability is limited |
 | MAKRO, GAME | Deductible if business supplies | Verify business purpose |
 
 ### 3.10 Food and entertainment
@@ -665,7 +219,7 @@ Standard wording.
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| PICK N PAY, WOOLWORTHS, CHECKERS, SPAR, SHOPRITE | Default: NOT deductible | Personal provisioning |
+| PICK N PAY, WOOLWORTHS, CHECKERS, SPAR, SHOPRITE | Test under s 11(a) read with s 23(g). Deductible where a genuine trade purpose exists: office tea, coffee, milk and biscuits for clients in meetings or staff during working hours, bottled water for a meeting room, refreshments at a training session, catering for a business-development function, resale stock of a catering business. NOT deductible: personal grocery shopping, family meals, alcohol without a trade purpose | Keep itemised receipts and a note of the purpose; SARS queries large grocery claims by individuals. VAT cross-reference: even where income tax allows the deduction, the VAT input is blocked under s 17(2)(a) unless the vendor is in the entertainment trade |
 | RESTAURANT (any) | Review under s 11(a)/s 23(g) | Bona fide business meals may be deductible; VAT input blocked under s 17(2)(a) |
 
 ### 3.11 Internal transfers and exclusions
@@ -683,7 +237,7 @@ Standard wording.
 ### Example 1 -- Standard self-employed, mid-range
 
 **Input:** Age 35, revenue R600,000, expenses R180,000, RA R80,000, medical R3,500/mo (main + 1 dependant), provisional paid R40,000.
-**Computation:** Net profit R420,000. s11F = 27.5% x R420,000 = R115,500 (within R430,000 cap). Taxable = R304,500. Tax = R44,136 + 26% x R59,300 = R59,554. Less rebate R17,820. Less medical credit R9,024 (R376 x 2 x 12). Net = R32,710. Less provisional R40,000. Refund R7,290.
+**Computation (2026/27 rates):** Net profit R420,000. s11F = 27.5% x R420,000 = R115,500 (within the R430,000 cap). Taxable = R304,500. Tax = R44,118 + 26% x (R304,500 - R245,100 = R59,400) = R44,118 + R15,444 = R59,562. Less primary rebate R17,820 = R41,742. Less medical credit R9,024 (R376 x 2 x 12) = R32,718. Less provisional tax paid R40,000. Refund R7,282.
 
 ### Example 2 -- Turnover tax
 
@@ -707,7 +261,7 @@ Standard wording.
 
 ### 5.2 Rebates
 
-- **Rebates** — Primary R17,820 (all). Secondary R9,768 (65+). Tertiary R3,252 (75+). Credits against tax, not deductions from income.  _(s6)_
+- **Rebates (2026/27)** — Primary R17,820 (all). Secondary R9,765 (65+, additional: R27,585 in total). Tertiary R3,249 (75+, additional: R30,834 in total). Credits against tax, not deductions from income.  _(s6; SARS, Rates of tax for individuals, 2027)_
 
 ### 5.3 Interest exemption
 
@@ -727,7 +281,7 @@ Standard wording.
 
 ### 5.7 Turnover tax
 
-- **Turnover tax** — Non-professional services, turnover up to R2,300,000. Replaces income tax, CGT, dividends tax, VAT. Cannot claim normal deductions.  _(Sixth Schedule)_
+- **Turnover tax** — Elective regime for a micro business with taxable turnover up to R2,300,000 (from 1 March 2026). The exclusion is for personal service providers and professional services as the Sixth Schedule and s 12E define them, not "non-professional services" loosely. It replaces income tax and CGT on the trade (and carries its own rules for dividends paid by a micro business company); it does NOT replace VAT, though a micro business below the VAT threshold would normally not register. No normal deductions are claimed against the turnover.  _(Sixth Schedule; s 12E)_
 
 ### 5.8 Wear-and-tear (s11(e))
 
@@ -739,7 +293,7 @@ Standard wording.
 
 ### 5.10 Home office
 
-- **Home office** — Dedicated room, regularly and exclusively for trade. IN 28 is strict. Dual-use rooms: NO deduction. Proportion = room area / total home. Warning: the area used for trade is 'tainted' for CGT purposes -- on disposal of the residence, the primary residence exclusion does not apply to the tainted portion. Practitioners must warn clients before first claiming home office.  _(s11(a), IN 28)_
+- **Home office** — Four requirements under s 23(b): (1) part of a residence occupied for the trade; (2) specifically equipped for the trade; (3) regularly and exclusively used for the trade (a dual-use room gets NO deduction; IN 28 is strict); (4) for a salaried employee only, the duties are mainly performed there. Permitted expenses, apportioned by A/B where A is the office area and B the total area of the residence: rent OR bond interest (never capital repayments), rates and taxes, levies, electricity, water, cleaning, and repairs to the office portion; wear-and-tear on office-only equipment is claimed in full. Warning: the area used for trade is "tainted" for CGT. On disposal of the residence the primary residence exclusion does not apply to the tainted portion; the gain is apportioned by area and by the period of trade use, and that portion is fully subject to CGT with only the annual exclusion available. Practitioners must warn clients before they first claim home office, since the CGT on sale can exceed the lifetime income tax saved.  _(s 11(a), s 23(b); SARS IN 28 (Issue 3, March 2022); Eighth Schedule para 47)_
 
 ### 5.11 Record keeping
 
@@ -761,11 +315,19 @@ Standard wording.
 
 ### 6.4 s6B additional medical expenses
 
-- **s6B additional medical expenses** — *Why:* Complex, depends on age/disability. *Default:* Do not claim without reviewer. *Question:* "Age 65+? Disability? Out-of-pocket medical expenses?"
+- **s6B additional medical expenses** — *Why:* Depends on age and disability. *Rule:* (a) Taxpayer 65 or older, or with a qualifying disability (self, spouse or child): credit of 33.3% of medical scheme contributions in excess of 3 x the s 6A credit, PLUS 33.3% of qualifying out-of-pocket medical expenses. (b) Under 65 without disability: credit of 25% of (medical scheme contributions in excess of 4 x the s 6A credit, plus qualifying out-of-pocket expenses) to the extent that total exceeds 7.5% of taxable income. *Default:* Compute with the rule; ask for the medical scheme certificate and the out-of-pocket receipts. *Question:* "Age 65+? Disability? Out-of-pocket medical expenses?"  _(s 6B)_
 
 ### 6.5 Bad debts
 
-- **Bad debts** — *Why:* Must prove irrecoverable. *Default:* Do not claim. *Question:* "Was this debt previously included in income? Is it truly irrecoverable?"
+- **Bad debts** — *Rule:* s 11(i) allows a bad debt only where the amount was previously included in income, so an accrual-basis taxpayer can claim it and a cash-basis taxpayer cannot. A doubtful debt allowance under s 11(j) (formulaic since 2019: 25% of debts 60 to 90 days in arrears, 40% of debts more than 90 days in arrears, subject to the conditions) reverses in the following year. *Default:* Do not claim until the debt is shown to have been in income and to be irrecoverable. *Question:* "Was this debt previously included in income? Is it truly irrecoverable?"  _(s 11(i), s 11(j); SARS Notice 1209 of 15 November 2019)_
+
+### 6.6 Wear-and-tear and small assets
+
+- **Wear-and-tear decision** — *Walk through:* (a) Is it a capital asset used in the trade? If not, it is either an expense under s 11(a) or private. (b) Cost R7,000 or less (per item, or per set that functions as one unit): full write-off in the year of acquisition under BGR 7. (c) Above R7,000: s 11(e) straight-line over the IN 47 useful life, apportioned for part-year use. (d) New or unused plant used in a process of manufacture: s 12C at 40/20/20/20 (used plant: 20% a year over five years). (e) Section 12E's 100% allowance on new manufacturing plant belongs to Small Business Corporations, which are companies and close corporations, not sole proprietors (Section 10.8).  _(s 11(e), s 12C, s 12E; SARS IN 47 (Issue 5, March 2023); BGR 7)_
+
+### 6.7 Motor vehicle used in the trade
+
+- **Vehicle costs** — *Rule:* A sole proprietor using a personal vehicle for trade deducts the business portion of the actual costs (fuel, repairs, insurance, finance interest, wear-and-tear on the vehicle) as shown by a logbook. The deemed-cost tables in the annual Government Gazette notice and the travel allowance rules of s 8(1)(b) belong to employees with a travel allowance and are outside scope. *Default:* 0% business use without a logbook. *Question:* "Do you have a logbook with date, destination, kilometres and purpose for each trip?"  _(s 11(a); SARS Guide for Employers in respect of Allowances)_
 
 ## Section 7 -- Excel working paper template
 
@@ -819,11 +381,117 @@ Step-by-step per Section 5: gross income, deductions, taxable income, tax, rebat
 
 - **Provisional tax paid** — *Inference:* SARS payments in statement. *Fallback:* "What IRP6 amounts have you paid?"
 
-## Section 10 -- Reference material
+## Section 10 -- Further rules and flags (added from the review of 2026-06-12)
+
+The reviewer listed these as missing from the guide. Each is stated as a rule to apply or a trigger to flag, with the reviewer's citations; where a 2026/27 figure could not be confirmed against a SARS table on 2026-09-29 it says so.
+
+### 10.1 CGT events
+
+- **CGT triggers** — Sole proprietor work routinely produces CGT events: sale of business equipment, disposal of a vehicle, sale of the practice, sale of trade premises, cessation of trade with assets retained, and death. Flag a large CREDIT from a VEHICLE TRADER, AUCTION HOUSE or BUSINESS BUYER as "review for CGT". Individuals: inclusion rate 40%, so a maximum effective rate of 18% at the 45% marginal rate. The Eighth Schedule figures in force through 2025/26: annual exclusion R40,000 (R300,000 in the year of death); primary residence exclusion R2 million of gain (not of proceeds); small business exclusion (para 57) R1.8 million lifetime for a person aged 55 or older disposing of a small business with a market value up to R10 million. The review recorded Budget 2026 increases from 1 March 2026 (annual exclusion R50,000; year of death R440,000; primary residence R3 million; small business R2.7 million and R15 million): confirm them against the Eighth Schedule as amended and SARS's CGT tables before use.  _(Income Tax Act Eighth Schedule paras 5, 45 and 57; s 10(1)(zJ))_
+
+### 10.2 Section 18A donations
+
+- **s 18A deduction** — Cash or in-kind donations to an approved Public Benefit Organisation, public institution or conduit PBO are deductible up to 10% of taxable income (taxable income computed after the other deductions, s 11F included, and before s 18A); the excess carries forward. The donor must hold a valid s 18A receipt showing the PBO or PI number, the date, the amount or description, and the confirmation that the donation will be used solely for s 18A purposes. Since 1 March 2023 the PBO files IT3(d) returns and the donations are pre-populated on the donor's ITR12. Bank patterns: GIVENGAIN, BACKABUDDY, a named charity.  _(Income Tax Act s 18A; SARS Guide for Approved PBOs)_
+
+### 10.3 Residential rental income
+
+- **Rental income** — Rent from residential property is gross income of the individual. Deductible against it: bond interest (not capital), rates, levies, repairs (not improvements), insurance and agent commission. Patterns: CREDIT from "TENANT", "RENT", "PAYPROP", "RENT PROPERTY MANAGEMENT". A rental trade that runs at a loss may be ring-fenced under s 20A (Section 10.12).  _(Income Tax Act s 11(a), s 23(g), s 20A)_
+
+### 10.4 Other income sources, spouse and dependants
+
+- **Ask about every source** — Dividends (Section 10.21), rental (10.3), royalties, annuities, foreign income (10.15 and 10.16), capital gains (10.1) and the sale of a business all enter taxable income. Spouse status affects the medical credits (often combined), donations between spouses (Section 10.17), the primary residence exclusion (one per family unit) and other reliefs.  _(Income Tax Act s 6A, s 56; Eighth Schedule)_
+
+### 10.5 Pre-trade expenditure (s 11A)
+
+- **s 11A** — Expenditure incurred before the trade commenced is deductible in the year the trade starts, to the extent it would have been deductible under s 11 had the trade been carried on: market research, initial professional fees, the deductible part of lease deposits, opening stock, and similar. The deduction is limited to the income from that trade in the year, and the unused balance carries forward as an assessed loss. A common new-sole-proprietor issue.  _(Income Tax Act s 11A; SARS IN 51 (Issue 5))_
+
+### 10.6 Legal expenses (s 11(c)) and restraint of trade (s 11(cA))
+
+- **s 11(c)** — Legal expenses, arbitration costs included, actually incurred in respect of a claim, dispute or action at law arising in the course of trade or in connection with income are deductible: recovering a trade debt, defending a customer claim, a regulatory matter. Capital-nature legal costs (acquiring a business, defending title to a capital asset) are not.  _(Income Tax Act s 11(c); SARS IN 12)_
+- **s 11(cA)** — A restraint-of-trade payment to a natural person, a labour broker or a personal service provider is deductible in equal annual instalments over the lesser of the restraint period and three years; the recipient includes it in gross income under para (cA). For a sole proprietor this arises when buying a practice or buying out a competitor.  _(Income Tax Act s 11(cA); para (cA) of the "gross income" definition)_
+
+### 10.7 Research and development (s 11D) and energy efficiency (s 12L)
+
+- **s 11D** — 150% deduction (100% plus 50%) for qualifying R&D expenditure, subject to pre-approval by the Department of Science and Innovation; sunset 31 December 2033. Rarely relevant to a typical sole proprietor, valuable for engineering, scientific and software work producing genuinely new technology.  _(Income Tax Act s 11D; SARS IN 50)_
+- **s 12L** — 95 cents per kWh of verified energy savings, on SANEDI certification. A specialist claim for manufacturing and processing operations.  _(Income Tax Act s 12L; Regulations on the allowance for energy efficiency savings)_
+
+### 10.8 Small Business Corporations (s 12E), a cross-reference
+
+- **s 12E** — Only a company or close corporation can be a Small Business Corporation: gross income not above R20 million, all shareholders natural persons holding no interests in other companies, not a personal service provider, and not more than 20% of receipts from investment income or personal services. An SBC pays graduated rates and writes off new manufacturing plant at 100%. For the year of assessment ending in the twelve months to 31 March 2027: 0% to R99,000; 7% on the amount above R99,000 to R365,000; R18,620 + 21% above R365,000 to R550,000; R57,470 + 27% above R550,000. A sole proprietor weighing incorporation should weigh these against the 27% company rate and dividends tax.  _(Income Tax Act s 12E; SARS, Companies, trusts and small business corporations, 2027)_
+
+### 10.9 Renewable energy (s 12B) and manufacturing plant (s 12C)
+
+- **s 12B** — Plant and machinery used to generate renewable energy: solar PV below 1 MW is written off at 100% in the year it is brought into use (s 12B(1)(h)); solar PV of 1 MW or more, wind, hydro below 30 MW and biomass at 50/30/20 over three years. The temporary s 12BA 125% allowance for solar PV applied only to assets brought into use from 1 March 2023 to 28 February 2025 and has expired. A sole proprietor with a home office deducts only the business share (by the IN 28 floor-area ratio); the household share is private, and the business share is recouped on disposal, the sale of the house included.  _(Income Tax Act s 12B, s 12BA; SARS Renewable Energy Tax Incentive FAQ)_
+- **s 12C** — New or unused plant and machinery used in a process of manufacture: 40% in the year of acquisition and 20% in each of the next three years; used plant 20% a year over five years. Recoupment under s 8(4)(a) on disposal to the extent of the allowances claimed. Workshops, food processing and light manufacturing qualify; consultants do not.  _(Income Tax Act s 12C; SARS IN 14)_
+
+### 10.10 Learnership allowance (s 12H)
+
+- **s 12H** — An employer, a sole proprietor with staff included, who enters into a registered learnership agreement with a SETA under the Skills Development Act claims an annual allowance (pro-rated for part of a year) and a completion allowance, in addition to the s 11(a) deduction for the learner's salary. For years of assessment ending on or after 1 March 2024: NQF levels 1 to 6, R40,000 annual plus R40,000 completion; NQF levels 7 to 10, R20,000 plus R20,000; a learner with a disability, R60,000 plus R60,000 (NQF 1 to 6) or R50,000 plus R50,000 (NQF 7 to 10). Requirements: registration with the SETA before commencement (or within 12 months of year-end), a learnership pursuant to the employer's trade, a formal employment contract, and the claim by the lead employer. Sunset 31 March 2027.  _(Income Tax Act s 12H; SARS IN 20 (Issue 9, April 2025); SARS Guide on the Tax Incentive for Learnership Agreements)_
+
+### 10.11 Building allowances (s 13, 13quat, 13quin, 13sex)
+
+- **Buildings** — s 13: 5% a year, straight-line, on new buildings used wholly or mainly for manufacturing, research or hotel operations. s 13quin: 5% on new commercial buildings (offices, retail, warehouses) for costs incurred from 1 April 2007. s 13sex: 5% (10% for low-cost units) on new and unused residential units, or improvements to them, owned by the taxpayer and let in a trade, where the taxpayer owns at least five such units; the cost basis is acquisition cost and the allowance is recouped on disposal. s 13quat (urban development zones) expired on 31 March 2025. All apportion for part-year use.  _(Income Tax Act s 13, s 13quat, s 13quin, s 13sex)_
+
+### 10.12 Assessed losses (s 20) and ring-fencing (s 20A)
+
+- **s 20** — An assessed loss from a trade carries forward and is set off against future income from any trade, provided the taxpayer carries on a trade in the year of set-off (s 20(2A)) or an exception applies. The 80%-of-taxable-income limit on set-off (greater of R1 million and 80%) applies to companies for years commencing on or after 1 April 2022, not to natural persons.  _(Income Tax Act s 20)_
+- **s 20A** — Ring-fencing applies to a natural person whose taxable income before the set-off exceeds the top marginal threshold (R1,878,600 for 2026/27) who carries on a suspect trade (farming, animal showing, residential rental, sport, art, racing, gambling, dealing in collectibles, rental of vehicles, aircraft or boats) or a trade that showed losses in three of the last five years: the loss is set off only against future profits of that trade. Important for high-income sole proprietors with side activities.  _(Income Tax Act s 20A)_
+
+### 10.13 Pre-paid expenses (s 23H) and contingent liabilities (s 23(e))
+
+- **s 23H** — Where the benefit of a pre-paid expense extends more than six months after year-end, only the part relating to the current year is deductible and the rest is deferred, unless the aggregate of such pre-payments is R100,000 or less for the year. Annual subscriptions, insurance and rent paid in advance are the usual cases.  _(Income Tax Act s 23H)_
+- **s 23(e)** — Provisions for warranties, leave pay, bonuses and other amounts not unconditionally due are not deductible until actually incurred; a sole proprietor working from accounting records adds the provisions back.  _(Income Tax Act s 23(e); Edgars Stores Ltd v CIR)_
+
+### 10.14 Personal service provider detection
+
+- **PSP** — A sole proprietor who incorporates and then serves one client in an employment-like relationship may have created a personal service provider under the Fourth Schedule: PAYE at 27% (45% for a trust) is deducted from its fees and its deductions are restricted under s 23(k) to the direct cost of the services, salaries, training, refunds, retirement fund contributions and premises costs. Indicators: the work is done mainly at the client's premises under the client's control, and the entity has three or fewer full-time employees.  _(Income Tax Act Fourth Schedule, definition of "personal service provider"; s 23(k); SARS Guide on Personal Service Providers)_
+
+### 10.15 Tax residence
+
+- **Resident** — A natural person is resident if ordinarily resident in South Africa (settled home, family, intentions) or if present for more than 91 days in the current year of assessment, more than 91 days in each of the five preceding years, and more than 915 days in aggregate over those five years. Residents are taxed on worldwide income, non-residents on South African-source income only. Ceasing residence triggers a deemed disposal under s 9H (the exit charge), immovable property in South Africa and a few other items excluded. Ask about time abroad and intentions.  _(Income Tax Act s 1 (definition of "resident"), s 9H; SARS IN 4 (Issue 5))_
+
+### 10.16 Foreign tax credit (s 6quat)
+
+- **s 6quat** — A resident credits foreign tax paid on foreign-source income against the South African tax attributable to that income; an excess carries forward for seven years, and s 6quat(1C) allows a deduction instead in limited cases (South African-source income taxed abroad). Common for foreign clients, foreign rental property and foreign dividends.  _(Income Tax Act s 6quat; SARS Guide on Foreign Tax Credits)_
+
+### 10.17 Donations tax
+
+- **Donations tax** — 20% of the value of property donated, on cumulative donations since 1 March 2018 up to R30 million, and 25% above that. The first R150,000 donated in a year of assessment by a natural person is exempt (raised from R100,000 with effect from 1 March 2026). Donations to a spouse, to an approved PBO and the other s 56 items are exempt; the review notes that Budget 2026 proposed limiting the spouse exemption to a spouse who is resident at the time of the donation, so confirm the current wording of s 56(1)(b). The donor files the IT144 declaration and pays by the end of the month following the month in which the donation takes effect; the donee is jointly liable if the donor does not pay. Transfers to family members or to a trust by a sole proprietor are the usual trigger.  _(Income Tax Act s 54 to s 64; SARS, Donations tax)_
+
+### 10.18 Estate duty interaction
+
+- **Estate duty** — Levied at 20% on the dutiable estate up to R30 million and 25% above, after the R3.5 million abatement (the unused part of which passes to a surviving spouse) and the s 4(q) deduction for bequests to a spouse. Business assets fall into the estate; life policies are deemed property under s 3(3) unless a key-person or buy-and-sell policy meets s 3(3)(a)(iA); future tax liabilities are deductible.  _(Estate Duty Act 45 of 1955 ss 3, 4, 4A; SARS, Estate duty)_
+
+### 10.19 Tax-free investments (s 12T)
+
+- **TFSA** — Contributions of up to R46,000 a year of assessment from 1 March 2026 (R36,000 for 2021 to 2026) and R500,000 over a lifetime; an unused annual limit is forfeited, returns inside the account are exempt, withdrawals do not restore the limits, and contributions above either limit are taxed at 40%. Available to any resident, sole proprietors included.  _(Income Tax Act s 12T; SARS, Tax-free investments)_
+
+### 10.20 Attribution (s 7 and s 7C)
+
+- **s 7** — Income arising from a donation, settlement or other disposition is taxed in the donor's hands where the split is tax-driven: s 7(2) for a donation to a spouse, s 7(3) and (4) for income applied for the benefit of a minor child, s 7(5) for a conditional donation, s 7(8) where the donor is non-resident. Splitting trade income with a spouse or minor children by gifting income-producing assets or making low-interest loans is caught.  _(Income Tax Act s 7)_
+- **s 7C** — An interest-free or low-interest loan to a trust (or to a company owned by a trust) produces an annual deemed donation equal to the interest forgone, measured at the SARS official rate of interest (repo rate plus one percentage point; read the current rate from SARS's official-rate table).  _(Income Tax Act s 7C; SARS IN 96)_
+
+### 10.21 Dividends and dividends tax
+
+- **Dividends** — A dividend from a South African resident company (or a foreign company listed on the JSE) is exempt from income tax in the recipient's hands under s 10(1)(k); the company withholds dividends tax at 20% under s 64E to s 64N and the shareholder receives the net amount. Foreign dividends are not exempt but s 10B's partial exemption reduces the inclusion so that an individual's effective rate is at most 20%. A rental property held in a company pays out through dividends carrying the 20% tax.  _(Income Tax Act s 10(1)(k), s 10B, s 64E to s 64N)_
+
+### 10.22 Skills Development Levy
+
+- **SDL** — 1% of leviable payroll, paid monthly with PAYE and UIF on the EMP201, exempt where total annual payroll is below R500,000, and deductible under s 11(a). A sole proprietor without employees pays no SDL on their own drawings.  _(Skills Development Levies Act 9 of 1999; SARS, Skills Development Levy)_
+
+### 10.23 Withholding taxes on payments to non-residents
+
+- **Withholding** — A sole proprietor paying a non-resident may have to withhold and pay over to SARS by the end of the month after payment: 15% on royalties (s 49B, WTR return), 15% on South African-source interest (s 50B, WTI return; exemptions for government, bank and listed debt interest), 15% on payments to foreign entertainers and sportspersons (s 47B), and 7.5%, 10% or 15% of the price when buying immovable property from a non-resident seller (s 35A, withheld by the purchaser or conveyancer), each subject to the applicable DTA.  _(Income Tax Act s 35A, s 47A to s 47K, s 49A to s 49H, s 50A to s 50H)_
+
+### 10.24 Trust distributions (s 25B)
+
+- **Trusts** — A beneficiary of a discretionary trust is taxed on income the trust distributes in the year (the conduit principle, s 25B); income the trust retains is taxed in the trust at 45%; capital distributions follow para 80 of the Eighth Schedule; and s 7 can attribute distributed income back to the donor or settlor. Relevant wherever a sole proprietor's family structure involves a trust.  _(Income Tax Act s 25B, s 7; Eighth Schedule para 80)_
+
+## Section 11 -- Reference material
 
 ### Test suite
 
-**Test 1 -- Mid-range.** Age 35, R600K revenue, R180K expenses, R80K RA, medical R3,500/mo. Net tax R32,710.
+**Test 1 -- Mid-range (2026/27 rates).** Age 35, R600K revenue, R180K expenses, R80K RA, medical R3,500/mo. Net tax R32,718.
 **Test 2 -- Senior.** Age 68, R200K revenue, R50K expenses, R30K RA. Below threshold. R0 tax.
 **Test 3 -- Turnover tax.** R650K turnover. Tax R500.
 **Test 4 -- RA cap.** R2M taxable, R600K RA. Deduction R430,000. Excess carries forward.
@@ -835,13 +503,13 @@ Step-by-step per Section 5: gross income, deductions, taxable income, tax, rebat
 **EC1 -- Interest exemption.** R23,800 <65 / R34,500 65+. Excess taxable.
 **EC2 -- Turnover tax + professional.** NOT eligible.
 **EC3 -- RA exceeds cap.** Excess carries forward.
-**EC4 -- Home office dual use.** NOT deductible.
+**EC4 -- Home office dual use.** NOT deductible. Where a home office does qualify, flag the CGT consequence on the residence (Section 5.10).
 **EC5 -- Provisional under-estimation.** 20% penalty.
 **EC6 -- Medical credits large family.** Compute per-member.
 **EC7 -- Foreign income.** ESCALATE.
 **EC8 -- Turnover tax exit mid-year.** Transition rules apply.
 **EC9 -- Entertainment.** Sole proprietor entertainment is tested under s 11(a) and s 23(g); s 23(m) does NOT apply to sole proprietors.
-**EC10 -- Assessed loss.** Carry forward under s20; SARS may query.
+**EC10 -- Assessed loss.** Carry forward under s 20; SARS may query. Ring-fencing under s 20A applies to a natural person whose taxable income before the set-off exceeds the top marginal threshold (R1,878,600 for 2026/27) and who carries on a suspect trade or one that showed losses in three of the last five years: the loss is then set off only against future profits of that trade (Section 10.12).
 
 ### Prohibitions
 
@@ -859,10 +527,12 @@ Step-by-step per Section 5: gross income, deductions, taxable income, tax, rebat
 
 ### Sources
 
-1. Income Tax Act 58 of 1962
+1. Income Tax Act 58 of 1962 (with the Fourth, Sixth, Seventh and Eighth Schedules)
 2. Tax Administration Act 28 of 2011
-3. SARS Interpretation Notes (IN 28, IN 47, IN 14)
-4. SARS eFiling -- https://www.sars.gov.za
+3. SARS, Rates of tax for individuals; Medical scheme fees tax credit rates; Turnover tax rates; Companies, trusts and small business corporations (the 2027 year-of-assessment tables, read 29 September 2026)
+4. SARS Interpretation Notes: IN 28 (home office, Issue 3, March 2022); IN 47 (wear-and-tear, Issue 5, March 2023); IN 14 (allowances and reimbursements, Issue 4); IN 1 (provisional tax estimates); IN 33 (assessed losses); IN 4 (resident, Issue 5); IN 12 (legal expenses); IN 51 (pre-trade expenditure, Issue 5); IN 96 (s 7C)
+5. SARS Binding General Rulings: BGR 7 (small-value assets); BGR 9 (utility apportionment); BGR 24 (allowances and reimbursements)
+6. SARS eFiling -- https://www.sarsefiling.co.za; SARS -- https://www.sars.gov.za
 
 ### Disclaimer
 
