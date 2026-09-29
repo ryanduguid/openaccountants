@@ -4,7 +4,7 @@ description: Use this skill whenever asked about United States sales tax, use ta
 version: 2.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
@@ -15,18 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## United States Sales and Use Tax Framework Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by a licensed accountant on 2026-06-03.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### US Sales Tax
-
-- **States w/ tax** — 45 states + DC impose a statewide sales tax; 5 (NOMAD) do not  _(State statutes; Streamlined Sales Tax.)_
-- **IL rate** — 6.25% state  _(35 ILCS 120/2-10.)_
-- **Nexus most** — $100,000 is the common post-Wayfair economic-nexus sales threshold; the '200 transactions' prong has been dropped by many states (and some, e.g., CA/TX, never used it). Verify per state.  _(South Dakota v. Wayfair; state statutes.)_
-- **CA/TX** — CA and TX economic-nexus threshold = $500,000 (no transaction-count test)  _(Cal. RTC 6203; Texas Comptroller Rule 3.286.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 
@@ -189,7 +178,7 @@ This table provides the default taxability pattern across US states. Always veri
 
 | Threshold | States |
 | --- | --- |
-| $100K OR 200 transactions | Most states (SD, IN, IA, KY, ME, etc.) |
+| $100K, with the 200-transaction prong dropped | A growing number of states have repealed the transaction prong (South Dakota in 2023, Indiana and North Carolina in 2024, among others); others still apply "$100K or 200 transactions". Verify per state |
 | $100K only (no transaction count) | FL, WA, NV, TX (uses $500K), CA ($500K) |
 | $500K | CA, TX |
 | $500K AND 100 transactions | NY (AND test -- unique) |

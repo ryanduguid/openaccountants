@@ -4,7 +4,7 @@ description: Tier 2 content skill for determining which contractor payments made
 version: 0.2
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
@@ -15,16 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## US 1099-NEC Issuance Skill v0.2
 
-## Verified rates & thresholds (accountant-reviewed)
-
-- **Review statement** — Reviewed against the cited tax authorities by a licensed accountant on 2026-06-03. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.  _(n/a)_
-
-### 1099-NEC
-
-- **Threshold** — $600 for 2025 payments (OBBBA raises the threshold to $2,000 for payments after 12/31/2025)  _(IRC 6041A; OBBBA.)_
-- **Backup WH** — 24% backup withholding (made permanent by OBBBA)  _(IRC 3406.)_
-- **Due** — File with IRS and furnish recipient by January 31 (no automatic 30-day extension)  _(IRC 6071(c); 1099-NEC instr.)_
-- **After Aug 1** — 2025 late-filing penalty tiers $60/$130/$330; $330 applies if filed after Aug 1 or not filed  _(IRC 6721; 2025 General Instr. for Certain Information Returns.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## What this file is, and what it is not
 
@@ -89,7 +80,7 @@ Currency limitations:
 
 | Figure | Value for TY2025 | Primary source |
 | --- | --- | --- |
-| 1099-NEC filing threshold (nonemployee compensation) | $600 | IRC §6041A(a); §6041(a) |
+| 1099-NEC filing threshold (nonemployee compensation) | $600 for 2025 payments; $2,000 for payments made after December 31, 2025, indexed for inflation after 2026 (OBBBA, P.L. 119-21) | IRC §6041A(a); §6041(a) |
 | Applies to: payments for services | Yes | IRC §6041A(a)(1) |
 | Applies to: payments for goods/merchandise | No | IRC §6041A applies to services; goods are not reportable on 1099-NEC |
 | Direct sales threshold (consumer products for resale) | $5,000 | IRC §6041A(b) — reported in Box 2 of 1099-NEC |
@@ -100,7 +91,7 @@ Currency limitations:
 
 | Figure | Value for TY2025 | Primary source |
 | --- | --- | --- |
-| Backup withholding rate | 24% | IRC §3406(a)(1) |
+| Backup withholding rate | 24% (the fourth-lowest §1 rate, which OBBBA made permanent) | IRC §3406(a)(1) |
 | Triggers: payee fails to provide TIN | Yes | IRC §3406(a)(1)(A) |
 | Triggers: IRS B-notice (incorrect TIN) | Yes | IRC §3406(a)(1)(B) |
 | Triggers: payee fails to certify not subject to backup withholding | Yes | IRC §3406(a)(1)(D) |

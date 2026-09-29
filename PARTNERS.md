@@ -32,7 +32,7 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | Maria Valeria Benvenuti | AR | 3 | — | 2026-09-28 | — |
 | Yeong Min Lee | KR | 3 | — | 2026-09-28 | — |
 | Omolola Fasasi | NG | 2 | — | 2026-09-28 | — |
-| James Wallach | US | 1 | — | 2026-09-28 | — |
+| James Wallach | US | 1 | — | 2026-09-29 | — |
 
 Jurisdiction codes are the guides' `jurisdiction` values: ISO 3166 country codes, `US-XX` for a US state, `CA-XX` for a Canadian province or territory, `US` and `CA` for the federal guides. "Edited since review" counts the reviewer's guides whose frontmatter carries `review_status: pending_review`: a substantive edit after the sign-off sets that flag, so the reviewed text and the current text differ until the guide is reviewed again. "Latest guide update" is the newest `last_updated` among the reviewer's accountant-reviewed guides: it dates the content, not the review. A public record is a profile or a review diff recorded in `docs/partners.json`, which is hand-maintained; a reviewer without one is on record in the guides alone. Licence numbers are not published here: they are held by whoever verified the credential and appear only where the practitioner opts in.
 

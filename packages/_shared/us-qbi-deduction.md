@@ -4,7 +4,7 @@ description: Tier 2 content skill for computing the §199A Qualified Business In
 version: 0.2
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
@@ -15,18 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## US QBI Deduction Skill v0.3
 
-## Verified rates & thresholds (accountant-reviewed)
-
-- **§199A QBI deduction rate for tax year 2025** — 20% percent (tax years beginning after Dec 31, 2024)  _(§199A, OBBBA P.L. 119-21 §70105)_
-
-Reviewed against the cited tax authorities by a licensed accountant on 2026-06-03. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### QBI Deduction
-
-- **Rate 2025** — 20%  _(IRC 199A; OBBBA (made 199A permanent at 20%).)_
-- **Rate 2026+** — The QBI rate remains 20% in 2026 and beyond. OBBBA made 199A permanent at 20%; the proposed increase to 23% (House bill) did not become law.  _(IRC 199A; OBBBA (PL 119-21).)_
-- **Single threshold 2025** — $197,300 (Single/other)  _(Rev. Proc. 2024-40.)_
-- **MFJ threshold 2025** — $394,600 (MFJ)  _(Rev. Proc. 2024-40.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## What this file is, and what it is not
 

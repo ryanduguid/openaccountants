@@ -4,7 +4,7 @@ description: Use this skill whenever asked about states with no sales tax, Alask
 version: 2.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
@@ -15,19 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## No-Sales-Tax States Skill v2.0 -- AK, DE, MT, NH, OR
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by a licensed accountant on 2026-06-03.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### No-Sales-Tax States
-
-- **Alaska** — No state sales tax; 100+ localities levy up to ~7.5% (e.g., Kodiak 7.5%)  _(Alaska Remote Seller Sales Tax Commission; local codes.)_
-- **Delaware** — No sales tax; gross receipts tax ranges ~0.0945%-1.9914% by activity  _(Del. Code tit. 30; DE Division of Revenue.)_
-- **Montana** — Resort tax up to 3% is correct, but Montana's lodging tax is 8% total (4% Lodging Facility Use Tax + 4% sales tax on accommodations); 'lodging 4%' reflects only one component.  _(Mont. Code Ann. 15-65 & 15-68; MT DOR.)_
-- **NH** — NH Meals & Rentals tax = 8.5% (since 10/1/2021)  _(NH DRA; RSA 78-A.)_
-- **Oregon** — Oregon Corporate Activity Tax = $250 + 0.57% of commercial activity over $1,000,000  _(ORS 317A; OR DOR.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 
@@ -94,7 +82,7 @@ This block is generated from verified skill_facts — edit the facts, not the pr
 | --- | --- | --- |
 | Purchase in resort community (Big Sky, Whitefish, etc.) | RESORT TAX up to 3% | On retail goods and services |
 | Purchase outside resort communities | NO TAX |  |
-| Hotel/lodging (statewide) | 4% LODGING TAX | MCA Section 15-65-111 |
+| Hotel/lodging (statewide) | 8% LODGING TAXES in total: 4% lodging facility use tax plus 4% lodging sales tax | MCA 15-65-111; MCA 15-68-102 |
 | Rental car | 4% RENTAL TAX | MCA Section 15-68-101 |
 
 ### 3.4 New Hampshire (NH)

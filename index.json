@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T03:33:11+00:00",
+ "generated_at": "2026-09-29T03:40:52+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -641,7 +641,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-1099-k-and-payment-processors",
@@ -667,7 +667,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-capital-gains",
@@ -732,7 +732,7 @@
    "reviewed_by": "James Wallach",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-education-credits-8863",
@@ -1018,7 +1018,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-quarterly-estimated-tax",
@@ -1031,7 +1031,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-r-and-d-section-174-and-41",
@@ -1057,7 +1057,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-sales-tax-nexus-50-state-matrix",
@@ -1083,7 +1083,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-schedule-c-and-se-computation",
@@ -1096,7 +1096,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-section-1031-like-kind-exchange",
@@ -1148,7 +1148,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-self-employed-retirement",
@@ -1161,7 +1161,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-sole-prop-bookkeeping",
@@ -1174,7 +1174,7 @@
    "reviewed_by": "A licensed accountant (name withheld at their request)",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-state-bonus-depreciation-conformity-matrix",

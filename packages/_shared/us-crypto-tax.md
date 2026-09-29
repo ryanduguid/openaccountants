@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks about cryptocurrency taxatio
 version: 1.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: James Wallach
 review_status: current
 category: federal
@@ -14,13 +14,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # US Crypto Tax
 
-## Verified rates & thresholds (accountant-reviewed)
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03, in the fact review that produced the list; the guide's sign-off is by **James Wallach**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. In this guide the reviewed list had replaced the body's substantive sections, so on 2026-09-29 it became Section 1 below, its subsections kept and its figures stated with their sources. Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
-> Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+## Section 1 — Rules, reporting and records
 
-### Crypto Tax (US)
+### General rules
 
 - **Treatment** — Treated as property  _(IRS Notice 2014-21; IRS digital-asset FAQs.)_
 - **Default** — FIFO is the default; specific identification permitted with adequate records  _(Treas. Reg. 1.1012-1(j); Rev. Proc. 2024-28.)_
@@ -99,7 +97,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Broker basis reporting** — Under the broker reporting regulations (TD 10000), beginning January 1, 2025, brokers must track and report cost basis. Taxpayers using exchanges that are now classified as brokers will receive Form 1099-DA (gross proceeds only for 2025; basis reporting begins with 2026 acquisitions). For transactions on non-broker platforms (DeFi protocols, peer-to-peer), the taxpayer must maintain their own basis records.  _(TD 10000; Treas. Reg. §1.6045-1)_
 
-### Tax treatment
+### Staking — tax treatment
 
 - **Staking income timing and recognition** — Staking rewards are ordinary income at the fair market value (FMV) at the time the taxpayer gains dominion and control over the rewards. Income recognized when rewards are credited to the staking wallet and freely transferable; If rewards are locked during an unbonding period, income is recognized when the unbonding completes and tokens become available; Reported on Schedule 1 Line 8z (Other income) or Schedule C if staking constitutes a trade or business.  _(IRS guidance on staking (dominion and control))_
 
@@ -119,7 +117,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **ETH staking rewards recognition** — ETH staking rewards from the Beacon Chain are recognized as income at FMV when withdrawn (post-Shanghai upgrade, April 2023). For 2025, all ETH staking rewards are freely withdrawable and taxable upon receipt.  _(IRS guidance on staking; Shanghai upgrade April 2023)_
 
-### Tax treatment
+### Mining — tax treatment
 
 - **Mining income recognition** — Mining rewards (block rewards + transaction fees) are ordinary income at FMV when the miner gains dominion and control (typically when the block is confirmed and coins are spendable).  _(IRS guidance on mining)_
 
@@ -136,7 +134,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Depreciation rules** — MACRS 5-year property (computers and peripherals); §179 expensing available up to $2,500,000 for 2025 (OBBBA); Bonus depreciation: 100% for property acquired and placed in service after January 19, 2025 (OBBBA restored; 40% applies only to property acquired before January 20, 2025); If equipment becomes worthless or is scrapped, remaining basis is deductible as a loss in that year  _(MACRS; OBBBA (P.L. 119-21): §179 2025 limit $2,500,000; IRC §168(k))_
 
-### Tax treatment
+### Airdrops — tax treatment
 
 - **Airdrop income recognition** — Airdrops are ordinary income at FMV at the time of receipt, provided: The taxpayer has dominion and control (tokens are in the wallet and freely transferable); The airdrop has ascertainable FMV (listed on an exchange with trading volume). Per Rev. Rul. 2019-24 (as applied to airdrops): taxpayer receiving new cryptocurrency has ordinary income equal to FMV at time of receipt.  _(Rev. Rul. 2019-24)_
 
@@ -189,7 +187,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Wrapping treatment** — Wrapping: exchanging BTC for WBTC or ETH for wETH; Position uncertain: arguably not a taxable event if economically equivalent; Conservative position: taxable exchange (recognize gain/loss); Aggressive position: non-taxable (same underlying asset, just a representation change); Flag for reviewer  _(No definitive IRS guidance — flag for reviewer)_
 
-### General treatment
+### NFTs — general treatment
 
 - **NFT property treatment** — NFTs are digital assets treated as property. Buying, selling, and exchanging NFTs follows the same capital gains framework as other crypto.  _(IRS Notice 2014-21 general property principles)_
 
@@ -205,15 +203,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Royalty income treatment** — Smart contract royalties received by NFT creators on secondary sales: ordinary income; Report on Schedule C or Schedule E depending on whether the creator is actively involved  _(Schedule C/E instructions)_
 
-### Current law: NOT applicable to crypto
+### Wash sale rule — not applicable to crypto under current law
 
 - **Wash sale inapplicability** — IRC §1091 (wash sale rule) applies only to "stock or securities." Cryptocurrency is classified as property, not stock or securities. Therefore, the wash sale rule does NOT currently apply to crypto. This means a taxpayer can: Sell crypto at a loss; Immediately repurchase the same crypto; Claim the capital loss without the 30-day waiting period required for stocks  _(IRC §1091)_
 
-### Proposed legislation (not yet enacted)
+### Wash sale rule — proposed legislation (not yet enacted)
 
 - **Proposed wash sale legislation** — Multiple proposals have been introduced to extend wash sale rules to digital assets: Build Back Better Act (2021) — did not pass; Lummis-Gillibrand Responsible Financial Innovation Act — introduced but not enacted; Various 2024-2025 proposals. For 2025 tax year: Wash sale rule does NOT apply. Crypto tax-loss harvesting is fully permitted. Flag for reviewer: If legislation passes retroactively or effective for 2025, positions may need amendment. Monitor legislative developments.  _(Build Back Better Act (2021); Lummis-Gillibrand Responsible Financial Innovation Act)_
 
-### Background
+### Form 1099-DA — background
 
 - **Form 1099-DA background** — The Infrastructure Investment and Jobs Act (2021) expanded the definition of "broker" to include digital asset exchanges and certain DeFi platforms, effective January 1, 2025.  _(Infrastructure Investment and Jobs Act (2021))_
 
@@ -229,19 +227,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Non-recipients** — Self-custodied wallet transactions (hardware wallets, MetaMask); Peer-to-peer transactions; Certain DeFi protocols (the DeFi broker rule, TD 10021, was REPEALED under the Congressional Review Act by P.L. 119-5 on April 10, 2025, and the regulations were removed at 90 FR 31136; non-custodial DeFi front-ends are not brokers and will not issue Form 1099-DA, and the CRA bars a substantially similar rule absent new legislation)  _(P.L. 119-5; 90 FR 31136)_
 
-### Reconciliation
+### Form 1099-DA reconciliation
 
 - **Reconciliation guidance** — Taxpayers must reconcile Form 1099-DA against their own records: 1099-DA may not reflect correct basis (especially for transferred-in tokens); 1099-DA may report gross proceeds without netting fees; If basis on 1099-DA is incorrect, report on Form 8949 Box B with adjustment in column (f)/(g)  _(Form 8949 instructions)_
 
-### Current law
+### De minimis — current law
 
 - **No de minimis exemption** — There is no statutory de minimis exemption for crypto transactions. Every transaction, regardless of size, is technically a taxable event requiring reporting.  _(General property tax principles)_
 
-### Proposed safe harbor
+### De minimis — proposed safe harbor
 
 - **Proposed de minimis exclusion** — Multiple legislative proposals have included a de minimis exclusion ($200 or $600 gain per transaction) for using crypto as a medium of exchange. None have been enacted as of 2025.  _(Legislative proposals (not enacted))_
 
-### Practical guidance
+### De minimis — practical guidance
 
 - **Practical guidance for small transactions** — All transactions must be reported regardless of size; For very small transactions (coffee purchases with Bitcoin), the gain/loss must still be computed; Aggregate reporting on Form 8949 is permitted: multiple small transactions can be combined into a single line if same exchange, same asset, same holding period category; Reference: Form 8949 instructions allow summary reporting per broker statement  _(Form 8949 instructions)_
 
@@ -319,7 +317,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Record retention periods** — Standard: 3 years from filing date (§6501 statute of limitations); If income understated by >25%: 6 years; If no return filed or fraudulent return: unlimited; Recommendation: retain crypto records indefinitely (basis tracking requires historical data)  _(§6501)_
 
-## Section 17 — Self-checks
+## Section 2 — Self-checks
 
 **Check CRYPTO-1 — Every disposition reported.** All sales, exchanges, and uses of crypto are reported on Form 8949.
 
@@ -341,14 +339,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Check CRYPTO-10 — No average cost basis used.** Average cost is not permitted for crypto.
 
-## Section 18 — Refusals
+## Section 3 — Refusals
 
 - **R-CRYPTO-1 — Insufficient records** — If the taxpayer cannot provide transaction history or wallet records for material positions, refuse to prepare Form 8949. Recommend engaging a crypto tax specialist with forensic blockchain analysis capability (Chainalysis, CoinTracker integration).  _(R-CRYPTO-1)_
 - **R-CRYPTO-2 — Foreign exchange non-compliance** — If the taxpayer held material amounts on foreign exchanges and has not previously filed FBAR, this requires voluntary disclosure analysis. Refuse and refer to tax attorney specializing in offshore compliance (Streamlined Filing Compliance Procedures or VDP).  _(R-CRYPTO-2)_
 - **R-CRYPTO-3 — Active DeFi trading without records** — If the taxpayer interacted with multiple DeFi protocols without maintaining records (common with dozens of yield farming positions), refuse to estimate. Recommend CoinTracker, Koinly, or TokenTax for reconstruction.  _(R-CRYPTO-3)_
 - **R-CRYPTO-4 — §1256 contract classification dispute** — If the taxpayer traded crypto futures and the classification as §1256 contracts is disputed, flag for reviewer. Do not take a position without CPA signoff.  _(R-CRYPTO-4)_
 
-## Section 19 — Cross-skill references
+## Section 4 — Cross-skill references
 
 **Inputs:**
 - Taxpayer intake data (filing status, income level for bracket/NIIT determination)

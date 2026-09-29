@@ -4,7 +4,7 @@ description: Tier 2 content skill for computing Schedule C bottom line, Form 882
 version: 2.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
@@ -15,18 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## US Schedule C and SE Computation Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Schedule C & SE
-
-- **SE rate** — 15.3% (12.4% OASDI + 2.9% Medicare) on net SE earnings  _(IRC 1401; Schedule SE.)_
-- **SS base** — 2025 Social Security wage base = $176,100  _(SSA 2025; IRS.)_
-- **Add'l Medicare** — 0.9% Additional Medicare Tax above $200,000 (Single)/$250,000 (MFJ)/$125,000 (MFS)  _(IRC 3101(b)(2); Form 8959.)_
-- **Deductible** — One-half of SE tax is deductible above the line  _(IRC 164(f); Schedule 1.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **a licensed accountant (name withheld at their request)** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick Reference
 
