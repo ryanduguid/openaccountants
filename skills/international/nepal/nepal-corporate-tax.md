@@ -45,7 +45,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Section 2 — Refusal catalogue
 
 - **R-NP-CT-1** — Sector special computational regimes (banking provisioning, insurance, petroleum) — out of scope; escalate.  _(Section 2 — Refusal catalogue)_
-- **R-NP-CT-2** — Special-industry / export / SEZ concessions beyond the headline Section 11 rebate and the three stated in Section 3 (startups with turnover up to NPR 100 million: exempt for 5 years; IT service exports: 75% exemption; new industries in Special Economic Zones: 100% rent exemption for the first 3 years — Finance Act 2083) — VERIFY against the Act; escalate.  _(Section 2 — Refusal catalogue)_
+- **R-NP-CT-2** — Special-industry / export / SEZ concessions beyond the headline Section 11 rebate and the Finance Act 2083 concessions stated in §3.4 (startups, IT service exports, SEZ rent, IT bonus shares, the dispute-settlement window) — VERIFY against the Act; escalate. The §3.4 concessions themselves are applied only once eligibility is confirmed.  _(Section 2 — Refusal catalogue)_
 - **R-NP-CT-3** — Cross-skill. Personal → `nepal-income-tax`; TDS → `nepal-tds`; payroll/SSF → `nepal-payroll`; VAT → `nepal-vat`.  _(Section 2 — Refusal catalogue)_
 
 ## Section 3 — Tier 1 rates
@@ -63,6 +63,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Special industries rebate mechanism** — "Special industries" under Section 11 receive a 20% rebate on the normal rate, yielding an effective 20% (25% × 80%). Confirm eligibility under Section 11.  _(Income Tax Act 2058 s.11)_
 
 Rates are **unchanged from FY 2024-25**. **Source:** PKF Trunco; Baker Tilly; actNepal (Section 11 mechanism).
+
+### 3.4 Concessions of Finance Act 2083 (FY 2083/84)
+
+- **Startups** — Exempt from income tax for 5 years where annual turnover does not exceed NPR 100 million.  _(Finance Act 2083)_
+- **IT service exports** — 75% exemption on income from the export of IT services.  _(Finance Act 2083)_
+- **Special Economic Zone rent** — 100% exemption from SEZ rent for the first 3 years for a new industry established in a Special Economic Zone.  _(Finance Act 2083)_
+- **IT industry bonus shares** — 0% dividend tax on the capitalisation of profits (bonus shares) issued by an IT industry.  _(Finance Act 2083)_
+- **Tax dispute settlement window** — One-time settlement of a pending dispute by paying the principal tax plus a 1% fee, with penalties and interest waived.  _(Finance Act 2083)_
+
+The eligibility conditions and the commencement of each concession are not stated here: confirm them against the Act and the IRD's notice before applying one (R-NP-CT-2). Reviewed by Ashish Bista on 2026-06-06.
 
 ## Section 4 — Tier 2 (capital gains for entities)
 
@@ -89,8 +99,9 @@ Research-grade, FY 2082/83. **Secondary firm publications — re-anchor to prima
 2. Baker Tilly Nepal "Tax Fact 2025-2026" — https://bakertilly.com.np/storage/download/1750310698_Tax_Fact_2025-2026.pdf
 3. Income Tax Act 2058 (2002), Section 11 + Schedule 1 — confirm at https://ird.gov.np
 4. Finance Act 2082.
+5. Finance Act 2083 (the §3.4 concessions).
 
-**Known gaps / VERIFY:** primary citations; the full special-industry / export / SEZ concession schedule beyond the startup (5-year exemption up to NPR 100 million turnover), IT-export (75% exemption) and SEZ-rent (100% for the first 3 years) concessions of Finance Act 2083.
+**Known gaps / VERIFY:** primary citations; the full special-industry / export / SEZ concession schedule beyond the Finance Act 2083 concessions in §3.4, and the eligibility conditions and commencement of those.
 
 ## Prohibitions
 

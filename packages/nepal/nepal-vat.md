@@ -22,6 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Country** — Nepal (Federal Democratic Republic of Nepal)
 - **Standard rate** — 13%
 - **Zero rate** — 0% (exports, goods to SEZ)
+- **Reduced rate** — 5% on electricity (consumption above 50 units) and on ride-sharing / ride-hailing services, introduced by Finance Act 2083 (the FY 2083/84 budget), which amended VAT Act 2052 s.7
 - **Exempt** — Basic agricultural products, education, healthcare, financial services, public transport
 - **Return form** — VAT return (monthly, via IRD e-filing)
 - **Filing portal** — https://ird.gov.np (IRD e-filing)
@@ -40,6 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Nepal (Federal Democratic Republic of Nepal) |
 | Standard rate | 13% |
 | Zero rate | 0% (exports, goods to SEZ) |
+| Reduced rate | 5% on electricity (consumption above 50 units) and ride-sharing / ride-hailing services — Finance Act 2083, amending VAT Act 2052 s.7 |
 | Exempt | Basic agricultural products, education, healthcare, financial services, public transport |
 | Return form | VAT return (monthly, via IRD e-filing) |
 | Filing portal | https://ird.gov.np (IRD e-filing) |
@@ -56,6 +58,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Ambiguity | Default |
 | --- | --- |
 | Unknown rate on a sale | 13% |
+| Electricity or ride-hailing supply, Finance Act 2083 condition not documented | 13% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty location | Domestic Nepal |
 | Unknown business-use proportion | 0% recovery |
@@ -103,7 +106,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| NEA, NEPAL ELECTRICITY | Domestic 13% | Electricity |
+| NEA, NEPAL ELECTRICITY | Domestic 13%; 5% where the Finance Act 2083 reduced rate applies (consumption above 50 units) | Electricity — see §5.2 |
 | KUKL, KATHMANDU WATER | Domestic 13% | Water |
 | NTC, NEPAL TELECOM, NCELL | Domestic 13% | Telecoms |
 
@@ -185,31 +188,35 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Standard rate default** — Default for all taxable supplies.
 
-### 5.2 Zero rate — Exports, supplies to SEZ.
+### 5.2 Reduced rate 5% — Electricity (consumption above 50 units); ride-sharing / ride-hailing services.
+
+- **Reduced rate** — 5% on electricity where consumption exceeds 50 units, and on ride-sharing / ride-hailing services: Finance Act 2083 (the FY 2083/84 budget), amending VAT Act 2052 s.7, as reviewed on 2026-06-06. Confirm the commencement date and the exact scope against the IRD's notice before applying it to a period.
+
+### 5.3 Zero rate — Exports, supplies to SEZ.
 
 - **Zero rate** — Exports, supplies to SEZ.
 
-### 5.3 Exempt — Basic agriculture, education, healthcare, financial services, public transport.
+### 5.4 Exempt — Basic agriculture, education, healthcare, financial services, public transport.
 
 - **Exempt** — Basic agriculture, education, healthcare, financial services, public transport.
 
-### 5.4 Input tax credit — Valid VAT invoice with PAN required. Business purpose.
+### 5.5 Input tax credit — Valid VAT invoice with PAN required. Business purpose.
 
 - **Input tax credit** — Valid VAT invoice with PAN required. Business purpose.
 
-### 5.5 Blocked input — Personal consumption, entertainment, passenger vehicles.
+### 5.6 Blocked input — Personal consumption, entertainment, passenger vehicles.
 
 - **Blocked input** — Personal consumption, entertainment, passenger vehicles.
 
-### 5.6 Imports — VAT at 13% on CIF plus duty.
+### 5.7 Imports — VAT at 13% on CIF plus duty.
 
 - **Imports** — VAT at 13% on CIF plus duty.
 
-### 5.7 Reverse charge — Non-resident services: self-assess 13%.
+### 5.8 Reverse charge — Non-resident services: self-assess 13%.
 
 - **Reverse charge** — Non-resident services: self-assess 13%.
 
-### 5.8 VAT billing software — IRD requires use of approved billing software for invoice generation.
+### 5.9 VAT billing software — IRD requires use of approved billing software for invoice generation.
 
 - **VAT billing software** — IRD requires use of approved billing software for invoice generation.
 
@@ -269,14 +276,22 @@ Always ask.
 
 ### Sources
 
-1. Nepal Value Added Tax Act 2052 (1996, as amended). 2. IRD guidelines. 3. IRD e-filing portal.
+1. Nepal Value Added Tax Act 2052 (1996, as amended). 2. IRD guidelines. 3. IRD e-filing portal. 4. Finance Act 2083 and the Budget Speech 2083/84 (the measures below).
 
 ### Known gaps
 
 1. SEZ entities refused. 2. Hydropower/infrastructure refused.
 
+### Finance Act 2083 measures (reviewed 2026-06-06)
+
+- **Reduced rate** — 5% on electricity (consumption above 50 units) and ride-sharing / ride-hailing services (§5.2).
+- **Consumer VAT refund on digital payment** — 10% of the VAT is refunded instantly to a consumer who pays digitally (Finance Act 2083 / VAT Act 2052).
+- **VAT bill lottery** — every VAT bill is a lottery ticket for the consumer (Budget Speech 2083/84).
+- **Settlement of pending VAT cases** — outstanding principal tax plus a 1% fee, all other penalties waived (Finance Act 2083, ss 41 and 44).
+
 ### Change log
 
+- 2026-09-29: the Finance Act 2083 measures of the 2026-06-06 review (the 5% reduced rate, the consumer refund, the bill lottery, the settlement window) folded into §1, §3.3, §5.2 and §10.
 - v2.1 (June 2026): Added jurisdiction/verification frontmatter; added VAT registration thresholds (NPR 5M goods / 3M services, FY 2082/83); removed duplicate disclaimer; 13% rate re-confirmed for FY 2082/83.
 - v2.0 (April 2026): Full rewrite to Malta v2.0 ten-section structure.
 

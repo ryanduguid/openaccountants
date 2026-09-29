@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India Return Assembly Skill v0.1
 
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The figures the review covered — both regimes' slabs, the surcharge tiers and cess, the standard deductions, the s 87A rebate, the s 44AD and s 44ADA presumptive limits and the ITR deadlines — are those of the content guides this capstone consumes: `in-income-tax` states them with their sources, and this file repeats only what its own checks apply (the s 87A threshold and the surcharge tiers in Section 6, the ITR deadlines in the client action list). The separate "Verified rates & thresholds" list that restated them here was removed on 2026-09-29. Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 

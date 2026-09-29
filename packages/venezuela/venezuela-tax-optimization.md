@@ -380,7 +380,7 @@ PwC Worldwide Tax Summaries — Venezuela Corporate Other Taxes (January 2026). 
 | Standard | 16% | Most goods and services |
 | Reduced | 8% | Goats, sheep, minor livestock; refrigerated meats; shortening; professional services to government bodies; domestic air passenger transport; certain construction |
 | Luxury surcharge | +15% (total effective ~31%) | Vehicles ≥ USD 40,000; motorcycles ≥ USD 20,000; jewelry ≥ USD 300; restaurant/bar services; gaming machines |
-| Zero-rated | 0% | Exports of goods and services |
+| Zero-rated | 0% | Exports of goods; exports of services only where the recipient is not domiciled or resident in Venezuela and the service is used or exploited exclusively abroad — a service performed in Venezuela for a person abroad without that exclusive use is a domestic supply at 16% (Ley del IVA; the 2026-06-21 review) |
 | Foreign currency / crypto surcharge | 5–25% | Transactions paid in foreign currency, crypto, or non-Venezuelan crypto-assets (rate set by Executive) |
 
 ### Key 2025 Change — Import Exemption Suspension
@@ -389,7 +389,7 @@ PwC Worldwide Tax Summaries — Venezuela Corporate Other Taxes (January 2026). 
 
 ### Optimization Actions
 
-- **VAT optimization actions** — 1. **Export structuring:** If services can legitimately be rendered for the benefit of foreign recipients, qualifying as an export of services yields 0% output VAT while input VAT remains recoverable. 2. **Activity classification:** Verify that the reduced 8% rate is claimed for qualifying activities (e.g., government professional services contracts). Overcharging at 16% creates administrative burden; undercharging creates a compliance liability. 3. **Foreign currency transaction planning:** The 5–25% surcharge on transactions paid in foreign currency or crypto is significant. Where contractually possible, structure payment terms to use bolivar settlement. 4. **Special taxpayer withholding (from August 1, 2025):** Ruling SNAT/2025/000054 expanded VAT withholding obligations. Verify whether the client is a designated withholding agent and whether their counterparties are, to correctly account for VAT flows.
+- **VAT optimization actions** — 1. **Export structuring:** A service is an export (0% output VAT, input VAT recoverable) only where the recipient is not domiciled or resident in Venezuela and the service is used or exploited exclusively abroad; a service performed in Venezuela for a person abroad that does not meet that test is treated as supplied in Venezuela and bears 16% (Ley del IVA; the 2026-06-21 review). Document the recipient's foreign status and the place of use before invoicing at 0%. 2. **Activity classification:** Verify that the reduced 8% rate is claimed for qualifying activities (e.g., government professional services contracts). Overcharging at 16% creates administrative burden; undercharging creates a compliance liability. 3. **Foreign currency transaction planning:** The 5–25% surcharge on transactions paid in foreign currency or crypto is significant. Where contractually possible, structure payment terms to use bolivar settlement. 4. **Special taxpayer withholding (from August 1, 2025):** Ruling SNAT/2025/000054 expanded VAT withholding obligations. Verify whether the client is a designated withholding agent and whether their counterparties are, to correctly account for VAT flows.
 
 ### Source
 

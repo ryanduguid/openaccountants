@@ -41,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | EsSalud (health) | 9% of remuneration, employer-borne, no cap ([PwC, other taxes](https://taxsummaries.pwc.com/peru/individual/other-taxes)) |
 | ONP (public pension) | 13% of remuneration, employee-borne ([PwC, other taxes](https://taxsummaries.pwc.com/peru/individual/other-taxes)) |
 | AFP (private pension) | ~12.84%–13.06% of remuneration, employee-borne ([PwC](https://taxsummaries.pwc.com/peru/individual/other-taxes); [TrámitesPerú](https://tramitesperu.com/comparadores/afp-comisiones/)) |
-| Monthly filing | PLAME (Planilla Electrónica), Formulario Virtual 0601, v4.5 mandatory from Oct 2025 ([SUNAT](https://orientacion.sunat.gob.pe/pdt-plame)) |
+| Monthly filing | PLAME (Planilla Electrónica), Formulario Virtual 0601: version 4.5 for the periods October to December 2025, version 4.6 for the periods from January 2026 (Resolución de Superintendencia N.° 000016-2026/SUNAT, art. 2) ([SUNAT](https://orientacion.sunat.gob.pe/pdt-plame)) |
 | Filing deadline | Monthly, by last digit of employer RUC per SUNAT cronograma (≈14th–24th of following month) ([SUNAT](https://orientacion.sunat.gob.pe/pdt-plame)) |
 | Annual return (FY2025) | Due 27 May – 10 Jun 2026 by RUC digit ([NVC Abogados](https://nvcabogados.com/annual-income-tax-return-2025-in-peru/)) |
 | Validated by | Verified by Maria Clemencia Valverde Rios (CPA) on 2026-06-29 |
@@ -272,7 +272,7 @@ These rules apply when payslip/bank data is clear and all required inputs are av
 
 ### Rule 9 — Monthly PLAME filing
 
-- **Monthly PLAME filing** — File PLAME (Planilla Electrónica), Formulario Virtual 0601, monthly. Version 4.5 mandatory for periods from Oct 2025. Deadline by the last digit of the employer's RUC per SUNAT's annual cronograma (≈14th–24th of the following month). AFP remittance via AFPnet on a similar monthly cycle.  _([SUNAT](https://orientacion.sunat.gob.pe/pdt-plame))_
+- **Monthly PLAME filing** — File PLAME (Planilla Electrónica), Formulario Virtual 0601, monthly. Version 4.5 was mandatory for the periods October to December 2025; version 4.6 is mandatory for the periods from January 2026 (Resolución de Superintendencia N.° 000016-2026/SUNAT, art. 2). Deadline by the last digit of the employer's RUC per SUNAT's annual cronograma (≈14th–24th of the following month). AFP remittance via AFPnet on a similar monthly cycle.  _([SUNAT](https://orientacion.sunat.gob.pe/pdt-plame))_
 
 ### Rule 10 — Annual return
 

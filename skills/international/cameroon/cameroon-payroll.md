@@ -89,14 +89,41 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 These flat local levies are withheld alongside IRPP on the DIPE declaration.
 
-**Salary-based local taxes**  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/other-taxes)_
+Each levy is a flat monthly amount read from a band table by monthly salary. The two tables below are those of the 2026-06-21 fact check (Nkinyam Courage Ndasi), which carried them without an article citation; PwC (Other taxes) confirms the top bands: the council tax above XAF 500,000 (PwC's rounded ~XAF 2,520, where the reviewed table says 2,500) and the CRTV royalty of XAF 13,000 above XAF 1,000,000. Until 2026-09-29 this guide stated only those top bands and treated every lower band as a research gap.
 
-| Levy | Amount | Threshold | Source |
-| --- | --- | --- | --- |
-| **Council tax** (Taxe Communale Libératoire) | ~XAF 2,520/month (top band) | Salaries above XAF 500,000/month | PwC, Other taxes |
-| **Audiovisual royalty** (CRTV, redevance audiovisuelle) | up to XAF 13,000/month (top band) | Top band for gross salary above ~XAF 1,000,000/month | PwC, Other taxes |
+**Council tax (taxe de développement local, TDL, withheld on salaries) — monthly bands**
 
-> **[RESEARCH GAP — reviewer to confirm]** The full council-tax and CRTV royalty **band tables** (intermediate bands) were not retrievable from a primary source. Only the **top-band amounts** (XAF 2,520 and XAF 13,000) and **thresholds** (XAF 500,000 / XAF 1,000,000) are confirmed by PwC. Source the intermediate bands from the CGI before relying on per-band figures. For salaries clearly above the top thresholds, the top-band amounts apply.
+| Monthly salary (XAF) | Council tax (XAF/month) |
+| --- | --- |
+| Below 62,000 | 0 |
+| 62,000 – 75,000 | 250 |
+| 75,001 – 100,000 | 500 |
+| 100,001 – 125,000 | 750 |
+| 125,001 – 150,000 | 1,000 |
+| 150,001 – 200,000 | 1,250 |
+| 200,001 – 250,000 | 1,500 |
+| 250,001 – 300,000 | 2,000 |
+| 300,001 – 500,000 | 2,250 |
+| Above 500,000 | 2,500 |
+
+**Audiovisual royalty (CRTV, redevance audiovisuelle) — monthly bands**
+
+| Monthly salary (XAF) | CRTV (XAF/month) |
+| --- | --- |
+| 0 – 50,000 | 0 |
+| 50,001 – 100,000 | 750 |
+| 100,001 – 200,000 | 1,950 |
+| 200,001 – 300,000 | 3,250 |
+| 300,001 – 400,000 | 4,550 |
+| 400,001 – 500,000 | 5,850 |
+| 500,001 – 600,000 | 7,150 |
+| 600,001 – 700,000 | 8,450 |
+| 700,001 – 800,000 | 9,750 |
+| 800,001 – 900,000 | 11,050 |
+| 900,001 – 1,000,000 | 12,350 |
+| Above 1,000,000 | 13,000 |
+
+> **Base and citation.** The reviewed tables are headed "monthly salary" (council tax) and "monthly taxable income" (CRTV); this guide, like PwC, bands both on the gross monthly salary, which overstates the CRTV by at most one band where exempt allowances are large. **[RESEARCH GAP — reviewer to confirm]** the Code Général des Impôts article of each scale (the taxe de développement local on salaried employees; the redevance audiovisuelle) and the exact base, before a band amount is relied on in a filing.
 
 ## Section 4 — Social Security (CNPS) — Contribution Rates
 
@@ -165,7 +192,7 @@ When an input is missing or ambiguous, apply the **most conservative defensible 
 | CNPS occupational-accident risk class unknown | Use **2.5%** (mid band) and flag | Avoids understating employer cost; mid band is a defensible neutral |
 | Family-allowance sector unclear | Use **7.0%** (general private sector) | Highest standard rate; reduced rates unconfirmed |
 | Benefit-in-kind valuation uncertain | Include BIK at stated %s (housing 15%, electricity 4%, water 2%) and flag | Excluding BIK understates taxable salary |
-| Council tax / CRTV band uncertain (salary above top threshold) | Apply **top band** (XAF 2,520 / XAF 13,000) | Top band confirmed; intermediate bands unconfirmed |
+| Council tax / CRTV base uncertain (allowances of unknown taxability) | Band on the **gross monthly salary** and flag | The §3 tables are read on the monthly salary; an overstated base overstates a levy by at most one band |
 | Pay frequency unstated | Assume **monthly** | Standard Cameroon practice |
 | Marital/dependant status (IRPP) | IRPP scale is **not** status-banded (single national scale) | Cameroon uses one progressive scale; no S/M codes |
 | CFC/FNE ceiling uncertain | Apply to **full taxable salary** (no cap) | PwC states 2.5% on total salaries; no cap mentioned |
@@ -189,7 +216,7 @@ Every default applied **must** be surfaced in the output as an explicit assumpti
 | Salary given in a currency other than XAF | **Refuse** — convert/confirm XAF first; never assume FX |
 | Asked to compute SMIG-compliance as definitive | **Refuse to certify** — SMIG figure is a research gap; provide ranges only with disclaimer |
 | Asked to file or sign a DIPE / tax return | **Refuse** — only a registered party / licensed professional may file |
-| Asked to compute council tax / CRTV at an intermediate band | **Flag research gap** — only top band confirmed |
+| Asked to certify a council-tax / CRTV band amount for a filing | **Flag** — the §3 band tables are the reviewer's, not yet cited to a CGI article; compute, and label the amount as pending primary citation |
 | Asked to treat output as professional advice | **Refuse** — outputs are estimates pending accountant sign-off |
 
 ## Section 9 — Transaction / Payment Pattern Library
@@ -220,7 +247,7 @@ Deterministic mapping of Cameroon bank-statement narratives (French/English) to 
 | `CFC`, `CREDIT FONCIER` | Housing Fund (Crédit Foncier) levy |
 | `FNE`, `FONDS NATIONAL EMPLOI` | National Employment Fund levy |
 | `CRTV`, `REDEVANCE AUDIOVISUELLE` | Audiovisual royalty |
-| `TAXE COMMUNALE` | Council tax |
+| `TAXE COMMUNALE`, `TDL`, `TAXE DE DEVELOPPEMENT LOCAL` | Council tax (taxe de développement local) |
 | `VIREMENT SALAIRES`, `PAIE DU MOIS`, `MASSE SALARIALE` | Net wages disbursement to employees |
 
 ## Section 10 — Worked Examples
@@ -244,9 +271,9 @@ All examples use **FY2025** rates. CNPS ceiling XAF 750,000/mo. IRPP computed on
 
 Bank line: `VIREMENT SALAIRE — JEAN M. — XAF 2xx,xxx`
 
-Monthly deductions (employee): CNPS pension 10,500 + CFC 1% (1% × 250,000 = 2,500) + IRPP 13,851 = **26,851**.
-Net pay ≈ 250,000 − 26,851 = **XAF 223,149/mo** (excludes council tax/CRTV — salary below XAF 500,000 threshold, so neither applies).
-*Council/CRTV check:* 250,000 < 500,000 → council tax not due; < 1,000,000 → CRTV top band not reached (lower bands a research gap).
+Monthly deductions (employee): CNPS pension 10,500 + CFC 1% (1% × 250,000 = 2,500) + IRPP 13,851 + council tax 1,500 (band 200,001 – 250,000) + CRTV 3,250 (band 200,001 – 300,000) = **31,601**.
+Net pay ≈ 250,000 − 31,601 = **XAF 218,399/mo**.
+*Council/CRTV check:* 250,000 falls in the 200,001 – 250,000 council-tax band → 1,500, and in the 200,001 – 300,000 CRTV band → 3,250 (§3 tables).
 
 ### Example B — Mid employee, gross XAF 800,000/month (annual 9,600,000)
 
@@ -267,9 +294,9 @@ Net pay ≈ 250,000 − 26,851 = **XAF 223,149/mo** (excludes council tax/CRTV �
 
 Bank line: `PAIE DU MOIS — A. NGUEMA — VIREMENT`
 
-Monthly employee deductions: CNPS pension **31,500** (capped) + CFC 1% (1% × 800,000 = 8,000) + IRPP 108,556 + council tax (above 500,000) **2,520** = **150,576**.
-*CRTV:* 800,000 < 1,000,000 → top band not reached; lower band **[RESEARCH GAP]** — excluded.
-Net pay ≈ 800,000 − 150,576 = **XAF 649,424/mo**.
+Monthly employee deductions: CNPS pension **31,500** (capped) + CFC 1% (1% × 800,000 = 8,000) + IRPP 108,556 + council tax (above 500,000) **2,500** + CRTV (band 700,001 – 800,000) **9,750** = **160,306**.
+*CRTV:* 800,000 is the top of the 700,001 – 800,000 band → 9,750 (§3 table).
+Net pay ≈ 800,000 − 160,306 = **XAF 639,694/mo**.
 
 ### Example C — Employer monthly cost for Example B employee (gross 800,000)
 
@@ -304,12 +331,12 @@ Fully-loaded employer cost = 800,000 + 122,750 = **XAF 922,750/mo**.
 | Total IRPP |  | **3,566,475/yr** |
 | Monthly IRPP | ÷ 12 | **297,206/mo** |
 
-Monthly employee deductions: CNPS pension 31,500 + CFC 1% (1% × 1,500,000 = 15,000) + IRPP 297,206 + council tax 2,520 (>500,000) + CRTV 13,000 (>1,000,000 → top band) = **359,226**.
-Net pay ≈ 1,500,000 − 359,226 = **XAF 1,140,774/mo**.
+Monthly employee deductions: CNPS pension 31,500 + CFC 1% (1% × 1,500,000 = 15,000) + IRPP 297,206 + council tax 2,500 (>500,000) + CRTV 13,000 (>1,000,000 → top band) = **359,206**.
+Net pay ≈ 1,500,000 − 359,206 = **XAF 1,140,794/mo**.
 
 ### Example E — Worker at SMIG (illustrative only)
 
-> SMIG is a **[RESEARCH GAP]**. Using the secondary figure XAF 60,000/month **for illustration only**: gross 60,000 < 500,000 → no council tax, no CRTV; below the first IRPP band after deductions the net taxable is likely **nil** (post-CNPS 60,000 − 2,520 = 57,480; less 30% and the 500,000 abatement → negative → IRPP = 0). Employee still bears CNPS pension 4.2% × 60,000 = **2,520** and CFC 1% = **600**. **Do not certify SMIG compliance** until the official figure is confirmed.
+> SMIG is a **[RESEARCH GAP]**. Using the secondary figure XAF 60,000/month **for illustration only**: gross 60,000 is below the first council-tax band (62,000) → no council tax, and in the 50,001 – 100,000 CRTV band → 750; below the first IRPP band after deductions the net taxable is likely **nil** (post-CNPS 60,000 − 2,520 = 57,480; less 30% and the 500,000 abatement → negative → IRPP = 0). Employee still bears CNPS pension 4.2% × 60,000 = **2,520**, CFC 1% = **600** and CRTV **750**. **Do not certify SMIG compliance** until the official figure is confirmed.
 
 ## Section 11 — Tier 1 Rules (deterministic — always apply)
 
@@ -318,7 +345,7 @@ Net pay ≈ 1,500,000 − 359,226 = **XAF 1,140,774/mo**.
 - **CNPS pension deductibility order** — The 4.2% employee CNPS pension is deductible before the 30% professional allowance and the 500,000 abatement.  _(Section 11 — Tier 1 Rules)_
 - **Net-taxable computation order** — gross → less CNPS pension → less 30% → less 500,000 → round down to 1,000 → apply scale  _(Section 11 — Tier 1 Rules)_
 - **CFC and FNE levy basis** — CFC (1.5% employer / 1% employee) and FNE (1% employer) are levied on taxable salary; PwC states no ceiling.  _(Section 11 — Tier 1 Rules)_
-- **Council tax and CRTV thresholds** — Council tax applies only to salaries above XAF 500,000/month; CRTV top band only above ~XAF 1,000,000/month.  _(Section 11 — Tier 1 Rules)_
+- **Council tax and CRTV bands** — Council tax is banded on the monthly salary from XAF 62,000 (250/month) to above 500,000 (2,500/month); CRTV from XAF 50,001 (750/month) to above 1,000,000 (13,000/month). Read the §3 tables; never apply a top-band amount to a salary in a lower band, and never a flat threshold.  _(Section 11 — Tier 1 Rules)_
 - **CNPS total employer rate excluding occupational accident** — 11.2%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
 - **DIPE deadline** — Monthly DIPE return + remittance is due by the 15th of the following month.  _(Section 11 — Tier 1 Rules)_
 - **Currency assumption** — All amounts are XAF; never assume a different currency or apply FX without explicit input.  _(Section 11 — Tier 1 Rules)_
@@ -331,7 +358,7 @@ Net pay ≈ 1,500,000 − 359,226 = **XAF 1,140,774/mo**.
 | --- | --- |
 | Benefit-in-kind valuation and caps | Full CGI BIK schedule is a research gap; housing/electricity/water %s confirmed but caps unconfirmed |
 | Exempt allowances (special-duty, statutory family) | Exemption scope is fact-specific per CGI |
-| Council tax / CRTV intermediate bands | Only top bands confirmed; intermediate bands a research gap |
+| Council tax / CRTV band tables | Reviewer-supplied (2026-06-21) without a CGI article citation; PwC confirms the top bands only |
 | Sector-reduced family-allowance rates (agriculture/teachers) | Secondary-sourced only |
 | Operative SMIG | Sources disagree; needs the labour decree |
 | Occupational-accident risk classification | Class assignment is employer/sector-specific |
@@ -360,8 +387,8 @@ Net pay ≈ 1,500,000 − 359,226 = **XAF 1,140,774/mo**.
 | M | Annual IRPP (incl. CAC) | progressive on L (see §2.1) |
 | N | Monthly IRPP | =M/12 |
 | O | CFC EE (1%) | =0.01*E |
-| P | Council tax | =IF(C>500000, 2520, 0)  *(top band; intermediate = research gap)* |
-| Q | CRTV royalty | =IF(C>1000000, 13000, 0)  *(top band; intermediate = research gap)* |
+| P | Council tax | =IF(C<62000, 0, LOOKUP(C, {62000;75001;100001;125001;150001;200001;250001;300001;500001}, {250;500;750;1000;1250;1500;2000;2250;2500}))  *(§3 band table)* |
+| Q | CRTV royalty | =LOOKUP(C, {0;50001;100001;200001;300001;400001;500001;600001;700001;800001;900001;1000001}, {0;750;1950;3250;4550;5850;7150;8450;9750;11050;12350;13000})  *(§3 band table)* |
 | R | Net pay | =C−G−N−O−P−Q |
 | S | CNPS pension ER (4.2%) | =0.042*F |
 | T | CNPS family allowance ER (7%) | =0.07*F |
@@ -465,8 +492,8 @@ Source: https://taxsummaries.pwc.com/republic-of-cameroon/corporate/tax-administ
 | CFC housing fund | 1.5% ER / 1.0% EE | PwC, Other taxes |
 | FNE employment fund | 1.0% ER | PwC, Other taxes |
 | CFC+FNE combined employer | 2.5% | PwC corporate |
-| Council tax (top band) | XAF 2,520/mo (>500,000) | PwC, Other taxes |
-| CRTV royalty (top band) | XAF 13,000/mo (>~1,000,000) | PwC, Other taxes |
+| Council tax | XAF 250 – 2,500/mo by salary band (§3) | Reviewed table (2026-06-21); PwC for the top band |
+| CRTV royalty | XAF 750 – 13,000/mo by salary band (§3) | Reviewed table (2026-06-21); PwC for the top band |
 | SMIG (non-agri, secondary) | XAF 60,000/mo **[GAP]** | Playroll; RemotePeople |
 | Monthly DIPE deadline | 15th of following month | PwC, Tax administration |
 | Record retention | 10 years | PwC, Tax administration |
@@ -483,11 +510,11 @@ Each test states inputs → expected output. Recompute to confirm before relying
 3. **IRPP cumulative checkpoints.** At net taxable 2,000,000 → **220,000**; 3,000,000 → **385,000**; 5,000,000 → **935,000**. ✓
 4. **Example A net taxable.** Gross 250,000/mo → net taxable **1,511,000**; annual IRPP **166,210**; monthly **13,851**. ✓
 5. **Example B net taxable.** Gross 800,000/mo → net taxable **5,955,000**; annual IRPP **1,302,675**; monthly **108,556**. ✓
-6. **Example B net pay.** 800,000 − (31,500 + 8,000 + 108,556 + 2,520) = **649,424/mo**. ✓
+6. **Example B net pay.** 800,000 − (31,500 + 8,000 + 108,556 + 2,500 + 9,750) = **639,694/mo**. ✓
 7. **Example C employer on-cost.** Gross 800,000, mid accident → **122,750/mo**; fully loaded **922,750/mo**. ✓
-8. **Council-tax threshold.** Gross 250,000 (<500,000) → council tax **0**; gross 800,000 (>500,000) → **2,520**. ✓
-9. **CRTV threshold.** Gross 800,000 (<1,000,000) → CRTV top band **not applied**; gross 1,500,000 (>1,000,000) → **13,000**. ✓
-10. **Example D high earner.** Gross 1,500,000/mo → net taxable **11,835,000**; annual IRPP **3,566,475**; monthly **297,206**; net pay **1,140,774**. ✓
+8. **Council-tax bands.** Gross 60,000 (below 62,000) → council tax **0**; gross 250,000 (200,001 – 250,000) → **1,500**; gross 800,000 (above 500,000) → **2,500**. ✓
+9. **CRTV bands.** Gross 250,000 (200,001 – 300,000) → **3,250**; gross 800,000 (700,001 – 800,000) → **9,750**; gross 1,500,000 (above 1,000,000) → **13,000**. ✓
+10. **Example D high earner.** Gross 1,500,000/mo → net taxable **11,835,000**; annual IRPP **3,566,475**; monthly **297,206**; net pay **1,140,794**. ✓
 11. **CFC+FNE employer.** Gross 800,000 → CFC 12,000 + FNE 8,000 = **20,000/mo** (2.5% × 800,000 = 20,000). ✓
 12. **CAC not double-counted.** Net taxable 1,000,000 → IRPP = 11% × 1,000,000 = **110,000** (using effective rate; do NOT add a further 10%). ✓
 13. **Late-declaration penalty cap.** 10%/month capped at **30%**; late-payment interest 1.5%/month capped at **50%**. ✓
@@ -499,9 +526,9 @@ Each test states inputs → expected output. Recompute to confirm before relying
 - NEVER apply CNPS contributions to salary above the XAF 750,000/month ceiling.
 - NEVER omit the employer family-allowance contribution (7%) or the CFC/FNE levies (2.5% combined employer) from employer cost.
 - NEVER compute IRPP on gross salary — always run the full net-taxable order (CNPS pension → 30% → 500,000 abatement → round down).
-- NEVER apply council tax or CRTV below their thresholds (XAF 500,000 / ~XAF 1,000,000).
+- NEVER apply council tax below XAF 62,000/month or CRTV at or below XAF 50,000/month, and NEVER apply a top-band amount to a salary in a lower band — read the §3 tables.
 - NEVER present a SMIG figure as definitive — it is an unresolved research gap.
-- NEVER state intermediate council-tax or CRTV bands as fact — only top bands are confirmed.
+- NEVER present the §3 band tables as cited to the CGI — they are the reviewer's figures pending a primary citation; PwC confirms the top bands only.
 - NEVER assume a currency other than XAF, or apply an FX rate without explicit input.
 - NEVER miss the 15th-of-following-month DIPE deadline — penalties (10%/month up to 30%, plus interest) apply.
 - NEVER file or sign a DIPE / tax return on the client's behalf.
