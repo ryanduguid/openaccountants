@@ -168,13 +168,13 @@ Add residence tax (~10%) and reconstruction surtax (2.1% of income tax, through 
 
 | System | Coverage | Who | Cost |
 | --- | --- | --- | --- |
-| National Health Insurance (NHI, 国民健康保険) | Health only | Sole proprietors, freelancers | Income-based; varies by municipality. Capped ~¥1,060,000/year |
+| National Health Insurance (NHI, 国民健康保険) | Health only | Sole proprietors, freelancers | Income-based; varies by municipality. Capped at ¥1,090,000 a household in FY2025 (¥1,130,000 from FY2026), 国民健康保険法施行令 art. 29-7 — https://laws.e-gov.go.jp/law/333CO0000000362 |
 | National Pension (国民年金) | Basic pension | Self-employed | Flat ¥17,510/month (FY2025, 日本年金機構 国民年金の保険料 — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html; ¥16,980 was the FY2024 amount). Voluntary add-on: National Pension Fund |
 | Shakai Hoken (厚生年金 + 健保) | Health + pension | Employees, company directors | ~30% of standard monthly salary (split employer/employee). No cap on health portion after ¥1,390,000 standard salary |
 
 ### Optimization Strategies
 
-- **Sole proprietor with high income — NHI cap advantage** — NHI premiums cap out at ~¥1,060,000 regardless of income above the cap threshold. Above that level, additional income incurs no additional NHI cost — a marginal advantage over Shakai Hoken (which increases with salary).
+- **Sole proprietor with high income — NHI cap advantage** — NHI premiums cap out at ¥1,090,000 a household in FY2025 (¥1,130,000 from FY2026) regardless of income above the cap threshold. Above that level, additional income incurs no additional NHI cost — a marginal advantage over Shakai Hoken (which increases with salary).
 - **Corporation — director salary setting** — Set director salary (hōshū) to optimise total of corporate tax + personal tax + social insurance. Very low salary triggers NTA scrutiny for unreasonable compensation; very high salary increases social insurance cost.
 - **Shōkibo Kyōsai (小規模企業共済)** — Retirement fund for sole proprietors and small company directors. Contributions up to ¥84,000/month fully deductible. Lump-sum withdrawal taxed as retirement income (退職所得) with significant exemptions.
 - **iDeCo stacking** — Contributions fully deductible from income. Upon withdrawal at retirement, lump-sum receives retirement income treatment; annuity receives pension income deduction. Layer with Shōkibo Kyōsai for maximum deductions.

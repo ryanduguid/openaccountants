@@ -49,14 +49,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Support | Elderly health system support | All NHI enrollees |
 | Long-term care | Long-term care insurance | Ages 40-64 only |
 
-**NHI annual caps (FY 2025)**
+**NHI annual caps (per household, FY 2025)**
 
 | Component | Annual Cap |
 | --- | --- |
-| Medical | JPY 650,000 |
-| Support | JPY 240,000 |
+| Medical | JPY 660,000 |
+| Support | JPY 260,000 |
 | Long-term care | JPY 170,000 |
-| Total maximum | JPY 1,060,000 |
+| Total maximum | JPY 1,090,000 |
+
+Source: 国民健康保険法施行令 (National Health Insurance Act Enforcement Order) art. 29-7, as in force from 1 April 2025 (Cabinet Order No. 32 of Reiwa 7) — https://laws.e-gov.go.jp/law/333CO0000000362/20250401. The FY2024 caps were JPY 650,000, 240,000 and 170,000 (JPY 1,060,000 in all). From FY2026 the medical cap is JPY 670,000 and a fourth component, the child-rearing support levy (子ども・子育て支援納付金分), is capped at JPY 30,000, so the total maximum is JPY 1,130,000 (the Order as now in force — https://laws.e-gov.go.jp/law/333CO0000000362).
 
 **NHI sub-elements per component**
 
@@ -69,13 +71,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Low-income reductions (NHI per-capita/per-household only)**
 
-| Reduction | Household Income Threshold (2025) |
+| Reduction | Household Income Threshold (FY 2025) |
 | --- | --- |
 | 70% reduction | JPY 430,000 + (JPY 100,000 x earners beyond 1) |
-| 50% reduction | JPY 430,000 + JPY 295,000 x insured + (JPY 100,000 x earners beyond 1) |
-| 20% reduction | JPY 430,000 + JPY 545,000 x insured + (JPY 100,000 x earners beyond 1) |
+| 50% reduction | JPY 430,000 + JPY 305,000 x insured + (JPY 100,000 x earners beyond 1) |
+| 20% reduction | JPY 430,000 + JPY 560,000 x insured + (JPY 100,000 x earners beyond 1) |
 
-The per-insured multipliers of the 50% and 20% reductions are revised each fiscal year by the National Health Insurance Act Enforcement Order (国民健康保険法施行令 art. 29-7); the figures above are the FY2024 multipliers, which the FY2025 revision raised. Confirm the current year's multipliers on the municipality's notice before applying a reduction.
+Source: 国民健康保険法施行令 art. 29-7 (the reduction rules), as in force from 1 April 2025 — https://laws.e-gov.go.jp/law/333CO0000000362/20250401. The JPY 430,000 is the basic deduction of the Local Tax Act art. 314-2 para. 2 item 1 (an income of JPY 24 million or less). "Insured" counts the household's NHI members and anyone who left NHI for the late-stage elderly scheme but stays in the household; "earners" are salary earners and public-pension recipients above the Order's minimum income levels (給与所得者等). The per-insured multipliers change almost every year: JPY 295,000 (50%) and JPY 545,000 (20%) for FY2024, JPY 305,000 and JPY 560,000 for FY2025 (Isehara City's notice sets the two years side by side — https://www.city.isehara.kanagawa.jp/docs/2025022800047/), and JPY 310,000 and JPY 570,000 for FY2026 (the Order as now in force — https://laws.e-gov.go.jp/law/333CO0000000362). Confirm the current year's multipliers on the municipality's notice before applying a reduction.
 
 **Conservative defaults**
 
@@ -261,7 +263,7 @@ Resolution: Category 1 obligation ends the month before turning 60. May optional
 ### EC5 -- Client has high income but few assets (Tier 1)
 
 Situation: Freelancer earns JPY 10,000,000.
-Resolution: Income-based portion will be high, but each component is capped. Total NHI cannot exceed JPY 1,060,000.
+Resolution: Income-based portion will be high, but each component is capped. Total NHI cannot exceed the sum of the component caps: JPY 1,090,000 a household in FY2025 (JPY 1,130,000 from FY2026).
 
 ### EC6 -- Non-payment consequences (Tier 1)
 

@@ -152,18 +152,20 @@ Sources: 協会けんぽ FY2026 prefectural rates (Tokyo 9.85%; nursing care 1.6
 
 ### Minimum Wage
 
-- **Minimum wage system** — Japan has no single national minimum wage. Each prefecture sets its own rate annually (effective October). The national weighted average reached ¥1,121/hour in October 2025.
+- **Minimum wage system** — Japan has no single national minimum wage. Each prefecture sets its own rate annually, and each rate takes effect on its own date between early October and early December. The national weighted average was ¥1,121/hour for FY2025 and is ¥1,177/hour (¥1,176.93) for FY2026.
 
-**Minimum Wage by Prefecture (Oct 2025)**
+**Minimum Wage by Prefecture (FY2025 and FY2026)**
 
-| Prefecture | Rate (JPY/hour, Oct 2025) |
-| --- | --- |
-| Tokyo | ¥1,163 |
-| Kanagawa | ¥1,162 |
-| Osaka | ¥1,114 |
-| Aichi | ¥1,077 |
-| Fukuoka | ¥1,004 |
-| Okinawa | ¥952 |
+| Prefecture | FY2025 rate (JPY/hour) | In force from | FY2026 rate (JPY/hour) | In force from |
+| --- | --- | --- | --- | --- |
+| Tokyo | ¥1,226 | 3 Oct 2025 | ¥1,280 | 1 Oct 2026 |
+| Kanagawa | ¥1,225 | 4 Oct 2025 | ¥1,279 | 1 Oct 2026 |
+| Osaka | ¥1,177 | 16 Oct 2025 | ¥1,231 | 1 Oct 2026 |
+| Aichi | ¥1,140 | 18 Oct 2025 | ¥1,195 | 1 Oct 2026 |
+| Fukuoka | ¥1,057 | 16 Nov 2025 | ¥1,114 | 4 Oct 2026 |
+| Okinawa | ¥1,023 | 1 Dec 2025 | ¥1,086 | 2 Dec 2026 |
+
+Source: 厚生労働省 地域別最低賃金の全国一覧 (the FY2026 list, and the revision history from FY2002 to FY2026 in the workbook linked on the same page) — https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/minimumichiran/index.html. The FY2025 rate applies until the FY2026 rate takes effect in the prefecture.
 
 The government targets ¥1,500/hour by the late 2020s.
 
@@ -180,6 +182,8 @@ The government targets ¥1,500/hour by the late 2020s.
 | Statutory holiday work (法定休日) | 135% (35% premium) | Art. 37(1) |
 | Statutory holiday + late-night | 160% (35% + 25%) | Combined |
 
+Source: 労働基準法 (Labour Standards Act) art. 37 — para. 1 (overtime and statutory-holiday work, with the proviso of at least 50% for overtime beyond 60 hours in a month) and para. 4 (work from 22:00 to 05:00, at least 25%) — https://laws.e-gov.go.jp/law/322AC0000000049. The 25% overtime and 35% statutory-holiday premiums are set by Cabinet Order No. 5 of 1994 (労働基準法第三十七条第一項の時間外及び休日の割増賃金に係る率の最低限度を定める政令) — https://laws.e-gov.go.jp/law/406CO0000000005. The 60-hour rate has applied to every employer, small businesses included, since 1 April 2023. Family allowances, commuting allowances and the other pay named in the Ministry's ordinance are left out of the wage the premium is computed on (art. 37 para. 5).
+
 ### 36 Agreement (三六協定)
 
 - **36 Agreement requirement** — Overtime requires a written labour-management agreement (36 Agreement) filed with the Labour Standards Inspection Office. Limits:
@@ -188,11 +192,13 @@ The government targets ¥1,500/hour by the late 2020s.
 
 | Limit | Standard | Special Clause |
 | --- | --- | --- |
-| Monthly | 45 hours | Up to 100 hours (incl. holiday work) |
+| Monthly | 45 hours | Under 100 hours (incl. holiday work) |
 | Annual | 360 hours | Up to 720 hours |
 | Multi-month average | -- | Must not exceed 80 hrs/month over any 2--6 month window |
 
 - **36 Agreement violation penalty** — Violations can result in penalties of up to ¥300,000 fine or 6 months imprisonment.
+
+Source: 労働基準法 art. 36 paras. 4 to 6 (the 45-hour and 360-hour limits; the special clause of up to 720 hours a year, with the month above 45 hours allowed in at most 6 months a year, under 100 hours in any month including holiday work, and an average of at most 80 hours a month over any 2 to 6 consecutive months including holiday work) and art. 119 item 1 (up to 6 months' imprisonment or a fine of up to ¥300,000 for breaching para. 6 or art. 37) — https://laws.e-gov.go.jp/law/322AC0000000049.
 
 ## Section 6 -- Mandatory Benefits
 
@@ -209,6 +215,8 @@ The government targets ¥1,500/hour by the late 2020s.
 | 4.5 years | 16 days |
 | 5.5 years | 18 days |
 | 6.5+ years | 20 days (maximum) |
+
+Source: 労働基準法 art. 39 para. 1 (10 days after 6 months' service with at least 80% attendance), para. 2 (the table of additional days for each year of service), para. 3 (a proportionate number for employees working few days a week) and para. 7 (at least 5 days a year fixed by the employer where 10 or more are due), and art. 115 (2-year limitation) — https://laws.e-gov.go.jp/law/322AC0000000049.
 
 - **Attendance and usage requirements** — Requires 80% attendance in the preceding year. Employers must ensure employees take at least 5 days per year. Unused leave expires after 2 years.
 
