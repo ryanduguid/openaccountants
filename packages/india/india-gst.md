@@ -30,7 +30,7 @@ Read this whole section before classifying anything.
 | Standard rate | 18% (CGST 9% + SGST 9% / IGST 18%) |
 | Lower rate | 5% (CGST 2.5% + SGST 2.5% / IGST 5%) |
 | Demerit rate | 40% (CGST 20% + SGST 20% / IGST 40%) -- luxury/sin goods only |
-| Former slabs | 12% and 28% abolished from 22 September 2025 (56th GST Council); their items moved to 5% and 18%. Apply the rate in force on the date of supply |
+| Former slabs | 12% and 28% abolished from 22 September 2025 (56th GST Council); their items moved to 5% and 18%, except cigarettes, specified chewing and unmanufactured tobacco and beedi, which kept their existing rates and cess until their new rates took effect on 1 February 2026 (Notification 19/2025-Central Tax (Rate)). Apply the rate in force on the date of supply |
 | Nil/exempt | 0% -- fresh food, healthcare, education |
 | Zero-rated | 0% -- exports, SEZ supplies (with ITC refund) |
 | Key rule | IGST rate = CGST rate + SGST rate, always |
@@ -395,7 +395,7 @@ Each rule states the legal source and the GSTR-3B table mapping. Apply silently 
 - **40% slab** — demerit/luxury only -- aerated drinks, energy drinks, premium motor vehicles (SUVs >4m, >1500cc), online gaming/casinos/betting  _(56th GST Council, 22 Sep 2025)_
 - **0% (nil/exempt)** — fresh food (milk, cereals, vegetables, fruits), healthcare, education  _(56th GST Council, 22 Sep 2025)_
 - **0% (zero-rated)** — exports, SEZ supplies  _(56th GST Council, 22 Sep 2025)_
-- **Former slabs abolished** — Former 12% and 28% slabs abolished 22 Sep 2025. Items moved to 5% or 18% respectively.  _(56th GST Council, 22 Sep 2025)_
+- **Former slabs abolished** — Former 12% and 28% slabs abolished 22 Sep 2025. Items moved to 5% or 18% respectively, except cigarettes, specified chewing and unmanufactured tobacco and beedi, which kept their existing rates and cess until their new rates took effect on 1 February 2026 (Notification 19/2025-Central Tax (Rate)).  _(56th GST Council, 22 Sep 2025; Notification 19/2025-Central Tax (Rate))_
 
 ### 5.2 CGST+SGST vs IGST determination
 

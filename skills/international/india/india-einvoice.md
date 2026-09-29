@@ -250,7 +250,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### IRP Pre-Checks (Real-Time)
 
-- **Pre-checks list** — 1. GSTIN validity — both seller and buyer must be active GSTINs 2. Duplicate check — combination of seller GSTIN + doc type + doc number + FY must be unique 3. Date validation — invoice date cannot be future; cannot exceed time limit 4. HSN validation — must exist in master; 8-digit for goods if AATO > Rs 5 crore 5. Mathematical validation — line item totals must sum to document totals (tolerance: Rs 1) 6. State code / PIN code consistency 7. Tax rate validation — GST rate must be a valid rate (0, 0.1, 0.25, 1, 1.5, 3, 5, 6, 7.5, 12, 14, 18, 28; 40 for supplies from 22 September 2025, when the 12 and 28 slabs were abolished and remain valid only for supplies before that date)
+- **Pre-checks list** — 1. GSTIN validity — both seller and buyer must be active GSTINs 2. Duplicate check — combination of seller GSTIN + doc type + doc number + FY must be unique 3. Date validation — invoice date cannot be future; cannot exceed time limit 4. HSN validation — must exist in master; 8-digit for goods if AATO > Rs 5 crore 5. Mathematical validation — line item totals must sum to document totals (tolerance: Rs 1) 6. State code / PIN code consistency 7. Tax rate validation — GST rate must be a valid rate (0, 0.1, 0.25, 1, 1.5, 3, 5, 6, 7.5, 12, 14, 18, 28; 40 for supplies from 22 September 2025, when the 12 and 28 slabs were abolished; 12 and 28 remain valid for supplies before that date, and 28 also for cigarettes, specified chewing and unmanufactured tobacco and beedi until 31 January 2026, when their rates changed under Notification 19/2025-Central Tax (Rate))
 
 ### Common Rejection Reasons
 

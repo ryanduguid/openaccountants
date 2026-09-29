@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Companies Act, 2013; LLP Act, 2008 |
 | Typical formation time | 7--15 working days (SPICe+ online) |
 | Corporate tax rate | 22% + surcharge + cess (~25.17% effective, s 115BAA); 15% + surcharge + cess (~17.16% effective, s 115BAB) for new manufacturing companies set up on or after 1 October 2019 |
-| Small company (Companies Act s 2(85)) | Paid-up capital ≤ ₹10 crore and turnover ≤ ₹100 crore (thresholds from 15 September 2022): no cash flow statement, CARO 2020 and auditor rotation do not apply, abridged annual return MGT-7A |
+| Small company (Companies Act s 2(85)) | Paid-up capital ≤ ₹10 crore and turnover ≤ ₹100 crore (thresholds effective 1 December 2025; ₹4 crore and ₹40 crore applied from 15 September 2022 until then): no cash flow statement, CARO 2020 and auditor rotation do not apply, abridged annual return MGT-7A |
 | Skill version | 1.0 |
 
 ## Section 2 -- Entity Types Comparison
