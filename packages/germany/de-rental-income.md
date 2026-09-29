@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German rental income taxation (
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - de-income-tax
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Einkommensteuer auf Einkünfte aus Vermietung und Verpachtung |
 | Currency | EUR only |
 | Tax year | Calendar year (1 January -- 31 December) |
-| Primary legislation | Einkommensteuergesetz (EStG) §21 (rental income), §7 Abs. 4 (AfA), §9 (Werbungskosten) |
+| Primary legislation | Einkommensteuergesetz (EStG) §21 (rental income) — https://www.gesetze-im-internet.de/estg/__21.html; §7 Abs. 4 (AfA) — https://www.gesetze-im-internet.de/estg/__7.html; §9 (Werbungskosten) — https://www.gesetze-im-internet.de/estg/__9.html; tariff §32a — https://www.gesetze-im-internet.de/estg/__32a.html |
 | Supporting legislation | EStG §§2, 7, 9, 10d (Verlustvor-/rücktrag), 11 (Zufluss-/Abflussprinzip), 21 Abs. 2 (verbilligte Vermietung); EStDV §82b (Erhaltungsaufwand Verteilung) |
 | Tax authority | Finanzamt (local tax office) |
 | Filing portal | ELSTER (elster.de) |
@@ -46,7 +46,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 68,481 -- 277,825 | 42% |
 | 277,826+ | 45% (Reichensteuer) |
 
-Plus Solidaritätszuschlag (5.5% of income tax, with Freigrenze of EUR 18,130 tax for singles / EUR 36,260 for married filing jointly) and Kirchensteuer (8% or 9% of income tax if applicable).
+Source: § 32a Abs. 1 EStG in the version for the 2025 assessment period (Steuerfortentwicklungsgesetz of 23 December 2024, BGBl. 2024 I Nr. 449); the consolidated text at https://www.gesetze-im-internet.de/estg/__32a.html shows the 2026 tariff (Grundfreibetrag EUR 12,348; zone limits EUR 17,799, 69,878 and 277,825).
+
+Plus Solidaritätszuschlag (5.5% of income tax, with a Freigrenze of EUR 19,950 of tax for singles / EUR 39,900 for married filing jointly in 2025, EUR 20,350 / EUR 40,700 from 2026 (SolZG § 3 Abs. 3 — https://www.gesetze-im-internet.de/solzg_1995/__3.html)) and Kirchensteuer (8% or 9% of income tax if applicable).
 
 ### Rental Income Formula
 
@@ -70,7 +72,7 @@ Net rental income is added to all other income and taxed at the personal margina
 
 ### 2.1 Linear AfA Rates
 
-**Linear AfA Rates**  _(§7 Abs. 4 EStG)_
+**Linear AfA Rates**  _(§7 Abs. 4 EStG — https://www.gesetze-im-internet.de/estg/__7.html)_
 
 | Building type | Fertigstellung (completion) | AfA rate | Useful life |
 | --- | --- | --- | --- |
@@ -148,7 +150,7 @@ The Finanzamt may challenge the split if the building proportion appears too hig
 
 ## Section 4 -- Verbilligte Vermietung (Reduced-Rent Letting, §21 Abs. 2 EStG)
 
-**Verbilligte Vermietung thresholds**  _(§21 Abs. 2 EStG)_
+**Verbilligte Vermietung thresholds**  _(§21 Abs. 2 EStG — https://www.gesetze-im-internet.de/estg/__21.html)_
 
 | Actual rent as % of ortsübliche Marktmiete | Werbungskosten treatment |
 | --- | --- |

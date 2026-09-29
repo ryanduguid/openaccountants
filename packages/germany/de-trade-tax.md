@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German Trade Tax (Gewerbesteuer
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -36,8 +36,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Jurisdiction | Germany (Bundesrepublik Deutschland) |
 | Jurisdiction Code | DE |
-| Primary Legislation | Gewerbesteuergesetz (GewStG) |
-| Supporting Legislation | Einkommensteuergesetz (EStG) §35 (Anrechnung); Gewerbesteuer-Durchführungsverordnung (GewStDV); Gewerbesteuer-Richtlinien (GewStR); Abgabenordnung (AO) |
+| Primary Legislation | Gewerbesteuergesetz (GewStG) — https://www.gesetze-im-internet.de/gewstg/ (§ 8 Hinzurechnungen — https://www.gesetze-im-internet.de/gewstg/__8.html; § 11 Freibetrag and Steuermesszahl — https://www.gesetze-im-internet.de/gewstg/__11.html; § 16 Hebesatz — https://www.gesetze-im-internet.de/gewstg/__16.html) |
+| Supporting Legislation | Einkommensteuergesetz (EStG) §35 (Anrechnung: das Vierfache des Steuermessbetrags) — https://www.gesetze-im-internet.de/estg/__35.html; Gewerbesteuer-Durchführungsverordnung (GewStDV); Gewerbesteuer-Richtlinien (GewStR); Abgabenordnung (AO) |
 | Tax Authority | Finanzamt (assessment) + Gemeinde/Stadt (collection) |
 | Filing Portal | ELSTER (elster.de) |
 | Contributor | Open Accountants Community |
@@ -109,7 +109,7 @@ The classification is determined by the Finanzamt based on the Fragebogen zur st
 
 Certain financing and rental costs that were already deducted as Betriebsausgaben must be partially added back.
 
-**Hinzurechnungen Add-Back Rates**  _(GewStG §8)_
+**Hinzurechnungen Add-Back Rates**  _(GewStG §8 Nr. 1 — https://www.gesetze-im-internet.de/gewstg/__8.html)_
 
 | Category | Add-Back Rate | Threshold |
 | --- | --- | --- |
@@ -143,7 +143,7 @@ Certain financing and rental costs that were already deducted as Betriebsausgabe
 
 - **Legislation** — GewStG §11 Abs. 1  _(GewStG §11 Abs. 1)_
 
-**Freibetrag by Entity Type**  _(GewStG §11 Abs. 1)_
+**Freibetrag by Entity Type**  _(GewStG §11 Abs. 1 — https://www.gesetze-im-internet.de/gewstg/__11.html)_
 
 | Entity Type | Freibetrag |
 | --- | --- |
@@ -166,7 +166,7 @@ The Finanzamt issues the Gewerbesteuermessbescheid (assessment notice) stating t
 
 - **Legislation** — GewStG §16  _(GewStG §16)_
 - **Gewerbesteuer formula** — Gewerbesteuer = Steuermessbetrag × Hebesatz / 100  _(GewStG §16)_
-- **Minimum Hebesatz** — 200%  _(GewStG §16)_
+- **Minimum Hebesatz** — 200% through the 2026 Erhebungszeitraum; 280% from 2027 (§16 Abs. 4 Satz 2 as amended by the Act of 29 June 2026, BGBl. 2026 I Nr. 197, applied from 2027 by § 36 Abs. 5b)  _(GewStG §16 — https://www.gesetze-im-internet.de/gewstg/__16.html)_
 
 ### Hebesätze -- Major Cities (2025)
 
@@ -183,7 +183,9 @@ The Finanzamt issues the Gewerbesteuermessbescheid (assessment notice) stating t
 | Stuttgart | 420% |
 | Leipzig | 460% |
 | Dresden | 450% |
-| Monheim am Rhein | 250% (lowest major rate in Germany) |
+| Monheim am Rhein | 250% (lowest major rate in Germany; the statutory floor of 280% applies from 2027) |
+
+Source: each city's Hebesatzsatzung for 2025; the statutory floor is GewStG § 16 Abs. 4 — https://www.gesetze-im-internet.de/gewstg/__16.html.
 
 **WARNING:** Hebesätze change. Always verify the current Hebesatz with the municipality (Gemeindeverwaltung) or Steuerberater. The rates above are indicative for 2025.
 
@@ -207,6 +209,7 @@ Sole proprietors and partners can credit GewSt against their income tax. This is
 | Hebesatz | GewSt Rate | Anrechnung | Net Effective Rate |
 | --- | --- | --- | --- |
 | 200% | 7.0% | 14.0% | 0% (fully offset) |
+| 280% (statutory floor from 2027) | 9.8% | 14.0% | 0% (fully offset) |
 | 300% | 10.5% | 14.0% | 0% (fully offset) |
 | 400% | 14.0% | 14.0% | 0% (fully offset) |
 | 410% (Berlin) | 14.35% | 14.0% | 0.35% |

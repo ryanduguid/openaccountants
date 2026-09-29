@@ -4,7 +4,7 @@ description: Use this skill whenever asked about forming, incorporating, or regi
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Germany (Federal Republic of Germany) |
 | Currency | EUR |
 | Company registrar | Handelsregister (via local Amtsgericht / district court) |
-| Key legislation | GmbH-Gesetz (GmbHG); Handelsgesetzbuch (HGB); Aktiengesetz (AktG) |
+| Key legislation | GmbH-Gesetz (GmbHG) — https://www.gesetze-im-internet.de/gmbhg/; Handelsgesetzbuch (HGB) — https://www.gesetze-im-internet.de/hgb/; Aktiengesetz (AktG) — https://www.gesetze-im-internet.de/aktg/ |
 | Typical formation time | 3--6 weeks (notary to Handelsregister entry) |
 | Corporate tax rate | ~30% effective (15% Körperschaftsteuer + 5.5% Solidaritätszuschlag + ~14% Gewerbesteuer) |
 | Skill version | 1.0 |
@@ -104,6 +104,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | GmbH | €25,000 | €12,500 (50%) | Before Handelsregister filing | Permitted (triggers higher registration fee of €360) |
 | UG (haftungsbeschränkt) | €1 | 100% of stated capital | Before Handelsregister filing | NOT permitted (§5a GmbHG) |
 | AG | €50,000 | 25% (€12,500) | Before registration | Permitted (independent valuation required) |
+
+Sources: GmbHG § 5 Abs. 1 (EUR 25,000) — https://www.gesetze-im-internet.de/gmbhg/__5.html; § 7 Abs. 2 (a quarter of each share, and in total at least half of the minimum capital, before registration) — https://www.gesetze-im-internet.de/gmbhg/__7.html; § 5a (UG: full payment, no contributions in kind) — https://www.gesetze-im-internet.de/gmbhg/__5a.html; AktG § 7 (EUR 50,000) — https://www.gesetze-im-internet.de/aktg/__7.html; § 36a (at least a quarter of the lowest issue price) — https://www.gesetze-im-internet.de/aktg/__36a.html.
 
 - **UG profit retention rule** — 25% of annual net profit must be retained as reserves until €25,000 is accumulated, at which point the UG may convert to GmbH (§5a Abs. 3 GmbHG).  _(§5a Abs. 3 GmbHG)_
 

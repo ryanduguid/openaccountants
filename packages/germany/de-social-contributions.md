@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German social insurance contrib
 version: 2.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -22,16 +22,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Germany (Bundesrepublik Deutschland) |
-| Primary Legislation | SGB IV (general), SGB V (health), SGB VI (pension), SGB XI (care), SGB VII (accident), KSVG (artists) |
+| Primary Legislation | SGB IV (general); SGB V (health: § 241, 14.6% — https://www.gesetze-im-internet.de/sgb_5/__241.html; § 243, 14.0% — https://www.gesetze-im-internet.de/sgb_5/__243.html); SGB VI (pension); SGB XI (care: § 55 — https://www.gesetze-im-internet.de/sgb_11/__55.html); SGB III (unemployment: § 341, 2.6% — https://www.gesetze-im-internet.de/sgb_3/__341.html); SGB VII (accident); KSVG (artists: § 26 — https://www.gesetze-im-internet.de/ksvg/__26.html) |
 | Supporting Legislation | EStG Section 10 (Vorsorgeaufwendungen / tax deductibility) |
 | Regulatory Bodies | GKV-Spitzenverband (health), Deutsche Rentenversicherung Bund (pension), Kuenstlersozialkasse (KSK), Berufsgenossenschaften (accident) |
-| Rate Publisher | BMAS (annual Sozialversicherungsrechengroessen) |
+| Rate Publisher | BMAS (annual Sozialversicherungsrechengrößenverordnung; the 2026 figures — https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2025/sozialversicherungsrechengroessen-2026.html); Deutsche Rentenversicherung, Werte der Rentenversicherung — https://www.deutsche-rentenversicherung.de/DRV/DE/Experten/Zahlen-und-Fakten/Werte-der-Rentenversicherung/werte-der-rentenversicherung_node.html; BMG, Beiträge — https://www.bundesgesundheitsministerium.de/beitraege.html |
 | Currency | EUR only |
-| GKV base rate (without sick pay) | 14.0% + avg. 2.5% Zusatzbeitrag = ~16.5% |
-| GKV base rate (with sick pay) | 14.6% + avg. 2.5% Zusatzbeitrag = ~17.1% |
-| GKV minimum base (monthly) | EUR 1,248.33 |
-| GKV/PV contribution ceiling (monthly) | EUR 5,512.50 |
-| Pension contribution ceiling (monthly) | EUR 8,050.00 |
+| GKV base rate (without sick pay) | 14.0% + avg. Zusatzbeitrag (2.5% in 2025, 2.9% in 2026) = ~16.5% (2025), ~16.9% (2026) |
+| GKV base rate (with sick pay) | 14.6% + avg. Zusatzbeitrag (2.5% in 2025, 2.9% in 2026) = ~17.1% (2025), ~17.5% (2026) |
+| GKV minimum base (monthly) | EUR 1,248.33 (2025); EUR 1,318.33 (2026) |
+| GKV/PV contribution ceiling (monthly) | EUR 5,512.50 (2025); EUR 5,812.50 (2026) |
+| Pension contribution ceiling (monthly) | EUR 8,050.00 (2025); EUR 8,450.00 (2026) |
 | Pension rate | 18.6% |
 | Pflegeversicherung base rate | 3.6% (childless 23+: 4.2%) |
 | KSK levy rate (Verwerter) | 5.0% |
@@ -40,6 +40,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Validated by | Pending -- requires sign-off by a licensed Steuerberater |
 | Validation date | Pending |
 
+The 2025 figures were read on the Deutsche Rentenversicherung and BMG pages cited in the Rate Publisher row, and the 2026 figures on the BMAS press release on the Rechengrößen 2026 and the BMG page. The 2026 annual ceilings are EUR 69,750 (GKV/PV) and EUR 101,400 (pension and unemployment); the Bezugsgröße is EUR 3,745 a month in 2025 and EUR 3,955 in 2026, and the GKV minimum base for voluntary members is one third of it. Use the figures for the assessment year in every rule, default and test below. The statutory rates (14.6% / 14.0%, 18.6%, 2.6%, 3.6% with the 0.6-point surcharge for childless members) are the same in both years.
+
 Read this whole section before computing or classifying anything.
 
 **Conservative defaults**
@@ -47,11 +49,11 @@ Read this whole section before computing or classifying anything.
 | Ambiguity | Default |
 | --- | --- |
 | Unknown GKV or PKV | STOP -- do not compute without this |
-| Unknown Zusatzbeitrag | Use average 2.5% |
+| Unknown Zusatzbeitrag | Use the average for the assessment year: 2.5% (2025), 2.9% (2026) |
 | Unknown number of children | Apply childless surcharge (4.2% PV) |
 | Unknown profession (pension obligation) | Assume voluntary; flag for reviewer |
 | Unknown Hauptberuflich vs Nebenberuflich | Flag for reviewer |
-| Unknown income for GKV | Apply minimum base (EUR 1,248.33/month) |
+| Unknown income for GKV | Apply the minimum base for the assessment year: EUR 1,248.33/month (2025), EUR 1,318.33/month (2026) |
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -224,20 +226,22 @@ Matches "FINANZAMT" (pattern 3.7). This is an income tax prepayment, NOT a socia
 
 ### Rule 1 -- GKV contribution formula
 
-- **Monthly GKV formula** — Monthly_GKV = clamp(monthly_income, EUR 1,248.33, EUR 5,512.50) x (base_rate + Zusatzbeitrag)
+- **Monthly GKV formula** — Monthly_GKV = clamp(monthly_income, minimum base, ceiling) x (base_rate + Zusatzbeitrag), with minimum base EUR 1,248.33 and ceiling EUR 5,512.50 for 2025, and minimum base EUR 1,318.33 and ceiling EUR 5,812.50 for 2026
 - **Self-employed GKV rate share** — Self-employed pay the FULL rate (no employer share).
 
-### Rule 2 -- GKV rates (2025)
+### Rule 2 -- GKV rates (2025 and 2026)
 
-**GKV rates 2025**
+**GKV rates 2025 and 2026**
 
 | Component | Rate |
 | --- | --- |
 | Without sick pay (default for self-employed) | 14.0% + Zusatzbeitrag |
 | With sick pay | 14.6% + Zusatzbeitrag |
-| Average Zusatzbeitrag (2025) | 2.5% |
+| Average Zusatzbeitrag | 2.5% (2025); 2.9% (2026) |
 
-### Rule 3 -- Pflegeversicherung rates (2025)
+Sources: SGB V § 241 (14.6%) — https://www.gesetze-im-internet.de/sgb_5/__241.html; § 243 (14.0%) — https://www.gesetze-im-internet.de/sgb_5/__243.html; the average Zusatzbeitrag is announced by the BMG for each year (2.5% for 2025, 2.9% for 2026) — https://www.bundesgesundheitsministerium.de/beitraege.html.
+
+### Rule 3 -- Pflegeversicherung rates (2025 and 2026)
 
 **Pflegeversicherung rates by children**
 
@@ -250,11 +254,13 @@ Matches "FINANZAMT" (pattern 3.7). This is an income tax prepayment, NOT a socia
 | 4 | 2.85% |
 | 5+ | 2.6% |
 
-- **PV assessment base and employer share** — Same assessment base as GKV (EUR 1,248.33 to EUR 5,512.50 monthly). Full rate for self-employed (no employer share).
+Source: SGB XI § 55 Abs. 1 and 3 (3.6%; a 0.6-point surcharge for childless members from the month after their 23rd birthday; a 0.25-point reduction per child from the second to the fifth, until the child turns 25) — https://www.gesetze-im-internet.de/sgb_11/__55.html.
+
+- **PV assessment base and employer share** — Same assessment base as GKV (2025: EUR 1,248.33 to EUR 5,512.50 monthly; 2026: EUR 1,318.33 to EUR 5,812.50). Full rate for self-employed (no employer share).
 
 ### Rule 4 -- Pension (Rentenversicherung)
 
-- **Pension rules** — Rate: 18.6%. Ceiling: EUR 8,050/month. Voluntary minimum: EUR 100.07/month. Mandatory for: Handwerker (first 18 years), KSK members, teachers (selbstaendige Lehrer), midwives, arbeitnehmeraehnliche Selbstaendige. Voluntary for most Freiberufler and Gewerbetreibende.
+- **Pension rules** — Rate: 18.6%. Ceiling: EUR 8,050/month (2025), EUR 8,450/month (2026). Voluntary minimum: EUR 103.42/month (2025), EUR 112.16/month (2026) (DRV, Werte der Rentenversicherung). Mandatory for: Handwerker (first 18 years), KSK members, teachers (selbstaendige Lehrer), midwives, arbeitnehmeraehnliche Selbstaendige. Voluntary for most Freiberufler and Gewerbetreibende.
 
 ### Rule 5 -- KSK members pay approximately half
 
@@ -411,24 +417,26 @@ If the client provides only a bank statement:
 
 ## Section 10 -- Reference material
 
-### Contribution ceilings and minimums (2025)
+### Contribution ceilings and minimums (2025 and 2026)
 
 **Contribution ceilings and minimums table**
 
 | Parameter | KV/PV | Pension |
 | --- | --- | --- |
-| BBG monthly | EUR 5,512.50 | EUR 8,050.00 |
-| BBG annual | EUR 66,150.00 | EUR 96,600.00 |
-| Minimum (monthly, GKV self-employed) | EUR 1,248.33 | EUR 100.07 (voluntary) |
-| JAEG (employees only) | EUR 73,800.00 | N/A |
+| BBG monthly | EUR 5,512.50 (2025); EUR 5,812.50 (2026) | EUR 8,050.00 (2025); EUR 8,450.00 (2026) |
+| BBG annual | EUR 66,150.00 (2025); EUR 69,750.00 (2026) | EUR 96,600.00 (2025); EUR 101,400.00 (2026) |
+| Minimum (monthly, GKV self-employed) | EUR 1,248.33 (2025); EUR 1,318.33 (2026) | EUR 103.42 (2025); EUR 112.16 (2026) (voluntary) |
+| JAEG (employees only) | EUR 73,800.00 (2025); EUR 77,400.00 (2026) | N/A |
 
 ### Test suite
 
-**Test 1:** GKV, no sick pay, 2.5% Zusatzbeitrag, income EUR 3,500/month, childless age 35. -> KV: EUR 577.50. PV: EUR 147.00. Total: EUR 724.50/month = EUR 8,694/year.
+**Test 1 (2025):** GKV, no sick pay, 2.5% Zusatzbeitrag, income EUR 3,500/month, childless age 35. -> KV: EUR 577.50. PV: EUR 147.00. Total: EUR 724.50/month = EUR 8,694/year.
 
-**Test 2:** GKV, minimum income, 2.5% Zusatzbeitrag, 1 child, age 30. -> KV: EUR 205.97. PV: EUR 44.94. Total: EUR 250.91/month.
+**Test 2 (2025):** GKV, minimum income, 2.5% Zusatzbeitrag, 1 child, age 30. -> KV: EUR 205.97. PV: EUR 44.94. Total: EUR 250.91/month.
 
-**Test 3:** GKV, with sick pay, 2.5%, income EUR 9,000/month, 2 children. -> Capped at EUR 5,512.50. KV: EUR 942.64. PV: EUR 184.67. Total: EUR 1,127.31/month.
+**Test 3 (2025):** GKV, with sick pay, 2.5%, income EUR 9,000/month, 2 children. -> Capped at EUR 5,512.50. KV: EUR 942.64. PV: EUR 184.67. Total: EUR 1,127.31/month.
+
+**Test 3a (2026):** GKV, with sick pay, 2.9%, income EUR 9,000/month, 2 children. -> Capped at EUR 5,812.50. KV: EUR 1,017.19. PV: EUR 194.72. Total: EUR 1,211.91/month.
 
 **Test 4:** KSK member, income EUR 30,000/year, childless age 28. -> KV share: ~EUR 213.75. RV share: EUR 232.50. PV full: EUR 105.00. Total: ~EUR 551.25/month.
 
@@ -451,7 +459,7 @@ If the client provides only a bank statement:
 - NEVER advise electing Pflichtversicherung auf Antrag without emphasizing it is IRREVOCABLE
 - NEVER ignore the Zusatzbeitrag
 - NEVER present GKV provisional contributions as final
-- NEVER conflate KV/PV BBG (EUR 5,512.50) with RV BBG (EUR 8,050)
+- NEVER conflate KV/PV BBG (EUR 5,512.50 in 2025, EUR 5,812.50 in 2026) with RV BBG (EUR 8,050 in 2025, EUR 8,450 in 2026)
 - NEVER advise on Scheinselbstaendigkeit without escalating
 
 ## Disclaimer
