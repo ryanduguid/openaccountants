@@ -1,7 +1,7 @@
 ---
 name: uk-student-loan-repayment
 description: Use this skill whenever asked about UK Student Loan repayment for self-employed individuals. Trigger on phrases like "student loan repayment", "Plan 1", "Plan 2", "Plan 4", "Plan 5", "Plan 5 student loan", "Postgraduate loan repayment", "postgraduate loan", "April 2026 student loan threshold", "student loan self-employed", "student loan Self Assessment", "SLC repayment", "student loan deduction", or any question about student loan obligations for a self-employed client. Also trigger when classifying bank statement transactions showing SLC repayments via SA, PAYE student loan deductions, or direct SLC payments. This skill covers Plan 1-5 and Postgraduate Loan thresholds across three tax years (2024-25, 2025-26, 2026-27), self-employed SA calculation, multiple plan interaction, bank statement classification patterns, overseas earnings, write-off periods, and edge cases. ALWAYS read this skill before touching any UK student loan repayment work.
-version: 2.1
+version: 2.2
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2025-26 primary; 2024-25 and 2026-27 thresholds also tabulated (2026-27 column filled from GOV.UK, outside the recorded accountant review)"
@@ -17,8 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Student Loan Repayment
 
-## UK Student Loan Repayment -- Self-Employed Skill v2.1
-
+## UK Student Loan Repayment -- Self-Employed Skill v2.2
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
@@ -30,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | United Kingdom |
-| Primary Legislation | Education (Student Loans) Act 1998; Education (Repayment of Student Loans) Regulations 2009 |
+| Primary Legislation | Education (Student Loans) Act 1998 — https://www.legislation.gov.uk/ukpga/1998/1/contents; Education (Student Loans) (Repayment) Regulations 2009 (SI 2009/470) — https://www.legislation.gov.uk/uksi/2009/470/contents |
 | Administering Body | Student Loans Company (SLC); collected by HMRC via Self Assessment |
 | Tax Years Covered | 2024-25, 2025-26, 2026-27 |
 | Currency | GBP only |
@@ -51,6 +50,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Plan 4 | 9% | £31,395 | £32,745 | £33,795 |
 | Plan 5 | 9% | £25,000 | £25,000 (frozen by SLC) | £25,000 (fixed to April 2027) |
 | Postgraduate Loan | 6% | £21,000 | £21,000 | £21,000 (still frozen) |
+
+Sources: GOV.UK, Repaying your student loan: what you pay — https://www.gov.uk/repaying-your-student-loan/what-you-pay (the 2026-27 thresholds); previous annual repayment thresholds — https://www.gov.uk/guidance/previous-annual-repayment-thresholds (2024-25 and 2025-26).
 
 **Note on the 2026-27 column.** It carried a placeholder until this update. The
 2026-27 year began on 6 April 2026 and the thresholds are

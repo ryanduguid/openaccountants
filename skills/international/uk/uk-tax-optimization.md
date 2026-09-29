@@ -1,7 +1,7 @@
 ---
 name: uk-tax-optimization
 description: Use this skill whenever asked about reducing tax in the UK, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in the UK. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "pay less tax", "tax-efficient", "tax minimization", "how to lower my tax bill". ALWAYS read this skill before advising on any UK tax optimization strategy.
-version: 1.0
+version: 1.1
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-09-29
@@ -15,8 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Tax Optimization
 
-## UK Tax Optimization -- Self-Employed Skill v1.0
-
+## UK Tax Optimization -- Self-Employed Skill v1.1
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
@@ -42,6 +41,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Basic rate | £12,571 -- £50,270 | 20% |
 | Higher rate | £50,271 -- £125,140 | 40% |
 | Additional rate | Over £125,140 | 45% |
+
+Source: GOV.UK, Income Tax rates and Personal Allowances — https://www.gov.uk/income-tax-rates.
 
 - **Personal Allowance taper** — Personal Allowance tapers: reduced by £1 for every £2 of adjusted net income above £100,000. Fully withdrawn at £125,140.
 
@@ -129,6 +130,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 0 g/km (electric) | 100% FYA |
 | 1-50 g/km | Main pool (18%/14%) |
 | Over 50 g/km | Special rate pool (6%) |
+
+Source: GOV.UK, Work out your capital allowances: rates and pools — https://www.gov.uk/work-out-capital-allowances/rates-and-pools (main rate 14% from April 2026).
 
 ### Timing Strategy
 
@@ -236,9 +239,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Scheme | Income tax relief | CGT exemption | Legislation |
 | --- | --- | --- | --- |
-| EIS (Enterprise Investment Scheme) | 30% on up to £1m invested | Yes, if held 3+ years | ITA 2007 s.156-257 |
+| EIS (Enterprise Investment Scheme) | 30% on up to £1m invested (£2m where at least £1m is in knowledge-intensive companies) | Yes, if held 3+ years | ITA 2007 s.156-257 |
 | SEIS (Seed EIS) | 50% on up to £200,000 invested | Yes, if held 3+ years | ITA 2007 s.257SA-SG |
 | VCT (Venture Capital Trust) | 30% on up to £200,000 invested | Yes | ITA 2007 s.258-332 |
+
+Sources: GOV.UK, Venture capital schemes: tax relief for investors — https://www.gov.uk/guidance/venture-capital-schemes-tax-relief-for-investors; ITA 2007 — https://www.legislation.gov.uk/ukpga/2007/3/contents.
 
 ## Section 10 -- Red Lines
 
