@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T06:11:33+00:00",
+ "generated_at": "2026-09-29T08:56:22+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -16904,7 +16904,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "sm-vat-gst",
