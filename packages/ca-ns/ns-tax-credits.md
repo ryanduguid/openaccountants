@@ -2,6 +2,7 @@
 name: ns-tax-credits
 description: Use this skill for Nova Scotia provincial tax credits — NS Low-Income Tax Reduction, Affordable Living Tax Credit, Age Amount Supplement, Volunteer Firefighters and Search/Rescue Tax Credit, NS Digital Media Tax Credit (refundable corporate, 25-30%), Capital Investment Tax Credit (15%), Film Industry Tax Credit. Triggers "Nova Scotia tax credits", "NS Affordable Living", "Form NS428", "NS digital media credit", "Form NSDMTC".
 jurisdiction: CA
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

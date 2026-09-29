@@ -3,7 +3,7 @@ name: sweden-payroll
 description: Use this skill whenever asked about Swedish payroll processing, employee salary calculations, preliminärskatt (preliminary income tax / PAYE), arbetsgivaravgifter (employer social contributions), employer cost calculations, net-to-gross or gross-to-net conversions, Swedish payslip structure, arbetsgivardeklaration filings, or any question about computing wages, deductions, or employer obligations in Sweden. Trigger on phrases like "Swedish payroll", "preliminärskatt", "arbetsgivaravgifter", "employer contributions Sweden", "PAYE Sweden", "net salary Sweden", "lönespecifikation", "kommunalskatt", "municipal tax Sweden", "statlig inkomstskatt", "Skatteverket filing", "kollektivavtal", "ITP pension", or "semesterersättning".
 version: 1.0
 jurisdiction: SE
-tax_year: 2025
+tax_year: 2026
 last_updated: 2026-09-28
 review_status: pending_review
 depends_on:

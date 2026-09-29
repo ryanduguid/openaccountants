@@ -2,6 +2,7 @@
 name: dj-payroll-social
 description: "Source-cited draft for Djibouti payroll and social contributions. Covers the ITS bands and remittance provisions in the ministry's 2011 Tax Code, whose later amendments remain unchecked. Separately sets out the CNSS pension, family, work-injury and healthcare contributions, the uncapped pension base and the FDJ 400,000 monthly ceiling for other regimes in Arrêté n°2015-605. The healthcare split is supported by the AMU law, and monthly payment timing comes from current CNSS guidance. Work-injury attribution remains an arithmetic inference from that guidance. Pending local-accountant review."
 jurisdiction: DJ
+category: payroll
 tax_year: 2025
 last_updated: 2026-09-12
 review_status: pending_review

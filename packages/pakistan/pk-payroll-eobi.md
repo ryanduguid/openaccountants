@@ -2,6 +2,7 @@
 name: pk-payroll-eobi
 description: ALWAYS read this skill before touching any Pakistan payroll work. Use whenever asked to compute, review, or advise on Pakistan monthly payroll — salary tax withholding under Section 149 of the Income Tax Ordinance 2001, Employees' Old-Age Benefits Institution (EOBI) federal pension contributions, provincial social security (SESSI Sindh, PESSI Punjab, KPESSI Khyber Pakhtunkhwa, BESSI Balochistan), Workers Welfare Fund (WWF), and Workers Profit Participation Fund (WPPF). Trigger on phrases like "Pakistan payroll", "salary tax Pakistan", "EOBI Pakistan", "PESSI Punjab", "SESSI Sindh", "PAYE Pakistan", "monthly statement Section 149", "WWF Pakistan", "WPPF Pakistan", "Section 165 statement", "Karachi payroll", "Lahore payroll", or any request involving running monthly payroll for one or more employees in Pakistan. This skill is the ORCHESTRATOR — it pulls salary bracket rates from `pk-income-tax` and sequences statutory deductions into the correct computation order.
 jurisdiction: PK
+category: payroll
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: Ibrar Ali

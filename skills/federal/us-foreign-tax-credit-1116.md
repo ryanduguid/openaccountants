@@ -2,6 +2,7 @@
 name: us-foreign-tax-credit-1116
 description: Tier 2 US federal content skill for §901 Foreign Tax Credit (Form 1116) covering tax year 2025. Includes the basket separation under §904 (passive, general, GILTI, foreign branch, §901(j) sanctioned countries), the §904(a) limitation formula, the $300/$600 de minimis no-Form-1116 election, §904(j) high-tax kick-out for passive income, the 2022 T.D. 9959 attribution/nexus/cost-recovery requirements with Notice 2023-55/2024-44 (and successor) relief, the FEIE-vs-FTC strategic choice for US expats, 1-year back / 10-year forward credit carries, and the AMT FTC computation. Schedule A itemized deduction alternative when credit isn't useful.
 jurisdiction: US
+category: federal
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
@@ -9,6 +10,8 @@ reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Foreign Tax Credit 1116

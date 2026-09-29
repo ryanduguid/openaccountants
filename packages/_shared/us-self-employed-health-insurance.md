@@ -3,12 +3,15 @@ name: us-self-employed-health-insurance
 description: Tier 2 content skill for computing the self-employed health insurance deduction under IRC §162(l) for US sole proprietors and single-member LLCs disregarded for federal tax purposes. Covers tax year 2025 rules including the 100% deduction for medical, dental, vision, and qualified long-term care premiums, the age-based long-term care premium limits, the net SE earnings limitation, the employer-sponsored plan eligibility bar, the Medicare premium eligibility rules (Parts A voluntary, B, D, Medigap), COBRA continuation premiums, ACA Marketplace interaction with the Premium Tax Credit, the month-by-month coverage calculation, and the Schedule 1 Line 17 reporting position. Consumes Schedule C net profit and SE tax from us-schedule-c-and-se-computation. Feeds QBI computation in us-qbi-deduction. MUST be loaded alongside us-tax-workflow-base v0.1 or later. Federal only. No state tax.
 version: 0.2
 jurisdiction: US
+category: federal
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Self Employed Health Insurance

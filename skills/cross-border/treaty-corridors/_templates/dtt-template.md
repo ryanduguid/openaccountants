@@ -10,6 +10,7 @@ description: >
   intentionally kept in the treaty-corridors directory (jurisdiction-optional)
   so that list_skills can find it for template-creation workflows.
 jurisdiction: GLOBAL
+category: template
 tax_year: 2025
 tier: 2
 last_updated: 2026-07-12

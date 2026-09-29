@@ -3,11 +3,14 @@ name: us-ca-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their US federal or California state tax return AND mentions freelancing, self-employment, software development, contracting, sole proprietorship, or a single-member LLC. Trigger on phrases like "help me do my taxes", "prepare my 2025 return", "I'm a freelance developer", "I have an LLC in California", "I'm self-employed", "do my taxes as a contractor", or any similar phrasing where the user is a California-resident freelancer needing tax return preparation. This is the REQUIRED entry point for the Accora freelance developer tax workflow — every other skill in the stack (us-sole-prop-bookkeeping, us-schedule-c-and-se-computation, us-qbi-deduction, us-self-employed-retirement, us-self-employed-health-insurance, us-quarterly-estimated-tax, us-federal-return-assembly, us-ca-540-individual-return, us-ca-estimated-tax-540es, us-ca-smllc-form-568, us-ca-form-3853-coverage, us-1099-nec-issuance, us-ca-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow — the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured refusal sweep and profile questions instead of one-at-a-time prose. Built for speed — freelance software developers expect concise, direct interaction. California full-year residents only; sole proprietors and single-member LLCs disregarded for federal tax only.
 version: 0.2
 jurisdiction: US-CA
+category: orchestrator
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Ca Freelance Intake

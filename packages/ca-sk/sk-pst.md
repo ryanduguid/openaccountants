@@ -2,6 +2,7 @@
 name: sk-pst
 description: Use this skill for Saskatchewan Provincial Sales Tax — 6% non-harmonized sales tax. Triggers "Saskatchewan PST", "SK PST 6%", "SETS Saskatchewan", "Saskatchewan eTaxBC equivalent", "SK PST online sales".
 jurisdiction: CA
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

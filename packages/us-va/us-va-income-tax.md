@@ -3,11 +3,14 @@ name: us-va-income-tax
 description: Use this skill whenever asked about Virginia individual income tax, Virginia Form 760, Virginia graduated tax rates, Virginia self-employment income tax at the state level, Virginia standard deduction, or any Virginia personal income tax question for sole proprietors. Trigger on phrases like "Virginia income tax", "VA income tax", "Form 760", "Virginia tax brackets", "Virginia 5.75%", "Virginia standard deduction", or any request involving Virginia state individual income tax computation or filing.
 version: "0.1"
 jurisdiction: US-VA
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # VA Income Tax

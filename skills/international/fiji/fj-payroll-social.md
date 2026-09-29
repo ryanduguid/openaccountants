@@ -2,6 +2,7 @@
 name: fj-payroll-social
 description: Use this skill whenever asked about Fiji payroll processing for employed persons. Trigger on phrases like "Fiji payroll", "PAYE Fiji", "FNPF contribution", "Fiji National Provident Fund", "SRT Fiji", "Social Responsibility Tax", "ECAL Fiji", "Environment Climate Adaptation Levy", "FRCS PAYE", "tax withholding Fiji", "employer FNPF", "net salary Fiji", "minimum wage Fiji", "salary calculation Fiji", "gross to net Fiji", "TPOS Fiji", "FJD payroll", or any question about computing employee pay, withholding tax (PAYE/SRT/ECAL), or FNPF social contributions for Fiji-based employees. This skill covers PAYE income tax withholding (a final tax for employment-only income), Social Responsibility Tax, the Environment & Climate Adaptation Levy, FNPF employee and employer contributions, the national minimum wage, non-resident taxation, and FRCS/FNPF filing obligations. ALWAYS read this skill before processing any Fiji payroll.
 jurisdiction: FJ
+category: payroll
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

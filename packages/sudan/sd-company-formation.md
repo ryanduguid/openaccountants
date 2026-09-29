@@ -8,7 +8,7 @@ last_updated: 2026-07-22
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
-category: international
+category: formation
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

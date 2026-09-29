@@ -2,11 +2,14 @@
 name: us-ga-individual-tax-return-form-500
 description: Georgia Individual Income Tax Return (Form 500) — STARTER DRAFT
 jurisdiction: US-GA
+category: state-tax
 tax_year: 2025
 last_updated: 2026-08-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # Georgia Individual Tax Return (Form 500)

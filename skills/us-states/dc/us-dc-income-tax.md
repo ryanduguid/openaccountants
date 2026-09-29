@@ -3,11 +3,14 @@ name: us-dc-income-tax
 description: "District of Columbia Individual Income Tax Return (Form D-40) for sole proprietors and single-member LLCs. Covers the seven-bracket graduated system (4%–10.75%), DC standard deduction computation, Schedule S additions and subtractions, estimated tax (D-40ES), and the Earned Income Tax Credit. Trigger: taxpayer is domiciled in DC or maintains an abode for 183+ days during the tax year."
 version: "0.1"
 jurisdiction: US-DC
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # DC Income Tax

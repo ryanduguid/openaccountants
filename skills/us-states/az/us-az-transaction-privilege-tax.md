@@ -2,11 +2,14 @@
 name: us-az-transaction-privilege-tax
 description: "Source-cited tax guide for US-AZ: az transaction privilege tax. Unverified draft, pending local-accountant review."
 jurisdiction: US-AZ
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # AZ Transaction Privilege Tax

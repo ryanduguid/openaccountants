@@ -2,6 +2,7 @@
 name: om-corporate-income-tax
 description: "Source-cited draft covering Oman corporate income tax for 2025, the 15% standard rate, 10% withholding on gross payments and 55% petroleum rate. Explains qualifying enterprises, the 3% rate, tax exemptions, statutory size tests, regulatory continuation limits and filing obligations. Ordinary returns are due within four months under RD 118/2020; qualifying enterprises retain a three-month deadline. Includes the separate multinational top-up tax and identifies its unread implementing regulation. Use for Oman company tax, SME eligibility, withholding or annual filing questions. Pending local-accountant review."
 jurisdiction: OM
+category: international
 tax_year: 2025
 last_updated: 2026-09-12
 review_status: pending_review

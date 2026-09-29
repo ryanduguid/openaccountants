@@ -2,6 +2,7 @@
 name: venezuela-tax-optimization
 description: Use this skill whenever asked about reducing tax in Venezuela, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for individuals or companies in Venezuela. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "pay less tax", "tax-efficient", "tax minimization", "how to lower my tax bill", "ISLR planning", "IVA optimization", "SENIAT", "unidad tributaria". ALWAYS read this skill before advising on any Venezuela tax optimization strategy.
 jurisdiction: VE
+category: tax-optimization
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: Jose Padilla

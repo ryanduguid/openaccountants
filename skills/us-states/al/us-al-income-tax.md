@@ -2,10 +2,13 @@
 name: us-al-income-tax
 description: Use this skill whenever asked about Alabama individual income tax for self-employed individuals or sole proprietors — filing Form 40, AL estimated tax (Form 40-ES), Alabama tax brackets, Alabama deductions, federal income tax deduction on AL return, or any query involving Alabama state income tax compliance. Trigger on phrases like "Alabama income tax", "AL income tax", "Form 40", "Alabama estimated tax", "Alabama self-employed tax", "ADOR income tax", or "Code of Ala. §40-18".
 jurisdiction: US-AL
+category: state-tax
 tier: 2
 last_updated: 2026-09-28
 version: "0.1"
 validation_status: ai-drafted-q3
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # Alabama Individual Income Tax Skill — Self-Employed / Sole Proprietor

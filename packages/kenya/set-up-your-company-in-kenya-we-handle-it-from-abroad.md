@@ -2,6 +2,7 @@
 name: set-up-your-company-in-kenya-we-handle-it-from-abroad
 description: "Setting up a company in Kenya from abroad: how I do it"
 jurisdiction: KE
+category: international
 tax_year: 2025
 last_updated: 2026-07-22
 review_status: pending_review

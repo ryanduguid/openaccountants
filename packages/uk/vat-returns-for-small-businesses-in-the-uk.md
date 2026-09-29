@@ -2,6 +2,7 @@
 name: vat-returns-for-small-businesses-in-the-uk
 description: Small business VAT, sorted quarter after quarter properly, not just on time.
 jurisdiction: GB
+category: international
 tax_year: 2025
 last_updated: 2026-07-27
 review_status: pending_review

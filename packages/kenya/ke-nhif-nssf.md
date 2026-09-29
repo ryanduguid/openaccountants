@@ -3,6 +3,7 @@ name: ke-nhif-nssf
 description: Use this skill whenever asked about Kenyan social contributions for self-employed individuals -- SHIF (formerly NHIF) health insurance and NSSF pension. Trigger on phrases like "NHIF self-employed", "SHIF contributions", "NSSF Tier I", "NSSF Tier II", "Kenya social security", "Kenya health insurance", or any question about Kenyan social contribution obligations for self-employed persons. Covers the SHIF 2.75% rate (replacing NHIF brackets from October 2024), NSSF Tier I/II structure, voluntary registration, and edge cases. ALWAYS read this skill before touching any Kenyan social contribution work.
 version: 2.0
 jurisdiction: KE
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

@@ -2,6 +2,7 @@
 name: mk-corporate-income-tax
 description: "Use this draft for questions about North Macedonian corporate profit tax, withholding, loss relief, the simplified regime and minimum global profit tax for tax year 2025. It cites the Public Revenue Office's Profit Tax Law, minimum-tax Act and corrected article 13(9) rulebook. The published domestic and other top-up returns have been examined field by field, including their formulas and instructions. The domestic form contains an unresolved additional-tax inconsistency, so its printed arithmetic must not be treated as a complete filing algorithm. Pending local-accountant review."
 jurisdiction: MK
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

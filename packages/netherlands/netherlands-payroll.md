@@ -3,7 +3,7 @@ name: netherlands-payroll
 description: Use this skill whenever asked about Dutch payroll, loonheffing, wage tax, social security contributions, or employer obligations in the Netherlands. Trigger on phrases like "loonheffing", "loonbelasting", "Dutch payroll", "Netherlands payroll", "volksverzekeringen", "AOW premie", "WW premie", "WAO", "WIA", "Aof", "Awf", "ZVW", "Zvw bijdrage", "zorgverzekeringswet", "vakantiegeld", "holiday allowance", "loonaangifte", "30% ruling", "werkgeversheffing", "minimumloon", "minimum wage Netherlands", "payslip Netherlands", "loonstrook", "social insurance Netherlands", or any question about running payroll in the Netherlands. ALWAYS read this skill before processing any Dutch payroll work.
 version: 1.0
 jurisdiction: NL
-tax_year: 2025
+tax_year: 2026
 last_updated: 2026-09-28
 review_status: pending_review
 depends_on:

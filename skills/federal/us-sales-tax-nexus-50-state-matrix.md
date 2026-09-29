@@ -2,6 +2,7 @@
 name: us-sales-tax-nexus-50-state-matrix
 description: Tier 2 US federal-level reference skill providing the post-Wayfair economic-nexus threshold table for every US state plus DC and Puerto Rico. Covers sales/transaction thresholds, effective dates, lookback periods, marketplace facilitator laws, the SaaS-taxability list (HI/MA/NY/OH/PA/RI/SC/TN/TX/UT/WA/WV), the no-sales-tax NOMAD states (NH/OR/MT/AK/DE), Amazon FBA physical-presence nexus through inventory in 3PL warehouses, the difference between sales-tax and income-tax nexus, voluntary disclosure agreement (VDA) lookback limits, and home-rule states (CO/AL/LA/AK) requiring separate local registrations. Tax year 2025.
 jurisdiction: US
+category: state-tax
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
@@ -9,6 +10,8 @@ reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Sales Tax Nexus 50 State Matrix

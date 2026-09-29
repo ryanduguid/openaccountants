@@ -2,12 +2,15 @@
 name: us-nd-estimated-tax
 description: Use this skill whenever asked about North Dakota individual quarterly estimated income tax for self-employed individuals, sole proprietors, single-member LLC owners, S-corp shareholders, or W-2 earners with insufficient withholding. Trigger on phrases like "ND-1ES", "North Dakota estimated tax", "ND quarterly payments", "ND-1UT", "underpayment penalty North Dakota", "ND safe harbor". Covers tax year 2025 Form ND-1ES vouchers, Schedule ND-1UT underpayment computation, and coordination with federal Form 1040-ES.
 jurisdiction: US-ND
+category: state-tax
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # ND Estimated Tax

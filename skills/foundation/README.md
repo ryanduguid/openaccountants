@@ -7,7 +7,8 @@ Tier-1 workflow architectures. Every domain has a base that explains *how* the w
 | File | What it covers |
 |---|---|
 | [`workflow-base.md`](workflow-base.md) | Universal cross-domain workflow contract — output format, classification contract, conservative defaults |
-| [`us-tax-workflow-base.md`](us-tax-workflow-base.md) | US federal tax workflow — IRC navigation, federal/state interaction, OBBBA coverage |
+| [`us-tax-workflow-base.md`](us-tax-workflow-base.md) | US federal income tax workflow for sole proprietors and single-member LLCs — intake, working papers, a refusal catalogue; loaded only by the content skills written for that workflow |
+| [`us-circular-230-disclosure.md`](us-circular-230-disclosure.md) | Scope-neutral Circular 230 disclosure that every US guide names in `depends_on`; no workflow, intake or refusals |
 | [`vat-workflow-base.md`](vat-workflow-base.md) | VAT return preparation lifecycle for any country |
 | [`income-tax-workflow-base.md`](income-tax-workflow-base.md) | Personal income tax computation lifecycle — individuals, sole traders, freelancers |
 | [`corporate-income-tax-workflow-base.md`](corporate-income-tax-workflow-base.md) | Corporate income tax computation lifecycle |

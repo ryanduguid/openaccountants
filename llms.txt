@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**1,865 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants** (derived from `index.json`; `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree).
+**1,866 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants** (derived from `index.json`; `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree).
 
 ## What this repo is
 

@@ -2,6 +2,7 @@
 name: cn-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with Chinese tax compliance AND mentions freelancing, self-employment, software developer, contractor, individual industrial commercial household (个体工商户), limited liability company (有限公司), or WFOE in China. Trigger phrases (mixed Chinese + English) "中国个税年度汇算", "中国 SME 税务", "上海公司报税", "深圳 freelancer 税务", "WFOE 报税", "金税四期 合规", "个体工商户经营所得", "China tax filing", "China freelance tax", "China comprehensive income annual reconciliation", "WFOE annual return". REQUIRED entry point — downstream cn-iit, cn-corporate-tax, china-vat, cn-fapiao-einvoice, cn-social-insurance, cn-withholding, cn-stamp-tax, cn-formation, cn-return-assembly. ALWAYS-read closer in Chinese 在开始任何中国税务工作流前必须先阅读本技能.
 jurisdiction: CN
+category: orchestrator
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28

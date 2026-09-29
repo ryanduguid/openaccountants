@@ -2,6 +2,7 @@
 name: do-tax-registration
 description: Dominican Republic Tax Registration & Formal Obligations (RNC) — accountant-verified rules from the DGII validation matrix (Miguel Lantigua, CPA Lic. 17839).
 jurisdiction: DO
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Miguel Lantigua

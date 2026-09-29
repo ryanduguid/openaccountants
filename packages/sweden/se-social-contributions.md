@@ -3,6 +3,7 @@ name: se-social-contributions
 description: Use this skill whenever asked about Swedish self-employed social contributions (egenavgifter). Trigger on phrases like "egenavgifter", "Swedish self-employed contributions", "F-skatt", "Swedish social insurance", "Skatteverket egenavgifter", "enskild firma avgifter", or any question about social contribution obligations for a self-employed client in Sweden. Covers the ~28.97% combined rate, component breakdown, age-based reductions, and deductibility. ALWAYS read this skill before touching any Sweden social contributions work.
 version: 2.0
 jurisdiction: SE
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

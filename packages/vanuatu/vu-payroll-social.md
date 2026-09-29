@@ -2,6 +2,7 @@
 name: vu-payroll-social
 description: "Source-cited draft: payroll and social contributions for Vanuatu — the 12% VNPF contribution split 6/6, the VT 3,000 monthly floor, the end-of-following-month deadline and the 5% late surcharge, read from the VNPF Act [CAP. 189] Consolidated Edition 2026. Pending local-accountant review."
 jurisdiction: VU
+category: payroll
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

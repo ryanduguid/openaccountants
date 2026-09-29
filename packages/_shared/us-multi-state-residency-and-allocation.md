@@ -2,12 +2,15 @@
 name: us-multi-state-residency-and-allocation
 description: Tier 2 US federal-level content skill for multi-state residency, domicile, part-year residency, statutory residency (e.g. NY 183-day + abode rule), nonresident income sourcing, the convenience-of-the-employer rule (NY, NJ, CT, PA, NE, AR — partially), equity compensation allocation (stock options grant-to-exercise, RSU grant-to-vest), §4 USC 114 federal preemption of pension source taxation, resident credit for taxes paid to other states, reciprocal-agreement states (PA-NJ, OH-WV-KY-IN-MI-PA-VA), and post-COVID telework sourcing. Covers tax year 2025.
 jurisdiction: US
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Multi State Residency And Allocation

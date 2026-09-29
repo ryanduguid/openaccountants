@@ -3,6 +3,7 @@ name: mx-income-tax
 description: Use this skill whenever asked about Mexican individual income tax (ISR) for self-employed individuals (personas físicas con actividades empresariales y profesionales). Trigger on phrases like "how much tax do I pay in Mexico", "ISR", "Declaración Anual", "pagos provisionales", "actividades profesionales", "honorarios", "RESICO", "deducciones personales", "deducciones autorizadas", "retenciones", "RFC", "income tax return Mexico", "SAT", "CFDI honorarios", "comprobante fiscal", or any question about filing or computing income tax for a self-employed or freelance client in Mexico. This skill covers the Declaración Anual PF (Personas Físicas), pagos provisionales (monthly estimated payments), progressive ISR brackets, deducciones autorizadas and personales, retenciones on professional CFDI, and the RESICO regime. ALWAYS read this skill before touching any Mexican income tax work.
 version: 2.0
 jurisdiction: MX
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

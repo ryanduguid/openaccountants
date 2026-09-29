@@ -2,6 +2,7 @@
 name: cf-income-tax
 description: "Use this draft for questions about Central African Republic personal income tax, salary deductions, benefits in kind, capital gains and annual declarations for tax year 2025. It explains the five employee bands, the 30% professional-expenses allowance, the net-income base and the 30 April annual return deadline in the Ministry of Finance's 2023 Code. Selected provisions of the 2024, 2025 and 2026 Finance Acts and the 2024 and 2025 amending Acts have been checked. Residence, small-business regimes and a full procedural review remain open. Pending local-accountant review."
 jurisdiction: CF
+category: international
 tax_year: 2025
 last_updated: 2026-09-12
 review_status: pending_review

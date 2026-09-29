@@ -2,12 +2,15 @@
 name: us-nc-payroll
 description: Tier 2 North Carolina content skill for employer payroll compliance covering tax year 2025. Includes the 4.5% flat PIT phasing down toward 2.49% by 2030 contingent on revenue triggers, NC-4 state W-4, NC-5 monthly withholding voucher, NC-3 annual reconciliation, NC SUI wage base $32,600 with rates 0.06-5.76%, the absence of state-mandated paid leave or sick leave, and DHHS new-hire reporting within 20 days under PRWORA §453A.
 jurisdiction: US-NC
+category: payroll
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # NC Payroll

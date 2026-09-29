@@ -2,11 +2,14 @@
 name: us-ok-sales-tax
 description: Use this skill whenever asked about Oklahoma sales tax, Oklahoma use tax, OTC sales tax filing, Oklahoma grocery tax exemption (2024), or Oklahoma sales tax compliance. Trigger on phrases like "Oklahoma sales tax", "OK sales tax", "68 O.S. §1350", "Oklahoma OTC", "Oklahoma grocery tax", "Oklahoma SST", or any request involving Oklahoma state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-OK
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # OK Sales Tax

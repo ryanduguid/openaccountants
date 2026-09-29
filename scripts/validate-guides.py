@@ -124,6 +124,31 @@ JURISDICTION_OPTIONAL_DIRS = {
     "skills/international/eu",
 }
 
+#: The `category` vocabulary (docs/skill-template.md): the topic first
+#: (payroll, crypto, formation, bookkeeping, invoicing, tax-optimization,
+#: transfer-pricing, financial-statements, orchestrator), otherwise the tree's
+#: residual value (international, federal, state-tax, cross-border, foundation,
+#: vertical, integration, pattern, intelligence, template). Every guide carries
+#: one since 2026-09-29; before that 1,127 had none and 41 carried a legacy
+#: synonym, so a join on the key silently dropped most of the corpus.
+CATEGORY_VOCABULARY = frozenset({
+    "international", "federal", "state-tax", "cross-border", "foundation",
+    "orchestrator", "payroll", "tax-optimization", "transfer-pricing", "formation",
+    "financial-statements", "bookkeeping", "invoicing", "crypto", "vertical",
+    "integration", "pattern", "intelligence", "template",
+})
+
+#: A guide whose jurisdiction is US or US-<state> loads the scope-neutral
+#: Circular 230 disclosure, so its `depends_on` must name it. The disclosure
+#: is its own file because the sole-proprietor workflow base
+#: (`us-tax-workflow-base`) carries a refusal catalogue that excludes payroll,
+#: corporate and foreign taxpayers, so it cannot be required of every US
+#: guide. Exempt: the foundation files (the disclosure and that base), the US
+#: GAAP guides under skills/financial-reporting/ (accounting standards, not
+#: tax practice) and the file templates.
+US_DISCLOSURE = "us-circular-230-disclosure"
+US_DISCLOSURE_EXEMPT_DIRS = ("skills/financial-reporting/", "skills/foundation/", "skills/templates/")
+
 
 class GuideTrees:
     """What the check functions receive as `bi`: guide discovery plus the
@@ -353,6 +378,12 @@ def check_depends_on(bi, errors, known_names=None):
     named `income-tax-workflow-base`, `social-contributions-workflow-base`
     and `foundation` while no guide carried those names, so an agent
     following the dependency found nothing.
+
+    The same pass checks that every US-jurisdiction tax guide names
+    US_DISCLOSURE, the scope-neutral Circular 230 disclosure: until
+    2026-09-29 only 11 of 239 named even the sole-proprietor base, and that
+    base is the wrong file to require, so a reader following the
+    dependencies was never sent to a disclosure.
     """
     if known_names is None:
         known_names = collect_guide_names(bi)
@@ -366,13 +397,24 @@ def check_depends_on(bi, errors, known_names=None):
             metadata = load_frontmatter(block)
         except FrontmatterError:
             continue
-        for slug in metadata.get("depends_on") or []:
+        slugs = [str(slug).strip() for slug in metadata.get("depends_on") or []]
+        for slug in slugs:
             entries += 1
-            if slug.strip() not in known_names:
+            if slug not in known_names:
                 errors.append(
                     f"{rel}: `depends_on` names `{slug}`, but no guide under skills/ "
                     "carries that `name` — fix the slug or add the missing base"
                 )
+        jurisdiction = str(metadata.get("jurisdiction") or "")
+        if (
+            (jurisdiction == "US" or jurisdiction.startswith("US-"))
+            and not rel.startswith(US_DISCLOSURE_EXEMPT_DIRS)
+            and US_DISCLOSURE not in slugs
+        ):
+            errors.append(
+                f"{rel}: a `{jurisdiction}` guide must name `{US_DISCLOSURE}` (the Circular 230 "
+                "disclosure) in `depends_on`"
+            )
     print(f"checked {entries} depends_on entries against {len(known_names)} guide names")
 
 
@@ -501,6 +543,17 @@ def check_guides(bi, errors, warnings, only_files=None):
                 warn_counts["jurisdiction (jurisdiction-agnostic dirs)"] += 1
             else:
                 errors.append(f"{rel}: missing required frontmatter key `jurisdiction`")
+        category = fields["category"]
+        if not category:
+            errors.append(
+                f"{rel}: missing required frontmatter key `category` "
+                "(the vocabulary is in docs/skill-template.md)"
+            )
+        elif category not in CATEGORY_VOCABULARY:
+            errors.append(
+                f"{rel}: `category` must be one of the vocabulary in docs/skill-template.md "
+                f"(got {category!r})"
+            )
         check_cta_block(rel, text, errors)
     for key, count in sorted(warn_counts.items()):
         if count:

@@ -2,6 +2,7 @@
 name: leaving-south-africa-tax-emigration
 description: South Africa replaced 'financial emigration' with a purely tax-driven exit in 2021, and most leavers still run the old playbook. Ceasing SA tax residency triggers a deemed disposal of your worldwide assets (the exit charge), retirement annuities lock for three uninterrupted years of non-residency, moving money out runs through SARS approval rather than the Reserve Bank, and thousands of expats who never formally ceased are still fully taxable with only the R1.25m foreign-earnings exemption protecting them. This Guide sequences the modern exit.
 jurisdiction: ZA
+category: international
 tax_year: 2025
 last_updated: 2026-08-03
 review_status: pending_review

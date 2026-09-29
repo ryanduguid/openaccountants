@@ -2,6 +2,7 @@
 name: gn-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Guinea — the three IS rates of 35% / 30% / 25% under art. 229 CGI, the art. 244 minimum tax with its floors and caps, the 30 April e-Tax filing date and the 15 June / 15 September instalments, read from the tax authority's own rate table and CGI chapter. Pending local-accountant review."
 jurisdiction: GN
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

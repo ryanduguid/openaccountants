@@ -2,6 +2,7 @@
 name: sm-vat-gst
 description: "Source-cited draft: the imposta monofase for San Marino (tax year 2025) — San Marino has no VAT. Structure, export refund and rate-setting mechanism read from Legge 22 dicembre 1972 n.40 and Legge 3 marzo 2025 n.30. Unverified; pending local-accountant review."
 jurisdiction: SM
+category: international
 tax_year: 2025
 tax_year_notes: "The rates are not in the governing law. Art. 26 of Legge 40/1972 lets the Reggenza vary them by decree, so a rate is current only as at the decree that last set it. The figures below were not read from a decree and are marked accordingly."
 last_updated: 2026-09-10

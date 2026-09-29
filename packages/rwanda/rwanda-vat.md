@@ -3,6 +3,7 @@ name: rwanda-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Rwanda VAT return. Standard rate 18%. Mandatory EBM (Electronic Billing Machine). No EBM = no input recovery. EAC member. ALWAYS read before handling Rwanda VAT work.
 version: 2.0
 jurisdiction: RW
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

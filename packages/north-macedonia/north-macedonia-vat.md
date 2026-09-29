@@ -3,6 +3,7 @@ name: north-macedonia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a North Macedonia VAT (DDV) return for any client. Trigger on phrases like "Macedonia VAT", "North Macedonia VAT", "DDV", "PRO filing", or any request involving Macedonian VAT. North Macedonia is NOT an EU member state but is an EU candidate country. ALWAYS read this skill before touching any North Macedonian DDV work.
 version: 2.0
 jurisdiction: MK
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

@@ -3,11 +3,13 @@ name: us-ma-payroll
 description: Tier 2 Massachusetts content skill for employer payroll compliance covering tax year 2025. Includes the 5% flat PIT plus 4% millionaire surtax over ~$1.08M, PFML 0.88% combined (employee portion 0.29% for 25+ employers, employer portion 0.59%), SUI wage base $15,000 with rates 0.94-14.37%, EMAC 0.34%, M-941 quarterly withholding, MA Wage Act §148 triple-damages exposure for unpaid wages, Earned Sick Leave 40-hour minimum, Pay Equity Act salary history ban, and Health Connector employer mandate for 50+ FTE under ACA.
 version: 1.1
 jurisdiction: US-MA
+category: payroll
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
+  - us-circular-230-disclosure
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

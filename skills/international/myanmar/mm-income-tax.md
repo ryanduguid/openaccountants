@@ -2,6 +2,7 @@
 name: mm-income-tax
 description: "Source-cited draft: personal income tax for Myanmar (tax year 2025) — rates, reliefs, capital gains and the unassessed-income scale, read from the Internal Revenue Department's own statement of the 2025 Union Taxation Law. Unverified; pending local-accountant review."
 jurisdiction: MM
+category: international
 tax_year: 2025
 tax_year_notes: "Rates and reliefs are those the Internal Revenue Department states for the 2025 Union Taxation Law (ပြည်ထောင်စု၏အခွန်အကောက်ဥပဒေ). Myanmar re-enacts the Union Taxation Law annually, so confirm the year's law before applying these to any other year."
 last_updated: 2026-09-10

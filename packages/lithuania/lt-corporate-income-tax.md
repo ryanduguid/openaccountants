@@ -2,6 +2,7 @@
 name: lt-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Lithuania (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: LT
+category: international
 tax_year: 2025
 tax_year_notes: "2025 (with confirmed 2026 figures noted: CIT 17%, small-company 7%, dividend WHT 17%)"
 last_updated: 2026-09-09

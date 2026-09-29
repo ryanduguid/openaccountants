@@ -3,11 +3,14 @@ name: us-co-income-tax
 description: Use this skill whenever asked about Colorado individual income tax for self-employed individuals or sole proprietors — filing Form DR 0104, CO estimated tax (Form DR 0104EP), Colorado flat tax rate, Colorado additions and subtractions, or any query involving Colorado state income tax compliance. Trigger on phrases like "Colorado income tax", "CO income tax", "Form 104", "DR 0104", "Colorado estimated tax", "Colorado self-employed tax", "TABOR refund", or "C.R.S. §39-22".
 version: "0.1"
 jurisdiction: US-CO
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # CO Income Tax

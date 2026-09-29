@@ -3,11 +3,14 @@ name: us-sc-income-tax
 description: Triggers when the taxpayer is a South Carolina resident sole proprietor or single-member LLC needing to file South Carolina Form SC1040. Covers SC's three-bracket graduated income tax (0%/3%/6% for tax year 2025, top rate recently reduced from 7%), the 3% reduced rate for active trade or business income, SC modifications to federal taxable income, and IRC conformity. Must be loaded alongside us-tax-workflow-base and us-federal-return-assembly.
 version: "0.1"
 jurisdiction: US-SC
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # SC Income Tax

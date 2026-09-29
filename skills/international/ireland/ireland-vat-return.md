@@ -3,6 +3,7 @@ name: ireland-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Irish VAT return (VAT3 form) for a self-employed individual or small business in Ireland. Trigger on phrases like "prepare VAT return", "do the VAT", "Irish VAT", "VAT3", "ROS return", "Revenue Online", or any request involving Ireland VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Ireland only and only standard VAT-registered businesses. VAT groups, Capital Goods Scheme adjustments, and complex property transactions are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Irish VAT work.
 version: 2.0
 jurisdiction: IE
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

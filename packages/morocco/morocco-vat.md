@@ -3,6 +3,7 @@ name: morocco-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Morocco VAT (TVA) return. Two rates from 2026 -- 20%/10% (7% and 14% phased out). Critical distinction between exempt-with-deduction (Art. 92) and exempt-without-deduction (Art. 91). ALWAYS read before handling Morocco TVA work.
 version: 2.0
 jurisdiction: MA
+category: international
 tax_year: 2025
 last_updated: 2026-09-13
 review_status: pending_review

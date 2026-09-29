@@ -2,12 +2,15 @@
 name: us-federal-section-1031-like-kind-exchange
 description: Rules, timing, boot, basis, related-party and TIC structures for IRC §1031 like-kind exchanges of real property
 jurisdiction: US
+category: federal
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Federal Section 1031 Like-Kind Exchange

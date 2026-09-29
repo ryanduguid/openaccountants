@@ -2,6 +2,7 @@
 name: us-form-1040-individual-return
 description: Tier 2 US federal content skill for preparing Form 1040 — the standard individual income tax return for non-freelance taxpayers (W-2 employees, retirees, investors, families). Covers tax year 2025 under OBBBA including the $40k SALT cap, the $15,750/$31,500/$23,625 standard deduction, capital gains brackets (0/15/20%), the §1411 3.8% NIIT, AMT post-TCJA, Schedule 1/2/3 walkthrough, dependents and filing status, kiddie tax §1(g), and itemized deduction Schedule A. Distinct from us-federal-return-assembly which orchestrates Schedule C freelance returns. Federal only.
 jurisdiction: US
+category: federal
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
@@ -9,6 +10,8 @@ reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Form 1040 Individual Return

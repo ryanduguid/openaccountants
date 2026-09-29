@@ -3,11 +3,14 @@ name: us-al-sales-tax
 description: Use this skill whenever asked about Alabama sales tax, Alabama use tax, Alabama sales tax nexus, ADOR sales tax filing, self-administered city taxes in Alabama, or Alabama grocery food taxation. Trigger on phrases like "Alabama sales tax", "AL sales tax", "ADOR", "Code of Ala. §40-23", "Alabama local tax", "Alabama grocery tax", "self-administered cities Alabama", or any request involving Alabama state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 version: 2.0
 jurisdiction: US-AL
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # AL Sales Tax

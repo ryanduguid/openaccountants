@@ -2,6 +2,7 @@
 name: de-ustva-vat-return
 description: Prepares the Umsatzsteuervoranmeldung including Vorsteuer deductions, reverse charge for EU services, and Kleinunternehmerregelung threshold.
 jurisdiction: DE
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

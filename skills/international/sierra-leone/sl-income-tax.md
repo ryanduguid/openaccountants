@@ -2,6 +2,7 @@
 name: sl-income-tax
 description: "Source-cited draft: personal income tax for Sierra Leone (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: SL
+category: international
 tax_year: 2025
 tax_year_notes: "Retains 2025 coverage, with separately labelled Finance Act 2026 changes. Do not back-apply 2026 rates."
 version: 0.1

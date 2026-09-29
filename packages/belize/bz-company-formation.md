@@ -2,6 +2,7 @@
 name: bz-company-formation
 description: "Source-cited draft: company formation & entity choice for Belize (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BZ
+category: formation
 tax_year: 2025
 last_updated: 2026-09-13
 review_status: pending_review

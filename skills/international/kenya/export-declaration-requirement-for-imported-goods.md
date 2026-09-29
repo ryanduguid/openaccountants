@@ -2,6 +2,7 @@
 name: export-declaration-requirement-for-imported-goods
 description: "Export declaration requirement for imported goods: a guide for importers"
 jurisdiction: KE
+category: international
 tax_year: 2025
 last_updated: 2026-07-29
 review_status: pending_review

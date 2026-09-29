@@ -9,6 +9,8 @@ review_status: pending_review
 category: orchestrator
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Ny Return Assembly

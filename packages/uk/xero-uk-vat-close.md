@@ -2,6 +2,7 @@
 name: xero-uk-vat-close
 description: Workbench method for AI agents. Pull the quarter from Xero (connector or CSV export), compute the UK VAT return boxes from the accountant-reviewed uk-vat-return Guide, and hand back a working paper plus a Xero-ready adjustment journal for human review and filing.
 jurisdiction: GB
+category: international
 tax_year: 2025
 last_updated: 2026-07-19
 review_status: pending_review

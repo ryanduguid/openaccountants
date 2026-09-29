@@ -2,6 +2,7 @@
 name: tm-payroll-social
 description: "Source-cited draft covering Turkmenistan payroll withholding and pension contributions. Explains the 20% employer contribution, the additional 3.5% professional pension contribution, voluntary participation at a minimum of 2%, covered remuneration and employer filing and payment dates. Separates pension reporting from income-tax withholding and annual information reporting. Describes the standard personal deduction as one statutory tax base value, whose current monetary amount still needs confirmation, and identifies selected tax reliefs and foreign-worker coverage limits. Based on the Pension Insurance Law and Tax Code published by Parliament. Pending local-accountant review."
 jurisdiction: TM
+category: payroll
 tax_year: 2025
 last_updated: 2026-09-12
 review_status: pending_review

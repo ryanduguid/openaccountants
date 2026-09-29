@@ -2,12 +2,15 @@
 name: us-nft-tax
 description: "US federal tax treatment of NFTs (non-fungible tokens) — property classification, collectible look-through 28% rate (PROPOSED, Notice 2023-27), creator (ordinary + SE) vs investor (capital) treatment, royalties, minting/gas basis, and gifting/donation. Broader crypto rules: us-crypto-tax, us-crypto-income-events, us-crypto-reporting."
 jurisdiction: US
+category: crypto
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Nft Tax

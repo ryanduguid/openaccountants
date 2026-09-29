@@ -3,6 +3,7 @@ name: ghana-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Ghana VAT return. VAT 15% + NHIL 2.5% + GETFund 2.5% = 20% effective. Act 1151 effective 1 Jan 2026 recouples levies. Flat rate scheme abolished. Withholding VAT at 7%. ALWAYS read before handling Ghana VAT work.
 version: 2.0
 jurisdiction: GH
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

@@ -3,11 +3,14 @@ name: us-ar-income-tax
 description: Use this skill whenever asked about Arkansas individual income tax for self-employed individuals or sole proprietors — filing Form AR1000F, AR estimated tax, Arkansas tax brackets, Arkansas deductions, or any query involving Arkansas state income tax compliance. Trigger on phrases like "Arkansas income tax", "AR income tax", "Form AR1000F", "Arkansas estimated tax", "Arkansas self-employed tax", "DFA income tax", or "Ark. Code Ann. §26-51".
 version: "0.1"
 jurisdiction: US-AR
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # AR Income Tax

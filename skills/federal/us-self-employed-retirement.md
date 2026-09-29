@@ -3,12 +3,15 @@ name: us-self-employed-retirement
 description: Tier 2 content skill for computing the self-employed retirement contribution deduction for US sole proprietors and single-member LLCs disregarded for federal tax purposes. Covers tax year 2025 SEP-IRA, Solo 401(k), SIMPLE IRA, and traditional/Roth IRA options with SECURE 2.0 super catch-up provisions. Handles the net SE earnings calculation, the 92.35% adjustment, the employer contribution formula (20% effective rate for sole props), employee deferral limits ($23,500), catch-up and super catch-up contributions, the SEP-IRA 25% limit ($70,000 cap), SIMPLE IRA rules, traditional and Roth IRA income limits and deductibility phase-outs, and establishment/contribution deadlines. Consumes Schedule C net profit and SE tax from us-schedule-c-and-se-computation. Feeds QBI computation in us-qbi-deduction. MUST be loaded alongside us-tax-workflow-base v0.1 or later. Federal only. No state tax.
 version: 0.2
 jurisdiction: US
+category: federal
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Self Employed Retirement

@@ -1,10 +1,13 @@
 ---
 name: us-states-references
 jurisdiction: US
+category: state-tax
 tier: 2
 last_updated: 2026-09-28
 version: 1.0
 description: Primary source references and related open-source projects for this jurisdiction.
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # United States — Related Open-Source Projects

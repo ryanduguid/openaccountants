@@ -2,6 +2,7 @@
 name: cn-return-assembly
 description: 本技能用于汇总组装中国税务申报与年度汇算清缴的最终复核包。触发短语包括："中国税务报表汇总"、"年度汇算清缴"、"企业所得税年度申报"、"个税综合所得汇算"、"电子税务局提交"、"国家税务总局 申报"、"China tax return assembly"、"China annual reconciliation"、"China CIT annual filing"、"China year-end tax"。这是终稿汇总（capstone）技能，统一整合 cn-iit、cn-corporate-tax、china-vat、cn-fapiao-einvoice、cn-social-insurance、cn-withholding、cn-stamp-tax、cn-formation 等上游技能的输出，产生一份完整的复核包：工作底稿、税额汇总、对账明细、复核简报、纳税人最终动作清单。本技能不重新计算任何税额，仅做汇总、对账、复核与提交准备。完成中国税务申报工作时务必最后阅读本技能。
 jurisdiction: CN
+category: orchestrator
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28

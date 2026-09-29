@@ -2,12 +2,15 @@
 name: us-state-new-hire-reporting-matrix
 description: Tier 2 US federal-level reference skill providing the 50-state matrix of new-hire reporting requirements under PRWORA §453A. Covers tax year 2025 including each state's reporting agency and online portal URL, the 20-day federal deadline plus state variations, multistate employer single-state designation election under §453A(b)(2), independent contractor reporting requirements (CA DE 542, NY, NJ, MA, KY, FL state-specific), penalty ranges from $25 to $500 per missed report, conditional and rehire reporting rules, and integration with major payroll systems (Gusto, ADP, Paychex, QuickBooks Payroll).
 jurisdiction: US
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US State New Hire Reporting Matrix

@@ -3,6 +3,7 @@ name: sri-lanka-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Sri Lanka VAT return for any client. Trigger on phrases like "Sri Lanka VAT", "IRD return", "CGIR filing", or any request involving Sri Lanka VAT. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Sri Lanka VAT work.
 version: 2.0
 jurisdiction: LK
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: Lal kumarasiri

@@ -2,6 +2,7 @@
 name: it-irap
 description: Use this skill whenever asked about Italian IRAP (Imposta Regionale sulle Attività Produttive) for self-employed professionals. Trigger on phrases like "IRAP", "imposta regionale", "IRAP professionista", "IRAP autonomo", "valore della produzione", "regional production tax Italy", or any question about IRAP obligations for a self-employed client in Italy. Covers the standard 3.9% rate, valore della produzione netta, regional variations, and the landmark exemption for autonomous professionals without autonomous organisation. ALWAYS read this skill before touching any Italy IRAP work.
 jurisdiction: IT
+category: international
 tax_year: 2025
 last_updated: 2026-09-10
 review_status: pending_review

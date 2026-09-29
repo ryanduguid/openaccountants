@@ -2,6 +2,7 @@
 name: bi-tax-overview
 description: "Source-cited draft: tax overview for Burundi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BI
+category: international
 tax_year: 2025
 tax_year_notes: "Overview retains 2025 coverage. The separately labelled VAT threshold paragraph covers budget year 2026/2027 and must not be back-applied to 2025."
 version: 0.1

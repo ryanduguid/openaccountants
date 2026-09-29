@@ -9,6 +9,7 @@ reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 depends_on:
   - us-tax-workflow-base
+  - us-circular-230-disclosure
 category: federal
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

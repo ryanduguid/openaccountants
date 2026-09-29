@@ -2,6 +2,7 @@
 name: can-a-foreigner-start-a-business-in-serbia
 description: Can a Foreigner Start a Business in Serbia?
 jurisdiction: RS
+category: international
 tax_year: 2025
 last_updated: 2026-08-20
 review_status: pending_review

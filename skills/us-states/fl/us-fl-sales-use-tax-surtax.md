@@ -2,12 +2,15 @@
 name: us-fl-sales-use-tax-surtax
 description: Florida discretionary sales surtax rates for all 67 counties (CY2026, FDOR DR-15DSS) on top of the 6% state sales tax.
 jurisdiction: US-FL
+category: state-tax
 tax_year: 2026
 last_updated: 2026-07-13
 reviewed_by: Rob Hoffman
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # Florida Discretionary Sales Surtax — by County (2026)

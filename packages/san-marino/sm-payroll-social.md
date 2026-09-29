@@ -2,6 +2,7 @@
 name: sm-payroll-social
 description: "Source-cited draft: payroll & social contributions for San Marino (tax year 2025) — the first-pillar and FONDISS contribution rates read from the statutory table in Legge 29 novembre 2022 n.157, art. 21. Unverified; pending local-accountant review."
 jurisdiction: SM
+category: payroll
 tax_year: 2025
 tax_year_notes: "San Marino's pension reform legislated a seven-year ramp, so the rate depends on the calendar year and not on a single 'current' figure. Legge 157/2022 art. 21(4) prints the whole progression from 2023 to 2029 and it is reproduced below in full. The first pillar reaches its ceiling in 2025; FONDISS keeps rising to 2029."
 last_updated: 2026-09-10

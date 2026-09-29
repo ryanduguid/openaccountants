@@ -2,11 +2,14 @@
 name: us-ga-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation
 description: STARTER DRAFT, generic. Your corrections below will make it yours.
 jurisdiction: US-GA
+category: state-tax
 tax_year: 2025
 last_updated: 2026-08-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # Georgia Pass-Through Entity Returns — Form 700 (Partnership) and Form 600S (S-Corporation)

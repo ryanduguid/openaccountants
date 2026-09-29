@@ -104,6 +104,33 @@ class ListSkillsPagingTests(ToolTreeCase):
         self.assertEqual(result["total"], 1)
         self.assertEqual(result["skills"][0]["slug"], "yy-payroll")
 
+    def test_legacy_category_names_select_the_canonical_category(self) -> None:
+        # The names the catalogue served before 2026-09-29 keep working as
+        # filters; results show only the canonical value.
+        self.write({
+            "us-ny/us-ny-sales-tax.md": _skill("us-ny-sales-tax", "NY sales tax", jurisdiction="US-NY",
+                                               category="state-tax"),
+            "us-federal/us-form-1040.md": _skill("us-form-1040", "Form 1040", jurisdiction="US",
+                                                 category="federal"),
+            "us-federal/us-lease-accounting.md": _skill("us-lease-accounting", "Leases", jurisdiction="US",
+                                                        category="financial-statements"),
+            "_shared/global-vendors.md": _skill("global-vendors", "Vendors", jurisdiction="GLOBAL",
+                                                category="pattern"),
+        })
+        server._index.cache_clear()
+        expected = {
+            "state": "us-ny-sales-tax", "us-states": "us-ny-sales-tax", "STATE": "us-ny-sales-tax",
+            "state-tax": "us-ny-sales-tax", "federal-tax": "us-form-1040", "federal": "us-form-1040",
+            "financial-reporting": "us-lease-accounting", "financial-statements": "us-lease-accounting",
+            "patterns": "global-vendors", "pattern": "global-vendors",
+        }
+        for requested, slug in expected.items():
+            with self.subTest(category=requested):
+                result = server.list_skills(category=requested)
+                self.assertEqual([s["slug"] for s in result["skills"]], [slug])
+                self.assertEqual(result["total"], 1)
+                self.assertNotIn(result["skills"][0]["category"], server.LEGACY_CATEGORIES)
+
     def test_an_empty_catalogue_keeps_the_page_shape(self) -> None:
         server.PACKAGES_DIR = self.packages / "missing"
         server._index.cache_clear()

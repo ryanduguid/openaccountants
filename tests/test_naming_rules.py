@@ -42,7 +42,7 @@ from cta_block import CANONICAL_BLOCK  # noqa: E402  (needs SCRIPTS on sys.path)
 def guide(name: str, jurisdiction: str = "US-NY") -> str:
     return (
         f"---\nname: {name}\ndescription: Synthetic guide for the naming tests.\n"
-        f"jurisdiction: {jurisdiction}\ntier: 2\ntax_year: 2025\nlast_updated: 2026-01-02\n---\n\n"
+        f"jurisdiction: {jurisdiction}\ncategory: international\ntier: 2\ntax_year: 2025\nlast_updated: 2026-01-02\n---\n\n"
         f"# {name}\n\nBody.\n\n" + CANONICAL_BLOCK
     )
 

@@ -3,12 +3,15 @@ name: no-sales-tax-states
 description: Use this skill whenever asked about states with no sales tax, Alaska local sales tax, Delaware gross receipts tax, Montana resort tax, New Hampshire meals and rooms tax, Oregon Corporate Activity Tax, or tax obligations in AK, DE, MT, NH, or OR. Trigger on phrases like "no sales tax states", "Alaska sales tax", "Delaware gross receipts", "Montana resort tax", "New Hampshire meals tax", "Oregon CAT", "Oregon no sales tax", or any request involving tax compliance in states that do not impose a general statewide sales tax. ALWAYS load us-sales-tax first for federal context.
 version: 2.0
 jurisdiction: US
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # NO Sales Tax States

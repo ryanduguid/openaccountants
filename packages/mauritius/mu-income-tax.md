@@ -2,6 +2,7 @@
 name: mu-income-tax
 description: "Source-cited draft: personal income tax for Mauritius (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MU
+category: international
 tax_year: 2025
 last_updated: 2026-09-10
 review_status: pending_review

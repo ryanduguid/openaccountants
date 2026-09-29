@@ -2,6 +2,7 @@
 name: om-tax-overview
 description: "Source-cited draft covering Oman tax for 2025, including the 15% corporate rate, ordinary income returns due within four months, qualifying-enterprise returns due within three months and the separate multinational top-up tax. Explains the domestic top-up charge and parent-entity rules, the revenue threshold, commencement and excluded entities. Includes VAT, residence and the announced personal income tax from 2028. Use for Oman company tax, filing deadlines, tax residence, VAT or multinational group questions. The top-up implementing regulation remains unread. Pending local-accountant review."
 jurisdiction: OM
+category: international
 tax_year: 2025
 last_updated: 2026-09-12
 review_status: pending_review

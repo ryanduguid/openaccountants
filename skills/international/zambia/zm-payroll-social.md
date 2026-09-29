@@ -2,6 +2,7 @@
 name: zm-payroll-social
 description: "Source-cited draft: payroll & social contributions for Zambia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: ZM
+category: payroll
 tax_year: 2025
 last_updated: 2026-09-10
 review_status: pending_review

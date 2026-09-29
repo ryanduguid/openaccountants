@@ -2,11 +2,14 @@
 name: us-wy-sales-tax
 description: Use this skill whenever asked about Wyoming sales tax, Wyoming use tax, Wyoming DOR sales tax filing, or Wyoming sales tax compliance. Trigger on phrases like "Wyoming sales tax", "WY sales tax", "W.S. §39-15", "Wyoming DOR", "Wyoming no income tax", "Wyoming SST", or any request involving Wyoming state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-WY
+category: state-tax
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # WY Sales Tax

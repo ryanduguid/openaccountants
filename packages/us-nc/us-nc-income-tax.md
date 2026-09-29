@@ -3,11 +3,14 @@ name: us-nc-income-tax
 description: Use this skill whenever asked about North Carolina individual income tax for self-employed / sole proprietors. Trigger on phrases like "North Carolina income tax", "NC income tax", "Form D-400", "NCDOR income tax", "NC self-employment tax".
 version: "0.1"
 jurisdiction: US-NC
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # NC Income Tax

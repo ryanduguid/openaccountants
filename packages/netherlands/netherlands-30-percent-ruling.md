@@ -2,6 +2,7 @@
 name: netherlands-30-percent-ruling
 description: Eligibility, the 2026 salary norms and cap, the 4-month application window, and the 27% phase-down from 2027, sourced to Belastingdienst and Rijksoverheid.
 jurisdiction: NL
+category: international
 tax_year: 2025
 last_updated: 2026-07-29
 review_status: pending_review

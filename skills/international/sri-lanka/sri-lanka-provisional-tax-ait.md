@@ -2,6 +2,7 @@
 name: sri-lanka-provisional-tax-ait
 description: Sri Lanka provisional tax via Advance Income Tax (AIT) quarterly instalments under s 90 of the Inland Revenue Act — who pays, calculation, due dates and penalties.
 jurisdiction: LK
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Lal kumarasiri

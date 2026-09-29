@@ -3,6 +3,7 @@ name: monaco-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Monaco TVA (VAT) return for any client. Trigger on phrases like "Monaco VAT", "Monaco TVA", "Monaco tax return", or any request involving Monaco VAT. Monaco is within the French VAT territory and applies French TVA rules identically. Supplies between Monaco and France are domestic. For all substantive rules, refer to the France VAT skill. ALWAYS read this skill before touching any Monaco TVA work.
 version: 2.0
 jurisdiction: MC
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

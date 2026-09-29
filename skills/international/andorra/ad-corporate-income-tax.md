@@ -2,6 +2,7 @@
 name: ad-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Andorra — the 10% general rate and the 0% band for collective investment undertakings at art. 41, the art. 38 holding-company regime and its 40%-of-general-rate subject-to-tax test, the art. 23 IP regime as an 80% base reduction under a nexus fraction, and the July filing window, which sits in the Reglament and not in the Law. Read from the consolidated text on BOPA. Pending local-accountant review."
 jurisdiction: AD
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

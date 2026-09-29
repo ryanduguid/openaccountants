@@ -2,12 +2,15 @@
 name: us-mi-estimated-tax
 description: Use this skill whenever asked about Michigan quarterly estimated income tax for individuals — sole proprietors, single-member LLCs, freelancers, and high-income wage earners with insufficient withholding. Trigger on phrases like "Michigan estimated tax", "MI-1040ES", "MI quarterly payments", "Michigan underpayment penalty", "MI-2210", "MCL 206.301", "Michigan estimated tax safe harbor".
 jurisdiction: US-MI
-tax_year: 2025
+category: state-tax
+tax_year: 2026
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # MI Estimated Tax

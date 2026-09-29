@@ -2,6 +2,7 @@
 name: us-pl-86-272-income-tax-nexus
 description: Tier 2 US federal content skill for Public Law 86-272 (15 USC §§381-384) — the federal statute that prevents states from imposing income tax on out-of-state sellers whose only activity is solicitation of tangible personal property orders shipped from out of state. Covers the 2021/2024 MTC revised statement that erodes P.L. 86-272 protection for nearly all internet-era activities (customer accounts, live chat, online reviews, post-sale service), California's FTB Legal Rulings 2022-01/02, New York's 2023 adoption, the Wisconsin v. Wrigley solicitation safe harbor, the factor-presence economic nexus model ($50k payroll, $500k receipts), and voluntary disclosure agreement processes. Tax year 2025.
 jurisdiction: US
+category: state-tax
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
@@ -9,6 +10,8 @@ reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US Pl 86 272 Income Tax Nexus

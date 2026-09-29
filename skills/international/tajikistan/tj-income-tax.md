@@ -2,6 +2,7 @@
 name: tj-income-tax
 description: "Source-cited draft: personal income tax for Tajikistan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TJ
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

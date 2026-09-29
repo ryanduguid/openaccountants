@@ -2,6 +2,7 @@
 name: th-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Thailand (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TH
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

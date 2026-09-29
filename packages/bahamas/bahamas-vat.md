@@ -3,6 +3,7 @@ name: bahamas-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Bahamas VAT return for any client. Trigger on phrases like "Bahamas VAT", "DIR Bahamas", "Department of Inland Revenue Bahamas", or any request involving Bahamas VAT. The Bahamas has NO income tax — VAT is the primary tax. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Bahamas VAT work.
 version: 2.0
 jurisdiction: BS
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

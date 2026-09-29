@@ -25,6 +25,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`us-1099-k-and-payment-processors.md`](../_shared/us-1099-k-and-payment-processors.md)
 - [`us-1099-nec-issuance.md`](../_shared/us-1099-nec-issuance.md)
 - [`us-capital-gains.md`](../_shared/us-capital-gains.md)
+- [`us-circular-230-disclosure.md`](../_shared/us-circular-230-disclosure.md)
 - [`us-citizen-moving-abroad-tax.md`](../_shared/us-citizen-moving-abroad-tax.md)
 - [`us-crypto-income-events.md`](../_shared/us-crypto-income-events.md)
 - [`us-crypto-reporting.md`](../_shared/us-crypto-reporting.md)

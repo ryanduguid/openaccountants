@@ -2,6 +2,7 @@
 name: to-tax-overview
 description: "Source-cited draft: tax overview for Tonga (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TO
+category: international
 tax_year: 2025
 last_updated: 2026-09-10
 review_status: pending_review

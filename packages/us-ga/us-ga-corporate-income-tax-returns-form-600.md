@@ -2,11 +2,14 @@
 name: us-ga-corporate-income-tax-returns-form-600
 description: Georgia Corporate Income Tax Return (Form 600) — STARTER DRAFT
 jurisdiction: US-GA
+category: state-tax
 tax_year: 2025
 last_updated: 2026-08-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # Georgia Corporate Income Tax Returns (Form 600)

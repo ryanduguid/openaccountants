@@ -2,11 +2,14 @@
 name: us-mi-homestead-credit
 description: Use this skill whenever asked about the Michigan Homestead Property Tax Credit for full-year Michigan residents who own or rent their principal residence. Trigger on phrases like "Michigan homestead credit", "MI-1040CR", "Michigan property tax credit", "total household resources", "homestead property tax", "MCL 206.520".
 jurisdiction: US-MI
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # MI Homestead Credit

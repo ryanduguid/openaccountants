@@ -3,6 +3,7 @@ name: bosnia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Bosnia and Herzegovina VAT (PDV) return for any client. Trigger on phrases like "Bosnia VAT", "BiH VAT", "PDV return", "ITA filing", or any request involving Bosnian VAT. Bosnia has a unique single-rate system at 17%. This skill covers standard PDV payers filing monthly returns. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Bosnian VAT work.
 version: 2.0
 jurisdiction: BA
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

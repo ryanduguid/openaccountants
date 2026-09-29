@@ -2,12 +2,15 @@
 name: us-nc-corporate-tax
 description: "Source-cited tax guide for US-NC: nc corporate tax. Unverified draft, pending local-accountant review."
 jurisdiction: US-NC
+category: state-tax
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # NC Corporate Tax

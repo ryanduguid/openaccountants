@@ -2,6 +2,7 @@
 name: my-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Malaysia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MY
+category: international
 tax_year: 2025
 last_updated: 2026-09-09
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636

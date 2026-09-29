@@ -3,6 +3,7 @@ name: luxembourg-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Luxembourg VAT return (TVA declaration) for any client. Trigger on phrases like "prepare VAT return", "Luxembourg VAT", "TVA Luxembourg", "AED return", or any request involving Luxembourg VAT filing. MUST be loaded alongside BOTH vat-workflow-base and eu-vat-directive. Holding company structures (SOPARFI/SIF/RAIF/SICAR) are in the refusal catalogue. ALWAYS read this skill before touching any Luxembourg VAT work.
 version: 2.0
 jurisdiction: LU
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

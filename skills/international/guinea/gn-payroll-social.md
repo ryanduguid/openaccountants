@@ -2,6 +2,7 @@
 name: gn-payroll-social
 description: "Source-cited draft: payroll & social contributions for Guinea — the art. 63 RTS scale, the ten-day remittance under art. 72.I, and the two employer payroll levies (6% versement forfaitaire, 3% apprenticeship tax) this guide had omitted. CNSS branch rates remain unverified. Pending local-accountant review."
 jurisdiction: GN
+category: payroll
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

@@ -7,9 +7,10 @@ jurisdiction: US-NY
 tax_year: 2025
 tier: 2
 last_updated: 2026-09-28
-category: state
+category: state-tax
 depends_on:
   - us-tax-workflow-base
+  - us-circular-230-disclosure
 validated: April 2026
 ---
 

@@ -3,11 +3,14 @@ name: us-hi-income-tax
 description: "Hawaii Individual Income Tax Return (Form N-11) for sole proprietors and single-member LLCs. Covers the twelve-bracket graduated system (1.4%–11%), Hawaii standard deduction, personal exemptions, modifications to federal AGI, and estimated tax (Form N-1). Trigger: taxpayer is a Hawaii resident or has Hawaii-source income."
 version: 0.2
 jurisdiction: US-HI
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # HI Income Tax

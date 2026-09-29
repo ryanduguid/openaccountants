@@ -2,6 +2,7 @@
 name: bb-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Barbados (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BB
+category: international
 tax_year: 2025
 last_updated: 2026-09-10
 review_status: pending_review

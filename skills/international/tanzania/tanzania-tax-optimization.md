@@ -2,6 +2,7 @@
 name: tanzania-tax-optimization
 description: Tanzania Mainland tax-optimization, statutory reliefs, and incentive regimes administered by TRA and EPZA.
 jurisdiction: TZ
+category: tax-optimization
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: Baraka Cassian

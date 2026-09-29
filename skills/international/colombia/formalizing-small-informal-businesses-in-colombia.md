@@ -2,6 +2,7 @@
 name: formalizing-small-informal-businesses-in-colombia
 description: Formalizing Small Informal Businesses in Colombia
 jurisdiction: CO
+category: international
 tax_year: 2025
 last_updated: 2026-07-25
 review_status: pending_review

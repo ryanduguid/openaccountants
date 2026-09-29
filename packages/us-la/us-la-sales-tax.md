@@ -3,11 +3,14 @@ name: us-la-sales-tax
 description: Use this skill whenever asked about Louisiana sales and use tax. Trigger on phrases like "Louisiana sales tax", "LA sales tax", "R.S. 47:301", "parish sales tax", "Sales Tax Commission". CRITICAL -- among highest combined rates in the US (~11.45%). ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-LA
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # LA Sales Tax

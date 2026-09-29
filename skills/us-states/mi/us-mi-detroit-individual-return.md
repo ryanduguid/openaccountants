@@ -2,12 +2,15 @@
 name: us-mi-detroit-individual-return
 description: Use this skill whenever asked about Detroit (Michigan) city individual income tax for residents, non-residents who work in Detroit, or part-year residents. Trigger on phrases like "Detroit income tax", "City of Detroit return", "Form 5118", "Form 5119", "Form 5120", "Detroit resident tax", "Detroit non-resident allocation", "days worked in Detroit", "Form 5121", "Form 5123 estimated", "Uniform City Income Tax Act", "MCL 141.501".
 jurisdiction: US-MI
+category: state-tax
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # MI Detroit Individual Return

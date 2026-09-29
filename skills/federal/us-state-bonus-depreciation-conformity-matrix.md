@@ -2,12 +2,15 @@
 name: us-state-bonus-depreciation-conformity-matrix
 description: Tier 2 US federal-level reference skill providing the 50-state matrix of conformity to federal §168(k) bonus depreciation and §179 expensing. Covers tax year 2025 including state-by-state add-back requirements (CA never conforms with $25k §179 cap, NY decoupled since 2003, NJ partial, PA decoupled bonus with §179 conformity, etc.), recovery mechanisms for state add-backs (typically over 5 years or via decoupled MACRS lifetime), §163(j) interest limit conformity, NOL post-TCJA conformity, and the OBBBA-era bonus depreciation status with the TCJA phase-down (60% 2024 → 0% 2027 absent extension).
 jurisdiction: US
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-circular-230-disclosure
 ---
 
 # US State Bonus Depreciation Conformity Matrix

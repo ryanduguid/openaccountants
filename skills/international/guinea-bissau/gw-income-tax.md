@@ -2,6 +2,7 @@
 name: gw-income-tax
 description: "Source-cited draft: personal income tax (Imposto Profissional) for Guinea-Bissau (tax year 2025) — rates, thresholds and rules read from the consolidated Código do Imposto Profissional. Unverified; pending local-accountant review."
 jurisdiction: GW
+category: international
 tax_year: 2025
 tax_year_notes: "Rates are those of Artigo 27º as given the wording of Lei nº 1/2021, art. 10º, in the DGCI's consolidated text (updated to 31-01-2021, with the LGT of 2022). Confirm against any later Lei do Orçamento before applying to a year after 2025."
 last_updated: 2026-09-10
