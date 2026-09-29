@@ -315,18 +315,18 @@ Expenses are deductible if caused by the business (betrieblich veranlasst). Germ
 
 | Asset Type | Useful Life | Annual Rate |
 |---|---|---|
-| Computer hardware (incl. peripherals) | 1 year (since 2021 BMF ruling) | 100% |
+| Computer hardware (incl. peripherals: printers, scanners, monitors), one-year option | 1 year (the BMF letter of 26 Feb 2021, updated 22 Feb 2022, permits this life to be assumed) | 100% |
 | Computer software | 1 year | 100% |
 | Office furniture | 13 years | ~7.7% |
 | Motor vehicles | 6 years | ~16.7% |
-| Printers, scanners, monitors (peripherals) | 3 years (AfA-Tabelle AV 6.14.3.2) | ~33.3% |
+| Computers, notebooks and their peripherals (printers, scanners, monitors), where the one-year option is not used | 3 years (AfA-Tabelle AV 6.14.3.2) | ~33.3% |
 | Copiers | 7 years (AfA-Tabelle AV 6.14.10) | ~14.3% |
 | Mobile phones | 5 years | 20% |
 | Buildings (commercial) | 33 or 50 years | 3% or 2% |
 
-Sources: § 7 Abs. 4 EStG (buildings) — https://www.gesetze-im-internet.de/estg/__7.html; BMF, AfA-Tabelle für die allgemein verwendbaren Anlagegüter — https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Steuern/Weitere_Steuerthemen/Betriebspruefung/AfA-Tabellen/Ergaenzende-AfA-Tabellen/AfA-Tabelle_AV.pdf?__blob=publicationFile&v=3 (office furniture 13, cars 6, copiers 7, mobile phones 5, computers and peripherals 3); the one-year life for computer hardware and software is the BMF letter of 26 February 2021 as updated on 22 February 2022.
+Sources: § 7 Abs. 4 EStG (buildings) — https://www.gesetze-im-internet.de/estg/__7.html; BMF, AfA-Tabelle für die allgemein verwendbaren Anlagegüter — https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Steuern/Weitere_Steuerthemen/Betriebspruefung/AfA-Tabellen/Ergaenzende-AfA-Tabellen/AfA-Tabelle_AV.pdf?__blob=publicationFile&v=3 (office furniture 13, cars 6, copiers 7, mobile phones 5, computers and peripherals 3); the one-year life for computer hardware (peripherals included) and software is the alternative that the BMF letter of 26 February 2021, as updated on 22 February 2022, permits.
 
-**Computer hardware and software:** Since BMF ruling of 26.02.2021, digital assets can be written off in full in the year of acquisition regardless of cost.
+**Computer hardware and software:** Since BMF ruling of 26.02.2021, digital assets can be written off in full in the year of acquisition regardless of cost. The one-year life is a permitted assumption, not a mandatory rule: where it is not applied, the AfA table's 3 years apply to computers, notebooks and their peripherals (the two rows above are alternatives, not cumulative).
 
 ### 5.5 Non-Deductible Expenses
 
