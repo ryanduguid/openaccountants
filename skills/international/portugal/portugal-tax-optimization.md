@@ -109,7 +109,8 @@ peça sempre NIF em todas as compras profissionais. A diferença entre €4.587,
 
 | Categoria de Activo | Taxa |
 | --- | --- |
-| Edifícios (comerciais) | 2%–5% |
+| Edifícios comerciais e administrativos | 2% |
+| Edifícios industriais | 5% |
 | Mobiliário de escritório | 12,5% |
 | Equipamento informático | 33,33% |
 | Software | 33,33% |

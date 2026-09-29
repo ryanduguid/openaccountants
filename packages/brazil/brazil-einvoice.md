@@ -212,7 +212,7 @@ Exemplo (estrutura simplificada do grupo CBS/IBS por item):
 | Tipo | Descrição |
 | --- | --- |
 | ICP-Brasil A1 | Certificado em software (arquivo .pfx); validade de 1 ano |
-| ICP-Brasil A3 | Certificado em hardware (smart card/token); validade de 3 anos |
+| ICP-Brasil A3 | Certificado em hardware (smart card/token); validade definida pela Autoridade Certificadora, em geral entre 1 e 5 anos (ITI, perguntas frequentes sobre certificação digital) — planeie a renovação pela data de expiração do próprio certificado |
 | Assinatura | XMLDSig enveloped; SHA-256 recomendado |
 | Certificado no XML | Elemento X509Certificate dentro de `<Signature>` |
 

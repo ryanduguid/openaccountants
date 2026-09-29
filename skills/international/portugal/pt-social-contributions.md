@@ -121,7 +121,7 @@ Legislation: Código Contributivo, art. 163, 168
 
 ### Step 5.3 -- Apply bounds and calculate
 
-- **Apply bounds and calculate contribution** — monthly_base = max(480.43, min(relevant_income, 5,765.16)) monthly_contribution = monthly_base x 21.4%
+- **Apply bounds and calculate contribution** — monthly_base = max(IAS, min(relevant_income, 12 x IAS)): max(522.50, min(relevant_income, 6,270.00)) for 2025 and max(537.13, min(relevant_income, 6,445.56)) for 2026 (IAS by Portaria n.º 6-B/2025/1 and Portaria n.º 480-A/2025/1). monthly_contribution = monthly_base x 21.4%
 
 ### Step 5.4 -- Contributions apply for the next quarter
 

@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Brasil — Carnê-Leão e Estimativa Mensal — Skill v2.1
 
-> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text. Since that review the body moved to the monthly IRRF table in force since May 2025 (Lei nº 15.191/2025) and the 2026 reduction of Lei nº 15.270/2025, where the list carried the January–April 2025 table, so `review_status` is `pending_review` until the revised text is re-reviewed: `tier: 1` and the roster record the June 2026 review, not a sign-off on the current figures.
 
 ## Seção 1 — Referência rápida
 
