@@ -200,20 +200,20 @@ Refusal if minimum missing — SOFT WARN. No bank statement = hard stop. "Input 
 
 ### 3.6 SaaS — international suppliers (reverse charge / imported services)
 
-- **Imported services rule** — An imported service is a service supplied by a non-resident, or by a resident from outside South Africa, to a recipient who is a resident, for use otherwise than in making taxable supplies (VAT Act s 7(1)(c) read with s 14). A fully taxable vendor buying a service for its taxable supplies therefore has nothing to self-assess; a non-vendor or a partly exempt vendor declares the VAT (Form VAT215 for a non-vendor; Field 12 of the VAT201 for a vendor) and a vendor claims the corresponding input in Field 15 only to the extent the service serves taxable supplies. Most large foreign platforms are registered as foreign suppliers of electronic services and charge SA VAT on the invoice, in which case the invoice is an ordinary input: check the invoice before self-assessing.  _(VAT Act s 7(1)(c), s 14; Foreign Suppliers of Electronic Services Regulations (2014, expanded 2019))_
+- **Imported services rule** — An imported service is a service supplied by a non-resident, or by a resident from outside South Africa, to a recipient who is a resident, for use otherwise than in making taxable supplies (VAT Act s 7(1)(c) read with s 14). A fully taxable vendor buying a service for its taxable supplies therefore has nothing to self-assess; a non-vendor or a partly exempt vendor declares the VAT on the portion of the service used otherwise than for taxable supplies (Form VAT215 for a non-vendor; Field 12 of the VAT201 for a vendor), and no input tax is deductible on that portion, so it is a cost; the portion used for taxable supplies is not an imported service at all. Most large foreign platforms are registered as foreign suppliers of electronic services and charge SA VAT on the invoice, in which case the invoice is an ordinary input: check the invoice before self-assessing.  _(VAT Act s 7(1)(c), s 14; Foreign Suppliers of Electronic Services Regulations (2014, expanded 2019))_
 
 **SaaS — international suppliers**  _(VAT Act s 7(1)(c), s 14; Foreign Suppliers of Electronic Services Regulations)_
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| GOOGLE (Workspace, Ads, Cloud) | Standard input where the invoice shows SA VAT | Billed by Google SA or Google Ireland as a registered foreign electronic services supplier; self-assess only where an invoice carries no SA VAT |
+| GOOGLE (Workspace, Ads, Cloud) | Standard input where the invoice shows SA VAT | Billed by Google SA or Google Ireland as a registered foreign electronic services supplier; where an invoice carries no SA VAT, apply the imported-services test above (nothing to declare for a fully taxable vendor) |
 | MICROSOFT (365, Azure) | Standard input | Registered foreign electronic services supplier; bills SA VAT directly |
 | META, FACEBOOK ADS | Standard input | Meta SA (Pty) Ltd or Meta Platforms Ireland bills SA VAT |
 | ZOOM, SLACK | Standard input | Registered for SA VAT; bill SA VAT directly |
-| NOTION, OPENAI, ANTHROPIC | Check the invoice | Some are SA VAT-registered (Notion, OpenAI); a supplier billing from a foreign entity without SA VAT (Anthropic API direct billing at the review date) is an imported service: output in Field 12, input in Field 15 to the extent of taxable use |
+| NOTION, OPENAI, ANTHROPIC | Check the invoice | Some are SA VAT-registered (Notion, OpenAI); a supplier billing from a foreign entity without SA VAT (Anthropic API direct billing at the review date) is an imported service only to the extent the vendor uses it otherwise than for making taxable supplies: nothing to declare for a fully taxable vendor; a partly exempt vendor declares output VAT on the exempt-use portion in Field 12, with no input tax on it |
 | AWS | Standard input | The AWS South Africa region bills SA VAT to SA-resident accounts |
 | XERO (billed from NZ) | Standard input | Xero South Africa now bills SA customers with SA VAT |
-| SAGE (billed from the UK) | Check the invoice | Sage South Africa bills SA VAT; a UK-billed invoice without SA VAT is an imported service |
+| SAGE (billed from the UK) | Check the invoice | Sage South Africa bills SA VAT; a UK-billed invoice without SA VAT is an imported service only for the portion used otherwise than for taxable supplies (nothing to declare for a fully taxable vendor) |
 
 ### 3.7 Local SaaS and professional tools (15%)
 
@@ -300,9 +300,9 @@ Grocery purchase. If itemised receipt shows basic foodstuffs only (brown bread, 
 `08 Apr 2025  DEBIT  GOOGLE IRELAND LIMITED  Google Ads April  -R 10,000.00  R 377,700.00`
 
 **Reasoning:**
-Google Ads billed from Ireland. Note: Google typically bills SA VAT directly now via its local entity; check the invoice. If billed by a non-resident entity, this is an "imported service" under Section 7(1)(c) of the VAT Act. The South African VAT-registered vendor must self-assess 15% VAT. Self-assessed output: R 10,000 × 15% = R 1,500 (add to Field 12 — other output adjustments and imported services). For a fully taxable vendor, simultaneously claim same as input tax R 1,500 (Field 15 — input VAT on other goods/services). Net effect: zero. Must be disclosed in the VAT201.
+Google Ads billed from Ireland. Note: Google typically bills SA VAT directly now via its local entity; check the invoice. If billed by a non-resident entity without SA VAT, apply the imported-services test of s 7(1)(c) and s 14: the service is an imported service only to the extent it is used otherwise than for making taxable supplies. A fully taxable vendor buying the advertising for its taxable supplies has no imported service and declares nothing (the habit of declaring R 1,500 output in Field 12 and R 1,500 input in Field 15 for a net of zero reports a supply the Act does not deem to exist). A partly exempt vendor with, say, 40% exempt use declares output VAT of R 10,000 × 40% × 15% = R 600 in Field 12, with no input tax on it.
 
-**Classification:** Imported service — self-assess output R 1,500 (Field 12); input R 1,500 (Field 15). Net: R 0 for fully taxable vendor.
+**Classification:** No SA VAT on the invoice: nothing to declare for a fully taxable vendor; a partly exempt vendor declares output VAT on the exempt-use share in Field 12 (R 600 at 40% exempt use), no input.
 
 ### Example 6 — Rent: commercial premises versus a dwelling
 
@@ -335,7 +335,7 @@ Monthly rent. South Africa has no "option to tax": a landlord of commercial prem
 
 ### 5.5 Imported services
 
-- **Imported services treatment** — An imported service is one supplied by a person not resident or carrying on business in South Africa, or by a resident from outside South Africa, to a South African-resident recipient, used otherwise than for making taxable supplies. A non-vendor declares and pays the VAT on Form VAT215; a partly exempt vendor declares output VAT in Field 12 and claims input in Field 15 only to the extent of taxable use, so the exempt portion is a cost. A fully taxable vendor using the service for its taxable supplies has no imported service to declare; where it does declare one (for instance a service partly for private use), the output and the taxable-use input net off.  _(VAT Act s 7(1)(c), s 14; SARS Form VAT215)_
+- **Imported services treatment** — An imported service is one supplied by a person not resident or carrying on business in South Africa, or by a resident from outside South Africa, to a South African-resident recipient, used otherwise than for making taxable supplies. A non-vendor declares and pays the VAT on Form VAT215. A partly exempt vendor declares output VAT in Field 12 on the portion used otherwise than for taxable supplies, and no input tax is deductible on that portion, so it is a cost; the portion used for taxable supplies is not an imported service. A fully taxable vendor using the service for its taxable supplies has no imported service to declare; a service partly for private use is declared on the private portion only.  _(VAT Act s 7(1)(c), s 14; SARS Form VAT215)_
 
 ### 5.6 Anti-avoidance — entertainment
 
@@ -364,7 +364,8 @@ Monthly rent. South Africa has no "option to tax": a landlord of commercial prem
 
 | Offence | Penalty |
 | --- | --- |
-| Late return or payment | Percentage-based penalty of 10% of the tax due (TAA s 213); fixed-amount administrative penalties under TAA s 210 (a monthly scale by taxable income, R250 to R16,000 a month) may be imposed as well |
+| Late payment | Percentage-based penalty of 10% of the tax paid late (VAT Act s 39; TAA s 213) |
+| Late return, tax paid on time | No percentage penalty. SARS states that it does not currently impose the fixed-amount administrative non-compliance penalty (TAA ss 210 and 211, a monthly scale by taxable income from R250 to R16,000) for a late VAT return, although the Act allows it; a return filed late with its tax paid late attracts the 10% penalty and interest on the tax |
 | Interest | 10.25% a year from 2 March 2026 on late or underpaid VAT, compounding monthly (TAA s 187); SARS sets the rate by reference to the repo rate, so read the current SARS interest rate table |
 | Understatement | 10%–200% of the shortfall depending on behaviour (TAA ss 222 to 224) |
 | Fraud | Criminal prosecution |
@@ -401,7 +402,7 @@ Monthly rent. South Africa has no "option to tax": a landlord of commercial prem
 
 **What it shows:** Payment for foreign digital services.
 **What's missing:** Whether the vendor has any exempt income that blocks full input tax recovery on imported services.
-**Conservative default:** Self-assess output and input at 15% (net zero for fully taxable).
+**Conservative default:** Where every supply the vendor makes is standard-rated or zero-rated, nothing to declare. Where any exempt income exists, declare output VAT in Field 12 on the exempt-use share of the foreign service, claim no input on it, and flag the apportionment for the reviewer.
 **Question to ask:** "Does the business have any exempt income (residential rent, financial services)? If yes, the imported services input tax recovery may be limited."
 
 ### 6.6 Motor vehicle — is it a "motor car" as defined?
@@ -410,7 +411,7 @@ Monthly rent. South Africa has no "option to tax": a landlord of commercial prem
 
 ### 6.7 Fringe benefits — output VAT on employee benefits (s 18(3))
 
-- **Deemed supplies to employees** — A VAT-registered employer who grants a Seventh Schedule fringe benefit makes a deemed taxable supply under s 18(3) and pays output VAT on the cash equivalent in the tax period in which the benefit accrues (s 9(7), s 10(13)). Common items: the right of use of a company car (3.5% of the determined value a month, 3.25% where a maintenance plan applies), low-interest loans, free or cheap services, assets given below market value, residential accommodation. **Question to ask:** "Do you employ staff and grant any of these benefits?"  _(VAT Act s 18(3), s 9(7), s 10(13); Income Tax Act Seventh Schedule)_
+- **Deemed supplies to employees** — A VAT-registered employer who grants a Seventh Schedule fringe benefit makes a deemed taxable supply under s 18(3) and pays output VAT on the cash equivalent in the tax period in which the benefit accrues (s 9(7), s 10(13)). Common items: the right of use of a company car (3.5% of the determined value a month, 3.25% where a maintenance plan applies), free or cheap services, and assets given below market value, where the underlying supply would be taxable. Excluded by the proviso to s 18(3): a benefit that is an exempt supply (a low-interest loan is an exempt financial service under s 12(a); residential accommodation is exempt under s 12(c)), a zero-rated supply, or a benefit on which the employer's input tax was denied under s 17(2) (entertainment, a blocked motor car). No output VAT arises on those. **Question to ask:** "Do you employ staff and grant any of these benefits?"  _(VAT Act s 18(3), s 9(7), s 10(13); Income Tax Act Seventh Schedule)_
 
 ### 6.8 Change-in-use adjustments (s 18)
 

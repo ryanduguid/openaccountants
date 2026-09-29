@@ -126,7 +126,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | TELKOM / VODACOM / MTN / CELL C / RAIN | Communications | Business portion claimable | Mixed use: apportion |
 | ENGEN / SHELL / CALTEX / SASOL | Fuel | ZERO-RATED (s 11(1)(h)) -- no VAT on fuel | Lubricants, car-wash, shop purchases at fuel stations are 15% |
 | TAKEALOT / MAKRO / GAME | Office supplies | Input VAT claimable | Business purchases |
-| GOOGLE ADS / META / LINKEDIN | Advertising | Input VAT claimable where the invoice carries SA VAT | Google, Meta and LinkedIn bill through a South African entity or as registered foreign electronic services suppliers, so the invoice normally shows 15% VAT and is a standard input. Where the invoice comes from a foreign entity without SA VAT, it is an imported service under s 7(1)(c) and s 14: declare the output VAT in Field 12 and, if the service is for making taxable supplies, the input in Field 15 |
+| GOOGLE ADS / META / LINKEDIN | Advertising | Input VAT claimable where the invoice carries SA VAT | Google, Meta and LinkedIn bill through a South African entity or as registered foreign electronic services suppliers, so the invoice normally shows 15% VAT and is a standard input. Where the invoice comes from a foreign entity without SA VAT, it is an imported service under s 7(1)(c) and s 14 only to the extent the vendor uses it otherwise than for making taxable supplies: a fully taxable vendor declares nothing; a partly exempt vendor declares output VAT on the exempt-use portion in Field 12, with no input tax on that portion |
 | SANTAM / HOLLARD / OUTSURANCE / DISCOVERY INSURE (premiums) | Insurance | Input VAT claimable | Short-term premiums (asset, business interruption, public liability, fleet) are standard-rated and the insurer issues a tax invoice; a claim payout is a deemed supply with output VAT under s 8(8). Life and income-protection premiums are exempt financial services with no input |
 | UBER SA / BOLT SA / TAXI | Travel | EXEMPT (s 12(g)) -- fare is exempt; no input VAT claimable | Only the small booking fee (if separately shown) may carry input VAT |
 | SARS INCOME TAX / SARS PAYE | EXCLUDE | Tax payment | Not deductible |
@@ -211,9 +211,9 @@ Bad debt relief under s 22(1): debt outstanding over 12 months and written off. 
 **Input:** Google Ads spend R50,000 for the period. Google now bills via SA-registered entity with SA VAT number and issues VAT tax invoices.
 
 **Reasoning:**
-Where Google bills via a South African entity registered for VAT and issues a valid tax invoice showing 15% VAT, the vendor claims input tax directly. VAT amount: R50,000 x 15/115 = R6,521.74. Reported in Field 15 (input VAT on other goods/services). If billed by a non-resident entity without SA VAT registration, the vendor must self-account for output VAT under s 7(1)(c) in Field 12 (imported services) and claim corresponding input in Field 15 if the service is for making taxable supplies.
+Where Google bills via a South African entity registered for VAT and issues a valid tax invoice showing 15% VAT, the vendor claims input tax directly. VAT amount: R50,000 x 15/115 = R6,521.74. Reported in Field 15 (input VAT on other goods/services). If billed by a non-resident entity without SA VAT, the imported-services test of s 7(1)(c) and s 14 applies: a fully taxable vendor using the advertising for its taxable supplies has nothing to declare; a partly exempt vendor declares output VAT in Field 12 on the exempt-use share (at 40% exempt use, R50,000 x 40% x 15% = R3,000), with no input tax on it.
 
-**Classification:** Input tax R6,521.74 (Field 15) where billed by SA entity. If imported service: output in Field 12, input in Field 15.
+**Classification:** Input tax R6,521.74 (Field 15) where billed by SA entity. Foreign-billed without SA VAT: nothing for a fully taxable vendor; output VAT on the exempt-use share in Field 12 for a partly exempt vendor, no input.
 
 ### 5.1 VAT201 Return Fields
 
@@ -281,7 +281,8 @@ There is no quarterly category.
 
 | Offence | Penalty |
 | --- | --- |
-| Late filing or payment | Percentage-based penalty of 10% of the tax due (TAA s 213); fixed-amount administrative penalties under TAA s 210, on a monthly scale set by taxable income, may be imposed as well |
+| Late payment | Percentage-based penalty of 10% of the tax paid late (VAT Act s 39; TAA s 213) |
+| Late return, tax paid on time | No percentage penalty. SARS states that it does not currently impose the fixed-amount administrative non-compliance penalty (TAA ss 210 and 211, a monthly scale set by taxable income) for a late VAT return, although the Act allows it; a return filed late with its tax paid late attracts the 10% penalty and interest on the tax |
 | Interest | 10.25% a year from 2 March 2026 on late or underpaid VAT, compounding monthly (TAA s 187). SARS sets the rate by reference to the repo rate, so read the current SARS interest rate table rather than relying on this figure |
 | Understatement | 10% to 200% of the shortfall depending on behaviour (TAA ss 222 to 224) |
 
@@ -291,7 +292,7 @@ There is no quarterly category.
 
 ### 6.2 Imported Services (Reverse Charge, s 7(1)(c))
 
-- **Imported Services** — An imported service is a service supplied by a non-resident, or by a resident from outside South Africa, to a resident recipient for use otherwise than in making taxable supplies. A fully taxable vendor who buys a service for its taxable supplies has no imported service to declare; a non-vendor or a partly exempt vendor declares the VAT on Form VAT215 (a non-vendor) or in Field 12 of the VAT201, and a vendor claims the corresponding input in Field 15 to the extent the service serves taxable supplies. Where the foreign supplier is a registered foreign electronic services supplier and charges SA VAT, the invoice is an ordinary input.  _(VAT Act s 7(1)(c), s 14; Foreign Suppliers of Electronic Services Regulations)_
+- **Imported Services** — An imported service is a service supplied by a non-resident, or by a resident from outside South Africa, to a resident recipient for use otherwise than in making taxable supplies. A fully taxable vendor who buys a service for its taxable supplies has no imported service to declare; a non-vendor or a partly exempt vendor declares the VAT on the portion used otherwise than for taxable supplies, on Form VAT215 (a non-vendor) or in Field 12 of the VAT201 (a vendor), and no input tax is deductible on that portion; the portion used for taxable supplies is not an imported service. Where the foreign supplier is a registered foreign electronic services supplier and charges SA VAT, the invoice is an ordinary input.  _(VAT Act s 7(1)(c), s 14; Foreign Suppliers of Electronic Services Regulations)_
 
 ### 6.3 Second-Hand Goods Input Tax (s 16(3)(a)(ii))
 
@@ -311,7 +312,7 @@ There is no quarterly category.
 
 ### 6.7 Fringe benefits -- output VAT on employee benefits (s 18(3))
 
-- **Deemed supplies to employees** — A VAT-registered employer who grants a Seventh Schedule fringe benefit makes a deemed taxable supply under s 18(3) and pays output VAT on the cash equivalent in the tax period in which the benefit accrues (s 9(7), s 10(13)). Common items: the right of use of a company car (3.5% of the determined value a month, 3.25% where a maintenance plan applies, on which the VAT is computed by the tax fraction), low-interest loans, free or cheap services, assets given below market value, and residential accommodation. Question: "Do you employ staff and grant any of these benefits?"  _(VAT Act s 18(3), s 9(7), s 10(13); Income Tax Act Seventh Schedule)_
+- **Deemed supplies to employees** — A VAT-registered employer who grants a Seventh Schedule fringe benefit makes a deemed taxable supply under s 18(3) and pays output VAT on the cash equivalent in the tax period in which the benefit accrues (s 9(7), s 10(13)). Common items: the right of use of a company car (3.5% of the determined value a month, 3.25% where a maintenance plan applies, on which the VAT is computed by the tax fraction), free or cheap services, and assets given below market value, where the underlying supply would be taxable. Excluded by the proviso to s 18(3): a benefit that is an exempt supply (a low-interest loan is an exempt financial service under s 12(a); residential accommodation is exempt under s 12(c)), a zero-rated supply, or a benefit on which the employer's input tax was denied under s 17(2) (entertainment, a blocked motor car). No output VAT arises on those. Question: "Do you employ staff and grant any of these benefits?"  _(VAT Act s 18(3), s 9(7), s 10(13); Income Tax Act Seventh Schedule)_
 
 ### 6.8 Tax invoice compliance (s 20)
 
