@@ -3,7 +3,7 @@ name: gy-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Guyana (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,10 +13,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporation tax rates and base
 
-- **Commercial company rate** — 40% of chargeable profits (or 2% minimum corporation tax on turnover, whichever is higher) percent  _(Corporation Tax Act (Cap 81:03) — https://taxsummaries.pwc.com/guyana/corporate/taxes-on-corporate-income)_
-- **Non-commercial company rate** — 25% of chargeable profits percent  _(Corporation Tax Act (Cap 81:03) — https://taxsummaries.pwc.com/guyana/corporate/taxes-on-corporate-income)_
-- **Minimum corporation tax (MCT)** — 2% of turnover for commercial companies, payable where it exceeds the tax computed on chargeable profits percent  _(Corporation Tax Act (Cap 81:03) — https://taxsummaries.pwc.com/guyana/corporate/taxes-on-corporate-income)_
-- **Telephone company rate** — 45% of chargeable profits percent ((approx — confirm))  _(Corporation Tax Act (Cap 81:03) — https://taxsummaries.pwc.com/guyana/corporate/taxes-on-corporate-income)_
+- **Commercial company rate** — 40% of chargeable profits, or the 2% minimum corporation tax on turnover where that is higher  _(Corporation Tax Act (Cap 81:03); GRA, Rates & Calculations — https://gra.gov.gy/quick-links-2/rates-calculations/)_
+- **Non-commercial company rate** — 25% of chargeable profits; a company with both kinds of activity pays 25% on the non-commercial activity and 40% on the commercial activity  _(Corporation Tax Act (Cap 81:03); GRA, Rates & Calculations — https://gra.gov.gy/quick-links-2/rates-calculations/)_
+- **Minimum corporation tax (MCT)** — 2% of turnover for commercial companies, charged where the corporation tax on chargeable profits is less than 2% of the year's turnover  _(Corporation Tax Act (Cap 81:03); GRA, Rates & Calculations — https://gra.gov.gy/quick-links-2/rates-calculations/)_
+- **Telephone company rate** — 45% of chargeable profits  _(Corporation Tax Act (Cap 81:03); GRA, Rates & Calculations — https://gra.gov.gy/quick-links-2/rates-calculations/)_
+- **Exempt institutions** — Private corporate educational institutions and private corporate medical healthcare institutions are exempt from corporation tax from 1 January 2020  _(GRA, Rates & Calculations — https://gra.gov.gy/quick-links-2/rates-calculations/)_
 - **Tax base** — Chargeable profits = accounting profit adjusted for tax (non-deductibles added back, capital allowances and exempt income removed)  _(Corporation Tax Act (Cap 81:03) — https://taxsummaries.pwc.com/guyana/corporate/income-determination)_
 - **Capital gains** — 20% capital gains tax on net chargeable gains; gains on assets held under 12 months taxed as ordinary income at corporate rates percent  _(Capital Gains Tax Act (Cap 81:20) — https://taxsummaries.pwc.com/guyana/corporate/other-taxes)_
 - **WHT on dividends to non-residents** — 20% (subject to reduction under a double taxation treaty) percent  _(Income Tax Act (Cap 81:01) — withholding provisions — https://taxsummaries.pwc.com/guyana/corporate/withholding-taxes)_

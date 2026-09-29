@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T06:11:17+00:00",
+ "generated_at": "2026-09-29T06:11:33+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -9442,7 +9442,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "gy-income-tax",
@@ -12302,7 +12302,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "lr-income-tax",
@@ -12315,7 +12315,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "lr-payroll-social",
@@ -12328,7 +12328,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "lr-tax-overview",
@@ -13095,7 +13095,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ml-income-tax",
@@ -13108,7 +13108,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ml-payroll-social",
@@ -13121,7 +13121,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ml-tax-overview",
@@ -16865,7 +16865,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "sm-income-tax",
@@ -16878,7 +16878,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "sm-payroll-social",

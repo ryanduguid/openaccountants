@@ -3,7 +3,7 @@ name: lr-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Liberia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: LR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,10 +13,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporate income tax rates
 
-- **Standard corporate income tax rate** — 25% percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/taxes-on-corporate-income))_
-- **Mining and petroleum (extractive) sector rate** — 30% percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/taxes-on-corporate-income))_
-- **Specialised sectors** — Specialised sectors are assessed at rates ranging from 15% to 30% percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/taxes-on-corporate-income))_
-- **Minimum / advance turnover tax** — 2% of gross income, creditable against the annual income tax liability (acts as a minimum tax) percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/tax-administration))_
+- **Standard corporate income tax rate** — 25% of taxable income  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
+- **Mining and petroleum (extractive) sector rate** — 30%  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
+- **Specialised sectors** — Rice production 15%; other specialised sectors are assessed at rates between 15% and 30%  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/; PwC Worldwide Tax Summaries for the range)_
+- **Minimum / advance turnover tax** — Quarterly advance tax on turnover, creditable against the annual income tax and acting as a minimum tax: 2% for the medium and large tax divisions (annual turnover above L$3,000,000) and 4% for the small tax division (turnover of L$3,000,000 or less)  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
 
 The standard corporate income tax rate is 25%, with higher rates for extractive sectors. A turnover-based minimum/advance tax also applies.
 
@@ -30,10 +30,10 @@ Resident companies are taxed on worldwide income; non-resident companies on Libe
 
 ## Withholding taxes
 
-- **Dividends WHT** — 15% (residents and non-residents) percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/withholding-taxes))_
-- **Interest WHT** — 15% (residents and non-residents) percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/withholding-taxes))_
+- **Dividends WHT** — 15%  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
+- **Interest WHT** — 15%  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
 - **Royalties WHT** — 15% (residents and non-residents) percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/withholding-taxes))_
-- **Services WHT (resident)** — 10% percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/withholding-taxes))_
+- **Services WHT (resident)** — 6% on payments for services and 10% on contracts on services, withheld monthly; rent 10% (15% to a non-resident); gambling winnings 20%  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
 - **Services WHT (non-resident)** — 20% percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/withholding-taxes))_
 
 Liberia imposes withholding tax on dividends, interest, royalties and service payments; rates differ for residents and non-residents and may be reduced by treaty.
@@ -41,7 +41,7 @@ Liberia imposes withholding tax on dividends, interest, royalties and service pa
 ## Filing and payment
 
 - **Annual return / final payment deadline** — Last day of the third month after the end of the tax year (31 March for calendar-year taxpayers)  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/tax-administration))_
-- **Quarterly advance tax** — Advance tax (2% of gross income) due quarterly, on the 15th day after the end of each quarter ((approx — confirm exact date))  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/tax-administration))_
+- **Quarterly advance tax** — The turnover advance tax above is paid quarterly  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/; the exact due day is not stated on the LRA page — confirm)_
 
 Companies file an annual income tax return and make quarterly advance payments under the Revenue Code.
 
