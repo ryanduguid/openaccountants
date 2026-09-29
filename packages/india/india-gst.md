@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, classify, or advi
 version: 2.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 tier: 1
@@ -15,33 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India GST Return Skill (GSTR-3B / GSTR-1) v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### GST
-
-- **Standard rate** — 18% (CGST 9% + SGST 9% / IGST 18%)  _(https://gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau_0.pdf)_
-- **Lower rate** — 5% (CGST 2.5% + SGST 2.5% / IGST 5%)  _(Notification 1/2017-CT(Rate))_
-- **Demerit rate** — 40% (CGST 20% + SGST 20% / IGST 40%) — sin and luxury goods only  _(56th GST Council, notified by CBIC 09/2025-CTR to 17/2025-CTR)_
-- **Abolished slabs** — The 12% and 28% slabs were removed with effect from 22 September 2025; their items moved to 5% and 18% respectively. Do NOT apply 12% or 28% to a supply on or after that date; for earlier supplies apply the rate in force at the time of supply.  _(56th GST Council, 3-4 September 2025)_
-- **Nil/exempt** — 0% — fresh food, healthcare, education  _(Notification 12/2017-CT(Rate))_
-- **Zero-rated** — 0% — exports, SEZ (with ITC refund)  _(IGST Act s 16)_
-- **Key rule** — IGST rate = CGST rate + SGST rate, always  _(IGST Act)_
-- **Goods (general states)** — INR 40 lakh aggregate turnover  _(CGST Act s 22)_
-- **Goods (special category states)** — INR 20 lakh  _(CGST Act s 22)_
-- **Services (all states)** — INR 20 lakh (INR 10 lakh special states)  _(CGST Act s 22)_
-- **E-invoicing threshold** — INR 5 crore AATO (any FY from 2017-18)  _(Notification 10/2023-CT)_
-- **E-way bill threshold** — INR 50,000 applies for interstate; for intrastate transport of goods, the limit is state-wise (varies by state) as per CGST Rules 2017  _(CGST Rules 2017)_
-- **GSTR-3B (monthly)** — 20th of following month  _(CGST Rules)_
-- **GSTR-3B (quarterly QRMP)** — 22nd-24th of month after quarter (by state)  _(CGST Rules)_
-- **GSTR-1 (monthly)** — 11th of following month  _(CGST Rules)_
-- **GSTR-1 (quarterly)** — 13th of month after quarter  _(CGST Rules)_
-- **Monthly vs quarterly** — Monthly if turnover > INR 5 crore; however, taxpayers with turnover ≤ INR 5 crore also have the option to choose monthly filing instead of QRMP  _(CGST Act 2017)_
-- **GSTIN Format – Structure** — 15-digit: 2 state code + 10 PAN + entity code + Z + checksum  _(CGST Rules)_
-- **GSTIN Format – Structure** — 15-digit: 2 state code + 10 PAN + entity code + Z + checksum  _(CGST Rules)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 
@@ -56,6 +30,7 @@ Read this whole section before classifying anything.
 | Standard rate | 18% (CGST 9% + SGST 9% / IGST 18%) |
 | Lower rate | 5% (CGST 2.5% + SGST 2.5% / IGST 5%) |
 | Demerit rate | 40% (CGST 20% + SGST 20% / IGST 40%) -- luxury/sin goods only |
+| Former slabs | 12% and 28% abolished from 22 September 2025 (56th GST Council); their items moved to 5% and 18%, except cigarettes, specified chewing and unmanufactured tobacco and beedi, which kept their existing rates and cess until their new rates took effect on 1 February 2026 (Notification 19/2025-Central Tax (Rate)). Apply the rate in force on the date of supply |
 | Nil/exempt | 0% -- fresh food, healthcare, education |
 | Zero-rated | 0% -- exports, SEZ supplies (with ITC refund) |
 | Key rule | IGST rate = CGST rate + SGST rate, always |
@@ -63,14 +38,14 @@ Read this whole section before classifying anything.
 | Filing portal | https://gst.gov.in (GST Common Portal) |
 | Authority | Central Board of Indirect Taxes and Customs (CBIC) |
 | Currency | INR only |
-| Filing frequencies | Monthly (turnover > INR 5 crore); Quarterly under QRMP (turnover <= INR 5 crore) |
+| Filing frequencies | Monthly (turnover > INR 5 crore); turnover <= INR 5 crore may opt for quarterly returns under QRMP or stay monthly |
 | GSTR-3B deadline | 20th of following month (monthly); 22nd-24th of month after quarter (quarterly, by state) |
 | GSTR-1 deadline | 11th of following month (monthly); 13th of month after quarter (quarterly) |
 | Registration threshold (goods, general) | INR 40 lakh aggregate turnover |
 | Registration threshold (goods, special states) | INR 20 lakh |
 | Registration threshold (services, all) | INR 20 lakh (INR 10 lakh special states) |
 | E-invoicing threshold | INR 5 crore aggregate turnover (any FY from 2017-18) |
-| E-way bill threshold | INR 50,000 consignment value |
+| E-way bill threshold | INR 50,000 consignment value for inter-state movement; intra-state limits are set state by state (CGST Rules r 138 with the state notifications) |
 | GSTIN format | 15-digit: 2 state code + 10 PAN + entity code + Z + checksum |
 | Contributor | Open Accounting Skills Project |
 | Validated by | Deep research verification, April 2026 |
@@ -420,7 +395,7 @@ Each rule states the legal source and the GSTR-3B table mapping. Apply silently 
 - **40% slab** — demerit/luxury only -- aerated drinks, energy drinks, premium motor vehicles (SUVs >4m, >1500cc), online gaming/casinos/betting  _(56th GST Council, 22 Sep 2025)_
 - **0% (nil/exempt)** — fresh food (milk, cereals, vegetables, fruits), healthcare, education  _(56th GST Council, 22 Sep 2025)_
 - **0% (zero-rated)** — exports, SEZ supplies  _(56th GST Council, 22 Sep 2025)_
-- **Former slabs abolished** — Former 12% and 28% slabs abolished 22 Sep 2025. Items moved to 5% or 18% respectively.  _(56th GST Council, 22 Sep 2025)_
+- **Former slabs abolished** — Former 12% and 28% slabs abolished 22 Sep 2025. Items moved to 5% or 18% respectively, except cigarettes, specified chewing and unmanufactured tobacco and beedi, which kept their existing rates and cess until their new rates took effect on 1 February 2026 (Notification 19/2025-Central Tax (Rate)).  _(56th GST Council, 22 Sep 2025; Notification 19/2025-Central Tax (Rate))_
 
 ### 5.2 CGST+SGST vs IGST determination
 

@@ -4,7 +4,7 @@ description: Use this skill when preparing, reviewing, or advising on annual fin
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -18,32 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India Financial Statements Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Mayur Deokar on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### Financial Statements
-
-- **Listed companies** — Ind AS mandatory  _(MCA notification)_
-- **Unlisted — net worth ≥ ₹250 crore** — Ind AS mandatory  _(MCA notification)_
-- **Unlisted — below ₹250 crore** — AS (Indian GAAP) unless voluntary  _(MCA notification)_
-- **Form** — AOC-4 / AOC-4 XBRL / AOC-4 CFS  _(Companies Act s 137)_
-- **AGM deadline** — 6 months from FY-end  _(Companies Act s 96)_
-- **Listed companies — Ind AS Applicability** — Ind AS mandatory  _(MCA notification)_
-- **Unlisted — net worth ≥ ₹250 crore — Ind AS Applicability** — Ind AS mandatory  _(MCA notification)_
-- **Unlisted — below ₹250 crore — Ind AS Applicability** — AS (Indian GAAP) unless voluntary  _(MCA notification)_
-- **Form (Filing)** — AOC-4 / AOC-4 XBRL / AOC-4 CFS  _(Companies Act s 137)_
-- **AGM deadline (repeat)** — 6 months from FY-end  _(Companies Act s 96)_
-- **AOC-4 deadline** — 30 days from AGM  _(Companies Act s 137)_
-- **XBRL mandatory if** — Capital ≥ ₹5 crore OR turnover ≥ ₹100 crore; all listed; all companies implementing IND AS  _(MCA Rules)_
-- **Late fee** — ₹100/day of delay  _(Companies Act s 403)_
-- **Statutory audit** — ALL companies — mandatory (no size exemption)  _(Companies Act s 139)_
-- **CARO 2020 — small company** — Exempt  _(CARO 2020)_
-- **Auditor rotation — individual** — 1 term of 5 years (listed)  _(Companies Act s 139(2))_
-- **Auditor rotation — firm** — 2 terms of 5 years = 10 years (listed)  _(Companies Act s 139(2))_
-- **Internal audit** — Mandatory for every listed company. For unlisted public company: turnover ≥ ₹200 crore or loans > ₹100 crore or paid-up share capital ≥ ₹50 crore or deposits ≥ ₹25 crore. For unlisted private company: required if turnover ≥ ₹200 crore or loans ≥ ₹100 crore.  _(Companies Act s 138)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -98,7 +73,7 @@ This block is generated from verified skill_facts — edit the facts, not the pr
 | Paid-up share capital | ≤ INR 10 crore (INR 100,000,000) |
 | Turnover (per last P&L) | ≤ INR 100 crore (INR 1,000,000,000) |
 
-- **Small Company qualification conditions** — Both conditions must be met. Excludes: public companies, Section 8 companies, and companies governed by special Acts.  _(Section 2(85))_
+- **Small Company qualification conditions** — Both conditions must be met. Excluded whatever their size: public companies, holding companies and subsidiary companies, Section 8 companies, and companies or bodies corporate governed by special Acts.  _(Section 2(85) and its proviso)_
 
 ### One Person Company (OPC) — Section 2(62)
 
@@ -284,7 +259,7 @@ Note: Ind AS companies use Division II format which presents equity separately a
 | AGM deadline | Within 6 months from financial year-end (i.e., by 30 September for March year-end) |
 | Filing deadline (AOC-4) | Within 30 days from date of AGM |
 | Latest possible date | Approximately 31 October (for March year-end companies) |
-| XBRL filing mandatory for | Companies with capital ≥ INR 5 crore OR turnover ≥ INR 150 crore; all listed companies |
+| XBRL filing mandatory for | All listed companies and their Indian subsidiaries; companies with paid-up capital ≥ INR 5 crore or turnover ≥ INR 100 crore; all companies preparing Ind AS financial statements (Companies (Filing of Documents and Forms in XBRL) Rules, 2015, rule 3; an earlier version of this guide said INR 150 crore) |
 | Filing fee | INR 200–600 depending on authorised capital |
 | Additional fee (late filing) | INR 100 per day of delay (no maximum cap) |
 | Digital signature | DSC of director + practicing professional (CA/CS/CMA) |

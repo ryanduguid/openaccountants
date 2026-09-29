@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Indian payroll processing, empl
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -18,34 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India Payroll Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Payroll
-
-- **Rate** — 3.25% of gross  _(ESI Act)_
-- **Wage ceiling** — ₹21,000/month  _(ESI Act)_
-- **New Tax Regime s 115BAC — 0 – ₹4,00,000** — 0%  _(Finance Act 2025; s 115BAC)_
-- **New Tax Regime s 115BAC — ₹4,00,001 – ₹8,00,000** — 5%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — ₹8,00,001 – ₹12,00,000** — 10%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — ₹12,00,001 – ₹16,00,000** — 15%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — ₹16,00,001 – ₹20,00,000** — 20%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — ₹20,00,001 – ₹24,00,000** — 25%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — Above ₹24,00,000** — 30%  _(s 115BAC)_
-- **EPF** — 3.67% of Basic+DA  _(EPF Act)_
-- **EPS** — 8.33% (capped ₹15,000)  _(EPF Act)_
-- **EDLI** — 0.50% (capped ₹15,000)  _(EPF Act)_
-- **PF Admin** — 0.50%  _(EPFO)_
-- **Total employer PF** — ~13%  _(EPF Act)_
-- **Employer ESI Rate** — 3.25% of gross  _(ESI Act)_
-- **Employer ESI Wage ceiling** — ₹21,000/month  _(ESI Act)_
-- **TDS deposit** — 7th of following month (30th April for March)  _(ITA)_
-- **PF/ESI deposit** — 15th of following month  _(EPF/ESI Acts)_
-- **Form 24Q (TDS return)** — Last day of the month following the end of the quarter  _(ITA)_
-- **Form 16 (annual certificate)** — By 15 June  _(ITA)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -361,7 +334,7 @@ Indian employers MUST issue monthly payslips under the Code on Wages 2019 and va
 | --- | --- |
 | Late TDS deposit | 1%/month (from due date to deposit) + 1.5%/month (from deduction to deposit if not deducted on time) |
 | Late TDS return | INR 200/day until filed (max = TDS amount); plus INR 10,000-1,00,000 under Section 271H |
-| Late PF deposit | 12% p.a. interest + damages up to 25% of arrears |
+| Late PF deposit | 12% p.a. interest (EPF Act s 7Q) + damages of 1% per month or part of a month of the arrears, whatever the length of delay, from 14 June 2024 (s 14B; EPF Scheme para 32A as amended by the EPF (Amendment) Scheme 2024, in force from its Gazette publication on 14 June 2024; 5% to 25% p.a. by delay period before that) |
 | Late ESI | 12% p.a. interest + damages up to 25% |
 | Non-issuance of Form 16/130 | Penalty under Section 272A: INR 500/day |
 

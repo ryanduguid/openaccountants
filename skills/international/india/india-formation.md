@@ -4,7 +4,7 @@ description: Use this skill whenever asked about forming, incorporating, or regi
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -18,33 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India Company Formation Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Company Formation
-
-- **Paid-up capital** — ≤ ₹10 crore  _(Companies Act s 2(85))_
-- **Turnover** — ≤ ₹100 crore  _(Companies Act s 2(85))_
-- **Exemptions** — No cash flow statement, no CARO, no auditor rotation  _(Companies Act)_
-- **Pvt Ltd — min directors** — 2 directors + 2 shareholders  _(Companies Act 2013)_
-- **Pvt Ltd — min capital** — ₹1 lakh authorised (no statutory paid-up min)  _(Companies Act 2013)_
-- **OPC — founders** — 1 + 1 nominee  _(Companies Act s 2(62))_
-- **LLP — min partners** — 2 designated partners  _(LLP Act 2008)_
-- **Public Ltd — paid-up** — No minimum paid-up capital requirement  _(Companies Amendment Act 2015)_
-- **Resident director** — At least 1 director resident 182+ days in India  _(Companies Act s 149(3))_
-- **Domestic company (new regime)** — 22% + surcharge + cess = ~25.17% effective  _(ITA s 115BAA)_
-- **New manufacturing (set up after Oct 2019)** — 15% + surcharge + cess = ~17.16%  _(ITA s 115BAB)_
-- **AGM deadline** — 6 months from FY-end (30 September)  _(Companies Act s 96)_
-- **AOC-4 (financial statements)** — 30 days from AGM  _(Companies Act s 137)_
-- **MGT-7A (annual return)** — 60 days from AGM  _(Companies Act s 92)_
-- **DIR-3 KYC** — 30 September annually  _(MCA rules)_
-- **Late filing penalty** — ₹100/day of delay (no cap)  _(Companies Act s 403)_
-- **Small Company (s 2(85)) — Paid-up capital** — ≤ ₹10 crore  _(Companies Act s 2(85))_
-- **Small Company (s 2(85)) — Turnover** — ≤ ₹100 crore  _(Companies Act s 2(85))_
-- **Small Company (s 2(85)) — Exemptions** — No cash flow statement, no CARO, no auditor rotation  _(Companies Act)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -57,7 +31,8 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Company registrar | Ministry of Corporate Affairs (MCA) / Registrar of Companies (ROC) -- mca.gov.in |
 | Key legislation | Companies Act, 2013; LLP Act, 2008 |
 | Typical formation time | 7--15 working days (SPICe+ online) |
-| Corporate tax rate | 22% + surcharge + cess (~25.17% effective, new regime); 15% for new manufacturing companies |
+| Corporate tax rate | 22% + surcharge + cess (~25.17% effective, s 115BAA); 15% + surcharge + cess (~17.16% effective, s 115BAB) for new manufacturing companies set up on or after 1 October 2019 |
+| Small company (Companies Act s 2(85)) | A private company with paid-up capital ≤ ₹10 crore and turnover ≤ ₹100 crore (thresholds effective 1 December 2025; ₹4 crore and ₹40 crore applied from 15 September 2022 until then). Never a small company, whatever its size: a public company, a holding or subsidiary company, a section 8 company, or a company governed by a special Act (s 2(85) and its proviso). Reliefs: no cash flow statement, CARO 2020 and auditor rotation do not apply, abridged annual return MGT-7A |
 | Skill version | 1.0 |
 
 ## Section 2 -- Entity Types Comparison
@@ -168,6 +143,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | --- | --- | --- |
 | Annual return (MGT-7A) | Within 60 days of AGM | ROC (MCA) |
 | Financial statements (AOC-4) | Within 30 days of AGM | ROC (MCA) |
+| Late filing of AOC-4 or MGT-7A | Additional fee of ₹100 per day of delay, no cap (Companies Act s 403) | ROC (MCA) |
 | AGM (Annual General Meeting) | Within 6 months of financial year-end (first AGM within 9 months of incorporation) | Internal |
 | Board meetings | Minimum 4 per year (gap ≤ 120 days) | Internal |
 | Income tax return | 31 October (if audit required) / 31 July (otherwise) | Income Tax Department |

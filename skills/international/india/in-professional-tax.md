@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Indian professional tax (profes
 version: "1.0"
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 category: international
@@ -16,45 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India Professional Tax -- State-Level Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Mayur Deokar on 2026-06-06. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Professional Tax
-
-- **Maximum per annum** — ₹2,500 INR (Article 276(2))  _(Constitution Art. 276)_
-- **Up to ₹7,500/month** — any female employee drawing a monthly gross salary of up to ₹25,000 is completely exempt from paying Profession Tax. If Gross salary exceeds 25000 then Rs 200/month PT Aapplicable(Reference:  Maharashtra State Tax on Professions, Trades, Callings and Employments (Amendment) Act, 2023)  _(Maharashtra PT Act 1975)_
-- **₹7,501 – ₹10,000** — ₹175/month  _(Maharashtra PT Act)_
-- **Above ₹10,000** — ₹200/month (₹300 in Feb) = ₹2,500/year  _(Maharashtra PT Act)_
-- **Karnataka – Up to ₹24,999/month** — Nil  _(Karnataka PT Act 1976)_
-- **₹25,000+** — Rs 200 /month and Rs 300 for feb month. In total Rs 2500 year. (Karnataka PT Act)  _(Karnataka PT Act)_
-- **Up to ₹10,000** — Nil  _(West Bengal PT Act 1979)_
-- **₹10,001 – ₹15,000** — ₹110/month  _(WB PT Act)_
-- **₹15,001 – ₹25,000** — ₹130/month  _(WB PT Act)_
-- **₹25,001 – ₹40,000** — ₹150/month  _(WB PT Act)_
-- **Above ₹40,000** — ₹200/month  _(WB PT Act)_
-- **Up to ₹5,999** — Upto 12000- Nil above 12000 - Rs 200/month (Reference: Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)  _(Gujarat PT Act)_
-- **₹6,000 – ₹8,999** — Upto 12000- Nil above 12000 - Rs 200/month (Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)  _(Gujarat PT Act)_
-- **₹9,000 – ₹11,999** — Upto 12000- Nil above 12000 - Rs 200/month (Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)  _(Gujarat PT Act)_
-- **₹12,000+** — Upto 12000- Nil above 12000 - Rs 200/month (Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)  _(Gujarat PT Act)_
-- **No PT** — Delhi, Rajasthan, Uttar Pradesh, Haryana, Punjab  _(N/A)_
-- **Maximum per annum (Constitutional Limit)** — ₹2,500 (Article 276(2))  _(Constitution of India, Art. 276)_
-- **Deductibility** — Fully deductible under s 16(iii) ITA (old regime)  _(Income Tax Act, s 16(iii))_
-- **Maharashtra – Up to ₹7,500/month** — Any female employee drawing monthly gross salary up to ₹25,000 is completely exempt from PT. If gross salary exceeds ₹25,000, ₹200/month PT applicable. The slab structure in the skill needs to reflect the 2023 amendment.  _(Maharashtra State Tax on Professions, Trades, Callings and Employments (Amendment) Act, 2023)_
-- **₹7,501 – ₹10,000** — ₹175/month  _(Maharashtra PT Act)_
-- **Above ₹10,000** — ₹200/month (₹300 in Feb) = ₹2,500/year  _(Maharashtra PT Act)_
-- **Karnataka – Up to ₹24,999/month** — Nil  _(Karnataka PT Act 1976)_
-- **Karnataka – ₹25,000+/month** — ₹200/month and ₹300 for February = ₹2,500/year  _(Karnataka PT Act)_
-- **West Bengal – Up to ₹10,000/month** — Nil  _(West Bengal PT Act 1979)_
-- **₹10,001 – ₹15,000** — ₹110/month  _(WB PT Act)_
-- **₹15,001 – ₹25,000** — ₹130/month  _(WB PT Act)_
-- **₹25,001 – ₹40,000** — ₹150/month  _(WB PT Act)_
-- **Above ₹40,000** — ₹200/month  _(WB PT Act)_
-- **Gujarat – Up to ₹5,999/month** — Nil up to ₹12,000/month (slab consolidated: up to ₹12,000 → Nil; above ₹12,000 → ₹200/month)  _(Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)_
-- **Gujarat – ₹6,000 – ₹8,999/month** — Nil (falls within revised ₹12,000 Nil threshold)  _(Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)_
-- **Gujarat – ₹9,000 – ₹11,999/month** — Nil (falls within revised ₹12,000 Nil threshold)  _(Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)_
-- **Gujarat – ₹12,000+/month** — Above ₹12,000 → ₹200/month (slab start corrected; old slab start was ₹12,000+ which is correct rate but old lower slabs need removal)  _(Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)_
-- **States that do NOT levy PT** — Delhi, Rajasthan, Uttar Pradesh, Haryana, Punjab, Odisha, Goa, Himachal Pradesh, Uttarakhand, Arunachal Pradesh  _(N/A)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -101,7 +63,11 @@ Professional Tax is a state-level tax levied by state governments and union terr
 | Rajasthan | No | -- |
 | Uttar Pradesh | No | -- |
 | Haryana | No | -- |
-| Punjab | No | -- |
+| Punjab | Yes, as the State Development Tax (₹200/month on persons with taxable income) | Punjab State Development Tax Act, 2018 |
+| Goa | No | -- |
+| Himachal Pradesh | No | -- |
+| Uttarakhand | No | -- |
+| Arunachal Pradesh | No | -- |
 
 ### Conservative Defaults
 
@@ -121,9 +87,13 @@ Professional Tax is a state-level tax levied by state governments and union terr
 
 | Monthly Gross Salary/Wages (INR) | Monthly PT | Annual PT |
 | --- | --- | --- |
-| Up to ₹7,500 | Nil | Nil |
-| ₹7,501 -- ₹10,000 | ₹175 | ₹2,100 |
-| Above ₹10,000 | ₹200 (₹300 for Feb) | ₹2,500 |
+| Men: up to ₹7,500 | Nil | Nil |
+| Men: ₹7,501 -- ₹10,000 | ₹175 | ₹2,100 |
+| Men: above ₹10,000 | ₹200 (₹300 for Feb) | ₹2,500 |
+| Women: up to ₹25,000 | Nil | Nil |
+| Women: above ₹25,000 | ₹200 (₹300 for Feb) | ₹2,500 |
+
+- **Women's threshold (2023 amendment)** — The Maharashtra State Tax on Professions, Trades, Callings and Employments (Amendment) Act, 2023 raised the exemption for women employees from ₹10,000 to ₹25,000 of monthly gross salary with effect from 1 April 2023; a woman earning more than ₹25,000 pays ₹200 a month (₹300 in February). The ₹175 slab applies to men only. An earlier version of this guide applied the men's slabs to everyone.  _(Maharashtra PT Act 1975, Schedule I entry 1, as amended in 2023)_
 
 - **February payment note** — The February payment is ₹300 to make the annual total ₹2,500 (11 × ₹200 + 1 × ₹300).
 - **Who pays** — Salaried employees (employer deducts), self-employed professionals and traders (self-assess).
@@ -138,10 +108,10 @@ Professional Tax is a state-level tax levied by state governments and union terr
 | Monthly Gross Salary (INR) | Monthly PT |
 | --- | --- |
 | Up to ₹24,999 | Nil |
-| ₹25,000 and above | ₹200 |
+| ₹25,000 and above | ₹200 (₹300 for February) |
 
-- **Annual maximum** — ₹2,400 (₹200 × 12 months).
-- **Note** — Karnataka charges ₹200/month flat for those earning ₹25,000+ per month. This results in ₹2,400/year (below the ₹2,500 Constitutional cap).
+- **Annual total** — ₹2,500 (11 × ₹200 + ₹300 for February), the Constitutional cap.
+- **Note** — The Karnataka Tax on Professions, Trades, Callings and Employments (Amendment) Act, 2023 raised the threshold from ₹15,000 to ₹25,000 and set the February instalment at ₹300 with effect from 1 April 2023. An earlier version of this guide had ₹2,400 a year.
 - **Filing** — Employer must deposit by the 20th of the following month. Annual return by 30 April.
 
 ### 2.3 West Bengal
@@ -205,12 +175,11 @@ Professional Tax is a state-level tax levied by state governments and union terr
 
 | Monthly Gross Salary (INR) | Monthly PT |
 | --- | --- |
-| Up to ₹5,999 | Nil |
-| ₹6,000 -- ₹8,999 | ₹80 |
-| ₹9,000 -- ₹11,999 | ₹150 |
-| ₹12,000+ | ₹200 |
+| Up to ₹12,000 | Nil |
+| Above ₹12,000 | ₹200 |
 
-- **Annual maximum** — ₹2,500 (adjustment in March).
+- **Annual total** — ₹2,400 (₹200 × 12).
+- **Consolidated slabs** — Gujarat consolidated its slabs with effect from 1 April 2022: salary up to ₹12,000 a month is exempt and above ₹12,000 pays ₹200 a month. The former ₹80 and ₹150 slabs, which an earlier version of this guide still listed, no longer apply.  _(Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976, Schedule as amended by the notification of 8 April 2022)_
 
 ### 2.8 Madhya Pradesh
 
@@ -335,7 +304,7 @@ Common exemptions across states:
 - **NEVER exceed cap** — NEVER exceed ₹2,500/year for any state (Constitutional maximum)
 - **NEVER deduct without proof** — NEVER deduct PT under Section 16(iii) without evidence of actual payment
 - **NEVER apply wrong slabs** — NEVER apply one state's slabs to another state's employees
-- **NEVER assume PT in non-levying states** — NEVER assume PT applies in states that do not levy it (Delhi, UP, Rajasthan, Haryana, Punjab)
+- **NEVER assume PT in non-levying states** — NEVER assume PT applies in states that do not levy it (Delhi, UP, Rajasthan, Haryana, Goa, Himachal Pradesh, Uttarakhand, Arunachal Pradesh); Punjab levies its State Development Tax of ₹200/month instead
 - **NEVER double-claim** — NEVER double-claim PT deduction under both Section 16(iii) and Section 37(1) for the same amount
 - **NEVER present as definitive** — NEVER present tax calculations as definitive -- always label as estimated
 

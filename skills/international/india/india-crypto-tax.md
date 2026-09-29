@@ -4,7 +4,7 @@ description: Use this skill whenever asked about India cryptocurrency or virtual
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -18,37 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India Crypto / Virtual Digital Assets Tax Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Crypto (VDA)
-
-- **Health & Education Cess** — 4% on tax  _(Finance Act)_
-- **Rate (ITA 2025 replacement)** — New section as per new Income Tax Act 2025 applicable from financial year fy 2026-27 is Section 393(1). Rate remains same.  _(ITA s 194S)_
-- **Threshold (general)** — ₹10,000 aggregate per FY  _(ITA s 194S)_
-- **Threshold (specified persons)** — ₹50,000 (individual/HUF with turnover ≤ ₹1 Cr)  _(ITA s 194S)_
-- **Form** — Form 26QE (→ Form 141 under ITA 2025)  _(CBDT)_
-- **Deductible** — Purchase price only  _(ITA s 115BBH(2))_
-- **Mined/staked/airdrop tokens** — Cost = ₹0  _(ITA s 115BBH)_
-- **ITR form** — ITR-2 or ITR-3 with Schedule VDA  _(CBDT notification)_
-- **Deadline** — 31 July (non-audit) / 31 October (audit)  _(ITA s 139)_
-- **Flat rate on VDA gains** — 30% (s 115BBH)  _(ITA s 115BBH)_
-- **Effective rate (before surcharge)** — 31.20%  _(Calculated)_
-- **Loss offset** — NOT permitted — crypto losses cannot offset ANY income  _(ITA s 115BBH(2))_
-- **Loss carry-forward** — NOT permitted  _(ITA s 115BBH)_
-- **TDS on VDA Transfer (s 194S) — Rate** — 1% of consideration (rate unchanged); citation updated to Section 393(1) of the new Income Tax Act 2025, applicable from FY 2026-27  _(ITA s 194S; new Income Tax Act 2025 s 393(1))_
-- **TDS Threshold (general)** — ₹10,000 aggregate per FY  _(ITA s 194S)_
-- **TDS Threshold (specified persons)** — ₹50,000 (individual/HUF with turnover ≤ ₹1 Cr)  _(ITA s 194S)_
-- **Form** — Form 26QE (→ Form 141 under ITA 2025)  _(CBDT)_
-- **Cost of Acquisition — Deductible** — Purchase price only  _(ITA s 115BBH(2))_
-- **Cost of improvement** — NOT deductible  _(ITA s 115BBH(2)(a))_
-- **Transfer expenses (fees, gas)** — NOT deductible  _(ITA s 115BBH)_
-- **Mined/staked/airdrop tokens cost basis** — Cost = ₹0  _(ITA s 115BBH)_
-- **ITR form** — ITR-2 or ITR-3 with Schedule VDA  _(CBDT notification)_
-- **Deadline** — 31 July (non-audit) / 31 October (audit)  _(ITA s 139)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick Reference
 

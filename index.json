@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T02:41:07+00:00",
+ "generated_at": "2026-09-29T02:56:23+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -9845,7 +9845,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "in-income-tax",
@@ -9871,7 +9871,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "in-professional-tax",
@@ -9884,7 +9884,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "in-tax-residency",
@@ -9910,7 +9910,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "india-crypto-tax",
@@ -9923,7 +9923,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "india-einvoice",
@@ -9936,7 +9936,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "india-financial-statements",
@@ -9949,7 +9949,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "india-formation",
@@ -9962,7 +9962,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "india-gst",
@@ -9975,7 +9975,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "india-payroll",
@@ -9988,7 +9988,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "india-tax-optimization",
@@ -10001,7 +10001,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "india-to-uae-singapore-nri-tax",
@@ -10027,7 +10027,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "india-references",
