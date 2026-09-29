@@ -428,8 +428,8 @@ The reviewer brief should include:
 
 ### 16.1 Background
 
-- **§199A QBI deduction rate for tax year 2025** — 20% percent (tax years beginning after Dec 31, 2024)  _([26 USC §199A(a)-(b)](https://uscode.house.gov/view.xhtml?req=(title:26%20section:199a%20edition:prelim)))_
-- **§199A QBI deduction rate for tax year 2026+** — 20% (OBBBA § 70105 made § 199A permanent at 20%; the enacted law did not adopt the proposed 23% rate. From 2026 it also adds a $400 minimum deduction, inflation-adjusted, for applicable taxpayers with at least $1,000 of aggregate active QBI) percent (tax years beginning after Dec 31, 2025)  _([26 USC §199A(i) and the 2025 amendment effective-date note](https://uscode.house.gov/view.xhtml?req=(title:26%20section:199a%20edition:prelim)))_
+- **§199A QBI deduction rate for tax year 2025** — 20% (tax years beginning after 31 December 2024)  _([26 USC §199A(a)-(b)](https://uscode.house.gov/view.xhtml?req=(title:26%20section:199a%20edition:prelim)))_
+- **§199A QBI deduction rate for tax year 2026+** — 20% (OBBBA § 70105 made § 199A permanent at 20%; the enacted law did not adopt the proposed 23% rate. From 2026 it also adds a $400 minimum deduction for applicable taxpayers with at least $1,000 of aggregate active QBI; both dollar amounts are indexed for taxable years beginning after 2026) (tax years beginning after 31 December 2025)  _([26 USC §199A(i) and the 2025 amendment effective-date note](https://uscode.house.gov/view.xhtml?req=(title:26%20section:199a%20edition:prelim)))_
 - **§199A deduction** — Provides a deduction up to 20% of qualified business income (QBI) from a domestic trade or business operated as a sole proprietorship, partnership, S corporation, trust, or estate. For partnerships, QBI flows out to partners on K-1.  _(§199A (enacted by TCJA, made permanent at 20% by OBBBA P.L. 119-21 §70105))_
 
 ### 16.2 What the partnership reports
