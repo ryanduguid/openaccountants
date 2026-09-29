@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German e-invoicing, XRechnung, 
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - einvoice-workflow-base
@@ -274,6 +274,8 @@ The official open-source validation tool provided by KoSIT performs multi-layer 
 | 19% | Standard rate (Regelsteuersatz) |
 | 7% | Reduced rate (ermäßigter Steuersatz) -- food, books, public transport, cultural events |
 | 0% | Intra-EU supplies, exports (with §4 UStG exemption code) |
+
+Sources: UStG § 12 — https://www.gesetze-im-internet.de/ustg_1980/__12.html; § 4 — https://www.gesetze-im-internet.de/ustg_1980/__4.html; § 14 (e-invoicing) — https://www.gesetze-im-internet.de/ustg_1980/__14.html.
 
 ### Rounding
 

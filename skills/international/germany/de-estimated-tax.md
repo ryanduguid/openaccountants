@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German estimated income tax pre
 version: 2.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -23,8 +23,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Germany (Federal Republic of Germany) |
 | Tax | Income tax prepayments (Einkommensteuer-Vorauszahlungen) |
-| Primary legislation | Einkommensteuergesetz (EStG) Paragraph 37 |
-| Supporting legislation | Abgabenordnung (AO) Paragraph 240 (late payment surcharge); Solidaritaetszuschlaggesetz (SolZG); AO Paragraph 233a (interest on arrears) |
+| Primary legislation | Einkommensteuergesetz (EStG) § 37 — https://www.gesetze-im-internet.de/estg/__37.html |
+| Supporting legislation | Abgabenordnung (AO) § 240 (late payment surcharge) — https://www.gesetze-im-internet.de/ao_1977/__240.html; Solidaritätszuschlaggesetz (SolZG) §§ 3 and 4 — https://www.gesetze-im-internet.de/solzg_1995/__3.html and https://www.gesetze-im-internet.de/solzg_1995/__4.html; AO §§ 233a and 238 (interest on arrears, 0.15% a month) — https://www.gesetze-im-internet.de/ao_1977/__233a.html and https://www.gesetze-im-internet.de/ao_1977/__238.html |
 | Authority | Finanzamt (local tax office) |
 | Portal | ELSTER (elster.de) |
 | Currency | EUR only |
@@ -45,6 +45,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Q3 | 10 September | 25% |
 | Q4 | 10 December | 25% |
 
+Source: § 37 Abs. 1 EStG — https://www.gesetze-im-internet.de/estg/__37.html.
+
 **Conservative defaults**
 
 | Ambiguity | Default |
@@ -52,7 +54,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | No Vorauszahlungsbescheid issued | No prepayments due (unless Finanzamt determines otherwise) |
 | New freelancer, no prior assessment | No Vorauszahlungen until first assessment issued |
 | Income expected to drop | Pay per Bescheid -- apply for Herabsetzung before reducing |
-| Solidarity surcharge uncertain | Check EUR 18,130 threshold (singles) |
+| Solidarity surcharge uncertain | Check the EUR 19,950 Freigrenze for 2025 (EUR 20,350 from 2026; singles) |
 | Church tax status unknown | Ask -- 8% or 9% of ESt depending on Bundesland |
 
 ## Section 2 -- Required inputs and refusal catalogue
@@ -163,7 +165,7 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 **Input:** Annual ESt prepayment = EUR 16,000 (EUR 4,000/quarter). Single filer.
 
-**Computation:** ESt EUR 16,000 < EUR 18,130 threshold. SolZ = 0% (fully exempt).
+**Computation:** ESt EUR 16,000 < EUR 19,950 Freigrenze (2025). SolZ = 0% (fully exempt).
 
 ### Example 5 -- Bank statement classification
 
@@ -208,9 +210,11 @@ Below these thresholds, no prepayments are set.
 
 | ESt threshold (singles) | Solidarity surcharge |
 | --- | --- |
-| ESt <= EUR 18,130 | 0% (fully exempt) |
-| EUR 18,130 < ESt <= EUR 33,761 | Sliding scale (Milderungszone) |
-| ESt > EUR 33,761 | 5.5% of ESt |
+| ESt <= EUR 19,950 (2025; EUR 20,350 from 2026) | 0% (fully exempt) |
+| EUR 19,950 < ESt <= EUR 37,094 (2025; EUR 20,350 to 37,838 from 2026) | Sliding scale (Milderungszone): SolZ capped at 11.9% of the ESt above the Freigrenze |
+| ESt > EUR 37,094 (2025; EUR 37,838 from 2026) | 5.5% of ESt |
+
+Sources: SolZG § 3 Abs. 3 (the Freigrenze: EUR 19,950 / 39,900 for 2025 under the Steuerfortentwicklungsgesetz, EUR 20,350 / 40,700 from 2026) — https://www.gesetze-im-internet.de/solzg_1995/__3.html; § 4 (5.5%, capped at 11.9% of the excess over the Freigrenze) — https://www.gesetze-im-internet.de/solzg_1995/__4.html. The zone ends where 11.9% of the excess equals 5.5% of the tax, at 1.859375 times the Freigrenze.
 
 - **Joint filers threshold rule** — Joint filers: thresholds doubled.
 
@@ -297,7 +301,7 @@ Before delivering output, verify:
 ### Test 4 -- Solidarity surcharge exempt
 
 **Input:** Annual ESt = EUR 16,000. Single filer.
-**Expected:** Below EUR 18,130. SolZ = 0%.
+**Expected:** Below EUR 19,950 (the 2025 Freigrenze). SolZ = 0%.
 
 ### Test 5 -- New freelancer
 

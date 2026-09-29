@@ -6,7 +6,7 @@ version: 2.0
 jurisdiction: DE
 tax_year: 2025
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 category: international
 depends_on:
   - income-tax-workflow-base
@@ -27,8 +27,8 @@ verified_by: pending
 | Tax | Einkommensteuer (ESt) + Solidaritatszuschlag (SolZ) + Kirchensteuer (KiSt, if applicable) |
 | Currency | EUR only |
 | Tax year | Calendar year (Kalenderjahr) |
-| Primary legislation | Einkommensteuergesetz (EStG) |
-| Supporting legislation | Abgabenordnung (AO); Gewerbesteuergesetz (GewStG); Umsatzsteuergesetz (UStG) |
+| Primary legislation | Einkommensteuergesetz (EStG) — https://www.gesetze-im-internet.de/estg/ (tariff § 32a — https://www.gesetze-im-internet.de/estg/__32a.html) |
+| Supporting legislation | Abgabenordnung (AO) — https://www.gesetze-im-internet.de/ao_1977/; Gewerbesteuergesetz (GewStG) — https://www.gesetze-im-internet.de/gewstg/; Umsatzsteuergesetz (UStG) — https://www.gesetze-im-internet.de/ustg_1980/ |
 | Tax authority | Finanzamt (local tax office) |
 | Filing portal | ELSTER (elster.de) |
 | Filing deadline | 31 July of the following year (with Steuerberater: end of February of the year after next) |
@@ -47,6 +47,8 @@ verified_by: pending
 | 68,481 -- 277,825 | 42% | Proportionalzone (flat) |
 | 277,826+ | 45% | Reichensteuer (top income tax bracket, §32a(1) no. 5 EStG) |
 
+Source: § 32a Abs. 1 EStG in the version for the 2025 assessment period (Steuerfortentwicklungsgesetz of 23 December 2024, BGBl. 2024 I Nr. 449); the consolidated text at https://www.gesetze-im-internet.de/estg/__32a.html shows the 2026 tariff (Grundfreibetrag EUR 12,348; zone limits EUR 17,799, 69,878 and 277,825).
+
 **Germany uses a FORMULA-BASED progressive rate, not simple bracket multiplication. Each euro is taxed at its own marginal rate within zones 1 and 2. Do not compute manually -- pass to the deterministic engine.**
 
 ### Solidaritatszuschlag (SolZ)
@@ -54,8 +56,8 @@ verified_by: pending
 | Item | Value |
 |---|---|
 | Rate | 5.5% of the Einkommensteuer |
-| Exemption threshold (single) | ESt up to EUR 18,130 -- no SolZ |
-| Exemption threshold (married/joint) | ESt up to EUR 36,260 -- no SolZ |
+| Exemption threshold (single) | ESt up to EUR 19,950 (2025; EUR 20,350 from 2026) -- no SolZ (SolZG § 3 Abs. 3 — https://www.gesetze-im-internet.de/solzg_1995/__3.html) |
+| Exemption threshold (married/joint) | ESt up to EUR 39,900 (2025; EUR 40,700 from 2026) -- no SolZ |
 | Gleitzone (phase-in) | 11.9% marginal rate on ESt between threshold and full-rate zone |
 
 ### Kirchensteuer (KiSt)
@@ -317,9 +319,12 @@ Expenses are deductible if caused by the business (betrieblich veranlasst). Germ
 | Computer software | 1 year | 100% |
 | Office furniture | 13 years | ~7.7% |
 | Motor vehicles | 6 years | ~16.7% |
-| Office equipment (printers, copiers) | 7 years | ~14.3% |
+| Printers, scanners, monitors (peripherals) | 3 years (AfA-Tabelle AV 6.14.3.2) | ~33.3% |
+| Copiers | 7 years (AfA-Tabelle AV 6.14.10) | ~14.3% |
 | Mobile phones | 5 years | 20% |
 | Buildings (commercial) | 33 or 50 years | 3% or 2% |
+
+Sources: § 7 Abs. 4 EStG (buildings) — https://www.gesetze-im-internet.de/estg/__7.html; BMF, AfA-Tabelle für die allgemein verwendbaren Anlagegüter — https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Steuern/Weitere_Steuerthemen/Betriebspruefung/AfA-Tabellen/Ergaenzende-AfA-Tabellen/AfA-Tabelle_AV.pdf?__blob=publicationFile&v=3 (office furniture 13, cars 6, copiers 7, mobile phones 5, computers and peripherals 3); the one-year life for computer hardware and software is the BMF letter of 26 February 2021 as updated on 22 February 2022.
 
 **Computer hardware and software:** Since BMF ruling of 26.02.2021, digital assets can be written off in full in the year of acquisition regardless of cost.
 
@@ -362,7 +367,9 @@ Based on most recent Steuerbescheid. First year: Finanzamt estimates.
 | Late filing (Verspatungszuschlag) | 0.25% of assessed tax per month, min EUR 25/month |
 | Late payment (Saumiszuschlag) | 1% per commenced month on unpaid tax |
 | Interest on late assessment | 0.15% per month (from 15 months after year end) |
-| Incorrect return | Up to EUR 25,000; criminal penalties for fraud |
+| Incorrect return | Fine up to EUR 50,000 for leichtfertige Steuerverkürzung (§ 378 Abs. 2 AO); criminal penalties for Steuerhinterziehung (§ 370 AO) |
+
+Sources: AO § 152 Abs. 5 — https://www.gesetze-im-internet.de/ao_1977/__152.html; § 240 — https://www.gesetze-im-internet.de/ao_1977/__240.html; §§ 233a and 238 Abs. 1a (0.15% a month, 1.8% a year) — https://www.gesetze-im-internet.de/ao_1977/__233a.html and https://www.gesetze-im-internet.de/ao_1977/__238.html; § 378 — https://www.gesetze-im-internet.de/ao_1977/__378.html.
 
 ### 5.9 Interaction with Umsatzsteuer (USt)
 

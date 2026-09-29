@@ -144,6 +144,8 @@ def selftest():
     assert classify('belastingdienst.sr') == 'authority'  # Suriname
     assert classify('cnss.dj') == 'authority'             # Djibouti, statutory fund
     assert classify('narodne-novine.nn.hr') == 'authority' # Croatia, Official Gazette
+    assert classify('gesetze-im-internet.de') == 'authority'  # German statutes
+    assert classify('xrechnung.bund.de') == 'authority'       # bund.de suffix
     assert classify('andoz.tj') == 'authority'            # Tajikistan
     # Western European law publishers on a bare national domain. Both were
     # scoring 'secondary' while serving the consolidated statute itself, which

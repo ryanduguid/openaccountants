@@ -4,7 +4,7 @@ description: Use this skill whenever asked about bookkeeping, chart of accounts,
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | GAAP framework | German GAAP (GoB — Grundsätze ordnungsmäßiger Buchführung) |
 | Standard chart of accounts | SKR03 (process-oriented) and SKR04 (financial-statement-oriented), published by DATEV |
 | Governing body | Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin) for public entities; Finanzamt for tax |
-| Key legislation | HGB §§ 238--342e; EStG (Einkommensteuergesetz); UStG (Umsatzsteuergesetz); AO (Abgabenordnung) |
+| Key legislation | HGB §§ 238--342e — https://www.gesetze-im-internet.de/hgb/; EStG (Einkommensteuergesetz) — https://www.gesetze-im-internet.de/estg/; UStG (Umsatzsteuergesetz) — https://www.gesetze-im-internet.de/ustg_1980/; AO (Abgabenordnung) — https://www.gesetze-im-internet.de/ao_1977/ |
 | Record retention | 10 years for books and records; 6 years for business correspondence (AO § 147) |
 | Digital requirements | GoBD compliance mandatory — all digital records must be tamper-proof and auditable |
 
@@ -223,15 +223,17 @@ SKR04 is organised to mirror the balance sheet and income statement structure. S
 
 | Asset Category | Useful Life (Years) | Annual Rate |
 | --- | --- | --- |
-| Computer hardware | 3 | 33% |
-| Computer software (standard) | 3 | 33% |
+| Computer hardware | 3 (AfA-Tabelle AV 6.14.3.2); 1 year permitted since the BMF letter of 26 February 2021 (updated 22 February 2022) | 33% (or 100%) |
+| Computer software (standard) | 3; 1 year permitted since the same BMF letter | 33% (or 100%) |
 | Motor vehicles (cars) | 6 | ~17% |
 | Motor vehicles (trucks) | 9 | ~11% |
 | Office furniture (Büromöbel) | 13 | ~8% |
-| Office equipment | 8 | 12.5% |
+| Copiers | 7 (AfA-Tabelle AV 6.14.10) | ~14.3% |
 | Buildings (commercial) | 33 | 3% |
 | Buildings (residential, post-2022) | 33 | 3% |
-| Telephone systems | 8 | 12.5% |
+| Telephone systems (Fernsprechnebenstellenanlagen) | 10 (AfA-Tabelle AV 6.13.1) | 10% |
+
+Sources: BMF, AfA-Tabelle für die allgemein verwendbaren Anlagegüter — https://www.bundesfinanzministerium.de/Content/DE/Standardartikel/Themen/Steuern/Weitere_Steuerthemen/Betriebspruefung/AfA-Tabellen/Ergaenzende-AfA-Tabellen/AfA-Tabelle_AV.pdf?__blob=publicationFile&v=3; § 7 EStG (buildings, § 7 Abs. 4) — https://www.gesetze-im-internet.de/estg/__7.html.
 
 - **Computers and software useful life simplification** — Since 2021, computers and software have a useful life of 1 year (immediate write-off) per BMF guidance, regardless of cost. This is a tax simplification — for HGB book depreciation, the standard useful life still applies.  _(BMF guidance)_
 

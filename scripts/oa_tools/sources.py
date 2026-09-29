@@ -220,6 +220,20 @@ NON_GOV_AUTHORITY = frozenset((
     'narodne-novine.nn.hr',    # Narodne novine, the Official Gazette of the
                           # Republic of Croatia, publisher of the enacted text
                           # (20 citations, likewise)
+    # German federal bodies on .de (the sourcing-floor pass of 2026-09-29,
+    # German tranche; each page was read for the figures it is cited for)
+    'gesetze-im-internet.de',  # Bundesministerium der Justiz: the consolidated
+                          # federal statutes (EStG, UStG, AO, GewStG, KStG, SGB)
+    'bundesfinanzministerium.de',  # Federal Ministry of Finance (AfA tables,
+                          # BMF letters, the Lohnsteuer PAP)
+    'bmas.de',            # Federal Ministry of Labour and Social Affairs: the
+                          # annual Sozialversicherungs-Rechengroessen
+    'bundesgesundheitsministerium.de',  # Federal Ministry of Health: GKV
+                          # rates and the average Zusatzbeitrag
+    'deutsche-rentenversicherung.de',   # the statutory pension insurer:
+                          # contribution rates and ceilings
+    'bund.de',            # the federal government domain (xrechnung.bund.de
+                          # carries the e-invoicing standard)
     'skatteverket.se',    # Swedish Tax Agency
     'skatteetaten.no',    # Norwegian Tax Administration
     'belastingdienst.nl', # Netherlands Tax Administration

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in Germany, tax pl
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Germany (Bundesrepublik Deutschland) |
-| Key optimization legislation | Einkommensteuergesetz (EStG) -- particularly §4 (Betriebsausgaben), §7g (Investitionsabzugsbetrag), §6 Abs. 2/2a (GWG), §9 (Werbungskosten), §10 (Sonderausgaben), §10a (Riester), §10d (Verlustvortrag/-rücktrag), §35a (haushaltsnahe Dienstleistungen) |
+| Key optimization legislation | Einkommensteuergesetz (EStG, https://www.gesetze-im-internet.de/estg/) -- particularly §4 (Betriebsausgaben), §7g (Investitionsabzugsbetrag), §6 Abs. 2/2a (GWG), §9 (Werbungskosten), §10 (Sonderausgaben), §10a (Riester), §10d (Verlustvortrag/-rücktrag), §35a (haushaltsnahe Dienstleistungen) |
 | Tax authority attitude to planning | The Finanzamt accepts legitimate tax planning (Steuergestaltung). Germany has no statutory GAAR, but §42 AO (Abgabenordnung) provides a general anti-abuse rule: tax arrangements that constitute an "abuse of design options" (Gestaltungsmissbrauch) can be disregarded. Courts apply substance-over-form principles. |
 | Currency | EUR |
 | Tax year | Calendar year (1 Jan -- 31 Dec) |
@@ -40,6 +40,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 17,800 -- 69,878 | 24% -- 42% (linear progression) |
 | 69,879 -- 277,825 | 42% (Spitzensteuersatz) |
 | 277,826+ | 45% (Reichensteuersatz) |
+
+Source: § 32a Abs. 1 EStG (the 2026 tariff) — https://www.gesetze-im-internet.de/estg/__32a.html.
 
 - **Solidaritätszuschlag and Kirchensteuer** — Plus Solidaritätszuschlag (5.5% of income tax, only for higher incomes above threshold) and Kirchensteuer (8-9% of income tax, if applicable).
 
@@ -114,7 +116,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Sonderabschreibung (Special Depreciation) -- §7g Abs. 5 EStG
 
-- **Sonderabschreibung rule** — Up to 20% additional depreciation in the year of acquisition and the following 4 years (on top of normal AfA). Combined with IAB, this allows extremely front-loaded deductions. Requirements: Business assets ≤ EUR 200,000 at end of prior year (or profits ≤ EUR 200,000 for Freiberufler).  _(§7g Abs. 5 EStG)_
+- **Sonderabschreibung rule** — Up to 40% additional depreciation (for assets acquired after 31 December 2023; 20% before) in the year of acquisition and the following 4 years (on top of normal AfA; § 7g Abs. 5 EStG — https://www.gesetze-im-internet.de/estg/__7g.html). Combined with IAB, this allows extremely front-loaded deductions. Requirements: Business assets ≤ EUR 200,000 at end of prior year (or profits ≤ EUR 200,000 for Freiberufler).  _(§7g Abs. 5 EStG)_
 
 ## Section 5 -- Loss Utilization
 
@@ -223,7 +225,7 @@ Legislation: Sozialgesetzbuch (SGB)
 | --- | --- |
 | §42 AO (Gestaltungsmissbrauch) | Arrangements that serve no purpose other than tax reduction can be disregarded by the Finanzamt. |
 | Scheinselbständigkeit | If effectively an employee of one client, reclassification triggers full social security contributions and back-payments. |
-| IAB without investment intent | If the investment is not made within 3 years, the IAB is reversed with interest (§233a AO: 0.5%/month from 15 months after the tax year). |
+| IAB without investment intent | If the investment is not made within 3 years, the IAB is reversed with interest (§§ 233a and 238 Abs. 1a AO: 0.15% a month, 1.8% a year, from 15 months after the tax year). |
 | Fictitious family employment | Spouse/family employment must be genuine: written contract, actual work, arm's-length salary, regular payment. BFH scrutinizes closely. |
 | Private expenses as business | The Finanzamt will disallow expenses that are not exclusively or predominantly business-related. Mixed-use items require documented apportionment. |
 | Liebhaberei (hobby) | If a business consistently makes losses with no realistic profit expectation, the Finanzamt may reclassify it as Liebhaberei and disallow all losses. |
@@ -276,7 +278,7 @@ Legislation: Sozialgesetzbuch (SGB)
 | Year | Deduction | Mechanism |
 | --- | --- | --- |
 | Year 0 (before purchase) | EUR 20,000 | IAB (50% of EUR 40,000) |
-| Year 1 (purchase year) | EUR 8,000 + EUR 3,200 | Sonderabschreibung (20%) + regular AfA (16%/6yr) |
+| Year 1 (purchase year) | EUR 8,000 + EUR 3,200 | Sonderabschreibung (40% of the EUR 20,000 base left after the IAB) + regular AfA (16%/6yr on that base) |
 | **Total Year 0+1 deduction** | **EUR 31,200** | 78% of cost deducted within ~2 years |
 | Tax saving at 42% marginal rate | **~EUR 13,104** |  |
 

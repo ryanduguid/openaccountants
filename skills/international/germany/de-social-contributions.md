@@ -4,7 +4,7 @@ description: Use this skill whenever asked about German social insurance contrib
 version: 2.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -22,10 +22,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Germany (Bundesrepublik Deutschland) |
-| Primary Legislation | SGB IV (general), SGB V (health), SGB VI (pension), SGB XI (care), SGB VII (accident), KSVG (artists) |
+| Primary Legislation | SGB IV (general); SGB V (health: § 241, 14.6% — https://www.gesetze-im-internet.de/sgb_5/__241.html; § 243, 14.0% — https://www.gesetze-im-internet.de/sgb_5/__243.html); SGB VI (pension); SGB XI (care: § 55 — https://www.gesetze-im-internet.de/sgb_11/__55.html); SGB III (unemployment: § 341, 2.6% — https://www.gesetze-im-internet.de/sgb_3/__341.html); SGB VII (accident); KSVG (artists: § 26 — https://www.gesetze-im-internet.de/ksvg/__26.html) |
 | Supporting Legislation | EStG Section 10 (Vorsorgeaufwendungen / tax deductibility) |
 | Regulatory Bodies | GKV-Spitzenverband (health), Deutsche Rentenversicherung Bund (pension), Kuenstlersozialkasse (KSK), Berufsgenossenschaften (accident) |
-| Rate Publisher | BMAS (annual Sozialversicherungsrechengroessen) |
+| Rate Publisher | BMAS (annual Sozialversicherungsrechengrößenverordnung; the 2026 figures — https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2025/sozialversicherungsrechengroessen-2026.html); Deutsche Rentenversicherung, Werte der Rentenversicherung — https://www.deutsche-rentenversicherung.de/DRV/DE/Experten/Zahlen-und-Fakten/Werte-der-Rentenversicherung/werte-der-rentenversicherung_node.html; BMG, Beiträge — https://www.bundesgesundheitsministerium.de/beitraege.html |
 | Currency | EUR only |
 | GKV base rate (without sick pay) | 14.0% + avg. 2.5% Zusatzbeitrag = ~16.5% |
 | GKV base rate (with sick pay) | 14.6% + avg. 2.5% Zusatzbeitrag = ~17.1% |
@@ -39,6 +39,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants |
 | Validated by | Pending -- requires sign-off by a licensed Steuerberater |
 | Validation date | Pending |
+
+The figures above are the 2025 values, read on the Deutsche Rentenversicherung and BMG pages cited in the Rate Publisher row. 2026 values (BMAS Rechengrößen 2026; BMG): GKV/PV ceiling EUR 5,812.50 a month (EUR 69,750 a year), pension and unemployment ceiling EUR 8,450 a month (EUR 101,400), Bezugsgröße EUR 3,955 a month, so the GKV minimum base for voluntary members (one third of it) is EUR 1,318.33, and an average Zusatzbeitrag of 2.9%; the statutory rates (14.6% / 14.0%, 18.6%, 2.6%, 3.6% with the 0.6-point surcharge for childless members) are unchanged.
 
 Read this whole section before computing or classifying anything.
 
@@ -237,6 +239,8 @@ Matches "FINANZAMT" (pattern 3.7). This is an income tax prepayment, NOT a socia
 | With sick pay | 14.6% + Zusatzbeitrag |
 | Average Zusatzbeitrag (2025) | 2.5% |
 
+Sources: SGB V § 241 (14.6%) — https://www.gesetze-im-internet.de/sgb_5/__241.html; § 243 (14.0%) — https://www.gesetze-im-internet.de/sgb_5/__243.html; the average Zusatzbeitrag is announced by the BMG for each year (2.5% for 2025, 2.9% for 2026) — https://www.bundesgesundheitsministerium.de/beitraege.html.
+
 ### Rule 3 -- Pflegeversicherung rates (2025)
 
 **Pflegeversicherung rates by children**
@@ -249,6 +253,8 @@ Matches "FINANZAMT" (pattern 3.7). This is an income tax prepayment, NOT a socia
 | 3 | 3.1% |
 | 4 | 2.85% |
 | 5+ | 2.6% |
+
+Source: SGB XI § 55 Abs. 1 and 3 (3.6%; a 0.6-point surcharge for childless members from the month after their 23rd birthday; a 0.25-point reduction per child from the second to the fifth, until the child turns 25) — https://www.gesetze-im-internet.de/sgb_11/__55.html.
 
 - **PV assessment base and employer share** — Same assessment base as GKV (EUR 1,248.33 to EUR 5,512.50 monthly). Full rate for self-employed (no employer share).
 
