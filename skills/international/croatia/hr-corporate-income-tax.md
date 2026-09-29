@@ -2,6 +2,7 @@
 name: hr-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Croatia, tax year 2025 — the 18%/10% profit tax rates and withholding heads, plus the minimum global profit tax (NN 155/2023, as amended by NN 151/2025 and implemented by NN 53/2026) read from Narodne novine. Pending local-accountant review."
 jurisdiction: HR
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

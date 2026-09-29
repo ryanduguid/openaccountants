@@ -3,11 +3,14 @@ name: us-de-income-tax
 description: "Coverage gap for Delaware individual income tax for tax year 2025. This file does not provide Form PIT-RES calculations, resident brackets, filing thresholds, state deductions, modifications to federal adjusted gross income or personal credits. Use it when a request for Delaware income tax, Delaware resident filing or Form PIT-RES would otherwise select this guide. Obtain the relevant Division of Revenue forms and instructions before preparing a working paper. For Delaware gross receipts tax, use us-de-gross-receipts-tax. The previous body described that separate tax and has been withdrawn. Local professional review is required."
 version: 0.3
 jurisdiction: US-DE
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # Delaware individual income tax: coverage gap

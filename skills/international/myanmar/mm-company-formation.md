@@ -2,6 +2,7 @@
 name: mm-company-formation
 description: "Source-cited draft: company formation & entity choice for Myanmar — the art. 1(xiv) foreign-company test, the s. 4 essential requirements including the resident-director and public-company rules, the no-par-value share regime and the s. 97 annual-return clock, read from the Myanmar Companies Law 2017 published by DICA's MyCO registry. Pending local-accountant review."
 jurisdiction: MM
+category: formation
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

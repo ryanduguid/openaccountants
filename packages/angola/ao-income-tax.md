@@ -2,6 +2,7 @@
 name: ao-income-tax
 description: "Source-cited draft for Angola personal income tax in tax year 2025. Covers the twelve monthly Group A bands, the AOA 100,000 exemption and the Group C rules in Lei n.º 18/24. Explains the Group B withholding rate and the suspension of the Group C four-times-invoicing test, with article references to the IRT Code and its 2020 amendment. The original article 9(2) is available here through a legal transcription whose gazette scan was inaccessible. Later tax years and remaining residence and filing claims need separate verification. Pending local-accountant review."
 jurisdiction: AO
+category: international
 tax_year: 2025
 last_updated: 2026-09-12
 review_status: pending_review

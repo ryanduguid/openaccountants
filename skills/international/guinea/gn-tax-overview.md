@@ -2,6 +2,7 @@
 name: gn-tax-overview
 description: "Source-cited draft: tax overview for Guinea — the three corporate rates, the 18% TVA, the 30 April annual return and the 10th-of-the-month VAT return, corrected against the tax authority's own rate table and loi de finances 2025. Pending local-accountant review."
 jurisdiction: GN
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

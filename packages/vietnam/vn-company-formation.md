@@ -2,6 +2,7 @@
 name: vn-company-formation
 description: "Source-cited draft: company formation & entity choice for Vietnam (tax year 2025) — entity types, charter capital, the beneficial-owner regime and registration procedure, read from Law 76/2025/QH15 and Decree 168/2025/NĐ-CP. Unverified; pending local-accountant review."
 jurisdiction: VN
+category: formation
 tax_year: 2025
 tax_year_notes: "Two changes land after the period this guide is filed under and both are already in force. Law No. 76/2025/QH15 amended the Law on Enterprises from 1 July 2025, and Decree 168/2025/NĐ-CP replaced the registration decree on the same day. The annual business licence fee ends from 1 January 2026 under Resolution 198/2025/QH15 art. 10(7). Confirm which side of those dates a transaction falls on before applying anything here."
 last_updated: 2026-09-10

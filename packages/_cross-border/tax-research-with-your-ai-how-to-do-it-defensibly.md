@@ -2,6 +2,7 @@
 name: tax-research-with-your-ai-how-to-do-it-defensibly
 description: The method for researching any tax question with the AI you already use, so the answer is citable and reviewable, not just plausible.
 jurisdiction: general
+category: cross-border
 tax_year: 2025
 last_updated: 2026-07-25
 review_status: pending_review

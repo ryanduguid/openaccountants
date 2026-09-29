@@ -2,6 +2,7 @@
 name: do-simplified-regimes
 description: Dominican Republic Simplified Tax Regimes (RST) — accountant-verified rules from the DGII validation matrix (Miguel Lantigua, CPA Lic. 17839).
 jurisdiction: DO
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Miguel Lantigua

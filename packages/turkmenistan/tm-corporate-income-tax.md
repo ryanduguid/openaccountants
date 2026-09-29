@@ -2,6 +2,7 @@
 name: tm-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Turkmenistan — the art. 172 profit-tax rates of 8% / 20% / 50%, the 2% SME rate on a base computed without deductions, art. 170 exemptions, and the art. 180 non-resident withholding, read from the Unified Law 'On Taxes' published by the Tax Directorate. Pending local-accountant review."
 jurisdiction: TM
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

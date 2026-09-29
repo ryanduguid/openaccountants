@@ -3,6 +3,7 @@ name: dominican-republic-itbis
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Dominican Republic ITBIS return for any client. Trigger on phrases like "ITBIS", "Dominican Republic VAT", "DGII filing", or any request involving DR consumption tax. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any ITBIS work.
 version: 2.0
 jurisdiction: DO
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Miguel Lantigua

@@ -2,11 +2,14 @@
 name: us-nc-estimated-tax
 description: Use this skill whenever asked about North Carolina individual quarterly estimated income tax. Trigger on phrases like "NC estimated tax", "Form NC-40", "NC quarterly payments", "NC safe harbor", "Form D-422", "NC underpayment penalty", "do I need to make NC estimates".
 jurisdiction: US-NC
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # NC Estimated Tax

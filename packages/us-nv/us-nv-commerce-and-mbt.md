@@ -2,11 +2,14 @@
 name: us-nv-commerce-and-mbt
 description: "Source-cited tax guide for US-NV: nv commerce and mbt. Unverified draft, pending local-accountant review."
 jurisdiction: US-NV
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # NV Commerce And Mbt

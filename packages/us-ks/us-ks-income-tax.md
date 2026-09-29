@@ -3,11 +3,14 @@ name: us-ks-income-tax
 description: Use this skill whenever asked about Kansas individual income tax. Trigger on phrases like "Kansas income tax", "KS income tax", "K-40", "KDOR income tax", "K.S.A. 79-32,110". Kansas has a two-bracket progressive system (5.20%–5.58%) effective 2024+. ALWAYS load us-tax-workflow-base first.
 version: "0.1"
 jurisdiction: US-KS
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # KS Income Tax

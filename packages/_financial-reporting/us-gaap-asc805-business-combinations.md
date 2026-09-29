@@ -9,7 +9,7 @@ reviewed_by: James Wallach
 review_status: pending_review
 depends_on:
   - financial-reporting-workflow-base
-category: financial-reporting
+category: financial-statements
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -983,7 +983,7 @@ _INTENT_CATALOGUE: dict[str, dict[str, Any]] = {
             "return-assembly", "national-insurance", "payments-on-account",
             "student-loan",
         ],
-        "category_keywords": ["international", "federal", "state"],
+        "category_keywords": ["international", "federal", "state-tax"],
     },
     "vat": {
         "label": "VAT / GST return",

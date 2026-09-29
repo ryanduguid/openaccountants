@@ -3,6 +3,7 @@ name: tanzania-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Tanzania VAT return. Standard rate 18% (16% reduced for non-VAT-registered B2C electronic payments from Sep 2025). EAC customs union but no common VAT. Withholding VAT 3% goods / 6% services from July 2025. ALWAYS read before handling Tanzania VAT work.
 version: 2.0
 jurisdiction: TZ
+category: international
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: Baraka Cassian

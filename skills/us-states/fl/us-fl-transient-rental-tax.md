@@ -2,12 +2,15 @@
 name: us-fl-transient-rental-tax
 description: Florida local-option transient rental (tourist development) tax rates for all 67 counties (FDOR DR-15TDT), on rentals of 6 months or less, in addition to state sales tax + surtax.
 jurisdiction: US-FL
+category: state-tax
 tax_year: 2026
 last_updated: 2026-07-13
 reviewed_by: Rob Hoffman
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # Florida Transient Rental Tax (Tourist Development) — by County

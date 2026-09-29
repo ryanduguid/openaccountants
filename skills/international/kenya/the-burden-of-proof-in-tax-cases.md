@@ -2,6 +2,7 @@
 name: the-burden-of-proof-in-tax-cases
 description: FFP CONSULT LTD
 jurisdiction: KE
+category: international
 tax_year: 2025
 last_updated: 2026-07-21
 review_status: pending_review

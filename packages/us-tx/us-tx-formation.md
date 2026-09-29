@@ -2,12 +2,15 @@
 name: us-tx-formation
 description: Tier 2 Texas content skill for entity formation covering tax year 2025. Includes the TX LLC Certificate of Formation $300, no state PIT, no franchise/margin tax under $2.47M revenue threshold, mandatory annual Public Information Report (Form 05-102), Series LLC permitted (2009 legislation), foreign qualification Certificate of Authority $750, doing-business thresholds for out-of-state entities (post-Wayfair $500k sales/$50k payroll/$50k property), and the BOI/CTA stay status.
 jurisdiction: US-TX
+category: formation
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # TX Formation

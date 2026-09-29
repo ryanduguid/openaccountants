@@ -3,6 +3,7 @@ name: italy-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Italian VAT return (Liquidazione IVA Periodica / LIPE) for a self-employed individual or small business under the regime ordinario in Italy. Trigger on phrases like "prepare LIPE", "Italian VAT return", "Liquidazione IVA", "IVA italiana", "classify transactions for Italian VAT", or any request involving Italy VAT filing. This skill covers Italy only, regime ordinario (monthly or quarterly LIPE). Regime forfettario, regime dei minimi, split payment, margin schemes, and VAT groups are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Italian VAT work.
 version: 2.0
 jurisdiction: IT
+category: international
 tax_year: 2025
 last_updated: 2026-09-13
 review_status: pending_review

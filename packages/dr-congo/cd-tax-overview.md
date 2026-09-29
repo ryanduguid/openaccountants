@@ -2,6 +2,7 @@
 name: cd-tax-overview
 description: "Source-cited draft: tax overview for DR Congo (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CD
+category: international
 tax_year: 2025
 version: 0.1
 last_updated: 2026-09-10

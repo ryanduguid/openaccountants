@@ -2,6 +2,7 @@
 name: id-formation
 description: "Use this skill whenever asked about forming, incorporating, or registering a business in Indonesia. Trigger on phrases like \"Indonesia company formation\", \"set up PT Indonesia\", \"PT Perorangan\", \"register UD Indonesia\", \"OSS Indonesia\", \"PMA registration\", \"NIB\", \"Indonesia business setup\", \"CV Indonesia\", \"PT PMA\", \"BKPM\", \"Kementerian Investasi\", \"KBLI\", \"Positive Investment List\", or any question about choosing or registering an Indonesian entity. Covers entity comparison (UD, CV, PT, PT Perorangan, PMA), OSS RBA registration steps, NIB and NPWP issuance, KBLI classification, sectoral licensing, capital and ownership requirements, and tax treatment by entity type. Out of scope: immigration/visa/KITAS sponsorship, bank account opening procedures (mentioned only at a high level), full corporate governance and shareholder agreement drafting, sector-specific regulatory licensing beyond signposting. ALWAYS read this skill before advising on Indonesian entity choice or formation."
 jurisdiction: ID
+category: formation
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: RILIA PUTRI

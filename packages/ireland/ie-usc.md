@@ -3,7 +3,8 @@ name: ie-usc
 description: Use this skill whenever asked about Ireland's Universal Social Charge (USC) for self-employed individuals or any taxpayer. Trigger on phrases like "USC calculation", "universal social charge", "USC rates Ireland", "USC bands", "USC surcharge", "USC self-employed", "USC medical card", "USC exemption", or any question about USC obligations. This skill covers standard rates and bands, the self-employed surcharge, exemptions, reduced rates for medical card holders and over-70s, and edge cases. ALWAYS read this skill before touching any Irish USC work.
 version: 2.0
 jurisdiction: IE
-tax_year: 2025
+category: international
+tax_year: 2026
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2

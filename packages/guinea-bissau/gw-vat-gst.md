@@ -2,6 +2,7 @@
 name: gw-vat-gst
 description: "Source-cited draft: VAT (IVA) for Guinea-Bissau (tax year 2025) — rates, regimes, filing and withholding, read from the Código do IVA approved by Lei nº 4/2022. Unverified; pending local-accountant review."
 jurisdiction: GW
+category: international
 tax_year: 2025
 tax_year_notes: "The Código do IVA was approved by Lei nº 4/2022, published in the 4th supplement to Boletim Oficial nº 8 of 25 February 2022. The commencement date is not stated in the DGCI's consolidated text as read; 1 January 2025 is carried from a secondary source and is flagged as a gap below."
 last_updated: 2026-09-10

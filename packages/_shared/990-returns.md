@@ -2,11 +2,14 @@
 name: 990-returns
 description: "Form 990 (full return) in the United States: how I do it"
 jurisdiction: US
+category: federal
 tax_year: 2025
 last_updated: 2026-08-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # 990  Returns

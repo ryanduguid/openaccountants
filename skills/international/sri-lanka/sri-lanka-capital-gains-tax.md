@@ -2,6 +2,7 @@
 name: sri-lanka-capital-gains-tax
 description: Sri Lanka Capital Gains Tax on realisation of investment assets — rates, exemptions, calculation and filing (Inland Revenue Act No. 24 of 2017, as amended by Act No. 11 of 2026).
 jurisdiction: LK
+category: international
 tax_year: 2025
 tax_year_notes: "Rates in this guide span the IRA (Amendment) Act No. 11 of 2026, enacted 3 June 2026. The date of realisation, not the year of assessment, selects the rate: 10% before 3 June 2026, and 15% / 30% by class of taxpayer on or after it."
 last_updated: 2026-09-10

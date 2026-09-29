@@ -2,6 +2,7 @@
 name: tm-tax-overview
 description: "Source-cited draft: tax overview for Turkmenistan — the flat 10% personal rate, the 8% / 20% / 50% corporate profit-tax bands under art. 172 and the 15% VAT, confirmed against the Unified Law 'On Taxes' published by the Tax Directorate. Pending local-accountant review."
 jurisdiction: TM
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

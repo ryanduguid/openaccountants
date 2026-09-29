@@ -2,12 +2,15 @@
 name: us-mo-payroll
 description: Tier 2 Missouri content skill for employer payroll compliance covering tax year 2025. Includes the MO PIT brackets up to 4.95% (phasing down via revenue triggers), MO W-4 state W-4, MO-941 monthly/quarterly withholding, MO-W-3 annual reconciliation, MO UI wage base $9,500 with rates 0-9.75%, the Kansas City and St. Louis 1% local earnings taxes applicable to both residents and non-resident workers, and 20-factor worker classification test.
 jurisdiction: US-MO
+category: payroll
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # MO Payroll

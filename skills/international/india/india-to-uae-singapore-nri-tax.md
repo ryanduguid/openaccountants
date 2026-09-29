@@ -2,6 +2,7 @@
 name: india-to-uae-singapore-nri-tax
 description: Becoming a non-resident Indian is a day-count game with three statuses (resident, RNOR, NRI) and one modern trap — deemed residency for high earners in zero-tax countries. What happens to your Indian salary, shares, mutual funds and property when you move to Dubai or Singapore; NRE/NRO accounts and repatriation; the treaty differences between the two destinations; and the RNOR window that makes a return home tax-efficient.
 jurisdiction: IN
+category: international
 tax_year: 2025
 last_updated: 2026-08-03
 review_status: pending_review

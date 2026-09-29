@@ -2,12 +2,15 @@
 name: us-fl-corporate-income-tax
 description: "Source-cited tax guide for US-FL: fl corporate income tax. Unverified draft, pending local-accountant review."
 jurisdiction: US-FL
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: Rob Hoffman
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # FL Corporate Income Tax

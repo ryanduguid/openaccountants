@@ -2,6 +2,7 @@
 name: ba-company-formation
 description: "Source-cited draft: company formation & entity choice for Bosnia and Herzegovina (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BA
+category: formation
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

@@ -3,11 +3,14 @@ name: us-md-income-tax
 description: Use this skill whenever asked about Maryland individual income tax. Trigger on phrases like "Maryland income tax", "MD income tax", "Form 502", "Comptroller of Maryland", "Maryland county tax", "piggyback tax". Maryland has 10 graduated state brackets (2%–6.50%) PLUS mandatory county/city income taxes (2.25%–3.20%). ALWAYS load us-tax-workflow-base first.
 version: "0.1"
 jurisdiction: US-MD
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # MD Income Tax

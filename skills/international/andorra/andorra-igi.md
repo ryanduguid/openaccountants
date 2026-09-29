@@ -3,6 +3,7 @@ name: andorra-igi
 description: "Use this draft when preparing or reviewing an Andorran IGI return, classifying sales and purchases, or reconciling import tax, reverse charges and prior credits. It maps the numbered fields of the government-published form 900, including the domestic 0% rate, and explains how the filing period depends on turnover. The cited 2019 consolidated law distinguishes taxable supplies, export exemptions and operations outside the charge. The current electronic form, later legal amendments and specialist refund calculations still require verification. Obtain local professional review before filing or relying on a tax computation."
 version: 2.1
 jurisdiction: AD
+category: international
 tax_year: 2025
 last_updated: 2026-09-12
 review_status: pending_review

@@ -2,6 +2,7 @@
 name: ie-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package an Irish annual tax return. Trigger on phrases like "Ireland tax return assembly", "Form 11 final", "CT1 final filing", "ROS submission Ireland", "preliminary tax Ireland", "31 October Ireland", "assemble Irish return", "prepare Form 11", "prepare Form 12", "finalize Irish self-assessment", or "Revenue Online Service pay and file". This is the capstone orchestrator that pulls together outputs from ie-income-tax-form11, ie-preliminary-tax, ie-prsi-class-s, ie-usc, ireland-vat-return, ie-corporation-tax, ie-paye, ie-payroll, ie-cgt, ie-cat, and ie-formation into a single Form 11 / Form 12 / CT1 working paper plus payment and filing instructions for the Revenue Online Service (ROS). It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line working paper, generates ROS payment instructions, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing an Irish tax return.
 jurisdiction: IE
+category: orchestrator
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

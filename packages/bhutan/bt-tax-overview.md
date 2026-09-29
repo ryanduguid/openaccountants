@@ -2,6 +2,7 @@
 name: bt-tax-overview
 description: "Source-cited draft: tax overview for Bhutan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BT
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

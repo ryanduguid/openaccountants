@@ -3,6 +3,7 @@ name: ca-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Canadian tax returns AND mentions freelancing, self-employment, contracting, sole proprietorship, or unincorporated business. Trigger on phrases like "help me do my taxes", "prepare my T1", "I'm self-employed in Canada", "I'm a freelancer in Canada", "do my taxes as a contractor", "prepare my GST/HST return and income tax", or any similar phrasing where the user is a Canadian-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Canadian self-employed tax workflow -- every other skill in the stack (canada-gst-hst, ca-fed-t2125, ca-fed-t1-return, ca-fed-cpp-ei, ca-fed-instalments, ca-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Canadian full-year residents only; sole proprietors only (not incorporated).
 version: 0.1
 jurisdiction: CA
+category: orchestrator
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

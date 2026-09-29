@@ -3,6 +3,7 @@ name: ethiopia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Ethiopia VAT return. Standard rate 15%. Turnover Tax abolished under Proclamation 1395/2025. ALWAYS read before handling Ethiopia VAT work.
 version: 2.0
 jurisdiction: ET
+category: international
 tax_year: 2025
 last_updated: 2026-09-10
 review_status: pending_review

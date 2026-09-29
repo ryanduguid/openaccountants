@@ -2,12 +2,15 @@
 name: us-az-payroll
 description: Tier 2 Arizona content skill for employer payroll compliance covering tax year 2025. Includes the 2.5% flat PIT (phased down from 4.5% over 2022-2023), A-4 state W-4 expressed as percentage of federal withholding (0.5-3.5% options), A1-QRT quarterly withholding, A1-R annual reconciliation, AZ UI wage base $8,000 with rates 0.07-15.6%, Earned Paid Sick Time Proposition 206 mandate (1 hour per 30 hours worked statewide), and a 7-factor worker classification test.
 jurisdiction: US-AZ
+category: payroll
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # AZ Payroll

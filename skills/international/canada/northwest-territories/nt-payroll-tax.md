@@ -2,6 +2,7 @@
 name: nt-payroll-tax
 description: Use this skill for the Northwest Territories Payroll Tax — 2% employer-paid payroll tax (with refundable Cost of Living Tax Credit for residents). Unique to NWT. Triggers "NWT payroll tax", "Northwest Territories payroll tax", "NWT 2% payroll", "Cost of Living Offset NWT", "Form NWT401".
 jurisdiction: CA
+category: payroll
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

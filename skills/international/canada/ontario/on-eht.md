@@ -2,6 +2,7 @@
 name: on-eht
 description: Use this skill for Ontario Employer Health Tax (EHT). Triggers "Ontario EHT", "Employer Health Tax Ontario", "EHT exemption Ontario", "EHT $1M threshold", "Ontario payroll tax", "Form 6076E EHT annual return". ALWAYS read alongside canada-payroll.
 jurisdiction: CA
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

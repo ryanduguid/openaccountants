@@ -2,6 +2,7 @@
 name: tm-vat-gst
 description: "Source-cited draft: VAT for Turkmenistan — the 15% standard rate and the art. 105 zero-rated list, including the oil-and-gas carve-out, the textile-producer relief and the rule that carriage between two Turkmen points is not international, read from the Unified Law 'On Taxes'. Pending local-accountant review."
 jurisdiction: TM
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

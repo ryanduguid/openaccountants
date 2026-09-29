@@ -3,6 +3,7 @@ name: be-social-contributions
 description: Use this skill whenever asked about Belgian self-employed social contributions (sociale bijdragen / cotisations sociales). Trigger on phrases like "sociale bijdragen", "Belgian social contributions", "RSVZ", "INASTI", "self-employed Belgium", "zelfstandige bijdragen", "VAPZ", "PLCI", or any question about social contribution obligations for a self-employed client in Belgium. Covers the 20.5% / 14.16% tiered rates, quarterly payments, management company interaction, and VAPZ supplementary pension. ALWAYS read this skill before touching any Belgium social contributions work.
 version: 2.0
 jurisdiction: BE
+category: international
 tax_year: 2026
 last_updated: 2026-07-13
 review_status: pending_review

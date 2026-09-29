@@ -2,6 +2,7 @@
 name: leaving-australia-tax-residency-cgt
 description: "Use for planning departure from Australia: tax residency, CGT event I1 and its individual choice, main-residence CGT, part-year income tax, HELP and superannuation obligations."
 jurisdiction: AU
+category: international
 tax_year: 2025
 last_updated: 2026-09-14
 review_status: pending_review

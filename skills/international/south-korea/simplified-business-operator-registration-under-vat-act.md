@@ -2,6 +2,7 @@
 name: simplified-business-operator-registration-under-vat-act
 description: Simplified business operator registration & Filing VAT return
 jurisdiction: KR
+category: international
 tax_year: 2025
 last_updated: 2026-07-28
 review_status: pending_review

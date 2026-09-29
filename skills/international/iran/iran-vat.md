@@ -3,6 +3,7 @@ name: iran-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Iran VAT return. Trigger on phrases like "Iran VAT", "INTA tax", "Iran value added tax". Iran imposes VAT at 10% (9% VAT + 1% municipal) under the VAT Law of 2008 as amended. Iran uses the Solar Hijri calendar for all tax purposes. ALWAYS read this skill before handling any Iran VAT work.
 version: 2.0
 jurisdiction: IR
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

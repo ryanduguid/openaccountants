@@ -56,7 +56,8 @@
    ],
    "shared": [
     "cross-border-workflow-base.md",
-    "financial-statements-workflow-base.md"
+    "financial-statements-workflow-base.md",
+    "us-tax-workflow-base.md"
    ]
   },
   "_financial-reporting": {

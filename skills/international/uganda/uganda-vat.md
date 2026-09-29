@@ -3,6 +3,7 @@ name: uganda-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Uganda VAT return. Standard rate 18%. Withholding VAT 6% of taxable value. EAC customs union but no common VAT. ALWAYS read before handling Uganda VAT work.
 version: 2.0
 jurisdiction: UG
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

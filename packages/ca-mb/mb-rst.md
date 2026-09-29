@@ -2,6 +2,7 @@
 name: mb-rst
 description: Use this skill for Manitoba Retail Sales Tax (RST) — 7% sales tax (NOT harmonized with federal GST). Triggers "Manitoba RST", "Manitoba PST 7%", "MB sales tax", "TAXcess Manitoba", "Manitoba sales tax online sales".
 jurisdiction: CA
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

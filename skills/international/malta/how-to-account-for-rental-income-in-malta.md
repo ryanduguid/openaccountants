@@ -2,6 +2,7 @@
 name: how-to-account-for-rental-income-in-malta
 description: ---
 jurisdiction: MT
+category: international
 tax_year: 2025
 last_updated: 2026-07-21
 review_status: pending_review

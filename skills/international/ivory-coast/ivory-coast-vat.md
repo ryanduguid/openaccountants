@@ -3,6 +3,7 @@ name: ivory-coast-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Cote d'Ivoire VAT (TVA) return. Trigger on phrases like "TVA Cote d'Ivoire", "DGI return". Standard rate 18%, reduced 9%. WAEMU member. ALWAYS read before handling Ivory Coast VAT work.
 version: 2.0
 jurisdiction: CI
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

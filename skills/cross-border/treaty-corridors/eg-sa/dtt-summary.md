@@ -8,6 +8,7 @@ description: >
   before applying treaty rates.
 version: 1.0
 jurisdiction: EG-SA
+category: cross-border
 tax_year: 2025
 last_updated: 2026-08-02
 review_status: pending_review

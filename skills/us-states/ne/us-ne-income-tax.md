@@ -3,11 +3,14 @@ name: us-ne-income-tax
 description: Use this skill whenever asked about Nebraska individual income tax for self-employed / sole proprietors. Trigger on phrases like "Nebraska income tax", "NE income tax", "Form 1040N", "Nebraska Department of Revenue", "NE self-employment tax".
 version: "0.1"
 jurisdiction: US-NE
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # NE Income Tax

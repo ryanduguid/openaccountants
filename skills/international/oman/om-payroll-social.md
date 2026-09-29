@@ -2,6 +2,7 @@
 name: om-payroll-social
 description: "Source-cited draft: payroll & social contributions for Oman — all five social-insurance branches read from the Social Protection Law (RD 52/2023) and its Executive Regulation, including the two branches this pack was missing, the RO 3,000 ceiling that covers only two of the five, the 9% savings contribution on non-Omani basic wage that replaced end-of-service gratuity, and the art. 58 payment deadline. Pending local-accountant review."
 jurisdiction: OM
+category: payroll
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

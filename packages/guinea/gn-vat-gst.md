@@ -2,6 +2,7 @@
 name: gn-vat-gst
 description: "Source-cited draft: VAT (TVA) for Guinea — the 18% rate, the 10th-of-the-month return under art. 373 sexies I, the Tableau des déductions, e-Tax/SAFIG e-invoicing under art. 383.V and the three-month refund condition, read from loi de finances 2025. Pending local-accountant review."
 jurisdiction: GN
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

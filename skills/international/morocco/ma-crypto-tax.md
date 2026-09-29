@@ -8,7 +8,7 @@ last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
-category: international
+category: crypto
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

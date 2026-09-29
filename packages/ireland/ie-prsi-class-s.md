@@ -3,6 +3,7 @@ name: ie-prsi-class-s
 description: Use this skill whenever asked about Irish PRSI Class S contributions for self-employed individuals. Trigger on phrases like "PRSI self-employed", "Class S contributions", "how much PRSI do I pay", "PRSI calculation Ireland", "self-employed social insurance Ireland", "PRSI threshold", or any question about PRSI obligations for a self-employed client in Ireland. This skill covers Class S rates, minimum contribution, income threshold, payment schedule, interaction with income tax, and edge cases. ALWAYS read this skill before touching any Irish PRSI Class S work.
 version: 2.0
 jurisdiction: IE
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

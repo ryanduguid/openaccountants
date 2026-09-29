@@ -2,6 +2,7 @@
 name: sri-lanka-stamp-duty
 description: Sri Lanka stamp duty — central-government instruments and provincial immovable-property transfers; rates, payment methods and penalties.
 jurisdiction: LK
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Lal kumarasiri

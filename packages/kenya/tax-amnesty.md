@@ -2,7 +2,8 @@
 name: tax-amnesty
 description: "Tax amnesty under the Finance Act, 2026: what to do and by when"
 jurisdiction: KE
-tax_year: 2025
+category: international
+tax_year: 2026
 last_updated: 2026-07-30
 review_status: pending_review
 tier: 2

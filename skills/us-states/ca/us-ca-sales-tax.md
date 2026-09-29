@@ -3,8 +3,11 @@ name: us-ca-sales-tax
 description: Use this skill whenever asked about California sales and use tax, CDTFA filings, California district taxes, California exemptions, California nexus, or any request involving California state sales and use tax compliance. Trigger on phrases like "California sales tax", "CA sales tax", "CDTFA", "CDTFA-401", "district tax", "California use tax", "California resale certificate", or any request involving California sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any California sales tax work.
 version: 2.0
 jurisdiction: US-CA
+category: state-tax
 tier: 2
 last_updated: 2026-09-28
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # California Sales and Use Tax Skill v2.0

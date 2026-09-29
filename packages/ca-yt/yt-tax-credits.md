@@ -2,6 +2,7 @@
 name: yt-tax-credits
 description: Use this skill for Yukon provincial tax credits — Yukon First Nations Tax Credit, Yukon Small Business Investment Tax Credit (25%), Yukon Research and Development Tax Credit (15%), Yukon Manufacturing and Processing Profits Tax Credit, Yukon Mineral Exploration Tax Credit (25%). Triggers "Yukon tax credits", "Yukon First Nations Tax Credit", "Form YT428", "Yukon SBITC", "Yukon mineral exploration".
 jurisdiction: CA
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

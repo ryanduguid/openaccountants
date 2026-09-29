@@ -12,7 +12,7 @@ tax_year: 2026
 tier: 2
 review_status: pending_review
 last_updated: 2026-09-28
-category: international
+category: formation
 depends_on:
   - income-tax-workflow-base
 ---

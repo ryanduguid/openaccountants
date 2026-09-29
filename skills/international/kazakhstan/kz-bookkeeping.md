@@ -18,7 +18,7 @@ jurisdiction: KZ
 tax_year: 2026
 tier: 2
 last_updated: 2026-09-28
-category: international
+category: bookkeeping
 depends_on:
   - income-tax-workflow-base
 ---

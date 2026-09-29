@@ -3,7 +3,7 @@ name: germany-tax-optimization
 description: Use this skill whenever asked about reducing tax in Germany, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in Germany. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "Steuern sparen", "Steueroptimierung", "Steuerlast senken". ALWAYS read this skill before advising on any German tax optimization strategy.
 version: 1.0
 jurisdiction: DE
-tax_year: 2025
+tax_year: 2026
 last_updated: 2026-09-29
 review_status: pending_review
 depends_on: []

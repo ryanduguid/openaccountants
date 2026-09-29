@@ -525,3 +525,80 @@ class CtaBlockTests(_ValidatorCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+#: A US-state guide (the jurisdiction decides the rule, not the tree).
+US_GUIDE = GOOD.replace("jurisdiction: MT\n", "jurisdiction: US-NY\n").replace(
+    "category: international\n", "category: state-tax\n"
+)
+#: The base every US tax guide loads on top of.
+US_BASE_GUIDE = (
+    GOOD.replace("name: synthetic-guide\n", "name: us-tax-workflow-base\n")
+    .replace("jurisdiction: MT\n", "jurisdiction: US\n")
+    .replace("category: international\n", "category: foundation\n")
+)
+
+
+class CategoryTests(_ValidatorCase):
+    """`category` is required and drawn from the vocabulary in docs/skill-template.md."""
+
+    def test_a_missing_category_is_an_error(self) -> None:
+        errors = self._check_guides({"skills/international/mt/x.md": GOOD.replace("category: international\n", "")})
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("missing required frontmatter key `category`", errors[0])
+
+    def test_a_legacy_value_is_an_error(self) -> None:
+        for legacy in ("state", "us-states", "financial-reporting", "patterns", "federal-tax", "State-Tax"):
+            with self.subTest(value=legacy):
+                errors = self._check_guides({
+                    "skills/international/mt/x.md": GOOD.replace("category: international\n", f"category: {legacy}\n")
+                })
+                self.assertEqual(len(errors), 1, errors)
+                self.assertIn("`category` must be one of the vocabulary", errors[0])
+
+    def test_every_vocabulary_value_passes(self) -> None:
+        self.assertEqual(len(validate_guides.CATEGORY_VOCABULARY), 19)
+        for value in sorted(validate_guides.CATEGORY_VOCABULARY):
+            with self.subTest(value=value):
+                errors = self._check_guides({
+                    "skills/international/mt/x.md": GOOD.replace("category: international\n", f"category: {value}\n")
+                })
+                self.assertEqual(errors, [])
+
+
+class USBaseDependencyTests(_ValidatorCase):
+    """Every US-jurisdiction tax guide names us-tax-workflow-base in depends_on."""
+
+    def test_a_us_guide_without_the_base_is_an_error(self) -> None:
+        errors = self._check_depends_on({
+            "skills/us-states/ny/us-ny-x.md": US_GUIDE,
+            "skills/foundation/us-tax-workflow-base.md": US_BASE_GUIDE,
+        })
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("a `US-NY` guide loads on top of `us-tax-workflow-base`", errors[0])
+        self.assertIn("must name it in `depends_on`", errors[0])
+
+    def test_a_us_guide_naming_the_base_passes(self) -> None:
+        for shape in ("depends_on:\n  - us-sales-tax\n  - us-tax-workflow-base\n",
+                      "depends_on: [us-sales-tax, us-tax-workflow-base]\n"):
+            with self.subTest(shape=shape):
+                errors = self._check_depends_on({
+                    "skills/us-states/ny/us-ny-x.md": US_GUIDE.replace("tier: 2\n", "tier: 2\n" + shape),
+                    "skills/federal/us-sales-tax.md": US_GUIDE.replace("name: synthetic-guide\n", "name: us-sales-tax\n")
+                    .replace("jurisdiction: US-NY\n", "jurisdiction: US\n")
+                    .replace("tier: 2\n", "tier: 2\ndepends_on:\n  - us-tax-workflow-base\n"),
+                    "skills/foundation/us-tax-workflow-base.md": US_BASE_GUIDE,
+                })
+                self.assertEqual(errors, [])
+
+    def test_the_base_the_exempt_trees_and_other_jurisdictions_need_no_base(self) -> None:
+        errors = self._check_depends_on({
+            "skills/foundation/us-tax-workflow-base.md": US_BASE_GUIDE,
+            "skills/financial-reporting/leases/us-gaap-x.md": US_GUIDE.replace("name: synthetic-guide\n", "name: us-gaap-x\n")
+            .replace("jurisdiction: US-NY\n", "jurisdiction: US\n")
+            .replace("category: state-tax\n", "category: financial-statements\n"),
+            "skills/templates/us-template.md": US_GUIDE.replace("name: synthetic-guide\n", "name: us-template\n")
+            .replace("category: state-tax\n", "category: template\n"),
+            "skills/international/mt/x.md": GOOD.replace("name: synthetic-guide\n", "name: mt-x\n"),
+        })
+        self.assertEqual(errors, [])

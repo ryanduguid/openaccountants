@@ -2,12 +2,15 @@
 name: us-oh-payroll
 description: Tier 2 Ohio content skill for employer payroll compliance covering tax year 2025. Includes the OH PIT brackets up to 3.5% (phasing down), IT 941 quarterly withholding, OH SUI wage base $9,000 with rates 0.30-9.80%, the 600+ municipal income tax system collected via RITA (Regional Income Tax Agency, ~330 cities) and CCA (Central Collection Agency, ~50 cities) with direct-file cities like Cincinnati/Columbus/Dayton/Toledo, the 20-day work-in-municipality threshold under SB 22 (2021) triggering non-resident withholding, and BWC mandatory state-fund workers' compensation.
 jurisdiction: US-OH
+category: payroll
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # OH Payroll

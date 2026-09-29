@@ -1,6 +1,7 @@
 ---
 name: sweden-references
 jurisdiction: SE
+category: international
 tier: 2
 last_updated: 2026-09-28
 version: 1.0

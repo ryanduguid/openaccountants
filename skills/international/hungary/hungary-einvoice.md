@@ -3,7 +3,7 @@ name: hungary-einvoice
 description: Use this skill whenever asked about e-invoicing in Hungary, NAV Online Számla, real-time invoice reporting (RTIR), NAV Online Invoicing System, XML 3.0 schema, invoice data reporting to the Hungarian tax authority, electronic invoice hash, completenessIndicator, or any question about issuing, transmitting, validating, or archiving electronic invoices under Hungarian law. Trigger on phrases like "NAV Online Számla", "RTIR Hungary", "real-time invoice reporting", "NAV API", "XML 3.0 Hungary", "invoiceData.xsd", "Online Invoicing System", "e-számla", "Hungarian invoice reporting", or "ManageInvoiceRequest". ALWAYS read this skill before touching any Hungary invoicing compliance work.
 version: 1.0
 jurisdiction: HU
-tax_year: 2025
+tax_year: 2026
 last_updated: 2026-09-28
 review_status: pending_review
 depends_on:

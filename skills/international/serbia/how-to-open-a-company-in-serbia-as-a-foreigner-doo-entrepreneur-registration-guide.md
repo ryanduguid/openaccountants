@@ -2,6 +2,7 @@
 name: how-to-open-a-company-in-serbia-as-a-foreigner-doo-entrepreneur-registration-guide
 description: How to Register a DOO or Entrepreneur in Serbia as a Foreign Citizen
 jurisdiction: RS
+category: international
 tax_year: 2025
 last_updated: 2026-08-20
 review_status: pending_review

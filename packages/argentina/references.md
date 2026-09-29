@@ -3,6 +3,7 @@ name: references
 description: "Reference entry for Argentine tax research and electronic invoicing. Identifies ARCA as the federal tax and customs authority and lists pyafipws and PyARCA as external software references for government web services and Monotributo invoicing. Use when locating Argentine source material, checking an AFIP-to-ARCA reference or assessing an invoicing integration. The consolidated legislative texts and resolution numbers remain a documented research gap. Consult each tax guide and the authority before relying on a rule. Check the actual upstream licence and OpenAccountants licensing policy before copying or distributing third-party material."
 version: 1.2
 jurisdiction: AR
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

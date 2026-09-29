@@ -2,6 +2,7 @@
 name: vu-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Vanuatu, tax year 2025 — there is none, and the international-company exemption in section 118 of the International Companies Act [CAP. 222] Consolidated Edition 2026 is read here from the VFSC's own text, including its two contradictory duration subsections. Pending local-accountant review."
 jurisdiction: VU
+category: international
 tax_year: 2025
 last_updated: 2026-09-11
 review_status: pending_review

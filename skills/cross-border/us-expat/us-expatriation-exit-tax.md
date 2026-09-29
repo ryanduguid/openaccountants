@@ -9,7 +9,8 @@ reviewed_by: James Wallach
 review_status: pending_review
 depends_on:
   - cross-border-tax-workflow-base
-category: international
+  - us-tax-workflow-base
+category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

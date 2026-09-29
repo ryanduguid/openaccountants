@@ -3,6 +3,7 @@ name: zimbabwe-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Zimbabwe VAT return. Standard rate 15.5% from 1 January 2026. Mandatory fiscalised electronic devices. Multi-currency regime (ZiG/USD). ALWAYS read before handling Zimbabwe VAT work.
 version: 2.0
 jurisdiction: ZW
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

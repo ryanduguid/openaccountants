@@ -3,6 +3,7 @@ name: azerbaijan-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Azerbaijan VAT (EDV) return for any client. Trigger on phrases like "Azerbaijan VAT", "EDV return", "Azerbaijani tax", or any request involving Azerbaijan VAT filing. This skill covers standard EDV payers filing monthly returns. Simplified tax regime and micro-enterprise exemptions are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Azerbaijan VAT work.
 version: 2.0
 jurisdiction: AZ
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

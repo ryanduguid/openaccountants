@@ -2,6 +2,7 @@
 name: ae-company-formation
 description: "Source-cited draft: company formation & entity choice for United Arab Emirates (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AE
+category: formation
 tax_year: 2025
 version: 0.1
 last_updated: 2026-09-10

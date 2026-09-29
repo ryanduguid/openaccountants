@@ -2,6 +2,7 @@
 name: slovakia-vat-registration-4-7-7a
 description: Which Slovak VAT registration a client actually needs, the 50 000 / 62 500 / 14 000 eur triggers, and why a §7a registrant pays VAT but cannot deduct it.
 jurisdiction: SK
+category: international
 tax_year: 2025
 last_updated: 2026-07-29
 review_status: pending_review

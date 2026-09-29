@@ -9,7 +9,7 @@ reviewed_by: RILIA PUTRI
 review_status: current
 depends_on:
   - payroll-workflow-base
-category: international
+category: payroll
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

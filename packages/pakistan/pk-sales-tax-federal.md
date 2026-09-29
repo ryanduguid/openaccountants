@@ -2,6 +2,7 @@
 name: pk-sales-tax-federal
 description: ALWAYS read this skill before touching any Pakistan FEDERAL sales tax on goods work. Use whenever asked to prepare, review, classify transactions for, or advise on the federal Sales Tax Return (STR) administered by the Federal Board of Revenue (FBR) under the Sales Tax Act 1990 as amended by the Finance Acts 2024 and 2025. Trigger on phrases like "Pakistan sales tax", "FBR ST", "GST Pakistan", "sales tax return Pakistan", "STR Pakistan", "input tax credit Pakistan", "POS Tier-1 Pakistan", "Finance Act 2025 sales tax", "IRIS sales tax", "Annex-C", "STRN", "Fifth Schedule", "Sixth Schedule", "Eighth Schedule", "Ninth Schedule", "Tenth Schedule", or any request involving federal sales tax on goods in Pakistan. Federal scope only — provincial sales tax on services (SRB, PRA, KPRA, BRA) is handled by a separate skill (pk-sales-tax-services).
 jurisdiction: PK
+category: international
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: Ibrar Ali

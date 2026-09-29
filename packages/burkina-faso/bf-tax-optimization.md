@@ -2,6 +2,7 @@
 name: bf-tax-optimization
 description: AI-drafted from official sources (DGI Burkina Faso CGI — régimes d'imposition, CGA reductions, MFP exemption). Pending accountant verification. LEGAL optimization only. Confirm thresholds and reductions against the current consolidated CGI.
 jurisdiction: BF
+category: tax-optimization
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

@@ -2,6 +2,7 @@
 name: sr-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Suriname (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: SR
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

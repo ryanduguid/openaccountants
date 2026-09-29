@@ -2,6 +2,7 @@
 name: tm-income-tax
 description: "Source-cited draft covering personal income tax in Turkmenistan. Explains the ordinary 10% rate, fixed charges for operating gambling activities, the monthly deduction measured in statutory tax base values and selected conditional tax reductions. Sets out income within scope, residence, employer withholding, payment timing and individual declaration deadlines, including rules for foreign citizens and departures. Distinguishes annual withholding information from individual returns. The current monetary value of the standard deduction remains unverified. Based on the Tax Code published by Parliament and earlier Tax Directorate sources. Pending local-accountant review."
 jurisdiction: TM
+category: international
 tax_year: 2025
 last_updated: 2026-09-12
 review_status: pending_review

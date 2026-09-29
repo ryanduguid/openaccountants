@@ -2,11 +2,14 @@
 name: us-nj-cbt-and-bait
 description: New Jersey Corporation Business Tax (CBT) and Business Alternative Income Tax (BAIT)
 jurisdiction: US-NJ
+category: state-tax
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # NJ Cbt And Bait

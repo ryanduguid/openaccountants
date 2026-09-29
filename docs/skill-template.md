@@ -9,17 +9,17 @@
 | `name` | slug, `[country-or-topic]-[domain]`; unique across the repo. A US-state guide is `us-[state]-[topic]` and its file is `[name].md` | e.g. `malta-income-tax`, `us-ny-sales-tax` |
 | `description` | 80-100 words | What it covers, entity types, jurisdiction, tax year, plus trigger phrases the AI should match |
 | `jurisdiction` | ISO code | `MT`, `GB`, `DE`, `US`, `US-CA`, `GLOBAL`, `INTL`, `EU-27`. Required even when the folder path implies it. Quote `"NO"` because YAML 1.1 otherwise reads Norway's code as boolean `false`. A **warning**, not an error, inside the small allowlist of jurisdiction-agnostic directories |
+| `category` | one of the [vocabulary below](#category-vocabulary) | The domain the guide covers, topic first and the tree's residual value otherwise (the rule is under the vocabulary). CI errors on a missing value and on one outside the list; every guide has carried one since 2026-09-29, so `index.json` and the MCP server's `category` filter cover the whole corpus |
 | `tier` | `1` or `2` | `1` = **accountant-reviewed** (a named licensed accountant fully reviewed and signed off); `2` = **source-cited draft** (drafted from primary sources, awaiting review). These are the only two quality states |
 | `last_updated` | `YYYY-MM-DD` | Date the content was last checked/edited. It must never move backwards |
 
 ## Expected, but not enforced
 
-These two were previously listed as required. They are not: `scripts/validate-guides.py` does not test for their presence, and much of the corpus omits them. Write them on anything new, but do not treat their absence in an existing file as a validation failure — and do not bulk-add them to close a gap that CI never asserted.
+`tax_year` was previously listed as required. It is not: `scripts/validate-guides.py` checks its format when the key is present and does not test for its presence, and 74 guides omit it, mostly workflow bases that are genuinely year-agnostic. Write it on anything new, but do not treat its absence in an existing file as a validation failure.
 
 | Key | Format | Notes |
 |-----|--------|-------|
-| `category` | one of the vocabulary below | Domain the skill covers. **Not checked by CI at all**, and absent from roughly two-thirds of the corpus (1,210 of 1,926 guides as at 2026-09-10), so a join on it silently drops most files. The count drifts as guides are edited — nothing keeps it honest, so re-measure before quoting it |
-| `tax_year` | **bare integer**, e.g. `2025` | The **coverage start year**. CI checks the *format* when the key is present and errors on anything that is not an integer 2015-2035, but does not require the key — 72 guides omit it, mostly workflow bases that are genuinely year-agnostic. Ranges, fiscal calendars, and qualifiers ("2025-26", "YA 2026", "2567 (2024)") go in `tax_year_notes`, never here |
+| `tax_year` | **bare integer**, e.g. `2025` | The year of the guide's **primary figures** (its coverage start year). It moves when the figures do: a guide whose rate tables are the 2026 figures says `tax_year: 2026`, and a guide that carries the 2025 figures with the 2026 ones noted beside them stays `2025`. CI errors on anything that is not an integer 2015-2035. Ranges, fiscal calendars, and qualifiers ("2025-26", "2026/27", "YA 2026", "2567 (2024)") go in `tax_year_notes`, never here |
 
 ## Optional keys
 
@@ -43,30 +43,35 @@ These values are content metadata, not synchronization tokens:
 `scripts/check-sync-integrity.py --strict-metadata` fails a pull request whose
 body edit advances neither, and nothing else reads them as a version.
 
-## Category vocabulary (the real one)
+## Category vocabulary
 
-This is the vocabulary actually in use across the repo's guides (by count), not an aspirational list. Use these for new files:
+These nineteen values are the whole vocabulary; `scripts/validate-guides.py` errors on any other. The counts are the corpus on 2026-09-29, when every guide was given a value by one rule.
 
-| Category | What it means | Approx. usage |
-|----------|---------------|---------------|
-| `international` | Country-level tax computation (income tax, VAT, SSC) | ~757 |
-| `foundation` | Universal workflow base (domain-agnostic) | ~198 |
-| `orchestrator` | Router / intake / assembly files | ~110 |
-| `federal` | US federal tax | ~104 |
-| `payroll` | Withholding, social security, payslips | ~82 |
-| `tax-optimization` | Legal tax reduction strategies, timing, deductions | ~64 |
-| `cross-border` | Multi-jurisdiction coordination, treaties, WHT | ~54 |
-| `transfer-pricing` | TP documentation, arm's length, CbCR | ~43 |
-| `state-tax` | US state tax | ~40 |
-| `formation` | Entity types, registration, compliance | ~39 |
-| `financial-statements` | Annual accounts, reporting, audit | ~39 |
-| `bookkeeping` | Chart of accounts, P&L, balance sheet | ~39 |
-| `invoicing` | E-invoicing format, validation, transmission | ~30 |
-| `crypto` | Cryptocurrency and digital asset taxation | ~30 |
-| `vertical` | Industry-specific accounting patterns | ~28 |
-| `integration` | Platform export formats, column mappings | ~20 |
+**The rule.** The topic wins where the guide's name states one: `payroll`, `crypto` (and `nft-tax`), `formation` (and `incorporation`), `bookkeeping`, `invoicing` (`einvoice`, `e-invoicing`), `tax-optimization` (and `tax-planning`), `transfer-pricing`, `financial-statements` (and `financial-reporting`), and `orchestrator` for an intake, router or return-assembly file wherever it lives. Otherwise the guide takes its tree's residual value: `international` for a country guide (income tax, VAT and GST, social contributions, corporate tax, withholding, estimated tax), `federal` under `skills/federal/` (`state-tax` for the 50-state matrices and the sales-tax guides there), `state-tax` under `skills/us-states/`, `cross-border` under `skills/cross-border/`, and the directory's own value under `skills/foundation/`, `skills/verticals/`, `skills/integrations/`, `skills/patterns/`, `skills/intelligence/`, `skills/templates/` and `skills/financial-reporting/` (which takes `financial-statements`). A guide is filtered by `jurisdiction` for its geography, so the category says what it is about.
 
-Legacy synonyms still present in older files — do **not** use for new files: `federal-tax` (use `federal`), `state` / `us-states` (use `state-tax`), `financial-reporting` (use `financial-statements`), plus stragglers `template`, `pattern(s)`, `intelligence`.
+| Category | What it means | Guides |
+|----------|---------------|--------|
+| `international` | Country-level tax computation: income tax, VAT and GST, social contributions, corporate tax, withholding | 991 |
+| `payroll` | Withholding, social security, payslips | 189 |
+| `formation` | Entity types, registration, compliance | 167 |
+| `state-tax` | US state tax, and the 50-state matrices | 150 |
+| `orchestrator` | Router, intake and return-assembly files | 61 |
+| `tax-optimization` | Legal tax reduction strategies, timing, deductions | 49 |
+| `cross-border` | Multi-jurisdiction coordination, treaties, WHT, the US expat set | 42 |
+| `crypto` | Cryptocurrency and digital asset taxation | 32 |
+| `federal` | US federal tax | 31 |
+| `financial-statements` | Annual accounts, reporting, audit, and the accounting standards under `skills/financial-reporting/` | 30 |
+| `invoicing` | E-invoicing format, validation, transmission | 24 |
+| `bookkeeping` | Chart of accounts, P&L, balance sheet | 22 |
+| `foundation` | Workflow bases (domain-agnostic) | 18 |
+| `transfer-pricing` | TP documentation, arm's length, CbCR | 17 |
+| `vertical` | Industry-specific accounting patterns | 14 |
+| `integration` | Platform export formats, column mappings | 10 |
+| `pattern` | Global vendor and expense patterns (`skills/patterns/`) | 9 |
+| `template` | File templates (`skills/templates/`, the corridor template) | 6 |
+| `intelligence` | Deadline, threshold and optimisation engines (`skills/intelligence/`) | 3 |
+
+The legacy synonyms (`federal-tax`, `state`, `us-states`, `financial-reporting`, `patterns`) were normalised on 2026-09-29 and are rejected.
 
 ## Closing CTA block
 

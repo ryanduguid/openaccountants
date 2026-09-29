@@ -2,6 +2,7 @@
 name: nu-tax-credits
 description: Use this skill for Nunavut provincial tax credits — Nunavut Cost of Living Tax Credit, Nunavut Volunteer Firefighters Tax Credit, Nunavut Carbon Credit, Nunavut Risk Capital Investment Tax Credit (45% — highest in Canada). Triggers "Nunavut tax credits", "Nunavut Cost of Living", "Form NU428", "Nunavut Risk Capital", "NRCITC".
 jurisdiction: CA
+category: international
 tax_year: 2025
 last_updated: 2026-09-28
 review_status: pending_review

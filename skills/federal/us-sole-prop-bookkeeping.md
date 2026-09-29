@@ -3,12 +3,15 @@ name: us-sole-prop-bookkeeping
 description: Tier 2 content skill for classifying business transactions into US federal Schedule C (Form 1040) line items for sole proprietors and single-member LLCs disregarded for federal tax. Covers tax year 2025 under OBBBA (P.L. 119-21) with post-OBBBA depreciation rules, permanent QBI framework, and new tip/overtime/auto loan interest deductions. Handles Schedule C Parts I-V, the §162 ordinary and necessary standard, §263 capitalization, §280A home office, §280F vehicle and listed property, §274 substantiation and meals, §168(k) bonus depreciation cutoff at January 19 2025, §179 expensing, §471(c) small business inventory exception, §183 hobby loss, and §6001 / §274(d) recordkeeping. Defers Schedule C net profit, Schedule SE, QBI, retirement contributions, and quarterly estimated tax to companion content skills. MUST be loaded alongside us-tax-workflow-base v0.1 or later. Federal only. No state tax.
 version: 2.0
 jurisdiction: US
+category: bookkeeping
 tax_year: 2025
 last_updated: 2026-09-29
 reviewed_by: A licensed accountant (name withheld at their request)
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # US Sole Prop Bookkeeping

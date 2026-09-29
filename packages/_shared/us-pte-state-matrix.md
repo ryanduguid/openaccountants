@@ -2,6 +2,7 @@
 name: us-pte-state-matrix
 description: Tier 2 US federal-level reference skill providing the comprehensive state-by-state matrix of Pass-Through Entity Tax (PTET) elections under the SALT-cap workaround blessed by IRS Notice 2020-75 and codified state-by-state from 2021 onward. Covers election deadlines, rates, eligibility, owner-credit refundability, estimated-tax requirements, and resident-credit interactions for the 35+ states that have enacted PTET regimes. Includes a 5-step decision framework for electing PTET and common-trap callouts for CA, NY, GA, NC, IL, MN, VA. Tax year 2025 under OBBBA.
 jurisdiction: US
+category: state-tax
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
@@ -9,6 +10,8 @@ reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # US PTE State Matrix

@@ -2,6 +2,7 @@
 name: tm-company-formation
 description: "Source-cited draft covering company formation and entity choice in Turkmenistan. Describes the enterprise forms, the economic company with alternative liability models, the sole enterprise and joint-stock companies. Gives minimum capital as multiples of the statutory tax base value, including the joint-stock capital payment schedule, and explains foreign founders and the registration decision period. Replaces an earlier minimum-wage formula using the current legislation published by Parliament. The monetary tax base value, selected incorporation procedures and remaining consultancy-based rows still need confirmation. Pending local-accountant review."
 jurisdiction: TM
+category: formation
 tax_year: 2025
 last_updated: 2026-09-12
 review_status: pending_review

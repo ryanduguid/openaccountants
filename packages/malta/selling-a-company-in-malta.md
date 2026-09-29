@@ -2,6 +2,7 @@
 name: selling-a-company-in-malta
 description: ---
 jurisdiction: MT
+category: international
 tax_year: 2025
 last_updated: 2026-07-22
 review_status: pending_review

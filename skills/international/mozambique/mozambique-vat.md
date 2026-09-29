@@ -3,6 +3,7 @@ name: mozambique-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Mozambique VAT (IVA) return. Standard rate 16%, reduced 5%. ISPC simplified regime for small taxpayers. Portuguese-language terminology. ALWAYS read before handling Mozambique IVA work.
 version: 2.0
 jurisdiction: MZ
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

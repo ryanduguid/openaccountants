@@ -3,6 +3,7 @@ name: pl-income-tax
 description: Use this skill whenever asked about Polish income tax (PIT) for self-employed individuals (działalność gospodarcza / JDG). Trigger on phrases like "Polish tax", "PIT-36", "PIT-36L", "skala podatkowa", "ryczałt", "IP Box", "kwota wolna", "ZUS", "składki", "działalność gospodarcza", "self-employed tax Poland", or any question about filing or computing income tax for a Polish self-employed client. Covers skala podatkowa (12%/32%), flat tax (19%), ryczałt, IP Box (5%), kwota wolna, ZUS contributions, deductible expenses, filing deadlines, and penalties. ALWAYS read this skill before touching any Polish income tax work.
 version: 2.0
 jurisdiction: PL
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

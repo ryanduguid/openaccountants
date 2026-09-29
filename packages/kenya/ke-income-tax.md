@@ -3,6 +3,7 @@ name: ke-income-tax
 description: Use this skill whenever asked about Kenyan income tax for self-employed individuals. Trigger on phrases like "how much tax do I pay", "KRA", "iTax", "income tax return", "personal relief", "insurance relief", "turnover tax", "presumptive tax", "self-employed tax Kenya", or any question about filing or computing income tax for a self-employed or sole proprietor client in Kenya. ALWAYS read this skill before touching any Kenyan income tax work.
 version: 2.0
 jurisdiction: KE
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

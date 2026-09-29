@@ -2,6 +2,7 @@
 name: kz-company-formation
 description: "Source-cited draft: company formation & entity choice for Kazakhstan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: KZ
+category: formation
 tax_year: 2025
 last_updated: 2026-09-10
 review_status: pending_review

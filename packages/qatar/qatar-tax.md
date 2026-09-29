@@ -3,6 +3,7 @@ name: qatar-tax
 description: Use this skill whenever asked about Qatar indirect tax or VAT status. Qatar does NOT have VAT/GST as of April 2026. This skill documents the current tax landscape and expected future VAT under the GCC Unified VAT Agreement. ALWAYS read before advising on Qatar tax.
 version: 2.0
 jurisdiction: QA
+category: international
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

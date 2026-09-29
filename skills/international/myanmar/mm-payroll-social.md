@@ -2,6 +2,7 @@
 name: mm-payroll-social
 description: "Source-cited draft: payroll & social contributions for Myanmar (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MM
+category: payroll
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review

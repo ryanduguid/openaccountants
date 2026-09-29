@@ -2,12 +2,15 @@
 name: us-ny-formation
 description: Tier 2 New York content skill for entity formation covering tax year 2025. Includes the NY LLC $200 Articles of Organization, the unique LLC publication requirement under LLC Law §206 (2 newspapers, 6 consecutive weeks, costing $1,000-$2,000+ in NYC vs $50-$200 outside), $50 biennial Statement, NY C-Corp $125 Certificate of Incorporation with no publication requirement, NYC Unincorporated Business Tax 4%, biennial DOS-1357 ($9), and the NY-specific S-Corp election separate from federal §1362.
 jurisdiction: US-NY
+category: formation
 tax_year: 2025
 version: 1.1
 last_updated: 2026-09-28
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - us-tax-workflow-base
 ---
 
 # NY Formation
