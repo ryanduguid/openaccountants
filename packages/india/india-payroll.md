@@ -334,7 +334,7 @@ Indian employers MUST issue monthly payslips under the Code on Wages 2019 and va
 | --- | --- |
 | Late TDS deposit | 1%/month (from due date to deposit) + 1.5%/month (from deduction to deposit if not deducted on time) |
 | Late TDS return | INR 200/day until filed (max = TDS amount); plus INR 10,000-1,00,000 under Section 271H |
-| Late PF deposit | 12% p.a. interest (EPF Act s 7Q) + damages of 1% per month or part of a month of the arrears, whatever the length of delay, from 15 June 2024 (s 14B; EPF Scheme para 32A as amended; 5% to 25% p.a. by delay period before that) |
+| Late PF deposit | 12% p.a. interest (EPF Act s 7Q) + damages of 1% per month or part of a month of the arrears, whatever the length of delay, from 14 June 2024 (s 14B; EPF Scheme para 32A as amended by the EPF (Amendment) Scheme 2024, in force from its Gazette publication on 14 June 2024; 5% to 25% p.a. by delay period before that) |
 | Late ESI | 12% p.a. interest + damages up to 25% |
 | Non-issuance of Form 16/130 | Penalty under Section 272A: INR 500/day |
 

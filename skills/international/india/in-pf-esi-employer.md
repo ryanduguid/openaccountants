@@ -209,7 +209,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Payment mode | Online through EPFO Unified Portal |
 | Format | Upload employee data (UAN, name, wages, contribution breakup) |
 | Late payment penalty (interest, EPF Act s 7Q) | Simple interest at 12% per annum on delayed deposits |
-| Damages (EPF Act s 14B) | 1% per month or part of a month of the arrears, whatever the length of delay, from 15 June 2024 (EPF Scheme para 32A as amended; 5% to 25% per annum by length of delay before that) |
+| Damages (EPF Act s 14B) | 1% per month or part of a month of the arrears, whatever the length of delay, from 14 June 2024 (EPF Scheme para 32A as amended by the EPF (Amendment) Scheme 2024, in force from its Gazette publication on 14 June 2024; 5% to 25% per annum by length of delay before that) |
 
 ### 4.2 ESI -- Monthly Contribution
 

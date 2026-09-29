@@ -73,7 +73,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Paid-up share capital | ≤ INR 10 crore (INR 100,000,000) |
 | Turnover (per last P&L) | ≤ INR 100 crore (INR 1,000,000,000) |
 
-- **Small Company qualification conditions** — Both conditions must be met. Excludes: public companies, Section 8 companies, and companies governed by special Acts.  _(Section 2(85))_
+- **Small Company qualification conditions** — Both conditions must be met. Excluded whatever their size: public companies, holding companies and subsidiary companies, Section 8 companies, and companies or bodies corporate governed by special Acts.  _(Section 2(85) and its proviso)_
 
 ### One Person Company (OPC) — Section 2(62)
 
