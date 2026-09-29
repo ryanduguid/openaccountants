@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T04:15:22+00:00",
+ "generated_at": "2026-09-29T04:24:20+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -4266,9 +4266,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Ariane Marrocos",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "br-income-tax",
@@ -4281,7 +4281,7 @@
    "reviewed_by": "Ariane Marrocos",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "br-indirect-tax",
@@ -4305,9 +4305,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Ariane Marrocos",
-   "review_status": "current",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "br-simples-nacional",
@@ -4318,9 +4318,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Ariane Marrocos",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "brazil-crypto-tax",
@@ -4333,7 +4333,7 @@
    "reviewed_by": "Ariane Marrocos",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "brazil-einvoice",
@@ -4346,7 +4346,7 @@
    "reviewed_by": "Ariane Marrocos",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "brazil-payroll",
@@ -4359,7 +4359,7 @@
    "reviewed_by": "Ariane Marrocos",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "brazil-transfer-pricing",
@@ -4372,7 +4372,7 @@
    "reviewed_by": "Ariane Marrocos",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "brazil-vat",
@@ -4385,7 +4385,7 @@
    "reviewed_by": "Ariane Marrocos",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "brazil-references",
@@ -16085,7 +16085,7 @@
    "reviewed_by": "Mário Jorge da costa Vale",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "portugal-einvoice",
@@ -16098,7 +16098,7 @@
    "reviewed_by": "Mário Jorge da costa Vale",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "portugal-financial-statements",
@@ -16111,7 +16111,7 @@
    "reviewed_by": "Mário Jorge da costa Vale",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "portugal-formation",
@@ -16124,7 +16124,7 @@
    "reviewed_by": "Mário Jorge da costa Vale",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "portugal-payroll",
@@ -16137,7 +16137,7 @@
    "reviewed_by": "Mário Jorge da costa Vale",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "portugal-tax-optimization",
@@ -16150,7 +16150,7 @@
    "reviewed_by": "Mário Jorge da costa Vale",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "portugal-vat-return",
@@ -16163,7 +16163,7 @@
    "reviewed_by": "Mário Jorge da costa Vale",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "pt-corporate-tax",
@@ -16202,7 +16202,7 @@
    "reviewed_by": "Mário Jorge da costa Vale",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "pt-nhr-ifici",
@@ -16241,7 +16241,7 @@
    "reviewed_by": "Mário Jorge da costa Vale",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "qa-company-formation",

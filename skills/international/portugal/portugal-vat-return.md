@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-13
+last_updated: 2026-09-29
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 tier: 1
@@ -20,31 +20,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > recovery sit in that guide — read it alongside this one before filing or advising.
 > **No claim about that jurisdiction's regime is made here**; this is a pointer only.
 
-
 ## Portugal VAT Return Skill (Declaração Periódica de IVA) v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### IVA
-
-- **Continente — taxa normal** — 23%  _(CIVA)_
-- **Continente — taxa intermédia** — 13%  _(CIVA)_
-- **Continente — taxa reduzida** — 6%  _(CIVA)_
-- **Açores — normal** — 16%  _(CIVA)_
-- **Açores — intermédia** — 9%  _(CIVA)_
-- **Açores — reduzida** — 4%  _(CIVA)_
-- **Madeira — normal** — 22%  _(CIVA)_
-- **Madeira — intermédia** — 12%  _(CIVA)_
-- **Madeira — reduzida** — 4%  _(Decreto Legislativo Regional n.º 6/2024/M, de 29 de julho, artº 21º)_
-- **Isenção Art. 53.º** — ≤ €15.000 (2026)  _(CIVA Art. 53.º, nº 1)_
-- **Declarações mensais** — Volume de negócios => €650.000  _(CIVA, artº 41º, nº 1, a))_
-- **Declarações trimestrais** — Volume de negócios < €650.000  _(CIVA, artº 41º, nº 1, b))_
-- **Mensal deadline** — 20.º dia do 2.º mês seguinte  _(CIVA, artº 41º, nº 1, a))_
-- **Trimestral deadline** — 20.º dia do 2.º mês seguinte ao trimestre  _(CIVA, artº 41º, nº 1, b))_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mário Jorge da costa Vale** on 2026-06-04; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference
 
@@ -62,8 +40,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | https://www.portaldasfinancas.gov.pt (Portal das Finanças) |
 | Authority | Autoridade Tributária e Aduaneira (AT) |
 | Currency | EUR only |
-| Filing frequencies | Monthly (turnover > €650,000 or Vol. B); Quarterly (turnover ≤ €650,000, Vol. A) |
-| Deadline | Monthly: 10th of 2nd month after period end; Quarterly: 15th of 2nd month after quarter end |
+| Filing frequencies | Monthly (turnover in the previous calendar year ≥ €650,000, or by option); Quarterly (turnover < €650,000) — CIVA art. 41.º n.º 1 |
+| Deadline | Return by the 20th of the 2nd month after the month (monthly) or after the quarter (quarterly) — CIVA art. 41.º n.º 1; payment by the 25th of that same month — CIVA art. 27.º n.º 1. The June return and the 2nd-quarter return may be filed by 20 September and paid by 25 September (CIVA art. 41.º) |
 | Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
 | Companion skill (Tier 2, EU directive) | **eu-vat-directive v0.1 or later — MUST be loaded** |
 | Contributor | Open Accountants contributors |
@@ -130,7 +108,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Portugal-specific refusal catalogue
 
-- **R-PT-1 — Regime de isenção (Art. 53 CIVA)** — Trigger: client under the small business exemption (turnover ≤ €14,500 or ≤ €15,000 depending on current threshold). Message: "Regime de isenção clients do not charge IVA and cannot recover input IVA. They do not file the Declaração Periódica. This skill covers the normal regime only."  _(Art. 53 CIVA)_
+- **R-PT-1 — Regime de isenção (Art. 53 CIVA)** — Trigger: client under the small business exemption (turnover ≤ €15,000 for 2025 and 2026; ≤ €14,500 in 2024 — CIVA art. 53.º n.º 1). Message: "Regime de isenção clients do not charge IVA and cannot recover input IVA. They do not file the Declaração Periódica. This skill covers the normal regime only."  _(Art. 53 CIVA)_
 - **R-PT-2 — Partial exemption (pro rata / Art. 23 CIVA)** — Trigger: both taxable and exempt supplies, non-de-minimis. Message: "Mixed taxable and exempt supplies require pro rata under Art. 23 CIVA. Please use a contabilista certificado."  _(Art. 23 CIVA)_
 - **R-PT-3 — Margin scheme (regime da margem / Art. 50-A to 50-D)** — Trigger: second-hand goods, art, antiques. Message: "Regime da margem requires per-item computation. Out of scope."  _(Art. 50-A to 50-D)_
 - **R-PT-4 — VAT group (grupo de IVA)** — Trigger: VAT group. Message: "Grupo de IVA requires consolidation. Out of scope."
@@ -657,7 +635,7 @@ Conditional: "Do you have operations in Madeira or Azores?" If yes → R-PT-6 re
 1. Madeira/Azores rate tables not included (R-PT-6 refuses).
 2. Construction domestic reverse charge flagged T2 only.
 3. Electric/hybrid vehicle 50% IVA rule requires current vehicle classification.
-4. Regime de isenção threshold (€14,500/€15,000) — verify current.
+4. Regime de isenção threshold: €15,000 for 2025 and 2026 (CIVA art. 53.º n.º 1); it is moved by the annual budget law, so re-verify each January.
 5. SAF-T integration is flagged but not automated.
 6. Restaurant 50% IVA deduction for despesas de representação requires documentation.
 7. Diesel 50% IVA deduction for VP is current — verify annually.

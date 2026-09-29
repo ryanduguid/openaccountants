@@ -4,7 +4,7 @@ description: "Utilize esta skill sempre que for solicitado sobre processamento d
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mário Jorge da costa Vale
 review_status: pending_review
 depends_on:
@@ -18,40 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Portugal — Processamento de Salários — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Folha de Pagamento
-
-- **Continente 2026** — €920/mês  _(DL 139/2025)_
-- **Continente 2025** — €870/mês  _(DL anterior)_
-- **Açores 2026** — €966/mês  _(DL regional)_
-- **Madeira 2026** — €980,00  _(Decreto Legislativo Regional n.º 1/2026/M, de 3 de fevereiro de 2026)_
-- **Empregado** — 11% do bruto  _(Código Contributivo)_
-- **Empregador** — 23,75% do bruto  _(Código Contributivo)_
-- **Total** — 34,75%
-- **Teto** — Sem teto — aplica-se ao salário total  _(Código Contributivo)_
-- **FCT (Fundo de Compensação)** — Suspenso de Maio de 2023  _(Lei 70/2013)_
-- **FGCT (Fundo de Garantia)** — Suspenso de Maio de 2023  _(Lei 70/2013)_
-- **Total (FCT/FGCT)** — Suspenso de Maio de 2023
-- **Empregador (gerente sem proteção desemprego)** — 20,30%  _(Código Contributivo)_
-- **Empregado (gerente)** — 9,30%  _(Código Contributivo)_
-- **Em dinheiro** — €6,15/dia (2026)  _(Portaria n.º 51-B/2026/1)_
-- **Cartão refeição** — €10,46/dia (2026)  _(Portaria n.º 51-B/2026/1 (OE anual))_
-- **1.ª hora (dia útil)** — 25%  _(Código do Trabalho)_
-- **Horas seguintes (dia útil)** — 37,5%  _(Código do Trabalho)_
-- **Descanso/feriados** — 50%  _(Código do Trabalho)_
-- **Trabalho noturno (22h-7h)** — 25% mínimo  _(Código do Trabalho)_
-- **Subsídio de férias** — 1 mês de salário (antes do início das férias)  _(Código do Trabalho)_
-- **Subsídio de Natal** — 1 mês de salário (até 15 de dezembro)  _(Código do Trabalho)_
-- **Férias anuais** — 22 dias úteis mínimo  _(Código do Trabalho)_
-- **Licença paternidade** — 28 dias consecutivos obrigatórios (SS)  _(Código do Trabalho)_
-- **DMR (Declaração Mensal)** — Até dia 10 do mês seguinte  _(AT)_
-- **Pagamento SS/IRS** — Até dia 20 do mês seguinte  _(AT/ISS)_
-- **Relatório Único** — Até 15 de abril  _(GEP/MTSSS)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-04 Mário Jorge da costa Vale checked the rates, thresholds and deadlines listed for this guide against the cited authorities; that fact check corrected the Madeira minimum wage (€980 for 2026), the exempt meal allowance (€6,15 in cash and €10,46 by card for 2026), the 2026 IRS bracket table and the FCT/FGCT rows (contributions suspended since 1 May 2023 and the FCT extinguished in 2024), and its corrections are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Secção 1 — Referência Rápida
 
@@ -79,19 +46,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Escalões de IRS (2026 — Rendimento Coletável Anual)
 
-**Escalões de IRS (2026 — Rendimento Coletável Anual)**
+**Escalões de IRS (2026 — Rendimento Coletável Anual)**  _(art. 68.º n.º 1 do CIRS na redação da Lei n.º 73-A/2025, de 30 de dezembro (OE2026); para rendimentos de 2025 aplica-se a tabela da Lei n.º 55-A/2025 — ver `pt-income-tax`)_
 
 | Escalão | Rendimento Coletável Anual (EUR) | Taxa Marginal |
 | --- | --- | --- |
-| 1.º | Até 7 703 | 13,25% |
-| 2.º | 7 703 — 11 623 | 16,50% |
-| 3.º | 11 623 — 17 838 | 22,00% |
-| 4.º | 17 838 — 22 052 | 24,10% |
-| 5.º | 22 052 — 28 227 | 31,40% |
-| 6.º | 28 227 — 41 674 | 37,00% |
-| 7.º | 41 674 — 55 696 | 43,50% |
-| 8.º | 55 696 — 78 834 | 45,00% |
-| 9.º | Acima de 78 834 | 48,00% |
+| 1.º | Até 8 342 | 12,50% |
+| 2.º | 8 342 — 12 587 | 15,70% |
+| 3.º | 12 587 — 17 838 | 21,20% |
+| 4.º | 17 838 — 23 089 | 24,10% |
+| 5.º | 23 089 — 29 397 | 31,10% |
+| 6.º | 29 397 — 43 090 | 34,90% |
+| 7.º | 43 090 — 46 566 | 43,10% |
+| 8.º | 46 566 — 86 634 | 44,60% |
+| 9.º | Acima de 86 634 | 48,00% |
 
 ### Mecanismo de Retenção na Fonte
 
@@ -144,7 +111,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### O Que Está Isento de Contribuições para a Segurança Social
 
-- Subsídio de refeição até 6,00 EUR/dia (numerário) ou 10,20 EUR/dia (cartão refeição) — valores de 2026
+- Subsídio de refeição até 6,15 EUR/dia (numerário) ou 10,46 EUR/dia (cartão refeição) — valores de 2026 (Portaria n.º 51-B/2026/1; em 2025: 6,00 / 10,20 EUR)
 - Ajudas de custo e despesas de deslocação (dentro dos limites legais)
 - Distribuição de participação nos lucros
 - Compensações por cessação do contrato (dentro dos limites legais)
@@ -177,19 +144,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Incentivo ao primeiro emprego (3 anos) | Redução de 50% na taxa da entidade patronal |
 | Desempregados de longa duração (3 anos) | Redução de 50% na taxa da entidade patronal |
 
-### Fundo de Compensação do Trabalho (FCT)
+### Fundos de Compensação do Trabalho (FCT / FGCT) — entregas suspensas desde 1 de maio de 2023
 
-**Fundo de Compensação do Trabalho (FCT)**
+**Fundos de Compensação do Trabalho (FCT / FGCT)**  _(Lei n.º 70/2013, de 30 de agosto; Lei n.º 13/2023, de 3 de abril; Decreto-Lei n.º 115/2023, de 15 de dezembro)_
 
-| Fundo | Taxa | Finalidade |
+| Fundo | Taxa histórica (até abril de 2023) | Situação atual |
 | --- | --- | --- |
-| FCT (Fundo de Compensação do Trabalho) | 0,925% | Garantia de compensação por cessação do contrato |
-| FGCT (Fundo de Garantia de Compensação do Trabalho) | 0,075% | Fundo de garantia mútua |
-| **Total** | **1,00%** | Pago pela entidade patronal sobre a remuneração bruta |
+| FCT (Fundo de Compensação do Trabalho) | 0,925% da retribuição base e diuturnidades | Entregas suspensas desde 1 de maio de 2023 (Lei n.º 13/2023); fundo extinto e fechado a 1 de janeiro de 2024 (Decreto-Lei n.º 115/2023) |
+| FGCT (Fundo de Garantia de Compensação do Trabalho) | 0,075% | Entregas suspensas desde 1 de maio de 2023 enquanto vigorar o Acordo de Médio Prazo (Lei n.º 13/2023) |
+| **Total** | **1,00%** | **0% — não há entregas a fazer em 2026** |
 
-- Aplica-se a contratos iniciados após 1 de outubro de 2013
-- Pago mensalmente, até ao dia 20 do mês seguinte
-- Isentos: trabalhadores do serviço doméstico, setor público
+- Não incluir 1% de FCT/FGCT no custo da entidade patronal; os saldos das contas do FCT podem ser mobilizados pelas entidades empregadoras nos termos do Decreto-Lei n.º 115/2023
+- Regime histórico: aplicava-se a contratos iniciados a partir de 1 de outubro de 2013, com entrega mensal até ao dia 20 do mês seguinte; isentos os trabalhadores do serviço doméstico e o setor público
 
 ## Secção 5 — Salário Mínimo e Trabalho Suplementar
 
@@ -201,11 +167,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Continente | 920,00 |
 | Açores | 966,00 |
-| Madeira | 968,00 |
+| Madeira | 980,00 |
 
-- Fixada pelo Decreto-Lei n.º 139/2025 (em vigor a 1 de janeiro de 2026)
-- Ano anterior (2025): 870,00 EUR
-- Custo anual para a entidade patronal por trabalhador ao salário mínimo: ~14 094 EUR (incluindo subsídios + TSU)
+- Continente: fixada pelo Decreto-Lei n.º 139/2025 (em vigor a 1 de janeiro de 2026); Madeira: Decreto Legislativo Regional n.º 1/2026/M, de 3 de fevereiro (980,00 EUR); Açores: decreto legislativo regional próprio (966,00 EUR)
+- Ano anterior (2025, Continente): 870,00 EUR
+- Custo anual para a entidade patronal por trabalhador ao salário mínimo do Continente: 15 939,00 EUR (14 × 920 × 1,2375, com subsídios e TSU patronal; sem FCT/FGCT)
 - Trabalhadores ao salário mínimo pagam 0% de IRS (proteção do mínimo de existência)
 - Vencimento líquido mínimo (após 11% Segurança Social): 818,80 EUR/mês
 
@@ -232,7 +198,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Férias anuais | 22 dias úteis (mínimo) |
 | Subsídio de férias | Equivalente a um mês de vencimento (pago antes do início das férias ou em junho) |
 | Subsídio de Natal | Equivalente a um mês de vencimento (pago até 15 de dezembro) |
-| Subsídio de refeição (subsídio de alimentação) | Não obrigatório por lei mas largamente generalizado; isento até 6,00 EUR/dia (numerário) ou 10,20 EUR/dia (cartão) |
+| Subsídio de refeição (subsídio de alimentação) | Não obrigatório por lei mas largamente generalizado; isento até 6,15 EUR/dia (numerário) ou 10,46 EUR/dia (cartão) em 2026 (Portaria n.º 51-B/2026/1) |
 | Baixa por doença | Paga pela Segurança Social a partir do 4.º dia (55%-75% do vencimento, conforme duração) |
 | Licença de parentalidade (mãe) | 120 dias a 100% ou 150 dias a 80% (pago pela Segurança Social) |
 | Licença de parentalidade (pai) | 28 dias consecutivos obrigatórios (pago pela Segurança Social) |
@@ -288,7 +254,7 @@ O trabalhador pode optar (ou a entidade patronal pode determinar) pelo pagamento
 | Declaração Mensal de Remunerações (DMR) | Mensal | Até ao dia 10 do mês seguinte | AT + Segurança Social |
 | Pagamento das contribuições para a Segurança Social | Mensal | Entre os dias 10 e 20 do mês seguinte | Segurança Social (DGSS) |
 | Pagamento da retenção na fonte de IRS | Mensal | Até ao dia 20 do mês seguinte | AT |
-| Pagamento FCT/FGCT | Mensal | Até ao dia 20 do mês seguinte | Fundos de Compensação |
+| Entregas FCT/FGCT | — | Suspensas desde 1 de maio de 2023 (Lei n.º 13/2023); FCT extinto a 1 de janeiro de 2024 (Decreto-Lei n.º 115/2023) | Fundos de Compensação |
 | Relatório Único | Anual | Até 15 de abril (via portal) | GEP / MTSSS |
 | Declaração anual de IRS (Modelo 3) | Anual | 1 de abril — 30 de junho (entregue pelo trabalhador) | AT |
 | Modelo 10 (rendimentos pagos a não residentes) | Anual | Até 28 de fevereiro | AT |
@@ -328,7 +294,7 @@ Subsídio de refeição (22 dias × 7,63): +EUR   167,86 (cartão, isento de SS 
 Bruto para efeitos de SS / IRS:        EUR 1 800,00
 - Segurança Social trabalhador (11%):  -EUR   198,00
 = Base tributável para IRS:            EUR 1 602,00
-- Retenção na fonte IRS (~14,5%):      -EUR   ~232,00
+- Retenção na fonte IRS (tabela AT; ilustrativo): -EUR ~232,00
 = Vencimento líquido:                  EUR 1 370,00
 + Subsídio de refeição:               +EUR   167,86
 = Total recebido:                      EUR ~1 538,00
@@ -336,9 +302,8 @@ Bruto para efeitos de SS / IRS:        EUR 1 800,00
 Custo para a entidade patronal:
   Vencimento base:                     EUR 1 800,00
 + Segurança Social patronal (23,75%): +EUR   427,50
-+ FCT (1%):                           +EUR    18,00
 + Subsídio de refeição:               +EUR   167,86
-= Custo mensal entidade patronal:      EUR ~2 413,36
+= Custo mensal entidade patronal:      EUR 2 395,36 (sem FCT/FGCT: entregas suspensas desde maio de 2023)
 ```
 
 ### Padrão 2: Trabalhador ao Salário Mínimo (2026)
@@ -351,8 +316,8 @@ Vencimento base (RMMG):                EUR   920,00
 
 Custo anual:
   14 meses × 920 × 1,2375 (com SS patronal) = EUR 15 939,00
-  + FCT 1% sobre 14 meses = EUR 128,80
-  Custo anual total para a entidade patronal ≈ EUR 16 068
+  Sem FCT/FGCT (entregas suspensas desde 1 de maio de 2023)
+  Custo anual total para a entidade patronal = EUR 15 939,00
 ```
 
 ### Padrão 3: Mês do Subsídio de Férias (junho)
@@ -393,7 +358,7 @@ Cada pagamento tem o IRS calculado independentemente utilizando a mesma taxa de 
 - **Duodécimos**: O trabalhador pode requerer o pagamento dos subsídios de férias e de Natal em 12 prestações mensais iguais (1/12 por mês). A entidade patronal também pode optar por este método.
 - **Regiões autónomas**: Os Açores e a Madeira têm valores de salário mínimo ligeiramente superiores e podem ter tabelas de retenção de IRS diferentes.
 - **Tabelas de retenção de IRS**: Atualizadas anualmente por Despacho da AT (nos termos do art.º 99.º do CIRS). Utilizar sempre as tabelas do ano em curso. As tabelas de 2026 aplicam-se retroativamente a partir de 1 de janeiro de 2026.
-- **Subsídio de refeição**: Benefício amplamente generalizado. A parcela isenta (6,00 EUR em numerário / 10,20 EUR em cartão) NÃO está sujeita a Segurança Social nem a IRS. O excesso ESTÁ sujeito.
+- **Subsídio de refeição**: Benefício amplamente generalizado. A parcela isenta (6,15 EUR em numerário / 10,46 EUR em cartão, valores de 2026) NÃO está sujeita a Segurança Social nem a IRS. O excesso ESTÁ sujeito.
 - **Trabalho suplementar**: Sujeito a contribuições para a Segurança Social e a retenção na fonte de IRS à taxa normal.
 - **Regime IFICI / RNH**: Para trabalhadores abrangidos, a retenção na fonte de IRS é efetuada à taxa especial de 20% — consultar a skill **pt-nhr-ifici**.
 

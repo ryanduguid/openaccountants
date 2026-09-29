@@ -4,7 +4,7 @@ description: "EN: Use this skill whenever asked about Brazil transfer pricing ru
 version: 1.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ariane Marrocos
 review_status: current
 depends_on:
@@ -18,32 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Brasil — Preços de Transferência (TP) — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Preços de Transferência
-
-- **Legislação principal** — Lei 14.596/2023 + IN RFB 2.161/2023  _(Lei 14.596/2023)_
-- **Vigência** — Obrigatório desde 1º de janeiro de 2024  _(Lei 14.596/2023)_
-- **Regime anterior** — Regras das Leis 9.430/1996 e 9.959/2000 substituídas pela Lei 14.596/2023.  _(Lei 14.596/2023)_
-- **Brasil na OECD** — Brasil em processo de adesão à OCDE; regime de Preços de Transferência alinhado às diretrizes da OCDE desde 2024.  _(Organisation for Economic Co-operation and Development Lei nº 14.596/2023)_
-- **Master File** — Obrigatório para contribuintes no escopo; entrega 3 meses após ECF  _(IN RFB 2.161/2023)_
-- **Local File** — Obrigatório; português; 3 meses após ECF  _(IN RFB 2.161/2023)_
-- **CbCR** — Receita consolidada ≥ R$ 2,4 bilhões  _(IN RFB 2.161/2023)_
-- **ECF (dados de TP)** — Julho do ano seguinte  _(Instrução Normativa RFB nº 2.004/2021)_
-- **Prazo especial 2024** — 31 de dezembro de 2025  _(IN RFB 2.161/2023)_
-- **PIC (CUP)** — Sim  _(Lei 14.596/2023 Art. 12)_
-- **PRL (Resale Price)** — Sim  _(Lei 14.596/2023)_
-- **MCL (Cost Plus)** — Sim  _(Lei 14.596/2023)_
-- **MLT/TNMM** — Sim  _(Lei 14.596/2023)_
-- **MDL (Profit Split)** — Sim  _(Lei 14.596/2023)_
-- **Atraso Master/Local File** — Multas específicas por atraso, omissão ou incorreção; inclui multa de 0,2% por mês-calendário ou fração em determinadas hipóteses  _(Lei 14.596/2023)_
-- **Documentação inexata** — 3% da receita; mín R$ 20.000; máx R$ 5.000.000  _(Lei 14.596/2023)_
-- **Atraso ECF** — Multa de R$ 1.500 por mês-calendário ou fração (PJ).  _(Lei 8.218/1991; IN RFB 2.004/2021)_
-- **Ajuste de TP pela RFB** — Tributo devido + SELIC + multa de 75% (ou 150% em caso de fraude).  _(Lei 14.596/2023; Lei 9.430/1996)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Seção 1 — Referência Rápida
 

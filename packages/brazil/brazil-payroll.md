@@ -4,7 +4,7 @@ description: Use esta skill sempre que perguntarem sobre processamento de folha 
 version: 1.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ariane Marrocos
 review_status: pending_review
 depends_on:
@@ -18,46 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Brasil — Folha de Pagamento (INSS, FGTS, IRRF) — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Folha de Pagamento
-
-- **Salário mínimo 2025** — R$ 1.518,00/mês  _(Decreto nº 12.342/2024)_
-- **Salário mínimo 2026** — R$ 1.630,00/mês  _(Decreto Federal do Salário Mínimo 2026)_
-- **IRRF isenção** — R$ 2.428,80 — Isento  _(Lei nº 11.482/2007)_
-- **IRRF faixa de R$ 2.428,81 a R$ 2.826,65** — 7,5% - parcela R$ 182,16  _(Lei nº 11.482/2007)_
-- **IRRF faixa R$ 2.826,66 – R$ 3.751,05** — 15% - parcela R$ 394,16  _(Lei nº 11.482/2007)_
-- **IRRF faixa R$ 3.751,06 – R$ 4.664,68** — 22,5% - parcela R$ 675,49  _(Lei nº 11.482/2007)_
-- **IRRF Acima de R$ 4.664,68** — 27,5% - parcela R$ 908,73  _(Lei nº 11.482/2007)_
-- **Dedução por dependente** — R$ 189,59/mês  _(Lei nº 9.250/1995)_
-- **INSS faixa Até R$ 1.621,00** — Até R$ 1.630,00  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
-- **INSS faixa R$ 1.621,01 – R$ 2.902,84** — R$ 1.630,01 – R$ 2.902,84  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
-- **INSS faixa R$ 2.902,85 – R$ 4.354,27** — 12%  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
-- **INSS faixa R$ 4.354,28 – R$ 8.475,55 (teto)** — 14%  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
-- **INSS patronal básico** — 20% da folha total (sem teto)  _(Lei 8.212/1991)_
-- **RAT/SAT** — 1%, 2% ou 3% (conforme CNAE)  _(Lei 8.212/1991)_
-- **Ajuste FAP** — 0,5× a 2,0× sobre o RAT  _(Lei 10.666/2003)_
-- **Terceiros** — ~5,8% (SENAI, SESI, SEBRAE, etc.)  _(Leis específicas)_
-- **Total típico INSS patronal** — ~26,8% – 28,8%  _(Lei 8.212/1991)_
-- **Alíquota FGTS** — 8% do bruto mensal (empregador)  _(Lei 8.036/1990)_
-- **Prazo depósito FGTS** — Até dia 20 do mês seguinte (FGTS Digital)  _(Lei 8.036/1990)_
-- **Multa rescisória (sem justa causa)** — 40% do saldo total do FGTS  _(Lei 8.036/1990)_
-- **Estimativa acima do bruto** — ~60-70% (INSS+FGTS+13º+férias+encargos)  _(Consolidado)_
-- **Jornada semanal padrão** — 44 horas  _(CLT Art. 58)_
-- **Hora extra (dias úteis)** — Mínimo 50%  _(CF/88 Art. 7º XVI)_
-- **Hora extra (domingos/feriados)** — Geralmente 100%, conforme legislação e convenção coletiva  _(Lei 605/1949)_
-- **Adicional noturno (22h-5h)** — Mínimo 20%  _(CLT Art. 73)_
-- **Insalubridade** — 10%, 20% ou 40% do salário mínimo  _(CLT Art. 192)_
-- **Periculosidade** — 30% do salário-base  _(CLT Art. 193)_
-- **13º salário** — 1 salário integral (duas parcelas)  _(Lei 4.090/1962)_
-- **Férias** — 30 dias + 1/3 constitucional  _(CF Art. 7º XVII; CLT)_
-- **Vale-transporte** — Empregado contribui com até 6% do salário básico; empregador paga o excedente.  _(Lei 7.418/1985)_
-- **Licença-maternidade** — 120 dias (180 dias no Programa Empresa Cidadã)  _(CF Art. 7º XVIII)_
-- **Licença-paternidade** — 5 dias (20 dias no Programa Empresa Cidadã)  _(ADCT Art. 10 §1º)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-03 Ariane Marrocos checked the rates, thresholds and deadlines listed for this guide against the cited authorities; that fact check confirmed the IRRF table in force since May 2025 (Lei nº 15.191/2025) that replaces the January–April 2025 table the body carried, and its R$ 1.630 minimum wage for 2026 is not applied because Decreto nº 12.797/2025 fixes R$ 1.621, and its corrections are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Seção 1 — Referência Rápida
 
@@ -88,15 +49,27 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### Tabela Mensal do IRRF (2026)
 
-**Tabela Mensal do IRRF (2026)**
+**Tabela Mensal do IRRF (vigente desde maio de 2025 e mantida em 2026 — Lei nº 11.482/2007, art. 1º, na redação da Lei nº 15.191/2025)**
 
 | Base de Cálculo Mensal (BRL) | Alíquota | Parcela a deduzir (BRL) |
 | --- | --- | --- |
-| Até 2.259,20 | 0% (isento) | — |
-| 2.259,21 — 2.826,65 | 7,5% | 169,44 |
-| 2.826,66 — 3.751,05 | 15% | 381,44 |
-| 3.751,06 — 4.664,68 | 22,5% | 662,77 |
-| Acima de 4.664,68 | 27,5% | 896,00 |
+| Até 2.428,80 | 0% (isento) | — |
+| 2.428,81 — 2.826,65 | 7,5% | 182,16 |
+| 2.826,66 — 3.751,05 | 15% | 394,16 |
+| 3.751,06 — 4.664,68 | 22,5% | 675,49 |
+| Acima de 4.664,68 | 27,5% | 908,73 |
+
+De janeiro a abril de 2025 vigorou a tabela da Lei nº 14.848/2024 (isenção até 2.259,20; parcelas a deduzir de 169,44 / 381,44 / 662,77 / 896,00). Desconto simplificado mensal opcional: BRL 607,20 (25% do limite de isenção), em substituição às deduções legais.
+
+**Redução do imposto desde 1º de janeiro de 2026 (Lei nº 15.270/2025, que acrescentou o art. 3º-A à Lei nº 9.250/1995)**
+
+| Rendimentos tributáveis do mês | Redução do IRRF apurado pela tabela |
+| --- | --- |
+| Até BRL 5.000,00 | Igual ao imposto apurado — imposto devido zero |
+| BRL 5.000,01 — 7.350,00 | BRL 978,62 − (0,133145 × rendimentos tributáveis), limitada ao imposto apurado e decrescente até zero |
+| Acima de BRL 7.350,00 | Sem redução |
+
+- A tabela progressiva e as deduções (INSS, dependentes, pensão alimentícia) aplicam-se antes da redução; a redução aplica-se também ao IRRF exclusivo na fonte sobre o 13º salário (art. 3º-A, § 3º).
 
 ### Método de Cálculo do IRRF
 
@@ -388,9 +361,11 @@ Os empregadores brasileiros DEVEM emitir holerite/contracheque a cada pagamento 
 Salário bruto:                        BRL 5.000,00
 − INSS (progressivo):              − BRL    501,52
 = Base de cálculo do IRRF:            BRL 4.498,48
-− IRRF (22,5% − 662,77):           − BRL    349,39
+  IRRF pela tabela (22,5% − 675,49):  BRL    336,67
+− Redução Lei 15.270/2025 (bruto ≤ 5.000): − BRL 336,67
+− IRRF devido (2026):              − BRL      0,00
 − Vale-transporte (6% da base):    − BRL    300,00
-= Salário líquido:                    BRL 3.849,09
+= Salário líquido:                    BRL 4.198,48
 
 Custo do empregador:
   Salário bruto:                      BRL 5.000,00
@@ -432,8 +407,8 @@ Custo mensal do empregador:
 2ª parcela (até 20 de dezembro):
   Restante: BRL 2.500,00
   INSS sobre o 13º integral (5.000): − BRL 501,52
-  IRRF sobre (5.000 − 501,52) = 4.498,48: − BRL 349,39
-  Líquido da 2ª parcela: BRL 2.500 − 501,52 − 349,39 = BRL 1.649,09
+  IRRF sobre (5.000 − 501,52) = 4.498,48: BRL 336,67 pela tabela, zerado pela redução da Lei 15.270/2025 (13º de BRL 5.000): − BRL 0,00
+  Líquido da 2ª parcela: BRL 2.500 − 501,52 − 0 = BRL 1.998,48
   FGTS: 8% × 2.500 = BRL 200,00
 ```
 

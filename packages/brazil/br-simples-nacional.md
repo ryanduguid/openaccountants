@@ -4,9 +4,9 @@ description: "[PT-BR] Use esta skill sempre que for solicitado tratar do Simples
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ariane Marrocos
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -18,29 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Brasil — Simples Nacional — Skill v2.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Simples Nacional
-
-- **MEI** — R$ 81.000/ano (proposta de aumento pendente)  _(LC 123/2006 Art. 18-A)_
-- **Microempresa (ME)** — Considera-se Microempresa (ME), para fins da LC nº 123/2006, a pessoa jurídica com receita bruta anual igual ou inferior a R$ 360.000,00.  _(Lei Complementar nº 123/2006 – art. 3º, inciso I.)_
-- **EPP** — Considera-se Empresa de Pequeno Porte (EPP) a pessoa jurídica com receita bruta anual superior a R$ 360.000,00 e igual ou inferior a R$ 4.800.000,00, nos termos do art. 3º da LC nº 123/2006.  _(Lei Complementar nº 123/2006 – art. 3º, inciso II.)_
-- **Sublimite ICMS/ISS** — O sublimite de receita bruta de R$ 3.600.000, previsto na LC nº 123/2006, pode determinar o recolhimento do ICMS e/ou ISS fora do Simples Nacional em determinados Estados, sem excluir a empresa do regime simplificado.  _(Principal Lei Complementar nº 123/2006 Art. 19. Informou Art. 13 e ele trata dos tributos abrangidos pelo Simples Nacional. O tema sublimite estadual de ICMS/ISS está principalmente relacionado ao: Art. 19 da LC 123/2006.)_
-- **Comércio/Indústria** — R$ 81,50 (INSS) + R$ 1,00 (ICMS)  _(Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.)_
-- **Serviços** — R$ 86,50 (INSS R$ 81,50 + ISS R$ 5,00).  _(Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.)_
-- **Comércio + Serviços** — R$ 87,50 (INSS R$ 81,50 + ICMS R$ 1,00 + ISS R$ 5,00).  _(Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.)_
-- **Anexo I** — Comércio, varejo  _(Resolução CGSN nº 140/2018.)_
-- **Anexo II** — Indústria, manufatura (inclui IPI)  _(Resolução CGSN nº 140/2018.)_
-- **Anexo III** — Anexo III – Prestação de serviços em geral, incluindo diversas atividades de manutenção, reparação, saúde, educação e serviços administrativos, conforme o CNAE e as regras da LC nº 123/2006.  _(Resolução CGSN nº 140/2018.)_
-- **Anexo IV** — Anexo IV – Serviços de limpeza, vigilância, segurança, construção civil e atividades correlatas, cuja Contribuição Patronal Previdenciária (CPP) não está incluída no DAS e deve ser recolhida separadamente.  _(Lei nº 8.212/1991.)_
-- **Anexo V (ou III via Fator R)** — Anexo V – Atividades intelectuais e profissionais, incluindo consultoria em TI e diversos serviços técnicos especializados, sujeitas à regra do Fator R. Quando o Fator R for igual ou superior a 28%, a tributação poderá ocorrer pelo Anexo III.  _(Resolução CGSN nº 140/2018.)_
-- **Fator R limiar** — Nas atividades sujeitas ao Fator R, quando a razão entre a folha de salários dos últimos 12 meses e a receita bruta dos últimos 12 meses for igual ou superior a 28%, a tributação ocorre pelo Anexo III; caso contrário, permanece no Anexo V.  _(Resolução CGSN nº 140/2018.)_
-- **DAS mensal** — O DAS do Simples Nacional deve ser recolhido até o dia 20 do mês subsequente ao da apuração da receita, prorrogando-se o vencimento para o primeiro dia útil seguinte quando não houver expediente bancário.  _(Lei Complementar nº 123/2006 – art. 21. Resolução CGSN nº 140/2018.)_
-- **DEFIS anual** — A DEFIS deve ser transmitida pelas empresas optantes pelo Simples Nacional até 31 de março do ano subsequente ao ano-calendário a que se refere a declaração.  _(Resolução CGSN nº 140/2018.)_
-- **DASN-SIMEI** — O Microempreendedor Individual (MEI) deve apresentar a DASN-SIMEI até 31 de maio do ano subsequente ao ano-calendário a que se referem as informações.  _(Resolução CGSN nº 140/2018.)_
-- **Regime híbrido art. 21-A** — O optante pelo Simples Nacional poderá optar pelo recolhimento da CBS e do IBS fora do DAS, nos termos do art. 21-A da LC nº 123/2006, permitindo ao adquirente o aproveitamento dos créditos desses tributos conforme o regime geral.  _(Lei Complementar nº 123/2006 – art. 21-A (incluído pela Reforma Tributária). Lei Complementar nº 214/2025. Emenda Constitucional nº 132/2023.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ariane Marrocos** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Seção 1 — Referência rápida
 
@@ -72,17 +50,17 @@ Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
 | Empresa de Pequeno Porte (EPP) | R$ 4.800.000 |
 | Sublimite ICMS/ISS | R$ 3.600.000 |
 
-### DAS-MEI mensal (2025)
+### DAS-MEI mensal (2026)
 
-**DAS-MEI mensal (2025)**
+**DAS-MEI mensal (2026)**  _(LC nº 123/2006, art. 18-A, § 3º, V; salário mínimo de 2026 fixado pelo Decreto nº 12.797/2025)_
 
 | Atividade | INSS (5% do salário mínimo) | ICMS | ISS | Total |
 | --- | --- | --- | --- | --- |
-| Comércio/Indústria | R$ 75,90 | R$ 1,00 | -- | R$ 76,90 |
-| Serviços | R$ 75,90 | -- | R$ 5,00 | R$ 80,90 |
-| Comércio + Serviços | R$ 75,90 | R$ 1,00 | R$ 5,00 | R$ 81,90 |
+| Comércio/Indústria | R$ 81,05 | R$ 1,00 | -- | R$ 82,05 |
+| Serviços | R$ 81,05 | -- | R$ 5,00 | R$ 86,05 |
+| Comércio + Serviços | R$ 81,05 | R$ 1,00 | R$ 5,00 | R$ 87,05 |
 
-Baseado no salário mínimo de R$ 1.518,00 vigente em 2025.
+Baseado no salário mínimo de R$ 1.621,00 vigente em 2026. Em 2025 (salário mínimo de R$ 1.518,00) o INSS era R$ 75,90 e os totais R$ 76,90 / R$ 80,90 / R$ 81,90.
 
 ### Fórmula da alíquota efetiva
 
@@ -160,12 +138,12 @@ Baseado no salário mínimo de R$ 1.518,00 vigente em 2025.
 
 ### Exemplo 1 — DAS mensal do MEI (Serviços)
 
-**Entrada:** MEI prestando serviços de TI. Salário mínimo R$ 1.518.
+**Entrada:** MEI prestando serviços de TI. Salário mínimo R$ 1.621 (2026).
 
 **Cálculo:**
-- INSS: 5% x 1.518 = R$ 75,90
+- INSS: 5% x 1.621 = R$ 81,05
 - ISS: R$ 5,00
-- Total DAS: R$ 80,90/mês
+- Total DAS: R$ 86,05/mês
 
 ### Exemplo 2 — Simples Nacional, Anexo I Comércio
 

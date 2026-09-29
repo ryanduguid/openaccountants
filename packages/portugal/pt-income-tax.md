@@ -4,7 +4,7 @@ description: "Utilizar esta skill sempre que for solicitada ajuda com o IRS (Imp
 version: 2.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 tier: 1
@@ -17,40 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Nota de remissão:** Se o contribuinte está sob regime RNH (Residente Não Habitual) ou IFICI (Incentivo Fiscal à Investigação Científica e Inovação), **ver o skill `pt-nhr-ifici`** para o tratamento detalhado. Esta skill cobre apenas o regime geral progressivo.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### IRS Independente
-
-**IRS Independente — verified rates & thresholds**  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-
-- **0 – €7.703** — 0 – €8.059 ; 12,50%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€7.703 – €11.623** — 8.059 – €12.160 ; 16,00%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€11.623 – €16.472** — 12.160 – €17.233 ; 21,50%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€16.472 – €21.321** — 17.233 – €22.306 ; 24,40%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€21.321 – €27.146** — 22.306 – €28.400 ; 31,40%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€27.146 – €39.791** — 28.400 – €41.629 ; 34,90%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€39.791 – €51.997** — 41.629 – €44.987 ; 43,10%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€51.997 – €81.199** — 44.987 – €83.696 ; 44,60%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **Acima de €81.199** — Acima de €83.696 ; 12,50%  _(CIRS / Redação da Lei n.º 55-A/2025, de 22/07)_
-- **€80.000 – €250.000** — 2,5%  _(CIRS)_
-- **Acima de €250.000** — 5%  _(CIRS)_
-- **Vendas de bens** — 0,15 (15% do bruto tributável)  _(CIRS Art. 31.º)_
-- **Prestação de serviços** — 0,35 (35% do bruto)  _(CIRS Art. 31.º, nº 1, b) e c))_
-- **Hotelaria/alojamento** — 0,15  _(CIRS Art. 31.º)_
-- **Propriedade intelectual (autor)** — Isenção de 50% até máximo de 10.000 ; o restante é sujeito a coeficiente de 0,95  _(CIRS Art. 31.º)_
-- **Outros rendimentos Cat. B** — 0,95  _(CIRS Art. 31.º)_
-- **Limiar contabilidade organizada** — > €200.000 de receitas  _(CIRS)_
-- **Trabalhador independente Cat. B** — * CIRS Art. 101.º, nº 1, a) 16,5% ; * CIRS Art. 101.º, nº 1, b) 23% ; * CIRS Art. 101.º, nº 1, c) 11,5%  _(CIRS Art. 101.º)_
-- **Anos 1–3** — Ano 1 - 100%  _(CIRS, artº 12º-B, nº 5, a) ; (máx. 55 x IAS ; IAS 2026 = 537,13))_
-- **Anos 4–6** — Ano 2-4 - 75%  _(CIRS, artº 12º-B, nº 5, b))_
-- **Anos 7–9** — Ano 5-7 - 50%  _(CIRS, artº 12º-B, nº 5, c))_
-- **Ano 10** — Ano 8-10 - 25%  _(CIRS, artº 12º-B, nº 5, d))_
-- **Entrega Modelo 3** — 1 abril – 30 junho  _(CIRS)_
-- **Pagamentos por conta** — Até dia 20 de Julho, setembro, dezembro (dispensado se prestação < €50)  _(CIRS Art. 102º, nº 1 e 3)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mário Jorge da costa Vale** on 2026-06-04; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Secção 1 — Referência Rápida
 

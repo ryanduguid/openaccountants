@@ -4,7 +4,7 @@ description: "Utilize esta skill sempre que lhe forem colocadas questões sobre 
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 depends_on:
@@ -18,23 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Portugal — Facturação Electrónica (ATCUD / SAF-T(PT) / e-Fatura) — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Faturação Eletrónica
-
-- **QR codes obrigatórios** — Janeiro 2022  _(Portaria 195/2020)_
-- **ATCUD obrigatório** — Janeiro 2023  _(DL 28/2019)_
-- **B2G e-fatura (todas as entidades)** — Janeiro 2024  _(DL 111-B/2017)_
-- **QES em faturas PDF** — Janeiro 2027  _(DL 28/2019)_
-- **SAF-T Contabilidade** — Esta portaria entrou em vigor em 2017  _(dispõe sobre a obrigatoriedade de disponibilizar o SAF-T-Contabilidade, se solicitado)_
-- **Prazo de entrega** — Até ao 5.º dia do mês seguinte  _(DL 28/2019)_
-- **Não emissão de faturas** — €150–€3.750 (PF) / €300–€7.500 (PJ)  _(RGIT)_
-- **Software não certificado** — €3.000–€18.750  _(RGIT)_
-- **ATCUD/QR em falta** — €200–€1.000 por fatura  _(RGIT)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mário Jorge da costa Vale** on 2026-06-04; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Secção 1 -- Referência Rápida
 
