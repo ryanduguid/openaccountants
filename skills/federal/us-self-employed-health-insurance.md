@@ -373,7 +373,7 @@ LTC age-based limit:   $4,810 (age 61-70)
 LTC eligible:          $4,810
 
 Total §162(l) deduction: $12,000 + $4,810 = $16,810
-Excess LTC ($1,230):     Not deductible under §162(l); may qualify on Schedule A
+Excess LTC ($1,190):     Not deductible under §162(l); may qualify on Schedule A
 ```
 
 ## Section 16 — Edge cases
