@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: TZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Baraka Cassian
 review_status: current
 tier: 1
@@ -15,40 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Tanzania VAT Return Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Baraka Cassian** on 2026-06-12.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### tanzania-vat
-
-- **Standard VAT rate (Mainland)** — 18%  _(Value Added Tax Act, Cap 148, s.5)_
-- **Reduced rate - B2C electronic payments (Mainland)** — 16% on standard-rated supplies to persons NOT VAT-registered where payment is made via bank or electronic payment system approved by the Commissioner General  _(Value Added Tax Act, Cap 148 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Standard VAT rate (Zanzibar)** — 15% (18% for banking, postal, telecommunication, insurance and digital services)  _(Zanzibar VAT Act (administered by ZRA))_
-- **Zero rate** — 0% - exports of goods, certain exported services, international transport  _(Value Added Tax Act, Cap 148, Schedule (zero-rated supplies))_
-- **VAT registration threshold (Mainland)** — Annual taxable turnover above TZS 200,000,000  _(Value Added Tax Act, Cap 148, s.28 (threshold per Finance Act 2023))_
-- **VAT registration threshold (Zanzibar)** — TZS 100,000,000  _(Zanzibar VAT Act)_
-- **Mandatory registration regardless of turnover** — Professional service providers (e.g. lawyers, accountants) and government entities/institutions carrying on economic activities  _(Value Added Tax Act, Cap 148, s.28)_
-- **Non-resident B2C electronic services** — Simplified VAT registration; NO registration threshold; charge 18% on B2C supplies to Mainland consumers  _(Value Added Tax Act, Cap 148 (non-resident electronic services provisions); VAT (Registration of Non-Resident Electronic Service Suppliers) Regulations)_
-- **VAT return frequency and deadline** — Monthly; due on the 20th day of the following month, regardless of whether the 20th falls on a weekend or public holiday  _(Value Added Tax Act, Cap 148, s.66 (deadline rule per Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Withholding VAT - introduction** — Designated agents (MoF, government institutions retaining own-source revenue, CG-appointed VAT-registered persons) must withhold part of the VAT on taxable supplies  _(Value Added Tax Act, Cap 148 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Withholding VAT - rates** — Goods: withhold 3 percentage points of the 18% VAT (supplier receives 15%); Services: withhold 6 percentage points (supplier receives 12%)  _(Value Added Tax Act, Cap 148 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Withholding VAT - remittance and credit** — Agent remits withheld VAT to TRA by the 20th of the following month and issues a VAT Withholding Certificate; supplier claims withheld amount as credit in its VAT return  _(Value Added Tax Act, Cap 148 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Input tax claim time limit** — 6 months, running from the date of the fiscal receipt  _(Value Added Tax Act, Cap 148, s.69)_
-- **Pre-registration input tax** — VAT incurred in the 6 months before registration claimable no later than the third VAT return after registration  _(Value Added Tax Act, Cap 148)_
-- **Partial exemption thresholds** — Taxable supplies >90% of total: full input credit; <10%: no input credit; 10%-90%: apportion (average method or direct attribution)  _(Value Added Tax Act, Cap 148, s.70 (partial input tax credit))_
-- **Reverse charge on imported services** — Registered person accounts for output VAT on imported services only where exempt supplies are 10% or more of total supplies  _(Value Added Tax Act, Cap 148, imported services provisions)_
-- **VAT refunds** — Remaining credit claimable 6 months after refund first due (all intervening returns filed); claim must be supported by an auditor's certificate of genuineness; consistent-refund businesses (e.g. exporters) may apply to lodge monthly  _(Value Added Tax Act, Cap 148, s.80-83 (refunds))_
-- **VAT deferment on capital goods** — Deferment of VAT on imported capital goods CEASES to apply from 30 June 2026  _(Value Added Tax Act, Cap 148 (sunset per Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Fiscal receipts / EFD** — Fiscal receipt mandatory for every supply; includes receipts from fiscal devices (EFD/EFDMS), Government e-Payment Gateway (GePG) and other CG-approved electronic systems  _(Value Added Tax Act, Cap 148; Tax Administration (Electronic Fiscal Devices) Regulations)_
-- **Blocked input tax** — No credit for: entertainment; membership of sporting/social/recreational clubs; spare parts and repair/maintenance of passenger vehicles  _(Value Added Tax Act, Cap 148, s.68 restrictions)_
-- **Key exempt supplies (selected)** — Agricultural implements/inputs and basic food; livestock; medicine/pharmaceuticals; health care; education services/materials; financial services; insurance (health, life, aircraft, workers comp, crop, livestock); residential rent; vacant land; un-bottled water; specified petroleum products; gaming supply; solar equipment; passenger transport (excl. taxis, rental cars, boat charters)  _(Value Added Tax Act, Cap 148, Schedule (exempt supplies))_
-- **Natural gas for CNG vehicle fuelling** — Exempt from VAT from 1 Jul 2025 to 30 Jun 2028 (supply of natural gas for conversion to CNG for motor vehicles)  _(Value Added Tax Act, Cap 148 (as amended by Finance Act 2025 (in force 1 Jul 2025 unless stated)))_
-- **Currency of VAT accounting** — TZS  _(Tax Administration Act, Cap 438)_
-- **Filing portal** — TRA online Taxpayer Portal (e-filing)  _(TRA systems)_
-- **Default rate where supply classification unknown (agent default)** — 18% standard rate  _(Proposed processing default - not law)_
-- **Default input claim where documentation unknown (agent default)** — Not deductible until a valid fiscal receipt is sighted  _(Proposed processing default - not law; consistent with VAT Act fiscal receipt requirement)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Baraka Cassian** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 
@@ -64,7 +31,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | TZS |
 | Filing frequency | Monthly |
 | Deadline | 20th of following month |
-| Registration | TZS 200,000,000 annual turnover |
+| Registration | TZS 200,000,000 annual turnover (Mainland; VAT Act, Cap 148, s.28) |
+| Zanzibar (separate regime) | Zanzibar VAT Act, administered by the ZRA: 15% standard rate (18% for banking, postal, telecommunication, insurance and digital services); registration threshold TZS 100,000,000. This guide covers Mainland Tanzania |
 | Withholding VAT | 3% goods / 6% services (from July 2025) |
 | Primary legislation | VAT Act 2014 (Act No. 5) |
 | EAC members | Kenya, Uganda, Rwanda, Burundi, South Sudan, DRC |

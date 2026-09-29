@@ -3,7 +3,7 @@ name: ng-payroll
 description: Use this skill whenever asked to compute, review, or advise on end-to-end Nigerian monthly payroll for employees — gross-to-net calculation, payslip generation, statutory deduction sequencing (Pension, NHF, NHIS, CRA, PAYE), employer remittance scheduling (PAYE to SIRS, Pension to PFC/PFA, NHF to FMBN, NSITF to NSITF), and year-end Form H1 reconciliation. Trigger on phrases like "Nigeria payroll", "compute Nigerian payroll", "Nigerian pay slip", "payslip Nigeria", "monthly payroll Nigeria", "payroll computation Nigeria", "PAYE and pension together", "deductions Nigeria", "gross to net Nigeria", "Lagos payroll", "LIRS payroll", "FIRS payroll", "Form H1 Nigeria", "annual payroll reconciliation Nigeria", or any request involving running monthly payroll for one or more employees in Nigeria. This skill is the ORCHESTRATOR — it pulls PAYE rules from `ng-paye` and statutory employer/employee contributions (Pension, NHF, NSITF, ITF, NHIS, EDT) from `ng-statutory-deductions` and sequences them into the correct computation order. ALWAYS read this skill before touching Nigerian payroll computation.
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Omolola Fasasi
 review_status: pending_review
 tier: 2
@@ -18,41 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 >
 > **2025 changes summary (v1.0):** The Nigeria Tax Administration Act 2025 (NTA 2025), passed in Q1 2025 with phased commencement through 2026, introduces a **unified payroll module under FIRS Tax Pro-Max** intended to consolidate PAYE filings for federal MDAs and (subject to MoU) state Internal Revenue Services. As of the 2025 tax year, **state IRS portals (LIRS e-tax, FCT-IRS, OGIRS, etc.) remain the primary PAYE remittance channel** for private-sector employers. See Section 5 for the current remittance routing.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Omolola Fasasi** on 2026-06-21.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### ng-payroll
-
-- **Employee Pension contribution rate** — 8% of BHT (Basic + Housing + Transport)  _(PRA 2014 §4(3))_
-- **Employer Pension contribution rate** — 10% of BHT (Basic + Housing + Transport)  _(PRA 2014)_
-- **Employee NHF contribution rate** — 2.5% of basic salary
-- **NHF applicability threshold (monthly basic salary)** — NGN 3,000 per month
-- **NHIS employee contribution rate (federal MDAs, common default)** — 5% of emloyee's basic salary monthly  _(national health insurance authourity)_
-- **Consolidated Relief Allowance (CRA) — annual minimum floor** — The Consolidated Relief Allowance (CRA) was completely abolished and replaced in the Personal Income Tax (PIT) regime. It no longer exists for payroll and tax computations.  _(nigerian tax act 2025)_
-- **Consolidated Relief Allowance (CRA) — monthly minimum floor** —   _(nigerian tax act 2025)_
-- **Consolidated Relief Allowance (CRA) — percentage of gross income component** —   _(nigerian tax act 2025)_
-- **Minimum tax rate (NTA 2025)** — 0.15  _(nigerian tax act 2025)_
-- **PAYE monthly remittance deadline** — 10th of the following month  _(PITA)_
-- **Pension remittance deadline (employee + employer combined)** — Within 7 working days of salary payment date  _(PRA 2014)_
-- **NHF remittance deadline** — Within 1 month of deduction
-- **NSITF monthly remittance deadline** — on or before the 15th day of the succeeding month  _(Employees' compensation Act (ECA) 2010)_
-- **ITF annual return deadline** — march 31st of every year
-- **Form H1 (Annual Employer's Return) filing deadline** — 31 January of the following year  _(PITA)_
-- **Form H1 coverage period** — 1 January – 31 December (preceding tax year)  _(PITA)_
-- **PAYE late remittance penalty — surcharge rate** — 10% of unremitted tax  _(PITA §82)_
-- **PAYE late remittance penalty — interest rate** — CBN MPR  _(nigerian tax act 2025)_
-- **Pension late remittance penalty** — ≥2% per month of unremitted amount  _(PRA 2014 §11(7))_
-- **NHF late remittance penalty — individual** — NGN 5,000 or a one year prison term or both
-- **NHF late remittance penalty — body corporate** — NGN 50,000
-- **NSITF late remittance penalty — surcharge rate** — 10% of contribution + applicable interest
-- **Termination payment / gratuity exemption review threshold** — gratuity are tax -excempt  _(nigerian tax act 2025)_
-- **Salary sacrifice into pension above statutory employee minimum — permitted maximum per PRA 2014** — Above 8% statutory minimum permitted under PRA 2014 §11(7)  _(PRA 2014 §11(7))_
-- **NTA 2025 FIRS Tax Pro-Max — Phase 1 commencement (federal MDAs)** — tax pro max is no longer in use
-- **NTA 2025 FIRS Tax Pro-Max — Phase 2 commencement (state IRS integration, expected)** — tax pro max is no longer in use
-- **Personal / children allowances — abolished** — Abolished in 2020  _(PITA (amended 2020))_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Omolola Fasasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick reference: payroll component order
 

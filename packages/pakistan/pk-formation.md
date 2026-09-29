@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about forming, incorporating, or reg
 version: 1.1
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ibrar Ali
 review_status: pending_review
 depends_on:
@@ -40,37 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > not confirmed — but they do not tell you which Act to open, and for a 2026-27
 > computation the answer is FA 2026, not FA 2025.
 
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ibrar Ali** on 2026-06-12.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### pk-formation
-
-For a section 42 company, each promoter must undertake to contribute at least PKR 200,000 as a start-up donation, or such other amount as the Commission requires. For a promoter representing or nominated by an entity, Government, or a Federal or Provincial Government institution, authority or other statutory body, the proviso places the donation obligation on that nominating body instead. [Companies Regulations 2024, regulation 100(1)(v)](https://www.secp.gov.pk/wp-content/uploads/2026/04/Companies-Regulations-2024-updated-upto-25.07.2025-Reviewed-14042026.pdf).
-
-- **Company registrar** — SECP (ezfile.secp.gov.pk)  _(Companies Act 2017)_
-- **Formation time** — Sole-prop NTN 1 days; SMC-Pvt/Pvt Ltd 4–10 days; PLC 3–6 weeks; NPO 6–12 weeks  _(SECP eServices FBR IRIS Portal)_
-- **Name reservation validity** — 60 days for Companies; 30 days for Limited Liability Partnerships (LLPs).  _(SECP)_
-- **Sole proprietorship** — 1 owner; unlimited liability; no minimum capital  _(ITO 2001 (NTN-based))_
-- **AOP / partnership** — 2–20 partners; unlimited joint & several liability  _(Partnership Act 1932 §4)_
-- **SMC-Pvt** — 1 shareholder + 1 nominee; commonly PKR 100,000 capital (no statutory floor)  _(Companies Act 2017)_
-- **Private Limited (Pvt Ltd)** — Minimum 2 members & 2 directors; max 50 members; commonly PKR 100,000 (no statutory floor)  _(Companies Act 2017)_
-- **Public Limited (PLC)** — Min 3 members & 3 directors (7 if listed); no statutory minimum paid-up capital for unlisted  _(Companies Act 2017)_
-- **Section 42 NPO** — Minimum 3 members & 3 Trustees; minimum start-up donation of PKR 200,000 per promoter, subject to the nominating-body proviso above  _(Companies Act 2017 §42; Companies Regulations 2024, regulation 100(1)(v))_
-- **Society** — Minimum 7 members  _(Societies Registration Act 1860 §1)_
-- **Trust** — Minimum 2 trustees  _(Trusts Act 1882)_
-- **PSEB-registered export final tax** — 0.25% of qualifying export remittances  _(ITO 2001 §154A / SRO 1359(I)/2022)_
-- **Non-PSEB export rate** — 1%  _(ITO 2001 §154A)_
-- **Reduced dividend tax (PSEB IT profits)** — 15% (Standard rate)  _(Finance Act (verify))_
-- **PSEB registration** — Via pseb.org.pk; certificate ~2–4 weeks; annual renewal  _(PSEB)_
-- **STZA zone enterprises** — 10-year tax holiday AND exemption from minimum tax, WHT, & custom duties  _(Special Technology Zones Authority)_
-- **NTN** — Via FBR IRIS (CNIC functions as NTN for individuals)  _(FBR)_
-- **STRN** — FBR for goods; provincial authority (SRB/PRA/KPRA/BRA) for services  _(STA 1990 / Provincial Acts)_
-- **EOBI** — Mandatory employer registration at ≥ 5 employees  _(EOBI Act 1976)_
-- **Beneficial Ownership Register** — Mandatory disclosure of ultimate beneficial owners (≥ 25% ownership or effective control).  _(SECP Beneficial Ownership Regulations 2020)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-12 Ibrar Ali checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick Reference
 

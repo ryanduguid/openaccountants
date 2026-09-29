@@ -1,5 +1,6 @@
 ---
 name: tanzania-payroll
+version: 0.2
 description: Use this skill whenever asked about Tanzania payroll processing for employed persons. Trigger on phrases like "Tanzania payroll", "PAYE Tanzania", "TRA PAYE", "NSSF contribution", "PSSSF", "SDL Tanzania", "Skills Development Levy", "WCF Tanzania", "Workers Compensation Fund", "ITX 300.01.E", "net salary Tanzania", "tax withholding Tanzania", "employer NSSF", "minimum wage Tanzania", "gross to net Tanzania", "salary calculation Tanzania", "TZS payroll", "Tanzanian Shilling salary", "non-resident PAYE Tanzania", "Zanzibar PAYE", or any question about computing employee pay, income-tax (PAYE) withholding, or social-security and payroll levies for Tanzania-based employees. This skill covers PAYE income-tax withholding by the employer, NSSF/PSSSF social security, the Skills Development Levy (SDL), the Workers Compensation Fund (WCF), minimum wage, and filing obligations to TRA / NSSF / WCF. ALWAYS read this skill before processing any Tanzania payroll.
 jurisdiction: TZ
 tax_year: 2026
@@ -12,52 +13,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Tanzania Payroll
 
-## Tanzania Payroll Skill v0.1
-
-> **Accountant-reviewed (`tier: 1`).** Baraka Cassian reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-12; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet accountant-verified", the draft label the guide carried before that review. **Not covered by the review:** items flagged for further clarification were excluded, so the figures below that still carry the `[RESEARCH GAP — reviewer to confirm]` marker (notably the full sectoral minimum-wage schedule, the floating late-payment interest rate, and any NSSF wage ceiling) remain unconfirmed; a licensed Tanzanian tax practitioner / accountant must reconcile those before any output that depends on them is presented as final.
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Baraka Cassian** on 2026-06-12.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### tanzania-payroll
-
-- **PAYE band 1 - tax-free threshold (resident, monthly)** — 0% on taxable income TZS 0 - 270,000/month  _(Income Tax Act, Cap 332, s.81 & First Schedule)_
-- **PAYE band 2 (resident, monthly)** — 8% of amount over TZS 270,000 (TZS 270,001 - 520,000)  _(Income Tax Act, Cap 332, First Schedule)_
-- **PAYE band 3 (resident, monthly)** — TZS 20,000 + 20% of amount over TZS 520,000 (TZS 520,001 - 760,000)  _(Income Tax Act, Cap 332, First Schedule)_
-- **PAYE band 4 (resident, monthly)** — TZS 68,000 + 25% of amount over TZS 760,000 (TZS 760,001 - 1,000,000)  _(Income Tax Act, Cap 332, First Schedule)_
-- **PAYE band 5 - top rate (resident, monthly)** — TZS 128,000 + 30% of amount over TZS 1,000,000  _(Income Tax Act, Cap 332, First Schedule)_
-- **PAYE annual tax-free threshold** — TZS 3,240,000 per annum (270,000 x 12)  _(Income Tax Act, Cap 332, First Schedule)_
-- **Non-resident employee - employment income** — 15% flat, final tax  _(Income Tax Act, Cap 332, First Schedule (non-resident rate), read with s.81 (employer withholding))_
-- **PAYE remittance deadline** — On or before the 7th day of the month following the month of deduction  _(Income Tax Act, Cap 332, s.84(1); Tax Administration Act, Cap 438)_
-- **Employer half-year PAYE/SDL statement** — Semi-annual employer return due within 30 days after the end of each six-month calendar period  _(Income Tax Act, Cap 332, s.84(2))_
-- **SDL rate (Mainland)** — 3.5% of total gross emoluments (payroll cash costs)  _(Vocational Education and Training Act, Cap 82, s.14 (as amended by Finance Act 2023))_
-- **SDL employer threshold** — Applies only to employers with 10 or more employees  _(VETA Act, Cap 82 (as amended))_
-- **SDL return filing where exempt** — Employers not liable to SDL are NOT required to file SDL returns  _(VETA Act, Cap 82 (as amended by Finance Act 2023))_
-- **SDL rate (Zanzibar)** — 5% of gross emoluments  _(Zanzibar VETA legislation)_
-- **SDL payment deadline** — With monthly PAYE, on or before the 7th day of the following month  _(VETA Act, Cap 82; Tax Administration Act, Cap 438)_
-- **NSSF contribution (private sector)** — 20% of employee wages, joint employer/employee  _(NSSF Act, Cap 50, s.13)_
-- **NSSF employee share cap** — Employee share may not exceed 10% of monthly wage (splits 10/10 or 15/5)  _(NSSF Act, Cap 50, s.13)_
-- **WCF tariff** — 0.5% of cash sums paid to employees (wage bill); employer-only cost, monthly  _(Workers Compensation Act, Cap 263; Workers Compensation (Payment of Tariff) Regulations)_
-- **HESLB loan deduction** — Employer deducts 15% of monthly salary of each HESLB loan beneficiary  _(Higher Education Students' Loans Board Act, Cap 178)_
-- **Minimum wage instrument (private sector)** — Labour Institutions (Minimum Wage for Private Sector) Order 2025, GN 605A of 13 Oct 2025  _(Labour Institutions Act, Cap 300 - GN 605A of 2025)_
-- **Minimum wage range (private sector)** — Sector-specific: from TZS 175,000/month (lowest agriculture band) to TZS 765,900/month (highest bands, e.g. international mining/energy)  _(GN 605A of 2025 sector schedules)_
-- **Benefits in kind - general rule** — Taxable as employment income, generally at market value  _(Income Tax Act, Cap 332, s.7 read with s.27)_
-
-**Car benefit - annual taxable values**  _(Income Tax Act, Cap 332, s.27(1)(b) quantification table)_
-
-| Engine size | Annual taxable value |
-| --- | --- |
-| <=1000cc | TZS 250,000 |
-| 1001-2000cc | 500,000 |
-| 2001-3000cc | 1,000,000 |
-| >3000cc | 1,500,000 |
-
-- **Housing benefit quantification** — Lower of market rental value; and the higher of (i) 15% of employee's total annual income (excl. housing) and (ii) employer's expenditure claimed on the premises  _(Income Tax Act, Cap 332, s.27(1)(c))_
-- **Preferential (low-interest) loan benefit** — Benefit = difference between BoT statutory rate and actual rate charged  _(Income Tax Act, Cap 332, s.27 (statutory rate per Bank of Tanzania))_
-- **Employer statutory on-cost summary (private, SDL-liable)** — Approx. 14% on top of gross payroll: NSSF 10% + SDL 3.5% + WCF 0.5%  _(Derived from NSSF Act, VETA Act, WC Act)_
+## Tanzania Payroll Skill v0.2
+> **Accountant-reviewed (`tier: 1`).** Baraka Cassian reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-12; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet accountant-verified", the draft label the guide carried before that review. **Not covered by the review:** items flagged for further clarification were excluded, so the figures below that still carry the `[RESEARCH GAP — reviewer to confirm]` marker (notably the full sectoral minimum-wage schedule, the floating late-payment interest rate, and any NSSF wage ceiling) remain unconfirmed; a licensed Tanzanian tax practitioner / accountant must reconcile those before any output that depends on them is presented as final.
 
 ## Section 1 -- Quick Reference
 
@@ -82,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Payment form | **ITX 300.01.E — Employment Taxes Payment Credit Slip** (PAYE + SDL); **NSSF/CON.5** (NSSF schedule) |
 | Filing portal | TRA online portal (IDRAS / e-filing); NSSF online; WCF online (www.wcf.go.tz) |
 | Validated by | Pending -- requires sign-off by a licensed Tanzanian tax practitioner |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 > Figures verified against TRA, NSSF and WCF official sites and PwC Worldwide Tax Summaries
 > (last reviewed 14 Jan 2026).

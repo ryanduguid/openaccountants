@@ -3,7 +3,7 @@ name: tanzania-social-contributions
 description: Use this skill whenever asked about Tanzania (Mainland) payroll taxes and social security contributions for employers and employees. Trigger on phrases like "Tanzania PAYE", "how much NSSF do I pay", "NSSF contribution", "PSSSF", "Skills and Development Levy", "SDL Tanzania", "Workers Compensation Fund", "WCF Tanzania", "TZS payroll", "Tanzania payroll deductions", "PAYE bracket Tanzania", "social security Tanzania", "pension contribution Tanzania", or any question about Tanzanian employer/employee statutory contributions. Also trigger when classifying bank statement transactions that relate to TRA payments, NSSF/PSSSF pension debits, SDL, or WCF remittances from CRDB, NMB, NBC, or other Tanzanian banks. This skill covers PAYE progressive brackets, NSSF/PSSSF pension splits, SDL, WCF, monthly remittance deadlines, penalties, minimum wage, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Tanzanian payroll or contributions work.
 jurisdiction: TZ
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Baraka Cassian
 review_status: current
 tier: 1
@@ -14,29 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Tanzania (Mainland) Social Security & Payroll Contributions Skill v0.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Baraka Cassian** on 2026-06-12.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### tanzania-social-contributions
-
-- **NSSF - total contribution (private sector)** — 20% of employee's monthly wages (joint employer/employee)  _(NSSF Act, Cap 50, s.13)_
-- **NSSF - split** — Employee share capped at 10% of monthly wage; standard splits 10% employer / 10% employee, or 15% / 5%  _(NSSF Act, Cap 50, s.13)_
-- **NSSF - payment deadline** — Within one month after the end of the month to which the contribution relates  _(NSSF Act, Cap 50, s.14)_
-- **NSSF - late payment penalty** — 5% of the unpaid amount for each month or part of a month after the due date  _(NSSF Act, Cap 50, ss.14-15)_
-- **NSSF - registration** — Employers must register with NSSF and register all employees (membership mandatory for private-sector employees)  _(NSSF Act, Cap 50)_
-- **PSSSF - public service scheme** — 20% of salary: employer 15% / employee 5%  _(Public Service Social Security Fund Act No. 2 of 2018 (Cap 371 RE 2023), Part IV - contributions)_
-- **WCF - tariff rate** — 0.5% of cash sums paid to employees - both private and public sector employers  _(Workers Compensation Act, Cap 263; Tariff Regulations)_
-- **WCF - payment deadline** — Monthly; payable within the contribution month or not later than the end of the following month  _(Workers Compensation (Payment of Tariff) Regulations)_
-- **WCF - late payment interest** — 2% of the unpaid amount per month of delay  _(WCF regulations/notices)_
-- **SDL - cross reference** — 3.5% of gross emoluments, employers with 10+ employees, monthly by the 7th (see tanzania-payroll sheet)  _(VETA Act, Cap 82 (as amended by Finance Act 2023))_
-- **HESLB - employer deduction** — 15% of monthly salary of each loan beneficiary; remit by the 15th day of the following month  _(HESLB Act, Cap 178)_
-- **HESLB - employer penalty** — 10% of the monthly deduction amount for failure to deduct/remit on time  _(HESLB Act, Cap 178)_
-- **NHIF - public service** — 6% of basic salary: 3% employer / 3% employee (mandatory for public servants)  _(National Health Insurance Fund Act, Cap 395)_
-- **Employer statutory on-cost (private sector summary)** — NSSF 10% + SDL 3.5% + WCF 0.5% = 14% of gross payroll (SDL-liable employers, 10/10 NSSF split)  _(Derived)_
-- **Employee statutory deductions (typical)** — NSSF 10% of wages + PAYE per bands (+ 15% HESLB if loan beneficiary)  _(Derived)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Baraka Cassian** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 

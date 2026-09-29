@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T04:47:06+00:00",
+ "generated_at": "2026-09-29T04:48:43+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -14954,7 +14954,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ng-cit",
@@ -14967,7 +14967,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ng-formation",
@@ -15019,7 +15019,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ng-personal-income-tax",
@@ -15032,7 +15032,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ng-return-assembly",
@@ -15045,7 +15045,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ng-vat-return",
@@ -15058,7 +15058,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-11"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ng-vat",
@@ -15071,7 +15071,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-11"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ng-wht",
@@ -15084,7 +15084,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "nigeria-vat",
@@ -15435,7 +15435,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "pk-corporate-tax",
@@ -15448,7 +15448,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "pk-crypto-tax",
@@ -15500,7 +15500,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "pk-income-tax",
@@ -15513,7 +15513,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "pk-it-export-tax",
@@ -15539,7 +15539,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "pk-payroll",
@@ -15565,7 +15565,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "pk-sales-tax-services",
@@ -15578,7 +15578,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "pk-social-contributions",
@@ -17021,7 +17021,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "sa-excise-tax",
@@ -17034,7 +17034,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "sa-formation",
@@ -17047,7 +17047,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "sa-freelance-intake",
@@ -17073,7 +17073,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "sa-rett",
@@ -17086,7 +17086,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "sa-return-assembly",
@@ -17112,7 +17112,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "sa-zakat",
@@ -17125,7 +17125,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "saudi-arabia-vat",
@@ -17151,7 +17151,7 @@
    "reviewed_by": "Mehran Habib",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "senegal-income-tax",
@@ -19075,7 +19075,7 @@
    "reviewed_by": "Baraka Cassian",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "tanzania-payroll",
@@ -19101,7 +19101,7 @@
    "reviewed_by": "Baraka Cassian",
    "review_status": "current",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "tanzania-tax-optimization",
@@ -19114,7 +19114,7 @@
    "reviewed_by": "Baraka Cassian",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "tanzania-vat",
@@ -19127,7 +19127,7 @@
    "reviewed_by": "Baraka Cassian",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "tanzania-withholding-tax",
@@ -19140,7 +19140,7 @@
    "reviewed_by": "Baraka Cassian",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "thailand-references",

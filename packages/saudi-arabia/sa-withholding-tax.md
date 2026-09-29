@@ -3,7 +3,7 @@ name: sa-withholding-tax
 description: "Use this skill whenever asked to compute, classify, or review Saudi Arabian Withholding Tax (WHT) obligations payable by a resident payer on payments to non-resident recipients for services, rent, royalties, dividends, interest, management fees, insurance premiums, freight, telecommunications, or other in-scope categories under Article 68 of the Saudi Income Tax Law and Articles 63–67 of the Implementing Regulations. Trigger on phrases like \"Saudi WHT\", \"ZATCA withholding\", \"5% WHT KSA\", \"15% WHT KSA\", \"20% management fee WHT\", \"Article 68 Saudi\", \"treaty rates Saudi\", \"WHT Saudi Arabia\", \"Saudi royalty WHT\", \"Saudi dividend withholding\", \"non-resident WHT Saudi\", \"ZATCA monthly WHT return\", \"TRC Saudi treaty\", \"Saudi PE risk WHT\", or any request involving the classification, deduction, or remittance of Saudi withholding tax. This skill covers WHT under the Income Tax Law (Royal Decree No. M/1 dated 15/1/1425H, as amended) and the Implementing Regulations issued by the Zakat, Tax and Customs Authority (ZATCA, formerly GAZT), including the Tier 1 standard rates (services 5%, rent 5%, royalties 15%, dividends 5%, interest 5%, management fees 20%, insurance/reinsurance premiums 5%, international telecommunications 5%, air/sea freight 5%), Tier 2 treaty-rate reductions across Saudi Arabia's growing treaty network (UK, France, China, India, Pakistan, etc.), mixed-source transactions, capital gains by non-residents on Saudi-source assets, and the interaction with the Pillar Two top-up regime. Out of scope: Zakat (Saudi/GCC-owned entity charge — see sa-zakat); Corporate Income Tax on resident non-GCC-owned entities (see sa-corporate-tax); VAT (see saudi-arabia-vat); E-invoicing (see saudi-einvoice); upstream petroleum special regime; expatriate employee levy; the GCC selective tax. ALWAYS read this skill before touching any Saudi WHT work."
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mehran Habib
 review_status: current
 tier: 1
@@ -14,26 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Saudi Arabia — Withholding Tax — Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Withholding Tax
-
-- **Management fees** — 0.2  _(ITL Art. 68(a)(3))_
-- **Royalties (incl. software, IP)** — 0.15  _(ITL Art. 68(a)(2))_
-- **Technical/consultancy (related party)** — 0.05  _(ITL Art. 68(a)(3))_
-- **Services (general, unrelated)** — 0.05  _(Income tax regulations)_
-- **Rent (immovable/movable in KSA)** — 0.05  _(Income tax regulations)_
-- **Dividends** — 0.05  _(Income tax regulations)_
-- **Interest / loan charges** — 0.05  _(Income tax regulations)_
-- **Insurance / reinsurance premiums** — 0.05  _(Income tax regulations)_
-- **International telecoms** — 0.05  _(ITL Art. 68)_
-- **Other (catch-all)** — 0.15  _(ITL Art. 68)_
-- **Monthly return** — Within 10 days of month-end  _(ITL Art. 68(b))_
-- **Annual reconciliation** — 120 days after FYE  _(ITL Art. 68)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mehran Habib** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference (rate table by transaction type)
 
@@ -62,7 +43,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | --- | --- | --- | --- |
 | **Management fees** | **20%** | Rarely reduced — treaties typically do not cap management fees | **Final** for the non-resident |
 | **Royalties** (including software licences, technical know-how, trademarks, franchises) | **15%** | 5%–10% under most treaties (e.g. UK 5%/8%, France 5%/10%) | Final |
-| **Technical / consultancy services from a related party** | **15%** | Per treaty (services article may not exist) | Final |
+| Technical / consultancy services from a related party (head office or affiliate) | 5% since 15 September 2023 (15% before; Ministerial Resolution No. 25 of 2023 amending art. 63 of the Implementing Regulations) | Per treaty (services article may not exist) | Final |
 | Services (general — unrelated party) | 5% | Per treaty | Final |
 | Rent (immovable and movable property in KSA) | 5% | Per treaty | Final |
 | Dividends | 5% | 0%–5% under most treaties | Final |
@@ -91,11 +72,11 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Recipient legal name, country of tax residence, and tax ID in home jurisdiction | Determines non-resident status and treaty eligibility |
 | Confirmation that the recipient is **non-resident** (no Saudi PE, not registered in KSA) | If the recipient has a Saudi PE, the payment is attributable to that PE and CIT applies — not WHT |
 | Nature of the payment (services, rent, royalty, dividend, interest, management fee, insurance, telecoms, freight, mixed) | Determines applicable rate band (5% / 15% / 20%) |
-| Whether the parties are **related** for technical/consultancy services | Triggers the 15% related-party rate vs the 5% unrelated rate |
+| Whether the parties are **related** for technical/consultancy services | Both attract 5% since 15 September 2023 (the related-party rate was 15% before Ministerial Resolution No. 25 of 2023); the distinction still drives transfer-pricing documentation |
 | Gross contract value in payment currency, conversion rate, and SAR equivalent | WHT base is gross — no deductions |
 | Date of payment and date of accrual / invoice | Tax point is the earlier of the two |
 | For treaty relief: a valid **Tax Residence Certificate (TRC)** issued by the recipient's home tax authority, dated for the relevant year | Without TRC at the tax point, statutory rate applies |
-| For related-party services: transfer pricing documentation justifying the fee | ZATCA may challenge the deductibility and the 15% classification |
+| For related-party services: transfer pricing documentation justifying the fee | ZATCA may challenge the deductibility of the fee and its arm's-length pricing |
 | Whether the payment relates to a Permanent Establishment of the non-resident in KSA | If yes, PE is taxed under CIT — not WHT |
 | For mixed-source transactions (e.g. partly KSA-source services + partly offshore): allocation methodology | Only the KSA-source portion is subject to WHT |
 
@@ -132,7 +113,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | --- | --- | --- |
 | Management fees | (1) | **20%** |
 | Royalties (including software, technical know-how, franchises, trademarks, etc.) | (2) | **15%** |
-| Payments for technical and consulting services from a **related party** | (3) | **15%** |
+| Payments for technical and consulting services from a **related party** (head office or affiliate) | (3) | 5% since 15 September 2023 (15% before) |
 | Payments for technical and consulting services from an **unrelated party** | (3) | 5% |
 | Rent (immovable and movable property situated in KSA) | (4) | 5% |
 | Dividends | (5) | 5% |
@@ -251,23 +232,23 @@ Saudi LLC pays its Cayman parent SAR 1,000,000 as a management fee under an intr
 - Cayman has no DTT with KSA → no treaty relief.
 - The Saudi LLC must also have transfer pricing documentation supporting the 1,000,000 fee as arm's-length, including a benchmarking study, to claim deductibility for CIT/Zakat purposes.
 
-### 5.3 Technical service from German related-party (15% related-party rate)
+### 5.3 Technical service from German related-party (5% since 15 September 2023)
 
 Saudi LLC pays its German parent SAR 600,000 for technical engineering services provided remotely from Germany. The parties are related (parent–subsidiary). No TRC on file at tax point.
 
 - Tax base: SAR 600,000
-- Rate: **15%** (technical service from related party — Article 68(a)(3))
-- WHT: **SAR 90,000**
-- Net paid to Germany: SAR 510,000
-- Saudi LLC remits SAR 90,000 to ZATCA within 10 days.
-- If a valid TRC were on file, the Saudi–Germany DTT services article would need to be checked; many older Saudi treaties (including the Germany 2007 treaty) have limited service article coverage — the 15% domestic rate may stand. Verify the specific treaty text.
+- Rate: **5%** (technical service from a related party — Article 68(a)(3) ITL and art. 63 of the Implementing Regulations as amended by Ministerial Resolution No. 25 of 2023; 15% for payments before 15 September 2023)
+- WHT: **SAR 30,000**
+- Net paid to Germany: SAR 570,000
+- Saudi LLC remits SAR 30,000 to ZATCA within 10 days.
+- If a valid TRC were on file, the Saudi–Germany DTT services article would need to be checked; many older Saudi treaties (including the Germany 2007 treaty) have limited service article coverage — the 5% domestic rate may stand. Verify the specific treaty text.
 
 ### 5.4 Mixed contract — supply + installation
 
 Saudi LLC contracts a French supplier for: (a) supply of equipment (CIF Jeddah) — EUR 2,000,000, and (b) on-site installation and training in KSA — EUR 500,000. Total EUR 2,500,000. Contract clearly separates the two components.
 
 - Component (a) — supply of goods: NOT a service — outside Article 68. (Customs duty and VAT on import apply separately.)
-- Component (b) — installation/training in KSA: services with KSA performance → in scope under Article 68(a)(3). If unrelated party: 5%. If related party: 15%.
+- Component (b) — installation/training in KSA: services with KSA performance → in scope under Article 68(a)(3). 5% whether or not the parties are related (the related-party rate was 15% before 15 September 2023).
 - Assume unrelated, no TRC pre-approval for treaty rate at source:
   - WHT base: EUR 500,000 × SAMA rate (assume SAR 4.10 / EUR) = SAR 2,050,000
   - WHT at 5%: **SAR 102,500**
@@ -312,7 +293,7 @@ When any input is ambiguous, missing, or contested, default to the position that
 | Recipient may have a Saudi PE | Refuse — PE risk is greater than WHT risk; refer for PE analysis under CIT |
 | Resident payer vs Saudi PE of foreign entity | Both attract Article 68 obligation — apply WHT |
 | Service vs goods classification ambiguous | Treat as service → WHT applies |
-| Related vs unrelated party for technical/consulting services | Treat as **related** → 15% (not 5%) |
+| Related vs unrelated party for technical/consulting services | Both 5% since 15 September 2023; still treat as **related** for transfer-pricing documentation (15% applied to related parties before that date) |
 | Royalty vs business profits (software/SaaS) | Treat as **royalty** → 15% (treaty cap may reduce) |
 | Treaty rate claim without ZATCA pre-approval for at-source application | Withhold at statutory rate; let non-resident claim refund |
 | TRC absent at tax point | Apply statutory rate; do not apply treaty rate retrospectively |
@@ -338,7 +319,7 @@ The general principle: withhold the higher rate and let the recipient claim a re
 
 **Subsidiary legislation and ZATCA guidance.**
 - ZATCA Circulars on WHT (consolidated guidance on Article 68 categories, treaty relief procedure, TRC requirements, gross-up treatment, mixed-contract apportionment).
-- ZATCA Transfer Pricing Bylaws (Resolution No. 6-1-19 of 25 January 2019) — relevant to related-party service classification and 15% rate.
+- ZATCA Transfer Pricing Bylaws (Resolution No. 6-1-19 of 25 January 2019) — relevant to related-party service classification (and to the 15% related-party rate that applied before 15 September 2023).
 - ZATCA Significant Economic Presence and digital services guidance.
 
 **Treaty network (as at 2025).** Saudi Arabia has DTTs in force with (selection): United Kingdom, France, Germany, Netherlands, Spain, Italy, Austria, Greece, Hungary, Poland, Czech Republic, Romania, Bulgaria, Belarus, Russia, Turkey, Ukraine, Pakistan, India, China, Japan, South Korea, Singapore, Malaysia, Indonesia, Vietnam, Philippines, Bangladesh, Sri Lanka, Egypt, Tunisia, Morocco, Algeria, Jordan, South Africa, Mexico, Venezuela, Azerbaijan, Kazakhstan, Tajikistan, Uzbekistan, Kyrgyzstan, Ethiopia. Always verify the specific treaty article text and ratification status (and MLI position) on ZATCA's published treaty schedule before applying.

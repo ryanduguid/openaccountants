@@ -4,7 +4,7 @@ description: "ALWAYS read this skill before touching any Pakistan corporate inco
 jurisdiction: PK
 tax_year: 2025
 version: 1.1
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ibrar Ali
 review_status: pending_review
 tier: 2
@@ -37,49 +37,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > not confirmed — but they do not tell you which Act to open, and for a 2026-27
 > computation the answer is FA 2026, not FA 2025.
 
-
 > **Produced by OpenAccountants (openaccountants.com)**
 >
 > This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a Pakistani tax professional (ICAP CA, ICMA Pakistan, or FBR-recognised tax adviser) before filing or acting upon. The latest verified version is maintained at [openaccountants.com](https://openaccountants.com).
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ibrar Ali** on 2026-06-12.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### pk-corporate-tax
-
-- **Standard CIT rate** — 29% of taxable income  _(First Schedule, Pt I, Div II)_
-- **Banking companies** — 0.44  _(First Schedule; Seventh Schedule)_
-- **Small company rate** — 20%  _(§2(59A); First Schedule, Pt I, Div II)_
-- **PSEB IT/ITeS export final tax** — 0.25% final tax if you are registered in PSEB  _(Second Schedule / §154A)_
-- **Paid-up capital + undistributed reserves** — ≤ PKR 50,000,000  _(ITO 2001 §2(59A))_
-- **Annual turnover** — ≤ PKR 250,000,000  _(ITO 2001 §2(59A))_
-- **Employees** — ≤ 250  _(ITO 2001 §2(59A))_
-- **Not formed by splitting an existing business** — Condition  _(ITO 2001 §2(59A)(d))_
-- **Not a subsidiary/associate of a non-small company** — Not a small and medium enterprise (SME)  _(ITO 2001 §2(59A)(e))_
-
-- **Up to 150,000,000** — 0%  _(§4C; First Schedule Div IIB)_
-- **150,000,001 – 200,000,000** — 1%  _(§4C; First Schedule Div IIB)_
-- **200,000,001 – 250,000,000** — 0.015  _(§4C; First Schedule Div IIB)_
-- **250,000,001 – 300,000,000** — 0.025  _(§4C; First Schedule Div IIB)_
-- **300,000,001 – 350,000,000** — 3.5  _(§4C; First Schedule Div IIB)_
-- **350,000,001 – 400,000,000** — 5.5  _(§4C; First Schedule Div IIB)_
-- **400,000,001 – 500,000,000** — 7.5  _(§4C; First Schedule Div IIB)_
-- **Above 500,000,000** — 10%  _(§4C; First Schedule Div IIB)_
-- **Minimum tax on turnover §113** — 1.25% of turnover where normal tax is lower (incl. loss years)  _(ITO 2001 §113)_
-- **Minimum tax excess carry-forward** — 2 tax years  _(ITO 2001 §113(2)(c))_
-- **Alternative Corporate Tax §113C** — 17% of accounting income (pay higher of normal tax or ACT)  _(ITO 2001 §113C)_
-- **ACT excess carry-forward** — 10 tax years  _(ITO 2001 §113C)_
-- **Tax loss carry-forward** — 6 years; no carry-back  _(ITO 2001 §57)_
-- **Unabsorbed depreciation** — Carried forward indefinitely  _(ITO 2001 §57)_
-- **Annual return (companies)** — Due 31 December for normal tax year; 30 September if special tax year ends between 1 July and 31 Dec.  _(ITO 2001 §118)_
-- **Advance tax §147 instalments** — Quarterly: 25 Sep, 25 Dec, 25 Mar, 15 Jun (Q4 earlier)  _(ITO 2001 §147)_
-- **Record retention** — 6 years from end of tax year  _(ITO 2001 §174)_
-- **Late filing penalty §182** — 0.1% of tax/day; min PKR 40,000; max 200% of tax payable  _(ITO 2001 §182)_
-- **Group relief (loss surrender)** — Requires 55% ownership (listed) or 75% (unlisted)  _(ITO 2001 §59AA)_
-- **Group taxation (consolidated return)** — Requires 100% ownership and SECP designation  _(ITO 2001 §59B)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-12 Ibrar Ali checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick Reference
 

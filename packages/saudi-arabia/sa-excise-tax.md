@@ -3,7 +3,7 @@ name: sa-excise-tax
 description: Use this skill whenever asked about Saudi Arabia Excise Tax. Trigger on phrases like "Saudi excise tax", "ZATCA excise", "Saudi sin tax", "tobacco tax Saudi", "energy drinks Saudi excise", "soft drinks excise Saudi", "sweetened drinks Saudi", "e-cigarette tax Saudi", "vape tax KSA", "Royal Decree A/86", "GCC excise", "excise tax warehouse Saudi", "excise registration ZATCA", or any question about computing, registering, filing, or reporting Saudi excise tax obligations on tobacco, energy drinks, soft drinks, sweetened drinks, or electronic smoking devices. Scope covers the Excise Tax Law issued by Royal Decree A/86 of 27/8/1438H (2017) and the Excise Tax Bylaws, the taxable product list and rates, the tax base (higher of retail selling price or ZATCA standard price), tax warehouse regime, importer/manufacturer registration, monthly filing through the ZATCA portal, penalties, and GCC harmonisation context. ALWAYS read this skill before touching any Saudi excise tax work.
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mehran Habib
 review_status: current
 tier: 1
@@ -14,22 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Saudi Arabia — Excise Tax — Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Excise Tax
-
-- **Tobacco and tobacco products** — 100%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
-- **Energy drinks** — 100%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
-- **Soft drinks (carbonated)** — 50%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
-- **Sweetened drinks + Distilled beverages (energy drinks still 100%)** — 0.5  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
-- **E-cigarettes / vape devices** — 100%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
-- **E-liquids** — 100%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
-- **Tax base** — Higher of declared RSP or ZATCA standard price  _(Definition - Tax Base - Implementing Regulations of Excise Tax Law)_
-- **Filing** — Monthly; due within 15 days of month-end  _(Article 16(1) Tax Return - Implementing Regulation of Excise Tax Law)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mehran Habib** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference
 

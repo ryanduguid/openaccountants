@@ -3,7 +3,7 @@ name: pk-sales-tax-services
 description: "Source-cited tax guide for PK: pk sales tax services. Unverified draft, pending local-accountant review."
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -19,31 +19,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > recovery sit in that guide — read it alongside this one before filing or advising.
 > **No claim about that jurisdiction's regime is made here**; this is a pointer only.
 
-
 ## Pakistan — Provincial Sales Tax on Services — Skill v1.0
 
 ALWAYS READ THIS SKILL IN FULL before touching any Pakistan provincial sales tax on services work. Sales tax on services in Pakistan is NOT a single federal regime — it is administered by five separate revenue authorities under five separate statutes, each with its own portal, rate, return form, due date, and penalty regime. Federal FBR sales tax (Sales Tax Act 1990) covers GOODS only; services are provincial. Confusing the two is the single most common error.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Ibrar Ali on 2026-06-12. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### pk-sales-tax-services
-
-- **Sindh (SRB)** — 0.15  _(Sindh Sales Tax on Services Act 2011)_
-- **Punjab (PRA)** — 16%  _(Punjab Sales Tax on Services Act 2012)_
-- **Khyber Pakhtunkhwa (KPRA)** — 15%  _(KP Finance Act 2013, Ch. VI)_
-- **Balochistan (BRA)** — 15%  _(Balochistan Sales Tax on Services Act 2015)_
-- **Islamabad ICT (FBR)** — 0.15  _(ICT (Tax on Services) Ordinance 2001)_
-- **Return due (all authorities)** — 15th of the following month for payment; 18th for filing. (Note: PRA exception).  _(Provincial Acts)_
-- **Registration** — Mandatory on commencement of taxable supplies (no general turnover threshold)  _(Provincial Acts)_
-- **Late filing penalty (e.g. SRB)** — PKR 5,000 if filed within 15 days of the due date; PKR 10,000 if delayed beyond 15 days.  _(SRB Act §43 (and provincial equivalents))_
-- **Default surcharge** — KIBOR + 3% per annum  _(SRB Act §44 (and equivalents))_
-- **Records retention** — 5 years  _(Provincial Acts)_
-- **Exported IT/ITeS services** — Exempt/zero-rated upon realization of foreign currency via banking channel (PRC).  _(Provincial Second Schedules)_
-- **Educational & healthcare services** — Generally exempt (healthcare except cosmetic)  _(Provincial Schedules)_
-- **Cross-province supply** — Major conflict: SRB (Sindh) favors the Origin principle, while PRA (Punjab) strictly applies the Destination principle.  _(Place-of-supply rules)_
-- **Inbound digital services** — Reverse charge / 100% withholding applies across major authorities (SRB, PRA, ICT) for unregistered foreign suppliers.  _(Provincial Acts)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ibrar Ali** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## 1. Quick Reference Table
 

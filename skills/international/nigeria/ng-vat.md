@@ -4,7 +4,7 @@ description: "Nigerian VAT working papers for periods from 1 January 2026 under 
 jurisdiction: NG
 tax_year: 2026
 version: 2.1
-last_updated: 2026-09-11
+last_updated: 2026-09-29
 review_status: pending_review
 category: international
 tier: 2
@@ -20,46 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > after the block. Correct the underlying `skill_facts` before regenerating it;
 > the historical review does not sign off these amendments.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Omolola Fasasi** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### ng-vat
-
-- **Standard VAT rate** — 7.5%  _(Finance Act 2019, effective 1 February 2020)_
-- **Pre-2020 (superseded) VAT rate — no longer applicable** — 5%  _(Finance Act 2020)_
-- **Zero rate — exports and specified supplies** — 0%  _(Finance Act 2021)_
-- **Reverse-charge rate on imported services** — 7.5%  _(Section 10 VATA / NTA 2025)_
-- **Compulsory VAT registration threshold (annual turnover)** — NGN 25,000,000  _(Finance Act 2019, effective 2020)_
-- **Compulsory VAT registration threshold (annual turnover)** — NGN 100m  _(Nigeria Tax Act (NTA) 2025)_
-- **Below-threshold exemption from VAT registration and filing** — Annual turnover ≤ NGN 25,000,000  _(Finance Act 2019, effective 2020)_
-- **VAT return form** — VAT Form 002
-- **Filing frequency** — Monthly (including nil returns)
-- **VAT return filing and payment deadline** — 21st of the following month
-- **TIN digit length** — 10 digits
-- **Current unified statute** — Nigeria Tax Act (NTA) 2025, effective 1 January 2026  _(Nigeria Tax Act (NTA) 2025)_
-- **Current unified statute** — Nigeria Tax Act (NTA) 2025, effective 1 January 2026  _(Nigeria Tax Act (NTA) 2025)_
-- **VAT Form 002 Line 2 — Output VAT formula** — OUTPUT VAT =TOTAL(TAXABLE SALES * TAX RATE)
-- **VAT Form 002 Line 6 — Net VAT payable formula** — NET VAT PAYABLE = TOTAL OUTPUT TAX -TOTAL INPUT TAX
-- **Foreign currency invoice conversion rate** — CBN official rate on date of supply
-- **HIGH single transaction** — NGN 10,000,000
-- **Input VAT credit — unknown business-use portion (mixed personal/business)** — you can only claim input VAT credit for the business-use portion of mixed expense
-- **Input VAT credit — supplier not displaying VRN on invoice** — No input credit (input claim not supported)
-- **Zero-rate: exports of goods (documentation requirement — form)** — Form NXP, shipping documents and foreign exchange evidence required
-- **Zero-rate: exported services — legislative basis** — Section 10A VATA; FIRS Information Circular 2021/02  _(Nigeria Tax Act (NTA) 2025)_
-- **Zero-rate: humanitarian donor organisations — effective legislation** — All NGOs are expected to register for tax purposes, obtain tax identification number and file annual company income tax (CIT) with the nigerian revenue service (NRS)  _(Nigeria Tax Act (NTA) 2025)_
-- **Reverse-charge: foreign digital services (B2B) — default classification** — 7.5% reverse-charge — buyer self-assesses under Section 10  _(Nigeria Tax Act (NTA) 2025)_
-- **Reverse-charge: treatment for fully taxable business (net VAT effect)** — 0.075  _(Nigeria Tax Act (NTA) 2025)_
-- **NRS cash refund processing time (in practice)** — 30 TO 90 DAYS  _(Nigeria Tax Act (NTA) 2025)_
-- **VAT return excess input credit — treatment when refund not claimed** — Excess is automatically treated as an accumulated credit  _(Nigeria Tax Act (NTA) 2025)_
-- **Processed/packaged food VAT treatment** — 7.5% (standard-rated)  _(Nigeria Tax Act (NTA) 2025)_
-- **Stationery VAT treatment** — 7.5% (standard-rated)  _(Nigeria Tax Act (NTA) 2025)_
-- **Commercial freight VAT treatment** — 7.5% (standard-rated)  _(Nigeria Tax Act (NTA) 2025)_
-- **Pharmaceutical products — exemption condition** — Tax exempt  _(Nigeria Tax Act (NTA) 2025)_
-- **Filing portal** — taxpayer self service (NSS) portal  _(Nigeria Tax Act (NTA) 2025)_
-- **e-Invoice system** — Operated by the Nigeria Revenue Service (NRS)  _(Nigeria Tax Act (NTA) 2025)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Omolola Fasasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; that fact check named the VAT Form 002 return, and its corrections are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Scope and sources
 
@@ -221,7 +182,7 @@ business withheld from suppliers still appears in its separate remittance schedu
 
 ## Filing, penalties and records
 
-NTAA section 22 generally requires a monthly return by the **21st of the following
+NTAA section 22 generally requires a monthly return (VAT Form 002) by the **21st of the following
 month**, including a month with no economic activity. Apply the small-business
 and other statutory exceptions before requiring a nil return. NTA section 155
 requires ordinary net VAT payment on or before that return date. Check section

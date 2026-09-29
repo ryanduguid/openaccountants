@@ -3,7 +3,7 @@ name: pk-payroll-eobi
 description: ALWAYS read this skill before touching any Pakistan payroll work. Use whenever asked to compute, review, or advise on Pakistan monthly payroll — salary tax withholding under Section 149 of the Income Tax Ordinance 2001, Employees' Old-Age Benefits Institution (EOBI) federal pension contributions, provincial social security (SESSI Sindh, PESSI Punjab, KPESSI Khyber Pakhtunkhwa, BESSI Balochistan), Workers Welfare Fund (WWF), and Workers Profit Participation Fund (WPPF). Trigger on phrases like "Pakistan payroll", "salary tax Pakistan", "EOBI Pakistan", "PESSI Punjab", "SESSI Sindh", "PAYE Pakistan", "monthly statement Section 149", "WWF Pakistan", "WPPF Pakistan", "Section 165 statement", "Karachi payroll", "Lahore payroll", or any request involving running monthly payroll for one or more employees in Pakistan. This skill is the ORCHESTRATOR — it pulls salary bracket rates from `pk-income-tax` and sequences statutory deductions into the correct computation order.
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -18,30 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 >
 > **Tax year 2025-26 note:** Pakistan's tax year runs **1 July – 30 June**. References to "2025-26" mean the year ending **30 June 2026**. Salary tax brackets are set annually by the Finance Act and are applied via `pk-income-tax`. EOBI rates have remained 5% employer / 1% employee on the federal minimum wage base for an extended period; provincial social security thresholds vary by province and are tracked here as ranges, not point estimates, because they are revised by provincial notification.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ibrar Ali** on 2026-06-12.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### pk-payroll-eobi
-
-- **Employer contribution** — 5% of federal minimum wage  _(Employees' Old-Age Benefits Act 1976)_
-- **Employee contribution** — 1% of federal minimum wage  _(Employees' Old-Age Benefits Act 1976)_
-- **Contribution base** — Rs. 40,000 per month  _(Federal notification)_
-- **Coverage threshold** — Mandatory at ≥ 5 employees  _(EOBI Act 1976)_
-- **Monthly contribution (PR-03/PR-04)** — Due 15th of following month  _(EOBI)_
-- **SESSI (Sindh)** — 6% of insured worker's wage  _(Sindh Employees' Social Security Ordinance 1965)_
-- **PESSI (Punjab)** — 6% of insured worker's wage  _(Punjab adapted 1965 Ordinance)_
-- **KPESSI (KP)** — 6% (verify)  _(KP adapted 1965 Ordinance)_
-- **BESSI (Balochistan)** — 6% (verify)  _(Balochistan adapted 1965 Ordinance)_
-- **Insured-worker threshold** — Provincial minimum wage (PKR 40,000 for Punjab, Sindh, KP; PKR 37,000 for Balochistan)  _(Provincial notification)_
-- **Routing** — To the province where the establishment/worker is employed  _(Provincial Ordinances)_
-- **Monthly withholding mechanic** — Estimated annual salary tax / 12 (salary brackets from pk-income-tax)  _(ITO 2001 §149)_
-- **§165 monthly statement** — 165 is filed quarterly and last date is 20 of the month following the quarter  _(ITO 2001 §165)_
-- **Annual reconciliation + employee certificate** — By 31 July (Rule 42 certificate to each employee)  _(ITO 2001 §149; Rule 42)_
-- **Workers Welfare Fund (WWF)** — 2% of accounting profit or taxable income, whichever is higher.  _(Workers Welfare Fund Ordinance 1971)_
-- **Workers Profit Participation Fund (WPPF)** — 5% of profit before tax. Applies if: 50+ employees, OR paid-up capital/fixed assets exceed statutory provincial thresholds.  _(Companies Profits (Workers' Participation) Act 1968)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ibrar Ali** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference: contribution table
 

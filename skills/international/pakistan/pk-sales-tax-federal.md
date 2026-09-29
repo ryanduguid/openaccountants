@@ -3,7 +3,7 @@ name: pk-sales-tax-federal
 description: ALWAYS read this skill before touching any Pakistan FEDERAL sales tax on goods work. Use whenever asked to prepare, review, classify transactions for, or advise on the federal Sales Tax Return (STR) administered by the Federal Board of Revenue (FBR) under the Sales Tax Act 1990 as amended by the Finance Acts 2024 and 2025. Trigger on phrases like "Pakistan sales tax", "FBR ST", "GST Pakistan", "sales tax return Pakistan", "STR Pakistan", "input tax credit Pakistan", "POS Tier-1 Pakistan", "Finance Act 2025 sales tax", "IRIS sales tax", "Annex-C", "STRN", "Fifth Schedule", "Sixth Schedule", "Eighth Schedule", "Ninth Schedule", "Tenth Schedule", or any request involving federal sales tax on goods in Pakistan. Federal scope only — provincial sales tax on services (SRB, PRA, KPRA, BRA) is handled by a separate skill (pk-sales-tax-services).
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -19,45 +19,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > recovery sit in that guide — read it alongside this one before filing or advising.
 > **No claim about that jurisdiction's regime is made here**; this is a pointer only.
 
-
 ## Pakistan — Federal Sales Tax on Goods (FBR) — Skill v2.0
 
 > **Scope.** This skill covers the **federal sales tax on goods** administered by the Federal Board of Revenue (FBR) under the Sales Tax Act 1990 (STA 1990) as amended by the Finance Act 2024 and the Finance Act 2025. It applies to manufacturers, importers, wholesalers, distributors, retailers (including Tier-1 retailers with mandatory POS integration), and other persons making **taxable supplies of goods** in or to Pakistan.
 >
 > **Out of scope.** Provincial sales tax on **services** (Sindh Revenue Board / SRB, Punjab Revenue Authority / PRA, Khyber Pakhtunkhwa Revenue Authority / KPRA, Balochistan Revenue Authority / BRA, and Islamabad Capital Territory services tax administered by FBR) is handled by the companion skill `pk-sales-tax-services`. Federal Excise Duty (FED), customs duty, and income tax / withholding tax are also out of scope.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ibrar Ali** on 2026-06-12.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### pk-sales-tax-federal
-
-- **Standard rate** — 18% (raised from 17% on 1 Jul 2024; retained by FA 2025)  _(STA 1990 §3)_
-- **Higher rate (luxury / specified)** — 25%  _(Eighth Schedule / SROs)_
-- **Zero rate (exports, Fifth Schedule)** — 0% (full input recovery / refund)  _(STA 1990 §4; Fifth Schedule)_
-- **Exempt (Sixth Schedule)** — No output tax; no input credit  _(STA 1990 §13; Sixth Schedule)_
-- **Further tax (supplies to unregistered persons)** — 3% in addition to standard rate  _(STA 1990 §3(1A))_
-- **Integrated Tier-1 retailer reduced rate (specified items)** — 15% for textile and leather goods / standard rates for other sectors  _(Eighth Schedule)_
-- **Manufacturers** — Mandatory, except for "cottage industries" (turnover up to PKR 10M)  _(STA 1990 §14)_
-- **Turnover registration threshold** — Annual turnover > PKR 10,000,000  _(STA 1990 §14 / SRO)_
-- **Tier-1 retailer markers** — Electricity bill > PKR 1.2M/yr; national/international chain; A/C mall. (Shop area criteria removed).  _(STA 1990 §2(43A))_
-- **Input credit cap §8B** — 90% of output tax (excess carried forward)  _(STA 1990 §8B)_
-- **Input claim time limit** — Within 6 tax periods of the invoice  _(STA 1990 §7(1) proviso)_
-- **Input credit conditions** — Supplier on ATL + invoice appears in buyer's Annex-A  _(STA 1990 §7 / §8(1)(ca))_
-- **CNIC requirement** — Required on ALL invoices to unregistered buyers. (Exemption: retail sales to ordinary consumers ≤ PKR 100,000).  _(STA 1990 §23(1)(b))_
-- **Return (STR) due** — 18th of following month (payment by 15th)  _(FBR SOP)_
-- **Late filing penalty** — PKR 10,000 (Reduced to PKR 200/day if filed within 15 days of due date)  _(STA 1990 §33)_
-- **Default surcharge** — KIBOR + 3% per annum on unpaid tax  _(STA 1990 §34)_
-- **Fake / flying invoice** — PKR 25,000 or 100% of tax + criminal liability  _(STA 1990 §37A)_
-- **Tier-1 retailer not POS-integrated** — 60% input-tax disallowance + monetary penalty  _(STA 1990 §33)_
-- **Revised return** — Within 120 days with Commissioner's approval  _(STA 1990 §26(3))_
-- **Refund claim time limit** — Within 1 year of date of payment  _(STA 1990 §66)_
-- **ATL reinstatement surcharge** — N/A for Sales Tax (Move to Income Tax section)  _(STA 1990 (FA-set))_
-- **Ninth Schedule** — 18% or 25% ad valorem on cellular mobile phones (based on import value)  _(STA 1990 Ninth Schedule)_
-- **Tenth Schedule** — Fixed tax on bricks (PCT 6901.0000)  _(STA 1990 Tenth Schedule)_
-- **Extra tax (consumer goods to unregistered retailers)** — 25% luxury rate (if referring to SRO 297) / Extra Tax is generally abolished  _(SRO 297(I)/2023 etc.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Ibrar Ali** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference
 

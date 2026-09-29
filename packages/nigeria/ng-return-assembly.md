@@ -3,7 +3,7 @@ name: ng-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package a Nigerian annual tax return. Trigger on phrases like "assemble Nigerian return", "Nigeria SPT package", "final review Nigerian tax", "FIRS Tax Pro-Max submission", "year-end Nigeria", "prepare CIT return", "prepare PIT return", "Nigeria filing package", "Form A annual return", "Form H1 reconciliation", or "Nigerian working paper". This is the capstone orchestrator that pulls together outputs from ng-cit, ng-personal-income-tax, ng-paye, ng-statutory-deductions, ng-wht, ng-cgt, ng-vat, ng-payroll, and ng-formation into a single unified working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line return working paper, generates Tax Pro-Max / Remita payment instructions, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last — it's the capstone.
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Omolola Fasasi
 review_status: pending_review
 tier: 2
@@ -14,48 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Nigeria — Return Assembly (Capstone) — Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-- **Review statement** — Reviewed against the cited tax authorities by Omolola Fasasi on 2026-06-21. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### ng-return-assembly
-
-- **Individual PIT (Form A) filing deadline** — 31 March (90 days after year-end)  _(PITA Section 41)_
-- **Employer Form H1 (annual PAYE reconciliation) filing deadline** — 46053  _(PITA Section 81)_
-- **CIT Self-Assessment Return deadline (31 December 2025 year-end)** — 6 months after FYE; 30 June 2026 for 31 Dec 2025 year-end  _(CITA Section 55)_
-- **VAT monthly return deadline** — 21st of the following month  _(VAT Act Section 14)_
-- **Plc CIT rate** — 30% percent (typically falls in the large-company band under NTA 2025)  _(NTA 2025)_
-- **CIT rate — medium companies** — 20%  _(CITA + Finance Acts)_
-- **CIT rate — small companies** — 0%  _(CITA + Finance Acts)_
-- **NTA 2025 CIT changes effective date** — 46023  _(Nigeria Tax Act 2025)_
-- **Tertiary Education Tax (TET) rate** — Abolished  _(Nigeria Tax Act 2025)_
-- **CGT rate - companies** — 0.3  _(NIGERIA TAX ACT 2025)_
-- **Employee pension contribution rate** — 8% of monthly emoluments  _(Pension Reform Act 2014)_
-- **Employer pension contribution rate** — 10% of monthly emoluments  _(Pension Reform Act 2014)_
-- **Total combined pension contribution rate (employer + employee)** — 18% of monthly emoluments  _(Pension Reform Act 2014)_
-- **Pension remittance deadline** — Within 7 working days of salary payment  _(PRA 2014 Section 11(3))_
-- **NHF contribution rate** — 2.5% of basic salary
-- **NHF contribution — minimum earnings threshold** — #70,000 per month
-- **ITF levy rate** — 1% of total annual payroll
-- **ITF levy applicability — employee threshold** — Employers with ≥ 5 employees
-- **ITF levy applicability — turnover threshold** — ≥ ₦50,000,000 turnover
-- **ITF levy payment due date (2025 payroll year)** — 1 April 2026
-- **NSITF contribution rate** — 1% of total monthly payroll
-- **ITF levy applicability — employee threshold** — Employers with ≥ 5 employees
-- **WHT rate on professional fees** — 5%
-- **WHT rate on rent / royalties / dividends / interest** — 10%
-- **WHT on contract payments to individuals (State IRS)** — 5%
-- **Late-filing penalty for Form H1 — company employer** — ₦500,000  _(PITA Section 81(3))_
-- **Late-filing penalty for Form H1 — individual employer** — ₦50,000  _(PITA Section 81(3))_
-- **WHT credit note shelf life under CITA** — 6 years  _(CITA Section 78A (Finance Act 2019))_
-- **WHT credit note practical verification flag age** — 3 years (flag any credit note older than 3 years for confirmation)
-- **TIN digit length** — 10 digits
-- **Tax year for individuals** — Calendar year: 1 January – 31 December
-- **Tax year for companies** — Accounting year-end (any 12-month period)
-- **NTA 2025 assent date** — June 2025  _(Nigeria Tax Act 2025)_
-- **NTA 2025 key provisions effective date** — 1 January 2026  _(Nigeria Tax Act 2025)_
-- **Foreign tax credit cap — individual (PIT)** — Under the Nigeria Tax Act (NTA), the cap for the Foreign Tax Credit for resident individuals (Personal Income Tax - PIT) is limited to the lower of the tax actually paid in the foreign country or the Nigerian tax attributable to that foreign incom  _(Nigeria Tax Act 2025)_
-- **Foreign tax credit cap — corporate (CIT)** — there is no flat, unilateral foreign tax credit cap for Companies Income Tax (CIT)  _(Nigeria Tax Act 2025)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Omolola Fasasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
