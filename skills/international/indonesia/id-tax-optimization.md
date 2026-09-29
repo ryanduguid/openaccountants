@@ -3,7 +3,7 @@ name: id-tax-optimization
 description: "Use this skill whenever asked about Indonesian tax planning, regime selection, or year-end optimization for self-employed individuals (Orang Pribadi) and small businesses. Trigger on phrases like \"Indonesia tax planning\", \"PPh Final vs progressive Indonesia\", \"UMKM 0.5% break-even\", \"PP 55/2022\", \"optimize Indonesian tax\", \"PTKP planning\", \"Indonesian tax savings\", \"NPPN vs pembukuan\", \"PT Perorangan vs OP\", \"perencanaan pajak Indonesia\", \"hemat pajak\", \"tarif final UMKM\". Covers regime selection (UMKM Final 0.5%, NPPN deemed-profit, pembukuan), entity choice (OP vs PT Perorangan vs PT), Pasal 6/Pasal 9 deduction planning, PTKP optimization, PPh Final Pasal 4(2) for rental and construction, BPJS wage-cap planning, year-end timing. Out of scope: aggressive avoidance, treaty shopping, transfer pricing, paper-PT structures, CFC planning, and anything caught by UU KUP substance rules or Pasal 18 UU PPh. ALWAYS read this skill before advising on Indonesian tax planning."
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: RILIA PUTRI
 review_status: pending_review
 tier: 2
@@ -14,21 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Indonesia Tax Optimization -- Self-Employed & Small Business Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by RILIA PUTRI on 2026-06-03. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Tax Optimization
-
-- **Revenue < IDR 500M** — Eligible taxpayers under the UMKM final tax regime may utilize the 0.5% final income tax on gross turnover, with the first IDR 500 million of annual turnover generally excluded from taxable base calculation under prevailing regulations. Eligibility is limited to taxpayers covered under Article 57 as amended by PP 20/2026.  _(UU PPh Art. 7; PP 20/2026 Art. 57; PP 55/2022 Art. 60.)_
-- **Revenue 500M–4.8B, low margin** — UMKM Final income tax regime at 0.5% of gross turnover may remain administratively simpler and beneficial for eligible taxpayers. Following PP 20/2026, eligibility is limited to individual taxpayers, Perseroan Perorangan, and cooperatives meeting Article 57 requirements.  _(PP 20/2026 Art. 57; UU PPh Art. 4(2).)_
-- **Revenue 500M–4.8B, high-margin services** — Taxpayers should compare UMKM Final, ordinary bookkeeping, and NPPN approaches based on profitability and deductible expenses. Eligibility for UMKM Final is subject to revised Article 57 criteria under PP 20/2026 and exclusions under Article 56.  _(PP 20/2026 Art. 56–57; UU PPh Art. 14; PER-17/PJ/2015.)_
-- **UMKM 7 years elapsed (OP)** — Mandatory exit; progressive only  _(PP 20/2026 Art. 6 (deletion of Art. 59); PP 20/2026 Art. 57.)_
-- **Revenue > 4.8B sustained** — Taxpayers exceeding the IDR 4.8 billion turnover threshold are no longer eligible for UMKM Final taxation beginning the subsequent tax year and generally transition to ordinary income-tax rules with bookkeeping obligations.  _(PP 20/2026 Art. 57(1), 57(2)(e); UU KUP Art. 28.)_
-- **Operating losses expected** — Tax loss carry-forward facilities generally apply under the ordinary income tax regime with bookkeeping. The UMKM Final regime does not provide ordinary tax-loss carry-forward treatment.  _(UU PPh Art. 6(2) as amanded by UU HPP; PP 78/2019.)_
-- **Dividend extraction from PT** — Domestic dividends received by Indonesian individual taxpayers are generally excluded from income tax provided that the dividends are reinvested in Indonesia in accordance with prevailing regulations. If reinvestment requirements are not satisfied, the dividend may become taxable under ordinary income-tax provisions.  _(UU PPh as amended by UU HPP; PP 55/2022 Art. 9.)_
-- **Owner salary from PT** — Salary or remuneration paid by a PT to its shareholder-owner/director may generally be deductible for corporate income-tax purposes provided that the remuneration relates to business activities and satisfies arm's-length/commercial reasonableness principles. Such remuneration is generally subject to PPh 21 withholding obligations. Excessive or non-commercial payments may be challenged as non-deductible expenses or deemed dividend distributions under prevailing tax regulations.  _(UU PPh Art. 6; Art. 21 U PPh as amended by UU HPP No. 7/2021.; PP 55/2022 (general anti-avoidance and arm's-length principles))_
-- **KK (default joint)** — Married taxpayers generally follow combined family taxation approach unless separate tax-rights/obligations arrangements apply under prevailing Indonesian income-tax regulations. PTKP treatment depends on marital and dependent status under applicable rules.  _(UU PPh Art. 8; PP 58/2023; PMK 168/2023; PMK 101/PMK.010/2016.; note: UU PPh as amended by UU HPP No. 7/2021.)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-03 RILIA PUTRI checked the rates, thresholds and deadlines listed for this guide against the cited authorities; that fact check applied the PP 20/2026 changes to the UMKM time limits, and its corrections are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 -- Quick Reference: When Each Regime / Entity Wins
 
@@ -53,7 +39,7 @@ Reviewed against the cited tax authorities by RILIA PUTRI on 2026-06-03. Items f
 | Revenue < IDR 500M/year | UMKM 0.5% (zero-rate band, but check margin) |
 | Revenue 500M -- 4.8B, low margin | UMKM Final 0.5% on gross |
 | Revenue 500M -- 4.8B, high-margin services | UMKM Final (usually) -- compare to NPPN below |
-| Used UMKM 7 years already (OP) | Mandatory exit; progressive only |
+| OP in the UMKM regime for 7 years or more | No forced exit: PP 20/2026 removed the individual time limit (PP 55/2022 Art. 59 deleted); stay while turnover ≤ IDR 4.8B and the activity is not pekerjaan bebas |
 | Revenue > 4.8B sustained | Pembukuan; consider PT Perorangan / PT |
 | Operating losses expected | Pembukuan -- only regime with 5-yr loss carry-forward |
 | Land/building rental income | PPh Final Pasal 4(2) 10% applies automatically |
@@ -66,7 +52,7 @@ Reviewed against the cited tax authorities by RILIA PUTRI on 2026-06-03. Items f
 1. Gross annual turnover (peredaran bruto) -- last 3 years + current-year projection.
 2. Net margin -- approximate net / gross. Critical for break-even.
 3. Entity form -- OP, CV/firma, PT Perorangan, PT, koperasi.
-4. Years inside UMKM regime -- 7-year cap for OP, 3-4 years for badan (PP 55/2022).
+4. Years inside UMKM regime -- no cap for OP and PT Perorangan since PP 20/2026; 3 years for a PT, 4 years for CV/Firma/Koperasi/BUMDes.
 5. NPWP status -- single or married with PH/MT/HB code.
 6. Marital status -- TK / K / K/I.
 7. Dependents (max 3 per Pasal 7(3)).
@@ -97,7 +83,7 @@ Indonesian self-employed individuals (Orang Pribadi) generally choose between th
 
 | Regime | Legislation | Mechanics |
 | --- | --- | --- |
-| **UMKM Final 0.5%** | PP 55/2022 | 0.5% × gross monthly turnover, paid monthly; no expense deduction; final tax. OP ≤ IDR 4.8B turnover; max 7 years OP / 3 years badan (Art. 5). |
+| **UMKM Final 0.5%** | PP 55/2022 | 0.5% × gross monthly turnover, paid monthly; no expense deduction; final tax. Since 22 April 2026 (PP 20/2026) open only to individuals, PT Perorangan and koperasi with turnover ≤ IDR 4.8B: no time limit for individuals and PT Perorangan, 4 years for a koperasi; the IDR 4.8B test combines the individual's turnover with their spouse's and with every PT Perorangan they founded (PP 55/2022 Art. 57(2)(e) as amended). CV, firma, ordinary PT and BUMDes can no longer enter the regime; one registered before 22 April 2026 keeps it only until its PP 55/2022 window ends (3 years PT, 4 years CV/firma/BUMDes; PP 20/2026 Art. II(e)). |
 | **Progressive with NPPN** (deemed net income) | Pasal 14(2) UU PPh; PER-17/PJ/2015 | DJP-published deemed-profit % × gross revenue, then PTKP, then progressive brackets. Requires notification to DJP within first 3 months of tax year. |
 | **Progressive with Pembukuan** | Pasal 14(1); Pasal 28 KUP | Full accrual bookkeeping; Pasal 6 deductions / Pasal 9 add-backs; PTKP; progressive. Mandatory above IDR 4.8B. Only regime allowing 5-year loss carry-forward (Pasal 6(2)). |
 
@@ -166,7 +152,7 @@ The actual table covers ~1,500 KLU codes across 3 city tiers (Jakarta + 9 major 
 | Entity | Legislation | Liability | Tax treatment |
 | --- | --- | --- | --- |
 | Orang Pribadi (OP) -- sole trader | UU PPh (no separate entity law -- registered via NPWP only) | Unlimited personal liability | Personal PPh (regimes in Section 3) |
-| PT Perorangan (single-shareholder micro/small PT) | UU 11/2020 (Cipta Kerja), PP 8/2021 | Limited liability | Corporate PPh per Pasal 17(2a) UU PPh -- 22% standard, or UMKM Final 0.5% if eligible (max 3 years for badan per PP 55/2022 Art. 5(2)) |
+| PT Perorangan (single-shareholder micro/small PT) | UU 11/2020 (Cipta Kerja), PP 8/2021 | Limited liability | Corporate PPh per Pasal 17(2a) UU PPh -- 22% standard, or UMKM Final 0.5% if eligible (no time limit for PT Perorangan since PP 20/2026) |
 | PT (Perseroan Terbatas) -- standard limited company | UU 40/2007 | Limited liability | Corporate PPh 22%; UMKM Final 0.5% for max 3 years if turnover ≤ 4.8B |
 
 ### 4.2 Tax + administrative cost trade-off
@@ -187,8 +173,8 @@ The actual table covers ~1,500 KLU codes across 3 city tiers (Jakarta + 9 major 
 ### 4.3 Decision heuristic
 
 - Revenue < IDR 500M, low expenses → OP + UMKM Final (effectively zero tax via zero-rate band).
-- Revenue IDR 500M -- 2.5B, profitable → OP + UMKM Final for 7 years, then revisit.
-- Revenue IDR 2.5B -- 4.8B, liability protection wanted → PT Perorangan + UMKM Final (max 3 years), then progressive corporate.
+- Revenue IDR 500M -- 2.5B, profitable → OP + UMKM Final while turnover stays ≤ IDR 4.8B (no time limit since PP 20/2026).
+- Revenue IDR 2.5B -- 4.8B, liability protection wanted → PT Perorangan + UMKM Final (no time limit since PP 20/2026), moving to progressive corporate tax once turnover exceeds IDR 4.8B.
 - Revenue > IDR 4.8B sustained → PT (or PT Perorangan if eligible), pembukuan, 22% corporate, plan reinvestment per HPP 4(3)(f).
 
 ### 4.4 The 22% corporate-rate reinvestment opportunity
@@ -325,12 +311,12 @@ Indonesian social security comes in two branches:
 
 ### 8.2 BPJS Ketenagakerjaan (employment) -- UU 24/2011 + PP 44/45/46 2015
 
-**BPJS Ketenagakerjaan programme table**  _(UU 24/2011 + PP 44/45/46 2015)_
+**BPJS Ketenagakerjaan programme table**  _(UU 24/2011; PP 44/45/46 2015, PP 44/2015 as amended by PP 49/2023)_
 
 | Programme | Employer | Employee | Wage cap |
 | --- | --- | --- | --- |
-| JKK (work accident) | 0.24% -- 1.74% (risk class) | 0 | None |
-| JKM (death) | 0.30% | 0 | None |
+| JKK (work accident) | 0.10% -- 1.60% by risk grade (PP 49/2023 Art. 16A; grade 2, e.g. retail and hospitality, 0.40%) | 0 | None |
+| JKM (death) | 0.20% (PP 49/2023 Art. 18A) | 0 | None |
 | JHT (old age) | 3.7% | 2% | None |
 | JP (pension) | 2% | 1% | **IDR ~10,547,400/month** (2025; adjusted annually -- TBC against latest Permenaker) |
 
@@ -416,7 +402,7 @@ Single OP software developer, Jakarta:
 
 UMKM Final dominates because (1) high actual margin (~83%), (2) revenue under IDR 4.8B ceiling, (3) first IDR 500M at 0%.
 
-**Forward-looking planning:** UMKM is available for only 7 years. From year 8 onwards this developer pays NPPN (IDR 107.8M) or pembukuan (IDR 227.8M) on the same income -- prepare for the cliff.
+**Forward-looking planning:** PP 20/2026 removed the individual time limit, so this developer stays in the regime while turnover (own, spouse's and any PT Perorangan founded, combined) remains ≤ IDR 4.8B. In the year turnover first crosses IDR 4.8B the 0.5% final tax still applies to that whole year (the transition rule in `id-pph-final-umkm`); from the following year pembukuan is mandatory, and NPPN is unavailable because prior-year turnover exceeded IDR 4.8B. At this example's margin, a following year with IDR 5B of revenue and IDR 833M of expenses gives net income of IDR 4,167M and taxable income of IDR 4,113M after the TK/0 PTKP, on which the progressive tax is about IDR 1,177,810,000 (3,000,000 + 28,500,000 + 62,500,000 + 30% × 3,612,700,000; the 35% bracket starts only above IDR 5B of taxable income), against IDR 3.5M under the final regime, so model the transition before it happens rather than reusing the figures above.
 
 ### Break-even rules of thumb (Jakarta NPPN 50%, TK/0)
 

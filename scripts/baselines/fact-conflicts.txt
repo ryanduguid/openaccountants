@@ -72,8 +72,6 @@ skills/international/germany::pension
 skills/international/honduras::ihss em
 skills/international/honduras::ihss ivm
 skills/international/hong-kong::remainder
-skills/international/indonesia::no npwp surcharge
-skills/international/indonesia::retail trade
 skills/international/ireland::above eur
 skills/international/israel::nis nis month
 skills/international/israel::up nis month

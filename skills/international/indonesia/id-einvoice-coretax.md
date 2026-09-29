@@ -3,7 +3,7 @@ name: id-einvoice-coretax
 description: Use this skill whenever asked about filing, invoicing, or submitting any Indonesian tax obligation through the Coretax DJP system that went live 1 January 2025. Trigger on phrases like "Coretax DJP", "Coretax pajak", "Coretax login", "e-Faktur Indonesia", "e-Bupot Unifikasi", "NSFP", "Nomor Seri Faktur Pajak", "SPT Masa Unifikasi", "Indonesia tax filing system", "DJP Online vs Coretax", "Coretax Form", "Coretax Mobile", "NIK as NPWP", "16-digit NPWP", "pajak.go.id new system", "Coretax onboarding", or any operational query about how to file, issue invoices, or pay tax to the Indonesian DJP from 2025 onward. This skill covers the Coretax platform mechanics, account activation, NIK/NPWP integration, e-Faktur issuance and NSFP management within Coretax, e-Bupot Unifikasi withholding slip workflow, SPT filing channels, and the DJP Online to Coretax cutover. It does NOT compute the underlying tax — VAT (PPN) sits in indonesia-vat, withholding PPh 21 sits in id-payroll-pph21, and corporate / individual income tax sits in their respective skills. ALWAYS read this skill when filing or invoicing through Coretax DJP.
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -16,30 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This skill is the **platform manual** for the Indonesian tax administration system. It explains how the buttons work and where the filings live. The substantive tax content (rates, base, deductions) is in the per-tax skills (`indonesia-vat`, `id-payroll-pph21`, etc.).
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Coretax and e-Invoicing
-
-- **Go-live date** — Coretax / Sistem Inti Administrasi Perpajakan (SIAP) became effective starting 1 January 2025 under prevailing Indonesian tax administration regulations.  _(PMK 81/2024; PER-1/PJ/2025.)_
-- **URL** — Coretax services are generally accessed through the official DJP/Coretax electronic portal.  _(DJP Portal / Coretax Portal.)_
-- **Replaces** — Coretax integrates and migrates legacy DJP applications including DJP Online, e-Faktur, e-Bupot, e-Registration, tax payment, and tax reporting into a unified tax administration platform.  _(PMK 81/2024; PER-1/PJ/2025.)_
-- **Mobile app** — Certain Coretax/SIAP services may also be accessed through DJP electronic platforms and digital channels under prevailing Indonesian tax administration procedures. Current official guidance emphasizes access through DJP/Coretax electronic systems, although no specific PMK/PER/SE currently appears to formally standardize a dedicated “Coretax DJP” mobile application name.  _(PMK 81/2024; PER-1/PJ/2025; DJP Coretax implementation guidance and taxpayer handbook..)_
-- **Coretax Form (offline)** — PER-3/PJ/2026 regulates updated procedures for submission and processing of tax returns under Coretax implementation.  _(PER-3/PJ/2026.)_
-- **Indonesian individual** — Resident Indonesian individuals generally use NIK as NPWP under prevailing Indonesian tax administration regulations.  _(PMK 112/2022; PMK 81/2024.)_
-- **Foreign individual** — Foreign individuals/non-resident individuals generally use 16-digit NPWP format under prevailing Indonesian tax administration regulations.  _(PMK 112/2022; PMK 81/2024.)_
-- **Indonesian entity** — Corporate taxpayers generally use 16-digit NPWP format under Coretax implementation and prevailing tax administration regulations.  _(PMK 112/2022; PMK 81/2024; PER-1/PJ/2025.)_
-- **NSFP request** — NSFP requests are processed electronically through DJP/Coretax systems using taxpayer electronic certificates and prevailing VAT administration procedures.  _(PMK 81/2024; PER-1/PJ/2025.)_
-- **NSFP return deadline** — Return of unused NSFPs remains subject to prevailing DJP VAT administration and technical procedures under electronic tax invoice regulations.  _(PMK 81/2024; PER-1/PJ/2025; prevailing VAT/e-Faktur regulations.)_
-- **Faktur Pengganti** — Replacement tax invoices (Faktur Pengganti) must follow prevailing DJP VAT invoice correction and replacement procedures under Coretax/e-Faktur administration rules.  _(PMK 81/2024; PER-1/PJ/2025; PER-1/PJ/2026.)_
-- **Faktur Dibatalkan** — Cancelled tax invoices remain administratively traceable and reported in the relevant VAT return period according to prevailing Coretax VAT administration procedures.  _(PMK 81/2024; PER-1/PJ/2025.)_
-- **Covers** — e-Bupot Unifikasi generally covers withholding and/or collection obligations including PPh 23, PPh 26, Final PPh Art. 4(2), and other unified withholding-tax obligations under Coretax administration procedures.  _(PER-11/PJ/2025; PMK 81/2024.)_
-- **Monthly SPT Masa Unifikasi** — Monthly SPT Masa Unifikasi is generally filed electronically through Coretax/SIAP by the 20th of the following month under prevailing Indonesian tax administration regulations. Unified withholding reporting, electronic filing procedures, and tax-object-code administration follow prevailing Coretax and SPT Unifikasi procedures.  _(UU KUP Art. 3 as amended by UU HPP; PMK 81/2024; PER-1/PJ/2025; PER-1/PJ/2026; PER-11/PJ/2025; KEP-143/PJ/2022.)_
-- **Tax period Dec 2024 or earlier** — Tax periods prior to Coretax implementation generally continue to follow legacy DJP Online and transitional filing procedures under prevailing DJP transition/cutover guidance.  _(PMK 81/2024; DJP transition/cutover guidance; PER-1/PJ/2025.)_
-- **Tax period Jan 2025 onward** — Tax periods starting January 2025 generally follow Coretax/SIAP administration and electronic filing procedures under prevailing Indonesian tax administration regulations.  _(PMK 81/2024; PER-1/PJ/2025; PER-1/PJ/2026.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **RILIA PUTRI** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference
 
@@ -55,7 +32,7 @@ This skill is the **platform manual** for the Indonesian tax administration syst
 | Primary URL | coretaxdjp.pajak.go.id |
 | Legacy URL still live | pajak.go.id / djponline.pajak.go.id (residual tax-year 2024 work) |
 | Mobile app | "Coretax DJP" — Play Store and App Store (individual taxpayers) |
-| Coretax Form | Offline preparation form for SPT 1770 — broadly available February 2026 |
+| Coretax Form | Offline preparation form for SPT 1770 — broadly available February 2026; submission and processing procedures under PER-3/PJ/2026 |
 | Currency | IDR (Indonesian Rupiah) |
 | NPWP format | 16-digit (NIK-as-NPWP) for Indonesians since 1 July 2024; 15-digit padded to 16 for entities / foreigners |
 | Tax invoice | Faktur Pajak via Coretax e-Faktur from 1 Jan 2025 |

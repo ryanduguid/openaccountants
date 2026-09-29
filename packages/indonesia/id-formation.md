@@ -3,7 +3,7 @@ name: id-formation
 description: "Use this skill whenever asked about forming, incorporating, or registering a business in Indonesia. Trigger on phrases like \"Indonesia company formation\", \"set up PT Indonesia\", \"PT Perorangan\", \"register UD Indonesia\", \"OSS Indonesia\", \"PMA registration\", \"NIB\", \"Indonesia business setup\", \"CV Indonesia\", \"PT PMA\", \"BKPM\", \"Kementerian Investasi\", \"KBLI\", \"Positive Investment List\", or any question about choosing or registering an Indonesian entity. Covers entity comparison (UD, CV, PT, PT Perorangan, PMA), OSS RBA registration steps, NIB and NPWP issuance, KBLI classification, sectoral licensing, capital and ownership requirements, and tax treatment by entity type. Out of scope: immigration/visa/KITAS sponsorship, bank account opening procedures (mentioned only at a high level), full corporate governance and shareholder agreement drafting, sector-specific regulatory licensing beyond signposting. ALWAYS read this skill before advising on Indonesian entity choice or formation."
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: RILIA PUTRI
 review_status: pending_review
 tier: 2
@@ -14,19 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Indonesia Company Formation Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Formation
-
-- **UD / OP tax treatment** — Individual businesses (UD/OP) are generally subject to progressive individual income tax rates ranging from 5%–35% under UU PPh Art. 17. Eligible taxpayers may utilize UMKM final income tax regime at 0.5% of gross turnover under PP 55/2022, including exemption for the first IDR 500 million annual turnover for eligible individual taxpayers.  _(UU PPh Art. 17 as amended by UU HPP; PP 55/2022 Art. 56–60.)_
-- **CV tax treatment** — CV is generally treated as a corporate taxpayer (subjek pajak badan) under Indonesian income tax law. Standard corporate income tax rate generally 22% under prevailing UU PPh provisions. Eligible CVs may utilize UMKM final tax regime at 0.5% of gross turnover for up to 4 years if qualification requirements are satisfied.  _(UU PPh Art. 2(1)(b) & Art. 17; UU HPP; PP 55/2022 Art. 59.)_
-- **PT tax treatment** — PT entities are generally subject to corporate income tax rate of 22% under prevailing Indonesian tax regulations. Eligible taxpayers may obtain Article 31E facility (50% reduction of standard CIT rate on qualifying taxable income portion) and/or utilize UMKM final tax regime at 0.5% of gross turnover for up to 3 years if statutory requirements are satisfied.  _(UU PPh Art. 17 & Art. 31E as amended by UU HPP; PP 55/2022 Art. 59.)_
-- **PT Perorangan tax treatment** — PT Perorangan is generally treated as a corporate taxpayer under Indonesian income tax regulations and generally subject to the prevailing 22% corporate income tax rate. Eligible MSME PT Perorangan may utilize UMKM final income tax regime at 0.5% of gross turnover for up to 4 years if eligibility requirements are satisfied. "No time limit" should not be stated as absolute because prevailing utilization period under PP 55/2022 for corporate taxpayers generally remains subject to statutory time limitations.  _(UU PPh Art. 17 as amended by UU HPP; PP 55/2022 Art. 59.)_
-- **PMA tax treatment** — PMA companies are generally subject to prevailing Indonesian corporate income tax rules, including the standard corporate income tax rate currently generally 22% under UU PPh as amended by UU HPP. Qualifying investments in pioneer industries may obtain Tax Holiday facilities in the form of 50%–100% corporate income tax reduction for 5–20 tax years depending on investment value under PMK 130/PMK.010/2020. Certain qualifying investments may also obtain Tax Allowance facilities including 30% investment allowance over 6 years, accelerated depreciation/amortization, extended loss carry-forward, and reduced dividend withholding tax under PP 78/2019.  _(UU PPh Art. 17 as amended by UU HPP; PP 78/2019; PMK 130/PMK.010/2020.)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-03 RILIA PUTRI checked the rates, thresholds and deadlines listed for this guide against the cited authorities; that fact check confirmed the entity tax treatments and added the PMA facilities, and its corrections are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -68,6 +56,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - Solo Indonesian founder wanting limited liability and Badan tax treatment: **PT Perorangan**.
 - Two or more Indonesian founders, growth-oriented: **PT** (standard).
 - Any foreign shareholder: **PMA** (a PT with foreign capital, subject to BKPM).
+- **PMA tax treatment** — A PMA is a PT for tax purposes: PPh Badan at 22% (Pasal 17 UU PPh as amended by UU HPP), the Pasal 31E facility while turnover is at most IDR 50B, and, for investments in the business fields and regions listed in PP 78/2019, the tax allowance (a 30% investment allowance over 6 years with accelerated depreciation) or, for pioneer industries, the tax holiday under PMK 130/PMK.010/2020 as amended by PMK 69/2024 (a 50% to 100% CIT reduction for a fixed period).  _(UU PPh Art. 17 and Art. 31E; PP 78/2019; PMK 130/PMK.010/2020 as amended by PMK 69/2024)_
 
 ## Section 3 -- Required Inputs and Refusal Catalogue
 
@@ -188,7 +177,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Tax treatment
 
-- **PT Perorangan tax treatment** — Treated as a Badan -- subject to **PPh Badan 22%**. May opt into the **PP 55/2022** final-tax MSME regime (0.5% on turnover up to IDR 4.8B) for up to 3 years from registration if eligible.  _(PP 55/2022)_
+- **PT Perorangan tax treatment** — Treated as a Badan -- subject to **PPh Badan 22%**. May use the **PP 55/2022** final-tax MSME regime (0.5% on turnover up to IDR 4.8B): a 3-year window for tax year 2025 (PP 55/2022 Art. 59), no time limit from 22 April 2026 (PP 20/2026); the IDR 4.8B test combines the founder's own turnover, their spouse's and every PT Perorangan they founded (Art. 57(2)(e)).  _(PP 55/2022 as amended by PP 20/2026)_
 
 ### Annual obligations
 
@@ -242,10 +231,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Entity | Income tax regime | Statutory rate | Final MSME option (PP 55/2022) | Reporting form |
 | --- | --- | --- | --- | --- |
-| UD / Orang Pribadi | PPh Orang Pribadi (progressive) | 5% / 15% / 25% / 30% / 35% on bands per UU 7/2021 | 0.5% final on turnover up to IDR 4.8B (first IDR 500M tax-free for Orang Pribadi); 7-year window | SPT Tahunan PPh OP (1770 / 1770S / 1770SS) |
-| CV | PPh Badan (CV treated as Badan) | 22% | 0.5% final on turnover up to IDR 4.8B; 4-year window for non-PT badan | SPT Tahunan PPh Badan (1771) |
-| PT (standard) | PPh Badan | 22%; 50% reduction on portion of taxable income up to IDR 4.8B if turnover ≤ IDR 50B (Pasal 31E) | 0.5% final on turnover up to IDR 4.8B; 3-year window for PT | SPT Tahunan PPh Badan (1771) |
-| PT Perorangan | PPh Badan | 22% | 0.5% final on turnover up to IDR 4.8B; 3-year window | SPT Tahunan PPh Badan (1771) |
+| UD / Orang Pribadi | PPh Orang Pribadi (progressive) | 5% / 15% / 25% / 30% / 35% on bands per UU 7/2021 | 0.5% final on turnover up to IDR 4.8B (first IDR 500M tax-free for Orang Pribadi); 7-year window for tax year 2025 (PP 55/2022 Art. 59), no time limit from 22 April 2026 (PP 20/2026, counting the spouse's turnover and any PT Perorangan founded) | SPT Tahunan PPh OP (1770 / 1770S / 1770SS) |
+| CV | PPh Badan (CV treated as Badan) | 22% | For tax year 2025: 0.5% final on turnover up to IDR 4.8B with a 4-year window (PP 55/2022 Art. 59). From 22 April 2026 not available to a newly registered CV (PP 20/2026); one registered earlier keeps the regime until its 4-year window ends | SPT Tahunan PPh Badan (1771) |
+| PT (standard) | PPh Badan | 22%; 50% reduction on portion of taxable income up to IDR 4.8B if turnover ≤ IDR 50B (Pasal 31E) | For tax year 2025: 0.5% final on turnover up to IDR 4.8B with a 3-year window (PP 55/2022 Art. 59). From 22 April 2026 not available to a newly registered PT (PP 20/2026); one registered earlier keeps the regime until its 3-year window ends | SPT Tahunan PPh Badan (1771) |
+| PT Perorangan | PPh Badan | 22% | 0.5% final on turnover up to IDR 4.8B; 3-year window for tax year 2025 (PP 55/2022 Art. 59), no time limit from 22 April 2026 (PP 20/2026) | SPT Tahunan PPh Badan (1771) |
 | PMA | PPh Badan | 22%; potential tax holiday/allowance for pioneer sectors | Not normally applicable (capital and turnover exceed MSME thresholds by design) | SPT Tahunan PPh Badan (1771) |
 
 - **VAT rate and PKP registration** — The nominal PPN rate is **12%** from 1 January 2025 (UU 7/2021 / HPP Law), but PMK 131/2024 sets the tax base (DPP nilai lain) for non-luxury goods and services at 11/12 of the selling price, so the **effective rate stays 11%**. The full 12% applies only to PPnBM-listed luxury goods, on the full base from 1 February 2025. The 11% rate applied to everything from 1 April 2022 to 31 December 2024. VAT registration (PKP) is mandatory when turnover exceeds IDR 4,800,000,000.  _(UU 7/2021 / HPP Law)_

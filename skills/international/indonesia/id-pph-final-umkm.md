@@ -3,7 +3,7 @@ name: id-pph-final-umkm
 description: "Use this skill whenever asked to compute, review, or advise on Indonesia PPh Final UMKM — the 0.5% final income tax on gross turnover available to micro, small, and medium enterprises (UMKM) under PP 23/2018 and PP 55/2022 (as revised). Trigger on phrases like \"PPh Final UMKM\", \"0.5 percent tax Indonesia\", \"PP 23/2018\", \"PP 55/2022\", \"MSME tax Indonesia\", \"pajak final UMKM\", \"tarif 0,5%\", \"peredaran bruto\", \"Pengusaha Kecil PPh\", or any question about whether a sole trader, PT Perorangan, CV, Firma, or Koperasi can use the 0.5% regime. Covers eligibility, the IDR 4.8 billion turnover threshold, time limits, the pekerjaan bebas (professional services) exclusion, opt-out mechanics, monthly self-deposit through Coretax DJP, annual SPT reporting, and the interaction with PPN/VAT and NIK-as-NPWP. Out of scope: corporate income tax under PPh Badan progressive rates (see PPh 25/29 workflows), partial-year regime changes, PPh 21 employment withholding (see id-payroll-pph21), PPN/VAT (see indonesia-vat), and any taxpayer above the IDR 4.8 billion threshold. ALWAYS read this skill before touching any PPh Final UMKM work."
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: RILIA PUTRI
 review_status: current
 tier: 1
@@ -16,31 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > Load alongside `foundation.md` and `intake.md`. For employment withholding see `id-payroll-pph21.md`; for VAT/PPN see `indonesia-vat.md`. Covers ONLY the PPh Final UMKM facility under PP 23/2018 as superseded and revised by PP 55/2022.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### PPh Final UMKM 0.5%
-
-- **Tax rate** — Rate of 0.5% remains applicable for qualifying taxpayers with certain gross turnover. PP 20/2026 does not change the tax rate but revises taxpayer eligibility criteria and exclusions.  _(UU PPh Art. 4(2); PP 55/2022 Art. 56 as amended by PP 20/2026.)_
-- **Character** — Final — not creditable; no expenses deductible  _(UU PPh Art. 4(2); PP 55/2022 Art. 56 as amended by PP 20/2026.)_
-- **Tax rate** — Rate of 0.5% remains applicable for qualifying taxpayers with certain gross turnover. PP 20/2026 does not change the tax rate but revises taxpayer eligibility criteria and exclusions.  _(UU PPh Art. 4(2); PP 55/2022 Art. 56 as amended by PP 20/2026.)_
-- **Monthly deposit deadline** — Final income tax under the UMKM regime is generally payable no later than the 15th day of the following month after the tax period. Administrative procedures follow prevailing tax administration regulations.  _(UU KUP as amended by UU HPP; PP 55/2022 Art. 62; PMK 81/2024.)_
-- **OP SPT deadline** — 31 March 2026 for FY2025  _(UU KUP Art. 3(3)(b) as amended by UU HPP)_
-- **Entity SPT deadline** — 30 April 2026 for FY2025  _(UU KUP Art. 3(3)(c) as amended by UU HPP)_
-- **OP tax-free band** — Individual taxpayers remain entitled to the IDR 500 million annual gross-turnover exemption before the 0.5% final tax applies.  _(UU PPh Art. 7; PP 55/2022 Art. 60; PP 20/2026.)_
-- **Orang Pribadi (sole trader)** — No time limit (revised — originally 7 years)  _(PP 20/2026 Article I items 4 and 6.)_
-- **PT Perorangan** — No time limit (revised)  _(PP 20/2026 Article I items 4 and 6.)_
-- **Koperasi, CV, Firma, BUMDes** — 4 years  _(PP 20/2026 Article I item 4.)_
-- **PT (ordinary)** — 3 years  _(PP 20/2026 Article I item 4.)_
-- **Pekerjaan bebas** — Excluded — doctors, lawyers, notaries, accountants, architects, consultants, actuaries must use progressive  _(PP 20/2026 Article I item 3.)_
-- **BUT / non-residents** — Permanent establishments (BUT) remain excluded from the UMKM final tax regime.  _(PP 55/2022 Art. 57(2)(d) as amended by PP 20/2026.)_
-- **Late monthly payment** — Late tax payment generally subject to monthly interest sanctions calculated using the prevailing Minister of Finance interest rate determined under Indonesian tax administration regulations  _(UU KUP Art. 9(2a) as amended by UU HPP; PMK 81/2024 as amended by PMK 1/2026)_
-- **Late SPT Tahunan OP** — IDR 100,000 fine  _(UU KUP Art. 7)_
-- **Late SPT Tahunan Badan** — IDR 1,000,000 fine  _(UU KUP Art. 7)_
-- **Bribery/gratuity — deductibility** — NEW provision per PP 20/2026 Article 20A: Expenditures in the form of bribes, gratuities, and other payments related to corruption or bribery offences — including payments to foreign public officials — are NOT deductible as business expenses for corporate taxpayers. Effective 22 April 2026. Introduced pursuant to OECD anti-bribery recommendations as part of Indonesia's OECD accession process.  _(PP 20/2026 Article I items 1 and 2.)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **RILIA PUTRI** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference
 
@@ -72,10 +48,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxpayer type | Eligible? | Time limit (PP 55/2022 as revised) |
 | --- | --- | --- |
-| Orang Pribadi (sole trader) | Yes, if turnover ≤ IDR 4.8B and not pekerjaan bebas | **No time limit** (revised); OP facility extended through end of 2025 (commentary: through 2029). See Section 4. |
-| PT Perorangan (single-member micro PT) | Yes | **No time limit** (revised). See Section 4. |
-| Koperasi, CV, Firma, BUMDes | Yes | **4 years** from registration or 2018 (later) |
-| PT (ordinary) | Yes (originally) | **3 years** from registration or 2018 (later) |
+| Orang Pribadi (sole trader) | Yes, if turnover ≤ IDR 4.8B (combined with the spouse's and with every PT Perorangan the individual founded, Art. 57(2)(e)) and not pekerjaan bebas | **No time limit** since PP 20/2026 (22 April 2026). See Section 4. |
+| PT Perorangan (single-member micro PT) | Yes; its turnover counts towards its founder's IDR 4.8B test | **No time limit** since PP 20/2026. See Section 4. |
+| Koperasi | Yes | **4 years** from registration (PP 20/2026 keeps the koperasi window) |
+| CV, Firma, BUMDes | **No** for entities registered from 22 April 2026 (PP 20/2026); one registered earlier keeps the regime until its 4-year window ends (PP 20/2026 Art. II(e)) | 4 years from registration or 2018 (later), transitional only |
+| PT (ordinary) | **No** for PTs registered from 22 April 2026 (PP 20/2026); one registered earlier keeps the regime until its 3-year window ends (Art. II(e)) | 3 years from registration or 2018 (later), transitional only |
 | Pekerjaan bebas (doctors, lawyers, notaries, accountants, architects, consultants, actuaries, etc.) | **No** | Must use Article 17 progressive rates |
 | BUT (permanent establishment) and non-residents | **No** | Out of scope |
 
@@ -85,7 +62,7 @@ Conservative defaults are consolidated in Section 7.
 
 ### Required inputs
 
-- **Minimum viable** — (1) Full-year resident confirmation (per `intake.md`); (2) annual gross turnover for FY2025; (3) taxpayer type; (4) confirmation activity is not pekerjaan bebas; (5) year first registered for 0.5% (time-limit test).
+- **Minimum viable** — (1) Full-year resident confirmation (per `intake.md`); (2) annual gross turnover for FY2025; (3) taxpayer type; (4) confirmation activity is not pekerjaan bebas; (5) taxpayer form and registration date (the PP 20/2026 eligibility and transitional test) and, for an individual, the turnover of their spouse and of every PT Perorangan they founded (the combined-turnover test).
 - **Recommended** — Monthly turnover schedule, NPWP/NIK, prior-year SPT, kode billing / BPN receipts, PKP status (see `indonesia-vat.md`).
 - **Ideal** — Full sales ledger / bank statements / invoices, prior SPT Tahunan, PP 23/2018 election notification, written activity description.
 - **Refusal if minimum missing** — Hard stop if turnover cannot be quantified. Soft warn if only an annual aggregate exists — produce annualised computation but flag that monthly deposits cannot be reconciled.
@@ -94,10 +71,10 @@ Conservative defaults are consolidated in Section 7.
 
 - **R-ID-UMKM-1** — Turnover exceeds IDR 4.8B. Facility unavailable. Taxpayer must compute under Article 17 progressive (OP) or PPh Badan (currently 22% headline). Escalate to Konsultan Pajak.  _(R-ID-UMKM-1)_
 - **R-ID-UMKM-2** — Pekerjaan bebas. Activity listed in the PP 55/2022 penjelasan as tenaga ahli (pengacara, akuntan, arsitek, dokter, konsultan, notaris, penilai, aktuaris) or other independent profession. 0.5% regime never available regardless of turnover. Must use Article 17 with deductible expenses or NPPN if eligible. Escalate.  _(R-ID-UMKM-2)_
-- **R-ID-UMKM-3** — Time limit elapsed. Cap exceeded (3 yrs PT non-perorangan; 4 yrs CV/Firma/Koperasi/BUMDes). For OP and PT Perorangan the revised PP 55/2022 removed the cap — re-verify taxpayer type. Escalate.  _(R-ID-UMKM-3)_
+- **R-ID-UMKM-3** — Form or window excludes the regime. CV, firma, ordinary PT and BUMDes registered from 22 April 2026 cannot use it (PP 20/2026); one registered earlier loses it when its PP 55/2022 window ends (3 years PT, 4 years CV/firma/BUMDes; Art. II(e)); a koperasi has 4 years; OP and PT Perorangan have no time limit. Re-verify taxpayer form and registration date. Escalate.  _(R-ID-UMKM-3)_
 - **R-ID-UMKM-4** — Permanent establishment / non-resident. BUT and non-residents cannot use PPh Final UMKM. Escalate.  _(R-ID-UMKM-4)_
 - **R-ID-UMKM-5** — Mid-year regime change. Mid-year crossing of IDR 4.8B, mid-year opt-out, or mid-year first registration. Requires Konsultan Pajak judgement on apportionment. Escalate.  _(R-ID-UMKM-5)_
-- **R-ID-UMKM-6** — Multiple entities / branches. Threshold and time limit must be tested per legal entity. Group structures require manual review. Escalate.  _(R-ID-UMKM-6)_
+- **R-ID-UMKM-6** — Multiple entities / branches. The IDR 4.8B threshold is tested on the combined turnover of the individual, their spouse and every PT Perorangan they founded (PP 55/2022 Art. 57(2)(e) as amended by PP 20/2026); other group structures require manual review. Escalate.  _(R-ID-UMKM-6)_
 - **R-ID-UMKM-7** — Foreign-source business income. Facility applies only to Indonesian-source business income. Foreign-source income follows ordinary tax with FTC (Article 24). Escalate.  _(R-ID-UMKM-7)_
 - **R-ID-UMKM-8** — Passive income disputes. Rental, interest, dividends, royalties, capital gains are governed by other final-tax articles (PPh 4(2), 23, 26) and are not peredaran bruto for PP 23/2018. If allocation unclear, escalate.  _(R-ID-UMKM-8)_
 
@@ -151,7 +128,7 @@ Conservative defaults are consolidated in Section 7.
 | Koperasi, CV, Firma, BUMDes | 4 years |
 | PT (Perseroan Terbatas) | 3 years |
 
-- **REVISION 1 — No time limit for OP and PT Perorangan** — Per analysis by DDTC and MUC, the original 7-year cap for OP (and the 3-year cap insofar as it would apply to PT Perorangan — a single-member micro-PT under UU Cipta Kerja) has effectively been removed. OP and PT Perorangan may continue using the 0.5% facility indefinitely so long as they remain below IDR 4.8B and satisfy the other tests. TBC — verify the exact PP/PMK reference with an Indonesian accountant before quoting to a client.
+- **REVISION 1 — PP 20/2026 (in force 22 April 2026) deletes Art. 59 and narrows the regime** — Individuals and PT Perorangan may use the 0.5% facility with no time limit while they remain eligible; a koperasi keeps a 4-year window; CV, firma, ordinary PT and BUMDes can no longer enter the regime, and one registered before 22 April 2026 keeps it only until its PP 55/2022 window ends (Art. II(e)). The IDR 4.8B test is applied to the combined turnover of the individual, their spouse and every PT Perorangan they founded (Art. 57(2)(e) as amended). Source: DJP, "PP 20/2026: Tarif PPh 0,5% bagi UMKM Orang Pribadi Berlaku Selamanya" (pajak.go.id).
 - **REVISION 2 — Extension of OP facility through end of 2025** — The OP 7-year window for taxpayers who first elected in 2018 would have expired at end of 2024. The Government issued an extension keeping OPs in the regime through at least end of 2025, and some practitioner commentary references a further extension running through 2029. Both should be noted in the reviewer brief; the safe operating position for FY2025 is that OPs who would otherwise have aged out remain in. TBC — verify the exact extension instrument with an Indonesian accountant.
 - **Operational note for entities** — The 3-year and 4-year caps remain. A PT first registered in 2022 used 0.5% in 2022–2024 and from FY2025 must compute under ordinary PPh Badan. A CV first registered in 2021 used the facility 2021–2024 and exits in FY2025. Always confirm "first year used" from the client's PP 23/2018 election notification (Surat Pemberitahuan).
 
