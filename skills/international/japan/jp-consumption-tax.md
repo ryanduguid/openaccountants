@@ -3,7 +3,7 @@ name: jp-consumption-tax
 description: Use this skill whenever asked about Japanese Consumption Tax (消費税 / JCT) for self-employed individuals. Trigger on phrases like "consumption tax", "shohizei", "JCT", "qualified invoice", "invoice system", "T-number", "simplified taxation", "簡易課税", "消費税確定申告", or any question about consumption tax filing, rates, or the qualified invoice system for sole proprietors in Japan. Covers standard rate (10%), reduced rate (8%), qualified invoice system (インボイス制度), simplified taxation (簡易課税), and registration thresholds. ALWAYS read this skill before touching any Japanese consumption tax work.
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Jurisdiction | Japan |
 | Jurisdiction Code | JP |
-| Primary Legislation | Consumption Tax Act (消費税法) |
+| Primary Legislation | Consumption Tax Act (消費税法); NTA Tax Answers Nos. 6303 (rates), 6498 (invoice system) and 6505 (simplified method), linked beside the tables |
 | Supporting Legislation | Act on Special Measures Concerning Taxation (租税特別措置法); Qualified Invoice Preservation Method (適格請求書等保存方式) |
 | Tax Authority | National Tax Agency (国税庁 / NTA) |
 | Filing Portal | e-Tax (etax.nta.go.jp) |
@@ -146,6 +146,8 @@ Before computing any consumption tax figure, you MUST know:
 | Oct 2026 -- Sep 2029 | 50% of input tax creditable |
 | Oct 2029 onward | 0% -- no credit without qualified invoice |
 
+Source: NTA Tax Answer No. 6498 適格請求書等保存方式（インボイス制度） — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm; NTA invoice-system portal — https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice.htm.
+
 ### Small Business Special Measure (2割特例) [T1]
 
 **Small Business Special Measure (2割特例)**
@@ -201,6 +203,8 @@ Before computing any consumption tax figure, you MUST know:
 | Type 4 | Other (restaurants, etc.) | 60% |
 | Type 5 | Services, transport | 50% |
 | Type 6 | Real estate | 40% |
+
+Sources: NTA Tax Answer No. 6505 簡易課税制度 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6505.htm; the 10% and 8% rates (7.8% + 2.2%; 6.24% + 1.76%), No. 6303 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6303.htm.
 
 ### Computation [T1]
 

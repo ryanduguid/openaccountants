@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japanese National Health Insura
 version: 2.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 category: international
 tier: 2
@@ -74,6 +74,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 70% reduction | JPY 430,000 + (JPY 100,000 x earners beyond 1) |
 | 50% reduction | JPY 430,000 + JPY 295,000 x insured + (JPY 100,000 x earners beyond 1) |
 | 20% reduction | JPY 430,000 + JPY 545,000 x insured + (JPY 100,000 x earners beyond 1) |
+
+The per-insured multipliers of the 50% and 20% reductions are revised each fiscal year by the National Health Insurance Act Enforcement Order (国民健康保険法施行令 art. 29-7); the figures above are the FY2024 multipliers, which the FY2025 revision raised. Confirm the current year's multipliers on the municipality's notice before applying a reduction.
 
 **Conservative defaults**
 
@@ -156,6 +158,8 @@ This is the deterministic pre-classifier for bank statement entries related to s
 | 1-year advance | ~2% |
 | 2-year advance | ~4% |
 | Bank transfer (early debit) | Slight additional discount |
+
+Source: 日本年金機構 国民年金の保険料 (the FY2025 premium of JPY 17,510 a month and the advance-payment discounts) — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html.
 
 ### 4.3 Tax deductibility (Tier 1)
 

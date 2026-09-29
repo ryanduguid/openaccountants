@@ -4,7 +4,7 @@ description: Use this skill when advising on LEGAL tax minimization strategies f
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -47,6 +47,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 9,000,001 – 18,000,000 | 33% | ¥1,536,000 |
 | 18,000,001 – 40,000,000 | 40% | ¥2,796,000 |
 | 40,000,001+ | 45% | ¥4,796,000 |
+
+Source: NTA Tax Answer No. 2260 所得税の税率 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm.
 
 Add residence tax (~10%) and reconstruction surtax (2.1% of income tax, through 2037).
 
@@ -167,7 +169,7 @@ Add residence tax (~10%) and reconstruction surtax (2.1% of income tax, through 
 | System | Coverage | Who | Cost |
 | --- | --- | --- | --- |
 | National Health Insurance (NHI, 国民健康保険) | Health only | Sole proprietors, freelancers | Income-based; varies by municipality. Capped ~¥1,060,000/year |
-| National Pension (国民年金) | Basic pension | Self-employed | Flat ¥16,980/month (2025). Voluntary add-on: National Pension Fund |
+| National Pension (国民年金) | Basic pension | Self-employed | Flat ¥17,510/month (FY2025, 日本年金機構 国民年金の保険料 — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html; ¥16,980 was the FY2024 amount). Voluntary add-on: National Pension Fund |
 | Shakai Hoken (厚生年金 + 健保) | Health + pension | Employees, company directors | ~30% of standard monthly salary (split employer/employee). No cap on health portion after ¥1,390,000 standard salary |
 
 ### Optimization Strategies

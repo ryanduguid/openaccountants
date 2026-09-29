@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japanese payroll, income tax wi
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -67,6 +67,8 @@ These are the annual rates applied at year-end adjustment (年末調整) or fina
 | 18,000,001 -- 40,000,000 | 40% | ¥2,796,000 |
 | 40,000,001+ | 45% | ¥4,796,000 |
 
+Source: NTA Tax Answer No. 2260 所得税の税率 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm.
+
 - **Reconstruction surtax and resident tax** — Plus 2.1% reconstruction surtax on calculated tax. Plus separate resident tax (住民税) at approximately 10% (municipal + prefectural), withheld from June of the following year.
 
 ### Employment Income Deduction (給与所得控除 -- 2026)
@@ -75,12 +77,13 @@ These are the annual rates applied at year-end adjustment (年末調整) or fina
 
 | Gross Employment Income (JPY) | Deduction |
 | --- | --- |
-| Up to 1,625,000 | ¥650,000 (minimum, raised from ¥550,000 in 2026) |
-| 1,625,001 -- 1,800,000 | Income × 40% - ¥100,000 |
-| 1,800,001 -- 3,600,000 | Income × 30% + ¥80,000 |
+| Up to 2,200,000 | ¥740,000 (minimum) |
+| 2,200,001 -- 3,600,000 | Income × 30% + ¥80,000 |
 | 3,600,001 -- 6,600,000 | Income × 20% + ¥440,000 |
 | 6,600,001 -- 8,500,000 | Income × 10% + ¥1,100,000 |
 | 8,500,001+ | ¥1,950,000 (cap) |
+
+Source: NTA Tax Answer No. 1410 給与所得控除 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm. These are the amounts for 2026 and 2027 (令和8年分・令和9年分; in force from 1 December 2026 and applied to the whole of 2026 through the year-end adjustment); for incomes from ¥691,000 to under ¥2,200,000 the employment income is set by the special table on that page (from ¥741,000 to under ¥2,191,000: income minus ¥740,000). For 2025 (令和7年分) the minimum was ¥650,000 up to ¥1,900,000, then income × 30% + ¥80,000 to ¥3,600,000 and the same bands above. Until 2026-09-29 this table carried the 2020-2024 schedule (¥550,000 up to ¥1,625,000 and a 40% band to ¥1,800,000) under a 2026 heading.
 
 ### Year-End Adjustment (年末調整)
 
@@ -101,6 +104,8 @@ Japanese social insurance premiums are split approximately 50/50 between employe
 | Welfare pension (厚生年金) | 9.150% | SMR | Grade 32: ¥650,000/month |
 | Employment insurance (雇用保険) | 0.50% (from Apr 2026) | Total wages | No ceiling |
 | Child-rearing support (子ども・子育て支援金) | 0.115% (from Apr 2026) | SMR | Same as health |
+
+Sources: 協会けんぽ FY2026 prefectural rates (Tokyo 9.85%; nursing care 1.62%; child-rearing support 0.23%, from the April 2026 premium) — https://www.kyoukaikenpo.or.jp/about/business/insurance_rate/rate_prefectures/r08; 日本年金機構 厚生年金保険料額表 (18.3%) — https://www.nenkin.go.jp/service/kounen/hokenryo/ryogaku/ryogakuhyo/20200825.html; 厚生労働省 雇用保険料率 FY2026 (general business 13.5/1,000: employee 5.0, employer 8.5) — https://www.mhlw.go.jp/content/001692566.pdf.
 
 - **Prefecture variation note** — **Health insurance rates vary by prefecture and insurer.** The Tokyo rate shown (9.85% total / 4.925% employee) is illustrative. Each prefecture's Kyōkai Kenpō (協会けんぽ) publishes its own rate.
 

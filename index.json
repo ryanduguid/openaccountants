@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T09:06:55+00:00",
+ "generated_at": "2026-09-29T09:07:06+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -11093,7 +11093,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "japan-consumption-tax",
@@ -11119,7 +11119,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "japan-financial-statements",
@@ -11158,7 +11158,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "japan-tax-optimization",
@@ -11171,7 +11171,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "japan-transfer-pricing",
@@ -11197,7 +11197,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "jp-estimated-tax",
@@ -11236,7 +11236,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "jp-incorporation",
@@ -11249,7 +11249,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "jp-nonpermanent-resident",
@@ -11262,7 +11262,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "jp-social-insurance",
@@ -11275,7 +11275,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "japan-references",

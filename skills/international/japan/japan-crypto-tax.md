@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japan cryptocurrency or digital
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - jp-income-tax
@@ -87,7 +87,7 @@ Crypto in Japan is classified as **miscellaneous income (雑所得 / zatsu shoto
 
 ### National Income Tax Rates (2025)
 
-**National Income Tax Rates (2025)**  _(Income Tax Act (所得税法) Art. 89; NTA 2025 Individual Income Tax Guide.)_
+**National Income Tax Rates (2025)**  _(Income Tax Act (所得税法) Art. 89; NTA Tax Answer No. 2260 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm)_
 
 | Taxable Income | Rate | Deduction Amount |
 | --- | --- | --- |
@@ -113,6 +113,8 @@ Crypto in Japan is classified as **miscellaneous income (雑所得 / zatsu shoto
 | ¥18,000,001 – ¥40,000,000 | 40% | 10% | 50% |
 | Over ¥40,000,000 | 45% | 10% | 55% |
 
+Source: the 10% inhabitant-tax income levy (4% prefectural, 6% municipal) — 総務省, 個人住民税 — https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html.
+
 - **Reconstruction surtax (復興特別所得税)** — 2.1% of national income tax, applicable through 2037. This increases the effective national rates slightly (e.g., 45% becomes 45% × 1.021 = 45.945%).
 
 ### Basic Deduction (基礎控除)
@@ -121,10 +123,17 @@ Crypto in Japan is classified as **miscellaneous income (雑所得 / zatsu shoto
 
 | Taxpayer's Total Income | Basic Deduction |
 | --- | --- |
-| Up to ¥24,000,000 | ¥480,000 |
+| Up to ¥1,320,000 | ¥950,000 |
+| ¥1,320,001 – ¥3,360,000 | ¥880,000 |
+| ¥3,360,001 – ¥4,890,000 | ¥680,000 |
+| ¥4,890,001 – ¥6,550,000 | ¥630,000 |
+| ¥6,550,001 – ¥23,500,000 | ¥580,000 |
+| ¥23,500,001 – ¥24,000,000 | ¥480,000 |
 | ¥24,000,001 – ¥24,500,000 | ¥320,000 |
 | ¥24,500,001 – ¥25,000,000 | ¥160,000 |
 | Over ¥25,000,000 | ¥0 |
+
+Source: NTA Tax Answer No. 1199 基礎控除 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm. These are the 2025 (令和7年分) amounts; until 2024 the deduction was ¥480,000 up to ¥24,000,000, the table this guide carried until 2026-09-29. For 2026 and 2027 the same page gives ¥1,040,000 up to ¥4,890,000, ¥670,000 to ¥6,550,000 and ¥620,000 to ¥23,500,000 (then ¥480,000, ¥320,000, ¥160,000 and ¥0 as above), and from 2028 ¥990,000 up to ¥1,320,000 and ¥620,000 to ¥23,500,000.
 
 ### Permitted Methods (NTA FAQ 2-4, 2-5)
 

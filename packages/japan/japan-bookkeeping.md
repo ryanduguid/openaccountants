@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japanese bookkeeping for sole p
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -293,6 +293,8 @@ Japanese practice uses 3-digit codes. The structure below follows the common sof
 | ソフトウェア (Software — for own use) | 5 years | 20.0% |
 | ソフトウェア (Software — for sale copies) | 3 years | 33.3% |
 
+Sources: NTA, 主な減価償却資産の耐用年数表 (the table annexed to Tax Answer No. 2100) — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/pdf/2100_01.pdf; No. 2100 減価償却のあらまし — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2100.htm.
+
 ## Section 6 -- P&L Format (損益計算書)
 
 ### Standard Format (Japanese GAAP — Reporting Style)
@@ -511,9 +513,11 @@ The Japanese balance sheet traditionally uses the horizontal (account) format (�
 | --- | --- | --- |
 | 健康保険 (Health Insurance) | ~5% of salary | 714 法定福利費 |
 | 厚生年金 (Pension) | ~9.15% of salary | 714 |
-| 雇用保険 (Employment Insurance) | 0.95% (general industry) | 714 |
+| 雇用保険 (Employment Insurance) | 0.90% (general business, FY2025: 9.0/1,000 employer and 5.5/1,000 employee); 0.85% from April 2026 (8.5/1,000 employer, 5.0/1,000 employee) | 714 |
 | 労災保険 (Workers' Comp) | 0.25–8.8% (industry-specific) | 714 |
 | 子ども・子育て拠出金 | 0.36% (employer only) | 714 |
+
+Sources: 協会けんぽ prefectural rates FY2025 (Tokyo 9.91%) — https://www.kyoukaikenpo.or.jp/about/business/insurance_rate/rate_prefectures/r07; 日本年金機構 厚生年金保険料額表 (18.3%) — https://www.nenkin.go.jp/service/kounen/hokenryo/ryogaku/ryogakuhyo/20200825.html; 厚生労働省 雇用保険料率 — https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000108634.html (FY2025 notice https://www.mhlw.go.jp/content/001401966.pdf; FY2026 notice https://www.mhlw.go.jp/content/001692566.pdf).
 
 ## Disclaimer
 

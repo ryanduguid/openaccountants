@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Japanese income tax for self-em
 version: 2.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -48,6 +48,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 9,000,001 -- 18,000,000 | 33% | 1,536,000 |
 | 18,000,001 -- 40,000,000 | 40% | 2,796,000 |
 | 40,000,001+ | 45% | 4,796,000 |
+
+Source: NTA Tax Answer No. 2260 所得税の税率 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm.
 
 - **Shortcut formula** — Tax = (Taxable Income x Rate) - Deduction Amount.
 - **Reconstruction Surtax** — All national income tax x 2.1% (2013--2037). Total national tax = income tax x 102.1%.
@@ -317,10 +319,12 @@ Restaurant meal JPY 48,000. If this was a client entertainment dinner (接待交
 | Offence | Penalty |
 | --- | --- |
 | Late filing (within 1 month, voluntary) | 5% of additional tax (無申告加算税) |
-| Late filing (after notice or > 1 month) | 15% on first JPY 500,000 + 20% on excess |
+| Late filing (after notice or > 1 month) | After an investigation or an assessment: 15% on the first JPY 500,000, 20% from JPY 500,000 to 3,000,000 and 30% above JPY 3,000,000 (returns due from 1 January 2024); filed after the notice of an investigation but before its outcome: 10% / 15% / 25% on the same bands |
 | Under-reporting | 10% of additional tax |
 | Fraud / concealment | 35-40% (重加算税) |
-| Late payment interest (延滞税) | ~2.4% for first 2 months, ~8.7% thereafter |
+| Late payment interest (延滞税) | 2.4% for the first 2 months, 8.7% thereafter (2025); 2.8% and 9.1% for 2026 |
+
+Sources: NTA Tax Answer No. 2024 確定申告を忘れたとき (無申告加算税) — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2024.htm; NTA, 延滞税の割合 — https://www.nta.go.jp/taxes/nozei/entaizei/keisan/entai_wariai.htm.
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 

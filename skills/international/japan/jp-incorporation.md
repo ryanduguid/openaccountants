@@ -4,7 +4,7 @@ description: Use this skill whenever asked about incorporating in Japan -- trans
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - jp-income-tax
@@ -62,6 +62,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | National health insurance (国民健康保険) | Income-based + per-capita; cap ~JPY 1,090,000/year (2025) | Per municipality |
 | National pension (国民年金) | Flat JPY 17,510/month (JPY 210,120/year, 2025) | National Pension Act |
 
+Sources: NTA Tax Answer No. 2260 (the national rates) — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm; 総務省, 個人住民税 (the 10% income levy and the per-capita levy: ¥4,000 plus the ¥1,000 forest environment tax) — https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html; 日本年金機構 国民年金の保険料 — https://www.nenkin.go.jp/service/kokunen/hokenryo/index.html.
+
 - **Total formula (sole proprietor)** — Income tax + reconstruction surtax + resident tax + enterprise tax + NHI + national pension
 
 ### 2.2 Corporate Tax Structure
@@ -79,6 +81,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Special enterprise tax (特別法人事業税) | Enterprise tax × 37% |  |
 | Social insurance (健康保険 + 厚生年金) | ~28--30% of officer compensation (split employer/employee) | Health Insurance Act; Employees' Pension Insurance Act |
 
+Source: NTA Tax Answer No. 5759 法人税の税率 (15% on the first ¥8 million for corporations with capital of ¥100 million or less, 17% under its note 7 where the year's income exceeds ¥1 billion, for fiscal years beginning on or after 1 April 2025; 23.2% above ¥8 million) — https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5759.htm.
+
 - **Total formula (corporate)** — Corporate taxes + officer's personal income tax/resident tax + social insurance (both halves)
 
 ### 2.3 Enterprise Tax Brackets (Corporate)
@@ -90,6 +94,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Up to JPY 4,000,000 | 3.5% | 3.75% |
 | JPY 4,000,001 -- 8,000,000 | 5.3% | 5.665% |
 | Over JPY 8,000,000 | 7.0% | 7.48% |
+
+Source: 東京都主税局 法人事業税 (standard rates 3.5 / 5.3 / 7.0; Tokyo's 超過税率 3.75 / 5.665 / 7.48 for 軽減税率適用法人) — https://www.tax.metro.tokyo.lg.jp/kazei/houjinji.html.
 
 ## Section 3 -- Breakeven Simulations
 
@@ -240,12 +246,13 @@ This is the key advantage of incorporation. Sole proprietors only get the blue r
 
 | Annual Compensation | Employment Income Deduction (2025) |
 | --- | --- |
-| Up to JPY 1,625,000 | JPY 650,000 (minimum) |
-| JPY 1,625,001 -- 1,800,000 | Compensation × 40% − JPY 100,000 |
-| JPY 1,800,001 -- 3,600,000 | Compensation × 30% + JPY 80,000 |
+| Up to JPY 1,900,000 | JPY 650,000 (minimum) |
+| JPY 1,900,001 -- 3,600,000 | Compensation × 30% + JPY 80,000 |
 | JPY 3,600,001 -- 6,600,000 | Compensation × 20% + JPY 440,000 |
 | JPY 6,600,001 -- 8,500,000 | Compensation × 10% + JPY 1,100,000 |
 | Over JPY 8,500,000 | JPY 1,950,000 (cap) |
+
+Source: NTA Tax Answer No. 1410 給与所得控除 (令和7年分) — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm. For 2026 and 2027 the minimum is JPY 740,000 up to JPY 2,200,000, with special amounts for incomes from JPY 691,000 to under JPY 2,200,000 (the same page). Until 2026-09-29 this table kept the 2020-2024 band of 40% minus JPY 100,000 between JPY 1,625,001 and 1,800,000, which the 2025 schedule does not have.
 
 ### 5.3 Optimal Compensation Targets
 
@@ -307,6 +314,8 @@ A corporation can pay salaries to family members as employees or directors, achi
 | Child-rearing contribution | 0.36% | 100% employer |
 | **Total (under 40)** | **~28.66%** | **~14.15% employee; ~14.51% employer** |
 | **Total (age 40--64, with nursing care)** | **~30.25%** | **~14.945% employee; ~15.305% employer** |
+
+Sources: 協会けんぽ FY2025 prefectural rates (Tokyo 9.91%; nursing care 1.59%) — https://www.kyoukaikenpo.or.jp/about/business/insurance_rate/rate_prefectures/r07; 日本年金機構 厚生年金保険料額表 (18.3%) — https://www.nenkin.go.jp/service/kounen/hokenryo/ryogaku/ryogakuhyo/20200825.html.
 
 The totals use the component rates and allocation assumptions above. Split health, nursing care where applicable, and pension equally; add the 0.36% child-rearing contribution only to the employer share. These are arithmetic reconciliations, not independent verification of the applicable 2025 statutory rates.
 
