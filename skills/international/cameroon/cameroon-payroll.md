@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Cameroon payroll processing for
 version: 0.1
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Nkinyam Courage Ndasi
 review_status: pending_review
 depends_on:
@@ -20,107 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Tier 2 — Research-verified.** Figures are sourced from PwC Worldwide Tax Summaries (Cameroon) and the CNPS official site, corroborated by Employer-of-Record guides. This skill has **not** yet been section-by-section verified by a licensed Cameroon accountant (`verified_by: pending`). Treat all outputs as estimates pending professional sign-off. Where a figure could not be sourced to a primary authority it is flagged **[RESEARCH GAP — reviewer to confirm]**.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Nkinyam Courage Ndasi** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### cameroon-payroll
-
-- **IRPP base rate — band 1 (0–2,000,000 XAF)** — 10%  _(PwC Worldwide Tax Summaries — Cameroon, Taxes on personal income)_
-- **IRPP base rate — band 2 (2,000,001–3,000,000 XAF)** — 15%  _(PwC Worldwide Tax Summaries — Cameroon, Taxes on personal income)_
-- **IRPP base rate — band 3 (3,000,001–5,000,000 XAF)** — 25%  _(PwC Worldwide Tax Summaries — Cameroon, Taxes on personal income)_
-- **IRPP base rate — band 4 (over 5,000,000 XAF)** — 35%  _(PwC Worldwide Tax Summaries — Cameroon, Taxes on personal income)_
-- **CAC (Centimes Additionnels Communaux) surcharge rate on base IRPP** — 10%  _(Rivermate; RemotePeople)_
-- **Cumulative IRPP (incl. CAC) at XAF 2,000,000 net taxable** — XAF 220,000  _(PwC Worldwide Tax Summaries — Cameroon)_
-- **Cumulative IRPP (incl. CAC) at XAF 3,000,000 net taxable** — XAF 385,000  _(PwC Worldwide Tax Summaries — Cameroon)_
-- **Cumulative IRPP (incl. CAC) at XAF 5,000,000 net taxable** — XAF 935,000  _(PwC Worldwide Tax Summaries — Cameroon)_
-- **Professional/business expense lump-sum deduction** — 30% of post-CNPS taxable salary  _(Rivermate; RemotePeople)_
-- **Standard employment income abatement (annual)** — XAF 500,000  _(RemotePeople)_
-- **Rounding rule for net taxable salary before applying IRPP scale** — Round down to nearest XAF 1,000  _(PwC Worldwide Tax Summaries — Cameroon)_
-- **IRPP rate on income from stocks/shares** — 16.5% (overall)  _(PwC Worldwide Tax Summaries — Cameroon)_
-- **Benefit-in-kind valuation — housing (% of taxable income)** — 15%  _(PwC Worldwide Tax Summaries — Cameroon, Income determination)_
-- **Benefit-in-kind valuation — electricity (% of taxable income)** — 4%  _(PwC Worldwide Tax Summaries — Cameroon, Income determination)_
-- **Benefit-in-kind valuation — water (% of taxable income)** — 2%  _(PwC Worldwide Tax Summaries — Cameroon, Income determination)_
-- **CNPS monthly contribution ceiling** — XAF 750,000/month  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes; CNPS official site)_
-- **CNPS annual contribution ceiling** — XAF 9,000,000/year  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes; CNPS official site)_
-- **CNPS old-age/disability/survivor pension — employee rate** — 4.2%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
-- **CNPS old-age/disability/survivor pension — employer rate** — 4.2%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
-- **Employee family allowances rate** — 0%  _(CLEISS)_
-- **CNPS family allowances — employer rate (general private sector)** — 7.0%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes; Rivermate)_
-- **CNPS occupational accident insurance — employee rate** — 0%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
-- **CNPS occupational accident insurance — employer rate (low risk class)** — 1.75%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
-- **CNPS occupational accident insurance — employer rate (mid risk class)** — 2.5%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
-- **CNPS occupational accident insurance — employer rate (high risk class)** — 5%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
-- **CNPS total employer rate excluding occupational accident** — 11.2%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
-- **CNPS total employer rate including accident (low to high range)** — 12.95% – 16.2%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
-- **Maximum monthly employee CNPS pension contribution (at ceiling)** — XAF 31,500/month (4.2% × 750,000)  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes; CNPS official site)_
-- **Maximum monthly employer CNPS pension contribution (at ceiling)** — XAF 31,500/month (4.2% × 750,000)  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes; CNPS official site)_
-- **Maximum monthly employer CNPS family allowance contribution (at ceiling)** — XAF 52,500/month (7.0% × 750,000)  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes; CNPS official site)_
-- **Maximum monthly employer CNPS accident contribution — low risk (at ceiling)** — XAF 13,125/month (1.75% × 750,000)  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes; CNPS official site)_
-- **Maximum monthly employer CNPS accident contribution — mid risk (at ceiling)** — XAF 18,750/month (2.5% × 750,000)  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes; CNPS official site)_
-- **Maximum monthly employer CNPS accident contribution — high risk (at ceiling)** — XAF 37,500/month (5% × 750,000)  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes; CNPS official site)_
-- **CNPS voluntary/self-insured contribution rate (pension branch only)** — 8.4% of declared income  _(CNPS official site; PwC Worldwide Tax Summaries — Cameroon, Individual/Other taxes)_
-- **CNPS voluntary contribution — minimum declared income base** — XAF 36,270/month  _(CNPS official site)_
-- **CNPS voluntary contribution — maximum declared income base** — XAF 750,000/month  _(CNPS official site)_
-- **CNPS family allowance reduced rate — agriculture sector (secondary source)** — ~5.65%  _(Playroll (secondary source only — research gap))_
-- **CNPS family allowance reduced rate — private teachers sector (secondary source)** — ~3.7%  _(Playroll (secondary source only — research gap))_
-- **Crédit Foncier du Cameroun (CFC) – employee rate** — 1.0% of taxable salary  _(PwC Other taxes)_
-- **Crédit Foncier du Cameroun (CFC) – employer rate** — 1.5% of taxable salary  _(PwC Other taxes)_
-- **FNE National Employment Fund — employer rate** — 1.0% of taxable salary  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes)_
-- **Fonds National de l'Emploi (FNE) – employee rate** — 0%  _(PwC Other taxes)_
-- **Combined CFC + FNE employer payroll levy** — 2.5% of total salaries and fringe benefits  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
-- **CFC + FNE ceiling** — No ceiling stated; levied on full taxable salary  _(PwC Worldwide Tax Summaries — Cameroon)_
-- **SMIG — private sector non-agricultural (secondary source)** — XAF 60,000/month  _(Playroll; RemotePeople (secondary EOR sources — research gap, sources disagree))_
-- **SMIG — private sector agricultural (secondary source)** — XAF 45,000/month  _(Playroll; RemotePeople (secondary EOR sources — research gap))_
-- **SMIG — state employees (secondary source)** — XAF 43,969/month  _(Playroll; RemotePeople (secondary EOR sources — research gap))_
-- **Monthly DIPE return + PAYE/IRPP + salary levies remittance deadline** — 15th of the following month  _(PwC Worldwide Tax Summaries — Cameroon, Tax administration)_
-- **CNPS monthly contributions deadline** — 15th of the following month  _(PwC Worldwide Tax Summaries — Cameroon, Other taxes; CNPS)_
-- **Annual individual tax return deadline** — 15 March following year-end  _(PwC Worldwide Tax Summaries — Cameroon, Tax administration)_
-- **Annual payroll-tax adjustment DIPE recapitulative — DGE (Large Taxpayer Office)** — 15 March  _(PwC Worldwide Tax Summaries — Cameroon, Tax administration)_
-- **Annual DIPE recapitulative — Medium & Specialized Tax Centres (CIME/CSI)** — 15 April  _(PwC Worldwide Tax Summaries — Cameroon, Tax administration)_
-- **Annual DIPE recapitulative — Divisional Tax Centres (CDI)** — 15 May  _(PwC Worldwide Tax Summaries — Cameroon, Tax administration)_
-- **Record retention period** — 10 years  _(PwC Worldwide Tax Summaries — Cameroon, Tax administration)_
-- **Late monthly declaration penalty rate** — 10% per month, capped at 30% of tax due (Finance Law 2010)  _(PwC Worldwide Tax Summaries — Cameroon; Finance Law 2010)_
-- **Late payment interest rate** — 1.5% per month, capped at 50%, from 30 days after deadline (since 1 January 2018)  _(PwC Worldwide Tax Summaries — Cameroon)_
-- **Assessment penalty — good faith** — 30%  _(PwC Worldwide Tax Summaries — Cameroon)_
-- **Assessment penalty — bad faith** — 100%  _(PwC Worldwide Tax Summaries — Cameroon)_
-- **Fraud** — 150%
-- **CNPS affiliation threshold — minimum headcount for mandatory affiliation** — First employee (no headcount threshold — mandatory from first hire)  _(CNPS official site)_
-
-**Audiovisual royalty (CRTV redevance audiovisuelle) monthly bands**
-
-| Monthly taxable income (CFA francs) | CRTV amount |
-| --- | --- |
-| 0 – 50,000 | 0 |
-| 50,001 – 100,000 | 750 |
-| 100,001 – 200,000 | 1950 |
-| 200,001 – 300,000 | 3250 |
-| 300,001 – 400,000 | 4550 |
-| 400,001 – 500,000 | 5850 |
-| 500,001 – 600,000 | 7150 |
-| 600,001 – 700,000 | 8450 |
-| 700,001 – 800,000 | 9750 |
-| 800,001 – 900,000 | 11050 |
-| 900,001 – 1,000,000 | 12350 |
-| Above 1,000,000 | 13000 |
-
-**Council tax (Taxe Communale Libératoire) monthly bands**
-
-| Monthly salary (CFAF) | Council tax amount |
-| --- | --- |
-| 62,000 – 75,000 | 250 |
-| 75,001 – 100,000 | 500 |
-| 100,001 – 125,000 | 750 |
-| 125,001 – 150,000 | 1000 |
-| 150,001 – 200,000 | 1250 |
-| 200,001 – 250,000 | 1500 |
-| 250,001 – 300,000 | 2000 |
-| 300,001 – 500,000 | 2250 |
-| Above 500,000 | 2500 |
-
-- **IRPP for dividend paid to a country deemed as tax heaven** — 0.33
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Nkinyam Courage Ndasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 — Quick Reference
 

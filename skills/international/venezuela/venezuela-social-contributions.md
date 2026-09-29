@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Venezuela social security and 
 version: 0.1
 jurisdiction: VE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Jose Padilla
 review_status: current
 depends_on:
@@ -18,63 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Venezuela Social Security & Payroll Contributions Skill v0.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Jose Padilla** on 2026-06-21.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### venezuela-social-contributions
-
-- **Salario mínimo mensual legal (salario mínimo)** — VES 130  _(PwC; CloudPay)_
-- **Valor de la Unidad Tributaria (UT/TU) 2025** — VES 43  _(Administrative Ruling SNAT/2025/000048, Official Gazette 2 June 2025 (Orbitax))_
-- **Annual ISLR (personal income tax) return deadline** — 31 March following the tax year (cannot be extended)  _(PwC Tax administration)_
-- **IVSS (Social Security) — employer contribution rate (by risk class)** — 9% / 10% / 11%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **IVSS (Social Security) — employee contribution rate** — 4%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Techo contributivo del IVSS (trabajadores urbanos)** — 5 salarios mínimos = VES 650/mes (5 × VES 130)  _(PwC; CloudPay)_
-- **Desempleo (Régimen Prestacional de Empleo) — tasa de contribución patronal** — 2%  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desempleo (Régimen Prestacional de Empleo) — tasa de contribución del empleado** — 0.5%  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Techo contributivo del Paro Forzoso (trabajadores urbanos)** — 10 salarios mínimos = VES 1,300/mes (10 × VES 130)  _(PwC)_
-- **FAOV (Housing) — employer contribution rate** — 2%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **FAOV (Housing / Ley de Vivienda y Hábitat) — employee contribution rate** — 1%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **FAOV — tope de cotización** — Maximo 10 salarios minimos  _(El artículo 172 de la Ley de Régimen Prestacional de Vivienda y Hábitat,)_
-- **INCES employer rate (on total salaries paid)** — 2%  _(PwC Worldwide Tax Summaries — Venezuela)_
-- **INCES employee rate (on annual utilidades profit-share bonus)** — 0.5%  _(PwC Worldwide Tax Summaries — Venezuela)_
-- **Tasa patronal de LOPCYMAT (según nivel de riesgo; solo a cargo del patrono)** — 0.75% – 10%  _(PwC Worldwide Tax Summaries — Venezuela)_
-- **Tasa del trabajador de LOPCYMAT** — 0  _(la lopcymat no pide pagos regulares solo establece sanciones por incumplimientos (multas))_
-- **Tope absoluto del IVSS (VES, salario mínimo congelado)** — VES 650/month (5 × VES 130)  _(PwC; CloudPay)_
-- **Tope absoluto del Paro Forzoso (VES, salario mínimo congelado)** — VES 1,300/month (10 × VES 130)  _(PwC)_
-- **Tramo del ISLR: 0 – 1,000 UT** — 6%; subtraction 0 TU  _(PwC — Venezuela, Individual, Taxes on personal income)_
-- **Tramo del ISLR: 1,000 – 1,500 UT** — 9%; subtraction 30 TU  _(PwC — Venezuela, Individual, Taxes on personal income)_
-- **Tramo del ISLR: 1,500 – 2,000 UT** — 12%; subtraction 75 TU  _(PwC — Venezuela, Individual, Taxes on personal income)_
-- **Tramo del ISLR: 2,000 – 2,500 UT** — 16%; subtraction 155 TU  _(PwC — Venezuela, Individual, Taxes on personal income)_
-- **Tramo del ISLR: 2,500 – 3,000 UT** — 20%; subtraction 255 TU  _(PwC — Venezuela, Individual, Taxes on personal income)_
-- **Tramo del ISLR: 3,000 – 4,000 UT** — 24%; subtraction 375 TU  _(PwC — Venezuela, Individual, Taxes on personal income)_
-- **Tramo del ISLR: 4,000 – 6,000 UT** — 29%; sustraendo 575 UT  _(PwC — Venezuela, Individual, Taxes on personal income)_
-- **Tramo del ISLR: más de 6,000 UT** — 34%; sustraendo 875 UT  _(PwC — Venezuela, Individual, Taxes on personal income)_
-- **No residente — actividades profesionales no empresariales — tasa legal** — 34% sobre el 90% del ingreso bruto  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Impuesto corporativo (Tarifa 2): 0 – 2,000 UT** — 15%  _(PwC — Venezuela, Corporate, Taxes on corporate income)_
-- **Impuesto corporativo (Tarifa 2): 2,000 – 3,000 UT** — 22%  _(PwC — Venezuela, Corporate, Taxes on corporate income)_
-- **Impuesto corporativo (Tarifa 2): más de 3,000 UT** — 34%  _(PwC — Venezuela, Corporate, Taxes on corporate income)_
-- **Tasa fija especial: explotación petrolera** — 50%  _(PwC — Venezuela, Corporate, Taxes on corporate income)_
-- **Tasa fija especial: bancos / entidades financieras / seguros** — 40%  _(PwC — Venezuela, Corporate, Taxes on corporate income)_
-- **Tasa plana especial: corporaciones en consorcio (joint-venture)** — 50%  _(PwC — Venezuela, Corporate, Taxes on corporate income)_
-- **Umbral para la declaración de impuesto estimado (ingresos calificados del año anterior)** — > 1,500 TU (= VES 64,500 a la UT 43 para 2025)  _(PwC, Tax administration)_
-- **Fórmula del impuesto estimado** — 75% del impuesto calculado sobre el 80% de los ingresos netos del ejercicio anterior; pagadero en una sola cuota o en 6 cuotas iguales, salvo para sujeto pasivo contribuyente especial que sustituye este proceso por el regimen especial de anticipos que es el 1% de las ventas brutas de cada quincena y pagadero en cada quincena  _(PwC, Tax administration)_
-- **Formulario de ISLR para personas naturales (2025, sin confirmar)** — la forma se llama DPN-99025 y actualmente es electronica, tambien llamada forma 25 entre los contadores pero actualmente al ser electronica no se le conoce como forma  _(PwC (no menciona el código para 2025))_
-- **Regla de declaración para cónyuges** — Los cónyuges declaran conjuntamente como un solo contribuyente; la declaración separada solo procede con acuerdo escrito de separación de bienes Y cuando los ingresos se limiten a sueldos/honorarios  _(PwC, Tax administration)_
-- **Sanción: omisión de ingresos / subdeclaración del ISLR** — Multa del 100% – 300% del impuesto omitido  _(Grant Thornton Venezuela penalty schedule; Justia COT)_
-- **Sanción: omisión de presentar una declaración** — Cierre del establecimiento por 10 días más multa de 150× la tasa de la divisa de mayor valor del BCV  _(Grant Thornton Venezuela penalty schedule; Justia COT)_
-- **Sanción: declaración incompleta o presentada con retraso de hasta un año** — Multa de 100× la tasa de la divisa de mayor valor del BCV  _(Grant Thornton Venezuela penalty schedule; Justia COT)_
-- **Special taxpayer penalty multiplier (COT Art. 108)** — Penalties increased by 200%  _(COT Art. 108; Grant Thornton Venezuela)_
-- **Base de indexación de sanciones** — Las sanciones pecuniarias se indexan a la tasa oficial del BCV de la divisa extranjera de mayor valor (indexadas al tipo de cambio, no a la UT)  _(COT 2020 reform)_
-- **Fórmula del tope del IVSS** — 5 × salario mínimo mensual  _(PwC)_
-- **Fórmula del tope del Paro Forzoso** — 10 × salario mínimo mensual  _(PwC)_
-- **Umbral del anticipo de impuesto en VES (2025)** — VES 64,500 (1,500 TU × VES 43)  _(PwC, Tax administration)_
-- **INCES employee contribution base** — Annual utilidades (profit-share) bonus — NOT monthly salary; no cap  _(PwC)_
-- **Base de la contribución al FAOV** — Maximo 10 salarios minimos  _(El artículo 172 de la Ley de Régimen Prestacional de Vivienda y Hábitat,)_
-- **Partidas no salariales excluidas de todas las bases de contribución** — Además la ley establece que no se debe incluir el bono de transporte pero en toda la legislación de Venezuela hay varias caracteristicas que pueden hacer que un bono no tenga caracter salarial y para ello es necesario evaluarlo uno a uno el caso  _(PwC; government non-salary classification)_
-- **Rango de tarifas del ISLR para residentes** — 6% – 34% (progresivo, sobre ingresos mundiales)  _(PwC, Taxes on personal income)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Jose Padilla** on 2026-06-21; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 

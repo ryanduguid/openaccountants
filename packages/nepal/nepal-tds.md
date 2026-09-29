@@ -1,5 +1,6 @@
 ---
 name: nepal-tds
+version: 1.1
 description: ALWAYS read this skill before touching any Nepal TDS / withholding tax work. Use whenever asked to compute or deduct Nepal withholding tax (TDS) on rent, interest, dividends, service/contract payments, or payments to non-residents under the Income Tax Act 2058. Trigger on phrases like "Nepal TDS", "Nepal withholding", "TDS rates Nepal", "Section 88 Nepal", "rent TDS Nepal 10%", "dividend TDS Nepal 5%", "interest TDS Nepal 6%", "contract TDS Nepal 1.5%", or "FY 2082/83 TDS". Out of scope — personal income tax computation (separate skill), corporate tax (separate skill), payroll/SSF salary TDS (use the payroll skill), and VAT.
 jurisdiction: NP
 tax_year: 2025
@@ -12,31 +13,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Nepal Tds
 
-## Nepal — TDS / Withholding Tax — Skill v1.0
-
-> **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Coverage: FY 2082/83. Until 2026-09-29 this banner still read "Research-grade (tier 2)", the draft label the guide carried before that review. **Source provenance of the draft:** figures derive from Nepali professional-firm publications (PKF T.R. Upadhya, Union Nepal) reflecting the Income Tax Act 2058 §87–§88 and Finance Act 2082, not re-anchored to primary IRD pages; the review excluded items flagged for further clarification. Confirm any figure outside the reviewed block against the statute before reliance. Not tax advice.
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ashish Bista** on 2026-06-06.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### TDS (Withholding)
-
-- **Rent (paid by a resident person)** — 10%  _(Income Tax Act 2058 s.88 (PKF s.7.1))_
-- **Dividend (resident company/partnership)** — 5% (resident AND non-resident)  _(PKF s.7.1)_
-- **Interest (Nepal source) — natural person not in business** — 6%  _(PKF s.7.1; Union Nepal)_
-- **Interest (Nepal source) — entities** — 15%  _(PKF s.7.1)_
-- **Contract/agreement payment to a non-resident** — 5%  _(PKF s.7.1)_
-- **Resident contract/supply payments exceeding NPR 50,000** — 1.5%  _(PKF s.7.1)_
-- **Flat 15% Section 88 on interest/rent/service** — REFUTED — do not use; the effective rates above govern  _(PKF s.7.1)_
-- **10% dividend TDS** — 5% (10% figure refuted)  _(PKF s.7.1)_
-- **Non-resident service/royalty/technical fees + DTAA** — 15% standard TDS (subject to lower rates if a DTAA applies)  _(Income Tax Act 2058 s.88)_
-- **TDS deposit / return due dates** — 25th of the following Nepali month  _(Income Tax Act 2058 s.90)_
-- **Consultancy & Service Fees (Resident)** — 1.5% (if VAT registered) / 15% (if not VAT registered)  _(Income Tax Act 2058 s.88)_
-- **Freight & Transportation Services** — 1.5% (if VAT registered) / 2.5% (if not VAT registered)  _(Income Tax Act 2058 s.88)_
-- **Windfall Gains (Prizes, Lottery)** — 25% (Final withholding)  _(Income Tax Act 2058 s.88)_
+## Nepal — TDS / Withholding Tax — Skill v1.1
+> **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Coverage: FY 2082/83. Until 2026-09-29 this banner still read "Research-grade (tier 2)", the draft label the guide carried before that review. **Source provenance of the draft:** figures derive from Nepali professional-firm publications (PKF T.R. Upadhya, Union Nepal) reflecting the Income Tax Act 2058 §87–§88 and Finance Act 2082, not re-anchored to primary IRD pages; the review excluded items flagged for further clarification. Confirm any figure outside the reviewed figures against the statute before reliance. Not tax advice.
 
 ## Section 1 — Quick reference (rates, FY 2082/83 — "no change" from FY 2024-25)
 
@@ -49,6 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Interest** (Nepal source, from resident banks / FIs / cooperatives / debenture issuers / listed companies) | **6%** to a natural person (not in business); **15%** to entities |  |
 | **Contract / agreement payment to a non-resident** | **5%** |  |
 | **Contract payments exceeding NPR 50,000** | **1.5%** | Resident contract/supply payments |
+| **Freight and transportation services** | **1.5%** if the payee is VAT-registered; **2.5%** if not | Income Tax Act 2058 s.88 |
 
 **Field / Value**
 
@@ -58,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Statute | Income Tax Act 2058 (2002) §87–§88, as amended by Finance Act 2082 |
 | Income year | Shrawan 1 – Ashad end (BS); FY 2082/83 |
 | Validated by | Pending — Nepali CA / registered tax practitioner |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 > **Refuted / do NOT use:** a flat 15% Section 88 TDS on interest/rent/service, and a 10% dividend TDS — both appear in some secondary commentary but were adversarially refuted; the effective FY 2082/83 rates above govern.
 

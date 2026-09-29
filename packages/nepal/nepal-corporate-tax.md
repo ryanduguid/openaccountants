@@ -1,5 +1,6 @@
 ---
 name: nepal-corporate-tax
+version: 1.1
 description: "ALWAYS read this skill before touching any Nepal corporate income tax work. Use whenever asked about Nepal company tax for a resident entity. Trigger on phrases like \"Nepal corporate tax\", \"Nepal CIT\", \"company tax Nepal\", \"25% corporate Nepal\", \"30% bank tax Nepal\", \"special industry rebate Nepal\", \"Section 11 Nepal\", \"Income Tax Act 2058 company\", or \"FY 2082/83 company\". Covers the Income Tax Act 2058 (2002) as amended by the Finance Act 2082: the 25% normal rate, the 30% sector rate (banks/insurance/telecom/liquor-tobacco/etc.), and the effective 20% for special industries. Out of scope — personal income tax (separate skill), TDS (separate skill), payroll/SSF, VAT, and sector special computational regimes."
 jurisdiction: NP
 tax_year: 2025
@@ -12,33 +13,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Nepal Corporate Tax
 
-## Nepal — Corporate Income Tax — Skill v1.0
-
-> **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Coverage: FY 2082/83. Until 2026-09-29 this banner still read "Research-grade (tier 2)", the draft label the guide carried before that review. **Source provenance of the draft:** figures derive from Nepali professional-firm tax-fact publications (PKF T.R. Upadhya, Baker Tilly Nepal) reflecting the Income Tax Act 2058 and Finance Act 2082, not re-anchored to primary IRD pages; the review excluded items flagged for further clarification. Confirm any figure outside the reviewed block against the statute before reliance. Not tax advice.
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ashish Bista** on 2026-06-06.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Corporate Income Tax
-
-- **Normal rate** — 25% (general companies, firms, industries)  _(Income Tax Act 2058 Sch.1 (PKF/Baker Tilly))_
-- **Banks & financial institutions** — 30%  _(PKF; Baker Tilly)_
-- **General (non-life) insurance** — 30%  _(PKF; Baker Tilly)_
-- **Petroleum** — 30%  _(PKF; Baker Tilly)_
-- **Cigarettes/tobacco/cigars/pan masala/alcohol/beer** — 30%  _(PKF; Baker Tilly)_
-- **Telecom & internet service providers** — 30%  _(PKF; Baker Tilly)_
-- **Money transfer; capital market/securities/merchant banking/broker** — 30%  _(PKF; Baker Tilly)_
-- **Special industries (Section 11)** — Effective 20% (25% less a 20% rebate)  _(Income Tax Act 2058 s.11 (actNepal))_
-- **Listed shares — resident entity (capital gains)** — 10%  _(Income Tax Act 2058 s.95Ka (PKF/Baker Tilly))_
-- **Land/building — non-individual (entity) capital gains** — 1.5%  _(PKF; Baker Tilly)_
-- **Annual return / instalment due dates** — Advance tax due Poush end (40%), Chaitra end (70%), Ashad end (100%); Final return due Ashwin end  _(Income Tax Act 2058 s. 94 & 96)_
-- **Export / SEZ / sector concessions beyond Sec 11** — Startups (up to 100m turnover) exempt for 5 yrs; IT exports get 75% tax exemption  _(Finance Act 2083)_
-- **IT Industry Bonus Shares** — 0% dividend tax on the capitalization of profits (bonus shares) issued by IT industries  _(Finance Act 2083)_
-- **SEZ Rent Exemption** — 100% rent exemption for the first 3 years for new industries established in Special Economic Zones  _(Finance Act 2083)_
-- **Tax Dispute Resolution (Waiver)** — One-time settlement window: principal tax + 1% fee (waives penalties/interest)  _(Finance Act 2083)_
+## Nepal — Corporate Income Tax — Skill v1.1
+> **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Coverage: FY 2082/83. Until 2026-09-29 this banner still read "Research-grade (tier 2)", the draft label the guide carried before that review. **Source provenance of the draft:** figures derive from Nepali professional-firm tax-fact publications (PKF T.R. Upadhya, Baker Tilly Nepal) reflecting the Income Tax Act 2058 and Finance Act 2082, not re-anchored to primary IRD pages; the review excluded items flagged for further clarification. Confirm any figure outside the reviewed figures against the statute before reliance. Not tax advice.
 
 ## Section 1 — Quick reference
 
@@ -54,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Sector rate** | **30%** — see §3.2 |
 | **Special industries (Sec 11)** | Effective **20%** (25% normal less a 20% rebate) |
 | Validated by | Pending — Nepali CA / registered tax practitioner |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Conservative defaults
 
@@ -69,7 +45,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Section 2 — Refusal catalogue
 
 - **R-NP-CT-1** — Sector special computational regimes (banking provisioning, insurance, petroleum) — out of scope; escalate.  _(Section 2 — Refusal catalogue)_
-- **R-NP-CT-2** — Special-industry / export / SEZ concessions beyond the headline Section 11 rebate — VERIFY against the Act; escalate.  _(Section 2 — Refusal catalogue)_
+- **R-NP-CT-2** — Special-industry / export / SEZ concessions beyond the headline Section 11 rebate and the three stated in Section 3 (startups with turnover up to NPR 100 million: exempt for 5 years; IT service exports: 75% exemption; new industries in Special Economic Zones: 100% rent exemption for the first 3 years — Finance Act 2083) — VERIFY against the Act; escalate.  _(Section 2 — Refusal catalogue)_
 - **R-NP-CT-3** — Cross-skill. Personal → `nepal-income-tax`; TDS → `nepal-tds`; payroll/SSF → `nepal-payroll`; VAT → `nepal-vat`.  _(Section 2 — Refusal catalogue)_
 
 ## Section 3 — Tier 1 rates
@@ -104,7 +80,7 @@ Rates are **unchanged from FY 2024-25**. **Source:** PKF Trunco; Baker Tilly; ac
 ## Section 6 — Filing
 
 - Income year Shrawan 1 – Ashad end; file via IRD with PAN.
-- Annual return + instalment due dates — **VERIFY** (not established by the research).
+- Advance tax instalments: 40% of the estimated annual liability by Poush end (mid-January), 70% cumulative by Chaitra end (mid-April) and 100% by Ashad end (mid-July); the annual return is due by Ashwin end (mid-October) — Income Tax Act 2058 ss. 94 and 96.
 
 ## Section 7 — Sources
 
@@ -114,7 +90,7 @@ Research-grade, FY 2082/83. **Secondary firm publications — re-anchor to prima
 3. Income Tax Act 2058 (2002), Section 11 + Schedule 1 — confirm at https://ird.gov.np
 4. Finance Act 2082.
 
-**Known gaps / VERIFY:** primary citations; full special-industry / export / SEZ concession schedule; annual return due dates.
+**Known gaps / VERIFY:** primary citations; the full special-industry / export / SEZ concession schedule beyond the startup (5-year exemption up to NPR 100 million turnover), IT-export (75% exemption) and SEZ-rent (100% for the first 3 years) concessions of Finance Act 2083.
 
 ## Prohibitions
 

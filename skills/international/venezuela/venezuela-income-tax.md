@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Venezuela personal income tax (
 version: 0.1
 jurisdiction: VE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Jose Padilla
 review_status: current
 depends_on:
@@ -18,87 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Venezuelan Income Tax (ISLR) — Individual Skill v0.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Jose Padilla** on 2026-06-21.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### venezuela-income-tax
-
-- **Valor de la Unidad Tributaria (UT) — vigente** — VES 43.00 por UT  _(SNAT/2025/000048, Gaceta Oficial 2 June 2025)_
-- **Valor de la Unidad Tributaria (UT) — anterior** — VES 9.00 por UT  _(SNAT (providencia anterior))_
-- **Incremento del valor de la UT (VES 9.00 → VES 43.00)** — ~377.8%  _(SNAT/2025/000048)_
-- **Tasa marginal máxima — residentes (Tarifa Nº 1)** — 34%  _(LISLR Tarifa Nº 1)_
-- **Tasa fija para no residentes sobre rentas de fuente venezolana** — 34%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 1: 0–1,000 UT — alícuota** — 6%  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 1: 0–1,000 UT — sustraendo** — 0 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 1: 0–1,000 UT — impuesto acumulado al tope del tramo** — 60 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 2: 1,000–1,500 UT — tasa** — 9%  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 2: 1,000–1,500 UT — sustraendo** — 30 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 2: 1,000–1,500 UT — impuesto acumulado al tope del tramo** — 105 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 3: 1,500–2,000 UT — tasa** — 12%  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 3: 1,500–2,000 UT — sustraendo** — 75 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 3: 1,500–2,000 UT — impuesto acumulado al tope del tramo** — 165 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 4: 2,000–2,500 UT — tasa** — 16%  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Tramo 4: 2,000–2,500 UT — sustraendo** — 155 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 4: 2,000–2,500 UT — impuesto acumulado al tope de la banda** — 245 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 5: 2,500–3,000 UT — tasa** — 20%  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 5: 2,500–3,000 UT — sustraendo** — 255 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 5: 2,500–3,000 UT — impuesto acumulado al tope de la banda** — 345 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 6: 3,000–4,000 UT — tasa** — 24%  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 6: 3,000–4,000 UT — sustraendo** — 375 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 6: 3,000–4,000 UT — impuesto acumulado al tope de la banda** — 585 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 7: 4,000–6,000 UT — tasa** — 29%  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 7: 4,000–6,000 UT — sustraendo** — 575 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 7: 4,000–6,000 UT — impuesto acumulado al tope de la banda** — 1,165 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 8: Más de 6,000 UT — tasa** — 34%  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Tarifa Nº 1 — Banda 8: Más de 6,000 UT — sustraendo** — 875 UT  _(LISLR Tarifa Nº 1; PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Fórmula del impuesto — Tarifa Nº 1** — Impuesto (UT) = (tasa × renta gravable en UT) − sustraendo  _(LISLR Tarifa Nº 1)_
-- **No residente — sueldos/servicios en Venezuela — tasa fija** — 34% del ingreso bruto  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **No residente — actividades profesionales no empresariales — tasa legal** — 34% sobre el 90% del ingreso bruto  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **No residente — actividades profesionales no empresariales — tasa efectiva** — ~30.6% del ingreso bruto  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desgravamen único** — 774 UT/año  _(LISLR; PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desgravamen único — equivalente en VES a la UT 2025** — VES 33,282.00  _(SNAT/2025/000048)_
-- **Desgravamen detallado — intereses hipotecarios sobre vivienda principal — límite anual** — 1,000 UT/año  _(LISLR; PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desgravamen detallado — límite de intereses hipotecarios — equivalente en VES a la UT 2025** — VES 43,000.00  _(SNAT/2025/000048)_
-- **Desgravamen detallado — alquiler de vivienda principal/permanente — límite anual** — 800 UT/año  _(LISLR; PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desgravamen detallado — límite de alquiler — equivalente en VES a la UT 2025** — VES 34,400.00  _(SNAT/2025/000048)_
-- **Desgravamen detallado — educación (contribuyente e hijos menores de 26 años) — límite anual** — Sin límite establecido  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Arrastre de pérdidas — período máximo** — 3 años  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Arrastre de pérdidas — límite anual de compensación como % de la renta gravable del año en curso** — 25%  _(PwC Worldwide Tax Summaries, revisado 12 Jan 2026)_
-- **Crédito personal del contribuyente** — 10 UT  _(LISLR; PwC Worldwide Tax Summaries, revisado 12 Jan 2026)_
-- **Crédito personal del cónyuge** — 10 UT  _(LISLR; PwC Worldwide Tax Summaries, revisado 12 Jan 2026)_
-- **Crédito por carga familiar (menor de edad; incapacitado; o estudiante menor de 25 años)** — 10 UT por cada uno  _(LISLR; PwC Worldwide Tax Summaries, revisado 12 Jan 2026)_
-- **Valor de cada crédito de 10 UT en VES a la tasa de UT 2025** — VES 430.00  _(SNAT/2025/000048)_
-- **Fecha límite de la declaración definitiva de rentas** — 31 de marzo del año siguiente — SIN prórroga  _(LISLR; PwC Worldwide Tax Summaries, revisado 12 Jan 2026)_
-- **Umbral de la declaración estimada — ingresos del año anterior provenientes de actividad comercial/profesional/arrendamiento** — 1,500 UT  _(LISLR; PwC Worldwide Tax Summaries, revisado 12 Jan 2026)_
-- **Umbral de la declaración estimada — equivalente en VES a la UT 2025** — VES 64,500.00  _(SNAT/2025/000048)_
-- **Opciones de pago del anticipo de impuesto** — Pago único o 6 cuotas iguales; anticipos quincenales para contribuyentes especiales no asalariados  _(PwC Worldwide Tax Summaries, revisado 12 Jan 2026)_
-- **Retención del ISLR sobre servicios profesionales/técnicos prestados por residentes (Decreto 1.808) — [BRECHA DE INVESTIGACIÓN]** — ~10% en la fuente  _(Decreto 1.808 / SENIAT [RESEARCH GAP — secondary source only])_
-- **IVA (VAT) standard rate** — 16%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **IVSS (Social Security) — employee contribution rate** — 4%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **IVSS (Social Security) — employer contribution rate (by risk class)** — 9% / 10% / 11%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **IVSS — base de cotización** — Salario normal/regular  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **IVSS — tope de cotización** — Hasta 5 salarios mínimos (urbanos)  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desempleo (Régimen Prestacional de Empleo) — tasa de contribución del empleado** — 0.5%  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desempleo (Régimen Prestacional de Empleo) — tasa de contribución patronal** — 2%  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desempleo — tope de cotización** — Hasta 10 salarios mínimos (urbanos)  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **FAOV (Housing / Ley de Vivienda y Hábitat) — employee contribution rate** — 1%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **FAOV (Housing) — employer contribution rate** — 2%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **FAOV — base de cotización** — Salario mensual total (integral)  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **FAOV — tope de cotización** — Maximo 10 salarios minimos  _(El artículo 172 de la Ley de Régimen Prestacional de Vivienda y Hábitat,)_
-- **INCES (Worker training) — employee contribution rate** — 0.5% (from year-end utilidades)  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **INCES — employer contribution rate** — 2% of total wages  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Base de la contribución del empleado al INCES** — Utilidades anuales — NO el salario mensual; sin tope  _(PwC)_
-- **LOPCYMAT (Workplace risk) — employer contribution rate** — 0.75% – 10% (risk-dependent)  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tasa parafiscal total a cargo del empleado (aportes del trabajador al IVSS + desempleo + FAOV + INCES sobre el salario normal)** — 6.0%  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Salario mínimo legal (congelado)** — VES 130/mes  _(Decreto 4.653, vigente desde el 15 March 2022)_
-- **Ingreso mínimo integral indexado (piso de ingresos no salariales en bonos)** — ~USD 160/mes  _(Anuncio del Ejecutivo del 30 April 2025)_
-- **Mecanismo de sanciones del COT — base de cálculo de multas pecuniarias** — Múltiplos del tipo de cambio oficial de la moneda de mayor valor publicado por el BCV (efectivamente USD) a la fecha de pago  _(COT Art. 91, reforma 2020)_
-- **Presentación tardía de una declaración / declaración de retenciones — orden de magnitud** — ~100–150× la tasa de la moneda de mayor valor (declaraciones de retenciones citadas en 150×)  _(Tabla del COT de Grant Thornton; jurisprudencia del TSJ [RESEARCH GAP — full table])_
-- **Omisión de presentación de declaraciones (deber formal, COT Art. 103/155) — orden de magnitud** — 150–300× la tasa de la moneda de mayor valor  _(COT Art. 103/155; decisiones del TSJ [RESEARCH GAP — full table])_
-- **Tasa de interés por pago tardío** — Tasa activa de mercado × 1.2  _(COT)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Jose Padilla** on 2026-06-21; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Critical Structural Warning — Read First
 

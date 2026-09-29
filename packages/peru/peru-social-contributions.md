@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Peru payroll contributions, soc
 version: 0.1
 jurisdiction: PE
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -18,52 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Peru Social Security, Health & Payroll Contributions Skill v0.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Maria Clemencia Valverde Rios** on 2026-06-29.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### peru-social-contributions
-
-- **Currency** — PEN (Peruvian Sol, S/)
-- **Indexing unit (UIT) 2025** — PEN 5,350
-- **Indexing unit (UIT) 2026** — PEN 5,500
-- **Minimum wage (RMV)** — PEN 1,130/month from 1 Jan 2025  _(D.S. 006-2024-TR)_
-- **EsSalud (health) rate** — 9% of remuneration, employer-borne, no cap
-- **ONP (public pension) rate** — 13% of remuneration, employee-borne
-- **AFP (private pension) total rate** — ~12.84%–13.06% of remuneration, employee-borne
-- **Monthly filing form** — Electronic Payroll is PLAME, Virtual Form 0601, version v4.6, which is mandatory for tax returns as of the January 2026  _(Art. 2 RS No000016-2026 SUNAT)_
-- **Monthly PLAME filing deadline** — Monthly, by date matching last digit of employer's RUC per SUNAT annual cronograma;  _(Art. 4°-b DS N° 018-2007-TR)_
-- **Annual return deadline (FY2025)** — Due 27 May – 10 Jun 2026 by RUC digit
-- **EsSalud minimum base** — min base = RMV (apply 9% on the RMV PEN 1,130 minimum base if salary below RMV)
-- **Fifth-category income tax rate range** — 8%–30% progressive (UIT brackets)
-- **AFP mandatory contribution (aporte obligatorio)** — 10%
-- **AFP disability/survivor insurance premium (prima)** — 1.37% (capped at RMA, uniform across all AFPs)
-- **AFP Habitat commission (flujo) and total** — Habitat flujo commission 1.47%; total 12.84%
-- **AFP Integra commission (flujo) and total** — Integra flujo commission 1.55%; total 12.92%
-- **AFP Prima commission (flujo) and total** — Prima flujo commission 1.60%; total 12.97%
-- **AFP Profuturo commission (flujo) and total** — Profuturo flujo commission 1.69%; total 13.06%
-- **AFP comisión mixta flow commission** — 0% for all four AFPs (since Feb 2023); on-salary deduction is 10% + 1.37% = 11.37%
-- **AFP comisión mixta annual charge on fund balance** — Profuturo 0.68%, Integra 0.78%, Habitat & Prima 1.25%
-- **Remuneración Máxima Asegurable (RMA) for prima ceiling** — ~PEN 12,209.11 (early 2026) and PEN 12,598.91 for Apr–Jun 2026; updated quarterly by SBS
-- **EPS private health plan credit against EsSalud** — Up to 25% of the EsSalud obligation credited to EPS (~2.25% to EPS, ~6.75% still to EsSalud)
-- **Fifth-category bracket 1** — Up to 5 UIT (0 – 27,500 PEN 2026): 8%
-- **Fifth-category bracket 2** — Over 5 to 20 UIT (27,500 – 110,000 PEN 2026): 14%
-- **Fifth-category bracket 3** — Over 20 to 35 UIT (110,000 – 192,500 PEN 2026): 17%
-- **Fifth-category bracket 4** — Over 35 to 45 UIT (192,500 – 247,500 PEN 2026): 20%
-- **Fifth-category bracket 5** — Over 45 UIT (Over 247,500 PEN 2026): 30%
-- **7-UIT exemption (residents) 2025** — 7 × 5,350 = PEN 37,450
-- **7-UIT exemption (residents) 2026** — 7 × 5,500 = PEN 38,500
-- **Additional documented-expense deduction** — Up to 3 UIT deductible for documented expenses (property lease, professional services, hotels, restaurants, etc.)
-- **Non-domiciled flat income tax rate** — Flat 30% on gross Peruvian-source employment income, NO 7-UIT exemption, NO additional deductions
-- **PLAME version mandatory** — Version 4.5 mandatory for periods from Oct 2025
-- **Employer registration trigger** — Triggered by employing staff, not by a wage threshold; no monetary registration threshold found
-- **CTS (Compensación por Tiempo de Servicios)** — ~9.72% of annual salary, deposited by 15 May & 15 Nov; base includes 1/6 of gratificación
-- **Gratificaciones (statutory bonus)** — Two per year (July Fiestas Patrias, December Navidad), ≈ one month's salary each, prorated if <6 months
-- **Penalty schedule** — RESEARCH GAP — no authoritative penalty schedule obtained; verify against SUNAT Código Tributario Tabla de Infracciones y Sanciones and SUNAFIL; do not invent figures  _(SUNAT Código Tributario Tabla de Infracciones y Sanciones)_
-- **SUNAFIL cumulative fine scale** — The official cumulative fine scale based on the number of affected employees is current under the comprehensive replacement ordered by DS No. 008-2020-TR, which amended Art. 48 of the Regulations of the General Labor Inspection Law (D.S No. 019-2006-TR), applied indexed to the current UIT value for the 2026 period.  _(Decreto Supremo N.° 008-2020-TR)_
-- **SUNAT infractions and sanctions governance** — Infractions and sanctions are governed by Art. 172° TUO del Código Tributario (D.S. N.° 133-2013-EF), but its text and actual application are amended and current under Decreto Legislativo N.° 1524 (which restructured registration offenses) in mandatory conjunction with the Regulations for the Leniency Regime Resolución de Superintendencia N.° 063-2007/SUNAT  _(Art. 13°-b RS N.° 000007-2025 SUNAT)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Maria Clemencia Valverde Rios** on 2026-06-29; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 
@@ -535,7 +490,7 @@ If the client provides only a bank statement and no other information:
 
 ### Penalties
 
-[RESEARCH GAP — reviewer to confirm.] A precise, authority-published penalty schedule (UIT-multiples / interest for late PLAME filing, late contribution payment, or CTS non-deposit) was NOT obtained from SUNAT or a Big-4 source for this skill. Verify directly against SUNAT's Código Tributario Tabla de Infracciones y Sanciones and SUNAFIL's labour-fine schedule before quoting any figure. Do not invent penalty numbers.
+No penalty amounts are quoted in this guide. The governing texts, confirmed in the 2026-06-29 review: labour infractions (unregistered workers, late PLAME) are fined by SUNAFIL on the cumulative scale by number of affected workers in art. 48 of the Reglamento de la Ley General de Inspección del Trabajo (D.S. N.° 019-2006-TR) as replaced by D.S. N.° 008-2020-TR, applied at the current UIT (S/ 5,500 for 2026); tax infractions follow arts. 172 ff. of the TUO del Código Tributario (D.S. N.° 133-2013-EF) as amended (Decreto Legislativo N.° 1524 restructured the registration offences), with the Régimen de Gradualidad of Resolución de Superintendencia N.° 063-2007/SUNAT (see RS N.° 000007-2025/SUNAT art. 13-b). Quote a figure only after reading the current table; do not invent penalty numbers.
 
 ### Worked tax computation (resident, 2026, UIT = 5,500)
 

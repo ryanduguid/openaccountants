@@ -1,7 +1,7 @@
 ---
 name: cyprus-tax-optimization
 description: Use this skill whenever asked about reducing tax in Cyprus, tax planning, or legal strategies to minimise tax for an individual, freelancer, or company in Cyprus. Trigger on phrases like "reduce tax Cyprus", "Cyprus non-dom", "non-domiciled", "0% dividend tax", "SDC exemption", "Cyprus IP box", "3% tax IP", "Cyprus company dividends", "60-day rule", "save tax Cyprus", "tax planning Cyprus". This skill covers the non-dom regime (17 years 0% SDC on dividends/interest/rents), the company-plus-dividend extraction structure, the IP Box (~3% on qualifying IP), self-employment vs company, the personal-income reliefs, and the substance/anti-avoidance red lines. ALWAYS read this skill before advising on any Cyprus tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: CY
 tax_year: 2025
 last_updated: 2026-09-29
@@ -15,39 +15,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cyprus Tax Optimization
 
-## Cyprus Tax Optimization Skill v0.1
-
-> **Accountant-reviewed (`tier: 1`).** Christos Thoma reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-12; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a Cyprus tax adviser", the draft label the guide carried before that review. **Provenance of the draft:** Cyprus Tax Department, PwC/KPMG/Deloitte Cyprus and 2026 tax-reform commentary; figures must agree with `cyprus-income-tax.md` / `cyprus-social-contributions.md`. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed. Aggressive positions are never advised; every suggestion must be reviewed against the client's facts.
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Christos Thoma** on 2026-06-12.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### cyprus-tax-optimization
-
-- **Personal income tax — zero-rate band (2025)** — 0% on income up to €19,500  _(cyprus-income-tax.md)_
-- **Personal income tax — zero-rate band (2026 reform)** — 0% on income up to €22,000  _(cyprus-income-tax.md)_
-- **Personal income tax — bands above zero-rate threshold** — 20%, 25%, 30%, 35%  _(cyprus-income-tax.md)_
-- **Corporate income tax (CIT) — current rate** — 15% standard corporate income tax rate from 1 January 2026; 12.5% applies up to 31 December 2025.  _(https://taxsummaries.pwc.com/cyprus/corporate/taxes-on-corporate-income ; https://www.pwc.com.cy/en/services/tax-legal-services/tax-advisory-services/the-cyprus-tax-reform.html)_
-- **Corporate income tax (CIT) — OECD Pillar Two rate** — 15%  _(OECD Pillar Two)_
-- **SDC (Special Defence Contribution) — non-dom exemption on dividends, interest and rental income** — 0%  _(Savva; KPMG)_
-- **Self-employed social insurance rate — on deemed income** — ~16.6%  _(cyprus-social-contributions.md)_
-- **Foreign pension — flat rate (above exempt amount)** — 5% flat rate on foreign pension income above EUR 5,000 from 1 January 2026; the taxpayer may elect annually to be taxed under normal PIT rates instead.  _(https://www.pwc.com.cy/en/publications/assets/tff-eng-2026.pdf)_
-- **IP Box — effective tax rate on qualifying IP income** — ~3%  _(Mondaq; LCK)_
-- **IP Box — deemed deduction on qualifying IP income** — 80% deemed deduction (leaving 20% taxable at corporate rate)  _(Mondaq; LCK)_
-- **Non-dom regime — 0% SDC exemption period (base)** — 17 years of Cyprus tax residency  _(Savva; KPMG)_
-- **Non-dom regime — extension period per block** — Two further 5-year blocks (up to 27 years total)  _(Savva; KPMG)_
-- **Non-dom regime — lump-sum fee per 5-year extension block** — €250,000 per block  _(Savva; KPMG)_
-- **Tax residency — standard day-count rule** — 183 days in Cyprus in a tax year
-- **Tax residency — 60-day rule minimum days in Cyprus** — ≥60 days in Cyprus
-- **Tax residency — 60-day rule: maximum days in any single other country** — No more than 183 days in any single other country
-- **Tax residency — 60-day rule: must not be tax-resident elsewhere** — Removed from the 60-day tax residency rule from 1 January 2026. The individual may be tax resident elsewhere; other 60-day rule conditions must still be assessed.  _(https://www.pwc.com.cy/en/services/tax-legal-services/tax-advisory-services/the-cyprus-tax-reform.html)_
-- **Expat / first-employment relief — high earner exemption** — 50% exemption on employment income for new residents earning above a salary threshold
-- **Expat / first-employment relief — standard new-resident exemption** — Older first-employment relief: lower of 20% of remuneration or EUR 8,550/year where applicable. From 2026, a new Article 8(21B) incentive provides a 25% exemption capped at EUR 25,000 for qualifying individuals, for 7 years.  _(https://www.pwc.com.cy/en/publications/direct-tax-updates-2026/dtu-n4-2026.pdf ; https://www.pwc.com.cy/en/services/tax-legal-services/tax-advisory-services/the-cyprus-tax-reform.html)_
-- **PIT on dividends for non-dom shareholder** — Dividends are exempt from PIT. A Cyprus tax resident non-domiciled individual is also exempt from SDC on dividends; GHS at 2.65% may apply on dividend income, subject to the EUR 180,000 annual GHS cap.  _(https://taxsummaries.pwc.com/cyprus/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/cyprus/individual/other-taxes)_
-- **Personal income tax — maximum marginal rate** — 35%  _(cyprus-income-tax.md)_
+## Cyprus Tax Optimization Skill v0.2
+> **Accountant-reviewed (`tier: 1`).** Christos Thoma reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-12; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a Cyprus tax adviser", the draft label the guide carried before that review. **Provenance of the draft:** Cyprus Tax Department, PwC/KPMG/Deloitte Cyprus and 2026 tax-reform commentary; figures must agree with `cyprus-income-tax.md` / `cyprus-social-contributions.md`. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed. Aggressive positions are never advised; every suggestion must be reviewed against the client's facts.
 
 ## Section 1 -- Quick Reference
 
@@ -100,7 +69,7 @@ Net effect for a non-dom owner-manager: roughly the **corporate rate only** on e
 | Relief | Detail |
 | --- | --- |
 | 0% band | Income up to €19,500 (2025) / €22,000 (2026 reform) is tax-free. |
-| Expat / first-employment relief | 50% exemption for high-earning new residents (above a salary threshold) for a number of years; a separate 20% relief exists for others. **[RESEARCH GAP — reviewer to confirm current thresholds and durations after the 2026 reform.]** |
+| Expat / first-employment relief | 50% exemption (Art. 8(23A)) for new residents with remuneration above EUR 55,000, for up to 17 years; the older 20% relief (Art. 8(21A): lower of 20% or EUR 8,550 a year, 7 years) is closed to new entrants from 2026; from tax year 2026 the Art. 8(21B) "Minds in Cyprus" relief (Law 17(I)/2026) exempts 25% of employment income or business profits, capped at EUR 25,000 a year, for 7 years, for individuals who commence work in Cyprus between 2025 and 2030 after 7 years of non-residence. The three cannot be combined; see `cyprus-income-tax` §5.7 |
 | Foreign pension | Taxed at a flat 5% above EUR 5,000 from 1 January 2026 (taxpayer may elect annually to be taxed under normal PIT rates instead). |
 | Life insurance / provident / social insurance | Deductible up to a capped percentage of income. |
 

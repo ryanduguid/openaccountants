@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Peru income tax (Impuesto a la 
 version: 0.1
 jurisdiction: PE
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-29
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -20,56 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **DISAMBIGUATION.** This skill is for **PERU** (the Andean republic, capital **Lima**). Currency is the **sol (S/ / PEN)** — **NOT** the Panamanian balboa. The tax authority is **SUNAT** (Superintendencia Nacional de Aduanas y de Administración Tributaria). The tax is **Impuesto a la Renta**. If you find content referencing Panama, the balboa, or a flat-rate Panamanian scale, it is wrong — discard it and use this file.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Maria Clemencia Valverde Rios** on 2026-06-29.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### peru-income-tax
-
-- **UIT 2025 (Unidad Impositiva Tributaria)** — S/ 5,350
-- **UIT 2026 (Unidad Impositiva Tributaria)** — S/ 5,500  _(DS N° 301-2025-EF)_
-- **Tax year** — Calendar year (1 January — 31 December)
-- **Annual return form** — Formulario Virtual N° 709 — Renta Anual — Persona Natural
-- **TY2025 filing deadline (staggered by last RUC digit)** — 27 May 2026 — 10 June 2026  _(Res. Sup. N° 386-2025/SUNAT)_
-- **Progressive scale tramo 1 — up to 5 UIT (renta neta de trabajo)** — Up to **S/ 27,500** for 2026 at a UIT of S/ 5,500 (S/ 26,750 for 2025 at S/ 5,350) — 8%  _(SUNAT Orientación — Tasas del impuesto rentas de trabajo)_
-- **Progressive scale tramo 2 — over 5 to 20 UIT** — **S/ 27,501 to S/ 110,000** for 2026 (S/ 26,751 to S/ 107,000 for 2025) — 14%  _(TUO LIR Art. 53)_
-- **Progressive scale tramo 3 — over 20 to 35 UIT** — **S/ 110,001 to S/ 192,500** for 2026 (S/ 107,001 to S/ 187,250 for 2025) — 17%  _(TUO LIR Art. 53)_
-- **Progressive scale tramo 4 — over 35 to 45 UIT** — **S/ 192,501 to S/ 247,500** for 2026 (S/ 187,251 to S/ 240,750 for 2025) — 20%  _(TUO LIR Art. 53)_
-- **Progressive scale tramo 5 — over 45 UIT** — Over **S/ 247,500** for 2026 (over S/ 240,750 for 2025) — 30%. Every band is set in UIT, so recompute the soles figures each year rather than carrying them forward  _(SUNAT Orientación — Tasas del impuesto rentas de trabajo)_
-- **Cumulative tax at 5 UIT boundary (UIT 2025)** — S/ 2,140.00 at S/ 26,750
-- **Cumulative tax at 20 UIT boundary (UIT 2025)** — S/ 13,375.00 at S/ 107,000  _(TUO LIR Art. 53)_
-- **Cumulative tax at 35 UIT boundary (UIT 2025)** — S/ 27,017.50 at S/ 187,250  _(TUO LIR Art. 53)_
-- **Cumulative tax at 45 UIT boundary (UIT 2025)** — S/ 37,717.50 at S/ 240,750  _(TUO LIR Art. 53)_
-- **Non-domiciled (non-resident) individuals — flat rate on gross Peruvian-source income** — flat 30% on gross Peruvian-source income — NO 7-UIT allowance, NO additional deductions  _(R-PE-3)_
-- **4ta categoría deduction (20% of gross independent income)** — 20% of gross, capped at 24 UIT (S/ 128,400 at UIT 2025)
-- **Fixed 7 UIT deduction (standard exemption for combined 4ta + 5ta)** — 7 UIT = S/ 37,450 at UIT 2025
-- **Additional deduction (up to 3 UIT) for eligible sustained expenses** — up to 3 UIT = S/ 16,050 at UIT 2025  _(SUNAT — Deducción adicional para rentas de trabajo)_
-- **Additional deduction — residential rent inclusion rate** — 30% of rent paid
-- **Additional deduction — domestic-worker social security inclusion rate** — 100% of contributions
-- **Additional deduction — qualifying professional services inclusion rate** — 30% of amount paid
-- **4ta monthly pago a cuenta rate** — An 8% fourth-category withholding tax applies to fee receipts exceeding S/ 1,500, unless a SUNAT Withholding Tax Suspension Certificate is presented or provided.  _(D.S 215-2006  Art. 2)_
-- **4ta monthly pago a cuenta rate** — An 8% fourth-category withholding tax applies to fee receipts exceeding S/ 1,500, unless a SUNAT Withholding Tax Suspension Certificate is presented or provided.  _(D.S 215-2006  Art. 2)_
-- **Suspension of 4ta retentions form** — Formulario Virtual N° 1609
-- **2025 suspension/obligation threshold — general (4ta, or 4ta + 5ta)** — Monthly obligation if income exceeds S/ 3,901; annual suspension available if projected income ≤ S/ 46,813  _(SUNAT Nota de Prensa N° 100, Dec 2024)_
-- **2025 suspension/obligation threshold — directors/trustees/representatives (inc. b) + other 4ta/5ta** — Monthly obligation if income exceeds S/ 3,121; annual suspension available if projected income ≤ S/ 37,450  _(SUNAT Nota de Prensa N° 100, Dec 2024)_
-- **2026 suspension/obligation threshold — general** — S/ 48,125/yr (S/ 4,010/mo)  _(Res. de Superintendencia N° 000390-2025/SUNAT)_
-- **2026 suspension/obligation threshold — directors** — S/ 38,500/yr (S/ 3,208/mo)  _(Res. de Superintendencia N° 000390-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 0** — 27/05/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 1** — 28/05/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 2** — 29/05/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 3** — 01/06/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 4** — 02/06/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 5** — 03/06/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 6** — 04/06/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 7** — 05/06/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 8** — 08/06/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — last RUC digit 9** — 09/06/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **TY2025 deadline — Buenos contribuyentes & those not required to register in RUC** — 10/06/2026  _(Res. de Superintendencia N° 386-2025/SUNAT)_
-- **Capital income (1ra rental / 2da dividends, interest, royalties, gains) effective rate** — Fixed effective rate of 5% on capital income (1st category: rentals / 2nd category: interests, royalties, capital gains) whereas in the case of dividends a nominal rate of 5% is paid  _(TUO LIR Art.36,73 A)_
-- **Cap on the 20% deduction (4ta categoría)** — 24 UIT = S/ 128,400 at UIT 2025 which does not apply to earnings of corporate directors, statutory auditors, attorneys-in-fact, business managers, executors, or city councilors, regional board members  _(TUO LIR Art. 45)_
-- **Annual return not required when income is solely 5ta** — Taxpayers earning exclusively fifth-category income are exempt from filing an annual return, provided that monthly withholdings covered the annual tax and there is no balance due or tax refund to be claimed for excess withholding.  _(LIR art 79)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Maria Clemencia Valverde Rios** on 2026-06-29; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick Reference
 
@@ -96,13 +47,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Progressive scale table**
 
-| Tramo (on renta neta, in UIT) | Tramo in soles (UIT 2025 = S/ 5,350) | Rate |
-| --- | --- | --- |
-| Up to 5 UIT | Up to S/ 26,750 | **8%** |
-| Over 5 to 20 UIT | S/ 26,750 — S/ 107,000 | **14%** |
-| Over 20 to 35 UIT | S/ 107,000 — S/ 187,250 | **17%** |
-| Over 35 to 45 UIT | S/ 187,250 — S/ 240,750 | **20%** |
-| Over 45 UIT | Over S/ 240,750 | **30%** |
+| Tramo (on renta neta, in UIT) | Tramo in soles (UIT 2025 = S/ 5,350) | Tramo in soles (UIT 2026 = S/ 5,500) | Rate |
+| --- | --- | --- | --- |
+| Up to 5 UIT | Up to S/ 26,750 | Up to S/ 27,500 | **8%** |
+| Over 5 to 20 UIT | S/ 26,750 — S/ 107,000 | S/ 27,500 — S/ 110,000 | **14%** |
+| Over 20 to 35 UIT | S/ 107,000 — S/ 187,250 | S/ 110,000 — S/ 192,500 | **17%** |
+| Over 35 to 45 UIT | S/ 187,250 — S/ 240,750 | S/ 192,500 — S/ 247,500 | **20%** |
+| Over 45 UIT | Over S/ 240,750 | Over S/ 247,500 | **30%** |
+
+Every band is set in UIT (TUO LIR art. 53), so recompute the soles figures from the year's UIT rather than carrying them forward.
 
 - **7-UIT exemption note** — **The 7-UIT exemption (S/ 37,450 at UIT 2025) is a SEPARATE prior deduction — NOT a bracket boundary.** The bracket boundaries are 5 / 20 / 35 / 45 UIT measured on net income after the 7-UIT (and, for 4ta, the 20%) deduction. Source: SUNAT Orientación — Tasas del impuesto rentas de trabajo; SUNAT Orientación — Cálculo del impuesto.  _(SUNAT Orientación — Tasas del impuesto rentas de trabajo; SUNAT Orientación — Cálculo del impuesto)_
 

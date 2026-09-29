@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Cyprus personal income tax for 
 version: 0.1
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-29
 reviewed_by: Christos Thoma
 review_status: current
 depends_on:
@@ -18,115 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Cyprus Income Tax -- Self-Employed and Individuals Skill v0.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Christos Thoma on 2026-06-12. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### cyprus-income-tax
-
-- **PIT band 1 rate (2025)** — 0%  _(PwC Worldwide Tax Summaries -- Cyprus; Income Tax Law (Law 118(I)/2002))_
-- **PIT band 1 income range (2025)** — EUR 0 -- 19,500  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 2 rate (2025)** — 20%  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 2 income range (2025)** — EUR 19,501 -- 28,000  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 2 cumulative tax at top (2025)** — EUR 1,700  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 3 rate (2025)** — 25%  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 3 income range (2025)** — EUR 28,001 -- 36,300  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 3 cumulative tax at top (2025)** — EUR 3,775  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 4 rate (2025)** — 30%  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 4 income range (2025)** — EUR 36,301 -- 60,000  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 4 cumulative tax at top (2025)** — EUR 10,885  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 5 rate (2025)** — 35%  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 5 income range (2025)** — EUR 60,001+  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **PIT band 1 rate (2026 reform)** — 0%  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 1 income range (2026 reform)** — EUR 0 -- 22,000  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 2 rate (2026 reform)** — 20%  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 2 income range (2026 reform)** — EUR 22,001 -- 32,000  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 2 cumulative tax at top (2026 reform)** — EUR 2,000  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 3 rate (2026 reform)** — 25%  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 3 income range (2026 reform)** — EUR 32,001 -- 42,000  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 3 cumulative tax at top (2026 reform)** — EUR 4,500  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 4 rate (2026 reform)** — 30%  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 4 income range (2026 reform)** — EUR 42,001 -- 72,000  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 4 cumulative tax at top (2026 reform)** — EUR 13,500  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 5 rate (2026 reform)** — 35%  _(PwC; cyprustaxaccounting.com)_
-- **PIT band 5 income range (2026 reform)** — EUR 72,001+  _(PwC; cyprustaxaccounting.com)_
-- **PIT tax-free threshold (2025)** — EUR 19,500  _(PwC Worldwide Tax Summaries)_
-- **PIT tax-free threshold (2026 reform)** — EUR 22,000  _(PwC; cyprustaxaccounting.com)_
-- **Social Insurance rate -- employee (2025)** — 8.8%  _(KPMG Cyprus; Social Insurance Services)_
-- **Social Insurance rate -- employer (2025)** — 8.8%  _(KPMG Cyprus; Social Insurance Services)_
-- **Social Insurance rate -- self-employed (2025)** — 16.6%  _(KPMG Cyprus; Social Insurance Services)_
-- **Social Insurance insurable earnings ceiling -- annual (2025)** — EUR 66,612/year  _(KPMG Cyprus; Social Insurance Services)_
-- **Social Insurance insurable earnings ceiling -- monthly (2025)** — EUR 5,551/month  _(KPMG Cyprus; Social Insurance Services)_
-- **Social Insurance insurable earnings ceiling -- weekly (2025)** — EUR 1,281/week  _(KPMG Cyprus; Social Insurance Services)_
-- **8.8%/8.8% SI rate fixed start date** — 1 January 2024, for five years  _(KPMG Cyprus; Social Insurance Services)_
-- **GHS rate -- employee (2025)** — 2.65%  _(KPMG Cyprus; PwC Worldwide Tax Summaries)_
-- **GHS rate -- employer (2025)** — 2.90%  _(KPMG Cyprus; PwC Worldwide Tax Summaries)_
-- **GHS rate -- self-employed (2025)** — 4.00%  _(KPMG Cyprus; PwC Worldwide Tax Summaries)_
-- **GHS rate -- pensioners (2025)** — 2.65%  _(PwC)_
-- **GHS rate -- other income (rents, dividends, interest) (2025)** — 2.65%  _(PwC)_
-- **GHS income ceiling (2025)** — EUR 180,000/year total income  _(PwC Worldwide Tax Summaries)_
-- **Social Cohesion Fund rate -- employer (2025)** — 2.0%  _(KPMG Cyprus; PwC)_
-- **Social Cohesion Fund ceiling** — Uncapped (no ceiling)  _(KPMG Cyprus; PwC)_
-- **Redundancy Fund rate -- employer (2025)** — 1.2%  _(KPMG Cyprus; PwC)_
-- **HRD / Industrial Training Fund rate -- employer (2025)** — 0.5%  _(KPMG Cyprus; PwC)_
-- **Central Holiday Fund rate -- employer (2025, unless exempt)** — 8.0%  _(KPMG Cyprus; PwC)_
-- **Total employee contribution rate (SI + GHS, 2025)** — 11.45%  _(KPMG Cyprus; PwC)_
-- **Total self-employed contribution rate (SI + GHS, 2025)** — 20.6%  _(KPMG Cyprus; PwC)_
-- **SDC rate on dividends (2025)** — 17%  _(PwC; Constantinos Markou & Co; Special Contribution for the Defence Law (Law 117(I)/2002))_
-- **SDC rate on dividends (from 1 Jan 2026)** — 5%  _(PwC; cyprustaxaccounting.com)_
-- **SDC rate on interest (2025)** — 17%  _(PwC; Constantinos Markou & Co)_
-- **SDC reduced rate on interest where total annual income <= EUR 12,000 (2025)** — Effective 3%  _(PwC; Constantinos Markou & Co)_
-- **SDC reduced-rate interest income threshold (2025)** — EUR 12,000 total annual income  _(PwC; Constantinos Markou & Co)_
-- **SDC rate on rent -- statutory (2025)** — 3% on 75% of gross rent  _(PwC; Constantinos Markou & Co)_
-- **SDC rate on rent -- effective (2025)** — 2.25% of gross rent  _(PwC; Constantinos Markou & Co)_
-- **SDC on rent abolition date** — Abolished from 1 January 2026  _(PwC; ATCA)_
-- **Deemed domicile threshold for SDC** — Cyprus tax resident for at least 17 of the last 20 tax years  _(PwC)_
-- **183-day residency rule threshold** — > 183 days physically present in Cyprus in the tax (calendar) year  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **60-day residency rule -- day threshold** — >= 60 days present in Cyprus  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **Rental income deemed deduction for repairs/maintenance** — 20% of gross rental income  _(PwC Worldwide Tax Summaries -- Cyprus)_
-- **Foreign pension flat-rate election threshold** — EUR 5,000/year exempt amount before the 5% flat rate applies from 1 January 2026; EUR 3,420 applied up to 31 December 2025.  _(https://www.pwc.com.cy/en/publications/assets/tff-eng-2026.pdf)_
-- **Foreign pension flat-rate election rate** — 5% on amount exceeding EUR 3,420/year  _(PwC Worldwide Tax Summaries -- Income determination)_
-- **Combined deductions cap (1/5 rule) -- life insurance + SI + GHS + pension/provident fund** — 1/5 (20%) of chargeable income  _(PwC Worldwide Tax Summaries -- Deductions)_
-- **Life insurance premium deduction limit** — 7% of the insured sum  _(PwC Worldwide Tax Summaries -- Deductions)_
-- **Pension/provident fund contribution deduction limit** — 10% of remuneration  _(PwC Worldwide Tax Summaries -- Deductions)_
-- **Medical-fund contribution deduction limit** — 2% of total income  _(PwC Worldwide Tax Summaries -- Deductions)_
-- **50% expat exemption (Art. 8(23A)) -- exempt portion** — 50% of employment income  _(PwC; Cyprus Tax Department Circular 4/2024)_
-- **50% expat exemption (Art. 8(23A)) -- minimum annual remuneration threshold** — EUR 55,000  _(PwC; Cyprus Tax Department Circular 4/2024)_
-- **50% expat exemption (Art. 8(23A)) -- prior non-residence condition** — Not Cyprus tax resident for >= 15 consecutive years before first employment  _(PwC; Cyprus Tax Department Circular 4/2024)_
-- **50% expat exemption (Art. 8(23A)) -- first employment eligibility date** — From 1 January 2022  _(PwC; Cyprus Tax Department Circular 4/2024)_
-- **50% expat exemption (Art. 8(23A)) -- maximum duration** — Up to 17 years  _(PwC; Cyprus Tax Department Circular 4/2024)_
-- **20% expat exemption (Art. 8(23)) -- exempt portion** — For first employments commencing up to 2025, the exemption is the lower of 20% of remuneration or EUR 8,550/year under the relevant Article 8 provisions. From 2026, a new Article 8(21B) incentive provides a 25% exemption capped at EUR 25,000 for qualifying individuals meeting the new conditions.  _(https://www.pwc.com.cy/en/publications/direct-tax-updates-2026/dtu-n4-2026.pdf ; https://www.pwc.com.cy/en/services/tax-legal-services/tax-advisory-services/the-cyprus-tax-reform.html)_
-- **20% expat exemption (Art. 8(23)) -- prior non-residence condition** — For the older 20% first-employment exemption, not Cyprus tax resident in the 3 prior consecutive tax years. For the new 2026 Article 8(21B) incentive, separate conditions apply, including Cyprus tax residency and a 7-year prior non-residence condition following completion of studies, among other criteria.  _(https://www.pwc.com.cy/en/publications/direct-tax-updates-2026/dtu-n4-2026.pdf)_
-- **20% expat exemption (Art. 8(23)) -- maximum duration** — Older 20% first-employment exemption: up to 7 years where applicable. New 2026 Article 8(21B) incentive: 25% exemption capped at EUR 25,000 for 7 years, subject to conditions.  _(https://www.pwc.com.cy/en/publications/direct-tax-updates-2026/dtu-n4-2026.pdf)_
-- **Provisional tax -- first instalment deadline** — 31 July of the tax year  _(PwC; Tax Department)_
-- **Provisional tax -- second instalment deadline** — 31 December of the tax year  _(PwC; Tax Department)_
-- **Provisional tax underestimation surcharge trigger** — Provisional tax declared < 75% of final liability  _(PwC; Tax Department)_
-- **Provisional tax underestimation surcharge rate** — 10%  _(PwC; Tax Department)_
-- **TD1/IR1 filing deadline (employees/individuals, TY2025)** — 31 July 2026, electronically via TAXISnet  _(SPL Audit Cyprus; Gov.cy)_
-- **Self-employed turnover > EUR 120,000 (audited accounts) filing deadline** — For tax years from 2026, individuals obliged to prepare accounts/audited financial statements file by 31 January of the second year following the tax year (e.g. TY2026 by 31 January 2028). The threshold rose from EUR 70,000 to **EUR 120,000** for tax year 2026 under reform law N. 243(I)/2025, and the deadline moved from 31 March of the following year to 31 January of the year after that -- a shift of ten months, not two  _(Cyprus tax reform law N. 243(I)/2025; https://www.pwc.com.cy/en/services/tax-legal-services/tax-advisory-services/the-cyprus-tax-reform.html)_
-- **TD63 (employer PAYE) remittance deadline** — End of the following month (monthly)  _(SPL Audit Cyprus; Gov.cy)_
-- **Late submission of return -- fixed penalty** — From 2026, late-submission monetary charges are more granular: individuals EUR 150; legal persons with turnover or assets above EUR 1m EUR 500; other legal persons EUR 250. Higher amounts can apply after formal notice depending on the duty breached.  _(https://www.pwc.com.cy/en/services/tax-legal-services/tax-advisory-services/the-cyprus-tax-reform.html)_
-- **Late payment of tax -- additional charge (first)** — 5% on tax due (one-off)  _(SPL Audit Cyprus; Gov.cy; PwC)_
-- **Late payment of tax -- further charge if not paid within 2 months of demand** — A further 5%  _(SPL Audit Cyprus; Gov.cy; PwC)_
-- **Interest on overdue tax** — **3.50%** per annum for amounts due from 1 January 2026 (2025: 5.50%; 2024: 5.00%), plus a fixed 5% penalty on the overdue amount. **Sources conflict:** at least one still gives 5.50% for amounts due after 1 January 2026, which is the 2025 rate carried forward. The more recent sources give 3.50%. Confirm against the Ministry of Finance decree for the year in question before quoting an exposure, and note that being wrong low understates what the client owes.  _(https://www.mof.gov.cy/mof/tax/taxdep.nsf/page26_en/page26_en?opendocument=)_
-- **Late Social Insurance / GHS -- additional charge maximum** — Up to 27% (1%--3%/month bands)  _(Social Insurance Services)_
-- **Audited accounts turnover threshold (self-employed)** — EUR 120,000 annual income threshold from trade/business, rents, dividends, interest, royalties or trading goodwill for the obligation to submit audited financial statements from 2026.  _(https://www.pwc.com.cy/en/services/tax-legal-services/tax-advisory-services/the-cyprus-tax-reform.html)_
-- **VAT compulsory registration threshold** — EUR 15,600 turnover (prior 12 months)  _(PwC / Cyprus VAT context)_
-- **Cyprus VAT standard rate** — 19%  _(Income Tax Law (Law 118(I)/2002))_
-- **National minimum wage (2025) -- after 6 months service** — EUR 1,000/month  _(Ministry of Labour & Social Insurance; Cyprus Mail)_
-- **National minimum wage (2025) -- first 6 months** — EUR 900/month  _(Ministry of Labour & Social Insurance; Cyprus Mail)_
-- **National minimum wage (from 1 January 2026) -- after 6 months service** — EUR 1,088/month  _(Ministry of Labour & Social Insurance; Cyprus Mail)_
-- **National minimum wage (from 1 January 2026) -- first 6 months** — EUR 979/month  _(Ministry of Labour & Social Insurance; Cyprus Mail)_
-- **Natural-disaster insurance deduction limit (2026)** — up to EUR 500  _(PwC -- Deductions)_
-- **Cultural donations deduction limit (2026)** — up to EUR 50,000  _(PwC -- Deductions)_
-- **Child allowance per child (2026)** — EUR 1,000--1,500 per child (doubled for single parents)  _(PwC -- Deductions)_
-- **Home loan interest / rent deduction limit (2026)** — up to EUR 2,000  _(PwC -- Deductions)_
-- **Energy-efficiency / EV deduction limit (2026)** — up to EUR 1,000  _(PwC -- Deductions)_
-- **Filing portal (up to TY2025)** — TAXISnet (taxisnet.mof.gov.cy)  _(Gov.cy)_
-- **Filing portal migration to Tax For All (TFA)** — From tax year 2026 (tfa.mof.gov.cy)  _(Gov.cy)_
-- **Dividends -- PIT treatment** — EXEMPT from PIT  _(Income Tax Law (Law 118(I)/2002))_
-- **Interest income -- PIT treatment** — EXEMPT from PIT  _(Income Tax Law (Law 118(I)/2002))_
-- **Profit on disposal of securities (titles) -- PIT treatment** — Fully EXEMPT from PIT  _(Income Tax Law (Law 118(I)/2002))_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Christos Thoma** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -502,9 +394,10 @@ Source: PwC Worldwide Tax Summaries -- Cyprus.
 | Exemption | Rule | Duration |
 | --- | --- | --- |
 | 50% exemption (Art. 8(23A)) | 50% of employment income exempt where annual remuneration > EUR 55,000 and the individual was NOT Cyprus tax resident for >= 15 consecutive years before first employment; first employment from 1 Jan 2022 | Up to 17 years |
-| 20% exemption (Art. 8(23)) | Lower of 20% of employment income or EUR 8,550/year, for individuals not Cyprus tax resident in the 3 prior consecutive tax years before employment | 7 years |
+| 20% exemption (Art. 8(21A); Art. 8(21) for employments that began before 26 July 2022) | Lower of 20% of employment income or EUR 8,550/year, for individuals not Cyprus tax resident in the 3 prior consecutive tax years before employment; closed to new entrants from the publication of Law 17(I)/2026 | 7 years |
+| 25% exemption (Art. 8(21B), "Minds in Cyprus", Law 17(I)/2026) | From tax year 2026: 25% of gross employment income or business profits exempt, capped at EUR 25,000 a year, for individuals who commence employment or a business activity in Cyprus between 1 January 2025 and 31 December 2030, were not Cyprus tax resident in the 7 years before commencement and had been Cyprus tax resident at some earlier time; granted once per lifetime | 7 years from the year of commencement |
 
-- **Exemptions cannot be combined** — The 50% and 20% exemptions cannot be combined. Flag any expat-exemption claim for reviewer to confirm eligibility evidence.  _(PwC; Cyprus Tax Department Circular 4/2024)_
+- **Exemptions cannot be combined** — The 50%, 20% and 25% exemptions cannot be combined with one another. Flag any expat-exemption claim for reviewer to confirm eligibility evidence.  _(PwC; Cyprus Tax Department Circular 4/2024; Law 17(I)/2026)_
 
 ### 5.8 Special Defence Contribution (SDC)
 
@@ -596,7 +489,7 @@ Source: PwC Worldwide Tax Summaries -- Cyprus.
 
 ### 6.5 Expatriate Exemption Eligibility
 
-- The 50% (Art. 8(23A)) and 20% (Art. 8(23)) exemptions have strict prior-non-residence conditions and cannot be combined.
+- The 50% (Art. 8(23A)), 20% (Art. 8(21A)) and 25% (Art. 8(21B), from tax year 2026) exemptions have strict prior-non-residence conditions and cannot be combined.
 - **Flag for reviewer:** Confirm prior-residence history, remuneration threshold (EUR 55,000 for the 50% exemption), and first-employment date.
 
 ### 6.6 Foreign Pension Election
