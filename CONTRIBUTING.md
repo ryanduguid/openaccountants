@@ -81,7 +81,10 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 | Cross-border / treaty corridor rules | `skills/cross-border/` (subdirectory `treaty-corridors/` for WHT rates) |
 | Industry vertical skills | `skills/verticals/` |
 | Platform integration skills | `skills/integrations/` |
-| Orchestrator files (router, intake, assembly) | `skills/orchestrator/` |
+| Financial reporting (IFRS / US GAAP treatment) | `skills/financial-reporting/` (bundled as `packages/_financial-reporting/`) |
+| Transaction pattern libraries | `skills/patterns/` (bundled as `packages/_patterns/`) |
+| Deadline engine, threshold alerts, optimisation advisor | `skills/intelligence/` (bundled as `packages/_intelligence/`) |
+| Orchestrator files (router, intake, assembly) | `skills/orchestrator/` (a country's `<code>-freelance-intake.md` and `<code>-return-assembly.md` are copied into its package) |
 
 After editing, run the generators (`make build`, or `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py`) and commit the regenerated `packages/`, `index.json`, `PARTNERS.md` and `llms-full.txt` together with your source change. CI rebuilds them and fails on any difference; `python3 scripts/validate-guides.py --derived-only` and `python3 scripts/check-coverage-claims.py` run the same checks locally.
 

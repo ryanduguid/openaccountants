@@ -38,9 +38,12 @@ packages/                  # GENERATED per-jurisdiction packages — do not edit
   _shared/                 #   every file several packages need, once (foundation.md, workflow
                            #   bases, the US federal set, the federal Canadian set, orchestrators)
   bundles.json             #   per package: its own files and its shared files (make bundle reads it)
-  _cross-border/           #   cross-border and multi-jurisdiction bundles
+  _cross-border/           #   cross-border and multi-jurisdiction bundles (treaty corridors, US expat set)
   _verticals/              #   industry-specific bundles
   _integrations/           #   platform-integration bundles
+  _financial-reporting/    #   IFRS and US GAAP treatment (leases, revenue, business combinations, ...)
+  _patterns/               #   global vendor and transaction pattern libraries
+  _intelligence/           #   deadline engine, threshold alerts, optimisation advisor
   us-federal/              #   EXCEPTION — HAND-AUTHORED. rates.2025.json / rates.2026.json
                            #   (OBBBA corrections reviewed by Christopher Aryee, CPA) and their
                            #   runbook. Never regenerated. The federal guides live in skills/federal/.

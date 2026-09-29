@@ -8,10 +8,11 @@
 1. `intake.md`
 2. `bermuda-tax.md`
 3. `bm-company-formation.md`
-4. `bm-income-tax.md`
-5. `bm-payroll-social.md`
-6. `bm-tax-overview.md`
-7. `bm-vat-gst.md`
+4. `bm-corporate-income-tax.md`
+5. `bm-income-tax.md`
+6. `bm-payroll-social.md`
+7. `bm-tax-overview.md`
+8. `bm-vat-gst.md`
 
 ## Shared files this package needs
 

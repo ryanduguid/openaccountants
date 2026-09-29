@@ -19,6 +19,8 @@
 12. `morocco-income-tax.md`
 13. `morocco-payroll.md`
 14. `morocco-vat.md`
+15. `morocco-guided-intake.md`
+16. `morocco-return-assembly.md`
 
 ## Shared files this package needs
 

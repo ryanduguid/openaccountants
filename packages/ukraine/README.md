@@ -19,6 +19,8 @@
 12. `ua-tax-optimization.md`
 13. `ua-tax-overview.md`
 14. `ukraine-vat.md`
+15. `ukraine-guided-intake.md`
+16. `ukraine-return-assembly.md`
 
 ## Shared files this package needs
 

@@ -18,6 +18,8 @@
 11. `ru-tax-optimization.md`
 12. `ru-usn.md`
 13. `russia-vat.md`
+14. `russia-guided-intake.md`
+15. `russia-return-assembly.md`
 
 ## Shared files this package needs
 

@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-09-28T23:10:04+00:00",
+ "generated_at": "2026-09-29T00:39:38+00:00",
  "counts": {
-  "guides": 1867,
+  "guides": 1865,
   "jurisdictions": 243,
   "accountant_reviewed": 164
  },
@@ -7435,18 +7435,6 @@
    "last_updated": "2026-09-10"
   },
   {
-   "slug": "eu-vat-base",
-   "path": "skills/international/eu/eu-vat-base.md",
-   "name": "eu-vat-base",
-   "jurisdiction": "EU",
-   "category": null,
-   "tier": 2,
-   "verified_by": null,
-   "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
-  },
-  {
    "slug": "eu-vat-directive",
    "path": "skills/international/eu/eu-vat-directive.md",
    "name": "eu-vat-directive",
@@ -7456,7 +7444,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "fiji-vat",
@@ -10774,18 +10762,6 @@
    "slug": "ke-tax-overview",
    "path": "skills/international/kenya/ke-tax-overview.md",
    "name": "ke-tax-overview",
-   "jurisdiction": "KE",
-   "category": null,
-   "tier": 2,
-   "verified_by": null,
-   "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
-  },
-  {
-   "slug": "ke-vat-return",
-   "path": "skills/international/kenya/ke-vat-return.md",
-   "name": "ke-vat-return",
    "jurisdiction": "KE",
    "category": null,
    "tier": 2,

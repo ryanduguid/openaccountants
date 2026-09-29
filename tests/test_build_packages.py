@@ -223,6 +223,80 @@ class DeclaredBasesTests(SyntheticTreeCase):
         self.assertEqual(self.bases(frontmatter("p", "depends_on: [unclosed\n")), [], "malformed frontmatter declares nothing")
 
 
+class PackagingCompletenessTests(SyntheticTreeCase):
+    """Every guide under skills/ reaches a package.
+
+    Until 2026-09-29 57 indexed guides reached none: orchestrators were found
+    through a hand-kept map of twelve countries, a redirect heuristic dropped
+    a short guide that said "consolidated revenue", the cross-border bundle
+    read only its top level and treaty-corridors/, and financial-reporting/,
+    patterns/ and intelligence/ had no bundle at all.
+    """
+
+    BODY = "\n# Guide\n\nLine.\nLine.\nLine.\nLine.\n"
+
+    def test_orchestrators_are_found_by_the_package_code(self) -> None:
+        self.write({
+            "skills/orchestrator/zz-freelance-intake.md": frontmatter("zz-freelance-intake") + self.BODY,
+            "skills/orchestrator/zz-return-assembly.md": frontmatter("zz-return-assembly") + self.BODY,
+            "skills/orchestrator/zy-freelance-intake.md": frontmatter("zy-freelance-intake") + self.BODY,
+        })
+        self.build()
+        names = sorted(p.name for p in (self.packages / "zzland").iterdir())
+        self.assertEqual(names, ["README.md", "intake.md", "zz-vat.md", "zzland-guided-intake.md", "zzland-return-assembly.md"])
+        self.assertEqual(
+            (self.packages / "zzland" / "zzland-guided-intake.md").read_text(encoding="utf-8"),
+            (self.skills / "orchestrator" / "zz-freelance-intake.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn("zzland-return-assembly.md", self.bundles()["packages"]["zzland"]["files"])
+
+    def test_a_short_guide_that_mentions_consolidation_is_packaged(self) -> None:
+        self.write({
+            "skills/international/zzland/zz-cit.md": frontmatter("zz-cit")
+            + "\n# CIT\n\nGroups with consolidated revenue above the threshold are in scope.\nLine.\nLine.\n",
+        })
+        self.build()
+        self.assertTrue((self.packages / "zzland" / "zz-cit.md").is_file())
+
+    def test_domain_bundles_take_nested_guides_and_disambiguate_shared_basenames(self) -> None:
+        self.write({
+            "skills/cross-border/README.md": "# Source-tree notes, not a guide\n",
+            "skills/cross-border/top.md": frontmatter("top") + self.BODY,
+            "skills/cross-border/us-expat/us-feie.md": frontmatter("us-feie") + self.BODY,
+            "skills/cross-border/treaty-corridors/x-y/dtt-summary.md": frontmatter("x-y-dtt-corridor") + self.BODY,
+            "skills/cross-border/treaty-corridors/x-z/dtt-summary.md": frontmatter("x-z-dtt-corridor") + self.BODY,
+            "skills/cross-border/treaty-corridors/_templates/dtt-template.md": frontmatter("dtt-template") + self.BODY,
+            "skills/financial-reporting/leases/ifrs16.md": frontmatter("ifrs16") + self.BODY,
+            "skills/patterns/README.md": "# Source-tree notes\n",
+            "skills/patterns/global-saas.md": frontmatter("global-saas") + self.BODY,
+            "skills/intelligence/deadline-engine.md": frontmatter("deadline-engine") + self.BODY,
+        })
+        self.build()
+        self.assertEqual(
+            sorted(p.name for p in (self.packages / "_cross-border").iterdir()),
+            ["README.md", "top.md", "us-feie.md", "x-y-dtt-summary.md", "x-z-dtt-summary.md"],
+        )
+        bundles = self.bundles()["packages"]
+        self.assertEqual(bundles["_cross-border"]["jurisdiction"], "CROSS-BORDER")
+        self.assertEqual(bundles["_cross-border"]["files"],
+                         ["top.md", "us-feie.md", "x-y-dtt-summary.md", "x-z-dtt-summary.md", "README.md"])
+        self.assertEqual(bundles["_financial-reporting"]["files"], ["ifrs16.md", "README.md"])
+        self.assertEqual(bundles["_patterns"]["files"], ["global-saas.md", "README.md"])
+        self.assertEqual(bundles["_intelligence"]["files"], ["deadline-engine.md", "README.md"])
+        self.assertIn("# Financial Reporting Skills",
+                      (self.packages / "_financial-reporting" / "README.md").read_text(encoding="utf-8"))
+
+    def test_two_guides_that_would_share_a_packaged_name_fail_the_build(self) -> None:
+        self.write({
+            "skills/patterns/p-x.md": frontmatter("p-x") + self.BODY,
+            "skills/patterns/p/x.md": frontmatter("px") + self.BODY,
+            "skills/patterns/q/x.md": frontmatter("qx") + self.BODY,
+        })
+        with self.assertRaises(SystemExit) as caught:
+            self.build()
+        self.assertIn("two guides would be packaged under one name", str(caught.exception))
+
+
 class GeneratedFrontmatterValidationTests(SyntheticTreeCase):
     def test_reports_malformed_and_unclosed_blocks_and_skips_readmes(self) -> None:
         self.write({
