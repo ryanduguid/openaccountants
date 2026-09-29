@@ -2,7 +2,7 @@
 
 <!-- mcp-name: io.github.openaccountants/openaccountants-mcp -->
 
-A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to the open-source accounting skills in a checkout of this repository — at the time of writing 1,810 skills from 182 country packages, 51 US state packages (50 states + DC) sharing the federal set in `packages/_shared/`, 13 Canadian province/territory packages, and the `_cross-border`, `_verticals` and `_integrations` bundles, across tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border and more — no manual file uploads.
+A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to the open-source accounting skills in a checkout of this repository — at the time of writing 1,854 skills from 182 country packages, 51 US state packages (50 states + DC) sharing the federal set in `packages/_shared/`, 13 Canadian province/territory packages, and six domain bundles (`_cross-border`, `_verticals`, `_integrations`, `_financial-reporting`, `_patterns`, `_intelligence`), across tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border and more — no manual file uploads.
 
 > **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown in a checkout of this repository. The **hosted server** at `https://www.openaccountants.com/api/mcp` belongs to the upstream project: it reads the production database and exposes a larger surface that includes the **accountant-reviewed** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is upstream's product; this self-hosted one is the open research base.
 
@@ -42,9 +42,12 @@ Special packages are also available:
 
 | Package | What's inside |
 |---------|--------------|
-| `_cross-border` | 41 skills — multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, 70+ treaty corridor WHT rates |
-| `_verticals` | 15 skills — 14 industry-specific (banking, charity / nonprofit, construction, consultant, content creator, e-commerce, freelance developer, insurance, investment funds / REITs, medical, oil & gas, property investor, SaaS, shipping / aviation) plus the corporate income tax workflow base that some of them declare as a dependency |
+| `_cross-border` | 46 skills — multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, the treaty corridor WHT rates (the Egypt corridors included), and the US expatriate set (FEIE and foreign tax credit, FBAR and FATCA, CFC and GILTI, exit tax, foreign trusts) |
+| `_verticals` | 14 industry-specific skills (banking, charity / nonprofit, construction, consultant, content creator, e-commerce, freelance developer, insurance, investment funds / REITs, medical, oil & gas, property investor, SaaS, shipping / aviation); the corporate income tax workflow base some of them declare is a shared file |
 | `_integrations` | 10 platform export formats — Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon, Shopify, FreeAgent, Sage |
+| `_financial-reporting` | 10 skills — IFRS and US GAAP treatment of leases, revenue recognition, business combinations and debt versus equity, with the financial-reporting router and workflow base |
+| `_patterns` | 9 global vendor and transaction pattern libraries (cloud, SaaS, payment processors, ad platforms, marketplaces and banking fees, productivity tools, travel, vehicle, home office) for classifying bank-statement lines |
+| `_intelligence` | 3 skills — the deadline engine, threshold alerts and the optimisation advisor |
 
 ## Tools
 
@@ -53,10 +56,10 @@ The self-hosted server exposes 6 read-only tools below. The hosted server at `ht
 | Tool | Description |
 |------|-------------|
 | `start` | **Front door.** Call first whenever a user asks for tax/accounting help. Takes optional `intent` (free text — e.g. `"taxes"`, `"VAT return"`, `"set up a company"`) and `jurisdiction` (e.g. `"MT"`, `"GB"`, `"US-CA"`). Returns either a clarification question or a ready-to-execute plan (`skills_to_load`, `expectations`, `next_action`, `guardrails`). |
-| `list_skills` | List published skills with quality tier and reviewing accountant. Optional `jurisdiction` (ISO code, e.g. `MT`, `GB`, `US-CA`) and `category` filters. |
+| `list_skills` | List published skills with quality tier and reviewing accountant, a page at a time. Optional `jurisdiction` (ISO code, e.g. `MT`, `GB`, `US-CA`) and `category` (case-insensitive) filters; `limit` (1 to 1,000, default 100) and `offset` page through the matches, and the response carries `total`, `returned` and `next_offset` (None on the last page). |
 | `get_skill` | Given a skill `slug`, returns the full markdown plus a provenance/attribution footer. |
 | `get_skill_sections` | Given a `slug`, returns the skill parsed into sections (`heading`, `content`, `level`) for step-by-step application. |
-| `search_skills` | Keyword search across skill markdown (`query`, optional `jurisdiction`). Returns the matched section heading and a snippet. |
+| `search_skills` | Keyword search across skill markdown (`query` of up to 200 characters, optional `jurisdiction`). Searches a corpus read once per process, ranks by how often the query occurs (a title match first), and returns up to 25 results with `matches`, the matched section heading and a snippet, beside the `total` number of matching skills. |
 | `submit_feedback` | Build a pre-filled GitHub New Issue URL the user opens to submit feedback (skill problem, missing jurisdiction, bug, etc.). Takes `summary` plus optional `title`, `skill_slug`, `jurisdiction`, `rating`. Returns `github_url`, `title`, `body`, `labels`. No server-side auth — user submits under their own account. |
 
 Skill access is **read-only** and **path-sandboxed** to the `packages/` directory; `submit_feedback` does not call GitHub itself, it only constructs a URL.
@@ -228,15 +231,22 @@ For contributors who'd rather iterate inside a container, the repo root ships a 
 
 ```bash
 docker build -t openaccountants-mcp .
-docker run --rm -p 127.0.0.1:8000:8000 -e MCP_HOST=0.0.0.0 openaccountants-mcp
+docker run --rm -p 127.0.0.1:8000:8000 openaccountants-mcp
 # Point an MCP client at http://localhost:8000/mcp
 ```
 
-The server itself defaults to the loopback address `127.0.0.1`. Docker's port
-forwarder reaches the container through its network interface, so the local-only
-Docker example above deliberately sets `MCP_HOST=0.0.0.0` **inside the container**
-while binding the published host port to `127.0.0.1`. That keeps the endpoint
-available only to local clients.
+The server itself defaults to the loopback address `127.0.0.1`, but the image
+sets `MCP_HOST=0.0.0.0` **inside the container**: Docker's port forwarder
+reaches the container through its network interface, so a loopback bind would
+leave a published port silently unreachable. Binding the published host port to
+`127.0.0.1`, as above, keeps the endpoint available only to local clients.
+
+The image is built from `python:3.11-slim` pinned by digest (Dependabot proposes
+bumps), installs the dependencies from `pyproject.toml` in their own layer before
+the package is copied, runs as an unprivileged `app` user, takes only `mcp/` and
+`packages/` into the build context, and carries a `HEALTHCHECK`
+(`python -m openaccountants_mcp.healthcheck`) that reports healthy once the
+listener answers on the MCP path with any status.
 
 FastMCP validates the `Host` and `Origin` headers (its DNS-rebinding protection)
 on its own **only for loopback binds**. With any other `MCP_HOST` it validates
@@ -285,7 +295,7 @@ The default stdio transport (`pip install ./mcp && openaccountants-mcp`) is unch
 |----------|---------|-------------|
 | `OPENACCOUNTANTS_ROOT` | Auto-detected repo root (two directories above the installed module, i.e. the parent of `mcp/` for an editable install) | Path to your OpenAccountants checkout. The server reads `$OPENACCOUNTANTS_ROOT/packages/`. An empty value counts as unset. When that directory is missing or holds no skill files, the server logs a warning and every tool reports the problem instead of serving an empty catalogue. |
 | `MCP_TRANSPORT` | `stdio` | `stdio`, `streamable-http`, or `sse`. HTTP transports let remote MCP clients connect via a reverse proxy. |
-| `MCP_HOST` | `127.0.0.1` | Bind host for HTTP transports. Set explicitly, for example to `0.0.0.0`, only when an authenticated reverse proxy or equivalent network boundary is intentionally exposing the service. |
+| `MCP_HOST` | `127.0.0.1` (`0.0.0.0` in the Docker image, behind its localhost allow-list) | Bind host for HTTP transports. Set explicitly, for example to `0.0.0.0`, only when an authenticated reverse proxy or equivalent network boundary is intentionally exposing the service. |
 | `MCP_PORT` | `8000` | Bind port for HTTP transports. |
 | `MCP_STREAMABLE_HTTP_PATH` | `/mcp` | Path the Streamable-HTTP endpoint is mounted at. Set to `/` when behind a proxy that strips the upstream prefix. |
 | `MCP_ALLOWED_HOSTS` | unset (FastMCP protects loopback binds itself; other binds validate nothing) | Comma-separated `Host` header values to accept on HTTP transports, e.g. `localhost:*,127.0.0.1:*` or `mcp.example.com`; `:*` accepts any port. Other hosts get HTTP 421. |
