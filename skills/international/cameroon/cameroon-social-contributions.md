@@ -145,8 +145,8 @@ Deterministic pre-classifier for bank statement transactions related to Cameroon
 | --- | --- | --- |
 | CFC, CREDIT FONCIER | EXCLUDE -- housing fund levy | 1% employee / 1.5% employer |
 | FNE, FONDS NATIONAL EMPLOI | EXCLUDE -- employment fund levy | 1% employer |
-| TAXE COMMUNALE, TAXE DEVELOPPEMENT LOCAL | EXCLUDE -- local council tax | Banded, up to XAF 2,520/mo |
-| RAV, REDEVANCE AUDIOVISUELLE, CRTV | EXCLUDE -- audiovisual royalty | Banded, max XAF 13,000 |
+| TAXE COMMUNALE, TAXE DEVELOPPEMENT LOCAL | EXCLUDE -- local council tax | Banded by monthly salary from XAF 62,000, up to XAF 2,500/mo (bands in `cameroon-payroll` §3) |
+| RAV, REDEVANCE AUDIOVISUELLE, CRTV | EXCLUDE -- audiovisual royalty | Banded by monthly salary above XAF 50,000, up to XAF 13,000/mo (bands in `cameroon-payroll` §3) |
 
 ### 3.4 Salary and payroll (exclude from contribution classification)
 
@@ -307,8 +307,8 @@ Base statutory scale (MINFI): 10% / 15% / 25% / 35%. PwC effective rates include
 
 ### Rule 8 -- Local payroll levies
 
-- **Local development tax (taxe communale)** — up to XAF 2,520/month, banded, on salaries exceeding XAF 500,000  _(PwC)_
-- **Audiovisual royalty (RAV/CRTV)** — banded, maximum XAF 13,000, for gross salaries above XAF 1,000,000  _(PwC)_
+- **Local development tax (taxe communale)** — banded by monthly salary from XAF 62,000 (250/month) to above 500,000 (2,500/month); the band table is in `cameroon-payroll` §3 (the reviewer's table of 2026-06-21; PwC gives the top band, rounded to ~2,520)  _(cameroon-payroll §3; PwC)_
+- **Audiovisual royalty (RAV/CRTV)** — banded by monthly salary from XAF 50,001 (750/month) to above 1,000,000 (13,000/month); the band table is in `cameroon-payroll` §3  _(cameroon-payroll §3; PwC for the top band)_
 
 ### Rule 9 -- Monthly remittance
 
@@ -401,7 +401,7 @@ PIT (IRPP) COMPUTATION (if gross ≥ 62,000/mo)
   PIT per month:                   XAF [____]
 
 LOCAL LEVIES (banded)
-  Taxe communale (≤2,520/mo):      XAF [____]
+  Taxe communale (≤2,500/mo):      XAF [____]
   RAV/CRTV (≤13,000):              XAF [____]
 
 REMITTANCE
@@ -494,8 +494,8 @@ If the client provides only a bank statement and no other information:
 | Professional abatement | 30% | PwC |
 | SMIG (non-agricultural) | XAF 60,000/mo | CLEISS (confirmed 2023, cited current) |
 | SMIG (agricultural) | XAF 45,000/mo | CLEISS |
-| Taxe communale max | XAF 2,520/mo (salary > 500,000) | PwC |
-| RAV/CRTV max | XAF 13,000 (gross > 1,000,000) | PwC |
+| Taxe communale max | XAF 2,500/mo (salary > 500,000; bands from 62,000 in `cameroon-payroll` §3) | Reviewed table (2026-06-21); PwC for the top band |
+| RAV/CRTV max | XAF 13,000/mo (gross > 1,000,000; bands from 50,001 in `cameroon-payroll` §3) | Reviewed table (2026-06-21); PwC for the top band |
 | Voluntary insured rate | 8.40% of declared income | CLEISS |
 | Record retention | 10 years | PwC |
 

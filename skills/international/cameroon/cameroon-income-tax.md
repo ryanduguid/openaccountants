@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Cameroon personal income tax (I
 version: 0.1
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -161,7 +161,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 | CNPS, COTISATION SOCIALE, PREVOYANCE SOCIALE | Social contribution | Employee portion reduces salary IRPP base (Section 3 social table) |
 | CREDIT FONCIER, CFC | Housing fund | Employee 1% / employer 1.5% (Section 4) |
 | FNE, FONDS NATIONAL EMPLOI | Employment fund | Employer 1% only |
-| TAXE COMMUNALE, REDEVANCE COMMUNALE | Council tax (poll) | Flat band -- up to XAF 2,520/mo (Section 2 other-taxes) |
+| TAXE COMMUNALE, REDEVANCE COMMUNALE | Council tax (poll) | Banded by monthly salary, XAF 250 to 2,500/mo (Section 2 other-taxes) |
 | RAV, REDEVANCE CRTV, AUDIOVISUEL | CRTV royalty | Up to XAF 13,000 graduated (Section 2 other-taxes) |
 | TVA, PAIEMENT TVA | EXCLUDE | VAT liability payment, not an expense |
 
@@ -214,7 +214,7 @@ Reasoning:
 - IRPP: cumulative to 5,000,000 = 935,000; excess = 8,022,000 - 5,000,000 = 3,022,000 @ 38.5% = 1,163,470.
 - Total IRPP = 935,000 + 1,163,470 = 2,098,470.
 
-Classification: Annual IRPP = XAF 2,098,470. Council tax band XAF 2,520/mo and CRTV up to XAF 13,000 apply separately.
+Classification: Annual IRPP = XAF 2,098,470. Council tax (XAF 2,500/mo at a monthly salary of 1,000,000) and CRTV (XAF 12,350/mo in the 900,001 – 1,000,000 band) apply separately, on the band tables in `cameroon-payroll` §3.
 
 ### Example 3 -- Dividend / investment income (schedular flat rate)
 
@@ -324,8 +324,8 @@ Classification: EXCLUDE.
 
 | Levy | Amount | Source |
 | --- | --- | --- |
-| Local Council Tax (Taxe Communale, poll component) | Flat XAF 2,520/month on salaries above XAF 500,000 (top band) | [PwC -- other-taxes] |
-| CRTV audiovisual royalty (RAV) | Up to XAF 13,000 for gross salaries above XAF 1,000,000 (graduated) | [PwC -- other-taxes] |
+| Local Council Tax (Taxe Communale, poll component) | Banded by monthly salary from XAF 62,000 (XAF 250/month) to above 500,000 (XAF 2,500/month); band table in `cameroon-payroll` §3 | [Reviewed table 2026-06-21; PwC -- other-taxes for the top band] |
+| CRTV audiovisual royalty (RAV) | Banded by monthly salary from XAF 50,001 (XAF 750/month) to above 1,000,000 (XAF 13,000/month); band table in `cameroon-payroll` §3 | [Reviewed table 2026-06-21; PwC -- other-taxes for the top band] |
 
 ### 5.9 Self-Employed Regimes (2025 Finance Law)
 
@@ -416,7 +416,7 @@ A. SALARIED COMPUTATION (skip if self-employed)
   A3. Less CNPS employee 4.2% (cap base 9,000,000) ___________
   A4. Net taxable (A1 - A2 - A3), round down 1,000 ___________
   A5. IRPP per progressive scale (Section 1)       ___________
-  A6. Council tax (up to 2,520/mo)                 ___________
+  A6. Council tax (up to 2,500/mo)                 ___________
   A7. CRTV royalty (up to 13,000)                  ___________
   A8. Credit Foncier employee 1% (A1 x 1%)         ___________
 
