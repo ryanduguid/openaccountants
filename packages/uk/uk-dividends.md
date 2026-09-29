@@ -1,7 +1,7 @@
 ---
 name: uk-dividends
 description: Use this skill whenever asked about UK dividend income taxation. Trigger on phrases like "dividend tax UK", "dividend allowance", "dividend income", "company dividends", "director dividends", "salary vs dividends", "dividend voucher", "SA100 dividends", "foreign dividends UK", "dividend waiver", "dividend tax rates", "8.75%", "33.75%", "39.35%", "10.75%", "35.75%", "April 2026 dividend hike", "Autumn Budget 2025 dividend", "Scottish dividend tax", or any question about computing, declaring, or optimising dividend income for UK individual taxpayers. Covers dividend allowance, rates, salary-vs-dividend planning for company directors, foreign dividends and double tax relief, dividend waivers, and interaction with other income. ALWAYS read this skill before touching any UK dividend work.
-version: 1.1
+version: 1.2
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-09-29
@@ -16,8 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Dividends
 
-## UK Dividend Income Skill v1.1
-
+## UK Dividend Income Skill v1.2
 Changelog: v1.1 — standardised on 3-year structure (2024-25 prior, 2025-26 current, 2026-27 from 6 April 2026); promoted Autumn Budget 2025 dividend rate hike (10.75% / 35.75%) into full Quick Reference table, added combined comparison table and a 2026-27 worked example.
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
@@ -32,14 +31,14 @@ Changelog: v1.1 — standardised on 3-year structure (2024-25 prior, 2025-26 cur
 | Tax | Income Tax on Dividend Income |
 | Currency | GBP only |
 | Tax year | 6 April to 5 April |
-| Primary legislation | Income Tax Act 2007 (ITA 2007), ss. 8-21; Income Tax (Trading and Other Income) Act 2005 (ITTOIA), Part 4 |
+| Primary legislation | Income Tax Act 2007 (ITA 2007), ss. 8-21 — https://www.legislation.gov.uk/ukpga/2007/3/contents; Income Tax (Trading and Other Income) Act 2005 (ITTOIA), Part 4 — https://www.legislation.gov.uk/ukpga/2005/5/contents |
 | Supporting legislation | Corporation Tax Act 2009 (company-side); ITA 2007 s. 13A (dividend allowance); Finance Act 2022 (1.25% increase) |
 | Tax authority | HMRC |
 | Filing portal | HMRC Self Assessment Online |
 | Filing deadline (online) | 31 January following the tax year |
 | SA100 box | Box 4 (UK dividends); Box 5 (foreign dividends) on the main SA100 or SA106 (Foreign) supplementary pages |
 | Validated by | Verified by James Power on 2026-06-03 |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 ### Dividend Tax Rates (2024-25)
 
@@ -83,6 +82,8 @@ Announced at Autumn Budget 2025 and enacted via Finance (No. 2) Bill 2024-26. Ba
 | Higher rate | 33.75% | 33.75% | 35.75% |
 | Additional rate | 39.35% | 39.35% | 39.35% |
 | Dividend allowance | £500 | £500 | £500 |
+
+Sources: GOV.UK, Tax on dividends — https://www.gov.uk/tax-on-dividends (2026-27: 10.75%, 35.75%, 39.35%; £500 allowance); rates for previous tax years — https://www.gov.uk/tax-on-dividends/previous-tax-years (2024-25 and 2025-26: 8.75%, 33.75%, 39.35%).
 
 ### Dividend Allowance History
 
@@ -203,7 +204,7 @@ Optimal for most single directors: Salary at £12,570, dividends for the rest up
 | --- | --- | --- |
 | USA | 30% (statutory) | 15% (treaty) |
 | Ireland | 25% | 15% |
-| France | 25% | 15% |
+| France | 12.8% for individuals (25% for companies; CGI art. 187) | 15% |
 | Germany | 26.375% (incl. Soli) | 15% |
 | Australia | 0% (franked) / 30% (unfranked) | 15% |
 | Canada | 25% | 15% |

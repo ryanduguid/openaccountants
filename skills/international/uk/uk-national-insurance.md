@@ -1,7 +1,7 @@
 ---
 name: uk-national-insurance
 description: Use this skill whenever asked about UK National Insurance Contributions (NIC) for self-employed individuals or employers. Trigger on phrases like "how much NIC do I pay", "Class 2 contributions", "Class 4 NIC", "Class 1 employer NIC", "Employer NIC 15%", "Secondary Threshold £5,000", "Employment Allowance £10,500", "April 2026 NIC", "Class 2 abolished", "national insurance self-employed", "NIC calculation", "state pension qualifying years", "NIC deferment", "voluntary Class 2", "HMRC NIC payment", or any question about UK NIC obligations. Also trigger when classifying bank statement transactions showing HMRC NIC debits, Self Assessment NIC payments, or Class 2 direct debits. This skill covers Class 1 (employee and employer), Class 2 (voluntary post-April 2024), Class 4 (profit-based), thresholds, payment schedule, bank statement pattern classification, Employment Allowance, interaction with employment Class 1, deferment, state pension entitlement, and edge cases across three tax years (2024-25, 2025-26, 2026-27). ALWAYS read this skill before touching any UK NIC-related work.
-version: 3.0
+version: 3.1
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-09-29
@@ -16,8 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK National Insurance
 
-## UK National Insurance -- Comprehensive Skill v3.0
-
+## UK National Insurance -- Comprehensive Skill v3.1
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference (3-year comparison)
@@ -36,19 +35,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Upper Earnings Limit (UEL)** | £50,270/yr (£967/wk) | £50,270/yr | £50,270/yr (frozen to 2027-28) |
 | **Employment Allowance** | £5,000 | **£10,500** | £10,500 |
 | **Class 2 status** | Abolished (voluntary only) | Abolished (voluntary only) | Abolished (voluntary only) |
-| **Class 2 voluntary weekly rate** | £3.45 | £3.50 | TBC (Autumn 2026) |
-| **Small Profits Threshold (SPT)** | £6,725 | £6,845 | TBC |
+| **Class 2 voluntary weekly rate** | £3.45 | £3.50 | £3.65 |
+| **Small Profits Threshold (SPT)** | £6,725 | £6,845 | £7,105 |
 | **Class 4 main rate** | 6% (from 6 Apr 2024; was 9%) | 6% | 6% |
 | **Class 4 additional rate** | 2% above UPL | 2% | 2% |
 | **Class 4 Lower Profits Limit (LPL)** | £12,570 | £12,570 | £12,570 |
 | **Class 4 Upper Profits Limit (UPL)** | £50,270 | £50,270 | £50,270 |
 | Country | United Kingdom |  |  |
-| Primary Legislation | Social Security Contributions and Benefits Act 1992 (SSCBA 1992); National Insurance Contributions (Reduction in Rates) Act 2024; Autumn Budget 2024 (Class 1 employer changes); Autumn Budget 2025 (no change) |  |  |
+| Primary Legislation | Social Security Contributions and Benefits Act 1992 (SSCBA 1992) — https://www.legislation.gov.uk/ukpga/1992/4/contents; National Insurance Contributions (Reduction in Rates) Act 2024; Autumn Budget 2024 (Class 1 employer changes); Autumn Budget 2025 (no change) |  |  |
 | Tax Authority | HM Revenue & Customs (HMRC) |  |  |
 | Currency | GBP only |  |  |
 | Contributor | Open Accountants |  |  |
 | Validated by | Verified by James Power on 2026-06-03 |  |  |
 | Validation date | Verified by James Power on 2026-06-03 |  |  |
+
+Sources: GOV.UK, Rates and allowances: National Insurance contributions — https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions; Rates and thresholds for employers 2025 to 2026 — https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026; Self-employed National Insurance rates — https://www.gov.uk/self-employed-national-insurance-rates; SSCBA 1992 — https://www.legislation.gov.uk/ukpga/1992/4/contents. The 2026-27 Class 2 rate (£3.65 a week) and Small Profits Threshold (£7,105) were "TBC" until 2026-09-29 and are read off GOV.UK; they are outside the accountant review recorded above.
 
 **Conservative defaults**
 
@@ -417,9 +418,9 @@ If the client provides only a bank statement:
 | **Primary Threshold** | £12,570 | £12,570 | £12,570 |
 | **Upper Earnings Limit** | £50,270 | £50,270 | £50,270 |
 | **Employment Allowance** | £5,000 | **£10,500** | £10,500 |
-| **Class 2 weekly rate (voluntary)** | £3.45 | £3.50 | TBC |
-| **Class 2 annual (voluntary)** | £179.40 | £182.00 | TBC |
-| **SPT** | £6,725 | £6,845 | TBC |
+| **Class 2 weekly rate (voluntary)** | £3.45 | £3.50 | £3.65 |
+| **Class 2 annual (voluntary)** | £179.40 | £182.00 | £189.80 |
+| **SPT** | £6,725 | £6,845 | £7,105 |
 | **Class 4 main rate** | 6% | 6% | 6% |
 | **Class 4 additional rate** | 2% | 2% | 2% |
 | **LPL** | £12,570 | £12,570 | £12,570 |

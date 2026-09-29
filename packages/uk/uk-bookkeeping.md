@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK bookkeeping for sole traders
 version: 1.1
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -31,7 +31,7 @@ Year applicability: Rules in this skill apply across 2024-25, 2025-26, and 2026-
 | Accounting standards | FRS 105 (micro-entities), FRS 102 Section 1A (small entities), full FRS 102 |
 | Governing body | Financial Reporting Council (FRC) |
 | Tax authority | HM Revenue & Customs (HMRC) |
-| Key legislation | Companies Act 2006 (Part 15, s.382-384 for size thresholds); The Small Companies and Groups Regulations 2008 (SI 2008/409); Taxes Management Act 1970 |
+| Key legislation | Companies Act 2006 (Part 15, s.382-384 for size thresholds) — https://www.legislation.gov.uk/ukpga/2006/46/contents; The Small Companies and Groups Regulations 2008 (SI 2008/409) — https://www.legislation.gov.uk/uksi/2008/409/contents; Taxes Management Act 1970 — https://www.legislation.gov.uk/ukpga/1970/9/contents |
 | MTD VAT | In force for ALL VAT-registered businesses (regardless of turnover) |
 | MTD ITSA | From 6 April 2026 for sole traders + landlords with gross income > £50,000 in 2024-25 |
 | Size thresholds (from 6 Apr 2025) | Micro: turnover ≤£1m, assets ≤£500k, ≤10 employees; Small: turnover ≤£15m, assets ≤£7.5m, ≤50 employees |
@@ -257,14 +257,16 @@ UK tax does NOT use accounting depreciation — it adds back book depreciation a
 | Allowance | Rate | Notes |
 | --- | --- | --- |
 | Annual Investment Allowance (AIA) | 100% up to £1,000,000 | Most plant & machinery; NOT cars |
-| First Year Allowance (40%) | 40% | From 1 Jan 2026 for unincorporated businesses |
+| First Year Allowance (40%) | 40% | Main-rate expenditure from 1 January 2026 where the AIA or full expensing is unavailable or not preferred; open to unincorporated businesses and to assets bought for leasing (overseas leasing excluded) |
 | Full Expensing | 100% | Companies only, new P&M (from April 2023) |
-| Main Pool WDA | 18% reducing balance (14% from April 2026) | Items not covered by AIA |
+| Main Pool WDA | 18% reducing balance; 14% from 1 April 2026 (companies) or 6 April 2026 (income tax businesses) | Items not covered by AIA |
 | Special Rate Pool WDA | 6% reducing balance | Long-life assets, integral features, high-emission cars |
 | Cars: CO₂ ≤ 0 g/km | 100% FYA | Electric/zero-emission |
 | Cars: CO₂ 1–50 g/km | 18% main pool |  |
 | Cars: CO₂ > 50 g/km | 6% special rate |  |
 | Small Pools Allowance | Write off pool balance ≤ £1,000 |  |
+
+Sources: Capital Allowances Act 2001 — https://www.legislation.gov.uk/ukpga/2001/2/contents; GOV.UK, Annual investment allowance — https://www.gov.uk/capital-allowances/annual-investment-allowance; rates and pools — https://www.gov.uk/work-out-capital-allowances/rates-and-pools; HMRC policy paper, Capital allowances: new first-year allowance and reducing main rate writing-down allowance — https://www.gov.uk/government/publications/new-first-year-allowance-and-main-rate-of-writing-down-allowances/capital-allowances-new-first-year-allowance-and-reducing-main-rate-writing-down-allowances.
 
 ### Accounting Depreciation (Book Purposes)
 

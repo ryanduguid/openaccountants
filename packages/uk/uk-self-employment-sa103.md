@@ -1,7 +1,7 @@
 ---
 name: uk-self-employment-sa103
 description: Use this skill whenever asked about UK self-employment income for sole traders filing SA103S (short) or SA103F (full) as part of Self Assessment. Trigger on phrases like "self-employment income", "SA103", "trading income", "sole trader tax", "allowable expenses UK", "capital allowances UK", "trading allowance", "basis period", "tax year basis", "simplified expenses", "Class 4 NIC", "Class 2 abolished", "MTD ITSA", "Making Tax Digital", "April 2026 sole trader", "loss relief self-employed", or any question about computing self-employment profits for a UK sole trader. Covers trading income computation, allowable expenses, capital allowances (AIA, WDA, FYA), simplified expenses, the trading allowance, the completed basis period reform, the MTD ITSA three-phase rollout from April 2026, loss relief, and Class 4 NIC interaction (including the post-2024 rate cut and Class 2 abolition). ALWAYS read this skill before touching any UK self-employment work.
-version: 3.0
+version: 3.1
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-09-29
@@ -16,8 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Self Employment Sa103
 
-## UK Self-Employment (SA103) -- Sole Trader Skill v3.0
-
+## UK Self-Employment (SA103) -- Sole Trader Skill v3.1
 **Three-year scope:** Prior 2024-25 | Current 2025-26 | From April 2026 (2026-27)
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
@@ -32,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Income Tax on trading profits + Class 4 NIC |
 | Currency | GBP only |
 | Current tax year | 6 April 2025 -- 5 April 2026 (2025-26) |
-| Primary legislation | Income Tax (Trading and Other Income) Act 2005 (ITTOIA 2005); Capital Allowances Act 2001 (CAA 2001) |
+| Primary legislation | Income Tax (Trading and Other Income) Act 2005 (ITTOIA 2005) — https://www.legislation.gov.uk/ukpga/2005/5/contents; Capital Allowances Act 2001 (CAA 2001) — https://www.legislation.gov.uk/ukpga/2001/2/contents |
 | Supporting legislation | Finance Act 2024 (basis period reform completion, Class 2 abolition, Class 4 cut); Finance (No.2) Act 2023 (MTD ITSA powers); Social Security Contributions and Benefits Act 1992 |
 | Tax authority | HM Revenue & Customs (HMRC) |
 | Filing portal | HMRC Self Assessment Online (MTD ITSA quarterly portal from April 2026 for mandated traders) |
@@ -40,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline (2025-26, paper) | 31 October 2026 |
 | Contributor | Open Accountants Community |
 | Validated by | Verified by James Power on 2026-06-03 |
-| Skill version | 3.0 |
+| Skill version | 3.1 |
 
 ### MTD ITSA Timeline -- The Biggest 2026-27 Change [T1]
 
@@ -95,6 +94,8 @@ Post-6-April-2024 rate cut (Finance Act 2024) is now embedded. No further rate c
 | Below GBP 12,570 | 0% |
 | GBP 12,570 -- GBP 50,270 | 6% (main rate) |
 | Above GBP 50,270 | 2% (additional rate) |
+
+Sources: GOV.UK, Self-employed National Insurance rates — https://www.gov.uk/self-employed-national-insurance-rates; rates and allowances for previous years — https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions.
 
 ### Class 2 NIC -- Abolished but Optionally Voluntary [T1]
 
@@ -328,9 +329,11 @@ Post-6-April-2024 rate cut (Finance Act 2024) is now embedded. No further rate c
 | Allowance | Rate | Eligible Assets |
 | --- | --- | --- |
 | AIA | 100% (to GBP 1m) | Most plant and machinery (NOT cars) |
-| Main rate WDA | 18% reducing balance | Cars 1-50 g/km CO2, assets exceeding AIA |
+| Main rate WDA | 18% reducing balance (14% from 6 April 2026) | Cars 1-50 g/km CO2, assets exceeding AIA |
 | Special rate WDA | 6% reducing balance | Cars >50 g/km CO2, integral features, long-life assets |
 | Zero-emission car FYA | 100% | New cars with 0 g/km CO2 |
+
+Sources: CAA 2001 — https://www.legislation.gov.uk/ukpga/2001/2/contents; GOV.UK, Annual investment allowance — https://www.gov.uk/capital-allowances/annual-investment-allowance; rates and pools — https://www.gov.uk/work-out-capital-allowances/rates-and-pools.
 
 - **Cars and AIA** — Cars are NEVER eligible for AIA. Always use WDA pools or FYA (if zero-emission). Rates unchanged across 2024-25, 2025-26, 2026-27.  _(CAA 2001)_
 
@@ -377,6 +380,8 @@ Post-6-April-2024 rate cut (Finance Act 2024) is now embedded. No further rate c
 | Late payment (30 days) | 5% of unpaid tax |
 | Late payment (6 months) | Additional 5% |
 | Late payment (12 months) | Additional 5% |
+
+Source: GOV.UK, Self Assessment tax returns: penalties — https://www.gov.uk/self-assessment-tax-returns/penalties.
 
 - **MTD ITSA points-based penalty regime** — MTD ITSA points-based penalty regime (from 2026-27 for mandated traders): each missed quarterly update accrues 1 point; threshold (4 points for quarterly filers) triggers GBP 200 penalty per subsequent failure. Late payment under MTD uses the FA 2021 Sch 26 percentage regime.  _(FA 2021 Sch 26)_
 
@@ -553,16 +558,16 @@ ONBOARDING QUESTIONS -- UK SELF-EMPLOYMENT
 
 | Topic | Reference |
 | --- | --- |
-| Trading income | ITTOIA 2005, Part 2 |
+| Trading income | ITTOIA 2005, Part 2 — https://www.legislation.gov.uk/ukpga/2005/5/contents |
 | Wholly and exclusively test | ITTOIA 2005, s34 |
 | Entertainment block | ITTOIA 2005, s45 |
 | Simplified expenses | ITTOIA 2005, ss 94D-94H |
 | Trading allowance | ITTOIA 2005, s783A |
-| Capital allowances | CAA 2001 |
+| Capital allowances | CAA 2001 — https://www.legislation.gov.uk/ukpga/2001/2/contents |
 | AIA | CAA 2001, ss 38A-38B |
 | Cash basis (default from 2024-25) | ITTOIA 2005, Part 2 Ch 3A as amended by FA 2024 |
-| Loss relief | ITA 2007, ss 64-90 |
-| Class 4 NIC (6%/2% post-Apr-2024) | SSCBA 1992, s15; National Insurance Contributions (Reduction in Rates) Act 2024 |
+| Loss relief | ITA 2007, ss 64-90 — https://www.legislation.gov.uk/ukpga/2007/3/contents |
+| Class 4 NIC (6%/2% post-Apr-2024) | SSCBA 1992, s15 — https://www.legislation.gov.uk/ukpga/1992/4/contents; National Insurance Contributions (Reduction in Rates) Act 2024 |
 | Class 2 abolition (compulsory) | National Insurance Contributions (Reduction in Rates) Act 2024 |
 | Basis period reform | Finance Act 2022 ss 6-7 and Sch 1; Finance Act 2024 |
 | MTD ITSA powers | Finance (No.2) Act 2017, ss 60-62; Finance Act 2021; Income Tax (Digital Requirements) Regulations 2021 (as amended) |

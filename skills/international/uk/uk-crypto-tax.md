@@ -1,7 +1,7 @@
 ---
 name: uk-crypto-tax
 description: Use this skill whenever asked about UK cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax UK", "Bitcoin UK tax", "HMRC crypto", "cryptoassets UK", "crypto capital gains UK", "staking tax UK", "mining tax UK", "NFT tax UK", "DeFi tax UK", "SA108 crypto", "crypto CGT", "bed and breakfasting crypto", "S104 pool", "crypto loss UK", "Coinbase UK tax", "Binance UK tax", "Revolut crypto UK", "crypto income UK", "DAC8 UK", "CARF crypto", "crypto reporting 2026", "18% 24% crypto", "HMRC cryptoassets manual", or any question about the income tax, capital gains tax, or reporting treatment of cryptocurrency, tokens, or digital assets for UK tax residents. Covers HMRC's Cryptoassets Manual (CRYPTO10000+), S104 pooling, same-day and 30-day matching rules, DeFi lending/staking, NFTs, mining, SA108 reporting, and the Crypto Asset Reporting Framework (CARF) from 2026. ALWAYS read this skill before touching any UK crypto work.
-version: 2.0
+version: 2.1
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-09-29
@@ -16,8 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Crypto Tax
 
-## UK Crypto / Digital Assets Tax Skill v2.0
-
+## UK Crypto / Digital Assets Tax Skill v2.1
 Covers three UK tax years: **2024-25**, **2025-26**, and **2026-27**, including the mid-year CGT rate change on 30 October 2024 and the introduction of the Crypto Asset Reporting Framework (CARF) from April 2026.
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
@@ -32,7 +31,7 @@ Covers three UK tax years: **2024-25**, **2025-26**, and **2026-27**, including 
 | Tax | Capital Gains Tax (CGT) and Income Tax on cryptoassets |
 | Currency | GBP (all values must be converted to GBP at the transaction date) |
 | Tax year | 6 April – 5 April |
-| Primary authority | HMRC Cryptoassets Manual (CRYPTO10000+); Taxation of Chargeable Gains Act 1992 (TCGA 1992); Income Tax Act 2007 (ITA 2007); Income Tax (Trading and Other Income) Act 2005 (ITTOIA 2005); Finance Act 2024 (rate change at 30 Oct 2024) |
+| Primary authority | HMRC Cryptoassets Manual (CRYPTO10000+) — https://www.gov.uk/hmrc-internal-manuals/cryptoassets-manual; Taxation of Chargeable Gains Act 1992 (TCGA 1992); Income Tax Act 2007 (ITA 2007); Income Tax (Trading and Other Income) Act 2005 (ITTOIA 2005); Finance Act 2024 (rate change at 30 Oct 2024) |
 | Tax authority | HM Revenue & Customs (HMRC) |
 | Filing portal | HMRC Self Assessment Online / Government Gateway |
 | Cost basis method | Section 104 pooling (TCGA 1992 S104), subject to same-day and 30-day matching rules |
@@ -40,7 +39,7 @@ Covers three UK tax years: **2024-25**, **2025-26**, and **2026-27**, including 
 | Reporting form | SA108 (Capital Gains Summary) supplementary to SA100 — dedicated cryptoasset tick box from 2024-25 |
 | Exchange reporting | CARF first reporting in **2027** covering **2026 calendar year** transactions; DAC8-equivalent UK rules align |
 | Validated by | Verified by James Power on 2026-06-03 |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Three-Year Snapshot
 
@@ -54,7 +53,7 @@ Covers three UK tax years: **2024-25**, **2025-26**, and **2026-27**, including 
 | Annual Exempt Amount (trustees) | £1,500 | £1,500 | £1,500 |
 | SA108 crypto tick box | Yes (new from 2024-25) | Yes | Yes |
 | CARF reporting | Not yet | Data collection prep | **Data collection begins (calendar 2026); first reports filed 2027** |
-| Personal Allowance | £12,570 | £12,570 | £12,570 (subject to confirmation) |
+| Personal Allowance | £12,570 | £12,570 | £12,570 |
 
 ### HMRC Cryptoasset Classification (CRYPTO10000+)
 
@@ -118,7 +117,7 @@ Crypto received as **income** (employment, mining, staking rewards, airdrops wit
 | Higher rate | £50,271 – £125,140 | 40% |
 | Additional rate | Over £125,140 | 45% |
 
-Bands and Personal Allowance are frozen through 2027-28 under the previous Government's policy; 2026-27 figures subject to confirmation in Autumn Budget 2025. Scotland operates separate income tax bands.
+Bands and the Personal Allowance are unchanged for 2026-27 (GOV.UK, Income Tax rates and Personal Allowances — https://www.gov.uk/income-tax-rates; current and past rates — https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past). Scotland operates separate income tax bands.
 
 ## Section 3 — Capital Gains Tax Rate Table (3-Year)
 
@@ -134,6 +133,8 @@ This is the central rate reference for crypto disposals. Use it to determine whi
 | **2024-25** | **30 Oct 2024** – 5 Apr 2025 | **18%** | **24%** | (shared £3,000) |
 | **2025-26** | 6 Apr 2025 – 5 Apr 2026 | **18%** | **24%** | £3,000 |
 | **2026-27** | 6 Apr 2026 – 5 Apr 2027 | **18%** | **24%** | £3,000 |
+
+Sources: GOV.UK, Capital Gains Tax rates — https://www.gov.uk/capital-gains-tax/rates; rates and allowances for previous years — https://www.gov.uk/guidance/capital-gains-tax-rates-and-allowances; HMRC Cryptoassets Manual — https://www.gov.uk/hmrc-internal-manuals/cryptoassets-manual; TCGA 1992 — https://www.legislation.gov.uk/ukpga/1992/12/contents.
 
 Authority: Finance Act 2024 (Autumn 2024) increased the main rates from 10%/20% to 18%/24% with effect from **30 October 2024**. The 2024-25 tax year is therefore split: disposals on or before 29 October 2024 use the old rates; disposals on or after 30 October 2024 use the new rates. From 2025-26 onwards the full year uses 18%/24%.
 

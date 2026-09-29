@@ -1,7 +1,7 @@
 ---
 name: uk-capital-gains-sa108
 description: Use this skill whenever asked about UK capital gains tax for individuals. Trigger on phrases like "SA108", "capital gains tax", "CGT UK", "annual exempt amount", "disposal", "chargeable gain", "crypto CGT UK", "share sale UK", "property disposal CGT", "PPR relief", "principal private residence", "BADR", "BADR 18%", "Business Asset Disposal Relief", "Entrepreneurs' Relief", "Investors Relief 18%", "carried interest April 2026", "CGT 18% 24%", "bed and breakfasting", "30-day rule", "Section 104 pool", "negligible value claim", "CGT losses", "60-day reporting", "residential property CGT", or any question about computing, filing, or reporting capital gains on the UK Self Assessment return. Covers SA108 form, CGT rates, reliefs, crypto as CGT asset, share matching rules, property CGT reporting, and loss treatment. ALWAYS read this skill before touching any UK CGT work.
-version: 2.0
+version: 2.1
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-09-29
@@ -16,8 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Capital Gains Sa108
 
-## UK Capital Gains Tax (SA108) Skill v2.0
-
+## UK Capital Gains Tax (SA108) Skill v2.1
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
@@ -30,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Capital Gains Tax (CGT) |
 | Currency | GBP only |
 | Tax year | 6 April to 5 April |
-| Primary legislation | Taxation of Chargeable Gains Act 1992 (TCGA 1992) |
+| Primary legislation | Taxation of Chargeable Gains Act 1992 (TCGA 1992) — https://www.legislation.gov.uk/ukpga/1992/12/contents |
 | Supporting legislation | Finance Act 2024 (rate changes from 30 Oct 2024); Finance Act 2024 BADR/IR two-step uplift; Autumn Budget 2024; TCGA ss. 1H, 1I (rates); TCGA s. 222-226 (PPR); TCGA s. 169H-169S (BADR); TCGA ss. 104, 106A, 107 (share matching) |
 | Tax authority | HMRC |
 | Filing portal | HMRC Self Assessment Online |
@@ -38,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | SA108 form | Capital Gains Tax Summary supplementary pages to SA100 |
 | HMRC crypto guidance | HMRC CG12100+ (Cryptoassets Manual) |
 | Validated by | Verified by James Power on 2026-06-03 |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### 1.1 Three-Year Headline Rate Comparison (2024-25 / 2025-26 / 2026-27)
 
@@ -54,6 +53,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Investors' Relief rate | **10%** | **14%** | **18%** |
 | Investors' Relief lifetime limit | £10m → £1m (dropped 30 Oct 2024) | £1m | £1m |
 | Carried interest (fund managers) | 28% | **32%** (transitional from Apr 2025) | **Reclassified as trading income (income tax rates; no CGT treatment) from Apr 2026** |
+
+Sources: GOV.UK, Capital Gains Tax rates — https://www.gov.uk/capital-gains-tax/rates; rates and allowances for previous years — https://www.gov.uk/guidance/capital-gains-tax-rates-and-allowances; allowances — https://www.gov.uk/capital-gains-tax/allowances; Business Asset Disposal Relief — https://www.gov.uk/business-asset-disposal-relief (10% to 5 April 2025, 14% for 2025-26, 18% from 6 April 2026); TCGA 1992 ss. 1H and 1I — https://www.legislation.gov.uk/ukpga/1992/12/contents.
 
 All rates frozen across the three-year window unless explicitly shown changing.
 

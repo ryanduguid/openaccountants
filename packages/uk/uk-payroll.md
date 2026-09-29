@@ -1,7 +1,7 @@
 ---
 name: uk-payroll
 description: Use this skill whenever asked about UK payroll, PAYE, National Insurance contributions, employer obligations, RTI submissions, statutory payments, or payslip requirements. Trigger on phrases like "PAYE", "National Insurance", "NIC", "Class 1 NI", "employer NI", "employee NI", "RTI", "FPS", "EPS", "real time information", "P45", "P60", "P11D", "statutory sick pay", "SSP", "statutory maternity pay", "SMP", "national minimum wage", "national living wage", "payslip", "tax code", "student loan deduction", "workplace pension", "auto-enrolment", "HMRC payroll", or any question about running payroll in the United Kingdom. ALWAYS read this skill before processing any UK payroll work.
-version: 1.0
+version: 1.1
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-09-29
@@ -16,8 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UK Payroll
 
-## United Kingdom -- Payroll Skill v1.0
-
+## United Kingdom -- Payroll Skill v1.1
 > **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **James Power** on 2026-06-03; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
@@ -31,13 +30,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | United Kingdom (England, Wales, Scotland, Northern Ireland) |
 | Currency | GBP (£) only |
 | Tax year | 6 April -- 5 April |
-| Primary legislation | Income Tax (Earnings and Pensions) Act 2003; Social Security Contributions and Benefits Act 1992 |
+| Primary legislation | Income Tax (Earnings and Pensions) Act 2003 — https://www.legislation.gov.uk/ukpga/2003/1/contents; Social Security Contributions and Benefits Act 1992 — https://www.legislation.gov.uk/ukpga/1992/4/contents |
 | Tax authority | HM Revenue and Customs (HMRC) |
 | Reporting system | Real Time Information (RTI) |
 | Pay frequency | Monthly (most common), weekly, fortnightly, four-weekly |
 | Employer registration | PAYE scheme via HMRC Online Services |
 | Validated by | Verified by James Power on 2026-06-03 |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Income Tax Withholding (PAYE)
 
@@ -53,6 +52,8 @@ PAYE (Pay As You Earn) is a cumulative withholding system. The employer applies 
 | Basic rate | 12,571 -- 50,270 | 20% |
 | Higher rate | 50,271 -- 125,140 | 40% |
 | Additional rate | 125,141+ | 45% |
+
+Source: GOV.UK, Income Tax rates and allowances: current and past — https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past.
 
 **Scotland has separate income tax bands** (starter, basic, intermediate, higher, advanced, top). Always check the employee's tax code prefix (S = Scotland, C = Wales).
 
@@ -81,11 +82,13 @@ PAYE (Pay As You Earn) is a cumulative withholding system. The employer applies 
 
 | Plan | Threshold (annual) | Rate |
 | --- | --- | --- |
-| Plan 1 (pre-2012) | £24,990 | 9% |
-| Plan 2 (post-2012) | £27,295 | 9% |
-| Plan 4 (Scotland) | £31,395 | 9% |
+| Plan 1 (pre-2012) | £26,065 | 9% |
+| Plan 2 (post-2012) | £28,470 | 9% |
+| Plan 4 (Scotland) | £32,745 | 9% |
 | Plan 5 (post-2023) | £25,000 | 9% |
 | Postgraduate loan | £21,000 | 6% |
+
+Sources: GOV.UK, Rates and thresholds for employers 2025 to 2026 — https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026; previous annual repayment thresholds — https://www.gov.uk/guidance/previous-annual-repayment-thresholds. Until 2026-09-29 this table carried the 2024-25 thresholds (£24,990, £27,295, £31,395) under the 2025/26 heading.
 
 ## Section 3 -- Social Security: Employee Deductions (National Insurance)
 
@@ -99,6 +102,8 @@ PAYE (Pay As You Earn) is a cumulative withholding system. The employer applies 
 | LEL to PT | £125 -- £242 | £6,500 -- £12,570 | 0% (qualifying year accrues) |
 | PT to UEL | £242 -- £967 | £12,570 -- £50,270 | 8% |
 | Above UEL | > £967 | > £50,270 | 2% |
+
+Source: GOV.UK, Rates and thresholds for employers 2025 to 2026 — https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2025-to-2026.
 
 ### Class 1 Primary (Employee) NIC -- 2026/27
 
@@ -131,6 +136,8 @@ PAYE (Pay As You Earn) is a cumulative withholding system. The employer applies 
 | Apprentice under 25 (letter H) | 0% up to UEL, 15% above |
 | Armed forces veteran (letter V) | 0% up to UEL, 15% above |
 | Freeport employee (letter F) | 0% up to FUST, 15% above |
+
+Source: GOV.UK, National Insurance rates and categories — https://www.gov.uk/national-insurance-rates-letters.
 
 ### Class 1A NIC
 
