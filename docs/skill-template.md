@@ -53,13 +53,13 @@ These nineteen values are the whole vocabulary; `scripts/validate-guides.py` err
 |----------|---------------|--------|
 | `international` | Country-level tax computation: income tax, VAT and GST, social contributions, corporate tax, withholding | 991 |
 | `payroll` | Withholding, social security, payslips | 189 |
-| `formation` | Entity types, registration, compliance | 167 |
+| `formation` | Entity types, registration, compliance | 166 |
 | `state-tax` | US state tax, and the 50-state matrices | 150 |
 | `orchestrator` | Router, intake and return-assembly files | 61 |
 | `tax-optimization` | Legal tax reduction strategies, timing, deductions | 49 |
 | `cross-border` | Multi-jurisdiction coordination, treaties, WHT, the US expat set | 42 |
 | `crypto` | Cryptocurrency and digital asset taxation | 32 |
-| `federal` | US federal tax | 31 |
+| `federal` | US federal tax | 32 |
 | `financial-statements` | Annual accounts, reporting, audit, and the accounting standards under `skills/financial-reporting/` | 30 |
 | `invoicing` | E-invoicing format, validation, transmission | 24 |
 | `bookkeeping` | Chart of accounts, P&L, balance sheet | 22 |
