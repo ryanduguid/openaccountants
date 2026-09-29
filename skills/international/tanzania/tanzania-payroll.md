@@ -3,7 +3,7 @@ name: tanzania-payroll
 description: Use this skill whenever asked about Tanzania payroll processing for employed persons. Trigger on phrases like "Tanzania payroll", "PAYE Tanzania", "TRA PAYE", "NSSF contribution", "PSSSF", "SDL Tanzania", "Skills Development Levy", "WCF Tanzania", "Workers Compensation Fund", "ITX 300.01.E", "net salary Tanzania", "tax withholding Tanzania", "employer NSSF", "minimum wage Tanzania", "gross to net Tanzania", "salary calculation Tanzania", "TZS payroll", "Tanzanian Shilling salary", "non-resident PAYE Tanzania", "Zanzibar PAYE", or any question about computing employee pay, income-tax (PAYE) withholding, or social-security and payroll levies for Tanzania-based employees. This skill covers PAYE income-tax withholding by the employer, NSSF/PSSSF social security, the Skills Development Levy (SDL), the Workers Compensation Fund (WCF), minimum wage, and filing obligations to TRA / NSSF / WCF. ALWAYS read this skill before processing any Tanzania payroll.
 jurisdiction: TZ
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Baraka Cassian
 review_status: current
 tier: 1
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Tanzania Payroll Skill v0.1
 
-> **Tier 2 (research-verified) — NOT yet accountant-verified.** A small number of figures carry `[RESEARCH GAP — reviewer to confirm]` markers (notably the full sectoral minimum-wage schedule, the floating late-payment interest rate, and any NSSF wage ceiling). A licensed Tanzanian tax practitioner / accountant must reconcile those before any output is presented as final.
+> **Accountant-reviewed (`tier: 1`).** Baraka Cassian reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-12; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet accountant-verified", the draft label the guide carried before that review. **Not covered by the review:** items flagged for further clarification were excluded, so the figures below that still carry the `[RESEARCH GAP — reviewer to confirm]` marker (notably the full sectoral minimum-wage schedule, the floating late-payment interest rate, and any NSSF wage ceiling) remain unconfirmed; a licensed Tanzanian tax practitioner / accountant must reconcile those before any output that depends on them is presented as final.
 
 ## Verified rates & thresholds (accountant-reviewed)
 

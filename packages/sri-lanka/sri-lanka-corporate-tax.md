@@ -3,7 +3,7 @@ name: sri-lanka-corporate-tax
 description: "ALWAYS read this skill before touching any Sri Lanka corporate income tax work. Use whenever asked about Sri Lanka company tax for a resident company. Trigger on phrases like \"Sri Lanka corporate tax\", \"Sri Lanka CIT\", \"company tax Sri Lanka\", \"30% corporate rate Sri Lanka\", \"betting and gaming tax Sri Lanka\", \"liquor tobacco tax Sri Lanka\", \"Inland Revenue Act 24 of 2017 company\", or \"year of assessment 2025/26 company\". Covers the Inland Revenue Act No. 24 of 2017 as amended by the Inland Revenue (Amendment) Act No. 02 of 2025 (effective 1 April 2025): the 30% standard rate, the 15% concessionary rate on remitted foreign-currency income/services, and the 45% rate on betting/gaming and liquor/tobacco. Out of scope — personal income tax (separate skill), withholding/AIT (separate skill), SSCL, VAT, banking/insurance/sector special regimes, and group/transfer-pricing matters."
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Lal kumarasiri
 review_status: current
 tier: 1
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Sri Lanka — Corporate Income Tax — Skill v1.0
 
-> **Produced by OpenAccountants (openaccountants.com).** Research-grade (tier 2), drafted from official IRD sources for YA 2025/26 — pending sign-off by a Sri Lankan CA / IRD-registered practitioner. Not tax advice.
+> **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** The sign-off by Lal kumarasiri is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`; upstream's export of approved reviews (2026-08-22, `VERIFIERS.md`) lists the same reviewer for Sri Lanka. Coverage: YA 2025/26. Until 2026-09-29 this banner still read "Research-grade (tier 2), pending sign-off", the draft label the guide carried before that review. **Provenance of the draft:** official IRD sources. Not tax advice.
 
 ## Section 1 — Quick reference
 

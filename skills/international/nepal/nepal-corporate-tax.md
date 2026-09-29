@@ -3,7 +3,7 @@ name: nepal-corporate-tax
 description: "ALWAYS read this skill before touching any Nepal corporate income tax work. Use whenever asked about Nepal company tax for a resident entity. Trigger on phrases like \"Nepal corporate tax\", \"Nepal CIT\", \"company tax Nepal\", \"25% corporate Nepal\", \"30% bank tax Nepal\", \"special industry rebate Nepal\", \"Section 11 Nepal\", \"Income Tax Act 2058 company\", or \"FY 2082/83 company\". Covers the Income Tax Act 2058 (2002) as amended by the Finance Act 2082: the 25% normal rate, the 30% sector rate (banks/insurance/telecom/liquor-tobacco/etc.), and the effective 20% for special industries. Out of scope — personal income tax (separate skill), TDS (separate skill), payroll/SSF, VAT, and sector special computational regimes."
 jurisdiction: NP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ashish Bista
 review_status: current
 tier: 1
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Nepal — Corporate Income Tax — Skill v1.0
 
-> **Produced by OpenAccountants (openaccountants.com).** Research-grade (tier 2) for FY 2082/83. **Source provenance:** figures derive from Nepali professional-firm tax-fact publications (PKF T.R. Upadhya, Baker Tilly Nepal) reflecting the Income Tax Act 2058 and Finance Act 2082 — not re-anchored to primary IRD pages. A Nepali CA must confirm against the statute before reliance. Not tax advice.
+> **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Coverage: FY 2082/83. Until 2026-09-29 this banner still read "Research-grade (tier 2)", the draft label the guide carried before that review. **Source provenance of the draft:** figures derive from Nepali professional-firm tax-fact publications (PKF T.R. Upadhya, Baker Tilly Nepal) reflecting the Income Tax Act 2058 and Finance Act 2082, not re-anchored to primary IRD pages; the review excluded items flagged for further clarification. Confirm any figure outside the reviewed block against the statute before reliance. Not tax advice.
 
 ## Verified rates & thresholds (accountant-reviewed)
 

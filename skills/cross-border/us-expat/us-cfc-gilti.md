@@ -6,7 +6,7 @@ jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: James Wallach
-review_status: current
+review_status: pending_review
 depends_on:
   - cross-border-tax-workflow-base
 category: international

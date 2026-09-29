@@ -3,7 +3,7 @@ name: sri-lanka-withholding-tax
 description: ALWAYS read this skill before touching any Sri Lanka withholding tax / Advance Income Tax (AIT) work. Use whenever asked to compute, deduct, or reconcile Sri Lanka WHT/AIT on interest, dividends, rent, service fees, royalties, or payments to non-residents under the Inland Revenue Act No. 24 of 2017 as amended by Act No. 02 of 2025. Trigger on phrases like "Sri Lanka WHT", "Sri Lanka AIT", "advance income tax Sri Lanka", "interest WHT Sri Lanka 10%", "dividend WHT Sri Lanka", "rent WHT Sri Lanka", "non-resident WHT Sri Lanka", "SEC/2025/E circular", or "withholding certificate Sri Lanka". Out of scope — personal income tax computation (separate skill), corporate income tax (separate skill), SSCL, VAT, and APIT/PAYE on employment (covered by the income-tax / payroll skills).
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Lal kumarasiri
 review_status: current
 tier: 1
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Sri Lanka — Withholding Tax / Advance Income Tax (AIT) — Skill v1.0
 
-> **Produced by OpenAccountants (openaccountants.com).** Research-grade (tier 2), drafted from official IRD sources for YA 2025/26 — pending sign-off by a Sri Lankan CA / IRD-registered practitioner. Not tax advice.
+> **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** The sign-off by Lal kumarasiri is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`; upstream's export of approved reviews (2026-08-22, `VERIFIERS.md`) lists the same reviewer for Sri Lanka. Coverage: YA 2025/26. Until 2026-09-29 this banner still read "Research-grade (tier 2), pending sign-off", the draft label the guide carried before that review. **Provenance of the draft:** official IRD sources. Not tax advice.
 
 ## Section 1 — Quick reference (rate table, effective 1 April 2025)
 

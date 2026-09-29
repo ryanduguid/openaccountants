@@ -5,7 +5,7 @@ jurisdiction: ID
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: RILIA PUTRI
-review_status: current
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

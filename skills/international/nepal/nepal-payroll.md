@@ -3,7 +3,7 @@ name: nepal-payroll
 description: Use this skill whenever asked about Nepal payroll processing for employed persons. Trigger on phrases like "Nepal payroll", "PAYE Nepal", "TDS on salary Nepal", "eTDS Nepal", "salary tax Nepal", "SSF contribution", "Social Security Fund Nepal", "provident fund Nepal", "gratuity Nepal", "CIT Nepal", "EPF Nepal", "net pay Nepal", "salary calculation Nepal", "NPR payroll", "Nepalese Rupee payroll", "minimum wage Nepal", "PAN Nepal", "D-01 D-03 Nepal", "female tax credit Nepal", "remote area allowance", "married couple tax Nepal", or any question about computing employee pay, salary withholding, or social security contributions for Nepal-based employees. This skill covers monthly TDS/PAYE salary withholding on progressive resident slabs (single and married-couple), the 1% first-band Social Security Tax and its SSF interaction, retirement-fund and insurance deductions, the female tax credit, the 31% Social Security Fund contribution (20% employer / 11% employee), provident fund and gratuity for non-SSF employers, the minimum wage, filing forms (eTDS, D-01/D-02/D-03) and penalties. Nepal DOES levy a personal income tax (progressive PAYE). ALWAYS read this skill before processing any Nepal payroll.
 jurisdiction: NP
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Ashish Bista
 review_status: current
 tier: 1
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Nepal Payroll Skill v0.1
 
-Tier 2 (research-verified). NOT yet signed off by a licensed Nepali chartered accountant or registered auditor. Tax slabs, deductions and non-resident rates are corroborated by PKF T R Upadhya & Co. (PKF Global member firm) Tax Rates booklet FY 2082/83 and the Inland Revenue Department (IRD). SSF figures (31% total, 20%/11% split) are well-corroborated; the SSF scheme-by-scheme sub-split, the SSF salary ceiling, and exact statutory penalty percentages are flagged as RESEARCH GAPS below. Treat every output as an estimate pending professional review.
+> **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet signed off", the draft label the guide carried before that review. **Provenance of the draft:** tax slabs, deductions and non-resident rates are corroborated by the PKF T R Upadhya & Co. (PKF Global member firm) Tax Rates booklet FY 2082/83 and the Inland Revenue Department (IRD); SSF figures (31% total, 20%/11% split) are well-corroborated. **Not covered by the review:** items flagged for further clarification were excluded, so the SSF scheme-by-scheme sub-split, the SSF salary ceiling, the exact statutory penalty percentages and any other item below still marked `[RESEARCH GAP — reviewer to confirm]` remain unconfirmed; treat an output that depends on one of them as an estimate pending professional review.
 
 ## Verified rates & thresholds (accountant-reviewed)
 

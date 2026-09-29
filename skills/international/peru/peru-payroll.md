@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Peru payroll processing for emp
 version: 0.1
 jurisdiction: PE
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Peru Payroll Skill v0.1
 
-Tier 2 — research-verified. Figures below are sourced from the Peruvian tax authority (Superintendencia Nacional de Aduanas y de Administración Tributaria, SUNAT), the pension/AFP supervisor (Superintendencia de Banca, Seguros y AFP, SBS), the social-health insurer (EsSalud), the public pension office (ONP), the Presidencia/MTPE (minimum wage Supreme Decree 006-2024-TR), Garrigues, and PwC Worldwide Tax Summaries. NOT yet signed off by a licensed Peruvian accountant (Contador Público Colegiado) or tax adviser. Treat every computation as an estimate pending professional review.
+> **Accountant-reviewed (`tier: 1`).** Maria Clemencia Valverde Rios reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-29; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a licensed Peruvian accountant", the draft label the guide carried before that review. **Provenance of the draft:** the Peruvian tax authority (Superintendencia Nacional de Aduanas y de Administración Tributaria, SUNAT), the pension/AFP supervisor (Superintendencia de Banca, Seguros y AFP, SBS), the social-health insurer (EsSalud), the public pension office (ONP), the Presidencia/MTPE (minimum wage Supreme Decree 006-2024-TR), Garrigues, and PwC Worldwide Tax Summaries. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed; treat a computation that depends on one as an estimate pending professional review.
 
 ## Verified rates & thresholds (accountant-reviewed)
 

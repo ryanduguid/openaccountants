@@ -88,13 +88,26 @@ def headline_line(figures):
         bold["Guides"], bold["jurisdictions"], bold["accountant-reviewed"], bold["named accountants"])
 
 
+def edited_since_review(guide):
+    """Whether a reviewed guide was substantively edited after its sign-off.
+
+    ``review_status: pending_review`` on a tier-1 guide is that flag: the
+    sync contract set a guide back to pending when an edit superseded the
+    reviewed text, and the September 2026 corrections kept the convention.
+    The guide stays accountant-reviewed (the sign-off happened) and the
+    roster shows the count so the flag is not lost in the headline.
+    """
+    return str(guide.get("review_status") or "").strip().lower() == "pending_review"
+
+
 def roster(guides):
     """One row per reviewer of an accountant-reviewed guide, most guides first.
 
     A row carries the reviewer string as the guides record it, whether it
-    names a person, the guide count, a Counter of jurisdiction codes, the
-    newest ``last_updated`` among those guides (which dates the content, not
-    the review) and the slugs.
+    names a person, the guide count, how many of those guides were edited
+    since the review, a Counter of jurisdiction codes, the newest
+    ``last_updated`` among those guides (which dates the content, not the
+    review) and the slugs.
     """
     rows = {}
     for guide in guides:
@@ -105,11 +118,14 @@ def roster(guides):
             "reviewer": reviewer,
             "named": is_named(reviewer),
             "guides": 0,
+            "edited_since_review": 0,
             "jurisdictions": collections.Counter(),
             "latest": None,
             "slugs": [],
         })
         row["guides"] += 1
+        if edited_since_review(guide):
+            row["edited_since_review"] += 1
         row["jurisdictions"][guide.get("jurisdiction") or "-"] += 1
         updated = str(guide.get("last_updated") or "")
         if updated and (row["latest"] is None or updated > row["latest"]):
@@ -167,6 +183,12 @@ def render_partners(index, profiles):
             return "—"
         return "[{}]({})".format(profile.get("label") or "profile", url)
 
+    edited = sum(row["edited_since_review"] for row in rows)
+    edited_note = ""
+    if edited == 1:
+        edited_note = " · 1 reviewed guide edited since its review"
+    elif edited:
+        edited_note = " · {} reviewed guides edited since their review".format(edited)
     out = [
         "# Partners: the accountants on record",
         "",
@@ -183,28 +205,33 @@ def render_partners(index, profiles):
         "coverage gate use the same one, so these figures agree with them by "
         "construction.",
         "",
-        "**{:,} accountant-reviewed guides · {} reviewers ({} named) · {} of {} jurisdictions.**".format(
+        "**{:,} accountant-reviewed guides · {} reviewers ({} named) · {} of {} jurisdictions"
+        "{}.**".format(
             figures["accountant-reviewed"], len(rows), figures["named accountants"],
-            len(jurisdictions), total_jurisdictions,
+            len(jurisdictions), total_jurisdictions, edited_note,
         ),
         "",
         "## Reviewers",
         "",
-        "| Reviewer (as recorded in the guides) | Jurisdictions | Guides | Latest guide update | Public record |",
-        "|---|---|---|---|---|",
+        "| Reviewer (as recorded in the guides) | Jurisdictions | Guides | Edited since review | Latest guide update | Public record |",
+        "|---|---|---|---|---|---|",
     ]
     for row in rows:
         codes = ", ".join(
             "{} ({})".format(code, n) if len(row["jurisdictions"]) > 1 else code
             for code, n in sorted(row["jurisdictions"].items(), key=lambda kv: (-kv[1], kv[0]))
         )
-        out.append("| {} | {} | {} | {} | {} |".format(
-            row["reviewer"], codes, row["guides"], row["latest"] or "—", record(row)))
+        out.append("| {} | {} | {} | {} | {} | {} |".format(
+            row["reviewer"], codes, row["guides"], row["edited_since_review"] or "—",
+            row["latest"] or "—", record(row)))
     out += [
         "",
         "Jurisdiction codes are the guides' `jurisdiction` values: ISO 3166 country codes, "
         "`US-XX` for a US state, `CA-XX` for a Canadian province or territory, `US` and `CA` "
-        "for the federal guides. \"Latest guide update\" is the newest `last_updated` among the "
+        "for the federal guides. \"Edited since review\" counts the reviewer's guides whose "
+        "frontmatter carries `review_status: pending_review`: a substantive edit after the "
+        "sign-off sets that flag, so the reviewed text and the current text differ until the "
+        "guide is reviewed again. \"Latest guide update\" is the newest `last_updated` among the "
         "reviewer's accountant-reviewed guides: it dates the content, not the review. A public "
         "record is a profile or a review diff recorded in `docs/partners.json`, which is "
         "hand-maintained; a reviewer without one is on record in the guides alone. Licence "

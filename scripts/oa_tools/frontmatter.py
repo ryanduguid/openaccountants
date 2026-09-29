@@ -30,6 +30,7 @@ KNOWN_KEYS = [
     "tier",
     "verified_by",
     "reviewed_by",
+    "review_status",
     "tax_year",
     "last_updated",
 ]
