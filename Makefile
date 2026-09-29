@@ -43,6 +43,7 @@ checkers:  ## The gate checkers against scripts/baselines/, plus the cited-hosts
 	$(PYTHON) scripts/check-expired-rules.py
 	$(PYTHON) scripts/check-fact-conflicts.py
 	$(PYTHON) scripts/check-coverage-claims.py
+	$(PYTHON) scripts/check-sourcing-floor.py
 	$(PYTHON) scripts/check-cited-hosts.py --selftest
 
 baselines:  ## Rewrite the gate checkers' baselines from the current tree, after reading what changed
@@ -50,6 +51,7 @@ baselines:  ## Rewrite the gate checkers' baselines from the current tree, after
 	$(PYTHON) scripts/check-bracket-tables.py --update-baseline
 	$(PYTHON) scripts/check-expired-rules.py --update-baseline
 	$(PYTHON) scripts/check-fact-conflicts.py --update-baseline
+	$(PYTHON) scripts/check-sourcing-floor.py --update-baseline
 
 test:  ## Unit tests for the scripts and the MCP server (sync-integrity.yml, unit-tests)
 	$(PYTHON) -m unittest discover -s tests -p "test_*.py"

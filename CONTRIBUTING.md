@@ -106,7 +106,7 @@ make check                                       # validate + sync-check + test:
 | `make build` | the four generators: `scripts/build-packages.py`, `scripts/build-index.py`, `scripts/build-partners.py`, `scripts/build-llms-full.py` | none: you commit the output |
 | `make validate` | `scripts/validate-guides.py`: the frontmatter contract and derived-tree freshness | `validate.yml` |
 | `make sync-check` | `scripts/check-sync-integrity.py --mode audit --strict-metadata` from the merge base with `origin/main` (fetch it first, or pass `BASE=<rev>`) | `sync-integrity.yml`, `compare` |
-| `make checkers` | the five gate checkers (`check-arithmetic.py`, `check-bracket-tables.py`, `check-expired-rules.py`, `check-fact-conflicts.py`, `check-coverage-claims.py`) against `scripts/baselines/`, plus `check-cited-hosts.py --selftest` | `validate.yml`, `gate-checkers` |
+| `make checkers` | the six gate checkers (`check-arithmetic.py`, `check-bracket-tables.py`, `check-expired-rules.py`, `check-fact-conflicts.py`, `check-coverage-claims.py`, `check-sourcing-floor.py`) against `scripts/baselines/`, plus `check-cited-hosts.py --selftest` | `validate.yml`, `gate-checkers` |
 | `make baselines` | rewrites the four baselines from the current tree, for use after reading the findings your change added or fixed | none: you commit the result |
 | `make test` | `unittest discover` over `tests/` and `mcp/tests/` | `sync-integrity.yml`, `unit-tests` |
 | `make check` | `validate`, `sync-check`, `checkers` and `test` | all of the above |
