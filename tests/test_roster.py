@@ -41,11 +41,12 @@ build_partners = _load("build_partners_for_roster_tests", "build-partners.py")
 build_index = _load("build_index_for_roster_tests", "build-index.py")
 
 
-def g(slug, tier, reviewed_by=None, verified_by=None, jurisdiction="ZZ", last_updated="2026-01-02"):
+def g(slug, tier, reviewed_by=None, verified_by=None, jurisdiction="ZZ", last_updated="2026-01-02",
+      review_status=None):
     return {
         "slug": slug, "path": f"skills/international/zz/{slug}.md", "name": slug,
         "jurisdiction": jurisdiction, "category": None, "tier": tier,
-        "verified_by": verified_by, "reviewed_by": reviewed_by,
+        "verified_by": verified_by, "reviewed_by": reviewed_by, "review_status": review_status,
         "tax_year": 2026, "last_updated": last_updated,
     }
 
@@ -53,12 +54,12 @@ def g(slug, tier, reviewed_by=None, verified_by=None, jurisdiction="ZZ", last_up
 WITHHELD = "A licensed accountant (name withheld at their request)"
 
 GUIDES = [
-    g("zz-vat", 1, reviewed_by="Jane Doe, CPA", last_updated="2026-03-01"),
-    g("zz-income-tax", 1, reviewed_by="Jane Doe, CPA", last_updated="2026-05-01"),
+    g("zz-vat", 1, reviewed_by="Jane Doe, CPA", last_updated="2026-03-01", review_status="current"),
+    g("zz-income-tax", 1, reviewed_by="Jane Doe, CPA", last_updated="2026-05-01", review_status="pending_review"),
     g("zz-payroll", 1, verified_by="Ann Legacy", last_updated="2026-02-02"),
     g("yy-vat", 1, reviewed_by=WITHHELD, jurisdiction="YY"),
     g("yy-income-tax", 1, reviewed_by="Jane Doe, CPA", jurisdiction="YY"),
-    g("xx-vat", 2, reviewed_by="Bob Attribution", jurisdiction="XX"),
+    g("xx-vat", 2, reviewed_by="Bob Attribution", jurisdiction="XX", review_status="pending_review"),
     g("xx-payroll", 1, reviewed_by="pending", jurisdiction="XX"),
     g("ww-vat", 1, verified_by="TBD", jurisdiction="WW"),
     g("vv-vat", 2, jurisdiction="VV"),
@@ -90,6 +91,16 @@ class RuleTests(unittest.TestCase):
         self.assertFalse(roster.is_named(WITHHELD))
         self.assertTrue(roster.is_named("Jane Doe, CPA"))
 
+    def test_pending_review_is_the_edited_since_review_flag_not_a_tier(self) -> None:
+        """review_status is freshness: a reviewed guide edited after its sign-off
+        stays reviewed, and a tier-2 guide pending review is not reviewed."""
+        edited = g("a", 1, reviewed_by="Jane Doe, CPA", review_status="pending_review")
+        self.assertTrue(roster.edited_since_review(edited))
+        self.assertEqual(roster.reviewer_of(edited), "Jane Doe, CPA")
+        self.assertFalse(roster.edited_since_review(g("a", 1, reviewed_by="Jane Doe, CPA", review_status="current")))
+        self.assertFalse(roster.edited_since_review(g("a", 1, reviewed_by="Jane Doe, CPA")))
+        self.assertIsNone(roster.reviewer_of(g("a", 2, reviewed_by="Bob Attribution", review_status="pending_review")))
+
     def test_headline_figures_and_line(self) -> None:
         figures = roster.headline(GUIDES)
         self.assertEqual(figures, {"Guides": 9, "jurisdictions": 5, "accountant-reviewed": 5, "named accountants": 2})
@@ -120,11 +131,13 @@ class RosterTests(unittest.TestCase):
         self.assertEqual([r["reviewer"] for r in rows], ["Jane Doe, CPA", WITHHELD, "Ann Legacy"])
         jane = rows[0]
         self.assertEqual(jane["guides"], 3)
+        self.assertEqual(jane["edited_since_review"], 1, "zz-income-tax is pending_review")
         self.assertEqual(dict(jane["jurisdictions"]), {"ZZ": 2, "YY": 1})
         self.assertEqual(jane["latest"], "2026-05-01")
         self.assertEqual(jane["slugs"], ["yy-income-tax", "zz-income-tax", "zz-vat"])
         self.assertTrue(jane["named"])
         self.assertFalse(rows[1]["named"])
+        self.assertEqual([r["edited_since_review"] for r in rows[1:]], [0, 0])
 
     def test_by_jurisdiction(self) -> None:
         table = roster.by_jurisdiction(GUIDES)
@@ -137,14 +150,29 @@ class RenderTests(unittest.TestCase):
         text, unused = roster.render_partners(INDEX, PROFILES)
         self.assertEqual(unused, [])
         self.assertTrue(text.startswith("# Partners: the accountants on record\n\n" + roster.GENERATED_MARKER))
-        self.assertIn("**5 accountant-reviewed guides · 3 reviewers (2 named) · 2 of 5 jurisdictions.**", text)
-        self.assertIn("| Jane Doe, CPA | ZZ (2), YY (1) | 3 | 2026-05-01 | [profile](https://example.test/jane) |", text)
-        self.assertIn("| Ann Legacy | ZZ | 1 | 2026-02-02 | — |", text)
-        self.assertIn(f"| {WITHHELD} | YY | 1 | 2026-01-02 | [profile](https://example.test/anon) |", text)
+        self.assertIn("**5 accountant-reviewed guides · 3 reviewers (2 named) · 2 of 5 jurisdictions"
+                      " · 1 reviewed guide edited since its review.**", text)
+        self.assertIn("| Reviewer (as recorded in the guides) | Jurisdictions | Guides | Edited since review "
+                      "| Latest guide update | Public record |", text)
+        self.assertIn("| Jane Doe, CPA | ZZ (2), YY (1) | 3 | 1 | 2026-05-01 | [profile](https://example.test/jane) |", text)
+        self.assertIn("| Ann Legacy | ZZ | 1 | — | 2026-02-02 | — |", text)
+        self.assertIn(f"| {WITHHELD} | YY | 1 | — | 2026-01-02 | [profile](https://example.test/anon) |", text)
         self.assertIn("| ZZ | 3 | Jane Doe, CPA (2); Ann Legacy (1) |", text)
         self.assertIn("The other 3 jurisdictions", text)
         self.assertIn(f"- **{WITHHELD}:** Named elsewhere.", text)
         self.assertNotIn("Bob Attribution", text, "a tier-2 name is not on the roster")
+
+    def test_the_edited_since_review_note_counts_and_pluralises(self) -> None:
+        untouched = [dict(guide, review_status=None) for guide in GUIDES]
+        text, _ = roster.render_partners({**INDEX, "guides": untouched}, {})
+        self.assertIn("· 2 of 5 jurisdictions.**", text)
+        self.assertNotIn("edited since", text.split("## Reviewers")[0])
+        two = [dict(guide, review_status="pending_review" if guide["slug"].startswith("zz-") else None)
+               for guide in GUIDES]
+        text, _ = roster.render_partners({**INDEX, "guides": two}, {})
+        self.assertIn("· 3 reviewed guides edited since their review.**", text)
+        self.assertIn("| Jane Doe, CPA | ZZ (2), YY (1) | 3 | 2 | 2026-05-01 | — |", text)
+        self.assertIn("| Ann Legacy | ZZ | 1 | 1 | 2026-02-02 | — |", text)
 
     def test_a_profile_for_nobody_on_the_roster_is_reported_not_rendered(self) -> None:
         text, unused = roster.render_partners(INDEX, {**PROFILES, "Bob Attribution": {"public_record": "https://x"}})

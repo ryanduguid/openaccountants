@@ -61,12 +61,17 @@ python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] f
 Everything else in the corpus is on `tax_year` 2025 (1,665), 2026 (119), or is
 year-agnostic and carries none (74).
 
-> **One open maintainer call.** 99 guides carry a named `reviewed_by` while
-> marked `tier: 2`. The enforced contract permits that, but 93 of them also
-> carry `review_status: current`, which means `tier: 1` everywhere else, so a
-> reader cannot tell from the frontmatter whether they were reviewed. None of
-> them counts as reviewed anywhere in this repository until the call is made.
-> See [QUALITY-TIERS.md](QUALITY-TIERS.md).
+> **Names on tier-2 guides.** 99 guides carry a named `reviewed_by` while
+> marked `tier: 2`. The name records corrections an accountant contributed
+> without signing the whole guide off, and none of them counts as reviewed
+> anywhere in this repository. Since 2026-09-29 every one of them carries
+> `review_status: pending_review`, and the validator rejects `current` on a
+> tier-2 guide: `review_status` is review freshness, `tier` is the quality
+> state. See [QUALITY-TIERS.md](QUALITY-TIERS.md). Regenerate the count with:
+>
+> ```
+> python3 -c "import json;d=json.load(open('index.json'));print(sum(1 for g in d['guides'] if str(g.get('tier'))=='2' and g.get('reviewed_by') and g['reviewed_by'].strip().lower() not in ('pending','none','no','false','-','n/a','tbd')))"
+> ```
 
 ## Where the defects were
 
@@ -84,5 +89,5 @@ The derived table is hand-written but machine-checked. When a change to
 `skills/` moves the counts, `scripts/check-coverage-claims.py` names the row and
 the tree's value: update the row, the headline line in `README.md`, `llms.txt`
 and `docs/QUALITY-TIERS.md`, regenerate `PARTNERS.md` (`make build`), and run
-the gate until it passes. The tax-year list and the maintainer-call figures are
+the gate until it passes. The tax-year list and the tier-2 names figure are
 not gated; the commands beside them re-derive them.

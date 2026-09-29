@@ -365,6 +365,10 @@ def _catalogue() -> tuple[
                 else None
             ),
             "last_updated": str(meta.get("last_updated") or ""),
+            # Review freshness, distinct from the tier: "pending_review" on an
+            # accountant-verified skill means it was substantively edited after
+            # the sign-off and awaits another review.
+            "review_status": str(meta.get("review_status") or ""),
             "relpath": relpath.as_posix(),
             # Hash the guidance, not the file. Over whole bytes a differing
             # `tier`/`verified_by`/`last_updated` stamp is indistinguishable
@@ -801,7 +805,7 @@ def list_skills(
     page = matches[offset:offset + limit]
     skills = [{k: rec[k] for k in (
         "slug", "title", "jurisdiction", "category",
-        "quality_tier", "verified_by", "last_updated",
+        "quality_tier", "verified_by", "review_status", "last_updated",
     )} for rec in page]
     end = offset + len(skills)
     next_offset = end if end < len(matches) else None
@@ -851,6 +855,7 @@ def get_skill(slug: str) -> dict[str, Any]:
         "jurisdiction": rec["jurisdiction"],
         "quality_tier": rec["quality_tier"],
         "verified_by": rec["verified_by"],
+        "review_status": rec["review_status"],
         "markdown": body + "\n" + _provenance_footer(rec),
         "last_updated": rec["last_updated"],
         "next_action": (

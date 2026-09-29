@@ -9,8 +9,13 @@ READMEs and files without frontmatter, and writes index.json at the repo root:
   "generated_at": "<UTC ISO>",
   "counts": { "guides": N, "jurisdictions": N, "accountant_reviewed": N },
   "guides": [ { "slug", "path", "name", "jurisdiction", "category", "tier",
-                "verified_by", "reviewed_by", "tax_year", "last_updated" }, ... ]
+                "verified_by", "reviewed_by", "review_status", "tax_year",
+                "last_updated" }, ... ]
 }
+
+`review_status` is review freshness, not assurance: `current` when the recorded
+sign-off covers the text, `pending_review` after a substantive edit (or on a
+draft). Only `tier` says whether a guide is accountant-reviewed.
 
 Dependency-free (stdlib only). Guide discovery and the tolerant frontmatter
 reader are the shared ones in scripts/oa_tools/ (guides.py, frontmatter.py);
@@ -83,6 +88,7 @@ def build_index():
             "tier": tier,
             "verified_by": fields["verified_by"],
             "reviewed_by": fields["reviewed_by"],
+            "review_status": fields["review_status"],
             "tax_year": fields["tax_year"],
             "last_updated": fields["last_updated"],
         })

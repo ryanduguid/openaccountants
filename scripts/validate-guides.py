@@ -155,6 +155,13 @@ def real_reviewer(value):
     return bool(value and str(value).strip().lower() not in NON_REVIEWER_MARKERS)
 
 
+#: The values `review_status` may take (docs/skill-template.md): review
+#: freshness, not assurance. `current` says the recorded sign-off covers the
+#: text; `pending_review` that the guide awaits one, as a draft or because a
+#: substantive edit superseded the reviewed text.
+REVIEW_STATUSES = ("current", "pending_review")
+
+
 def check_quality_metadata(rel, fields, errors):
     """Enforce the fail-closed quality-tier contract for canonical sources."""
     tier = fields["tier"]
@@ -168,6 +175,21 @@ def check_quality_metadata(rel, fields, errors):
         errors.append(f"{rel}: tier 1 requires a real `reviewed_by` or `verified_by` value")
     elif tier == "2" and verified_by:
         errors.append(f"{rel}: tier 2 must not claim accountant verification in `verified_by`")
+
+    review_status = fields.get("review_status")
+    if review_status is None:
+        return
+    if review_status not in REVIEW_STATUSES:
+        errors.append(
+            f"{rel}: `review_status` must be current or pending_review (got {review_status!r})"
+        )
+    elif review_status == "current" and tier == "2":
+        # A tier-2 guide has no sign-off for `current` to be current with; the
+        # combination read as "reviewed" on every other surface until 2026-09-29.
+        errors.append(
+            f"{rel}: `review_status: current` on a tier 2 guide claims a sign-off no review gave; "
+            "use pending_review"
+        )
 
 
 def changed_files_vs_main():

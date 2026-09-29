@@ -19,7 +19,7 @@ from openaccountants_mcp import server
 
 
 def _skill(name: str, title: str, jurisdiction: str = "XX", category: str = "international",
-           body: str = "Body.") -> str:
+           body: str = "Body.", extra: str = "") -> str:
     return (
         "---\n"
         f"name: {name}\n"
@@ -27,6 +27,7 @@ def _skill(name: str, title: str, jurisdiction: str = "XX", category: str = "int
         f"category: {category}\n"
         "tier: 2\n"
         "last_updated: 2026-01-02\n"
+        f"{extra}"
         "---\n\n"
         f"# {title}\n\n{body}\n"
     )
@@ -112,6 +113,30 @@ class ListSkillsPagingTests(ToolTreeCase):
             (0, 0, 3, 5, None),
         )
         self.assertIn("error", result)
+
+
+class ReviewStatusTests(ToolTreeCase):
+    """review_status is review freshness, served beside quality_tier: `current`
+    when the recorded sign-off covers the text, `pending_review` when the
+    guide awaits one. It says nothing about the tier, which stays the one
+    tier-1-plus-reviewer test."""
+
+    def test_the_field_rides_the_catalogue_and_the_skill(self) -> None:
+        reviewed = _skill("xx-stamp-duty", "XX Stamp Duty",
+                          extra="reviewed_by: Alex Example, CPA\nreview_status: current\n")
+        self.write({
+            "xx/xx-cgt.md": _skill("xx-cgt", "XX CGT", extra="review_status: pending_review\n"),
+            "xx/xx-stamp-duty.md": reviewed.replace("tier: 2\n", "tier: 1\n"),
+        })
+        server._index.cache_clear()
+        listed = {s["slug"]: s for s in server.list_skills(jurisdiction="xx")["skills"]}
+        self.assertEqual(listed["xx-cgt"]["review_status"], "pending_review")
+        self.assertEqual(listed["xx-cgt"]["quality_tier"], "research-verified")
+        self.assertEqual(listed["xx-stamp-duty"]["review_status"], "current")
+        self.assertEqual(listed["xx-stamp-duty"]["quality_tier"], "accountant-verified")
+        self.assertEqual(listed["xx-vat"]["review_status"], "", "absent is served as an empty string")
+        self.assertEqual(server.get_skill("xx-cgt")["review_status"], "pending_review")
+        self.assertEqual(server.get_skill("xx-stamp-duty")["review_status"], "current")
 
 
 class SearchSkillsTests(ToolTreeCase):
