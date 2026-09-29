@@ -126,6 +126,9 @@ The following are exempt from CGT:
 ### 4.4 NTA 2025 — consolidation of CGT into the income tax framework
 
 - **NTA 2025 consolidation** - From 1 January 2026, gains fall within the new income-tax framework. Company rates follow section 56 (30%) and individual rates follow section 58 and the Fourth Schedule (0% to 25%). The historical 10% CGTA rate is not a general 2026 rate. The pre-2026 rules and examples in this guide must remain labelled for their period. [Nigeria Tax Act 2025, ss.56, 59 and 202](https://nass.gov.ng/documents/download/11249)
+- **What the NTA changes in the computation** — The base cost is never indexed for inflation (the Act rules indexation out), capital losses are offset only against gains of the same asset class and carried forward, and gains on a principal private residence, on Nigerian government securities and under life assurance policies stay exempt.  _(Nigeria Tax Act 2025)_
+- **Shares from 2026** — A disposal of shares is exempt where the proceeds are below ₦150 million and the gains below ₦10 million in any 12 consecutive months; above that the gain is taxed at the s 56 or s 58 rate. This replaces the ₦100 million proceeds test of the Finance Act 2021 in §4.2 for 2026 disposals.  _(Nigeria Tax Act 2025)_
+- **Returns** — CGT returns are filed bi-annually, the first by 30 June, as the review recorded.  _(Nigeria Tax Act 2025)_
 
 ## Section 5 — Worked examples
 

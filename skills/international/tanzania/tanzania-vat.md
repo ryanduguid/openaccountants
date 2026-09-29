@@ -30,8 +30,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Authority | Tanzania Revenue Authority (TRA) |
 | Currency | TZS |
 | Filing frequency | Monthly |
-| Deadline | 20th of following month |
-| Registration | TZS 200,000,000 annual turnover (Mainland; VAT Act, Cap 148, s.28) |
+| Deadline | 20th of the following month, even when the 20th falls on a weekend or public holiday (s.66, as amended by Finance Act 2025) |
+| Registration | TZS 200,000,000 annual taxable turnover (Mainland; VAT Act, Cap 148, s.28). Professional service providers (lawyers, accountants and the like) and government entities carrying on economic activities register whatever their turnover (s.28). A non-resident supplying electronic services to Mainland consumers registers under the simplified regime, with no threshold, and charges 18% on B2C supplies (VAT (Registration of Non-Resident Electronic Service Suppliers) Regulations) |
 | Zanzibar (separate regime) | Zanzibar VAT Act, administered by the ZRA: 15% standard rate (18% for banking, postal, telecommunication, insurance and digital services); registration threshold TZS 100,000,000. This guide covers Mainland Tanzania |
 | Withholding VAT | 3% goods / 6% services (from July 2025) |
 | Primary legislation | VAT Act 2014 (Act No. 5) |
@@ -61,7 +61,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | TANESCO | Domestic 18% | Electricity |
 | DAWASA | Domestic 18% | Water |
 | VODACOM TZ, AIRTEL TZ, TIGO, HALOTEL | Domestic 18% | Telecoms |
-| GOOGLE, MICROSOFT, AWS | Reverse charge 18% | Non-resident |
+| GOOGLE, MICROSOFT, AWS | Reverse charge 18% only where the buyer's exempt supplies are 10% or more of its total supplies | Non-resident; see Section 7 |
 
 ## Section 4 -- Worked examples
 
@@ -75,7 +75,7 @@ Goods from Kenya TZS 20M. VAT 18% at customs = TZS 3.6M. Recoverable. No intra-c
 
 ## Section 5 -- Classification rules
 
-- **Classification rules** — 18% standard (16% for B2C electronic payments to unregistered, from Sep 2025). 0% exports, agricultural inputs, diplomatic, SEZ. Exempt: unprocessed foodstuffs, financial, medical, education, residential rental, life insurance, public transport, agricultural equipment, water (public utilities), petroleum (fuel levy).
+- **Classification rules** — 18% standard (16% for B2C electronic payments to unregistered, from Sep 2025). 0% exports, agricultural inputs, diplomatic, SEZ. Exempt: unprocessed foodstuffs, financial, medical, education, residential rental, life insurance, public transport, agricultural equipment, water (public utilities), petroleum (fuel levy). Natural gas supplied for conversion to CNG for motor vehicles is exempt from 1 July 2025 to 30 June 2028 (Finance Act 2025).
 
 ## Section 6 -- VAT return form (ITX222.01.E)
 
@@ -87,23 +87,26 @@ Net: C1-C3 (net, credit b/f, net payable).
 
 ## Section 7 -- Reverse charge, withholding VAT, and imports
 
-- **Reverse charge** — Reverse charge: non-resident services. Self-assess 18%. Net zero.  _(VAT Act s.16)_
-- **Withholding VAT (from July 2025)** — Designated agents withhold 3% of VAT on goods, 6% on services. Remit by 20th. Supplier needs certificate to claim credit.
-- **EAC imports** — VAT at border, no intra-community mechanism.
+- **Reverse charge on imported services** — A registered person accounts for output VAT on services imported from a non-resident only where its exempt supplies are 10% or more of its total supplies; a fully taxable business does not self-assess. Where it applies, the self-assessed 18% is creditable only to the extent the partial-exemption rule in Section 8 allows, so the net cost is the share attributable to exempt supplies.  _(Value Added Tax Act, Cap 148, imported-services provisions and s.70)_
+- **Withholding VAT (from July 2025)** — Designated agents (the Ministry of Finance, government institutions retaining own-source revenue and VAT-registered persons the Commissioner General appoints) withhold 3 percentage points of the 18% on goods (the supplier receives 15%) and 6 points on services (the supplier receives 12%); the agent remits by the 20th of the following month and issues a VAT Withholding Certificate, which the supplier needs to claim the withheld amount as a credit in its return.  _(Value Added Tax Act, Cap 148, as amended by Finance Act 2025)_
+- **EAC imports** — VAT at border, no intra-community mechanism. Deferment of VAT on imported capital goods ceases from 30 June 2026 (Finance Act 2025 sunset).
 
 ## Section 8 -- Deductibility and blocked input
 
-- **Blocked input tax categories** — Blocked (s.64): entertainment, vehicles < 13 seats (unless taxi/hire/driving instruction), clubs, personal use, non-taxable supply purchases.  _(s.64)_
-- **De minimis for exempt** — If < 5% of total, full recovery may be allowed. Reviewer confirm.
+- **Blocked input tax** — No credit for entertainment, membership of sporting, social or recreational clubs, or spare parts and repair or maintenance of passenger vehicles; passenger vehicles of fewer than 13 seats other than taxis, hire cars and driving-instruction vehicles, private use and purchases for non-taxable supplies are likewise outside the credit.  _(Value Added Tax Act, Cap 148, s.68)_
+- **Partial exemption** — Taxable supplies above 90% of total supplies: full input credit; below 10%: no credit; between 10% and 90%: apportion by the average method or direct attribution.  _(Value Added Tax Act, Cap 148, s.70)_
+- **Time limits on input claims** — An input tax claim must be made within 6 months of the date of the fiscal receipt; VAT incurred in the 6 months before registration is claimable no later than the third VAT return after registration.  _(Value Added Tax Act, Cap 148, s.69 and the pre-registration provisions)_
+- **Fiscal receipts** — A fiscal receipt is mandatory for every supply, from an EFD/EFDMS, the Government e-Payment Gateway (GePG) or another system the Commissioner General approves; an input claim without a valid fiscal receipt is not deductible.  _(Value Added Tax Act, Cap 148; Tax Administration (Electronic Fiscal Devices) Regulations)_
 - **Deemed supplies** — Non-business use, gifts > TZS 100,000, cessation with stock.
 
 ## Section 9 -- Filing, deadlines, and penalties
 
 - **Filing and penalties** — Monthly, 20th. Late filing: 1%/month (max 100%), min TZS 150K. Late payment: BoT rate + 5%, daily.
+- **Refunds** — A remaining credit is claimable 6 months after the refund first became due, with every intervening return filed and an auditor's certificate of genuineness; a business in a consistent refund position (an exporter) may apply to lodge monthly.  _(Value Added Tax Act, Cap 148, ss.80–83)_
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
-**EC1 -- SaaS.** Reverse charge 18%. Net zero.
+**EC1 -- SaaS.** Reverse charge only if the buyer's exempt supplies are 10% or more of its total supplies; a fully taxable buyer accounts for nothing. Where it applies: output 18%, input credit per the Section 8 apportionment.
 **EC2 -- Export to Kenya.** Zero-rated. Input recoverable.
 **EC3 -- EAC import (Uganda).** VAT at customs. Recoverable.
 **EC4 -- Mining.** Escalate.
@@ -114,14 +117,14 @@ Net: C1-C3 (net, credit b/f, net payable).
 
 **Test 1** -- TZS 10M sale. Output 1.8M.
 **Test 2** -- TZS 5M furniture + 900K VAT. Recoverable.
-**Test 3** -- Indian IT TZS 5M. Output 900K, input 900K. Net zero.
+**Test 3** -- Indian IT TZS 5M, fully taxable buyer. No reverse charge. (Buyer with exempt supplies at 10% or more of total: output 900K, input credit apportioned under s.70.)
 **Test 4** -- Coffee export TZS 100M. Zero-rated.
 **Test 5** -- Entertainment. Blocked.
 **Test 6** -- Exempt financial TZS 50M. No output. Input not recoverable.
 **Test 7** -- Kenya import TZS 20M. Customs VAT 3.6M. Recoverable.
 **Test 8** -- Gift TZS 500K. Deemed supply. Output 90K.
 
-Out of scope: CIT 30%, PAYE 0%-30%, SDL 4%, NSSF/PPF 10%+10%.
+Out of scope: CIT 30%, PAYE 0%-30%, SDL 3.5%, NSSF 10%+10%.
 
 ### Prohibitions
 

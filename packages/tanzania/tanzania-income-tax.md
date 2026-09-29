@@ -362,11 +362,33 @@ Records "complete" → use the lower complete-records column; "incomplete" → h
 | Non-resident — Tanzanian-source investment | 30% (PwC) |
 | Resident — overseas-source investment | 30% (PwC) |
 
-Out of scope for routine PAYE/turnover work — flag for specialist.
+Out of scope for routine PAYE/turnover work — flag for specialist. The rules the review verified, for when a client does realise an investment:
+
+- **Realisation of land or buildings — payment and notice** — The tax is a single instalment payable within 30 days of the realisation, and the Commissioner must be notified within 14 days.  _(Income Tax Act, Cap 332, s.90; Tax Administration Act, Cap 438)_
+- **Resident individual without cost records** — For land or buildings, 3% of the greater of the incomings and the approved value of the asset, in place of 10% of the gain.  _(Income Tax Act, Cap 332, s.90 as amended)_
+- **Exemptions (selected)** — A private residence where the gain is TZS 15,000,000 or less; agricultural land with a market value of TZS 10,000,000 or less; DSE-listed shares held by a resident, and DSE-listed shares of a non-resident holding under 25%.  _(Income Tax Act, Cap 332, s.9 and Second Schedule)_
+- **Corporations** — Gains on the realisation of investments are included in income and taxed at 30%.  _(Income Tax Act, Cap 332)_
 
 ### 5.6 The Wholly-and-Exclusively Principle (Standard Regime)
 
 - **Wholly-and-exclusively principle** — Under the standard net-profit regime, an expense is deductible only if incurred wholly and exclusively in the production of income (Income Tax Act, Cap. 332). Mixed-use expenses must be apportioned on a reasonable, documented basis. Entertainment, private living costs, fines/penalties, income tax itself, and drawings are not deductible.  _(Income Tax Act, Cap. 332)_
+
+### 5.6.1 Losses, Donations and Administration (Standard Regime)
+
+The remaining rules the review verified for a self-employed person under the standard regime, and the entity-level rules a sole trader meets when the business incorporates:
+
+- **Loss carryforward** — Indefinite, but brought-forward losses shelter at most 60% of a year's taxable profit (the excess carries forward); the 60% cap does not apply to agriculture, health and education businesses.  _(Income Tax Act, Cap 332, s.19 as amended)_
+- **Loss ring-fencing** — Agricultural, mining-licence-area, petroleum-licence-area, foreign-source, investment and speculative losses are offset only against income of the same category or area.  _(Income Tax Act, Cap 332, s.19)_
+- **Charitable contributions** — Approved charitable or social-development contributions are deductible up to 2% of taxable income before the deduction; Education Fund, LGA statutory community obligations and AIDS Trust Fund contributions are also deductible.  _(Income Tax Act, Cap 332, s.16)_
+- **Alternative minimum tax (entities)** — 1% of turnover for an entity with unrelieved tax losses in the current and the two preceding years of income; it does not apply to an individual.  _(Income Tax Act, Cap 332, AMT provisions as amended by Finance Act 2025, in force 1 July 2025)_
+- **Extractive-sector service fees** — 10% final withholding on technical and management services a resident provides to mining, oil and gas entities (5% before Finance Act 2025).  _(Income Tax Act, Cap 332, as amended by Finance Act 2025)_
+- **Digital services and assets** — A non-resident provider of electronic services pays a digital service tax of 2% of turnover excluding VAT, with a monthly return and payment by the 20th of the following month; payments to residents for the exchange or transfer of digital assets bear 3% withholding, deducted by the platform owner or facilitator (a non-resident platform registers under the simplified regime).  _(Income Tax Act, Cap 332; Income Tax (Registration of Non-Resident Electronic Service Suppliers) Regulations 2022; Finance Act 2024)_
+- **Forest produce** — 2% of the gross payment is remitted as a single instalment before timber, logs, mirunda or poles are transported; the base is the greatest of the farm-gate price, the purchase price and the value the Tanzania Forest Services determines.  _(Income Tax Act, Cap 332, as amended by Finance Act 2025)_
+- **Corporate rates (context)** — 30% standard for resident corporations and PEs; 25% for three consecutive years from a DSE listing with at least 25% of the shares issued to the public; 10% for the first five years for new assemblers of vehicles, tractors and fishing boats; 20% for the first five years for new manufacturers of pharmaceuticals or leather products under a performance agreement with the Government. Where profits are not distributed within 12 months of year-end, the Commissioner General may treat 30% of the after-tax profit as distributed, with 10% dividend withholding on the deemed distribution.  _(Income Tax Act, Cap 332, First Schedule; Finance Act 2025)_
+- **Entity filing** — Statement of estimated tax within 3 months of the start of the accounting period, instalments by the end of months 3, 6, 9 and 12; final return within 6 months of the period end (9 months for public-sector entities).  _(Income Tax Act, Cap 332, ss.88–89 and s.91; Tax Administration Act, Cap 438)_
+- **Certification and audit** — The return of a corporation with gross income above TZS 100,000,000, or of an individual with turnover above TZS 500,000,000, must be prepared or certified by a CPA in public practice; a sole trader with turnover of TZS 100,000,000 or more needs audited financial statements.  _(Tax Administration Act, Cap 438, as amended by Finance Act 2025)_
+- **Assessments, objections and appeals** — TRA may adjust a return within 5 years of the final-return due date, with no limit for fraud, wilful neglect or serious omission (s.48). An objection needs a deposit of the higher of the tax not in dispute and one-third of the assessed tax, and Finance Act 2025 lets the Commissioner General demand 100% where the objector is a flight risk (s.51); an objection not determined within 6 months of admission is treated as confirmed and may be appealed (s.52). The route is TRA objection, then the Tax Revenue Appeals Board, the Tax Revenue Appeals Tribunal and the Court of Appeal.  _(Tax Administration Act, Cap 438, ss.48, 51 and 52; Tax Revenue Appeals Act, Cap 408)_
+- **Currency and year** — Accounts are kept in TZS unless the Commissioner permits a convertible foreign currency on written application; the year of income is the calendar year, and an entity may apply to use its own accounting period.  _(Income Tax Act, Cap 332, ss.20–21; Tax Administration Act, Cap 438)_
 
 ### 5.7 Statutory Contributions
 
@@ -447,7 +469,21 @@ Out of scope for routine PAYE/turnover work — flag for specialist.
 
 ### 6.7 Capital Allowances / Depreciation (Standard Regime)
 
-- **Capital allowances / depreciation** — Depreciation classes and rates under the ITA Cap. 332 Third Schedule are not enumerated in this skill. [RESEARCH GAP — reviewer to apply the correct Tanzanian depreciation class and rate for each asset.]
+**Depreciation classes and rates**  _(Income Tax Act, Cap 332, Third Schedule)_
+
+| Class | Rate and method | Assets |
+| --- | --- | --- |
+| 1 | 37.5% reducing balance | Computers and data-handling equipment; automobiles, buses and minibuses of fewer than 30 passengers; goods vehicles under 7 tonnes; construction and earth-moving equipment |
+| 2 | 25% reducing balance | Buses of 30 passengers or more; heavy and specialised trucks and trailers; rail, vessels and aircraft; plant and machinery used in agriculture or manufacturing; public utility plant |
+| 3 | 12.5% reducing balance | Office furniture, fixtures and equipment; any asset not in another class |
+| 5 | 20% straight line | Buildings, dams and fences used in agriculture, livestock or fish farming |
+| 6 | 5% straight line | Other buildings and structures |
+| 7 | Straight line over useful life | Intangible assets |
+| 8 | 100% | Plant and machinery used in agriculture; electronic fiscal devices bought by non-VAT-registered traders |
+
+- **Enhanced allowance** — Manufacturing, fish farming and tourist hotels: a 50% allowance on qualifying plant and machinery, taken equally in the first and second years, with the normal class rate on the remaining balance thereafter.  _(Income Tax Act, Cap 332, Third Schedule)_
+- **Mineral and petroleum operations** — Expenditure is written off at 20% a year, straight line.  _(Income Tax Act, Cap 332, Third Schedule)_
+- **Reviewer judgement** — Which class an asset falls in (a pickup under 7 tonnes is Class 1, a specialised truck Class 2) and whether plant is "used in" agriculture or manufacturing are reviewer calls; the rates are not.
 
 ## Section 7 -- Excel Working Paper Template
 

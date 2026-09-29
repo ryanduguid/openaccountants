@@ -33,6 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Payroll levies | SDL — Skills Development Levy (3.5%, employer-only, ≥10 staff); WCF — Workers Compensation Fund (0.5%, employer-only) |
 | PAYE + SDL monthly deadline | **7th day of the following month** (TRA — SDL/PAYE) |
 | NSSF monthly deadline | **Within one month of the salary month** (i.e. by end of the following month) (NSSF) |
+| HESLB loan deduction | **15%** of the monthly salary of each Higher Education Students' Loans Board beneficiary, remitted by the **15th** of the following month (HESLB Act, Cap. 178) |
 | WCF monthly deadline | **Within the following month** (e.g. July contributions by 31 August) (WCF) |
 | Annual individual return | Within **6 months of year-end**; estimate within 3 months of start of year of income (employment-only earners generally covered by PAYE) (TRA; PwC) |
 | Key legislation | Income Tax Act (Cap. 332); NSSF Act; PSSSF Act; Vocational Education & Training Act (SDL); Workers Compensation Act |
@@ -90,6 +91,23 @@ Note: the lowest taxed band is **8%** (a secondary calculator source that stated
 | Non-resident PAYE | Flat **15%** on Tanzania-source employment income | PwC — Taxes on personal income |
 | Nature | **Final tax** — no further individual return required | PwC |
 
+### Benefits in kind (taxable employment income)
+
+Benefits in kind are employment income, valued at market value unless the Act quantifies them (Income Tax Act, Cap. 332, s.7 read with s.27). Add the monthly share of the annual value to taxable pay before applying the PAYE table.
+
+**Car benefit — annual taxable value**  _(Income Tax Act, Cap. 332, s.27(1)(b) quantification table)_
+
+| Engine size | Annual taxable value |
+| --- | --- |
+| Up to 1,000 cc | TZS 250,000 |
+| 1,001 – 2,000 cc | TZS 500,000 |
+| 2,001 – 3,000 cc | TZS 1,000,000 |
+| Over 3,000 cc | TZS 1,500,000 |
+
+- **Housing** — The lower of the market rental value and the higher of (i) 15% of the employee's total annual income excluding the housing and (ii) the expenditure the employer claims on the premises.  _(Income Tax Act, Cap. 332, s.27(1)(c))_
+- **Preferential (low-interest) loan** — The benefit is the difference between interest at the Bank of Tanzania statutory rate and the interest actually charged.  _(Income Tax Act, Cap. 332, s.27)_
+- **Other benefits** — The market value of the benefit.  _(Income Tax Act, Cap. 332, s.7 with s.27)_
+
 ### Withholding mechanism
 
 - PAYE is **withheld monthly by the employer** from payroll and remitted to TRA by the **7th** of the following month on form **ITX 300.01.E** via the TRA online portal (TRA — SDL/PAYE).
@@ -139,6 +157,8 @@ Private-sector employees contribute to the **National Social Security Fund (NSSF
 - **SDL headcount threshold** — Only employers with 10 or more employees are liable for SDL  _(TRA)_
 - **SDL collection and form** — Collected by TRA; same payment form ITX 300.01.E  _(TRA)_
 - **SDL deadline** — 7th day of the month following the payroll month (same as PAYE)  _(TRA)_
+- **No liability, no return** — An employer not liable to SDL (fewer than 10 employees, or exempt) does not file SDL returns  _(Vocational Education and Training Act, Cap 82, as amended by Finance Act 2023)_
+- **SDL in Zanzibar** — 5% of gross emoluments under Zanzibar's own VETA legislation; the 3.5% is the Mainland rate  _(Zanzibar VETA legislation)_
 
 ## Section 5 -- WCF — Workers Compensation Fund (Employer-only)
 
@@ -167,6 +187,7 @@ For a **private employer with ≥ 10 employees** (so SDL applies), on a resident
 
 - **Employer on-cost above gross salary** — 10% (NSSF) + 3.5% (SDL) + 0.5% (WCF) = 14% of gross for employers with ≥ 10 staff
 - **Fewer than 10 employees on-cost** — If the employer has fewer than 10 employees, SDL does not apply. The employer on-cost is then NSSF 10% + WCF 0.5% = 10.5% of gross. PAYE and NSSF still apply in full.
+- **HESLB loan beneficiaries** — The employer deducts 15% of the monthly salary of each Higher Education Students' Loans Board beneficiary and remits it by the 15th of the following month; failing to deduct or remit on time costs the employer a penalty of 10% of the monthly deduction. It is an employee deduction, not an employer cost, and it comes after PAYE.  _(Higher Education Students' Loans Board Act, Cap. 178)_
 
 ## Section 7 -- Minimum Wage (Private Sector)
 
@@ -427,6 +448,8 @@ If the engagement lacks key data:
 | Tax year | Calendar year ending 31 Dec | PwC — Tax administration |
 | PAYE | Withheld and remitted to TRA **monthly**, by the **7th** of the following month, on **ITX 300.01.E** via the TRA online portal (IDRAS) | TRA — SDL/PAYE; PwC |
 | SDL | Paid to TRA **monthly**, by the **7th** of the following month, on **ITX 300.01.E** (employers with ≥ 10 employees) | TRA — Skills Development Levy |
+| Employer half-year statement | Semi-annual PAYE/SDL employer return within **30 days** after the end of each six-month calendar period | Income Tax Act, Cap. 332, s.84(2) |
+| HESLB | 15% of each loan beneficiary's monthly salary, remitted by the **15th** of the following month | HESLB Act, Cap. 178 |
 | NSSF | Declared on **NSSF/CON.5** and paid **within one month** of the salary month | NSSF — Rate of contributions |
 | WCF | Paid online (`wcf.go.tz`) **within the following month** (e.g. July → by 31 August); other schedules with DG approval | WCF |
 | Annual individual return | Within **6 months of year-end**; estimate within **3 months of start of year of income** | PwC — Tax administration |
