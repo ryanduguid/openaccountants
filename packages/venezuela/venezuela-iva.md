@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or create a Venez
 version: 2.0
 jurisdiction: VE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Jose Padilla
 review_status: current
 depends_on:
@@ -18,54 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Venezuela IVA Return -- Self-Employed Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Jose Padilla** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### venezuela-iva
-
-- **Alícuota general** — 16%  _(Ley del IVA Articles 27, 61, 62)_
-- **Alícuota reducida (ciertos alimentos y bienes de primera necesidad)** — 8%  _(Ley del IVA Articles 27, 61, 62)_
-- **Alícuota adicional por lujo (sobre la alícuota general)** — Hasta 15%  _(Ley del IVA Articles 27, 61, 62)_
-- **Tasa combinada máxima (alícuota general + alícuota adicional por lujo)** — Hasta 31%  _(Ley del IVA)_
-- **Alícuota para exportaciones** — 0%  _(Ley del IVA)_
-- **Bienes y servicios exentos — Alimentos básicos, medicamentos, insumos agrícolas, libros, combustible, salud, educación, arrendamiento residencial, transporte público** — Exento (0% / sin IVA)  _(Ley del IVA Article 18; Ley del IVA Article 19)_
-- **Frecuencia de declaración — Contribuyente Ordinario** — Mensual  _(Ley del IVA)_
-- **Base para la fecha límite de declaración** — Calendario publicado por el SENIAT según el último dígito del RIF  _(Providencias SENIAT)_
-- **Formulario de declaración** — Forma 30  _(Ley del IVA)_
-- **Retención de Contribuyente Especial — fecha límite de declaración del período quincenal del 1 al 15** — Declarado a más tardar el día 20 del mismo mes  _(Providencia SNAT 2005-0056)_
-- **Retención de Contribuyente Especial — fecha límite de declaración del período quincenal del 16 al fin de mes** — Declarado a más tardar el día 5 del mes siguiente  _(Providencia SNAT 2005-0056)_
-- **Retención de Contribuyente Especial — compras a contribuyente ordinario con domicilio fiscal** — 75% del IVA  _(Providencia SNAT 2005-0056)_
-- **Retención de Contribuyente Especial — compras a proveedor sin domicilio fiscal** — 100% del IVA  _(Providencia SNAT 2005-0056)_
-- **Retención de Contribuyente Especial — entes gubernamentales** — 75% o 100% del IVA  _(Providencia SNAT 2005-0056)_
-- **Vehículos automotores (de pasajeros) — crédito fiscal de IVA soportado** — BLOQUEADO — no credito fiscal  _(Ley del IVA Article 33)_
-- **Entretenimiento — crédito fiscal de IVA soportado** — BLOQUEADO — no credito fiscal  _(Ley del IVA Article 33)_
-- **Uso personal — crédito fiscal de IVA soportado** — BLOQUEADO — no crédito fiscal  _(Ley del IVA Article 33)_
-- **Compras sin factura válida — crédito fiscal de IVA soportado** — BLOQUEADO — no crédito fiscal  _(Ley del IVA Article 33)_
-- **Declaración extemporánea** — 5 UT to 50 UT per return  _(Ley del IVA)_
-- **Pago extemporáneo** — 1% per month + monetary correction  _(Ley del IVA)_
-- **Incumplimiento de la obligación de retener** — 100% to 300% of amount not withheld  _(Ley del IVA)_
-- **Incumplimiento de la obligación de llevar Libros (libros de compras y ventas)** — 50 UT to 200 UT  _(Ley del IVA Article 56)_
-- **Incumplimiento de la obligación de emitir factura** — Business closure 1–5 days  _(Ley del IVA Article 54)_
-- **Fraude fiscal** — 100% to 300% of tax evaded + criminal prosecution  _(Ley del IVA)_
-- **Unidad monetaria para umbrales y sanciones** — Unidades Tributarias (UT) — ajustadas periódicamente  _(Ley del IVA)_
-- **Denominación monetaria vigente** — Bolívar Digital (introducido en 2021)
-- **Tipo de cambio a utilizar en transacciones en moneda extranjera** — Tasa oficial del BCV en la fecha de la transacción
-- **Fórmula de recuperación por prorrata** — % de Recuperación = Ventas Gravadas / Ventas Totales  _(Ley del IVA)_
-- **Libro de Compras y Ventas — campos obligatorios** — RIF, base imponible, monto del IVA, total — por transacción; los totales resumen se trasladan a la Forma 30  _(Ley del IVA Article 56)_
-- **Campos obligatorios de la factura fiscal** — RIF, fecha, descripción, base imponible, monto del IVA, total  _(Ley del IVA Article 54)_
-- **Frecuencia de declaración de retenciones del Contribuyente Especial** — Quincenal  _(Providencia SNAT 2005-0056)_
-- **Intereses bancarios (Intereses / Int Ganados)** — Exento — no gravable a efectos del IVA  _(Ley del IVA Article 19)_
-- **Tasa aplicable al momento del hecho imponible cuando la tasa cambia en el transcurso del período** — La tasa vigente al momento del hecho imponible  _(Ley del IVA)_
-- **Retención CE — Providencia rectora** — Providencia SNAT 2005-0056  _(Providencia SNAT 2005-0056)_
-- **Artículos de la legislación sobre alícuotas del IVA** — Ley del IVA Articles 27, 61, 62  _(Ley del IVA Articles 27, 61, 62)_
-- **Artículo de la legislación sobre bienes exentos** — Ley del IVA Article 18  _(Ley del IVA Article 18)_
-- **Artículo de la legislación sobre servicios exentos** — Ley del IVA Article 19  _(Ley del IVA Article 19)_
-- **Artículo de la legislación sobre créditos fiscales bloqueados del IVA** — Ley del IVA Article 33  _(Ley del IVA Article 33)_
-- **Artículo de la legislación sobre facturas fiscales** — Ley del IVA Article 54  _(Ley del IVA Article 54)_
-- **Artículo de la legislación sobre libros contables** — Ley del IVA Article 56  _(Ley del IVA Article 56)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Jose Padilla** on 2026-06-21; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

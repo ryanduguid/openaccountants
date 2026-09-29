@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Nkinyam Courage Ndasi
 review_status: pending_review
 tier: 2
@@ -13,38 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cameroon VAT
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Nkinyam Courage Ndasi** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### cameroon-vat
-
-- **Standard TVA rate** — 17.5%
-- **CAC (municipal surcharge) rate** — 10% of TVA amount  _(Code General des Impots, Titre III)_
-- **CAC effective rate on taxable base** — 1.75% of taxable base
-- **Effective total rate (TVA + CAC combined)** — 19.25%  _(Code General des Impots, Titre III)_
-- **Reduced TVA rate (social housing)** — 10% plus (10% additional for CAC), total needs to be 11%  _(https://www.impots.cm/sites/default/files/documents/CGI%202024%20version%20anglaise.pdf)_
-- **Zero rate (exports, international transport)** — 0%  _(https://www.impots.cm/sites/default/files/documents/CGI%202024%20version%20anglaise.pdf)_
-- **Regime reel filing deadline** — 15th of following month
-- **Simplifie filing deadline** — 15th of month following quarter
-- **Regime reel filing frequency** — Monthly
-- **Simplifie filing frequency** — Quarterly
-- **Registration threshold (regime reel)** — FCFA 100M  _(Code General des Impots, Titre III)_
-- **Registration threshold (simplifie)** — FCFA 50-100M  _(Code General des Impots, Titre III)_
-- **Late filing surcharge** — 30% surcharge
-- **Late payment penalty** — 1.5% per month
-- **Failure to register penalty** — 100% of tax due
-- **Reverse charge (autoliquidation) TVA rate** — 17.5%  _(CGI, Art. 135)_
-- **Reverse charge (autoliquidation) CAC rate** — 10% of TVA  _(CGI, Art. 135)_
-- **Utility services (electricity, water, telecoms) domestic rate** — 19.25%
-- **SaaS / non-resident digital services autoliquidation rate** — 19.25% (TVA + CAC)  _(CGI, Art. 135)_
-- **Blocked input: vehicles with fewer than 9 seats (unless taxi)** — < 9 seats  _(CGI Art. 144-147)_
-- **Partial exemption (prorata) — DGI approval required** — DGI approval required  _(CGI Art. 143)_
-- **Corporate income tax (IS) rate including surcharge** — 33% (including 10% surcharge)
-- **TVA base for EC5: excise duty included in TVA base** — TVA calculated on price INCLUDING excise duty
-- **Bad debt relief — court judgment required** — Court judgment required
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Nkinyam Courage Ndasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 -- Quick reference
 

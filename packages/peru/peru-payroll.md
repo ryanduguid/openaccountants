@@ -1,7 +1,7 @@
 ---
 name: peru-payroll
 description: Use this skill whenever asked about Peru payroll processing for employed persons. Trigger on phrases like "Peru payroll", "nómina Perú", "planilla Perú", "renta de quinta categoría", "retención de quinta", "impuesto a la renta quinta", "PLAME", "Formulario 601", "EsSalud", "aporte EsSalud 9%", "ONP", "SNP 13%", "AFP", "aporte AFP", "comisión AFP", "prima de seguro AFP", "SBS AFP", "T-Registro", "UIT Perú", "RMV", "salario mínimo Perú", "sueldo mínimo Perú", "net salary Peru", "sueldo neto", "PAYE Peru", "tax withholding Peru", "employer contributions Peru", "SUNAT planilla", "gross to net Peru", "PEN payroll", "sol salary", or any question about computing employee pay, withholding fifth-category income tax, or mandatory social contributions (EsSalud, ONP, AFP) for Peru-based employees. This skill covers fifth-category income-tax withholding (7-UIT exemption + 8%–30% progressive schedule), EsSalud (employer), the ONP/AFP pension choice (employee-borne), the RMV minimum wage, non-domiciled flat withholding, T-Registro registration, and PLAME/SUNAT filing obligations. ALWAYS read this skill before processing any Peru payroll.
-version: 0.1
+version: 0.2
 jurisdiction: PE
 tax_year: 2026
 last_updated: 2026-09-29
@@ -16,68 +16,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Peru Payroll
 
-## Peru Payroll Skill v0.1
-
-> **Accountant-reviewed (`tier: 1`).** Maria Clemencia Valverde Rios reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-29; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a licensed Peruvian accountant", the draft label the guide carried before that review. **Provenance of the draft:** the Peruvian tax authority (Superintendencia Nacional de Aduanas y de Administración Tributaria, SUNAT), the pension/AFP supervisor (Superintendencia de Banca, Seguros y AFP, SBS), the social-health insurer (EsSalud), the public pension office (ONP), the Presidencia/MTPE (minimum wage Supreme Decree 006-2024-TR), Garrigues, and PwC Worldwide Tax Summaries. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed; treat a computation that depends on one as an estimate pending professional review.
-
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Maria Clemencia Valverde Rios** on 2026-06-29.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### peru-payroll
-
-- **Currency** — Peruvian Sol (PEN / S/) only
-- **Standard pay frequency** — Monthly
-- **Tax year** — Calendar year (1 January -- 31 December)
-- **UIT (Unidad Impositiva Tributaria) 2026** — S/ 5,500
-- **UIT (Unidad Impositiva Tributaria) 2025** — S/ 5,350
-- **Filing portal** — SUNAT — SOL / PLAME (Formulario Virtual N° 601)
-- **Standard fixed deduction (7 UIT exemption)** — 7 UIT = 7 × 5,500 = S/ 38,500 (2026)  _(TUO LIR Art. 46)_
-- **Additional deduction (qualifying expenses)** — Up to 3 UIT = up to S/ 16,500 (2026) for specific documented personal expenses—such as hotels, restaurants, leases, and EsSalud contributions for domestic workers  _(TUO LIR Art. 46)_
-- **Additional 3 UIT deduction at withholding stage default** — S/ 0 at source unless documented  _(TUO LIR Art. 46)_
-- **5th-cat income tax Band 1 — Up to 5 UIT (0 – 27,500)** — 8%  _(TUO LIR Art. 53)_
-- **5th-cat income tax Band 2 — Over 5 to 20 UIT (27,500 – 110,000)** — 14%  _(TUO LIR Art. 53)_
-- **5th-cat income tax Band 3 — Over 20 to 35 UIT (110,000 – 192,500)** — 17%  _(TUO LIR Art. 53)_
-- **5th-cat income tax Band 4 — Over 35 to 45 UIT (192,500 – 247,500)** — 20%  _(TUO LIR Art. 53)_
-- **5th-cat income tax Band 5 — Over 45 UIT (Over 247,500)** — 30%  _(TUO LIR Art. 53)_
-- **Cumulative tax at top of Band 1 (5 UIT)** — S/ 2,200.00  _(TUO LIR Art. 53)_
-- **Cumulative tax at top of Band 2 (20 UIT)** — S/ 13,750.00  _(TUO LIR Art. 53)_
-- **Cumulative tax at top of Band 3 (35 UIT)** — S/ 27,775.00  _(TUO LIR Art. 53)_
-- **Cumulative tax at top of Band 4 (45 UIT)** — S/ 38,775.00  _(TUO LIR Art. 53)_
-- **Non-domiciled employment income withholding** — 30% flat on gross Peruvian-source income, no deductions, no 7 UIT exemption  _(TUO LIR)_
-- **ONP / SNP pension contribution (employee-borne)** — 13%
-- **ONP / SNP base/cap** — Monthly remuneration; no cap
-- **AFP mandatory contribution (all AFPs)** — 10.00% of gross salary; no cap
-- **AFP insurance prima (prima de seguro, uniform)** — Established by SBS Resolution No. 03399-2024. The 1.37% flat rate is valid until Dec 31, 2026. The RMA cap updates quarterly  _(SBS Resolution No. 03399-2024.)_
-- **Maximum insurable remuneration (RMA), Q2 2026** — S/ 12,598.91
-- **AFP HABITAT commission on flow (mixed)** — 1.47%  _(SBS — Comisiones y Prima del SPP, devengue 2026-06)_
-- **AFP HABITAT annual commission on balance** — 1.25%  _(SBS — Comisiones y Prima del SPP, devengue 2026-06)_
-- **AFP INTEGRA commission on flow (mixed)** — 1.55%  _(SBS — Comisiones y Prima del SPP, devengue 2026-06)_
-- **AFP INTEGRA annual commission on balance** — 0.78%  _(SBS — Comisiones y Prima del SPP, devengue 2026-06)_
-- **AFP PRIMA commission on flow (mixed)** — 1.60%  _(SBS — Comisiones y Prima del SPP, devengue 2026-06)_
-- **AFP HABITAT annual commission on balance** — 1.25%  _(SBS — Comisiones y Prima del SPP, devengue 2026-06)_
-- **AFP PROFUTURO commission on flow (mixed)** — 1.69%  _(SBS — Comisiones y Prima del SPP, devengue 2026-06)_
-- **AFP PROFUTURO annual commission on balance** — 0.68%  _(SBS — Comisiones y Prima del SPP, devengue 2026-06)_
-- **Total AFP withholding range** — ≈ 12.84%–13.06% (lowest 12.84% HABITAT flow, highest 13.06% PROFUTURO flow)
-- **EsSalud (health) employer contribution** — 9%
-- **EsSalud base/cap** — Monthly remuneration; no upper cap; minimum base = 1 RMV
-- **EPS credit against EsSalud** — UP to 25% of EsSalud payment (provided that it does not exceed the amount paid to the EPS and 10% of the UIT per worker)  _(Art. 16 Ley N° 26790)_
-- **RMV (Remuneración Mínima Vital)** — S/ 1,130 / month (up from S/ 1,025)  _(Supreme Decree 006-2024-TR)_
-- **RMV hourly equivalent (48-hour week)** — ((RMV/30) * 7)  / 48
-- **T-Registro registration of new worker** — late T-Registro enrollment constitutes a grave infraction subject to a variable fine based on the number of affected employees; for fiscal year 2026 (UIT = S/ 5,500.00), this penalty scales from 1.57 UIT (S/ 8,635.00) for 1–10 workers up to a maximum legal cap of 26.12 UIT (S/ 143,660.00) for 1,000+ workers, superseding any previous historical thresholds.  _(Art. 24.2 D.S. 019-2006-TR)_
-- **Late T-Registro SUNAFIL fine** — late T-Registro enrollment constitutes a grave infraction subject to a variable fine based on the number of affected employees; for fiscal year 2026 (UIT = S/ 5,500.00), this penalty scales from 1.57 UIT (S/ 8,635.00) for 1–10 workers up to a maximum legal cap of 26.12 UIT (S/ 143,660.00) for 1,000+ workers, superseding any previous historical thresholds  _(Arts. 24.2 y 48.1 del D.S. N° 019-2006-TR)_
-- **PLAME (Formulario Virtual N° 601) monthly deadline** — Monthly, by date matching last digit of employer's RUC per SUNAT annual cronograma;  _(Art 4° b DS N° 018-2007-TR)_
-- **AFP remittance (via AFPnet) deadline** — Within the first 5 business days of the following month
-- **Employee annual income-tax return form** — Formulario Virtual N° 709 — per last RUC/DNI digit in SUNAT annual cronograma; pure single-employer wage earners generally need not file
-- **Failure to file PLAME on time (General / MYPE Tax Regime)** — Base fine 1 UIT (S/ 5,500)  _(Código Tributario Art. 176, num. 1)_
-- **Failure to file PLAME on time (RER)** — 50% UIT (S/ 2,750)  _(Código Tributario Art. 176, num. 1)_
-- **Failure to file PLAME on time (Nuevo RUS)** — 0.6% of monthly net income  _(Código Tributario Art. 176, num. 1)_
-- **Régimen de Gradualidad fine reduction** — Up to 100% (or up to 95% with payment)  _(Régimen de Gradualidad (SUNAT))_
-- **Prior-year net revenues < 19 UIT and induced rectification within the 7th business day** — Up to 98% (or up to 99% with payment).  _(Codigo Tributario Art. 176, num. 1)_
-- **Prior-year net revenues < 150 UIT and induced rectification within the 7th business day** — Up to 90% (or up to 95% with payment).  _(Codigo Tributario Art. 176, num. 1)_
-- **Prior-year net revenues > 150 UIT and induced rectification within the 7th business day** — Up to 80% (or up to 90% with payment).  _(Codigo Tributario Art. 176, num. 1)_
+## Peru Payroll Skill v0.2
+> **Accountant-reviewed (`tier: 1`).** Maria Clemencia Valverde Rios reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-29; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a licensed Peruvian accountant", the draft label the guide carried before that review. **Provenance of the draft:** the Peruvian tax authority (Superintendencia Nacional de Aduanas y de Administración Tributaria, SUNAT), the pension/AFP supervisor (Superintendencia de Banca, Seguros y AFP, SBS), the social-health insurer (EsSalud), the public pension office (ONP), the Presidencia/MTPE (minimum wage Supreme Decree 006-2024-TR), Garrigues, and PwC Worldwide Tax Summaries. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed; treat a computation that depends on one as an estimate pending professional review.
 
 ## Section 1 -- Quick Reference
 
@@ -97,7 +37,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Reference unit | UIT (Unidad Impositiva Tributaria) = **S/ 5,500** for 2026 (PwC) |
 | Filing portal | SUNAT — SOL / PLAME (Formulario Virtual N° 601) |
 | Validated by | Verified by Maria Clemencia Valverde Rios (CPA) on 2026-06-29 |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 Read this whole section before computing anything. The shared payroll runbook lives in `payroll-workflow-base` — follow that runbook with this skill supplying the Peru-specific content.
 
@@ -181,7 +121,7 @@ The employee pays a **pension contribution, withheld from salary**, into exactly
 
 ### Option B — AFP (private, individual accounts)
 
-**AFP rates table**  _(SBS — Comisiones y Prima del SPP, devengue 2026-06)_
+**AFP rates table**  _(SBS — Comisiones y Prima del SPP, devengue 2026-06; the 1.37% insurance prima is fixed by SBS Resolución N.° 03399-2024 through 31 December 2026 and applies on remuneration up to the quarterly-updated RMA cap)_
 
 | AFP | Mandatory contribution | Insurance prima | Commission on flow (mixed) | Annual commission on balance |
 | --- | --- | --- | --- | --- |
@@ -474,7 +414,7 @@ These items depend on facts or sources not fully resolved in this research. The 
 | --- | --- | --- | --- |
 | **T-Registro** (registro de empleadores y trabajadores) | Register each new worker (and the employer) | Within **24 hours** of start date | SUNAT |
 
-Late T-Registro can draw a SUNAFIL fine of up to S/ 123,750. (SUNAT) **[T2 — confirm the current SUNAFIL fine schedule.]**
+Late T-Registro enrolment is a grave labour infraction under D.S. N.° 019-2006-TR arts. 24.2 and 48.1 (fine scale replaced by D.S. N.° 008-2020-TR): the SUNAFIL fine scales with the number of affected workers, from 1.57 UIT (S/ 8,635 at the 2026 UIT of S/ 5,500) to 26.12 UIT (S/ 143,660).
 
 ### Monthly — PLAME
 
@@ -503,7 +443,7 @@ Figures below come from SUNAT guidance and the Tax Code (Código Tributario, TUO
 | --- | --- | --- |
 | **Failure to file PLAME on time** | Base fine **1 UIT** (S/ 5,500, General / MYPE Tax Regime); **50% UIT** (S/ 2,750) for RER; **0.6%** of monthly net income for Nuevo RUS | Código Tributario Art. 176, num. 1 (SUNAT) |
 | **Régimen de Gradualidad** (voluntary filing before SUNAT notice) | Fine reduction up to **100%** (or up to 95% with payment) | Régimen de Gradualidad (SUNAT) |
-| **Late T-Registro** | Up to **S/ 123,750** | SUNAFIL **[T2 — confirm current schedule]** |
+| **Late T-Registro** | 1.57 UIT (S/ 8,635) to 26.12 UIT (S/ 143,660) at the 2026 UIT of S/ 5,500, by number of affected workers | D.S. N.° 019-2006-TR arts. 24.2 and 48.1 (scale of D.S. N.° 008-2020-TR); SUNAFIL |
 
 Default interest and additional sanctions may apply. Record-retention requirements were not part of this research dataset. **[RESEARCH GAP — confirm record-retention period.]**
 

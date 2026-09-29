@@ -1,7 +1,7 @@
 ---
 name: venezuela-payroll
 description: Use this skill whenever asked about Venezuela payroll processing for employed persons. Trigger on phrases like "Venezuela payroll", "ISLR Venezuela", "Impuesto Sobre la Renta withholding", "retención ISLR", "Unidad Tributaria", "valor de la UT", "IVSS deduction", "Seguro Social Venezuela", "FAOV", "Ley de Vivienda y Hábitat", "INCES", "Paro Forzoso", "Régimen Prestacional de Empleo", "LOPCYMAT", "AR-I", "AR-C", "ARC", "comprobante de retención", "salario mínimo Venezuela", "Ingreso Mínimo Integral", "bono de guerra económica", "cestaticket", "desgravamen único", "rebaja personal", "net salary Venezuela", "salario neto Venezuela", "gross to net Venezuela", "IGTF", "bolívares payroll", or any question about computing employee pay, income-tax withholding, or social-security/parafiscal contributions for Venezuela-based employees. This skill covers ISLR (income tax) withholding by the employer, IVSS social security, Paro Forzoso (employment benefit), FAOV (housing), INCES (training), LOPCYMAT (workplace safety), the frozen legal minimum wage vs the USD-indexed non-salary bonuses (Ingreso Mínimo Integral), the AR-I / AR-C withholding mechanism, and filing obligations to SENIAT. ALWAYS read this skill before processing any Venezuela payroll.
-version: 0.1
+version: 0.2
 jurisdiction: VE
 tax_year: 2025
 last_updated: 2026-09-29
@@ -16,77 +16,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Venezuela Payroll
 
-## Venezuela Payroll Skill v0.1
-
-> **Accountant-reviewed (`tier: 1`).** Jose Padilla reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-21; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet accountant-verified", the draft label the guide carried before that review. **Not covered by the review:** items flagged for further clarification were excluded, so the figures below that still carry the `[RESEARCH GAP — reviewer to confirm]` marker remain unconfirmed; a licensed Venezuelan contador público colegiado must reconcile those before any output that depends on them is presented as final.
+## Venezuela Payroll Skill v0.2
+> **Accountant-reviewed (`tier: 1`).** Jose Padilla reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-21; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet accountant-verified", the draft label the guide carried before that review. **Not covered by the review:** items flagged for further clarification were excluded, so the figures below that still carry the `[RESEARCH GAP — reviewer to confirm]` marker remain unconfirmed; a licensed Venezuelan contador público colegiado must reconcile those before any output that depends on them is presented as final.
 
 > **Hyperinflation / UT context (READ FIRST).** Almost every statutory figure in Venezuelan tax law is expressed in **Tax Units (Unidad Tributaria — UT)**, not bolívares. The current value is **VES 43.00 per UT**, effective **2 June 2025** (Providencia Administrativa SNAT/2025/0048, Gaceta Oficial No. 43,140). Using the wrong UT value invalidates every ISLR computation. Separately, the **legal minimum wage is frozen at VES 130/month** (since March 2022); the bulk of worker compensation is paid as **explicitly non-salary USD-indexed bonuses** that do NOT enter the contribution or ISLR base. Both distortions are statutory and must be modelled as written below, not "corrected."
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Jose Padilla** on 2026-06-21.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### venezuela-payroll
-
-- **Tax Unit (UT) value** — VES 43.00  _(Providencia Administrativa SNAT/2025/0048, Gaceta Oficial No. 43,140)_
-- **Tax year** — Calendar year (1 January – 31 December)  _(PwC — Venezuela individual)_
-- **Salario mínimo legal (salario mínimo)** — VES 130/mes (congelado desde marzo de 2022)  _(PwC (other taxes, 'VES 130 as of 15 March 2022'); WageIndicator)_
-- **Ingreso Mínimo Integral (IMI)** — El 30 de abril 2026 por anuncio presidencial se ajusta a 240 USD al mes y se hace obligatorio para la empresa privada  _(Guacamaya)_
-- **Bono de Guerra Económica (bono no salarial)** — El 30 de abril 2026 por anuncio presidencial se ajusta a 200 USD al mes y se hace obligatorio para la empresa privada  _(Guacamaya)_
-- **Cestaticket (bono de alimentación no salarial)** — US$40/mes  _(Guacamaya)_
-- **ISLR — alícuota del tramo 1 (0–1,000 UT)** — 6%; sustraendo 0 UT  _(Art. 50 LISR; PwC Worldwide Tax Summaries — Venezuela (last reviewed 12 Jan 2026))_
-- **ISLR — alícuota del tramo 2 (1,000–1,500 UT)** — 9%; sustraendo 30 UT  _(Art. 50 LISR; PwC Worldwide Tax Summaries — Venezuela (last reviewed 12 Jan 2026))_
-- **ISLR impuesto sobre la renta — tarifa del tramo 3 (1,500–2,000 UT)** — 12%; sustraendo 75 UT  _(Art. 50 LISR; PwC Worldwide Tax Summaries — Venezuela (última revisión 12 Jan 2026))_
-- **ISLR impuesto sobre la renta — tarifa del tramo 4 (2,000–2,500 UT)** — 16%; sustraendo 155 UT  _(Art. 50 LISR; PwC Worldwide Tax Summaries — Venezuela (última revisión 12 Jan 2026))_
-- **ISLR impuesto sobre la renta — tarifa del tramo 5 (2,500–3,000 UT)** — 20%; sustraendo 255 UT  _(Art. 50 LISR; PwC Worldwide Tax Summaries — Venezuela (última revisión 12 Jan 2026))_
-- **ISLR impuesto sobre la renta — tarifa del tramo 6 (3,000–4,000 UT)** — 24%; sustraendo 375 UT  _(Art. 50 LISR; PwC Worldwide Tax Summaries — Venezuela (última revisión 12 Jan 2026))_
-- **ISLR impuesto sobre la renta — tarifa del tramo 7 (4,000–6,000 UT)** — 29%; sustraendo 575 UT  _(Art. 50 LISR; PwC Worldwide Tax Summaries — Venezuela (última revisión 12 Jan 2026))_
-- **ISLR impuesto sobre la renta — tarifa del tramo 8 (más de 6,000 UT)** — 34%; sustraendo 875 UT  _(Art. 50 LISR; PwC Worldwide Tax Summaries — Venezuela (última revisión 12 Jan 2026))_
-- **Fórmula de cálculo de la tarifa del ISLR** — impuesto = (renta gravable en UT × tasa del tramo) − sustraendo del tramo, luego × VES 43  _(Art. 50 LISR; PwC)_
-- **Desgravamen único (deducción personal estándar)** — 774 UT por año (= Bs. 33,282 a la UT de 2025)  _(ISLR Law Art. 60 and 61)_
-- **Crédito fiscal personal (rebaja personal) — por contribuyente** — 10 UT (= VES 430 at VES 43/UT)  _(PwC; Nayma Consultores)_
-- **Crédito fiscal personal (rebaja personal) — por carga (hijos/padres)** — 10 UT per registered dependent  _(PwC; Nayma Consultores)_
-- **Tasa de retención para no residentes (tasa única)** — 34% withheld at source on Venezuelan-source income  _(PwC — Venezuela individual)_
-- **Base de retención para no residentes — servicios profesionales** — 34% applied to 90% of gross payments  _(PwC — Venezuela individual)_
-- **Umbral de retención del ISLR (obligación patronal activada)** — Estimated net annual enrichment ≥ 1,000 UT (= VES 43,000 at VES 43/UT)  _(PwC; Nayma Consultores)_
-- **IVSS (Social Security) — employee contribution rate** — 4%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **IVSS — tasa de contribución patronal (clase de riesgo mínimo/bajo)** — 9%  _(PwC; CloudPay; Rivermate)_
-- **IVSS — tasa de contribución patronal (clase de riesgo medio)** — 10%  _(PwC; CloudPay; Rivermate)_
-- **IVSS — tasa de contribución patronal (máxima / clase de alto riesgo)** — 11%  _(PwC; CloudPay; Rivermate)_
-- **Techo contributivo del IVSS** — Hasta 5 salarios mínimos urbanos (≈ VES 650/mes al salario mínimo congelado de VES 130)  _(PwC)_
-- **Desempleo (Régimen Prestacional de Empleo) — tasa de contribución del empleado** — 0.5%  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desempleo (Régimen Prestacional de Empleo) — tasa de contribución patronal** — 2%  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Techo contributivo del Paro Forzoso** — Hasta 10 salarios mínimos urbanos (≈ VES 1,300/mes al salario mínimo congelado de VES 130)  _(PwC)_
-- **FAOV (Housing / Ley de Vivienda y Hábitat) — employee contribution rate** — 1%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **FAOV (Housing) — employer contribution rate** — 2%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **FAOV — tope de cotización** — Maximo 10 salarios minimos  _(El artículo 172 de la Ley de Régimen Prestacional de Vivienda y Hábitat,)_
-- **INCES — employee contribution rate (base: utilidades/profit-sharing)** — 0.5% on annual utilidades  _(PwC)_
-- **INCES — employer contribution rate (base: total wages/salaries paid)** — 2% on total payroll  _(PwC)_
-- **LOPCYMAT — employer contribution rate (workplace health & safety)** — 0  _(la lopcymat no pide pagos regulares solo establece sanciones por incumplimientos (multas))_
-- **Tasa total de contribución del empleado sobre el salario (IVSS + Paro + FAOV)** — 5.5%  _(PwC)_
-- **Tasa total mínima de contribución patronal sobre el salario (IVSS mín + Paro + FAOV)** — 13.0%  _(PwC)_
-- **Tasa total máxima de contribución patronal sobre el salario (IVSS máx + Paro + FAOV)** — 15.0%  _(PwC)_
-- **Carga parafiscal patronal combinada incluyendo INCES (excluido LOPCYMAT)** — 15.0%–17.0% de la base salarial  _(PwC)_
-- **Tasa del IGTF (Impuesto a las Grandes Transacciones Financieras)** — 3% sobre los pagos realizados en divisas o criptomonedas a través del sistema financiero  _(PwC Worldwide Tax Summaries — Venezuela (other taxes, last reviewed 12 Jan 2026))_
-- **Tasa del Impuesto al Patrimonio Neto** — 0.25%/año  _(PwC Worldwide Tax Summaries — Venezuela (otros impuestos, última revisión 12 Jan 2026))_
-- **Impuesto al Patrimonio Neto — umbral mínimo de patrimonio neto** — 150,000,000 UT  _(PwC Worldwide Tax Summaries — Venezuela (otros impuestos, última revisión 12 Jan 2026))_
-- **Fecha límite para la declaración anual del ISLR (impuesto sobre la renta de personas naturales)** — 31 de marzo del año siguiente al ejercicio fiscal (no prorrogable)  _(PwC Tax administration)_
-- **Opción de pago fraccionado del ISLR — cuota 1** — 31 March  _(Efecto Cocuyo; El Diario)_
-- **Opción de pago fraccionado del ISLR — cuota 2** — 21 April  _(Efecto Cocuyo; El Diario)_
-- **Opción de pago fraccionado del ISLR — cuota 3** — 12 May  _(Efecto Cocuyo; El Diario)_
-- **Obligados a declarar el ISLR — umbral de enriquecimiento neto** — Enriquecimiento neto > 1,000 UT  _(Efecto Cocuyo)_
-- **Obligados a declarar el ISLR — umbral de ingresos brutos** — Ingresos brutos > 1,500 UT  _(Efecto Cocuyo)_
-- **Formulario AR-I — momento de presentación** — Presentado por el empleado al empleador antes del primer pago del año; actualizar si cambian las circunstancias  _(Nayma Consultores; Efecto Cocuyo)_
-- **Sanción por ingresos omitidos / pago insuficiente** — 100% al 300% del impuesto omitido  _(Grant Thornton Venezuela COT table; Galac; MPPEF; COT 2020 reform)_
-- **Omisión de presentar declaración — sanción de cierre** — Cierre del establecimiento por 10 días  _(Grant Thornton; COT 2020 reform)_
-- **Omisión de presentar declaración — multa monetaria** — Multa de 150× la tasa de cambio oficial más alta del BCV  _(Grant Thornton; COT 2020 reform)_
-- **Declaración incompleta o presentada con retraso (≤ 1 año)** — Multa de 100× la tasa de cambio oficial más alta del BCV  _(Grant Thornton; COT 2020 reform)_
-- **Pago tardío (enteramiento tardío) — tasa diaria dentro del primer año** — 0.28% del monto adeudado por día de mora, con tope del 100%  _(Grant Thornton; Galac; COT 2020 reform)_
-- **Pago tardío — recargo adicional después de 1 año** — 50% adicional del monto adeudado  _(Grant Thornton; COT 2020 reform)_
-- **Pago tardío — recargo adicional después de 2 años** — 150% adicional del monto adeudado  _(Grant Thornton; COT 2020 reform)_
-- **Multiplicador de sanción para contribuyentes especiales (COT Art. 108)** — Sanciones incrementadas en un 200%  _(COT Art. 108; Grant Thornton Venezuela)_
 
 ## Section 1 -- Quick Reference
 
@@ -111,7 +44,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Ley de Impuesto Sobre la Renta (Art. 50, Art. 31); Código Orgánico Tributario (COT); Ley del Seguro Social; Ley del Régimen Prestacional de Empleo; Ley del Régimen Prestacional de Vivienda y Hábitat; Ley del INCES; LOPCYMAT |
 | Filing portal | SENIAT en línea (`declaraciones.seniat.gob.ve`) |
 | Validated by | Verified by Jose Padilla (CPA) on 2026-06-21 |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 -- Income Tax Withholding (ISLR — Impuesto Sobre la Renta)
 

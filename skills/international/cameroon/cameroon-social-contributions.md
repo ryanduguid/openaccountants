@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Cameroon (CM) social security c
 version: 0.1
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Nkinyam Courage Ndasi
 review_status: pending_review
 depends_on:
@@ -18,47 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Cameroon Social Security Contributions (CNPS) & Payroll Skill v0.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Nkinyam Courage Ndasi** on 2026-06-21.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### cameroon-social-contributions
-
-- **Employee pension rate (vieillesse-invalidité-décès)** — 4.20%  _(CLEISS cotisations)_
-- **Employer pension rate (vieillesse-invalidité-décès)** — 4.20%  _(CLEISS cotisations)_
-- **Employer family allowances rate – general regime (prestations familiales)** — 7.00%  _(CLEISS)_
-- **Employee family allowances rate** — 0%  _(CLEISS)_
-- **Employer occupational risk rate – class 1 (minimum)** — 1.75%  _(CLEISS)_
-- **Employer occupational risk rate – class 2 (mid)** — 2.50%  _(CLEISS)_
-- **Employer occupational risk rate – class 3 (maximum)** — 5.00%  _(CLEISS)_
-- **Employee occupational risk rate** — 0%  _(CLEISS)_
-- **Total CNPS employer rate – minimum risk (1.75%)** — 12.95%  _(CLEISS; PwC)_
-- **Total CNPS employer rate – mid risk (2.50%)** — 13.70%  _(CLEISS; PwC)_
-- **Total CNPS employer rate – maximum risk (5.00%)** — 16.20%  _(CLEISS)_
-- **Total employee social rate (CNPS only)** — 4.20%  _(CLEISS cotisations)_
-- **Employer family allowances rate – agricultural regime** — 5.65%  _(CLEISS)_
-- **Employer family allowances rate – private-education regime** — 3.70%  _(CLEISS)_
-- **Voluntary insured (self-insured) pension contribution rate** — 8.40% of declared income  _(CLEISS)_
-- **CNPS pension and family allowances contribution ceiling – monthly** — XAF 750,000/month  _(CLEISS)_
-- **CNPS pension and family allowances contribution ceiling – annual** — XAF 9,000,000/year  _(CLEISS)_
-- **Occupational-risk (risques professionnels) contribution base** — Full salary, no ceiling  _(CLEISS)_
-- **Crédit Foncier du Cameroun (CFC) – employee rate** — 1.0% of taxable salary  _(PwC Other taxes)_
-- **Crédit Foncier du Cameroun (CFC) – employer rate** — 1.5% of taxable salary  _(PwC Other taxes)_
-- **Fonds National de l'Emploi (FNE) – employer rate** — 1.0% of taxable salary  _(PwC Other taxes)_
-- **Fonds National de l'Emploi (FNE) – employee rate** — 0%  _(PwC Other taxes)_
-- **Total employee social rate (CNPS pension + CFC)** — 5.20%  _(Computed)_
-- **Total employer payroll levy rate (CNPS min risk + CFC + FNE)** — 15.45%  _(Computed)_
-- **CNPS employee pension deduction from PIT base** — 4.20% of gross salary (capped at XAF 750,000/mo base)  _(MINFI / PwC)_
-- **Monthly PAYE + CNPS remittance deadline** — 15th of the month following the salary month  _(MINFI / PwC)_
-- **Tax year end** — 31 December  _(MINFI)_
-- **Record retention period** — 10 years  _(PwC)_
-- **Day-count threshold for tax domicile in Cameroon (foreign nationals)** — > 183 days in a calendar year  _(PwC)_
-- **Tax consequence of exceeding 183-day threshold** — Tax-domiciled; taxed on worldwide income  _(PwC)_
-- **Employee CNPS formula** — min(gross_salary, 750,000) × 4.20%  _(CLEISS)_
-- **Employer CNPS formula** — min(gross, 750,000) × 4.20% + min(gross, 750,000) × FAM% + gross × RISK%  _(CLEISS; PwC)_
-- **PIT taxable base formula** — gross − (gross × 4.20% CNPS) − (gross × 30% abatement) − XAF 500,000 standard deduction; round down to nearest 1,000  _(MINFI / PwC)_
+> **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Nkinyam Courage Ndasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
 ## Section 1 -- Quick reference
 
@@ -185,8 +145,8 @@ Deterministic pre-classifier for bank statement transactions related to Cameroon
 | --- | --- | --- |
 | CFC, CREDIT FONCIER | EXCLUDE -- housing fund levy | 1% employee / 1.5% employer |
 | FNE, FONDS NATIONAL EMPLOI | EXCLUDE -- employment fund levy | 1% employer |
-| TAXE COMMUNALE, TAXE DEVELOPPEMENT LOCAL | EXCLUDE -- local council tax | Banded, up to XAF 2,520/mo |
-| RAV, REDEVANCE AUDIOVISUELLE, CRTV | EXCLUDE -- audiovisual royalty | Banded, max XAF 13,000 |
+| TAXE COMMUNALE, TAXE DEVELOPPEMENT LOCAL | EXCLUDE -- local council tax | Banded by monthly salary from XAF 62,000, up to XAF 2,500/mo (bands in `cameroon-payroll` §3) |
+| RAV, REDEVANCE AUDIOVISUELLE, CRTV | EXCLUDE -- audiovisual royalty | Banded by monthly salary above XAF 50,000, up to XAF 13,000/mo (bands in `cameroon-payroll` §3) |
 
 ### 3.4 Salary and payroll (exclude from contribution classification)
 
@@ -347,8 +307,8 @@ Base statutory scale (MINFI): 10% / 15% / 25% / 35%. PwC effective rates include
 
 ### Rule 8 -- Local payroll levies
 
-- **Local development tax (taxe communale)** — up to XAF 2,520/month, banded, on salaries exceeding XAF 500,000  _(PwC)_
-- **Audiovisual royalty (RAV/CRTV)** — banded, maximum XAF 13,000, for gross salaries above XAF 1,000,000  _(PwC)_
+- **Local development tax (taxe communale)** — banded by monthly salary from XAF 62,000 (250/month) to above 500,000 (2,500/month); the band table is in `cameroon-payroll` §3 (the reviewer's table of 2026-06-21; PwC gives the top band, rounded to ~2,520)  _(cameroon-payroll §3; PwC)_
+- **Audiovisual royalty (RAV/CRTV)** — banded by monthly salary from XAF 50,001 (750/month) to above 1,000,000 (13,000/month); the band table is in `cameroon-payroll` §3  _(cameroon-payroll §3; PwC for the top band)_
 
 ### Rule 9 -- Monthly remittance
 
@@ -441,7 +401,7 @@ PIT (IRPP) COMPUTATION (if gross ≥ 62,000/mo)
   PIT per month:                   XAF [____]
 
 LOCAL LEVIES (banded)
-  Taxe communale (≤2,520/mo):      XAF [____]
+  Taxe communale (≤2,500/mo):      XAF [____]
   RAV/CRTV (≤13,000):              XAF [____]
 
 REMITTANCE
@@ -534,8 +494,8 @@ If the client provides only a bank statement and no other information:
 | Professional abatement | 30% | PwC |
 | SMIG (non-agricultural) | XAF 60,000/mo | CLEISS (confirmed 2023, cited current) |
 | SMIG (agricultural) | XAF 45,000/mo | CLEISS |
-| Taxe communale max | XAF 2,520/mo (salary > 500,000) | PwC |
-| RAV/CRTV max | XAF 13,000 (gross > 1,000,000) | PwC |
+| Taxe communale max | XAF 2,500/mo (salary > 500,000; bands from 62,000 in `cameroon-payroll` §3) | Reviewed table (2026-06-21); PwC for the top band |
+| RAV/CRTV max | XAF 13,000/mo (gross > 1,000,000; bands from 50,001 in `cameroon-payroll` §3) | Reviewed table (2026-06-21); PwC for the top band |
 | Voluntary insured rate | 8.40% of declared income | CLEISS |
 | Record retention | 10 years | PwC |
 

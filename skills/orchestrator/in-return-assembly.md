@@ -4,7 +4,7 @@ description: Final orchestrator skill that assembles the complete India filing p
 version: 0.1
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 tier: 1
@@ -15,41 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India Return Assembly Skill v0.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Income Tax (IT)
-
-- **New Tax Regime s 115BAC — 0 – ₹4,00,000** — 0%  _(Finance Act 2025; s 115BAC)_
-- **New Tax Regime s 115BAC — ₹4,00,001 – ₹8,00,000** — 5%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — ₹8,00,001 – ₹12,00,000** — 10%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — ₹12,00,001 – ₹16,00,000** — 15%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — ₹16,00,001 – ₹20,00,000** — 20%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — ₹20,00,001 – ₹24,00,000** — 25%  _(s 115BAC)_
-- **New Tax Regime s 115BAC — Above ₹24,00,000** — 30%  _(s 115BAC)_
-- **Old Tax Regime — 0 – ₹2,50,000** — 0%  _(ITA 1961 s 2)_
-- **Old Tax Regime — ₹2,50,001 – ₹5,00,000** — 5%  _(ITA 1961)_
-- **Old Tax Regime — ₹5,00,001 – ₹10,00,000** — 20%  _(ITA 1961)_
-- **Old Tax Regime — Above ₹10,00,000** — 30%  _(ITA 1961)_
-- **Surcharge — ₹50L – ₹1 Cr** — 10% of income tax  _(ITA 1961)_
-- **Surcharge — ₹1 Cr – ₹2 Cr** — 15%  _(ITA 1961)_
-- **Surcharge — ₹2 Cr – ₹5 Cr** — 25%  _(ITA 1961)_
-- **Surcharge — Above ₹5 Cr** — 37% (old) / 25% (new regime cap)  _(ITA 1961)_
-- **Health & Education Cess** — 4% on tax + surcharge  _(Finance Act)_
-- **Standard deduction (new regime)** — ₹75,000  _(Finance Act 2024; Section 16(ia) of Income Tax Act 1961)_
-- **Standard deduction (old regime)** — ₹50,000  _(ITA 1961; Section 16(ia) of Income Tax Act 1961)_
-- **Rebate u/s 87A (new regime)** — If income ≤ ₹12 lakh  _(Finance Act 2025)_
-- **s 44ADA (professionals)** — 75 Lakh limit is appliable when the Cash Receipts does not Exceed 5% of the Total Turnover of the Financial Year. Otherwise limit is 50 Lakh.(Reference:ITA 1961 S 44ADA)  _(ITA 1961 s 44ADA)_
-- **s 44AD (business)** — 3 Crore limit is appliable when the Cash Receipts does not Exceed 5% of the Total Turnover of the Financial Year. Otherwise limit is 2 crore.(Reference:ITA 1961 S 44ADA)  _(ITA 1961 s 44AD)_
-- **s 44ADA (professionals) — Presumptive Taxation** — 50% deemed profit; gross receipts ≤ ₹75 lakh only when cash receipts do not exceed 5% of total turnover; otherwise limit is ₹50 lakh  _(ITA 1961 s 44ADA)_
-- **s 44AD (business) — Presumptive Taxation** — 8% of turnover (6% digital); turnover ≤ ₹3 crore only when cash receipts do not exceed 5% of total turnover; otherwise limit is ₹2 crore  _(ITA 1961 s 44AD)_
-- **ITR deadline (non-audit)** — 31 July  _(ITA 1961 s 139)_
-- **ITR deadline (audit)** — 31 October  _(ITA 1961 s 139)_
-- **Form 1770 for self-employed** — ITR-3 (regular) or ITR-4 (presumptive)  _(CBDT notification)_
-- **Form 1770 for self-employed** — ITR-3 (regular) or ITR-4 (presumptive)  _(CBDT notification)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The figures the review covered — both regimes' slabs, the surcharge tiers and cess, the standard deductions, the s 87A rebate, the s 44AD and s 44ADA presumptive limits and the ITR deadlines — are those of the content guides this capstone consumes: `in-income-tax` states them with their sources, and this file repeats only what its own checks apply (the s 87A threshold and the surcharge tiers in Section 6, the ITR deadlines in the client action list). The separate "Verified rates & thresholds" list that restated them here was removed on 2026-09-29. Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -218,7 +184,7 @@ The skill enforces the following execution order:
 - Deductions under Chapter VI-A (old regime) or standard deduction (new regime)
 - Total income
 - Tax at applicable slab rates
-- Surcharge (if total income > INR 50 lakh)
+- Surcharge (if total income > INR 50 lakh: 10%/15%/25%/37% tiers under the old regime, capped at 25% under the new regime)
 - Health and education cess (4%)
 - Relief under s.87A (if total income <= INR 12,00,000 new regime)
 - Total tax liability
@@ -326,7 +292,7 @@ The skill enforces the following execution order:
 - **Check IN-A7** — Form 26AS TDS matches ITR. Every TDS entry in 26AS has corresponding income in ITR. Credits claimed match 26AS amounts.
 - **Check IN-A8** — Tax regime correctly applied. New regime: s.115BAC rates, no Ch VI-A deductions (except NPS 80CCD(2)). Old regime: regular slab rates, all deductions claimed.
 - **Check IN-A9** — s.87A rebate applied if eligible. New regime: if total income <= INR 12,00,000 (after standard deduction), rebate up to INR 25,000.
-- **Check IN-A10** — Surcharge and cess correctly computed. Surcharge applicable if total income > INR 50 lakh (10%/15%/25% tiers). Cess = 4% on tax + surcharge.
+- **Check IN-A10** — Surcharge and cess correctly computed. Surcharge applicable if total income > INR 50 lakh: 10% above ₹50 lakh, 15% above ₹1 crore, 25% above ₹2 crore and 37% above ₹5 crore under the old regime; capped at 25% under the new regime (s 115BAC). Cess = 4% on tax + surcharge.
 - **Check IN-A11** — Filing calendar is complete. All deadlines for ITR, GST, advance tax, and TDS are listed with specific dates and amounts.
 - **Check IN-A12** — Reviewer brief contains legislation citations. Every position taken references the specific section of the Income-tax Act 1961, CGST Act 2017, or relevant rule.
 

@@ -1,5 +1,6 @@
 ---
 name: nepal-payroll
+version: 0.2
 description: Use this skill whenever asked about Nepal payroll processing for employed persons. Trigger on phrases like "Nepal payroll", "PAYE Nepal", "TDS on salary Nepal", "eTDS Nepal", "salary tax Nepal", "SSF contribution", "Social Security Fund Nepal", "provident fund Nepal", "gratuity Nepal", "CIT Nepal", "EPF Nepal", "net pay Nepal", "salary calculation Nepal", "NPR payroll", "Nepalese Rupee payroll", "minimum wage Nepal", "PAN Nepal", "D-01 D-03 Nepal", "female tax credit Nepal", "remote area allowance", "married couple tax Nepal", or any question about computing employee pay, salary withholding, or social security contributions for Nepal-based employees. This skill covers monthly TDS/PAYE salary withholding on progressive resident slabs (single and married-couple), the 1% first-band Social Security Tax and its SSF interaction, retirement-fund and insurance deductions, the female tax credit, the 31% Social Security Fund contribution (20% employer / 11% employee), provident fund and gratuity for non-SSF employers, the minimum wage, filing forms (eTDS, D-01/D-02/D-03) and penalties. Nepal DOES levy a personal income tax (progressive PAYE). ALWAYS read this skill before processing any Nepal payroll.
 jurisdiction: NP
 tax_year: 2025
@@ -12,29 +13,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Nepal Payroll
 
-## Nepal Payroll Skill v0.1
-
-> **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet signed off", the draft label the guide carried before that review. **Provenance of the draft:** tax slabs, deductions and non-resident rates are corroborated by the PKF T R Upadhya & Co. (PKF Global member firm) Tax Rates booklet FY 2082/83 and the Inland Revenue Department (IRD); SSF figures (31% total, 20%/11% split) are well-corroborated. **Not covered by the review:** items flagged for further clarification were excluded, so the SSF scheme-by-scheme sub-split, the SSF salary ceiling, the exact statutory penalty percentages and any other item below still marked `[RESEARCH GAP — reviewer to confirm]` remain unconfirmed; treat an output that depends on one of them as an estimate pending professional review.
-
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Ashish Bista** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Payroll (Salary TDS + SSF)
-
-- **SSF — employee contribution rate** — 11% of basic remuneration (deducted)  _(Contribution Based Social Security Act 2074 (Pioneer Law/HajirHR))_
-- **SSF — employer contribution rate** — 20% of basic remuneration  _(Contribution Based Social Security Act 2074)_
-- **SSF — total contribution rate** — 31%  _(Pioneer Law; HajirHR)_
-- **Employer 20% composition** — PF 10% + Gratuity 8.33% + Additional 1.67%  _(SSF (verify composition))_
-- **Employee 11% internal split** — 10% Provident Fund + 1% Medical Insurance Scheme (Medical & Dependent Health Protection Scheme under SSF)  _(SSF Directive 2075)_
-- **SSF-liable 'basic remuneration' composition** — Basic Salary + Dearness Allowance (Gross salary excluding overtime/allowances)  _(Labour Act 2074 s. 2 / SSF Act 2074)_
-- **Salary income tax withholding** — Withheld monthly per resident-individual slabs (see Income Tax tab)  _(Income Tax Act 2058 Sch.1)_
-- **SSF contributor & the 1% SST exemption** — An SSF contributor is exempt from the 1% income-tax SST first-band levy  _(Income Tax Act 2058 (PKF))_
-- **Remittance / return due dates** — SSF: Within 15 days of month-end; Salary TDS: Within 25 days of month-end  _(SSF Act 2074 / Income Tax Act 2058)_
-- **Maximum Approved Retirement Deduction** — Actual contribution, 1/3rd of assessable income, or NPR 500,000 (whichever is lower)  _(Income Tax Act 2058 s. 63)_
-- **Remote Area Allowance Deduction** — Up to NPR 50,000 depending on the remote category (Class A to E)  _(Income Tax Act 2058 Sch. 1)_
+## Nepal Payroll Skill v0.2
+> **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet signed off", the draft label the guide carried before that review. **Provenance of the draft:** tax slabs, deductions and non-resident rates are corroborated by the PKF T R Upadhya & Co. (PKF Global member firm) Tax Rates booklet FY 2082/83 and the Inland Revenue Department (IRD); SSF figures (31% total, 20%/11% split) are well-corroborated. **Not covered by the review:** items flagged for further clarification were excluded, so the SSF scheme-by-scheme sub-split, the SSF salary ceiling, the exact statutory penalty percentages and any other item below still marked `[RESEARCH GAP — reviewer to confirm]` remain unconfirmed; treat an output that depends on one of them as an estimate pending professional review.
 
 ## Section 1 -- Quick Reference
 
@@ -54,7 +34,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | eTDS deadline | Within **25 days** of the end of each Nepali month |
 | SSF deadline | Within **25 days** of month-end (extended from 15 days by a July 2025 amendment) — see RESEARCH GAP |
 | Validated by | Pending -- requires sign-off by a licensed Nepali chartered accountant / registered auditor |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 Nepal levies a progressive personal income tax on resident natural persons, collected by the employer as monthly TDS (PAYE) and reconciled annually. The slab thresholds depend on whether the employee elects **single** or **married-couple** status. (Source: PKF FY 2082/83 booklet p.2, https://pkf.trunco.com.np/files/publications/1748841198_Tax%20Rates%202082-83_Final_250601_213028.pdf)
 
@@ -163,7 +143,7 @@ Governed by the Contribution Based Social Security Act 2074 (2017) and Social Se
 Employer 20% + Employee 11% = 31% total. Reconciles.
 
 - **Employee 11% deducted from pay** — Employee 11% is deducted from pay.  _(Social Security Act 2074; SSF, https://www.ssf.gov.np)_
-- **Employer 20% is added cost** — Employer 20% is an employer cost on top of gross.  _(Social Security Act 2074; SSF, https://www.ssf.gov.np)_
+- **Employer 20% is added cost** — Employer 20% is an employer cost on top of gross, composed of 10% provident fund, 8.33% gratuity and 1.67% for the SSF's other schemes (the review flagged the composition for confirmation against the SSF's current directive).  _(Social Security Act 2074; SSF, https://www.ssf.gov.np)_
 - **Basic salary under SSF** — "Basic salary" under the SSF scheme is conventionally basic + dearness allowance; many employers define basic as a fixed portion of gross.  _(Social Security Act 2074; SSF, https://www.ssf.gov.np; Lockton, https://global.lockton.com/us/en/news-insights/nepal-introduces-mandatory-social-security-contribution.)_
 
 ### The four protection schemes

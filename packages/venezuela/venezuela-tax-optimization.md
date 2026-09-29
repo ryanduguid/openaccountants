@@ -3,7 +3,7 @@ name: venezuela-tax-optimization
 description: Use this skill whenever asked about reducing tax in Venezuela, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for individuals or companies in Venezuela. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "pay less tax", "tax-efficient", "tax minimization", "how to lower my tax bill", "ISLR planning", "IVA optimization", "SENIAT", "unidad tributaria". ALWAYS read this skill before advising on any Venezuela tax optimization strategy.
 jurisdiction: VE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Jose Padilla
 review_status: current
 tier: 1
@@ -28,107 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > in **USD at the BCV official rate**, NOT in UT. Confirm the BCV rate on the
 > day of the computation.
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Jose Padilla** on 2026-06-21.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### venezuela-tax-optimization
-
-- **Valor de la Unidad Tributaria (UT) — 2025** — Bs. 43.00  _(SNAT/2025/000048, Gaceta Oficial No. 43,140)_
-- **Valor de la Unidad Tributaria (UT) — anterior (mayo 2023)** — Bs. 9.00  _(SNAT/2025/000048)_
-- **UT value increase from 2023 to 2025** — 377.8%  _(SNAT/2025/000048)_
-- **Fecha límite para la declaración anual del ISLR de personas naturales** — 31 de marzo del año siguiente
-- **Umbral de declaración del ISLR para personas naturales** — Renta neta anual ≥ 1,000 UT (= Bs. 43,000 a la UT de 2025)
-- **Fecha límite para la declaración del IVA** — Día 15 del mes siguiente (mensual)
-- **Ejercicio fiscal venezolano** — Año calendario: 1 Jan – 31 Dec  _(PwC — Venezuela individual)_
-- **Desgravamen único (standard personal deduction)** — 774 UT per year (= Bs. 33,282 at 2025 UT)  _(ISLR Law Art. 60 and 61)_
-- **Desgravamen detallado — educación (contribuyente + dependientes menores de 26 años)** — Sin límite  _(ISLR Law Art. 60 and 61)_
-- **Desgravamen detallado — primas de seguros de vida/cirugía/hospitalización/maternidad** — Sin límite  _(ISLR Law Art. 60 and 61)_
-- **Desgravamen detallado — gastos médicos/odontológicos/de hospitalización** — Sin límite  _(ISLR Law Art. 60 and 61)_
-- **Desgravamen detallado — intereses hipotecarios sobre vivienda principal (límite anual)** — 1,000 UT = Bs. 43,000 a la UT de 2025  _(ISLR Law Art. 60 and 61)_
-- **Desgravamen detallado — alquiler de vivienda principal (límite anual)** — 800 UT = Bs. 34,400 a la UT de 2025  _(ISLR Law Art. 60 and 61)_
-- **Período de arrastre de pérdidas comerciales/operativas** — Máximo 3 años  _(ISLR Law)_
-- **Límite anual de aplicación del arrastre de pérdidas** — 25% de la renta gravable de ese año  _(ISLR Law)_
-- **Arrastre retroactivo de pérdidas** — No permitido  _(ISLR Law)_
-- **Regla de compensación de pérdidas de fuente extranjera** — Solo puede compensarse con rentas de fuente extranjera  _(Ley del ISLR)_
-- **Pérdidas por corrección monetaria (ajuste por inflación) — arrastre** — No pueden arrastrarse en absoluto; expiran en el ejercicio en que se generan  _(Ley del ISLR)_
-- **Banda 1: 0–1,000 UT** — 6%; Fixed deduction: 0 UT / Bs. 0  _(Ley del ISLR)_
-- **Banda 2: 1,000–1,500 UT** — 9%; Fixed deduction: 30 UT / Bs. 1,290  _(Ley del ISLR)_
-- **Banda 3: 1,500–2,000 UT** — 12%; Fixed deduction: 75 UT / Bs. 3,225  _(Ley del ISLR)_
-- **Banda 4: 2,000–2,500 UT** — 16%; Fixed deduction: 155 UT / Bs. 6,665  _(Ley del ISLR)_
-- **Banda 5: 2,500–3,000 UT** — 20%; Fixed deduction: 255 UT / Bs. 10,965  _(Ley del ISLR)_
-- **Banda 6: 3,000–4,000 UT** — 24%; Fixed deduction: 375 UT / Bs. 16,125  _(Ley del ISLR)_
-- **Banda 7: 4,000–6,000 UT** — 29%; Deducción fija: 575 UT / Bs. 24,725  _(Ley del ISLR)_
-- **Banda 8: Más de 6,000 UT** — 34%; Deducción fija: 875 UT / Bs. 37,625  _(Ley del ISLR)_
-- **Fórmula del impuesto** — Impuesto = (Renta × Tasa%) − Deducción Fija (en Bs.)  _(Ley del ISLR)_
-- **Banda 1: 0–2,000 UT (corporate)** — 15%; Deducción fija: 0 UT / Bs. 0  _(Ley del ISLR)_
-- **Banda 2: 2,000–3,000 UT (corporate)** — 22%; Deducción fija: 140 UT / Bs. 6,020  _(Ley del ISLR)_
-- **Banda 3: Más de 3,000 UT (corporate)** — 34%; Deducción fija: 500 UT / Bs. 21,500  _(Ley del ISLR)_
-- **Tasa fija especial: explotación petrolera** — 50%  _(PwC — Venezuela, Corporate, Taxes on corporate income)_
-- **Tasa fija especial: bancos / entidades financieras / seguros** — 40%  _(PwC — Venezuela, Corporate, Taxes on corporate income)_
-- **Tasa de retención en la fuente sobre dividendos domésticos** — 34% fijo  _(Ley del ISLR)_
-- **España — tasa de retención en la fuente sobre dividendos según convenio** — 0% para accionistas corporativos calificados; 10% para los demás
-- **Estados Unidos — tasa de retención en la fuente sobre dividendos según convenio** — 5% para participaciones ≥10%; 15% en los demás casos
-- **México — tasa de retención en la fuente sobre dividendos según convenio** — 5%
-- **Francia — tasa de retención en la fuente sobre dividendos según convenio** — 0% bajo ciertas condiciones; 15% en los demás casos
-- **Canadá — tasa de retención en la fuente sobre dividendos según convenio** — 10% para participaciones ≥25%; 15% en los demás casos
-- **Brasil — tasa de retención en la fuente sobre dividendos según convenio** — 10% para participaciones sustanciales; 15% en los demás casos
-- **Número total de convenios tributarios vigentes (a enero de 2026)** — ~40 convenios  _(PwC Worldwide Tax Summaries — Venezuela Withholding Taxes (January 2026))_
-- **Límite de la razón deuda-capital para subcapitalización** — 1:1 (la deuda con partes relacionadas no debe exceder el patrimonio)  _(ISLR Law Art. 38)_
-- **Consecuencia de exceder el límite 1:1** — Los intereses sobre el exceso de deuda no son deducibles para el ISLR  _(ISLR Law Art. 38)_
-- **Tasa LOCTI — bingos, casinos, alcohol, tabaco** — 2% de los ingresos brutos mensuales  _(LOCTI (Ley Orgánica de Ciencia, Tecnología e Innovación, April 2022))_
-- **Tasa LOCTI — hidrocarburos o minería** — 1% de los ingresos brutos mensuales  _(LOCTI (April 2022))_
-- **Tasa LOCTI — todas las demás actividades** — 0.5% de los ingresos brutos mensuales  _(LOCTI (April 2022))_
-- **Tasa LOCTI — empresas de actividad múltiple** — La tasa más alta aplicable calculada sobre el total de ingresos brutos  _(LOCTI (April 2022))_
-- **Exención LOCTI — sector petrolero (a partir de la Reforma de la Ley de Hidrocarburos de enero de 2026)** — Exento  _(Hydrocarbons Law Reform, January 29, 2026)_
-- **Umbral de activación por ingresos brutos mensuales de la LOCTI** — Ingresos brutos mensuales que superen 150,000 veces la divisa extranjera de mayor valor publicada por el BCV  _(LOCTI (April 2022))_
-- **Frecuencia de pago y sistema de la LOCTI** — Mensual a través del sistema SIDCAI  _(Administrative Ruling No. 015-004-2024, February 2024)_
-- **Rango de tarifas del ISAE** — 1% al 6.5% de los ingresos brutos (varía según el municipio y la actividad)  _(Ley Orgánica del Poder Público Municipal)_
-- **Base imponible mínima del ISAE** — 20 UT (= Bs. 860 a la UT 2025)  _(Ley Orgánica del Poder Público Municipal)_
-- **Tasa estándar del IVA** — 16%  _(Ley de IVA)_
-- **Tasa reducida del IVA** — 8% (caprinos, ovinos y otros menores; carnes refrigeradas; manteca vegetal; servicios profesionales a entes públicos; transporte aéreo nacional de pasajeros; ciertas construcciones)  _(Ley de IVA)_
-- **Tasa del recargo por artículos de lujo** — +15% (efectivo total ~31%) sobre vehículos ≥ USD 40,000; motocicletas ≥ USD 20,000; joyas ≥ USD 300; servicios de restaurante/bar; máquinas de juego  _(Ley de IVA)_
-- **Umbral del recargo por lujo — vehículos** — ≥ USD 40,000  _(Ley de IVA)_
-- **Umbral del recargo por lujo — motocicletas** — ≥ USD 20,000  _(Ley de IVA)_
-- **Umbral del recargo por lujo — joyas** — ≥ USD 300  _(Ley de IVA)_
-- **IVA tasa cero** — Los servicios prestados en Venezuela para personas en el exterior se consideran prestados en Venezuela y por ende se les aplica el iva de 16%  _(Ley de IVA)_
-- **Rango de la tasa del recargo por divisas / criptoactivos** — 5–25% sobre transacciones pagadas en moneda extranjera, criptomonedas o criptoactivos no venezolanos  _(Ley de IVA / IGTF)_
-- **Exención del IVA sobre importaciones de alimentos básicos, medicamentos, fertilizantes, equipos médicos, libros y ciertos combustibles — estatus** — Suspendida a partir del 5 de julio de 2025  _(Presidential Decree No. 5,145, June 30, 2025)_
-- **Exención del IVA para importaciones realizadas por organismos de la Administración Pública Nacional y entidades privadas designadas** — Exención por un año hasta el 30 de junio de 2026  _(Presidential Decree No. 5,146, June 30, 2025)_
-- **IVSS (Social Security) — employer contribution rate (by risk class)** — 9% / 10% / 11%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **IVSS (Social Security) — employee contribution rate** — 4%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Tope de la base salarial del IVSS** — 5 salarios mínimos
-- **Fecha límite de pago del IVSS** — Antes del día 16 de cada mes
-- **FAOV (Housing) — employer contribution rate** — 2%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **FAOV (Housing / Ley de Vivienda y Hábitat) — employee contribution rate** — 1%  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
-- **Fecha límite de pago del FAOV** — Dentro de los primeros 5 días hábiles de cada mes
-- **FAV (Vivienda — secundaria / LPH) tasa de contribución patronal** — 2% (base salarial tope: 10 salarios mínimos)
-- **FAV (Vivienda — secundaria / LPH) tasa de contribución del trabajador** — 0.5% (base salarial tope: 10 salarios mínimos)
-- **INCES — tasa de contribución patronal** — 2% del total de salarios  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **INCES (Capacitación laboral) — tasa de contribución del empleado** — 0.5% (sobre las utilidades de fin de año)  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Fecha límite de pago del INCES** — Dentro de los primeros 5 días hábiles después del cierre de cada trimestre
-- **Desempleo (Régimen Prestacional de Empleo) — tasa de contribución patronal** — 2%  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **Desempleo (Régimen Prestacional de Empleo) — tasa de contribución del empleado** — 0.5%  _(PwC Worldwide Tax Summaries, revisado el 12 Jan 2026)_
-- **LOPCYMAT (Riesgo laboral) — tasa de contribución patronal** — 0  _(la lopcymat no pide pagos regulares solo establece sanciones por incumplimientos (multas))_
-- **Contribución Especial de Pensión — tasa patronal (a partir de mayo de 2024)** — 9% (solo patronal)
-- **ZEE Estado La Guaira — reintegro del ISLR** — Hasta el 100% durante los primeros 4 ejercicios fiscales  _(Decretos Presidenciales 4,838–4,841 (August 2023))_
-- **ZEE Militar de Aragua — reintegro del ISLR** — Hasta el 100% durante los primeros 4 ejercicios fiscales  _(Decretos Presidenciales 4,838–4,841 (August 2023))_
-- **ZEE Península de Paraguaná — reintegro del ISLR** — Hasta el 100% durante los primeros 4 ejercicios fiscales  _(Decretos Presidenciales 4,838–4,841 (August 2023))_
-- **ZEE Isla Tortuga — reintegro del ISLR** — Hasta el 100% durante los primeros 20 ejercicios fiscales  _(Decretos Presidenciales 4,838–4,841 (August 2023))_
-- **Requisito de exportación en ZEE (a partir del año 7)** — ≥ 60% de la producción exportada  _(Decretos Presidenciales 4,838–4,841 (August 2023))_
-- **Reembolso de aranceles aduaneros en ZEE sobre insumos, materias primas y maquinaria importados** — 100%  _(Decretos Presidenciales 4,838–4,841 (August 2023))_
-- **Fecha límite de publicación del tope de incentivos en ZEE** — Dentro de los 15 días hábiles siguientes al período de declaración del ISLR  _(Resolution 015-25)_
-- **Certificación de elegibilidad en ZEE** — Se debe obtener la certificación conforme a la Resolution 015-25 (May 9, 2025)  _(Resolution 015-25)_
-- **Denominación de sanciones del COT 2020** — USD al tipo de cambio oficial del BCV (NO en UT)  _(Código Orgánico Tributario (COT) reforma 2020, Art. 91)_
-- **Prescripción del COT / período de conservación de documentos** — 5 años  _(Código Orgánico Tributario (COT))_
-- **Fecha límite de pago de la cuota 1 del ISLR** — 31 March (junto con la declaración anual)
-- **Fecha límite de pago de la cuota 2 del ISLR** — 20 días después de la fecha límite del March 31 (es decir, ~20 April)
-- **Fecha límite de pago de la cuota 3 del ISLR** — 40 días después de la fecha límite del March 31 (es decir, ~10 May)
-- **Doctrina de sustancia económica / base legal de precios de transferencia** — Art. 112–118 ISLR  _(Ley de ISLR (Decreto No. 1.435, Dec 2014))_
-- **Umbral de ratio deuda-capital por defecto para subcapitalización** — 1:1 (cualquier deuda con partes relacionadas que supere este límite se trata como no deducible)  _(ISLR Law Art. 38)_
-- **Ampliación de las obligaciones de retención del IVA — fecha de entrada en vigor de la resolución** — August 1, 2025  _(SNAT/2025/000054)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Jose Padilla** on 2026-06-21; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick Reference
 
@@ -480,7 +380,7 @@ PwC Worldwide Tax Summaries — Venezuela Corporate Other Taxes (January 2026). 
 | Standard | 16% | Most goods and services |
 | Reduced | 8% | Goats, sheep, minor livestock; refrigerated meats; shortening; professional services to government bodies; domestic air passenger transport; certain construction |
 | Luxury surcharge | +15% (total effective ~31%) | Vehicles ≥ USD 40,000; motorcycles ≥ USD 20,000; jewelry ≥ USD 300; restaurant/bar services; gaming machines |
-| Zero-rated | 0% | Exports of goods and services |
+| Zero-rated | 0% | Exports of goods; exports of services only where the recipient is not domiciled or resident in Venezuela and the service is used or exploited exclusively abroad — a service performed in Venezuela for a person abroad without that exclusive use is a domestic supply at 16% (Ley del IVA; the 2026-06-21 review) |
 | Foreign currency / crypto surcharge | 5–25% | Transactions paid in foreign currency, crypto, or non-Venezuelan crypto-assets (rate set by Executive) |
 
 ### Key 2025 Change — Import Exemption Suspension
@@ -489,7 +389,7 @@ PwC Worldwide Tax Summaries — Venezuela Corporate Other Taxes (January 2026). 
 
 ### Optimization Actions
 
-- **VAT optimization actions** — 1. **Export structuring:** If services can legitimately be rendered for the benefit of foreign recipients, qualifying as an export of services yields 0% output VAT while input VAT remains recoverable. 2. **Activity classification:** Verify that the reduced 8% rate is claimed for qualifying activities (e.g., government professional services contracts). Overcharging at 16% creates administrative burden; undercharging creates a compliance liability. 3. **Foreign currency transaction planning:** The 5–25% surcharge on transactions paid in foreign currency or crypto is significant. Where contractually possible, structure payment terms to use bolivar settlement. 4. **Special taxpayer withholding (from August 1, 2025):** Ruling SNAT/2025/000054 expanded VAT withholding obligations. Verify whether the client is a designated withholding agent and whether their counterparties are, to correctly account for VAT flows.
+- **VAT optimization actions** — 1. **Export structuring:** A service is an export (0% output VAT, input VAT recoverable) only where the recipient is not domiciled or resident in Venezuela and the service is used or exploited exclusively abroad; a service performed in Venezuela for a person abroad that does not meet that test is treated as supplied in Venezuela and bears 16% (Ley del IVA; the 2026-06-21 review). Document the recipient's foreign status and the place of use before invoicing at 0%. 2. **Activity classification:** Verify that the reduced 8% rate is claimed for qualifying activities (e.g., government professional services contracts). Overcharging at 16% creates administrative burden; undercharging creates a compliance liability. 3. **Foreign currency transaction planning:** The 5–25% surcharge on transactions paid in foreign currency or crypto is significant. Where contractually possible, structure payment terms to use bolivar settlement. 4. **Special taxpayer withholding (from August 1, 2025):** Ruling SNAT/2025/000054 expanded VAT withholding obligations. Verify whether the client is a designated withholding agent and whether their counterparties are, to correctly account for VAT flows.
 
 ### Source
 

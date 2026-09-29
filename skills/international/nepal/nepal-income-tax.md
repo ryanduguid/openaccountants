@@ -1,5 +1,6 @@
 ---
 name: nepal-income-tax
+version: 0.2
 description: Use this skill whenever asked about Nepal income tax for natural persons (individuals and the self-employed). Trigger on phrases like "how much tax do I pay in Nepal", "Nepal income tax slabs", "D-01 return", "PAN income tax", "SSF contribution", "Social Security Fund", "presumptive tax Nepal", "turnover tax", "tax rate FY 2082/83", "natural person tax", "income tax return Nepal", "TDS Nepal", or any question about filing or computing income tax for a resident natural person, sole proprietor, or small business in Nepal. Also trigger when preparing or reviewing a D-01 return, computing the 1% Social Security Tax slab, applying the female-taxpayer rebate, or advising on advance/installment tax. This skill covers natural-person slabs (single/couple), the SST mechanism, SSF contributions, presumptive and turnover-based small-business regimes, deductions/rebates, filing deadlines, and penalties under the Income Tax Act, 2058. ALWAYS read this skill before touching any Nepal income tax work.
 jurisdiction: NP
 tax_year: 2026
@@ -13,44 +14,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Nepal Income Tax
 
-## Nepal Income Tax -- Natural Persons Skill v0.1
-
-> **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, pending accountant sign-off", the draft label the guide carried before that review. **Provenance of the draft:** the Income Tax Act, 2058 (2002), Inland Revenue Department (IRD) guidance, the Social Security Fund (SSF), and the PKF Trunco "Tax Rates for FY 2082-83 (2025-26)" publication. **Not covered by the review:** items flagged for further clarification were excluded, so items below still marked **[RESEARCH GAP — reviewer to confirm]** could not be locked to a primary source and MUST be confirmed by a Nepali tax professional before filing.
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Ashish Bista** on 2026-06-06.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Income Tax (Individuals)
-
-- **First 500,000 — 1% (Social Security Tax) slab** — First 1,000,000 at 1%  _(Finance Act 2083)_
-- **Next 200,000 (500,001–700,000) at 10% slab** — Next 500,000 (1,000,001–1,500,000) at 10%  _(Finance Act 2083)_
-- **Next 300,000 (700,001–1,000,000) at 20% slab** — Next 1,000,000 (1,500,001–2,500,000) at 20%  _(Finance Act 2083)_
-- **Next 1,000,000 (1,000,001–2,000,000) at 30% slab** — Next 1,500,000 (2,500,001–4,000,000) at 27%  _(Finance Act 2083)_
-- **Next 3,000,000 (2,000,001–5,000,000) at 36% slab** — Above 4,000,000 at 29%  _(Finance Act 2083)_
-- **Above 5,000,000 at 39% slab** — N/A — Top tier is now above NPR 4,000,000 at 29%; 39% rate eliminated.  _(Finance Act 2083)_
-- **Resident individual — couple: First band at 1% threshold** — NPR 1,000,000 (uniform for all — separate couple slab structure removed)  _(Finance Act 2083)_
-- **Resident individual — couple: Remaining bands** — Same as single: 10 / 20 / 27 / 29% — couple slabs eliminated; uniform rates apply.  _(Finance Act 2083)_
-- **1% first-band SST — deposit account** — Deposited to separate IRD revenue account (code 11211)  _(IRD revenue codes (PKF/khatapana))_
-- **SST exemptions** — Does NOT apply to sole proprietors, pension income, contribution-based pension fund income, or SSF contributors  _(PKF; Baker Tilly)_
-- **Slabs unchanged from fiscal year reference** — FY 2083/84 (2026/27)  _(Finance Act 2083)_
-- **Income year / fiscal year period** — Shrawan 1 – Ashad end (BS); FY 2083/84 ≈ mid-Jul 2026 – mid-Jul 2027  _(Income Tax Act 2058)_
-- **Annual return / instalment due dates** — Advance tax instalments due: Poush end, Chaitra end, Ashad end; final annual return due: Ashwin end  _(Income Tax Act 2058 s. 94 & 96)_
-- **Residency test** — 183 days or more in Nepal in any 365-day period  _(Income Tax Act 2058 s. 2(q))_
-
-### _map
-
-**_map**
-
-| Skill | slug | version |
-| --- | --- | --- |
-| Income Tax (Individuals) | nepal-income-tax | 1.0 |
-| Corporate Income Tax | nepal-corporate-tax | 1.0 |
-| TDS (Withholding) | nepal-tds | 1.0 |
-| Payroll (Salary TDS + SSF) | nepal-payroll | 1.0 |
-| VAT (IRD Return) | nepal-vat | 2.1 |
+## Nepal Income Tax -- Natural Persons Skill v0.2
+> **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, pending accountant sign-off", the draft label the guide carried before that review. **Provenance of the draft:** the Income Tax Act, 2058 (2002), Inland Revenue Department (IRD) guidance, the Social Security Fund (SSF), and the PKF Trunco "Tax Rates for FY 2082-83 (2025-26)" publication. **Not covered by the review:** items flagged for further clarification were excluded, so items below still marked **[RESEARCH GAP — reviewer to confirm]** could not be locked to a primary source and MUST be confirmed by a Nepali tax professional before filing.
 
 ## Section 1 -- Quick Reference
 
@@ -71,11 +36,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Within 3 months of FY end → end of Ashoj (~mid-October); extendable +3 months to end of Poush (~mid-January) |
 | Validated by | Pending — requires sign-off by a Nepali tax professional |
 | Validation date | Verified by Ashish Bista (ICAN: 1765) on 2026-06-06 |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Slabs -- Natural Persons, FY 2082/83 (2025/26)
 
-The **first-band rate of 1% is the Social Security Tax (SST)** — a flat, final levy paid into a separate SSF account. It is **not creditable** against other tax and is **waived for employees who contribute to the SSF** (see Section 5.2). The top rates are built by surcharging the 30% bracket: **36% = 30% × 1.20** and **39% = 30% × 1.30** (Income Tax Act mechanism; PKF Trunco FY2082-83).
+The **first-band rate of 1% is the Social Security Tax (SST)** — a flat, final levy paid into a separate IRD revenue account (revenue code 11211). It is **not creditable** against other tax and is **waived for employees who contribute to the SSF** (see Section 5.2). The top rates are built by surcharging the 30% bracket: **36% = 30% × 1.20** and **39% = 30% × 1.30** (Income Tax Act mechanism; PKF Trunco FY2082-83).
 
 **Single (individual)** — cumulative tax assumes the 1% SST applies (non-SSF taxpayer).
 

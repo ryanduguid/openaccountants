@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Cyprus social insurance and Gen
 version: 0.1
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Christos Thoma
 review_status: current
 depends_on:
@@ -16,81 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cyprus Social Insurance & GHS (GESY) Contributions
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Christos Thoma** on 2026-06-12.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### cyprus-social-contributions
-
-- **Employee social insurance rate** — 8.8% of insurable earnings  _(KPMG Tax Card 2025 s.3.1; PwC; Law 59(I)/2010)_
-- **Employer social insurance rate** — 8.8% of insurable earnings  _(KPMG Tax Card 2025 s.3.1; PwC; Law 59(I)/2010)_
-- **Self-employed social insurance rate** — 16.6% of notional insurable income  _(KPMG Tax Card 2025 s.3.1)_
-- **Self-employed social insurance rate (prior, stale — do not use)** — 15.6% (applicable 2019–2023; superseded from 1 Jan 2024)  _(PwC Worldwide Tax Summaries (stale figure — use 16.6% instead))_
-- **SI rate effective period** — Set 1 Jan 2024 for 5 years  _(KPMG Tax Card 2025 s.3.1)_
-- **GHS rate — employee** — 2.65% of gross emoluments  _(gesy.org.cy; KPMG Tax Card 2025 s.4; Law 89(I)/2001)_
-- **GHS rate — employer (on employee emoluments)** — 2.90% of employee emoluments  _(gesy.org.cy; KPMG Tax Card 2025 s.4)_
-- **GHS rate — self-employed** — 4.00% of own income  _(gesy.org.cy; KPMG Tax Card 2025 s.4)_
-- **GHS rate — pensioner** — 2.65%  _(gesy.org.cy; KPMG Tax Card 2025 s.4)_
-- **GHS rate — person holding/exercising an office** — 2.65%  _(gesy.org.cy; KPMG Tax Card 2025 s.4)_
-- **GHS rate — government / payer of officer emoluments** — 2.90%  _(gesy.org.cy; KPMG Tax Card 2025 s.4)_
-- **GHS rate — income earner (rent, interest, dividends)** — 2.65%  _(gesy.org.cy; KPMG Tax Card 2025 s.4)_
-- **GHS rate — State (Republic's Consolidated Fund)** — 4.70%  _(gesy.org.cy; KPMG Tax Card 2025 s.4)_
-- **Social Cohesion Fund rate** — 2.0% of actual employee emoluments (no cap)  _(KPMG Tax Card 2025 s.3.3)_
-- **Redundancy Fund rate** — 1.2% of insurable earnings  _(KPMG Tax Card 2025 s.3.3)_
-- **HRDA / Industrial Training Fund rate** — 0.5% of insurable earnings  _(KPMG Tax Card 2025 s.3.3)_
-- **Central Holiday Fund rate (where not exempt)** — 8.0% of insurable earnings  _(KPMG Tax Card 2025 s.3.3)_
-- **Total employer on-cost — excluding Central Holiday Fund** — 15.40% on capped earnings (8.8% SI + 2.90% GHS + 2.0% Social Cohesion + 1.2% Redundancy + 0.5% HRDA)  _(KPMG Tax Card 2025 s.3.1, s.3.3)_
-- **Total employer on-cost — including Central Holiday Fund** — 23.40% on capped earnings (15.40% + 8.0% Holiday Fund)  _(KPMG Tax Card 2025 s.3.1, s.3.3)_
-- **Total employee deduction (before PAYE income tax)** — 11.45% (8.8% SI + 2.65% GHS)  _(KPMG Tax Card 2025 s.3.1; gesy.org.cy)_
-- **Insurable-earnings ceiling (SI funds) — annual (2025)** — EUR 66,612/yr  _(KPMG; MLSI)_
-- **Insurable-earnings ceiling (SI funds) — monthly (2025)** — EUR 5,551/mo  _(KPMG; MLSI)_
-- **Insurable-earnings ceiling (SI funds) — weekly (2025)** — EUR 1,281/wk  _(KPMG; MLSI)_
-- **Insurable-earnings ceiling (SI funds) — annual (2024, prior year)** — EUR 62,868/yr  _(KPMG; MLSI)_
-- **GHS/GESY income cap — aggregate annual (all sources)** — EUR 180,000 aggregate annual income  _(gesy.org.cy; KPMG Tax Card 2025 s.4)_
-- **Redundancy Fund ceiling** — EUR 68,904/year for 2026 (EUR 5,742/month; EUR 1,325/week). EUR 66,612/year was the 2025 ceiling.  _(https://kpmg.com/cy/en/insights/tax-alerts/amendment-to-the-maximum-amount-of-insurable-earnings-for-2026.html ; https://taxsummaries.pwc.com/cyprus/individual/other-taxes)_
-- **HRDA Fund ceiling** — EUR 68,904/year for 2026 (EUR 5,742/month; EUR 1,325/week). EUR 66,612/year was the 2025 ceiling.  _(https://kpmg.com/cy/en/insights/tax-alerts/amendment-to-the-maximum-amount-of-insurable-earnings-for-2026.html ; https://taxsummaries.pwc.com/cyprus/individual/other-taxes)_
-- **Central Holiday Fund ceiling** — EUR 68,904/year for 2026 (EUR 5,742/month; EUR 1,325/week). EUR 66,612/year was the 2025 ceiling.  _(https://kpmg.com/cy/en/insights/tax-alerts/amendment-to-the-maximum-amount-of-insurable-earnings-for-2026.html ; https://taxsummaries.pwc.com/cyprus/individual/other-taxes)_
-- **Social Cohesion Fund ceiling** — No cap (on actual earnings)  _(KPMG Tax Card 2025 s.3.3)_
-- **Band 1 — tax-free threshold** — EUR 0 – EUR 19,500 @ 0%  _(KPMG Tax Card 2025 s.1.1; Law 118(I)/2002)_
-- **Band 2** — EUR 19,501 – EUR 28,000 @ 20%  _(KPMG Tax Card 2025 s.1.1)_
-- **Band 3** — EUR 28,001 – EUR 36,300 @ 25%  _(KPMG Tax Card 2025 s.1.1)_
-- **Band 4** — EUR 36,301 – EUR 60,000 @ 30%  _(KPMG Tax Card 2025 s.1.1)_
-- **Band 5 — top rate** — Over EUR 60,000 @ 35%  _(KPMG Tax Card 2025 s.1.1)_
-- **Band 1 (2026)** — EUR 0 – EUR 22,000 @ 0%  _(KPMG Tax Card 2025 s.1.1)_
-- **Band 2 (2026)** — EUR 22,001 – EUR 32,000 @ 20%  _(KPMG Tax Card 2025 s.1.1)_
-- **Band 3 (2026)** — EUR 32,001 – EUR 42,000 @ 25%  _(https://taxsummaries.pwc.com/cyprus/individual/taxes-on-personal-income)_
-- **Band 4 (2026)** — EUR 42,001 – EUR 72,000 @ 30%  _(https://taxsummaries.pwc.com/cyprus/individual/taxes-on-personal-income)_
-- **Band 5 — top rate (2026)** — Over EUR 72,000 @ 35%  _(KPMG Tax Card 2025 s.1.1)_
-- **Statutory minimum wage — after 6 months continuous employment (2025)** — EUR 1,000/month  _(MLSI via Cyprus Mail, Dec 2025)_
-- **Statutory minimum wage — first 6 months (2025)** — EUR 900/month  _(MLSI via Cyprus Mail, Dec 2025)_
-- **Statutory minimum wage — after 6 months continuous employment (2026)** — EUR 1,088/month  _(MLSI via Cyprus Mail, Dec 2025)_
-- **Statutory minimum wage — first 6 months (2026)** — EUR 979/month  _(MLSI via Cyprus Mail, Dec 2025)_
-- **Employer monthly contribution return — due date** — End of the calendar month following the month contributions relate to (e.g. January contributions due by end of February)  _(MLSI Deadlines page)_
-- **Self-employed quarterly SI contribution — payment timing** — Quarterly (Jan–Mar, Apr–Jun, Jul–Sep, Oct–Dec), by end of the month following each quarter  _(MLSI/secondary)_
-- **Late payment surcharge — employer contributions (SI Fund & Social Cohesion Fund) — first month** — 3% of contributions due for the first month of delay  _(MLSI/KPSA)_
-- **Late payment surcharge — employer contributions — each additional month** — +3% per subsequent month  _(MLSI/KPSA)_
-- **Late payment surcharge — employer contributions — maximum** — 27% of contributions due (maximum)  _(MLSI/KPSA)_
-- **Insurable-earnings ceiling effective date (2025 figure)** — 2 January 2025 (from 2 Jan 2025; prior 2024 figure was EUR 62,868)  _(KPMG; MLSI)_
-- **Employer registration requirement** — Must register with DSI and obtain an employer registration number BEFORE employing staff; each employee must have a Social Insurance number before contributions are reported  _(MLSI)_
-- **Contribution filing system** — Filed via Social Insurance Services online system (Ergani / SISnet)  _(MLSI)_
-- **Currency for all contributions** — EUR only
-- **Funds to which the EUR 66,612/yr ceiling applies** — For 2026, the EUR 68,904/year ceiling applies to Social Insurance, Redundancy Fund, HRDA / Industrial Training Fund and Central Holiday Fund. Social Cohesion Fund remains uncapped.  _(https://kpmg.com/cy/en/insights/tax-alerts/amendment-to-the-maximum-amount-of-insurable-earnings-for-2026.html ; https://taxsummaries.pwc.com/cyprus/individual/other-taxes)_
-- **Fund to which no earnings cap applies** — Social Cohesion Fund (2.0% on actual earnings, uncapped)  _(KPMG Tax Card 2025 s.3.3)_
-- **Social Insurance primary law** — Social Insurance Law of 2010, Law 59(I)/2010 (as amended)  _(Law 59(I)/2010)_
-- **GHS/GESY primary law** — General Healthcare System Law of 2001, Law 89(I)/2001 (as amended)  _(Law 89(I)/2001)_
-- **Income Tax primary law** — Income Tax Law of 2002, Law 118(I)/2002 (as amended)  _(Law 118(I)/2002)_
-- **Special Defence Contribution law** — Special Contribution for the Defence Law, Law 117(I)/2002 (as amended)  _(Law 117(I)/2002)_
-- **Insurable-earnings ceiling (SI funds) — annual (2026)** — EUR 68,904/year  _(KPMG Cyprus; PwC Worldwide Tax Summaries)_
-- **Insurable-earnings ceiling (SI funds) — monthly (2026)** — EUR 5,742/month  _(KPMG Cyprus; PwC Worldwide Tax Summaries)_
-- **Insurable-earnings ceiling (SI funds) — weekly (2026)** — EUR 1,325/week  _(KPMG Cyprus; PwC Worldwide Tax Summaries)_
-
-### Social Insurance rates
-
-- **Insurable-earnings ceiling (SI funds) — annual (2026)** — EUR 68,904/year  _(KPMG Cyprus; PwC Worldwide Tax Summaries)_
-- **Insurable-earnings ceiling (SI funds) — monthly (2026)** — EUR 5,742/month  _(KPMG Cyprus; PwC Worldwide Tax Summaries)_
-- **Insurable-earnings ceiling (SI funds) — weekly (2026)** — EUR 1,325/week  _(KPMG Cyprus; PwC Worldwide Tax Summaries)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Christos Thoma** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 
@@ -114,7 +40,7 @@ Reviewed against the cited tax authorities by **Christos Thoma** on 2026-06-12.
 | GHS/GESY — employee | 2.65% of gross emoluments [gesy.org.cy; KPMG Tax Card 2025 s.4] |
 | GHS/GESY — employer | 2.90% of employee emoluments [gesy.org.cy; KPMG Tax Card 2025 s.4] |
 | GHS/GESY — self-employed | 4.00% of own income [gesy.org.cy; KPMG Tax Card 2025 s.4] |
-| Insurable-earnings ceiling (SI funds) 2025 | EUR 66,612/yr (EUR 5,551/mo; EUR 1,281/wk), from 2 Jan 2025 [KPMG; MLSI] |
+| Insurable-earnings ceiling (SI funds) | EUR 66,612/yr (EUR 5,551/mo; EUR 1,281/wk) for 2025, from 2 Jan 2025 [KPMG; MLSI]; EUR 68,904/yr (EUR 5,742/mo; EUR 1,325/wk) from 1 Jan 2026 [Social Insurance Services announcement of 22 Dec 2025; KPMG] |
 | GHS/GESY income ceiling | EUR 180,000 aggregate annual income across all sources [gesy.org.cy; KPMG Tax Card 2025 s.4] |
 | Payment frequency (employers) | Monthly [MLSI Deadlines page] |
 | Payment frequency (self-employed) | Quarterly [MLSI/secondary] |
@@ -130,9 +56,9 @@ Reviewed against the cited tax authorities by **Christos Thoma** on 2026-06-12.
 | Social Insurance | 8.8% | 8.8% | 16.6% | EUR 66,612/yr [KPMG Tax Card 2025 s.3.1] |
 | GHS/GESY | 2.65% | 2.90% | 4.00% | EUR 180,000/yr aggregate [gesy.org.cy; KPMG s.4] |
 | Social Cohesion Fund | — | 2.0% | — | No cap (on actual earnings) [KPMG Tax Card 2025 s.3.3] |
-| Redundancy Fund | — | 1.2% | — | EUR 68,904/yr [KPMG Tax Card 2025 s.3.3] |
-| HRDA / Industrial Training Fund | — | 0.5% | — | EUR 68,904/yr [KPMG Tax Card 2025 s.3.3] |
-| Central Holiday Fund | — | 8.0% (if not exempt) | — | EUR 68,904/yr [KPMG Tax Card 2025 s.3.3] |
+| Redundancy Fund | — | 1.2% | — | EUR 66,612/yr in 2025; EUR 68,904/yr in 2026 [KPMG Tax Card 2025 s.3.3; Social Insurance Services] |
+| HRDA / Industrial Training Fund | — | 0.5% | — | EUR 66,612/yr in 2025; EUR 68,904/yr in 2026 [KPMG Tax Card 2025 s.3.3; Social Insurance Services] |
+| Central Holiday Fund | — | 8.0% (if not exempt) | — | EUR 66,612/yr in 2025; EUR 68,904/yr in 2026 [KPMG Tax Card 2025 s.3.3; Social Insurance Services] |
 
 - **Employer-side totals (verify the column sums)** — SI 8.8% + GHS 2.90% + Redundancy 1.2% + HRDA 0.5% = 13.40% on capped earnings, plus Social Cohesion 2.0% on uncapped gross = 15.40% on capped earnings; where the Central Holiday Fund applies, add 8.0% for a total of 23.40% on capped earnings. Arithmetic: 8.8 + 2.90 + 1.2 + 0.5 = 13.40; + 2.0 = 15.40; + 8.0 = 23.40.  _(KPMG Tax Card 2025 s.3.1, s.3.3)_
 
@@ -144,7 +70,7 @@ The State (Republic's Consolidated Fund) also contributes to the system. The res
 | --- | --- |
 | Unknown employment status | Ask — do not assume; employee, employer, self-employed and office-holder rates differ materially. If forced, assume employee (employer withholds SI 8.8% + GHS 2.65%) [KPMG s.3.1; gesy.org.cy] |
 | Unknown self-employed SI rate | Apply 16.6% (KPMG Tax Card 2025 — NOT the stale 15.6% still shown on PwC's other-taxes table) [KPMG Tax Card 2025 s.3.1] |
-| Earnings above EUR 66,612 | Cap SI / Redundancy / HRDA / Holiday Fund at EUR 66,612; do NOT cap Social Cohesion (uncapped) [KPMG s.3.3] |
+| Earnings above the insurable ceiling | Cap SI / Redundancy / HRDA / Holiday Fund at EUR 66,612 (2025) or EUR 68,904 (2026); do NOT cap Social Cohesion (uncapped) [KPMG s.3.3] |
 | Central Holiday Fund inclusion | Assume payable at 8.0% unless the employer evidences an approved private leave-scheme exemption; most established employers are exempt, so confirm status [KPMG s.3.3] |
 | Unknown minimum wage applied | Apply EUR 1,000/month (after 6 months of continuous employment) [MLSI via Cyprus Mail, Dec 2025] |
 | Unknown whether first 6 months | Use EUR 1,000/month; apply EUR 900/month only if first-6-months status confirmed [MLSI via Cyprus Mail, Dec 2025] |
@@ -166,7 +92,7 @@ The State (Republic's Consolidated Fund) also contributes to the system. The res
 - **R-CY-SC-2 -- Contribution arrears / surcharge computation** — Trigger: client has unpaid employer contributions from prior periods. Message: "Late employer contributions carry a surcharge of 3% for the first month, increasing by 3% per additional month, up to a maximum of 27% of contributions due. Do not attempt to quantify arrears without a DSI statement. Escalate to a Cyprus-qualified accountant."
 - **R-CY-SC-3 -- Special Defence Contribution (SDC) and domicile** — Trigger: client asks about tax on dividends/interest/rents or non-domiciled status. Message: "SDC on passive income is OUTSIDE the scope of this contributions skill and its underlying 2025 research; specific SDC rates and the reported 1 Jan 2026 SDC reform were NOT confirmed from a primary authority here. [RESEARCH GAP] What IS established: GHS at 2.65% applies on rent/interest/dividend income up to the EUR 180,000 aggregate cap regardless of domicile [gesy.org.cy]. Domicile determination and any SDC liability require case-specific confirmation — escalate to a Cyprus-qualified accountant."
 - **R-CY-SC-4 -- Personal income tax penalties/interest** — Trigger: client asks for late-filing or late-payment income tax penalties. Message: "Specific 2025/2026 personal income tax late-filing penalty and statutory interest figures were not confirmed from a primary authority in this research. [RESEARCH GAP] Verify directly with the Tax Department before quoting any figure."
-- **R-CY-SC-5 -- Income tax bracket year ambiguity** — Trigger: tax year not stated, or computation spans 2025/2026. Message: "This skill is scoped to tax year 2025. From 1 Jan 2026 the personal income tax brackets change (0% to 22,000 / 20% to 32,000 / 25% to 42,000 / 30% to 72,000 / 35% above 72,000) [KPMG Tax Card 2025 s.1.1] and the minimum wage rises to EUR 979 / EUR 1,088 [MLSI via Cyprus Mail, Dec 2025]. The 2026 insurable-earnings ceiling was not established in this research [RESEARCH GAP]. Confirm the tax year before computing."
+- **R-CY-SC-5 -- Income tax bracket year ambiguity** — Trigger: tax year not stated, or computation spans 2025/2026. Message: "This skill is scoped to tax year 2025. From 1 Jan 2026 the personal income tax brackets change (0% to 22,000 / 20% to 32,000 / 25% to 42,000 / 30% to 72,000 / 35% above 72,000) [KPMG Tax Card 2025 s.1.1] and the minimum wage rises to EUR 979 / EUR 1,088 [MLSI via Cyprus Mail, Dec 2025]. The 2026 insurable-earnings ceiling is EUR 68,904/yr (EUR 5,742/mo; EUR 1,325/wk). Confirm the tax year before computing."
 
 ## Section 3 -- Payment pattern library
 
@@ -314,7 +240,7 @@ These rules apply when payroll/bank statement data is clear and all required inp
 ### Rule 2 -- Self-employed social insurance rate
 
 - **Self-employed SI rate 2025** — 16.6%  _(up from 15.6% in 2019-2023, effective 1 Jan 2024)_
-- **Self-employed SI base and cap** — On notional/minimum insurable income by occupational category (set quarterly by DSI), capped at EUR 66,612/yr. Use 16.6% — do NOT use the 15.6% still shown on PwC Worldwide Tax Summaries (reviewed 18 May 2026).  _(**[RESEARCH GAP — reviewer to reconfirm against latest DSI circular.]**)_
+- **Self-employed SI base and cap** — On notional/minimum insurable income by occupational category (set quarterly by DSI), capped at EUR 66,612/yr for 2025 (EUR 68,904/yr for 2026). Use 16.6% — do NOT use the 15.6% still shown on PwC Worldwide Tax Summaries (reviewed 18 May 2026).  _(**[RESEARCH GAP — reviewer to reconfirm against latest DSI circular.]**)_
 
 ### Rule 3 -- GHS / GESY rates and single aggregate cap
 
@@ -371,7 +297,7 @@ These rules apply when payroll/bank statement data is clear and all required inp
 | EUR 36,301 – EUR 60,000 | 30% |
 | over EUR 60,000 | 35% |
 
-- **2026 bracket change (not for 2025)** — From 1 Jan 2026 the brackets change to 0% to 22,000 / 20% to 32,000 / 25% to 42,300 / 30% to 72,000 / 35% above 72,000 — not relevant for 2025 payroll.  _([KPMG Tax Card 2025 s.1.1])_
+- **2026 bracket change (not for 2025)** — From 1 Jan 2026 the brackets change to 0% to 22,000 / 20% to 32,000 / 25% to 42,000 / 30% to 72,000 / 35% above 72,000 (tax reform law gazetted 31 December 2025) — not relevant for 2025 payroll.  _([KPMG Tax Card 2025 s.1.1])_
 
 ### Rule 8 -- Withholding method (PAYE)
 

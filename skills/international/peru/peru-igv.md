@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: PE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -18,37 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Peru IGV (Impuesto General a las Ventas) Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Maria Clemencia Valverde Rios** on 2026-06-29.
-> Items flagged for further clarification are tracked separately and excluded here.
-> This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### peru-igv
-
-- **Standard rate** — 18% (16% IGV + 2% IPM)
-- **IGV component of standard rate** — 16%  _(TUO de la Ley del IGV — Decreto Supremo 055-99-EF)_
-- **IPM (Impuesto de Promoción Municipal) component** — 2%  _(TUO de la Ley del IGV — Decreto Supremo 055-99-EF)_
-- **Reduced rate** — For the 2026 fiscal year, MYPEs within the restaurant and hotel sector (revenues ≤ 1,700 UIT and core business ≥ 70%) qualify for a consolidated reduced rate of 10.5% (8% VAT + 2.5% IPM)  _(Ley N.° 32219)_
-- **Zero rate** — 0% (exports of goods and services)
-- **Exempt supplies** — Financial services, insurance, medical services, education, residential rent (some), basic foodstuffs (Apéndice I), agricultural goods, international transport  _(Apéndice I — LIGV)_
-- **Registration threshold** — No general threshold — any business making taxable supplies must register; however Nuevo RUS and RER for small businesses have simplified obligations
-- **Currency** — PEN (Peruvian Sol — S/)
-- **Return form** — PDT 621 — Declaración Mensual de IGV — Renta 3ra Categoría
-- **Filing frequency** — Monthly
-- **Filing deadline** — Varies by RUC last digit (first twelve business days of the following month per SUNAT calendar)  _(Art. 29 DS Nº 135-99-EF)_
-- **RUC (taxpayer ID) format** — Registro Único de Contribuyentes — 11-digit Peruvian taxpayer ID
-- **Foreign digital service (B2B) default treatment** — the Peruvian entity must self-assess 18% VAT for inbound services and withhold 30% Income Tax on the gross foreign invoice.  _(TUO LIR Art 56°, j))_
-- **LOW absolute net IGV position** — monthly tax payable is determined by deducting the Input Tax (Credit) from the Output Tax (Gross IGV).  _(TUO Ley IGV Art. 11)_
-- **Casilla 189 — IGV payable formula** — 105 − 125 − 140; if positive  _(RS N° 076 -2020 SUNAT)_
-- **SPOT detracción rate — construction services** — 4%  _(Art. 13 RS N° 183-2004 SUNAT)_
-- **International flights IGV rate** — 0% (export)
-- **IGV retenciones (withholding) rate** — If the transaction exceeds S/. 700, a 3% withholding by designated agents applies, which offsets the tax liability.  _(art 3 RS N°037-2002 SUNAT)_
-- **IGV percepciones (advance) rate** — 3.5%,5 or 10% on imports (depending on the importer's risk profile and asset condition) and 1% on fuel — credit against payable  _(Art 19 Ley N.° 29173)_
-- **Boleta de Venta input credit cap** — taxpayers under the MYPE or GENERAL income tax regimens may deduct as a cost or expense those boletas de venta issued exclusively by taxpayers under the simplified regimen NUEVO RUS, up to a limit of 6% of the total value of purchases supported by invoices recorded in the purchase ledger (Registro de compras), provided that such deduction does not exceed 200 UIT per fiscal year.  _(TUO LIR Art. 37)_
-- **IGV-inclusive back-calculation** — Net = Total ÷ 1.18 | IGV = Total − Net
-- **Legal basis — TUO de la Ley del IGV** — Decreto Supremo 055-99-EF (as amended)  _(Decreto Supremo 055-99-EF)_
-- **Input credit on Nuevo RUS / Boleta de Venta** — No credit on Boleta de Venta (B2C receipt) or Nuevo RUS suppliers
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Maria Clemencia Valverde Rios** on 2026-06-29; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick reference
 
@@ -60,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | IGV — Impuesto General a las Ventas (18% = 16% IGV + 2% IPM — Impuesto de Promoción Municipal) |
 | Currency | PEN (Peruvian Sol — S/) |
 | Standard rate | 18% (16% IGV + 2% IPM) |
-| Reduced rate | None (single 18% rate in general) |
+| Reduced rate | For fiscal year 2026, MYPEs in the restaurant and hotel sector (revenues ≤ 1,700 UIT and core business ≥ 70%) qualify for a consolidated 10.5% rate (8% IGV + 2.5% IPM) under Ley N.° 32219; otherwise a single 18% rate |
 | Zero rate | 0% (exports of goods and services) |
 | Exempt | Financial services, insurance, medical services, education, residential rent (some), basic foodstuffs (Apéndice I), agricultural goods, international transport |
 | Registration threshold | No general threshold — any business making taxable supplies must register; however Nuevo RUS and RER for small businesses have simplified obligations |
@@ -102,7 +72,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown whether export documentation complete | Treat as domestic 18% |
 | Unknown business-use % (vehicle, phone, home) | 0% input credit |
 | Unknown whether CPE (e-invoice) issued | No input credit until confirmed |
-| Foreign digital service (B2B) | 18% — foreign provider registers under SUNAT simplified scheme (from 2024) |
+| Foreign digital service (B2B) | 18% self-assessed by the Peruvian business as utilización de servicios (input credit once paid), plus 30% income-tax withholding on the gross foreign invoice (TUO LIR art. 56 j); the SUNAT simplified registration scheme (from December 2024) is the B2C mechanism |
 | Nuevo RUS supplier | No IGV credit (they do not charge IGV) |
 
 ### Red flag thresholds

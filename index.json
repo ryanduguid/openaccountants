@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T05:21:54+00:00",
+ "generated_at": "2026-09-29T05:54:45+00:00",
  "counts": {
   "guides": 1865,
   "jurisdictions": 243,
@@ -4944,7 +4944,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "cameroon-payroll",
@@ -4957,7 +4957,7 @@
    "reviewed_by": "Nkinyam Courage Ndasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "cameroon-social-contributions",
@@ -4970,7 +4970,7 @@
    "reviewed_by": "Nkinyam Courage Ndasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "cameroon-vat",
@@ -4983,7 +4983,7 @@
    "reviewed_by": "Nkinyam Courage Ndasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ab-corporate-tax",
@@ -6621,7 +6621,7 @@
    "reviewed_by": "Christos Thoma",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "cyprus-payroll",
@@ -6647,7 +6647,7 @@
    "reviewed_by": "Christos Thoma",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "cyprus-tax-optimization",
@@ -6673,7 +6673,7 @@
    "reviewed_by": "Christos Thoma",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "cz-company-formation",
@@ -14447,7 +14447,7 @@
    "reviewed_by": "Ashish Bista",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "netherlands-30-percent-ruling",
@@ -15851,7 +15851,7 @@
    "reviewed_by": "Maria Clemencia Valverde Rios",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "peru-income-tax",
@@ -15864,7 +15864,7 @@
    "reviewed_by": "Maria Clemencia Valverde Rios",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "peru-payroll",
@@ -15890,7 +15890,7 @@
    "reviewed_by": "Maria Clemencia Valverde Rios",
    "review_status": "current",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "ph-company-formation",
@@ -20739,7 +20739,7 @@
    "reviewed_by": "Jose Padilla",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "venezuela-iva",
@@ -20752,7 +20752,7 @@
    "reviewed_by": "Jose Padilla",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "venezuela-payroll",
@@ -20778,7 +20778,7 @@
    "reviewed_by": "Jose Padilla",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "venezuela-tax-optimization",
@@ -20791,7 +20791,7 @@
    "reviewed_by": "Jose Padilla",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "vietnam-references",
@@ -21285,7 +21285,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "jp-freelance-intake",
