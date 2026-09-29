@@ -98,7 +98,10 @@ _CONTENT_HINT = (
 )
 
 MAX_FILE_BYTES = 2 * 1024 * 1024  # 2 MB safety cap
-SEARCH_LIMIT = 25
+SEARCH_LIMIT = 25          # results returned per search; the total is still reported
+MAX_QUERY_CHARS = 200      # a longer "query" is a document, not a search term
+LIST_DEFAULT_LIMIT = 100   # list_skills page size when the caller names none
+LIST_MAX_LIMIT = 1000      # the largest page a caller may ask for
 SOURCE_BASE = "https://openaccountants.com/skills"
 
 # Feedback flows construct a GitHub New Issue URL the user opens themselves.
@@ -441,8 +444,10 @@ def _index() -> dict[str, dict[str, Any]]:
 
 
 def _clear_index_cache() -> None:
-    """Clear the complete cached catalogue (keeps the former test hook)."""
+    """Clear the complete cached catalogue and the search corpus built from it
+    (keeps the former test hook)."""
     _catalogue.cache_clear()
+    _search_corpus.cache_clear()
 
 
 _index.cache_clear = _clear_index_cache  # type: ignore[attr-defined]
@@ -583,6 +588,30 @@ def _provenance_footer(rec: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+@lru_cache(maxsize=1)
+def _search_corpus() -> dict[str, tuple[str, str]]:
+    """``{slug: (lower-cased body, body)}`` of every catalogued skill, read once.
+
+    ``search_skills`` used to re-read and re-parse every skill file on every
+    call, about 1.6 s per query over 1,800 files. The bodies are some 33 MB
+    of text and fit in memory twice over, so they are read on the first
+    search and kept until the catalogue is cleared (``_clear_index_cache``);
+    like the catalogue, they describe the tree as it was when the server
+    first read it, so an edited guide is served after a restart. The
+    lower-cased copy is what a query is counted in; the snippet is cut from
+    the original-case copy of the same snapshot, never from the live file,
+    so a count and its snippet cannot disagree about what the text says.
+    """
+    corpus: dict[str, tuple[str, str]] = {}
+    for slug in _index():
+        try:
+            _, body = _read_skill(slug)
+        except (OSError, ValueError):
+            continue
+        corpus[slug] = (body.lower(), body)
+    return corpus
+
+
 def _extract_match(body: str, query: str) -> tuple[str, str]:
     """Return (nearest preceding heading, snippet) around the first match."""
     low = body.lower()
@@ -685,8 +714,9 @@ _TRANSPORT_SECURITY_WARNING = _transport_security_warning(
 mcp = FastMCP(
     "OpenAccountants",
     instructions=(
-        "OpenAccountants MCP — open-source tax & accounting skills for AI agents "
-        "across 130+ countries.\n\n"
+        "OpenAccountants MCP — open-source tax & accounting skills for AI agents, "
+        "one per jurisdiction and obligation, read from a checkout of the "
+        "repository.\n\n"
         "**Front door**: call `start` first whenever a user asks for help with "
         "anything tax, accounting, payroll, formation, or VAT/GST related. It "
         "asks the scoping questions, narrows by jurisdiction, and returns the "
@@ -720,44 +750,91 @@ if _TRANSPORT_SECURITY_WARNING:
 _READONLY = ToolAnnotations(readOnlyHint=True, openWorldHint=False)
 
 
+def _page(limit: Any, offset: Any) -> tuple[int, int]:
+    """Validate a page request (FastMCP has already coerced the JSON types)."""
+    if isinstance(limit, bool) or not isinstance(limit, int) or not 1 <= limit <= LIST_MAX_LIMIT:
+        raise ValueError(f"limit must be an integer from 1 to {LIST_MAX_LIMIT} (got {limit!r})")
+    if isinstance(offset, bool) or not isinstance(offset, int) or offset < 0:
+        raise ValueError(f"offset must be a non-negative integer (got {offset!r})")
+    return limit, offset
+
+
 @mcp.tool(annotations=_READONLY)
-def list_skills(jurisdiction: str | None = None, category: str | None = None) -> dict[str, Any]:
-    """List published skills with their quality tier and verifier.
+def list_skills(
+    jurisdiction: str | None = None,
+    category: str | None = None,
+    limit: int = LIST_DEFAULT_LIMIT,
+    offset: int = 0,
+) -> dict[str, Any]:
+    """List published skills with their quality tier and verifier, a page at a time.
 
     Args:
         jurisdiction: Optional jurisdiction code filter, e.g. "MT", "GB", "US-CA".
-        category:     Optional category filter, e.g. "international".
+        category:     Optional category filter, e.g. "international" (case-insensitive).
+        limit:        Page size, 1 to 1000 (default 100).
+        offset:       Number of matching skills to skip (default 0).
 
     Returns:
-        ``{"skills": [...], "total": n}``.  When the server has no guide
-        content at all the list is empty and an ``error`` field says why.
+        ``{"skills": [...], "total": n, "returned": k, "offset": o, "limit": l,
+        "next_offset": ...}``.  ``total`` counts every skill the filters match,
+        ``skills`` holds one page of them sorted by jurisdiction and slug, and
+        ``next_offset`` is the offset of the next page or None on the last one.
+        When the server has no guide content at all the list is empty and an
+        ``error`` field says why.
     """
+    limit, offset = _page(limit, offset)
     problem = _catalogue_problem()
     if problem:
-        return _empty_catalogue_result(problem, skills=[], total=0)
+        return _empty_catalogue_result(
+            problem, skills=[], total=0, returned=0, offset=offset, limit=limit, next_offset=None,
+        )
     jx = jurisdiction.upper() if jurisdiction else None
-    skills = []
+    cx = category.strip().lower() if category else None
+    matches = []
     for rec in _index().values():
         if jx and rec["jurisdiction"].upper() != jx:
             continue
-        if category and rec["category"] != category:
+        if cx and rec["category"].strip().lower() != cx:
             continue
-        skills.append({k: rec[k] for k in (
-            "slug", "title", "jurisdiction", "category",
-            "quality_tier", "verified_by", "last_updated",
-        )})
-    skills.sort(key=lambda s: (s["jurisdiction"], s["slug"]))
-    if skills:
+        matches.append(rec)
+    matches.sort(key=lambda r: (r["jurisdiction"], r["slug"]))
+    page = matches[offset:offset + limit]
+    skills = [{k: rec[k] for k in (
+        "slug", "title", "jurisdiction", "category",
+        "quality_tier", "verified_by", "last_updated",
+    )} for rec in page]
+    end = offset + len(skills)
+    next_offset = end if end < len(matches) else None
+    if skills and next_offset is not None:
+        next_action = (
+            f"Pick the relevant skill and load it with get_skill(slug); {len(matches) - end} "
+            f"more match this filter, so call list_skills again with offset={next_offset} "
+            "for the next page. For a guided, scoped plan instead, call start(intent, jurisdiction)."
+        )
+    elif skills:
         next_action = (
             "Pick the relevant skill and load it with get_skill(slug). For a "
             "guided, scoped plan instead, call start(intent, jurisdiction)."
+        )
+    elif matches:
+        next_action = (
+            f"offset={offset} is past the last of the {len(matches)} skills matching this "
+            "filter; call list_skills again with a smaller offset."
         )
     else:
         next_action = (
             "No skills matched that filter. Drop the filter or check the "
             "jurisdiction code, then call list_skills() again."
         )
-    return {"skills": skills, "total": len(skills), "next_action": next_action}
+    return {
+        "skills": skills,
+        "total": len(matches),
+        "returned": len(skills),
+        "offset": offset,
+        "limit": limit,
+        "next_offset": next_offset,
+        "next_action": next_action,
+    }
 
 
 @mcp.tool(annotations=_READONLY)
@@ -816,38 +893,57 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
         jurisdiction: Optional jurisdiction code to limit the search.
 
     Returns:
-        ``{"results": [...], "total": n}`` — each result has slug, title,
-        jurisdiction, matched_section and snippet.  When the server has no
-        guide content at all the list is empty and an ``error`` field says why.
+        ``{"results": [...], "total": n, "returned": k}`` — ``total`` counts
+        every skill whose markdown contains the query (case-insensitive), and
+        ``results`` holds the best ``k`` (at most 25) ranked by how often the
+        query occurs, a title match first; each has slug, title,
+        jurisdiction, matches, matched_section and snippet.  When the server
+        has no guide content at all the list is empty and an ``error`` field
+        says why.  A query longer than 200 characters is refused.
     """
     q = (query or "").strip()
     if not q:
         raise ValueError("query is required")
+    if len(q) > MAX_QUERY_CHARS:
+        raise ValueError(
+            f"query is too long ({len(q)} characters; the limit is {MAX_QUERY_CHARS}): "
+            "search for a term or phrase, not a document"
+        )
     problem = _catalogue_problem()
     if problem:
-        return _empty_catalogue_result(problem, results=[], total=0)
+        return _empty_catalogue_result(problem, results=[], total=0, returned=0)
     jx = jurisdiction.upper() if jurisdiction else None
 
+    needle = q.lower()
+    index = _index()
+    corpus = _search_corpus()
+    ranked: list[tuple[int, str, int]] = []
+    for slug, (low, _) in corpus.items():
+        rec = index.get(slug)
+        if rec is None or (jx and rec["jurisdiction"].upper() != jx):
+            continue
+        hits = low.count(needle)
+        if not hits:
+            continue
+        score = hits + (10 if needle in rec["title"].lower() else 0)
+        ranked.append((-score, slug, hits))
+    ranked.sort()
+
     results = []
-    for rec in _index().values():
-        if jx and rec["jurisdiction"].upper() != jx:
-            continue
-        try:
-            _, body = _read_skill(rec["slug"])
-        except (OSError, ValueError):
-            continue
-        if q.lower() not in body.lower():
-            continue
-        section, snippet = _extract_match(body, q)
+    for _, slug, hits in ranked[:SEARCH_LIMIT]:
+        rec = index[slug]
+        # The same snapshot the count came from: a guide edited on disk since
+        # the corpus was read would otherwise rank on the old text and show a
+        # snippet cut from the new one, or none at all.
+        section, snippet = _extract_match(corpus[slug][1], q)
         results.append({
             "slug": rec["slug"],
             "title": rec["title"],
             "jurisdiction": rec["jurisdiction"],
+            "matches": hits,
             "matched_section": section,
             "snippet": snippet,
         })
-        if len(results) >= SEARCH_LIMIT:
-            break
     if results:
         next_action = (
             "Load the most relevant match with get_skill(slug), then apply its "
@@ -859,7 +955,12 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
             "list_skills(). If the corpus genuinely lacks this, call "
             "submit_feedback() to flag the gap."
         )
-    return {"results": results, "total": len(results), "next_action": next_action}
+    return {
+        "results": results,
+        "total": len(ranked),
+        "returned": len(results),
+        "next_action": next_action,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -1269,7 +1370,7 @@ def _build_feedback_body(
     rating: int | None,
 ) -> tuple[str, bool]:
     today = datetime.now(tz=timezone.utc).date().isoformat()
-    meta_lines = [f"**Submitted via:** OpenAccountants MCP `submit_feedback`",
+    meta_lines = ["**Submitted via:** OpenAccountants MCP `submit_feedback`",
                   f"**Date:** {today}"]
     if skill_slug:
         meta_lines.append(f"**Skill:** `{skill_slug}`")

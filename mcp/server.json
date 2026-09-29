@@ -3,7 +3,7 @@
   "name": "io.github.openaccountants/openaccountants-mcp",
   "title": "OpenAccountants",
   "description": "Read-only MCP access to the open-source OpenAccountants tax and accounting guides.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "websiteUrl": "https://openaccountants.com",
   "repository": {
     "url": "https://github.com/openaccountants/openaccountants.git",
@@ -14,7 +14,7 @@
     {
       "registryType": "pypi",
       "identifier": "openaccountants-mcp",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "runtimeHint": "python",
       "transport": {
         "type": "stdio"

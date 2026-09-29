@@ -21,6 +21,8 @@
 14. `kz-social-contributions.md`
 15. `kz-tax-optimization.md`
 16. `kz-tax-overview.md`
+17. `kazakhstan-guided-intake.md`
+18. `kazakhstan-return-assembly.md`
 
 ## Shared files this package needs
 

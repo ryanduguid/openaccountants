@@ -1932,6 +1932,34 @@
      "note": "duplicate of skills/us-states/wy/us-wy-sales-tax.md"
     }
    ]
+  },
+  {
+   "id": "2026-09-29-packaging",
+   "date": "2026-09-29",
+   "reason": "Roadmap item 15: every guide the index counts is packaged and served. The build's redirect-stub heuristic is gone, so the one real stub (Kenya's ke-vat-return, which said 'see kenya-vat.md') is deleted; and the EU VAT base takes the slug eu-vat-directive, which every EU VAT guide names as its companion and which the shared file has always been called, in place of its older, shorter twin.",
+   "entries": [
+    {
+     "from": "skills/international/kenya/ke-vat-return.md",
+     "to": null,
+     "slug": "ke-vat-return",
+     "replacement": "kenya-vat",
+     "note": "redirect stub ('This skill has been consolidated. See kenya-vat.md'); the build never packaged it"
+    },
+    {
+     "from": "skills/international/eu/eu-vat-directive.md",
+     "to": null,
+     "slug": "eu-vat-directive",
+     "replacement": "eu-vat-directive",
+     "note": "older, shorter twin of eu-vat-base.md (its H1 was 'eu-vat-base'); the slug now belongs to the base, which was renamed onto this path"
+    },
+    {
+     "from": "skills/international/eu/eu-vat-base.md",
+     "to": "skills/international/eu/eu-vat-directive.md",
+     "slug": "eu-vat-base",
+     "replacement": "eu-vat-directive",
+     "note": "renamed to the slug the EU VAT guides name and packages/_shared/eu-vat-directive.md already carried; content unchanged"
+    }
+   ]
   }
  ]
 }

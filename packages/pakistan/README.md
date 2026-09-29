@@ -23,6 +23,8 @@
 16. `pk-social-contributions.md`
 17. `pk-tax-optimization.md`
 18. `pk-withholding-tax.md`
+19. `pakistan-guided-intake.md`
+20. `pakistan-return-assembly.md`
 
 ## Shared files this package needs
 

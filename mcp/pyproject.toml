@@ -1,6 +1,6 @@
 [project]
 name = "openaccountants-mcp"
-version = "0.3.0"
+version = "0.4.0"
 description = "MCP server giving AI assistants on-demand access to the open-source OpenAccountants tax and accounting guides in a checkout — tax, bookkeeping, payroll, e-invoicing, formation, cross-border (Pillar Two, CBAM, FATCA/CRS, DST) and sector verticals, for every jurisdiction in index.json."
 readme = "README.md"
 requires-python = ">=3.10"

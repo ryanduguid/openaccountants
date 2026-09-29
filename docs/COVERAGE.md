@@ -19,14 +19,14 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,867** |
+| Guide files indexed | **1,865** |
 | Distinct `jurisdiction` codes | **243** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,703** |
+| `tier: 2` (source-cited draft) | **1,701** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
 | Country directories under `skills/international/` | **184** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **252** |
+| Generated bundles under `packages/` | **255** |
 
 US coverage is complete at state level: all 50 states plus DC are present.
 Accountant-reviewed guides exist in 24 of the 243 jurisdiction codes;
@@ -58,7 +58,7 @@ Regenerate this list with:
 python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] for g in d['guides'] if str(g.get('tax_year')) <= '2024' and g.get('tax_year')))"
 ```
 
-Everything else in the corpus is on `tax_year` 2025 (1,667), 2026 (119), or is
+Everything else in the corpus is on `tax_year` 2025 (1,665), 2026 (119), or is
 year-agnostic and carries none (74).
 
 > **One open maintainer call.** 99 guides carry a named `reviewed_by` while

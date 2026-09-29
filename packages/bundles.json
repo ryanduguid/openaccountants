@@ -6,6 +6,8 @@
    "jurisdiction": "CROSS-BORDER",
    "name": "Cross-Border",
    "files": [
+    "americas-corridors.md",
+    "asia-pacific-corridors.md",
     "cbam-carbon-border-adjustment.md",
     "cross-border-invoicing-compliance.md",
     "cross-border-payroll-coordination.md",
@@ -14,7 +16,11 @@
     "cross-border-vat-gst.md",
     "dac6-mdr-reportable-arrangements.md",
     "digital-services-tax-matrix.md",
+    "eg-ae-dtt-summary.md",
+    "eg-sa-dtt-summary.md",
+    "emerging-market-corridors.md",
     "eu-directives-cross-border.md",
+    "eu-intra-rates.md",
     "eu-oss-digital.md",
     "eu-reverse-charge.md",
     "eu-social-security-coordination.md",
@@ -36,21 +42,40 @@
     "tax-controversy-map-apa.md",
     "tax-research-with-your-ai-how-to-do-it-defensibly.md",
     "tax-residency-planning.md",
+    "uk-major-partners.md",
+    "us-cfc-gilti.md",
+    "us-expatriation-exit-tax.md",
+    "us-fbar-fatca-reporting.md",
+    "us-feie-ftc.md",
+    "us-foreign-trust-reporting.md",
+    "us-major-partners.md",
     "vat-place-of-supply-master.md",
     "wealth-tax-matrix.md",
     "withholding-tax-matrix.md",
-    "americas-corridors.md",
-    "asia-pacific-corridors.md",
-    "emerging-market-corridors.md",
-    "eu-intra-rates.md",
-    "uk-major-partners.md",
-    "us-major-partners.md",
     "README.md"
    ],
    "shared": [
     "cross-border-workflow-base.md",
     "financial-statements-workflow-base.md"
    ]
+  },
+  "_financial-reporting": {
+   "jurisdiction": "FINANCIAL-REPORTING",
+   "name": "Financial Reporting",
+   "files": [
+    "financial-reporting-router.md",
+    "financial-reporting-workflow-base.md",
+    "ias32-debt-vs-equity.md",
+    "ifrs15-revenue.md",
+    "ifrs16-leases.md",
+    "ifrs3-business-combinations.md",
+    "us-gaap-asc606-revenue.md",
+    "us-gaap-asc805-business-combinations.md",
+    "us-gaap-asc842-leases.md",
+    "us-gaap-debt-vs-equity.md",
+    "README.md"
+   ],
+   "shared": []
   },
   "_integrations": {
    "jurisdiction": "INTEGRATIONS",
@@ -66,6 +91,36 @@
     "stripe-integration.md",
     "wise-integration.md",
     "xero-integration.md",
+    "README.md"
+   ],
+   "shared": []
+  },
+  "_intelligence": {
+   "jurisdiction": "INTELLIGENCE",
+   "name": "Intelligence",
+   "files": [
+    "deadline-engine.md",
+    "optimisation-advisor.md",
+    "threshold-alerts.md",
+    "README.md"
+   ],
+   "shared": [
+    "workflow-base.md"
+   ]
+  },
+  "_patterns": {
+   "jurisdiction": "PATTERNS",
+   "name": "Transaction Patterns",
+   "files": [
+    "global-ad-platforms.md",
+    "global-cloud-infrastructure.md",
+    "global-home-office.md",
+    "global-marketplaces-banking-fees.md",
+    "global-payment-processors.md",
+    "global-productivity-tools.md",
+    "global-saas-vendors.md",
+    "global-travel-expenses.md",
+    "global-vehicle-expenses.md",
     "README.md"
    ],
    "shared": []
@@ -393,6 +448,8 @@
     "bd-tax-optimization.md",
     "bd-tax-overview.md",
     "references.md",
+    "bangladesh-guided-intake.md",
+    "bangladesh-return-assembly.md",
     "README.md"
    ],
    "shared": [
@@ -521,6 +578,7 @@
     "intake.md",
     "bermuda-tax.md",
     "bm-company-formation.md",
+    "bm-corporate-income-tax.md",
     "bm-income-tax.md",
     "bm-payroll-social.md",
     "bm-tax-overview.md",
@@ -1737,6 +1795,8 @@
     "eg-transfer-pricing.md",
     "eg-withholding-tax.md",
     "egypt-vat.md",
+    "egypt-guided-intake.md",
+    "egypt-return-assembly.md",
     "README.md"
    ],
    "shared": [
@@ -2590,6 +2650,8 @@
     "kz-social-contributions.md",
     "kz-tax-optimization.md",
     "kz-tax-overview.md",
+    "kazakhstan-guided-intake.md",
+    "kazakhstan-return-assembly.md",
     "README.md"
    ],
    "shared": [
@@ -3188,6 +3250,8 @@
     "morocco-income-tax.md",
     "morocco-payroll.md",
     "morocco-vat.md",
+    "morocco-guided-intake.md",
+    "morocco-return-assembly.md",
     "README.md"
    ],
    "shared": [
@@ -3488,6 +3552,8 @@
     "pk-social-contributions.md",
     "pk-tax-optimization.md",
     "pk-withholding-tax.md",
+    "pakistan-guided-intake.md",
+    "pakistan-return-assembly.md",
     "README.md"
    ],
    "shared": [
@@ -3732,6 +3798,8 @@
     "ru-tax-optimization.md",
     "ru-usn.md",
     "russia-vat.md",
+    "russia-guided-intake.md",
+    "russia-return-assembly.md",
     "README.md"
    ],
    "shared": [
@@ -4529,6 +4597,8 @@
     "ua-tax-optimization.md",
     "ua-tax-overview.md",
     "ukraine-vat.md",
+    "ukraine-guided-intake.md",
+    "ukraine-return-assembly.md",
     "README.md"
    ],
    "shared": [

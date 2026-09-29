@@ -21,6 +21,8 @@
 14. `eg-transfer-pricing.md`
 15. `eg-withholding-tax.md`
 16. `egypt-vat.md`
+17. `egypt-guided-intake.md`
+18. `egypt-return-assembly.md`
 
 ## Shared files this package needs
 
