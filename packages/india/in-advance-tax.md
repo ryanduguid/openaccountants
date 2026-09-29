@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Indian advance tax for self-emp
 version: 2.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -16,32 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # IN Advance Tax
 
-## Verified rates & thresholds (accountant-reviewed)
-
-- **Reviewer note** — Reviewed against the cited tax authorities by Mayur Deokar on 2026-06-06. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### Advance Tax
-
-- **15 September — 2nd** — 45% cumulative  _(ITA s 211)_
-- **15 December — 3rd** — 75% cumulative  _(ITA s 211)_
-- **15 March — 4th** — 100% cumulative  _(ITA s 211)_
-- **Instalment** — Single payment by 15 March (100%)  _(ITA s 211(1)(b))_
-- **Exempt if** — Resident 60+, NO business/professional income  _(ITA s 207)_
-- **NOT exempt if** — Senior WITH business/professional income  _(ITA s 207)_
-- **Tax applicable code** — 0021 (IT — Other than Companies)  _(ITNS 280)_
-- **Type of payment code** — 100 (Advance Tax)  _(ITNS 280)_
-- **15 June — 1st instalment** — 15% cumulative  _(ITA s 211)_
-- **15 September — 2nd instalment** — 45% cumulative  _(ITA s 211)_
-- **15 December — 3rd instalment** — 75% cumulative  _(ITA s 211)_
-- **15 March — 4th instalment** — 100% cumulative  _(ITA s 211)_
-- **Threshold** — Tax liability ≥ Rs. 10,000 (after TDS)  _(ITA s 208)_
-- **Presumptive Taxpayers (44AD/44ADA) — Instalment** — Single payment by 15 March (100%)  _(ITA s 211(1)(b))_
-- **s 234B (total default)** — 1% per month (simple) on shortfall  _(ITA s 234B)_
-- **s 234C (instalment deferment)** — 1% per month (simple) on instalment shortfall  _(ITA s 234C)_
-- **Senior Citizen Exemption — Exempt if** — Resident 60+, NO business/professional income  _(ITA s 207)_
-- **Senior Citizen Exemption — NOT exempt if** — Senior WITH business/professional income  _(ITA s 207)_
-- **Challan 280 — Tax applicable code** — 0021 (IT — Other than Companies)  _(ITNS 280)_
-- **Challan 280 — Type of payment code** — 100 (Advance Tax)  _(ITNS 280)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 

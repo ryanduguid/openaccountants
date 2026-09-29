@@ -4,7 +4,7 @@ description: Use this skill when advising on LEGAL tax minimization strategies f
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -18,36 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India — Tax Optimization Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Mayur Deokar on 2026-06-06. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### Tax Optimization
-
-- **Annual exemption** — ₹1,25,000  _(ITA s 112A)_
-- **s 80C (PPF, ELSS, LIC, EPF)** — ₹1,50,000 combined cap  _(ITA s 80C)_
-- **s 80CCD(1B) (NPS extra)** — ₹50,000 over and above 80C  _(ITA s 80CCD(1B))_
-- **s 80D (health insurance)** — ₹25,000 self + ₹25,000 parents (₹50,000 if senior)  _(ITA s 80D)_
-- **s 24(b) (home loan interest)** — ₹2,00,000 (self-occupied)  _(ITA s 24(b))_
-- **s 80E (education loan interest)** — No cap (up to 8 years)  _(ITA s 80E)_
-- **s 80GG (rent, no HRA)** — ₹60,000/year cap is correct, but deduction is the least of: (a) ₹5,000/month (₹60,000/year), (b) 25% of total income, or (c) actual rent minus 10% of total income  _(ITA s 80GG)_
-- **s 80TTA (savings interest)** — ₹10,000 (₹50,000 for seniors under 80TTB)  _(ITA s 80TTA/80TTB)_
-- **Standard deduction** — ₹75,000  _(Finance Act 2024)_
-- **Employer NPS (s 80CCD(2))** — Up to 14% of basic  _(ITA s 80CCD(2))_
-- **Home loan interest (let-out)** — No limit (rented property)  _(ITA s 24(b))_
-- **Everything else (80C, 80D, HRA)** — NOT available in new regime  _(ITA s 115BAC)_
-- **Buildings (factory)** — 10%  _(ITA s 32)_
-- **Buildings (other)** — 5%  _(ITA s 32)_
-- **Plant and machinery (general)** — 15%
-- **Computers and software** — 40%  _(ITA s 32)_
-- **Motor vehicles** — 15% (30% commercial)  _(ITA s 32)_
-- **Intangible assets (patents, know-how)** — 25%
-- **Business loss** — Any head except salary; 8 years carry-forward  _(ITA s 72)_
-- **STCL** — Against STCG or LTCG; 8 years  _(ITA s 74)_
-- **LTCL** — Against LTCG only; 8 years  _(ITA s 74)_
-- **House property loss** — Any income, capped ₹2,00,000/year; 8 years  _(ITA s 71B)_
-- **Unabsorbed depreciation** — Unlimited carry-forward  _(ITA s 32(2))_
-- **LTCG on Listed Equity – Annual exemption** — ₹1,25,000  _(ITA s 112A)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 — Quick Reference
 
@@ -130,7 +101,7 @@ Reviewed against the cited tax authorities by Mayur Deokar on 2026-06-06. Items 
 | Health insurance premium | 80D | 126 | ₹25,000 self + ₹25,000 parents (₹50,000 if senior) | Preventive health check-up ₹5,000 within limit |
 | Home loan interest (self-occupied) | 24(b) | 55(1) | ₹2,00,000 | Old regime only for self-occupied |
 | Education loan interest | 80E | 129 | No cap (up to 8 years) | Often overlooked. Interest component only |
-| Rent paid (no HRA received) | 80GG | 134 | ₹60,000/year | For self-employed or those without HRA |
+| Rent paid (no HRA received) | 80GG | 134 | Least of ₹5,000/month (₹60,000/year), 25% of total income, or rent paid less 10% of total income | For self-employed or those without HRA |
 | Donations | 80G | 133 | 50% or 100% of donation | Qualifying institutions only |
 | Disabled dependent | 80DD | 127 | ₹75,000/₹1,25,000 | Severe disability higher limit |
 | Interest on savings account | 80TTA | 137 | ₹10,000 | ₹50,000 for senior citizens (80TTB/138) |

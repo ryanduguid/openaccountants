@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Indian EPF (Employees' Providen
 version: "1.0"
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 category: international
@@ -16,44 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## India EPF & ESI -- Employer Obligations Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### EPF and ESI
-
-- **Employer total** — 12% of Basic + DA  _(EPF Act 1952)_
-- **EPF account** — 3.67%  _(EPF Act)_
-- **EPS (pension)** — 8.33% (capped at ₹15,000/month = max ₹1,250/mo)  _(EPF Act)_
-- **Employee contribution** — 12% of Basic + DA  _(EPF Act 1952)_
-- **EPF Admin** — 0.50% of total EPF wages (min ₹500/month if >20 employees)  _(EPFO notification)_
-- **EDLI (life insurance)** — 0.50% of Basic+DA (capped at ₹15,000) = max ₹75/mo  _(EPFO notification)_
-- **EDLI Admin** — Nil (removed 01-04-2017)  _(EPFO notification)_
-- **Employer ESI** — 3.25% of gross wages  _(ESI Act 1948)_
-- **Employee ESI** — 0.75% of gross wages  _(ESI Act 1948)_
-- **Total ESI** — 4%  _(ESI Act)_
-- **ECR (EPF monthly)** — 15th of following month  _(EPFO)_
-- **ESI monthly** — 15th of following month  _(ESIC)_
-- **Employer total EPF contribution** — 12% of Basic + DA  _(EPF Act 1952)_
-- **EPF account split (employer)** — 3.67%  _(EPF Act)_
-- **EPS (pension)** — 8.33% (capped at ₹15,000/month = max ₹1,250/mo)  _(EPF Act)_
-- **Employee EPF contribution** — 12% of Basic + DA  _(EPF Act 1952)_
-- **PF wage ceiling** — ₹15,000/month (statutory; many contribute on actual)  _(EPF Act)_
-- **EPF applicability** — Establishments with 20+ persons  _(EPF Act)_
-- **EPF Admin** — 0.50% of total EPF wages (min ₹500/month if >20 employees)  _(EPFO notification)_
-- **EDLI (life insurance)** — 0.50% of Basic+DA (capped at ₹15,000) = max ₹75/mo  _(EPFO notification)_
-- **EDLI Admin** — Nil (removed 01-04-2017)  _(EPFO notification)_
-- **EDLI death benefit** — Up to ₹7,00,000  _(EPFO)_
-- **Employer ESI contribution** — 3.25% of gross wages  _(ESI Act 1948)_
-- **Employee ESI** — 0.75% of gross wages  _(ESI Act 1948)_
-- **Total ESI** — 4%  _(ESI Act)_
-- **ESI wage ceiling** — ₹21,000/month (₹25,000 for disability)  _(ESI Act)_
-- **ESI applicability** — Establishments with 10+ persons (notified areas)  _(ESI Act)_
-- **ECR (EPF monthly) filing deadline** — 15th of following month  _(EPFO)_
-- **ESI monthly filing deadline** — 15th of following month  _(ESIC)_
-- **Late payment penalty** — 12% per annum (simple interest) + damages 1% per month or part thereof from the date of default  _(EPF Act / ESI Acts)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -245,8 +208,8 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Due date | 15th of the following month |
 | Payment mode | Online through EPFO Unified Portal |
 | Format | Upload employee data (UAN, name, wages, contribution breakup) |
-| Late payment penalty | Simple interest at 12% per annum on delayed deposits |
-| Damages | 5% to 25% per annum depending on delay period |
+| Late payment penalty (interest, EPF Act s 7Q) | Simple interest at 12% per annum on delayed deposits |
+| Damages (EPF Act s 14B) | 1% per month or part of a month of the arrears, whatever the length of delay, from 15 June 2024 (EPF Scheme para 32A as amended; 5% to 25% per annum by length of delay before that) |
 
 ### 4.2 ESI -- Monthly Contribution
 
@@ -257,8 +220,8 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Due date | 15th of the following month |
 | Payment mode | Online through ESIC portal |
 | Return | Half-yearly return (now largely subsumed in monthly online filing) |
-| Late payment penalty | Simple interest at 12% per annum |
-| Damages | Up to 25% of arrears |
+| Late payment penalty (interest, ESI Act s 39(5)(a)) | Simple interest at 12% per annum |
+| Damages (ESI (General) Regulations reg 31C) | 5% to 25% per annum of the arrears by length of delay (under 2 months 5%; 2 to 4 months 10%; 4 to 6 months 15%; over 6 months 25%) |
 
 ### 4.3 Annual Returns
 

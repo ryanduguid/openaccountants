@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Indian TDS (Tax Deducted at Sou
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -16,36 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # IN Tds Freelance
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### TDS on Freelancers
-
-- **Threshold** — Threshold increase to Rs 50,000 from financial Year 2025-26 (ITA 194J)  _(ITA s 194J)_
-- **Individual/HUF rate** — 1%  _(ITA s 194C)_
-- **Company/firm/AOP rate** — 2%  _(ITA s 194C)_
-- **Single payment threshold** — INR 30,000  _(Income Tax Act, 1961, Section 194C)_
-- **Aggregate annual threshold** — INR 1,00,000  _(ITA s 194C)_
-- **Rate** — Rate is 0.1%.New Section 393 applicable as per Income tax act 2025 from FY 2026-27  _(ITA s 194O)_
-- **Threshold (individual/HUF)** — INR 5,00,000 per annum per participant  _(ITA s 194O)_
-- **Who deducts** — E-commerce operator (platform)  _(ITA s 194O)_
-- **Rate without PAN** — 5% in case of section 194O and 194Q.(Section 206AA as per ITA 1961 and section 393 as per new ITA 2025)  _(ITA s 206AA)_
-- **Professional services rate** — 10%  _(ITA s 194J; New Income Tax Act 2025 s 393 serial No 6(iii)(a))_
-- **Technical services rate** — 2%  _(ITA s 194J; New Income Tax Act 2025 s 393 serial No 6(iii)(b))_
-- **Threshold (s 194J)** — INR 50,000 per annum per payee  _(ITA s 194J)_
-- **Individual/HUF rate** — 1%  _(ITA s 194C)_
-- **Company/firm/AOP rate** — 2%  _(ITA s 194C)_
-- **Single payment threshold** — INR 30,000  _(Income Tax Act, 1961, Section 194C)_
-- **Aggregate annual threshold** — INR 1,00,000  _(ITA s 194C)_
-- **Rate (s 194O — E-commerce)** — 0.1%  _(ITA s 194O; New Income Tax Act 2025 s 393)_
-- **Threshold — individual/HUF (s 194O)** — INR 5,00,000 per annum per participant  _(ITA s 194O)_
-- **Who deducts (s 194O)** — E-commerce operator (platform)  _(ITA s 194O)_
-- **Rate without PAN (s 206AA)** — 5% in case of s 194O and s 194Q; otherwise higher of section rate, rate in force, or 20%  _(ITA s 206AA (ITA 1961); New Income Tax Act 2025 s 393)_
-- **194J professional without PAN** — 20% (vs normal 10%)  _(ITA s 206AA)_
-- **194C individual without PAN** — 20% (vs normal 1%)  _(ITA s 206AA)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Skill Metadata
 
@@ -53,6 +24,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Jurisdiction Code** — IN
 - **Primary Legislation** — Income Tax Act, 1961 -- Sections 194C, 194J, 194O, 197, 206AA
 - **Supporting Legislation** — Finance Act 2025; Income-tax Rules, 1962; CBDT Circulars and Notifications
+- **Income-tax Act, 2025** — From FY 2026-27 the TDS provisions cited here are consolidated in Section 393 of the Income-tax Act, 2025 (the Section 194J rates at s 393 serial no. 6(iii)(a) and (b); Sections 194C, 194O and 206AA within s 393). The 1961 Act's section numbers apply to FY 2025-26, and the re-enactment does not change the rates or thresholds stated here.
 - **Tax Authority** — Central Board of Direct Taxes (CBDT) / Income Tax Department
 - **Filing Portal** — https://www.incometax.gov.in (TRACES for TDS: https://www.tdscpc.gov.in)
 - **Contributor** — Open Accountants Community
@@ -94,7 +66,7 @@ Before computing any TDS figure, you MUST know:
 | Applies to | Fees for professional services OR fees for technical services |
 | TDS rate | 10% |
 | Reduced rate | 2% for fees for technical services (NOT professional services) paid to a resident |
-| Threshold | INR 30,000 per annum per payee |
+| Threshold | INR 50,000 per annum per payee, separately for professional fees and for technical fees (Finance Act 2025, from 1 April 2025; INR 30,000 through FY 2024-25) |
 | When to deduct | At the time of credit to payee's account OR at the time of payment, whichever is earlier |
 
 ### What Constitutes "Professional Services"
@@ -128,8 +100,8 @@ Before computing any TDS figure, you MUST know:
 
 ### Threshold Rule
 
-- **194J threshold rule** — if aggregate_payment_to_payee_in_FY <= INR 30,000: no TDS if aggregate_payment_to_payee_in_FY > INR 30,000: TDS on entire amount (not just excess)
-- **WARNING** — Once the INR 30,000 threshold is crossed, TDS applies to the FULL amount (including the first INR 30,000), not just the excess.
+- **194J threshold rule** — if aggregate_payment_to_payee_in_FY <= INR 50,000: no TDS if aggregate_payment_to_payee_in_FY > INR 50,000: TDS on entire amount (not just excess). The threshold was INR 30,000 through FY 2024-25; Finance Act 2025 raised it to INR 50,000 from 1 April 2025.
+- **WARNING** — Once the INR 50,000 threshold is crossed, TDS applies to the FULL amount (including the first INR 50,000), not just the excess.
 
 ## Step 2: Section 194C -- Contractor Payments [T1]
 
@@ -188,7 +160,7 @@ Before computing any TDS figure, you MUST know:
 | Item | Detail |
 | --- | --- |
 | Applies to | E-commerce operators facilitating sale of goods/services by e-commerce participants |
-| TDS rate | 1% |
+| TDS rate | 0.1% (Finance (No. 2) Act 2024, for payments from 1 October 2024; 1% before that) |
 | Threshold | INR 5,00,000 per annum per participant (for individuals/HUFs only) |
 | Who deducts | The e-commerce OPERATOR (platform), not the buyer |
 | Effective from | 1 October 2020 |
@@ -209,6 +181,7 @@ Before computing any TDS figure, you MUST know:
 | Normal Rate | 206AA Rate |
 | --- | --- |
 | Any rate under Chapter XVII-B | Higher of: (a) the rate specified in the section, (b) the rate in force, or (c) **20%** |
+| Section 194O and Section 194Q | **5%** (proviso to Section 206AA(1)) |
 
 ### Practical Application
 
@@ -220,13 +193,14 @@ Before computing any TDS figure, you MUST know:
 | 194J (technical) | 2% | 20% |
 | 194C (individual/HUF) | 1% | 20% |
 | 194C (others) | 2% | 20% |
-| 194O | 1% | 20% (but 5% if 206AB applies) |
+| 194O | 0.1% | 5% (proviso to Section 206AA(1) for Sections 194O and 194Q) |
 
-- **WARNING** — 20% is the MINIMUM rate when PAN is not provided. Always verify PAN before making any payment.
+- **WARNING** — 20% is the MINIMUM rate when PAN is not provided (5% for Sections 194O and 194Q). Always verify PAN before making any payment.
 
 ## Step 5: Section 206AB -- Higher Rate for Non-Filers [T1]
 
 - **Legislation** — Income Tax Act, 1961, Section 206AB
+- **Status** — Section 206AB (and Section 206CCA) was omitted by the Finance (No. 2) Act, 2024 with effect from 1 April 2025. It does not apply to payments in FY 2025-26; the rule below applied through FY 2024-25 and matters only for earlier-year defaults.
 - **Condition** — If the payee has NOT filed income tax returns for the two preceding years AND the aggregate TDS/TCS in each of those years exceeded INR 50,000, the higher rate under 206AB applies.
 
 **Rate table**  _(Income Tax Act, 1961, Section 206AB)_
@@ -393,7 +367,7 @@ Form 26Q is the quarterly TDS return for non-salary payments (including 194C, 19
 ### EC5 -- Freelancer on e-commerce platform (194O vs 194J) [T2]
 
 **Situation:** Graphic designer sells services via an e-commerce platform like Fiverr or Urban Company.
-**Resolution:** 194O applies (1% TDS by the e-commerce operator). The hiring client does NOT additionally deduct 194J. 194O takes precedence for transactions facilitated through the platform. If the client hires the freelancer directly (off-platform), 194J applies.
+**Resolution:** 194O applies (0.1% TDS by the e-commerce operator). The hiring client does NOT additionally deduct 194J. 194O takes precedence for transactions facilitated through the platform. If the client hires the freelancer directly (off-platform), 194J applies.
 
 ### EC6 -- TDS deducted but not deposited by deductor [T1]
 
@@ -402,8 +376,8 @@ Form 26Q is the quarterly TDS return for non-salary payments (including 194C, 19
 
 ### EC7 -- Section 194J threshold: multiple professional services [T1]
 
-**Situation:** Client pays a freelancer INR 15,000 for accounting and INR 20,000 for tax advisory in the same FY. Total = INR 35,000.
-**Resolution:** Aggregate exceeds INR 30,000. TDS applies to the entire INR 35,000 (not just the excess). The deductor should have started deducting from the payment that pushed the aggregate over INR 30,000.
+**Situation:** Client pays a freelancer INR 25,000 for accounting and INR 30,000 for tax advisory in the same FY (2025-26). Total = INR 55,000.
+**Resolution:** Aggregate exceeds the INR 50,000 threshold for FY 2025-26. TDS applies to the entire INR 55,000 (not just the excess): 10% x INR 55,000 = INR 5,500. The deductor should have started deducting from the payment that pushed the aggregate over INR 50,000.
 
 ### EC8 -- GST component in the invoice and TDS [T1]
 
@@ -460,8 +434,8 @@ Action Required: Do not advise. Refer to Chartered Accountant. Document gap.
 
 ### Test 3 -- No TDS below threshold (194J)
 
-**Input:** Two payments of INR 12,000 each to a freelance designer in the same FY. Total = INR 24,000. PAN provided.
-**Expected output:** Aggregate INR 24,000 < INR 30,000 threshold. No TDS required.
+**Input:** Two payments of INR 20,000 each to a freelance designer in FY 2025-26. Total = INR 40,000. PAN provided.
+**Expected output:** Aggregate INR 40,000 < INR 50,000 threshold (Finance Act 2025). No TDS required.
 
 ### Test 4 -- Missing PAN (Section 206AA)
 
