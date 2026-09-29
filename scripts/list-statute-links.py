@@ -47,13 +47,12 @@ citation that is true. Always exits 0.
 
 Usage: python3 scripts/list-statute-links.py [--selftest] [--jurisdiction NAME]
 """
-import os, re, sys, collections, importlib.util
+import os, re, sys, collections
 
-_spec = importlib.util.spec_from_file_location(
-    'source_mix', os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                               'list-source-mix.py'))
-_mix = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(_mix)
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.sources import PUBLISHER, classify  # noqa: E402
 
 LINK = re.compile(r'\[([^\]]{4,160})\]\((https?://[^)\s]+)\)')
 # The citation trailer the generated fact blocks end a bullet with, and a URL
@@ -73,29 +72,12 @@ STATUTE = re.compile(r'\b(?:Act|Code|Law|Ordinance|Decree|Uniform Act|Loi|'
                      r'Statutory Instrument|S\.I\. No)\b')
 HOST = re.compile(r'https?://([^/\s)\]>"]+)')
 
-# Destinations a reader can recognise for what they are. Two kinds, and the
-# distinction is worth keeping in mind even though both are spared:
-#
-#   commentary  PwC, KPMG, Chambers, Lexology. You land on tax analysis, and
-#               you can see that is what it is.
-#   primary text  law.cornell.edu. Cornell's LII is a Cornell Law School
-#               programme, not the official publisher -- the US Code is
-#               published by the OLRC -- so it is a republisher, in the same
-#               position as ZambiaLII. But it republishes the SECTION, not a
-#               summary of it: `[§1202](law.cornell.edu/uscode/text/26/1202)`
-#               lands the reader on 26 U.S.C. §1202 itself. That is a citation
-#               doing its job, and flagging it would be the false positive.
-PUBLISHER = re.compile(r'pwc|kpmg|deloitte|ey\.com|bakermckenzie|chambers|'
-                       r'grantthornton|pkf|bdo|crowe|mazars|lexology|ibfd|'
-                       r'orbitax|taxsummaries|practiceguides|legal500|'
-                       r'bloombergtax|law\.cornell\.edu', re.I)
-
 SKIP_TREES = ('us-states', 'foundation', 'templates', 'patterns')
 
 
 def _lands_badly(host):
     """Neither a tax authority nor a recognised tax publisher."""
-    return _mix.classify(host) == 'secondary' and not PUBLISHER.search(host)
+    return classify(host) == 'secondary' and not PUBLISHER.search(host)
 
 
 def misleading(line):

@@ -3,8 +3,8 @@
 A review aid prints what it sees and exits 0. A gate exits non-zero when the
 tree holds something it should not. The checkers built on this module are
 gates: ``check-arithmetic.py``, ``check-bracket-tables.py``,
-``check-expired-rules.py``, ``check-fact-conflicts.py`` and
-``check-coverage-claims.py``. Each collects :class:`Finding` objects into a
+``check-expired-rules.py``, ``check-fact-conflicts.py``,
+``check-coverage-claims.py`` and ``check-sourcing-floor.py``. Each collects :class:`Finding` objects into a
 :class:`Report`, which owns the command-line flags every gate shares, the
 text and ``--json`` output, the baseline and the exit code.
 

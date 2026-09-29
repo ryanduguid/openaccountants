@@ -1,4 +1,4 @@
-"""The five gate checkers, driven over throwaway corpora.
+"""The six gate checkers, driven over throwaway corpora.
 
 Each checker is run as CI runs it, as a subprocess from the corpus root (the
 checkers resolve `skills/` against the working directory), with an explicit
@@ -258,6 +258,64 @@ class BracketTablesGateTests(GateCheckerMixin, unittest.TestCase):
         self.assertEqual(document["counts"]["new"], 1, document)
         self.assertEqual(len(document["stale_baseline"]), 1)
         self.assertEqual(document["findings"][0]["detail"]["expected"], 2500.0)
+
+
+class SourcingFloorGateTests(GateCheckerMixin, unittest.TestCase):
+    script = "check-sourcing-floor.py"
+
+    TABLE = (
+        "| Taxable income | Rate |\n"
+        "|---|---|\n"
+        "| 0 - 10,000 | 10% |\n"
+        "| 10,001 - 20,000 | 20% |\n"
+        "| over 20,000 | 30% |\n"
+        "\nSource: {source}\n"
+    )
+
+    def test_lifecycle_of_a_table_without_an_authority(self) -> None:
+        path = "skills/international/zz/zz-income-tax.md"
+        self.assert_gate_lifecycle(
+            {path: guide("zz-income-tax", self.TABLE.format(source="https://taxsummaries.pwc.com/zz"))},
+            {path: guide("zz-income-tax", self.TABLE.format(source="https://taxsummaries.pwc.com/zz and https://www.zz.gov/rates"))},
+            path, "rate table without a tax-authority or statute citation",
+        )
+
+    def test_what_clears_the_floor_and_what_is_not_a_rate_table(self) -> None:
+        self.write({
+            # a statute republisher clears it, like an authority
+            "skills/federal/zz-a.md": guide("zz-a", self.TABLE.format(source="https://www.law.cornell.edu/uscode/text/26/1")),
+            # an allowlisted authority on a bare national domain clears it
+            "skills/international/zz/zz-b.md": guide("zz-b", self.TABLE.format(source="https://emta.ee/x")),
+            # a quick-reference table with a rate on three of eight rows is not a rate table
+            "skills/international/zz/zz-c.md": guide("zz-c", (
+                "| Field | Value |\n|---|---|\n| Country | ZZ |\n| Currency | ZZD |\n| VAT | 20% |\n"
+                "| CIT | 25% |\n| WHT | 15% |\n| Filing | 31 March |\n| Portal | e-tax |\n| Authority | ZRA |\n"
+                "\nSource: https://taxsummaries.pwc.com/zz\n")),
+            # the corpus's own links are not sources, so this one has no sources at all
+            "skills/international/zz/zz-d.md": guide("zz-d", self.TABLE.format(source="https://www.openaccountants.com/connect")),
+            # file templates and platform guides are skipped
+            "skills/templates/zz-e.md": guide("zz-e", self.TABLE.format(source="https://taxsummaries.pwc.com/zz")),
+            # a bullet-form schedule is a rate list, and a publisher is not an authority
+            "skills/international/zz/zz-f.md": guide("zz-f", (
+                "- **Income up to 12,000** — 0%  _(https://taxsummaries.pwc.com/zz)_\n"
+                "- **Income 12,001–30,000** — 10%  _(https://taxsummaries.pwc.com/zz)_\n"
+                "- **Income above 30,000** — 20%  _(https://taxsummaries.pwc.com/zz)_\n"
+                "- **Filing deadline** — 31 March  _(https://taxsummaries.pwc.com/zz)_\n")),
+            # three rates among twelve bullets are not a schedule
+            "skills/international/zz/zz-g.md": guide("zz-g", "".join(
+                "- **Fact %d** — %s  _(https://taxsummaries.pwc.com/zz)_\n" % (n, "10%" if n < 3 else "text")
+                for n in range(12))),
+        })
+        code, document = self.run_json()
+        self.assertEqual(code, 1, document)
+        self.assertEqual([f["path"] for f in document["findings"]],
+                         ["skills/international/zz/zz-d.md", "skills/international/zz/zz-f.md"])
+        self.assertEqual(document["findings"][0]["detail"], {"tables": 1, "hosts": []})
+        self.assertEqual(document["findings"][1]["detail"], {"tables": 1, "hosts": ["taxsummaries.pwc.com"]})
+        text = self.run_checker().stdout
+        self.assertIn("1 rate table(s) or list(s); cites 0 host(s), none a tax authority or statute", text)
+        self.assertIn("cites 1 host(s), none a tax authority or statute: taxsummaries.pwc.com", text)
+        self.assertIn("guides scanned: 6; with a rate table or list: 4; without an authority or statute citation: 2", text)
 
 
 class ExpiredRulesGateTests(GateCheckerMixin, unittest.TestCase):

@@ -15,8 +15,8 @@
 #     gate below re-renders PARTNERS.md the same way.
 #   - The validate job checks guide frontmatter: changed files on a pull
 #     request, the whole tree on push to main.
-#   - The gate-checkers job runs the five gate checkers (arithmetic, bracket
-#     tables, expired rules, fact conflicts, coverage claims) against their
+#   - The gate-checkers job runs the six gate checkers (arithmetic, bracket
+#     tables, expired rules, fact conflicts, coverage claims, sourcing floor) against their
 #     committed baselines in scripts/baselines/, plus the cited-hosts checker's
 #     offline selftest. A finding the baseline does not list, or a baseline
 #     entry that no longer reproduces, fails the job; scripts/oa_tools/findings.py
@@ -107,7 +107,7 @@ jobs:
       - name: Run the gate checkers against their baselines and the cited-hosts selftest
         run: |
           status=0
-          for checker in arithmetic bracket-tables expired-rules fact-conflicts coverage-claims; do
+          for checker in arithmetic bracket-tables expired-rules fact-conflicts coverage-claims sourcing-floor; do
             echo "== scripts/check-$checker.py"
             python3 "scripts/check-$checker.py" || status=1
           done

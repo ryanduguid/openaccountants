@@ -24,7 +24,7 @@ GATES = ("validate.yml", "sync-integrity.yml")
 DISCOVER = 'unittest discover -s tests -p "test_*.py"'
 TARGETS = ("help", "install", "build", "bundle", "validate", "sync-check", "checkers", "baselines", "test", "check")
 #: The gate checkers (scripts/oa_tools/findings.py), as CI and the Makefile name them.
-GATE_CHECKERS = ("arithmetic", "bracket-tables", "expired-rules", "fact-conflicts", "coverage-claims")
+GATE_CHECKERS = ("arithmetic", "bracket-tables", "expired-rules", "fact-conflicts", "coverage-claims", "sourcing-floor")
 
 
 def _yaml(path: Path) -> dict:

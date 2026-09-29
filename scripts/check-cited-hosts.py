@@ -44,36 +44,18 @@ Exits 0 always. This ranks leads for a human; it does not gate anything.
 Usage: python3 scripts/check-cited-hosts.py [--selftest] [--grade hard|deep-link|reserved]
        python3 scripts/check-cited-hosts.py --no-network   # parse and classify only
 """
-import os, re, sys, glob, json, time, socket, ipaddress, collections
+import os, sys, glob, time, socket, ipaddress, collections
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TREES = ('skills',)
 
-# Stop at whitespace and at the delimiters markdown wraps links in. The
-# trailing-punctuation strip below handles "see https://x.gov/y." sentences.
-URL = re.compile(r'https?://([^\s/?#\)\]>"\'`,]+)')
-
-# A URL with a placeholder is a template, not an address.
-PLACEHOLDER = re.compile(r'[{}<>$]|%[sd]|\.\.\.|XX+|YYYY|\bUF\b')
-
-# The extractor above is deliberately loose, so everything it produces is
-# validated against what a hostname can actually be. This is not belt and
-# braces -- it is load-bearing, and the first version without it had a 59%
-# false-positive rate on its strongest grade:
-#
-#   * `**https://www.sarsefiling.co.za**` yielded `www.sarsefiling.co.za**`,
-#     so the checker reported a host that is demonstrably live as dead.
-#   * China's guides write `（https://etax.chinatax.gov.cn）完成提交。...`,
-#     and the full-width close paren is not in the stop set, so a whole
-#     sentence of Chinese came through as a "hostname".
-#
-# A hostname in a URL is ASCII: letters, digits, hyphens, dots. An
-# internationalised name would already be punycode. Anything else is the
-# extractor's fault, not the corpus's, and must never reach the report.
-HOSTNAME = re.compile(
-    r'^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?'
-    r'(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$')
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+# The extractor and its two guards (URL templates, non-hostnames) live with the
+# source classification so the sourcing-floor gate reads citations the same way.
+from oa_tools.sources import URL, PLACEHOLDER, HOSTNAME  # noqa: E402
 
 RESERVED_NETS = [
     ('TEST-NET-1 (RFC 5737)', '192.0.2.0/24'),

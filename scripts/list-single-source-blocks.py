@@ -50,20 +50,14 @@ number is right -- only about how many independent places it came from.
 Usage: python3 scripts/list-single-source-blocks.py [--selftest]
                     [--min-facts N] [--share F] [--jurisdiction NAME] [--all]
 """
-import os, re, sys, collections, importlib.util
+import os, re, sys, collections
 
 _here = os.path.dirname(os.path.abspath(__file__))
 
 
-def _load(name, path):
-    spec = importlib.util.spec_from_file_location(name, os.path.join(_here, path))
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
-
-
-_mix = _load('source_mix', 'list-source-mix.py')
-_links = _load('statute_links', 'list-statute-links.py')
+if _here not in sys.path:
+    sys.path.insert(0, _here)
+from oa_tools.sources import PUBLISHER, classify  # noqa: E402
 
 URL = re.compile(r'https?://[^\s)\]>"\'`]+')
 HOST = re.compile(r'https?://([^/\s)\]>"]+)')
@@ -82,9 +76,9 @@ SKIP_TREES = ('templates',)
 
 def classify_host(host):
     """'authority' | 'publisher' | 'other' for a citation destination."""
-    if _mix.classify(host) == 'authority':
+    if classify(host) == 'authority':
         return 'authority'
-    if _links.PUBLISHER.search(host):
+    if PUBLISHER.search(host):
         return 'publisher'
     return 'other'
 
