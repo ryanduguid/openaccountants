@@ -4,7 +4,7 @@ description: Triggers when the taxpayer is an Ohio resident sole proprietor or s
 version: "0.1"
 jurisdiction: US-OH
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -48,6 +48,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | $0 – $26,050 | 0% (no tax) |
 | $26,051 – $100,000 | $342.00 + 2.75% of excess over $26,050 |
 | Over $100,000 | $2,394.32 + 3.125% of excess over $100,000 |
+
+The two fixed amounts are the statute's own. R.C. 5747.02(A)(3)(b), as amended by HB 96 (2025), sets $342.00 at the $26,050 threshold for tax year 2025 (the 2024 table had $360.69) but keeps $2,394.32 at $100,000, so $342.00 + 2.75% × $73,950 = $2,375.63 and the top band starts $18.69 above where the middle band ends. Apply the amounts as written. For taxable years beginning in 2026, R.C. 5747.02(A)(3)(c) sets $332.00 plus 2.75% of the amount in excess of $26,050 on all income above the threshold.
 
 All filing statuses use the same bracket structure. Ohio does not differentiate brackets by filing status.
 

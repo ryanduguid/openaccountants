@@ -4,6 +4,11 @@
 # it with: python3 scripts/check-bracket-tables.py --update-baseline
 skills/international/andorra/ad-income-tax.md::| 24,001 -- 40,000 | 10% | Up to EUR 800 | EUR 800 on full EUR 16,000 band | EUR 800 | / | Above 40,000 | 10% | None | 10% × excess | EUR 800 + 10% × (income − 40,000) |
 skills/international/australia/au-not-for-profit.md::| $763-$915 | 25% on whole amount | 55% of excess over $416 | / | $916 and above | 25% on whole amount | 30% on whole amount |
+skills/international/el-salvador/el-salvador-income-tax.md::cumulative: | 895.25 – 2,038.10 | USD 60.00 + 20% over 895.24 |
+skills/international/el-salvador/el-salvador-income-tax.md::cumulative: | III | 895.25 -- 2,038.10 | USD 60.00 + 20% on excess over 895.24 | USD 288.57 |
+skills/international/el-salvador/el-salvador-payroll.md::cumulative: | III | 895.25 -- 2,038.10 | USD 60.00 + 20% on excess over 895.24 |
+skills/international/el-salvador/el-salvador-social-contributions.md::cumulative: | 10,742.87 – 24,457.14 | USD 720.00 + 20% on excess over 10,742.86 [Decreto Ejecutivo 10/2025]
+skills/international/el-salvador/el-salvador-social-contributions.md::cumulative: | 895.25 – 2,038.10 | USD 60.00 + 20% on excess over 895.24 [PwC] |
 skills/international/fiji/fj-income-tax.md::| 270,001 -- 300,000 | 47,600 + 20% of excess over 270,000 | $53,600 | / | 300,001 -- 350,000 | 53,600 + 20% of excess over 300,000 | $63,600 |
 skills/international/fiji/fj-income-tax.md::| 300,001 -- 350,000 | 53,600 + 20% of excess over 300,000 | $63,600 | / | 350,001 -- 400,000 | 63,600 + 20% of excess over 350,000 | $73,600 |
 skills/international/fiji/fj-income-tax.md::| 350,001 -- 400,000 | 63,600 + 20% of excess over 350,000 | $73,600 | / | 400,001 -- 450,000 | 73,600 + 20% of excess over 400,000 | $83,600 |
@@ -36,3 +41,4 @@ skills/us-states/nc/us-nc-corporate-tax.md::| Jan 1, 2022 | 2.50% | SB 105 confi
 skills/us-states/nc/us-nc-corporate-tax.md::| Jan 1, 2023 | 2.50% | SB 105 confirms | / | Jan 1, 2024 | 2.50% | SB 105 confirms |
 skills/us-states/nc/us-nc-corporate-tax.md::| Jan 1, 2026 | 2.00% | SB 105 | / | Jan 1, 2027 | 2.00% | SB 105 |
 skills/us-states/nd/us-nd-corporate-tax.md::| $10,000 | $141 | 1.41% | / | $25,000 | $352.50 | 1.41% |
+skills/us-states/oh/us-oh-income-tax.md::cumulative: | Over $100,000 | $2,394.32 + 3.125% of excess over $100,000 |
