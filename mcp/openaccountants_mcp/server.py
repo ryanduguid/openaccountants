@@ -589,23 +589,26 @@ def _provenance_footer(rec: dict[str, Any]) -> str:
 
 
 @lru_cache(maxsize=1)
-def _search_corpus() -> dict[str, str]:
-    """The lower-cased body of every catalogued skill, read once per process.
+def _search_corpus() -> dict[str, tuple[str, str]]:
+    """``{slug: (lower-cased body, body)}`` of every catalogued skill, read once.
 
     ``search_skills`` used to re-read and re-parse every skill file on every
     call, about 1.6 s per query over 1,800 files. The bodies are some 33 MB
-    of text and fit in memory, so they are read on the first search and kept
-    until the catalogue is cleared (``_clear_index_cache``); like the
-    catalogue, they describe the tree as it was when the server first read
-    it, so an edited guide is served after a restart.
+    of text and fit in memory twice over, so they are read on the first
+    search and kept until the catalogue is cleared (``_clear_index_cache``);
+    like the catalogue, they describe the tree as it was when the server
+    first read it, so an edited guide is served after a restart. The
+    lower-cased copy is what a query is counted in; the snippet is cut from
+    the original-case copy of the same snapshot, never from the live file,
+    so a count and its snippet cannot disagree about what the text says.
     """
-    corpus: dict[str, str] = {}
+    corpus: dict[str, tuple[str, str]] = {}
     for slug in _index():
         try:
             _, body = _read_skill(slug)
         except (OSError, ValueError):
             continue
-        corpus[slug] = body.lower()
+        corpus[slug] = (body.lower(), body)
     return corpus
 
 
@@ -913,8 +916,9 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
 
     needle = q.lower()
     index = _index()
+    corpus = _search_corpus()
     ranked: list[tuple[int, str, int]] = []
-    for slug, low in _search_corpus().items():
+    for slug, (low, _) in corpus.items():
         rec = index.get(slug)
         if rec is None or (jx and rec["jurisdiction"].upper() != jx):
             continue
@@ -928,11 +932,10 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
     results = []
     for _, slug, hits in ranked[:SEARCH_LIMIT]:
         rec = index[slug]
-        try:
-            _, body = _read_skill(slug)
-        except (OSError, ValueError):
-            continue
-        section, snippet = _extract_match(body, q)
+        # The same snapshot the count came from: a guide edited on disk since
+        # the corpus was read would otherwise rank on the old text and show a
+        # snippet cut from the new one, or none at all.
+        section, snippet = _extract_match(corpus[slug][1], q)
         results.append({
             "slug": rec["slug"],
             "title": rec["title"],

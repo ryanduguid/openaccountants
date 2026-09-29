@@ -142,12 +142,16 @@ class SearchSkillsTests(ToolTreeCase):
         self.assertEqual(server.search_skills("x" * server.MAX_QUERY_CHARS)["total"], 0)
 
     def test_the_corpus_is_read_once_and_cleared_with_the_catalogue(self) -> None:
-        self.assertEqual(server.search_skills("mechanism")["total"], 1)
+        first = server.search_skills("mechanism")
+        self.assertEqual(first["total"], 1)
+        self.assertIn("mechanism", first["results"][0]["snippet"])
         (self.packages / "xx" / "xx-income-tax.md").write_text(
             _skill("xx-income-tax", "XX Income Tax", body="Rewritten without the word."), encoding="utf-8",
         )
-        self.assertEqual(server.search_skills("mechanism")["total"], 1,
-                         "served from the corpus read at the first search")
+        again = server.search_skills("mechanism")
+        self.assertEqual(again["total"], 1, "served from the corpus read at the first search")
+        self.assertEqual(again["results"], first["results"],
+                         "the snippet is cut from the snapshot the count came from, not the live file")
         server._index.cache_clear()
         self.assertEqual(server.search_skills("mechanism")["total"], 0)
 
