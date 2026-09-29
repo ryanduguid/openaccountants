@@ -6,7 +6,7 @@ jurisdiction: CA
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: Khushboo Talreja, CPA
-review_status: current
+review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
 category: bookkeeping

@@ -6,7 +6,7 @@ jurisdiction: DO
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Miguel Lantigua
-review_status: current
+review_status: pending_review
 depends_on:
   - payroll-workflow-base
 category: payroll

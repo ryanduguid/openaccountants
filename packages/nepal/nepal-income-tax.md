@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Nepal income tax for natural pe
 jurisdiction: NP
 tax_year: 2026
 tax_year_notes: "FY 2083/84 (2026-27) current; FY 2082/83 slabs retained for prior-year work"
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Ashish Bista
 review_status: current
 tier: 1
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Nepal Income Tax -- Natural Persons Skill v0.1
 
-> **Tier 2 — research-verified, pending accountant sign-off.** Figures below are drawn from the Income Tax Act, 2058 (2002), Inland Revenue Department (IRD) guidance, the Social Security Fund (SSF), and the PKF Trunco "Tax Rates for FY 2082-83 (2025-26)" publication. Items marked **[RESEARCH GAP — reviewer to confirm]** could not be locked to a primary source and MUST be confirmed by a Nepali tax professional before filing.
+> **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, pending accountant sign-off", the draft label the guide carried before that review. **Provenance of the draft:** the Income Tax Act, 2058 (2002), Inland Revenue Department (IRD) guidance, the Social Security Fund (SSF), and the PKF Trunco "Tax Rates for FY 2082-83 (2025-26)" publication. **Not covered by the review:** items flagged for further clarification were excluded, so items below still marked **[RESEARCH GAP — reviewer to confirm]** could not be locked to a primary source and MUST be confirmed by a Nepali tax professional before filing.
 
 ## Verified rates & thresholds (accountant-reviewed)
 

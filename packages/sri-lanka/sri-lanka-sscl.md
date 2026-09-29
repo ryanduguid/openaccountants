@@ -3,7 +3,7 @@ name: sri-lanka-sscl
 description: ALWAYS read this skill before touching any Sri Lanka Social Security Contribution Levy (SSCL) work. Use whenever asked about SSCL on turnover for importers, manufacturers, service providers, wholesalers/retailers, or financial-service businesses in Sri Lanka. Trigger on phrases like "Sri Lanka SSCL", "Social Security Contribution Levy", "2.5% turnover levy Sri Lanka", "liable turnover Sri Lanka", or "SSCL registration Sri Lanka". Covers the SSCL at 2.5% on liable turnover, the activity-dependent liable-turnover fraction, and its in-force status (most recently amended by the SSCL Amendment Act No. 24 of 2025). Out of scope — income tax, corporate tax, VAT, and withholding tax (separate skills).
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Lal kumarasiri
 review_status: current
 tier: 1
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Sri Lanka — Social Security Contribution Levy (SSCL) — Skill v1.0
 
-> **Produced by OpenAccountants (openaccountants.com).** Research-grade (tier 2), drafted from official IRD sources — pending sign-off by a Sri Lankan CA / IRD-registered practitioner. Not tax advice.
+> **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** The sign-off by Lal kumarasiri is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`; upstream's export of approved reviews (2026-08-22, `VERIFIERS.md`) lists the same reviewer for Sri Lanka. Until 2026-09-29 this banner still read "Research-grade (tier 2), pending sign-off", the draft label the guide carried before that review. **Provenance of the draft:** official IRD sources. Not tax advice.
 
 ## Section 1 — Quick reference
 

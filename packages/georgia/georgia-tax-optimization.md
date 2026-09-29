@@ -6,7 +6,7 @@ jurisdiction: GE
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Gvantsa Amiridze, ACCA
-review_status: current
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

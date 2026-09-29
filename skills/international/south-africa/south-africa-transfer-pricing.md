@@ -6,7 +6,7 @@ jurisdiction: ZA
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: Werner Britz
-review_status: current
+review_status: pending_review
 depends_on:
   - transfer-pricing-workflow-base
 category: transfer-pricing

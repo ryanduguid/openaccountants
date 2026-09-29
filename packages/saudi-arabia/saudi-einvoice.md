@@ -6,7 +6,7 @@ jurisdiction: SA
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: Mehran Habib
-review_status: current
+review_status: pending_review
 depends_on:
   - einvoice-workflow-base
 category: invoicing

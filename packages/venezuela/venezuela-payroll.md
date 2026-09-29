@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Venezuela payroll processing fo
 version: 0.1
 jurisdiction: VE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Jose Padilla
 review_status: current
 depends_on:
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Venezuela Payroll Skill v0.1
 
-> **Tier 2 (research-verified) — NOT yet accountant-verified.** Several figures carry `[RESEARCH GAP — reviewer to confirm]` markers. A licensed Venezuelan contador público colegiado must reconcile those before any output is presented as final.
+> **Accountant-reviewed (`tier: 1`).** Jose Padilla reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-21; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet accountant-verified", the draft label the guide carried before that review. **Not covered by the review:** items flagged for further clarification were excluded, so the figures below that still carry the `[RESEARCH GAP — reviewer to confirm]` marker remain unconfirmed; a licensed Venezuelan contador público colegiado must reconcile those before any output that depends on them is presented as final.
 
 > **Hyperinflation / UT context (READ FIRST).** Almost every statutory figure in Venezuelan tax law is expressed in **Tax Units (Unidad Tributaria — UT)**, not bolívares. The current value is **VES 43.00 per UT**, effective **2 June 2025** (Providencia Administrativa SNAT/2025/0048, Gaceta Oficial No. 43,140). Using the wrong UT value invalidates every ISLR computation. Separately, the **legal minimum wage is frozen at VES 130/month** (since March 2022); the bulk of worker compensation is paid as **explicitly non-salary USD-indexed bonuses** that do NOT enter the contribution or ISLR base. Both distortions are statutory and must be modelled as written below, not "corrected."
 

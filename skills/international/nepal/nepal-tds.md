@@ -3,7 +3,7 @@ name: nepal-tds
 description: ALWAYS read this skill before touching any Nepal TDS / withholding tax work. Use whenever asked to compute or deduct Nepal withholding tax (TDS) on rent, interest, dividends, service/contract payments, or payments to non-residents under the Income Tax Act 2058. Trigger on phrases like "Nepal TDS", "Nepal withholding", "TDS rates Nepal", "Section 88 Nepal", "rent TDS Nepal 10%", "dividend TDS Nepal 5%", "interest TDS Nepal 6%", "contract TDS Nepal 1.5%", or "FY 2082/83 TDS". Out of scope — personal income tax computation (separate skill), corporate tax (separate skill), payroll/SSF salary TDS (use the payroll skill), and VAT.
 jurisdiction: NP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Ashish Bista
 review_status: current
 tier: 1
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Nepal — TDS / Withholding Tax — Skill v1.0
 
-> **Produced by OpenAccountants (openaccountants.com).** Research-grade (tier 2) for FY 2082/83. **Source provenance:** figures derive from Nepali professional-firm publications (PKF T.R. Upadhya, Union Nepal) reflecting the Income Tax Act 2058 §87–§88 and Finance Act 2082 — not re-anchored to primary IRD pages. A Nepali CA must confirm against the statute before reliance. Not tax advice.
+> **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** Ashish Bista reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-06; the reviewed figures are the "Verified rates & thresholds" block below, and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Coverage: FY 2082/83. Until 2026-09-29 this banner still read "Research-grade (tier 2)", the draft label the guide carried before that review. **Source provenance of the draft:** figures derive from Nepali professional-firm publications (PKF T.R. Upadhya, Union Nepal) reflecting the Income Tax Act 2058 §87–§88 and Finance Act 2082, not re-anchored to primary IRD pages; the review excluded items flagged for further clarification. Confirm any figure outside the reviewed block against the statute before reliance. Not tax advice.
 
 ## Verified rates & thresholds (accountant-reviewed)
 

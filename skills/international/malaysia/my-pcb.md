@@ -6,7 +6,7 @@ jurisdiction: MY
 tax_year: 2025
 last_updated: 2026-09-28
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636
-review_status: current
+review_status: pending_review
 depends_on:
   - my-income-tax
 category: international

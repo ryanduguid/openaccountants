@@ -3,7 +3,7 @@ name: sri-lanka-payroll
 description: Use this skill whenever asked about Sri Lanka payroll processing for employed persons. Trigger on phrases like "Sri Lanka payroll", "APIT", "APIT Table 01", "PAYE Sri Lanka", "EPF deduction", "ETF contribution", "EPF Sri Lanka", "employer EPF", "ETF Board", "T-10 certificate", "APIT certificate", "net salary Sri Lanka", "gross to net Sri Lanka", "salary calculation Sri Lanka", "personal relief Sri Lanka", "minimum wage Sri Lanka", "tax withholding Sri Lanka", "IRD APIT", or any question about computing employee pay, income-tax withholding, or social-fund contributions for Sri Lanka-based employees. This skill covers APIT (Advance Personal Income Tax) monthly withholding, EPF employee and employer contributions, ETF employer contributions, minimum-wage reality, filing obligations to the Inland Revenue Department (IRD), the EPF and the ETF Board, and penalties. ALWAYS read this skill before processing any Sri Lanka payroll.
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-29
 reviewed_by: Lal kumarasiri
 review_status: current
 tier: 1
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Sri Lanka Payroll Skill v0.1
 
-> **Tier 2 — research-verified, pending accountant sign-off.** Figures below are current for Sri Lanka's **Year of Assessment 2025/2026 (1 April 2025 – 31 March 2026)**. The personal relief and APIT Table 01 monthly formula are extracted verbatim from the Inland Revenue Department (IRD) primary PDF; the EPF/ETF rates are from official EPF/ETF/Central Bank sources. APIT penalty amounts are corroborated from reputable Sri Lankan tax-advisory summaries of the Inland Revenue Act and carry a flag. Do not present any computation as definitive until a Sri Lanka-qualified tax practitioner (CA Sri Lanka member or equivalent) has signed off.
+> **Accountant-reviewed (`tier: 1`).** The sign-off by Lal kumarasiri is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`; upstream's export of approved reviews (2026-08-22, `VERIFIERS.md`) lists the same reviewer for Sri Lanka. Until 2026-09-29 this banner still read "Tier 2, research-verified, pending accountant sign-off", the draft label the guide carried before that review. Figures below are current for Sri Lanka's **Year of Assessment 2025/2026 (1 April 2025 – 31 March 2026)**. **Provenance of the draft:** the personal relief and APIT Table 01 monthly formula are extracted verbatim from the Inland Revenue Department (IRD) primary PDF; the EPF/ETF rates are from official EPF/ETF/Central Bank sources; APIT penalty amounts are corroborated from Sri Lankan tax-advisory summaries of the Inland Revenue Act and carry a flag. Items below still marked `[RESEARCH GAP — reviewer to confirm]` were not locked to a primary source; confirm them with a Sri Lanka-qualified tax practitioner (CA Sri Lanka member or equivalent) before relying on a computation that depends on one.
 
 ## Section 1 — Quick Reference
 
