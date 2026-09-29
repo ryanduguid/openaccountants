@@ -11,7 +11,7 @@ category: federal
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 depends_on:
-  - us-tax-workflow-base
+  - us-circular-230-disclosure
 ---
 
 # US Tax Residency (Non-Citizens)

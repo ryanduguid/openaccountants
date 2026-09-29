@@ -10,4 +10,4 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`cross-border-workflow-base.md`](../_shared/cross-border-workflow-base.md)
 - [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
-- [`us-tax-workflow-base.md`](../_shared/us-tax-workflow-base.md)
+- [`us-circular-230-disclosure.md`](../_shared/us-circular-230-disclosure.md)

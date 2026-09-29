@@ -138,13 +138,16 @@ CATEGORY_VOCABULARY = frozenset({
     "integration", "pattern", "intelligence", "template",
 })
 
-#: A guide whose jurisdiction is US or US-<state> loads on top of the base
-#: that carries the Circular 230 §10.37 disclosure, so its `depends_on` must
-#: name it. Exempt: the base itself, the US GAAP guides under
-#: skills/financial-reporting/ (accounting standards, not tax practice) and
-#: the file templates.
-US_BASE = "us-tax-workflow-base"
-US_BASE_EXEMPT_DIRS = ("skills/financial-reporting/", "skills/templates/")
+#: A guide whose jurisdiction is US or US-<state> loads the scope-neutral
+#: Circular 230 disclosure, so its `depends_on` must name it. The disclosure
+#: is its own file because the sole-proprietor workflow base
+#: (`us-tax-workflow-base`) carries a refusal catalogue that excludes payroll,
+#: corporate and foreign taxpayers, so it cannot be required of every US
+#: guide. Exempt: the foundation files (the disclosure and that base), the US
+#: GAAP guides under skills/financial-reporting/ (accounting standards, not
+#: tax practice) and the file templates.
+US_DISCLOSURE = "us-circular-230-disclosure"
+US_DISCLOSURE_EXEMPT_DIRS = ("skills/financial-reporting/", "skills/foundation/", "skills/templates/")
 
 
 class GuideTrees:
@@ -377,9 +380,10 @@ def check_depends_on(bi, errors, known_names=None):
     following the dependency found nothing.
 
     The same pass checks that every US-jurisdiction tax guide names
-    US_BASE, the base that carries the Circular 230 §10.37 disclosure:
-    until 2026-09-29 only 11 of 239 did, so a reader following the
-    dependencies was never sent to it.
+    US_DISCLOSURE, the scope-neutral Circular 230 disclosure: until
+    2026-09-29 only 11 of 239 named even the sole-proprietor base, and that
+    base is the wrong file to require, so a reader following the
+    dependencies was never sent to a disclosure.
     """
     if known_names is None:
         known_names = collect_guide_names(bi)
@@ -404,13 +408,12 @@ def check_depends_on(bi, errors, known_names=None):
         jurisdiction = str(metadata.get("jurisdiction") or "")
         if (
             (jurisdiction == "US" or jurisdiction.startswith("US-"))
-            and not rel.startswith(US_BASE_EXEMPT_DIRS)
-            and metadata.get("name") != US_BASE
-            and US_BASE not in slugs
+            and not rel.startswith(US_DISCLOSURE_EXEMPT_DIRS)
+            and US_DISCLOSURE not in slugs
         ):
             errors.append(
-                f"{rel}: a `{jurisdiction}` guide loads on top of `{US_BASE}` (the Circular 230 "
-                "§10.37 disclosure) and must name it in `depends_on`"
+                f"{rel}: a `{jurisdiction}` guide must name `{US_DISCLOSURE}` (the Circular 230 "
+                "disclosure) in `depends_on`"
             )
     print(f"checked {entries} depends_on entries against {len(known_names)} guide names")
 

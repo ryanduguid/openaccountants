@@ -8,7 +8,7 @@ last_updated: 2026-09-28
 version: "0.1"
 validation_status: ai-drafted-q3
 depends_on:
-  - us-tax-workflow-base
+  - us-circular-230-disclosure
 ---
 
 # Alabama Individual Income Tax Skill — Self-Employed / Sole Proprietor

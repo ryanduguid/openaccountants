@@ -763,6 +763,19 @@ def _page(limit: Any, offset: Any) -> tuple[int, int]:
     return limit, offset
 
 
+#: Category names the index and this filter served before 2026-09-29, mapped to
+#: the canonical vocabulary in docs/skill-template.md. A caller that still
+#: filters on one of them receives the guides carrying the canonical value;
+#: results only ever show the canonical value.
+LEGACY_CATEGORIES = {
+    "federal-tax": "federal",
+    "state": "state-tax",
+    "us-states": "state-tax",
+    "financial-reporting": "financial-statements",
+    "patterns": "pattern",
+}
+
+
 @mcp.tool(annotations=_READONLY)
 def list_skills(
     jurisdiction: str | None = None,
@@ -775,6 +788,10 @@ def list_skills(
     Args:
         jurisdiction: Optional jurisdiction code filter, e.g. "MT", "GB", "US-CA".
         category:     Optional category filter, e.g. "international" (case-insensitive).
+                      The names used before 2026-09-29 (state, us-states, federal-tax,
+                      financial-reporting, patterns) still work and select the
+                      guides carrying the canonical value (state-tax, federal,
+                      financial-statements, pattern).
         limit:        Page size, 1 to 1000 (default 100).
         offset:       Number of matching skills to skip (default 0).
 
@@ -794,6 +811,7 @@ def list_skills(
         )
     jx = jurisdiction.upper() if jurisdiction else None
     cx = category.strip().lower() if category else None
+    cx = LEGACY_CATEGORIES.get(cx, cx)
     matches = []
     for rec in _index().values():
         if jx and rec["jurisdiction"].upper() != jx:

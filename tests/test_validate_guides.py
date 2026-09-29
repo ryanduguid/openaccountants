@@ -523,20 +523,19 @@ class CtaBlockTests(_ValidatorCase):
         self.assertEqual(self._check_guides({"skills/prose.md": mentioned}), [])
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 
 #: A US-state guide (the jurisdiction decides the rule, not the tree).
 US_GUIDE = GOOD.replace("jurisdiction: MT\n", "jurisdiction: US-NY\n").replace(
     "category: international\n", "category: state-tax\n"
 )
-#: The base every US tax guide loads on top of.
-US_BASE_GUIDE = (
-    GOOD.replace("name: synthetic-guide\n", "name: us-tax-workflow-base\n")
+#: The disclosure every US tax guide names in `depends_on`.
+US_DISCLOSURE_GUIDE = (
+    GOOD.replace("name: synthetic-guide\n", "name: us-circular-230-disclosure\n")
     .replace("jurisdiction: MT\n", "jurisdiction: US\n")
     .replace("category: international\n", "category: foundation\n")
 )
+#: The sole-proprietor workflow base: a US foundation file, not required of every US guide.
+US_BASE_GUIDE = US_DISCLOSURE_GUIDE.replace("name: us-circular-230-disclosure\n", "name: us-tax-workflow-base\n")
 
 
 class CategoryTests(_ValidatorCase):
@@ -566,34 +565,56 @@ class CategoryTests(_ValidatorCase):
                 self.assertEqual(errors, [])
 
 
-class USBaseDependencyTests(_ValidatorCase):
-    """Every US-jurisdiction tax guide names us-tax-workflow-base in depends_on."""
+class USDisclosureDependencyTests(_ValidatorCase):
+    """Every US-jurisdiction tax guide names us-circular-230-disclosure in depends_on."""
 
-    def test_a_us_guide_without_the_base_is_an_error(self) -> None:
+    FOUNDATION = {
+        "skills/foundation/us-circular-230-disclosure.md": US_DISCLOSURE_GUIDE,
+        "skills/foundation/us-tax-workflow-base.md": US_BASE_GUIDE,
+    }
+
+    def test_a_us_guide_without_the_disclosure_is_an_error(self) -> None:
+        errors = self._check_depends_on({"skills/us-states/ny/us-ny-x.md": US_GUIDE, **self.FOUNDATION})
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("a `US-NY` guide must name `us-circular-230-disclosure`", errors[0])
+        self.assertIn("in `depends_on`", errors[0])
+
+    def test_the_sole_proprietor_base_alone_is_not_enough(self) -> None:
+        # The base's refusal catalogue excludes payroll, corporate and foreign
+        # taxpayers, so naming it must not satisfy the rule: only the
+        # scope-neutral disclosure does.
         errors = self._check_depends_on({
-            "skills/us-states/ny/us-ny-x.md": US_GUIDE,
-            "skills/foundation/us-tax-workflow-base.md": US_BASE_GUIDE,
+            "skills/federal/us-form-1120-x.md": US_GUIDE.replace("tier: 2\n", "tier: 2\ndepends_on:\n  - us-tax-workflow-base\n"),
+            **self.FOUNDATION,
         })
         self.assertEqual(len(errors), 1, errors)
-        self.assertIn("a `US-NY` guide loads on top of `us-tax-workflow-base`", errors[0])
-        self.assertIn("must name it in `depends_on`", errors[0])
+        self.assertIn("must name `us-circular-230-disclosure`", errors[0])
 
-    def test_a_us_guide_naming_the_base_passes(self) -> None:
-        for shape in ("depends_on:\n  - us-sales-tax\n  - us-tax-workflow-base\n",
-                      "depends_on: [us-sales-tax, us-tax-workflow-base]\n"):
+    def test_a_us_guide_naming_the_disclosure_passes(self) -> None:
+        for shape in ("depends_on:\n  - us-sales-tax\n  - us-circular-230-disclosure\n",
+                      "depends_on: [us-sales-tax, us-circular-230-disclosure]\n"):
             with self.subTest(shape=shape):
                 errors = self._check_depends_on({
                     "skills/us-states/ny/us-ny-x.md": US_GUIDE.replace("tier: 2\n", "tier: 2\n" + shape),
                     "skills/federal/us-sales-tax.md": US_GUIDE.replace("name: synthetic-guide\n", "name: us-sales-tax\n")
                     .replace("jurisdiction: US-NY\n", "jurisdiction: US\n")
-                    .replace("tier: 2\n", "tier: 2\ndepends_on:\n  - us-tax-workflow-base\n"),
-                    "skills/foundation/us-tax-workflow-base.md": US_BASE_GUIDE,
+                    .replace("tier: 2\n", "tier: 2\ndepends_on:\n  - us-circular-230-disclosure\n"),
+                    **self.FOUNDATION,
                 })
                 self.assertEqual(errors, [])
 
-    def test_the_base_the_exempt_trees_and_other_jurisdictions_need_no_base(self) -> None:
+    def test_a_sole_proprietor_guide_may_name_both(self) -> None:
         errors = self._check_depends_on({
-            "skills/foundation/us-tax-workflow-base.md": US_BASE_GUIDE,
+            "skills/federal/us-schedule-c-x.md": US_GUIDE.replace(
+                "tier: 2\n", "tier: 2\ndepends_on:\n  - us-tax-workflow-base\n  - us-circular-230-disclosure\n"
+            ),
+            **self.FOUNDATION,
+        })
+        self.assertEqual(errors, [])
+
+    def test_the_foundation_files_the_exempt_trees_and_other_jurisdictions_need_no_disclosure(self) -> None:
+        errors = self._check_depends_on({
+            **self.FOUNDATION,
             "skills/financial-reporting/leases/us-gaap-x.md": US_GUIDE.replace("name: synthetic-guide\n", "name: us-gaap-x\n")
             .replace("jurisdiction: US-NY\n", "jurisdiction: US\n")
             .replace("category: state-tax\n", "category: financial-statements\n"),
@@ -602,3 +623,7 @@ class USBaseDependencyTests(_ValidatorCase):
             "skills/international/mt/x.md": GOOD.replace("name: synthetic-guide\n", "name: mt-x\n"),
         })
         self.assertEqual(errors, [])
+
+
+if __name__ == "__main__":
+    unittest.main()

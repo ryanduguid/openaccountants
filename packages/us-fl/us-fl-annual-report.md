@@ -9,6 +9,7 @@ reviewed_by: Rob Hoffman
 review_status: current
 depends_on:
   - us-tax-workflow-base
+  - us-circular-230-disclosure
 category: state-tax
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

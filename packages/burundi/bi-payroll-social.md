@@ -3,8 +3,7 @@ name: bi-payroll-social
 description: "Source-cited draft for Burundi payroll and social contributions. Covers the employment withholding scales and separately labels the employment-income changes in the 2026/2027 Finance Act. Sets out the ordinary INSS pension rates, occupational-risk rate and separate monthly earnings caps published by INSS. Explains contribution payment and declaration provisions read from the 2020 Social Protection Code. The 2022 and 2026 amendments have been identified but not read, so their effect on those Code provisions remains open. Health-insurance and training-levy figures still need regime-specific authority. Pending local-accountant review."
 jurisdiction: BI
 category: payroll
-tax_year: 2026
-tax_year_notes: "2026/2027"
+tax_year: 2025
 version: 0.4
 last_updated: 2026-09-12
 review_status: pending_review

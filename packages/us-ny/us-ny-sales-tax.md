@@ -8,7 +8,7 @@ tier: 2
 last_updated: 2026-09-28
 validation_status: ai-drafted-q3
 depends_on:
-  - us-tax-workflow-base
+  - us-circular-230-disclosure
 ---
 
 # New York Sales and Use Tax Skill v2.0

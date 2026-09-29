@@ -10,6 +10,7 @@ last_updated: 2026-09-28
 category: state-tax
 depends_on:
   - us-tax-workflow-base
+  - us-circular-230-disclosure
 validated: April 2026
 ---
 

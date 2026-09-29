@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-09-29T09:56:22+00:00",
+ "generated_at": "2026-09-29T10:34:06+00:00",
  "counts": {
-  "guides": 1865,
+  "guides": 1866,
   "jurisdictions": 243,
   "accountant_reviewed": 164
  },
@@ -882,7 +882,7 @@
    "path": "skills/federal/us-form-5471-cfc-information.md",
    "name": "us-form-5471-cfc-information",
    "jurisdiction": "US",
-   "category": "formation",
+   "category": "federal",
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Christopher Aryee, CPA",
@@ -1565,6 +1565,19 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "us-circular-230-disclosure",
+   "path": "skills/foundation/us-circular-230-disclosure.md",
+   "name": "us-circular-230-disclosure",
+   "jurisdiction": "US",
+   "category": "foundation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": null,
+   "last_updated": "2026-09-29"
   },
   {
    "slug": "us-tax-workflow-base",
@@ -4826,7 +4839,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2026",
+   "tax_year": "2025",
    "last_updated": "2026-09-12"
   },
   {
@@ -7465,7 +7478,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2026",
+   "tax_year": "2025",
    "last_updated": "2026-07-22"
   },
   {

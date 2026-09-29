@@ -1,6 +1,6 @@
 # Frontmatter spec — the canonical reference
 
-**This section is THE frontmatter spec for every skill/Guide file in this repo.** Other docs (`CLAUDE.md`, `CONTRIBUTING.md`) link here rather than restating it. CI enforces it: `scripts/validate-guides.py` hard-fails on malformed frontmatter, a missing `name`/`description`, a non-integer `tax_year`, a missing or invalid `tier` (must be 1 or 2), a missing or malformed `last_updated` (YYYY-MM-DD), a missing `jurisdiction` (except in a small allowlist of jurisdiction-agnostic directories, where it warns), a `depends_on` slug that no guide carries as its `name`, and a missing or duplicated closing CTA block (see [Closing CTA block](#closing-cta-block)).
+**This section is THE frontmatter spec for every skill/Guide file in this repo.** Other docs (`CLAUDE.md`, `CONTRIBUTING.md`) link here rather than restating it. CI enforces it: `scripts/validate-guides.py` hard-fails on malformed frontmatter, a missing `name`/`description`, a non-integer `tax_year`, a missing or invalid `tier` (must be 1 or 2), a missing or malformed `last_updated` (YYYY-MM-DD), a missing `jurisdiction` (except in a small allowlist of jurisdiction-agnostic directories, where it warns), a `depends_on` slug that no guide carries as its `name`, a `US` or `US-<state>` guide that does not name `us-circular-230-disclosure` in `depends_on` (exempt: the US foundation files, `skills/financial-reporting/` and the file templates), and a missing or duplicated closing CTA block (see [Closing CTA block](#closing-cta-block)).
 
 ## Required keys — CI fails without these
 
@@ -29,7 +29,7 @@
 | `verified_by` | `pending` or `Name, Credential` | e.g. `Michael Cutajar, CPA (Malta)`. Stored identifier — the field name stays `verified_by` even though the display language is "reviewed". A real name here does **not** imply `tier: 1`; set `tier: 1` explicitly as well. CI errors if `tier: 2` carries a real `verified_by` |
 | `reviewed_by` | `Name, Credential` | The accountant who signed the guide off (e.g. `Christopher Aryee, CPA` on the `skills/federal/` form guides). On a `tier: 2` guide the name records an accountant who contributed corrections (usually a "Verified rates & thresholds" block) without signing the whole guide off; it does not make the guide reviewed |
 | `review_status` | `current` or `pending_review` | Review **freshness**, not assurance: `current` means the recorded sign-off covers the current text; `pending_review` means the guide awaits review, either because it is a draft or because a substantive edit superseded the reviewed text (a `tier: 1` guide edited after its sign-off keeps `tier: 1` and takes `pending_review`, and `PARTNERS.md` counts it as "edited since review"). CI errors on any other value and on `current` with `tier: 2`, since no review promoted the guide |
-| `depends_on` | YAML list of slugs | Workflow base or country skill this loads on top of. Each slug must be the `name` of a guide that exists under `skills/` — CI errors on a dangling one. The generated `foundation.md` is not a guide; name `workflow-base` instead |
+| `depends_on` | YAML list of slugs | Workflow base or country skill this loads on top of. Each slug must be the `name` of a guide that exists under `skills/` — CI errors on a dangling one. The generated `foundation.md` is not a guide; name `workflow-base` instead. Every `US` and `US-<state>` guide also names `us-circular-230-disclosure`; only the sole-proprietor content skills name `us-tax-workflow-base` |
 | `version` | numeric dotted value, e.g. `0.1` | Content version, bumped on substantive change when present. Keep any body-heading version in step |
 
 ## Sync integrity rules
@@ -63,7 +63,7 @@ These nineteen values are the whole vocabulary; `scripts/validate-guides.py` err
 | `financial-statements` | Annual accounts, reporting, audit, and the accounting standards under `skills/financial-reporting/` | 30 |
 | `invoicing` | E-invoicing format, validation, transmission | 24 |
 | `bookkeeping` | Chart of accounts, P&L, balance sheet | 22 |
-| `foundation` | Workflow bases (domain-agnostic) | 18 |
+| `foundation` | Workflow bases (domain-agnostic) and the US Circular 230 disclosure | 19 |
 | `transfer-pricing` | TP documentation, arm's length, CbCR | 17 |
 | `vertical` | Industry-specific accounting patterns | 14 |
 | `integration` | Platform export formats, column mappings | 10 |
@@ -71,7 +71,7 @@ These nineteen values are the whole vocabulary; `scripts/validate-guides.py` err
 | `template` | File templates (`skills/templates/`, the corridor template) | 6 |
 | `intelligence` | Deadline, threshold and optimisation engines (`skills/intelligence/`) | 3 |
 
-The legacy synonyms (`federal-tax`, `state`, `us-states`, `financial-reporting`, `patterns`) were normalised on 2026-09-29 and are rejected.
+The legacy synonyms (`federal-tax`, `state`, `us-states`, `financial-reporting`, `patterns`) were normalised on 2026-09-29 and are rejected in frontmatter. The MCP server's `list_skills` still accepts them as `category` filters, for callers written before the change, and returns the guides that carry the canonical value (`federal`, `state-tax`, `financial-statements`, `pattern`).
 
 ## Closing CTA block
 

@@ -7,7 +7,7 @@ category: state-tax
 tier: 2
 last_updated: 2026-09-28
 depends_on:
-  - us-tax-workflow-base
+  - us-circular-230-disclosure
 ---
 
 # CA 540 Individual Return Skill v0.3
