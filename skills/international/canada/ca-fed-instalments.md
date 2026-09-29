@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Canadian federal quarterly inst
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
 review_status: current
 depends_on:
@@ -18,30 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Canada Federal Quarterly Instalments -- Self-Employed Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Fed Instalments
-
-- **Net tax owing threshold** — > $3,000 current AND either of 2 prior years  _(ITA s.156(1))_
-- **Quebec federal threshold** — $1,800  _(ITA s.156.1(1); CRA — Instalments — canada.ca)_
-- **Q1** — March 15  _(ITA s.156(1))_
-- **Q2** — June 15  _(ITA s.156(1))_
-- **Q3** — September 15  _(ITA s.156(1))_
-- **Q4** — December 15  _(ITA s.156(1))_
-- **No-calculation (CRA suggested)** — Q1,Q2: ¼ of 2-years-prior NTO; Q3,Q4: (prior NTO − Q1 − Q2) / 2  _(CRA — Instalment calculation methods — canada.ca; ITA s.156(1))_
-- **Prior-year method** — Each quarter = prior year NTO / 4  _(CRA — Instalment calculation methods — canada.ca)_
-- **Current-year method** — Each quarter = estimated current NTO / 4 (interest risk)  _(CRA — Instalment calculation methods — canada.ca)_
-- **Interest guarantee** — Methods 1 and 2 guarantee no interest; Method 3 carries risk  _(CRA — Instalment interest — canada.ca; ITA s.161(2))_
-- **Interest formula** — CRA prescribed rate + 2%, compounded daily  _(ITA s.161(2); CRA — Prescribed interest rates — canada.ca)_
-- **Penalty trigger** — Instalment interest > $1,000  _(ITA s.163.1)_
-- **Penalty formula** — Penalty = 50% × (instalment interest − max($1,000, 25% × interest had no payments been made)) THEN THIS AMOUNT IS DIVIDED BY 2.  _(ITA s.163.1)_
-- **Farming/fishing** — Single instalment by Dec 31 = 2/3 of estimated or prior year NTO  _(ITA s.155; CRA — Instalments for farmers and fishers — canada.ca)_
-- **Quebec residents** — Federal threshold $1,800; provincial administered by Revenu Quebec  _(ITA s.156.1; Revenu Québec)_
-- **Due date on weekend** — Next business day  _(Interpretation Act s.26; CRA guidance)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 

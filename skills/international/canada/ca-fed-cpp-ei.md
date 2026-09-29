@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Canada Pension Plan (CPP) or Em
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
 review_status: current
 depends_on:
@@ -18,35 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Canada CPP/EI Self-Employed Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### CPP-CPP2-EI
-
-- **YMPE** — $71,300.00  _(CRA — CPP contribution rates — canada.ca)_
-- **Basic exemption** — $3,500.00  _(Canada Pension Plan Act s.20)_
-- **Maximum contributory earnings (YMPE - exemption)** — $67,800.00
-- **Employee rate** — 5.95%
-- **Self-employed rate** — 11.90%  _(Canada Pension Plan Act s.10; CRA — Schedule 8)_
-- **Max CPP contribution** — $8,068.20
-- **YAMPE** — $81,200.00  _(CRA — CPP contribution rates — canada.ca)_
-- **CPP2 contributory range** — $71,300–$81,200 ($9,900)  _(CPP Act (as amended, Bill C-97 2024); CRA)_
-- **Employee CPP2 rate** — 4.00%
-- **Self-employed CPP2 rate (2x employee)** — 8.00%
-- **Max QPP2 contribution** — $792.00
-- **Max insurable earnings (MIE)** — $65,700.00  _(CRA — EI premium rates — canada.ca)_
-- **SE premium rate** — $1.64 per $100  _(CRA — EI premium rates — canada.ca)_
-- **Max EI premium** — $1,077.48  _(CRA — EI premium rates and maximums — canada.ca)_
-- **Age 18–69, earnings > $3,500** — MUST contribute CPP  _(Canada Pension Plan Act s.10, s.12)_
-- **Age 70+** — EXEMPT from CPP  _(Canada Pension Plan Act s.12(1)(c))_
-- **Receiving CPP disability pension** — EXEMPT from CPP  _(Canada Pension Plan Act s.12(1)(b))_
-- **CPP retirement, age 60-64** — MUST contribute (since 2012)  _(Canada Pension Plan Act s.12; CRA Schedule 8 notes)_
-- **CPP retirement, age 65-69** — MAY elect to stop (Form CPT30)  _(Canada Pension Plan Act s.12(1)(d); Form CPT30)_
-- **Line 7** — CPP on SE = (min(earnings, YMPE) − $3,500) × 11.9% − T4 CPP  _(CRA — Schedule 8 instructions — canada.ca)_
-- **Deduction** — 50% on line 22200  _(ITA s.60(e))_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 

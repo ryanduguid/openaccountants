@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Canada Form T1135, Foreign Inco
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
 review_status: current
 depends_on:
@@ -16,30 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # CA Fed T1135
 
-## Verified rates & thresholds (accountant-reviewed)
-
-- **Reviewer note** — Reviewed against the cited tax authorities by Nathan Wiebe on 2026-06-21. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified skill_facts — edit the facts, not the prose.
-
-### T1135 (Foreign Property)
-
-- **Filing threshold** — Total cost > $100,000 CAD at any time  _(ITA s.233.3; CRA — T1135 guide — canada.ca)_
-- **Basis** — Cost amount, NOT fair market value  _(ITA s.233.3(1) definition of 'cost amount'; CRA — Questions and answers about T1135)_
-- **Simplified (Part A)** — $100,000–$249,999 throughout the entire year  _(ITA s.233.3; CRA Form T1135 instructions)_
-- **Detailed (Part B)** — $250,000+ at any time  _(ITA s.233.3; CRA Form T1135 instructions)_
-- **Cat 1** — Funds held outside Canada  _(CRA Form T1135)_
-- **Cat 2** — Shares of non-resident corporations  _(CRA Form T1135)_
-- **Cat 3** — Indebtedness owed by non-residents  _(CRA Form T1135)_
-- **Cat 4** — Interests in non-resident trusts  _(CRA Form T1135)_
-- **Cat 5** — Real property outside Canada (not personal-use/active business)  _(CRA Form T1135)_
-- **Cat 6** — Other property outside Canada  _(CRA Form T1135)_
-- **Cat 7** — Property held with Canadian registered dealer/trust co  _(CRA Form T1135; CRA — T1135 reporting for 2015 and later years)_
-- **Personal-use property** — Excluded  _(ITA s.233.3(1))_
-- **Active business property** — Excluded  _(ITA s.233.3(1))_
-- **Registered plans (RRSP/RRIF/TFSA/RESP/DPSP)** — Excluded  _(ITA s.233.3(1))_
-- **First year of Canadian residence** — Excluded for that year  _(ITA s.233.7)_
-- **Late filing — up to 100 days** — CORRECT PENALTY SCHEDULE: Late filing under ITA s.162(7) = $25/day, minimum $100, MAXIMUM $2,500 (100 days). The skill's 'up to 100 days' framing is correct but the next row is wrong. The $12,000 cap in Row 22 applies to a different penalty (s.162(10)(a) — knowing/grossly negligent failure). There is no separate '$100/day; max $12,000' penalty tier — that is a mischaracterisation.  _(ITA s.162(7) — max $2,500; ITA s.162(10)(a) — $500/month up to 24 months, max $12,000; CRA — Table of penalties (foreign reporting) — canada.ca)_
-- **Knowing / grossly negligent failure to file** — $500 per MONTH, up to 24 months (max $12,000), less any s.162(7) penalty already applied. There is no "$100/day" penalty in the T1135 regime.  _(ITA s.162(10)(a); CRA — Table of penalties (foreign reporting))_
-- **Knowingly non-filed > 24 months** — Additional 5% of the cost amount of the property (ITA s.162(10.1)). The separate false-statement penalty under s.163(2.4) is the greater of $24,000 and 5% of cost amount. Reassessment period is extended 3 years under s.152(4)(b.2).  _(ITA s.162(10.1); ITA s.163(2.4); ITA s.152(4)(b.2); CRA — Table of penalties)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick reference
 

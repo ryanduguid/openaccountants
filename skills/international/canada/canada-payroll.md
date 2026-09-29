@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Canadian payroll, source deduct
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
 review_status: current
 depends_on:
@@ -18,47 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Canada -- Payroll Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Payroll
-
-- **$0–$58,523** — 14%  _(Bill C-4; CRA — 2026 payroll deductions tables (T4032) — verify on canada.ca)_
-- **$58,523–$117,045** — 20.5%  _(CRA T4032 2026)_
-- **$117,045–$181,440** — 26%  _(CRA T4032 2026)_
-- **$181,440–$258,482** — 29%  _(CRA T4032 2026)_
-- **$258,482+** — 33%  _(CRA T4032 2026)_
-- **BPA (2026)** — $16,452 (up to $181,440); $14,829 (above $258,482)  _(CRA — Basic personal amount 2026 — canada.ca (verify))_
-- **CPP employee rate** — 5.95%  _(CRA — CPP rates — canada.ca)_
-- **CPP employer rate** — 5.95% (matches employee)  _(Canada Pension Plan Act s.9)_
-- **YMPE (2026)** — $74,600  _(CRA — CPP contribution rates — canada.ca (verify 2026 announcement))_
-- **CPP2 employee rate** — 4.00%  _(CRA — CPP rates — canada.ca)_
-- **YAMPE (2026)** — $85,000  _(CRA — CPP contribution rates — canada.ca (verify 2026 announcement))_
-- **Basic exemption** — $3,500  _(Canada Pension Plan Act s.20)_
-- **Max CPP contribution (EE, 2026)** — $4,230.45  _(CRA — CPP contribution rates — canada.ca (verify 2026 YMPE))_
-- **Max CPP2 contribution (EE, 2026)** — $416.00  _(CRA — CPP contribution rates — canada.ca (verify 2026 YAMPE))_
-- **EI employee rate (non-QC)** — 1.63%  _(ESDC — EI premium rates — canada.ca (verify 2026))_
-- **EI employer rate** — 2.282% (1.4× employee)  _(Employment Insurance Act s.68)_
-- **Max insurable earnings** — $68,900  _(ESDC — EI premium rates — canada.ca (verify 2026))_
-- **Max EE premium** — $1,123.07  _(ESDC — EI premium rates — canada.ca)_
-- **Max ER premium** — $1,572.30  _(ESDC — EI premium rates — canada.ca)_
-- **EI QC employee rate** — Quebec EI rate 1.30% for 2026  _(ESDC — EI premium rates — canada.ca (verify 2026 Quebec rate))_
-- **Ontario EHT threshold** — $1,000,000  _(Employer Health Tax Act (Ontario))_
-- **Ontario EHT rate** — 0.98%–1.95%  _(Employer Health Tax Act (Ontario) s.2)_
-- **BC EHT threshold** — $1,000,000  _(Employer Health Tax Act (BC))_
-- **BC EHT rate** — BC EHT rate is 1.95% if remuneration exceeds $1,500,000. If remuneration is between $1 million and $1.5 million, the rate is 5.85% of remuneration exceeding $1,000,000.  _(Employer Health Tax Act (BC))_
-- **Federal** — Federal minimum wage $18.15/hr as of April 2026. Indexed to CPI and updated each April.  _(Canada Labour Code s.178; ESDC — Minimum wage — canada.ca)_
-- **Ontario** — Ontario minimum wage $17.60/hr As of October 1, 2025  _(Employment Standards Act, 2000 (ON); Ontario Ministry of Labour)_
-- **British Columbia** — BC minimum wage $18.25/hr as of June 1, 2026  _(Employment Standards Act (BC); BC government)_
-- **Alberta** — $15.00/hr  _(Employment Standards Code (AB); Alberta government)_
-- **Federal — after 1 year** — 4% (2 weeks)  _(Canada Labour Code s.184)_
-- **Federal — after 5 years** — 6% (3 weeks)  _(Canada Labour Code s.184)_
-- **T4 slips to employees** — T4 slips: last day of February following the calendar year. Next business day if falls on weekend.  _(ITA s.153(1); CRA — T4 guide)_
-- **ROE** — Within 5 calendar days of earnings interruption  _(Employment Insurance Act s.19; Service Canada)_
-- **Late T4 penalty** — Late T4 penalty: minimum $100, maximum $7,500. The daily penalty amount depends on the number of slips that are filed late. See table below.  _(ITA s.162(7.01))_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about forming, incorporating, or regi
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
 review_status: current
 depends_on:
@@ -18,30 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Canada Company Formation Skill v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by **Nathan Wiebe** on 2026-06-21.
-Items flagged for further clarification are tracked separately and excluded here.
-This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### Formation
-
-- **Corporations Canada fee — online** — $200  _(Corporations Canada — corporationscanada.ic.gc.ca)_
-- **Express service** — + $100 (4 business hours)  _(Corporations Canada)_
-- **Processing time** — 1 business day (online)  _(Corporations Canada)_
-- **Annual return** — $12 online / $20 paper; within 60 days of anniversary  _(Corporations Canada; CBCA s.263)_
-- **Director residency** — 25% Canadian-resident (majority if <4)  _(CBCA s.105(3))_
-- **Min share capital** — None  _(CBCA; OBCA; BCBCA)_
-- **Ontario** — $300  _(ServiceOntario — Ontario Business Registry)_
-- **British Columbia** — $350  _(BC Registry Services — bcregistry.gov.bc.ca)_
-- **Alberta** — Alberta incorporation fee: $283.25.  _(Alberta Corporate Registry)_
-- **Quebec** — Quebec incorporation fee: $397  _(Registraire des entreprises du Québec)_
-- **Requirement** — Federal corp must register in each province of business  _(CBCA s.15; provincial equivalent legislation)_
-- **Fee range** — Extra-provincial registration fees range $0 (Ontario)–$520 (NFL) per province.  _(Provincial corporate registries)_
-- **CRA Business Number** — Free; online via BRO  _(CRA — Business Registration Online — canada.ca)_
-- **GST/HST registration** — If taxable supplies > $30,000  _(ETA s.148)_
-- **Corporate tax payment** — 2 months after year-end (3 months for small CCPC)  _(ITA s.157(1); CRA — Corporate payments — canada.ca)_
-- **Foreign ownership restrictions** — None generally; Investment Canada Act for large/sensitive  _(Investment Canada Act)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 

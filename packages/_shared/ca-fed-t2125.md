@@ -4,9 +4,9 @@ description: Use this skill whenever asked about Canadian self-employment busine
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-09-29
 reviewed_by: Edgar Lautsyus
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -18,28 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Canada Self-Employment (T2125) -- Sole Proprietor Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-Reviewed against the cited tax authorities by Nathan Wiebe on 2026-06-21. Items flagged for further clarification are tracked separately and excluded here. This block is generated from verified `skill_facts` — edit the facts, not the prose.
-
-### T2125 (Business)
-
-- **GST/HST registration threshold** — $30,000 in 4 consecutive quarters  _(ETA s.148; CRA — Small supplier — canada.ca)_
-- **CCA deduction** — Optional — any amount up to maximum  _(ITA s.20(1)(a); ITR Schedule II)_
-- **Business-use-of-home** — Principal place of business OR exclusively income-earning + clients  _(ITA s.18(12))_
-- **Meals deduction** — 50% deductible only  _(ITA s.67.1)_
-- **Vehicle expense — business-use %** — Must maintain log; default 0% if unknown  _(ITA s.18(1)(r); ITR 7307; CRA — Motor vehicle expenses — canada.ca)_
-- **Fiscal year-end (sole props)** — Must be December 31  _(ITA s.249.1)_
-- **Line 8299** — Gross business revenue  _(CRA — T2125 guide (T4002) — canada.ca)_
-- **Stripe/PayPal fees** — Line 8710 (bank charges) — report gross revenue on 8299  _(CRA — T4002 guide; ITA s.9)_
-- **Line 8910** — Rent (business premises)  _(CRA — T4002 guide — canada.ca)_
-- **Line 8220** — Telephone/utilities  _(CRA — T4002 guide — canada.ca)_
-- **Line 8860** — Professional fees (accounting, legal)  _(CRA — T4002 guide — canada.ca)_
-- **Line 8710** — Interest and bank charges  _(CRA — T4002 guide — canada.ca)_
-- **Line 8523** — Meals and entertainment (50%)  _(CRA — T4002 guide; ITA s.67.1)_
-- **Line 8690** — Insurance  _(CRA — T4002 guide — canada.ca)_
-- **Line 8810** — Office expenses  _(CRA — T4002 guide — canada.ca)_
-- **Line 9281** — Motor vehicle — total of expenses × business %  _(CRA Form T2125 — canada.ca; CRA T4002 guide)_
+> **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Nathan Wiebe** on 2026-06-21, in the fact review that produced the list; the guide's sign-off is by **Edgar Lautsyus**, recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
 ## Section 1 -- Quick Reference
 
@@ -172,10 +151,10 @@ Ideal -- complete bookkeeping records, CCA schedule from prior year, motor vehic
 | Pattern | T2125 Line | Tier | Treatment |
 | --- | --- | --- | --- |
 | RENT, OFFICE RENT, COMMERCIAL LEASE | Line 8910 (Rent) | T1 | Fully deductible if business premises |
-| PROPERTY TAX (business premises) | Line 8810 (Property taxes) | T1 | Fully deductible for business property |
+| PROPERTY TAX (business premises) | Line 9180 (Property taxes) | T1 | Fully deductible for business property |
 | HYDRO, ELECTRICITY, GAS, ENBRIDGE, HYDRO ONE | Line 8945 (Utilities) | T2 | If home: business-use % only. If office: fully deductible. |
-| BELL, ROGERS, TELUS, SHAW | Line 8220 (Telephone/utilities) | T2 | Business portion only |
-| INTERNET, WIFI | Line 8220 | T2 | Business portion only |
+| BELL, ROGERS, TELUS, SHAW | Line 9220 (Utilities, including telephone) | T2 | Business portion only |
+| INTERNET, WIFI | Line 9220 | T2 | Business portion only |
 | INSURANCE, BUSINESS INSURANCE, LIABILITY | Line 8690 (Insurance) | T1 | Fully deductible if business insurance |
 | ACCOUNTING, BOOKKEEPER, CPA | Line 8860 (Professional fees) | T1 | Fully deductible |
 | LAWYER, LEGAL FEE | Line 8860 | T1 | Deductible if business-related |
@@ -365,7 +344,7 @@ B. EXPENSES
   B7. Office expenses (8810)                       ___________
   B8. Professional fees (8860)                     ___________
   B9. Rent (8910)                                  ___________
-  B10. Telephone and utilities (8220)              ___________
+  B10. Telephone and utilities (9220)              ___________
   B11. Travel (8520)                               ___________
   B12. Other expenses (9270)                       ___________
   B13. Total expenses                              ___________

@@ -59,7 +59,6 @@ skills/international/canada::passenger vehicles
 skills/international/canada::phase out
 skills/international/canada::reduction
 skills/international/canada::self employed
-skills/international/canada::small business
 skills/international/canada::standard pst
 skills/international/canada::subtract non refundable tax credits
 skills/international/costa-rica::banco popular y de desarrollo comunal
