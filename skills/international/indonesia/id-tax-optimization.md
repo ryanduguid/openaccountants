@@ -402,7 +402,7 @@ Single OP software developer, Jakarta:
 
 UMKM Final dominates because (1) high actual margin (~83%), (2) revenue under IDR 4.8B ceiling, (3) first IDR 500M at 0%.
 
-**Forward-looking planning:** PP 20/2026 removed the individual time limit, so this developer stays in the regime while turnover (own, spouse's and any PT Perorangan founded, combined) remains ≤ IDR 4.8B. Crossing IDR 4.8B ends the regime, and because NPPN also requires prior-year turnover below IDR 4.8B it leaves pembukuan as the only regime: at the same margin the progressive tax on IDR 5B of revenue would be roughly IDR 1.3B (35% on most of a IDR 4.15B net), against IDR 3.5M here, so model the crossing year before it happens rather than reusing the figures above.
+**Forward-looking planning:** PP 20/2026 removed the individual time limit, so this developer stays in the regime while turnover (own, spouse's and any PT Perorangan founded, combined) remains ≤ IDR 4.8B. In the year turnover first crosses IDR 4.8B the 0.5% final tax still applies to that whole year (the transition rule in `id-pph-final-umkm`); from the following year pembukuan is mandatory, and NPPN is unavailable because prior-year turnover exceeded IDR 4.8B. At this example's margin, a following year with IDR 5B of revenue and IDR 833M of expenses gives net income of IDR 4,167M and taxable income of IDR 4,113M after the TK/0 PTKP, on which the progressive tax is about IDR 1,177,810,000 (3,000,000 + 28,500,000 + 62,500,000 + 30% × 3,612,700,000; the 35% bracket starts only above IDR 5B of taxable income), against IDR 3.5M under the final regime, so model the transition before it happens rather than reusing the figures above.
 
 ### Break-even rules of thumb (Jakarta NPPN 50%, TK/0)
 
