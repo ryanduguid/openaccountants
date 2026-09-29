@@ -204,10 +204,12 @@ Optimal for most single directors: Salary at £12,570, dividends for the rest up
 | --- | --- | --- |
 | USA | 30% (statutory) | 15% (treaty) |
 | Ireland | 25% | 15% |
-| France | 12.8% for individuals (25% for companies; CGI art. 187) | 15% |
+| France | 12.8% for individuals (25% for companies; CGI art. 187, 1-2°, per BOFiP BOI-RPPM-RCM-30-30-10-20) | 15% |
 | Germany | 26.375% (incl. Soli) | 15% |
 | Australia | 0% (franked) / 30% (unfranked) | 15% |
 | Canada | 25% | 15% |
+
+Sources: BOFiP, BOI-RPPM-RCM-30-30-10-20 (retenue à la source de l'article 119 bis du CGI: taux de 12,8 % lorsque le bénéficiaire est une personne physique, CGI art. 187, 1-2°) — https://bofip.impots.gouv.fr/bofip/2674-PGP.html/identifiant=BOI-RPPM-RCM-30-30-10-20-20220629; treaty rates are those of the UK's double taxation agreements, GOV.UK, Tax treaties — https://www.gov.uk/government/collections/tax-treaties.
 
 ### 4.4 US Dividends and W-8BEN
 

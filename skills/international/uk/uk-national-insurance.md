@@ -238,7 +238,7 @@ Class 4 rates and thresholds are unchanged across all three years. Class 2 treat
 
 ### Rule 3 -- Class 2 abolished from 6 April 2024
 
-- **Class 2 treatment for all three years** — For all three years (2024-25, 2025-26, 2026-27): self-employed with profits >= SPT are treated as paid automatically (zero-rate credit). No action needed. Profits < SPT: may pay voluntarily (£3.45/wk in 2024-25; £3.50/wk in 2025-26; TBC for 2026-27) to get a qualifying year.  _(Rule 3)_
+- **Class 2 treatment for all three years** — For all three years (2024-25, 2025-26, 2026-27): self-employed with profits >= SPT (£6,725 in 2024-25; £6,845 in 2025-26; £7,105 in 2026-27) are treated as paid automatically (zero-rate credit). No action needed. Profits < SPT: may pay voluntarily (£3.45/wk in 2024-25; £3.50/wk in 2025-26; £3.65/wk in 2026-27) to get a qualifying year.  _(Rule 3)_
 
 ### Rule 4 -- Class 4 formula (unchanged across all three years)
 
