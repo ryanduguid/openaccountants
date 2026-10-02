@@ -21,7 +21,7 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | Lal kumarasiri | LK | 8 | — | 2026-09-29 | — |
 | Mário Jorge da costa Vale | PT | 8 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
 | RILIA PUTRI | ID | 8 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
-| Baraka Cassian | TZ | 6 | — | 2026-09-29 | — |
+| Baraka Cassian | TZ | 6 | — | 2026-10-02 | — |
 | Ashish Bista | NP | 5 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
 | Christos Thoma | CY | 5 | — | 2026-09-29 | — |
 | Jose Padilla | VE | 5 | — | 2026-09-29 | — |
