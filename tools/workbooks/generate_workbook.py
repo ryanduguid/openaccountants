@@ -90,6 +90,7 @@ def _add_skill_tab(wb, skill):
             cell.fill = _fill(SECTION)
             cell.border = BORDER
         r += 1
+        first_body_row = r
         for row in section["rows"]:
             ws.cell(row=r, column=1, value=row.get("item", ""))
             ws.cell(row=r, column=2, value=row.get("value", ""))
@@ -99,8 +100,9 @@ def _add_skill_tab(wb, skill):
                 cell.alignment = WRAP_TOP
                 cell.border = BORDER
             ws.cell(row=r, column=3).fill = _fill(FLAGCOL)
-            dv.add(ws.cell(row=r, column=3))
             r += 1
+        if r > first_body_row:
+            dv.add(f"C{first_body_row}:C{r - 1}")
 
     # "Missing" block — add what we don't cover (credited to the verifier).
     r += 1
@@ -124,12 +126,13 @@ def _add_skill_tab(wb, skill):
     note.alignment = WRAP_TOP
     ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=6)
     r += 1
+    first_missing_row = r
     for _ in range(8):
         for c in range(1, len(HEADERS) + 1):
             ws.cell(row=r, column=c).border = BORDER
         ws.cell(row=r, column=3).fill = _fill(FLAGCOL)
-        dv.add(ws.cell(row=r, column=3))
         r += 1
+    dv.add(f"C{first_missing_row}:C{r - 1}")
     return ws.title
 
 

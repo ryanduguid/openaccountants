@@ -32,6 +32,8 @@ jobs:
             mcp/pyproject.toml
       - name: Install validation dependencies
         run: python3 -m pip install -r scripts/requirements-validation.txt
+      - name: Install the workbook test dependency
+        run: 'python3 -m pip install openpyxl==3.1.5 --only-binary :all:'
       - name: Run repo unit tests
         # Discover every test_*.py. A literal single-file pattern silently
         # skipped every other suite in tests/, so reverting the code they

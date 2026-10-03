@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import socket
 import subprocess
 import sys
@@ -156,6 +157,21 @@ class LiveServerTests(unittest.TestCase):
     @staticmethod
     def _stop(proc: subprocess.Popen[str]) -> None:
         if proc.poll() is None:
+            if os.name == "nt":
+                # The virtual-environment launcher can own a separate server process.
+                executable = shutil.which("taskkill")
+                if executable is None:
+                    raise RuntimeError("Windows test cleanup requires taskkill")
+                # Trusted Windows PATH, fixed arguments and the test's own child PID.
+                # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit
+                subprocess.run(  # nosec B603
+                    [str(Path(executable).resolve(strict=True)), "/PID", str(proc.pid), "/T", "/F"],
+                    capture_output=True,
+                    check=True,
+                    timeout=10,
+                )
+                proc.wait(timeout=10)
+                return
             proc.terminate()
             try:
                 proc.wait(timeout=10)
