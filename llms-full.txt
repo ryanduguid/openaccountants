@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**1,866 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants** (derived from `index.json`; `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree).
+**1,875 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants** (derived from `index.json`; `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree).
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (1866 guides, 243 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (1875 guides, 243 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -307,23 +307,30 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - armenia-social-contributions | AM | tier 2 | reviewed_by -
 - armenia-tax-optimization | AM | tier 2 | reviewed_by -
 - armenia-vat | AM | tier 2 | reviewed_by -
+- au-amending-individual-income-tax-return-period | AU | tier 2 | reviewed_by -
+- au-bas-preparation | AU | tier 2 | reviewed_by -
 - au-capital-gains | AU | tier 2 | reviewed_by -
 - au-company-tax | AU | tier 2 | reviewed_by -
 - au-crypto-tax | AU | tier 2 | reviewed_by -
 - au-deceased-estates | AU | tier 2 | reviewed_by -
+- au-deductions-offsets | AU | tier 2 | reviewed_by -
 - au-div7a | AU | tier 2 | reviewed_by -
+- au-employment-termination-payments | AU | tier 2 | reviewed_by -
 - au-fbt-year | AU | tier 2 | reviewed_by -
 - au-fbt | AU | tier 2 | reviewed_by -
 - au-foreign-income | AU | tier 2 | reviewed_by -
+- au-forex-gains-losses | AU | tier 2 | reviewed_by -
 - au-gst-bas | AU | tier 2 | reviewed_by -
 - au-gst-property | AU | tier 2 | reviewed_by -
 - au-individual-return | AU | tier 2 | reviewed_by -
 - au-land-tax | AU | tier 2 | reviewed_by -
+- au-lodgment-deadlines-penalties | AU | tier 2 | reviewed_by -
 - au-medicare-levy | AU | tier 2 | reviewed_by -
 - au-nonresident-cgt | AU | tier 2 | reviewed_by -
 - au-not-for-profit | AU | tier 2 | reviewed_by -
 - au-partnerships | AU | tier 2 | reviewed_by -
 - au-payg-instalments | AU | tier 2 | reviewed_by -
+- au-payroll-tax | AU | tier 2 | reviewed_by -
 - au-psi | AU | tier 2 | reviewed_by -
 - au-rates-2026-27 | AU | tier 2 | reviewed_by -
 - au-rd-incentive | AU | tier 2 | reviewed_by -
@@ -334,7 +341,9 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - au-stamp-duty | AU | tier 2 | reviewed_by -
 - au-super-guarantee | AU | tier 2 | reviewed_by -
 - au-tax-residency | AU | tier 2 | reviewed_by -
+- au-tpar | AU | tier 2 | reviewed_by -
 - au-trust-distributions | AU | tier 2 | reviewed_by -
+- au-working-holiday-makers | AU | tier 2 | reviewed_by -
 - australia-bookkeeping | AU | tier 2 | reviewed_by -
 - australia-financial-statements | AU | tier 2 | reviewed_by -
 - australia-formation | AU | tier 2 | reviewed_by -
@@ -2088,7 +2097,7 @@ Key rules:
 
 ## Current inventory
 
-**1,866 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,875 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 

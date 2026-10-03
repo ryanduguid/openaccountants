@@ -1,10 +1,10 @@
 ---
 name: australia-bookkeeping
-description: Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
-version: 1.1
+description: Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", "how do I classify this transaction", "what evidence do I need", "capital or revenue", "private use apportionment", "fix a bookkeeping error", "accounting versus tax treatment", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
+version: 1.4
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -160,7 +160,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 6320 | Motor Vehicle — Repairs | Expense |
 | 6330 | Travel — Domestic | Expense |
 | 6340 | Travel — International | Expense |
-| 6350 | Meals and Entertainment (50% deductible FBT) | Expense |
+| 6350 | Meals and Entertainment (review FBT election and deductibility) | Expense |
 | 6400 | Accounting and Tax Agent Fees | Expense |
 | 6410 | Legal Fees | Expense |
 | 6420 | Bank Charges | Expense |
@@ -274,12 +274,12 @@ These labels follow the [ATO 2025 BPI expenses instructions](https://www.ato.gov
 
 ### Instant Asset Write-Off (IAWO)
 
-**Instant Asset Write-Off (IAWO)**
+**Instant Asset Write-Off (IAWO)**  _([Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text))_
 
 | Period | Threshold | Eligibility |
 | --- | --- | --- |
 | 1 Jul 2023 – 30 Jun 2026 | < $20,000 per asset | Aggregated turnover < $10m, using simplified depreciation |
-| From 1 Jul 2026 | < $20,000 per asset under enacted amendments | Eligible small business entities using simplified depreciation. Treasury Laws Amendment (Tax Reform No. 2) Act 2026 received assent on 26 August 2026. Schedule 2 commences on 1 October 2026, with application to assets first used or installed ready for taxable use from 1 July 2026. As at 10 September the amendment has not commenced. [Act, section 2 and Schedule 2 item 15](https://www.legislation.gov.au/C2026A00071/asmade/text) |
+| From 1 Jul 2026 | Less than $20,000 per eligible asset | Eligible small business entities using simplified depreciation. Enacted on 26 August 2026 by the Treasury Laws Amendment (Tax Reform No. 2) Act 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for taxable use from 1 July 2026. [Act, section 2 and Schedule 2 item 15](https://www.legislation.gov.au/C2026A00071/asmade/text) |
 
 ### Small Business Pool (Simplified Depreciation)
 
@@ -304,7 +304,8 @@ These labels follow the [ATO 2025 BPI expenses instructions](https://www.ato.gov
 
 Use the Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025 for Commissioner-determined Div 40 lives, or a supportable self-assessed life. Div 43 uses its own construction-date, use and rate rules; 4% applies only to an eligible category.
 
-**Common Effective Lives**
+
+**Common effective lives (2025 determination, asset-specific)**  _([Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025, Table B](https://www.legislation.gov.au/F2025L01097/asmade/text))_
 
 | Asset | Effective Life | DV Rate | PC Rate |
 | --- | --- | --- | --- |
@@ -322,7 +323,7 @@ These are selected Table B asset classes in the 2025 determination. Match the ac
 
 ### Car Limit
 
-- **Car cost limit for depreciation (2025–26)** — $69,674 AUD (Only the business-use portion of this amount can be depreciated)
+- **Car cost limit for depreciation** — For 2025-26, the limit is AUD 69,674. For 2026-27, it is AUD 69,883. Only the business-use portion of the applicable limit can be depreciated. AUD
 
 ## Section 6 -- P&L Format
 
@@ -534,21 +535,125 @@ Check the reporting obligation and the compilation applicable to the period; siz
 
 ### Superannuation Guarantee
 
-- Rate: 11.5% of ordinary time earnings for 2024-25; 12% from 1 Jul 2025
-- Due: 28 days after end of quarter
+- Rate: 12% from 1 July 2025 (11.5% in 2024-25)
+- Due: quarterly deadlines (28 days after quarter end) for earnings paid up to 30 June 2026; for earnings paid from 1 July 2026, contributions must reach the fund within 7 business days of payday (payday super). See au-super-guarantee
 - Nominal: 6110 (expense) / 2110 (payable)
-- SG Charge: if late, lose deduction and pay additional penalties
+- SG Charge for quarters before 1 July 2026: non-deductible. Apply the separate redesigned rules to later earnings.
 
 ### Fringe Benefits Tax (FBT)
 
 - FBT year: 1 April – 31 March
 - Rate: 47% (top marginal + Medicare levy)
 - Common items: car fringe benefit, entertainment, loan fringe benefit
-- Meals/entertainment: 50/50 method available — 50% deductible for income tax, 50% subject to FBT
+- Meals/entertainment: establish whether an available 50/50 valuation election was made and its scope before applying it. Otherwise use the applicable actual-benefit and deduction rules. Do not default every meal to a 50% deduction. [ATO FBT entertainment](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00001).
+
+## Section 11 -- Classification, Evidence and Corrections
+
+### 11.1 The classification decision
+
+Every transaction needs four decisions, not one. Answer them in this order, because a later answer can change an earlier one.
+
+1. **Is it a business transaction at all?** Owner drawings, private spending on a business card and internal transfers between the entity's own accounts are not income or expenses. Code them to equity or to the relevant balance sheet account.
+2. **Revenue or capital?** A cost that acquires, upgrades or extends the life of an asset is capital. A cost that restores it to its prior condition is a repair. See Section 5 for the thresholds and `au-rental-property.md` for the repairs and improvements tests.
+3. **Which account?** Use the chart of accounts in Section 2. Consistency between periods matters more than finding a perfect label; a category that changes each year destroys comparatives.
+4. **Which GST code?** Only after the first three. See the table in Section 4. A transaction coded to the wrong account often carries the wrong GST code with it.
+
+**Private use.** Where an expense serves both business and private purposes, record the full amount and apportion, rather than guessing a net figure. The apportionment basis must be documented and consistent: a logbook for a vehicle, a floor area or hours record for a home office, an itemised bill for a phone. A percentage with no supporting method fails on review.
+
+**Unknown transactions.** Post to a clearing or suspense account and list them for the client. Never guess a classification to close a period. An unresolved suspense balance at period end means the BAS and the accounts are both unreliable. See `au-bas-preparation.md` Section 4.
+
+### 11.2 Evidence to hold
+
+**Evidence to hold**
+
+| Transaction | Evidence required |
+| --- | --- |
+| Sale | Invoice or point-of-sale record. A tax invoice where GST is charged |
+| Purchase where a GST credit is claimed | A valid tax invoice, unless the acquisition is $82.50 including GST or less |
+| Purchase with no GST credit | Sufficient record to show the expense was incurred and its purpose |
+| Asset acquisition | Invoice, plus the date first used or installed ready for use |
+| Asset disposal | Sale document, plus the written down value and any balancing adjustment |
+| Vehicle expenses | Logbook for a continuous 12-week period, valid five years, plus odometer readings, or kilometre records for the cents per kilometre method |
+| Home office | Hours record and evidence that the expenses were incurred |
+| Payroll | Payroll register, timesheets, the employment record and STP submissions |
+| Adjustment to a sale or purchase | Adjustment note or credit note |
+| Bad debt written off | The board minute or file note recording the write-off and its date |
+
+Records are generally kept for five years from lodgment, and longer where a CGT asset or a carried-forward loss depends on them.
+
+### 11.3 Reconciliation as a control, not a chore
+
+A reconciliation is what makes the ledger evidence rather than assertion. At minimum, each period:
+
+- Every bank, credit card and loan account reconciled to the statement.
+- GST collected and GST paid control accounts agreed to the transaction listing.
+- PAYG withholding payable agreed to the payroll register less amounts remitted.
+- Accounts receivable and accounts payable subledgers agreed to their control accounts.
+- Inventory agreed to a count or a supported roll-forward.
+- Loan accounts agreed to the lender statement, with interest and principal split correctly.
+- Clearing and suspense accounts at nil or fully explained.
+
+### 11.4 Accounting treatment is not tax treatment
+
+The ledger produces the financial statements. The tax return starts from those statements and then adjusts. Recording the tax answer in the ledger destroys the financial statements; recording only the accounting answer and forgetting the adjustment understates or overstates tax. Keep both, and keep the reconciliation between them.
+
+**Accounting treatment vs tax treatment**
+
+| Item | Accounting treatment | Tax treatment |
+| --- | --- | --- |
+| Depreciation | Useful life and residual value under AASB 116 | Effective life under Division 40, the small business pool, or the instant asset write-off |
+| Buildings and structural improvements | Cost or revaluation model under AASB 116, with depreciation and impairment where required under either model | Division 43 capital works at a fixed rate, and the deduction reduces the CGT cost base |
+| Employee leave provisions | Recognised when the obligation arises | Deductible when the leave is paid |
+| Doubtful debts allowance | An impairment estimate | Not deductible. Only a debt actually written off as bad is deductible |
+| Entertainment | An expense in the profit and loss | Commonly non-deductible, and may instead be a fringe benefit |
+| Fines and penalties | An expense | Not deductible |
+| General interest charge on a tax debt | An expense | Not deductible where incurred on or after 1 July 2025 |
+| Revenue | AASB 15 performance obligations | Derived when earned or received, depending on the accounting basis and the taxpayer |
+| Prepayments | An asset, expensed over the period | Prepayment rules can spread the deduction, with a 12-month exception for some taxpayers |
+| Borrowing costs | AASB 123 | Deductible over five years or the term of the loan, whichever is shorter |
+| Unrealised foreign exchange movements | Revalued at reporting date | Taxed on a realisation event under Division 775 |
+| Leases | Right-of-use asset and lease liability under AASB 16 | Depends on whether the arrangement is a lease or a hire purchase for tax |
+
+Choosing the cost model does not remove depreciation: allocate the depreciable amount over the asset's useful life. Account for land separately from buildings.
+[AASB 116 paras 29–31, 50, 58](https://standards.aasb.gov.au/aasb-116-dec-2022#measurement_after_recognition)
+
+Record permanent and temporary differences in a tax reconciliation working paper. A company also needs deferred tax balances where it reports under the full recognition requirements.
+
+### 11.5 Correcting an error
+
+Where the error is found matters more than how large it is.
+
+**Correcting an error**
+
+| Where the error is | What to do |
+| --- | --- |
+| In the current open period, nothing lodged | Fix the transaction. No further action |
+| In a closed period, but no BAS or return lodged | Post a dated correcting journal with a narration explaining it. Do not backdate into a locked period without a record |
+| In a lodged BAS, GST affected | Apply the GST error correction rules. See `au-bas-preparation.md` Section 7 |
+| In a lodged BAS, PAYG withholding affected | Correct through the PAYG withholding correction process, and check whether STP needs updating |
+| In a lodged income tax return | Request an amendment. See `au-lodgment-deadlines-penalties.md` Section 10 |
+| Circumstances changed after correct reporting | This is an adjustment, not an error. Record it in the current period |
+
+**Never fix a lodged period by silently re-opening it.** The accounts must continue to agree with what was lodged, or to a documented correction of it. An unexplained change to a locked period is the difference between a correction and a misstatement.
+
+### 11.6 Common bookkeeping errors
+
+- Coding a transaction by the payee name rather than by what was supplied. The same supplier can produce taxable, GST-free and input taxed transactions.
+- Claiming a GST credit on wages, superannuation, bank fees, most government charges or stamp duty.
+- Coding a director loan drawing to wages, or a wage to a drawing.
+- Capitalising a repair, or expensing an improvement.
+- Recording a net amount for a transaction that had both a gross figure and a deduction, which hides the deduction from both the accounts and the BAS.
+- Leaving a suspense balance and lodging anyway.
+- Changing the chart of accounts mid-year without restating comparatives.
+- Recording the tax depreciation figure in the ledger and calling it the accounting figure.
+- Treating an impairment allowance as a deductible bad debt.
+- Reconciling the bank but not the GST or PAYG withholding control accounts.
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, registered tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+> Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
 

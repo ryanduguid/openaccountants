@@ -19,10 +19,10 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,866** |
+| Guide files indexed | **1,875** |
 | Distinct `jurisdiction` codes | **243** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,702** |
+| `tier: 2` (source-cited draft) | **1,711** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
 | Country directories under `skills/international/` | **184** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |

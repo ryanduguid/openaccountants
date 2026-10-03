@@ -189,15 +189,6 @@ skills/international/argentina/ar-corporate-income-tax.md::rate list without a t
 skills/international/argentina/ar-income-tax.md::rate table without a tax-authority or statute citation: | Ganancia Neta Imponible Acumulada (ARS) | Rate | Cumulative Fixed Amount | / | 0 -- 1,750,026 | 5% | -- |
 skills/international/argentina/ar-income-tax.md::rate table without a tax-authority or statute citation: | Offence | Penalty | / | Late filing (omisión) | 1% per month of unpaid tax (up to 100%) |
 skills/international/argentina/ar-vat-return.md::rate table without a tax-authority or statute citation: | Rate | Applies to | Source | / | 21% (standard) | Most goods and services | Ley 23.349, Art. 28 |
-skills/international/australia/au-company-tax.md::rate table without a tax-authority or statute citation: | Field | Value | / | Country | Australia |
-skills/international/australia/au-rates-2026-27.md::rate table without a tax-authority or statute citation: | Item | Value | Source | / | BRE rate | 25% (turnover < $50m AND <= 80% BREPI) | ITRA 1986 ss 23AA-23AB |
-skills/international/australia/au-rates-2026-27.md::rate table without a tax-authority or statute citation: | Item | Value | Source | / | Discount | 50% individuals/trusts (assets 12+ months); one-third super funds; nil companies | ITAA 1997 Div 115 |
-skills/international/australia/au-rates-2026-27.md::rate table without a tax-authority or statute citation: | Item | Value | Source | / | National minimum wage | **$26.44/hr, $1,004.90/wk from 1 Jul 2026** ($24.95 / $948.10 prior) | FWC AWR 2025-26 |
-skills/international/australia/au-rates-2026-27.md::rate table without a tax-authority or statute citation: | Repayment income (2025-26) | Marginal repayment rate | / | Below $67,000 | Nil |
-skills/international/australia/au-rates-2026-27.md::rate table without a tax-authority or statute citation: | Taxable income | 2025-26 rate | 2026-27 rate | / | $0 -- $18,200 | 0% | 0% |
-skills/international/australia/au-rental-property.md::rate table without a tax-authority or statute citation: | Construction Date | Rate | Notes | / | Ordinary residential works begun before 18 July 1985 | 0% | Outside the ordinary residential commencement category |
-skills/international/australia/au-rental-property.md::rate table without a tax-authority or statute citation: | Item | Value | / | Tax-free threshold | $18,200 |
-skills/international/australia/au-rental-property.md::rate table without a tax-authority or statute citation: | Taxable Income (AUD) | Rate | Cumulative Tax at Top | / | 0 -- 18,200 | 0% | $0 |
 skills/international/australia/au-smsf.md::rate table without a tax-authority or statute citation: | Age at 1 July (or commencement) | Minimum % of account balance | / | Under 65 | 4% |
 skills/international/australia/au-smsf.md::rate table without a tax-authority or statute citation: | Field | Value | / | Country | Australia |
 skills/international/australia/au-smsf.md::rate table without a tax-authority or statute citation: | Income class | Rate | Notes | / | Assessable contributions (s 295-160) | 15% | Employer + salary-sacrifice + personal deductible (s 290-150 notice) |

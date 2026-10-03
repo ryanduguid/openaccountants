@@ -1,10 +1,10 @@
 ---
 name: australia-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in Australia. Trigger on phrases like "set up a company in Australia", "Pty Ltd", "ASIC registration", "Australian company formation", "register a business Australia", "ABN", "ACN", "proprietary limited", "sole trader Australia", "partnership Australia", or any question about starting a business entity in Australia. Covers entity types (Pty Ltd, Ltd, sole trader, partnership, trust), registration process, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Australian company formation.
-version: 1.1
+version: 1.3
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -15,7 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Australia Formation
 
-## Australia Company Formation Skill v1.0
+## Australia Company Formation Skill v1.3
+
+Australia Company Formation Skill v1.3
 
 ## Section 1 -- Quick Reference
 
@@ -29,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Corporations Act 2001 (Cth) |
 | Typical formation time | 1--3 business days (online via BRS) |
 | Corporate tax rate | 25% (base rate entities, turnover < $50M); 30% (all others) |
-| Skill version | 1.0 |
+| Skill version | 1.3 |
 
 ## Section 2 -- Entity Types Comparison
 
@@ -51,41 +53,47 @@ For the 50-holder limit, exclude holders issued shares under a crowd-sourced fun
 
 Check the preparation, lodgement and audit conditions in `australia-financial-statements.md`, including the cumulative CSF proceeds threshold of at least $3 million. Small size alone does not remove an audit obligation.
 
-**Recommended default:** Proprietary company limited by shares (Pty Ltd) for most commercial purposes.
+- **Recommended default** — Proprietary company limited by shares (Pty Ltd) for most commercial purposes.
+- **Choose the structure before registering** — Compare ownership, funding, liability, profit distribution and ongoing administration; a company is not automatically the best structure for a small business. Shareholders' liability is generally limited to unpaid amounts on their shares, but directors can be personally liable through guarantees, breaches of duties, insolvent trading and tax obligations, and a corporate trustee does not remove every trustee or director risk.  _([ASIC, Becoming a company director](https://www.asic.gov.au/for-business-and-companies/small-business-director-essentials/becoming-a-company-director))_
 
 ## Section 3 -- Registration Process
 
 ### Step 1: Choose Company Name
 
-- **Choose Company Name** — Check availability on ASIC's company name check tool; Must include "Pty Ltd" or "Proprietary Limited"; Can reserve name for 2 months ($62 fee) or register directly; Identical or near-identical names will be rejected
+- **Choose Company Name** — Check availability on ASIC's company name check tool; Must include "Pty Ltd" or "Proprietary Limited"; Can reserve name for 2 months ($62 fee) or register directly; Identical or near-identical names will be rejected  _(ASIC)_
 
 ### Step 2: Obtain Consent from Officeholders
 
 - **Obtain Consent from Officeholders** — All proposed directors and secretaries must consent in writing before registration; At least 1 director must ordinarily reside in Australia (for Pty Ltd)
+- **Director eligibility and director ID** — Directors must be at least 18 and not disqualified from managing companies, and each must apply personally for a director identification number before appointment. A person appointed only to lend their name carries the same duties. A proprietary company using the crowd-sourced funding regime needs at least two directors.  _([ASIC, Becoming a company director](https://www.asic.gov.au/for-business-and-companies/small-business-director-essentials/becoming-a-company-director); [ASIC, Crowd-sourced funding](https://www.asic.gov.au/crowd-sourced-funding))_
 
 ### Step 3: Prepare Company Details
 
 - **Prepare Company Details** — Registered office address (must be in Australia; can be accountant's or agent's office); Principal place of business; Share structure (number and class of shares, rights); Details of shareholders, directors, secretary (if any)
+- **Governance rules and consents** — Decide whether the company runs on the replaceable rules, a constitution, or both where permitted. Record share classes, rights, numbers and amounts paid or unpaid, obtain members' written consents and the occupier's consent for a registered office the company does not occupy, and open the share register at registration. Registering a company name does not create trade mark rights.  _([ASIC, Register a company](https://www.asic.gov.au/for-business-and-companies/companies/register-a-company))_
 
 ### Step 4: Register via Business Registration Service (BRS)
 
-- **Register via BRS** — Go to register.business.gov.au; Can simultaneously apply for: company registration, ABN, TFN, GST, PAYG withholding; Fee: $611 (Pty Ltd, 2025--26 financial year); ASIC processes and issues ACN (Australian Company Number) typically within 1--3 days
+- **Register via BRS** — Go to register.business.gov.au; Can simultaneously apply for: company registration, ABN, TFN, GST, PAYG withholding; Fee: $611 (Pty Ltd, 2025--26 financial year); ASIC processes and issues ACN (Australian Company Number) typically within 1--3 days  _(BRS / ASIC)_
 
 ### Step 5: Receive Certificate of Registration
 
 - **Receive Certificate of Registration** — Certificate confirms ACN, company name, date of registration, type; Company legally exists from date on certificate
+- **After registration** — Retain the certificate and ACN, check the register against the approved details and record the actual registration date. Do not promise a fixed processing or bank-account opening time, and keep access credentials with the authorised officeholder.
 
 ### Step 6: Apply for ABN (Australian Business Number)
 
-- **Apply for ABN** — Free via Australian Business Register (ABR); Required for tax invoices, GST, and dealing with other businesses; Can be applied for during BRS registration
+- **Apply for ABN** — Free via Australian Business Register (ABR); Required for tax invoices, GST, and dealing with other businesses; Can be applied for during BRS registration  _(ABR)_
 
 ### Step 7: Register for GST (if applicable)
 
 - **GST registration threshold** — $75,000 (or will be); $150,000 for non-profits AUD (Mandatory if annual turnover is or will be at threshold; voluntary registration permitted below threshold)
+- **GST turnover, not bank receipts** — The threshold uses the GST turnover definition, which differs from every receipt in the bank account. Taxi and ride-sourcing activities must register regardless of turnover, and voluntary registration below the threshold brings reporting obligations.  _([ATO, Registering for GST](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst))_
 
 ### Step 8: Register for PAYG Withholding (if employing)
 
-- **Register for PAYG Withholding** — Required before paying employees or directors; Register via BRS or ATO
+- **Register for PAYG Withholding** — Required before paying employees or directors; Register via BRS or ATO  _(BRS / ATO)_
+- **Payroll obligations from the first payment** — Before the first payment subject to withholding, set up payroll and check worker classification, Single Touch Payroll, awards, leave, workers compensation and state payroll tax. From 1 July 2026, Payday Super requires super guarantee contributions, at 12% of qualifying earnings, to reach the fund within seven business days of payday, subject to specific exceptions.  _([ATO, About Payday Super](https://www.ato.gov.au/businesses-and-organisations/super-for-employers/about-payday-super))_
 
 ## Section 4 -- Capital Requirements
 
@@ -141,6 +149,8 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 | Financial records | Maintain for 7 years | Internal |
 | Directors' duties | Ongoing (s180--184 Corporations Act) | ASIC |
 
+- **Keep the company separate and diarised** — Keep company money and transactions apart from personal finances, agree who maintains the share register, accounting records, tax calendar and ASIC correspondence, and diary the annual review, solvency resolution and change notifications. Retain financial records for seven years after the transactions they cover. Tax return and activity statement dates depend on the company's circumstances and lodgement arrangements; they are not all due on one date.  _([ASIC, What books and records should my company keep](https://asic.gov.au/for-business/running-a-company/company-officeholder-duties/what-books-and-records-should-my-company-keep/))_
+
 ## Section 7 -- Bank Account Opening
 
 ### Documents Typically Required
@@ -169,6 +179,8 @@ Commonwealth Bank (CBA), Westpac, ANZ, NAB (Big 4); Macquarie, Bendigo (mid-tier
 | ABN for foreign entities | Foreign companies can register an ARBN ($506) and apply for ABN |
 | Tax treaty benefits | Australia has extensive DTA network; check withholding rates |
 
+- **Foreign founders** — Examine the resident director requirement, the founders' tax residency, foreign investment rules and the difference between incorporating an Australian company and registering an existing foreign company, and record the chosen structure and the reasons for it before applying.
+
 ## Section 9 -- Common Mistakes and Refusals
 
 - **R-AU-F1 -- No Australian-resident director** — Every Pty Ltd must have at least one director who ordinarily resides in Australia. A company cannot be registered without this. Advise the client to appoint a local director or use a resident director service (with proper governance).  _(R-AU-F1)_
@@ -195,6 +207,8 @@ Commonwealth Bank (CBA), Westpac, ANZ, NAB (Big 4); Macquarie, Bendigo (mid-tier
 This skill and its outputs are provided for informational and computational purposes only and do not constitute legal, tax, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+
+> Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
 
