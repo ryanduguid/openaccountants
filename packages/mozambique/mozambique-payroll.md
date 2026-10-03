@@ -1,10 +1,10 @@
 ---
 name: mozambique-payroll
 description: Use this skill whenever asked about Mozambique payroll processing for employed persons. Trigger on phrases like "Mozambique payroll", "IRPS withholding", "IRPS Moçambique", "INSS deduction", "segurança social Moçambique", "PAYE Mozambique", "Form 19", "Modelo 19", "M/19", "tax withholding Mozambique", "salário líquido Moçambique", "net salary Mozambique", "employer INSS Mozambique", "salário mínimo Moçambique", "minimum wage Mozambique", "MAIBOR penalty", "gross to net Mozambique", "non-resident 20% Mozambique", "Lista Nominal", or any question about computing employee pay, income-tax withholding, or social-security contributions for Mozambique-based employees. This skill covers IRPS (income tax) monthly withholding by the employer, INSS social security (employee 3% + employer 4%), the monthly PAYE table, non-resident flat withholding, minimum wage by sector, and filing obligations to the Autoridade Tributária (AT) and INSS. ALWAYS read this skill before processing any Mozambique payroll.
-version: 0.1
+version: 0.2
 jurisdiction: MZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Mozambique Payroll
 
-## Mozambique Payroll Skill v0.1
+## Mozambique Payroll Skill v0.2
 
 > **Tier 2 (research-verified) — NOT yet accountant-verified.** Several figures carry `[RESEARCH GAP — reviewer to confirm]` markers. A licensed Mozambican *contabilista* or *técnico de contas* must reconcile those before any output is presented as final. In particular the full **monthly PAYE per-cell deduction matrix** (income band × dependents) and the **exact statutory penalty schedule** are incomplete here.
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual Nominal List (Lista Nominal) | By **30 April** each year (RSM 2025 pp.3–4) |
 | Key legislation | Código do IRPS; Lei n.º 11/2025 (IRPS reform, eff. 29 Dec 2025); Código Geral Tributário; Lei do INSS; INSS Note n.º 246/INSS/GAB-DG/432/2024 |
 | Validated by | Pending -- requires sign-off by a licensed Mozambican accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 -- Income Tax Withholding (IRPS — Imposto sobre o Rendimento das Pessoas Singulares)
 
@@ -57,12 +57,12 @@ The IRPS employment-income brackets (10%–32%) and thresholds were **re-confirm
 | 0 – 42,000 | **10%** | — |
 | 42,000 – 168,000 | **15%** | 2,100 |
 | 168,000 – 504,000 | **20%** | 10,500 |
-| 504,000 – 1,512,000 | **25%** | 37,500 |
+| 504,000 – 1,512,000 | **25%** | 35,700 |
 | Over 1,512,000 | **32%** | 141,540 |
 
 - **Subtract method formula** — tax = annual taxable income × rate − deduction  _(PwC)_
 
-*Continuity note:* the first three bands tie out exactly under the subtract method (at 42,000 → 10%×42,000 = 15%×42,000 − 2,100 = **4,200**; at 168,000 → 15%×168,000 − 2,100 = 20%×168,000 − 10,500 = **23,100**). The 25% and 32% bands as published do **not** tie perfectly at their edges (at 504,000 the 20% formula gives 90,300 but the 25% formula gives 90,300 only if the deduction were 35,700, not 37,500; the published 37,500 yields 88,500). This is a feature of the PwC-published presentation. **[RESEARCH GAP — reviewer to confirm exact 25%/32% deduction constants against the Código do IRPS / AT tables before relying on annual-table results in those bands.]**
+*Continuity note:* the first three bands tie out exactly under the subtract method (at 42,000 → 10%×42,000 = 15%×42,000 − 2,100 = **4,200**; at 168,000 → 15%×168,000 − 2,100 = 20%×168,000 − 10,500 = **23,100**). With the 35,700 parcela the 25% and 32% bands also tie out: at 504,000 both formulas give 90,300 and at 1,512,000 both give 342,300. PwC prints 37,500 for the 25% band, a digit transposition; OCAM's IRPS manual applies 35,700 (see mozambique-income-tax.md).
 
 ### Monthly PAYE table — THE operative payroll mechanism (RSM 2025 p.14)
 
@@ -255,10 +255,10 @@ Classify bank-statement lines deterministically. Match case-insensitively; longe
 
 - INSS employee 3% × 60,000 = **1,800.00/month** → annual **21,600.00**.
 - Annual taxable = 720,000 − 21,600 = **698,400.00** (25% band: 504,000–1,512,000).
-- Annual IRPS = 0.25 × 698,400 − 37,500 = 174,600.00 − 37,500 = **137,100.00/year**.
-- Monthly IRPS estimate ≈ 137,100.00 ÷ 12 = **11,425.00**.
-- **Employee deductions** = 11,425.00 + 1,800.00 = **13,225.00**.
-- **Net pay** = 60,000.00 − 13,225.00 = **46,775.00 MZN**.
+- Annual IRPS = 0.25 × 698,400 − 35,700 = 174,600.00 − 35,700 = **138,900.00/year**.
+- Monthly IRPS estimate ≈ 138,900.00 ÷ 12 = **11,575.00**.
+- **Employee deductions** = 11,575.00 + 1,800.00 = **13,375.00**.
+- **Net pay** = 60,000.00 − 13,375.00 = **46,625.00 MZN**.
 
 ### Example 5 — Top-band earner (32% annual)
 
@@ -334,7 +334,7 @@ Suggested layout (one row per employee per month):
 | F | Employer INSS 4% | `=D*4%` |
 | G | Below PAYE floor? | `=IF(D<=20249.99,TRUE,FALSE)` |
 | H | Annual taxable (resident) | `=MAX(0,(D-E)*12)` |
-| I | Annual IRPS (resident) | nested IF on H using PwC deductions (—/2,100/10,500/37,500/141,540) |
+| I | Annual IRPS (resident) | nested IF on H using the parcelas (—/2,100/10,500/35,700/141,540) |
 | J | Monthly IRPS (resident est.) | `=IF(B="N", D*20%, IF(G, 0, I/12))` |
 | K | Employee deductions | `=E+J` |
 | L | Net pay | `=D-K` |
@@ -423,7 +423,7 @@ Governed by the Código Geral Tributário and the Fiscal Offences regime (Regime
 
 | Topic | Figure | Source |
 | --- | --- | --- |
-| IRPS resident brackets | 10% / 15% / 20% / 25% / 32% (deductions —/2,100/10,500/37,500/141,540) | PwC |
+| IRPS resident brackets | 10% / 15% / 20% / 25% / 32% (deductions —/2,100/10,500/35,700/141,540) | PwC |
 | IRPS monthly PAYE 0% floor | ≈20,250 MZN/month | RSM 2025 p.14 |
 | IRPS non-resident | flat 20% final WHT | PwC; RSM 2025 p.14 |
 | Self-employment / service provider | 20% | RSM 2025 p.15 |
@@ -456,7 +456,7 @@ Financial-sector min-wage earner. Salary 19,043.61/mo, resident. Expected: IRPS 
 
 Mid earner (20% band). Salary 30,000/mo, resident, 0 deps. Annual taxable 349,200.00; annual IRPS 59,340.00; monthly IRPS 4,945.00; net 24,155.00.
 
-Higher earner (25% band). Salary 60,000/mo, resident. Annual taxable 698,400.00; annual IRPS 137,100.00; monthly IRPS 11,425.00; net 46,775.00.
+Higher earner (25% band). Salary 60,000/mo, resident. Annual taxable 698,400.00; annual IRPS 138,900.00; monthly IRPS 11,575.00; net 46,625.00.
 
 Top-band earner (32%). Salary 150,000/mo, resident. Annual taxable 1,746,000.00; annual IRPS 417,180.00; monthly IRPS 34,765.00; net 110,735.00.
 

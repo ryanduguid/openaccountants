@@ -1,10 +1,10 @@
 ---
 name: mozambique-social-contributions
 description: Use this skill whenever asked about Mozambique social security contributions (INSS), payroll, or personal income tax (IRPS) for employees, employers, or self-employed individuals. Trigger on phrases like "how much INSS do I pay", "Mozambique social security", "INSS employer rate", "INSS employee 3%", "Segurança Social", "Instituto Nacional de Segurança Social", "Mozambique payroll tax", "IRPS calculation", "Mozambique income tax brackets", "PAYE Mozambique", "salário mínimo", "Mozambican minimum wage", or any question about Mozambique payroll or social-contribution obligations. Also trigger when classifying bank statement transactions that relate to INSS debits, IRPS/PAYE remittances, or salary payments from Mozambican banks (BCI, Millennium BIM, Standard Bank Moçambique, Absa Moçambique). This skill covers the 4% employer / 3% employee INSS rates, contribution base, registration and payment deadlines, IRPS resident brackets and PAYE, non-resident flat withholding, minimum wages by sector, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Mozambique payroll or social-contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: MZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Mozambique Social Security (INSS) & Payroll Tax
 
-## Mozambique Social Security (INSS) & Payroll Tax Skill v0.1
+## Mozambique Social Security (INSS) & Payroll Tax Skill v0.2
 
 Mozambique **does** levy a personal income tax (IRPS), so this skill covers both the **INSS social contribution** (the primary subject) and the **IRPS payroll/PAYE reality** an employer must withhold. It is **not** a no-PIT jurisdiction.
 
@@ -241,12 +241,12 @@ Apply exactly as written when pay data is clear and inputs are complete.
 | 0 -- 42,000 | 10% | 0 |
 | 42,000 -- 168,000 | 15% | 2,100 |
 | 168,000 -- 504,000 | 20% | 10,500 |
-| 504,000 -- 1,512,000 | 25% | 37,500 |
+| 504,000 -- 1,512,000 | 25% | 35,700 |
 | Over 1,512,000 | 32% | 141,540 |
 
 - **IRPS formula** — IRPS = income x marginal rate - parcela a abater. Monthly PAYE runs 0%--32%.  _(PwC; DLA Piper)_
 
-*Continuity note.* The first three bands tie out exactly under the subtract method — at 42,000, 10% x 42,000 = 15% x 42,000 - 2,100 = **4,200**; at 168,000, 15% x 168,000 - 2,100 = 20% x 168,000 - 10,500 = **23,100**. The last two do not: strict continuity at 504,000 would need a parcela of **35,700** rather than 37,500, and at 1,512,000 it would need **143,340** rather than 141,540. The published figures are what PwC and the AT print and are used here as authoritative, so the schedule is very slightly discontinuous by design at those two boundaries. Do not "correct" 37,500 or 141,540 to make the arithmetic close. **[RESEARCH GAP — reviewer to confirm against the official CIRPS schedule.]** The same note appears in `mozambique-income-tax` and `mozambique-payroll`, which carry the same table.
+*Continuity note.* The first three bands tie out exactly under the subtract method — at 42,000, 10% x 42,000 = 15% x 42,000 - 2,100 = **4,200**; at 168,000, 15% x 168,000 - 2,100 = 20% x 168,000 - 10,500 = **23,100**. With the 25% parcela at 35,700 the last two bands tie out as well: at 504,000 both formulas give 90,300 and at 1,512,000 both give 342,300. PwC prints 37,500, a digit transposition; OCAM's IRPS manual applies 35,700 (see mozambique-income-tax.md).
 
 ### Rule 6 -- Non-resident flat withholding
 
@@ -398,7 +398,7 @@ If the client provides only a bank statement and no other information:
 | 0 -- 42,000 | 10% | 0 |
 | 42,000 -- 168,000 | 15% | 2,100 |
 | 168,000 -- 504,000 | 20% | 10,500 |
-| 504,000 -- 1,512,000 | 25% | 37,500 |
+| 504,000 -- 1,512,000 | 25% | 35,700 |
 | Over 1,512,000 | 32% | 141,540 |
 
 - **Non-resident flat withholding** — Non-residents: flat 20% definitive withholding on Mozambique-source income.  _(PwC)_
@@ -412,10 +412,10 @@ If the client provides only a bank statement and no other information:
 | 42,000.00 | 42,000 x 15% - 2,100 | 4,200.00 |
 | 168,000.00 | 168,000 x 20% - 10,500 | 23,100.00 |
 | 300,000.00 | 300,000 x 20% - 10,500 | 49,500.00 |
-| 504,000.00 | 504,000 x 25% - 37,500 | 88,500.00 |
+| 504,000.00 | 504,000 x 25% - 35,700 | 90,300.00 |
 | 2,000,000.00 | 2,000,000 x 32% - 141,540 | 498,460.00 |
 
-*Checks: 42,000 x 0.15 = 6,300; 6,300 - 2,100 = 4,200.00 ✓ | 168,000 x 0.20 = 33,600; - 10,500 = 23,100.00 ✓ | 300,000 x 0.20 = 60,000; - 10,500 = 49,500.00 ✓ | 504,000 x 0.25 = 126,000; - 37,500 = 88,500.00 ✓ | 2,000,000 x 0.32 = 640,000; - 141,540 = 498,460.00 ✓*
+*Checks: 42,000 x 0.15 = 6,300; 6,300 - 2,100 = 4,200.00 ✓ | 168,000 x 0.20 = 33,600; - 10,500 = 23,100.00 ✓ | 300,000 x 0.20 = 60,000; - 10,500 = 49,500.00 ✓ | 504,000 x 0.25 = 126,000; - 35,700 = 90,300.00 ✓ | 2,000,000 x 0.32 = 640,000; - 141,540 = 498,460.00 ✓*
 
 ### Minimum wages 2025 by sector (effective 1 July 2025; DLA Piper)
 
@@ -484,7 +484,7 @@ A further revision took effect ~1 April 2026 [RESEARCH GAP -- 2026 figures not y
 
 **Test 3:** Resident annual taxable income 300,000.00. -> IRPS 49,500.00. *(300,000 x 0.20 - 10,500 = 49,500 ✓)*
 
-**Test 4:** Resident annual taxable income 504,000.00. -> IRPS 88,500.00. *(504,000 x 0.25 - 37,500 = 88,500 ✓)*
+**Test 4:** Resident annual taxable income 504,000.00. -> IRPS 90,300.00. *(504,000 x 0.25 - 35,700 = 90,300 ✓)*
 
 **Test 5:** Resident annual taxable income 2,000,000.00. -> IRPS 498,460.00. *(2,000,000 x 0.32 - 141,540 = 498,460 ✓)*
 

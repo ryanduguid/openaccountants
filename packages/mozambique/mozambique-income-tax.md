@@ -1,10 +1,10 @@
 ---
 name: mozambique-income-tax
 description: Use this skill whenever asked about Mozambique personal income tax (IRPS) for employees, self-employed individuals, and small businesses. Trigger on phrases like "how much IRPS do I pay", "Modelo 10", "income tax return Mozambique", "IRPS rates", "PAYE Mozambique", "INSS contributions", "ISPC simplified regime", "first category income", "second category income", "imposto sobre o rendimento", "rendimento colectável", "self-employed tax Mozambique", "pagamentos por conta", or any question about filing or computing IRPS for a resident or non-resident individual. Also trigger when preparing or reviewing a Modelo 10 return, computing INSS payroll deductions, applying the progressive IRPS scale, or advising on the 2026 Law 11/2025 reform. This skill covers IRPS rate brackets, income categories, personal/dependent deductions, INSS social security, ISPC, sector minimum wages, filing deadlines, penalties, and the Law 11/2025 reform. ALWAYS read this skill before touching any Mozambique income tax or payroll work.
-version: 0.1
+version: 0.2
 jurisdiction: MZ
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 31 March (employment-only) / 30 April (all other cases) of following year |
 | Validated by | Pending -- requires sign-off by a Mozambican tax professional |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 Regime note. The 2025 tax year and earlier follow the long-standing CIRPS. Law No. 11/2025 (29 Dec 2025) enters into force 1 January 2026: it does not change the rate brackets but redefines residency, abolishes simplified/exemption regimes, ends the employee filing waiver, and adds digital-service withholding. See Section 11. Source: DLA Piper Africa / SAL & Caldeira — https://www.dlapiperafrica.com/en/mozambique/insights/2026/Changes-to-the-Personal-Income-Tax-Code
 
@@ -46,28 +46,12 @@ Regime note. The 2025 tax year and earlier follow the long-standing CIRPS. Law N
 | 0 -- 42,000 | 10% | 0 | 4,200 |
 | 42,000 -- 168,000 | 15% | 2,100 | 23,100 |
 | 168,000 -- 504,000 | 20% | 10,500 | 90,300 |
-| 504,000 -- 1,512,000 | 25% | 37,500 | 340,500 |
+| 504,000 -- 1,512,000 | 25% | 35,700 | 342,300 |
 | Over 1,512,000 | 32% | 141,540 | -- |
 
 - **IRPS calculation mechanism** — tax = (annual income × bracket rate) − deductible amount (parcela a abater) for the bracket  _(PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income)_
 
-[RESEARCH GAP — reviewer to confirm] The published deductible amounts for the 25% bracket (MZN 37,500) and 32% bracket (MZN 141,540) do not produce perfectly continuous brackets (strict continuity would require 35,700 and 143,340 respectively). The published "parcela a abater" values are the figures AT applies and are used in this skill as authoritative; reviewer to verify against the official CIRPS schedule. The cumulative-tax column above is computed using the published deductible amounts.
-
-> **⚠ Do not "fix" the 340,500 in the table above — it is correct, and this repo's own
-> checker disagrees with it.** `scripts/check-derived-columns.py` reports the 25% row as a
-> mismatch: *"bands give 342,300.00, column says 340,500.00"*. Both figures are right for
-> different formulas, and the difference is exactly the discontinuity described above.
->
-> - **Accumulating the marginal bands**: 4,200 + 18,900 + 67,200 + (1,008,000 × 25%) =
->   **342,300**. This is what the checker computes, because it assumes a continuous schedule.
-> - **The formula AT actually applies**, stated in the row below the table: income × bracket
->   rate − parcela a abater = 1,512,000 × 25% − 37,500 = **340,500**. This is what the
->   column states.
->
-> The two agree only where the parcela is the continuity-preserving value (35,700), and
-> Mozambique's published one is not. So the checker's assumption fails here rather than the
-> table being wrong, and changing the column to 342,300 would introduce an error while
-> silencing the warning.
+The 25% bracket's parcela a abater is MZN 35,700: that value makes the schedule continuous at 504,000 (both formulas give 90,300) and at 1,512,000 (both give 342,300), and the 32% parcela of 141,540 is derived from it. PwC's Worldwide Tax Summaries print 37,500, a digit transposition that `scripts/check-quick-formula.py` and `scripts/check-derived-columns.py` flagged; the Ordem dos Contabilistas e Auditores de Moçambique applies 35,700 in its IRPS manual (worked example: 1,103,870 × 25% − 35,700 = 240,267.50)  _([OCAM, Formação Contínua IRPS, 4.ª edição](https://ocam.org.mz/wp-content/uploads/2024/06/4_Edio_de_Formao_Continua_IRPS_.pdf))_
 >
 > **The authority still cannot be reached.** The citation above records a TLS error from an
 > earlier attempt; retried on **11 September 2026**, `www.at.gov.mz` now **resets the
@@ -218,11 +202,11 @@ Input line:
 
 Reasoning:
 Monthly gross salary MZN 50,000 → annualised MZN 600,000 (1st category). Falls in the 504,000–1,512,000 (25%) bracket.
-Gross IRPS = 600,000 × 25% − 37,500 = 150,000 − 37,500 = 112,500.
-Less personal deduction (single/married taxpayer) MZN 1,800 → 112,500 − 1,800 = 110,700 annual IRPS.
+Gross IRPS = 600,000 × 25% − 35,700 = 150,000 − 35,700 = 114,300.
+Less personal deduction (single/married taxpayer) MZN 1,800 → 114,300 − 1,800 = 112,500 annual IRPS.
 INSS employee contribution = 3% × 50,000 = MZN 1,500/month.
 
-Classification: 1st category. Annual gross IRPS MZN 112,500; after MZN 1,800 personal deduction, MZN 110,700. INSS employee MZN 1,500/month. (Personal deduction per PwC — https://taxsummaries.pwc.com/mozambique/individual/deductions.)
+Classification: 1st category. Annual gross IRPS MZN 114,300; after MZN 1,800 personal deduction, MZN 112,500. INSS employee MZN 1,500/month. (Personal deduction per PwC — https://taxsummaries.pwc.com/mozambique/individual/deductions.)
 
 ### Example 2 -- Resident employee, lower salary, two dependents
 
@@ -565,7 +549,7 @@ Small annual flat tax that varies by municipality (e.g., Maputo cited ~MZN 510 f
 ### Test Suite
 
 Input: Resident, annual employment income 600,000, single (no dependents).
-Expected: 25% bracket → 600,000 × 25% − 37,500 = 150,000 − 37,500 = 112,500 gross IRPS; less personal deduction 1,800 = 110,700.
+Expected: 25% bracket → 600,000 × 25% − 35,700 = 150,000 − 35,700 = 114,300 gross IRPS; less personal deduction 1,800 = 112,500.
 
 Input: Resident, annual 168,000, 2 dependents.
 Expected: 15% bracket → 168,000 × 15% − 2,100 = 25,200 − 2,100 = 23,100; less 1,800 personal − 900 (2 dependents) = 20,400.
