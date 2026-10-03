@@ -4,8 +4,8 @@ description: Tier 2 California content skill for the Pass-Through Entity Electiv
 jurisdiction: US-CA
 category: state-tax
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -228,7 +228,7 @@ A multi-member LLC with $500,000 of CA-source income that elects PTE for two con
 
 ### 7.4 Interaction with California estimated tax (Form 540-ES)
 
-- **Estimated tax adjustment** — A consenting owner who expects to receive a PTE credit may reduce their Form 540-ES estimated payments to account for the credit, but should NOT reduce them to zero if the PTE prepayment / balance is not fully made by year-end. The Form 540-ES safe harbor (R&TC § 19136) is computed on the owner's actual CA net tax after credits; if the PTE credit reduces CA net tax appropriately, estimated payments can be sized accordingly. See `ca-540-es-estimated-tax`.  _(R&TC § 19136)_
+- **Estimated tax adjustment** — A consenting owner who expects to receive a PTE credit may reduce their Form 540-ES estimated payments to account for the credit, but should NOT reduce them to zero if the PTE prepayment / balance is not fully made by year-end. The Form 540-ES safe harbor (R&TC § 19136) is computed on the owner's actual CA net tax after credits; if the PTE credit reduces CA net tax appropriately, estimated payments can be sized accordingly. See `us-ca-estimated-tax-540es`.  _(R&TC § 19136)_
 
 ## Section 8 -- Federal treatment
 
@@ -410,7 +410,7 @@ For each PTE elective tax engagement, this skill produces:
 5. Form 3804-CR (per consenting owner): Owner's credit amount, attached to the owner's Form 540 / 540NR / 541 workpapers.
 6. Federal deduction memo: Notice 2020-75 specified income tax payment deduction on Form 1065 / 1120-S, with cash-basis timing.
 7. Cross-skill handoffs:
-   - To `us-ca-540-individual-return` / `ca-540-es-estimated-tax`: PTE credit amount for each owner, OSTC interaction (if applicable), 2025 estimated tax adjustment.
+   - To `us-ca-540-individual-return` / `us-ca-estimated-tax-540es`: PTE credit amount for each owner, OSTC interaction (if applicable), 2025 estimated tax adjustment.
    - To `us-federal-return-assembly`: Entity-level PTE deduction, reduced K-1 flow-throughs.
    - To `us-s-corp-election-decision`: PTE benefit as an input to the S-corp break-even analysis (when applicable).
 8. Reviewer brief: Sections 11 checks completed, extension / credit-reduction disclosure included, signed off by reviewer.
@@ -425,7 +425,7 @@ Inputs from:
 
 Outputs to:
 - `us-ca-540-individual-return` — PTE credit on Form 3804-CR per consenting owner.
-- `ca-540-es-estimated-tax` — adjusted owner estimated tax baseline.
+- `us-ca-estimated-tax-540es` — adjusted owner estimated tax baseline.
 - `us-ca-smllc-form-568` — for multi-member 568 PTE-electing entities (note that skill is SMLLC-only; this skill provides the multi-member 568 PTE flow).
 - `us-federal-return-assembly` — entity-level Notice 2020-75 deduction.
 - `us-ca-return-assembly` — final unified package for taxpayer.

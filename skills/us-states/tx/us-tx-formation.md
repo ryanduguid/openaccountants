@@ -4,8 +4,8 @@ description: Tier 2 Texas content skill for entity formation covering tax year 2
 jurisdiction: US-TX
 category: formation
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -485,7 +485,7 @@ The Form 5472 obligation is the single most-missed federal compliance item for f
 - `us-tax-workflow-base` — workflow architecture, conservative defaults, reviewer signoff protocol.
 - `us-tx-franchise-tax` — Form 05-102 PIR mechanics, Form 05-163 No Tax Due return, Form 05-158 Long Form franchise tax return.
 - `us-tx-margin-tax` — margin tax computation, taxable margin methods (70%, COGS, compensation, $1M alternative), EZ Computation, retail/wholesale rate qualification.
-- `tx-sales-tax` — Texas sales-and-use tax registration, Form 01-114, taxable services including data processing services under §151.0035, 20% data-processing exemption under §151.351, economic nexus threshold of $500,000 under §151.107.
+- `us-tx-sales-use-tax` — Texas sales-and-use tax registration, Form 01-114, taxable services including data processing services under §151.0035, 20% data-processing exemption under §151.351, economic nexus threshold of $500,000 under §151.107.
 - `us-tx-freelance-intake` — Texas-resident freelance developer intake form, document collection, federal-plus-Texas workflow entry point.
 - `us-tx-return-assembly` — final assembly of federal return plus Texas PIR/franchise tax plus optional Texas sales tax for Texas-resident sole proprietors and SMLLCs.
 - `us-s-corp-election-decision` — break-even analysis for S-corp election; particularly relevant for Texas operators where no state-level S-corp tax negates the California-style penalty for electing.

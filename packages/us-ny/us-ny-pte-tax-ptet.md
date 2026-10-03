@@ -4,7 +4,8 @@ description: NY Pass-Through Entity Tax (PTET) — Article 24-A
 jurisdiction: US-NY
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +27,7 @@ depends_on:
 
 ### 1.2 What this skill does NOT cover
 
-The following are out of scope and must be routed to a more specialized skill or to a credentialed reviewer: C-corporation entity-level tax — corporations subject to Article 9-A are not eligible to make a PTET election. Sole proprietors and disregarded single-member LLCs — not eligible entities; the sole-prop owner pays personal NY tax under Article 22 directly. Such taxpayers should be routed to `us-sole-prop-bookkeeping` and `ny-income-tax`. The New York City PTET (Article 24-B) — a separate election with its own thresholds, its own rate schedule (a flat 3.876% in current law), and applicable only to entities whose owners include individuals who are New York City residents. Use the NYC PTET skill (when published) or refer to the credentialed reviewer. MCTMT and other entity-level surcharges — not part of PTET. Combined partnership reporting and tiered partnership PTET aggregation rules — partnerships that are themselves partners in upper-tier partnerships introduce additional complexity (TSB-M-22(1)C, (1)I) that should be referred for credentialed review. Trust and estate beneficiaries — partial coverage; the credit flows through, but the trust-level mechanics are out of scope. PTET assessment, audit, or refund disputes — handled by tax controversy counsel. Years before 2025 — although the regime has been in effect since 2021, this skill is written for tax year 2025. Earlier years used identical structure but consult the year-specific rate confirmation.
+The following are out of scope and must be routed to a more specialized skill or to a credentialed reviewer: C-corporation entity-level tax — corporations subject to Article 9-A are not eligible to make a PTET election. Sole proprietors and disregarded single-member LLCs — not eligible entities; the sole-prop owner pays personal NY tax under Article 22 directly. Such taxpayers should be routed to `us-sole-prop-bookkeeping` and `us-ny-it-201-resident-return`. The New York City PTET (Article 24-B) — a separate election with its own thresholds, its own rate schedule (a flat 3.876% in current law), and applicable only to entities whose owners include individuals who are New York City residents. Use the NYC PTET skill (when published) or refer to the credentialed reviewer. MCTMT and other entity-level surcharges — not part of PTET. Combined partnership reporting and tiered partnership PTET aggregation rules — partnerships that are themselves partners in upper-tier partnerships introduce additional complexity (TSB-M-22(1)C, (1)I) that should be referred for credentialed review. Trust and estate beneficiaries — partial coverage; the credit flows through, but the trust-level mechanics are out of scope. PTET assessment, audit, or refund disputes — handled by tax controversy counsel. Years before 2025 — although the regime has been in effect since 2021, this skill is written for tax year 2025. Earlier years used identical structure but consult the year-specific rate confirmation.
 
 ### 1.3 Why PTET exists — the SALT cap workaround
 

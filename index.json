@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-03T17:59:12+00:00",
+ "generated_at": "2026-10-03T18:07:49+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -1070,7 +1070,7 @@
    "reviewed_by": "James Wallach",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-sales-tax",
@@ -22143,7 +22143,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-ca-pte-elective-tax",
@@ -22156,7 +22156,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-ca-sales-tax",
@@ -23612,7 +23612,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-ny-pte-tax-ptet",
@@ -23625,7 +23625,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-ny-sales-tax",
@@ -23924,7 +23924,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-tx-franchise-tax",
