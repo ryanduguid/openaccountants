@@ -167,6 +167,8 @@ class RequirementsTests(unittest.TestCase):
                 installed.add(match.group(1))
         self.assertTrue(installed, "no pip install found in the gate workflows")
         covered = {"-r scripts/requirements-validation.txt": "scripts/requirements-validation.txt", "-e ./mcp": "./mcp"}
+        covered.update({line: line for line in self.lines
+                        if re.fullmatch(r"[a-zA-Z0-9_.-]+==\d+(?:\.\d+)*", line)})
         for line, target in covered.items():
             self.assertIn(line, self.lines, line)
         self.assertEqual(installed - set(covered.values()), set(), "CI installs something requirements-dev.txt does not")

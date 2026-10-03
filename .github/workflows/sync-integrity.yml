@@ -28,16 +28,19 @@ jobs:
           python-version: "3.11"
           cache: pip
           cache-dependency-path: |
-            requirements-dev.txt
             scripts/requirements-validation.txt
             mcp/pyproject.toml
-      - name: Install development test dependencies
-        run: python3 -m pip install -r requirements-dev.txt
+      - name: Install validation dependencies
+        run: python3 -m pip install -r scripts/requirements-validation.txt
+      - name: Install the workbook test dependency
+        run: 'python3 -m pip install openpyxl==3.1.5 --only-binary :all:'
       - name: Run repo unit tests
         # Discover every test_*.py. A literal single-file pattern silently
         # skipped every other suite in tests/, so reverting the code they
         # cover left CI green.
         run: python3 -m unittest discover -s tests -p "test_*.py" -v
+      - name: Install the MCP server and its dependencies
+        run: python3 -m pip install ./mcp
       - name: Run MCP unit tests
         # mcp/tests/ is a separate top-level directory; without this step the
         # MCP server's own regression suites never execute in CI.

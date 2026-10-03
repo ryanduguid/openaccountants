@@ -163,6 +163,7 @@ class LiveServerTests(unittest.TestCase):
                 if executable is None:
                     raise RuntimeError("Windows test cleanup requires taskkill")
                 # Trusted Windows PATH, fixed arguments and the test's own child PID.
+                # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit
                 subprocess.run(  # nosec B603
                     [str(Path(executable).resolve(strict=True)), "/PID", str(proc.pid), "/T", "/F"],
                     capture_output=True,
