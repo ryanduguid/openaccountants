@@ -1,10 +1,10 @@
 ---
 name: pillar-two-globe-minimum-tax
 description: Use this skill whenever a multinational enterprise (MNE) group with consolidated revenue at or above EUR 750 million asks about the OECD Pillar Two / GloBE (Global Anti-Base Erosion) 15% global minimum tax. Trigger on phrases like "Pillar Two", "GloBE", "global minimum tax", "15% minimum tax", "IIR", "UTPR", "QDMTT", "domestic top-up tax", "GloBE Information Return", "GIR", "covered taxes", "transitional CbCR safe harbour", "substance-based income exclusion", or any request to assess Pillar Two exposure, compute a top-up tax, or determine which entities in a group are in scope. This skill covers the OECD GloBE Model Rules (December 2021), the Commentary (March 2022) and Administrative Guidance through 2024, plus the EU implementing Directive 2022/2523. It does NOT cover Pillar One (Amount A or Amount B), country-by-country reporting (CbCR) under BEPS Action 13, or US GILTI/CAMT as standalone regimes (but does map their interaction). Always read this skill before computing top-up tax, advising on jurisdictional ETRs, or designing group restructurings affected by GloBE.
-version: 0.1
+version: 0.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - cross-border-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Pillar Two GLOBE Minimum Tax
 
-## Pillar Two / GloBE 15% Global Minimum Tax v0.1
+## Pillar Two / GloBE 15% Global Minimum Tax v0.2
 
 ## What this file is
 
@@ -255,7 +255,7 @@ All 27 EU Member States transposed Directive 2022/2523. Key local variations:
 | **Canada** | Pillar Two Act and Income Tax Conventions Implementation Act; IIR and DMTT from FY 2024; UTPR from FY 2025 |
 | **Australia** | Taxation (Multinational—Global and Domestic Minimum Tax) Imposition Act 2024; IIR and DMTT from fiscal years beginning on or after 1 January 2024; UTPR from 2025 |
 | **Singapore** | Multinational Enterprise (Minimum Tax) Act 2024; DTT (QDMTT) and IIR from financial years beginning on or after 1 January 2025; UTPR not yet enacted |
-| **Hong Kong** | DMTT and IIR from FY 2025 per 2024 budget; UTPR not yet enacted |
+| **Hong Kong** | Inland Revenue (Amendment) (Minimum Tax for Multinational Enterprise Groups) Ordinance 2025 (gazetted 6 June 2025): IIR and the Hong Kong minimum top-up tax for fiscal years beginning on or after 1 January 2025; UTPR from a date still to be specified by gazette notice ([IRD](https://www.ird.gov.hk/eng/tax/bus_beps.htm)) |
 | **United States** | No Pillar Two adoption; GILTI and CAMT remain in force; CFC blended tax treatment under OECD Admin Guidance Feb 2023 |
 | **China** | No formal Pillar Two legislation as of 2025; State Taxation Administration monitoring; CFC and indirect transfer rules may interact |
 | **India** | No formal adoption; Budget 2025 announcements pending; CbCR continues under section 286 |

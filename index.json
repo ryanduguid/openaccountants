@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-03T18:07:49+00:00",
+ "generated_at": "2026-10-03T18:30:23+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -199,7 +199,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ifrs-local-gaap-reconciliation",
@@ -303,7 +303,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "property-transfer-tax-matrix",
@@ -1005,7 +1005,7 @@
    "reviewed_by": "James Wallach",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-qbi-deduction",
@@ -10066,7 +10066,7 @@
    "reviewed_by": "Mayur Deokar",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "india-financial-statements",
@@ -17710,7 +17710,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "singapore-transfer-pricing",
@@ -18035,7 +18035,7 @@
    "reviewed_by": "Werner Britz",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "south-africa-vat",
@@ -20466,7 +20466,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ua-tax-overview",
@@ -22182,7 +22182,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-co-income-tax",
@@ -22429,7 +22429,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-ga-corporate-income-tax-returns-form-600",
@@ -22533,7 +22533,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-ga-sales-tax",
@@ -23560,7 +23560,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-ny-llc-filing-fee-it-204-ll",

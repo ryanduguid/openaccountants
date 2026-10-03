@@ -4,7 +4,8 @@ description: "Source-cited tax guide for US-GA: ga corporate and ptet. Unverifie
 jurisdiction: US-GA
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -76,7 +77,7 @@ Reviewer should confirm current-year status with the Georgia Department of Reven
 - **§172 NOL** — Georgia has its own NOL rules (see §4).  _(O.C.G.A. §48-7-21)_
 - **§965 transition tax** — State-level inclusion rules apply.  _(O.C.G.A. §48-7-21)_
 - **GILTI / FDII** — Georgia generally treats GILTI as dividend income eligible for the dividends-received-style treatment; reviewer should confirm under Reg. 560-7-3-.06.  _(Reg. 560-7-3-.06)_
-- **OBBBA (P.L. 119-21) 2025 federal provisions** — Georgia has not yet enacted explicit conformity to OBBBA-specific items. Reviewer must check the most recent annual conformity bill before filing.  _(P.L. 119-21)_
+- **OBBBA (P.L. 119-21) 2025 federal provisions** — Georgia's annual conformity act, HB 1199 (signed 20 March 2026), updates the conformity date to the Internal Revenue Code as of 1 January 2026 for tax years beginning on or after 1 January 2025. It adopts most OBBBA provisions but decouples from specified items that require Georgia addbacks, so the reviewer must check the enacted act and the Department of Revenue's conformity summary for the addback list before filing.  _(P.L. 119-21; [GSCPA, Governor signs HB 1199](https://gscpa.org/content/Home/News/Professional-News/News-Alert--Governor-Signs-Georgia-Conformity-Bill--HB-1199--into-Law-.aspx))_
 
 ## 3. Apportionment and Market-Based Sourcing
 

@@ -1,11 +1,11 @@
 ---
 name: us-ca-smllc-form-568
 description: Tier 2 California content skill for preparing California Form 568 (Limited Liability Company Return of Income) for single-member LLCs disregarded for federal tax purposes but treated as separate entities by California for the $800 annual franchise tax and the gross receipts-based LLC fee. Covers tax year 2025 including the $800 minimum franchise tax (R&TC section 17941), the tiered LLC fee schedule (R&TC section 17942), first-year exemption rules, Form 3522 (LLC Tax Voucher), Form 3536 (Estimated Fee), Schedule B balance sheet requirements, and penalty and interest computations. Defers individual income tax to us-ca-540-individual-return and estimated personal tax to us-ca-estimated-tax-540es. MUST be loaded alongside us-tax-workflow-base v0.1 or later. California SMLLCs only.
-version: 0.2
+version: 0.3
 jurisdiction: US-CA
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -53,7 +53,7 @@ This skill does NOT cover:
 
 ## Section 2 -- Year coverage and currency
 
-- **Tax year covered and due date** — 2025 (Form 568 due March 15, 2026 for calendar-year filers, or the 15th day of the 3rd month after the close of the fiscal year; extended to September 15, 2026 with Form 7004).
+- **Tax year covered and due date** — 2025 (Form 568 for a calendar-year SMLLC owned by an individual is due April 15, 2026, the 15th day of the 4th month after the close of the owner's taxable year; an SMLLC owned by a pass-through entity files by March 15, the 15th day of the 3rd month. California grants an automatic filing extension: seven months for an LLC classified as a partnership, and for an individual-owned SMLLC the owner's automatic extension to October 15, 2026; pay any balance with form FTB 3537 or 3536 by the original due date, because there is no California Form 7004. [FTB, 2025 Form 568 booklet, General Information E](https://www.ftb.ca.gov/forms/2025/2025-568-booklet.html))
 
 **Currency date:** April 2026.
 
@@ -105,10 +105,10 @@ This skill does NOT cover:
 | Item | Due date | Form |
 | --- | --- | --- |
 | Estimated LLC fee | June 15, 2025 (for calendar year) | Form 3536 |
-| Final LLC fee (balance due) | March 15, 2026 (with Form 568) | Form 568 |
+| Final LLC fee (balance due) | April 15, 2026 (with Form 568; March 15 for an SMLLC owned by a pass-through entity) | Form 568 |
 
 - **Estimated LLC fee** — June 15, 2025 (for calendar year)  _(Form 3536)_
-- **Final LLC fee (balance due)** — March 15, 2026 (with Form 568)  _(Form 568)_
+- **Final LLC fee (balance due)** — April 15, 2026 (with Form 568; March 15 for an SMLLC owned by a pass-through entity)  _(Form 568)_
 
 ### First-year exemption (verify 2025)
 
@@ -224,7 +224,7 @@ This skill does NOT cover:
 **Resolution:**
 - The $800 franchise tax is owed for 2025. Due May 15, 2025 (the 15th day of the 4th month after the February 1 SOS filing date; Form 3522).
 - If the LLC has total income exceeding $250,000, the LLC fee is also owed.
-- Form 568 is due March 15, 2026.
+- Form 568 is due April 15, 2026 (individual owner).
 - No extension applies for 2025-formed LLCs; do not apply the expired first-year exemption.
 
 ### EC-568-2 -- LLC with high gross revenue but low net profit
@@ -267,7 +267,7 @@ This skill does NOT cover:
 
 **Resolution:**
 - Actual LLC fee owed = $900 (income $250K-$499K).
-- No Form 3536 was filed by June 15. The $900 is now due with Form 568 on March 15, 2026.
+- No Form 3536 was filed by June 15. The $900 is now due with Form 568 on April 15, 2026.
 - Underpayment penalty: interest on $900 from June 15, 2025 to payment date.
 - **Flag for reviewer:** Calculate interest at the FTB's quarterly rate.
 
@@ -305,7 +305,7 @@ This skill does NOT cover:
 ### Test 568-1 -- Basic SMLLC, income under $250K
 
 **Input:** California SMLLC, calendar year, total income $180,000. No first-year exemption.
-**Expected:** $800 franchise tax (Form 3522, due April 15, 2025). LLC fee = $0 (under $250K). Form 568 due March 15, 2026. Total CA entity-level cost: $800.
+**Expected:** $800 franchise tax (Form 3522, due April 15, 2025). LLC fee = $0 (under $250K). Form 568 due April 15, 2026. Total CA entity-level cost: $800.
 
 ### Test 568-2 -- SMLLC with LLC fee in $500K-$999K bracket
 
@@ -320,7 +320,7 @@ This skill does NOT cover:
 ### Test 568-4 -- First-year LLC (exemption expired)
 
 **Input:** New California SMLLC formed March 15, 2025. Total income = $100,000. First-year exemption expired after 2023.
-**Expected:** $800 franchise tax owed (no exemption). LLC fee = $0 (under $250K). Total: $800. Form 568 due March 15, 2026.
+**Expected:** $800 franchise tax owed (no exemption). LLC fee = $0 (under $250K). Total: $800. Form 568 due April 15, 2026.
 
 ### Test 568-5 -- LLC fee vs. net profit mismatch
 
@@ -334,8 +334,8 @@ This skill does NOT cover:
 
 ### Test 568-7 -- Late filing penalty
 
-**Input:** SMLLC files Form 568 four months late (July 15, 2026 instead of March 15, 2026). $800 paid on time.
-**Expected:** Late filing penalty: $18/month x 1 member x 4 months = $72. No late payment penalty (tax was paid on time).
+**Input:** SMLLC owned by an individual files Form 568 three months late (July 15, 2026 instead of April 15, 2026). $800 paid on time.
+**Expected:** Late filing penalty: $18/month x 1 member x 3 months = $54. No late payment penalty (tax was paid on time).
 
 ## Section 9 -- Self-checks
 
@@ -377,7 +377,8 @@ This skill does NOT cover:
 ### Change log
 
 - **v0.1 (April 2026):** Stub.
-- **v0.2 (April 2026):** Full content skill with $800 franchise tax, LLC fee schedule, Form 568 preparation, edge cases, and test suite.
+- **v0.2 (April 2026):** Full content skill with $800 franchise tax, LLC fee schedule, Form 568 preparation, edge cases, and test suite.
+- **v0.3 (4 October 2026):** Form 568 due date corrected to April 15 for an SMLLC owned by an individual (March 15 when the owner is a pass-through entity); California's automatic extension and the FTB 3537/3536 payment vouchers described in place of Form 7004; late-filing example recomputed at three months.
 
 ## End of skill
 

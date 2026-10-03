@@ -1,10 +1,10 @@
 ---
 name: south-africa-transfer-pricing
 description: Use this skill whenever asked about South Africa transfer pricing rules, documentation requirements, or SARS transfer pricing compliance. Trigger on phrases like "transfer pricing South Africa", "SA TP documentation", "SARS transfer pricing", "master file South Africa", "local file South Africa", "CbCR South Africa", "Section 31 ITA", "arm's length South Africa", or any question about intercompany pricing for South African entities.
-version: 1.0
+version: 1.1
 jurisdiction: ZA
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: Werner Britz
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # South Africa Transfer Pricing
 
-## South Africa Transfer Pricing Skill v1.0
+## South Africa Transfer Pricing Skill v1.1
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** The frontmatter names **Werner Britz** from the review of 2026-06-12, but that review recorded no verified facts for this guide (its "Verified rates & thresholds" list was empty and was removed on 2026-09-29) and is not a sign-off on the text: a reviewer's name on a tier 2 guide does not make it reviewed, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Every figure below carries its own citation and should be confirmed against it.
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | BEPS signatory? | Yes (Inclusive Framework member) |
 | Currency | ZAR (South African Rand) |
 | Documentation language | English |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Documentation Requirements
 
@@ -175,7 +175,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Current mechanism | Advance Tax Ruling (ATR) system under Tax Administration Act |
 | MAP | Available under South Africa's DTA network |
 | Bilateral APA | May be achieved through MAP/competent authority negotiations |
-| Formal APA legislation | Not yet enacted; SARS has indicated interest in developing formal program |
+| Formal APA legislation | Enacted by the Tax Administration Laws Amendment Act 2023 (Income Tax Act sections 76A onwards). SARS Notices 7787 to 7792 (Government Gazette 55152, 7 August 2026) give it operational effect through a limited bilateral APA pilot for applications received on or after 7 August 2026, with a turnover floor above ZAR 10 billion and transaction-value thresholds ([EY, 11 May 2026](https://taxnews.ey.com/news/2026-1040-south-africa-revenue-service-releases-draft-subordinate-legislation-for-apa-pilot-program); SARS secondary legislation notices) |
 | Alternative | Taxpayers rely on proper documentation and Advance Tax Rulings |
 
 ## Section 8 -- Safe Harbours
