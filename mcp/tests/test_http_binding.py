@@ -156,6 +156,16 @@ class LiveServerTests(unittest.TestCase):
     @staticmethod
     def _stop(proc: subprocess.Popen[str]) -> None:
         if proc.poll() is None:
+            if os.name == "nt":
+                # The virtual-environment launcher can own a separate server process.
+                subprocess.run(
+                    ["taskkill", "/PID", str(proc.pid), "/T", "/F"],
+                    capture_output=True,
+                    check=True,
+                    timeout=10,
+                )
+                proc.wait(timeout=10)
+                return
             proc.terminate()
             try:
                 proc.wait(timeout=10)
