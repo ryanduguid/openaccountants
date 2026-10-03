@@ -122,7 +122,7 @@ Two methods are available:
 
 #### Method A — Instalment amount method (label T7)
 
-- **Instalment amount method:** The notice shows the amount at T7; if unchanged, report it at 5A. For a variation, estimate annual benchmark tax at T8. For four quarterly instalments, apply 25%, 50%, 75% or 100% for the relevant quarter, subtract earlier instalments and add applicable earlier credits. Report the varied amount at T9 and 5A, and the reason at T4. If the result is nil or negative, enter zero at T9/5A; an eligible credit may be claimed as a positive amount at 5B. For Q3, $12,000 annual estimated tax less $8,000 earlier instalments, with no earlier credits, gives $12,000 x 75% - $8,000 = $1,000. (Library, Tax/Administration and Assessment; [ATO variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).)
+- **Instalment amount method:** The notice shows the amount at T7; if unchanged, report it at 5A. For a variation, estimate annual benchmark tax at T8. For four quarterly instalments, apply 25%, 50%, 75% or 100% for the relevant quarter, subtract earlier instalments and add applicable earlier credits. Report the varied amount at T9 and 5A, and the reason at T4. If the result is nil or negative, enter zero at T9/5A; an eligible credit may be claimed as a positive amount at 5B. For Q3, $12,000 annual estimated tax less $8,000 earlier instalments, with no earlier credits, gives $12,000 x 75% - $8,000 = $1,000. ([ATO variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).)
 
 #### Method B — Instalment rate method (labels T1-T2)
 

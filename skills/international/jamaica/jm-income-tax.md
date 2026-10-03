@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Jamaica personal income tax for
 jurisdiction: JM
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -748,7 +749,7 @@ Effective 1 June 2025: JMD 16,000 per 40-hour week (JMD 400/hour). This is relev
 
 ### Key 2025/2026 Budget Changes (Summary)
 
-1. IT threshold raised to JMD 1,799,376 (April 2025); planned JMD 1,902,360 (April 2026)
+1. IT threshold raised to JMD 1,799,376 (April 2025) and to JMD 1,902,360 from 1 April 2026, giving an effective 2026 tax-free amount of JMD 1,876,614 ([JIS, Increase in income tax threshold now in effect](https://jis.gov.jm/increase-in-income-tax-threshold-now-in-effect/))
 2. GCT registration threshold raised from JMD 10,000,000 to JMD 15,000,000 (April 2025)
 3. Non-resident ordinary dividend WHT reduced from 25% to 15% (April 2025)
 4. Enhanced / accelerated capital allowances on qualifying plant and buildings (2025--2026)

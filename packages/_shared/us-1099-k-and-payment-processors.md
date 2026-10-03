@@ -4,7 +4,8 @@ description: "Tier 2 US federal content skill for Form 1099-K reporting under IR
 jurisdiction: US
 category: federal
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
@@ -556,7 +557,7 @@ Before signing off on a return that includes any 1099-K, verify:
 - **IRS, "Understanding Your Form 1099-K," IRS.gov FAQ (updated 2024)** — Q-1 through Q-15 — including Q-9 (received in error), Q-13 (two-line wash for personal items at loss), Q-14 (hobby income)  _(IRS, "Understanding Your Form 1099-K," IRS.gov FAQ (updated 2024))_
 - **IRS Schedule 1 (Form 1040) Instructions, 2024 version** — Line 8z and Line 24z guidance  _(IRS Schedule 1 (Form 1040) Instructions, 2024 version)_
 - **Form 1099-K Instructions, 2025 version** — Form 1099-K Instructions, 2025 version  _(Form 1099-K Instructions, 2025 version)_
-- **Form 1099-DA Instructions, 2025 version** — issued draft August 2024, final pending  _(Form 1099-DA Instructions, 2025 version)_
+- **Form 1099-DA Instructions, 2025 version** — final instructions released 8 January 2025 and the final form on 10 January 2025, reflecting the custodial broker regulations (TD 10000) and the transitional relief in Notices 2024-56 and 2024-57 and Rev. Proc. 2024-28; brokers furnish the first forms in early 2026 for 2025 transactions  _([EY Tax News, 13 January 2025](https://taxnews.ey.com/news/2025-0213))_
 
 <!-- openaccountants-cta-block -->
 

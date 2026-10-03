@@ -2,18 +2,18 @@
 name: au-smsf
 description: >
   Use this skill whenever asked about Australian self-managed superannuation funds -- SMSF accounting, the SMSF annual return (SAR), supervisory levy, fund tax at 15%, exempt current pension income (ECPI), actuarial certificates, non-arm's length income or expenses (NALI/NALE), contribution caps and acceptance rules, minimum pension drawdowns, transfer balance cap and TBAR reporting, SMSF audits, in-house assets, LRBA safe harbour rates, or Division 296. Trigger on phrases like "SMSF", "self-managed super", "SAR", "supervisory levy", "actuarial certificate", "ECPI", "NALI", "TBAR", "minimum pension", "bare trust", or "SMSF audit". ALWAYS read this skill before touching any SMSF work.
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-09-14
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Self-Managed Super Funds (SMSF) -- Accounting, Tax & Compliance Skill v1.1
+# Australia Self-Managed Super Funds (SMSF) -- Accounting, Tax & Compliance Skill v1.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -151,7 +151,7 @@ Franking credits offset fund tax and are refundable. Capital losses offset only 
 
 ### 4.3 NALI and NALE -- **AUDIT FLASH POINT**
 
-Income is NALI (s 295-550, taxed at 45%) where it exceeds an arm's-length amount from a non-arm's-length scheme, where the non-fixed trust distribution rule applies, or where the applicable non-arm's-length expenditure (NALE) rules apply. A private-company dividend is NALI unless its amount is consistent with an arm's-length dealing. Assess the statutory factors, including share value, cost, dividend rate and other relevant circumstances. In a complying accumulation fund, a $10,000 unfranked dividend satisfying that exception is ordinarily taxed at 15% ($1,500), before other deductions or offsets, rather than 45% ($4,500). (s 295-550(2)-(3); Library, Taxation of Superannuation Funds, ADFs and PSTs.)
+Income is NALI (s 295-550, taxed at 45%) where it exceeds an arm's-length amount from a non-arm's-length scheme, where the non-fixed trust distribution rule applies, or where the applicable non-arm's-length expenditure (NALE) rules apply. A private-company dividend is NALI unless its amount is consistent with an arm's-length dealing. Assess the statutory factors, including share value, cost, dividend rate and other relevant circumstances. In a complying accumulation fund, a $10,000 unfranked dividend satisfying that exception is ordinarily taxed at 15% ($1,500), before other deductions or offsets, rather than 45% ($4,500). (s 295-550(2)-(3); [LCR 2021/2](https://www.ato.gov.au/law/view/document?docid=COG/LCR20212/NAT/ATO/00001).)
 
 Post the 2024 Act (Treasury Laws Amendment (Support for Small Business and Charities and Other Measures) Act 2024, applied from 2018-19):
 
@@ -210,7 +210,7 @@ No reduced ("COVID-halved") rates are in force in 2026-27. Round to the nearest 
 
 **Catch-up exception:** first establish either an honest mistake with an underpayment no greater than one-twelfth of the annual minimum, or a matter outside the trustee's control. The one-twelfth limit belongs to the honest-mistake branch.
 
-All remaining conditions must also hold: ECPI would otherwise have continued; the catch-up is made as soon as practicable after discovery in the following income year (generally within 28 days); it would have met the prior year's minimum; and it is treated for all other purposes as paid in that prior year. A trustee who has previously received this concession must apply to the ATO again. If all conditions hold and there has been no prior use, the trustee can generally self-assess continuation. Otherwise refer for ATO consideration rather than assuming relief. (Library, Superannuation Benefits, minimum payment standards.)
+All remaining conditions must also hold: ECPI would otherwise have continued; the catch-up is made as soon as practicable after discovery in the following income year (generally within 28 days); it would have met the prior year's minimum; and it is treated for all other purposes as paid in that prior year. A trustee who has previously received this concession must apply to the ATO again. If all conditions hold and there has been no prior use, the trustee can generally self-assess continuation. Otherwise refer for ATO consideration rather than assuming relief. (SIS Regulations 1994 reg 1.06(9A) and Sch 7; [ATO, Exception to minimum pension payment requirements](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf/paying-smsf-benefits/income-stream-pension-rules-and-payments/exception-to-minimum-pension-payment-requirements).)
 
 ### 6.2 Transfer balance cap and TBAR
 

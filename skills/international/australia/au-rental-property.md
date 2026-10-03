@@ -180,7 +180,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 | Qualifying works begun after 26 February 1992 | Basic 2.5%; 4% for qualifying uses under s 43-145 | Traveller accommodation must satisfy the relevant use conditions |
 
 - **Base** — Original construction cost (obtain from quantity surveyor report or builder records). NOT the purchase price of the property.
-- **Undeducted construction cost:** A new owner continues the annual deduction using the original eligible construction expenditure and remaining deduction period, subject to qualifying use and the remaining expenditure cap. For $400,000 of eligible 2.5% construction after ten full years, $300,000 remains and the full-year deduction continues at $10,000 for the remaining 30 years. (ITAA 1997 Div 43; Library, Tax/Depreciation.)
+- **Undeducted construction cost:** A new owner continues the annual deduction using the original eligible construction expenditure and remaining deduction period, subject to qualifying use and the remaining expenditure cap. For $400,000 of eligible 2.5% construction after ten full years, $300,000 remains and the full-year deduction continues at $10,000 for the remaining 30 years. (ITAA 1997 Div 43, ss 43-15 and 43-70.)
 
 ### 2.7 Interest Deductibility
 

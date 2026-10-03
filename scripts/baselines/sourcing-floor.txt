@@ -187,9 +187,6 @@ skills/international/argentina/ar-corporate-income-tax.md::rate list without a t
 skills/international/argentina/ar-income-tax.md::rate table without a tax-authority or statute citation: | Ganancia Neta Imponible Acumulada (ARS) | Rate | Cumulative Fixed Amount | / | 0 -- 1,750,026 | 5% | -- |
 skills/international/argentina/ar-income-tax.md::rate table without a tax-authority or statute citation: | Offence | Penalty | / | Late filing (omisión) | 1% per month of unpaid tax (up to 100%) |
 skills/international/argentina/ar-vat-return.md::rate table without a tax-authority or statute citation: | Rate | Applies to | Source | / | 21% (standard) | Most goods and services | Ley 23.349, Art. 28 |
-skills/international/australia/au-smsf.md::rate table without a tax-authority or statute citation: | Age at 1 July (or commencement) | Minimum % of account balance | / | Under 65 | 4% |
-skills/international/australia/au-smsf.md::rate table without a tax-authority or statute citation: | Field | Value | / | Country | Australia |
-skills/international/australia/au-smsf.md::rate table without a tax-authority or statute citation: | Income class | Rate | Notes | / | Assessable contributions (s 295-160) | 15% | Employer + salary-sacrifice + personal deductible (s 290-150 notice) |
 skills/international/austria/at-income-tax.md::rate table without a tax-authority or statute citation: | Asset | Life | Rate | / | Computer hardware/software | 3 years | 33.3% |
 skills/international/austria/at-income-tax.md::rate table without a tax-authority or statute citation: | Offence | Penalty | / | Late filing (Verspatungszuschlag) | Up to 10% of assessed tax |
 skills/international/austria/at-income-tax.md::rate table without a tax-authority or statute citation: | Pattern | Useful Life | Annual Rate | Notes | / | COMPUTER, LAPTOP, PC | 3 years | 33.3% | |
@@ -597,8 +594,6 @@ skills/international/honduras/honduras-payroll.md::rate table without a tax-auth
 skills/international/honduras/honduras-payroll.md::rate table without a tax-authority or statute citation: | Regime | Employee | Employer | / | EM | 2.5% × 11,903.13 = **L297.58** | 5.0% × 11,903.13 = **L595.16** |
 skills/international/honduras/honduras-payroll.md::rate table without a tax-authority or statute citation: | Regime | Employee | Employer | State | Monthly ceiling (2025) | / | **EM** (Enfermedad y Maternidad — sickness/maternity) | **2.5%** | **5.0%** | 0.5% | L11,903.13 |
 skills/international/honduras/honduras-payroll.md::rate table without a tax-authority or statute citation: | Topic | Figure | Source | / | ISR 2025 exempt threshold | L217,493.16 | Bloomberg Línea; KPMG; Auxadi |
-skills/international/hong-kong/hk-mpf.md::rate table without a tax-authority or statute citation: | Party | Rate | On | Monthly Cap | Monthly Floor | / | Employer | 5% | Relevant income | HK$1,500 (on $30,000) | No minimum (pays even if income <$7,100) |
-skills/international/hong-kong/hk-mpf.md::rate table without a tax-authority or statute citation: | Type | Vesting Rule | / | Employee mandatory contributions | 100% vested immediately (employee's money) |
 skills/international/hong-kong/hk-salaries-tax.md::rate table without a tax-authority or statute citation: | Net Chargeable Income Band (HK$) | Rate | Tax in Band | Cumulative Tax | / | First 50,000 | 2% | 1,000 | 1,000 |
 skills/international/hong-kong/hk-salaries-tax.md::rate table without a tax-authority or statute citation: | Year of Assessment | Reduction | Ceiling | / | 2022/23 | 100% | HK$6,000 |
 skills/international/hungary/hu-social-contributions.md::rate table without a tax-authority or statute citation: | Component | Rate | / | Pension (nyugdíjjárulék) | 10.00% |

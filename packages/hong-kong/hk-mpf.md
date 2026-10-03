@@ -1,10 +1,10 @@
 ---
 name: hk-mpf
 description: Use this skill whenever asked about Hong Kong Mandatory Provident Fund (MPF) contributions. Trigger on phrases like "MPF", "Mandatory Provident Fund", "強積金", "employer contribution Hong Kong", "employee contribution HK", "MPF self-employed", "TVC", "voluntary contributions", "MPF cap", "relevant income MPF", "MPFA", or any question about MPF contribution rates, caps, voluntary contributions, tax deductions, and self-employed obligations. ALWAYS read this skill before advising on MPF matters.
-version: 1.0
+version: 1.1
 jurisdiction: HK
 tax_year: 2024
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - hk-salaries-tax
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Regulator | Mandatory Provident Fund Schemes Authority (MPFA / 積金局) |
 | Portal | mpfa.org.hk |
 | Validated by | Pending — requires sign-off by a Hong Kong CPA or MPF intermediary |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Core Contribution Parameters (2024/25)
 
@@ -275,10 +275,10 @@ Annual employee mandatory: $18,000 (fully deductible -- equals cap).
 
 | Item | Rule |
 | --- | --- |
-| Severance payment offset | Employer may offset SP against employer MPF contributions (from accrued benefits derived from employer contributions) |
+| Severance payment offset | Abolished for employment on or after 1 May 2025: only the pre-transition portion of SP (service before 1 May 2025) and accrued benefits from employer voluntary contributions can still be offset |
 | Long service payment offset | Same as above |
-| Abolition (planned) | Government announced phased abolition from 2025 -- transition period applies |
-| Current position (2024/25) | Offset still permitted during transition |
+| Abolition | In force from 1 May 2025 (the transition date) under the Employment and Retirement Schemes Legislation (Offsetting Arrangement) (Amendment) Ordinance 2022; the Labour Department's Subsidy Scheme for Abolition of MPF Offsetting Arrangement shares employers' SP/LSP costs for post-transition service ([Labour Department](https://labour.gov.hk/eng/news/aoa.htm); [HKSAR press release, 1 May 2025](https://www.info.gov.hk/gia/general/202505/01/P2025043000324p.htm)) |
+| Current position (2025/26) | SP/LSP attributable to employment from 1 May 2025 cannot be offset against accrued benefits of employer mandatory contributions; employment straddling the transition date splits into a pre-transition portion (offsettable) and a post-transition portion (not offsettable) |
 
 ## Section 7 -- MPFA Approved Schemes
 

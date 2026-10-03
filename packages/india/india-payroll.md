@@ -1,10 +1,10 @@
 ---
 name: india-payroll
 description: Use this skill whenever asked about Indian payroll processing, employee salary calculations, TDS on salary (Section 192), Provident Fund (PF/EPF), Employee State Insurance (ESI), employer cost calculations, CTC breakdowns, net-to-gross or gross-to-net conversions, Indian payslip structure, Form 24Q/Form 138 filings, or any question about computing wages, deductions, or employer obligations in India. Trigger on phrases like "Indian payroll", "TDS on salary", "PF contribution", "ESI contribution", "EPF", "CTC breakdown", "new tax regime India", "old tax regime", "Form 16", "Form 130", "salary structure India", "basic DA HRA", "professional tax", "gratuity", "bonus India", or "minimum wages India".
-version: 1.0
+version: 1.1
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # India Payroll
 
-## India Payroll Skill v1.0
+## India Payroll Skill v1.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -41,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | TDS on salary | Progressive slab rates (new regime default) |
 | Minimum wage | State-specific (no single national minimum) |
 | Filing | TDS deposit by 7th; PF/ESI by 15th; Form 24Q/138 quarterly |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Income Tax Withholding (TDS on Salary)
 
@@ -199,7 +199,7 @@ India does NOT have a single national minimum wage. Rates are set by:
 | Tamil Nadu | 12,500 | 14,000 |
 | West Bengal | 10,000 | 11,500 |
 
-### National Floor Wage (Proposed under Code on Wages)
+### National Floor Wage (Code on Wages 2019, section 9; amount not yet notified)
 
 - **Proposed floor** — INR 178/day (~INR 4,628/month)
 - **Status** — Not yet notified as of May 2026

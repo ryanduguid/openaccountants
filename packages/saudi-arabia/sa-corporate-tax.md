@@ -4,7 +4,8 @@ description: "ALWAYS read this skill before touching any Saudi Arabian corporate
 jurisdiction: SA
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Mehran Habib
 review_status: pending_review
 tier: 2
@@ -13,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # SA Corporate Tax
 
-## Saudi Arabia — Corporate Income Tax — Skill v1.0
+## Saudi Arabia — Corporate Income Tax — Skill v1.1
 
 > **Produced by OpenAccountants (openaccountants.com)**
 >
@@ -52,7 +53,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Record retention | Minimum **10 years** (verify against current ZATCA guidance and Implementing Regulations) |
 | **Penalties** | **5% per month** late payment (capped at **25%**); separate failure-to-file fines |
 | Validated by | Pending — sign-off by a SOCPA member or ZATCA-recognised tax adviser |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### 1.1 Conservative Defaults
 
@@ -200,7 +201,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 4.6 Pillar Two — Domestic Minimum Top-up Tax (DMTT) — **TBC**
 
-- **DMTT status** — KSA has committed to OECD Pillar Two and is expected to implement a Domestic Minimum Top-up Tax (DMTT) effective 2025–2026. As of skill version 1.0 the precise enactment status, scope, and effective date are TBC — verify against the current ZATCA / Ministry of Finance instruments and the gazetted Royal Decree.
+- **DMTT status** — KSA has committed to OECD Pillar Two, but no enacting instrument had been identified as at September 2026 (see the quick-reference row and Section 11), and no gazetted Royal Decree or ZATCA implementing rule has been found. Treat a Saudi DMTT as not in force and re-verify against ZATCA and Ministry of Finance instruments before each filing season.
 - **Conservative default** — For any MNE group with consolidated revenue ≥ EUR 750 million in at least two of the four preceding fiscal years (the Pillar Two scope threshold), flag DMTT applicability for reviewer. Do not compute a top-up amount until enactment is confirmed and the GloBE / DMTT rules are loaded into the workflow.
 
 ### 4.7 Withholding Tax — Cross-Skill Reference

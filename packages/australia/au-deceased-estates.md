@@ -9,18 +9,18 @@ description: >
   2019/5, CGT event K3, super death benefits via the estate, testamentary trusts, and
   losses that die with the deceased. Trigger on "deceased estate", "date of death
   return", "executor tax", "inherited property CGT".
-version: 1.0
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-09-14
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Deceased Estates -- Date-of-Death Returns, Estate Trust Returns & Death CGT Skill v1.0
+# Australia Deceased Estates -- Date-of-Death Returns, Estate Trust Returns & Death CGT Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -183,7 +183,7 @@ Death severs all pre-death agent authorisations. Sequence: notify the ATO -> obt
 
 Apply for the concessional rate in the estate's FIRST trust return: resident individual rates with the full threshold for the first three income years (the short period to the first 30 June counts as year 1), no Medicare levy, no LITO, no extension beyond year 3, and the concession can be lost on material changes to the estate's circumstances (e.g. assets injected -- also a s 99A(2) trigger). From year 4 the published bands compress (Section 3.2): $416 nil band, 50% shade-in to $611, then $97.76 + 16% to $45,000 with the whole amount effectively at 16% once over $611, then the ordinary 30/37/45 brackets -- still no Medicare levy. **2026-27 caution:** the 15% second rate is law and mechanically shifts the shade-in constants; the ATO table (QC 49909) is published only to 2025-26 as at 20 August 2026 -- re-verify before lodging 2026-27.
 
-For a section 99 estate assessment, eligible imputation credits can offset tax liability. Include the corresponding dividend gross-up in assessable income and test franking-credit eligibility. For example, $30,000 taxable income already including the gross-up produces $1,888 tax at the 2025-26 year-2 rates; an eligible $600 franking offset reduces that to $1,288. This does not give the estate LITO or establish refundability of every excess credit. (Library, Tax/Trusts, paragraph 9-080.)
+For a section 99 estate assessment, eligible imputation credits can offset tax liability. Include the corresponding dividend gross-up in assessable income and test franking-credit eligibility. For example, $30,000 taxable income already including the gross-up produces $1,888 tax at the 2025-26 year-2 rates; an eligible $600 franking offset reduces that to $1,288. This does not give the estate LITO or establish refundability of every excess credit. (ITAA 1936 s 99; ITAA 1997 Subdiv 207-B and s 67-25; LITO is confined to individuals under ITAA 1936 s 159N.)
 
 ### Rule 6 -- Death is not a CGT event (Div 128)
 

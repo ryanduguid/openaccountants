@@ -11,11 +11,11 @@ description: >
   land tax, aggregation, thresholds and rates by state, surcharges, trusts,
   companies, exemptions, objections, GL treatment, and deductibility.
   ALWAYS read this skill before advising on Australian land tax.
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026 land tax year (1 Jan 2026 or 30 Jun 2025 ownership date per state)"
-last_updated: 2026-09-14
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Land Tax
 
-## Australia -- State & Territory Land Tax Skill v1.1
+## Australia -- State & Territory Land Tax Skill v1.2
 
 ## Section 1 -- Quick Reference
 
@@ -41,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Valuation authority | Valuer-General of each state/territory |
 | Assessment basis | Unimproved value (NSW, WA) or site value (VIC, SA, TAS) or average unimproved value (ACT) of taxable land, including leasehold interests treated as ownership under local law |
 | Filing portal | State revenue office online portals |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 ### 2025-26 Land Tax Thresholds & Base Rates (Summary)
 
@@ -148,19 +148,27 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 ### 4.4 South Australia (SA)
 
-**SA Land Tax General Rates (2025-26 land tax year -- assessed 30 Jun 2025)**
+**SA Land Tax General Rates (2025-26 land tax year, assessed 30 June 2025)**
 
-This table is unverified: its bands overlap and the supplied Library does not establish replacement rates for this period. Leave SA calculations pending until a consistent, period-specific source is supplied. The figures below are retained to identify the conflict.
+| Total Taxable Site Value | Amount of Tax |
+| --- | --- |
+| Up to $833,000 | Nil |
+| $833,001 to $1,338,000 | $0.50 per $100 or part above $833,000 |
+| $1,338,001 to $1,946,000 | $2,525 + $1.00 per $100 or part above $1,338,000 |
+| $1,946,001 to $3,116,000 | $8,605 + $2.00 per $100 or part above $1,946,000 |
+| $3,116,001 and over | $32,005 + $2.40 per $100 or part above $3,116,000 |
+
+**SA Land Tax General Rates (2026-27 land tax year, assessed 30 June 2026)**
 
 | Total Taxable Site Value | Amount of Tax |
 | --- | --- |
 | Up to $936,000 | Nil |
-| $936,001 to $1,504,000 | $0.50 per $100 above $936,000 |
-| $1,338,001 to $1,946,000 | $2,525 + $1.00 per $100 above $1,338,000 |
-| $1,946,001 to $3,116,000 | $8,605 + $2.00 per $100 above $1,946,000 |
-| $3,116,001 and over | $32,005 + $2.40 per $100 above $3,116,000 |
+| $936,001 to $1,504,000 | $0.50 per $100 or part above $936,000 |
+| $1,504,001 to $2,188,000 | $2,840 + $1.00 per $100 or part above $1,504,000 |
+| $2,188,001 to $3,504,000 | $9,680 + $2.00 per $100 or part above $2,188,000 |
+| $3,504,001 and over | $36,000 + $2.40 per $100 or part above $3,504,000 |
 
-**SA Land Tax Trust Rates (2026-27)** -- $25,000 threshold; $125 + $0.50 per $100 above $25,000 to $936,000; then $4,680 + $1.00 per $100 above $936,000 to $1,504,000, tiering up at the top band. 2025-26 general threshold was $833,000; RevenueSA indexed thresholds 12.44% for 2026-27.
+**SA Land Tax Trust Rates** -- $25,000 threshold in both years. 2025-26: $125 + $0.50 per $100 above $25,000 to $833,000; $4,165 + $1.00 per $100 above $833,000 to $1,338,000; $9,215 + $1.50 per $100 above $1,338,000 to $1,946,000; $18,335 + $2.40 per $100 above $1,946,000 to $3,116,000; $46,415 + $2.40 per $100 above $3,116,000. 2026-27: $125 + $0.50 per $100 above $25,000 to $936,000; $4,680 + $1.00 per $100 above $936,000 to $1,504,000; $10,360 + $1.50 per $100 above $1,504,000 to $2,188,000; $20,620 + $2.40 per $100 above $2,188,000 to $3,504,000; $52,204 + $2.40 per $100 above $3,504,000. Thresholds are indexed each year to the Valuer-General's site value movement (13.8% for 2025-26, 12.44% for 2026-27). Read 4 October 2026 from [RevenueSA, Rates and thresholds](https://www.revenuesa.sa.gov.au/landtax/rates-and-thresholds).
 
 - **Trust threshold** — Trusts have a $25,000 threshold (no general tax-free threshold).
 - **Foreign surcharge** — SA does not levy a foreign owner land tax surcharge; foreign purchasers pay a stamp duty surcharge instead.

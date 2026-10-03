@@ -4,8 +4,8 @@ description: Tier 2 California content skill for entity formation covering tax y
 jurisdiction: US-CA
 category: formation
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -96,7 +96,7 @@ The practical reality is this: if you have any meaningful nexus to California �
 
 - **Nature of the fee** — The fee is not a tax on net income; it is a tax on gross California-sourced total income (broadly, gross receipts less returns and allowances, but before deduction of cost of goods sold or any operating expenses except for certain pass-through allocations). It is therefore possible — and common — for a low-margin LLC to owe a substantial fee while reporting a net loss.
 - **Estimated fee - Form FTB 3536 due date and penalty** — Due on or before the 15th day of the 6th month of the taxable year (June 15 for calendar-year LLCs). The estimated fee must be at least the amount of the prior year's fee, and the underpayment penalty under R&TC §17942(d) is 10% of the underpayment unless the estimate equals or exceeds the prior year's fee.  _(R&TC §17942(d))_
-- **Final fee true-up - Form 568** — The final fee is reconciled on Form 568, due on or before the 15th day of the 3rd month after year-end (March 15 for calendar-year LLCs). The Form 568 mechanics, including the income-sourcing rules for the LLC fee, are covered in detail in `us-ca-smllc-form-568` and `us-ca-llc-fee-and-tax`; this skill addresses only the formation-year planning implications.
+- **Final fee true-up - Form 568** — The final fee is reconciled on Form 568, due on or before the 15th day of the 3rd month after year-end for an LLC classified as a partnership (March 15 for calendar-year LLCs), or the 15th day of the 4th month (April 15) for a single-member LLC owned by an individual ([FTB, 2025 Form 568 booklet](https://www.ftb.ca.gov/forms/2025/2025-568-booklet.html)). The Form 568 mechanics, including the income-sourcing rules for the LLC fee, are covered in detail in `us-ca-smllc-form-568` and `us-ca-llc-fee-and-tax`; this skill addresses only the formation-year planning implications.
 
 Because the LLC fee is a gross-receipts tax, it disproportionately affects e-commerce, agency, and pass-through service businesses with substantial California revenue but thin margins. A California-located freelance developer billing $260,000 of California-sourced revenue will owe the $800 minimum franchise tax PLUS the $900 LLC fee — a combined $1,700 floor before any income tax — even if the developer's net profit is much lower.
 
@@ -370,7 +370,7 @@ The Wyoming "tax advantage" turns out to be illusory for this LLC. Wyoming's $60
 | Apr 1, 2025 | First Statement of Information (within 90 days) | LLC-12 | $20 | Corp. Code §17702.09 |
 | Apr 15, 2025 | First annual minimum franchise tax | FTB 3522 | $800 | R&TC §17941 |
 | Jun 15, 2025 | Estimated LLC fee (if expected California gross receipts ≥ $250K) | FTB 3536 | Variable | R&TC §17942(d) |
-| Mar 15, 2026 | Annual LLC return + LLC fee true-up | Form 568 | Variable | R&TC §18601, §18633.5 |
+| Mar 15, 2026 (Apr 15, 2026 for a single-member LLC owned by an individual) | Annual LLC return + LLC fee true-up | Form 568 | Variable | R&TC §18601, §18633.5 |
 | Apr 15, 2026 | Second annual minimum franchise tax | FTB 3522 | $800 | R&TC §17941 |
 | Apr 30, 2027 | Biennial Statement of Information (every 2 years from formation month) | LLC-12 | $20 | Corp. Code §17702.09 |
 

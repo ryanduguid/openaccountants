@@ -239,7 +239,7 @@ For an individual making a contribution to an eligible DGR fundraising event in 
 
 Deduction = contribution minus benefit. Maximum 2 attendance contributions per event per individual; auction purchases unlimited; a DGR running 15 or more same-type eligible events in a year loses eligibility for the later ones. Political contributions follow separate rules (the $2 removal does not apply).
 
-For otherwise qualifying individual contributions, $500 with a $100 benefit allows a $400 deduction; $1,000 with a $150 benefit allows $850. See [ATO minor-benefit conditions](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/valuing-contributions-and-minor-benefits/minor-benefits) and Library, Tax/Deductions, raffle and fundraising-event rules.
+For otherwise qualifying individual contributions, $500 with a $100 benefit allows a $400 deduction; $1,000 with a $150 benefit allows $850. See [ATO minor-benefit conditions](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/valuing-contributions-and-minor-benefits/minor-benefits) and [ATO, Fundraising events](https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations/gifts-and-fundraising/fundraising-events) (ITAA 1997 s 30-15, items 7 and 8).
 
 ### Rule 6 -- FBT for NFP employers
 
@@ -249,7 +249,7 @@ Two regimes, never mixed:
 
 **FBT rebate (s 65J FBTAA):** rebatable employers -- charity institutions (not PBIs), religious institutions, certain scientific and public educational institutions, trade unions, employer associations, and NFPs established for community service, cultural, sporting, or resource-development purposes. Rebate = 47% of gross FBT payable, but only on the first $30,000 grossed-up per employee; excess attracts full FBT with no rebate. The rebate is claimed in the FBT return; the employer still lodges an FBT return and pays the net amount.
 
-**Capping:** Check the exclusions for car parking and entertainment outside salary packaging separately. Salary-packaged meal entertainment and entertainment facility leasing share a separate $5,000 grossed-up cap. Only the excess is added to other benefits for the applicable general exemption or rebate cap. For an eligible hospital employee, $17,000 of other grossed-up benefits plus $4,000 of these packaged entertainment benefits fits within the two caps and creates no FBT excess. The FBT year is 1 April to 31 March. Register, calculate and claim the applicable concession in the FBT return. (Library, Tax/Fringe Benefits Tax (FBT), NFP capping rules.)
+**Capping:** Check the exclusions for car parking and entertainment outside salary packaging separately. Salary-packaged meal entertainment and entertainment facility leasing share a separate $5,000 grossed-up cap. Only the excess is added to other benefits for the applicable general exemption or rebate cap. For an eligible hospital employee, $17,000 of other grossed-up benefits plus $4,000 of these packaged entertainment benefits fits within the two caps and creates no FBT excess. The FBT year is 1 April to 31 March. Register, calculate and claim the applicable concession in the FBT return. (FBTAA 1986 ss 5B(1E), 57A and 65J.)
 
 ### Rule 7 -- GST concessions for NFPs
 

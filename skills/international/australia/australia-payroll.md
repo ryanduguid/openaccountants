@@ -268,7 +268,7 @@ Not strictly required on payslips but must be provided to employees on request. 
 | Medium withholders | Monthly payment; confirm withholding class | Normally 21st of the following month. A qualifying deferred BAS payer may use the 28th in a month with the relevant quarterly BAS obligation, or 28 February for December withholding |
 | Large withholders | Electronic payment by weekday schedule | Saturday/Sunday withholding: second Monday afterwards; Monday/Tuesday: first Monday afterwards; Wednesday: second Thursday afterwards; Thursday/Friday: first Thursday afterwards |
 
-Confirm the ATO withholding class, including any determination varying it. The deferral does not cover an entity choosing or required to pay GST monthly. If a due date is a weekend or public holiday, use the next business day. For example, a large withholder deducting on Monday 7 September 2026 pays by Monday 14 September 2026. (Library, Superannuation/Tax Administration, PAYG, TFNs, lines 774 to 853.)
+Confirm the ATO withholding class, including any determination varying it. The deferral does not cover an entity choosing or required to pay GST monthly. If a due date is a weekend or public holiday, use the next business day. For example, a large withholder deducting on Monday 7 September 2026 pays by Monday 14 September 2026. (TAA 1953 Sch 1 Subdiv 16-B; [ATO, Paying and reporting PAYG withholding amounts](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts).)
 
 ### Superannuation Remittance
 

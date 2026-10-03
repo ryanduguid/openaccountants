@@ -259,7 +259,7 @@ $32,500 (2026-27; indexed up from $30,000 on 1 July 2026). Includes employer SG 
 
 ### Rule 9 -- s 290-170 notice (personal contribution deduction)
 
-- **Notice requirement (s 290-170):** Give a valid notice of intent to the fund by the earlier of the day the relevant return is lodged or the end of the following financial year. Separately, receive the fund's acknowledgement before claiming the deduction. The notice deadline does not also require acknowledgement by 30 June. A timely notice acknowledged in July before a later return is lodged can satisfy these requirements. Check all validity conditions, including fund membership, retained contributions, income-stream commencement and contribution splitting; other deduction conditions still apply. Without a valid notice and acknowledgement, no deduction is available. (Library, Superannuation/Contributions to Superannuation Funds and RSAs.)
+- **Notice requirement (s 290-170):** Give a valid notice of intent to the fund by the earlier of the day the relevant return is lodged or the end of the following financial year. Separately, receive the fund's acknowledgement before claiming the deduction. The notice deadline does not also require acknowledgement by 30 June. A timely notice acknowledged in July before a later return is lodged can satisfy these requirements. Check all validity conditions, including fund membership, retained contributions, income-stream commencement and contribution splitting; other deduction conditions still apply. Without a valid notice and acknowledgement, no deduction is available. (ITAA 1997 ss 290-170 and 290-175.)
 
 ### Rule 10 -- Division 293 (additional 15% for high earners)
 

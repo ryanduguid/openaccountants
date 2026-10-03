@@ -9,18 +9,18 @@ description: >
   on "GST withholding", "GST at settlement", "margin scheme", "going concern", "new residential
   premises", "subdivision GST". Covers classification, withholding mechanics, worked arithmetic
   and escalation lines. ALWAYS read this skill before touching any property GST work.
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-09-14
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia GST and Real Property Skill v1.1
+# Australia GST and Real Property Skill v1.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, or contracts. Do not rely on it to file, pay, settle, or take a tax position without review by a qualified professional.
 
@@ -129,7 +129,7 @@ GST on an eligible taxable sale of real property may be worked out as **1/11th o
 - **Written agreement.** Supplier and recipient must agree in writing that the margin scheme applies, **on or before the making of the supply** -- settlement, not exchange (s 75-5(1), (1A)). The Commissioner can allow a later agreement (reviewable decision; PS LA 2005/16) but never plan on it. The clause lives in the contract: sight it, never draft it (R-AU-GP-1).
 - **Eligibility.** Not available if the supplier acquired the entire interest through a supply that was *ineligible for the margin scheme* -- centrally, a fully taxable supply on which GST was worked out **without** the margin scheme (s 75-5(2), (3)). Eligible acquisition histories include: purchases from unregistered vendors, input-taxed purchases (existing residential), pre-1 July 2000 holdings, GST-free going concern or farmland acquisitions (special margin rules in s 75-11 apply -- often the vendor's acquisition cost carries through), and purchases that themselves used the margin scheme.
 - **Margin** = consideration for the sale minus consideration for the acquisition (s 75-10(2)). Development, construction, and holding costs do NOT increase the acquisition consideration -- they are recovered only through ordinary ITCs.
-- **Pre-1 July 2000 holdings:** the margin may instead be sale price minus an **approved valuation** of the property, generally as at 1 July 2000 (day of registration if registered later) -- s 75-10(3). An approved valuation must meet MSV 2020/1 and the applicable date and method conditions. The Library permits a professional written valuation meeting recognised valuation standards; qualifying arm's length contract consideration where the contract was signed or exchanged before the valuation date; or the most recent qualifying government rating or land-tax valuation before that date. The contract method cannot be used for land held by government and unimproved on 1 July 2000 but improved later. Method and date selection, including the required completion date, remain referral matters: R-AU-GP-2.
+- **Pre-1 July 2000 holdings:** the margin may instead be sale price minus an **approved valuation** of the property, generally as at 1 July 2000 (day of registration if registered later) -- s 75-10(3). An approved valuation must meet MSV 2020/1 and the applicable date and method conditions. MSV 2020/1 permits a professional written valuation meeting recognised valuation standards; qualifying arm's length contract consideration where the contract was signed or exchanged before the valuation date; or the most recent qualifying government rating or land-tax valuation before that date. The contract method cannot be used for land held by government and unimproved on 1 July 2000 but improved later. Method and date selection, including the required completion date, remain referral matters: R-AU-GP-2.
 - **The purchaser gets NO input tax credit** on a margin scheme acquisition (s 75-20), and no tax invoice showing GST exists. Price the deal accordingly.
 - **Flow-on:** because the purchaser's acquisition was not a fully-taxable-without-margin supply, the purchaser can itself use the margin scheme on a later taxable resale (fresh written agreement required). A full-GST purchase permanently kills margin eligibility for that interest.
 - **RW interaction:** withholding on a margin scheme sale is 7% of the contract price, credited against the actual margin GST in the supplier's BAS -- over-withholding refunds through the BAS (Example 2).
@@ -211,7 +211,7 @@ Increasing adjustment = 4 x $55,000 x (100% - 80%) = $44,000
 
 At the next adjustment period, cumulative actual use of 80% is compared with the previous 80%, so the adjustment is nil. If cumulative use then rises to 90%, the decreasing adjustment is $220,000 x (90% - 80%) = $22,000. Retain each previous adjustment's actual application in the register; do not reuse the original 100% after an adjustment. If an apartment sells as new residential premises in 2029, that sale is taxable (RW applies) and later periods can throw off decreasing adjustments; if BuildCo instead delists and rents solely for 5+ years, the premises stop being new, the sale becomes input taxed, and the credits unwind toward nil. Method selection and the register need tax agent sign-off -- sketch, flag, escalate.
 
-A $660 GST-inclusive desk is below the $1,000 GST-exclusive exclusion, so a change from wholly business use to half private use does not create a general Div 129 adjustment. A separate $4,400 GST-inclusive computer falls in the two-period band. Apply the threshold per acquisition and check other adjustment provisions separately. (Library, GST/GST Adjustments.)
+A $660 GST-inclusive desk is below the $1,000 GST-exclusive exclusion, so a change from wholly business use to half private use does not create a general Div 129 adjustment. A separate $4,400 GST-inclusive computer falls in the two-period band. Apply the threshold per acquisition and check other adjustment provisions separately. (GST Act ss 129-10 and 129-20.)
 
 ### Example 5 -- Subdivision enterprise assessment
 

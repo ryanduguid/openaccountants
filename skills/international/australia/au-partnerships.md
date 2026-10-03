@@ -124,7 +124,7 @@ Sam (salary $185,000) and his spouse run a small olive grove in equal partnershi
 - Other assets test: plant and stock $60,000 < $100,000 -- **fail**.
 - Commissioner's discretion: no flood/drought special circumstances; olives are past their lead time -- **not sought**.
 
-Result: Sam's $9,000 share is deferred against future profits of the activity. His salary exceeds the primary-production exception's $40,000 limit on assessable income from other sources, excluding net capital gains. His spouse has no other income and qualifies for that exception, so her $9,000 share is not deferred under Division 35 even though the four tests fail. Any resulting individual tax loss follows its separate rules. (Library, Tax/Assessable Income.)
+Result: Sam's $9,000 share is deferred against future profits of the activity. His salary exceeds the primary-production exception's $40,000 limit on assessable income from other sources, excluding net capital gains. His spouse has no other income and qualifies for that exception, so her $9,000 share is not deferred under Division 35 even though the four tests fail. Any resulting individual tax loss follows its separate rules. (ITAA 1997 ss 35-10(2) and 35-10(4); [ATO, Non-commercial losses](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/non-commercial-losses).)
 
 ### Example 4 -- Fractional CGT on admitting a partner
 

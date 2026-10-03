@@ -164,7 +164,7 @@ Classification: Combined BAS payment (GST + PAYG). PAYG instalment component = 5
 
 ### 5.1 Entry into PAYG instalment system
 
-- **Resident individual entry:** The Library gives three thresholds: instalment income of at least $4,000, tax payable on the latest notice of assessment of at least $1,000, and estimated current-year tax of at least $500, with the SAPTO qualification. Confirm the ATO notification before treating instalments as payable. A resident with $10,000 instalment income, $1,200 assessed tax, $750 estimated tax and no SAPTO meets these thresholds. Voluntary entry is available below them. (Library, Tax/Administration and Assessment.)
+- **Resident individual entry:** The ATO applies three entry thresholds together: instalment income of at least $4,000, tax payable on the latest notice of assessment of at least $1,000, and estimated current-year tax of at least $500, with the SAPTO qualification. Confirm the ATO notification before treating instalments as payable. A resident with $10,000 instalment income, $1,200 assessed tax, $750 estimated tax and no SAPTO meets these thresholds. Voluntary entry is available below them. (TAA 1953 Sch 1 s 45-15; [ATO, Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments).)
 - **Method choice** — The ATO notifies an instalment amount, an instalment rate, or a choice between them. When a choice is offered, the method selected on the first activity statement applies for the rest of that income year. The notified figures come from the latest return with the ATO's adjustments; use the notice, not a historical uplift percentage.  _([ATO, Calculate your PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/calculate-your-payg-instalments))_
 
 ### 5.2 Instalment rate method (T1, T2/T3, T11 and 5A)
@@ -204,7 +204,7 @@ For example, Q3 estimated annual tax of $12,000, earlier instalments of $8,000 a
 
 ### 6.2 Late BAS lodgement penalty
 
-- **Late BAS lodgement penalty:** For a small entity, the base is one penalty unit per 28 days or part, up to five units, subject to the statutory conditions, adjustments and remission. Date the applicable unit: $313 from 1 July 2023 to 6 November 2024, $330 from 7 November 2024 to 30 June 2026, and $364 from 1 July 2026. Five units are respectively $1,565, $1,650 and $1,820. Do not apply one rate across every period. (Library, Tax/Administration and Assessment.) Medium withholders pay twice and large withholders five times the base amount.
+- **Late BAS lodgement penalty:** For a small entity, the base is one penalty unit per 28 days or part, up to five units, subject to the statutory conditions, adjustments and remission. Date the applicable unit: $313 from 1 July 2023 to 6 November 2024, $330 from 7 November 2024 to 30 June 2026, and $364 from 1 July 2026. Five units are respectively $1,565, $1,650 and $1,820. Do not apply one rate across every period. (TAA 1953 Sch 1 s 286-80; Crimes Act 1914 s 4AA.) Medium withholders pay twice and large withholders five times the base amount.
 
 ### 6.3 Safe harbour
 
@@ -214,7 +214,7 @@ For example, Q3 estimated annual tax of $12,000, earlier instalments of $8,000 a
 ## Section 7 -- Annual instalment election
 
 - **Annual election eligibility:** The most recently notified notional tax must be below $8,000. The taxpayer must be neither registered nor required to register for GST, or be voluntarily registered and report and pay GST annually, and must not be a partner in a partnership that is registered or required to register. A company must also satisfy the GST joint-venture and instalment-group restrictions. Low turnover alone is insufficient: a voluntarily GST-registered sole trader who reports GST quarterly with $60,000 income and $5,000 notional tax fails the GST condition. Confirm the choice by the 28th day after the end of the first instalment quarter. _([ATO, Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments))_
-- **Election and timing:** Confirm the annual election on the ATO notice and retain its confirmation; eligibility alone does not make the election. Use the applicable notified due date. An annual instalment is generally due at the end of the first quarter of the following income year. Check first-entry and loss-of-eligibility timing separately. (Taxation Administration Act 1953 (Cth) sch 1 s 45-140; Library, Tax/Individuals.)
+- **Election and timing:** Confirm the annual election on the ATO notice and retain its confirmation; eligibility alone does not make the election. Use the applicable notified due date. An annual instalment is generally due at the end of the first quarter of the following income year. Check first-entry and loss-of-eligibility timing separately. (Taxation Administration Act 1953 (Cth) sch 1 s 45-140.)
 
 ## Section 8 -- Edge cases
 

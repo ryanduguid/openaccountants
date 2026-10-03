@@ -133,10 +133,10 @@ This skill does NOT cover:
 
 ## Section 5 - The standard deduction for work-related expenses, from 2026-27
 
-- **Standard deduction for work-related expenses** — A standard deduction of up to $1,000 for work-related expenses applies to Australian tax residents who earn income from work. It commences on 1 July 2026 and first applies to the 2026-27 individual tax return. It does not apply to the 2025-26 return. AUD
+- **Standard deduction for work-related expenses** — A standard deduction of up to $1,000 for work-related expenses applies to Australian tax residents who earn income from work. It commenced on 1 July 2026 and first applies to the 2026-27 individual tax return. It does not apply to the 2025-26 return. AUD
 
 A standard deduction of up to $1,000 for work-related expenses applies to Australian tax residents
-who earn income from work. It commences on 1 July 2026 and first applies to the 2026-27 individual
+who earn income from work. It commenced on 1 July 2026 and first applies to the 2026-27 individual
 tax return. It does not apply to the 2025-26 return.
 
 According to the ATO's summary of the measure:

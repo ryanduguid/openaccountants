@@ -320,7 +320,7 @@ If the client provides only a GL and payroll data:
 | Lodgment/payment dates | ato.gov.au -- Lodging your FBT return and paying; agent lodgment program May/June 2027 |
 | Cars: statutory, operating cost, logbooks | FBT guide for employers Ch 7; ato.gov.au rates page (deemed interest 8.27%) |
 | EV exemption, PHEV end, home charging | ato.gov.au -- Electric cars exemption; PCG 2024/2; LCT thresholds 2026-27 |
-| Announced EV wind-back (not yet law) | ato.gov.au new legislation QC 107286 -- Electric car discount (2026-27 Budget, 5 May 2026) |
+| Announced EV wind-back (not yet law) | ato.gov.au new legislation QC 107286 -- Electric car discount (2026-27 Budget, 5 May 2026); exposure draft legislation released September 2026, consultation closed 28 September 2026: full exemption to 31 March 2027, then from 1 April 2027 a $75,000 price cap with a 25% concession above it, and a flat 25% concession from 1 April 2029 ([PwC](https://www.pwc.com.au/tax/tax-alerts/government-announces-phased-changes-to-the-FBT-electric-car-exemption.html)) |
 | Car parking | ato.gov.au -- Car parking fringe benefits (threshold $11.48; small business exemption) |
 | Minor benefits | s 58P FBTAA; TR 2007/12 |
 | Meal entertainment | Division 9A FBTAA; s 51AEA ITAA36 |

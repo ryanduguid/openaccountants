@@ -171,7 +171,7 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 | Payroll tax VIC | 4.85% (regional 1.2125%), $1.0m; surcharges >$10m | SRO Vic |
 | Payroll tax QLD | 4.75% <=$6.5m / 4.95% above; $1.3m deduction phasing to $10.4m | QRO |
 | Other states | WA 5.5%/$1m; SA 0-4.95%/$1.5m; TAS 4%+6.1%/$1.25m; ACT 6.75% to 8.75% tiered/$1.75m; NT 5.5% (6.5% at $100m+)/$2.5m | state revenue offices |
-| ASIC annual review (Pty Ltd) | **$342 from 1 Jul 2026** ($329 prior); registration $636; SMSF special purpose $70 | ASIC fee indexation |
+| ASIC annual review (Pty Ltd) | **$342 from 1 Jul 2026** ($329 prior); registration $636; SMSF special purpose $70 | [ASIC INFO 30, reissued July 2026](https://asic.gov.au/for-business/payments-fees-and-invoices/asic-fees/fees-for-commonly-lodged-documents/) |
 
 ## Maintenance rule
 
