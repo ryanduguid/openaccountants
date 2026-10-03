@@ -1,6 +1,6 @@
 # Everything a contributor needs to run the generators, the CI gates and the
 # tests: `python3 -m pip install -r requirements-dev.txt` (or `make install`).
-# CI installs only scripts/requirements-validation.txt plus ./mcp, per job.
+# CI's unit-test job uses this manifest; validation jobs use their own subset.
 -r scripts/requirements-validation.txt
 
 # The suites run under unittest (`make test`); pytest runs them too, for

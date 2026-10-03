@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import socket
 import subprocess
 import sys
@@ -158,8 +159,12 @@ class LiveServerTests(unittest.TestCase):
         if proc.poll() is None:
             if os.name == "nt":
                 # The virtual-environment launcher can own a separate server process.
-                subprocess.run(
-                    ["taskkill", "/PID", str(proc.pid), "/T", "/F"],
+                executable = shutil.which("taskkill")
+                if executable is None:
+                    raise RuntimeError("Windows test cleanup requires taskkill")
+                # Trusted Windows PATH, fixed arguments and the test's own child PID.
+                subprocess.run(  # nosec B603
+                    [str(Path(executable).resolve(strict=True)), "/PID", str(proc.pid), "/T", "/F"],
                     capture_output=True,
                     check=True,
                     timeout=10,
