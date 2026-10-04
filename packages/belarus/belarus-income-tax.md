@@ -1,10 +1,10 @@
 ---
 name: belarus-income-tax
 description: Use this skill whenever asked about Belarus personal income tax (podokhodny nalog / подоходный налог) for individuals, employees, self-employed persons, freelancers, and individual entrepreneurs. Trigger on phrases like "how much income tax do I pay in Belarus", "Belarus PIT", "podokhodny nalog", "13% flat tax", "25% increased rate", "FSZN contributions", "Social Protection Fund", "Belgosstrakh", "Professional Income Tax app", "self-employed Belarus", "individual entrepreneur tax", "BYN salary net pay", "tax declaration deadline 31 March", or any question about computing or filing personal income tax for a Belarusian resident or Belarus-source income. Also trigger when computing net pay from gross BYN salary, applying standard deductions, classifying bank-statement income/expenses, or advising on the annual self-declaration. This skill covers PIT rates (13%/25%/30%), FSZN social contributions, accident insurance, standard deductions, the Professional Income Tax regime, individual entrepreneur taxation, filing forms, deadlines, and penalties. ALWAYS read this skill before touching any Belarus income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: BY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Belarus Income Tax -- Individuals & Self-Employed
 
-## Belarus Income Tax -- Individuals & Self-Employed Skill v0.1
+## Belarus Income Tax -- Individuals & Self-Employed Skill v0.2
 
 ## Section 1 -- Quick Reference
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Payment deadline (declared income) | 1 June of the following year (one calculator cites 15 May) [RESEARCH GAP — reviewer to confirm exact 2025 payment date] |
 | Validated by | Pending — requires sign-off by a qualified Belarusian tax adviser |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Personal Income Tax (PIT) Rates -- 2025
 
@@ -46,7 +46,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- |
 | Standard rate (employment, most income) | 13% | Flat rate covering ~98% of employed persons (Source: president.gov.by tax-system page) |
 | Increased rate on high income (2025) | 25% | Applies to the portion of total annual income exceeding **BYN 220,000** (raised from BYN 200,000 for 2024) (Source: president.gov.by; eor.by; taxatlas.io) |
-| Top rate | 30% | Article 214 §3 sets 30% where calendar-year income exceeds **BYN 500,000** (some summaries cite BYN 600,000) [RESEARCH GAP — reviewer to confirm exact 2025 PIT threshold and whether it applies to all individuals or mainly IEs] (Source: president.gov.by; secondary summaries) |
+| Top rate | 30% | From 1 January 2026, article 214 paragraphs 1.2 and 1.3 of the Tax Code (Law No. 127-Z of 30 December 2025) tax the aggregate incomes listed in article 199 paragraph 82 at 25% on the excess over **BYN 350,000** up to BYN 600,000 (dividends above BYN 350,000 also at 25%) and at 30% on the excess over **BYN 600,000**, settled on the individual's annual declaration; for 2025 the increased rate was 25% on the excess over BYN 220,000 and there was no 30% band ([MNS commentary, pravo.by](https://pravo.by/novosti/analitika/2026/january/91710/)) |
 | Concealed / illegally-derived income | 26% | Penal rate on income concealed from tax authorities or from illegal business activity; figure cited for 2024 [RESEARCH GAP — reviewer to confirm persists for 2025] (Source: GSL) |
 | Gambling / lottery winnings | 4% | (Source: GSL) |
 
