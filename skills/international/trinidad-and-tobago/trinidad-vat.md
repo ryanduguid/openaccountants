@@ -4,7 +4,8 @@ description: Use this skill whenever asked to prepare, review, or create a Trini
 jurisdiction: TT
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -73,7 +74,7 @@ Before classifying ANY transaction, you MUST know these facts about the client. 
 
 ### Standard Rate
 
-- **12.5%** — Standard rate on all taxable supplies and imports not otherwise specified [T1]  _(VAT Act 1989, Section 6)_
+- **12.5%** — Standard rate on all taxable supplies and imports not otherwise specified [T1]  _(Value Added Tax Act (Chap. 75:06), Ministry of the Attorney General consolidation to Act 1 of 2016, s 7 — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.06.pdf ; Inland Revenue Division, VAT page — https://www.ird.gov.tt/VAT)_
 
 **Standard Rate table**  _(VAT Act 1989, Section 6)_
 
@@ -83,11 +84,11 @@ Before classifying ANY transaction, you MUST know these facts about the client. 
 
 ### Zero-Rated Supplies (0%) [T1]
 
-- **Zero-rated supplies list** — Exports of goods; International transport of goods and passengers; Supplies of unprocessed food (basic food basket items -- rice, flour, sugar, milk, bread, fresh fruit, vegetables, fresh meat, fresh fish); Agricultural inputs (fertilizers, animal feed, seeds); Prescription drugs and pharmaceutical products; Crude oil and natural gas (upstream supplies); Printed books and newspapers; Water (piped, domestic use)  _(VAT Act, First Schedule)_
+- **Zero-rated supplies list** — Exports of goods; International transport of goods and passengers; Supplies of unprocessed food (basic food basket items -- rice, flour, sugar, milk, bread, fresh fruit, vegetables, fresh meat, fresh fish); Agricultural inputs (fertilizers, animal feed, seeds); Prescription drugs and pharmaceutical products; Crude oil and natural gas (upstream supplies); Printed books and newspapers; Water (piped, domestic use)  _(Value Added Tax Act (Chap. 75:06), Ministry of the Attorney General consolidation to Act 1 of 2016, s 8 and Schedule 2 (zero-rating) — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.06.pdf)_
 
 ### Exempt Supplies (No VAT, No Input Credit) [T1]
 
-- **Exempt supplies list** — Financial services (interest, foreign exchange, life insurance premiums); Residential rental (unfurnished); Medical and dental services (public and private); Educational services (approved institutions); Postage stamps (at face value); Burial and cremation services; Land (sale of bare land)  _(VAT Act, Second Schedule)_
+- **Exempt supplies list** — Financial services (interest, foreign exchange, life insurance premiums); Residential rental (unfurnished); Medical and dental services (public and private); Educational services (approved institutions); Postage stamps (at face value); Burial and cremation services; Land (sale of bare land)  _(Value Added Tax Act (Chap. 75:06), Ministry of the Attorney General consolidation to Act 1 of 2016, s 3 and Schedule 1 (exempt services) — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.06.pdf)_
 
 ### 2a. Determine Transaction Type [T1]
 
@@ -175,8 +176,8 @@ When a Trinidad and Tobago registered person receives services from a non-reside
 
 ## Step 6: Key Thresholds [T1]
 
-- **Mandatory VAT registration** — Annual taxable supplies exceeding TTD 600,000  _(VAT Act, Section 9 (registration threshold))_
-- **Voluntary registration** — Below TTD 600,000 (may register voluntarily if making taxable supplies)  _(VAT Act, Section 9 (registration threshold))_
+- **Mandatory VAT registration** — Annual commercial supplies exceeding TTD 600,000 in any twelve-month period (threshold from 1 January 2023; the 2016 consolidation shows the earlier TTD 500,000)  _(Value Added Tax Act (Chap. 75:06), Ministry of the Attorney General consolidation to Act 1 of 2016, ss 20 and 24 — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.06.pdf ; Inland Revenue Division, VAT registration page — https://www.ird.gov.tt/VAT/registration)_
+- **Voluntary registration** — Below TTD 600,000, a person making commercial supplies may apply to register  _(Value Added Tax Act (Chap. 75:06), Ministry of the Attorney General consolidation to Act 1 of 2016, ss 20 and 24 — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.06.pdf ; Inland Revenue Division, VAT registration page — https://www.ird.gov.tt/VAT/registration)_
 
 **Key Thresholds table**  _(VAT Act, Section 9 (registration threshold))_
 
@@ -208,7 +209,7 @@ When a Trinidad and Tobago registered person receives services from a non-reside
 
 ## Step 8: Tax Invoice Requirements [T1]
 
-- **Valid VAT tax invoice requirements** — A valid VAT tax invoice must contain: 1. The words "Tax Invoice"; 2. Supplier's name, address, and VAT registration number; 3. Customer's name and VAT registration number (B2B); 4. Date of issue; 5. Sequential invoice number; 6. Description of goods or services; 7. Quantity and unit price; 8. Total value excluding VAT; 9. VAT rate applied; 10. VAT amount; 11. Total value including VAT  _(VAT Act, Section 23)_
+- **Valid VAT tax invoice requirements** — A valid VAT tax invoice must contain: 1. The words "Tax Invoice"; 2. Supplier's name, address, and VAT registration number; 3. Customer's name and VAT registration number (B2B); 4. Date of issue; 5. Sequential invoice number; 6. Description of goods or services; 7. Quantity and unit price; 8. Total value excluding VAT; 9. VAT rate applied; 10. VAT amount; 11. Total value including VAT  _(Value Added Tax Act (Chap. 75:06), Ministry of the Attorney General consolidation to Act 1 of 2016, s 36 — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.06.pdf)_
 
 ### Domestic Purchases
 
