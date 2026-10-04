@@ -408,8 +408,6 @@ Establish the jurisdiction first, then read that jurisdiction's own guidance:
 | Australian Capital Territory | ACT Revenue Office, https://www.revenue.act.gov.au/ |
 | Northern Territory | Territory Revenue Office, https://treasury.nt.gov.au/dtf/territory-revenue-office |
 
-### 8.3 State and territory taxes are not federal, and are not uniform
-
 Land tax paid on an income-producing property is generally deductible in the year it is incurred.
 Transfer duty on the purchase is not deductible; it is a cost base element. See `au-land-tax.md`
 and `au-stamp-duty.md` for the jurisdiction-specific detail.

@@ -65,8 +65,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Journal writing off a related-party receivable | s 109F forgiveness | Deemed dividend at year end, subject to surplus |
 | Interest income at exactly the benchmark rate | Existing complying loan | Verify MYR actually paid, not just interest accrued |
 
-## Section 3 -- GL sweep library
-
 Div 7A work starts with the balance sheet, not the loan register the client says exists.
 
 ## Section 4 -- Worked examples
@@ -167,8 +165,6 @@ Shareholder repays $20,000 on 25 June 2027, redraws $25,000 on 15 July 2027. A r
 | PCG 2017/13, TR 2015/4, TD 2015/20, TD 2011/15 | Under review, none withdrawn |
 | Withdrawn-ruling protection | s 358-20(3) Sch 1 TAA: favourable withdrawn rulings keep applying to pre-withdrawal arrangements |
 | Legislative response | 2018-19 Budget UPE measure still unenacted (prospective from Royal Assent); 2026-27 Budget: 30% minimum tax on discretionary trusts from 1 July 2028 with corporate beneficiaries denied the offset -- consultation closed 31 July 2026, not yet law |
-
-### Rule 11 -- UPEs after Bendel: guidance status (as at 1 August 2026)
 
 Practical position for 2026-27: a passive UPE creates no Div 7A consequence; actual loans company-to-trust remain Div 7A loans; converted UPEs stay loans; s 100A and Subdiv EA screens always run.
 

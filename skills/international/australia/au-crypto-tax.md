@@ -15,8 +15,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Australia Crypto Tax -- CGT & Income Skill v1.4
 
-## Australia Crypto Tax -- CGT & Income Skill v1.4
-
 ## Section 1 -- Quick Reference
 
 **Quick Reference**
