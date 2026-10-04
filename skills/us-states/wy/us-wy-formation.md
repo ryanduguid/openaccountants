@@ -4,7 +4,8 @@ description: Tier 2 Wyoming content skill for entity formation covering tax year
 jurisdiction: US-WY
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -224,7 +225,7 @@ Use cases:
 - Real estate investor with 12 properties: form 1 Series LLC with 12 internal series, one per property, in lieu of 12 separate LLCs. One annual report, one EIN at the master level, separate operating records per series.
 - Holding company with multiple lines of business that want internal separation but not the administrative overhead of separate legal entities.
 
-- **Series LLC federal tax treatment uncertainty** — Federal tax treatment is unsettled. Prop. Treas. Reg. § 301.7701-1 (proposed in 2010 but never finalized as of 2025) would treat each series as a separate entity for federal tax purposes. Pending final regulations, the federal tax treatment is uncertain, and some practitioners file a separate Form 1065 or Schedule C per series while others treat the master LLC as a single disregarded entity.  _(Prop. Treas. Reg. § 301.7701-1)_
+- **Series LLC federal tax treatment uncertainty** — Federal tax treatment is unsettled. Prop. Treas. Reg. § 301.7701-1 (proposed in 2010 and not finalized as of October 2026; the Federal Register shows no final rule) would treat each series as a separate entity for federal tax purposes. Pending final regulations, the federal tax treatment is uncertain, and some practitioners file a separate Form 1065 or Schedule C per series while others treat the master LLC as a single disregarded entity.  _(Prop. Treas. Reg. § 301.7701-1)_
 
 ## 7. Series LLC (W.S. § 17-29-211)
 
@@ -595,7 +596,7 @@ This skill draws on the following authorities. Citations are to 2025 versions of
 - **Broker reporting (1099-DA, 2025 effective date)** — Broker reporting (1099-DA, 2025 effective date).  _(Internal Revenue Code § 6045)_
 - **Check-the-box classification** — Check-the-box classification.  _(Treas. Reg. § 301.7701-3)_
 - **Form 5472 reporting** — Form 5472 reporting.  _(Treas. Reg. § 1.6038A-1)_
-- **Series entity classification (proposed)** — Series entity classification (proposed 2010, not finalized as of 2025).  _(Proposed Treas. Reg. § 301.7701-1)_
+- **Series entity classification (proposed)** — Series entity classification (proposed 2010, not finalized as of October 2026).  _(Proposed Treas. Reg. § 301.7701-1)_
 - **Virtual currency as property** — Virtual currency as property.  _(IRS Notice 2014-21)_
 - **Charging-order income allocation** — Charging-order income allocation.  _(IRS Rev. Rul. 77-137)_
 - **Staking reward realization** — Staking reward realization.  _(IRS Rev. Rul. 2023-14)_

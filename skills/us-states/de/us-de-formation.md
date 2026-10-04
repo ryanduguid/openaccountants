@@ -4,8 +4,8 @@ description: Tier 2 Delaware content skill for entity formation covering tax yea
 jurisdiction: US-DE
 category: formation
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -291,7 +291,7 @@ Real estate: One series per property. A tenant slip-and-fall claim against Serie
 
 ### 5.4 Tax treatment
 
-- **Series LLC federal and state tax treatment** — The IRS issued Proposed Treasury Regulation § 301.7701-1(a)(5) in 2010 (still proposed as of 2025) treating each series as a separate entity for federal tax purposes. Most practitioners follow the proposed regs and treat each series separately. Each series files its own federal return (or is a separate disregarded entity reporting on its owner's return). State income tax treatment is inconsistent — some states (e.g., Illinois) recognize the firewall; others (e.g., California) do not, and a California foreign-qualifying Series LLC pays an $800 minimum franchise tax per series, defeating the cost savings.  _(Proposed Treasury Regulation § 301.7701-1(a)(5))_
+- **Series LLC federal and state tax treatment** — The IRS issued Proposed Treasury Regulation § 301.7701-1(a)(5) in 2010 (still proposed as of October 2026; the Federal Register shows no final rule) treating each series as a separate entity for federal tax purposes. Most practitioners follow the proposed regs and treat each series separately. Each series files its own federal return (or is a separate disregarded entity reporting on its owner's return). State income tax treatment is inconsistent — some states (e.g., Illinois) recognize the firewall; others (e.g., California) do not, and a California foreign-qualifying Series LLC pays an $800 minimum franchise tax per series, defeating the cost savings.  _(Proposed Treasury Regulation § 301.7701-1(a)(5))_
 
 ### 5.5 Franchise tax
 
@@ -380,11 +380,11 @@ AUDIT FLASH POINT: Foreign-qualification failure. When a Delaware client is iden
 
 ### 9.2 The 30-day deadline
 
-- **§83(b) election filing deadline and process** — The §83(b) election must be filed with the IRS within 30 days of the property transfer date — not 30 days from formation, not 30 days from signing, but 30 days from the founder writing the check and receiving the stock certificate. The election is filed by: 1. Drafting the §83(b) election statement (one-page document with specific required content under Treas. Reg. § 1.83-2(e)) 2. Mailing by certified mail with return receipt to the IRS service center where the founder files her individual return 3. Keeping the green return-receipt card as proof of timely filing 4. Providing a copy to the corporation 5. Attaching a copy to the founder's individual return for that year (no longer required for tax years after 2015, but still considered best practice)  _(Treas. Reg. § 1.83-2(e))_
+- **§83(b) election filing deadline and process** — The §83(b) election must be filed with the IRS within 30 days of the property transfer date — not 30 days from formation, not 30 days from signing, but 30 days from the founder writing the check and receiving the stock certificate. The election is filed by: 1. Completing Form 15620 (Section 83(b) Election, released November 2024) or drafting a statement with the content required by Treas. Reg. § 1.83-2(e) 2. Filing it online through the founder's IRS online account (available since 29 June 2025 (IRS posting date); the system issues a confirmation) or mailing it by certified mail with return receipt to the IRS service center where the founder files her individual return 3. Keeping the online confirmation or the green return-receipt card as proof of timely filing 4. Providing a copy to the corporation 5. Attaching a copy to the founder's individual return for that year (no longer required for tax years after 2015, but still considered best practice)  _(Treas. Reg. § 1.83-2(e); IRS Form 15620 and the IRS mobile-friendly forms page, https://www.irs.gov/forms-pubs/mobile-friendly-forms)_
 
 ### 9.3 Why the 30-day deadline is hard
 
-- **Reasons the §83(b) deadline is difficult to meet** — - The 30 days runs from stock issuance, not formation. Founders who form the corp on day 1 and don't get around to executing the stock purchase agreement until day 45 have already created a §83(b) trap they don't realize exists. - The IRS does not accept e-filed §83(b) elections as of 2025. The election must be paper-filed by mail. (The IRS announced in 2024 an intent to develop an electronic process; as of mid-2025 it is not yet live.) - There is no relief for late filing. Treas. Reg. § 1.83-2(f) does not permit relief under § 9100. The Tax Court and IRS have rejected late filings even when the founder's lawyer made the mistake. - Founders sometimes confuse §83(b) with the §83(i) deferral election for private company stock, which is a different (and rarely-used) election.  _(Treas. Reg. § 1.83-2(f))_
+- **Reasons the §83(b) deadline is difficult to meet** — - The 30 days runs from stock issuance, not formation. Founders who form the corp on day 1 and don't get around to executing the stock purchase agreement until day 45 have already created a §83(b) trap they don't realize exists. - Online filing of Form 15620 through an IRS online account has been available since 29 June 2025 (IRS posting date); before that the election had to be mailed. Use one route only, and keep the online confirmation or the certified-mail receipt. - There is no relief for late filing. Treas. Reg. § 1.83-2(f) does not permit relief under § 9100. The Tax Court and IRS have rejected late filings even when the founder's lawyer made the mistake. - Founders sometimes confuse §83(b) with the §83(i) deferral election for private company stock, which is a different (and rarely-used) election.  _(Treas. Reg. § 1.83-2(f))_
 
 ### 9.4 When to file §83(b) — decision rule
 
@@ -477,7 +477,7 @@ Two co-founders, Maya and Devon, building a B2B SaaS product. Accepted into the 
 | Treasury reserve | 2,000,000 shares (will become part of option pool at Series A) |
 | Founder vesting | 4-year monthly vesting with 1-year cliff |
 | Founder purchase price | $0.0001 × shares issued (e.g., 4,000,000 × $0.0001 = $400 personal check) |
-| §83(b) election | **MANDATORY** — filed within 30 days, certified mail with green card |
+| §83(b) election | **MANDATORY** — filed within 30 days, online through an IRS online account (Form 15620) or by certified mail with green card |
 | Bylaws | YC SAFE-compatible default bylaws |
 | Initial board | Two founders (institutional board seats added at seed and Series A) |
 | Initial officers | Maya = CEO + Secretary; Devon = CTO + Treasurer |
@@ -615,7 +615,7 @@ Before signing off on a Delaware entity formation engagement, the credentialed r
 - [ ] Registered agent engaged and first-year fee paid
 - [ ] Operating Agreement (LLC) or Bylaws + organizational consents (C-Corp) executed
 - [ ] EIN obtained (or in process for non-US founders)
-- [ ] §83(b) election filed within 30 days for every founder receiving restricted stock — **certified mail green cards collected and filed in the corporate minute book**
+- [ ] §83(b) election filed within 30 days for every founder receiving restricted stock — **online filing confirmations or certified mail green cards collected and filed in the corporate minute book**
 - [ ] Foreign qualification filed in the operating state (or documented determination that no operating-state nexus exists)
 - [ ] Operating-state franchise tax / minimum tax / annual report / statement of information schedule documented and entered into the client's tax calendar
 - [ ] Delaware March 1 (corp) / June 1 (LLC) deadlines entered into the practice's calendar system
