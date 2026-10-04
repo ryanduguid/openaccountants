@@ -1,10 +1,10 @@
 ---
 name: albania-income-tax
 description: Use this skill whenever asked about Albania personal income tax for self-employed individuals and employees. Trigger on phrases like "how much tax do I pay in Albania", "Albanian income tax", "DIVA", "D1 annual return", "tatime.gov.al", "self-employed Albania", "ALL tax brackets", "0% small business tax", "social and health contributions Albania", "PAYE Albania", "13% 23% income tax", "dividend tax Albania", "disguised employment", or any question about filing or computing personal income tax for a resident or non-resident individual in Albania. Also trigger when preparing or reviewing an annual individual return, computing the 0%/15%/23% self-employed regime, applying the monthly PAYE withholding schedule, or advising on social/health contributions. This skill covers progressive employment rates, the self-employed business regime, investment income, social/health contributions, the per-child deduction, filing thresholds, penalties, and interaction with VAT. ALWAYS read this skill before touching any Albanian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: AL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Albania Personal Income Tax -- Self-Employed & Individuals
 
-## Albania Personal Income Tax -- Self-Employed & Individuals Skill v0.1
+## Albania Personal Income Tax -- Self-Employed & Individuals Skill v0.2
 
 ## Section 1 -- Quick Reference
 
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual return deadline | 31 March of the following year (e.g. 31 March 2026 for 2025) [PwC; tatime.gov.al] |
 | Validated by | Pending — requires sign-off by an Albanian-qualified accountant/tax advisor |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 | Research confidence | Medium — several figures flagged [RESEARCH GAP] below require reviewer confirmation against current Council of Ministers (CoM) decisions and General Instruction No. 26/2023 |
 
 ### Tax Rate Brackets (2025)
@@ -235,7 +235,7 @@ All examples are for the 2025 tax year and use the figures cited in Sections 1 a
 Monthly employment income ALL 90,000 (gross). This falls in the 60,001–200,000 band: PAYE = 13% on the amount exceeding ALL 30,000.
 - Taxable above allowance = 90,000 − 30,000 = ALL 60,000
 - PIT withheld = 13% × 60,000 = ALL 7,800
-- Employee social + health = 11.2% × 90,000 = ALL 10,080 (90,000 is within the 2025 floor ALL 40,000 / ceiling ~ALL 176,416 [RESEARCH GAP — confirm ceiling])
+- Employee social + health = 11.2% × 90,000 = ALL 10,080 (90,000 is within the 2025 floor ALL 40,000 / ceiling ALL 176,416)
 - Net pay = 90,000 − 7,800 − 10,080 = **ALL 72,120**
 
 **Classification:** Employment income; PIT withheld ALL 7,800; employee contributions ALL 10,080; net ALL 72,120.
@@ -249,7 +249,7 @@ Monthly employment income ALL 90,000 (gross). This falls in the 60,001–200,000
 Monthly gross ALL 250,000 → top band (200,001+): PIT = ALL 22,100 + 23% on the amount exceeding ALL 200,000.
 - Excess = 250,000 − 200,000 = ALL 50,000
 - PIT = 22,100 + (23% × 50,000) = 22,100 + 11,500 = **ALL 33,600**
-- Employee contributions: social 9.5% capped at the ceiling; health 1.7% uncapped. Using the reported ceiling ~ALL 176,416 [RESEARCH GAP — confirm]: social = 9.5% × 176,416 = ALL 16,759.52; health = 1.7% × 250,000 = ALL 4,250 → contributions = ALL 21,009.52
+- Employee contributions: social 9.5% capped at the ceiling; health 1.7% uncapped. Using the 2025 ceiling ALL 176,416: social = 9.5% × 176,416 = ALL 16,759.52; health = 1.7% × 250,000 = ALL 4,250 → contributions = ALL 21,009.52
 
 **Classification:** Employment income; PIT withheld ALL 33,600; contributions ALL 21,009.52 (ceiling-dependent — reviewer to confirm ceiling figure).
 
@@ -356,7 +356,7 @@ Because ≥80% of the self-employed income is from a single client, the anti-dis
 
 *Column checks: employee 9.5 + 1.7 = 11.2%; employer 15.0 + 1.7 = 16.7%; combined employer + employee = 11.2 + 16.7 = 27.9%.* [PwC: other taxes]
 
-Social insurance is computed on a gross monthly base between an annual floor and ceiling set by Council of Ministers decision (2025 floor aligned with the minimum wage ALL 40,000; ceiling reported ~ALL 176,416 in payroll guides **[RESEARCH GAP — reviewer to confirm exact 2025 ceiling against the current CoM decision]**). Health insurance (1.7% each side) has **no ceiling** — it applies to full gross. [PwC; Eurofast Payroll Guide 2025]
+Social insurance is computed on a gross monthly base between an annual floor and ceiling set by Council of Ministers decision (2025 floor aligned with the minimum wage ALL 40,000; ceiling ALL 176,416 for 2025 per PwC and HLB Albania; from 1 January 2026 the minimum is ALL 50,000 and the maximum is disputed between ALL 186,416 (PwC, HLB) and ALL 220,520 (the ARS reading of DCM No. 776), see albania-social-contributions.md). Health insurance (1.7% each side) has **no ceiling** — it applies to full gross. [PwC; Eurofast Payroll Guide 2025]
 
 ### 5.7 Social and Health Contributions — Self-Employed (non-agricultural)
 
@@ -567,7 +567,7 @@ ONBOARDING QUESTIONS -- ALBANIA INCOME TAX
 | Children's education deduction | up to ALL 100,000/year (income < ALL 1,200,000) | HLB Albania |
 | VAT registration | turnover > ALL 10,000,000 | PwC; tatime.gov.al |
 | 2025 contribution floor | ALL 40,000/month (= minimum wage) | Eurofast; ARS; HLB |
-| 2025 contribution ceiling | ~ALL 176,416/month **[RESEARCH GAP — confirm]** | Eurofast Payroll Guide 2025 |
+| 2025 contribution ceiling | ALL 176,416/month | Eurofast Payroll Guide 2025; HLB Albania; PwC |
 
 ### Sources
 
