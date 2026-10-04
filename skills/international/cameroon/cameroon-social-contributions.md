@@ -1,7 +1,7 @@
 ---
 name: cameroon-social-contributions
 description: Use this skill whenever asked about Cameroon (CM) social security contributions (CNPS), payroll-linked levies, or personal income tax on salaries. Trigger on phrases like "CNPS contributions", "Cameroon social security", "how much CNPS do I pay", "pension vieillesse", "prestations familiales", "risques professionnels", "Cameroon payroll tax", "Crédit Foncier CFC", "Fonds National de l'Emploi FNE", "Cameroon PIT", "IRPP Cameroun", "centimes additionnels communaux CAC", "Cameroon PAYE", "Cameroon expat 183 days", or any question about Cameroon employer/employee contribution computation. Also trigger when classifying bank statement transactions that relate to CNPS debits, DGI/impôts payments, CFC or FNE remittances from Afriland, SGBC, BICEC, Ecobank, UBA Cameroon, or other Cameroonian banks. This skill covers CNPS pension/family/occupational-risk rates, the XAF 750,000 monthly ceiling, CFC and FNE payroll levies, the 10%/15%/25%/35% PIT scale (and the 11%/16.5%/27.5%/38.5% effective rates with the 10% CAC surcharge), local council/audiovisual levies, monthly remittance deadlines, registration, penalties, bank statement classification, and edge cases. ALWAYS read this skill before touching any Cameroon payroll or contribution work.
-version: 0.2
+version: 0.3
 jurisdiction: CM
 tax_year: 2025
 last_updated: 2026-10-04
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cameroon Social Security Contributions (CNPS) & Payroll
 
-## Cameroon Social Security Contributions (CNPS) & Payroll Skill v0.2
+## Cameroon Social Security Contributions (CNPS) & Payroll Skill v0.3
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Nkinyam Courage Ndasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -107,7 +107,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-CM-SOC-1 -- Gross salary unknown** — Trigger: gross monthly taxable salary not provided. Message: "Gross monthly taxable salary is mandatory. CNPS and PIT both depend on it (with a XAF 750,000/month ceiling on the pension and family branches). Cannot proceed without it."
 - **R-CM-SOC-2 -- Occupational-risk class unknown for a precise employer figure** — Trigger: a precise employer total is requested but the enterprise risk classification (1.75% / 2.50% / 5.00%) is unknown. Message: "Employer occupational-risk rate depends on the enterprise's CNPS risk classification. I will use the minimum 1.75% as a conservative default and flag it; the exact rate must be confirmed against the CNPS notification before filing."
 - **R-CM-SOC-3 -- Self-employed / voluntary insured** — Trigger: the person is a voluntary/self-insured contributor rather than a salaried employee. Message: "Voluntary insured persons contribute 8.40% of declared income to the pension branch [CLEISS], but declared-income rules and eligibility require CNPS confirmation. Escalate to a Cameroon-qualified accountant."  _(CLEISS)_
-- **R-CM-SOC-4 -- Penalty / arrears quantification** — Trigger: client has unpaid CNPS or PIT and asks for the arrears figure. Message: "Late payment carries a 10% penalty plus 1.5%/month interest (interest capped at 50% of principal) per secondary summaries [RESEARCH GAP — not verified against the CGI text]. Do not quantify arrears without official DGI/CNPS statements. Escalate to a Cameroon-qualified accountant."
+- **R-CM-SOC-4 -- Penalty / arrears quantification** — Trigger: client has unpaid CNPS or PIT and asks for the arrears figure. Message: "For PIT and other spontaneous-payment taxes, late declaration or payment carries a 10% per month penalty capped at 30% of the principal plus late interest of 1.5% per month (CGI, Livre des procédures fiscales art. L 106, 2022 consolidated edition); interest on reassessed amounts is capped at 50% (art. L 95 and L 98). CNPS arrears follow CNPS rules, which are not in the CGI [RESEARCH GAP — CNPS penalty schedule not verified]. Do not quantify arrears without official DGI/CNPS statements. Escalate to a Cameroon-qualified accountant."
 - **R-CM-SOC-5 -- Expatriate residence determination** — Trigger: a foreign national's tax status is in question. Message: "A foreign national present > 183 days in a calendar year is tax-domiciled in Cameroon and taxed on worldwide income [PwC]. Day counts and treaty relief must be confirmed by a qualified accountant before applying payroll taxes."  _(PwC)_
 
 ## Section 3 -- Payment pattern library
@@ -352,7 +352,7 @@ Flag these for reviewer confirmation when data is ambiguous.
 
 ### T2-6 -- Arrears / penalties
 
-- **T2-6** — Trigger: unpaid CNPS or PIT. Issue: 10% penalty + 1.5%/month interest (capped at 50% of principal); filing penalties 10%/month capped at 30%; understatement 30%/100%/150% [secondary sources only — RESEARCH GAP]. Action: do not quantify without official statements. Escalate to a qualified accountant.
+- **T2-6** — Trigger: unpaid CNPS or PIT. Issue: for PIT, late declaration or payment of a spontaneous-payment tax carries 10% per month capped at 30% plus 1.5% per month interest (art. L 106); interest on reassessments is 1.5% per month capped at 50% (art. L 95 and L 98); understatement penalties are 30%, 100% or 150% for good faith, bad faith or fraud (art. L 96); no return after a formal notice means taxation d'office plus 100%, 150% on recidivism (art. L 97); all from the CGI 2022 consolidated edition. CNPS arrears follow CNPS rules [RESEARCH GAP — CNPS penalty schedule not verified]. Action: do not quantify without official statements. Escalate to a qualified accountant.
 
 ### T2-7 -- Sub-SMIG wages
 
@@ -516,17 +516,17 @@ If the client provides only a bank statement and no other information:
 
 ### Penalties
 
-[RESEARCH GAP — from secondary summaries (TaxesForExpats, Lloyds Bank Trade, Hallelaw 2025), not verified against the CGI text or PwC. Internally consistent; verify before relying on exact figures.]
+Tax penalties below are confirmed against the CGI, Livre des procédures fiscales, art. L 95 to L 98 and L 106, in the 2022 consolidated edition, the latest full edition the DGI publishes online (https://www.impots.cm/sites/default/files/documents/CGI%202022.pdf); the Finance Law 2026 explanatory statement proposes stronger sanctions under art. L 97 and L 99 for non-filing after a formal notice. CNPS penalty figures are not in the CGI and remain unverified [RESEARCH GAP — CNPS penalty schedule not verified].
 
 **Penalties**
 
 | Breach | Penalty |
 | --- | --- |
-| Late payment | 10% + 1.5%/month interest (interest capped at 50% of principal) |
-| Failure to file / late declaration | 10%/month, capped at 30% |
-| Insufficient declaration (good faith) | 30% |
-| Bad faith | 100% |
-| Fraud | 150% |
+| Late payment | 1.5%/month interest; for spontaneous-payment taxes such as PIT withholding, late declaration or payment also carries 10%/month capped at 30% of the principal (art. L 106) |
+| Failure to file / late declaration | Spontaneous-payment taxes: 10%/month capped at 30% (art. L 106); no return after a formal notice: taxation d'office plus 100%, 150% on recidivism (art. L 97) |
+| Insufficient declaration (good faith) | 30%, plus 1.5%/month interest capped at 50% (art. L 96, L 95 and L 98) |
+| Bad faith | 100% (art. L 96) |
+| Fraud | 150% (art. L 96) |
 
 ### Residence / expat
 
@@ -558,7 +558,7 @@ If the client provides only a bank statement and no other information:
 - **Never omit family-allowance branch** — NEVER omit the employer family-allowance branch (7% general) — it is the largest single employer cost.
 - **Never conflate CNPS and DGI/IRPP** — NEVER conflate CNPS (social security) with DGI/IRPP (income tax) — separate obligations, separate authorities.
 - **Never apply PIT below floor / never treat as CNPS exemption** — NEVER apply PIT below the XAF 62,000/month floor; but NEVER treat that floor as a CNPS exemption.
-- **Never quote penalty figures as definitive** — NEVER quote penalty figures as definitive — they are unverified secondary sources [RESEARCH GAP].
+- **Quote penalty figures with their article** — Quote tax penalty figures with their article of the CGI Livre des procédures fiscales (L 95 to L 106, 2022 consolidated edition) and confirm them against the current edition before relying on them; CNPS penalty figures remain unverified [RESEARCH GAP].
 - **Never assume 7% family rate for agricultural/education** — NEVER assume the 7% family rate for agricultural or private-education employers.
 - **Never present figures as definitive** — NEVER present contribution or PIT figures as definitive — label as estimated and direct the client to official CNPS/DGI statements.
 - **Never quantify arrears/penalties without official statements** — NEVER quantify arrears or penalties without official statements — escalate to a Cameroon-qualified accountant.
