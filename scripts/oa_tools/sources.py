@@ -357,6 +357,9 @@ NON_GOV_AUTHORITY = frozenset((
                           # a script viewer with no text, and its English PDF is
                           # the 2015 edition, so this is where the current text
                           # is read. Bare .az with no "gov" label.
+    'dgid.sn',            # Direction generale des Impots et des Domaines, Senegal:
+                          # publishes the annotated consolidated Code general des
+                          # impots (storage/docs/CGI-2025.pdf). Bare .sn.
     'slov-lex.sk',        # Slov-Lex, the Slovak Ministry of Justice's Collection of
                           # Laws portal; static.slov-lex.sk serves each Act's dated
                           # consolidated text without JavaScript. Bare .sk.

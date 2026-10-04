@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Senegal (tax year 2025) — r
 jurisdiction: SN
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,11 +20,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Currency** — West African CFA franc (XOF / FCFA)  _(Code Général des Impôts (CGI))_
 - **Tax authority** — Direction Générale des Impôts et des Domaines (DGID)  _(Code Général des Impôts (CGI) — https://www.impotsetdomaines.gouv.sn/)_
 - **Residence basis of taxation** — Residents are taxed on worldwide income; non-residents on Senegal-source income  _(Code Général des Impôts (CGI) — https://taxsummaries.pwc.com/senegal/individual/residence)_
-- **Top personal income tax (IRPP) rate** — 43% %  _(Code Général des Impôts (CGI) — IRPP barème — https://taxsummaries.pwc.com/senegal/individual/taxes-on-personal-income)_
-- **Standard corporate income tax rate** — 30% percent  _(Code Général des Impôts (CGI) — Impôt sur les sociétés — https://taxsummaries.pwc.com/senegal/corporate/taxes-on-corporate-income)_
-- **Does Senegal levy VAT (TVA)?** — Yes — standard TVA rate of 18% %  _(Code Général des Impôts (CGI) — Taxe sur la valeur ajoutée — https://taxsummaries.pwc.com/senegal/corporate/other-taxes)_
+- **Top personal income tax (IRPP) rate** — 43% on the band above XOF 50,000,000 (scale: 0% to 630,000; 20% to 1,500,000; 30% to 4,000,000; 35% to 8,000,000; 37% to 13,500,000; 40% to 50,000,000; 43% above), and the tax after the family-quotient reduction may not exceed 43% of taxable income  _(Code général des impôts (Loi 2012-31, annotated consolidation to January 2025, DGID), art. 173(1) and art. 174 — https://www.dgid.sn/storage/docs/CGI-2025.pdf ; https://taxsummaries.pwc.com/senegal/individual/taxes-on-personal-income)_
+- **Standard corporate income tax rate** — 30 percent  _(Code général des impôts (Loi 2012-31, annotated consolidation to January 2025, DGID), art. 36 — https://www.dgid.sn/storage/docs/CGI-2025.pdf ; https://taxsummaries.pwc.com/senegal/corporate/taxes-on-corporate-income)_
+- **Does Senegal levy VAT (TVA)?** — Yes — standard TVA rate of 18%  _(Code général des impôts (Loi 2012-31, annotated consolidation to January 2025, DGID), art. 369 — https://www.dgid.sn/storage/docs/CGI-2025.pdf ; https://taxsummaries.pwc.com/senegal/corporate/other-taxes)_
 - **Annual personal income tax return deadline** — Before 1 May of the year following the income year  _(Code Général des Impôts (CGI) — https://taxsummaries.pwc.com/senegal/individual/tax-administration)_
-- **Annual corporate income tax return deadline** — 30 April of the year following the financial year  _(Code Général des Impôts (CGI) — https://taxsummaries.pwc.com/senegal/corporate/tax-administration)_
+- **Annual corporate income tax return deadline** — 30 April of the year following the financial year, with the financial statements  _(Code général des impôts (Loi 2012-31, annotated consolidation to January 2025, DGID), art. 30 — https://www.dgid.sn/storage/docs/CGI-2025.pdf ; https://taxsummaries.pwc.com/senegal/corporate/tax-administration)_
 
 <!-- openaccountants-cta-block -->
 
