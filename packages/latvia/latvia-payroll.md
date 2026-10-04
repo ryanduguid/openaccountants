@@ -1,10 +1,10 @@
 ---
 name: latvia-payroll
 description: Use this skill whenever asked about Latvia payroll processing for employed persons. Trigger on phrases like "Latvia payroll", "VSAOI", "IIN Latvia", "PIT withholding Latvia", "social contributions Latvia", "Darba devēja ziņojums", "employer's report Latvia", "non-taxable minimum Latvia", "algas nodokļa grāmatiņa", "wage tax book", "solidarity tax Latvia", "business risk state fee", "uzņēmējdarbības riska valsts nodeva", "net salary Latvia", "gross to net Latvia", "minimum wage Latvia", "EDS report", "VID withholding", "salary calculation Latvia", or any question about computing employee pay, personal income tax withholding, or state social insurance contributions for Latvia-based employees. This skill covers IIN (personal income tax) — flat 25.5% monthly withholding, with the 33% band and +3% surtax settled at the annual income declaration — VSAOI state social insurance (employee and employer shares), the business risk state fee, the fixed non-taxable minimum, dependant and disability allowances, solidarity tax, minimum wage, and EDS filing obligations for tax year 2025. ALWAYS read this skill before processing any Latvia payroll.
-version: 0.1
+version: 0.2
 jurisdiction: LV
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Latvia Payroll
 
-## Latvia Payroll Skill v0.1
+## Latvia Payroll Skill v0.2
 
 Tier 2 — research-verified. NOT yet signed off by a Latvian-licensed accountant. Treat every figure as provisional pending professional review.
 
@@ -38,7 +38,7 @@ Tier 2 — research-verified. NOT yet signed off by a Latvian-licensed accountan
 | Key legislation | Law "On Personal Income Tax" (Likums "Par iedzīvotāju ienākuma nodokli", IIN); Law "On State Social Insurance" (Likums "Par valsts sociālo apdrošināšanu"); Solidarity Tax Law (Solidaritātes nodokļa likums); Labour Law (Darba likums) |
 | Filing portal | VID Electronic Declaration System (EDS) -- eds.vid.gov.lv |
 | Validated by | Pending -- requires sign-off by a Latvian-licensed accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 The 2025 PIT reform took effect 1 January 2025: the income-tested differentiated non-taxable minimum was abolished and replaced with a fixed EUR 510/month minimum, and the prior three-rate PIT was replaced with the two-rate 25.5%/33% system. (Source: Ministry of Finance, "Changes in taxation and finances from 2025"; Lex & Finance.)
 
@@ -105,7 +105,7 @@ The employer pays its VSAOI share on top of gross salary.
 
 - **Fee nature** — This is a flat per-head amount, NOT a percentage of wages, and is part of total employer cost.  _(VID; Cabinet Regulation 2025; mkd.gov.lv; ifinanses 2026)_
 
-[RESEARCH GAP — reviewer to confirm] The retirement-age split (employer 20.77% / employee 9.25% = 30.02%) is published by PwC Worldwide Tax Summaries (Latvia, "Other taxes") and MindLink's 2025 rate table. VSAA's own page states only the combined standard 34.09% and notes rates vary by insured-person status without publishing the per-category percentages; the per-category distribution should still be confirmed against the current Cabinet Regulation on VSAOI rate distribution.
+The retirement-age split (employer 20.77% / employee 9.25% = 30.02%) is set by paragraph 3 of Cabinet Regulation No. 786 on the distribution of the state social insurance contribution rate, and the standard 23.59% / 10.50% = 34.09% by section 18(1) of the law On State Social Insurance; PwC Worldwide Tax Summaries and MindLink's 2025 table match them ([likumi.lv, Cabinet Regulation No. 786](https://likumi.lv/ta/id/319695); [likumi.lv, Par valsts sociālo apdrošināšanu](https://likumi.lv/ta/id/45466)).
 
 ### Solidarity Tax (solidaritātes nodoklis)
 
@@ -328,7 +328,7 @@ At exactly the minimum wage the minimum VSAOI contribution base is met, so no em
 | Business risk state fee | flat, per employee | 0.36 |
 | Total employer cost | 1,800 + 373.86 + 0.36 | **2,174.22** |
 
-The 30.02% split is reviewer-pending (see Section 4 RESEARCH GAP).
+The 30.02% split (employer 20.77%, employee 9.25%) is set by Cabinet Regulation No. 786, paragraph 3.
 
 ### Example 6 — High earner (monthly withholding stays flat 25.5%)
 
@@ -376,7 +376,7 @@ The 30.02% split is reviewer-pending (see Section 4 RESEARCH GAP).
 
 | Item | Why it needs reviewer judgement |
 | --- | --- |
-| Retirement-age VSAOI split (20.77% / 9.25%) | Sourced from MindLink 2025; VSAA emphasises the combined rate. Confirm per-category distribution against the Cabinet Regulation. [RESEARCH GAP] |
+| Retirement-age VSAOI split (20.77% / 9.25%) | Cabinet Regulation No. 786, paragraph 3 ([likumi.lv](https://likumi.lv/ta/id/319695)); PwC and MindLink agree. |
 | Minimum-contribution exemptions | First-3-months, multiple-employer, disability and student exemptions must be detailed against current statute. [RESEARCH GAP] |
 | Ordering of VSAOI vs. non-taxable minimum in the PIT base | Confirm exact statutory sequencing. [RESEARCH GAP] |
 | Annual reconciliation of the 33% band | Monthly payroll withholds flat 25.5% (VID); the 33% band on annual income above EUR 105,300 is settled by the individual on the annual income declaration. Confirm any employer reporting touchpoints for high earners. |
@@ -501,7 +501,7 @@ If you cannot establish wage tax book status, pension status, or YTD gross, STOP
 - PwC Worldwide Tax Summaries — Latvia (Tax administration; annual declaration deadlines): https://taxsummaries.pwc.com/latvia/individual/tax-administration
 - VSAA — Tax-exempt minimum for pensions in 2025: https://www.vsaa.gov.lv/en/article/application-tax-exempt-minimum-amount-pensions-2025
 - KPMG Latvia — Amendments to the Law "On Taxes and Fees" (late-payment interest, Sept 2025): https://kpmg.com/lv/en/home/insights/2025/09/amendments-to-the-law-on-taxes-and-fees.html
-- KPMG Baltics — Tax Card Latvia 2025: https://assets.kpmg.com/content/dam/kpmg/lv/pdf/Taxcard/Tax_card_Latvia_2025_.pdf [RESEARCH GAP — PDF itself not machine-parsed; the figures it would corroborate (25.5%/33%, VSAOI 23.59%/10.50%, EUR 105,300 cap, EUR 510 minimum, EUR 740 minimum wage, EUR 0.36 fee) have been independently confirmed against VID, PwC, VSAA, FM and Cabinet/Ministry sources above.]
+- KPMG Baltics — Tax Card Latvia 2025: https://assets.kpmg.com/content/dam/kpmg/lv/pdf/Taxcard/Tax_card_Latvia_2025_.pdf [The PDF was not machine-parsed; the figures it would corroborate (25.5%/33%, VSAOI 23.59%/10.50%, EUR 105,300 cap, EUR 510 minimum, EUR 740 minimum wage, EUR 0.36 fee) are confirmed against VID, PwC, VSAA, FM, section 18(1) of the law On State Social Insurance and Cabinet Regulation No. 786.]
 
 ### Tax-Year Boundary Warning
 

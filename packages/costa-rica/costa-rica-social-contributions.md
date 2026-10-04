@@ -1,10 +1,10 @@
 ---
 name: costa-rica-social-contributions
 description: Use this skill whenever asked about Costa Rica social-security / payroll contributions ("cargas sociales") to the CCSS and the related employment-income withholding. Trigger on phrases like "how much CCSS do I pay", "cargas sociales Costa Rica", "CCSS employer cost", "patrono CCSS", "cuota obrero-patronal", "IVM contribution", "SEM CCSS", "planilla CCSS", "Banco Popular deduction", "FODESAF", "INA exemption", "deducciones de planilla", "retención del impuesto al trabajo dependiente", "Costa Rica payroll tax", "social charges 2025/2026", "trabajador independiente CCSS", or any question about Costa Rican employer/employee social contributions, the monthly salary-tax withholding, the minimum contribution base (BMC), or net-pay computation. Also trigger when classifying bank-statement lines that relate to CCSS planilla debits, SICERE payments, INS riesgos-del-trabajo premiums, Banco Popular debits, or D-103 withholding remittances on BAC, BN, BCR, Davivienda, or other Costa Rican bank statements. This skill covers the SEM and IVM rates (including the confirmed 1 Jan 2026 IVM increase), FODESAF/IMAS/INA/FCL/ROP/Banco Popular components, the INS work-risk premium, employer and employee totals, the BMC floor, the monthly progressive salary-tax brackets, family tax credits, aguinaldo treatment, minimum wage, forms D-103/D-101/D-151, the CCSS planilla cycle, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Costa Rican payroll / social-contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: CR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Costa Rica Social-Security Contributions (Cargas Sociales) & Salary-Tax Withholding —
 
-## Costa Rica Social-Security Contributions (Cargas Sociales) & Salary-Tax Withholding — Skill v0.1
+## Costa Rica Social-Security Contributions (Cargas Sociales) & Salary-Tax Withholding — Skill v0.2
 
 **Tier 2 (research-verified). Confidence: medium.** Several primary authority PDFs (Hacienda CP-103-2024, live CCSS pages, BDO/BLP, OECD) returned HTTP errors during research, so figures were corroborated from multiple secondary tax/legal sources (PwC, BDO, La Nación, EY, BLP, siemprealdía) rather than read off every authority page. Every figure carries an inline citation or an explicit `[RESEARCH GAP — reviewer to confirm]` marker. A Costa Rican CPA / contador público autorizado must sign off before any output is filed or relied upon.
 
@@ -270,7 +270,7 @@ Cumulative check: 43,000; 43,000 + (2,373,000−1,352,000)×15% = 43,000 + 153,1
 
 ### Rule 8 — Banco Popular split
 
-- **Banco Popular split** — Worker contributes 1.00% (mandatory savings under the LPT); employer contributes 0.50% total. The LPT-funded employer components (Banco Popular 0.50%, FCL 1.50%, ROP/OPC 2.00%) reconcile to the official employer total, but the line allocation is worded differently across sources `[RESEARCH GAP — confirm the ROP vs Banco Popular split against the CCSS planilla rate schedule]`.  _(siemprealdía)_
+- **Banco Popular split** — Worker contributes 1.00% (mandatory savings under the LPT); employer contributes 0.50% total. EY itemises the LPT-funded employer components as Banco Popular 0.25% (cuota patronal) plus 0.25% (aporte LPT), FCL 1.50%, Fondo de Pensiones Complementarias 2.00% and INS 1.00%, which with the CCSS and other-institution lines reconciles to the 26.67% employer total (26.83% from 1 January 2026 with IVM at 5.58%); `costa-rica-payroll` carries the same table.  _(siemprealdía; [EY, January 2026](https://www.ey.com/es_ce/technical/tax/tax-alerts/costa-rica-aumento-en-cuotas-obrero-patronales-aplicable-desde-enero-20261))_
 
 ### Rule 9 — Aguinaldo
 

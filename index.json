@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T00:50:29+00:00",
+ "generated_at": "2026-10-04T01:13:47+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -1889,7 +1889,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "albania-payroll",
@@ -4151,7 +4151,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "bolivia-iva",
@@ -4190,7 +4190,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "bolivia-tax-optimization",
@@ -6452,7 +6452,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "costa-rica-tax-optimization",
@@ -12172,7 +12172,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "latvia-social-contributions",
@@ -12185,7 +12185,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "latvia-tax-optimization",
