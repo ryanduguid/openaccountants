@@ -125,6 +125,10 @@ NON_GOV_AUTHORITY = frozenset((
     'rsl.org.ls',         # Revenue Services Lesotho
     'gra.gm',             # Gambia Revenue Authority
     'mra.mu',             # Mauritius Revenue Authority
+    'govmu.org',          # Government of Mauritius domain used by ministries and the
+                          # Corporate and Business Registration Department
+                          # (companies.govmu.org), which publishes the Companies Act
+                          # 2001 consolidation. Bare .org.
     'mra.mw',             # Malawi Revenue Authority
     'dgi.bf',             # Burkina Faso, Direction Generale des Impots
     'impots.cm',          # Cameroon, Direction Generale des Impots
