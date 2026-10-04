@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T01:35:00+00:00",
+ "generated_at": "2026-10-04T01:58:01+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -5074,7 +5074,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cameroon-payroll",
@@ -5087,7 +5087,7 @@
    "reviewed_by": "Nkinyam Courage Ndasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cameroon-social-contributions",
@@ -5100,7 +5100,7 @@
    "reviewed_by": "Nkinyam Courage Ndasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cameroon-vat",

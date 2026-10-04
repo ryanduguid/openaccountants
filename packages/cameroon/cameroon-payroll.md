@@ -1,10 +1,10 @@
 ---
 name: cameroon-payroll
 description: Use this skill whenever asked about Cameroon payroll processing for employed persons. Trigger on phrases like "Cameroon payroll", "IRPP withholding", "PAYE Cameroon", "CNPS contribution", "CFC housing fund", "FNE employment fund", "CAC surcharge", "centimes additionnels", "DIPE", "payslip Cameroon", "bulletin de paie", "net salary Cameroon", "salaire net", "tax withholding Cameroon", "employer social security Cameroon", "SMIG Cameroon", "minimum wage Cameroon", "gross to net Cameroon", "XAF salary calculation", or any question about computing employee pay, withholding tax (IRPP/PAYE), or social security (CNPS) for Cameroon-based employees. This skill covers IRPP progressive withholding with the 10% Additional Council Tax (CAC), CNPS pension/family-allowance/accident contributions, the CFC housing fund and FNE employment fund payroll levies, council tax and audiovisual royalty, minimum wage (SMIG), monthly DIPE filing, and remittance deadlines. ALWAYS read this skill before processing any Cameroon payroll.
-version: 0.1
+version: 0.2
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: Nkinyam Courage Ndasi
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cameroon Payroll
 
-## Cameroon Payroll Skill v0.1
+## Cameroon Payroll Skill v0.2
 
 **Tier 2 — Research-verified.** Figures are sourced from PwC Worldwide Tax Summaries (Cameroon) and the CNPS official site, corroborated by Employer-of-Record guides. This skill has **not** yet been section-by-section verified by a licensed Cameroon accountant (`verified_by: pending`). Treat all outputs as estimates pending professional sign-off. Where a figure could not be sourced to a primary authority it is flagged **[RESEARCH GAP — reviewer to confirm]**.
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | CNPS contribution ceiling | XAF 750,000/month (XAF 9,000,000/year) [PwC, Other taxes; CNPS] |
 | Personal income tax | **Yes** — Cameroon levies IRPP (progressive 11%–38.5% incl. CAC) |
 | Validated by | Verified by Nkinyam Courage Ndasi (3472800) on 2026-06-21 |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **No-PIT note:** This is **not** a no-PIT jurisdiction. Cameroon levies a progressive personal income tax (IRPP) on employment income, withheld monthly. Treat IRPP as a core employer withholding obligation.
 
@@ -144,7 +144,7 @@ Each levy is a flat monthly amount read from a band table by monthly salary. The
 
 - **Maximum monthly CNPS contributions (at/above the XAF 750,000 ceiling)** — Employee pension: 4.2% × 750,000 = XAF 31,500/mo Employer pension: 4.2% × 750,000 = XAF 31,500/mo Employer family allowance: 7.0% × 750,000 = XAF 52,500/mo Employer accident (low/mid/high): 1.75% / 2.5% / 5% × 750,000 = XAF 13,125 / 18,750 / 37,500/mo
 
-> **Reduced family-allowance rates [RESEARCH GAP — reviewer to confirm]:** lower rates reportedly apply to some sectors (agriculture ~5.65%, private teachers ~3.7%). Secondary source only — verify against CNPS regulation.
+> **Reduced family-allowance rates:** 5.65% for workers in the agricultural and assimilated scheme and 3.70% for private education staff, against 7% in the general scheme, all on the XAF 750,000 monthly ceiling, per CLEISS's table of contributions at 1 January 2024 ([CLEISS, Les cotisations au Cameroun](https://www.cleiss.fr/docs/cotisations/cameroun.html)).
 > Source (secondary): https://www.playroll.com/global-hiring-guides/cameroon
 
 - **Voluntary / self-insured contribution** — 8.4% of declared income (pension branch only); declared income range XAF 36,270–750,000/month.  _(https://www.cnps.cm/en/assures/assure-e.html ; https://taxsummaries.pwc.com/republic-of-cameroon/individual/other-taxes)_
@@ -165,17 +165,17 @@ Each levy is a flat monthly amount read from a band table by monthly salary. The
 
 ## Section 6 — Minimum Wage (SMIG) and Working Time
 
-### 6.1 Minimum Wage (SMIG) — secondary sources
+### 6.1 Minimum Wage (SMIG)
 
-**SMIG rates**  _(https://www.playroll.com/global-hiring-guides/cameroon ; https://remotepeople.com/countries/cameroon/employer-of-record/payroll-tax/)_
+**SMIG rates**  _([CLEISS, Les cotisations au Cameroun](https://www.cleiss.fr/docs/cotisations/cameroun.html); EOR guides for cross-checks)_
 
 | Category | Monthly SMIG | Source |
 | --- | --- | --- |
-| Private sector (non-agricultural) | XAF 60,000 (recent increase) | EOR guides (secondary) |
-| Private sector (agricultural) | XAF 45,000 | EOR guides (secondary) |
-| State employees | XAF 43,969 | EOR guides (secondary) |
+| Private sector (non-agricultural) | XAF 60,000 from 21 March 2023 (40-hour week) | CLEISS |
+| Private sector (agricultural and assimilated) | XAF 45,000 from 21 March 2023 | CLEISS |
+| State employees under the Labour Code | XAF 43,969 from 23 February 2024 | CLEISS |
 
-> **[RESEARCH GAP — reviewer to confirm]** SMIG figures are from **secondary EOR sources only** and **disagree** across sources (XAF 41,875 vs 45,000 vs 60,000). Confirm the operative SMIG against the Ministry of Labour implementing decree before relying on it. Do **not** present a SMIG figure as definitive without this confirmation.
+> **SMIG sources.** CLEISS states the SMIG for a 40-hour week at XAF 60,000 in the private sector and XAF 45,000 in the agricultural and assimilated sector from 21 March 2023, and XAF 43,969 for state employees under the Labour Code from 23 February 2024; the XAF 41,875 that some guides still quote was the earlier state-employee figure. Check the Ministry of Labour decree when a later revision is announced.
 
 ### 6.2 Working Time
 

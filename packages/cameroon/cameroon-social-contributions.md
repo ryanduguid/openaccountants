@@ -1,10 +1,10 @@
 ---
 name: cameroon-social-contributions
 description: Use this skill whenever asked about Cameroon (CM) social security contributions (CNPS), payroll-linked levies, or personal income tax on salaries. Trigger on phrases like "CNPS contributions", "Cameroon social security", "how much CNPS do I pay", "pension vieillesse", "prestations familiales", "risques professionnels", "Cameroon payroll tax", "Crédit Foncier CFC", "Fonds National de l'Emploi FNE", "Cameroon PIT", "IRPP Cameroun", "centimes additionnels communaux CAC", "Cameroon PAYE", "Cameroon expat 183 days", or any question about Cameroon employer/employee contribution computation. Also trigger when classifying bank statement transactions that relate to CNPS debits, DGI/impôts payments, CFC or FNE remittances from Afriland, SGBC, BICEC, Ecobank, UBA Cameroon, or other Cameroonian banks. This skill covers CNPS pension/family/occupational-risk rates, the XAF 750,000 monthly ceiling, CFC and FNE payroll levies, the 10%/15%/25%/35% PIT scale (and the 11%/16.5%/27.5%/38.5% effective rates with the 10% CAC surcharge), local council/audiovisual levies, monthly remittance deadlines, registration, penalties, bank statement classification, and edge cases. ALWAYS read this skill before touching any Cameroon payroll or contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: Nkinyam Courage Ndasi
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cameroon Social Security Contributions (CNPS) & Payroll
 
-## Cameroon Social Security Contributions (CNPS) & Payroll Skill v0.1
+## Cameroon Social Security Contributions (CNPS) & Payroll Skill v0.2
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Nkinyam Courage Ndasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -64,7 +64,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 *Arithmetic check (employer, min risk): 7.00 + 4.20 + 1.75 = 12.95%. (max risk): 7.00 + 4.20 + 5.00 = 16.20%.*
 
-> Note: research notes cite an employer band of "~12.95%–15.20%". The 15.20% figure appears to combine 7% + 4.2% + 2.5% (mid risk) + 1.5% CFC, mixing CNPS and the housing fund. Computed CNPS-only employer totals are 12.95% (min), 13.70% (mid 2.50%), 16.20% (max 5.00%). [RESEARCH GAP — reviewer to confirm the exact employer band and how the 15.20% headline is composed.]
+> Note: research notes cite an employer band of "~12.95%–15.20%". The 15.20% figure appears to combine 7% + 4.2% + 2.5% (mid risk) + 1.5% CFC, mixing CNPS and the housing fund. Computed CNPS-only employer totals are 12.95% (min), 13.70% (mid 2.50%), 16.20% (max 5.00%). CLEISS's table at 1 January 2024 confirms the branch rates (family allowances 7%, pension 4.20% each side, work injury 1.75%, 2.50% or 5% by risk class), so the CNPS-only employer band is 12.95% to 16.20% and the 15.20% headline is the mid-risk CNPS total plus the 1.5% CFC housing fund ([CLEISS, Les cotisations au Cameroun](https://www.cleiss.fr/docs/cotisations/cameroun.html)).
 
 **Family-allowance rate variants (replace the 7.00% general regime) [CLEISS]**  _(CLEISS)_
 
