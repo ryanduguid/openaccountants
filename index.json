@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T14:24:57+00:00",
+ "generated_at": "2026-10-04T14:36:12+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -3981,8 +3981,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "tax_year": "2026",
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "bm-company-formation",
@@ -4020,8 +4020,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "bm-payroll-social",
@@ -4033,8 +4033,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "tax_year": "2026",
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "bm-tax-overview",

@@ -1,10 +1,10 @@
 ---
 name: bermuda-tax
 description: Use this skill whenever asked about Bermuda taxation, payroll tax, customs duties, or the absence of income tax and VAT in Bermuda. Trigger on phrases like "Bermuda tax", "Bermuda VAT", "Bermuda payroll tax", "Bermuda customs", or any request involving Bermuda tax compliance. Bermuda does NOT have income tax, capital gains tax, or VAT. Revenue is raised through payroll tax, customs duties, and various fees. ALWAYS read this skill before handling any Bermuda tax work.
-version: 2.0
+version: 2.1
 jurisdiction: BM
-tax_year: 2025
-last_updated: 2026-09-28
+tax_year: 2026
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Payroll tax quarterly (Apr 15, Jul 15, Oct 15, Jan 15); annual reconciliation March 15 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Tax Landscape Overview
 
@@ -73,7 +73,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | BMD 200,001 -- 500,000 | 11.50% |
 | BMD 500,001 -- 1,000,000 | 12.50% |
 
-- **Payroll tax cap** — BMD 1,000,000 BMD (per person per year)  _(Payroll Tax Act 1995)_
+- **Payroll tax cap** — BMD 1,000,000 per person per year of taxable remuneration  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026 ; Government of Bermuda, Payroll Tax page (Office of the Tax Commissioner) — https://www.gov.bm/payroll-tax)_
 
 ### Conservative Defaults
 
@@ -190,7 +190,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.2 Payroll Tax Filing
 
-- **Payroll tax filing schedule** — Filing frequency: quarterly. Q1 deadline: April 15. Q2: July 15. Q3: October 15. Q4: January 15. Annual reconciliation: March 15 following year-end. Method: electronic. ⚠ **Not via `tax.gov.bm`** — that host does not resolve; start from https://www.gov.bm.
+- **Payroll tax filing schedule** — Filing frequency: quarterly. Q1 deadline: April 15. Q2: July 15. Q3: October 15. Q4: January 15. Annual reconciliation: March 15 following year-end. Method: electronic. ⚠ **Not via `tax.gov.bm`** — that host does not resolve; start from https://www.gov.bm.  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026 ; Government of Bermuda, Payroll Tax page (Office of the Tax Commissioner) — https://www.gov.bm/payroll-tax)_
 
 ### 5.3 Land Tax
 
@@ -208,7 +208,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 6.2 Exempt Company Payroll
 
-- **Exempt company payroll treatment** — Exempted company status relates to Companies Act provisions, NOT tax exemptions on payroll tax. Payroll tax applies to all employers including exempt companies. Verify if any concession rates apply.  _(Companies Act 1981)_
+- **Exempt company payroll treatment** — Exempted company status under the Companies Act does not exempt an employer from payroll tax: all exempt undertakings pay the 9.75% employer portion from 1 April 2026 and must file online  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026)_
 
 ### 6.3 Economic Substance
 

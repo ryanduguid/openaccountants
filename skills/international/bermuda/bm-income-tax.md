@@ -1,10 +1,11 @@
 ---
 name: bm-income-tax
-description: "Source-cited draft: personal income tax for Bermuda (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: personal income tax for Bermuda (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BM
 category: international
-tax_year: 2025
-last_updated: 2026-07-13
+tax_year: 2026
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Capital gains tax (individuals)** — None  _(PwC Worldwide Tax Summaries — Bermuda, Individual income determination (https://taxsummaries.pwc.com/bermuda/individual/other-taxes))_
 - **Inheritance / estate / gift tax** — None (estate transfers may attract stamp duty on the affidavit of value)  _(Stamp Duties Act 1976 (https://taxsummaries.pwc.com/bermuda/individual/other-taxes))_
 - **Personal income tax return & filing deadline** — Not applicable — no personal income tax return is filed by individuals  _(PwC Worldwide Tax Summaries — Bermuda, Individual tax administration (https://taxsummaries.pwc.com/bermuda/individual/tax-administration))_
-- **Employee burden on labour income** — The employee portion of payroll tax (progressive, by remuneration band) is the main tax on employment income; it is withheld and remitted by the employer  _(Payroll Tax Act 1995 (https://www.gov.bm/payroll-tax))_
+- **Employee burden on labour income** — The employee portion of payroll tax is the main tax on employment income: 0.25% to BMD 48,000, 7.75% to 96,000, 10.75% to 200,000, 11.50% to 500,000 and 12.50% to the BMD 1,000,000 cap for 2026/27, withheld by the employer at its option  _(Government of Bermuda, Calculating Payroll Tax for the period 1 April 2026 to 31 March 2027 — https://www.gov.bm/calculating-payroll-tax-2026)_
 - **Employee social insurance contribution** — Flat weekly contributory pension contribution applies to employees aged 16-64 (see payroll-social)  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
 - **Residence test for income tax** — Not applicable — residence does not affect a (non-existent) personal income tax liability  _(PwC Worldwide Tax Summaries — Bermuda, Individual residence (https://taxsummaries.pwc.com/bermuda/individual/residence))_
 
