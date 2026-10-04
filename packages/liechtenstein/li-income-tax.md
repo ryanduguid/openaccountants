@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Liechtenstein (tax yea
 jurisdiction: LI
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,10 +27,10 @@ Liechtenstein applies a progressive national income tax topped up by a communal 
 - **Tax-free personal exemption (single parent)** — CHF 23,783, confirmed  _(Tax Act (Steuergesetz, SteG) — https://taxsummaries.pwc.com/liechtenstein/individual/taxes-on-personal-income)_
 - **Net wealth taxed via notional yield (Sollertrag)** — Taxable net wealth × 4% notional yield is added to taxable income and taxed at income tax rates %  _(Tax Act (Steuergesetz, SteG); Finance Act (Finanzgesetz) — https://taxsummaries.pwc.com/liechtenstein/individual/other-taxes)_
 - **Investment income on wealth-taxed assets** — Interest and dividend income on assets subject to wealth tax is not separately taxable (captured by the notional yield)  _(Tax Act (Steuergesetz, SteG) — https://taxsummaries.pwc.com/liechtenstein/individual/other-taxes)_
-- **Capital gains on movable private assets (e.g. securities)** — Generally not subject to income tax for private individuals (approx — confirm scope)  _(Tax Act (Steuergesetz, SteG) — https://taxsummaries.pwc.com/liechtenstein/individual/income-determination)_
+- **Capital gains on movable private assets (e.g. securities)** — Exempt from the Erwerbssteuer: capital gains on the sale of movable and immovable private assets (Bst. m), gains on the sale or liquidation of participations in legal persons and their unrealised appreciation (Bst. o), profit distributions from participations (Bst. n) and gains on foreign real estate (Bst. l); business assets follow Art. 48 where its conditions apply  _(Steuergesetz (SteG, LGBl. 2010 Nr. 340), consolidated version in force from 1 July 2026 on gesetze.li, Art. 15 Abs. 2 Bst. l, m, n and o — https://www.gesetze.li/konso/pdf/2010340000?version=38 ; https://taxsummaries.pwc.com/liechtenstein/individual/income-determination)_
 - **Tax residence test** — Permanent or habitual residence (domicile or customary abode) in Liechtenstein  _(Tax Act (Steuergesetz, SteG) — https://taxsummaries.pwc.com/liechtenstein/individual/residence)_
 - **Lump-sum (expenditure-based) taxation for non-working foreigners** — Available to qualifying non-citizens who do not work in Liechtenstein and live off foreign-source wealth income  _(Tax Act (Steuergesetz, SteG) — https://taxsummaries.pwc.com/liechtenstein/individual/taxes-on-personal-income)_
-- **Filing deadline** — Normally mid-to-end April following the tax year; extensions up to 5 months (80% prepayment required for extensions beyond one month) (approx — confirm)  _(Tax Act (Steuergesetz, SteG) — https://taxsummaries.pwc.com/liechtenstein/individual/tax-administration)_
+- **Filing deadline** — Set each year by the Steuerverwaltung rather than in the Act; in practice mid to late April following the tax year, with extensions of up to 5 months (80% prepayment required for extensions beyond one month); taxpayers leaving the country file before departure (Art. 95 Abs. 2)  _(Steuergesetz (SteG, LGBl. 2010 Nr. 340), consolidated version in force from 1 July 2026 on gesetze.li, Art. 95 Abs. 1 — https://www.gesetze.li/konso/pdf/2010340000?version=38 ; https://taxsummaries.pwc.com/liechtenstein/individual/tax-administration)_
 - **Default / late-payment charge rate** — 4% %  _(Tax Act (Steuergesetz, SteG) — https://taxsummaries.pwc.com/liechtenstein/corporate/tax-administration)_
 
 <!-- openaccountants-cta-block -->

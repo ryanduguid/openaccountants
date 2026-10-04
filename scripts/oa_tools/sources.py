@@ -333,6 +333,11 @@ NON_GOV_AUTHORITY = frozenset((
                           # ministry rather than a francophone one, so the shape
                           # is a bare ccTLD, not a language. Subdomains are
                           # matched, so all three count from this one entry.
+    'gesetze.li',         # Liechtenstein's official law collection (Liechtensteinische
+                          # Landesgesetzblatt / konsolidiertes Recht), run by the
+                          # Government's legal service: the Steuergesetz is served
+                          # as one PDF per consolidated version. Bare .li with no
+                          # "gov" label, the same shape as the entries above.
     'adilet.zan.kz',      # Kazakhstan's Legal Information System "Adilet", run by
                           # the Ministry of Justice: serves the 2026 Tax Code
                           # (docs/K2500000214) in Kazakh, Russian and English.
