@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Guyana (tax year 2025)
 jurisdiction: GY
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,11 +22,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Overtime relief** — First G$50,000 of monthly overtime pay is tax-free GYD  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://dpi.gov.gy/income-tax-threshold-increased-to-130000/)_
 - **Second-job relief** — First G$50,000 of monthly income from a second job is tax-free GYD  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://dpi.gov.gy/income-tax-threshold-increased-to-130000/)_
 - **NIS contribution deduction** — Employee NIS contributions are deductible before computing chargeable income (allowable deduction) ((approx — confirm))  _(Income Tax Act (Cap 81:01) — https://www.gra.gov.gy/notice-to-employers-employees-self-employed-persons-revised-personal-allowance-and-deductions-for-income-tax-2025-copy/)_
-- **Non-resident individuals** — Taxed on Guyana-source income; same rate scale generally applies, with WHT on certain payments. Personal allowance availability to non-residents is restricted. ((approx — confirm))  _(Income Tax Act (Cap 81:01) — https://taxsummaries.pwc.com/guyana/individual/taxes-on-personal-income)_
-- **Residence test** — An individual is generally treated as resident if present in Guyana for 183 days or more in the income year, or who maintains a permanent place of abode in Guyana. ((approx — confirm))  _(Income Tax Act (Cap 81:01) — https://taxsummaries.pwc.com/guyana/individual/residence)_
+- **Non-resident individuals** — Non-residents are taxed on Guyana-source income: payments to non-residents not engaged in trade or business in Guyana bear 20% withholding tax, and income arising outside Guyana paid to them is not taxed; PwC reports that the personal allowance is restricted for non-residents  _(Income Tax Act (Cap 81:01), Guyana Revenue Authority consolidated text (revised to January 2019), s 39(1)(b) and Third Schedule — https://www.gra.gov.gy/wp-content/uploads/2019/07/IncomeTaxActrevDec18Jan19final.pdf ; PwC Worldwide Tax Summaries, Residence (allowance restriction) — https://taxsummaries.pwc.com/guyana/individual/residence)_
+- **Residence test** — An individual is resident in Guyana if they reside in Guyana for more than 183 days in the year, or ordinarily reside there with only such temporary absences as the Commissioner-General considers reasonable and consistent with the claim to residence  _(Income Tax Act (Cap 81:01), Guyana Revenue Authority consolidated text (revised to January 2019), s 2 (definition of resident in Guyana) — https://www.gra.gov.gy/wp-content/uploads/2019/07/IncomeTaxActrevDec18Jan19final.pdf)_
 - **Individual return filing & payment deadline** — 30 April following the income year  _(Income Tax Act (Cap 81:01) — https://gra.gov.gy/optimal/individual-income-tax-return/)_
-- **Self-employed advance (quarterly) payments** — Quarterly advance instalments due 1 April, 1 July, 1 October and 31 December; balance by 30 April of the following year  _(Income Tax Act (Cap 81:01) — https://taxsummaries.pwc.com/guyana/individual/tax-administration)_
-- **Late filing/payment surcharge** — Additional 10% charge on outstanding tax where return not filed and balance not paid by 30 April  _(Income Tax Act (Cap 81:01) — https://taxsummaries.pwc.com/guyana/corporate/tax-administration)_
+- **Self-employed advance (quarterly) payments** — One quarter of the tax estimated at the s 36 rates on or before 1 April, 1 July, 1 October and 31 December of the year of income, with the remainder by 30 April of the following year  _(Income Tax Act (Cap 81:01), Guyana Revenue Authority consolidated text (revised to January 2019), s 69(1) — https://www.gra.gov.gy/wp-content/uploads/2019/07/IncomeTaxActrevDec18Jan19final.pdf)_
+- **Late filing/payment surcharge** — A penalty of 10% of the tax assessed where the return is not filed by its due date; PwC describes the 10% addition on tax outstanding after 30 April  _(Income Tax Act (Cap 81:01), Guyana Revenue Authority consolidated text (revised to January 2019), s 99(2) (inserted by Act 12 of 2017) — https://www.gra.gov.gy/wp-content/uploads/2019/07/IncomeTaxActrevDec18Jan19final.pdf ; PwC Worldwide Tax Summaries, Tax administration — https://taxsummaries.pwc.com/guyana/individual/tax-administration)_
 
 <!-- openaccountants-cta-block -->
 
