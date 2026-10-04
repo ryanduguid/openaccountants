@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Zambia (
 jurisdiction: ZM
 category: formation
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +27,7 @@ Companies in Zambia are registered with the Patents and Companies Registration A
 - **Incorporation timeline** — Approximately 1 to 5 business days via PACRA's online eRegistry ((approx — confirm))  _(Companies Act (as described at [elidge.com](https://www.elidge.com/zambia-company-registration/)))_
 - **Tax registration (TPIN)** — Company must obtain a Taxpayer Identification Number (TPIN) from ZRA after incorporation  _([Income Tax Act](https://www.zra.org.zm/tax-information/))_
 - **Annual return to PACRA** — Companies must file an annual return with PACRA each year  _([Companies Act](https://www.pacra.org.zm/))_
-- **Annual income tax return** — Due by 21 June following the end of the charge year  _([Income Tax Act](https://taxsummaries.pwc.com/zambia/corporate/tax-administration))_
+- **Annual income tax return** — Due by 21 June following the end of the charge year, together with the balance of tax (Income Tax Act s 46)  _(Zambia Revenue Authority, Payment Due Dates, Income Tax — https://www.zra.org.zm/payment-due-dates/)_
 - **Record retention** — Tax records must be kept for 6 years  _(Tax Procedures Act (as described at [quaderno.io](https://quaderno.io/guides/zambia-vat-guide/)))_
 
 <!-- openaccountants-cta-block -->

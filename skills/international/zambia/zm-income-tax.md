@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Zambia personal income tax (PAY
 jurisdiction: ZM
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -45,7 +46,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Over 110,400 | Over 9,200 | 37% | -- |
 
 - **PAYE band progressivity** — Progressive. Only income within each band is taxed at that band's rate. Residents and non-residents are charged the same income-tax rates in principle, though most non-resident income is instead subject to withholding tax.  _(PwC, ZM individual -- taxes on personal income)_
-- **Tax-free threshold** — ZMW 5,100/month (K61,200/year)  _(PwC, ZM individual -- taxes on personal income; ZRA PAYE leaflet, Pay-As-You-Earn.pdf)_
+- **Tax-free threshold** — ZMW 5,100/month (K61,200/year): the first K5,100 of monthly emoluments is taxed at 0%  _(Zambia Revenue Authority, PAYE Calculator (current bands) — https://www.zra.org.zm/paye-calculator/)_
 
 **Cumulative tax arithmetic (annual):**
 - Band 2 width K24,000 × 20% = K4,800 → cumulative K4,800 at K85,200
@@ -327,11 +328,11 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.2 PAYE Computation (employees)
 
-- **PAYE monthly band application** — Apply the progressive monthly bands (Section 1) to gross monthly taxable earnings: - 0 – K5,100: 0% - K5,101 – K7,100: 20% (cumulative K400 at top) - K7,101 – K9,200: 30% (cumulative K1,030 at top) - Over K9,200: 37% Employer deducts PAYE monthly and remits to ZRA by the 10th of the following month.  _(ZRA payment due dates)_
+- **PAYE monthly band application** — Apply the progressive monthly bands to gross monthly taxable earnings: 0 to K5,100 at 0%; K5,100.01 to K7,100 at 20% (cumulative K400 at the top); K7,100.01 to K9,200 at 30% (cumulative K1,030 at the top); above K9,200 at 37%. The employer deducts PAYE monthly and remits it by the 10th of the following month on the monthly PAYE return (ITF/P16)  _(Zambia Revenue Authority, PAYE Calculator (current bands) — https://www.zra.org.zm/paye-calculator/ ; Zambia Revenue Authority, Tax Information, Pay As You Earn — https://www.zra.org.zm/tax-information/)_
 
 ### 5.3 NAPSA (social security)
 
-- **NAPSA contribution rule** — 10% total = 5% employee + 5% employer, on gross monthly earnings, capped at the K34,164 monthly insurable-earnings ceiling (max K1,708.20 per party). The earnings base includes basic salary, bonuses, commissions, severance, overtime, leave allowance, and acting allowance.  _(NAPSA 2025 announcement)_
+- **NAPSA contribution rule** — 10% total = 5% employee + 5% employer, on gross monthly earnings, capped at the K34,164 monthly insurable-earnings ceiling (max K1,708.20 per party). The earnings base includes basic salary, bonuses, commissions, severance, overtime, leave allowance, and acting allowance.  _(National Pension Scheme Authority, Formal Sector Contributions — https://www.napsa.co.zm/self-service/formal-sector ; National Pension Scheme Authority, Revision in Contribution Ceiling for the Year 2025 — https://www.napsa.co.zm/news/details?id=df81c3bb-5416-4a43-b521-73923e0ccf93)_
 
 ### 5.4 NHIMA (health insurance)
 
@@ -348,7 +349,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 | Presumptive (passenger transport) | Per vehicle, annual | See table below | PwC, ZM other taxes |
 | Standard income tax | Turnover > K5,000,000 or excluded income | PAYE bands applied to taxable profit | PwC, ZM individual |
 
-- **Turnover tax filing** — Turnover tax taxpayers pay 5% on turnover above K12,000/year and do NOT deduct expenses. Returns and payment due by the 14th of the following month.  _(PwC, ZM other taxes)_
+- **Turnover tax filing** — Turnover tax applies to businesses with annual turnover of K5,000,000 or less: 0% on monthly turnover of K2,500 or less (K30,000 a year) and 5% above that, on gross turnover with no expense deductions. Returns and payment are due by the 14th of the following month  _(Zambia Revenue Authority, Tax Information, Turnover Tax — https://www.zra.org.zm/tax-information/)_
 
 **Presumptive tax — passenger transport (annual, per vehicle)**  _(PwC, ZM other taxes)_
 
@@ -362,7 +363,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.6 Provisional (Advance) Income Tax — non-employment income
 
-- **Provisional tax filing rule** — Individuals earning over K61,200/year from non-employment sources file quarterly provisional returns. Quarter deadlines: 31 Mar, 30 Jun, 30 Sep, 31 Dec (manual Q1 submission 5 Mar). New registrants after 31 Mar: within 90 days of registration.  _(PwC, ZM individual — tax administration)_
+- **Provisional tax filing rule** — Businesses and individuals with non-employment income file quarterly provisional returns for the quarters ending 31 March, 30 June, 30 September and 31 December, each instalment payable by the 10th of the following month; the annual return and any balance are due by 21 June (Income Tax Act s 46). New registrants after 31 March file within 90 days of registration  _(Zambia Revenue Authority, Payment Due Dates, Income Tax — https://www.zra.org.zm/payment-due-dates/ ; PwC Worldwide Tax Summaries, Tax administration — https://taxsummaries.pwc.com/zambia/individual/tax-administration)_
 
 ### 5.7 VAT Interaction (self-employed crossing the threshold)
 
@@ -374,7 +375,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 | Registration threshold | Annual turnover > K800,000 (or > K200,000 in any consecutive 3-month period) | ZRA tax information; PwC |
 | VAT returns | Monthly, due by the 18th (e-filing) | ZRA tax information |
 
-- **K800,000 threshold note** — Note: the K800,000 threshold no longer governs turnover-tax eligibility (now K5m) but still governs VAT registration.  _(ZRA tax information; PwC)_
+- **K800,000 threshold note** — Note: the K800,000 threshold no longer governs turnover-tax eligibility (now K5m) but still governs VAT registration.  _(Zambia Revenue Authority, Tax Information, Turnover Tax — https://www.zra.org.zm/tax-information/ ; PwC Worldwide Tax Summaries, Other taxes — https://taxsummaries.pwc.com/zambia/corporate/other-taxes)_
 
 ### 5.8 Non-Deductible Expenses (income-tax taxpayers)
 
