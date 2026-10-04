@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Iceland 
 jurisdiction: IS
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +28,7 @@ The most common vehicle is the private limited company (einkahlutafelag, 'ehf.')
 - **Company registration fee** — 130,500 ISK (Government registration fee approximately, for an ehf. (electronic) (approx — confirm current fee))  _(Act No. 17/2003 on the Business Register (Lög um fyrirtækjaskra))_
 - **Share capital payment requirement** — Full ISK 500,000 must be deposited in an Icelandic bank account before registration; in-kind contributions need CPA/lawyer confirmation  _([Act No. 138/1994 on Private Limited Companies](https://www.skatturinn.is/english/company-registration/register-a-company/private-limited-companies/))_
 - **Annual financial statements** — Companies must prepare annual financial statements and file them with the Register of Annual Accounts (Arsreikningaskra)  _(Act No. 3/2006 on Annual Accounts (Lög um arsreikninga))_
-- **Annual corporate tax return** — Annual income tax return due generally 31 May (extendable to 30 September for professionally prepared returns)  _([Act No. 90/2003 on Income Tax](https://taxsummaries.pwc.com/iceland/corporate/tax-administration))_
+- **Annual corporate tax return** — Annual income tax return due by 31 May (accountants and bookkeepers filing for clients can obtain extensions to 30 September)  _(Skatturinn, Opnað fyrir skil á skattframtali lögaðila 2025 (company tax return filing notice, 31 January 2025, Icelandic) — https://www.skatturinn.is/um-rsk/frettir-og-tilkynningar/opnad-fyrir-skil-a-skattframtali-logadila-2025)_
 - **Statutory audit** — Audit required for entities exceeding size thresholds; small ehf. companies below thresholds may be exempt ((approx — confirm thresholds))  _(Act No. 3/2006 on Annual Accounts)_
 
 <!-- openaccountants-cta-block -->
