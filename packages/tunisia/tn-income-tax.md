@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Tunisia (tax year 2025
 jurisdiction: TN
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,15 +15,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Personal income tax (IRPP) brackets — 2025
 
-- **Tax-free band** — 0% on annual taxable income up to TND 5,000 %  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
-- **Band 2 rate** — 15% on income from TND 5,001 to TND 10,000 %  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
-- **Band 3 rate** — 25% on income from TND 10,001 to TND 20,000 %  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
-- **Band 4 rate** — 30% on income from TND 20,001 to TND 30,000 %  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
-- **Band 5 rate** — 33% on income from TND 30,001 to TND 40,000 %  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
-- **Band 6 rate** — 36% on income from TND 40,001 to TND 50,000 %  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
-- **Band 7 rate** — 38% on income from TND 50,001 to TND 70,000 %  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
-- **Top band rate** — 40% on income above TND 70,000 %  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
-- **Social Solidarity Contribution on individuals** — Additional 0.5% on taxable income computed under the IRPP scale % (Applies for fiscal years 2023–2026 (confirm continuation))  _(Loi de Finances (Finance Law) — Social Solidarity Contribution provisions — https://taxsummaries.pwc.com/tunisia/individual/other-taxes)_
+- **Tax-free band** — 0% on annual taxable income up to TND 5,000 (scale in force for income from 1 January 2025)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
+- **Band 2 rate** — 15% on the slice above TND 5,000 up to TND 10,000 (effective rate at the top of the band 7.50%)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
+- **Band 3 rate** — 25% on the slice above TND 10,000 up to TND 20,000 (16.25% effective at the top of the band)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
+- **Band 4 rate** — 30% on the slice above TND 20,000 up to TND 30,000 (20.83% effective at the top of the band)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
+- **Band 5 rate** — 33% on the slice above TND 30,000 up to TND 40,000 (23.88% effective at the top of the band)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
+- **Band 6 rate** — 36% on the slice above TND 40,000 up to TND 50,000 (26.30% effective at the top of the band)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
+- **Band 7 rate** — 38% on the slice above TND 50,000 up to TND 70,000 (29.64% effective at the top of the band)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
+- **Top band rate** — 40% on income above TND 70,000  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
+- **Social Solidarity Contribution on individuals** — Additional 0.5% on taxable income computed under the IRPP scale, applying to income whose return falls due in the years 2023 to 2026 (art. 53(7) of the 2018 Finance Law as restated by art. 87(2) of the 2026 Finance Law)  _(Finance Law for 2026, Law No. 2025-17 of 12 December 2025 (Official Gazette No. 148 of 12 December 2025; Ministry of Finance PDF, Arabic), art. 87(2), restating art. 53(7) of Law 2017-66 (Finance Law for 2018) — https://www.finances.gov.tn/sites/default/files/2026-01/115725.pdf ; rate: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/tunisia/individual/other-taxes)_
 - **Non-resident short-stay employees** — 20% flat tax on gross income for stays not exceeding 6 months per fiscal year %  _(IRPP-IS Code (CIRPPIS) — non-resident provisions — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
 
 The IRPP is a progressive tax on individual income with eight brackets revised by the Finance Law 2025 effective 1 January 2025. The first TND 5,000 of annual taxable income is tax-free.
