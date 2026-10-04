@@ -1,10 +1,10 @@
 ---
 name: slovakia-pit
 description: Use this skill whenever asked to prepare, review, or classify transactions for Slovakia Personal Income Tax (Daň z príjmov fyzickej osoby — DPFO), annual return filing, or advise on Slovak PIT deductions and credits. Trigger on phrases like "daň z príjmov", "DPFO", "Slovak income tax", "SZČO", "živnosť", "paušálne výdavky", or any Slovakia personal tax request. ALWAYS read this skill before touching any Slovakia PIT work.
-version: 1.0
+version: 1.1
 jurisdiction: SK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -33,19 +33,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Source credit | `priznanie-digital/priznanie-digital` (MIT, 40 contributors) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Slovak daňový poradca |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 — Tax rates (Sadzby dane) — 2025
 
-**Tax rates (Sadzby dane) — 2025**
+**Tax rates (Sadzby dane) — 2025 and 2026**
 
 | Taxable base (základ dane) | Rate | Notes |
 | --- | --- | --- |
-| Up to €100,000 | **15%** | Znížená sadzba (reduced rate) |
-| €100,001 – €176,800 (92.8× životné minimum) | **19%** | Základná sadzba |
-| Over €176,800 | **25%** | Zvýšená sadzba |
+| Business income (§ 6(1) and (2)) where taxable revenues do not exceed €100,000 | **15%** | Znížená sadzba, § 15(a)(2) |
+| Other tax base up to 176.8× životné minimum (€48,441.43 for 2025) | **19%** | Základná sadzba, § 15(a)(1) |
+| Above 176.8× životné minimum (2025) | **25%** | Zvýšená sadzba |
+| From 1 January 2026: up to 154.8×, 154.8× to 212.4×, 212.4× to 264×, above 264× životné minimum | **19% / 25% / 30% / 35%** | § 15(a)(1) as consolidated from 1 January 2026 |
 
-The 15% reduced rate applies to the first €100,000 of taxable base for all taxpayers.
+The 15% rate applies to business income under § 6(1) and (2) where the taxpayer's taxable revenues for the period do not exceed €100,000; it is not a first-€100,000 band for other income. Source: Income Tax Act No. 595/2003 Coll., § 15(a), consolidated text in force from 1 January 2026 (Slov-Lex, https://static.slov-lex.sk/static/SK/ZZ/2003/595/20260101.html).
 
 ## Section 3 — Key constants (2025)
 
@@ -64,7 +65,7 @@ The 15% reduced rate applies to the first €100,000 of taxable base for all tax
 | Pension savings deduction cap | €180/year | Príspevky na doplnkové dôchodkové sporenie |
 | Rental/supplementary income exemption | €500 | Oslobodenie prenájom |
 | Minimum tax payable | €5 | Under €5 = no payment required |
-| Životné minimum (subsistence minimum) | €268.88/month | Used for various thresholds |
+| Životné minimum (subsistence minimum) | €273.99/month from 1 July 2024, the value behind the 2025 constants (21× = €5,753.79) | Used for the band and non-taxable thresholds |
 
 ## Section 4 — Non-taxable amounts (Nezdaniteľné časti)
 
@@ -72,13 +73,13 @@ The 15% reduced rate applies to the first €100,000 of taxable base for all tax
 
 ### On taxpayer (na daňovníka)
 
-- **Annual non-taxable amount on taxpayer** — €5,753.79 EUR
-- **Reduced non-taxable amount when taxable base > €25,426.27** — KONSTANTA(€48,441.43) − taxable base × 0.25
-- **Non-taxable amount when taxable base > €48,441.43** — 0
+- **Annual non-taxable amount on taxpayer** — €5,753.79 for 2025 (21× životné minimum where the tax base does not exceed 92.8× the subsistence minimum); from 1 January 2026 the full amount applies up to 91.8× and stays 21× (§ 11(2)(a))  _(Income Tax Act No. 595/2003 Coll. (zákon o dani z príjmov, consolidated text in force from 1 January 2026, Slov-Lex), § 11(2)(a) — https://static.slov-lex.sk/static/SK/ZZ/2003/595/20260101.html)_
+- **Reduced non-taxable amount when taxable base > €25,426.27** — 2025: 44.2× životné minimum (€12,110.36) − tax base ÷ 4 where the base exceeds 92.8× (€25,426.27). From 1 January 2026: 51.6× životné minimum − tax base ÷ 3 where the base exceeds 91.8× (§ 11(2)(b))  _(Income Tax Act No. 595/2003 Coll. (zákon o dani z príjmov, consolidated text in force from 1 January 2026, Slov-Lex), § 11(2)(b) — https://static.slov-lex.sk/static/SK/ZZ/2003/595/20260101.html)_
+- **Non-taxable amount when taxable base > €48,441.43** — 0 (the 2025 formula reaches zero at 176.8× životné minimum, €48,441.43; the 2026 formula at 154.8×)  _(Income Tax Act No. 595/2003 Coll. (zákon o dani z príjmov, consolidated text in force from 1 January 2026, Slov-Lex), § 11(2)(b) — https://static.slov-lex.sk/static/SK/ZZ/2003/595/20260101.html)_
 
 ### On spouse (na manžela/manželku)
 
-- **Max non-taxable amount on spouse** — €5,260.61 per year (prorated by months)
+- **Max non-taxable amount on spouse** — €5,260.61 per year (prorated by months)  _(Income Tax Act No. 595/2003 Coll. (zákon o dani z príjmov, consolidated text in force from 1 January 2026, Slov-Lex), § 11(3) — https://static.slov-lex.sk/static/SK/ZZ/2003/595/20260101.html)_
 - **Conditions** — Spouse lived with taxpayer, had own income below threshold
 - **Spouse non-taxable amount calculation** — €17,370.97 − spouse's own income (max €5,260.61)
 - **Reduced formula condition** — If taxpayer's base > €25,426.27 → reduced formula applies
