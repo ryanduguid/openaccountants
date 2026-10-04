@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T05:13:04+00:00",
+ "generated_at": "2026-10-04T05:22:45+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -13992,7 +13992,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "mn-payroll-social",
@@ -14005,7 +14005,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "mn-tax-overview",
@@ -14018,7 +14018,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "mongolia-vat",
@@ -14031,7 +14031,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "me-company-formation",
