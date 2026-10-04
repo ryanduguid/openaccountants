@@ -5,7 +5,7 @@ jurisdiction: GY
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,10 +17,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Private limited company** — Most common entity; limits members' liability; restricts share transfers and member numbers  _(Companies Act 1991 (Cap 89:01) — https://mola.gov.gy/laws/Volume%2016%20Cap.%2083.01%20-%2089.011695667005.pdf)_
 - **Public limited company** — May offer shares to the public; subject to additional disclosure and reporting  _(Companies Act 1991 (Cap 89:01) — https://mola.gov.gy/laws/Volume%2016%20Cap.%2083.01%20-%2089.011695667005.pdf)_
-- **External (foreign branch) company** — A foreign company carrying on business in Guyana registers as an external company ((approx — confirm))  _(Companies Act 1991 (Cap 89:01) — https://www.expanship.com/gy/blog/types-of-companies-in-guyana.html)_
+- **External (foreign branch) company** — A body corporate or unincorporated body formed under the laws of another country that carries on an undertaking in Guyana is an external company and registers under Part IV, Division A  _(Companies Act 1991 (Cap 89:01), Laws of Guyana Volume 16, Ministry of Legal Affairs, s 310 — https://mola.gov.gy/laws/Volume%2016%20Cap.%2083.01%20-%2089.011695667005.pdf)_
 - **Sole trader / partnership** — Business names registered under the Business Names (Registration) Act; partnerships under partnership law ((approx — confirm))  _(Business Names (Registration) Act)_
 - **Minimum share capital** — No statutory minimum share capital for a private company at incorporation  _(Companies Act 1991 (Cap 89:01) — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
-- **Minimum directors** — At least one director required ((approx — confirm))  _(Companies Act 1991 (Cap 89:01) — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
+- **Minimum directors** — At least one director; a public company must have at least two  _(Companies Act 1991 (Cap 89:01), Laws of Guyana Volume 16, Ministry of Legal Affairs, s 60 — https://mola.gov.gy/laws/Volume%2016%20Cap.%2083.01%20-%2089.011695667005.pdf)_
 - **Company secretary** — Every incorporated company must appoint a company secretary  _(Companies Act 1991 (Cap 89:01) — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
 - **Step 1 — Name reservation** — Select and reserve a unique company name with the Deeds and Commercial Registries Authority  _(Companies Act 1991 (Cap 89:01) — http://lawyerguyana.com/company.html)_
 - **Step 2 — Declaration of Compliance** — A Guyanese attorney issues a Declaration of Compliance confirming the formation meets legal requirements  _(Companies Act 1991 (Cap 89:01) — http://lawyerguyana.com/company.html)_
