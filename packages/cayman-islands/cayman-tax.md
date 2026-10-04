@@ -1,10 +1,10 @@
 ---
 name: cayman-tax
 description: Use this skill whenever asked about Cayman Islands taxation or the absence of direct taxes. Trigger on phrases like "Cayman tax", "Cayman Islands VAT", "Cayman Islands income tax", "Cayman corporate tax", or any request involving Cayman Islands tax compliance. The Cayman Islands does NOT have income tax, capital gains tax, VAT, payroll tax, or any direct taxes. Revenue is raised through import duties, work permit fees, and financial services fees. ALWAYS read this skill before handling any Cayman Islands tax work.
-version: 2.1
+version: 2.2
 jurisdiction: KY
-tax_year: 2025
-last_updated: 2026-09-28
+tax_year: 2026
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | N/A -- no direct tax filing |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Cayman practitioner |
-| Skill version | 2.1 |
+| Skill version | 2.2 |
 
 ### Tax Landscape
 
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Stamp Duty | Yes -- on real estate transfers |
 | Tourism Tax | Yes -- 13% hotel tax |
 
-- **Tax Undertaking Certificate duration** — up to 50 years for companies, 30 years for individuals years
+- **Tax Undertaking Certificate duration** — Up to 30 years from approval for an exempted company (Tax Concessions Act s 6(5)); up to 50 years for an exempted limited partnership (ELP Act s 38(3)), a limited liability company (LLC Act s 58(3)) or an exempted trust (Trusts Act s 81(2)). Undertakings are given to entities, not to individuals  _(Tax Concessions Act (2018 Revision), s 6(5) — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1964/1964-0164/1964-0164_2018%20Revision.pdf ; Exempted Limited Partnership Act (2025 Revision), s 38(3) — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/2001/2001-0005/2001-0005_2025%20Revision.pdf ; Limited Liability Companies Act (2025 Revision), s 58(3) — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/2016/2016-0002/2016-0002_2025%20Revision.pdf ; Trusts Act (2021 Revision), s 81(2) — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1967/1967-0006/1967-0006_2021%20Revision.pdf)_
 
 ### Import Duty Rates
 
@@ -146,11 +146,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 No Direct Taxes
 
-- **No direct taxes** — No income tax of any kind. No capital gains tax. No VAT/sales tax. No withholding tax. No payroll tax. No property tax. No estate tax. Tax Undertaking Certificates guarantee this for up to 50 years.
+- **No direct taxes** — No income tax of any kind. No capital gains tax. No VAT/sales tax. No withholding tax. No payroll tax. No property tax. No estate tax. Tax undertakings guarantee this for up to 30 years for exempted companies and 50 years for exempted limited partnerships, LLCs and exempted trusts  _(Cayman Islands Government, Finance and Economy (gov.ky archive) — https://cigarchives.gov.ky/economy ; Tax Concessions Act (2018 Revision), s 6 — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1964/1964-0164/1964-0164_2018%20Revision.pdf ; Exempted Limited Partnership Act (2025 Revision), s 38 — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/2001/2001-0005/2001-0005_2025%20Revision.pdf)_
 
 ### 5.2 Stamp Duty
 
-- **Stamp duty on real estate transfers** — 7.5% % of consideration or market value (First-time Caymanian buyer concessions may apply.)
+- **Stamp duty on real estate transfers** — 7.5% of the consideration or market value, whichever is higher, and 10% where the consideration is CI$2 million or more, for instruments executed from 1 January 2026 (SL 63 of 2025, regs 2 and 3); Caymanians buying a first or second property pay nil, 3.75% or 7.5% by price band (SL 3 of 2025, reg 2)  _(Stamp Duty (Rates of Duty) (No. 2) Regulations, 2025 (SL 63 of 2025), regs 2 and 3 — https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/2025/2025-0063/2025-0063_SL%2063%20of%202025.pdf ; Stamp Duty (Rates of Duty) Regulations, 2025 (SL 3 of 2025), reg 2 — https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/2025/2025-0003/2025-0003_SL%203%20of%202025.pdf ; Cayman Islands Government, Legislation passed to increase stamp duty on properties worth $2M and over (December 2025) — https://gov.ky/w/legislation-passed-to-increase-stamp-duty-on-properties-worth-2m-and-over)_
 
 ### 5.3 Pension and Health Insurance
 
@@ -160,7 +160,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 6.1 Economic Substance
 
-- **Economic substance** — Entities conducting relevant activities must demonstrate adequate substance. Flag for specialist.
+- **Economic substance** — Relevant entities conducting relevant activities must satisfy the economic substance test, notify the Tax Information Authority annually and file a return within twelve months of year end. Flag for specialist  _(International Tax Co-operation (Economic Substance) Act (2024 Revision), ss 4 and 7 — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/2018/2018-0045/2018-0045_2024%20Revision.pdf)_
 
 ### 6.2 Duty Concessions
 
@@ -168,7 +168,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 6.3 Real Estate (Non-Caymanian)
 
-- **Real estate (non-Caymanian)** — Foreign ownership restrictions may apply. Stamp duty 7.5%. Flag for practitioner.
+- **Real estate (non-Caymanian)** — Foreign ownership restrictions may apply. Stamp duty is 7.5%, or 10% where the consideration is CI$2 million or more for instruments executed from 1 January 2026. Flag for practitioner  _(Stamp Duty (Rates of Duty) (No. 2) Regulations, 2025 (SL 63 of 2025), reg 2 — https://legislation.gov.ky/cms/images/LEGISLATION/SUBORDINATE/2025/2025-0063/2025-0063_SL%2063%20of%202025.pdf)_
 
 ## Section 7 -- Excel Working Paper Template
 
