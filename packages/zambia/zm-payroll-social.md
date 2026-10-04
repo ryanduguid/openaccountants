@@ -1,10 +1,11 @@
 ---
 name: zm-payroll-social
-description: "Source-cited draft: payroll & social contributions for Zambia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: payroll & social contributions for Zambia (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: ZM
 category: payroll
-tax_year: 2025
-last_updated: 2026-09-10
+tax_year: 2026
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -36,7 +37,7 @@ block as unsourced and confirm each figure with the two authorities.**
 - **NHIMA total contribution rate** — 2% of basic salary (1% employer + 1% employee) percent (unverified — see source warning above)  _(National Health Insurance Act — source lost)_
 - **NHIMA employee contribution** — 1% of basic salary percent (unverified — see source warning above)  _(National Health Insurance Act — source lost)_
 - **NHIMA employer contribution** — 1% of basic salary percent (unverified — see source warning above)  _(National Health Insurance Act — source lost)_
-- **PAYE withholding** — Employer must deduct PAYE from employee pay under the progressive bands (0% / 20% / 30% / 37.5%)  _([Income Tax Act](https://www.zra.org.zm/calculate-paye/))_
+- **PAYE withholding** — Employers deduct PAYE from emoluments under section 71 of the Income Tax Act using the 2026 monthly bands: 0% to K5,100, 20% from K5,100.01 to K7,100, 30% from K7,100.01 to K9,200 and 37% above K9,200 (37.5% was the 2025 top rate); late remittance attracts a 5% penalty plus interest at 2% above the Bank of Zambia discount rate  _(Zambia Revenue Authority, Tax Information (turnover tax, PAYE 2026 bands, income tax, VAT), PAYE example with the 2026 tax bands — https://www.zra.org.zm/tax-information/ ; Zambia Revenue Authority, Payment Due Dates, PAYE, section 71 of the Income Tax Act — https://www.zra.org.zm/payment-due-dates/)_
 - **PAYE remittance deadline** — By the 10th of the month following deduction  _([Income Tax Act](https://www.zra.org.zm/payment-due-dates/))_
 - **NAPSA remittance deadline** — By the 10th of the month following the contribution month (approx — confirm)  _(National Pension Scheme Act)_
 - **Skills Development Levy** — 0.5% of gross emoluments, payable by the employer percent (approx — confirm rate and base)  _(Skills Development Levy Act)_
