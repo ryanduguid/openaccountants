@@ -4,7 +4,8 @@ description: Tier 2 US federal content skill for Form 1041 — US Income Tax Ret
 jurisdiction: US
 category: federal
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -205,7 +206,7 @@ The 20% LTCG rate hits at $15,200 of taxable income for a trust/estate. The corr
 
 ### 6.3 Net Investment Income Tax — §1411
 
-- **NIIT rate for trust/estate** — 3.8% percent  _(§1411)_
+- **NIIT rate for trust/estate** — 3.8%  _(§1411)_
 - **NIIT computation base** — A trust or estate is subject to NIIT at 3.8% on the LESSER of: Undistributed net investment income for the year, OR The excess of adjusted gross income (a modified concept for trusts/estates — see §1411(a)(2)(B)) over the dollar amount at which the highest bracket begins, i.e. $15,650 for 2025.  _(§1411(a)(2)(B))_
 - **Individual NIIT threshold comparison** — $200,000 single MAGI ($250,000 MFJ)  _(§1411; comparison text: a trust crosses the NIIT cliff at 1/12th the single threshold)_
 

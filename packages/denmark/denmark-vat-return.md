@@ -1,11 +1,11 @@
 ---
 name: denmark-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Danish VAT return (Momsangivelse) for a self-employed individual or small business in Denmark. Trigger on phrases like "prepare VAT return", "do the VAT", "Danish VAT", "moms", "momsangivelse", or any request involving Denmark VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Denmark only and only standard-registered businesses. Loensumsafgift-only entities, VAT groups, and fiscal representatives are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Danish VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: DK
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Denmark VAT Return
 
-## Denmark VAT Return Skill (Momsangivelse) v2.0
+## Denmark VAT Return Skill (Momsangivelse) v2.1
 
 ## Section 1 — Quick reference
 
@@ -402,7 +402,7 @@ Each rule states the legal source and the rubrik mapping. Apply silently if the 
 ### 5.9 Capital goods scheme (momsloven §43-44)
 
 - **Capital goods scheme rule** — Capital goods with acquisition cost excl. VAT ≥ DKK 100,000 are subject to the capital goods adjustment scheme. Adjustment period: 5 years for movable goods, 10 years for immovable property (real estate). Below DKK 100,000: treat as normal overhead in rubrik 4.  _(momsloven §43-44)_
-- **Capital goods threshold** — DKK 100,000 DKK (acquisition cost excl. VAT)  _(momsloven §43-44)_
+- **Capital goods threshold** — DKK 100,000 (acquisition cost excl. VAT)  _(momsloven §43-44)_
 
 ### 5.10 Sales — local domestic
 
@@ -589,7 +589,7 @@ The workflow in `vat-workflow-base` Section 1 mandates inferring the client prof
 
 ### Validation status
 
-This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAccountants architecture (vat-workflow-base + eu-vat-directive + country skill). Awaiting validation by a statsautoriseret revisor or registreret revisor in Denmark.
+This skill is v2.1, rewritten in April 2026 to align with the three-tier OpenAccountants architecture (vat-workflow-base + eu-vat-directive + country skill). Awaiting validation by a statsautoriseret revisor or registreret revisor in Denmark.
 
 ### Sources
 
@@ -622,10 +622,10 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to align with three-tier OpenAccountants architecture. Quick reference moved to top (Section 1). Supplier pattern library restructured as literal lookup tables (Section 3). Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue restructured (Section 6). Excel working paper specification added (Section 7). Bank statement reading guide added (Section 8). Onboarding moved to fallback role (Section 9). Reference material moved to bottom (Section 10).
+- **v2.1 (April 2026):** Full rewrite to align with three-tier OpenAccountants architecture. Quick reference moved to top (Section 1). Supplier pattern library restructured as literal lookup tables (Section 3). Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue restructured (Section 6). Excel working paper specification added (Section 7). Bank statement reading guide added (Section 8). Onboarding moved to fallback role (Section 9). Reference material moved to bottom (Section 10).
 - **v1.0 (April 2026):** Initial skill. Standalone monolithic document. Awaiting validation.
 
-### Self-check (v2.0)
+### Self-check (v2.1)
 
 1. Quick reference at top with rubrik table and conservative defaults: yes (Section 1).
 2. Supplier library as literal lookup tables: yes (Section 3, 14 sub-tables).

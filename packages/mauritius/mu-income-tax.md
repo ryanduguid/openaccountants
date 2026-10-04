@@ -5,7 +5,7 @@ jurisdiction: MU
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,10 +27,10 @@ From 1 July 2025 Mauritius applies a three-band progressive scale to annual char
 - **PAYE exempt-person monthly threshold** — Rs 38,462 per month: an employee whose monthly emoluments do not exceed this amount is an exempt person outside PAYE deduction (directors are excluded from the definition)  _(Income Tax Act 1995 (MRA consolidation to May 2026), s 2, definition of 'exempt person', as amended by the Finance (Miscellaneous Provisions) Act 2025 from 1 July 2025 — https://www.mra.mu/download/ITAConsolidated.pdf)_
 - **Deduction for electronic charitable donations** — Up to Rs 100,000 per income year MUR  _([Income Tax Act](https://www.mra.mu/individuals/reliefs-deductions-allowances))_
 - **Deduction for individual pension scheme contributions** — Up to Rs 50,000 per income year MUR  _([Income Tax Act](https://www.mra.mu/individuals/reliefs-deductions-allowances))_
-- **Other available reliefs / deductions** — Reliefs for dependents, tertiary education expenses, housing loan interest and approved medical/insurance schemes (amounts vary) ((approx — confirm exact caps per relief))  _([Income Tax Act](https://www.mra.mu/individuals/reliefs-deductions-allowances))_
+- **Other available reliefs / deductions** — Reliefs for dependents, tertiary education expenses, housing loan interest and approved medical/insurance schemes (amounts vary) (approx — confirm exact caps per relief)  _([Income Tax Act](https://www.mra.mu/individuals/reliefs-deductions-allowances))_
 - **Tax residence test (days)** — Present in Mauritius for 183 days or more in the income year, or 270 days or more across the income year and the two preceding income years; or domiciled in Mauritius unless the permanent place of abode is outside Mauritius  _(Income Tax Act 1995 (MRA consolidation to May 2026), s 73(1)(a) — https://www.mra.mu/download/ITAConsolidated.pdf)_
 - **Individual return filing & payment deadline** — 15 October following the income year, filed and paid electronically; the Act no longer carries a 30 September deadline  _(Income Tax Act 1995 (MRA consolidation to May 2026), s 112(1) — https://www.mra.mu/download/ITAConsolidated.pdf)_
-- **Current Payment System (CPS) for individuals with business/non-PAYE income** — Quarterly advance payments via CPS statements during the income year ((approx — confirm CPS thresholds and quarter dates))  _([Income Tax Act](https://www.mra.mu/important-dates))_
+- **Current Payment System (CPS) for individuals with business/non-PAYE income** — Quarterly advance payments via CPS statements during the income year (approx — confirm CPS thresholds and quarter dates)  _([Income Tax Act](https://www.mra.mu/important-dates))_
 
 <!-- openaccountants-cta-block -->
 

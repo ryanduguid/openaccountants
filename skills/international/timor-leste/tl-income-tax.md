@@ -5,7 +5,7 @@ jurisdiction: TL
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Timor-Leste distinguishes Wage Income Tax (WIT, withheld by employers) from income tax on non-wage income. Rates are low and flat above a tax-free threshold. These are unverified draft figures.
 
-- **Wage Income Tax — resident employees** — 0% on monthly wages up to USD 500; 10% on the portion above USD 500 percent ((approx — confirm monthly threshold))  _(Taxes and Duties Act (Law No. 8/2008) — https://attl.gov.tl/wage-income-tax/)_
+- **Wage Income Tax — resident employees** — 0% on monthly wages up to USD 500; 10% on the portion above USD 500 percent (approx — confirm monthly threshold)  _(Taxes and Duties Act (Law No. 8/2008) — https://attl.gov.tl/wage-income-tax/)_
 - **Wage Income Tax — non-resident employees** — 10% of the taxable wages of a non-resident employee, with no tax-free amount  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 20 and Schedule V(b) — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf ; Autoridade Tributária Timor-Leste, Wage Income Tax — https://attl.gov.tl/wage-income-tax/)_
 - **Income tax on non-wage income — band 1** — 0% on a resident natural person's annual taxable income up to USD 6,000  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 26 and Schedule VI(a) — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf ; Autoridade Tributária Timor-Leste, Annual Income Tax Return Guidelines — https://attl.gov.tl/annual-income-tax-return-guidelines/)_
 - **Income tax on non-wage income — band 2** — 10% on a resident natural person's annual taxable income in excess of USD 6,000  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 26 and Schedule VI(a) — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf ; Autoridade Tributária Timor-Leste, Annual Income Tax Return Guidelines — https://attl.gov.tl/annual-income-tax-return-guidelines/)_

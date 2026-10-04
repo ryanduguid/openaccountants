@@ -1,10 +1,10 @@
 ---
 name: us-expatriation-exit-tax
 description: "US expatriation tax for citizens renouncing and long-term green-card holders abandoning status: the covered-expatriate tests (IRC §877A/§877), the mark-to-market exit tax, the special rules for deferred compensation, tax-deferred accounts and non-grantor trust interests, the dual-citizen and minor exceptions, Form 8854, and the §2801 tax on US recipients of gifts from covered expatriates. Produces a working paper and a reviewer brief — not a filed return. MUST load alongside cross-border-tax-workflow-base."
-version: 0.1
+version: 0.2
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 reviewed_by: James Wallach
 review_status: pending_review
 depends_on:
@@ -60,7 +60,7 @@ It produces a working paper and reviewer brief; it never produces a filed return
 - **Ineligible deferred compensation** — Where the eligibility conditions are not met, the covered expatriate is treated as receiving a deemed lump-sum distribution of the present value of the accrued benefit on the day before expatriation — taxed up front.  _(IRC §877A(d)(2))_
 - **Specified tax-deferred accounts** — IRAs, §529 plans, Coverdell ESAs, health/medical savings accounts, etc. are treated as receiving a deemed full distribution of the entire account on the day before expatriation (income tax applies; the 10% early-distribution additional tax does not).  _(IRC §877A(e))_
 - **Interests in non-grantor trusts** — A covered expatriate's beneficial interest in a non-grantor trust is not marked to market. Instead, the trustee withholds 30% of the taxable portion of each direct or indirect distribution to the covered expatriate. Cross-reference `us-foreign-trust-reporting` for the trust classification (grantor vs non-grantor) and the reporting that surrounds it.  _(IRC §877A(f))_
-- **Withholding rate on eligible deferred comp / non-grantor trust distributions** — 30 %  _(IRC §877A(d)(1), §877A(f))_
+- **Withholding rate on eligible deferred comp / non-grantor trust distributions** — 30  _(IRC §877A(d)(1), §877A(f))_
 
 ### A.6 — §2801 transfer tax on US recipients (high level)
 

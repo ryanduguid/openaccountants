@@ -4,7 +4,8 @@ description: "Use this skill whenever asked about Tennessee sales tax, Tennessee
 jurisdiction: US-TN
 category: state-tax
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -69,7 +70,7 @@ Before proceeding with any Tennessee sales tax analysis, collect the following f
 
 ### 1.1 State Rate
 
-- **State sales tax rate** — 7% percent (retail sale of tangible personal property and certain services; one of the highest state-level sales tax rates in the US)  _(T.C.A. Section 67-6-202)_
+- **State sales tax rate** — 7% (retail sale of tangible personal property and certain services; one of the highest state-level sales tax rates in the US)  _(T.C.A. Section 67-6-202)_
 
 ### 1.2 Reduced Rate on Grocery Food
 

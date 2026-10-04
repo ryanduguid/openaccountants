@@ -1,10 +1,10 @@
 ---
 name: belgium-payroll
 description: Use this skill whenever asked about Belgian payroll processing, employee salary calculations, précompte professionnel (professional withholding tax), ONSS/RSZ social security contributions, employer cost calculations, net-to-gross or gross-to-net conversions, Belgian payslip structure, DmfA declarations, or any question about computing wages, deductions, or employer obligations in Belgium. Trigger on phrases like "Belgian payroll", "ONSS contributions", "RSZ bijdragen", "précompte professionnel", "bedrijfsvoorheffing", "net salary Belgium", "employer cost Belgium", "DmfA filing", "social security Belgium", "Belgian payslip", "13th month Belgium", "double holiday pay", "meal vouchers Belgium", or "eco-cheques".
-version: 1.0
+version: 1.1
 jurisdiction: BE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Belgium Payroll
 
-## Belgium Payroll Skill v1.0
+## Belgium Payroll Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Withholding tax | Précompte professionnel / Bedrijfsvoorheffing (progressive, per Annex III) |
 | Minimum wage (GGMMI) | EUR 2,189.81/month (from 1 April 2026, 18+ full-time) |
 | DmfA filing | Quarterly, due by end of month following quarter |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Income Tax Withholding (Précompte Professionnel)
 
@@ -56,7 +56,7 @@ The figures previously given here without a year label -- 16,720 / 29,510 / 51,0
 ### Withholding Tax Mechanism
 
 - **Précompte professionnel calculation mechanism** — The précompte professionnel is NOT a simple application of the above brackets. It is calculated via Annex III of AR/CIR 92, which uses a progressive key formula accounting for: Gross taxable remuneration (after ONSS deduction); Family situation (single, married one income, married two incomes); Number of dependent children; Disability status; Flat-rate professional expense deduction (automatically applied); Tax-free allowance (quotité exemptée / belastingvrije som): EUR 10,570 base (2026)  _(Annex III of AR/CIR 92)_
-- **Tax-free allowance (quotité exemptée / belastingvrije som) base** — EUR 10,570 EUR (2026 base)  _(Annex III of AR/CIR 92)_
+- **Tax-free allowance (quotité exemptée / belastingvrije som) base** — EUR 10,570 (2026 base)  _(Annex III of AR/CIR 92)_
 
 ### Key Withholding Rules
 

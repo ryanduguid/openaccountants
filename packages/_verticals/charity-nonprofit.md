@@ -1,10 +1,10 @@
 ---
 name: charity-nonprofit
 description: "Use this skill whenever a charity, nonprofit, foundation, NGO, religious organisation, or social enterprise asks about accounting / tax / reporting specific to the nonprofit sector. Trigger on phrases like \"501(c)(3)\", \"private foundation\", \"public charity\", \"UBI\", \"unrelated business income\", \"Form 990\", \"Form 990-PF\", \"CIO\", \"Charity Commission\", \"FRS 102 SORP\", \"Charities SORP\", \"fund accounting\", \"restricted vs unrestricted\", \"gift aid\", \"Public Benefit Test\", \"PBO\", \"Section 18A\", \"trustees report\", \"donor-advised fund\", \"DAF\", \"private operating foundation\", \"minimum distribution requirement\", \"5% payout\", \"self-dealing\", or any nonprofit-sector question. Covers US §501(c) exemption / Form 990 series, UK CIO / Charities Act 2011 / Charities SORP (FRS 102), EU foundation regimes, fund accounting, and the unrelated business income (UBI) / VAT exemption complications. Does NOT cover: fundraising regulation, donor management, or governance procedure beyond tax accounting."
-version: 0.1
+version: 0.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - corporate-income-tax-workflow-base
@@ -36,7 +36,7 @@ A sector overlay for charities, nonprofits, foundations, NGOs, religious organis
 
 - **Public charity vs private foundation - public charity** — Public charity: significant public support (>1/3 from broad public or government); fewer restrictions  _([T1])_
 - **Public charity vs private foundation - private foundation restrictions** — Private foundation: typically family-funded; subject to 5% minimum payout (§4942), self-dealing rules (§4941), excess business holdings (§4943), prohibited investments (§4944), taxable expenditures (§4945)  _([T1])_
-- **Net investment income excise tax** — 1.39% percent (previously 2% / 1% two-tier; flattened by TCJA + Inflation Reduction Act amendments)  _(§4940)_
+- **Net investment income excise tax** — 1.39% (previously 2% / 1% two-tier; flattened by TCJA + Inflation Reduction Act amendments)  _(§4940)_
 - **Filing requirements** — Form 1023 / 1024 application; Form 990 (public charity) / 990-PF (private foundation) / 990-EZ (small) / 990-N (smallest); Form 990-T for UBI; Schedule A (public support test); Schedule B (large donors)  _([T1])_
 
 ### 1.2 United Kingdom

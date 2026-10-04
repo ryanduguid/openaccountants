@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Benin (tax year 2025) — rat
 jurisdiction: BJ
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -48,7 +49,7 @@ current host instead.
 - **First accounting period of a new company** — A company formed **before 30 June** must close its first accounting period at 31 December of the same year. One formed **after 30 June** may run its first period to 31 December of the *following* year — an opening period of up to 18 months — and is taxed on the profits of that whole period  _(Code Général des Impôts (Bénin) 2021, art. 20 — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **Currency** — West African CFA franc (XOF / FCFA)  _(WAEMU (UEMOA) monetary union framework)_
 - **Tax authority** — Direction Générale des Impôts (DGI), Ministère de l'Économie et des Finances  _(Direction Générale des Impôts — https://www.impots.finances.gouv.bj/)_
-- **Residence / taxation basis** — Residents are taxed on worldwide income; non-residents are taxed on Benin-source income. Companies are taxed on a territorial (Benin-source profit) basis. ((approx — confirm))  _(Code Général des Impôts (Bénin))_
+- **Residence / taxation basis** — Residents are taxed on worldwide income; non-residents are taxed on Benin-source income. Companies are taxed on a territorial (Benin-source profit) basis. (approx — confirm)  _(Code Général des Impôts (Bénin))_
 - **Top personal income tax (IRPP) rate** — 30 percent **on salary income**; 40 percent on business and professional income (Benin runs two scales. Salaries: 0/10/15/20/30% in monthly slices, topping at 30% above XOF 530,000 a month, art. 142. Industrial, commercial, non-commercial, artisanal and agricultural income: 30/35/40% in annual slices, topping at **40%** above XOF 20,000,000, art. 136. An unqualified "top IRPP rate of 30%" is only half of it)  _(Code Général des Impôts (Bénin) 2021, arts. 136 and 142 — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **Standard corporate income tax (IS) rate** — 30 percent for legal persons other than industries; 25 percent for industrial companies and for mining companies on profits from working a deposit; 35–45 percent for hydrocarbons under the terms of the petroleum convention  _(Code Général des Impôts (Bénin) 2021, art. 156 — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **VAT / GST standard rate** — 18 percent (VAT (Taxe sur la Valeur Ajoutée, TVA) standard rate)  _(Code Général des Impôts (Bénin) 2021, art. 232 — https://www.impots.finances.gouv.bj/code-general-des-impots/)_

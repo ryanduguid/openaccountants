@@ -1,10 +1,10 @@
 ---
 name: belgium-bookkeeping
 description: Use this skill whenever asked about Belgian bookkeeping, chart of accounts, PCMN/MAR, annual accounts filing, balance sheet or P&L format in Belgium. Trigger on phrases like "Belgian bookkeeping", "PCMN", "MAR", "Plan Comptable Minimum Normalisé", "minimumindeling", "jaarrekening Belgium", "comptes annuels", "NBB filing", "Nationale Bank", "micro-entity Belgium", "Belgian GAAP", "small company Belgium", "chart of accounts Belgium", "boekhoudwetgeving", "WVV", or any question about recording transactions, financial reporting, or accounting standards for Belgian entities.
-version: 1.0
+version: 1.1
 jurisdiction: BE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -470,7 +470,7 @@ Use the be-income-tax skill for detailed calculation
 ### VAT (TVA/BTW)
 
 - **VAT accounts** — VAT is recorded in accounts 411 (input VAT recoverable) and 451 (output VAT payable)
-- **VAT return frequency threshold** — EUR 2,500,000 EUR (Monthly or quarterly VAT returns depending on turnover threshold)
+- **VAT return frequency threshold** — EUR 2,500,000 (Monthly or quarterly VAT returns depending on turnover threshold)
 - **Annual client listing deadline** — Annual client listing (listing annuelle) due by 31 March
 - **Intra-community listings frequency** — Intra-community listings due monthly
 
@@ -479,7 +479,7 @@ Use the belgium-vat-return skill for filing details
 ### Social Contributions
 
 - **Self-employed quarterly contributions** — Self-employed: quarterly social contributions to sociaal verzekeringsfonds (accounts 62x for companies, deducted personally for sole traders)
-- **Company employer contributions** — approximately 25-30% of gross salary (ONSS/RSZ) %
+- **Company employer contributions** — approximately 25-30% of gross salary (ONSS/RSZ)
 
 Use the be-social-contributions skill for details
 

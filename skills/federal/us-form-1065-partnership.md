@@ -4,7 +4,8 @@ description: US federal content skill for preparing Form 1065 — the US partner
 jurisdiction: US
 category: federal
 tax_year: 2025
-last_updated: 2026-09-30
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Christopher Aryee, CPA
 review_status: pending_review
 tier: 1
@@ -399,7 +400,7 @@ The reviewer brief should include:
 
 ### 15.1 General partners
 
-- **SE tax rates on general partner distributive share** — 12.4% OASDI up to the SS wage base of $176,100 for 2025, 2.9% Medicare on all SE earnings, plus 0.9% Additional Medicare on SE earnings above the §1401(b)(2) thresholds percent (2025 SS wage base $176,100)  _(§1402(a); §1401(b)(2))_
+- **SE tax rates on general partner distributive share** — 12.4% OASDI up to the SS wage base of $176,100 for 2025, 2.9% Medicare on all SE earnings, plus 0.9% Additional Medicare on SE earnings above the §1401(b)(2) thresholds (2025 SS wage base $176,100)  _(§1402(a); §1401(b)(2))_
 - **Guaranteed payments subject to SE tax** — Guaranteed payments under §707(c) for services are also subject to SE tax — for general partners and limited partners alike (see §15.2).  _(§707(c))_
 
 ### 15.2 Limited partners — §1402(a)(13)

@@ -1,10 +1,10 @@
 ---
 name: nl-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Netherlands tax returns AND mentions freelancing, self-employment, ZZP, eenmanszaak, or sole proprietorship. Trigger on phrases like "help me do my taxes", "prepare my IB-aangifte", "I'm a ZZP'er in the Netherlands", "I'm a freelancer in the Netherlands", "do my taxes as a contractor", "prepare my BTW return and income tax", or any similar phrasing where the user is a Netherlands-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Netherlands self-employed tax workflow -- every other skill in the stack (nl-btw-return, nl-income-tax, nl-zvw, nl-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Netherlands full-year residents only; self-employed individuals and sole proprietors.
-version: 1.1
+version: 1.2
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -276,7 +276,7 @@ After inference, present a single compact summary message. Use a structured form
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
 - **Example zelfstandigenaftrek rate (2025)** — 2,470 EUR (2025 rate, example in confirmation summary)  _(Section 5 -- The confirmation)_
-- **MKB-winstvrijstelling percentage** — 13.31 % (applied to remaining winst after zelfstandigenaftrek)  _(Section 5 -- The confirmation)_
+- **MKB-winstvrijstelling percentage** — 13.31 (applied to remaining winst after zelfstandigenaftrek)  _(Section 5 -- The confirmation)_
 - **Eigenwoningforfait rate example (2025)** — 0.55 % of WOZ-waarde (example in confirmation summary, 2025 rate)  _(Section 5 -- The confirmation)_
 
 ## Section 6 -- Gap filling

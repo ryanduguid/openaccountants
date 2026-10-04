@@ -1,10 +1,10 @@
 ---
 name: pt-nhr-ifici
 description: "Utilizar este skill sempre que questões envolvam o regime do Residente Não Habitual (RNH) em Portugal ou o seu sucessor, o Incentivo Fiscal à Investigação Científica e Inovação (IFICI). Acionar perante expressões como \"RNH\", \"Residente Não Habitual\", \"IFICI\", \"Incentivo Fiscal à Investigação Científica e Inovação\", \"20% taxa fixa\", \"nómadas digitais Portugal\", \"isenção rendimentos estrangeiros\", \"Modelo 3 anexo L\", \"Atividades de Elevado Valor Acrescentado\", \"AEVA\", \"Portaria 352/2024/1\", \"EBF artigo 58.º-A\", \"Despacho 230/2019\", \"pensões estrangeiras Portugal\", \"convenções dupla tributação Portugal\". Também acionar em pedidos formulados em inglês: \"Portugal NHR regime\", \"Portugal digital nomad tax\", \"non-habitual resident Portugal\", \"IFICI scheme Portugal\", \"20% flat rate Portugal\", \"foreign income exemption Portugal\", \"Portugal pension tax 10%\", \"Portugal tax residency\", \"NHR replacement Portugal\". Cobre o RNH legado criado pelo DL 249/2009 (fechado a novos pedidos desde 1 jan 2024 pela Lei 82/2023), o IFICI introduzido pela Portaria n.º 352/2024/1 ao abrigo do art.º 58.º-A do EBF, a taxa fixa de 20% sobre rendimentos das categorias A e B em Atividades de Elevado Valor Acrescentado, a matriz de isenção de rendimentos de fonte estrangeira por tipo de rendimento e país, o tratamento das pensões estrangeiras (incluindo a tributação a 10% introduzida pelo OE 2020), mais-valias e dividendos estrangeiros, convenções de dupla tributação aplicáveis (~80 acordos), processo de candidatura no Portal das Finanças até 31 de março do ano seguinte ao da residência, perda de estatuto por interrupção da residência, e preenchimento do Anexo L do Modelo 3. LER SEMPRE este skill antes de tratar fiscalidade RNH/IFICI em Portugal."
-version: 1.0
+version: 1.1
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - pt-income-tax
@@ -125,7 +125,7 @@ Este skill **não cobre**: regime fiscal das stock options para trabalhadores qu
 - **Categoria B estrangeiro em AEVA** — Isentos se sujeitos a tributação no Estado da fonte ao abrigo de CDT ou Modelo OCDE, e desde que não provenientes de territórios de tributação privilegiada (lista da Portaria 150/2004 e alterações).  _(Portaria 150/2004)_
 - **Categorias E, F e G estrangeiro** — Isentos se puderem ser tributados no Estado da fonte ao abrigo de CDT, ou na ausência de CDT, ao abrigo do Modelo OCDE, e não provierem de paraíso fiscal.
 - **Pensões estrangeiras (categoria H) — inscrição até 31 mar 2020** — Isenção percent (sujeito a verificação dos requisitos de tributação no Estado da fonte ou de não-residência da fonte em Portugal)
-- **Pensões estrangeiras (categoria H) — inscrição a partir de 1 abr 2020** — 10% percent (taxa fixa)  _(art.º 72.º n.º 12 do CIRS, redação da Lei 2/2020)_
+- **Pensões estrangeiras (categoria H) — inscrição a partir de 1 abr 2020** — 10% (taxa fixa)  _(art.º 72.º n.º 12 do CIRS, redação da Lei 2/2020)_
 
 ### 3.5 Regime transitório da Lei 82/2023
 

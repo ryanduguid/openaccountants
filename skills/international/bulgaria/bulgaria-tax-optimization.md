@@ -1,10 +1,10 @@
 ---
 name: bulgaria-tax-optimization
 description: Use this skill whenever asked about reducing tax in Bulgaria, tax planning, or legal strategies to minimise tax for a freelancer, sole trader, or small company in Bulgaria. Trigger on phrases like "reduce tax Bulgaria", "10% flat tax", "Bulgaria freelancer 7.5%", "svobodna profesiya", "normative expense deduction", "sole trader vs EOOD", "Bulgaria dividends 5%", "save tax Bulgaria", "Bulgaria tax haven", "tax planning Bulgaria". This skill covers the freelancer (self-insured professional) 25% normative-expense regime giving a 7.5% effective rate, sole-trader vs EOOD company choice, the 5% dividend withholding, deductions and child reliefs, and the substance/anti-avoidance red lines. ALWAYS read this skill before advising on any Bulgarian tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: BG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,11 +14,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bulgaria Tax Optimization
 
-## Bulgaria Tax Optimization Skill v0.1
+## Bulgaria Tax Optimization Skill v0.2
 
-Bulgaria Tax Optimization Skill v0.1
+Bulgaria Tax Optimization Skill v0.2
 
-## Bulgaria Tax Optimization Skill v0.1
+## Bulgaria Tax Optimization Skill v0.2
 
 Tier 2 — research-verified. Sources: NRA (National Revenue Agency), PwC Bulgaria, Innovires/NomadTax. Figures must agree with `bulgaria-income-tax.md` / `bulgaria-social-contributions.md`. NOT yet signed off by a Bulgarian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.
 
@@ -52,7 +52,7 @@ The Bulgarian headline is the FREELANCER (svobodna profesiya) regime: a register
 ## Section 3 -- Dividends & Profit Extraction (EOOD)
 
 - **EOOD profit taxation** — EOOD profit: 10% CIT. Retained profit is not taxed again until distributed.
-- **Dividend withholding tax** — 5% percent (final withholding on dividends to the owner → ~15% all-in on fully distributed profit)
+- **Dividend withholding tax** — 5% (final withholding on dividends to the owner → ~15% all-in on fully distributed profit)
 
 A modest, deductible manager's contract salary can cover social security while the bulk is taken as low-taxed dividends — but it must be genuine. [RESEARCH GAP — reviewer to confirm minimum manager-remuneration / self-insured base rules.]
 

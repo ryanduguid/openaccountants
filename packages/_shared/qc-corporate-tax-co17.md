@@ -4,7 +4,8 @@ description: "Use this skill whenever asked about Quebec corporate income tax. Q
 jurisdiction: CA
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # QC Corporate Tax Co17
 
-## Quebec — Corporate Income Tax (CO-17) — Skill v1.0
+## Quebec — Corporate Income Tax (CO-17) — Skill v1.1
 
 Produced by OpenAccountants (openaccountants.com)
 
@@ -253,11 +254,11 @@ Quebec maintains a parallel R&D credit regime that stacks on top of the federal 
 
 #### 3.9.2 University and Public Research Contracts — Section 1029.8.1 QTA
 
-- **University / public research contract credit** — 30% (CCPC SMEs) or 14% (large corporations) percent (payments to an eligible university entity or eligible public research centre)  _(Section 1029.8.1 QTA)_
+- **University / public research contract credit** — 30% (CCPC SMEs) or 14% (large corporations) (payments to an eligible university entity or eligible public research centre)  _(Section 1029.8.1 QTA)_
 
 #### 3.9.3 Private Pre-Competitive Research Partnerships — Section 1029.8.6 QTA
 
-- **Pre-competitive research partnership credit** — 30% / 14% percent (payments under a recognised pre-competitive research partnership between two or more unrelated taxpayers)  _(Section 1029.8.6 QTA)_
+- **Pre-competitive research partnership credit** — 30% / 14% (payments under a recognised pre-competitive research partnership between two or more unrelated taxpayers)  _(Section 1029.8.6 QTA)_
 
 #### 3.9.4 Fees to Eligible Research Consortia — Section 1029.8.9 QTA
 
@@ -620,7 +621,7 @@ Primary Legislation
 - **Sections 580 et seq. QTA** — Foreign affiliates.  _(Sections 580 et seq. QTA)_
 - **Section 736.0.2 QTA** — Acquisition of control.  _(Section 736.0.2 QTA)_
 - **Section 737.18.6, 737.18.14, 737.18.17 QTA** — Foreign specialist, foreign researcher, large investment projects tax holidays.  _(Section 737.18.6, 737.18.14, 737.18.17 QTA)_
-- **Section 771 QTA** — 11.5% percent (General corporate tax rate)  _(Section 771 QTA)_
+- **Section 771 QTA** — 11.5% (General corporate tax rate)  _(Section 771 QTA)_
 - **Section 771.1 QTA** — Small Business Deduction (SBD) and paid-hours test.  _(Section 771.1 QTA)_
 - **Section 771.2.1.4 QTA** — Business-limit grind on taxable capital.  _(Section 771.2.1.4 QTA)_
 - **Section 771R / Regulation 771R** — TIEQ allocation formula.  _(Section 771R / Regulation 771R)_

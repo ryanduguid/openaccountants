@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Tajikistan (tax year 2025) — r
 jurisdiction: TJ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +21,7 @@ Tajikistan operates a VAT system under the Tax Code. The standard rate is set at
 - **Scheduled standard rate from 2027** — 13 percent  _(Tax Code of the Republic of Tajikistan)_
 - **Export of goods** — 0 percent (zero-rated (approx — confirm))  _(Tax Code of the Republic of Tajikistan)_
 - **VAT registration threshold** — 1,000,000 TJS (of taxable turnover over any 12 consecutive calendar months)  _(Tax Code of the Republic of Tajikistan)_
-- **Reverse charge on imported services** — Tax agent withholds VAT at source on payments to foreign suppliers at the standard rate (14%) percent  _(Tax Code of the Republic of Tajikistan)_
+- **Reverse charge on imported services** — Tax agent withholds VAT at source on payments to foreign suppliers at the standard rate (14%)  _(Tax Code of the Republic of Tajikistan)_
 - **VAT return filing frequency** — Monthly (approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
 - **VAT return / payment deadline** — By the 15th day of the month following the reporting month (approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
 - **Input VAT recovery** — Registered VAT payers credit input VAT against output VAT on taxable supplies  _(Tax Code of the Republic of Tajikistan)_

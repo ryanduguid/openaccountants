@@ -4,8 +4,8 @@ description: Pennsylvania Local Earned Income Tax (LEIT) — Act 32 of 2008
 jurisdiction: US-PA
 category: state-tax
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -54,10 +54,10 @@ This skill covers the Act 32 regime: PSD codes, employer withholding, Form CLGS-
 
 ### 2.1 General rate range (non-Philadelphia)
 
-- **Combined LEIT rate range** — 0.5% to approximately 3.9% percent (Combined municipality + school district LEIT rates on taxable earned income and net profits)
-- **Municipality rate (most common floor)** — 0.5% percent  _(Act 511 §311(1))_
-- **School district rate (most common)** — 0.5% percent (may impose under Act 1 of 2006 referendum or historic Act 511 share)
-- **Typical combined rate** — 1.0% (split 0.5% / 0.5%) percent
+- **Combined LEIT rate range** — 0.5% to approximately 3.9% (Combined municipality + school district LEIT rates on taxable earned income and net profits)
+- **Municipality rate (most common floor)** — 0.5%  _(Act 511 §311(1))_
+- **School district rate (most common)** — 0.5% (may impose under Act 1 of 2006 referendum or historic Act 511 share)
+- **Typical combined rate** — 1.0% (split 0.5% / 0.5%)
 
 ### 2.2 Statutory ceiling
 
@@ -89,9 +89,9 @@ CRITICAL: These rates change frequently. The DCED publishes the current rates at
 
 ### 2.5 Philadelphia rates (preview — see Section 8)
 
-- **Philadelphia resident wage tax (2025)** — 3.75% percent (effective July 1, 2025; was 3.75% effective July 1, 2024; verify against City of Philadelphia Department of Revenue announcement for rate effective during the wage period at issue)
-- **Philadelphia non-resident wage tax (2025)** — 3.44% percent (the non-resident rate has historically been ~92% of the resident rate; verify current)
-- **Philadelphia Net Profits Tax (NPT)** — resident 3.75% / non-resident 3.44% percent (same rates as wage tax, with adjustments — see Section 9)
+- **Philadelphia resident wage tax (2025)** — 3.75% (effective July 1, 2025; was 3.75% effective July 1, 2024; verify against City of Philadelphia Department of Revenue announcement for rate effective during the wage period at issue)
+- **Philadelphia non-resident wage tax (2025)** — 3.44% (the non-resident rate has historically been ~92% of the resident rate; verify current)
+- **Philadelphia Net Profits Tax (NPT)** — resident 3.75% / non-resident 3.44% (same rates as wage tax, with adjustments — see Section 9)
 
 Philadelphia rates change every July 1. Always pull the wage period-specific rate.
 

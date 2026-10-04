@@ -1,11 +1,11 @@
 ---
 name: bolivia-iva
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Bolivia IVA (Impuesto al Valor Agregado) return for any client. Trigger on phrases like "Bolivia IVA", "Bolivia VAT", "SIN filing", "factura", or any request involving Bolivia IVA. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Bolivia IVA work.
-version: 2.0
+version: 2.1
 jurisdiction: BO
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -183,7 +183,7 @@ Input line: `30.04.2026 ; BNB ; DEBIT ; Comision mensual ; BOB -30`
 
 ### 5.7 IT (Impuesto a las Transacciones) — 3% on gross revenue. Separate from IVA. Offsettable against IUE.
 
-- **IT (Impuesto a las Transacciones)** — 3% percent (on gross revenue; separate from IVA; offsettable against IUE)
+- **IT (Impuesto a las Transacciones)** — 3% (on gross revenue; separate from IVA; offsettable against IUE)
 
 ### 5.8 Electronic invoicing — SIN requires electronic invoicing (facturación electrónica) via SIAT system.
 
@@ -245,7 +245,7 @@ BNB and Banco Mercantil exports CSV/PDF. BOB primary. Spanish descriptions. Inte
 
 ### Change log
 
-- v2.0 (April 2026): Full rewrite to Malta v2.0 ten-section structure.
+- v2.1 (April 2026): Full rewrite to Malta v2.1 ten-section structure.
 
 ## Disclaimer
 

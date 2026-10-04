@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Slovenia
 jurisdiction: SI
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,9 +20,9 @@ The most common Slovenian business vehicle is the private limited company (d.o.o
 - **Private limited company (d.o.o.)** — Družba z omejeno odgovornostjo — limited liability, most common form  _(Companies Act (ZGD-1))_
 - **Public limited company (d.d.)** — Delniška družba — joint-stock company for larger enterprises  _(Companies Act (ZGD-1))_
 - **Sole proprietor (s.p.)** — Samostojni podjetnik — individual entrepreneur, unlimited personal liability  _(Companies Act (ZGD-1))_
-- **Minimum share capital — d.o.o.** — EUR 7,500 EUR  _(Companies Act (ZGD-1))_
-- **Minimum paid-in at registration — d.o.o.** — At least one quarter of each cash contribution and at least EUR 7,500 in total contributions EUR (approx — confirm paid-in proportion)  _(Companies Act (ZGD-1))_
-- **Minimum share capital — d.d.** — EUR 25,000 EUR  _(Companies Act (ZGD-1))_
+- **Minimum share capital — d.o.o.** — EUR 7,500  _(Companies Act (ZGD-1))_
+- **Minimum paid-in at registration — d.o.o.** — At least one quarter of each cash contribution and at least EUR 7,500 in total contributions (approx — confirm paid-in proportion)  _(Companies Act (ZGD-1))_
+- **Minimum share capital — d.d.** — EUR 25,000  _(Companies Act (ZGD-1))_
 - **Registration authority** — Slovenian Business Register operated by AJPES; via the e-VEM/SPOT one-stop-shop  _(Court Register of Legal Entities Act (ZSReg))_
 - **Incorporation steps** — 1) Reserve name & draft articles; 2) deposit capital and obtain bank confirmation; 3) register with AJPES (notarial deed for in-kind/complex setups); 4) obtain tax number (TIN) from FURS; 5) register for VAT if applicable  _(Companies Act (ZGD-1))_
 - **Typical timeline** — Simple cash-only d.o.o. registrable in a few working days (around 1 week) via SPOT (approx — varies with notary/bank)  _(Companies Act (ZGD-1))_

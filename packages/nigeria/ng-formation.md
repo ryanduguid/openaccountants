@@ -4,8 +4,8 @@ description: "Use this skill whenever asked about forming, incorporating, or reg
 jurisdiction: NG
 category: formation
 tax_year: 2025
-version: 0.1
-last_updated: 2026-09-28
+version: 0.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -123,7 +123,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Tax
 
-- **CIT — small company** — 0% percent (turnover ≤ ₦100,000,000 **and** fixed assets ≤ ₦250,000,000)  _(NTA 2025 s.202; 0% rate at s.56(a))_
+- **CIT — small company** — 0% (turnover ≤ ₦100,000,000 **and** fixed assets ≤ ₦250,000,000)  _(NTA 2025 s.202; 0% rate at s.56(a))_
 - **CIT — every company that is not small** — **30%**, plus the 4% development levy. NTA 2025 s.56 has **two bands only**: small companies at 0% and everything else at 30%. There is no medium-company 20% band from 1 January 2026; that was the Finance Act 2019/2020 structure and it is superseded  _(NTA 2025 s.56; s.202; `ng-cit` states the same)_
 - **There is no "large company" CIT band, and ₦50 billion is not a rate threshold** — NTA 2025 s.56 charges one rate above the small-company line, so a company is small or it is not; there is no third band to reach. The ₦50 billion figure that circulates for Nigeria is real but belongs to a different charge: it is the **domestic turnover limb of the 15% Minimum Effective Tax Rate** in s.57(2)(b), which tops a company's effective rate up to 15% rather than setting its CIT rate. Screening a company against it tells you whether the MET applies, never which CIT band it falls in  _(NTA 2025 ss.56 and 57(2)(b); `ng-cit` §MET carries the scope tests and the currency caveat on the MNE limb)_
 - **Other Ltd tax obligations** — - Development levy under NTA 2025 s.59: 4% of assessable profits, with small companies and non-resident companies exempt. It replaces the former earmarked levies; do not add 3% tertiary education tax. - VAT 7.5% on taxable supplies; small companies (turnover ≤ ₦100M) are VAT-exempt under NTA 2025. - WHT on services and certain transactions per the WHT Regulations 2024. - Capital Gains Tax 30% on gains realised by companies (aligned to CIT under NTA 2025). - Annual returns and audited financial statements within 42 days of the AGM (or 9 months after FY end if no AGM held — for small companies that dispense with AGM).  _(NTA 2025; WHT Regulations 2024)_
@@ -189,7 +189,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Tax
 
-- **Plc CIT rate** — 30% percent (typically falls in the large-company band under NTA 2025)  _(NTA 2025)_
+- **Plc CIT rate** — 30% (typically falls in the large-company band under NTA 2025)  _(NTA 2025)_
 - **Other Plc tax obligations** — The **4% development levy** and withholding obligations as for other companies. Do **not** add tertiary education tax on top: NTA 2025 s.59 consolidated TET (3%), the NITDA levy (1%), the NASENI levy (0.25%) and the Police Trust Fund levy (0.005%) into that single 4% charge from 1 January 2026, so a Plc that is charged both is charged roughly 3 points twice. Special tax considerations for listed companies (e.g., reduced CGT on quoted-share disposals — confirm against current NTA 2025 schedule).  _(NTA 2025 s.59)_
 
 ### When to use

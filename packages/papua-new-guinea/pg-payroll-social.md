@@ -5,7 +5,7 @@ jurisdiction: PG
 category: payroll
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,8 +23,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Superannuation contributions
 
 - **Superannuation contributions overview** — Employers with 15 or more permanent employees must enrol staff in an Authorised Superannuation Fund (such as Nambawan Super or Nasfund) and contribute on their behalf. Both employer and employee contributions are mandatory above the size threshold.
-- **Employer superannuation contribution** — 8.4% of the employee's base salary %  _(Superannuation (General Provisions) Act — https://taxsummaries.pwc.com/papua-new-guinea/individual/other-taxes)_
-- **Employee superannuation contribution** — 6.0% of the employee's base salary (minimum compulsory member contribution) (approx — confirm current minimum employee contribution rate) %  _(Superannuation (General Provisions) Act — https://taxsummaries.pwc.com/papua-new-guinea/individual/other-taxes)_
+- **Employer superannuation contribution** — 8.4% of the employee's base salary  _(Superannuation (General Provisions) Act — https://taxsummaries.pwc.com/papua-new-guinea/individual/other-taxes)_
+- **Employee superannuation contribution** — 6.0% of the employee's base salary (minimum compulsory member contribution) (approx — confirm current minimum employee contribution rate)  _(Superannuation (General Provisions) Act — https://taxsummaries.pwc.com/papua-new-guinea/individual/other-taxes)_
 - **Superannuation employer threshold** — Mandatory for employers with 15 or more permanent employees  _(Superannuation (General Provisions) Act — https://taxsummaries.pwc.com/papua-new-guinea/individual/other-taxes)_
 - **Contribution base** — Calculated on gross base salary, wages and leave pay; overtime, bonuses and certain allowances are generally excluded (approx — confirm included/excluded pay elements with the fund)  _(Superannuation (General Provisions) Act — https://www.nasfund.com.pg/superannuation/about-superannuation/what-is-superannuation)_
 - **Superannuation remittance deadline** — Remit to an Authorised Superannuation Fund within 14 days of the end of each calendar month  _(Superannuation (General Provisions) Act — https://www.bankpng.gov.pg/publications/public-notices/employer-and-employee-superannuation-contributions)_

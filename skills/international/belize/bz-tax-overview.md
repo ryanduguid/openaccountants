@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Belize (tax year 2025) — ra
 jurisdiction: BZ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,9 +22,9 @@ Belize taxes individuals and businesses primarily through the Income and Busines
 - **Tax authority** — Belize Tax Service Department (BTS)  _([Belize Tax Service Department](https://bts.gov.bz/))_
 - **Social security authority** — Social Security Board (SSB)  _([Social Security Act](https://socialsecurity.org.bz/))_
 - **Residence / taxation basis** — Income tax is charged on income accruing in or derived from Belize; residents are generally taxed on Belize-source income (territorial emphasis) (approx — confirm scope for foreign-source income)  _(Income and Business Tax Act (Cap. 55))_
-- **Headline personal income tax rate** — 25% flat on chargeable income percent  _(Income and Business Tax Act (Cap. 55))_
-- **Headline business tax (companies)** — Business tax on gross receipts at activity-specific rates (commonly 1.75% trade, 3% rents/royalties, 6% professions); 25% income tax applies to petroleum operations percent  _(Income and Business Tax Act (Cap. 55))_
-- **Does a VAT/GST exist?** — Yes — General Sales Tax (GST) at a standard rate of 12.5% percent  _([General Sales Tax Act](https://bts.gov.bz/gst-faq/))_
+- **Headline personal income tax rate** — 25% flat on chargeable income  _(Income and Business Tax Act (Cap. 55))_
+- **Headline business tax (companies)** — Business tax on gross receipts at activity-specific rates (commonly 1.75% trade, 3% rents/royalties, 6% professions); 25% income tax applies to petroleum operations  _(Income and Business Tax Act (Cap. 55))_
+- **Does a VAT/GST exist?** — Yes — General Sales Tax (GST) at a standard rate of 12.5%  _([General Sales Tax Act](https://bts.gov.bz/gst-faq/))_
 - **Capital gains tax** — No separate capital gains tax in Belize  _(Income and Business Tax Act (Cap. 55))_
 - **Annual income tax return deadline** — 31 March following the end of the tax year (unless extended by the Commissioner)  _([Income and Business Tax Act (Cap. 55)](https://bts.gov.bz/))_
 - **GST return frequency / deadline** — Monthly; return and payment due by the 15th of the following month (Form BTS210)  _([General Sales Tax Act](https://bts.gov.bz/file-gst-return/))_

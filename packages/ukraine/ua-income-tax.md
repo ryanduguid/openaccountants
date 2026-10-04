@@ -1,10 +1,10 @@
 ---
 name: ua-income-tax
 description: "Ukrainian general-system (загальна система) personal income tax for a self-employed sole proprietor (ФОП): net business profit taxed at 18% PIT plus the 5% military levy with documented business expenses deductible under Art. 177."
-version: 1.0
+version: 1.1
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Income Tax
 
-## Ukraine General-System Personal Income Tax (ПДФО for FOP / Загальна система) — Self-Employed Skill v1.0
+## Ukraine General-System Personal Income Tax (ПДФО for FOP / Загальна система) — Self-Employed Skill v1.1
 
 This skill covers a Ukrainian sole proprietor (ФОП / фізична особа-підприємець) taxed on the general system — net business profit taxed at 18% personal income tax (ПДФО) plus a 5% military levy (військовий збір), with documented business expenses deductible. This is fundamentally different from the simplified єдиний податок (turnover-based, no expense deduction) — for that, use ua-single-tax. Unified social contribution (ЄСВ) is handled by ua-social-contributions and only referenced here.
 
@@ -40,7 +40,7 @@ This skill covers a Ukrainian sole proprietor (ФОП / фізична особ�
 | PIT advance payments | By **20 April, 20 July, 20 October** (no Q4 advance — settled in the declaration) |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a Ukrainian accountant/auditor |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 **Wartime note:** Under martial law the military levy rose from 1.5% to **5%** effective **1 Dec 2024** and remains 5% throughout **2026**. It reverts to 1.5% in the year **after** martial law ends — verify the current status with the ДПС before relying on the rate. Figures below are as of **1 January 2026**.
 
@@ -176,8 +176,8 @@ Fuel and maintenance for a car used 70% business / 30% personal: only the busine
 ## Section 5 — Tier 1 Rules (clear rules with Tax Code references)
 
 - **Tax object = net profit** — Object of taxation is net taxable income = total income received in cash/in-kind minus documented business expenses.  _(Art. 177.2 ПКУ)_
-- **ПДФО rate** — 18% percent (on net profit)  _(Art. 167.1 ПКУ)_
-- **Military levy rate** — 5% percent (on the same net-profit base; raised to 5% from 1 Dec 2024; reverts to 1.5% after martial law ends)  _(Transitional Provisions §16¹.10)_
+- **ПДФО rate** — 18% (on net profit)  _(Art. 167.1 ПКУ)_
+- **Military levy rate** — 5% (on the same net-profit base; raised to 5% from 1 Dec 2024; reverts to 1.5% after martial law ends)  _(Transitional Provisions §16¹.10)_
 - **Cash basis** — Income is recognised when received; expenses when paid and documented.  _(Art. 177.2, 177.4)_
 - **Documentation mandatory** — Only documented expenses directly related to the business are deductible; the list of allowable expenses is in Art. 177.4 ПКУ.  _(Art. 177.4 ПКУ)_
 - **Cost-of-goods matching** — Cost of goods/materials is deductible in the period the income from selling them is received.  _(Art. 177.4.1)_

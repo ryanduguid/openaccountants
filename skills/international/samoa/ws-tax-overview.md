@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Samoa (tax year 2025) — rat
 jurisdiction: WS
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,12 +20,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Currency** — Samoan Tala (WST; shown locally as SAT/$)  _(Income Tax Act 2012)_
 - **Standard tax year** — 1 January to 31 December (calendar year; balance date 31 December)  _(Income Tax Act 2012 (https://www.revenue.gov.ws/wp-content/uploads/2020/10/Income_Tax_Act_2012_eng.pdf))_
 - **Basis of taxation** — Residents taxed on worldwide income; non-residents taxed on Samoa-sourced income only  _(Income Tax Act 2012)_
-- **Top personal income tax rate** — 27% %  _(Income Tax Act 2012 / Income Tax Rates (https://revenue.gov.ws/rates/))_
-- **Personal tax-free threshold** — WST 15,000 WST  _(Income Tax Act 2012 / Income Tax Rates (https://revenue.gov.ws/rates/))_
-- **Company income tax rate** — 27% (resident and non-resident companies) %  _(Income Tax Act 2012 / Income Tax Rates (https://revenue.gov.ws/rates/))_
-- **Indirect tax — VAGST standard rate** — Yes — Value Added Goods and Services Tax (VAGST) at a standard rate of 15% %  _(Value Added Goods and Services Tax Act 2015 (https://revenue.gov.ws/rates/))_
+- **Top personal income tax rate** — 27%  _(Income Tax Act 2012 / Income Tax Rates (https://revenue.gov.ws/rates/))_
+- **Personal tax-free threshold** — WST 15,000  _(Income Tax Act 2012 / Income Tax Rates (https://revenue.gov.ws/rates/))_
+- **Company income tax rate** — 27% (resident and non-resident companies)  _(Income Tax Act 2012 / Income Tax Rates (https://revenue.gov.ws/rates/))_
+- **Indirect tax — VAGST standard rate** — Yes — Value Added Goods and Services Tax (VAGST) at a standard rate of 15%  _(Value Added Goods and Services Tax Act 2015 (https://revenue.gov.ws/rates/))_
 - **Annual income tax return deadline** — Within 3 months after the balance date — i.e. 31 March for a 31 December year-end  _(Tax Administration Act 2012 (https://www.revenue.gov.ws/home/our-services/inland-revenue-services/taxes/))_
-- **VAGST return frequency / deadline** — Monthly return due on or before the 21st of the following month ((approx — confirm; some businesses file bi-monthly))  _(Value Added Goods and Services Tax Act 2015 (https://www.revenue.gov.ws/home/our-services/inland-revenue-services/taxes/))_
+- **VAGST return frequency / deadline** — Monthly return due on or before the 21st of the following month (approx — confirm; some businesses file bi-monthly)  _(Value Added Goods and Services Tax Act 2015 (https://www.revenue.gov.ws/home/our-services/inland-revenue-services/taxes/))_
 
 <!-- openaccountants-cta-block -->
 

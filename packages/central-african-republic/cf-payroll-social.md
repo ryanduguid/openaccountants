@@ -5,7 +5,7 @@ jurisdiction: CF
 category: payroll
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +24,7 @@ Employers and employees contribute to the Caisse Nationale de Sécurité Sociale
 - **Employer — work-injury branch** — 3% of gross monthly covered payroll  _([SSA, Social Security Programs Throughout the World: Africa, 2019, Central African Republic](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
 - **Employee social security contribution (pension)** — 3% of gross monthly covered earnings (old-age, disability and survivors branch)  _([SSA, Social Security Programs Throughout the World: Africa, 2019, Central African Republic](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
 - **Monthly contribution earnings ceiling** — XAF 600,000 per month; the floor is the legal monthly minimum wage  _([SSA, Social Security Programs Throughout the World: Africa, 2019, Central African Republic](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
-- **Apprenticeship / vocational training tax** — Approximately 2% on annual payroll (employer) percent (approx — confirm)  _(Code Général des Impôts (CAR) (as described at [remotepeople.com](https://remotepeople.com/countries/central-african-republic/employer-of-record/payroll-tax/)))_
+- **Apprenticeship / vocational training tax** — Approximately 2% on annual payroll (employer) (approx — confirm)  _(Code Général des Impôts (CAR) (as described at [remotepeople.com](https://remotepeople.com/countries/central-african-republic/employer-of-record/payroll-tax/)))_
 - **Payroll income tax withholding (PAYE-equivalent)** — Employer withholds IRPP from salary at source on the progressive scale (approx — confirm)  _(Code Général des Impôts (CAR) — IRPP / Impôt sur les Traitements et Salaires)_
 - **Withholding / contribution remittance deadline** — Monthly — typically by the 15th of the following month (approx — confirm)  _(Code Général des Impôts (CAR); CNSS regulations)_
 

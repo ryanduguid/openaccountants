@@ -5,7 +5,7 @@ jurisdiction: AM
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Resident companies and non-residents with a permanent establishment pay corporate income tax at 18% on net profit. SMEs may instead fall under the turnover-tax or micro-business regimes. Non-resident withholding applies to dividends, interest and royalties.
 
-- **Standard corporate income tax rate** — 18 % (Armenian-resident entities and non-residents with a permanent establishment)  _(Tax Code of the Republic of Armenia, art. 125(1) (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122)))_
+- **Standard corporate income tax rate** — 18 (Armenian-resident entities and non-residents with a permanent establishment)  _(Tax Code of the Republic of Armenia, art. 125(1) (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122)))_
 - **Tax base** — Taxable profit: gross income less the deductions allowed by Art. 110 (documented, necessary, business-related expenses)  _(Tax Code of the Republic of Armenia (HO-165-N), English text on the Armenian Legal Information System (ARLIS), Arts 104(1) and 105(1) — https://www.arlis.am/en/acts/205620)_
 - **Investment funds & securitisation foundations** — 0.01% of net assets for investment funds (other than pension and guarantee funds) and securitisation funds  _(Tax Code of the Republic of Armenia (HO-165-N), English text on the Armenian Legal Information System (ARLIS), Art. 125(2) — https://www.arlis.am/en/acts/205620)_
 - **Turnover tax regime** — Replaces CIT and VAT for eligible SMEs whose prior-year turnover across all activities did not exceed AMD 115,000,000. Rates are set by activity in the art. 258(1) table: trading 10%, trading in listed secondary raw materials 5%, newspaper sales by editorial offices 1.5%, production 7%, rent/interest/royalties 10%, public catering 12%, other income of a catering-registered payer 20%, listed high-technology activities 1%, disposal of other assets including immovable property 10%, other activity 10%  _(Tax Code of the Republic of Armenia, arts. 254(1) and 258(1) (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122)))_

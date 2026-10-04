@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Lesotho (tax year 2025) — r
 jurisdiction: LS
 category: international
 tax_year: 2025
-version: 0.1
-last_updated: 2026-09-10
+version: 0.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,11 +17,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Overview** — Lesotho taxes income under the Income Tax Act and operates a VAT system administered by the Revenue Services Lesotho (RSL). The tax year runs to 31 March and the currency is the Lesotho loti, which is pegged 1:1 to the South African rand.
 - **Tax year** — 1 April to 31 March  _(Income Tax Act (https://www.rsl.org.ls/income-tax))_
-- **Currency** — Lesotho loti (LSL / M), pegged 1:1 to the South African rand (ZAR) ((approx — confirm))  _(Common Monetary Area agreement)_
+- **Currency** — Lesotho loti (LSL / M), pegged 1:1 to the South African rand (ZAR) (approx — confirm)  _(Common Monetary Area agreement)_
 - **Tax authority** — Revenue Services Lesotho (RSL)  _(Revenue Services Lesotho Act (https://www.rsl.org.ls/))_
 - **Basis of taxation** — Residents are taxed on worldwide income; non-residents on Lesotho-source income only  _(Income Tax Act (https://taxsummaries.pwc.com/lesotho))_
-- **Headline personal income tax rates** — 20% and 30% (progressive, two-band) percent  _(Income Tax Act (https://www.rsl.org.ls/personal-income-tax))_
-- **Standard corporate income tax rate** — 25% percent  _(Income Tax Act (https://www.rsl.org.ls/corporate-income-tax))_
+- **Headline personal income tax rates** — 20% and 30% (progressive, two-band)  _(Income Tax Act (https://www.rsl.org.ls/personal-income-tax))_
+- **Standard corporate income tax rate** — 25%  _(Income Tax Act (https://www.rsl.org.ls/corporate-income-tax))_
 - **Concessional CIT rate (manufacturing & commercial farming)**: 10% percent  _(Income Tax Act 1993, Third Schedule items 1 and 3 (manufacturing) and Fourth Schedule item 2 (commercial farming): https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
 - **Export-manufacturing rate needs verification**: the 2012 consolidation prints 0% for manufacturing exclusively for export outside SACU, while RSL's 2025 corporate-tax notes state 10%. Post-2012 amendments have not been reconciled. Do not use 0% as a current operating rate; see `ls-corporate-income-tax` and its linked sources.
 - **Does VAT/GST exist?** — Yes — VAT, standard rate 15%  _(Value Added Tax Act 2001 (https://www.rsl.org.ls/value-added-tax-vat))_

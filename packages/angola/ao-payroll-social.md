@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Angola (tax
 jurisdiction: AO
 category: payroll
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Social security and payroll withholding
 
-- **Employer social security contribution** — 8% of gross remuneration percent  _(Lei de Bases da Proteccao Social (Social Security Law) - https://taxsummaries.pwc.com/angola/corporate/other-taxes)_
-- **Employee social security contribution** — 3% of gross remuneration percent  _(Lei de Bases da Proteccao Social (Social Security Law) - https://taxsummaries.pwc.com/angola/corporate/other-taxes)_
-- **Employee social security contribution (retired employees)** — 8% of gross remuneration percent (approx — confirm)  _(Lei de Bases da Proteccao Social (Social Security Law) - https://taxsummaries.pwc.com/angola/corporate/other-taxes)_
+- **Employer social security contribution** — 8% of gross remuneration  _(Lei de Bases da Proteccao Social (Social Security Law) - https://taxsummaries.pwc.com/angola/corporate/other-taxes)_
+- **Employee social security contribution** — 3% of gross remuneration  _(Lei de Bases da Proteccao Social (Social Security Law) - https://taxsummaries.pwc.com/angola/corporate/other-taxes)_
+- **Employee social security contribution (retired employees)** — 8% of gross remuneration (approx — confirm)  _(Lei de Bases da Proteccao Social (Social Security Law) - https://taxsummaries.pwc.com/angola/corporate/other-taxes)_
 - **Contribution base** — Gross monthly remuneration; no published statutory ceiling on the base (approx — confirm)  _(Lei de Bases da Proteccao Social (Social Security Law) - https://taxsummaries.pwc.com/angola/corporate/other-taxes)_
 - **Payroll income tax withholding (PAYE)** — Employer withholds IRT monthly under the progressive IRT bands (0% to 25%)  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
 - **IRT remittance deadline** — By the end of the month following the month of payment (approx — confirm)  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_

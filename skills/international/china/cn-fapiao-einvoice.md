@@ -4,7 +4,8 @@ description: 当被问及任何中国发票管理、增值税专用发票、增�
 jurisdiction: CN
 category: invoicing
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # CN Fapiao Einvoice
 
-## 中国 — 发票管理与数电发票（金税四期）— 技能 v1.0
+## 中国 — 发票管理与数电发票（金税四期）— 技能 v1.1
 
 本技能是**中国发票合规手册**。它说明应当开什么发票、如何开、如何取得、如何抵扣、如何查验、如何红冲，以及金税四期"以数治税"环境下的监管红线。底层增值税应纳税额计算见 `china-vat` 技能，企业所得税见相应技能。
 
@@ -95,7 +96,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **定额发票** — 在数电票全国推广后逐步退出，过渡期内仍可继续使用。
 - **机动车销售统一发票** — 4S 店开具；同时具备专票/普票功能。
 - **二手车销售统一发票** — 经营性二手车交易使用。
-- **通行费电子普通发票抵扣税率** — 9% percent (高速公路通行费，一般纳税人可凭票按 9% 计算抵扣进项)
+- **通行费电子普通发票抵扣税率** — 9% (高速公路通行费，一般纳税人可凭票按 9% 计算抵扣进项)
 
 ## 三、数电发票全国推广进度
 

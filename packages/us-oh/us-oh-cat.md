@@ -4,8 +4,8 @@ description: Ohio Commercial Activity Tax (CAT) — ORC Chapter 5751
 jurisdiction: US-OH
 category: state-tax
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -49,7 +49,7 @@ Ohio House Bill 33 (135th General Assembly, the FY 2024–2025 biennial budget) 
 - **Exclusion threshold raised** — $3,000,000 for tax periods beginning on or after January 1, 2024; $6,000,000 for tax periods beginning on or after January 1, 2025, and continuing thereafter (no further scheduled step-up)  _(HB 33)_
 - **Annual Minimum Tax (AMT) eliminated** — AMT eliminated for tax periods beginning on or after January 1, 2024. Prior law imposed a $150 / $800 / $2,100 / $2,600 / $2,600 tiered AMT depending on the taxpayer's prior-year taxable gross receipts; the AMT is now $0 regardless of receipts.  _(HB 33)_
 - **Quarterly filing eliminated** — All CAT taxpayers (subject to the threshold) now file annually on Form CAT 12. The legacy quarterly Form CAT 1 was abolished for periods beginning on or after January 1, 2024.  _(HB 33)_
-- **Rate unchanged** — 0.26% percent (on Ohio taxable gross receipts above the exclusion)  _(HB 33)_
+- **Rate unchanged** — 0.26% (on Ohio taxable gross receipts above the exclusion)  _(HB 33)_
 - **Sourcing rules unchanged** — Market-based under ORC §5751.033  _(ORC §5751.033)_
 - **Bright-line nexus thresholds unchanged** — Bright-line nexus thresholds unchanged in their statutory dollar amounts ($500k/$50k/$50k/25%) but, in practice, a taxpayer that meets bright-line nexus but has Ohio receipts at or below $6,000,000 has no filing obligation for 2025+.  _(ORC §5751.01(I))_
 

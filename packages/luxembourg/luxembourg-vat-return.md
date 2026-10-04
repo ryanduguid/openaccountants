@@ -1,11 +1,11 @@
 ---
 name: luxembourg-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Luxembourg VAT return (TVA declaration) for any client. Trigger on phrases like "prepare VAT return", "Luxembourg VAT", "TVA Luxembourg", "AED return", or any request involving Luxembourg VAT filing. MUST be loaded alongside BOTH vat-workflow-base and eu-vat-directive. Holding company structures (SOPARFI/SIF/RAIF/SICAR) are in the refusal catalogue. ALWAYS read this skill before touching any Luxembourg VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: LU
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -188,23 +188,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 Standard rate 17%
 
-- **Standard rate** — 17% percent
+- **Standard rate** — 17%
 
 ### 5.2 Intermediate rate 14% — wine, certain fuels, advertising print
 
-- **Intermediate rate** — 14% percent (wine, certain fuels, advertising print)
+- **Intermediate rate** — 14% (wine, certain fuels, advertising print)
 
 ### 5.3 Reduced rate 8% — gas, electricity, cut flowers, hairdressing
 
-- **Reduced rate** — 8% percent (gas, electricity, cut flowers, hairdressing)
+- **Reduced rate** — 8% (gas, electricity, cut flowers, hairdressing)
 
 ### 5.4 Super-reduced rate 3% — food, books, medicines, children's clothing, accommodation, restaurants
 
-- **Super-reduced rate** — 3% percent (food, books, medicines, children's clothing, accommodation, restaurants)
+- **Super-reduced rate** — 3% (food, books, medicines, children's clothing, accommodation, restaurants)
 
 ### 5.5 Zero rate — exports, intra-EU B2B
 
-- **Zero rate** — 0% percent (exports, intra-EU B2B)
+- **Zero rate** — 0% (exports, intra-EU B2B)
 
 ### 5.6 Exempt — financial services, insurance, medical, education, residential rental
 
@@ -271,7 +271,7 @@ Always ask
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to 10-section architecture.
+- **v2.1 (April 2026):** Full rewrite to 10-section architecture.
 - **v1.0:** Initial skill.
 
 ## Disclaimer

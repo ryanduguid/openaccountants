@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Uruguay (tax year 202
 jurisdiction: UY
 category: international
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,18 +16,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Corporate income tax (IRAE)
 
 - **IRAE overview** — IRAE (Impuesto a las Rentas de las Actividades Economicas) taxes the net business income of resident entities and Uruguayan permanent establishments of non-residents, on a territorial-source basis. The standard rate is 25%, applied to accounting profit adjusted for tax rules.
-- **Standard IRAE rate** — 25 %  _(Titulo 4 Texto Ordenado 1996 (IRAE))_
+- **Standard IRAE rate** — 25  _(Titulo 4 Texto Ordenado 1996 (IRAE))_
 - **Tax base** — Net Uruguay-source income from economic/business activities, being accounting profit adjusted for tax additions and deductions  _(Titulo 4 Texto Ordenado 1996 (IRAE))_
 - **Territoriality** — Only Uruguay-source business income is taxed; foreign-source income is generally outside IRAE (subject to specific anti-deferral/passive-income rules)  _(Titulo 4 Texto Ordenado 1996 (IRAE))_
-- **Notional regime for certain trading companies** — 3% of gross, giving an effective IRAE of about 0.75% % ((approx — confirm eligibility and current notional margin))  _(Decreto reglamentario IRAE - regimen de trading)_
-- **Small-business / micro alternatives** — Small taxpayers may instead fall under simplified regimes such as Monotributo (BPS) or IRAE ficto (notional-income IRAE), depending on turnover thresholds ((approx — confirm current turnover thresholds))  _(Titulo 4 Texto Ordenado 1996 (IRAE) y Ley de Monotributo)_
+- **Notional regime for certain trading companies** — 3% of gross, giving an effective IRAE of about 0.75% (approx — confirm eligibility and current notional margin)  _(Decreto reglamentario IRAE - regimen de trading)_
+- **Small-business / micro alternatives** — Small taxpayers may instead fall under simplified regimes such as Monotributo (BPS) or IRAE ficto (notional-income IRAE), depending on turnover thresholds (approx — confirm current turnover thresholds)  _(Titulo 4 Texto Ordenado 1996 (IRAE) y Ley de Monotributo)_
 - **Withholding tax — dividends to non-residents** — 7 % (Generally on dividends/profits distributed out of IRAE-taxed income (treaty relief may reduce this))  _(Titulo 8 Texto Ordenado 1996 (IRNR))_
-- **Withholding tax — interest to non-residents** — 0% to 12% (12% general rate); 25% if recipient is in a low/no-tax jurisdiction % (depending on instrument, term and currency)  _(Titulo 8 Texto Ordenado 1996 (IRNR))_
-- **Withholding tax — royalties to non-residents** — 12% (25% if recipient is in a low/no-tax jurisdiction) % (treaty relief may reduce this)  _(Titulo 8 Texto Ordenado 1996 (IRNR))_
-- **Withholding tax — technical and service fees to non-residents** — **12%** of the gross, the same as royalties, and this head was missing from the guide until September 2026. There is a reduction that changes the answer entirely: where the **taxable income of the local user of the service does not exceed 10% of its total income**, only **5% of the fee** paid or credited abroad is subject to IRNR, giving an effective rate of **0.6%**. The test is a property of the Uruguayan payer's own income mix, not of the service or the provider, so it has to be computed rather than assumed % (treaty relief may reduce this)  _(Titulo 8 Texto Ordenado 1996 (IRNR))_
+- **Withholding tax — interest to non-residents** — 0% to 12% (12% general rate); 25% if recipient is in a low/no-tax jurisdiction (depending on instrument, term and currency)  _(Titulo 8 Texto Ordenado 1996 (IRNR))_
+- **Withholding tax — royalties to non-residents** — 12% (25% if recipient is in a low/no-tax jurisdiction) (treaty relief may reduce this)  _(Titulo 8 Texto Ordenado 1996 (IRNR))_
+- **Withholding tax — technical and service fees to non-residents** — **12%** of the gross, the same as royalties, and this head was missing from the guide until September 2026. There is a reduction that changes the answer entirely: where the **taxable income of the local user of the service does not exceed 10% of its total income**, only **5% of the fee** paid or credited abroad is subject to IRNR, giving an effective rate of **0.6%**. The test is a property of the Uruguayan payer's own income mix, not of the service or the provider, so it has to be computed rather than assumed (treaty relief may reduce this)  _(Titulo 8 Texto Ordenado 1996 (IRNR))_
 - **Low/no-tax-jurisdiction (LNTJ) premium rate** — **25%** IRNR on income obtained by an entity resident, domiciled or located in a low-or-no-tax jurisdiction. It overrides the 7% and 12% rates above, so the payee's jurisdiction is settled before the type of income is  _(Titulo 8 Texto Ordenado 1996 (IRNR))_
 - **Domestic minimum top-up tax (Pillar Two)** — 15 % (qualified domestic minimum top-up tax (IMC) for in-scope large multinational groups (approx — confirm exact law number and effective period))  _(Ley 20.341 (Impuesto Minimo Complementario) - Pilar 2 OCDE)_
-- **IRAE filing & payment** — Annual IRAE return and balance due after fiscal year-end (commonly within about 4 months), with monthly IRAE advance payments during the year; DGI sets exact dates by taxpayer group ((approx — DGI publishes exact due dates annually))  _(Resoluciones DGI - calendario de vencimientos)_
+- **IRAE filing & payment** — Annual IRAE return and balance due after fiscal year-end (commonly within about 4 months), with monthly IRAE advance payments during the year; DGI sets exact dates by taxpayer group (approx — DGI publishes exact due dates annually)  _(Resoluciones DGI - calendario de vencimientos)_
 
 <!-- openaccountants-cta-block -->
 

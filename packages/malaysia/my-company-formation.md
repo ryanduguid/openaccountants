@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Malaysia
 jurisdiction: MY
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636
 review_status: pending_review
 tier: 2
@@ -22,10 +23,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Minimum shareholders (Sdn Bhd)** — At least one shareholder (can be the same person as the director); 100% foreign ownership permitted in most sectors  _(Companies Act 2016)_
 - **Company secretary requirement** — Must appoint a licensed company secretary within 30 days of incorporation  _(Companies Act 2016, Section 236)_
 - **SSM incorporation fee (Sdn Bhd)** — RM1,000 (statutory fee via MyCoID) MYR  _(Companies Act 2016 / Companies Regulations 2017 (https://kcgroup.biz/sdn-bhd-registration-malaysia-2026-guide/))_
-- **Incorporation timeline** — Typically 1 to 5 working days once documents and name approval are in order (via SSM MyCoID portal) ((approx — varies by case))  _(Companies Act 2016)_
+- **Incorporation timeline** — Typically 1 to 5 working days once documents and name approval are in order (via SSM MyCoID portal) (approx — varies by case)  _(Companies Act 2016)_
 - **Annual return lodgement** — File annual return with SSM within 30 days of the anniversary of incorporation each year  _(Companies Act 2016, Section 68 (https://arnifi.com/blog/malaysia-annual-return-ssm-filing-2026/))_
 - **Audited financial statements** — Must be prepared and lodged with SSM; first within 18 months of incorporation, then within 6 months of financial year-end, lodged within 30 days of circulation to shareholders  _(Companies Act 2016)_
-- **Audit exemption for qualifying small companies** — Dormant, zero-revenue, and threshold-qualified small companies may be exempt from statutory audit (subject to SSM criteria) ((approx — confirm current revenue/asset/employee thresholds))  _(Companies Act 2016 / SSM Practice Directives)_
+- **Audit exemption for qualifying small companies** — Dormant, zero-revenue, and threshold-qualified small companies may be exempt from statutory audit (subject to SSM criteria) (approx — confirm current revenue/asset/employee thresholds)  _(Companies Act 2016 / SSM Practice Directives)_
 - **Tax registration after incorporation** — Register for an income tax file number with LHDN; register for SST with RMCD if thresholds are met; register employees with EPF/SOCSO/EIS  _(Income Tax Act 1967 / Sales Tax Act 2018 / Service Tax Act 2018)_
 
 <!-- openaccountants-cta-block -->

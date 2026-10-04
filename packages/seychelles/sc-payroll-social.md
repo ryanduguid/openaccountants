@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Seychelles 
 jurisdiction: SC
 category: payroll
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Seychelles Pension Fund contributions
 
 - **Seychelles Pension Fund (SPF)** — Social security in Seychelles is the Seychelles Pension Fund (SPF), a mandatory contributory scheme funded by matched employer and employee contributions on gross salary. Income tax is collected separately by the SRC. Confirm current rates with SPF.
-- **Employee SPF contribution** — 5% of gross monthly salary % (approx — confirm)  _(Seychelles Pension Fund Act — https://pensionfund.sc/mandatory-contribution/)_
-- **Employer SPF contribution** — 5% of gross monthly salary (matched) % (approx — confirm)  _(Seychelles Pension Fund Act — https://pensionfund.sc/mandatory-contribution/)_
-- **Total mandatory SPF contribution** — 10% of gross monthly salary (5% employee + 5% employer), from 1 January 2023 % (approx — confirm)  _(Seychelles Pension Fund Act — https://pensionfund.sc/increase-in-mandatory-contribution-rate/)_
+- **Employee SPF contribution** — 5% of gross monthly salary (approx — confirm)  _(Seychelles Pension Fund Act — https://pensionfund.sc/mandatory-contribution/)_
+- **Employer SPF contribution** — 5% of gross monthly salary (matched) (approx — confirm)  _(Seychelles Pension Fund Act — https://pensionfund.sc/mandatory-contribution/)_
+- **Total mandatory SPF contribution** — 10% of gross monthly salary (5% employee + 5% employer), from 1 January 2023 (approx — confirm)  _(Seychelles Pension Fund Act — https://pensionfund.sc/increase-in-mandatory-contribution-rate/)_
 - **Scheduled contribution increases** — Combined rate scheduled to rise by 1% every five years, reaching 10.5% by 2035 (approx — confirm)  _(Seychelles Pension Fund Act — https://pensionfund.sc/increase-in-mandatory-contribution-rate/)_
 - **Contribution wage base** — Gross monthly salary; confirm whether any statutory ceiling/cap applies (approx — confirm)  _(Seychelles Pension Fund Act — https://pensionfund.sc/mandatory-contribution/)_
 

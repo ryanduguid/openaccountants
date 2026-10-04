@@ -1,10 +1,10 @@
 ---
 name: eg-formation
 description: Use this skill whenever asked about how to register, form, or set up a business in Egypt as a self-employed person, freelancer, professional, sole proprietor, or small company. Trigger on phrases like "register a business Egypt", "tax card Egypt", "how to start a business Egypt", "sole proprietor Egypt", "freelance registration Egypt", "GAFI LLC Egypt", "commercial register Egypt", "open a tax file Egypt", "register with the ETA", "البطاقة الضريبية", "السجل التجاري", "تسجيل منشأة فردية", "فتح ملف ضريبي", "تأسيس شركة ذات مسؤولية محدودة", "نقابة مهنية", "التأمينات الاجتماعية للعمل الحر". Covers obtaining a tax card and tax file with the Egyptian Tax Authority (ETA), the commercial register, professional syndicate (نقابة) membership, choosing the simplified vs general regime at registration, VAT and e-invoicing registration, social insurance registration, and forming an LLC via GAFI. AI replies in the user's language (English or Arabic).
-version: 1.0
+version: 1.1
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -120,8 +120,8 @@ These are **separate** from income tax and from the tax card — registering for
 
 ### 4.1 VAT registration (VAT Law No. 67 of 2016)
 
-- **Standard VAT rate** — 14% percent (special/table rates apply to some goods/services — out of scope here)  _(VAT Law No. 67 of 2016)_
-- **VAT registration threshold** — **EGP 500,000** of annual taxable turnover under VAT Law No. 67 of 2016, confirmed against ETA's own VAT guidance. The widely repeated claim that Resolution No. 281 of 2025 halved this to EGP 250,000 does not survive a reading of that decision, which is an e-receipt phase enrolment (see the note in Section 1) EGP  _(VAT Law No. 67 of 2016; ETA, eta.gov.eg/ar/node/1379)_
+- **Standard VAT rate** — 14% (special/table rates apply to some goods/services — out of scope here)  _(VAT Law No. 67 of 2016)_
+- **VAT registration threshold** — **EGP 500,000** of annual taxable turnover under VAT Law No. 67 of 2016, confirmed against ETA's own VAT guidance. The widely repeated claim that Resolution No. 281 of 2025 halved this to EGP 250,000 does not survive a reading of that decision, which is an e-receipt phase enrolment (see the note in Section 1)  _(VAT Law No. 67 of 2016; ETA, eta.gov.eg/ar/node/1379)_
 - **VAT threshold measurement and registration process** — The threshold is measured on gross revenue (turnover), not profit. Register via the ETA portal once turnover crosses (or is expected to cross) the threshold. Voluntary registration below the threshold may be possible — verify. Within the simplified regime, VAT returns are filed quarterly (vs monthly in the general system). See `eg-sme-tax`.
 
 ### 4.2 E-invoicing / e-receipt registration (ETA portal)

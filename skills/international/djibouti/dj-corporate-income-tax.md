@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Djibouti (tax year 20
 jurisdiction: DJ
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,17 +15,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporate income tax — impot sur les benefices
 
-- **Standard corporate income tax rate** — 25% percent  _(Code General des Impots (Djibouti) — impot sur les benefices (https://www.lawgratis.com/blog-detail/tax-laws-djibouti))_
-- **Tax base** — Net accounting profit adjusted for tax (income less deductible business expenses) ((approx — confirm)). **The previous version said the accounts are "prepared under OHADA accounting". Djibouti is not an OHADA member state** — OHADA's own register lists seventeen and Djibouti is not among them — so the applicable accounting framework is unestablished here and must come from a Djiboutian source  _(Code General des Impots (Djibouti); OHADA, Les Etats membres de l'OHADA — https://www.ohada.org/les-etats-membres-de-lohada/)_
-- **Minimum lump-sum tax (impot minimum forfaitaire) rate** — 1% of annual turnover excluding VAT percent ((approx — confirm))  _(Code General des Impots (Djibouti) — impot minimum forfaitaire (https://www.lawgratis.com/blog-detail/tax-laws-djibouti))_
-- **Minimum lump-sum tax floor** — DJF 120,000 minimum, payable even in loss years DJF ((approx — confirm))  _(Code General des Impots (Djibouti) — impot minimum forfaitaire (https://www.lawgratis.com/blog-detail/tax-laws-djibouti))_
-- **Withholding tax on dividends** — 10% percent ((approx — confirm; Finance Law 2025 repealed certain dividend WHT exemptions))  _(Code General des Impots (Djibouti) (https://rivermate.com/guides/djibouti/taxes))_
-- **Withholding tax on interest** — Withholding applies on certain interest payments ((approx — rate not confirmed; confirm with DGI))  _(Code General des Impots (Djibouti))_
-- **Withholding tax on royalties / payments to non-residents** — Withholding applies on royalties and certain service fees paid to non-residents ((approx — rate not confirmed; confirm with DGI))  _(Code General des Impots (Djibouti))_
-- **Withholding tax on mobile money transactions (Finance Law 2025)** — 0.2% on mobile money transactions percent  _(Finance Law 2025 (Loi de Finances 2025), Djibouti (https://kpmg.com/us/en/taxnewsflash/news/2025/04/tnf-djibouti-tax-measures-in-finance-law-2025.html))_
-- **Capital gains** — Business capital gains are generally included in taxable profit and taxed at the 25% corporate rate ((approx — confirm))  _(Code General des Impots (Djibouti))_
-- **Annual return filing deadline** — 31 March of the following year ((approx — confirm))  _(Code General des Impots (Djibouti) (https://rivermate.com/guides/djibouti/taxes))_
-- **Payment** — Tax due with the annual return, subject to any instalment/advance payment requirements ((approx — confirm instalment schedule))  _(Code General des Impots (Djibouti))_
+- **Standard corporate income tax rate** — 25%  _(Code General des Impots (Djibouti) — impot sur les benefices (https://www.lawgratis.com/blog-detail/tax-laws-djibouti))_
+- **Tax base** — Net accounting profit adjusted for tax (income less deductible business expenses) (approx — confirm). **The previous version said the accounts are "prepared under OHADA accounting". Djibouti is not an OHADA member state** — OHADA's own register lists seventeen and Djibouti is not among them — so the applicable accounting framework is unestablished here and must come from a Djiboutian source  _(Code General des Impots (Djibouti); OHADA, Les Etats membres de l'OHADA — https://www.ohada.org/les-etats-membres-de-lohada/)_
+- **Minimum lump-sum tax (impot minimum forfaitaire) rate** — 1% of annual turnover excluding VAT (approx — confirm)  _(Code General des Impots (Djibouti) — impot minimum forfaitaire (https://www.lawgratis.com/blog-detail/tax-laws-djibouti))_
+- **Minimum lump-sum tax floor** — DJF 120,000 minimum, payable even in loss years (approx — confirm)  _(Code General des Impots (Djibouti) — impot minimum forfaitaire (https://www.lawgratis.com/blog-detail/tax-laws-djibouti))_
+- **Withholding tax on dividends** — 10% (approx — confirm; Finance Law 2025 repealed certain dividend WHT exemptions)  _(Code General des Impots (Djibouti) (https://rivermate.com/guides/djibouti/taxes))_
+- **Withholding tax on interest** — Withholding applies on certain interest payments (approx — rate not confirmed; confirm with DGI)  _(Code General des Impots (Djibouti))_
+- **Withholding tax on royalties / payments to non-residents** — Withholding applies on royalties and certain service fees paid to non-residents (approx — rate not confirmed; confirm with DGI)  _(Code General des Impots (Djibouti))_
+- **Withholding tax on mobile money transactions (Finance Law 2025)** — 0.2% on mobile money transactions  _(Finance Law 2025 (Loi de Finances 2025), Djibouti (https://kpmg.com/us/en/taxnewsflash/news/2025/04/tnf-djibouti-tax-measures-in-finance-law-2025.html))_
+- **Capital gains** — Business capital gains are generally included in taxable profit and taxed at the 25% corporate rate (approx — confirm)  _(Code General des Impots (Djibouti))_
+- **Annual return filing deadline** — 31 March of the following year (approx — confirm)  _(Code General des Impots (Djibouti) (https://rivermate.com/guides/djibouti/taxes))_
+- **Payment** — Tax due with the annual return, subject to any instalment/advance payment requirements (approx — confirm instalment schedule)  _(Code General des Impots (Djibouti))_
 
 <!-- openaccountants-cta-block -->
 

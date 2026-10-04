@@ -5,7 +5,7 @@ jurisdiction: BN
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ Brunei's standard corporate income tax rate is 18.5% for resident and non-reside
 - **Threshold relief on first BND 100,000 of chargeable income** — Only 25% of every dollar of the first BND 100,000 of chargeable income is charged to tax, an effective rate of 4.625%  _(Income Tax Act (Chapter 35), Revised Edition 2024, Ministry of Finance copy, s 35(4)(a) — https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf ; Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
 - **Threshold relief on next BND 150,000 of chargeable income** — Only 50% of every dollar of the next BND 150,000 of chargeable income (BND 100,001 to BND 250,000) is charged to tax, an effective rate of 9.25%  _(Income Tax Act (Chapter 35), Revised Edition 2024, Ministry of Finance copy, s 35(4)(b) — https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf ; Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
 - **Chargeable income above BND 250,000** — Taxed in full at the 18.5% statutory rate  _(Income Tax Act (Chapter 35), Revised Edition 2024, Ministry of Finance copy, s 35(4) — https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf ; Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
-- **MSME turnover exemption** — Companies with gross sales / turnover not exceeding BND 1,000,000 are exempt from corporate income tax BND  _(Income Tax Act (Cap. 35) — https://taxsummaries.pwc.com/brunei-darussalam/corporate/taxes-on-corporate-income)_
+- **MSME turnover exemption** — Companies with gross sales / turnover not exceeding BND 1,000,000 are exempt from corporate income tax  _(Income Tax Act (Cap. 35) — https://taxsummaries.pwc.com/brunei-darussalam/corporate/taxes-on-corporate-income)_
 - **Newly incorporated company exemption** — For each of the first three years of assessment of a qualifying company (incorporated and registered in Brunei, resident, and not limited by guarantee), the first BND 100,000 of chargeable income is exempt and only 50% of the next BND 150,000 is charged to tax; the first three years run from the year of assessment of the basis period in which the company is incorporated  _(Income Tax Act (Chapter 35), Revised Edition 2024, Ministry of Finance copy, s 35(5) and (7) — https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf ; Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
 - **Oil and gas exploration and production rate** — 55% on the profits of companies engaged in the exploration and production of oil and gas, under the Income Tax (Petroleum) Act (Chapter 119)  _(Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
 - **Tax base** — Chargeable income = Brunei-source income and gains of an income nature, less allowable deductions and capital allowances  _(Income Tax Act (Cap. 35))_

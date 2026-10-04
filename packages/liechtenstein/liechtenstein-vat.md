@@ -1,11 +1,11 @@
 ---
 name: liechtenstein-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Liechtenstein VAT (MWST) return for any client. Trigger on phrases like "Liechtenstein VAT", "MWST Liechtenstein", "Liechtenstein tax return", or any request involving Liechtenstein VAT. Liechtenstein forms a customs union with Switzerland and applies Swiss MWST law identically. Supplies between Liechtenstein and Switzerland are domestic. ALWAYS read this skill before touching any Liechtenstein MWST work.
-version: 2.0
+version: 2.1
 jurisdiction: LI
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Liechtenstein VAT
 
-## Liechtenstein MWST Return Skill v2.0
+## Liechtenstein MWST Return Skill v2.1
 
 ## Section 1 — Quick reference
 
@@ -168,19 +168,19 @@ All rules follow Swiss MWSTG. See Switzerland VAT skill for complete details.
 
 ### 5.1 Standard rate 8.1% — most goods and services
 
-- **Standard rate** — 8.1% percent (most goods and services)
+- **Standard rate** — 8.1% (most goods and services)
 
 ### 5.2 Reduced rate 2.6% — food, medicines, books, newspapers
 
-- **Reduced rate** — 2.6% percent (food, medicines, books, newspapers)
+- **Reduced rate** — 2.6% (food, medicines, books, newspapers)
 
 ### 5.3 Accommodation rate 3.8% — hotel/accommodation
 
-- **Accommodation rate** — 3.8% percent (hotel/accommodation)
+- **Accommodation rate** — 3.8% (hotel/accommodation)
 
 ### 5.4 Zero rate — exports outside CH/LI customs territory
 
-- **Zero rate** — 0% percent (exports outside CH/LI customs territory)
+- **Zero rate** — 0% (exports outside CH/LI customs territory)
 
 ### 5.5 Exempt — medical, education, insurance, financial, residential rental
 
@@ -246,7 +246,7 @@ CH/LI distinction: Supplies between LI and CH are domestic.
 
 ### Change log
 
-- v2.0 (April 2026): Full rewrite to 10-section architecture.
+- v2.1 (April 2026): Full rewrite to 10-section architecture.
 - v1.0: Initial wrapper skill.
 
 ## Disclaimer

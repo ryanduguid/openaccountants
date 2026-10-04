@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Fiji (tax year 2025) — rate
 jurisdiction: FJ
 category: international
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,9 +20,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax year** — Calendar year, 1 January to 31 December  _(Income Tax Act 2015)_
 - **Basis of taxation for residents** — Residents are taxed on worldwide income; non-residents on Fiji-source income only  _([Income Tax Act 2015](https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/))_
 - **Headline personal income tax-free threshold** — FJ$30,000 of annual chargeable income is taxed at 0% FJD  _([Income Tax Act 2015](https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/))_
-- **Headline top personal income tax rate (resident)** — 20% on chargeable income above FJ$50,000 %  _([Income Tax Act 2015](https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/))_
+- **Headline top personal income tax rate (resident)** — 20% on chargeable income above FJ$50,000  _([Income Tax Act 2015](https://frcs.org.fj/our-services/taxation/individuals/personal-income-tax/))_
 - **Standard corporate income tax rate** — 25%  _(Income Tax Act 2015 (https://taxatlas.io/country/fiji/corporate-tax))_
-- **Does Fiji have a VAT/GST** — Yes. The standard rate was **reduced from 15% to 12.5% on 1 August 2025**, so a 2025 period straddles two rates: **15% to 31 July 2025, 12.5% from 1 August 2025**. Twenty-two zero-rated goods stay zero-rated through the 2025-2026 fiscal year %  _([Value Added Tax Act 1991](https://frcs.org.fj/public-notice/value-added-tax-vat-calculation-notice/); FRCS VAT Calculation Notice, which sets out the pre-1-August period calculation)_
+- **Does Fiji have a VAT/GST** — Yes. The standard rate was **reduced from 15% to 12.5% on 1 August 2025**, so a 2025 period straddles two rates: **15% to 31 July 2025, 12.5% from 1 August 2025**. Twenty-two zero-rated goods stay zero-rated through the 2025-2026 fiscal year  _([Value Added Tax Act 1991](https://frcs.org.fj/public-notice/value-added-tax-vat-calculation-notice/); FRCS VAT Calculation Notice, which sets out the pre-1-August period calculation)_
 - **Which VAT rate applies across the change** — FRCS decides it by **time of supply**, and issued a separate public notice on the point. Time of supply is when the supply is treated as taking place and when the liability to account for the tax arises — not the date of delivery or of the return  _([FRCS public notice, Value Added Tax (VAT) Time of Supply](https://frcs.org.fj/public-notice/value-added-tax-vat-time-of-supply/))_
 - **Point-of-sale systems need the new tax label** — FRCS required all POS and Sales Data Controller developers and vendors to add a **new VAT tax label "G"** carrying the 12.5% rate, effective 1 August 2025. A system that cannot issue the "G" label cannot charge 12.5% at all, so every supply it rings up from that date is overtaxed. **The receipt date is not the test, though** — the bullet above governs: a receipt issued on or after 1 August for a supply whose time of supply fell earlier correctly carries 15%, and a 15% line on a post-change receipt is not by itself an error. Check the time of supply before calling one wrong  _([FRCS public notice, Implementation of New VAT Tax Label "G"](https://frcs.org.fj/public-notice/implementation-of-new-vat-tax-label-g-effective-1-august-2025/))_
 - **Annual income tax return filing deadline** — 31 March following the tax year (for taxpayers required to lodge) (approx — confirm; extensions and tax-agent lodgement programmes may apply)  _(Tax Administration Act 2009)_

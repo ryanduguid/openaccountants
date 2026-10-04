@@ -4,7 +4,7 @@ description: "Source-cited draft: company formation & entity choice for Senegal 
 jurisdiction: SN
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 category: formation
 tier: 2
@@ -63,11 +63,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Governing company law** — OHADA Uniform Act on Commercial Companies and Economic Interest Groups (AUSCGIE)  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.legal500.com/doing-business-in/senegal/)_
 - **Common entity types** — SARL (Société à Responsabilité Limitée), SA (Société Anonyme), SAS (Société par Actions Simplifiée)  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.legal500.com/doing-business-in/senegal/)_
-- **SARL minimum share capital** — **There is a statutory minimum under OHADA: 1,000,000** (art. 311). A figure "commonly set around XOF 100,000" can only be lawful if **Senegalese national law** has displaced the default under the article's opening words, and it should be cited to that law rather than to the uniform act XOF  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974; practice figure as described at [kafuipartners.com](https://www.kafuipartners.com/company-formation-senegal))_
+- **SARL minimum share capital** — **There is a statutory minimum under OHADA: 1,000,000** (art. 311). A figure "commonly set around XOF 100,000" can only be lawful if **Senegalese national law** has displaced the default under the article's opening words, and it should be cited to that law rather than to the uniform act  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974; practice figure as described at [kafuipartners.com](https://www.kafuipartners.com/company-formation-senegal))_
 - **SA minimum share capital** — **10,000,000**, with the quarter correctly stated: cash shares are paid up **at least one quarter** on subscription, the capital must be **entirely subscribed before the statutes are signed**, and the balance falls due within **three years** of RCCM registration. **100,000,000** where the securities are listed or publicly offered in a member state XOF  _(AUSCGIE 2014, arts. 387–389 and 824 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Incorporation channel** — Registration via the APIX one-stop shop (guichet unique), issuing RCCM (commercial registry) and NINEA (tax ID)  _(APIX one-stop shop (guichet unique) — https://www.legal500.com/doing-business-in/senegal/)_
 - **Core incorporation steps** — 1) Reserve trade name with RCCM/CFE; 2) Draft statutes (notarized where required); 3) Deposit capital and obtain bank certificate where required; 4) File at APIX for RCCM + NINEA and declare existence to the tax office  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.legal500.com/doing-business-in/senegal/)_
-- **Incorporation timeline** — Around 2 days via the APIX one-stop shop ((approx — confirm current processing time))  _(APIX one-stop shop (guichet unique) — https://www.legal500.com/doing-business-in/senegal/)_
+- **Incorporation timeline** — Around 2 days via the APIX one-stop shop (approx — confirm current processing time)  _(APIX one-stop shop (guichet unique) — https://www.legal500.com/doing-business-in/senegal/)_
 - **Tax identification** — NINEA (Numéro d'Identification Nationale des Entreprises et Associations) issued at registration  _(Direction Générale des Impôts et des Domaines (DGID) — https://www.legal500.com/doing-business-in/senegal/)_
 - **Mandatory registrations at formation** — Employer registration with CSS (social security) and IPRES (pension) alongside RCCM and NINEA  _(Code de la Sécurité Sociale / IPRES — https://www.legal500.com/doing-business-in/senegal/)_
 - **Annual accounts (SYSCOHADA)** — Prepare annual financial statements under the SYSCOHADA chart of accounts and file with the CIT return by 30 April  _(OHADA / SYSCOHADA accounting framework — https://taxsummaries.pwc.com/senegal/corporate/tax-administration)_

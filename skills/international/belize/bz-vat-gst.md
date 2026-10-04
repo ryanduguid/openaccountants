@@ -5,7 +5,7 @@ jurisdiction: BZ
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Zero-rated supplies** — Exports, certain basic foods, medicines and other prescribed items are zero-rated (approx — confirm zero-rated schedule)  _(General Sales Tax Act)_
 - **Exempt supplies** — Certain financial, educational and other prescribed services are exempt (no input credit) (approx — confirm exempt schedule)  _(General Sales Tax Act)_
 - **Registration threshold** — 75,000 BZD  _(General Sales Tax Act; Belize Tax Service registration guide: https://bts.gov.bz/guide/registration)_
-- **Registration threshold — new business proxy** — Averaging BZD 6,250 per month in taxable supplies (business under 12 months old) BZD (approx — confirm)  _(General Sales Tax Act)_
+- **Registration threshold — new business proxy** — Averaging BZD 6,250 per month in taxable supplies (business under 12 months old) (approx — confirm)  _(General Sales Tax Act)_
 - **Filing frequency** — Monthly GST returns (Form BTS210)  _(General Sales Tax Act (https://bts.gov.bz/file-gst-return/))_
 - **Return / payment deadline** — By the 15th of the month following the tax period  _(General Sales Tax Act (https://bts.gov.bz/file-gst-return/))_
 - **Input tax credit** — Registered businesses credit GST paid on inputs against GST charged on outputs (net remittance)  _(General Sales Tax Act)_

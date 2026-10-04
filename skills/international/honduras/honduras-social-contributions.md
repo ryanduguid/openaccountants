@@ -1,7 +1,7 @@
 ---
 name: honduras-social-contributions
 description: Use this skill whenever asked about Honduras payroll contributions, social security, or personal income tax (ISR) for employees, employers, or self-employed individuals. Trigger on phrases like "how much IHSS do I pay", "Honduras social security", "IHSS contribution", "RAP deduction", "INFOP levy", "ISR withholding Honduras", "Honduras income tax table", "tabla progresiva", "techo de cotización", "aguinaldo tax", "13th month Honduras", "Código 111 withholding", "Honduras net salary", or any question about Honduran payroll deductions, employer contributions, or ISR. Also trigger when classifying bank-statement transactions that relate to IHSS, RAP, INFOP, or SAR (tax) debits from Honduran banks (Banco Atlántida, Banco Ficohsa, BAC Credomatic, Banco de Occidente). This skill covers the 2025/2026 ISR progressive table, IHSS (IVM + EM) rates and ceilings, RAP labor-reserve fund, INFOP training levy, 13th/14th month pay, filing forms and deadlines, penalties, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Honduran payroll or ISR work.
-version: 0.2
+version: 0.3
 jurisdiction: HN
 tax_year: 2025
 last_updated: 2026-10-04
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Honduras Payroll Contributions & Income Tax (ISR)
 
-## Honduras Payroll Contributions & Income Tax (ISR) Skill v0.2
+## Honduras Payroll Contributions & Income Tax (ISR) Skill v0.3
 
 > **Tier 2 (research-verified) — NOT yet professionally verified.** Figures are drawn from sourced research (Big-4 summaries, Honduran press citing the IHSS/SAR, and statute references) but have NOT been signed off by a Honduran Contador Público Colegiado. Treat all outputs as estimates pending review.
 
@@ -478,7 +478,7 @@ Sector- and size-banded; no single national figure. 2025 figures remained in eff
 
 ### Other context
 
-- **Sales Tax (ISV) general rate** — 15% percent (general rate)  _([PwC — Other taxes](https://taxsummaries.pwc.com/honduras/corporate/other-taxes))_
+- **Sales Tax (ISV) general rate** — 15% (general rate)  _([PwC — Other taxes](https://taxsummaries.pwc.com/honduras/corporate/other-taxes))_
 - **Sales Tax (ISV) premium services rate** — 18% percent (certain premium services (alcohol, tobacco, premium telecom))  _([PwC — Other taxes](https://taxsummaries.pwc.com/honduras/corporate/other-taxes))_
 - **Territorial taxation basis** — Honduras taxes on a territorial basis — Honduran-source income only.  _(Other context)_
 

@@ -4,8 +4,8 @@ description: Tier 2 US federal content skill for preparing Form 1120 — the US 
 jurisdiction: US
 category: federal
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-30
+version: 1.2
+last_updated: 2026-10-04
 reviewed_by: Christopher Aryee, CPA
 review_status: pending_review
 tier: 1
@@ -413,7 +413,7 @@ Practical effect: CAMT applies only to a few thousand of the largest US corporat
 ### 12.3 AFSI definition — book income, adjusted
 
 - **AFSI (Adjusted Financial Statement Income)** — AFSI starts with net income or loss reported on the applicable financial statement (generally the GAAP consolidated income statement, or IFRS if no GAAP — order of priority is in §451(b)(3)) and applies adjustments specified in §56A: - Add back: federal income tax expense. - Adjust for: depreciation differences between book and tax (§56A(c)(13) — added by IRA, allowing tax depreciation in lieu of book depreciation in AFSI to avoid penalizing capital investment). - Adjust for: tax-credit-related items, certain employee benefit items, partnership and CFC pass-throughs. - Adjust for: §168(k) bonus depreciation (allowed as a deduction against AFSI under §56A(c)(13)). - Reduce by: financial statement NOL (FSNOL), limited to 80% of pre-FSNOL AFSI.  _(§451(b)(3); §56A; §56A(c)(13))_
-- **FSNOL limitation** — 80% percent (of pre-FSNOL AFSI)  _(§56A)_
+- **FSNOL limitation** — 80% (of pre-FSNOL AFSI)  _(§56A)_
 
 ### 12.4 The 15% computation
 

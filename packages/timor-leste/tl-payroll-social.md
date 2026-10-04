@@ -5,7 +5,7 @@ jurisdiction: TL
 category: payroll
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,15 +17,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Employers must withhold Wage Income Tax (WIT) from wages and remit it monthly, and contribute to the mandatory general social security scheme. Unverified draft figures.
 
-- **Social security — total contribution rate** — 10% of gross earnings percent  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
-- **Social security — employer contribution** — 6% of gross earnings percent  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
-- **Social security — employee contribution** — 4% of gross earnings (withheld by employer) percent  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
-- **Social security — small-employer reduced rate** — Reduced contributory rate (until 2026) for private employers with 10 or fewer workers where at least 60% are Timorese nationals ((approx — confirm reduced rate and sunset date))  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
-- **Social security — contribution base** — Gross remuneration; no published earnings cap confirmed ((approx — confirm any ceiling/floor))  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
-- **Wage Income Tax (PAYE-equivalent) — residents** — 0% on the first USD 500 of monthly wages; 10% on the excess ((approx — confirm monthly threshold)) percent  _(Taxes and Duties Act (Law No. 8/2008) — https://attl.gov.tl/wage-income-tax/)_
+- **Social security — total contribution rate** — 10% of gross earnings  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
+- **Social security — employer contribution** — 6% of gross earnings  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
+- **Social security — employee contribution** — 4% of gross earnings (withheld by employer)  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
+- **Social security — small-employer reduced rate** — Reduced contributory rate (until 2026) for private employers with 10 or fewer workers where at least 60% are Timorese nationals (approx — confirm reduced rate and sunset date)  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
+- **Social security — contribution base** — Gross remuneration; no published earnings cap confirmed (approx — confirm any ceiling/floor)  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
+- **Wage Income Tax (PAYE-equivalent) — residents** — 0% on the first USD 500 of monthly wages; 10% on the excess (approx — confirm monthly threshold)  _(Taxes and Duties Act (Law No. 8/2008) — https://attl.gov.tl/wage-income-tax/)_
 - **Wage Income Tax — non-residents** — 10% of taxable wages with no tax-free amount, withheld by the employer and paid by the 15th day after the end of the month  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 20, 22 and 23 and Schedule V(b) — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf ; Autoridade Tributária Timor-Leste, Wage Income Tax — https://attl.gov.tl/wage-income-tax/)_
 - **WIT remittance deadline** — By the 15th day of the month following the month of deduction  _(Taxes and Duties Act (Law No. 8/2008) — https://attl.gov.tl/wage-income-tax/)_
-- **Social security remittance deadline** — Contributions remitted monthly, generally by the 10th–20th of the following month ((approx — confirm exact day))  _(Social Security General Regime (Law No. 12/2016) — https://segurancasocial.gov.tl/)_
+- **Social security remittance deadline** — Contributions remitted monthly, generally by the 10th–20th of the following month (approx — confirm exact day)  _(Social Security General Regime (Law No. 12/2016) — https://segurancasocial.gov.tl/)_
 - **Social security administrator** — Instituto Nacional de Segurança Social (INSS) / Segurança Social Timor-Leste  _(Social Security General Regime (Law No. 12/2016) — https://segurancasocial.gov.tl/)_
 
 <!-- openaccountants-cta-block -->

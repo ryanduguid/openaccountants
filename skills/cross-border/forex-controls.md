@@ -1,10 +1,10 @@
 ---
 name: forex-controls
 description: "Foreign exchange controls and cross-border money movement rules by country. Use when the user asks about: forex controls, foreign exchange limits, FEMA, LRS, SAFE, 外汇管制, capital controls, money transfer limits, remittance limits, CRS reporting, TCS India, IOF Brazil, sending money abroad, receiving money from overseas, forex restrictions China, India remittance limit, Brazil forex, Taiwan outward remittance, Korea forex reporting, Japan foreign exchange, ODI filing China, cross-border transfer, 境外汇款, 购汇额度, 地下钱庄, forex quota, capital movement restrictions, repatriation of profits, sending money home, or any question about moving money across international borders as a founder or freelancer."
-version: 1.0
+version: 1.1
 jurisdiction: INTL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -56,7 +56,7 @@ Banks may reject or flag repeated near-limit transfers
 - **Legitimate trade payments** — Relatively smooth (with invoices + contracts)
 - **Capital account transactions** — Requires SAFE (国家外汇管理局) approval
 - **Profit repatriation from overseas subsidiary** — Allowed with documentation
-- **ODI (境外直接投资) approval threshold** — >$5M USD USD (Requires NDRC + MOFCOM + SAFE approval; smaller amounts vary by province)
+- **ODI (境外直接投资) approval threshold** — >$5M USD (Requires NDRC + MOFCOM + SAFE approval; smaller amounts vary by province)
 
 #### Practical Strategies for Chinese Founders
 
@@ -121,7 +121,7 @@ Inbound wires to mainland bank accounts may trigger compliance review:
 
 - **TCS on remittances** — 20% percent (on remittances >₹10 lakh/year (effective April 2025; was ₹7 lakh))
 - **TCS refundability** — TCS is refundable against income tax liability — it is not a final tax
-- **Budget 2026 TCS reduction** — 2% percent (Budget 2026 reduces education/medical TCS to 2%)
+- **Budget 2026 TCS reduction** — 2% (Budget 2026 reduces education/medical TCS to 2%)
 
 #### Business Forex
 
@@ -147,9 +147,9 @@ Inbound wires to mainland bank accounts may trigger compliance review:
 
 Central Bank controls all forex transactions
 
-- **Individual daily limit without documentation** — up to $10,000 USD per day USD (without documentation)
+- **Individual daily limit without documentation** — up to $10,000 USD per day (without documentation)
 - **Company forex transactions** — All transactions need exchange contract through authorized bank
-- **IOF (Imposto sobre Operações Financeiras)** — 0.38–6.38% percent (on forex transactions)
+- **IOF (Imposto sobre Operações Financeiras)** — 0.38–6.38% (on forex transactions)
 
 Brazilian founders commonly use US LLC + Mercury to avoid domestic forex complexity
 
@@ -181,7 +181,7 @@ Brazilian founders commonly use US LLC + Mercury to avoid domestic forex complex
 
 #### Individual Limits
 
-- **Korea individual transaction threshold without documentation** — $50,000 USD per transaction USD (without documentation)
+- **Korea individual transaction threshold without documentation** — $50,000 USD per transaction (without documentation)
 - **Annual cumulative reporting** — Annual cumulative >$50K: must report to designated foreign exchange bank
 - **Investment abroad reporting** — >$1,000,000 USD (Investment abroad: report to Bank of Korea)
 

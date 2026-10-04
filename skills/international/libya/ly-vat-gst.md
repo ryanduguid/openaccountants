@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Libya (tax year 2025) — rates,
 jurisdiction: LY
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,8 +19,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **VAT registration threshold** — Not applicable — no VAT regime exists  _(Income Tax Law No. 7 of 2010 — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
 - **VAT filing frequency** — Not applicable — no VAT returns are filed  _(Income Tax Law No. 7 of 2010 — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
 - **Reverse charge** — Not applicable — there is no VAT, so no reverse-charge mechanism on cross-border services  _(Income Tax Law No. 7 of 2010 — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
-- **Import service fee** — 5% service fee on the value of most imports percent  _([Customs Law](https://taxsummaries.pwc.com/libya/corporate/other-taxes))_
-- **Stamp duty on contracts (nearest indirect tax)** — Main contracts 1%; subcontracts 0.1% of contract value percent  _(Stamp Duty Law — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
+- **Import service fee** — 5% service fee on the value of most imports  _([Customs Law](https://taxsummaries.pwc.com/libya/corporate/other-taxes))_
+- **Stamp duty on contracts (nearest indirect tax)** — Main contracts 1%; subcontracts 0.1% of contract value  _(Stamp Duty Law — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
 
 <!-- openaccountants-cta-block -->
 

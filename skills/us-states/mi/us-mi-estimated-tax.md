@@ -4,8 +4,8 @@ description: Use this skill whenever asked about Michigan quarterly estimated in
 jurisdiction: US-MI
 category: state-tax
 tax_year: 2026
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -113,7 +113,7 @@ MCL 206.301(1) uses the singular "person", but joint filers test the threshold o
 
 ### Safe harbor 1 — Current-year 90%
 
-- **Current-year safe harbor** — 90% percent (of actual TY 2026 Michigan tax liability, paid through withholding + estimates)  _(MI-1040ES Instr.)_
+- **Current-year safe harbor** — 90% (of actual TY 2026 Michigan tax liability, paid through withholding + estimates)  _(MI-1040ES Instr.)_
 
 ### Safe harbor 2 — Prior-year 100%
 
@@ -291,7 +291,7 @@ Through MTO a taxpayer can schedule all four quarterly debits in advance on the 
 ### Card fees
 
 - **Debit card fee** — $3.95 flat fee per transaction USD (debit card payment)  _(MTO payment processor disclosures)_
-- **Credit card fee** — 2.3% percent (of payment, paid to processor not Treasury)  _(MTO payment processor disclosures)_
+- **Credit card fee** — 2.3% (of payment, paid to processor not Treasury)  _(MTO payment processor disclosures)_
 
 ## Section 10: Coordination with federal Form 1040-ES
 

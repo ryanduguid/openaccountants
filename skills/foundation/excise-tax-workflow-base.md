@@ -1,10 +1,10 @@
 ---
 name: excise-tax-workflow-base
 description: "Tier 1 workflow base for excise duty skills covering harmonised excise on energy products, alcohol, and tobacco (EU Directives 2003/96/EC, 92/83/EEC, 2011/64/EU) and non-harmonised excise (sugar, plastics, single-use plastic, gambling, environmental). Workflow architecture only — no country rate tables or product-specific guidance. MUST be loaded alongside a country excise content skill. Assumes a licensed excise warehouse keeper or authorised consignor / consignee operates under bond and EMCS (Excise Movement and Control System). Does NOT cover: customs duty (see customs-duties-workflow-base), VAT on excise products (see country VAT skills), excise on cannabis where legalised (specialist), or licensing process for excise warehouse."
-version: 0.1
+version: 0.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: foundation
 tier: 2
@@ -76,7 +76,7 @@ This workflow base assumes:
 ### 3.2 Alcohol (Directives 92/83/EEC and 92/84/EEC)
 
 - **Beer minimum rate** — EUR 1.87 per hectolitre / degree Plato OR EUR 0.748 per hectolitre / degree of alcohol (chosen MS basis) EUR per hectolitre/degree  _(Directives 92/83/EEC and 92/84/EEC)_
-- **Wine (still and sparkling) minimum rate** — EUR 0 (minimum) — many MS set zero EUR  _(Directives 92/83/EEC and 92/84/EEC)_
+- **Wine (still and sparkling) minimum rate** — EUR 0 (minimum) — many MS set zero  _(Directives 92/83/EEC and 92/84/EEC)_
 - **Intermediate products (sherry, port, fortified) minimum rate** — EUR 45 per hectolitre EUR per hectolitre  _(Directives 92/83/EEC and 92/84/EEC)_
 - **Spirits minimum rate** — EUR 550 per hectolitre of pure alcohol EUR per hectolitre pure alcohol  _(Directives 92/83/EEC and 92/84/EEC)_
 - **Small independent brewery reduced rates** — Reduced rates available for small independent breweries (typically up to 50% reduction).  _(Directives 92/83/EEC and 92/84/EEC)_

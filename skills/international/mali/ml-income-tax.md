@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Mali (tax year 2025) �
 jurisdiction: ML
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **ITS band 5** — 26% on the slice from XOF 1,789,734 to 2,384,195  _(Code Général des Impôts (Mali), art. 10 — https://www.dgi.gouv.ml/CGI/)_
 - **ITS band 6** — 31% on the slice from XOF 2,384,196 to 3,494,130  _(Code Général des Impôts (Mali), art. 10 — https://www.dgi.gouv.ml/CGI/)_
 - **ITS top band** — 37% on the slice above XOF 3,494,130  _(Code Général des Impôts (Mali), art. 10 — https://www.dgi.gouv.ml/CGI/)_
-- **Non-resident employment income** — Generally taxed at a flat 30% withholding on Mali-source remuneration percent (approx — confirm; treaty relief may apply)  _(Code Général des Impôts (Mali))_
+- **Non-resident employment income** — Generally taxed at a flat 30% withholding on Mali-source remuneration (approx — confirm; treaty relief may apply)  _(Code Général des Impôts (Mali))_
 - **Individual residence test** — Resident if habitual abode in Mali or physical presence of 183+ days in the year (approx — confirm against CGI definition)  _(Code Général des Impôts (Mali))_
 - **Key deduction from gross salary** — Contributions the employer withholds towards a pension or retirement scheme (the INPS old-age contribution) are deducted before ITS up to 4% of gross salary, or the ceiling the pension legislation sets where one applies, as are special allowances that cover the expenses of the post, but only to the extent they are actually used for that purpose and up to a maximum fixed by ministerial order (art. 7 CGI); art. 7 does not mention the AMO health contribution, whose deductibility is unconfirmed  _(Code Général des Impôts (Mali), art. 7 — https://www.dgi.gouv.ml/CGI/)_
 - **Family situation relief** — The gross ITS is reduced by 0% for a single, divorced or widowed taxpayer without dependent children, by 10% for a married taxpayer without children, and by 2.5% per dependent child up to the tenth; a disabled adult child gives a 10% reduction; spouses taxed separately each take the 10% plus the children actually in their charge (art. 11 CGI)  _(Code Général des Impôts (Mali), art. 11 — https://www.dgi.gouv.ml/CGI/)_

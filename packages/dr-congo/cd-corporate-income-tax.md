@@ -5,7 +5,7 @@ jurisdiction: CD
 category: international
 tax_year: 2026
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ Corporate income tax (Impôt sur les Bénéfices et Profits, IBP) applies at a s
 - **Small company (turnover CDF 25m–300m) — supply of goods** — 1% of annual turnover for sales activities under the small enterprise regime (turnover above CDF 25 million and up to CDF 300 million)  _(Loi n° 23/053 du 30 novembre 2023 relative à l'impôt sur les sociétés et à l'impôt sur le revenu des personnes physiques (Journal officiel, 29 December 2023; in force 1 January 2026), DGI copy, arts 109 and 127 — https://dgi.gouv.cd/wp-content/uploads/2025/09/loi-is-et-Irpp.pdf)_
 - **Small company (turnover CDF 25m–300m) — supply of services** — 2% of annual turnover for service activities; a mixed business is taxed according to its main activity  _(Loi n° 23/053 du 30 novembre 2023 relative à l'impôt sur les sociétés et à l'impôt sur le revenu des personnes physiques (Journal officiel, 29 December 2023; in force 1 January 2026), DGI copy, arts 109 and 127 — https://dgi.gouv.cd/wp-content/uploads/2025/09/loi-is-et-Irpp.pdf)_
 - **Micro company (turnover below CDF 25m)** — An annual lump-sum tax for enterprises with turnover of CDF 25 million or less, with limits the Minister of Finance may adjust by order  _(Loi n° 23/053 du 30 novembre 2023 relative à l'impôt sur les sociétés et à l'impôt sur le revenu des personnes physiques (Journal officiel, 29 December 2023; in force 1 January 2026), DGI copy, art 107 — https://dgi.gouv.cd/wp-content/uploads/2025/09/loi-is-et-Irpp.pdf)_
-- **Rental income tax (Kinshasa province)** — 12% flat, with 10% withheld by the tenant percent  _(Code Général des Impôts (RDC) — https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/taxes-on-corporate-income)_
+- **Rental income tax (Kinshasa province)** — 12% flat, with 10% withheld by the tenant  _(Code Général des Impôts (RDC) — https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/taxes-on-corporate-income)_
 - **Tax base** — Net DRC-source profit; turnover includes all profits, interest received, exceptional profits and capital gains  _(Code Général des Impôts (RDC) — https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/taxes-on-corporate-income)_
 - **Withholding tax on dividends** — 20% impôt mobilier, and from 1 January 2026 a 20% withholding on capital income of individuals under Loi 23/053 art 120; PwC reports 10% in the mining sector under the Mining Code  _(Code des impôts mis à jour au 10 juillet 2023, Direction Générale des Impôts, impôt mobilier, art 26 — https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf ; Loi n° 23/053 du 30 novembre 2023 relative à l'impôt sur les sociétés et à l'impôt sur le revenu des personnes physiques (Journal officiel, 29 December 2023; in force 1 January 2026), DGI copy, art 120 — https://dgi.gouv.cd/wp-content/uploads/2025/09/loi-is-et-Irpp.pdf ; mining rate: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/withholding-taxes)_
 - **Withholding tax on interest (non-residents)** — 20% impôt mobilier on interest, subject to treaty or exemption  _(Code des impôts mis à jour au 10 juillet 2023, Direction Générale des Impôts, impôt mobilier, art 26 — https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf)_

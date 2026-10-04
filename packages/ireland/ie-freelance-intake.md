@@ -4,7 +4,8 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing an Irish 
 jurisdiction: IE
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -105,23 +106,23 @@ All thresholds 2025-effective (Finance Act 2024, Finance (No. 2) Act 2023, Finan
 
 ### 4.4 VAT registration gate — Section 6 + Section 9 VAT Consolidation Act 2010; Finance Act 2024
 
-- **VAT registration mandatory threshold — goods** — EUR 85,000 EUR (rolling 12-month period, supplies of goods, raised from EUR 80,000 by Finance Act 2023, then to EUR 85,000 effective 1 January 2024)  _(Section 6 / Section 9 VAT Consolidation Act 2010; Finance Act 2023; Finance Act 2024)_
-- **VAT registration mandatory threshold — services** — EUR 42,500 EUR (rolling 12-month period, raised from EUR 37,500 to EUR 42,500 by Finance Act 2024, effective 1 January 2025)  _(Finance Act 2024)_
+- **VAT registration mandatory threshold — goods** — EUR 85,000 (rolling 12-month period, supplies of goods, raised from EUR 80,000 by Finance Act 2023, then to EUR 85,000 effective 1 January 2024)  _(Section 6 / Section 9 VAT Consolidation Act 2010; Finance Act 2023; Finance Act 2024)_
+- **VAT registration mandatory threshold — services** — EUR 42,500 (rolling 12-month period, raised from EUR 37,500 to EUR 42,500 by Finance Act 2024, effective 1 January 2025)  _(Finance Act 2024)_
 - **Mixed supplies threshold rule** — Mixed supplies: the services threshold (EUR 42,500) applies if services are more than 10% of total turnover; otherwise the goods threshold applies.  _(Section 6 / Section 9 VAT Consolidation Act 2010)_
 - **Distance sales into Ireland threshold** — EUR 10,000 EUR (EU-wide threshold (OSS / IOSS))  _(Section 6 / Section 9 VAT Consolidation Act 2010)_
-- **Acquisitions from EU Member States by exempt/non-taxable person threshold** — EUR 41,000 EUR  _(Section 6 / Section 9 VAT Consolidation Act 2010)_
+- **Acquisitions from EU Member States by exempt/non-taxable person threshold** — EUR 41,000  _(Section 6 / Section 9 VAT Consolidation Act 2010)_
 - **Below-threshold elective registration** — If above threshold → route `ireland-vat-return`. Below threshold → elective registration may still be advantageous (input VAT recovery); route only if user elects or reviewer flags.  _(Section 6 / Section 9 VAT Consolidation Act 2010)_
-- **VAT standard rate 2025** — 23% percent  _(VAT Consolidation Act 2010)_
-- **VAT reduced rate 13.5%** — 13.5% percent (most services, construction, restaurant food was at 9% then back to 13.5% from 1 September 2023)  _(VAT Consolidation Act 2010)_
-- **VAT reduced rate 9%** — 9% percent (gas and electricity to end-October 2025 under Finance Act 2024 extension; newspapers; some e-publications)  _(Finance Act 2024)_
-- **VAT livestock rate** — 4.8% percent  _(VAT Consolidation Act 2010)_
-- **VAT zero rate** — 0% percent (food staples, children's clothing, exports, intra-EU B2B with VIES)  _(VAT Consolidation Act 2010)_
+- **VAT standard rate 2025** — 23%  _(VAT Consolidation Act 2010)_
+- **VAT reduced rate 13.5%** — 13.5% (most services, construction, restaurant food was at 9% then back to 13.5% from 1 September 2023)  _(VAT Consolidation Act 2010)_
+- **VAT reduced rate 9%** — 9% (gas and electricity to end-October 2025 under Finance Act 2024 extension; newspapers; some e-publications)  _(Finance Act 2024)_
+- **VAT livestock rate** — 4.8%  _(VAT Consolidation Act 2010)_
+- **VAT zero rate** — 0% (food staples, children's clothing, exports, intra-EU B2B with VIES)  _(VAT Consolidation Act 2010)_
 
 ### 4.5 PRSI Class S gate — Social Welfare Consolidation Act 2005, Section 20A; Social Welfare Act 2023
 
 - **PRSI Class S rate** — 4.1% percent (effective 1 October 2024; full 2025 year is at 4.1% (increased from 4.0%))  _(Social Welfare Consolidation Act 2005, Section 20A; Social Welfare Act 2023)_
-- **Minimum annual reckonable income to be liable** — EUR 5,000 EUR  _(Social Welfare Consolidation Act 2005, Section 20A)_
-- **Minimum annual contribution** — EUR 650 EUR  _(Social Welfare Consolidation Act 2005, Section 20A)_
+- **Minimum annual reckonable income to be liable** — EUR 5,000  _(Social Welfare Consolidation Act 2005, Section 20A)_
+- **Minimum annual contribution** — EUR 650  _(Social Welfare Consolidation Act 2005, Section 20A)_
 - **Class S coverage** — Self-employed individuals (sole traders, partners, proprietary directors with ≥ 50% shareholding) pay PRSI Class S on reckonable income (trading income + investment income + rental income). Class S covers State Pension (Contributory), Maternity / Paternity / Adoptive Benefit, Treatment Benefit, Widow's / Widower's Pension, Invalidity Pension (added 2017), Jobseeker's Benefit Self-Employed (added November 2019). Route `ie-prsi-class-s`.  _(Social Welfare Consolidation Act 2005, Section 20A)_
 
 ### 4.6 USC gate — Part 18D TCA 1997, Sections 531AM–531AAF; Finance Act 2024
@@ -136,7 +137,7 @@ All thresholds 2025-effective (Finance Act 2024, Finance (No. 2) Act 2023, Finan
 | Balance above EUR 70,044 | 8.0% |
 
 - **Self-employed USC surcharge** — 3% percent (on non-PAYE income above EUR 100,000 under Section 531AN(2) TCA 1997 — making effective top USC rate 11% on self-employment income over EUR 100k)  _(Section 531AN(2) TCA 1997)_
-- **USC full exemption threshold** — EUR 13,000 EUR (total income; medical-card holders + over-70s capped at 2%)  _(Part 18D TCA 1997)_
+- **USC full exemption threshold** — EUR 13,000 (total income; medical-card holders + over-70s capped at 2%)  _(Part 18D TCA 1997)_
 
 ### 4.7 Preliminary tax gate — Section 958 TCA 1997; Section 959AN
 
@@ -148,8 +149,8 @@ All thresholds 2025-effective (Finance Act 2024, Finance (No. 2) Act 2023, Finan
 
 ### 4.9 CGT gate — Section 28 TCA 1997 et seq.
 
-- **Effective CGT rate for companies** — 33% percent  _(Section 28 TCA)_
-- **CGT annual exemption** — EUR 1,270 EUR  _(Section 601 TCA 1997)_
+- **Effective CGT rate for companies** — 33%  _(Section 28 TCA)_
+- **CGT annual exemption** — EUR 1,270  _(Section 601 TCA 1997)_
 - **CGT payment deadlines** — Disposals 1 January – 30 November 2025 → CGT due 15 December 2025. Disposals 1 – 31 December 2025 → CGT due 31 January 2026. Return (Form CG1 for non-Form-11 filers, or via Form 11 for self-assessed) due by 31 October 2026. Route `ie-cgt`.  _(Section 28 TCA 1997 et seq.)_
 
 ### 4.10 CAT gate — Capital Acquisitions Tax Consolidation Act 2003

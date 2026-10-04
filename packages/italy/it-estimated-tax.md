@@ -1,10 +1,10 @@
 ---
 name: it-estimated-tax
 description: Use this skill whenever asked about Italian estimated income tax advance payments (acconti IRPEF) for self-employed individuals, freelancers, or professionisti. Trigger on phrases like "acconti IRPEF", "acconto imposta", "estimated tax Italy", "Italian advance tax", "primo acconto", "secondo acconto", "historical method", "forecast method", "metodo storico", "metodo previsionale", "F24 payment", or any question about advance income tax obligations under the TUIR. Covers the two-instalment schedule (40% by Jun 30, 60% by Nov 30), historical vs forecast computation methods, the EUR 257.52 threshold, penalties for shortfall, and F24 payment procedures. ALWAYS read this skill before touching any estimated tax work for Italy.
-version: 2.0
+version: 2.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -197,7 +197,7 @@ Prior year imposta sostitutiva (5% new activity rate) = EUR 1,500.
 | Within 2 years | 4.29% |
 | Beyond 2 years | 5% |
 
-- **Legal interest rate 2025** — 2.5% per annum for 2025, subject to MEF decree percent
+- **Legal interest rate 2025** — 2.5% per annum for 2025, subject to MEF decree
 
 ### 6.3 Ravvedimento formula
 

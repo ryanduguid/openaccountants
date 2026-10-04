@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Vermont sales tax, Vermont use 
 jurisdiction: US-VT
 category: state-tax
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -64,12 +65,12 @@ Before proceeding with any Vermont sales tax analysis, collect the following fro
 
 ### 1.1 State Sales Tax Rate
 
-- **Vermont state sales tax rate** — 6.00% percent (T1)  _(32 V.S.A. §9771)_
+- **Vermont state sales tax rate** — 6.00% (T1)  _(32 V.S.A. §9771)_
 - **State sales tax scope** — Vermont imposes a state sales tax of 6.00% on the retail sale of tangible personal property and certain services. (T1)  _(32 V.S.A. §9771)_
 
 ### 1.2 Local Option Tax [T1]
 
-- **Local option tax rate** — 1% percent (T1)
+- **Local option tax rate** — 1% (T1)
 - **Local option adoption** — Not all municipalities have adopted the local option tax. (T1)
 - **Combined rate where adopted** — 7.00%  _([T1])_
 - **Administration** — The local option tax is administered by the Vermont Department of Taxes. (T1)
@@ -90,9 +91,9 @@ Before proceeding with any Vermont sales tax analysis, collect the following fro
 ### 2.1 Grocery Food -- EXEMPT [T1]
 
 - **Unprepared grocery food** — Exempt. (T1)  _(32 V.S.A. §9741(13))_
-- **Prepared food (restaurant meals)** — 9% percent (T1)
-- **Candy** — 6% percent (T1)
-- **Soft drinks** — 6% percent (T1)
+- **Prepared food (restaurant meals)** — 9% (T1)
+- **Candy** — 6% (T1)
+- **Soft drinks** — 6% (T1)
 
 ### 2.2 Clothing -- TAXABLE [T1]
 

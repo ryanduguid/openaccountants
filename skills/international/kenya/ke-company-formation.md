@@ -5,7 +5,7 @@ jurisdiction: KE
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Minimum number of directors and shareholders** — One or more persons may form a company (s. 11(1)); a private company must have at least one director, and every company at least one director who is a natural person (s. 128)  _(Companies Act, 2015 (Cap. 486), as at 27 December 2024 on Kenya Law, s. 11(1) and s. 128(1) — https://new.kenyalaw.org/akn/ke/act/2015/17/eng@2024-12-27)_
 - **Registration platform** — Online via the eCitizen portal / Business Registration Service (BRS)  _(Companies Act, 2015 — https://hudumaglobal.com/blog/how-to-register-company-kenya-online-ecitizen-brs-2026)_
 - **Key incorporation documents** — Name reservation, CR1 (application), CR2 (model memorandum for single shareholder) or CR8 (directors' residential address), Statement of Nominal Capital, and Articles of Association  _(Companies Act, 2015; Companies (General) Regulations, 2015 — https://www.kazilegal.com/cost-of-company-registration-in-kenya.html)_
-- **Official registration fee — private limited company** — Approximately Ksh 10,650 (BRS official fee, excluding professional fees) KES (approx — confirm) KES  _(Companies (General) Regulations, 2015 — https://www.kazilegal.com/cost-of-company-registration-in-kenya.html)_
+- **Official registration fee — private limited company** — Approximately Ksh 10,650 (BRS official fee, excluding professional fees) KES (approx — confirm)  _(Companies (General) Regulations, 2015 — https://www.kazilegal.com/cost-of-company-registration-in-kenya.html)_
 - **Typical incorporation timeline** — Approximately 3–5 working days for complete filings (approx — confirm)  _(Companies Act, 2015 — https://www.kazilegal.com/cost-of-company-registration-in-kenya.html)_
 - **Tax registration on incorporation** — Company must obtain a KRA PIN via iTax to transact and meet tax obligations  _(Tax Procedures Act, 2015 — https://www.kra.go.ke/business/companies-partnerships/companies-partnerships-pin-taxes)_
 - **Beneficial ownership disclosure** — Companies must maintain and file a register of beneficial owners with the Registrar  _(Companies Act, 2015; Companies (Beneficial Ownership Information) Regulations, 2020)_

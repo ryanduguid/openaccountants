@@ -1,10 +1,10 @@
 ---
 name: fr-rental-income
 description: "French rental income taxation: revenus fonciers, LMNP, LMP, and SCI à l'IR. Trigger on phrases like \"revenus fonciers\", \"location nue\", \"location meublée\", \"LMNP\", \"LMP\", \"meublé de tourisme\", \"micro-foncier\", \"régime réel foncier\", \"déficit foncier\", \"micro-BIC location\", \"amortissement LMNP\", \"SCI à l'IR\", \"SCI transparence fiscale\", \"Airbnb France impôts\", \"déclaration 2044\", \"déclaration 2031\", \"liasse BIC meublé\", \"charges déductibles location\", \"travaux déductibles foncier\", \"bascule LMP LMNP\", \"loi Le Meur meublé tourisme\", \"location saisonnière fiscalité\", \"déficit imputable revenu global\". Covers bare rental (micro-foncier and réel), furnished rental (LMNP micro-BIC and réel with amortisation), LMP status, SCI à l'IR, and déficit foncier rules."
-version: 1.0
+version: 1.1
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # FR Rental Income
 
-## France — Rental Income (Revenus Fonciers, LMNP, SCI) v1.0
+## France — Rental Income (Revenus Fonciers, LMNP, SCI) v1.1
 
 > **Based on work by [Romain Simon (@romainsimon)](https://github.com/romainsimon/paperasse)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -133,7 +133,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 4.3 Prélèvements sociaux on LMNP
 
-- **PS rate on LMNP** — 18.6% % (from 2025 income, LFSS 2026)  _(L. 136-6 CSS)_
+- **PS rate on LMNP** — 18.6% (from 2025 income, LFSS 2026)  _(L. 136-6 CSS)_
 
 ## Section 5 — LMP (Location Meublée Professionnelle)
 

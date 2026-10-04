@@ -4,7 +4,8 @@ description: ALWAYS USE THIS SKILL when a user asks for help with Saudi tax/Zaka
 jurisdiction: SA
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -89,7 +90,7 @@ All thresholds 2025-effective. Reviewer to verify current ZATCA circulars and Ro
 
 - **Fundamental Zakat/CIT split rule** — Zakat applies to the Saudi/GCC-owned share; Corporate Income Tax applies to the foreign-owned share.
 - **Zakat rate for 100% Saudi/GCC natural-person owners** — 2.5% percent (on the Zakat base (broadly equity + adjustments))
-- **CIT rate for 100% foreign (non-GCC) owners** — 20% percent (general rate on taxable income; oil & hydrocarbons up to 85%, natural gas 20% — both out of scope here; foreign ownership requires MISA license issued before CR)
+- **CIT rate for 100% foreign (non-GCC) owners** — 20% (general rate on taxable income; oil & hydrocarbons up to 85%, natural gas 20% — both out of scope here; foreign ownership requires MISA license issued before CR)
 - **Mixed ownership split** — Proportional split. The Saudi/GCC share of equity attracts Zakat; the foreign share of taxable income attracts CIT. Both sa-zakat and sa-corporate-tax route. Single combined ZATCA filing covers both components.
 - **GCC corporate owners treatment** — GCC corporate owners treated as foreign for CIT/Zakat split unless ZATCA accepts look-through (case-by-case; flag to reviewer).
 - **Listed JSC treatment** — Listed JSC with free-float → proportional float treatment; out of scope here → flag to reviewer.
@@ -122,18 +123,18 @@ Two phases:
 ### 4.7 Withholding tax gate — Income Tax Law art. 68; Implementing Regulations art. 63
 
 - **WHT applicability** — WHT on payments from KSA-resident payers to non-residents without a PE. Any non-resident payments → route sa-withholding-tax.  _(Income Tax Law art. 68; Implementing Regulations art. 63)_
-- **Dividends to non-resident** — 5% percent  _(Income Tax Law art. 68)_
-- **Loan charges / interest** — 5% percent  _(Income Tax Law art. 68)_
-- **Royalties** — 15% percent  _(Income Tax Law art. 68)_
-- **Management fees** — 20% percent  _(Income Tax Law art. 68)_
-- **Technical/consulting services, head office payments, rent of equipment, international telecom, dividends** — 5% to 20% percent (per art. 68)  _(Income Tax Law art. 68)_
+- **Dividends to non-resident** — 5%  _(Income Tax Law art. 68)_
+- **Loan charges / interest** — 5%  _(Income Tax Law art. 68)_
+- **Royalties** — 15%  _(Income Tax Law art. 68)_
+- **Management fees** — 20%  _(Income Tax Law art. 68)_
+- **Technical/consulting services, head office payments, rent of equipment, international telecom, dividends** — 5% to 20% (per art. 68)  _(Income Tax Law art. 68)_
 - **Tax treaty reduction** — Tax treaties (KSA has 50+ DTTs) may reduce rates; reviewer applies treaty.
 
 ### 4.8 GOSI / Saudization gate — Social Insurance Law (Royal Decree M/33, 1421H); Nitaqat Program (Ministerial Decisions)
 
 - **GOSI registration requirement** — Any employer with at least one employee must register with GOSI (General Organization for Social Insurance) and contribute monthly.  _(Social Insurance Law (Royal Decree M/33, 1421H))_
 - **2025 GOSI contribution rates for Saudi employees** — 9% employer + 9% employee for pensions, 0.75% each for unemployment (SANED), and 2% employer for occupational hazards = **11.75% employer / 9.75% employee** for a Saudi whose first GOSI subscription was before 3 July 2024. A Saudi first subscribing on or after that date is on the reformed annuity rate (9.5% each from July 2025, rising to 11% by 2028), giving 12.25% / 10.25% for 2025. Subject to the SAR 45,000 contributory wage cap.  _(Social Insurance Law (Royal Decree M/33, 1421H); GOSI reform effective 3 July 2024)_
-- **GOSI employer contribution (non-Saudi employees)** — 2% % (occupational hazards only)
+- **GOSI employer contribution (non-Saudi employees)** — 2% (occupational hazards only)
 - **Nitaqat Saudization requirement** — Required Saudi-employee ratio based on sector + size. New entities: typically first-year exemption (grace period), then must meet sector + size quota. Bands: Platinum / High Green / Medium Green / Low Green / Red. Red band → visa block + work-permit restrictions. Mudad WPS (Wage Protection System) mandatory — payroll must run through approved banks via Mudad portal. → Any employees → route sa-gosi-saudization.  _(Nitaqat Program (Ministerial Decisions))_
 
 ### 4.9 MISA license gate — Foreign Investment Law (Royal Decree M/1, 1421H, as updated)

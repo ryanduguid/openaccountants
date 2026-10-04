@@ -5,7 +5,7 @@ jurisdiction: GY
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Private limited company** — Most common entity; limits members' liability; restricts share transfers and member numbers  _(Companies Act 1991 (Cap 89:01) — https://mola.gov.gy/laws/Volume%2016%20Cap.%2083.01%20-%2089.011695667005.pdf)_
 - **Public limited company** — May offer shares to the public; subject to additional disclosure and reporting  _(Companies Act 1991 (Cap 89:01) — https://mola.gov.gy/laws/Volume%2016%20Cap.%2083.01%20-%2089.011695667005.pdf)_
 - **External (foreign branch) company** — A body corporate or unincorporated body formed under the laws of another country that carries on an undertaking in Guyana is an external company and registers under Part IV, Division A  _(Companies Act 1991 (Cap 89:01), Laws of Guyana Volume 16, Ministry of Legal Affairs, s 310 — https://mola.gov.gy/laws/Volume%2016%20Cap.%2083.01%20-%2089.011695667005.pdf)_
-- **Sole trader / partnership** — Business names registered under the Business Names (Registration) Act; partnerships under partnership law ((approx — confirm))  _(Business Names (Registration) Act)_
+- **Sole trader / partnership** — Business names registered under the Business Names (Registration) Act; partnerships under partnership law (approx — confirm)  _(Business Names (Registration) Act)_
 - **Minimum share capital** — No statutory minimum share capital for a private company at incorporation  _(Companies Act 1991 (Cap 89:01) — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
 - **Minimum directors** — At least one director; a public company must have at least two  _(Companies Act 1991 (Cap 89:01), Laws of Guyana Volume 16, Ministry of Legal Affairs, s 60 — https://mola.gov.gy/laws/Volume%2016%20Cap.%2083.01%20-%2089.011695667005.pdf)_
 - **Company secretary** — Every incorporated company must appoint a company secretary  _(Companies Act 1991 (Cap 89:01) — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
@@ -26,9 +26,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Step 2 — Declaration of Compliance** — A Guyanese attorney issues a Declaration of Compliance confirming the formation meets legal requirements  _(Companies Act 1991 (Cap 89:01) — http://lawyerguyana.com/company.html)_
 - **Step 3 — File incorporation documents** — File Articles of Incorporation, Notice/Consent of Directors, Notice/Consent of Secretary, Notice of Registered Office, Declaration of Compliance and by-laws with the Registrar  _(Companies Act 1991 (Cap 89:01) — http://lawyerguyana.com/company.html)_
 - **Step 4 — Tax registration** — Apply for a Taxpayer Identification Number (TIN) with the GRA (and VAT registration if over threshold)  _(Income Tax Act (Cap 81:01) / Value-Added Tax Act 2005 — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
-- **Beneficial ownership disclosure** — Companies must disclose ultimate beneficial owners under the anti-money-laundering framework ((approx — confirm))  _(Anti-Money Laundering and Countering the Financing of Terrorism Act — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
+- **Beneficial ownership disclosure** — Companies must disclose ultimate beneficial owners under the anti-money-laundering framework (approx — confirm)  _(Anti-Money Laundering and Countering the Financing of Terrorism Act — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
 - **Core annual compliance** — File the annual return with the Registrar, hold the AGM and keep statutory records; file the corporation tax return by 30 April with advance taxes on 15 March, 15 June, 15 September and 15 December; register for VAT once taxable activity reaches G$15,000,000 in 12 months and file VAT returns  _(Guyana Revenue Authority, File Corporation Tax Return — https://gra.gov.gy/quick-links-2/file-corporation-tax-return/ ; Guyana Revenue Authority, Register for VAT — https://gra.gov.gy/business/tax-operations-and-services/value-add-tax-services/register-for-vat/ ; Companies Act summary — https://taxsummaries.pwc.com/guyana/corporate/tax-administration)_
-- **Typical timeline and cost** — Incorporation commonly completed within roughly 2-4 weeks; official registry fees plus attorney fees apply ((approx — confirm))  _(Companies Act 1991 (Cap 89:01) — https://prifinance.com/en/south-american-companies/guyana/)_
+- **Typical timeline and cost** — Incorporation commonly completed within roughly 2-4 weeks; official registry fees plus attorney fees apply (approx — confirm)  _(Companies Act 1991 (Cap 89:01) — https://prifinance.com/en/south-american-companies/guyana/)_
 
 <!-- openaccountants-cta-block -->
 

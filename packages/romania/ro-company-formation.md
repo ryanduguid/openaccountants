@@ -5,7 +5,7 @@ jurisdiction: RO
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,14 +17,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Share-capital rule change context** — The limited liability company (SRL) is the dominant vehicle for doing business in Romania, registered with the National Trade Register Office (ONRC). Share-capital rules changed in late 2025, raising the floor from the symbolic RON 1 to RON 500 for new SRLs.
 - **Limited liability company (SRL)** — Societate cu Răspundere Limitată — most common form; 1–50 shareholders, liability limited to contributions  _(Companies Law (Law 31/1990) — https://www.accace.com/company-formation-in-romania/)_
-- **Joint-stock company (SA)** — Societate pe Acțiuni — for larger ventures; minimum 2 shareholders and minimum share capital RON 90,000 RON  _(Companies Law (Law 31/1990) — https://gsl.org/en/offshore/offshore-zones/eastern-europe/romania-srl/)_
+- **Joint-stock company (SA)** — Societate pe Acțiuni — for larger ventures; minimum 2 shareholders and minimum share capital RON 90,000  _(Companies Law (Law 31/1990) — https://gsl.org/en/offshore/offshore-zones/eastern-europe/romania-srl/)_
 - **Authorised natural person (PFA)** — Persoană Fizică Autorizată — sole-trader / self-employed registration for individuals  _(Emergency Ordinance (OUG) 44/2008)_
 - **Branch / representative office** — Foreign companies may register a branch (sucursală) or a representative office; a branch has no separate legal personality  _(Companies Law (Law 31/1990))_
-- **SRL minimum share capital (new companies)** — RON 500 for SRLs registered from 18 December 2025 (previously as low as RON 1 between 2020 and 2025) RON  _(Companies Law (Law 31/1990), as amended 2025 — https://www.mihaiattorneys.com/news-and-insights/romania-share-capital-increase-2026-ron-5000-requirement-explained)_
-- **SRL share-capital floor for high turnover** — Any SRL (new or existing) with net annual turnover above RON 400,000 must hold share capital of at least RON 5,000 RON  _(Companies Law (Law 31/1990), as amended 2025 — https://eurofast.eu/new-rules-on-share-capital-for-romanian-srls-a-guide-for-entrepreneurs/)_
+- **SRL minimum share capital (new companies)** — RON 500 for SRLs registered from 18 December 2025 (previously as low as RON 1 between 2020 and 2025)  _(Companies Law (Law 31/1990), as amended 2025 — https://www.mihaiattorneys.com/news-and-insights/romania-share-capital-increase-2026-ron-5000-requirement-explained)_
+- **SRL share-capital floor for high turnover** — Any SRL (new or existing) with net annual turnover above RON 400,000 must hold share capital of at least RON 5,000  _(Companies Law (Law 31/1990), as amended 2025 — https://eurofast.eu/new-rules-on-share-capital-for-romanian-srls-a-guide-for-entrepreneurs/)_
 - **Incorporation authority** — National Trade Register Office (Oficiul Național al Registrului Comerțului, ONRC)  _(Trade Register Law (Law 26/1990) — https://www.onrc.ro)_
 - **Core incorporation steps** — 1) Reserve company name at ONRC; 2) draft articles of association; 3) deposit share capital and prove registered office; 4) file with ONRC and obtain registration certificate + unique registration code (CUI)  _(Companies Law (Law 31/1990) — https://investmentinromania.com/2025/10/10/quick-guide-company-incorporation-in-romania-2025/)_
-- **Incorporation timeline** — Typically 5–10 business days once documents are correctly prepared ((approx — varies by registry workload))  _(Companies Law (Law 31/1990) — https://investmentinromania.com/2025/10/10/quick-guide-company-incorporation-in-romania-2025/)_
+- **Incorporation timeline** — Typically 5–10 business days once documents are correctly prepared (approx — varies by registry workload)  _(Companies Law (Law 31/1990) — https://investmentinromania.com/2025/10/10/quick-guide-company-incorporation-in-romania-2025/)_
 - **Tax registration** — The company receives its fiscal code (CUI) on incorporation; VAT registration is required once annual turnover exceeds the RON 395,000 small enterprise threshold, requested no later than the day the threshold is exceeded (art. 310(1) and (6)), or voluntarily under art. 310(3)  _(Fiscal Code, Law No. 227/2015 (ANAF consolidated text with methodological norms, updated to Government Emergency Ordinance 38/2026), art. 310(1) and (6) — https://static.anaf.ro/static/10/Anaf/legislatie/Cod_fiscal_norme_2023.htm)_
 - **Core annual compliance** — Annual financial statements filed with the Trade Register / Ministry of Finance; annual CIT or micro-enterprise return; ongoing monthly/quarterly VAT and payroll (Form 112) filings  _(Accounting Law (Law 82/1991); Romanian Fiscal Code (Law 227/2015) — https://accace.com/tax-calendar-romania/)_
 - **Beneficial owner declaration** — Companies must declare ultimate beneficial owners (UBO) to the Trade Register on incorporation and on changes  _(Anti-Money-Laundering Law (Law 129/2019))_

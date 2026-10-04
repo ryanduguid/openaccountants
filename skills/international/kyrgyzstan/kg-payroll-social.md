@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Kyrgyzstan 
 jurisdiction: KG
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +26,7 @@ Employers in Kyrgyzstan withhold 10% personal income tax and the employee's Soci
 - **Employee — State Accumulative Pension Fund** — 2% percent of gross salary (approx — confirm component split)  _(Law on State Social Insurance of the Kyrgyz Republic)_
 - **Combined Social Fund rate (employer + employee)** — 27.25% percent of gross salary  _(Law on State Social Insurance of the Kyrgyz Republic)_
 - **Foreign employees** — Social Fund contributions apply equally to Kyrgyz citizens and foreign nationals working in Kyrgyzstan  _([Law on State Social Insurance of the Kyrgyz Republic](https://orbitax.com/news/archive.php/Kyrgyzstan-Equalizes-Social-Se-51428))_
-- **Payroll income tax withholding (PAYE-equivalent)** — 10% flat, withheld by the employer as tax agent percent  _(Tax Code of the Kyrgyz Republic)_
+- **Payroll income tax withholding (PAYE-equivalent)** — 10% flat, withheld by the employer as tax agent  _(Tax Code of the Kyrgyz Republic)_
 - **Monthly remittance / reporting deadline** — Withheld PIT and Social Fund contributions remitted and reported monthly, by the 15th–20th of the following month (approx — confirm exact day)  _(Tax Code of the Kyrgyz Republic)_
 - **Contribution wage base / cap** — No published upper earnings cap on the standard Social Fund base; contributions apply to full gross salary (approx — confirm)  _(Law on State Social Insurance of the Kyrgyz Republic)_
 

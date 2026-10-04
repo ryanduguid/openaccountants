@@ -5,7 +5,7 @@ jurisdiction: TL
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ Timor-Leste operates a USD-denominated tax system administered by the national r
 - **Does Timor-Leste have VAT/GST?** — No VAT or GST. Indirect tax is via a sales tax (on imported goods) and a 5% services tax on designated services  _(Taxes and Duties Act (Law No. 8/2008) — https://taxatlas.io/country/timor-leste/vat-sales-tax)_
 - **Annual corporate income tax return deadline** — The income tax form is delivered at the time the Tax Administration designates (s 62), and the tax is due by the same date (s 63); PwC reports the last day of the third month after year end (31 March for calendar-year taxpayers)  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 62 and 63 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf ; PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/timor-leste/corporate/tax-administration)_
 - **Monthly tax filing deadline (WIT, services tax, sales tax, WHT)** — By the 15th day after the end of the calendar month for services tax (s 9.1), sales tax (s 18.1), wage income tax withheld (s 23.1) and income tax instalments (s 64.3)  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 9.1, 18.1, 23.1 and 64.3 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
-- **Social security** — Mandatory general social security scheme; combined 10% of earnings (6% employer, 4% employee) percent  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
+- **Social security** — Mandatory general social security scheme; combined 10% of earnings (6% employer, 4% employee)  _(Social Security General Regime (Law No. 12/2016) — https://pinnacledili.com/insight/social-security-scheme-in-timor-leste)_
 
 <!-- openaccountants-cta-block -->
 

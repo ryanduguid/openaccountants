@@ -1,7 +1,7 @@
 ---
 name: bolivia-social-contributions
 description: Use this skill whenever asked about Bolivia social-security (seguridad social) contributions and dependent-employee payroll taxation for the 2025 tax year. Trigger on phrases like "how much do I pay to the Gestora", "aportes AFP Bolivia", "12.71% worker contribution", "aporte solidario", "Aporte Nacional Solidario", "ANS calculation", "Caja de Salud employer contribution", "Pro-Vivienda housing fund", "RC-IVA withholding", "Form 110 invoices", "Form 608", "total ganado contributions", "Bolivia payroll cost", "Gestora Pública contribution", or any question about Bolivian employer/employee social-security obligations. Also trigger when classifying bank statement transactions that relate to Gestora Pública, Caja de Salud (CNS), APS, or SIN/SIAT payments from Bolivian banks (Banco Unión, BNB, Banco Mercantil Santa Cruz, Banco BISA, Banco de Crédito BCP). Also trigger when preparing or reconciling RC-IVA (personal income tax) where social-contribution deductibility is relevant. This skill covers the 12.71% employee rate, the ANS high-earner surcharge, the 17.21% (19.51% mining) employer rate, the RC-IVA flat 13% mechanics, minimum wage (SMN), contribution base (total ganado), payment/filing deadlines, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Bolivian social-contribution or RC-IVA work.
-version: 0.2
+version: 0.3
 jurisdiction: BO
 tax_year: 2025
 tax_year_notes: "2025 (SMN-derived thresholds also stated at the 2026 SMN of Bs 3,300, DS 5516)"
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bolivia Social Security Contributions & RC-IVA — Dependent Employment
 
-## Bolivia Social Security Contributions & RC-IVA — Dependent Employment Skill v0.2
+## Bolivia Social Security Contributions & RC-IVA — Dependent Employment Skill v0.3
 
 > **Tier 2 (research-verified) skill.** Figures below are corroborated by PwC Worldwide Tax Summaries and reputable Bolivian law firms/consultancies (Rigoberto Paredes, Planifica) and primary norms (Ley 065, Ley 1582, DS 5383). Where a figure is unconfirmed against the primary statute it is marked **[RESEARCH GAP — reviewer to confirm]**. This skill must be signed off by a Bolivian-qualified professional before any output is filed or acted upon.
 
@@ -492,10 +492,10 @@ Notes on the table (rates per PwC / Ley 1582 / DS 5383; arithmetic computed in t
 
 ### Tax framework (context)
 
-- **RC-IVA** — 13% percent (personal income tax, flat, territorial, offsettable with Form 110 invoices)  _(Ley 843; PwC)_
-- **IUE** — 25% percent (corporate income tax; mining +12.5%/+7.5% surtax + 1%–7% royalties; high-ROE financial/insurance +25% surtax)  _(PwC)_
-- **IVA** — 13% nominal (14.94% effective tax-inclusive) percent  _(SIN; PwC)_
-- **IT** — 3% of gross income, offsettable only against IUE percent  _(SIN; PwC)_
+- **RC-IVA** — 13% (personal income tax, flat, territorial, offsettable with Form 110 invoices)  _(Ley 843; PwC)_
+- **IUE** — 25% (corporate income tax; mining +12.5%/+7.5% surtax + 1%–7% royalties; high-ROE financial/insurance +25% surtax)  _(PwC)_
+- **IVA** — 13% nominal (14.94% effective tax-inclusive)  _(SIN; PwC)_
+- **IT** — 3% of gross income, offsettable only against IUE  _(SIN; PwC)_
 
 ### Penalties
 

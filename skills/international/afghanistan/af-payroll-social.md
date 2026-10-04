@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Afghanistan
 jurisdiction: AF
 category: payroll
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Wage base for salary tax** — Gross monthly cash salary and most taxable benefits/allowances  _(Income Tax Law 2009)_
 - **Exempt salary components** — Certain reimbursements and statutory exemptions may be excluded from taxable salary (approx — confirm specific exemptions)  _(Income Tax Law 2009)_
 - **Employer reporting** — Employers file salary withholding tax returns and maintain payroll records for ARD  _(Income Tax Law 2009)_
-- **Salary tax ceiling/cap** — No upper cap — top 20% band applies to all salary above 100,000 AFN per month AFN  _(Income Tax Law 2009)_
+- **Salary tax ceiling/cap** — No upper cap — top 20% band applies to all salary above 100,000 AFN per month  _(Income Tax Law 2009)_
 
 <!-- openaccountants-cta-block -->
 

@@ -5,7 +5,7 @@ jurisdiction: UA
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ Ukraine operates a residence-based tax system administered by the State Tax Serv
 - **Does VAT exist?** — Yes — VAT (PDV) at 20%, with 0% on the operations listed in the Code, 7% on medicines, medical devices and listed cultural and tourism services, and 14% on listed agricultural products (art. 193.1)  _(Tax Code of Ukraine No. 2755-VI (Податковий кодекс України, current consolidated text on zakon.rada.gov.ua), art. 193.1 — https://zakon.rada.gov.ua/laws/show/2755-17)_
 - **Annual personal income tax declaration deadline** — By 1 May of the year following the reporting year for individuals, including the self-employed (art. 49.18.4)  _(Tax Code of Ukraine No. 2755-VI (Податковий кодекс України, current consolidated text on zakon.rada.gov.ua), art. 49.18.4 — https://zakon.rada.gov.ua/laws/show/2755-17 ; https://taxsummaries.pwc.com/ukraine/individual/tax-administration)_
 - **Annual corporate income tax return deadline** — Within 60 calendar days after the last day of the reporting year for annual filers (art. 49.18.3 and 49.18.6)  _(Tax Code of Ukraine No. 2755-VI (Податковий кодекс України, current consolidated text on zakon.rada.gov.ua), art. 49.18.3 and 49.18.6 — https://zakon.rada.gov.ua/laws/show/2755-17)_
-- **Statutory minimum monthly wage (2025)** — UAH 8,000 UAH  _(Law of Ukraine On the State Budget of Ukraine for 2025)_
+- **Statutory minimum monthly wage (2025)** — UAH 8,000  _(Law of Ukraine On the State Budget of Ukraine for 2025)_
 
 <!-- openaccountants-cta-block -->
 

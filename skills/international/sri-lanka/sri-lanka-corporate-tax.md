@@ -4,7 +4,8 @@ description: "ALWAYS read this skill before touching any Sri Lanka corporate inc
 jurisdiction: LK
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Lal kumarasiri
 review_status: current
 tier: 1
@@ -13,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Sri Lanka Corporate Tax
 
-## Sri Lanka — Corporate Income Tax — Skill v1.0
+## Sri Lanka — Corporate Income Tax — Skill v1.1
 
 > **Produced by OpenAccountants (openaccountants.com).** **Accountant-reviewed (`tier: 1`).** The sign-off by Lal kumarasiri is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`; upstream's export of approved reviews (2026-08-22, `VERIFIERS.md`) lists the same reviewer for Sri Lanka. Coverage: YA 2025/26. Until 2026-09-29 this banner still read "Research-grade (tier 2), pending sign-off", the draft label the guide carried before that review. **Provenance of the draft:** official IRD sources. Not tax advice.
 
@@ -71,12 +72,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 3.2 Concessionary rate — 15% (remitted foreign currency)
 
-- **Concessionary rate on remitted foreign-currency income/services** — 15% percent (applies to qualifying foreign-currency-source income and services remitted to Sri Lanka through a bank. Require evidence of the foreign-currency source and the banking-channel remittance before applying.)
+- **Concessionary rate on remitted foreign-currency income/services** — 15% (applies to qualifying foreign-currency-source income and services remitted to Sri Lanka through a bank. Require evidence of the foreign-currency source and the banking-channel remittance before applying.)
 
 ### 3.3 Higher rate — 45% (betting/gaming, liquor, tobacco)
 
 - **Higher rate on betting/gaming and liquor/tobacco** — 45% percent (applies to income from a business consisting of: betting and gaming; or manufacture and sale, or import and sale, of any liquor or tobacco product. Raised from 40% effective 1 April 2025 (Act No. 02 of 2025). The same 45% flat rate applies to individuals carrying on such business income.)  _(Act No. 02 of 2025)_
-- **Export of liquor/tobacco products** — 30% percent (The export of liquor or tobacco products is taxed at the 30% normal rate, not 45%.)
+- **Export of liquor/tobacco products** — 30% (The export of liquor or tobacco products is taxed at the 30% normal rate, not 45%.)
 
 ## Section 4 — Tier 2
 

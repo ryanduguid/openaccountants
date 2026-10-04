@@ -1,11 +1,11 @@
 ---
 name: de-return-assembly
 description: Final orchestrator skill that assembles the complete German filing package for Germany-resident self-employed individuals (Freiberufler and Gewerbetreibende). Consumes outputs from all Germany content skills (germany-vat-return for UStVA, de-income-tax for ESt + EÜR, de-social-contributions for KV/PV/RV, de-trade-tax for GewSt, de-estimated-tax for Vorauszahlungen) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Germany content skills listed above. Germany full-year residents only. Self-employed individuals and sole proprietors only.
-version: 0.1
+version: 0.2
 jurisdiction: DE
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -302,7 +302,7 @@ The skill enforces the following execution order:
 - **Check DE11** — GewSt Anrechnung correctly computed (if Gewerbetreibender). 4.0x Steuermessbetrag, capped at actual GewSt and at ESt on gewerbliche Einkünfte. §35 EStG cited.  _(Section 6, Check DE11, §35 EStG)_
 - **Check DE12** — Reviewer brief contains legislation citations. Every position taken references the specific paragraph of EStG, UStG, GewStG, or SGB.  _(Section 6, Check DE12)_
 - **Check DE13 - SolZ Freigrenze** — SolZ = 0 if ESt <= EUR 18,130 (Grundtabelle) or EUR 36,260 (Splittingtabelle). Gleitzone above Freigrenze correctly computed. EUR  _(Section 6, Check DE13)_
-- **Check DE14 - Kirchensteuer rate** — 8% (Bayern, Baden-Württemberg) or 9% (all other Bundesländer) of festgesetzte ESt, or EUR 0 if no church membership. %  _(Section 6, Check DE14)_
+- **Check DE14 - Kirchensteuer rate** — 8% (Bayern, Baden-Württemberg) or 9% (all other Bundesländer) of festgesetzte ESt, or EUR 0 if no church membership.  _(Section 6, Check DE14)_
 
 ## Section 7 -- Output files
 
@@ -347,7 +347,7 @@ The final output is **three files**:
 
 ### Change log
 
-- **v0.1 (April 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for Germany jurisdiction with five content skills (UStVA, ESt+EÜR, SV, GewSt, Vorauszahlungen).
+- **v0.2 (April 2026):** Initial draft. Modelled on mt-return-assembly v0.2 adapted for Germany jurisdiction with five content skills (UStVA, ESt+EÜR, SV, GewSt, Vorauszahlungen).
 
 ## End of skill
 

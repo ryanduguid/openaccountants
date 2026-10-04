@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Bulgaria (tax year 2025) — 
 jurisdiction: BG
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,10 +22,10 @@ Bulgaria runs one of the EU's simplest and lowest-rate tax systems, built on fla
 - **Tax authority** — National Revenue Agency (NRA / Национална агенция за приходите, НАП)  _(National Revenue Agency Act — https://taxsummaries.pwc.com/bulgaria/individual/tax-administration)_
 - **Individual tax basis** — Tax residents taxed on worldwide income; non-residents taxed only on Bulgarian-source income  _(Personal Income Taxes Act (ZDDFL) — https://taxsummaries.pwc.com/bulgaria/individual/taxes-on-personal-income)_
 - **Corporate tax basis** — Resident companies taxed on worldwide profit; non-residents taxed on Bulgarian-source profit/PE  _(Corporate Income Tax Act (ZKPO) — https://taxsummaries.pwc.com/bulgaria/corporate/taxes-on-corporate-income)_
-- **Headline personal income tax rate** — 10% percent (flat)  _(Personal Income Taxes Act (ZDDFL) — https://taxsummaries.pwc.com/bulgaria/individual/taxes-on-personal-income)_
-- **Headline corporate income tax rate** — 10% percent (flat)  _(Corporate Income Tax Act (ZKPO) — https://taxsummaries.pwc.com/bulgaria/corporate/taxes-on-corporate-income)_
-- **VAT in force** — Yes — EU-harmonised VAT, standard rate 20% percent  _(Value Added Tax Act (ZDDS) — https://taxsummaries.pwc.com/bulgaria/corporate/other-taxes)_
-- **Pillar Two top-up (large MNEs)** — Qualified Domestic Minimum Top-up Tax brings effective rate to 15% for groups with consolidated revenue > EUR 750m percent ((approx — confirm))  _(Corporate Income Tax Act (ZKPO) — Pillar Two / QDMTT provisions)_
+- **Headline personal income tax rate** — 10% (flat)  _(Personal Income Taxes Act (ZDDFL) — https://taxsummaries.pwc.com/bulgaria/individual/taxes-on-personal-income)_
+- **Headline corporate income tax rate** — 10% (flat)  _(Corporate Income Tax Act (ZKPO) — https://taxsummaries.pwc.com/bulgaria/corporate/taxes-on-corporate-income)_
+- **VAT in force** — Yes — EU-harmonised VAT, standard rate 20%  _(Value Added Tax Act (ZDDS) — https://taxsummaries.pwc.com/bulgaria/corporate/other-taxes)_
+- **Pillar Two top-up (large MNEs)** — Qualified Domestic Minimum Top-up Tax brings effective rate to 15% for groups with consolidated revenue > EUR 750m percent (approx — confirm)  _(Corporate Income Tax Act (ZKPO) — Pillar Two / QDMTT provisions)_
 - **Annual corporate tax return deadline** — Between 1 March and 30 June of the year following the tax year  _(Corporate Income Tax Act (ZKPO) — https://taxsummaries.pwc.com/bulgaria/corporate/tax-administration)_
 - **Annual personal tax return deadline** — 30 April of the year following the tax year (5% discount if filed and paid online by 31 March)  _(Personal Income Taxes Act (ZDDFL) — https://taxsummaries.pwc.com/bulgaria/individual/tax-administration)_
 - **Social security framework** — Mandatory state social insurance and health insurance on employment/self-employment income, capped at a monthly maximum insurable income  _(Social Insurance Code (KSO) / Health Insurance Act (ZZO) — https://taxsummaries.pwc.com/bulgaria/individual/other-taxes)_

@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for North Ma
 jurisdiction: MK
 category: formation
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,10 +19,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Single-member LLC (DOOEL)** — Single-shareholder variant of the DOO  _(Law on Trade Companies)_
 - **Joint-stock company (AD)** — Public/private joint-stock company, used for larger ventures  _(Law on Trade Companies)_
 - **Other forms** — Sole proprietor (trgovec poedinec), general partnership (JTD), limited partnership (KD), and branch of a foreign company  _(Law on Trade Companies)_
-- **Minimum share capital (DOO)** — EUR 5,000 (in MKD equivalent) EUR  _(Law on Trade Companies (https://companyformationmacedonia.com/set-up-doo-company-macedonia/))_
+- **Minimum share capital (DOO)** — EUR 5,000 (in MKD equivalent)  _(Law on Trade Companies (https://companyformationmacedonia.com/set-up-doo-company-macedonia/))_
 - **Capital payment timing** — Share capital need not be deposited immediately; it may be paid in within one year of incorporation (approx — confirm)  _(Law on Trade Companies)_
-- **Simplified LLC minimum capital** — EUR 1 simplified limited liability company is available (with statutory restrictions, e.g. reserve build-up) (approx — confirm) EUR (approx — confirm)  _(Law on Trade Companies (2021 amendments))_
-- **Minimum share capital (AD / joint-stock)** — EUR 25,000 for non-public; EUR 50,000 for public offering (approx — confirm) EUR (approx — confirm)  _(Law on Trade Companies)_
+- **Simplified LLC minimum capital** — EUR 1 simplified limited liability company is available (with statutory restrictions, e.g. reserve build-up) (approx — confirm)  _(Law on Trade Companies (2021 amendments))_
+- **Minimum share capital (AD / joint-stock)** — EUR 25,000 for non-public; EUR 50,000 for public offering (approx — confirm)  _(Law on Trade Companies)_
 - **Registration body** — Central Registry of the Republic of North Macedonia (one-stop-shop)  _(Law on the One-Stop-Shop System and Trade Register (https://investnorthmacedonia.gov.mk/registering-a-company/))_
 - **Incorporation timeline** — Registration can be completed within hours through the one-stop-shop; typically 2–3 business days in practice  _(Law on the One-Stop-Shop System and Trade Register (https://investnorthmacedonia.gov.mk/registering-a-company/))_
 - **Core incorporation documents** — Articles of Association and Memorandum/Statement of Establishment, shareholder ID, and registered address  _(Law on Trade Companies)_

@@ -1,10 +1,10 @@
 ---
 name: us-crypto-tax
 description: ALWAYS USE THIS SKILL when a user asks about cryptocurrency taxation, digital asset reporting, or mentions any of these trigger phrases — crypto, bitcoin, ethereum, Form 8949, digital assets, staking, mining, NFT, DeFi, airdrop, token swap, liquidity pool, yield farming, cost basis crypto, wash sale crypto, Form 1099-DA, Coinbase taxes, Kraken taxes, crypto capital gains, virtual currency, blockchain income. Covers IRS treatment of cryptocurrency and digital assets as property under Notice 2014-21, Form 8949 and Schedule D reporting, cost basis methods, staking and mining income, airdrops, hard forks, DeFi transactions, NFT collectibles treatment, wash sale inapplicability, Form 1099-DA requirements, FBAR/Form 8938 for foreign exchanges, and transaction pattern recognition from major exchanges. US federal only; state-specific crypto rules require separate state skills.
-version: 1.0
+version: 1.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: James Wallach
 review_status: current
 category: crypto
@@ -77,7 +77,7 @@ depends_on:
 | 15% | $48,351–$533,400 | $96,701–$600,050 |
 | 20% | Over $533,400 | Over $600,050 |
 
-- **Net Investment Income Tax (NIIT)** — Additional 3.8% on net investment income for AGI above $200,000 (single) / $250,000 (MFJ) percent  _(§1411)_
+- **Net Investment Income Tax (NIIT)** — Additional 3.8% on net investment income for AGI above $200,000 (single) / $250,000 (MFJ)  _(§1411)_
 
 ### Specific identification (recommended)
 

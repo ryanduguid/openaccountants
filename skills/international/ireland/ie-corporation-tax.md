@@ -4,7 +4,8 @@ description: "Use this skill whenever asked about Irish Corporation Tax for a re
 jurisdiction: IE
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -90,14 +91,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 3.1 The 12.5% Trading Rate — Section 21 TCA 1997
 
-- **Trading rate** — 12.5% percent (Case I and Case II trading income)  _(Section 21(1) TCA 1997)_
+- **Trading rate** — 12.5% (Case I and Case II trading income)  _(Section 21(1) TCA 1997)_
 - **CT (trading) formula** — CT (trading) = 12.5% × Trading profits adjusted for tax  _(Section 21(1) TCA 1997)_
 - **'Trading' defined** — Section 3 TCA — a trade is "every trade, manufacture, adventure or concern in the nature of trade". The case law (Birmingham & District Cattle By-Products v IRC; CIR v Livingston) emphasises the badges of trade. Investment-holding income is not trading.  _(Section 3 TCA)_
 - **Manufacturing / IP / services** — All bona-fide trading activity qualifies at 12.5% — there is no longer a separate manufacturing relief (abolished from 31 December 2010). Mere passive holding of assets does not qualify.
 
 ### 3.2 The 25% Non-Trading Rate — Section 21A TCA 1997
 
-- **Non-trading rate** — 25% percent  _(Section 21A TCA 1997)_
+- **Non-trading rate** — 25%  _(Section 21A TCA 1997)_
 
 **Section 21A categories table**  _(Section 21A TCA 1997)_
 
@@ -114,7 +115,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 3.3 Capital Gains — Section 28 TCA
 
-- **Effective CGT rate for companies** — 33% percent  _(Section 28 TCA)_
+- **Effective CGT rate for companies** — 33%  _(Section 28 TCA)_
 - **Section 78 gross-up formula** — Section 78 grosses up the gain by the formula `Gain × (33/12.5)` if computed at the 12.5% rate, or `Gain × (33/25)` at the 25% rate, so the effective tax is 33%.  _(Section 78 TCA)_
 - **Substantial shareholding exemption** — Disposal of shares in a qualifying subsidiary (≥ 5% held for ≥ 12 months in the past 5 years, trading subsidiary, EU/treaty country) is exempt from CT on the gain.  _(Section 626B TCA)_
 
@@ -131,8 +132,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### 3.5 Close-Company Surcharges — Sections 440, 441 TCA
 
 - **Close company definition** — A "close company" is one under the control of 5 or fewer participators (or any number of director-participators).  _(Section 430 TCA)_
-- **Section 440 surcharge** — 20% surcharge on undistributed investment and rental income (non-trading) that is not distributed within 18 months of the accounting period end. percent  _(Section 440 TCA)_
-- **Section 441 surcharge** — 15% surcharge on 50% of undistributed professional service income for close service companies (e.g., dentists, solicitors operating through a company). percent  _(Section 441 TCA)_
+- **Section 440 surcharge** — 20% surcharge on undistributed investment and rental income (non-trading) that is not distributed within 18 months of the accounting period end.  _(Section 440 TCA)_
+- **Section 441 surcharge** — 15% surcharge on 50% of undistributed professional service income for close service companies (e.g., dentists, solicitors operating through a company).  _(Section 441 TCA)_
 - **De minimis relief** — Surcharge does not apply if total undistributed income is less than €2,000 (Section 440) or a small threshold (Section 441). EUR  _(Section 434 TCA)_
 - **Conservative default** — Assume close-company status applies to any owner-managed company and check the dividend strategy against Section 440/441 exposure.
 
@@ -149,7 +150,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Intangible assets (Section 291A specified intangibles) | Aligned with accounting amortisation OR 7% (15-year life) elected; capped at 80% of trading income (re-introduced from FA 2017) | Section 291A |
 | Energy-efficient equipment | 100% accelerated allowance (Section 285A) — note: scheme ended for new claims after 31 December 2025 unless extended by FA |  |
 
-- **Section 291A cap** — Capital allowances and related interest on specified intangibles cannot reduce trading income by more than 80% in any accounting period. Excess carries forward. percent  _(Section 291A TCA)_
+- **Section 291A cap** — Capital allowances and related interest on specified intangibles cannot reduce trading income by more than 80% in any accounting period. Excess carries forward.  _(Section 291A TCA)_
 
 ### 3.7 Trading Losses — Sections 396, 396A, 396B TCA
 
@@ -218,13 +219,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 4.4 Interest Limitation Rule — Section 835AY TCA
 
-- **Interest limitation rule** — ATAD I ILR effective from 1 January 2022. Net interest expense deduction capped at 30% of tax-EBITDA unless the de minimis threshold (€3 million) applies or the equity escape / group ratio rule provides relief. Disallowed interest carries forward. percent  _(Section 835AY TCA)_
+- **Interest limitation rule** — ATAD I ILR effective from 1 January 2022. Net interest expense deduction capped at 30% of tax-EBITDA unless the de minimis threshold (€3 million) applies or the equity escape / group ratio rule provides relief. Disallowed interest carries forward.  _(Section 835AY TCA)_
 
 ## Section 5 — Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 5.1 R&D Tax Credit — Section 766 TCA
 
-- **R&D credit rate** — **35%** of qualifying R&D expenditure for accounting periods **beginning on or after 1 January 2026** (Finance Act 2025). **30%** for periods commencing on or after 1 January 2024, raised from 25% by Finance (No. 2) Act 2023 — this line previously attributed that increase to Finance Act 2024 and stopped there. The rate has moved twice in three years, so read it off the accounting period rather than from memory percent  _(Section 766 TCA; Finance (No. 2) Act 2023; Finance Act 2025)_
+- **R&D credit rate** — **35%** of qualifying R&D expenditure for accounting periods **beginning on or after 1 January 2026** (Finance Act 2025). **30%** for periods commencing on or after 1 January 2024, raised from 25% by Finance (No. 2) Act 2023 — this line previously attributed that increase to Finance Act 2024 and stopped there. The rate has moved twice in three years, so read it off the accounting period rather than from memory  _(Section 766 TCA; Finance (No. 2) Act 2023; Finance Act 2025)_
 - **Qualifying expenditure** — - Salaries of R&D staff (apportioned to qualifying time). - Consumables used in R&D. - Plant and machinery used wholly and exclusively for R&D (capital allowances accelerated where used in R&D). - Subcontracted R&D (Section 766(1)(b)(vii)) capped at 15% of in-house R&D spend or €100,000 (whichever greater). - Outsourced to a third-level institution capped at 5% of in-house spend.  _(Section 766(1)(b)(vii) TCA)_
 - **Qualifying activity** — Must satisfy the Frascati Manual definition (systematic, investigative, creative, novel, uncertain). Must be in a "field of science or technology" (Section 766(1)(a)). Software development qualifies where it meets the technological-uncertainty test (Revenue R&D Guidelines).  _(Section 766(1)(a) TCA)_
 - **Refundability — Section 766C** — The credit can be (i) offset against CT of the claim period, (ii) carried forward, or (iii) paid as a cash refund in 3 instalments over 33 months: - Instalment 1: Greater of €75,000 (FA 2024 raised threshold) or 50% of the credit — payable on filing. - Instalment 2: 60% of the remaining balance — 12 months later. - Instalment 3: Final balance — 24 months later.  _(Section 766C TCA)_
@@ -239,7 +240,7 @@ confirms that relief covers accounting periods commencing before 1 January
 2027. Apply the nexus and qualifying-asset rules; the rate alone does not
 establish eligibility. Source: [Revenue KDB guidance](https://www.revenue.ie/en/companies-and-charities/reliefs-and-exemptions/knowledge-development-box-kdb/index.aspx).
 
-- **KDB effective rate** — 10% on qualifying profits from qualifying intellectual property (patents, copyrighted software, IP equivalent to a patentable invention for small companies). percent  _(Sections 769G–769R TCA)_
+- **KDB effective rate** — 10% on qualifying profits from qualifying intellectual property (patents, copyrighted software, IP equivalent to a patentable invention for small companies).  _(Sections 769G–769R TCA)_
 - **OECD modified nexus approach** — Qualifying profits are restricted by the nexus fraction = (qualifying R&D expenditure × 1.3) / total expenditure on the IP asset. The 30% uplift is the OECD-permitted "up-lift" for outsourcing or acquisition costs.
 - **Mechanism** — Election made in the CT1; profits from qualifying IP are computed using a tracking-and-tracing methodology; the qualifying profit is taxed at the standard 12.5%, with a deduction equal to 20% of qualifying profit giving an effective 10% rate from 1 October 2023.
 - **Extension** — Finance Act 2022 section 40 extended KDB to accounting periods beginning before 1 January 2027.

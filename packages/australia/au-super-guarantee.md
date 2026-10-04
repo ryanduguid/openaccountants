@@ -2,7 +2,7 @@
 name: au-super-guarantee
 description: >
   Use this skill whenever asked about Australian Superannuation Guarantee (SG) obligations, payday super deadlines, voluntary super contributions, concessional and non-concessional caps, Division 293 tax, Division 296 large-balance tax, government co-contribution, spouse contribution tax offset, carry-forward rules, or any question about super for sole traders or employers. Trigger on phrases like "how much super do I pay", "SG rate", "super guarantee", "payday super", "7 business days super", "SG shortfall", "concessional cap", "Division 293", "Division 296", "$3 million super tax", "salary sacrifice super", "personal super contribution deduction", "co-contribution", "BPAY super", "super clearing house", "super fund contribution", or any question about Australian superannuation. Also trigger when classifying bank statement transactions showing super fund payments, BPAY super debits, or clearing house payments. ALWAYS read this skill before touching any SG-related work.
-version: 3.3
+version: 3.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -13,7 +13,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.3
+# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -231,7 +231,7 @@ SG applies only to the first $270,830 of qualifying earnings paid in the financi
 
 ### Rule 2 -- SG rate
 
-- **SG rate** — 2024-25: 11.5%. 2025-26 onwards: 12% (terminal rate). %
+- **SG rate** — 2024-25: 11.5%. 2025-26 onwards: 12% (terminal rate).
 
 ### Rule 3 -- Payment deadline (earnings paid from 1 July 2026)
 

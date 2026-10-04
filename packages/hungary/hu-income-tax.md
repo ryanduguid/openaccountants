@@ -1,10 +1,10 @@
 ---
 name: hu-income-tax
 description: Use this skill whenever asked about Hungarian income tax for self-employed individuals (egyéni vállalkozó). Trigger on phrases like "how much tax do I pay", "SZJA", "personal income tax Hungary", "KATA", "átalányadózás", "flat-rate taxation", "egyéni vállalkozó", "self-employed tax Hungary", "SZOCHO", "TB járulék", or any question about filing or computing income tax for a self-employed or freelance client in Hungary. ALWAYS read this skill before touching any Hungarian income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: HU
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -199,7 +199,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 SZJA rate
 
-- **SZJA rate** — Flat 15% on all personal income. No progressive bands. percent  _(SZJA tv. § 8.)_
+- **SZJA rate** — Flat 15% on all personal income. No progressive bands.  _(SZJA tv. § 8.)_
 
 ### 5.2 KATA rules (post-2022 reform)
 

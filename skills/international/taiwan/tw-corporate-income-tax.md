@@ -5,7 +5,7 @@ jurisdiction: TW
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,16 +19,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Profit-seeking enterprise income tax rate** — 20 percent  _(Income Tax Act, English text amended 11 Sep 2026, art. 5 para. 5 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 - **Small-profit threshold** — Enterprises with annual taxable income of TWD 120,000 or less are exempt; above that, the tax cannot exceed one half of the taxable income over TWD 120,000  _(Income Tax Act, English text amended 11 Sep 2026, art. 5 para. 5 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 - **Tax base** — Resident enterprises: worldwide net income (with foreign tax credit). Non-resident enterprises: Taiwan-source income only  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/income-determination))_
-- **Surtax on undistributed earnings** — Additional 5% on current-year earnings not distributed by the end of the following year (does not apply to Taiwan branches of foreign companies) percent  _(Income Tax Act, English text amended 11 Sep 2026, art. 66-9 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
-- **Corporate Income Basic Tax (AMT)** — 12% standard rate. A **15%** rate for in-scope MNE groups -- those with consolidated group revenue of EUR 750m or more in at least two of the four preceding fiscal years -- was announced by the Ministry of Finance on 28 August 2024 to take effect from 1 January 2025, and the Executive Yuan can set the IBT rate within statutory limits without a Legislative Yuan amendment. **Its status is genuinely unsettled and this guide does not assert either way**: PwC and the MoF's own announcement still describe the 15% as a draft proposal. Confirm the current MoF instrument before calculating a liability for an in-scope group. A 15% sensitivity calculation must be labelled as a scenario, not as tax due. Note it is not a Qualified Domestic Minimum Top-up Tax for Pillar Two purposes percent  _(Income Basic Tax Act, art. 8 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340115 ; https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income)_
+- **Surtax on undistributed earnings** — Additional 5% on current-year earnings not distributed by the end of the following year (does not apply to Taiwan branches of foreign companies)  _(Income Tax Act, English text amended 11 Sep 2026, art. 66-9 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
+- **Corporate Income Basic Tax (AMT)** — 12% standard rate. A **15%** rate for in-scope MNE groups -- those with consolidated group revenue of EUR 750m or more in at least two of the four preceding fiscal years -- was announced by the Ministry of Finance on 28 August 2024 to take effect from 1 January 2025, and the Executive Yuan can set the IBT rate within statutory limits without a Legislative Yuan amendment. **Its status is genuinely unsettled and this guide does not assert either way**: PwC and the MoF's own announcement still describe the 15% as a draft proposal. Confirm the current MoF instrument before calculating a liability for an in-scope group. A 15% sensitivity calculation must be labelled as a scenario, not as tax due. Note it is not a Qualified Domestic Minimum Top-up Tax for Pillar Two purposes  _(Income Basic Tax Act, art. 8 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340115 ; https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income)_
 
 ## Withholding tax on outbound payments
 
 - **Overview of withholding on outbound payments** — Payments to non-resident enterprises are generally subject to final withholding at the rates below; tax treaties (Taiwan has roughly 35 in force) commonly reduce them.  _(Income Tax Act, English text amended 11 Sep 2026, art. 88 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003 ; https://taxsummaries.pwc.com/taiwan/corporate/withholding-taxes)_
-- **Dividends to non-residents** — 21% (treaty rates often 5%–15%) percent  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/withholding-taxes))_
-- **Interest to non-residents** — 15% on qualifying bond/financial-instrument interest; 20% otherwise (treaty rates often 0%–15%) percent  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/withholding-taxes))_
-- **Royalties to non-residents** — 20% (may be exempt for approved IP rights; treaty rates often 3%–15%) percent  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/withholding-taxes))_
-- **Interest/royalties to residents** — 10% withholding (creditable against final liability) percent  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/withholding-taxes))_
+- **Dividends to non-residents** — 21% (treaty rates often 5%–15%)  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/withholding-taxes))_
+- **Interest to non-residents** — 15% on qualifying bond/financial-instrument interest; 20% otherwise (treaty rates often 0%–15%)  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/withholding-taxes))_
+- **Royalties to non-residents** — 20% (may be exempt for approved IP rights; treaty rates often 3%–15%)  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/withholding-taxes))_
+- **Interest/royalties to residents** — 10% withholding (creditable against final liability)  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/withholding-taxes))_
 
 ## Filing and payment
 

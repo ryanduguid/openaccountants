@@ -4,8 +4,8 @@ description: Tier 2 Georgia content skill for entity formation covering tax year
 jurisdiction: US-GA
 category: formation
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -514,7 +514,7 @@ This example illustrates that the Georgia formation itself is straightforward an
 16. **S-election consideration.** At sufficient profitability (>$80k net), an S-election is potentially beneficial for SE-tax purposes. Defer to `us-s-corp-election-decision`.
 
 - **Georgia workers' compensation requirement threshold** — Worker's compensation insurance is required for any Georgia employer with three or more employees.  _(O.C.G.A. § 34-9-2)_
-- **New-employer UI rate** — 2.7% percent
+- **New-employer UI rate** — 2.7%
 
 ### 12.4 Example D — PLLC for a medical practice
 

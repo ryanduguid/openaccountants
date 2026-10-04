@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Belize (tax year 2025
 jurisdiction: BZ
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,14 +21,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Business tax — radio, TV, newspaper, domestic airline, fuel service stations** — 1.75% percent of gross receipts  _(Income and Business Tax Act (Cap. 55))_
 - **Business tax — rents, royalties, premiums from real property** — 3% percent of gross receipts  _(Income and Business Tax Act (Cap. 55))_
 - **Business tax — professions, vocations, occupations** — 6% percent of gross receipts  _(Income and Business Tax Act (Cap. 55))_
-- **Business tax — telecommunications (real-time voice)** — 19% percent of gross receipts ((approx — confirm rate))  _(Income and Business Tax Act (Cap. 55))_
+- **Business tax — telecommunications (real-time voice)** — 19% percent of gross receipts (approx — confirm rate)  _(Income and Business Tax Act (Cap. 55))_
 - **Petroleum operations income tax** — 25% percent of net income (petroleum/oil operations)  _(Income and Business Tax Act (Cap. 55))_
-- **International Business Companies (IBCs)** — IBCs are within the Belize tax net but benefit from concessions; exempt-income IBCs may have nil/low effective rates subject to economic-substance rules ((approx — confirm current substance/tax treatment))  _(International Business Companies Act)_
+- **International Business Companies (IBCs)** — IBCs are within the Belize tax net but benefit from concessions; exempt-income IBCs may have nil/low effective rates subject to economic-substance rules (approx — confirm current substance/tax treatment)  _(International Business Companies Act)_
 - **Withholding tax — dividends to non-residents** — **15%**, confirmed, and the one of the three that is not 25%  _(Income and Business Tax Act (Cap. 55); Belize Tax Service)_
 - **Withholding tax — interest to non-residents** — **25%**, not 15%. Interest sits with royalties and non-resident service fees at 25%; only dividends are at 15%. Grandfathered international business companies are exempt from withholding on payments to non-residents  _(Income and Business Tax Act (Cap. 55); Belize Tax Service)_
 - **Withholding tax — royalties to non-residents** — **25%**, not 15%, and the same 25% applies to fees for services provided by a non-resident such as consultancy  _(Income and Business Tax Act (Cap. 55); Belize Tax Service)_
-- **Withholding tax — management/technical fees, equipment rental** — 25% percent ((approx — confirm rate))  _(Income and Business Tax Act (Cap. 55))_
-- **Business tax filing frequency** — Monthly business tax returns; annual income tax return due 31 March ((approx — confirm monthly vs annual filing for entity type))  _(Income and Business Tax Act (Cap. 55))_
+- **Withholding tax — management/technical fees, equipment rental** — 25% (approx — confirm rate)  _(Income and Business Tax Act (Cap. 55))_
+- **Business tax filing frequency** — Monthly business tax returns; annual income tax return due 31 March (approx — confirm monthly vs annual filing for entity type)  _(Income and Business Tax Act (Cap. 55))_
 
 <!-- openaccountants-cta-block -->
 

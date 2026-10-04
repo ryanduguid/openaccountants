@@ -4,7 +4,8 @@ description: "LER SEMPRE este skill antes de tratar fiscalidade de pessoas colet
 jurisdiction: PT
 category: international
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PT Corporate Tax
 
-## Portugal — IRC (Imposto sobre o Rendimento das Pessoas Coletivas) — Skill v1.0
+## Portugal — IRC (Imposto sobre o Rendimento das Pessoas Coletivas) — Skill v1.1
 
 > **Produzido pela OpenAccountants (openaccountants.com)**
 >
@@ -101,7 +102,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 3.2 Taxa reduzida para PMEs — 15% (2026)
 
-- **Taxa reduzida PMEs** — 15% percent (sobre os primeiros €50.000 de matéria coletável em 2026; excedente a 19%)  _(art.º 87.º n.º 2 CIRC (redação dada pela Lei do OE 2025))_
+- **Taxa reduzida PMEs** — 15% (sobre os primeiros €50.000 de matéria coletável em 2026; excedente a 19%)  _(art.º 87.º n.º 2 CIRC (redação dada pela Lei do OE 2025))_
 - **Fórmula PME** — Se matéria coletável ≤ €50.000: IRC = 15% × MC Se matéria coletável > €50.000: IRC = (15% × €50.000) + (19% × (MC − €50.000)) = €7.500 + 19% × (MC − €50.000)  _(art.º 87.º n.º 2 CIRC)_
 
 O limite do escalão PME foi aumentado para €50.000 (vs €25.000 em anos anteriores). Verificar o texto da LOE 2025 publicada antes de aplicar.
@@ -118,7 +119,7 @@ O limite do escalão PME foi aumentado para €50.000 (vs €25.000 em anos ante
 
 ### 3.3 Madeira IBC (Centro Internacional de Negócios da Madeira) — 5%
 
-- **Taxa Madeira IBC** — 5% percent (sobre rendimentos de atividades licenciadas pelo CINM, até 31 dezembro 2027)  _(DL 165/86, de 26 de junho; Decisão da Comissão Europeia SA.21259)_
+- **Taxa Madeira IBC** — 5% (sobre rendimentos de atividades licenciadas pelo CINM, até 31 dezembro 2027)  _(DL 165/86, de 26 de junho; Decisão da Comissão Europeia SA.21259)_
 
 **Requisitos Madeira IBC**  _(DL 165/86)_
 
@@ -426,7 +427,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 ### 17.1 Taxa e prazo
 
-- **Taxa Madeira IBC e prazo** — 5% de IRC sobre rendimentos provenientes de atividades licenciadas pelo CINM. Regime válido até 31 de dezembro de 2027 (sob a aprovação atual da Comissão Europeia como auxílio de Estado compatível). Entidades licenciadas até 31 dez 2024 mantêm o regime até 31 dez 2027 (verificar regime transitório aplicável). percent  _(DL 165/86, de 26 de junho; Decisão da Comissão Europeia SA.21259)_
+- **Taxa Madeira IBC e prazo** — 5% de IRC sobre rendimentos provenientes de atividades licenciadas pelo CINM. Regime válido até 31 de dezembro de 2027 (sob a aprovação atual da Comissão Europeia como auxílio de Estado compatível). Entidades licenciadas até 31 dez 2024 mantêm o regime até 31 dez 2027 (verificar regime transitório aplicável).  _(DL 165/86, de 26 de junho; Decisão da Comissão Europeia SA.21259)_
 
 ### 17.2 Requisitos (tabela simplificada)
 

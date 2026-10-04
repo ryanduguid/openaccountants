@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Fiji (tax year 2025) 
 jurisdiction: FJ
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Company tax rates
 
 - **Standard corporate income tax rate** — 25%  _(Income Tax Act 2015 (https://taxatlas.io/country/fiji/corporate-tax))_
-- **Reduced rate — South Pacific Stock Exchange listed companies** — 10% reduced rate on profits attributable to qualifying new equity raised through SPX listing ((approx — confirm scope and conditions))  _(Income Tax Act 2015 (https://taxatlas.io/country/fiji/corporate-tax))_
-- **Non-resident company rate** — 25% on Fiji-source income (branches of foreign companies taxed at the standard rate) ((approx — confirm any branch profits surcharge))  _(Income Tax Act 2015)_
-- **Investment incentives** — Tax holidays (e.g. for hotel/tourism and approved activities) and a film production tax rebate are available for qualifying investments ((approx — confirm exact incentive terms and eligibility))  _(Income Tax (Allowances, Deductions and Exemptions) Regulations 2016 (https://taxatlas.io/country/fiji/corporate-tax))_
+- **Reduced rate — South Pacific Stock Exchange listed companies** — 10% reduced rate on profits attributable to qualifying new equity raised through SPX listing (approx — confirm scope and conditions)  _(Income Tax Act 2015 (https://taxatlas.io/country/fiji/corporate-tax))_
+- **Non-resident company rate** — 25% on Fiji-source income (branches of foreign companies taxed at the standard rate) (approx — confirm any branch profits surcharge)  _(Income Tax Act 2015)_
+- **Investment incentives** — Tax holidays (e.g. for hotel/tourism and approved activities) and a film production tax rebate are available for qualifying investments (approx — confirm exact incentive terms and eligibility)  _(Income Tax (Allowances, Deductions and Exemptions) Regulations 2016 (https://taxatlas.io/country/fiji/corporate-tax))_
 
 Fiji taxes resident and non-resident companies on Fiji-source income, with a number of reduced rates and incentive regimes. Confirm incentive eligibility with FRCS.
 
@@ -25,11 +26,11 @@ Fiji taxes resident and non-resident companies on Fiji-source income, with a num
 
 - **Corporate tax base** — Net assessable income (gross income less allowable deductions) on a Fiji-source basis for non-residents and worldwide for residents  _(Income Tax Act 2015)_
 - **Withholding tax on dividends to non-residents** - 0% for exempt dividends paid from 1 August 2017. Part 5 of the Income Tax (Exempt Income) Regulations 2016 exempts dividends, and section 115 of the Income Tax Act 2015 excludes exempt income from withholding. Do not apply a historical 15% rate as a precaution. Check the payment date and classification before applying the exemption. _([FRCS Practice Statement 39/2017, paragraphs 6 and 8](https://www.frcs.org.fj/wp-content/uploads/2017/01/PS-39-Dividend-2017.pdf); [section 115](https://laws.gov.fj/Acts/ViewSection/66942))_
-- **Withholding tax on interest to non-residents** — 10% ((approx — reduced under applicable double tax treaties))  _(Income Tax Act 2015 (https://taxsummaries.pwc.com/quick-charts/withholding-tax-wht-rates))_
-- **Withholding tax on royalties to non-residents** — 15% ((approx — reduced under applicable double tax treaties))  _(Income Tax Act 2015 (https://taxsummaries.pwc.com/quick-charts/withholding-tax-wht-rates))_
-- **Withholding tax on management/professional/know-how fees to non-residents** — Generally 5%–15% depending on the nature of the payment and the treaty position ((approx — confirm specific rate per payment type))  _(Income Tax Act 2015 (https://frcs.org.fj/our-services/taxation/business/withholding-tax/))_
-- **Company return filing deadline** — Within 3 months of the end of the tax year (i.e. 31 March for calendar-year taxpayers) ((approx — confirm; tax-agent lodgement extensions and substituted accounting periods may apply))  _(Tax Administration Act 2009)_
-- **Provisional / advance corporate tax** — Companies generally pay tax in advance instalments during the year, reconciled on lodgement ((approx — confirm instalment schedule))  _(Tax Administration Act 2009)_
+- **Withholding tax on interest to non-residents** — 10% (approx — reduced under applicable double tax treaties)  _(Income Tax Act 2015 (https://taxsummaries.pwc.com/quick-charts/withholding-tax-wht-rates))_
+- **Withholding tax on royalties to non-residents** — 15% (approx — reduced under applicable double tax treaties)  _(Income Tax Act 2015 (https://taxsummaries.pwc.com/quick-charts/withholding-tax-wht-rates))_
+- **Withholding tax on management/professional/know-how fees to non-residents** — Generally 5%–15% depending on the nature of the payment and the treaty position (approx — confirm specific rate per payment type)  _(Income Tax Act 2015 (https://frcs.org.fj/our-services/taxation/business/withholding-tax/))_
+- **Company return filing deadline** — Within 3 months of the end of the tax year (i.e. 31 March for calendar-year taxpayers) (approx — confirm; tax-agent lodgement extensions and substituted accounting periods may apply)  _(Tax Administration Act 2009)_
+- **Provisional / advance corporate tax** — Companies generally pay tax in advance instalments during the year, reconciled on lodgement (approx — confirm instalment schedule)  _(Tax Administration Act 2009)_
 
 The corporate tax base is net business profit computed under the Income Tax Act. Fiji applies withholding taxes to certain payments to non-residents, often reduced by tax treaty.
 

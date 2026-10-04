@@ -1,10 +1,10 @@
 ---
 name: ro-income-tax
 description: Use this skill whenever asked about Romanian income tax for self-employed individuals (PFA). Trigger on phrases like "how much tax do I pay", "Declarația Unică", "PFA tax", "norma de venit", "impozit pe venit", "CAS", "CASS", "self-employed tax Romania", or any question about filing or computing income tax for a self-employed or freelance client in Romania. ALWAYS read this skill before touching any Romanian income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: RO
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # RO Income Tax
 
-## Romanian Income Tax (Declarația Unică) -- Self-Employed Skill v2.0
+## Romanian Income Tax (Declarația Unică) -- Self-Employed Skill v2.1
 
 ## Section 1 -- Quick reference
 
@@ -209,7 +209,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 Income tax rate
 
-- **Income tax rate** — 10% percent (Flat on net income from independent activities. No progressive bands.)  _(Codul Fiscal, Art. 68-69)_
+- **Income tax rate** — 10% (Flat on net income from independent activities. No progressive bands.)  _(Codul Fiscal, Art. 68-69)_
 
 ### 5.2 Sistem real
 

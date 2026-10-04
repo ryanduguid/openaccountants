@@ -4,8 +4,8 @@ description: Tier 2 New Jersey content skill for employer payroll compliance cov
 jurisdiction: US-NJ
 category: payroll
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -88,7 +88,7 @@ This skill covers New Jersey state-level payroll compliance for employers operat
 
 ### 2.4 Supplemental wage rate
 
-- **NJ supplemental wage withholding rate (YTD wages > $1,000,000)** — 11.8% percent (Supplemental payments to employees whose YTD wages exceed $1,000,000)  _(NJ-WT booklet)_
+- **NJ supplemental wage withholding rate (YTD wages > $1,000,000)** — 11.8% (Supplemental payments to employees whose YTD wages exceed $1,000,000)  _(NJ-WT booklet)_
 
 ### 2.4 Supplemental wage rate
 

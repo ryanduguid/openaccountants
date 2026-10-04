@@ -1,11 +1,11 @@
 ---
 name: italy-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Italian VAT return (Liquidazione IVA Periodica / LIPE) for a self-employed individual or small business under the regime ordinario in Italy. Trigger on phrases like "prepare LIPE", "Italian VAT return", "Liquidazione IVA", "IVA italiana", "classify transactions for Italian VAT", or any request involving Italy VAT filing. This skill covers Italy only, regime ordinario (monthly or quarterly LIPE). Regime forfettario, regime dei minimi, split payment, margin schemes, and VAT groups are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Italian VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: IT
 category: international
 tax_year: 2025
-last_updated: 2026-09-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > **No claim about that jurisdiction's regime is made here**; this is a pointer only.
 
 
-## Italy VAT Return Skill (LIPE / Liquidazione IVA Periodica) v2.0
+## Italy VAT Return Skill (LIPE / Liquidazione IVA Periodica) v2.1
 
 ## Section 1 — Quick reference
 
@@ -468,7 +468,7 @@ Car lease payment. In Italy, IVA on passenger vehicles is deductible at 40% if t
 
 ### 5.13 Quarterly interest surcharge
 
-- **Quarterly interest surcharge** — Quarterly filers must add 1% interest on the net IVA payable for the quarter. This interest goes on the LIPE as an additional amount. Monthly filers do not pay this surcharge. percent  _(Art. 7 DPR 542/99)_
+- **Quarterly interest surcharge** — Quarterly filers must add 1% interest on the net IVA payable for the quarter. This interest goes on the LIPE as an additional amount. Monthly filers do not pay this surcharge.  _(Art. 7 DPR 542/99)_
 
 ### 5.14 Sales — local domestic (any rate)
 
@@ -639,7 +639,7 @@ Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these I
 
 ### Validation status
 
-This skill is v2.0, written in April 2026 to align with the three-tier OpenAccountants architecture.
+This skill is v2.1, written in April 2026 to align with the three-tier OpenAccountants architecture.
 
 ### Sources
 
@@ -673,10 +673,10 @@ This skill is v2.0, written in April 2026 to align with the three-tier OpenAccou
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to Malta v2.0 structure. 10 sections. Country-specific supplier pattern library.
+- **v2.1 (April 2026):** Full rewrite to Malta v2.1 structure. 10 sections. Country-specific supplier pattern library.
 - **v1.0:** Initial skill.
 
-### Self-check (v2.0)
+### Self-check (v2.1)
 
 1. Quick reference at top: yes (Section 1).
 2. Supplier library: yes (Section 3, 15 sub-tables).
@@ -694,7 +694,7 @@ This skill is v2.0, written in April 2026 to align with the three-tier OpenAccou
 14. Non-EU SaaS autofattura: yes (Example 1).
 15. Domestic reverse charge flagged: yes (Section 6.14).
 
-## End of Italy VAT Return Skill v2.0
+## End of Italy VAT Return Skill v2.1
 
 This skill is incomplete without BOTH companion files loaded alongside it: `vat-workflow-base` v0.1 or later AND `eu-vat-directive` v0.1 or later.
 

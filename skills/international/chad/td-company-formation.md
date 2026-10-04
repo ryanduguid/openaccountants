@@ -3,7 +3,8 @@ name: td-company-formation
 description: "Source-cited draft: company formation & entity choice for Chad (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TD
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 category: formation
 tier: 2
@@ -69,9 +70,9 @@ Chad applies the OHADA Uniform Act on Commercial Companies (Acte Uniforme sur le
 - **SA minimum share capital** — **10,000,000** for an ordinary SA (art. 387); **100,000,000** where the securities are listed on a member state's exchange or publicly offered there (art. 824). Regulated activities require their own capital check XAF  _(AUSCGIE 2014, arts. 387 and 824 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **SA capital payment** — **Three years, not two.** Cash shares are paid up **at least one quarter** of nominal value on subscription and the balance falls due within a period not exceeding **three (3) years** from RCCM registration (art. 389). Two years is the **SARL** rule (art. 311-1), and the two were swapped  _(AUSCGIE 2014, arts. 389 and 311-1 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Commercial registration** — Company is registered with the Registre du Commerce et du Crédit Mobilier (RCCM), commonly via the Guichet Unique (one-stop shop)  _(OHADA Uniform Act / Chad business registration rules)_
-- **Core incorporation steps** — Notarised articles of association, deposit of capital, registration at RCCM, tax identification (NIF), and CNPS registration as employer ((approx — confirm current Guichet Unique procedure))  _(OHADA Uniform Act / Chad business registration rules)_
-- **Incorporation timeline** — Roughly 2 to 8 weeks via the Guichet Unique ((approx — confirm))  _(Chad business registration practice)_
-- **Statutory audit** — A statutory auditor (commissaire aux comptes) is required for SAs and for SARLs exceeding OHADA size thresholds ((approx — confirm SARL audit thresholds))  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
+- **Core incorporation steps** — Notarised articles of association, deposit of capital, registration at RCCM, tax identification (NIF), and CNPS registration as employer (approx — confirm current Guichet Unique procedure)  _(OHADA Uniform Act / Chad business registration rules)_
+- **Incorporation timeline** — Roughly 2 to 8 weeks via the Guichet Unique (approx — confirm)  _(Chad business registration practice)_
+- **Statutory audit** — A statutory auditor (commissaire aux comptes) is required for SAs and for SARLs exceeding OHADA size thresholds (approx — confirm SARL audit thresholds)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
 - **Core annual compliance** — Annual general meeting, OHADA-format financial statements (SYSCOHADA), filing of accounts, and annual IS/IRPP and VAT returns  _(OHADA Uniform Act / Code Général des Impôts (Chad))_
 - **Tax identification number** — Each company must obtain a Numéro d'Identification Fiscale (NIF) from the DGI  _(Code Général des Impôts (Chad))_
 

@@ -5,7 +5,7 @@ jurisdiction: AR
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 reviewed_by: Maria Valeria Benvenuti
 review_status: pending_review
 tier: 2
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Corporate rate — tier 1** — 25% on taxable income from ARS 0 up to ARS 101,679,575.26  _(Ley de Impuesto a las Ganancias, texto ordenado 2019 (Decreto 824/2019), updated text on InfoLEG, art. 73(a), scale introduced by Ley 27.630 and indexed annually by the IPC from 1 January 2022 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm ; https://taxsummaries.pwc.com/argentina/corporate/taxes-on-corporate-income)_
 - **Corporate rate — tier 2** — ARS 25,419,893.82 + 30% on the amount exceeding ARS 101,679,575.26 up to ARS 1,016,795,752.62  _(Ley de Impuesto a las Ganancias, texto ordenado 2019 (Decreto 824/2019), updated text on InfoLEG, art. 73(a), scale introduced by Ley 27.630 and indexed annually by the IPC from 1 January 2022 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm ; https://taxsummaries.pwc.com/argentina/corporate/taxes-on-corporate-income)_
-- **Corporate rate — tier 3 (top)** — 35% applies to taxable income above the second-tier ceiling (ARS 1,016,795,752.62), plus a fixed base amount % ((approx — confirm the fixed base amount and exact top-tier threshold for FY2025))  _(Ley de Impuesto a las Ganancias, texto ordenado 2019 (Decreto 824/2019), updated text on InfoLEG, art. 73(a), scale introduced by Ley 27.630 and indexed annually by the IPC from 1 January 2022 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm ; https://taxsummaries.pwc.com/argentina/corporate/taxes-on-corporate-income)_
+- **Corporate rate — tier 3 (top)** — 35% applies to taxable income above the second-tier ceiling (ARS 1,016,795,752.62), plus a fixed base amount (approx — confirm the fixed base amount and exact top-tier threshold for FY2025)  _(Ley de Impuesto a las Ganancias, texto ordenado 2019 (Decreto 824/2019), updated text on InfoLEG, art. 73(a), scale introduced by Ley 27.630 and indexed annually by the IPC from 1 January 2022 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm ; https://taxsummaries.pwc.com/argentina/corporate/taxes-on-corporate-income)_
 - **Corporate bracket indexation** — The three thresholds are adjusted every 1 January from 2022 by the variation in the INDEC consumer price index (art. 73, final paragraph); ARCA publishes the indexed amounts for each fiscal year  _(Ley de Impuesto a las Ganancias, texto ordenado 2019 (Decreto 824/2019), updated text on InfoLEG, art. 73, final paragraph — https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm)_
 - **Tax base** — Worldwide net taxable income of resident companies, with adjustment for inflation (ajuste por inflación impositivo) where applicable  _(Income Tax Law (Ley de Impuesto a las Ganancias, Ley 20.628))_
 > **The non-resident payment regimes below generally apply 35% to presumed
@@ -53,7 +53,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > contract, not by a default. Get local advice rather than taking the residual
 > because it is listed last.
 - **Tax treaties** — Argentina has a network of 20+ double tax treaties that may reduce dividend, interest and royalty withholding rates  _(Double Taxation Agreements (Convenios para evitar la doble imposición))_
-- **CIT filing & payment deadline** — Annual return generally due in the fifth/sixth month after fiscal year-end; extended to June of the following year for calendar-year companies under recent resolutions ((approx — confirm exact CUIT-based dates))  _(ARCA General Resolution (e.g. RG 5648/2025) (as described at [commenda.io](https://www.commenda.io/argentina/corporate-tax-rates)))_
+- **CIT filing & payment deadline** — Annual return generally due in the fifth/sixth month after fiscal year-end; extended to June of the following year for calendar-year companies under recent resolutions (approx — confirm exact CUIT-based dates)  _(ARCA General Resolution (e.g. RG 5648/2025) (as described at [commenda.io](https://www.commenda.io/argentina/corporate-tax-rates)))_
 - **Advance payments** — Companies make monthly/periodic advance income-tax payments (anticipos) during the year toward the annual liability  _(ARCA General Resolution on income-tax advances (anticipos))_
 
 <!-- openaccountants-cta-block -->

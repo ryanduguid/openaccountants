@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Kuwait (
 jurisdiction: KW
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +21,7 @@ The most common vehicle for businesses in Kuwait is the With Limited Liability c
 - **Kuwaiti Shareholding Company (closed) — KSC** — Capital divided into shares; used for larger ventures; subject to Zakat, NLST and KFAS contributions  _([Companies Law No. 1 of 2016](https://www.pwc.com/m1/en/tax/documents/doing-business-guides/dbiku.pdf))_
 - **Public Kuwaiti Shareholding Company (KSCP)** — Publicly listed on Boursa Kuwait; subject to NLST 2.5%, Zakat 1% and KFAS 1%  _([Companies Law No. 1 of 2016](https://www.pwc.com/m1/en/tax/documents/doing-business-guides/dbiku.pdf))_
 - **Foreign ownership** — Up to 100% foreign ownership permitted in eligible activities under a Kuwait Direct Investment Promotion Authority (KDIPA) licence; otherwise generally a Kuwaiti partner of at least 51% is required  _([Direct Investment Promotion Law No. 116 of 2013 (KDIPA)](https://www.pwc.com/m1/en/tax/documents/doing-business-guides/dbiku.pdf))_
-- **Minimum share capital — WLL** — No fixed statutory minimum under Companies Law No. 1 of 2016; capital must be adequate for the activity (historically KWD 1,000+) (approx — confirm with MOCI for the specific activity) KWD  _(Companies Law No. 1 of 2016)_
+- **Minimum share capital — WLL** — No fixed statutory minimum under Companies Law No. 1 of 2016; capital must be adequate for the activity (historically KWD 1,000+) (approx — confirm with MOCI for the specific activity)  _(Companies Law No. 1 of 2016)_
 - **Minimum share capital — Shareholding company** — Set by the Companies Law / executive regulations per company type; confirm current threshold with MOCI (approx — confirm) KWD  _(Companies Law No. 1 of 2016)_
 - **Registration authority** — Ministry of Commerce and Industry (MOCI) commercial register, via the Kuwait Business Centre single-window portal  _([Companies Law No. 1 of 2016](https://www.pwc.com/m1/en/tax/documents/doing-business-guides/dbiku.pdf))_
 - **Core incorporation steps** — Reserve trade name; notarise articles of association; deposit capital; obtain commercial licence and Chamber of Commerce membership; register in the commercial register; register with PIFSS and (if taxable) the DIT  _([Companies Law No. 1 of 2016](https://www.pwc.com/m1/en/tax/documents/doing-business-guides/dbiku.pdf))_

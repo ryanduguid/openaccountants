@@ -5,7 +5,7 @@ jurisdiction: LI
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ Liechtenstein is a low-tax microstate in a customs and currency union with Switz
 - **Currency** — Swiss franc (CHF)  _(Currency Treaty with Switzerland)_
 - **National tax authority** — Steuerverwaltung des Fürstentums Liechtenstein (Liechtenstein Tax Administration)  _([Tax Act (Steuergesetz, SteG)](https://www.llv.li/de/landesverwaltung/steuerverwaltung))_
 - **Residence basis of taxation** — Residents are taxed on worldwide earned income and net wealth; non-residents are taxed only on certain Liechtenstein-source income  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Art. 6(1) — https://www.gesetze.li/konso/pdf/2010340000)_
-- **Headline personal income tax rate (incl. communal surcharge)** — 2.5% to 22.4% combined (national tax plus communal surcharge) %  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Arts. 19(1) and 75(3) — https://www.gesetze.li/konso/pdf/2010340000)_
+- **Headline personal income tax rate (incl. communal surcharge)** — 2.5% to 22.4% combined (national tax plus communal surcharge)  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Arts. 19(1) and 75(3) — https://www.gesetze.li/konso/pdf/2010340000)_
 - **Headline corporate profit tax rate** — 12.5% of taxable net income (Art. 61)  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Art. 61 — https://www.gesetze.li/konso/pdf/2010340000)_
 - **Does Liechtenstein levy VAT?** — Yes; Liechtenstein applies the Swiss VAT system under its customs and VAT treaty with Switzerland, with a standard rate of 8.1%  _(Mehrwertsteuergesetz (MWSTG), LR 641.20, LILEX consolidated text, Art. 25 Abs. 1 — https://www.gesetze.li/konso/pdf/2009330000)_
 - **Withholding tax on dividends, interest, royalties** — 0% — the Act's deduction at source (Art. 24) covers employment income, replacement income and board remuneration only; distributions, interest and royalties are not withheld on, whatever the recipient's residence  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Art. 24 — https://www.gesetze.li/konso/pdf/2010340000)_

@@ -4,7 +4,8 @@ description: Use this skill for Nunavut provincial tax credits — Nunavut Cost 
 jurisdiction: CA
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # NU Tax Credits
 
-## Nunavut — Provincial Tax Credits — Skill v1.0
+## Nunavut — Provincial Tax Credits — Skill v1.1
 
 This skill consolidates Nunavut's personal and corporate tax credits for tax year 2025. Nunavut is a small jurisdiction (population ~40,000) but uses tax credits aggressively to offset the territory's extreme cost of living and attract risk capital into a remote economy. The headline incentive — the Nunavut Risk Capital Investment Tax Credit (NRCITC) at **45%** — is the most generous angel investor credit in Canada.
 
@@ -99,7 +100,7 @@ Caveat: following the federal Government's March 2025 decision to set the consum
 ## 6. Nunavut Risk Capital Investment Tax Credit (NRCITC)
 
 - **NRCITC** — The headline credit. The NRCITC offers a 45% non-refundable credit on qualifying equity investments in registered Nunavut businesses. This is the highest provincial/territorial angel investor credit in Canada (BC's EBC is 30%; Manitoba's Small Business Venture Capital is 45% but capped much lower; Nova Scotia's Innovation Equity Tax Credit is 35-45%).  _(6. Nunavut Risk Capital Investment Tax Credit (NRCITC))_
-- **NRCITC rate** — 45% percent (of the eligible investment amount)  _(6. Nunavut Risk Capital Investment Tax Credit (NRCITC))_
+- **NRCITC rate** — 45% (of the eligible investment amount)  _(6. Nunavut Risk Capital Investment Tax Credit (NRCITC))_
 - **Maximum investment per investor per year** — $1,000,000  _(6. Nunavut Risk Capital Investment Tax Credit (NRCITC))_
 - **Maximum credit per investor per year** — $450,000  _(6. Nunavut Risk Capital Investment Tax Credit (NRCITC))_
 - **Lifetime cap per investor** — $2,000,000 invested (= $900,000 lifetime credit)  _(6. Nunavut Risk Capital Investment Tax Credit (NRCITC))_
@@ -209,7 +210,7 @@ Secondary / interpretive:
 
 Reviewer verification (verified_by: pending) — this skill awaits sign-off from a Canadian tax professional with Nunavut-specific experience, ideally an accountant in Iqaluit or with active NRCITC files.
 
-## End of skill v1.0.
+## End of skill v1.1.
 
 <!-- openaccountants-cta-block -->
 

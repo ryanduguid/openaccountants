@@ -4,7 +4,8 @@ description: Sri Lanka betting & gaming levy, excise duty and customs import dut
 jurisdiction: LK
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Lal kumarasiri
 review_status: current
 tier: 1
@@ -26,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Gross Collection Levy (GCL) – current rate (from 1 January 2026)** — 18% percent of gross collections (INCREASED from 15% by the Betting and Gaming Levy (Amendment) Act No. 25 of 2025, effective 1 January 2026.)  _(Betting and Gaming Levy (Amendment) Act No. 25 of 2025; IRD Notice 31 Dec 2025)_
 - **Casino Entrance Levy (CEL) – current rate (from 1 January 2026)** — USD 100 per person entering casino/gaming establishment (or equivalent in any other convertible foreign currency, or in Sri Lankan Rupees for Sri Lankan citizens. DOUBLED from USD 50 per entrant. Collected directly by casino/gaming operators.)  _(Betting and Gaming Levy (Amendment) Act No. 25 of 2025; IRD Notice 31 Dec 2025)_
 - **Online betting (new – Gambling Regulatory Authority Act No. 16 of 2025)** — Online betting is now legally recognised under the Gambling Regulatory Authority Act No. 16 of 2025. The Gambling Regulatory Authority (GRA) was established to act as a one-stop shop for all gambling licences except state lotteries. Target: full operational status by 30 June 2026. Digital Gambling Licence required; operating without a valid licence: penalty up to LKR 10 million or 2 years' imprisonment.  _(Gambling Regulatory Authority Act No. 16 of 2025)_
-- **Corporate income tax rate on betting/gaming/liquor companies** — 40% percent (Applies to all companies engaged in betting, gaming, or liquor manufacturing/distribution. This is the highest corporate tax rate in Sri Lanka.)  _(IRA No. 24 of 2017 s 59; First Schedule; IRD CIT Guide)_
+- **Corporate income tax rate on betting/gaming/liquor companies** — 40% (Applies to all companies engaged in betting, gaming, or liquor manufacturing/distribution. This is the highest corporate tax rate in Sri Lanka.)  _(IRA No. 24 of 2017 s 59; First Schedule; IRD CIT Guide)_
 - **Self-exclusion and responsible gambling requirements (2025 Act)** — All licensed software must include self-exclusion tools and spending limits to combat gambling addiction. Promoting unlicensed gambling or targeting persons under 18 years is strictly prohibited.  _(Gambling Regulatory Authority Act No. 16 of 2025)_
 - **Dutiable goods – liquor** — Excise duty is levied on the manufacture and import of all alcoholic beverages (beer, wine, arrack, spirits, toddy). Rates set by gazette (per litre of absolute alcohol or per unit as prescribed). Increases announced periodically in the Budget.  _(Excise Ordinance; Excise (Special Provisions) Act; IRD/Excise Dept Annual Gazette)_
 - **Dutiable goods – tobacco** — Excise duty on cigarettes, cigars, and other tobacco products. Sri Lanka has significantly increased tobacco duties in recent budgets as a public health measure.  _(Excise Ordinance; Budget Circulars; Excise Dept Gazette)_
@@ -37,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Anti-dumping and countervailing duties** — Anti-dumping and countervailing duties may be imposed in addition to standard import duties on products found to be dumped or subsidised, following investigation under the Anti-Dumping and Countervailing Duties Act.  _(Anti-Dumping and Countervailing Duties Act; Sri Lanka Customs)_
 - **BOI / SDP exemptions** — Companies with Board of Investment (BOI) agreements and companies identified as Strategic Development Projects (SDPs) may receive customs duty exemptions and deferrals on capital goods and raw materials.  _(BOI Act No. 4 of 1978; Strategic Development Projects Act; Customs Ordinance)_
 - **VAT at import** — 18% percent of CIF value plus customs duty (Collected by Sri Lanka Customs at the point of importation.)  _(VAT Act No. 14 of 2002; Customs Ordinance; IRD VAT Import Guidance)_
-- **SSCL at import** — 2.5% percent (Payable by importers at the point of importation regardless of turnover threshold. Collected by Sri Lanka Customs.)  _(SSCL Act No. 25 of 2022; Customs Ordinance)_
+- **SSCL at import** — 2.5% (Payable by importers at the point of importation regardless of turnover threshold. Collected by Sri Lanka Customs.)  _(SSCL Act No. 25 of 2022; Customs Ordinance)_
 
 <!-- openaccountants-cta-block -->
 

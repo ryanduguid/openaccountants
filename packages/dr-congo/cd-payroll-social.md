@@ -5,7 +5,7 @@ jurisdiction: CD
 category: payroll
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,16 +19,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Employers and employees contribute to the national social security fund (INSS, formerly CNSS) plus training and employment-office levies, and employers withhold IPR via PAYE. This is an unverified 2025 draft pending accountant review.
 
-- **INSS social security — employer share** — 13% percent  _(Loi n° 16/009 portant régime général de la sécurité sociale (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
-- **INSS social security — employee share** — 5% percent (withheld by the employer)  _(Loi n° 16/009 portant régime général de la sécurité sociale (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
-- **Professional training levy (INPP) — companies with ≤50 employees** — 3% percent (employer only)  _(Code Général des Impôts (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
-- **Professional training levy (INPP) — 51 to 300 employees** — 2% percent (employer only)  _(Code Général des Impôts (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
-- **Professional training levy (INPP) — more than 300 employees** — 1% percent (employer only)  _(Code Général des Impôts (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
-- **Employment office levy (ONEM)** — 0.2% percent (employer only)  _(Code Général des Impôts (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
+- **INSS social security — employer share** — 13%  _(Loi n° 16/009 portant régime général de la sécurité sociale (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
+- **INSS social security — employee share** — 5% (withheld by the employer)  _(Loi n° 16/009 portant régime général de la sécurité sociale (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
+- **Professional training levy (INPP) — companies with ≤50 employees** — 3% (employer only)  _(Code Général des Impôts (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
+- **Professional training levy (INPP) — 51 to 300 employees** — 2% (employer only)  _(Code Général des Impôts (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
+- **Professional training levy (INPP) — more than 300 employees** — 1% (employer only)  _(Code Général des Impôts (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
+- **Employment office levy (ONEM)** — 0.2% (employer only)  _(Code Général des Impôts (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
 - **Exceptional tax on expatriate remuneration (IER) — standard** — 25% of the remuneration of expatriate staff, borne by the employer; declared remuneration cannot be below the minimum wage of the employee's home country  _(Code des impôts mis à jour au 10 juillet 2023, Direction Générale des Impôts, impôt exceptionnel sur les rémunérations des expatriés, art 6 — https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf ; DGI, dépliant IPR et IERE (August 2025) — https://dgi.gouv.cd/wp-content/uploads/2025/10/IPR.pdf)_
-- **Exceptional tax on expatriate remuneration (IER) — mining companies** — 10% percent (deductible for corporate tax)  _(Code Minier (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
+- **Exceptional tax on expatriate remuneration (IER) — mining companies** — 10% (deductible for corporate tax)  _(Code Minier (RDC) (https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/other-taxes))_
 - **PAYE withholding (IPR on salaries)** — The employer withholds the tax monthly under the progressive scale (3%, 15%, 30% and 40%), capped at 30% of taxable remuneration  _(Loi n° 23/053 du 30 novembre 2023 relative à l'impôt sur les sociétés et à l'impôt sur le revenu des personnes physiques (Journal officiel, 29 December 2023; in force 1 January 2026), DGI copy, arts 118 and 119 — https://dgi.gouv.cd/wp-content/uploads/2025/09/loi-is-et-Irpp.pdf ; Code des impôts mis à jour au 10 juillet 2023, Direction Générale des Impôts, art 84 — https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf ; DGI, dépliant IPR et IERE (August 2025) — https://dgi.gouv.cd/wp-content/uploads/2025/10/IPR.pdf)_
-- **Contribution wage base / cap** — Contributions are computed on gross salary; a contribution ceiling may be set by INSS regulation ((approx — confirm current cap))  _(Loi n° 16/009 portant régime général de la sécurité sociale)_
+- **Contribution wage base / cap** — Contributions are computed on gross salary; a contribution ceiling may be set by INSS regulation (approx — confirm current cap)  _(Loi n° 16/009 portant régime général de la sécurité sociale)_
 - **Remittance deadline (payroll taxes and contributions)** — IPR and IERE are declared and paid by the employer within the 15 days following the month of payment; social contributions follow the INSS calendar  _(DGI, dépliant IPR et IERE (August 2025) — https://dgi.gouv.cd/wp-content/uploads/2025/10/IPR.pdf ; Loi n° 23/052 du 30 novembre 2023 modifiant la loi n° 004/2003 portant réforme des procédures fiscales (same gazette), DGI copy, art 57 as amended (payment within the 15 days following the month) — https://dgi.gouv.cd/wp-content/uploads/2025/09/loi-is-et-Irpp.pdf)_
 
 <!-- openaccountants-cta-block -->

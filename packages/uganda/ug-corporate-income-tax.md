@@ -5,7 +5,7 @@ jurisdiction: UG
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Branch (permanent establishment) profit tax rate** — 30% on the branch's chargeable income, plus a 15% tax on the branch's repatriated income for the year (the s 82 formula based on the change in the branch's net assets after tax)  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), s 7 and Third Schedule Part II; s 82 and Third Schedule Part IV — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf)_
 - **Small-business / presumptive tax (resident)** — Applies where a resident's gross business turnover exceeds UGX 10 million but does not exceed UGX 150 million a year: a final tax by turnover band, either a fixed amount (UGX 80,000 to UGX 900,000) without records or 0.4% to 0.7% of the turnover above each band's floor with records, in place of 30% on profit, unless the taxpayer elects the normal rules  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), s 4(5) and Second Schedule — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf ; Uganda Revenue Authority, Taxation Handbook FY2023/24, section 7.1 — https://ura.go.ug/wp-content/uploads/2024/06/Taxation-handbook-FY2023-24.pdf)_
 - **Corporate tax base** — Chargeable income: gross income (business, employment and property income) less the deductions the Act allows; a resident's gross income includes income from all geographical sources, a non-resident's only Uganda-source income  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), ss 15 and 17 — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf)_
-- **Tax loss carryforward** — Assessed losses may be carried forward indefinitely; a 50% restriction applies to losses carried forward beyond 7 years of income (confirm current restriction) ((approx — confirm))  _(Income Tax Act (Cap 340))_
+- **Tax loss carryforward** — Assessed losses may be carried forward indefinitely; a 50% restriction applies to losses carried forward beyond 7 years of income (confirm current restriction) (approx — confirm)  _(Income Tax Act (Cap 340))_
 
 ## Withholding tax on dividends, interest and royalties
 

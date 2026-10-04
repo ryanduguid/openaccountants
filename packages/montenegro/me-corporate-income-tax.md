@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Montenegro (tax year 
 jurisdiction: ME
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Corporate income tax rates
 
 - **CIT structure and residence scope** — Montenegro applies a progressive corporate profit tax with three brackets. Resident companies are taxed on worldwide profit; non-residents on Montenegrin-source income or PE profit.  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/taxes-on-corporate-income)_
-- **CIT bracket — profit up to €100,000** — 9% percent  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/taxes-on-corporate-income)_
+- **CIT bracket — profit up to €100,000** — 9%  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/taxes-on-corporate-income)_
 - **CIT bracket — profit €100,000.01 to €1,500,000** — €9,000 + 12% on profit above €100,000  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/taxes-on-corporate-income)_
 - **CIT bracket — profit above €1,500,000** — €177,000 + 15% on profit above €1,500,000  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/taxes-on-corporate-income)_
 
@@ -29,10 +30,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Withholding tax (corporate)
 
 - **WHT overview** — A 15% withholding tax applies at the moment of payment to residents and non-residents on dividends, and to non-residents on a range of other income; double-tax treaties may reduce these rates.  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
-- **WHT on dividends / profit distributions** — 15% (to residents and non-residents) percent  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
-- **WHT on interest (to non-residents)** — 15% percent (Montenegrin tax residents are exempt from tax on interest)  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
-- **WHT on royalties / IP fees (to non-residents)** — 15% percent  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
-- **WHT on consulting/market research/audit fees and rental (to non-residents)** — 15% percent  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
+- **WHT on dividends / profit distributions** — 15% (to residents and non-residents)  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
+- **WHT on interest (to non-residents)** — 15% (Montenegrin tax residents are exempt from tax on interest)  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
+- **WHT on royalties / IP fees (to non-residents)** — 15%  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
+- **WHT on consulting/market research/audit fees and rental (to non-residents)** — 15%  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
 - **Treaty relief** — A double-tax treaty may reduce or eliminate WHT where the non-resident proves treaty residency and beneficial ownership  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) https://taxsummaries.pwc.com/montenegro/corporate/withholding-taxes)_
 
 ## Filing and payment

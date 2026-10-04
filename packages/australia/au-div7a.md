@@ -2,7 +2,7 @@
 name: au-div7a
 description: >
   Use this skill whenever asked about Division 7A of the ITAA 1936 -- private company loans, payments or debt forgiveness to shareholders or their associates, complying loan agreements, minimum yearly repayments, the benchmark interest rate, distributable surplus, unpaid present entitlements (UPEs) to corporate beneficiaries after Bendel, use of company assets by shareholders, or deemed dividends. Trigger on phrases like "Div 7A", "Division 7A", "shareholder loan", "director loan account", "debit loan", "minimum yearly repayment", "benchmark interest rate", "complying loan", "deemed dividend", "distributable surplus", "UPE", "bucket company", "unpaid present entitlement", or when a GL shows debit balances in shareholder/director accounts. ALWAYS read this skill before touching any Div 7A work.
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-10-04
@@ -12,7 +12,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Division 7A -- Private Company Loans Skill v1.2
+# Australia Division 7A -- Private Company Loans Skill v1.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -125,7 +125,7 @@ Shareholder repays $20,000 on 25 June 2027, redraws $25,000 on 15 July 2027. A r
 
 ### Rule 4 -- Benchmark interest rate
 
-- **Benchmark interest rate 2026-27** — 8.77% (2025-26: 8.37%; 2024-25: 8.77%) % (RBA Indicator Lending Rates -- bank variable housing loans rate last published before the start of the income year; always match the rate to the year being computed)  _(s 109N(2))_
+- **Benchmark interest rate 2026-27** — 8.77% (2025-26: 8.37%; 2024-25: 8.77%) (RBA Indicator Lending Rates -- bank variable housing loans rate last published before the start of the income year; always match the rate to the year being computed)  _(s 109N(2))_
 
 ### Rule 5 -- Amalgamated loans and minimum yearly repayments (s 109E)
 

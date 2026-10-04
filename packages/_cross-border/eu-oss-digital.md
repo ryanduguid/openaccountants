@@ -4,7 +4,8 @@ description: Use this skill whenever a business sells digital services (electron
 jurisdiction: GLOBAL
 category: cross-border
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -72,7 +73,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Step 2: The EUR 10,000 Threshold [T1]
 
-- **EUR 10,000 threshold** — EUR 10,000 EUR  _(VAT Directive Art 58(2); introduced by Directive (EU) 2017/2455)_
+- **EUR 10,000 threshold** — EUR 10,000  _(VAT Directive Art 58(2); introduced by Directive (EU) 2017/2455)_
 
 ### Rule
 

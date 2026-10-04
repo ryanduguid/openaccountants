@@ -5,7 +5,7 @@ jurisdiction: MG
 category: payroll
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,11 +19,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Payroll in Madagascar combines IRSA salary-tax withholding with social-security contributions to CNAPS (pension/family) and a mandatory occupational health organisation (e.g. OSTIE). The CNaPS and health-organisation rates below come from secondary sources and should be confirmed against the current CNaPS schedules; the IRSA items are read from the Direction Générale des Impôts' consolidated codes for the Loi de finances 2026.
 
-- **CNAPS employer contribution** — 13% of salary, capped at 8 times the legal minimum wage (SME) %  _(Loi sur la Caisse Nationale de Prévoyance Sociale (CNAPS) — https://taxsummaries.pwc.com/madagascar/corporate/other-taxes)_
-- **CNAPS employee contribution** — 1% of salary, capped at 8 times the legal minimum wage (SME) % (approx — confirm)  _(Loi sur la Caisse Nationale de Prévoyance Sociale (CNAPS) — https://rivermate.com/guides/madagascar/taxes)_
+- **CNAPS employer contribution** — 13% of salary, capped at 8 times the legal minimum wage (SME)  _(Loi sur la Caisse Nationale de Prévoyance Sociale (CNAPS) — https://taxsummaries.pwc.com/madagascar/corporate/other-taxes)_
+- **CNAPS employee contribution** — 1% of salary, capped at 8 times the legal minimum wage (SME) (approx — confirm)  _(Loi sur la Caisse Nationale de Prévoyance Sociale (CNAPS) — https://rivermate.com/guides/madagascar/taxes)_
 - **CNAPS contribution wage cap** — 8 times the legal monthly minimum wage (salaire minimum d'embauche, SME)  _(Loi sur la Caisse Nationale de Prévoyance Sociale (CNAPS) — https://taxsummaries.pwc.com/madagascar/corporate/other-taxes)_
-- **Occupational health organisation (OSTIE/AMIT) employer contribution** — 5% of total employee remuneration %  _(Code du Travail (Madagascar) — médecine du travail — https://taxsummaries.pwc.com/madagascar/corporate/other-taxes)_
-- **Occupational health organisation employee contribution** — 1% of remuneration % (approx — confirm)  _(Code du Travail (Madagascar) — médecine du travail — https://rivermate.com/guides/madagascar/taxes)_
+- **Occupational health organisation (OSTIE/AMIT) employer contribution** — 5% of total employee remuneration  _(Code du Travail (Madagascar) — médecine du travail — https://taxsummaries.pwc.com/madagascar/corporate/other-taxes)_
+- **Occupational health organisation employee contribution** — 1% of remuneration (approx — confirm)  _(Code du Travail (Madagascar) — médecine du travail — https://rivermate.com/guides/madagascar/taxes)_
 - **PAYE-equivalent withholding** — IRSA is withheld from gross salary by the employer at each payment (progressive 0% to 20% in 2025; a 25% band above MGA 4,000,000 a month applies from 2026; minimum MGA 3,000)  _(Code des impôts 2026, art. 01.03.16 — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CDI-LFI%202026.pdf ; Code des procédures fiscales 2026, art. I-20 — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CPF-LFI%202026.pdf)_
 - **IRSA remittance deadline** — Within the first 15 days of the month following the month of withholding; an employer under the synthetic regime may cumulate remittances by two-month period  _(Code des procédures fiscales 2026, art. I-21 — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CPF-LFI%202026.pdf)_
 - **CNAPS contribution remittance frequency** — Quarterly (approx — confirm)  _(Loi sur la Caisse Nationale de Prévoyance Sociale (CNAPS) — https://taxsummaries.pwc.com/madagascar/individual/tax-administration)_

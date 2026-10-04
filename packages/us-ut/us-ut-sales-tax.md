@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Utah sales tax, Utah use tax, U
 jurisdiction: US-UT
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -73,9 +74,9 @@ Before proceeding with any Utah sales tax analysis, collect the following from t
 ### 1.2 Local Sales Taxes [T1]
 
 - **Local sales tax administration** — Counties, cities, and special districts impose additional sales tax.
-- **Local add-on range** — approximately 1.15% to 2.65% percent
+- **Local add-on range** — approximately 1.15% to 2.65%
 - **Combined rate range** — approximately 6.10% to 7.50%  _([T1])_
-- **Salt Lake City combined rate** — approximately 7.75% (verify current rate) percent ([T2])
+- **Salt Lake City combined rate** — approximately 7.75% (verify current rate) ([T2])
 - **Local tax administration authority** — Local taxes are administered by USTC.
 
 ### 1.3 Sourcing [T1]

@@ -5,7 +5,7 @@ jurisdiction: TN
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,15 +24,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Band 7 rate** — 38% on the slice above TND 50,000 up to TND 70,000 (29.64% effective at the top of the band)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
 - **Top band rate** — 40% on income above TND 70,000  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 36, replacing the scale in art. 44(I) of the IRPP and IS Code for income from 1 January 2025 — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
 - **Social Solidarity Contribution on individuals** — Additional 0.5% on taxable income computed under the IRPP scale, applying to income whose return falls due in the years 2023 to 2026 (art. 53(7) of the 2018 Finance Law as restated by art. 87(2) of the 2026 Finance Law)  _(Finance Law for 2026, Law No. 2025-17 of 12 December 2025 (Official Gazette No. 148 of 12 December 2025; Ministry of Finance PDF, Arabic), art. 87(2), restating art. 53(7) of Law 2017-66 (Finance Law for 2018) — https://www.finances.gov.tn/sites/default/files/2026-01/115725.pdf ; rate: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/tunisia/individual/other-taxes)_
-- **Non-resident short-stay employees** — 20% flat tax on gross income for stays not exceeding 6 months per fiscal year %  _(IRPP-IS Code (CIRPPIS) — non-resident provisions — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
+- **Non-resident short-stay employees** — 20% flat tax on gross income for stays not exceeding 6 months per fiscal year  _(IRPP-IS Code (CIRPPIS) — non-resident provisions — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
 
 The IRPP is a progressive tax on individual income with eight brackets revised by the Finance Law 2025 effective 1 January 2025. The first TND 5,000 of annual taxable income is tax-free.
 
 ## Deductions, residence test and filing
 
-- **Social-security (CNSS) deduction from salary** — 9.68% employee contribution is deductible from gross salary %  _(IRPP-IS Code (CIRPPIS); CNSS contribution rules — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
+- **Social-security (CNSS) deduction from salary** — 9.68% employee contribution is deductible from gross salary  _(IRPP-IS Code (CIRPPIS); CNSS contribution rules — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
 - **Professional expense deduction (employees)** — 10% of salaries and wages, capped at TND 2,000 a year  _(Ministère des Finances, Aperçu général sur la fiscalité (système fiscal tunisien) — https://www.finances.gov.tn/fr/apercu-general-sur-la-fiscalite)_
-- **Family head / dependants deduction** — Fixed allowances for family head and dependent children (amounts vary; confirm current figures) ((approx — confirm))  _(IRPP-IS Code (CIRPPIS) — family deductions — https://taxsummaries.pwc.com/tunisia/individual/deductions)_
+- **Family head / dependants deduction** — Fixed allowances for family head and dependent children (amounts vary; confirm current figures) (approx — confirm)  _(IRPP-IS Code (CIRPPIS) — family deductions — https://taxsummaries.pwc.com/tunisia/individual/deductions)_
 - **Individual residence test** — An individual whose habitual residence is in Tunisia is subject to IRPP on their income; non-residents are taxed only on Tunisian-source income  _(Ministère des Finances, Aperçu général sur la fiscalité (système fiscal tunisien) — https://www.finances.gov.tn/fr/apercu-general-sur-la-fiscalite)_
 - **Salary withholding (retenue à la source)** — IRPP is collected by withholding at source on salaries and other listed payments, by three provisional instalments of 30% of the previous year's tax in the sixth, ninth and twelfth months, and by the annual return; withholding and instalments are credited against the final tax, and the withholding is final for persons neither resident nor established in Tunisia  _(Ministère des Finances, Aperçu général sur la fiscalité (système fiscal tunisien) — https://www.finances.gov.tn/fr/apercu-general-sur-la-fiscalite)_
 - **Annual IRPP return deadline (self-employed / business income)** — 25 June of the following year for individuals filing accounts (Other categories have earlier dates (e.g. wage earners filing a no-payment return); confirm category-specific deadline)  _(IRPP-IS Code (CIRPPIS) — tax administration provisions — https://taxsummaries.pwc.com/tunisia/individual/tax-administration)_

@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Italian IRAP (Imposta Regionale
 jurisdiction: IT
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -159,7 +160,7 @@ Before computing, you MUST know:
 | Forecast method (metodo previsionale) | Based on estimated current-year IRAP |
 
 - **Acconti calculation formula** — 1st_acconto = prior_year_IRAP × 40% (due 30 June) 2nd_acconto = prior_year_IRAP × 60% (due 30 November)
-- **Minimum IRAP threshold for advance payments** — EUR 51.65 EUR (If prior-year IRAP <= EUR 51.65: no advance payments required.)
+- **Minimum IRAP threshold for advance payments** — EUR 51.65 (If prior-year IRAP <= EUR 51.65: no advance payments required.)
 
 ## Step 6: IRAP Declaration [T1]
 

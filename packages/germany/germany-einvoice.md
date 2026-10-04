@@ -1,10 +1,10 @@
 ---
 name: germany-einvoice
 description: Use this skill whenever asked about German e-invoicing, XRechnung, ZUGFeRD, ERechV, E-Rechnungsverordnung, Peppol BIS Billing Germany, Leitweg-ID, OZG-RE invoice portal, B2B e-invoicing mandate Germany, Wachstumschancengesetz, EN 16931 Germany, GoBD e-invoice archiving, or any question about issuing, receiving, validating, or archiving electronic invoices in Germany. Also trigger when preparing XRechnung XML invoices, configuring Peppol endpoints for German public-sector invoicing, handling B2B e-invoice reception requirements, or advising on ZUGFeRD profile selection. This skill covers XRechnung CIUS, ZUGFeRD hybrid format, Peppol transmission, mandatory fields, validation rules, GoBD archiving, penalties, and interaction with German VAT returns. ALWAYS read this skill before touching any German e-invoicing work.
-version: 1.0
+version: 1.1
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - einvoice-workflow-base
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | B2B issuance Phase 2 | 1 January 2028 (all remaining businesses) |
 | B2C | Not subject to e-invoicing mandate |
 | Current status | B2G fully operational; B2B reception mandatory; B2B issuance transitioning |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Mandate Scope
 
@@ -282,7 +282,7 @@ Sources: UStG § 12 — https://www.gesetze-im-internet.de/ustg_1980/__12.html; 
 - **Line-level rounding** — Line-level: net amount = quantity × unit price, rounded to 2 decimal places
 - **Tax amount per line rounding** — Tax amount per line: net amount × rate, rounded to 2 decimal places
 - **Document-level totals** — Document-level totals must equal sum of line-level amounts within each tax category
-- **Validation tolerance per tax subtotal group** — EUR 0.01 EUR (XRechnung validation tolerance per tax subtotal group)
+- **Validation tolerance per tax subtotal group** — EUR 0.01 (XRechnung validation tolerance per tax subtotal group)
 - **Banker's rounding** — Banker's rounding (round half to even) is accepted but not required
 
 ### Multi-Rate Invoice Handling

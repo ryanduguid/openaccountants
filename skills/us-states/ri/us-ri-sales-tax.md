@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Rhode Island sales tax, RI use 
 jurisdiction: US-RI
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -65,7 +66,7 @@ depends_on:
 
 ### 1.1 State Sales Tax Rate
 
-- **State Sales Tax Rate** — 7.00% percent (flat, uniform statewide; one of the higher state rates in the country [T1])  _(R.I.G.L. §44-18-18)_
+- **State Sales Tax Rate** — 7.00% (flat, uniform statewide; one of the higher state rates in the country [T1])  _(R.I.G.L. §44-18-18)_
 
 ### 1.2 No Local Sales Taxes [T1]
 
@@ -119,12 +120,12 @@ Note: This is similar to New York's clothing exemption structure (all-or-nothing
 
 ### 2.7 Lodging [T1]
 
-- **Hotel rooms and transient accommodations combined rate** — 13% percent (7% sales tax + 1% local hotel tax + 5% state hotel tax = 13% total. [T1])
+- **Hotel rooms and transient accommodations combined rate** — 13% (7% sales tax + 1% local hotel tax + 5% state hotel tax = 13% total. [T1])
 - **Short-term rentals (Airbnb)** — Same combined rate applies ([T1])
 
 ### 2.8 Meals and Beverages [T1]
 
-- **Meals (prepared food from restaurants) combined rate** — 8% percent ([T1] 7% sales tax + 1% local meals/beverage tax = 8% total)
+- **Meals (prepared food from restaurants) combined rate** — 8% ([T1] 7% sales tax + 1% local meals/beverage tax = 8% total)
 
 ### 4.1 Filing Details [T1]
 
@@ -145,7 +146,7 @@ Note: This is similar to New York's clothing exemption structure (all-or-nothing
 ### 4.3 Penalties and Interest [T1]
 
 - **Late filing penalty** — 10% of tax due or $50, whichever is greater ([T1])
-- **Interest rate on unpaid tax** — 18% per annum (1.5% per month) percent ([T1])
+- **Interest rate on unpaid tax** — 18% per annum (1.5% per month) ([T1])
 - **Fraud penalty** — 50% of tax due ([T1])
 
 Note: Rhode Island's interest rate of 18% per annum is one of the highest in the nation. [T1]

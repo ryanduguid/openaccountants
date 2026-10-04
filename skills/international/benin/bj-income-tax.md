@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Benin (tax year 2025) 
 jurisdiction: BJ
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +28,7 @@ errors this table used to carry.
 - **IRPP band 3** — 15% on the slice from XOF 130,001 to 280,000 percent  _(Code Général des Impôts (Bénin) 2021, art. 142(1) — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **IRPP band 4** — 20% on the slice from XOF 280,001 to 530,000 percent  _(Code Général des Impôts (Bénin) 2021, art. 142(1) — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **IRPP top band** — 30% on the slice above XOF 530,000 percent  _(Code Général des Impôts (Bénin) 2021, art. 142(1) — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
-- **Tax-free threshold** — First XOF 50,000 of monthly salary is not taxed XOF  _(Code Général des Impôts (Bénin) 2021, art. 142(1) — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
+- **Tax-free threshold** — First XOF 50,000 of monthly salary is not taxed  _(Code Général des Impôts (Bénin) 2021, art. 142(1) — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **Business and professional income — separate barème, top rate 40%** — Industrial, commercial, non-commercial, artisanal and agricultural income is taxed at 30% on the slice from 0 to XOF 10,000,000, 35% from 10,000,001 to 20,000,000, and **40% above XOF 20,000,000** (annual). Note the first band starts at 30%: there is no tax-free slice on this scale  _(Code Général des Impôts (Bénin) 2021, art. 136 — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **Minimum IRPP on business income** — Not less than 1% of receipts (produits encaissables), and in no case less than XOF 250,000  _(Code Général des Impôts (Bénin) 2021, art. 137(1) — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **Dependent-children reduction (not a family quotient)** — The tax from the salary barème is reduced by a flat percentage set by the number of dependent children: 0% for one child, 5% for two, 10% for three, 15% for four, 20% for five, 23% for six or more. Benin uses this reduction, **not** a quotient familial that divides income into parts  _(Code Général des Impôts (Bénin) 2021, art. 142(2) — https://www.impots.finances.gouv.bj/code-general-des-impots/)_

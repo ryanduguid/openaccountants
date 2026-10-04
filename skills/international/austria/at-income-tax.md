@@ -1,10 +1,10 @@
 ---
 name: at-income-tax
 description: Use this skill whenever asked about Austrian income tax (Einkommensteuer) for self-employed individuals filing form E1. Trigger on phrases like "Einkommensteuer", "ESt", "E1 Erklarung", "Gewinnfreibetrag", "Betriebsausgabenpauschale", "Absetzbetrge", "Sonderausgaben", "selbstandig Steuer Osterreich", "Austrian income tax", "self-employed tax Austria", or any question about computing or filing income tax for a self-employed person in Austria. This skill covers progressive tax brackets (0--55%), Gewinnfreibetrag, Betriebsausgabenpauschale, Sonderausgaben, aussergewohnliche Belastungen, Absetzbetrge, SV deductibility, and E1/E1a structure. ALWAYS read this skill before touching any Austrian income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: AT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by Austrian Steuerberater or Wirtschaftsprufer |
 | Validation date | Pending |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Progressive Tax Brackets (2025, adjusted for cold progression)
 
@@ -62,8 +62,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 178,001 -- 353,000 | 7% | Yes |
 | 353,001 -- 583,000 | 4.5% | Yes |
 
-- **Maximum GFB** — EUR 46,400 EUR
-- **Grundfreibetrag** — 15% of first EUR 33,000 = max EUR 4,950, automatic EUR
+- **Maximum GFB** — EUR 46,400
+- **Grundfreibetrag** — 15% of first EUR 33,000 = max EUR 4,950, automatic
 
 ### Betriebsausgabenpauschale (Flat-Rate Expenses)
 

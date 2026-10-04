@@ -1,7 +1,7 @@
 ---
 name: uzbekistan-tax-optimization
 description: Use this skill whenever asked about reducing tax in Uzbekistan, tax planning, or legal strategies to minimise tax for a sole proprietor, small business, or IT company in Uzbekistan. Trigger on phrases like "reduce tax Uzbekistan", "turnover tax Uzbekistan", "1% tax sole proprietor", "individual entrepreneur Uzbekistan", "IT Park Uzbekistan", "Uzbekistan dividends 0%", "save tax Uzbekistan", "tax planning Uzbekistan". This skill covers the turnover-tax regime (1% for small IE/self-employed from 2026), the 0% PIT on dividends, the IT Park regime, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Uzbek tax optimisation.
-version: 0.2
+version: 0.3
 jurisdiction: UZ
 tax_year: 2025
 last_updated: 2026-10-04
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Uzbekistan Tax Optimization
 
-## Uzbekistan Tax Optimization Skill v0.2
+## Uzbekistan Tax Optimization Skill v0.3
 
 **Tier 2 — research-verified. Sources: State Tax Committee, PwC, EY Uzbekistan, IT Park Uzbekistan. Figures must agree with `uzbekistan-income-tax.md` / `uzbekistan-social-contributions.md`. NOT yet signed off by an Uzbek tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 2 -- Turnover Tax (1% from 2026)
 
-- **Turnover tax rate for individual entrepreneurs and self-employed with annual turnover ≤ UZS 1 billion, from 1 Jan 2026** — 1% percent (reduced from 4% on the UZS 100m–1bn band; effective from 1 Jan 2026)
+- **Turnover tax rate for individual entrepreneurs and self-employed with annual turnover ≤ UZS 1 billion, from 1 Jan 2026** — 1% (reduced from 4% on the UZS 100m–1bn band; effective from 1 Jan 2026)
 - **Abolition of prior self-employed exemption** — The previous exemption for self-employed below UZS 100m is abolished from 2026 — all now pay the single 1% rule.
 - **Standard system applies above threshold** — Above UZS 1 billion of total income in the tax period, or on voluntary registration, the taxpayer leaves the turnover tax (4% for most sectors, art. 467) and pays VAT at 12% (art. 258) and profit tax at the art. 337 rates (15% for most taxpayers; 20% for banks) from the point the threshold is crossed (art. 461 and 462, as amended on 25 December 2025).  _(Tax Code of the Republic of Uzbekistan (Soliq kodeksi, consolidated text on lex.uz), art. 258, 337, 461, 462 and 467 — https://lex.uz/docs/4674902)_
 

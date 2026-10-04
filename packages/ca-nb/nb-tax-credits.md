@@ -4,7 +4,8 @@ description: Use this skill for New Brunswick provincial tax credits — NB Low-
 jurisdiction: CA
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # NB Tax Credits
 
-## New Brunswick — Provincial Tax Credits — Skill v1.0
+## New Brunswick — Provincial Tax Credits — Skill v1.1
 
 This skill catalogues the principal New Brunswick (NB) provincial tax credits available to individuals and corporations for the 2025 tax year. It complements `nb-individual-return.md` (the Form NB428 computation skill) by isolating the credit mechanics, eligibility tests, application procedures, and refundability rules. NB administers most personal credits through the CRA via the federal–provincial Tax Collection Agreement; the NB Small Business Investor Tax Credit (NB SBITC) and the NB Film Tax Credit are administered directly by the Province (Department of Finance and Treasury Board and Opportunities NB).
 
@@ -88,7 +89,7 @@ This skill catalogues the principal New Brunswick (NB) provincial tax credits av
 - **Type** — Refundable. Paid quarterly alongside the federal GST/HST Credit. Fully integrated administration via CRA — no separate application.  _(Section 4)_
 - **2025 benefit year amount per adult** — $300 CAD (per adult (taxpayer + spouse/common-law partner); benefit year July 2025 – June 2026, based on 2024 return)  _(Section 4)_
 - **2025 benefit year amount per child** — $100 CAD (per child under 19)  _(Section 4)_
-- **Phase-out rate** — 2% percent (of adjusted family net income above $35,000)  _(Section 4)_
+- **Phase-out rate** — 2% (of adjusted family net income above $35,000)  _(Section 4)_
 
 ### Eligibility
 
@@ -103,7 +104,7 @@ Newcomers to NB file Form RC151 once. Marital status changes must be reported vi
 ### Mechanics
 
 - **Type** — Refundable.  _(Section 5)_
-- **Rate** — 10% percent (of eligible expenses)  _(Section 5)_
+- **Rate** — 10% (of eligible expenses)  _(Section 5)_
 - **Cap** — Eligible expenses up to $10,000 per year, so maximum credit = $1,000 / year  _(Section 5)_
 - **Claim** — Schedule NB(S12) attached to T1; reported on Form NB428 line 47900.  _(Section 5)_
 

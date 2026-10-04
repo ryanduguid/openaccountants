@@ -1,7 +1,7 @@
 ---
 name: zambia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Zambia VAT return. Standard rate 16%. Unique 100% withholding VAT mechanism. ALWAYS read before handling Zambia VAT work.
-version: 2.1
+version: 2.2
 jurisdiction: ZM
 category: international
 tax_year: 2025
@@ -25,7 +25,7 @@ Zambia levies VAT at a standard rate of 16%, administered by ZRA. Basic foodstuf
 - **VAT return filing frequency** — Monthly  _(Value Added Tax Act — https://quaderno.io/guides/zambia-vat-guide/)_
 - **VAT return and payment deadline** — By the 18th of the month following the tax period  _(Value Added Tax Act — https://www.zra.org.zm/payment-due-dates/)_
 - **Value-Added Tax (VAT)** — 16% standard rate on standard rated supplies  _(Zambia Revenue Authority, Tax Information, Value Added Tax — https://www.zra.org.zm/tax-information/)_
-- **Reverse charge on imported services** — Recipient of imported services accounts for VAT under the reverse-charge mechanism ((approx — confirm scope))  _(Value Added Tax Act)_
+- **Reverse charge on imported services** — Recipient of imported services accounts for VAT under the reverse-charge mechanism (approx — confirm scope)  _(Value Added Tax Act)_
 - **Late filing penalty** — Higher of ZMW 600 per day or 0.5% of tax payable per day  _(Tax Procedures Act — https://quaderno.io/guides/zambia-vat-guide/)_
 
 <!-- openaccountants-cta-block -->

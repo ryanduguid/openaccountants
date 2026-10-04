@@ -4,8 +4,8 @@ description: Tier 2 Georgia content skill for individual and corporate estimated
 jurisdiction: US-GA
 category: state-tax
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -148,7 +148,7 @@ This is the most common preparer error in GA estimated tax planning. A taxpayer 
 | 4 | Jan 1 – Dec 31 (12 months) | × 1 |
 
 - **Computation steps for each installment** — For each installment, the taxpayer: 1. Computes Georgia taxable income through the end of the period; 2. Annualizes by multiplying by the factor above; 3. Applies the 2025 flat 5.19% rate to compute annualized tax; 4. Applies the cumulative installment percentage (22.5% / 45% / 67.5% / 90% for the 90% method, or 17.5% / 35% / 52.5% / 70% for the 70% current-year safe harbor) to determine the required cumulative payment through that installment; 5. Subtracts cumulative withholding and prior installments to determine the current installment amount.
-- **2025 flat GA income tax rate** — 5.19% percent (2025 flat rate applied to annualized income)
+- **2025 flat GA income tax rate** — 5.19% (2025 flat rate applied to annualized income)
 
 The annualized method requires careful interim books and reconciliation between federal Form 2210 Schedule AI and Georgia Form 500-UET Part III. Common errors include:
 

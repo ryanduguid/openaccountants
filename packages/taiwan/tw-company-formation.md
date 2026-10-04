@@ -5,7 +5,7 @@ jurisdiction: TW
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,8 +26,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Minimum share capital** — No statutory minimum capital in the Company Act (art. 156 regulates the division of capital into shares, not a floor); capital must be sufficient for operations and is CPA-verified. Foreign-investment and work-permit cases often expect capital around NT$500,000 or more in practice; confirm the current work-permit expectation with the Ministry of Labor  _(Company Act (Ministry of Justice Laws and Regulations Database, English translation), art. 156 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0080001)_
 - **Foreign investment approval** — Foreign investors must obtain Foreign Investment Approval from the Investment Commission (Department of Investment Review), MOEA, before incorporation  _(Statute for Investment by Foreign Nationals — https://taiwan.acclime.com/guides/how-to-register-company/)_
 - **Core incorporation steps** — 1) reserve company name & business scope; 2) FIA approval (foreign investors); 3) open preparatory bank account & inject capital; 4) CPA capital verification; 5) company registration with MOEA; 6) tax & employer (labor/health insurance) registration  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
-- **Typical incorporation timeline** — Approximately 4–8 weeks for a foreign-invested entity, depending on investment approval and capital verification ((approx — confirm))  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
-- **Indicative professional/setup cost** — Government fees are modest; professional fees for a foreign-invested company commonly range from roughly NT$60,000 to NT$150,000+ TWD ((approx — confirm; varies by provider)) TWD  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
+- **Typical incorporation timeline** — Approximately 4–8 weeks for a foreign-invested entity, depending on investment approval and capital verification (approx — confirm)  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
+- **Indicative professional/setup cost** — Government fees are modest; professional fees for a foreign-invested company commonly range from roughly NT$60,000 to NT$150,000+ TWD (approx — confirm; varies by provider)  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
 
 ## Core annual compliance
 

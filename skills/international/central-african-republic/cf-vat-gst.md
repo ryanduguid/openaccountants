@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Central African Republic (tax ye
 jurisdiction: CF
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +25,7 @@ The Central African Republic levies VAT (Taxe sur la Valeur Ajoutée, TVA) under
 - **VAT return / payment deadline** — 15th of the month following the taxable period (approx — confirm)  _(Code Général des Impôts (CAR) — TVA (as described at [vatitstream.com](https://www.vatitstream.com/compliance/central-african-republic)))_
 - **Reverse charge on imported services** — VAT on services supplied by non-established providers is self-assessed by the CAR recipient (reverse charge) (approx — confirm)  _(Code Général des Impôts (CAR) — TVA)_
 - **OHADA / community levy on imports** — 0.05 percent (applies on imports (separate from VAT) (approx — confirm))  _([CEMAC/OHADA community levy](https://www.vatitstream.com/compliance/central-african-republic))_
-- **Import de minimis value** — 200,000 XAF ((approx — confirm))  _(Code Général des Impôts (CAR) — TVA / customs (as described at [vatitstream.com](https://www.vatitstream.com/compliance/central-african-republic)))_
+- **Import de minimis value** — 200,000 XAF (approx — confirm)  _(Code Général des Impôts (CAR) — TVA / customs (as described at [vatitstream.com](https://www.vatitstream.com/compliance/central-african-republic)))_
 
 <!-- openaccountants-cta-block -->
 

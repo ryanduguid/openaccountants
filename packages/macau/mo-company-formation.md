@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Macau (t
 jurisdiction: MO
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,8 +19,8 @@ The most common vehicle in Macau is the private limited company by quotas (Socie
 
 - **Most common entity** — Private limited company by quotas (Sociedade por Quotas, Lda.)  _(Macau Commercial Code (https://macau.acclime.com/guides/how-to-register-company/))_
 - **Other entity types** — Company limited by shares (Sociedade Anonima, S.A.), sole proprietorship, partnership, and branch of a foreign company  _(Macau Commercial Code)_
-- **Minimum share capital (Lda.)** — MOP 25,000, payable in full on incorporation MOP  _(Macau Commercial Code (https://macau.acclime.com/guides/how-to-register-company/))_
-- **Minimum share capital (S.A.)** — MOP 1,000,000 ((approx — confirm)) MOP  _(Macau Commercial Code)_
+- **Minimum share capital (Lda.)** — MOP 25,000, payable in full on incorporation  _(Macau Commercial Code (https://macau.acclime.com/guides/how-to-register-company/))_
+- **Minimum share capital (S.A.)** — MOP 1,000,000 (approx — confirm)  _(Macau Commercial Code)_
 - **Shareholders** — Minimum 1 shareholder (single-member Lda. allowed); a multi-member Lda. has at least 2 quota-holders  _(Macau Commercial Code (https://macau.acclime.com/guides/how-to-register-company/))_
 - **Directors / management** — At least 1 director (administrator); directors need not be Macau residents or shareholders  _(Macau Commercial Code)_
 - **Registered office** — A local Macau registered address is required  _(Macau Commercial Code)_

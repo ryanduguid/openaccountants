@@ -5,7 +5,8 @@ jurisdiction: NI
 category: formation
 tax_year: 2025
 tax_year_notes: "The Código de Comercio dates from 1916 and the Digesto Jurídico Nicaragüense records it as Vigente. It is old law: later legislation — investment, banking and sector statutes — may qualify the founder-eligibility and capital provisions in §1, and a reviewer should check for those before relying on them."
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -84,14 +85,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Sociedad Anónima (S.A.)** — Corporation with limited liability; the most common entity, requiring at least two shareholders  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/business-structures-types-nicaragua/))_
 - **Other entity types** — Sociedad Colectiva (general partnership), Sociedad en Comandita (limited partnership), branch of a foreign company, and sole trader  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/business-structures-types-nicaragua/))_
 - **Minimum shareholders (S.A.)** — 2  _(Código de Comercio de Nicaragua, art. 202 — https://digesto.asamblea.gob.ni/consultas/normas/shownorms.php?idnorm=MjkyOTI=)_
-- **Minimum share capital (S.A.)** — Approx. C$10,000 (about USD 400) is commonly used; the Code sets no minimum *amount* NIO ((approx — confirm))  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
+- **Minimum share capital (S.A.)** — Approx. C$10,000 (about USD 400) is commonly used; the Code sets no minimum *amount* NIO (approx — confirm)  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
 - **But "no minimum" is not "nothing to pay"** — whatever figure is chosen, art. 206 requires **half of it subscribed and 10% of the numerary part in cash** before the company may begin operating. See §1  _(Código de Comercio de Nicaragua, art. 206 — https://digesto.asamblea.gob.ni/consultas/normas/shownorms.php?idnorm=MjkyOTI=)_
 - **Step 1 — Deed of incorporation** — Draft and notarise the act/deed of incorporation and bylaws (escritura de constitución) before a Nicaraguan notary  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
 - **Step 2 — Corporate and accounting books** — Acquire and present the mandatory corporate and accounting books for registration  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
 - **Step 3 — Commercial registry** — Register the company and its books with the Registro Público Mercantil (commonly via the Ventanilla Única de Inversiones, VUI)  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
 - **Step 4 — Tax registration** — Register with the DGI to obtain the RUC (Registro Único de Contribuyentes) and a municipal licence  _(Ley de Concertación Tributaria (Law 822) (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
-- **Commercial registry fee** — 1% of registered capital, capped at approx. C$30,000 (about USD 1,200) NIO ((approx — confirm)) NIO (approx — confirm)  _(Arancel del Registro Público (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
-- **Incorporation timeline** — Approximately 4–6 weeks ((approx — confirm))  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
+- **Commercial registry fee** — 1% of registered capital, capped at approx. C$30,000 (about USD 1,200) NIO (approx — confirm)  _(Arancel del Registro Público (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
+- **Incorporation timeline** — Approximately 4–6 weeks (approx — confirm)  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
 - **Foreign ownership** — 100% foreign ownership of a Nicaraguan S.A. is permitted; a local legal representative is required. **Read this against art. 205 in §1**: the Code makes a founder who is neither a national nor a foreigner *domiciled* in Nicaragua a ground for the judge to refuse registration. Ownership after formation and eligibility to be a founder are different questions, and the second is unresolved here  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
 - **Core annual compliance** — Annual IR return, monthly IVA and IR-withholding returns, monthly INSS/INATEC filings, municipal sales tax (1% monthly) and the annual municipal registration tax (2%)  _(Ley de Concertación Tributaria (Law 822) / Plan de Arbitrios Municipal (https://taxsummaries.pwc.com/nicaragua/corporate/other-taxes))_
 

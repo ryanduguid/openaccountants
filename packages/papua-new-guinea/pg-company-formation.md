@@ -5,7 +5,7 @@ jurisdiction: PG
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,9 +23,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Registered office** — A physical address in PNG is required (a P.O. Box is not acceptable)  _(Companies Act 1997 (https://www.lexology.com/library/detail.aspx?g=fcbfb570-32d0-4a2b-b0e4-f38d4a7e6163))_
 - **Company constitution** — Optional — a company need not adopt a constitution at incorporation; the Companies Act default rules apply unless one is adopted  _(Companies Act 1997 (https://www.lexology.com/library/detail.aspx?g=fcbfb570-32d0-4a2b-b0e4-f38d4a7e6163))_
 - **Foreign enterprise certification** — A company that is 50% or more foreign-owned must obtain Foreign Enterprise Certification from the IPA before commencing operations  _(Investment Promotion Act 1992 (https://nto.gov.pg/ipa-certification-foreign-enterprises/))_
-- **Incorporation application** — Incorporation is by application to the IPA (Form 1 / online via the IPA Online Registry System), including company name reservation and consents of directors/shareholders ((approx — confirm current form references and online portal))  _(Companies Act 1997 (https://www.ipa.gov.pg/documentation/pg/form-a-1.pdf))_
-- **Incorporation timeline** — Typically a few business days once a compliant application and name reservation are lodged online ((approx — confirm current IPA processing times))  _(Companies Act 1997 (https://www.ipa.gov.pg/public/help.aspx?cn=BusinessRegulations))_
-- **Incorporation fee** — An IPA registration fee applies; verify the current schedule on the IPA portal ((approx — confirm current IPA fee))  _(Companies Act 1997 (https://www.ipa.gov.pg/public/help.aspx?cn=BusinessRegulations))_
+- **Incorporation application** — Incorporation is by application to the IPA (Form 1 / online via the IPA Online Registry System), including company name reservation and consents of directors/shareholders (approx — confirm current form references and online portal)  _(Companies Act 1997 (https://www.ipa.gov.pg/documentation/pg/form-a-1.pdf))_
+- **Incorporation timeline** — Typically a few business days once a compliant application and name reservation are lodged online (approx — confirm current IPA processing times)  _(Companies Act 1997 (https://www.ipa.gov.pg/public/help.aspx?cn=BusinessRegulations))_
+- **Incorporation fee** — An IPA registration fee applies; verify the current schedule on the IPA portal (approx — confirm current IPA fee)  _(Companies Act 1997 (https://www.ipa.gov.pg/public/help.aspx?cn=BusinessRegulations))_
 - **Annual return** — Companies must file an annual return with the IPA each year to remain on the register  _(Companies Act 1997 (https://www.ipa.gov.pg/public/help.aspx?cn=BusinessRegulations))_
 - **Stamp duty on property transfer** — Conveyance duty of 2% up to K35,000 of value (minimum K5), 3% to K70,000, 4% to K140,000 and 5% above K140,000; a citizen first home buyer pays nil up to K700,000 and 5% of the excess; transfers of marketable securities carry 1% (minimum K0.10)  _(Internal Revenue Commission, Stamp Duty — https://irc.gov.pg/pages/know-your-taxes/stamp-duty)_
 

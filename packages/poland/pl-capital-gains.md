@@ -1,10 +1,10 @@
 ---
 name: pl-capital-gains
 description: "Poland capital gains tax: 19% Belka tax on investment income, no holding period discount, real property gains. Trigger on: \"Poland CGT\", \"capital gains Poland\", \"Belka tax Poland\", \"Poland 19% investment tax\", \"sell shares Poland\", \"podatek od zysków kapitałowych\", \"Poland podatek Belki\"."
-version: 1.0
+version: 1.1
 jurisdiction: PL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## The Belka Tax (podatek od zysków kapitałowych)
 
-- **Belka tax rate** — 19% percent (Flat rate on capital gains from disposal of shares, bonds, units in investment funds; dividends; interest income from bank deposits and bonds)  _(Ustawa o podatku dochodowym od osób fizycznych (PIT Act), Art. 30a, 30b)_
+- **Belka tax rate** — 19% (Flat rate on capital gains from disposal of shares, bonds, units in investment funds; dividends; interest income from bank deposits and bonds)  _(Ustawa o podatku dochodowym od osób fizycznych (PIT Act), Art. 30a, 30b)_
 - **No holding period discount or annual exemption** — No discount for long holding periods. No annual exemption. All gains taxable.  _(Ustawa o podatku dochodowym od osób fizycznych (PIT Act), Art. 30a, 30b)_
 
 Named after a finance minister, the Belka tax is a **19% flat rate** on:

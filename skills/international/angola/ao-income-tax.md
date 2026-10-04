@@ -4,7 +4,8 @@ description: "Source-cited draft for Angola personal income tax in tax year 2025
 jurisdiction: AO
 category: international
 tax_year: 2025
-last_updated: 2026-09-12
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -46,7 +47,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Group A employment income**: the monthly scale has twelve progressive escalões, ending at 25%. The first AOA 100,000 is exempt; the next slice bears 13% with no fixed amount. Article 10(1) of the IRT Code applies the article 16(1) table to monthly Group A income after the article 7(2) deductions. [Lei n.º 28/20, arts. 10(1) and 16](https://www.bancoeconomico.ao/media/3172/lei28-20-22dejulhoalteracoescirt.pdf), [Lei n.º 18/24, art. 20(3) and Anexo I](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf).
 - **Monthly basis**: the annex alone does not name the period. Article 10(1) of the IRT Code expressly requires the payer to calculate Group A tax monthly. The earlier warning that this period lacked statutory support is withdrawn. [Lei n.º 28/20, art. 10(1)](https://www.bancoeconomico.ao/media/3172/lei28-20-22dejulhoalteracoescirt.pdf).
-- **Tax-exempt income** — Up to AOA 100,000 is exempt (1.º Escalão, *Até 100 000*, no rate) AOA  _([Lei n.º 18/24, art. 20(3) and Anexo I](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
+- **Tax-exempt income** — Up to AOA 100,000 is exempt (1.º Escalão, *Até 100 000*, no rate)  _([Lei n.º 18/24, art. 20(3) and Anexo I](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **IRT band AOA 100,001 to 150,000** — parcela fixa nil + 13% on the excess over 100,001 percent  _([Lei n.º 18/24, Anexo I, 2.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **IRT band AOA 150,001 to 200,000** — AOA 12,500 + 16% on the excess over 150,001  _([Lei n.º 18/24, Anexo I, 3.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **IRT band AOA 200,001 to 300,000** — AOA 31,250 + 18% on the excess over 200,001  _([Lei n.º 18/24, Anexo I, 4.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
@@ -69,9 +70,9 @@ activity taxed inside IRT rather than under the Imposto Industrial — was absen
 guide, and the 2025 Budget legislates it directly. All four rules below are in article
 20.º of Lei n.º 18/24, the same article that carries the exemption and the annex.
 
-- **Small Group C taxpayers — 6.5%** — Where a Group C contributor's **2024** turnover was **equal to or less than Kz: 10.000.000,00 (dez milhões de Kwanzas)** — figures and words together — the taxable base is the volume of sales of goods and services **not subject to withholding at source**, and the rate on it is **6.5%** percent  _([Lei n.º 18/24, art. 20(1)](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
+- **Small Group C taxpayers — 6.5%** — Where a Group C contributor's **2024** turnover was **equal to or less than Kz: 10.000.000,00 (dez milhões de Kwanzas)** — figures and words together — the taxable base is the volume of sales of goods and services **not subject to withholding at source**, and the rate on it is **6.5%**  _([Lei n.º 18/24, art. 20(1)](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **Group C with organised accounting — Imposto Industrial rules instead** — Regardless of turnover, Group C contributors who keep organised accounts determine their taxable base under the rules applicable to **general-regime Imposto Industrial** taxpayers, with the necessary adaptations. Turnover does not release a taxpayer with organised accounts into the 6.5% regime  _([Lei n.º 18/24, art. 20(2)](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
-- **Agriculture, forestry, livestock and fishing above the threshold — 10%** — Group C contributors carrying on *actividades agrícola, silvícola, pecuária e piscatória* whose turnover exceeds the article 20(1) threshold are taxed at **10%** percent  _([Lei n.º 18/24, art. 20(4)](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
+- **Agriculture, forestry, livestock and fishing above the threshold — 10%** — Group C contributors carrying on *actividades agrícola, silvícola, pecuária e piscatória* whose turnover exceeds the article 20(1) threshold are taxed at **10%**  _([Lei n.º 18/24, art. 20(4)](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **The exemption sits in the same article as the Group C rules** — Article 20 is headed *Alteração ao Código do Imposto sobre os Rendimentos do Trabalho*; its numbers 1, 2 and 4 are Group C and its number 3 is the AOA 100,000 exemption plus the annex. A reader who takes article 20 to be a Group C provision will miss the exemption, and vice versa  _([Lei n.º 18/24, art. 20](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 
 ## What the 2025 Budget switched off

@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Maldives
 jurisdiction: MV
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,13 +21,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Other business forms** — Sole proprietorship, partnership, and cooperative society are available under their respective laws  _(Sole Proprietorship Act / Partnership Act / Co-operative Societies Act)_
 - **Minimum shareholders (private company)** — 1  _(Companies Act 2023 (Law No. 7/2023) — https://sandalawyers.com/insights/companies-act-private-limited-companies)_
 - **Minimum directors (private company)** — 1  _(Companies Act 2023 (Law No. 7/2023))_
-- **Minimum share capital (private company)** — No prescribed statutory minimum; a private company may register with a single share ((approx — confirm current Registrar fee schedule))  _(Companies Act 2023 (Law No. 7/2023) — https://rcolawyers.com/guide-on-the-maldives-companies-act-2023/)_
+- **Minimum share capital (private company)** — No prescribed statutory minimum; a private company may register with a single share (approx — confirm current Registrar fee schedule)  _(Companies Act 2023 (Law No. 7/2023) — https://rcolawyers.com/guide-on-the-maldives-companies-act-2023/)_
 - **Registering authority** — Registrar of Companies, Ministry of Economic Development and Trade (via the business eGov / Tradenet portal)  _(Companies Act 2023 (Law No. 7/2023) — https://business.egov.mv/)_
 - **Core incorporation steps** — Reserve company name, submit memorandum & articles of association with shareholder/director details to the Registrar, pay registration fee, obtain Certificate of Registration  _(Companies Act 2023 (Law No. 7/2023))_
 - **Post-incorporation tax registration** — Register with MIRA for a Taxpayer Identification Number (TIN); GST registration required if thresholds met or operating in tourism  _(Tax Administration Act (Law No. 3/2010) — https://lookuptax.com/docs/tax-identification-number/maldives-tax-id-guide)_
 - **Annual board meeting requirement (private company)** — At least 4 board meetings per year  _(Companies Act 2023 (Law No. 7/2023) — https://www.crowe.com/mv/insights/key-amendments-of-the-companies-bill)_
 - **Core annual compliance** — Annual general meeting and annual return to the Registrar, maintenance of statutory registers, regulatory service fee, and annual income tax/GST filings with MIRA  _(Companies Act 2023 (Law No. 7/2023))_
-- **Foreign investment** — Foreign-owned companies require registration under the Foreign Investment framework administered by the Ministry / Invest Maldives ((approx — confirm current foreign investment regulation))  _(Foreign Investment Law / Companies Act 2023 (Law No. 7/2023))_
+- **Foreign investment** — Foreign-owned companies require registration under the Foreign Investment framework administered by the Ministry / Invest Maldives (approx — confirm current foreign investment regulation)  _(Foreign Investment Law / Companies Act 2023 (Law No. 7/2023))_
 
 <!-- openaccountants-cta-block -->
 

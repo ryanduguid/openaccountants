@@ -5,7 +5,7 @@ jurisdiction: MN
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,16 +23,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Corporate residence** — An entity incorporated under Mongolian law or a foreign entity with its effective place of management in Mongolia  _(Corporate Income Tax Law of Mongolia — https://taxsummaries.pwc.com/mongolia/corporate/corporate-residence)_
 - **Tax on dividends (domestic, gross basis)** — 10%  _(Law on Corporate Income Tax (Аж ахуйн нэгжийн орлогын албан татварын тухай, consolidated on legalinfo.mn), arts. 18.6.2 and 20.2.1 — https://legalinfo.mn/mn/detail?lawId=14407)_
 - **Tax on sale of immovable property** — 2% of gross proceeds  _(Law on Corporate Income Tax (Аж ахуйн нэгжийн орлогын албан татварын тухай, consolidated on legalinfo.mn), arts. 18.6.4 and 20.2.2 — https://legalinfo.mn/mn/detail?lawId=14407)_
-- **Reduced rate for listed securities income** — 5% on dividend and interest income from shares/debt instruments of qualifying local entities traded on stock markets percent  _(Corporate Income Tax Law of Mongolia — https://taxsummaries.pwc.com/mongolia/corporate/taxes-on-corporate-income)_
+- **Reduced rate for listed securities income** — 5% on dividend and interest income from shares/debt instruments of qualifying local entities traded on stock markets  _(Corporate Income Tax Law of Mongolia — https://taxsummaries.pwc.com/mongolia/corporate/taxes-on-corporate-income)_
 
 ## Withholding tax and filing deadlines
 
 - **WHT general overview** — Domestic-law withholding tax on payments to non-residents is generally 20%, subject to reduction under Mongolia's tax treaties.
 - **WHT on dividends to non-residents** — 20% (domestic law; lower treaty rates may apply)  _(Law on Corporate Income Tax (Аж ахуйн нэгжийн орлогын албан татварын тухай, consolidated on legalinfo.mn), arts. 18.6.8 and 20.2.4 (20% on the taxable income of a non-resident taxpayer without a registered representative office) — https://legalinfo.mn/mn/detail?lawId=14407)_
 - **WHT on interest to non-residents** — 20% (domestic law; lower treaty rates may apply)  _(Law on Corporate Income Tax (Аж ахуйн нэгжийн орлогын албан татварын тухай, consolidated on legalinfo.mn), arts. 18.6.8 and 20.2.4 (20% on the taxable income of a non-resident taxpayer without a registered representative office) — https://legalinfo.mn/mn/detail?lawId=14407)_
-- **WHT on royalties to non-residents** — 20% (domestic law; lower treaty rates may apply) percent  _(Law on Corporate Income Tax (Аж ахуйн нэгжийн орлогын албан татварын тухай, consolidated on legalinfo.mn), arts. 18.6.8 and 20.2.4 (20% on the taxable income of a non-resident taxpayer without a registered representative office) — https://legalinfo.mn/mn/detail?lawId=14407)_
-- **WHT on technical/management fees to non-residents** — 20% (domestic law; lower treaty rates may apply) percent  _(Law on Corporate Income Tax (Аж ахуйн нэгжийн орлогын албан татварын тухай, consolidated on legalinfo.mn), arts. 18.6.8 and 20.2.4 (20% on the taxable income of a non-resident taxpayer without a registered representative office) — https://legalinfo.mn/mn/detail?lawId=14407)_
-- **Reduced WHT on bank bond interest to non-residents** — 5% on interest on bonds issued by Mongolian commercial banks percent  _(Corporate Income Tax Law of Mongolia — https://taxsummaries.pwc.com/mongolia/corporate/withholding-taxes)_
+- **WHT on royalties to non-residents** — 20% (domestic law; lower treaty rates may apply)  _(Law on Corporate Income Tax (Аж ахуйн нэгжийн орлогын албан татварын тухай, consolidated on legalinfo.mn), arts. 18.6.8 and 20.2.4 (20% on the taxable income of a non-resident taxpayer without a registered representative office) — https://legalinfo.mn/mn/detail?lawId=14407)_
+- **WHT on technical/management fees to non-residents** — 20% (domestic law; lower treaty rates may apply)  _(Law on Corporate Income Tax (Аж ахуйн нэгжийн орлогын албан татварын тухай, consolidated on legalinfo.mn), arts. 18.6.8 and 20.2.4 (20% on the taxable income of a non-resident taxpayer without a registered representative office) — https://legalinfo.mn/mn/detail?lawId=14407)_
+- **Reduced WHT on bank bond interest to non-residents** — 5% on interest on bonds issued by Mongolian commercial banks  _(Corporate Income Tax Law of Mongolia — https://taxsummaries.pwc.com/mongolia/corporate/withholding-taxes)_
 - **Annual CIT return deadline** — 10 February after the end of the tax year  _(Corporate Income Tax Law of Mongolia — https://taxsummaries.pwc.com/mongolia/corporate/tax-administration)_
 - **Quarterly CIT return deadline** — By the 20th day of the month following the end of each quarter  _(Corporate Income Tax Law of Mongolia — https://taxsummaries.pwc.com/mongolia/corporate/tax-administration)_
 - **Monthly CIT advance payment** — By the 25th of each month per the payment schedule, with year-end settlement by 10 February  _(Corporate Income Tax Law of Mongolia — https://taxsummaries.pwc.com/mongolia/corporate/tax-administration)_

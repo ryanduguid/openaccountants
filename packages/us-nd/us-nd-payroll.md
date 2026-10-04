@@ -4,7 +4,8 @@ description: Use this skill whenever asked about North Dakota employer payroll c
 jurisdiction: US-ND
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -129,7 +130,7 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 
 ### 3.5 Supplemental wage rate
 
-- **Supplemental wage rate 2025** — 1.5% percent (flat rate for supplemental wages paid separately or separately identified; alternatively aggregate method may be used)
+- **Supplemental wage rate 2025** — 1.5% (flat rate for supplemental wages paid separately or separately identified; alternatively aggregate method may be used)
 
 ### 3.6 Pay-period frequency
 

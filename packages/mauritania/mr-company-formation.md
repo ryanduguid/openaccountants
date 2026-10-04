@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Mauritan
 jurisdiction: MR
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,13 +18,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Limited liability company** — SARL (Société à Responsabilité Limitée) — one or more members, liability limited to capital subscribed  _(Code de Commerce (Commercial Code) — https://chandrawatpartners.com/how-to-incorporate-an-llc-sarl-in-mauritania-key-insights-with-pre-post-compliance-considerations/)_
 - **Public/joint-stock company** — SA (Société Anonyme) — used for larger and regulated ventures  _(Code de Commerce (Commercial Code))_
 - **Sole proprietorship** — Entreprise Individuelle — unlimited liability of the owner  _(Code de Commerce (Commercial Code))_
-- **SARL minimum share capital** — MRU 1,000,000 (approx USD 2,800), fully paid up MRU ((approx — confirm current statutory minimum)) MRU  _(Code de Commerce (Commercial Code) — https://chandrawatpartners.com/how-to-incorporate-an-llc-sarl-in-mauritania-key-insights-with-pre-post-compliance-considerations/)_
-- **SA minimum share capital** — Higher than a SARL; commonly cited around MRU 5,000,000 MRU ((approx — confirm statutory minimum)) MRU  _(Code de Commerce (Commercial Code))_
+- **SARL minimum share capital** — MRU 1,000,000 (approx USD 2,800), fully paid up (approx — confirm current statutory minimum)  _(Code de Commerce (Commercial Code) — https://chandrawatpartners.com/how-to-incorporate-an-llc-sarl-in-mauritania-key-insights-with-pre-post-compliance-considerations/)_
+- **SA minimum share capital** — Higher than a SARL; commonly cited around MRU 5,000,000 (approx — confirm statutory minimum)  _(Code de Commerce (Commercial Code))_
 - **Step 1 — Name reservation** — Reserve the company name and obtain a name reservation certificate  _(Guichet Unique (one-stop shop) procedures — https://www.elidge.com/company-registration-in-mauritania/)_
 - **Step 2 — Notarise statutes** — Notarise the company deed and articles of association  _(Code de Commerce (Commercial Code) — https://www.elidge.com/company-registration-in-mauritania/)_
 - **Step 3 — Deposit capital** — Open a bank account, deposit the initial capital and obtain proof of deposit  _(Guichet Unique (one-stop shop) procedures — https://www.elidge.com/company-registration-in-mauritania/)_
 - **Step 4 — File at the Guichet Unique** — Submit the single registration form and documents at the one-stop shop; obtain tax ID and CNSS registration  _(Guichet Unique (one-stop shop) procedures — https://www.elidge.com/company-registration-in-mauritania/)_
-- **Incorporation timeline** — Typically 1 to 2 weeks via the Guichet Unique ((approx — varies with bank/notary))  _(Guichet Unique (one-stop shop) procedures — https://www.elidge.com/company-registration-in-mauritania/)_
+- **Incorporation timeline** — Typically 1 to 2 weeks via the Guichet Unique (approx — varies with bank/notary)  _(Guichet Unique (one-stop shop) procedures — https://www.elidge.com/company-registration-in-mauritania/)_
 - **Annual compliance — financial statements** — File annual financial statements and corporate tax return before 31 March of the following year  _(Code Général des Impôts (General Tax Code) — https://taxsummaries.pwc.com/mauritania/corporate/tax-administration)_
 - **Ongoing compliance — VAT and payroll** — Monthly VAT returns and monthly payroll/social-security filings where applicable  _(Code Général des Impôts (General Tax Code))_
 

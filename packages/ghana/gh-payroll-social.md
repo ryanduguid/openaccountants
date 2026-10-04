@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Ghana (tax 
 jurisdiction: GH
 category: payroll
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,13 +16,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Social security (SSNIT) contributions
 
 - **Overview of SSNIT mandatory pension scheme tiers** — Ghana's mandatory pension scheme has a first (basic) tier managed by SSNIT and a second (occupational) tier, totalling 18.5% of basic salary split between employer and employee. A third, voluntary tier also exists.
-- **Total mandatory SSNIT contribution (Tier 1 + Tier 2)** — 18.5% of employee basic salary (13% employer + 5.5% employee) percent  _(National Pensions Act, 2008 (Act 766) — https://www.ssnit.org.gh/faqs/)_
-- **Employer contribution (of basic salary)** — 13% percent  _(National Pensions Act, 2008 (Act 766) — https://www.ssnit.org.gh/faqs/)_
-- **Employee contribution (of basic salary)** — 5.5% percent  _(National Pensions Act, 2008 (Act 766) — https://www.ssnit.org.gh/faqs/)_
-- **Tier 1 (basic, to SSNIT)** — 13.5% of the 18.5% is remitted to SSNIT (Tier 1) percent  _(National Pensions Act, 2008 (Act 766) — https://www.npra.gov.gh/faq/)_
-- **Tier 2 (occupational, to private scheme)** — 5% of the 18.5% is remitted to an approved Tier 2 occupational scheme percent  _(National Pensions Act, 2008 (Act 766) — https://www.npra.gov.gh/faq/)_
+- **Total mandatory SSNIT contribution (Tier 1 + Tier 2)** — 18.5% of employee basic salary (13% employer + 5.5% employee)  _(National Pensions Act, 2008 (Act 766) — https://www.ssnit.org.gh/faqs/)_
+- **Employer contribution (of basic salary)** — 13%  _(National Pensions Act, 2008 (Act 766) — https://www.ssnit.org.gh/faqs/)_
+- **Employee contribution (of basic salary)** — 5.5%  _(National Pensions Act, 2008 (Act 766) — https://www.ssnit.org.gh/faqs/)_
+- **Tier 1 (basic, to SSNIT)** — 13.5% of the 18.5% is remitted to SSNIT (Tier 1)  _(National Pensions Act, 2008 (Act 766) — https://www.npra.gov.gh/faq/)_
+- **Tier 2 (occupational, to private scheme)** — 5% of the 18.5% is remitted to an approved Tier 2 occupational scheme  _(National Pensions Act, 2008 (Act 766) — https://www.npra.gov.gh/faq/)_
 - **Maximum insurable monthly salary (Tier 1)** — GHS 61,000 per month (raised from GHS 52,000, effective 1 January 2025)  _(National Pensions Act, 2008 (Act 766) — https://hrtorque.co.za/ghana-social-security-contributions-ceiling/)_
-- **Tier 3 (voluntary)** — Voluntary provident fund/personal pension; contributions up to 16.5% of basic salary attract tax relief percent (approx — confirm relief cap)  _(National Pensions Act, 2008 (Act 766) — https://www.npra.gov.gh/faq/)_
+- **Tier 3 (voluntary)** — Voluntary provident fund/personal pension; contributions up to 16.5% of basic salary attract tax relief (approx — confirm relief cap)  _(National Pensions Act, 2008 (Act 766) — https://www.npra.gov.gh/faq/)_
 
 ## PAYE withholding and remittance
 

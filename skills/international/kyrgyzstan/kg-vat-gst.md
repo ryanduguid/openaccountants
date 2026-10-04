@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Kyrgyzstan (tax year 2025) — r
 jurisdiction: KG
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +24,7 @@ Kyrgyzstan levies Value Added Tax (VAT) at a standard rate of 12%, with a 0% rat
 - **Voluntary VAT registration** — Permitted for businesses below the threshold  _(Tax Code of the Kyrgyz Republic)_
 - **VAT return filing frequency** — Monthly  _(Tax Code of the Kyrgyz Republic)_
 - **VAT return filing and payment deadline** — By the 25th day of the month following the reporting month (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_
-- **Reverse charge on imported services** — A Kyrgyz recipient must self-assess and remit 12% VAT on services purchased from a non-resident with no PE in Kyrgyzstan percent  _(Tax Code of the Kyrgyz Republic — https://kgaccount.com/en/vat/)_
+- **Reverse charge on imported services** — A Kyrgyz recipient must self-assess and remit 12% VAT on services purchased from a non-resident with no PE in Kyrgyzstan  _(Tax Code of the Kyrgyz Republic — https://kgaccount.com/en/vat/)_
 - **Place of supply for services** — For many services the place of supply is the location of the buyer (recipient)  _(Tax Code of the Kyrgyz Republic)_
 - **HTP resident reverse-charge relief** — Since April 2023, accredited High Technology Park residents are exempt from the reverse-charge VAT withholding obligation (approx — confirm)  _(Law on the High Technology Park of the Kyrgyz Republic)_
 - **Import VAT** — 12 percent (0% for specified items such as certain medical products and humanitarian aid)  _(Tax Code of the Kyrgyz Republic)_

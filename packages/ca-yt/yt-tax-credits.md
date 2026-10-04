@@ -4,7 +4,8 @@ description: Use this skill for Yukon provincial tax credits — Yukon First Nat
 jurisdiction: CA
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # YT Tax Credits
 
-## Yukon — Provincial Tax Credits & Incentives — Skill v1.0
+## Yukon — Provincial Tax Credits & Incentives — Skill v1.1
 
 This skill covers the Yukon-specific personal and corporate tax credits administered alongside the federal T1/T2 return for the 2025 tax year. Yukon is the smallest sub-national jurisdiction in Canada by population but has one of the most distinctive tax credit regimes — notably the **Yukon First Nations Tax Credit (FNTC)**, which has no parallel in any other province or territory, and a **0% provincial small business CIT rate**, the most generous in Canada.
 
@@ -92,7 +93,7 @@ The Yukon SBITC encourages investment in eligible Yukon-based small businesses b
 
 ### Parameters (2025)
 
-- **SBITC rate** — 25% percent (of qualifying investment)  _(YITA Part 2, Div. 2)_
+- **SBITC rate** — 25% (of qualifying investment)  _(YITA Part 2, Div. 2)_
 - **Annual cap per investor** — $25,000 credit (i.e., $100,000 of qualifying investment)  _(YITA Part 2, Div. 2)_
 - **SBITC type** — Non-refundable (carryforward 7 years, carryback 3 years)  _(YITA Part 2, Div. 2)_
 - **Eligible investment** — Equity in an eligible Yukon small business corporation registered with the Yukon Department of Economic Development; certificate issued  _(YITA Part 2, Div. 2)_
@@ -108,8 +109,8 @@ A refundable credit available to both individuals and corporations carrying on S
 
 ### Parameters (2025)
 
-- **General rate** — 15% percent (of eligible Yukon SR&ED expenditures)  _(YITA Part 2)_
-- **Enhanced rate** — 20% percent (on the portion of expenditures paid to a Yukon university or college)  _(YITA Part 2)_
+- **General rate** — 15% (of eligible Yukon SR&ED expenditures)  _(YITA Part 2)_
+- **Enhanced rate** — 20% (on the portion of expenditures paid to a Yukon university or college)  _(YITA Part 2)_
 - **Type** — Refundable (paid out even if no tax owing)  _(YITA Part 2)_
 - **Coordination** — Computed on Yukon-source portion; federal SR&ED ITC is computed separately on Schedule T661 + Schedule 31  _(YITA Part 2)_
 
@@ -126,7 +127,7 @@ This is a **statutory rate reduction**, not a discrete credit line. Under YITA s
 - Reported on T2 Schedule 5 (provincial tax) with M&P portion identified
 - Combined federal-Yukon rate on M&P profit: 15% federal + 2.5% Yukon = **17.5%**
 
-- **M&P Yukon rate reduction** — 2.5% percent (reduces general 12% rate on M&P profits)  _(YITA s. 17.1)_
+- **M&P Yukon rate reduction** — 2.5% (reduces general 12% rate on M&P profits)  _(YITA s. 17.1)_
 
 ## 7. Yukon Mineral Exploration Tax Credit (YMETC)
 
@@ -148,7 +149,7 @@ Mining is the single largest private-sector industry in Yukon. The YMETC support
 A refundable provincial credit (Yukon retained this credit after the federal version was eliminated in 2017).
 
 - **Maximum eligible expense** — $1,000 per child under 16 (under 18 if eligible for disability tax credit)  _(Form YT479)_
-- **Refundable rate** — 6.4% percent (Yukon lowest tax bracket rate for 2025)  _(Form YT479)_
+- **Refundable rate** — 6.4% (Yukon lowest tax bracket rate for 2025)  _(Form YT479)_
 - **Maximum refundable credit** — $1,000 × 6.4% = $64 per child; plus a $500 supplement for children eligible for the disability tax credit (total expense allowance)  _(Form YT479)_
 - **Claim location** — Claimed on Form YT479  _(Form YT479)_
 

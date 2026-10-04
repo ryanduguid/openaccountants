@@ -5,7 +5,7 @@ jurisdiction: GY
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,13 +15,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Personal income tax rates and bands
 
-- **First band rate** — 25% on the first G$3,120,000 of chargeable income per year percent (Budget 2025 cut entry rate and raised threshold)  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://www.gra.gov.gy/income-tax-rates-threshold/)_
-- **Top band rate** — 35% on chargeable income exceeding G$3,120,000 per year percent  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://www.gra.gov.gy/income-tax-rates-threshold/)_
+- **First band rate** — 25% on the first G$3,120,000 of chargeable income per year (Budget 2025 cut entry rate and raised threshold)  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://www.gra.gov.gy/income-tax-rates-threshold/)_
+- **Top band rate** — 35% on chargeable income exceeding G$3,120,000 per year  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://www.gra.gov.gy/income-tax-rates-threshold/)_
 - **Personal allowance / tax-free threshold** — G$130,000 per month (G$1,560,000 per year) or one-third of income, whichever is greater GYD  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://www.gra.gov.gy/notice-to-employers-employees-self-employed-persons-revised-personal-allowance-and-deductions-for-income-tax-2025-copy/)_
 - **Monthly first-band ceiling (25% applies up to)** — G$260,000 of chargeable income per month GYD  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://www.gra.gov.gy/income-tax-rates-threshold/)_
 - **Overtime relief** — First G$50,000 of monthly overtime pay is tax-free GYD  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://dpi.gov.gy/income-tax-threshold-increased-to-130000/)_
 - **Second-job relief** — First G$50,000 of monthly income from a second job is tax-free GYD  _(Income Tax Act (Cap 81:01) / Budget 2025 — https://dpi.gov.gy/income-tax-threshold-increased-to-130000/)_
-- **NIS contribution deduction** — Employee NIS contributions are deductible before computing chargeable income (allowable deduction) ((approx — confirm))  _(Income Tax Act (Cap 81:01) — https://www.gra.gov.gy/notice-to-employers-employees-self-employed-persons-revised-personal-allowance-and-deductions-for-income-tax-2025-copy/)_
+- **NIS contribution deduction** — Employee NIS contributions are deductible before computing chargeable income (allowable deduction) (approx — confirm)  _(Income Tax Act (Cap 81:01) — https://www.gra.gov.gy/notice-to-employers-employees-self-employed-persons-revised-personal-allowance-and-deductions-for-income-tax-2025-copy/)_
 - **Non-resident individuals** — Non-residents are taxed on Guyana-source income: payments to non-residents not engaged in trade or business in Guyana bear 20% withholding tax, and income arising outside Guyana paid to them is not taxed; PwC reports that the personal allowance is restricted for non-residents  _(Income Tax Act (Cap 81:01), Guyana Revenue Authority consolidated text (revised to January 2019), s 39(1)(b) and Third Schedule — https://www.gra.gov.gy/wp-content/uploads/2019/07/IncomeTaxActrevDec18Jan19final.pdf ; PwC Worldwide Tax Summaries, Residence (allowance restriction) — https://taxsummaries.pwc.com/guyana/individual/residence)_
 - **Residence test** — An individual is resident in Guyana if they reside in Guyana for more than 183 days in the year, or ordinarily reside there with only such temporary absences as the Commissioner-General considers reasonable and consistent with the claim to residence  _(Income Tax Act (Cap 81:01), Guyana Revenue Authority consolidated text (revised to January 2019), s 2 (definition of resident in Guyana) — https://www.gra.gov.gy/wp-content/uploads/2019/07/IncomeTaxActrevDec18Jan19final.pdf)_
 - **Individual return filing & payment deadline** — 30 April following the income year  _(Income Tax Act (Cap 81:01) — https://gra.gov.gy/optimal/individual-income-tax-return/)_

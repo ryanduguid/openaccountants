@@ -154,6 +154,8 @@ NON_GOV_AUTHORITY = frozenset((
                           # pension body, which publishes the contribution rules. Bare .zm.
     'likumi.lv',          # Likumi.lv, the Republic of Latvia's official consolidated
                           # legislation portal run by the official publisher Latvijas Vestnesis.
+    'vfsc.vu',            # Vanuatu Financial Services Commission, the statutory regulator
+                          # that keeps the company registry. Bare .vu.
     'mra.mw',             # Malawi Revenue Authority
     'dgi.bf',             # Burkina Faso, Direction Generale des Impots
     'impots.cm',          # Cameroon, Direction Generale des Impots
@@ -514,7 +516,7 @@ PUBLISHER = re.compile(r'pwc|kpmg|deloitte|ey\.com|bakermckenzie|chambers|'
 
 def classify(domain):
     """'authority', 'secondary', or None for boilerplate."""
-    d = domain.lower()
+    d = domain.lower().split(':', 1)[0]  # a port is not part of the host
     if d.startswith('www.'):
         d = d[4:]
     if any(b in d for b in BOILERPLATE):

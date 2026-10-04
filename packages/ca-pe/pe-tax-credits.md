@@ -4,7 +4,8 @@ description: Use this skill for Prince Edward Island provincial tax credits — 
 jurisdiction: CA
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PE Tax Credits
 
-## Prince Edward Island — Provincial Tax Credits — Skill v1.0
+## Prince Edward Island — Provincial Tax Credits — Skill v1.1
 
 This skill covers the full inventory of Prince Edward Island provincial tax credits available to individuals and corporations for the 2025 tax year. It is designed to be loaded alongside `pe-individual-return` (for personal returns) or alongside the federal T2 corporate skill (for CIT credits). It is the canonical reference for PEI-specific reductions, refundable credits, non-refundable credits, and the two flagship business incentives: the **PEI Equity Tax Credit** and the **PEI Innovation and Development Labour Rebate**.
 
@@ -77,7 +78,7 @@ The PEI Low-Income Tax Reduction is a non-refundable mechanism on Form PE428 tha
 - **Each dependent child under 18** — ~$300
 - **Each dependent child under 18** — ~$300
 - **Phase-out threshold** — family net income around $22,000
-- **Phase-out rate** — 5% percent (on each dollar above the threshold)
+- **Phase-out rate** — 5% (on each dollar above the threshold)
 
 Conservative default: if the published PE428 for 2025 has not been confirmed by reviewer, **use prior-year values and flag for review** rather than estimating.
 
@@ -106,7 +107,7 @@ PEI Finance has periodically described the credit as "up to roughly $220 for a s
 ### Income test
 
 - **Full-payment threshold** — approximately $30,000
-- **Phase-out rate** — 2% percent (per dollar of family net income above the threshold)
+- **Phase-out rate** — 2% (per dollar of family net income above the threshold)
 - **Fully phased out at** — family net income in the $45,000–$50,000 range for a typical family
 
 ### Payment schedule

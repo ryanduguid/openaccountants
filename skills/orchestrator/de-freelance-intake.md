@@ -1,11 +1,11 @@
 ---
 name: de-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their German tax returns AND mentions freelancing (Freiberufler), self-employment (Selbstständigkeit), trade business (Gewerbetreibender), contracting, or sole proprietorship (Einzelunternehmer). Trigger on phrases like "help me do my German taxes", "prepare my EStE", "I'm self-employed in Germany", "I'm a Freiberufler", "do my Steuererklärung", "prepare my USt and ESt", or any similar phrasing where the user is a Germany-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Germany self-employed tax workflow -- every other skill in the stack (germany-vat-return, de-income-tax, de-social-contributions, de-trade-tax, de-estimated-tax, de-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Germany full-year residents only; self-employed individuals and sole proprietors.
-version: 0.1
+version: 0.2
 jurisdiction: DE
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ This skill does not compute any tax figures. Its job is to collect all the facts
 
 ## Design principles
 
-v0.1 follows the same upload-first, inference-then-confirm pattern as mt-freelance-intake v0.1:
+v0.2 follows the same upload-first, inference-then-confirm pattern as mt-freelance-intake v0.2:
 
 1. **Compact refusal sweep** using `ask_user_input_v0` -- 3-5 interactive questions, ~30 seconds.
 2. **Upload-first workflow** -- after the refusal check, the user dumps everything they have.
@@ -93,7 +93,7 @@ Q3: "VAT status?"
 - **Q1 evaluation** — Q1 = Full year -> continue. Q1 = Part year or did not live in Germany -> stop. "I'm set up for full-year German residents (unbeschränkt steuerpflichtig) only. Part-year or non-residents have different rules around beschränkte Steuerpflicht. You need a Steuerberater who handles non-resident returns."
 - **Q2 evaluation** — Q2 = Freiberufler -> continue. No Gewerbesteuer applies. Q2 = Gewerbetreibender -> continue with a flag: Gewerbesteuer applies, will need Hebesatz for the municipality. Q2 = GbR / Partnership -> stop. "Partnerships file a separate Feststellungserklärung with different rules for profit allocation. You need a Steuerberater familiar with partnership returns." Q2 = GmbH / UG / Kapitalgesellschaft -> stop. "I don't cover corporate returns. Kapitalgesellschaften file KStE and GewStE with separate rules. You need a Steuerberater." Q2 = Not sure -> ask one follow-up: "What is your main activity? Freiberufler covers professions like software development, consulting, writing, design, medicine, law, engineering (Katalogberufe under §18 EStG). Gewerbetreibender covers trade, retail, manufacturing, or anything not listed under §18. If your Finanzamt issued a Gewerbeschein, you're Gewerbetreibender."  _(§18 EStG; §15 EStG)_
 - **Q3 evaluation** — Q3 = Regelbesteuerung -> continue. Standard UStVA monthly/quarterly. Q3 = Kleinunternehmer -> continue. No UStVA filing required (unless voluntarily opted in). Turnover must stay under EUR 25,000 prior year / EUR 100,000 current year. Q3 = Not sure -> ask one follow-up: "Do you charge 19% (or 7%) USt on your invoices? If yes, you're Regelbesteuert. If your invoices say 'Kleinunternehmer gemäß §19 UStG' or show no USt, you're Kleinunternehmer."  _(§19 UStG)_
-- **Kleinunternehmer turnover threshold** — EUR 25,000 prior year / EUR 100,000 current year EUR  _(§19 UStG)_
+- **Kleinunternehmer turnover threshold** — EUR 25,000 prior year / EUR 100,000 current year  _(§19 UStG)_
 
 **After Q1-Q3 pass, ask the second batch of scope questions (also batched):**
 
@@ -154,10 +154,10 @@ When documents arrive, parse each one. For each document, extract:
 - **Bank statement (Kontoauszüge) extraction items** — Total deposits (candidate Betriebseinnahmen); Recurring inflows (client payments with names); Outflows to Finanzamt (Vorauszahlungen ESt/SolZ/KiSt with dates); Outflows to Finanzamt (USt-Vorauszahlungen with dates); Outflows to Krankenkasse GKV or PKV (health insurance premiums); Outflows to Rentenversicherung (if voluntary or Pflichtversichert via Künstlersozialkasse); Equipment purchases (potential Anlagevermögen); Transfers to personal account (Privatentnahmen); Office rent payments (Büromiete); SaaS / software subscriptions; Professional memberships (IHK Beiträge, Berufsverband); Insurance payments (Berufshaftpflicht, Kfz); Telefon / Internet payments; Kfz expenses (fuel, maintenance, leasing)
 - **Sales invoices (Ausgangsrechnungen) extraction items** — Client names and amounts (netto + USt); Whether USt was charged (Regelbesteuerung indicator); Whether invoices say "Kleinunternehmer §19 UStG" (Kleinunternehmer indicator); Total Umsatz reconciliation against bank deposits; Any EU clients (innergemeinschaftliche Leistung -- reverse charge); Any non-EU clients (Drittlandsleistung -- §3a UStG); Proper invoice format check (§14 UStG requirements)  _(§3a UStG; §14 UStG)_
 - **Purchase invoices (Eingangsrechnungen) extraction items** — Expense category (Betriebsausgaben, Anlagevermögen, durchlaufende Posten); Vorsteuer amount on each (reclaimable for Regelbesteuert, cost for Kleinunternehmer); Supplier location (inland, EU, Drittland); Any items over EUR 800 netto (GWG threshold for immediate write-off) or over EUR 250 (Pool-Abschreibung); Any blocked categories (Bewirtungskosten 70% limit, Geschenke EUR 50 limit)
-- **GWG immediate write-off threshold** — EUR 800 netto EUR
-- **Pool-Abschreibung threshold** — EUR 250 EUR
+- **GWG immediate write-off threshold** — EUR 800 netto
+- **Pool-Abschreibung threshold** — EUR 250
 - **Bewirtungskosten limit** — 70% limit
-- **Geschenke limit** — EUR 50 EUR
+- **Geschenke limit** — EUR 50
 - **Prior year Steuerbescheid extraction items** — Prior year festgesetzte Einkommensteuer (drives Vorauszahlungen); Prior year Solidaritätszuschlag; Prior year Kirchensteuer (if applicable); Any Nachzahlung or Erstattung; Vorauszahlungen festgesetzt for current year
 - **Vorauszahlungsbescheide quarterly dates** — Quarterly ESt Vorauszahlungen (10 Mar, 10 Jun, 10 Sep, 10 Dec); SolZ amounts; KiSt amounts (if applicable)
 - **Prior EÜR (Anlage EÜR) extraction items** — Prior year Betriebseinnahmen and Betriebsausgaben; Prior year Gewinn; Capital allowances schedule (AfA-Tabelle -- continuing depreciation); Any Sonderabschreibung §7g used  _(§7g)_
@@ -242,7 +242,7 @@ After the user confirms the summary (or corrects it), ask about things that cann
 7. **Bundesland** -- Needed for Kirchensteuersatz and Gewerbesteuer Hebesatz (if Gewerbetreibender).
 8. **Other income** -- Employment income (Anlage N), rental (Anlage V), Kapitalerträge (Anlage KAP).
 
-- **Tagespauschale home office rule** — EUR 6/day, max EUR 1,260/year, since 2023 reform (or actual costs if Mittelpunkt der Tätigkeit) EUR
+- **Tagespauschale home office rule** — EUR 6/day, max EUR 1,260/year, since 2023 reform (or actual costs if Mittelpunkt der Tätigkeit)
 
 Call `ask_user_input_v0` with:
 
@@ -295,8 +295,8 @@ Q: "Kirchensteuer?"
 
 If yes -> need Bundesland for rate (8% in Bayern/Baden-Württemberg, 9% elsewhere).
 
-- **Kirchensteuer rate Bayern/Baden-Württemberg** — 8% %
-- **Kirchensteuer rate other Bundesländer** — 9% %
+- **Kirchensteuer rate Bayern/Baden-Württemberg** — 8%
+- **Kirchensteuer rate other Bundesländer** — 9%
 
 Call `ask_user_input_v0` with:
 
@@ -508,9 +508,9 @@ For an unprepared user (has to go fetch documents):
 
 ### Change log
 
-- **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
+- **v0.2 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.2.
 
-## End of Intake Skill v0.1
+## End of Intake Skill v0.2
 
 ## Disclaimer
 

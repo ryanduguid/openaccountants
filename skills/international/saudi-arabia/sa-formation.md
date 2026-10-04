@@ -4,7 +4,8 @@ description: "ALWAYS read this skill whenever asked about forming, incorporating
 jurisdiction: SA
 category: formation
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Mehran Habib
 review_status: pending_review
 tier: 2
@@ -13,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # SA Formation
 
-## Saudi Arabia — Business Formation & Entity Selection — Skill v1.0
+## Saudi Arabia — Business Formation & Entity Selection — Skill v1.1
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-06 Mehran Habib checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -609,7 +610,7 @@ Why not RHQ? Acme Cloud's regional management remains in Dubai. The substance te
 
 ### Capital structure
 
-- **Paid-up capital (MISA Service license, typical)** — SAR 500,000 SAR (typical MISA expectation for services license — verify against the current MISA capital schedule for the precise activity code)
+- **Paid-up capital (MISA Service license, typical)** — SAR 500,000 (typical MISA expectation for services license — verify against the current MISA capital schedule for the precise activity code)
 - **Shareholder structure** — 100% Acme Cloud Inc. (single-member LLC permitted since 2022 Companies Law).
 - **Manager** — General Manager appointed (initially seconded from US parent on a work visa; later replaced by a locally hired Saudi GM to support Nitaqat scoring).
 
@@ -637,16 +638,16 @@ Why not RHQ? Acme Cloud's regional management remains in Dubai. The substance te
 
 ### Tax position
 
-- **CIT rate on Saudi LLC taxable income** — 20% %
+- **CIT rate on Saudi LLC taxable income** — 20%
 - **VAT rate on Saudi customer invoices** — 15% % (Voluntary VAT registration from day 1 to allow input VAT recovery on local expenses (office rent, utilities, professional fees, equipment))
-- **WHT on payments to US parent — technical/consulting fees and royalties on intercompany IP licence** — 5% % (with treaty consideration — Saudi Arabia and the US do not currently have a bilateral DTT in force; verify, as treaties are evolving)
-- **WHT on dividends to US parent** — 5% %
-- **Royalties WHT** — 15% % (subject to treaty if applicable)
-- **GOSI employer contribution (Saudi employees)** — 11.75% % (existing subscribers; 12.25% for a first-time subscriber from 3 July 2024 on the July 2025 rates)
-- **GOSI employee contribution (Saudi employees)** — 9.75% % (existing subscribers; 10.25% on the same basis)
-- **GOSI employer contribution (non-Saudi employees)** — 2% % (occupational hazards only)
+- **WHT on payments to US parent — technical/consulting fees and royalties on intercompany IP licence** — 5% (with treaty consideration — Saudi Arabia and the US do not currently have a bilateral DTT in force; verify, as treaties are evolving)
+- **WHT on dividends to US parent** — 5%
+- **Royalties WHT** — 15% (subject to treaty if applicable)
+- **GOSI employer contribution (Saudi employees)** — 11.75% (existing subscribers; 12.25% for a first-time subscriber from 3 July 2024 on the July 2025 rates)
+- **GOSI employee contribution (Saudi employees)** — 9.75% (existing subscribers; 10.25% on the same basis)
+- **GOSI employer contribution (non-Saudi employees)** — 2% (occupational hazards only)
 - **Saudization** — Sector benchmark applies; first 6–12 months grace; thereafter Nitaqat tier tracking. Aim for Medium Green or higher to preserve work-visa privileges.
-- **Transfer pricing — Local File / Master File threshold** — SAR 200M SAR (Local File / Master File obligations if Saudi LLC revenue ≥ SAR 200M)
+- **Transfer pricing — Local File / Master File threshold** — SAR 200M (Local File / Master File obligations if Saudi LLC revenue ≥ SAR 200M)
 - **Transfer pricing — CbCR threshold** — SAR 3.2B SAR (CbCR if global group revenue ≥ SAR 3.2B (which Acme Cloud's group may meet))
 - **Transfer pricing scope** — ZATCA Transfer Pricing Bylaws apply to intercompany SaaS licensing, cost-plus services, and management fees. Arm's-length pricing on the intercompany SaaS reseller arrangement is essential.
 
@@ -725,7 +726,7 @@ RHQ Program tax incentive (0% CIT / 0% WHT for 30 years) confirmed by Ministeria
 
 The MISA Negative List is amended periodically — confirm currency before issuing a green-light recommendation.
 
-## End of Skill v1.0 — sa-formation.
+## End of Skill v1.1 — sa-formation.
 
 End of Skill v1.0 — sa-formation.
 

@@ -1,10 +1,10 @@
 ---
 name: sd-corporate-income-tax
 description: Use this skill whenever asked about Sudanese corporate income tax (Business Profits Tax) for resident companies, branches of foreign companies, and petroleum operations — to compute, review, or explain BPT liability, sector rates, deductions, losses, free zones, and the petroleum PSA regime. Trigger on phrases like "Sudan corporate tax", "Sudan BPT", "business profits tax Sudan", "ضريبة أرباح الأعمال السودان", "Sudan petroleum tax", or any request to prepare or check a Sudanese corporate tax return. ALWAYS read this skill before touching any Sudan corporate tax work.
-version: 0.1
+version: 0.2
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-07-22
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Sudan Corporate Income Tax (Business Profits Tax — BPT) Skill
 
-## Sudan Corporate Income Tax (Business Profits Tax — BPT) Skill v0.1
+## Sudan Corporate Income Tax (Business Profits Tax — BPT) Skill v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -116,7 +116,7 @@ This skill does NOT cover:
 
 ### Initial depreciation allowance
 
-- **Initial depreciation allowance** — Newly purchased machinery and equipment receive **20% initial depreciation** of purchase price after being put into production. %  _(Investment Incentive Law 2021)_
+- **Initial depreciation allowance** — Newly purchased machinery and equipment receive **20% initial depreciation** of purchase price after being put into production.  _(Investment Incentive Law 2021)_
 
 ## Section 5 — Edge cases and special rules
 

@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for British Virgin Islands (tax year
 jurisdiction: VG
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,9 +19,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **VAT / GST** — None — there is no VAT or GST in the British Virgin Islands; there is no standard rate, reduced rate, zero rate, registration threshold, return or reverse-charge mechanism (No VAT/GST statute in force)  _(No VAT/GST statute in force)_
 - **VAT registration threshold** — Not applicable — no VAT registration exists (No VAT/GST statute in force)  _(No VAT/GST statute in force)_
 - **VAT return filing frequency** — Not applicable — no VAT returns are filed (No VAT/GST statute in force)  _(No VAT/GST statute in force)_
-- **Import customs duty (the main indirect tax)** — Levied on most imported goods, commonly in the range of 5%–20% ad valorem depending on goods classification percent (approx — confirm by tariff classification)  _(Customs Management and Duties Act, 2010)_
-- **Stamp duty on transfers of BVI real estate (Belongers)** — 4% of consideration / market value for Belongers percent (approx — confirm)  _(Stamp Act)_
-- **Stamp duty on transfers of BVI real estate (Non-Belongers)** — 12% of consideration / market value for Non-Belongers percent (approx — confirm)  _(Stamp Act)_
+- **Import customs duty (the main indirect tax)** — Levied on most imported goods, commonly in the range of 5%–20% ad valorem depending on goods classification (approx — confirm by tariff classification)  _(Customs Management and Duties Act, 2010)_
+- **Stamp duty on transfers of BVI real estate (Belongers)** — 4% of consideration / market value for Belongers (approx — confirm)  _(Stamp Act)_
+- **Stamp duty on transfers of BVI real estate (Non-Belongers)** — 12% of consideration / market value for Non-Belongers (approx — confirm)  _(Stamp Act)_
 
 <!-- openaccountants-cta-block -->
 

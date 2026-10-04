@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Libya (t
 jurisdiction: LY
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Entity types, capital and incorporation
 
 - **Common entity types** — Limited liability company (LLC), joint stock company (JSC), and branch office of a foreign company  _(Commercial Activity Law No. 23 of 2010 (https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/libya))_
-- **Minimum capital — LLC (locally owned)** — LYD 50,000 LYD (approx — confirm)  _(Commercial Activity Law No. 23 of 2010 (https://www.healyconsultants.com/libya-company-registration/setup-llc/))_
-- **Minimum capital — LLC with foreign participation** — LYD 500,000, of which 50% must be paid in cash on incorporation LYD (approx — confirm)  _(Decree No. 207 of 2012 (Ministry of Economy) (https://www.healyconsultants.com/libya-company-registration/setup-llc/))_
-- **Minimum capital — joint stock company (JSC)** — LYD 1,000,000; at least 30% paid at incorporation, remainder within five years LYD (approx — confirm)  _(Decree No. 207 of 2012 (Ministry of Economy) (https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/libya))_
+- **Minimum capital — LLC (locally owned)** — LYD 50,000 (approx — confirm)  _(Commercial Activity Law No. 23 of 2010 (https://www.healyconsultants.com/libya-company-registration/setup-llc/))_
+- **Minimum capital — LLC with foreign participation** — LYD 500,000, of which 50% must be paid in cash on incorporation (approx — confirm)  _(Decree No. 207 of 2012 (Ministry of Economy) (https://www.healyconsultants.com/libya-company-registration/setup-llc/))_
+- **Minimum capital — joint stock company (JSC)** — LYD 1,000,000; at least 30% paid at incorporation, remainder within five years (approx — confirm)  _(Decree No. 207 of 2012 (Ministry of Economy) (https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/libya))_
 - **Foreign ownership of branches/JVs** — Foreign enterprise activity is regulated by Decree No. 944 of 2022; foreign participation conditions vary by sector  _(Decree No. 944 of 2022 (https://www.lexology.com/library/detail.aspx?g=20374709-5734-4d8e-a159-90af5a3394b2))_
 - **Registration body** — Companies must register at the Commercial Register Office (Sijil Tijari) of the local municipality  _(Commercial Activity Law No. 23 of 2010 (https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/libya))_
 - **Core incorporation steps** — Reserve company name, notarize articles of association, deposit share capital, register with the Commercial Register, obtain tax and chamber-of-commerce registration (approx — confirm)  _(Commercial Activity Law No. 23 of 2010 (https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/libya))_

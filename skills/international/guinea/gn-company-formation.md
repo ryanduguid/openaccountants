@@ -3,7 +3,8 @@ name: gn-company-formation
 description: "Source-cited draft: company formation & entity choice for Guinea (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GN
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 category: formation
 tier: 2
@@ -59,14 +60,14 @@ Company law in Guinea follows the OHADA Uniform Act on Commercial Companies, wit
 
 - **Limited liability company** — Société à Responsabilité Limitée (SARL) — most common private entity  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups (as described at [c2zadvisory.com](https://c2zadvisory.com/company-incorporation-in-guinea/)))_
 - **Public limited company** — Société Anonyme (SA) — used for larger operations  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups (as described at [c2zadvisory.com](https://c2zadvisory.com/company-incorporation-in-guinea/)))_
-- **Simplified joint-stock company** — Société par Actions Simplifiée (SAS) — flexible OHADA form ((approx — confirm)) (approx — confirm)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
-- **SARL minimum share capital** — **There is a mandatory statutory minimum: 1,000,000 francs CFA** (art. 311), subject to contrary national provisions. **"GNF 1,000,000" is not that figure** — it is the same number in a different currency, and the Act contains no clause converting its amounts for member states outside the CFA zone. Treat the Guinean amount as unknown ((approx — confirm))  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974; the GNF figure as described at [healyconsultants.com](https://www.healyconsultants.com/guinea-company-registration/setup-llc/)))_
-- **SA minimum share capital** — **The OHADA minimum is 10,000,000 francs CFA** (art. 387), with no derogation clause. **Restating it as "GNF 10,000,000" changes the requirement by an order of magnitude**, and the "approx. USD 14,000" attached to it is the value of the **CFA** amount, not of the GNF one — the two cannot both be right. Treat the Guinean amount as unknown ((approx — confirm))  _(AUSCGIE 2014, art. 387 — https://biblio.ohada.org/doc_num.php?explnum_id=3974; the GNF figure as described at [healyconsultants.com](https://www.healyconsultants.com/guinea-company-registration/setup-llc/)))_
+- **Simplified joint-stock company** — Société par Actions Simplifiée (SAS) — flexible OHADA form (approx — confirm)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
+- **SARL minimum share capital** — **There is a mandatory statutory minimum: 1,000,000 francs CFA** (art. 311), subject to contrary national provisions. **"GNF 1,000,000" is not that figure** — it is the same number in a different currency, and the Act contains no clause converting its amounts for member states outside the CFA zone. Treat the Guinean amount as unknown (approx — confirm)  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974; the GNF figure as described at [healyconsultants.com](https://www.healyconsultants.com/guinea-company-registration/setup-llc/)))_
+- **SA minimum share capital** — **The OHADA minimum is 10,000,000 francs CFA** (art. 387), with no derogation clause. **Restating it as "GNF 10,000,000" changes the requirement by an order of magnitude**, and the "approx. USD 14,000" attached to it is the value of the **CFA** amount, not of the GNF one — the two cannot both be right. Treat the Guinean amount as unknown (approx — confirm)  _(AUSCGIE 2014, art. 387 — https://biblio.ohada.org/doc_num.php?explnum_id=3974; the GNF figure as described at [healyconsultants.com](https://www.healyconsultants.com/guinea-company-registration/setup-llc/)))_
 - **Registration channel** — Guichet Unique (one-stop shop) at APIP — handles RCCM commercial registry, NIF tax number, and CNSS registration  _(APIP Guichet Unique procedures; OHADA Uniform Act (as described at [startbutton.africa](https://www.startbutton.africa/blog/how-to-register-business-guinea-conakry)))_
 - **Core incorporation steps** — Draft statutes; deposit share capital in a blocked account; file with APIP for RCCM, NIF and CNSS; publish a legal notice  _(APIP Guichet Unique procedures; OHADA Uniform Act (as described at [startbutton.africa](https://www.startbutton.africa/blog/how-to-register-business-guinea-conakry)))_
-- **Registration fees** — Around GNF 530,000 base fee, plus a sliding registration duty on capital (about 1% for capital GNF 10m–100m, 0.25% above GNF 500m) ((approx — confirm)) GNF (approx — confirm)  _([APIP Guichet Unique fee schedule](https://www.startbutton.africa/blog/how-to-register-business-guinea-conakry))_
-- **Incorporation timeline** — Roughly 1–2 weeks through the APIP one-stop shop ((approx — confirm)) (approx — confirm)  _(APIP Guichet Unique procedures)_
-- **Core annual compliance** — Annual OHADA/SYSCOHADA financial statements; IS return by 30 April; monthly VAT and payroll filings; CNSS declarations ((approx — confirm)) (approx — confirm)  _(OHADA Uniform Act on Accounting Law (SYSCOHADA); Code Général des Impôts (CGI))_
+- **Registration fees** — Around GNF 530,000 base fee, plus a sliding registration duty on capital (about 1% for capital GNF 10m–100m, 0.25% above GNF 500m) (approx — confirm)  _([APIP Guichet Unique fee schedule](https://www.startbutton.africa/blog/how-to-register-business-guinea-conakry))_
+- **Incorporation timeline** — Roughly 1–2 weeks through the APIP one-stop shop (approx — confirm)  _(APIP Guichet Unique procedures)_
+- **Core annual compliance** — Annual OHADA/SYSCOHADA financial statements; IS return by 30 April; monthly VAT and payroll filings; CNSS declarations (approx — confirm)  _(OHADA Uniform Act on Accounting Law (SYSCOHADA); Code Général des Impôts (CGI))_
 
 <!-- openaccountants-cta-block -->
 

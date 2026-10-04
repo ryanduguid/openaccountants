@@ -5,7 +5,7 @@ jurisdiction: TT
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Personal allowance (tax-free threshold)** — TTD 90,000 per year from income year 2023 (TTD 84,000 for 2021 and 2022; TTD 72,000 for 2018 to 2020)  _(Inland Revenue Division, Individual Income Tax Deductions and Allowances by Income Year 2018 to 2023 — https://www.ird.gov.tt/Media/Default/IRDForms/I-Individual_Income_Tax_Deductions_and_Allowances--2023.pdf)_
 - **Personal allowance for non-residents** — Not available, except to non-resident individuals aged 60 or over receiving a pension accrued or derived from Trinidad and Tobago  _(Inland Revenue Division, Individual Income Tax Deductions and Allowances by Income Year 2018 to 2023 — https://www.ird.gov.tt/Media/Default/IRDForms/I-Individual_Income_Tax_Deductions_and_Allowances--2023.pdf)_
 - **Non-resident rates on TT-source income** — Same 25% / 30% scale applies to chargeable income; passive income may instead suffer final withholding tax  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/taxes-on-personal-income)_
-- **Residence test** — Individual is resident if present in Trinidad and Tobago for at least 183 days in the year of income, or otherwise ordinarily resident ((approx — confirm))  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/residence)_
+- **Residence test** — Individual is resident if present in Trinidad and Tobago for at least 183 days in the year of income, or otherwise ordinarily resident (approx — confirm)  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/residence)_
 - **National Insurance (NIS) contributions** — Employee NIS contributions are deductible in computing chargeable income  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/deductions)_
 - **Tertiary education expenses deduction** — Up to TTD 72,000 per year from income year 2019 (TTD 60,000 in 2018) for tertiary education at institutions outside the region, for the taxpayer, spouse or child, with one return trip a year allowed  _(Inland Revenue Division, Individual Income Tax Deductions and Allowances by Income Year 2018 to 2023 — https://www.ird.gov.tt/Media/Default/IRDForms/I-Individual_Income_Tax_Deductions_and_Allowances--2023.pdf)_
 - **Approved pension/annuity/NIS deduction cap** — Contributions to approved pension funds, annuities and NIS deductible up to TTD 60,000 per year combined from income year 2022 (TTD 50,000 before)  _(Inland Revenue Division, Individual Income Tax Deductions and Allowances by Income Year 2018 to 2023 — https://www.ird.gov.tt/Media/Default/IRDForms/I-Individual_Income_Tax_Deductions_and_Allowances--2023.pdf)_

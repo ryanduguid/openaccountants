@@ -1,10 +1,10 @@
 ---
 name: ie-non-dom
 description: "Use this skill for any question about Ireland's non-dom tax rules. Trigger on: \"Ireland non-dom\", \"Irish non-domiciled\", \"remittance basis Ireland\", \"move to Ireland tax\", \"Irish tax foreign income\", \"Ireland domicile tax\", \"not domiciled Ireland\", \"Irish resident non-dom\", \"Ireland foreign dividends tax\", \"Irish non-dom CGT\". Covers non-dom eligibility, remittance basis, Irish-source income treatment, CGT for non-doms, and comparison with UK non-dom."
-version: 1.0
+version: 1.1
 jurisdiction: IE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -69,7 +69,7 @@ Moving to Ireland and then leaving after a few years doesn't immediately termina
 
 ## Section 6 — CGT: 33% on Irish Assets
 
-- **Effective CGT rate for companies** — 33% percent  _(Section 28 TCA)_
+- **Effective CGT rate for companies** — 33%  _(Section 28 TCA)_
 
 **CGT rates and amounts**
 

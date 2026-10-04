@@ -1,10 +1,10 @@
 ---
 name: montenegro-income-tax
 description: Use this skill whenever asked about Montenegro personal income tax (porez na dohodak fizičkih lica) for self-employed individuals, sole proprietors (preduzetnik), and employees. Trigger on phrases like "how much tax do I pay in Montenegro", "Montenegro income tax", "GPP-FL", "IOPPD", "prirez", "municipal surtax", "Europe Now", "Evropa sad", "self-employed tax Montenegro", "Montenegro payroll", "pension contribution Montenegro", "PIO", "Montenegro net salary", or any question about computing or filing personal income tax, payroll withholding, or social contributions for an individual or sole proprietor in Montenegro. Also trigger when preparing or reviewing a GPP-FL annual return or an IOPPD monthly payroll report, computing employee/employer social contributions, or advising on the progressive 0/9/15% rate structure and the 13/15% municipal surtax. This skill covers PIT rate bands (employment monthly vs self-employment annual), the post-Europe-Now-2 contribution structure, municipal surtax, residency, VAT registration threshold, forms, and deadlines. ALWAYS read this skill before touching any Montenegro income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: ME
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Montenegro Personal Income Tax -- Self-Employed
 
-## Montenegro Personal Income Tax -- Self-Employed Skill v0.1
+## Montenegro Personal Income Tax -- Self-Employed Skill v0.2
 
 > **Tier 2 (research-verified).** Figures below are drawn from PwC Worldwide Tax Summaries (reviewed 27 March 2026), KPMG Montenegro, and Orbitax. They have NOT yet been signed off by a Montenegrin licensed accountant. Treat every computed liability as an estimate pending professional review.
 
@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Monthly payroll report deadline | 15th of the following month (Form IOPPD) |
 | Validated by | Pending — requires sign-off by a Montenegrin licensed accountant |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Brackets (2025; rates unchanged into 2026 per PwC review 27 March 2026)
 
@@ -114,7 +114,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Employer pension abolition** — Employer share of pension/disability was abolished from 1 October 2024 under Europe Now 2.  _(PwC)_
 - **Health contribution abolition** — Compulsory health insurance contributions were abolished from 1 January 2022 under Europe Now 1 (previously 8.5% employee + 2.3% employer = 10.8%); health is now funded from general taxation.  _(Orbitax/KPMG)_
-- **Pension/disability contribution ceiling** — EUR 68,765 EUR (2024 figure, indexed by PIO Fund; [RESEARCH GAP — reviewer to confirm the 2025/2026 indexed ceiling with the PIO Fund.])  _(PwC)_
+- **Pension/disability contribution ceiling** — EUR 68,765 (2024 figure, indexed by PIO Fund; [RESEARCH GAP — reviewer to confirm the 2025/2026 indexed ceiling with the PIO Fund.])  _(PwC)_
 
 ### Conservative Defaults
 
@@ -383,7 +383,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 | Health | 0.0% (abolished Jan 2022) | 0.0% (abolished Jan 2022) |
 | **Total** | **10.5%** | **0.5%** |
 
-- **Pension/disability contribution ceiling** — EUR 68,765 EUR (2024 figure, indexed by PIO Fund; [RESEARCH GAP — reviewer to confirm the 2025/2026 indexed ceiling with the PIO Fund.])  _(PwC)_
+- **Pension/disability contribution ceiling** — EUR 68,765 (2024 figure, indexed by PIO Fund; [RESEARCH GAP — reviewer to confirm the 2025/2026 indexed ceiling with the PIO Fund.])  _(PwC)_
 
 > A possible employer "labor fund" / professional-rehabilitation-of-disabled-persons levy and chamber/union contributions appear in some guides but were NOT confirmed on PwC for the current period. [RESEARCH GAP — reviewer to confirm with the Revenue and Customs Administration before relying on them.]
 
@@ -407,7 +407,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 ### 5.9 VAT Interaction
 
 - **Standard VAT (PDV) rate** — 21%  _(PwC)_
-- **Mandatory VAT registration threshold** — EUR 30,000 EUR (taxable turnover in preceding 12 months; register within 10 days; voluntary registration allowed below)  _(PwC)_
+- **Mandatory VAT registration threshold** — EUR 30,000 (taxable turnover in preceding 12 months; register within 10 days; voluntary registration allowed below)  _(PwC)_
 
 **VAT Interaction Table**
 

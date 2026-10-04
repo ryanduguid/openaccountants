@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Lebanon (tax year 2025
 jurisdiction: LB
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Tax on salaries and wages (Chapter 3)
 
 - **Payroll tax bracket rescaling context** — Employment income is taxed under a dedicated payroll tax with progressive brackets, withheld at source by the employer. Brackets have been repeatedly re-scaled to track currency depreciation; the figures below reflect the 2024–2025 budget-law updates and should be confirmed against the latest circular.
-- **Progressive payroll tax rate range** — 2% to 25% percent  _(Income Tax Law (Decree-Law No. 144 of 1959), Chapter 3 — https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income)_
+- **Progressive payroll tax rate range** — 2% to 25%  _(Income Tax Law (Decree-Law No. 144 of 1959), Chapter 3 — https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income)_
 - **Annual payroll bracket range (2025)** — LL 360 million up to LL 13.5 billion LBP (approx — confirm against 2025 MoF circular)  _(2024 Budget Law — https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income)_
 - **Family exemption — single individual** — LL 450,000,000 per year LBP  _(2024 Budget Law — https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income)_
 - **Additional exemption — married with unemployed spouse** — LL 225,000,000 added to the single exemption LBP  _(2024 Budget Law — https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income)_
@@ -25,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Tax on business/professional income (Chapter 1)
 
 - **Business/professional income tax basis** — Income of sole proprietorships, general partnerships and self-employed professionals is taxed on a separate progressive schedule under Chapter 1.
-- **Progressive business income tax rate range** — 4% to 25% percent  _(Income Tax Law (Decree-Law No. 144 of 1959), Chapter 1 — https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income)_
+- **Progressive business income tax rate range** — 4% to 25%  _(Income Tax Law (Decree-Law No. 144 of 1959), Chapter 1 — https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income)_
 - **Annual business-income bracket range** — LL 540 million up to LL 13.5 billion LBP (approx — confirm 2025 indexation)  _(2024 Budget Law — https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income)_
 
 ## Residence test, filing and payment

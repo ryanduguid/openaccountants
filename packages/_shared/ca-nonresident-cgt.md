@@ -1,10 +1,10 @@
 ---
 name: ca-nonresident-cgt
 description: "Canada non-resident capital gains: Section 116 clearance certificate, Part XIII withholding, taxable Canadian property (TCP), notional assessment. Trigger on: \"non-resident selling Canadian property\", \"Section 116 Canada\", \"clearance certificate CRA\", \"TCP taxable Canadian property\", \"withholding on sale Canada\", \"non-resident selling Canadian shares\", \"Part XIII withholding Canada\", \"NR4 Canada\"."
-version: 1.0
+version: 1.1
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -42,7 +42,7 @@ When a non-resident disposes of TCP, they must notify the CRA and obtain a **cle
 The withholding is on gross proceeds — not the gain. This can be extremely punishing on low-gain transactions.
 
 - **Notify CRA deadline** — Within 10 days of the sale (or before the sale if withholding obligation applies)  _(ITA §116)_
-- **Buyer withholding rate on gross proceeds if no clearance certificate** — 25% percent (or 50% for certain property, applied to gross proceeds)  _(ITA §116)_
+- **Buyer withholding rate on gross proceeds if no clearance certificate** — 25% (or 50% for certain property, applied to gross proceeds)  _(ITA §116)_
 
 ## Tax rate for non-residents on TCP gains
 
@@ -56,7 +56,7 @@ Combined federal + provincial top rates on the included portion: approximately 2
 
 ## Part XIII withholding on dividends
 
-- **Part XIII withholding on dividends to non-residents** — 25% percent (reduced by treaty — typically 15% for portfolio, 5% for 10%+ corporate shareholders under most DTAs; separate from capital gains rules above)  _(ITA §212–218 (Part XIII))_
+- **Part XIII withholding on dividends to non-residents** — 25% (reduced by treaty — typically 15% for portfolio, 5% for 10%+ corporate shareholders under most DTAs; separate from capital gains rules above)  _(ITA §212–218 (Part XIII))_
 
 ## Sources
 

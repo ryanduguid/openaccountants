@@ -5,7 +5,7 @@ jurisdiction: NA
 category: payroll
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,9 +24,9 @@ Employers must withhold Pay-As-You-Earn (PAYE) income tax from employees' remune
 - **Combined SSC contribution rate** — 1.8% total (0.9% employer + 0.9% employee)  _(Social Security Act — https://workforceafrica.com/statutory-deductions-in-namibia-employer-guide/)_
 - **SSC maximum monthly wage ceiling** — N$11,000 per month (max contribution N$99 per party) NAD  _(Social Security Act — https://thebrief.com.na/2025/01/social-security-revises-maternity-sick-leave-death-benefits-wage-ceilings/)_
 - **SSC minimum monthly wage floor** — N$500 per month (min contribution N$4.50 per party) NAD  _(Social Security Act — https://thebrief.com.na/2025/01/social-security-revises-maternity-sick-leave-death-benefits-wage-ceilings/)_
-- **SSC contribution remittance deadline** — By the 30th day of the month following the contribution month ((approx — confirm))  _(Social Security Act — https://workforceafrica.com/statutory-deductions-in-namibia-employer-guide/)_
+- **SSC contribution remittance deadline** — By the 30th day of the month following the contribution month (approx — confirm)  _(Social Security Act — https://workforceafrica.com/statutory-deductions-in-namibia-employer-guide/)_
 - **Vocational Education and Training (VET) levy** — 1% of actual annual payroll for employers with an annual payroll of N$1,000,000 or more, paid to the National Training Fund  _(Namibia Training Authority, VET Levy page (Vocational Education and Training Act 1 of 2008) — https://www.nta.com.na/vet-levy/)_
-- **Employees' Compensation Fund (workmen's compensation)** — Employer-only contribution at an industry-risk-based rate on payroll up to the prescribed ceiling ((approx — confirm))  _(Employees' Compensation Act — https://www.crs.co.za/news-flash-25-february-2025-namibia-social-security-and-employees-compensation-fund/)_
+- **Employees' Compensation Fund (workmen's compensation)** — Employer-only contribution at an industry-risk-based rate on payroll up to the prescribed ceiling (approx — confirm)  _(Employees' Compensation Act — https://www.crs.co.za/news-flash-25-february-2025-namibia-social-security-and-employees-compensation-fund/)_
 
 <!-- openaccountants-cta-block -->
 

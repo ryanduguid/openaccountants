@@ -1,10 +1,10 @@
 ---
 name: se-capital-gains
 description: "Sweden capital gains tax: 30% on capital income, ISK investment savings account (schablonbeskattning), exit tax on departure. Trigger on: \"Sweden CGT\", \"capital gains Sweden\", \"Sweden 30% capital gains\", \"ISK account Sweden\", \"investeringssparkonto\", \"sell shares Sweden\", \"Sweden exit tax\", \"Sweden capital income tax\"."
-version: 1.0
+version: 1.1
 jurisdiction: SE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -33,15 +33,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## ISK — Investment Savings Account (Investeringssparkonto)
 
 - **ISK** — The ISK is a tax wrapper for investments that replaces per-transaction CGT with an annual flat fee
-- **Annual schablonbeskattning** — approximately (government loan rate + 1%) × account value. For 2025: ~0.888% of average account value per year percent
+- **Annual schablonbeskattning** — approximately (government loan rate + 1%) × account value. For 2025: ~0.888% of average account value per year
 - **ISK tax treatment of disposals, dividends, contributions** — No CGT on individual disposals within the ISK. Dividends within the ISK: not separately taxed. Contributions in/out: no tax event.
 
 The ISK is highly favourable for active investors — all gains and dividends subject to one small annual charge rather than 30% per transaction.
 
 ## Real property
 
-- **Primary residence (privatbostad) sale tax** — 22% tax on 22/30 of the gain = effective rate ~16% on the gross gain percent (primary residence)
-- **Other residential property sale tax** — 22% on the full gain percent (other residential property)
+- **Primary residence (privatbostad) sale tax** — 22% tax on 22/30 of the gain = effective rate ~16% on the gross gain (primary residence)
+- **Other residential property sale tax** — 22% on the full gain (other residential property)
 - **Deferral relief (uppskovsavdrag)** — Deferral relief (uppskovsavdrag) available on sale of primary residence if reinvesting.
 
 ## Exit tax

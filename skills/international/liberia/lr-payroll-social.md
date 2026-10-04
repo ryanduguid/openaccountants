@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Liberia (ta
 jurisdiction: LR
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,10 +16,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## NASSCORP social security contributions
 
 - **NASSCORP overview** — Employers and employees contribute to NASSCORP, which runs a National Pension Scheme and an Employment Injury Scheme. Expatriate employees are generally not exempt.
-- **Employee NASSCORP contribution** — 4% of gross salary (pension scheme) percent  _(NASSCORP Act / Liberia Revenue Code — https://taxsummaries.pwc.com/republic-of-liberia/corporate/other-taxes)_
-- **Employer NASSCORP contribution** — 6% of gross salary (4% pension + 2% employment-injury) percent  _(NASSCORP Act / Liberia Revenue Code — https://taxsummaries.pwc.com/republic-of-liberia/corporate/other-taxes)_
-- **Employer pension portion** — 4% of gross salary (national pension scheme) percent  _(NASSCORP Act)_
-- **Employer employment-injury portion** — 2% of gross salary (employment injury scheme) percent  _(NASSCORP Act)_
+- **Employee NASSCORP contribution** — 4% of gross salary (pension scheme)  _(NASSCORP Act / Liberia Revenue Code — https://taxsummaries.pwc.com/republic-of-liberia/corporate/other-taxes)_
+- **Employer NASSCORP contribution** — 6% of gross salary (4% pension + 2% employment-injury)  _(NASSCORP Act / Liberia Revenue Code — https://taxsummaries.pwc.com/republic-of-liberia/corporate/other-taxes)_
+- **Employer pension portion** — 4% of gross salary (national pension scheme)  _(NASSCORP Act)_
+- **Employer employment-injury portion** — 2% of gross salary (employment injury scheme)  _(NASSCORP Act)_
 - **Expatriate coverage** — Expatriate employees are generally not exempt from NASSCORP contributions  _(NASSCORP Act — https://taxsummaries.pwc.com/republic-of-liberia/corporate/other-taxes)_
 - **Payroll income tax withholding (PAYE)** — Employer withholds personal income tax on salaries using the resident progressive bands (nil to LRD 70,000; 5%, 15% and 25% above LRD 70,000, 200,000 and 800,000), or 20% for non-residents  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/; PwC for the non-resident rate)_
 - **PAYE remittance deadline** — By the 10th day of the month following payment of wages  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_

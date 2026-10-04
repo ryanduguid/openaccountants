@@ -5,7 +5,7 @@ jurisdiction: LI
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ Liechtenstein applies a progressive national income tax topped up by a communal 
 - **Tax-free personal exemption (single)** — CHF 15,855 (Grundfreibetrag, Art. 19(1)(a))  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Art. 19(1) — https://www.gesetze.li/konso/pdf/2010340000)_
 - **Tax-free personal exemption (married, joint)** — CHF 31,710 (joint Grundfreibetrag, Art. 19(1)(c))  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Art. 19(1) — https://www.gesetze.li/konso/pdf/2010340000)_
 - **Tax-free personal exemption (single parent)** — CHF 23,783 (Grundfreibetrag, Art. 19(1)(b))  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Art. 19(1) — https://www.gesetze.li/konso/pdf/2010340000)_
-- **Net wealth taxed via notional yield (Sollertrag)** — Taxable net wealth × 4% notional yield is added to taxable income and taxed at income tax rates %  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Arts. 5 and 14(2)(l) — https://www.gesetze.li/konso/pdf/2010340000)_
+- **Net wealth taxed via notional yield (Sollertrag)** — Taxable net wealth × 4% notional yield is added to taxable income and taxed at income tax rates  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Arts. 5 and 14(2)(l) — https://www.gesetze.li/konso/pdf/2010340000)_
 - **Investment income on wealth-taxed assets** — Interest and dividend income on assets subject to wealth tax is exempt from income tax; instead a notional yield (Sollertrag) of 4% of the taxable wealth is added to taxable income  _(Steuergesetz (SteG), LR 640.0, LILEX consolidated text, Art. 5, Art. 14 Abs. 2 Bst. l and Art. 15 Abs. 1 Bst. a — https://www.gesetze.li/konso/pdf/2010340000)_
 - **Capital gains on movable private assets (e.g. securities)** — Exempt from the Erwerbssteuer: capital gains on the sale of movable and immovable private assets (Bst. m), gains on the sale or liquidation of participations in legal persons and their unrealised appreciation (Bst. o), profit distributions from participations (Bst. n) and gains on foreign real estate (Bst. l); business assets follow Art. 48 where its conditions apply  _(Steuergesetz (SteG, LGBl. 2010 Nr. 340), consolidated version in force from 1 July 2026 on gesetze.li, Art. 15 Abs. 2 Bst. l, m, n and o — https://www.gesetze.li/konso/pdf/2010340000?version=38 ; https://taxsummaries.pwc.com/liechtenstein/individual/income-determination)_
 - **Tax residence test** — Permanent or habitual residence (domicile or customary abode) in Liechtenstein  _(Tax Act of 23 September 2010 (Steuergesetz, SteG, LR 640.0; LILEX consolidated text), Art. 6(1) — https://www.gesetze.li/konso/pdf/2010340000)_

@@ -5,7 +5,7 @@ jurisdiction: CO
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **WHT on significant economic presence (SEP) payments** — **10%** where a non-resident with a significant economic presence in Colombia does **not** voluntarily register. Registration changes the treatment, so establish the payee's registration status before withholding — this is the head a digital or cross-border platform business meets  _(Estatuto Tributario (Decreto 624 de 1989, consolidated text on the Función Pública gestor normativo), art. 408 inciso 8 (Decreto 2039 de 2023) — https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=6533 ; https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
 - **Staleness warning on the source, not the guide** — The rates above were read against the Estatuto Tributario text on the Función Pública gestor normativo on 4 October 2026; PwC's table, the secondary source, is headed "FY 2023". Colombian withholding rates move with each tax reform, so confirm the article text before a payment rather than relying on either table  _(Estatuto Tributario (Decreto 624 de 1989, consolidated text on the Función Pública gestor normativo), art. 240, 245, 408 and 415 — https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=6533 ; https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
 - **Treaty relief** — Reduced WHT rates may apply under Colombia's double-tax treaties  _(Applicable double taxation conventions (Convenios para evitar la doble imposición) — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
-- **CIT return filing and payment** — Annual return filed electronically with DIAN; deadlines (typically Apr–May) staggered by NIT, with an advance payment installment for large taxpayers ((approx — confirm exact dates in DIAN annual deadline decree))  _(DIAN annual tax deadline decree (Decreto de plazos) — https://en.tpcgroup-int.com/news/2026-tax-calendar-in-colombia-transfer-pricing-and-key-obligations/)_
+- **CIT return filing and payment** — Annual return filed electronically with DIAN; deadlines (typically Apr–May) staggered by NIT, with an advance payment installment for large taxpayers (approx — confirm exact dates in DIAN annual deadline decree)  _(DIAN annual tax deadline decree (Decreto de plazos) — https://en.tpcgroup-int.com/news/2026-tax-calendar-in-colombia-transfer-pricing-and-key-obligations/)_
 
 <!-- openaccountants-cta-block -->
 

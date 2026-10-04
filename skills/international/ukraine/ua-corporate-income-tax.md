@@ -5,7 +5,7 @@ jurisdiction: UA
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,8 +18,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Overview of CIT rate structure** — The standard corporate income tax (CIT) rate is 18%, with elevated rates applying to financial-sector entities from 2025. A simplified single-tax regime is available to qualifying small businesses as an alternative to CIT.  _(Tax Code of Ukraine)_
 - **Standard CIT rate** — 18% (the basic rate, art. 136.1)  _(Tax Code of Ukraine No. 2755-VI (Податковий кодекс України, current consolidated text on zakon.rada.gov.ua), art. 136.1 — https://zakon.rada.gov.ua/laws/show/2755-17 ; https://taxsummaries.pwc.com/ukraine/corporate/taxes-on-corporate-income)_
 - **CIT rate for financial institutions (excluding insurers)** — 25% basic rate for the profit of financial institutions other than insurers, in force from 1 January 2024 (art. 136.1-1)  _(Tax Code of Ukraine No. 2755-VI (Податковий кодекс України, current consolidated text on zakon.rada.gov.ua), art. 136.1-1, inserted by Law 3474-IX of 21 November 2023 and amended by Law 4015-IX of 10 October 2024 — https://zakon.rada.gov.ua/laws/show/2755-17 ; https://taxsummaries.pwc.com/ukraine/corporate/taxes-on-corporate-income)_
-- **One-off elevated CIT rate on banks' 2024 profits** — 50% on banks' profit for the 2024 reporting year percent ((approx — confirm applicable year))  _(Tax Code of Ukraine)_
-- **Insurance companies** — 3% / 0% levy on insurance premiums in addition to / in lieu of standard CIT depending on contract type ((approx — confirm))  _(Tax Code of Ukraine)_
+- **One-off elevated CIT rate on banks' 2024 profits** — 50% on banks' profit for the 2024 reporting year (approx — confirm applicable year)  _(Tax Code of Ukraine)_
+- **Insurance companies** — 3% / 0% levy on insurance premiums in addition to / in lieu of standard CIT depending on contract type (approx — confirm)  _(Tax Code of Ukraine)_
 
 ## Tax base, withholding and deadlines
 
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Advance CIT on dividend distributions** — An advance CIT payment may be required on dividends, creditable against CIT liability  _(Tax Code of Ukraine)_
 - **Annual return deadline (annual filers)** — Within 60 calendar days following the end of the reporting year days  _([Tax Code of Ukraine](https://taxsummaries.pwc.com/ukraine/corporate/withholding-taxes))_
 - **Quarterly return deadline (quarterly filers)** — Within 40 calendar days following the end of the reporting quarter days  _(Tax Code of Ukraine)_
-- **CIT payment deadline** — Within 10 calendar days after the filing deadline for the relevant return days ((approx — confirm))  _(Tax Code of Ukraine)_
+- **CIT payment deadline** — Within 10 calendar days after the filing deadline for the relevant return days (approx — confirm)  _(Tax Code of Ukraine)_
 
 <!-- openaccountants-cta-block -->
 

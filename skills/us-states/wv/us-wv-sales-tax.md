@@ -4,7 +4,8 @@ description: Use this skill whenever asked about West Virginia sales tax, WV use
 jurisdiction: US-WV
 category: state-tax
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -64,14 +65,14 @@ Before proceeding with any West Virginia sales tax analysis, collect the followi
 
 ### 1.1 State Sales Tax Rate
 
-- **Consumers Sales and Service Tax rate** — 6.00% percent (T1)  _(W.Va. Code §11-15-3)_
+- **Consumers Sales and Service Tax rate** — 6.00% (T1)  _(W.Va. Code §11-15-3)_
 - **Consumers Sales and Service Tax naming note** — The name "Consumers Sales and Service Tax" reflects that WV broadly taxes services, unlike states that only tax TPP. (T1)
 
 ### 1.2 Local Sales Taxes [T1]
 
-- **Municipal local sales tax cap** — Up to 1.00% percent (T1)
+- **Municipal local sales tax cap** — Up to 1.00% (T1)
 - **Not all municipalities have adopted local option** — Not all municipalities have adopted the local option. (T1)
-- **Combined rate where local adopted** — 7.00% percent (T1)
+- **Combined rate where local adopted** — 7.00% (T1)
 - **Local tax administration** — Local taxes are administered by the State Tax Division. (T1)
 
 ### 1.3 Sourcing [T1]

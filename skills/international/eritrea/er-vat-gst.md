@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Eritrea (tax year 2025) — rate
 jurisdiction: ER
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,8 +16,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## No VAT — sales tax and services tax
 
 - **VAT / GST status** — Eritrea has no VAT or GST; it applies sales tax and services tax instead  _(Sales and Excise Tax Proclamation (Legal Notice 64/1994) — https://www.pwc.co.za/en/publications/vat-in-africa/eritrea-overview.html)_
-- **Sales tax on goods** — 4% percent (approx — sources vary 4%–5%; confirm)  _(Sales and Excise Tax Proclamation (Legal Notice 64/1994) — https://taxatlas.io/country/eritrea)_
-- **Services tax (sales tax on services)** — 10% percent (approx — confirm)  _(Sales and Excise Tax Proclamation (Legal Notice 64/1994) — https://taxatlas.io/country/eritrea)_
+- **Sales tax on goods** — 4% (approx — sources vary 4%–5%; confirm)  _(Sales and Excise Tax Proclamation (Legal Notice 64/1994) — https://taxatlas.io/country/eritrea)_
+- **Services tax (sales tax on services)** — 10% (approx — confirm)  _(Sales and Excise Tax Proclamation (Legal Notice 64/1994) — https://taxatlas.io/country/eritrea)_
 - **Excise tax** — Levied separately on specified goods (e.g. alcohol, tobacco, fuel) at varying rates (approx — confirm schedule)  _(Sales and Excise Tax Proclamation (Legal Notice 64/1994))_
 - **Input tax credit mechanism** — None — sales tax is cumulative (cascading), not a credit-offset VAT  _(Sales and Excise Tax Proclamation (Legal Notice 64/1994))_
 - **Registration threshold** — No published VAT-style turnover threshold; registration governed by sales/excise tax rules (approx — confirm with Inland Revenue Department)  _(Sales and Excise Tax Proclamation (Legal Notice 64/1994))_

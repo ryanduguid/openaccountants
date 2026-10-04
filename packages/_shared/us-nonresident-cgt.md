@@ -1,10 +1,10 @@
 ---
 name: us-nonresident-cgt
 description: "US capital gains tax for non-resident aliens: FIRPTA withholding on US real property, ECI rules, FDAP withholding, portfolio interest exemption. Trigger on: \"FIRPTA\", \"non-resident alien US CGT\", \"sell US property non-resident\", \"10% FIRPTA withholding\", \"15% FIRPTA withholding\", \"ECI US non-resident\", \"US real property interest USRPI\", \"withholding certificate FIRPTA\", \"non-resident selling US shares\". For US residents see us-capital-gains."
-version: 1.0
+version: 1.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 reviewed_by: James Wallach
 review_status: pending_review
 category: federal
@@ -58,7 +58,7 @@ depends_on:
 ## Publicly-traded US stocks: no FIRPTA, no NRA tax
 
 - **No US tax on publicly-traded stock gains** — A non-resident alien selling shares in a US publicly-traded company (not a USRPHC) — e.g. Apple, Google, Microsoft — does not pay US tax on capital gains from those shares. This is one of the most widely misunderstood points.
-- **Dividend withholding on publicly-traded shares** — 30% percent (reducible by treaty)
+- **Dividend withholding on publicly-traded shares** — 30% (reducible by treaty)
 
 ## Treaty reductions
 

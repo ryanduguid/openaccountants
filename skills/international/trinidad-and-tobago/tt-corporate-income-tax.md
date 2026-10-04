@@ -5,7 +5,7 @@ jurisdiction: TT
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Standard corporation tax rate** — 30% on chargeable profits from income year 2018; the 2016 consolidation still shows the 2017 split of 25% to TTD 1,000,000 and 30% above  _(Inland Revenue Division, Corporations page — https://www.ird.gov.tt/corporations ; Corporation Tax Act (Chap. 75:02), Ministry of the Attorney General consolidation to Act 10 of 2016, s 3 and First Schedule para 1 (as consolidated to 2016: 25 cents to TTD 1,000,000 and 30 cents above) — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.02.pdf)_
 - **Banks and petrochemical companies rate** — 35% for companies in natural gas liquefaction, petrochemical manufacture, natural gas processing, transmission and distribution and petroleum wholesale marketing (First Schedule para 3); PwC reports the same 35% for commercial banks  _(Corporation Tax Act (Chap. 75:02), Ministry of the Attorney General consolidation to Act 10 of 2016, First Schedule para 3 — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.02.pdf ; Inland Revenue Division, Corporations page — https://www.ird.gov.tt/corporations ; banks: PwC — https://taxsummaries.pwc.com/trinidad-and-tobago/corporate/taxes-on-corporate-income)_
 - **Petroleum production companies rate** — 50% (standard); 30% for deep-sea production  _([Petroleum Taxes Act (Chap. 75:04)](https://taxsummaries.pwc.com/trinidad-and-tobago/corporate/taxes-on-corporate-income))_
-- **SMEs newly listed on the TT Stock Exchange** — 0% for first 5 years, then 15% for the next 5 years percent ((approx — confirm))  _([Corporation Tax Act (Chap. 75:02)](https://taxsummaries.pwc.com/trinidad-and-tobago/corporate/taxes-on-corporate-income))_
+- **SMEs newly listed on the TT Stock Exchange** — 0% for first 5 years, then 15% for the next 5 years (approx — confirm)  _([Corporation Tax Act (Chap. 75:02)](https://taxsummaries.pwc.com/trinidad-and-tobago/corporate/taxes-on-corporate-income))_
 - **Special Economic Zone entities rate** — 15%  _([Trinidad and Tobago Special Economic Zones Act](https://taxsummaries.pwc.com/trinidad-and-tobago/corporate/taxes-on-corporate-income))_
 - **Tax base** — Chargeable profits accruing in or derived from Trinidad and Tobago or elsewhere, whether or not received in the country, plus chargeable short-term capital gains  _(Corporation Tax Act (Chap. 75:02), Ministry of the Attorney General consolidation to Act 10 of 2016, s 3(1) — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.02.pdf)_
 - **Business Levy** — 0.6% of gross sales or receipts for each year of income, with a credit for corporation tax paid up to the levy liability, payable on the sales of each quarter ending 31 March, 30 June, 30 September and 31 December; PwC reports exemption below TTD 360,000 of turnover  _(Corporation Tax Act (Chap. 75:02), Ministry of the Attorney General consolidation to Act 10 of 2016, s 3A(1), (3) and (5) — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.02.pdf ; Inland Revenue Division, Corporations page — https://www.ird.gov.tt/corporations ; TTD 360,000 exemption: PwC — https://taxsummaries.pwc.com/trinidad-and-tobago/corporate/other-taxes)_

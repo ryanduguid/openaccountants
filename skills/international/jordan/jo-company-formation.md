@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Jordan (
 jurisdiction: JO
 category: formation
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,10 +17,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Common entity types** — Limited Liability Company (LLC), Private Shareholding Company (PSC), Public Shareholding Company (PLC), General/Limited Partnership, and branch of a foreign company  _(Companies Law No. 22 of 1997 (as described at [globallawexperts.com](https://globallawexperts.com/llc-vs-branch-jordan/)))_
 - **Registering authority** — Companies Control Department (CCD), Ministry of Industry, Trade and Supply  _(Companies Law No. 22 of 1997 (as described at [usemultiplier.com](https://www.usemultiplier.com/jordan/company-registration)))_
-- **Minimum capital — LLC (local ownership)** — No statutory minimum under the Companies Law; in practice capital must be adequate for the activity (commonly stated as ~JOD 1,000) JOD (approx — confirm)  _(Companies Law No. 22 of 1997 (as described at [commenda.io](https://www.commenda.io/jordan/setting-up-a-subsidiary-company)))_
-- **Minimum capital — foreign-owned company** — JOD 50,000 minimum non-Jordanian shareholder contribution to authorized capital JOD  _(Companies Law No. 22 of 1997 (as described at [ybcase.com](https://ybcase.com/en/jurisdictions/iordania)))_
-- **Capital payment timing** — From April 2024, 50% of declared capital must be paid at incorporation, with the balance due within 60 days percent  _(Companies Law No. 22 of 1997 (as described at [commenda.io](https://www.commenda.io/jordan/setting-up-a-subsidiary-company)))_
-- **Minimum capital — Private Shareholding Company** — JOD 50,000 JOD (approx — confirm)  _(Companies Law No. 22 of 1997 (as described at [bridgewest.eu](https://bridgewest.eu/company-formation-jordan/)))_
+- **Minimum capital — LLC (local ownership)** — No statutory minimum under the Companies Law; in practice capital must be adequate for the activity (commonly stated as ~JOD 1,000) (approx — confirm)  _(Companies Law No. 22 of 1997 (as described at [commenda.io](https://www.commenda.io/jordan/setting-up-a-subsidiary-company)))_
+- **Minimum capital — foreign-owned company** — JOD 50,000 minimum non-Jordanian shareholder contribution to authorized capital  _(Companies Law No. 22 of 1997 (as described at [ybcase.com](https://ybcase.com/en/jurisdictions/iordania)))_
+- **Capital payment timing** — From April 2024, 50% of declared capital must be paid at incorporation, with the balance due within 60 days  _(Companies Law No. 22 of 1997 (as described at [commenda.io](https://www.commenda.io/jordan/setting-up-a-subsidiary-company)))_
+- **Minimum capital — Private Shareholding Company** — JOD 50,000 (approx — confirm)  _(Companies Law No. 22 of 1997 (as described at [bridgewest.eu](https://bridgewest.eu/company-formation-jordan/)))_
 - **Incorporation steps** — 1) Reserve company name and file application + notarized Articles of Association with the CCD and pay fees; 2) Open a Jordanian bank account and deposit capital; 3) Receive registration certificate; 4) Register for tax (ISTD) and social security (SSC)  _(Companies Law No. 22 of 1997 (as described at [commenda.io](https://www.commenda.io/jordan/setting-up-a-subsidiary-company)))_
 - **Incorporation timeline** — Typically 2 to 6 weeks depending on entity type and foreign-investment approvals (approx — confirm)  _(Companies Law No. 22 of 1997 (as described at [usemultiplier.com](https://www.usemultiplier.com/jordan/company-registration)))_
 - **Tax registration** — Companies must register with the ISTD for income tax and General Sales Tax after incorporation  _([Income Tax Law No. 34 of 2014](https://www.istd.gov.jo/EN))_

@@ -3,7 +3,8 @@ name: gw-company-formation
 description: "Source-cited draft: company formation & entity choice for Guinea-Bissau (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GW
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 category: formation
 tier: 2
@@ -63,15 +64,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **OHADA company law framework** — Guinea-Bissau is an OHADA member state, so company law follows the OHADA Uniform Act on Commercial Companies (Acte uniforme relatif au droit des sociétés commerciales — AUSCGIE). The most common vehicles are the limited liability company (SARL/SUARL) and the public limited company (SA). Incorporation is centralised through the one-stop business desk (CFE).  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
 - **Limited liability company** — Société à Responsabilité Limitée (SARL) — the most common form for SMEs; single-member version is the SUARL  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
 - **Public limited company** — Société Anonyme (SA) — used for larger ventures and regulated activities  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
-- **Foreign branch** — A foreign company may register a branch (succursale), generally subject to conversion/local-company requirements after a set period under OHADA ((approx — confirm conversion period))  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
+- **Foreign branch** — A foreign company may register a branch (succursale), generally subject to conversion/local-company requirements after a set period under OHADA (approx — confirm conversion period)  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
 - **Minimum share capital — SARL** — **OHADA does set one: 1,000,000** (art. 311). The 1,000,000 is not "historical" — it is the operative uniform default, and what article 311 permits is for **national** law to displace it. Each part sociale must be denominated at **5,000 or more** XOF  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Minimum share capital — SA** — **10,000,000** (art. 387), rising to **100,000,000** where the securities are listed on a member state's exchange **or** publicly offered for placement in one or more member states (art. 824) XOF  _(AUSCGIE 2014, arts. 387 and 824 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Incorporation channel** — Registration is processed through the Centro de Formalização de Empresas (CFE) one-stop shop  _([CFE (one-stop business registration) rules — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/](https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/))_
-- **Core incorporation steps** — Reserve company name, notarise/deposit by-laws, deposit share capital, register with the Commercial Register (RCCM), obtain NIF, and register with INPS ((approx — confirm exact sequence))  _(OHADA AUSCGIE; CFE registration procedure)_
-- **Typical incorporation timeline** — Roughly 1–3 weeks via the CFE one-stop shop ((approx — confirm))  _(CFE registration procedure)_
-- **Indicative incorporation cost** — Government/registration fees commonly in the low hundreds of thousands of XOF, plus notary and publication fees ((approx — confirm current fees))  _(CFE registration fee schedule)_
+- **Core incorporation steps** — Reserve company name, notarise/deposit by-laws, deposit share capital, register with the Commercial Register (RCCM), obtain NIF, and register with INPS (approx — confirm exact sequence)  _(OHADA AUSCGIE; CFE registration procedure)_
+- **Typical incorporation timeline** — Roughly 1–3 weeks via the CFE one-stop shop (approx — confirm)  _(CFE registration procedure)_
+- **Indicative incorporation cost** — Government/registration fees commonly in the low hundreds of thousands of XOF, plus notary and publication fees (approx — confirm current fees)  _(CFE registration fee schedule)_
 - **Annual financial statements (OHADA)** — Companies must prepare annual financial statements under the OHADA SYSCOHADA accounting framework  _(OHADA Uniform Act on Accounting Law (SYSCOHADA))_
-- **Annual corporate tax / declaration** — File the annual corporate income tax return by 31 March of the following year ((approx — confirm))  _(Código Geral Tributário (General Tax Code) (as described at [taxatlas.io](https://taxatlas.io/country/guinea-bissau)))_
+- **Annual corporate tax / declaration** — File the annual corporate income tax return by 31 March of the following year (approx — confirm)  _(Código Geral Tributário (General Tax Code) (as described at [taxatlas.io](https://taxatlas.io/country/guinea-bissau)))_
 - **Ongoing periodic compliance** — Monthly VAT returns (if registered), monthly INPS remittance and remittance of the withheld **Imposto Profissional** within 10 days of month end (art. 29.º of its Código; the tax is not an "IRPS"), and maintenance of a valid NIF  _([Código do IVA; INPS rules; DGCI NIF rules — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/](https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/))_
 
 <!-- openaccountants-cta-block -->

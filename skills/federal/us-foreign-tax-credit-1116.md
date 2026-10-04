@@ -4,8 +4,8 @@ description: Tier 2 US federal content skill for §901 Foreign Tax Credit (Form 
 jurisdiction: US
 category: federal
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
@@ -417,7 +417,7 @@ Reason: no UAE tax to credit on the wages → §911 is the only way to reduce US
 - **§904(j) de minimis amounts** — $300 single / $600 MFJ USD  _([§904(j); Form 1116 instructions](https://www.irs.gov/instructions/i1116))_
 - **High-taxed passive income threshold** — Foreign tax after expense allocation exceeds the highest U.S. tax that can be imposed on the income  _([Reg. §1.904-4(c); Form 1116 instructions](https://www.irs.gov/instructions/i1116))_
 - **§951A GILTI carry and deemed-paid credit rate** — §951A GILTI: no carry; 80% deemed-paid (corporate)  _(§951A)_
-- **§250 deduction rate** — 50% for 2025 → 37.5% post-2025 (verify) percent  _(§250)_
+- **§250 deduction rate** — 50% for 2025 → 37.5% post-2025 (verify)  _(§250)_
 
 `us-tax-workflow-base` v0.2+ (load alongside); `us-sole-prop-bookkeeping` (Schedule C inputs for general basket); `us-schedule-c-and-se-computation` (taxable income inputs); `us-qbi-deduction` (taxable income denominator); `us-federal-return-assembly` (orchestration); `us-ca-540-individual-return` and other state skills (state conformity); `us-quarterly-estimated-tax` (estimated tax accounting for projected FTC)
 

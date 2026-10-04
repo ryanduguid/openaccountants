@@ -5,7 +5,7 @@ jurisdiction: CZ
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,18 +17,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Overview** — The most common Czech business vehicle is the s.r.o. (limited liability company), which can be formed with a symbolic minimum capital. Formation runs through a notarial deed and entry in the Commercial Register.
 - **Limited liability company (s.r.o.)** — Společnost s ručením omezeným — the most common entity for SMEs  _([Business Corporations Act (Act No. 90/2012 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/corporate-residence))_
-- **Joint-stock company (a.s.)** — Akciová společnost — used for larger businesses; minimum capital CZK 2,000,000 (or EUR 80,000) CZK  _(Business Corporations Act (Act No. 90/2012 Coll.))_
+- **Joint-stock company (a.s.)** — Akciová společnost — used for larger businesses; minimum capital CZK 2,000,000 (or EUR 80,000)  _(Business Corporations Act (Act No. 90/2012 Coll.))_
 - **Other forms** — General partnership (v.o.s.), limited partnership (k.s.), branch of a foreign company, and sole trader (OSVČ / živnost)  _(Business Corporations Act (Act No. 90/2012 Coll.); Trade Licensing Act (Act No. 455/1991 Coll.))_
 - **Minimum share capital — s.r.o.** — CZK 1 per member's contribution (§ 142); CZK 200,000 or more is commonly used for credibility  _(Business Corporations Act No. 90/2012 Coll. (zákon o obchodních korporacích, consolidated text on e-Sbírka), § 142 — https://e-sbirka.gov.cz/sb/2012/90)_
 - **Minimum share capital — a.s.** — CZK 2,000,000 or EUR 80,000 (§ 246)  _(Business Corporations Act No. 90/2012 Coll. (zákon o obchodních korporacích, consolidated text on e-Sbírka), § 246 — https://e-sbirka.gov.cz/sb/2012/90)_
 - **Founding instrument** — Memorandum of association (or founder's deed for a single member) executed as a notarial deed  _(Business Corporations Act (Act No. 90/2012 Coll.))_
 - **Incorporation steps** — Notarial memorandum of association → obtain trade licence (živnostenský list) → deposit capital / proof → register in the Commercial Register → register with tax authority  _(Business Corporations Act (Act No. 90/2012 Coll.); Act on Public Registers (Act No. 304/2013 Coll.) (as described at [ten-law.org](https://www.ten-law.org/knowledge/qa-company-law-in-the-czech-republic/)))_
-- **Typical timeline** — Approximately 1–3 weeks; faster (a few days) where the notary registers directly into the Commercial Register ((approx — confirm)) (approx — confirm)  _(Act on Public Registers (Act No. 304/2013 Coll.))_
-- **Typical incorporation cost** — Roughly CZK 10,000–20,000 in notary, court/registration and trade-licence fees ((approx — confirm; excludes legal/advisory fees)) CZK (approx — confirm; excludes legal/advisory fees)  _(Act on Court Fees (Act No. 549/1991 Coll.))_
+- **Typical timeline** — Approximately 1–3 weeks; faster (a few days) where the notary registers directly into the Commercial Register (approx — confirm)  _(Act on Public Registers (Act No. 304/2013 Coll.))_
+- **Typical incorporation cost** — Roughly CZK 10,000–20,000 in notary, court/registration and trade-licence fees (approx — confirm; excludes legal/advisory fees)  _(Act on Court Fees (Act No. 549/1991 Coll.))_
 - **Registration authority** — Commercial Register (Obchodní rejstřík) maintained by the regional courts  _(Act on Public Registers (Act No. 304/2013 Coll.))_
 - **Annual financial statements** — Companies must prepare annual financial statements under the Accounting Act and file them in the Collection of Deeds of the Commercial Register  _(Accounting Act (Act No. 563/1991 Coll.) (as described at [commenda.io](https://www.commenda.io/czech-republic/annual-compliance)))_
 - **Annual corporate income tax return** — Required each tax year, due 3 months after period end (extended to 4 or 6 months as applicable)  _([Tax Procedure Code (Act No. 280/2009 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/tax-administration))_
-- **Statutory audit threshold** — Audit required where the company exceeds defined size criteria (assets, turnover, employees) under the Accounting Act ((confirm current numeric thresholds with accountant)) (confirm current numeric thresholds with accountant)  _(Accounting Act (Act No. 563/1991 Coll.))_
+- **Statutory audit threshold** — Audit required where the company exceeds defined size criteria (assets, turnover, employees) under the Accounting Act (confirm current numeric thresholds with accountant)  _(Accounting Act (Act No. 563/1991 Coll.))_
 
 <!-- openaccountants-cta-block -->
 
