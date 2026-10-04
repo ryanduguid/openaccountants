@@ -120,6 +120,7 @@ skills/international/tunisia::reduced
 skills/international/uk::additional
 skills/international/uk::higher
 skills/international/ukraine::group single tax
+skills/international/ukraine::military levy
 skills/international/uruguay::employee fonasa
 skills/international/uruguay::fonasa
 skills/international/uzbekistan::turnover tax
