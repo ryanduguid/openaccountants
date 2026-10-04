@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Cape Verde tax system at a glance
 
-Cape Verde (Cabo Verde) levies a progressive personal income tax, a corporate income tax, and a VAT (IVA). The tax year is the calendar year and the currency is the Cape Verdean escudo (CVE). This is an unverified source-cited draft for tax year 2025.
+Cape Verde (Cabo Verde) levies a progressive personal income tax, a corporate income tax, and a VAT (IVA). The tax year is the calendar year and the currency is the Cape Verdean escudo (CVE). This is an unverified source-cited draft for tax year 2026.
 
 - **Tax year** — Calendar year for companies (CIRPC art 10(1), subject to the exceptions in that article for a different tax period) and for individuals (CIRPS art 85)  _(Código do IRPC (Lei n.º 82/VIII/2015) as republished by Lei n.º 116/IX/2021, art 10(1) — https://www.mf.gov.cv/documents/54571/64342/Altera%C3%A7%C3%B5es+C%C3%B3digos+Tribut%C3%A1rios_Lei116-IX-2021%2C+de+2+fevereiro.pdf/26a33c81-cb9a-a813-a842-f4152024574c ; Código do IRPS (Lei n.º 78/VIII/2014) as republished by Lei n.º 116/IX/2021, art 85 — https://www.mf.gov.cv/documents/54571/64342/Altera%C3%A7%C3%B5es+C%C3%B3digos+Tribut%C3%A1rios_Lei116-IX-2021%2C+de+2+fevereiro.pdf/26a33c81-cb9a-a813-a842-f4152024574c)_
 - **Currency** — Cape Verdean escudo (CVE), pegged to the euro at approximately 110.265 CVE = 1 EUR  _(Banco de Cabo Verde)_
