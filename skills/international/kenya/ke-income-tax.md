@@ -1,11 +1,11 @@
 ---
 name: ke-income-tax
 description: Use this skill whenever asked about Kenyan income tax for self-employed individuals. Trigger on phrases like "how much tax do I pay", "KRA", "iTax", "income tax return", "personal relief", "insurance relief", "turnover tax", "presumptive tax", "self-employed tax Kenya", or any question about filing or computing income tax for a self-employed or sole proprietor client in Kenya. ALWAYS read this skill before touching any Kenyan income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: KE
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Personal relief | KES 28,800/year (credit against tax) |
 | Insurance relief | 15% of qualifying premiums, cap KES 60,000/year |
 | Turnover tax | 1.5% on gross turnover KES 1M--25M (non-professional) |
-| Presumptive tax | KES 15,000/year (turnover below KES 1M) |
+| Below KES 1M turnover | Normal self-assessment: the Act has no presumptive tax for small traders, and turnover tax starts above KES 1M (s. 12C) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires Kenyan CPA or registered tax agent sign-off |
 | Validation date | Pending |
@@ -47,21 +47,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 6,000,001--9,600,000 | 32.5% |
 | 9,600,001+ | 35% |
 
-**Wear-and-tear rates (reducing balance)**
+**Investment allowance rates (Second Schedule, equal annual instalments)**
 
 | Asset | Rate |
 | --- | --- |
-| Heavy/self-propelling machinery | 37.5% |
-| Computer/IT equipment | 30% |
-| Motor vehicles | 25% |
-| Furniture and fittings | 12.5% |
-| Farm machinery | 100% |
+| Machinery used for manufacture, hospital equipment, ships and aircraft | 50% in the first year of use, then 25% a year |
+| Computer hardware and software, calculators, copiers | 25% a year |
+| Motor vehicles and heavy earth-moving equipment | 25% a year |
+| Furniture and fittings, telecommunications equipment, other machinery | 10% a year |
+| Farm works | 50% in the first year of use, then 25% a year |
 
 **Conservative defaults**
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown residency | STOP -- non-residents pay flat 30% |
+| Unknown residency | STOP -- non-residents get no personal relief and may bear final withholding instead |
 | Unknown expense category | Not deductible |
 | Unknown business-use proportion | 0% |
 | Unknown whether turnover tax is elected | Normal tax |
@@ -79,7 +79,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Refusal catalogue
 
 - **R-KE-1 -- Company/LLP** — This skill covers self-employed individuals only. Companies file corporate returns at 30%. (Trigger: client is a limited company or LLP.)
-- **R-KE-2 -- Non-resident** — Non-residents pay flat 30% on Kenya-source income with no personal relief. This skill covers residents only. (Trigger: non-resident status.)
+- **R-KE-2 -- Non-resident** — Non-resident individuals use the same graduated scale without personal relief (s. 30 covers resident individuals), and payments to non-residents without a permanent establishment bear final withholding at the Third Schedule para 3 rates. This skill covers residents only. (Trigger: non-resident status.)
 - **R-KE-3 -- Cross-border/WHT** — Cross-border WHT and treaty analysis are outside scope. Consult a tax practitioner. (Trigger: complex withholding tax or treaty questions.)
 - **R-KE-4 -- Capital gains** — Capital gains tax (15%) is outside scope. (Trigger: property disposal.)
 
@@ -213,40 +213,40 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 **Input:** Non-professional trader, turnover KES 8,000,000.
 **Computation:** TOT = 1.5% x KES 8,000,000 = KES 120,000/year.
 
-### Example 4 -- Presumptive vs normal
+### Example 4 -- Small trader below the turnover tax band
 
 **Input:** Small trader, turnover KES 500,000, expenses KES 350,000.
-**Computation:** Normal: profit KES 150,000. Tax = 15,000 - 28,800 relief = KES 0. Presumptive: KES 15,000. Normal is better.
+**Computation:** Turnover KES 500,000 is below the KES 1M turnover tax floor (s. 12C), so normal self-assessment applies. Profit KES 150,000. Tax = 15,000 - 28,800 relief = KES 0.
 
 ## Section 5 -- Tier 1 rules (deterministic)
 
 ### 5.1 Progressive rates
 
-- **Progressive rates** — 10%/25%/30%/32.5%/35%. Non-residents: flat 30%.  _(ITA Cap 470, Third Schedule.)_
+- **Progressive rates** — 10%/25%/30%/32.5%/35% on the first KES 288,000, the next 100,000, the next 5,612,000, the next 3,600,000 and all income over KES 9,600,000. Non-resident individuals use the same scale without personal relief; non-residents without a permanent establishment bear final withholding at the para 3 rates instead.  _(Income Tax Act (Cap. 470), as at 1 July 2026 on Kenya Law, Third Schedule Head B para 1 and para 3; s. 30 — https://new.kenyalaw.org/akn/ke/act/1973/16/eng@2026-07-01)_
 
 ### 5.2 Personal relief
 
-- **Personal relief** — KES 28,800/year. Credit against tax, NOT deduction from income. Available to all residents.  _(ITA.)_
+- **Personal relief** — KES 28,800/year. Credit against tax, NOT deduction from income. Available to resident individuals (s. 30).  _(Income Tax Act (Cap. 470), as at 1 July 2026 on Kenya Law, Third Schedule Head A para 1; s. 30 — https://new.kenyalaw.org/akn/ke/act/1973/16/eng@2026-07-01)_
 
 ### 5.3 Insurance relief
 
-- **Insurance relief** — 15% of qualifying premiums (life, health, education). Cap KES 60,000/year. Credit against tax.  _(s31.)_
+- **Insurance relief** — 15% of qualifying premiums (life, health, education). Cap KES 60,000/year. Credit against tax.  _(Income Tax Act (Cap. 470), as at 1 July 2026 on Kenya Law, Third Schedule Head A para 2; s. 31 — https://new.kenyalaw.org/akn/ke/act/1973/16/eng@2026-07-01)_
 
 ### 5.4 Instalment tax
 
-- **Instalment tax** — Quarterly: 25% each on 20th of 4th, 6th, 9th, 12th months. Based on estimated current year or prior year actual. If prior year tax < KES 40,000: not required. Under-estimation: 20% penalty.  _(s12.)_
+- **Instalment tax** — Quarterly: 25% each by the 20th of the 4th, 6th, 9th and 12th months (Twelfth Schedule, accounting periods from 1 January 1996). Based on the lesser of the current-year estimate and 110% of the preceding year's assessment (s. 12(2)). Not payable by an individual whose total tax for the year is KES 40,000 or less (s. 12(5)). Under-estimation: 20% penalty.  _(Income Tax Act (Cap. 470), as at 1 July 2026 on Kenya Law, s. 12 and Twelfth Schedule — https://new.kenyalaw.org/akn/ke/act/1973/16/eng@2026-07-01)_
 
 ### 5.5 Turnover tax
 
-- **Turnover tax** — 1.5% on gross turnover KES 1M--25M. Monthly filing. Replaces income tax. No expense deductions. Excludes professional/management services.  _(s12C.)_
+- **Turnover tax** — 1.5% of gross receipts (para 9) for resident persons with business turnover above KES 1M and up to KES 25M (s. 12C(1)). Monthly return and payment by the 20th of the following month (s. 12C(4)). Replaces income tax on that turnover with no expense deductions. Not available for rental income, management, professional or training fees, or income under final withholding (s. 12C(3)); a person may elect out in writing (s. 12C(2)).  _(Income Tax Act (Cap. 470), as at 1 July 2026 on Kenya Law, s. 12C; Third Schedule Head B para 9 — https://new.kenyalaw.org/akn/ke/act/1973/16/eng@2026-07-01)_
 
 ### 5.6 Presumptive tax
 
-- **Presumptive tax** — KES 15,000/year for specified businesses under KES 1M turnover. Final tax.  _(s12D.)_
+- **Presumptive tax** — The Act has no KES 15,000 presumptive tax; this guide carried one until October 2026. Section 12C now holds only turnover tax, and s. 17A charges presumptive income tax on agricultural produce at 2% of the payment or export value (para 7). The s. 12D minimum tax (1% of gross turnover, para 11) stays printed in the consolidated Act although the High Court struck it down in September 2021; confirm with the KRA before applying it.  _(Income Tax Act (Cap. 470), as at 1 July 2026 on Kenya Law, s. 12C, 12D and 17A; Third Schedule Head B para 7 and 11 — https://new.kenyalaw.org/akn/ke/act/1973/16/eng@2026-07-01)_
 
 ### 5.7 Wear-and-tear (capital deductions)
 
-- **Wear-and-tear rates** — Reducing balance method. Heavy machinery: 37.5%. Computers: 30%. Vehicles: 25%. Furniture: 12.5%. Farm machinery: 100%.  _(Second Schedule.)_
+- **Wear-and-tear rates** — Investment allowance in equal annual instalments (straight line) since the Second Schedule was replaced in 2020, not reducing balance: machinery used for manufacture, hospital equipment and ships or aircraft 50% in the first year of use then 25% a year on the residual; motor vehicles and heavy earth-moving equipment 25% a year; computer hardware and software, calculators and copiers 25% a year; furniture and fittings, telecommunications equipment and other machinery 10% a year; farm works 50% then 25% a year; commercial and educational buildings 10% a year. The deduction is 100% where the cumulative investment of the preceding three years outside Nairobi City and Mombasa counties is at least KES 1 billion (para 1(1A)).  _(Income Tax Act (Cap. 470), as at 1 July 2026 on Kenya Law, Second Schedule para 1 — https://new.kenyalaw.org/akn/ke/act/1973/16/eng@2026-07-01)_
 
 ### 5.8 NSSF/SHIF
 
@@ -254,7 +254,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.9 WHT credits
 
-- **WHT credits** — Withholding tax on professional fees (5%) is a credit against final tax. Requires WHT certificates.  _(ITA.)_
+- **WHT credits** — Withholding tax on professional fees (5%, para 5(f)(i)) is a credit against final tax. Requires the WHT certificates the payer must issue under s. 35(5)(b).  _(Income Tax Act (Cap. 470), as at 1 July 2026 on Kenya Law, Third Schedule Head B para 5(f)(i); s. 35(5)(b) — https://new.kenyalaw.org/akn/ke/act/1973/16/eng@2026-07-01)_
 
 ### 5.10 Record keeping
 
@@ -266,9 +266,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 *Why:* Depends on expense level and qualification. *Default:* Present both. *Question:* "What are your total expenses? Professional services?"
 
-### 6.2 Below KES 1M: presumptive vs normal
+### 6.2 Below KES 1M: normal self-assessment
 
-*Why:* Normal may be cheaper if expenses are high. *Default:* Compute both. *Question:* "Total documented expenses?"
+*Why:* Turnover tax needs turnover above KES 1M, and the Act has no presumptive tax for smaller traders. *Default:* Normal self-assessment. *Question:* "Total documented expenses?"
 
 ### 6.3 Motor vehicle business portion
 
@@ -316,11 +316,11 @@ Progressive brackets. Reliefs. Instalment tax offset. WHT credits.
 
 ### 9.3 Annual turnover
 
-*Inference:* Sum of credits. *Fallback:* "What is your approximate annual turnover? (Determines TOT/presumptive eligibility.)"
+*Inference:* Sum of credits. *Fallback:* "What is your approximate annual turnover? (Determines turnover tax eligibility.)"
 
 ### 9.4 Tax regime
 
-*Inference:* If TOT monthly payments visible. *Fallback:* "Are you on turnover tax, presumptive tax, or normal self-assessment?"
+*Inference:* If TOT monthly payments visible. *Fallback:* "Are you on turnover tax or normal self-assessment?"
 
 ### 9.5 Insurance premiums
 
@@ -343,14 +343,14 @@ Progressive brackets. Reliefs. Instalment tax offset. WHT credits.
 **Test 3 -- Turnover tax.** KES 8M turnover. TOT KES 120,000.
 **Test 4 -- Insurance cap.** KES 600K premiums. Relief = KES 60,000.
 **Test 5 -- High earner.** KES 12M taxable. Tax KES 3,718,600.
-**Test 6 -- Presumptive vs normal.** KES 500K turnover, KES 350K expenses. Normal = KES 0; presumptive = KES 15,000.
+**Test 6 -- Below the turnover tax band.** KES 500K turnover, KES 350K expenses. Normal self-assessment: tax KES 15,000 less relief KES 28,800 = KES 0; no turnover tax below KES 1M.
 
 ### Edge case registry
 
 **EC1 -- Personal relief as deduction.** INCORRECT -- it's a credit against tax.
 **EC2 -- Insurance relief cap.** KES 60,000 maximum.
 **EC3 -- TOT for professionals.** NOT eligible.
-**EC4 -- Presumptive vs normal.** Compare both.
+**EC4 -- Presumptive tax.** None in the Act for traders since 2020; the only presumptive income tax is 2% on agricultural produce under s. 17A.
 **EC5 -- WHT not credited.** Must include as credit.
 **EC6 -- SHIF deductibility.** NOT deductible.
 **EC7 -- Capital gain on business asset.** ESCALATE.

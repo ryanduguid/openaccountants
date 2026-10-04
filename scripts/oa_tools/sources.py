@@ -357,6 +357,11 @@ NON_GOV_AUTHORITY = frozenset((
                           # a script viewer with no text, and its English PDF is
                           # the 2015 edition, so this is where the current text
                           # is read. Bare .az with no "gov" label.
+    'kenyalaw.org',       # National Council for Law Reporting (Kenya Law), the
+                          # statutory publisher of the Laws of Kenya:
+                          # new.kenyalaw.org serves each Act as consolidated
+                          # at dated points in time with the amending Acts
+                          # marked. Bare .org with no "gov" label.
     'impots.mg',          # Direction Generale des Impots, Madagascar: publishes
                           # the consolidated Code des impots and Code des
                           # procedures fiscales after each loi de finances under
