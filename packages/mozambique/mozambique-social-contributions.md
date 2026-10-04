@@ -1,7 +1,7 @@
 ---
 name: mozambique-social-contributions
 description: Use this skill whenever asked about Mozambique social security contributions (INSS), payroll, or personal income tax (IRPS) for employees, employers, or self-employed individuals. Trigger on phrases like "how much INSS do I pay", "Mozambique social security", "INSS employer rate", "INSS employee 3%", "Segurança Social", "Instituto Nacional de Segurança Social", "Mozambique payroll tax", "IRPS calculation", "Mozambique income tax brackets", "PAYE Mozambique", "salário mínimo", "Mozambican minimum wage", or any question about Mozambique payroll or social-contribution obligations. Also trigger when classifying bank statement transactions that relate to INSS debits, IRPS/PAYE remittances, or salary payments from Mozambican banks (BCI, Millennium BIM, Standard Bank Moçambique, Absa Moçambique). This skill covers the 4% employer / 3% employee INSS rates, contribution base, registration and payment deadlines, IRPS resident brackets and PAYE, non-resident flat withholding, minimum wages by sector, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Mozambique payroll or social-contribution work.
-version: 0.2
+version: 0.3
 jurisdiction: MZ
 tax_year: 2025
 last_updated: 2026-10-04
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Mozambique Social Security (INSS) & Payroll Tax
 
-## Mozambique Social Security (INSS) & Payroll Tax Skill v0.2
+## Mozambique Social Security (INSS) & Payroll Tax Skill v0.3
 
 Mozambique **does** levy a personal income tax (IRPS), so this skill covers both the **INSS social contribution** (the primary subject) and the **IRPS payroll/PAYE reality** an employer must withhold. It is **not** a no-PIT jurisdiction.
 
@@ -206,7 +206,7 @@ Non-residents face a flat **20% definitive withholding** on Mozambique-source in
 **Input data:** Construction-sector employee, basic wage MZN 8,000.00/month.
 
 **Reasoning:**
-2025 construction minimum wage (Decree 92/2025) = **8,400.00/month** (DLA Piper). The proposed MZN 8,000.00 is **below** the sector minimum. STOP -- flag for reviewer; the wage must be raised to at least 8,400.00 before INSS is computed on it.
+2025 construction minimum wage (Decree 92/2025) = **8,400.00/month** (DLA Piper; 8,652.00 from 1 April 2026). The proposed MZN 8,000.00 is **below** the sector minimum. STOP -- flag for reviewer; the wage must be raised to at least 8,400.00 before INSS is computed on it.
 
 *Check: 8,000.00 < 8,400.00. ✓ (below minimum)*
 
@@ -302,7 +302,7 @@ Flag these for reviewer confirmation when data is ambiguous.
 
 ### T2-7 -- Minimum-wage breach
 
-- **T2-7** — Trigger: Basic wage appears below the 2025 sector minimum (Section 10 table). Issue: Minimum wages are sector-specific (Decrees 87/2025--94/2025). A further revision took effect ~1 April 2026 [RESEARCH GAP -- 2026 figures not yet sourced]. Action: Flag for reviewer; payroll must comply before INSS computation.  _(DLA Piper)_
+- **T2-7** — Trigger: Basic wage appears below the sector minimum for the pay period (Section 10 table, 2025 and 2026 columns). Issue: Minimum wages are sector-specific (Decrees 87/2025--94/2025 to 31 March 2026; the revision approved on 28 April 2026 applies from 1 April 2026). Action: Flag for reviewer; payroll must comply before INSS computation.  _(DLA Piper)_
 
 ## Section 7 -- Excel working paper template
 
@@ -417,32 +417,32 @@ If the client provides only a bank statement and no other information:
 
 *Checks: 42,000 x 0.15 = 6,300; 6,300 - 2,100 = 4,200.00 ✓ | 168,000 x 0.20 = 33,600; - 10,500 = 23,100.00 ✓ | 300,000 x 0.20 = 60,000; - 10,500 = 49,500.00 ✓ | 504,000 x 0.25 = 126,000; - 35,700 = 90,300.00 ✓ | 2,000,000 x 0.32 = 640,000; - 141,540 = 498,460.00 ✓*
 
-### Minimum wages 2025 by sector (effective 1 July 2025; DLA Piper)
+### Minimum wages by sector (2025 from 1 July 2025, DLA Piper; 2026 from 1 April 2026, AIM report via Club of Mozambique)
 
-**Minimum wages 2025 by sector**  _(DLA Piper)_
+**Minimum wages 2025 and 2026 by sector**  _(DLA Piper; AIM report via Club of Mozambique, 29 April 2026: https://clubofmozambique.com/news/mozambique-minimum-wages-rise-between-3-and-9-8-across-sectors/)_
 
-| Sector | 2025 (MZN/month) | Decree |
-| --- | --- | --- |
-| Agriculture, Livestock, Hunting & Forestry | 6,688.00 | 87/2025 |
-| Industrial/Semi-industrial Fishing | 6,726.88 | 88/2025 |
-| Kapenta Fishing | 4,991.09 | 88/2025 |
-| Mining Extraction | 15,176.66 | 89/2025 |
-| Quarries/Sand (Medium) | 8,008.00 | 89/2025 |
-| Salt Mining (Micro/Small) | 6,538.44 | 89/2025 |
-| Manufacturing (excl. Bakery/Cashew) | 10,147.50 | 90/2025 |
-| Bakery | 7,200.00 | 90/2025 |
-| Cashew | 6,653.21 | 90/2025 |
-| Electricity/Gas/Water (Large) | 12,275.00 | 91/2025 |
-| Electricity/Gas/Water (SME) | 9,960.62 | 91/2025 |
-| Construction | 8,400.00 | 92/2025 |
-| Non-financial Services | 10,310.00 | 93/2025 |
-| Hotel/Tourism | 9,700.00 | 93/2025 |
-| Private Security | 8,465.00 | 93/2025 |
-| Fuel Retail | 9,739.00 | 93/2025 |
-| Banks/Insurance | 19,043.61 | 94/2025 |
-| Microfinance/Microinsurance | 16,764.47 | 94/2025 |
+| Sector | 2025 (MZN/month) | 2026 (MZN/month, from 1 Apr 2026) | 2025 decree |
+| --- | --- | --- | --- |
+| Agriculture, Livestock, Hunting & Forestry | 6,688.00 | 7,072.00 | 87/2025 |
+| Industrial/Semi-industrial Fishing | 6,726.88 | 7,063.22 | 88/2025 |
+| Kapenta Fishing | 4,991.09 | 4,991.09 (unchanged; no consensus) | 88/2025 |
+| Mining Extraction | 15,176.66 | 16,239.06 | 89/2025 |
+| Quarries/Sand (Medium) | 8,008.00 | 8,488.48 | 89/2025 |
+| Salt Mining (Micro/Small) | 6,538.44 | 6,824.17 | 89/2025 |
+| Manufacturing (excl. Bakery/Cashew) | 10,147.50 | 10,622.50 | 90/2025 |
+| Bakery | 7,200.00 | 7,500.00 | 90/2025 |
+| Cashew | 6,653.21 | 7,000.00 | 90/2025 |
+| Electricity/Gas/Water (Large) | 12,275.00 | 12,775.00 | 91/2025 |
+| Electricity/Gas/Water (SME) | 9,960.62 | 10,366.00 | 91/2025 |
+| Construction | 8,400.00 | 8,652.00 | 92/2025 |
+| Non-financial Services | 10,310.00 | 10,845.00 | 93/2025 |
+| Hotel/Tourism | 9,700.00 | 10,600.00 | 93/2025 |
+| Private Security | 8,465.00 | [RESEARCH GAP -- AIM reports one 2026 figure, 10,079.00, for private security and fuel retail together] | 93/2025 |
+| Fuel Retail | 9,739.00 | 10,079.00 | 93/2025 |
+| Banks/Insurance | 19,043.61 | 20,361.43 | 94/2025 |
+| Microfinance/Microinsurance | 16,764.47 | 17,924.57 | 94/2025 |
 
-A further revision took effect ~1 April 2026 [RESEARCH GAP -- 2026 figures not yet sourced authoritatively].
+The 2026 revision was approved by the Council of Ministers on 28 April 2026 with retroactive effect from 1 April 2026, raising sector minimums by 3% to 9.8%; no consensus was reached for public administration or kapenta fishing, which stay at their earlier levels (AIM report via Club of Mozambique, 29 April 2026). The 2026 ministerial diplomas in the Boletim da República have not been sourced, so cite the 2025 decrees only for pay periods to 31 March 2026.
 
 ### Corporate & other taxes (context, PwC)
 

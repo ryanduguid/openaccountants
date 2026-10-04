@@ -1,10 +1,10 @@
 ---
 name: pk-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with their Pakistan taxes AND mentions freelancing, self-employment, sole proprietorship, IT exports, or being a business individual in Pakistan. Trigger on phrases like "help me with my Pakistan taxes", "I'm a freelancer in Pakistan", "I export IT services", "file my FBR return", "I'm self-employed in Pakistan". This is the REQUIRED entry point for the Pakistan self-employed workflow — downstream skills (pk-it-export-tax, pk-income-tax, pk-social-contributions, pakistan-sales-tax, pk-return-assembly) depend on it. Upload-first; Pakistan-resident individuals only.
-version: 1.1
+version: 1.2
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Freelance Intake
 
-## Pakistan — Freelance / SME Intake — Skill v1.1
+## Pakistan — Freelance / SME Intake — Skill v1.2
 
 > **How to read every "TBC — verify against Finance Act 2025" marker in this
 > guide: as naming the wrong Act.**
@@ -107,7 +107,7 @@ Some inferred from documents, the rest gap-filled. All mandatory before handoff.
 
 ## Section 4 — Regime decision tree with thresholds and citations
 
-All references to **ITO 2001** = Income Tax Ordinance 2001 (as amended through Finance Act 2025, TBC for any post-July 2025 amendments). All thresholds and rates 2025-26-effective subject to FA 2025 verification.
+All references to **ITO 2001** = Income Tax Ordinance 2001 as amended through Finance Act 2026 (gazetted 26 June 2026, effective 1 July 2026). Thresholds and rates in this section are the 2025-26 (Finance Act 2025) figures unless stated; verify each against Finance Act 2026 for a TY 2026-27 computation, as the reading note at the top explains.
 
 ### 4.1 Residency gate — ITO 2001 s.82
 
@@ -456,9 +456,9 @@ Downstream skills (via pk-return-assembly):
 
 ## Section 12 — Sources
 
-Primary statutes and regulations (all 2025-26-effective subject to Finance Act 2025 verification — TBC items flagged):
+Primary statutes and regulations (thresholds quoted at their 2025-26 values; verify each against the Finance Act for the year computed, Finance Act 2026 for TY 2026-27; TBC items flagged):
 
-- **Income Tax Ordinance 2001 (ITO 2001)** as amended through Finance Act 2025 (TBC for any post-July 2025 amendments).
+- **Income Tax Ordinance 2001 (ITO 2001)** as amended through Finance Act 2026 (gazetted 26 June 2026, effective 1 July 2026).
   - s.82 — residence of individuals.
   - s.9–s.12 — heads of income; salary vs business.
   - s.92 — taxation of AOPs and partners.

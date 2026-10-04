@@ -1,10 +1,10 @@
 ---
 name: nicaragua-social-contributions
 description: Use this skill whenever asked about Nicaragua (ISO NI) social security and payroll taxes for employees and employers. Trigger on phrases like "how much INSS do I pay", "Nicaragua social security", "INSS employer contribution", "INSS laboral patronal", "INATEC 2%", "Nicaragua payroll tax", "Régimen Integral", "IVM IVM-RP", "córdoba payroll", "IR rentas del trabajo", "Nicaragua income tax withholding", "Form IR-122", "Form IR-106", "retención salarial Nicaragua", or any question about Nicaraguan INSS/INATEC/payroll IR obligations. Also trigger when classifying Nicaraguan bank statement transactions that relate to INSS debits, INATEC payments, DGI retention remittances, or payroll runs from BANPRO, BAC, LAFISE, FICOHSA or other Nicaraguan banks. This skill covers INSS employee/employer rates by regime, the INATEC training levy, the IR progressive employment-income schedule, monthly and annual filing deadlines, registration, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Nicaraguan social-contribution or payroll work.
-version: 0.1
+version: 0.2
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -427,23 +427,23 @@ If the client provides only a bank statement and no other information:
 | 500,000.01 + | 82,500 | 30% | PwC; LCT Art. 23 |
 | Non-resident (Nicaraguan-source) | — | 20% definitive WHT | PwC |
 
-### Minimum wage by sector (in force from 1 Mar 2025, +4%; Acuerdo Ministerial ALTB-01-02-2025)
+### Minimum wage by sector (1 Mar 2025 to 28 Feb 2026 under Acuerdo Ministerial ALTB-01-02-2025; +4% from 1 Mar 2026 to 28 Feb 2027)
 
-**Minimum wage table**  _(Acuerdo Ministerial ALTB-01-02-2025; EY / Bloomberg Línea)_
+**Minimum wage table**  _(2025: Acuerdo Ministerial ALTB-01-02-2025; EY / Bloomberg Línea. 2026: Comisión Nacional del Salario Mínimo agreement published by MITRAB; Bloomberg Línea 6 Mar 2026 https://www.bloomberglinea.com/2026/03/06/salario-minimo-en-nicaragua-2026-estos-son-los-nuevos-montos-tras-el-aumento-del-4/ ; Revista E&N 5 Mar 2026)_
 
-| Sector | C$/month | Source |
-| --- | --- | --- |
-| Agriculture (Agropecuario) | 5,950.02 | EY / Bloomberg Línea |
-| Micro & small artisanal industry | 6,268.83 | EY / Bloomberg Línea |
-| Central & municipal government | 7,419.90 | EY / Bloomberg Línea |
-| Manufacturing industry | 8,000.46 | EY / Bloomberg Línea |
-| Community, social & personal services | 8,341.29 | EY / Bloomberg Línea |
-| Fishing | 9,047.20 | EY / Bloomberg Línea |
-| Mining & quarrying | 10,686.02 | EY / Bloomberg Línea |
-| Electricity/gas/water, commerce, restaurants, hotels, transport, storage & communications | 10,913.54 | EY / Bloomberg Línea |
-| Construction, financial establishments & insurance | 13,315.61 | EY (primary; some sources quote 13,315.71) |
+| Sector | C$/month from 1 Mar 2025 | C$/month from 1 Mar 2026 | Source |
+| --- | --- | --- | --- |
+| Agriculture (Agropecuario) | 5,950.02 | 6,188.02 | EY / Bloomberg Línea |
+| Micro & small artisanal industry | 6,268.83 | 6,519.58 | EY / Bloomberg Línea |
+| Central & municipal government | 7,419.90 | 7,716.70 | EY / Bloomberg Línea |
+| Manufacturing industry | 8,000.46 | 8,320.48 | EY / Bloomberg Línea (Revista E&N prints 8,312.5; Bloomberg Línea's 8,320.48 matches the 4% rise) |
+| Community, social & personal services | 8,341.29 | 8,674.94 | EY / Bloomberg Línea |
+| Fishing | 9,047.20 | 9,409.09 | EY / Bloomberg Línea |
+| Mining & quarrying | 10,686.02 | 11,113.46 | EY / Bloomberg Línea |
+| Electricity/gas/water, commerce, restaurants, hotels, transport, storage & communications | 10,913.54 | 11,350.08 | EY / Bloomberg Línea |
+| Construction, financial establishments & insurance | 13,315.61 | 13,848.23 | EY (primary; some sources quote 13,315.71) / Bloomberg Línea |
 
-Note: 2025 rates remain in force into 2026 for most sectors as MITRAB had not set 2026–2027 rates (except Free Trade Zone) as of March 2026. [RESEARCH GAP — 2026–2027 sectoral minimum wages not yet published.]
+Note: each 2026 figure is 4% above its 2025 figure and applies retroactively from 1 March 2026 to 28 February 2027 (tripartite agreement reported on 5 and 6 March 2026). Free trade zone (zona franca) industries follow a separate agreement: C$9,359.46 from 1 January 2025 and C$9,986.54 (+6.7%) from 1 January 2026. The 2026 Acuerdo Ministerial number has not been sourced; confirm it with MITRAB before citing it.
 
 ### Filing & remittance deadlines
 
