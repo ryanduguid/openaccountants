@@ -4,7 +4,7 @@ description: "Source-cited draft: vat / gst for Namibia (tax year 2025) — rate
 jurisdiction: NA
 category: international
 tax_year: 2025
-last_updated: 2026-10-05
+last_updated: 2026-10-04
 version: 1.1
 review_status: pending_review
 tier: 2
