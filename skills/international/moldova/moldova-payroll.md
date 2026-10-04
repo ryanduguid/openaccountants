@@ -1,10 +1,10 @@
 ---
 name: moldova-payroll
 description: Use this skill whenever asked about Moldova (Republic of Moldova) payroll processing for employed persons. Trigger on phrases like "Moldova payroll", "Moldova PAYE", "impozit pe venit", "income tax withholding Moldova", "CNAS", "BASS", "social insurance Moldova", "CNAM", "FAOAM", "health insurance Moldova", "Form IPC21", "darea de seama IPC21", "scutire personala", "personal exemption Moldova", "net salary Moldova", "salariu net", "gross to net Moldova", "minimum wage Moldova", "salariul minim", "employer social contribution Moldova", "SFS Moldova", "Serviciul Fiscal de Stat", "MDL payroll", or any question about computing employee pay, withholding income tax, or social/health contributions for Moldova-based employees. This skill covers flat 12% income-tax withholding, employee social insurance (CNAS 6%), mandatory health insurance (CNAM 9%), the 24% employer social contribution, personal/dependent exemptions, minimum wage, the unified monthly IPC21 return, and filing obligations. ALWAYS read this skill before processing any Moldova payroll.
-version: 0.1
+version: 0.2
 jurisdiction: MD
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Moldova Payroll
 
-## Moldova Payroll Skill v0.1
+## Moldova Payroll Skill v0.2
 
 Tier 2 (research-verified). Figures below are drawn primarily from PwC Worldwide Tax Summaries (reviewed Jan 2026), EY Moldova tax alerts, and Moldovan accounting portals (buhgalter.md, salarii.md) because the State Tax Service (sfs.md), CNAS (cnas.gov.md) and CNAM (cnam.md) authority rate pages were not directly retrievable at research time (homepages did not expose the schedule; some authority pages returned HTTP 403). A Moldova-licensed accountant must confirm against the current annual Social Insurance Budget Law, the Health Insurance Fund Law and the Tax Code before sign-off.
 
@@ -37,7 +37,7 @@ Tier 2 (research-verified). Figures below are drawn primarily from PwC Worldwide
 | Key legislation | Tax Code (Codul Fiscal, Law No. 1163/1997) — flat 12% under art. 15; Law No. 489/1999 on the public social insurance system + annual Social Insurance Budget Law (CNAS rates); Law No. 1593/2002 on mandatory health insurance premiums + annual Health Insurance Fund Law (CNAM 9%); Law No. 1432/2000 + Government Decision (guaranteed minimum monthly wage) |
 | Filing portal | SFS electronic services (Form IPC21 filed electronically) |
 | Validated by | Pending -- requires sign-off by a Moldova-licensed accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 -- Income Tax Withholding (flat 12%)
 
@@ -158,7 +158,7 @@ Exemptions reduce the income-tax (PIT) base only. They do NOT reduce the CNAS or
 
 Arithmetic check (monthly conversions): 29,700/12 = 2,475.00; 34,620/12 = 2,885.00; 9,900/12 = 825.00; 21,780/12 = 1,815.00. All exact.
 
-[RESEARCH GAP — reviewer to confirm] the exact-year (2025) figures against the Tax Policy annex: the dependent/spouse amounts (MDL 9,900 / 21,780) and major exemption (MDL 34,620) match across the PwC table (now labelled 2026) and the salarii.md 2025 table, but precise-year confirmation is advisable.
+The 2025 amounts are confirmed by the State Tax Service's bulletin on the 2025 fiscal policy (Law No. 214/2024): personal exemption MDL 29,700, major personal exemption MDL 34,620, major additional (spouse) exemption MDL 21,780, dependants MDL 9,900 and dependants with disabilities MDL 21,780, all from 1 January 2025 ([SFS, Politica fiscală 2025](https://monitorul.fisc.md/politica-fiscala-2025-scutirile-personale-vor-fi-majorate/)).
 
 ## Section 7 -- Conservative Defaults
 

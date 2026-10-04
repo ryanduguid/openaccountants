@@ -1,10 +1,10 @@
 ---
 name: ethiopia-payroll
 description: Use this skill whenever asked about Ethiopia payroll processing for employed persons. Trigger on phrases like "Ethiopia payroll", "Ethiopian PAYE", "employment income tax Ethiopia", "Schedule A tax Ethiopia", "pension contribution Ethiopia", "POESSA", "social security Ethiopia", "Form 17 Ethiopia", "net salary Ethiopia", "ETB payroll", "gross to net Ethiopia", "withholding tax Ethiopia", "salary calculation Ethiopia", "Proclamation 1395/2025", "employer pension Ethiopia 11%", or any question about computing employee pay, employment income tax withholding, or pension/social-security contributions for Ethiopia-based employees. This skill covers Schedule A PAYE withholding (post-7-July-2025 brackets), private-organisation pension contributions (employee 7% / employer 11%), filing obligations, and remittance deadlines. ALWAYS read this skill before processing any Ethiopia payroll.
-version: 0.1
+version: 0.2
 jurisdiction: ET
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Ethiopia Payroll Skill v0.1 (Tier 2 -- Research-Verified)
+# Ethiopia Payroll Skill v0.2 (Tier 2 -- Research-Verified)
 
-## Ethiopia Payroll Skill v0.1 (Tier 2 -- Research-Verified)
+## Ethiopia Payroll Skill v0.2 (Tier 2 -- Research-Verified)
 
 > **Tier 2 status:** Figures below are research-verified against PwC Worldwide Tax Summaries and the Income Tax (Amendment) Proclamation No. 1395/2025 (effective 7 July 2025). Items marked **[RESEARCH GAP -- reviewer to confirm]** could not be confirmed from a primary authoritative source and MUST be checked by a licensed Ethiopian accountant before reliance.
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Income Tax Proclamation as amended by Proclamation No. 1395/2025 (eff. 7 July 2025); Federal Tax Administration Proclamation No. 983/2016; Private Organisation Employees' Pension Proclamation |
 | Monthly declaration form | Form 17 (monthly salary / withholding declaration) |
 | Validated by | Pending -- requires sign-off by a licensed Ethiopian accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 Source for legislation and authorities: PwC Worldwide Tax Summaries -- Ethiopia (reviewed 18 Dec 2025), Tax administration and Significant developments pages.
 
@@ -56,7 +56,7 @@ The employer withholds employment income tax monthly under Schedule "A". Employe
 | 10,001 -- 14,000 | 30% | 1,350 |
 | Over 14,000 | 35% | 2,050 |
 
-- **Quick-deduction constants derivation** — Derived arithmetically from the marginal brackets so that `tax = salary x rate - constant` reproduces the cumulative bracket tax exactly (see Section 11 self-check). These constants are not published in the gazetted text.  _([RESEARCH GAP -- reviewer to confirm against the gazetted proclamation; some payroll vendors publish identical constants but they are derived, not statutory.])_
+- **Quick-deduction constants derivation** — Derived arithmetically from the marginal brackets so that `tax = salary x rate - constant` reproduces the cumulative bracket tax exactly (see Section 11 self-check). These constants are not published in the gazetted text; they are exact identities of the published brackets (the schedule is continuous at every boundary), so payroll vendors' identical constants are derived rather than statutory and need no further confirmation.  _(Derived from Proclamation No. 1395/2025 brackets)_
 
 ### Key facts and 2025 reform changes
 

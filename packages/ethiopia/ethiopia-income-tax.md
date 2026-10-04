@@ -1,10 +1,10 @@
 ---
 name: ethiopia-income-tax
 description: Use this skill whenever asked about Ethiopia (ET) personal or business income tax. Trigger on phrases like "how much income tax do I pay in Ethiopia", "PAYE Ethiopia", "ETB salary tax", "Schedule A B C D", "Category A taxpayer", "Category B turnover tax", "rental income tax Ethiopia", "Proclamation 1395/2025", "pension contribution Ethiopia", "POESSA", "Ministry of Revenues", "net pay calculation Birr", "minimum alternative tax", or any question about computing or filing income tax for an employee, sole proprietor, or landlord in Ethiopia. Also trigger when reviewing payroll, computing PAYE withholding, classifying business income, or advising on advance tax. This skill covers monthly PAYE brackets, business/rental annual schedules, Category A/B turnover tax, pension contributions, VAT registration interaction, filing deadlines, and the Ethiopian fiscal calendar. ALWAYS read this skill before touching any Ethiopia income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: ET
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | MOR e-services / regional revenue bureaus |
 | Validated by | Pending — requires sign-off by an Ethiopian tax practitioner |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Calendar caution.** The Ethiopian calendar runs ~7–8 days behind the Gregorian calendar. Statutory "month-end" deadlines therefore tend to land around the 7th–8th of the following Gregorian month. Always confirm the exact Gregorian date against the Ethiopian month boundary.
 
@@ -51,7 +51,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **PAYE formula** — Monthly tax = (Gross monthly taxable salary × band rate) − quick-calc deduction  _(PwC *Taxes on personal income*)_
 
-> **[RESEARCH GAP — reviewer to confirm]** The quick-calc deduction column (300 / 500 / 850 / 1,350 / 2,050) is **derived by computation** from the published cumulative-tax figures (0 / 300 / 900 / 1,650 / 2,850), using the standard progressive identity. The math reconciles exactly, but the deduction constants were **not found stated verbatim** in an authoritative source. The brackets and marginal rates themselves ARE authoritative. The OLD pre-2025 deductions (60 / 142.50 / 302.50 / 565 / 955 / 1,500) are obsolete — do not use them.
+> **Derived constants.** The quick-calc deduction column (300 / 500 / 850 / 1,350 / 2,050) is computed from the published brackets with the progressive identity, and the schedule is continuous at every boundary (at ETB 4,000, 15% gives 300; at 7,000, 20% less 500 gives 900; at 10,000, 25% less 850 gives 1,650; at 14,000, 30% less 1,350 and 35% less 2,050 both give 2,850). The constants are not stated verbatim in the proclamation; the brackets and marginal rates are authoritative, and the arithmetic is exact rather than a research gap. The OLD pre-2025 deductions (60 / 142.50 / 302.50 / 565 / 955 / 1,500) are obsolete — do not use them.
 
 - **Changes vs prior law** — tax-free threshold raised ETB 600 → ETB 2,000/month; lowest positive rate raised 10% → 15%; brackets cut 7 → 6; the 35% top rate now applies above ETB 14,000 (previously above 10,900).  _(MyWorkpay; PaySpace)_
 - **Schedule B/C top rate — conflicting secondary sources** — Some commentary (YSA Law Office) reports 1395/2025 as cutting the Schedule B and C top rate from 35% to 30% above ETB 168,000. EY and TaxDev/IFS both publish the full schedules with a **35%** top band above ETB 168,000, matching the employment schedule. The 30% figure is the flat rate that applies to **companies** on rental and business income, which is a separate rule (see below); it is not the individual top marginal rate. This skill follows EY/TaxDev. **[RESEARCH GAP — reviewer to confirm against the Amharic text of Proclamation 1395/2025.]**
