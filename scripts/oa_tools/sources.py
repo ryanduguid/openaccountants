@@ -333,6 +333,13 @@ NON_GOV_AUTHORITY = frozenset((
                           # ministry rather than a francophone one, so the shape
                           # is a bare ccTLD, not a language. Subdomains are
                           # matched, so all three count from this one entry.
+    'e-qanun.az',         # Azerbaijan's unified electronic legislation database,
+                          # run by the Ministry of Justice: the consolidated Tax
+                          # Code (framework/46948) with every amendment marked.
+                          # The State Tax Service's own site renders the Code in
+                          # a script viewer with no text, and its English PDF is
+                          # the 2015 edition, so this is where the current text
+                          # is read. Bare .az with no "gov" label.
     'impots.mg',          # Direction Generale des Impots, Madagascar: publishes
                           # the consolidated Code des impots and Code des
                           # procedures fiscales after each loi de finances under

@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Azerbaijan (tax year 
 jurisdiction: AZ
 category: international
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Standard corporate profit tax rate** — 20% percent (Resident enterprises and permanent establishments (PEs) of non-residents; flat rate on worldwide accounting profit adjusted for tax purposes)  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/taxes-on-corporate-income)_
 - **Tax base — resident enterprise** — Worldwide gross income less deductible business expenses (taxable profit)  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/income-determination)_
 - **Tax base — non-resident with a PE** — Income attributable to the Azerbaijan permanent establishment, taxed at 20%  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/taxes-on-corporate-income)_
-- **Simplified tax (turnover-based) alternative** — 2% of turnover (4% in some activities/Baku rules vary) percent (Small taxpayers below the AZN 200,000 VAT threshold may opt for simplified tax; (approx — confirm) rate and eligibility vary by activity)  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/taxes-on-corporate-income)_
+- **Simplified tax (turnover-based) alternative** — 2% of receipts from goods, works and services and of non-sales income (art. 220.1), for persons not registered for VAT whose taxable transactions are AZN 200,000 or less in every month of a consecutive 12-month period (art. 218.1.1); certain activities are excluded (art. 218.4). The 4% Baku rate quoted by older secondary sources is no longer in the Code  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 218.1.1, 218.4 and 220.1 — https://e-qanun.az/framework/46948 ; https://taxsummaries.pwc.com/azerbaijan/corporate/taxes-on-corporate-income)_
 - **Withholding tax on dividends** — 5% percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
 - **Withholding tax on interest** — 10% percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
 - **Withholding tax on royalties** — 14% percent  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/withholding-taxes)_
