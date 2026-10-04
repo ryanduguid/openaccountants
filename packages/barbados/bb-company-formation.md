@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Barbados
 jurisdiction: BB
 category: formation
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Incorporation filing fee** — BBD 750 (plus BBD 30 for name reservation) BBD  _([Companies Act, Cap. 308 (fees regulations)](https://cms.caipo.gov.bb/corporate-affairs/incorporation-of-company/))_
 - **External company registration fee** — BBD 3,000 BBD  _([Companies Act, Cap. 308 (fees regulations)](https://cms.caipo.gov.bb/corporate-affairs/incorporation-of-company/))_
 - **Incorporation timeline** — Approximately 5 business days once documents are in order; full setup typically 3-4 weeks  _([Companies Act, Cap. 308](https://cms.caipo.gov.bb/corporate-affairs/incorporation-of-company/))_
-- **Core incorporation steps** — Reserve name, file Articles of Incorporation with CAIPO, appoint directors and registered office, obtain Certificate of Incorporation, register with BRA for tax/VAT and NIS  _(Companies Act, Cap. 308 (as described at [investbarbados.org](https://www.investbarbados.org/registering-with-corporate-affairs-and-ip/)))_
+- **Core incorporation steps** — Reserve name, file Articles of Incorporation (Form 1, fee BBD 750) with CAIPO, appoint directors and registered office, obtain Certificate of Incorporation, register with BRA for tax/VAT and NIS  _(Corporate Affairs and Intellectual Property Office, Fees (Companies Act, Cap. 308) — https://caipo.gov.bb/fees/ ; Invest Barbados — https://www.investbarbados.org/registering-with-corporate-affairs-and-ip/)_
 - **Annual return** — Companies must file an annual return with CAIPO each year to remain in good standing  _([Companies Act, Cap. 308](https://www.caipo.gov.bb/corporate-affairs/post-incorporation/))_
 - **Annual tax compliance** — File corporation tax return and economic substance / country-by-country filings where applicable, and remit monthly tax prepayments  _([Income Tax Act, Cap. 73; Companies (Economic Substance) Act](https://bra.gov.bb/Popular-Topics/Companies/Filing-and-Payment))_
 
