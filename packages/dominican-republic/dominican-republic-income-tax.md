@@ -1,10 +1,10 @@
 ---
 name: dominican-republic-income-tax
 description: Use this skill whenever asked about Dominican Republic personal income tax (Impuesto Sobre la Renta / ISR) for self-employed individuals, independent professionals, and salaried persons. Trigger on phrases like "how much ISR do I pay", "declaración jurada", "IR-1", "IR-3", "retención de ISR", "deducible expenses Dominican Republic", "TSS contributions", "AFP", "SFS", "seguridad social", "regalía pascual", "honorarios", "RNC registration", "ITBIS interaction", "personas físicas", "self-employed tax Dominican Republic", or any question about filing or computing income tax for an individual or sole proprietor in the Dominican Republic. Also trigger when preparing or reviewing an IR-1 return, computing deductible expenses, advising on withholding on professional/technical services, or reconciling social-security (SDSS) contributions. This skill covers the progressive ISR scale, the annual exempt threshold, the IR-1/IR-3/IR-17 form structure, SDSS contributions (AFP, SFS, SRL, INFOTEP), withholding on payments to individuals, penalties, and interaction with ITBIS (VAT). ALWAYS read this skill before touching any Dominican Republic income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 reviewed_by: Miguel Lantigua
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Dominican Republic Income Tax (ISR) -- Self-Employed and Individuals
 
-## Dominican Republic Income Tax (ISR) -- Self-Employed and Individuals Skill v0.1
+## Dominican Republic Income Tax (ISR) -- Self-Employed and Individuals Skill v0.2
 
 > **Tier 2 (research-verified).** Figures below are sourced from PwC Worldwide Tax Summaries, the DGII, the TSS, and Dominican law-firm guidance. Where a figure could not be confirmed against a primary source it is marked **[RESEARCH GAP -- reviewer to confirm]**. A Dominican CPA (Contador Público Autorizado) must sign off before filing.
 
@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax system | Territorial -- residents taxed on DR-source income [PwC] |
 | Validated by | Pending -- requires sign-off by a Dominican Contador Público Autorizado (CPA) |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### ISR Rate Brackets (FY2025) -- Individuals (personas físicas)
 
@@ -56,9 +56,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - Top of 15% band: (624,329.00 − 416,220.01) × 15% = 208,108.99 × 0.15 = RD$31,216.35 ≈ **RD$31,216** ✓
 - Top of 20% band: 31,216 + (867,123.00 − 624,329.01) × 20% = 31,216 + 242,793.99 × 0.20 = 31,216 + 48,558.80 = **RD$79,774.80 ≈ RD$79,775** (DGII publishes the next-band base as RD$79,776 owing to rounding) ✓
 
-- **Annual exempt threshold FY2025** — RD$416,220 DOP (inflation-indexed each year (up ~4.2% from FY2024's RD$399,923))  _([PwC; DGII Comunidad de Ayuda CA687])_
-- **Monthly salary level at which withholding begins** — ~RD$34,685/month DOP (416,220 ÷ 12)  _([P&H Law; DGII])_
-- **Top marginal ISR rate** — 25%  _([PwC; DGII])_
+- **Annual exempt threshold FY2025** — RD$416,220 DOP (unchanged since 2017 and still the 2026 scale; Law 30-26 lifts it to RD$480,000 from fiscal year 2027)  _(Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 296 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf ; DGII, Comunidad de Ayuda CA687, escala salarial 2026 — https://ayuda.dgii.gov.do/conversations/impuesto-sobre-la-renta-isr/ca687-cul-es-la-escala-salarial-correspondiente-al-ao-2026-del-impuesto-sobre-la-renta-isr/696a664277932619036537b8 ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx ; DGII, Aviso: Calendario de implementación de la Ley Núm. 30-26 de 18 de junio de 2026 — https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2026/10-26.pdf)_
+- **Monthly salary level at which withholding begins** — About RD$34,685 a month (RD$416,220 divided by 12); DGII states that salary after legal deductions below RD$34,700 a month carries no 2026 withholding  _(DGII, Guía del Contribuyente No. 11, Retenciones del ISR — https://dgii.gov.do/publicacionesOficiales/bibliotecaVirtual/contribuyentes/retencionesRetribucionesComplementarias/Documents/2-Guia-11-Retenciones%20del%20Impuesto%20Sobre%20la%20Renta.pdf ; DGII, Comunidad de Ayuda CA687, escala salarial 2026 — https://ayuda.dgii.gov.do/conversations/impuesto-sobre-la-renta-isr/ca687-cul-es-la-escala-salarial-correspondiente-al-ao-2026-del-impuesto-sobre-la-renta-isr/696a664277932619036537b8)_
+- **Top marginal ISR rate** — 25% above RD$867,123 (27% for individuals with annual income above RD$4,800,000 from fiscal year 2027 under Law 30-26)  _(Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 296 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf ; DGII, Comunidad de Ayuda CA687, escala salarial 2026 — https://ayuda.dgii.gov.do/conversations/impuesto-sobre-la-renta-isr/ca687-cul-es-la-escala-salarial-correspondiente-al-ao-2026-del-impuesto-sobre-la-renta-isr/696a664277932619036537b8 ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx ; DGII, Aviso: Calendario de implementación de la Ley Núm. 30-26 de 18 de junio de 2026 — https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2026/10-26.pdf)_
 
 **[RESEARCH GAP -- reviewer to confirm]** The FY2026 scale had not been separately confirmed as published by DGII at research time. Use the FY2025 scale for income earned in calendar 2025 and re-pull the DGII escala salarial for any later filing year.
 
@@ -335,15 +335,15 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 ### 5.2 The Progressive ISR Scale (FY2025)
 
-- **Progressive ISR scale application** — Apply the Section 1 scale: 0% up to RD$416,220; 15% on 416,220–624,329; base RD$31,216 + 20% on 624,329–867,123; base RD$79,776 + 25% above 867,123. Top marginal rate 25%. The exempt threshold is inflation-indexed annually [PwC; DGII].  _(PwC; DGII)_
+- **Progressive ISR scale application** — Apply the Section 1 scale: 0% up to RD$416,220; 15% on 416,220–624,329; base RD$31,216 + 20% on 624,329–867,123; base RD$79,776 + 25% above 867,123. Top marginal rate 25%. The exempt threshold is inflation-indexed annually [PwC; DGII].  _(Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 296 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf ; DGII, Comunidad de Ayuda CA687, escala salarial 2026 — https://ayuda.dgii.gov.do/conversations/impuesto-sobre-la-renta-isr/ca687-cul-es-la-escala-salarial-correspondiente-al-ao-2026-del-impuesto-sobre-la-renta-isr/696a664277932619036537b8 ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx ; DGII, Aviso: Calendario de implementación de la Ley Núm. 30-26 de 18 de junio de 2026 — https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2026/10-26.pdf)_
 
 ### 5.3 Tax Year and Filing
 
-- **Tax year and filing** — Tax year is the calendar year ending 31 December. Individuals / sole proprietors file **Form IR-1** by **31 March** of the following year. Salaried employees with only fully-withheld wages generally need not file [DGII].  _(DGII)_
+- **Tax year and filing** — Tax year is the calendar year ending 31 December. Individuals / sole proprietors file **Form IR-1** by **31 March** of the following year. Salaried employees with only fully-withheld wages generally need not file [DGII].  _(Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 300 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx)_
 
 ### 5.4 Employee Withholding (PAYE-style)
 
-- **Employee withholding** — Employers withhold ISR monthly using the annualized scale (no tax until salary exceeds ~RD$34,685/month) and report on **Form IR-3 by the 10th** of the following month, even if nil [P&H Law; DGII].  _(P&H Law; DGII)_
+- **Employee withholding** — Employers withhold ISR monthly using the annualized scale (no tax until salary exceeds ~RD$34,685/month) and report on **Form IR-3 by the 10th** of the following month, even if nil [P&H Law; DGII].  _(DGII, Guía del Contribuyente No. 11, Retenciones del ISR — https://dgii.gov.do/publicacionesOficiales/bibliotecaVirtual/contribuyentes/retencionesRetribucionesComplementarias/Documents/2-Guia-11-Retenciones%20del%20Impuesto%20Sobre%20la%20Renta.pdf ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx)_
 
 ### 5.5 Deductibility of Business Expenses
 
@@ -363,7 +363,7 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 ### 5.9 Withholding on Payments to Individuals
 
-- **Withholding on payments to individuals** — When the client **pays** an individual, withholding obligations arise: **10%** on professional services (honorarios) and rentals; **2%** on technical services; remitted on **Form IR-17 by the 10th** of the following month [Decreto 139-98; P&H Law].  _(Decreto 139-98; P&H Law)_
+- **Withholding on payments to individuals** — When the client **pays** an individual, withholding obligations arise: **10%** on professional services (honorarios) and rentals; **2%** on technical services; remitted on **Form IR-17 by the 10th** of the following month [Decreto 139-98; P&H Law].  _(DGII, Guía del Contribuyente No. 11, Retenciones del ISR — https://dgii.gov.do/publicacionesOficiales/bibliotecaVirtual/contribuyentes/retencionesRetribucionesComplementarias/Documents/2-Guia-11-Retenciones%20del%20Impuesto%20Sobre%20la%20Renta.pdf ; Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 309 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf)_
 
 ### 5.10 ITBIS (VAT) Interaction
 
@@ -376,7 +376,7 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 | Input ITBIS blocked/non-recoverable | IS an expense -- include gross |
 | Unregistered for ITBIS | Gross amounts paid are the cost |
 
-- **ITBIS standard rate and reverse-perception** — ITBIS standard rate is **18%** (16% reduced on certain foods). Registered persons file **Form IT-1 by the 20th** of the following month. A **18% reverse-perception** applies on operations over **RD$300,000** with unregistered/suspended-RNC providers (Norma General 06-23) [DGII; EY].  _(DGII; EY)_
+- **ITBIS standard rate and reverse-perception** — ITBIS standard rate is **18%** (16% reduced on certain foods). Registered persons file **Form IT-1 by the 20th** of the following month. A **18% reverse-perception** applies on operations over **RD$300,000** with unregistered/suspended-RNC providers (Norma General 06-23) [DGII; EY].  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, arts. 341 and 353 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx)_
 
 ### 5.11 Regalía Pascual (Christmas Bonus / 13th salary)
 
