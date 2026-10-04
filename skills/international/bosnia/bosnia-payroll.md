@@ -1,10 +1,10 @@
 ---
 name: bosnia-payroll
 description: "Use this skill whenever asked about Bosnia and Herzegovina payroll processing for employed persons. Trigger on phrases like \"Bosnia payroll\", \"BiH payroll\", \"FBiH payroll\", \"Republika Srpska payroll\", \"RS payroll\", \"Brcko payroll\", \"plata\", \"neto placa\", \"bruto placa\", \"doprinosi\", \"PIO doprinos\", \"zdravstveno osiguranje\", \"porez na dohodak\", \"personal income tax Bosnia\", \"social contributions BiH\", \"employer SSC Bosnia\", \"minimum wage Bosnia\", \"najniza placa\", \"porezna kartica\", \"Specifikacija uz isplatu placa\", \"GIP-1022\", \"gross to net Bosnia\", \"salary calculation Bosnia\", or any question about computing employee pay, withholding tax, or social contributions for Bosnia-based employees. CRITICAL: Bosnia has NO unified national payroll system -- everything is set at the ENTITY level (Federation of BiH, Republika Srpska, Brcko District) with materially different rates, deductions, and forms. This skill branches on the employer's entity. It covers personal income tax (PIT) withholding, social contributions (employee and employer), the 1 July 2025 FBiH contribution reform, minimum wage, personal deductions, and filing obligations. ALWAYS read this skill before processing any Bosnia and Herzegovina payroll."
-version: 0.1
+version: 0.2
 jurisdiction: BA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bosnia and Herzegovina Payroll
 
-## Bosnia and Herzegovina Payroll Skill v0.1
+## Bosnia and Herzegovina Payroll Skill v0.2
 
 > Tier 2 (research-verified). Confidence: **medium**. Bosnia and Herzegovina has no single national payroll authority -- payroll, PIT, and social contributions are administered at the **entity** level. This skill MUST branch on the employer's entity (FBiH / Republika Srpska / Brcko District) before any computation. Where a figure could not be pinned to a primary source it is marked **[RESEARCH GAP -- reviewer to confirm]**.
 
@@ -34,11 +34,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | RS tax authority | Tax Administration of Republika Srpska (Poreska uprava RS / PURS) -- https://poreskaupravars.org |
 | Brcko District authority | Brcko District Tax Administration |
 | PIT rate | FBiH 10% flat; RS 8% flat (employment income); Brcko 10% flat (PwC, Individual -- Taxes on personal income) |
-| Employee social contributions | FBiH 31.0% of gross; RS 32.8% of gross (PwC, Individual -- Other taxes) |
+| Employee social contributions | FBiH 31.0% of gross (Zakon o doprinosima FBiH art 10); RS 31.0% of gross (Zakon o doprinosima RS art 22, as amended) |
 | Employer social contributions | FBiH 5.0% of gross from 1 Jul 2025 (was 10.5%) + 0.5% disaster + 0.5% water on NET; RS 0% (PwC; Vlada FBiH) |
 | Key legislation | FBiH: Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, as amended); Zakon o doprinosima FBiH (2025 amendment). RS: Zakon o porezu na dohodak RS (from 1 Jan 2025); Zakon o doprinosima RS. Brcko: Zakon o porezu na dohodak Brcko Distrikta |
 | Validated by | Pending -- requires sign-off by a BiH licensed accountant/tax adviser |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 > **NOTE -- VAT/indirect taxes are state-level** under the Indirect Taxation Authority (UIO/ITA) and are NOT relevant to payroll. Do not confuse the state-level UIO with the entity-level PIT/SSC administrations above.
 
@@ -74,7 +74,7 @@ PIT is withheld monthly at source by the employer (pay-as-you-earn via the gross
 
 ### Basic personal deduction and dependent factors
 
-- **FBiH basic personal deduction** — basic personal deduction = coefficient 1 = 300 KM/month (3,600 KM/year), applied only via a valid tax card (porezna kartica). Dependent factors are applied to the same 300 KM base.  _(Klix.ba salary structure; rif.hr 2025 dependent summary)_
+- **FBiH basic personal deduction** — basic personal deduction = coefficient 1 = 300 KM/month (3,600 KM/year), applied only via a valid tax card (porezna kartica). Dependant coefficients (0.5 spouse, 0.5 first child, 0.7 second child, 0.9 third and later children, 0.3 other dependants, 0.3 disability) are applied to the same 3,600 KM base  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 24(1) and (2) — https://www.fmf.gov.ba/Content/Open/102395)_
 
 **FBiH dependent factor table**  _(Klix.ba salary structure; rif.hr 2025 dependent summary)_
 
@@ -88,7 +88,7 @@ PIT is withheld monthly at source by the employer (pay-as-you-earn via the gross
 
 > **[RESEARCH GAP -- reviewer to confirm]** The FBiH 300 KM base and dependent factors were confirmed from a Bosnian tax-press source (Klix.ba) and an accounting summary (rif.hr), not the primary FBiH Pravilnik PDF (the official PUFBiH PDF was not machine-readable in research). Confirm the current base against the FBiH Pravilnik.
 
-- **RS basic personal deduction** — basic personal deduction = 12,000 KM/year (1,000 KM/month), proportionally reduced for part-time and split across multiple employers; dependent deduction = 1,800 KM/year per dependent family member; plus a deduction for interest on housing loans.  _(PwC, Individual -- Taxes on personal income)_
+- **RS basic personal deduction** — basic personal deduction = 12,000 KM/year (1,000 KM/month), proportionally reduced for part-time and split across multiple employers; dependent deduction = 1,800 KM/year per dependent family member; plus a deduction for interest on housing loans.  _(Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 2 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf ; Zakon o izmjenama Zakona o porezu na dohodak (Sl. glasnik RS 49/21), art 1 — https://poreskaupravars.org/wp-content/uploads/2021/06/Zakon-o-doprinosima.pdf)_
 - **Conservative default tax card** — apply the basic personal deduction only where a valid tax card (porezna kartica) is on file; otherwise grant no personal deduction (FBiH/RS both require the card to claim it).  _(PwC, Individual -- Taxes on personal income)_
 
 ## Section 4 -- Social Contributions (Federation of BiH)
@@ -136,23 +136,23 @@ These two 0.5% charges are employer-borne, calculated on net salary, and sit out
 
 ## Section 5 -- Social Contributions (Republika Srpska)
 
-In RS there are NO employer social contributions. All 32.8% is borne by the employee and withheld by the employer.
+In RS there are NO employer social contributions. All 31.0% is borne by the employee and withheld by the employer.
 
 ### RS contribution table
 
-**RS contribution table**  _(PwC, Individual -- Other taxes)_
+**RS contribution table**  _(Zakon o doprinosima RS (Sl. glasnik RS 114/17) art 22(1), as amended by Sl. glasnik RS 112/19 and 119/21)_
 
 | Fund | Employee rate | Employer rate | Base | Source |
 | --- | --- | --- | --- | --- |
 | Pension & disability insurance (PIO) | 18.5% | 0% | Gross salary | PwC, Individual -- Other taxes |
-| Health insurance | 12.0% | 0% | Gross salary | PwC, Individual -- Other taxes |
+| Health insurance | 10.2% | 0% | Gross salary | Zakon o doprinosima RS art 22(1), amended by Sl. glasnik RS 119/21 |
 | Child protection | 1.7% | 0% | Gross salary | PwC, Individual -- Other taxes |
 | Unemployment insurance | 0.6% | 0% | Gross salary | PwC, Individual -- Other taxes |
-| **TOTAL social contributions** | **32.8%** | **0%** | Gross salary | PwC, Individual -- Other taxes |
+| **TOTAL social contributions** | **31.0%** | **0%** | Gross salary | Zakon o doprinosima RS art 22(1), as amended |
 
-**Arithmetic check:** employee 18.5 + 12.0 + 1.7 + 0.6 = **32.8%** ✓; employer = **0%** ✓.
+**Arithmetic check:** employee 18.5 + 10.2 + 1.7 + 0.6 = **31.0%** ✓; employer = **0%** ✓.
 
-> **Source note:** RS employee contributions confirmed against PwC, *Bosnia and Herzegovina -- Individual -- Other taxes* (pension/PIO 18.5%, health 12.0%, unemployment 0.6%, child protection 1.7%; total 32.8%) and the 2025 Eurofast Bosnia payroll guide. RS is an entirely employee-borne regime: PwC states "There are no employer's social security contributions in Republika Srpska."
+> **Source note:** RS employee contributions follow the RS Zakon o doprinosima (Sl. glasnik RS 114/17) art 22(1), as amended by Sl. glasnik RS 112/19 (unemployment 0.8% to 0.6% from 1 January 2020) and 119/21 (health 12% to 10.2% from 1 January 2022): pension/PIO 18.5%, health 10.2%, unemployment 0.6%, child protection 1.7%; total 31.0%. RS is an entirely employee-borne regime: the employer withholds and remits the contributions but bears none of its own.
 
 ### Brcko District
 
@@ -340,18 +340,18 @@ Bank statement line: `ISPLATA PLACE 08/2025`
 ## Section 11 -- Tier 1 Rules (deterministic -- always apply)
 
 - **Branch on entity first** — FBiH, RS, and Brcko have different rates, deductions, and forms.  _(PwC)_
-- **FBiH PIT** — FBiH PIT = 10% flat on (gross − 31% employee SSC − deductions).  _(PwC)_
-- **RS PIT** — RS PIT = 8% flat on employment income (gross − 31% employee SSC − deductions); capital gains 13%; small entrepreneurs 2% of revenue.  _(PwC)_
+- **FBiH PIT** — FBiH PIT = 10% flat on (gross − 31% employee SSC − deductions).  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, arts 9, 10 and 24 — https://www.fmf.gov.ba/Content/Open/102395)_
+- **RS PIT** — RS PIT = 8% flat on employment income (gross − 31% employee SSC − deductions); self-employment income 10%; capital income 13%; small entrepreneurs 2% of revenue  _(Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 1 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf ; PwC Worldwide Tax Summaries (small entrepreneurs) — https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/taxes-on-personal-income)_
 - **Brcko PIT** — Brcko PIT = 10% flat.  _(PwC)_
-- **FBiH employee SSC** — FBiH employee SSC = 31.0% = PIO 17.0 + health 12.5 + unemployment 1.5.  _(PwC)_
-- **FBiH employer SSC** — FBiH employer SSC = 5.0% from 1 Jul 2025 = PIO 2.5 + health 2.0 + unemployment 0.5; was 10.5% before.  _(PwC / Nexo / Vlada FBiH)_
-- **FBiH combined rate change** — FBiH combined fell 41.5% → 36% on 1 Jul 2025.  _(Vlada FBiH / federalna.ba)_
+- **FBiH employee SSC** — FBiH employee SSC = 31.0% = PIO 17.0 + health 12.5 + unemployment 1.5.  _(Zakon o doprinosima FBiH (Sl. novine FBiH 35/98 to 33/25), Federal Ministry of Finance consolidated text, art 10 — https://www.fmf.gov.ba/Content/Open/102606)_
+- **FBiH employer SSC** — FBiH employer SSC = 5.0% from 1 Jul 2025 = PIO 2.5 + health 2.0 + unemployment 0.5; was 10.5% before.  _(Zakon o doprinosima FBiH (Sl. novine FBiH 35/98 to 33/25), Federal Ministry of Finance consolidated text, art 10 — https://www.fmf.gov.ba/Content/Open/102606 ; Zakon o izmjenama i dopunama Zakona o doprinosima (Sl. novine FBiH 33/25), art 4 — https://www.pufbih.ba/v1/public/upload/zakoni/50ea7-zakon-o-izmjenama-i-dopunama-zakona-o-doprinosima-33-25.pdf)_
+- **FBiH combined rate change** — FBiH combined fell 41.5% → 36% on 1 Jul 2025.  _(Pravilnik o načinu obračunavanja i uplate doprinosa, consolidated text (Sl. novine FBiH 48/25) — https://www.pufbih.ba/v1/public/upload/zakoni/7cfcb-pravilnik-o-nacinu-obracunavanja-i-uplate-doprinosa-precisceni-48-25.pdf ; Zakon o izmjenama i dopunama Zakona o doprinosima (Sl. novine FBiH 33/25), art 4 — https://www.pufbih.ba/v1/public/upload/zakoni/50ea7-zakon-o-izmjenama-i-dopunama-zakona-o-doprinosima-33-25.pdf)_
 - **FBiH employer additional charges** — FBiH employer also pays 0.5% disaster + 0.5% water on NET, outside the 36%.  _(PwC)_
-- **RS SSC** — RS SSC = 31.0% all employee-borne = PIO 18.5 + health 10.2 + child 1.7 + unemployment 0.6; no employer SSC in RS.  _(PwC)_
-- **Personal deductions** — FBiH personal deduction = 300 KM/mo (coeff 1) via tax card; RS = 1,000 KM/mo + 1,800 KM/yr per dependent.  _(Klix.ba / rif.hr / PwC)_
+- **RS SSC** — RS SSC = 31.0% all employee-borne = PIO 18.5 + health 10.2 + child 1.7 + unemployment 0.6; no employer SSC in RS.  _(Zakon o doprinosima RS (Sl. glasnik RS 114/17), art 22(1) — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon-o-doprinosima-SLGL-114_17.pdf ; Zakon o izmjenama Zakona o doprinosima (Sl. glasnik RS 112/19), art 2 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon-o-izmjenama-Zakona-o-doprinosima-SLGL-112_19.pdf ; Zakon o izmjenama i dopunama Zakona o doprinosima (Sl. glasnik RS 119/21), art 3 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf)_
+- **Personal deductions** — FBiH personal deduction = 300 KM/mo (coeff 1) via tax card; RS = 1,000 KM/mo + 1,800 KM/yr per dependent.  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 24(1) — https://www.fmf.gov.ba/Content/Open/102395 ; Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 2 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf ; Zakon o izmjenama Zakona o porezu na dohodak (Sl. glasnik RS 49/21), art 1 — https://poreskaupravars.org/wp-content/uploads/2021/06/Zakon-o-doprinosima.pdf)_
 - **FBiH minimum wage 2025** — FBiH 2025 minimum wage = 1,000 net / 1,562 gross.  _(Sl. novine FBiH 104/24; Vlada FBiH)_
 - **RS minimum wage 2025** — RS 2025 minimum wage = 900 net / 1,344.26 gross base, tiered to 1,300 net / 2,000 gross for higher education.  _(Sl. glasnik RS 6/25; Plastron)_
-- **Annual PIT return deadline** — Annual PIT return due 31 March of the following year (FBiH and RS); Brcko 28 February, waived if fully withheld.  _(PwC)_
+- **Annual PIT return deadline** — Annual PIT return due 31 March of the following year (FBiH and RS); Brcko 28 February, waived if fully withheld.  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 36(1) — https://www.fmf.gov.ba/Content/Open/102395 ; PwC Worldwide Tax Summaries, Individual, Tax administration (RS and Brčko District))_
 - **Currency peg** — BAM pegged 1 EUR = 1.95583 BAM (currency board), so KM figures are stable against EUR.  _(Currency board (BAM pegged to EUR))_
 
 ## Section 12 -- Tier 2 Catalogue (reviewer judgement required)

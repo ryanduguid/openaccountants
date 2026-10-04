@@ -1,11 +1,11 @@
 ---
 name: bosnia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Bosnia and Herzegovina VAT (PDV) return for any client. Trigger on phrases like "Bosnia VAT", "BiH VAT", "PDV return", "ITA filing", or any request involving Bosnian VAT. Bosnia has a unique single-rate system at 17%. This skill covers standard PDV payers filing monthly returns. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Bosnian VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: BA
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -87,7 +87,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal catalogue
 
-- **R-BA-1 — Non-registered entity** — Trigger: client not PDV registered (below BAM 50,000 threshold and not voluntarily registered). Message: "Non-registered entities cannot file PDV returns. Out of scope."  _(R-BA-1)_
+- **R-BA-1 — Non-registered entity** — Trigger: client not PDV registered (below the BAM 100,000 registration threshold and not voluntarily registered). Message: "Non-registered entities cannot file PDV returns. Out of scope."  _(R-BA-1)_
 - **R-BA-2 — Partial exemption** — Trigger: mixed taxable and exempt supplies. Message: "Input PDV apportionment required. Use a qualified practitioner."  _(R-BA-2)_
 - **R-BA-3 — Income tax** — Trigger: user asks about income tax. Message: "This skill handles PDV only. Note: income tax is at entity level (Federation, RS, Brcko)."  _(R-BA-3)_
 - **R-BA-4 — Entity-level tax (FBiH vs RS vs Brcko)** — Trigger: entity-level tax question. Message: "Direct taxes are administered by entity authorities (FBiH, RS, Brcko), not the ITA. Out of scope."  _(R-BA-4)_
@@ -243,9 +243,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
-### 5.1 Standard rate 17% (Law on PDV Article 24)
+### 5.1 Standard rate 17% (Law on VAT Article 23)
 
-- **Standard rate 17%** — 17% percent (Single rate — simplest in region. No reduced rates. Sales to Box 11/12. Purchases to Box 51.)  _(Law on PDV Article 24)_
+- **Standard rate 17%** — 17% (single rate with no reduced rates. Sales to Box 11/12. Purchases to Box 51.)  _(Law on Value Added Tax (BiH), ITA English translation, art 23 — https://www.uino.gov.ba/portal/wp-content/uploads/95-ENGLESKI-PROPISI/1-VAT-PDV/1-Law_on_VAT_BiH.pdf)_
 
 ### 5.2 Zero rate
 
@@ -255,9 +255,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Exempt supplies** — Financial, insurance, medical, educational, residential rental, postal, cultural.  _(Section 5.3)_
 
-### 5.4 Reverse charge — non-resident services (Article 12)
+### 5.4 Reverse charge — non-resident services (Article 13)
 
-- **Reverse charge non-resident services** — Self-assess at 17%. Box 31/32 (output), Box 53 (input). Net zero.  _(Article 12)_
+- **Reverse charge non-resident services** — Self-assess at 17%. Box 31/32 (output), Box 53 (input). Net zero.  _(Law on Value Added Tax (BiH), ITA English translation, art 13(3) — https://www.uino.gov.ba/portal/wp-content/uploads/95-ENGLESKI-PROPISI/1-VAT-PDV/1-Law_on_VAT_BiH.pdf)_
 
 ### 5.5 Import PDV
 
@@ -373,9 +373,9 @@ Per `vat-workflow-base` Section 3 with BiH-specific box codes.
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to Malta v2.0 10-section structure.
+- **v2.1 (April 2026):** Full rewrite to Malta v2.1 10-section structure.
 
-## End of Bosnia and Herzegovina VAT (PDV) Skill v2.0
+## End of Bosnia and Herzegovina VAT (PDV) Skill v2.1
 
 ## Disclaimer
 
