@@ -143,6 +143,8 @@ NON_GOV_AUTHORITY = frozenset((
                           # administration, which publishes the entity tax laws. Bare .ba.
     'poreskaupravars.org',  # Poreska uprava Republike Srpske, the RS tax
                           # administration, which publishes gazette extracts. Bare .org.
+    'ahv.li',             # Liechtensteinische AHV-IV-FAK, the public-law social
+                          # insurance institution, which publishes the rates. Bare .li.
     'mra.mw',             # Malawi Revenue Authority
     'dgi.bf',             # Burkina Faso, Direction Generale des Impots
     'impots.cm',          # Cameroon, Direction Generale des Impots

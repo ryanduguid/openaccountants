@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Liechten
 jurisdiction: LI
 category: formation
 tax_year: 2025
-version: 0.1
-last_updated: 2026-09-10
+version: 0.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,19 +15,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Entity types, capital and incorporation
 
-- **Liechtenstein legal forms overview** — Liechtenstein offers a distinctive range of legal forms under the Persons and Companies Act (PGR), including the AG, GmbH, Anstalt (establishment), Stiftung (foundation) and Trust. Capital may be denominated in CHF, EUR or USD and must be fully paid up at formation.  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR))_
-- **Aktiengesellschaft (AG) — joint-stock company minimum share capital** — Public/larger company form; minimum share capital CHF 50,000 (or EUR/USD 50,000), fully paid up CHF (fully paid up)  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [gsl.org](https://gsl.org/en/taxes/liechtenstein-ag/)))_
-- **Gesellschaft mit beschränkter Haftung (GmbH) — limited liability company minimum share capital** — Minimum share capital CHF 30,000 (or EUR/USD equivalent) (approx — sources cite CHF 10,000–30,000; confirm) CHF (approx — sources cite CHF 10,000–30,000; confirm)  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [companyformationliechtenstein.com](https://companyformationliechtenstein.com/types-of-companies-liechtenstein/)))_
-- **Anstalt (establishment) minimum capital** — Liechtenstein-specific hybrid entity; minimum capital CHF 30,000 (CHF 50,000 if divided into shares) CHF  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [gsl.org](https://gsl.org/en/offshore/offshore-zones/western-europe/liechtenstein/liechtenstein-anstalt/)))_
-- **Stiftung (foundation) minimum capital** — Asset-holding/private-wealth entity; minimum capital CHF 30,000 (or EUR/USD equivalent) (approx — confirm) CHF (approx — confirm)  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [en.liechtenstein-business.li](https://en.liechtenstein-business.li/wirtschaftsstandort/unternehmensgruendung/rechtsformen-im-ueberblick.html)))_
-- **Capital currency options** — Share capital may be denominated in CHF, EUR or USD provided the minimum is met  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [gsl.org](https://gsl.org/en/taxes/liechtenstein-ag/)))_
-- **Capital payment** — Minimum capital must be fully paid up / contributed at formation  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [gsl.org](https://gsl.org/en/taxes/liechtenstein-ag/)))_
+- **Liechtenstein legal forms overview** — Liechtenstein offers a distinctive range of legal forms under the Persons and Companies Act (PGR), including the AG, GmbH, Anstalt (establishment), Stiftung (foundation) and Trust. Capital may be denominated in CHF, EUR or USD and must be fully paid up at formation.  _(Personen- und Gesellschaftsrecht (PGR), LR 216.0, LILEX consolidated text, Art. 122 — https://www.gesetze.li/konso/pdf/1926004000)_
+- **Aktiengesellschaft (AG) — joint-stock company minimum share capital** — Public/larger company form; minimum share capital CHF 50,000 (or the equivalent in EUR or USD), fully paid up  _(Personen- und Gesellschaftsrecht (PGR), LR 216.0, LILEX consolidated text, Art. 122 Abs. 1 and 2 — https://www.gesetze.li/konso/pdf/1926004000)_
+- **Gesellschaft mit beschränkter Haftung (GmbH) — limited liability company minimum share capital** — Minimum share capital CHF 10,000 (or the equivalent in EUR or USD), fully paid up  _(Personen- und Gesellschaftsrecht (PGR), LR 216.0, LILEX consolidated text, Art. 122 Abs. 1 and 2 — https://www.gesetze.li/konso/pdf/1926004000)_
+- **Anstalt (establishment) minimum capital** — Liechtenstein-specific hybrid entity; minimum capital CHF 30,000 where the capital is not divided into shares, CHF 50,000 where it is  _(Personen- und Gesellschaftsrecht (PGR), LR 216.0, LILEX consolidated text, Art. 122 Abs. 1 — https://www.gesetze.li/konso/pdf/1926004000)_
+- **Stiftung (foundation) minimum capital** — Asset-holding/private-wealth entity; minimum capital CHF 30,000, which may also be denominated in EUR or USD  _(Personen- und Gesellschaftsrecht (PGR), LR 216.0, LILEX consolidated text, Art. 552 § 13 Abs. 1 — https://www.gesetze.li/konso/pdf/1926004000)_
+- **Capital currency options** — Share capital may be denominated in CHF, EUR or USD provided the minimum is met  _(Personen- und Gesellschaftsrecht (PGR), LR 216.0, LILEX consolidated text, Art. 122 Abs. 1a — https://www.gesetze.li/konso/pdf/1926004000)_
+- **Capital payment** — Minimum capital must be fully paid up / contributed at formation  _(Personen- und Gesellschaftsrecht (PGR), LR 216.0, LILEX consolidated text, Art. 122 Abs. 2 — https://www.gesetze.li/konso/pdf/1926004000)_
 - **Registered office requirement** — A registered office (and usually a Liechtenstein-resident representative/director) in Liechtenstein is required  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [lawsupport.li](https://lawsupport.li/en/company-formation-in-liechtenstein)))_
-- **Commercial registry** — Companies are entered in the Commercial Register (Handelsregister), administered by the Office of Justice (Amt für Justiz)  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [commenda.io](https://www.commenda.io/liechtenstein/annual-compliance)))_
+- **Commercial registry** — Companies are entered in the Commercial Register (Handelsregister), administered by the Office of Justice (Amt für Justiz)  _(Personen- und Gesellschaftsrecht (PGR), LR 216.0, LILEX consolidated text, Art. 956 — https://www.gesetze.li/konso/pdf/1926004000)_
 - **Incorporation timeline** — Typically 5–10 working days from submission of complete documents (approx — confirm)  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [gsl.org](https://gsl.org/en/taxes/liechtenstein-ag/)))_
-- **Core annual tax compliance — minimum tax** — All legal entities owe the CHF 1,800 annual minimum corporate tax (creditable against profit tax) CHF (creditable against profit tax)  _([Tax Act (Steuergesetz, SteG)](https://taxsummaries.pwc.com/liechtenstein/corporate/taxes-on-corporate-income))_
+- **Core annual tax compliance — minimum tax** — All legal entities owe the CHF 1,800 annual minimum profit tax, creditable against profit tax; an entity running a commercial business whose average balance sheet total over the last three years did not exceed CHF 500,000 is exempt  _(Steuergesetz (SteG), LR 640.0, LILEX consolidated text, Art. 62 Abs. 2 and 3 — https://www.gesetze.li/konso/pdf/2010340000)_
 - **Core annual compliance — accounts and return** — Maintain statutory accounts (PGR) and file the annual corporate tax return with the Tax Administration  _(Persons and Companies Act (PGR); Tax Act (Steuergesetz, SteG) (as described at [commenda.io](https://www.commenda.io/liechtenstein/annual-compliance)))_
-- **Audit requirement** — AGs and most commercially active entities require a statutory auditor; small/asset-holding entities may be exempt (approx — confirm thresholds)  _(Persons and Companies Act (Personen- und Gesellschaftsrecht, PGR) (as described at [commenda.io](https://www.commenda.io/liechtenstein/annual-compliance)))_
+- **Audit requirement** — Companies within Art. 1063 PGR must have their annual and consolidated accounts audited by an auditor (Wirtschaftsprüfer); small companies under Art. 1064 are exempt unless they are subject to disclosure under Art. 1057  _(Personen- und Gesellschaftsrecht (PGR), LR 216.0, LILEX consolidated text, Art. 1058 Abs. 1 — https://www.gesetze.li/konso/pdf/1926004000)_
 
 <!-- openaccountants-cta-block -->
 
