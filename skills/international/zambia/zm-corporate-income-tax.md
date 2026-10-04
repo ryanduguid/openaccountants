@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Zambia (tax year 2025
 jurisdiction: ZM
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,12 +17,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Resident companies are taxed on Zambian-source profits at a standard 30% rate, with reduced or higher rates for specific sectors. The figures below are for the 2025 charge year and are an unverified source-cited draft.
 
-- **Standard corporate income tax rate** — 30% percent  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
+- **Standard corporate income tax rate** — 30%  _(Zambia Revenue Authority, Tax Information (turnover tax, PAYE 2026 bands, income tax, VAT), income tax section — https://www.zra.org.zm/tax-information/)_
 - **Telecommunication companies rate** — 35% percent (Higher rate on telecoms income above a threshold)  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
-- **Agriculture / chemical fertilizer manufacture rate** — 15% percent  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
+- **Agriculture / chemical fertilizer manufacture rate** — 10% for the agriculture sector (ZRA tax information); the 15% figure for chemical fertiliser manufacturing keeps its PwC source, so check the Charging Schedule to the Income Tax Act before relying on it  _(Zambia Revenue Authority, Tax Information (turnover tax, PAYE 2026 bands, income tax, VAT), income tax section — https://www.zra.org.zm/tax-information/ ; fertiliser manufacturing: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
 - **Non-traditional exports rate** — 15% percent  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
 - **Mining (mineral processing) rate** — 30% percent ((approx — confirm; mining also subject to mineral royalty))  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
-- **Turnover tax (small businesses)** — 5% on annual turnover up to ZMW 5 million percent (effective 1 January 2025)  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/other-taxes)_
+- **Turnover tax (small businesses)** — 5% on monthly turnover above K2,500 (K30,000 a year), with 0% on the first K2,500 a month, for businesses with annual sales of K5,000,000 or less; a business whose annual sales exceed K5,000,000 registers for income tax instead; returns and payment are due by the 14th of the following month  _(Zambia Revenue Authority, Tax Information (turnover tax, PAYE 2026 bands, income tax, VAT), turnover tax section — https://www.zra.org.zm/tax-information/ ; Zambia Revenue Authority, Payment Due Dates, Turnover Tax — https://www.zra.org.zm/payment-due-dates/)_
 - **Tax base** — Zambian-source business profits (source-based system)  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
 - **WHT on dividends (resident)** — 15% percent  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/withholding-taxes)_
 - **WHT on dividends (non-resident)** — 20% percent (Treaty relief may reduce this)  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/withholding-taxes)_
@@ -30,8 +31,8 @@ Resident companies are taxed on Zambian-source profits at a standard 30% rate, w
 - **WHT on royalties (resident)** — 15% percent  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/withholding-taxes)_
 - **WHT on royalties (non-resident)** — 20% percent (Treaty relief may reduce this)  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/withholding-taxes)_
 - **WHT on management/consultancy fees (non-resident)** — 20% percent  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/withholding-taxes)_
-- **Annual income tax return deadline** — 21 June following the end of the charge year  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/tax-administration)_
-- **Provisional tax** — Paid in four quarterly installments (due 31 Mar, 30 Jun, 30 Sep, 31 Dec; payable by the 10th of the following month)  _(Income Tax Act — https://www.zra.org.zm/payment-due-dates/)_
+- **Annual income tax return deadline** — 21 June following the end of the charge year, together with the balance of tax under section 46  _(Zambia Revenue Authority, Payment Due Dates, Income Tax Annual — https://www.zra.org.zm/payment-due-dates/)_
+- **Provisional tax** — Provisional return by 31 March of the charge year; the tax is payable in four equal instalments due 31 March, 30 June, 30 September and 31 December, each payable by the 10th of the following month (section 46(a))  _(Zambia Revenue Authority, Payment Due Dates, Provisional Tax — https://www.zra.org.zm/payment-due-dates/ ; Zambia Revenue Authority, Tax Information (turnover tax, PAYE 2026 bands, income tax, VAT), provisional return — https://www.zra.org.zm/tax-information/)_
 
 <!-- openaccountants-cta-block -->
 
