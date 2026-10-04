@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Lithuani
 jurisdiction: LT
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,12 +17,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 The most common business vehicle is the private limited liability company (Uzdaroji akcine bendrove, UAB). Companies are registered with the Centre of Registers (Registru centras), generally via notarised or qualified-electronic-signature documents.
 
-- **Private limited company (UAB)** — Uzdaroji akcine bendrove - most common form; limited liability, 1-249 shareholders  _(Law on Companies (Akciniu bendroviu istatymas) — https://1office.co/blog/company-formation-in-lithuania-guide/)_
-- **Public limited company (AB)** — Akcine bendrove - public limited company, shares may be publicly traded  _(Law on Companies — https://1office.co/blog/company-formation-in-lithuania-guide/)_
+- **Private limited company (UAB)** — Uzdaroji akcine bendrove - most common form; limited liability, 1-249 shareholders  _(Law on Companies VIII-1835 (Akcinių bendrovių įstatymas, consolidated text in force from 1 July 2026, e-seimas), art. 2(4) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.106080/asr)_
+- **Public limited company (AB)** — Akcine bendrove - public limited company, shares may be publicly traded  _(Law on Companies VIII-1835 (Akcinių bendrovių įstatymas, consolidated text in force from 1 July 2026, e-seimas), art. 2(3) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.106080/asr)_
 - **Small partnership (MB)** — Mazoji bendrija - small partnership with no minimum capital, popular for small businesses  _(Law on Small Partnerships (Mazuju bendriju istatymas) — https://1office.co/blog/company-formation-in-lithuania-guide/)_
 - **Individual enterprise (II) / sole trader** — Individuali imone or individual-activity certificate - unlimited liability sole proprietor  _(Law on Individual Enterprises (Individualiu imoniu istatymas) — https://1office.co/blog/company-formation-in-lithuania-guide/)_
-- **UAB minimum share capital** — EUR 2,500 (at least 25%, i.e. EUR 625, paid up before registration) EUR ((approx - confirm; some sources cite EUR 1,000)) EUR (approx - confirm; some sources cite EUR 1,000)  _(Law on Companies — https://companyformationlithuania.com/set-up-a-uab-lithuania/)_
-- **AB minimum share capital** — EUR 25,000 EUR ((approx - confirm)) EUR (approx - confirm)  _(Law on Companies — https://1office.co/blog/company-formation-in-lithuania-guide/)_
+- **UAB minimum share capital** — EUR 1,000 (art. 2(4)); the EUR 2,500 this guide carried until October 2026 was the figure before the 2023 amendment  _(Law on Companies VIII-1835 (Akcinių bendrovių įstatymas, consolidated text in force from 1 July 2026, e-seimas), art. 2(4) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.106080/asr)_
+- **AB minimum share capital** — EUR 25,000 (art. 2(3))  _(Law on Companies VIII-1835 (Akcinių bendrovių įstatymas, consolidated text in force from 1 July 2026, e-seimas), art. 2(3) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.106080/asr)_
 - **Registration authority** — Centre of Registers (Registru centras) - maintains the Register of Legal Entities  _(Law on the Register of Legal Entities — https://www.registrucentras.lt/)_
 - **Incorporation steps** — Reserve company name, prepare articles of association, open accumulative bank account and deposit capital, notarise founding documents (or use e-signature), register with the Centre of Registers  _(Law on Companies — https://1office.co/blog/company-formation-in-lithuania-guide/)_
 - **Registration timeline** — About 3 business days at the Register once documents are complete; ~1-3 weeks overall ((approx - confirm)) (approx - confirm)  _(Law on the Register of Legal Entities — https://1office.co/blog/company-formation-in-lithuania-guide/)_

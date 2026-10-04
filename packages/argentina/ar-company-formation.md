@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Argentin
 jurisdiction: AR
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Maria Valeria Benvenuti
 review_status: pending_review
 tier: 2
@@ -16,11 +17,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Entity types and incorporation
 
 - **Corporation (SA)** — Sociedad Anónima — capital divided into shares; suited to larger businesses; subject to fuller corporate governance and oversight  _(General Companies Law (Ley General de Sociedades, Ley 19.550))_
-- **Limited liability company (SRL)** — Sociedad de Responsabilidad Limitada — capital divided into quotas held by up to 50 partners; the most common SME vehicle  _(General Companies Law (Ley General de Sociedades, Ley 19.550))_
+- **Limited liability company (SRL)** — Sociedad de Responsabilidad Limitada — capital divided into quotas held by up to 50 partners; the most common SME vehicle  _(Ley General de Sociedades 19.550 (t.o. 1984), updated text on InfoLEG, art. 146 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/25553/texact.htm)_
 - **Simplified joint-stock company (SAS)** — Sociedad por Acciones Simplificada — a streamlined, digitally-incorporated vehicle introduced for faster, lower-cost setup  _(Entrepreneurs' Support Law (Ley de Apoyo al Capital Emprendedor, Ley 27.349))_
-- **Minimum capital — SA** — Statutory minimum of ARS 100,000 (periodically updated by decree) ARS ((approx — confirm current decreed minimum)) ARS (approx — confirm current decreed minimum)  _(General Companies Law (Ley General de Sociedades, Ley 19.550), art. 186)_
-- **Minimum capital — SRL** — No fixed statutory minimum; capital must be adequate (commensurate) for the company's intended activity  _(General Companies Law (Ley General de Sociedades, Ley 19.550))_
-- **Capital pay-in requirement** — Cash contributions must be at least 25% paid in at incorporation, with the balance paid within two years (in-kind contributions paid in full)  _(General Companies Law (Ley General de Sociedades, Ley 19.550), art. 149/187)_
+- **Minimum capital — SA** — ARS 30,000,000, fully subscribed on formation; the Executive updates the amount by decree (art. 186 as amended by Decreto 209/2024 of 1 March 2024). The ARS 100,000 this guide carried until October 2026 was the pre-2024 figure  _(Ley General de Sociedades 19.550 (t.o. 1984), updated text on InfoLEG, art. 186, amount set by Decreto 209/2024 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/25553/texact.htm)_
+- **Minimum capital — SRL** — No fixed statutory minimum; capital must be adequate (commensurate) for the company's intended activity  _(Ley General de Sociedades 19.550 (t.o. 1984), updated text on InfoLEG, art. 146 and 149 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/25553/texact.htm)_
+- **Capital pay-in requirement** — Cash contributions must be at least 25% paid in at incorporation with the balance within two years (SRL art. 149; SA art. 187); in-kind contributions are paid in full, and a single-member SA must pay its capital in full (art. 187)  _(Ley General de Sociedades 19.550 (t.o. 1984), updated text on InfoLEG, art. 149 and 187 — https://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/25553/texact.htm)_
 - **Registration body** — Inspección General de Justicia (IGJ) in the City of Buenos Aires, or the relevant provincial public-registry (Registro Público) elsewhere  _(General Companies Law (Ley General de Sociedades, Ley 19.550); IGJ regulations)_
 - **Core incorporation steps** — Reserve name; execute bylaws (by public deed for SA/SRL); deposit initial capital; register with IGJ/provincial registry; obtain CUIT and register with ARCA; register for provincial turnover tax and with the employer/social-security system  _(General Companies Law (Ley General de Sociedades, Ley 19.550); ARCA registration rules)_
 - **Incorporation timeline** — Roughly 30–60 days for a standard SA/SRL via IGJ; an SAS can be faster (often a few days to weeks where the digital process is available) ((approx — confirm current IGJ processing times)) (approx — confirm current IGJ processing times)  _(IGJ regulations (Resoluciones Generales IGJ))_

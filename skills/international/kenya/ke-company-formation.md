@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Kenya (t
 jurisdiction: KE
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,10 +16,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Entity types, incorporation and annual compliance
 
 - **Companies registration authority** — Companies in Kenya are registered with the Business Registration Service (BRS) through the eCitizen portal under the Companies Act, 2015. The private company limited by shares is the most common vehicle for business.  _(Companies Act, 2015)_
-- **Most common entity — private company limited by shares** — Private company limited by shares (max 50 members; shares not offered to the public)  _(Companies Act, 2015 — https://www.kazilegal.com/cost-of-company-registration-in-kenya.html)_
+- **Most common entity — private company limited by shares** — Private company limited by shares: its articles restrict share transfers, limit the members to fifty and prohibit invitations to the public to subscribe for shares or debentures (s. 9(1))  _(Companies Act, 2015 (Cap. 486), as at 27 December 2024 on Kenya Law, s. 9(1) — https://new.kenyalaw.org/akn/ke/act/2015/17/eng@2024-12-27)_
 - **Other common entity types** — Public company limited by shares, company limited by guarantee, sole proprietorship / business name, partnership, limited liability partnership (LLP), and branch of a foreign company  _(Companies Act, 2015; Limited Liability Partnership Act, 2011; Registration of Business Names Act)_
-- **Minimum share capital — private limited company** — No statutory minimum share capital (commonly incorporated with a nominal capital, e.g. Ksh 100,000) (approx — confirm)  _(Companies Act, 2015 — https://manwaadvocates.com/faqs-on-company-registration-in-kenya-a-comprehensive-guide-for-2025/)_
-- **Minimum number of directors and shareholders** — At least 1 director and 1 shareholder for a private company  _(Companies Act, 2015 — https://kazilegal.com/company-registration-kenya.html)_
+- **Minimum share capital — private limited company** — No statutory minimum share capital for a private company; the Act's authorised minimum applies only to a public company's trading certificate (s. 516). Companies are commonly formed with a nominal capital such as Ksh 100,000  _(Companies Act, 2015 (Cap. 486), as at 27 December 2024 on Kenya Law, s. 11 and s. 516 — https://new.kenyalaw.org/akn/ke/act/2015/17/eng@2024-12-27)_
+- **Minimum number of directors and shareholders** — One or more persons may form a company (s. 11(1)); a private company must have at least one director, and every company at least one director who is a natural person (s. 128)  _(Companies Act, 2015 (Cap. 486), as at 27 December 2024 on Kenya Law, s. 11(1) and s. 128(1) — https://new.kenyalaw.org/akn/ke/act/2015/17/eng@2024-12-27)_
 - **Registration platform** — Online via the eCitizen portal / Business Registration Service (BRS)  _(Companies Act, 2015 — https://hudumaglobal.com/blog/how-to-register-company-kenya-online-ecitizen-brs-2026)_
 - **Key incorporation documents** — Name reservation, CR1 (application), CR2 (model memorandum for single shareholder) or CR8 (directors' residential address), Statement of Nominal Capital, and Articles of Association  _(Companies Act, 2015; Companies (General) Regulations, 2015 — https://www.kazilegal.com/cost-of-company-registration-in-kenya.html)_
 - **Official registration fee — private limited company** — Approximately Ksh 10,650 (BRS official fee, excluding professional fees) KES (approx — confirm) KES  _(Companies (General) Regulations, 2015 — https://www.kazilegal.com/cost-of-company-registration-in-kenya.html)_
