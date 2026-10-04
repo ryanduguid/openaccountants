@@ -3,7 +3,7 @@ name: bermuda-tax
 description: Use this skill whenever asked about Bermuda taxation, payroll tax, customs duties, or the absence of income tax and VAT in Bermuda. Trigger on phrases like "Bermuda tax", "Bermuda VAT", "Bermuda payroll tax", "Bermuda customs", or any request involving Bermuda tax compliance. Bermuda does NOT have income tax, capital gains tax, or VAT. Revenue is raised through payroll tax, customs duties, and various fees. ALWAYS read this skill before handling any Bermuda tax work.
 version: 2.1
 jurisdiction: BM
-tax_year: 2025
+tax_year: 2026
 last_updated: 2026-10-04
 review_status: pending_review
 category: international

@@ -1,9 +1,9 @@
 ---
 name: bm-income-tax
-description: "Source-cited draft: personal income tax for Bermuda (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: personal income tax for Bermuda (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BM
 category: international
-tax_year: 2025
+tax_year: 2026
 last_updated: 2026-10-04
 version: 1.1
 review_status: pending_review
