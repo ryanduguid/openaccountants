@@ -357,6 +357,16 @@ NON_GOV_AUTHORITY = frozenset((
                           # a script viewer with no text, and its English PDF is
                           # the 2015 edition, so this is where the current text
                           # is read. Bare .az with no "gov" label.
+    'lrs.lt',             # Seimas of the Republic of Lithuania: e-seimas.lrs.lt is
+                          # the official register of legal acts, serving each law
+                          # as a dated consolidated text. Bare .lt with no "gov"
+                          # label.
+    'bopa.ad',            # Butlleti Oficial del Principat d'Andorra, the official
+                          # gazette; bopadocuments.blob.core.windows.net is the
+                          # Azure storage its document links resolve to.
+    'bopadocuments.blob.core.windows.net',
+    'e-tramits.ad',       # Govern d'Andorra's procedures portal, where the tax
+                          # department publishes IGI and IRPF filing rules.
     'kenyalaw.org',       # National Council for Law Reporting (Kenya Law), the
                           # statutory publisher of the Laws of Kenya:
                           # new.kenyalaw.org serves each Act as consolidated
