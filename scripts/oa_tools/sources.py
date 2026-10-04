@@ -125,6 +125,9 @@ NON_GOV_AUTHORITY = frozenset((
     'rsl.org.ls',         # Revenue Services Lesotho
     'gra.gm',             # Gambia Revenue Authority
     'mra.mu',             # Mauritius Revenue Authority
+    'orcjamaica.com',     # Companies Office of Jamaica, the executive agency that
+                          # keeps the companies register and publishes the
+                          # Companies Act fee schedule and filing rules. Bare .com.
     'govmu.org',          # Government of Mauritius domain used by ministries and the
                           # Corporate and Business Registration Department
                           # (companies.govmu.org), which publishes the Companies Act
