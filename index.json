@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T08:38:48+00:00",
+ "generated_at": "2026-10-04T08:43:29+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -18958,7 +18958,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ch-corporate-income-tax",
