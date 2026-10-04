@@ -1,10 +1,10 @@
 ---
 name: ch-federal-income-tax
 description: Use this skill whenever asked about Swiss federal income tax (direkte Bundessteuer / impot federal direct) for self-employed individuals. Trigger on phrases like "Bundessteuer", "direkte Bundessteuer", "impot federal direct", "Steuererklarung Schweiz", "selbstandig Steuern Schweiz", "Swiss federal income tax", "self-employed tax Switzerland", "AHV deduction", "Saule 3a", "BVG", "Geschaftsaufwand", or any question about computing or filing FEDERAL income tax for a self-employed person in Switzerland. This skill covers FEDERAL progressive brackets only (0--11.5%), Geschaftsaufwand, AHV/IV/EO deductibility, BVG/Saule 3a deductions, and federal filing. Cantonal and municipal taxes are out of scope. ALWAYS read this skill before touching any Swiss federal income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: CH
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # CH Federal Income Tax
 
-## Switzerland Federal Income Tax (Direkte Bundessteuer) -- Self-Employed Skill v2.0
+## Switzerland Federal Income Tax (Direkte Bundessteuer) -- Self-Employed Skill v2.1
 
 ## Section 1 -- Quick Reference
 
@@ -35,28 +35,29 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by Swiss Treuhnder or Steuerberater |
 | Validation date | Pending |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 **IMPORTANT: This skill covers FEDERAL tax only. Cantonal and municipal taxes are separate and typically represent the majority of the total tax burden. They are out of scope.**
 
-### Federal Tax Tariff -- Grundtarif (Single) -- Approximate
+### Federal Tax Tariff -- Grundtarif (Single) -- Art. 36(1) DBG, 2026
 
-**Federal Tax Tariff -- Grundtarif (Single) -- Approximate**
+**Federal Tax Tariff -- Grundtarif (Single) -- Art. 36(1) DBG, tariff in force from 1 January 2026**
 
-| Taxable Income (CHF) | Approx. Marginal Rate |
+| Taxable income (CHF) | Marginal rate (CHF per 100) |
 | --- | --- |
-| 0 -- 17,800 | 0% |
-| 17,801 -- 31,600 | 0.77% |
-| 31,601 -- 41,400 | 0.88% -- 2.64% |
-| 41,401 -- 55,200 | 2.97% |
-| 55,201 -- 72,500 | 5.94% |
-| 72,501 -- 78,100 | 6.60% |
-| 78,101 -- 103,600 | 8.80% |
-| 103,601 -- 134,600 | 11.00% |
-| 134,601 -- 176,000 | 13.20% |
-| 176,001+ | 11.50% max effective rate |
+| 0 -- 15,200 | 0% |
+| 15,200 -- 33,200 | 0.77% (CHF 138.60 at 33,200) |
+| 33,200 -- 43,500 | 0.88% (CHF 229.20 at 43,500) |
+| 43,500 -- 58,000 | 2.64% (CHF 612.00 at 58,000) |
+| 58,000 -- 76,200 | 2.97% (CHF 1,152.50 at 76,200) |
+| 76,200 -- 82,100 | 5.94% (CHF 1,502.95 at 82,100) |
+| 82,100 -- 108,900 | 6.60% (CHF 3,271.75 at 108,900) |
+| 108,900 -- 141,500 | 8.80% (CHF 6,140.55 at 141,500) |
+| 141,500 -- 185,100 | 11.00% (CHF 10,936.55 at 185,100) |
+| 185,100 -- 793,900 | 13.20% (CHF 91,298.15 at 793,900) |
+| 794,000 and above | 11.50% flat on the whole income (CHF 91,310.00 at 794,000, plus CHF 11.50 per further 100) |
 
-- **Never compute from approximate brackets** — NEVER compute Swiss federal tax from these approximate brackets. Use official ESTV tariff tables.
+- **Never compute from approximate brackets** — Compute federal tax from the statutory tariff in Art. 36(1) DBG (CHF per 100 of taxable income, reproduced above for single persons for 2026) or the ESTV tariff tables; the married and single-parent tariff in Art. 36(2) and (2bis) differs. Amounts under CHF 25 are not levied (Art. 36(3)).  _(Federal Act on Direct Federal Taxation (DBG, SR 642.11, consolidated text on Fedlex), Art. 36(1), as adjusted for cold progression by the FDF ordinance of 10 September 2025 in force from 1 January 2026 — https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/de)_
 
 ### Verheiratetentarif (Married)
 
@@ -295,11 +296,11 @@ Printer CHF 890. Under CHF 1,000 low-value threshold. Immediate full deduction.
 
 ### 5.1 Business Income
 
-- **Business income treatment** — All self-employment income is Einkünfte aus selbstandiger Erwerbstatigkeit (Art. 18 DBG). For MWST-registered, report net.  _(Art. 18 DBG)_
+- **Business income treatment** — All self-employment income is Einkünfte aus selbstandiger Erwerbstatigkeit (Art. 18 DBG). For MWST-registered, report net.  _(Federal Act on Direct Federal Taxation (DBG, SR 642.11, consolidated text on Fedlex), Art. 18 — https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/de)_
 
 ### 5.2 Geschaftsaufwand
 
-- **Business expense deductibility** — Business expenses deductible under DBG Art. 27-31. Must be business-related.  _(DBG Art. 27-31)_
+- **Business expense deductibility** — Business expenses deductible under DBG Art. 27-31. Must be business-related.  _(Federal Act on Direct Federal Taxation (DBG, SR 642.11, consolidated text on Fedlex), Art. 27 to 31 — https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/de)_
 
 ### 5.3 Abschreibungen (Depreciation)
 
