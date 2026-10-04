@@ -1,10 +1,10 @@
 ---
 name: thailand-pit
 description: Use this skill whenever asked to prepare, review, or classify transactions for Thailand Personal Income Tax (ภาษีเงินได้บุคคลธรรมดา), PND.90/91 filing, or advise on Thai PIT deductions and credits. Trigger on phrases like "ภาษีเงินได้บุคคลธรรมดา", "Thai income tax", "PND.90", "PND.91", "ภ.ง.ด.90", "ภ.ง.ด.91", or any Thailand personal tax request. ALWAYS read this skill before touching any Thailand PIT work.
-version: 1.0
+version: 1.1
 jurisdiction: TH
 tax_year: 2024
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Thailand Pit
 
-## Thailand Personal Income Tax (ภาษีเงินได้บุคคลธรรมดา) Skill v1.0
+## Thailand Personal Income Tax (ภาษีเงินได้บุคคลธรรมดา) Skill v1.1
 
 ## Section 1 — Quick reference
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Source credit | `ratanon97/ThaiTaxCalculator` (TH-2567.json) + `anurat/laravel-thai-tax` (MIT) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Thai-licensed CPA or tax consultant |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 — Progressive tax brackets (อัตราภาษีก้าวหน้า)
 
@@ -165,9 +165,9 @@ If withholding tax paid during the year was 95,000 → refund of **7,800 THB**.
 
 ### Who must file?
 
-- **Filing threshold — single** — Any individual with assessable income exceeding 120,000 THB/year (single) must file.
-- **Filing threshold — married** — Any individual with assessable income exceeding 220,000 THB/year (married) must file.
-- **Filing required even if no tax owed** — Even if no tax is owed (income within exempt bracket), filing is still required if above thresholds.
+- **Filing threshold — single** — An individual with no spouse must file when assessable income exceeds 60,000 THB a year, or 120,000 THB where the income is employment income under s. 40(1) only.  _(Revenue Code (Revenue Department English translation), s. 56(1) and (2) — https://www.rd.go.th/english/37749.html#section56)_
+- **Filing threshold — married** — A married individual must file when assessable income exceeds 120,000 THB a year, or 220,000 THB where the income is employment income under s. 40(1) only.  _(Revenue Code (Revenue Department English translation), s. 56(3) and (4) — https://www.rd.go.th/english/37749.html#section56)_
+- **Filing required even if no tax owed** — Even if no tax is owed (income within exempt bracket), filing is still required if above thresholds.  _(Revenue Code (Revenue Department English translation), s. 56 — https://www.rd.go.th/english/37749.html#section56)_
 
 ### Which form?
 

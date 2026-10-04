@@ -1,10 +1,10 @@
 ---
 name: thailand-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Thailand VAT (ภาษีมูลค่าเพิ่ม) return (PP.30), classify transactions for Thai VAT purposes, or advise on VAT registration and filing in Thailand. Trigger on phrases like "ภาษีมูลค่าเพิ่ม", "Thai VAT", "PP.30", "VAT Thailand", "Revenue Department Thailand", or any Thailand VAT request. ALWAYS read this skill before touching any Thailand VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: TH
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax ID | เลขประจำตัวผู้เสียภาษี (13-digit tax ID) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Thai-licensed CPA or tax consultant |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Key PP.30 return lines
 
@@ -202,7 +202,7 @@ Match by case-insensitive substring on counterparty name or reference. Most spec
 
 ### 3.7 SaaS — international suppliers (reverse charge)
 
-- **Reverse charge rule for foreign digital B2B services** — For B2B digital services received from abroad: the Thai VAT-registered recipient must self-assess and remit 7% VAT (under the reverse charge equivalent). Foreign suppliers with B2C sales > THB 1.8M must register separately.
+- **Reverse charge rule for foreign digital B2B services** — For B2B digital services received from abroad: the Thai VAT-registered recipient must self-assess and remit 7% VAT (under the reverse charge equivalent). Foreign suppliers with B2C sales > THB 1.8M must register separately.  _(Revenue Code (Revenue Department English translation), s. 83/6(2) — https://www.rd.go.th/english/37735.html)_
 
 **International SaaS reverse charge table**
 
@@ -311,19 +311,19 @@ Restaurant meal for a client lunch. In Thailand — unlike Malta or the UK — t
 
 ### 5.1 Standard rate 7%
 
-- **Standard rate** — 7% (Default rate for all taxable supplies. Reduced from statutory 10% by Royal Decree; extensions renewed periodically.)  _(Revenue Code (ประมวลรัษฎากร) Section 80; Royal Decree on VAT rate reduction)_
+- **Standard rate** — 7% (Default rate for all taxable supplies. Reduced from statutory 10% by Royal Decree; extensions renewed periodically.)  _(Revenue Code (Revenue Department English translation), s. 80 (10% statutory rate, reduced by Royal Decree) — https://www.rd.go.th/english/37732.html)_
 
 ### 5.2 Zero rate 0%
 
-- **Zero rate** — 0% (Exports of goods and services used outside Thailand; international transport of goods and passengers; services rendered in Thailand but consumed entirely abroad (evidence required).)  _(Revenue Code Section 80/1)_
+- **Zero rate** — 0% (Exports of goods and services used outside Thailand; international transport of goods and passengers; services rendered in Thailand but consumed entirely abroad (evidence required).)  _(Revenue Code (Revenue Department English translation), s. 80/1 — https://www.rd.go.th/english/37732.html)_
 
 ### 5.3 Exempt supplies
 
-- **Exempt supplies** — Agricultural products (raw/unprocessed), educational services, health and medical services, domestic passenger transport (land and water), residential rent, interest/financial services, insurance, cultural/religious services. No output VAT; no input credit on attributable costs.  _(Revenue Code Section 81)_
+- **Exempt supplies** — Agricultural products (raw/unprocessed), educational services, health and medical services, domestic passenger transport (land and water), residential rent, interest/financial services, insurance, cultural/religious services. No output VAT; no input credit on attributable costs.  _(Revenue Code (Revenue Department English translation), s. 81 — https://www.rd.go.th/english/37732.html)_
 
 ### 5.4 Tax invoice (ใบกำกับภาษี) requirements
 
-- **Tax invoice requirements** — Required fields: seller's name/address/tax ID, buyer's name/address/tax ID (for B2B), sequential invoice number, date, description, net amount, VAT rate, VAT amount. A simplified tax invoice (ใบกำกับภาษีอย่างย่อ) is allowed for retail sales below THB 1,000 per transaction but does not support input credit claims.
+- **Tax invoice requirements** — Required fields: seller's name/address/tax ID, buyer's name/address/tax ID (for B2B), sequential invoice number, date, description, net amount, VAT rate, VAT amount. A simplified tax invoice (ใบกำกับภาษีอย่างย่อ) is allowed for retail sales below THB 1,000 per transaction but does not support input credit claims.  _(Revenue Code (Revenue Department English translation), s. 86/4 — https://www.rd.go.th/english/37741.html)_
 
 ### 5.5 Withholding VAT
 
@@ -331,7 +331,7 @@ Restaurant meal for a client lunch. In Thailand — unlike Malta or the UK — t
 
 ### 5.6 Registration threshold
 
-- **Registration threshold** — THB 1,800,000 THB/year (Once exceeded, must register within 30 days. Voluntary registration available below the threshold.)  _(Revenue Code Section 85)_
+- **Registration threshold** — THB 1,800,000 a year, the small business value set by Royal Decree under s. 81/1. Once exceeded, registration within 30 days (s. 85/1); voluntary registration below the threshold under s. 81/3.  _(Revenue Code (Revenue Department English translation), s. 81/1 and s. 85/1 — https://www.rd.go.th/english/37741.html)_
 
 ### 5.7 Filing deadlines
 
