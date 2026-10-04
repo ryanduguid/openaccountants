@@ -1,10 +1,10 @@
 ---
 name: honduras-income-tax
 description: Use this skill whenever asked about Honduras personal income tax (ISR — Impuesto Sobre la Renta) for individuals (personas naturales), including self-employed professionals. Trigger on phrases like "how much ISR do I pay", "Honduras income tax", "Declaración Jurada", "Form 102", "tabla progresiva", "aportación solidaria", "solidarity contribution", "IHSS contributions", "RAP", "Honduran tax return", "renta neta gravable", "self-employed tax Honduras", "ingreso exento", or any question about filing or computing ISR for an individual or self-employed client in Honduras. Also trigger when preparing or reviewing a Declaración Jurada de ISR — Persona Natural, classifying deductible expenses, advising on Pagos a Cuenta (advance payments), or the solidarity contribution. This skill covers the progressive ISR table, solidarity contribution, alternative minimum tax, capital gains, non-resident withholding, IHSS/RAP social security, filing forms and deadlines. ALWAYS read this skill before touching any Honduras income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: HN
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing & payment deadline | 30 April of the year following the tax year [Radio HRN; PwC] |
 | Validated by | Pending — requires sign-off by a Honduran-licensed accountant (Perito Mercantil / Contador Público) |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### ISR Progressive Table — 2026 (CURRENT)
 
@@ -60,9 +60,11 @@ Indexed for inflation each year by SAR using the prior year's interannual CPI (4
 | Annual net taxable income (HNL) | Monthly equivalent (HNL) | Rate |
 | --- | --- | --- |
 | 0 – 217,493.16 | 0 – 21,457.76 | Exempt (0%) |
-| 217,493.17 – 331,638 [RESEARCH GAP — reviewer to confirm exact centavos] | 21,457.77 – 30,969 | 15% |
-| 331,638 – 771,252 [RESEARCH GAP — reviewer to confirm exact centavos] | 30,969 – 67,604 | 20% |
-| 771,252 and above [RESEARCH GAP — reviewer to confirm exact centavos] | 67,604 and above | 25% |
+| 217,493.17 – 331,638.50 | 21,457.77 – 30,969.88 | 15% |
+| 331,638.51 – 771,252.38 | 30,969.89 – 67,604.36 | 20% |
+| 771,252.39 and above | 67,604.37 and above | 25% |
+
+Bracket boundaries with centavos as published in the SAR 2025 progressive table and reported by [Bloomberg Línea](https://www.bloomberglinea.com/latinoamerica/honduras/tabla-progresiva-2025-en-honduras-que-salarios-estan-exentos-del-isr/) (indexed 3.88% for 2024 inflation).
 
 Indexed using 3.88% CPI. [KPMG TaxNewsFlash 14 Jan 2025; Bloomberg Línea; SAR]
 
