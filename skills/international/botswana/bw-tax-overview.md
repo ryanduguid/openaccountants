@@ -4,7 +4,7 @@ description: "Source-cited draft: tax overview for Botswana (tax year 2026) — 
 jurisdiction: BW
 category: international
 tax_year: 2026
-last_updated: 2026-10-05
+last_updated: 2026-10-04
 version: 1.2
 review_status: pending_review
 tier: 2
