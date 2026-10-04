@@ -333,6 +333,13 @@ NON_GOV_AUTHORITY = frozenset((
                           # ministry rather than a francophone one, so the shape
                           # is a bare ccTLD, not a language. Subdomains are
                           # matched, so all three count from this one entry.
+    'adilet.zan.kz',      # Kazakhstan's Legal Information System "Adilet", run by
+                          # the Ministry of Justice: serves the 2026 Tax Code
+                          # (docs/K2500000214) in Kazakh, Russian and English.
+                          # The host sits under zan.kz with no "gov" label, so
+                          # GOV cannot see it; found when the Kazakhstan guides
+                          # were re-cited to the Code and the sourcing floor still
+                          # scored their lists as having no authority.
     'e-qanun.az',         # Azerbaijan's unified electronic legislation database,
                           # run by the Ministry of Justice: the consolidated Tax
                           # Code (framework/46948) with every amendment marked.

@@ -1,11 +1,11 @@
 ---
 name: kazakhstan-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Kazakhstan VAT (NDS) return (Form 300.00) for any client. Trigger on phrases like "Kazakhstan VAT", "NDS return", "Form 300", "KGD filing", or any request involving Kazakh VAT. This skill covers standard NDS payers filing quarterly returns. Simplified declaration and special tax regimes are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Kazakhstan VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: KZ
 category: international
 tax_year: 2026
-last_updated: 2026-09-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Kazakhstan (Republic of Kazakhstan) |
 | Tax name | NDS (Nalog na Dobavlennuyu Stoimost / VAT) |
-| Standard rate | 16% from 1 January 2026 (was 12%). Apply the rate in force at the time of supply |
+| Standard rate | 16% from 1 January 2026 (was 12%), art. 503.1 of Code No. 214-VIII; 5% in 2026 and 10% from 2027 for medicines, medical devices and medical services under art. 503.2. Apply the rate in force at the time of supply |
 | Reduced rates | None (single standard rate for domestic) |
 | Zero rate | 0% (exports, international transport, certain agricultural) |
 | Return form | Form 300.00 (quarterly NDS declaration) |
@@ -390,7 +390,7 @@ Per `vat-workflow-base` Section 3 with Kazakhstan Form 300.00 line codes.
 
 - **v2.0 (April 2026):** Full rewrite to Malta v2.0 10-section structure.
 
-## End of Kazakhstan VAT (NDS) Skill v2.0
+## End of Kazakhstan VAT (NDS) Skill v2.1
 
 ## Disclaimer
 
