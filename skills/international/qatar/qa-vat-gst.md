@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Qatar (tax year 2025) — rates,
 jurisdiction: QA
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **VAT registration threshold** — Not applicable — no VAT regime currently exists  _(GCC Unified VAT Agreement (not enacted in Qatar) — https://taxsummaries.pwc.com/qatar/corporate/other-taxes)_
 - **VAT filing frequency** — Not applicable — no VAT returns are filed in Qatar  _(GCC Unified VAT Agreement (not enacted in Qatar) — https://taxsummaries.pwc.com/qatar/corporate/other-taxes)_
 - **Reverse charge** — Not applicable — no VAT regime currently exists  _(GCC Unified VAT Agreement (not enacted in Qatar) — https://taxsummaries.pwc.com/qatar/corporate/other-taxes)_
-- **Indirect tax that does apply** — Excise tax applies instead: tobacco 100%, carbonated drinks 50%, energy drinks 100%, special-purpose goods 100% (since 1 January 2019) percent  _(Excise Tax Law No. 25 of 2018 — https://taxsummaries.pwc.com/qatar/corporate/other-taxes)_
+- **Indirect tax that does apply** — Excise tax applies instead: tobacco and its derivatives 100%, carbonated drinks 50%, energy drinks 100%, goods of a special nature 100%  _(Excise Tax Law No. 25 of 2018 and its Executive Regulations, General Tax Authority 2024 English edition, art 2 and the attached schedule of rates — https://www.gta.gov.qa/assets/pdf/Excise%20Tax%20Law%20EN%202024.pdf)_
 - **Customs duty (general import tariff)** — 5% on goods originating outside the GCC (higher rates on specific goods such as tobacco) percent  _(GCC Common Customs Law — https://taxsummaries.pwc.com/qatar/corporate/other-taxes)_
 
 <!-- openaccountants-cta-block -->
