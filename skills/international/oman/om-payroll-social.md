@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Oman — al
 jurisdiction: OM
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -77,7 +78,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Maternity leave | 0% | 1% | art. 128 | none |
 | **Total at or below RO 3,000/month** | **8%** | **14.5%** | | |
 
-- **Payroll income-tax withholding (PAYE)** — None in 2025 — no income tax is withheld from salaries because Oman has no personal income tax in force for the year  _(Personal Income Tax Law (Royal Decree No. 56/2025) — https://taxsummaries.pwc.com/oman/individual/taxes-on-personal-income)_
+- **Payroll income-tax withholding (PAYE)** — None in 2025; from 1 January 2028 every employer, including government units and foreign companies, must withhold the personal income tax where salaries or wages exceed OMR 42,000 in the year and remit it to the Tax Authority  _(Oman Tax Authority, Personal Income Tax Law and Regulation (Royal Decree 56/2025) — https://tms.taxoman.gov.om/portal/web/taxportal/personal-income-tax-law-and-regulation ; Oman Tax Authority, Personal Income Tax FAQs, Q1 and Q8 — https://tms.taxoman.gov.om/portal/web/taxportal/personal-income-tax-faqs ; PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/oman/individual/taxes-on-personal-income)_
 - **Social insurance scheme** — Social Protection Fund (SPF), which replaced the Public Authority for Social Insurance (PASI). **Royal Decree 52/2023, art. IV** repeals the pension, gratuity and grant provisions of the Social Insurance Law (RD 72/91) and seven other pension systems outright — so pre-2024 PASI rates are not merely out of date, their instruments are repealed  _([Social Protection Law (Royal Decree No. 52/2023), art. IV](https://www.spf.gov.om/wp-content/uploads/2024/11/Social-Protaction-Law.pdf))_
 - **Old age, disability & death — employee share** — **7.5%** of the monthly wage, calculated on a daily basis. **Article 70(2)**. The branch is compulsory for **Omanis** working in Oman under all contract types, including temporary, training, part-time and re-employed retirees (**art. 68**) %  _([Social Protection Law, arts. 68 and 70](https://www.spf.gov.om/wp-content/uploads/2024/11/Social-Protaction-Law.pdf))_
 - **Old age, disability & death — employer share** — **11%** of the monthly wage, calculated on a daily basis. **Article 70(1)** %  _([Social Protection Law, art. 70](https://www.spf.gov.om/wp-content/uploads/2024/11/Social-Protaction-Law.pdf))_
