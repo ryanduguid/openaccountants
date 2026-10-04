@@ -139,6 +139,10 @@ NON_GOV_AUTHORITY = frozenset((
     'inps.cv',            # Instituto Nacional de Previdência Social, the Cabo Verde
                           # social security institute, which publishes the
                           # contribution rates and payment deadline. Bare .cv.
+    'pufbih.ba',          # Porezna uprava Federacije BiH, the Federation's tax
+                          # administration, which publishes the entity tax laws. Bare .ba.
+    'poreskaupravars.org',  # Poreska uprava Republike Srpske, the RS tax
+                          # administration, which publishes gazette extracts. Bare .org.
     'mra.mw',             # Malawi Revenue Authority
     'dgi.bf',             # Burkina Faso, Direction Generale des Impots
     'impots.cm',          # Cameroon, Direction Generale des Impots
