@@ -5,7 +5,7 @@ jurisdiction: ZM
 category: international
 tax_year: 2026
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ Resident companies are taxed on Zambian-source profits at a standard 30% rate, w
 - **Non-traditional exports rate** — 15% percent  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
 - **Mining (mineral processing) rate** — 30% percent ((approx — confirm; mining also subject to mineral royalty))  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
 - **Turnover tax (small businesses)** — 5% on monthly turnover above K2,500 (K30,000 a year), with 0% on the first K2,500 a month, for businesses with annual sales of K5,000,000 or less; a business whose annual sales exceed K5,000,000 registers for income tax instead; returns and payment are due by the 14th of the following month  _(Zambia Revenue Authority, Tax Information (turnover tax, PAYE 2026 bands, income tax, VAT), turnover tax section — https://www.zra.org.zm/tax-information/ ; Zambia Revenue Authority, Payment Due Dates, Turnover Tax — https://www.zra.org.zm/payment-due-dates/)_
-- **Tax base** — Zambian-source business profits (source-based system)  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
+- **Tax base** — Taxable business profits from Zambian sources (source-based system): revenue less the expenses allowable for tax, taxed at the standard 30% rate  _(Zambia Revenue Authority, Tax Information, Income Tax — https://www.zra.org.zm/tax-information/ ; PwC Worldwide Tax Summaries, Taxes on corporate income — https://taxsummaries.pwc.com/zambia/corporate/taxes-on-corporate-income)_
 - **WHT on dividends (resident)** — 15% percent  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/withholding-taxes)_
 - **WHT on dividends (non-resident)** — 20% percent (Treaty relief may reduce this)  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/withholding-taxes)_
 - **WHT on interest (resident)** — 15% percent  _(Income Tax Act — https://taxsummaries.pwc.com/zambia/corporate/withholding-taxes)_

@@ -150,6 +150,8 @@ NON_GOV_AUTHORITY = frozenset((
     'leychile.cl',        # Ley Chile's own domain for the same statute texts. Bare .cl.
     'registrodeempresasysociedades.cl',  # Chile's Registro de Empresas y Sociedades, run by the
                           # Ministry of Economy under Ley 20.659. Bare .cl.
+    'napsa.co.zm',        # National Pension Scheme Authority, Zambia's statutory
+                          # pension body, which publishes the contribution rules. Bare .zm.
     'mra.mw',             # Malawi Revenue Authority
     'dgi.bf',             # Burkina Faso, Direction Generale des Impots
     'impots.cm',          # Cameroon, Direction Generale des Impots
