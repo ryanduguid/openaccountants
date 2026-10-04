@@ -4,7 +4,8 @@ description: Use this skill whenever asked to prepare, review, or advise on a Uk
 jurisdiction: UA
 category: international
 tax_year: 2025
-last_updated: 2026-09-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -102,9 +103,9 @@ Before classifying ANY transaction, you MUST know these facts about the client. 
 | 7% | Reduced rate (medicines, medical devices) | TCU Article 193.1 |
 | 0% | Zero-rated (exports, international transport) | TCU Article 195 |
 
-- **Standard rate (zagalna stavka)** — 20%  _(TCU Article 193.1)_
-- **Reduced rate (for certain agricultural products)** — 14%  _(TCU Article 193.1)_
-- **Reduced rate (medicines, medical devices)** — 7%  _(TCU Article 193.1)_
+- **Standard rate (zagalna stavka)** — 20%  _(Tax Code of Ukraine No. 2755-VI (Податковий кодекс України, current consolidated text on zakon.rada.gov.ua), art. 193.1(а) — https://zakon.rada.gov.ua/laws/show/2755-17)_
+- **Reduced rate (for certain agricultural products)** — 14%  _(Tax Code of Ukraine No. 2755-VI (Податковий кодекс України, current consolidated text on zakon.rada.gov.ua), art. 193.1(г) — https://zakon.rada.gov.ua/laws/show/2755-17)_
+- **Reduced rate (medicines, medical devices)** — 7%  _(Tax Code of Ukraine No. 2755-VI (Податковий кодекс України, current consolidated text on zakon.rada.gov.ua), art. 193.1(в) — https://zakon.rada.gov.ua/laws/show/2755-17)_
 - **Zero-rated (exports, international transport)** — 0%  _(TCU Article 195)_
 
 ### 1d. Standard Rate (20%) Applies To [T1]
