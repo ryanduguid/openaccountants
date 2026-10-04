@@ -2,34 +2,36 @@
 name: ar-income-tax
 description: >
   Use this skill whenever asked about Argentine income tax (Impuesto a las Ganancias) for self-employed individuals (autónomos / profesionales independientes). Trigger on phrases like "Ganancias", "impuesto a las ganancias", "autónomo Argentina", "monotributo vs responsable inscripto", "cuarta categoría", "deducciones personales", "ganancia no imponible", "bienes personales", "DDJJ Ganancias", "ARCA", "AFIP", "CUIT", "income tax Argentina", "anticipos ganancias", or any question about filing or computing income tax for a self-employed client in Argentina. This skill covers progressive rates (5-35%), personal deductions (ganancia no imponible, cargas de familia, deducción especial), Bienes Personales interaction, advance payments (anticipos), percepciones as credits, and ARCA filing. ALWAYS read this skill before touching any Argentine income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: AR
 category: international
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 ---
 
-# Argentine Income Tax — Autónomo / Profesional Independiente (Ganancias) v2.0
+# Argentine Income Tax — Autónomo / Profesional Independiente (Ganancias) v2.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick Reference
 
-### Progressive Tax Scale — First Semester 2025 (Illustrative)
+### Progressive Tax Scale — Statutory base amounts, fiscal year 2024 (art. 94)
 
-WARNING: Argentina adjusts these thresholds semi-annually (January and July) by the IPC (Consumer Price Index). You MUST verify the current semester's thresholds with ARCA before applying. The amounts below are for the first semester 2025 only.
+WARNING: Argentina adjusts these thresholds semi-annually (January and July) by the IPC (Consumer Price Index). You MUST verify the current semester's thresholds with ARCA before applying. The amounts below are the statutory base amounts for fiscal year 2024.
 
 | Ganancia Neta Imponible Acumulada (ARS) | Rate | Cumulative Fixed Amount |
 |---|---|---|
-| 0 -- 1,750,026 | 5% | -- |
-| 1,750,027 -- 3,500,053 | 9% | 87,501 |
-| 3,500,054 -- 5,250,079 | 12% | 245,004 |
-| 5,250,080 -- 7,000,106 | 15% | 455,007 |
-| 7,000,107 -- 10,500,159 | 19% | 717,511 |
-| 10,500,160 -- 14,000,211 | 23% | 1,382,521 |
-| 14,000,212 -- 21,000,317 | 27% | 2,187,033 |
-| 21,000,318 -- 28,000,423 | 31% | 4,077,062 |
-| 28,000,424+ | 35% | 6,247,095 |
+| 0 -- 1,200,000 | 5% | -- |
+| 1,200,000 -- 2,400,000 | 9% | 60,000 |
+| 2,400,000 -- 3,600,000 | 12% | 168,000 |
+| 3,600,000 -- 5,400,000 | 15% | 312,000 |
+| 5,400,000 -- 10,800,000 | 19% | 582,000 |
+| 10,800,000 -- 16,200,000 | 23% | 1,608,000 |
+| 16,200,000 -- 24,300,000 | 27% | 2,850,000 |
+| 24,300,000 -- 36,450,000 | 31% | 5,037,000 |
+| 36,450,000+ | 35% | 8,803,500 |
+
+Statutory base amounts for fiscal year 2024 under art. 94 as substituted by Ley 27.743 (InfoLEG, https://servicios.infoleg.gob.ar/infolegInternet/anexos/330000-334999/332890/texact.htm). They were adjusted once in September 2024 and are indexed every January and July from fiscal year 2025 by the INDEC consumer price index, so take the thresholds for a given year from the table ARCA publishes. The table this guide carried until October 2026 did not scale consistently from these amounts.
 
 Formula: Tax = Cumulative Fixed Amount + (Ganancia Neta Imponible - Lower Limit) x Rate
 
