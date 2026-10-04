@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T05:22:45+00:00",
+ "generated_at": "2026-10-04T05:52:51+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -11743,7 +11743,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ke-income-tax-2",
@@ -11769,7 +11769,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ke-nhif-nssf",
@@ -11795,7 +11795,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "kenya-vat",
