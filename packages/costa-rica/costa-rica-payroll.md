@@ -303,7 +303,7 @@ All examples use 2025 rates, gross income-tax base, employee CCSS 10.67%, employ
 These items require a Costa Rican accountant's judgement and are flagged rather than auto-computed:
 
 1. **Income-tax base (gross vs net of CCSS).** Conservative default is gross; one EOR source implied net. `[RESEARCH GAP — reviewer to confirm]`
-2. **Exact employer fund split.** The per-fund breakdown reconciles to 25.67% from secondary sources but the confirmed total is 26.67%; the reconciling ~1% line needs confirmation. `[RESEARCH GAP — reviewer to confirm]`
+2. **Exact employer fund split.** Reconciled: EY's itemisation of the 2026 schedule includes the 1.00% INS line of the Ley de Protección al Trabajador, so the per-fund table in Section 4 sums to 26.67% (26.83% from 1 January 2026). The CCSS cuadro de distribución itself could not be reached on 4 October 2026, so the row labels still await a Costa Rican accountant's confirmation ([EY, January 2026](https://www.ey.com/es_ce/technical/tax/tax-alerts/costa-rica-aumento-en-cuotas-obrero-patronales-aplicable-desde-enero-20261)).
 3. **INS riesgos del trabajo rate.** Risk-rated per company occupational class (~1%–2%); the company-specific rate must be obtained from INS. `[RESEARCH GAP — reviewer to confirm]`
 4. **Base Mínima Contributiva application.** Whether the 50% reduced BMC (from 01 Jan 2025) affects a specific low-wage or part-time worker's contributory floor — contributions are still reported on actual salary earned.
 5. **Multi-employer reconciliation.** If the employee has more than one employer/source, an annual reconciliation may be required — outside monthly withholding.
