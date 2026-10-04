@@ -2,14 +2,14 @@
 name: co-income-tax
 description: >
   Use this skill whenever asked about Colombian income tax for self-employed individuals (trabajadores independientes / personas naturales). Trigger on phrases like "declaración de renta", "renta personas naturales", "Formulario 210", "cédula general", "UVT", "retención en la fuente", "renta presuntiva", "DIAN", "NIT Colombia", "deducciones Colombia", "rentas exentas", "income tax Colombia", or any question about filing or computing income tax for a self-employed or independent worker in Colombia. This skill covers cédula general progressive rates (0-39%), UVT-based thresholds, the 40%/5,040 UVT cap on exemptions and deductions, renta presuntiva, retención en la fuente, social security for independents, and DIAN filing. ALWAYS read this skill before touching any Colombian income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: CO
 category: international
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 ---
 
-# Colombian Income Tax — Trabajador Independiente / Persona Natural (Renta) v2.0
+# Colombian Income Tax — Trabajador Independiente / Persona Natural (Renta) v2.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -503,7 +503,7 @@ SECTION J — REVIEWER FLAGS
 ## Section 10 — Reference Material
 
 ### Key Legislation
-- **Estatuto Tributario (ET)** — arts. 5-364 (Libro I)
+- **Estatuto Tributario (ET)** — arts. 5-364 (Libro I); consolidated text with amendments on the Función Pública gestor normativo: https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=6533
 - **Ley 2277 de 2022** — Reforma Tributaria
 - **Ley 2010 de 2019** — prior reform
 - **Decreto 1625 de 2016** — DUR Tributario

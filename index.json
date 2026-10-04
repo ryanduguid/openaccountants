@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T04:12:46+00:00",
+ "generated_at": "2026-10-04T04:21:35+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -6335,7 +6335,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "co-income-tax",
@@ -6348,7 +6348,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "co-social-contributions",
@@ -6374,7 +6374,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "colombia-iva",
@@ -6387,7 +6387,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "formalizing-small-informal-businesses-in-colombia",
