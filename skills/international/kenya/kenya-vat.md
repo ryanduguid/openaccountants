@@ -1,10 +1,10 @@
 ---
 name: kenya-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Kenya VAT return (VAT-3), classify transactions for Kenyan VAT purposes, or advise on VAT registration and filing in Kenya. Trigger on phrases like "Kenya VAT", "KRA VAT", "VAT-3 Kenya", "input tax Kenya", "output tax Kenya", "Kenya Revenue Authority VAT", or any Kenya VAT request. ALWAYS read this skill before touching any Kenya VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: KE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | PIN | Personal Identification Number — tax registration |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Kenyan CPA(K) or tax practitioner |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Key VAT-3 return fields
 
@@ -91,9 +91,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal catalogue
 
-- **R-KE-1 — Non-registered vendor** — "Only KRA VAT-registered taxpayers (above KES 5M threshold) can charge and recover VAT. Confirm registration."
+- **R-KE-1 — Non-registered vendor** — "Only KRA VAT-registered taxpayers can charge and recover VAT. Registration is compulsory once taxable supplies reach or are expected to reach KES 5 million in any twelve months (s. 34(1)). Confirm registration before treating VAT on an invoice as recoverable."  _(Value Added Tax Act, 2013 (Cap. 476), as at 1 July 2026 on Kenya Law, s. 34(1) — https://new.kenyalaw.org/akn/ke/act/2013/35/eng@2026-07-01)_
 - **R-KE-2 — Partial exemption** — "Businesses with both taxable and exempt supplies must apportion input tax. Out of scope without full-year data."
-- **R-KE-3 — Withholding VAT (WHT-VAT)** — "Government agencies withhold 6% (or 100%) of VAT on payments to suppliers. Track WHT-VAT certificates — escalate if significant."
+- **R-KE-3 — Withholding VAT (WHT-VAT)** — "Appointed withholding VAT agents, including government bodies, withhold 2% of the taxable value on payments to suppliers (Tax Procedures Act s. 42A). Track the withholding VAT certificates and claim the credit in the return; escalate where the certificates do not reconcile."  _(Tax Procedures Act, 2015 (Cap. 469B), as at 1 September 2026 on Kenya Law, s. 42A — https://new.kenyalaw.org/akn/ke/act/2015/29/eng@2026-09-01)_
 - **R-KE-4 — Digital marketplace suppliers** — "Non-resident digital service providers must register for Kenyan VAT. Complex cross-border treatment — escalate for non-resident client situations."
 
 ## Section 3 — Supplier pattern library
@@ -279,15 +279,15 @@ DHL courier. 16% VAT. Gross Ksh 5,800. Net = Ksh 5,000 + Ksh 800 input tax. DHL 
 
 ### 5.1 Standard rate 16%
 
-- **Standard rate** — 16%
+- **Standard rate** — 16% of the taxable value of taxable supplies, imported taxable goods and imported taxable services (s. 5(2)(b)); 8% on the petroleum products listed in s. 5(2A)  _(Value Added Tax Act, 2013 (Cap. 476), as at 1 July 2026 on Kenya Law, s. 5(2)(b) — https://new.kenyalaw.org/akn/ke/act/2013/35/eng@2026-07-01 ; https://taxsummaries.pwc.com/kenya/corporate/other-taxes)_
 
 ### 5.2 Zero rate
 
-- **Zero rate goods and services** — Second Schedule goods and services: exports, certain agricultural inputs (fertilizers, seeds), medicines, textbooks, ambulance services.  _(VAT Act 2013 Second Schedule)_
+- **Zero rate goods and services** — Second Schedule goods and services: exports, certain agricultural inputs (fertilizers, seeds), medicines, textbooks, ambulance services.  _(Value Added Tax Act, 2013 (Cap. 476), as at 1 July 2026 on Kenya Law, s. 5(2)(a) and Second Schedule — https://new.kenyalaw.org/akn/ke/act/2013/35/eng@2026-07-01)_
 
 ### 5.3 Exempt supplies
 
-- **Exempt supplies** — First Schedule: financial services, education, medical/health services, raw agricultural products sold by farmers, passenger transport.  _(VAT Act 2013 First Schedule)_
+- **Exempt supplies** — First Schedule: financial services, education, medical/health services, raw agricultural products sold by farmers, passenger transport.  _(Value Added Tax Act, 2013 (Cap. 476), as at 1 July 2026 on Kenya Law, s. 2(1) and First Schedule — https://new.kenyalaw.org/akn/ke/act/2013/35/eng@2026-07-01)_
 
 ### 5.4 ETR / e-Invoice requirement
 
@@ -295,7 +295,7 @@ DHL courier. 16% VAT. Gross Ksh 5,800. Net = Ksh 5,000 + Ksh 800 input tax. DHL 
 
 ### 5.5 Withholding VAT
 
-- **Withholding VAT** — Government departments and designated agents withhold 6% VAT on payments to suppliers; 100% on payments to foreign entities not registered in Kenya. Track withholding tax certificates (WHT-VAT form).
+- **Withholding VAT** — Agents appointed by the Commissioner withhold 2% of the taxable value when paying for taxable supplies and remit it directly to the KRA (Tax Procedures Act s. 42A(1)); the 6% rate this guide carried until October 2026 was replaced in 2019, and s. 25A of the VAT Act that once housed the scheme was deleted in 2015. Track the withholding VAT certificates.  _(Tax Procedures Act, 2015 (Cap. 469B), as at 1 September 2026 on Kenya Law, s. 42A — https://new.kenyalaw.org/akn/ke/act/2015/29/eng@2026-09-01)_
 
 ### 5.6 Filing deadlines
 
