@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Tunisia (ta
 jurisdiction: TN
 category: payroll
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +22,7 @@ Employers and employees contribute to the national social-security fund (CNSS) o
 - **Work-accident / occupational-disease contribution** — 0.4% to 4% of gross salary, depending on sector (employer-borne) %  _([CNSS contribution rules](https://taxsummaries.pwc.com/tunisia/corporate/other-taxes))_
 - **Unemployment Insurance Fund contribution** — 0.5% from employer and 0.5% from employee (within the totals above) %  _([Loi de Finances 2025 (Finance Law 2025)](https://taxsummaries.pwc.com/tunisia/corporate/other-taxes))_
 - **Contribution wage base** — Gross salary including most benefits in cash and in kind; no general statutory ceiling (approx — confirm any sector caps)  _(CNSS contribution rules)_
-- **Payroll income-tax withholding (retenue à la source)** — Employer withholds IRPP monthly on salary under the progressive scale after CNSS and professional-expense deductions  _([IRPP-IS Code (CIRPPIS) — withholding at source](https://taxsummaries.pwc.com/tunisia/individual/tax-administration))_
+- **Payroll income-tax withholding (retenue à la source)** — The employer withholds IRPP at source on salaries each month under the progressive scale, after the social security contribution and the 10% professional expense deduction capped at TND 2,000  _(Ministère des Finances, Aperçu général sur la fiscalité (système fiscal tunisien) — https://www.finances.gov.tn/fr/apercu-general-sur-la-fiscalite)_
 - **CNSS remittance frequency** — Quarterly declaration and payment of social-security contributions (approx — confirm; some employers report monthly)  _(CNSS contribution rules)_
 - **Withheld IRPP remittance** — Withheld salary tax remitted to the DGI monthly with the employer's declaration  _([IRPP-IS Code (CIRPPIS); Code des Droits et Procédures Fiscaux](https://taxsummaries.pwc.com/tunisia/individual/tax-administration))_
 

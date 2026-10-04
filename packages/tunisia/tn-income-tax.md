@@ -5,7 +5,7 @@ jurisdiction: TN
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -31,10 +31,10 @@ The IRPP is a progressive tax on individual income with eight brackets revised b
 ## Deductions, residence test and filing
 
 - **Social-security (CNSS) deduction from salary** — 9.68% employee contribution is deductible from gross salary %  _(IRPP-IS Code (CIRPPIS); CNSS contribution rules — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
-- **Professional expense deduction (employees)** — 10% of salary, capped at TND 2,000 per year TND  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/individual/taxes-on-personal-income)_
+- **Professional expense deduction (employees)** — 10% of salaries and wages, capped at TND 2,000 a year  _(Ministère des Finances, Aperçu général sur la fiscalité (système fiscal tunisien) — https://www.finances.gov.tn/fr/apercu-general-sur-la-fiscalite)_
 - **Family head / dependants deduction** — Fixed allowances for family head and dependent children (amounts vary; confirm current figures) ((approx — confirm))  _(IRPP-IS Code (CIRPPIS) — family deductions — https://taxsummaries.pwc.com/tunisia/individual/deductions)_
-- **Individual residence test** — Resident if Tunisia is the habitual/permanent home, or present in Tunisia for at least 183 days in a calendar year  _(IRPP-IS Code (CIRPPIS) — residence provisions — https://taxsummaries.pwc.com/tunisia/individual/residence)_
-- **Salary withholding (retenue à la source)** — Employers withhold IRPP at source on salaries each month and remit to the DGI  _(IRPP-IS Code (CIRPPIS) — withholding at source — https://taxsummaries.pwc.com/tunisia/individual/tax-administration)_
+- **Individual residence test** — An individual whose habitual residence is in Tunisia is subject to IRPP on their income; non-residents are taxed only on Tunisian-source income  _(Ministère des Finances, Aperçu général sur la fiscalité (système fiscal tunisien) — https://www.finances.gov.tn/fr/apercu-general-sur-la-fiscalite)_
+- **Salary withholding (retenue à la source)** — IRPP is collected by withholding at source on salaries and other listed payments, by three provisional instalments of 30% of the previous year's tax in the sixth, ninth and twelfth months, and by the annual return; withholding and instalments are credited against the final tax, and the withholding is final for persons neither resident nor established in Tunisia  _(Ministère des Finances, Aperçu général sur la fiscalité (système fiscal tunisien) — https://www.finances.gov.tn/fr/apercu-general-sur-la-fiscalite)_
 - **Annual IRPP return deadline (self-employed / business income)** — 25 June of the following year for individuals filing accounts (Other categories have earlier dates (e.g. wage earners filing a no-payment return); confirm category-specific deadline)  _(IRPP-IS Code (CIRPPIS) — tax administration provisions — https://taxsummaries.pwc.com/tunisia/individual/tax-administration)_
 
 Employees benefit from a social-security deduction and a capped professional-expense allowance before the IRPP scale applies. Residence is determined chiefly by a permanent home or a 183-day presence test.
