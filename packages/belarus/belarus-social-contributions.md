@@ -1,10 +1,10 @@
 ---
 name: belarus-social-contributions
 description: Use this skill whenever asked about Belarus social insurance contributions (FSZN / ФСЗН), Belgosstrakh occupational-accident insurance, or personal income tax (PIT / подоходный налог) withholding on Belarusian payroll. Trigger on phrases like "how much social contributions do I pay in Belarus", "FSZN rate", "ФСЗН", "Social Protection Fund", "Belarus payroll tax", "28% pension 6% social", "1% employee contribution", "Belgosstrakh accident insurance", "Belarus PIT 13%", "увеличенная ставка подоходного налога", "High Technology Park payroll", "HTP FSZN base", "self-employed FSZN Belarus", "individual entrepreneur contributions", or any question about Belarusian payroll on-costs, contribution ceilings, or PIT thresholds. Also trigger when classifying bank statement transactions that relate to FSZN debits, Belgosstrakh premiums, PIT (подоходный налог) remittances, or salary (зарплата) payments from Belarusbank, Belarusbank, Belinvestbank, Priorbank, BPS-Sberbank, Alfa-Bank or other Belarusian banks. This skill covers FSZN employer/employee rates, the Belgosstrakh accident-insurance premium, self-employed/IP contributions, contribution floors and ceilings, the HTP base benefit, the 13%/25%/30% PIT scale, payment and reporting deadlines (4-fund / ПУ forms), bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Belarus social-contribution or payroll-PIT work.
-version: 0.1
+version: 0.2
 jurisdiction: BY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Belarus Social Insurance Contributions (FSZN) + Payroll PIT
 
-## Belarus Social Insurance Contributions (FSZN) + Payroll PIT -- Skill v0.1
+## Belarus Social Insurance Contributions (FSZN) + Payroll PIT -- Skill v0.2
 
 **Confidence: MEDIUM.** Belarus is NOT covered by the PwC / Deloitte / EY / KPMG Worldwide Tax Summaries (taxsummaries.pwc.com/belarus returns 404). Figures below rely on the official President of Belarus portal (president.gov.by), the official Social Protection Fund portal (ssf.gov.by), the Lloyds/Standard Bank International Trade Portal, Bloomberg Tax, and specialist Belarusian payroll/EOR providers (eor.by, spex.by, globalization-partners). Several figures carry an explicit **[RESEARCH GAP -- reviewer to confirm]** marker and MUST be verified against the Russian-language Tax Code (Налоговый кодекс) and current FSZN regulations before any filing. Belarus is also under extensive international sanctions affecting banking/payment practicalities (not the statutory rates).
 
@@ -106,7 +106,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal catalogue
 
-- **R-BY-SSC-1** — Trigger: annual income approaches or exceeds the high-income threshold (BYN 220,000 in 2025; BYN 350,000 in 2026). Message: "The increased PIT rate (25%, and 30% from 2026) is reconciled by the individual via an annual tax return, not by simple payroll withholding. The exact year of application of the BYN 350,000 / 600,000 thresholds is a [RESEARCH GAP -- reviewer to confirm]. Escalate to a Belarusian tax professional."  _(R-BY-SSC-1 -- Annual increased-rate (25%/30%) PIT reconciliation)_
+- **R-BY-SSC-1** — Trigger: annual income approaches or exceeds the high-income threshold (BYN 220,000 in 2025; BYN 350,000 in 2026). Message: "The increased PIT rate (25%, and 30% from 2026) is reconciled by the individual via an annual tax return, not by simple payroll withholding. The BYN 350,000 and 600,000 thresholds apply to income accrued for 2026 under Law No. 127-Z of 30 December 2025, with 25% on the excess over 350,000 up to 600,000 and 30% on the excess over 600,000 ([MNS commentary, pravo.by](https://pravo.by/novosti/analitika/2026/january/91710/)). Escalate to a Belarusian tax professional."  _(R-BY-SSC-1 -- Annual increased-rate (25%/30%) PIT reconciliation)_
 - **R-BY-SSC-2** — Trigger: a precise accident-insurance figure is requested for a specific industry. Message: "The Belgosstrakh premium is 0.6% as a base, but the actual rate depends on the assigned occupational risk class and coefficients (commonly cited ~0.2%–0.9%, up to ~1.5 for high-risk trades). Confirm against the specific tariff certificate. Do not quote a precise rate without it."  _(R-BY-SSC-2 -- Belgosstrakh risk-class tariff)_
 - **R-BY-SSC-3** — Trigger: an individual entrepreneur asks whether the 6% social-insurance portion is mandatory. Message: "Whether the social-insurance portion is mandatory or voluntary for IPs, and the 29%+6% split, must be confirmed against current FSZN rules [RESEARCH GAP -- reviewer to confirm]. Escalate to a Belarusian payroll professional."  _(R-BY-SSC-3 -- Self-employed / IP voluntary vs mandatory social portion)_
 - **R-BY-SSC-4** — Trigger: a computation depends on the 5×-average-wage ceiling or the HTP average-wage base. Message: "The FSZN ceiling (five times the national average monthly wage) and the HTP base (~BYN 2,000 in 2025) move with Belstat statistics. Verify the current Belstat average-wage figure before relying on the cap [RESEARCH GAP -- reviewer to confirm]."  _(R-BY-SSC-4 -- FSZN ceiling and HTP base figures)_
