@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Central Afr
 jurisdiction: CF
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,19 +18,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 Employers and employees contribute to the Caisse Nationale de Sécurité Sociale (CNSS), covering pensions, family allowances and work-injury. Employers also withhold IRPP from salaries (PAYE-equivalent). Contribution rates and the wage ceiling below are a source-cited draft to confirm with CNSS/DGID, as sources differ on the split.
 
 - **Social security institution** — Caisse Nationale de Sécurité Sociale (CNSS)  _(Code de la Sécurité Sociale (CAR))_
-> **The employer total does not equal its own components.** The bullet below
-> names its parts as pensions + family allowances + work-injury, and those three
-> are listed as 4% + 11% + 2% = **17%**, against a stated **19%**. Neither figure
-> has been checked against the CNSS, so which one is wrong cannot be settled from
-> this file. Do not adjust a branch to make the addition work — get the CNSS
-> schedule and replace the block.
-
-- **Employer total social security contribution** — Approximately 19% of gross salary (pensions + family allowances + work-injury combined) percent (approx — confirm; see the note above, this does not equal its listed branches)  _(Code de la Sécurité Sociale (CAR); CNSS (as described at [remotepeople.com](https://remotepeople.com/countries/central-african-republic/employer-of-record/payroll-tax/)))_
-- **Employer — old-age / pension branch** — Approximately 4% of gross salary (employer share) percent (approx — confirm)  _([Code de la Sécurité Sociale (CAR); CNSS](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
-- **Employer — family allowances branch** — Approximately 11% of gross salary percent (approx — confirm)  _([Code de la Sécurité Sociale (CAR); CNSS](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
-- **Employer — work-injury branch** — Approximately 2% of gross salary percent (approx — confirm)  _([Code de la Sécurité Sociale (CAR); CNSS](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
-- **Employee social security contribution (pension)** — Approximately 1.6% of gross earnings (old-age / pension branch) percent (approx — confirm)  _([Code de la Sécurité Sociale (CAR); CNSS](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
-- **Monthly contribution earnings ceiling** — XAF 600,000 per month XAF (approx — confirm)  _(Code de la Sécurité Sociale (CAR); CNSS (as described at [centralafricataxguide.com](https://centralafricataxguide.com/social-security-contributions/)))_
+- **Employer total social security contribution** — 19% of gross monthly covered payroll (old age 4% + family allowances 12% + work injury 3%), as published by SSA for 2019; confirm the current CNSS schedule before running payroll  _([SSA, Social Security Programs Throughout the World: Africa, 2019, Central African Republic](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
+- **Employer — old-age / pension branch** — 4% of gross monthly covered payroll (employer share)  _([SSA, Social Security Programs Throughout the World: Africa, 2019, Central African Republic](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
+- **Employer — family allowances branch** — 12% of gross monthly covered payroll  _([SSA, Social Security Programs Throughout the World: Africa, 2019, Central African Republic](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
+- **Employer — work-injury branch** — 3% of gross monthly covered payroll  _([SSA, Social Security Programs Throughout the World: Africa, 2019, Central African Republic](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
+- **Employee social security contribution (pension)** — 3% of gross monthly covered earnings (old-age, disability and survivors branch)  _([SSA, Social Security Programs Throughout the World: Africa, 2019, Central African Republic](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
+- **Monthly contribution earnings ceiling** — XAF 600,000 per month; the floor is the legal monthly minimum wage  _([SSA, Social Security Programs Throughout the World: Africa, 2019, Central African Republic](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
 - **Apprenticeship / vocational training tax** — Approximately 2% on annual payroll (employer) percent (approx — confirm)  _(Code Général des Impôts (CAR) (as described at [remotepeople.com](https://remotepeople.com/countries/central-african-republic/employer-of-record/payroll-tax/)))_
 - **Payroll income tax withholding (PAYE-equivalent)** — Employer withholds IRPP from salary at source on the progressive scale (approx — confirm)  _(Code Général des Impôts (CAR) — IRPP / Impôt sur les Traitements et Salaires)_
 - **Withholding / contribution remittance deadline** — Monthly — typically by the 15th of the following month (approx — confirm)  _(Code Général des Impôts (CAR); CNSS regulations)_

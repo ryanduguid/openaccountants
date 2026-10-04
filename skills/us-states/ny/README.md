@@ -26,7 +26,6 @@
 | `us-ny-pte-tax-ptet.md` | NY Pass-Through Entity Tax (PTET) — Article 24-A |
 
 ## What's NOT covered
-- Payroll / employer withholding taxes
 - Property tax (administered at local level)
 - Corporate franchise tax (Article 9-A)
 - MTA surcharge details beyond what's in income tax file

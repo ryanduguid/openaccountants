@@ -5,7 +5,7 @@ jurisdiction: US
 category: state-tax
 tax_year: 2025
 version: 1.1
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
@@ -37,7 +37,7 @@ This reference skill is the single lookup table for **economic sales tax nexus**
 - Colorado SUTS portal — see `co-suts`
 - Washington B&O — see `us-wa-bo-tax`
 - California sales tax line-level preparation — see `us-ca-sales-tax`
-- Texas sales tax line-level preparation — see `tx-sales-tax`
+- Texas sales tax line-level preparation — see `us-tx-sales-use-tax`
 - US federal income tax — see other Tier 2 skills in this package
 - Use tax on consumer purchases (these are 50 separate compliance projects for individual taxpayers)
 
@@ -130,7 +130,7 @@ Within 18 months of Wayfair, every state with a sales tax enacted some form of e
 | 41 | **South Carolina** | 1 Nov 2018 | $100,000 | — | — (sales only) | PY or CY | 1 Apr 2019 | 6.00% | Yes | Casual sales rule limits |
 | 42 | **South Dakota** | 1 Nov 2018 (Wayfair home) | $100,000 | — (200 prong repealed Jul 2023) | — (sales only) | PY or CY | 1 Mar 2019 | 4.20% (reduced from 4.5% Jul 2023) | Yes | **Wayfair home state**; transaction count removed |
 | 43 | **Tennessee** | 1 Oct 2019 (lowered from $500k to $100k Oct 2020) | $100,000 | — | — (sales only) | PY (12 mo) | 1 Oct 2020 | 7.00% | Retail | Lowered threshold 2020 |
-| 44 | **Texas** | 1 Oct 2019 | $500,000 | — | — (sales only) | Prior 12 months | 1 Oct 2019 | 6.25% | Yes | Higher dollar threshold; see `tx-sales-tax` |
+| 44 | **Texas** | 1 Oct 2019 | $500,000 | — | — (sales only) | Prior 12 months | 1 Oct 2019 | 6.25% | Yes | Higher dollar threshold; see `us-tx-sales-use-tax` |
 | 45 | **Utah** | 1 Jan 2019 | $100,000 | 200 | OR | PY or CY | 1 Oct 2019 | 4.85% | Retail | SST member |
 | 46 | **Vermont** | 1 Jul 2018 | $100,000 | 200 | OR | PY (12 mo) | 1 Jun 2019 | 6.00% | Retail | SST member |
 | 47 | **Virginia** | 1 Jul 2019 | $100,000 | 200 | OR | PY or CY | 1 Jul 2019 | 5.30% (combined state) | Retail | Includes 1% local in state base |

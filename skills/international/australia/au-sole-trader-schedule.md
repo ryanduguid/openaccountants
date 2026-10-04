@@ -1,10 +1,10 @@
 ---
 name: au-sole-trader-schedule
-description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate verified rate for the return year or actual), motor vehicle (logbook or cents per km at 88c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
-version: 1.2
+description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 70c/hour or actual), motor vehicle (logbook or cents per km at 88c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
+version: 1.3
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Sole Trader Schedule
 
-## Australia Sole Trader Business Schedule v1.2
+## Australia Sole Trader Business Schedule v1.3
 
 ## What this file is
 
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This file covers the Business and Professional Items (BPI) schedule that sole traders attach to their individual income tax return. The BPI schedule feeds into the individual return at "Business income or loss" items.
 
-**Tax year coverage.** This skill targets the **2024-25 income year** (1 July 2024 to 30 June 2025).
+**Tax year coverage:** This skill targets the 2025–26 income year (1 July 2025 to 30 June 2026). Match the intake and assembly year before calculating.
 
 **The reviewer is the customer of this output.** This skill assumes a credentialed reviewer reviews and signs the return. The skill produces working papers and a brief, not a return.
 
@@ -56,34 +56,34 @@ This skill does NOT cover:
 
 | Lodgement type | Due date |
 | --- | --- |
-| Self-lodgers | 31 October 2025 |
-| Tax agent lodgement | Per the ATO tax agent lodgement programme (typically March-May 2026 depending on client category) |
+| Self-lodgers | 2 November 2026 (31 October falls on Saturday; check applicable extensions) |
+| Tax agent lodgement | Per the ATO tax agent lodgement programme (2026–27 programme, depending on client category) |
 
 ### 2.3 ABN requirement
 
-- **ABN requirement** — A sole trader carrying on a business must have an ABN. If they do not have one, they cannot issue valid tax invoices and may face 47% withholding from payers.  _(A New Tax System (Australian Business Number) Act 1999)_
+- **ABN requirement** — Check ABN entitlement, GST registration and withholding consequences separately. An ABN is not compulsory for every business activity. A tax invoice must meet GST requirements, and eligible payments without an ABN can attract 47% withholding subject to exceptions.  _([ABR](https://www.abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement))_
 
 ## Section 3 — Rates and thresholds
 
-**Rates and thresholds**
+**Rates and thresholds**  _(ITAA 1997 Div 328; ATO QC 103578)_
 
 | Item | Amount / Rate | Source |
 | --- | --- | --- |
-| Instant asset write-off threshold | $20,000 per asset (for small business entities with aggregated turnover < $10M) for assets first used or installed ready for use between 1 July 2024 and 30 June 2025 | ITAA 1997 s 328-180 (extended by Treasury Laws Amendment) |
+| Instant asset write-off threshold | For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for use from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text). | ITAA 1997 Subdivision 328-D |
 | Small business entity threshold | Aggregated turnover < $10M | ITAA 1997 s 328-110 |
-| Cents per km rate (motor vehicle) | 88 cents per km | Library, Tax/Deductions, para 4-020 |
+| Cents per km rate (motor vehicle) | 88 cents per km (2024-25 and 2025-26); 91 cents (2026-27) | ATO cents per kilometre method |
 | Cents per km cap | 5,000 business km per car per year | ITAA 1997 s 28-25 |
-| Home office fixed rate | Rate for 2024-25 requires verification | ATO PCG 2023/1 (revised method from 1 July 2022) |
-| Trading stock threshold (change in value) | An eligible business can choose not to account for a change of $5,000 or less between opening stock and a reasonable estimate of closing stock | ITAA 1997 Subdiv 328-E, s 328-285 |
-| Prepaid expenses (SBE) | Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year | ITAA 1936 s 82KZM |
+| Home office fixed rate | 70 cents per hour (2024-25 through 2026-27; 67c applied 2022-23 and 2023-24) | ATO PCG 2023/1 |
+| Trading stock threshold (change in value) | $5,000: if an eligible small business entity reasonably estimates that the difference between opening and closing stock is $5,000 or less, the taxpayer can elect not to do a stocktake | ITAA 1997 s 328-285 |
+| Prepaid expenses (SBE) | Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year | ITAA 1936 ss 82KZL and 82KZM |
 
-- **Instant asset write-off threshold** — $20,000 per asset (for small business entities with aggregated turnover < $10M) for assets first used or installed ready for use between 1 July 2024 and 30 June 2025  _(ITAA 1997 s 328-180 (extended by Treasury Laws Amendment))_
+- **Instant asset write-off threshold** — For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for use from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text).  _(ITAA 1997 Subdivision 328-D)_
 - **Small business entity threshold** — Aggregated turnover < $10M  _(ITAA 1997 s 328-110)_
-- **Cents per km rate (motor vehicle)** — 88 cents per km  _(Library, Tax/Deductions, para 4-020)_
+- **Cents per km rate (motor vehicle)** — 88 cents per km for 2024-25 and 2025-26; 91 cents per km from 2026-27 cents per km  _(ATO cents per kilometre method)_
 - **Cents per km cap** — 5,000 business km per car per year  _(ITAA 1997 s 28-25)_
-- **Home office fixed rate** — Rate for 2024-25 requires verification  _(ATO PCG 2023/1 (revised method from 1 July 2022))_
-- **Trading stock threshold (change in value)** — An eligible business can choose not to account for a change of $5,000 or less between opening stock and a reasonable estimate of closing stock  _(ITAA 1997 Subdiv 328-E, s 328-285)_
-- **Prepaid expenses (SBE)** — Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year  _(ITAA 1936 s 82KZM)_
+- **Home office fixed rate** — 70 cents per hour for 2024-25 through 2026-27 (67c applied for 2022-23 and 2023-24) cents per hour  _(ATO PCG 2023/1)_
+- **Trading stock threshold (change in value)** — $5,000: if an eligible small business entity reasonably estimates that the difference between opening and closing stock is $5,000 or less, the taxpayer can elect not to do a stocktake  _(ITAA 1997 s 328-285)_
+- **Prepaid expenses (SBE)** — Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year  _(ITAA 1936 ss 82KZL and 82KZM)_
 
 ## Section 4 — Computation rules
 
@@ -101,7 +101,7 @@ This skill does NOT cover:
 
 **Key deduction categories on the 2025 BPI schedule**
 
-| Label | Category | Notes |
+| Schedule area | Category | Notes |
 | --- | --- | --- |
 | P8 N | Motor vehicle expenses | See 4.4 below; report depreciation, lease charges and interest at their separate labels |
 | P8 M | Depreciation expenses | See 4.5 below; complete P10 simplified-depreciation details and P8 reconciliation where required |
@@ -118,11 +118,11 @@ Two methods available for sole traders:
 
 #### Method 1 — Cents per kilometre
 
-- **Cents per kilometre method** — Claim 88c per business km, up to 5,000 km per car per year. Maximum claim = 5,000 x $0.88 = $4,400 per car. No logbook or written evidence of individual trips required, but must be able to show how the estimate was calculated.  _(Library, Tax/Deductions, para 4-020; ITAA 1997 s 28-25)_
+- **Cents per kilometre method** — Claim the current rate per business km, up to 5,000 km per car per year. 2025-26: 88c, maximum claim = 5,000 x $0.88 = $4,400 per car. 2026-27: 91c, maximum = $4,550. No logbook or written evidence of individual trips required, but must be able to show how the estimate was calculated.  _(ATO cents per kilometre method; ITAA 1997 s 28-25)_
 
 #### Method 2 — Logbook
 
-- **Logbook method** — Maintain a logbook for a continuous 12-week period (valid for 5 years unless circumstances change). Calculate business-use percentage from logbook. Apply that percentage to total car expenses: fuel, insurance, registration, repairs, lease payments, depreciation. Depreciation of the car is capped at the car limit ($69,674 for 2024-25 and 2025-26; $69,883 for 2026-27 — ATO car limit determination).  _(ATO car limit determination)_
+- **Logbook method** — Maintain a logbook for a continuous 12-week period (valid for 5 years unless circumstances change). Calculate business-use percentage from logbook. Apply that percentage to total car expenses: fuel, insurance, registration, repairs, lease payments, depreciation. Depreciation of the car is capped at the car limit ($69,674 for 2024-25 and 2025-26; $69,883 for 2026-27).  _(ATO car limit determination)_
 
 ### 4.5 Depreciation
 
@@ -132,15 +132,13 @@ Two methods available for sole traders:
 
 #### General depreciation (non-SBE or election out of simplified)
 
-- **General depreciation** — Use the effective life determined by the ATO (TR 2024/3) or a self-assessed effective life. Choose diminishing value (rate = 200% / effective life) or prime cost (rate = 100% / effective life). Apply from the date the asset is first used or installed ready for use.  _(ATO TR 2024/3)_
+- **General depreciation** — Use the effective life determined by the ATO (Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025) or a self-assessed effective life. Choose diminishing value (rate = 200% / effective life) or prime cost (rate = 100% / effective life). Apply from the date the asset is first used or installed ready for use.  _(ATO Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025)_
 
 ### 4.6 Home office expenses
 
-The Library supports 70c/hour for 2025-26 only. This guide targets 2024-25: leave the fixed-rate calculation pending until a source for that year is supplied. Record actual hours and expenses in the meantime.
+#### Fixed rate method (70c per hour from 2024-25) — PCG 2023/1
 
-#### Fixed rate method (verify the return year) — PCG 2023/1
-
-- **Fixed rate method** — Covers energy expenses (electricity, gas), phone, internet, stationery, computer consumables. Must keep a record of actual hours worked from home (e.g., timesheets, diary, roster). Separately claim occupancy expenses (rent, mortgage interest, rates, insurance) only if the home is a place of business (rare for sole traders without a dedicated area). Cannot separately claim expenses already covered by the fixed rate.  _(ATO PCG 2023/1)_
+- **Fixed rate method** — Covers energy expenses (electricity, gas), phone, internet, stationery, computer consumables. Must keep a record of actual hours worked from home (e.g., timesheets, diary, roster). Separately claim occupancy expenses (rent, mortgage interest, rates, insurance) only if the home is a place of business (rare for sole traders without a dedicated area). Cannot separately claim expenses already covered by the fixed rate (70c from 2024-25).  _(ATO PCG 2023/1)_
 
 #### Actual cost method
 
@@ -148,7 +146,7 @@ The Library supports 70c/hour for 2025-26 only. This guide targets 2024-25: leav
 
 ### 4.7 Net business income or loss (P8 Y/Z)
 
-- **Net business income or loss (P8 Y/Z):** Complete the P8 reconciliation of business income and allowable deductions. Report net primary-production income or loss at Y and non-primary-production income or loss at Z, then transfer them to supplementary return question 15 labels B and C respectively. For example, a $40,000 non-primary-production profit after reconciliation goes to P8 Z and question 15 C. If this is a loss, apply Division 35 before carrying it into the individual return. For the four-test route, income for Division 35 must be less than $250,000 AND at least one test must pass: activity assessable income of at least $20,000; a profit in 3 of 5 years including the current year; qualifying real property of at least $500,000; or qualifying other assets of at least $100,000. Apply the asset exclusions. The income measure includes taxable income calculated before the business loss, reportable fringe benefits, reportable super contributions and total net investment losses. Otherwise defer the loss unless an exception or the Commissioner's discretion applies. Primary production and professional arts have an exception where assessable income from other sources, excluding net capital gains, is less than $40,000. (ITAA 1997 Division 35; Library, Tax/Assessable Income.)
+- **Net business income or loss (P8 Y/Z):** Complete the P8 reconciliation of business income and allowable deductions. Report net primary-production income or loss at Y and non-primary-production income or loss at Z, then transfer them to supplementary return question 15 labels B and C respectively. For example, a $40,000 non-primary-production profit after reconciliation goes to P8 Z and question 15 C. If this is a loss, apply Division 35 before carrying it into the individual return. For the four-test route, income for Division 35 must be less than $250,000 AND at least one test must pass: activity assessable income of at least $20,000; a profit in 3 of 5 years including the current year; qualifying real property of at least $500,000; or qualifying other assets of at least $100,000. Apply the asset exclusions. The income measure includes taxable income calculated before the business loss, reportable fringe benefits, reportable super contributions and total net investment losses. Otherwise defer the loss unless an exception or the Commissioner's discretion applies. Primary production and professional arts have an exception where assessable income from other sources, excluding net capital gains, is less than $40,000. (ITAA 1997 Division 35, including ss 35-10(2E) and 35-10(4); [ATO, Non-commercial losses](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/non-commercial-losses).)
 
 ## Section 5 — Edge cases and special rules
 
@@ -162,7 +160,7 @@ The Library supports 70c/hour for 2025-26 only. This guide targets 2024-25: leav
 
 ### 5.3 Prepaid expenses (SBE)
 
-- **Prepaid expenses (SBE)** — Small business entities can immediately deduct prepaid expenses if the service period is 12 months or less and ends by 30 June of the following income year. Example: 12-month insurance premium paid in May 2025 covering May 2025 to April 2026 — fully deductible in 2024-25.
+- **Prepaid expenses (SBE)** — Small business entities can immediately deduct prepaid expenses if the service period is 12 months or less and ends by 30 June of the following income year. Example: 12-month insurance premium paid in May 2026 covering May 2026 to April 2027: deductible in 2025–26 if the statutory conditions are met.
 
 ### 5.4 Capital vs revenue
 
@@ -185,7 +183,7 @@ Before delivering output, verify:
 - [ ] Non-commercial loss rules checked if a loss is reported
 - [ ] PSI risk flagged if applicable
 - [ ] Trading stock valuation method is documented
-- [ ] Rates and thresholds match the 2024-25 income year
+- [ ] Rates and thresholds match the 2025–26 income year
 - [ ] Output format matches the base skill spec
 
 ## Section 7 — Disclaimer
@@ -193,6 +191,8 @@ Before delivering output, verify:
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+> Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
 

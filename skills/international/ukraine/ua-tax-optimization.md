@@ -1,10 +1,10 @@
 ---
 name: ua-tax-optimization
 description: Use this skill whenever asked about legal tax optimization or tax planning for self-employed people in Ukraine. Trigger on phrases like "reduce tax Ukraine", "Diia City", "single tax vs general system", "tax planning Ukraine freelancer", "optimise FOP taxes", "should I be on єдиний податок or загальна система", "lower my tax as an IT freelancer in Ukraine", "Group 3 5% vs general system", "Diia City gig contract", "do I need to register for VAT", or any question about legitimately structuring a Ukrainian self-employed person's affairs to pay less tax. Covers choosing the right regime, the ₴1,000,000 VAT threshold lever, the Diia City IT regime, ЄСВ minimisation, expense documentation on the general system, foreign-client / FX considerations, and the red flags of fictitious-FOP misclassification. This skill is about LEGAL planning only — it never advises evasion. ALWAYS read this skill before any Ukrainian self-employed tax-planning work, and cross-read ua-single-tax, ua-income-tax, ua-payroll and ua-formation.
-version: 1.0
+version: 1.1
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Tax Optimization
 
-## Ukraine Tax Optimization & Planning (Self-Employed) — Skill v1.0
+## Ukraine Tax Optimization & Planning (Self-Employed) — Skill v1.1
 
 > **Scope:** Legal tax planning only. This skill helps a self-employed person in Ukraine choose and operate the most efficient *lawful* structure. It does **not** help anyone evade tax, disguise employment, or build fictitious arrangements (see PROHIBITIONS). Every output here is a starting point for a conversation with a qualified Ukrainian accountant or tax lawyer.
 
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | Електронний кабінет платника (cabinet.tax.gov.ua); Diia City portal (city.diia.gov.ua) |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a Ukrainian accountant |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Verified 2026 base figures (pin date: 1 January 2026)
 
@@ -89,7 +89,7 @@ Cross-reference **ua-single-tax** for the full Group 1/2/3 rules and activity ba
 - **VAT registration threshold** — VAT registration in Ukraine becomes mandatory once taxable supplies exceed ₴1,000,000 over any rolling 12 calendar months.
 - **Key points on VAT threshold** — Group 3 has two sub-rates: 5% without VAT, or 3% with VAT registration. The 3% looks cheaper but only makes sense if you can reclaim meaningful input VAT (ПДВ кредит) or your clients require VAT invoices. A pure-labour freelancer with no input VAT usually keeps the 5% non-VAT status and stays below ₴1,000,000. Foreign-client services may be outside Ukrainian VAT. Many B2B services exported to non-residents are treated as supplied outside Ukraine (place-of-supply rules) and so do not count toward the threshold and are not subject to Ukrainian VAT. Verify the place-of-supply treatment per service type — getting this wrong is a common error. See ukraine-vat. Monitor the rolling figure, not the calendar-year figure. Registration is triggered by any 12-month window.  _(see ukraine-vat)_
 
-> **VAT-threshold reform — VERIFY.** Draft legislation in late 2025 proposed making VAT registration mandatory for single-tax payers (Groups 1–3) whose taxable operations exceed ₴1,000,000, with effect from **1 January 2027** (application by 10 January 2027 for those over the threshold in 2026). As of the latest research this was **not yet enacted** and the ₴1,000,000 general threshold remained in force for 2026, with a carve-out for single-tax payers. **This is a live policy area — verify the current enacted rule on tax.gov.ua before advising anyone, because it materially affects whether a Group 3 freelancer must register.**
+> **VAT-threshold reform — VERIFY.** Draft legislation first published in late 2025 proposed making VAT registration mandatory for single-tax payers (Groups 1–3, excluding Group 3 e-residents) whose supplies exceed ₴1,000,000 in the previous 12 months, with effect from **1 January 2027**. During 2026 the government said it would raise the proposed threshold to ₴4,000,000; as of October 2026 the Verkhovna Rada had **not adopted** a law, so the ₴1,000,000 general threshold with the single-tax carve-out still applied for 2026. **This is a live policy area — verify the enacted rule on tax.gov.ua before advising anyone, because it decides whether a Group 3 freelancer must register.** _([Interfax-Ukraine, 2026](https://en.interfax.com.ua/news/general/1208574.html))_
 
 **Legitimate planning, not avoidance:** managing the threshold means timing genuine business and choosing the right sub-rate — *not* splitting one real business across multiple FOPs to stay under the limit. Artificial fragmentation is a red flag (Section 7).
 

@@ -1,11 +1,11 @@
 ---
 name: be-social-contributions
 description: Use this skill whenever asked about Belgian self-employed social contributions (sociale bijdragen / cotisations sociales). Trigger on phrases like "sociale bijdragen", "Belgian social contributions", "RSVZ", "INASTI", "self-employed Belgium", "zelfstandige bijdragen", "VAPZ", "PLCI", or any question about social contribution obligations for a self-employed client in Belgium. Covers the 20.5% / 14.16% tiered rates, quarterly payments, management company interaction, and VAPZ supplementary pension. ALWAYS read this skill before touching any Belgium social contributions work.
-version: 2.0
+version: 2.1
 jurisdiction: BE
 category: international
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -89,7 +89,7 @@ Legislation: KB nr. 38, art. 12; RSVZ published rates
 
 ### VAPZ / PLCI supplementary pension
 
-Legislation: Wet van 24 december 2002 (VAPZ); Programmawet 2003. Maxima per Circulaire 2026/C/53 (the 8.5%/9.78% rates announced for 2026 require a 2026 vote and are not yet law; 8.17%/9.40% still apply).
+Legislation: Wet van 24 december 2002 (VAPZ); Programmawet 2003. Maxima per Circulaire 2026/C/53. Parliament approved the increase to 8.50% (maximum EUR 4,251.39) and, for the social VAPZ, 9.78% (maximum EUR 4,891.60) on 15 July 2026, but the law had not been published in the Belgisch Staatsblad when checked on 4 October 2026; the new maxima apply retroactively to 2026 once published, so compute at 8.17%/9.40% and top up afterwards ([Partena Professional](https://www.partena-professional.be/nl/node/22540)).
 
 **VAPZ / PLCI supplementary pension**  _(Wet van 24 december 2002 (VAPZ); Programmawet 2003)_
 

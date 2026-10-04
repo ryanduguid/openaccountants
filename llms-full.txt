@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**1,866 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants** (derived from `index.json`; `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree).
+**1,875 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants** (derived from `index.json`; `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree).
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (1866 guides, 243 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (1875 guides, 243 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -307,23 +307,30 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - armenia-social-contributions | AM | tier 2 | reviewed_by -
 - armenia-tax-optimization | AM | tier 2 | reviewed_by -
 - armenia-vat | AM | tier 2 | reviewed_by -
+- au-amending-individual-income-tax-return-period | AU | tier 2 | reviewed_by -
+- au-bas-preparation | AU | tier 2 | reviewed_by -
 - au-capital-gains | AU | tier 2 | reviewed_by -
 - au-company-tax | AU | tier 2 | reviewed_by -
 - au-crypto-tax | AU | tier 2 | reviewed_by -
 - au-deceased-estates | AU | tier 2 | reviewed_by -
+- au-deductions-offsets | AU | tier 2 | reviewed_by -
 - au-div7a | AU | tier 2 | reviewed_by -
+- au-employment-termination-payments | AU | tier 2 | reviewed_by -
 - au-fbt-year | AU | tier 2 | reviewed_by -
 - au-fbt | AU | tier 2 | reviewed_by -
 - au-foreign-income | AU | tier 2 | reviewed_by -
+- au-forex-gains-losses | AU | tier 2 | reviewed_by -
 - au-gst-bas | AU | tier 2 | reviewed_by -
 - au-gst-property | AU | tier 2 | reviewed_by -
 - au-individual-return | AU | tier 2 | reviewed_by -
 - au-land-tax | AU | tier 2 | reviewed_by -
+- au-lodgment-deadlines-penalties | AU | tier 2 | reviewed_by -
 - au-medicare-levy | AU | tier 2 | reviewed_by -
 - au-nonresident-cgt | AU | tier 2 | reviewed_by -
 - au-not-for-profit | AU | tier 2 | reviewed_by -
 - au-partnerships | AU | tier 2 | reviewed_by -
 - au-payg-instalments | AU | tier 2 | reviewed_by -
+- au-payroll-tax | AU | tier 2 | reviewed_by -
 - au-psi | AU | tier 2 | reviewed_by -
 - au-rates-2026-27 | AU | tier 2 | reviewed_by -
 - au-rd-incentive | AU | tier 2 | reviewed_by -
@@ -334,7 +341,9 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - au-stamp-duty | AU | tier 2 | reviewed_by -
 - au-super-guarantee | AU | tier 2 | reviewed_by -
 - au-tax-residency | AU | tier 2 | reviewed_by -
+- au-tpar | AU | tier 2 | reviewed_by -
 - au-trust-distributions | AU | tier 2 | reviewed_by -
+- au-working-holiday-makers | AU | tier 2 | reviewed_by -
 - australia-bookkeeping | AU | tier 2 | reviewed_by -
 - australia-financial-statements | AU | tier 2 | reviewed_by -
 - australia-formation | AU | tier 2 | reviewed_by -
@@ -2088,7 +2097,7 @@ Key rules:
 
 ## Current inventory
 
-**1,866 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,875 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2106,7 +2115,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-Everything else in this repo — 1,702 of the 1,866 indexed guides, covering 184 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
+Everything else in this repo — 1,711 of the 1,875 indexed guides, covering 184 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
 
 ---
 
@@ -2233,7 +2242,7 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | James Power | GB | 15 | 2 | 2026-09-29 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
 | A licensed accountant (name withheld at their request) | US (10), US-IL (4) | 14 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
 | Miguel Lantigua | DO | 14 | — | 2026-09-26 | — |
-| Mayur Deokar | IN | 13 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
+| Mayur Deokar | IN | 13 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
 | Edgar Lautsyus | CA | 11 | 1 | 2026-09-29 | — |
 | Christopher Aryee, CPA | US | 9 | 2 | 2026-09-30 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
 | Mehran Habib | SA (5), AE (3), BH (1) | 9 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |

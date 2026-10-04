@@ -5,7 +5,7 @@ jurisdiction: US-CA
 category: payroll
 tax_year: 2025
 version: 1.1
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -118,7 +118,7 @@ The 10.23% supplemental rate is materially below the 13.3% top marginal rate (12
 **Mitigation:**
 - Employee files DE 4 requesting additional flat-dollar withholding per pay period
 - Employer offers a "supplemental withholding election" allowing employees to elect a higher voluntary withholding on supplemental wages (some payroll platforms support this)
-- Employee makes a Q4 estimated payment on Form 540-ES — refer to `ca-540-es-estimated-tax` skill for safe-harbor analysis
+- Employee makes a Q4 estimated payment on Form 540-ES — refer to `us-ca-estimated-tax-540es` skill for safe-harbor analysis
 
 This is one of the most common findings in California tax-return preparation and a legitimate audit/inquiry point with EDD when the FTB cross-matches W-2 Box 17 to Form 540 line 71.
 
@@ -469,7 +469,7 @@ For Frank's $400,000 vest:
 - CA PIT withheld at 10.23% supplemental: $40,920
 - **Under-withholding: $12,280 on this single vest**
 
-Across the year, if Frank has four such quarterly vests, the under-withholding compounds to ~$49,000 owed at year-end on Form 540. **AUDIT FLASH POINT** (§3.5 referenced) — Frank should file a DE 4 requesting additional fixed-dollar withholding per pay period, or make estimated payments via Form 540-ES (see `ca-540-es-estimated-tax`).
+Across the year, if Frank has four such quarterly vests, the under-withholding compounds to ~$49,000 owed at year-end on Form 540. **AUDIT FLASH POINT** (§3.5 referenced) — Frank should file a DE 4 requesting additional fixed-dollar withholding per pay period, or make estimated payments via Form 540-ES (see `us-ca-estimated-tax-540es`).
 
 **Aggregate Q1 CA payroll cost to Crescent**  _(https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf)_
 
@@ -494,7 +494,7 @@ This skill outputs feed into:
 
 - `us-form-941-940-payroll` (separate skill, if loaded) — for Form 941, 940, W-2 federal mechanics
 - `us-ca-540-individual-return` — Form 540 line 71 (CA withholding) is sourced from W-2 Box 17, which this skill governs at issuance
-- `ca-540-es-estimated-tax` — employees with under-withheld supplemental wages (§3.5 flash point) feed into Q4 estimated-payment planning
+- `us-ca-estimated-tax-540es` — employees with under-withheld supplemental wages (§3.5 flash point) feed into Q4 estimated-payment planning
 - `us-s-corp-election-decision` — founders modeling S-corp election need accurate CA payroll cost estimates (SUI, ETT, SDI on the salary leg, CalSavers if no qualified plan) for the break-even analysis
 - `us-ca-llc-fee-and-tax` — LLC owners who pay themselves as W-2 employees of their own S-corp run this skill; LLC owners who take guaranteed payments / draws do NOT (those are not wages and not subject to EDD payroll taxes)
 - `us-1099-nec-issuance` — paired with §11 (DE 542) for any contractor payments

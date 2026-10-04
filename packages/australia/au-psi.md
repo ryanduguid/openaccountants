@@ -9,18 +9,18 @@ description: >
   for PSBs. Trigger on phrases like "PSI", "personal services", "PSB", "results test", "80% rule",
   "attribution", or a GL showing an entity invoicing one individual's skills. ALWAYS read this
   skill before any PSI work.
-version: 1.0
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-09-14
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Personal Services Income (PSI) -- Divisions 84-87 Skill v1.0
+# Australia Personal Services Income (PSI) -- Divisions 84-87 Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -110,7 +110,7 @@ Attributed PSI (s 86-15, reduced per s 86-20)
 Dev's assessable income = $100,000 salary + $113,700 attribution = $213,700
 ```
 
-The attributed $113,700 is neither assessable nor exempt income of BitWorks (s 86-30). BitWorks must have remitted PAYG on the attributed income quarterly under TAA 1953 Sch 1 Div 13 and reports the attributed amount to Dev. Under the Library's comparable non-principal associate-payment example, the spouse's $20,000 is not deductible to the payer and is not taxable to the spouse. Keep the attribution arithmetic above unchanged. (Library, Tax/Assessable Income, lines 928 to 932.)
+The attributed $113,700 is neither assessable nor exempt income of BitWorks (s 86-30). BitWorks must have remitted PAYG on the attributed income quarterly under TAA 1953 Sch 1 Div 13 and reports the attributed amount to Dev. Under ss 86-60 and 86-35(1), the spouse's $20,000 for non-principal work is not deductible to BitWorks and is neither assessable nor exempt income of the spouse. Keep the attribution arithmetic above unchanged. (ITAA 1997 ss 85-20, 86-35 and 86-60.)
 
 ### Example 2 -- Consultant passing the unrelated clients test
 
@@ -167,7 +167,7 @@ Both limbs, in the income year: (a) PSI from **2 or more clients** who are not a
 
 ### Rule 6 -- Employment test (s 87-25)
 
-For the market-value limb, the governing Library requires **at least 20% of the work to be performed by entities that are not the individual's associates**. Count principal work that generates the PSI, excluding administration and bookkeeping. A spouse performing 25% does not satisfy that Library rule. Apply the separate apprentice limb where one or more apprentices are engaged for at least half the year. Keep the results test, 80% rule and any PSB determination separate. (Library, Tax/Assessable Income, line 968.)
+For the market-value limb, s 87-25(2) requires **at least 20% (by market value) of the individual's principal work to be performed by entities the individual engages, excluding associates that are not individuals**: an employed spouse counts, an associated company or trust does not. Count principal work that generates the PSI, excluding administration and bookkeeping. A spouse employed to perform 25% of the principal work satisfies this limb. Apply the separate apprentice limb where one or more apprentices are engaged for at least half the year. Keep the results test, 80% rule and any PSB determination separate. (ITAA 1997 s 87-25; [ATO, Employment test](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/personal-services-income/working-out-if-the-psi-rules-apply/employment-test).)
 
 ### Rule 7 -- Business premises test (s 87-30)
 
@@ -262,8 +262,8 @@ STEP 2 -- PSB TESTS (per test individual)
   Results test: % of PSI meeting result + tools + defect liability: [__%]  (need >= 75%)
   Client concentration: largest client + associates share: [__%]  (>= 80% blocks other tests)
   Unrelated clients: 2+ non-associated clients? [Y/N]  Offers to public evidenced? [Y/N]
-  Employment: non-associates perform >= 20% of principal work by market value? [Y/N]
-  Associate status checked under the governing Library rule? [Y/N]
+  Employment: engaged entities (any individual, or a non-associated entity) perform >= 20% of principal work by market value? [Y/N]
+  Associate status checked (associated companies and trusts excluded; individuals count)? [Y/N]
   Business premises: mainly-PSI / exclusive / separate from home / separate from client,
     at ALL times? [Y/N x 4]
   PSBD in force? [Y/N -- years covered]
@@ -312,7 +312,7 @@ REVIEWER FLAGS
 | "Mainly" threshold (PSI definition) | More than 50% of the reward (s 84-5) |
 | Results test coverage | >= 75% of the individual's PSI, all 3 conditions (s 87-18) |
 | 80% rule | < 80% from one client + associates to self-assess the other tests (s 87-15(3)) |
-| Employment test | Library market-value limb: non-associates perform >= 20% of principal work; separate apprentice limb: apprentice(s) >= half the year (s 87-25) |
+| Employment test | Market-value limb: engaged entities other than non-individual associates perform >= 20% of principal work; separate apprentice limb: apprentice(s) >= half the year (s 87-25) |
 | Business premises test | All 4 conditions at all times in the year (s 87-30) |
 | Salary carve-out from attribution | Paid as salary within 14 days after the PAYG payment period (s 86-15(4)) |
 | Agents regime commission floor | >= 75% commission/results-based (s 87-40) |
@@ -339,7 +339,7 @@ REVIEWER FLAGS
 
 **Test 3:** Four unrelated clients (largest 40%) all sourced from a recruiter's panel. -> 80% rule met but s 87-20(2) defeats the offers-to-public limb; unrelated clients test fails.
 
-**Test 4:** Contractor's spouse does 25% (market value) of the principal design work as an employee. Under the Library's non-associate rule, this does not pass the market-value employment limb. An unrelated employee performing 25% would satisfy that limb; self-assessment still requires less than 80% client concentration if the results test is not met.
+**Test 4:** Contractor's spouse does 25% (market value) of the principal design work as an employee. An engaged individual counts even when an associate, so this passes the market-value employment limb (s 87-25(2)); only an associated company or trust is excluded. Self-assessment still requires less than 80% client concentration if the results test is not met.
 
 **Test 5:** "Business premises" is a dedicated home-office wing. -> Fails s 87-30(c) physical separation; test not met.
 

@@ -7,6 +7,8 @@ skills/federal/us-form-941-940-payroll.md::100,000 × 0.9% = $900 = $5,250
 skills/federal/us-r-and-d-section-174-and-41.md::1/5 × 1/2 = $521,000
 skills/federal/us-schedule-c-and-se-computation.md::12.5% x 2.564% = $977
 skills/international/andorra/ad-income-tax.md::50,780.72 ( 10,780.72) × 10% = 1,078.07
+skills/international/australia/au-payroll-tax.md::($1,200,000 / 7) = $1,128,571
+skills/international/australia/au-payroll-tax.md::($1,500,000 x 2 / 13) = $769,231
 skills/international/australia/au-smsf.md::($7,500 x 15%) = -$1,125
 skills/international/bahamas/bs-income-tax.md::810 × 52 = 10.30%
 skills/international/belgium/belgium-crypto-tax.md::10,910 × 25% = -2,727.50

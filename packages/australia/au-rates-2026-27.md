@@ -1,26 +1,30 @@
 ---
 name: au-rates-2026-27
 description: Use this skill whenever you need a current Australian tax rate, threshold, cap or due date for the 2026-27 or 2025-26 income year -- individual brackets, HELP repayment, Medicare levy and surcharge, super guarantee and contribution caps, Division 296, company rates, Div 7A benchmark, FBT, CGT caps and concessions, GST, PAYG instalment uplift, cents-per-km, car limits, penalty units, payroll tax, minimum wage or ASIC fees. Single-page rates card; every figure carries its source. Trigger on "what is the current rate", "2026-27 threshold", "how much is the cap", or any AU figure lookup. Load alongside the topic guide.
-version: "1.0"
+version: 1.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 primary; 2025-26 retained for lodgment-season work"
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Rates Card 2026-27 (with 2025-26) v1.0
+# Australia Rates Card 2026-27 (with 2025-26) v1.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 Single-page lookup for the figures every other Australian guide relies on. Each row names its primary source. Verified against those sources on 20 August 2026. Deeper rules live in the topic guides named in each section; this card never overrides them.
 
+## Enacted asset and loss relief
+
+- **Enacted asset and loss relief** — For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for use from 1 July 2026. The new corporate loss carry-back rules were enacted in the same Act; distinguish the October commencement from their income-year application.  _([Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text))_
+
 ## Individual income tax
 
-**Resident brackets**
+**Resident brackets**  _(ATO QC 73320; Treasury Laws Amendment (More Cost of Living Relief) Act 2025)_
 
 | Taxable income | 2025-26 rate | 2026-27 rate |
 | --- | --- | --- |
@@ -30,11 +34,10 @@ Single-page lookup for the figures every other Australian guide relies on. Each 
 | $135,001 -- $190,000 | 37% | 37% |
 | $190,001+ | 45% | 45% |
 
-Tax on full bands: 2025-26 -- $4,288 at $45,000, $31,288 at $135,000, $51,638 at $190,000. 2026-27 -- $4,020 / $31,020 / $51,370. The 15% rate falls to **14% from 1 July 2027**. _(ATO QC 73320; Treasury Laws Amendment (More Cost of Living Relief) Act 2025)_
+- **Tax on full bands and rate change** — Tax on full bands: 2025-26 -- $4,288 at $45,000, $31,288 at $135,000, $51,638 at $190,000. 2026-27 -- $4,020 / $31,020 / $51,370. The 15% rate falls to **14% from 1 July 2027**.  _(ATO QC 73320; Treasury Laws Amendment (More Cost of Living Relief) Act 2025)_
+- **Non-residents** — no tax-free threshold; 30% from $0 to $135,000 (2026-27), then resident bands. No Medicare levy.  _(ATO QC 73320)_
 
-**Non-residents:** no tax-free threshold; 30% from $0 to $135,000 (2026-27), then resident bands. No Medicare levy.
-
-**Offsets and deductions**
+**Offsets and deductions**  _(ATO Low income tax offset; ITAA 1997 Subdiv 328-F; Tax Reform No. 1 Act 2026 Sch 4; QC 107405; PCG 2023/1; ATO cents-per-km rates; ATO car thresholds)_
 
 | Item | Value | Source |
 | --- | --- | --- |
@@ -47,7 +50,9 @@ Tax on full bands: 2025-26 -- $4,288 at $45,000, $31,288 at $135,000, $51,638 at
 
 ## HELP/study loans (2025-26 onwards: marginal system)
 
-Repayment income = taxable income + reportable fringe benefits + reportable super + exempt foreign income + net investment losses.
+- **Repayment income definition** — Repayment income = taxable income + reportable fringe benefits + reportable super + exempt foreign income + net investment losses.  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC 103927)_
+
+**Marginal repayment rates**  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC 103927)_
 
 | Repayment income (2025-26) | Marginal repayment rate |
 | --- | --- |
@@ -56,9 +61,20 @@ Repayment income = taxable income + reportable fringe benefits + reportable supe
 | $125,001 -- $179,285 | $8,700 + 17% of excess over $125,000 |
 | $179,286+ | 10% of repayment income (cap rule) |
 
-One-off 20% debt reduction applied before 1 June 2026 indexation; thresholds index for 2026-27 (confirm current-year bands at ATO study loan repayment thresholds before computing). _(Education and Other Legislation Amendment (VET Fee Protection and Other Measures) Act 2025; ATO QC 103927)_
+| Repayment income (2026-27) | Marginal repayment rate |
+| --- | --- |
+| $0 -- $69,528 | Nil |
+| $69,529 -- $129,717 | 15% of excess over $69,528 |
+| $129,718 -- $186,050 | $9,028 + 17% of excess over $129,717 |
+| $186,051+ | 10% of repayment income (cap rule) |
+
+_(ATO QC 103927, study and training loan repayment thresholds, checked 4 October 2026)_
+
+- **One-off 20% reduction** — The one-off 20% reduction concerns eligible student-loan debts at 1 June 2025, with the associated 2025 indexation adjustment. It is not a new reduction at 1 June 2026. Use the current repayment-year thresholds separately.  _([Department of Education](https://www.education.gov.au/higher-education-provider-updates/higher-education-provider-updates-december-2025))_
 
 ## Medicare
+
+**Medicare figures**  _(MLA 1986; ATO QC 27031; ATO MLS thresholds; PHI Circular 12/26)_
 
 This table mixes years and says so per row: the MLS tiers are indexed and
 published for 2026-27, while the low-income thresholds and SAPTO amounts are
@@ -70,12 +86,15 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 | Low-income threshold (single) | $28,011 / shade-in to $35,013 | **2025-26** -- 2026-27 not yet indexed | ATO QC 27031 |
 | Low-income threshold (family) | $47,238 + $4,338 per child | **2025-26** -- 2026-27 not yet indexed | ATO QC 27031 |
 | SAPTO single | $44,268 / $55,335 | **2025-26** -- 2026-27 not yet indexed | ATO QC 27031 |
-| MLS base tier | Single **$105,000** / family **$210,000** (then 1% / 1.25% / 1.5%); the family threshold rises by $1,500 for each MLS dependent child after the first. $101,000 and $202,000 were the 2025-26 figures | **2026-27** | ATO MLS thresholds |
-| PHI rebate (base, under 65) | 24.288% to 31 Mar 2026; 24.118% from 1 Apr 2026 | spans both | PHI Circular 12/26 |
+| MLS tiers (single) | Base $105,000 or less; tier 1 $105,001 to $123,000 (1%); tier 2 $123,001 to $164,000 (1.25%); tier 3 $164,001 or more (1.5%). $101,000 / $118,000 / $158,000 were the 2025-26 boundaries | **2026-27** | ATO MLS thresholds |
+| MLS tiers (family) | Base $210,000 or less; tier 1 $210,001 to $246,000; tier 2 $246,001 to $328,000; tier 3 $328,001 or more; the family threshold rises by $1,500 for each MLS dependent child after the first | **2026-27** | ATO MLS thresholds |
+| PHI rebate (base, under 65) | 24.288% to 31 Mar 2026; 24.118% from 1 Apr 2026, unchanged for 1 Jul 2026 to 31 Mar 2027 (tier 1 16.079%, tier 2 8.038%) with the 2026-27 income tiers above | spans both | PHI Circular 12/26; ATO PHI rebate thresholds |
 
-2026-27 Medicare low-income thresholds index with CPI; confirm at ATO QC 27031 when lodging 2026-27.
+- **2026-27 indexation note** — 2026-27 Medicare low-income thresholds index with CPI; confirm at ATO QC 27031 when lodging 2026-27.  _(ATO QC 27031)_
 
 ## Superannuation
+
+**Superannuation figures**  _(ATO SG rates; payday super law; au-super-guarantee; ATO contributions caps; ATO TBC; ATO key super rates; ATO Div 293; Building a Stronger and Fairer Super System Act 2026; ATO downsizer; ATO Super guarantee page)_
 
 | Item | 2025-26 | 2026-27 | Source |
 | --- | --- | --- | --- |
@@ -87,23 +106,27 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 | General transfer balance cap | $2.0m | **$2.1m** | ATO TBC |
 | CGT cap amount | $1,865,000 | **$1,935,000** | ATO key super rates |
 | Div 293 threshold | $250,000 (frozen) | $250,000 | ATO Div 293 |
-| Div 296 | -- | **First year: extra 15% on earnings share of TSB $3m--$10m; extra 25% above $10m; indexed; realised-earnings basis** | Building a Stronger and Fairer Super System Act 2026 |
+| Div 296 | -- | **First year: extra 15% on earnings share of TSB $3m--$10m; extra 25% above $10m; indexed; realised-earnings basis** | Treasury Laws Amendment (Building a Stronger and Fairer Super System) Act 2026 (C2026A00008, assent 13 March 2026) |
 | Downsizer | $300,000 from age 55 | $300,000 | ATO downsizer |
 | SG maximum contribution base | $62,500/quarter | **$270,830/year (annual basis under payday super)** | ATO Super guarantee page |
 
 ## Companies
+
+**Companies figures**  _(ITRA 1986 ss 23AA-23AB; ITRA 1986; au-company-tax; former Div 160; ATO Div 7A rates; ATO GDP adjustment; ATO amendment periods)_
 
 | Item | Value | Source |
 | --- | --- | --- |
 | BRE rate | 25% (turnover < $50m AND <= 80% BREPI) | ITRA 1986 ss 23AA-23AB |
 | Standard rate | 30% | ITRA 1986 |
 | Franking | At 25%: credit = distribution / 3. At 30%: x 3/7 | au-company-tax |
-| Loss carry-back | ENDED (2019-20 to 2022-23 claim years only) | former Div 160 |
+| Loss carry-back | New enacted rules apply to income years starting on or after 1 July 2026 for eligible corporate tax entities; test SGE status, earlier tax liabilities, franking balance and other conditions | [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text); Schedule 1 commenced on 1 October 2026 |
 | Div 7A benchmark | 8.37% (2025-26); **8.77% (2026-27)** | ATO Div 7A rates |
 | PAYG GDP uplift | 4% (2025-26); **5% (2026-27)** | ATO GDP adjustment |
-| Amendment period (SMB) | 4 years for 2024-25+ assessments | ATO amendment periods |
+| Amendment period (SMB) | Generally 2 years, subject to exceptions. For 2024-25 and later assessments, the additional 2-year window requires an approved-form taxpayer application and is limited to giving effect to it. | [ITAA 1936, section 170(1), table items 1-3A](https://www.ato.gov.au/law/view/document?docid=PAC/19360027/170) |
 
 ## FBT (year ending 31 March 2027)
+
+**FBT figures**  _(FBTAA 1986; ATO FBT rates; ATO RFBA; au-fbt Rule 5; PCG 2024/2; au-fbt Rule 12)_
 
 | Item | Value | Source |
 | --- | --- | --- |
@@ -116,6 +139,8 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 
 ## CGT
 
+**CGT figures**  _(ITAA 1997 Div 115; Tax Reform No. 1 Act 2026; au-capital-gains; TLA (2024 Tax and Other Measures No. 1) Act 2024; QC 26663; au-small-business-cgt; Subdiv 152-D)_
+
 | Item | Value | Source |
 | --- | --- | --- |
 | Discount | 50% individuals/trusts (assets 12+ months); one-third super funds; nil companies | ITAA 1997 Div 115 |
@@ -126,14 +151,18 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 
 ## GST and indirect
 
+**GST and indirect figures**  _(GST Act; ATO QC 103578; ATO QC 71196; Tax Incentives and Integrity Act 2025; QC 73746)_
+
 | Item | Value | Source |
 | --- | --- | --- |
-| Rate / registration | 10% / $75,000 ($150,000 NFP; $1 taxi-rideshare) | GST Act |
-| Instant asset write-off | $20,000 per asset (turnover < $10m) legislated to 30 Jun 2026; permanence from 1 Jul 2026 announced, confirm enactment | ATO QC 103578 |
+| Rate / registration | 10% / $75,000 ($150,000 NFP; taxi/ride-sourcing regardless of turnover) | GST Act |
+| Instant asset write-off | For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for use from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text). | ITAA 1997 Subdivision 328-D |
 | Penalty unit | $330 (7 Nov 2024 -- 30 Jun 2026); **$364 from 1 Jul 2026** | ATO QC 71196 |
 | GIC | **Not deductible from 1 Jul 2025** (SIC likewise) | Tax Incentives and Integrity Act 2025; QC 73746 |
 
 ## Employers
+
+**Employers figures**  _(FWC AWR 2025-26; Revenue NSW; SRO Vic; QRO; state revenue offices; ASIC fee indexation)_
 
 | Item | Value | Source |
 | --- | --- | --- |
@@ -141,8 +170,8 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 | Payroll tax NSW | 5.45%, $1.2m threshold | Revenue NSW |
 | Payroll tax VIC | 4.85% (regional 1.2125%), $1.0m; surcharges >$10m | SRO Vic |
 | Payroll tax QLD | 4.75% <=$6.5m / 4.95% above; $1.3m deduction phasing to $10.4m | QRO |
-| Other states | WA 5.5%/$1m; SA 0-4.95%/$1.5m; TAS 4%+6.1%/$1.25m; ACT 6.85%/$2m; NT 5.5%/$1.5m | state revenue offices |
-| ASIC annual review (Pty Ltd) | **$342 from 1 Jul 2026** ($329 prior); registration $636; SMSF special purpose $70 | ASIC fee indexation |
+| Other states | WA 5.5%/$1m; SA 0-4.95%/$1.5m; TAS 4%+6.1%/$1.25m; ACT 6.75% to 8.75% tiered/$1.75m; NT 5.5% (6.5% at $100m+)/$2.5m | state revenue offices |
+| ASIC annual review (Pty Ltd) | **$342 from 1 Jul 2026** ($329 prior); registration $636; SMSF special purpose $70 | [ASIC INFO 30, reissued July 2026](https://asic.gov.au/for-business/payments-fees-and-invoices/asic-fees/fees-for-commonly-lodged-documents/) |
 
 ## Maintenance rule
 
@@ -150,15 +179,24 @@ This card is the single place indexed figures live outside their topic guides. W
 
 ## Provenance
 
-All figures verified 20 August 2026 directly against: ato.gov.au rate pages (QC 73320, 27031, 71196, 73746, 103578, 103927, contributions caps, key super rates, car thresholds, Div 7A rates, GDP adjustment), Department of Health PHI Circular 12/26, Revenue NSW / SRO Vic / QRO current-rates pages, FWC Annual Wage Review 2025-26 decision, ASIC fee indexation page (1 July 2026), and the amending Acts named inline.
+All figures verified 20 August 2026 directly against: ato.gov.au rate pages (QC 73320, 27031, 71196, 73746, 103578, 103927, contributions caps, key super rates, car thresholds, Div 7A rates, GDP adjustment), Department of Health PHI Circular 12/26, Revenue NSW / SRO Vic / QRO current-rates pages, FWC Annual Wage Review 2025-26 decision, ASIC fee indexation page (1 July 2026), and the amending Acts named inline. On 4 October 2026 the resident and non-resident rate scales, HELP thresholds, Medicare low-income thresholds, MLS tiers, PHI rebate rates, SG rate and maximum contribution base, contribution caps, transfer balance cap, CGT cap, Division 293 threshold, FBT rate and thresholds, Division 7A benchmark rate, GIC rates, PAYG GDP adjustment, instant asset write-off status, penalty unit, LITO, cents per kilometre and car limit, national minimum wage, parental leave weeks and the state payroll tax rates and thresholds were checked again against the ATO, state revenue office, Fair Work and Federal Register of Legislation pages; the ASIC fee rows were not re-checked.
+
+> Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This guide covers the mechanical rules. For anything touching judgement -- residency, structuring, disputes, amounts that matter -- speak to a verified accountant on Open Accountants.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-- Browse verified professionals: https://www.openaccountants.com
+- Use it in your AI: https://www.openaccountants.com/connect
 - Meet the accountants: https://www.openaccountants.com/network
 
-> **General reference only.** This document does not constitute tax, legal, or accounting advice. Verify current rates and rules against primary sources before acting. Figures and thresholds change; the tax year stated in the front matter governs.
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

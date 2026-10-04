@@ -4,7 +4,8 @@ description: Tier 2 Georgia content skill for employer payroll compliance coveri
 jurisdiction: US-GA
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -254,7 +255,7 @@ Form G-1003 is the annual transmittal by which the employer:
 
 - **1099-NEC GA reporting threshold** — Georgia requires the filing of Form 1099-NEC with the state when the payment exceeds $600 in nonemployee compensation and the payee is a Georgia resident or the services were performed in Georgia. This conforms to the federal §6041A threshold for tax year 2025.  _(6.4 1099-NEC reporting requirement under G-1003)_
 
-> **Threshold change watch.** OBBBA (P.L. 119-21) raises the federal §6041A 1099 reporting threshold from $600 to $2,000 effective January 1, 2026. Georgia has not yet enacted conforming legislation as of the November 15, 2025 last_updated of this skill. Until Georgia conforms, the $600 threshold applies for Georgia 1099 reporting under G-1003 even though the federal threshold has risen to $2,000. Reviewer must check current GA DOR guidance at year-end 2025 / early 2026 for any conformity update.
+> **Threshold change.** OBBBA (P.L. 119-21) raises the federal §6041A 1099 reporting threshold from $600 to $2,000 for payments made on or after January 1, 2026. Georgia's annual conformity act, HB 1199 (signed 20 March 2026), adopts the Internal Revenue Code as of 1 January 2026 for tax years beginning on or after 1 January 2025, so the $600 figure no longer rests on a non-conformity gap. The Department of Revenue's G-1003 instructions decide the state reporting threshold for 2026 payments; confirm them at year end before filing. _([GSCPA, Governor signs HB 1199](https://gscpa.org/content/Home/News/Professional-News/News-Alert--Governor-Signs-Georgia-Conformity-Bill--HB-1199--into-Law-.aspx))_
 
 ### 6.5 G-1003 filing channels
 

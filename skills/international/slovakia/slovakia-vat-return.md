@@ -4,7 +4,8 @@ description: Use this skill whenever asked to prepare, review, or create a Slova
 jurisdiction: SK
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -333,7 +334,7 @@ Flag for reviewer: coefficient must be confirmed by qualified accountant. Annual
 
 | Threshold | Value | Legislation |
 | --- | --- | --- |
-| Mandatory VAT registration | EUR 50,000 prior year turnover OR EUR 62,500 current year turnover (from 2025); proposed increase to EUR 85,000 from July 2026 | Sec. 4(1) |
+| Mandatory VAT registration | EUR 50,000 prior year turnover OR EUR 62,500 current year turnover (from 2025); a bill to replace them with a single EUR 85,000 threshold from 1 July 2026 was rejected by the National Council on 7 May 2026, so these thresholds stand ([VATCalc](https://www.vatcalc.com/?p=49872)) | Sec. 4(1) |
 | Quarterly filing eligibility | Annual turnover < EUR 100,000 (after first year) | Sec. 78(2) |
 | EU distance selling threshold | EUR 10,000/calendar year | EU Directive 2017/2455 |
 | EU SME scheme (from 2025) | EUR 85,000 domestic + EUR 100,000 EU-wide | EU Directive 2020/285 |
@@ -351,7 +352,7 @@ Flag for reviewer: coefficient must be confirmed by qualified accountant. Annual
 | Feature | Detail | Legislation |
 | --- | --- | --- |
 | VAT number format | SK + 10 digits | Sec. 4 |
-| Mandatory registration | Turnover > EUR 50,000 prior calendar year OR > EUR 62,500 in current calendar year (from 2025); proposed increase to EUR 85,000 from July 2026 | Sec. 4(1) |
+| Mandatory registration | Turnover > EUR 50,000 prior calendar year OR > EUR 62,500 in current calendar year (from 2025); a bill to replace them with a single EUR 85,000 threshold from 1 July 2026 was rejected by the National Council on 7 May 2026, so these thresholds stand ([VATCalc](https://www.vatcalc.com/?p=49872)) | Sec. 4(1) |
 | Registration deadline | Immediate if EUR 62,500 exceeded in current year; by 20th of month following calendar year if EUR 50,000 prior-year threshold exceeded | Sec. 4(2) |
 | Voluntary registration | May register below threshold | Sec. 4a |
 | Group registration | Available for related entities | Sec. 4b |

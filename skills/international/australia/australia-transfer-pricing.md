@@ -1,10 +1,10 @@
 ---
 name: australia-transfer-pricing
 description: Use this skill whenever asked about Australia transfer pricing rules, documentation requirements, or ATO transfer pricing compliance. Trigger on phrases like "transfer pricing Australia", "Australian TP documentation", "ATO transfer pricing", "master file Australia", "local file Australia", "CbCR Australia", "APA Australia", "Subdivision 815", "International Dealings Schedule", "IDS", "significant global entity", or any question about intercompany pricing for Australian entities.
-version: 1.0
+version: 1.3
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - transfer-pricing-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Australia Transfer Pricing
 
-## Australia Transfer Pricing Skill v1.0
+## Australia Transfer Pricing Skill v1.3
 
-Australia Transfer Pricing Skill v1.0
+Australia Transfer Pricing Skill v1.3
 
 ## Section 1 -- Quick Reference
 
@@ -34,7 +34,7 @@ Australia Transfer Pricing Skill v1.0
 | BEPS signatory? | Yes |
 | Currency | AUD |
 | Documentation language | English |
-| Skill version | 1.0 |
+| Skill version | 1.3 |
 
 ## Section 2 -- Documentation Requirements
 
@@ -66,6 +66,8 @@ CBC reporting entities form a subset of SGEs. Investment-entity consolidation ex
 | CbC Report | OECD Annex III format |
 | Filing deadline | Within 12 months of end of income year |
 | Filing method | Electronic lodgment with ATO |
+
+- **CbC reporting scope** — Establish whether the entity is a CbC reporting entity for the relevant period under s 815-370, including group-income and accounting-consolidation rules, exclusions and any reporting exemption. SGE status alone does not settle CbC obligations.  _([ITAA 1997 s 815-370](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/815-370))_
 
 ### 2.3 International Dealings Schedule (IDS)
 
@@ -102,11 +104,11 @@ CBC reporting entities form a subset of SGEs. Investment-entity consolidation ex
 
 ### 3.3 Preferred Method
 
-- **Preferred method approach** — No statutory hierarchy. ATO follows OECD "most appropriate method" approach. CUP preferred where reliable comparables exist.  _(unsure)_
+- **Preferred method approach** — No statutory hierarchy. ATO follows OECD "most appropriate method" approach. CUP preferred where reliable comparables exist.
 
 ### 3.4 Self-Assessment
 
-- **Self-assessment system** — Australia operates a self-assessment system -- taxpayers must determine and apply arm's length conditions without prior ATO approval.  _(unsure)_
+- **Self-assessment system** — Australia operates a self-assessment system -- taxpayers must determine and apply arm's length conditions without prior ATO approval.
 
 ### 3.5 Unresolved country requirements
 
@@ -139,15 +141,15 @@ Obtain the applicable Australian source and document the selected approach befor
 | Item | Deadline |
 | --- | --- |
 | Special TP documentation for RAP treatment | Before lodging the relevant income tax return; see section 2.1. This is not a universal mandatory filing deadline |
-| IDS filing | With income tax return (varies by entity type; generally 15 January for large) |
+| IDS filing | With income tax return (use the entity’s actual return due date) |
 | Master/Local/CbC Report | Where required under section 2.2, 12 months after end of income year, subject to applicable exemptions or extensions |
-| Income tax return (companies) | Generally due by 15 January following year (for 30 June year-end) with extensions |
+| Income tax return (companies) | Use the ATO lodgement programme for the entity, agent status and compliance history; no universal 15 January date |
 
 ## Section 6 -- Penalties
 
 ### 6.1 Transfer Pricing Shortfall Penalties
 
-**Transfer Pricing Shortfall Penalties**
+**Transfer Pricing Shortfall Penalties**  _([ATO PS LA 2014/2](https://www.ato.gov.au/law/view/document?docid=PSR/PS20142/NAT/ATO/00001))_
 
 | Scenario | Penalty Rate |
 | --- | --- |
@@ -170,11 +172,11 @@ For a $100,000 shortfall above the threshold, RAP gives a **$10,000** base penal
 
 ### 6.3 Failure to Lodge (SGEs)
 
-**Failure to Lodge (SGEs)**
+**Failure to Lodge (SGEs)**  _([Crimes (Amount of a Penalty Unit) Instrument 2026](https://www.legislation.gov.au/F2026N00424/asmade/text))_
 
 | Offence | Penalty |
 | --- | --- |
-| Failure to lodge a required Local File, Master File, or CbC Report | Up to AUD 825,000 per failure |
+| Failure to lodge Local File, Master File, or CbC Report | Up to $910,000 at the $364 penalty-unit value from 1 July 2026 where the five-unit, 500-times SGE rule applies; check dates, obligation and remission. [Crimes (Amount of a Penalty Unit) Instrument 2026](https://www.legislation.gov.au/F2026N00424/asmade/text) |
 | Shortfall interest charge | Applies on underpaid tax |
 
 ## Section 7 -- Advance Pricing Agreements (APA)
@@ -228,7 +230,7 @@ ATO publishes Practical Compliance Guidelines indicating risk zones for various 
 | Related skill | Interaction |
 | --- | --- |
 | australia-bookkeeping | TP documentation relies on Australian accounting records |
-| australia-corporate-tax | TP adjustments directly affect taxable income |
+| au-company-tax | TP adjustments directly affect taxable income and the company return |
 | australia-gst | TP adjustments may affect customs value and GST on imports |
 | Thin capitalisation | Separate rules limit debt deductions; interact with TP for financial transactions |
 | Diverted Profits Tax (DPT) | 40% rate for diverted profits; TP documentation relevant |
@@ -237,6 +239,8 @@ ATO publishes Practical Compliance Guidelines indicating risk zones for various 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+
+> Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
 

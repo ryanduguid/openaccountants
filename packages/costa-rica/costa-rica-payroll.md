@@ -1,10 +1,10 @@
 ---
 name: costa-rica-payroll
 description: Use this skill whenever asked about Costa Rica payroll processing for employed persons (planilla). Trigger on phrases like "Costa Rica payroll", "planilla CCSS", "cuotas obrero-patronales", "impuesto al salario", "retención salario Costa Rica", "cargas sociales", "CCSS contribution", "IVM", "SEM", "FODESAF", "aguinaldo", "cesantía", "salario mínimo Costa Rica", "TRIBU-CR retenciones", "form 137", "D-103 replacement", "net salary Costa Rica", "gross to net colones", "SICERE", "INS riesgos del trabajo", "base mínima contributiva", or any question about computing employee pay, salary withholding tax, or social-security contributions for Costa Rica-based employees. This skill covers impuesto al salario (monthly income-tax withholding), CCSS cuotas obrero-patronales (employee and employer), the separate INS work-risk policy, family tax credits, statutory aguinaldo, cesantía, minimum wage, and filing obligations via TRIBU-CR and SICERE. ALWAYS read this skill before processing any Costa Rica payroll.
-version: 0.1
+version: 0.2
 jurisdiction: CR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Costa Rica Payroll Skill v0.1 (Tier 2 — research-verified, pending accountant sign-off)
+# Costa Rica Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Costa Rica Payroll Skill v0.1 (Tier 2 — research-verified, pending accountant sign-off)
+## Costa Rica Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Ley del Impuesto sobre la Renta No. 7092, Título II; Decreto Ejecutivo No. 44772-H (2025 brackets); Ley Constitutiva de la CCSS No. 17; Ley de Protección al Trabajador No. 7983; Código de Trabajo; Código de Normas y Procedimientos Tributarios (CNPT) Ley No. 4755; Decreto No. 44756-MTSS (2025 minimum wages) |
 | Filing portals | TRIBU-CR (income-tax withholding); SICERE / Oficina Virtual (CCSS planilla) |
 | Validated by | Pending -- requires sign-off by a Costa Rican Contador Público Autorizado (CPA) |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 > **Tier-2 note.** All figures below are research-verified against official decrees and Big-4 / legal-firm sources but have **not** yet been reviewed section-by-section by a warranted Costa Rican accountant. Where a figure rests on a single secondary source or the official table could not be machine-read, it is flagged inline as `[RESEARCH GAP — reviewer to confirm]`.
 
@@ -101,17 +101,18 @@ Employer cuotas obrero-patronales fund CCSS plus several public institutions and
 | Asignaciones Familiares (FODESAF) | 5.00% |
 | INA -- Instituto Nacional de Aprendizaje | 1.50% |
 | FCL -- Fondo de Capitalización Laboral (Ley 7983) | 1.50% |
-| ROP / pension complementaria + Banco Popular aporte patronal (grouped) | 2.00% |
-| Banco Popular patronal | 0.50% |
+| Fondo de Pensiones Complementarias (ROP, Ley 7983) | 2.00% |
+| Banco Popular (0.25% cuota patronal + 0.25% aporte Ley 7983) | 0.50% |
 | IMAS -- Instituto Mixto de Ayuda Social | 0.50% |
+| INS (Ley 7983 contribution collected on the CCSS planilla) | 1.00% |
 | **TOTAL employer CCSS** | **26.67%** |
 
-- **Research gap note on employer total** — [RESEARCH GAP — reviewer to confirm: the authoritative employer total is 26.67% (confirmed across CCSS/Hacienda/Big-4 sources), but the line-item breakdown above sums arithmetically to 25.67%. The internal allocation of the ~2.00% "ROP/pension + Banco Popular" tranche and the separate 0.50% Banco Popular patronal line is itemised differently by source, and the official CCSS rate table could not be machine-read. Use the CONFIRMED 26.67% total for cost computations; treat the per-fund split as indicative pending a Costa Rican accountant's confirmation of the exact 1.00% reconciling line.]
+- **Employer total reconciled** — The 26.67% total equals the per-fund sum once the 1.00% INS line of the Ley de Protección al Trabajador is included, as EY's itemisation of the 2026 schedule shows (26.83% with IVM at 5.58%). The CCSS website could not be reached on 4 October 2026 to confirm the official cuadro de distribución, so a Costa Rican accountant should still confirm the row labels.  _([EY, January 2026](https://www.ey.com/es_ce/technical/tax/tax-alerts/costa-rica-aumento-en-cuotas-obrero-patronales-aplicable-desde-enero-20261))_
 - **Employer CCSS from 01 Jan 2026** — 26.83% (only the IVM line changes, from 5.42% to 5.58%). The State contribution to IVM also rises from 1.57% to 1.75%. Schedule valid through 31 Dec 2028, with a further increase from 01 Jan 2029.  _(BDO Costa Rica / Globalex CR / CCSS 2019 board decision)_
 
 ### Section 4.1 -- INS Riesgos del Trabajo (Work-Risk Insurance) -- SEPARATE
 
-- **Overview** — Every employer must also hold a riesgos del trabajo (workers' compensation) policy with INS. This is a mandatory employer cost on top of the 26.67% CCSS total, and is NOT included in it in standard breakdowns.
+- **Overview** — Every employer must also hold a riesgos del trabajo (workers' compensation) policy with INS. This risk-rated premium is a mandatory employer cost on top of the 26.67% CCSS total; it is distinct from the flat 1.00% INS line that the CCSS planilla collects under the Ley de Protección al Trabajador, which sits inside the 26.67%.
 
 **INS Riesgos del Trabajo table**
 
@@ -184,9 +185,9 @@ Employer cuotas obrero-patronales fund CCSS plus several public institutions and
 
 - **CCSS rates by pay period** — Use 2025 totals (employer 26.67% / employee 10.67%) for periods up to 31 Dec 2025; switch to 26.83% / 10.83% only for pay periods on/after 01 Jan 2026. Only the IVM line changes.  _(BDO / CCSS board)_
 - **Income-tax base is GROSS** — Apply impuesto al salario brackets to gross monthly remuneration; do not pre-deduct employee CCSS from the income-tax base.  _(TRIBU-CR guidance — one EOR source disagreed; flag for confirmation)_
-- **INS is a SEPARATE employer cost** — Treat riesgos del trabajo (~1%, risk-rated) as additional to the 26.67% CCSS total, not inside it.  _(Standard breakdowns exclude INS)_
+- **Two INS items** — The risk-rated riesgos del trabajo policy premium is additional to the 26.67% CCSS total; the flat 1.00% INS contribution under the Ley de Protección al Trabajador is already inside it.  _(EY itemisation, January 2026)_
 - **Minimum wage is occupation-specific** — Use the MTSS decree category matching the role; never assume a single national floor.  _(Decreto 44756-MTSS)_
-- **Use the CONFIRMED 26.67% total** — Not the per-fund sum (which reconciles to 25.67% from secondary sources) when computing employer cost.  _(See Section 4 RESEARCH GAP)_
+- **Use the 26.67% total (26.83% from 1 January 2026)** — The per-fund table reconciles to it once the INS 1.00% line is included.  _(See Section 4)_
 - **Aguinaldo is exempt** — Aguinaldo is exempt from income tax and CCSS — never withhold on it (except court-ordered pensión alimentaria).  _(Código de Trabajo)_
 
 ## Section 10 -- Required Inputs + Refusal Catalogue

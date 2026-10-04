@@ -5,7 +5,7 @@ jurisdiction: US-NY
 category: payroll
 tax_year: 2025
 version: 1.1
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ depends_on:
 
 ### 1.2 What this skill does NOT cover
 
-Self-employment / sole proprietor quarterly estimates → see `us-ny-estimated-tax` and `us-quarterly-estimated-tax`. Personal income tax return preparation (IT-201, IT-203) → see `ny-income-tax`. NYC Unincorporated Business Tax (UBT) for self-employed → see `nyc-ubt`. Pass-Through Entity Tax (PTET) for S corps and partnerships → see `us-ny-pte-tax-ptet`. Corporate franchise tax (Article 9-A) → see `us-ny-corporate-franchise-article-9a`. LLC filing fee → see `ny-llc-filing-fee`. Detailed MCTMT computation → see `us-ny-mctmt`. This skill summarizes only the payroll-side employer obligation. Federal payroll tax computation (FICA, FUTA, federal withholding, Form 941, Form 940). Federal payroll is in scope for a separate federal payroll skill. Statutory non-employee benefits compliance beyond DBL/PFL (e.g., HSA, FSA, 401(k)) — touched on only insofar as they reduce taxable NY wages.
+Self-employment / sole proprietor quarterly estimates → see `us-ny-estimated-tax` and `us-quarterly-estimated-tax`. Personal income tax return preparation (IT-201, IT-203) → see `us-ny-it-201-resident-return`. NYC Unincorporated Business Tax (UBT) for self-employed → see `nyc-ubt`. Pass-Through Entity Tax (PTET) for S corps and partnerships → see `us-ny-pte-tax-ptet`. Corporate franchise tax (Article 9-A) → see `us-ny-corporate-franchise-article-9a`. LLC filing fee → see `ny-llc-filing-fee`. Detailed MCTMT computation → see `us-ny-mctmt`. This skill summarizes only the payroll-side employer obligation. Federal payroll tax computation (FICA, FUTA, federal withholding, Form 941, Form 940). Federal payroll is in scope for a separate federal payroll skill. Statutory non-employee benefits compliance beyond DBL/PFL (e.g., HSA, FSA, 401(k)) — touched on only insofar as they reduce taxable NY wages.
 
 ### 1.3 Federal scaffolding assumed
 
@@ -637,13 +637,13 @@ When facts are ambiguous, this skill defaults to the more conservative position:
 - Worker classification opinions in industries explicitly carved out (construction, transportation) without referring to the statutory presumption tests.
 - Multi-state nexus opinions for employers that may have triggered withholding obligations in states other than NY without state-specific research.
 - Self-employment tax computations — these are out of scope (see `us-schedule-c-and-se-computation` and `us-ny-estimated-tax`).
-- Personal income tax return preparation — out of scope (see `ny-income-tax`).
+- Personal income tax return preparation — out of scope (see `us-ny-it-201-resident-return`).
 
 - **Withholding computations for other tax years** — Refuses withholding computations for tax years other than 2025 without explicit rate research.  _(19.3 What this skill will refuse)_
 - **Worker classification opinions in carved-out industries** — Refuses worker classification opinions in industries explicitly carved out (construction, transportation) without referring to the statutory presumption tests.  _(19.3 What this skill will refuse)_
 - **Multi-state nexus opinions** — Refuses multi-state nexus opinions for employers that may have triggered withholding obligations in states other than NY without state-specific research.  _(19.3 What this skill will refuse)_
 - **Self-employment tax computations** — Out of scope — see `us-schedule-c-and-se-computation` and `us-ny-estimated-tax`.  _(19.3 What this skill will refuse)_
-- **Personal income tax return preparation** — Out of scope — see `ny-income-tax`.  _(19.3 What this skill will refuse)_
+- **Personal income tax return preparation** — Out of scope — see `us-ny-it-201-resident-return`.  _(19.3 What this skill will refuse)_
 
 ### 19.4 What this skill produces
 
@@ -661,7 +661,7 @@ When facts are ambiguous, this skill defaults to the more conservative position:
 ## 20. Coordination with Other OpenAccountants Skills
 
 - **`us-tax-workflow-base`** (Tier 1) — REQUIRED scaffolding for this skill.
-- **`ny-income-tax`** — for the employee-side IT-201 / IT-203 return that reconciles to W-2.
+- **`us-ny-it-201-resident-return`** — for the employee-side IT-201 / IT-203 return that reconciles to W-2.
 - **`us-ny-mctmt`** — for full MCTMT computation and Form MTA-305 mechanics.
 - **`us-ny-estimated-tax`** — for the self-employed quarterly estimate (out-of-scope here).
 - **`nyc-ubt`** — for NYC self-employed UBT (out of scope; employees only here).

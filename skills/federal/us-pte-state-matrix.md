@@ -4,8 +4,8 @@ description: Tier 2 US federal-level reference skill providing the comprehensive
 jurisdiction: US
 category: state-tax
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
@@ -74,7 +74,7 @@ It does **not** itself execute a PTET filing — actual return preparation is de
 | **CA** | R&TC §§17052.10, 19900-19906 | 2021 | B (S-corp + partnership; **NOT** SMLLC disregarded entities — must be multi-member) | 9.3% flat | **Two-prong: (1) prepayment by June 15 of the election year, equal to the GREATER of $1,000 or 50% of prior-year PTET; (2) final election by the original return due date (Mar 15).** Miss June 15 prepayment = election VOID. | N (NR partners get no CA credit) | C (5-yr carryforward, then refundable per AB 150 amendment) | N (the June 15 prepayment IS the estimate) | Y, but **CA does not grant a resident credit for PTET paid to other states** under R&TC §18001 unless the other state grants reciprocal credit (see Common Trap #1) | Owner must affirmatively consent on a per-owner basis (Form 3804 attaches owner list). Owner-by-owner election. Sunsets after 2025 — must be reauthorized; AB 150 was scheduled to sunset 12/31/2025 and 2024 extender legislation pushed it to 12/31/2026. |
 | **CO** | C.R.S. §39-22-340 | 2022 (retroactive to 2018 — unique) | B | 4.40% (2024+ rate; was 4.55% in 2022-23) | Due date of return | Y | Y | Y — 4/15, 6/15, 9/15, 1/15 | Y | CO uniquely allows **retroactive election back to 2018** under the 2022 enactment — practitioners filed amended PTE returns for 2018-2021 to claim refunds. Retroactive window closed in 2023. |
 | **CT** | Conn. Gen. Stat. §12-699 | **2018** (first in the nation) | B | 6.99% flat | **MANDATORY through 2023; ELECTIVE starting 2024** | Y | Y (resident); C (NR) | Y — 4/15, 6/15, 9/15, 1/15 | Y | CT was the only state with a **mandatory** PTET (2018-2023). Switched to elective for 2024+. Owner credit = 87.5% of PTET paid (reduced from 93.01% in pre-2024 mandatory regime). |
-| **DC** | D.C. Code §47-1808.10 | Proposed — **NOT YET ENACTED as of 2025** | — | — | — | — | — | — | — | DC has discussed PTET but has not enacted. DC residents cannot use DC PTET; they remain subject to the SALT cap on DC income tax. |
+| **DC** | D.C. Code §47-1808.10 | Proposed — **NOT YET ENACTED as of October 2026** (B26-0324 before the Council; [ITEP testimony, March 2026](https://itep.org/testimony-iteps-nick-johnson-on-d-c-amendment-to-salt-cap-workarounds/)) | — | — | — | — | — | — | — | DC has discussed PTET but has not enacted. DC residents cannot use DC PTET; they remain subject to the SALT cap on DC income tax. |
 | **GA** | O.C.G.A. §48-7-23 | 2022 | B | **5.39% (2024); 5.19% (2025); phasing to 4.99% by 2028** | Due date of return | Y | C | Y (above $500 threshold) | Y | Rate phase-down tracks GA individual rate reduction (HB 1437 of 2022). Election applies to all owners — no opt-out. |
 | **HI** | HRS §235-51.5 | 2023 | B | 11.0% (top rate) graduated | Due date of return | Y | Y | Y | Y | HI uses the top individual rate. Graduated brackets from 1.4% to 11.0%, but most PTET payers hit 11%. |
 | **ID** | Idaho Code §63-3026B | 2021 | B | 5.695% flat (2024+; was 5.8% 2022-23) | Due date of return incl. extensions | Y | Y | Y | Y | Rate ties to ID flat individual rate (post-2023). |

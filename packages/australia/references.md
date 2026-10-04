@@ -3,8 +3,8 @@ name: australia-references
 jurisdiction: AU
 category: international
 tier: 2
-last_updated: 2026-09-28
-version: 1.1
+last_updated: 2026-10-04
+version: 1.2
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
 
@@ -64,7 +64,7 @@ Before incorporating material, check its exact licence, the proposed use and the
 
 ## Payday Super Checker
 
-- Repository: [ryanduguid/payday-super-checker](https://github.com/ryanduguid/payday-super-checker)
+- Repository: [ryanduguid/australian-accounting: payday-super-checker](https://github.com/ryanduguid/australian-accounting/tree/main/packages/payday-super-checker)
 - License: MIT
 - Language: English
 - Scope: Checks Australian super contributions against the payday-super deadlines (7 business days from payday, from 1 July 2026) and estimates SG charge exposure on late contributions.
@@ -76,7 +76,7 @@ Before incorporating material, check its exact licence, the proposed use and the
 
 ## ATO Benchmark Compare
 
-- Repository: [ryanduguid/ato-benchmark-compare](https://github.com/ryanduguid/ato-benchmark-compare)
+- Repository: [ryanduguid/australian-accounting: ato-benchmark-compare](https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare)
 - License: MIT
 - Language: English
 - Scope: Compares profit and loss figures against the ATO small business benchmarks locally, with the working shown.

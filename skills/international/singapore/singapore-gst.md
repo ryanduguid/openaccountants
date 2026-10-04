@@ -1,11 +1,11 @@
 ---
 name: singapore-gst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Singapore GST return (GST F5 form) for any client. Trigger on phrases like "prepare GST return", "do the GST", "fill in GST F5", "create the return", "Singapore GST", "IRAS filing", or any request involving Singapore GST filing. Also trigger when classifying transactions for GST purposes from bank statements, invoices, or other source data. This skill covers Singapore only and only standard GST-registered persons filing GST F5. Group registrations, partial exemption with non-de-minimis exempt supplies, Approved 3rd Party Logistics schemes, and Major Exporter Scheme applications are all in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). ALWAYS read this skill before touching any Singapore GST work.
-version: 2.0
+version: 2.1
 jurisdiction: SG
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Singapore GST
 
-## Singapore GST Return Skill (GST F5) v2.0
+## Singapore GST Return Skill (GST F5) v2.1
 
 ## Section 1 — Quick reference
 
@@ -405,7 +405,7 @@ Each rule states the legal source and the box mapping. Apply silently if the dat
 
 ### 5.5 Reverse charge — imported services (GST Act Section 14(2))
 
-- **Reverse charge rule** — From 1 January 2020, when the client receives services from a non-resident supplier who is not GST-registered in SG: self-assess output tax at 9% in Box 6, claim input tax in Box 7 (if entitled), report value in Box 14. Net effect zero for a fully taxable business. Applies to all services and from 1 January 2023, also to imported low-value goods (value not exceeding SGD 400).  _(GST Act Section 14(2))_
+- **Reverse charge rule** — From 1 January 2020, when the client receives services from a non-resident supplier who is not GST-registered in SG: self-assess output tax at the prevailing rate (9% since 1 January 2024) in Box 6, claim input tax in Box 7 (if entitled), report value in Box 14. Net effect zero for a fully taxable business. Applies to all services and from 1 January 2023, also to imported low-value goods (value not exceeding SGD 400).  _(GST Act Section 14(2))_
 
 ### 5.6 Domestic purchases — standard rated
 
@@ -618,7 +618,7 @@ The workflow in `vat-workflow-base` Section 1 mandates inferring the client prof
 
 ### Validation status
 
-This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 structure (quick reference at top, supplier library as lookup tables, worked examples, compressed rules, bank statement guide, onboarding fallback). It supersedes v1.0.
+This skill is v2.1; the April 2026 v2.0 rewrite aligned it with the Malta v2.0 structure (quick reference at top, supplier library as lookup tables, worked examples, compressed rules, bank statement guide, onboarding fallback). It supersedes v1.0.
 
 ### Sources
 
@@ -649,10 +649,11 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 structu
 
 ### Change log
 
+- **v2.1 (4 October 2026):** Reverse charge rule restated at the prevailing rate (9% since 1 January 2024).
 - **v2.0 (April 2026):** Full rewrite to align with Malta v2.0 structure. Quick reference moved to top (Section 1). Supplier pattern library restructured as literal lookup tables (Section 3) with Singapore-specific vendors (DBS, OCBC, UOB, Singtel, StarHub, M1, NTUC FairPrice, Grab, ComfortDelGro, GovTech, IRAS). Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue restructured (Section 6). Excel working paper specification added (Section 7). Singapore bank statement reading guide added with DBS/OCBC format details (Section 8). Onboarding moved to fallback role (Section 9). Reference material moved to bottom (Section 10). Companion skill reference updated to vat-workflow-base v0.1.
 - **v1.0 (April 2026):** Initial skill. Standalone document covering GST Act, box mappings, reverse charge, blocked categories, registration, filing deadlines, and penalties.
 
-### Self-check (v2.0 of this document)
+### Self-check (v2.1 of this document)
 
 1. Quick reference at top with box table and conservative defaults: yes (Section 1).
 2. Supplier library as literal lookup tables: yes (Section 3, 14 sub-tables).
@@ -669,7 +670,7 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 structu
 13. Zero-rated international service and "belongs" test explicit: yes (Example 2 + Section 5.13).
 14. DBS/OCBC bank statement format guide: yes (Section 8).
 
-## End of Singapore GST Return Skill v2.0
+## End of Singapore GST Return Skill v2.1
 
 This skill is incomplete without the companion file loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture). Do not attempt to produce a GST F5 without both files loaded.
 

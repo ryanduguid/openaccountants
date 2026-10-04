@@ -1,10 +1,10 @@
 ---
 name: india-einvoice
-description: Use this skill whenever asked about India GST e-invoicing, Invoice Registration Portal (IRP), IRN generation, e-invoice JSON schema, NIC portal, GST INV-01 format, e-invoice threshold, B2B invoice reporting under GST, QR code on invoices, GSTR-1 auto-population, e-way bill integration with e-invoice, or any question about generating, validating, or troubleshooting Indian e-invoices. Also trigger when advising on e-invoice compliance for businesses crossing Rs 5 crore turnover, configuring ERP/billing software for IRP integration, or handling IRP rejections. ALWAYS read this skill before touching any India e-invoice work.
-version: 1.0
+description: Use this skill whenever asked about India GST e-invoicing, Invoice Registration Portal (IRP), IRN generation, e-invoice JSON schema, NIC portal, GST INV-01 format, e-invoice threshold, B2B invoice reporting under GST, QR code on invoices, GSTR-1 auto-population, e-way bill integration with e-invoice, or any question about generating, validating, or troubleshooting Indian e-invoices. Also trigger when advising on e-invoice compliance for businesses crossing ₹5 crore turnover, configuring ERP/billing software for IRP integration, or handling IRP rejections. ALWAYS read this skill before touching any India e-invoice work.
+version: 1.1
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: Mayur Deokar
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # India Einvoice
 
-## India GST E-Invoice Skill v1.0
+## India GST E-Invoice Skill v1.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -32,9 +32,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Governing Body | Goods and Services Tax Network (GSTN) / Central Board of Indirect Taxes and Customs (CBIC) |
 | Key Legislation | CGST Act 2017, Rule 48(4)/(5) of CGST Rules 2017, Notification 10/2023-CT |
 | Schema Standard | GST INV-01 JSON (proprietary schema, not UBL) |
-| Current Threshold | Aggregate Annual Turnover (AATO) > Rs 5 crore in any FY since 2017-18 |
+| Current Threshold | Aggregate Annual Turnover (AATO) > ₹5 crore in any FY since 2017-18 |
 | Implementation Start | 1 October 2020 (phased rollout by turnover) |
-| Current Status | Fully operational; mandatory for AATO > Rs 5 crore since 1 August 2023 |
+| Current Status | Fully operational; mandatory for AATO > ₹5 crore since 1 August 2023 |
 | Approved IRPs (2026) | NIC (primary), Cygnet, Clear, IRIS, BDO, EY |
 | Filing Portal | einvoice1.gst.gov.in (production); einv-apisandbox.nic.in (sandbox) |
 
@@ -44,19 +44,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Turnover Threshold | Mandatory From |
 | --- | --- |
-| > Rs 500 crore | 1 October 2020 |
-| > Rs 100 crore | 1 January 2021 |
-| > Rs 50 crore | 1 April 2021 |
-| > Rs 20 crore | 1 April 2022 |
-| > Rs 10 crore | 1 October 2022 |
-| > Rs 5 crore | 1 August 2023 |
+| > ₹500 crore | 1 October 2020 |
+| > ₹100 crore | 1 January 2021 |
+| > ₹50 crore | 1 April 2021 |
+| > ₹20 crore | 1 April 2022 |
+| > ₹10 crore | 1 October 2022 |
+| > ₹5 crore | 1 August 2023 |
 
 ## Section 2 -- Mandate Scope
 
 ### Who Must Comply
 
-- **Compliance obligation** — Any GST-registered taxpayer whose aggregate annual turnover (AATO) exceeded Rs 5 crore in any financial year from FY 2017-18 onwards
-- **Permanent obligation** — Once the threshold is crossed in any past year, the obligation is permanent even if current-year turnover drops below Rs 5 crore
+- **Compliance obligation** — Any GST-registered taxpayer whose aggregate annual turnover (AATO) exceeded ₹5 crore in any financial year from FY 2017-18 onwards
+- **Permanent obligation** — Once the threshold is crossed in any past year, the obligation is permanent even if current-year turnover drops below ₹5 crore
 - **Coverage** — Covers: B2B supply invoices, B2B credit notes, B2B debit notes, exports, supplies to SEZ units
 
 ### Document Types Covered
@@ -84,9 +84,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxpayer AATO | Reporting Deadline |
 | --- | --- |
-| > Rs 100 crore | Within 30 days of invoice date (from 1 November 2023; the 7-day limit announced in April 2023 was deferred and never took effect) |
-| > Rs 10 crore | Within 30 days of invoice date (from 1 April 2025) |
-| Up to Rs 10 crore | No specific time limit (expected to extend) |
+| > ₹100 crore | Within 30 days of invoice date (from 1 November 2023; the 7-day limit announced in April 2023 was deferred and never took effect) |
+| > ₹10 crore | Within 30 days of invoice date (from 1 April 2025) |
+| Up to ₹10 crore | No specific time limit (expected to extend) |
 
 - **Post-deadline rejection** — After the deadline expires, the IRP permanently rejects IRN generation for that document.
 
@@ -189,7 +189,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | SlNo | Serial number (1-based) |
 | PrdDesc | Product description |
 | IsServc | Is service (Y/N) |
-| HsnCd | HSN/SAC code (min 4 digits; 8 digits if AATO > Rs 5 Cr) |
+| HsnCd | HSN/SAC code (min 4 digits; 8 digits if AATO > ₹5 Cr) |
 | Qty | Quantity |
 | Unit | Unit of measurement (UQC code) |
 | UnitPrice | Unit price |
@@ -250,7 +250,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### IRP Pre-Checks (Real-Time)
 
-- **Pre-checks list** — 1. GSTIN validity — both seller and buyer must be active GSTINs 2. Duplicate check — combination of seller GSTIN + doc type + doc number + FY must be unique 3. Date validation — invoice date cannot be future; cannot exceed time limit 4. HSN validation — must exist in master; 8-digit for goods if AATO > Rs 5 crore 5. Mathematical validation — line item totals must sum to document totals (tolerance: Rs 1) 6. State code / PIN code consistency 7. Tax rate validation — GST rate must be a valid rate (0, 0.1, 0.25, 1, 1.5, 3, 5, 6, 7.5, 12, 14, 18, 28; 40 for supplies from 22 September 2025, when the 12 and 28 slabs were abolished; 12 and 28 remain valid for supplies before that date, and 28 also for cigarettes, specified chewing and unmanufactured tobacco and beedi until 31 January 2026, when their rates changed under Notification 19/2025-Central Tax (Rate))
+- **Pre-checks list** — 1. GSTIN validity — both seller and buyer must be active GSTINs 2. Duplicate check — combination of seller GSTIN + doc type + doc number + FY must be unique 3. Date validation — invoice date cannot be future; cannot exceed time limit 4. HSN validation — must exist in master; 8-digit for goods if AATO > ₹5 crore 5. Mathematical validation — line item totals must sum to document totals (tolerance: ₹1) 6. State code / PIN code consistency 7. Tax rate validation — GST rate must be a valid rate (0, 0.1, 0.25, 1, 1.5, 3, 5, 6, 7.5, 12, 14, 18, 28; 40 for supplies from 22 September 2025, when the 12 and 28 slabs were abolished; 12 and 28 remain valid for supplies before that date, and 28 also for cigarettes, specified chewing and unmanufactured tobacco and beedi until 31 January 2026, when their rates changed under Notification 19/2025-Central Tax (Rate))
 
 ### Common Rejection Reasons
 
@@ -275,7 +275,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Rounding Rules
 
-- **Rounding rules** — All amounts rounded to 2 decimal places. Rounding tolerance at document level: Rs 1 (IRP accepts ±1 difference between sum of line items and document total). Round each line item independently, then sum.
+- **Rounding rules** — All amounts rounded to 2 decimal places. Rounding tolerance at document level: ₹1 (IRP accepts ±1 difference between sum of line items and document total). Round each line item independently, then sum.
 
 ### Multi-Rate Invoice
 
@@ -304,10 +304,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Offence | Penalty | Legal Basis |
 | --- | --- | --- |
-| Issuing invoice without valid IRN when required | Rs 10,000 per invoice OR 100% of tax involved, whichever is higher | Section 122(1)(i) CGST Act |
-| Issuing incorrect or false invoice | Up to Rs 25,000 per invoice | Section 122(3) CGST Act |
-| Fake invoicing (invoice without actual supply) | 100% of tax evaded or ITC availed (min Rs 10,000) | Section 122(1)(ii) CGST Act |
-| General penalty (no specific clause) | Up to Rs 25,000 | Section 125 CGST Act |
+| Issuing invoice without valid IRN when required | ₹10,000 per invoice OR 100% of tax involved, whichever is higher | Section 122(1)(i) CGST Act |
+| Issuing incorrect or false invoice | Up to ₹25,000 per invoice | Section 122(3) CGST Act |
+| Fake invoicing (invoice without actual supply) | 100% of tax evaded or ITC availed (min ₹10,000) | Section 122(1)(ii) CGST Act |
+| General penalty (no specific clause) | Up to ₹25,000 | Section 125 CGST Act |
 | Buyer consequence — ITC denial | Buyer cannot claim Input Tax Credit on invoice without valid IRN | Rule 48(5) CGST Rules |
 | Repeated default | GSTIN suspension possible | Section 29(2) CGST Act |
 
@@ -323,7 +323,7 @@ An invoice without IRN is not a valid tax invoice under Rule 48(5). The buyer's 
 
 ### E-Way Bill Integration
 
-- **E-way bill integration** — If supply value > Rs 50,000 and goods are being transported, e-way bill can be generated in the same API call. Set EwbDtls fields (TransId, TransName, Distance, TransDocNo, TransDocDt, VehNo, VehType). Single API call generates both IRN and EWB number.
+- **E-way bill integration** — If supply value > ₹50,000 and goods are being transported, e-way bill can be generated in the same API call. Set EwbDtls fields (TransId, TransName, Distance, TransDocNo, TransDocDt, VehNo, VehType). Single API call generates both IRN and EWB number.
 
 ### GSTR-2B / ITC Matching
 
