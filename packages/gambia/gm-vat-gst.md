@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Gambia (tax year 2025) — rates
 jurisdiction: GM
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,8 +16,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## VAT rates, registration and filing
 
 - **VAT overview** — The Gambia operates a Value Added Tax (VAT) at a standard rate of 15%, administered by the GRA under the Income and Value Added Tax Act. Exports are zero-rated and certain supplies are exempt. These figures are a draft to confirm with a licensed Gambian accountant.  _(Income and Value Added Tax Act)_
-- **Standard VAT rate** — 15 percent  _(Income and Value Added Tax Act — https://www.pwc.co.za/en/publications/vat-in-africa/gambia-overview.html)_
-- **Zero rate** — 0% on exports of goods and services percent  _(Income and Value Added Tax Act — https://www.pwc.co.za/en/publications/vat-in-africa/gambia-overview.html)_
+- **Standard VAT rate** — 15 percent (VAT-inclusive prices are divided by 115% to find the tax); businesses with taxable supplies of D2,000,000 or more in a tax year must register, and those with D1,000,000 or more may register voluntarily  _(Gambia Revenue Authority, Value Added Tax brochure — https://www.gra.gm/download-file/8d0cfa28-d217-11ed-9b31-029254d29bb1)_
+- **Zero rate** — 0% on exports of goods and services percent  _(Gambia Revenue Authority, Value Added Tax brochure — https://www.gra.gm/download-file/8d0cfa28-d217-11ed-9b31-029254d29bb1)_
 - **Exempt supplies** — Certain supplies (e.g. specified financial, medical, education and basic goods) are exempt — confirm the current exempt schedule ((approx — confirm)) (approx — confirm)  _(Income and Value Added Tax Act)_
 - **Mandatory VAT registration threshold** — Annual turnover of D2,000,000 or more GMD  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
 - **Voluntary VAT registration threshold** — Annual turnover of D1,000,000 or more GMD  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
