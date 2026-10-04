@@ -1,10 +1,10 @@
 ---
 name: peru-income-tax
 description: Use this skill whenever asked about Peru income tax (Impuesto a la Renta) for individuals — especially rentas de trabajo (4ta categoría independent services and 5ta categoría employment). Trigger on phrases like "how much income tax do I pay in Peru", "Impuesto a la Renta", "Formulario Virtual 709", "renta anual", "recibos por honorarios", "cuarta categoría", "quinta categoría", "rentas de trabajo", "deducción 7 UIT", "deducción adicional 3 UIT", "suspensión de retenciones 4ta", "SUNAT income tax", "UIT", "tramos del impuesto", "renta neta", or any question about filing or computing Peruvian individual income tax. Also trigger when preparing or reviewing a Formulario Virtual N° 709, computing the 7-UIT and 20% deductions, or advising on monthly withholding and suspension. This skill covers the UIT-indexed progressive scale (8/14/17/20/30%), the 7-UIT and additional 3-UIT deductions, the 20% cap for 4ta categoría, withholding, suspension thresholds, FV 709 filing and the cronograma de vencimientos. ALWAYS read this skill before touching any Peru income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: PE
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Peru Income Tax (Impuesto a la Renta — Rentas de Trabajo)
 
-## Peru Income Tax (Impuesto a la Renta — Rentas de Trabajo) Skill v0.1
+## Peru Income Tax (Impuesto a la Renta — Rentas de Trabajo) Skill v0.2
 
 > **DISAMBIGUATION.** This skill is for **PERU** (the Andean republic, capital **Lima**). Currency is the **sol (S/ / PEN)** — **NOT** the Panamanian balboa. The tax authority is **SUNAT** (Superintendencia Nacional de Aduanas y de Administración Tributaria). The tax is **Impuesto a la Renta**. If you find content referencing Panama, the balboa, or a flat-rate Panamanian scale, it is wrong — discard it and use this file.
 
@@ -41,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | TY2025: staggered by last RUC digit, **27 May 2026 — 10 June 2026** (Res. Sup. N° 386-2025/SUNAT) — see Section 5.6 |
 | Validated by | Verified by Maria Clemencia Valverde Rios (CPA) on 2026-06-29 |
 | Validation date | Verified by Maria Clemencia Valverde Rios (CPA) on 2026-06-29 |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Progressive Scale — Rentas de Trabajo (4ta + 5ta + foreign-source)
 
@@ -57,7 +57,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Every band is set in UIT (TUO LIR art. 53), so recompute the soles figures from the year's UIT rather than carrying them forward.
 
-- **7-UIT exemption note** — **The 7-UIT exemption (S/ 37,450 at UIT 2025) is a SEPARATE prior deduction — NOT a bracket boundary.** The bracket boundaries are 5 / 20 / 35 / 45 UIT measured on net income after the 7-UIT (and, for 4ta, the 20%) deduction. Source: SUNAT Orientación — Tasas del impuesto rentas de trabajo; SUNAT Orientación — Cálculo del impuesto.  _(SUNAT Orientación — Tasas del impuesto rentas de trabajo; SUNAT Orientación — Cálculo del impuesto)_
+- **7-UIT exemption note** — **The 7-UIT exemption (S/ 37,450 at UIT 2025) is a SEPARATE prior deduction — NOT a bracket boundary.** The bracket boundaries are 5 / 20 / 35 / 45 UIT measured on net income after the 7-UIT (and, for 4ta, the 20%) deduction. Source: SUNAT Orientación — Tasas del impuesto rentas de trabajo; SUNAT Orientación — Cálculo del impuesto.  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), art. 46 — https://www.sunat.gob.pe/legislacion/renta/ley/capvi.pdf ; TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), art. 53 — https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf)_
 
 **Cumulative tax at each top boundary (UIT 2025)**
 
@@ -70,7 +70,7 @@ Every band is set in UIT (TUO LIR art. 53), so recompute the soles figures from 
 
 (Derivation: 8% × 26,750 = 2,140.00; +14% × 80,250 = 11,235.00 → 13,375.00; +17% × 80,250 = 13,642.50 → 27,017.50; +20% × 53,500 = 10,700.00 → 37,717.50; thereafter 30% on the excess over 240,750.)
 
-- **Non-domiciled (non-resident) individuals** — flat **30%** on gross Peruvian-source income — NO 7-UIT allowance, NO additional deductions. Out of scope for this skill — see R-PE-3.  _(R-PE-3)_
+- **Non-domiciled (non-resident) individuals** — flat **30%** on gross Peruvian-source income — NO 7-UIT allowance, NO additional deductions. Out of scope for this skill — see R-PE-3.  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), art. 54(g) — https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf)_
 
 ### Order of Computation (rentas de trabajo)
 
@@ -273,7 +273,7 @@ These feed Step 4 (the additional up to 3 UIT). **All require electronic payment
 
 ### 5.3 The 7-UIT Deduction
 
-- **7-UIT deduction rules** — - A fixed **7 UIT** (S/ 37,450 at UIT 2025) is deducted from combined 4ta (post-20%) + 5ta + foreign-source labour income. - It is a standalone exemption, **not** a bracket boundary. Apply it before the progressive scale.
+- **7-UIT deduction rules** — - A fixed **7 UIT** (S/ 37,450 at UIT 2025) is deducted from combined 4ta (post-20%) + 5ta + foreign-source labour income. - It is a standalone exemption, **not** a bracket boundary. Apply it before the progressive scale.  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), art. 46 — https://www.sunat.gob.pe/legislacion/renta/ley/capvi.pdf)_
 
 ### 5.4 The Additional Deduction (up to 3 UIT)
 
@@ -533,8 +533,8 @@ Expected: STOP (R-PE-3). Flat 30% on gross with no deductions — out of scope.
 - **R-PE-3** — Non-domiciled individuals pay a flat 30% on gross Peruvian-source income with no deductions — the progressive scale must never be applied to a non-domiciled individual.  _(PROHIBITIONS section)_
 - **Jurisdiction and currency** — NEVER use Panama, the balboa, or any Panamanian scale — this is PERU, currency sol (S/ / PEN), authority SUNAT.  _(PROHIBITIONS section)_
 - **7-UIT exemption is not a bracket boundary** — NEVER treat the 7-UIT exemption as a bracket boundary — the boundaries are 5/20/35/45 UIT on net income.  _(PROHIBITIONS section)_
-- **20% deduction scope** — NEVER apply the 20% deduction to 5ta income or to 4ta inc. b (director/trustee) income.  _(PROHIBITIONS section)_
-- **Deduction caps** — NEVER exceed the 24-UIT cap on the 20% deduction or the 3-UIT cap on the additional deduction.  _(PROHIBITIONS section)_
+- **20% deduction scope** — NEVER apply the 20% deduction to 5ta income or to 4ta inc. b (director/trustee) income.  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), art. 45 — https://www.sunat.gob.pe/legislacion/renta/ley/capvi.pdf)_
+- **Deduction caps** — NEVER exceed the 24-UIT cap on the 20% deduction or the 3-UIT cap on the additional deduction.  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), arts. 45 and 46 — https://www.sunat.gob.pe/legislacion/renta/ley/capvi.pdf)_
 - **Additional deduction requirements** — NEVER allow an additional-deduction expense without electronic payment (bancarización) and a valid electronic comprobante.  _(PROHIBITIONS section)_
 - **Capital income rate** — NEVER apply the progressive scale to 1ra or 2da categoría (capital) income — that is a flat ~5% effective rate.  _(PROHIBITIONS section)_
 - **UIT year consistency** — NEVER mix UIT years — TY2025 uses S/ 5,350; 2026 uses S/ 5,500.  _(PROHIBITIONS section)_
