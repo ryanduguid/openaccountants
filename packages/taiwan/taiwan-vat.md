@@ -1,10 +1,10 @@
 ---
 name: taiwan-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Taiwan Business Tax (營業稅) return, handle uniform invoice (統一發票) compliance, or advise on VAT registration and filing in Taiwan. Trigger on phrases like "營業稅", "Taiwan business tax", "統一發票", "uniform invoice", "401 return", "403 return", "申報營業稅", or any Taiwan VAT/business tax request. ALWAYS read this skill before touching any Taiwan business tax work.
-version: 2.0
+version: 2.1
 jurisdiction: TW
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Uniform invoice (統一發票) | Mandatory for B2B and B2C; government-issued invoice numbers |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Taiwan-licensed 會計師 (CPA) |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Key 401 return boxes
 
@@ -308,15 +308,15 @@ Bank interest credit. Interest income is exempt from business tax in Taiwan. EXC
 
 ### 5.1 Standard rate 5%
 
-- **Standard rate** — 5%
+- **Standard rate** — 5% (the Act sets a 5% to 10% band; the Executive Yuan applies 5%)  _(Value-added and Non-value-added Business Tax Act, English text amended 28 May 2025, art. 10 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340080)_
 
 ### 5.2 Zero rate — exports
 
-- **Zero rate — exports** — Exports of goods and services rendered to foreign businesses paid in foreign currency. Evidence required: export customs declaration for goods; contracts and FX transfer records for services.  _(Business Tax Act Article 7)_
+- **Zero rate — exports** — Exports of goods and services rendered to foreign businesses paid in foreign currency. Evidence required: export customs declaration for goods; contracts and FX transfer records for services.  _(Value-added and Non-value-added Business Tax Act, English text amended 28 May 2025, art. 7 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340080)_
 
 ### 5.3 Exempt supplies
 
-- **Exempt supplies** — Exempt (免稅) supplies: medical and hospital services, education, cultural/arts services (some), financial services (interest, insurance premiums), residential land, sale of securities, postage stamps. No output tax; no input credit claimable on costs attributable to exempt revenue.  _(Business Tax Act Articles 8–9)_
+- **Exempt supplies** — Exempt (免稅) supplies: medical and hospital services, education, cultural/arts services (some), financial services (interest, insurance premiums), residential land, sale of securities, postage stamps. No output tax; no input credit claimable on costs attributable to exempt revenue.  _(Value-added and Non-value-added Business Tax Act, English text amended 28 May 2025, art. 8 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340080)_
 
 ### 5.4 Uniform invoice (統一發票)
 
@@ -328,11 +328,11 @@ Bank interest credit. Interest income is exempt from business tax in Taiwan. EXC
 
 ### 5.6 Cross-border electronic services
 
-- **Cross-border electronic services** — Foreign suppliers of electronic services (B2C to Taiwan consumers) must register if Taiwan B2C sales > NTD 480,000/year. Taiwan B2B buyers self-assess if the foreign supplier has not registered. Rate: 5%.
+- **Cross-border electronic services** — Foreign suppliers of electronic services (B2C to Taiwan consumers) must register if Taiwan B2C sales > NTD 480,000/year. Taiwan B2B buyers self-assess if the foreign supplier has not registered. Rate: 5%.  _(Value-added and Non-value-added Business Tax Act, English text amended 28 May 2025, art. 2-1, 6 and 28-1; the annual sales criterion is set by the Ministry of Finance — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340080)_
 
 ### 5.7 Small business tax (小規模營業人)
 
-- **Small business tax** — Monthly revenue below NTD 80,000 (goods) / NTD 40,000 (services): file quarterly Form 403. Tax is assessed by the tax office on a deemed basis (usually 1% of sales for food/beverage; standard rates otherwise). No input credits. No uniform invoice required (use plain receipt).
+- **Small business tax** — Monthly revenue below NTD 80,000 (goods) / NTD 40,000 (services): file quarterly Form 403. Tax is assessed by the tax office on a deemed basis (usually 1% of sales for food/beverage; standard rates otherwise). No input credits. No uniform invoice required (use plain receipt).  _(Value-added and Non-value-added Business Tax Act, English text amended 28 May 2025, art. 13; the monthly sales criteria are set by the Ministry of Finance — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340080)_
 
 ### 5.8 Filing deadlines
 
@@ -472,14 +472,15 @@ TAIWAN BUSINESS TAX ONBOARDING — MINIMUM QUESTIONS
 
 | Topic | Reference |
 | --- | --- |
-| Business Tax Act | 加值型及非加值型營業稅法 |
-| Standard rate | Business Tax Act Article 10 |
+| Business Tax Act | 加值型及非加值型營業稅法, English text amended 28 May 2025: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340080 |
+| Standard rate | Business Tax Act Article 10 (5% to 10% band; 5% applied) |
 | Zero rate | Business Tax Act Article 7 |
 | Exemptions | Business Tax Act Articles 8–9 |
 | Uniform invoice | 統一發票使用辦法 |
 | Cross-border e-services | 財政部公告 (MoF Announcement) on B2C digital services |
 | Small business | Business Tax Act Article 13 |
 | Penalties | Business Tax Act Articles 45–52; Tax Collection Act |
+| Bi-monthly return and reverse charge | Business Tax Act Articles 35 and 36 |
 
 ### Known gaps
 

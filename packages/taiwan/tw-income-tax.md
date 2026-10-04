@@ -1,10 +1,10 @@
 ---
 name: tw-income-tax
 description: Use this skill whenever asked about Taiwan individual income tax. Trigger on phrases like "Taiwan income tax", "綜合所得稅", "個人所得稅", "Taiwan tax return", "eFiling Taiwan", "National Taxation Bureau", "執行業務所得", "營利所得", "standard deduction Taiwan", "progressive rate Taiwan", "Taiwan freelance tax", or any question about computing, filing, or planning individual income tax for a Taiwan tax resident. This skill covers the progressive rate table, deductions, exemptions, filing via eFiling, and common categories of income for self-employed professionals. ALWAYS read this skill before advising on Taiwan individual income tax.
-version: 1.0
+version: 1.1
 jurisdiction: TW
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # TW Income Tax
 
-## Taiwan Individual Income Tax -- Skill v1.0
+## Taiwan Individual Income Tax -- Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -29,17 +29,29 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Consolidated Income Tax (綜合所得稅) |
 | Currency | TWD / NTD (New Taiwan Dollar) only |
 | Tax year | Calendar year (1 January -- 31 December) |
-| Primary legislation | Income Tax Act (所得稅法) |
+| Primary legislation | Income Tax Act (所得稅法), English text at https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003 |
 | Supporting legislation | Income Basic Tax Act (所得基本稅額條例), Tax Collection Act (稅捐稽徵法) |
 | Tax authority | Ministry of Finance (財政部), National Taxation Bureau (國稅局) |
 | Filing portal | eFiling (etax.nat.gov.tw) |
 | Filing period | May 1 -- May 31 of following year |
 | Validated by | Pending — requires sign-off by a Taiwan CPA (會計師) |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
-### Progressive Tax Rates (2025)
+### Progressive Tax Rates (2026 and 2025)
 
-**Progressive Tax Rates (2025)**
+The brackets are the Income Tax Act art. 5 amounts as adjusted for consumer prices and announced by the Ministry of Finance; the eTax Portal publishes the table for each year.
+
+**Progressive Tax Rates (2026 income, filed May 2027)**  _(eTax Portal, Progressive Tax Rate System 2026 (dated 27 April 2026) — https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/progressive-tax-rate ; Income Tax Act, English text amended 11 Sep 2026, art. 5 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
+
+| Net Taxable Income (NT$) | Rate | Progressive Difference (NT$) |
+| --- | --- | --- |
+| 0 -- 610,000 | 5% | 0 |
+| 610,001 -- 1,380,000 | 12% | 42,700 |
+| 1,380,001 -- 2,770,000 | 20% | 153,100 |
+| 2,770,001 -- 5,190,000 | 30% | 430,100 |
+| 5,190,001 and above | 40% | 949,100 |
+
+**Progressive Tax Rates (2025 income, filed May 2026)**  _(eTax Portal, Progressive Tax Rate System 2024-2025 — https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/progressive-tax-rate ; Income Tax Act, English text amended 11 Sep 2026, art. 5 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 
 | Net Taxable Income (NT$) | Rate | Progressive Difference (NT$) |
 | --- | --- | --- |
@@ -51,22 +63,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Tax formula** — Net Taxable Income × Rate − Progressive Difference = Tax Payable
 
-### Exemptions and Deductions (2025)
+### Exemptions and Deductions (2026 and 2025)
 
-**Exemptions and Deductions (2025)**
+**Exemptions and Deductions (2026 and 2025)**  _(eTax Portal, Table of Exemption and Deduction 2019 to 2026 — https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/exemption-deduction-table ; Income Tax Act, English text amended 11 Sep 2026, art. 5, 5-1 and 17 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 
-| Item | Amount (NT$) |
-| --- | --- |
-| Personal exemption (免稅額) | 97,000 per person |
-| Personal exemption (aged 70+) | 145,500 per person |
-| Standard deduction -- single (標準扣除額) | 131,000 |
-| Standard deduction -- married filing jointly | 262,000 |
-| Special deduction for wage income (薪資所得特別扣除額) | 218,000 |
-| Special deduction for disabled (身心障礙特別扣除額) | 218,000 |
-| Special deduction for pre-school children (幼兒學前特別扣除額) | 150,000 per child |
-| Special deduction for tertiary education (教育學費特別扣除額) | 25,000 per child |
-| Special deduction for savings/investment income (儲蓄投資特別扣除額) | Up to 270,000 |
-| Special deduction for long-term care (長期照顧特別扣除額) | 120,000 per person |
+| Item | 2026 income (NT$) | 2025 income (NT$) |
+| --- | --- | --- |
+| Personal exemption (免稅額), per person | 101,000 | 97,000 |
+| Personal exemption, taxpayer, spouse or lineal ascendant aged 70+ | 151,500 | 145,500 |
+| Personal exemption, dependent minor child (+50% from 2026 under art. 17 as amended on 11 Sep 2026) | 151,500 | 97,000 |
+| Standard deduction -- single (標準扣除額) | 136,000 | 131,000 |
+| Standard deduction -- married filing jointly | 272,000 | 262,000 |
+| Special deduction for wage income (薪資所得特別扣除額), per person | 227,000 | 218,000 |
+| Special deduction for disabled (身心障礙特別扣除額), per person | 227,000 | 218,000 |
+| Special deduction for pre-school children (幼兒學前特別扣除額), first child | 150,000 | 150,000 |
+| Special deduction for pre-school children, each further child | 225,000 | 225,000 |
+| Special deduction for tertiary education (教育學費特別扣除額), per child | 25,000 | 25,000 |
+| Special deduction for savings/investment income (儲蓄投資特別扣除額), per household | Up to 270,000 | Up to 270,000 |
+| Special deduction for long-term care (長期照顧特別扣除額), per person | 180,000 | 180,000 |
+| Special deduction for rent for housing (房屋租金支出特別扣除額), per household | 180,000 | 180,000 |
+
+The long-term care and rent special deductions are not available where the taxpayer's rate reaches 20% or more, the Income Basic Tax applies, or dividends are taxed separately (art. 17 para. 3). The 2026 amendment to art. 17 (promulgated 11 Sep 2026) also lifts the NT$24,000 cap for premiums paid to labour, national pension, farmers', military and civil service insurance.
 
 ### Conservative Defaults
 
@@ -146,28 +163,34 @@ A. GROSS CONSOLIDATED INCOME
    A7. Total Gross Income (綜合所得總額)                ___________
 
 B. EXEMPTIONS (免稅額)
-   B1. Taxpayer (NT$97,000 or NT$145,500 if 70+)       ___________
+   B1. Taxpayer (2025: NT$97,000, NT$145,500 if 70+;
+       2026: NT$101,000, NT$151,500 if 70+)             ___________
    B2. Spouse                                           ___________
    B3. Dependants                                       ___________
    B4. Total Exemptions                                 ___________
 
 C. DEDUCTIONS (扣除額)
    C1. Standard deduction OR itemised deductions        ___________
-       Standard: NT$131,000 (single) / NT$262,000 (joint)
+       Standard 2025: NT$131,000 (single) / NT$262,000 (joint)
+       Standard 2026: NT$136,000 (single) / NT$272,000 (joint)
        Itemised: insurance, medical, disaster, donations,
                  rent, mortgage interest
    C2. Total Deductions                                 ___________
 
 D. SPECIAL DEDUCTIONS (特別扣除額)
-   D1. Wage income special deduction (max NT$218,000)   ___________
-   D2. Disabled special deduction (NT$218,000 each)     ___________
-   D3. Pre-school children (NT$150,000 each)            ___________
+   D1. Wage income special deduction (max NT$218,000
+       for 2025; NT$227,000 for 2026)                  ___________
+   D2. Disabled special deduction (NT$218,000 each in
+       2025; NT$227,000 in 2026)                       ___________
+   D3. Pre-school children (NT$150,000 first child;
+       NT$225,000 each further child)                  ___________
    D4. Education tuition (NT$25,000 per child)          ___________
    D5. Savings/investment (max NT$270,000)              ___________
-   D6. Long-term care (NT$120,000 per person)           ___________
-   D7. Total Special Deductions                         ___________
+   D6. Long-term care (NT$180,000 per person)           ___________
+   D7. Rent for housing (NT$180,000 per household)     ___________
+   D8. Total Special Deductions                         ___________
 
-E. NET TAXABLE INCOME (A7 - B4 - C2 - D7)             ___________
+E. NET TAXABLE INCOME (A7 - B4 - C2 - D8)             ___________
 
 F. TAX COMPUTATION
    F1. Net taxable income × rate - progressive diff    ___________
@@ -339,7 +362,7 @@ If choosing itemised over standard deduction:
 | Disaster losses | No limit (documented and approved by authority) |
 | Charitable donations (general) | Up to 20% of gross income |
 | Charitable donations (to government/schools) | No limit (100% deductible) |
-| Rent paid for residence | NT$180,000 (cannot claim simultaneously with mortgage interest) |
+| Rent paid for residence | NT$180,000 per household; since 2024 a special deduction under art. 17 para. 1 subpara. 2 item 3 viii, so it can be claimed beside the standard deduction, but not with mortgage interest and not where the rate reaches 20% or the Income Basic Tax applies |
 | Mortgage interest (自用住宅) | NT$300,000 (minus savings interest income) |
 | Political party donations | NT$200,000 per year |
 | Election candidate donations | NT$200,000 per election |
@@ -375,7 +398,7 @@ If choosing itemised over standard deduction:
 
 | Topic | Reference |
 | --- | --- |
-| Income Tax Act | 所得稅法 (Ministry of Finance) |
+| Income Tax Act | 所得稅法, English text amended 11 Sep 2026: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003 |
 | Progressive rate table | Income Tax Act Art. 5 |
 | Professional income deemed rates | MOF announcement (annually updated) |
 | Standard deduction | Income Tax Act Art. 5-1 |
@@ -383,7 +406,9 @@ If choosing itemised over standard deduction:
 | Special deductions | Income Tax Act Art. 17 |
 | Dividend taxation | Income Tax Act Art. 15 (2018 reform) |
 | Withholding | Income Tax Act Art. 88--92 |
-| AMT | Income Basic Tax Act (所得基本稅額條例) |
+| AMT | Income Basic Tax Act (所得基本稅額條例), art. 12 and 13: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340115 |
+| Annual exemption and deduction amounts (2019 to 2026) | eTax Portal, Table of Exemption and Deduction: https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/exemption-deduction-table |
+| Annual bracket tables (2018 to 2026) | eTax Portal, Progressive Tax Rate System: https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/progressive-tax-rate |
 | Property transaction tax | Income Tax Act Art. 14-4 to 14-8 (房地合一) |
 | NTB Taipei | ntbt.gov.tw |
 | eFiling portal | etax.nat.gov.tw |
