@@ -373,6 +373,10 @@ NON_GOV_AUTHORITY = frozenset((
     'bopadocuments.blob.core.windows.net',
     'e-tramits.ad',       # Govern d'Andorra's procedures portal, where the tax
                           # department publishes IGI and IRPF filing rules.
+    'pisrs.si',           # Pravno-informacijski sistem Republike Slovenije, the
+                          # Government Office for Legislation's official register of
+                          # consolidated Slovenian laws (pregledPredpisa pages render
+                          # the full text in a browser). Bare .si.
     'kenyalaw.org',       # National Council for Law Reporting (Kenya Law), the
                           # statutory publisher of the Laws of Kenya:
                           # new.kenyalaw.org serves each Act as consolidated
