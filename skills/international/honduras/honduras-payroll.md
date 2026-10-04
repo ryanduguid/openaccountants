@@ -1,10 +1,10 @@
 ---
 name: honduras-payroll
 description: Use this skill whenever asked about Honduras payroll processing for employed persons. Trigger on phrases like "Honduras payroll", "ISR Honduras", "Impuesto Sobre la Renta withholding", "IHSS deduction", "RAP contribution", "INFOP", "planilla Honduras", "aguinaldo", "decimo tercer mes", "decimo cuarto mes", "catorceavo", "tabla progresiva ISR", "net salary Honduras", "PAYE Honduras", "salario minimo Honduras", "techo de cotizacion IHSS", "employer payroll Honduras", "gross to net Honduras", "salario neto Honduras", or any question about computing employee pay, income-tax withholding, or social-security/private-fund contributions for Honduras-based employees. This skill covers ISR (income tax) withholding by the employer, IHSS social security (EM + IVM + occupational risk), RAP private contributions, the INFOP training levy, the 13th and 14th month statutory salaries, minimum wage, and filing obligations to SAR. ALWAYS read this skill before processing any Honduras payroll.
-version: 0.1
+version: 0.2
 jurisdiction: HN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Honduras Payroll
 
-## Honduras Payroll Skill v0.1
+## Honduras Payroll Skill v0.2
 
 > **Tier 2 (research-verified) — NOT yet accountant-verified.** Several figures carry `[RESEARCH GAP — reviewer to confirm]` markers. A licensed Honduran contador público must reconcile those before any output is presented as final.
 
@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Ley del Impuesto Sobre la Renta; Código Tributario (Decreto 22-97); Ley del IHSS; Decreto 47-2024 (RAP reform); Código del Trabajo; Acuerdo 02-95 (Reglamento Décimo Cuarto Mes) |
 | Filing portal | SAR DET Live (`detlive.sar.gob.hn`) |
 | Validated by | Pending -- requires sign-off by a licensed Honduran contador público |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 -- Income Tax Withholding (ISR — Impuesto Sobre la Renta)
 
@@ -345,7 +345,7 @@ Classify bank-statement lines deterministically. Match case-insensitively; longe
 
 ## Section 12 -- Tier 1 Rules (hard, non-negotiable)
 
-- **Rule 1** — ISR is employer-withheld monthly and remitted to SAR; never skip it for salaried staff.  _(PwC)_
+- **Rule 1** — ISR on salaries is withheld by the employer and remitted to the SAR within the first ten days of the month after the withholding; never skip it for salaried staff  _(Ley del Impuesto sobre la Renta, texto consolidado al 26 de junio de 2018 (SAR), art 50 — https://www.sar.gob.hn/download/consolidado-ley-impuesto-sobre-la-renta-25-junio-2018/)_
 - **Rule 2** — Use the annual Renta Neta Gravable with the correct year's table; apply the subtract-method constants exactly.
 - **Rule 3** — IHSS EM and IVM are each capped at the L11,903.13/month ceiling (2025).  _(Dinero HN)_
 - **Rule 4** — The 13th and 14th month salaries are ISR/IHSS/RAP exempt by default.  _(Acuerdo 02-95)_
