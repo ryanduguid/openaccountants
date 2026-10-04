@@ -731,6 +731,26 @@ class CitationRotTests(unittest.TestCase):
             with self.subTest(status=status):
                 self.assertEqual(self.rot.judge(status, "")[0], "dead")
 
+    def test_a_cited_document_overrules_a_dead_host_root(self):
+        # bopadocuments.blob.core.windows.net holds Andorra's official gazette
+        # and answers 400 at its root; the 25 cited documents answer 200. The
+        # first sweep reported every one of them dead on the root alone.
+        dead_root = ("dead", "HTTP 400")
+        self.assertEqual(
+            self.rot.second_opinion(dead_root, ("ok", "HTTP 200")),
+            ("ok", "host root HTTP 400; cited URL HTTP 200"))
+        # The document's own verdict is what gets printed, so a cited page that
+        # answers with casino spam is still reported as rot, not cleared.
+        self.assertEqual(
+            self.rot.second_opinion(dead_root, ("rot", "parked: ...x..."))[0],
+            "rot")
+        # Two dead answers stay dead, and a live root is never touched.
+        self.assertEqual(
+            self.rot.second_opinion(dead_root, ("dead", "no response")), dead_root)
+        self.assertEqual(
+            self.rot.second_opinion(("ok", "HTTP 200"), ("dead", "HTTP 404")),
+            ("ok", "HTTP 200"))
+
     def test_the_corpus_own_site_is_not_a_citation_to_check(self):
         # Every guide ends with a CTA block linking openaccountants.com and a
         # Calendly booking page: thousands of citations, three hosts, nothing to

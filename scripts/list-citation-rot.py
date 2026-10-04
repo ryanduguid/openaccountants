@@ -27,7 +27,10 @@ WHAT THIS CAN AND CANNOT SEE
 It checks HOSTS, not documents. A ministry whose site is healthy but whose 2019
 PDF has been reorganised away still passes here, and that is the commoner kind
 of link rot by a wide margin. Host-level is what catches the class above, and
-it is the class that misleads rather than merely disappoints.
+it is the class that misleads rather than merely disappoints. The one exception
+runs the other way: a host whose root answers 400 or nothing at all gets its
+first cited URL fetched before it is called dead, because a document store has
+no front page (see `second_opinion`).
 
 It does not report blocks. A live authority behind a WAF answers curl with 403
 or 406 -- impots.finances.gouv.bj itself does, and onrc.ro and registrucentras.lt
@@ -197,29 +200,50 @@ def fetch(host, timeout=20):
     """
     fallback = (None, '')
     for scheme in ('https', 'http'):
-        req = urllib.request.Request('%s://%s/' % (scheme, host),
-                                     headers={'User-Agent': UA,
-                                              'Accept': 'text/html,*/*'})
-        try:
-            with urllib.request.urlopen(req, timeout=timeout) as r:
-                return r.status, strip_html(
-                    r.read(200000).decode('utf-8', 'replace'))
-        except urllib.error.HTTPError as e:
-            body = ''
-            try:
-                body = strip_html(e.read(200000).decode('utf-8', 'replace'))
-            except Exception:
-                pass
-            if e.code >= 500:
-                fallback = (e.code, body)   # keep looking; report if nothing better
-                continue
-            return e.code, body
-        except (urllib.error.URLError, socket.timeout, ConnectionError,
-                TimeoutError, OSError):
+        status, body = get('%s://%s/' % (scheme, host), timeout)
+        if status is None:
             continue
-        except Exception:
+        if status >= 500:
+            fallback = (status, body)   # keep looking; report if nothing better
             continue
+        return status, body
     return fallback
+
+
+def get(url, timeout=20):
+    """(status, stripped body) for one URL, or (None, '') if nothing answered."""
+    req = urllib.request.Request(url, headers={'User-Agent': UA,
+                                               'Accept': 'text/html,*/*'})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.status, strip_html(r.read(200000).decode('utf-8', 'replace'))
+    except urllib.error.HTTPError as e:
+        body = ''
+        try:
+            body = strip_html(e.read(200000).decode('utf-8', 'replace'))
+        except Exception:
+            pass
+        return e.code, body
+    except (urllib.error.URLError, socket.timeout, ConnectionError,
+            TimeoutError, OSError):
+        return None, ''
+    except Exception:
+        return None, ''
+
+
+def second_opinion(root, cited):
+    """Let the cited document overrule a dead verdict on the host root.
+
+    bopadocuments.blob.core.windows.net is the document store of Andorra's
+    official gazette and answers HTTP 400 at its root, because a blob
+    container has no front page; every cited document on it answers 200. A
+    host-level probe alone reported all 25 Andorra citations dead. So when the
+    root is dead, the first cited URL gets the last word, and its own verdict
+    (which may still be rot or a crash) is what gets printed.
+    """
+    if root[0] != 'dead' or cited[0] == 'dead':
+        return root
+    return cited[0], 'host root %s; cited URL %s' % (root[1], cited[1])
 
 
 def cited_hosts(only=None):
@@ -336,6 +360,9 @@ def main(argv):
         # an hour and it was killed before it printed anything.
         for n, host in enumerate(suspects, 1):
             results[host] = judge(*fetch(host, timeout=8))
+            if results[host][0] == 'dead':
+                results[host] = second_opinion(
+                    results[host], judge(*get(where[host][0][2], timeout=8)))
             if n % 25 == 0:
                 sys.stderr.write('  %d/%d\n' % (n, len(suspects)))
         cleared = sum(1 for h in suspects if results[h][0] != 'dead')
