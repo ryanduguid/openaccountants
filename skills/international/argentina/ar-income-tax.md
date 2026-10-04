@@ -17,7 +17,7 @@ last_updated: 2026-10-04
 
 ### Progressive Tax Scale — Statutory base amounts, fiscal year 2024 (art. 94)
 
-WARNING: Argentina adjusts these thresholds semi-annually (January and July) by the IPC (Consumer Price Index). You MUST verify the current semester's thresholds with ARCA before applying. The amounts below are for the first semester 2025 only.
+WARNING: Argentina adjusts these thresholds semi-annually (January and July) by the IPC (Consumer Price Index). You MUST verify the current semester's thresholds with ARCA before applying. The amounts below are the statutory base amounts for fiscal year 2024.
 
 | Ganancia Neta Imponible Acumulada (ARS) | Rate | Cumulative Fixed Amount |
 |---|---|---|
