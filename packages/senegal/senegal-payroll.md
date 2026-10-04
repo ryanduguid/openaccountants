@@ -1,10 +1,10 @@
 ---
 name: senegal-payroll
 description: Use this skill whenever asked about Senegal payroll processing for employed persons. Trigger on phrases like "Senegal payroll", "Sénégal paie", "IRPP Senegal", "retenue à la source Senegal", "TRIMF", "IPRES contribution", "CSS Senegal", "prestations familiales", "CFCE", "IPM health Senegal", "quotient familial Senegal", "parts fiscales", "net salary Senegal", "salaire net Sénégal", "PAYE Senegal", "employer social charges Senegal", "SMIG Senegal", "minimum wage Senegal", "form F4 Senegal", "gross to net Senegal", "bulletin de paie", or any question about computing employee pay, income tax withholding, or social contributions for Senegal-based employees. Senegal DOES levy personal income tax (IRPP) on salaries plus a fixed local salary tax (TRIMF). This skill covers progressive IRPP withholding with family-quotient splitting, TRIMF, IPRES pensions, CSS family allowances and work-injury, IPM health cover, the employer payroll tax (CFCE), minimum wage, filing obligations, and penalties. ALWAYS read this skill before processing any Senegal payroll.
-version: 0.1
+version: 0.2
 jurisdiction: SN
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Senegal Payroll Skill v0.1 (Tier 2 — research-verified, pending accountant sign-off)
+# Senegal Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Senegal Payroll Skill v0.1 (Tier 2 — research-verified, pending accountant sign-off)
+## Senegal Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
 
 > Senegal is **not** a no-income-tax jurisdiction. Salaries bear progressive personal income tax (IRPP) withheld at source, a separate fixed local salary tax (TRIMF), mandatory social contributions (IPRES, CSS, IPM), and an employer-only payroll tax (CFCE). All five must be handled together.
 
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Employer payroll tax | CFCE — Contribution Forfaitaire à la Charge de l'Employeur, 3% of payroll |
 | Monthly remittance form | F4 (practitioner-cited) — declared/remitted before the 15th of the following month |
 | Validated by | Pending — requires sign-off by a Senegalese chartered accountant (expert-comptable) |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 — Income Tax Withholding (IRPP)
 
@@ -74,7 +74,7 @@ The employer withholds IRPP monthly at source on gross remuneration (including f
 - 13,500,000 → 2,324,000 + (13,500,000 − 8,000,000) × 37% = 2,324,000 + 2,035,000 = 4,359,000 ✓
 - 50,000,000 → 4,359,000 + (50,000,000 − 13,500,000) × 40% = 4,359,000 + 14,600,000 = 18,959,000 ✓
 
-> [RESEARCH GAP — reviewer to confirm] Secondary French payroll sources render the middle of the scale as a 25% band (1,500,001–4,000,000) plus a 30% band (4,000,001–8,000,000) — a 6-rate scale topping at 40%/43%. PwC merges these into a single 30% band on 1,500,001–4,000,000 (used above). The authoritative arbiter is the CGI Art. 173. Confirm the middle bands against the CGI text (official PDF via eRegulations: https://senegal.eregulations.org/media/t-code-general-impots[1].pdf) before publishing computations that fall in the 1.5M–8M range.
+> [RESEARCH GAP — reviewer to confirm] Secondary French payroll sources render the middle of the scale as a 25% band (1,500,001–4,000,000) plus a 30% band (4,000,001–8,000,000) — a 6-rate scale topping at 40%/43%. PwC merges these into a single 30% band on 1,500,001–4,000,000 (used above). The authoritative arbiter is article 173 of the CGI as enacted by Loi 2012-31 and since amended. The eRegulations PDF at https://senegal.eregulations.org/media/t-code-general-impots[1].pdf is the pre-2013 code (Loi 92-40 as amended to 2004; OCR-read on 4 October 2026), whose article 173 concerns share acquisitions, so it does not settle the current scale. Confirm the middle bands against the current CGI text before publishing computations that fall in the 1.5M–8M range.
 
 ### 2.3 Family quotient (quotient familial / parts)
 
