@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Switzerl
 jurisdiction: CH
 category: formation
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,15 +17,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 The two main Swiss capital companies are the GmbH/Sàrl (limited liability company) and the AG/SA (stock corporation); sole proprietorships and partnerships are also common. These are 2025 figures for accountant review.
 
-- **GmbH / Sàrl (limited liability company)** — Limited liability company; members hold quotas; most common form for SMEs  _(Swiss Code of Obligations (OR/CO) (as described at [goldblum.ch](https://goldblum.ch/knowledgebase/swiss-gmbh-formation)))_
-- **AG / SA (stock corporation)** — Stock corporation with shares; preferred for larger businesses and capital-raising  _(Swiss Code of Obligations (OR/CO) (as described at [goldblum.ch](https://goldblum.ch/knowledgebase/swiss-ag-company-formation-requirements-taxation-structure)))_
+- **GmbH / Sàrl (limited liability company)** — Limited liability company; members hold quotas; most common form for SMEs  _(Swiss Code of Obligations (OR/CO, SR 220, consolidated text on Fedlex), Art. 772 to 827 — https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de)_
+- **AG / SA (stock corporation)** — Stock corporation with shares; preferred for larger businesses and capital-raising  _(Swiss Code of Obligations (OR/CO, SR 220, consolidated text on Fedlex), Art. 620 to 763 — https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de)_
 - **Other forms** — Sole proprietorship (Einzelfirma), general partnership (Kollektivgesellschaft) and limited partnership (Kommanditgesellschaft)  _(Swiss Code of Obligations (OR/CO))_
-- **GmbH minimum share capital** — CHF 20,000, fully paid up before registration CHF  _(Swiss Code of Obligations (OR/CO) (as described at [goldblum.ch](https://goldblum.ch/knowledgebase/swiss-gmbh-formation)))_
-- **AG minimum share capital** — CHF 100,000, of which at least CHF 50,000 (and at least 20%) paid in before incorporation CHF  _(Swiss Code of Obligations (OR/CO) (as described at [goldblum.ch](https://goldblum.ch/knowledgebase/swiss-ag-company-formation-requirements-taxation-structure)))_
+- **GmbH minimum share capital** — CHF 20,000 nominal capital (Art. 773(1)), fully paid up before registration  _(Swiss Code of Obligations (OR/CO, SR 220, consolidated text on Fedlex), Art. 773(1) — https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de)_
+- **AG minimum share capital** — CHF 100,000 share capital (Art. 621(1)), of which at least 20% of the nominal value of each share and in all cases at least CHF 50,000 must be paid in before incorporation (Art. 632)  _(Swiss Code of Obligations (OR/CO, SR 220, consolidated text on Fedlex), Art. 621(1) and Art. 632 — https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de)_
 - **Incorporation steps** — Name check, draft articles of association, open a capital-deposit (blocked) account with a Swiss bank, notarised public deed, then registration in the Commercial Register (Handelsregister)  _(Swiss Code of Obligations (OR/CO) (as described at [goldblum.ch](https://goldblum.ch/knowledgebase/swiss-gmbh-formation)))_
 - **Typical timeline** — Approx. 5–10 business days after documents are submitted (approx — confirm)  _(Swiss Code of Obligations (OR/CO) (as described at [goldblum.ch](https://goldblum.ch/knowledgebase/swiss-gmbh-formation)))_
 - **Indicative incorporation cost** — Roughly CHF 1,500–3,000+ in notary and commercial-register fees (excl. capital and advisory) (approx — confirm) CHF  _(Swiss Code of Obligations (OR/CO))_
-- **Swiss residency requirement** — At least one person able to represent the company (director/managing officer) must be resident in Switzerland  _(Swiss Code of Obligations (OR/CO) (as described at [goldblum.ch](https://goldblum.ch/knowledgebase/swiss-ag-company-formation-requirements-taxation-structure)))_
+- **Swiss residency requirement** — The company must be capable of being represented by a person resident in Switzerland: a member of the board or a director for an AG (Art. 718(4)), a managing officer or director for a GmbH (Art. 814(3))  _(Swiss Code of Obligations (OR/CO, SR 220, consolidated text on Fedlex), Art. 718(4) and Art. 814(3) — https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de)_
 - **Capital issue stamp duty** — 1% federal issuance stamp duty on equity contributions above a CHF 1,000,000 exemption %  _([Federal Act on Stamp Duties (StG/LT)](https://taxsummaries.pwc.com/switzerland/corporate/other-taxes))_
 - **VAT registration** — Required once taxable turnover reaches CHF 100,000; may register voluntarily earlier CHF  _([Federal Act on Value Added Tax (MWSTG/LTVA)](https://www.estv.admin.ch/en/vat-rates-switzerland))_
 - **Annual accounts** — Companies must keep books and prepare annual financial statements under the Code of Obligations accounting rules  _(Swiss Code of Obligations (OR/CO))_
