@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Timor-Leste (tax year
 jurisdiction: TL
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,20 +17,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Companies pay corporate income tax (CIT) at a flat rate, with special rates for the petroleum sector. Several payments are taxed by way of final withholding. Unverified draft figures.
 
-- **General corporate income tax rate** — 10 percent (flat)  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/taxes-on-corporate-income))_
-- **CIT — oil & gas contractors** — 30 percent (flat)  _([Taxation of Bayu-Undan Contractors Act / Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/taxes-on-corporate-income))_
-- **CIT — petroleum sub-contractors** — Generally 6 percent (flat)  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/taxes-on-corporate-income))_
-- **Tax base** — Net taxable income = gross income less allowable deductions; residents taxed on worldwide income, non-residents on Timor-Leste-source income  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/income-determination))_
+- **General corporate income tax rate** — 10% of taxable income for a legal person  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 26 and Schedule VI(c) — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
+- **CIT — oil & gas contractors** — 30% for a Contractor under a petroleum agreement  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 72.1 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
+- **CIT — petroleum sub-contractors** — A Contractor or Subcontractor withholds 6% of the gross amount paid to any person (other than an employee) for services acquired for petroleum operations  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 81 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
+- **Tax base** — Taxable income is gross income (business income, property income, prizes, tax refunds previously deducted and any other realised increase in economic capacity, other than wages subject to wage income tax) less the deductions allowed under s 30  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 26.2, 28 and 30 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 - **Withholding tax — dividends (resident to resident)** — 0 percent (final)  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/withholding-taxes))_
 - **Withholding tax — interest (resident to resident)** — 0 percent (non-final)  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/withholding-taxes))_
-- **Withholding tax — royalties (resident)** — 10 percent  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/withholding-taxes))_
-- **Withholding tax — rent of land/buildings (resident)** — 10 percent  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/withholding-taxes))_
-- **Withholding tax — construction/building activity** — 2 percent (final)  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/withholding-taxes))_
-- **Withholding tax — construction consulting** — 4 percent (final)  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/withholding-taxes))_
-- **Withholding tax — mining/mining support services** — 4.5 percent (final)  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/withholding-taxes))_
-- **Withholding tax — payments to non-residents** — 10 percent (on Timor-Leste-source income paid by a resident to a non-resident)  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/withholding-taxes))_
-- **Annual CIT return filing deadline** — Last day of the third month after the tax year-end (≈ 31 March for calendar-year filers)  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/tax-administration))_
-- **CIT payment deadline** — Final tax due by the annual return filing date  _([Taxes and Duties Act (Law No. 8/2008)](https://taxsummaries.pwc.com/timor-leste/corporate/tax-administration))_
+- **Withholding tax — royalties (resident)** — 10% of the gross royalty paid to a resident person or a Timor-Leste permanent establishment of a non-resident  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 54 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
+- **Withholding tax — rent of land/buildings (resident)** — 10% of the gross rent for the lease of land or buildings in Timor-Leste  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 55 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
+- **Withholding tax — construction/building activity** — 2% of the gross payment  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 53 and Schedule VIII — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
+- **Withholding tax — construction consulting** — 4% of the gross payment  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 53 and Schedule VIII — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
+- **Withholding tax — mining/mining support services** — 4.5% of the gross payment; air or sea transportation services carry 2.64%  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 53 and Schedule VIII — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
+- **Withholding tax — payments to non-residents** — 10% of the gross amount of Timor-Leste source income paid to a non-resident person, other than payments covered by ss 52 and 53  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 57 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
+- **Annual CIT return filing deadline** — The income tax form is delivered at the time the Tax Administration designates (s 62), and the tax is due by the same date (s 63); PwC reports the last day of the third month after year end (31 March for calendar-year taxpayers)  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 62 and 63 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf ; PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/timor-leste/corporate/tax-administration)_
+- **CIT payment deadline** — The income tax for the year is due by the due date for delivering the income tax form; during the year an income taxpayer pays instalments of 0.5% of monthly turnover by the 15th of the following month, or quarterly instalments where the previous year's turnover was USD 1 million or less, credited against the year's liability  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 63 and 64 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 
 <!-- openaccountants-cta-block -->
 
