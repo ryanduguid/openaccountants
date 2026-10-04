@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T15:48:07+00:00",
+ "generated_at": "2026-10-04T15:56:09+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -5750,7 +5750,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-11"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cv-corporate-income-tax",
@@ -5762,8 +5762,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cv-income-tax",
@@ -5776,7 +5776,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cv-payroll-social",
@@ -5789,7 +5789,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cv-tax-overview",
@@ -5801,8 +5801,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cv-vat-gst",
@@ -5814,8 +5814,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cayman-tax",

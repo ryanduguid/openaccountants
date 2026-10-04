@@ -132,6 +132,9 @@ NON_GOV_AUTHORITY = frozenset((
                           # Corporate and Business Registration Department
                           # (companies.govmu.org), which publishes the Companies Act
                           # 2001 consolidation. Bare .org.
+    'inps.cv',            # Instituto Nacional de Previdência Social, the Cabo Verde
+                          # social security institute, which publishes the
+                          # contribution rates and payment deadline. Bare .cv.
     'mra.mw',             # Malawi Revenue Authority
     'dgi.bf',             # Burkina Faso, Direction Generale des Impots
     'impots.cm',          # Cameroon, Direction Generale des Impots
