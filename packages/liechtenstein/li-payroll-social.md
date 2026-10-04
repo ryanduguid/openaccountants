@@ -5,8 +5,8 @@ jurisdiction: LI
 category: payroll
 tax_year: 2025
 tax_year_notes: "2025, with the AHV/IV/FAK contribution table effective 1 January 2026 stated where it has been confirmed; ALV is also stated for 2026; other unconfirmed contribution figures must be checked for the required period"
-version: 0.1
-last_updated: 2026-09-10
+version: 0.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Family allowance fund (FAK), 2026** - Included in the AHV/IV/FAK totals above. Do not add a separate employer-only estimate to those totals. [2026 contribution table](https://www.sozialfonds.li/Portal/UserFiles/Downloads/Merkbl%C3%A4tter/Beitragspflicht%20Sozialversicherungen%202026.pdf)
 - **Occupational pension (2nd pillar, BVG)** — Mandatory; contribution depends on age, salary and pension plan, shared employer/employee (employer pays at least half) (approx — confirm plan-specific rates)  _(Occupational Pensions Act (BPVG) (as described at [usemultiplier.com](https://www.usemultiplier.com/liechtenstein/payroll)))_
 - **Accident insurance (UVG)** — Occupational accident insurance is employer-paid; rate varies by industry/risk. Non-occupational accident premium is typically employee-borne (approx — confirm rate)  _(Accident Insurance Act (UVersG) (as described at [rivermate.com](https://rivermate.com/guides/liechtenstein/taxes)))_
-- **Wage tax withholding (Quellensteuer / Lohnsteuerabzug)** — Employers withhold income tax at source for cross-border commuters and certain non-resident employees; resident employees generally pay via assessment (approx — confirm)  _([Tax Act (Steuergesetz, SteG)](https://taxsummaries.pwc.com/liechtenstein/individual/tax-administration))_
+- **Wage tax withholding (Quellensteuer / Lohnsteuerabzug)** — Employers deduct tax at source from employment income and board remuneration of resident employees (Art. 24 Abs. 1), where it is credited in the ordinary assessment, and of non-resident employees including cross-border commuters (Art. 24 Abs. 2), together with pension payments from former Liechtenstein employment  _(Steuergesetz (SteG, LGBl. 2010 Nr. 340), consolidated version in force from 1 July 2026 on gesetze.li, Art. 24 Abs. 1 and 2 — https://www.gesetze.li/konso/pdf/2010340000?version=38 ; https://taxsummaries.pwc.com/liechtenstein/individual/tax-administration)_
 - **Contribution / withholding remittance** — Social contributions are remitted to the social insurance funds (AHV-IV-FAK) on a periodic basis; payroll wage tax remitted to the Tax Administration (approx — confirm schedule)  _(Old-Age and Survivors' Insurance Act (AHVG) (as described at [rivermate.com](https://rivermate.com/guides/liechtenstein/taxes)))_
 
 <!-- openaccountants-cta-block -->
