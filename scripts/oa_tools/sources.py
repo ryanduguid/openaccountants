@@ -132,6 +132,10 @@ NON_GOV_AUTHORITY = frozenset((
                           # Corporate and Business Registration Department
                           # (companies.govmu.org), which publishes the Companies Act
                           # 2001 consolidation. Bare .org.
+    'bermudalaws.bm',     # Bermuda Laws Online, the Attorney-General's official
+                          # consolidation of Bermuda statutes. Bare .bm.
+    'cita.bm',            # Corporate Income Tax Agency, the statutory body that
+                          # administers Bermuda's corporate income tax. Bare .bm.
     'inps.cv',            # Instituto Nacional de Previdência Social, the Cabo Verde
                           # social security institute, which publishes the
                           # contribution rates and payment deadline. Bare .cv.

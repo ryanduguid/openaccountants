@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Bermuda (tax year 2025) — r
 jurisdiction: BM
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +19,7 @@ Bermuda is a British Overseas Territory with no personal income tax, no corporat
 
 - **Currency** — Bermudian dollar (BMD), pegged 1:1 to the US dollar (USD)  _(Government of Bermuda — official currency, https://taxsummaries.pwc.com/bermuda)_
 - **Personal income tax** — None — Bermuda does not impose income tax on individuals  _(PwC Worldwide Tax Summaries — Bermuda, Individual taxes on personal income, https://taxsummaries.pwc.com/bermuda/individual/taxes-on-personal-income)_
-- **Corporate income tax (general)** — None for most companies; a 15% CIT applies only to in-scope MNE constituent entities  _(Corporate Income Tax Act 2023, https://taxsummaries.pwc.com/bermuda/corporate/taxes-on-corporate-income)_
+- **Corporate income tax (general)** — None for most companies; a 15% corporate income tax applies from fiscal years beginning on or after 1 January 2025 only to Bermuda constituent entities of MNE groups with EUR 750 million or more of annual revenue  _(Corporate Income Tax Act 2023 (2023:35), Bermuda Laws Online, ss 4 and 11 — https://www.bermudalaws.bm/Laws/Annual%20Law/Acts/2023/Corporate%20Income%20Tax%20Act%202023 ; Government of Bermuda, Bermuda Corporate Income Tax — https://www.gov.bm/cit ; PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/bermuda/corporate/taxes-on-corporate-income)_
 - **Headline corporate income tax rate (in-scope MNEs)** — 15 percent  _(Corporate Income Tax Act 2023, https://www.gov.bm/CIT)_
 - **VAT / GST / sales tax** — None — Bermuda has no value-added tax, goods and services tax, or general sales tax  _(PwC Worldwide Tax Summaries — Bermuda, Other taxes, https://taxsummaries.pwc.com/bermuda/corporate/other-taxes)_
 - **Capital gains tax** — None  _(PwC Worldwide Tax Summaries — Bermuda, Overview, https://taxsummaries.pwc.com/bermuda)_
@@ -26,7 +27,7 @@ Bermuda is a British Overseas Territory with no personal income tax, no corporat
 - **Payroll tax year** — 1 April to 31 March  _(Payroll Tax Act 1995, https://www.gov.bm/payroll-tax)_
 - **Residence / taxation basis** — No income-based residence test for individuals (no income tax); payroll tax is levied on remuneration for work performed in Bermuda regardless of residence  _(Payroll Tax Act 1995, https://www.gov.bm/payroll-tax)_
 - **Withholding taxes on dividends, interest, royalties** — None  _(PwC Worldwide Tax Summaries — Bermuda, Corporate withholding taxes, https://taxsummaries.pwc.com/bermuda/corporate/other-taxes)_
-- **Common customs import duty rate** — 25 percent (most common rate; other rates apply by good; (approx — confirm by tariff line))  _(Customs Tariff Act 1970, https://taxsummaries.pwc.com/bermuda/corporate/other-taxes)_
+- **Common customs import duty rate** — 25% is the most common rate, with other rates by tariff line in the Bermuda Customs Tariff 2026; from 1 July 2025 duty on building materials and supplies fell to 10% and duty on motor vehicle parts was removed  _(PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/bermuda/corporate/other-taxes ; Government of Bermuda, Tax and Duty Reductions Take Effect From July 1, 2025 — https://www.gov.bm/articles/tax-duty-reductions-take-effect-july-1-2025 ; Government of Bermuda, Importing and exporting (Bermuda Customs Tariff 2026) — https://www.gov.bm/business/importing-and-exporting)_
 
 <!-- openaccountants-cta-block -->
 

@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Bermuda (tax year 2025) — rate
 jurisdiction: BM
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,8 +21,8 @@ Bermuda has no value-added tax, goods and services tax, or general sales tax. In
 - **VAT registration threshold** — Not applicable — no VAT system exists  _(PwC Worldwide Tax Summaries — Bermuda, Other taxes (https://taxsummaries.pwc.com/bermuda/corporate/other-taxes))_
 - **VAT return / filing frequency** — Not applicable — no VAT return is filed  _(PwC Worldwide Tax Summaries — Bermuda, Other taxes (https://taxsummaries.pwc.com/bermuda/corporate/other-taxes))_
 - **Reverse charge** — Not applicable — no VAT/GST framework exists, so no reverse-charge mechanism  _(PwC Worldwide Tax Summaries — Bermuda, Other taxes (https://taxsummaries.pwc.com/bermuda/corporate/other-taxes))_
-- **Main indirect tax (customs duty)** — Customs import duty is levied on most goods imported into Bermuda; the most common rate is 25% percent ((common rate — confirm by tariff line))  _(Customs Tariff Act 1970 (https://taxsummaries.pwc.com/bermuda/corporate/other-taxes))_
-- **Personal import duty allowance** — BMD 200 per passenger per landing for residents; BMD 50 for non-residents BMD ((confirm current allowance))  _(Customs Tariff Act 1970 (https://taxsummaries.pwc.com/bermuda/corporate/other-taxes))_
+- **Main indirect tax (customs duty)** — Customs import duty is levied on most goods imported into Bermuda at the rate for the goods' tariff code in the Bermuda Customs Tariff 2026; the most common rate is 25%, building materials carry 10% from 1 July 2025 and motor vehicle parts are duty free  _(PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/bermuda/corporate/other-taxes ; Government of Bermuda, Importing and exporting (Bermuda Customs Tariff 2026) — https://www.gov.bm/business/importing-and-exporting ; Government of Bermuda, Tax and Duty Reductions Take Effect From July 1, 2025 — https://www.gov.bm/articles/tax-duty-reductions-take-effect-july-1-2025)_
+- **Personal import duty allowance** — BMD 300 of accompanied personal goods for returning residents from 1 July 2025 (BMD 200 before), BMD 50 for visitors, plus 200 cigarettes, 50 cigars, 0.5 kg of tobacco, one litre of wine and one litre of spirits per arriving passenger  _(Government of Bermuda, Tax and Duty Reductions Take Effect From July 1, 2025 — https://www.gov.bm/articles/tax-duty-reductions-take-effect-july-1-2025 ; Government of Bermuda, Duty free allowances — https://www.gov.bm/duty-free-allowances ; visitor allowance: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/bermuda/corporate/other-taxes)_
 
 <!-- openaccountants-cta-block -->
 
