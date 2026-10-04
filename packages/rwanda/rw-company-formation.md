@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Rwanda (
 jurisdiction: RW
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +26,7 @@ Companies are registered with the Office of the Registrar General at the Rwanda 
 - **TIN and social security number** — The company code on the certificate of incorporation also serves as the Tax Identification Number (TIN) and RSSB number  _(RDB / RRA registration procedures — https://businessprocedures.rdb.rw/menu/1?l=en)_
 - **Registered office requirement** — A local physical address in Rwanda must be provided as the registered office  _(Law relating to Companies — https://org.rdb.rw/business-registration/)_
 - **Core incorporation steps** — Reserve/choose company name, prepare memorandum and articles, submit the online application via the RDB portal, receive certificate of incorporation with TIN, then register for VAT/PAYE and RSSB as applicable  _(RDB business registration procedures — https://businessprocedures.rdb.rw/menu/1?l=en)_
-- **Annual compliance — corporate income tax** — File annual CIT return and pay any balance within three months of year-end (31 March for calendar-year companies)  _(Tax Procedures Law / Income Tax Law (Law No. 027/2022) — https://taxsummaries.pwc.com/rwanda/corporate/tax-administration)_
+- **Annual compliance — corporate income tax** — File the annual CIT declaration and pay any balance not later than 31 March of the following year (within three months of the end of an approved non-calendar period), after quarterly prepayments on 30 June, 30 September and 31 December  _(Law nº 027/2022 of 20/10/2022 establishing taxes on income (Official Gazette nº Special of 28/10/2022), Rwanda Revenue Authority copy, Arts 9, 10 and 33 — https://www.rra.gov.rw/fileadmin/user_upload/Income_Tax_law_of_2022.pdf)_
 - **Ongoing compliance — VAT, PAYE, RSSB** — File and pay VAT (if registered), PAYE and RSSB contributions monthly by the 15th of the following month  _(Tax Procedures Law — https://www.rra.gov.rw)_
 - **Annual return to the Registrar General** — Companies must file an annual return / keep statutory records with the Office of the Registrar General ((approx — confirm exact annual return obligation and deadline))  _(Law relating to Companies — https://org.rdb.rw/business-registration/)_
 
