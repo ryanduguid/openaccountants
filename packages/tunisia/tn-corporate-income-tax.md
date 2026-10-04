@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Tunisia (tax year 202
 jurisdiction: TN
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,14 +15,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporate income tax (IS) rates — 2025
 
-The standard IS rate rose to 20% under the Finance Law 2024 and remains at 20% for 2025, with reduced and elevated rates for specified sectors. A minimum tax and the 0.5% Social Solidarity Contribution also apply.
+The standard IS rate rose to 20% under the Finance Law 2024 and remains at 20% for 2025, with reduced and elevated rates for specified sectors. A minimum tax and the Social Solidarity Contribution (1% base rate, raised to 3% or four points for returns due in 2023 to 2026) also apply.
 
-- **Standard corporate income tax rate** — 20% %  _(Loi de Finances 2025 (Finance Law 2025); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/corporate/taxes-on-corporate-income)_
+- **Standard corporate income tax rate** — 20% (art. 49(I) of the IRPP and IS Code as amended by art. 37(1) of the 2025 Finance Law)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 37(1), amending art. 49(I) of the IRPP and IS Code — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
 - **Reduced 10% rate** — 10% % (for craft, agricultural and fishing activities, certain cooperatives, and post-incentive regional-development companies)  _(IRPP-IS Code (CIRPPIS) — reduced CIT rate provisions — https://taxsummaries.pwc.com/tunisia/corporate/taxes-on-corporate-income)_
 - **35% rate sectors** — 35% % (for telecom operators, SICAF/SICAR investment companies, hydrocarbon services, hypermarkets, car dealers and foreign-brand franchisees)  _(IRPP-IS Code (CIRPPIS) — elevated CIT rate provisions — https://taxsummaries.pwc.com/tunisia/corporate/taxes-on-corporate-income)_
-- **40% rate (financial sector)** — 40% % (for banks, financial institutions (including non-resident), and insurance/reinsurance companies; On revenue realised as of 1 January 2024)  _(Loi de Finances 2024 (Finance Law 2024); IRPP-IS Code — https://taxsummaries.pwc.com/tunisia/corporate/taxes-on-corporate-income)_
+- **40% rate (financial sector)** — 40% for banks and financial institutions under Law 2016-48, including non-resident ones but excluding payment institutions, and for insurance and reinsurance companies (point 4 inserted into the third paragraph of art. 49(I) of the Code by art. 37(2) of the 2025 Finance Law); payment institutions are placed in the 35% list by art. 37(3)  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 37(2) and (3) — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf)_
 - **Minimum corporate tax** — 0.2% of local turnover (VAT included), minimum TND 500; reduced to 0.1% with a TND 300 floor for certain sectors  _(IRPP-IS Code (CIRPPIS) — minimum tax provisions — https://taxsummaries.pwc.com/tunisia/corporate/taxes-on-corporate-income)_
-- **Social Solidarity Contribution on companies** — 0.5% % (Additional on taxable profit; Applies for fiscal years 2023–2026 (confirm continuation))  _(Loi de Finances (Finance Law) — Social Solidarity Contribution provisions — https://taxsummaries.pwc.com/tunisia/corporate/other-taxes)_
+- **Social Solidarity Contribution on companies** — 1% of taxable profit as the base rate (PwC). For profits realised in 2022 to 2025 and declared in 2023 to 2026 the contribution is 3% for companies taxed at 10%, 15% or 20% (PwC) and, for companies taxed at 35% or 40%, the tax at the rate plus four points less the tax at the rate, with a TND 500 minimum (art. 37(11) of the 2025 Finance Law); art. 87(1) of the 2026 Finance Law restates the period as returns due in 2023 to 2026. This guide said 0.5% until October 2026; 0.5% is the individuals' rate  _(Finance Law for 2025, Law No. 2024-48 of 9 December 2024 (Official Gazette No. 149 of 10 December 2024; Ministry of Finance PDF, Arabic), art. 37(11) — https://www.finances.gov.tn/sites/default/files/2024-12/LF2025.pdf ; Finance Law for 2026, Law No. 2025-17 of 12 December 2025 (Official Gazette No. 148 of 12 December 2025; Ministry of Finance PDF, Arabic), art. 87(1) — https://www.finances.gov.tn/sites/default/files/2026-01/115725.pdf ; base rate and 3% band: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/tunisia/corporate/other-taxes)_
 - **Tax base** — Net accounting profit adjusted for non-deductible expenses and tax-exempt items; residents taxed on worldwide profit  _(IRPP-IS Code (CIRPPIS) — income determination — https://taxsummaries.pwc.com/tunisia/corporate/income-determination)_
 
 ## Withholding tax and filing
@@ -34,7 +35,7 @@ Tunisia applies withholding taxes on dividends, interest and royalties, with red
 - **Withholding tax on payments to tax havens** — 25% %  _(IRPP-IS Code (CIRPPIS) — withholding tax provisions — https://taxsummaries.pwc.com/tunisia/corporate/withholding-taxes)_
 - **Withholding tax on fees, commissions and rentals** — 10% (reduced to 3% for CIT-registered entities with proper accounting)  _(IRPP-IS Code (CIRPPIS) — withholding tax provisions — https://taxsummaries.pwc.com/tunisia/corporate/withholding-taxes)_
 - **Annual IS return deadline** — 25 March of the following year; 25 June for companies subject to statutory audit  _(IRPP-IS Code (CIRPPIS) — tax administration provisions — https://taxsummaries.pwc.com/tunisia/corporate/tax-administration)_
-- **Advance corporate tax instalments (acomptes provisionnels)** — Three instalments of 30% each of the prior year's tax, paid during the year (approx — confirm timing of each instalment)  _(IRPP-IS Code (CIRPPIS) — advance payment provisions — https://taxsummaries.pwc.com/tunisia/corporate/tax-administration)_
+- **Advance corporate tax instalments (acomptes provisionnels)** — Three instalments of 30% each of the prior year's tax, payable in the sixth, ninth and twelfth months of the year  _(Ministry of Finance, general overview of taxation (advance instalment rule; the page's rate tables predate the 2025 Finance Law) — https://www.finances.gov.tn/fr/apercu-general-sur-la-fiscalite)_
 
 <!-- openaccountants-cta-block -->
 
