@@ -1,10 +1,10 @@
 ---
 name: uzbekistan-social-contributions
 description: Use this skill whenever asked about Uzbekistan employer social tax (social insurance contributions), payroll withholding, personal income tax (PIT), or the Individual Accumulated Pension Fund (INPS) for employees and employers in the Republic of Uzbekistan. Trigger on phrases like "how much social tax do I pay in Uzbekistan", "Uzbek payroll tax", "social insurance contributions Uzbekistan", "INPS pension", "izhtimoiy soliq", "soliq.uz social tax", "12% social tax", "Uzbekistan PIT withholding", "do I withhold pension in Uzbekistan", "budget organisation social tax 25%", "Uzbek minimum wage payroll", or any question about employer/employee statutory contributions in Uzbekistan. Also trigger when classifying bank statement transactions that relate to Soliq (State Tax Committee) debits, social tax remittances, PIT withholding payments, or pension fund transfers from Uzbek banks (NBU, Ipoteka Bank, Asaka Bank, Kapitalbank, Hamkorbank, etc.). This skill covers employer social tax rates (12% private / 25% budget / 7% / 4.7% / 1% incentives), the flat 12% PIT, the 0.1% INPS carve-out, monthly reporting deadlines, residency rules, minimum wage and BCU, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Uzbekistan social-tax or payroll work.
-version: 0.1
+version: 0.2
 jurisdiction: UZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -87,8 +87,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **R-UZ-ST-1 -- Employer category unknown** — Trigger: employer category (private / budget / disability / SOS / incentive) not provided. Message: "The employer social tax rate depends on the employer category — 12% for private (non-budget) employers, 25% for budget organisations, 4.7% / 7% / 1% for special categories. Cannot compute social tax without confirming the category."
 - **R-UZ-ST-2 -- Incentive 1% rate** — Trigger: client claims the 1% incentive social tax rate. Message: "The 1% social tax incentive is sector-specific AND time-limited (e.g., cotton-textile/garment clusters 1 Sep 2025–1 Sep 2028; children's content producers 1 Jul 2025–1 Jul 2030; fruit/veg packaging 1 May 2025–1 Jan 2028; low-income-employee hirers at >1.5x min wage 1 Jan 2025–1 Jan 2028; vocational students under 30 from 1 Sep 2024–1 Sep 2027). Confirm both the sector qualification and that the payroll month falls inside the window before applying. Escalate to a qualified Uzbek tax professional."
-- **R-UZ-ST-3 -- Contribution base cap** — Trigger: client asks whether a floor or ceiling caps the social tax base. Message: "No statutory floor or ceiling on the social tax base was found in authoritative sources [RESEARCH GAP]. Do not assume a cap. Escalate to a qualified Uzbek tax professional to confirm against the current Tax Code."
-- **R-UZ-ST-4 -- Penalty / arrears quantification** — Trigger: client has unpaid social tax or PIT and wants the penalty quantified. Message: "Late payment interest accrues at 1/300 of the Central Bank refinancing rate per day. Fixed-amount fines for late registration/understatement were not retrievable from authoritative sources [RESEARCH GAP]. Do not quantify arrears or fines without verifying the current Tax Code. Escalate to a qualified Uzbek tax professional."
+- **R-UZ-ST-3 -- Contribution base cap** — Trigger: client asks whether a floor or ceiling caps the social tax base. Message: "The Tax Code sets no floor or ceiling: art. 404 defines the base as the payroll expenses paid under art. 371, and art. 405 sets the rates (12% for most payers, 25% for budget organisations). Compute on full gross payroll."  _(Tax Code of the Republic of Uzbekistan (Soliq kodeksi, consolidated text on lex.uz), art. 404 and 405 — https://lex.uz/docs/4674902)_
+- **R-UZ-ST-4 -- Penalty / arrears quantification** — Trigger: client has unpaid social tax or PIT and wants the penalty quantified. Message: "Late-payment interest (penya) accrues at one three-hundredth of the Central Bank of Uzbekistan refinancing rate per day on the unpaid tax, from the day after the due date (art. 110). Late filing of a tax report is an administrative offence under art. 220, with the fine amounts in the Code of Administrative Liability, which was not read [RESEARCH GAP — reviewer to confirm the administrative fine amounts]. Do not quantify fines without checking that Code. Escalate to a qualified Uzbek tax professional."  _(Tax Code of the Republic of Uzbekistan (Soliq kodeksi, consolidated text on lex.uz), art. 110 and 220 — https://lex.uz/docs/4674902)_
 - **R-UZ-ST-5 -- Non-resident / cross-border employment** — Trigger: employee is a non-resident or works partly outside Uzbekistan. Message: "Non-residents are taxed at 12% on most Uzbek-source income (10% dividends/interest, 6% freight/transport). Residency and treaty relief require case-specific confirmation. Escalate to a qualified Uzbek tax professional."
 
 ## Section 3 -- Payment pattern library
@@ -218,7 +218,7 @@ These rules apply when payroll/bank statement data is clear and all required inp
 ### Rule 1 -- Employer social tax formula (one rate per employer)
 
 - **Employer social tax formula** — Employer social tax = gross_payroll x rate rate = 12%   if private / "other taxpayers"            (PwC) rate = 25%   if budget (state-funded) organisation     (PwC) rate = 4.7%  if organisation employing persons w/ disabilities (PwC) rate = 7%    if SOS Children's Villages of Uzbekistan   (PwC) rate = 1%    if a qualifying time-limited incentive applies (EY)  _(PwC; EY)_
-- **Social tax base** — The social tax base is gross payroll of local AND foreign employees, with no published floor or ceiling [RESEARCH GAP — confirm cap].
+- **Social tax base** — The social tax base is the payroll expenses paid under art. 371 to local and foreign employees (art. 404); the Code sets no floor or ceiling on it.  _(Tax Code of the Republic of Uzbekistan (Soliq kodeksi, consolidated text on lex.uz), art. 404 — https://lex.uz/docs/4674902)_
 
 ### Rule 2 -- PIT is a flat 12% (not progressive)
 
@@ -275,7 +275,7 @@ When payroll/bank statement data is ambiguous or client circumstances are unclea
 
 ### T2-4 -- Contribution base cap
 
-- **Contribution base cap flag** — Trigger: Very high salaries; client asks whether the social tax base is capped. Issue: No statutory floor/ceiling on the social tax base was found in authoritative sources [RESEARCH GAP]. Action: Flag for reviewer. Compute on full gross payroll unless a client-specific exemption is confirmed.
+- **Contribution base cap flag** — Trigger: Very high salaries; client asks whether the social tax base is capped. Issue: art. 404 defines the base as payroll expenses and sets no floor or ceiling. Action: compute on full gross payroll unless a client-specific exemption is confirmed.  _(Tax Code of the Republic of Uzbekistan (Soliq kodeksi, consolidated text on lex.uz), art. 404 — https://lex.uz/docs/4674902)_
 
 ### T2-5 -- Annual individual PIT declaration
 
