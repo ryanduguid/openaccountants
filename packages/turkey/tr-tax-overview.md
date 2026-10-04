@@ -3,7 +3,7 @@ name: tr-tax-overview
 description: "Source-cited draft: tax overview for Turkey (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TR
 category: international
-tax_year: 2025
+tax_year: 2026
 last_updated: 2026-10-04
 version: 1.1
 review_status: pending_review
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Turkish tax system at a glance (2026)
 
-Turkey (Türkiye) operates a national tax system administered centrally, with progressive personal income tax, a flat corporate income tax, and a broad-based VAT. The figures below reflect the 2025 calendar tax year. This is an unverified source-cited draft pending review by a licensed Turkish accountant (Yeminli Mali Müşavir / Serbest Muhasebeci Mali Müşavir).
+Turkey (Türkiye) operates a national tax system administered centrally, with progressive personal income tax, a flat corporate income tax, and a broad-based VAT. The figures below reflect the 2026 calendar tax year. This is an unverified source-cited draft pending review by a licensed Turkish accountant (Yeminli Mali Müşavir / Serbest Muhasebeci Mali Müşavir).
 
 - **Standard tax year** — Calendar year (1 January – 31 December) for individuals (GVK art. 108); companies use the calendar year unless assigned a special accounting period (KVK art. 16(1))  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), art. 108 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf ; Corporate Tax Law No. 5520 (Kurumlar Vergisi Kanunu, consolidated text, mevzuat.gov.tr), art. 16(1) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.5520.pdf)_
 - **Currency** — Turkish lira (TRY)  _(Central Bank of the Republic of Türkiye)_
