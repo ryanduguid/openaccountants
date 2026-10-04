@@ -1,11 +1,11 @@
 ---
 name: qatar-tax
 description: Use this skill whenever asked about Qatar indirect tax or VAT status. Qatar does NOT have VAT/GST as of April 2026. This skill documents the current tax landscape and expected future VAT under the GCC Unified VAT Agreement. ALWAYS read before advising on Qatar tax.
-version: 2.0
+version: 2.1
 jurisdiction: QA
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -79,16 +79,16 @@ Qatar company buys goods from UAE. UAE supplier charges 5% UAE VAT. The UAE VAT 
 
 ### 5.2 Corporate income tax
 
-- **Corporate income tax rate** — 10% percent (flat on non-Qatari-owned share of profits)
+- **Corporate income tax rate** — 10% flat on the share of profits not attributable to Qatari or GCC owners  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, arts 4 and 9 — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
 - **Qatari/GCC-owned share exemption** — Qatari/GCC-owned share exempt.
-- **Oil/gas corporate tax rate** — up to 35% percent
+- **Oil/gas corporate tax rate** — Not less than 35% for petroleum operations and petrochemical industries  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, art 9(1) — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
 
 ### 5.3 Excise tax
 
-- **Tobacco excise rate** — 100% percent
-- **Energy drinks excise rate** — 100% percent
-- **Carbonated drinks excise rate** — 50% percent
-- **Special purpose goods excise rate** — 100% percent
+- **Tobacco excise rate** — 100%  _(Excise Tax Law No. 25 of 2018 and its Executive Regulations, General Tax Authority 2024 English edition, art 2 and the attached schedule of rates — https://www.gta.gov.qa/assets/pdf/Excise%20Tax%20Law%20EN%202024.pdf)_
+- **Energy drinks excise rate** — 100%  _(Excise Tax Law No. 25 of 2018 and its Executive Regulations, General Tax Authority 2024 English edition, art 2 and the attached schedule of rates — https://www.gta.gov.qa/assets/pdf/Excise%20Tax%20Law%20EN%202024.pdf)_
+- **Carbonated drinks excise rate** — 50%  _(Excise Tax Law No. 25 of 2018 and its Executive Regulations, General Tax Authority 2024 English edition, art 2 and the attached schedule of rates — https://www.gta.gov.qa/assets/pdf/Excise%20Tax%20Law%20EN%202024.pdf)_
+- **Special purpose goods excise rate** — 100%  _(Excise Tax Law No. 25 of 2018 and its Executive Regulations, General Tax Authority 2024 English edition, art 2 and the attached schedule of rates — https://www.gta.gov.qa/assets/pdf/Excise%20Tax%20Law%20EN%202024.pdf)_
 - **Excise filing frequency** — Monthly return to GTA.
 
 ### 5.4 Customs duties
@@ -131,7 +131,7 @@ Prudent to include VAT change-of-law clause.
 
 No Qatar VAT on digital services.
 
-- **EC7 -- Withholding tax.** — 5% WHT on payments to non-residents for services in Qatar. This is CIT, NOT VAT.
+- **EC7 -- Withholding tax.** — 5% final withholding on royalties, interest, commissions and fees for services performed wholly or partly in Qatar paid to non-residents without a permanent establishment. This is income tax, NOT VAT.  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, art 9(2) — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
 
 Energy drink tax is excise, NOT VAT.
 
