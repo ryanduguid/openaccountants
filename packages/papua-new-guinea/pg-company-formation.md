@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Papua Ne
 jurisdiction: PG
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Incorporation timeline** — Typically a few business days once a compliant application and name reservation are lodged online ((approx — confirm current IPA processing times))  _(Companies Act 1997 (https://www.ipa.gov.pg/public/help.aspx?cn=BusinessRegulations))_
 - **Incorporation fee** — An IPA registration fee applies; verify the current schedule on the IPA portal ((approx — confirm current IPA fee))  _(Companies Act 1997 (https://www.ipa.gov.pg/public/help.aspx?cn=BusinessRegulations))_
 - **Annual return** — Companies must file an annual return with the IPA each year to remain on the register  _(Companies Act 1997 (https://www.ipa.gov.pg/public/help.aspx?cn=BusinessRegulations))_
-- **Stamp duty on property transfer** — Up to a maximum of 5% on conveyance of property where value exceeds PGK 100,000 %  _(Stamp Duties Act (https://taxsummaries.pwc.com/papua-new-guinea/corporate/other-taxes))_
+- **Stamp duty on property transfer** — Conveyance duty of 2% up to K35,000 of value (minimum K5), 3% to K70,000, 4% to K140,000 and 5% above K140,000; a citizen first home buyer pays nil up to K700,000 and 5% of the excess; transfers of marketable securities carry 1% (minimum K0.10)  _(Internal Revenue Commission, Stamp Duty — https://irc.gov.pg/pages/know-your-taxes/stamp-duty)_
 
 <!-- openaccountants-cta-block -->
 
