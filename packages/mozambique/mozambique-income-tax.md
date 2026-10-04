@@ -1,7 +1,7 @@
 ---
 name: mozambique-income-tax
 description: Use this skill whenever asked about Mozambique personal income tax (IRPS) for employees, self-employed individuals, and small businesses. Trigger on phrases like "how much IRPS do I pay", "Modelo 10", "income tax return Mozambique", "IRPS rates", "PAYE Mozambique", "INSS contributions", "ISPC simplified regime", "first category income", "second category income", "imposto sobre o rendimento", "rendimento colectável", "self-employed tax Mozambique", "pagamentos por conta", or any question about filing or computing IRPS for a resident or non-resident individual. Also trigger when preparing or reviewing a Modelo 10 return, computing INSS payroll deductions, applying the progressive IRPS scale, or advising on the 2026 Law 11/2025 reform. This skill covers IRPS rate brackets, income categories, personal/dependent deductions, INSS social security, ISPC, sector minimum wages, filing deadlines, penalties, and the Law 11/2025 reform. ALWAYS read this skill before touching any Mozambique income tax or payroll work.
-version: 0.2
+version: 0.3
 jurisdiction: MZ
 tax_year: 2025
 last_updated: 2026-10-04
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 31 March (employment-only) / 30 April (all other cases) of following year |
 | Validated by | Pending -- requires sign-off by a Mozambican tax professional |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 Regime note. The 2025 tax year and earlier follow the long-standing CIRPS. Law No. 11/2025 (29 Dec 2025) enters into force 1 January 2026: it does not change the rate brackets but redefines residency, abolishes simplified/exemption regimes, ends the employee filing waiver, and adds digital-service withholding. See Section 11. Source: DLA Piper Africa / SAL & Caldeira — https://www.dlapiperafrica.com/en/mozambique/insights/2026/Changes-to-the-Personal-Income-Tax-Code
 
@@ -515,32 +515,32 @@ ONBOARDING QUESTIONS -- MOZAMBIQUE IRPS
 | Non-payment / late submission | Fine of **1 to 3 minimum salaries × number of workers** on the declaration | INSS — https://www.inss.gov.mz/duvidas/ |
 | Failure to register a worker | **1 to 5 minimum salaries** | INSS — https://www.inss.gov.mz/duvidas/ |
 
-### Sector Minimum Wages (2025, effective 1 July 2025, retroactive)
+### Sector Minimum Wages (2025 from 1 July 2025; 2026 from 1 April 2026; both retroactive)
 
-Set by Ministerial Diplomas Nos. 87–94/2025 (approved 22 Sep 2025). There is no single national minimum — it is sector-based.
+Set by Ministerial Diplomas Nos. 87–94/2025 (approved 22 Sep 2025). There is no single national minimum — it is sector-based. The 2026 revision was approved by the Council of Ministers on 28 April 2026 (rises of 3% to 9.8%; public administration and kapenta fishing unchanged); its diplomas have not been sourced (AIM report via Club of Mozambique, 29 April 2026).
 
-**Sector Minimum Wages table**  _(DLA Piper Africa / SAL & Caldeira — https://www.dlapiperafrica.com/pt/mozambique/insights/2025/Approval-of-New-Minimum-Wages-2025 ; Club of Mozambique — https://clubofmozambique.com/news/mozambique-minimum-wages-increase-2-9-to-9-depending-on-sector-with-retroactive-effect-from-1-july/)_
+**Sector Minimum Wages table**  _(DLA Piper Africa / SAL & Caldeira — https://www.dlapiperafrica.com/pt/mozambique/insights/2025/Approval-of-New-Minimum-Wages-2025 ; Club of Mozambique — https://clubofmozambique.com/news/mozambique-minimum-wages-increase-2-9-to-9-depending-on-sector-with-retroactive-effect-from-1-july/ ; AIM report via Club of Mozambique, 29 Apr 2026 — https://clubofmozambique.com/news/mozambique-minimum-wages-rise-between-3-and-9-8-across-sectors/)_
 
-| Sector | 2025 monthly minimum (MZN) |
-| --- | --- |
-| Agriculture, livestock, hunting, forestry | 6,688.00 |
-| Maritime/industrial/semi-industrial fishing | 6,726.88 |
-| Kapenta fishing | 4,991.09 |
-| Mineral extraction — large companies | 15,176.66 |
-| Mineral extraction — medium enterprises | 8,008.00 |
-| Mineral extraction — micro/small (incl. salt) | 6,538.44 |
-| Manufacturing (excl. bread & cashew) | 10,147.50 |
-| Bread manufacturing | 7,200.00 |
-| Cashew industry | 6,653.21 |
-| Electricity/gas/water — large companies | 12,275.00 |
-| Electricity/gas/water — small/medium | 9,960.62 |
-| Construction | 8,400.00 |
-| Non-financial services | 10,310.00 |
-| Hotels/tourism | 9,700.00 |
-| Private security | 8,465.00 |
-| Fuel retail | 9,739.00 |
-| Banking & insurance | 19,043.61 |
-| Microfinance & micro-insurance | 16,764.47 |
+| Sector | 2025 monthly minimum (MZN) | 2026 monthly minimum (MZN, from 1 Apr 2026) |
+| --- | --- | --- |
+| Agriculture, livestock, hunting, forestry | 6,688.00 | 7,072.00 |
+| Maritime/industrial/semi-industrial fishing | 6,726.88 | 7,063.22 |
+| Kapenta fishing | 4,991.09 | 4,991.09 (unchanged; no consensus) |
+| Mineral extraction — large companies | 15,176.66 | 16,239.06 |
+| Mineral extraction — medium enterprises | 8,008.00 | 8,488.48 |
+| Mineral extraction — micro/small (incl. salt) | 6,538.44 | 6,824.17 |
+| Manufacturing (excl. bread & cashew) | 10,147.50 | 10,622.50 |
+| Bread manufacturing | 7,200.00 | 7,500.00 |
+| Cashew industry | 6,653.21 | 7,000.00 |
+| Electricity/gas/water — large companies | 12,275.00 | 12,775.00 |
+| Electricity/gas/water — small/medium | 9,960.62 | 10,366.00 |
+| Construction | 8,400.00 | 8,652.00 |
+| Non-financial services | 10,310.00 | 10,845.00 |
+| Hotels/tourism | 9,700.00 | 10,600.00 |
+| Private security | 8,465.00 | [RESEARCH GAP — AIM reports one 2026 figure, 10,079.00, for private security and fuel retail together] |
+| Fuel retail | 9,739.00 | 10,079.00 |
+| Banking & insurance | 19,043.61 | 20,361.43 |
+| Microfinance & micro-insurance | 16,764.47 | 17,924.57 |
 
 ### Municipal Personal Tax (Imposto Pessoal Autárquico)
 

@@ -1,10 +1,10 @@
 ---
 name: nicaragua-payroll
 description: Use this skill whenever asked about Nicaragua payroll processing for employed persons. Trigger on phrases like "Nicaragua payroll", "nomina Nicaragua", "INSS deduction", "INSS laboral", "INSS patronal", "IR rentas del trabajo", "retencion IR Nicaragua", "INATEC 2%", "Form IR-122", "Form IR-106", "planilla INSS", "salario neto Nicaragua", "net salary Nicaragua", "cordoba payroll", "employer social security Nicaragua", "salario minimo Nicaragua", "minimum wage Nicaragua", "gross to net Nicaragua", or any question about computing employee pay, income-tax withholding, or social-security contributions for Nicaragua-based employees. This skill covers IR (rentas del trabajo) progressive withholding, INSS employee/employer contributions (Regimen Integral), the INATEC training levy, sector minimum wages, payroll filing obligations (IR-122, IR-106, INSS planilla), and penalties. The reporting currency is the Nicaraguan cordoba (NIO / C$). ALWAYS read this skill before processing any Nicaragua payroll.
-version: 0.1
+version: 0.2
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Nicaragua Payroll Skill v0.1 (Tier 2 — research-verified, pending accountant sign-off)
+# Nicaragua Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Nicaragua Payroll Skill v0.1 (Tier 2 — research-verified, pending accountant sign-off)
+## Nicaragua Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
 
 ## Section 1 -- Quick Reference
 
@@ -136,22 +136,24 @@ For biweekly (quincenal) pay, contributions are computed on the period's gross a
 
 **Self-check:** 21.5 + 2.0 = **23.5%** ✓ ; 22.5 + 2.0 = **24.5%** ✓
 
-## Section 5 -- Minimum Wage (effective 1 March 2025 -- 28 February 2026)
+## Section 5 -- Minimum Wage (1 March 2025 -- 28 February 2026, and 1 March 2026 -- 28 February 2027)
 
-- **4% increase context** — A 4% increase was agreed by the Comision Nacional de Salario Minimo, effective 1 March 2025. Monthly minimums by sector (NIO/month).  _([Bloomberg Linea, 28 Feb 2025; CNZF confirmation of 4% rise])_
+- **4% increase context** — A 4% increase was agreed by the Comision Nacional de Salario Minimo, effective 1 March 2025, and a further 4% for the nine sectors from 1 March 2026 to 28 February 2027 (tripartite agreement, retroactive, published by MITRAB). Monthly minimums by sector (C$/month).  _([Bloomberg Linea, 28 Feb 2025 and 6 Mar 2026; Revista E&N, 5 Mar 2026; CNZF confirmation of the 2025 rise])_
 
-**Minimum wage by sector**  _([Sources: https://www.bloomberglinea.com/2025/02/28/salario-minimo-de-nicaragua-2025-los-montos-por-sector-a-partir-del-1-de-marzo/ ; https://cnzf.gob.ni/salario-minimo-en-nicaragua-subira-4-a-partir-del-1-de-marzo/])_
+**Minimum wage by sector**  _([Sources: https://www.bloomberglinea.com/2025/02/28/salario-minimo-de-nicaragua-2025-los-montos-por-sector-a-partir-del-1-de-marzo/ ; https://www.bloomberglinea.com/2026/03/06/salario-minimo-en-nicaragua-2026-estos-son-los-nuevos-montos-tras-el-aumento-del-4/ ; https://cnzf.gob.ni/salario-minimo-en-nicaragua-subira-4-a-partir-del-1-de-marzo/])_
 
-| Sector | Monthly minimum (C$) |
-| --- | --- |
-| Agropecuario (agriculture) | 5,950.02 |
-| Micro/pequena industria artesanal y turistica | 6,268.43 |
-| Gobierno Central y Municipal | 7,419.90 |
-| Minas, canteras e industria manufacturera | 8,046.00 |
-| Pesca (fishing) | 9,047.20 |
-| Electricidad/gas/agua, comercio, restaurantes, hoteles, transporte, comunicaciones | 10,913.54 |
-| Construccion, establecimientos financieros y seguros | 13,315.61 |
-| Industria sujeta a regimen fiscal (zonas francas / maquila) | **[RESEARCH GAP — reviewer to confirm]** — set separately; not isolated in sources. Verify with MITRAB. |
+| Sector | From 1 Mar 2025 (C$) | From 1 Mar 2026 (C$) |
+| --- | --- | --- |
+| Agropecuario (agriculture) | 5,950.02 | 6,188.02 |
+| Micro/pequena industria artesanal y turistica | 6,268.83 | 6,519.58 |
+| Gobierno Central y Municipal | 7,419.90 | 7,716.70 |
+| Industria manufacturera | 8,000.46 | 8,320.48 |
+| Servicios comunales, sociales y personales | 8,341.29 | 8,674.94 |
+| Pesca (fishing) | 9,047.20 | 9,409.09 |
+| Minas y canteras | 10,686.02 | 11,113.46 |
+| Electricidad/gas/agua, comercio, restaurantes, hoteles, transporte, comunicaciones | 10,913.54 | 11,350.08 |
+| Construccion, establecimientos financieros y seguros | 13,315.61 | 13,848.23 |
+| Industria sujeta a regimen fiscal (zonas francas / maquila) | 9,359.46 (from 1 Jan 2025) | 9,986.54 (from 1 Jan 2026, +6.7%); set by a separate agreement, confirm with MITRAB / CNZF |
 
 ## Section 6 -- Conservative Defaults
 
@@ -266,7 +268,7 @@ Gross monthly: C$30,000. Resident. Sector: commerce. Headcount < 50.
 
 ### Example B — Commerce minimum wage
 
-Gross monthly: C$10,913.54 (commerce sector minimum). Resident. Headcount < 50.
+Gross monthly: C$10,913.54 (commerce sector minimum to 28 February 2026; C$11,350.08 from 1 March 2026). Resident. Headcount < 50.
 
 **Example B table**
 
@@ -283,9 +285,9 @@ Gross monthly: C$10,913.54 (commerce sector minimum). Resident. Headcount < 50.
 | INATEC | 10,913.54 x 2% | 218.27 |
 | **Total employer cost** | 10,913.54 + 2,346.41 + 218.27 | **13,478.22** |
 
-### Example C — Exempt low earner (manufacturing minimum)
+### Example C — Exempt low earner (near the manufacturing minimum)
 
-Gross monthly: C$8,046.00 (minas/manufactura minimum). Resident. Headcount < 50.
+Gross monthly: C$8,046.00 (illustrative low earner; the manufacturing minimum is C$8,000.46 to 28 February 2026 and C$8,320.48 from 1 March 2026). Resident. Headcount < 50.
 
 **Example C table**
 
@@ -363,7 +365,7 @@ These require a licensed Nicaraguan accountant's judgement — surface them, do 
 | Aguinaldo (13th month) taxation | Interaction of the statutory 13th-month payment with the annual IR reconciliation. |
 | Bonuses / variable pay | Irregular pay distorts the simple /12 annualization; reconcile on IR-106. |
 | Non-resident INSS applicability | Depends on contract type and local-employment status. **[RESEARCH GAP]** |
-| Zona franca / maquila minimum wage | Set separately by sector agreement. **[RESEARCH GAP]** |
+| Zona franca / maquila minimum wage | Set separately by sector agreement: C$9,986.54/month from 1 January 2026 (+6.7% on C$9,359.46; Bloomberg Linea, Revista E&N). Confirm the agreement text with MITRAB / CNZF. |
 | Expat / dual-coverage cases | Totalization, foreign social security, treaty positions. |
 | Severance (liquidacion / indemnizacion) | Tax and INSS treatment of termination payments. |
 | Exact DGI penalty percentages | Codigo Tributario figures not confirmed. **[RESEARCH GAP]** |

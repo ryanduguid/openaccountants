@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T02:04:42+00:00",
+ "generated_at": "2026-10-04T02:27:00+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -14993,7 +14993,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "nicaragua-social-contributions",
@@ -15006,7 +15006,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ne-company-formation",
@@ -21584,7 +21584,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "pk-return-assembly",
@@ -23066,7 +23066,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "us-mn-sales-tax",

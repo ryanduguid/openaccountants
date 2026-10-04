@@ -1,0 +1,14 @@
+# Store every text file with LF line endings and check it out with LF on every platform.
+# A CRLF blob slipped into main on 4 October 2026 after a scripted edit on Windows; this
+# setting keeps the clean filter normalising regardless of each contributor's core.autocrlf.
+* text=auto eol=lf
+
+# Binary formats are never normalised.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary

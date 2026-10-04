@@ -1,7 +1,7 @@
 ---
 name: mozambique-payroll
 description: Use this skill whenever asked about Mozambique payroll processing for employed persons. Trigger on phrases like "Mozambique payroll", "IRPS withholding", "IRPS Moçambique", "INSS deduction", "segurança social Moçambique", "PAYE Mozambique", "Form 19", "Modelo 19", "M/19", "tax withholding Mozambique", "salário líquido Moçambique", "net salary Mozambique", "employer INSS Mozambique", "salário mínimo Moçambique", "minimum wage Mozambique", "MAIBOR penalty", "gross to net Mozambique", "non-resident 20% Mozambique", "Lista Nominal", or any question about computing employee pay, income-tax withholding, or social-security contributions for Mozambique-based employees. This skill covers IRPS (income tax) monthly withholding by the employer, INSS social security (employee 3% + employer 4%), the monthly PAYE table, non-resident flat withholding, minimum wage by sector, and filing obligations to the Autoridade Tributária (AT) and INSS. ALWAYS read this skill before processing any Mozambique payroll.
-version: 0.2
+version: 0.3
 jurisdiction: MZ
 tax_year: 2025
 last_updated: 2026-10-04
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Mozambique Payroll
 
-## Mozambique Payroll Skill v0.2
+## Mozambique Payroll Skill v0.3
 
 > **Tier 2 (research-verified) — NOT yet accountant-verified.** Several figures carry `[RESEARCH GAP — reviewer to confirm]` markers. A licensed Mozambican *contabilista* or *técnico de contas* must reconcile those before any output is presented as final. In particular the full **monthly PAYE per-cell deduction matrix** (income band × dependents) and the **exact statutory penalty schedule** are incomplete here.
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual Nominal List (Lista Nominal) | By **30 April** each year (RSM 2025 pp.3–4) |
 | Key legislation | Código do IRPS; Lei n.º 11/2025 (IRPS reform, eff. 29 Dec 2025); Código Geral Tributário; Lei do INSS; INSS Note n.º 246/INSS/GAB-DG/432/2024 |
 | Validated by | Pending -- requires sign-off by a licensed Mozambican accountant |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ## Section 2 -- Income Tax Withholding (IRPS — Imposto sobre o Rendimento das Pessoas Singulares)
 
@@ -126,20 +126,20 @@ This also applies to a resident not present in the country (see residency note) 
 
 ## Section 4 -- Minimum Wage (sectoral)
 
-Mozambique sets minimum wages by sector — there is no single national figure. The 2025 values were approved by the Council of Ministers on 2 Sept 2025, increases of 2.9%–9%, effective retroactively from 1 July 2025. Selected monthly figures (MZN):
+Mozambique sets minimum wages by sector — there is no single national figure. The 2025 values were set by decrees dated 22 September 2025, increases of 2.9%–9%, effective retroactively from 1 July 2025. The 2026 values were approved by the Council of Ministers on 28 April 2026, increases of 3% to 9.8%, effective retroactively from 1 April 2026; public administration and kapenta fishing were left unchanged (AIM report via Club of Mozambique, 29 April 2026). Selected monthly figures (MZN):
 
-**Sectoral minimum wages 2025**  _(https://clubofmozambique.com/news/mozambique-minimum-wages-increase-2-9-to-9-depending-on-sector-with-retroactive-effect-from-1-july/ and https://www.dlapiperafrica.com/pt/mozambique/insights/2025/Approval-of-New-Minimum-Wages-2025)_
+**Sectoral minimum wages 2025 and 2026**  _(https://clubofmozambique.com/news/mozambique-minimum-wages-increase-2-9-to-9-depending-on-sector-with-retroactive-effect-from-1-july/ ; https://www.dlapiperafrica.com/pt/mozambique/insights/2025/Approval-of-New-Minimum-Wages-2025 ; https://clubofmozambique.com/news/mozambique-minimum-wages-rise-between-3-and-9-8-across-sectors/)_
 
-| Sector | Min wage (MZN/month) | Increase | Source |
-| --- | --- | --- | --- |
-| Agriculture, livestock, hunting, forestry | **6,688** | +5.5% | Club of Mozambique; DLA Piper |
-| Fishing (maritime/industrial/semi-industrial) | **6,726.88** | +2.9% | Club of Mozambique; DLA Piper |
-| Hotels / tourism | **9,700** | +9% | Club of Mozambique; DLA Piper |
-| Non-financial services (general) | **10,310** | +7.8% | Club of Mozambique; DLA Piper |
-| Microfinance / micro-insurance | **16,764** | +6.5% | Club of Mozambique; DLA Piper |
-| Financial services — banks / insurance | **19,043.61** | +6.5% | Club of Mozambique; DLA Piper |
+| Sector | From 1 Jul 2025 (MZN/month) | 2025 increase | From 1 Apr 2026 (MZN/month) | Source |
+| --- | --- | --- | --- | --- |
+| Agriculture, livestock, hunting, forestry | **6,688** | +5.5% | **7,072** | Club of Mozambique; DLA Piper; AIM via Club of Mozambique (2026) |
+| Fishing (maritime/industrial/semi-industrial) | **6,726.88** | +2.9% | **7,063.22** | Club of Mozambique; DLA Piper; AIM via Club of Mozambique (2026) |
+| Hotels / tourism | **9,700** | +9% | **10,600** | Club of Mozambique; DLA Piper; AIM via Club of Mozambique (2026) |
+| Non-financial services (general) | **10,310** | +7.8% | **10,845** | Club of Mozambique; DLA Piper; AIM via Club of Mozambique (2026) |
+| Microfinance / micro-insurance | **16,764** | +6.5% | **17,924.57** | Club of Mozambique; DLA Piper; AIM via Club of Mozambique (2026) |
+| Financial services — banks / insurance | **19,043.61** | +6.5% | **20,361.43** | Club of Mozambique; DLA Piper; AIM via Club of Mozambique (2026) |
 
-> The lowest sector minimum (≈**6,688** MZN/month) sits **below** the monthly IRPS 0% PAYE floor (≈**20,250** MZN/month), so most minimum-wage earners owe **no IRPS** but **do pay the 3% INSS**.
+> The lowest sector minimum in this table (**6,688** MZN/month in 2025, **7,072** from 1 April 2026) sits **below** the monthly IRPS 0% PAYE floor (≈**20,250** MZN/month), so most minimum-wage earners owe **no IRPS** but **do pay the 3% INSS**.
 
 ## Section 5 -- Conservative Defaults
 
@@ -230,7 +230,7 @@ Classify bank-statement lines deterministically. Match case-insensitively; longe
 
 ### Example 2 — Financial-sector minimum-wage earner, just below the PAYE floor
 
-**Inputs:** Salary **19,043.61 MZN/month** (banks/insurance minimum), resident, 0 dependents.
+**Inputs:** Salary **19,043.61 MZN/month** (banks/insurance minimum to 31 March 2026; 20,361.43 from 1 April 2026), resident, 0 dependents.
 
 - Monthly pay 19,043.61 < **20,250** floor → **IRPS PAYE = 0.00** (operative monthly table).
 - INSS employee 3% × 19,043.61 = **571.31**.
@@ -436,6 +436,8 @@ Governed by the Código Geral Tributário and the Fiscal Offences regime (Regime
 | Nominal List deadline | 30 April | RSM 2025 pp.3–4 |
 | Min wage 2025 (lowest sector) | 6,688 MZN/month (agriculture) | Club of Mozambique; DLA Piper |
 | Min wage 2025 (financial sector) | 19,043.61 MZN/month | Club of Mozambique; DLA Piper |
+| Min wage 2026 (agriculture, from 1 Apr 2026) | 7,072 MZN/month | AIM via Club of Mozambique |
+| Min wage 2026 (financial sector, from 1 Apr 2026) | 20,361.43 MZN/month | AIM via Club of Mozambique |
 | Late-payment interest | MAIBOR (12-mo) + 2% | South African Tax Guide / KPMG (secondary) |
 
 Key authorities: AT (Autoridade Tributária de Moçambique), INSS, Banco de Moçambique (MAIBOR). Big-4 / secondary: PwC Tax Summaries, RSM Mozambique Tax Pocket Guide 2025, DLA Piper Africa, KPMG, Club of Mozambique.
@@ -445,6 +447,7 @@ Source URLs:
 - RSM Mozambique Tax Pocket Guide 2025 — https://www.rsm.global/mozambique/sites/default/files/media/2025/Mozambique%20Tax%20Pocket%20Guide%202025%20ENG.pdf
 - DLA Piper Africa (Lei 11/2025 IRPS changes) — https://www.dlapiperafrica.com/en/mozambique/insights/2026/Changes-to-the-Personal-Income-Tax-Code
 - Minimum wage 2025 — https://clubofmozambique.com/news/mozambique-minimum-wages-increase-2-9-to-9-depending-on-sector-with-retroactive-effect-from-1-july/
+- Minimum wage 2026 — https://clubofmozambique.com/news/mozambique-minimum-wages-rise-between-3-and-9-8-across-sectors/
 
 ## Section 18 -- Test Suite
 
