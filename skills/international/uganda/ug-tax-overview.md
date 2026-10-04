@@ -1,10 +1,11 @@
 ---
 name: ug-tax-overview
-description: "Source-cited draft: tax overview for Uganda (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: tax overview for Uganda (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: UG
 category: international
-tax_year: 2025
-last_updated: 2026-07-13
+tax_year: 2026
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,12 +20,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Currency** — Ugandan shilling (UGX)  _(Bank of Uganda Act)_
 - **Tax authority** — Uganda Revenue Authority (URA)  _(Uganda Revenue Authority Act (Cap 196), https://ura.go.ug)_
 - **Basis of taxation for residents** — Residents are taxed on worldwide income; non-residents on Uganda-source income only  _(Income Tax Act (Cap 340), https://taxsummaries.pwc.com/uganda/individual/taxes-on-personal-income)_
-- **Top marginal personal income tax rate (resident)** — 30% plus an additional 10% surcharge on monthly income exceeding UGX 10,000,000 %  _(Income Tax Act (Cap 340), Third Schedule, https://ura.go.ug/en/domestic-taxes/paye-rates/)_
-- **Standard corporate income tax rate** — 30% %  _(Income Tax Act (Cap 340), https://taxsummaries.pwc.com/uganda/corporate/taxes-on-corporate-income)_
-- **Does Uganda levy VAT?** — Yes — VAT at a standard rate of 18% %  _(Value Added Tax Act (Cap 349), https://taxsummaries.pwc.com/uganda/corporate/other-taxes)_
-- **Annual corporate self-assessment return deadline** — Within 6 months after the end of the accounting year (e.g. 31 December for a June year-end)  _(Income Tax Act (Cap 340), https://taxsummaries.pwc.com/uganda/corporate/tax-administration)_
-- **VAT return cadence** — Monthly, by the 15th of the following month  _(Value Added Tax Act (Cap 349), https://taxsummaries.pwc.com/uganda/corporate/other-taxes)_
-- **PAYE / payroll withholding cadence** — Employer withholds PAYE monthly and remits by the 15th of the following month  _(Income Tax Act (Cap 340), https://ura.go.ug/en/domestic-taxes/paye-rates/)_
+- **Top marginal personal income tax rate (resident)** — 30% plus an additional 10% surcharge on monthly income exceeding UGX 10,000,000; from 1 July 2026 the resident scale is 0% to UGX 335,000, 20% to 410,000, 25% to 485,000 and 30% above  _(Uganda Revenue Authority, PAYE rates page (resident and non-resident scales) — https://ura.go.ug/en/domestic-taxes/paye-rates/ ; Uganda Revenue Authority, Changes to PAYE return form following the Income Tax (Amendment) Act, 2026 (new resident rates from 1 July 2026) — https://ura.go.ug/en/changes-to-paye-return-form-following-the-income-tax-amendment-act-2026/)_
+- **Standard corporate income tax rate** — 30% of chargeable income (gross income less allowable deductions)  _(Uganda Revenue Authority, Business Income page — https://ura.go.ug/en/business-income/)_
+- **Does Uganda levy VAT?** — Yes — VAT at a standard rate of 18% on supplies by taxable persons; registration is required at UGX 150,000,000 of annual taxable turnover (UGX 37,500,000 in any three consecutive months)  _(Uganda Revenue Authority, Value Added Tax (VAT) page — https://ura.go.ug/en/value-added-tax-vat/)_
+- **Annual corporate self-assessment return deadline** — Within six months after the end of the financial period (31 December for a 30 June year-end)  _(Uganda Revenue Authority, Returns page (filing deadlines) — https://ura.go.ug/en/domestic-taxes/returns/)_
+- **VAT return cadence** — Monthly: the return is filed and the VAT paid within 15 days after the end of the month  _(Uganda Revenue Authority, Value Added Tax (VAT) page — https://ura.go.ug/en/value-added-tax-vat/ ; Uganda Revenue Authority, Returns page (filing deadlines) — https://ura.go.ug/en/domestic-taxes/returns/)_
+- **PAYE / payroll withholding cadence** — Employer withholds PAYE monthly and files and remits by the 15th day of the following month  _(Uganda Revenue Authority, Returns page (filing deadlines) — https://ura.go.ug/en/domestic-taxes/returns/)_
 
 <!-- openaccountants-cta-block -->
 

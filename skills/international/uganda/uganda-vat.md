@@ -1,11 +1,11 @@
 ---
 name: uganda-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Uganda VAT return. Standard rate 18%. Withholding VAT 6% of taxable value. EAC customs union but no common VAT. ALWAYS read before handling Uganda VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: UG
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -92,7 +92,7 @@ Net: 12-15 (net, credit b/f, withholding VAT credits, net payable).
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-- **Filing frequency and deadline** — Monthly, 15th.
+- **Filing frequency and deadline** — Monthly; the return is filed and the VAT paid within 15 days after the end of the month, with EFRIS pre-filled returns.  _(Uganda Revenue Authority, Value Added Tax (VAT) page — https://ura.go.ug/en/value-added-tax-vat/ ; Uganda Revenue Authority, Returns page (filing deadlines) — https://ura.go.ug/en/domestic-taxes/returns/)_
 - **Late filing penalty** — Late filing: UGX 200K/month or 2%/month, whichever greater.
 - **Late payment penalty** — Late payment: 2%/month compounding.
 
