@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Iraq (tax year 2025) — rates, 
 jurisdiction: IQ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
