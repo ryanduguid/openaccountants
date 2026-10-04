@@ -1,10 +1,10 @@
 ---
 name: peru-payroll
 description: Use this skill whenever asked about Peru payroll processing for employed persons. Trigger on phrases like "Peru payroll", "nómina Perú", "planilla Perú", "renta de quinta categoría", "retención de quinta", "impuesto a la renta quinta", "PLAME", "Formulario 601", "EsSalud", "aporte EsSalud 9%", "ONP", "SNP 13%", "AFP", "aporte AFP", "comisión AFP", "prima de seguro AFP", "SBS AFP", "T-Registro", "UIT Perú", "RMV", "salario mínimo Perú", "sueldo mínimo Perú", "net salary Peru", "sueldo neto", "PAYE Peru", "tax withholding Peru", "employer contributions Peru", "SUNAT planilla", "gross to net Peru", "PEN payroll", "sol salary", or any question about computing employee pay, withholding fifth-category income tax, or mandatory social contributions (EsSalud, ONP, AFP) for Peru-based employees. This skill covers fifth-category income-tax withholding (7-UIT exemption + 8%–30% progressive schedule), EsSalud (employer), the ONP/AFP pension choice (employee-borne), the RMV minimum wage, non-domiciled flat withholding, T-Registro registration, and PLAME/SUNAT filing obligations. ALWAYS read this skill before processing any Peru payroll.
-version: 0.2
+version: 0.3
 jurisdiction: PE
 tax_year: 2026
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Peru Payroll
 
-## Peru Payroll Skill v0.2
+## Peru Payroll Skill v0.3
 > **Accountant-reviewed (`tier: 1`).** Maria Clemencia Valverde Rios reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-29; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a licensed Peruvian accountant", the draft label the guide carried before that review. **Provenance of the draft:** the Peruvian tax authority (Superintendencia Nacional de Aduanas y de Administración Tributaria, SUNAT), the pension/AFP supervisor (Superintendencia de Banca, Seguros y AFP, SBS), the social-health insurer (EsSalud), the public pension office (ONP), the Presidencia/MTPE (minimum wage Supreme Decree 006-2024-TR), Garrigues, and PwC Worldwide Tax Summaries. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed; treat a computation that depends on one as an estimate pending professional review.
 
 ## Section 1 -- Quick Reference
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Reference unit | UIT (Unidad Impositiva Tributaria) = **S/ 5,500** for 2026 (PwC) |
 | Filing portal | SUNAT — SOL / PLAME (Formulario Virtual N° 601) |
 | Validated by | Verified by Maria Clemencia Valverde Rios (CPA) on 2026-06-29 |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 Read this whole section before computing anything. The shared payroll runbook lives in `payroll-workflow-base` — follow that runbook with this skill supplying the Peru-specific content.
 
@@ -148,9 +148,9 @@ The employer's only payroll contribution on top of salary is **EsSalud (health)*
 | --- | --- | --- | --- | --- |
 | EsSalud (health) | **9%** | EsSalud | Monthly remuneration; **no upper cap**; **minimum base = 1 RMV** | PwC; EsSalud |
 
-- **EsSalud borne entirely by employer** — Borne entirely by the **employer** — never deducted from the employee.  _(PwC)_
-- **No upper ceiling** — No upper ceiling.  _(PwC)_
-- **Minimum base** — The EsSalud base may not be less than the minimum wage (RMV); EsSalud is computed on at least 1 RMV even where a part-time worker earns less. **[RESEARCH GAP — the RMV-floor rule is a general labour rule; confirm the exact regulatory cite.]**
+- **EsSalud borne entirely by employer** — 9% of the monthly remuneration, borne entirely by the **employer** and never deducted from the employee; declared and paid within the first five days of the following month  _(Ley 26790 (Ley de Modernización de la Seguridad Social en Salud), EsSalud text, Art. 6(a) — https://www.essalud.gob.pe/transparencia/pdf/publicacion/ley26790.pdf ; EsSalud, Seguro Regular: aportes (gob.pe) — https://www.gob.pe/218-seguro-regular-essalud-seguro-aportes)_
+- **No upper ceiling** — No upper ceiling; the base cannot be below the minimum wage (RMV)  _(Ley 26790 (Ley de Modernización de la Seguridad Social en Salud), EsSalud text, Art. 6(a) — https://www.essalud.gob.pe/transparencia/pdf/publicacion/ley26790.pdf ; EsSalud, Seguro Regular: aportes (gob.pe) — https://www.gob.pe/218-seguro-regular-essalud-seguro-aportes)_
+- **Minimum base** — The EsSalud base may not be less than the minimum wage (RMV); EsSalud is computed on at least one RMV even where a part-time worker earns less  _(EsSalud, Seguro Regular: aportes (gob.pe) — https://www.gob.pe/218-seguro-regular-essalud-seguro-aportes)_
 - **EPS credit** — Up to 25% of EPS (private health-plan) payments may be credited against EsSalud.  _(PwC)_
 - **Filing channel** — Declared/paid via PLAME (Formulario Virtual N° 601).  _(SUNAT)_
 

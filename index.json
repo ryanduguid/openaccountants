@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T19:25:04+00:00",
+ "generated_at": "2026-10-04T19:38:10+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -15942,7 +15942,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "pe-corporate-income-tax",
@@ -16007,7 +16007,7 @@
    "reviewed_by": "Maria Clemencia Valverde Rios",
    "review_status": "current",
    "tax_year": "2026",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "peru-social-contributions",
