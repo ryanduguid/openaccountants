@@ -1,10 +1,10 @@
 ---
 name: slovenia-income-tax
 description: Use this skill whenever asked about Slovenia (Slovenija) personal income tax for self-employed individuals (s.p. / samostojni podjetnik) and resident individuals. Trigger on phrases like "how much dohodnina do I pay", "income tax Slovenia", "informativni izračun dohodnine", "IID", "DohDej", "davek od dohodka iz dejavnosti", "normirani odhodki", "lump-sum expenses", "splošna olajšava", "general allowance", "ZPIZ contributions", "ZZZS health", "long-term care contribution", "OZP", "OPSVZ", "minimalna plača", "self-employed tax Slovenia", or any question about filing or computing Slovenian personal income tax for a resident, sole proprietor, or employee. Also trigger when preparing or reviewing an IID or DohDej return, computing the progressive dohodnina scale, social security contributions, or advising on advance-tax (akontacija) installments. This skill covers the 2025 five-band progressive scale, capital-income cedular rates, ZPIZ/ZZZS/unemployment/parental/injury and new long-term-care (ZDOsk-1) contributions, the OZP flat health contribution, the normirani odhodki regime, allowances, forms, deadlines, and penalties. ALWAYS read this skill before touching any Slovenian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Individual self-assessment deadline | 31 July of the following year where no IID is issued (PwC) |
 | Validated by | Pending -- requires sign-off by a Slovenian tax adviser / pooblaščeni računovodja |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Brackets -- Progressive Scale (dohodnina) 2025
 
@@ -255,7 +255,7 @@ Classification: Capital income -- dividend. Cedular 25% = EUR 200.00. Do NOT add
 
 Input line: `20.05.2025 ; NLB SDD ; FURS PRISPEVKI OPSVZ ; APRIL 2025 ; -260.00 ; EUR`
 
-Reasoning: Self-employed social security contributions (OPSVZ). The self-employed person pays both employee and employer shares on the contribution base (minimum base ~237.02 EUR/month in 2025; minimum base = 60% of average gross wage) (Crowe; tax-checker). These reduce the self-employment base but are tracked separately from ordinary trading expenses. [RESEARCH GAP -- reviewer to confirm the exact 2025 minimum monthly contribution amount against the FURS contribution brochure.]
+Reasoning: Self-employed social security contributions (OPSVZ). The self-employed person pays both employee and employer shares on the contribution base (minimum base EUR 1,436.95/month from 1 March 2025, 60% of the 2024 average monthly gross wage of EUR 2,394.92 under ZPIZ-2 article 144(4), reset each 1 March ([Unija](https://unija.com/sl/od-1-marca-nova-najnizja-osnova-za-placilo-prispevkov/))). These reduce the self-employment base but are tracked separately from ordinary trading expenses.
 
 Classification: Social contributions (deductible from s.p. base). Track separately, not as a trading-expense line.
 
@@ -344,7 +344,7 @@ Verification: 8.85 + 6.56 + 0.06 + 0.10 + 0.53 = 16.10%; +1.00% LTC = 17.10%. (P
 
 ### 5.8 Self-Employed (s.p.) -- Income Tax and Contributions
 
-- **Self-employed income tax and contributions** — Self-employed pay both income tax (on the progressive scale, via DohDej) and the full social contributions themselves. Minimum contribution base: 60% of the average gross wage (≈ EUR 237.02/month minimum contribution in 2025, rising to ≈ EUR 303.11 in 2026 as the base moves toward 60% of average wage). [RESEARCH GAP -- confirm the exact 2025 minimum figure and base percentage against the FURS contribution brochure.] Maximum contribution base: 3.5 × the insured's average monthly wage.  _(Crowe; tax-checker)_
+- **Self-employed income tax and contributions** — Self-employed pay both income tax (on the progressive scale, via DohDej) and the full social contributions themselves. Minimum contribution base: 60% of the prior-year average monthly gross wage, EUR 1,436.95/month from 1 March 2025, 60% of the 2024 average monthly gross wage of EUR 2,394.92 under ZPIZ-2 article 144(4), reset each 1 March ([Unija](https://unija.com/sl/od-1-marca-nova-najnizja-osnova-za-placilo-prispevkov/)). Maximum contribution base: 3.5 × the insured's average monthly wage.  _(Crowe; tax-checker)_
 
 ### 5.9 normirani odhodki (Lump-Sum Expense) Regime
 
@@ -591,7 +591,7 @@ Penalty bands are from a compliance-advisory summary, not the literal ZDavP-2 te
 | --- | --- | --- |
 | VAT (DDV) registration (domestic) | EUR 60,000 annual taxable turnover (from 2025; was 50,000) | Taxually |
 | normirani odhodki revenue cap (2025) | EUR 60,000 full-time s.p. (EUR 50,000 part-time); raised to 120,000/50,000 from 2026 | Sibiz |
-| Self-employed minimum contribution base | 60% of average gross wage (≈ EUR 237.02/month minimum in 2025) [RESEARCH GAP -- confirm] | Crowe; tax-checker |
+| Self-employed minimum contribution base | 60% of the prior-year average monthly gross wage: EUR 1,436.95/month from 1 March 2025 (ZPIZ-2 art. 144(4)) | Unija; ZPIZ-2 |
 | Self-employed maximum contribution base | 3.5 × insured's average monthly wage | tax-checker |
 | Bank deposit interest exemption | EUR 1,000/year (EU institutions) | PwC |
 | 2025 minimum gross monthly wage | EUR 1,277.72 | WageIndicator |
