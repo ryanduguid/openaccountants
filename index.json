@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T16:38:50+00:00",
+ "generated_at": "2026-10-04T16:44:18+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -15461,7 +15461,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "om-corporate-income-tax",
@@ -15487,7 +15487,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "om-payroll-social",
@@ -15500,7 +15500,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-11"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "om-tax-overview",
@@ -15513,7 +15513,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-12"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "oman-vat",
