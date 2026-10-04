@@ -1,6 +1,6 @@
 ---
 name: tr-tax-overview
-description: "Source-cited draft: tax overview for Turkey (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: tax overview for Turkey (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TR
 category: international
 tax_year: 2026
