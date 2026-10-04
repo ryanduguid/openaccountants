@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Liberia (tax year 202
 jurisdiction: LR
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -33,15 +34,15 @@ Resident companies are taxed on worldwide income; non-resident companies on Libe
 
 - **Dividends WHT** — 15%  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
 - **Interest WHT** — 15%  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
-- **Royalties WHT** — 15% (residents and non-residents) percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/withholding-taxes))_
+- **Royalties WHT** — 15% on royalties, licence fees and similar payments to non-residents; PwC reports 15% for residents as well percent  _(Liberia Revenue Code as amended (Liberia Revenue Authority text, 2020 amendments), s 806(b) — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf ; Liberia Revenue Authority, Tax Education (rate and due date tables) — https://revenue.lra.gov.lr/domestic-tax/tax-education/ ; PwC Worldwide Tax Summaries, Withholding taxes (resident rate) — https://taxsummaries.pwc.com/liberia/corporate/withholding-taxes)_
 - **Services WHT (resident)** — 6% on payments for services and 10% on contracts on services, withheld monthly; rent 10% (15% to a non-resident); gambling winnings 20%  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
-- **Services WHT (non-resident)** — 20% percent  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/withholding-taxes))_
+- **Services WHT (non-resident)** — 15% of payments to non-residents for services rendered, including board and management fees, under the Code as published by the LRA and the LRA's withholding table; PwC reports 20% percent  _(Liberia Revenue Code as amended (Liberia Revenue Authority text, 2020 amendments), s 806(e) — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf ; Liberia Revenue Authority, Tax Education (rate and due date tables) — https://revenue.lra.gov.lr/domestic-tax/tax-education/ ; PwC Worldwide Tax Summaries, Withholding taxes (20% report) — https://taxsummaries.pwc.com/liberia/corporate/withholding-taxes)_
 
 Liberia imposes withholding tax on dividends, interest, royalties and service payments; rates differ for residents and non-residents and may be reduced by treaty.
 
 ## Filing and payment
 
-- **Annual return / final payment deadline** — Last day of the third month after the end of the tax year (31 March for calendar-year taxpayers)  _([Liberia Revenue Code](https://taxsummaries.pwc.com/republic-of-liberia/corporate/tax-administration))_
+- **Annual return / final payment deadline** — Last day of the third month after the end of the tax year (31 March for calendar-year taxpayers), with payment of the balance due by the same date  _(Liberia Revenue Code as amended (Liberia Revenue Authority text, 2020 amendments), s 902 — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf ; Liberia Revenue Authority, Tax Education (rate and due date tables) — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
 - **Quarterly advance tax** — The turnover advance tax above is paid quarterly  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/; the exact due day is not stated on the LRA page — confirm)_
 
 Companies file an annual income tax return and make quarterly advance payments under the Revenue Code.
