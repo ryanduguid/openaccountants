@@ -1,11 +1,11 @@
 ---
 name: bolivia-income-tax
 description: Use this skill whenever asked about Bolivia personal income tax for self-employed individuals, independent professionals, or employees. Trigger on phrases like "how much tax do I pay in Bolivia", "RC-IVA", "Regimen Complementario al IVA", "Formulario 610", "Formulario 110", "impuesto a la renta Bolivia", "retencion RC-IVA", "aportes a la Gestora", "independent professional tax Bolivia", "aguinaldo", "salario minimo nacional", "IUE-BE", "beneficiarios del exterior", "impuesto a las grandes fortunas", "IGF", or any question about computing or filing personal income tax for a Bolivian individual, self-employed person, or independent professional. Also trigger when classifying a Bolivian bank statement, computing the 13% RC-IVA, the VAT-credit offset on Form 110, social security contributions (Gestora/Caja de Salud), or non-resident withholding. This skill covers RC-IVA (13% flat), the VAT-credit invoice mechanism, social security contributions, the IUE-BE non-resident withholding, the IGF wealth tax, forms 610/110/530, deadlines, and penalties. ALWAYS read this skill before touching any Bolivian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: BO
 tax_year: 2025
 tax_year_notes: "2025 (SMN-derived thresholds also stated at the 2026 SMN of Bs 3,300, DS 5516)"
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bolivian Income Tax (RC-IVA) -- Self-Employed and Individuals
 
-## Bolivian Income Tax (RC-IVA) -- Self-Employed and Individuals Skill v0.1
+## Bolivian Income Tax (RC-IVA) -- Self-Employed and Individuals Skill v0.2
 
 Tier 2 (research-verified). Figures below are drawn from PwC Worldwide Tax Summaries, the official SIN/SIAT site, the LexiVox text of DS 5383, and Bolivian professional sources. They have NOT yet been signed off by a Bolivian-licensed accountant (Contador Público Autorizado / auditor). Treat every output as a draft for professional review. Items marked **[RESEARCH GAP -- reviewer to confirm]** require verification against primary statute before filing.
 
@@ -40,7 +40,7 @@ Tier 2 (research-verified). Figures below are drawn from PwC Worldwide Tax Summa
 | Filing deadline (employees) | None -- employer withholds and files a monthly consolidated return |
 | Validated by | Pending -- requires sign-off by a Bolivian-licensed accountant (CPA / auditor) |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### The Headline: Bolivia Has a FLAT 13% Personal Income Tax
 
@@ -350,7 +350,7 @@ Arithmetic check: 10 + 1.71 + 0.5 + 0.5 = 12.71%. ✓
 
 - **Solidarity bands applied to excess** — These are applied to the excess in each band, in addition to the 12.71%.  _(rigobertoparedes.com/es; brackets per Ley 065)_
 
-[RESEARCH GAP -- reviewer to confirm.] Ley 1582 (2024) revised the solidarity-fund parameters; one source cites an effective recalculated burden of ~1.15% / 5.74% / 11.48%. The precise current statutory percentages should be confirmed against the consolidated Ley 065 text. A pension-contribution salary ceiling of 60 SMN is cited by PwC and carried by `bolivia-payroll` and `bolivia-social-contributions`; on that multiplier it is Bs 165,000/month for 2025 (60 x Bs 2,750) and Bs 198,000/month for 2026 (60 x Bs 3,300). The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions.
+Ley 1582 (1 October 2024) sets the Aporte Nacional Solidario at 1.15%, 5.74% and 11.48% of the positive difference between the Total Solidario and Bs 13,000, Bs 25,000 and Bs 35,000 respectively, the three amounts summed ([LexiVox, Ley 1582](https://www.lexivox.org/norms/BO-L-N1582.html)). [RESEARCH GAP -- reviewer to confirm the ceiling below.] A pension-contribution salary ceiling of 60 SMN is cited by PwC and carried by `bolivia-payroll` and `bolivia-social-contributions`; on that multiplier it is Bs 165,000/month for 2025 (60 x Bs 2,750) and Bs 198,000/month for 2026 (60 x Bs 3,300). The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions.
 
 **Employer social security table**  _(planifica.com.bo)_
 
@@ -365,7 +365,7 @@ Arithmetic check: 10 + 1.71 + 0.5 + 0.5 = 12.71%. ✓
 
 Arithmetic check: 10 + 1.71 + 2 + 3 = 16.71%; with 3.5% solidarity = 17.21%. ✓
 
-[RESEARCH GAP -- reviewer to confirm.] The Aporte Patronal Solidario rate (3% vs 3.5% under Ley 1582; mining employer solidarity 2% vs 2.3%) should be confirmed against the consolidated statute.
+Ley 1582 sets the Aporte Patronal Solidario at 3.5% of Total Ganado and the mining-sector employer solidarity contribution at 2.3% ([LexiVox, Ley 1582](https://www.lexivox.org/norms/BO-L-N1582.html)).
 
 ### 5.8 Minimum Wage and Salary Increase
 
@@ -404,7 +404,7 @@ Arithmetic check: 10 + 1.71 + 2 + 3 = 16.71%; with 3.5% solidarity = 17.21%. ✓
 
 ### 6.5 Aporte Nacional Solidario Bands
 
-- **Solidario bands default** — For gross above Bs 13,000, the progressive solidarity contributions apply. Conservative default: apply only standard 12.71% unless gross clearly exceeds Bs 13,000; flag the solidarity computation for reviewer given the [RESEARCH GAP] on current rates.
+- **Solidario bands default** — For gross above Bs 13,000, the progressive solidarity contributions apply. Conservative default: apply only standard 12.71% unless gross clearly exceeds Bs 13,000; compute the solidarity contribution with the Ley 1582 rates when it does.
 
 ### 6.6 Treaty Relief on IUE-BE
 

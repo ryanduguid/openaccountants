@@ -1,11 +1,11 @@
 ---
 name: bolivia-social-contributions
 description: Use this skill whenever asked about Bolivia social-security (seguridad social) contributions and dependent-employee payroll taxation for the 2025 tax year. Trigger on phrases like "how much do I pay to the Gestora", "aportes AFP Bolivia", "12.71% worker contribution", "aporte solidario", "Aporte Nacional Solidario", "ANS calculation", "Caja de Salud employer contribution", "Pro-Vivienda housing fund", "RC-IVA withholding", "Form 110 invoices", "Form 608", "total ganado contributions", "Bolivia payroll cost", "Gestora Pública contribution", or any question about Bolivian employer/employee social-security obligations. Also trigger when classifying bank statement transactions that relate to Gestora Pública, Caja de Salud (CNS), APS, or SIN/SIAT payments from Bolivian banks (Banco Unión, BNB, Banco Mercantil Santa Cruz, Banco BISA, Banco de Crédito BCP). Also trigger when preparing or reconciling RC-IVA (personal income tax) where social-contribution deductibility is relevant. This skill covers the 12.71% employee rate, the ANS high-earner surcharge, the 17.21% (19.51% mining) employer rate, the RC-IVA flat 13% mechanics, minimum wage (SMN), contribution base (total ganado), payment/filing deadlines, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Bolivian social-contribution or RC-IVA work.
-version: 0.1
+version: 0.2
 jurisdiction: BO
 tax_year: 2025
 tax_year_notes: "2025 (SMN-derived thresholds also stated at the 2026 SMN of Bs 3,300, DS 5516)"
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bolivia Social Security Contributions & RC-IVA — Dependent Employment
 
-## Bolivia Social Security Contributions & RC-IVA — Dependent Employment Skill v0.1
+## Bolivia Social Security Contributions & RC-IVA — Dependent Employment Skill v0.2
 
 > **Tier 2 (research-verified) skill.** Figures below are corroborated by PwC Worldwide Tax Summaries and reputable Bolivian law firms/consultancies (Rigoberto Paredes, Planifica) and primary norms (Ley 065, Ley 1582, DS 5383). Where a figure is unconfirmed against the primary statute it is marked **[RESEARCH GAP — reviewer to confirm]**. This skill must be signed off by a Bolivian-qualified professional before any output is filed or acted upon.
 
@@ -80,7 +80,7 @@ Per Ley 1582 (effective October 2024). Applied to the positive difference of tot
 | Tranche 2 (cumulative, on top of T1) | 5.74% | Bs 25,000 |
 | Tranche 3 (cumulative, on top of T1+T2) | 11.48% | Bs 35,000 |
 
-PwC summarises the scale as "1.15% up to 11.48%". **[RESEARCH GAP — reviewer to confirm]** the exact mechanism — whether each rate applies to the marginal slice above each threshold (cumulative, as modelled here) or to a single aggregate "Total Solidario" amount. Confirm against the Ley 1582 text / APS regulation before filing.
+PwC summarises the scale as "1.15% up to 11.48%". Ley 1582 (1 October 2024), in the Fondo Solidario financing article it inserts into Ley 065, applies each rate to the positive difference between the Total Solidario and its own threshold and sums the three: 11.48% above Bs 35,000, 5.74% above Bs 25,000 and 1.15% above Bs 13,000, which is the model used here ([LexiVox, Ley 1582](https://www.lexivox.org/norms/BO-L-N1582.html)).
 
 ### Employer contributions (paid on top of total ganado)
 
@@ -95,7 +95,7 @@ PwC summarises the scale as "1.15% up to 11.48%". **[RESEARCH GAP — reviewer t
 | **EMPLOYER TOTAL (general)** |  | **17.21%** | **Total ganado** |
 | **EMPLOYER TOTAL (mining sector)** |  | **19.51%** | **Total ganado** |
 
-- **Arithmetic check and notes** — 10% + 1.71% + 2% + 3.5% = 17.21% (Planifica; PwC). The employer solidarity contribution was raised from 3.0% to 3.5% by Ley 1582, effective October 2024 (Ley 1582; CISS). The mining-sector total of 19.51% (PwC) is 2.30 pp above the general rate; [RESEARCH GAP — reviewer to confirm] the composition of the extra 2.30 pp — not itemised by sources. The 10% Caja de Salud rate is the standard CNS rate; some cajas/sectors may differ ([RESEARCH GAP — reviewer to confirm] sector-specific cajas).  _(Planifica; PwC; Ley 1582; CISS)_
+- **Arithmetic check and notes** — 10% + 1.71% + 2% + 3.5% = 17.21% (Planifica; PwC). The employer solidarity contribution was raised from 3.0% to 3.5% by Ley 1582, effective October 2024 (Ley 1582; CISS). The mining-sector total of 19.51% (PwC) is 2.30 pp above the general rate; the extra 2.30 pp is the mining-sector employer solidarity contribution of 2.3% of Total Ganado that Ley 1582 sets alongside the general 3.5% ([LexiVox, Ley 1582](https://www.lexivox.org/norms/BO-L-N1582.html)). The 10% Caja de Salud rate is the standard CNS rate; some cajas/sectors may differ ([RESEARCH GAP — reviewer to confirm] sector-specific cajas).  _(Planifica; PwC; Ley 1582; CISS)_
 
 ### Tax rates (for context — see Section 1B for RC-IVA mechanics)
 
@@ -296,7 +296,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 3 — National Solidarity Contribution (ANS), high earners only
 
-- **ANS formula** — If total_ganado > 13,000: ANS += (total_ganado − 13,000) × 1.15% If total_ganado > 25,000: ANS += (total_ganado − 25,000) × 5.74% If total_ganado > 35,000: ANS += (total_ganado − 35,000) × 11.48% Rates per Ley 1582 (eff. Oct 2024). Marginal-slice model — [RESEARCH GAP — reviewer to confirm] the exact statutory mechanism.  _(Ley 1582)_
+- **ANS formula** — If total_ganado > 13,000: ANS += (total_ganado − 13,000) × 1.15% If total_ganado > 25,000: ANS += (total_ganado − 25,000) × 5.74% If total_ganado > 35,000: ANS += (total_ganado − 35,000) × 11.48% Rates per Ley 1582 (eff. Oct 2024), each applied to the full positive difference above its own threshold and summed, as the law provides ([LexiVox](https://www.lexivox.org/norms/BO-L-N1582.html)).  _(Ley 1582)_
 
 ### Rule 4 — Employer contribution
 
@@ -525,7 +525,7 @@ Notes on the table (rates per PwC / Ley 1582 / DS 5383; arithmetic computed in t
 
 **Test 3:** Total ganado Bs 30,000, general sector. → Employee SS = **Bs 3,813.00**; ANS = (17,000 × 1.15%) + (5,000 × 5.74%) = 195.50 + 287.00 = **Bs 482.50**; employer SS = **Bs 5,163.00**; RC-IVA payable (no invoices) = **Bs 2,269.09**.
 
-**Test 4:** Total ganado Bs 40,000, general sector — ANS all three tranches. → ANS = (27,000 × 1.15%) + (15,000 × 5.74%) + (5,000 × 11.48%) = 310.50 + 861.00 + 574.00 = **Bs 1,745.50**. Employee SS = 40,000 × 12.71% = **Bs 5,084.00**. **[RESEARCH GAP — reviewer to confirm]** ANS mechanism.
+**Test 4:** Total ganado Bs 40,000, general sector — ANS all three tranches. → ANS = (27,000 × 1.15%) + (15,000 × 5.74%) + (5,000 × 11.48%) = 310.50 + 861.00 + 574.00 = **Bs 1,745.50**. Employee SS = 40,000 × 12.71% = **Bs 5,084.00**. ANS mechanism per Ley 1582.
 
 **Test 5:** Total ganado Bs 8,000, mining sector. → Employer SS = 8,000 × 19.51% = **Bs 1,560.80** (employee unchanged at Bs 1,016.80).
 
