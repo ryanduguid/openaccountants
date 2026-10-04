@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Ley de Concertacion Tributaria (Ley 822, rentas del trabajo Art. 23); Ley de Seguridad Social + 2019 reform (Decreto Presidencial); Codigo del Trabajo (Ley 185); INATEC levy decree |
 | Filing portal | DGI Ventanilla Electronica Tributaria (VET); INSS SIE (Sistema Integrado de aplicaciones Especificas) |
 | Validated by | Pending -- requires sign-off by a licensed Nicaraguan accountant (Contador Publico Autorizado) |
-| Skill version | 0.1 (Tier 2 -- research-verified) |
+| Skill version | 0.2 (Tier 2 -- research-verified) |
 
 This is a **Tier-2 research-verified** skill. Several figures are flagged **[RESEARCH GAP — reviewer to confirm]** where a fully authoritative source could not be isolated. Do not treat any computation as final until a licensed Nicaraguan accountant signs off.
 
