@@ -1,10 +1,10 @@
 ---
 name: turkey-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Turkey VAT (KDV — Katma Değer Vergisi) return or advise on Turkish VAT registration, filing, and reporting. Trigger on phrases like "prepare KDV return", "Turkish VAT", "KDV beyannamesi", "ÖKC fatura", or any Turkey VAT request. ALWAYS read this skill before touching any Turkey KDV-related work.
-version: 2.0
+version: 2.1
 jurisdiction: TR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Turkey VAT
 
-## Turkey VAT (KDV — Katma Değer Vergisi) Skill v2.0
+## Turkey VAT (KDV — Katma Değer Vergisi) Skill v2.1
 
 ## Section 1 — Quick reference
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Turkey-licensed YMM (Yeminli Mali Müşavir) |
 | Open-source credits | [ozgurg/vergihesaplayici.com](https://github.com/ozgurg/vergihesaplayici.com) (AGPL-3.0, gelir vergisi calculator); [mlevent/fatura](https://github.com/mlevent/fatura) (MIT, GİB e-Arşiv e-invoice); [saidsurucu/borsapy](https://github.com/saidsurucu/borsapy) (Apache-2.0, financial markets/fund tax categories); [berkaygure/gelir-vergisi-kesintisi-hesaplama](https://github.com/berkaygure/gelir-vergisi-kesintisi-hesaplama) (income tax withholding brackets) |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Key return form boxes
 
@@ -337,7 +337,7 @@ Tutar       : -36.000,00 TRY
 
 ## Section 5 — Tier 1 rules (compressed)
 
-- **Rate assignment** — 20% standard: most goods and services not listed below; 10%: food/non-alcoholic beverages (restaurant/café service), hotels, medicines, medical equipment, domestic airline tickets, train tickets, tourism services; 1%: basic foodstuffs (bread, rice, pasta, flour, sugar, salt, fresh fruit/veg), residential property first sale, agricultural goods; 0%: exports of goods with customs declaration, services exported to non-residents used outside Turkey, international transport; Exempt: financial services (BSMV applies instead), insurance (BSMV), medical treatment, education, leasing of residential property, land sales, social services  _(Section 5 — Tier 1 rules (compressed))_
+- **Rate assignment** — 20% standard: most goods and services not listed below; 10%: food/non-alcoholic beverages (restaurant/café service), hotels, medicines, medical equipment, domestic airline tickets, train tickets, tourism services; 1%: basic foodstuffs (bread, rice, pasta, flour, sugar, salt, fresh fruit/veg), residential property first sale, agricultural goods; 0%: exports of goods with customs declaration, services exported to non-residents used outside Turkey, international transport; Exempt: financial services (BSMV applies instead), insurance (BSMV), medical treatment, education, leasing of residential property, land sales, social services  _(Value Added Tax Law No. 3065 (Katma Değer Vergisi Kanunu, consolidated text, mevzuat.gov.tr), art. 28 — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.3065.pdf ; Presidential Decree No. 7346 amending Council of Ministers Decree 2007/13033 on VAT rates, Resmî Gazete 7 July 2023, No. 32241, arts. 1 and 3 — https://www.resmigazete.gov.tr/eskiler/2023/07/20230707-11.pdf ; Section 5 — Tier 1 rules (compressed))_
 - **Input credit** — Credit allowed on all taxable purchases used for taxable business activities; No credit on exempt purchases (e.g., financial services); No credit on personal/non-business expenditure; Vehicle purchase: input credit blocked for private passenger cars (binek otomobil); allowed for commercial vehicles (ticari araç); Entertainment: fully deductible if documented; 50% blocked if personal element present; 2 No'lu reverse-charge: output and input net to zero for fully taxable businesses  _(Section 5 — Tier 1 rules (compressed))_
 - **Filing mechanics** — File 1 No'lu KDV Beyannamesi monthly via GİB İnteraktif Vergi Dairesi by 28th; File 2 No'lu KDV Beyannamesi in same month as the foreign service payment; e-Fatura mandatory above TRY 3M annual turnover — use Foriba, Logo, or GİB's free portal; Excess input KDV carries forward indefinitely (refund rarely granted for domestic supplies); Export KDV refund (iade): available for exporters with sustained credit position — requires YMM certification  _(Section 5 — Tier 1 rules (compressed))_
 
@@ -424,7 +424,8 @@ Tutar       : +240.000,00 TRY
 | Resource | URL / Reference |
 | --- | --- |
 | GİB İnteraktif Vergi Dairesi (filing portal) | https://ivd.gib.gov.tr |
-| KDV Kanunu (KDV Law No. 3065) | gib.gov.tr — Mevzuat section |
+| KDV Kanunu (KDV Law No. 3065, consolidated text) | https://www.mevzuat.gov.tr/MevzuatMetin/1.5.3065.pdf |
+| KDV rate decree 2007/13033 as amended by Presidential Decree 7346 (20%, 10% and 1% from 10 July 2023) | https://www.resmigazete.gov.tr/eskiler/2023/07/20230707-11.pdf |
 | e-Fatura portal | https://www.efatura.gov.tr |
 | KDV rates table (GİB) | gib.gov.tr/kdv-oranlari |
 | KDV Genel Uygulama Tebliği | Official Gazette — KDV implementation circular |

@@ -1,10 +1,10 @@
 ---
 name: turkey-pit
 description: Use this skill whenever asked to prepare, review, or classify transactions for Turkey Personal Income Tax (Gelir Vergisi), annual tax return (Yıllık Gelir Vergisi Beyannamesi / 0001 kodu), or advise on Turkish PIT deductions and filing. Trigger on phrases like "gelir vergisi", "Turkish income tax", "yıllık beyanname", "GİB", "vergi dairesi", or any Turkey personal income tax request. ALWAYS read this skill before touching any Turkey PIT work.
-version: 1.0
+version: 1.1
 jurisdiction: TR
-tax_year: 2025
-last_updated: 2026-09-28
+tax_year: 2026
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Turkey Pit
 
-## Turkey Personal Income Tax (Gelir Vergisi) Skill v1.0
+## Turkey Personal Income Tax (Gelir Vergisi) Skill v1.1
 
 ## Section 1 — Quick reference
 
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Gelir Vergisi (Personal Income Tax) |
 | Currency | TRY (Turkish Lira / ₺) |
 | Tax year | Calendar year (1 Jan – 31 Dec) |
-| Current tax year | 2025 |
+| Current tax year | 2026 |
 | Tax authority | Gelir İdaresi Başkanlığı (GİB — Revenue Administration) |
 | Return code | 0001 — Yıllık Gelir Vergisi Beyannamesi |
 | Filing portal | https://ivd.gib.gov.tr (İnteraktif Vergi Dairesi) |
@@ -36,31 +36,41 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Source credit | `ozgurg/vergihesaplayici.com` (AGPL-3.0) + `berkaygure/gelir-vergisi-kesintisi-hesaplama` |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Turkish SMMM or YMM |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
-## Section 2 — Progressive tax brackets (Vergi dilimleri) — 2025
+## Section 2 — Progressive tax brackets (Vergi dilimleri) — 2026 and 2025
 
-**Annual income tax brackets for yıllık gelir vergisi**
+**Annual income tax brackets for yıllık gelir vergisi — 2026 income other than wages**  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), art. 103 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf ; Income Tax General Communiqué Seri No. 332, Resmî Gazete 31 December 2025, No. 33124 (5th repeated edition), art. 3(3) — https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-30.pdf)_
+
+| Taxable Income (TRY) | Rate | Max tax in bracket |
+| --- | --- | --- |
+| 0 – 190,000 | 15% | 28,500 |
+| 190,001 – 400,000 | 20% | 42,000 |
+| 400,001 – 1,000,000 | 27% | 162,000 |
+| 1,000,001 – 5,300,000 | 35% | 1,505,000 |
+| 5,300,001 + | 40% | — |
+
+**Wage income (ücret) brackets — 2026; employers apply this table to cumulative wages for the year**  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), arts. 103 and 104 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf ; Income Tax General Communiqué Seri No. 332, Resmî Gazete 31 December 2025, No. 33124 (5th repeated edition), art. 3(3) — https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-30.pdf)_
+
+| Taxable wages (TRY) | Rate | Max tax in bracket |
+| --- | --- | --- |
+| 0 – 190,000 | 15% | 28,500 |
+| 190,001 – 400,000 | 20% | 42,000 |
+| 400,001 – 1,500,000 | 27% | 297,000 |
+| 1,500,001 – 5,300,000 | 35% | 1,330,000 |
+| 5,300,001 + | 40% | — |
+
+**2025 income other than wages (returns filed 1 to 25 March 2026)**  _(Income Tax General Communiqué Seri No. 329, Resmî Gazete 30 December 2024 (2nd repeated edition), art. 3 — https://www.resmigazete.gov.tr/eskiler/2024/12/20241230M2-12.htm)_
 
 | Taxable Income (TRY) | Rate | Max tax in bracket |
 | --- | --- | --- |
 | 0 – 158,000 | 15% | 23,700 |
 | 158,001 – 330,000 | 20% | 34,400 |
-| 330,001 – 1,200,000 | 27% | 234,900 |
-| 1,200,001 – 4,300,000 | 35% | 1,085,000 |
+| 330,001 – 800,000 | 27% | 126,900 |
+| 800,001 – 4,300,000 | 35% | 1,225,000 |
 | 4,300,001 + | 40% | — |
 
-### Cumulative withholding brackets (Gelir vergisi kesintisi / Stopaj)
-
-**Cumulative withholding brackets for monthly payroll calculation per §94**  _(§94)_
-
-| Cumulative base (TRY) | Rate |
-| --- | --- |
-| 0 – 24,000 | 15% |
-| 24,001 – 53,000 | 20% |
-| 53,001 – 190,000 | 27% |
-| 190,001 – 650,000 | 35% |
-| 650,001 + | 40% |
+For 2025 wages the 27% band runs to 1,200,000 TRY and the 35% band from there to 4,300,000 TRY. Until October 2026 this guide applied the wage ceiling of 1,200,000 TRY to all 2025 income and showed a separate "cumulative withholding" table whose thresholds (24,000 to 650,000 TRY) are not in the law; art. 104 computes the monthly wage tax from the annual tariff.
 
 ## Section 3 — Income categories (Gelir türleri)
 
@@ -78,26 +88,28 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 4 — Key exemptions and deductions (İstisnalar ve indirimler)
 
-### Exemptions (2025)
+### Exemptions (2026)
 
-**Exemptions (2025)**
+**Exemptions (2026, with 2025 in brackets)**  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), arts. 21 and mükerrer 20 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf ; Income Tax General Communiqué Seri No. 332, Resmî Gazete 31 December 2025, No. 33124 (5th repeated edition), art. 3(2)(b) and the art. 103 tariff — https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-30.pdf ; Income Tax General Communiqué Seri No. 329, Resmî Gazete 30 December 2024 (2nd repeated edition), art. 3 — https://www.resmigazete.gov.tr/eskiler/2024/12/20241230M2-12.htm)_
 
 | Item | Amount (TRY) | Notes |
 | --- | --- | --- |
-| Rental income exemption (kira geliri istisnası) | 33,000 | Annual, residential only |
-| Young entrepreneur exemption (genç girişimci) | 230,000 | Under 29, first 3 years |
+| Residential rental income exemption (mesken kira geliri istisnası, art. 21) | 58,000 (2025: 47,000) | Annual; lost if the income is not declared or is under-declared; not available when gross wages, investment income, rental income and other gains together exceed the wage ceiling of the third tariff bracket |
+| Young entrepreneur exemption (genç girişimci kazanç istisnası, mükerrer art. 20) | 400,000 (2025: 330,000) | Equal to the second bracket of the art. 103 tariff; first registration before age 29; first three tax periods |
 | Severance pay (kıdem tazminatı) | Exempt | Within legal limits |
+
+Until October 2026 this guide showed the 2024 amounts (33,000 and 230,000 TRY) as the 2025 exemptions.
 
 ### Deductions from income
 
-**Deductions from income**
+**Deductions from income**  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), art. 89 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf)_
 
 | Deduction | Limit |
 | --- | --- |
-| Education & health expenses | 10% of declared income |
-| Life insurance premiums | 50% of salary, max per employee limits |
+| Education and health expenses (art. 89(2)) | 10% of declared income; spent in Türkiye and documented by invoices from Turkish taxpayers |
+| Personal insurance premiums (art. 89(1)) | 50% of life insurance premiums plus other personal insurance premiums (death, accident, health, disability, maternity, birth, education), together within 15% of declared income and the annual gross minimum wage |
 | Private pension (BES) contributions | State matches 30%, employer deductible |
-| Charitable donations (bağış) | Up to 5% of income (10% for certain institutions) |
+| Donations to public bodies, public-benefit associations and tax-exempt foundations (art. 89(4)) | Up to 5% of declared income (10% in priority development regions), against a receipt |
 | Sponsorship expenses | Per related legislation |
 | Social security premiums (SGK) | Actual amount paid |
 
@@ -105,15 +117,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Who must file annually?
 
-- **Who must file annually** — Self-employed (serbest meslek erbabı); Business owners (ticari kazanç); Rental income above 33,000 TRY exemption threshold; Investment income above thresholds; Capital gains (değer artışı kazancı); Multiple employers (if total exceeds threshold)
+- **Who must file annually** — Self-employed (serbest meslek erbabı); Business owners (ticari kazanç); Residential rental income above the art. 21 exemption (58,000 TRY for 2026; 47,000 TRY for 2025); Investment income above thresholds; Capital gains (değer artışı kazancı); Wages from more than one employer where the wages after the first employer exceed the second tariff bracket (400,000 TRY for 2026) or total wages exceed the fourth bracket (5,300,000 TRY for 2026) (art. 86(1)(b))  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), arts. 85, 86 and 21 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf ; Income Tax General Communiqué Seri No. 332, Resmî Gazete 31 December 2025, No. 33124 (5th repeated edition), art. 3 — https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-30.pdf)_
 
 ### Who does NOT file?
 
-- **Who does not file** — Single-employer wage earners (ücretliler) — tax fully withheld at source; Those with income below declaration thresholds
+- **Who does not file** — Wage earners with a single employer whose wages were taxed by withholding and do not exceed the fourth tariff bracket (5,300,000 TRY for 2026); income that stays within exemption limits or the art. 86 declaration thresholds  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), art. 86(1)(a) and (b) — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf)_
 
 ### Provisional tax (Geçici vergi)
 
-**Provisional tax quarterly due dates**
+**Provisional tax quarterly due dates (payment; the statutory filing day is the 14th of the same month)**  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), mükerrer art. 120 — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf)_
 
 | Quarter | Period | Due date |
 | --- | --- | --- |
@@ -122,7 +134,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Q3 | Jul–Sep | 17 November |
 | Q4 | Oct–Dec | 17 February |
 
-- **Provisional tax rate and offset** — Self-employed and business owners pay quarterly. Rate: same brackets as annual. Provisional tax is offset against annual liability.
+- **Provisional tax rate and offset** — Business and professional income earners pay provisional tax on each quarter's profit at the rate of the first tariff bracket (15%), declared by the 14th and paid by the 17th of the second month after the quarter; income tax withheld in the period is credited against it, and the provisional tax is credited against the annual liability. Law 7566 (Resmî Gazete 19 December 2025) removed the nine-month limit that Law 7338 had applied from 2022, so the fourth-quarter return applies again from the 2025 period. This guide said 'same brackets as annual' until October 2026  _(Income Tax Law No. 193 (Gelir Vergisi Kanunu, consolidated text with the 2026 amounts, mevzuat.gov.tr), mükerrer art. 120 and the Law 7566 application table — https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf)_
 
 ## Section 6 — Computation method
 
@@ -140,7 +152,7 @@ Step 11: = Net tax payable or refund
 
 ## Section 7 — Worked example
 
-**Scenario:** Freelance software developer, 2025 annual income 600,000 TRY, allowable expenses 30,000 TRY, no other deductions. No provisional tax paid.
+**Scenario (2025 tariff):** Freelance software developer, 2025 annual income 600,000 TRY, allowable expenses 30,000 TRY, no other deductions. No provisional tax paid.
 
 **Taxable base computation**  _(§40(4))_
 
@@ -200,7 +212,9 @@ If 50,000 TRY provisional tax was paid during the year:
 | İnteraktif Vergi Dairesi | https://ivd.gib.gov.tr |
 | `ozgurg/vergihesaplayici.com` (AGPL-3.0) | https://github.com/ozgurg/vergihesaplayici.com |
 | `berkaygure/gelir-vergisi-kesintisi-hesaplama` | https://github.com/berkaygure/gelir-vergisi-kesintisi-hesaplama |
-| Gelir Vergisi Kanunu | GVK No. 193 |
+| Gelir Vergisi Kanunu No. 193 (consolidated text, mevzuat.gov.tr) | https://www.mevzuat.gov.tr/MevzuatMetin/1.4.193.pdf |
+| Gelir Vergisi Genel Tebliği Seri No. 332 (2026 amounts and tariff) | https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-30.pdf |
+| Gelir Vergisi Genel Tebliği Seri No. 329 (2025 amounts and tariff) | https://www.resmigazete.gov.tr/eskiler/2024/12/20241230M2-12.htm |
 
 ## *OpenAccountants — open-source accounting skills for AI*
 
