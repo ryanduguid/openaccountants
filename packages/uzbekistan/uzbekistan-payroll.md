@@ -1,10 +1,10 @@
 ---
 name: uzbekistan-payroll
 description: "Use this skill whenever asked about Uzbekistan (the Republic of Uzbekistan — Oʻzbekiston, Central Asia) payroll processing for employed persons. Trigger on phrases like \"Uzbekistan payroll\", \"Uzbek payroll\", \"ish haqi\", \"oylik maosh\", \"salary tax Uzbekistan\", \"PIT withholding Uzbekistan\", \"12% income tax Uzbekistan\", \"PAYE Uzbekistan\", \"social tax Uzbekistan\", \"ijtimoiy soliq\", \"INPS Uzbekistan\", \"individual accumulative pension fund\", \"soliq.uz payroll\", \"my.soliq.uz\", \"State Tax Committee Uzbekistan\", \"monthly payroll report Uzbekistan\", \"net salary Uzbekistan\", \"gross to net Uzbekistan\", \"employer cost Uzbekistan\", \"minimum wage Uzbekistan\", \"BCV Uzbekistan\", \"base calculation value\", or any question about computing employee pay, salary withholding tax (PIT), or employer social tax for Uzbekistan-based employees. This skill covers the flat 12% personal income tax withheld at source (the employer is the tax agent), the 12% employer Social Tax (Ijtimoiy soliq), the 0.1% employee INPS pension contribution carved out of PIT, the cumulative monthly withholding method, the monthly payroll report on my.soliq.uz, the minimum wage and Base Calculation Value (BCV), and penalties. CRITICAL: jurisdiction code UZ is the country of Uzbekistan (currency UZS, soʻm) and figures are anchored to PwC Worldwide Tax Summaries (reviewed 16 Jan 2026) and the EY Jan-2026 tax alert. ALWAYS read this skill before processing any Uzbekistan payroll."
-version: 0.1
+version: 0.2
 jurisdiction: UZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Uzbekistan Payroll
 
-## Uzbekistan Payroll Skill v0.1
+## Uzbekistan Payroll Skill v0.2
 
 > **Tier 2 — Research-verified.** Rates and structure are cross-verified across PwC Worldwide Tax Summaries (Uzbekistan, Individual & Corporate; reviewed 16 Jan 2026), the EY Global Tax Alert "Uzbekistan: tax updates effective from 2026" (Jan 2026), LegalAct.uz (PIT cumulative method and the 0.1% INPS carve-out), WageIndicator (minimum wage from 1 Aug 2025) and EOR practitioner guides (Asanify). The official primary sources — the Tax Code of the Republic of Uzbekistan (Soliq kodeksi) and soliq.uz — were not directly text-extracted line-by-line; figures rely on the Big-4 / specialist English summaries. Every figure below carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A qualified Uzbek tax adviser / licensed accountant must validate this skill before production use. **Confidence: medium.**
 
@@ -44,7 +44,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary form | Monthly payroll / withholding report (PIT + Social Tax); annual individual income tax declaration where required |
 | Monthly report deadline | By the **15th** of the month following the reporting month; tax and contributions paid by the same date. Source: Asanify EOR guide; `[RESEARCH GAP]` — confirm official form designation. |
 | Validated by | Pending -- requires sign-off by a qualified Uzbek tax adviser / licensed accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Legislation**
 
@@ -104,7 +104,7 @@ Uzbekistan has two distinct payroll levies in addition to PIT:
 | Temporary 1% reduced rate (specified sectors/cases — see below) | 1% | Gross payroll | PwC WWTS Uzbekistan, Corporate: Other taxes; EY 2026 alert |
 
 - **Social Tax is an employer cost** — Social Tax is an employer cost — it does not appear on the employee's payslip as a deduction and does not reduce net pay. [T1]
-- **No upper ceiling; minimum wage base** — There is no upper ceiling. In practice, where wages are below the statutory minimum wage, Social Tax is computed on at least the minimum wage per employee (CD4 / [RESEARCH GAP]). [T2]
+- **No upper ceiling; minimum wage base** — There is no upper ceiling: art. 404 defines the base as the payroll expenses paid under art. 371 with no cap. In practice, where wages are below the statutory minimum wage, Social Tax is computed on at least the minimum wage per employee (CD4; the Code itself sets no floor). [T2]  _(Tax Code of the Republic of Uzbekistan (Soliq kodeksi, consolidated text on lex.uz), art. 404 — https://lex.uz/docs/4674902)_
 
 #### Temporary 1% Social Tax — qualifying cases [T2]
 

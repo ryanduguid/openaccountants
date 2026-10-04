@@ -1,10 +1,10 @@
 ---
 name: uzbekistan-income-tax
 description: Use this skill whenever asked about Uzbekistan personal income tax (PIT) for individuals, self-employed persons, and individual entrepreneurs. Trigger on phrases like "how much income tax in Uzbekistan", "Uzbekistan PIT", "soliq", "12% flat tax", "INPS pension", "social tax", "individual entrepreneur turnover tax", "non-resident tax Uzbekistan", "annual income declaration", "dividends tax Uzbekistan", "payroll Uzbekistan", "minimum wage UZS", "BHM/BRV base amount", or any question about computing or filing personal income tax for a resident or non-resident individual, an employee, a sole trader, or an individual entrepreneur in Uzbekistan. Also trigger when classifying UZS bank-statement lines for income tax, modelling take-home pay, or computing employer social tax. This skill covers the flat 12% PIT, the 5% dividend/interest rate, non-resident rates, the INPS 0.1% accumulative pension carve-out, employer social tax (12%/25%/7%/4.7%/1%), the calendar-year filing cycle, and the 2026 self-employed turnover-tax changes. ALWAYS read this skill before touching any Uzbekistan income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: UZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Uzbekistan Personal Income Tax -- Individuals & Self-Employed
 
-## Uzbekistan Personal Income Tax -- Individuals & Self-Employed Skill v0.1
+## Uzbekistan Personal Income Tax -- Individuals & Self-Employed Skill v0.2
 
 > **Tier 2 (research-verified).** Core PIT rates and the calendar filing cycle are well-confirmed by PwC Worldwide Tax Summaries (reviewed 16 January 2026). Several 2026-effective changes, the INPS mechanism, and exact penalty figures require primary-source confirmation against lex.uz / soliq.uz and are marked **[RESEARCH GAP — reviewer to confirm]**. This skill must be signed off by a qualified Uzbekistan tax practitioner before filing.
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual declaration deadline | 1 April of the following year; tax due by 1 June (PwC) |
 | Validated by | Pending — requires sign-off by a qualified Uzbekistan tax practitioner |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### PIT Rate Table (2025 — flat system, NO progressive bands)
 
@@ -123,8 +123,8 @@ Ideal -- complete income summary by source, social-tax payment records, INPS con
 - **R-UZ-1** — Residency unknown. "Residency determines which rate applies (residents 12%/5%; non-residents 12%/10%/6%). This skill cannot select a rate without knowing whether the individual was present in Uzbekistan 183+ days in the relevant 12-month period. Please confirm."
 - **R-UZ-2** — Corporate income tax / legal entities. "This skill covers individuals, sole traders and individual entrepreneurs only. Companies file corporate income tax / turnover tax separately. Escalate to a qualified Uzbekistan tax practitioner."
 - **R-UZ-3** — Designated-area 1% rate claimed. "The 1% PIT rate applies only to specific designated areas (e.g. Sokh, Shahimardan/Chungara enclaves). Do not apply it without documentary proof of the taxpayer's qualifying location. Escalate to a reviewer."
-- **R-UZ-4** — New 2026 special tax regime for foreign citizens. "A special tax regime for foreign citizens is reported to be introduced from January 2026, but its rate, eligibility and any minimum-salary threshold are unconfirmed. Do not compute under it. Escalate to a qualified practitioner. [RESEARCH GAP — reviewer to confirm]"
-- **R-UZ-5** — Penalties / arrears / enforcement. "Specific late-filing and late-payment penalty percentages and interest (peni) are not confirmed in the available sources. Do not advise on penalty amounts. Escalate to a qualified practitioner. [RESEARCH GAP — reviewer to confirm]"
+- **R-UZ-4** — New 2026 special tax regime for foreign citizens. "A special tax regime for foreign citizens is reported to be introduced from January 2026, but its rate, eligibility and any minimum-salary threshold are unconfirmed. The Tax Code text on lex.uz read on 4 October 2026 shows the resident rate of 12% (5% on dividends and interest) in art. 381 and the non-resident table in art. 382, with no separate regime for foreign citizens, so any such regime sits in another act. Do not compute under it. Escalate to a qualified practitioner. [RESEARCH GAP — reviewer to confirm]"  _(R-UZ-4 -- Foreign citizens ; Tax Code of the Republic of Uzbekistan (Soliq kodeksi, consolidated text on lex.uz), art. 381 and 382 — https://lex.uz/docs/4674902)_
+- **R-UZ-5** — Penalties / arrears / enforcement. "Late-payment interest (penya) accrues at one three-hundredth of the Central Bank of Uzbekistan refinancing rate per day on the unpaid tax, from the day after the due date (art. 110). Late filing of a tax report is an administrative offence under art. 220, with the fine amounts in the Code of Administrative Liability, which was not read [RESEARCH GAP — reviewer to confirm the administrative fine amounts]. Do not quantify fines. Escalate to a qualified practitioner."  _(R-UZ-5 -- Penalties / arrears / enforcement ; Tax Code of the Republic of Uzbekistan (Soliq kodeksi, consolidated text on lex.uz), art. 110 and 220 — https://lex.uz/docs/4674902)_
 - **R-UZ-6** — VAT / corporate turnover for entities. "This skill covers personal income tax only. For Uzbekistan VAT or company turnover tax, use the relevant Uzbekistan VAT / corporate skill."
 
 ## Section 3 -- Transaction Pattern Library
