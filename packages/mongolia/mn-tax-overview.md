@@ -5,7 +5,7 @@ jurisdiction: MN
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ Mongolia taxes residents on worldwide income and non-residents on Mongolian-sour
 - **Does VAT exist?** — Yes — VAT applies at a standard rate of 10%  _(Law on Value Added Tax (Нэмэгдсэн өртгийн албан татварын тухай, consolidated on legalinfo.mn), art. 11.1 — https://legalinfo.mn/mn/detail?lawId=11227 ; https://taxsummaries.pwc.com/mongolia/corporate/other-taxes)_
 - **Annual personal income tax filing deadline** — 15 February of the following year  _([Personal Income Tax Law of Mongolia](https://taxsummaries.pwc.com/mongolia/individual/tax-administration))_
 - **Annual corporate income tax filing deadline** — 10 February after the end of the tax year  _([Corporate Income Tax Law of Mongolia](https://taxsummaries.pwc.com/mongolia/corporate/tax-administration))_
-- **VAT return filing/payment deadline** — Monthly — by the 10th day of the following month  _(Value-Added Tax Law of Mongolia (as described at [mongoliabusiness.mn](https://mongoliabusiness.mn/vat/)))_
+- **VAT return filing/payment deadline** — Monthly — the withholding agent transfers the VAT on the month's sales to the single treasury account and reports it by the 10th of the following month (art. 16.1)  _(Law on Value Added Tax (Нэмэгдсэн өртгийн албан татварын тухай, consolidated on legalinfo.mn), art. 16.1 — https://legalinfo.mn/mn/detail?lawId=11227)_
 
 <!-- openaccountants-cta-block -->
 
