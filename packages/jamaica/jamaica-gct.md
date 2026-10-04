@@ -1,11 +1,11 @@
 ---
 name: jamaica-gct
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Jamaica GCT (General Consumption Tax) return (Form GCT-R) for any client. Trigger on phrases like "prepare GCT return", "Jamaica VAT", "GCT return", "TAJ filing", or any request involving Jamaica consumption tax filing. This skill covers standard GCT-registered businesses only. Free-zone entities and approved farmer/manufacturer schemes are in the refusal catalogue. ALWAYS read this skill before touching any Jamaica GCT work.
-version: 2.0
+version: 2.1
 jurisdiction: JM
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -85,7 +85,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal catalogue
 
-- **R-JM-1 — Below registration threshold** — Below mandatory GCT registration threshold. (Trigger: turnover below JMD 15,000,000 and not voluntarily registered.)
+- **R-JM-1 — Below registration threshold** — Below mandatory GCT registration threshold. (Trigger: turnover below JMD 15,000,000 and not voluntarily registered.)  _(Tax Administration Jamaica, General Consumption Tax page (threshold effective April 1, 2025) — https://www.jamaicatax.gov.jm/general-consumption-tax1 ; Jamaica Information Service, GCT Exemption Threshold for MSMEs Increased to $15 Million (13 March 2025) — https://jis.gov.jm/gct-exemption-threshold-for-msmes-increased-to-15-million/)_
 - **R-JM-2 — Free-zone entity** — Free-zone benefits require valid licence. Escalate. (Trigger: client operates in a Special Economic Zone.)
 - **R-JM-3 — Approved farmer/manufacturer** — Confirm TAJ approved status before applying GCT relief. (Trigger: client claims approved status.)
 - **R-JM-4 — Partial exemption** — Apportionment required. Flag for reviewer. (Trigger: mixed taxable/exempt.)
@@ -203,23 +203,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 Standard rate 15%
 
-- **Standard rate 15%** — Default for all taxable supplies. Sales Line 1/2. Purchases Line 8.
+- **Standard rate 15%** — Default for all taxable supplies; 15% since 1 April 2020 (16.5% before). Sales Line 1/2. Purchases Line 8.  _(Tax Administration Jamaica, Quick Guide to GCT (amended March 2021) — https://www.jamaicatax.gov.jm/documents/10194/21679950/GCT_Quick_Guide_to_GCT_%28Amended%29_032021.pdf/6a23364a-3cbe-ddb4-8de4-e9fb691af3e8 ; Tax Administration Jamaica, General Consumption Tax page (threshold effective April 1, 2025) — https://www.jamaicatax.gov.jm/general-consumption-tax1)_
 
 ### 5.2 Telephone rate 25%
 
-- **Telephone rate 25%** — Telephone services and handsets. Sales at 25%.
+- **Telephone rate 25%** — Telephone services and telephone instruments. Sales at 25%.  _(Tax Administration Jamaica, Quick Guide to GCT (amended March 2021) — https://www.jamaicatax.gov.jm/documents/10194/21679950/GCT_Quick_Guide_to_GCT_%28Amended%29_032021.pdf/6a23364a-3cbe-ddb4-8de4-e9fb691af3e8)_
 
 ### 5.3 Zero-rated
 
-- **Zero-rated** — Exports, international transport, diplomatic supplies, approved agricultural inputs, free-zone supplies.
+- **Zero-rated** — Exports entered under the Customs Act, services to non-residents whose benefit is not realised in Jamaica, international transport, diplomatic supplies, approved agricultural inputs, free-zone supplies.  _(General Consumption Tax Act (Ministry of Justice revised edition to L.N. 104A/2019), s 24 and First Schedule Part II — https://laws.moj.gov.jm/library/statute/the-general-consumption-tax-act/download ; Tax Administration Jamaica, List of Zero Rated and Exempt Items as per the GCT Act (2020) — https://www.jamaicatax.gov.jm/documents/10194/24445204/GCT_Zero_Rated_and_Exempt_Items_122020_2022.pdf/60eec7d3-a449-a1b3-88ac-6c5d3a7d6cd3 ; Tax Administration Jamaica, General Consumption Tax page (threshold effective April 1, 2025) — https://www.jamaicatax.gov.jm/general-consumption-tax1)_
 
 ### 5.4 Exempt (Second Schedule)
 
-- **Exempt (Second Schedule)** — Basic food items, medical/dental, education, financial interest, life insurance, residential rental, public transport, domestic water/electricity, petroleum.  _(Second Schedule)_
+- **Exempt (Third Schedule)** — Basic food items, medical/dental, education, financial interest, life insurance, residential rental, public transport, domestic water/electricity, petroleum.  _(General Consumption Tax Act (Ministry of Justice revised edition to L.N. 104A/2019), s 25 and Third Schedule — https://laws.moj.gov.jm/library/statute/the-general-consumption-tax-act/download ; Tax Administration Jamaica, List of Zero Rated and Exempt Items as per the GCT Act (2020) — https://www.jamaicatax.gov.jm/documents/10194/24445204/GCT_Zero_Rated_and_Exempt_Items_122020_2022.pdf/60eec7d3-a449-a1b3-88ac-6c5d3a7d6cd3)_
 
 ### 5.5 Reverse charge (Section 4A)
 
-- **Reverse charge (Section 4A)** — Services from non-residents. Self-assess 15%.  _(Section 4A)_
+- **Reverse charge (Section 23B)** — Imported services: a registered taxpayer receiving services from a non-resident supplier accounts for GCT at 15% and may claim it as input tax; an unregistered service importer pays the tax unless its supplies in the prior 12 months were under JMD 3,000,000 or the services are for an individual's private use.  _(General Consumption Tax Act (Ministry of Justice revised edition to L.N. 104A/2019), s 23B — https://laws.moj.gov.jm/library/statute/the-general-consumption-tax-act/download)_
 
 ### 5.6 Blocked input GCT (Section 16(2), 17)
 
@@ -235,7 +235,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.9 Tax invoice (Section 20)
 
-- **Tax invoice (Section 20)** — Must show: "Tax Invoice", supplier TRN, customer TRN (B2B > JMD 10,000), GCT amount.  _(Section 20)_
+- **Tax invoice (Section 22)** — Registered taxpayers must issue a tax invoice with the prescribed particulars to other registered taxpayers and a receipt showing the value and GCT separately to other customers. Must show: "Tax Invoice", supplier TRN, customer TRN (B2B > JMD 10,000), GCT amount.  _(General Consumption Tax Act (Ministry of Justice revised edition to L.N. 104A/2019), s 22 — https://laws.moj.gov.jm/library/statute/the-general-consumption-tax-act/download ; Tax Administration Jamaica, General Consumption Tax page (threshold effective April 1, 2025) — https://www.jamaicatax.gov.jm/general-consumption-tax1)_
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
@@ -300,7 +300,7 @@ Line 15 = 13 - 14
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to 10-section architecture.
+- **v2.1 (April 2026):** Full rewrite to 10-section architecture.
 - **v1.1/v1.0:** Initial skill.
 
 ## Disclaimer

@@ -5,7 +5,7 @@ jurisdiction: JM
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -42,8 +42,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Lower band | Up to JMD 6,000,000 | 25% |
 | Higher band | Above JMD 6,000,000 | 30% |
 
-- **Non-residents tax rate** — Non-residents: taxed at a flat 25% from the first dollar, with no tax-free threshold available.  _(Source: PwC Jamaica Individual.)_
-- **Basis of taxation** — Residents (domiciled in Jamaica) are taxed on worldwide income. Non-residents are taxed on Jamaica-source income only.  _(Source: PwC Jamaica Individual.)_
+- **Non-residents tax rate** — Non-residents: taxed at 25% from the first dollar where no double taxation agreement applies, with no tax-free threshold available  _(Tax Administration Jamaica, Non-residents and Income Tax — https://www.jamaicatax.gov.jm/documents/10181/123967/non-residents-and-income-tax-final-document.pdf/7bfdd5c6-eb64-926e-e5c3-ea296e5f4831)_
+- **Basis of taxation** — Residents are taxed on worldwide income. Non-residents are taxed on income earned in Jamaica only; TAJ treats a visitor present for less than six months or 183 days in a year of assessment with no intention of residing as non-resident  _(Tax Administration Jamaica, Non-residents and Income Tax — https://www.jamaicatax.gov.jm/documents/10181/123967/non-residents-and-income-tax-final-document.pdf/7bfdd5c6-eb64-926e-e5c3-ea296e5f4831 ; residents: PwC Jamaica Individual summary)_
 
 Jamaica uses a two-band progressive structure applied to chargeable income ABOVE the tax-free threshold. The threshold itself is tax-free.
 
@@ -57,7 +57,7 @@ Jamaica uses a two-band progressive structure applied to chargeable income ABOVE
 | 1 Apr 2025 -- 31 Dec 2025 | JMD 1,799,376 | JMD 149,948 | JMD 34,603 |
 | **Full-year 2025 blended effective threshold** | **JMD 1,774,554** | -- | -- |
 
-- **Blended threshold derivation** — (3/12 x JMD 1,700,088) + (9/12 x JMD 1,799,376) = JMD 425,022 + JMD 1,349,532 = JMD 1,774,554  _(Source: Orbitax citing TAJ Technical Advisory #042025/01/IT-TA)_
+- **Blended threshold derivation** — (3/12 x JMD 1,700,088) + (9/12 x JMD 1,799,376) = JMD 425,022 + JMD 1,349,532 = JMD 1,774,554  _(Tax Administration Jamaica, Technical Advisory 042025/01/IT-TA, Increase in Income Tax Threshold effective April 1, 2025 to December 31, 2028 — https://www.jamaicatax.gov.jm/documents/10194/52231399/Technical_Advisory_Threshold+_042025.pdf/c4adbf81-8ddd-9a1b-9e8b-8bdc431162df)_
 
 **Upcoming confirmed increases (2025/26 budget)**  _(Source: JIS; https://jis.gov.jm/increase-in-income-tax-threshold-now-in-effect/)_
 
@@ -88,7 +88,7 @@ Example for 2025: a pensioner aged 65+ has total tax-free income = JMD 1,774,554
 | Employer | 3% | JMD 5,000,000 | JMD 150,000 |
 | Self-employed | 6% | JMD 5,000,000 | JMD 300,000 |
 
-- **NIS deductibility** — NIS contributions are income-tax deductible for the contributor.  _(Source: PwC Jamaica Other Taxes; https://taxsummaries.pwc.com/jamaica/individual/other-taxes)_
+- **NIS deductibility** — NIS contributions are deductible in arriving at statutory income, together with approved pension or retirement scheme contributions and ESOP share purchases  _(Tax Administration Jamaica, Payroll Taxes and Statutory Contributions (Employee / Employer), April 2025 edition — https://www.jamaicatax.gov.jm/documents/10194/53547865/Payroll+Taxes+and+Statutory+Contributions+%28Employee+Employer%29.pdf/bef9095b-fb2d-db4a-5de4-b19405bd8631)_
 
 **B. National Housing Trust (NHT)**  _(Source: PwC Jamaica Other Taxes; https://taxsummaries.pwc.com/jamaica/individual/other-taxes. NHT official site: https://www.nht.gov.jm/self-employed-contributions)_
 
@@ -108,7 +108,7 @@ Example for 2025: a pensioner aged 65+ has total tax-free income = JMD 1,774,554
 | Employer | 3.5% | None |
 | Self-employed | 2.25% | None |
 
-- **Education Tax base and no threshold exemption** — Calculated on statutory income AFTER deduction of NIS contributions (and approved superannuation). There is NO earnings ceiling. Education Tax has NO threshold exemption — employees who fall below the income tax threshold still pay Education Tax on ALL earnings. This is a frequent compliance error.  _(Source: PwC Jamaica Other Taxes; https://taxsummaries.pwc.com/jamaica/individual/other-taxes)_
+- **Education Tax base and no threshold exemption** — Calculated on statutory income, meaning gross emoluments after NIS and approved superannuation deductions, with no earnings ceiling and no threshold exemption: TAJ's own worked example charges 2.25% Education Tax to an employee whose pay falls below the income tax threshold. This is a frequent compliance error  _(Tax Administration Jamaica, Payroll Taxes and Statutory Contributions (Employee / Employer), April 2025 edition — https://www.jamaicatax.gov.jm/documents/10194/53547865/Payroll+Taxes+and+Statutory+Contributions+%28Employee+Employer%29.pdf/bef9095b-fb2d-db4a-5de4-b19405bd8631)_
 
 **D. HEART Trust/NSTA Levy**  _(Source: PwC Jamaica Other Taxes; https://taxsummaries.pwc.com/jamaica/individual/other-taxes)_
 
@@ -117,7 +117,7 @@ Example for 2025: a pensioner aged 65+ has total tax-free income = JMD 1,774,554
 | Employee | 0% (none) | n/a |
 | Employer | 3% | Employer has 3 or more employees |
 
-- **HEART levy application** — Employer-only levy on total gross payroll. No earnings ceiling. Tax-deductible for the employer. Applies from the first dollar of payroll once the employer has 3 or more employees. Note: one secondary source cited a monthly payroll threshold of approximately JMD 292,300 (2026 figure) in addition to the employee-count test — [RESEARCH GAP — reviewer to confirm from current HEART Trust/NSTA Act].  _(Source: PwC Jamaica Other Taxes; https://taxsummaries.pwc.com/jamaica/individual/other-taxes)_
+- **HEART levy application** — Employer-only levy of 3% of gross emoluments where the employer's payroll costs exceed JMD 173,328 per annum; no employee contribution and no earnings ceiling  _(Tax Administration Jamaica, Payroll Taxes and Statutory Contributions (Employee / Employer), April 2025 edition — https://www.jamaicatax.gov.jm/documents/10194/53547865/Payroll+Taxes+and+Statutory+Contributions+%28Employee+Employer%29.pdf/bef9095b-fb2d-db4a-5de4-b19405bd8631)_
 
 ### Summary: Total Statutory Contribution Rates (2025)
 
@@ -432,7 +432,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely from
 
 ### 5.3 Loss Carry-Forward
 
-- **Loss carry-forward restriction** — Losses are restricted to 50% of chargeable income in the carry-forward year. Exceptions: new businesses (first 5 years) or businesses with turnover under JMD 15,000,000. A sole trader cannot use the threshold to create or enlarge a loss carry-forward.  _(Source: PwC Jamaica Deductions.)_
+- **Loss carry-forward restriction** — Losses set off against income of a year are limited to 50% of the taxable income for that year of assessment, with unused losses carried forward. Exceptions reported by PwC: new businesses (first 5 years) or businesses with turnover under JMD 15,000,000. A sole trader cannot use the threshold to create or enlarge a loss carry-forward  _(Tax Administration Jamaica, Income Tax for Individuals and Businesses (April 2019) — https://www.jamaicatax.gov.jm/documents/10181/106853/Income+Tax+for+Individuals++Businesses+042019.pdf/f3d77ed8-eba4-0698-180f-8dd0293a640f ; exceptions: PwC Jamaica Deductions summary)_
 
 ### 5.4 Capital Allowances (Standard Rates — Straight-Line)
 
@@ -488,7 +488,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely from
 | Preference dividends | 25% / 30% progressive | 25% / 30% |
 | Interest (banks/financial) | 25% (credit against IT) | 25% |
 
-- **Non-resident dividend WHT reduction** — Non-resident dividend WHT reduced from 25% to 15% effective 1 April 2025.  _(Source: PwC Jamaica Significant Developments — https://taxsummaries.pwc.com/jamaica/individual/significant-developments; EY Tax Alert 2025-0742.)_
+- **Non-resident dividend WHT reduction** — A single 15% rate on dividends for resident and non-resident companies and individuals was announced in the 2025/26 Budget, replacing 25% for non-resident individuals and 33 1/3% for non-resident companies; PwC and EY report it effective 1 April 2025  _(Jamaica Information Service, Single Tax Rate on Dividends to Attract Investors (14 March 2025) — https://jis.gov.jm/single-tax-rate-on-dividends-to-attract-investors/ ; effective date: PwC Jamaica Significant Developments; EY Tax Alert 2025-0742)_
 
 ### 5.8 Benefits in Kind (Employment)
 
@@ -496,7 +496,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely from
 
 ### 5.9 GCT Registration Threshold
 
-- **GCT registration threshold** — Self-employed persons providing taxable goods or services must register for General Consumption Tax (GCT — Jamaica's VAT equivalent) if annual turnover meets or exceeds JMD 15,000,000 (increased from JMD 10,000,000, effective 1 April 2025). Registration required within 21 days of crossing the threshold. GCT rate: 15% standard. GCT returns and payment due by 25th of each month.  _(Source: JIS — https://jis.gov.jm/gct-exemption-threshold-for-msmes-increased-to-15-million/; VATupdate — https://www.vatupdate.com/2025/03/13/jamaica-raises-gct-registration-threshold-in-2025-26-budget/)_
+- **GCT registration threshold** — Self-employed persons carrying on a taxable activity must register for General Consumption Tax (GCT — Jamaica's VAT equivalent) once annual supplies reach JMD 15,000,000 (an average of JMD 1,250,000 a month for shorter periods), up from JMD 10,000,000 from 1 April 2025. Application is due within 21 days of starting the taxable activity (s 26(3)). GCT rate: 15% standard. Monthly returns and payment are due by the last working day of the month following the taxable period  _(Tax Administration Jamaica, General Consumption Tax page (threshold effective April 1, 2025) — https://www.jamaicatax.gov.jm/general-consumption-tax1 ; Tax Administration Jamaica, Quick Guide to GCT (amended March 2021) — https://www.jamaicatax.gov.jm/documents/10194/21679950/GCT_Quick_Guide_to_GCT_%28Amended%29_032021.pdf/6a23364a-3cbe-ddb4-8de4-e9fb691af3e8 ; Jamaica Information Service, GCT Exemption Threshold for MSMEs Increased to $15 Million (13 March 2025) — https://jis.gov.jm/gct-exemption-threshold-for-msmes-increased-to-15-million/ ; General Consumption Tax Act (Ministry of Justice revised edition to L.N. 104A/2019), s 26 — https://laws.moj.gov.jm/library/statute/the-general-consumption-tax-act/download)_
 
 For GCT computation details, use the jamaica-gct skill.
 
