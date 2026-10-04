@@ -1,10 +1,10 @@
 ---
 name: cameroon-income-tax
 description: Use this skill whenever asked about Cameroon personal income tax (IRPP) for salaried or self-employed individuals. Trigger on phrases like "how much income tax do I pay in Cameroon", "IRPP", "impot sur le revenu", "CNPS contributions", "PAYE Cameroon", "IGS", "Impot General Synthetique", "Centre de Gestion Agree", "CGA", "barème IRPP", "Credit Foncier", "FNE", "monthly salary tax Cameroon", "net taxable income", "minimum tax", or any question about filing or computing income tax for a salaried or self-employed client in Cameroon. Also trigger when preparing or reviewing a monthly PAYE return, the annual recapitulative declaration, the DIPE employer summary, computing CNPS social security, or advising on the IGS/actual-earnings turnover regimes. This skill covers the progressive IRPP scale (CAC-inclusive), CNPS branches, Credit Foncier/FNE, council tax and CRTV royalty, the IGS small-business regime, filing deadlines, and penalties. ALWAYS read this skill before touching any Cameroon income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual declaration deadline | 31 July / 30 September / 31 October depending on taxpayer class (see 5.10) [PwC] |
 | Validated by | Live status: https://openaccountants.com/skills/cameroon-income-tax |
 | Validation date | Live status: https://openaccountants.com/skills/cameroon-income-tax |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### IRPP Rate Brackets (2025) -- CAC-inclusive scale
 
@@ -527,11 +527,11 @@ ONBOARDING QUESTIONS -- CAMEROON IRPP
 
 | Sector | Monthly SMIG (XAF) | Source |
 | --- | --- | --- |
-| Non-agricultural private sector (headline) | 60,000 | [remotepeople; Rivermate -- secondary] |
-| Agricultural private sector | 45,000 | [Rivermate -- secondary] |
-| State employees baseline | 43,969 (raised from 41,875, Feb 2024) | [Rivermate -- secondary] |
+| Non-agricultural private sector | 60,000 (from 21 March 2023) | [CLEISS] |
+| Agricultural and assimilated sector | 45,000 (from 21 March 2023) | [CLEISS] |
+| State employees under the Labour Code | 43,969 (from 23 February 2024; 41,875 before) | [CLEISS] |
 
-[RESEARCH GAP -- reviewer to confirm] the headline XAF 60,000 SMIG against the labour-ministry SMIG decree (EOR/secondary sources only above).
+The SMIG figures above are those published by CLEISS in its Cameroon contributions table at 1 January 2024 ([CLEISS, Les cotisations au Cameroun](https://www.cleiss.fr/docs/cotisations/cameroun.html)).
 
 ### Test Suite
 
