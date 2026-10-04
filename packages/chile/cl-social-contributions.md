@@ -1,11 +1,11 @@
 ---
 name: cl-social-contributions
 description: Use this skill whenever asked about Chilean self-employed social contributions (cotizaciones previsionales para independientes). Trigger on phrases like "cotizaciones independientes", "AFP independiente", "Fonasa boletas", "SIS seguro invalidez", "retención previsional", "boleta de honorarios cotización", or any question about Chilean social security obligations for independent workers. Covers AFP pension (mandatory since Ley 21.133 phase-in), Fonasa/Isapre health 7%, SIS, withholding from boletas, and Operación Renta annual settlement. ALWAYS read this skill before touching any Chilean social contribution work.
-version: 2.0
+version: 2.1
 jurisdiction: CL
 category: international
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -53,8 +53,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 3 -- Renta imponible and tope
 
-- **renta_imponible formula** — renta_imponible = gross_boleta_income x 80% / 12  _(DL 3.500 Art. 90)_
-- **80% factor and tope cap** — The 80% factor accounts for 20% presumed expenses. Capped at tope imponible (87.8 UF/month, variable in CLP).  _(DL 3.500 Art. 90)_
+- **renta_imponible formula** — renta_imponible = gross_boleta_income x 80% / 12  _(Decreto Ley 3.500 (sistema de pensiones), Ley Chile consolidated text, Art. 90 — https://www.bcn.cl/leychile/navegar?idNorma=7147)_
+- **80% factor and tope cap** — The 80% factor stands in for presumed expenses. The annual renta imponible cannot be below four monthly minimum wages nor above 12 times the monthly cap of Art. 16 (87.8 UF a month, variable in CLP)  _(Decreto Ley 3.500 (sistema de pensiones), Ley Chile consolidated text, Arts 16 and 90 — https://www.bcn.cl/leychile/navegar?idNorma=7147)_
 
 ## Section 4 -- Contribution rates
 
@@ -119,7 +119,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Phase-in (Ley 21.133)
 
-- **Phase-in status** — From 2025 onward, 100% of renta imponible subject to cotización. No partial exemption.  _(Ley 21.133)_
+- **Phase-in status** — Default: 100% of the Art. 90 renta imponible since tax year 2019. Workers who opted for partial coverage contribute on a rising share of it: 70% in tax year 2025, 80% in 2026, 90% in 2027 and 100% from 2028  _(Ley 21.133, Ley Chile text, Art. segundo transitorio — https://www.bcn.cl/leychile/navegar?idNorma=1128420)_
 
 ### Isapre plans above 7%
 

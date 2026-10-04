@@ -145,6 +145,11 @@ NON_GOV_AUTHORITY = frozenset((
                           # administration, which publishes gazette extracts. Bare .org.
     'ahv.li',             # Liechtensteinische AHV-IV-FAK, the public-law social
                           # insurance institution, which publishes the rates. Bare .li.
+    'bcn.cl',             # Biblioteca del Congreso Nacional de Chile, whose Ley Chile
+                          # database publishes the consolidated statutes. Bare .cl.
+    'leychile.cl',        # Ley Chile's own domain for the same statute texts. Bare .cl.
+    'registrodeempresasysociedades.cl',  # Chile's Registro de Empresas y Sociedades, run by the
+                          # Ministry of Economy under Ley 20.659. Bare .cl.
     'mra.mw',             # Malawi Revenue Authority
     'dgi.bf',             # Burkina Faso, Direction Generale des Impots
     'impots.cm',          # Cameroon, Direction Generale des Impots
