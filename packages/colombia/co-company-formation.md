@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Colombia
 jurisdiction: CO
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,10 +15,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Entity types, incorporation and annual compliance
 
-- **Most common entity — SAS** — Sociedad por Acciones Simplificada — limited liability, 1+ shareholder, may be foreign-owned, no residency requirement for shareholders  _(Ley 1258 de 2008 (SAS) — https://multilaw.com/Multilaw/Multilaw/Global_Business_Entities_Guide/Colombia_-_Simplified_Stock_Company.aspx)_
+- **Most common entity — SAS** — Sociedad por Acciones Simplificada — formed by one or more natural or legal persons, liable only up to their contributions (art. 1); may be foreign-owned, with no residency requirement for shareholders  _(Ley 1258 de 2008 (sociedad por acciones simplificada), Gestor Normativo de la Función Pública, art. 1 — https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=34130)_
 - **Other entity types** — Sociedad Anónima (S.A.), Sociedad de Responsabilidad Limitada (Ltda.), branch of a foreign company (sucursal)  _(Código de Comercio (Decreto 410 de 1971) — https://www.bizlatinhub.com/incorporate-a-company-in-colombia-everything-you-need-to-know/)_
-- **Minimum share capital (SAS)** — No statutory minimum; subscribed capital must be paid within 2 years of incorporation  _(Ley 1258 de 2008 — https://multilaw.com/Multilaw/Multilaw/Global_Business_Entities_Guide/Colombia_-_Simplified_Stock_Company.aspx)_
-- **Incorporation document (SAS)** — Bylaws may be a private document (no notarization required) unless real property/specific assets are contributed  _(Ley 1258 de 2008, art. 5 — https://nexo.legal/company-incorporation-colombia-2025/)_
+- **Minimum share capital (SAS)** — No statutory minimum; subscription and payment may follow terms different from the Commercial Code's rules for sociedades anónimas, but the shares must be paid within two years (art. 9)  _(Ley 1258 de 2008 (sociedad por acciones simplificada), Gestor Normativo de la Función Pública, art. 9 — https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=34130)_
+- **Incorporation document (SAS)** — A private document (contract or unilateral act) registered with the Chamber of Commerce's Registro Mercantil; a public deed is needed only where real property or other assets requiring one are contributed (art. 5)  _(Ley 1258 de 2008 (sociedad por acciones simplificada), Gestor Normativo de la Función Pública, art. 5 — https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=34130)_
 - **Legal representative** — At least one legal representative required; no residency requirement  _(Ley 1258 de 2008 — https://multilaw.com/Multilaw/Multilaw/Global_Business_Entities_Guide/Colombia_-_Simplified_Stock_Company.aspx)_
 - **Registration with Chamber of Commerce** — Register with the local Cámara de Comercio to obtain legal personality and Matrícula Mercantil (~5 business days)  _(Código de Comercio; Ley 1258 de 2008 — https://nexo.legal/company-incorporation-colombia-2025/)_
 - **Tax registration** — Obtain RUT and NIT (tax ID) from DIAN; required before invoicing and banking  _(Estatuto Tributario Nacional (RUT obligation) — https://www.bizlatinhub.com/incorporate-a-company-in-colombia-everything-you-need-to-know/)_

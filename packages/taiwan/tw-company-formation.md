@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Taiwan (
 jurisdiction: TW
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,14 +16,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Common entity types
 
 - **Common entity types overview** — Foreign and local investors most commonly use a company limited by shares or a limited company under the Company Act; foreign companies may also operate via a branch or representative office. Foreign-owned entities must clear the Investment Commission (MOEA).
-- **Company limited by shares (股份有限公司)** — Most common vehicle for larger/foreign-invested businesses; shareholders' liability limited to share capital; requires at least one shareholder (corporate) or two natural-person shareholders and directors ((approx — confirm director/shareholder minimums))  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
-- **Limited company (有限公司)** — Simpler form for SMEs; one or more members with liability limited to capital contributions; at least one director  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
+- **Company limited by shares (股份有限公司)** — Most common vehicle for larger and foreign-invested businesses; shareholders' liability is limited to the share capital; the company needs two or more promoters, or a single government or corporate promoter (art. 128), and its capital is divided into par or no-par shares (art. 156)  _(Company Act (Ministry of Justice Laws and Regulations Database, English translation), art. 2, 128 and 156 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0080001)_
+- **Limited company (有限公司)** — Simpler form for SMEs; organised by one or more shareholders, each liable only to the extent of the capital contributed (art. 2 and 98)  _(Company Act (Ministry of Justice Laws and Regulations Database, English translation), art. 2 and 98 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0080001)_
 - **Branch of a foreign company** — An extension of the foreign parent (not a separate legal entity); branch profits are not subject to the undistributed-earnings surtax  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
 
 ## Capital, process and timeline
 
 - **Capital, process and timeline overview** — There is no statutory minimum capital for most domestic businesses, but foreign-investment cases and work-permit-sponsoring entities face practical capital expectations, and paid-in capital must be CPA-verified.
-- **Minimum share capital** — No statutory minimum for most companies; capital must be sufficient for operations and is CPA-verified. Foreign-investment / work-permit cases often expect capital around NT$500,000 or more in practice TWD ((approx — confirm work-permit capital expectation)) TWD  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
+- **Minimum share capital** — No statutory minimum capital in the Company Act (art. 156 regulates the division of capital into shares, not a floor); capital must be sufficient for operations and is CPA-verified. Foreign-investment and work-permit cases often expect capital around NT$500,000 or more in practice; confirm the current work-permit expectation with the Ministry of Labor  _(Company Act (Ministry of Justice Laws and Regulations Database, English translation), art. 156 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0080001)_
 - **Foreign investment approval** — Foreign investors must obtain Foreign Investment Approval from the Investment Commission (Department of Investment Review), MOEA, before incorporation  _(Statute for Investment by Foreign Nationals — https://taiwan.acclime.com/guides/how-to-register-company/)_
 - **Core incorporation steps** — 1) reserve company name & business scope; 2) FIA approval (foreign investors); 3) open preparatory bank account & inject capital; 4) CPA capital verification; 5) company registration with MOEA; 6) tax & employer (labor/health insurance) registration  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
 - **Typical incorporation timeline** — Approximately 4–8 weeks for a foreign-invested entity, depending on investment approval and capital verification ((approx — confirm))  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_

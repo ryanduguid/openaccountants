@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Czech Re
 jurisdiction: CZ
 category: formation
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,8 +19,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Limited liability company (s.r.o.)** — Společnost s ručením omezeným — the most common entity for SMEs  _([Business Corporations Act (Act No. 90/2012 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/corporate-residence))_
 - **Joint-stock company (a.s.)** — Akciová společnost — used for larger businesses; minimum capital CZK 2,000,000 (or EUR 80,000) CZK  _(Business Corporations Act (Act No. 90/2012 Coll.))_
 - **Other forms** — General partnership (v.o.s.), limited partnership (k.s.), branch of a foreign company, and sole trader (OSVČ / živnost)  _(Business Corporations Act (Act No. 90/2012 Coll.); Trade Licensing Act (Act No. 455/1991 Coll.))_
-- **Minimum share capital — s.r.o.** — CZK 1 (legal minimum); CZK 200,000+ commonly used for credibility CZK  _(Business Corporations Act (Act No. 90/2012 Coll.) (as described at [firma.domytax.cz](https://firma.domytax.cz/en/blog/how-to-start-an-s-r-o-in-the-czech-republic-in-2025)))_
-- **Minimum share capital — a.s.** — CZK 2,000,000 (or EUR 80,000) CZK  _(Business Corporations Act (Act No. 90/2012 Coll.))_
+- **Minimum share capital — s.r.o.** — CZK 1 per member's contribution (§ 142); CZK 200,000 or more is commonly used for credibility  _(Business Corporations Act No. 90/2012 Coll. (zákon o obchodních korporacích, consolidated text on e-Sbírka), § 142 — https://e-sbirka.gov.cz/sb/2012/90)_
+- **Minimum share capital — a.s.** — CZK 2,000,000 or EUR 80,000 (§ 246)  _(Business Corporations Act No. 90/2012 Coll. (zákon o obchodních korporacích, consolidated text on e-Sbírka), § 246 — https://e-sbirka.gov.cz/sb/2012/90)_
 - **Founding instrument** — Memorandum of association (or founder's deed for a single member) executed as a notarial deed  _(Business Corporations Act (Act No. 90/2012 Coll.))_
 - **Incorporation steps** — Notarial memorandum of association → obtain trade licence (živnostenský list) → deposit capital / proof → register in the Commercial Register → register with tax authority  _(Business Corporations Act (Act No. 90/2012 Coll.); Act on Public Registers (Act No. 304/2013 Coll.) (as described at [ten-law.org](https://www.ten-law.org/knowledge/qa-company-law-in-the-czech-republic/)))_
 - **Typical timeline** — Approximately 1–3 weeks; faster (a few days) where the notary registers directly into the Commercial Register ((approx — confirm)) (approx — confirm)  _(Act on Public Registers (Act No. 304/2013 Coll.))_
