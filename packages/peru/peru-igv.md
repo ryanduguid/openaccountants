@@ -1,10 +1,10 @@
 ---
 name: peru-igv
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Peru IGV (Impuesto General a las Ventas) return or advise on Peruvian VAT registration, filing, and SUNAT compliance. Trigger on phrases like "prepare IGV return Peru", "Peruvian VAT", "IGV Peru", "SUNAT", "RUC", or any Peru IGV request. ALWAYS read this skill before touching any Peru IGV work.
-version: 2.0
+version: 2.1
 jurisdiction: PE
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Peru Igv
 
-## Peru IGV (Impuesto General a las Ventas) Skill v2.0
+## Peru IGV (Impuesto General a las Ventas) Skill v2.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Maria Clemencia Valverde Rios** on 2026-06-29; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -27,9 +27,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Peru (República del Perú) |
-| Tax | IGV — Impuesto General a las Ventas (18% = 16% IGV + 2% IPM — Impuesto de Promoción Municipal) |
+| Tax | IGV — Impuesto General a las Ventas (18% = 16% IGV, art. 17 of the TUO on sunat.gob.pe, + 2% IPM — Impuesto de Promoción Municipal) |
 | Currency | PEN (Peruvian Sol — S/) |
-| Standard rate | 18% (16% IGV + 2% IPM) |
+| Standard rate | 18% (16% IGV under art. 17 of the TUO, Decreto Supremo 055-99-EF, plus 2% IPM) |
 | Reduced rate | For fiscal year 2026, MYPEs in the restaurant and hotel sector (revenues ≤ 1,700 UIT and core business ≥ 70%) qualify for a consolidated 10.5% rate (8% IGV + 2.5% IPM) under Ley N.° 32219; otherwise a single 18% rate |
 | Zero rate | 0% (exports of goods and services) |
 | Exempt | Financial services, insurance, medical services, education, residential rent (some), basic foodstuffs (Apéndice I), agricultural goods, international transport |
@@ -43,7 +43,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | RUC | Registro Único de Contribuyentes — 11-digit Peruvian taxpayer ID |
 | Contributor | Open Accountants Community |
 | Validated by | Verified by Maria Clemencia Valverde Rios (CPA) on 2026-06-29 |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Key PDT 621 fields
 
