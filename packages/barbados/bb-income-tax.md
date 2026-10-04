@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Barbados personal income tax, N
 jurisdiction: BB
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -41,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 0 -- 50,000 | 12.5% | BBD 6,250 |
 | Above 50,000 | 28.5% | -- |
 
-- **No zero-rate band** — There is no zero-rate band. The personal allowance (see Section 1 below) is subtracted first; the residual taxable income falls into these two brackets.  _(Source: PwC Worldwide Tax Summaries — Barbados Individual, https://taxsummaries.pwc.com/barbados/individual/taxes-on-personal-income)_
+- **No zero-rate band** — There is no zero-rate band. The personal allowance (see Section 1 below) is subtracted first; the residual taxable income falls into these two brackets.  _(Income Tax (Amendment) Act, 2020-10 (Barbados Revenue Authority copy), s 6, amending s 42(1) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+%29+Act%2c+2020-10.pdf&name=Income+Tax+%28Amendment%29+Act%2c+2020-10 ; Barbados Revenue Authority, Personal Income Tax (who should file) — https://bra.gov.bb/Popular-Topics/Employed-Retired-Persons/PIT)_
 
 ### Personal Allowances (deducted before applying rate brackets)
 
@@ -432,7 +433,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.1 Residency Rules
 
-- **Residency determination test** — A person is resident in Barbados if present for more than 182 days in the calendar year (arrival and departure both count), OR if "ordinarily resident" (has permanent accommodation available and has notified the Revenue Commissioner of intent to reside for at least 2 consecutive years).  _(Legislation: Income Tax Act, Cap. 73)_
+- **Residency determination test** — A person is resident in Barbados if present for more than 182 days in the calendar year (arrival and departure both count), OR if "ordinarily resident" (has permanent accommodation available and has notified the Revenue Commissioner of intent to reside for at least 2 consecutive years).  _(Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 86(5) to (7) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
 **Residency status taxation table**  _(Source: PwC Residence — https://taxsummaries.pwc.com/barbados/individual/residence)_
 
