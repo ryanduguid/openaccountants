@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T16:59:59+00:00",
+ "generated_at": "2026-10-04T17:12:31+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -9637,7 +9637,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "hn-corporate-income-tax",
@@ -9650,7 +9650,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "hn-tax-overview",
@@ -9702,7 +9702,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "honduras-social-contributions",
@@ -9715,7 +9715,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "hk-company-formation",

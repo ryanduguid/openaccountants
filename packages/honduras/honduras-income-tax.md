@@ -1,7 +1,7 @@
 ---
 name: honduras-income-tax
 description: Use this skill whenever asked about Honduras personal income tax (ISR — Impuesto Sobre la Renta) for individuals (personas naturales), including self-employed professionals. Trigger on phrases like "how much ISR do I pay", "Honduras income tax", "Declaración Jurada", "Form 102", "tabla progresiva", "aportación solidaria", "solidarity contribution", "IHSS contributions", "RAP", "Honduran tax return", "renta neta gravable", "self-employed tax Honduras", "ingreso exento", or any question about filing or computing ISR for an individual or self-employed client in Honduras. Also trigger when preparing or reviewing a Declaración Jurada de ISR — Persona Natural, classifying deductible expenses, advising on Pagos a Cuenta (advance payments), or the solidarity contribution. This skill covers the progressive ISR table, solidarity contribution, alternative minimum tax, capital gains, non-resident withholding, IHSS/RAP social security, filing forms and deadlines. ALWAYS read this skill before touching any Honduras income tax work.
-version: 0.3
+version: 0.4
 jurisdiction: HN
 tax_year: 2026
 last_updated: 2026-10-04
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing & payment deadline | 30 April of the year following the tax year [Radio HRN; PwC] |
 | Validated by | Pending — requires sign-off by a Honduran-licensed accountant (Perito Mercantil / Contador Público) |
 | Validation date | Pending |
-| Skill version | 0.3 |
+| Skill version | 0.4 |
 
 ### ISR Progressive Table — 2026 (CURRENT)
 
@@ -283,7 +283,7 @@ Advance income-tax instalment (Pago a Cuenta). Not an expense — it is a credit
 
 ### 5.3 Solidarity Contribution
 
-- **Solidarity Contribution** — A 5% surtax on net taxable income exceeding L1,000,000. Not deductible from ISR. Paid via three quarterly advance instalments (30 Jun, 30 Sep, 31 Dec) and settled with the annual return on 30 April. Excludes special export/tourism regimes.  _(Decreto 278-2013)_
+- **Solidarity Contribution** — A 5% surtax on net taxable income exceeding L1,000,000, paid by legal persons (not deductible from ISR) through the pagos a cuenta instalments on 30 June, 30 September and 31 December and settled with the annual return on 30 April  _(SAR, Generalidades de los impuestos con vencimiento al 30 de abril (June 2026) — https://www.sar.gob.hn/download/generalidades-impuestos-con-vencimiento-al-30-de-abril/)_
 
 ### 5.4 Alternative Minimum Tax
 
@@ -291,7 +291,7 @@ Advance income-tax instalment (Pago a Cuenta). Not an expense — it is a credit
 
 ### 5.5 Capital Gains
 
-- **Capital Gains** — Flat 10% on the gain. Out of scope for the progressive workflow — see R-HN-4.  _(PwC)_
+- **Capital Gains** — A flat 10% single tax on capital gains of natural and legal persons, domiciled or not, outside the progressive scale. Out of scope for the progressive workflow; see R-HN-4  _(Ley del Impuesto sobre la Renta, texto consolidado al 26 de junio de 2018 (SAR), art 10 — https://www.sar.gob.hn/download/consolidado-ley-impuesto-sobre-la-renta-25-junio-2018/)_
 
 ### 5.6 Deductibility — General Test
 
@@ -360,7 +360,7 @@ Honduras has no double-tax treaties (only TIEAs with the US and some Central Ame
 
 ### 5.11 Penalties
 
-- **Penalties** — Late filing of the Declaración Jurada is subject to fines and surcharges under Article 160 of the Código Tributario (Decreto 170-2016). [RESEARCH GAP — reviewer to confirm] the exact graduated lempira fine/surcharge schedule directly from Decreto 170-2016 Art. 160 before advising on penalty amounts.  _(Radio HRN; Código Tributario (Decreto 170-2016) Art. 160)_
+- **Penalties** — Late filing of the Declaración Jurada is subject to the fines and surcharges computed under art 160 of the Código Tributario (Decreto 170-2016), to which art 28 of the income tax law refers; the graduated lempira amounts are not reproduced here  _(Código Tributario (Decreto 170-2016), SAR copy, art 160 — https://www.sar.gob.hn/download/decreto-no-170-2016-codigo-tributario/ ; Ley del Impuesto sobre la Renta, texto consolidado al 26 de junio de 2018 (SAR), art 28 — https://www.sar.gob.hn/download/consolidado-ley-impuesto-sobre-la-renta-25-junio-2018/)_
 
 ## Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)
 

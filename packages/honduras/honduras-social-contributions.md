@@ -1,10 +1,10 @@
 ---
 name: honduras-social-contributions
 description: Use this skill whenever asked about Honduras payroll contributions, social security, or personal income tax (ISR) for employees, employers, or self-employed individuals. Trigger on phrases like "how much IHSS do I pay", "Honduras social security", "IHSS contribution", "RAP deduction", "INFOP levy", "ISR withholding Honduras", "Honduras income tax table", "tabla progresiva", "techo de cotización", "aguinaldo tax", "13th month Honduras", "Código 111 withholding", "Honduras net salary", or any question about Honduran payroll deductions, employer contributions, or ISR. Also trigger when classifying bank-statement transactions that relate to IHSS, RAP, INFOP, or SAR (tax) debits from Honduran banks (Banco Atlántida, Banco Ficohsa, BAC Credomatic, Banco de Occidente). This skill covers the 2025/2026 ISR progressive table, IHSS (IVM + EM) rates and ceilings, RAP labor-reserve fund, INFOP training levy, 13th/14th month pay, filing forms and deadlines, penalties, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Honduran payroll or ISR work.
-version: 0.1
+version: 0.2
 jurisdiction: HN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Honduras Payroll Contributions & Income Tax (ISR)
 
-## Honduras Payroll Contributions & Income Tax (ISR) Skill v0.1
+## Honduras Payroll Contributions & Income Tax (ISR) Skill v0.2
 
 > **Tier 2 (research-verified) — NOT yet professionally verified.** Figures are drawn from sourced research (Big-4 summaries, Honduran press citing the IHSS/SAR, and statute references) but have NOT been signed off by a Honduran Contador Público Colegiado. Treat all outputs as estimates pending review.
 
@@ -245,7 +245,7 @@ Apply exactly as written when payslip/bank data is clear and inputs are availabl
 
 ### Rule 1 — ISR base and medical deduction
 
-- **ISR base and medical deduction** — annual_net_taxable_income = annual_gross_salary - 40,000   (flat medical deduction) ISR = progressive table applied to annual_net_taxable_income  _([Auxadi](https://www.auxadi.com/blog/2025/01/30/honduras-updates-income-tax/))_
+- **ISR base and medical deduction** — annual_net_taxable_income = annual_gross_salary - 40,000   (flat medical deduction) ISR = progressive table applied to annual_net_taxable_income  _(Ley del Impuesto sobre la Renta, texto consolidado al 26 de junio de 2018 (SAR), art 13(a) — https://www.sar.gob.hn/download/consolidado-ley-impuesto-sobre-la-renta-25-junio-2018/ ; worked example: Auxadi — https://www.auxadi.com/blog/2025/01/30/honduras-updates-income-tax/)_
 
 The flat **L 40,000/year** medical-expense deduction is statutory, applied before the table.
 
@@ -263,7 +263,7 @@ Employers withhold monthly under Art. 22 (Código 111). Salaried employees with 
 
 ### Rule 4 — Use the correct year's table
 
-- **Use the correct year's table** — FY2025 → Acuerdo SAR-007-2025. FY2026 → SAR Comunicado 02-2026 (effective 12 Jan 2026). Tables auto-adjust annually for CPI under Art. 22 (Decreto 20-2016).  _([Deloitte](https://www.deloitte.com/latam/es/services/tax/perspectives/hn-12ene26-sar-actualiza-tabla-progresiva-para-2026-honduras.html))_
+- **Use the correct year's table** — FY2025 → Acuerdo SAR-007-2025. FY2026 → SAR Comunicado 02-2026 (effective 12 Jan 2026). Tables auto-adjust annually for CPI under Art. 22 (Decreto 20-2016).  _(SAR, Plantilla para calcular la retención en la fuente 2026 — https://www.sar.gob.hn/download/plantilla-para-calcular-retencion-en-la-fuente-2026/ ; Deloitte summary of SAR Comunicado 02-2026 — https://www.deloitte.com/latam/es/services/tax/perspectives/hn-12ene26-sar-actualiza-tabla-progresiva-para-2026-honduras.html)_
 
 ### Rule 5 — IHSS contributions are capped at the ceiling
 
