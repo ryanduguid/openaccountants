@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T09:28:47+00:00",
+ "generated_at": "2026-10-04T09:43:28+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -16566,7 +16566,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ro-corporate-income-tax",
@@ -16579,7 +16579,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ro-income-tax",
@@ -16605,7 +16605,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ro-tax-overview",
@@ -16618,7 +16618,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "romania-einvoice",
