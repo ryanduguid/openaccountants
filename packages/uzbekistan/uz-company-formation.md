@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Uzbekist
 jurisdiction: UZ
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,8 +25,8 @@ The most common business vehicle in Uzbekistan is the Limited Liability Company 
 - **Registration authority** — Public Services Agency (single-window state registration of business entities)  _(Law of the Republic of Uzbekistan On State Registration of Business Entities (https://tax-legal.uz/en/registration-and-reregistration/))_
 - **Registration timeline** — 1 to 3 business days after document submission  _(Law of the Republic of Uzbekistan On State Registration of Business Entities (https://tax-legal.uz/en/registration-and-reregistration/))_
 - **Core incorporation steps** — Reserve name and prepare charter; submit registration application to the Public Services Agency; obtain state registration certificate and TIN; open a bank account; register for VAT/employer obligations as applicable (approx — confirm sequence)  _(Law of the Republic of Uzbekistan On State Registration of Business Entities (https://tax-legal.uz/en/registration-and-reregistration/))_
-- **Annual CIT compliance** — Annual CIT return by 1 March; quarterly CIT reports by the 20th of the following month  _(Tax Code of the Republic of Uzbekistan (https://taxsummaries.pwc.com/republic-of-uzbekistan/corporate/tax-administration))_
-- **Ongoing monthly compliance** — Monthly VAT returns (if registered), monthly social tax and PIT withholding reporting and payment  _(Tax Code of the Republic of Uzbekistan (https://taxsummaries.pwc.com/republic-of-uzbekistan/corporate/other-taxes))_
+- **Annual CIT compliance** — Annual CIT return by 1 March; quarterly CIT reports by the 20th of the month after each quarter, with tax paid by the same deadline; monthly advance payments by the 23rd where prior-year income exceeded UZS 20 billion  _(Tax Code of the Republic of Uzbekistan (lex.uz consolidated text in Uzbek Cyrillic, amendments in force to 25 July 2026), arts. 339 and 340 — https://lex.uz/ru/docs/4674902)_
+- **Ongoing monthly compliance** — Monthly VAT returns (if registered); social tax reported monthly by the 15th of the following month and paid by the same deadline (art. 407); PIT withholding reported and paid monthly  _(Tax Code of the Republic of Uzbekistan (lex.uz consolidated text in Uzbek Cyrillic, amendments in force to 25 July 2026), art. 407 — https://lex.uz/ru/docs/4674902)_
 - **Financial statements** — Entities maintain statutory accounting under national accounting standards (with IFRS required for certain large/public-interest entities) and file annual financial statements (approx — confirm filing obligations by entity type)  _(Law of the Republic of Uzbekistan On Accounting)_
 
 <!-- openaccountants-cta-block -->
