@@ -1,10 +1,10 @@
 ---
 name: tw-nhi
 description: Use this skill whenever asked about Taiwan National Health Insurance (NHI) contributions. Trigger on phrases like "NHI Taiwan", "健保", "全民健康保險", "健保費", "supplementary premium", "補充保費", "NHI self-employed", "health insurance Taiwan", "NHIA", "衛生福利部中央健康保險署", or any question about computing, paying, or understanding NHI premiums for self-employed individuals in Taiwan. This skill covers the general premium rate, supplementary premium, insured payroll categories, and payment obligations. ALWAYS read this skill before advising on Taiwan NHI.
-version: 1.0
+version: 1.1
 jurisdiction: TW
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - tw-income-tax
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | General premium rate | 5.17% (since January 1, 2021) |
 | Supplementary premium rate | 2.11% (since January 1, 2021) |
 | Validated by | Pending — requires sign-off by a Taiwan CPA or labour law practitioner |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Core Contribution Parameters (2025)
 
@@ -329,12 +329,12 @@ This represents the absolute maximum NHI premium obligation.
 
 | Topic | Reference |
 | --- | --- |
-| NHI Act | 全民健康保險法 (National Health Insurance Act) |
-| Premium rate (5.17%) | NHI Act Art. 18; Executive Yuan announcement (effective 2021.01.01) |
+| NHI Act | 全民健康保險法 (National Health Insurance Act), English text amended 28 Jun 2023: https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=L0060001 |
+| Premium rate (5.17%) | NHI Act Art. 18 (rate capped at 6%; dependants counted up to three); Executive Yuan announcement (effective 2021.01.01) |
 | Supplementary premium (2.11%) | NHI Act Art. 31 |
 | Insured payroll brackets | 全民健康保險投保金額分級表 (NHIA announcement) |
 | Category definitions | NHI Act Art. 10 |
-| Contribution ratios | NHI Act Art. 27 |
+| Contribution ratios | NHI Act Art. 27 (Category 1 employees 30% insured, 60% employer, 10% government; employers and self-employed 100%; Category 2 60% insured, 40% government) |
 | Supplementary premium items | NHI Act Art. 31, Supplementary Premium Regulations |
 | Tax deductibility | Income Tax Act Art. 17 (itemised deductions) |
 | Late payment | NHI Act Art. 35 |

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T03:49:58+00:00",
+ "generated_at": "2026-10-04T04:12:46+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -19049,7 +19049,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "tw-company-formation",
@@ -19075,7 +19075,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "tw-income-tax",
@@ -19088,7 +19088,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "tw-nhi",
@@ -19101,7 +19101,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "tw-tax-overview",
@@ -19114,7 +19114,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "tj-company-formation",
