@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Tonga (tax 
 jurisdiction: TO
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +23,7 @@ Employers withhold income tax under PAYE and remit compulsory retirement fund co
 - **Total combined retirement contribution** — 10% of gross salary (5% employer + 5% employee) % of gross salary (approx — confirm; an alternative source cites 12.5% total)  _([National Retirement Benefit Fund Act](https://nrbf.to/))_
 - **Contribution wage base** — Calculated as a percentage of the employee's gross salary/earnings (approx — confirm whether any cap or floor applies)  _(National Retirement Benefit Fund Act)_
 - **Separate payroll tax** — No separate general payroll tax beyond PAYE income tax withholding and retirement contributions (approx — confirm)  _(Income Tax Act 2007)_
-- **Monthly PAYE remittance deadline** — By the 15th day of the following month ((approx — confirm))  _(Income Tax Act 2007 (https://www.rivermate.com/guides/tonga/taxes))_
+- **Monthly PAYE remittance deadline** — By the 15th day of the following month (approx — confirm)  _(Income Tax Act 2007 (https://www.rivermate.com/guides/tonga/taxes))_
 - **Annual PAYE reconciliation** — Typically due by 31 March (employer year-end reconciliation) (approx — confirm)  _(Income Tax Act 2007 (as described at [rivermate.com](https://www.rivermate.com/guides/tonga/taxes)))_
 
 <!-- openaccountants-cta-block -->

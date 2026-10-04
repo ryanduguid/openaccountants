@@ -1,10 +1,10 @@
 ---
 name: ru-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with their Russian taxes AND mentions freelancing, self-employment, самозанятый, ИП, or being an individual entrepreneur in Russia. Trigger on phrases like "help me with my Russian taxes", "I'm самозанятый", "I'm an ИП", "налог на профессиональный доход", "НПД", "УСН", "ОСНО", "I freelance in Russia", "do my Russian self-employed return", "сколько налогов я плачу", or any similar phrasing where the user is a Russia-resident self-employed individual needing tax help. This is the REQUIRED entry point for the Russia self-employed workflow; downstream skills (ru-self-employed-npd, ru-usn, ru-income-tax, ru-social-contributions, russia-vat, ru-return-assembly) depend on it running first to produce a structured intake package. Russia-resident self-employed only.
-version: 0.1
+version: 0.2
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -38,10 +38,10 @@ Do not narrate phases ("now I am inferring…"). Do not re-ask anything already 
 - **НПД tax rate on income from individuals** — 4%  _(Skill body: 'Tax: 4% on income from individuals, 6% from legal entities / ИП.')_
 - **НПД tax rate on income from legal entities / ИП** — 6%  _(Skill body: 'Tax: 4% on income from individuals, 6% from legal entities / ИП.')_
 - **НПД routing** — НПД (налог на профессиональный доход) routes to ru-self-employed-npd.
-- **УСН «доходы» rate** — 6% percent (regional reduced rates may apply)
-- **УСН «доходы минус расходы» rate** — 15% percent (regional reduced rates may apply)
+- **УСН «доходы» rate** — 6% (regional reduced rates may apply)
+- **УСН «доходы минус расходы» rate** — 15% (regional reduced rates may apply)
 - **УСН routing** — УСН (упрощённая система) — for ИП, two objects «доходы» (6%) or «доходы минус расходы» (15%); regional reduced rates may apply → routes to ru-usn.
-- **ОСНО НДФЛ rate** — 13%/15% percent (progressive; plus НДС; default for an ИП who never elected a special regime, or who exceeded a special-regime limit)
+- **ОСНО НДФЛ rate** — 13%/15% (progressive; plus НДС; default for an ИП who never elected a special regime, or who exceeded a special-regime limit)
 - **ОСНО routing** — ОСНО (общая система) — НДФЛ (13%/15% progressive) plus НДС. Default for an ИП who never elected a special regime, or who exceeded a special-regime limit → routes to ru-income-tax.
 - **Regime inference from documents** — If the user does not know their regime, infer it from the documents (a «Мой налог» export ⇒ НПД; a УСН declaration / object on the ЕГРИП extract ⇒ УСН; otherwise treat as ОСНО pending confirmation).
 - **Residency determination** — Russian tax resident for the year (183+ days in Russia in the 12-month period)? Non-residents have materially different НДФЛ treatment and cannot use some regimes the same way → flag prominently and escalate if non-resident; do not silently assume residency.

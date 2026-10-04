@@ -1,7 +1,7 @@
 ---
 name: qatar-tax
 description: Use this skill whenever asked about Qatar indirect tax or VAT status. Qatar does NOT have VAT/GST as of April 2026. This skill documents the current tax landscape and expected future VAT under the GCC Unified VAT Agreement. ALWAYS read before advising on Qatar tax.
-version: 2.1
+version: 2.2
 jurisdiction: QA
 category: international
 tax_year: 2025
@@ -93,7 +93,7 @@ Qatar company buys goods from UAE. UAE supplier charges 5% UAE VAT. The UAE VAT 
 
 ### 5.4 Customs duties
 
-- **Standard customs duty** — 5% percent (CIF)
+- **Standard customs duty** — 5% (CIF)
 - **GCC-origin goods** — GCC-origin goods exempt.
 - **Free zones** — Free zones may exempt.
 

@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for British 
 jurisdiction: VG
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,11 +22,11 @@ The most common BVI vehicle is the Business Company (BC) incorporated under the 
 - **Minimum share capital** — None — no minimum paid-up or authorised capital is required  _(BVI Business Companies Act, 2004)_
 - **Minimum directors and shareholders** — At least one director and one shareholder (may be the same person; corporate directors permitted)  _(BVI Business Companies Act, 2004)_
 - **Registered agent / registered office** — Mandatory at all times — must be a BVI-licensed registered agent with a registered office in the BVI  _(BVI Business Companies Act, 2004)_
-- **Incorporation timeline** — Typically 1–3 business days once due diligence and documents are in order ((approx — confirm))  _(BVI Business Companies Act, 2004)_
+- **Incorporation timeline** — Typically 1–3 business days once due diligence and documents are in order (approx — confirm)  _(BVI Business Companies Act, 2004)_
 - **Core incorporation steps** — Appoint a licensed registered agent, complete KYC/due diligence, file Memorandum & Articles of Association with the Registry, pay incorporation/government fee, receive Certificate of Incorporation  _(BVI Business Companies Act, 2004)_
 - **Government incorporation fee (standard company)** — US$550 for a company with up to 50,000 authorised shares (registered agent/professional fees are additional) USD  _(BVI Business Companies Act, 2004)_
 - **Annual government fee** — US$550 (≤ 50,000 shares) or US$1,350 (> 50,000 shares) per year USD  _(BVI Business Companies Act, 2004)_
-- **Annual fee due dates** — Companies incorporated Jan–Jun: by 31 May; Jul–Dec: by 30 November ((approx — confirm))  _(BVI Business Companies Act, 2004)_
+- **Annual fee due dates** — Companies incorporated Jan–Jun: by 31 May; Jul–Dec: by 30 November (approx — confirm)  _(BVI Business Companies Act, 2004)_
 - **Annual financial return** — Filed with the registered agent within 9 months of the financial year-end; not filed publicly with the Registry  _(Business Companies (Financial Return) Order, 2023 — https://maples.com/knowledge/bvi-annual-returns-and-economic-substance-filing-deadlines)_
 - **Economic substance reporting** — Annual reporting to the registered agent within 6 months of the financial period end; substance required where relevant activities are carried on  _(Economic Substance (Companies and Limited Partnerships) Act, 2018)_
 - **Statutory registers** — Must maintain register of directors (filed with Registry, non-public), register of members, and beneficial ownership information  _(BVI Business Companies Act, 2004; Beneficial Ownership Secure Search System Act, 2017)_

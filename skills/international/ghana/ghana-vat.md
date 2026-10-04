@@ -1,11 +1,11 @@
 ---
 name: ghana-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Ghana VAT return. VAT 15% + NHIL 2.5% + GETFund 2.5% = 20% effective. Act 1151 effective 1 Jan 2026 recouples levies. Flat rate scheme abolished. Withholding VAT at 7%. ALWAYS read before handling Ghana VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: GH
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -76,7 +76,7 @@ Government ministry pays supplier. Invoice GHS 20K + VAT 3K + NHIL 500 + GETFund
 ## Section 5 -- Classification rules
 
 - **Levy stacking on same base** — 15% VAT + 2.5% NHIL + 2.5% GETFund on same base. Under Act 1151, all three recoverable as input.  _(Act 1151)_
-- **Zero rate categories** — 0% percent (exports, Free Zones)  _(Act 1151)_
+- **Zero rate categories** — 0% (exports, Free Zones)  _(Act 1151)_
 - **Exempt categories** — Exempt: financial (margin-based), residential rental, medical, education, unprocessed foodstuffs, agricultural inputs, petroleum (separate levies).  _(Act 1151)_
 
 ## Section 6 -- VAT return form
@@ -92,7 +92,7 @@ Government ministry pays supplier. Invoice GHS 20K + VAT 3K + NHIL 500 + GETFund
 ## Section 7 -- Reverse charge and withholding VAT
 
 - **Reverse charge on non-resident services** — Reverse charge: non-resident services. Self-assess VAT 15% + NHIL 2.5% + GETFund 2.5%. Under Act 1151, all recoverable. Net zero.  _(Act 1151)_
-- **Withholding VAT rate** — 7% percent (of VAT amount, not total invoice; agents withhold only on VAT, not NHIL/GETFund; supplier claims credit Box 20)
+- **Withholding VAT rate** — 7% (of VAT amount, not total invoice; agents withhold only on VAT, not NHIL/GETFund; supplier claims credit Box 20)
 
 ## Section 8 -- Deductibility and blocked input
 
@@ -104,7 +104,7 @@ Government ministry pays supplier. Invoice GHS 20K + VAT 3K + NHIL 500 + GETFund
 
 - **Filing frequency and deadline** — Monthly. Last working day of following month. Withholding remittance: 15th.
 - **Late filing penalty** — GHS 500/month currency
-- **Late payment penalty** — 125% of BoG rate monthly percent
+- **Late payment penalty** — 125% of BoG rate monthly
 
 ## Section 10 -- Edge cases, test suite, and escalation
 

@@ -5,7 +5,7 @@ jurisdiction: GM
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,20 +17,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Gambian companies pay corporation tax on net profits, subject to an alternative minimum tax based on turnover. Withholding taxes apply to certain payments. These figures are a draft to be confirmed by a licensed Gambian accountant.
 
-- **Standard corporate income tax rate** — 27% of net taxable profit percent  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
+- **Standard corporate income tax rate** — 27% of net taxable profit  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
 - **Corporation tax computation rule** — Higher of 27% of net profit, or 1% of turnover (audited accounts) / 2% of turnover (unaudited accounts)  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
-- **Alternative minimum tax — audited accounts** — 1% of annual turnover percent  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
-- **Alternative minimum tax — unaudited accounts** — 2% of annual turnover percent  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
-- **Tax base** — Net profit per accounts adjusted for tax (non-deductibles added back, allowances deducted), or turnover where minimum tax applies ((approx — confirm))  _(Income and Value Added Tax Act)_
-- **Fringe benefits tax** — 27% percent  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
+- **Alternative minimum tax — audited accounts** — 1% of annual turnover  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
+- **Alternative minimum tax — unaudited accounts** — 2% of annual turnover  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
+- **Tax base** — Net profit per accounts adjusted for tax (non-deductibles added back, allowances deducted), or turnover where minimum tax applies (approx — confirm)  _(Income and Value Added Tax Act)_
+- **Fringe benefits tax** — 27%  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
 - **Capital gains tax (companies / partnerships)** — Higher of 25% of the gain or 10% of the consideration  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
-- **Withholding tax on dividends** — 15% percent  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
-- **Withholding tax on interest** — 15% ((approx — confirm)) percent  _(Income and Value Added Tax Act)_
-- **Withholding tax on royalties** — 15% ((approx — confirm)) percent  _(Income and Value Added Tax Act)_
-- **Withholding tax on payments to resident contractors** — 8% on payments to resident suppliers, consultants, contractors and subcontractors for works, labour, materials or services; 5% on public works contracted with the Government of The Gambia; 1% on air ticket purchases percent  _(Gambia Revenue Authority, Withholding Tax on Contract Payments brochure — https://www.gra.gm/download-file/8d0d0925-d217-11ed-9b31-029254d29bb1)_
-- **Withholding tax on payments to non-resident contractors** — 15% percent  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
-- **Withholding tax on commercial rent** — 15% of gross rent where the property is used for commercial purposes percent  _(Gambia Revenue Authority, Withholding Tax on Contract Payments brochure — https://www.gra.gm/download-file/8d0d0925-d217-11ed-9b31-029254d29bb1 ; Gambia Revenue Authority, Rental Income Tax brochure — https://www.gra.gm/download-file/8d0ce2c1-d217-11ed-9b31-029254d29bb1)_
-- **Withholding tax on residential rent** — 8% of gross rent where the property is used for residential purposes percent  _(Gambia Revenue Authority, Withholding Tax on Contract Payments brochure — https://www.gra.gm/download-file/8d0d0925-d217-11ed-9b31-029254d29bb1 ; Gambia Revenue Authority, Rental Income Tax brochure — https://www.gra.gm/download-file/8d0ce2c1-d217-11ed-9b31-029254d29bb1)_
+- **Withholding tax on dividends** — 15%  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
+- **Withholding tax on interest** — 15% (approx — confirm)  _(Income and Value Added Tax Act)_
+- **Withholding tax on royalties** — 15% (approx — confirm)  _(Income and Value Added Tax Act)_
+- **Withholding tax on payments to resident contractors** — 8% on payments to resident suppliers, consultants, contractors and subcontractors for works, labour, materials or services; 5% on public works contracted with the Government of The Gambia; 1% on air ticket purchases  _(Gambia Revenue Authority, Withholding Tax on Contract Payments brochure — https://www.gra.gm/download-file/8d0d0925-d217-11ed-9b31-029254d29bb1)_
+- **Withholding tax on payments to non-resident contractors** — 15%  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
+- **Withholding tax on commercial rent** — 15% of gross rent where the property is used for commercial purposes  _(Gambia Revenue Authority, Withholding Tax on Contract Payments brochure — https://www.gra.gm/download-file/8d0d0925-d217-11ed-9b31-029254d29bb1 ; Gambia Revenue Authority, Rental Income Tax brochure — https://www.gra.gm/download-file/8d0ce2c1-d217-11ed-9b31-029254d29bb1)_
+- **Withholding tax on residential rent** — 8% of gross rent where the property is used for residential purposes  _(Gambia Revenue Authority, Withholding Tax on Contract Payments brochure — https://www.gra.gm/download-file/8d0d0925-d217-11ed-9b31-029254d29bb1 ; Gambia Revenue Authority, Rental Income Tax brochure — https://www.gra.gm/download-file/8d0ce2c1-d217-11ed-9b31-029254d29bb1)_
 - **Corporation tax return deadline** — 31 March of the year following the tax year  _(Income and Value Added Tax Act — https://www.gra.gm/domestic-faqs)_
 
 <!-- openaccountants-cta-block -->

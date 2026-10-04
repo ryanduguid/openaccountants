@@ -1,10 +1,10 @@
 ---
 name: sweden-bookkeeping
 description: Use this skill whenever asked about Swedish bookkeeping, chart of accounts, BAS kontoplan, financial statements, or accounting standards in Sweden. Trigger on phrases like "Swedish bookkeeping", "bokföring Sverige", "BAS kontoplan", "kontoplan", "årsredovisning", "K2", "K3", "BFL", "ÅRL", "resultaträkning", "balansräkning", "enskild firma bokföring", "årsbokslut", "Bokföringsnämnden", "BFN", "avskrivning", "förenklat årsbokslut", or any question about recording transactions, financial reporting, or accounting standards for Swedish entities.
-version: 1.0
+version: 1.1
 jurisdiction: SE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -235,7 +235,7 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 - **Turnover threshold for K1 availability** — SEK 3,000,000 SEK (Net turnover limit for sole traders (enskild firma))
 - **Revenue recognition** — Revenue recognised at invoice date (near-cash basis)
-- **Accruals threshold for recurring items** — SEK 5,000 SEK (No accruals required for recurring items below this amount)
+- **Accruals threshold for recurring items** — SEK 5,000 (No accruals required for recurring items below this amount)
 - **Inventory valuation** — Simplified inventory valuation
 
 ## Section 4 -- Expense Classification

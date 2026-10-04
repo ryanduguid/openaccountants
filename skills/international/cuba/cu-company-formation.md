@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Cuba (ta
 jurisdiction: CU
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Foreign joint venture (empresa mixta)** — A Cuban sociedad anónima with registered (nominative) shares held by one or more Cuban and one or more foreign investors; authorized by MINCEX  _(Ley No. 118 de la Inversión Extranjera https://inviertaencuba.mincex.gob.cu/es/preguntas-frecuentes/)_
 - **Foreign investment forms** — Joint venture (empresa mixta), international economic association contract (no new legal entity), and wholly foreign-owned enterprise  _(Ley No. 118 de la Inversión Extranjera)_
 - **Capital split (joint venture)** — The proportion of capital contributed by national and foreign investors is agreed between the partners and set in the authorization (no fixed statutory split)  _(Ley No. 118 de la Inversión Extranjera)_
-- **Minimum share capital** — No general statutory minimum share capital is fixed for MIPYMEs/SRL; foreign-investment capital is set case-by-case in the authorization ((approx — confirm))  _(Decreto-Ley sobre las MIPYME; Ley No. 118 de la Inversión Extranjera)_
+- **Minimum share capital** — No general statutory minimum share capital is fixed for MIPYMEs/SRL; foreign-investment capital is set case-by-case in the authorization (approx — confirm)  _(Decreto-Ley sobre las MIPYME; Ley No. 118 de la Inversión Extranjera)_
 - **Incorporation steps** — Application/approval (Ministry of Economy and Planning for MIPYME; MINCEX for foreign investment), execution of the constitutive public deed before a notary, and registration in the Commercial Registry (Registro Mercantil)  _(Decreto-Ley sobre las MIPYME https://www.minjus.gob.cu/es/servicios/registro-mercantil)_
 - **Tax registration** — Entities and their partners must register with ONAT and obtain a NIT (Número de Identificación Tributaria)  _(Ley No. 113 del Sistema Tributario https://lookuptax.com/docs/tax-identification-number/cuba-tax-id-guide)_
 - **Core annual compliance** — Annual tax on profits sworn declaration (Declaración Jurada), monthly sales/services tax and payroll contribution remittances, and maintenance of accounting records  _(Ley No. 113 del Sistema Tributario)_

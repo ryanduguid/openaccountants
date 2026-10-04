@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Guinea (tax year 2025)
 jurisdiction: GN
 category: international
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -86,16 +87,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Personal income tax (IRPP) bands and rates
 
-- **IRPP band 1 (tax-free)** — 0% on income from GNF 0 to 5,000,000 percent ((approx — confirm))  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
-- **IRPP band 2** — 10% on income from GNF 5,000,000 to 10,000,000 percent ((approx — confirm))  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
-- **IRPP band 3** — 15% on income from GNF 10,000,000 to 15,000,000 percent ((approx — confirm))  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
-- **IRPP band 4** — 20% on income from GNF 15,000,000 to 20,000,000 percent ((approx — confirm))  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
-- **IRPP band 5 (top rate)** — 35% on income above GNF 20,000,000 percent ((approx — confirm))  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
-- **Tax-free threshold** — First GNF 5,000,000 of annual income taxed at 0% percent ((approx — confirm))  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
-- **Key deduction from taxable employment income** — Employee CNSS social-security contribution (2.5% employee share) is deductible before IRPP ((approx — confirm))  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP))_
-- **Residence test** — Individuals with their home, principal place of abode, or centre of economic interest in Guinea are tax resident; worldwide income is taxable for residents ((approx — confirm))  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP))_
+- **IRPP band 1 (tax-free)** — 0% on income from GNF 0 to 5,000,000 percent (approx — confirm)  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
+- **IRPP band 2** — 10% on income from GNF 5,000,000 to 10,000,000 percent (approx — confirm)  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
+- **IRPP band 3** — 15% on income from GNF 10,000,000 to 15,000,000 percent (approx — confirm)  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
+- **IRPP band 4** — 20% on income from GNF 15,000,000 to 20,000,000 percent (approx — confirm)  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
+- **IRPP band 5 (top rate)** — 35% on income above GNF 20,000,000 percent (approx — confirm)  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
+- **Tax-free threshold** — First GNF 5,000,000 of annual income taxed at 0% (approx — confirm)  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
+- **Key deduction from taxable employment income** — Employee CNSS social-security contribution (2.5% employee share) is deductible before IRPP (approx — confirm)  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP))_
+- **Residence test** — Individuals with their home, principal place of abode, or centre of economic interest in Guinea are tax resident; worldwide income is taxable for residents (approx — confirm)  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP))_
 - **Collection of tax on employment income — monthly, and remitted within ten days** — The employer withholds at source and remits **within ten (10) days of the following month** to the Receveur Spécial des Impôts or the Trésor public for the place of the employer's establishment or the payer's domicile, under **article 72.I CGI as re-enacted by loi de finances 2025, article 13**  _([Loi de finances 2025, art. 13 — art. 72.I CGI](https://dgi.gov.gn/wp-content/uploads/2025/01/LOI-DE-FINANCES-INITIALE-2025_compressed.pdf))_
-- **Non-resident taxation** — Non-residents taxed on Guinea-source income only, generally via withholding. Where the payer is established in Guinea and the recipient has **no permanent professional establishment** there, **article 198 CGI** applies a **15%** withholding to liberal-profession fees, copyright and industrial-property royalties, and services materially supplied or effectively used in Guinea ((approx — confirm on the general residence rule))  _([DGI, Taxes sur les Salaires — art. 198 CGI](https://dgi.gov.gn/wp-content/uploads/2021/03/TAXES-SUR-LES-SALAIRES.pdf))_
+- **Non-resident taxation** — Non-residents taxed on Guinea-source income only, generally via withholding. Where the payer is established in Guinea and the recipient has **no permanent professional establishment** there, **article 198 CGI** applies a **15%** withholding to liberal-profession fees, copyright and industrial-property royalties, and services materially supplied or effectively used in Guinea (approx — confirm on the general residence rule)  _([DGI, Taxes sur les Salaires — art. 198 CGI](https://dgi.gov.gn/wp-content/uploads/2021/03/TAXES-SUR-LES-SALAIRES.pdf))_
 - **⚠ Annual individual return deadline — 30 April, not 31 March** — **Article 142.I CGI, as re-enacted by loi de finances 2025, article 24**, requires *"les contribuables"* to file annually, **electronically on the e-Tax/SAFIG platform, "au plus tard le 30 avril"**, on a return whose content is fixed by ministerial arrêté, with the accountant's visa dematerialised through the same platform. The 31 March stated here rested on a commercial site. The provision says *contribuables* without restriction and sits in the chapter on determining taxable income; **whether it reaches employees whose tax is fully withheld at source was not established**  _([Loi de finances 2025, art. 24 — art. 142.I CGI](https://dgi.gov.gn/wp-content/uploads/2025/01/LOI-DE-FINANCES-INITIALE-2025_compressed.pdf))_
 
 <!-- openaccountants-cta-block -->

@@ -4,7 +4,8 @@ description: "Source-cited draft covering company formation and entity choice in
 jurisdiction: TM
 category: formation
 tax_year: 2025
-last_updated: 2026-09-12
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +27,7 @@ The [current Law on Enterprises](https://mejlis.gov.tm/single-law/301?lang=ru) a
 - **Limited Liability Company (LLC)** — Most common vehicle for trading, services and local operations; liability limited to capital contributions. ⚠ See the statutory-forms row above — this description does not correspond to a form named in the Law on Enterprises  _(Civil Code of Turkmenistan / Law on Enterprises — https://www.healyconsultants.com/turkmenistan-company-registration/setup-llc/)_
 - **Joint-stock company (open/closed)** — Used for larger capital-raising or share offerings  _(Law of Turkmenistan on Joint-Stock Companies)_
 - **Branch / representative office** — Liaison, marketing or operation under a foreign parent; not a separate legal entity  _(Civil Code of Turkmenistan)_
-- **Minimum shareholders (LLC)** — At least 2 shareholders (individuals or corporate entities) ((approx — confirm; single-member may be permitted))  _(Law on Enterprises of Turkmenistan — https://chandrawatpartners.com/llc-incorporation-in-turkmenistan-a-practical-professional-overview-for-investors-across-the-world/)_
+- **Minimum shareholders (LLC)** — At least 2 shareholders (individuals or corporate entities) (approx — confirm; single-member may be permitted)  _(Law on Enterprises of Turkmenistan — https://chandrawatpartners.com/llc-incorporation-in-turkmenistan-a-practical-professional-overview-for-investors-across-the-world/)_
 - **Minimum directors (LLC)** — At least 1 director; need not be a Turkmenistan national or resident  _(Law on Enterprises of Turkmenistan — https://chandrawatpartners.com/llc-incorporation-in-turkmenistan-a-practical-professional-overview-for-investors-across-the-world/)_
 - **Capital for the limited-liability economic company**: Use the 100-times-tax-base-value formula in article 29(4), together with the liability model chosen under article 29(6). The previously quoted TMT 5,000 and USD 20,000 amounts have not been established as current statutory requirements. ([Law on Enterprises, art. 29](https://mejlis.gov.tm/single-law/301?lang=ru))
 - **Capital payment schedule by entity**: Law on Enterprises article 47 requires at least 50% of founders’ contributions after signing the founding documents and before the registration application, with the balance within one year after registration. Joint-stock companies have the separate article 12(3) rule above. ([Law on Enterprises, art. 47](https://mejlis.gov.tm/single-law/301?lang=ru); [Joint-Stock Companies Law, art. 12(3)](https://mejlis.gov.tm/single-law/308?lang=ru))
@@ -36,7 +37,7 @@ The [current Law on Enterprises](https://mejlis.gov.tm/single-law/301?lang=ru) a
 - **Incorporation step 4** — Register the company with the State Tax Service  _(Tax Code of Turkmenistan)_
 - **Foreign ownership** — No general legal cap on foreign ownership; wholly foreign-owned enterprises permitted in most sectors  _(Law of Turkmenistan on Foreign Investments — https://chandrawatpartners.com/llc-incorporation-in-turkmenistan-a-practical-professional-overview-for-investors-across-the-world/)_
 - **Core annual compliance** — Annual financial statements, annual tax declarations (profits tax, VAT where registered), and monthly payroll/contribution reporting  _(Tax Code of Turkmenistan)_
-- **Investment incentives** — Available incentives may include tax exemptions, duty-free import of machinery/equipment, and profit/dividend repatriation rights ((approx — confirm current programs))  _(Law of Turkmenistan on Foreign Investments)_
+- **Investment incentives** — Available incentives may include tax exemptions, duty-free import of machinery/equipment, and profit/dividend repatriation rights (approx — confirm current programs)  _(Law of Turkmenistan on Foreign Investments)_
 
 Foreign investors in Turkmenistan most commonly use a Limited Liability Company (LLC), a joint-stock company, or a branch/representative office. Registration runs through the Ministry of Finance and Economy and the State Tax Service.
 

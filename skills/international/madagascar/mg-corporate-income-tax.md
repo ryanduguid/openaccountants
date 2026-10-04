@@ -5,7 +5,7 @@ jurisdiction: MG
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ Companies are taxed under the Impôt sur les Revenus (IR). Taxpayers with turnov
 - **Minimum CIT under the real regime — general activities** — MGA 1,000,000 plus 1% of annual turnover excluding tax (petroleum companies: MGA 1,000,000 plus 0.7%; fuel retailers: 0.1% of turnover)  _(Code des impôts 2026 (Loi de finances 2026), art. 01.01.14 I-A — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CDI-LFI%202026.pdf)_
 - **Minimum CIT — agricultural, artisanal, industrial, mining, hotel and tourism activities** — MGA 500,000 plus 1% of annual turnover excluding tax  _(Code des impôts 2026 (Loi de finances 2026), art. 01.01.14 I-A — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CDI-LFI%202026.pdf)_
 - **Reduced rate — cooperative societies** — 10% IRCM on interest on members' shares and rebates distributed annually to members  _(Code des impôts 2026 (Loi de finances 2026), art. 01.04.04 — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CDI-LFI%202026.pdf)_
-- **Tax base** — Net profit determined from the overall results of operations of every kind; the territorial scope follows art. 01.01.02 ((approx — confirm))  _(Code des impôts 2026, art. 01.01.10 — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CDI-LFI%202026.pdf ; https://taxsummaries.pwc.com/madagascar/corporate/income-determination)_
+- **Tax base** — Net profit determined from the overall results of operations of every kind; the territorial scope follows art. 01.01.02 (approx — confirm)  _(Code des impôts 2026, art. 01.01.10 — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CDI-LFI%202026.pdf ; https://taxsummaries.pwc.com/madagascar/corporate/income-determination)_
 - **Withholding tax on dividends to non-residents (non-treaty)** — 10%  _(Code des impôts 2026 (Loi de finances 2026), art. 01.01.14 II-B — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CDI-LFI%202026.pdf)_
 - **Withholding tax on loan interest to non-residents (non-treaty)** — 20% IRCM  _(Code des impôts 2026 (Loi de finances 2026), art. 01.04.04 — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CDI-LFI%202026.pdf)_
 - **Withholding tax on royalties, management and service fees to non-residents (non-treaty)** — 10%, withheld by the accredited representative or, failing one, by the Malagasy recipient of the service  _(Code des impôts 2026 (Loi de finances 2026), art. 01.01.14 II-A and II-C — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CDI-LFI%202026.pdf)_

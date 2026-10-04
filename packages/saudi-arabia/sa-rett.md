@@ -4,7 +4,8 @@ description: Use this skill whenever asked about the Saudi Arabian Real Estate T
 jurisdiction: SA
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Mehran Habib
 review_status: current
 tier: 1
@@ -119,7 +120,7 @@ Before computing or declaring any Saudi RETT position, obtain:
 
 ### 3.5 Rate
 
-- **RETT rate** — 5% percent (of the taxable value; flat rate, does not vary by property class, value tier, or holding period)
+- **RETT rate** — 5% (of the taxable value; flat rate, does not vary by property class, value tier, or holding period)
 
 ## Section 4 — Tier 2 — first-home exemption, inheritance, gifts, sale-leaseback, sukuk
 

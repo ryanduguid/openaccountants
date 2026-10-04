@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Azerbaij
 jurisdiction: AZ
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,12 +19,12 @@ The most common vehicle is the limited liability company (LLC / MMC), registered
 
 - **Common entity types** — Limited liability company (LLC/MMC), joint-stock company (open/closed), branch and representative office of a foreign company, sole entrepreneur  _(Civil Code of the Republic of Azerbaijan — https://www.caspianlegalcenter.az/what-we-do/corporate-law)_
 - **Most common form** — Limited liability company (LLC / Məhdud Məsuliyyətli Cəmiyyət — MMC)  _(Civil Code of the Republic of Azerbaijan — https://gsl.org/en/offers/company-registration-in-azerbaijan-establishing-a-limited-liability-company-llc/)_
-- **Minimum charter capital — LLC** — No statutory minimum (nominal capital, e.g. AZN 10, commonly used) AZN ((approx — confirm) no fixed legal minimum) AZN (approx — confirm)  _(Civil Code of the Republic of Azerbaijan — https://gsl.org/en/offers/company-registration-in-azerbaijan-establishing-a-limited-liability-company-llc/)_
-- **Charter capital payment timing** — Capital may be contributed before registration or within 3 months of registration ((approx — confirm)) (approx — confirm)  _(Civil Code of the Republic of Azerbaijan — https://gsl.org/en/offers/company-registration-in-azerbaijan-establishing-a-limited-liability-company-llc/)_
+- **Minimum charter capital — LLC** — No statutory minimum (nominal capital, e.g. AZN 10, commonly used) AZN ((approx — confirm) no fixed legal minimum) (approx — confirm)  _(Civil Code of the Republic of Azerbaijan — https://gsl.org/en/offers/company-registration-in-azerbaijan-establishing-a-limited-liability-company-llc/)_
+- **Charter capital payment timing** — Capital may be contributed before registration or within 3 months of registration (approx — confirm)  _(Civil Code of the Republic of Azerbaijan — https://gsl.org/en/offers/company-registration-in-azerbaijan-establishing-a-limited-liability-company-llc/)_
 - **Registration authority** — State Tax Service under the Ministry of Economy (single-window registrar of legal entities)  _(Law on State Registration of Legal Entities and the State Register — https://accounting.az/en/company-registration-in-azerbaijan/)_
 - **Core incorporation steps** — Reserve name and registered address; prepare charter and founder's resolution appointing a director; pay state fee and submit to the State Tax Service; register for tax/VAT and social insurance  _(Law on State Registration of Legal Entities and the State Register — https://accounting.az/en/company-registration-in-azerbaijan/)_
 - **Registration timeline** — Typically 2-3 business days for a locally-owned LLC ((approx — confirm) foreign-owned can take longer) (approx — confirm)  _(Law on State Registration of Legal Entities and the State Register — https://accounting.az/en/company-registration-in-azerbaijan/)_
-- **State registration fee — LLC** — AZN 15 AZN ((approx — confirm) plus any professional service fees) AZN (approx — confirm)  _(Law on State Duty of the Republic of Azerbaijan — https://dlb.az/company-registration/)_
+- **State registration fee — LLC** — AZN 15 AZN ((approx — confirm) plus any professional service fees) (approx — confirm)  _(Law on State Duty of the Republic of Azerbaijan — https://dlb.az/company-registration/)_
 - **Post-registration setup** — Obtain electronic (ASAN Imza) signature for the director, company seal, corporate bank account, and register employment contracts in the state e-registry  _(Labour Code of the Republic of Azerbaijan — https://accounting.az/en/company-registration-in-azerbaijan/)_
 - **Annual compliance — profit tax** — File annual profit tax return and pay by 31 March; make quarterly current (advance) payments  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/tax-administration)_
 - **Ongoing compliance — VAT and payroll** — Monthly VAT returns (if registered) and monthly PIT/social/medical/unemployment reporting, due by the 20th of the following month  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/tax-administration)_

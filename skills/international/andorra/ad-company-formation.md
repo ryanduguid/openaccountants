@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Andorra 
 jurisdiction: AD
 category: formation
 tax_year: 2025
-last_updated: 2026-09-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,8 +18,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Andorran corporate forms overview** — The two main Andorran corporate forms are the Societat Limitada (SL/SLU) and the Societat Anonima (SA). Since 2012 foreign investors may own 100% of an Andorran company, subject to prior foreign-investment authorisation.
 - **Societat Limitada (SL/SLU)** — Limited-liability company; most common form for SMEs (SLU is the single-member variant)  _(Llei 20/2007 de societats anonimes i de responsabilitat limitada)_
 - **Societat Anonima (SA)** — Public limited / joint-stock company, used for larger ventures  _(Llei 20/2007 de societats anonimes i de responsabilitat limitada)_
-- **Minimum share capital — SL/SLU** — EUR 3,000, fully subscribed and paid up at incorporation EUR  _(Llei 20/2007 de societats anonimes i de responsabilitat limitada)_
-- **Minimum share capital — SA** — EUR 60,000, fully subscribed and paid up at incorporation EUR  _(Llei 20/2007 de societats anonimes i de responsabilitat limitada)_
+- **Minimum share capital — SL/SLU** — EUR 3,000, fully subscribed and paid up at incorporation  _(Llei 20/2007 de societats anonimes i de responsabilitat limitada)_
+- **Minimum share capital — SA** — EUR 60,000, fully subscribed and paid up at incorporation  _(Llei 20/2007 de societats anonimes i de responsabilitat limitada)_
 - **Foreign ownership** — Foreign investors may hold up to 100% of share capital (since 2012)  _(Llei 10/2012 d'inversio estrangera al Principat d'Andorra)_
 - **Foreign-investment authorisation** — Prior foreign-investment authorisation is required where non-resident ownership exceeds 10%  _(Llei 10/2012 d'inversio estrangera al Principat d'Andorra)_
 - **Company-name reservation** — Reserve and obtain approval of the company name (denominacio social) — typically 1-2 business days (approx — confirm current timing)  _(Registre de Societats Mercantils)_

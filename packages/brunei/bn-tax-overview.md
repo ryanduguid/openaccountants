@@ -5,7 +5,7 @@ jurisdiction: BN
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **VAT / GST / sales tax** — None — Brunei has no value-added tax, goods and services tax or general sales tax  _(No VAT/GST statute in force, https://taxsummaries.pwc.com/brunei-darussalam/corporate/other-taxes)_
 - **Capital gains tax** — No separate capital gains tax (gains of a capital nature are generally not taxed)  _(Income Tax Act (Cap. 35))_
 - **Corporate income tax return deadline** — 30 June of the year of assessment; every company must furnish its return of income by that date  _(Income Tax Act (Chapter 35), Revised Edition 2024, Ministry of Finance copy, s 52(1) — https://www.mof.gov.bn/wp-content/uploads/2025/10/TR_Relevant-Acts_Income-Tax-Act-Chapter-35.pdf ; Ministry of Finance, Revenue Division, Income Tax — https://www.mof.gov.bn/div_revenue_typesoftaxes_incometax/)_
-- **Corporate residence / source basis** — A company is resident if its control and management are exercised in Brunei; tax applies broadly on a territorial/Brunei-source basis ((approx — confirm))  _(Income Tax Act (Cap. 35))_
+- **Corporate residence / source basis** — A company is resident if its control and management are exercised in Brunei; tax applies broadly on a territorial/Brunei-source basis (approx — confirm)  _(Income Tax Act (Cap. 35))_
 
 <!-- openaccountants-cta-block -->
 

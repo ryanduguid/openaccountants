@@ -1,11 +1,11 @@
 ---
 name: uruguay-income-tax
 description: Use this skill whenever asked about Uruguay personal income tax (IRPF) for resident individuals, employees, and the self-employed. Trigger on phrases like "how much IRPF do I pay", "Impuesto a la Renta de las Personas Físicas", "Categoría I", "Categoría II", "rentas del trabajo", "rentas del capital", "declaración jurada IRPF", "Formulario 1102", "Formulario 1103", "núcleo familiar", "deducciones IRPF", "aportes BPS", "FONASA", "monotributo", "unipersonal", "servicios personales", "IRNR", "non-resident Uruguay tax", or any question about computing or filing income tax for a Uruguayan-resident individual. Also trigger when preparing or reviewing an IRPF annual return, computing the deduction credit, or advising on BPS social-security contributions. This skill covers the IRPF dual scheme (Category I capital income at 12% flat; Category II labour income on a 0%–36% progressive scale), the deduction-credit mechanic, BPS contributions, monotributo, filing forms/deadlines, and DGI penalties. ALWAYS read this skill before touching any Uruguay income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: UY
 tax_year: 2025
 tax_year_notes: "2025 (2026 scale, BPC and filing calendar stated alongside)"
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **2026 retirement ceiling requires period verification.** The UYU 288,836 figure is reported for February 2026 onward. Its January application has not been established here. Confirm the BPS ceiling and pension regime for the pay month before using any retirement calculation or template below; do not assume that the BPC and retirement ceiling change on the same date.
 
-## Uruguay Income Tax (IRPF) -- Resident Individual Skill v0.1
+## Uruguay Income Tax (IRPF) -- Resident Individual Skill v0.2
 
 ## Section 1 -- Quick Reference
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing window (FY2025 filed 2026) | 29 June -- 31 August 2026, one range for every taxpayer: DGI dropped the last-digit staggering for the 2026 campaign; refunds from 28 July 2026. (FY2024 filed 2025 ran 7 July -- 28 August 2025, staggered by RUT/CI ending.) (DGI, "Calendario de la Campaña 2026 de IRPF"; EY UY) |
 | Validated by | Pending -- requires sign-off by a Uruguayan contador público |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### IRPF Category II -- Labour Income (Rentas del Trabajo) -- Resident, Individual Filing
 
@@ -248,7 +248,7 @@ These are NOT income tax but are deductible items feeding the IRPF deduction cre
 | > 2.5 BPC | with spouse, with children | 8% |
 
 - **Employer FONASA rate** — 5% (plus Complemento de Cuota Mutual where applicable)  _(BPS, Tasas FONASA (bps.gub.uy/10314/tasas-fonasa.html).)_
-- **2.5 BPC monthly threshold value** — UYU 17,160/month in 2026 (at BPC 6,864) and UYU 16,440/month in 2025 (at BPC 6,576) UYU  _(BPS, Tasas FONASA (bps.gub.uy/10314/tasas-fonasa.html); Decreto N° 11/026 for the 2040 BPC.)_
+- **2.5 BPC monthly threshold value** — UYU 17,160/month in 2026 (at BPC 6,864) and UYU 16,440/month in 2025 (at BPC 6,576)  _(BPS, Tasas FONASA (bps.gub.uy/10314/tasas-fonasa.html); Decreto N° 11/026 for the 2040 BPC.)_
 
 ### 4.3 Other BPS Funds
 
@@ -313,7 +313,7 @@ The ceiling is not a BPC multiple — BPS sets it separately and it rose 5.97% f
 - **Deduction credit mechanic** — Uruguayan IRPF does NOT subtract deductions from the taxable base. Instead: 1. Sum all allowable deductions (personal BPS, FONASA, FRL, fictitious child deduction, 6% of housing rent, capped mortgage interest). 2. Multiply that sum by the deduction rate: **14%** if annual labour income is at or below the 15 BPC/month equivalent (180 BPC a year, excluding aguinaldo and salario vacacional); **8%** above that threshold. 3. Subtract the resulting credit from the gross Category II tax (from Section 5.1).  _(BPS Comunicado R 2/2025; etti.edu.uy. This guide previously stated 10% for the lower band — see the note below.)_
 
 > **Corrected: the low-income deduction rate is 14%, not 10%.** Earlier versions of this file put the lower rate at 10%, against 14% in `uruguay-payroll` and `uruguay-social-contributions`, which cite the BPS comunicado. Outside sources give 14% and 8%, and the source this file cited as corroboration (etti.edu.uy) itself says "8% o 14%". A 10% rate understates the credit by four points of the deduction sum and so overstates the tax.
-- **15 BPC/month equivalent threshold** — UYU 102,960/month in 2026 (at BPC 6,864) and UYU 98,640/month in 2025 (at BPC 6,576) UYU  _(certificadodeingresos.uy (unipersonal guide 2025); corroborated by etti.edu.uy.)_
+- **15 BPC/month equivalent threshold** — UYU 102,960/month in 2026 (at BPC 6,864) and UYU 98,640/month in 2025 (at BPC 6,576)  _(certificadodeingresos.uy (unipersonal guide 2025); corroborated by etti.edu.uy.)_
 
 The rates are **14%** at or below 15 BPC/month (180 BPC a year, excluding aguinaldo and salario vacacional) and **8%** above it, consistent with `uruguay-payroll` and `uruguay-social-contributions`. [RESEARCH GAP — reviewer to confirm the exact annual mechanic against DGI; the rates themselves are settled.]
 

@@ -1,10 +1,10 @@
 ---
 name: azerbaijan-tax-optimization
 description: Use this skill whenever asked about reducing tax in Azerbaijan, tax planning, or legal strategies to minimise tax for a small business or entrepreneur in Azerbaijan. Trigger on phrases like "reduce tax Azerbaijan", "simplified tax 2%", "micro business Azerbaijan", "startup exemption", "Azerbaijan dividends 5%", "tech park Azerbaijan", "save tax Azerbaijan", "tax planning Azerbaijan". This skill covers the 2% simplified turnover tax, micro-business and startup exemptions, regional/technology-park incentives, dividend taxation, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Azerbaijani tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: AZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Azerbaijan Tax Optimization
 
-## Azerbaijan Tax Optimization Skill v0.1
+## Azerbaijan Tax Optimization Skill v0.2
 
 **Tier 2 — research-verified. Sources: State Tax Service, PwC Azerbaijan, Caspian Legal Center, 2025 Tax Code amendments. Figures must agree with `azerbaijan-income-tax.md` / `azerbaijan-social-contributions.md`. NOT yet signed off by an Azerbaijani tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
@@ -35,8 +35,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 2 -- Simplified Tax (2% of turnover)
 
-- **Simplified tax rate** — 2% of gross revenue percent (for businesses with annual turnover ≤ AZN 200,000, not VAT-registered)
-- **Catering simplified tax rate** — 8% percent (Catering services higher simplified rate)
+- **Simplified tax rate** — 2% of gross revenue (for businesses with annual turnover ≤ AZN 200,000, not VAT-registered)
+- **Catering simplified tax rate** — 8% (Catering services higher simplified rate)
 - **No expense deduction under simplified tax** — No expense deduction — best when real margins are high. Above AZN 200,000 (or if VAT-registered), the standard profit-tax system applies.
 
 **[RESEARCH GAP — reviewer to confirm the standard CIT/PIT rate and the micro-business 5%-of-net-profit option.]**

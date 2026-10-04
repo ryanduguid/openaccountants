@@ -4,7 +4,8 @@ description: "Source-cited tax guide for US-NH: nh bpt bet. Unverified draft, pe
 jurisdiction: US-NH
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -41,12 +42,12 @@ The administering agency for BPT and BET is the New Hampshire Department of Reve
 
 ### 2.1 Rate
 
-- **BPT rate** — 7.5% percent (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-A)_
-- **BPT rate through tax year 2017** — 8.5% percent
-- **BPT rate tax year 2018** — 7.9% percent  _(Chapter 156, Laws of 2017)_
-- **BPT rate tax years 2019-2021** — 7.7% percent  _(Chapter 156, Laws of 2017)_
-- **BPT rate tax year 2022** — 7.6% percent  _(Chapter 91, Laws of 2021)_
-- **BPT rate** — 7.5% percent (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-A)_
+- **BPT rate** — 7.5% (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-A)_
+- **BPT rate through tax year 2017** — 8.5%
+- **BPT rate tax year 2018** — 7.9%  _(Chapter 156, Laws of 2017)_
+- **BPT rate tax years 2019-2021** — 7.7%  _(Chapter 156, Laws of 2017)_
+- **BPT rate tax year 2022** — 7.6%  _(Chapter 91, Laws of 2021)_
+- **BPT rate** — 7.5% (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-A)_
 
 Further scheduled reductions tied to general-fund revenue triggers have been **paused** by the legislature. Assume 7.5% for any tax period ending in calendar 2025 unless a later session law moves the rate.
 
@@ -130,11 +131,11 @@ If the proprietor instead substantiates $150,000 of reasonable compensation (ind
 
 ### 4.1 Rate
 
-- **BET rate** — 0.55% percent (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-E)_
-- **BET rate through tax year 2017** — 0.75% percent
-- **BET rate tax year 2018** — 0.675% percent
-- **BET rate tax years 2019-2021** — 0.60% percent
-- **BET rate tax year 2022 and forward** — 0.55% percent  _(Chapter 91, Laws of 2021)_
+- **BET rate** — 0.55% (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-E)_
+- **BET rate through tax year 2017** — 0.75%
+- **BET rate tax year 2018** — 0.675%
+- **BET rate tax years 2019-2021** — 0.60%
+- **BET rate tax year 2022 and forward** — 0.55%  _(Chapter 91, Laws of 2021)_
 
 ### 4.2 Enterprise value tax base (EVTB)
 
@@ -438,8 +439,8 @@ This is the typical pattern for a profitable, capital-light services C-corp: BPT
 ## 11. Interest & Dividends Tax — REPEALED
 
 - **I&D Tax repeal** — The NH Interest and Dividends Tax (I&D Tax) under RSA 77 — a 5% personal tax on individuals' interest and dividend income — was fully repealed for tax years beginning on or after January 1, 2025.  _(RSA 77; Chapter 79, Laws of 2023 (HB 2, 2023 session))_
-- **I&D Tax phase-out schedule 2023** — 4% percent (reduced from 5%)  _(Chapter 79, Laws of 2023 (HB 2, 2023 session))_
-- **I&D Tax phase-out schedule 2024** — 3% percent  _(Chapter 79, Laws of 2023 (HB 2, 2023 session))_
+- **I&D Tax phase-out schedule 2023** — 4% (reduced from 5%)  _(Chapter 79, Laws of 2023 (HB 2, 2023 session))_
+- **I&D Tax phase-out schedule 2024** — 3%  _(Chapter 79, Laws of 2023 (HB 2, 2023 session))_
 - **I&D Tax 2025 and forward** — tax does not exist  _(Chapter 79, Laws of 2023 (HB 2, 2023 session))_
 
 1. NH residents have no individual-level tax filing obligation with NH DRA for 2025 unless they personally own a business that exceeds the BPT or BET threshold.
@@ -507,8 +508,8 @@ Step-by-step for an NH-resident sole proprietor or single-member LLC freelancer 
 - **RCD safe harbor** — 75000 USD (Indexed amount for 2025; verify against the NH DRA's annual TIR/notice before quoting in a client deliverable)  _(Indexed amounts for 2025 (skill text))_
 - **Estimated payment requirement threshold** — 260 USD (Estimated payments are required if combined BPT + BET liability is expected to be $260 or more for the current year; historically the threshold has been $200; verified for 2025 as $260 by Chapter 91, Laws of 2021 indexing — confirm current DRA threshold before quoting in a client deliverable)  _(RSA 77-A:6 and 77-E:6; Chapter 91, Laws of 2021)_
 - **110% safe-harbor trigger** — 40000 USD prior-year tax (>) (Indexed amount for 2025; verify against the NH DRA's annual TIR/notice before quoting in a client deliverable)  _(Indexed amounts for 2025 (skill text))_
-- **BPT rate** — 7.5% percent (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-A)_
-- **BET rate** — 0.55% percent (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-E)_
+- **BPT rate** — 7.5% (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-A)_
+- **BET rate** — 0.55% (tax periods ending on or after December 31, 2023, continuing for tax year 2024 and tax year 2025)  _(RSA 77-E)_
 
 This skill must be loaded alongside `us-tax-workflow-base` v0.2 or later and any federal content skill the engagement requires (`us-sole-prop-bookkeeping`, `us-schedule-c-and-se-computation`, `us-federal-return-assembly`, etc.). NH-specific verification of indexed thresholds and current IRC reference date is required before producing a final client deliverable. Reviewer signoff under Circular 230 (CPA, EA, or attorney) is required for any return that exceeds workflow-base thresholds.
 

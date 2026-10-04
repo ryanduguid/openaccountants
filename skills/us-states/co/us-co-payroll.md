@@ -4,8 +4,8 @@ description: Tier 2 Colorado content skill for employer payroll compliance cover
 jurisdiction: US-CO
 category: payroll
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -44,10 +44,10 @@ Out of scope:
 
 ### 2.1 Statutory rate
 
-- **Colorado PIT withholding rate 2025** — 4.40% percent (flat rate for tax year 2025)  _(C.R.S. §39-22-104(1.7))_
-- **Historical PIT rate 2020-2021** — 4.55% percent (tax years 2020 through 2021)  _(C.R.S. §39-22-104(1.7))_
+- **Colorado PIT withholding rate 2025** — 4.40% (flat rate for tax year 2025)  _(C.R.S. §39-22-104(1.7))_
+- **Historical PIT rate 2020-2021** — 4.55% (tax years 2020 through 2021)  _(C.R.S. §39-22-104(1.7))_
 - **PIT rate 2022 and forward** — 4.40% percent (tax years 2022 and forward, per TABOR refund mechanism and Proposition 121 (approved November 2022))  _(C.R.S. §39-22-627; Proposition 121)_
-- **Colorado PIT withholding rate 2025** — 4.40% percent (flat rate for tax year 2025)  _(C.R.S. §39-22-104(1.7))_
+- **Colorado PIT withholding rate 2025** — 4.40% (flat rate for tax year 2025)  _(C.R.S. §39-22-104(1.7))_
 - **TABOR further reduction check** — Colorado may, contingent on TABOR refund triggers under C.R.S. §39-22-627(3)(a), step the rate down further for a given tax year. For tax year 2025 no such temporary further reduction was triggered as of the last_updated date of this skill. Reviewers MUST confirm against CDOR's current-year Income 70 publication if filing after the legislative session.  _(C.R.S. §39-22-627(3)(a))_
 
 ### 2.2 DR 1098: Colorado Employee Withholding Certificate
@@ -101,10 +101,10 @@ In practice CDOR's Revenue Online accepts a combined annual filing that satisfie
 
 ### 3.3 Premium rate schedule
 
-- **2025 experience-rated SUTA premium rate range** — 0.50% to 10.39% percent (applied to the first $24,800 of each employee's wages, determined by reserve ratio and UI Trust Fund solvency tier; published December 2024)  _(2025 CDLE rate notices)_
-- **Non-construction new-employer rate** — 1.70% percent (first 3 years)  _(2025 CDLE rate notices)_
-- **Construction new-employer rate** — published annually on a separate schedule that materially exceeds 1.70% (commonly in the 3-5% range; reviewer to confirm against the 2025 rate notice) percent (first 3 years)  _(2025 CDLE rate notice (reviewer to confirm))_
-- **Support Surcharge 2025** — 0.22% percent (subject to annual adjustment; reviewer to confirm against current CDLE-UI rate notice)  _(C.R.S. §8-77-106)_
+- **2025 experience-rated SUTA premium rate range** — 0.50% to 10.39% (applied to the first $24,800 of each employee's wages, determined by reserve ratio and UI Trust Fund solvency tier; published December 2024)  _(2025 CDLE rate notices)_
+- **Non-construction new-employer rate** — 1.70% (first 3 years)  _(2025 CDLE rate notices)_
+- **Construction new-employer rate** — published annually on a separate schedule that materially exceeds 1.70% (commonly in the 3-5% range; reviewer to confirm against the 2025 rate notice) (first 3 years)  _(2025 CDLE rate notice (reviewer to confirm))_
+- **Support Surcharge 2025** — 0.22% (subject to annual adjustment; reviewer to confirm against current CDLE-UI rate notice)  _(C.R.S. §8-77-106)_
 - **Bond Assessment 2025** — Not assessed for 2025 because the bond issued during the COVID Trust Fund solvency crisis was retired in 2023. Reviewers verify against the current rate notice before assuming zero.  _(SB 20-207)_
 - **Combined effective rate for new non-construction employer 2025** — 1.70% premium + 0.22% surcharge = 1.92%, applied to the $24,800 wage base, producing a per-employee maximum cost of approximately $476.16 per year  _(Skill computed example)_
 

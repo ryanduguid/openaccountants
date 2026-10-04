@@ -1,10 +1,10 @@
 ---
 name: sd-income-tax
 description: Use this skill whenever asked about Sudanese personal income tax for resident individuals, sole proprietors, professionals, and non-residents earning Sudan-source income — to compute, review, or explain it. Trigger on phrases like "Sudan income tax", "Sudan personal tax", "ضريبة الدخل السودان", "Sudan tax brackets", "Sudan PAYE", "Sudan freelance tax", or any request to prepare or check a Sudanese individual income tax return. ALWAYS read this skill before touching any Sudan personal income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-07-22
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Sudan Personal Income Tax (ضريبة الدخل) Skill v0.1
+# Sudan Personal Income Tax (ضريبة الدخل) Skill v0.2
 
-## Sudan Personal Income Tax (ضريبة الدخل) Skill v0.1
+## Sudan Personal Income Tax (ضريبة الدخل) Skill v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -90,7 +90,7 @@ Sudan taxes employment income at progressive rates. The top marginal personal in
 
 ### Personal tax-free allowance (exemption)
 
-- **Personal tax-free allowance** — SDG 3,000 SDG (All resident and non-resident individuals eligible; can offset self-employed ventures, rent income, professional services income)  _(Income Tax Act 1986; Britacom tax profile)_
+- **Personal tax-free allowance** — SDG 3,000 (All resident and non-resident individuals eligible; can offset self-employed ventures, rent income, professional services income)  _(Income Tax Act 1986; Britacom tax profile)_
 
 **Verify current value:** The SDG 3,000 figure predates multiple currency redenominations. Confirm against current Taxation Chamber guidance before filing.
 

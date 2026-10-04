@@ -5,7 +5,7 @@ jurisdiction: KY
 category: international
 tax_year: 2026
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## The Cayman tax system at a glance
 
 - **Cayman tax system overview** — The Cayman Islands is a no-direct-tax jurisdiction: there is no income tax, no corporate income tax, no capital gains tax, no payroll tax, and no VAT/GST. Government revenue comes mainly from import duty, stamp duty, work-permit fees, and company/financial-services registration and annual fees.
-- **Currency** — Cayman Islands dollar (KYD / CI$), pegged to USD at approximately CI$1 = US$1.20 (US$1 = CI$0.82) ((approx — confirm peg))  _(Currency Law (Cayman Islands))_
+- **Currency** — Cayman Islands dollar (KYD / CI$), pegged to USD at approximately CI$1 = US$1.20 (US$1 = CI$0.82) (approx — confirm peg)  _(Currency Law (Cayman Islands))_
 - **Tax / revenue authority** — Cayman Islands Government: the Department for International Tax Cooperation (DITC) administers economic substance, CRS and FATCA reporting; Customs and Border Control collects import duty; the General Registry collects company registration and annual fees; the Lands and Survey Department (Valuation and Estates Office) assesses stamp duty on land transfers  _(Department for International Tax Cooperation — https://www.ditc.ky/ ; Customs and Border Control, Customs Duty and Other Fees — https://gov.ky/web/cbc/trade/imports/environmental-impact-fee ; General Registry — https://www.ciregistry.ky/ ; Cayman Islands Government, Legislation passed to increase stamp duty on properties worth $2M and over (December 2025) — https://gov.ky/w/legislation-passed-to-increase-stamp-duty-on-properties-worth-2m-and-over)_
 - **Personal income tax** — None — no income or withholding taxes are imposed on individuals  _(Cayman Islands Government, Finance and Economy (gov.ky archive) — https://cigarchives.gov.ky/economy ; PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/cayman-islands/individual/taxes-on-personal-income)_
 - **Corporate income tax** — None — no corporate income, capital gains, payroll, or other direct taxes are imposed on corporations  _(Cayman Islands Government, Finance and Economy (gov.ky archive) — https://cigarchives.gov.ky/economy ; PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/cayman-islands/corporate/taxes-on-corporate-income)_

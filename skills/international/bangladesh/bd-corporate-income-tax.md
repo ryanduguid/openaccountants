@@ -5,7 +5,7 @@ jurisdiction: BD
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Non-publicly traded company** — 27.5% (25% if all receipts/payments above thresholds go through banking channels)  _(Income Tax Act 2023 (Bangladesh), as amended by Finance Ordinance 2025 — https://taxsummaries.pwc.com/bangladesh/corporate/taxes-on-corporate-income)_
 - **Publicly traded company (IPO float > 10% of paid-up capital)** — 20% (22.5% if banking-channel conditions not met)  _(Income Tax Act 2023 (Bangladesh), as amended by Finance Ordinance 2025 — https://taxsummaries.pwc.com/bangladesh/corporate/taxes-on-corporate-income)_
 - **Publicly traded company (IPO float <= 10% of paid-up capital)** — 22.5% (25% if banking-channel conditions not met)  _(Income Tax Act 2023 (Bangladesh), as amended by Finance Ordinance 2025 — https://taxsummaries.pwc.com/bangladesh/corporate/taxes-on-corporate-income)_
-- **Banks, insurance and financial institutions (non-listed)** — 40% (37.5% if publicly traded) ((listed rate approx — confirm))  _(Income Tax Act 2023 (Bangladesh), as amended by Finance Ordinance 2025 — https://taxsummaries.pwc.com/bangladesh/corporate/taxes-on-corporate-income)_
+- **Banks, insurance and financial institutions (non-listed)** — 40% (37.5% if publicly traded) (listed rate approx — confirm)  _(Income Tax Act 2023 (Bangladesh), as amended by Finance Ordinance 2025 — https://taxsummaries.pwc.com/bangladesh/corporate/taxes-on-corporate-income)_
 - **Mobile phone operators** — 45%  _(Income Tax Act 2023 (Bangladesh), as amended by Finance Ordinance 2025 — https://taxsummaries.pwc.com/bangladesh/corporate/taxes-on-corporate-income)_
 - **Tobacco / cigarette manufacturers** — 45% plus 2.5% surcharge  _(Income Tax Act 2023 (Bangladesh), as amended by Finance Ordinance 2025 — https://taxsummaries.pwc.com/bangladesh/corporate/taxes-on-corporate-income)_
 - **Tax base** — Resident company taxed on worldwide income; non-resident company taxed on Bangladesh-source income  _(Income Tax Act 2023 (Bangladesh) — https://taxsummaries.pwc.com/bangladesh/corporate/taxes-on-corporate-income)_

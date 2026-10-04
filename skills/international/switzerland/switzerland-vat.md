@@ -1,11 +1,11 @@
 ---
 name: switzerland-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Swiss VAT return (MWST/TVA/IVA Abrechnung) for a self-employed individual or small business in Switzerland. Trigger on phrases like "prepare Swiss VAT return", "MWST Abrechnung", "Swiss VAT", "Saldosteuersatz", "Bezugsteuer", or any request involving Swiss VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Switzerland only and only the effektive Abrechnungsmethode (effective method). Saldosteuersatz (flat-rate), Pauschalsteuersatz, and Gruppenbesteuerung are in the refusal catalogue. Switzerland is NOT in the EU — there are no intra-community acquisitions. MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). Do NOT load eu-vat-directive — it does not apply to Switzerland. ALWAYS read this skill before touching any Swiss VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: CH
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Switzerland VAT
 
-## Switzerland VAT Return Skill (MWST Abrechnung) v2.0
+## Switzerland VAT Return Skill (MWST Abrechnung) v2.1
 
 ## Section 1 — Quick reference
 
@@ -242,7 +242,7 @@ Match by case-insensitive substring. If none match, fall through to Tier 1 rules
 | AWS | AWS EMEA SARL (LU) | 381 / 400 | Bezugsteuer (LU is foreign to CH) |
 | STRIPE (subscription) | Stripe IE | 381 / 400 | Bezugsteuer. Transaction fees: see 3.10. |
 
-- **Bezugsteuer threshold** — CHF 10,000 per year CHF (Bezugsteuer is only due if the total value of services received from abroad exceeds this per year. Below this threshold, no Bezugsteuer obligation. Default: assume threshold is exceeded if any Bezugsteuer items are present.)  _(Art. 45 Abs. 2 MWSTG)_
+- **Bezugsteuer threshold** — CHF 10,000 per year (Bezugsteuer is only due if the total value of services received from abroad exceeds this per year. Below this threshold, no Bezugsteuer obligation. Default: assume threshold is exceeded if any Bezugsteuer items are present.)  _(Art. 45 Abs. 2 MWSTG)_
 
 ### 3.9 SaaS — Swiss suppliers (domestic)
 
@@ -576,7 +576,7 @@ python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/switzerl
 
 ### Validation status
 
-v2.0, rewritten April 2026. Awaiting validation by Swiss licensed tax adviser.
+v2.1, rewritten April 2026. Awaiting validation by Swiss licensed tax adviser.
 
 ### Sources
 
@@ -598,10 +598,10 @@ v2.0, rewritten April 2026. Awaiting validation by Swiss licensed tax adviser.
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to three-tier OpenAccountants architecture (without eu-vat-directive, as Switzerland is not in the EU).
+- **v2.1 (April 2026):** Full rewrite to three-tier OpenAccountants architecture (without eu-vat-directive, as Switzerland is not in the EU).
 - **v1.0 (April 2026):** Initial draft. Standalone document.
 
-### Self-check (v2.0)
+### Self-check (v2.1)
 
 1. Quick reference with Ziffer table and conservative defaults: yes (Section 1).
 2. Supplier library with Swiss patterns (including multilingual): yes (Section 3, 14 sub-tables).

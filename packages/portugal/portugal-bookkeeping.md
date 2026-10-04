@@ -1,10 +1,10 @@
 ---
 name: portugal-bookkeeping
 description: "Utilize esta skill sempre que lhe forem colocadas questões sobre contabilidade portuguesa, plano de contas, SNC, demonstrações financeiras ou normas contabilísticas em Portugal. Active perante expressões como \"contabilidade Portugal\", \"SNC\", \"código de contas\", \"Sistema de Normalização Contabilística\", \"plano de contas\", \"microentidade\", \"pequena entidade\", \"NCRF\", \"NCRF-PE\", \"NC-ME\", \"balanço\", \"demonstração de resultados\", \"IES\", \"contabilista certificado\", \"regime simplificado\", \"contabilidade organizada\", \"SAF-T(PT)\", \"CAE\", \"Categoria B\", ou qualquer questão sobre o registo de operações, relato financeiro ou regras contabilísticas para entidades portuguesas. Trigger also on: \"Portuguese bookkeeping\", \"Portugal accounting\", \"SNC chart of accounts\", \"Portuguese GAAP\", \"simplified regime Portugal\", \"organized accounting Portugal\", \"self-employed Portugal Cat B\", \"SAF-T Portugal\", \"CAE coefficients\", \"Portuguese certified accountant\"."
-version: 1.0
+version: 1.1
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -245,7 +245,7 @@ O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empre
 
 ### Regime Simplificado para Trabalhadores Independentes (Categoria B do IRS)
 
-- **Limiar de volume de negócios para regime simplificado** — 200.000 EUR EUR  _(artigo 31.º do CIRS)_
+- **Limiar de volume de negócios para regime simplificado** — 200.000 EUR  _(artigo 31.º do CIRS)_
 - **Coeficiente 0,75 — serviços tabela art.151.º CIRS** — 0,75 (serviços previstos na tabela do artigo 151.º do CIRS (actividades profissionais, incluindo desenvolvimento de software, consultoria, design, etc.))  _(artigo 31.º do CIRS; artigo 151.º do CIRS)_
 - **Coeficiente 0,15 — vendas de mercadorias e hotelaria/restauração** — 0,15 (vendas de mercadorias e produtos e prestações de serviços de actividades hoteleiras e de restauração e bebidas)  _(artigo 31.º do CIRS)_
 - **Coeficiente 0,10 — outras prestações de serviços** — 0,10 (outras prestações de serviços não previstas nas alíneas anteriores)  _(artigo 31.º do CIRS)_
@@ -516,7 +516,7 @@ TOTAL DO CAPITAL PRÓPRIO E PASSIVO                            xxx
 
 ### Empresário em Nome Individual (Trabalhador Independente)
 
-- **Limiar regime simplificado** — 200.000 EUR EUR (Categoria B do IRS)
+- **Limiar regime simplificado** — 200.000 EUR (Categoria B do IRS)
 - **Sem obrigação de contabilidade organizada no regime simplificado** — Sem obrigação de contabilidade organizada no regime simplificado — tributação por aplicação de coeficientes em função do CAE
 - **Contabilidade organizada facultativa/obrigatória** — A contabilidade organizada é facultativa abaixo do limiar e obrigatória acima
 - **Contabilista certificado obrigatório se contabilidade organizada** — Contabilista certificado (membro da OCC) obrigatório se for adoptada a contabilidade organizada
@@ -538,7 +538,7 @@ Utilize a skill pt-income-tax para o apuramento detalhado
 ### IVA
 
 - **Contas do IVA** — Contas do IVA: classe 243x do plano SNC
-- **Periodicidade mensal vs trimestral** — 650.000 EUR EUR (Periodicidade mensal se o volume de negócios for superior a 650.000 EUR; caso contrário, trimestral)
+- **Periodicidade mensal vs trimestral** — 650.000 EUR (Periodicidade mensal se o volume de negócios for superior a 650.000 EUR; caso contrário, trimestral)
 - **Taxa normal IVA continente** — 23% (continente)
 - **Taxa normal IVA Açores** — 16% (Açores)
 - **Taxa normal IVA Madeira** — 22% (Madeira)

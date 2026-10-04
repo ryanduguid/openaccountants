@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Mali (tax y
 jurisdiction: ML
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,11 +15,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Social security (INPS / AMO) and payroll taxes
 
-- **INPS employer contribution** — Approximately 14.4% – 17.4% of gross salary (varies with work-accident risk class) percent (approx — confirm exact split per branch with INPS)  _(Code de Prévoyance Sociale du Mali (INPS) (as described at [remotepeople.com](https://remotepeople.com/countries/mali/employer-of-record/payroll-tax/)))_
-- **INPS employee contribution** — 3.6% of gross salary (old-age pension) percent (approx — confirm)  _(Code de Prévoyance Sociale du Mali (INPS))_
-- **AMO (mandatory health insurance) employer contribution** — 3.5% of gross salary percent (approx — confirm with CANAM)  _(Loi instituant l'Assurance Maladie Obligatoire (AMO) — CANAM)_
-- **AMO employee contribution** — 3.06% of gross salary percent (approx — confirm with CANAM)  _(Loi instituant l'Assurance Maladie Obligatoire (AMO) — CANAM)_
-- **Work-accident / occupational risk contribution (employer)** — Approximately 1% – 4% of gross salary depending on risk class percent (approx — confirm risk-class rate)  _(Code de Prévoyance Sociale du Mali (INPS))_
+- **INPS employer contribution** — Approximately 14.4% – 17.4% of gross salary (varies with work-accident risk class) (approx — confirm exact split per branch with INPS)  _(Code de Prévoyance Sociale du Mali (INPS) (as described at [remotepeople.com](https://remotepeople.com/countries/mali/employer-of-record/payroll-tax/)))_
+- **INPS employee contribution** — 3.6% of gross salary (old-age pension) (approx — confirm)  _(Code de Prévoyance Sociale du Mali (INPS))_
+- **AMO (mandatory health insurance) employer contribution** — 3.5% of gross salary (approx — confirm with CANAM)  _(Loi instituant l'Assurance Maladie Obligatoire (AMO) — CANAM)_
+- **AMO employee contribution** — 3.06% of gross salary (approx — confirm with CANAM)  _(Loi instituant l'Assurance Maladie Obligatoire (AMO) — CANAM)_
+- **Work-accident / occupational risk contribution (employer)** — Approximately 1% – 4% of gross salary depending on risk class (approx — confirm risk-class rate)  _(Code de Prévoyance Sociale du Mali (INPS))_
 - **Contribution Forfaitaire à la charge de l'employeur (CFE)** — 3.5% of gross remuneration including the real value of benefits in kind, employer-only, on every employer liable to IS, IBIC or the agricultural profits tax (arts. 159–160 CGI)  _(Code Général des Impôts (Mali), arts. 159–160 — https://www.dgi.gouv.ml/CGI/; DGI, Les impôts à payer — https://www.dgi.gouv.ml/les-impots-a-payer/)_
 - **Taxe Logement (TL)** — 1% of the gross payroll, employer-only  _(DGI, Les impôts à payer — https://www.dgi.gouv.ml/les-impots-a-payer/)_
 - **Taxe-Emploi Jeunes (TEJ) and Taxe de Formation Professionnelle (TFP)** — 2% of the gross payroll each, employer-only  _(DGI, Les impôts à payer — https://www.dgi.gouv.ml/les-impots-a-payer/)_

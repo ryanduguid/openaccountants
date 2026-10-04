@@ -4,7 +4,8 @@ description: "Source-cited tax guide for US-AZ: az transaction privilege tax. Un
 jurisdiction: US-AZ
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -286,7 +287,7 @@ The distinction is fact-intensive. A single contract often contains both — for
 
 ### 8.5 Discount for timely filing
 
-- **Timely filing discount** — 1% percent (capped at $10,000 per calendar year; allowed for timely filing and payment of state TPT. Does not apply to county or city TPT.)  _(A.R.S. §42-5017)_
+- **Timely filing discount** — 1% (capped at $10,000 per calendar year; allowed for timely filing and payment of state TPT. Does not apply to county or city TPT.)  _(A.R.S. §42-5017)_
 
 ### 8.6 Penalties
 
@@ -427,7 +428,7 @@ If the seller fails to register and report from the threshold-crossing date, ADO
 
 Arizona has its own personal income tax under A.R.S. Title 43 — a 2.5% flat rate as of tax year 2023 (Laws 2022 Ch. 321, accelerated phase-in). TPT and Arizona income tax are entirely separate regimes: TPT is on the business's privilege; income tax is on the owner's net income. TPT paid is a deductible business expense on the Arizona income tax return (just as it is on the federal Schedule C). TPT and income tax are not netted. A small online business with $50,000 of net profit and $5,000 of TPT remitted pays: $50,000 × 2.5% AZ income tax = $1,250 state income tax (after federal AGI starting-point adjustments). $5,000 already paid as TPT (separately) — operating expense. The two filings have different forms (TPT-2 vs. Form 140 / 140-SBI), different due dates, and different ADOR divisions.
 
-- **Arizona flat income tax rate** — 2.5% percent (flat rate as of tax year 2023, accelerated phase-in)  _(A.R.S. Title 43; Laws 2022 Ch. 321)_
+- **Arizona flat income tax rate** — 2.5% (flat rate as of tax year 2023, accelerated phase-in)  _(A.R.S. Title 43; Laws 2022 Ch. 321)_
 
 ## 14. Provenance
 

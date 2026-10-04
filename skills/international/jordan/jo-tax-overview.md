@@ -5,7 +5,7 @@ jurisdiction: JO
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ Jordan operates a largely territorial tax system administered by the Income and 
 - **VAT / GST** — Yes — General Sales Tax (GST), a VAT-type tax, at a general rate of 16% on the supply or importation of goods and services (art. 6); Schedule 1 goods and services also bear a special tax at rates set by regulation  _(General Sales Tax Law No. 6 of 1994 as amended to 2009 (ISTD English translation), art. 6 — https://istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/gst_law.pdf ; https://taxsummaries.pwc.com/jordan/corporate/other-taxes)_
 - **National contribution tax** — National Solidarity Account contribution on top of income tax: 1% for individuals on taxable income over JOD 200,000; 1% to 7% for companies by sector  _(Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (ISTD English translation), art. 11/F — https://www.istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/income_tax_law_no._%2838_%29_of_2018.pdf ; https://taxsummaries.pwc.com/jordan/corporate/taxes-on-corporate-income)_
 - **Income tax return deadline** — Return and payment within the four months after the end of the tax period (30 April for calendar-year taxpayers)  _(Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (ISTD English translation), art. 17/A and 18/A — https://www.istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/income_tax_law_no._%2838_%29_of_2018.pdf ; https://taxsummaries.pwc.com/jordan)_
-- **Social security** — Mandatory contributions to the Social Security Corporation (SSC): employer 14.25%, employee 7.5% percent  _([Social Security Law No. 1 of 2014](https://www.ssc.gov.jo))_
+- **Social security** — Mandatory contributions to the Social Security Corporation (SSC): employer 14.25%, employee 7.5%  _([Social Security Law No. 1 of 2014](https://www.ssc.gov.jo))_
 
 <!-- openaccountants-cta-block -->
 

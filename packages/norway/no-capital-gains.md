@@ -1,10 +1,10 @@
 ---
 name: no-capital-gains
 description: "Norway capital gains tax: 22% rate, shield deduction (skjermingsfradrag) on shares, shareholder model, exit tax. Trigger on: \"Norway CGT\", \"capital gains Norway\", \"Norway 22% capital gains\", \"skjermingsfradrag\", \"shareholder model Norway\", \"sell shares Norway\", \"Norway aksjer skatt\", \"Norway exit tax shares\"."
-version: 1.0
+version: 1.1
 jurisdiction: "NO"
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Shareholder model taxation of shares** — Norway's shareholder model taxes gains on shares at 22%, but first allows a shield deduction (skjermingsfradrag) — a risk-free return on invested capital that is not taxed.
 - **Taxable gain formula** — Taxable gain = Actual gain − Shield deduction Shield deduction = Cost base × Shield rate (approximately 2%–3% per year)
 - **Shield deduction carry-forward** — The shield deduction accumulates annually and can be used against dividends or gains. Unused shield deduction carries forward.
-- **Effective rate on investment gains** — 22% percent (on the gain above the shield deduction)
+- **Effective rate on investment gains** — 22% (on the gain above the shield deduction)
 
 ## Real property
 

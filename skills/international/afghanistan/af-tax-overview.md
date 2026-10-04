@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Afghanistan (tax year 2025) �
 jurisdiction: AF
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Top personal (salary) income tax rate** — 20 percent  _(Income Tax Law 2009)_
 - **Corporate income tax rate** — 20 percent (flat on all legal persons)  _(Income Tax Law 2009)_
 - **VAT / GST** — No operational VAT; a VAT Law exists but implementation has been repeatedly deferred. Business Receipts Tax (BRT) on gross turnover applies in its place. (approx — confirm current VAT commencement status with ARD)  _(Value Added Tax Law (not yet in force); Income Tax Law 2009 (BRT))_
-- **Business Receipts Tax (turnover tax) range** — 2% to 5% of gross receipts depending on sector (general 4%) percent  _(Income Tax Law 2009)_
+- **Business Receipts Tax (turnover tax) range** — 2% to 5% of gross receipts depending on sector (general 4%)  _(Income Tax Law 2009)_
 - **Annual income tax return deadline** — Within 3 months after the end of the tax year (approx — confirm; extensions may apply)  _(Income Tax Law 2009)_
 - **Business Receipts Tax filing frequency** — Quarterly  _([Income Tax Law 2009 (https://ard.gov.af/820/quarterly-business-receipts-tax-brt-user-guides)](https://ard.gov.af/820/quarterly-business-receipts-tax-brt-user-guides))_
 

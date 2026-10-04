@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Kyrgyzstan (tax year 2
 jurisdiction: KG
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,8 +17,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Kyrgyzstan applies a single flat personal income tax (PIT) rate to both residents and non-residents. There is no progressive band structure; instead, relief is delivered through standard and social deductions rather than a zero-rate band.
 
-- **Resident personal income tax rate** — 10% (flat) percent  _(Tax Code of the Kyrgyz Republic (https://taxsummaries.pwc.com/kyrgyzstan))_
-- **Non-resident personal income tax rate (Kyrgyzstan-source employment income)** — 10% (flat) percent (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_
+- **Resident personal income tax rate** — 10% (flat)  _(Tax Code of the Kyrgyz Republic (https://taxsummaries.pwc.com/kyrgyzstan))_
+- **Non-resident personal income tax rate (Kyrgyzstan-source employment income)** — 10% (flat) (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_
 - **Tax-free threshold / zero band** — No general tax-free band; relief is given via personal/standard deductions rather than a zero-rate threshold (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_
 - **Tax residence test** — An individual is resident if present in Kyrgyzstan for 183 days or more in any consecutive 12-month period days  _(Tax Code of the Kyrgyz Republic)_
 - **Standard personal deduction** — Monthly standard deduction equal to the minimum subsistence level / fixed statutory amount per taxpayer (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_

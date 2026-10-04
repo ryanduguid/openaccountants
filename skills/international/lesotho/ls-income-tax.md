@@ -4,8 +4,8 @@ description: "Source-cited draft: personal income tax for Lesotho (tax year 2025
 jurisdiction: LS
 category: international
 tax_year: 2025
-version: 0.1
-last_updated: 2026-09-10
+version: 0.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Fringe benefits tax (employer-borne)**: 40%, the Fourth Schedule rate (the same rate that applies to trustees, minors and electing non-residents). **The base is grossed up**: s.117 computes the fringe benefits taxable amount as `A × 1/(1−B)`, where A is the sum of the taxable values of all non-exempt fringe benefits provided in the year and B is the 40% rate: so the tax is not simply 40% of the benefit's face value  _(Income Tax Act 1993, s.117 and Fourth Schedule item 1: https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
 - **Capital gains** — No separate CGT — gains on business/investment assets are included in chargeable income and taxed at ordinary rates  _(Income Tax Act (as described at [zmayetlaw.co.ls](https://zmayetlaw.co.ls/lesotho-tax-guide-effective-1-april-2025/)))_
 - **Annual return filing deadline** — 30 June following the end of the 31 March tax year  _([Income Tax Act](https://www.rsl.org.ls/personal-income-tax))_
-- **Late filing / late payment penalty** — Additional 22% tax per twelve-month period of default percent (approx — confirm current rate)  _([Income Tax Act](https://www.rsl.org.ls/personal-income-tax))_
+- **Late filing / late payment penalty** — Additional 22% tax per twelve-month period of default (approx — confirm current rate)  _([Income Tax Act](https://www.rsl.org.ls/personal-income-tax))_
 
 <!-- openaccountants-cta-block -->
 

@@ -1,10 +1,10 @@
 ---
 name: sd-company-formation
 description: Use this skill whenever asked about Sudanese company formation, entity types, registration procedure, capital requirements, sectoral licensing, and tax/VAT registration. Trigger on phrases like "Sudan company registration", "Sudan LLC", "Sudan share company", "Sudan branch registration", "تسجيل شركة السودان", "Sudan GAFI", "company formation Sudan", or any request to incorporate a business in Sudan. ALWAYS read this skill before touching any Sudan company formation or registration work.
-version: 0.1
+version: 0.2
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-07-22
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Sudan Company Formation & Entity Choice Skill
 
-## Sudan Company Formation & Entity Choice Skill v0.1
+## Sudan Company Formation & Entity Choice Skill v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -136,7 +136,7 @@ This skill does NOT cover:
 
 ### Initial depreciation and investment incentives
 
-- **Newly purchased machinery and equipment initial depreciation** — 20% initial depreciation of purchase price after being put into production %  _(Investment Incentive Law 2021)_
+- **Newly purchased machinery and equipment initial depreciation** — 20% initial depreciation of purchase price after being put into production  _(Investment Incentive Law 2021)_
 - **Qualifying investment projects CIT exemption** — Corporate income tax exemption starting from commercial production date, period not exceeding 5 years (see `sd-corporate-income-tax`)  _(Investment Incentive Law 2021)_
 
 ## Section 6 — Tax registrations
@@ -157,7 +157,7 @@ This skill does NOT cover:
 - Registration Certificate issued (Form 2) — must be displayed at all branches
 - See `sd-vat-gst` for full VAT mechanics
 
-- **VAT registration turnover threshold** — SDG 1,200,000 SDG (Industrial producer, trader, or service provider with turnover ≥ SDG 1,200,000; importers/exporters regardless of turnover)
+- **VAT registration turnover threshold** — SDG 1,200,000 (Industrial producer, trader, or service provider with turnover ≥ SDG 1,200,000; importers/exporters regardless of turnover)
 
 ### Social insurance registration (NSIF / NHIF)
 

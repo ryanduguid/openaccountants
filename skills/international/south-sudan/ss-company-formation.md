@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for South Su
 jurisdiction: SS
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Registering body** — Business Registry, Ministry of Justice and Constitutional Affairs  _(Companies Act, 2012 (https://legallinesouthsudan.com/blog/how-to-register-a-company-in-south-sudan-a-comprehensive-guide))_
 - **Common entity types** — Private limited liability company, public limited company, branch of a foreign company, sole proprietorship, partnership  _(Companies Act, 2012)_
 - **Minimum share capital — local owners** — No statutory minimum share capital for locally-owned LLCs (a nominal amount is usually declared)  _(Companies Act, 2012 (https://www.healyconsultants.com/south-sudan-company-registration/setup-llc/))_
-- **Minimum investment — foreign investors** — USD 100,000 minimum investment USD (approx — confirm; required for foreign-owned entities)  _(Investment Promotion Act, 2009 (https://www.healyconsultants.com/south-sudan-company-registration/setup-llc/))_
+- **Minimum investment — foreign investors** — USD 100,000 minimum investment (approx — confirm; required for foreign-owned entities)  _(Investment Promotion Act, 2009 (https://www.healyconsultants.com/south-sudan-company-registration/setup-llc/))_
 - **Minimum members/directors** — At least one shareholder and one director (sources vary; some require two members) (approx — confirm single-member eligibility)  _(Companies Act, 2012)_
 - **Incorporation steps** — 1) Reserve company name; 2) prepare Memorandum & Articles of Association; 3) submit to Business Registry for Certificate of Incorporation; 4) obtain Tax Identification Number (TIN)  _(Companies Act, 2012 (https://legallinesouthsudan.com/blog/how-to-register-a-company-in-south-sudan-a-comprehensive-guide))_
 - **Incorporation timeline** — Approximately 2 to 6 weeks (approx — confirm)  _(Companies Act, 2012 (https://legallinesouthsudan.com/blog/how-to-register-a-company-in-south-sudan-a-comprehensive-guide))_

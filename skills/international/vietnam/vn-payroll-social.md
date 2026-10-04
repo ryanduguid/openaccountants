@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Vietnam (ta
 jurisdiction: VN
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,12 +17,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Vietnam requires compulsory social insurance (SI), health insurance (HI) and unemployment insurance (UI) on employee salaries, split between employer and employee. The 2024 Social Insurance Law took effect 1 July 2025. Employers also withhold PIT from payroll monthly.
 
-- **Employer total compulsory insurance contribution** — 21.5% of gross salary (SI 17.5% + HI 3% + UI 1%) percent  _([Law on Social Insurance (2024); Law on Health Insurance; Law on Employment](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
-- **Employee total compulsory insurance contribution** — 10.5% of gross salary (SI 8% + HI 1.5% + UI 1%) percent  _([Law on Social Insurance (2024); Law on Health Insurance; Law on Employment](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
-- **Employer social insurance (pension/survivorship 14% + sickness/maternity 3% + occupational 0.5%)** — 17.5% percent  _([Law on Social Insurance (2024)](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
-- **Employee social insurance (pension/survivorship)** — 8% percent  _([Law on Social Insurance (2024)](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
-- **Health insurance (employer 3% / employee 1.5%)** — 4.5% total percent  _([Law on Health Insurance](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
-- **Unemployment insurance (employer 1% / employee 1%)** — 2% total percent  _([Law on Employment](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
+- **Employer total compulsory insurance contribution** — 21.5% of gross salary (SI 17.5% + HI 3% + UI 1%)  _([Law on Social Insurance (2024); Law on Health Insurance; Law on Employment](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
+- **Employee total compulsory insurance contribution** — 10.5% of gross salary (SI 8% + HI 1.5% + UI 1%)  _([Law on Social Insurance (2024); Law on Health Insurance; Law on Employment](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
+- **Employer social insurance (pension/survivorship 14% + sickness/maternity 3% + occupational 0.5%)** — 17.5%  _([Law on Social Insurance (2024)](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
+- **Employee social insurance (pension/survivorship)** — 8%  _([Law on Social Insurance (2024)](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
+- **Health insurance (employer 3% / employee 1.5%)** — 4.5% total  _([Law on Health Insurance](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
+- **Unemployment insurance (employer 1% / employee 1%)** — 2% total  _([Law on Employment](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
 - **Salary cap for SI and HI contributions** — 20 times the base/reference salary (approx VND 46,800,000 per month) VND/month (approx - confirm current reference-salary figure post-2025 reform)  _([Law on Social Insurance (2024)](https://taxsummaries.pwc.com/vietnam/individual/other-taxes))_
 - **Salary cap for unemployment insurance contributions** — 20 times the regional minimum wage (Region 1 cap approx VND 106,200,000 per month) VND/month (approx - confirm current Region 1 minimum wage)  _(Law on Employment (as described at [vietanlaw.com](https://vietanlaw.com/vietnam-employee-social-insurance-contribution-rate-2025/)))_
 - **Payroll PIT withholding** — Employers withhold PIT monthly under the progressive schedule (residents) or 20% flat (non-residents)  _([Law on Personal Income Tax (No. 04/2007/QH12, as amended)](https://taxsummaries.pwc.com/vietnam/individual/tax-administration))_

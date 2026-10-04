@@ -1,10 +1,10 @@
 ---
 name: kuwait-tax
 description: Source-cited draft covering Kuwait taxation from tax year 2025. Use for corporate income tax, Zakat, National Labour Support Tax, KFAS contributions, VAT status, filing obligations and ownership questions. Distinguishes the non-GCC foreign share subject to ordinary corporate income tax from the legal-form tests for company contributions. Zakat covers public and closed Kuwaiti shareholding companies; absence of a stock-exchange listing does not establish exemption. Check the Domestic Minimum Top-up Tax separately for qualifying multinational groups and obtain professional review of exemptions, calculation bases and current filing requirements before relying on the guide.
-version: 2.1
+version: 2.2
 jurisdiction: KW
 tax_year: 2025
-last_updated: 2026-09-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -121,7 +121,7 @@ No VAT input recovery. Foreign VAT is irrecoverable cost.
 | Late filing | 1% per month (max 50%) |
 | Failure to register | Backdated assessment |
 
-- **Social insurance PIFSS Kuwaiti nationals** — 10.5% employee + 11.5% employer percent
+- **Social insurance PIFSS Kuwaiti nationals** — 10.5% employee + 11.5% employer
 
 ## Section 10 -- Edge cases, test suite, and escalation
 

@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Republic of Congo (tax year 2
 jurisdiction: CG
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +21,7 @@ The Republic of Congo (Congo-Brazzaville) is a CEMAC and OHADA member state whos
 - **Currency** — Central African CFA franc (XAF), pegged to the euro  _(CEMAC monetary union framework)_
 - **Tax authority** — Direction Générale des Impôts et des Domaines (DGID)  _(Code Général des Impôts (CGI))_
 - **Basis of taxation** — Residents taxed on worldwide income; non-residents taxed on Congolese-source income only  _(Code Général des Impôts (CGI) — https://taxsummaries.pwc.com/republic-of-congo/individual/taxes-on-personal-income)_
-- **Standard corporate income tax rate** — 30% percent  _(Code Général des Impôts (CGI) — https://taxsummaries.pwc.com/republic-of-congo/corporate/taxes-on-corporate-income)_
+- **Standard corporate income tax rate** — 30%  _(Code Général des Impôts (CGI) — https://taxsummaries.pwc.com/republic-of-congo/corporate/taxes-on-corporate-income)_
 - **Top marginal personal income tax rate (IRPP)** — 40%  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques — https://taxsummaries.pwc.com/republic-of-congo/individual/taxes-on-personal-income)_
 - **VAT in force** — Yes — standard rate 18% plus a 5% non-deductible surtax (effective 18.9%)  _(Code Général des Impôts (CGI) — Taxe sur la Valeur Ajoutée — https://taxsummaries.pwc.com/republic-of-congo/corporate/other-taxes)_
 - **Additional surtax on tax due** — 5% surtax applied to total tax due from 1 January 2025  _(Loi de Finances 2025 — https://taxsummaries.pwc.com/republic-of-congo/corporate/taxes-on-corporate-income)_

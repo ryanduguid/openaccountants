@@ -5,7 +5,7 @@ jurisdiction: OM
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,14 +20,14 @@ Companies are governed primarily by the Commercial Companies Law, with foreign i
 - **Most common entity type** — Limited Liability Company (LLC)  _(Commercial Companies Law (Royal Decree No. 18/2019) — https://www.sovereigngroup.com/news/how-to-set-up-an-llc-in-oman/)_
 - **Other entity types** — One Person Company (OPC/SPC), joint stock company (SAOC closed / SAOG public), partnership, joint venture, branch of a foreign company, and holding company  _(Commercial Companies Law (Royal Decree No. 18/2019) — https://mawaleh.com/blog/llc-formation/)_
 - **Foreign ownership** — 100% foreign ownership permitted for most activities (subject to a restricted/negative list)  _(Foreign Capital Investment Law (Royal Decree No. 50/2019) — https://gulfcoreservices.com/blog/how-to-form-a-100-foreign-owned-company-in-oman-rules-fees-and-timeline/)_
-- **Minimum share capital (LLC, general)** — No statutory minimum for most activities; capital should be adequate for the activity ((approx — confirm by activity))  _(Foreign Capital Investment Law (Royal Decree No. 50/2019) — https://omanbss.com/what-is-the-minimum-capital-for-llc-in-oman/)_
-- **Minimum capital often required in practice (foreign-owned)** — OMR 150,000 is commonly applied for foreign-owned LLCs in certain/regulated activities OMR ((approx — confirm; varies by activity and free-zone status)) OMR  _(Foreign Capital Investment Law (Royal Decree No. 50/2019) — https://www.sovereigngroup.com/news/how-to-set-up-an-llc-in-oman/)_
-- **Number of shareholders (LLC)** — 1 (One Person Company) to a statutory maximum; typically 2 or more for a standard LLC ((approx — confirm statutory maximum))  _(Commercial Companies Law (Royal Decree No. 18/2019) — https://mawaleh.com/blog/llc-formation/)_
+- **Minimum share capital (LLC, general)** — No statutory minimum for most activities; capital should be adequate for the activity (approx — confirm by activity)  _(Foreign Capital Investment Law (Royal Decree No. 50/2019) — https://omanbss.com/what-is-the-minimum-capital-for-llc-in-oman/)_
+- **Minimum capital often required in practice (foreign-owned)** — OMR 150,000 is commonly applied for foreign-owned LLCs in certain/regulated activities (approx — confirm; varies by activity and free-zone status)  _(Foreign Capital Investment Law (Royal Decree No. 50/2019) — https://www.sovereigngroup.com/news/how-to-set-up-an-llc-in-oman/)_
+- **Number of shareholders (LLC)** — 1 (One Person Company) to a statutory maximum; typically 2 or more for a standard LLC (approx — confirm statutory maximum)  _(Commercial Companies Law (Royal Decree No. 18/2019) — https://mawaleh.com/blog/llc-formation/)_
 - **Registration authority** — Ministry of Commerce, Industry and Investment Promotion (MOCIIP) — Commercial Registration  _(Commercial Register Law / MOCIIP — https://intuitconsultancy.com/company-formation-in-oman/)_
 - **Core incorporation steps** — Reserve company name (MOCIIP); draft and notarize Memorandum & Articles of Association; obtain security clearance for foreign investors where required; register for Commercial Registration; obtain municipality/activity licenses; register with the Tax Authority and SPF  _(Commercial Companies Law (Royal Decree No. 18/2019) — https://intuitconsultancy.com/company-formation-in-oman/)_
-- **Typical incorporation timeline** — Approximately 2–3 weeks (name reservation 1–2 days; commercial registration and licensing ~5–10 business days) ((approx — varies by activity and clearances))  _(MOCIIP — https://www.gryffincapitalist.com/om)_
+- **Typical incorporation timeline** — Approximately 2–3 weeks (name reservation 1–2 days; commercial registration and licensing ~5–10 business days) (approx — varies by activity and clearances)  _(MOCIIP — https://www.gryffincapitalist.com/om)_
 - **Core annual compliance** — Register for income tax within 60 days of starting activity; renew the commercial registration; keep accounting records and prepare financial statements; file the annual income tax return after year end; register for VAT at OMR 38,500 of taxable supplies and file quarterly VAT returns; make monthly social protection contributions  _(Oman Tax Authority, Registration — https://tms.taxoman.gov.om/portal/web/taxportal/registration ; Oman Tax Authority, Returns — https://tms.taxoman.gov.om/portal/web/taxportal/returns ; Commercial Companies Law summary — https://taxsummaries.pwc.com/oman/corporate/tax-administration)_
-- **Statutory audit** — Audited financial statements are generally required for companies (joint stock companies and most LLCs of any size) ((approx — confirm exact thresholds/exemptions))  _(Commercial Companies Law (Royal Decree No. 18/2019) — https://taxsummaries.pwc.com/oman/corporate/tax-administration)_
+- **Statutory audit** — Audited financial statements are generally required for companies (joint stock companies and most LLCs of any size) (approx — confirm exact thresholds/exemptions)  _(Commercial Companies Law (Royal Decree No. 18/2019) — https://taxsummaries.pwc.com/oman/corporate/tax-administration)_
 
 <!-- openaccountants-cta-block -->
 

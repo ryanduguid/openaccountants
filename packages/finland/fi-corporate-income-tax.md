@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Finland (tax year 202
 jurisdiction: FI
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 Finnish resident companies (e.g. Oy) are taxed on worldwide income at a flat corporate rate; foreign companies are taxed on Finnish-source income and income attributable to a Finnish permanent establishment.
 
 - **Corporate income tax rate** — 20 percent  _([Income Tax Act (Tuloverolaki 1535/1992); Business Income Tax Act (Laki elinkeinotulon verottamisesta 360/1968)](https://www.vero.fi/en/businesses-and-corporations/taxes-and-charges/limited-companies-and-cooperatives/income-tax/))_
-- **Announced rate cut** — Corporate rate to fall from 20% to 18% from 2027 (announced; not in force for 2025) percent (approx — confirm enactment status)  _(Government tax policy announcement 2025 (legislation pending))_
+- **Announced rate cut** — Corporate rate to fall from 20% to 18% from 2027 (announced; not in force for 2025) (approx — confirm enactment status)  _(Government tax policy announcement 2025 (legislation pending))_
 - **Tax base** — Net business profit per the Business Income Tax Act; one combined income source for most companies  _(Business Income Tax Act (Laki elinkeinotulon verottamisesta 360/1968))_
 - **Loss carryforward** — Tax losses carried forward for 10 years; no carryback (loss use restricted on >50% ownership change) (approx — confirm)  _(Income Tax Act (Tuloverolaki 1535/1992))_
 - **Participation exemption** — Capital gains and dividends on qualifying shareholdings can be tax-exempt for corporate holders under conditions (approx — confirm conditions)  _(Business Income Tax Act (Laki elinkeinotulon verottamisesta 360/1968))_
@@ -26,9 +27,9 @@ Finnish resident companies (e.g. Oy) are taxed on worldwide income at a flat cor
 
 Dividends, interest and royalties paid to non-residents may be subject to Finnish withholding tax, often reduced or eliminated by EU directives or tax treaties.
 
-- **Dividends to non-residents** — 20% (corporate beneficiaries) or 30% (individuals), reduced under treaties/EU rules percent  _([Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978)](https://taxsummaries.pwc.com/finland/corporate/withholding-taxes))_
-- **Interest to non-residents** — Generally 0% (no domestic WHT on most interest to non-residents) percent  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978))_
-- **Royalties to non-residents** — 20% (corporate) / 30% (individuals), reduced under treaties and the EU Interest & Royalties Directive percent (approx — confirm)  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978))_
+- **Dividends to non-residents** — 20% (corporate beneficiaries) or 30% (individuals), reduced under treaties/EU rules  _([Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978)](https://taxsummaries.pwc.com/finland/corporate/withholding-taxes))_
+- **Interest to non-residents** — Generally 0% (no domestic WHT on most interest to non-residents)  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978))_
+- **Royalties to non-residents** — 20% (corporate) / 30% (individuals), reduced under treaties and the EU Interest & Royalties Directive (approx — confirm)  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978))_
 
 ## Corporate filing and payment (2025)
 

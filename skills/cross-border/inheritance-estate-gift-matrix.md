@@ -1,10 +1,10 @@
 ---
 name: inheritance-estate-gift-matrix
 description: "Use this skill whenever an executor, donor, donee, or beneficiary asks about inheritance tax (IHT), estate tax, or gift tax across jurisdictions. Trigger on phrases like \"inheritance tax\", \"IHT\", \"estate tax\", \"gift tax\", \"Erbschaftsteuer\", \"Schenkungsteuer\", \"droits de succession\", \"imposta sulle successioni\", \"impuesto sucesiones donaciones\", \"ISD\", \"ISD Spain\", \"Spanish inheritance tax regional\", \"IRPH\", \"Form 706\", \"Form 709\", \"DSU\", \"résidence fiscale du défunt\", \"EU Succession Regulation 650/2012\", \"trust deemed UK domicile\", \"step-up basis\", \"carryover basis\", \"agricultural property relief\", \"business property relief\", \"spousal exemption\", \"intercohabitant exemption\", or any request to compute inheritance, estate, or gift tax in any jurisdiction. Maps in-force regimes globally with relationship-based rate schedules, exemptions, reliefs, and cross-border situs rules. Does NOT cover: probate procedure, trust administration beyond tax mechanics, will drafting, or income tax on inherited assets (see country income tax skills). ALWAYS read this skill before computing transfer-on-death or inter-vivos gift tax."
-version: 0.1
+version: 0.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - cross-border-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Inheritance Estate Gift Matrix
 
-## Inheritance / Estate / Gift Tax Matrix v0.1
+## Inheritance / Estate / Gift Tax Matrix v0.2
 
 ## What this file is
 
@@ -64,7 +64,7 @@ This skill does NOT cover:
 ### 2.3 Annual gift exclusion
 
 - **Annual gift exclusion** — USD 19,000 USD (per donor per donee for 2025 (indexed))
-- **Spousal annual exclusion for non-US-citizen spouse** — USD 190,000 USD (2025; raised from USD 175k)
+- **Spousal annual exclusion for non-US-citizen spouse** — USD 190,000 (2025; raised from USD 175k)
 - **Educational and medical exclusion** — unlimited if paid directly to institution
 
 ### 2.4 Marital and charitable deductions
@@ -75,8 +75,8 @@ This skill does NOT cover:
 ### 2.5 Non-US residents (estate)
 
 - **NRA situs assets subject to estate tax** — US-situs assets subject to estate tax (real estate in US, US-domiciled corporation shares including foreign corporation US-business income, tangible personal property in US)  _([T1] Non-resident aliens (NRAs))_
-- **NRA exemption** — USD 60,000 USD (treaty may increase)  _([T1] Non-resident aliens (NRAs))_
-- **NRA top rate** — 40% %  _([T1] Non-resident aliens (NRAs))_
+- **NRA exemption** — USD 60,000 (treaty may increase)  _([T1] Non-resident aliens (NRAs))_
+- **NRA top rate** — 40%  _([T1] Non-resident aliens (NRAs))_
 - **Treaties** — Treaties exist with: Australia, Austria, Canada (under §2056A protocol), Denmark, Finland, France, Germany, Greece, Ireland, Italy, Japan, Netherlands, Norway, South Africa, Sweden, Switzerland, UK  _([T1] Non-resident aliens (NRAs))_
 
 ### 2.6 Filing
@@ -99,7 +99,7 @@ This skill does NOT cover:
 
 ### 3.2 Rates and exemptions
 
-- **Nil-rate band (NRB)** — GBP 325,000 GBP (frozen through April 2030)  _([T1])_
+- **Nil-rate band (NRB)** — GBP 325,000 (frozen through April 2030)  _([T1])_
 - **Residence nil-rate band (RNRB)** — GBP 175,000 GBP (for qualifying residential property passing to direct descendants (tapered above estates of GBP 2m))  _([T1])_
 - **Spousal exemption** — unlimited (UK-domiciled or LTR spouse); GBP 325,000 limit for non-LTR/non-domiciled spouses  _([T1])_
 - **Charitable exemption** — unlimited  _([T1])_
@@ -284,7 +284,7 @@ This skill does NOT cover:
 
 ### 8.2 Netherlands
 
-- **Erfbelasting spouse exemption** — EUR 765,000 EUR (2025, indexed)  _([T1])_
+- **Erfbelasting spouse exemption** — EUR 765,000 (2025, indexed)  _([T1])_
 - **Children exemption** — EUR 25,000+ depending on age/disability  _([T1])_
 - **Rates** — 10% / 20% (partner & children); 18% / 36% (others to second-degree); 30% / 40% (other)  _([T1])_
 

@@ -5,7 +5,7 @@ jurisdiction: TW
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ Taiwan (Republic of China) taxes individuals and profit-seeking enterprises on a
 - **Does VAT/GST exist?** — Yes — a 5% value-added type business tax (VAT) applies to most goods and services; the Act sets a 5% to 10% band and the Executive Yuan applies 5%  _(Value-added and Non-value-added Business Tax Act, English text amended 28 May 2025, art. 10 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340080)_
 - **Annual individual income tax filing deadline** — 1 May – 31 May of the year following the tax year  _(Income Tax Act, English text amended 11 Sep 2026, art. 71 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 - **Annual corporate income tax filing deadline** — By 31 May following the fiscal year-end (last day of the fifth month after year-end for non-calendar years)  _(Income Tax Act, English text amended 11 Sep 2026, art. 71 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
-- **Income Basic Tax (Alternative Minimum Tax)** — Individuals 20%; enterprises 12% standard rate. A **15%** rate for in-scope MNE groups -- those with consolidated group revenue of EUR 750m or more in at least two of the four preceding fiscal years -- was announced by the Ministry of Finance on 28 August 2024 to take effect from 1 January 2025, and the Executive Yuan can set the IBT rate within statutory limits without a Legislative Yuan amendment. **Its status is genuinely unsettled and this guide does not assert either way**: PwC and the MoF's own announcement still describe the 15% as a draft proposal. Confirm the current MoF instrument before calculating a liability for an in-scope group. A 15% sensitivity calculation must be labelled as a scenario, not as tax due. Note it is not a Qualified Domestic Minimum Top-up Tax for Pillar Two purposes percent  _(Income Basic Tax Act, art. 8 and 13 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340115)_
+- **Income Basic Tax (Alternative Minimum Tax)** — Individuals 20%; enterprises 12% standard rate. A **15%** rate for in-scope MNE groups -- those with consolidated group revenue of EUR 750m or more in at least two of the four preceding fiscal years -- was announced by the Ministry of Finance on 28 August 2024 to take effect from 1 January 2025, and the Executive Yuan can set the IBT rate within statutory limits without a Legislative Yuan amendment. **Its status is genuinely unsettled and this guide does not assert either way**: PwC and the MoF's own announcement still describe the 15% as a draft proposal. Confirm the current MoF instrument before calculating a liability for an in-scope group. A 15% sensitivity calculation must be labelled as a scenario, not as tax due. Note it is not a Qualified Domestic Minimum Top-up Tax for Pillar Two purposes  _(Income Basic Tax Act, art. 8 and 13 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340115)_
 
 <!-- openaccountants-cta-block -->
 

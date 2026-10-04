@@ -1,10 +1,10 @@
 ---
 name: ma-bookkeeping
 description: Use this skill whenever asked about record-keeping, bookkeeping, or invoicing obligations for self-employed people and micro-businesses in Morocco — which books or registers each tax regime must keep, what must appear on an invoice, the ICE identifier, the move toward e-invoicing, document retention, and when a taxpayer must move up to full accounting. Trigger on phrases like "Morocco bookkeeping", "comptabilité Maroc", "facture ICE", "e-invoicing Morocco", "facturation électronique Maroc", "registre des recettes", "tenue de comptabilité Maroc", "mentions obligatoires facture", "محاسبة المغرب", "فاتورة ICE". Covers the auto-entrepreneur receipts register, the CPU register of receipts and purchases, RNS / RNR full accounting under the CGNC and Code de Commerce, mandatory invoice mentions, the DGI e-invoicing roadmap, the SIMPL teleservices, and the 10-year retention rule. Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-auto-entrepreneur, ma-cpu, and ma-income-tax for the tax computation.
-version: 1.0
+version: 1.1
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -102,7 +102,7 @@ An expert-comptable or comptable agréé is typically engaged for RNS/RNR; the a
 
 ### 3.1 The ICE — Identifiant Commun de l'Entreprise
 
-- **ICE digit structure** — 15-digit identifier (commonly 9 enterprise + 4 establishment + 2 control key) digits ((verify structure))
+- **ICE digit structure** — 15-digit identifier (commonly 9 enterprise + 4 establishment + 2 control key) digits (verify structure)
 - **ICE mandatory scope** — Mandatory for the seller and, in B2B, for the client as well.
 - **Consequence of missing/invalid ICE** — A missing or invalid ICE can cost the buyer the deductibility of the charge (IS/IR) and of the related VAT, and exposes the seller to a fine (reported as MAD 100 per omission, capped per fiscal year) *(verify amounts and article)*.
 

@@ -1,11 +1,11 @@
 ---
 name: in-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their India tax returns AND mentions freelancing, self-employment, contracting, professional services, or independent practice. Trigger on phrases like "help me do my taxes", "prepare my ITR", "I'm self-employed in India", "I'm a freelancer in India", "do my taxes as a consultant", "prepare my income tax return", or any similar phrasing where the user is an India-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the India self-employed tax workflow -- every other skill in the stack (india-gst, in-income-tax, in-advance-tax, in-tds-freelance, in-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. India full-year residents only; self-employed individuals and professionals only.
-version: 0.1
+version: 0.2
 jurisdiction: IN
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ This skill does not compute any tax figures. Its job is to collect all the facts
 
 ## Design principles
 
-v0.1 follows the same upload-first, inference-then-confirm pattern as mt-freelance-intake v0.1:
+v0.2 follows the same upload-first, inference-then-confirm pattern as mt-freelance-intake v0.2:
 
 1. **Compact refusal sweep** using `ask_user_input_v0` -- 3 interactive questions, ~30 seconds.
 2. **Upload-first workflow** -- after the refusal check, the user dumps everything they have.
@@ -124,8 +124,8 @@ Q6: "Age as of 31 March 2026?"
 - **Q5 evaluation - GST registered (composition)** — GST registered (composition) -> continue with flag: composition scheme limits and flat rate apply.
 - **Q5 evaluation - GST registration threshold** — aggregate turnover exceeds INR 20 lakh (INR 10 lakh for special category states) INR (Not GST registered -> continue with flag: if aggregate turnover exceeds INR 20 lakh (INR 10 lakh for special category states), registration is mandatory. Will check after inference.)
 - **Q5 evaluation - Not sure** — Not sure -> ask one follow-up: "Do you have a 15-digit GSTIN? Do you charge GST on your invoices? If yes, you're registered."
-- **Q6 evaluation - Below 60 exemption limit** — INR 3,00,000 (new regime) or INR 2,50,000 (old regime) INR (Below 60 -> standard exemption limit)
-- **Q6 evaluation - 60-79 senior citizen exemption limit** — INR 3,00,000 old regime exemption. New regime same INR 3,00,000. INR (60-79 -> senior citizen)
+- **Q6 evaluation - Below 60 exemption limit** — INR 3,00,000 (new regime) or INR 2,50,000 (old regime) (Below 60 -> standard exemption limit)
+- **Q6 evaluation - 60-79 senior citizen exemption limit** — INR 3,00,000 old regime exemption. New regime same INR 3,00,000. (60-79 -> senior citizen)
 - **Q6 evaluation - 80+ super senior exemption limit** — INR 5,00,000 old regime exemption. New regime same INR 3,00,000. Cannot file online (ITR must be paper-filed or through authorised representative). INR (80+ -> super senior)
 
 **Total time:** ~45 seconds if the user taps through.
@@ -596,9 +596,9 @@ For an unprepared user (has to go fetch documents):
 
 ### Change log
 
-- **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
+- **v0.2 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.2.
 
-## End of Intake Skill v0.1
+## End of Intake Skill v0.2
 
 ## Disclaimer
 

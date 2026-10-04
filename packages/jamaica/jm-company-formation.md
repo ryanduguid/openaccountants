@@ -5,7 +5,7 @@ jurisdiction: JM
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +20,7 @@ Companies are incorporated under the Companies Act at the Companies Office of Ja
 - **Common entity types** — Private company limited by shares, public limited company, sole trader/business name, partnership, branch of overseas company  _(Companies Act — https://www.miic.gov.jm/register-your-business/)_
 - **Registry** — Companies Office of Jamaica (COJ), which registers companies under the Companies Act and business names under the Registration of Business Names Act  _(Companies Office of Jamaica, home page — https://www.orcjamaica.com/ ; Companies Office of Jamaica, Compliance — https://www.orcjamaica.com/Compliance.aspx)_
 - **Minimum share capital — private company** — No statutory minimum; at least one share must be issued (nominal capital) (approx — confirm)  _(Companies Act — https://www.bizlatinhub.com/company-formation-how-to-incorporate-a-company-in-jamaica/)_
-- **Minimum paid-up capital — public limited company** — Approximately US$4,400 paid-up USD USD (approx — confirm)  _(Companies Act — https://www.bizlatinhub.com/company-formation-how-to-incorporate-a-company-in-jamaica/)_
+- **Minimum paid-up capital — public limited company** — Approximately US$4,400 paid-up USD (approx — confirm)  _(Companies Act — https://www.bizlatinhub.com/company-formation-how-to-incorporate-a-company-in-jamaica/)_
 - **Name reservation** — Name search and reservation at COJ; reservation valid for 90 days  _(Companies Act — https://www.bizlatinhub.com/company-formation-how-to-incorporate-a-company-in-jamaica/)_
 - **Incorporation document** — Articles of Incorporation (Form 1A, 1B, 1C or 1D) filed with COJ together with the Business Registration Form (BRF1) and the Beneficial Ownership Return (Form A or B); at least one responsible officer must hold a TRN  _(Companies Office of Jamaica, Compliance — https://www.orcjamaica.com/Compliance.aspx ; Companies Office of Jamaica, Forms — https://www.orcjamaica.com/Forms.aspx)_
 - **Incorporation fee** — JMD 27,500 for the incorporation package covering the Form 1A/1B Articles of Incorporation, Business Registration Form, stamp duty and BOR-A/B form; next-day expedition JMD 3,000  _(Companies Office of Jamaica, Fees — https://www.orcjamaica.com/Fees.aspx)_

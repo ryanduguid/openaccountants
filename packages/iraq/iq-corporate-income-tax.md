@@ -5,7 +5,7 @@ jurisdiction: IQ
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax base** — Net profit from Iraq-source income, determined under the Iraqi unified accounting system (GAAP)  _(Income Tax Law No. 113 of 1982 — https://taxsummaries.pwc.com/iraq/corporate/tax-administration)_
 - **Withholding tax on dividends** — 0% (dividends paid out of taxed profits are not taxed again in the shareholder's hands)  _(Income Tax Law No. 113 of 1982 — https://taxsummaries.pwc.com/iraq/corporate/withholding-taxes)_
 - **Withholding tax on interest to non-residents** — 15% (interest on debentures, mortgages, loans, deposits and advances paid by residents to non-residents)  _(Income Tax Law No. 113 of 1982 — https://taxsummaries.pwc.com/iraq/corporate/withholding-taxes)_
-- **Withholding tax on interest between residents** — 1.8% to 10% ((approx — confirm exact rate by instrument))  _(Income Tax Law No. 113 of 1982 — https://taxsummaries.pwc.com/iraq/corporate/withholding-taxes)_
+- **Withholding tax on interest between residents** — 1.8% to 10% (approx — confirm exact rate by instrument)  _(Income Tax Law No. 113 of 1982 — https://taxsummaries.pwc.com/iraq/corporate/withholding-taxes)_
 - **Withholding tax on royalties (KRI)** — 15% applied to a 75% deemed-profit base (for goodwill, trademark, patent, copyright and logo contracts (Kurdistan Region deemed-profit method; confirm federal treatment))  _(Kurdistan Region Income Tax administration — https://taxsummaries.pwc.com/iraq/corporate/withholding-taxes)_
 - **Withholding tax — non-upstream oil & gas contractors** — The Ministry of Oil withholds 35% of amounts due to foreign oil companies, their branches and subcontractors, and the foreign company withholds 7% of gross payments to its subcontractors, both remitted to the General Commission within 30 days as deposits settled at the final assessment; PwC reports a 3.3% rate for other (non-upstream) contracts  _(Instructions No. 5 of 2011 facilitating Law No. 19 of 2010 on foreign oil companies (Arabic), General Commission for Taxes copy, Art. 4(1) and (2) — https://tax.mof.gov.iq/uploads/Najwan/law/%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D8%A7%D8%AA%20%D8%B1%D9%82%D9%85%205%20%D9%84%D8%B3%D9%86%D8%A9%202011.pdf ; PwC Worldwide Tax Summaries, Withholding taxes — https://taxsummaries.pwc.com/iraq/corporate/withholding-taxes)_
 - **Corporate return filing deadline** — 31 May of the assessment year (a 10% penalty on the tax due applies to later filing)  _(General Commission for Taxes, income tax guide (daleel dharibat al-dakhl: rates, allowances and filing) — https://tax.mof.gov.iq/%D8%AF%D9%84%D9%8A%D9%84-%D8%B6%D8%B1%D9%8A%D8%A8%D8%A9-%D8%A7%D9%84%D8%AF%D8%AE%D9%84/)_

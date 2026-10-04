@@ -1,10 +1,10 @@
 ---
 name: be-income-tax
 description: Use this skill whenever asked about Belgian income tax (Personenbelasting / Impot des personnes physiques) for self-employed individuals. Trigger on phrases like "personenbelasting", "IPP", "belastingaangifte", "belastingvrij minimum", "gemeentebelasting", "beroepskosten", "sociale bijdragen", "VAPZ", "PLCI", "Belgian income tax", "self-employed tax Belgium", "Tax-on-web", or any question about computing or filing income tax for a self-employed person in Belgium. This skill covers progressive brackets (25--50%), belastingvrij minimum, gemeentebelasting, beroepskosten (actual vs forfaitaire), sociale bijdragen deductibility, VAPZ/PLCI pension deduction, and Tax-on-web filing. ALWAYS read this skill before touching any Belgian income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: BE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # BE Income Tax
 
-## Belgium Income Tax (PB/IPP) -- Self-Employed Skill v2.0
+## Belgium Income Tax (PB/IPP) -- Self-Employed Skill v2.1
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by erkend boekhouder-fiscalist or bedrijfsrevisor |
 | Validation date | Pending |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Progressive Tax Brackets (Income Year 2025 / AJ 2026)
 
@@ -65,7 +65,7 @@ Converted to tax reduction at 25% rate: EUR 10,910 x 25% = EUR 2,727.50 base.
 
 ### Gemeentebelasting (Municipal Surcharge)
 
-- **Gemeentebelasting range** — 0% to 9% of federal tax % (Average ~7%)
+- **Gemeentebelasting range** — 0% to 9% of federal tax (Average ~7%)
 - **Unknown municipality rule** — MUST know municipality to compute. STOP if unknown.
 
 ### Key Deductions

@@ -1,10 +1,10 @@
 ---
 name: netherlands-bookkeeping
 description: Use this skill whenever asked about Dutch bookkeeping, chart of accounts, financial statements, RGS mapping, jaarrekening preparation, balance sheet or P&L format in the Netherlands. Trigger on phrases like "Dutch bookkeeping", "boekhouding", "grootboekrekening", "jaarrekening", "RGS", "chart of accounts Netherlands", "balans", "winst- en verliesrekening", "micro-entity Netherlands", "BW2 Title 9", "Dutch GAAP", "RJ guidelines", "small company accounts NL", "annual accounts Netherlands", or any question about recording transactions, financial reporting, or accounting standards for Dutch entities.
-version: 1.0
+version: 1.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -380,7 +380,7 @@ TOTAAL PASSIVA                                                xxx
 - **Record retention obligation** — Must maintain adequate records for tax (bewaarplicht: 7 years)
 - **Annual income tax return** — Annual income tax return (aangifte IB) with balance sheet and P&L
 - **VAT return frequency** — VAT return quarterly (or monthly for larger traders)
-- **Small Businesses Scheme (KOR) turnover threshold** — EUR 20,000 EUR (full VAT exemption)
+- **Small Businesses Scheme (KOR) turnover threshold** — EUR 20,000 (full VAT exemption)
 
 ## Section 10 -- Interaction with Tax Skills
 

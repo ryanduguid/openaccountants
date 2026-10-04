@@ -4,7 +4,8 @@ description: Use this skill whenever asked to assemble, finalize, or package a N
 jurisdiction: NG
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Omolola Fasasi
 review_status: pending_review
 tier: 2
@@ -13,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # NG Return Assembly
 
-## Nigeria — Return Assembly (Capstone) — Skill v1.0
+## Nigeria — Return Assembly (Capstone) — Skill v1.1
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Omolola Fasasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -797,7 +798,7 @@ The capstone produces a forward-looking section so the taxpayer arrives at the n
 | Digital services | Significant Economic Presence rules (FA 2019) | NTA 2025 codifies + expands; includes non-resident e-commerce | If MNE: review SEP exposure |
 | Consolidated view | Separate modules in Tax Pro-Max | **Nigeria Tax Account** consolidates all obligations in one ledger from 1 Jan 2026 | Reconciliation should be easier post-rollout |
 
-- **Plc CIT rate** — 30% percent (typically falls in the large-company band under NTA 2025)  _(NTA 2025)_
+- **Plc CIT rate** — 30% (typically falls in the large-company band under NTA 2025)  _(NTA 2025)_
 - **Small company threshold** — Turnover ≤ ₦25M  _(Many medium companies move into small-company exemption (0% CIT))_
 - **TET + NITDA + NASENI** — 3% + 1% + 0.25% separate levies  _(Single line in 2026 computation)_
 - **Minimum tax (companies)** — Section 33 CITA: 0.5% turnover  _(Pillar Two diagnostic for MNE clients)_

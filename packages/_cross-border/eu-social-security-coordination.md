@@ -1,10 +1,10 @@
 ---
 name: eu-social-security-coordination
 description: EU social security coordination rules under Regulation (EC) No 883/2004 and Implementing Regulation (EC) No 987/2009. Determines which single EU/EEA/Swiss country's social security legislation applies to a cross-border worker. Use when the user asks about social security for workers active in multiple EU countries, posted workers, A1 certificates, which country to pay social insurance in, multi-state freelancers, or social security coordination between EU member states. Covers posted worker exception, multi-state worker rules, self-employed across borders, simultaneous employment/self-employment, EEA/Switzerland extension, and UK post-Brexit rules under the Trade and Cooperation Agreement.
-version: 1.0
+version: 1.1
 jurisdiction: EU/EEA/CH/UK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -124,7 +124,7 @@ A person who **normally** pursues activity in two or more member states simultan
 ### The 25% substantial activity test
 
 - **Substantial part definition** — "Substantial part" means a quantitatively substantial part of all activities — measured by: 1. Working time (hours/days worked in the state as a share of total working time), AND/OR 2. Remuneration (pay attributable to work in the state as a share of total pay)  _(Article 14(8) of Implementing Regulation 987/2009)_
-- **25% threshold** — 25 % (If LESS than 25% of either working time or remuneration is in the residence state, a substantial part is NOT being pursued there.)  _(Article 14(8) of Implementing Regulation 987/2009)_
+- **25% threshold** — 25 (If LESS than 25% of either working time or remuneration is in the residence state, a substantial part is NOT being pursued there.)  _(Article 14(8) of Implementing Regulation 987/2009)_
 - **CJEU C-743/23 clarifications** — Confirmed that: the 25% threshold is assessed based on the projected situation over the next 12 months from the start of multi-state activity; only working time and remuneration are relevant criteria — nature of work, location of clients, or other factors are irrelevant; the assessment includes work in third countries (non-EU) in the denominator when calculating the percentage.  _(CJEU ruling C-743/23 (September 2025))_
 
 ### Determination procedure (Article 16 of Reg 987/2009)

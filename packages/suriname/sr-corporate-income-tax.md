@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Suriname (tax year 20
 jurisdiction: SR
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,13 +20,13 @@ Resident companies (NV/BV) pay corporate income tax at a flat 36% on worldwide p
 - **Corporate income tax rate** — 36 percent  _(Income Tax Act 1922 (Inkomstenbelasting 1922), corporate provisions)_
 - **Tax base** — Net taxable profit; residents on worldwide profit, non-residents on Suriname-source profit  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
 - **Loss carryforward** — 7 years generally; indefinite carryforward for losses of the first 3 years of operation  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Dividend withholding tax (domestic)** — 25% on dividends distributed by resident companies percent  _(Dividend Withholding Tax Act (Dividendbelasting))_
+- **Dividend withholding tax (domestic)** — 25% on dividends distributed by resident companies  _(Dividend Withholding Tax Act (Dividendbelasting))_
 - **Intercompany dividend exemption** — Dividends paid by a resident company to a qualifying resident company are exempt from dividend withholding tax  _(Dividend Withholding Tax Act (Dividendbelasting))_
-- **Dividend WHT — Netherlands treaty rate** — 7.5% (reduced treaty rate) percent  _(Suriname–Netherlands Double Taxation Treaty)_
-- **Dividend WHT — Curaçao treaty rate** — 5% where recipient holds at least 10% of the paying company; 10% in other cases percent  _(Suriname–Curaçao Double Taxation Treaty)_
-- **Withholding tax on interest** — No general domestic withholding tax on interest ((approx — confirm))  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Withholding tax on royalties** — No general domestic withholding tax on royalties ((approx — confirm))  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Corporate return filing deadline** — Within the period set by the Tax Administration following year-end; advance/provisional payments due during the year ((approx — confirm exact date))  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
+- **Dividend WHT — Netherlands treaty rate** — 7.5% (reduced treaty rate)  _(Suriname–Netherlands Double Taxation Treaty)_
+- **Dividend WHT — Curaçao treaty rate** — 5% where recipient holds at least 10% of the paying company; 10% in other cases  _(Suriname–Curaçao Double Taxation Treaty)_
+- **Withholding tax on interest** — No general domestic withholding tax on interest (approx — confirm)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
+- **Withholding tax on royalties** — No general domestic withholding tax on royalties (approx — confirm)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
+- **Corporate return filing deadline** — Within the period set by the Tax Administration following year-end; advance/provisional payments due during the year (approx — confirm exact date)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
 
 <!-- openaccountants-cta-block -->
 

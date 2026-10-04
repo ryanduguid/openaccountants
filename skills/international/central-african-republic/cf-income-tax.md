@@ -4,7 +4,8 @@ description: "Use this draft for questions about Central African Republic person
 jurisdiction: CF
 category: international
 tax_year: 2025
-last_updated: 2026-09-12
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -52,7 +53,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **A minimum IRPP applies to the non-salaried, and the figure is striking** — Article 82: the minimum IRPP rates are **0.3% for agricultural activities** and **1.85% for other activities**, and *"dans tous les cas"* the minimum IRPP payable is **XAF 300,000 for agricultural activities** and **XAF 1,850,000 for others**. Article 83 exempts from the minimum non-salaried persons with the income described in articles 13, 31 and 53. **Recorded as the Code states it.** XAF 1,850,000 is a very large floor for an individual, and it mirrors the 1.85% rate digit for digit; article 133 imposes the identical pair of figures for companies, so the Code is at least internally consistent. Whether it is a drafting slip is **not resolved here**  _([CGI arts. 82–83 and 133](https://finances.gouv.cf/sites/default/files/2023-05/CGI%20RCA%202017%20mise%20%C3%A0%20jour%202023.pdf))_
 - **⚠ Annual return deadline — 30 April, not 31 May** — Article 87: every IRPP taxpayer must file a detailed annual return of income and profits, classified by category, with the tax office of their place of residence or the office designated for the purpose, ***"au plus tard le 30 Avril de l'année fiscale suivant celle de la réalisation des revenus déclarés"***. This guide said 31 May, marked *(approx — confirm)*. It is a month out  _([CGI art. 87](https://finances.gouv.cf/sites/default/files/2023-05/CGI%20RCA%202017%20mise%20%C3%A0%20jour%202023.pdf))_
 - **A separate foreign-asset declaration is due on the same date** — Article 88 (L.F. 2018): anyone domiciled or habitually resident in the Central African Republic who keeps movable property **outside** the country must file, within the article 87 deadline, a detailed return stating the nature and value of that property and the income from it  _([CGI art. 88](https://finances.gouv.cf/sites/default/files/2023-05/CGI%20RCA%202017%20mise%20%C3%A0%20jour%202023.pdf))_
-- **Individual residence test** — Generally tax-resident if domiciled or with principal place of abode/economic interests in CAR (French-code criteria) ((approx — confirm)). **Still unverified:** the Code's own liability article was not read, so this row remains as it stood  _(Code Général des Impôts (CAR))_
+- **Individual residence test** — Generally tax-resident if domiciled or with principal place of abode/economic interests in CAR (French-code criteria) (approx — confirm). **Still unverified:** the Code's own liability article was not read, so this row remains as it stood  _(Code Général des Impôts (CAR))_
 
 ### Finance Act follow-up, 12 September 2026
 

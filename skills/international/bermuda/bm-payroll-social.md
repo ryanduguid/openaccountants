@@ -5,7 +5,7 @@ jurisdiction: BM
 category: payroll
 tax_year: 2026
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Social insurance split** — Employer pays 50% (BMD 37.65/week) and employee pays 50% (BMD 37.65/week) for workers aged 16-64  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
 - **Social insurance — employees aged 65+** — Only the employer portion is due; no employee contribution  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
 - **Social insurance remittance deadline** — Employer billed monthly; payment due by the last Friday of that month  _(Contributory Pensions Act 1970 (https://www.gov.bm/department/social-insurance))_
-- **Occupational (private) pension contribution** — Mandatory for Bermudians/spouses under the National Pension Scheme; typically 5% employer + 5% employee of pensionable earnings (approx — confirm current rate) percent (approx — confirm current rate)  _(National Pension Scheme (Occupational Pensions) Act 1998 (https://www.gov.bm/bermuda-pension))_
+- **Occupational (private) pension contribution** — Mandatory for Bermudians/spouses under the National Pension Scheme; typically 5% employer + 5% employee of pensionable earnings (approx — confirm current rate)  _(National Pension Scheme (Occupational Pensions) Act 1998 (https://www.gov.bm/bermuda-pension))_
 
 <!-- openaccountants-cta-block -->
 

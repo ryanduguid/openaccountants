@@ -4,7 +4,8 @@ description: Oregon Corporate Activity Tax is a gross receipts tax (not an incom
 jurisdiction: US-OR
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -83,7 +84,7 @@ For a wholesale grocery distributor whose entire business consists of SNAP-eligi
 
 - **CAT formula** — CAT = $250 + 0.57% × max(0, (Oregon commercial activity − $1,000,000 − 35%-subtraction))  _(ORS 317A)_
 - **Flat minimum tax** — $250 USD (owed by any taxpayer whose Oregon commercial activity exceeds $1,000,000 in the calendar year)  _(ORS 317A)_
-- **Variable component rate** — 0.57% percent (applied to Oregon commercial activity in excess of $1,000,000, after the section 5 subtraction; the $250 is not a credit against the variable component, it is an additional flat amount owed once the threshold is crossed)  _(ORS 317A)_
+- **Variable component rate** — 0.57% (applied to Oregon commercial activity in excess of $1,000,000, after the section 5 subtraction; the $250 is not a credit against the variable component, it is an additional flat amount owed once the threshold is crossed)  _(ORS 317A)_
 
 ### 3.2 The exclusion threshold
 

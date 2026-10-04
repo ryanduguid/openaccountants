@@ -5,7 +5,7 @@ jurisdiction: UG
 category: international
 tax_year: 2026
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -37,8 +37,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Residence test (physical presence)** — Present in Uganda for 183 days or more in a financial year, or has a permanent home in Uganda, or is employed by the Government of Uganda and posted abroad  _(Uganda Revenue Authority, PAYE rates page (resident and non-resident scales) — https://ura.go.ug/en/domestic-taxes/paye-rates/)_
 - **Individual annual return deadline** — Within six months after the end of the financial period, so by 31 December for a 30 June year-end  _(Uganda Revenue Authority, Returns page (filing deadlines) — https://ura.go.ug/en/domestic-taxes/returns/)_
 - **PAYE as final tax for employees** — Employment income taxed under PAYE is generally a final tax where the employee has no other income  _(Income Tax Act (Cap 340) — https://ura.go.ug/en/domestic-taxes/paye-rates/)_
-- **Treatment of employee NSSF contributions** — Employee NSSF contributions are not deductible for PAYE; PAYE is computed on gross employment income (confirm current rule) ((approx — confirm))  _(Income Tax Act (Cap 340))_
-- **Mortgage interest relief** — No general personal deductions or family allowances; relief is limited to specific items in the Act (confirm any owner-occupier mortgage relief) ((approx — confirm))  _(Income Tax Act (Cap 340))_
+- **Treatment of employee NSSF contributions** — Employee NSSF contributions are not deductible for PAYE; PAYE is computed on gross employment income (confirm current rule) (approx — confirm)  _(Income Tax Act (Cap 340))_
+- **Mortgage interest relief** — No general personal deductions or family allowances; relief is limited to specific items in the Act (confirm any owner-occupier mortgage relief) (approx — confirm)  _(Income Tax Act (Cap 340))_
 
 <!-- openaccountants-cta-block -->
 

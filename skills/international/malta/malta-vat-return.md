@@ -1,11 +1,11 @@
 ---
 name: malta-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Malta VAT return (Article 10 periodic return via CFR) or Article 11 annual declaration for any client. Trigger on phrases like "prepare VAT return", "do the VAT", "periodic VAT return", "CFR VAT", "create the return", "Article 11 declaration", or any request involving Malta VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Malta only and only Article 10 (standard) and Article 11 (small enterprise) registrations. Article 12, partial exemption, capital goods scheme adjustments, margin schemes, and VAT groups are all in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Malta VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: MT
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 reviewed_by: Michael Cutajar, CPA (Malta)
 review_status: pending_review
 tier: 2
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Malta VAT Return
 
-## Malta VAT Return Skill (Article 10 periodic / Article 11) v2.0
+## Malta VAT Return Skill (Article 10 periodic / Article 11) v2.1
 
 ## Section 1 — Quick reference
 
@@ -415,19 +415,19 @@ Each rule states the legal source and the box mapping. Apply silently if the dat
 
 ### 5.1 Standard rate 18% (VAT Act Cap. 406, 5th Schedule Part 1)
 
-- **Standard rate** — 18% — Default rate for any taxable supply unless a reduced rate, zero rate, or exemption applies. Sales → Box 18 / Box 23. Purchases → Box 31 / Box 37. %  _([VAT Act Cap. 406, 5th Schedule Part 1](https://legislation.mt/eli/cap/406/eng))_
+- **Standard rate** — 18% — Default rate for any taxable supply unless a reduced rate, zero rate, or exemption applies. Sales → Box 18 / Box 23. Purchases → Box 31 / Box 37.  _([VAT Act Cap. 406, 5th Schedule Part 1](https://legislation.mt/eli/cap/406/eng))_
 
 ### 5.2 Reduced rate 7% (5th Schedule Part 2)
 
-- **Reduced rate** — 7% — Applies to: short-term accommodation (hotels, guesthouses under 3 months), minor repairs to bicycles, shoes, leather goods, clothing, domestic appliances. Sales → Box 18a / Box 23a. Purchases → Box 31a / Box 37a. %  _([5th Schedule Part 2](https://legislation.mt/eli/cap/406/eng))_
+- **Reduced rate** — 7% — Applies to: short-term accommodation (hotels, guesthouses under 3 months), minor repairs to bicycles, shoes, leather goods, clothing, domestic appliances. Sales → Box 18a / Box 23a. Purchases → Box 31a / Box 37a.  _([5th Schedule Part 2](https://legislation.mt/eli/cap/406/eng))_
 
 ### 5.3 Reduced rate 12% (5th Schedule Part 3)
 
-- **Reduced rate** — 12% — Applies to: certain financial instruments and related services, confectionery in specific circumstances. Sales → Box 18b / Box 23b. Purchases → Box 31b / Box 37b. %  _([5th Schedule Part 3](https://legislation.mt/eli/cap/406/eng))_
+- **Reduced rate** — 12% — Applies to: certain financial instruments and related services, confectionery in specific circumstances. Sales → Box 18b / Box 23b. Purchases → Box 31b / Box 37b.  _([5th Schedule Part 3](https://legislation.mt/eli/cap/406/eng))_
 
 ### 5.4 Reduced rate 5% (5th Schedule Part 4)
 
-- **Reduced rate** — 5% — Applies to: food (with exceptions for confectionery, ice cream, alcohol), non-prescription medicines and pharmaceutical products, medical devices for disabled persons, printed books and newspapers, children's car seats, certain seeds and plants. Sales → Box 19 / Box 24. Purchases → Box 28 / Box 35 (resale) or Box 32 / Box 38 (overhead). %  _([5th Schedule Part 4](https://legislation.mt/eli/cap/406/eng))_
+- **Reduced rate** — 5% — Applies to: food (with exceptions for confectionery, ice cream, alcohol), non-prescription medicines and pharmaceutical products, medical devices for disabled persons, printed books and newspapers, children's car seats, certain seeds and plants. Sales → Box 19 / Box 24. Purchases → Box 28 / Box 35 (resale) or Box 32 / Box 38 (overhead).  _([5th Schedule Part 4](https://legislation.mt/eli/cap/406/eng))_
 
 ### 5.5 Zero rate and exempt with credit
 
@@ -754,7 +754,7 @@ For each question, the inference rule comes first. Only ask if inference fails.
 
 ### Validation status
 
-This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAccountants architecture (vat-workflow-base + eu-vat-directive + country skill). It supersedes v1.0 (March 2026, standalone monolithic skill). The Malta-specific content (box mappings, rates, thresholds, blocked categories) is drawn from the VAT Act Chapter 406 and CFR guidance. Independent sign-off by a Maltese warranted accountant is pending and is a prerequisite to any reliance.
+This skill is v2.1, rewritten in April 2026 to align with the three-tier OpenAccountants architecture (vat-workflow-base + eu-vat-directive + country skill). It supersedes v1.0 (March 2026, standalone monolithic skill). The Malta-specific content (box mappings, rates, thresholds, blocked categories) is drawn from the VAT Act Chapter 406 and CFR guidance. Independent sign-off by a Maltese warranted accountant is pending and is a prerequisite to any reliance.
 
 ### Sources
 
@@ -788,10 +788,10 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to align with three-tier OpenAccountants architecture. Quick reference moved to top (Section 1). Supplier pattern library restructured as literal lookup tables (Section 3). Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue restructured to compressed format (Section 6). Excel working paper specification added (Section 7). Bank statement reading guide added (Section 8). Onboarding moved to fallback role with inference rules (Section 9). Reference material moved to bottom (Section 10). Companion skill references updated to vat-workflow-base v0.1 and eu-vat-directive v0.1.
+- **v2.1 (April 2026):** Full rewrite to align with three-tier OpenAccountants architecture. Quick reference moved to top (Section 1). Supplier pattern library restructured as literal lookup tables (Section 3). Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue restructured to compressed format (Section 6). Excel working paper specification added (Section 7). Bank statement reading guide added (Section 8). Onboarding moved to fallback role with inference rules (Section 9). Reference material moved to bottom (Section 10). Companion skill references updated to vat-workflow-base v0.1 and eu-vat-directive v0.1.
 - **v1.0 (March 2026):** Initial skill. Standalone monolithic document covering Malta VAT Act Chapter 406, box mappings, reverse charge mechanics, blocked categories, edge case registry, and test suite.
 
-### Self-check (v2.0 of this document)
+### Self-check (v2.1 of this document)
 
 1. Quick reference at top with box table and conservative defaults: yes (Section 1).
 2. Supplier library as literal lookup tables: yes (Section 3, 15 sub-tables).
@@ -809,7 +809,7 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 14. Non-EU SaaS reverse charge (Box 11/15) explicit: yes (Example 1 + Section 3.9).
 15. Article 11 simplified mode explicit: yes (Section 5.13).
 
-## End of Malta VAT Return Skill v2.0
+## End of Malta VAT Return Skill v2.1
 
 This skill is incomplete without BOTH companion files loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture) AND `eu-vat-directive` v0.1 or later (Tier 2, EU directive content). Do not attempt to produce a complete Malta VAT return without all three files loaded.
 

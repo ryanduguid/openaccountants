@@ -1,10 +1,10 @@
 ---
 name: el-salvador-tax-optimization
 description: Use this skill whenever asked about reducing tax in El Salvador, tax planning, or legal strategies to minimise tax for a business or self-employed person. Trigger on phrases like "reduce tax El Salvador", "foreign source income exempt", "territorial taxation El Salvador", "tech incentive 15 years", "El Salvador dividends 5%", "free trade zone", "save tax El Salvador", "tax planning El Salvador". This skill covers the foreign-source-income exemption (territorial reform), the 15-year tech (software/AI/cybersecurity) income-tax exemption, dividend treatment, free-trade-zone incentives, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Salvadoran tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # El Salvador Tax Optimization
 
-## El Salvador Tax Optimization Skill v0.1
+## El Salvador Tax Optimization Skill v0.2
 
 **Tier 2 — research-verified. Sources: Ministerio de Hacienda, PwC El Salvador, EY (2024 ISR reform alert). Figures must agree with `el-salvador-income-tax.md` / `el-salvador-social-contributions.md` / `el-salvador-payroll.md`. NOT yet signed off by a Salvadoran tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
@@ -55,7 +55,7 @@ Major for residents with international portfolios/income. **AUDIT FLASH POINT �
 
 - **Dividend withholding** — Dividends: 5% withholding (definitive); 25% if paid to a tax-haven jurisdiction.
 - **No re-taxation of dividends** — Individuals are not re-taxed on dividends where the company already paid corporate ISR.
-- **Domestic investment income rate** — 10% percent (flat)
+- **Domestic investment income rate** — 10% (flat)
 - **Standard self-employed ISR reference** — Standard self-employed ISR per `el-salvador-income-tax.md` (Art. 37 table; cuotas fijas 212.12 / 720 / 3,462.86).  _(el-salvador-income-tax.md, Art. 37)_
 
 ## Section 5 -- Red Lines (do not cross)

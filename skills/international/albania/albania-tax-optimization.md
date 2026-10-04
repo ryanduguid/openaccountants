@@ -1,10 +1,10 @@
 ---
 name: albania-tax-optimization
 description: Use this skill whenever asked about reducing tax in Albania, tax planning, or legal strategies to minimise tax for a self-employed person or small business in Albania. Trigger on phrases like "reduce tax Albania", "0% tax small business Albania", "simplified profit tax", "freelancer Albania", "self-employed vs company Albania", "save tax Albania", "tax planning Albania". This skill covers the 0% PIT for small businesses under ALL 14m (to 2029), the simplified profit-tax regime, the freelancer single-client reclassification rule, the standard rates above the thresholds, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Albanian tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: AL
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Albania Tax Optimization
 
-## Albania Tax Optimization Skill v0.1
+## Albania Tax Optimization Skill v0.2
 
-Albania Tax Optimization Skill v0.1
+Albania Tax Optimization Skill v0.2
 
 **Tier 2 — research-verified. Sources: Tatime (General Directorate of Taxes), PwC Albania, Karanovic & Partners. Figures must agree with `albania-income-tax.md` / `albania-social-contributions.md`. NOT yet signed off by an Albanian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
@@ -37,16 +37,16 @@ Albania Tax Optimization Skill v0.1
 
 ## Section 2 -- The 0% Small-Business Regime
 
-- **0% PIT for small business** — 0% percent (business/self-employment profit where gross annual income ≤ ALL 14,000,000, in force until 31 Dec 2029)  _(Tatime; Karanovic)_
-- **Simplified profit tax for small business** — 0% percent (small business turnover ≤ ALL 8,000,000)  _(Tatime)_
+- **0% PIT for small business** — 0% (business/self-employment profit where gross annual income ≤ ALL 14,000,000, in force until 31 Dec 2029)  _(Tatime; Karanovic)_
+- **Simplified profit tax for small business** — 0% (small business turnover ≤ ALL 8,000,000)  _(Tatime)_
 - **Above ALL 14m threshold** — Above ALL 14m: standard rates apply (progressive PIT 13%/23% bands; corporate income tax). [RESEARCH GAP — reviewer to confirm the exact above-threshold PIT/CIT rates against `albania-income-tax.md`.]  _(albania-income-tax.md)_
 
 This makes Albania extremely efficient for profitable solo/micro service businesses under the cap — but social contributions (~24.4%) and VAT (above **ALL 10m**) still apply.
 
 ## Section 3 -- The Freelancer Single-Client Rule (key constraint)
 
-- **Recharacterisation threshold - single client** — Self-employment income can be recharacterised (toward employment-style treatment) if ≥ 80% of earnings come, directly or indirectly, from one client. percent
-- **Recharacterisation threshold - few clients** — Self-employment income can be recharacterised (toward employment-style treatment) if ≥ 90% of revenue comes from fewer than three clients. percent
+- **Recharacterisation threshold - single client** — Self-employment income can be recharacterised (toward employment-style treatment) if ≥ 80% of earnings come, directly or indirectly, from one client.
+- **Recharacterisation threshold - few clients** — Self-employment income can be recharacterised (toward employment-style treatment) if ≥ 90% of revenue comes from fewer than three clients.
 - **Non-resident exception** — Exception: this does not apply where the self-employed person supplies services exclusively to non-resident individuals/entities without an Albanian permanent establishment.
 
 > **AUDIT FLASH POINT.** A single-client "freelancer" is the primary reclassification target. Diversify clients, or fall within the non-resident exception, and document it.

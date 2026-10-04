@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Iran (tax year 2025) �
 jurisdiction: IR
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Salary (employment) income tax
 
 - **Salary tax governing law** — Salary tax is governed mainly by Articles 84–85 of the Direct Taxes Act, with the annual exemption and bracket thresholds reset each year by the annual budget law. The figures below are the FY1404 (2025-26) amounts.  _(Direct Taxes Act (DTA), Articles 84–85; FY1404 Annual Budget Law)_
-- **Annual salary tax-free exemption (FY1404)** — IRR 2,880,000,000 per year (≈ IRR 240,000,000 per month) is exempt from salary tax IRR ((approx — confirm against the FY1404 budget law))  _(Direct Taxes Act (DTA), Article 84; FY1404 Annual Budget Law)_
+- **Annual salary tax-free exemption (FY1404)** — IRR 2,880,000,000 per year (≈ IRR 240,000,000 per month) is exempt from salary tax (approx — confirm against the FY1404 budget law)  _(Direct Taxes Act (DTA), Article 84; FY1404 Annual Budget Law)_
 - **Salary band — 10%** — 10 percent (On taxable salary above the exemption up to 5× the annual exemption)  _(Direct Taxes Act (DTA), Article 85 / Annual Budget Law salary table)_
 - **Salary band — 20%** — 20 percent (On the portion above 5× the annual exemption (up to the next budget-set threshold))  _(Direct Taxes Act (DTA), Article 85 / Annual Budget Law salary table)_
 - **Salary band — top rate** — 35 percent (On high salaries (e.g. monthly salary above ~IRR 320,000,000 / annual above ~IRR 3,840,000,000), the excess is taxed up to this rate; (approx — confirm bracket thresholds in FY1404 budget law))  _(Direct Taxes Act (DTA), Article 85 / FY1404 Annual Budget Law)_
@@ -29,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Article 131 band 2 — 20%** — 20 percent (Income in the next band (above band 1, roughly double band 1); (approx — confirm indexed threshold))  _(Direct Taxes Act (DTA), Article 131)_
 - **Article 131 band 3 — 25%** — 25 percent (Income above the upper Article 131 threshold)  _(Direct Taxes Act (DTA), Article 131)_
 - **Individual residence test** — An individual is generally treated as Iranian-resident based on domicile/residence in Iran; resident individuals are taxed on worldwide income, non-residents on Iran-source income; (approx — confirm precise residence criteria/day-count)  _(Direct Taxes Act (DTA))_
-- **Annual exemption for business individuals** — Individual business/professional taxpayers receive an annual personal exemption equal to the salary exemption (Article 101); confirm the FY1404 figure IRR ((approx — confirm FY1404 amount))  _(Direct Taxes Act (DTA), Article 101)_
+- **Annual exemption for business individuals** — Individual business/professional taxpayers receive an annual personal exemption equal to the salary exemption (Article 101); confirm the FY1404 figure IRR (approx — confirm FY1404 amount)  _(Direct Taxes Act (DTA), Article 101)_
 - **Filing & payment deadline (business income)** — Annual return due by the end of the fourth month after fiscal year-end (~22 July); tax payable with the return; (approx — confirm exact date)  _(Direct Taxes Act (DTA), Article 100)_
 
 <!-- openaccountants-cta-block -->

@@ -1,10 +1,10 @@
 ---
 name: banking-sector
 description: "Use this skill whenever a bank, neobank, payment institution, e-money institution, or regulated financial holding company asks about accounting, regulatory capital, or tax issues specific to financial institutions. Trigger on phrases like \"bank tax\", \"bank levy\", \"IRB approach\", \"standardised approach\", \"IFRS 9 ECL\", \"FRTB\", \"Basel III\", \"Basel IV\", \"CRR/CRD\", \"Prudential regulation\", \"PRA\", \"ECB SSM\", \"FED CCAR\", \"OSFI\", \"expected credit loss\", \"ICAAP\", \"ILAAP\", \"stress testing\", \"interchange fee\", \"MREL\", \"TLAC\", \"resolution planning\", \"deposit guarantee scheme contribution\", or any question about bank accounting / tax / regulation. Covers IFRS 9 ECL, capital adequacy interactions with tax (DTA recognition), bank levies (UK, EU), specific tax rules for banks (FTT, securitisation, hedge accounting). Does NOT cover: detailed banking regulation (CRR/CRD specifics, FRTB calibration); audit of banks (see statutory-audit-workflow-base); routine corporate tax (see corporate-income-tax-workflow-base). ALWAYS read this skill before classifying a bank's transactions or computing its tax position."
-version: 0.1
+version: 0.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - corporate-income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Banking Sector
 
-## Banking Sector Tax & Accounting v0.1
+## Banking Sector Tax & Accounting v0.2
 
 ## What this file is
 
@@ -93,12 +93,12 @@ For banking specifically:
 ### 4.1 UK Bank Levy + Bank Surcharge
 
 - **UK Bank Levy rate** — 0.10% percent of taxable balance sheet equity and liabilities (reduced to 0.10% from 0.21% in stages, FA 2017)  _(UK Bank Levy (Finance Act 2011 Schedule 19) [T1])_
-- **UK Bank Levy half rate on long-term funding** — 0.05% percent  _(UK Bank Levy (Finance Act 2011 Schedule 19) [T1])_
+- **UK Bank Levy half rate on long-term funding** — 0.05%  _(UK Bank Levy (Finance Act 2011 Schedule 19) [T1])_
 - **UK Bank Levy de minimis** — GBP 20bn balance sheet size  _(UK Bank Levy (Finance Act 2011 Schedule 19) [T1])_
 - **UK Bank Levy filing** — HMRC bank levy return, due 9 months 1 day after period end  _(UK Bank Levy (Finance Act 2011 Schedule 19) [T1])_
 - **UK Bank Corporation Tax Surcharge rate** — 3% percent on bank profits above GBP 100m (reduced from 8% effective 1 April 2023)  _(UK Bank Corporation Tax Surcharge (FA 2015 s.17 amended FA 2022) [T1])_
 - **Surcharge applies in addition to standard CT** — Applies in addition to standard 25% CT  _(UK Bank Corporation Tax Surcharge (FA 2015 s.17 amended FA 2022) [T1])_
-- **Effective rate on banking profits above threshold** — 28% percent  _(UK Bank Corporation Tax Surcharge (FA 2015 s.17 amended FA 2022) [T1])_
+- **Effective rate on banking profits above threshold** — 28%  _(UK Bank Corporation Tax Surcharge (FA 2015 s.17 amended FA 2022) [T1])_
 
 ### 4.2 EU Single Resolution Fund (SRF) contribution
 
@@ -133,7 +133,7 @@ For banking specifically:
 - Operating loss carryforwards
 - Securitisation losses
 
-- **Basel III prudential filter CET1 deduction threshold** — 10% percent (combined with other deductions) (DTAs that rely on future profitability must be deducted from CET1 above this threshold; DTAs from temporary differences taxed at deferred 15%+ generally less restrictive)  _(Article 36(1)(c) CRR [T1])_
+- **Basel III prudential filter CET1 deduction threshold** — 10% (combined with other deductions) (DTAs that rely on future profitability must be deducted from CET1 above this threshold; DTAs from temporary differences taxed at deferred 15%+ generally less restrictive)  _(Article 36(1)(c) CRR [T1])_
 - **Pillar Two interaction** — DTAs / DTLs revalued to lower of statutory rate or 15% (per `pillar-two-globe-minimum-tax.md`); 5-year DTL recapture rule may add back loan loss DTL recoveries; ETR may fall below 15% for banks with material loss carryforwards in low-rate jurisdictions.  _(pillar-two-globe-minimum-tax.md [T2])_
 
 ## Section 6 — Sector-specific issues

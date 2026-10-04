@@ -4,8 +4,8 @@ description: Tier 2 US federal-level reference skill providing the 50-state at-a
 jurisdiction: US
 category: payroll
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
@@ -183,7 +183,7 @@ Column key:
 A $500K/yr executive pays $6,000+ to SDI annually. AUDIT FLASH POINT: payroll providers from 2023 or earlier still capping at the old wage base.
 
 - **CalSavers retirement mandate** — Any employer with 1+ employee that does not sponsor a qualified retirement plan must register and facilitate Roth IRA contributions. Deadline elapsed 12/31/2023 for all sizes.  _(CalSavers)_
-- **CA PIT top marginal rate** — 12.3% + 1% Mental Health Services Tax on income >$1M = 13.3% top marginal percent  _(PIT brackets)_
+- **CA PIT top marginal rate** — 12.3% + 1% Mental Health Services Tax on income >$1M = 13.3% top marginal  _(PIT brackets)_
 - **DE 9 / DE 9C filing** — Filed quarterly through e-Services for Business; due last day of month after Q-end. DE 9C is the wage-detail return; DE 9 is the contribution return.  _(DE 9 / DE 9C)_
 - **WTPA wage notice** — Must be furnished at hire.  _(Labor Code §2810.5)_
 
@@ -191,10 +191,10 @@ A $500K/yr executive pays $6,000+ to SDI annually. AUDIT FLASH POINT: payroll pr
 
 - **NYS-45 combined quarterly return** — Combined quarterly return: state PIT WH + SUTA + MCTMT (where applicable). One form, four parts.  _(NYS-45)_
 - **Convenience-of-employer rule** — If a NY employer permits remote work for the employee's convenience (not the employer's necessity), the wages are NY-sourced even if the employee never sets foot in NY. This rule cost out-of-state remote workers ~$1B+ in NY tax during 2020-2022. AUDIT FLASH POINT when onboarding a remote employee for a NY-based employer.  _(TSB-M-06(5)I)_
-- **MCTMT rate and threshold** — 0.34-0.60% on payroll where total quarterly payroll within the MCTD (12 downstate counties) exceeds $312,500. Self-employed have a separate MCTMT regime. percent  _(MCTMT)_
-- **NY PFL employee deduction** — 0.388% of wages capped at NYSAWW × 0.388%, remitted to the private DBL carrier percent  _(NY PFL)_
-- **NYC resident-only city PIT** — 3.078-3.876% graduated; employer must withhold for NYC residents but not for non-residents percent  _(NYC)_
-- **Yonkers earnings tax** — Resident (16.75% of NY state tax) and non-resident (0.5%) earnings tax percent  _(Yonkers)_
+- **MCTMT rate and threshold** — 0.34-0.60% on payroll where total quarterly payroll within the MCTD (12 downstate counties) exceeds $312,500. Self-employed have a separate MCTMT regime.  _(MCTMT)_
+- **NY PFL employee deduction** — 0.388% of wages capped at NYSAWW × 0.388%, remitted to the private DBL carrier  _(NY PFL)_
+- **NYC resident-only city PIT** — 3.078-3.876% graduated; employer must withhold for NYC residents but not for non-residents  _(NYC)_
+- **Yonkers earnings tax** — Resident (16.75% of NY state tax) and non-resident (0.5%) earnings tax  _(Yonkers)_
 
 ### 5.3 New Jersey — multi-deduction stub mandate
 
@@ -212,7 +212,7 @@ PSD-code mismatches generate notices from any of the ~21 active TCDs (Berkheimer
 
 ### 5.5 Ohio — RITA/CCA municipal withholding
 
-- **Ohio municipal income tax administration** — ~600 Ohio municipalities impose a local income tax (0.5-3.0%). Most are administered through one of: RITA (Regional Income Tax Agency) — ~330 municipalities; CCA (Central Collection Agency, Cleveland-based) — ~50 municipalities; Self-administered (Columbus, Cincinnati, Akron, Toledo, etc.) percent
+- **Ohio municipal income tax administration** — ~600 Ohio municipalities impose a local income tax (0.5-3.0%). Most are administered through one of: RITA (Regional Income Tax Agency) — ~330 municipalities; CCA (Central Collection Agency, Cleveland-based) — ~50 municipalities; Self-administered (Columbus, Cincinnati, Akron, Toledo, etc.)
 - **20-day rule** — Withholding rules under HB 110 (2021) and the 20-day rule: employer withholds for the work-location city for the first 20 days an employee works there, then switches to the principal-place-of-work municipality.  _(HB 110 (2021))_
 - **Courtesy withholding** — Employees who live in a city with a higher rate than their work city are entitled to a "courtesy withholding" of the difference, but it is voluntary for the employer.
 
@@ -222,35 +222,35 @@ Remote workers post-2021 sometimes get incorrectly withheld for the office-city 
 
 ### 5.6 Washington — Cares Fund LTC + PFML stack
 
-- **WA Cares Fund** — 0.58% employee-only payroll tax (no wage cap) funding a state long-term-care trust. Opt-out window closed 12/31/2022 for existing LTCi holders; very few are exempt now. percent  _(WA Cares Fund)_
-- **WA PFML** — 0.92% combined; employer share 28.57%, employee share 71.43% for 2025 (varies annually based on premium experience). percent  _(WA PFML)_
+- **WA Cares Fund** — 0.58% employee-only payroll tax (no wage cap) funding a state long-term-care trust. Opt-out window closed 12/31/2022 for existing LTCi holders; very few are exempt now.  _(WA Cares Fund)_
+- **WA PFML** — 0.92% combined; employer share 28.57%, employee share 71.43% for 2025 (varies annually based on premium experience).  _(WA PFML)_
 - **No PIT** — No PIT so employers register only with WA ESD for both unemployment and PFML.
 
 Out-of-state employer with WA-resident remote employee must register for both PFML and Cares Fund — many miss this.
 
 ### 5.7 Oregon — TriMet & Statewide Transit
 
-- **TriMet payroll tax** — 0.8237% 2025: employers pay on wages of services performed within the TriMet district (Portland metro 3-county area). Filed on Form OR-OQ. percent  _(Form OR-OQ)_
-- **Lane Transit District (LTD)** — 0.79% on services performed in the LTD area (Eugene metro). percent
-- **Statewide Transit Tax (STT)** — 0.10% employee deduction on all OR wages. percent
-- **Paid Leave Oregon** — 1.00% on wages; employers with ≥25 employees split 40% employer / 60% employee. percent
+- **TriMet payroll tax** — 0.8237% 2025: employers pay on wages of services performed within the TriMet district (Portland metro 3-county area). Filed on Form OR-OQ.  _(Form OR-OQ)_
+- **Lane Transit District (LTD)** — 0.79% on services performed in the LTD area (Eugene metro).
+- **Statewide Transit Tax (STT)** — 0.10% employee deduction on all OR wages.
+- **Paid Leave Oregon** — 1.00% on wages; employers with ≥25 employees split 40% employer / 60% employee.
 - **OregonSaves retirement mandate** — Phased in 2020-2023 for all employers without a qualified plan.  _(OregonSaves)_
 
 ### 5.8 Colorado — FAMLI
 
-- **FAMLI rate and split** — 0.90% on wages up to SS base; 50/50 employer/employee split for employers with ≥10 employees; employee-only for employers <10. percent  _(FAMLI)_
+- **FAMLI rate and split** — 0.90% on wages up to SS base; 50/50 employer/employee split for employers with ≥10 employees; employee-only for employers <10.  _(FAMLI)_
 - **CO SecureSavings retirement mandate** — Retirement mandate for employers with 5+ employees since 12/31/2023.  _(CO SecureSavings)_
 
 ### 5.9 Illinois — Secure Choice + Chicago
 
 - **IL Secure Choice mandate** — 5+ employees, no qualified plan → must register and facilitate Roth IRA contributions.  _(IL Secure Choice)_
 - **Chicago Paid Leave & Paid Sick Leave ordinance** — Effective 7/1/2024, layers on top of IL state ESST.
-- **IL flat PIT rate** — IL is flat 4.95% so withholding tables are simple, but local-equivalent obligations (transit fund, expense reimbursement under IL Wage Payment Act §9.5) are easy to miss. percent  _(IL Wage Payment Act §9.5)_
+- **IL flat PIT rate** — IL is flat 4.95% so withholding tables are simple, but local-equivalent obligations (transit fund, expense reimbursement under IL Wage Payment Act §9.5) are easy to miss.  _(IL Wage Payment Act §9.5)_
 
 ### 5.10 Massachusetts — PFML
 
-- **MA PFML rate and split** — 0.88%: the only state-administered combined medical + family leave with employer/employee split that varies by employer size. Employers <25 EE pay 0.18% (employee-only for medical portion); ≥25 EE pay full 0.88% with employer covering 60% of medical / 0% of family. percent  _(MA PFML)_
-- **Millionaires Tax surtax** — The 4% surtax on income >$1M (the "Millionaires Tax," Article 44) means high earners need additional withholding via Form M-4. percent  _(Article 44)_
+- **MA PFML rate and split** — 0.88%: the only state-administered combined medical + family leave with employer/employee split that varies by employer size. Employers <25 EE pay 0.18% (employee-only for medical portion); ≥25 EE pay full 0.88% with employer covering 60% of medical / 0% of family.  _(MA PFML)_
+- **Millionaires Tax surtax** — The 4% surtax on income >$1M (the "Millionaires Tax," Article 44) means high earners need additional withholding via Form M-4.  _(Article 44)_
 
 ## 6. AUDIT FLASH POINTS — multi-state remote workers
 

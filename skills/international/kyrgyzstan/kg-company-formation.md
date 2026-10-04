@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Kyrgyzst
 jurisdiction: KG
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Joint Stock Company (AO)** — Open (public) or closed share company form, used for larger ventures and capital raising  _(Law on Joint Stock Companies of the Kyrgyz Republic)_
 - **Individual Entrepreneur (IE)** — Sole proprietor registration available, often under the patent or unified tax regime  _(Tax Code of the Kyrgyz Republic)_
 - **Branch / representative office** — A foreign company may register a branch or representative office; a branch can create a permanent establishment  _(Law on Economic Partnerships and Companies of the Kyrgyz Republic)_
-- **Minimum charter capital (OsOO)** — No effective statutory minimum; in practice often set at around 1,000 KGS, payable within one year of incorporation (approx — confirm) KGS  _(Law on Economic Partnerships and Companies of the Kyrgyz Republic)_
+- **Minimum charter capital (OsOO)** — No effective statutory minimum; in practice often set at around 1,000 KGS, payable within one year of incorporation (approx — confirm)  _(Law on Economic Partnerships and Companies of the Kyrgyz Republic)_
 - **Charter capital payment deadline** — Charter capital may be paid up within the first year after incorporation (approx — confirm)  _(Law on Economic Partnerships and Companies of the Kyrgyz Republic)_
 - **Registration authority** — Ministry of Justice of the Kyrgyz Republic (single-window state registration)  _(Law on State Registration of Legal Entities, Branches and Representative Offices)_
 - **Core incorporation steps** — Reserve name; prepare charter and founders' resolution; register with the Ministry of Justice; obtain a tax identification number (TIN); register with the Social Fund; open a bank account; make a company seal  _(Law on State Registration of Legal Entities, Branches and Representative Offices)_

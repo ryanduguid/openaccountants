@@ -1,10 +1,10 @@
 ---
 name: fi-income-tax
 description: Use this skill whenever asked about Finland income tax for self-employed individuals or freelancers. Trigger on phrases like "Finland income tax", "Finnish tax", "Verohallinto", "OmaVero", "vero.fi", "elinkeinotulo", "pääomatulo", "ansiotulo", "Finnish tax return", "ennakkoperintä", "municipal tax Finland", "capital income Finland", "state tax Finland", or any question about Finnish income tax filing, rates, or deductions for self-employed persons. Covers progressive state tax, municipal tax, capital income tax, church tax, deductions, and filing via OmaVero. ALWAYS read this skill before touching any Finland income tax work.
-version: 1.0
+version: 1.1
 jurisdiction: FI
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Self-employed: 1 April of the following year. Employees: one of several April dates, assigned per taxpayer and printed on the return and in MyTax -- **1, 14, 21 or 28 April 2026** for tax year 2025 (they were 15, 22 and 29 April in the previous season, so do not carry a year forward) |
 | Validated by | Pending -- requires sign-off by a Finnish KHT/HT auditor or tax adviser |
 | Validation date | Pending |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Earned Income -- State Tax Brackets (2025)
 
@@ -55,7 +55,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Church Tax (kirkollisvero)
 
-- **Church tax rate range** — 1.0% -- 2.2% percent (Applicable only to members of the Evangelical Lutheran Church or Orthodox Church, depending on parish)
+- **Church tax rate range** — 1.0% -- 2.2% (Applicable only to members of the Evangelical Lutheran Church or Orthodox Church, depending on parish)
 
 ### Capital Income Tax (pääomatulovero)
 

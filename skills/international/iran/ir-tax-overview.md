@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Iran (tax year 2025) — rate
 jurisdiction: IR
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,9 +20,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Official currency** — Iranian Rial (IRR); amounts are also commonly quoted in Toman (1 Toman = 10 Rials)  _(Central Bank of Iran (Bank Markazi))_
 - **National tax authority** — Iranian National Tax Administration (INTA / Sazman-e Omur-e Maliati-ye Keshvar)  _(Direct Taxes Act (DTA), https://en.intamedia.ir/)_
 - **Basis of taxation** — Iranian resident individuals and Iranian legal entities are taxed on worldwide income; non-residents are taxed on Iran-source income only  _(Direct Taxes Act (DTA))_
-- **Headline personal income tax rate (top)** — Up to 35% (progressive); general business-income brackets under Article 131 run 15% / 20% / 25% percent  _(Direct Taxes Act (DTA), Articles 131 and 85)_
-- **Headline corporate income tax rate** — 25% flat on company taxable profit percent  _(Direct Taxes Act (DTA), Article 105, https://taxsummaries.pwc.com/)_
-- **Does VAT exist?** — Yes — standard VAT rate is 9% percent  _(Value Added Tax Act (Permanent VAT Act, in force from 2022))_
+- **Headline personal income tax rate (top)** — Up to 35% (progressive); general business-income brackets under Article 131 run 15% / 20% / 25%  _(Direct Taxes Act (DTA), Articles 131 and 85)_
+- **Headline corporate income tax rate** — 25% flat on company taxable profit  _(Direct Taxes Act (DTA), Article 105, https://taxsummaries.pwc.com/)_
+- **Does VAT exist?** — Yes — standard VAT rate is 9%  _(Value Added Tax Act (Permanent VAT Act, in force from 2022))_
 - **Corporate annual return deadline** — Within 4 months after the end of the fiscal year (e.g. by ~22 July for a fiscal year ending 20 March) (approx — confirm exact Gregorian date)  _(Direct Taxes Act (DTA), Article 110)_
 - **Individual (business income) return deadline** — By the end of the fourth month after year-end — typically end of Tir (~22 July) (approx — confirm exact date)  _(Direct Taxes Act (DTA), Article 100)_
 

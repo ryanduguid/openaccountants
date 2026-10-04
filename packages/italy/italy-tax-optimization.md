@@ -1,10 +1,10 @@
 ---
 name: italy-tax-optimization
 description: Use this skill whenever asked about reducing tax in Italy, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in Italy. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "risparmiare sulle tasse", "ottimizzazione fiscale", "pagare meno tasse", "detrazioni", "deduzioni". ALWAYS read this skill before advising on any Italian tax optimization strategy.
-version: 1.0
+version: 1.1
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -120,7 +120,7 @@ For a professional (BNC) with EUR 60,000 revenue and actual expenses of EUR 10,0
 
 ### Beni strumentali < EUR 516.46
 
-- **Full expensing threshold for small assets** — EUR 516.46 EUR (Assets costing less than this can be fully expensed in the year of purchase. Use this threshold to time smaller purchases.)  _(Art. 102 comma 5 TUIR)_
+- **Full expensing threshold for small assets** — EUR 516.46 (Assets costing less than this can be fully expensed in the year of purchase. Use this threshold to time smaller purchases.)  _(Art. 102 comma 5 TUIR)_
 
 ### Motor Vehicle Deduction Limits (Art. 164 TUIR)
 

@@ -4,7 +4,7 @@ description: "Source-cited draft: vat / gst for Botswana (tax year 2025) — rat
 jurisdiction: BW
 category: international
 tax_year: 2025
-version: 0.2
+version: 0.3
 last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
@@ -24,7 +24,7 @@ Botswana levies VAT under the Value Added Tax Act. The standard rate is **14%**,
 ## Registration
 
 - **Compulsory registration threshold** — 1,000,000 BWP (of annual taxable turnover)  _(Value Added Tax Act (Cap. 50:03) — https://taxsummaries.pwc.com/botswana/corporate/other-taxes)_
-- **Voluntary registration** — Permitted below the BWP 1,000,000 threshold BWP (source replaced, claim not re-verified: this was cited to a `doingbusiness.co.bw` page that now returns "Under Construction" and a shopping cart. The Botswana Unified Revenue Service publishes the domestic-tax legislation and its rulings and directives; confirm the provision there)  _(Value Added Tax Act (Cap. 50:03) — Botswana Unified Revenue Service, https://www.burs.org.bw/)_
+- **Voluntary registration** — Permitted below the BWP 1,000,000 threshold (source replaced, claim not re-verified: this was cited to a `doingbusiness.co.bw` page that now returns "Under Construction" and a shopping cart. The Botswana Unified Revenue Service publishes the domestic-tax legislation and its rulings and directives; confirm the provision there)  _(Value Added Tax Act (Cap. 50:03) — Botswana Unified Revenue Service, https://www.burs.org.bw/)_
 - **Non-resident remote-services registration** — 500,000 BWP of taxable supplies over 12 months (remote/electronic services, per Andersen's reading of the 2025 amendment). Commencement per BURS: registration of non-resident remote-service suppliers from 1 June 2026, charging of VAT by them from 1 October 2026. The Value Added Tax (Remote Services) Regulations, 2026 (SI 74 of 2026) list the services covered: digital content (e-books, music, games, apps, software, streaming, gambling), hosting and cloud storage, webinars and distance learning, website design, inbound tourism products, professional services provided remotely or performed physically in Botswana, and marketplace supplies; BURS says the start date for inbound tourism products will be announced separately  _(BURS public notice, 29 May 2026 — https://www.burs.org.bw/images/Value%20Added%20Tax%20Amendment%20Act%202026.pdf ; SI 74 of 2026 — https://www.burs.org.bw/images/VAT%20Added%20Tax%20Regulations%202026.pdf ; https://bw.andersen.com/botswanas-value-added-tax-amendment-bill-2025-modernising-the-vat-landscape/)_
 
 Compulsory VAT registration applies once taxable turnover crosses the threshold; smaller businesses may register voluntarily.

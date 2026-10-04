@@ -4,7 +4,8 @@ description: Sri Lanka provisional tax via Advance Income Tax (AIT) quarterly in
 jurisdiction: LK
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Lal kumarasiri
 review_status: current
 tier: 1
@@ -23,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Q2 instalment** — Due by 15 October  _(IRA s 90; IRD AIT Payment Schedule)_
 - **Q3 instalment** — Due by 15 January  _(IRA s 90; IRD AIT Payment Schedule)_
 - **Q4 instalment (balance)** — Due by 15 April (after year-end). Final balance of tax (after deducting all AIT instalments and WHT credits) due with the annual return by 30 November.  _(IRA s 90; IRD AIT Payment Schedule)_
-- **Penalty for underpaid instalments** — 10% penalty on the underpaid or unpaid AIT instalment amount. percent  _(IRA s 90; IRD AIT Penalty Notice)_
+- **Penalty for underpaid instalments** — 10% penalty on the underpaid or unpaid AIT instalment amount.  _(IRA s 90; IRD AIT Penalty Notice)_
 - **Credit against final tax** — AIT instalments paid are credited against the final CIT liability assessed at year-end. Excess AIT (overpayment) may be refunded or carried forward.  _(IRA s 90; IRD Return Processing Guidance)_
 - **WHT credit** — Withholding taxes deducted from income received (e.g. AIT on dividends, interest) are also credited against the final CIT/personal income tax liability.  _(IRA s 90B; First Schedule; IRD AIT/WHT Credit Guidance)_
 - **Payment method** — Via RAMIS (IRD online portal) or through authorised banking channels.  _(IRD RAMIS – www.ird.gov.lk)_

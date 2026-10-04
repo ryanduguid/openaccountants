@@ -1,7 +1,7 @@
 ---
 name: cameroon-payroll
 description: Use this skill whenever asked about Cameroon payroll processing for employed persons. Trigger on phrases like "Cameroon payroll", "IRPP withholding", "PAYE Cameroon", "CNPS contribution", "CFC housing fund", "FNE employment fund", "CAC surcharge", "centimes additionnels", "DIPE", "payslip Cameroon", "bulletin de paie", "net salary Cameroon", "salaire net", "tax withholding Cameroon", "employer social security Cameroon", "SMIG Cameroon", "minimum wage Cameroon", "gross to net Cameroon", "XAF salary calculation", or any question about computing employee pay, withholding tax (IRPP/PAYE), or social security (CNPS) for Cameroon-based employees. This skill covers IRPP progressive withholding with the 10% Additional Council Tax (CAC), CNPS pension/family-allowance/accident contributions, the CFC housing fund and FNE employment fund payroll levies, council tax and audiovisual royalty, minimum wage (SMIG), monthly DIPE filing, and remittance deadlines. ALWAYS read this skill before processing any Cameroon payroll.
-version: 0.2
+version: 0.3
 jurisdiction: CM
 tax_year: 2025
 last_updated: 2026-10-04
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cameroon Payroll
 
-## Cameroon Payroll Skill v0.2
+## Cameroon Payroll Skill v0.3
 
 **Tier 2 — Research-verified.** Figures are sourced from PwC Worldwide Tax Summaries (Cameroon) and the CNPS official site, corroborated by Employer-of-Record guides. This skill has **not** yet been section-by-section verified by a licensed Cameroon accountant (`verified_by: pending`). Treat all outputs as estimates pending professional sign-off. Where a figure could not be sourced to a primary authority it is flagged **[RESEARCH GAP — reviewer to confirm]**.
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | CNPS contribution ceiling | XAF 750,000/month (XAF 9,000,000/year) [PwC, Other taxes; CNPS] |
 | Personal income tax | **Yes** — Cameroon levies IRPP (progressive 11%–38.5% incl. CAC) |
 | Validated by | Verified by Nkinyam Courage Ndasi (3472800) on 2026-06-21 |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 **No-PIT note:** This is **not** a no-PIT jurisdiction. Cameroon levies a progressive personal income tax (IRPP) on employment income, withheld monthly. Treat IRPP as a core employer withholding obligation.
 
@@ -470,7 +470,7 @@ Source: https://taxsummaries.pwc.com/republic-of-cameroon/corporate/tax-administ
 
 - **Employer registration requirement** — Employers must register with the DGI to obtain a Numéro Identifiant Unique (NIU) and with CNPS for an employer registration number before hiring.  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income ; https://www.cnps.cm/en/assures/assure-e.html)_
 - **CNPS affiliation mandatory** — CNPS affiliation is mandatory for all salaried workers from the first employee — no headcount threshold.  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income ; https://www.cnps.cm/en/assures/assure-e.html)_
-- **Self-employed/business minimum-tax note (not salaried employees)** — 2.2% or 5.5% of turnover percent (depending on regime; not salaried employees)  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income ; https://www.cnps.cm/en/assures/assure-e.html)_
+- **Self-employed/business minimum-tax note (not salaried employees)** — 2.2% or 5.5% of turnover (depending on regime; not salaried employees)  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income ; https://www.cnps.cm/en/assures/assure-e.html)_
 
 ## Section 18 — Reference Material
 

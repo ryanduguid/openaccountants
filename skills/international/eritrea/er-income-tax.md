@@ -4,7 +4,8 @@ description: "Source-cited draft: personal income tax for Eritrea (tax year 2025
 jurisdiction: ER
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +23,7 @@ Personal income tax is progressive and applied at source on employment income. T
 - **Band: ERN 1,501–2,000 per month** — 15 percent  _(Income Tax Proclamation No. 24/2011 (as described at [taxatlas.io](https://taxatlas.io/country/eritrea/income-tax)))_
 - **Band: ERN 2,001–3,000 per month** — 20 percent  _(Income Tax Proclamation No. 24/2011 (as described at [taxatlas.io](https://taxatlas.io/country/eritrea/income-tax)))_
 - **Band: above ERN 3,000 per month** — 30 percent  _(Income Tax Proclamation No. 24/2011 (as described at [taxatlas.io](https://taxatlas.io/country/eritrea/income-tax)))_
-- **Overall progressive rate range** — 2% to 30% percent (approx — lowest band reported as 2% by some sources)  _(Income Tax Proclamation No. 24/2011 (as described at [taxatlas.io](https://taxatlas.io/country/eritrea/income-tax)))_
+- **Overall progressive rate range** — 2% to 30% (approx — lowest band reported as 2% by some sources)  _(Income Tax Proclamation No. 24/2011 (as described at [taxatlas.io](https://taxatlas.io/country/eritrea/income-tax)))_
 - **Collection method for employment income** — Tax withheld at source by the employer (PAYE-equivalent)  _(Income Tax Proclamation No. 24/2011)_
 - **Residence test** — Generally based on physical presence / domicile in Eritrea during the tax year (approx — confirm day-count test)  _(Income Tax Proclamation No. 24/2011)_
 - **Non-resident employment income** — Taxed on Eritrean-source income; final withholding may apply (approx — confirm)  _(Income Tax Proclamation No. 24/2011)_

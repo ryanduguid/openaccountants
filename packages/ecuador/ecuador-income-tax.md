@@ -1,10 +1,10 @@
 ---
 name: ecuador-income-tax
 description: Use this skill whenever asked about Ecuador personal income tax (Impuesto a la Renta) for self-employed individuals and natural persons. Trigger on phrases like "how much income tax do I pay in Ecuador", "Impuesto a la Renta", "Formulario 102", "Formulario 102A", "declaración de renta personas naturales", "gastos personales", "rebaja por gastos personales", "RIMPE", "Negocio Popular", "Emprendedor", "aporte IESS", "décimo tercero", "décimo cuarto", "fondos de reserva", "noveno dígito", "self-employed tax Ecuador", "non-resident 25%", or any question about filing or computing income tax for a self-employed person, professional, or individual resident/non-resident in Ecuador. Also trigger when preparing or reviewing a Formulario 102/102A, the Anexo de Gastos Personales, an IESS contribution computation, or advising on the RIMPE simplified regime. This skill covers the progressive 0%-37% PIT table, the personal-expense rebate, IESS contributions, the 13th/14th salaries, RIMPE, residency, penalties, and interaction with IVA and social security. ALWAYS read this skill before touching any Ecuador income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: EC
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Ecuador Income Tax -- Personas Naturales / Self-Employed
 
-## Ecuador Income Tax -- Personas Naturales / Self-Employed Skill v0.1
+## Ecuador Income Tax -- Personas Naturales / Self-Employed Skill v0.2
 
 Tier 2 (research-verified). NOT yet accountant-verified. The 2026 PIT table is read verbatim from the official SRI Resolution NAC-DGERCGC25-00000043 PDF (high confidence). The 2025 table and several social-security / gastos-personales figures rely on Big-4 (PwC) and reputable Ecuadorian sources (JEZL, Russell Bedford, HLB Ecuador) rather than line-by-line re-extraction of the original SRI resolutions; those points carry inline [RESEARCH GAP — reviewer to confirm] markers. A licensed Ecuadorian contador/CPA must sign off before filing.
 
@@ -39,7 +39,7 @@ Tier 2 (research-verified). NOT yet accountant-verified. The 2026 PIT table is r
 | Filing deadline | March of the following year, staggered by ninth digit of cédula/RUC (SRI) |
 | Validated by | Pending -- requires sign-off by a licensed Ecuadorian contador/CPA |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Brackets -- General Regime (Personas Naturales)
 
@@ -76,7 +76,7 @@ Tier 2 (research-verified). NOT yet accountant-verified. The 2026 PIT table is r
 | 109,956 + | 24,572 | 37% | -- |
 
 - **How to compute tax in any bracket** — tax = (tax on base) + (net taxable income − bracket floor) × marginal rate. Then subtract the personal-expense rebate (see Section 1, Personal-Expense Rebate). Never compute tax directly in prose -- pass the chargeable figure to the deterministic engine.
-- **Non-residents flat rate** — 25% percent (flat, on Ecuadorian-source income, withheld at source, NO brackets and NO personal allowance)  _(PwC Worldwide Tax Summaries -- Ecuador Individual)_
+- **Non-residents flat rate** — 25% (flat, on Ecuadorian-source income, withheld at source, NO brackets and NO personal allowance)  _(PwC Worldwide Tax Summaries -- Ecuador Individual)_
 
 ### IESS Social Security Contributions
 

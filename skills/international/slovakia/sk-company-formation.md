@@ -5,7 +5,7 @@ jurisdiction: SK
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,8 +23,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Capital paid up before registration** — At least 30% of each cash contribution, and the paid-in cash plus in-kind contributions at least 50% of the statutory minimum capital (EUR 2,500) before the application for entry in the Commercial Register (§ 111(1))  _(Commercial Code, Act No. 513/1991 Coll. (Obchodný zákonník, consolidated text in force from 17 August 2026, Slov-Lex), § 111(1) — https://static.slov-lex.sk/static/SK/ZZ/1991/513/20260817.html)_
 - **Core incorporation steps** — 1) Reserve/check name in ORSR; 2) sign foundation deed/memorandum; 3) obtain trade licence (živnosť); 4) deposit capital; 5) file electronic application to the Commercial Register  _(Commercial Code (Act No. 513/1991 Coll.); Trade Licensing Act (Act No. 455/1991 Coll.) — https://companyformationslovakia.com/set-up-sro-limited-company-slovakia/)_
 - **Filing window after foundation** — The application for entry in the Commercial Register must be filed within 90 days of founding the company or of receiving the trade licence (§ 62(1)); the company comes into existence on the date of entry  _(Commercial Code, Act No. 513/1991 Coll. (Obchodný zákonník, consolidated text in force from 17 August 2026, Slov-Lex), § 62(1) — https://static.slov-lex.sk/static/SK/ZZ/1991/513/20260817.html)_
-- **Typical timeline** — Commercial Register entry usually within ~2 working days of a complete electronic filing; full setup ~2-4 weeks including document prep ((approx — varies by case))  _(Commercial Code (Act No. 513/1991 Coll.) — https://companyformationslovakia.com/set-up-sro-limited-company-slovakia/)_
-- **Commercial Register court fee (electronic)** — 150 EUR (for an s.r.o. registration filed electronically (paper filing higher) ((approx — confirm current Court Fees Act rate)))  _(Act on Court Fees (Act No. 71/1992 Coll.) — https://companyformationslovakia.com/set-up-sro-limited-company-slovakia/)_
+- **Typical timeline** — Commercial Register entry usually within ~2 working days of a complete electronic filing; full setup ~2-4 weeks including document prep (approx — varies by case)  _(Commercial Code (Act No. 513/1991 Coll.) — https://companyformationslovakia.com/set-up-sro-limited-company-slovakia/)_
+- **Commercial Register court fee (electronic)** — 150 EUR (for an s.r.o. registration filed electronically (paper filing higher) (approx — confirm current Court Fees Act rate))  _(Act on Court Fees (Act No. 71/1992 Coll.) — https://companyformationslovakia.com/set-up-sro-limited-company-slovakia/)_
 - **Core annual compliance** — Prepare statutory financial statements, file them in the Register of Financial Statements, file the annual CIT return by 31 March (or extended date), and hold the general meeting approving accounts  _(Act on Accounting (Act No. 431/2002 Coll.); Income Tax Act (Act No. 595/2003 Coll.) — https://taxsummaries.pwc.com/slovak-republic/corporate/tax-administration)_
 
 <!-- openaccountants-cta-block -->

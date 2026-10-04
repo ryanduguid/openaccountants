@@ -1,10 +1,10 @@
 ---
 name: jp-nonpermanent-resident
 description: "Japan non-permanent resident regime: foreign income taxed only if remitted, 5-year cap, transition to permanent resident. Trigger on: \"Japan non-permanent resident\", \"Japan tax resident foreign income\", \"Japan 5-year rule\", \"move to Japan taxes\", \"Japan remittance basis\", \"Japan income tax non-permanent\", \"working in Japan foreign income\", \"Japan PR tax status\". ALWAYS load before advising on Japanese tax for someone resident less than 5 years."
-version: 1.0
+version: 1.1
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -74,8 +74,8 @@ This is a cliff-edge change: plan carefully around the 5-year mark.
 
 Source: NTA Tax Answer No. 2260 所得税の税率 — https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm.
 
-- **Resident Tax (municipal/prefectural)** — 10% percent (Plus 2.1% surtax; effective combined top rate ~55%)
-- **Surtax** — 2.1% percent (Effective combined top rate ~55%)
+- **Resident Tax (municipal/prefectural)** — 10% (Plus 2.1% surtax; effective combined top rate ~55%)
+- **Surtax** — 2.1% (Effective combined top rate ~55%)
 
 ## Sources
 

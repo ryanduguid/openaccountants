@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Angola (tax year 2025
 jurisdiction: AO
 category: international
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,17 +16,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Corporate income tax (Imposto Industrial)
 
 - **Overview of Imposto Industrial** — Corporate profits are taxed under the Imposto Industrial (Corporate Income Tax) Code at a standard 25%. Resident companies are taxed on worldwide profits and non-residents on profits attributable to an Angolan permanent establishment. Investment income (dividends, interest, royalties) is taxed separately under the Investment Income Tax (IAC).
-- **Standard corporate income tax rate** — 25% percent  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/taxes-on-corporate-income)_
-- **Reduced rate for agriculture, aquaculture, forestry and similar** — 10% percent ((approx — confirm))  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/taxes-on-corporate-income)_
+- **Standard corporate income tax rate** — 25%  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/taxes-on-corporate-income)_
+- **Reduced rate for agriculture, aquaculture, forestry and similar** — 10% (approx — confirm)  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/taxes-on-corporate-income)_
 - **Tax base** — Net accounting profit adjusted for tax purposes from business activities carried out in Angola  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/taxes-on-corporate-income)_
 - **General regime threshold** — 25,000,000 AOA (Applies to taxpayers with annual revenue exceeding this amount)  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/taxes-on-corporate-income)_
-- **Withholding tax on dividends (Investment Income Tax, IAC)** — 10% (may be reduced to 2.5% or 0% under incentive packages) percent  _(Codigo do Imposto sobre a Aplicacao de Capitais (IAC) — https://taxsummaries.pwc.com/angola/corporate/withholding-taxes)_
-- **Withholding tax on interest (Investment Income Tax, IAC)** — 15% (may be reduced to 10% or 2.5% in certain cases) percent  _(Codigo do Imposto sobre a Aplicacao de Capitais (IAC) — https://taxsummaries.pwc.com/angola/corporate/withholding-taxes)_
-- **Withholding tax on royalties (Investment Income Tax, IAC)** — 10% (may be reduced to 2.5% or 0% under incentive packages) percent  _(Codigo do Imposto sobre a Aplicacao de Capitais (IAC) — https://taxsummaries.pwc.com/angola/corporate/withholding-taxes)_
-- **Withholding tax on services (general)** — **6.5%** on payments for services, with some exemptions, and **the recipient's residence decides what the 6.5% is**. For an **Angolan taxpayer** it is an **advance payment** on corporate income tax, creditable against the year-end liability subject to the tax authority accepting it. For a **non-resident company** it is a **final** tax — there is no return to credit it against and no reclaim. So the same 6.5% is a cash-flow timing item for one payee and the whole tax for the other, which is the distinction the hedge on this line was asking about percent  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/withholding-taxes)_
+- **Withholding tax on dividends (Investment Income Tax, IAC)** — 10% (may be reduced to 2.5% or 0% under incentive packages)  _(Codigo do Imposto sobre a Aplicacao de Capitais (IAC) — https://taxsummaries.pwc.com/angola/corporate/withholding-taxes)_
+- **Withholding tax on interest (Investment Income Tax, IAC)** — 15% (may be reduced to 10% or 2.5% in certain cases)  _(Codigo do Imposto sobre a Aplicacao de Capitais (IAC) — https://taxsummaries.pwc.com/angola/corporate/withholding-taxes)_
+- **Withholding tax on royalties (Investment Income Tax, IAC)** — 10% (may be reduced to 2.5% or 0% under incentive packages)  _(Codigo do Imposto sobre a Aplicacao de Capitais (IAC) — https://taxsummaries.pwc.com/angola/corporate/withholding-taxes)_
+- **Withholding tax on services (general)** — **6.5%** on payments for services, with some exemptions, and **the recipient's residence decides what the 6.5% is**. For an **Angolan taxpayer** it is an **advance payment** on corporate income tax, creditable against the year-end liability subject to the tax authority accepting it. For a **non-resident company** it is a **final** tax — there is no return to credit it against and no reclaim. So the same 6.5% is a cash-flow timing item for one payee and the whole tax for the other, which is the distinction the hedge on this line was asking about  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/withholding-taxes)_
 - **Annual return / final payment deadline (general regime)** — Last business day of May of the following year  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/tax-administration)_
 - **Annual return / final payment deadline (simplified regime)** — Last business day of April of the following year  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/tax-administration)_
-- **Provisional / advance payment** — 2% of first-half sales and services not subject to WHT, payable by end of August; offset against final tax percent  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/tax-administration)_
+- **Provisional / advance payment** — 2% of first-half sales and services not subject to WHT, payable by end of August; offset against final tax  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/tax-administration)_
 
 <!-- openaccountants-cta-block -->
 

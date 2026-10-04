@@ -4,7 +4,8 @@ description: Can a Foreigner Start a Business in Serbia?
 jurisdiction: RS
 category: international
 tax_year: 2025
-last_updated: 2026-08-20
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -79,7 +80,7 @@ Depending on the applicable conditions and the chosen or available tax regime, a
 
 ## Entrepreneur keeping accounting records
 
-- **Personal income tax on taxable income from independent activity (entrepreneur keeping accounting records)** — 10% percent (generally subject to 10% personal income tax on taxable income from independent activity; the taxable result is determined in accordance with Serbian tax regulations and should not simply be understood as 10% of all money received into the business account)
+- **Personal income tax on taxable income from independent activity (entrepreneur keeping accounting records)** — 10% (generally subject to 10% personal income tax on taxable income from independent activity; the taxable result is determined in accordance with Serbian tax regulations and should not simply be understood as 10% of all money received into the business account)
 
 An entrepreneur who keeps accounting records is generally subject to **10% personal income tax on taxable income from independent activity**.
 
@@ -133,7 +134,7 @@ For normal business operations, the basic distinction can therefore be understoo
 
 ## 5. How is a DOO taxed?
 
-- **Corporate income tax on taxable profit (DOO)** — 15% percent (A Serbian DOO is generally subject to 15% corporate income tax on its taxable profit)
+- **Corporate income tax on taxable profit (DOO)** — 15% (A Serbian DOO is generally subject to 15% corporate income tax on its taxable profit)
 
 A Serbian DOO is generally subject to **15% corporate income tax on its taxable profit**.
 

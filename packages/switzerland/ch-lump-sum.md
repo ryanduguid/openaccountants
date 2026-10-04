@@ -1,10 +1,10 @@
 ---
 name: ch-lump-sum
 description: "Switzerland lump-sum taxation (Pauschalbesteuerung / taxation selon la dépense): for non-working foreign nationals resident in Switzerland. Tax based on living expenses rather than actual income. Trigger on: \"Switzerland lump sum tax\", \"Pauschalbesteuerung\", \"Switzerland forfait fiscal\", \"move to Switzerland taxes\", \"Switzerland non-working resident tax\", \"Switzerland 5x rent tax\", \"Switzerland special tax regime\". ALWAYS load before advising on Switzerland tax for non-working foreign nationals."
-version: 1.0
+version: 1.1
 jurisdiction: CH
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -38,12 +38,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Tax base calculation** — Tax base = MAX of: (a) 7 × annual rent (or rental value if owner-occupied) (b) Actual living expenses (worldwide) if higher (c) Cantonal minimum amounts (vary by canton — e.g. CHF 400,000 in some)
 - **Cantonal minimum tax bases (examples)** — Some cantons have set explicit minimum tax bases (e.g. Valais: CHF 250,000; Vaud: CHF 250,000; Geneva: CHF 400,000; Ticino: CHF 500,000).
-- **Federal minimum tax base** — CHF 451,200 CHF (2025, indexed annually)
+- **Federal minimum tax base** — CHF 451,200 (2025, indexed annually)
 
 ## Tax rates applied
 
 - **Applicable tax rate on lump-sum base** — The agreed tax base is taxed at ordinary Swiss income tax rates (federal + cantonal + communal). No special reduced rate — the benefit is the smaller base.
-- **Effective all-in rates on typical lump-sum bases** — 15%–35% % (depending on canton and base amount; federal + cantonal + communal combined)
+- **Effective all-in rates on typical lump-sum bases** — 15%–35% (depending on canton and base amount; federal + cantonal + communal combined)
 
 ## Treaty benefits
 

@@ -4,8 +4,8 @@ description: Minnesota Corporate Franchise Tax and Pass-Through Entity Tax
 jurisdiction: US-MN
 category: state-tax
 tax_year: 2025
-version: 1.1
-last_updated: 2026-09-28
+version: 1.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -52,7 +52,7 @@ The standing rule: this skill produces a credentialed-reviewer-ready Minnesota s
 
 ### 2.1 Statutory rate
 
-- **Minnesota corporate franchise tax rate** — 9.8% percent (Flat rate on Minnesota taxable income of every C-corporation doing business in Minnesota)  _(Minn. Stat. §290.06 subd. 1)_
+- **Minnesota corporate franchise tax rate** — 9.8% (Flat rate on Minnesota taxable income of every C-corporation doing business in Minnesota)  _(Minn. Stat. §290.06 subd. 1)_
 
 This is one of the three highest state corporate income tax rates in the United States (only New Jersey at 11.5% top with surtax and Pennsylvania historically at 9.99% formerly competed; New Jersey allowed its 2.5% Corporation Business Tax surtax to lapse and then reinstated it for 2024-2028; Pennsylvania is on a phase-down schedule to 4.99% by 2031).
 
@@ -67,7 +67,7 @@ Important characterization: Minnesota calls this a **franchise tax** measured by
 ### 2.3 Surtax / surcharge
 
 - **No corporate surtax** — Minnesota has no corporate surtax of the New Jersey variety. The 9.8% is the all-in C-corp rate.
-- **Net investment income surcharge (individuals)** — 1% percent (On net investment income over $1M, effective tax year 2024, applies to individuals, estates, and trusts, not C-corporations)  _(Minn. Stat. §290.033; enacted by 2023 Minn. Laws Ch. 64, Art. 1)_
+- **Net investment income surcharge (individuals)** — 1% (On net investment income over $1M, effective tax year 2024, applies to individuals, estates, and trusts, not C-corporations)  _(Minn. Stat. §290.033; enacted by 2023 Minn. Laws Ch. 64, Art. 1)_
 
 ## 3. Minnesota Corporate Alternative Minimum Tax (5.8%)
 
@@ -304,7 +304,7 @@ The §965 deemed repatriation transition tax (one-time, for tax year 2017 / 2018
 
 ### 11.4 Tax rate
 
-- **PTE tax rate** — 9.85% percent (Equal to the top Minnesota individual income tax rate; applies to the entity's Minnesota-source income allocable to owners subject to MN individual income tax)  _(Minn. Stat. §290.06 subd. 2c)_
+- **PTE tax rate** — 9.85% (Equal to the top Minnesota individual income tax rate; applies to the entity's Minnesota-source income allocable to owners subject to MN individual income tax)  _(Minn. Stat. §290.06 subd. 2c)_
 - **PTE base for resident and nonresident owners** — For a fully Minnesota-resident-owned partnership with 100% MN-source income, the PTE base is 100% of the partnership's apportioned MN income. For a multi-state partnership with nonresident partners: Resident partners' share of all entity income (resident-taxed on worldwide basis) is in the PTE base; Nonresident partners' share of MN-source income only is in the PTE base; This combined PTE base is taxed at 9.85% at the entity level.
 
 ### 11.5 Owner credit

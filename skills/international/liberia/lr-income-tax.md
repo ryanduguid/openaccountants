@@ -5,7 +5,7 @@ jurisdiction: LR
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Non-resident individuals
 
 - **Non-resident taxation basis** — Non-resident individuals are generally taxed at a flat rate on Liberia-source income, with no benefit of the progressive bands.  _(Liberia Revenue Code)_
-- **Non-resident flat income tax rate** — Non-residents are taxed by withholding on Liberia-source payments in place of the ordinary income tax: 15% on interest, dividends, royalties, rent and services and 20% on gaming winnings under the Code as published by the LRA; PwC reports a 20% flat rate percent  _(Liberia Revenue Code as amended (Liberia Revenue Authority text, 2020 amendments), ss 804 and 806 — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf ; PwC Worldwide Tax Summaries, Taxes on personal income (20% report) — https://taxsummaries.pwc.com/liberia/individual/taxes-on-personal-income)_
+- **Non-resident flat income tax rate** — Non-residents are taxed by withholding on Liberia-source payments in place of the ordinary income tax: 15% on interest, dividends, royalties, rent and services and 20% on gaming winnings under the Code as published by the LRA; PwC reports a 20% flat rate  _(Liberia Revenue Code as amended (Liberia Revenue Authority text, 2020 amendments), ss 804 and 806 — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf ; PwC Worldwide Tax Summaries, Taxes on personal income (20% report) — https://taxsummaries.pwc.com/liberia/individual/taxes-on-personal-income)_
 - **Non-resident taxable scope** — Liberia-source income only (e.g. employment exercised in Liberia, Liberia-source business income)  _(Liberia Revenue Code)_
 
 ## Deductions, residence test and filing

@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Suriname (tax year 2025) — rat
 jurisdiction: SR
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,16 +26,16 @@ Suriname introduced VAT (Belasting over de Toegevoegde Waarde, BTW) on 1 January
 > charging 8% under this guide would have under-collected by two points.
 >  _(Belastingdienst Suriname — BTW — https://belastingdienst.sr/belastingen/btw/)_
 
-- **Standard VAT rate on goods and services** — 10% percent (the general rate; the authority applies it to the supply and import of goods and to the provision of services alike)  _(Value Added Tax Act 2022 (Wet BTW 2022), as stated by the Belastingdienst — https://belastingdienst.sr/belastingen/btw/)_
-- **Reduced VAT rate** — 5% on water, electricity, cooking gas and domestic transport percent  _(Value Added Tax Act 2022 (Wet BTW 2022))_
-- **Luxury VAT rate** — 25% on luxury goods percent  _(Value Added Tax Act 2022 (Wet BTW 2022))_
-- **Zero rate** — 0% on exports of goods percent  _(Value Added Tax Act 2022 (Wet BTW 2022))_
-- **VAT on fuel** — 10% (increased 1 July 2024) percent  _(Value Added Tax Act 2022 (Wet BTW 2022))_
-- **VAT registration threshold** — SRD 1,000,000 of taxable turnover per calendar year SRD  _(Value Added Tax Act 2022 (Wet BTW 2022))_
-- **Non-resident digital-services registration threshold** — SRD 500,000 for non-resident providers of digital/electronic services SRD  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **Standard VAT rate on goods and services** — 10% (the general rate; the authority applies it to the supply and import of goods and to the provision of services alike)  _(Value Added Tax Act 2022 (Wet BTW 2022), as stated by the Belastingdienst — https://belastingdienst.sr/belastingen/btw/)_
+- **Reduced VAT rate** — 5% on water, electricity, cooking gas and domestic transport  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **Luxury VAT rate** — 25% on luxury goods  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **Zero rate** — 0% on exports of goods  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **VAT on fuel** — 10% (increased 1 July 2024)  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **VAT registration threshold** — SRD 1,000,000 of taxable turnover per calendar year  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **Non-resident digital-services registration threshold** — SRD 500,000 for non-resident providers of digital/electronic services  _(Value Added Tax Act 2022 (Wet BTW 2022))_
 - **Filing/declaration period** — Monthly (calendar month)  _(Value Added Tax Act 2022 (Wet BTW 2022))_
-- **Return and payment deadline** — Return filed between the 1st and 15th and payment due by the 16th of the month following the period ((approx — confirm exact day))  _(Value Added Tax Act 2022 (Wet BTW 2022))_
-- **Reverse charge** — Recipient self-accounts for VAT on certain imported services / supplies by non-residents ((approx — confirm scope))  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **Return and payment deadline** — Return filed between the 1st and 15th and payment due by the 16th of the month following the period (approx — confirm exact day)  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **Reverse charge** — Recipient self-accounts for VAT on certain imported services / supplies by non-residents (approx — confirm scope)  _(Value Added Tax Act 2022 (Wet BTW 2022))_
 
 <!-- openaccountants-cta-block -->
 

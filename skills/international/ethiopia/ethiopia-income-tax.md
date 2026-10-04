@@ -1,7 +1,7 @@
 ---
 name: ethiopia-income-tax
 description: Use this skill whenever asked about Ethiopia (ET) personal or business income tax. Trigger on phrases like "how much income tax do I pay in Ethiopia", "PAYE Ethiopia", "ETB salary tax", "Schedule A B C D", "Category A taxpayer", "Category B turnover tax", "rental income tax Ethiopia", "Proclamation 1395/2025", "pension contribution Ethiopia", "POESSA", "Ministry of Revenues", "net pay calculation Birr", "minimum alternative tax", or any question about computing or filing income tax for an employee, sole proprietor, or landlord in Ethiopia. Also trigger when reviewing payroll, computing PAYE withholding, classifying business income, or advising on advance tax. This skill covers monthly PAYE brackets, business/rental annual schedules, Category A/B turnover tax, pension contributions, VAT registration interaction, filing deadlines, and the Ethiopian fiscal calendar. ALWAYS read this skill before touching any Ethiopia income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: ET
 tax_year: 2025
 last_updated: 2026-10-04
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | MOR e-services / regional revenue bureaus |
 | Validated by | Pending — requires sign-off by an Ethiopian tax practitioner |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 **Calendar caution.** The Ethiopian calendar runs ~7–8 days behind the Gregorian calendar. Statutory "month-end" deadlines therefore tend to land around the 7th–8th of the following Gregorian month. Always confirm the exact Gregorian date against the Ethiopian month boundary.
 
@@ -362,7 +362,7 @@ MAT check: 2.5% × turnover 600,000 = 15,000. Income tax 45,400 > 15,000, so MAT
 
 ### 5.8 Capital Gains
 
-- **Capital gains tax rate** — 15% percent (unchanged by 1395/2025)  _(EY alert 2025-2542)_
+- **Capital gains tax rate** — 15% (unchanged by 1395/2025)  _(EY alert 2025-2542)_
 
 ### 5.9 Non-Deductible Items (Business)
 

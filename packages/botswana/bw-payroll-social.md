@@ -5,7 +5,7 @@ jurisdiction: BW
 category: payroll
 tax_year: 2026
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ Employers operate PAYE — withholding income tax from employee remuneration usi
 Botswana has no general mandatory state social-security or national pension contribution. There is no statutory employer/employee social-security payroll levy beyond PAYE.
 
 - **Mandatory social security** — None — no general statutory social-security or national pension contribution for employees or employers  _([PwC Worldwide Tax Summaries — Botswana](https://taxsummaries.pwc.com/botswana/individual/other-taxes))_
-- **Occupational pensions** — Workplace pension/provident funds are voluntary/employer-arranged and regulated, not a universal state scheme ((approx — confirm)) (approx — confirm)  _([Retirement Funds Act](https://taxsummaries.pwc.com/botswana/individual/other-taxes))_
+- **Occupational pensions** — Workplace pension/provident funds are voluntary/employer-arranged and regulated, not a universal state scheme (approx — confirm)  _([Retirement Funds Act](https://taxsummaries.pwc.com/botswana/individual/other-taxes))_
 
 ## Vocational Training Levy
 

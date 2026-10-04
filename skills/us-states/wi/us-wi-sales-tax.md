@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Wisconsin sales tax, Wisconsin 
 jurisdiction: US-WI
 category: state-tax
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -67,13 +68,13 @@ Every rule in this skill is tagged with a confidence tier:
 
 ### 1.1 State Rate
 
-- **State sales tax rate** — 5% percent (Moderate rate among US states.)  _(Wis. Stat. Section 77.52(1))_
+- **State sales tax rate** — 5% (Moderate rate among US states.)  _(Wis. Stat. Section 77.52(1))_
 
 ### 1.2 County Tax
 
 - **County sales tax** — 0.5% percent (All 72 counties authorized; most counties (68 of 72 as of current data) levy it. [T1])
 - **No city/special district tax** — There are no city or special district sales taxes in Wisconsin. [T1]
-- **Maximum combined rate** — 5.5% percent (5% state + 0.5% county. [T1])
+- **Maximum combined rate** — 5.5% (5% state + 0.5% county. [T1])
 - **Counties without the 0.5% tax** — A small number of counties do not levy the county option tax. Check WDOR's current county tax list. [T2]
 
 ### 1.3 Stadium Tax (Expired)
@@ -181,7 +182,7 @@ The former 0.1% Miller Park/American Family Field stadium tax in the five-county
 
 ### 3.4 Vendor Discount
 
-- **Retailer's discount rate** — 0.5% of the tax due (both state and county), up to a maximum of $1,000 per reporting period. [T1] percent  _(Wis. Stat. Section 77.61(4)(a))_
+- **Retailer's discount rate** — 0.5% of the tax due (both state and county), up to a maximum of $1,000 per reporting period. [T1]  _(Wis. Stat. Section 77.61(4)(a))_
 - **Discount availability condition** — Available only for timely filing and payment. [T1]  _(Wis. Stat. Section 77.61(4)(a))_
 
 ### 3.5 Penalties and Interest

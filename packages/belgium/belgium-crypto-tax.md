@@ -1,10 +1,10 @@
 ---
 name: belgium-crypto-tax
 description: Use this skill whenever asked about Belgium cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Belgium", "Bitcoin Belgium", "cryptocurrency gains Belgium", "crypto income Belgium", "staking Belgium", "mining income Belgium", "NFT tax Belgium", "goede huisvader crypto", "bon père de famille crypto", "speculative income Belgium", "miscellaneous income Belgium", "divers inkomen crypto", "revenus divers crypto", "professional income crypto Belgium", "Ruling Commission crypto", "Service des Décisions Anticipées crypto", "SDA crypto", "Belgian crypto audit", or any question about the income tax, capital gains, or reporting treatment of cryptocurrency, tokens, or digital assets for Belgian tax residents. Covers the three-tier classification system (normal management / speculative / professional), SDA ruling criteria, the 25% wealth threshold, and the upcoming 2026 capital gains regime. ALWAYS read this skill before touching any Belgium crypto work.
-version: 1.0
+version: 1.1
 jurisdiction: BE
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - be-income-tax
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Belgium Crypto Tax
 
-## Belgium Crypto / Digital Assets Tax Skill v1.0
+## Belgium Crypto / Digital Assets Tax Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Three-tier system | (1) Tax-free (normal management); (2) 33% + municipal surcharge (speculative); (3) Progressive 25%–50% + social security (professional) |
 | 2026 change | New 10% capital gains tax on crypto from 1 Jan 2026 for normal management gains (EUR 10,000 annual exemption) |
 | Validated by | Pending — requires sign-off by a Belgian belastingconsulent / conseil fiscal |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Conservative Defaults
 
@@ -121,7 +121,7 @@ Citation: Loi du 24 décembre 2002 / Wet van 24 december 2002 (DVB/SDA organic l
 | Professional income bracket 3 | 45% on €28,800–€49,840 | ~7–8% | ~48.2–48.6% | Yes |
 | Professional income bracket 4 | 50% on €49,840+ | ~7–8% | ~53.5–54.0% | Yes |
 
-- **Personal tax allowance (belastingvrije som)** — EUR 10,910 EUR (income year 2025)  _(Art. 130–145 WIB 92; Art. 171 WIB 92; FOD Financiën "Belastingtarieven — Inkomstenjaar 2025 (Aanslagjaar 2026)")_
+- **Personal tax allowance (belastingvrije som)** — EUR 10,910 (income year 2025)  _(Art. 130–145 WIB 92; Art. 171 WIB 92; FOD Financiën "Belastingtarieven — Inkomstenjaar 2025 (Aanslagjaar 2026)")_
 
 ### 3.2 Staking / Passive Income Classification
 

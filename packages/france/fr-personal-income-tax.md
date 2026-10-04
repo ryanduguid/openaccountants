@@ -1,10 +1,10 @@
 ---
 name: fr-personal-income-tax
 description: "Comprehensive French personal income tax (impôt sur le revenu / IR) guide for all individuals. Trigger on phrases like \"impôt sur le revenu\", \"IR France\", \"barème progressif\", \"quotient familial\", \"décote\", \"prélèvement à la source\", \"PAS\", \"CEHR\", \"contribution exceptionnelle hauts revenus\", \"CDHR\", \"déclaration 2042\", \"revenus exceptionnels\", \"quotient pour revenus exceptionnels\", \"TMI\", \"taux marginal d'imposition\", \"tranches d'imposition France\", \"parts fiscales\", \"parent isolé case T\", \"pension alimentaire déduction\", \"réductions d'impôt\", \"crédits d'impôt\", \"emploi à domicile\", \"dons associations\", \"plafonnement niches fiscales\", \"non-résident fiscal France\", \"exit tax\", \"impatriation\", \"PUMA cotisation subsidiaire\", \"calcul IR France\", \"simulation impôt sur le revenu\", \"avis d'imposition\". Covers the full IR computation sequence: progressive brackets, quotient familial with plafonnement, décote, CEHR, CDHR, prélèvement à la source, deductions/reductions/credits, non-residents, and special cases. For capital gains see fr-capital-gains, for rental income see fr-rental-income, for crypto see fr-crypto-tax."
-version: 1.0
+version: 1.1
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # FR Personal Income Tax
 
-## France — Personal Income Tax (Impôt sur le Revenu) — Comprehensive Guide v1.0
+## France — Personal Income Tax (Impôt sur le Revenu) — Comprehensive Guide v1.1
 
 > **Based on work by [Romain Simon (@romainsimon)](https://github.com/romainsimon/paperasse)**, licensed under MIT. Adapted for the OpenAccountants format.
 
@@ -162,7 +162,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Plafonnement du gain QF (QF capping)
 
-- **Cap per half part (revenus 2025)** — EUR 1,807 EUR (revenus 2025)  _(art. 197-2 CGI)_
+- **Cap per half part (revenus 2025)** — EUR 1,807 (revenus 2025)  _(art. 197-2 CGI)_
 - **QF capping algorithm** — tax_with_all_parts     = normal calculation with all parts tax_without_children   = calculation with base parts only (1 or 2) actual_gain            = tax_without_children − tax_with_all_parts cap_per_half_part      = EUR 1,807 (revenus 2025) nb_supplementary_halves = (total_parts − base_parts) × 2 max_gain               = cap_per_half_part × nb_supplementary_halves final_tax = tax_without_children − min(actual_gain, max_gain)  _(art. 197-2 CGI)_
 
 **Critical mechanism often forgotten.** The tax benefit from supplementary half-parts (children) is capped.
@@ -260,7 +260,7 @@ PAS is an **advance**, not final. Declaration in Apr-Jun N+1 leads to:
 
 ### January advance for tax credits
 
-- **January advance mechanism** — DGFiP pays a 60% advance mid-January based on N-2 expenses (emploi à domicile, garde d'enfant, dons, Pinel). Adjusted in summer N+1. Option to renounce in December if expense won't recur. %
+- **January advance mechanism** — DGFiP pays a 60% advance mid-January based on N-2 expenses (emploi à domicile, garde d'enfant, dons, Pinel). Adjusted in summer N+1. Option to renounce in December if expense won't recur.
 
 ## Section 10 — Deductions, Reductions, and Credits
 
@@ -320,7 +320,7 @@ A EUR 1,000 deduction at TMI 30% saves EUR 300. A EUR 1,000 credit saves EUR 1,0
 
 ### Global cap on tax incentives (plafonnement des niches fiscales)
 
-- **Global cap on tax incentives** — EUR 10,000 per year (EUR 18,000 for specific overseas investments) EUR  _(art. 200-0 A CGI)_
+- **Global cap on tax incentives** — EUR 10,000 per year (EUR 18,000 for specific overseas investments)  _(art. 200-0 A CGI)_
 - **Excess treatment for devices inside cap** — Devices "inside the cap" (Pinel, FCPI, etc.) are summed. If total exceeds EUR 10,000, the excess is lost (not reportable). Devices "outside the cap" (charitable gifts, home help credit) are unlimited by this mechanism.  _(art. 200-0 A CGI)_
 
 ## Section 11 — Special Cases
@@ -341,7 +341,7 @@ Smoothing for one-off income (RSU vesting, departure indemnity, exceptional bonu
 ### Non-residents
 
 - **Non-residents taxation scope** — Taxed only on French-source income.  _(art. 164 A CGI)_
-- **Minimum rate for non-residents** — 20% on fraction ≤ EUR 27,519 and 30% above (revenus 2025) %
+- **Minimum rate for non-residents** — 20% on fraction ≤ EUR 27,519 and 30% above (revenus 2025)
 - **No QF or décote for non-residents** — No quotient familial beyond 2 parts; no décote. Tax treaty analysis required — out of scope for complex cases.
 
 ### PUMA — Cotisation subsidiaire maladie
@@ -353,7 +353,7 @@ Smoothing for one-off income (RSU vesting, departure indemnity, exceptional bonu
 | Professional income below | ~20% PASS ≈ EUR 9,420 |
 | Capital income above | ~50% PASS ≈ EUR 23,550 |
 
-- **PUMA rate** — 6.5% on (capital income − 50% PASS) %  _(art. L. 380-2 CSS)_
+- **PUMA rate** — 6.5% on (capital income − 50% PASS)  _(art. L. 380-2 CSS)_
 
 Affects individuals with low professional income but significant capital income. Collected by URSSAF, not DGFiP. Non-deductible from IR.
 

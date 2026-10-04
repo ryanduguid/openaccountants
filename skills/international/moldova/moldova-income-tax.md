@@ -1,10 +1,10 @@
 ---
 name: moldova-income-tax
 description: Use this skill whenever asked about Moldova (Republic of Moldova) personal income tax for self-employed individuals and individuals. Trigger on phrases like "how much tax do I pay in Moldova", "impozit pe venit", "CET18", "Declaratia persoanei fizice", "flat 12% tax", "income tax return Moldova", "deductible expenses", "personal exemption / scutire personala", "CAS / BASS social insurance", "CNAM / CAM health insurance", "fixed annual contribution", "self-employed tax Moldova", "freelancer tax Moldova", "IT Park 7%", "independent retail 1%", or any question about filing or computing personal income tax for a resident individual or sole proprietor in Moldova. Also trigger when preparing or reviewing a CET18 return, computing the monthly payroll PIT base, or advising on social (CAS) and health (CNAM) contributions. This skill covers the flat 12% PIT, reduced 7% farming rate, final withholding rates (dividends, royalties, winnings), personal/dependent exemptions, employer/employee CAS and CNAM, fixed annual contributions for the self-employed, the CET18 return, penalties, and interaction with VAT and the IT Park regime. ALWAYS read this skill before touching any Moldova income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: MD
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Moldova (Republic of Moldova) Income Tax -- Self-Employed and Individuals
 
-## Moldova (Republic of Moldova) Income Tax -- Self-Employed and Individuals Skill v0.1
+## Moldova (Republic of Moldova) Income Tax -- Self-Employed and Individuals Skill v0.2
 
 > **Tier 2 (research-verified).** Figures below were assembled from PwC Worldwide Tax Summaries, the Moldovan State Social Insurance Budget Law for 2025, and corroborating Moldovan secondary sources. They have NOT yet been signed off by a warranted Moldovan accountant. Treat every output as a draft for professional review. See the caveats in Section 10.
 
@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing & payment deadline | 30 April of the year following the reporting year [PwC Moldova Individual -- Tax administration] |
 | Validated by | Pending -- requires sign-off by a warranted Moldovan accountant |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rates (2025)
 
@@ -672,7 +672,7 @@ Expected: 1% = 200,000 × 0.01 = MDL 2,000.00; but not less than MDL 3,000 -> ta
 ## PROHIBITIONS
 
 - **Confirm residency before applying resident rules** — NEVER apply resident rules without confirming Moldovan tax residency
-- **Personal exemption income limit** — NEVER claim a personal exemption when annual taxable income exceeds MDL 360,000 MDL
+- **Personal exemption income limit** — NEVER claim a personal exemption when annual taxable income exceeds MDL 360,000
 - **Flat PIT rate, no progressive brackets** — NEVER apply progressive brackets -- Moldova PIT is a flat 12% (7% farming) in 2025
 - **IT-Park resident taxation** — NEVER run the general 12% computation for an IT-Park resident (single 7% turnover tax instead)
 - **Law 228/2025 freelancer regime effective date** — NEVER apply the Law 228/2025 freelancer regime (15%/35%) to tax year 2025 -- it begins 1 Jan 2026

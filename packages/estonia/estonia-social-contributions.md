@@ -1,10 +1,10 @@
 ---
 name: estonia-social-contributions
 description: Use this skill whenever asked about Estonian social security contributions, social tax (sotsiaalmaks), unemployment insurance premiums (töötuskindlustusmakse), or mandatory funded pension (II-pillar / kogumispension) for employers, employees, board members, or self-employed (FIE). Trigger on phrases like "how much social tax do I pay in Estonia", "Estonian payroll on-cost", "sotsiaalmaks 33%", "employer cost above gross", "II pillar pension contribution", "unemployment insurance premium", "minimum social tax base", "Form TSD", "FIE social tax", "Estonia net salary calculation", "what is the employer cost on top of salary", or any question about Estonian social charges. Also trigger when classifying bank-statement transactions that relate to EMTA (Maksu- ja Tolliamet) tax payments, Töötukassa unemployment premiums, or II-pillar pension transfers from Estonian banks (Swedbank, SEB, LHV, Luminor). Also trigger when computing Estonian payroll where the 22% flat income tax, the basic exemption (maksuvaba tulu), and the social tax floor interact. This skill covers social tax (33%), unemployment insurance (employee 1.6% + employer 0.8%), II-pillar funded pension (2/4/6%), the minimum monthly social tax base, the 22% flat PIT, the basic exemption, Form TSD filing, FIE advance payments, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Estonian social-contribution or payroll-charge work.
-version: 0.1
+version: 0.2
 jurisdiction: EE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -550,9 +550,9 @@ Pensionable-age employee, gross EUR 1,500/mo, 2026, exemption EUR 776, not II-pi
 - **Basic exemption (2026)** — 700 EUR/month  _(EMTA tax-rates page; https://www.emta.ee/en/private-client/taxes-and-payment/declaration-income/tax-rates)_
 - **Minimum wage (from 1 Apr 2026)** — 946 EUR  _(Employers and unions agree on 946 euro as Estonia's new minimum wage -- ERR: https://news.err.ee/1609943096/employers-and-unions-agree-on-946-as-estonia-s-new-minimum-wage)_
 - **Security/defence tax repeal** — The original Security Tax Act would have added a 2% personal-income tax from 2026 but was repealed in June 2025. (per ERR and koda.ee)  _(Security Tax Abolished, but VAT and Income Tax to Rise -- Estonian Chamber of Commerce and Industry (koda.ee): https://www.koda.ee/en/news/security-tax-abolished-vat-and-income-tax-rise-24)_
-- **Personal income tax (PIT) rate** — 22 % (the once-discussed rise to 24% was cancelled)  _(Tax rates -- Estonian Tax and Customs Board (private client): https://www.emta.ee/en/private-client/taxes-and-payment/declaration-income/tax-rates)_
-- **VAT standard rate** — 24 % (now permanent)  _(Security Tax Abolished, but VAT and Income Tax to Rise -- Estonian Chamber of Commerce and Industry (koda.ee): https://www.koda.ee/en/news/security-tax-abolished-vat-and-income-tax-rise-24)_
-- **2026 FIE quarterly advance** — 886 x 3 x 33% = EUR 877.14 EUR (derived arithmetically from the published base, not separately quoted)
+- **Personal income tax (PIT) rate** — 22 (the once-discussed rise to 24% was cancelled)  _(Tax rates -- Estonian Tax and Customs Board (private client): https://www.emta.ee/en/private-client/taxes-and-payment/declaration-income/tax-rates)_
+- **VAT standard rate** — 24 (now permanent)  _(Security Tax Abolished, but VAT and Income Tax to Rise -- Estonian Chamber of Commerce and Industry (koda.ee): https://www.koda.ee/en/news/security-tax-abolished-vat-and-income-tax-rise-24)_
+- **2026 FIE quarterly advance** — 886 x 3 x 33% = EUR 877.14 (derived arithmetically from the published base, not separately quoted)
 - **State pension-portion transfer for II-pillar members** — 4 percentage points (sourced from PwC; verify the precise mechanism against the Funded Pensions Act if exact accuracy is required)  _(Estonia -- Individual -- Other taxes (PwC Worldwide Tax Summaries): https://taxsummaries.pwc.com/estonia/individual/other-taxes)_
 - **Late-payment interest rate** — 0.06 %/day (long-standing statutory rate per the Taxation Act; should be re-checked against the current statute)
 - **2025 basic-exemption taper thresholds** — EUR 14,400 / EUR 25,200 (income-dependent; a reviewer should confirm these against the Income Tax Act)  _(unsure - needs reviewer confirmation against Income Tax Act)_

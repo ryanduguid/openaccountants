@@ -1,11 +1,11 @@
 ---
 name: pt-income-tax
 description: "Utilizar esta skill sempre que for solicitada ajuda com o IRS (Imposto sobre o Rendimento das Pessoas Singulares) em Portugal para trabalhadores independentes. Acionar com expressões como \"quanto IRS pago\", \"IRS Portugal\", \"Modelo 3\", \"Anexo B\", \"Categoria B\", \"regime simplificado\", \"contabilidade organizada\", \"retenção na fonte\", \"trabalhador independente\", \"recibos verdes\", \"coeficientes regime simplificado\", \"IRS Jovem\", \"adicional de solidariedade\", ou qualquer questão sobre apresentação ou cálculo de IRS para um cliente independente em Portugal. Esta skill abrange a declaração anual Modelo 3 + Anexo B, rendimentos da Categoria B, regime simplificado vs contabilidade organizada, escalões progressivos do IRS, adicional de solidariedade, deduções específicas, retenção na fonte, IRS Jovem e prazos de entrega. LER SEMPRE esta skill antes de tocar em qualquer trabalho de IRS português. Para regime RNH/IFICI ver skill pt-nhr-ifici. Trigger also on: \"how much tax do I pay in Portugal\", \"IRS Portugal\", \"Modelo 3\", \"income tax return Portugal\", \"NIF\", \"freelancer Portugal tax\"."
-version: 2.0
+version: 2.1
 jurisdiction: PT
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 tier: 1
@@ -116,7 +116,7 @@ Para contribuintes até 35 anos (não dependentes), nos primeiros 10 anos de obt
 | Anos 5–7 | 50% |
 | Anos 8–10 | 25% |
 
-- **Limite anual da isenção** — 55 × IAS = EUR 28 737,50 (IAS 2025 = EUR 522,50) EUR (Todos os anos)  _(art. 12.º-B CIRS)_
+- **Limite anual da isenção** — 55 × IAS = EUR 28 737,50 (IAS 2025 = EUR 522,50) (Todos os anos)  _(art. 12.º-B CIRS)_
 - **Englobamento para taxa** — O rendimento isento é englobado para determinação da taxa aplicável ao rendimento não isento (não se tributa o remanescente "a partir do zero" da tabela).  _(art. 12.º-B CIRS)_
 - **Confirmação de elegibilidade** — Confirmar elegibilidade e o número do ano antes de aplicar. As contribuições para a SS continuam a aplicar-se.
 

@@ -1,11 +1,11 @@
 ---
 name: ethiopia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Ethiopia VAT return. Standard rate 15%. Turnover Tax abolished under Proclamation 1395/2025. ALWAYS read before handling Ethiopia VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: ET
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -89,7 +89,7 @@ Net: Boxes 16-18 (net, credit b/f, net payable).
 ## Section 8 -- Deductibility and blocked input
 
 - **Blocked input categories** — Blocked (Art. 21): entertainment, motor vehicles < 10 seats (unless transport for hire), personal/non-business use, purchases from non-registered suppliers (no valid invoice).  _(Art. 21)_
-- **Cash register receipt threshold for retail** — ETB 500 ETB (Cash register receipts acceptable for retail up to this amount)
+- **Cash register receipt threshold for retail** — ETB 500 (Cash register receipts acceptable for retail up to this amount)
 - **Partial exemption apportionment** — Partial exemption: Art. 20(3). Turnover-based apportionment.  _(Art. 20(3))_
 
 ## Section 9 -- Filing, deadlines, and penalties
@@ -98,8 +98,8 @@ Net: Boxes 16-18 (net, credit b/f, net payable).
 - **Twelve accounting periods, not thirteen** — Art. 2 aggregates **August and Pagumen** and treats them as one calendar month. Pagumen is the 5- or 6-day thirteenth month of the Ethiopian calendar, so a filing calendar built from thirteen months invents a period that does not exist.
 - **Late filing penalty** — ETB 5,000/month ETB per month
 - **Late payment penalty** — 2%/month % per month
-- **Failure to register penalty** — 100% of tax due %
-- **Understatement penalty** — 10% %
+- **Failure to register penalty** — 100% of tax due
+- **Understatement penalty** — 10%
 
 ## Section 10 -- Edge cases, test suite, and escalation
 

@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Belarus (tax year 2025) — r
 jurisdiction: BY
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,9 +20,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Currency** — Belarusian ruble (BYN)  _(National Bank of the Republic of Belarus)_
 - **Tax authority** — Ministry of Taxes and Duties of the Republic of Belarus (nalog.gov.by)  _([Ministry of Taxes and Duties of the Republic of Belarus](https://www.nalog.gov.by/))_
 - **Basis of taxation** — Residence-based; residents taxed on worldwide income, non-residents on Belarus-source income only  _(Tax Code of the Republic of Belarus)_
-- **Headline personal income tax rate** — 13% (flat), with 25% on income above the high-income threshold percent  _(Tax Code of the Republic of Belarus (Personal Income Tax))_
-- **Headline corporate profit tax rate** — 20% standard (25% where the annual profit tax base exceeds BYN 25,000,000) percent  _(Tax Code of the Republic of Belarus (Profit Tax))_
-- **Does VAT exist** — Yes — standard VAT rate is 20% percent  _(Tax Code of the Republic of Belarus (VAT))_
+- **Headline personal income tax rate** — 13% (flat), with 25% on income above the high-income threshold  _(Tax Code of the Republic of Belarus (Personal Income Tax))_
+- **Headline corporate profit tax rate** — 20% standard (25% where the annual profit tax base exceeds BYN 25,000,000)  _(Tax Code of the Republic of Belarus (Profit Tax))_
+- **Does VAT exist** — Yes — standard VAT rate is 20%  _(Tax Code of the Republic of Belarus (VAT))_
 - **Annual personal income tax declaration deadline** — 31 March of the year following the tax year (where a declaration is required) (approx — confirm)  _(Tax Code of the Republic of Belarus (Personal Income Tax))_
 - **Profit tax return filing deadline (quarterly periods)** — Return due by the 20th of the month following the reporting period; payment by the 22nd (approx — confirm)  _(Tax Code of the Republic of Belarus (Profit Tax))_
 - **VAT return filing deadline** — By the 20th of the month following the reporting period; payment by the 22nd (approx — confirm)  _(Tax Code of the Republic of Belarus (VAT))_

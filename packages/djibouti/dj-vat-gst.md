@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Djibouti (tax year 2025) — rat
 jurisdiction: DJ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,14 +16,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Value added tax — Taxe sur la Valeur Ajoutee (TVA)
 
 - **Standard VAT (TVA) rate** — 10 percent  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee (https://www.pwc.co.za/en/publications/vat-in-africa/djibouti-overview.html))_
-- **Zero-rating** — Exports of goods (and certain export services) are zero-rated percent ((approx — confirm)) (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee (https://www.pwc.co.za/en/publications/vat-in-africa/djibouti-overview.html))_
-- **Exempt supplies** — Certain essential goods and services are exempt (e.g. some basic foodstuffs and medical supplies) ((approx — confirm exemption list)) (approx — confirm exemption list)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
+- **Zero-rating** — Exports of goods (and certain export services) are zero-rated percent (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee (https://www.pwc.co.za/en/publications/vat-in-africa/djibouti-overview.html))_
+- **Exempt supplies** — Certain essential goods and services are exempt (e.g. some basic foodstuffs and medical supplies) (approx — confirm exemption list)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
 - **VAT on bank commissions (Finance Law 2025)** — VAT extended to bank commissions  _(Finance Law 2025 (Loi de Finances 2025), Djibouti (https://kpmg.com/us/en/taxnewsflash/news/2025/04/tnf-djibouti-tax-measures-in-finance-law-2025.html))_
-- **VAT registration threshold** — Turnover threshold applies for compulsory registration ((approx — specific DJF threshold not confirmed; confirm with DGI)) (approx — specific DJF threshold not confirmed; confirm with DGI)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
-- **VAT return filing frequency** — Monthly ((approx — confirm)) (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee (https://www.pwc.co.za/en/publications/vat-in-africa/djibouti-overview.html))_
-- **VAT return / payment deadline** — By the 15th day of the month following the tax period ((approx — confirm)) (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
-- **Input VAT recovery** — Registered taxpayers deduct input VAT against output VAT (standard credit-invoice method) ((approx — confirm)) (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
-- **Reverse charge on imported services** — Reverse charge generally applies to services received from non-resident suppliers ((approx — confirm)) (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
+- **VAT registration threshold** — Turnover threshold applies for compulsory registration (approx — specific DJF threshold not confirmed; confirm with DGI)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
+- **VAT return filing frequency** — Monthly (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee (https://www.pwc.co.za/en/publications/vat-in-africa/djibouti-overview.html))_
+- **VAT return / payment deadline** — By the 15th day of the month following the tax period (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
+- **Input VAT recovery** — Registered taxpayers deduct input VAT against output VAT (standard credit-invoice method) (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
+- **Reverse charge on imported services** — Reverse charge generally applies to services received from non-resident suppliers (approx — confirm)  _(Code General des Impots (Djibouti) — Taxe sur la Valeur Ajoutee)_
 
 <!-- openaccountants-cta-block -->
 

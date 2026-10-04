@@ -5,7 +5,7 @@ jurisdiction: HN
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,14 +17,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Sociedad Anonima (S.A.)** — Stock corporation with shares; minimum two shareholders, no statutory maximum; liability limited to capital contributed  _(Codigo de Comercio (Commercial Code))_
 - **Sociedad de Responsabilidad Limitada (S. de R.L.)** — Limited liability company; maximum 25 partners; 100% foreign ownership permitted  _(Codigo de Comercio (Commercial Code))_
-- **Minimum capital - S.A.** — HNL 25,000 (approx USD 1,000) HNL  _(Codigo de Comercio (Commercial Code) (as described at [bizlatinhub.com](https://www.bizlatinhub.com/types-legal-entities-honduras/)))_
-- **Minimum capital - S. de R.L.** — HNL 5,000 ((approx - confirm)) HNL  _(Codigo de Comercio (Commercial Code) (as described at [bizlatinhub.com](https://www.bizlatinhub.com/types-legal-entities-honduras/)))_
+- **Minimum capital - S.A.** — HNL 25,000 (approx USD 1,000)  _(Codigo de Comercio (Commercial Code) (as described at [bizlatinhub.com](https://www.bizlatinhub.com/types-legal-entities-honduras/)))_
+- **Minimum capital - S. de R.L.** — HNL 5,000 (approx - confirm)  _(Codigo de Comercio (Commercial Code) (as described at [bizlatinhub.com](https://www.bizlatinhub.com/types-legal-entities-honduras/)))_
 - **Constitution by public deed** — Articles of incorporation (escritura de constitucion) executed before a notary; reviewed by the Registro Mercantil before legal personality is granted  _(Codigo de Comercio (Commercial Code))_
 - **Step 1 - Deposit capital** — Open a Honduran bank account and deposit the initial share capital  _(Codigo de Comercio (Commercial Code))_
 - **Step 2 - Register articles** — Register the articles of incorporation with the Registro Mercantil (Chamber of Commerce)  _(Codigo de Comercio (Commercial Code))_
 - **Step 3 - Tax registration (RTN)** — Obtain the Registro Tributario Nacional (RTN / tax ID) from SAR  _(Codigo Tributario (Tax Code))_
 - **Step 4 - Operating permit** — Obtain the municipal operating permit (permiso de operacion) and any required zoning certificate  _(Ley de Municipalidades (Municipalities Law))_
-- **Typical incorporation timeline** — Approximately 2 to 6 weeks depending on bank account opening and registry processing ((approx - confirm))  _([BizLatin Hub - Company Formation in Honduras — https://www.bizlatinhub.com/company-formation-honduras/](https://www.bizlatinhub.com/company-formation-honduras/))_
+- **Typical incorporation timeline** — Approximately 2 to 6 weeks depending on bank account opening and registry processing (approx - confirm)  _([BizLatin Hub - Company Formation in Honduras — https://www.bizlatinhub.com/company-formation-honduras/](https://www.bizlatinhub.com/company-formation-honduras/))_
 - **Core annual compliance** — Annual ISR return (Form 103) by 30 April with the Informe de Estado de Situación Financiera; quarterly pagos a cuenta by 30 June, 30 September and 31 December; monthly ISV returns and withholding remittances within the first ten days of the following month; monthly IHSS, RAP and INFOP filings; renewal of the municipal operating permit  _(SAR, Generalidades de los impuestos con vencimiento al 30 de abril (June 2026) — https://www.sar.gob.hn/download/generalidades-impuestos-con-vencimiento-al-30-de-abril/ ; Ley del Impuesto sobre Ventas, texto consolidado al 27 de agosto de 2018 (SAR), art 11 — https://www.sar.gob.hn/download/consolidad-de-la-ley-de-impuesto-sobre-ventas-de-sefin-27-de-agosto-de-2018/ ; SAR, Generalidades del Impuesto sobre Ventas — https://www.sar.gob.hn/download/generalidades-impuesto-sobre-ventas/ ; Ley del Impuesto sobre la Renta, texto consolidado al 26 de junio de 2018 (SAR), arts 34 and 50 — https://www.sar.gob.hn/download/consolidado-ley-impuesto-sobre-la-renta-25-junio-2018/)_
 - **Municipal industry/commerce tax** — Progressive levy on gross income ranging roughly from 0.15 to 0.40 per thousand depending on annual income band per thousand of gross income  _([Ley de Municipalidades (Municipalities Law) — https://taxsummaries.pwc.com/honduras/corporate/taxes-on-corporate-income](https://taxsummaries.pwc.com/honduras/corporate/taxes-on-corporate-income))_
 

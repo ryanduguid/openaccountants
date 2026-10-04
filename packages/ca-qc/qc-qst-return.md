@@ -1,10 +1,10 @@
 ---
 name: qc-qst-return
 description: Use this skill whenever asked about Quebec Sales Tax (QST / TVQ) return preparation for a self-employed sole proprietor or small business. Trigger on phrases like "QST return", "TVQ", "Quebec sales tax", "QST filing", "input tax refund", "ITR", "QST registration", "Revenu Quebec QST", "9.975%", or any question about computing or filing QST. ALWAYS read this skill before touching any QST work.
-version: 2.0
+version: 2.1
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Monthly: last day of following month; Quarterly: last day of month after quarter; Annual: 3 months after year-end |
 | Contributor | Open Accountants Community |
 | Validated by | Live status: https://openaccountants.com/skills/qc-qst-return |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### QST Rate
 
@@ -169,8 +169,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### 6.1 Quick Method
 
 - **Quick method eligibility threshold** — $400,000 CAD (annual taxable supplies)
-- **Quick method rate - services** — 3.4% percent (of QST-included revenue)
-- **Quick method rate - goods** — 6.6% percent (of QST-included revenue)
+- **Quick method rate - services** — 3.4% (of QST-included revenue)
+- **Quick method rate - goods** — 6.6% (of QST-included revenue)
 - **Quick method credit** — 1% credit on first $30,000. Flag for reviewer.
 
 ### 6.2 Place of Supply

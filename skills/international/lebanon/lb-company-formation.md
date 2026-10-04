@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Lebanon 
 jurisdiction: LB
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,14 +25,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Companies are registered with the Commercial Registry at the relevant court; capital requirements and a Lebanese-lawyer retainer apply to SAL/SARL. Figures should be confirmed against current Commercial Registry fee schedules.
 
-- **Minimum share capital — SARL** — LL 5,000,000 LBP ((approx — nominal statutory figure; confirm current requirement))  _(Lebanese Code of Commerce)_
-- **Minimum share capital — SAL** — LL 30,000,000 LBP ((approx — nominal statutory figure; confirm current requirement))  _(Lebanese Code of Commerce)_
+- **Minimum share capital — SARL** — LL 5,000,000 LBP (approx — nominal statutory figure; confirm current requirement)  _(Lebanese Code of Commerce)_
+- **Minimum share capital — SAL** — LL 30,000,000 LBP (approx — nominal statutory figure; confirm current requirement)  _(Lebanese Code of Commerce)_
 - **Minimum shareholders — SAL** — 3 shareholders  _(Lebanese Code of Commerce)_
 - **Registration authority** — Commercial Registry at the competent first-instance court  _(Lebanese Code of Commerce)_
-- **Mandatory lawyer retainer** — SAL/SARL must retain a Lebanese lawyer (annual retainer) as a registration condition ((approx — confirm thresholds requiring a retainer))  _(Law Regulating the Legal Profession)_
-- **Typical incorporation timeline** — Approximately 2 to 4 weeks ((approx — confirm current timeline))  _([IDAL — Doing Business in Lebanon](https://investinlebanon.gov.lb/en/doing_business/tax_system))_
+- **Mandatory lawyer retainer** — SAL/SARL must retain a Lebanese lawyer (annual retainer) as a registration condition (approx — confirm thresholds requiring a retainer)  _(Law Regulating the Legal Profession)_
+- **Typical incorporation timeline** — Approximately 2 to 4 weeks (approx — confirm current timeline)  _([IDAL — Doing Business in Lebanon](https://investinlebanon.gov.lb/en/doing_business/tax_system))_
 - **Core annual compliance** — Audited financial statements, annual income tax return, payroll declarations, quarterly VAT returns (if registered), and NSSF declarations  _(Income Tax Law (Decree-Law No. 144 of 1959))_
-- **Statutory auditor** — SAL must appoint a statutory auditor; SARL above thresholds also require one ((approx — confirm SARL audit thresholds))  _(Lebanese Code of Commerce)_
+- **Statutory auditor** — SAL must appoint a statutory auditor; SARL above thresholds also require one (approx — confirm SARL audit thresholds)  _(Lebanese Code of Commerce)_
 
 <!-- openaccountants-cta-block -->
 

@@ -4,7 +4,7 @@ description: Tier 2 California content skill for employer payroll compliance cov
 jurisdiction: US-CA
 category: payroll
 tax_year: 2025
-version: 1.1
+version: 1.2
 last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
@@ -131,7 +131,7 @@ Verify the CA wage base independently — payroll software occasionally misses t
 ### 4.1 SDI — Cap Removal Under SB 951
 
 - **SB 951 cap removal** — Senate Bill 951 (Chapter 878, Statutes of 2022) eliminated the SDI taxable wage cap effective January 1, 2024, and the cap remains removed for 2025.  _(SB 951 (Chapter 878, Statutes of 2022))_
-- **2025 SDI mechanics** — Rate: 1.2% of gross wages; Wage cap: None (uncapped); Paid by: Employee only (employer withholds and remits); Remitted on: Form DE 9 / DE 9C, alongside PIT; Reported on: Form W-2 Box 14 ("CA SDI") percent  _(https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/)_
+- **2025 SDI mechanics** — Rate: 1.2% of gross wages; Wage cap: None (uncapped); Paid by: Employee only (employer withholds and remits); Remitted on: Form DE 9 / DE 9C, alongside PIT; Reported on: Form W-2 Box 14 ("CA SDI")  _(https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/)_
 
 Prior to 2024, SDI had a wage cap ($153,164 in 2023 at a 0.9% rate, capping employee SDI at ~$1,378/year). With the cap removed and the 2025 rate at 1.2%, a Silicon Valley executive earning $5 million pays $60,000 in SDI for 2025 (vs ~$1,378 under pre-2024 rules). This is a 40× increase for top earners and is the largest CA payroll cost shift in a generation.
 
@@ -179,7 +179,7 @@ This was the most common payroll-software error in 2024 and continues to surface
 
 ## 6. Employment Training Tax (ETT)
 
-- **ETT rate and structure** — Rate: 0.1% on the first $7,000 of wages per employee. Max per employee per year: $7. Applies only to employers with a positive reserve account balance (i.e., the employer has paid more in SUI than has been charged in benefits). Negative-reserve employers are exempt from ETT. Purpose: Funds the Employment Training Panel (ETP) which subsidizes worker training programs. percent
+- **ETT rate and structure** — Rate: 0.1% on the first $7,000 of wages per employee. Max per employee per year: $7. Applies only to employers with a positive reserve account balance (i.e., the employer has paid more in SUI than has been charged in benefits). Negative-reserve employers are exempt from ETT. Purpose: Funds the Employment Training Panel (ETP) which subsidizes worker training programs.
 
 ETT is reported on the same Form DE 9 as SUI and PIT. New employers are positive-reserve by default and so pay ETT in their first years.
 

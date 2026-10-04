@@ -5,7 +5,7 @@ jurisdiction: UZ
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,8 +19,8 @@ The most common business vehicle in Uzbekistan is the Limited Liability Company 
 
 - **Common entity types** — Limited Liability Company (LLC), Joint-Stock Company (JSC), Additional Liability Company, Private Enterprise, representative office and branch of a foreign company  _(Law of the Republic of Uzbekistan On Limited Liability Companies (https://en.legal-force.uz/registration_of_llc_in_uz))_
 - **LLC number of participants** — 1 to 50 participants  _(Law of the Republic of Uzbekistan On Limited Liability Companies (https://en.legal-force.uz/registration_of_llc_in_uz))_
-- **LLC minimum charter capital (standard)** — No statutory minimum for a standard LLC; charter capital denominated in UZS UZS  _(Law of the Republic of Uzbekistan On Limited Liability Companies (https://en.legal-force.uz/registration_of_llc_in_uz))_
-- **Minimum charter capital — company with foreign investment** — UZS 400,000,000 where a foreign legal entity holds more than 15% of shares (company classified as FE/JV LLC) (approx — confirm current foreign-investment threshold) UZS  _(Law of the Republic of Uzbekistan On Limited Liability Companies (https://en.legal-force.uz/registration_of_llc_in_uz))_
+- **LLC minimum charter capital (standard)** — No statutory minimum for a standard LLC; charter capital denominated in UZS  _(Law of the Republic of Uzbekistan On Limited Liability Companies (https://en.legal-force.uz/registration_of_llc_in_uz))_
+- **Minimum charter capital — company with foreign investment** — UZS 400,000,000 where a foreign legal entity holds more than 15% of shares (company classified as FE/JV LLC) (approx — confirm current foreign-investment threshold)  _(Law of the Republic of Uzbekistan On Limited Liability Companies (https://en.legal-force.uz/registration_of_llc_in_uz))_
 - **Charter capital contribution period** — Must be contributed within 1 year from the date of company registration  _(Law of the Republic of Uzbekistan On Limited Liability Companies (https://en.legal-force.uz/registration_of_llc_in_uz))_
 - **Registration authority** — Public Services Agency (single-window state registration of business entities)  _(Law of the Republic of Uzbekistan On State Registration of Business Entities (https://tax-legal.uz/en/registration-and-reregistration/))_
 - **Registration timeline** — 1 to 3 business days after document submission  _(Law of the Republic of Uzbekistan On State Registration of Business Entities (https://tax-legal.uz/en/registration-and-reregistration/))_

@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Mali (tax year 2025) — rate
 jurisdiction: ML
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,10 +22,10 @@ Mali is a West African, francophone, civil-law jurisdiction whose tax rules sit 
 - **Tax authority** — Direction Générale des Impôts (DGI), Ministry of Economy and Finance  _(Direction Générale des Impôts du Mali, https://www.dgi.gouv.ml/)_
 - **Basis of taxation for residents** — Residents are taxed on worldwide income; non-residents on Mali-source income only  _(Code Général des Impôts (Mali))_
 - **Top personal income tax (ITS) rate** — 37% (approx — confirm; the top marginal band and rate vary between published guides, some show 40%)  _(Code Général des Impôts (Mali) — Impôt sur les Traitements et Salaires (ITS))_
-- **Standard corporate income tax rate** — 30% percent  _([Code Général des Impôts (Mali) — Impôt sur les Sociétés](https://orbitax.com/taxhub/corporatetaxrates/ML/Mali))_
+- **Standard corporate income tax rate** — 30%  _([Code Général des Impôts (Mali) — Impôt sur les Sociétés](https://orbitax.com/taxhub/corporatetaxrates/ML/Mali))_
 - **Does Mali levy VAT?** — Yes — a value-added tax (TVA) applies at a standard rate of 18%  _(Code Général des Impôts (Mali) — Taxe sur la Valeur Ajoutée (TVA))_
 - **Annual income/corporate return deadline** — 31 March of the year following the tax year (approx — confirm exact statutory date with DGI)  _(Code Général des Impôts (Mali))_
-- **Minimum lump-sum tax (Impôt Minimum Forfaitaire)** — 1% of annual turnover percent  _(Code Général des Impôts (Mali) — Impôt Minimum Forfaitaire)_
+- **Minimum lump-sum tax (Impôt Minimum Forfaitaire)** — 1% of annual turnover  _(Code Général des Impôts (Mali) — Impôt Minimum Forfaitaire)_
 
 <!-- openaccountants-cta-block -->
 

@@ -1,10 +1,10 @@
 ---
 name: us-capital-gains
 description: "US federal capital gains tax for residents: short-term vs long-term rates, 2025 0%/15%/20% LTCG brackets by filing status, 3.8% NIIT thresholds and Form 8960 computation, §1202 QSBS including post-OBBBA issuance-date rules, §1031 like-kind exchange, installment sales, wash sale rule, Schedule D, and state-tax caveats. Trigger on: \"US capital gains tax\", \"long-term capital gains US\", \"Schedule D\", \"LTCG rate US\", \"NIIT net investment income tax\", \"QSBS exclusion\", \"1031 exchange\", \"sell US shares tax\", \"US CGT resident\", \"capital loss carryforward US\". For non-residents see us-nonresident-cgt."
-version: 1.0
+version: 1.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 reviewed_by: James Wallach
 review_status: pending_review
 category: federal
@@ -102,7 +102,7 @@ An additional **3.8%** applies to the lesser of net investment income or the exc
 ## Collectibles and §1250 recapture
 
 - **Collectibles maximum rate** — 28% percent (Under §408(m), long-term capital gains on "collectibles" are taxed at a maximum rate of 28% instead of the standard 20% maximum rate. An NFT may qualify as a collectible if it represents: A work of art; A rug or antique; A metal or gem; A stamp or coin; An alcoholic beverage; Any other tangible personal property specified by the IRS. IRS Notice 2023-27 provides a look-through framework: if the NFT represents a right to a collectible (e.g., digital art), it may be taxed at the 28% collectibles rate. If it represents a non-collectible asset (e.g., event tickets, in-game items with utility), the standard long-term rates apply.)  _(§408(m); IRS Notice 2023-27)_
-- **§1250 unrecaptured depreciation maximum rate** — 25% percent (on the depreciation recapture portion of real property)  _(§1250)_
+- **§1250 unrecaptured depreciation maximum rate** — 25% (on the depreciation recapture portion of real property)  _(§1250)_
 
 ## State taxes
 

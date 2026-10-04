@@ -5,7 +5,8 @@ jurisdiction: SM
 category: payroll
 tax_year: 2025
 tax_year_notes: "San Marino's pension reform legislated a seven-year ramp, so the rate depends on the calendar year and not on a single 'current' figure. Legge 157/2022 art. 21(4) prints the whole progression from 2023 to 2029 and it is reproduced below in full. The first pillar reaches its ceiling in 2025; FONDISS keeps rising to 2029."
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -93,7 +94,7 @@ and the employee's combined unemployment and family-allowance contribution — a
 - **Employer — health and accident insurance** — 4.0% ((approx — confirm; and
   note art. 21(2) cut the Fondo malattie employer contribution by 0.40% from 1
   January 2023, so a pre-2023 figure is too high))  _([Istituto per la Sicurezza Sociale (ISS) contribution regulations](https://remotepeople.com/countries/san-marino/hire-employees/payroll-tax/))_
-- **Employer — Social Services Fund** — 1.0% ((approx — confirm))  _([Istituto per la Sicurezza Sociale (ISS) contribution regulations](https://remotepeople.com/countries/san-marino/hire-employees/payroll-tax/))_
+- **Employer — Social Services Fund** — 1.0% (approx — confirm)  _([Istituto per la Sicurezza Sociale (ISS) contribution regulations](https://remotepeople.com/countries/san-marino/hire-employees/payroll-tax/))_
 - **Employee — unemployment & family allowance** — 0.5% ((approx — confirm; and
   note art. 21(2) cut the Fondo Assegni Familiari contribution by 0.60% from 1
   January 2024))  _([Istituto per la Sicurezza Sociale (ISS) contribution regulations](https://remotepeople.com/countries/san-marino/hire-employees/payroll-tax/))_

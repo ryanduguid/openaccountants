@@ -3,7 +3,8 @@ name: ml-company-formation
 description: "Source-cited draft: company formation & entity choice for Mali (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: ML
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 category: formation
 tier: 2
@@ -68,12 +69,12 @@ Company law in Mali follows the OHADA Uniform Act on Commercial Companies and Ec
 - **SARL minimum share capital** — **1,000,000, not 5,000.** Article 311 gives both figures and this row had them the wrong way round: the minimum **capital** is 1,000,000 (subject to contrary national provisions) and **5,000 is the minimum nominal value of one part sociale** — a floor on the denomination of the units, not on the capital XOF  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **SA minimum share capital** — **10,000,000** (art. 387). The 100,000,000 is right but wider than "making a public offering": article 824 applies it where the securities are **listed on a member state's exchange** as well as where they are publicly offered for placement in one or more member states XOF  _(AUSCGIE 2014, arts. 387 and 824 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Commercial register** — Registration in the Registre du Commerce et du Crédit Mobilier (RCCM)  _(OHADA Uniform Act on the General Commercial Law)_
-- **Incorporation route** — Via the Guichet Unique one-stop shop (API-Mali) which consolidates registration steps ((approx — confirm current agency name))  _(API-Mali / Guichet Unique de Création d'Entreprise)_
-- **Typical incorporation timeline** — Roughly a few days to a few weeks via the Guichet Unique ((approx — confirm current processing times))  _(API-Mali / Guichet Unique de Création d'Entreprise)_
+- **Incorporation route** — Via the Guichet Unique one-stop shop (API-Mali) which consolidates registration steps (approx — confirm current agency name)  _(API-Mali / Guichet Unique de Création d'Entreprise)_
+- **Typical incorporation timeline** — Roughly a few days to a few weeks via the Guichet Unique (approx — confirm current processing times)  _(API-Mali / Guichet Unique de Création d'Entreprise)_
 - **Tax identification** — Each company must obtain a NIF (Numéro d'Identification Fiscale) from the DGI  _(Code Général des Impôts (Mali))_
 - **Core annual compliance — financial statements** — File annual SYSCOHADA financial statements and the corporate tax return  _(OHADA Uniform Act on Accounting (SYSCOHADA))_
-- **Core annual compliance — shareholders' meeting** — Hold an annual ordinary general meeting to approve accounts (within 6 months of year-end) ((approx — confirm statutory deadline))  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
-- **Statutory auditor (commissaire aux comptes)** — Required for SA; required for SARL above OHADA size thresholds ((approx — confirm SARL audit thresholds))  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
+- **Core annual compliance — shareholders' meeting** — Hold an annual ordinary general meeting to approve accounts (within 6 months of year-end) (approx — confirm statutory deadline)  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
+- **Statutory auditor (commissaire aux comptes)** — Required for SA; required for SARL above OHADA size thresholds (approx — confirm SARL audit thresholds)  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
 
 <!-- openaccountants-cta-block -->
 

@@ -4,7 +4,8 @@ description: Tier 2 content skill for New York State Corporate Franchise Tax und
 jurisdiction: US-NY
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -89,8 +90,8 @@ depends_on:
 | 2026 | 0.1875% (currently scheduled; sunset to 0% on January 1, 2027 per A.3009-C Part HHH unless extended — **verify in the year of filing**) |
 
 - **Capital base glide path note** — Note: the capital base was on a glide path to 0% for tax years beginning in 2021, but the FY2022 NY budget reinstated it at 0.1875% to backfill pandemic-era revenue. The reinstated rate is currently scheduled to sunset on January 1, 2027 unless extended. Always verify the current-year status — NY has extended this sunset multiple times.  _(FY2022 budget, S.2509-C/A.3009-C, Part HHH)_
-- **Qualified manufacturers capital base rate** — 0.132% percent (capped at $5M)
-- **Cooperative housing corporations capital base rate** — 0.04% percent
+- **Qualified manufacturers capital base rate** — 0.132% (capped at $5M)
+- **Cooperative housing corporations capital base rate** — 0.04%
 
 #### 2.2.2 Cap
 

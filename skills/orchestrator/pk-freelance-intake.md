@@ -1,7 +1,7 @@
 ---
 name: pk-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with their Pakistan taxes AND mentions freelancing, self-employment, sole proprietorship, IT exports, or being a business individual in Pakistan. Trigger on phrases like "help me with my Pakistan taxes", "I'm a freelancer in Pakistan", "I export IT services", "file my FBR return", "I'm self-employed in Pakistan". This is the REQUIRED entry point for the Pakistan self-employed workflow — downstream skills (pk-it-export-tax, pk-income-tax, pk-social-contributions, pakistan-sales-tax, pk-return-assembly) depend on it. Upload-first; Pakistan-resident individuals only.
-version: 1.2
+version: 1.3
 jurisdiction: PK
 tax_year: 2025
 last_updated: 2026-10-04
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Freelance Intake
 
-## Pakistan — Freelance / SME Intake — Skill v1.2
+## Pakistan — Freelance / SME Intake — Skill v1.3
 
 > **How to read every "TBC — verify against Finance Act 2025" marker in this
 > guide: as naming the wrong Act.**
@@ -169,9 +169,9 @@ Route `pk-sales-tax-services` with the list of applicable authorities. If multi-
 
 ### 4.9 Minimum tax and super tax — s.113, s.4C
 
-- **s.113 minimum tax on turnover** — 1.25% percent (verify FA 2025; applies on declared turnover of companies and certain AOPs / individuals where normal tax computed is less than minimum. Carryforward of excess for 3 years.)  _(ITO 2001 s.113)_
+- **s.113 minimum tax on turnover** — 1.25% (verify FA 2025; applies on declared turnover of companies and certain AOPs / individuals where normal tax computed is less than minimum. Carryforward of excess for 3 years.)  _(ITO 2001 s.113)_
 - **s.4C super tax** — Tiered, applies to high-income earners. Verify FA 2025 brackets and rates.  _(ITO 2001 s.4C)_
-- **s.113C ACT (Alternate Corporate Tax)** — 17% percent (of accounting profit — applies to companies if higher than normal tax)  _(ITO 2001 s.113C)_
+- **s.113C ACT (Alternate Corporate Tax)** — 17% (of accounting profit — applies to companies if higher than normal tax)  _(ITO 2001 s.113C)_
 
 Flag for reviewer if turnover > Rs. 100m or if accounting profit substantially exceeds taxable profit.
 

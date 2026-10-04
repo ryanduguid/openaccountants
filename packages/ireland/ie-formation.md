@@ -4,7 +4,8 @@ description: "Use this skill whenever asked about forming, incorporating, or reg
 jurisdiction: IE
 category: formation
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -141,10 +142,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Tax
 
-- **Corporation Tax (CT) rates** — 12.5% on trading income (Schedule D Case I / II); 25% on non-trading income (passive: rents, dividends from non-EEA / non-treaty sources, investment income, foreign-source income); 33% Capital Gains Tax on chargeable gains (effective 33% via s.78 CTCA mechanism); 15% Pillar Two top-up (Qualified Domestic Top-up Tax) for in-scope multinational groups with consolidated revenue ≥ €750M %  _(TCA 1997; EU Pillar Two Directive (Directive (EU) 2022/2523); Part 4A TCA 1997; Finance (No. 2) Act 2023; effective for accounting periods beginning on or after 31 December 2023)_
+- **Corporation Tax (CT) rates** — 12.5% on trading income (Schedule D Case I / II); 25% on non-trading income (passive: rents, dividends from non-EEA / non-treaty sources, investment income, foreign-source income); 33% Capital Gains Tax on chargeable gains (effective 33% via s.78 CTCA mechanism); 15% Pillar Two top-up (Qualified Domestic Top-up Tax) for in-scope multinational groups with consolidated revenue ≥ €750M  _(TCA 1997; EU Pillar Two Directive (Directive (EU) 2022/2523); Part 4A TCA 1997; Finance (No. 2) Act 2023; effective for accounting periods beginning on or after 31 December 2023)_
 - **Close-company surcharge** — Close-company surcharge (s.440 TCA 1997): a 20% surcharge on undistributed investment and rental income of a close company; a higher surcharge applies to undistributed professional services income of a close service company (s.441) — relevant for one-person LTDs providing services.  _(TCA 1997 s.440; s.441)_
-- **R&D Tax Credit** — 30% credit (rate increased from 25% with effect from accounting periods commencing on or after 1 January 2024 under Finance (No. 2) Act 2023) of qualifying R&D expenditure, payable in three instalments. The first instalment threshold was raised to €75,000 under Budget 2025. %  _(TCA 1997 s.766; Finance (No. 2) Act 2023; Budget 2025)_
-- **Knowledge Development Box (KDB)** — 10% effective rate on qualifying IP income — relevant for software, pharma, and biotech. The KDB sunset was extended by Finance Act 2022 to accounting periods commencing before 1 January 2027. %  _(TCA 1997 s.769G–s.769R; Finance Act 2022)_
+- **R&D Tax Credit** — 30% credit (rate increased from 25% with effect from accounting periods commencing on or after 1 January 2024 under Finance (No. 2) Act 2023) of qualifying R&D expenditure, payable in three instalments. The first instalment threshold was raised to €75,000 under Budget 2025.  _(TCA 1997 s.766; Finance (No. 2) Act 2023; Budget 2025)_
+- **Knowledge Development Box (KDB)** — 10% effective rate on qualifying IP income — relevant for software, pharma, and biotech. The KDB sunset was extended by Finance Act 2022 to accounting periods commencing before 1 January 2027.  _(TCA 1997 s.769G–s.769R; Finance Act 2022)_
 - **Start-up Relief for Entrepreneurs (Section 486C)** — New trading companies in their first 3 years may obtain CT relief reducing CT liability up to €40,000 per year, tapered to €60,000, where employer's PRSI payable in the year does not exceed €40,000 (extended through 2026 by Finance Act 2023).  _(TCA 1997 s.486C; Finance Act 2023)_
 - **VAT registration thresholds** — €42,500 services / €85,000 goods from 1 January 2025
 - **Employer PRSI Class A1** - Standard employer rate: 11.15% January to September 2025, 11.25% from 1 October 2025, and 11.40% from 1 October 2026. In 2026 the lower employer rate applies to weekly pay up to EUR 552: 9.00% through September and 9.15% from October. The roadmap increases are 0.15 percentage points in October 2026 and 2027, then 0.20 points in October 2028. _([Department of Social Protection](https://www.gov.ie/en/department-of-social-protection/publications/prsi-class-a-rates/); [S.I. No. 534/2024](https://www.irishstatutebook.ie/eli/2024/si/534/made/en/print))_
@@ -407,7 +408,7 @@ Q8: Default: Private Company Limited by Shares (LTD / CLS) — single-director p
 
 **Finance Act 2024** and **Finance Act 2025** — most recent annual amendments; verify any monetary threshold (VAT registration €42,500/€85,000; standard rate cut-off; PRSI rates; USC bands; R&D Tax Credit instalment threshold).
 
-- **Stamp duty on share transfers** — 1% %  _(Stamp Duties Consolidation Act 1999)_
+- **Stamp duty on share transfers** — 1%  _(Stamp Duties Consolidation Act 1999)_
 - **Business Names Act 1963** — RBN1 / RBN1A / RBN1B registration.  _(Business Names Act 1963)_
 - **Partnership Act 1890** — general partnerships.  _(Partnership Act 1890)_
 - **Limited Partnerships Act 1907** — LPs.  _(Limited Partnerships Act 1907)_
@@ -420,7 +421,7 @@ Q8: Default: Private Company Limited by Shares (LTD / CLS) — single-director p
 - **GDPR and Data Protection Act 2018** — **GDPR (Regulation (EU) 2016/679)** and **Data Protection Act 2018** — data protection.  _(Regulation (EU) 2016/679; Data Protection Act 2018)_
 - **Criminal Justice (Money Laundering and Terrorist Financing) Act 2010** — as amended through 2021 — AML / KYC.  _(Criminal Justice (Money Laundering and Terrorist Financing) Act 2010)_
 - **MiCA (Regulation (EU) 2023/1114)** — crypto-asset service providers; effective 30 December 2024.  _(Regulation (EU) 2023/1114)_
-- **EU Pillar Two global minimum tax** — 15% % (transposed via Part 4A TCA 1997)  _(EU Pillar Two Directive (Directive (EU) 2022/2523))_
+- **EU Pillar Two global minimum tax** — 15% (transposed via Part 4A TCA 1997)  _(EU Pillar Two Directive (Directive (EU) 2022/2523))_
 - **Online Safety and Media Regulation Act 2022** — establishes Coimisiún na Meán.  _(Online Safety and Media Regulation Act 2022)_
 - **Gambling Regulation Act 2024** — establishes GRAI.  _(Gambling Regulation Act 2024)_
 - **Investments and Securities regulatory framework** — Central Bank Act 1971; Central Bank (Supervision and Enforcement) Act 2013; European Union (Markets in Financial Instruments) Regulations 2017 (MiFID II).  _(Central Bank Act 1971; Central Bank (Supervision and Enforcement) Act 2013; European Union (Markets in Financial Instruments) Regulations 2017)_

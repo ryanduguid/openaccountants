@@ -1,10 +1,10 @@
 ---
 name: ma-einvoice
 description: Use this skill whenever asked about Morocco e-invoicing, the DGI's mandatory electronic-invoicing roadmap, or invoice-conformity rules for a self-employed person or micro-business. Trigger on phrases like "Morocco e-invoicing", "facturation électronique Maroc", "e-facture DGI", "facture électronique obligatoire", "invoice rules Morocco", "mentions obligatoires facture Maroc", "ICE sur facture", "فاتورة إلكترونية المغرب", "CGI 145-IX". Covers the current paper/PDF invoice mentions (ICE, IF, numérotation séquentielle, ventilation TVA), the announced continuous-transaction-control (pre-clearance) model under CGI Art. 145-IX, the SIMPL télédéclaration obligations already in force, the penalty exposure for non-conforming invoices, and what a freelancer should do now. The go-live roadmap is UNCONFIRMED — the implementing decree was still pending as of mid-2026. Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference morocco-vat, ma-auto-entrepreneur, and ma-bookkeeping.
-version: 1.0
+version: 1.1
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -129,8 +129,8 @@ Two layers: **invoice-conformity penalties that exist today**, and **future e-in
 
 ### In force today (CGI)
 
-- **Missing / wrong ICE penalty** — MAD 100 per omission MAD (capped around MAD 5,000 per fiscal year; verify amounts against current Loi de Finances)  _(CGI Art. 198 ter)_
-- **Insufficient / irregular invoicing sanction** — MAD 2,000 to MAD 50,000 MAD (verify)  _(CGI Art. 146)_
+- **Missing / wrong ICE penalty** — MAD 100 per omission (capped around MAD 5,000 per fiscal year; verify amounts against current Loi de Finances)  _(CGI Art. 198 ter)_
+- **Insufficient / irregular invoicing sanction** — MAD 2,000 to MAD 50,000 (verify)  _(CGI Art. 146)_
 - **Fictitious / fake invoices (factures fictives)** — MAD 5,000 to 50,000 MAD (and potential criminal exposure (imprisonment); serious, escalate)  _(CGI Art. 192)_
 - **Practical worst case: loss of deduction** — On audit the DGI routinely rejects the customer's TVA and expense deduction on a non-conforming invoice (no ICE/IF, broken numbering). This is usually costlier than the fixed fine.
 

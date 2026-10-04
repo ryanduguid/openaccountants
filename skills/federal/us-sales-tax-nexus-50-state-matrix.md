@@ -4,7 +4,7 @@ description: Tier 2 US federal-level reference skill providing the post-Wayfair 
 jurisdiction: US
 category: state-tax
 tax_year: 2025
-version: 1.1
+version: 1.2
 last_updated: 2026-10-04
 reviewed_by: James Wallach
 review_status: pending_review
@@ -281,7 +281,7 @@ Larger sellers (>$1M annual liability) may be required to make prepayments (CA, 
 
 ### 9.4. Vendor compensation / timely-filing discount
 
-- **Vendor compensation discounts** — IL — 1.75% of collected tax (capped); AL — 5% on first $100 / 2% above; LA — 0.935%; FL — 2.5% (capped at $30); TN — 1.6% (capped); TX — 0.5% timely discount + 1.25% prepayment discount. percent  _(State-specific vendor compensation rules (IL, AL, LA, FL, TN, TX))_
+- **Vendor compensation discounts** — IL — 1.75% of collected tax (capped); AL — 5% on first $100 / 2% above; LA — 0.935%; FL — 2.5% (capped at $30); TN — 1.6% (capped); TX — 0.5% timely discount + 1.25% prepayment discount.  _(State-specific vendor compensation rules (IL, AL, LA, FL, TN, TX))_
 
 These add up — multi-state sellers commonly capture $1,000s annually in vendor compensation.
 

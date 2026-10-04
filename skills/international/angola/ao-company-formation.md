@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Angola (
 jurisdiction: AO
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,13 +19,13 @@ The most common Angolan business vehicle is the Sociedade por Quotas (Lda), a pr
 
 - **Private limited company** — Sociedade por Quotas (Lda) — most common SME vehicle  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
 - **Public limited company** — Sociedade Anonima (SA) — for larger ventures, with a minimum of shareholders and a board structure  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
-- **Single-member limited company** — Sociedade Unipessoal por Quotas — single-shareholder Lda variant ((approx — confirm))  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
-- **Minimum share capital (Lda)** — No statutory minimum in practice (often cited around AOA 1,000); capital set freely in the articles AOA ((approx — confirm))  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
+- **Single-member limited company** — Sociedade Unipessoal por Quotas — single-shareholder Lda variant (approx — confirm)  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
+- **Minimum share capital (Lda)** — No statutory minimum in practice (often cited around AOA 1,000); capital set freely in the articles (approx — confirm)  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
 - **Shareholders required (Lda)** — Minimum of 2 quota-holders (or 1 for a Sociedade Unipessoal); no statutory maximum  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
 - **Incorporation step — articles of association** — Prepare and notarise the articles of association (pacto social) before a public notary  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
 - **Incorporation step — tax registration** — Obtain a Tax Identification Number (NIF) for the company and shareholders, and register with the AGT  _(Administracao Geral Tributaria (AGT) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
 - **Incorporation step — commercial registration** — Register the company with the Commercial Registry (Conservatoria do Registo Comercial), typically via the GUE one-stop desk  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
-- **Incorporation timeline** — GUE one-stop registration can be completed in roughly 3-5 business days; full end-to-end (incl. bank account) typically 4-6 weeks ((approx — confirm)) business days / weeks  _(Guiche Unico da Empresa (GUE) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
+- **Incorporation timeline** — GUE one-stop registration can be completed in roughly 3-5 business days; full end-to-end (incl. bank account) typically 4-6 weeks (approx — confirm) business days / weeks  _(Guiche Unico da Empresa (GUE) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
 - **Core annual compliance** — Annual financial statements, corporate income tax return (by end of May, general regime), and monthly VAT/IRT/social security filings  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/tax-administration)_
 
 <!-- openaccountants-cta-block -->

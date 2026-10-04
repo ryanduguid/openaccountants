@@ -5,7 +5,7 @@ jurisdiction: PE
 category: international
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ Peru taxes residents (domiciled persons) on worldwide income and non-residents o
 - **Top personal income tax rate (employment/independent work income)** — 30% (Progressive 8% to 30% on net work income (rentas de trabajo) plus foreign-source income, in bands of 5, 20, 35 and 45 UIT after the 7-UIT deduction of art. 46)  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), arts. 46 and 53 — https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf ; https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income)_
 - **Standard corporate income tax rate** — 29.5%  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), art. 55 — https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf ; https://taxsummaries.pwc.com/peru/corporate/taxes-on-corporate-income)_
 - **VAT / GST** — Yes — IGV (Impuesto General a las Ventas) at a combined 18%: the 16% IGV rate of art. 17 of the TUO plus the 2% Impuesto de Promoción Municipal collected with it  _(TUO de la Ley del IGV e ISC (Decreto Supremo 055-99-EF, SUNAT consolidated text), art. 17 — https://www.sunat.gob.pe/legislacion/igv/ley/capitul5.pdf ; https://taxsummaries.pwc.com/peru/corporate/other-taxes)_
-- **Dividend withholding tax** — 5% percent (On distributions to non-residents and to resident individuals)  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), arts. 54(a) and 56(e) — https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf ; art. 73-A — https://www.sunat.gob.pe/legislacion/renta/ley/capx.pdf ; https://taxsummaries.pwc.com/peru/corporate/withholding-taxes)_
+- **Dividend withholding tax** — 5% (On distributions to non-residents and to resident individuals)  _(TUO de la Ley del Impuesto a la Renta (SUNAT consolidated text, amendments to August 2025), arts. 54(a) and 56(e) — https://www.sunat.gob.pe/legislacion/renta/ley/capvii.pdf ; art. 73-A — https://www.sunat.gob.pe/legislacion/renta/ley/capx.pdf ; https://taxsummaries.pwc.com/peru/corporate/withholding-taxes)_
 - **Main annual corporate/individual income tax filing window for TY2025** — 26 March to 13 April 2026 for companies outside Ley 31940 and 27 May to 10 June 2026 for MYPEs and individuals covered by Ley 31940, each staggered by last RUC digit  _(Resolución de Superintendencia N.° 000386-2025/SUNAT, Arts 5 and 6 — https://www.sunat.gob.pe/legislacion/superin/2025/000386-2025.pdf)_
 - **Financial transactions tax (ITF)** — 0.005% of the value of each taxable transaction (doubled where a third-category taxpayer settles obligations without cash or means of payment, Art. 9(g))  _(TUO de la Ley 28194 (Decreto Supremo 150-2007-EF), SUNAT text, Art. 10 — https://www.sunat.gob.pe/legislacion/itf/ds150_07.pdf)_
 

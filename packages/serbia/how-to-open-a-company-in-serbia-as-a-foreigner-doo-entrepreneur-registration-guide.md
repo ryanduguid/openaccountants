@@ -4,7 +4,8 @@ description: How to Register a DOO or Entrepreneur in Serbia as a Foreign Citize
 jurisdiction: RS
 category: international
 tax_year: 2025
-last_updated: 2026-08-20
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -113,7 +114,7 @@ Therefore, even where the foreign founder obtains a qualified electronic signatu
 
 ## 4. Share capital – does it have to be paid before registration?
 
-- **Statutory minimum registered share capital for a standard Serbian DOO** — RSD 100 RSD (unless a higher minimum is prescribed for a particular regulated activity)
+- **Statutory minimum registered share capital for a standard Serbian DOO** — RSD 100 (unless a higher minimum is prescribed for a particular regulated activity)
 
 The statutory minimum registered share capital for a standard Serbian DOO is **RSD 100**, unless a higher minimum is prescribed for a particular regulated activity.
 
@@ -184,7 +185,7 @@ This should be considered before the incorporation procedure begins, especially 
 
 ## 7. Tax obligations after registration
 
-- **Corporate income tax on taxable profit for a Serbian DOO** — 15% percent (on taxable profit)
+- **Corporate income tax on taxable profit for a Serbian DOO** — 15% (on taxable profit)
 
 After the company has been registered, the appropriate tax procedures must also be completed.
 
@@ -241,7 +242,7 @@ The taxation method should be considered carefully before registration.
 
 ## 11. Choosing the taxation method for an entrepreneur
 
-- **Personal income tax on taxable income from independent activity for an entrepreneur keeping accounting records** — 10% percent (on taxable income from independent activity, together with the applicable social security obligations)
+- **Personal income tax on taxable income from independent activity for an entrepreneur keeping accounting records** — 10% (on taxable income from independent activity, together with the applicable social security obligations)
 
 An entrepreneur is not necessarily taxed in the same way as another entrepreneur.
 

@@ -3,8 +3,8 @@ name: bf-company-formation
 description: "Source-cited draft covering Burkina Faso company formation and entity choice. Explains the SARL and the SA under the OHADA uniform act read from the Journal Officiel: single-member formation, freely fixed SARL capital under the 2016 national decree, the 5,000 FCFA minimum nominal value of a part sociale, the ordinary 10,000,000 FCFA SA minimum, subscription and pay-up fractions, deferral periods, the contributions-in-kind valuer threshold and deposit of funds. Use for incorporating in Burkina Faso, choosing between a SARL and an SA, CEFORE registration or OHADA capital questions. Registration fees and timelines still rest on commercial sources. Pending local-accountant review."
 jurisdiction: BF
 tax_year: 2025
-last_updated: 2026-09-11
-version: 1.1
+last_updated: 2026-10-04
+version: 1.2
 review_status: pending_review
 category: formation
 tier: 2
@@ -40,8 +40,8 @@ FCFA 5,000 capital; the OHADA default is not its national minimum.
 - **SA subscription and pay-up** — The capital must be **entirely subscribed before the date the statutes are signed**. Shares representing cash contributions are paid up on subscription to **at least one quarter** of their nominal value, the balance falling due within a period not exceeding **three years** from RCCM registration  _(AUSCGIE 2014, arts. 388–389 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Registration one-stop-shop** — CEFORE (Centre de Formalités des Entreprises), Maison de l'Entreprise du Burkina Faso  _([CEFORE business registration procedures](https://www.usemultiplier.com/burkina-faso/company-registration))_
 - **Beneficial ownership disclosure** — Founders must identify and declare ultimate beneficial owner (UBO) information at the point of CEFORE registration  _([CEFORE business registration procedures](https://www.expanship.com/bf/blog/incorporation-requirements-in-burkina-faso))_
-- **Incorporation timeline** — Registration through CEFORE typically completed within a few days to a couple of weeks ((approx — confirm))  _([CEFORE business registration procedures](https://www.usemultiplier.com/burkina-faso/company-registration))_
-- **Incorporation cost** — Government administrative registration fees under ~50 EUR; total professional/notary budget commonly 1,000–1,500 EUR (excluding share capital) ((approx — confirm))  _([CEFORE business registration procedures](https://www.expanship.com/bf/blog/incorporation-requirements-in-burkina-faso))_
+- **Incorporation timeline** — Registration through CEFORE typically completed within a few days to a couple of weeks (approx — confirm)  _([CEFORE business registration procedures](https://www.usemultiplier.com/burkina-faso/company-registration))_
+- **Incorporation cost** — Government administrative registration fees under ~50 EUR; total professional/notary budget commonly 1,000–1,500 EUR (excluding share capital) (approx — confirm)  _([CEFORE business registration procedures](https://www.expanship.com/bf/blog/incorporation-requirements-in-burkina-faso))_
 - **Core annual compliance** — Annual financial statements (SYSCOHADA), annual IS return, monthly TVA returns, IUTS and CNSS declarations, and renewal of business registrations  _(Code Général des Impôts (CGI); SYSCOHADA accounting framework)_
 
 <!-- openaccountants-cta-block -->

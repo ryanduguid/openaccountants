@@ -4,7 +4,8 @@ description: "Source-cited tax guide for US-MI: mi corporate income tax. Unverif
 jurisdiction: US-MI
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -54,7 +55,7 @@ Michigan imposes a 6% flat Corporate Income Tax on the apportioned business inco
 
 ### 2.1 Rate
 
-- **CIT flat rate** — 6% percent (of the apportioned tax base; flat, no graduated brackets, no surtax; unchanged since PA 38 of 2011 took effect January 1, 2012)  _(MCL 206.623)_
+- **CIT flat rate** — 6% (of the apportioned tax base; flat, no graduated brackets, no surtax; unchanged since PA 38 of 2011 took effect January 1, 2012)  _(MCL 206.623)_
 
 ### 2.2 Starting point: federal taxable income
 
@@ -216,7 +217,7 @@ For freelance developer-scale taxpayers and the typical small-and-mid C-corp tha
 
 ### 7.3 Rate and base
 
-- **FTE rate** — 4.25% percent (of the entity's apportioned business income, matching the Michigan individual income tax rate, not the 6% CIT rate)  _(MCL 206.51)_
+- **FTE rate** — 4.25% (of the entity's apportioned business income, matching the Michigan individual income tax rate, not the 6% CIT rate)  _(MCL 206.51)_
 - **FTE base computation** — The base is computed at the entity level using market-based single-sales-factor apportionment (parallel to the CIT apportionment rules).
 - **Rationale for 4.25% rate** — The rationale for using the 4.25% individual rate rather than the 6% C-corp rate is that the FTE substitutes for the individual income tax that the partners/shareholders would otherwise pay on their distributive shares.
 

@@ -1,7 +1,7 @@
 ---
 name: cl-income-tax
 description: Use this skill whenever asked about Chilean income tax for self-employed individuals (trabajadores independientes / trabajadores a honorarios). Trigger on phrases like "Impuesto Global Complementario", "Operación Renta", "boleta de honorarios", "trabajador independiente", "PPM", "retención honorarios", "gastos presuntos", "segunda categoría", "Formulario 22", "SII", "RUT Chile", "cotizaciones previsionales", "APV", or any question about filing or computing income tax for a self-employed or independent worker in Chile. This skill covers Impuesto Global Complementario (progressive 0-40%), honorarios withholding, PPM credits, gastos efectivos vs presuntos, cotizaciones previsionales, and SII filing. ALWAYS read this skill before touching any Chilean income tax work.
-version: 2.1
+version: 2.2
 jurisdiction: CL
 category: international
 tax_year: 2025
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # CL Income Tax
 
-## Chilean Income Tax — Trabajador Independiente / Honorarios (IGC) v2.1
+## Chilean Income Tax — Trabajador Independiente / Honorarios (IGC) v2.2
 
 ## Section 1 — Quick Reference
 
@@ -54,7 +54,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 310+ UTM | 40% | 38.76 UTM |
 
 - **IUSC formula** — IUSC = (Taxable base in UTM x Rate) - Deduction in UTM, then convert to CLP. Taxable base = Gross salary - AFP (10% + commission) - Health (7% Fonasa or Isapre %).
-- **UTM 2026 value** — CLP 66,500 (approx) CLP (2026)  _(www.sii.cl)_
+- **UTM 2026 value** — CLP 66,500 (approx) (2026)  _(www.sii.cl)_
 
 ### AFP Commission Rates (2026)
 
@@ -70,7 +70,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Cuprum | 1.44% | 11.44% |
 | ProVida | 1.45% | 11.45% |
 
-- **SIS (Seguro de Invalidez y Sobrevivencia)** — 1.49% % (paid by employer, not deducted from salary)  _(Superintendencia de Pensiones (spensiones.cl))_
+- **SIS (Seguro de Invalidez y Sobrevivencia)** — 1.49% (paid by employer, not deducted from salary)  _(Superintendencia de Pensiones (spensiones.cl))_
 
 ### Honorarios Withholding Rate Phase-In
 

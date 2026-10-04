@@ -3,7 +3,8 @@ name: ne-company-formation
 description: "Source-cited draft: company formation & entity choice for Niger (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: NE
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 category: formation
 tier: 2
@@ -68,10 +69,10 @@ Company law in Niger follows the OHADA Uniform Act on Commercial Companies. Inco
 - **SARL minimum share capital** — **The OHADA reform did not remove the minimum.** Article 311 still sets **1,000,000**; what the 2014 revision added is the opening words *"sauf dispositions nationales contraires"*, letting a member state displace it. A commonly used FCFA 100,000 would therefore be **Nigerien national law**, not the uniform act, and needs its own citation XOF  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **SA minimum share capital** — **10,000,000** (art. 387). The 100,000,000 is right but wider than "making a public offering": article 824 applies it to securities **listed on a member state's exchange** as well XOF  _(AUSCGIE 2014, arts. 387 and 824 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Registration body** — Registre du Commerce et du Crédit Mobilier (RCCM) via the Maison de l'Entreprise (one-stop shop)  _(OHADA Uniform Act / Maison de l'Entreprise du Niger)_
-- **Core incorporation steps** — Reserve name, draft and notarise statutes, deposit capital, register at RCCM, obtain tax ID (NIF), register with CNSS — combined at the one-stop shop ((approx — confirm))  _([Maison de l'Entreprise du Niger / OHADA](https://niger.eregulations.org/))_
-- **Typical incorporation timeline** — Around 3 working days for basic registration via the one-stop shop ((approx — confirm))  _(Maison de l'Entreprise du Niger)_
+- **Core incorporation steps** — Reserve name, draft and notarise statutes, deposit capital, register at RCCM, obtain tax ID (NIF), register with CNSS — combined at the one-stop shop (approx — confirm)  _([Maison de l'Entreprise du Niger / OHADA](https://niger.eregulations.org/))_
+- **Typical incorporation timeline** — Around 3 working days for basic registration via the one-stop shop (approx — confirm)  _(Maison de l'Entreprise du Niger)_
 - **Tax identification** — Numéro d'Identification Fiscale (NIF) issued by the DGI at incorporation  _(Direction Générale des Impôts (Niger))_
-- **Core annual compliance** — Annual financial statements (SYSCOHADA), corporate tax return, ITS/CNSS payroll declarations, monthly TVA returns, business licence (patente) ((approx — confirm))  _(Code Général des Impôts (Niger) / OHADA / SYSCOHADA)_
+- **Core annual compliance** — Annual financial statements (SYSCOHADA), corporate tax return, ITS/CNSS payroll declarations, monthly TVA returns, business licence (patente) (approx — confirm)  _(Code Général des Impôts (Niger) / OHADA / SYSCOHADA)_
 
 <!-- openaccountants-cta-block -->
 

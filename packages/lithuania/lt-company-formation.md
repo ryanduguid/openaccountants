@@ -5,7 +5,7 @@ jurisdiction: LT
 category: formation
 tax_year: 2025
 last_updated: 2026-10-04
-version: 1.1
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,10 +25,10 @@ The most common business vehicle is the private limited liability company (Uzdar
 - **AB minimum share capital** — EUR 25,000 (art. 2(3))  _(Law on Companies VIII-1835 (Akcinių bendrovių įstatymas, consolidated text in force from 1 July 2026, e-seimas), art. 2(3) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.106080/asr)_
 - **Registration authority** — Centre of Registers (Registru centras) - maintains the Register of Legal Entities  _(Law on the Register of Legal Entities — https://www.registrucentras.lt/)_
 - **Incorporation steps** — Reserve company name, prepare articles of association, open accumulative bank account and deposit capital, notarise founding documents (or use e-signature), register with the Centre of Registers  _(Law on Companies — https://1office.co/blog/company-formation-in-lithuania-guide/)_
-- **Registration timeline** — About 3 business days at the Register once documents are complete; ~1-3 weeks overall ((approx - confirm)) (approx - confirm)  _(Law on the Register of Legal Entities — https://1office.co/blog/company-formation-in-lithuania-guide/)_
-- **Registration / state fees** — ~EUR 57 Register fee; ~EUR 16 name reservation (notary fees additional) EUR ((approx - confirm)) EUR (approx - confirm)  _(Law on the Register of Legal Entities — https://eesticonsulting.ee/company-formation-lithuania-guide/)_
+- **Registration timeline** — About 3 business days at the Register once documents are complete; ~1-3 weeks overall (approx - confirm)  _(Law on the Register of Legal Entities — https://1office.co/blog/company-formation-in-lithuania-guide/)_
+- **Registration / state fees** — ~EUR 57 Register fee; ~EUR 16 name reservation (notary fees additional) (approx - confirm)  _(Law on the Register of Legal Entities — https://eesticonsulting.ee/company-formation-lithuania-guide/)_
 - **Core annual compliance** — File annual financial statements with the Centre of Registers, hold annual shareholders' meeting, file CIT return by 15 June, and ongoing VAT/Sodra/GPM filings  _(Law on Companies — https://www.commenda.io/lithuania/annual-compliance)_
-- **VAT registration on formation** — Register for VAT when turnover exceeds EUR 45,000 in 12 months (voluntary registration allowed earlier) EUR  _(Law on Value Added Tax — https://www.vatcalc.com/lithuania/lithuania-vat-guide/)_
+- **VAT registration on formation** — Register for VAT when turnover exceeds EUR 45,000 in 12 months (voluntary registration allowed earlier)  _(Law on Value Added Tax — https://www.vatcalc.com/lithuania/lithuania-vat-guide/)_
 
 <!-- openaccountants-cta-block -->
 

@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Tajikistan (tax year 
 jurisdiction: TJ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,8 +27,8 @@ The Tax Code applies differentiated corporate (profit) tax rates depending on th
 - **Withholding tax on royalties to non-residents** — 15 percent (final, on gross, unless reduced by a tax treaty; (approx — confirm))  _(Tax Code of the Republic of Tajikistan)_
 - **Tax treaty relief** — Reduced treaty WHT rates available on request where a double tax treaty applies  _(Tax Code of the Republic of Tajikistan)_
 - **Annual return filing deadline** — By 1 April of the year following the tax year  _([Tax Code of the Republic of Tajikistan](https://taxsummaries.pwc.com/quick-charts/corporate-income-tax-cit-due-dates))_
-- **Final tax payment deadline** — By 10 April of the year following the tax year ((approx — confirm))  _(Tax Code of the Republic of Tajikistan)_
-- **Advance / current corporate tax payments** — Monthly current (advance) profit tax payments are required during the year ((approx — confirm))  _(Tax Code of the Republic of Tajikistan)_
+- **Final tax payment deadline** — By 10 April of the year following the tax year (approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
+- **Advance / current corporate tax payments** — Monthly current (advance) profit tax payments are required during the year (approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
 
 <!-- openaccountants-cta-block -->
 

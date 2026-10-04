@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Ecuador (tax year 2025) — r
 jurisdiction: EC
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Personal income tax-free basic fraction (2025)** — 12,081 USD  _(SRI Resolution NAC-DGERCGC24-00000041)_
 - **General corporate income tax rate** — 25 percent  _(Ley de Régimen Tributario Interno (LRTI))_
 - **VAT (IVA) standard rate** — 15 percent (VAT (IVA) exists — Yes)  _(Ley de Régimen Tributario Interno (LRTI), IVA provisions)_
-- **Social security — mandatory IESS contributions, combined** — ~21.6% of salary percent  _(Ley de Seguridad Social (IESS))_
+- **Social security — mandatory IESS contributions, combined** — ~21.6% of salary  _(Ley de Seguridad Social (IESS))_
 - **Corporate income tax return deadline** — April of the year following the tax year (date staggered by 9th RUC digit)  _(Reglamento para la Aplicación de la LRTI)_
 - **Individual income tax return deadline** — March of the year following the tax year (date staggered by 9th cédula/RUC digit)  _(Reglamento para la Aplicación de la LRTI)_
 

@@ -4,7 +4,8 @@ description: Tier 2 US federal content skill for SECURE Act 2.0 (Division T of C
 jurisdiction: US
 category: federal
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
@@ -516,7 +517,7 @@ This shocked the planning community because many practitioners had assumed (and 
 
 - **Final regs confirm proposed reg position** — Non-EDB beneficiaries of a participant who died after the RBD MUST take annual RMDs in years 1-9 of the 10-year period, computed using the beneficiary's single-life expectancy.  _(TD 10001, July 19, 2024)_
 - **Annual RMDs begin 2025** — Annual RMDs begin in tax year 2025 (the first year not covered by a waiver notice).  _(TD 10001)_
-- **§4974 excise tax for missed RMD** — 25%, reduced to 10% if cured percent  _(§4974)_
+- **§4974 excise tax for missed RMD** — 25%, reduced to 10% if cured  _(§4974)_
 
 ### 16.7 2025 mechanics
 

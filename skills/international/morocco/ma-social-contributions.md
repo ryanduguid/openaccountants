@@ -1,10 +1,10 @@
 ---
 name: ma-social-contributions
 description: Use this skill whenever asked about Morocco social contributions for the self-employed — the CNSS scheme for travailleurs non-salariés (TNS), the mandatory AMO health-insurance generalisation, and the dedicated social cover for auto-entrepreneurs. Trigger on phrases like "CNSS auto-entrepreneur", "AMO Maroc", "social security Morocco self-employed", "TNS Maroc", "cotisation CNSS indépendant", "couverture sociale travailleur non salarié", "تغطية صحية للعمل الحر", "CNSS Maroc cotisation", "retraite TNS Maroc", "AMO travailleur non salarié". Covers the profession-by-profession TNS rollout, the forfaitaire (SMIG-indexed) contribution base, AMO and retraite rates and minimums, registration and quarterly payment, and the contrast with employee CNSS (employer/employee split, salary ceiling) for those who hire. Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-auto-entrepreneur and ma-cpu, which bundle their own social-cover components.
-version: 1.0
+version: 1.1
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -145,10 +145,10 @@ the owner's own TNS/AE cover and is handled below in §3c.
 ### 3b. Auto-entrepreneurs
 
 - **Auto-entrepreneur base — services** — ≈ 50% of collected turnover *(verify)* % (services (prestations))  _((verify))_
-- **Auto-entrepreneur base — commercial/industrial/artisanal** — ≈ 20% of collected turnover *(verify)* % (commercial / industrial / artisanal)  _((verify))_
+- **Auto-entrepreneur base — commercial/industrial/artisanal** — ≈ 20% of collected turnover *(verify)* (commercial / industrial / artisanal)  _((verify))_
 - **Auto-entrepreneur base derivation and brackets** — The auto-entrepreneur base is derived **from turnover**, not from a category forfait. The CNSS applies the TNS rates (AMO + retraite) to that derived base, and the result is **collected quarterly with the tax** via the AE portal. The scheme is commonly described through **fixed brackets (tranches) T1–T8**, each with a set quarterly amount.  _((verify the current bracket table))_
-- **Minimum contribution at zero turnover** — ~MAD 300/quarter (≈ MAD 1,200/year) MAD (applies even at zero turnover)  _((verify))_
-- **Annual contribution range** — MAD 1,200 to ~14,400 depending on turnover MAD  _((verify the current bracket table))_
+- **Minimum contribution at zero turnover** — ~MAD 300/quarter (≈ MAD 1,200/year) (applies even at zero turnover)  _((verify))_
+- **Annual contribution range** — MAD 1,200 to ~14,400 depending on turnover  _((verify the current bracket table))_
 - **AMO waiting period for auto-entrepreneurs** — AMO benefits start after a 3-month stage (waiting period) from the first contribution *(verify)*.  _((verify))_
 
 > **Default:** when the exact bracket amount is unknown, quote the **~MAD 300/quarter**

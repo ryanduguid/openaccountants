@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Suriname (tax year 2025) — 
 jurisdiction: SR
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,12 +22,12 @@ Suriname operates a Dutch-derived direct-tax system administered by the Belastin
 - **Tax authority** — Belastingdienst Suriname (Tax Administration of Suriname), publishing BTW, Loonbelasting and Inkomstenbelasting guidance together with the Wetten and its Beschikkingen at `belastingdienst.sr`  _(Belastingdienst Suriname — https://belastingdienst.sr/belastingen/)_
 - **Wage tax is an advance levy, not a separate charge** — Loonbelasting is a direct tax on employment income withheld by the employer from gross pay, and is a *voorheffing* (advance levy) **on the income tax**, filed together with the Premie A.O.V. An employer paying wages is an *inhoudingsplichtige* under **article 6 of the Wet Loonbelasting**  _(Belastingdienst Suriname — Loonbelasting — https://belastingdienst.sr/belastingen/loonbelasting/)_
 - **Residence basis of taxation** — Residents taxed on worldwide income; non-residents taxed on Suriname-source income only. Residence is based on domicile in Suriname.  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Headline personal income tax top rate** — 38% percent (top marginal band; progressive 8%–38%)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
-- **Headline corporate income tax rate** — 36% percent  _(Income Tax Act 1922 (Inkomstenbelasting 1922), corporate provisions)_
+- **Headline personal income tax top rate** — 38% (top marginal band; progressive 8%–38%)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
+- **Headline corporate income tax rate** — 36%  _(Income Tax Act 1922 (Inkomstenbelasting 1922), corporate provisions)_
 - **Does Suriname have VAT/GST?** — Yes — Value Added Tax (BTW) applies, standard rate 10%, in force since 1 January 2023 percent  _(Value Added Tax Act 2022 (Wet Belasting over de Toegevoegde Waarde 2022))_
-- **Annual personal income tax return deadline** — 30 June following the tax year ((approx — confirm))  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
+- **Annual personal income tax return deadline** — 30 June following the tax year (approx — confirm)  _(Income Tax Act 1922 (Inkomstenbelasting 1922))_
 - **Mandatory online income tax filing** — From 1 January 2025, income tax returns must be filed through the Tax Administration's online portal  _(Belastingdienst Suriname administrative notice)_
-- **Personal/wage tax-free amount** — SRD 108,000 per year (SRD 9,000 per month) SRD  _(Wage Tax Act (Loonbelasting) / Income Tax Act 1922)_
+- **Personal/wage tax-free amount** — SRD 108,000 per year (SRD 9,000 per month)  _(Wage Tax Act (Loonbelasting) / Income Tax Act 1922)_
 
 <!-- openaccountants-cta-block -->
 

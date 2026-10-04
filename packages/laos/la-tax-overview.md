@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Laos (tax year 2025) — rate
 jurisdiction: LA
 category: international
 tax_year: 2025
-version: 0.1
-last_updated: 2026-09-11
+version: 0.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -54,9 +54,9 @@ Lao PDR taxes income, profits and consumption under a codified Tax Law framework
 - **Social security administrator** — Lao Social Security Organisation (LSSO / NSSFO)  _(Law on Social Security (Lao PDR) (as described at [laos.acclime.com](https://laos.acclime.com/guides/social-security-obligations/)))_
 - **Individual residence test** — Present in Lao PDR 183 days or more in a 12-month period  _([Law on Income Tax (Law No. 67/NA, 2019)](https://taxsummaries.pwc.com/lao-pdr/individual/taxes-on-personal-income))_
 - **Corporate tax basis** — Worldwide income for domestic companies; territorial (Lao-source) for foreign companies  _([Law on Income Tax (Law No. 67/NA, 2019)](https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income))_
-- **Top personal income tax rate (salary) — confirmed against the replacing Law** — **25 percent**. **Article 38(1)** of the *Law on Income Tax (Revised)* sets a progressive scale *"ແຕ່ ສູນສ່ວນຮ້ອຍ (0%) ຫາ ຊາວຫ້າສ່ວນຮ້ອຍ (25%)"* — **0% to 25%**, in words and digits — on the salary income defined in article 33(1), and the top band bites on **monthly** pay **over LAK 65,000,000**. **Article 48(1)** applies the same 0%–25% to persons without a Lao domicile. The figure this row carried against the repealed 2019 Law survives the replacement unchanged. The bands themselves are **indexed to the government minimum wage** and are set out in `la-payroll-social` percent  _([Law on Income Tax (Revised), arts. 38(1), 48(1)](https://laoofficialgazette.gov.la/kcfinder/upload/files/88-25-6-2025_0001.pdf))_
-- **Standard profit tax rate** — 20% percent  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
-- **Value-added tax (VAT)** — Yes — VAT applies at a standard rate of 10% percent  _([Law on Value-Added Tax (Lao PDR)](https://taxsummaries.pwc.com/lao-pdr/corporate/other-taxes))_
+- **Top personal income tax rate (salary) — confirmed against the replacing Law** — **25 percent**. **Article 38(1)** of the *Law on Income Tax (Revised)* sets a progressive scale *"ແຕ່ ສູນສ່ວນຮ້ອຍ (0%) ຫາ ຊາວຫ້າສ່ວນຮ້ອຍ (25%)"* — **0% to 25%**, in words and digits — on the salary income defined in article 33(1), and the top band bites on **monthly** pay **over LAK 65,000,000**. **Article 48(1)** applies the same 0%–25% to persons without a Lao domicile. The figure this row carried against the repealed 2019 Law survives the replacement unchanged. The bands themselves are **indexed to the government minimum wage** and are set out in `la-payroll-social`  _([Law on Income Tax (Revised), arts. 38(1), 48(1)](https://laoofficialgazette.gov.la/kcfinder/upload/files/88-25-6-2025_0001.pdf))_
+- **Standard profit tax rate** — 20%  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
+- **Value-added tax (VAT)** — Yes — VAT applies at a standard rate of 10%  _([Law on Value-Added Tax (Lao PDR)](https://taxsummaries.pwc.com/lao-pdr/corporate/other-taxes))_
 - **Annual profit tax return deadline** — By 20 January of the year following the tax year. Confirmed against PwC; the 31 March date below is the financial statements, not the return  _([Tax Administration Law (Lao PDR)](https://taxsummaries.pwc.com/lao-pdr/corporate/tax-administration))_
 - **Annual financial statement filing deadline** — By 31 March following a 31 December year-end  _([Accounting Law (Lao PDR)](https://news.bloombergtax.com/daily-tax-report-international/laos-tax-agency-issues-notice-on-2025-financial-statement-filing-deadline-for-enterprise-account-holders))_
 - **Provincial / local income tax** — None — there are no provincial or local income taxes  _([Law on Income Tax (Law No. 67/NA, 2019)](https://taxsummaries.pwc.com/lao-pdr/individual/taxes-on-personal-income))_

@@ -1,11 +1,11 @@
 ---
 name: maldives-gst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Maldives GST return for any client. Trigger on phrases like "Maldives GST", "MIRA filing", "tourism GST", or any request involving Maldives GST. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Maldives GST work.
-version: 2.0
+version: 2.1
 jurisdiction: MV
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -160,15 +160,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 Tourism rate 17% — Tourism goods and services (resort accommodation, diving, excursions, etc.). 17% from 1 July 2025 (7th Amendment to the GST Act, Law No. 10/2011, ratified 5 November 2024); 16% for supplies before that date.
 
-- **Tourism rate** — 17% percent (from 1 July 2025; 16% before)
+- **Tourism rate** — 17% (from 1 July 2025; 16% before)
 
 ### 5.2 General rate 8% — All other taxable supplies not in tourism sector.
 
-- **General rate** — 8% percent
+- **General rate** — 8%
 
 ### 5.3 Zero rate — Exports.
 
-- **Zero rate** — 0% percent
+- **Zero rate** — 0%
 
 ### 5.4 Exempt — Financial services, residential rent, healthcare, education.
 
@@ -242,7 +242,7 @@ BML and MIB exports CSV. Dual currency (MVR and USD). Tourism sector predominant
 
 ### Change log
 
-- v2.0 (April 2026): Full rewrite to Malta v2.0 ten-section structure.
+- v2.1 (April 2026): Full rewrite to Malta v2.1 ten-section structure.
 
 ## Disclaimer
 

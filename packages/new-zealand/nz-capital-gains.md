@@ -1,10 +1,10 @@
 ---
 name: nz-capital-gains
 description: "New Zealand capital gains: no general CGT, but bright-line test on residential property (2-year rule), share investor vs trader distinction, FIF regime for foreign shares. Trigger on: \"New Zealand CGT\", \"NZ capital gains\", \"bright-line test NZ\", \"sell property NZ\", \"NZ no capital gains tax\", \"foreign investment fund NZ\", \"FIF regime\", \"NZ share trading tax\", \"sell NZ property within 2 years\"."
-version: 1.0
+version: 1.1
 jurisdiction: NZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 category: international
 tier: 2
@@ -20,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Bright-Line Test (residential property)
 
 - **Bright-line test — taxable if sold within period** — The bright-line test treats gains from sale of residential property as taxable income if the property is sold within: 2 years for property purchased from 1 July 2024 onwards; 5 years for property purchased 27 March 2021 – 30 June 2024 (new builds: 5 years); 10 years for property purchased before 27 March 2021 (new builds: 5 years).
-- **Bright-line gain taxation rate** — up to 39% % (taxed at seller's marginal income tax rate)
+- **Bright-line gain taxation rate** — up to 39% (taxed at seller's marginal income tax rate)
 - **Main home exemption** — The taxpayer's main residence is excluded from the bright-line test (with some restrictions if it was rented out or if multiple properties exist).
 
 ## Share trading: investor vs trader
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **FIF regime application** — New Zealand residents holding foreign shares (outside Australian shares listed on an Australian exchange, below NZD $50,000 in total) are subject to the FIF regime: Tax is calculated on a deemed income basis (fair dividend rate method: 5% of opening market value per year), NOT on actual gains/dividends. Applies to each share in a non-Australian foreign company. Only applies if total cost of foreign investments exceeds NZD $50,000. This is a significant complexity for NZ residents with offshore share portfolios.
 - **FIF regime cost threshold** — 50000 NZD (total cost of foreign investments must exceed this for FIF regime to apply)
-- **Fair dividend rate** — 5% % (of opening market value per year, deemed income basis)
+- **Fair dividend rate** — 5% (of opening market value per year, deemed income basis)
 
 ## Exit from New Zealand
 

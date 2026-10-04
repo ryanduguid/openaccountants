@@ -1,11 +1,11 @@
 ---
 name: us-ia-income-tax
 description: "Iowa Individual Income Tax Return (Form IA 1040) for sole proprietors and single-member LLCs. Covers the flat 3.8% rate (tax year 2025/2026), Iowa net income computation from federal AGI, Iowa standard deduction, and estimated tax. Iowa completed its historic flat-tax reform in 2025. Trigger: taxpayer is an Iowa resident or has Iowa-source income."
-version: "0.1"
+version: "0.2"
 jurisdiction: US-IA
 category: state-tax
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -55,7 +55,7 @@ depends_on:
 | --- | --- |
 | 3.8% (flat) | All Iowa taxable income |
 
-- **Flat rate applicability** — 3.8% percent (All Iowa taxable income; applies to tax years beginning on or after January 1, 2025)  _(Iowa Code § 422.5, as amended by SF 2442 (signed May 2024))_
+- **Flat rate applicability** — 3.8% (All Iowa taxable income; applies to tax years beginning on or after January 1, 2025)  _(Iowa Code § 422.5, as amended by SF 2442 (signed May 2024))_
 
 **Historical context:** Iowa transitioned from a 4-bracket progressive system (4.4%–5.7% in 2024) to a single 3.8% flat rate in 2025, making it the lowest flat income tax rate in the Midwest.
 

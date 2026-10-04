@@ -1,10 +1,10 @@
 ---
 name: construction-sector
 description: "Use this skill whenever a construction contractor, subcontractor, developer, or design-build firm asks about sector-specific tax / accounting. Trigger on phrases like \"construction industry scheme\", \"CIS\", \"CIS deduction\", \"reverse charge construction VAT\", \"domestic reverse charge construction services\", \"developer's relief\", \"long-term contract\", \"percentage of completion\", \"completed contract\", \"ASC 606 construction\", \"uninstalled materials\", \"retention\", \"subcontractor 1099\", \"USDOL prevailing wage\", \"Davis-Bacon\", \"construction VAT zero-rate new residential\", or any construction-sector tax question. Covers UK Construction Industry Scheme (CIS), UK domestic reverse charge VAT for construction services (effective 1 March 2021), US construction tax (long-term contracts under IRC §460; percentage-of-completion-capitalisable; small contractor exception), EU developer reliefs and new-build zero/reduced VAT rates, retentions and progress billing accounting. Does NOT cover: construction safety regulation, building permit procedures, or technical engineering standards."
-version: 0.1
+version: 0.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - corporate-income-tax-workflow-base
@@ -49,16 +49,16 @@ Small contractor may use Completed Contract Method (CCM) or Cash method for shor
 ### 2.1 Contractor obligations
 
 - **Verify subcontractor with HMRC** — Contractor must verify subcontractor with HMRC
-- **Gross payment status deduction** — 0% percent
-- **Registered subcontractor deduction** — 20% percent
-- **Unregistered subcontractor deduction** — 30% percent
+- **Gross payment status deduction** — 0%
+- **Registered subcontractor deduction** — 20%
+- **Unregistered subcontractor deduction** — 30%
 - **Monthly CIS return (CIS300)** — by 19th of month
 - **Payment of CIS deducted** — by 22nd (electronic) / 19th (cheque)
 
 ### 2.2 Subcontractor
 
 - **Register as contractor** — if employs other subbies
-- **Gross payment status turnover threshold** — GBP 30k per individual / GBP 30k per partner / GBP 200k per company GBP
+- **Gross payment status turnover threshold** — GBP 30k per individual / GBP 30k per partner / GBP 200k per company
 - **Recover CIS deductions** — Recover CIS deductions against own tax liability
 
 ### 2.3 Scope

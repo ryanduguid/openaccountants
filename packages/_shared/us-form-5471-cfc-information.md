@@ -4,7 +4,8 @@ description: US federal content skill for Form 5471 — US Information Return fo
 jurisdiction: US
 category: federal
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -249,7 +250,7 @@ A taxpayer with a missing Form 5471 has several avenues, each with different pro
 
 ### 11.5 Voluntary Disclosure Practice (IRM 9.5.11.9)
 
-- **Voluntary Disclosure Practice outcomes** — For wilful failures with material unreported income or tax, the IRS Voluntary Disclosure Practice is the path. It is administered by Criminal Investigation, requires a pre-clearance, and produces a closing agreement that typically imposes a 75% civil fraud penalty on the highest tax year and full §6038 penalties — but eliminates criminal exposure. The Voluntary Disclosure Practice is unavailable once an audit or criminal investigation is underway. Most Form 5471 failures do not require this path; reasonable cause and SFOP/SDOP cover the vast majority of cases. percent  _(IRM 9.5.11.9; §6038)_
+- **Voluntary Disclosure Practice outcomes** — For wilful failures with material unreported income or tax, the IRS Voluntary Disclosure Practice is the path. It is administered by Criminal Investigation, requires a pre-clearance, and produces a closing agreement that typically imposes a 75% civil fraud penalty on the highest tax year and full §6038 penalties — but eliminates criminal exposure. The Voluntary Disclosure Practice is unavailable once an audit or criminal investigation is underway. Most Form 5471 failures do not require this path; reasonable cause and SFOP/SDOP cover the vast majority of cases.  _(IRM 9.5.11.9; §6038)_
 
 ## 12. Common errors
 

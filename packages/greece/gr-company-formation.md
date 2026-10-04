@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Greece (
 jurisdiction: GR
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,10 +17,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Common entity types overview** — The most common Greek business vehicles are the Private Company (IKE), the Limited Liability Company (EPE), and the Societe Anonyme (AE). The IKE is the dominant choice for SMEs due to its EUR 1 minimum capital.
 - **Private Company (IKE — Ιδιωτική Κεφαλαιουχική Εταιρεία)** — Most popular SME form; minimum capital EUR 1; limited liability; flexible governance  _(Law 4072/2012 (IKE) https://atlasconsulting.gr/en/establish-a-private-company-ike/)_
-- **IKE minimum share capital** — EUR 1 EUR  _(Law 4072/2012 (IKE) https://atlasconsulting.gr/en/establish-a-private-company-ike/)_
-- **Limited Liability Company (EPE — Εταιρεία Περιορισμένης Ευθύνης)** — Limited liability company; minimum capital EUR 4,500 (no statutory minimum mandated, but commonly cited) ((approx — EPE no longer has a fixed statutory minimum; confirm))  _(Law 3190/1955 (EPE) https://kstlaw.gr/companys-establishment-in-greece/)_
+- **IKE minimum share capital** — EUR 1  _(Law 4072/2012 (IKE) https://atlasconsulting.gr/en/establish-a-private-company-ike/)_
+- **Limited Liability Company (EPE — Εταιρεία Περιορισμένης Ευθύνης)** — Limited liability company; minimum capital EUR 4,500 (no statutory minimum mandated, but commonly cited) (approx — EPE no longer has a fixed statutory minimum; confirm)  _(Law 3190/1955 (EPE) https://kstlaw.gr/companys-establishment-in-greece/)_
 - **Societe Anonyme (AE — Ανώνυμη Εταιρεία)** — Public limited company for larger ventures; minimum share capital EUR 25,000, fully paid at incorporation  _(Law 4548/2018 (AE) https://kstlaw.gr/companys-establishment-in-greece/)_
-- **AE minimum share capital** — EUR 25,000 (fully paid up at incorporation) EUR  _(Law 4548/2018 (AE) https://kstlaw.gr/companys-establishment-in-greece/)_
+- **AE minimum share capital** — EUR 25,000 (fully paid up at incorporation)  _(Law 4548/2018 (AE) https://kstlaw.gr/companys-establishment-in-greece/)_
 
 ## Incorporation steps, timeline and cost
 
@@ -28,8 +29,8 @@ Companies are registered electronically through GEMI (General Commercial Registr
 - **Registration body** — GEMI (General Commercial Registry — Γενικό Εμπορικό Μητρώο), via the One-Stop Shop / gov.gr  _(Law 4919/2022 (GEMI / one-stop shop) https://kstlaw.gr/companys-establishment-in-greece/)_
 - **Founder tax number (AFM)** — Every founder needs a Greek TIN (AFM); EU citizens may apply via myAADElive, non-EU founders in person at the DOY or via a tax representative  _(AADE TIN registration procedure https://www.commenda.io/greece/business-setup)_
 - **Formation document** — IKE and EPE: a private document suffices; AE: notarial deed no longer mandatory but used for customised statutes  _(Law 4919/2022 (one-stop shop); Law 4548/2018 (AE) https://kstlaw.gr/companys-establishment-in-greece/)_
-- **Incorporation timeline** — A standard IKE formed digitally takes roughly 1–4 weeks; end-to-end (with AFM, bank account, non-EU visas) can extend to 2–3 months ((approx — varies by case))  _(GEMI one-stop shop process https://atlasconsulting.gr/en/establish-a-private-company-ike/)_
-- **Incorporation cost** — GEMI / one-stop-shop fees plus professional fees; a basic IKE commonly costs from around EUR 60–600 in official fees (excluding lawyer/accountant fees) ((approx — confirm current GEMI fee schedule)) EUR  _(GEMI fee schedule https://www.soneverse.com/greece-company-formation-cost-2025/)_
+- **Incorporation timeline** — A standard IKE formed digitally takes roughly 1–4 weeks; end-to-end (with AFM, bank account, non-EU visas) can extend to 2–3 months (approx — varies by case)  _(GEMI one-stop shop process https://atlasconsulting.gr/en/establish-a-private-company-ike/)_
+- **Incorporation cost** — GEMI / one-stop-shop fees plus professional fees; a basic IKE commonly costs from around EUR 60–600 in official fees (excluding lawyer/accountant fees) (approx — confirm current GEMI fee schedule)  _(GEMI fee schedule https://www.soneverse.com/greece-company-formation-cost-2025/)_
 
 ## Core annual compliance
 

@@ -1,10 +1,10 @@
 ---
 name: slovenia-tax-optimization
 description: Use this skill whenever asked about reducing tax in Slovenia, tax planning, or legal strategies to minimise tax for a self-employed person (s.p.) or small company in Slovenia. Trigger on phrases like "reduce tax Slovenia", "normiranec", "normirani s.p.", "lump-sum tax Slovenia", "80% expense deduction", "flat-rate sole proprietor Slovenia", "s.p. vs d.o.o.", "save tax Slovenia", "tax planning Slovenia". This skill covers the normiranec (standardised-expense) flat-rate regime giving tax on ~20% of revenue, the revenue thresholds and mandatory-exit rules, regular s.p. vs d.o.o., the 2026 changes, and the disguised-employment red line. ALWAYS read this skill before advising on any Slovenian tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Slovenia Tax Optimization
 
-## Slovenia Tax Optimization Skill v0.1
+## Slovenia Tax Optimization Skill v0.2
 
 **Tier 2 — research-verified. Sources: FURS (Financial Administration), PwC Slovenia, Sibiz/Data. Figures must agree with `slovenia-income-tax.md` / `slovenia-social-contributions.md`. NOT yet signed off by a Slovenian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
@@ -60,7 +60,7 @@ You pay tax/contributions on the small deemed-profit base instead of real profit
 
 ## Section 4 -- d.o.o. Extraction
 
-- **Corporate income tax (CIT)** — 19% percent (on profit; retained profit deferred until distribution)
+- **Corporate income tax (CIT)** — 19% (on profit; retained profit deferred until distribution)
 - **Owner salary vs dividends** — Owner balances a (deductible, contribution-bearing) salary against dividends. **[RESEARCH GAP — reviewer to confirm the current dividend tax rate and any owner-salary minimums.]**  _([RESEARCH GAP — reviewer to confirm the current dividend tax rate and any owner-salary minimums.])_
 
 ## Section 5 -- Red Lines (do not cross)

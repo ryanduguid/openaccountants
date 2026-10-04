@@ -1,10 +1,10 @@
 ---
 name: eg-sme-tax
 description: Use this skill whenever asked about Egypt's simplified or SME tax regime for small self-employed people, freelancers, professionals, sole proprietors, and small companies. Trigger on phrases like "Egypt simplified tax", "SME tax Egypt", "small business tax Egypt", "Law 6 of 2025 Egypt", "turnover tax Egypt", "freelancer simplified Egypt", "النظام الضريبي المبسط", "ضريبة على رقم الأعمال", "قانون 6 لسنة 2025", "حوافز المشروعات الصغيرة". Covers both the SME framework under Law No. 152 of 2020 (MSME Development Law) and the NEW integrated simplified tax regime under Law No. 6 of 2025 for businesses and professionals with annual turnover up to EGP 20 million. AI replies in the user's language (English or Arabic).
-version: 1.0
+version: 1.1
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -70,7 +70,7 @@ The income tax is a flat percentage of **annual turnover** (إجمالي رقم 
 ### Who can join the Law 6/2025 simplified system
 
 - **Eligible activities** — Any project / activity — commercial, industrial, service, or professional (مهنة حرة) — including freelancers and sole proprietors.  _(Law No. 6 of 2025)_
-- **Annual turnover cap** — EGP 20,000,000 EGP  _(Law No. 6 of 2025)_
+- **Annual turnover cap** — EGP 20,000,000  _(Law No. 6 of 2025)_
 - **Applies regardless of prior registration** — Applies whether or not the person is already registered for tax (the law explicitly targets the informal sector / غير المسجلين to bring them in).  _(Law No. 6 of 2025)_
 - **Companies and natural persons qualify** — Companies as well as natural persons qualify, subject to the same turnover cap.  _(Law No. 6 of 2025)_
 
@@ -82,9 +82,9 @@ The income tax is a flat percentage of **annual turnover** (إجمالي رقم 
 ### Relationship to Law No. 152 of 2020 (MSME definitions)
 
 - **Law 152/2020 purpose** — Law 152/2020 is the development / classification law; it defines enterprise size by turnover (and by capital for newly incorporated firms).  _(Law No. 152 of 2020)_
-- **Micro (متناهية الصغر)** — turnover < EGP 1 million EGP  _(Law No. 152 of 2020)_
-- **Small (صغيرة)** — turnover EGP 1 million to < EGP 50 million (industrial/service classification varies) EGP  _(Law No. 152 of 2020)_
-- **Medium (متوسطة)** — turnover EGP 50 million up to EGP 200 million EGP  _(Law No. 152 of 2020)_
+- **Micro (متناهية الصغر)** — turnover < EGP 1 million  _(Law No. 152 of 2020)_
+- **Small (صغيرة)** — turnover EGP 1 million to < EGP 50 million (industrial/service classification varies)  _(Law No. 152 of 2020)_
+- **Medium (متوسطة)** — turnover EGP 50 million up to EGP 200 million  _(Law No. 152 of 2020)_
 
 > **Verify the current Law 152/2020 size bands** — they were set by executive decree and have been updated. Law 152/2020 grants development incentives and registration with the MSME Development Agency (جهاز تنمية المشروعات); the *turnover tax* itself flows from **Law 6/2025**. The two operate together: the tax simplification (Law 6) targets the ≤ EGP 20m segment that overlaps the micro/small categories under Law 152.
 
@@ -143,7 +143,7 @@ The regime simplifies filing cadence, not the existence of the taxes.
 ### Key VAT points
 
 - **VAT registration still applies** - The general annual turnover threshold is EGP 500,000. Law 6/2025 changes filing frequency, not the registration threshold. ETA Decision 281/2025 concerns named taxpayers in an e-receipt rollout phase. _([Egyptian Tax Authority](https://www.eta.gov.eg/ar/node/1379); VAT Law No. 67 of 2016)_
-- **Standard VAT rate** — 14% % (verify current; certain goods/services have special rates such as the 5% machinery rate or the schedule/table-tax items)  _(VAT Law No. 67 of 2016)_
+- **Standard VAT rate** — 14% (verify current; certain goods/services have special rates such as the 5% machinery rate or the schedule/table-tax items)  _(VAT Law No. 67 of 2016)_
 - **E-invoicing/e-receipt precondition** — E-invoicing / e-receipt integration is a precondition for staying in the regime — non-compliance can forfeit the incentives.  _(Law No. 6 of 2025)_
 
 > Confirm the **VAT registration threshold (EGP 500,000)** and the **14% standard rate** against the current VAT Law (Law 67/2016 as amended) and ETA before relying on them.

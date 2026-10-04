@@ -3,8 +3,8 @@ name: ga-company-formation
 description: "Draft covering Gabon company formation and entity choice. Explains the SARL, the SA and the SAS under the OHADA uniform act read from the Journal Officiel: single-member formation, the 1,000,000 CFA franc SARL capital default and the national-derogation clause that can displace it, the 5,000 minimum nominal value of a part sociale, the ordinary 10,000,000 SA minimum, subscription and pay-up fractions, deferral periods, the contributions-in-kind valuer threshold and where funds must be deposited. Use for incorporating in Gabon, choosing an entity, ANPI-Gabon registration or OHADA capital questions. Costs, timelines and the patente still rest on commercial sources. Pending local-accountant review."
 jurisdiction: GA
 tax_year: 2025
-last_updated: 2026-09-11
-version: 1.1
+last_updated: 2026-10-04
+version: 1.2
 review_status: pending_review
 category: formation
 tier: 2
@@ -38,12 +38,12 @@ National provisions must be checked separately for each member state.
 - **Registered office requirement** — A physical registered office in Gabon is mandatory  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
 - **Share capital deposit** — The uniform act requires the founder to deposit the paid-up funds **immediately**, against receipt, with a bank or any other duly approved credit or **microfinance** institution, into an account in the name of the company in formation, **or with a notary**. Unless national provisions say otherwise, payment and deposit are recorded by a notary of the registered-office district in a *déclaration notariée de souscription et de versement*, and the funds are **blocked until RCCM registration**. The commercial description of "a Gabonese bank account before notarisation, with a bank deposit certificate" is one way of satisfying this, not the only one the Act allows  _(AUSCGIE 2014, arts. 313–314 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Incorporation process** — Draft/notarise articles, deposit capital, then register via ANPI-Gabon one-stop shop (RCCM + tax registration handled together)  _(ANPI-Gabon (Agence Nationale de Promotion des Investissements) — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
-- **Incorporation timeline** — Typically 1–2 weeks via ANPI-Gabon ((approx — confirm)) (approx — confirm)  _(ANPI-Gabon — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
-- **Indicative administrative formation cost** — Roughly XAF 200,000–500,000 in administrative costs (plus notary/registration fees) XAF ((approx — confirm)) XAF (approx — confirm)  _(ANPI-Gabon — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
+- **Incorporation timeline** — Typically 1–2 weeks via ANPI-Gabon (approx — confirm)  _(ANPI-Gabon — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
+- **Indicative administrative formation cost** — Roughly XAF 200,000–500,000 in administrative costs (plus notary/registration fees) (approx — confirm)  _(ANPI-Gabon — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
 - **Beneficial ownership disclosure** — Ultimate beneficial owner (UBO) disclosure required at registration  _(OHADA / ANPI-Gabon registration requirements — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
 - **Annual accounts (OHADA SYSCOHADA)** — Prepare and file annual financial statements under the SYSCOHADA accounting framework  _(OHADA Uniform Act on Accounting Law (SYSCOHADA))_
 - **Annual tax compliance** — File CIT return by 30 April, monthly VAT and payroll declarations, plus business license/patente  _(Code Général des Impôts (Gabon) — https://taxsummaries.pwc.com/gabon/corporate/tax-administration)_
-- **Business license tax (patente)** — Annual business license tax, indicatively XAF 15,000–540,000 depending on activity and location XAF ((approx — confirm)) XAF (approx — confirm)  _(Code Général des Impôts (Gabon) — Contribution des patentes — https://taxsummaries.pwc.com/gabon/corporate/other-taxes)_
+- **Business license tax (patente)** — Annual business license tax, indicatively XAF 15,000–540,000 depending on activity and location (approx — confirm)  _(Code Général des Impôts (Gabon) — Contribution des patentes — https://taxsummaries.pwc.com/gabon/corporate/other-taxes)_
 
 <!-- openaccountants-cta-block -->
 

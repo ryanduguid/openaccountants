@@ -5,7 +5,8 @@ jurisdiction: LK
 category: international
 tax_year: 2025
 tax_year_notes: "Rates in this guide span the IRA (Amendment) Act No. 11 of 2026, enacted 3 June 2026. The date of realisation, not the year of assessment, selects the rate: 10% before 3 June 2026, and 15% / 30% by class of taxpayer on or after it."
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Lal kumarasiri
 review_status: pending_review
 tier: 2
@@ -49,7 +50,7 @@ House (non-primary residence) in Rajagiriya bought 2019 for LKR 18m, sold 2026 f
 
 - **Listed share transactions (CSE)** — CGT at 10% (now 15% post-amendment) is withheld at source by the Colombo Stock Exchange on listed share sales and reported directly to the IRD. The investor receives the net proceeds.  _(IRA s 84; CSE Rules; IRD CGT page)_
 - **Payment deadline** — CGT on a realised gain must be paid to the IRD within ONE MONTH of the date of realisation. Failure to pay within 1 month: 14-day grace period (penalty = 1.5% of the CGT amount). After the 14-day period: additional penalties apply.  _(IRA s 50)_
-- **Penalty – first 14 days after 1-month deadline** — 1.5% percent (Of the CGT amount, charged as a penalty for the 14-day extension period beyond the 1-month payment deadline.)  _(IRA s 50)_
+- **Penalty – first 14 days after 1-month deadline** — 1.5% (Of the CGT amount, charged as a penalty for the 14-day extension period beyond the 1-month payment deadline.)  _(IRA s 50)_
 - **Penalty – after 14-day extension period** — Further penalties under the IRA for continued non-payment. IRD may also commence enforcement action.  _(IRA s 163; IRD Penalty Schedule)_
 - **Annual return disclosure** — Capital gains and CGT paid must also be reported in the annual income tax return filed with the IRD.  _(IRA s 95; IRD Return Filing Guidance)_
 - **Withholding at source (CSE / non-resident transactions)** — For certain transactions (listed share sales via CSE; sale of property by non-residents), CGT or WHT is deducted at source by the paying entity (broker/purchaser) and remitted to the IRD.  _(IRA s 84; CSE Rules; IRD WHT Circular)_

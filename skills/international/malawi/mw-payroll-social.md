@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Malawi (tax
 jurisdiction: MW
 category: payroll
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,10 +21,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Employer minimum pension contribution** — 10 percent of pensionable emoluments  _(Pension Act, 2011 — https://workforceafrica.com/malawi-payroll-2025-explaining-paye-tables-and-pensions-for-employers/)_
 - **Employee minimum pension contribution** — 5 percent of pensionable emoluments  _(Pension Act, 2011 — https://workforceafrica.com/malawi-payroll-2025-explaining-paye-tables-and-pensions-for-employers/)_
 - **Order of operations** — Employee pension contribution is deducted before PAYE is computed  _(Taxation Act (Chapter 41:01) — https://workforceafrica.com/malawi-payroll-2025-explaining-paye-tables-and-pensions-for-employers/)_
-- **General social-security payroll tax** — No broad-based national social-insurance payroll tax beyond the statutory pension; the contributory pension scheme is the principal payroll-linked contribution ((approx — confirm any sector-specific levies, e.g. skills development/TEVET levy))  _(Pension Act, 2011)_
-- **TEVET levy (skills development)** — 1 percent of basic payroll ((approx — confirm current rate and base))  _(Technical, Entrepreneurial and Vocational Education and Training Act)_
-- **Pension contribution remittance** — Contributions remitted to the licensed pension fund within 14 days of month end ((approx — confirm exact remittance window))  _(Pension Act, 2011)_
-- **Pensionable emoluments base** — Contributions are calculated on pensionable emoluments (typically basic salary plus specified allowances) ((approx — confirm the definition of pensionable emoluments))  _(Pension Act, 2011)_
+- **General social-security payroll tax** — No broad-based national social-insurance payroll tax beyond the statutory pension; the contributory pension scheme is the principal payroll-linked contribution (approx — confirm any sector-specific levies, e.g. skills development/TEVET levy)  _(Pension Act, 2011)_
+- **TEVET levy (skills development)** — 1 percent of basic payroll (approx — confirm current rate and base)  _(Technical, Entrepreneurial and Vocational Education and Training Act)_
+- **Pension contribution remittance** — Contributions remitted to the licensed pension fund within 14 days of month end (approx — confirm exact remittance window)  _(Pension Act, 2011)_
+- **Pensionable emoluments base** — Contributions are calculated on pensionable emoluments (typically basic salary plus specified allowances) (approx — confirm the definition of pensionable emoluments)  _(Pension Act, 2011)_
 
 <!-- openaccountants-cta-block -->
 
