@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Honduras (tax year 2025) — 
 jurisdiction: HN
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Currency** — Honduran lempira (HNL / L)  _(Banco Central de Honduras)_
 - **Tax authority** — Servicio de Administracion de Rentas (SAR)  _(Servicio de Administracion de Rentas (SAR) - https://www.sar.gob.hn)_
 - **Basis of taxation** — Territorial - residents and non-residents are taxed only on Honduran-source income  _(Ley del Impuesto sobre la Renta (Income Tax Law) - https://taxsummaries.pwc.com/honduras)_
-- **Top personal income tax rate** — 25% percent  _(Ley del Impuesto sobre la Renta (Income Tax Law) - https://taxsummaries.pwc.com/honduras/individual/taxes-on-personal-income)_
+- **Top personal income tax rate** — 25% on annual net taxable income above L809,660.75 under the 2026 scale (exempt to L228,324.32, then 15% and 20%), adjusted by 4.98% for 2026 by Acuerdo SAR-01-2026  _(Acuerdo SAR-01-2026 of 5 January 2026 (Servicio de Administración de Rentas; La Gaceta No. 37,051 of 23 January 2026, copy hosted by the Tribunal Superior de Cuentas), Tabla Progresiva 2026 — https://www.tsc.gob.hn/web/leyes/Acuerdo-SAR-01-2026.pdf)_
 - **Standard corporate income tax rate** — 25% percent  _(Ley del Impuesto sobre la Renta (Income Tax Law) - https://taxsummaries.pwc.com/honduras/corporate/taxes-on-corporate-income)_
 - **Solidarity contribution (aportacion solidaria)** — 5% surcharge on corporate taxable income exceeding HNL 1,000,000 (effective top corporate rate of 30%)  _(Ley del Impuesto sobre la Renta (Income Tax Law) - https://taxsummaries.pwc.com/honduras/corporate/taxes-on-corporate-income)_
 - **VAT/GST** — Yes - a sales tax (Impuesto sobre Ventas, ISV) applies at a standard rate of 15% percent  _(Ley del Impuesto sobre Ventas (Sales Tax Law) - https://taxsummaries.pwc.com/honduras/corporate/other-taxes)_
