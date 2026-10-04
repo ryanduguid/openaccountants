@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Trinidad an
 jurisdiction: TT
 category: payroll
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,15 +17,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Employers withhold income tax under PAYE and remit National Insurance (NIS) and Health Surcharge to the relevant authorities. NIS is administered by the National Insurance Board of Trinidad and Tobago (NIBTT); PAYE and Health Surcharge are remitted to the IRD.
 
-- **Total NIS contribution rate (2025)** — 13.2% of insurable earnings (shared employer/employee) (rate increased to 16.2% effective January 2026) percent  _([National Insurance Act (Chap. 32:01)](https://www.nibtt.net/Contribution_Rates/rates.html))_
-- **Employer NIS share (2025)** — Approximately two-thirds of the total contribution (about 8.8% of insurable earnings) percent (approx — confirm)  _([National Insurance Act (Chap. 32:01)](https://www.nibtt.net/Contribution_Rates/rates.html))_
-- **Employee NIS share (2025)** — Approximately one-third of the total contribution (about 4.4% of insurable earnings) percent (approx — confirm)  _([National Insurance Act (Chap. 32:01)](https://www.nibtt.net/Contribution_Rates/rates.html))_
-- **NIS earnings-class structure** — Contributions set as fixed weekly/monthly amounts across 16 earnings classes based on actual earnings  _([National Insurance Act (Chap. 32:01)](https://www.nibtt.net/Contribution_Rates/rates.html))_
-- **Maximum insurable earnings (ceiling)** — TTD 13,600 per month (highest earnings class) TTD/month (approx — confirm for 2025)  _([National Insurance Act (Chap. 32:01)](https://www.nibtt.net/Contribution_Rates/rates.html))_
-- **Health Surcharge (higher band)** — TTD 8.25 per week for employees earning over TTD 109.00 per week (or over TTD 469.99 per month) TTD/week  _([Health Surcharge Act (Chap. 75:05)](https://www.ird.gov.tt/health-surcharge))_
-- **Health Surcharge (lower band)** — TTD 4.80 per week for all other employed persons TTD/week  _([Health Surcharge Act (Chap. 75:05)](https://www.ird.gov.tt/health-surcharge))_
-- **PAYE withholding** — Employers deduct income tax from emoluments under the PAYE system based on each employee's TD1 declaration  _([Income Tax (Employment) Regulations](https://taxsummaries.pwc.com/trinidad-and-tobago/individual/tax-administration))_
-- **PAYE and Health Surcharge remittance deadline** — By the 15th of the month following the deduction  _([Income Tax (Employment) Regulations](https://www.ird.gov.tt/health-surcharge))_
+- **Total NIS contribution rate (2025)** — 13.2% of insurable earnings from 5 September 2016 through 2025, rising to 16.2% from 5 January 2026 (subject to all legislative approvals per the Board)  _(National Insurance Board, Contribution Rates history — https://www.nibtt.net/Contribution_Rates/rates.html ; National Insurance Board, Earnings Classes and Contributions from 5 January 2026 (16.2%) — https://www.nibtt.net/Contribution_Rates/NISContributions_20260105.pdf)_
+- **Employer NIS share (2025)** — Two-thirds of the total contribution (for example TTD 339.00 of the TTD 508.50 weekly total in earnings class XVI under the 2026 table)  _(National Insurance Board, Earnings Classes and Contributions from 5 January 2026 (16.2%) — https://www.nibtt.net/Contribution_Rates/NISContributions_20260105.pdf)_
+- **Employee NIS share (2025)** — One-third of the total contribution (for example TTD 169.50 of TTD 508.50 a week in class XVI under the 2026 table)  _(National Insurance Board, Earnings Classes and Contributions from 5 January 2026 (16.2%) — https://www.nibtt.net/Contribution_Rates/NISContributions_20260105.pdf)_
+- **NIS earnings-class structure** — Contributions are fixed weekly amounts across 16 earnings classes based on actual weekly or monthly earnings  _(National Insurance Board, Earnings Classes and Contributions from 5 January 2026 (16.2%) — https://www.nibtt.net/Contribution_Rates/NISContributions_20260105.pdf)_
+- **Maximum insurable earnings (ceiling)** — TTD 13,600 per month (TTD 3,138 per week) in the highest earnings class XVI under the 2026 table  _(National Insurance Board, Earnings Classes and Contributions from 5 January 2026 (16.2%) — https://www.nibtt.net/Contribution_Rates/NISContributions_20260105.pdf)_
+- **Health Surcharge (higher band)** — TTD 8.25 per week for employed persons whose monthly emoluments exceed TTD 469.99 or weekly emoluments exceed TTD 109.00  _(Health Surcharge Act (Chap. 75:05), Ministry of the Attorney General consolidation, s 3(4)(a) — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.05.pdf)_
+- **Health Surcharge (lower band)** — TTD 4.80 per week for all other employed persons  _(Health Surcharge Act (Chap. 75:05), Ministry of the Attorney General consolidation, s 3(4)(a) — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.05.pdf)_
+- **PAYE withholding** — Employers deduct income tax from emoluments under the PAYE system each time a payment is made, based on each employee's TD1 declaration  _(Income Tax Act (Chap. 75:01), Ministry of the Attorney General consolidation to Act 7 of 2016, ss 99 and 100 and the Income Tax (Employment) Regulations — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/75.01.pdf ; Inland Revenue Division, PAYE page — https://www.ird.gov.tt/PAYE)_
+- **PAYE and Health Surcharge remittance deadline** — On or before the 15th of the month following the deduction, on the PAYE/Health Surcharge Monthly Return; late remittance attracts a 25% penalty (minimum TTD 40) plus 20% a year interest  _(Inland Revenue Division, PAYE page — https://www.ird.gov.tt/PAYE)_
 - **NIS remittance deadline** — By the 15th of the month following the contribution period (approx — confirm)  _([National Insurance Act (Chap. 32:01)](https://www.nibtt.net/))_
 
 <!-- openaccountants-cta-block -->
