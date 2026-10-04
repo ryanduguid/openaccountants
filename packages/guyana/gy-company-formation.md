@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Guyana (
 jurisdiction: GY
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Step 3 — File incorporation documents** — File Articles of Incorporation, Notice/Consent of Directors, Notice/Consent of Secretary, Notice of Registered Office, Declaration of Compliance and by-laws with the Registrar  _(Companies Act 1991 (Cap 89:01) — http://lawyerguyana.com/company.html)_
 - **Step 4 — Tax registration** — Apply for a Taxpayer Identification Number (TIN) with the GRA (and VAT registration if over threshold)  _(Income Tax Act (Cap 81:01) / Value-Added Tax Act 2005 — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
 - **Beneficial ownership disclosure** — Companies must disclose ultimate beneficial owners under the anti-money-laundering framework ((approx — confirm))  _(Anti-Money Laundering and Countering the Financing of Terrorism Act — https://www.expanship.com/gy/blog/incorporation-requirements-in-guyana)_
-- **Core annual compliance** — File annual return with the Registrar, hold AGM, maintain statutory records, and file the corporation tax return by 30 April ((approx — confirm))  _(Companies Act 1991 (Cap 89:01) / Corporation Tax Act (Cap 81:03) — https://taxsummaries.pwc.com/guyana/corporate/tax-administration)_
+- **Core annual compliance** — File the annual return with the Registrar, hold the AGM and keep statutory records; file the corporation tax return by 30 April with advance taxes on 15 March, 15 June, 15 September and 15 December; register for VAT once taxable activity reaches G$15,000,000 in 12 months and file VAT returns  _(Guyana Revenue Authority, File Corporation Tax Return — https://gra.gov.gy/quick-links-2/file-corporation-tax-return/ ; Guyana Revenue Authority, Register for VAT — https://gra.gov.gy/business/tax-operations-and-services/value-add-tax-services/register-for-vat/ ; Companies Act summary — https://taxsummaries.pwc.com/guyana/corporate/tax-administration)_
 - **Typical timeline and cost** — Incorporation commonly completed within roughly 2-4 weeks; official registry fees plus attorney fees apply ((approx — confirm))  _(Companies Act 1991 (Cap 89:01) — https://prifinance.com/en/south-american-companies/guyana/)_
 
 <!-- openaccountants-cta-block -->

@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Guyana (tax year 2025) — ra
 jurisdiction: GY
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +25,7 @@ Guyana operates a source-based income tax system administered by the Guyana Reve
 - **Headline corporate income tax rates** — Commercial companies 40%; non-commercial companies 25% percent  _([Corporation Tax Act (Cap 81:03)](https://taxsummaries.pwc.com/guyana/corporate/taxes-on-corporate-income))_
 - **Does VAT exist?** — Yes — Value-Added Tax at a standard rate of 14% (and 0% zero-rating)  _([Value-Added Tax Act 2005](https://gra.gov.gy/vat-registration/))_
 - **Main annual income/corporation tax filing deadline** — 30 April following the income year (both individuals and companies)  _([Income Tax Act (Cap 81:01) / Corporation Tax Act (Cap 81:03)](https://gra.gov.gy/tax-services/submission-of-returns/))_
-- **Capital gains tax** — 20% on net chargeable gains; assets held under 12 months taxed as ordinary income percent  _([Capital Gains Tax Act (Cap 81:20)](https://taxsummaries.pwc.com/guyana/corporate/other-taxes))_
+- **Capital gains tax** — 20% on net chargeable gains (PwC); gains within 12 months of acquisition are taxed as income, and gains of G$500,000 or less are exempt  _(Guyana Revenue Authority, Capital Gains Tax — https://gra.gov.gy/business/tax-operations-and-services/capital-gains/ ; rate: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/guyana/corporate/other-taxes)_
 - **Social security** — National Insurance Scheme (NIS) — total 14% of insurable earnings (8.4% employer, 5.6% employee) percent  _([National Insurance and Social Security Act (Cap 36:01)](https://www.nis.org.gy/information_on_contributions))_
 
 <!-- openaccountants-cta-block -->
