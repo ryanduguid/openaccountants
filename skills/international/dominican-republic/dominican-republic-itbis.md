@@ -1,11 +1,11 @@
 ---
 name: dominican-republic-itbis
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Dominican Republic ITBIS return for any client. Trigger on phrases like "ITBIS", "Dominican Republic VAT", "DGII filing", or any request involving DR consumption tax. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any ITBIS work.
-version: 2.0
+version: 2.1
 jurisdiction: DO
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 reviewed_by: Miguel Lantigua
 review_status: pending_review
 tier: 2
@@ -34,15 +34,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Validated by | Pending — requires licensed DR tax practitioner |
 
 - **Country** — Dominican Republic (Republica Dominicana)
-- **Standard rate** — 18% (ITBIS)
-- **Reduced rate** — 16% (certain processed foods); 0% (exports, basic food basket)
-- **Exempt** — Education, healthcare, financial services, basic food items, fuel
+- **Standard rate** — 18% (ITBIS)  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, art. 341 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx)_
+- **Reduced rate** — 16% (certain processed foods); 0% (exports, basic food basket)  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, arts. 342 and 343 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf)_
+- **Exempt** — Education, healthcare, financial services, basic food items, fuel  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, arts. 343 and 344 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf)_
 - **Return form** — Monthly ITBIS return (Form IT-1)
 - **Filing portal** — https://dgii.gov.do (Oficina Virtual DGII)
 - **Authority** — Direccion General de Impuestos Internos (DGII)
 - **Currency** — DOP (Dominican Peso)
 - **Filing frequency** — Monthly
-- **Deadline** — 20th of the month following the tax period
+- **Deadline** — 20th of the month following the tax period  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, art. 353 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf)_
 - **Companion skill** — vat-workflow-base v0.1 or later — MUST be loaded
 - **Validated by** — Pending — requires licensed DR tax practitioner
 
@@ -172,12 +172,12 @@ Net = DOP 100,000, ITBIS = DOP 18,000.
 
 ### 5.1 Standard rate 18%. 5.2 Reduced 16% (processed food). 5.3 Zero rate — exports. 5.4 Exempt — education, healthcare, basic food, fuel. 5.5 Input credit — NCF (comprobante fiscal) required. 5.6 Imports — 18% on CIF plus duty. 5.7 Reverse charge — non-resident services. 5.8 NCF system — all invoices must bear NCF number from DGII.
 
-- **5.1 Standard rate** — 18%
-- **5.2 Reduced rate** — 16% (processed food)
-- **5.3 Zero rate** — Exports
-- **5.4 Exempt** — Education, healthcare, basic food, fuel
+- **5.1 Standard rate** — 18%  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, art. 341 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf)_
+- **5.2 Reduced rate** — 16% (processed food)  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, art. 343 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf)_
+- **5.3 Zero rate** — Exports  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, art. 342 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf)_
+- **5.4 Exempt** — Education, healthcare, basic food, fuel  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, arts. 343 and 344 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf)_
 - **5.5 Input credit** — NCF (comprobante fiscal) required
-- **5.6 Imports** — 18% on CIF plus duty
+- **5.6 Imports** — 18% on CIF plus duty  _(Código Tributario (Ley 11-92), DGII consolidated text, Título III, art. 354 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo3.pdf)_
 - **5.7 Reverse charge** — Non-resident services
 - **5.8 NCF system** — All invoices must bear NCF number from DGII
 
@@ -206,7 +206,7 @@ Banreservas/Popular exports CSV. DOP primary. Spanish descriptions.
 
 Sources: 1. Codigo Tributario (Ley 11-92). 2. DGII normas. 3. NCF regulations.
 
-Change log: v2.0 (April 2026): Full rewrite.
+Change log: v2.1 (April 2026): Full rewrite.
 
 ## Disclaimer
 
