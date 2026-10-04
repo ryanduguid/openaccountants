@@ -4,7 +4,8 @@ description: "Source-cited draft: vat / gst for Eswatini (tax year 2025) — rat
 jurisdiction: SZ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## VAT rates, registration and filing
 
-- **Standard VAT rate** — 15 percent  _(Value Added Tax Act, 2011 (https://taxsummaries.pwc.com/eswatini/corporate/other-taxes))_
+- **Standard VAT rate** — 15%, set by the VAT Regulations under s 24(3) of the Act  _(Value Added Tax Act, 2011, s 24(3) — https://www.ers.org.sz:8000/documents/ValueAddedTaxAct2011.pdf ; Eswatini Revenue Service, VAT in Eswatini — https://www.ers.org.sz/VAT/Eswatini ; 15% rate: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/eswatini/corporate/other-taxes)_
 - **Zero rate** — 0 percent (On supplies listed in the VAT Act schedules (e.g. exports, certain basic foodstuffs such as prescribed brown bread, and agricultural inputs))  _(Value Added Tax Act, 2011 (Second Schedule) (https://www.ers.org.sz/VAT/ZeroRated))_
 - **Exempt supplies** — Certain supplies are exempt (e.g. residential land and buildings, passenger transport, financial and welfare services) — no VAT charged and no input recovery  _(Value Added Tax Act, 2011 (https://www.ers.org.sz/ExemptSupplies))_
 - **Compulsory VAT registration threshold** — Annual taxable turnover exceeding SZL 500,000 historically; current ERS guidance indicates SZL 900,000 SZL/year ((approx — confirm current threshold; sources conflict between SZL 500,000 and SZL 900,000))  _(Value Added Tax Act, 2011 (https://www.ers.org.sz/Registration))_
