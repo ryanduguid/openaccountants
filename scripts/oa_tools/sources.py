@@ -333,6 +333,11 @@ NON_GOV_AUTHORITY = frozenset((
                           # ministry rather than a francophone one, so the shape
                           # is a bare ccTLD, not a language. Subdomains are
                           # matched, so all three count from this one entry.
+    'legalinfo.mn',       # Mongolia's Unified Legal Information System, run by
+                          # the Ministry of Justice and Home Affairs: serves the
+                          # consolidated laws with each amendment dated in-line
+                          # (detail?lawId=14410 is the Personal Income Tax Law).
+                          # Bare .mn with no "gov" label.
     'gesetze.li',         # Liechtenstein's official law collection (Liechtensteinische
                           # Landesgesetzblatt / konsolidiertes Recht), run by the
                           # Government's legal service: the Steuergesetz is served

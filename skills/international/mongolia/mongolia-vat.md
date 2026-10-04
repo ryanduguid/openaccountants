@@ -1,11 +1,11 @@
 ---
 name: mongolia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Mongolia VAT return for any client. Trigger on phrases like "Mongolia VAT", "MTA filing", "NUAT", or any request involving Mongolia VAT. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Mongolia VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: MN
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Mongolia |
-| Standard rate | 10% |
+| Standard rate | 10% (art. 11.1 of the Law on Value Added Tax, legalinfo.mn lawId=11227) |
 | Zero rate | 0% (exports) |
 | Exempt | Financial services, residential rent, healthcare, education, public transport |
 | Return form | Monthly VAT return |
