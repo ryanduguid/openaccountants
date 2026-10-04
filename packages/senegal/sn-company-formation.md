@@ -3,7 +3,8 @@ name: sn-company-formation
 description: "Source-cited draft: company formation & entity choice for Senegal (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: SN
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 category: formation
 tier: 2
@@ -70,7 +71,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax identification** — NINEA (Numéro d'Identification Nationale des Entreprises et Associations) issued at registration  _(Direction Générale des Impôts et des Domaines (DGID) — https://www.legal500.com/doing-business-in/senegal/)_
 - **Mandatory registrations at formation** — Employer registration with CSS (social security) and IPRES (pension) alongside RCCM and NINEA  _(Code de la Sécurité Sociale / IPRES — https://www.legal500.com/doing-business-in/senegal/)_
 - **Annual accounts (SYSCOHADA)** — Prepare annual financial statements under the SYSCOHADA chart of accounts and file with the CIT return by 30 April  _(OHADA / SYSCOHADA accounting framework — https://taxsummaries.pwc.com/senegal/corporate/tax-administration)_
-- **Core annual tax compliance** — Annual CIT return and financial statements by 30 April; monthly VAT and payroll filings; CIT installments (15 Feb, 30 Apr) and balance (15 Jun)  _(Code Général des Impôts (CGI) — https://taxsummaries.pwc.com/senegal/corporate/tax-administration)_
+- **Core annual tax compliance** — Annual corporate income tax return and financial statements by 30 April (Arts 30 and 31); monthly VAT and payroll filings; instalments within the first 15 days of February and by 30 April, with the balance by 15 June (Arts 213 to 215)  _(Code général des impôts (Loi n° 2012-31 as amended), DGID annotated edition of January 2025, Arts 30, 31 and 213 to 215 — https://www.dgid.sn/storage/docs/CGI-2025.pdf)_
 
 <!-- openaccountants-cta-block -->
 
