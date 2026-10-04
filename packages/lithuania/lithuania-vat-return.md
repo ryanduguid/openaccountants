@@ -192,11 +192,11 @@ Treatment: Passenger vehicle PVM recovery limited. Conservative default: 0%. Fla
 
 - **Standard rate 21%** — Standard rate 21%  _(Law on Value Added Tax IX-751 (Pridėtinės vertės mokesčio įstatymas, consolidated text, e-seimas), art. 2(32) and art. 19(1) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.163423/asr)_
 
-### 5.2 Reduced rate 12% (9% before 2026) — books, periodicals, heating, accommodation
+### 5.2 Reduced rate 12% (9% before 2026) — accommodation, passenger transport, cultural events
 
 - **Reduced rate 12%** — Reduced rate 12% (9% before the 2025 amendment) — accommodation, scheduled passenger transport, admission to cultural events; periodicals and books moved to the 5% rate  _(Law on Value Added Tax IX-751 (Pridėtinės vertės mokesčio įstatymas, consolidated text, e-seimas), art. 19(3), as amended by Law XV-287 of 17 June 2025 — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.163423/asr)_
 
-### 5.3 Reduced rate 5% — medicines, medical devices
+### 5.3 Reduced rate 5% — medicines, medical devices, periodicals, books
 
 - **Reduced rate 5%** — Reduced rate 5% — medicines, medical and disability aids, periodicals, books  _(Law on Value Added Tax IX-751 (Pridėtinės vertės mokesčio įstatymas, consolidated text, e-seimas), art. 19(4) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.163423/asr)_
 
