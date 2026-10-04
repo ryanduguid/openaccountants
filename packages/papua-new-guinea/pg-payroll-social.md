@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Papua New G
 jurisdiction: PG
 category: payroll
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Salary and wages tax (PAYE-equivalent)
 
 - **Salary and wages tax overview** — Employers withhold salary or wages tax (SWT) from employee pay using fortnightly tax tables and remit it to the IRC. SWT operates as PNG's pay-as-you-earn equivalent.
-- **Salary and wages tax (SWT)** — Employers must withhold SWT from employee salary/wages, assessed on a fortnightly basis regardless of actual pay frequency  _(Income Tax Act — https://taxsummaries.pwc.com/papua-new-guinea/individual/tax-administration)_
-- **SWT remittance deadline** — Remit deductions monthly — by the 7th day following the end of the month in which payment was made  _(Income Tax Act — https://taxsummaries.pwc.com/papua-new-guinea/corporate/other-taxes)_
-- **SWT rate range** — Withheld using the resident marginal rates (22% to 42%) applied to fortnightly tax tables %  _(Income Tax Act — https://taxsummaries.pwc.com/papua-new-guinea/individual/taxes-on-personal-income)_
+- **Salary and wages tax (SWT)** — Every fortnight the employer totals each employee's salary, wages, benefits and allowances, calculates the tax from the fortnightly tables and deducts it; the deduction finalises the employee's liability for that fortnight  _(Internal Revenue Commission, Salary and Wages Tax (rates from 1 January 2024) — https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax)_
+- **SWT remittance deadline** — Deductions are remitted monthly by the 7th of the following month; an employer who fails to remit pays a 20% penalty plus 20% a year calculated daily  _(Internal Revenue Commission, Key Tax Dates — https://irc.gov.pg/key-tax-dates ; Internal Revenue Commission, Salary and Wages Tax (rates from 1 January 2024) — https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax)_
+- **SWT rate range** — Resident tables: 0% to K20,000, then 30%, 35%, 40% and 42% above K250,000; non-resident tables start at 22% on the first K20,000 and follow the same upper bands  _(Internal Revenue Commission, Salary and Wages Tax (rates from 1 January 2024) — https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax ; Income Tax (Salary or Wages Tax) (Rates) (2025 Budget) (Amendment) Act 2024 (No. 18 of 2024), IRC copy — https://media.irc.gov.pg/2025/January/Mj8vk8-document-incometax-salaryorwagestaxratesact2024.pdf)_
 
 ## Superannuation contributions
 
