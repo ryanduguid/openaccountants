@@ -1,10 +1,10 @@
 ---
 name: azerbaijan-social-contributions
 description: Use this skill whenever asked about Azerbaijan employer/employee social contributions, payroll taxes, or salary withholding. Trigger on phrases like "Azerbaijan social insurance", "SSPF contributions", "DSMF", "how much social security do I pay in Azerbaijan", "Azerbaijan payroll tax", "mandatory health insurance Azerbaijan", "unemployment insurance Azerbaijan", "AZN salary net pay", "Azerbaijan income tax withholding", "non-oil/gas grace period", "PIT exemption AZN 8000", "what changes on 1 January 2026 in Azerbaijan", or any question about Azerbaijan employment-income contributions, the State Social Protection Fund, or the State Tax Service unified monthly declaration. Also trigger when classifying bank-statement transactions that relate to SSPF/DSMF debits, State Tax Service (taxes.gov.az) payments, mandatory health insurance, or salary payments in AZN from Azerbaijani banks (Kapital Bank, PASHA Bank, ABB / International Bank of Azerbaijan). This skill covers the two-track regime (non-oil/gas private sector grace period vs oil/gas & government standard rates), the 2025 social insurance / health / unemployment schedules, the confirmed 1 Jan 2026 changes, personal income tax withholding, filing forms, deadlines, penalties, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Azerbaijan payroll or social-contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: AZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Azerbaijan Social Contributions & Payroll Withholding
 
-## Azerbaijan Social Contributions & Payroll Withholding Skill v0.1
+## Azerbaijan Social Contributions & Payroll Withholding Skill v0.2
 
 > **Tier 2 (research-verified) skill. Confidence: medium.** Figures are corroborated primarily via PwC Worldwide Tax Summaries and a Mercans statutory alert; official authority sites (taxes.gov.az, dsmf.gov.az) are largely in Azerbaijani. A native-language review of the source laws is recommended before this skill is promoted to verified (Q1) status. Every figure below carries an inline citation or a `[RESEARCH GAP — reviewer to confirm]` marker.
 
@@ -309,7 +309,7 @@ When data is ambiguous or client circumstances are unclear, flag these situation
 
 ### T2-6 -- Penalties and late-payment interest
 
-- **T2-6** — **Trigger:** Client asks for the cost of late or incorrect filing. **Issue:** Secondary guides cite ~0.1%/day interest (capped around one year) and a ~10% understatement fine, but these are not from the Tax Code text. [RemotePeople — secondary] **Action:** Do not quantify. Escalate to a reviewer. `[RESEARCH GAP — reviewer to confirm against the Tax Code of Azerbaijan.]`
+- **T2-6** — **Trigger:** Client asks for the cost of late or incorrect filing. **Issue:** For taxes, the Tax Code sets late-payment interest at 0.1% of the unpaid amount per day (art. 59.1), limited to one year for amounts found in an audit (art. 59.2), a financial sanction of 50% of understated or evaded tax (art. 58.1) and AZN 40 for a return not filed by the deadline (art. 57.1); the ~10% fine quoted by secondary guides is not in those articles. Art. 56.1 carves mandatory social, unemployment and medical insurance contributions out of the Tax Code's limitation rule, so their arrears follow the social insurance legislation, which was not read. **Action:** quote the article for tax arrears; escalate for social-insurance arrears. `[RESEARCH GAP — reviewer to confirm the social-insurance penalty schedule.]`  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 56.1, 57.1, 58.1, 59.1 and 59.2 — https://e-qanun.az/framework/46948)_
 
 ## Section 7 -- Excel working paper template
 

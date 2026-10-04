@@ -1,10 +1,10 @@
 ---
 name: azerbaijan-income-tax
 description: Use this skill whenever asked about Azerbaijan personal income tax for individuals, employees, and self-employed individual entrepreneurs. Trigger on phrases like "how much income tax do I pay in Azerbaijan", "Azerbaijan payroll tax", "DSMF social insurance", "simplified tax regime", "individual entrepreneur tax", "private non-oil sector holiday", "oil and gas sector tax", "annual income tax return Azerbaijan", "AZN withholding", "compulsory medical insurance", "unemployment insurance contribution", "taxes.gov.az", or any question about computing, withholding, or filing personal income tax in the Republic of Azerbaijan. Also trigger when classifying AZN bank-statement lines for an individual entrepreneur, computing payroll deductions, or advising on the 2025 holiday regime versus the 2026 progressive reform. This skill covers personal income tax brackets (private non-oil, oil/gas/public, 2026 reform), DSMF/UIC/medical contributions, the simplified-tax regime, micro-entrepreneur exemptions, filing deadlines, and penalties. ALWAYS read this skill before touching any Azerbaijan income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: AZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Azerbaijan Income Tax -- Individuals & Self-Employed
 
-## Azerbaijan Income Tax -- Individuals & Self-Employed Skill v0.1
+## Azerbaijan Income Tax -- Individuals & Self-Employed Skill v0.2
 
 > **CONFIDENCE: MEDIUM.** Several figures rely on Big-4 (PwC) and reputable local-firm summaries rather than direct extraction from the Azeri-language Tax Code, and the figures span a major regime change at 1 January 2026 (the 7-year private non-oil holiday expired 31 December 2025). Items marked **[RESEARCH GAP — reviewer to confirm]** must be reconfirmed against the official portal at [taxes.gov.az](https://www.taxes.gov.az/en) before any return is filed.
 
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 31 March of the following year (annual return) [PwC] |
 | Validated by | Pending — requires sign-off by an Azerbaijani tax professional |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Personal Income Tax Brackets — 2025 (current tax year)
 
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 *Example: AZN 10,000/month → 14% × (10,000 − 8,000) = AZN 280.*
 
-**Oil/gas sector and government/public sector employees (also the standard rate after the holiday ends) [PwC]**  _(PwC)_
+**Oil/gas sector and government/public sector employees (also the standard rate after the holiday ends)**  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 101.1 — https://e-qanun.az/framework/46948 ; https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income)_
 
 | Monthly income (AZN) | Rate | Cumulative tax at top |
 | --- | --- | --- |
@@ -61,7 +61,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Personal Income Tax Brackets — 2026 (CONFIRMED REFORM)
 
-**Private non-oil/non-gas sector employees — NEW progressive regime, effective 1 Jan 2026 [Mercans]**  _(Mercans)_
+**Private non-oil/non-gas sector employees — progressive regime for 1 January 2026 to 1 January 2027**  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 101.1-1.1 — https://e-qanun.az/framework/46948 ; Mercans)_
 
 | Monthly income (AZN) | Rate | Cumulative tax at top |
 | --- | --- | --- |
@@ -69,10 +69,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 2,501 -- 8,000 | 10% | AZN 625 |
 | above 8,000 | 14% of the amount exceeding 8,000 | — |
 
-*The lowest band rises to 5% in 2027 and 7% from 2028.* [Mercans]
+*Art. 101.1-1.2 sets the 2027 table at 5% up to AZN 2,500, AZN 125 plus 10% from 2,500 to 8,000 and AZN 675 plus 14% above 8,000; Mercans reports 7% for the lowest band from 2028.*
 *Example: AZN 5,000/month → (3% × 2,500) + (10% × 2,500) = 75 + 250 = AZN 325.*
 
-> **2026 transition note.** From 1 Jan 2026 the holiday ends; **no income is fully exempt** for private non-oil employees. Apply the 3%/10%/14% schedule above. The interaction of the new progressive regime with the AZN 200/month personal exemption (Section 1, below) is **[RESEARCH GAP — reviewer to confirm]** against the published 2026 Tax Code text.
+> **2026 transition note.** From 1 Jan 2026 the holiday ends; **no income is fully exempt** for private non-oil employees. Apply the 3%/10%/14% schedule above (Tax Code art. 101.1-1.1). The interaction of the new progressive regime with the AZN 200/month personal exemption (Section 1, below) is **[RESEARCH GAP — reviewer to confirm]** against the published 2026 Tax Code text.
 
 ### Self-Employed / Individual Entrepreneur Regimes — 2025
 
@@ -126,7 +126,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-AZ-2** — "Self-employed / individual-entrepreneur social-insurance percentages are activity- and region-dependent and are not published in authoritative secondary sources. [RESEARCH GAP — reviewer to confirm.] Escalate to an Azerbaijani tax professional for the exact rate."  _(R-AZ-2 -- Self-employed social insurance)_
 - **R-AZ-3** — "This skill covers individuals and individual entrepreneurs only. Legal entities pay 20% corporate profit tax and file separately. Escalate to an Azerbaijani tax professional."  _(R-AZ-3 -- Companies and partnerships)_
 - **R-AZ-4** — "Non-residents are taxed only on Azerbaijan-source income and withholding rates differ (dividends 5%, interest 10%, rent/royalties 14%, non-resident no-PE income generally 10%). Treaty analysis is out of scope. Escalate to an Azerbaijani tax professional."  _(R-AZ-4 -- Non-resident / cross-border income)_
-- **R-AZ-5** — "Client has outstanding tax arrears or is subject to State Tax Service enforcement. Late-payment interest accrues at 0.1%/day and an understatement sanction of 50% of the underreported tax may apply (Article 58). Do not advise. Escalate immediately."  _(R-AZ-5 -- Arrears / enforcement)_
+- **R-AZ-5** — "Client has outstanding tax arrears or is subject to State Tax Service enforcement. Late-payment interest accrues at 0.1% of the unpaid tax per day (art. 59.1), limited to one year for amounts found in an audit (art. 59.2); a financial sanction of 50% of understated or evaded tax applies (art. 58.1) and AZN 40 for a return not filed by the deadline (art. 57.1). Do not advise. Escalate immediately."  _(R-AZ-5 -- Arrears / enforcement ; Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 57.1, 58.1, 59.1 and 59.2 — https://e-qanun.az/framework/46948)_
 - **R-AZ-6** — "This skill covers personal income tax only. For Azerbaijan VAT (standard rate 18%, registration at AZN 200,000), use a dedicated VAT skill."  _(R-AZ-6 -- VAT return requested)_
 
 ## Section 3 -- Transaction Pattern Library
@@ -447,7 +447,7 @@ Self-check: at exactly AZN 8,000, 2% × 8,000 = AZN 160 — so the AZN 160 base 
 
 ### 6.2 Simplified vs General Regime Choice
 
-- **Simplified vs general regime choice** — - Simplified (2% of turnover) requires turnover ≤ AZN 200,000 and no VAT registration; certain activities are excluded. - General regime (20% of net profit) allows expense deductions but adds VAT obligations above AZN 200,000. - **Flag for reviewer:** confirm the entrepreneur's activity is eligible for simplified tax and that the rate (2% vs a possible Baku rate) is correct **[RESEARCH GAP — reviewer to confirm]**.
+- **Simplified vs general regime choice** — - Simplified (2% of receipts from goods, works and services and of non-sales income, art. 220.1) requires taxable transactions of AZN 200,000 or less in every month of a consecutive 12-month period and no VAT registration (art. 218.1.1); certain activities are excluded (art. 218.4). The 4% Baku rate quoted by older secondary sources is no longer in the Code. - General regime (20% of net profit for individual entrepreneurs, art. 101.3) allows expense deductions but adds VAT obligations above AZN 200,000 (art. 155.1). - **Flag for reviewer:** confirm the entrepreneur's activity is eligible for the simplified tax.  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 101.3, 218.1.1 and 220.1 — https://e-qanun.az/framework/46948 ; https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income)_
 
 ### 6.3 Home Office Deduction (general-regime entrepreneur)
 
@@ -463,7 +463,7 @@ Self-check: at exactly AZN 8,000, 2% × 8,000 = AZN 160 — so the AZN 160 base 
 
 ### 6.6 Depreciation of Capital Assets
 
-- **Depreciation of capital assets** — - Capital assets must be depreciated rather than expensed in full. - **The exact Tax Code depreciation rates by asset class are [RESEARCH GAP — reviewer to confirm]** — do not state a rate without confirmation. - **Flag for reviewer:** confirm the applicable depreciation method and rate per the Tax Code.
+- **Depreciation of capital assets** — - Capital assets are depreciated rather than expensed in full, at annual rates not exceeding the Tax Code ceilings: buildings, structures and capitalised land improvements 7%; machinery and equipment 20%; high-technology computing equipment 25%; vehicles 25%; working animals 20%; geological exploration and pre-production costs 25%; intangible assets 10% where the useful life is unknown, otherwise in proportion to the useful life; other fixed assets 20% (art. 114.3). - **Flag for reviewer:** confirm the asset class and that the taxpayer applies the method art. 114 prescribes for that class.  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 114.3 — https://e-qanun.az/framework/46948)_
 
 ### 6.7 2025/2026 Regime Boundary
 

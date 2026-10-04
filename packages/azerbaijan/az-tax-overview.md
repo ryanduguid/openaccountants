@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Azerbaijan (tax year 2025) �
 jurisdiction: AZ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Basis of taxation** — Residents taxed on worldwide income; non-residents on Azerbaijan-source income only  _(Tax Code of the Republic of Azerbaijan, https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income)_
 - **Individual residence test** — An individual present in Azerbaijan for more than 182 days in a calendar year is treated as resident days  _(Tax Code of the Republic of Azerbaijan, https://taxsummaries.pwc.com/azerbaijan/individual/residence)_
 - **Headline personal income tax (standard regime)** — 14% up to AZN 2,500/month; AZN 350 + 25% on the excess above AZN 2,500/month percent (standard regime)  _(Tax Code of the Republic of Azerbaijan, https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income)_
-- **Non-oil private sector PIT exemption (2019-2025)** — 0% on monthly salary up to AZN 8,000; 14% on the excess (seven-year preferential regime, expires 31 Dec 2025) ((approx — confirm) preferential regime ends 31 Dec 2025; standard bands resume 2026) percent (non-oil private sector, 2019-2025 preferential regime)  _(Tax Code of the Republic of Azerbaijan, https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income)_
+- **Non-oil private sector PIT exemption (2019-2025)** — 0% on monthly salary up to AZN 8,000 and 14% on the excess for 2019 to 2025. From 1 January 2026 the non-oil, non-gas private sector pays 3% up to AZN 2,500, AZN 75 plus 10% from 2,500 to 8,000 and AZN 625 plus 14% above 8,000 (art. 101.1-1.1, to 1 January 2027; art. 101.1-1.2 moves the lowest band to 5% for 2027); other employees pay 14% up to AZN 2,500 and AZN 350 plus 25% above (art. 101.1)  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 101.1 and 101.1-1 — https://e-qanun.az/framework/46948 ; https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income)_
 - **Headline corporate profit tax rate** — 20% percent percent  _(Tax Code of the Republic of Azerbaijan, https://taxsummaries.pwc.com/azerbaijan/corporate/taxes-on-corporate-income)_
 - **VAT in force** — Yes — standard VAT rate is 18% percent percent  _(Tax Code of the Republic of Azerbaijan, https://taxsummaries.pwc.com/Azerbaijan/Corporate/Other-taxes)_
 - **Annual profit tax return deadline** — 31 March of the year following the tax year  _(Tax Code of the Republic of Azerbaijan, https://taxsummaries.pwc.com/azerbaijan/corporate/tax-administration)_
