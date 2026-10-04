@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for United A
 jurisdiction: AE
 category: formation
 tax_year: 2025
-version: 0.1
-last_updated: 2026-09-10
+version: 0.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,10 +15,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Entity types, capital and incorporation
 
-- **Mainland LLC** — Limited Liability Company licensed by the Emirate's Department of Economic Development (DED); 100% foreign ownership now permitted for most commercial/industrial activities  _(Federal Decree-Law No. 32 of 2021 (Commercial Companies Law) (as described at [uae.acclime.com](https://uae.acclime.com/guides/limited-liability-company/)))_
+- **Mainland LLC** — Limited Liability Company licensed by the Emirate's Department of Economic Development (DED); 100% foreign ownership now permitted for most commercial/industrial activities  _(Federal Decree-Law No. 32 of 2021 on Commercial Companies, Ministry of Economy copy, Art. 71 — https://www.moet.gov.ae/documents/20121/376326/Commercial+Companies.pdf/12d14f53-1a3e-47b4-8e70-fac3f672c403?t=1645596097819 ; Acclime, Limited liability company guide (foreign ownership practice) — https://uae.acclime.com/guides/limited-liability-company/)_
 - **Free zone entity** — FZ-LLC / FZE (single shareholder) / FZCO (multiple shareholders) registered with the relevant free zone authority; allows 100% foreign ownership  _([Relevant Free Zone Authority regulations](https://uae.acclime.com/guides/free-zone-limited-liability-company/))_
 - **Other entity types** — Sole establishment, civil company (professionals), private/public joint stock company (PJSC/PrJSC), and branch of a foreign company  _(Federal Decree-Law No. 32 of 2021 (Commercial Companies Law))_
-- **Mainland LLC minimum share capital** — No fixed statutory minimum — capital must be adequate for the activity; in practice often set at AED 150,000 to AED 300,000 depending on activity/Emirate AED (approx — confirm with the relevant DED) AED (approx — confirm with the relevant DED)  _(Federal Decree-Law No. 32 of 2021 (Commercial Companies Law) (as described at [uae.acclime.com](https://uae.acclime.com/guides/limited-liability-company/)))_
+- **Mainland LLC minimum share capital** — No fixed statutory minimum: the company must have capital sufficient to achieve its object, made up of shares of equal value and paid in full on incorporation, unless the Cabinet sets a minimum; in practice founders often set AED 150,000 to AED 300,000 depending on activity and Emirate (approx) AED  _(Federal Decree-Law No. 32 of 2021 on Commercial Companies, Ministry of Economy copy, Art. 76 (1) and (2) — https://www.moet.gov.ae/documents/20121/376326/Commercial+Companies.pdf/12d14f53-1a3e-47b4-8e70-fac3f672c403?t=1645596097819)_
 - **Free zone minimum share capital** — Varies by free zone — many require no minimum, others range from about AED 1,000 to AED 50,000 depending on activity AED (approx — confirm with the specific free zone authority) AED (approx — confirm with the specific free zone authority)  _([Relevant Free Zone Authority regulations](https://uae.acclime.com/guides/free-zone-limited-liability-company/))_
 - **Incorporation steps** — Reserve trade name and get initial approval; draft and notarise the Memorandum of Association; secure a lease/office (Ejari for mainland); submit documents and obtain the trade licence; then register for corporate tax and (if applicable) VAT with the FTA  _([Federal Decree-Law No. 32 of 2021 (Commercial Companies Law); relevant DED / Free Zone procedures](https://www.moet.gov.ae/en/establishing-companies))_
 - **Typical timeline** — Roughly 1 to 4 weeks depending on activity, authority and document readiness (approx — confirm)  _([Ministry of Economy & Tourism — Establishing Companies](https://www.moet.gov.ae/en/establishing-companies))_

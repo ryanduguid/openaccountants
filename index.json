@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T20:40:10+00:00",
+ "generated_at": "2026-10-04T20:53:59+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -20505,7 +20505,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ae-corporate-tax",
@@ -20531,7 +20531,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ae-payroll-social",
@@ -20544,7 +20544,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ae-tax-overview",
@@ -20557,7 +20557,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "ae-tax-residency",
