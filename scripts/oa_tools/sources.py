@@ -152,6 +152,8 @@ NON_GOV_AUTHORITY = frozenset((
                           # Ministry of Economy under Ley 20.659. Bare .cl.
     'napsa.co.zm',        # National Pension Scheme Authority, Zambia's statutory
                           # pension body, which publishes the contribution rules. Bare .zm.
+    'likumi.lv',          # Likumi.lv, the Republic of Latvia's official consolidated
+                          # legislation portal run by the official publisher Latvijas Vestnesis.
     'mra.mw',             # Malawi Revenue Authority
     'dgi.bf',             # Burkina Faso, Direction Generale des Impots
     'impots.cm',          # Cameroon, Direction Generale des Impots

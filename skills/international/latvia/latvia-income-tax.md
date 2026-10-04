@@ -1,10 +1,10 @@
 ---
 name: latvia-income-tax
 description: Use this skill whenever asked about Latvia personal income tax (iedzīvotāju ienākuma nodoklis, IIN) for employees, self-employed / economic-activity individuals, pensioners, or capital-income recipients. Trigger on phrases like "how much income tax do I pay in Latvia", "Latvia PIT rate", "gada ienākumu deklarācija", "annual income declaration", "non-taxable minimum", "neapliekamais minimums", "VSAOI", "social contributions Latvia", "solidarity tax", "solidaritātes nodoklis", "micro-enterprise tax", "mikrouzņēmuma nodoklis", "MET", "economic activity registration", "capital gains Latvia", "dividend tax Latvia", "self-employed Latvia tax", "EDS", or any question about filing or computing Latvian personal income tax. Also trigger when preparing or reviewing a Latvian annual income declaration (form GID), a capital-gains return (GD/GDz), or a monthly payroll computation, computing the fixed non-taxable minimum and allowances, or advising on VSAOI / solidarity tax interaction. This skill covers the 25.5% / 33% progressive PIT, the +3% high-income surtax, the fixed non-taxable minimum and allowances, VSAOI rates and bases, the solidarity tax, the micro-enterprise tax regime, capital-income tax, penalties, and the interaction with VAT and social insurance. ALWAYS read this skill before touching any Latvian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: LV
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Latvia Personal Income Tax
 
-## Latvia Personal Income Tax -- Skill v0.1
+## Latvia Personal Income Tax -- Skill v0.2
 
 > **Tier 2 (research-verified).** Figures are sourced to VID, VSAA, the Ministry of Finance (FM), the Cabinet of Ministers, and Big-4 / Orbitax secondary guides, and are mutually consistent. They have **not** yet been signed off by a Latvian-qualified tax adviser. Items marked **[RESEARCH GAP — reviewer to confirm]** require human confirmation before filing.
 
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual return deadline | 1 March -- 1 June of the following year; 1 April -- 1 July if annual income exceeds EUR 105,300 (PwC) |
 | Validated by | Pending — requires sign-off by a Latvian-qualified tax adviser |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### PIT Rate Brackets (2025 -- annual reconciliation)
 
@@ -52,8 +52,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **PIT withholding mechanics** — PIT is progressive at annual reconciliation. Monthly payroll is withheld at the flat 25.5%; the 33% and +3% bands are settled through the annual income declaration.  _(VID, https://www.vid.gov.lv/en/personal-income-tax-rates)_
 - **PIT rate up to EUR 105,300** — 25.5% (on annual income up to EUR 105,300)  _(VID, https://www.vid.gov.lv/en/personal-income-tax-rates)_
-- **PIT rate above EUR 105,300** — 33% (on the portion of annual income above EUR 105,300)  _(PwC, https://taxsummaries.pwc.com/latvia/individual/taxes-on-personal-income)_
-- **High-income surtax** — An additional +3% surtax on the portion of total annual income exceeding EUR 200,000, on top of the 33% rate. PwC notes this first applies via the 2026 tax return (i.e. on 2025 income reconciled in 2026). [RESEARCH GAP — reviewer to confirm] the exact first-application year for payroll vs annual reconciliation.  _(VID)_
+- **PIT rate above EUR 105,300** — 33% on the portion of annual income above the maximum social insurance contribution object (EUR 105,300 for 2025)  _(Law On Personal Income Tax (Par iedzīvotāju ienākuma nodokli), consolidated text on likumi.lv, 15. pants (2) 2) — https://likumi.lv/ta/id/56880#p15 ; Law On State Social Insurance (Par valsts sociālo apdrošināšanu), consolidated text on likumi.lv, 14. pants (5) — https://likumi.lv/ta/id/45466#p14)_
+- **High-income surtax** — An additional 3% rate on the amount by which total annual income (including capital income and exempt dividends) exceeds EUR 200,000, assessed only in the annual reconciliation and never in monthly payroll. Introduced by the amendments of 4 December 2024 and applied from the 2025 taxation year, so it first appears in the 2025 declaration filed in 2026  _(Law On Personal Income Tax (Par iedzīvotāju ienākuma nodokli), consolidated text on likumi.lv, 15.1 pants and transitional provision 202 — https://likumi.lv/ta/id/56880#p15)_
 - **Cumulative-tax check** — at EUR 105,300 → 105,300 × 25.5% = 26,851.50. At EUR 200,000 → 26,851.50 + (200,000 − 105,300) × 33% = 26,851.50 + 94,700 × 33% = 26,851.50 + 31,251.00 = 58,102.50.
 - **No separate personal allowance band** — Latvia has no separate tax-free "personal allowance" band — the fixed non-taxable minimum (below) is deducted from the PIT base instead.
 
@@ -351,7 +351,7 @@ All examples use the 2025 figures: PIT 25.5%, fixed non-taxable minimum EUR 510/
 
 ### 5.4 Capital Income
 
-- **Capital Income** — Dividends, interest, and capital gains are taxed at a flat 25.5% for 2025 (increased from 20% in 2024). Dividends already subject to Latvian CIT are exempt from PIT (PwC, https://taxsummaries.pwc.com/latvia/individual/taxes-on-personal-income).  _(PwC, https://taxsummaries.pwc.com/latvia/individual/taxes-on-personal-income)_
+- **Capital Income** — Dividends, interest and capital gains are taxed at a flat 25.5% for 2025 (up from 20% in 2024). Dividends on which Latvian corporate income tax has been paid at company level are exempt from PIT, and dividends paid under the 2026 alternative corporate regime bear 6%  _(Law On Personal Income Tax (Par iedzīvotāju ienākuma nodokli), consolidated text on likumi.lv, 15. pants (5) and (5.1), 9. pants (1) 2.1) punkts — https://likumi.lv/ta/id/56880#p15)_
 
 ### 5.5 Mandatory Social Insurance (VSAOI)
 
@@ -371,7 +371,7 @@ All examples use the 2025 figures: PIT 25.5%, fixed non-taxable minimum EUR 510/
 
 ### 5.7 Solidarity Tax
 
-- **Solidarity Tax** — Applies to income above the EUR 105,300 social-insurance cap. Charged at 34.09% during the year and recalculated to an effective 25%, with the over-collected amount above 25% refunded to the employer by 1 September of the following year (Grant Thornton, https://www.grantthornton.lv/en/insights/key-tax-rates-in-latvia-2025/). It replaces uncapped social contributions for high earners.  _(Grant Thornton, https://www.grantthornton.lv/en/insights/key-tax-rates-in-latvia-2025/)_
+- **Solidarity Tax** — Applies to income above the EUR 105,300 maximum contribution object. Employers, employees and the self-employed pay it during the year at the ordinary contribution rate (34.09% for a standard employee) while the statutory rate is 25%, so the State Revenue Service refunds the overpaid difference to the taxpayer by 1 September of the following year. It replaces uncapped social contributions for high earners  _(Solidarity Tax Law (Solidaritātes nodokļa likums), consolidated text on likumi.lv, 3., 5., 6.1 and 6.2 pants — https://likumi.lv/ta/id/278636#p3)_
 
 ### 5.8 Minimum Wage and Minimum Contributions
 
