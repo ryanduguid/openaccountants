@@ -3,7 +3,8 @@ name: cd-company-formation
 description: "Source-cited draft: company formation & entity choice for DR Congo (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CD
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 category: formation
 tier: 2
@@ -68,7 +69,7 @@ Company law in the DRC follows the OHADA Uniform Act on Commercial Companies, wi
 - **Registered office** — A physical registered office address in the DRC is mandatory and must be evidenced to GUCE  _([OHADA Acte uniforme relatif au droit des sociétés commerciales](https://www.expanship.com/cd/blog/incorporation-requirements-in-democratic-republic-of-the-congo))_
 - **Incorporation timeline** — Officially about 3 days via GUCE; in practice allow 1–2 weeks (approx — confirm)  _([Décret instituant le Guichet Unique de Création d'Entreprise](https://www.expanship.com/cd/blog/incorporation-requirements-in-democratic-republic-of-the-congo))_
 - **Core registrations on formation** — RCCM (commercial register), tax number (NIF) with the DGI, and INSS social-security registration (approx — confirm)  _(OHADA Acte uniforme relatif au droit des sociétés commerciales)_
-- **Core annual compliance** — Annual financial statements (OHADA SYSCOHADA), CIT return by 30 April, monthly VAT and payroll returns  _([OHADA Acte uniforme relatif au droit comptable (SYSCOHADA)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/tax-administration))_
+- **Core annual compliance** — Annual financial statements under OHADA SYSCOHADA; the IS return by 30 April with three instalments during the year; monthly VAT returns by the 15th of the following month; monthly IPR and IERE returns within 15 days after the month of payment  _(DGI, dépliant Impôt sur les sociétés (October 2025) — https://dgi.gouv.cd/wp-content/uploads/2025/10/DEPLIANT-IS-BON.pdf ; Code des impôts mis à jour au 10 juillet 2023, Direction Générale des Impôts, TVA, art 60 — https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf ; DGI, dépliant IPR et IERE (August 2025) — https://dgi.gouv.cd/wp-content/uploads/2025/10/IPR.pdf)_
 
 <!-- openaccountants-cta-block -->
 

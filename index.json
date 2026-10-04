@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T16:27:50+00:00",
+ "generated_at": "2026-10-04T16:33:12+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -7323,7 +7323,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-11"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cd-corporate-income-tax",
@@ -7335,8 +7335,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cd-income-tax",
@@ -7348,8 +7348,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cd-payroll-social",
@@ -7362,7 +7362,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cd-tax-overview",
@@ -7374,8 +7374,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "tax_year": "2026",
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cd-vat-gst",

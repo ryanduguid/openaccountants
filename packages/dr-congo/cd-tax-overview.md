@@ -1,11 +1,11 @@
 ---
 name: cd-tax-overview
-description: "Source-cited draft: tax overview for DR Congo (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: tax overview for DR Congo (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CD
 category: international
-tax_year: 2025
-version: 0.1
-last_updated: 2026-09-10
+tax_year: 2026
+version: 0.2
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -37,13 +37,13 @@ The Democratic Republic of the Congo levies tax on a territorial (source) basis,
 - **Currency** — Congolese franc (CDF)  _(Code Général des Impôts (RDC))_
 - **Tax year** — Calendar year, 1 January to 31 December  _([Code Général des Impôts (RDC)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/tax-administration))_
 - **Basis of taxation** — Territorial — income is taxed where it is sourced; foreign-source profits are generally not taxed in the DRC  _([Code Général des Impôts (RDC)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/individual/taxes-on-personal-income))_
-- **Headline corporate income tax rate** — 30 percent  _([Code Général des Impôts (RDC)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/taxes-on-corporate-income))_
-- **Top personal income tax (IPR) rate on salaries** — 40% (statutory top band), but IPR cannot exceed 30% of taxable salary percent  _([Code des Impôts sur les Revenus (IPR)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/individual/taxes-on-personal-income))_
+- **Headline corporate income tax rate** — 30% of net taxable profit under the impôt sur les sociétés (IS) in force from 1 January 2026; the impôt professionnel sur les bénéfices et profits it replaces was also 30%  _(Loi n° 23/053 du 30 novembre 2023 relative à l'impôt sur les sociétés et à l'impôt sur le revenu des personnes physiques (Journal officiel, 29 December 2023; in force 1 January 2026), DGI copy, art 56 — https://dgi.gouv.cd/wp-content/uploads/2025/09/loi-is-et-Irpp.pdf ; DGI, dépliant Impôt sur les sociétés (October 2025) — https://dgi.gouv.cd/wp-content/uploads/2025/10/DEPLIANT-IS-BON.pdf ; Code des impôts mis à jour au 10 juillet 2023, Direction Générale des Impôts, impôt professionnel sur les bénéfices et profits, art 83 — https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf)_
+- **Top personal income tax (IPR) rate on salaries** — 40% on the band above CDF 43,200,000, but the tax cannot exceed 30% of taxable income  _(Loi n° 23/053 du 30 novembre 2023 relative à l'impôt sur les sociétés et à l'impôt sur le revenu des personnes physiques (Journal officiel, 29 December 2023; in force 1 January 2026), DGI copy, art 118 — https://dgi.gouv.cd/wp-content/uploads/2025/09/loi-is-et-Irpp.pdf ; Code des impôts mis à jour au 10 juillet 2023, Direction Générale des Impôts, impôt professionnel sur les rémunérations, art 84 — https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf ; DGI, dépliant IPR et IERE (August 2025) — https://dgi.gouv.cd/wp-content/uploads/2025/10/IPR.pdf)_
 - **Does VAT (TVA) exist?**: Yes: standard rate **16%**, reduced rate **8%** (a tariff-line schedule of foodstuffs, plus domestic air tickets), zero rate on exports. See `cd-vat-gst`  _(Ordonnance-Loi n° 10/001 du 20 août 2010, art. 35, as amended by L.F. n° 21/029 du 31 décembre 2021 and n° 22/071 du 28 décembre 2022: https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf)_
-- **Annual corporate income tax return deadline** — 30 April of the following year  _([Code Général des Impôts (RDC)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/tax-administration))_
+- **Annual corporate income tax return deadline** — 30 April of the year following the year in which the income was earned, with the balance of the IS paid on filing  _(DGI, dépliant Impôt sur les sociétés (October 2025) — https://dgi.gouv.cd/wp-content/uploads/2025/10/DEPLIANT-IS-BON.pdf ; DGI, Impôt sur les sociétés — https://dgi.gouv.cd/impot-sur-les-societes/)_
 - **Annual personal income tax recapitulative return deadline** — 30 March of the following year  _([Code des Impôts sur les Revenus (IPR)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/individual/tax-administration))_
 - **VAT return frequency and deadline**: Monthly, *"au plus tard le quinze du mois qui suit celui de la réalisation des opérations"*: filed **in duplicate**, **with payment**, and required even for a nil month (marked *« Néant »*)  _(Ordonnance-Loi n° 10/001 du 20 août 2010, art. 60: https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf)_
-- **Minimum corporate tax** — 1% of yearly turnover (companies other than micro and small) percent  _([Code Général des Impôts (RDC)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/taxes-on-corporate-income))_
+- **Minimum corporate tax** — 1% of declared turnover where the result is a loss or the profit would give tax below that amount (companies outside the micro and small enterprise regimes)  _(Loi n° 23/053 du 30 novembre 2023 relative à l'impôt sur les sociétés et à l'impôt sur le revenu des personnes physiques (Journal officiel, 29 December 2023; in force 1 January 2026), DGI copy, art 57 — https://dgi.gouv.cd/wp-content/uploads/2025/09/loi-is-et-Irpp.pdf ; DGI, dépliant Impôt sur les sociétés (October 2025) — https://dgi.gouv.cd/wp-content/uploads/2025/10/DEPLIANT-IS-BON.pdf)_
 
 <!-- openaccountants-cta-block -->
 
