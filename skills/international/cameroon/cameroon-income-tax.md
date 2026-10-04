@@ -1,7 +1,7 @@
 ---
 name: cameroon-income-tax
 description: Use this skill whenever asked about Cameroon personal income tax (IRPP) for salaried or self-employed individuals. Trigger on phrases like "how much income tax do I pay in Cameroon", "IRPP", "impot sur le revenu", "CNPS contributions", "PAYE Cameroon", "IGS", "Impot General Synthetique", "Centre de Gestion Agree", "CGA", "barème IRPP", "Credit Foncier", "FNE", "monthly salary tax Cameroon", "net taxable income", "minimum tax", or any question about filing or computing income tax for a salaried or self-employed client in Cameroon. Also trigger when preparing or reviewing a monthly PAYE return, the annual recapitulative declaration, the DIPE employer summary, computing CNPS social security, or advising on the IGS/actual-earnings turnover regimes. This skill covers the progressive IRPP scale (CAC-inclusive), CNPS branches, Credit Foncier/FNE, council tax and CRTV royalty, the IGS small-business regime, filing deadlines, and penalties. ALWAYS read this skill before touching any Cameroon income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: CM
 tax_year: 2025
 last_updated: 2026-10-04
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual declaration deadline | 31 July / 30 September / 31 October depending on taxpayer class (see 5.10) [PwC] |
 | Validated by | Live status: https://openaccountants.com/skills/cameroon-income-tax |
 | Validation date | Live status: https://openaccountants.com/skills/cameroon-income-tax |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### IRPP Rate Brackets (2025) -- CAC-inclusive scale
 
@@ -67,7 +67,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Residency scope** — Residents (fiscal domicile in Cameroon) are taxed on worldwide income.  _([PwC -- income-determination])_
 - **Net salary base** — Net salary base = gross salary, less a standard 30% lump-sum deduction for professional expenses, less mandatory social contributions (CNPS employee portion).  _([PwC -- income-determination])_
 
-[RESEARCH GAP -- reviewer to confirm] the exact mechanics, ordering, and any cap on the 30% professional-expense deduction against the current General Tax Code; the 30% figure is the standard PwC-reported figure but the statutory wording/cap was not transcribed.
+Statutory wording (CGI art. 34, 2022 consolidated edition, the latest full edition the DGI publishes online: https://www.impots.cm/sites/default/files/documents/CGI%202022.pdf): net taxable income is the gross sums paid plus the benefits in kind or in cash granted, less professional expenses computed at a flat 30% and less the contributions paid to the State and to the CNPS for compulsory retirement. The article sets no cap on the 30% deduction and no ordering rule beyond deducting both amounts from the gross. The 2023 to 2025 finance laws were not checked against this article; the Finance Law 2026 explanatory statement (https://www.dgb.cm/wp-content/uploads/2025/12/Expose-des-Motifs_LF-2026_fr.pdf) lists no amendment to it.
 
 ### Conservative Defaults
 
@@ -234,7 +234,7 @@ Reasoning:
 - Turnover XAF 12,000,000 is below XAF 50,000,000, so the taxpayer falls under the IGS (Impot General Synthetique) synthetic regime, not actual-earnings. [openhubdigital 2025 Finance Law]
 - Worked figure from the authority example: turnover XAF 12,000,000 -> IGS XAF 500,000; as a CGA member the rate is halved to XAF 250,000. [cga.inov.cm IGS 2025 example]
 - IGS is declared and paid quarterly within 15 days of each quarter-end.
-- [RESEARCH GAP -- reviewer to confirm] the full IGS rate/band table (published only as an image in the secondary source) against the 2025 Code General des Impots (impots.cm/en/node/1212) or the 2025 Finance Law circular.
+- The IGS was created by Loi n° 2024/020 of 23 December 2024 on local taxation, in force from 1 January 2025, with ten turnover classes. The Finance Law 2026 explanatory statement (https://www.dgb.cm/wp-content/uploads/2025/12/Expose-des-Motifs_LF-2026_fr.pdf, December 2025) records the 2025 annual tariffs of FCFA 1,000,000 for class 9 and FCFA 2,000,000 for class 10, proposes cutting them to FCFA 750,000 and FCFA 1,000,000, sets the annual return date at 15 April and requires a SYSCOHADA-compliant DSF from FCFA 10,000,000 of turnover. [RESEARCH GAP -- reviewer to confirm] the full class table against the text of Loi n° 2024/020, which is not published online; the impots.cm page for the 2025 code (node/1212) returned 404 on 4 October 2026.
 
 Classification: Annual IGS = XAF 250,000 (CGA-reduced), paid quarterly. Minimum tax does not apply under IGS.
 
@@ -268,7 +268,7 @@ Classification: EXCLUDE.
 
 - **Salary IRPP Base** — Net taxable salary = gross salary - 30% lump-sum professional-expense deduction - mandatory CNPS employee contributions, rounded down to the nearest XAF 1,000, then the progressive scale in Section 1.  _([PwC -- income-determination; taxes-on-personal-income])_
 
-[RESEARCH GAP -- reviewer to confirm] the exact statutory mechanics and any cap on the 30% deduction.
+Statutory basis: CGI art. 34 (2022 consolidated edition): the flat 30% professional expenses and the compulsory CNPS retirement contributions are both deducted from the gross sums paid and benefits granted, with no cap; see the salary income determination note above for the edition checked.
 
 ### 5.3 Progressive Scale (CAC-inclusive)
 

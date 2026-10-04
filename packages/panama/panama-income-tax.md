@@ -1,10 +1,10 @@
 ---
 name: panama-income-tax
 description: Use this skill whenever asked about Panama personal income tax (ISR — Impuesto sobre la Renta) for individuals, self-employed persons, or payroll. Trigger on phrases like "how much income tax do I pay in Panama", "Panama ISR", "declaración jurada de rentas", "income tax return Panama", "allowable deductions Panama", "CSS contributions", "Caja de Seguro Social", "seguro educativo", "territorial taxation", "Panama-source income", "self-employed CSS Law 462", "décimo tercer mes", "estimated tax instalments", "DGI filing", "non-resident withholding Panama", or any question about filing or computing personal income tax or social security for an individual or self-employed client in Panama. Also trigger when classifying a Panamanian bank statement, computing CSS/educational-insurance payroll deductions, or advising on the 15 March filing deadline. This skill covers the progressive ISR brackets, personal deductions, CSS + educational insurance under Law 462 of 2025, filing deadlines, estimated tax, penalties, minimum wage, and the territorial source rule. ALWAYS read this skill before touching any Panama income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: PA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Alternate minimum tax for individuals | None (PwC, taxes-on-personal-income) |
 | Validated by | Pending — requires sign-off by a Panamanian licensed accountant (CPA) |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Income Tax Rate Brackets (tax year 2025)
 
@@ -531,7 +531,7 @@ ONBOARDING QUESTIONS — PANAMA INCOME TAX
 | Law 462 of 2025 (CSS reform) — highlights | Fábrega Molino: https://fmm.com.pa/panama-social-security-reform-2025-key-highlights-of-law-no-462/ |
 | Law 462 of 2025 — employer phased rates & self-employed | Morgan & Morgan: https://morimor.com/law-no-462-of-march-18-2025-key-reforms-to-the-social-security-fund-css-of-panama/ |
 | Self-employed CSS obligations | Pension Policy International: https://www.pensionpolicyinternational.com/panama-la-ley-462-de-la-css-beneficios-y-nuevas-obligaciones-a-trabajadores-independientes/ |
-| Filing deadlines & extensions | Casattis: https://casattis.com/en/presentaciones-de-la-declaracion-de-renta-en-panama-y-sus-prorrogas/ |
+| Filing deadlines & extensions | DGI Panamá, Calendario Tributario: https://dgi.mef.gob.pa/Calendario/Calendario.php ; PwC — Panama, tax-administration (the Casattis page cited until October 2026 sits on an expired domain) |
 | Penalties (non-primary) | Limitless Legal: https://www.limitlesslegal.com/en-us/blog/avoid-fines-for-non-declaration-panama-business |
 | Minimum wage (Decree 13/2025) | Galindo Arias & López; Lovill; MITRADEL (see Section 10.2) |
 | MEF official CSS reform PDF (primary, unparsed) | https://www.mef.gob.pa/wp-content/uploads/2025/05/250428-Republic-of-Panama-CSS-Reform-Takeaways.pdf |
