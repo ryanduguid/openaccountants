@@ -1,11 +1,11 @@
 ---
 name: czech-republic-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Czech Republic VAT return (Priznani k DPH) or Control Statement (Kontrolni hlaseni) for any client. Trigger on phrases like "prepare VAT return", "do the DPH", "fill in DPH", "Czech VAT", "kontrolni hlaseni", or any request involving Czech VAT filing. This skill covers Czech Republic only and standard DPH registration. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Czech VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: CZ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,11 +20,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Czech Republic (Czechia) |
-| Standard rate | 21% |
+| Standard rate | 21% (§ 47 odst. 1 písm. a) zákona č. 235/2004 Sb.) |
 | Reduced rates | 12% (consolidated from former 15%/10%: food, beverages, water, restaurant/catering, accommodation, books, medicines, medical devices, newspapers, passenger transport, cultural/sporting events, cleaning, hairdressing, minor repairs) |
 | Zero rate | 0% (exports, intra-EU supplies of goods) |
 | Return form | Priznani k DPH (VAT return); Kontrolni hlaseni (Control Statement, mandatory alongside) |
 | Filing portal | https://www.mojedane.cz |
+| Legal basis | Zákon č. 235/2004 Sb. on e-Sbírka: § 6 (payer from 1 January after a CZK 2,000,000 calendar-year turnover, or the day after exceeding CZK 2,536,500), § 47 (21% and 12%): https://e-sbirka.gov.cz/sb/2004/235 |
 | Authority | Financni sprava Ceske republiky (Financial Administration) |
 | Currency | CZK (Czech Koruna) |
 | Filing frequencies | Monthly (default, mandatory if turnover > CZK 15M); Quarterly (turnover <= CZK 15M for 2 years, not newly registered) |
@@ -406,7 +407,7 @@ CZ = Czech Republic.
 - **v2.0 (April 2026):** Full rewrite. Czech banks (CSOB, Komercni banka, Fio).
 - **v1.0 (April 2026):** Initial skill.
 
-## End of Czech Republic VAT Return Skill v2.0
+## End of Czech Republic VAT Return Skill v2.1
 
 This skill is incomplete without BOTH companion files: `vat-workflow-base` v0.1+ AND `eu-vat-directive` v0.1+.
 

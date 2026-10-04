@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T05:06:09+00:00",
+ "generated_at": "2026-10-04T05:13:04+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -6829,7 +6829,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cz-income-tax",
@@ -6842,7 +6842,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cz-social-health",
@@ -6868,7 +6868,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "czech-republic-vat-return",
@@ -6881,7 +6881,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "czech-republic-references",

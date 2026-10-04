@@ -1,10 +1,10 @@
 ---
 name: cz-income-tax
 description: Use this skill whenever asked about Czech income tax for self-employed individuals (OSVČ). Trigger on phrases like "how much tax do I pay", "DPFO", "daňové přiznání", "income tax return", "výdajové paušály", "expense lump-sums", "paušální daň", "flat-rate tax", "sleva na dani", "tax credits", "self-employed tax Czech", or any question about filing or computing income tax for a self-employed or freelance client in the Czech Republic. ALWAYS read this skill before touching any Czech income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: CZ
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -220,7 +220,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.1 Tax rates
 
-- **Tax rates** — 15% on first CZK 1,676,052 of tax base. 23% above. No tax-free band -- zero tax achieved through basic credit.  _(§ 16)_
+- **Tax rates** — 15% on the part of the tax base up to 36 times the average wage (CZK 1,676,052 for 2025) and 23% on the part above it (§ 16). No tax-free band: zero tax is reached through the CZK 30,840 basic credit (§ 35ba).  _(Zákon č. 586/1992 Sb., o daních z příjmů (consolidated text on e-Sbírka), § 16 odst. 1 and § 35ba odst. 1 písm. a) — https://e-sbirka.gov.cz/sb/1992/586 ; https://taxsummaries.pwc.com/czech-republic/individual/taxes-on-personal-income)_
 
 ### 5.2 Expense lump-sums
 
