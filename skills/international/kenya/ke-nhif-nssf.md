@@ -1,11 +1,11 @@
 ---
 name: ke-nhif-nssf
 description: Use this skill whenever asked about Kenyan social contributions for self-employed individuals -- SHIF (formerly NHIF) health insurance and NSSF pension. Trigger on phrases like "NHIF self-employed", "SHIF contributions", "NSSF Tier I", "NSSF Tier II", "Kenya social security", "Kenya health insurance", or any question about Kenyan social contribution obligations for self-employed persons. Covers the SHIF 2.75% rate (replacing NHIF brackets from October 2024), NSSF Tier I/II structure, voluntary registration, and edge cases. ALWAYS read this skill before touching any Kenyan social contribution work.
-version: 2.0
+version: 2.1
 jurisdiction: KE
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # KE Nhif Nssf
 
-## Kenya SHIF (formerly NHIF) and NSSF Contributions -- Self-Employed Skill v2.0
+## Kenya SHIF (formerly NHIF) and NSSF Contributions -- Self-Employed Skill v2.1
 
 ## Section 1 -- Quick reference
 
@@ -55,7 +55,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 3 -- SHIF (replacing NHIF)
 
-- **Legislation** — Social Health Insurance Act 2023 (effective October 2024)  _(Social Health Insurance Act 2023)_
+- **Legislation** — Social Health Insurance Act 2023 (effective October 2024)  _(Social Health Insurance Act, 2023 (No. 16 of 2023) on Kenya Law, s. 27 — https://new.kenyalaw.org/akn/ke/act/2023/16/eng@2023-11-24)_
 
 **SHIF Old vs New comparison**  _(Social Health Insurance Act 2023)_
 
@@ -66,11 +66,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Minimum | KES 150 | KES 300 |
 | Maximum | KES 1,700 | No cap |
 
-- **SHIF monthly formula** — shif_monthly = max(declared_monthly_income x 2.75%, KES 300)  _(Social Health Insurance Act 2023)_
+- **SHIF monthly formula** — shif_monthly = max(declared_monthly_income x 2.75%, KES 300). The Act fixes the duty to contribute and leaves the rate to regulations (s. 27); the 2.75% rate and the KES 300 floor come from the Social Health Insurance (General) Regulations, 2024  _(Social Health Insurance Act, 2023 (No. 16 of 2023) on Kenya Law, s. 27(1)(a) and (e) — https://new.kenyalaw.org/akn/ke/act/2023/16/eng@2023-11-24)_
 
 ## Section 4 -- NSSF contributions
 
-- **Legislation** — NSSF Act 2013 (effective February 2025)  _(NSSF Act 2013)_
+- **Legislation** — NSSF Act 2013 (contributions phased in under the Third Schedule from February 2023; year four from February 2026)  _(National Social Security Fund Act, 2013 (Cap. 258), as at 31 December 2022 on Kenya Law, s. 20 and Third Schedule — https://new.kenyalaw.org/akn/ke/act/2013/45/eng@2022-12-31)_
 
 ### Self-employed NSSF
 
@@ -83,7 +83,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Minimum (Tier I only) | KES 960 |
 | Maximum (Tier I + II) | KES 8,640 |
 
-- **NSSF Tier I/II formula** — tier_i = min(declared_income, KES 8,000) x 6% x 2 tier_ii = max(0, min(declared_income, KES 72,000) - KES 8,000) x 6% x 2 total_nssf = tier_i + tier_ii  _(NSSF Act 2013)_
+- **NSSF Tier I/II formula** — Employee 6% and employer 6% of pensionable earnings (s. 20(1)), split into Tier I up to the Lower Earnings Limit and Tier II up to the Upper Earnings Limit, phased in under the Third Schedule. Year three (February 2025 to January 2026): tier_i = min(declared_income, KES 8,000) x 6% x 2; tier_ii = max(0, min(declared_income, KES 72,000) - KES 8,000) x 6% x 2. Year four (from February 2026): the Lower Earnings Limit is KES 9,000 and the Upper Earnings Limit three times national average earnings (KES 108,000 on the KES 36,000 figure behind the year-three KES 72,000); from year five the limits follow the gazetted minimum wage and four times national average earnings. total_nssf = tier_i + tier_ii  _(National Social Security Fund Act, 2013 (Cap. 258), as at 31 December 2022 on Kenya Law, s. 20(1) and Third Schedule — https://new.kenyalaw.org/akn/ke/act/2013/45/eng@2022-12-31)_
 
 ## Section 5 -- Computation examples
 
