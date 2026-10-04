@@ -4,7 +4,8 @@ description: "Source-cited draft: corporate income tax for Czech Republic (tax y
 jurisdiction: CZ
 category: international
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,12 +17,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Czech resident companies are taxed on worldwide profits at a flat corporate income tax rate; the rate rose to 21% for periods starting in 2024. Certain entities and income types have special rates.
 
-- **Standard corporate income tax rate** — 21%  _([Income Tax Act (Act No. 586/1992 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/taxes-on-corporate-income))_
+- **Standard corporate income tax rate** — 21% of the tax base after deductible items, rounded down to whole thousands  _(Zákon č. 586/1992 Sb., o daních z příjmů (consolidated text on e-Sbírka), § 21 odst. 1 — https://e-sbirka.gov.cz/sb/1992/586 ; https://taxsummaries.pwc.com/czech-republic/corporate/taxes-on-corporate-income)_
 - **Basic investment fund rate** — 5% (applies to qualifying basic investment funds)  _([Income Tax Act (Act No. 586/1992 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/taxes-on-corporate-income))_
 - **Pension fund rate** — 0%  _([Income Tax Act (Act No. 586/1992 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/taxes-on-corporate-income))_
 - **Separate tax base (certain foreign-source dividends/income)** — 15%  _([Income Tax Act (Act No. 586/1992 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/taxes-on-corporate-income))_
 - **Tax base** — Accounting profit per Czech accounting standards, adjusted for non-deductible items and tax adjustments  _([Income Tax Act (Act No. 586/1992 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/income-determination))_
-- **Withholding tax on dividends** — 15% general; 35% to non-EU/EEA residents without a tax treaty or TIEA; 0% under EU Parent-Subsidiary exemption for qualifying holdings  _([Income Tax Act (Act No. 586/1992 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/withholding-taxes))_
+- **Withholding tax on dividends** — 15% general; 35% to non-EU/EEA residents without a tax treaty or TIEA; 0% under EU Parent-Subsidiary exemption for qualifying holdings  _(Zákon č. 586/1992 Sb., o daních z příjmů (consolidated text on e-Sbírka), § 36 odst. 1 — https://e-sbirka.gov.cz/sb/1992/586 ; https://taxsummaries.pwc.com/czech-republic/corporate/withholding-taxes)_
 - **Withholding tax on interest** — 15% general; 35% to non-EU/EEA residents without a treaty or TIEA; reductions/exemptions under treaties and EU Interest & Royalties Directive  _([Income Tax Act (Act No. 586/1992 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/withholding-taxes))_
 - **Withholding tax on royalties** — 15% general; 35% to non-EU/EEA residents without a treaty or TIEA; reductions/exemptions under treaties and EU Interest & Royalties Directive. Lower rates often apply to cultural royalties under particular treaties  _([Income Tax Act (Act No. 586/1992 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/withholding-taxes))_
 - **Withholding tax on services provided in the Czech Republic** — Payments to a non-resident for **services provided within the Czech Republic** are subject to withholding unless a treaty provides otherwise. This head was missing from the guide until September 2026. The cited source states the obligation without stating a default rate; the 15% / 35% structure above is the natural reading but is **not confirmed here** — establish the rate against the Income Tax Act before deducting  _([Income Tax Act (Act No. 586/1992 Coll.)](https://taxsummaries.pwc.com/czech-republic/corporate/withholding-taxes))_
