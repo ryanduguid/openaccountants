@@ -1,10 +1,10 @@
 ---
 name: slovenia-payroll
 description: Use this skill whenever asked about Slovenia payroll processing for employed persons. Trigger on phrases like "Slovenia payroll", "Slovenian payroll", "akontacija dohodnine", "dohodnina withholding", "REK-O", "REK obrazec", "prispevki ZPIZ", "social contributions Slovenia", "ZZZS contributions", "long-term care contribution Slovenia", "ZDOsk", "splošna olajšava", "minimalna plača", "minimum wage Slovenia", "bruto plača", "neto plača", "net salary Slovenia", "gross to net Slovenia", "employer SSC Slovenia", "FURS payroll", "eDavki", "salary calculation Slovenia", or any question about computing employee pay, withholding income tax, or social security contributions for Slovenia-based employees. This skill covers progressive PIT withholding (akontacija dohodnine), employee and employer social security contributions (ZPIZ pension, ZZZS health, unemployment, parental, injury-at-work), the new long-term care contribution (ZDOsk-1, from 1 July 2025), the flat compulsory health contribution, minimum wage, the general tax allowance, and REK-O filing obligations. ALWAYS read this skill before processing any Slovenia payroll.
-version: 0.1
+version: 0.2
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Slovenia Payroll
 
-## Slovenia Payroll Skill v0.1
+## Slovenia Payroll Skill v0.2
 
 > **Tier 2 — research-verified, NOT yet accountant-verified.** Several figures rely on Big-4 (PwC/KPMG) and aggregator summaries rather than FURS primary documents. Items marked **[RESEARCH GAP — reviewer to confirm]** require a licensed Slovenian accountant (davčni svetovalec / pooblaščeni računovodja) to confirm against FURS/ZPIZ/ZZZS primary sources before reliance. Research confidence: **medium**.
 
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary payroll return | REK-O (Obračun davčnih odtegljajev), filed on the day of payment [FURS] |
 | Key legislation | ZDoh-2 (PIT); ZPIZ-2 (pension/disability); ZZVZZ (health); ZDOsk-1 (long-term care, LTC contribution from 1 Jul 2025); ZPSV (social-security contributions) |
 | Validated by | Pending -- requires sign-off by a licensed Slovenian accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 -- Income Tax Withholding (Akontacija Dohodnine)
 
@@ -80,7 +80,7 @@ The employer withholds personal income tax (dohodnina) monthly at source as an a
 | Item | Value (EUR) | Source |
 | --- | --- | --- |
 | Base general allowance (annual) | 5,000 | PwC Slovenia Deductions |
-| Additional low-earner linear allowance | **[RESEARCH GAP — reviewer to confirm]** — for low earners an additional linear allowance applies; the 2025 threshold/formula reported around income up to EUR 16,832 with formula `19,736.99 − 1.17259 x annual income` is **unverified against the FURS primary document** | WebSearch (FURS olajšave 2025) — NOT verified |
+| Additional low-earner linear allowance | For total annual income up to EUR 16,832.00 the general allowance of EUR 5,260.00 is increased by `19,736.99 − 1.17259 x total annual income`, per the regulation setting the 2025 allowance amounts, formula and tax scale | [Pravilnik for 2025](https://www.racunovodstvo.net/zakonodaja/predpis/14113/pravilnik-o-dolocitvi-usklajenih-zneskov-olajsav-enacbe-za-dolocitev-olajsave-in-lestvice-za-odmero-dohodnine-za-leto-2025) |
 
 > Do **not** assume a higher EUR 5,260 base figure; it was not confirmed and is likely a different year. Use EUR 5,000 base unless a reviewer confirms otherwise against FURS.
 

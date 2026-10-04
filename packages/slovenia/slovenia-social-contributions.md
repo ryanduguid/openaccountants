@@ -1,10 +1,10 @@
 ---
 name: slovenia-social-contributions
 description: Use this skill whenever asked about Slovenia social security contributions (prispevki za socialno varnost) for employees, employers, self-employed (samostojni podjetnik / s.p.), or pensioners. Trigger on phrases like "how much social security in Slovenia", "Slovenian payroll contributions", "prispevki za socialno varnost", "PIZ pension contribution", "ZZZS health contribution", "long-term care contribution Slovenia", "ZDOsk-1 LTC", "compulsory health contribution OZP", "REK-O form", "M-1 registration", "employer cost Slovenia", "gross to net Slovenia", "samostojni podjetnik prispevki", "self-employed contribution base Slovenia", or any question about Slovenian SSC obligations, rates, bases, ceilings, or deadlines. Also trigger when classifying bank statement transactions that relate to FURS contribution debits, ZPIZ/ZZZS payments, or eDavki/SPOT social-security transfers from NLB, NKBM, SKB, Intesa Sanpaolo, or other Slovenian banks. Also trigger when preparing payroll or an informative tax calculation (informativni izracun dohodnine) where contribution amounts and PIT withholding interact. This skill covers employee/employer contribution rates, the 1 July 2025 long-term care change, the flat OZP health contribution, the self-employed min/max base, REK-O and M-1 forms, payment deadlines, penalties, interaction with personal income tax (dohodnina), bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Slovenian SSC or payroll work.
-version: 0.1
+version: 0.2
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Slovenia Social Security Contributions (prispevki za socialno varnost) -- Payroll & Self-Employed
 
-## Slovenia Social Security Contributions (prispevki za socialno varnost) -- Payroll & Self-Employed Skill v0.1
+## Slovenia Social Security Contributions (prispevki za socialno varnost) -- Payroll & Self-Employed Skill v0.2
 
 ## Section 1 -- Quick reference
 
@@ -37,7 +37,7 @@ Read this whole section before computing or classifying anything.
 | Flat health contribution (OZP) | EUR 35/month Jan-Feb 2025; EUR 37.17/month from 1 Mar 2025 (per insured person) |
 | Employee contribution ceiling | NONE -- no maximum assessment base for employees |
 | Self-employed max base 2025 | EUR 8,876.11/month (3.5x average salary) |
-| Self-employed min base 2025 | 60% of prior-year average monthly gross wage -- [RESEARCH GAP -- reviewer to confirm exact EUR figure against FURS OPSVZ table] |
+| Self-employed min base 2025 | 60% of the prior-year average monthly gross wage: EUR 1,436.95/month from 1 March 2025 (ZPIZ-2 art. 144(4); [Unija](https://unija.com/sl/od-1-marca-nova-najnizja-osnova-za-placilo-prispevkov/)) |
 | Minimum gross monthly wage 2025 | EUR 1,277.72 (full-time), effective 1 Jan 2025 |
 | Payment frequency | Monthly (on/by salary payment for employees; by 20th of following month for self-employed) |
 | Currency | EUR only |
@@ -96,7 +96,7 @@ Ideal -- the REK-O filing data, M-1 registration confirmation, FURS account stat
 ### Refusal catalogue
 
 - **R-SI-SSC-1 -- Pay period unknown** — Trigger: the month/year of the salary is not provided. Message: "The pay period is mandatory. The long-term care contribution (ZDOsk-1) took effect 1 July 2025, raising employee SSC from 22.10% to 23.10% and employer SSC from 16.10% to 17.10%. I cannot select a rate without knowing whether the payment falls before or after 1 July 2025."
-- **R-SI-SSC-2 -- Self-employed minimum/maximum base** — Trigger: computing self-employed contributions where the exact contribution base is required. Message: "The exact 2025 self-employed minimum monthly contribution base in EUR is not confirmed in this skill [RESEARCH GAP]. The minimum is stated as 60% of the prior-year average monthly gross wage; the maximum is EUR 8,876.11/month. Confirm the precise published OPSVZ figure with FURS before filing. Escalate to a Slovenian licensed accountant."
+- **R-SI-SSC-2 -- Self-employed minimum/maximum base** — Trigger: computing self-employed contributions where the exact contribution base is required. Message: "The 2025 self-employed minimum monthly contribution base is EUR 1,436.95 from 1 March 2025 (60% of the 2024 average monthly gross wage under ZPIZ-2 article 144(4)); the maximum is EUR 8,876.11/month. Confirm the OPSVZ figure with FURS when the period straddles 1 March. Escalate to a Slovenian licensed accountant."
 - **R-SI-SSC-3 -- Contribution arrears / default interest** — Trigger: client has unpaid contributions from prior periods or asks to quantify default interest. Message: "Default interest on unpaid contributions accrues under ZDavP-2; sources cite a statutory 7% p.a. (Art. 95) and a daily ~9.02% p.a. rate during procedures (Art. 96) [RESEARCH GAP -- precise applicable 2025 rate not confirmed]. Do not quantify arrears without a FURS statement. Escalate to a Slovenian licensed accountant."
 - **R-SI-SSC-4 -- Penalties / administrative fines** — Trigger: client asks about fines for failure to register, report (REK-O) or pay contributions. Message: "Specific administrative fine amounts under ZPSV/ZDavP-2 are not confirmed from an authoritative source in this skill [RESEARCH GAP]. Escalate to a Slovenian licensed accountant."
 - **R-SI-SSC-5 -- Cross-border / posted workers / A1 certificates** — Trigger: client works in or from another EU/EEA state, holds an A1, or asks about which country's social security applies. Message: "Cross-border social-security coordination (EU Regulation 883/2004, A1 certificates, posting) determines which state's contributions apply and is outside the scope of this skill. Escalate to a Slovenian licensed accountant."
