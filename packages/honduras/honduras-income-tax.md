@@ -1,7 +1,7 @@
 ---
 name: honduras-income-tax
 description: Use this skill whenever asked about Honduras personal income tax (ISR — Impuesto Sobre la Renta) for individuals (personas naturales), including self-employed professionals. Trigger on phrases like "how much ISR do I pay", "Honduras income tax", "Declaración Jurada", "Form 102", "tabla progresiva", "aportación solidaria", "solidarity contribution", "IHSS contributions", "RAP", "Honduran tax return", "renta neta gravable", "self-employed tax Honduras", "ingreso exento", or any question about filing or computing ISR for an individual or self-employed client in Honduras. Also trigger when preparing or reviewing a Declaración Jurada de ISR — Persona Natural, classifying deductible expenses, advising on Pagos a Cuenta (advance payments), or the solidarity contribution. This skill covers the progressive ISR table, solidarity contribution, alternative minimum tax, capital gains, non-resident withholding, IHSS/RAP social security, filing forms and deadlines. ALWAYS read this skill before touching any Honduras income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: HN
 tax_year: 2026
 last_updated: 2026-10-04
@@ -34,11 +34,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing & payment deadline | 30 April of the year following the tax year [Radio HRN; PwC] |
 | Validated by | Pending — requires sign-off by a Honduran-licensed accountant (Perito Mercantil / Contador Público) |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### ISR Progressive Table — 2026 (CURRENT)
 
-**ISR Progressive Table — 2026 (CURRENT)**  _(SAR Comunicado 02-2026; Deloitte HN 12 Jan 2026; PwC, updated 27 Feb 2026)_
+**ISR Progressive Table — 2026 (CURRENT)**  _(Acuerdo SAR-01-2026 of 5 January 2026 (Servicio de Administración de Rentas; La Gaceta No. 37,051 of 23 January 2026, copy hosted by the Tribunal Superior de Cuentas), resolution PRIMERO and the Tabla Progresiva 2026 — https://www.tsc.gob.hn/web/leyes/Acuerdo-SAR-01-2026.pdf ; SAR Comunicado 02-2026; Deloitte HN 12 Jan 2026; PwC, updated 27 Feb 2026)_
 
 | Annual net taxable income (HNL) | Monthly equivalent (HNL) | Rate | Cumulative tax at top of band |
 | --- | --- | --- | --- |
@@ -47,7 +47,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 348,154.11 – 809,660.75 | 32,346.19 – 70,805.06 | 20% | L 110,275.80 |
 | 809,660.76 and above | 70,805.07 and above | 25% | — |
 
-Indexed for inflation each year by SAR using the prior year's interannual CPI (4.98% for 2026). [SAR Comunicado 02-2026; Deloitte HN 12 Jan 2026; PwC, updated 27 Feb 2026]
+Indexed for inflation each year by SAR using the prior year's interannual CPI: Acuerdo SAR-01-2026 adjusts the scale by 4.98%, the Banco Central de Honduras CPI variation for 2025, from fiscal year 2026, and its resolution SEGUNDO directs withholding agents to use the table for monthly withholding. [Acuerdo SAR-01-2026; SAR Comunicado 02-2026; Deloitte HN 12 Jan 2026; PwC, updated 27 Feb 2026]
 
 **Cumulative-tax derivation (recomputed):**
 - Band 2: (348,154.10 − 228,324.32) × 15% = 119,829.78 × 0.15 = **L 17,974.47**
