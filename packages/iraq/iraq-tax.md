@@ -95,7 +95,7 @@ Importer brings alcohol into Iraq. 300% sales tax at customs plus customs duties
 ### 5.3 Corporate income tax
 
 - **Corporate income tax - standard** — 15% flat on net profits from Iraqi-source income  _(Income Tax Law No. 113 of 1982 as amended, Arabic text published by the General Commission for Taxes, flat 15% rate for companies — https://tax.mof.gov.iq/uploads/Najwan/law/Income-Tax-Law-No.-113-of-1982-Ar.pdf ; General Commission for Taxes, income tax guide (daleel dharibat al-dakhl: rates, allowances and filing) — https://tax.mof.gov.iq/%D8%AF%D9%84%D9%8A%D9%84-%D8%B6%D8%B1%D9%8A%D8%A8%D8%A9-%D8%A7%D9%84%D8%AF%D8%AE%D9%84/)_
-- **Oil & gas sector corporate tax rate** — 35% percent (income from contracts with foreign oil companies, branches, offices and subcontractors in oil/gas production and related industries)  _(Law No. 19 of 2010 imposing income tax on foreign oil companies contracting in Iraq, General Commission for Taxes copy (scanned) — https://tax.mof.gov.iq/uploads%2FNajwan%2Flaw%2F-%20%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D9%81%D8%B1%D8%B6%20%D8%B6%D8%B1%D9%8A%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AF%D8%AE%D9%84%20%D8%B9%D9%84%D9%89%20%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%20%D8%A7%D9%84%D9%86%D9%81%D8%B7%20%D8%A7%D9%84%D8%A3%D8%AC%D9%86%D8%A8%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%B9%D8%A7%D9%82%D8%AF%D8%A9%20%D9%84%D9%84%D8%B9%D9%85%D9%84%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%20%D8%B1%D9%82%D9%85%20(19)%20%D9%84%D8%B3%D9%86%D8%A9%202010.pdf ; rate and scope: PwC — https://taxsummaries.pwc.com/iraq/corporate/taxes-on-corporate-income)_
+- **Oil & gas sector corporate tax rate** — 35% (income from contracts with foreign oil companies, branches, offices and subcontractors in oil/gas production and related industries)  _(Law No. 19 of 2010 imposing income tax on foreign oil companies contracting in Iraq, General Commission for Taxes copy (scanned) — https://tax.mof.gov.iq/uploads%2FNajwan%2Flaw%2F-%20%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D9%81%D8%B1%D8%B6%20%D8%B6%D8%B1%D9%8A%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AF%D8%AE%D9%84%20%D8%B9%D9%84%D9%89%20%D8%B4%D8%B1%D9%83%D8%A7%D8%AA%20%D8%A7%D9%84%D9%86%D9%81%D8%B7%20%D8%A7%D9%84%D8%A3%D8%AC%D9%86%D8%A8%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%B9%D8%A7%D9%82%D8%AF%D8%A9%20%D9%84%D9%84%D8%B9%D9%85%D9%84%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%20%D8%B1%D9%82%D9%85%20(19)%20%D9%84%D8%B3%D9%86%D8%A9%202010.pdf ; rate and scope: PwC — https://taxsummaries.pwc.com/iraq/corporate/taxes-on-corporate-income)_
 - **Agricultural income** — Agricultural income: exempt.  _(Section 5.3 Corporate income tax)_
 
 ## Section 6 -- Return form structure
@@ -121,7 +121,7 @@ Importer brings alcohol into Iraq. 300% sales tax at customs plus customs duties
 
 - **Social security - employer** — 12%  _(Section 9 -- Filing, deadlines, and penalties)_
 - **Social security - employee** — 5%  _(Section 9 -- Filing, deadlines, and penalties)_
-- **Social security - total** — 17% percent (employer 12% + employee 5%)  _(Section 9 -- Filing, deadlines, and penalties)_
+- **Social security - total** — 17% (employer 12% + employee 5%)  _(Section 9 -- Filing, deadlines, and penalties)_
 
 ### Edge cases
 
