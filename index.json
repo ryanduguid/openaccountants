@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T02:39:54+00:00",
+ "generated_at": "2026-10-04T02:54:45+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -12874,7 +12874,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "mg-corporate-income-tax",
@@ -12887,7 +12887,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "mg-income-tax",
@@ -12900,7 +12900,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "mg-payroll-social",
@@ -12913,7 +12913,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "mg-tax-overview",
@@ -12926,7 +12926,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "mg-vat-gst",
@@ -12939,7 +12939,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "mw-company-formation",
