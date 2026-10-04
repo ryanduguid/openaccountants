@@ -1,11 +1,11 @@
 ---
 name: jordan-gst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Jordan General Sales Tax (GST) return for any client. Trigger on phrases like "Jordan GST", "Jordan VAT", "ISTD return", or any request involving Jordanian indirect tax. Jordan imposes GST at 16% under Law No. 6 of 1994, administered by ISTD. Multiple special rates exist (4%, 5%, 8%, 10%). ALWAYS read this skill before handling any Jordan GST work.
-version: 2.0
+version: 2.1
 jurisdiction: JO
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -51,7 +51,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Refusal catalogue
 
 - **R-JO-1 -- Free zone complex** — Trigger: Aqaba Special Economic Zone operations. Message: "ASEZA has specific GST rules. Escalate to licensed practitioner."  _(Section 2 -- Required inputs and refusal catalogue)_
-- **R-JO-2 -- Special Sales Tax** — Trigger: alcohol, tobacco, fuel subject to SST. Message: "SST is separate from GST and computed first. Escalate for combined computation."  _(Section 2 -- Required inputs and refusal catalogue)_
+- **R-JO-2 -- Special Sales Tax** — Trigger: alcohol, tobacco, fuel subject to SST. Message: "SST is separate from GST and computed first. Escalate for combined computation."  _(General Sales Tax Law No. 6 of 1994 as amended to 2009 (ISTD English translation), art. 6 and Schedule 1 — https://istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/gst_law.pdf)_
 
 ### 3.1 Jordanian banks (exempt -- exclude)
 
@@ -108,7 +108,7 @@ Telecoms services at special 4% rate, not 16%.
 
 ### 5.1 Standard rate 16%
 
-- **Standard rate default** — Default for all taxable supplies unless specifically listed at another rate.  _(Section 5 -- Classification rules)_
+- **Standard rate default** — 16% general tax on the supply or importation of goods and services (art. 6) unless the supply is zero-rated, exempt or specifically listed at another rate.  _(General Sales Tax Law No. 6 of 1994 as amended to 2009 (ISTD English translation), art. 6 — https://istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/gst_law.pdf)_
 
 ### 5.2 Special rates
 
@@ -116,11 +116,11 @@ Telecoms services at special 4% rate, not 16%.
 
 ### 5.3 Zero-rated (0%, input recoverable)
 
-- **Zero-rated supplies** — Exports, international transport, basic foodstuffs (bread, rice, sugar, milk per Cabinet decision), goods to free zones (conditions).  _(Section 5 -- Classification rules)_
+- **Zero-rated supplies** — Goods listed in Schedule 2; goods and services supplied to free zones, free cities and duty free shops or exported outside the Kingdom; supplies to bodies relieved from tax under art. 21 (art. 7). The guide's foodstuff list follows the Schedule 2 and Cabinet decisions in force.  _(General Sales Tax Law No. 6 of 1994 as amended to 2009 (ISTD English translation), art. 7 — https://istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/gst_law.pdf)_
 
 ### 5.4 Exempt (no GST, no recovery)
 
-- **Exempt supplies** — Financial services, medical, education, residential rental (unfurnished), unprocessed agricultural, government-to-government, charitable (conditions).  _(Section 5 -- Classification rules)_
+- **Exempt supplies** — Goods and services listed in Schedule 3 are exempt (art. 7(b)): financial services, medical, education, residential rental (unfurnished), unprocessed agricultural produce and the other Schedule 3 items; no output tax and no input credit on attributable costs.  _(General Sales Tax Law No. 6 of 1994 as amended to 2009 (ISTD English translation), art. 7(b) and Schedule 3 — https://istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/gst_law.pdf)_
 
 ### Output section
 
@@ -149,7 +149,7 @@ Telecoms services at special 4% rate, not 16%.
 
 ## Section 7 -- Reverse charge and imports
 
-- **Reverse charge on non-resident services** — Services from non-resident: self-assess at 16%. Claim input if for taxable supplies. Net zero.  _(GST Law No. 6/1994, reverse charge provisions)_
+- **Reverse charge on non-resident services** — Services performed in the Kingdom by non-residents or by foreign firms without a Jordanian branch are treated as imported services: tax becomes due when payment is made and the recipient is liable to pay it (art. 9(e)). Self-assess at 16% and claim input tax where the service is for taxable supplies.  _(General Sales Tax Law No. 6 of 1994 as amended to 2009 (ISTD English translation), art. 9(e) — https://istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/gst_law.pdf)_
 - **Import of goods GST treatment** — Import of goods: GST on CIF plus customs duties. Collected by Jordan Customs. Recoverable if for taxable supplies.  _(GST Law No. 6/1994, reverse charge provisions)_
 
 ## Section 8 -- Deductibility and blocked input
@@ -166,7 +166,7 @@ Telecoms services at special 4% rate, not 16%.
 | Large taxpayers (> JOD 1M) | Monthly | End of following month |
 | Others | Bi-monthly | End of month following bi-monthly period |
 
-- **Bi-monthly periods and deadlines** — Bi-monthly periods: Jan-Feb (due 31 Mar), Mar-Apr (31 May), May-Jun (31 Jul), Jul-Aug (30 Sep), Sep-Oct (30 Nov), Nov-Dec (31 Jan).
+- **Bi-monthly periods and deadlines** — The general tax period is two months (one month for the special tax), with the start and end of periods set by the Director (art. 16). Returns and payment fall due by the end of the month after each period: Jan-Feb (31 Mar), Mar-Apr (31 May), May-Jun (31 Jul), Jul-Aug (30 Sep), Sep-Oct (30 Nov), Nov-Dec (31 Jan).  _(General Sales Tax Law No. 6 of 1994 as amended to 2009 (ISTD English translation), art. 16 — https://istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/gst_law.pdf)_
 
 **Violations and penalties**
 
