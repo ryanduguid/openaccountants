@@ -5,7 +5,8 @@ jurisdiction: AM
 category: formation
 tax_year: 2025
 tax_year_notes: "Rates and thresholds are read from the consolidated Tax Code (ՀՕ-165-Ն) as published on arlis.am and current at the date below. The turnover-tax schedule in §3 and the AMD 115,000,000 and 24,000,000 thresholds are amended frequently by Finance-type acts and must be re-checked each year."
-last_updated: 2026-09-11
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -108,12 +109,12 @@ Eligible micro-business activities are exempt from state taxes, tax-agent obliga
 The following administrative claims retain their earlier sources. [RESEARCH GAP — the Law on State Registration of Legal Entities and the
 Law on State Duty are both on `arlis.am` and would settle the fee and the timeline.]
 
-- **Common entity types** — Limited liability company (LLC / ՍՊԸ), joint-stock company (JSC), and sole proprietor / individual entrepreneur  _(Civil Code of the Republic of Armenia (https://www.repatarmenia.org/repatriate/practical-information/business/starting-a-business-in-armenia))_
+- **Common entity types** — Limited liability company (LLC / ՍՊԸ, Civil Code Art. 95), joint-stock company (JSC, Art. 106) and sole proprietor / individual entrepreneur  _(Civil Code of the Republic of Armenia, English text on ARLIS, Arts 95 and 106 — https://www.arlis.am/en/acts/205622 ; Repat Armenia — https://www.repatarmenia.org/repatriate/practical-information/business/starting-a-business-in-armenia)_
 - **Foreign ownership** — 100% foreign ownership permitted; no local residency requirement for founders or directors  _(Law on Limited Liability Companies of the Republic of Armenia (https://armenian-lawyer.com/immigration/registering-an-llc-in-armenia-one%E2%80%91day-incorporation-tax-registration-and-first-compliance-steps/))_
 - **Registration authority** — State Register of Legal Entities, Ministry of Justice of the Republic of Armenia (e-register)  _(Law on State Registration of Legal Entities (https://www.e-register.am/en/))_
 - **Incorporation timeline** — Standard LLC registration in roughly 2–3 business days (online), with simple cases possible within hours ((approx — confirm) typical processing time)  _(Law on State Registration of Legal Entities (https://armenian-lawyer.com/immigration/company-registration-in-armenia-in-2-3-days-a-realistic-day-by-day-setup-checklist/))_
-- **Government registration fee** — No state registration fee for standard LLC incorporation ((approx — confirm) current fee schedule)  _(Law on State Duty of the Republic of Armenia (https://armenian-lawyer.com/immigration/registering-an-llc-in-armenia-one%E2%80%91day-incorporation-tax-registration-and-first-compliance-steps/))_
-- **E-invoicing / digital signature** — Electronic invoicing and digital signing are mandatory for all businesses  _(Tax Code of the Republic of Armenia (https://armenian-lawyer.com/immigration/registering-an-llc-in-armenia-one%E2%80%91day-incorporation-tax-registration-and-first-compliance-steps/))_
+- **Government registration fee** — No state duty for the standard registration of a commercial legal person: the registration duties in Art. 16 points 1 to 1.8 were repealed (HO-41-N of 19 January 2021), and only registration at the applicant's request of entities registered by another body carries a tenfold base duty  _(Law of the Republic of Armenia on State Duty, English text on ARLIS, Art. 16 — https://www.arlis.am/en/acts/205586)_
+- **E-invoicing / digital signature** — Settlement documents (invoices) must be issued electronically, subject to the exceptions listed in Art. 56(3)  _(Tax Code of the Republic of Armenia (HO-165-N), English text on the Armenian Legal Information System (ARLIS), Art. 56(3) — https://www.arlis.am/en/acts/205620)_
 
 ## 5. Worked checks
 
