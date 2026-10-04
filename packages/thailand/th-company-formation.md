@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Thailand
 jurisdiction: TH
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,10 +24,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Incorporation steps** — Name reservation, file Memorandum of Association, statutory meeting (adopt AOA, appoint directors and auditor), capital verification, DBD registration  _(Civil and Commercial Code; DBD registration procedure — https://www.siam-legal.com/thailand-law/steps-for-company-registration-in-thailand-2/)_
 - **Typical incorporation timeline** — Approximately 2–4 weeks ((approx — confirm))  _(DBD registration procedure — https://www.siam-legal.com/Business-in-Thailand/thailand-limited-company.php)_
 - **Digital registration platform** — From 1 January 2026, registrations must use the DBD Biz Regist digital platform ((future change — confirm))  _(DBD Order 2/2568 — https://betterthanfreehold.com/resources/dbd-order-2-2568-company-registration-thailand-2026)_
-- **Annual statutory audit** — Every company (including dormant) must have financial statements audited by a licensed Thai CPA  _(Accounting Act B.E. 2543 (2000) — https://www.juslaws.com/articles/filing-financial-statements-thailand-deadlines-and-liabilities)_
+- **Annual statutory audit** — Every company (including a dormant one) must have its financial statements audited by a licensed Thai CPA; the corporate return is filed with the balance sheet and accounts audited and certified by an auditor  _(Revenue Code, Chapter 3 Part 3 (ss 65 to 76), Revenue Department English translation, s 69 — https://www.rd.go.th/english/37764.html ; Accounting Act B.E. 2543 (2000) as summarised by Juslaws — https://www.juslaws.com/articles/filing-financial-statements-thailand-deadlines-and-liabilities)_
 - **Annual general meeting** — Must be held within 4 months of fiscal year-end  _(Civil and Commercial Code — https://www.juslaws.com/articles/filing-financial-statements-thailand-deadlines-and-liabilities)_
 - **Financial statement filing with DBD** — Audited financial statements filed with the DBD within 1 month of the AGM approval  _(Accounting Act B.E. 2543 (2000) — https://www.juslaws.com/articles/filing-financial-statements-thailand-deadlines-and-liabilities)_
-- **Corporate income tax return after audit** — Form PND.50 filed within 150 days of fiscal year-end  _(Thai Revenue Code, Section 68; Form PND.50 — https://taxsummaries.pwc.com/thailand/corporate/tax-administration)_
+- **Corporate income tax return after audit** — Form PND.50 filed within 150 days from the last day of the accounting period with the audited accounts; a half-year prepayment return (Form PND.51) is due within 2 months after the first six months of the period  _(Revenue Code, Chapter 3 Part 3 (ss 65 to 76), Revenue Department English translation, ss 67 bis, 68 and 69 — https://www.rd.go.th/english/37764.html ; Revenue Department, Corporate Income Tax guide, part 2 File a Tax Return and Payment — https://www.rd.go.th/english/6044.html)_
 
 <!-- openaccountants-cta-block -->
 
