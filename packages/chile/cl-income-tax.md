@@ -1,11 +1,11 @@
 ---
 name: cl-income-tax
 description: Use this skill whenever asked about Chilean income tax for self-employed individuals (trabajadores independientes / trabajadores a honorarios). Trigger on phrases like "Impuesto Global Complementario", "Operación Renta", "boleta de honorarios", "trabajador independiente", "PPM", "retención honorarios", "gastos presuntos", "segunda categoría", "Formulario 22", "SII", "RUT Chile", "cotizaciones previsionales", "APV", or any question about filing or computing income tax for a self-employed or independent worker in Chile. This skill covers Impuesto Global Complementario (progressive 0-40%), honorarios withholding, PPM credits, gastos efectivos vs presuntos, cotizaciones previsionales, and SII filing. ALWAYS read this skill before touching any Chilean income tax work.
-version: 2.0
+version: 2.1
 jurisdiction: CL
 category: international
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # CL Income Tax
 
-## Chilean Income Tax — Trabajador Independiente / Honorarios (IGC) v2.0
+## Chilean Income Tax — Trabajador Independiente / Honorarios (IGC) v2.1
 
 ## Section 1 — Quick Reference
 
@@ -538,10 +538,10 @@ SECTION I — REVIEWER FLAGS
 
 ### Key Legislation
 
-- **Decreto Ley 824** — Ley sobre Impuesto a la Renta  _(Decreto Ley 824)_
-- **Ley 21.133** — Cotizaciones previsionales obligatorias para trabajadores independientes  _(Ley 21.133)_
-- **Código Tributario** — filing deadlines, penalties  _(Código Tributario)_
-- **Circular SII 67/2025** — annual guidance  _(Circular SII 67/2025)_
+- **Decreto Ley 824** — Ley sobre Impuesto a la Renta  _(Ley Chile consolidated text — https://www.bcn.cl/leychile/navegar?idNorma=6368 ; SII text — https://www.sii.cl/normativa_legislacion/dl824.pdf)_
+- **Ley 21.133** — Cotizaciones previsionales obligatorias para trabajadores independientes  _(Ley Chile text — https://www.bcn.cl/leychile/navegar?idNorma=1128420)_
+- **Código Tributario** — filing deadlines, penalties  _(Código Tributario (DL 830), Ley Chile consolidated text — https://www.bcn.cl/leychile/navegar?idNorma=6374)_
+- **Circular SII 67/2025** — Tables of the single second-category tax for January 2026 and related guidance (modified by Circular 7 of 12 February 2026)  _(SII Circular 67 of 10 December 2025 — https://www.sii.cl/normativa_legislacion/circulares/2025/circu67.pdf)_
 
 ### Filing Deadlines 2025 (Año Tributario 2025)
 

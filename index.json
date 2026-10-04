@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T19:14:38+00:00",
+ "generated_at": "2026-10-04T19:24:56+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -6075,7 +6075,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cl-corporate-income-tax",
@@ -6088,7 +6088,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cl-income-tax",
@@ -6101,7 +6101,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cl-social-contributions",
@@ -6114,7 +6114,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "cl-tax-overview",
@@ -6127,7 +6127,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "chile-references",

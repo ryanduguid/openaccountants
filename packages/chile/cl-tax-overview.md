@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Chile (tax year 2025) — rat
 jurisdiction: CL
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Chile's tax system is administered by the Servicio de Impuestos Internos (SII) and built around an integrated corporate/shareholder regime, a progressive personal income tax, and a single-rate VAT. Figures below are an unverified 2025 draft for an accountant to confirm.
 
-- **Tax year** — Calendar year (1 January to 31 December)  _([Ley sobre Impuesto a la Renta (LIR), DL 824](https://taxsummaries.pwc.com/chile/individual/taxes-on-personal-income))_
+- **Tax year** — Calendar year (1 January to 31 December) as the año comercial; the tax is declared and paid in the following año tributario  _(Ley sobre Impuesto a la Renta (DL 824), SII text, Art. 2 N° 7 to 9 — https://www.sii.cl/normativa_legislacion/dl824.pdf)_
 - **Currency** — Chilean peso (CLP)  _(Servicio de Impuestos Internos (SII))_
 - **Tax indexation units** — UTM (monthly tax unit) and UTA (annual tax unit = UTM x 12); UF (Unidad de Fomento) for social-security caps  _([SII valores y fechas (UTM/UTA)](https://www.sii.cl/valores_y_fechas/utm/utm2025.htm))_
 - **UTA (annual tax unit) value, 2025** — CLP 834,504 CLP (December 2025 UTM x 12; UTA used for filing the prior tax year was CLP 807,528 per SII Circular No. 09/2025 — confirm which applies)  _([SII valores y fechas — UTM/UTA 2025](https://www.sii.cl/valores_y_fechas/utm/utm2025.htm))_
