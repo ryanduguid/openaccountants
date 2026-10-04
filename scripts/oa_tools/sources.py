@@ -333,6 +333,14 @@ NON_GOV_AUTHORITY = frozenset((
                           # ministry rather than a francophone one, so the shape
                           # is a bare ccTLD, not a language. Subdomains are
                           # matched, so all three count from this one entry.
+    'impots.mg',          # Direction Generale des Impots, Madagascar: publishes
+                          # the consolidated Code des impots and Code des
+                          # procedures fiscales after each loi de finances under
+                          # explorer?path=/legislation/Codes et Manuels. Bare
+                          # .mg with no "gov" label, the same shape as otr.tg
+                          # and dgbf.ci above; found when the Madagascar guides
+                          # were re-cited to the code and the sourcing floor
+                          # still scored them as having no authority.
 ))
 
 # Removed from the list above after a code review, and kept here so the same

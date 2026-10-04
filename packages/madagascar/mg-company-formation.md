@@ -4,7 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Madagasc
 jurisdiction: MG
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Core incorporation steps** — Reserve company name; deposit capital and obtain certificate (if applicable); sign statutes; file with RCS; register for tax ID (NIF) and VAT where relevant  _(Loi sur les sociétés commerciales (Madagascar) — https://madagascarinvest.com/how-to-start-a-company-in-madagascar/)_
 - **Typical incorporation timeline** — Approximately 1 to 3 weeks via the EDBM one-stop shop ((approx — confirm))  _(EDBM company registration guidance (Madagascar) — https://madagascarinvest.com/how-to-start-a-company-in-madagascar/)_
 - **Tax identification number** — Numéro d'Identification Fiscale (NIF) obtained at registration with the DGI  _(Code Général des Impôts (Madagascar) — https://madagascarinvest.com/how-to-start-a-company-in-madagascar/)_
-- **Core annual compliance** — File annual IR return (15 May for 31 Dec year-end), monthly TVA and IRSA returns, quarterly CNAPS, and file annual financial statements ((approx — confirm))  _(Code Général des Impôts (Madagascar) — https://taxsummaries.pwc.com/madagascar/corporate/tax-administration)_
+- **Core annual compliance** — File the annual IR return (15 May for a 31 December year-end), monthly TVA returns and monthly IRSA remittances, quarterly CNaPS returns ((approx — confirm)), and annual financial statements  _(Code des procédures fiscales 2026, art. I-11, I-21 and I-104 — https://www.impots.mg/explorer?path=/legislation/Codes%20et%20Manuels/CPF-LFI%202026.pdf ; https://taxsummaries.pwc.com/madagascar/corporate/tax-administration)_
 - **Local representation** — A SARL must have a resident representative/manager based in Madagascar ((approx — confirm))  _(Loi sur les sociétés commerciales (Madagascar) — https://www.healyconsultants.com/madagascar-company-registration/setup-llc/)_
 
 <!-- openaccountants-cta-block -->
