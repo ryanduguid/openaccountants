@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Georgia (tax year 2025) — r
 jurisdiction: GE
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 reviewed_by: Gvantsa Amiridze, ACCA
 review_status: pending_review
 tier: 2
@@ -21,13 +22,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax year** — Calendar year (1 January – 31 December)  _(Tax Code of Georgia)_
 - **Currency** — Georgian lari (GEL)  _(Tax Code of Georgia)_
 - **Tax authority** — Revenue Service of Georgia (under the Ministry of Finance)  _([Tax Code of Georgia (https://rs.ge)](https://rs.ge))_
-- **Residence / taxation basis** — Territorial — residents and non-residents are generally taxed only on Georgian-source income; foreign-source income of resident individuals is largely exempt  _([Tax Code of Georgia (https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income)](https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income))_
-- **Headline personal income tax rate** — 20% percent  _([Tax Code of Georgia (https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income)](https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income))_
-- **Standard corporate income tax rate** — 15% percent (on distributed profit)  _(Tax Code of Georgia — https://taxsummaries.pwc.com/georgia/corporate/taxes-on-corporate-income)_
-- **Does VAT exist? Standard VAT rate** — Yes — standard VAT rate 18% percent  _([Tax Code of Georgia (https://taxsummaries.pwc.com/georgia/corporate/other-taxes)](https://taxsummaries.pwc.com/georgia/corporate/other-taxes))_
-- **Annual personal/profit (small business) return deadline** — 31 March of the year following the reporting year  _(Tax Code of Georgia (as described at [expathub.ge](https://expathub.ge/annual-tax-return-georgia/)))_
-- **Corporate (profit) tax filing frequency** — Monthly — return due by the 15th day of the month following the month of the taxable transaction/distribution  _([Tax Code of Georgia (https://taxsummaries.pwc.com/georgia/corporate/tax-administration)](https://taxsummaries.pwc.com/georgia/corporate/tax-administration))_
-- **VAT filing frequency** — Monthly — return and payment due by the 15th day of the following month (approx — confirm; some sources cite a 15th-of-month VAT deadline while others reference quarterly excise reporting)  _(Tax Code of Georgia)_
+- **Residence / taxation basis** — Territorial in effect: a natural person who stays in Georgia for 183 or more days in any continuous twelve-month period ending in the tax year is resident for that year (art. 34(2)); residents and non-residents are taxed on Georgian-source income, and PwC reports foreign-source income of resident individuals as largely exempt  _(Tax Code of Georgia (Legislative Herald of Georgia, English consolidated text, version of 25 June 2026), art. 34(2) — https://matsne.gov.ge/en/document/view/1043717 ; foreign-source exemption: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income)_
+- **Headline personal income tax rate** — 20% on a natural person's taxable income, with 5% for the specific heads art. 81 lists (art. 81(1))  _(Tax Code of Georgia (Legislative Herald of Georgia, English consolidated text, version of 25 June 2026), art. 81(1) — https://matsne.gov.ge/en/document/view/1043717)_
+- **Standard corporate income tax rate** — 15% on distributed profit (art. 98(1)); 20% for banks, credit unions, microfinance organisations and loan providers (art. 98(4))  _(Tax Code of Georgia (Legislative Herald of Georgia, English consolidated text, version of 25 June 2026), art. 98(1) and (4) — https://matsne.gov.ge/en/document/view/1043717)_
+- **Does VAT exist? Standard VAT rate** — Yes — the VAT rate is 18% (art. 166); registration becomes compulsory when taxable transactions exceed GEL 100,000 in any twelve consecutive months (art. 165(1))  _(Tax Code of Georgia (Legislative Herald of Georgia, English consolidated text, version of 25 June 2026), arts. 166 and 165(1) — https://matsne.gov.ge/en/document/view/1043717)_
+- **Annual personal/profit (small business) return deadline** — 1 April of the year following the reporting year for the income tax and profit tax return (art. 153(1)); this guide gave 31 March until October 2026  _(Tax Code of Georgia (Legislative Herald of Georgia, English consolidated text, version of 25 June 2026), art. 153(1) — https://matsne.gov.ge/en/document/view/1043717)_
+- **Corporate (profit) tax filing frequency** — Monthly — enterprises taxed on the art. 97 objects (distributions and deemed distributions) file the profit tax return by the 15th day of the month following the accounting month (art. 153(10))  _(Tax Code of Georgia (Legislative Herald of Georgia, English consolidated text, version of 25 June 2026), art. 153(10) — https://matsne.gov.ge/en/document/view/1043717)_
+- **VAT filing frequency** — Monthly — a registered VAT taxpayer files the VAT declaration and pays the tax by the 15th day of the month following the accounting period (art. 168(1))  _(Tax Code of Georgia (Legislative Herald of Georgia, English consolidated text, version of 25 June 2026), art. 168(1) — https://matsne.gov.ge/en/document/view/1043717)_
 
 <!-- openaccountants-cta-block -->
 
