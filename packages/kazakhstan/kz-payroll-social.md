@@ -4,7 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Kazakhstan 
 jurisdiction: KZ
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +27,7 @@ Kazakhstan payroll combines employer-borne charges (social tax, social contribut
 - **Personal income tax withholding (PAYE-equivalent)** — Employer withholds 10% PIT on net taxable employment income each month %  _(Tax Code of the Republic of Kazakhstan — https://taxsummaries.pwc.com/kazakhstan/individual/taxes-on-personal-income)_
 - **Approximate combined payroll load** — Combined employer + employee payroll charges total roughly 23-24% of gross in 2025 ((approx — confirm); composition varies with caps and the OPVR exemptions)  _(Tax Code of the Republic of Kazakhstan — https://orbitax.com/news/country/article/Kazakhstan-Increases-Social-Se-57859)_
 - **Minimum monthly wage (MZP)** — KZT 85,000 per month, unchanged for 2025 and 2026. Confirmed for 2026 by Law No. 239-VIII of 8 December 2025. Unlike the MCI, which rose from 3,932 to 4,325, the minimum wage did not move  _(Law No. 239-VIII of 8 December 2025 on the Republican Budget for 2026-2028, which sets the 2026 figure; the 2025-2027 budget law set the same amount for 2025 — https://www.bcc.kz/en/bcc-journal/mpr-mzp/)_
-- **Payroll taxes/contributions remittance deadline** — By the 25th day of the month following the month in which income was paid ((approx — confirm))  _(Tax Code of the Republic of Kazakhstan — https://taxsummaries.pwc.com/kazakhstan/individual/other-taxes)_
+- **Payroll taxes/contributions remittance deadline** — Withheld individual income tax is transferred by the tax agent no later than the 25th of the month following the month of withholding, and social tax is paid by the 25th of the month following the tax period; the social contributions follow the social legislation's calendar  _(Tax Code of the Republic of Kazakhstan, Code No. 214-VIII of 18 July 2025 (in force from 1 January 2026), English text on adilet.zan.kz, art. 692 and 560 — https://adilet.zan.kz/eng/docs/K2500000214 ; https://taxsummaries.pwc.com/kazakhstan/individual/other-taxes)_
 
 <!-- openaccountants-cta-block -->
 

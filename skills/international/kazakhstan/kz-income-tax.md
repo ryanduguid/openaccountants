@@ -1,10 +1,10 @@
 ---
 name: kz-income-tax
 description: "Source-cited draft: personal income tax for Kazakhstan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
-version: 1.0
+version: 1.1
 jurisdiction: KZ
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -22,17 +22,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 For tax year 2025 Kazakhstan applies a flat 10% personal income tax (PIT) on resident individuals' taxable income, with a higher flat rate for most non-resident income. Most employment income is withheld at source by the employer.
 
 - **Resident PIT rate** — 10% % (flat, on taxable income)  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/taxes-on-personal-income))_
-- **Non-resident PIT rate on employment income** — 10% % (on Kazakhstan-source employment income (approx — confirm); other non-resident income categories are subject to withholding at 5%-20% depending on income type)  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/taxes-on-personal-income))_
+- **Non-resident PIT rate on employment income** — 10% on Kazakhstan-source employment income (approx — confirm against the non-resident individual articles); other non-resident income is withheld at source at 20% in general, 15% on capital gains, dividends, remuneration and royalties, and 5% on international transport services and reinsurance premiums  _(Tax Code of the Republic of Kazakhstan, Code No. 214-VIII of 18 July 2025 (in force from 1 January 2026), English text on adilet.zan.kz, art. 682.1 — https://adilet.zan.kz/eng/docs/K2500000214 ; https://taxsummaries.pwc.com/kazakhstan/individual/taxes-on-personal-income)_
 - **Non-resident withholding on other income (general)** — 20% % (on Kazakhstan-source income other than employment (e.g. management/consulting fees), unless reduced by treaty)  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/corporate/withholding-taxes))_
-- **PIT rate on dividends (resident individual)** — 5% (where conditions met) up to a cap; otherwise generally 10%-15% % ((approx — confirm); dividend exemptions/reduced rates depend on holding conditions)  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/income-determination))_
+- **PIT rate on dividends (resident individual)** — 5% on dividends up to 230,000 times the monthly calculation index in the calendar year and 15% on the excess, from 1 January 2026; the previous Code's exemption conditions no longer apply  _(Tax Code of the Republic of Kazakhstan, Code No. 214-VIII of 18 July 2025 (in force from 1 January 2026), English text on adilet.zan.kz, art. 363.3 — https://adilet.zan.kz/eng/docs/K2500000214 ; https://taxsummaries.pwc.com/kazakhstan/individual/income-determination)_
 - **Standard personal deduction** - For 2025, 14 MCI per month at KZT 3,932 gives KZT 55,048. From 2026 the basic deduction is 30 MCI per month, so 30 x KZT 4,325 = KZT 129,750. Both the statutory multiple and the MCI changed; do not carry the 14-MCI rule into 2026. _([State Revenue Committee](https://www.gov.kz/memleket/entities/kgd-shymkent/press/news/details/1189861?lang=ru))_
 - **Mandatory pension contributions (OPV) deductible from PIT base** — Employee OPV of 10% is deducted before calculating the PIT base  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/other-taxes))_
 - **Medical insurance contribution (VOSMS) deductible from PIT base** — Employee VOSMS of 2% is deducted before calculating the PIT base  _(Law on Mandatory Social Health Insurance (https://taxsummaries.pwc.com/kazakhstan/individual/other-taxes))_
 - **Tax-free threshold** — No general tax-free band; relief is given via the 14 MCI standard deduction plus mandatory-contribution deductions  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/deductions))_
 - **Tax residence test** — An individual is resident if present in Kazakhstan at least 183 days in any consecutive 12-month period ending in the tax year, or has a centre of vital interests in Kazakhstan  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/residence))_
 - **Employer withholding** — Employers withhold PIT monthly at source and remit it; most employees with only employment income need not file an annual declaration  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/tax-administration))_
-- **Annual declaration filing deadline (where required)** — 31 March of the year following the reporting year (approx — confirm)  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/tax-administration))_
-- **Self-assessed PIT payment deadline (where a declaration is filed)** — Within 10 calendar days after the declaration filing deadline (approx — confirm)  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/tax-administration))_
+- **Annual declaration filing deadline (where required)** — 15 September of the year following the reporting year for the income and property declaration under the 2026 Code (the previous Code's 31 March deadline no longer applies)  _(Tax Code of the Republic of Kazakhstan, Code No. 214-VIII of 18 July 2025 (in force from 1 January 2026), English text on adilet.zan.kz, art. 418.1 — https://adilet.zan.kz/eng/docs/K2500000214 ; https://taxsummaries.pwc.com/kazakhstan/individual/tax-administration)_
+- **Self-assessed PIT payment deadline (where a declaration is filed)** — Within 10 calendar days after the declaration deadline  _(Tax Code of the Republic of Kazakhstan, Code No. 214-VIII of 18 July 2025 (in force from 1 January 2026), English text on adilet.zan.kz, art. 419.1 — https://adilet.zan.kz/eng/docs/K2500000214 ; https://taxsummaries.pwc.com/kazakhstan/individual/tax-administration)_
 
 <!-- openaccountants-cta-block -->
 
