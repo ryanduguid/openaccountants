@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Botswana (tax year 2025) — 
 jurisdiction: BW
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-04
+version: 1.1
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -28,7 +29,7 @@ Personal income tax is progressive to a 25% top rate; the standard company tax r
 - **Personal income tax top marginal rate (residents)** — 25% %  _(Income Tax Act (Cap. 52:01), Second Schedule — https://taxsummaries.pwc.com/botswana/individual/taxes-on-personal-income)_
 - **Personal tax-free threshold (residents)** — BWP 48,000 per year BWP  _(Income Tax Act (Cap. 52:01), Second Schedule — https://taxsummaries.pwc.com/botswana/individual/taxes-on-personal-income)_
 - **Standard company tax rate** — 22% % (2025/2026 budget proposed 23.5% — (approx — confirm))  _(Income Tax Act (Cap. 52:01) — https://taxsummaries.pwc.com/botswana/corporate/taxes-on-corporate-income)_
-- **VAT** — Yes — VAT applies, standard rate **14%** % (the rise to 15% proposed for 1 April 2025 appears never to have taken effect: PwC's 2026 chart and a BURS notice under the VAT Act both give 14% well over a year on)  _(Value Added Tax Act (Cap. 50:03) — https://taxsummaries.pwc.com/botswana/corporate/other-taxes)_
+- **VAT** — Yes — VAT applies, standard rate **14%** (confirmed by BURS's 9 July 2026 notice under the Value Added Tax Act, 2026, in force from 1 July 2026; the rise to 15% proposed for 1 April 2025 never took effect). The 2025 amendment commenced on 1 June 2026: non-resident remote-service suppliers register from 1 June and charge VAT from 1 October 2026, and reverse-charge accounting by registered persons, government entities and large unregistered persons starts 1 August 2026  _(BURS public notices, 29 May and 9 July 2026 — https://www.burs.org.bw/images/Value%20Added%20Tax%20Amendment%20Act%202026.pdf ; https://www.burs.org.bw/images/Zero-Rated%20FoodStuff-%20Under%20Vat%20Act%20of%202026.pdf ; https://taxsummaries.pwc.com/botswana/corporate/other-taxes)_
 
 ## Main annual filing deadlines
 
