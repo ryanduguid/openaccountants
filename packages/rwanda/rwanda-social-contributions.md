@@ -1,10 +1,10 @@
 ---
 name: rwanda-social-contributions
 description: Use this skill whenever asked about Rwanda payroll taxes, PAYE, or social security / RSSB contributions for employees and employers. Trigger on phrases like "how much PAYE in Rwanda", "RSSB pension contribution", "Rwanda social security rate", "what is the pension rate 2025", "occupational hazards contribution", "maternity scheme RSSB", "CBHIS deduction", "RAMA / medical insurance scheme", "net pay calculation Rwanda", "casual labour tax rate", "Rwanda monthly declaration deadline", or any question about an employee's or employer's RSSB / RRA obligations. Also trigger when classifying bank statement transactions that relate to RRA tax payments, RSSB contribution debits, or PAYE remittances from Bank of Kigali, BPR, Equity Bank Rwanda, I&M Bank or other Rwandan banks. Also trigger when preparing or reviewing a monthly unified PAYE + RSSB declaration on E-Tax / MyRRA. This skill covers the 2025 PAYE brackets, the five RSSB schemes (pension, occupational hazards, maternity, CBHIS, medical), their differing contribution bases, the unified monthly declaration, penalties and interest under the Tax Procedures Law, expat/KIFC treatment, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Rwanda payroll or social-contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: RW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Rwanda PAYE & RSSB Social Contributions
 
-## Rwanda PAYE & RSSB Social Contributions Skill v0.1
+## Rwanda PAYE & RSSB Social Contributions Skill v0.2
 
 > Rwanda **does** levy personal income tax. This is a standard PAYE + social-insurance jurisdiction. Payroll obligations are filed jointly to the **Rwanda Revenue Authority (RRA)** and the **Rwanda Social Security Board (RSSB)** via a single monthly declaration on **E-Tax / MyRRA**.
 
@@ -443,7 +443,7 @@ If the client provides only a bank statement and no payroll detail:
 
 ### Filing exemptions (no annual individual return required)
 
-- **Filing exemptions** — - Annual turnover below RWF 2 million; or - Only employment income (PAYE is final); or - Only investment income subject to final WHT; or - Non-residents with Rwandan WHT income. Record retention: 10 years; returns auditable for 5 years.  _(PwC Rwanda -- Tax administration (https://taxsummaries.pwc.com/rwanda/individual/tax-administration))_
+- **Filing exemptions** — - Annual turnover below RWF 2 million; or - Only employment income (PAYE is final); or - Only investment income subject to final WHT; or - Non-residents with Rwandan WHT income. Record retention: 10 years; returns auditable for 5 years.  _(Law nº 027/2022 of 20/10/2022 establishing taxes on income (Official Gazette nº Special of 28/10/2022), Rwanda Revenue Authority copy, Art. 9 — https://www.rra.gov.rw/fileadmin/user_upload/Income_Tax_law_of_2022.pdf ; Law nº 020/2023 of 31/03/2023 on tax procedures, Rwanda Revenue Authority copy, Art. 15 — https://www.rra.gov.rw/fileadmin/user_upload/Law_n___020_2023_of_31.03.2023_on_tax_procedures.pdf)_
 
 ### Minimum wage
 
