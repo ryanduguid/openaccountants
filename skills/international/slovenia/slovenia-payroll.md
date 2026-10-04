@@ -1,7 +1,7 @@
 ---
 name: slovenia-payroll
 description: Use this skill whenever asked about Slovenia payroll processing for employed persons. Trigger on phrases like "Slovenia payroll", "Slovenian payroll", "akontacija dohodnine", "dohodnina withholding", "REK-O", "REK obrazec", "prispevki ZPIZ", "social contributions Slovenia", "ZZZS contributions", "long-term care contribution Slovenia", "ZDOsk", "splošna olajšava", "minimalna plača", "minimum wage Slovenia", "bruto plača", "neto plača", "net salary Slovenia", "gross to net Slovenia", "employer SSC Slovenia", "FURS payroll", "eDavki", "salary calculation Slovenia", or any question about computing employee pay, withholding income tax, or social security contributions for Slovenia-based employees. This skill covers progressive PIT withholding (akontacija dohodnine), employee and employer social security contributions (ZPIZ pension, ZZZS health, unemployment, parental, injury-at-work), the new long-term care contribution (ZDOsk-1, from 1 July 2025), the flat compulsory health contribution, minimum wage, the general tax allowance, and REK-O filing obligations. ALWAYS read this skill before processing any Slovenia payroll.
-version: 0.2
+version: 0.3
 jurisdiction: SI
 tax_year: 2025
 last_updated: 2026-10-04
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Slovenia Payroll
 
-## Slovenia Payroll Skill v0.2
+## Slovenia Payroll Skill v0.3
 
 > **Tier 2 — research-verified, NOT yet accountant-verified.** Several figures rely on Big-4 (PwC/KPMG) and aggregator summaries rather than FURS primary documents. Items marked **[RESEARCH GAP — reviewer to confirm]** require a licensed Slovenian accountant (davčni svetovalec / pooblaščeni računovodja) to confirm against FURS/ZPIZ/ZZZS primary sources before reliance. Research confidence: **medium**.
 
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary payroll return | REK-O (Obračun davčnih odtegljajev), filed on the day of payment [FURS] |
 | Key legislation | ZDoh-2 (PIT); ZPIZ-2 (pension/disability); ZZVZZ (health); ZDOsk-1 (long-term care, LTC contribution from 1 Jul 2025); ZPSV (social-security contributions) |
 | Validated by | Pending -- requires sign-off by a licensed Slovenian accountant |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ## Section 2 -- Income Tax Withholding (Akontacija Dohodnine)
 
@@ -98,7 +98,7 @@ Employee social security contributions are deducted from gross employment income
 
 ### Employee Contribution Rates (2025)
 
-**Employee Contribution Rates (2025)**  _(PwC Worldwide Tax Summaries — Slovenia Other taxes; long-term care row per KPMG Flash Alert 2025-133 / ZDOsk-1)_
+**Employee Contribution Rates (2025)**  _(Social Security Contributions Act (ZPSV, consolidated text, PisRS), arts. 8, 11, 13 and 14 — https://pisrs.si/pregledPredpisa?id=ZAKO984 ; long-term care row per KPMG Flash Alert 2025-133 / ZDOsk-1)_
 
 | Contribution | Administrator | Rate | Notes |
 | --- | --- | --- | --- |
@@ -116,7 +116,7 @@ Employee social security contributions are deducted from gross employment income
 
 ### Separate Flat Compulsory Health Contribution (CHC / OZZ replacement)
 
-**Separate Flat Compulsory Health Contribution table**  _(PwC; WebSearch summary)_
+**Separate Flat Compulsory Health Contribution table**  _(Health Care and Health Insurance Act (ZZVZZ, consolidated text, PisRS), art. 48 — https://pisrs.si/pregledPredpisa?id=ZAKO213 ; indexed 2025 amount: PwC Worldwide Tax Summaries)_
 
 | Period (2025) | Monthly amount (EUR) | Source |
 | --- | --- | --- |
@@ -125,15 +125,15 @@ Employee social security contributions are deducted from gross employment income
 
 A separate flat per-capita Compulsory Health Contribution is deducted from insured individuals (not a percentage of wage).
 
-> **[RESEARCH GAP — reviewer to confirm]** The CHC amounts and **who remits it** (employer-deducted vs. employee self-pay) come from a secondary search summary and should be verified against ZZZS. The worked examples below show it as a separate deduction line and flag it.
+> ZZVZZ art. 48 sets the compulsory health contribution at EUR 35 a calendar month regardless of the days insured, adjusts it each 1 March by the growth in the average gross wage, and treats it as paid for the month when the payer of income (the employer for wages) withholds and pays it from the first payment for that month. The indexed EUR 37.17 from 1 March 2025 comes from PwC. The worked examples below show it as a separate deduction line.
 
 ## Section 4 -- Social Security -- Employer Contributions
 
-Employer social security contributions are paid on top of gross employment income. Source: PwC Worldwide Tax Summaries; long-term care row per KPMG Flash Alert 2025-133 / ZDOsk-1.
+Employer social security contributions are paid on top of gross employment income. Source: Social Security Contributions Act (ZPSV) arts. 8 to 14; long-term care row per KPMG Flash Alert 2025-133 / ZDOsk-1.
 
 ### Employer Contribution Rates (2025)
 
-**Employer Contribution Rates (2025)**  _(PwC Worldwide Tax Summaries; long-term care row per KPMG Flash Alert 2025-133 / ZDOsk-1)_
+**Employer Contribution Rates (2025)**  _(Social Security Contributions Act (ZPSV, consolidated text, PisRS), arts. 8, 11, 12, 13 and 14 — https://pisrs.si/pregledPredpisa?id=ZAKO984 ; long-term care row per KPMG Flash Alert 2025-133 / ZDOsk-1)_
 
 | Contribution | Administrator | Rate | Notes |
 | --- | --- | --- | --- |
@@ -364,11 +364,11 @@ Demonstrates the mandatory date split: pre-1-July rates 22.10% / 16.10% and CHC 
 | Additional low-earner general allowance | Formula/threshold unverified against FURS; affects net pay materially [RESEARCH GAP] |
 | Exact FURS monthly withholding schedule | This skill annualises the monthly base as an approximation; the official FURS monthly table may differ at the margins |
 | Self-employed contribution bases | Min base EUR 1,521.62 (60%), max base EUR 8,876.11 (3.5x), avg wage EUR 2,536.03 — sourced from search summaries / ZPIZ-2 [RESEARCH GAP] |
-| CHC remittance responsibility | Whether employer deducts and remits the flat CHC, or the individual self-pays [RESEARCH GAP] |
+| CHC remittance responsibility | Resolved: ZZVZZ art. 48 treats the contribution as paid when the payer of income withholds and pays it from the first payment for the month |
 | Penalty / fine bands | ZDavP-2 / ZPSV figures not captured at statutory amount level [RESEARCH GAP] |
 | Overtime, leave, regres (holiday allowance) treatment | Governed by ZDR-1 + collective agreements; not captured at figure level [RESEARCH GAP] |
 | Non-resident treatment | Allowance entitlement and treaty relief for non-residents not modelled here |
-| Corporate income tax interaction | 19% standard, with reported temporary increase to 22% for 2025-2028 (verify) — out of payroll scope but flagged [RESEARCH GAP] |
+| Corporate income tax interaction | 19% general rate (ZDDPO-2 art. 60); 22% for the 2024 to 2028 tax years under ZORZFS art. 64 per FURS — out of payroll scope |
 
 ## Section 12 -- Excel Working Paper Template
 
@@ -432,12 +432,12 @@ Add a validation cell asserting `D + M = combined wedge` and a check that the `E
 | Employee SSC | 22.10% (pre 1 Jul 2025) / 23.10% (from 1 Jul 2025) | PwC; KPMG Flash Alert 2025-133 |
 | Employer SSC | 16.10% (pre 1 Jul 2025) / 17.10% (from 1 Jul 2025) | PwC; KPMG Flash Alert 2025-133 |
 | LTC contribution (ZDOsk-1) | 1% employee + 1% employer (from 1 Jul 2025); self-employed 2%; pensioners 1% of net pension | KPMG Flash Alert 2025-133; ZDOsk-1 |
-| Flat CHC | EUR 35.00/mo (Jan-Feb 2025); EUR 37.17/mo (from 1 Mar 2025) | PwC; WebSearch **[RESEARCH GAP — reviewer to confirm]** |
+| Flat CHC | EUR 35.00/mo (Jan-Feb 2025); EUR 37.17/mo (from 1 Mar 2025) | ZZVZZ art. 48 (EUR 35 base, indexed each 1 March); PwC for the 2025 indexed amount |
 | General allowance (base) | EUR 5,000/yr | PwC Deductions |
 | Minimum wage gross | EUR 1,277.72/mo (2025); EUR 1,481.88/mo (2026) | WageIndicator/SeeNews; RRA Koroška |
 | Capital income flat rate | 25% (schedular) | PwC |
 | VAT standard rate (context) | 22% | Tax rate summaries |
-| Corporate income tax (context) | 19% (reported temporary 22% for 2025-2028 — verify) | Tax rate summaries **[RESEARCH GAP — reviewer to confirm]** |
+| Corporate income tax (context) | 19% general rate; 22% for the 2024 to 2028 tax years | ZDDPO-2 art. 60 (https://pisrs.si/pregledPredpisa?id=ZAKO4687); FURS corporate tax page citing ZORZFS art. 64 (https://www.fu.gov.si/davki_in_druge_dajatve/podrocja/davek_od_dohodkov_pravnih_oseb_ddpo/) |
 | Self-employed min/max base (context) | EUR 1,521.62 / EUR 8,876.11; avg wage EUR 2,536.03 | WebSearch; ZPIZ-2 **[RESEARCH GAP — reviewer to confirm]** |
 
 ### Forms
