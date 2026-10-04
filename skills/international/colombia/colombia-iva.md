@@ -1,10 +1,10 @@
 ---
 name: colombia-iva
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Colombia IVA (Impuesto sobre las Ventas) return or advise on Colombian VAT registration, filing, and DIAN compliance. Trigger on phrases like "prepare IVA return Colombia", "Colombian VAT", "IVA Colombia", "DIAN", "NIT", or any Colombia IVA request. ALWAYS read this skill before touching any Colombia IVA work.
-version: 2.0
+version: 2.1
 jurisdiction: CO
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | NIT | Número de Identificación Tributaria — Colombian taxpayer ID |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by Colombia-licensed Contador Público |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
 ### Key Formulario 300 fields
 
@@ -339,7 +339,7 @@ Valor       : +$109.500.000
 
 ### Rate assignment
 
-- **Rate assignment rules** — 19% standard: most goods and services not listed below; 5%: domestic passenger air transport, accommodation/lodging, agricultural inputs, some medicines and medical devices; 0% (excluido/zero-rated): basic unprocessed foods (arroz, maíz, papa, sal, panela, leche, huevos, carne/pescado sin procesar), books, water supply (residential), agricultural animals; Exempt: financial services, insurance, education, healthcare (licensed practitioners), public utilities (residential electricity/gas), land transport, newspapers, public passenger transport  _(Rate assignment)_
+- **Rate assignment rules** — 19% standard (art. 468): most goods and services not listed below; 5% (art. 468-1 goods, art. 468-3 services): domestic passenger air transport, accommodation/lodging, agricultural inputs, some medicines and medical devices; 0% exento (art. 477, zero-rated with input credit): basic unprocessed foods (arroz, maíz, papa, sal, panela, leche, huevos, carne/pescado sin procesar), books, agricultural animals; Excluido (art. 424 goods and art. 476 services, outside IVA with no input credit): financial services, insurance, education, healthcare (licensed practitioners), residential water, electricity and gas, land transport, newspapers, public passenger transport. The Colombian terms run the other way from most VAT systems: exento is zero-rated with credit, excluido is outside the tax with no credit  _(Estatuto Tributario (Decreto 624 de 1989, consolidated text on the Función Pública gestor normativo), art. 424, 468, 468-1, 468-3, 476 and 477 — https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=6533)_
 
 ### Input credit
 
