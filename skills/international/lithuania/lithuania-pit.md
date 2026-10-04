@@ -1,10 +1,10 @@
 ---
 name: lithuania-pit
 description: Use this skill whenever asked to prepare, review, or classify transactions for Lithuania Personal Income Tax (Gyventojų pajamų mokestis / GPM), annual return filing with VMI, or advise on Lithuanian income tax rates and Sodra contributions. Trigger on phrases like "GPM", "pajamų mokestis", "Lithuanian income tax", "VMI", "Sodra", or any Lithuania personal tax request. ALWAYS read this skill before touching any Lithuania PIT work.
-version: 1.0
+version: 1.1
 jurisdiction: LT
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-04
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Source credit | `sarunas/income-tax-calculator` (MIT, 21 stars) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Lithuanian mokesčių konsultantas |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ## Section 2 — Income tax rates (GPM tarifai) — 2025
 
@@ -42,8 +42,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Annual taxable income (EUR) | Rate |
 | --- | --- |
-| Up to €108,480 (60 × average salary) | **20%** |
-| Over €108,480 | **32%** |
+| Up to 36 VDU (average monthly wages) a year | **20%** |
+| 36 to 60 VDU | **25%** (art. 6(1)(2), in force for 2026; 20% in 2025) |
+| Over 60 VDU | **32%** |
 
 ### Individual activity income (individualios veiklos pajamos)
 
@@ -115,11 +116,11 @@ Note: Additional voluntary pension (II/III pillar) — 2.7% or more (state co-fi
 
 | Annual employment income | Monthly NPD (2025) |
 | --- | --- |
-| Up to ~€840/month | Full NPD: **€747** |
-| €840 – €2,167/month | Proportionally reduced |
-| Over €2,167/month | NPD = €0 |
+| Up to one minimum monthly wage (MMA at 1 January; €1,038 in 2025) | Full NPD: **€747** |
+| Above one MMA | Reduced by 0.49 of the excess over the MMA (art. 20(2)(2)) |
+| Where the formula reaches zero | NPD = €0 |
 
-- **NPD formula** — NPD = 747 − 0.5 × (monthly income − 840)
+- **NPD formula** — Monthly NPD = 747 − 0.49 × (monthly employment income − one minimum monthly wage in force on 1 January of the year; €1,038 in 2025). This guide carried the earlier 0.5 coefficient and €840 base until October 2026.  _(Law on Personal Income Tax IX-1007 (Gyventojų pajamų mokesčio įstatymas, consolidated text in force from 11 June 2026, e-seimas), art. 20(2) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.171369/asr)_
 
 ## Section 5 — Deductions and credits
 

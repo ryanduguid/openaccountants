@@ -1,11 +1,11 @@
 ---
 name: lithuania-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Lithuanian VAT return (FR0600 form) for any client. Trigger on phrases like "prepare VAT return", "Lithuanian VAT", "PVM return", "FR0600", "pridetines vertes mokestis", or any request involving Lithuania VAT filing. MUST be loaded alongside BOTH vat-workflow-base and eu-vat-directive companion skills. ALWAYS read this skill before touching any Lithuania VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: LT
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-04
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Lithuania VAT Return
 
-## Lithuania PVM Return Skill (FR0600) v2.0
+## Lithuania PVM Return Skill (FR0600) v2.1
 
 ## Section 1 — Quick reference
 
@@ -190,19 +190,19 @@ Treatment: Passenger vehicle PVM recovery limited. Conservative default: 0%. Fla
 
 ### 5.1 Standard rate 21%
 
-- **Standard rate 21%** — Standard rate 21%  _(Unsure — no citation)_
+- **Standard rate 21%** — Standard rate 21%  _(Law on Value Added Tax IX-751 (Pridėtinės vertės mokesčio įstatymas, consolidated text, e-seimas), art. 2(32) and art. 19(1) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.163423/asr)_
 
 ### 5.2 Reduced rate 9% — books, periodicals, heating, accommodation
 
-- **Reduced rate 9%** — Reduced rate 9% — books, periodicals, heating, accommodation  _(Unsure — no citation)_
+- **Reduced rate 12%** — Reduced rate 12% (9% before the 2025 amendment) — accommodation, scheduled passenger transport, admission to cultural events; periodicals and books moved to the 5% rate  _(Law on Value Added Tax IX-751 (Pridėtinės vertės mokesčio įstatymas, consolidated text, e-seimas), art. 19(3), as amended by Law XV-287 of 17 June 2025 — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.163423/asr)_
 
 ### 5.3 Reduced rate 5% — medicines, medical devices
 
-- **Reduced rate 5%** — Reduced rate 5% — medicines, medical devices  _(Unsure — no citation)_
+- **Reduced rate 5%** — Reduced rate 5% — medicines, medical and disability aids, periodicals, books  _(Law on Value Added Tax IX-751 (Pridėtinės vertės mokesčio įstatymas, consolidated text, e-seimas), art. 19(4) — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.163423/asr)_
 
 ### 5.4 Zero rate — exports, intra-EU B2B
 
-- **Zero rate** — Zero rate — exports, intra-EU B2B  _(Unsure — no citation)_
+- **Zero rate** — Zero rate — exports, intra-EU B2B  _(Law on Value Added Tax IX-751 (Pridėtinės vertės mokesčio įstatymas, consolidated text, e-seimas), art. 19(5) and Chapter VI — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.163423/asr)_
 
 ### 5.5 Exempt — financial, insurance, medical, education, residential rental
 

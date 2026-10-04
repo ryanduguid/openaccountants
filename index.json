@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T06:34:05+00:00",
+ "generated_at": "2026-10-04T06:48:15+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -12653,7 +12653,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "lithuania-vat-return",
@@ -12666,7 +12666,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "lt-company-formation",
@@ -12692,7 +12692,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "lt-payroll-social",
@@ -12705,7 +12705,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "lt-tax-overview",
@@ -12718,7 +12718,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-04"
   },
   {
    "slug": "lithuania-references",
