@@ -371,13 +371,13 @@ This skill does NOT cover:
 
 1. Multi-member LLC Form 568 is not supported (this skill is SMLLC only).
 2. LLCs taxed as S-corps or C-corps use different forms (Form 100S, Form 100).
-4. Multi-state apportionment for LLCs with income from multiple states is not fully detailed.
-5. FTB interest rates for underpayment penalties change quarterly and must be looked up at filing time.
+3. Multi-state apportionment for LLCs with income from multiple states is not fully detailed.
+4. FTB interest rates for underpayment penalties change quarterly and must be looked up at filing time.
 
 ### Change log
 
 - **v0.1 (April 2026):** Stub.
-- **v0.2 (April 2026):** Full content skill with $800 franchise tax, LLC fee schedule, Form 568 preparation, edge cases, and test suite.
+- **v0.2 (April 2026):** Full content skill with $800 franchise tax, LLC fee schedule, Form 568 preparation, edge cases, and test suite.
 - **v0.3 (4 October 2026):** Form 568 due date corrected to April 15 for an SMLLC owned by an individual (March 15 when the owner is a pass-through entity); California's automatic extension and the FTB 3537/3536 payment vouchers described in place of Form 7004; late-filing example recomputed at three months.
 
 ## End of skill

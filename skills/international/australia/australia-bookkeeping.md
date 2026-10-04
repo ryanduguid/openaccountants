@@ -304,7 +304,6 @@ These labels follow the [ATO 2025 BPI expenses instructions](https://www.ato.gov
 
 Use the Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025 for Commissioner-determined Div 40 lives, or a supportable self-assessed life. Div 43 uses its own construction-date, use and rate rules; 4% applies only to an eligible category.
 
-
 **Common effective lives (2025 determination, asset-specific)**  _([Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025, Table B](https://www.legislation.gov.au/F2025L01097/asmade/text))_
 
 | Asset | Effective Life | DV Rate | PC Rate |

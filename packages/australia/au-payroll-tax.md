@@ -263,7 +263,7 @@ national rate.
 Sources were checked on 27 September 2026.
 
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before registering, lodging or amending a payroll tax return. Thresholds, deduction formulas and levies change with each state budget, and grouping and contractor positions turn on the facts.
-
+>
 > Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->

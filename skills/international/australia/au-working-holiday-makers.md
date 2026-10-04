@@ -238,7 +238,7 @@ amount above the tax-free threshold plus the Medicare levy, less the low income 
 Sources were checked on 27 September 2026.
 
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before relying on it for withholding, registration or a return. Residency and the non-discrimination article position depend on the worker's facts.
-
+>
 > Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->

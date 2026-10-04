@@ -232,7 +232,7 @@ it on the TPRS list from an earlier year.
 Sources were checked on 27 September 2026.
 
 > **Working paper only, not a lodged report.** Have a qualified Australian CPA or CA review the service test and the contractor extract before lodging. The ATO matches TPAR data against contractors' returns, so an omitted or misclassified contractor is visible.
-
+>
 > Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->

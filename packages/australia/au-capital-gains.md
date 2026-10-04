@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
 > elections, deadlines, residency, filing status or local procedures. Do not rely on it to
 > lodge, pay, amend or take a tax position without review by a qualified professional.
-
+>
 > **Enacted change from 1 July 2027.** The 50% CGT discount for individuals, trusts and
 > partnerships is replaced by cost base indexation with a 30% minimum tax rate on capital gains.
 > The change applies to gains that accrue after 1 July 2027. Separately, negative gearing for
@@ -280,7 +280,7 @@ Net capital gain included in assessable income    6,547.50
 Sources were checked on 16 September 2026.
 
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before lodging. Small business CGT eligibility requires detailed analysis of the active asset test, the aggregation rules and the maximum net asset value test.
-
+>
 > Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->

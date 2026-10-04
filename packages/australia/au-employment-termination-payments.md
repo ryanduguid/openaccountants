@@ -323,7 +323,7 @@ cap would apply to all of it.
 Sources were checked on 27 September 2026.
 
 > **Working paper only, not a lodged return.** Have a qualified Australian CPA or CA review this before paying or reporting a termination package. Genuine redundancy status and early retirement scheme approval turn on the facts of the dismissal.
-
+>
 > Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
