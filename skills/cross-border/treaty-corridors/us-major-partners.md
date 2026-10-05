@@ -1,7 +1,7 @@
 ---
 name: us-major-partners
-description: "version: 1.3"
-version: 1.3
+description: "version: 1.4"
+version: 1.4
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-10-05
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The UK, Germany, Canada, India and Japan sections and their PE rows, plus the UK, Germany and Japan summary rows, were checked against the cited treaty text on 5 October 2026. Germany's REIT pension treatment remains unresolved as described below. The other 9 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. Germany's REIT pension treatment and France's stated interpretation gaps remain unresolved. The other 8 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -113,19 +113,50 @@ These treatments require treaty residence, beneficial ownership where specified,
 
 ## US → France
 
-**US → France income types and treaty rates**  _(IRS Table 1)_
+These are treaty ceilings or exemptions for US-source income of French residents for tax year 2025. Residence, derivation, beneficial ownership where required and [art 30 entitlement][fr-protocol] must be established before claiming relief. The [art 29(2), (3) saving clause, amended by Protocol XIII][fr-protocol], preserves US taxation of residents and citizens subject to its exceptions. Source exemption does not exempt the receipt from French tax. This section does not determine a claimant's entitlement or current withholding procedure.
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+| Income type | US-source treaty ceiling / treatment | Primary provision | Conditions |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
-| Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
-| Interest | 0% | Art 11(2) | Complete exemption |
-| Royalties | 0% | Art 12(1) | All categories 0% |
-| Technical services | 0% | Art 7 | Business profits — no WHT without PE |
+| Dividends, general | 15% of gross dividends | [art 10(2)(b)][fr-protocol] | Investment-vehicle and attribution restrictions below apply |
+| Dividends, qualifying corporate holding | 5% of gross dividends | [art 10(2)(a)(i)][fr-protocol] | French-resident company beneficial owner directly owns at least 10% of the US payer's voting stock |
+| Dividends, qualifying parent company | 0% US source tax | [art 10(3)][fr-protocol] | French-resident company beneficial owner owns at least 80% of the US payer's voting power for the twelve months ending on dividend entitlement, directly or through US/French-resident intermediaries, and meets an additional route below |
+| Interest, ordinary | 0% US source tax | [art 11(1)][fr-treaty] | Profit-linked, attribution, excess-payment, REMIC and art 30 exceptions below apply |
+| Interest determined by reference to the issuer's or an associated enterprise's profits | 15% of gross interest | [art 11(2), read with amended art 10(2)(b)][fr-treaty] | Classify dividend income under art 10(6)(a) first; art 11(3) excludes art 10 dividends |
+| Treaty-defined royalties | 0% US source tax | [art 12(1), replaced by Protocol III][fr-protocol] | Apply the definition, source, attribution, excess-payment and art 30 rules below |
+| Enterprise services governed by business profits | US exemption without a US PE; attributable profits taxable with a PE | [art 7(1), (8)][fr-treaty] | Separately governed income keeps its own article; no standalone technical-services rate |
+| Independent professional or other independent services | US exemption without a regularly available US fixed base; attributable income taxable with one | [art 14(1)][fr-treaty] | Art 14 remains in the reviewed instruments; classify the payment before applying it |
 
-**Source:** US-France Convention signed 31 August 1994, amended by 2004 and 2009 Protocols. IRS Table 1.
-**Special provisions:** MFN clause on royalties. US has not signed MLI. Branch profits tax provisions apply.
-**Last verified:** May 2026
+**Parent and investment-vehicle conditions:** The parent exemption requires one of [art 10(3)(a)–(d)][fr-protocol]: art 30(2)(c)(i) or (ii); both art 30(2)(e)(i), (ii) and the art 30(4) active-business test for the dividends; the art 30(3) derivative-benefits test; or a competent-authority determination under art 30(6) for this exemption. The holding threshold alone is insufficient.
+
+Under [art 10(5)(a)–(c)][fr-protocol], US regulated investment company (RIC) and real estate investment trust (REIT) dividends cannot use the 5% rate or parent exemption. RIC dividends use the 15% ceiling. REIT dividends use it only where the beneficial owner is: an individual, pension trust or qualifying retirement/employee-benefit organisation established or sponsored by a resident, holding no more than 10%; a person holding no more than 5% of any class where the dividend is on a publicly traded class; or a person holding no more than 10% in a diversified REIT. The organisation must be established exclusively to administer or provide the stated benefits. A REIT is diversified if the value of no single real-property interest exceeds 10% of its total real-property interests; disregard foreclosure property and attribute partnership real-property interests proportionately. Outside those REIT cases, art 10(5) does not provide these reduced dividend rates.
+
+**Interest and royalty classification:** [Art 29(6)][fr-treaty] preserves US taxation of excess inclusions on a real estate mortgage investment conduit (REMIC) residual interest. [Arts 11(6)][fr-treaty] and [12(5), renumbered by Protocol III][fr-protocol], protect only the arm's-length amount where a special relationship produces an excess payment; the excess remains taxable under domestic law with regard to the other treaty provisions. Art 11(3) excludes late-payment penalties from interest. Check art 11(5)'s interest source rules and the original exchange of notes for interest borne by a third-country resident's PE or fixed base.
+
+[Art 12(2), inserted by Protocol III][fr-protocol], covers payments for specified copyright/neighbouring rights, films, sound/picture recordings, software, patents, trademarks, designs, plans, secret formulas/processes, similar rights and industrial, commercial or scientific experience information. It also covers alienation gains contingent on productivity, use or further alienation; non-contingent gains require a separate art 13 analysis. The [2009 explanation to Protocol III][fr-explanation] distinguishes qualifying know-how from pure technical assistance and professional services, and excludes tangible personal-property leases from royalties. Apply current art 12(4), renumbered from original paragraph 6: payer residence and PE/fixed-base bearing rules are subject to the use-location override, and payment is deemed made no later than expense recognition for source-state tax. A payment's description alone does not establish treaty classification or source.
+
+**Attribution and additional company tax:** [Amended arts 10(7), 12(3)][fr-protocol] and [art 11(4)][fr-treaty] move attributable dividends, interest and royalties to art 7 or 14 when the beneficial owner conducts business through a US PE or independent services from a US fixed base. Arts 7(7), 14(2) retain taxation of attributable income paid after the PE or fixed base ceases. [Arts 10(8), (9)][fr-protocol] separately permit additional company tax on the specified dividend-equivalent amount, with a 5% ceiling and conditional exemptions; this is not the ordinary tax rate on PE profits. Art 10(9)(b), (c) expressly refers to items described in paragraph 7, although paragraph 8 imposes the additional tax. The French government's consolidated text retains those references. Their interpretation is unresolved; this draft does not replace them with paragraph 8.
+
+**Residence and benefit restrictions:** [Art 4][fr-treaty], amended by [Protocol I][fr-protocol], excludes source-only taxpayers and supplies individual tie-breakers. A dual-resident entity needs competent-authority agreement under current art 4(5) and otherwise receives no treaty residence benefits. Art 4(2)(c) treats income paid to a qualified French partnership as derived by a French resident only to the extent it is included in that resident member's taxable income; the partnership's four stated conditions must also hold. Art 4(3) applies to transparent entities organised in either state or a third state with the required information-exchange agreement with the source state, to the extent the residence state's law treats the income as a resident's income.
+
+[Art 30, replaced by Protocol XIV][fr-protocol], supplies qualified-person, ownership/base-erosion, derivative-benefits, item-specific active-business and competent-authority routes. The general LOB overview below does not establish France entitlement. Art 30(5) restricts benefits for income attributed to a third-jurisdiction PE when combined actual residence-state and third-jurisdiction tax is below 60% of the specified hypothetical residence-state tax. Affected dividends, interest and royalties have a 15% gross ceiling; other affected income is governed by domestic law. It excepts royalties for intangibles produced or developed by that PE and specified other income connected with or incidental to its active business. Art 30(7) definitions and rate comparisons must be checked. [Announcement 2020-6][fr-nafta] states the Treasury/IRS interpretation of NAFTA references following USMCA replacement; it does not itself establish French agreement.
+
+**Interpretation gaps:** The [2009 explanation to Protocol II][fr-explanation] mentions certain pension fund dividends in its introduction to art 10(3), while the operative paragraph supplies a company-beneficial-owner route only. No separate pension dividend exemption is inferred here. Its discussion of art 12(3) ends with a copyright no-source-tax sentence that appears inconsistent with the operative PE/fixed-base attribution exception. That sentence is not used to override art 12(3). Qualified professional resolution of both discrepancies and the art 10(9) references remains outstanding.
+
+**Sources:** *Convention between the Government of the French Republic and the Government of the United States of America for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income and Capital*, signed 31 August 1994 (entered into force 30 December 1995), with exchanges of notes, as amended by the Protocols signed 8 December 2004 (entered into force 21 December 2006) and 13 January 2009 (entered into force 23 December 2009). The [UN cumulative index][fr-record] records the original and 2004 force dates; the [2009 UN record][fr-2009-record] and [Treasury announcement][fr-force] confirm the later force date. Protocol II replaces art 10; III replaces key art 12 paragraphs and renumbers retained provisions; XIV replaces art 30. Protocol XVI applies withholding changes to amounts paid from 1 January 2009 and other tax changes generally to periods beginning on or after 1 January 2010. Read the [2004 Protocol][fr-protocol-2004], retained original articles and amended clauses together. The [IRS document index][fr-index] and [French government consolidated text][fr-french] were checked; the [competent-authority index][fr-ca] lists France FATCA material, which is not treated here as a dividend or royalty amendment.
+
+**Source text checked:** 5 October 2026. French consolidated provisions were compared for article references and numerical conditions, without independent translation or a complete authentic-text comparison. A complete later-instrument review, current domestic administration, taxpayer-specific application and professional sign-off remain unverified. This section remains a tier 2 draft pending review.
+
+[fr-treaty]: https://www.irs.gov/pub/irs-trty/france.pdf
+[fr-protocol]: https://home.treasury.gov/system/files/131/Treaty-France-Pr2-1-13-2009.pdf
+[fr-protocol-2004]: https://home.treasury.gov/system/files/131/Treaty-France-Protocol-8-12-2004.pdf
+[fr-explanation]: https://home.treasury.gov/system/files/131/Treaty-France-Pr2-TE-1-13-2009.pdf
+[fr-record]: https://treaties.un.org/doc/Publication/Cumulative%20Index/UNTS%20Volume%20No%202451-2500/cumindex.chrono.en.pdf
+[fr-2009-record]: https://treaties.un.org/doc/Publication/UNTS/Volume%202659/volume-2659-A-33537.pdf
+[fr-force]: https://home.treasury.gov/news/press-releases/tg504
+[fr-index]: https://www.irs.gov/businesses/international-businesses/france-tax-treaty-documents
+[fr-french]: https://www.impots.gouv.fr/sites/default/files/media/10_conventions/etats-unis/etats-unis_convention-avec-les-etats-unis-impot-sur-le-revenu-impot-sur-la-fortune_fd_1835.pdf
+[fr-ca]: https://www.irs.gov/individuals/international-taxpayers/competent-authority-arrangements
+[fr-nafta]: https://www.irs.gov/irb/2020-23_IRB
 
 ## US → Canada
 
@@ -376,7 +407,7 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | --- | --- | --- | --- |
 | UK | More than 12 months | No separate duration-based services PE test; fixed-place and dependent-agent rules can still apply | [arts 5, 21][uk-treaty]; separate offshore rules below |
 | Germany | More than 12 months | No separate duration-based services PE test; fixed-place and dependent-agent rules can still apply | [art 5][de-treaty]; professional services are business profits under amended art 7(7) |
-| France | 12 months | None specified | Standard OECD |
+| France | More than 12 months for construction/installation projects and specified exploration rigs/ships | No separate services day-count test; fixed-place and dependent-agent rules apply | [art 5][fr-treaty]; independent services retain the art 14 fixed-base rule |
 | Canada | More than 12 months | 183 days or more in any twelve-month period, with the conditions below | [arts V(3), V(9)][ca-treaty] |
 | India | More than 120 days in any twelve-month period | More than 90 days in any twelve-month period, or in-state services to a related enterprise; excludes included services | [art 5(2)(k), (l)][in-treaty]; conditions below |
 | Japan | More than 12 months | No separate duration-based services PE test; fixed-place and agency rules can still apply | [art 5, including art 5(3)][jp-treaty] |
@@ -407,13 +438,13 @@ All US treaties listed above (except the 1975 Israel treaty) contain LOB provisi
 
 ## Summary: Selected treaty ceilings and exemptions
 
-The UK, Germany and Japan rows in this summary were source-checked on 5 October 2026. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment remains unresolved. The other summary rows were not reverified.
+The UK, Germany, France and Japan rows in this summary were source-checked on 5 October 2026. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment and France's stated interpretation gaps remain unresolved. The other summary rows were not reverified.
 
 | Corridor | Dividends (substantial) | Interest | Royalties |
 | --- | --- | --- | --- |
 | [US → UK](#us--uk) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; classification and specified exceptions |
 | [US → Germany](#us--germany) | 5% for qualifying direct corporate holdings; parent and pension exemptions are conditional, with REIT pension treatment unresolved | Article 11 interest exempt; specified exceptions | Article 12 royalties exempt; classification and specified exceptions |
-| US ↔ France | 5% | 0% | 0% |
+| [US → France](#us--france) | 5% for qualifying direct corporate holdings; parent exemption is conditional; RIC/REIT restrictions | Ordinary art 11 interest exempt; profit-linked and specified exceptions | Defined art 12 royalties exempt; attribution and specified exceptions |
 | [US → Japan](#us--japan) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; specified exceptions |
 | US ↔ Netherlands | 5% | 0% | 0% |
 | US ↔ Ireland | 5% | 0% | 0% |
