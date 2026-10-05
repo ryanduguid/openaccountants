@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-05 | [US treaties: Germany rules](2026-10-05-us-germany-treaty-rules.md) |
 | 2026-10-05 | [US treaties: UK rules](2026-10-05-us-uk-treaty-rules.md) |
 | 2026-10-05 | [US treaties: Japan rules](2026-10-05-us-japan-treaty-rules.md) |
 | 2026-10-05 | [US treaties: Canada and India rules](2026-10-05-us-canada-india-treaty-rules.md) |

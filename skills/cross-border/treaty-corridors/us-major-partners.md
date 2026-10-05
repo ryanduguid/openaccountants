@@ -1,7 +1,7 @@
 ---
 name: us-major-partners
-description: "version: 1.2"
-version: 1.2
+description: "version: 1.3"
+version: 1.3
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-10-05
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The UK, Canada, India and Japan sections and their PE rows, plus the UK and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The other 10 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The UK, Germany, Canada, India and Japan sections and their PE rows, plus the UK, Germany and Japan summary rows, were checked against the cited treaty text on 5 October 2026. Germany's REIT pension treatment remains unresolved as described below. The other 9 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -66,20 +66,50 @@ These treatments require treaty residence, beneficial ownership where specified,
 
 ## US → Germany
 
-**US → Germany income types and treaty rates**  _(IRS Table 1)_
+**US-source income paid to German residents: treaty ceilings and exemptions for 2025**
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+These treatments require treaty residence, beneficial ownership where specified, entitlement under art 28 and the category conditions below. A treaty ceiling or exemption does not establish US domestic taxability, source or withholding procedure. Current administration, taxpayer-specific eligibility and reciprocal German withholding are outside this source review.
+
+| Income type | US-source treaty ceiling or treatment | Primary provision | Conditions |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
-| Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
-| Dividends — pension funds | 0% | Art 10 | Qualifying pension fund exemption |
-| Interest | 0% | Art 11(1) | Complete exemption |
-| Royalties | 0% | Art 12(1) | All categories 0% |
-| Technical services | 0% | Art 7 | Business profits — no WHT without PE |
+| Dividends, other cases | 15% of gross | [art 10(2)(b), replaced by Protocol art IV][de-protocol] | German resident beneficial owner; exceptions below |
+| Dividends, qualifying corporate holding | 5% of gross | [art 10(2)(a)][de-protocol] | Company beneficial owner owns directly at least 10% of payer voting stock |
+| Dividends, qualifying parent company | Exempt from US source tax | [art 10(3)(a)][de-protocol] | Direct ownership of at least 80% voting power for the twelve-month period ending on the dividend-entitlement date; additional routes below |
+| Dividends, qualifying pension fund | Exempt from US source tax, subject to vehicle treatment below | [arts 10(3)(b), (11), 28][de-protocol] | Treaty pension fund resident in Germany; no direct or indirect business derivation; REIT pension relief is unresolved below |
+| Article 11 interest outside specified exceptions, arm's-length amount | Exempt from US source tax | [art 11(1)][de-treaty], amended by [Protocol arts V, VII][de-protocol] | Deductible profit-participating payments, REMIC excess inclusions, PE, excess-payment and art 28 rules below |
+| Royalties within art 12(2), arm's-length amount | Exempt from US source tax | [art 12(1), (2)][de-treaty] | Classify the payment; PE, excess-payment and art 28 rules below |
+| Services classified as enterprise business profits, including professional services | No US tax under art 7 absent a US PE; only attributable profits may be taxed if a PE exists | [art 7(1), (6), (7)][de-treaty], amended by [Protocol art III][de-protocol] | Separately governed income retains its own article; this is not a blanket technical-services withholding rate |
 
-**Source:** US-Germany Convention signed 29 August 1989, amended by Protocol. IRS Table 1.
-**Special provisions:** 30% WHT on contingent interest not qualifying as portfolio interest. LOB clause. US has not signed MLI — treaty remains unmodified by MLI provisions.
-**Last verified:** May 2026
+**Parent-company entitlement:** [Art 10(3)(a)][de-protocol] requires direct ownership throughout the twelve-month period ending on the date entitlement to the dividend is determined. The company must also satisfy art 28(2)(c)(aa) or (bb); both limbs of art 28(2)(f) and art 28(4) with respect to the dividends; art 28(3) with respect to the dividends; or receive an art 28(7) determination for this exemption. Ordinary art 28 entitlement alone does not establish the parent exemption. The [2007 technical explanation][de-explanation], art IV paragraphs 2 and 3, confirms direct ownership for the 80% test and describes the 10% test on the dividend-entitlement date. Its paragraph 2 explains conditional proportionate ownership through a fiscally transparent entity; that does not turn the direct-ownership rule into a general indirect-holding rule.
+
+**Pension funds:** [Art 10(11)][de-protocol] defines the fund by its establishment and pension purpose; for Germany, contributions to the plan must be eligible for preferential treatment under the Income Tax Act. Art 10(3)(b) excludes dividends derived directly or indirectly from carrying on a business. The pension qualified-person route in art 28(2)(e) requires more than 50% of beneficiaries, members or participants to be individuals resident in either state, or the sponsoring organisation to be entitled under art 28(2). [Restated related Protocol para 8(b)][de-protocol] applies German relief to the person treated as asset owner under section 39 of the Fiscal Code, provided dividends may only fund retirement benefits through the fund. [IRS Announcement 2012-21][de-pensions] clarifies specified contractual trust arrangements and pension investment funds, subject to all other treaty requirements; it does not certify a claimant or resolve REIT treatment.
+
+**US investment vehicles:** [Art 10(4)][de-protocol] denies the 5% corporate rate and parent exemption to dividends paid by a US regulated investment company (RIC) or real estate investment trust (REIT). RIC dividends can use the 15% ceiling or qualifying pension exemption. For REIT dividends, the text expressly makes the 15% ceiling available only to an individual holding no more than 10%; on a publicly traded stock class where the beneficial owner holds no more than 5% of any class; or to a holder with no more than 10% in a diversified REIT. The article defines diversification and its treatment of foreclosure property and partnership holdings. Distributions classified as US real-property gains require separate art 13 analysis, as the technical explanation notes.
+
+**REIT pension uncertainty:** The [Protocol text, art 10(4)][de-protocol], expressly conditions only the 15% REIT ceiling on those three tests, and its first test names an individual. The [2007 technical explanation][de-explanation], art IV paragraph 4, says the pension exemption also requires one of the tests and includes a pension fund in the first test. This source discrepancy is unresolved here. REIT pension relief is excluded from any settled exemption in this guide and requires qualified professional review.
+
+**Interest and royalty exceptions:** [Art 10(6)][de-protocol] permits domestic source taxation of income from arrangements carrying a right to participate in profits when the payment is deductible in determining the payer's profits. The US category includes contingent interest of a type that would not qualify as portfolio interest; the article states no 30% rate. [Art 11(6), added by Protocol art V][de-protocol], permits US domestic taxation of an excess inclusion on a REMIC residual interest without an art 11 rate cap. [Arts 11(4), 12(4)][de-treaty] protect only the amount agreed without a special relationship; excess remains taxable under domestic law with due regard to other treaty provisions.
+
+[Art 12(2)][de-treaty] covers specified copyright and intellectual-property use rights, know-how and contingent alienation gains. It excludes cinematographic films and works on film, tape or other reproduction media for radio or television broadcasting; [art 7(7)][de-treaty] treats their rental or licensing as business profits. Tangible personal-property rentals also fall within art 7(7). The [restated related Protocol para 11][de-protocol] separately addresses an artiste's copyrightable recorded performance.
+
+**PE attribution and additional company tax:** [Arts 10(7)][de-protocol], [11(3), 12(3)][de-treaty], with the latter provisions amended by [Protocol art VII][de-protocol], move the income to art 7 where the relevant holding, debt claim, right or property forms part of the business property of a US PE. Protocol VII deletes art 14; Protocol III includes professional services and other independent activities in business profits. The Germany PE row below explains art 5. [Restated related Protocol paras 4, 5][de-protocol] address attribution and deferred payments after a PE ceases. Arts 10(9), (10) allow additional company tax on the specified dividend-equivalent amount at a ceiling of 5%, with exemptions under the stated art 28 routes; that ceiling does not set ordinary income tax on PE profits.
+
+**Residence and benefit restrictions:** [Art 4][de-treaty], with paragraph 1 replaced by [Protocol art II][de-protocol], excludes persons liable only on source income, PE profits or local capital. Art 4(2) supplies individual tie-breakers; under art 4(3), a non-individual dual resident needs a competent-authority determination and otherwise cannot enjoy treaty benefits. [Art 1(4), (5), (7), replaced by Protocol art I][de-protocol], preserves the saving clause and its exceptions and treats transparent-entity income as derived by a resident only to the extent the residence state treats it as that resident's income. Art 28, replaced by Protocol XIV, supplies entitlement and benefit-specific restrictions; the general LOB overview below does not establish Germany entitlement.
+
+[Art 28(5)][de-protocol] restricts benefits for income attributable to a third-jurisdiction PE where combined actual residence-state and third-jurisdiction tax is below 60% of the specified hypothetical residence-state tax. Affected dividends, interest and royalties have a 15% gross ceiling; other affected income is governed by domestic law. The paragraph excepts royalties for intangible property produced or developed by that PE and specified other income connected with or incidental to its active business. Art 28(6) imposes a separate 90% qualifying-ownership test for German Investmentvermögen; the specified owners and definitions must be checked before claiming benefits.
+
+**Sources:** *Convention between the United States of America and the Federal Republic of Germany for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income and Capital and to Certain Other Taxes*, signed 29 August 1989, 1708 UNTS 3 (entered into force 21 August 1991), including its related Protocol, as amended by the Protocol signed 1 June 2006, 2504 UNTS 90 (entered into force 28 December 2007). The [UN publication index][de-record] records the force dates; the [Treasury announcement][de-force] confirms the amendment's force. [Protocol art XVII][de-protocol] applies withholding changes to amounts paid or credited from 1 January 2007 and other income-tax changes to taxable years beginning on or after 1 January 2008. The optional twelve-month continuation of the old Convention is immaterial to 2025. The [IRS document index][de-index] links the original Convention/explanation and 2006 Protocol/2007 explanation; unchanged provisions must be read with the [original explanation][de-original-explanation].
+
+**Source text checked:** 5 October 2026. Qualified professional sign-off, current domestic administration, taxpayer-specific application and a complete later-instrument review remain unverified. The REIT pension discrepancy above remains unresolved.
+
+[de-treaty]: https://www.irs.gov/pub/irs-trty/germany.pdf
+[de-protocol]: https://www.irs.gov/pub/irs-trty/germanprot06.pdf
+[de-explanation]: https://www.irs.gov/pub/irs-trty/germanyte07.pdf
+[de-original-explanation]: https://www.irs.gov/pub/irs-trty/germtech.pdf
+[de-pensions]: https://www.irs.gov/irb/2012-19_IRB
+[de-record]: https://treaties.un.org/doc/Publication/Cumulative%20Index/UNTS%20Volume%20No%202501-2550/cumindex.chrono.en.pdf
+[de-force]: https://home.treasury.gov/news/press-releases/hp753
+[de-index]: https://www.irs.gov/businesses/international-businesses/germany-tax-treaty-documents
 
 ## US → France
 
@@ -345,7 +375,7 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | Treaty Partner | Construction PE Threshold | Service PE | Notes |
 | --- | --- | --- | --- |
 | UK | More than 12 months | No separate duration-based services PE test; fixed-place and dependent-agent rules can still apply | [arts 5, 21][uk-treaty]; separate offshore rules below |
-| Germany | 12 months | None specified | Standard OECD |
+| Germany | More than 12 months | No separate duration-based services PE test; fixed-place and dependent-agent rules can still apply | [art 5][de-treaty]; professional services are business profits under amended art 7(7) |
 | France | 12 months | None specified | Standard OECD |
 | Canada | More than 12 months | 183 days or more in any twelve-month period, with the conditions below | [arts V(3), V(9)][ca-treaty] |
 | India | More than 120 days in any twelve-month period | More than 90 days in any twelve-month period, or in-state services to a related enterprise; excludes included services | [art 5(2)(k), (l)][in-treaty]; conditions below |
@@ -355,6 +385,8 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | Israel | 12 months | None specified | Standard OECD |
 
 **UK PE rules:** [Art 5][uk-treaty] includes fixed-place and dependent-agent grounds, subject to its stated exclusions and ordinary-course independent-agent rule; corporate control alone does not create a PE. Under art 5(3), a building site or construction or installation project constitutes a PE only if it lasts more than twelve months. [Art 21(1)–(3)][uk-treaty] separately covers activities carried on offshore in a Contracting State in connection with exploration or exploitation of that State's seabed, subsoil and natural resources. Subject to paragraph 3, an enterprise of the other Contracting State carrying on those activities is deemed to have a PE there. Exploration activities not exceeding 30 aggregate days in any twelve-month period are excepted; substantially similar exploration activities of associated enterprises are aggregated, excluding concurrent days. The enterprise PE rule has no 30-day exception for exploitation activities. Art 21(4) contains a separate employment-income rule.
+
+**Germany PE rules:** [Art 5][de-treaty] includes fixed-place and dependent-agent grounds, subject to its exclusions and ordinary-course independent-agent rule; corporate control alone does not create a PE. Under art 5(3), a building site or construction, assembly or installation project constitutes a PE only if it lasts more than twelve months. [Restated related Protocol para 3][de-protocol] separately prevents a PE for the specified performances by a resident not taxable under art 17, where presence does not exceed 183 aggregate days in the calendar year; it is not a general services exemption.
 
 **Canada services PE:** [Art V(9)][ca-treaty], subject to the construction rule in paragraph 3, applies where no PE exists under the preceding art V rules. Either an individual is present in the other state for at least 183 days in any twelve-month period and more than 50% of the enterprise's gross active-business revenues during those periods comes from that individual's services there; or services for the same or connected project are provided there for at least 183 days in any twelve-month period for resident customers, or customers with a PE there to which the services relate. Mere corporate control does not create a PE: art V(8).
 
@@ -375,12 +407,12 @@ All US treaties listed above (except the 1975 Israel treaty) contain LOB provisi
 
 ## Summary: Selected treaty ceilings and exemptions
 
-The UK and Japan rows in this summary were source-checked on 5 October 2026. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. The other summary rows were not reverified.
+The UK, Germany and Japan rows in this summary were source-checked on 5 October 2026. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment remains unresolved. The other summary rows were not reverified.
 
 | Corridor | Dividends (substantial) | Interest | Royalties |
 | --- | --- | --- | --- |
 | [US → UK](#us--uk) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; classification and specified exceptions |
-| US ↔ Germany | 5% (0% pension) | 0% | 0% |
+| [US → Germany](#us--germany) | 5% for qualifying direct corporate holdings; parent and pension exemptions are conditional, with REIT pension treatment unresolved | Article 11 interest exempt; specified exceptions | Article 12 royalties exempt; classification and specified exceptions |
 | US ↔ France | 5% | 0% | 0% |
 | [US → Japan](#us--japan) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; specified exceptions |
 | US ↔ Netherlands | 5% | 0% | 0% |
