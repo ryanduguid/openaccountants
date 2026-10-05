@@ -12,9 +12,10 @@ I compared the [1992 Convention and 1993 Protocol][convention],
 [original explanation][original-te], [2004 Protocol][protocol],
 [2004 explanation][te] and [2004 exchange of notes/Understanding][notes].
 The [IRS treaty index][irs-index] still linked those documents when read
-on 6 October 2026. The 2004 Protocol replaces arts 10 and 26, amends arts
-4, 11 and 24 and supplies the current Understanding, superseding the
-1992 Understanding and related 1993 notes. Original explanations are
+on 6 October 2026. Among the changes relevant here, the 2004 Protocol
+replaces arts 10 and 26 and amends arts 4, 11 and 24. The accompanying
+exchange of notes supplies the superseding 2004 Understanding, replacing
+the 1992 Understanding and related 1993 notes. Original explanations are
 interpretive evidence for retained provisions; obsolete LOB references
 and domestic examples do not establish current rules.
 
@@ -52,7 +53,7 @@ provisions therefore apply for the guide's 2025 scope.
 
 | Earlier statement or omission | Correction and primary pinpoint |
 | --- | --- |
-| Substantial dividends at 5% without category limits | Art 10(2)(a) requires a company beneficial owner directly holding at least 10% voting power; it is a maximum on gross dividends, subject to entitlement and paragraph 4/7 exceptions. |
+| Substantial dividends at 5% without category limits | Art 10(1)–(2) requires a US-resident payer for this directional table and a Netherlands resident company beneficial owner directly holding at least 10% voting power; it is a maximum on gross dividends, subject to entitlement and paragraph 4/7 exceptions. Art 10(8) separately prevents the specified US secondary tax on dividends paid by Netherlands-resident companies. |
 | No parent category | Art 10(3) requires direct ownership of at least 80% for twelve months ending on declaration, plus historical pre-1 October 1998 ownership, art 26(2)(c), item-specific art 26(3), or an actual paragraph 7 determination for this relief. General entitlement still applies. |
 | No fund boundary | Art 10(4) removes the 5% ceiling and parent exemption for US RIC/REIT dividends; REIT access to the 15% ceiling has four alternatives, including qualifying Dutch beleggingsinstellingen. |
 | No pension category | Art 35, including the 1993 amendment, is separate from ordinary fund rules. Art 26(2)(d), Understanding XXXVII and the 2003/2007 agreements add qualification, related-person, hybrid and distribution boundaries. |
@@ -70,13 +71,14 @@ calculations or tests that prove prose by matching the desired answer.
 | Corporate holding exactly 10% directly | Meets art 10(2)(a)'s ownership bound; below 10% does not. The explanation's conditional proportionate transparent-entity interpretation for this paragraph is not extended to the direct 80% parent test. |
 | Parent owns exactly 80% for twelve months ending on declaration | Meets the numerical/duration bounds; payment-date measurement or general active-business eligibility alone does not establish art 10(3). Its additional entitlement route remains necessary. |
 | REIT individual owns exactly 25% | Meets paragraph 4(c)(i)'s bound; exceeding it requires another alternative. Publicly traded/5%, diversified/10% and eligible fund-to-fund alternatives are separate. |
-| Pension participants exactly 50% resident in either state | Does not meet art 26(2)(d)(i)'s more-than-50% limb; an entitled sponsor is a separate route. |
+| Pension participants exactly 50% resident in either state | Does not meet art 26(2)(d)(i)'s more-than-50% limb; the official 2004 explanation measures it at the close of the preceding taxable year and treats beneficiaries as persons receiving benefits. An entitled sponsor is a separate route. |
+| REIT diversification includes foreclosure property or partnership holdings | The official 2004 explanation disregards foreclosure property and looks through partnership holdings proportionately when applying the single-property 10% bound. |
 | Related payer ownership exactly 80% | Does not meet Understanding XXXVII's more-than-80% bound. Vote or value of any class is tested; the trade/business exclusion still applies. |
 | Third-jurisdiction PE aggregate tax exactly 60% of the Netherlands general company-tax rate | Does not meet arts 12(8)/13(6)'s less-than-60% condition. Below it permits at most 15% of gross, subject to each article's distinct exception. The comparison is combined residence/third-jurisdiction tax, not an absolute 60% tax rate. |
 | Active third-jurisdiction investment management | Does not automatically qualify for the interest exception. Qualifying bank/insurer activities are distinguished; Understanding XXI includes group financing and portfolio investment. |
 | Intangible produced or developed by the third-jurisdiction PE | Falls within art 13(6)'s stated exception; merely having an active business does not substitute for that condition. |
 | Construction exactly twelve months | Does not pass art 5(3)'s duration limb; other PE grounds remain relevant. |
-| Enterprise offshore activity exactly 30 aggregate days in the calendar year | Does not pass art 27(3)'s duration limb; more than 30 does. Same-project continuing associated activity is aggregated using the one-third capital test, subject to paragraph 4 exclusions. |
+| Enterprise offshore activity exactly 30 aggregate days in the calendar year | Does not pass art 27(3)'s duration limb; more than 30 does. Same-project continuing associated activity is aggregated using the one-third capital test, subject to paragraph 4 exclusions. Understanding XXX and art 3(1)(h) prevent treating a Netherlands enterprise's operation solely between US places, including the specified offshore locations, as international traffic. |
 | Independent offshore activity exactly 30 continuous days | Meets art 27(5)'s duration bound; scattered days cannot replace its continuous-period test. Art 5/15 grounds are checked first. |
 | Services performed in the Netherlands | Do not satisfy art 15's not-performed-in-residence-state condition for US taxation. Services elsewhere still require attribution to a regularly available US fixed base. |
 
@@ -86,7 +88,11 @@ beneficial ownership or LOB entitlement. Art 24(1)'s saving clause and
 art 24(3)'s deferred attribution remain visible. Amended art 11(3) keeps
 separate additional branch tax within the 5% ceiling, with its own
 historical, public-company, derivative or discretionary exemption routes.
-Those rules do not determine current domestic branch-tax calculations.
+Article 11(5) separately prohibits the additional tax on art 14(1) income
+from disposing of shares or comparable corporate rights. Article 11(1)'s
+tax and net-equity adjustments define its treaty base. Those rules do not
+determine current domestic branch-tax calculations. Amended arts 4 and
+24 are cited with their Protocol amendments and current consolidation.
 
 The [IRS competent-authority index][caa-index] lists the
 [2003 hybrid arrangement][pension-2003], [2007 qualification agreement][pension-2007]
@@ -97,7 +103,9 @@ Dutch pension vehicles subject to entitlement and art 35(2). The 2010
 amendment concerns US funds claiming Dutch relief; it is outside the
 US-source table. Their historical form/certification statements are not
 current instructions. Current Dutch vehicle status, distribution
-classification and the art 35/REMIC interaction remain unverified.
+classification and the art 35/REMIC interaction remain unverified. The
+pension table and summary exclude REMIC excess inclusions from their
+exemption conclusion, pending separate current-law and art 35 analysis.
 
 The source guide, generated mirror, index, this entry and the log index
 are the five changed paths. Thirteen other partner bodies, all other
@@ -109,9 +117,20 @@ environment: all nineteen recorded invocations exited zero. The root
 suite ran 375 tests with nine local platform skips; all 77 MCP tests
 passed without skips. The four generators reproduced the tracked
 content; only the dynamic index timestamp differed, and that difference
-was proved before restoring the committed timestamp. The independent
-financial review and complementary Linux run remain pending at this
-checkpoint; their results belong in the pull request's verification record.
+was proved before restoring the committed timestamp.
+
+At pre-repair head `e93a16300f2e39a7f24d9492bfb643c2630f5406`, the
+complementary Linux Python 3.11.17 run passed all ten checks: full
+validation, six gates, the offline cited-host selftest, 375 root tests
+with three Windows-only skips and 77 MCP tests without skips. The owned
+managed job returned `result=success`, `code=exited`, `status=0`; five
+committed path hashes matched its snapshot. That snapshot had no Git
+metadata, so Git-dependent deletion and changed-head checks were covered
+on Windows. These results establish repository consistency, not treaty
+interpretation. The independent financial review then identified the
+qualification and citation omissions repaired above. The repaired
+candidate's checks and the same reviewer's recheck belong in the pull
+request's verification record.
 
 | Repository command, from the documented working directory | Result |
 | --- | --- |
