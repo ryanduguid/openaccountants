@@ -1,7 +1,7 @@
 ---
 name: us-major-partners
-description: "version: 1.5"
-version: 1.5
+description: "version: 1.6"
+version: 1.6
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-10-06
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row were checked on 6 October 2026. Germany's REIT pension treatment, France's stated interpretation gaps and Australia's indirect parent-ownership treatment remain unresolved. The other 7 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row, and the Netherlands section, PE row and summary row, were checked on 6 October 2026. Germany's REIT pension treatment, France's stated interpretation gaps and Australia's indirect parent-ownership treatment remain unresolved. The other 6 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. Current domestic law and procedures, claimant eligibility and a complete later-instrument or bilingual comparison remain outside this review. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -313,19 +313,52 @@ The 10% and 15% figures are tax ceilings, not automatic US gross-withholding rat
 
 ## US → Netherlands
 
-**US → Netherlands income types and treaty rates**  _(IRS Table 1)_
+**US-source income paid to Netherlands residents: treaty ceilings and conditional exemptions for 2025**
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+These treatments require treaty residence under [art 4 as amended by Protocol art 2][nl-protocol], entitlement under amended art 26, beneficial ownership where specified and the category conditions below. Where income is derived through a fiscally transparent person, [art 24(4)][nl-protocol] treats it as derived by a resident only to the extent residence-state law treats the item as that resident's income. Article 26 includes qualified-person and alternative entitlement routes; residence or a Dutch holding company alone does not establish eligibility. The table gives maximum source-state tax or conditional exemptions, not automatic withholding instructions. Current domestic classification, forms, withholding/refunds, claimant facts and reciprocal Dutch taxation were not reviewed.
+
+| Income type | US-source treaty ceiling or treatment | Primary provision | Conditions |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
-| Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
-| Interest | 0% | Art 12(1) | Complete exemption |
-| Royalties | 0% | Art 13(1) | Complete exemption |
-| Technical services | 0% | Art 7 | Business profits — no WHT without PE |
+| Dividends paid by a US-resident company, other cases | 15% maximum of gross | [art 10(2)(b), replaced by Protocol art 3][nl-protocol] | Netherlands resident beneficial owner; fund and attribution exceptions below |
+| Dividends paid by a US-resident company, qualifying corporate holding | 5% maximum of gross | [art 10(2)(a)][nl-protocol] | Company beneficial owner directly holding at least 10% of the payer's voting power; fund and attribution exceptions below |
+| Dividends paid by a US-resident company, qualifying parent | Conditional source-state exemption | [art 10(3)][nl-protocol] | Company beneficial owner directly owning at least 80% voting power for twelve months ending on declaration, plus one of the paragraph's additional routes below |
+| Ordinary art 10 dividends and art 12 interest of qualifying exempt pension trusts | Conditional source-state exemption | [art 35][nl-treaty] and [art 26(2)(d)][nl-protocol] | Exclusive employee-benefit purpose, Netherlands residence and generally exempt income; entitlement, business/related-person and distribution limits below. REMIC excess inclusions require separate current-law and art 35 analysis. |
+| Interest within art 12 | Conditional source-state exemption | [art 12(1)][nl-treaty] | Netherlands resident beneficial owner; classification, attribution, excess, REMIC and third-jurisdiction rules below |
+| Royalties defined in art 13 | Conditional source-state exemption | [art 13(1)–(2)][nl-treaty] | Netherlands resident beneficial owner; classification, attribution, excess and third-jurisdiction rules below |
 
-**Source:** US-Netherlands Convention signed 18 December 1992, amended by Protocol 2004. IRS Table 1.
-**Special provisions:** Netherlands conditional WHT (25.8%) applies only to low-tax jurisdictions — US is not affected. LOB article. One of the key holding company corridors.
-**Last verified:** May 2026
+**Parent dividends:** In addition to the direct 80% and twelve-month requirements, [art 10(3)(a)–(d)][nl-protocol] requires either direct or indirect ownership of at least 80% before 1 October 1998; qualification under art 26(2)(c); entitlement for the dividends under art 26(3); or an actual art 26(7) determination for this paragraph. General treaty entitlement still applies to the historical-ownership route. Active-business eligibility alone does not establish the parent exemption. The [2004 explanation of art 10(2)][nl-explanation] allows proportionate holdings through fiscally transparent entities only after the relevant agreement is analysed; this review does not extend that interpretation to art 10(3)'s direct parent test.
+
+**RIC and REIT dividends:** [Art 10(4)][nl-protocol] excludes US regulated investment company (RIC) and real estate investment trust (REIT) dividends from the 5% ceiling and parent exemption. RIC dividends use the 15% ceiling, subject to the general conditions. REIT dividends use it only if the beneficial owner is an individual holding no more than 25%; the dividend concerns publicly traded stock and the owner holds no more than 5% of any class; the owner holds no more than 10% and no single real-property interest exceeds 10% of the fund's total gross real-property interests; or the owner is a qualifying Dutch *beleggingsinstelling* as defined in art 10(4)(a). For the diversification test, the [2004 explanation of art 10(4)][nl-explanation] disregards foreclosure property and treats partnership holdings as proportionate holdings of the partnership's real-property interests. Failure of those alternatives does not establish a domestic rate. Article 35 pension treatment is separately conditional.
+
+**Other dividend payers:** [Art 10(8)][nl-protocol] prevents US secondary tax on dividends paid by a Netherlands-resident company merely because its earnings or dividends have a US source, except where the dividend is paid to a US resident or the holding forms part of a US PE's business property or pertains to a US fixed base. Third-country payers require separate treaty and domestic analysis.
+
+**Pension income:** [Art 35(1)–(2)][nl-treaty] requires an organisation constituted and operated exclusively to administer or provide pension, retirement or other employee benefits, resident under Netherlands law and with income generally exempt there. Article 26 entitlement applies; the [art 26(2)(d) pension route][nl-protocol] requires more than 50% of beneficiaries, members or participants to be residents of either state, or an entitled sponsoring organisation. For the participant limb, the [2004 explanation of art 26(2)(d)][nl-explanation] measures the test at the close of the preceding taxable year and treats beneficiaries as persons receiving benefits. Income from carrying on a trade or business, or from a related person other than an art 35(1) organisation, is excluded. [Understanding XXXVII][nl-notes] uses more than 80% of the vote or value of any share class for the related-person test. Art 35(2), as amended in 1993, excludes specified US REIT real-property-gain distributions; the [2007 competent-authority agreement][nl-pension-2007] also distinguishes RIC/REIT property gains from amounts treated as dividends. Current distribution classification, Dutch vehicle qualification and the interaction with REMIC excess inclusions require separate review; the pension exemption table excludes REMIC excess inclusions from its conclusion. The [2003 hybrid arrangement][nl-pension-2003] protects only otherwise qualifying funds and the proportion that would have been exempt on direct receipt; art 24(4) alone does not resolve every hybrid mismatch. Historical form instructions in those agreements are not current withholding guidance.
+
+**Interest:** [Art 12(2), (3), (5) and (7)][nl-treaty] excludes profit-participating debt from the interest definition, moves attributable PE/fixed-base interest to art 7 or 15, limits relief to the arm's-length amount of a special-relationship payment and denies the paragraph 1 exemption to REMIC excess inclusions. US profit-participating debt is included in [art 10(6) dividends][nl-protocol]. Art 12(4) and (6) separately govern source and branch-excess interest, including deemed derivation and beneficial ownership of the specified excess; they must be checked for the payment.
+
+For 2025, [art 12(8), inserted by the 1993 Protocol][nl-treaty] permits up to 15% tax on gross US-source interest beneficially owned by a Netherlands enterprise and attributable to its third-jurisdiction PE if the PE profits' aggregate tax in the Netherlands and third jurisdiction is less than 60% of the Netherlands general company-tax rate. This restriction does not apply to interest connected with or incidental to the PE's active trade or business, excluding making or managing investments unless carried on as banking or insurance activities by a bank or insurer. [Understanding XXI][nl-notes] treats group financing and portfolio investment as making or managing investments.
+
+**Royalties:** [Art 13(2)][nl-treaty] covers the specified copyrights, industrial property and know-how, plus alienation gains contingent on productivity, use or disposition. It excludes motion pictures and works on film, tape or other reproduction media used for radio or television broadcasting; the [original explanation of art 13][nl-original-explanation] places those excluded payments under art 7. That exclusion does not classify every audiovisual or digital payment. Art 13(3) moves attributable PE/fixed-base royalties to art 7 or 15; paragraph 4 limits relief to the arm's-length amount; paragraph 5 has separate third-country payment and royalty-routing rules.
+
+For 2025, [art 13(6), inserted by the 1993 Protocol][nl-treaty] permits up to 15% tax on gross royalties attributable to a Netherlands enterprise's third-jurisdiction PE under the same aggregate-tax test of less than 60% of the Netherlands general company-tax rate. Its exception is compensation for intangible property produced or developed by the PE itself. It does not use the interest article's broader active-business exception.
+
+**Services and attribution:** Enterprise service profits use [art 7][nl-treaty], subject to separately classified income: US taxation requires profits attributable to a US PE. Individuals' independent services retain [art 15][nl-treaty]: US taxation requires services not performed in the Netherlands and income attributable to a regularly available US fixed base. Offshore activities have separate art 27 rules in the PE notes. There is no generic technical-services withholding rate. Dividend holdings that form part of a PE's business property or pertain to a fixed base move to art 7 or 15 under [art 10(7)][nl-protocol]. [Art 24(3), as amended by Protocol art 6(d)][nl-protocol] preserves specified attribution after cessation for deferred income, gains or expenses. The [art 24(1) saving clause, as amended by Protocol art 6(a)][nl-protocol] preserves taxation of residents and nationals, subject to its stated exceptions; these source treatments do not establish final liability. The [current consolidated art 24][nl-consolidated] includes the amended exceptions.
+
+**Branch tax:** [Art 11(3), amended by Protocol art 4][nl-protocol] caps the separate additional branch tax by reference to the 5% dividend ceiling. It provides conditional exemption through specified pre-1 October 1998 activities, art 26(2)(c), art 26(3), or an actual art 26(7) determination for that paragraph. [Art 11(5)][nl-treaty] separately prohibits this additional tax on art 14(1) income from disposing of shares or comparable corporate rights in a company. The art 11(1) treaty base, including its tax and net-equity adjustments, must be established before applying the ceiling. Ordinary PE tax and current domestic branch-tax calculations require separate analysis.
+
+**Source check:** The [IRS treaty index][nl-index] and [Dutch treaty database][nl-database] were checked on 6 October 2026. The Dutch database lists the 1993 and 2004 protocols; its [consolidated English text][nl-consolidated] agrees with the focused provisions above. [US Treasury][nl-force] records the 2004 Protocol's entry on 28 December 2004 and withholding application from 1 February 2005. This is a focused instrument check, not a complete later-agreement or bilingual audit. The section remains pending qualified professional review.
+
+[nl-treaty]: https://www.irs.gov/pub/irs-trty/nether.pdf
+[nl-protocol]: https://home.treasury.gov/system/files/131/Treaty-Netherlands-Protocol-3-8-2004.pdf
+[nl-explanation]: https://www.irs.gov/pub/irs-trty/netherte04.pdf
+[nl-notes]: https://home.treasury.gov/system/files/131/Treaty-Netherlands-Protocol-Note-3-8-2004.pdf
+[nl-original-explanation]: https://www.irs.gov/businesses/international-businesses/netherlands-technical-explanation
+[nl-pension-2003]: https://www.irs.gov/pub/irs-news/ir-03-37.pdf
+[nl-pension-2007]: https://www.irs.gov/irb/2007-36_IRB
+[nl-index]: https://www.irs.gov/businesses/international-businesses/netherlands-tax-treaty-documents
+[nl-database]: https://verdragenbank.overheid.nl/en/Treaty/Details/005134.html
+[nl-consolidated]: https://wetten.overheid.nl/BWBV0001109/2004-12-28
+[nl-force]: https://home.treasury.gov/news/press-releases/js2172
 
 ## US → Ireland
 
@@ -442,6 +475,7 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | Australia | More than 9 months for a building site or construction, assembly or installation project | No separate generic services day-count PE test; art 14 separately governs individuals | [art 5(2)(h)][au-treaty]; other key PE triggers below |
 | India | More than 120 days in any twelve-month period | More than 90 days in any twelve-month period, or in-state services to a related enterprise; excludes included services | [art 5(2)(k), (l)][in-treaty]; conditions below |
 | Japan | More than 12 months | No separate duration-based services PE test; fixed-place and agency rules can still apply | [art 5, including art 5(3)][jp-treaty] |
+| Netherlands | More than 12 months | No separate generic duration-based services PE test; fixed-place and dependent-agent rules can still apply | [arts 5, 15 and 27][nl-treaty]; independent and offshore rules below |
 | Mexico | 6 months | 183 days in any 12-month period | Shorter than standard |
 | South Korea | 6 months | None specified | Shorter than standard |
 | Israel | 12 months | None specified | Standard OECD |
@@ -455,6 +489,8 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 **Canada services PE:** [Art V(9)][ca-treaty], subject to the construction rule in paragraph 3, applies where no PE exists under the preceding art V rules. Either an individual is present in the other state for at least 183 days in any twelve-month period and more than 50% of the enterprise's gross active-business revenues during those periods comes from that individual's services there; or services for the same or connected project are provided there for at least 183 days in any twelve-month period for resident customers, or customers with a PE there to which the services relate. Mere corporate control does not create a PE: art V(8).
 
 **India construction and services PE:** [Art 5(2)(k)][in-treaty] aggregates construction, installation or assembly sites/projects and connected supervisory activities for the more-than-120-day test. Art 5(2)(l) covers services other than art 12 included services furnished in the state through employees or other personnel. Services to a related enterprise within art 9(1) have no day threshold under this limb; ownership alone is not the services test. Included services can still be attributable to a PE or fixed base formed under another rule: art 12(6). Where an art 5 time-test period extends over two taxable years, [Protocol I][in-treaty] prevents a PE under that rule in a year with fewer than 30 days, although those days count towards the threshold. This note does not apply that time-test rule to the separate related-enterprise limb.
+
+**Netherlands PE rules:** [Art 5][nl-treaty] includes fixed-place and dependent-agent grounds, subject to its activity exclusions and ordinary-course independent-agent rule; corporate control alone does not create a PE. A building site or construction or installation project must last more than twelve months under art 5(3). Article 15 separately governs individuals' independent services. [Art 27(1)–(5)][nl-treaty] covers offshore exploration or exploitation of a state's seabed, subsoil and natural resources, except where art 5 or 15 already establishes the person's PE or fixed base. An enterprise's offshore activity creates a deemed PE after more than 30 aggregate days in a calendar year. Associated enterprises continuing the same activities as part of the same project aggregate their days; association uses direct or indirect ownership of at least one third of the capital of one enterprise by the other, or of both by a person. Paragraph 4 excludes the stated art 5(4) activities, towing/anchor handling and other activities of ships primarily designed for that purpose, and supplies/personnel transport by ships or aircraft in international traffic. [Understanding XXX][nl-notes] treats transport between a state and its offshore locations, or between those locations, as transport between places in that state. Under art 3(1)(h), a Netherlands enterprise's operation solely between US places is outside international traffic and does not qualify for that transport exclusion. Independent offshore professional or other independent activity uses a continuous period of 30 days or more for a deemed fixed base. These thresholds do not waive other PE or fixed-base grounds.
 
 **Mexico's 6-month construction PE** is shorter than the standard 12 months — maquiladora/near-shoring operations require careful PE monitoring.
 
@@ -471,7 +507,7 @@ All US treaties listed above (except the 1975 Israel treaty) contain LOB provisi
 
 ## Summary: Selected treaty ceilings and exemptions
 
-The UK, Germany, France and Japan rows in this summary were source-checked on 5 October 2026. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment and France's stated interpretation gaps remain unresolved. The other summary rows were not reverified.
+The UK, Germany, France and Japan rows in this summary were source-checked on 5 October 2026; the Netherlands row was checked on 6 October. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment and France's stated interpretation gaps remain unresolved. The other summary rows were not reverified.
 
 | Corridor | Dividends (substantial) | Interest | Royalties |
 | --- | --- | --- | --- |
@@ -479,7 +515,7 @@ The UK, Germany, France and Japan rows in this summary were source-checked on 5 
 | [US → Germany](#us--germany) | 5% for qualifying direct corporate holdings; parent and pension exemptions are conditional, with REIT pension treatment unresolved | Article 11 interest exempt; specified exceptions | Article 12 royalties exempt; classification and specified exceptions |
 | [US → France](#us--france) | 5% for qualifying direct corporate holdings; parent exemption is conditional; RIC/REIT restrictions | Ordinary art 11 interest exempt; profit-linked and specified exceptions | Defined art 12 royalties exempt; attribution and specified exceptions |
 | [US → Japan](#us--japan) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; specified exceptions |
-| US ↔ Netherlands | 5% | 0% | 0% |
+| [US → Netherlands](#us--netherlands) | US-resident payer: 5% maximum for a qualifying direct 10% corporate holding; parent and ordinary art 35 pension exemptions are conditional; RIC/REIT restrictions; other payers use art 10(8) or separate analysis | Defined art 12 interest conditionally exempt; classification, REMIC, attribution, excess and third-jurisdiction rules; separate art 35 limits, with REMIC excess inclusions unresolved | Defined art 13 royalties conditionally exempt; classification, attribution, excess and third-jurisdiction rules |
 | US ↔ Ireland | 5% | 0% | 0% |
 | US ↔ Switzerland | 5% | 0% | 0% |
 
