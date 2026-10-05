@@ -167,6 +167,30 @@ class ReviewStatusTests(ToolTreeCase):
 
 
 class SearchSkillsTests(ToolTreeCase):
+    def test_search_names_the_enclosing_heading_and_a_heading_match_itself(self) -> None:
+        self.write({"xx/xx-income-tax.md": _skill(
+            "xx-income-tax", "XX Income Tax", body="Intro.\n\n## Allowances\nNeedle applies.",
+        )})
+        server._index.cache_clear()
+        self.assertEqual(server.search_skills("needle")["results"][0]["matched_section"], "Allowances")
+        self.assertEqual(server.search_skills("allowances")["results"][0]["matched_section"], "Allowances")
+
+    def test_lowercase_expansion_does_not_shift_the_snippet_or_heading(self) -> None:
+        self.write({"xx/xx-income-tax.md": _skill(
+            "xx-income-tax", "XX Income Tax", body="İ" * 200 + "\n\n## Allowances\nNeedle applies.",
+        )})
+        server._index.cache_clear()
+        result = server.search_skills("needle")["results"][0]
+        self.assertEqual(result["matched_section"], "Allowances")
+        self.assertIn("Needle applies.", result["snippet"])
+        self.assertEqual(result["matches"], 1)
+
+    def test_search_keeps_literal_lowercase_semantics(self) -> None:
+        self.write({"xx/xx-income-tax.md": _skill("xx-income-tax", "XX Income Tax", body="Straße")})
+        server._index.cache_clear()
+        self.assertEqual(server.search_skills("STRASSE")["total"], 0)
+        self.assertEqual(server.search_skills("STRAẞE")["total"], 1)
+
     def test_results_rank_by_occurrences_with_a_title_bonus_and_report_the_total(self) -> None:
         result = server.search_skills("reverse charge")
         self.assertEqual((result["total"], result["returned"]), (3, 3))
@@ -206,6 +230,48 @@ class SearchSkillsTests(ToolTreeCase):
                          "the snippet is cut from the snapshot the count came from, not the live file")
         server._index.cache_clear()
         self.assertEqual(server.search_skills("mechanism")["total"], 0)
+
+
+class MarkdownSectionsTests(ToolTreeCase):
+    def test_fenced_headings_remain_in_their_section_and_search_still_matches_code(self) -> None:
+        for opener, closer in (("```python", "```"), ("~~~python", "~~~"),
+                               ("   ````python", "   ````")):
+            with self.subTest(opener=opener):
+                body = f"## Example\nBefore.\n{opener}\n## Fake heading\nneedle\n{closer}\nAfter.\n## Next\nEnd."
+                self.write({"xx/xx-income-tax.md": _skill("xx-income-tax", "XX Income Tax", body=body)})
+                server._index.cache_clear()
+                sections = server.get_skill_sections("xx-income-tax")["sections"]
+                self.assertEqual([s["heading"] for s in sections], ["XX Income Tax", "Example", "Next"])
+                self.assertEqual(sections[1]["content"],
+                                 f"Before.\n{opener}\n## Fake heading\nneedle\n{closer}\nAfter.")
+                result = server.search_skills("needle")["results"][0]
+                self.assertEqual(result["matched_section"], "Example")
+                self.assertEqual(result["matches"], 1)
+
+    def test_a_short_wrong_or_suffixed_closer_keeps_the_fence_open(self) -> None:
+        for false_closer in ("```", "~~~~", "```` trailing"):
+            with self.subTest(false_closer=false_closer):
+                body = f"# Outer\n````markdown\n{false_closer}\n## Fake\nneedle\n````\n## Real\nDone."
+                sections = server._split_sections(body)
+                self.assertEqual([s["heading"] for s in sections], ["Outer", "Real"])
+                self.assertIn("## Fake\nneedle", sections[0]["content"])
+                self.assertEqual(server._extract_match(body, "needle")[0], "Outer")
+
+    def test_an_unclosed_fence_runs_to_the_end(self) -> None:
+        sections = server._split_sections("# Outer\n~~~\n## Fake\nneedle\n")
+        self.assertEqual(sections, [{"heading": "Outer", "level": 1,
+                                     "content": "~~~\n## Fake\nneedle"}])
+
+    def test_backticks_in_an_opening_info_string_do_not_open_a_fence(self) -> None:
+        sections = server._split_sections("# Outer\n```invalid`info\n## Real\nContent.")
+        self.assertEqual([s["heading"] for s in sections], ["Outer", "Real"])
+
+    def test_ordinary_section_whitespace_and_preamble_are_preserved(self) -> None:
+        body = "Preamble.\r\n# Outer\r\n\r\nFirst.\r\n\r\n## Next\r\nLast.\r\n"
+        self.assertEqual(server._split_sections(body), [
+            {"heading": "Outer", "level": 1, "content": "First."},
+            {"heading": "Next", "level": 2, "content": "Last."},
+        ])
 
 
 if __name__ == "__main__":

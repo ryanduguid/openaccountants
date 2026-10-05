@@ -134,6 +134,7 @@ def _safe_resolve(packages_dir: Path, *segments: str) -> Path:
 
 _FM_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n?(.*)$", re.DOTALL)
 _HEADING_RE = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
+_FENCE_RE = re.compile(r"^ {0,3}(`{3,}|~{3,})(.*)$")
 
 
 _KEYLINE_RE = re.compile(r"^([A-Za-z_][\w-]*):(.*)$")
@@ -235,26 +236,40 @@ def _quality_tier(meta: dict[str, Any]) -> str:
     )
 
 
-def _split_sections(body: str) -> list[dict[str, Any]]:
-    """Split markdown body into sections keyed by ATX headings."""
-    sections: list[dict[str, Any]] = []
-    current: dict[str, Any] | None = None
-    buf: list[str] = []
-
-    def flush() -> None:
-        if current is not None:
-            current["content"] = "\n".join(buf).strip()
-            sections.append(current)
-
-    for line in body.splitlines():
-        m = _HEADING_RE.match(line)
-        if m:
-            flush()
-            buf = []
-            current = {"heading": m.group(2).strip(), "level": len(m.group(1))}
+def _iter_headings(body: str):
+    """Yield (line start, line end, match) for ATX headings outside fences."""
+    fence = None
+    offset = 0
+    for raw in body.splitlines(keepends=True):
+        line = raw.rstrip("\r\n")
+        end = offset + len(raw)
+        delimiter = _FENCE_RE.match(line)
+        if fence is not None:
+            if delimiter:
+                marker, suffix = delimiter.groups()
+                if marker[0] == fence[0] and len(marker) >= fence[1] and not suffix.strip():
+                    fence = None
+        elif delimiter and (delimiter.group(1)[0] != "`" or "`" not in delimiter.group(2)):
+            marker = delimiter.group(1)
+            fence = (marker[0], len(marker))
         else:
-            buf.append(line)
-    flush()
+            heading = _HEADING_RE.match(line)
+            if heading:
+                yield offset, end, heading
+        offset = end
+
+
+def _split_sections(body: str) -> list[dict[str, Any]]:
+    """Split markdown at ATX headings, retaining fenced examples as content."""
+    headings = list(_iter_headings(body))
+    sections = []
+    for position, (_, start, heading) in enumerate(headings):
+        end = headings[position + 1][0] if position + 1 < len(headings) else len(body)
+        sections.append({
+            "heading": heading.group(2).strip(),
+            "level": len(heading.group(1)),
+            "content": "\n".join(body[start:end].splitlines()).strip(),
+        })
     return sections
 
 
@@ -616,15 +631,26 @@ def _search_corpus() -> dict[str, tuple[str, str]]:
     return corpus
 
 
-def _extract_match(body: str, query: str) -> tuple[str, str]:
+def _extract_match(body: str, query: str, *, lower_body: str | None = None) -> tuple[str, str]:
     """Return (nearest preceding heading, snippet) around the first match."""
-    low = body.lower()
+    low = body.lower() if lower_body is None else lower_body
     idx = low.find(query.lower())
     if idx == -1:
         return "", ""
+    if len(low) != len(body):
+        # Unicode lowercasing can expand a character (İ becomes i + dot).
+        # Map the matching offset back to the original text before slicing.
+        lowered_offset = 0
+        for original_offset, char in enumerate(body):
+            lowered_offset += len(char.lower())
+            if lowered_offset > idx:
+                idx = original_offset
+                break
     section = ""
-    for m in _HEADING_RE.finditer(body[:idx]):
-        section = m.group(2).strip()
+    for offset, _, heading in _iter_headings(body):
+        if offset > idx:
+            break
+        section = heading.group(2).strip()
     start = max(0, idx - 70)
     end = min(len(body), idx + len(query) + 110)
     snippet = re.sub(r"\s+", " ", body[start:end]).strip()
@@ -958,7 +984,7 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
         # The same snapshot the count came from: a guide edited on disk since
         # the corpus was read would otherwise rank on the old text and show a
         # snippet cut from the new one, or none at all.
-        section, snippet = _extract_match(corpus[slug][1], q)
+        section, snippet = _extract_match(corpus[slug][1], q, lower_body=corpus[slug][0])
         results.append({
             "slug": rec["slug"],
             "title": rec["title"],
