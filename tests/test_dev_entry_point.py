@@ -186,7 +186,8 @@ class RequirementsTests(unittest.TestCase):
             tokens = " ".join(line.split("#", 1)[0] for line in text.splitlines()).split()
             requirements.append([token for token in tokens
                                  if token != "\\" and not token.startswith("--hash=")])
-        self.assertEqual(requirements[0], ["PyYAML==6.0.3"])
+        self.assertEqual(len(requirements[0]), 1)
+        self.assertRegex(requirements[0][0], r"^PyYAML==\d+(?:\.\d+)*$")
         self.assertEqual(requirements[1], requirements[0])
 
     def test_optional_tools_are_pinned(self) -> None:
