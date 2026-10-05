@@ -105,8 +105,8 @@ REIT alternatives, dividend-classified profits-linked income from interest,
 REMIC excess from ordinary interest, defined royalties from services, and
 PE/fixed-base attribution from ordinary source relief. Exactly twelve
 months does not meet the art 5(3) threshold; more than twelve months does
-+for each stated site/project and installation/rig/ship category, including
-+preparation for extraction.
+for each stated site/project and installation/rig/ship category, including
+preparation for extraction.
 Exactly 60% is outside the below-60% triangular test. These are treaty-text
 comparisons, not taxpayer calculations.
 
