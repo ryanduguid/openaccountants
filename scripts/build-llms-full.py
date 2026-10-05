@@ -65,7 +65,7 @@ def main():
     out_path = OUT_PATH
     if "--out" in sys.argv:
         out_path = sys.argv[sys.argv.index("--out") + 1]
-    with open(out_path, "w", encoding="utf-8") as fh:
+    with open(out_path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(build_text())
     print(f"{os.path.basename(out_path)} written ({os.path.getsize(out_path):,} bytes)")
 

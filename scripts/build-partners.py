@@ -49,7 +49,7 @@ def main(argv=None):
     for name in unused:
         print("warning: docs/partners.json names {!r}, who is on no accountant-reviewed guide".format(name),
               file=sys.stderr)
-    with open(out_path, "w", encoding="utf-8") as fh:
+    with open(out_path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(text)
     figures = roster.headline(index["guides"])
     print("PARTNERS.md written to {}".format(out_path))
