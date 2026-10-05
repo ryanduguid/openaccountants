@@ -1,7 +1,7 @@
 ---
 name: us-major-partners
-description: "version: 1.6"
-version: 1.6
+description: "version: 1.7"
+version: 1.7
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-10-06
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row, and the Netherlands section, PE row and summary row, were checked on 6 October 2026. Germany's REIT pension treatment, France's stated interpretation gaps and Australia's indirect parent-ownership treatment remain unresolved. The other 6 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. Current domestic law and procedures, claimant eligibility and a complete later-instrument or bilingual comparison remain outside this review. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row, and the Netherlands and Ireland sections, PE rows and summary rows, were checked on 6 October 2026. Germany's REIT pension treatment, France's stated interpretation gaps and Australia's indirect parent-ownership treatment remain unresolved. The other 5 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. Current domestic law and procedures, claimant eligibility and a complete later-instrument or bilingual comparison remain outside this review. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -362,19 +362,45 @@ For 2025, [art 13(6), inserted by the 1993 Protocol][nl-treaty] permits up to 15
 
 ## US → Ireland
 
-**US → Ireland income types and treaty rates**  _(IRS Table 1)_
+**US-source income paid to Ireland residents: treaty ceilings and conditional exemptions for 2025**
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+These treatments require Irish treaty residence under [art 4][ie-treaty], entitlement under art 23, beneficial ownership where specified and the category conditions below. Protocol paragraph 1 treats income through a fiscally transparent person as a resident's income only to the extent residence-state tax law does so, subject to its art 4(1)(d) exclusion. Entity classification requires separate review. The table gives treaty ceilings or allocation rules, not automatic withholding instructions. The [art 1(4)-(5) saving clause][ie-treaty] preserves specified taxation of US citizens or residents. Current domestic classification, tax, forms, withholding/refunds, claimant facts and reciprocal Irish taxation were not reviewed.
+
+**Remittance limitation:** Where an individual is taxed in Ireland only on income or gains remitted to or received there, [art 24(6)][ie-treaty] limits US treaty relief to that amount. This conditional restriction applies to the table's ceilings and exemptions; it does not apply merely because the recipient is Irish resident.
+
+| Income type | US-source treaty ceiling or treatment | Primary provision | Conditions |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
-| Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
-| Interest | 0% | Art 11(1) | Complete exemption |
-| Royalties | 0% | Art 12(1) | Complete exemption |
-| Technical services | 0% | Art 7 | Business profits — no WHT without PE |
+| Dividends paid by a US resident company, other cases | 15% maximum of gross | [art 10(1)-(2)(b)][ie-treaty] | Irish resident beneficial owner; art 23, remittance, attribution and amended fund restrictions below |
+| Dividends paid by a US resident company, qualifying corporate holding | 5% maximum of gross | [art 10(2)(a)][ie-treaty] | Company beneficial owner directly owning at least 10% voting stock; conditional transparent holdings below; entitlement and attribution conditions; unavailable for RIC/REIT dividends |
+| Ordinary interest arising in the United States within art 11 | Conditional source-state exemption | [art 11(1)-(6) and Protocol paragraph 6][ie-treaty] | Irish resident beneficial owner; source, attribution, excess, profit-linked, REMIC, third-state PE and remittance rules below |
+| Royalties defined in art 12 arising in the United States | Conditional source-state exemption | [art 12(1)-(5)][ie-treaty] | Irish resident beneficial owner; definition, attribution, excess, routing, third-state PE and remittance rules below |
+| Enterprise services that are business profits | US taxation limited to profits attributable to a US PE | [arts 5 and 7][ie-treaty] | Separate income classification; offshore art 21 and deferred attribution under Protocol paragraph 4; no generic services withholding rate |
+| Individuals' independent personal services | US taxation limited to income attributable to a regularly available US fixed base | [art 14][ie-treaty] | Distinct from enterprise PE analysis; offshore art 21 and deferred attribution under Protocol paragraph 4 |
 
-**Source:** US-Ireland Convention signed 28 July 1997. IRS Table 1.
-**Special provisions:** Critical corridor for US tech/pharma companies with Irish operations. LOB article. Ireland does not impose WHT on outbound dividends to treaty partners generally. Zero royalty rate is key for IP-heavy structures.
-**Last verified:** May 2026
+**Corporate ownership:** The [Treasury explanation of art 10(2)][ie-explanation] excludes indirect holdings through corporate tiers and direct non-voting shares from the 5% test. It allows proportionate holdings through fiscally transparent entities in specified circumstances, after analysing the partnership or trust agreement; residence and a holding structure alone do not establish the result.
+
+**RIC and REIT dividends:** [Art 10(4), replaced by the 1999 amendment][ie-amendment], excludes US regulated investment company (RIC) and real estate investment trust (REIT) dividends from the 5% ceiling. RIC dividends use the 15% ceiling, subject to the general conditions. REIT dividends use it only if the beneficial owner is an individual holding no more than 10% in the REIT; the dividend concerns a publicly traded stock class and the beneficial owner is a person holding no more than 5% of any class; or the beneficial owner is a person holding no more than 10% and the REIT is diversified. These are independent alternatives. The diversification measurement remains unverified, so this review establishes only that conditional route. If no alternative is established, art 10(2) supplies no ceiling; a current domestic rate was not determined. No parent or pension dividend exemption is established by the residence provisions.
+
+**Interest:** [Art 11(2)-(6)][ie-treaty] defines interest, including profit-participating debt but excluding art 10 income and late-payment penalties. Paragraph 4 governs source, including indebtedness incurred in connection with and borne by a US PE or fixed base. Paragraph 3 moves attributable interest to art 7 or 14; paragraph 5 limits relief to the arm's-length amount of a special-relationship payment. Protocol paragraph 6 permits up to 15% tax on gross US interest determined by the profits of the issuer or an associated enterprise and beneficially owned by an Irish resident. It also leaves REMIC residual-interest excess inclusions to domestic law; this review does not select their domestic rate. Article 11(6) treats the specified excess of a US PE's deductible amount over interest actually paid as interest beneficially owned by an Irish resident; its amount and the applicable exceptions need separate analysis.
+
+**Royalties:** [Art 12(2)][ie-treaty] covers the specified copyrights, including cinematographic films and audio/video tapes and disks, industrial property and know-how, plus alienation gains contingent on productivity, use or disposition. That definition does not classify every software, consultancy or mixed payment. Paragraph 3 moves attributable royalties to art 7 or 14; paragraph 4 limits relief to the arm's-length amount; paragraph 5 has separate payment and routing restrictions. Source and classification must be established for the transaction.
+
+**Third-state PE restriction:** Under [art 23(7)][ie-treaty], an Irish enterprise's US income attributable to a third-state PE loses ordinary treaty benefits if the enterprise is exempt in Ireland on the PE profits and combined Irish/third-state tax on the item is less than 50% of the generally applicable Irish tax on direct receipt from the US. Affected dividends, interest and royalties have a 15% gross ceiling. The paragraph does not apply to income connected with or incidental to the PE's active trade or business, excluding making or managing investments unless carried on as banking or insurance by a bank or insurer. Current Irish exemption law and claimant facts were not verified; this is a conditional treaty rule.
+
+**Attribution and other payers:** [Art 10(6)][ie-treaty] moves attributable dividends to art 7 or 14. Protocol paragraph 4 preserves taxation of income attributable during a PE's or fixed base's existence even when payment follows cessation. Dividends from other payers require [art 22][ie-treaty] analysis, including entitlement, beneficial ownership, attribution and the saving/remittance rules; the US resident payer's 5%/15% rows do not determine those payments. Article 14 remains separate from the enterprise service rule, and offshore art 21 overrides the ordinary rules as described in the PE notes.
+
+**Branch tax:** [Art 10(7)-(8)][ie-treaty] caps the separate additional tax at 5% on the treaty's defined US dividend-equivalent base, including specified PE profits and art 6/art 13(1) income or gains. Establish that base before applying the ceiling; it is not 5% of all branch receipts or a limit on ordinary PE tax. Current domestic branch calculations were not reviewed.
+
+**Source check:** The [IRS index][ie-index] and [Revenue treaty page][ie-revenue-index] were checked on 6 October 2026. Revenue's 1997 convention must be read with the [1999 amendment][ie-amendment], which replaces only art 10(4). The [Irish Treaty Series][ie-force] records entry on 13 July 2000; amendment art 2(2) and [Revenue's dates table][ie-dates] agree on dividend application from 1 September 2000. The 1997 explanation's original REIT rule is superseded. The [2006 common-contractual-fund agreement][ie-ccf] denies the fund treaty residence and its own benefits, with conditional unit-holder treatment; current vehicle qualification remains unreviewed. This focused instrument check does not establish a complete later-agreement inventory. The section remains pending qualified professional review.
+
+[ie-treaty]: https://www.revenue.ie/en/tax-professionals/documents/double-taxation-treaties/u/usa-1997.pdf
+[ie-amendment]: https://www.revenue.ie/en/tax-professionals/documents/double-taxation-treaties/u/usa-protocol.pdf
+[ie-explanation]: https://www.irs.gov/pub/irs-trty/iretech.pdf
+[ie-index]: https://www.irs.gov/businesses/international-businesses/ireland-tax-treaty-documents
+[ie-revenue-index]: https://www.revenue.ie/en/tax-professionals/tax-agreements/double-taxation-treaties/U/usa.aspx
+[ie-force]: https://www.gov.ie/en/irish-treaty-series/treaty-series/irish-treaty-series-no-24-of-2000/
+[ie-dates]: https://www.revenue.ie/en/tax-professionals/tax-agreements/dates-of-effect/index.aspx
+[ie-ccf]: https://www.revenue.ie/en/tax-professionals/documents/double-taxation-treaties/u/usa.pdf
 
 ## US → Switzerland
 
@@ -476,6 +502,7 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | India | More than 120 days in any twelve-month period | More than 90 days in any twelve-month period, or in-state services to a related enterprise; excludes included services | [art 5(2)(k), (l)][in-treaty]; conditions below |
 | Japan | More than 12 months | No separate duration-based services PE test; fixed-place and agency rules can still apply | [art 5, including art 5(3)][jp-treaty] |
 | Netherlands | More than 12 months | No separate generic duration-based services PE test; fixed-place and dependent-agent rules can still apply | [arts 5, 15 and 27][nl-treaty]; independent and offshore rules below |
+| Ireland | More than 12 months | No separate generic duration-based services PE test; fixed-place and dependent-agent rules can apply | [arts 5, 7, 14 and 21][ie-treaty]; independent services use a fixed base; offshore rules below |
 | Mexico | 6 months | 183 days in any 12-month period | Shorter than standard |
 | South Korea | 6 months | None specified | Shorter than standard |
 | Israel | 12 months | None specified | Standard OECD |
@@ -494,6 +521,8 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 
 **Mexico's 6-month construction PE** is shorter than the standard 12 months — maquiladora/near-shoring operations require careful PE monitoring.
 
+**Ireland offshore activities:** [Art 21][ie-treaty] applies notwithstanding the other treaty provisions to offshore exploration or exploitation of the seabed/subsoil and natural resources situated in the other state. Enterprise exploitation has a deemed PE without a 120-day exception. Enterprise exploration lasting no more than 120 aggregate days in any twelve-month period does not constitute a PE under art 21(3). Associated enterprises' substantially similar exploration activities aggregate, excluding concurrent days; association uses direct/indirect management, control or capital participation. Article 21(4) deems a fixed base for independent exploration and exploitation services, but exploration income is not taxable in the host state at no more than 120 aggregate days in twelve months. Exploitation has no equivalent income exemption. The enterprise aggregation rule is not automatically an individual-services rule. Employment has its separate paragraph 5 treatment; deferred attribution uses Protocol paragraph 4.
+
 ## LOB (Limitation on Benefits) Overview
 
 US treaties contain the most stringent LOB provisions globally. The standard US LOB test requires the treaty claimant to satisfy at least one of the following:
@@ -507,7 +536,7 @@ All US treaties listed above (except the 1975 Israel treaty) contain LOB provisi
 
 ## Summary: Selected treaty ceilings and exemptions
 
-The UK, Germany, France and Japan rows in this summary were source-checked on 5 October 2026; the Netherlands row was checked on 6 October. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment and France's stated interpretation gaps remain unresolved. The other summary rows were not reverified.
+The UK, Germany, France and Japan rows in this summary were source-checked on 5 October 2026; the Netherlands and Ireland rows were checked on 6 October. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment and France's stated interpretation gaps remain unresolved. The other summary rows were not reverified.
 
 | Corridor | Dividends (substantial) | Interest | Royalties |
 | --- | --- | --- | --- |
@@ -516,7 +545,7 @@ The UK, Germany, France and Japan rows in this summary were source-checked on 5 
 | [US → France](#us--france) | 5% for qualifying direct corporate holdings; parent exemption is conditional; RIC/REIT restrictions | Ordinary art 11 interest exempt; profit-linked and specified exceptions | Defined art 12 royalties exempt; attribution and specified exceptions |
 | [US → Japan](#us--japan) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; specified exceptions |
 | [US → Netherlands](#us--netherlands) | US-resident payer: 5% maximum for a qualifying direct 10% corporate holding; parent and ordinary art 35 pension exemptions are conditional; RIC/REIT restrictions; other payers use art 10(8) or separate analysis | Defined art 12 interest conditionally exempt; classification, REMIC, attribution, excess and third-jurisdiction rules; separate art 35 limits, with REMIC excess inclusions unresolved | Defined art 13 royalties conditionally exempt; classification, attribution, excess and third-jurisdiction rules |
-| US ↔ Ireland | 5% | 0% | 0% |
+| [US → Ireland](#us--ireland) | US resident payer: 5% maximum for a qualifying direct 10% corporate voting holding; conditional transparent holdings; amended RIC/REIT restrictions, with diversification measurement unresolved | Defined art 11 interest conditionally exempt; source, profit-linked, REMIC, attribution, excess, third-state PE and remittance rules | Defined art 12 royalties conditionally exempt; classification, attribution, excess, routing, third-state PE and remittance rules |
 | US ↔ Switzerland | 5% | 0% | 0% |
 
 ## Disclaimer
