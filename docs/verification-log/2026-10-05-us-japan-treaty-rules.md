@@ -27,7 +27,7 @@ contains the 2013 notes and Japanese-language correction.
 | All interest is exempt | Amended art 11(2) permits specified contingent interest taxation up to 10% of gross, and domestic taxation of specified securitisation excess returns. Arts 11(5), (6) and (7) address PE connection, special-relationship excess and equivalent-debt arrangements. |
 | All royalty and technical-service payments are zero-rate payments | Arts 12(1) and (2) require royalty classification, with PE, excess-payment and anti-conduit exceptions. Arts 3(1)(l), 7 and 7(7) require services to be classified before applying the enterprise-profit rule. |
 | Construction PE starts at 12 months | Art 5(3) requires more than 12 months. Art 5's fixed-place and agency rules can apply without a separate duration-based services PE provision. |
-| 30 August 2019 is the withholding application date | Protocol art XV(2) starts the withholding amendments on 1 November 2019. The other income-tax provisions covered here apply to taxable years beginning from 1 January 2020. |
+| The 2013 Protocol is described as effective on 30 August 2019 | Protocol art XV(2) starts the withholding amendments on 1 November 2019. The other income-tax provisions covered here apply to taxable years beginning from 1 January 2020. |
 
 The section includes the parent exemption's specific art 22 routes, the pension
 fund conditions, US RIC/REIT exceptions, remittance and transparent-entity rules,
@@ -41,11 +41,11 @@ links to its conditions and identifies its US-source direction.
 The notes were checked alongside the instruments. The 2013 notes delete
 paragraphs 5, 7 and 8 of the 2003 notes and renumber paragraph 6 as paragraph 5.
 The surviving notes include PE capital attribution and Japan's dividend
-entitlement date. The 2013 correction concerns the Japanese text of art 11;
-the English article used here is the published English Protocol text. Local
+entitlement date. The 2013 correction concerns the Japanese-language version of the Protocol.
+Its attachment was not independently translated; the English art 11 applied
+here is the published English Protocol text. Local
 offline OCR supplied missing text in the original notes and the scanned TIAS
-copy. The Japanese-language correction was not independently translated.
-The State PDF download returned an HTML Technical Difficulties page, so the
+copy. The State PDF download returned an HTML Technical Difficulties page, so the
 GovInfo publication supplied the notes instead.
 
 Manual source comparisons covered the 10% holding with no dividend-duration
