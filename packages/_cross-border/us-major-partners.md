@@ -1,7 +1,7 @@
 ---
 name: us-major-partners
-description: "version: 1.0"
-version: 1.0
+description: "version: 1.1"
+version: 1.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-10-05
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The Canada and India sections and their PE rows were checked against the cited treaty text on 5 October 2026. The other 12 corridors, their domestic-law statements and the general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The Canada, India and Japan sections and their PE rows, plus Japan's summary row, were checked against the cited treaty text on 5 October 2026. The other 11 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -123,20 +123,47 @@ US-source contingent interest that does not qualify as portfolio interest has a 
 
 ## US → Japan
 
-**US → Japan income types and treaty rates**  _(IRS Table 1)_
+**Treaty source:** [*Convention between the Government of the United States of America and the Government of Japan for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income*, signed 6 November 2003][jp-treaty], TIAS No 04-330 (entered into force 30 March 2004), including its [2003 Protocol][jp-protocol-2003] and [exchange of notes][jp-notes-2003], as amended by the [Protocol signed 24 January 2013][jp-protocol-2013], TIAS No 19-830 (entered into force 30 August 2019). The [2013 exchange of notes and language correction][jp-notes-2013] accompany that amendment. The [IRS document index][jp-index] links the treaty instruments and [technical explanation of the 2013 Protocol][jp-explanation]. The [official protocol record][jp-record] and [IRS 2004 bulletin][jp-original-force] establish the force dates.
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+These are treaty ceilings or exemptions for US-source payments to Japanese residents for tax year 2025. The claimant must satisfy [art 4 residence][jp-treaty], beneficial ownership where required, [art 22 limitation on benefits][jp-treaty] and the category conditions below. The saving clause in art 1(4) and (5), as amended, can preserve US taxation of US citizens and residents. These figures do not establish automatic US withholding; determine domestic taxability, source and procedures separately.
+
+[Art 4(5)][jp-treaty] limits relief to income remitted to or received in Japan where Japan taxes only that portion. Art 4(6) determines whether income derived through an entity is treated as derived by a qualifying resident. Under [2013 Protocol art II][jp-protocol-2013], a non-individual resident of both states is not treated as a resident of either for claiming treaty benefits.
+
+| Income type | Treaty ceiling / treatment | Treaty article | Conditions |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 10% | Art 10(2) | Lower than typical 15% |
-| Dividends — substantial (≥10% voting, 6 months) | 5% | Art 10(2) | Direct corporate investment |
-| Dividends — parent (≥50% voting, 6 months) | 0% | Art 10(3) | 2013 Protocol addition |
-| Interest | 0% | Art 11 | 2013 Protocol — zero rate |
-| Royalties | 0% | Art 12(1) | All categories 0% since 2003 |
-| Technical services | 0% | Art 7 | Business profits — no WHT without PE |
+| Dividends, other holdings | 10% of gross dividends | [art 10(2)(b)][jp-treaty] | Subject to the investment-vehicle and PE exceptions below |
+| Dividends, qualifying corporate holding | 5% of gross dividends | [art 10(2)(a)][jp-treaty] | Company beneficial owner owns directly or indirectly at least 10% of voting stock on the date entitlement to the dividend is determined; art 22 conditions still apply |
+| Dividends, qualifying parent company | Exempt from US source tax | [art 10(3)(a)][jp-treaty], amended by [2013 Protocol art III][jp-protocol-2013] | At least 50% of voting stock for the six months ending on the entitlement date, directly or indirectly through residents of either state, plus a specified entitlement route below |
+| Dividends, qualifying pension fund | Exempt from US source tax | [arts 3(1)(m), 10(3)(b) and 22][jp-treaty] | Treaty pension fund is resident beneficial owner; dividend is not derived directly or indirectly from carrying on a business; vehicle exceptions below |
+| Ordinary art 11 interest, arm's-length amount | Exempt from US source tax | [art 11(1), replaced by 2013 Protocol art IV][jp-protocol-2013] | Ordinary is shorthand for art 11 interest outside paragraph 2; PE, excess-payment and anti-conduit exceptions below |
+| Royalties within art 12(2), arm's-length amount | Exempt from US source tax | [art 12(1) and (2)][jp-treaty] | Classify the use or right-to-use payment under the treaty definition; exceptions below |
+| Services classified as enterprise business profits | No US tax on those profits without a US PE; art 7 permits tax on profits attributable to a US PE | [arts 3(1)(l) and 7][jp-treaty] | Classify the payment first; items dealt with separately by another article retain that article's rules under art 7(7) |
 
-**Source:** US-Japan Convention signed 6 November 2003, amended by 2013 Protocol (effective 30 August 2019). IRS Table 1.
-**Special provisions:** 2013 Protocol was transformative — reduced interest to 0% and added 0% parent-subsidiary dividends. Anti-conduit provisions. LOB article. Portfolio dividend rate of 10% is lower than most US treaties.
-**Last verified:** May 2026
+**Parent-company entitlement:** The zero dividend category requires one of the routes specified in [art 10(3)(a)(i), (ii) or (iii)][jp-treaty]: art 22(1)(c)(i) or (ii); both art 22(1)(f)(i) and (ii), together with art 22(2) for these dividends; or an art 22(4) determination specifically for this exemption. General art 22 entitlement alone does not establish the parent exemption. Art 10(2)(a) has no six-month dividend holding test, although art 22 imposes its own eligibility conditions and timing rules. The parent exemption already existed in 2003; the 2013 Protocol relaxed its ownership and duration tests.
+
+**US investment vehicles:** A US RIC dividend cannot use the corporate 5% rate or parent exemption; the 10% ceiling or qualifying pension exemption may apply. A US REIT dividend cannot use the corporate 5% rate or parent exemption. Its 10% ceiling or pension exemption is available only under [art 10(4)][jp-treaty]: an individual or pension fund holding no more than 10%; dividends on publicly traded stock where the beneficial owner holds no more than 5% of any class; or a holder of no more than 10% in a diversified REIT. Diversification uses [2003 Protocol para 6][jp-protocol-2003]. Other cases require domestic-law treatment; pension relief still requires art 10(3)(b).
+
+**Interest exceptions:** [Amended art 11(2)(a)][jp-protocol-2013] allows US source tax of no more than 10% of gross specified contingent interest, including interest tied to debtor or related-person receipts, profits, cash flow, property values or distributions. Paragraph 2(b) permits domestic-law taxation of interest on specified securitisation ownership interests to the extent it exceeds the comparable-debt return specified by domestic law. This includes the US REMIC excess-inclusion treatment described in the [technical explanation, art IV][jp-explanation]; no domestic rate is stated here.
+
+[Amended art 11(3)][jp-protocol-2013] generally uses payer residence for treaty source. If indebtedness was incurred in connection with, and interest is borne by, a PE in another state, source is that PE's contracting state or, for a third-state PE, neither contracting state. This treaty source rule does not itself establish domestic US source or taxability.
+
+**PE, excess payments and anti-conduit rules:** Effectively connected dividend holdings, interest debt-claims or royalty rights/property move to art 7 under [arts 10(7) and 12(3)][jp-treaty] and [amended art 11(5)][jp-protocol-2013]. Under [amended art 11(6)][jp-protocol-2013] and [art 12(4)][jp-treaty], ordinary relief protects only the arm's-length amount where a special relationship creates an excess. The gross excess may be taxed in the US at no more than 5% under the relevant paragraph. Specified preferred-stock, equivalent-debt and same-intangible arrangements can deny beneficial-owner status under arts 10(11), 11(7) and 12(5); current domestic anti-abuse application was not reviewed.
+
+[Arts 10(9) and (10)][jp-treaty], as amended by [2013 Protocol art III(2)][jp-protocol-2013], also permit an additional company tax on the dividend-equivalent amount of specified PE or real-property income, capped at 5% and subject to the listed company exemptions. That is a treaty ceiling; domestic branch-tax liability and procedures were not reviewed.
+
+**Protocol dates:** The 2013 Protocol entered into force on 30 August 2019. Under [art XV(2)][jp-protocol-2013], its withholding amendments apply to amounts paid or credited from 1 November 2019; the other income-tax provisions covered here apply to taxable years beginning from 1 January 2020. Entry into force and application dates are distinct.
+
+**Source text checked:** 5 October 2026, covering the stated treaty categories, ceilings, exemptions, conditions, application dates and PE rules. Current US withholding procedures, taxpayer-specific eligibility and reciprocal Japanese withholding were not reviewed.
+
+[jp-treaty]: https://home.treasury.gov/system/files/131/Treaty-Japan-11-6-2003.pdf
+[jp-protocol-2003]: https://home.treasury.gov/system/files/131/Treaty-Japan-Protocol-11-10-2003.pdf
+[jp-protocol-2013]: https://home.treasury.gov/system/files/131/Treaty-Japan-Pr2-1-24-2013.pdf
+[jp-notes-2003]: https://home.treasury.gov/system/files/131/Treaty-Japan-Notes-11-6-2003.pdf
+[jp-notes-2013]: https://www.govinfo.gov/content/pkg/GOVPUB-S-PURL-gpo188375/pdf/GOVPUB-S-PURL-gpo188375.pdf
+[jp-index]: https://www.irs.gov/businesses/international-businesses/japan-tax-treaty-documents
+[jp-explanation]: https://home.treasury.gov/system/files/131/Treaty-Japan-Pr2-TE-10-29-2015.pdf
+[jp-record]: https://2021-2025.state.gov/japan-19-830
+[jp-original-force]: https://www.irs.gov/irb/2004-29_IRB
 
 ## US → India
 
@@ -302,7 +329,7 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | France | 12 months | None specified | Standard OECD |
 | Canada | More than 12 months | 183 days or more in any twelve-month period, with the conditions below | [arts V(3), V(9)][ca-treaty] |
 | India | More than 120 days in any twelve-month period | More than 90 days in any twelve-month period, or in-state services to a related enterprise; excludes included services | [art 5(2)(k), (l)][in-treaty]; conditions below |
-| Japan | 12 months | None specified | Standard OECD |
+| Japan | More than 12 months | No separate duration-based services PE test; fixed-place and agency rules can still apply | [art 5, including art 5(3)][jp-treaty] |
 | Mexico | 6 months | 183 days in any 12-month period | Shorter than standard |
 | South Korea | 6 months | None specified | Shorter than standard |
 | Israel | 12 months | None specified | Standard OECD |
@@ -324,16 +351,16 @@ US treaties contain the most stringent LOB provisions globally. The standard US 
 
 All US treaties listed above (except the 1975 Israel treaty) contain LOB provisions. The UK and Canada treaties have the most developed LOB clauses.
 
-## Summary: Zero-WHT Corridors (All Three Categories)
+## Summary: Selected treaty ceilings and exemptions
 
-**Summary: Zero-WHT Corridors table**
+Only the Japan row in this summary was source-checked in this batch. Its US-source ceilings and exemptions depend on the full section's category and entitlement conditions; these figures do not determine withholding automatically. The other rows were not reverified.
 
 | Corridor | Dividends (substantial) | Interest | Royalties |
 | --- | --- | --- | --- |
 | US ↔ UK | 5% (0% at 80%) | 0% | 0% |
 | US ↔ Germany | 5% (0% pension) | 0% | 0% |
 | US ↔ France | 5% | 0% | 0% |
-| US ↔ Japan | 5% (0% at 50%) | 0% | 0% |
+| [US → Japan](#us--japan) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; specified exceptions |
 | US ↔ Netherlands | 5% | 0% | 0% |
 | US ↔ Ireland | 5% | 0% | 0% |
 | US ↔ Switzerland | 5% | 0% | 0% |
