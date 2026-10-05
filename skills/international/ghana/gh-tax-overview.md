@@ -1,11 +1,11 @@
 ---
 name: gh-tax-overview
-description: "Source-cited draft: tax overview for Ghana (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: tax overview for Ghana (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GH
 category: international
-tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+tax_year: 2026
+last_updated: 2026-10-06
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,15 +17,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Ghana tax system at a glance (2025)
 
-Ghana taxes income, consumption and payroll under statutes administered by the Ghana Revenue Authority. The figures below are for the 2025 year of assessment; a major VAT reform (Act 1151) was passed in 2025 but takes effect 1 January 2026, so the 2025 VAT regime described elsewhere remains in force for this year.
+Ghana taxes income, consumption and payroll under statutes administered by the Ghana Revenue Authority. The figures below are for the 2026 year of assessment. The Value Added Tax Act, 2025 (Act 1151) came into force on 1 January 2026, and the Income Tax (Amendment) Act, 2026 (Act 1178) changed the individual income tax bands from 1 September 2026.
 
 - **Standard tax year (basis period)** — Calendar year, 1 January to 31 December (companies may apply for a non-calendar accounting year)  _([Income Tax Act, 2015 (Act 896)](https://taxsummaries.pwc.com/ghana/corporate/tax-administration))_
 - **Currency** — Ghana cedi (GHS / GH₵)  _(Bank of Ghana Act, 2002 (Act 612))_
 - **National tax authority** — Ghana Revenue Authority (GRA)  _([Ghana Revenue Authority Act, 2009 (Act 791)](https://gra.gov.gh/))_
 - **Basis of taxation** — Residents are taxed on worldwide income; non-residents are taxed on Ghana-sourced income only  _([Income Tax Act, 2015 (Act 896)](https://taxsummaries.pwc.com/ghana/individual/taxes-on-personal-income))_
-- **Top marginal personal income tax rate (resident)** — 35 percent (applies to annual chargeable income exceeding GHS 600,000)  _([Income Tax Act, 2015 (Act 896)](https://taxsummaries.pwc.com/ghana/individual/taxes-on-personal-income))_
-- **Standard corporate income tax rate** — 25 percent  _([Income Tax Act, 2015 (Act 896)](https://taxsummaries.pwc.com/ghana/corporate/taxes-on-corporate-income))_
-- **Does Ghana levy VAT?** — Yes — standard VAT rate is 15%, plus health and education levies on the same base (2025 regime)  _([Value Added Tax Act, 2013 (Act 870)](https://gra.gov.gh/domestic-tax/tax-types/vat/))_
+- **Top marginal personal income tax rate (resident)** — 35 percent (applies to annual chargeable income exceeding GHS 600,000, or GHS 50,000 a month, in the 2026 bands effective 1 September 2026)  _([GRA, Pay As You Earn (PAYE)](https://gra.gov.gh/domestic-tax/tax-types/paye/))_
+- **Standard corporate income tax rate** — 25 percent  _([GRA, Corporate Income Tax (CIT)](https://gra.gov.gh/domestic-tax/tax-types/corporate-income-tax/))_
+- **Does Ghana levy VAT?** — Yes — VAT at 15% (Act 1151, s 3) plus the National Health Insurance Levy at 2.5% and the GETFund Levy at 2.5%, all charged on the value of the supply; from 1 January 2026 the COVID-19 levy no longer applies and the two levies are deductible as input tax  _([Value Added Tax Act, 2025 (Act 1151)](https://gra.gov.gh/wp-content/uploads/2026/01/VALUE-ADDED-TAX-ACT-2025-ACT-1151.pdf); [GRA, VAT](https://gra.gov.gh/domestic-tax/tax-types/vat/))_
 - **Annual corporate income tax return deadline** — Within 4 months after the end of the accounting year (e.g. 30 April for a 31 December year-end)  _([Income Tax Act, 2015 (Act 896)](https://taxsummaries.pwc.com/ghana/corporate/tax-administration))_
 - **Annual personal income tax return deadline** — Within 4 months after the end of the year of assessment (by 30 April for a calendar year)  _([Income Tax Act, 2015 (Act 896)](https://taxsummaries.pwc.com/ghana/individual/tax-administration))_
 
