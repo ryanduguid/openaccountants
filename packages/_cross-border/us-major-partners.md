@@ -1,10 +1,10 @@
 ---
 name: us-major-partners
-description: "version: 1.4"
-version: 1.4
+description: "version: 1.5"
+version: 1.5
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-10-05
+last_updated: 2026-10-06
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. Germany's REIT pension treatment and France's stated interpretation gaps remain unresolved. The other 8 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row were checked on 6 October 2026. Germany's REIT pension treatment, France's stated interpretation gaps and Australia's indirect parent-ownership treatment remain unresolved. The other 7 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -188,19 +188,49 @@ US-source contingent interest that does not qualify as portfolio interest has a 
 
 ## US → Australia
 
-**US → Australia income types and treaty rates**  _(IRS Table 1)_
+**US-source income paid to Australian residents: treaty ceilings and exemptions for 2025**
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+Use the [1982 Convention][au-treaty] as amended by the [2001 Protocol][au-protocol]. Protocol arts 6, 7 and 10 replace Convention arts 10, 11 and 16; Protocol art 8 amends art 12. Verify treaty residence under [arts 3(1)(g), 4][au-treaty], including the income-specific partnership, estate and trust limits, beneficial entitlement where required, and [art 16 benefit eligibility][au-protocol]. Its paragraphs 4 and 7 preserve the disproportionate-income restriction and domestic anti-avoidance rules. The [art 1(3), (4) saving clause][au-treaty], as amended by [Protocol art 1][au-protocol], can preserve US taxation of US citizens and residents. Treaty limits do not establish domestic taxability or automatically determine withholding. Current US procedures, claimant eligibility and reciprocal Australian withholding are outside this review.
+
+| Income type | US-source treaty ceiling or treatment | Primary provision | Conditions |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
-| Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
-| Interest | 10% | Art 11(2) | NOT zero — financial institution interest may qualify lower |
-| Royalties | 5% | Art 12(2) | All categories 5% |
-| Technical services | 0% | Art 7 | Business profits — no WHT without PE |
+| Dividends, other cases | 15% of gross | [art 10(2)(b)][au-protocol] | Australian resident beneficially entitled; investment-vehicle and attribution limits below |
+| Dividends, qualifying company holding | 5% of gross | [art 10(2)(a)][au-protocol] | Company beneficially entitled holds directly at least 10% of payer voting power |
+| Dividends, qualifying parent company | Exempt from US source tax | [art 10(3)][au-protocol] | At least 80% voting power for the twelve months ending on declaration, plus the specific benefit route and ownership qualification below |
+| Ordinary art 11 interest | 10% of gross | [art 11(2)][au-protocol] | Exemptions, profit-linked, securitisation, attribution and excess-payment rules below |
+| Interest, specified governmental recipients | Exempt from US source tax | [art 11(3)(a)][au-protocol] | Contracting State, political or administrative subdivision, local authority, body exercising governmental functions, or bank performing central banking functions |
+| Interest, qualifying financial institution | Exempt from US source tax | [art 11(3)(b), (4)][au-protocol] | Unrelated to and dealing wholly independently with payer; financial-institution definition and back-to-back restriction below |
+| Profit-linked interest within art 11(9)(a) | 15% of gross | [art 11(9)(a)][au-protocol] | Determined by reference to issuer profits or those of its associated enterprise; overrides paragraphs 1 to 4 |
+| Royalties within amended art 12(4), arm's-length amount | 5% of gross | [art 12(2), as amended by Protocol art 8][au-protocol] | Definition, source, attribution and excess-payment rules below |
+| Services classified as enterprise business profits | No US tax under art 7 absent a US PE; only attributable profits may be taxed if a PE exists | [art 7(1), (6)][au-treaty] | Separately governed income retains its own article; independent personal services and know-how require separate classification |
 
-**Source:** US-Australia Convention signed 6 August 1982, amended by Protocol 2001. IRS Table 1.
-**Special provisions:** Australia franking credit system affects effective tax on dividends. Royalty definition is broader than OECD model. US domestic WHT 30% reduced significantly.
-**Last verified:** May 2026
+**Parent conditions:** [Art 10(3)][au-protocol] requires a company resident in Australia that is beneficially entitled to the dividends and has owned shares representing at least 80% of payer voting power for twelve months ending on the date the dividend is declared. It must be a qualified person under art 16(2)(c), or receive benefits with respect to the dividends through an actual art 16(5) US competent-authority determination. General active-business, ownership/base-erosion or headquarters eligibility does not suffice. The operative parent test does not expressly say 'directly'; the [US technical explanation][au-explanation], Protocol art 6 paragraph 3, describes direct ownership. Indirect parent ownership is unverified in this guide. For the expressly direct 10% test in art 10(2)(a), that explanation describes proportionate holdings through fiscally transparent entities as potentially qualifying in particular circumstances; assess the entity agreement and source-state treatment before applying that reading.
+
+**RIC and REIT dividends:** [Art 10(4)(a), (b)][au-protocol] excludes RIC and REIT dividends from the 5% company ceiling and parent exemption; RIC dividends use 15%. Under art 10(4)(c), REIT dividends use 15% only for an individual holding no more than 10%; a dividend on a publicly traded class where the beneficially entitled person holds no more than 5% of any class; or a holder with no more than 10% where the gross value of no single real-property interest exceeds 10% of the gross value of the REIT's total real-property interests. The [explanation][au-explanation], Protocol art 6 paragraph 4, excludes foreclosure property from that diversification test and attributes partnership real property proportionately.
+
+**Listed Australian property trusts:** [Art 10(4)(d)][au-protocol] also allows the 15% ceiling for REIT dividends paid to a listed Australian property trust (LAPT). A LAPT is an Australian unit trust registered as a Managed Investment Scheme whose principal unit class is listed on a recognised Australian exchange and regularly traded on one or more art 16 recognised exchanges. Where its responsible entity knows or has reason to know that a unitholder owns at least 5% of LAPT beneficial interests, attribute the corresponding proportion of its direct REIT interest and dividend to that unitholder and apply art 10(4)(c) to that portion. REIT shares held by the LAPT are deemed publicly traded for this purpose. The [explanation][au-explanation], Protocol art 6 paragraph 4, counts the unitholder's other direct and attributed REIT interests too; failure by one unitholder does not remove relief from every LAPT dividend.
+
+**LAPT grandfather:** [Protocol art 13(3)][au-protocol] disapplies Protocol art 6 for dividends on REIT shares owned by the LAPT on 26 March 2001, acquired under a binding contract entered into on or before that date, or acquired by reinvesting ordinary or capital dividends on such shares. Apply [art 10 as it stood on that date][au-treaty], including its 15% ceiling and effectively connected exception, instead of the replacement article's look-through rule. This is a Protocol transition rule, not Convention art 13.
+
+**Interest exceptions:** The [art 11(3)(b)][au-protocol] financial institution is a bank or other enterprise substantially deriving its profits by raising debt finance in financial markets or taking deposits at interest and using those funds in a financing business. Art 11(4)(a) restores a 10% ceiling for that institution's interest paid under back-to-back loans or an economic equivalent intended to have a similar effect; paragraph 4(b) preserves domestic anti-avoidance law. Under art 11(9)(b), securitisation-ownership interest exceeding the normal return on publicly traded debt with similar risk is taxed under domestic law. Art 11(5) excludes art 10 dividends and late-payment penalties from interest. Art 11(8) protects only the arm's-length amount where a special relationship produces an excess; the excess remains taxable under domestic law, with due regard to the other treaty provisions.
+
+**Source and attribution:** [Art 11(7)][au-protocol] generally sources interest by payer residence; where a PE or fixed base in either state incurs the relevant debt and bears the interest, source follows that PE or fixed base. Art 11(10) separately deems specified excess branch or real-property interest expense to arise in the other state. Effectively connected shareholdings or indebtedness move dividends or interest to art 7 or retained art 14 under arts 10(5) and 11(6). Branch profits under art 10(8), (9) have a separate 5% cap and an exemption for the stated art 16(2)(c) or (5) company cases.
+
+**Royalty classification:** [Art 12(4)(a), replaced by Protocol art 8][au-protocol], covers specified IP, films and broadcast reproduction or transmission rights. Retained [art 12(4)(b), (c)][au-treaty] includes owned scientific, technical, industrial or commercial knowledge/information; ancillary and subsidiary assistance enabling its application or enjoyment or that of covered property/rights; related forbearance; and contingent alienation proceeds based on productivity, use or further disposition. Protocol art 8 removes industrial, commercial or scientific equipment from paragraph 4(a). Under [art 7(6)][au-treaty], separately governed income retains its own article: [Protocol art 5][au-protocol] separately addresses qualifying ship or aircraft leases and container profits under Convention art 8. The [explanation][au-explanation], Protocol art 8, treats other equipment-rental payments as business profits subject to art 7 PE rules.
+
+Under retained [art 12(3), (5), (6)][au-treaty], effectively connected property/rights move royalties to art 7 or art 14, and special-relationship excesses fall outside the arm's-length protection, subject to the other treaty provisions. Source generally follows the state/governmental payer or payer residence, overridden where a PE or fixed base in either state or outside both incurs the liability and bears the royalty. Only where paragraph 6(a) does not source the royalty in either Contracting State does paragraph 6(b) source it by use or right to use there.
+
+**Services:** Classify the contract before applying art 7 or art 12. The [original explanation][au-original-explanation], art 12, distinguishes a newly prepared professional design from supplied pre-existing knowledge. Under retained [art 14][au-treaty], an individual's independent personal services performed in the US may be taxed there if US presence exceeds 183 aggregate days in the US taxable year, or a fixed base is regularly available there; the fixed-base limb limits taxation to attributable income. [Art 27(2)][au-treaty] removes an art 14 exemption to the extent the income is not, or after applying art 14 will not be, subject to Australian tax. The 183-day rule is not a generic services PE test.
+
+**Source text checked:** 6 October 2026. The [IRS index][au-index] links the Convention, original explanation, Protocol and Protocol explanation. [US Treasury][au-force] records Protocol entry on 12 May 2003; the [Australian Treasury table][au-au-index] records 13 May 2003. The discrepancy remains unresolved; either May date gives 1 July 2003 for the withholding start under Protocol art 13(2). Complete later-instrument and authentic-text comparison remains unverified.
+
+[au-treaty]: https://www.irs.gov/pub/irs-trty/aus.pdf
+[au-protocol]: https://home.treasury.gov/system/files/131/Treaty-Australia-Protocol-9-27-2001.pdf
+[au-explanation]: https://home.treasury.gov/system/files/131/Treaty-Australia-Protocol-TE-3-5-2003.pdf
+[au-original-explanation]: https://www.irs.gov/pub/irs-trty/austtech.pdf
+[au-index]: https://www.irs.gov/businesses/international-businesses/australia-tax-treaty-documents
+[au-force]: https://home.treasury.gov/news/press-releases/20035121658221021
+[au-au-index]: https://treasury.gov.au/tax-treaties/income-tax-treaties
 
 ## US → Japan
 
@@ -409,6 +439,7 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | Germany | More than 12 months | No separate duration-based services PE test; fixed-place and dependent-agent rules can still apply | [art 5][de-treaty]; professional services are business profits under amended art 7(7) |
 | France | More than 12 months for a building site or construction or installation project, or for an installation or drilling rig or ship used for exploration or to prepare for extraction of natural resources | No separate services day-count test; fixed-place and dependent-agent rules apply | [art 5][fr-treaty]; independent services retain the art 14 fixed-base rule |
 | Canada | More than 12 months | 183 days or more in any twelve-month period, with the conditions below | [arts V(3), V(9)][ca-treaty] |
+| Australia | More than 9 months for a building site or construction, assembly or installation project | No separate generic services day-count PE test; art 14 separately governs individuals | [art 5(2)(h)][au-treaty]; other key PE triggers below |
 | India | More than 120 days in any twelve-month period | More than 90 days in any twelve-month period, or in-state services to a related enterprise; excludes included services | [art 5(2)(k), (l)][in-treaty]; conditions below |
 | Japan | More than 12 months | No separate duration-based services PE test; fixed-place and agency rules can still apply | [art 5, including art 5(3)][jp-treaty] |
 | Mexico | 6 months | 183 days in any 12-month period | Shorter than standard |
@@ -418,6 +449,8 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 **UK PE rules:** [Art 5][uk-treaty] includes fixed-place and dependent-agent grounds, subject to its stated exclusions and ordinary-course independent-agent rule; corporate control alone does not create a PE. Under art 5(3), a building site or construction or installation project constitutes a PE only if it lasts more than twelve months. [Art 21(1)–(3)][uk-treaty] separately covers activities carried on offshore in a Contracting State in connection with exploration or exploitation of that State's seabed, subsoil and natural resources. Subject to paragraph 3, an enterprise of the other Contracting State carrying on those activities is deemed to have a PE there. Exploration activities not exceeding 30 aggregate days in any twelve-month period are excepted; substantially similar exploration activities of associated enterprises are aggregated, excluding concurrent days. The enterprise PE rule has no 30-day exception for exploitation activities. Art 21(4) contains a separate employment-income rule.
 
 **Germany PE rules:** [Art 5][de-treaty] includes fixed-place and dependent-agent grounds, subject to its exclusions and ordinary-course independent-agent rule; corporate control alone does not create a PE. Under art 5(3), a building site or construction, assembly or installation project constitutes a PE only if it lasts more than twelve months. [Restated related Protocol para 3][de-protocol] separately prevents a PE for the specified performances by a resident not taxable under art 17, where presence does not exceed 183 aggregate days in the calendar year; it is not a general services exemption.
+
+**Australia key PE rules:** [Art 5][au-treaty] includes fixed-place and dependent-agent grounds, its stated activity exclusions and an ordinary-course independent-agent exception; corporate control alone does not create a PE. Art 5(2)(h) uses more than nine months for a building site or construction, assembly or installation project. Art 5(2)(i) uses at least six aggregate months in any 24-month period for an installation, drilling rig or ship used for dredging or seabed/subsoil natural-resource exploration or exploitation. Art 5(4)(b) covers substantial equipment maintained for rental or other purposes for more than twelve months, excluding hire-purchase equipment; paragraph 4(c) covers related project supervision for more than nine months in any 24-month period. Paragraph 4(d) separately covers goods or merchandise belonging to the enterprise that were purchased by it in the other state without prior substantial processing outside that state, or produced by it or on its behalf there, and then substantially processed there by an enterprise satisfying the paragraph's direct or indirect management, control or capital relationship test. Under [art 7(9), inserted by Protocol art 4][au-protocol], a resident beneficially entitled directly or through transparent entities to enterprise profits can be deemed to carry on business through the transparent entity's or trustee's PE, with that profit share attributed to it.
 
 **Canada services PE:** [Art V(9)][ca-treaty], subject to the construction rule in paragraph 3, applies where no PE exists under the preceding art V rules. Either an individual is present in the other state for at least 183 days in any twelve-month period and more than 50% of the enterprise's gross active-business revenues during those periods comes from that individual's services there; or services for the same or connected project are provided there for at least 183 days in any twelve-month period for resident customers, or customers with a PE there to which the services relate. Mere corporate control does not create a PE: art V(8).
 
