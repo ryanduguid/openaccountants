@@ -26,15 +26,32 @@ treated as an amendment to income classifications or rates.
 | Substantial dividends always use 5% | Art 10(2)(a)(i) requires a company beneficial owner and direct ownership of at least 10% of US voting stock; art 10(5) excludes RIC/REIT dividends from that rate and the parent exemption. |
 | Interest is completely exempt under art 11(2) | Ordinary relief is art 11(1); profits-linked interest under art 11(2) has a 15% gross ceiling through art 10(2)(b). Art 11(3) excludes dividends and late-payment penalties. Art 29(6) preserves REMIC excess-inclusion taxation. |
 | Royalties and technical services always use 0% | Amended art 12 defines royalties and contingent alienation gains; the explanation distinguishes know-how from pure assistance/services. Services may use art 7 or retained art 14, with their respective PE/fixed-base rules. |
-| PE starts at 12 months | Art 5(3) requires construction/installation projects and specified exploration rigs/ships to last or be used for more than twelve months. General fixed-place and dependent-agent rules apply separately. |
+| PE starts at 12 months | Art 5(3) requires a building site or construction or installation project, or an installation or drilling rig or ship used for exploration or to prepare for extraction of natural resources, to last or be used for more than twelve months. General fixed-place and dependent-agent rules apply separately. |
 | Reciprocal blanket summary | The US-source row points to the full conditions. Reciprocal French withholding was not reviewed. |
 
 The section includes all three art 10(5)(b) REIT alternatives and the
-art 10(5)(c) diversification definition: no single real-property interest
+art 10(5)(c) diversification definition: the value of no single real-property interest
 exceeds 10% of total real-property interests, excluding foreclosure property
 and attributing partnership real property proportionately. Exactly 10% passes
 that bound; more than 10% does not. The explanation's 'gross value' wording
 was not substituted for the operative definition.
+
+Art 4(2)(c) requires current inclusion in the otherwise French-resident
+member's taxable income and all four French qualified-partnership conditions.
+Deferred inclusion alone does not satisfy this route. Art 11(5)'s
+payer-residence and PE/fixed-base source rule is separate from the exchange
+of notes preserving domestic or third-state treaty taxation for interest paid
+by a PE located in a Contracting State; the note does not name a fixed base.
+Current arts 12(4), (5) retain original paragraphs 6 and 7, renumbered by
+Protocol III. Both the substantive original text and the renumbering are linked.
+
+The English art 10(5)(b)(i) condition requires the pension trust or other
+organisation to be maintained exclusively for the stated benefits and separately
+established or sponsored by a resident. The French consolidation uses
+*constitué exclusivement*; no reconciliation of the authentic texts is asserted.
+The US-payer direct-voting-stock limb is art 10(2)(a)(i) in the English Protocol
+and art 10(2)(a)(ii) in the French consolidation. The guide's US-source row
+cites the English instrument and preserves its pinpoint.
 
 The common gates cover residence/derivation under art 4, art 30 entitlement,
 the art 29 saving clause, attribution under arts 10(7), 11(4), 12(3),
@@ -87,7 +104,9 @@ required additional parent-relief route. They distinguish RIC from the three
 REIT alternatives, dividend-classified profits-linked income from interest,
 REMIC excess from ordinary interest, defined royalties from services, and
 PE/fixed-base attribution from ordinary source relief. Exactly twelve
-months does not meet the art 5(3) threshold; more than twelve months does.
+months does not meet the art 5(3) threshold; more than twelve months does
++for each stated site/project and installation/rig/ship category, including
++preparation for extraction.
 Exactly 60% is outside the below-60% triangular test. These are treaty-text
 comparisons, not taxpayer calculations.
 
