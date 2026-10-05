@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T22:33:06+00:00",
+ "generated_at": "2026-10-05T23:08:55+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -9142,8 +9142,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "tax_year": "2026",
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "gh-payroll-social",
@@ -9155,8 +9155,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "tax_year": "2026",
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "gh-tax-overview",
@@ -9168,8 +9168,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "tax_year": "2026",
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "ghana-pit",
@@ -9181,8 +9181,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2024",
-   "last_updated": "2026-09-28"
+   "tax_year": "2026",
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "ghana-vat",
@@ -9194,8 +9194,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "tax_year": "2026",
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "ghana-references",
