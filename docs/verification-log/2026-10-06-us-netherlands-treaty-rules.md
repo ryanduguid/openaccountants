@@ -104,8 +104,27 @@ are the five changed paths. Thirteen other partner bodies, all other
 summary rows and the exact disclaimer/CTA are byte-protected against
 the base. Generators and existing gates verify repository consistency;
 they do not establish treaty interpretation or financial accuracy.
-Local check results and the independent review are pending at this
-pre-verification checkpoint.
+The existing Windows checks passed with the repository's Python 3.14.7
+environment: all nineteen recorded invocations exited zero. The root
+suite ran 375 tests with nine local platform skips; all 77 MCP tests
+passed without skips. The four generators reproduced the tracked
+content; only the dynamic index timestamp differed, and that difference
+was proved before restoring the committed timestamp. The independent
+financial review and complementary Linux run remain pending at this
+checkpoint; their results belong in the pull request's verification record.
+
+| Repository command, from the documented working directory | Result |
+| --- | --- |
+| `python scripts/build-packages.py`, `build-index.py`, `build-partners.py`, `build-llms-full.py` | All four passed; counts remain 1,875 guides, 243 jurisdictions and 164 accountant-reviewed guides. |
+| `python scripts/validate-guides.py` | Passed with the existing five jurisdiction omissions in one warning group. |
+| `python scripts/validate-guides.py --changed-only --no-index-check` | Passed. |
+| `python scripts/check-sync-integrity.py --base 615e925236fe0ae7a6b76566f2bba8595e04f0f7 --head HEAD --mode audit --strict-metadata` | Passed for the changed source guide. |
+| `python scripts/check-{arithmetic,bracket-tables,expired-rules,fact-conflicts,coverage-claims,sourcing-floor}.py`, each run separately | All six passed; no baseline change. Accepted findings remain 35, 40, 27, 132, zero and 1,235 respectively. |
+| `python scripts/check-cited-hosts.py --selftest` | Offline selftest passed; this does not validate live links. |
+| `python -m unittest discover -s tests -p "test_*.py"`, at root and separately in `mcp/` | Passed with the counts above. |
+| `python scripts/list-incomplete-fixes.py --base origin/main` | Read the surviving figures in other partner bodies and the generated mirror; they are outside this Netherlands correction. |
+| `python scripts/list-midyear-changes.py --since 2025` | No lines reported; this is advisory. |
+| `git diff --check 615e925236fe0ae7a6b76566f2bba8595e04f0f7 HEAD` | Passed. |
 
 Named professional sign-off, taxpayer facts, current domestic tax,
 withholding/forms/refunds, reciprocal Dutch treatment, complete
