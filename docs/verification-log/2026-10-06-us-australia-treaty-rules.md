@@ -1,7 +1,9 @@
 # US treaties: Australia rules
 
-The Australia section gave every interest payment a 10% rate, every royalty
-category 5%, and technical services a blanket art 7 zero rate. It omitted
+The Australia section presented a single 10% interest row, with only a
+non-specific note that financial-institution interest might qualify lower.
+It gave every royalty category 5% and technical services a blanket art 7
+zero rate. It omitted
 parent-company relief and the RIC, REIT and listed Australian property trust
 (LAPT) rules. This correction starts from `e5024e3`, advances
 `us-major-partners` to version 1.5 and covers US-source income paid to
@@ -27,14 +29,15 @@ natively with pdf-inspector; no OCR was required.
 Protocol arts 6, 7 and 10 replace Convention arts 10, 11 and 16. Protocol
 art 8 changes the royalty ceiling and replaces art 12(4)(a), retaining
 paragraphs 4(b) and (c). Original arts 5, 14 and 27(2) remain relevant;
-Protocol art 4 inserts art 7(9) on transparent-entity PE attribution.
+Protocol art 4 inserts art 7(9) on transparent-entity PE attribution;
+Protocol art 5 amends art 8 shipping, aircraft-lease and container treatment.
 
 | Earlier statement | Correction and primary pinpoint |
 | --- | --- |
 | No parent dividend category | Art 10(3) requires at least 80% voting power for twelve months ending on declaration, plus art 16(2)(c) qualification or an actual art 16(5) dividend-benefit grant. |
 | Substantial dividends use 5% without fund limits | Art 10(2)(a) requires a company beneficially entitled and directly holding at least 10% voting power; art 10(4) separately restricts RIC/REIT and LAPT dividends. |
-| Interest always uses 10% | Art 11(3) exempts specified governmental recipients and qualifying independent financial institutions; paragraphs 4, 6, 8 and 9 contain exceptions. Profits-linked interest in paragraph 9(a) has a 15% ceiling. |
-| Royalties always use 5% | Classify under amended art 12(4); equipment rentals were removed, while know-how, ancillary assistance and contingent alienation remain. PE/fixed-base and excess-payment rules apply. |
+| Interest presented as a single 10% category | Art 11(3) exempts specified governmental recipients and qualifying independent financial institutions; paragraphs 4, 6, 8 and 9 contain exceptions. Profits-linked interest in paragraph 9(a) has a 15% ceiling. |
+| Royalties always use 5% | Classify under amended art 12(4); equipment rentals were removed, while know-how, ancillary assistance and contingent alienation remain. Art 7(6) preserves separately governed income, including qualifying art 8 leases and container profits under Protocol art 5. Other equipment rentals use art 7, subject to its PE rules. PE/fixed-base and excess-payment rules apply. |
 | Technical services always use 0% | Enterprise profits can use art 7; individual independent services retain art 14 and its art 27(2) subject-to-tax limit; some knowledge/assistance payments use art 12. |
 | No Australia PE row | Art 5 has distinct construction, seabed, equipment and supervision durations, alongside fixed-place, agency and goods-processing rules. |
 
@@ -53,6 +56,11 @@ shares held on 26 March 2001, binding contracts entered into by that date,
 and reinvestments of their ordinary or capital dividends. Those shares do
 not automatically use the replacement article's look-through rule.
 
+Art 5(4)(d) requires goods belonging to the tested enterprise, purchased by
+it or produced by it or on its behalf in the other state, followed by
+substantial processing there under the stated management, control or
+capital relationship. Those predicates constrain the deemed PE rule.
+
 I compared these boundaries manually with the primary provisions, assuming
 the other stated conditions are met. They are source comparisons, not a
 taxpayer calculation or a financial parser test:
@@ -69,6 +77,8 @@ taxpayer calculation or a financial parser test:
 | Specified seabed activity exactly six months in 24 | Passes art 5(2)(i)'s duration bound. |
 | Substantial equipment exactly twelve months | Does not pass art 5(4)(b)'s duration limb; more than twelve does, subject to the hire-purchase exclusion. |
 | Project supervision exactly nine months in 24 | Does not pass art 5(4)(c)'s duration limb; more than nine does. |
+| Qualifying art 8 container profits or ship/aircraft leases | Keep art 8 treatment under Protocol art 5 and Convention art 7(6); removing equipment from royalties does not impose the generic art 7 PE test on them. |
+| Goods do not belong to the tested enterprise | Do not satisfy art 5(4)(d), even if substantially processed by a related enterprise. Purchase by it or production by it/on its behalf and the stated relationship must also be established. |
 
 [US Treasury's force statement](https://home.treasury.gov/news/press-releases/20035121658221021)
 records exchange and entry on 12 May 2003. The live
