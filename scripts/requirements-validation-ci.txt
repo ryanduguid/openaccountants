@@ -1,0 +1,6 @@
+# CI wheels for Ubuntu Python 3.10/3.11 and Windows Python 3.11, x64.
+# Keep the pin in sync with requirements-validation.txt.
+PyYAML==6.0.3 \
+    --hash=sha256:9c7708761fccb9397fe64bbc0395abcae8c4bf7b0eac081e12b809bf47700d0b \
+    --hash=sha256:b8bb0864c5a28024fac8a632c443c87c5aa6f215c0b126c449ae1a150412f31d \
+    --hash=sha256:9f3bfb4965eb874431221a3ff3fdcddc7e74e3b07799e0e84ca4a0f867d449bf

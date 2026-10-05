@@ -128,7 +128,7 @@ def main():
             f"error: no guides found under {REPO_ROOT} "
             f"(looked in {', '.join(GUIDE_TREES)}); not writing {out_path}"
         )
-    with open(out_path, "w", encoding="utf-8") as fh:
+    with open(out_path, "w", encoding="utf-8", newline="\n") as fh:
         json.dump(index, fh, indent=1, ensure_ascii=False)
         fh.write("\n")
     counts = index["counts"]

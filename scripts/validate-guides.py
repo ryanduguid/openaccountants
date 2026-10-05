@@ -76,6 +76,7 @@ import re
 import subprocess
 import sys
 import tempfile
+from functools import lru_cache
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:  # the tests load this file by path
@@ -291,7 +292,7 @@ def normalize_legacy_depends_on(block):
     return LEGACY_DEPENDS_ON.sub(lambda m: f"{m.group(1)}:\n  {m.group(2)}", block)
 
 
-def check_packages_frontmatter(bi, errors, only_files=None):
+def check_packages_frontmatter(bi, errors, only_files=None, *, parse=None):
     """Strict-YAML sweep over the whole generated packages/** tree."""
     already_checked = set(bi.guide_files())
     checked = 0
@@ -313,7 +314,7 @@ def check_packages_frontmatter(bi, errors, only_files=None):
             continue
         checked += 1
         try:
-            load_frontmatter(normalize_legacy_depends_on(block))
+            (parse or load_frontmatter)(normalize_legacy_depends_on(block))
         except FrontmatterError as exc:
             errors.append(f"{rel}: invalid YAML frontmatter: {exc}")
     print(f"checked {checked} generated package frontmatter block(s)")
@@ -368,7 +369,7 @@ def check_unique_names(bi, errors):
     print(f"checked {len(owners)} guide names for uniqueness")
 
 
-def check_depends_on(bi, errors, known_names=None):
+def check_depends_on(bi, errors, known_names=None, *, parse=None):
     """Every `depends_on` slug must be the `name` of a guide that exists.
 
     A whole-tree check, run in every mode but --derived-only: the slug lives
@@ -395,7 +396,7 @@ def check_depends_on(bi, errors, known_names=None):
         if block is None:
             continue
         try:
-            metadata = load_frontmatter(block)
+            metadata = (parse or load_frontmatter)(block)
         except FrontmatterError:
             continue
         slugs = [str(slug).strip() for slug in metadata.get("depends_on") or []]
@@ -488,7 +489,48 @@ def check_state_naming(rel, name, errors):
         )
 
 
-def check_guides(bi, errors, warnings, only_files=None):
+def check_guide_classification(rel, fields, errors, warn_counts):
+    """Validate category and jurisdiction metadata."""
+    if not fields["jurisdiction"]:
+        if os.path.dirname(rel) in JURISDICTION_OPTIONAL_DIRS:
+            warn_counts["jurisdiction (jurisdiction-agnostic dirs)"] += 1
+        else:
+            errors.append(f"{rel}: missing required frontmatter key `jurisdiction`")
+    category = fields["category"]
+    if not category:
+        errors.append(
+            f"{rel}: missing required frontmatter key `category` "
+            "(the vocabulary is in docs/skill-template.md)"
+        )
+    elif category not in CATEGORY_VOCABULARY:
+        errors.append(
+            f"{rel}: `category` must be one of the vocabulary in docs/skill-template.md "
+            f"(got {category!r})"
+        )
+
+
+def check_guide_metadata(rel, block, fields, errors):
+    """Validate tax-year, update-date and review metadata."""
+    tax_year = TAX_YEAR_RE.search(block)
+    if tax_year:
+        value = tax_year.group(1)
+        if not re.fullmatch(r"\d{4}", value) or not (TAX_YEAR_MIN <= int(value) <= TAX_YEAR_MAX):
+            errors.append(
+                f"{rel}: `tax_year` must be a bare integer "
+                f"{TAX_YEAR_MIN}-{TAX_YEAR_MAX} (got {value!r}) — put "
+                "ranges/calendars/qualifiers in `tax_year_notes`"
+            )
+    check_quality_metadata(rel, fields, errors)
+    last_updated = fields["last_updated"]
+    if not last_updated:
+        errors.append(f"{rel}: missing required frontmatter key `last_updated`")
+    elif not LAST_UPDATED_FMT.fullmatch(last_updated):
+        errors.append(
+            f"{rel}: `last_updated` must be YYYY-MM-DD (got {last_updated!r})"
+        )
+
+
+def check_guides(bi, errors, warnings, only_files=None, *, parse=None):
     warn_counts = {"jurisdiction (jurisdiction-agnostic dirs)": 0}
     guides = skipped = 0
     for rel in bi.guide_files():
@@ -511,7 +553,7 @@ def check_guides(bi, errors, warnings, only_files=None):
             continue
         guides += 1
         try:
-            load_frontmatter(block)
+            (parse or load_frontmatter)(block)
         except FrontmatterError as exc:
             errors.append(f"{rel}: invalid YAML frontmatter: {exc}")
             continue
@@ -522,39 +564,8 @@ def check_guides(bi, errors, warnings, only_files=None):
         has_description = re.search(r"^description:", block, re.MULTILINE)
         if not has_description and rel not in LEGACY_MISSING_DESCRIPTION:
             errors.append(f"{rel}: missing required frontmatter key `description`")
-        tax_year = TAX_YEAR_RE.search(block)
-        if tax_year:
-            value = tax_year.group(1)
-            if not re.fullmatch(r"\d{4}", value) or not (TAX_YEAR_MIN <= int(value) <= TAX_YEAR_MAX):
-                errors.append(
-                    f"{rel}: `tax_year` must be a bare integer "
-                    f"{TAX_YEAR_MIN}-{TAX_YEAR_MAX} (got {value!r}) — put "
-                    "ranges/calendars/qualifiers in `tax_year_notes`"
-                )
-        check_quality_metadata(rel, fields, errors)
-        last_updated = fields["last_updated"]
-        if not last_updated:
-            errors.append(f"{rel}: missing required frontmatter key `last_updated`")
-        elif not LAST_UPDATED_FMT.fullmatch(last_updated):
-            errors.append(
-                f"{rel}: `last_updated` must be YYYY-MM-DD (got {last_updated!r})"
-            )
-        if not fields["jurisdiction"]:
-            if os.path.dirname(rel) in JURISDICTION_OPTIONAL_DIRS:
-                warn_counts["jurisdiction (jurisdiction-agnostic dirs)"] += 1
-            else:
-                errors.append(f"{rel}: missing required frontmatter key `jurisdiction`")
-        category = fields["category"]
-        if not category:
-            errors.append(
-                f"{rel}: missing required frontmatter key `category` "
-                "(the vocabulary is in docs/skill-template.md)"
-            )
-        elif category not in CATEGORY_VOCABULARY:
-            errors.append(
-                f"{rel}: `category` must be one of the vocabulary in docs/skill-template.md "
-                f"(got {category!r})"
-            )
+        check_guide_metadata(rel, block, fields, errors)
+        check_guide_classification(rel, fields, errors, warn_counts)
         check_cta_block(rel, text, errors)
     for key, count in sorted(warn_counts.items()):
         if count:
@@ -795,6 +806,7 @@ def main():
 
     errors, warnings = [], []
     bi = GuideTrees()
+    parse = lru_cache(maxsize=None)(load_frontmatter)
     if not derived_only:
         only = None
         if changed_only:
@@ -805,10 +817,10 @@ def main():
         if only is not None and not only:
             print("no guide files changed — skipping the per-guide checks")
         else:
-            check_guides(bi, errors, warnings, only_files=only)
-            check_packages_frontmatter(bi, errors, only_files=only)
+            check_guides(bi, errors, warnings, only_files=only, parse=parse)
+            check_packages_frontmatter(bi, errors, only_files=only, parse=parse)
         check_us_federal_deletions(errors)
-        check_depends_on(bi, errors)
+        check_depends_on(bi, errors, parse=parse)
         check_unique_names(bi, errors)
     check_no_deprecated_manifests(errors)
     if derived_only or not no_index_check:

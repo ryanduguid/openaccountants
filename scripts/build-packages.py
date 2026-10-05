@@ -55,6 +55,7 @@ import os
 import re
 import shutil
 import sys
+from itertools import islice
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:  # scripts/ on sys.path when this file is loaded by path, not run
@@ -159,10 +160,10 @@ def write_shared_dir(results):
         if src is not None:
             shutil.copy2(src, dest)
         else:
-            with open(dest, "w") as fh:
+            with open(dest, "w", encoding="utf-8", newline="\n") as fh:
                 fh.write(text)
         entries.append((name, shared_source_label(src), uses.get(name, 0)))
-    with open(os.path.join(shared_dir, "README.md"), "w") as fh:
+    with open(os.path.join(shared_dir, "README.md"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(build_shared_readme(entries))
     return names
 
@@ -182,7 +183,7 @@ def write_bundles(results):
         "shared_dir": SHARED_DIR_NAME,
         "packages": dict(sorted(packages.items())),
     }
-    with open(os.path.join(PACKAGES_DIR, BUNDLES_FILE), "w", encoding="utf-8") as fh:
+    with open(os.path.join(PACKAGES_DIR, BUNDLES_FILE), "w", encoding="utf-8", newline="\n") as fh:
         json.dump(document, fh, indent=1, ensure_ascii=False)
         fh.write("\n")
 
@@ -645,7 +646,7 @@ def find_country_skills(country_dir):
                 continue
             filepath = os.path.join(root, f)
             with open(filepath, 'r', errors='ignore') as fh:
-                line_count = sum(1 for _ in fh)
+                line_count = sum(1 for _ in islice(fh, 5))
             if line_count < 5:
                 continue  # skip near-empty stubs
             skills.append((f, filepath))
@@ -727,7 +728,7 @@ def build_package(country_dir_name, country_dir):
     shared = [share("foundation.md", text=build_foundation())]
 
     # Write intake (country-specific: it names the country and the practitioner)
-    with open(os.path.join(pkg_dir, "intake.md"), 'w') as f:
+    with open(os.path.join(pkg_dir, "intake.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(build_intake(name, practitioner, code))
 
     # Copy content skills
@@ -775,7 +776,7 @@ def build_package(country_dir_name, country_dir):
         copied_files.append(f"{country_dir_name}-return-assembly.md")
 
     # Write README
-    with open(os.path.join(pkg_dir, "README.md"), 'w') as f:
+    with open(os.path.join(pkg_dir, "README.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(build_readme(name, copied_files, practitioner, code, shared))
     copied_files.append("README.md")
 
@@ -968,7 +969,7 @@ def build_us_state_package(state_code):
     share_declared_bases(declared_from, shared)
 
     # 6. Generate README
-    with open(os.path.join(pkg_dir, "README.md"), "w") as fh:
+    with open(os.path.join(pkg_dir, "README.md"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(build_us_state_readme(state_name, state_code, copied_files, shared))
     copied_files.append("README.md")
 
@@ -1100,7 +1101,7 @@ def build_canada_province_package(province_code):
 
     # 2. Canada-flavoured intake (the same text for every province, but it is
     #    the package's onboarding file and stays with it)
-    with open(os.path.join(pkg_dir, "intake.md"), "w") as fh:
+    with open(os.path.join(pkg_dir, "intake.md"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(build_intake("Canada", "CPA", "CA"))
     copied_files.append("intake.md")
 
@@ -1157,7 +1158,7 @@ def build_canada_province_package(province_code):
             shared.append(share(orch_file, src))
 
     # 7. Generate README
-    with open(os.path.join(pkg_dir, "README.md"), "w") as fh:
+    with open(os.path.join(pkg_dir, "README.md"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(build_canada_province_readme(province_name, province_code, copied_files, shared))
     copied_files.append("README.md")
 
@@ -1291,7 +1292,7 @@ def build_special_bundle(source, package_dir, jurisdiction, name, readme, base=N
             shared.append(share(base, base_path))
     share_declared_bases([src for _, src in entries], shared)
     text = readme(files) if callable(readme) else readme
-    with open(os.path.join(pkg, "README.md"), "w") as fh:
+    with open(os.path.join(pkg, "README.md"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(text + shared_section(shared))
     files.append("README.md")
     print(f"\n{name} package built: {len(files) - 1} skills")
@@ -1535,7 +1536,7 @@ def main():
     # Regenerate Canada index (packages/canada/README.md)
     ca_index_dir = os.path.join(PACKAGES_DIR, "canada")
     os.makedirs(ca_index_dir, exist_ok=True)
-    with open(os.path.join(ca_index_dir, "README.md"), "w") as fh:
+    with open(os.path.join(ca_index_dir, "README.md"), "w", encoding="utf-8", newline="\n") as fh:
         rows = "\n".join(
             f"| {CA_PROVINCE_NAMES[c]} | `{c.upper()}` | [`packages/ca-{c}/`](../ca-{c}/) |"
             for c in CA_PROVINCE_CODES
@@ -1557,7 +1558,7 @@ def main():
     # three federal-level guides moved to skills/federal/ and are shared.)
     us_index_dir = os.path.join(PACKAGES_DIR, "us")
     os.makedirs(us_index_dir, exist_ok=True)
-    with open(os.path.join(us_index_dir, "README.md"), "w") as fh:
+    with open(os.path.join(us_index_dir, "README.md"), "w", encoding="utf-8", newline="\n") as fh:
         rows = "\n".join(
             f"| {US_STATE_NAMES.get(c, c.upper())} | `US-{c.upper()}` | [`packages/us-{c}/`](../us-{c}/) |"
             for c in US_STATE_CODES

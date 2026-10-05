@@ -163,15 +163,32 @@ class RequirementsTests(unittest.TestCase):
     def test_covers_every_install_a_ci_job_performs(self) -> None:
         installed = set()
         for workflow in GATES:
-            for match in re.finditer(r"pip install (?:-r )?(\S+)", _run_lines(workflow)):
+            run = re.sub(r"--only-binary\s+\S+|--require-hashes\b", "", _run_lines(workflow))
+            for match in re.finditer(r"pip install\s+(?:-r\s+)?(\S+)", run):
                 installed.add(match.group(1))
         self.assertTrue(installed, "no pip install found in the gate workflows")
+        ci_file = "scripts/requirements-validation-ci.txt"
+        if ci_file in installed:
+            installed.remove(ci_file)
+            installed.add("scripts/requirements-validation.txt")
         covered = {"-r scripts/requirements-validation.txt": "scripts/requirements-validation.txt", "-e ./mcp": "./mcp"}
         covered.update({line: line for line in self.lines
                         if re.fullmatch(r"[a-zA-Z0-9_.-]+==\d+(?:\.\d+)*", line)})
         for line, target in covered.items():
             self.assertIn(line, self.lines, line)
         self.assertEqual(installed - set(covered.values()), set(), "CI installs something requirements-dev.txt does not")
+
+    def test_ci_validation_pin_matches_the_contributor_requirement(self) -> None:
+        common = (REPO_ROOT / "scripts/requirements-validation.txt").read_text(encoding="utf-8")
+        ci = (REPO_ROOT / "scripts/requirements-validation-ci.txt").read_text(encoding="utf-8")
+        requirements = []
+        for text in (common, ci):
+            parts = " ".join(line.split("#", 1)[0] for line in text.splitlines()).split()
+            requirements.append([part for part in parts
+                                 if part != "\\" and not part.startswith("--hash=")])
+        self.assertEqual(len(requirements[0]), 1)
+        self.assertRegex(requirements[0][0], r"^PyYAML==\d+(?:\.\d+)*$")
+        self.assertEqual(requirements[1], requirements[0])
 
     def test_optional_tools_are_pinned(self) -> None:
         for package in ("pytest", "openpyxl"):

@@ -27,6 +27,7 @@ import json
 import os
 import shutil
 import sys
+from pathlib import Path
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:
@@ -42,8 +43,35 @@ def load_bundles(packages_dir):
     if not os.path.isfile(bundles_path):
         sys.exit(f"error: {bundles_path} not found; run python3 scripts/build-packages.py first")
     with open(bundles_path, encoding="utf-8") as fh:
-        document = json.load(fh)
+        try:
+            document = json.load(fh)
+        except json.JSONDecodeError as exc:
+            sys.exit(f"error: invalid bundle manifest: {exc}")
+    if not isinstance(document, dict) or not isinstance(document.get("packages"), dict):
+        sys.exit("error: bundle manifest must contain a packages mapping")
     return document["packages"], document.get("shared_dir", "_shared")
+
+
+def check_component(name, label):
+    if (not isinstance(name, str) or not name or name in (".", "..")
+            or any(char in name for char in ("/", "\\", "\0", ":"))):
+        sys.exit(f"error: invalid {label}: {name!r}; expected one path component")
+    if os.name == "nt":
+        stem = name.split(".", 1)[0].upper()
+        reserved = {"CON", "PRN", "AUX", "NUL", *(f"COM{i}" for i in range(1, 10)),
+                    *(f"LPT{i}" for i in range(1, 10))}
+        if name.endswith((".", " ")) or stem in reserved or any(c in name for c in '<>"|?*'):
+            sys.exit(f"error: invalid {label}: {name!r}; unsupported Windows path component")
+
+
+def contained_source(root, name):
+    try:
+        source = (root / name).resolve()
+    except (OSError, RuntimeError) as exc:
+        sys.exit(f"error: cannot resolve bundle source {root / name}: {exc}")
+    if not source.is_relative_to(root):
+        sys.exit(f"error: bundle source {root / name} resolves outside {root}")
+    return source
 
 
 def localize_readme(text, shared_dir):
@@ -67,27 +95,42 @@ def localize_readme(text, shared_dir):
 def assemble(package, packages_dir, out_dir):
     """Copy the package's own files and its shared files into out_dir; returns the paths written."""
     packages, shared_dir = load_bundles(packages_dir)
+    check_component(package, "package name")
+    check_component(shared_dir, "shared directory")
     if package not in packages:
         sys.exit(f"error: unknown package {package!r}; --list shows the {len(packages)} available")
     if os.path.exists(out_dir) and (not os.path.isdir(out_dir) or os.listdir(out_dir)):
         sys.exit(f"error: output directory must not exist or must be empty: {out_dir}")
     entry = packages[package]
-    sources = [(os.path.join(packages_dir, package, name), name) for name in entry["files"]]
-    sources += [(os.path.join(packages_dir, shared_dir, name), name) for name in entry["shared"]]
+    if (not isinstance(entry, dict)
+            or any(not isinstance(entry.get(field), list)
+                   or any(not isinstance(name, str) for name in entry[field])
+                   for field in ("files", "shared"))):
+        sys.exit(f"error: invalid bundle manifest entry for {package!r}; files and shared must be lists of filenames")
+    seen = set()
+    for name in entry["files"] + entry["shared"]:
+        check_component(name, "filename")
+        key = os.path.normcase(name)
+        if key in seen:
+            sys.exit(f"error: {name} appears twice in the bundle for {package}")
+        seen.add(key)
+    root = Path(packages_dir).resolve()
+    package_root = contained_source(root, package)
+    shared_root = contained_source(root, shared_dir)
+    sources = [(contained_source(package_root, name), name) for name in entry["files"]]
+    sources += [(contained_source(shared_root, name), name) for name in entry["shared"]]
     missing = [src for src, _ in sources if not os.path.isfile(src)]
     if missing:
         sys.exit("error: bundles.json names files the tree does not hold (rebuild packages/): "
-                 + ", ".join(missing[:5]))
+                 + ", ".join(str(src) for src in missing[:5]))
     os.makedirs(out_dir, exist_ok=True)
     written = []
     for src, name in sources:
         dest = os.path.join(out_dir, name)
-        if os.path.exists(dest):
-            sys.exit(f"error: {name} appears twice in the bundle for {package}")
         if name == "README.md":
             with open(src, encoding="utf-8") as fh:
                 text = fh.read()
-            with open(dest, "w", encoding="utf-8") as fh:
+            with open(dest, "w", encoding="utf-8", newline="\n") as fh:
                 fh.write(localize_readme(text, shared_dir))
         else:
             shutil.copy2(src, dest)

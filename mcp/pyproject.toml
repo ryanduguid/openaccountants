@@ -27,9 +27,9 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://openaccountants.com"
-Repository = "https://github.com/openaccountants/openaccountants"
-Issues = "https://github.com/openaccountants/openaccountants/issues"
-Documentation = "https://github.com/openaccountants/openaccountants/tree/main/mcp"
+Repository = "https://github.com/ryanduguid/openaccountants"
+Issues = "https://github.com/ryanduguid/openaccountants/issues"
+Documentation = "https://github.com/ryanduguid/openaccountants/tree/main/mcp"
 
 [project.scripts]
 openaccountants-mcp = "openaccountants_mcp.server:main"

@@ -177,7 +177,7 @@ class InstalledLayoutTests(unittest.TestCase):
             )
             # Two directories above the installed module is <tmp>/lib, which
             # has no packages/ -- exactly the wheel-install situation.
-            expected_dir = Path(tmp) / "lib" / "packages"
+            expected_dir = (Path(tmp) / "lib" / "packages").resolve()
 
             completed = self._run(
                 "import json, openaccountants_mcp.server as s;"

@@ -167,6 +167,42 @@ class StrictFrontmatterTests(_ValidatorCase):
         self.assertIn("invalid YAML frontmatter", errors[0])
 
 
+class InvocationCacheTests(_ValidatorCase):
+    def run_validator(self, root):
+        output = io.StringIO()
+        with mock.patch.object(validate_guides, "REPO_ROOT", str(root)), \
+                mock.patch.object(validate_guides, "GuideTrees", return_value=_Trees(["skills/good.md"])), \
+                mock.patch.object(validate_guides, "check_us_federal_deletions"), \
+                mock.patch.object(sys, "argv", ["validate-guides.py", "--no-index-check"]), \
+                contextlib.redirect_stdout(output):
+            validate_guides.main()
+        return output.getvalue()
+
+    def test_identical_source_and_package_metadata_is_parsed_once_per_invocation(self):
+        root = self._tree({"skills/good.md": GOOD, "packages/malta/good.md": GOOD})
+        with mock.patch.object(validate_guides, "load_frontmatter", wraps=validate_guides.load_frontmatter) as parse:
+            first = self.run_validator(root)
+            second = self.run_validator(root)
+        self.assertEqual(parse.call_count, 2)
+        self.assertEqual(first, second)
+        self.assertIn("validation passed", first)
+
+    def test_another_invocation_rechecks_changed_metadata(self):
+        root = self._tree({"skills/good.md": GOOD})
+        self.run_validator(root)
+        (root / "skills/good.md").write_text(MALFORMED, encoding="utf-8")
+        with self.assertRaises(SystemExit):
+            self.run_validator(root)
+
+    def test_duplicate_keys_still_fail_in_both_source_and_package(self):
+        doubled = GOOD.replace("tier: 2\n", "tier: 2\ntier: 1\n")
+        root = self._tree({"skills/good.md": doubled, "packages/malta/good.md": doubled})
+        with mock.patch.object(validate_guides, "load_frontmatter", wraps=validate_guides.load_frontmatter) as parse:
+            with self.assertRaises(SystemExit):
+                self.run_validator(root)
+        self.assertEqual(parse.call_count, 3)
+
+
 class MisplacedFrontmatterTests(_ValidatorCase):
     """`---` must be at byte 0. Otherwise extract_frontmatter returns None and
     text.startswith("---") is false, so the file counted as a doc and bypassed

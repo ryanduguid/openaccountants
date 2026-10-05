@@ -67,7 +67,7 @@ class SyntheticTreeCase(unittest.TestCase):
         for rel, text in files.items():
             path = self.root / rel
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(text, encoding="utf-8")
+            path.write_text(text, encoding="utf-8", newline="\n")
 
     def build(self, *argv: str) -> str:
         out = io.StringIO()
@@ -84,6 +84,15 @@ class SyntheticTreeCase(unittest.TestCase):
 
 
 class RebuildTests(SyntheticTreeCase):
+    def test_generated_text_is_utf8_with_lf_on_every_platform(self) -> None:
+        self.build()
+        for path in self.packages.rglob("*"):
+            if path.is_file():
+                with self.subTest(path=path.relative_to(self.packages)):
+                    content = path.read_bytes()
+                    content.decode("utf-8")
+                    self.assertNotIn(b"\r\n", content)
+
     def test_hand_authored_packages_survive_and_stale_output_is_removed(self) -> None:
         output = self.build()
         self.assertEqual((self.packages / "us-federal" / "us-form-1040.md").read_text(encoding="utf-8"), FEDERAL_GUIDE)
@@ -167,6 +176,7 @@ class RebuildTests(SyntheticTreeCase):
 
     def test_out_builds_elsewhere_and_leaves_packages_alone(self) -> None:
         out_dir = self.root / "fresh"
+        out_dir.mkdir()
         self.build("--out", str(out_dir))
         self.assertTrue((out_dir / "zzland" / "zz-vat.md").is_file())
         self.assertTrue((out_dir / "_shared" / "vat-workflow-base.md").is_file())
