@@ -25,8 +25,8 @@ records entry into force on 31 March 2003, withholding application from
 | All interest is exempt | Art 11(5) permits specified contingent interest taxation up to 15% of gross, with paragraph 5(b)'s improvement/deterioration exception. Art 11(6) permits domestic taxation of specified securitisation excess returns without an art 11 cap. |
 | Royalties and technical services are both zero-rate categories | Art 12(2) requires royalty classification; arts 3(1)(c), (d), 7(1), (6) govern services classified as enterprise business profits while preserving separately governed categories. |
 | Branch profits tax is reduced to 5% | Arts 10(7), (8) provide exemptions and a conditional 5% ceiling on the specified dividend-equivalent amount. |
-| Construction PE starts at 12 months | Art 5(3) requires more than twelve months. Fixed-place and dependent-agent grounds can apply independently. |
-| The UK PE row has only standard construction rules | Art 21 separately addresses offshore exploration and exploitation. Only exploration has the no-more-than-30-day aggregate exception, with associated-enterprise aggregation excluding concurrent days. |
+| Construction PE starts at 12 months | Art 5(3) requires a building site or construction or installation project to last more than twelve months. Fixed-place and dependent-agent grounds can apply independently. |
+| The UK PE row has only standard construction rules | Art 21(1)–(3) covers offshore activities in connection with exploration or exploitation of the State's seabed, subsoil and natural resources. Only exploration has the enterprise PE rule's no-more-than-30-day aggregate exception, with associated-enterprise aggregation excluding concurrent days. Art 21(4) separately governs employment income. |
 | The UK summary presents reciprocal blanket rates | The revised US-source row points to the section's category, entitlement and exception conditions. Reciprocal UK withholding was not reviewed. |
 
 The check applies Protocol I's replacement of the saving-clause exceptions,
@@ -45,8 +45,9 @@ The four Treasury PDFs extracted natively with no OCR required. The
 identifies the Convention in volume 2224 and Protocol in volume 2226.
 The scanned [volume 2224 contents](https://treaties.un.org/doc/Publication/UNTS/Volume%202224/v2224.pdf)
 needed local offline OCR to confirm the Convention's starting page 247.
-The official indexed [volume 2226 record](https://treaties.un.org/doc/Publication/UNTS/Volume%202226/v2226.pdf)
-identifies the Protocol's starting page 465. The UN copies were used for
+The scanned [volume 2226 contents, pages xxv–xxvi](https://treaties.un.org/doc/Publication/UNTS/Volume%202226/v2226.pdf)
+were read using local offline OCR; page xxvi was also checked visually to confirm
+the Protocol's title, signature date and starting page 465. The UN copies were used for
 publication details; the Treasury instruments supply the financial text.
 
 Manual comparisons cover exactly 10% ownership, the parent's exact 80% and
