@@ -233,6 +233,32 @@ class SearchSkillsTests(ToolTreeCase):
 
 
 class MarkdownSectionsTests(ToolTreeCase):
+    def test_heading_whitespace_preserves_titles_sections_and_snippets(self) -> None:
+        cases = (
+            ("# Alpha", "Alpha", "Alpha", 1),
+            ("#   Alpha   ", "Alpha", "Alpha", 1),
+            ("#\tAlpha", None, "Alpha", 1),
+            ("## Alpha ###   ", None, "Alpha ###", 2),
+            ("###\tCaf\u00e9\u2003 ", None, "Caf\u00e9", 3),
+            ("#    ", None, "", None),
+            ("####### Alpha", None, "", None),
+        )
+        for line, title, heading, level in cases:
+            with self.subTest(line=line):
+                body = line + "\nneedle"
+                self.assertEqual(server._first_h1(body), title)
+                expected = ([{"heading": heading, "level": level, "content": "needle"}]
+                            if level else [])
+                self.assertEqual(server._split_sections(body), expected)
+                self.assertEqual(server._extract_match(body, "needle"),
+                                 (heading, " ".join(body.split())))
+
+    def test_a_long_whitespace_only_heading_is_rejected(self) -> None:
+        body = "# " + " " * 100_000 + "\nneedle"
+        self.assertEqual(list(server._iter_headings(body)), [])
+        self.assertEqual(server._split_sections(body), [])
+        self.assertEqual(server._extract_match(body, "needle")[0], "")
+
     def test_fenced_headings_remain_in_their_section_and_search_still_matches_code(self) -> None:
         for opener, closer in (("```python", "```"), ("~~~python", "~~~"),
                                ("   ````python", "   ````")):

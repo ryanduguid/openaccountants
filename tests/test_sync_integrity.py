@@ -4,6 +4,7 @@ import contextlib
 import importlib.util
 import io
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -270,6 +271,100 @@ class GuideComparisonTests(unittest.TestCase):
             guide(version="release-one", heading_version=None),
         )
         self.assertIn("version-unordered", codes(findings, "error"))
+
+
+class WorktreePathTests(unittest.TestCase):
+    def setUp(self) -> None:
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        self.root = Path(temp.name)
+        self.repo = self.root / "repository with a long name"
+        self.path = "skills/foundation/synthetic-guide.md"
+        self.source = self.repo / self.path
+        self.source.parent.mkdir(parents=True)
+        self.source.write_text(guide(), encoding="utf-8")
+
+    def link(self, path: Path, target: Path, *, directory: bool = False) -> None:
+        if directory and os.name == "nt":
+            result = subprocess.run(
+                ["cmd", "/c", "mklink", "/J", str(path), str(target)],
+                capture_output=True, check=False,
+            )
+            if result.returncode:
+                self.skipTest("directory junction creation unavailable")
+        else:
+            try:
+                path.symlink_to(target, target_is_directory=directory)
+            except OSError as exc:
+                self.skipTest(f"symlinks unavailable: {exc}")
+
+    def test_unresolved_root_reads_a_contained_file(self) -> None:
+        alias = self.repo / "skills" / ".."
+        self.assertEqual(sync_integrity.read_worktree_file(alias, self.path), guide())
+
+    @unittest.skipUnless(os.name == "nt", "Windows short-path spelling")
+    def test_windows_short_root_reads_a_contained_file(self) -> None:
+        import ctypes
+        from ctypes import wintypes
+
+        short_path = ctypes.WinDLL("kernel32", use_last_error=True).GetShortPathNameW
+        short_path.argtypes = [wintypes.LPCWSTR, wintypes.LPWSTR, wintypes.DWORD]
+        short_path.restype = wintypes.DWORD
+        length = short_path(str(self.repo), None, 0)
+        if not length:
+            self.skipTest("Windows did not provide a short path")
+        buffer = ctypes.create_unicode_buffer(length)
+        written = short_path(str(self.repo), buffer, length)
+        self.assertGreater(written, 0)
+        self.assertLess(written, length)
+        alias = Path(buffer.value)
+        if str(alias).casefold() == str(self.repo).casefold():
+            self.skipTest("filesystem does not provide a distinct short-path alias")
+        self.assertEqual(sync_integrity.read_worktree_file(alias, self.path), guide())
+
+    def test_a_linked_repository_root_reads_a_contained_file(self) -> None:
+        alias = self.root / "linked-repository"
+        self.link(alias, self.repo, directory=True)
+        self.assertEqual(sync_integrity.read_worktree_file(alias, self.path), guide())
+
+    def test_a_contained_source_link_is_read(self) -> None:
+        linked = self.source.with_name("linked.md")
+        self.link(linked, self.source)
+        self.assertEqual(
+            sync_integrity.read_worktree_file(self.repo, "skills/foundation/linked.md"),
+            guide(),
+        )
+
+    def test_an_external_source_link_is_rejected(self) -> None:
+        outside = self.root / "outside.md"
+        outside.write_text("Outside.", encoding="utf-8")
+        linked = self.source.with_name("linked.md")
+        self.link(linked, outside)
+        with self.assertRaisesRegex(sync_integrity.IntegrityError, "path escapes repository"):
+            sync_integrity.read_worktree_file(self.repo, "skills/foundation/linked.md")
+
+    def test_an_external_directory_link_is_rejected(self) -> None:
+        outside = self.root / "outside"
+        outside.mkdir()
+        (outside / "guide.md").write_text("Outside.", encoding="utf-8")
+        self.link(self.repo / "skills" / "external", outside, directory=True)
+        with self.assertRaisesRegex(sync_integrity.IntegrityError, "path escapes repository"):
+            sync_integrity.read_worktree_file(self.repo, "skills/external/guide.md")
+
+    def test_a_broken_external_source_link_is_rejected(self) -> None:
+        linked = self.source.with_name("linked.md")
+        self.link(linked, self.root / "missing.md")
+        with self.assertRaisesRegex(sync_integrity.IntegrityError, "path escapes repository"):
+            sync_integrity.read_worktree_file(self.repo, "skills/foundation/linked.md")
+
+    def test_a_missing_contained_file_returns_none(self) -> None:
+        self.assertIsNone(sync_integrity.read_worktree_file(self.repo, "skills/missing.md"))
+
+    def test_lexical_escape_paths_are_rejected(self) -> None:
+        for path in ("/skills/guide.md", "C:/skills/guide.md", "//host/skills/guide.md",
+                     "skills/../guide.md"):
+            with self.subTest(path=path), self.assertRaises(sync_integrity.IntegrityError):
+                sync_integrity.read_worktree_file(self.repo, path)
 
 
 class GitBackedIntegrityTests(unittest.TestCase):

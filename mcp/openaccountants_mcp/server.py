@@ -133,7 +133,7 @@ def _safe_resolve(packages_dir: Path, *segments: str) -> Path:
 # ---------------------------------------------------------------------------
 
 _FM_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n?(.*)$", re.DOTALL)
-_HEADING_RE = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
+_HEADING_RE = re.compile(r"^(#{1,6})\s+(\S.*)$")
 _FENCE_RE = re.compile(r"^ {0,3}(`{3,}|~{3,})(.*)$")
 
 

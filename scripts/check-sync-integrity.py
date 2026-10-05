@@ -204,6 +204,7 @@ def read_revision_file(repo: Path, revision: str, path: str) -> str | None:
 
 def read_worktree_file(repo: Path, path: str) -> str | None:
     normalized = validate_source_path(path)
+    repo = repo.resolve()
     candidate = (repo / Path(*PurePosixPath(normalized).parts)).resolve()
     try:
         candidate.relative_to(repo)

@@ -162,6 +162,7 @@ class AssembleTests(SyntheticTreeCase):
 
     def test_a_bundle_holds_the_package_and_its_shared_files(self) -> None:
         out_dir = self.root / "dist" / "zzland"
+        out_dir.mkdir(parents=True)
         output = self.run_main("zzland", "--out", str(out_dir))
         self.assertEqual(
             sorted(p.name for p in out_dir.iterdir()),
@@ -198,6 +199,7 @@ class AssembleTests(SyntheticTreeCase):
         cases = {
             "unknown package": (["nowhere", "--out", str(self.root / "x")], "unknown package 'nowhere'"),
             "non-empty output": (["zzland", "--out", str(self.packages / "zzland")], "must not exist or must be empty"),
+            "file output": (["zzland", "--out", str(self.packages / "bundles.json")], "must not exist or must be empty"),
         }
         for label, (argv, message) in cases.items():
             with self.subTest(label), self.assertRaises(SystemExit) as caught:

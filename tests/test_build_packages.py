@@ -176,6 +176,7 @@ class RebuildTests(SyntheticTreeCase):
 
     def test_out_builds_elsewhere_and_leaves_packages_alone(self) -> None:
         out_dir = self.root / "fresh"
+        out_dir.mkdir()
         self.build("--out", str(out_dir))
         self.assertTrue((out_dir / "zzland" / "zz-vat.md").is_file())
         self.assertTrue((out_dir / "_shared" / "vat-workflow-base.md").is_file())
