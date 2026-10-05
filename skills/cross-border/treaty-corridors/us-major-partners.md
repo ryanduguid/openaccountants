@@ -1,7 +1,7 @@
 ---
 name: us-major-partners
-description: "version: 1.1"
-version: 1.1
+description: "version: 1.2"
+version: 1.2
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-10-05
@@ -25,24 +25,44 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The Canada, India and Japan sections and their PE rows, plus Japan's summary row, were checked against the cited treaty text on 5 October 2026. The other 11 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The UK, Canada, India and Japan sections and their PE rows, plus the UK and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The other 10 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
-**US → UK income types and treaty rates**  _(IRS Table 1)_
+**US-source income paid to UK residents: treaty ceilings and exemptions for 2025**
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+These treatments require treaty residence, beneficial ownership where specified, entitlement under art 23 and the conditions below. A treaty ceiling does not establish domestic taxability or automatically determine withholding. Current US procedures, taxpayer-specific eligibility and reciprocal UK withholding are outside this source review.
+
+| Income type | US-source treaty ceiling or treatment | Primary provision | Conditions |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 15% | Art 10(2)(b) | W-8BEN required |
-| Dividends — substantial (≥10% voting) | 5% | Art 10(2)(a) | Direct corporate investment |
-| Dividends — parent (≥80% direct, 12+ months) | 0% | Art 10(3) | First US treaty with 0% dividend |
-| Interest | 0% | Art 11(1) | Complete exemption |
-| Royalties | 0% | Art 12(1) | Complete exemption |
-| Technical services | 0% | Art 7 | Business profits — no WHT without PE |
+| Dividends, other cases | 15% of gross | [art 10(2)(b)][uk-treaty] | UK resident beneficial owner; dividend exceptions below |
+| Dividends, qualifying company holding | 5% of gross | [art 10(2)(a)][uk-treaty] | Company beneficial owner owns directly or indirectly at least 10% of payer voting power |
+| Dividends, qualifying parent company | Exempt from US source tax | [art 10(3)(a)][uk-treaty] | At least 80% voting power held for the twelve-month period ending on declaration; additional conditions below |
+| Dividends, qualifying pension scheme | Exempt from US source tax | [arts 3(1)(o), 10(3)(b)][uk-treaty] | Treaty pension scheme; no direct or indirect business derivation; pooled-vehicle restrictions below |
+| Article 11 interest outside specified exceptions, arm's-length amount | Exempt from US source tax | [art 11(1)][uk-treaty] | Contingent interest, securitisation, PE, excess-payment and conduit rules below |
+| Royalties within art 12(2), arm's-length amount | Exempt from US source tax | [art 12(1), (2)][uk-treaty] | Classify the payment; PE, excess-payment and conduit rules below |
+| Services classified as enterprise business profits | No US tax under art 7 absent a US PE; only attributable profits may be taxed if a PE exists | [arts 3(1)(c), (d), 7(1), (6)][uk-treaty] | Separately governed income retains its own treaty article; this is not a blanket services withholding rate |
 
-**Source:** US-UK Convention signed 24 July 2001, amended by 2002 Protocol. IRS Table 1.
-**Special provisions:** Comprehensive LOB (Art 23) — one of the strictest in US treaty network. Saving clause (Art 1(4)) preserves US taxing rights over citizens/residents. Branch profits tax reduced to 5%.
-**Last verified:** May 2026
+**Parent and pension conditions:** [Art 10(3)(a)][uk-treaty] requires the twelve-month ownership period to end on the date the dividend is declared. The [technical explanation][uk-explanation], art 10 paragraph 3, describes that holding as direct ownership. The company must also have owned directly or indirectly at least 80% before 1 October 1998, be a qualified person under art 23(2)(c), or be entitled with respect to those dividends under art 23(3) or (6). Ordinary art 23 entitlement alone does not establish the parent exemption. A pension scheme must meet arts 3(1)(o), 4 and 23; the qualified-person pension route in art 23(2)(e) requires more than 50% of its beneficiaries, members or participants to be individuals resident in either state. Art 10(3)(b) excludes dividends derived from carrying on a business directly or indirectly by the pension scheme.
+
+**Pooled investment vehicles:** [Protocol art II][uk-protocol] replaces art 10(4). The 5% company rate and parent exemption do not apply to dividends paid by treaty-defined pooled vehicles. For vehicles whose assets consist wholly or mainly of shares, securities, currencies or related derivative contracts, the 15% ceiling or qualifying pension exemption can apply. For other pooled vehicles, that treatment requires an individual or pension scheme holding no more than 10%; dividends on a publicly traded class with a beneficial owner holding no more than 5% of any class; or a holder with no more than 10% in a diversified vehicle. [Art 10(10)(b), (c)][uk-treaty] defines the vehicle and diversification tests; these restrictions include US RICs and REITs, as the technical explanation confirms.
+
+**Interest and royalty exceptions:** [Art 11(5)(a)][uk-treaty] permits taxation of specified interest paid by a resident and tied to debtor or related-person receipts, sales, income, profits, cash flow, property-value changes, or specified distributions, capped at 15% of gross. Paragraph 5(b) prevents that rule applying solely because an arrangement reduces interest when the referenced factors improve or increases it when they deteriorate. Art 11(6) permits domestic taxation of specified securitisation-vehicle returns above comparable debt returns, without an art 11 rate cap. Art 12(2) includes specified copyright and software rights, other intellectual property, know-how and contingent alienation gains; classify the rights transferred before applying it. [Arts 11(4), 12(4)][uk-treaty] restrict relief to the amount agreed without a special relationship; excess remains governed by domestic law with due regard to other treaty provisions. The [exchange of notes][uk-notes], addressing arts 9, 11(4) and 12(4), provides that when the state makes the deduction adjustment described there, it will not also impose its domestic withholding rate on that excess.
+
+**PE attribution, conduit payments and additional company tax:** [Arts 10(5), 11(3), 12(3)][uk-treaty] move income attributable to a US PE to art 7; art 7(7) also addresses income attributable to a former PE. [Arts 3(1)(n), 10(9), 11(7), 12(5)][uk-treaty] deny the respective article's benefits for conduit payments. The UK PE row below covers construction, fixed-place, agency and offshore activity. Art 10(7) permits additional company tax only on the dividend-equivalent amount of specified PE profits, net-basis real-property income or art 13(1) gains. Its exemptions cover the specified pre-1 October 1998 activities, art 23(2)(c) qualified persons, and entitlement under art 23(3) or (6) for that amount. Otherwise art 10(8) caps the additional tax at 5%; it does not set the ordinary income tax on those profits.
+
+**Residence and entitlement:** [Art 1(4), (5)][uk-treaty], with paragraph 5 replaced by [Protocol art I][uk-protocol], preserves the saving clause and its stated exceptions. Art 1(7) limits relief where the other state's law taxes the item by remittance or receipt instead of its full amount; this states a conditional treaty rule, not the current UK domestic regime. Art 1(8) treats income through a transparent entity as derived by a resident to the extent the residence state treats it as that resident's income. Under art 4(5), a non-individual resident in both states needs a competent-authority agreement on the treaty's application; absent agreement, only arts 24(4), 25 and 26 remain available. Art 23 supplies the entitlement tests, with its equivalent-beneficiary definition replaced by Protocol art IV. [IRS Announcements 2021-13 and 2021-14][uk-arrangements] interpret the NAFTA reference as USMCA and preserve UK residents within the European Community reference for that definition. They do not establish a claimant's eligibility.
+
+**Sources:** *Convention between the Government of the United States of America and the Government of the United Kingdom of Great Britain and Northern Ireland for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income and on Capital Gains*, signed 24 July 2001, 2224 UNTS 247 (entered into force 31 March 2003), as amended by the Protocol signed 19 July 2002, 2226 UNTS 465. The linked Treasury text must be read with the Protocol replacements and notes. [HMRC DT19850][uk-force] records the force and application dates: withholding provisions apply from 1 May 2003 and other US taxes from 1 January 2004. This source review applies those instruments to the guide's 2025 year.
+
+**Source text checked:** 5 October 2026. Qualified professional sign-off, current domestic administration and taxpayer-specific application remain unverified.
+
+[uk-treaty]: https://home.treasury.gov/system/files/131/Treaty-UK-7-24-2001.pdf
+[uk-protocol]: https://home.treasury.gov/system/files/131/Treaty-UK-Protocol-7-19-2002.pdf
+[uk-notes]: https://home.treasury.gov/system/files/131/Treaty-UK-Notes-7-24-2001.pdf
+[uk-explanation]: https://home.treasury.gov/system/files/131/Treaty-UK-Protocol-TE-7-22-2002.pdf
+[uk-arrangements]: https://www.irs.gov/irb/2021-33_irb#ANN-2021-13
+[uk-force]: https://www.gov.uk/hmrc-internal-manuals/double-taxation-relief/dt19850
 
 ## US → Germany
 
@@ -324,7 +344,7 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 
 | Treaty Partner | Construction PE Threshold | Service PE | Notes |
 | --- | --- | --- | --- |
-| UK | 12 months | None specified | Standard OECD |
+| UK | More than 12 months | No separate duration-based services PE test; fixed-place and dependent-agent rules can still apply | [arts 5, 21][uk-treaty]; separate offshore rules below |
 | Germany | 12 months | None specified | Standard OECD |
 | France | 12 months | None specified | Standard OECD |
 | Canada | More than 12 months | 183 days or more in any twelve-month period, with the conditions below | [arts V(3), V(9)][ca-treaty] |
@@ -333,6 +353,8 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | Mexico | 6 months | 183 days in any 12-month period | Shorter than standard |
 | South Korea | 6 months | None specified | Shorter than standard |
 | Israel | 12 months | None specified | Standard OECD |
+
+**UK PE rules:** [Art 5][uk-treaty] includes fixed-place and dependent-agent grounds, subject to its stated exclusions and ordinary-course independent-agent rule; corporate control alone does not create a PE. Under art 5(3), a building site or construction or installation project constitutes a PE only if it lasts more than twelve months. [Art 21(1)–(3)][uk-treaty] separately covers activities carried on offshore in a Contracting State in connection with exploration or exploitation of that State's seabed, subsoil and natural resources. Subject to paragraph 3, an enterprise of the other Contracting State carrying on those activities is deemed to have a PE there. Exploration activities not exceeding 30 aggregate days in any twelve-month period are excepted; substantially similar exploration activities of associated enterprises are aggregated, excluding concurrent days. The enterprise PE rule has no 30-day exception for exploitation activities. Art 21(4) contains a separate employment-income rule.
 
 **Canada services PE:** [Art V(9)][ca-treaty], subject to the construction rule in paragraph 3, applies where no PE exists under the preceding art V rules. Either an individual is present in the other state for at least 183 days in any twelve-month period and more than 50% of the enterprise's gross active-business revenues during those periods comes from that individual's services there; or services for the same or connected project are provided there for at least 183 days in any twelve-month period for resident customers, or customers with a PE there to which the services relate. Mere corporate control does not create a PE: art V(8).
 
@@ -353,11 +375,11 @@ All US treaties listed above (except the 1975 Israel treaty) contain LOB provisi
 
 ## Summary: Selected treaty ceilings and exemptions
 
-Only the Japan row in this summary was source-checked in this batch. Its US-source ceilings and exemptions depend on the full section's category and entitlement conditions; these figures do not determine withholding automatically. The other rows were not reverified.
+The UK and Japan rows in this summary were source-checked on 5 October 2026. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. The other summary rows were not reverified.
 
 | Corridor | Dividends (substantial) | Interest | Royalties |
 | --- | --- | --- | --- |
-| US ↔ UK | 5% (0% at 80%) | 0% | 0% |
+| [US → UK](#us--uk) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; classification and specified exceptions |
 | US ↔ Germany | 5% (0% pension) | 0% | 0% |
 | US ↔ France | 5% | 0% | 0% |
 | [US → Japan](#us--japan) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; specified exceptions |
