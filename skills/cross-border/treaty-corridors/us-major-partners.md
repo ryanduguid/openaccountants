@@ -90,9 +90,11 @@ These are treaty ceilings or exemptions for US-source payments to Canadian resid
 | Interest, general | 0% US source tax | [art XI(1)][ca-treaty] | Includes the arm's-length amount of ordinary related-party interest; exceptions below |
 | Copyright royalties for production or reproduction of literary, dramatic, musical or artistic works | 0% US source tax | [art XII(3)(a)][ca-treaty] | Excludes motion pictures and film, videotape or other reproduction media for television |
 | Computer software payments | 0% US source tax | [art XII(3)(b)][ca-treaty] | Payment for use or the right to use software |
-| Patents and information concerning industrial, commercial or scientific experience | 0% US source tax | [art XII(3)(c)][ca-treaty] | Experience information supplied in connection with a rental or franchise agreement is excluded from this exemption |
+| Payments for the use of, or the right to use, patents or information concerning industrial, commercial or scientific experience | 0% US source tax | [art XII(3)(c)][ca-treaty] | Experience information supplied in connection with a rental or franchise agreement is excluded; contingent alienation gains under paragraph 4 do not qualify for this use/right-to-use exemption |
 | Other art XII royalties outside paragraph 3 | 10% of gross royalties | [art XII(2)][ca-treaty] | Classify the payment before applying the residual ceiling |
 | Services treated as business profits | Exempt from US tax without a US PE | [art VII(1)][ca-treaty] | Check all art V PE rules, including the services tests below |
+
+[Art XII(4)][ca-treaty] includes patent or experience-information alienation gains that are contingent on productivity, use or subsequent disposition. Those gains fall outside the paragraph 3(c) use/right-to-use exemption and require the residual paragraph 2 classification, subject to the exceptions below. Non-contingent alienation amounts need a separate gains analysis.
 
 **Exceptions:** A US regulated investment company (RIC) dividend uses the 15% ceiling. A US real estate investment trust (REIT) dividend cannot use the 5% rate; the 15% ceiling is available only in the cases in [art X(7)(c)][ca-treaty], otherwise US domestic law applies. Dividends, interest or royalties effectively connected with a PE are governed by art VII under arts X(4), XI(3) and XII(5). Special-relationship excess interest or royalties do not receive the article's protection: arts XI(5) and XII(7).
 
@@ -151,7 +153,7 @@ These are treaty ceilings or exemptions for US-source payments to Indian residen
 | Specified governmental, official-credit and government-approved interest | Exempt from US source tax | [art 11(3)][in-treaty] | Only the beneficial owners, institutions, loans, credits and approvals specified there qualify |
 | Copyright, patent, trademark, know-how and other art 12(3)(a) royalties | 15% of gross royalties | [art 12(2)(a)(ii), (3)(a)][in-treaty] | Post-initial-five-year ceiling; includes qualifying contingent gains |
 | Industrial, commercial or scientific equipment royalties | 10% of gross royalties | [art 12(2)(b), (3)(b)][in-treaty] | Subject to the art 8 shipping and air-transport exclusion |
-| Included services ancillary and subsidiary to art 12(3)(b) equipment | 10% gross-fee ceiling | [art 12(2)(b)][in-treaty] | Must satisfy art 12(4) and survive art 12(5) exclusions |
+| Included services ancillary and subsidiary to the enjoyment of art 12(3)(b) equipment | 10% gross-fee ceiling | [art 12(2)(b), (4)][in-treaty] | Must be ancillary and subsidiary to the enjoyment of the paragraph 3(b) property for which payment is received, satisfy art 12(4), and survive art 12(5) exclusions |
 | Other fees for included services | 15% gross-fee ceiling | [art 12(2)(a)(ii), (4)][in-treaty] | Must satisfy the definition below; US net-basis treatment is explained below |
 | Services outside the included-services definition | Apply art 7 or art 15 as appropriate | [arts 7, 12(5) and 15][in-treaty] | No blanket art 12 rate for all technical services; check PE or fixed-base conditions |
 
