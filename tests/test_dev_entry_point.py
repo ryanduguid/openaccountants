@@ -183,9 +183,9 @@ class RequirementsTests(unittest.TestCase):
         ci = (REPO_ROOT / "scripts/requirements-validation-ci.txt").read_text(encoding="utf-8")
         requirements = []
         for text in (common, ci):
-            tokens = " ".join(line.split("#", 1)[0] for line in text.splitlines()).split()
-            requirements.append([token for token in tokens
-                                 if token != "\\" and not token.startswith("--hash=")])
+            parts = " ".join(line.split("#", 1)[0] for line in text.splitlines()).split()
+            requirements.append([part for part in parts
+                                 if part != "\\" and not part.startswith("--hash=")])
         self.assertEqual(len(requirements[0]), 1)
         self.assertRegex(requirements[0][0], r"^PyYAML==\d+(?:\.\d+)*$")
         self.assertEqual(requirements[1], requirements[0])
