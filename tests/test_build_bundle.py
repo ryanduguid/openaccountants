@@ -17,6 +17,8 @@ import hashlib
 import importlib.util
 import io
 import json
+import ntpath
+import os
 import re
 import sys
 import unittest
@@ -45,6 +47,118 @@ class AssembleTests(SyntheticTreeCase):
         with contextlib.redirect_stdout(out):
             self.assertEqual(build_bundle.main([*argv, "--packages", str(self.packages)]), 0)
         return out.getvalue()
+
+    def write_manifest(self, document) -> None:
+        (self.packages / "bundles.json").write_text(json.dumps(document), encoding="utf-8")
+
+    def assert_rejected_before_output(self, document, message) -> None:
+        self.write_manifest(document)
+        for existing in (False, True):
+            output = self.root / ("existing" if existing else "absent")
+            if existing:
+                output.mkdir(exist_ok=True)
+            with self.subTest(existing=existing), self.assertRaisesRegex(SystemExit, message):
+                build_bundle.assemble("zzland", str(self.packages), str(output))
+            if existing:
+                self.assertEqual(list(output.iterdir()), [])
+            else:
+                self.assertFalse(output.exists())
+
+    def test_duplicate_destinations_are_rejected_before_copying(self) -> None:
+        original = self.bundles()
+        for kind in ("own", "shared", "both"):
+            with self.subTest(kind=kind):
+                document = json.loads(json.dumps(original))
+                entry = document["packages"]["zzland"]
+                if kind == "own":
+                    entry["files"].append(entry["files"][0])
+                elif kind == "shared":
+                    entry["shared"].append(entry["shared"][0])
+                else:
+                    name = entry["shared"][0]
+                    (self.packages / "zzland" / name).write_text("Own copy.")
+                    entry["files"].append(name)
+                self.assert_rejected_before_output(document, "appears twice")
+
+    def test_manifest_filenames_cannot_escape_or_use_nonportable_paths(self) -> None:
+        (self.packages / "escape.md").write_text("Outside the selected package.")
+        outside = self.root / "outside.md"
+        outside.write_text("Outside packages.")
+        original = self.bundles()
+        for name in ("../escape.md", "..\\escape.md", str(outside), "C:escape.md",
+                     "C:\\escape.md", "\\\\host\\share\\escape.md", "", ".", "..", "bad\0name", "guide.md:stream"):
+            for field in ("files", "shared"):
+                with self.subTest(name=name, field=field):
+                    document = json.loads(json.dumps(original))
+                    document["packages"]["zzland"][field] = [name]
+                    self.assert_rejected_before_output(document, "filename")
+        self.assertEqual(outside.read_text(), "Outside packages.")
+        self.assertFalse((self.root / "escape.md").exists())
+
+    def test_malformed_manifest_shapes_report_an_error_before_writing(self) -> None:
+        for document in (None, [], {}, {"packages": []}):
+            with self.subTest(document=document):
+                self.assert_rejected_before_output(document, "manifest")
+        for entry in (None, [], {"files": None, "shared": []}, {"files": "x", "shared": []},
+                      {"files": [], "shared": [1]}, {"shared": []}):
+            with self.subTest(entry=entry):
+                self.assert_rejected_before_output({"packages": {"zzland": entry}}, "manifest")
+
+    def test_package_and_shared_directory_names_are_single_components(self) -> None:
+        for shared_dir in ("../elsewhere", "..\\elsewhere", str(self.root), None):
+            with self.subTest(shared_dir=shared_dir):
+                document = self.bundles()
+                document["shared_dir"] = shared_dir
+                self.assert_rejected_before_output(document, "shared directory")
+        document = {"packages": {"../zzland": {"files": [], "shared": []}}}
+        self.write_manifest(document)
+        with self.assertRaisesRegex(SystemExit, "package name"):
+            build_bundle.assemble("../zzland", str(self.packages), str(self.root / "absent"))
+        self.assertFalse((self.root / "absent").exists())
+
+    def symlink(self, path, target, *, directory=False) -> None:
+        try:
+            path.symlink_to(target, target_is_directory=directory)
+        except OSError as exc:
+            self.skipTest(f"symlinks unavailable: {exc}")
+
+    def test_a_source_symlink_cannot_leave_its_own_source_directory(self) -> None:
+        outside = self.root / "outside.md"
+        outside.write_text("Outside packages.")
+        self.symlink(self.packages / "zzland" / "escaped.md", outside)
+        document = self.bundles()
+        document["packages"]["zzland"]["files"].append("escaped.md")
+        self.assert_rejected_before_output(document, "outside")
+
+    def test_a_shared_directory_symlink_cannot_leave_packages(self) -> None:
+        shared = self.packages / "_shared"
+        outside = self.root / "outside-shared"
+        shared.rename(outside)
+        self.symlink(shared, outside, directory=True)
+        self.assert_rejected_before_output(self.bundles(), "outside")
+
+    def test_a_contained_source_symlink_keeps_working(self) -> None:
+        self.symlink(self.packages / "zzland" / "linked.md", self.packages / "zzland" / "zz-vat.md")
+        document = self.bundles()
+        document["packages"]["zzland"]["files"].append("linked.md")
+        self.write_manifest(document)
+        output = self.root / "bundle"
+        build_bundle.assemble("zzland", str(self.packages), str(output))
+        self.assertEqual((output / "linked.md").read_text(encoding="utf-8"), GUIDE)
+
+    @unittest.skipUnless(os.name == "nt", "case collisions use the host filesystem rules")
+    def test_windows_case_collisions_are_rejected_before_copying(self) -> None:
+        document = self.bundles()
+        document["packages"]["zzland"]["files"].append("ZZ-VAT.MD")
+        self.assert_rejected_before_output(document, "appears twice")
+
+    @unittest.skipUnless(os.name == "nt", "Windows path aliases")
+    def test_windows_aliases_and_invalid_names_are_rejected_before_copying(self) -> None:
+        for name in ("NUL.md", "con", "COM1.txt", "lpt9", "guide.md.", "guide.md ", "bad?.md"):
+            with self.subTest(name=name):
+                document = self.bundles()
+                document["packages"]["zzland"]["files"].append(name)
+                self.assert_rejected_before_output(document, "filename")
 
     def test_a_bundle_holds_the_package_and_its_shared_files(self) -> None:
         out_dir = self.root / "dist" / "zzland"
@@ -121,6 +235,12 @@ class CheckedInTreeTests(unittest.TestCase):
             raise unittest.SkipTest("packages/bundles.json is not built")
         cls.bundles = json.loads(bundles_path.read_text(encoding="utf-8"))
         cls.shared_dir = cls.PACKAGES / cls.bundles["shared_dir"]
+
+    def test_every_bundle_has_unique_destinations_on_windows(self) -> None:
+        for package, entry in self.bundles["packages"].items():
+            names = entry["files"] + entry["shared"]
+            with self.subTest(package=package):
+                self.assertEqual(len(names), len({ntpath.normcase(name) for name in names}))
 
     def test_every_listed_file_exists_and_every_package_file_is_listed(self) -> None:
         self.assertGreater(len(self.bundles["packages"]), 200)
