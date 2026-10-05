@@ -7,7 +7,6 @@ skills/cross-border::dividends
 skills/cross-border::dividends general
 skills/cross-border::dividends portfolio
 skills/cross-border::dividends substantial
-skills/cross-border::fees included services
 skills/cross-border::fees technical services
 skills/cross-border::france
 skills/cross-border::galicia

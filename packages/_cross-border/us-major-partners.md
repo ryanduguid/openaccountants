@@ -4,7 +4,7 @@ description: "version: 1.0"
 version: 1.0
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-05
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -21,9 +21,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Jurisdiction | United States (source/residence) |
 | Countries Covered | UK, Germany, France, Canada, Australia, Japan, India, Netherlands, Ireland, Switzerland, Singapore, Mexico, South Korea, Israel |
-| Number of Treaties | 14 (note: no US treaty with Singapore or Hong Kong) |
-| Last Verified | May 2026 |
+| Partners Covered | 14, including Singapore's domestic-law section |
+| Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
+
+**Review scope:** The Canada and India sections and their PE rows were checked against the cited treaty text on 5 October 2026. The other 12 corridors, their domestic-law statements and the general LOB overview were not reverified. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -77,21 +79,29 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## US → Canada
 
-**US → Canada income types and treaty rates**  _(IRS Table 1)_
+**Treaty source:** [*Convention between Canada and the United States of America with Respect to Taxes on Income and on Capital*, signed 26 September 1980][ca-treaty], [1984] CTS 15 (entered into force 16 August 1984), as amended through the 2007 Fifth Protocol. The [official publication record][ca-record] supplies the original treaty dates and series citation.
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+These are treaty ceilings or exemptions for US-source payments to Canadian residents for tax year 2025. The recipient must meet the residence, beneficial-ownership and [art XXIX A entitlement requirements][ca-treaty]. Check the saving clause in [art XXIX(2) and (3)][ca-treaty] for US citizens and residents. A treaty exemption from US source tax does not exempt the receipt from Canadian tax.
+
+| Income type | Treaty ceiling / treatment | Treaty article | Conditions |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 15% | Art X(2) | W-8BEN required |
-| Dividends — substantial (≥10% voting) | 5% | Art X(2) | Direct corporate investment |
-| Interest — arm's length | 0% | Art XI(1) | Eliminated by 2007 Fifth Protocol |
-| Interest — related parties | 10% | Art XI | Related-party exception |
-| Royalties — copyright/literary/artistic/software | 0% | Art XII(2)(a) | Specific exemption |
-| Royalties — other (patents, trademarks, industrial) | 10% | Art XII(2)(b) | Industrial/commercial royalties |
-| Technical services | 0% | Art VII | Business profits — no WHT without PE |
+| Dividends, general | 15% of gross dividends | [art X(2)(b)][ca-treaty] | Subject to the investment-vehicle and PE exceptions below |
+| Dividends, qualifying corporate holding | 5% of gross dividends | [art X(2)(a)][ca-treaty] | Company beneficial owner owns at least 10% of the payer's voting stock |
+| Interest, general | 0% US source tax | [art XI(1)][ca-treaty] | Includes the arm's-length amount of ordinary related-party interest; exceptions below |
+| Copyright royalties for production or reproduction of literary, dramatic, musical or artistic works | 0% US source tax | [art XII(3)(a)][ca-treaty] | Excludes motion pictures and film, videotape or other reproduction media for television |
+| Computer software payments | 0% US source tax | [art XII(3)(b)][ca-treaty] | Payment for use or the right to use software |
+| Patents and information concerning industrial, commercial or scientific experience | 0% US source tax | [art XII(3)(c)][ca-treaty] | Experience information supplied in connection with a rental or franchise agreement is excluded from this exemption |
+| Other art XII royalties outside paragraph 3 | 10% of gross royalties | [art XII(2)][ca-treaty] | Classify the payment before applying the residual ceiling |
+| Services treated as business profits | Exempt from US tax without a US PE | [art VII(1)][ca-treaty] | Check all art V PE rules, including the services tests below |
 
-**Source:** US-Canada Convention signed 26 September 1980, amended by five Protocols (latest 2007). IRS Table 1.
-**Special provisions:** Split royalty rates mirror Canadian treaty practice. Fifth Protocol (2007) eliminated interest WHT on arm's length loans. LOB article. Canada domestic WHT is 25%.
-**Last verified:** May 2026
+**Exceptions:** A US regulated investment company (RIC) dividend uses the 15% ceiling. A US real estate investment trust (REIT) dividend cannot use the 5% rate; the 15% ceiling is available only in the cases in [art X(7)(c)][ca-treaty], otherwise US domestic law applies. Dividends, interest or royalties effectively connected with a PE are governed by art VII under arts X(4), XI(3) and XII(5). Special-relationship excess interest or royalties do not receive the article's protection: arts XI(5) and XII(7).
+
+US-source contingent interest that does not qualify as portfolio interest has a 15% gross ceiling under [art XI(6)(a), read with art X(2)(b)][ca-treaty]. A real estate mortgage investment conduit (REMIC) excess inclusion remains taxable under domestic law under art XI(6)(c). Relatedness alone creates no 10% interest rate. The broadcasting exemption in art XII(3)(d) requires an applicable exchange of notes; it is not included in the listed exemptions.
+
+**Source text checked:** 5 October 2026, covering the stated treaty ceilings, exemptions, conditions and PE rules. Current US withholding procedures and taxpayer-specific eligibility were not reviewed.
+
+[ca-treaty]: https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html
+[ca-record]: https://publications.aws.tpsgc-pwgsc.cloud-nuage.canada.ca/site/eng/9.823645/publication.html
 
 ## US → Australia
 
@@ -128,23 +138,38 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## US → India
 
-**US → India income types and treaty rates**  _(US-India Convention signed 12 September 1989)_
+**Treaty source:** [*Convention Between the United States of America and India*, signed 12 September 1989, TIAS No 90-1218 (entered into force 18 December 1990)][in-treaty], including its Protocol. The [IRS treaty document index][in-index] also links the [1989 technical explanation][in-explanation].
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+These are treaty ceilings or exemptions for US-source payments to Indian residents for tax year 2025. Apply the residence, beneficial-ownership and art 24 limitation-on-benefits requirements. The saving clause in art 1(3) and (4) can preserve US tax on US citizens and residents. Classify the payment and determine US domestic tax and withholding treatment before using a ceiling.
+
+| Income type | Treaty ceiling / treatment | Treaty article | Conditions |
 | --- | --- | --- | --- |
-| Dividends — substantial (≥10% voting) | 15% | Art 10(2) | Still relatively high |
-| Dividends — portfolio | 25% | Art 10(2) | Higher than most US treaties |
-| Interest — general | 15% | Art 11(2) | NOT zero |
-| Interest — banks/FIs | 10% | Art 11(2) | Banking business |
-| Interest — government | 0% | Art 11(3) | Government exemption |
-| Royalties — copyright | 15% | Art 12(2) | Literary/artistic |
-| Royalties — industrial | 10% | Art 12(2) | Patents/equipment |
-| Fees for included services | 15% | Art 12 | India-specific provision |
-| Technical services | 15% | Art 12 | "Fees for included services" concept |
+| Dividends, qualifying corporate holding | 15% of gross dividends | [art 10(2)(a)][in-treaty] | Company beneficial owner owns at least 10% of the payer's voting stock |
+| Dividends, other holdings | 25% of gross dividends | [art 10(2)(b)][in-treaty] | Investment-vehicle exceptions below |
+| Interest, general | 15% of gross interest | [art 11(2)(b)][in-treaty] | Subject to art 11(3) exemptions and the exceptions below |
+| Interest on qualifying bank or similar financial-institution loans | 10% of gross interest | [art 11(2)(a)][in-treaty] | Loan granted by a bank carrying on a bona fide banking business or a similar financial institution, including an insurance company |
+| Specified governmental, official-credit and government-approved interest | Exempt from US source tax | [art 11(3)][in-treaty] | Only the beneficial owners, institutions, loans, credits and approvals specified there qualify |
+| Copyright, patent, trademark, know-how and other art 12(3)(a) royalties | 15% of gross royalties | [art 12(2)(a)(ii), (3)(a)][in-treaty] | Post-initial-five-year ceiling; includes qualifying contingent gains |
+| Industrial, commercial or scientific equipment royalties | 10% of gross royalties | [art 12(2)(b), (3)(b)][in-treaty] | Subject to the art 8 shipping and air-transport exclusion |
+| Included services ancillary and subsidiary to art 12(3)(b) equipment | 10% gross-fee ceiling | [art 12(2)(b)][in-treaty] | Must satisfy art 12(4) and survive art 12(5) exclusions |
+| Other fees for included services | 15% gross-fee ceiling | [art 12(2)(a)(ii), (4)][in-treaty] | Must satisfy the definition below; US net-basis treatment is explained below |
+| Services outside the included-services definition | Apply art 7 or art 15 as appropriate | [arts 7, 12(5) and 15][in-treaty] | No blanket art 12 rate for all technical services; check PE or fixed-base conditions |
 
-**Source:** US-India Convention signed 12 September 1989, Memorandum of Understanding 15 May 1989. US has NOT signed MLI — treaty unmodified.
-**Special provisions:** Unique "fees for included services" concept (not FTS) — applies only where services make available technical knowledge. No US-India treaty amendment since original signing. India domestic WHT: 20% general. Treaty rates remain relatively high compared to newer US treaties.
-**Last verified:** May 2026
+**Included services:** [Art 12(4)][in-treaty] covers technical or consultancy services that either are ancillary and subsidiary to the application or enjoyment of art 12(3) rights, property or information, or make available technical knowledge, experience, skill, know-how or processes, or consist of developing and transferring a technical plan or design. The ancillary/subsidiary limb does not require a make-available result.
+
+[Art 12(5)][in-treaty] excludes services ancillary, subsidiary and inextricably and essentially linked to a sale other than an art 12(3)(a) sale; services ancillary and subsidiary to specified international-traffic rentals; teaching in or by educational institutions; services for the paying individual's personal use; and payments to the payer's employee or to an individual or firm of individuals other than a company for art 15 professional services. The [technical explanation, art 12][in-explanation] explains the classification; the service label alone does not settle it.
+
+**US source and tax mechanics:** Under [art 12(7)(a)][in-treaty], royalties and included-service fees generally arise in the payer's contracting state. If the liability was incurred in connection with and borne by a PE or fixed base in a contracting state, that PE or fixed base determines the source. Where paragraph 7(a) does not assign a contracting-state source, paragraph 7(b) sources royalties by the use of the property and included-service fees by where the services are performed.
+
+The 10% and 15% figures are tax ceilings, not automatic US gross-withholding rates. [Protocol IV][in-treaty] describes net-income taxation of included-service fees in accordance with US law and, for a company, applicable art 14(1) tax, with their total limited to the relevant percentage of the gross fee. Determine US domestic taxability and withholding separately; treaty source classification alone does not establish domestic tax liability.
+
+**Exceptions:** A US RIC dividend uses the 25% ceiling. A US REIT dividend cannot use the 15% rate; the 25% ceiling applies only to an individual beneficial owner holding less than 10% of the REIT: [art 10(2)][in-treaty]. Dividends, interest, royalties or included-service fees attributable to a PE or fixed base move to art 7 or art 15 under arts 10(4), 11(5) and 12(6). Under arts 11(7) and 12(8), special-relationship excess interest, royalties or included-service fees fall outside the relevant article's protection.
+
+**Source text checked:** 5 October 2026, covering the stated treaty ceilings, exemptions, conditions, source rules and PE rules. Current US withholding procedures and taxpayer-specific eligibility were not reviewed.
+
+[in-treaty]: https://www.irs.gov/pub/irs-trty/india.pdf
+[in-index]: https://www.irs.gov/businesses/international-businesses/india-tax-treaty-documents
+[in-explanation]: https://www.irs.gov/pub/irs-trty/inditech.pdf
 
 ## US → Netherlands
 
@@ -273,12 +298,16 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | UK | 12 months | None specified | Standard OECD |
 | Germany | 12 months | None specified | Standard OECD |
 | France | 12 months | None specified | Standard OECD |
-| Canada | 12 months | None specified | Merged Art XIV into Art VII |
-| India | 90 days in any 12-month period | 90 days in any fiscal year | Very short threshold |
+| Canada | More than 12 months | 183 days or more in any twelve-month period, with the conditions below | [arts V(3), V(9)][ca-treaty] |
+| India | More than 120 days in any twelve-month period | More than 90 days in any twelve-month period, or in-state services to a related enterprise; excludes included services | [art 5(2)(k), (l)][in-treaty]; conditions below |
 | Japan | 12 months | None specified | Standard OECD |
 | Mexico | 6 months | 183 days in any 12-month period | Shorter than standard |
 | South Korea | 6 months | None specified | Shorter than standard |
 | Israel | 12 months | None specified | Standard OECD |
+
+**Canada services PE:** [Art V(9)][ca-treaty], subject to the construction rule in paragraph 3, applies where no PE exists under the preceding art V rules. Either an individual is present in the other state for at least 183 days in any twelve-month period and more than 50% of the enterprise's gross active-business revenues during those periods comes from that individual's services there; or services for the same or connected project are provided there for at least 183 days in any twelve-month period for resident customers, or customers with a PE there to which the services relate. Mere corporate control does not create a PE: art V(8).
+
+**India construction and services PE:** [Art 5(2)(k)][in-treaty] aggregates construction, installation or assembly sites/projects and connected supervisory activities for the more-than-120-day test. Art 5(2)(l) covers services other than art 12 included services furnished in the state through employees or other personnel. Services to a related enterprise within art 9(1) have no day threshold under this limb; ownership alone is not the services test. Included services can still be attributable to a PE or fixed base formed under another rule: art 12(6). Where an art 5 time-test period extends over two taxable years, [Protocol I][in-treaty] prevents a PE under that rule in a year with fewer than 30 days, although those days count towards the threshold. This note does not apply that time-test rule to the separate related-enterprise limb.
 
 **Mexico's 6-month construction PE** is shorter than the standard 12 months — maquiladora/near-shoring operations require careful PE monitoring.
 
