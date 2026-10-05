@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-05 | [US treaties: Canada and India rules](2026-10-05-us-canada-india-treaty-rules.md) |
 | 2026-09-09 | [Where the defects actually were](2026-09-09-where-the-defects-actually-were.md) |
 | 2026-09-09 | [What the six VAT errors had in common](2026-09-09-what-the-six-vat-errors-had-in-common.md) |
 | 2026-09-09 | [What "verified" means here, and what it does not](2026-09-09-what-verified-means-here-and-what-it-does-not.md) |
