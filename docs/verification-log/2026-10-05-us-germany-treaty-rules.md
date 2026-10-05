@@ -90,7 +90,13 @@ excess, defined royalties versus excluded film/equipment rentals, PE property
 and special-relationship excess, and exactly twelve months versus more than
 twelve months of construction. The third-jurisdiction test is below 60%, while
 the investment-fund minimum is at least 90%. These are source comparisons, not
-taxpayer calculations.
+taxpayer calculations. For the third REIT test, art 10(4) defines diversification
+as no single real-property interest exceeding 10% of total real-property
+interests, excludes foreclosure property and attributes partnership property
+in proportion to the REIT's partnership interest. Exactly 10% satisfies this
+diversification bound; an interest above 10% does not. The ordinary-interest
+row cites unchanged art 11(1), read with the Protocol amendments to its
+exceptions and PE wording.
 
 The existing validators and finding queues check metadata, generated copies
 and known patterns. A recognised official citation clears the sourcing-floor
