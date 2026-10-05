@@ -74,7 +74,7 @@ conditional rule comparisons, not taxpayer calculations or a new test suite.
 | Enterprise offshore exploration 120 versus 121 aggregate days | The art 21(3) exception includes 120, not 121, in any twelve months |
 | Associated similar exploration: 80 plus 40 versus 80 plus 41 non-concurrent days | Aggregates are 120 and 121; concurrent days are not counted twice |
 | Offshore exploitation for one day | No exploration 120-day exception; enterprise PE or independent fixed-base rule applies |
-| Individual offshore exploration exactly 120 days | Fixed base is deemed, but exploration income is exempt under art 21(4); enterprise aggregation is not automatically imported |
+| Resident performing independent offshore exploration services exactly 120 days | Art 21(4) deems a fixed base, but exploration income is not taxable in the host state at no more than 120 aggregate days in any twelve months; enterprise aggregation is not automatically imported; employment is governed separately by art 21(5) |
 | Deferred receipt after cessation | Protocol paragraph 4 preserves taxation where income was attributable during the PE/fixed base's existence |
 | Remittance-basis individual receives/remits 40 of 100 | Art 24(6) limits relief to 40, assuming its conditions; remaining domestic treatment is unresolved |
 | Non-US payer with debt incurred in connection with and borne by US PE/fixed base | Art 11(4) can still deem the interest US-arising |
