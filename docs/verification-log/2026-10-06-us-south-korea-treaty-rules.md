@@ -6,7 +6,7 @@ interest, royalties and services, while the convention uses arts 12, 13,
 payer-income tests. A blanket services zero rate omitted the separate
 individual rules, and the construction row omitted the strict threshold
 and other PE grounds. This correction starts from main `0152342cd832340b5fc4611276c117e866ed9417`
-and advances `us-major-partners` from version 1.9 to 1.11. Its primary
+and advances `us-major-partners` from version 1.9 to 1.12. Its primary
 figures remain for 2025; the guide remains tier 2 and `pending_review`.
 
 I compared the [1976 convention][convention], including its related
@@ -15,8 +15,10 @@ the complete [2017 Article 3 arrangement][residency]. The [IRS treaty
 index][index] and [arrangement index][arrangements] were inspected on
 6 October 2026. The arrangement was signed on 7 March 2017 by Korea
 and 10 April 2017 by the United States. The convention's cover and
-proclamation record entry into force on 20 October 1979; art 31 applies
-withholding provisions to payments from 1 January 1980. The explanation
+proclamation record entry into force on 20 October 1979. Art 31(a) applies
+the withholding-rate limits and art 25 to payments from 1 December 1979;
+art 31(b) applies other taxes to taxable years beginning from 1 January 1980.
+The explanation
 corroborates the selected income and PE conditions; the convention
 supplies the employment-condition wording.
 
@@ -40,6 +42,8 @@ independently compared.
 | Exact 10% copyright/reproduction/audiovisual category and 15% other defined royalty ceiling; know-how, specified rentals, contingent disposals, natural-resource exclusion and excess | Convention art 14, pages 18 to 19; explanation pages 16 to 17 |
 | Payer, place-of-use, rental, services-performance and PE source rules | Convention art 6, pages 11 to 12; explanation pages 7 to 8 |
 | Enterprise versus individual independent/employed services | Convention arts 8, 18 and 19, pages 13 to 14 and 20 to 21; explanation pages 10 to 11 and 18 to 19 |
+| Individual physical-presence calendar days, including partial days | Treasury explanation, PDF page 17 |
+| Withholding rates versus other-tax effective dates | Convention art 31(a)–(b), PDF page 27; entry recorded on pages 1 and 5 |
 | More-than-six-month project ground and separate fixed-place, contracting/stock agency and processing/purchase grounds | Convention art 9, pages 14 to 16; explanation pages 11 to 13 |
 | Residence, saving clause and conjunctive holding-company restriction | Convention arts 3, 4 and 17; explanation of these articles |
 | Sequential individual tie-breakers and dwelling with family in a permanent home in both states | Complete 2017 arrangement |
@@ -57,6 +61,9 @@ elements and do not calculate a taxpayer's liability or withholding.
 | Partly owned versus wholly owned governmental instrumentality | Only wholly owned meets that ownership element; beneficial derivation and tax-status conditions remain |
 | Related-person excess interest/royalty | The respective article applies only to the amount payable to an unrelated person; other applicable provisions can affect excess |
 | Independent individual present for 182 versus 183 days in the taxable year | Only 183 triggers that art 18 presence ground; income and fixed-base grounds remain separate |
+| 182 full calendar days plus a partial arrival/departure day | Reaches 183 physical-presence days under the explanation, page 17; do not extend this rule to the separate fixed-base maintenance period |
+| Korean treaty resident who is neither a US citizen nor a US treaty resident | Korean treaty residence alone does not invoke the US saving clause; art 4(5) exceptions remain relevant where that clause applies |
+| Payment on 30 November versus 1 December 1979 | Only the latter falls within art 31(a); other taxes use taxable years beginning from 1 January 1980 under art 31(b) |
 | Independent-services income of exactly US$3,000 versus more | Only more triggers the art 18 income ground; other grounds remain |
 | Fixed base maintained for 183 days | Art 18's fixed-base ground includes attribution; that limit does not restrict the separate presence or income grounds |
 | Ordinary employee present exactly 183 days | Fails the art 19(2) less-than-183-day condition, subject to any separate applicable provision |
@@ -69,6 +76,10 @@ MCP full-guide and section reads can preserve its context, while keyword
 search excerpts can truncate conditions. The section requires fetching
 its full text before application. Repository checks and runtime evidence
 are recorded in the accompanying PR; they do not certify taxpayer outcomes.
+The search tool instructs consumers to load the full guide, but the server
+does not enforce downstream agent behaviour. Search-only application and
+interrupted-fetch behaviour remain unverified; this correction supplies
+research content for complete-guide or complete-section use.
 
 Current domestic source/classification/tax rules, withholding/forms/refunds,
 claimant eligibility, art 17 corporate facts, scientific-copyright or
