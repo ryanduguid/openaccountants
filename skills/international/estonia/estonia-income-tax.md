@@ -1,10 +1,10 @@
 ---
 name: estonia-income-tax
 description: Use this skill whenever asked about Estonia personal income tax for self-employed individuals (FIE) and resident individuals. Trigger on phrases like "how much tax do I pay in Estonia", "Estonian income tax return", "Form A", "Form E", "tuludeklaratsioon", "TSD", "FIE", "ettevõtluskonto", "entrepreneur account", "basic exemption", "maksuvaba tulu", "tax hump", "social tax", "sotsiaalmaks", "funded pension", "II pillar", "unemployment insurance", "töötuskindlustus", "flat 22% tax", "self-employed tax Estonia", or any question about filing or computing personal income tax for a resident or self-employed (FIE) client in Estonia. Also trigger when preparing or reviewing a Form A / Form E return, computing FIE business deductions, running payroll withholding via TSD, advising on FIE social-tax advance payments, or comparing the entrepreneur-account simplified regime. This skill covers the flat 22% income tax rate, the income-dependent basic exemption and its 2026 reform, social tax, unemployment-insurance premiums, funded (II) pension, the entrepreneur-account regime, payroll (TSD) declarations, filing deadlines, penalties, and interaction with VAT. ALWAYS read this skill before touching any Estonian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: EE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-06
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Form A + Form E: 30 April of the following year (e.g. 30 April 2026 for tax year 2025); e-filing opens 15 February [EMTA, Income tax returns for 2025] |
 | Validated by | Pending -- requires sign-off by an Estonian-qualified tax professional |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Personal Income Tax Rate (2025 and 2026)
 
@@ -71,7 +71,7 @@ STALE-FIGURE WARNING. Some 2024-2025 secondary sources (EY, Estonian Chamber of 
 | Social tax (sotsiaalmaks) | 33% (20% pension + 13% health) | Employer (on top of gross); FIE on own profit | Min monthly base 820 EUR -> min obligation 270.60 EUR/mo (2025). No ceiling for employees | [EMTA, Social tax] |
 | Unemployment insurance -- employee | 1.6% | Employee (withheld) | Rate fixed 2025-2028. Pensionable-age persons exempt. FIE not subject | [EMTA, Unemployment insurance premiums] |
 | Unemployment insurance -- employer | 0.8% | Employer | Still payable for pensionable-age workers. FIE not subject | [EMTA, Unemployment insurance premiums] |
-| Funded (II) pension -- employee | 2% default (or 4% / 6% by election) | Employee (withheld); state adds 4% from the 33% social tax | Mandatory for residents born after 31 Dec 1982; voluntary otherwise. 4%/6% election possible since 1 Jan 2024 | [PwC Estonia, Other taxes] |
+| Funded (II) pension -- employee | 2% default (or 4% / 6% by election) | Employee (withheld); state adds 4% from the 33% social tax | Mandatory for residents born after 31 Dec 1982; voluntary otherwise. 4%/6% election possible since 1 Jan 2024 | [EMTA, Tax rates; Social Tax Act § 10(4); Pensionikeskus] |
 
 - **Total employer on-cost** — 33% social tax + 0.8% unemployment insurance = ~33.8% on top of gross  _([EMTA, Social tax])_
 - **2026 social-tax floor** — minimum monthly base 886 EUR -> minimum obligation 292.38 EUR/mo (886 x 33%)  _([EMTA, Social tax])_
@@ -396,7 +396,7 @@ Classification: Entrepreneur-account business income tax EUR 100.00, remitted by
 
 ### 5.5 Funded (II Pillar) Pension
 
-- **Funded pension default and elective rates** — Default employee contribution 2% (withheld); the state adds 4% from the 33% social tax. Members may elect 4% or 6% (since 1 Jan 2024).  _([PwC Estonia, Other taxes])_
+- **Funded pension default and elective rates** — Default employee contribution 2% (withheld); the state adds 4% from the 33% social tax. Members may elect 4% or 6% (since 1 Jan 2024).  _(EMTA, Tax rates — https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/tax-rates; Social Tax Act § 10(4) — https://www.riigiteataja.ee/en/akt/514112013022?leiaKehtiv)_
 - **Mandatory membership** — Mandatory for residents born after 31 Dec 1982; voluntary otherwise. Always verify membership and elected rate in Pensionikeskus before assuming a rate.
 
 ### 5.6 FIE Business Income (Form E)
@@ -645,7 +645,7 @@ ONBOARDING QUESTIONS -- ESTONIA PERSONAL INCOME TAX
 | Basic exemption | TuMS; EMTA "Calculation of basic exemption" |
 | Social tax (33%) | Social Tax Act (SMS); EMTA "Social tax" |
 | Unemployment insurance | Unemployment Insurance Act; EMTA |
-| Funded pension (II pillar) | Funded Pensions Act; PwC |
+| Funded pension (II pillar) | Funded Pensions Act; Social Tax Act § 10(4); EMTA tax rates |
 | FIE business income | TuMS; EMTA "Self-employed persons -- income tax" |
 | Entrepreneur account | TuMS; EMTA "Entrepreneur account" |
 | VAT | Value-Added Tax Act (Käibemaksuseadus); EMTA |
@@ -668,7 +668,7 @@ ONBOARDING QUESTIONS -- ESTONIA PERSONAL INCOME TAX
 | Income tax returns for 2025 | EMTA | https://www.emta.ee/en/private-client/taxes-and-payment/declaration-income/income-tax-returns-2025 |
 | Payment of interests | EMTA | https://www.emta.ee/en/business-client/taxes-and-payment/payment-arrears/payment-interests |
 | Obligation to register (VAT) | EMTA | https://www.emta.ee/en/business-client/taxes-and-payment/value-added-tax/registration-vat-payer/obligation-register-taxable-person |
-| Estonia -- Individual -- Other taxes | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/estonia/individual/other-taxes |
+| Income Tax Act (Tulumaksuseadus), consolidated English translation | Riigi Teataja | https://www.riigiteataja.ee/en/eli/504092025004/consolide |
 | Significant tax changes in Estonia 2025-2026 | EY Estonia | https://www.ey.com/en_ee/insights/tax/significant-tax-changes-in-estonia-in-2025-2026 |
 | Security Tax Abolished; VAT and Income Tax (income rise later cancelled) | Estonian Chamber of Commerce and Industry | https://www.koda.ee/en/news/security-tax-abolished-vat-and-income-tax-rise-24 |
 | Estonia's 946 EUR minimum wage agreement | ERR News (Estonian Public Broadcasting) | https://news.err.ee/1609943096/employers-and-unions-agree-on-946-as-estonia-s-new-minimum-wage |

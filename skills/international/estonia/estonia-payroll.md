@@ -1,10 +1,10 @@
 ---
 name: estonia-payroll
 description: Use this skill whenever asked about Estonia payroll processing for employed persons. Trigger on phrases like "Estonia payroll", "Estonian payroll", "palgaarvestus", "sotsiaalmaks", "social tax Estonia", "income tax withholding Estonia", "tulumaks kinnipidamine", "töötuskindlustusmakse", "unemployment insurance premium Estonia", "II pillar", "II sammas", "kohustuslik kogumispension", "funded pension Estonia", "Form TSD", "TSD declaration", "net salary Estonia", "gross to net Estonia", "palk", "netopalk", "EMTA payroll", "Maksu- ja Tolliamet payroll", "basic exemption Estonia", "maksuvaba tulu", "minimum wage Estonia", "employer cost Estonia", "what does an Estonian employee cost", or any question about computing employee pay, withholding income tax, social tax, unemployment premiums, or funded-pension contributions for Estonia-based employees. This skill covers flat 22% income tax withholding (after basic exemption), 33% employer social tax (uncapped, with a monthly minimum base), employee/employer unemployment insurance premiums, mandatory funded (II pillar) pension contributions, the basic exemption, minimum wage, employment-register registration, bank statement classification patterns, and monthly Form TSD filing. ALWAYS read this skill before processing any Estonia payroll.
-version: 0.1
+version: 0.2
 jurisdiction: EE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-06
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Income tax (flat) 2025 and 2026 | 22% withheld at source (after basic exemption) |
 | Social tax 2025 and 2026 | 33% of gross (employer-paid, uncapped) -- 20% public pension + 13% public health |
 | Validated by | Pending -- requires sign-off by an Estonian tax professional |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Read this whole section before computing or classifying anything.**
 
@@ -55,7 +55,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Employer-side cost on top of gross** — 33% social tax + 0.8% unemployment = ~33.8%.  _([EMTA -- social tax](https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/social-tax); [EMTA -- unemployment insurance premiums](https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/unemployment-insurance-premiums))_
 - **Employee-side withholdings from gross** — 22% income tax (after basic exemption) + 1.6% unemployment + 2/4/6% II pillar.  _([EMTA -- tax rates](https://www.emta.ee/en/private-client/taxes-and-payment/declaration-income/tax-rates))_
 
-> The state's 4% II pillar addition is drawn FROM the 20-point pension share of the employer's social tax and transferred by EMTA to the member's account -- it does not increase the employer's cash outlay. Source: [EMTA -- contributions to mandatory funded pension](https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/contributions-mandatory-funded-pension). [RESEARCH GAP -- some secondary summaries (e.g. PwC) still cite 2%, the pre-2024 figure; reviewer to confirm the current addition against the Funded Pensions Act text.]
+> The state's 4% II pillar addition is drawn FROM the 20-point pension share of the employer's social tax and transferred by EMTA to the member's account -- it does not increase the employer's cash outlay. Source: [EMTA -- contributions to mandatory funded pension](https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/contributions-mandatory-funded-pension). Social Tax Act § 10(4) confirms it: for a II-pillar member, 4 of the 33 points of social tax go to the registrar of the pension register (https://www.riigiteataja.ee/en/akt/514112013022?leiaKehtiv).
 
 ## Section 2 -- Conservative Defaults
 
@@ -171,7 +171,7 @@ Matches "MAKSU- JA TOLLIAMET" (pattern 4.1 / 4.2 Swedbank). This is the bundled 
 
 **Classification:** Payroll computation. Employer-side cost EUR 2,676.00; the EMTA debit is EXCLUDED from VAT.
 
-> Note on the II pillar state addition: EMTA's current guidance describes the state adding 4% of gross wage (drawn from the 20-point pension share of the employer's 33% social tax) to the II pillar member's account, on top of the employee's own 2/4/6% withholding -- this is NOT an extra cash cost to the employer. Source: [EMTA -- contributions to mandatory funded pension](https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/contributions-mandatory-funded-pension). [RESEARCH GAP -- PwC's summary still states 2% (pre-2024 figure); reviewer to confirm the current addition against the Funded Pensions Act.]
+> Note on the II pillar state addition: EMTA's current guidance describes the state adding 4% of gross wage (drawn from the 20-point pension share of the employer's 33% social tax) to the II pillar member's account, on top of the employee's own 2/4/6% withholding -- this is NOT an extra cash cost to the employer. Source: [EMTA -- contributions to mandatory funded pension](https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/contributions-mandatory-funded-pension). Social Tax Act § 10(4) confirms it: for a II-pillar member, 4 of the 33 points of social tax go to the registrar of the pension register (https://www.riigiteataja.ee/en/akt/514112013022?leiaKehtiv).
 
 ### Example 3 -- Below-minimum part-time pay triggers the minimum social tax base (2025)
 
@@ -272,7 +272,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 
 ### Rule 10 -- II pillar state addition (4%, NOT an extra employer cost)
 
-- **State II pillar addition** — For a II pillar member, the state transfers 4% of gross wage to the member's pension account, drawn from the 20-point pension-insurance share of the employer's 33% social tax. EMTA calculates and transfers it; it is not an additional cash cost to the employer. [RESEARCH GAP -- PwC still cites 2% (pre-2024 figure); reviewer to confirm the current addition against the Funded Pensions Act.]  _([EMTA -- contributions to mandatory funded pension](https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/contributions-mandatory-funded-pension))_
+- **State II pillar addition** — For a II pillar member, the state transfers 4% of gross wage to the member's pension account, drawn from the 20-point pension-insurance share of the employer's 33% social tax. EMTA calculates and transfers it; it is not an additional cash cost to the employer. Social Tax Act § 10(4) confirms it: for a II-pillar member, 4 of the 33 points of social tax go to the registrar of the pension register (https://www.riigiteataja.ee/en/akt/514112013022?leiaKehtiv).  _([EMTA -- contributions to mandatory funded pension](https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/contributions-mandatory-funded-pension))_
 
 ### Rule 11 -- Employer total on-cost
 
@@ -300,7 +300,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 
 ### Rule 15 -- Corporate-tax context (distributions only)
 
-- **Distribution tax context** — Estonia taxes distributed profits, not retained earnings (the well-known deferral model). Dividends are NOT payroll and fall under a separate distribution-tax regime. This is context only for the dividend/payroll boundary.  _([PwC Worldwide Tax Summaries -- Estonia](https://taxsummaries.pwc.com/estonia/individual/other-taxes))_
+- **Distribution tax context** — Estonia taxes distributed profits, not retained earnings (the well-known deferral model). Dividends are NOT payroll and fall under a separate distribution-tax regime. This is context only for the dividend/payroll boundary.  _([Income Tax Act (Tulumaksuseadus) § 50(1)](https://www.riigiteataja.ee/en/eli/504092025004/consolide))_
 
 ## Section 7 -- Tier 2 Catalogue (Reviewer Judgement)
 
@@ -519,14 +519,14 @@ All amounts independently recomputed and reconciled to the cent.
 - [EMTA -- Contributions to mandatory funded pension](https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/contributions-mandatory-funded-pension)
 - [EMTA -- Employment register](https://www.emta.ee/en/business-client/registration-business/employment-register)
 - [EMTA -- Payment of interests](https://www.emta.ee/en/business-client/taxes-and-payment/payment-arrears/payment-interests)
-- [PwC Worldwide Tax Summaries -- Estonia (Individual, Other taxes)](https://taxsummaries.pwc.com/estonia/individual/other-taxes)
+- [Income Tax Act (Tulumaksuseadus), consolidated English translation -- Riigi Teataja](https://www.riigiteataja.ee/en/eli/504092025004/consolide)
 - [EY Estonia -- Significant tax changes in Estonia in 2025-2026](https://www.ey.com/en_ee/insights/tax/significant-tax-changes-in-estonia-in-2025-2026)
 - [Palgakalkulaator -- Minimum wage in Estonia](https://www.palgakalkulaator.ee/en/teadmiseks/miinimumpalk)
 - [Pensionikeskus -- Mandatory funded pension](https://www.pensionikeskus.ee/en/ii-pillar/mandatory-funded-pension/)
 
 ### Caveats
 
-Figures are 2025 unless noted. CONFIRMED 2026 items (per EMTA / government): income tax stays 22% (a previously legislated rise to 24% and a 2% "security tax" surcharge were repealed); the working-age basic exemption becomes a flat EUR 8,400/year (EUR 700/month) with no taper; the social tax monthly minimum base rises to EUR 886 (minimum EUR 292.38/month); minimum wage EUR 886 Jan-Mar then EUR 946 (EUR 5.67/hour) from 1 April 2026. Points to verify before relying: (1) the II pillar state addition -- EMTA's current guidance describes the state adding 4% of gross wage (from the employer's social tax), while PwC still cites 2% (pre-2024 figure); 4% is used here per the authority but should be confirmed against the Funded Pensions Act; (2) the April 2026 minimum-wage regulation is recent -- re-verify close to the period; (3) the exact monetary fine schedule for late TSD / failure to register employment was not captured from a primary source (only the 0.06%/day interest is confirmed); (4) the precise 2025 monthly basic-exemption withholding formula for edge cases should be cross-checked against the EMTA calculation page. No personal income tax ceiling and no social tax ceiling exist for ordinary employees. Research confidence: high.
+Figures are 2025 unless noted. CONFIRMED 2026 items (per EMTA / government): income tax stays 22% (a previously legislated rise to 24% and a 2% "security tax" surcharge were repealed); the working-age basic exemption becomes a flat EUR 8,400/year (EUR 700/month) with no taper; the social tax monthly minimum base rises to EUR 886 (minimum EUR 292.38/month); minimum wage EUR 886 Jan-Mar then EUR 946 (EUR 5.67/hour) from 1 April 2026. The II pillar state addition of 4% of gross wage (4 of the employer's 33 social tax points) is confirmed by Social Tax Act § 10(4). Points to verify before relying: (1) the April 2026 minimum-wage regulation is recent -- re-verify close to the period; (2) the exact monetary fine schedule for late TSD / failure to register employment was not captured from a primary source (only the 0.06%/day interest is confirmed); (3) the precise 2025 monthly basic-exemption withholding formula for edge cases should be cross-checked against the EMTA calculation page. No personal income tax ceiling and no social tax ceiling exist for ordinary employees. Research confidence: high.
 
 ## PROHIBITIONS
 

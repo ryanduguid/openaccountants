@@ -1,10 +1,10 @@
 ---
 name: estonia-tax-optimization
 description: Use this skill whenever asked about reducing tax in Estonia, tax planning, saving tax, or legal strategies to minimise tax for a self-employed person, freelancer, or small company in Estonia. Trigger on phrases like "reduce tax Estonia", "0% corporate tax", "retained profits", "FIE vs OÜ", "OÜ tax", "ettevõtluskonto", "entrepreneur account", "salary vs dividend Estonia", "distributed profits", "participation exemption", "Estonian holding company", "save tax Estonia", "tax planning Estonia". This skill covers the entity-choice / profit-deferral decision (FIE vs OÜ vs entrepreneur account), the 0%-on-retained-profits system, salary-vs-dividend mix, the distributed-profits CIT, the basic exemption, the II-pillar election, the holding/participation exemption, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Estonian tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: EE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-06
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Estonia Tax Optimization
 
-## Estonia Tax Optimization Skill v0.1
+## Estonia Tax Optimization Skill v0.2
 
-**Tier 2 — research-verified. Sources: Estonian Tax and Customs Board (EMTA), PwC Worldwide Tax Summaries, Invest in Estonia. Figures must agree with `estonia-income-tax.md` / `estonia-social-contributions.md`. NOT yet signed off by an Estonian tax adviser. Every suggestion must be reviewed by a credentialed professional; aggressive positions are never advised.**
+**Tier 2 — research-verified. Sources: Estonian Tax and Customs Board (EMTA), the Income Tax Act on Riigi Teataja, Invest in Estonia. Figures must agree with `estonia-income-tax.md` / `estonia-social-contributions.md`. NOT yet signed off by an Estonian tax adviser. Every suggestion must be reviewed by a credentialed professional; aggressive positions are never advised.**
 
 ## Section 1 -- Quick Reference
 
@@ -27,13 +27,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Republic of Estonia |
 | Currency | EUR |
 | Personal income tax | Flat **22%** (2025 & 2026) |
-| Corporate tax (OÜ) | **0% on retained/undistributed profits**; **22%** on distribution (computed as 22/78 of the net amount). The reduced 14% rate on regular dividends was **abolished from 1 Jan 2025**. (EMTA; PwC) |
+| Corporate tax (OÜ) | **0% on retained/undistributed profits**; **22%** on distribution (computed as 22/78 of the net amount). The reduced 14% rate on regular dividends was **abolished from 1 Jan 2025**. (EMTA; Income Tax Act § 4(1) and (1¹)) |
 | Social tax | 33% on employment/board remuneration (funds pension + health) |
 | Key optimisation levers | Entity choice & profit deferral (OÜ 0% retained); salary-vs-dividend mix; entrepreneur account for micro income; participation exemption for holdings |
 | Anti-avoidance | EMTA expects a market-rate salary for active owner-managers; substance required for holding structures |
 
 - **Personal income tax** — Flat 22% (2025 & 2026)
-- **Corporate tax (OÜ)** — 0% on retained/undistributed profits; 22% on distribution (computed as 22/78 of the net amount). The reduced 14% rate on regular dividends was abolished from 1 Jan 2025.  _(EMTA; PwC)_
+- **Corporate tax (OÜ)** — 0% on retained/undistributed profits; 22% on distribution (computed as 22/78 of the net amount). The reduced 14% rate on regular dividends was abolished from 1 Jan 2025.  _(EMTA, Tax rates — https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/tax-rates; Income Tax Act (Tulumaksuseadus) § 4(1) and (1¹) — https://www.riigiteataja.ee/en/eli/504092025004/consolide)_
 - **Social tax** — 33% on employment/board remuneration (funds pension + health)
 
 > **The single biggest Estonian lever is the OÜ deferral:** profits kept inside an OÜ are taxed at **0%** until distributed. Reinvest, and you never trigger the 22% — this is legitimate deferral, not avoidance.

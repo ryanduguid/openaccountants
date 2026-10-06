@@ -1,11 +1,11 @@
 ---
 name: ee-company-formation
-description: "Source-cited draft: company formation & entity choice for Estonia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: company formation & entity choice for Estonia (tax year 2026) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: EE
 category: formation
-tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+tax_year: 2026
+last_updated: 2026-10-06
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,10 +16,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Entity types, incorporation and annual compliance
 
 - **Private limited company (osaühing, OÜ)** — Most common form; limited liability; suitable for SMEs and e-Residency businesses  _(Commercial Code (Äriseadustik) https://www.eesti.ee/en/doing-business/establishing-a-company/establishing-a-private-limited-company-oue/)_
-- **Public limited company (aktsiaselts, AS)** — For larger companies; shares freely transferable; minimum share capital 25,000 EUR  _(Commercial Code (Äriseadustik) https://taxsummaries.pwc.com/estonia/corporate/corporate-residence)_
+- **Public limited company (aktsiaselts, AS)** — For larger companies; registered shares are freely transferable unless the articles set a pre-emption right; minimum share capital 25,000 EUR  _(Commercial Code (Äriseadustik) §§ 222 and 229(1)–(2) — https://www.riigiteataja.ee/en/eli/522062017003/consolide)_
 - **Other entity types** — Sole proprietor (FIE), general partnership (TÜ), limited partnership (UÜ), branch of a foreign company  _(Commercial Code (Äriseadustik) https://www.eesti.ee/en/doing-business/establishing-a-company/)_
 - **Minimum share capital — OÜ** — 0.01 EUR (statutory minimum since 1 February 2023; previously 2,500 EUR)  _(Commercial Code (Äriseadustik) https://enty.io/blog/share-capital-estonia)_
-- **Minimum share capital — AS** — 25000 EUR  _(Commercial Code (Äriseadustik) https://taxsummaries.pwc.com/estonia/corporate/corporate-residence)_
+- **Minimum share capital — AS** — 25,000 EUR  _(Commercial Code (Äriseadustik) § 222 — https://www.riigiteataja.ee/en/eli/522062017003/consolide)_
 - **Incorporation method** — Online via the e-Business Register using an Estonian ID-card or e-Residency digital ID; notary route also available  _(Commercial Code (Äriseadustik); Commercial Register Act https://www.eesti.ee/en/doing-business/establishing-a-company/establishing-a-private-limited-company-oue/)_
 - **Incorporation timeline** — Online registration typically completes in 1–5 working days (often within hours via the expedited e-procedure)  _(Commercial Register Act (Äriregistri seadus) https://www.eesti.ee/en/doing-business/establishing-a-company/establishing-a-private-limited-company-oue/)_
 - **Incorporation state fee** — Approximately 265 EUR for expedited online registration of an OÜ (notary route costs more) (approx — confirm current state fee)  _(State Fees Act (Riigilõivuseadus) https://www.eesti.ee/en/doing-business/establishing-a-company/establishing-a-private-limited-company-oue/)_
