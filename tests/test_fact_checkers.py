@@ -550,7 +550,7 @@ class BulletTotalTests(CheckerCase):
                 "- **Employer - health and accident** - 4.0%\n"
                 "- **Employer - Social Services Fund** - 1.0%\n"
             ),
-        })
+        }, extra_args=["skills"])
         self.assertIn("components sum to 25.50%", output)
         self.assertIn("bullet totals checked: 1", output)
 
@@ -562,7 +562,7 @@ class BulletTotalTests(CheckerCase):
                 "- **Employer - work injuries** - 3%\n"
                 "- **Employer - retirement pensions** - 9.1%\n"
             ),
-        })
+        }, extra_args=["skills"])
         self.assertIn("bullet totals checked: 1 ; not equal to their components: 0",
                       output)
 
@@ -578,7 +578,7 @@ class BulletTotalTests(CheckerCase):
                 "- **Employer - occupational risk** - 2%\n"
                 "- **Employee CNSS contribution** - 4%\n"
             ),
-        })
+        }, extra_args=["skills"])
         self.assertIn("not equal to their components: 0", output)
 
     def test_a_component_with_several_percentages_abandons_the_group(self):
@@ -593,7 +593,7 @@ class BulletTotalTests(CheckerCase):
                 "- **Employer - retirement pensions** - 5%\n"
                 "- **Employer - CNAMGS health** - 4.1% total (0.6% + 2% + 1.5%)\n"
             ),
-        })
+        }, extra_args=["skills"])
         self.assertIn("bullet totals checked: 0", output)
 
     def test_components_that_restate_the_total_are_not_a_partition_of_it(self):
@@ -605,7 +605,7 @@ class BulletTotalTests(CheckerCase):
                 "- **Employer SSB share** - Larger share of the 10% total\n"
                 "- **Employee SSB share** - Smaller share of the 10% total\n"
             ),
-        })
+        }, extra_args=["skills"])
         self.assertIn("bullet totals checked: 0", output)
 
 
