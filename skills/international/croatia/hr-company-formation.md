@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Croatia 
 jurisdiction: HR
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-06
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Typical incorporation timeline** — Roughly 1-3 weeks from notarisation to court registration (approx — confirm; e-registration can be faster)  _(Court Register Act (Zakon o sudskom registru) — https://investcroatia.gov.hr/en/founding-a-company/)_
 - **Tax identification number (OIB)** — Every company and founder must hold an OIB (personal identification number); issued by the Tax Administration  _(Act on the Personal Identification Number (Zakon o osobnom identifikacijskom broju) — https://investcroatia.gov.hr/en/founding-a-company/)_
 - **Annual financial statements filing** — Annual financial statements filed with FINA, generally by 30 April of the following year  _(Accounting Act (Zakon o racunovodstvu) — https://www.commenda.io/croatia/annual-compliance)_
-- **Annual corporate tax return** — Form PD filed by 30 April (calendar-year filers); advance tax paid monthly  _(Corporate Profit Tax Act (Zakon o porezu na dobit) — https://taxsummaries.pwc.com/croatia/corporate/tax-administration)_
+- **Annual corporate tax return** — Form PD filed by 30 April (calendar-year filers); advance tax paid monthly  _(Corporate Profit Tax Act (Zakon o porezu na dobit) arts. 34(1) and 35(1) — https://www.zakon.hr/z/99/Zakon-o-porezu-na-dobit)_
 
 <!-- openaccountants-cta-block -->
 

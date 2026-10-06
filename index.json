@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T09:30:55+00:00",
+ "generated_at": "2026-10-06T11:30:28+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -6478,7 +6478,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "croatia-payroll",
@@ -6491,7 +6491,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "croatia-social-contributions",
@@ -6503,8 +6503,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "tax_year": "2026",
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "croatia-tax-optimization",
@@ -6517,7 +6517,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "croatia-vat-return",
@@ -6543,7 +6543,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "hr-corporate-income-tax",
@@ -6556,7 +6556,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "hr-tax-overview",
@@ -6569,7 +6569,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "cu-company-formation",

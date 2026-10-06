@@ -1,10 +1,10 @@
 ---
 name: croatia-social-contributions
-description: Use this skill whenever asked about Croatian social security contributions (doprinosi) and the related personal income tax (porez na dohodak) on employment income for the 2025 tax year. Trigger on phrases like "how much pension contribution do I pay", "Croatia payroll contributions", "Pillar I and Pillar II pension", "mirovinsko osiguranje", "zdravstveno osiguranje", "16.5% health contribution", "20% pension contribution", "gross to net Croatia", "Croatian salary calculation", "doprinosi za mirovinsko", "HZZO contribution", "Croatia income tax rate", "porez na dohodak", "JOPPD", "Croatian minimum wage 2025", or any question about a Croatian employee's gross-to-net pay, employer on-costs, or contribution caps. Also trigger when classifying bank statement transactions that relate to HZMO, HZZO, Porezna uprava, doprinosi, or plaća payments from Croatian banks (Zagrebačka banka, PBZ, Erste, OTP, Raiffeisen). Also trigger when preparing or reviewing a JOPPD report where contribution bases, low-salary relief, or the pension base cap are relevant. This skill covers employee pension contributions (15% Pillar I + 5% Pillar II), the 16.5% employer health contribution, low-salary pension relief, monthly/annual base caps, the floor base, the two-band income tax, JOPPD filing, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Croatian contributions or payroll work.
-version: 0.1
+description: Use this skill whenever asked about Croatian social security contributions (doprinosi) and the related personal income tax (porez na dohodak) on employment income for the 2026 tax year. Trigger on phrases like "how much pension contribution do I pay", "Croatia payroll contributions", "Pillar I and Pillar II pension", "mirovinsko osiguranje", "zdravstveno osiguranje", "16.5% health contribution", "20% pension contribution", "gross to net Croatia", "Croatian salary calculation", "doprinosi za mirovinsko", "HZZO contribution", "Croatia income tax rate", "porez na dohodak", "JOPPD", "Croatian minimum wage 2025", or any question about a Croatian employee's gross-to-net pay, employer on-costs, or contribution caps. Also trigger when classifying bank statement transactions that relate to HZMO, HZZO, Porezna uprava, doprinosi, or plaća payments from Croatian banks (Zagrebačka banka, PBZ, Erste, OTP, Raiffeisen). Also trigger when preparing or reviewing a JOPPD report where contribution bases, low-salary relief, or the pension base cap are relevant. This skill covers employee pension contributions (15% Pillar I + 5% Pillar II), the 16.5% employer health contribution, low-salary pension relief, monthly/annual base caps, the floor base, the two-band income tax, JOPPD filing, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Croatian contributions or payroll work.
+version: 0.2
 jurisdiction: HR
-tax_year: 2025
-last_updated: 2026-07-13
+tax_year: 2026
+last_updated: 2026-10-06
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Croatia Social Security Contributions (Doprinosi) -- Employment
 
-## Croatia Social Security Contributions (Doprinosi) -- Employment Skill v0.1
+## Croatia Social Security Contributions (Doprinosi) -- Employment Skill v0.2
 
 ## Section 1 -- Quick reference
 
@@ -32,20 +32,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pension administration | Hrvatski zavod za mirovinsko osiguranje (HZMO), https://www.mirovinsko.hr |
 | Health administration | Hrvatski zavod za zdravstveno osiguranje (HZZO), https://www.hzzo.hr |
 | Employee pension rate (total) | 20% of base: 15% Pillar I + 5% Pillar II (Porezna uprava 7319) |
-| Employer health rate | 16.5% of gross salary, uncapped (PwC) |
-| Monthly pension base cap (2025) | EUR 11,958.00 (= 6.0 x EUR 1,993 average gross) (PwC) |
-| Annual Pillar I base cap (2025) | EUR 143,496.00 (PwC) |
-| Lowest monthly base (full-time, 2025) | EUR 757.34 (= 0.38 x EUR 1,993) (FINaCRO/Pravilnik) |
-| Income tax bands (2025) | Lower: up to EUR 60,000/yr (EUR 5,000/mo); Higher: above (Porezna uprava 7322) |
+| Employer health rate | 16.5% of gross salary, uncapped (Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima))) |
+| Monthly pension base cap (2026) | EUR 11,958.00 (= 6.0 x EUR 1,993 average gross, January to August 2025) ([Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html); 2025: EUR 10,788.00, [Naredba for 2025, NN 137/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_11_137_2266.html)) |
+| Annual Pillar I base cap (2026) | EUR 143,496.00 ([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html); 2025: EUR 129,456.00) |
+| Lowest monthly base (full-time, 2026) | EUR 757.34 (= 0.38 x EUR 1,993) ([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html); 2025: EUR 683.24) |
+| Income tax bands (2025 and 2026) | Lower: up to EUR 60,000/yr (EUR 5,000/mo); Higher: above (Porezna uprava 7322) |
 | Default income tax rates | 20% lower / 30% higher where local rate not set (Porezna uprava 7322) |
-| Basic personal allowance (2025) | EUR 600.00/month (EUR 7,200/yr) (Deloitte) |
-| Minimum gross wage (2025) | EUR 970.00/month (Deloitte) |
+| Basic personal allowance (2025 and 2026) | EUR 600.00/month (EUR 7,200/yr) ([ZPD art. 14(1) and (3), as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html)) |
+| Minimum gross wage (2026) | EUR 1,050.00/month ([Uredba, NN 132/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html); 2025: EUR 970.00, [Uredba, NN 124/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_10_124_2072.html)) |
 | Currency | EUR only (Croatia adopted EUR on 1 Jan 2023; HRK retired) |
 | Reporting form | JOPPD (Obrazac JOPPD), monthly, electronic (Porezna uprava 7319) |
 | Validated by | Pending -- requires sign-off by a Croatian licensed tax adviser / accountant |
 | Validation date | Pending |
 
-**Contribution overview (employment income, 2025):**
+**Contribution overview (employment income, 2026):**
 
 **Contribution overview table**
 
@@ -54,10 +54,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pension -- Pillar I (mirovinsko, I. stup) | Employee (withheld) | 15% (in Pillar II) or 20% (not in Pillar II) | Capped salary base | Porezna uprava 7319 |
 | Pension -- Pillar II (II. stup) | Employee (withheld) | 5% | Capped salary base | Porezna uprava 7319 |
 | **Employee pension total** | **Employee** | **20%** | **Capped salary base** | Porezna uprava 7319 |
-| Health insurance (zdravstveno, HZZO) | Employer (on top) | 16.5% | Gross salary, uncapped | PwC |
-| **Employer total** | **Employer** | **16.5%** | **Gross salary, uncapped** | PwC |
+| Health insurance (zdravstveno, HZZO) | Employer (on top) | 16.5% | Gross salary, uncapped | ZD art. 14(1) |
+| **Employer total** | **Employer** | **16.5%** | **Gross salary, uncapped** | ZD art. 14(1) |
 
-Arithmetic check: employee pension 15% + 5% = 20%. Employer total = 16.5% (single consolidated contribution). Both verified against Porezna uprava 7319 and PwC.
+Arithmetic check: employee pension 15% + 5% = 20%. Employer total = 16.5% (single consolidated contribution). Both verified against Porezna uprava 7319 and Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)).
 
 **Conservative defaults:**
 
@@ -69,10 +69,10 @@ Arithmetic check: employee pension 15% + 5% = 20%. Employer total = 16.5% (singl
 | Employee Pillar II membership unknown | Assume in Pillar II: 15% Pillar I + 5% Pillar II = 20% (Porezna uprava 7319) |
 | Employer on-costs | 16.5% health only -- do NOT add legacy unemployment/injury contributions (PwC) |
 | Unknown gross salary | STOP -- do not compute contributions or net pay without gross |
-| Low salary, base unclear | Apply low-salary pension relief formula; never go below EUR 757.34 floor (FINaCRO/Pravilnik) |
+| Low salary, base unclear | Apply low-salary pension relief formula; never go below EUR 757.34 floor ([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html)) |
 | Personal allowance/dependants unknown | Apply basic EUR 600/month only; do not assume dependants (Deloitte) |
 | Pillar II split for older worker unknown | STOP -- confirm Pillar II status (older workers may be Pillar I only at 20%) [RESEARCH GAP -- reviewer to confirm] |
-| High earner near cap | Apply EUR 11,958.00 monthly pension base cap + EUR 143,496.00 annual Pillar I cap (PwC) |
+| High earner near cap | Apply EUR 11,958.00 monthly pension base cap + EUR 143,496.00 annual Pillar I cap ([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html)) |
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -89,7 +89,7 @@ Arithmetic check: employee pension 15% + 5% = 20%. Employer total = 16.5% (singl
 - **R-HR-SSC-1 -- Gross salary unknown** — Trigger: gross monthly salary not provided (or only net is known). Message: "Croatian payroll is computed gross-to-net. Gross monthly salary in EUR is mandatory: pension contributions, income tax, and employer health cost all derive from the gross. Reverse net-to-gross grossing-up is iterative and locality-dependent. Cannot proceed reliably without the contractual gross."
 - **R-HR-SSC-2 -- Local income tax rate not confirmed** — Trigger: an exact net figure is requested but the residence municipality and its adopted rates are unknown. Message: "Croatian personal income tax rates are set by each local self-government unit within statutory bands (lower 15%-23%, higher 25%-33%). The 20%/30% default is an estimate only and is the statutory fallback where no local rate is set. Confirm the employee's residence municipality and its adopted rates before presenting a definitive net."  _(Porezna uprava 7322; Deloitte)_
 - **R-HR-SSC-3 -- Pillar II status uncertain for older worker** — Trigger: employee may pre-date the 2002 pension reform or be over the age cut-off and Pillar II membership is unconfirmed. Message: "Mandatory Pillar II membership generally applies to those who entered insurance in/after 2002 or were under 40 at the 2002 reform; older workers may be Pillar I only (full 20% to Pillar I). [RESEARCH GAP -- reviewer to confirm.] Confirm Pillar II status with HZMO / the pension fund before splitting the 20% pension contribution."  _(Porezna uprava 7319; conservative_defaults)_
-- **R-HR-SSC-4 -- Self-employed / sole proprietor (obrt) bases** — Trigger: client is an obrtnik (sole proprietor) taxed on income, or a flat-rate (paušalni) taxpayer, not an employee. Message: "Self-employed minimum bases differ: an obrtnik dohodaš faces a minimum monthly gross base of about EUR 1,295.45 for 2025 (= 0.65 x average gross salary EUR 1,993), with contributions at the same rates (FINaCRO/Pravilnik). This skill computes employment payroll; escalate self-employed base determination to a Croatian accountant."
+- **R-HR-SSC-4 -- Self-employed / sole proprietor (obrt) bases** — Trigger: client is an obrtnik (sole proprietor) taxed on income, or a flat-rate (paušalni) taxpayer, not an employee. Message: "Self-employed minimum bases differ: an obrtnik dohodaš faces a minimum monthly gross base of EUR 1,295.45 for 2026 (= 0.65 x average gross salary EUR 1,993; code 0101), with contributions at the same rates ([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html), art. 6). This skill computes employment payroll; escalate self-employed base determination to a Croatian accountant."
 - **R-HR-SSC-5 -- Penalties, arrears, and default interest** — Trigger: unpaid or late contributions / JOPPD from prior periods. Message: "Exact statutory fine amounts and the default-interest rate for late JOPPD/contributions were not found on the consulted authority pages [RESEARCH GAP -- reviewer to confirm against Zakon o doprinosima and Opci porezni zakon (General Tax Act)]. Do not quantify arrears or penalties without a Porezna uprava statement. Escalate to a Croatian accountant."  _(caveats; PwC)_
 - **R-HR-SSC-6 -- Cross-border / posted / expat workers** — Trigger: worker is posted, a non-resident, or covered by an A1 certificate / social security coordination. Message: "EU coordination (Reg. 883/2004), A1 certificates, and totalisation are outside this skill's scope. Escalate to a Croatian accountant." [RESEARCH GAP -- outside research scope]
 
@@ -158,61 +158,61 @@ Six bank statement / payroll classifications and computations for a hypothetical
 
 ### Example 1 -- Standard mid-range salary (gross EUR 2,000/month)
 
-**Input:** Employee, gross monthly salary EUR 2,000.00, tax year 2025, municipality unknown (use defaults).
+**Input:** Employee, gross monthly salary EUR 2,000.00, tax year 2026, municipality unknown (use defaults).
 
 **Bank line:**
-`05.02.2025 ; ISPLATA PLAĆE ; DEBIT ; NETO PLAĆA SIJEČANJ ; -1,400.00 ; EUR`
+`05.02.2026 ; ISPLATA PLAĆE ; DEBIT ; NETO PLAĆA SIJEČANJ ; -1,400.00 ; EUR`
 
 **Reasoning:**
 Matches "ISPLATA PLAĆE" (pattern 3.4). Verify the gross-to-net:
-- Gross EUR 2,000 > EUR 1,300 -> no low-salary relief -> pension base = EUR 2,000 (Rule 2; PwC).
+- Gross EUR 2,000 > EUR 1,300 -> no low-salary relief -> pension base = EUR 2,000 (Rule 2; [ZD art. 21.a](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html)).
 - Employee pension 20% = EUR 400.00 (Pillar I 15% = EUR 300.00; Pillar II 5% = EUR 100.00) (Porezna uprava 7319).
-- PIT base = gross - pension - personal allowance = 2,000 - 400 - 600 = EUR 1,000.00 (allowance EUR 600/mo, Deloitte).
+- PIT base = gross - pension - personal allowance = 2,000 - 400 - 600 = EUR 1,000.00 (allowance EUR 600/mo, ZPD art. 14(1)).
 - Monthly PIT base EUR 1,000 <= EUR 5,000 -> lower band 20% (default) = EUR 200.00 (Porezna uprava 7322).
 - Net pay = 2,000 - 400 - 200 = **EUR 1,400.00**. Reconciles to the bank line.
-- Employer health 16.5% x 2,000 = EUR 330.00 (uncapped) -> total employer cost = EUR 2,330.00 (PwC).
+- Employer health 16.5% x 2,000 = EUR 330.00 (uncapped) -> total employer cost = EUR 2,330.00 (ZD art. 14(1)).
 
 **Classification:** EXCLUDE -- net salary. Employee pension EUR 400 + PIT EUR 200 + employer health EUR 330 remitted via JOPPD.
 
-### Example 2 -- Minimum wage employee (gross EUR 970/month, low-salary relief)
+### Example 2 -- Minimum wage employee (gross EUR 1,050/month, low-salary relief)
 
-**Input:** Employee, gross monthly salary EUR 970.00 (2025 minimum wage), tax year 2025, defaults.
+**Input:** Employee, gross monthly salary EUR 1,050.00 (2026 minimum wage), tax year 2026, defaults.
 
 **Bank line:**
-`05.02.2025 ; PLAĆA ; DEBIT ; NETO ANA HORVAT ; -767.20 ; EUR`
+`05.02.2026 ; PLAĆA ; DEBIT ; NETO ANA HORVAT ; -812.00 ; EUR`
 
 **Reasoning:**
-Matches "PLAĆA" (pattern 3.4). Gross EUR 970 = 2025 minimum wage (Deloitte). It falls in the EUR 700.01-1,300 relief band (Rule 2; PwC):
-- Pension base = gross - 0.5 x (1,300 - gross) = 970 - 0.5 x (1,300 - 970) = 970 - 165 = EUR 805.00.
-- Employee pension 20% = EUR 161.00 (Pillar I EUR 120.75; Pillar II EUR 40.25).
-- PIT base = 970 - 161 - 600 = EUR 209.00. PIT 20% = EUR 41.80.
-- Net = 970 - 161 - 41.80 = **EUR 767.20**. Reconciles.
-- Employer health 16.5% x 970 = EUR 160.05 (uses gross, not the reduced base).
+Matches "PLAĆA" (pattern 3.4). Gross EUR 1,050 = 2026 minimum wage ([Uredba, NN 132/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html)). It falls in the EUR 700.01-1,300 relief band (Rule 2; [ZD art. 21.a](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html)):
+- Pension base = gross - 0.5 x (1,300 - gross) = 1,050 - 0.5 x (1,300 - 1,050) = 1,050 - 125 = EUR 925.00.
+- Employee pension 20% = EUR 185.00 (Pillar I EUR 138.75; Pillar II EUR 46.25).
+- PIT base = 1,050 - 185 - 600 = EUR 265.00. PIT 20% = EUR 53.00.
+- Net = 1,050 - 185 - 53.00 = **EUR 812.00**. Reconciles.
+- Employer health 16.5% x 1,050 = EUR 173.25 (uses gross, not the reduced base).
 
-**Classification:** EXCLUDE -- net salary. Low-salary pension relief reduced the pension base from EUR 970 to EUR 805.
+**Classification:** EXCLUDE -- net salary. Low-salary pension relief reduced the pension base from EUR 1,050 to EUR 925.
 
 ### Example 3 -- High earner above the pension cap (gross EUR 15,000/month)
 
-**Input:** Employee, gross monthly salary EUR 15,000.00, tax year 2025, defaults.
+**Input:** Employee, gross monthly salary EUR 15,000.00, tax year 2026, defaults.
 
 **Bank line:**
-`05.02.2025 ; ISPLATA PLAĆE ; DEBIT ; NETO IVAN KOVAČ ; -9,505.88 ; EUR`
+`05.02.2026 ; ISPLATA PLAĆE ; DEBIT ; NETO IVAN KOVAČ ; -9,505.88 ; EUR`
 
 **Reasoning:**
-Matches "ISPLATA PLAĆE" (pattern 3.4). Gross EUR 15,000 exceeds the monthly pension base cap of EUR 11,958.00 (Rule 4; PwC):
+Matches "ISPLATA PLAĆE" (pattern 3.4). Gross EUR 15,000 exceeds the monthly pension base cap of EUR 11,958.00 (Rule 4; [NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html)):
 - Pension base capped at EUR 11,958.00. Employee pension 20% = EUR 2,391.60 (Pillar I EUR 1,793.70; Pillar II EUR 597.90).
 - PIT base = 15,000 - 2,391.60 - 600 = EUR 12,008.40.
-- PIT: lower band first EUR 5,000 x 20% = EUR 1,000.00; higher band (12,008.40 - 5,000) = 7,008.40 x 30% = EUR 2,102.52; total PIT = EUR 3,102.52 (Porezna uprava 7322; threshold EUR 5,000/mo, Deloitte).
+- PIT: lower band first EUR 5,000 x 20% = EUR 1,000.00; higher band (12,008.40 - 5,000) = 7,008.40 x 30% = EUR 2,102.52; total PIT = EUR 3,102.52 (Porezna uprava 7322; threshold EUR 5,000/mo, ZPD art. 24(3)).
 - Net = 15,000 - 2,391.60 - 3,102.52 = **EUR 9,505.88**. Reconciles.
-- Employer health 16.5% x 15,000 = EUR 2,475.00 (health base is NOT capped, PwC).
-- Also monitor the annual Pillar I base cap EUR 143,496.00 across the year (Rule 4; PwC).
+- Employer health 16.5% x 15,000 = EUR 2,475.00 (health base is NOT capped, ZD art. 14(1)).
+- Also monitor the annual Pillar I base cap EUR 143,496.00 across the year (Rule 4; [NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html)).
 
 **Classification:** EXCLUDE -- net salary. Pension capped at EUR 11,958 base; health uncapped.
 
 ### Example 4 -- Contribution / tax remittance to the state (NOT salary)
 
 **Input line:**
-`15.02.2025 ; POREZNA UPRAVA - DRŽAVNI PRORAČUN ; DEBIT ; JOPPD DOPRINOSI I POREZ SIJEČANJ ; -930.00 ; EUR`
+`15.02.2026 ; POREZNA UPRAVA - DRŽAVNI PRORAČUN ; DEBIT ; JOPPD DOPRINOSI I POREZ SIJEČANJ ; -930.00 ; EUR`
 
 **Reasoning:**
 Matches "POREZNA UPRAVA" + "JOPPD" (patterns 3.1/3.2/3.3). This is the employer remitting, for the Example 1 employee, withheld pension (EUR 400), income tax (EUR 200), and employer health (EUR 330): 400 + 200 + 330 = EUR 930.00. It is a state remittance, not a wage. Contributions and tax are due at the time of salary payment, reported on JOPPD (Porezna uprava 7319).
@@ -222,7 +222,7 @@ Matches "POREZNA UPRAVA" + "JOPPD" (patterns 3.1/3.2/3.3). This is the employer 
 ### Example 5 -- Pension income received (not a contribution)
 
 **Input line:**
-`12.02.2025 ; HZMO ; CREDIT ; MIROVINA VELJAČA ; +680.00 ; EUR`
+`12.02.2026 ; HZMO ; CREDIT ; MIROVINA VELJAČA ; +680.00 ; EUR`
 
 **Reasoning:**
 Matches "HZMO MIROVINA" (pattern 3.5). This is a pension benefit RECEIVED, not a contribution paid. Do not confuse inbound HZMO credits with outbound contribution debits. Pension benefits are not an employer payroll cost.
@@ -231,10 +231,10 @@ Matches "HZMO MIROVINA" (pattern 3.5). This is a pension benefit RECEIVED, not a
 
 ### Example 6 -- Worker not in Pillar II (full 20% to Pillar I)
 
-**Input:** Employee, gross monthly salary EUR 2,000.00, tax year 2025, confirmed NOT in the mandatory second pillar.
+**Input:** Employee, gross monthly salary EUR 2,000.00, tax year 2026, confirmed NOT in the mandatory second pillar.
 
 **Bank line:**
-`05.02.2025 ; PLAĆA ; DEBIT ; NETO MARIJA NOVAK ; -1,400.00 ; EUR`
+`05.02.2026 ; PLAĆA ; DEBIT ; NETO MARIJA NOVAK ; -1,400.00 ; EUR`
 
 **Reasoning:**
 Matches "PLAĆA" (pattern 3.4). Same gross EUR 2,000 as Example 1, but the worker is confirmed NOT in Pillar II (e.g. older worker, Pillar I only). The total employee pension is still **20%**, but the entire 20% goes to Pillar I; there is no 5% Pillar II split (Rule 1; Porezna uprava 7319):
@@ -250,19 +250,19 @@ These rules apply when payroll data is clear and all required inputs are availab
 ### Rule 1 -- Employee pension formula
 
 - **Employee pension formula** — pension_base    = clamp(relief_adjusted_gross, EUR 757.34 floor, EUR 11,958.00 monthly cap) employee_pension = pension_base x 20% -> if in Pillar II: 15% Pillar I + 5% Pillar II -> if NOT in Pillar II: full 20% to Pillar I  _(Porezna uprava 7319)_
-- **Total employee pension and caps** — Total employee pension is always 20% of base. Monthly cap EUR 11,958.00; full-time floor EUR 757.34.  _(Porezna uprava 7319; PwC; FINaCRO/Pravilnik)_
+- **Total employee pension and caps** — Total employee pension is always 20% of base. Monthly cap EUR 11,958.00; full-time floor EUR 757.34 (2026).  _(Porezna uprava 7319; Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)); [Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html))_
 
 ### Rule 2 -- Low-salary pension relief
 
-**Low-salary pension relief table**  _(PwC)_
+**Low-salary pension relief table**  _([Zakon o doprinosima art. 21.a, added by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html))_
 
 | Gross monthly salary | Pension base | Source |
 | --- | --- | --- |
-| Up to EUR 700.00 | gross - EUR 300 | PwC |
-| EUR 700.01 -- EUR 1,300.00 | gross - 0.5 x (1,300 - gross) | PwC |
-| Above EUR 1,300.00 | gross (no relief) | PwC |
+| Up to EUR 700.00 | gross - EUR 300 | ZD art. 21.a(1) |
+| EUR 700.01 -- EUR 1,300.00 | gross - 0.5 x (1,300 - gross) | ZD art. 21.a(2) |
+| Above EUR 1,300.00 | gross (no relief) | ZD art. 21.a |
 
-- **Relief scope** — Relief reduces only the pension base, not the health or income-tax computation directly. Above EUR 1,300 there is no reduction.  _(key_rules; PwC)_
+- **Relief scope** — Relief reduces only the pension base, not the health or income-tax computation directly. Above EUR 1,300 there is no reduction. The unreduced base still counts for pension rights.  _([Zakon o doprinosima art. 21.a, added by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html), paras. 1, 2 and 7)_
 
 ### Rule 3 -- Employer health contribution
 
@@ -270,9 +270,9 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 4 -- Contribution base caps
 
-- **Contribution base caps** — Monthly pension base cap = EUR 11,958.00 (= 6.0 x average gross salary EUR 1,993), applies to both Pillar I and Pillar II on salary. Annual Pillar I base cap = EUR 143,496.00 across all remuneration types. Health base uncapped.  _(PwC)_
+- **Contribution base caps** — Monthly pension base cap for 2026 = EUR 11,958.00 (= 6.0 x average gross salary EUR 1,993), applies to both Pillar I and Pillar II on salary. Annual Pillar I base cap = EUR 143,496.00 across all remuneration types. Health base uncapped. For 2025 the caps were EUR 10,788.00 and EUR 129,456.00 (average gross EUR 1,798).  _([Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html); [Naredba for 2025, NN 137/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_11_137_2266.html))_
 
-### Rule 5 -- Income tax bands and rates (2025)
+### Rule 5 -- Income tax bands and rates (2025 and 2026)
 
 **Income tax bands and rates table**
 
@@ -281,22 +281,22 @@ These rules apply when payroll data is clear and all required inputs are availab
 | Lower | up to EUR 5,000.00 | up to EUR 60,000.00 | 15%-23% | 20% |
 | Higher | above EUR 5,000.00 | above EUR 60,000.00 | 25%-33% | 30% |
 
-- **Local rate and threshold change note** — The exact rate is set by the local self-government unit; where no local rate is set, the statutory default (20% / 30%) applies. The former surtax (prirez) was abolished from 2024. The threshold was raised from EUR 50,400 to EUR 60,000 annual (EUR 4,200 to EUR 5,000 monthly) effective 1 Jan 2025.  _(Porezna uprava 7322; Deloitte)_
+- **Local rate and threshold change note** — The exact rate is set by the local self-government unit; where no local rate is set, the statutory default (20% / 30%) applies. The former surtax (prirez) was abolished from 2024. The threshold was raised from EUR 50,400 to EUR 60,000 annual (EUR 4,200 to EUR 5,000 monthly) effective 1 Jan 2025, and is unchanged for 2026.  _(Porezna uprava 7322; [ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html))_
 
 ### Rule 6 -- Income tax base and order of operations
 
 - **Income tax base and order of operations** — PIT_base = gross_salary - employee_pension - personal_allowance PIT      = (min(PIT_base, 5,000) x lower_rate) + (max(PIT_base - 5,000, 0) x higher_rate)   [monthly] net_pay  = gross_salary - employee_pension - PIT
-- **Personal allowance and dependants note** — Basic personal allowance is EUR 600.00/month (EUR 7,200/yr) for 2025, raised from EUR 560. Dependant allowances scale proportionally [RESEARCH GAP -- specific dependant multipliers not in research data; reviewer to confirm]. Pension contributions are deducted from gross before tax; the 16.5% health contribution is an employer cost and does NOT reduce the employee's PIT base.  _(Deloitte)_
+- **Personal allowance and dependants note** — Basic personal allowance is EUR 600.00/month (EUR 7,200/yr) since 1 January 2025, raised from EUR 560, and unchanged for 2026. Dependant allowances are the basic allowance times a statutory coefficient: 0.5 for a dependent family member and for the 1st child, then 0.7, 1.0, 1.4, 1.9, 2.5, 3.2, 4.0 and 4.9 for the 2nd to 9th child, plus 0.3 (or 1.0) for disability; the croatia-income-tax guide carries the full table. Pension contributions are deducted from gross before tax; the 16.5% health contribution is an employer cost and does NOT reduce the employee's PIT base.  _([ZPD art. 14(1) and (3), as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html))_
 
 ### Rule 7 -- Local self-government rate ranges
 
-**Local self-government rate ranges table**  _(Deloitte; Porezna uprava 7322)_
+**Local self-government rate ranges table**  _([ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html), art. 19.a(2); Porezna uprava 7322)_
 
 | Unit type | Lower band range | Higher band range |
 | --- | --- | --- |
 | Municipalities (općine) | 15%-20% | 25%-30% |
 | Towns (gradovi) | 15%-21% | 25%-31% |
-| Cities / county seats | 15%-22% | 25%-32% |
+| Large cities (veliki gradovi) and county seats | 15%-22% | 25%-32% |
 | City of Zagreb | 15%-23% | 25%-33% |
 
 - **Default when local rate unknown** — Use the actual local rate where known; otherwise apply the conservative default 20%/30%.  _(Porezna uprava 7322)_
@@ -307,7 +307,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 9 -- Minimum wage and floor base
 
-- **Minimum wage and floor base** — Minimum gross wage for 1 Jan-31 Dec 2025 is EUR 970.00/month. The lowest full-time monthly contribution base is EUR 757.34 (= 0.38 x EUR 1,993); full-time contributions cannot be computed on a base below this. Minimum wage rises to EUR 1,050 from 1 Jan 2026 -- do NOT use for 2025.  _(Deloitte; FINaCRO/Pravilnik)_
+- **Minimum wage and floor base** — Minimum gross wage for 1 Jan-31 Dec 2026 is EUR 1,050.00/month (2025: EUR 970.00). The lowest full-time monthly contribution base for 2026 is EUR 757.34 (= 0.38 x EUR 1,993; 2025: EUR 683.24); full-time contributions cannot be computed on a base below this.  _([Uredba, NN 132/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html); [Uredba, NN 124/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_10_124_2072.html); [Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html))_
 
 ### Rule 10 -- First-job health-contribution relief
 
@@ -339,11 +339,11 @@ When payroll data is ambiguous or client circumstances are unclear, flag these s
 
 ### T2-5 -- Self-employed / sole proprietor (obrt) bases
 
-- **T2-5** — **Trigger:** Client is an obrtnik (sole proprietor), paušalist (flat-rate taxpayer), or otherwise self-employed. **Issue:** Minimum monthly bases differ (e.g. obrtnik dohodaš approx EUR 1,295.45 = 0.65 x EUR 1,993 for 2025), with contributions at the same rates but a different base regime (FINaCRO/Pravilnik). **Action:** Flag for reviewer. This skill computes employment payroll only.  _(FINaCRO/Pravilnik)_
+- **T2-5** — **Trigger:** Client is an obrtnik (sole proprietor), paušalist (flat-rate taxpayer), or otherwise self-employed. **Issue:** Minimum monthly bases differ (e.g. obrtnik dohodaš EUR 1,295.45 = 0.65 x EUR 1,993 for 2026), with contributions at the same rates but a different base regime. **Action:** Flag for reviewer. This skill computes employment payroll only.  _([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html), art. 6)_
 
 ### T2-6 -- Low-salary relief near a threshold edge
 
-- **T2-6** — **Trigger:** Gross salary sits near EUR 700 or EUR 1,300, or the period is not 2025. **Issue:** The relief formula has discontinuities at the band edges, and the thresholds may be re-indexed in other years. **Action:** Flag for reviewer. Confirm the applicable-year thresholds and that the gross does not fall below the EUR 757.34 floor base (FINaCRO/Pravilnik).  _(FINaCRO/Pravilnik)_
+- **T2-6** — **Trigger:** Gross salary sits near EUR 700 or EUR 1,300, or the period is not 2026. **Issue:** The relief formula has discontinuities at the band edges, and the thresholds may be re-indexed in other years. **Action:** Flag for reviewer. Confirm the applicable-year thresholds and that the gross does not fall below the EUR 757.34 floor base.  _([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html))_
 
 ### T2-7 -- Cross-border, posted, and non-resident workers
 
@@ -357,7 +357,7 @@ When producing a Croatian payroll/contribution computation, structure the workin
 CROATIA PAYROLL / CONTRIBUTIONS -- WORKING PAPER
 Client / Employer: [name]
 Employee: [name]
-Tax Year: 2025
+Tax Year: 2026
 Period (month): [____]
 Prepared: [date]
 
@@ -454,58 +454,58 @@ If the client provides only a bank statement and no other information:
 4. **Estimate net** using DEFAULT 20%/30% PIT and the EUR 600 allowance -- label as estimate only.
 5. **Flag for reviewer:** "Payroll figures derived from bank statement amounts only. Gross salary, Pillar II status, residence municipality (and therefore local PIT rate), and any dependant allowances or reliefs have not been independently verified. Reviewer must confirm against the JOPPD filing before relying on these figures."
 
-### Thresholds and figures (2025)
+### Thresholds and figures (2026)
 
-**Thresholds and figures (2025)**  _(Porezna uprava 7319; PwC; FINaCRO/Pravilnik; Deloitte; Porezna uprava 7322)_
+**Thresholds and figures (2026)**  _(Porezna uprava 7319; Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)); [Zakon o doprinosima art. 21.a, added by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html); [Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html); [ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html); [Uredba, NN 132/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html); Porezna uprava 7322)_
 
 | Item | Value | Source |
 | --- | --- | --- |
 | Employee pension rate (total) | 20% (15% Pillar I + 5% Pillar II) | Porezna uprava 7319 |
-| Employer health rate | 16.5% (uncapped) | PwC |
-| Monthly pension base cap | EUR 11,958.00 (= 6.0 x EUR 1,993) | PwC |
-| Annual Pillar I base cap | EUR 143,496.00 | PwC |
-| Lowest full-time monthly base | EUR 757.34 (= 0.38 x EUR 1,993) | FINaCRO/Pravilnik |
-| Low-salary relief lower threshold | EUR 700.00 (base = gross - 300) | PwC |
-| Low-salary relief upper threshold | EUR 1,300.00 (base = gross - 0.5 x (1,300 - gross)) | PwC |
-| Income tax bracket threshold | EUR 60,000/yr (EUR 5,000/mo) | Deloitte |
+| Employer health rate | 16.5% (uncapped) | ZD art. 14(1) |
+| Monthly pension base cap | EUR 11,958.00 (= 6.0 x EUR 1,993) | NN 150/2025, art. 4 |
+| Annual Pillar I base cap | EUR 143,496.00 | NN 150/2025, art. 5 |
+| Lowest full-time monthly base | EUR 757.34 (= 0.38 x EUR 1,993) | NN 150/2025, art. 3 |
+| Low-salary relief lower threshold | EUR 700.00 (base = gross - 300) | ZD art. 21.a(1) |
+| Low-salary relief upper threshold | EUR 1,300.00 (base = gross - 0.5 x (1,300 - gross)) | ZD art. 21.a(2) |
+| Income tax bracket threshold | EUR 60,000/yr (EUR 5,000/mo) | ZPD arts. 19 and 24(3) |
 | Default income tax rates | 20% lower / 30% higher | Porezna uprava 7322 |
-| Basic personal allowance | EUR 600.00/mo (EUR 7,200/yr) | Deloitte |
-| Minimum gross wage (2025) | EUR 970.00/mo | Deloitte |
-| Average gross monthly salary reference | EUR 1,993.00 | FINaCRO/Pravilnik |
-| Obrtnik dohodaš min monthly gross base | approx EUR 1,295.45 (= 0.65 x EUR 1,993) | FINaCRO/Pravilnik |
-| Minimum wage 2026 (reference only) | EUR 1,050.00/mo | Deloitte |
-| Income tax bracket threshold 2024 (superseded) | EUR 50,400/yr (EUR 4,200/mo) | Deloitte |
+| Basic personal allowance | EUR 600.00/mo (EUR 7,200/yr) | ZPD art. 14(1) |
+| Minimum gross wage (2026) | EUR 1,050.00/mo | Uredba, NN 132/2025 |
+| Average gross monthly salary reference (January to August 2025) | EUR 1,993.00 | NN 150/2025, art. 2 |
+| Obrtnik dohodaš min monthly gross base | EUR 1,295.45 (= 0.65 x EUR 1,993) | NN 150/2025, art. 6 |
+| Minimum wage 2025 (prior year) | EUR 970.00/mo | Uredba, NN 124/2024 |
+| Income tax bracket threshold 2024 (superseded) | EUR 50,400/yr (EUR 4,200/mo) | ZPD before NN 152/2024 |
 
 - **Employee pension rate (total)** — 20% (15% Pillar I + 5% Pillar II)  _(Porezna uprava 7319)_
-- **Employer health rate** — 16.5% (uncapped)  _(PwC)_
-- **Monthly pension base cap** — EUR 11,958.00 (= 6.0 x EUR 1,993)  _(PwC)_
-- **Annual Pillar I base cap** — EUR 143,496.00  _(PwC)_
-- **Lowest full-time monthly base** — EUR 757.34 (= 0.38 x EUR 1,993)  _(FINaCRO/Pravilnik)_
-- **Low-salary relief lower threshold** — EUR 700.00 (base = gross - 300)  _(PwC)_
-- **Low-salary relief upper threshold** — EUR 1,300.00 (base = gross - 0.5 x (1,300 - gross))  _(PwC)_
-- **Income tax bracket threshold** — EUR 60,000/yr (EUR 5,000/mo)  _(Deloitte)_
+- **Employer health rate** — 16.5% (uncapped)  _(Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)))_
+- **Monthly pension base cap** — EUR 11,958.00 (= 6.0 x EUR 1,993)  _([Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html))_
+- **Annual Pillar I base cap** — EUR 143,496.00  _([Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html))_
+- **Lowest full-time monthly base** — EUR 757.34 (= 0.38 x EUR 1,993)  _([Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html))_
+- **Low-salary relief lower threshold** — EUR 700.00 (base = gross - 300)  _([Zakon o doprinosima art. 21.a, added by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html))_
+- **Low-salary relief upper threshold** — EUR 1,300.00 (base = gross - 0.5 x (1,300 - gross))  _([Zakon o doprinosima art. 21.a, added by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html))_
+- **Income tax bracket threshold** — EUR 60,000/yr (EUR 5,000/mo)  _([ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html))_
 - **Default income tax rates** — 20% lower / 30% higher  _(Porezna uprava 7322)_
-- **Basic personal allowance** — EUR 600.00/mo (EUR 7,200/yr)  _(Deloitte)_
-- **Minimum gross wage (2025)** — EUR 970.00/mo  _(Deloitte)_
-- **Average gross monthly salary reference** — EUR 1,993.00  _(FINaCRO/Pravilnik)_
-- **Obrtnik dohodaš min monthly gross base** — approx EUR 1,295.45 (= 0.65 x EUR 1,993)  _(FINaCRO/Pravilnik)_
-- **Minimum wage 2026 (reference only)** — EUR 1,050.00/mo  _(Deloitte)_
-- **Income tax bracket threshold 2024 (superseded)** — EUR 50,400/yr (EUR 4,200/mo)  _(Deloitte)_
+- **Basic personal allowance** — EUR 600.00/mo (EUR 7,200/yr)  _([ZPD art. 14(1) and (3), as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html))_
+- **Minimum gross wage (2026)** — EUR 1,050.00/mo  _([Uredba, NN 132/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html))_
+- **Average gross monthly salary reference (January to August 2025)** — EUR 1,993.00  _([Naredba for 2026, NN 150/2025, art. 2](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html))_
+- **Obrtnik dohodaš min monthly gross base** — EUR 1,295.45 (= 0.65 x EUR 1,993)  _([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html), art. 6)_
+- **Minimum wage 2025 (prior year)** — EUR 970.00/mo  _([Uredba, NN 124/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_10_124_2072.html))_
+- **Income tax bracket threshold 2024 (superseded)** — EUR 50,400/yr (EUR 4,200/mo)  _(raised to EUR 60,000 by [ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html))_
 
-### Gross-to-net illustrations (2025, default 20%/30% rates, in Pillar II)
+### Gross-to-net illustrations (2026, default 20%/30% rates, in Pillar II)
 
-**Gross-to-net illustrations (2025, default 20%/30% rates, in Pillar II)**  _(Porezna uprava 7322 (rates); PwC (caps/relief); Deloitte (allowance))_
+**Gross-to-net illustrations (2026, default 20%/30% rates, in Pillar II)**  _(Porezna uprava 7322 (rates); [Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html) (caps); [Zakon o doprinosima art. 21.a, added by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html) (relief); [ZPD art. 14(1) and (3), as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html) (allowance))_
 
 | Gross/mo | Pension base | Pension 20% | PIT base | PIT | Net | Employer health 16.5% |
 | --- | --- | --- | --- | --- | --- | --- |
-| EUR 970 | EUR 805.00 | EUR 161.00 | EUR 209.00 | EUR 41.80 | EUR 767.20 | EUR 160.05 |
+| EUR 1,050 | EUR 925.00 | EUR 185.00 | EUR 265.00 | EUR 53.00 | EUR 812.00 | EUR 173.25 |
 | EUR 1,300 | EUR 1,300.00 | EUR 260.00 | EUR 440.00 | EUR 88.00 | EUR 952.00 | EUR 214.50 |
 | EUR 2,000 | EUR 2,000.00 | EUR 400.00 | EUR 1,000.00 | EUR 200.00 | EUR 1,400.00 | EUR 330.00 |
 | EUR 8,000 | EUR 8,000.00 | EUR 1,600.00 | EUR 5,800.00 | EUR 1,240.00 | EUR 5,160.00 | EUR 1,320.00 |
 | EUR 15,000 | EUR 11,958.00 | EUR 2,391.60 | EUR 12,008.40 | EUR 3,102.52 | EUR 9,505.88 | EUR 2,475.00 |
 
-Arithmetic notes (recomputed; rates Porezna uprava 7322, caps/relief PwC, allowance Deloitte):
-- EUR 970: relief base = 970 - 0.5x(1300-970)=805; pension 161; PIT base 970-161-600=209; PIT 209x20%=41.80; net 970-161-41.80=767.20.
+Arithmetic notes (recomputed; rates Porezna uprava 7322, caps NN 150/2025, relief ZD art. 21.a, allowance ZPD art. 14(1)):
+- EUR 1,050: relief base = 1050 - 0.5x(1300-1050)=925; pension 185; PIT base 1050-185-600=265; PIT 265x20%=53; net 1050-185-53=812.
 - EUR 1,300: no relief (=1,300); pension 260; PIT base 1300-260-600=440; PIT 440x20%=88; net 1300-260-88=952.
 - EUR 2,000: pension 400; PIT base 2000-400-600=1,000; PIT 1000x20%=200; net 2000-400-200=1,400.
 - EUR 8,000: pension 1,600; PIT base 8000-1600-600=5,800; PIT = 5,000x20% + 800x30% = 1,000+240=1,240; net 8000-1600-1240=5,160.
@@ -539,7 +539,7 @@ Arithmetic notes (recomputed; rates Porezna uprava 7322, caps/relief PwC, allowa
 
 Gross EUR 2,000/mo, in Pillar II, default rates, no dependants. -> Pension EUR 400.00 (Pillar I 300 + Pillar II 100); PIT base EUR 1,000.00; PIT EUR 200.00; net EUR 1,400.00; employer health EUR 330.00.
 
-Gross EUR 970/mo (minimum wage), in Pillar II, default rates. -> Pension base EUR 805.00 (relief); pension EUR 161.00; PIT base EUR 209.00; PIT EUR 41.80; net EUR 767.20; employer health EUR 160.05.
+Gross EUR 1,050/mo (2026 minimum wage), in Pillar II, default rates. -> Pension base EUR 925.00 (relief); pension EUR 185.00; PIT base EUR 265.00; PIT EUR 53.00; net EUR 812.00; employer health EUR 173.25.
 
 Gross EUR 1,300/mo, in Pillar II, default rates. -> Pension base EUR 1,300.00 (no relief at exactly 1,300); pension EUR 260.00; PIT base EUR 440.00; PIT EUR 88.00; net EUR 952.00; employer health EUR 214.50.
 
@@ -549,7 +549,7 @@ Gross EUR 15,000/mo, in Pillar II, default rates (cap test). -> Pension base cap
 
 Gross EUR 2,000/mo, NOT in Pillar II. -> Total pension still EUR 400.00 but all to Pillar I (Pillar II EUR 0); net EUR 1,400.00 and employer health EUR 330.00 unchanged vs Test 1; only JOPPD allocation differs.
 
-Gross EUR 600/mo (part-time, <=700 band, illustrative). -> Pension base = 600 - 300 = EUR 300.00; pension EUR 60.00; PIT base = 600 - 60 - 600 = EUR -60 -> EUR 0 (no positive PIT base); PIT EUR 0.00; net = 600 - 60 - 0 = EUR 540.00. Note: a EUR 600 full-time gross is below both the EUR 970 minimum wage and the EUR 757.34 floor base -- flag for reviewer as a part-time/edge scenario (FINaCRO/Pravilnik).
+Gross EUR 600/mo (part-time, <=700 band, illustrative). -> Pension base = 600 - 300 = EUR 300.00; pension EUR 60.00; PIT base = 600 - 60 - 600 = EUR -60 -> EUR 0 (no positive PIT base); PIT EUR 0.00; net = 600 - 60 - 0 = EUR 540.00. Note: a EUR 600 full-time gross is below both the EUR 1,050 minimum wage and the EUR 757.34 floor base -- flag for reviewer as a part-time/edge scenario ([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html)).
 
 First-job permanent contract, gross EUR 2,000/mo. -> Employee pension EUR 400.00 and PIT EUR 200.00 unchanged; employer health relief may reduce the EUR 330.00 employer cost to EUR 0 for up to one year -- confirm eligibility before applying (Deloitte).
 
@@ -565,7 +565,7 @@ First-job permanent contract, gross EUR 2,000/mo. -> Employee pension EUR 400.00
 - NEVER forget the EUR 11,958.00 monthly pension base cap or the EUR 143,496.00 annual Pillar I cap for high earners.
 - NEVER apply the 5% Pillar II split to a worker not confirmed in the mandatory second pillar -- allocate the full 20% to Pillar I instead (total rate unchanged).
 - NEVER use the local income tax rate unless confirmed -- default to 20%/30% and flag.
-- NEVER use the EUR 1,050 minimum wage or the EUR 50,400 threshold for 2025 -- those are 2026 / pre-2025 figures.
+- NEVER use the EUR 970 minimum wage, the EUR 10,788 / EUR 129,456 caps or the EUR 50,400 threshold for 2026 -- those are 2025 / pre-2025 figures.
 - NEVER compute a full-time contribution base below EUR 757.34.
 - NEVER quantify penalties or default interest -- exact amounts are a RESEARCH GAP; escalate.
 - NEVER treat inbound HZMO/HZZO credits (pensions, sickness benefit) as contributions paid.

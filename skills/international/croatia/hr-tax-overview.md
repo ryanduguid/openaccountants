@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Croatia (tax year 2025) — r
 jurisdiction: HR
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-06
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,12 +21,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Standard tax year** — Calendar year (1 January to 31 December); companies may apply for a different business year  _(Corporate Profit Tax Act (Zakon o porezu na dobit) — https://porezna-uprava.gov.hr/en/co-rporate-tax-information-on-the-general-rules-rates-taxpayer-withholding-tax-and-submitting-corporate-profit-tax-return/7321)_
 - **Currency** — Euro (EUR), adopted 1 January 2023 (replacing the Croatian kuna)  _(Act on the Introduction of the Euro as the Official Currency in the Republic of Croatia)_
 - **Tax authority** — Tax Administration (Porezna uprava), Ministry of Finance  _(General Tax Act (Opci porezni zakon) — https://porezna-uprava.gov.hr/en)_
-- **Basis of taxation** — Residents taxed on worldwide income; non-residents taxed only on Croatian-source income  _(Income Tax Act (Zakon o porezu na dohodak) — https://taxsummaries.pwc.com/croatia/individual/residence)_
-- **Headline personal income tax rates (annual income)** — Two progressive rates set by each local self-government unit within a 15%-33% band; default 20% / 30% where the local unit makes no choice (lower rate up to EUR 60,000 annual base; higher rate above)  _(Income Tax Act (Zakon o porezu na dohodak) — https://taxsummaries.pwc.com/croatia/individual/taxes-on-personal-income)_
-- **Headline corporate (profit) tax rate** — 18% standard; 10% for taxpayers with annual revenue below EUR 1,000,000  _(Corporate Profit Tax Act (Zakon o porezu na dobit) — https://taxsummaries.pwc.com/croatia/corporate/taxes-on-corporate-income)_
+- **Basis of taxation** — Residents taxed on worldwide income; non-residents taxed only on Croatian-source income  _(Income Tax Act (Zakon o porezu na dohodak) art. 6(1)–(2): worldwide income for residents, domestic income for non-residents — https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)_
+- **Headline personal income tax rates (annual income)** — Two progressive rates set by each local self-government unit within a 15%-33% band; default 20% / 30% where the local unit makes no choice (lower rate up to EUR 60,000 annual base; higher rate above)  _(Income Tax Act (Zakon o porezu na dohodak) arts. 19 and 19.a, as amended by NN 152/2024 — https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html)_
+- **Headline corporate (profit) tax rate** — 18% standard; 10% for taxpayers with annual revenue below EUR 1,000,000  _(Corporate Profit Tax Act (Zakon o porezu na dobit) art. 28, threshold set by NN 114/2023 — https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1613.html)_
 - **Does VAT exist?** — Yes — EU-harmonised VAT (PDV), standard rate 25%  _(Value Added Tax Act (Zakon o porezu na dodanu vrijednost) — https://porezna-uprava.gov.hr/en/value-added-tax-h-e-reinafter-vat-information-on-the-general-rules-rates-and-exemptions-registering-for-and-paying-vat-obtaining-a-refund/7313)_
-- **Corporate profit tax return deadline** — Within 4 months of fiscal year-end (30 April for calendar-year filers); Form PD  _(Corporate Profit Tax Act (Zakon o porezu na dobit) — https://taxsummaries.pwc.com/croatia/corporate/tax-administration)_
-- **Annual personal income tax return deadline** — By the end of February of the following year; the Tax Administration also issues a special assessment for many taxpayers (approx — confirm)  _(Income Tax Act (Zakon o porezu na dohodak) — https://taxsummaries.pwc.com/croatia/individual/tax-administration)_
+- **Corporate profit tax return deadline** — Within 4 months of fiscal year-end (30 April for calendar-year filers); Form PD  _(Corporate Profit Tax Act (Zakon o porezu na dobit) art. 35(1) — https://www.zakon.hr/z/99/Zakon-o-porezu-na-dobit)_
+- **Annual personal income tax return deadline** — By the end of February of the following year; taxpayers who need not file are assessed by the Tax Administration in a special procedure  _(Income Tax Act (Zakon o porezu na dohodak) arts. 50(2) and 51 — https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)_
 - **Annual financial statements filing (FINA)** — By 30 April of the following year, filed with the Financial Agency (FINA)  _(Accounting Act (Zakon o racunovodstvu))_
 - **Minimum global profit tax — the instrument** — *Zakon o minimalnom globalnom porezu na dobit*, **Narodne novine 155/2023** (no. 2362, 22 December 2023), amended by **NN 151/2025** and implemented by the *Pravilnik* at **NN 53/2026**. Article 2 states it transposes **Council Directive (EU) 2022/2523**. In force 31 December 2023 (art. 64)  _([NN 155/2023, no. 2362](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_12_155_2362.html))_
 - **Minimum global profit tax — scope and rate** — **15%**, given in the Act as *petnaest posto (15 %)* (art. 4(1)15). Reaches constituent entities of an MNE group **or a large domestic group** with consolidated revenue of **EUR 750,000,000.00 or more in at least two of the four fiscal years** immediately preceding the tested year, prorated for years that are not twelve months (art. 5(1)–(2))  _([NN 155/2023, arts. 4(1)15 and 5](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_12_155_2362.html))_
