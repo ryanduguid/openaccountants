@@ -49,12 +49,14 @@ honest coverage gap, recorded in their READMEs, and better than a guide whose
 description says Idaho and whose body is denominated in rupiah.
 
 Usage: python3 scripts/check-jurisdiction-placement.py
+The script scans its repository from any working directory.
 Exit status is always 0: this is a review aid, not a gate.
 """
 import collections, glob, os, signal, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from oa_tools.frontmatter import FrontmatterError, read_frontmatter  # noqa: E402
+from oa_tools.paths import REPO_ROOT  # noqa: E402
 
 try:
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
@@ -75,7 +77,7 @@ STATES = {
 
 
 def frontmatter(path):
-    with open(path, encoding='utf-8', errors='replace') as fh:
+    with open(os.path.join(REPO_ROOT, path), encoding='utf-8', errors='replace') as fh:
         text = fh.read()
     try:
         return read_frontmatter(text, strict=True)
@@ -87,7 +89,7 @@ def main():
     problems = 0
 
     by_dir = collections.defaultdict(list)
-    for path in sorted(glob.glob('skills/**/*.md', recursive=True)):
+    for path in sorted(glob.glob('skills/**/*.md', root_dir=REPO_ROOT, recursive=True)):
         parts = path.split(os.sep)
         if len(parts) < 4 or parts[1] not in ('international', 'us-states'):
             continue
@@ -110,7 +112,7 @@ def main():
                 print('%s\n    jurisdiction %s, but its directory is %d x %s' % (path, code, n, mode))
                 problems += 1
 
-    for path in sorted(glob.glob(os.path.join('skills', 'us-states', '*', '*.md'))):
+    for path in sorted(glob.glob(os.path.join('skills', 'us-states', '*', '*.md'), root_dir=REPO_ROOT)):
         here = path.split(os.sep)[2]
         base = os.path.basename(path)[:-3]
         for name, code in STATES.items():

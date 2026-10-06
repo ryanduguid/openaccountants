@@ -54,6 +54,7 @@ The roadmap work that followed the September 2026 evaluation of this fork (pull 
 ### Fixed
 
 - Make `scripts/check-guide-references.py` scan its repository from any working directory and keep reported paths relative to that repository. Running it elsewhere previously scanned an unrelated `skills/` tree or reported zero references.
+- Make the README inventory and jurisdiction-placement advisories scan their own repository from any working directory. Preserve their findings and relative report paths, including README cross-references to shared documentation.
 
 ### Removed
 - **60 duplicate guides**, each in favour of the reviewed, versioned or newer copy, with every reference repointed and each pair recorded in `docs/guide-migrations.json`: 24 code-prefixed VAT/GST twins in country folders (`ch-vat-return` beside `switzerland-vat` and the like, each a re-export of its full-name sibling with the slug as its H1; the kept copies include the tier-1 `uae-vat`, `portugal-vat-return` and `india-gst`); 26 full-name state files that had a code-prefixed sibling (`alabama-sales-tax.md` beside `al-sales-tax.md`); the three same-slug pairs inside one state folder (Florida sales and use tax keeps Rob Hoffman's tier-1 copy; Texas and Washington keep the v1.0 copies); the `ny-nyc/` copy of the NYC UBT guide, which no package built (the `US-NY-NYC` code goes with it); and six copies of state guides under `skills/orchestrator/` that no package built. The index counts 1,867 guides across 243 jurisdictions; the 164 accountant-reviewed are unchanged. (#53)
