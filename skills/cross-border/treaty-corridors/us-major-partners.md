@@ -1,6 +1,6 @@
 ---
 name: us-major-partners
-description: "version: 2.1"
+description: "version: 2.2"
 version: 2.2
 jurisdiction: GLOBAL
 tax_year: 2025
