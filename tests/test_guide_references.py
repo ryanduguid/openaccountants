@@ -2,7 +2,7 @@
 
 import os
 import shutil
-import subprocess
+import subprocess  # nosec B404 - executes only the interpreter and copied fixture script below.
 import sys
 import tempfile
 import unittest
@@ -40,7 +40,9 @@ class GuideReferenceTests(unittest.TestCase):
             outputs = []
             for cwd in (root, nested, unrelated):
                 with self.subTest(cwd=cwd.name):
-                    result = subprocess.run(
+                    # All arguments are the running interpreter or paths created in this fixture; no shell is used.
+                    # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit
+                    result = subprocess.run(  # nosec B603 - fixture paths, no external input.
                         [sys.executable, str(script)], cwd=cwd,
                         capture_output=True, text=True, encoding="utf-8", timeout=30,
                     )
