@@ -2,13 +2,14 @@
 
 The Switzerland section described headline zero rates for interest and
 royalties as complete exemptions and gave services a zero rate with only
-a no-PE note. It did not distinguish payment definitions, conditional exceptions or
-enterprise and individual service rules. It omitted the amended pension
+a no-PE note. It did not distinguish payment definitions, conditional
+exceptions or enterprise and individual service rules. It omitted the amended pension
 exemption and fund restrictions, and included Swiss refund procedures in
 a US-source section.
-This correction starts from clean main `5c54f264`, advances
-`us-major-partners` to version 1.8 and records conditional treaty treatment
-for tax year 2025. The guide remains tier 2 with `pending_review` status.
+This correction started from clean main `5c54f264` and incorporates the
+Singapore merge `627f400d`. It advances `us-major-partners` from version
+1.8 to 1.9 and records conditional Swiss treaty treatment for tax year 2025.
+The guide remains tier 2 with `pending_review` status.
 
 I compared the [1996 convention][convention] and [Treasury explanation][explanation],
 the [2009 protocol][original-protocol], [corrected protocol and English

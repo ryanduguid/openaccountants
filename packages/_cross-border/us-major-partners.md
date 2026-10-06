@@ -1,7 +1,7 @@
 ---
 name: us-major-partners
-description: "version: 1.8"
-version: 1.8
+description: "version: 1.9"
+version: 1.9
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-10-06
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row, and the Netherlands, Ireland and Switzerland sections, PE rows and summary rows, were checked on 6 October 2026. Germany's REIT pension treatment, France's stated interpretation gaps, Australia's indirect parent-ownership treatment and Switzerland's pension PE/fixed-base attribution remain unresolved. The other 4 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. Current domestic law and procedures, claimant eligibility and a complete later-instrument or bilingual comparison remain outside this review. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row, and the Netherlands, Ireland and Switzerland sections, PE rows and summary rows, were checked on 6 October 2026. The Singapore section was compared with selected IRS 2025 guidance and the limited transport agreement on 6 October 2026; controlling-law completeness and exemption eligibility remain unverified. Germany's REIT pension treatment, France's stated interpretation gaps, Australia's indirect parent-ownership treatment and Switzerland's pension PE/fixed-base attribution remain unresolved. The other 3 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. Current domestic law and procedures, claimant eligibility and a complete later-instrument or bilingual comparison remain outside this review. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -445,19 +445,32 @@ These treatments require Swiss treaty residence under [art 4][ch-treaty], entitl
 
 ## US → Singapore
 
-**No comprehensive income tax treaty exists between the US and Singapore.**
+**The official indexes list no comprehensive US–Singapore income tax treaty.** As observed on 6 October 2026, Singapore is absent from the [IRS income tax treaty index][sg-irs-index]; [IRAS][sg-iras-index] lists an in-force limited DTA and an exchange-of-information arrangement for the US. This is a registry observation, not a complete later-instrument inventory.
 
-**US → Singapore income types and domestic rates**
+**2025 scope:** The table gives selected domestic chapter 3 defaults for US-source fixed or determinable annual or periodical (FDAP) income beneficially owned by a foreign person and not effectively connected with a US trade or business. Domestic exemptions and other applicable rules can change the result; Singapore residence alone establishes neither foreign status nor an exemption. See [Pub. 515 (2025), Income Subject to Withholding and Income Not Effectively Connected][sg-p515].
 
-| Income Type | Rate | Notes |
+| Income type | Selected chapter 3 default | Boundary and source |
 | --- | --- | --- |
-| Dividends | 30% (domestic) | No treaty reduction |
-| Interest | 30% (domestic) | No treaty reduction |
-| Royalties | 30% (domestic) | No treaty reduction |
+| Ordinary cash dividends paid by US domestic corporations, excluding RICs and REITs | 30% | No comprehensive-treaty reduction; [Pub. 515, Dividends][sg-p515]. Return of capital, exchanges/redemptions, fund and real-property distributions and foreign-corporation distributions require separate classification. |
+| Ordinary US-source interest | 30% where no domestic exception applies | Deposit and portfolio-interest exceptions below; [Pub. 515, Interest][sg-p515]. |
+| US-source royalties | 30% where no domestic exception applies | Patent and copyright royalty source generally follows where the property is used; [Pub. 515, Chart B and Royalties][sg-p515]. |
 
-**Note:** A limited bilateral agreement covers only shipping and air transport income. Singapore is absent from the IRS A-to-Z list of US income tax treaties. US-source FDAP payments to Singapore residents face 30% default withholding with no treaty relief.
-**Practical note:** Most pure services performed entirely in Singapore are not US-source income and thus not subject to US withholding.
-**Last verified:** May 2026
+**Interest exceptions:** Specified deposit interest from qualifying banking, savings or insurance arrangements, when not connected with a US trade or business, and qualifying portfolio interest are outside chapter 3 withholding under domestic rules. Eligibility depends on the deposit or debt instrument, its date and form, the owner and documentation where required; this is not a complete entitlement test. Use [Pub. 515, Interest on deposits and Portfolio interest][sg-p515]; [Pub. 519 (2025), Interest Income][sg-p519] corroborates the individual rules. No exemption is established for a particular recipient here.
+
+**Chapter 4 and reporting:** A chapter 3 result does not settle chapter 4 withholding or information reporting. Portfolio interest and deposit interest can require separate analysis under those rules. [Pub. 515, Royalties][sg-p515] treats royalties as nonfinancial payments excluded from chapter 4 withholdable payments; that does not settle chapter 3 or reporting.
+
+**Services and royalties:** Personal-service compensation is generally sourced where the work is actually performed. Compensation for work performed entirely in Singapore is generally foreign-source on that basis; mixed-location work requires allocation. Determine the payment's character first: royalties for US use of intellectual property and vessel or aircraft services have separate source rules. See [IRS personal-service source guidance][sg-services] and [Pub. 515, Source of Income and Chart B][sg-p515].
+
+**Limited transport agreement:** The [28 July 1988 exchange of notes][sg-transport] provides a conditional reciprocal exemption for defined income from the international operation of ships or aircraft. Its specified categories include ship/aircraft rentals, incidental container rentals, pool income and certain disposals. The notes contain individual and corporate status and ownership conditions; they do not exempt every Singapore resident, company or transport payment. Current exemption eligibility and implementing rules require separate verification. The July notes amend the March 1988 agreement; its earlier annexes are historical predecessors.
+
+**Source comparison:** 6 October 2026, limited to the cited IRS 2025 guidance, observed registry classification and agreement text. Controlling-law completeness, claimant qualification, current procedures and reciprocal Singapore taxation remain unverified. Tier 2, pending professional review.
+
+[sg-irs-index]: https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z
+[sg-iras-index]: https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements?indexCategories=all&pg=11
+[sg-p515]: https://www.irs.gov/pub/irs-prior/p515--2025.pdf
+[sg-p519]: https://www.irs.gov/pub/irs-prior/p519--2025.pdf
+[sg-services]: https://www.irs.gov/individuals/international-taxpayers/source-of-income-personal-service-income
+[sg-transport]: https://www.iras.gov.sg/media/docs/default-source/dtas/singaporeusalimiteddta.pdf?sfvrsn=f20a8c9f_7
 
 ## US → Mexico
 
