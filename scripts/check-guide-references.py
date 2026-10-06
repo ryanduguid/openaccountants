@@ -23,21 +23,27 @@ Known false positive: a backticked token can be a workflow *slot* name rather
 than a guide — `state-payroll` in us-co-payroll.md is one.
 
 Usage: python3 scripts/check-guide-references.py
+The script scans its repository's skills tree from any working directory.
 """
-import os, re, collections
+import os, re, collections, sys
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.paths import REPO_ROOT, SKILLS_DIR
 
 TAXISH = re.compile(r'(tax|vat|payroll|income|corporate|return|formation|crypto|invoice|'
                     r'social|assembly|intake|base|matrix|credit|estimated|gst|nexus)')
 REF = re.compile(r'`([a-z][a-z0-9]*(?:-[a-z0-9]+){1,6})`')
 
 names = set()
-for dp, _, fns in os.walk('skills'):
+for dp, _, fns in os.walk(SKILLS_DIR):
     for fn in fns:
         if fn.endswith('.md'):
             names.add(fn[:-3])
 
 bad, loc = collections.Counter(), {}
-for dp, _, fns in os.walk('skills'):
+for dp, _, fns in os.walk(SKILLS_DIR):
     for fn in fns:
         if not fn.endswith('.md'):
             continue
@@ -48,7 +54,7 @@ for dp, _, fns in os.walk('skills'):
                 if not TAXISH.search(r) or r in names:
                     continue
                 bad[r] += 1
-                loc.setdefault(r, (p, i))
+                loc.setdefault(r, (os.path.relpath(p, REPO_ROOT), i))
 
 for r, c in bad.most_common():
     p, i = loc[r]
