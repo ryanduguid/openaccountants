@@ -1,7 +1,7 @@
 ---
 name: us-major-partners
-description: "version: 1.7"
-version: 1.7
+description: "version: 1.8"
+version: 1.8
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-10-06
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row, and the Netherlands and Ireland sections, PE rows and summary rows, were checked on 6 October 2026. Germany's REIT pension treatment, France's stated interpretation gaps and Australia's indirect parent-ownership treatment remain unresolved. The other 5 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. Current domestic law and procedures, claimant eligibility and a complete later-instrument or bilingual comparison remain outside this review. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row, and the Netherlands, Ireland and Switzerland sections, PE rows and summary rows, were checked on 6 October 2026. Germany's REIT pension treatment, France's stated interpretation gaps, Australia's indirect parent-ownership treatment and Switzerland's pension PE/fixed-base attribution remain unresolved. The other 4 corridors, the Quick Reference domestic-law statements and general LOB overview were not reverified. Current domestic law and procedures, claimant eligibility and a complete later-instrument or bilingual comparison remain outside this review. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -404,19 +404,44 @@ These treatments require Irish treaty residence under [art 4][ie-treaty], entitl
 
 ## US → Switzerland
 
-**US → Switzerland income types and treaty rates**  _(IRS Table 1)_
+**US-source income paid to Swiss residents: treaty ceilings and conditional exemptions for 2025**
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+These treatments require Swiss treaty residence under [art 4][ch-treaty], entitlement under art 22, beneficial ownership where specified and the category conditions below. Article 4(1)(d) limits partnership, estate or trust residence to income taxed in the same manner as a resident's income in the entity's or its partners'/beneficiaries' hands. Article 4(5) excludes an individual who elects not to be subject to Switzerland's generally imposed income taxes on all US-source income. The [art 1(2)-(3) saving clause][ch-treaty] preserves specified US citizenship/residence taxation. Current domestic classification, tax, withholding, forms/refunds, claimant facts and reciprocal Swiss-source treatment were not reviewed.
+
+| Income type | US-source treaty ceiling or treatment | Primary provision | Conditions |
 | --- | --- | --- | --- |
-| Dividends — portfolio | 15% | Art 10(2) | Swiss domestic WHT 35% |
-| Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
-| Interest | 0% | Art 11(1) | Complete exemption |
-| Royalties | 0% | Art 12(1) | Complete exemption |
-| Technical services | 0% | Art 7 | Business profits — no WHT without PE |
+| Dividends paid by an ordinary US resident company, other cases | 15% maximum of gross | [art 10(1)-(2)(b)][ch-treaty] | Swiss resident beneficial owner; entitlement, attribution and category restrictions below |
+| Dividends paid by an ordinary US resident company, qualifying corporate holding | 5% maximum of gross | [art 10(2)(a)][ch-treaty] | Company beneficial owner directly holding at least 10% voting stock; conditional transparent holdings below; unavailable under paragraph 2 for RIC/REIT dividends |
+| US regulated investment company (RIC) dividends under paragraph 2 | 15% maximum of gross | [art 10(2)][ch-treaty] | The 5% corporate rate is unavailable; general entitlement and attribution conditions apply; paragraph 3 pension treatment is separate |
+| US real estate investment trust (REIT) dividends under paragraph 2 | Conditional 15% ceiling; otherwise no paragraph 2 ceiling | [art 10(2)][ch-treaty] | Individual beneficial owner holding less than 10% in the REIT; 5% is unavailable; paragraph 3 pension treatment is separate |
+| Qualifying pension/retirement arrangement or individual retirement savings plan dividends | Conditional source-state exemption | [amended art 10(3)][ch-protocol]; [2024 arrangement][ch-pension] | Applicable residence or establishment/ownership test, competent-authority correspondence, beneficial ownership, no payer control and all additional treaty requirements; pension attribution remains unresolved below |
+| Interest within art 11 | Conditional source-state exemption | [art 11(1)-(6)][ch-treaty] | Swiss resident beneficial owner; definition, attribution, excess, specified contingent-interest, REMIC and third-jurisdiction rules below |
+| Royalties defined in art 12 | Conditional source-state exemption | [art 12(1)-(4)][ch-treaty] | Swiss resident beneficial owner; definition, attribution, excess and third-jurisdiction rules below |
+| Enterprise services that are business profits | US taxation limited to profits attributable to a US PE | [arts 5 and 7][ch-treaty] | Classify the payment first; separately governed income retains its applicable article; no generic services withholding rate |
+| Individuals' independent personal services | US taxation limited to fixed-base-attributable income from services performed in the US | [art 14][ch-treaty] | A US fixed base must be regularly available; distinct from enterprise PE analysis |
 
-**Source:** US-Switzerland Convention signed 2 October 1996. IRS Table 1.
-**Special provisions:** Swiss domestic WHT on dividends is 35% — treaty relief essential. Swiss refund procedure required (Form 82 / 83). LOB article. Contingent interest taxed at 30%.
-**Last verified:** May 2026
+**Corporate ownership:** The [1996 Treasury explanation of art 10(2)][ch-explanation] excludes indirect corporate-tier holdings and direct non-voting shares from the 5% test. It treats a company holding through a fiscally transparent entity as holding its proportionate interest in specified circumstances; the proportionate voting interest must meet the 10% threshold and may require analysis of the partnership or trust agreement. This is interpretive guidance, not an automatic result for any intermediary.
+
+**Pension dividends:** [Art 10(3), replaced by Protocol art 1][ch-protocol], covers a pension or retirement arrangement resident in Switzerland, or an individual retirement savings plan set up in Switzerland and owned by a Swiss treaty resident, where the competent authorities agree that the arrangement/plan generally corresponds to one recognised for tax purposes in the other state. The beneficial owner must not control the payer. The [5 December 2024 arrangement][ch-pension] identifies qualifying Swiss categories, preserves all additional treaty requirements including art 22, and permits competent-authority verification for unlisted plans. Its lists are nonexclusive. Paragraph 3 overrides paragraph 2, so the RIC/REIT restrictions in paragraph 2 alone do not deny a qualifying exemption; the distribution must still be a dividend within art 10. Article 10(5) redirects paragraphs 1 and 2 to art 7 or 14 for attribution but does not expressly name paragraph 3. The supplied later instruments do not expressly resolve that interaction; pension dividends attributable to a US PE or fixed base remain open for qualified review.
+
+**Interest:** [Art 11(2)][ch-treaty] defines debt-claim income, including the specified REMIC residual-interest excess inclusion, but excludes art 10 income and late-payment penalties. Paragraph 3 redirects attributable interest to art 7 or 14; paragraph 4 limits relief to the arm's-length amount of a special-relationship payment. Under paragraph 6(a), the ordinary exemption does not cover US interest determined by the specified receipts, sales, income, profits, cash flow, property-value or distribution measures to the extent it fails US portfolio-interest qualification. Paragraph 6(b) preserves US domestic-law taxation of REMIC excess inclusions. This review establishes no current domestic rate. Paragraph 5 separately restricts US taxation of interest paid by a Swiss company, including the stated US PE or net real-property/gain circumstances; source and payer facts require review.
+
+**Royalties and services:** [Art 12(2)][ch-treaty] covers the specified copyrights, industrial rights and know-how, plus gains from their disposal contingent on productivity, use or disposition. It excludes motion pictures and reproductions for radio/television broadcasting, which [art 7(8)][ch-treaty] treats as business profits. Other disposal gains require art 13 analysis. Article 12(3) redirects attributable royalties to art 7 or 14; paragraph 4 limits relief to the arm's-length amount. The [explanation][ch-explanation] distinguishes know-how from services that apply professional knowledge; software, consultancy and mixed payments need classification. Article 14 applies to individuals' independent services, with both fixed-base attribution and services performed in the US required for source-state taxation.
+
+**Entitlement and third-jurisdiction PEs:** [Art 22][ch-treaty] requires an applicable eligibility route; paragraph 2 has a beneficiary/member/participant test for the art 4(1)(c) entities. The paragraph 3 derivative-benefits route applies only to arts 10 to 12, not automatically to service income. The [2020 arrangement][ch-usmca] construes its NAFTA references as USMCA references after that agreement enters into force. Under art 22(4), ordinary benefits are denied for income attributable to a third-jurisdiction PE where combined residence-state/third-jurisdiction tax actually paid is below 60% of the residence-state comparator specified there. Affected dividends, interest and royalties have a 15% gross ceiling; other income follows domestic law. The stated exceptions cover PE-developed intangible royalties and other income connected with or incidental to an active PE business, excluding own-account investment activity except qualifying banking, insurance or securities activities.
+
+**Attribution and other payers:** [Art 10(5)][ch-treaty] redirects ordinary attributable dividends to art 7 or 14; the paragraph 3 pension interaction remains unresolved. Article 28(3) preserves the specified PE attribution despite payment after cessation. Article 10(6) restricts taxation of dividends paid by a Swiss resident company, subject to its recipient-residence and attribution exceptions; the ordinary US resident payer rows do not determine those payments. Article 10(7)-(8) separately caps the additional US branch tax for a Swiss resident company at 5% of the treaty-defined dividend-equivalent amount, including specified PE profits and real-property income/gains. Establish the base before applying that ceiling; ordinary PE taxation and current domestic branch calculations are separate.
+
+**Source check:** The [IRS treaty index][ch-index] and competent-authority documents were checked on 6 October 2026. Read the 1996 convention with the [2009 Protocol and corrected English notes][ch-protocol], the [2009 explanation][ch-protocol-explanation], and the 2020/2024 arrangements. [Treasury][ch-force] records protocol entry on 20 September 2019; corrected Protocol art 5(2)(a) applies withholding provisions from 1 January 2020. The 2024 pension arrangement operates for dividends paid from 1 January 2020 and supersedes the May 2021 arrangement. The original pension exemption predated 2009; the amendment expanded it to individual retirement savings plans. Historical explanations do not establish current domestic treatment. The scanned pension provision was checked against native official text; German notes and the complete authentic-language corpus were not independently compared. This remains a tier 2 draft awaiting qualified professional review.
+
+[ch-treaty]: https://www.irs.gov/pub/irs-trty/swiss.pdf
+[ch-explanation]: https://www.irs.gov/pub/irs-trty/swistech.pdf
+[ch-protocol]: https://www.congress.gov/112/cdoc/tdoc1/CDOC-112tdoc1.pdf
+[ch-protocol-explanation]: https://home.treasury.gov/system/files/131/Treaty-Switzerland-Protocol-TE-9-23-2009.pdf
+[ch-pension]: https://www.irs.gov/pub/irs-lbi/switzerland-caa-pension-plans-tax-treaty-benefits-2024.pdf
+[ch-usmca]: https://www.irs.gov/pub/irs-lbi/switzerland_competent_authority_arrangement.pdf
+[ch-index]: https://www.irs.gov/businesses/international-businesses/switzerland-tax-treaty-documents
+[ch-force]: https://home.treasury.gov/news/press-releases/sm781
 
 ## US → Singapore
 
@@ -503,6 +528,7 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 | Japan | More than 12 months | No separate duration-based services PE test; fixed-place and agency rules can still apply | [art 5, including art 5(3)][jp-treaty] |
 | Netherlands | More than 12 months | No separate generic duration-based services PE test; fixed-place and dependent-agent rules can still apply | [arts 5, 15 and 27][nl-treaty]; independent and offshore rules below |
 | Ireland | More than 12 months | No separate generic duration-based services PE test; fixed-place and dependent-agent rules can apply | [arts 5, 7, 14 and 21][ie-treaty]; independent services use a fixed base; offshore rules below |
+| Switzerland | More than 12 months for a building site, construction or installation project, or an installation, drilling rig or ship used for natural-resource exploration/development | No separate generic services day-count PE test; fixed-place and agency rules apply | [arts 5, 7 and 14][ch-treaty]; individuals' independent services use a regularly available fixed base |
 | Mexico | 6 months | 183 days in any 12-month period | Shorter than standard |
 | South Korea | 6 months | None specified | Shorter than standard |
 | Israel | 12 months | None specified | Standard OECD |
@@ -523,6 +549,8 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 
 **Ireland offshore activities:** [Art 21][ie-treaty] applies notwithstanding the other treaty provisions to offshore exploration or exploitation of the seabed/subsoil and natural resources situated in the other state. Enterprise exploitation has a deemed PE without a 120-day exception. Enterprise exploration lasting no more than 120 aggregate days in any twelve-month period does not constitute a PE under art 21(3). Associated enterprises' substantially similar exploration activities aggregate, excluding concurrent days; association uses direct/indirect management, control or capital participation. Article 21(4) deems a fixed base for independent exploration and exploitation services, but exploration income is not taxable in the host state at no more than 120 aggregate days in twelve months. Exploitation has no equivalent income exemption. The enterprise aggregation rule is not automatically an individual-services rule. Employment has its separate paragraph 5 treatment; deferred attribution uses Protocol paragraph 4.
 
+**Switzerland PE rules:** [Art 5][ch-treaty] includes fixed-place and dependent-agent grounds, subject to its activity exclusions and ordinary-course independent-agent rule; corporate control alone does not create a PE. The more-than-12-month project rule in paragraph 3 also covers the stated natural-resource installations, drilling rigs and ships. A mine, oil/gas well, quarry or other extraction place is separately listed in paragraph 2; the project threshold is not a general extraction-site exemption. [Art 14][ch-treaty] separately limits US taxation of an individual's independent services to income attributable to a regularly available US fixed base and derived from services performed in the US.
+
 ## LOB (Limitation on Benefits) Overview
 
 US treaties contain the most stringent LOB provisions globally. The standard US LOB test requires the treaty claimant to satisfy at least one of the following:
@@ -536,7 +564,7 @@ All US treaties listed above (except the 1975 Israel treaty) contain LOB provisi
 
 ## Summary: Selected treaty ceilings and exemptions
 
-The UK, Germany, France and Japan rows in this summary were source-checked on 5 October 2026; the Netherlands and Ireland rows were checked on 6 October. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment and France's stated interpretation gaps remain unresolved. The other summary rows were not reverified.
+The UK, Germany, France and Japan rows in this summary were source-checked on 5 October 2026; the Netherlands, Ireland and Switzerland rows were checked on 6 October. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment, France's stated interpretation gaps and Switzerland's pension PE/fixed-base attribution remain unresolved. The other summary rows were not reverified.
 
 | Corridor | Dividends (substantial) | Interest | Royalties |
 | --- | --- | --- | --- |
@@ -546,7 +574,7 @@ The UK, Germany, France and Japan rows in this summary were source-checked on 5 
 | [US → Japan](#us--japan) | 5% for qualifying corporate holdings; parent and pension exemptions are conditional | Ordinary art 11 interest exempt; specified exceptions | Art 12 royalties exempt; specified exceptions |
 | [US → Netherlands](#us--netherlands) | US-resident payer: 5% maximum for a qualifying direct 10% corporate holding; parent and ordinary art 35 pension exemptions are conditional; RIC/REIT restrictions; other payers use art 10(8) or separate analysis | Defined art 12 interest conditionally exempt; classification, REMIC, attribution, excess and third-jurisdiction rules; separate art 35 limits, with REMIC excess inclusions unresolved | Defined art 13 royalties conditionally exempt; classification, attribution, excess and third-jurisdiction rules |
 | [US → Ireland](#us--ireland) | US resident payer: 5% maximum for a qualifying direct 10% corporate voting holding; conditional transparent holdings; amended RIC/REIT restrictions, with diversification measurement unresolved | Defined art 11 interest conditionally exempt; source, profit-linked, REMIC, attribution, excess, third-state PE and remittance rules | Defined art 12 royalties conditionally exempt; classification, attribution, excess, routing, third-state PE and remittance rules |
-| US ↔ Switzerland | 5% | 0% | 0% |
+| [US → Switzerland](#us--switzerland) | US resident payer: 5%/15% ordinary ceilings with direct corporate voting, entitlement and RIC/REIT conditions; pension/individual-plan exemption is conditional, with PE/fixed-base attribution unresolved | Defined art 11 interest conditionally exempt; specified contingent interest, REMIC, attribution, excess and third-jurisdiction rules | Defined art 12 royalties conditionally exempt; audiovisual exclusion, attribution, excess and third-jurisdiction rules |
 
 ## Disclaimer
 
