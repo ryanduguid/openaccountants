@@ -51,7 +51,7 @@ inventory.
 | Enterprise services differ from personal and furnished-person services | Arts 8, 16 to 19; First Protocol art XII |
 | Construction/connected supervision and substantial-equipment grounds use more than six months | Art 5(2)(i), (j), (3)(f), (g); dependent-agent amendment in Second Protocol art IV |
 | Israel has a distinct LOB structure, stock-class rule, exceptions and discretionary relief | Art 25, replaced by Second Protocol art XII |
-| Dual US/Israeli corporations do not retain arts 12 to 14 benefits | Art 3(3), replaced by First Protocol art II |
+| Dual-resident non-individuals: mutual-agreement route, interim exceptions and distinct payer/recipient treatment | Art 3(3), replaced by Second Protocol art II(3); exchange-of-notes paragraph 4 |
 | Source, saving clause, remittance and delayed PE receipts remain conditions | Arts 4, 6; First Protocol art III; Second Protocol arts III, V |
 
 I checked the following conditional boundaries against those provisions.
@@ -71,7 +71,7 @@ classification, PE and domestic-procedure conditions remain for every row.
 | Loan granted by a non-bank and later held by a bank | Holder status does not establish the institution-granted-loan condition |
 | Qualifying bank grants a loan, later assigned to a non-institution | The supplied sources do not settle the assignee's ceiling; no automatic 10% outcome is assigned |
 | Resident interest on qualifying state-guaranteed/insured debt | Check beneficial derivation and art 13(3) conditions; do not substitute the institution-loan test |
-| Resident elects net-basis interest taxation | Art 13(2)(b) provides Article 8 taxation and reporting/records requirements, not a zero rate |
+| Resident elects net-basis interest taxation | Art 13(2)(b) permits Article 8 taxation, not a zero rate; authorities may adopt income-determination/reporting rules and supporting-records procedures; current implementation and filing procedures are unverified |
 | REMIC residual excess inclusion | Paragraphs 2 and 3 are excluded, including the net election; current domestic treatment is unreviewed |
 | Copyright licence versus industrial patent/know-how licence | Correct gross ceilings are respectively 10% and 15%, subject to definitions and overrides |
 | Contingent IP disposition versus fixed-price disposition | Art 14 covers gains only to the contingent extent; fixed-price classification must be checked under art 15 |
@@ -90,7 +90,8 @@ classification, PE and domestic-procedure conditions remain for every row.
 | Remittance in accrual year, first three months of following year, or later | The first two meet art 6(6)'s time wording; later remittance does not, where the remittance limitation applies |
 | Deferred payment after the attributable US PE ceases | Art 6(7) preserves taxability of income attributable during the PE's existence |
 | Recipient is also a US citizen/resident | Saving-clause and listed exceptions must be checked before assuming treaty limits constrain US tax |
-| Corporation is both US and Israeli under the Convention's definitions | First Protocol art II excludes it from the relevant benefits; no mutual-agreement residence route or approved-enterprise example is inferred |
+| Dual-resident non-individual claims a dividend, interest or royalty benefit as recipient before competent-authority determination | The interim art 3(3) exceptions do not establish this recipient entitlement; authorities shall endeavour to settle residence and Convention application by mutual agreement |
+| Dual-resident non-individual pays a dividend, interest or royalty to an otherwise eligible recipient before that determination | Art 3(3) preserves payer-side application of art 12(2), art 13(2) and (3), and art 14(1)(b); note 4 preserves other provisions needed to apply them; recipient and payment conditions remain |
 
 The Second Protocol explanation heading says 24 January 1993; its body,
 operative signature and notes use 26 January. Article 25(5)'s retained
