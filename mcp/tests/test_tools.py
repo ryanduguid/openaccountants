@@ -165,8 +165,67 @@ class ReviewStatusTests(ToolTreeCase):
         self.assertEqual(server.get_skill("xx-cgt")["review_status"], "pending_review")
         self.assertEqual(server.get_skill("xx-stamp-duty")["review_status"], "current")
 
+    def test_search_and_sections_preserve_canonical_review_metadata(self) -> None:
+        cases = (
+            ("draft", 2, "reviewed_by: Alex Example, CPA\nreview_status: pending_review\n",
+             "research-verified", None, "pending_review", "2026-01-02"),
+            ("current", 1, "reviewed_by: Alex Example, CPA\nreview_status: current\n",
+             "accountant-verified", "Alex Example, CPA", "current", "2026-01-02"),
+            ("renewal", 1, "reviewed_by: Alex Example, CPA\nreview_status: pending_review\n",
+             "accountant-verified", "Alex Example, CPA", "pending_review", "2026-01-02"),
+            ("placeholder", 1, "reviewed_by: pending\nreview_status: pending_review\n",
+             "research-verified", None, "pending_review", "2026-01-02"),
+            ("legacy", 1, "verified_by: Alex Example, CPA\nreview_status: current\n",
+             "accountant-verified", "Alex Example, CPA", "current", "2026-01-02"),
+            ("missing", 2, "", "research-verified", None, "", ""),
+        )
+        fields = ("quality_tier", "verified_by", "review_status", "last_updated")
+        for name, tier, extra, *_ in cases:
+            text = _skill(f"xx-{name}", name, body="Review metadata needle.", extra=extra)
+            text = text.replace("tier: 2\n", f"tier: {tier}\n")
+            if name == "missing":
+                text = text.replace("last_updated: 2026-01-02\n", "")
+            self.write({f"xx/xx-{name}.md": text})
+        server._index.cache_clear()
+        hits = {r["slug"]: r for r in server.search_skills("review metadata needle")["results"]}
+        for name, _, _, *values in cases:
+            slug = f"xx-{name}"
+            for route, response in (("full", server.get_skill(slug)),
+                                    ("sections", server.get_skill_sections(slug)),
+                                    ("search", hits[slug])):
+                with self.subTest(guide=name, route=route):
+                    self.assertEqual({key: response[key] for key in fields}, dict(zip(fields, values)))
+                    for key, expected in zip(fields, values):
+                        self.assertIs(type(response[key]), type(expected), key)
+
 
 class SearchSkillsTests(ToolTreeCase):
+    def test_search_requires_the_full_guide_before_applying_rules(self) -> None:
+        action = server.search_skills("reverse charge")["next_action"]
+        self.assertIn("snippets can omit conditions", action)
+        self.assertIn("get_skill(slug)", action)
+        self.assertIn("full guide", action)
+        self.assertIn("before applying", action)
+
+    def test_review_metadata_uses_the_cached_catalogue_until_cleared(self) -> None:
+        path = "xx/xx-income-tax.md"
+        self.write({path: _skill("xx-income-tax", "XX Income Tax", body="Metadata needle.",
+                                extra="review_status: pending_review\n")})
+        server._index.cache_clear()
+        first = server.search_skills("metadata needle")["results"]
+        self.assertEqual(first[0]["review_status"], "pending_review")
+        self.write({path: _skill("xx-income-tax", "XX Income Tax", body="Metadata needle.",
+                                extra="reviewed_by: Alex Example, CPA\nreview_status: current\n")
+                    .replace("tier: 2\n", "tier: 1\n")
+                    .replace("2026-01-02", "2026-02-03")})
+        self.assertEqual(server.search_skills("metadata needle")["results"], first)
+        server._index.cache_clear()
+        fresh = server.search_skills("metadata needle")["results"][0]
+        self.assertEqual(fresh["quality_tier"], "accountant-verified")
+        self.assertEqual(fresh["verified_by"], "Alex Example, CPA")
+        self.assertEqual(fresh["review_status"], "current")
+        self.assertEqual(fresh["last_updated"], "2026-02-03")
+
     def test_search_names_the_enclosing_heading_and_a_heading_match_itself(self) -> None:
         self.write({"xx/xx-income-tax.md": _skill(
             "xx-income-tax", "XX Income Tax", body="Intro.\n\n## Allowances\nNeedle applies.",

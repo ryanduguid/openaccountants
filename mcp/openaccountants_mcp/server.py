@@ -915,12 +915,15 @@ def get_skill(slug: str) -> dict[str, Any]:
 
 @mcp.tool(annotations=_READONLY)
 def get_skill_sections(slug: str) -> dict[str, Any]:
-    """Fetch a skill parsed into sections (heading + content + level).
+    """Fetch sections (heading + content + level) and guide review metadata.
+
+    quality_tier, verified_by, review_status and last_updated are top-level
+    fields with the same values as get_skill.
 
     Args:
         slug: Skill slug (e.g. "malta-income-tax").
     """
-    _, body = _read_skill(slug)
+    rec, body = _read_skill(slug)
     return {
         "slug": slug,
         "sections": _split_sections(body),
@@ -930,6 +933,10 @@ def get_skill_sections(slug: str) -> dict[str, Any]:
             "tag every transaction as Classified, Assumed, or Needs Input."
         ),
         "guardrails": _GUARDRAILS,
+        "quality_tier": rec["quality_tier"],
+        "verified_by": rec["verified_by"],
+        "review_status": rec["review_status"],
+        "last_updated": rec["last_updated"],
     }
 
 
@@ -946,7 +953,9 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
         every skill whose markdown contains the query (case-insensitive), and
         ``results`` holds the best ``k`` (at most 25) ranked by how often the
         query occurs, a title match first; each has slug, title,
-        jurisdiction, matches, matched_section and snippet.  When the server
+        jurisdiction, matches, matched_section, snippet, quality_tier,
+        verified_by, review_status and last_updated. Snippets can omit
+        conditions; fetch the full guide before applying rules. When the server
         has no guide content at all the list is empty and an ``error`` field
         says why.  A query longer than 200 characters is refused.
     """
@@ -992,11 +1001,16 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
             "matches": hits,
             "matched_section": section,
             "snippet": snippet,
+            "quality_tier": rec["quality_tier"],
+            "verified_by": rec["verified_by"],
+            "review_status": rec["review_status"],
+            "last_updated": rec["last_updated"],
         })
     if results:
         next_action = (
-            "Load the most relevant match with get_skill(slug), then apply its "
-            "rules. For a guided, scoped plan, call start(intent, jurisdiction)."
+            "Search snippets can omit conditions. Load the full guide for the "
+            "most relevant match with get_skill(slug) before applying its rules. "
+            "For a guided, scoped plan, call start(intent, jurisdiction)."
         )
     else:
         next_action = (
