@@ -143,7 +143,7 @@ Then connect your AI client (next section) using the `openaccountants-mcp` comma
 For contributors, or if you want the server to read your local, editable checkout:
 
 ```bash
-git clone https://github.com/openaccountants/openaccountants.git
+git clone https://github.com/ryanduguid/openaccountants.git
 cd openaccountants
 pip install -e ./mcp
 ```
