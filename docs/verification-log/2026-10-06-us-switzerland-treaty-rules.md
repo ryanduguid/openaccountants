@@ -1,8 +1,11 @@
 # US treaties: Switzerland rules
 
-The Switzerland section gave interest, royalties and technical services
-unconditional zero rates, omitted the amended pension exemption and fund
-restrictions, and included Swiss refund procedures in a US-source section.
+The Switzerland section described headline zero rates for interest and
+royalties as complete exemptions and gave services a zero rate with only
+a no-PE note. It did not distinguish payment definitions, conditional exceptions or
+enterprise and individual service rules. It omitted the amended pension
+exemption and fund restrictions, and included Swiss refund procedures in
+a US-source section.
 This correction starts from clean main `5c54f264`, advances
 `us-major-partners` to version 1.8 and records conditional treaty treatment
 for tax year 2025. The guide remains tier 2 with `pending_review` status.
@@ -48,12 +51,12 @@ instrument check is not a complete authentic-language comparison.
 | --- | --- |
 | Ordinary 15% ceiling and qualifying direct corporate 5% ceiling | Convention art 10(1)-(2); 1996 explanation of art 10(2) |
 | RIC 5% exclusion and REIT individual holding strictly below 10% | Convention art 10(2); paragraph 3 pension treatment is separate |
-| Conditional pension/individual-plan exemption and current arrangement | Protocol art 1; 2024 arrangement paras 1 and 4 to 6, 8 |
+| Conditional pension/individual-plan exemption, specific LOB test and current arrangement | Protocol art 1; 2009 explanation of art 1; convention art 22(2); 2024 arrangement paras 1 and 4 to 6, 8 |
 | Defined interest, attribution, arm's-length limit, specified contingent interest and REMIC reservation | Convention art 11(1)-(6) |
 | Defined royalties, audiovisual exclusion, contingent disposal, attribution and excess | Convention arts 7(8), 12 and 13(4) |
 | Enterprise PE versus individual fixed-base/services-location rules | Convention arts 5, 7 and 14 |
 | Residence, saving clause, LOB, third-jurisdiction restriction and USMCA interpretation | Convention arts 1, 4 and 22; 2020 arrangement |
-| Deferred PE attribution, other dividend payers and separate branch-tax base/ceiling | Convention arts 28(3), 10(6)-(8) |
+| Deferred PE/fixed-base attribution, other dividend payers and separate branch-tax base/ceiling | Convention arts 28(3), 10(6)-(8), 13(1) and (3); 1996 explanation of arts 10, 11, 12 and 14 |
 
 I checked the following distinctions against the cited text. These are
 conditional rule comparisons, not taxpayer calculations or withholding
@@ -65,6 +68,7 @@ instructions.
 | Corporate-tier or non-voting holding | Does not satisfy the explanation's direct voting test; transparent holdings require proportionate ownership and agreement analysis |
 | Individual holds 9.99% versus 10% in a REIT | Only 9.99% satisfies the paragraph 2 less-than-10% element; paragraph 3 pension treatment remains separate |
 | Pension or plan controls the payer | The amended paragraph 3 exemption does not apply |
+| Article 22(2) entitled beneficiaries, members or participants are exactly half versus more than half | Only more than half satisfies the stated numerical element, if there are any; the 2009 explanation requires this test for art 10(3), with particular individual-plan characterisation left for review |
 | Unlisted retirement plan | The arrangement's list is nonexclusive; correspondence can require competent-authority verification |
 | Qualifying pension receives a RIC/REIT dividend | Paragraph 2 restrictions alone do not deny paragraph 3 relief; dividend character and all additional requirements remain |
 | Pension dividend attributable to a PE or fixed base | Interaction of art 10(3) and (5) remains unresolved in the retained later instruments |
@@ -78,10 +82,10 @@ instructions.
 | Additional US branch tax | The 5% ceiling applies to the defined dividend-equivalent amount, not all branch receipts or ordinary PE tax |
 
 Current domestic rates, branch calculations, forms and withholding/refunds,
-claimant facts, particular-plan correspondence/control, mixed-payment
+claimant facts, particular-plan characterisation/correspondence/control, mixed-payment
 classification, reciprocal Swiss-source use, professional sign-off,
 taxpayer end-to-end use and whole-corpus accuracy remain unverified.
-Repository checks and publication readiness are recorded in the
+Repository checks and remaining delivery gates are recorded in the
 accompanying PR; they do not establish financial accuracy.
 
 [convention]: https://www.irs.gov/pub/irs-trty/swiss.pdf
