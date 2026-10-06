@@ -1,7 +1,7 @@
 ---
 name: us-major-partners
-description: "version: 1.10"
-version: 1.10
+description: "version: 1.11"
+version: 1.11
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-10-06
@@ -499,7 +499,7 @@ These are limits under the [1976 convention][kr-treaty], subject to treaty resid
 | Income Type | Conditional source-tax ceiling or treatment | Treaty Article | Conditions |
 | --- | --- | --- | --- |
 | Dividends, ordinary | 15% of gross maximum | [Art 12(2)(a)][kr-treaty] | Korean treaty-resident recipient; effectively connected shares use art 8; corporate art 17 and saving-clause checks apply |
-| Dividends, qualifying corporate recipient | 10% of gross maximum | [Art 12(2)(b)][kr-treaty] | Recipient corporation owns at least 10% of outstanding voting shares throughout the payer's taxable year before payment and the whole prior taxable year, if any; prior-year interest/dividend gross income is no more than 25% after the specified exclusions below; attribution, art 17 and saving-clause checks remain |
+| Dividends, qualifying corporate recipient | 10% of gross maximum | [Art 12(2)(b)][kr-treaty] | Recipient corporation owns at least 10% of outstanding voting shares throughout the payer's taxable year before payment and the whole prior taxable year, if any; no more than 25% of the payer's gross income for that prior year, if any, consists of interest/dividends other than the specified excluded categories below; attribution, art 17 and saving-clause checks remain |
 | Defined interest, ordinary | 12% of gross maximum | [Art 13(2), (6)][kr-treaty] | Korean treaty-resident recipient; US source under art 6(2); effectively connected indebtedness uses art 8; related-person excess, art 17 and saving-clause checks apply |
 | Specified governmental interest | Exempt if art 13(3) conditions hold | [Art 13(3)][kr-treaty] | Beneficially derived by Korea's government, local authority, central bank or an instrumentality wholly owned by the government, central bank or both and not subject to Korean tax on its income; apply the paragraph's full conditions |
 | Royalties within art 14(2) | 10% of gross maximum | [Art 14(2)][kr-treaty] | Defined copyright/reproduction and motion-picture/broadcasting categories below; Korean treaty-resident recipient; source, attribution, related-person excess, art 17 and saving-clause checks apply |

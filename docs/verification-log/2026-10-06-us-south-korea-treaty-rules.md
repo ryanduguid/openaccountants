@@ -6,7 +6,7 @@ interest, royalties and services, while the convention uses arts 12, 13,
 payer-income tests. A blanket services zero rate omitted the separate
 individual rules, and the construction row omitted the strict threshold
 and other PE grounds. This correction starts from main `0152342cd832340b5fc4611276c117e866ed9417`
-and advances `us-major-partners` from version 1.9 to 1.10. Its primary
+and advances `us-major-partners` from version 1.9 to 1.11. Its primary
 figures remain for 2025; the guide remains tier 2 and `pending_review`.
 
 I compared the [1976 convention][convention], including its related
@@ -51,7 +51,7 @@ elements and do not calculate a taxpayer's liability or withholding.
 | --- | --- |
 | Individual versus corporate dividend recipient | Only the corporation can use art 12(2)(b); every other condition remains |
 | Voting holding of 9.99% versus 10% | Only 10% satisfies the at-least-10% element; a payment-date holding alone does not meet the period test |
-| Relevant prior-year interest/dividend gross income of 25% versus more than 25% | Only 25% meets the not-more-than-25% element, after specified exclusions |
+| Included interest/dividends equal 25% versus more than 25% of the payer's gross income for the prior taxable year, if any | Only 25% meets that element; the specified categories are excluded from the interest/dividend component |
 | Subsidiary voting holding of 49.99% versus 50% when interest/dividends are received | Only 50% meets that income-exclusion ownership element |
 | No prior taxable year | Preserve 'if any'; do not invent a prior-year period or income denominator |
 | Partly owned versus wholly owned governmental instrumentality | Only wholly owned meets that ownership element; beneficial derivation and tax-status conditions remain |
