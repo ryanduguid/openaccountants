@@ -37,9 +37,15 @@ Total row resets the running sum so tables with intermediate subtotals check
 each block separately.
 
 Usage: python3 scripts/check-total-rows.py [dir ...]   (default: skills)
+The default scans this checkout from any working directory; explicit paths are used as given.
 Exit status is always 0: this is a review aid, not a gate.
 """
 import glob, os, re, sys
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.paths import REPO_ROOT
 
 PCT = re.compile(r'(\d{1,3}(?:[.,]\d+)?)\s*%')
 TOTAL = re.compile(r'^\W*\**\s*(total|combined|sub-?total|overall|aggregate)\b', re.I)
@@ -47,10 +53,12 @@ SKIP = re.compile(r'\b(cap|ceiling|floor|max|min|threshold|base|of which|note|n/
 
 def cells(r): return [c.strip() for c in r.strip().strip('|').split('|')]
 
+base_dir = REPO_ROOT if len(sys.argv) == 1 else os.curdir
+
 checked = bad = 0
 for root in sys.argv[1:] or ['skills']:
-    for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True)):
-        lines = open(p, encoding='utf-8', errors='replace').read().split('\n')
+    for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True, root_dir=base_dir)):
+        lines = open(os.path.join(base_dir, p), encoding='utf-8', errors='replace').read().split('\n')
         i = 0
         while i < len(lines):
             if not lines[i].strip().startswith('|'): i += 1; continue
@@ -132,9 +140,9 @@ def side(label):
 
 b_checked = b_bad = 0
 for root in sys.argv[1:] or ['skills']:
-    for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True)):
+    for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True, root_dir=base_dir)):
         rows = []
-        for line in open(p, encoding='utf-8', errors='replace'):
+        for line in open(os.path.join(base_dir, p), encoding='utf-8', errors='replace'):
             m = BULLET.match(line)
             if not m:
                 rows.append(None)

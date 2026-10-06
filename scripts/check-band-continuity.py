@@ -34,9 +34,15 @@ tables. Differences beyond a quarter of the band value are ignored as unlikely
 to be the same scale.
 
 Usage: python3 scripts/check-band-continuity.py [dir ...]   (default: skills)
+The default scans this checkout from any working directory; explicit paths are used as given.
 Exit status is always 0: this is a review aid, not a gate.
 """
 import glob, os, re, signal, sys
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.paths import REPO_ROOT
 
 try:
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
@@ -116,10 +122,12 @@ def scan(path):
     return out
 
 
+base_dir = REPO_ROOT if len(sys.argv) == 1 else os.curdir
+
 total = 0
 for root in sys.argv[1:] or ['skills']:
-    for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True)):
-        for hdr, a, b, kind in scan(p):
+    for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True, root_dir=base_dir)):
+        for hdr, a, b, kind in scan(os.path.join(base_dir, p)):
             print('%s\n    under: %s\n    %s\n    %s\n    -> %s' % (p, hdr, a[:96], b[:96], kind))
             total += 1
 print('bracket tables with a gap or overlap:', total)
