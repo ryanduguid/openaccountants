@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T08:30:40+00:00",
+ "generated_at": "2026-10-06T09:12:42+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -7920,8 +7920,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "tax_year": "2026",
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "ee-corporate-income-tax",
@@ -7933,8 +7933,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "tax_year": "2026",
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "ee-tax-overview",
@@ -7946,8 +7946,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "tax_year": "2026",
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "estonia-income-tax",
@@ -7960,7 +7960,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "estonia-payroll",
@@ -7973,7 +7973,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "estonia-social-contributions",
@@ -7986,7 +7986,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "estonia-tax-optimization",
@@ -7999,7 +7999,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-06"
   },
   {
    "slug": "estonia-vat-return",
