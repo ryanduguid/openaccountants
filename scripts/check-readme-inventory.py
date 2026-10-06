@@ -33,9 +33,15 @@ cross-reference, not a phantom, and is not reported — `skills/foundation`
 legitimately points at `docs/skill-template.md`.
 
 Usage: python3 scripts/check-readme-inventory.py
+The script scans its repository from any working directory.
 Exit status is always 0: this is a review aid, not a gate.
 """
 import glob, os, re, signal, sys
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.paths import REPO_ROOT
 
 try:
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
@@ -55,21 +61,22 @@ TOPICS = [
 
 # every guide slug in the repo, so a cross-reference is not mistaken for a phantom
 ALL = {os.path.basename(p)[:-3]
-       for p in glob.glob('skills/**/*.md', recursive=True) + glob.glob('docs/**/*.md', recursive=True)}
+       for p in glob.glob('skills/**/*.md', root_dir=REPO_ROOT, recursive=True)
+       + glob.glob('docs/**/*.md', root_dir=REPO_ROOT, recursive=True)}
 
 
 def main():
     phantom = omitted = false_claims = folders = 0
-    for readme in sorted(glob.glob('skills/**/README.md', recursive=True)):
+    for readme in sorted(glob.glob('skills/**/README.md', root_dir=REPO_ROOT, recursive=True)):
         folder = os.path.dirname(readme)
         if folder in ('skills', os.path.join('skills', 'us-states')):
             continue                      # top-level indexes span subdirectories
-        on_disk = [os.path.basename(p)[:-3] for p in sorted(glob.glob(os.path.join(folder, '*.md')))
+        on_disk = [os.path.basename(p)[:-3] for p in sorted(glob.glob(os.path.join(folder, '*.md'), root_dir=REPO_ROOT))
                    if os.path.basename(p) != 'README.md']
         if not on_disk:
             continue
         folders += 1
-        text = open(readme, encoding='utf-8', errors='replace').read()
+        text = open(os.path.join(REPO_ROOT, readme), encoding='utf-8', errors='replace').read()
         listed = {(m.group(1) or m.group(2)) for m in SLUG.finditer(text)} - {'README'}
 
         ghosts = sorted(s for s in listed - set(on_disk) if s not in ALL)
