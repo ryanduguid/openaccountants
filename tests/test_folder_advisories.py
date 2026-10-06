@@ -13,6 +13,46 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 class FolderAdvisoryTests(unittest.TestCase):
+    def make_checkout(self, directory, script_names):
+        root = Path(directory) / "checkout"
+        scripts = root / "scripts"
+        helpers = scripts / "oa_tools"
+        helpers.mkdir(parents=True)
+        for name in ("__init__.py", "paths.py", "frontmatter.py"):
+            shutil.copyfile(REPO_ROOT / "scripts" / "oa_tools" / name, helpers / name)
+        for name in script_names:
+            shutil.copyfile(REPO_ROOT / "scripts" / name, scripts / name)
+        folder = root / "skills" / "international" / "example"
+        folder.mkdir(parents=True)
+        for name, code in (("listed-tax", "AA"), ("hidden-payroll", "AA"), ("misplaced-tax", "BB")):
+            (folder / (name + ".md")).write_text(
+                f"---\njurisdiction: {code}\n---\nGuide\n", encoding="utf-8"
+            )
+        (folder / "README.md").write_text(
+            "# Files\n`listed-tax`\n`missing-tax`\n`shared-example`\n"
+            "## What's NOT covered\n- Payroll\n", encoding="utf-8"
+        )
+        docs = root / "docs"
+        docs.mkdir()
+        (docs / "shared-example.md").write_text("Shared document\n", encoding="utf-8")
+        state = root / "skills" / "us-states" / "wa"
+        state.mkdir(parents=True)
+        (state / "arizona-sales-tax.md").write_text(
+            "---\njurisdiction: US-WA\n---\nGuide\n", encoding="utf-8"
+        )
+        for index in (root / "skills" / "README.md", state.parent / "README.md"):
+            index.write_text("`missing-index-tax`\n", encoding="utf-8")
+        nested = root / "nested"
+        nested.mkdir()
+        unrelated = Path(directory) / "unrelated"
+        foreign = unrelated / "skills" / "international" / "foreign"
+        foreign.mkdir(parents=True)
+        (foreign / "foreign-tax.md").write_text(
+            "---\njurisdiction: CC\n---\nGuide\n", encoding="utf-8"
+        )
+        (foreign / "README.md").write_text("`foreign-missing-tax`\n", encoding="utf-8")
+        return scripts, (root, nested, unrelated)
+
     def test_advisories_scan_their_own_checkout(self):
         summaries = {
             "check-readme-inventory.py": (
@@ -24,47 +64,11 @@ class FolderAdvisoryTests(unittest.TestCase):
             ),
         }
         with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory) / "checkout"
-            scripts = root / "scripts"
-            helpers = scripts / "oa_tools"
-            helpers.mkdir(parents=True)
-            for name in ("__init__.py", "paths.py", "frontmatter.py"):
-                shutil.copyfile(REPO_ROOT / "scripts" / "oa_tools" / name, helpers / name)
-            for name in summaries:
-                shutil.copyfile(REPO_ROOT / "scripts" / name, scripts / name)
-            folder = root / "skills" / "international" / "example"
-            folder.mkdir(parents=True)
-            for name, code in (("listed-tax", "AA"), ("hidden-payroll", "AA"), ("misplaced-tax", "BB")):
-                (folder / (name + ".md")).write_text(
-                    f"---\njurisdiction: {code}\n---\nGuide\n", encoding="utf-8"
-                )
-            (folder / "README.md").write_text(
-                "# Files\n`listed-tax`\n`missing-tax`\n`shared-example`\n"
-                "## What's NOT covered\n- Payroll\n", encoding="utf-8"
-            )
-            docs = root / "docs"
-            docs.mkdir()
-            (docs / "shared-example.md").write_text("Shared document\n", encoding="utf-8")
-            state = root / "skills" / "us-states" / "wa"
-            state.mkdir(parents=True)
-            (state / "arizona-sales-tax.md").write_text(
-                "---\njurisdiction: US-WA\n---\nGuide\n", encoding="utf-8"
-            )
-            for index in (root / "skills" / "README.md", state.parent / "README.md"):
-                index.write_text("`missing-index-tax`\n", encoding="utf-8")
-            nested = root / "nested"
-            nested.mkdir()
-            unrelated = Path(directory) / "unrelated"
-            foreign = unrelated / "skills" / "international" / "foreign"
-            foreign.mkdir(parents=True)
-            (foreign / "foreign-tax.md").write_text(
-                "---\njurisdiction: CC\n---\nGuide\n", encoding="utf-8"
-            )
-            (foreign / "README.md").write_text("`foreign-missing-tax`\n", encoding="utf-8")
+            scripts, working_directories = self.make_checkout(directory, summaries)
 
             for name, summary in summaries.items():
                 outputs = []
-                for cwd in (root, nested, unrelated):
+                for cwd in working_directories:
                     with self.subTest(script=name, cwd=cwd.name):
                         # The interpreter and script path are fixed locally; cwd is a private fixture.
                         # nosemgrep: python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit
