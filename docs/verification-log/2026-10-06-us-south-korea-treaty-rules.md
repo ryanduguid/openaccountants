@@ -6,8 +6,11 @@ interest, royalties and services, while the convention uses arts 12, 13,
 payer-income tests. A blanket services zero rate omitted the separate
 individual rules, and the construction row omitted the strict threshold
 and other PE grounds. This correction starts from main `0152342cd832340b5fc4611276c117e866ed9417`
-and advances `us-major-partners` from version 1.9 to 1.12. Its primary
+and advances `us-major-partners` from version 1.9 to 2.1. Its primary
 figures remain for 2025; the guide remains tier 2 and `pending_review`.
+The final integration includes main `5ee9e99b9ec15a4054ddb5424341fd957c2681e0`
+and preserves its Mexico correction from guide version 2.0. The independently
+checked South Korea income and PE text is unchanged by that integration.
 
 I compared the [1976 convention][convention], including its related
 notes, with the relevant [Treasury explanation][explanation], and read
