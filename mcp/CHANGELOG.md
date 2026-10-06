@@ -9,6 +9,10 @@ repository; nothing here publishes to PyPI.
 
 ## [Unreleased]
 
+### Added
+
+- Exercise inherited HTTP limits in CI: oversized Streamable HTTP and SSE bodies, session admission, idle expiry and capacity reuse after deletion or a refused opening request. Small in-process fixtures also check streamed bodies without Content-Length and the inclusive body-size boundary.
+
 ### Fixed
 
 - Require MCP SDK `>=1.30.0,<2` as this fork's supported security floor. The Linux/Python 3.10 CI job installs the exact minimum; installed-console tests cover structured success and empty-catalogue errors. Older SDK pins must be updated. Stateful Streamable HTTP clients must initialise again after an idle session expires; see the README for the inherited 404/413/503 limits.
