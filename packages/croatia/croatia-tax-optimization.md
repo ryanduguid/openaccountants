@@ -1,10 +1,10 @@
 ---
 name: croatia-tax-optimization
 description: Use this skill whenever asked about reducing tax in Croatia, tax planning, saving tax, allowances or deductions a client might be missing, or any question about legal strategies to minimise income tax for a self-employed person or small business in Croatia. Trigger on phrases like "reduce tax Croatia", "paušalni obrt", "lump-sum tax", "flat-rate sole proprietor", "obrt vs d.o.o.", "save tax Croatia", "tax planning Croatia", "deductions I'm missing", "returnee tax relief", "young person tax relief", "porezno planiranje". This skill covers the paušalni (lump-sum) regime vs standard obrt vs d.o.o. company, deductions most people miss, the personal allowance and dependants, the returnee and youth reliefs, capital-allowance timing, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Croatian tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: HR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-06
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Croatia Tax Optimization
 
-## Croatia Tax Optimization Skill v0.1
+## Croatia Tax Optimization Skill v0.2
 
-**Tier 2 — research-verified. Sources: Porezna uprava (Tax Administration), PwC Worldwide Tax Summaries, KPMG Croatia, and the 1 Jan 2025 tax-law amendments. Figures must agree with `croatia-income-tax.md` / `croatia-social-contributions.md`. NOT yet signed off by a licensed Croatian tax adviser. Every suggestion must be reviewed by a credentialed professional; aggressive positions are never advised.**
+**Tier 2 — research-verified. Sources: Porezna uprava (Tax Administration), the Income Tax, Profit Tax and VAT Acts and their 1 Jan 2025 amendments in Narodne novine, PwC Worldwide Tax Summaries and KPMG Croatia. Figures must agree with `croatia-income-tax.md` / `croatia-social-contributions.md`. NOT yet signed off by a licensed Croatian tax adviser. Every suggestion must be reviewed by a credentialed professional; aggressive positions are never advised.**
 
 ## Section 1 -- Quick Reference
 
@@ -27,9 +27,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Croatia (Republika Hrvatska) |
 | Currency | EUR (since 1 Jan 2023) |
 | Key optimisation levers | Regime choice (paušalni obrt / standard obrt / d.o.o.); personal allowance + dependants; returnee & youth reliefs; capital-allowance timing |
-| PIT rates (2025) | Lower 20% (local range 15–23%) up to €60,000/yr; higher 30% (local range 25–33%) above. Local rate set by municipality. (Porezna uprava; PwC) |
-| Corporate tax (d.o.o.) | 10% on revenue ≤ €1m; 18% above. Dividend withholding 12%. **[RESEARCH GAP — reviewer to confirm current CIT bands and dividend rate.]** |
-| VAT registration threshold (2025) | €60,000 (raised from €40,000) |
+| PIT rates (2025) | Lower 20% (local range 15–23%) up to €60,000/yr; higher 30% (local range 25–33%) above. Local rate set by municipality. (Porezna uprava; [ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html)) |
+| Corporate tax (d.o.o.) | 10% where revenue is below €1m; 18% at €1m or more ([Profit Tax Act art. 28, as amended by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1613.html)). Dividends paid to a resident individual: 12% final tax withheld by the company (Income Tax Act art. 70, https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak). |
+| VAT registration threshold (2025) | €60,000 (raised from €40,000) ([VAT Act art. 90(1), as amended by NN 152/2024 from 1 January 2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2508.html)) |
 | Anti-avoidance | General anti-abuse rule in the General Tax Act (Opći porezni zakon); substance over form. No aggressive schemes. |
 
 > **The single biggest Croatian lever is REGIME CHOICE.** For income up to €60,000/yr a paušalni (lump-sum) obrt usually pays far less than a standard obrt or a d.o.o. — confirm eligibility before anything else.

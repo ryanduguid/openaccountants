@@ -1,10 +1,10 @@
 ---
 name: croatia-income-tax
 description: Use this skill whenever asked about Croatia (Hrvatska) personal income tax (porez na dohodak) for self-employed individuals and employees. Trigger on phrases like "how much tax do I pay in Croatia", "porez na dohodak", "godišnja porezna prijava", "osobni odbitak", "personal allowance Croatia", "obrt tax", "paušalni obrt", "JOPPD", "DOH form", "PO-SD", "doprinosi", "mirovinsko", "net salary Croatia", "neto plaća", "self-employed Croatia", "sole trader Croatia", "prirez", or any question about computing or filing personal income tax for an individual or sole trader (obrtnik) in Croatia. Also trigger when preparing or reviewing a payroll net-pay computation, an annual income tax return, or advising on the lump-sum (paušalni) regime. This skill covers progressive PIT rates (default 20%/30% with local-unit ranges), final/flat income taxes (12%/24%/36%), the personal allowance and dependant coefficients, employee and self-employed contributions (pension 20% + health 16.5%), the JOPPD/DOH/PO-SD forms, and penalties. ALWAYS read this skill before touching any Croatian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: HR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-06
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -34,30 +34,30 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual return deadline | End of February of the following year (self-employed; most employees auto-assessed) |
 | Validated by | Pending -- requires sign-off by a Croatian tax adviser (porezni savjetnik) / ovlašteni računovođa |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Brackets (2025)
 
 - **Annual vs final income split** — Croatia splits income into annual income (employment, self-employment, other) taxed progressively and reconciled annually, and final income (capital, property, certain other) taxed at flat rates and not aggregated.  _(PwC, Income determination)_
-- **Local surtax abolished** — Local surtax (prirez) was abolished from 1 January 2024 and folded into the income-tax rate ranges.  _(PwC, Significant developments)_
+- **Local surtax abolished** — Local surtax (prirez) was abolished from 1 January 2024 and folded into the income-tax rate ranges.  _([ZPD amendment NN 114/2023, in force 1 January 2024: surtax references deleted, art. 19.a added](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1609.html))_
 
-**Default progressive rates (annual income)**  _(porezna-uprava.gov.hr/en/income-tax/7363; PwC, Taxes on personal income)_
+**Default progressive rates (annual income)**  _(porezna-uprava.gov.hr/en/income-tax/7363; [ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html): EUR 60,000.00 a year, EUR 5,000.00 a month under art. 24(3), and 20% / 30% where the local unit adopts no decision)_
 
 | Annual taxable income (EUR) | Monthly equivalent (EUR) | Default rate | Cumulative tax at top |
 | --- | --- | --- | --- |
 | 0 -- 60,000.00 | 0 -- 5,000.00 | 20% | EUR 12,000.00 |
 | 60,000.01+ | 5,000.01+ | 30% | -- |
 
-**Local-unit statutory rate ranges**  _(PwC, Taxes on personal income)_
+**Local-unit statutory rate ranges**  _([ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html), art. 19.a(2))_
 
 | Unit type | Lower rate range | Higher rate range |
 | --- | --- | --- |
 | Municipality (općina) | 15% -- 20% | 25% -- 30% |
 | Town (grad) | 15% -- 21% | 25% -- 31% |
-| City / county seat | 15% -- 22% | 25% -- 32% |
+| Large city (veliki grad) or county seat | 15% -- 22% | 25% -- 32% |
 | City of Zagreb | 15% -- 23% | 25% -- 33% |
 
-**Final / flat income (not aggregated into the annual assessment)**  _(PwC, Income determination)_
+**Final / flat income (not aggregated into the annual assessment)**  _(ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)) for the 12%, 24% and 36% rates and the 30% rental expense allowance; PwC, Income determination for the seasonal-work and undeclared-assets rows)_
 
 | Category | Rate | Notes |
 | --- | --- | --- |
@@ -69,13 +69,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Seasonal agricultural work (other income) | 10% |  |
 | Undeclared assets difference | 36% | Plus 100% penalty surcharge |
 
-Note (2026): The 2026 contribution base caps have been increased (see Section 5.4). The 2025 progressive threshold (EUR 60,000) and personal allowance (EUR 600/month) pages appear stable into 2026 (PwC). Use 2025 figures for a 2025 computation.
+Note (2026): The 2026 contribution base caps have been increased (see Section 5.4). The EUR 60,000 threshold and the EUR 600 monthly allowance are unchanged for 2026: the consolidated Income Tax Act on zakon.hr, read on 6 October 2026 with the database current to NN 104/2026, lists NN 152/2024 (in force 1 January 2025) as its last amendment (https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak). Use 2025 figures for a 2025 computation.
 
 ### Personal Allowance and Dependant Coefficients (2025)
 
-- **Basic monthly personal allowance** — EUR 600.00/month = EUR 7,200.00/year, coefficient 1.0, raised from EUR 560 in 2024  _(porezna-uprava.gov.hr/en/personal-allowance/7358)_
+- **Basic monthly personal allowance** — EUR 600.00/month = EUR 7,200.00/year, coefficient 1.0, raised from EUR 560 in 2024  _([ZPD art. 14(1) and (3), as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html))_
 
-**Dependant coefficients**  _(porezna-uprava.gov.hr/en/personal-allowance/7358; PwC, Deductions)_
+**Dependant coefficients**  _([ZPD art. 14(1) and (3), as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html))_
 
 | Dependant | Coefficient | Monthly allowance (EUR) | Annual allowance (EUR) |
 | --- | --- | --- | --- |
@@ -83,11 +83,19 @@ Note (2026): The 2026 contribution base caps have been increased (see Section 5.
 | 1st child | 0.5 | 300.00 | 3,600.00 |
 | 2nd child | 0.7 | 420.00 | 5,040.00 |
 | 3rd child | 1.0 | 600.00 | 7,200.00 |
+| 4th child | 1.4 | 840.00 | 10,080.00 |
+| 5th child | 1.9 | 1,140.00 | 13,680.00 |
+| 6th child | 2.5 | 1,500.00 | 18,000.00 |
+| 7th child | 3.2 | 1,920.00 | 23,040.00 |
+| 8th child | 4.0 | 2,400.00 | 28,800.00 |
+| 9th child | 4.9 | 2,940.00 | 35,280.00 |
 | Dependent immediate family member | 0.5 | 300.00 | 3,600.00 |
+| Disability (taxpayer, each dependant or child) | 0.3 | 180.00 | 2,160.00 |
+| 100% disability, or care allowance / personal disability allowance / inclusion allowance (replaces the 0.3 row) | 1.0 | 600.00 | 7,200.00 |
 
-The coefficient ladder rises progressively for the 4th and subsequent children -- [RESEARCH GAP -- reviewer to confirm] the exact coefficients for the 4th child onward and the disability coefficients (partial 0.3 / full 1.0 require verification against the official allowance table).
+For the 10th and each further child, art. 14(3) row 11 says the coefficient rises progressively by 1.1 and more over the previous child's, with the sequence elided in the published text. [RESEARCH GAP -- reviewer to confirm] the coefficient for a 10th or later child with Porezna uprava before using it.
 
-- **Dependant income cap** — A person qualifies as a dependant only if their own annual income does not exceed EUR 3,360.00  _(PwC, Deductions)_
+- **Dependant income cap** — A person qualifies as a dependant only if their own annual income does not exceed EUR 3,600.00. Receipts that are not taxed or not treated as income count towards the limit too, except social assistance, child benefit, the minimum maternity and parental payment and newborn grants (art. 17(2)). The earlier EUR 3,360.00 was six times the 2024 allowance of EUR 560  _(ZPD art. 17(1): six times the art. 14(1) basic allowance a year ([consolidated text](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak); allowance set by [NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html)))_
 
 ### Conservative Defaults
 
@@ -264,7 +272,7 @@ Scenario: Employee, gross monthly salary EUR 2,000.00, single, no dependants.
 
 Reasoning:
 1. Gross > EUR 1,300 → no low-salary relief; pension base = full gross EUR 2,000.00.
-2. Pension contribution 20% (15% pillar I + 5% pillar II) = EUR 2,000.00 × 20% = EUR 400.00 (withheld). (PwC, Other taxes.)
+2. Pension contribution 20% (15% pillar I + 5% pillar II) = EUR 2,000.00 × 20% = EUR 400.00 (withheld). (Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)).)
 3. Income after pension = EUR 2,000.00 - EUR 400.00 = EUR 1,600.00.
 4. Personal allowance = EUR 600.00 (osobni odbitak). PIT base = EUR 1,600.00 - EUR 600.00 = EUR 1,000.00.
 5. PIT base EUR 1,000.00 < EUR 5,000.00 monthly threshold → 20%. PIT = EUR 1,000.00 × 20% = EUR 200.00.
@@ -278,7 +286,7 @@ Classification: Net EUR 1,400.00; employee pension EUR 400.00; PIT EUR 200.00; e
 Scenario: Employee, gross monthly salary EUR 1,000.00, single, no dependants.
 
 Reasoning:
-1. Gross EUR 1,000.00 is in the EUR 700.01--1,300.00 band → relief base = gross - 0.5 × (1,300.00 - gross) = 1,000.00 - 0.5 × 300.00 = EUR 850.00. (PwC, Other taxes.)
+1. Gross EUR 1,000.00 is in the EUR 700.01--1,300.00 band → relief base = gross - 0.5 × (1,300.00 - gross) = 1,000.00 - 0.5 × 300.00 = EUR 850.00. ([Zakon o doprinosima art. 21.a, added by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html).)
 2. Pension 20% × EUR 850.00 = EUR 170.00 (withheld).
 3. Income after pension = EUR 1,000.00 - EUR 170.00 = EUR 830.00.
 4. PIT base = EUR 830.00 - EUR 600.00 allowance = EUR 230.00.
@@ -293,7 +301,7 @@ Classification: Net EUR 784.00; pension EUR 170.00 (on reduced base EUR 850.00);
 Input line:
 `15/05/2025 ; PBZ DOZNAKA ; XYZ d.o.o. ; DIVIDENDA 2024 ; +5,000.00 ; EUR`
 
-Reasoning: Dividend is capital income, taxed as final income at 12% and NOT aggregated into the annual progressive assessment (PwC, Income determination). PIT = EUR 5,000.00 × 12% = EUR 600.00 (typically withheld at source by the payer).
+Reasoning: Dividend is capital income, taxed as final income at 12% and NOT aggregated into the annual progressive assessment (ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak))). PIT = EUR 5,000.00 × 12% = EUR 600.00 (typically withheld at source by the payer).
 
 Classification: Final income; tax EUR 600.00; do NOT add to annual progressive base.
 
@@ -302,7 +310,7 @@ Classification: Final income; tax EUR 600.00; do NOT add to annual progressive b
 Input line:
 `05/03/2025 ; ERSTE UPLATA ; TENANT NAME ; NAJAMNINA OŽUJAK ; +800.00 ; EUR`
 
-Reasoning: Rental of immovable property is final income at 12% after a 30% lump-sum expense deduction (PwC, Income determination). Taxable base = EUR 800.00 × (1 - 0.30) = EUR 560.00. PIT = EUR 560.00 × 12% = EUR 67.20 per month.
+Reasoning: Rental of immovable property is final income at 12% after a 30% lump-sum expense deduction (ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak))). Taxable base = EUR 800.00 × (1 - 0.30) = EUR 560.00. PIT = EUR 560.00 × 12% = EUR 67.20 per month.
 
 Classification: Final income; monthly tax EUR 67.20; not aggregated.
 
@@ -345,19 +353,17 @@ Classification: EXCLUDE.
 
 ### 5.2 Progressive Rates and Local Units
 
-- **Progressive rates and local units** — Default rates for 2025 are 20% on annual income up to EUR 60,000.00 (EUR 5,000.00/month) and 30% on the excess. Local self-government units may set the lower rate within 15%--23% and the higher rate within 25%--33% (max ranges: City of Zagreb); the default applies where no decision is made by 30 November. Local surtax (prirez) was abolished from 1 January 2024 and absorbed into the wider PIT rate ranges.  _(Zakon o porezu na dohodak; PwC; porezna-uprava.gov.hr/en/income-tax/7363; PwC, Significant developments)_
+- **Progressive rates and local units** — Default rates for 2025 are 20% on annual income up to EUR 60,000.00 (EUR 5,000.00/month) and 30% on the excess. Local self-government units may set the lower rate within 15%--23% and the higher rate within 25%--33% (max ranges: City of Zagreb); the default applies where no decision is made by the end of November. Local surtax (prirez) was abolished from 1 January 2024 and absorbed into the wider PIT rate ranges.  _([ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html), art. 19.a(3) and (5); [ZPD amendment NN 114/2023, in force 1 January 2024: surtax references deleted, art. 19.a added](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1609.html); porezna-uprava.gov.hr/en/income-tax/7363)_
 
 ### 5.3 Personal Allowance and Dependants
 
-- **Personal allowance and dependants** — The basic monthly personal allowance is EUR 600.00 (EUR 7,200.00/year), coefficient 1.0. Dependant coefficients are additive: 1st child 0.5 (EUR 300/month), 2nd child 0.7 (EUR 420), 3rd child 1.0 (EUR 600), and a dependent immediate family member 0.5 (EUR 300). A person qualifies as a dependant only if own annual income does not exceed EUR 3,360.00.  _(porezna-uprava.gov.hr/en/personal-allowance/7358; PwC, Deductions)_
-
-[RESEARCH GAP -- reviewer to confirm] 4th-and-later child coefficients and disability coefficients.
+- **Personal allowance and dependants** — The basic monthly personal allowance is EUR 600.00 (EUR 7,200.00/year), coefficient 1.0. Dependant coefficients are additive: 1st child 0.5 (EUR 300/month), 2nd child 0.7 (EUR 420), 3rd child 1.0 (EUR 600), 4th 1.4, 5th 1.9, 6th 2.5, 7th 3.2, 8th 4.0, 9th 4.9, and a dependent immediate family member 0.5 (EUR 300); disability adds 0.3, or 1.0 for 100% disability or a care, personal disability or inclusion allowance. A person qualifies as a dependant only if own annual income does not exceed EUR 3,600.00.  _([ZPD art. 14(1) and (3), as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html); ZPD art. 17(1): six times the art. 14(1) basic allowance a year ([consolidated text](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak); allowance set by [NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html)))_
 
 ### 5.4 Employee Contributions (Pension)
 
-- **Employee pension contributions** — Employee pension contributions total 20% of gross salary: 15% first pillar (mirovinsko I. stup) + 5% second pillar (mirovinsko II. stup). 2025 base caps: highest monthly base EUR 10,788.00; highest annual first-pillar base EUR 129,456.00 (average gross salary EUR 1,798.00 × coefficient 6.00; NN 137/2024).  _(Zakon o doprinosima; NN 137/2024; PwC, Other taxes)_
+- **Employee pension contributions** — Employee pension contributions total 20% of gross salary: 15% first pillar (mirovinsko I. stup) + 5% second pillar (mirovinsko II. stup). 2025 base caps: highest monthly base EUR 10,788.00; highest annual first-pillar base EUR 129,456.00 (average gross salary EUR 1,798.00 × coefficient 6.00; NN 137/2024).  _(Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)); [Naredba for 2025, NN 137/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_11_137_2266.html))_
 
-**Employee Contributions (Pension) table**  _(NN 137/2024; PwC, Other taxes)_
+**Employee Contributions (Pension) table**  _([Naredba for 2025, NN 137/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_11_137_2266.html); Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)))_
 
 | Contribution | Who pays | Rate | 2025 base cap |
 | --- | --- | --- | --- |
@@ -366,13 +372,13 @@ Classification: EXCLUDE.
 | **Pension total (employee)** | **Employee** | **20%** | **Monthly EUR 10,788.00** |
 | Health (zdravstveno) | **Employer** (on top) | 16.5% | Uncapped |
 
-- **Component check** — Component check: pillar I 15% + pillar II 5% = 20% total employee pension; this is the only employee statutory deduction. Employer pays health 16.5% separately, so the employer column total on-cost is 16.5%.  _(PwC, Other taxes)_
+- **Component check** — Component check: pillar I 15% + pillar II 5% = 20% total employee pension; this is the only employee statutory deduction. Employer pays health 16.5% separately, so the employer column total on-cost is 16.5%.  _(Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)))_
 
-2026 update: NN 150/2025 raises the 2026 monthly base cap to EUR 11,958.00 and the annual first-pillar cap to EUR 143,496.00. Use 2025 figures for a 2025 computation (research caveat).
+2026 update: NN 150/2025 raises the 2026 monthly base cap to EUR 11,958.00 and the annual cap to EUR 143,496.00 (average gross salary EUR 1,993.00 × 6.00), and the lowest monthly base to EUR 757.34 ([Naredba for 2026, NN 150/2025, arts. 3-5](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html)). Use 2025 figures for a 2025 computation.
 
 ### 5.5 Low-Salary Pension Relief (2025)
 
-**Low-Salary Pension Relief table**  _(Zakon o doprinosima; PwC, Other taxes)_
+**Low-Salary Pension Relief table**  _([Zakon o doprinosima art. 21.a, added by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html))_
 
 | Monthly gross | Pension base |
 | --- | --- |
@@ -380,11 +386,11 @@ Classification: EXCLUDE.
 | EUR 700.01 -- 1,300.00 | gross - 0.5 × (1,300.00 - gross) |
 | Above EUR 1,300.00 | full gross |
 
-- **Maximum effective reduction** — Maximum effective reduction is EUR 300/month for the lowest earners.  _(Zakon o doprinosima; PwC, Other taxes)_
+- **Maximum effective reduction** — Maximum effective reduction is EUR 300/month for the lowest earners. The relief applies whatever the days insured or hours worked in the month, is split pro rata across several employers, and does not reduce the base used for pension rights.  _([Zakon o doprinosima art. 21.a, added by NN 114/2023](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1611.html), paras. 1 to 5 and 7)_
 
 ### 5.6 Employer Health Contribution
 
-- **Employer health contribution** — Employer pays a health insurance contribution (zdravstveno osiguranje) of 16.5% of gross salary, uncapped. This is an employer on-cost; it is never deducted from the employee's net pay.  _(PwC, Other taxes)_
+- **Employer health contribution** — Employer pays a health insurance contribution (zdravstveno osiguranje) of 16.5% of gross salary, uncapped. This is an employer on-cost; it is never deducted from the employee's net pay.  _(Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)))_
 
 ### 5.7 Self-Employed (Obrt) Contributions
 
@@ -394,7 +400,7 @@ Classification: EXCLUDE.
 
 ### 5.8 Final / Flat Income
 
-**Final / Flat Income table**  _(PwC, Income determination)_
+**Final / Flat Income table**  _(ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)); the seasonal-work row: PwC, Income determination)_
 
 | Category | Rate | Base |
 | --- | --- | --- |
@@ -405,19 +411,29 @@ Classification: EXCLUDE.
 | Withdrawal of assets / hidden distributions | 36% |  |
 | Seasonal agricultural work | 10% |  |
 
-- **Not aggregated** — Final income is NOT aggregated into the annual progressive assessment.  _(PwC, Income determination)_
+- **Not aggregated** — Final income is NOT aggregated into the annual progressive assessment.  _(ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)))_
 
 ### 5.9 Lump-Sum (Paušalni Obrt) Regime
 
 - **Lump-sum paušalni obrt regime** — Available to sole traders with annual receipts up to EUR 60,000 who are not VAT-registered. Lump-sum income is determined across statutory receipt brackets and taxed at 12%, paid quarterly. The PO-SD annual report is filed by 15 January.  _(Zakon o porezu na dohodak; Porezna uprava (obrtnici-paušalisti); PwC)_
 
-[RESEARCH GAP -- reviewer to confirm] the exact seven paušalni receipt brackets, the corresponding annual lump-sum income amounts, and the quarterly tax figures for 2025 (not extracted from a primary source -- see Porezna uprava "obrtnici-paušalisti" and HOK).
+**Paušalni annual lump-sum income by receipt band (2025)**  _([NN 25/2025, art. 1 (new art. 14 of the 2025 Naredba)](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_02_25_231.html), which restates the lump-sum income set by the paušal ordinance)_
+
+| Annual receipts (EUR) | Annual lump-sum income (EUR) |
+| --- | --- |
+| up to 11,300.00 | 1,695.00 |
+| 11,300.01 -- 15,300.00 | 2,295.00 |
+| 15,300.01 -- 19,900.00 | 2,985.00 |
+| 19,900.01 -- 30,600.00 | 4,590.00 |
+| 30,600.01 -- 40,000.00 | 6,000.00 |
+| 40,000.01 -- 50,000.00 | 7,500.00 |
+| 50,000.01 -- 60,000.00 | 9,000.00 |
+
+[RESEARCH GAP -- reviewer to confirm] the tax rate applied to the lump-sum income and the quarterly instalments, which are in the paušal ordinance (Pravilnik o paušalnom oporezivanju samostalnih djelatnosti) and were not read in this pass.
 
 ### 5.10 Youth PIT Relief
 
-- **Youth PIT relief** — A reduced PIT applies to younger employees: 100% PIT relief for employees under 25, and 50% relief for ages 26--30, on employment income within the bracket (relief on PIT, not contributions).  _(PwC, Significant developments)_
-
-[RESEARCH GAP -- reviewer to confirm] the precise 2025 age cut-offs, percentages, and mechanics (whether thresholds/percentages changed for 2025).
+- **Youth PIT relief** — The annual income tax is reduced by 100% for a person up to 25 years of age and by 50% for a person aged 26 to 30, in each case only on the proportional part of the tax charged at the lower rate on salary (employment income under art. 21(1)1). It is given in the annual assessment, before the 50% reduction for pensioners and residents of assisted areas, and it does not reduce contributions.  _(ZPD art. 46(2) ([consolidated text](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)) and (7))_
 
 ### 5.11 Non-Deductible Expenses (Self-Employed)
 
@@ -533,7 +549,7 @@ H. FINAL INCOME (separate, NOT aggregated)
 
 REVIEWER FLAGS:
   [ ] Local-unit rate confirmed (or default 20%/30% accepted)?
-  [ ] Dependant coefficients confirmed (income < EUR 3,360 each)?
+  [ ] Dependant coefficients confirmed (income <= EUR 3,600 each)?
   [ ] Pension pillar split (15%/5%) confirmed?
   [ ] Low-salary relief applied where gross <= EUR 1,300?
   [ ] Contribution base caps (2025) applied?
@@ -592,7 +608,7 @@ If the client provides a bank statement but cannot answer onboarding questions i
 ONBOARDING QUESTIONS -- CROATIA INCOME TAX
 1. Are you an employee, a sole trader (obrt), or paušalni? If obrt, do you keep full books or use the lump-sum regime?
 2. What is your local self-government unit (municipality / grad)?
-3. How many dependants (children + others)? Do any have annual income above EUR 3,360?
+3. How many dependants (children + others)? Do any have annual income above EUR 3,600?
 4. Gross monthly salary or annual business receipts?
 5. Are you in the second pension pillar (pillar II 5%), or pillar I only?
 6. Are you VAT-registered (turnover above EUR 60,000)?
@@ -613,10 +629,10 @@ ONBOARDING QUESTIONS -- CROATIA INCOME TAX
 | Income tax rates & general rules | Zakon o porezu na dohodak; porezna-uprava.gov.hr/en/income-tax/7363 |
 | Personal allowance | porezna-uprava.gov.hr/en/personal-allowance/7358 |
 | Contributions & 2025 base caps | Zakon o doprinosima; NN 137/2024 (narodne-novine.nn.hr/clanci/sluzbeni/2024_11_137_2266.html) |
-| Final / flat income | PwC, Croatia -- Income determination |
+| Final / flat income | ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)) |
 | Tax administration & residence | PwC, Croatia -- Tax administration |
-| Deductions / dependants | PwC, Croatia -- Deductions |
-| Minimum wage 2025 / 2026 | Bloomberg Tax; NN 150/2025 |
+| Deductions / dependants | [ZPD art. 14(1) and (3), as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html); ZPD art. 17(1): six times the art. 14(1) basic allowance a year ([consolidated text](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak); allowance set by [NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html)) |
+| Minimum wage 2025 / 2026 | [Uredba, NN 124/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_10_124_2072.html); [Uredba, NN 132/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html) |
 
 ### Key 2025 Figures (with provenance)
 
@@ -627,19 +643,19 @@ ONBOARDING QUESTIONS -- CROATIA INCOME TAX
 | Progressive lower rate (default) | 20% | porezna-uprava.gov.hr/en/income-tax/7363 |
 | Progressive higher rate (default) | 30% | porezna-uprava.gov.hr/en/income-tax/7363 |
 | Bracket threshold | EUR 60,000.00/yr (EUR 5,000.00/mo) | porezna-uprava.gov.hr/en/income-tax/7363 |
-| Local lower-rate range | 15% -- 23% | PwC, Taxes on personal income |
-| Local higher-rate range | 25% -- 33% | PwC, Taxes on personal income |
+| Local lower-rate range | 15% -- 23% | [ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html) |
+| Local higher-rate range | 25% -- 33% | [ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html) |
 | Basic personal allowance | EUR 600.00/mo (EUR 7,200.00/yr) | porezna-uprava.gov.hr/en/personal-allowance/7358 |
-| Dependant income ceiling | EUR 3,360.00/yr | PwC, Deductions |
-| Employee pension total | 20% (15% + 5%) | PwC, Other taxes |
-| Employer health | 16.5% (uncapped) | PwC, Other taxes |
+| Dependant income ceiling | EUR 3,600.00/yr | ZPD art. 17(1): six times the art. 14(1) basic allowance a year ([consolidated text](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak); allowance set by [NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html)) |
+| Employee pension total | 20% (15% + 5%) | Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)) |
+| Employer health | 16.5% (uncapped) | Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)) |
 | Monthly contribution base cap | EUR 10,788.00 | NN 137/2024 |
 | Annual first-pillar base cap | EUR 129,456.00 | NN 137/2024 |
 | Self-employed min. monthly base (craft) | EUR 1,168.70 | NN 137/2024 (code 0101) |
-| Capital income / rental flat rate | 12% | PwC, Income determination |
+| Capital income / rental flat rate | 12% | ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)) |
 | VAT registration / paušalni ceiling | EUR 60,000 turnover/yr | PwC, Income determination |
-| Minimum wage 2025 | EUR 970.00 gross/mo | Bloomberg Tax |
-| Minimum wage 2026 | EUR 1,050.00 gross/mo | NN 150/2025 |
+| Minimum wage 2025 | EUR 970.00 gross/mo | [Uredba, NN 124/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_10_124_2072.html) |
+| Minimum wage 2026 | EUR 1,050.00 gross/mo | [Uredba, NN 132/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html) |
 | 2026 monthly base cap | EUR 11,958.00 | NN 150/2025 |
 | 2026 annual first-pillar cap | EUR 143,496.00 | NN 150/2025 |
 
@@ -685,9 +701,9 @@ Expected: Pension base capped at EUR 10,788.00; pension 20% = EUR 2,157.60 (NOT 
 - **Employer health not deducted from net pay** — NEVER deduct the employer health contribution (16.5%) from the employee's net pay -- it is an employer on-cost  _(PROHIBITIONS)_
 - **Low-salary relief formula requirement** — NEVER use the full gross as the pension base when gross <= EUR 1,300 -- apply the low-salary relief formula  _(PROHIBITIONS)_
 - **No 2026 caps for 2025 computation** — NEVER use 2026 contribution caps for a 2025 computation (use EUR 10,788/month, EUR 129,456/year per NN 137/2024)  _(NN 137/2024)_
-- **Dependant income ceiling qualification** — NEVER treat a dependant as qualifying if their own annual income exceeds EUR 3,360.00  _(PROHIBITIONS)_
+- **Dependant income ceiling qualification** — NEVER treat a dependant as qualifying if their own annual income exceeds EUR 3,600.00  _(PROHIBITIONS)_
 - **No fines/penalties/income tax as deduction** — NEVER allow fines, penalties, or income tax itself as a deduction  _(PROHIBITIONS)_
-- **Research gaps disclaimer** — NEVER invent the paušalni receipt brackets, depreciation rates, or youth-relief mechanics -- these are RESEARCH GAPS for the reviewer  _(PROHIBITIONS)_
+- **Research gaps disclaimer** — NEVER invent the paušalni tax rate and quarterly instalments or depreciation rates -- these are RESEARCH GAPS for the reviewer  _(PROHIBITIONS)_
 - **Pillar II confirmation required** — NEVER apply pillar II (5%) without confirming second-pillar membership  _(PROHIBITIONS)_
 
 ## Disclaimer
