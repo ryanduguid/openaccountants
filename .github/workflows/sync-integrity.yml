@@ -25,12 +25,15 @@ jobs:
           - name: unit-tests
             os: ubuntu-latest
             python: "3.11"
+            sdk: "mcp<2"
           - name: unit-tests-python-3.10
             os: ubuntu-latest
             python: "3.10"
+            sdk: "mcp==1.30.0"
           - name: unit-tests-windows
             os: windows-latest
             python: "3.11"
+            sdk: "mcp<2"
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     steps:
@@ -54,7 +57,12 @@ jobs:
         # cover left CI green.
         run: python -m unittest discover -s tests -p "test_*.py" -v
       - name: Install the MCP server and its dependencies
-        run: 'python -m pip install --only-binary :all: ./mcp'
+        # The oldest Python job exercises the minimum supported SDK; the other
+        # jobs resolve the package's allowed 1.x range.
+        run: 'python -m pip install --only-binary :all: ./mcp "${{ matrix.sdk }}"'
+      - name: Verify the minimum SDK version
+        if: matrix.python == '3.10'
+        run: python -c "from importlib.metadata import version; assert version('mcp') == '${{ matrix.sdk }}'.split('==')[1]"
       - name: Check installed dependency consistency
         run: python -m pip check
       - name: Run MCP unit tests

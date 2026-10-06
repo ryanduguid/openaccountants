@@ -11,6 +11,7 @@ repository; nothing here publishes to PyPI.
 
 ### Fixed
 
+- Require MCP SDK `>=1.30.0,<2` as this fork's supported security floor. The Linux/Python 3.10 CI job installs the exact minimum; installed-console tests cover structured success and empty-catalogue errors. Older SDK pins must be updated. Stateful Streamable HTTP clients must initialise again after an idle session expires; see the README for the inherited 404/413/503 limits.
 - Point the development clone command at this fork so contributors install its server and guides, and document UTF-8 mode for redirected contributor checks in Windows PowerShell.
 - Include `quality_tier`, `verified_by`, `review_status` and `last_updated` in each `search_skills` hit and at the top level of `get_skill_sections`, using the same catalogue values as `get_skill`. Successful searches instruct clients to fetch the full guide before applying rules because snippets can omit conditions. Strict clients must accept the additional fields; external client compatibility remains unqualified.
 

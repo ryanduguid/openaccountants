@@ -142,6 +142,12 @@ Then connect your AI client (next section) using the `openaccountants-mcp` comma
 
 For contributors, or if you want the server to read your local, editable checkout:
 
+This fork requires Python 3.10+ and MCP SDK `>=1.30.0,<2`. Older SDKs can
+fail at startup or lack the HTTP protections this server relies on. Version
+1.30.0 is the minimum supported SDK for the advertised transports. See the
+[SDK session advisory](https://github.com/modelcontextprotocol/python-sdk/security/advisories/GHSA-84m7-p3x7-pcfv)
+and [HTTP body-limit advisory](https://github.com/modelcontextprotocol/python-sdk/security/advisories/GHSA-fmmv-w9g8-j3gc).
+
 ```bash
 git clone https://github.com/ryanduguid/openaccountants.git
 cd openaccountants
@@ -157,6 +163,11 @@ uv pip install -e ./mcp
 Use an **editable** install (`-e`) or set `OPENACCOUNTANTS_ROOT`. A plain `pip install ./mcp` copies only the code into site-packages; the server then looks for `packages/` two directories above the installed module, whatever directory you launch it from, finds nothing, and reports an empty catalogue on every call (with a warning on stderr saying where it looked). `uv run --directory mcp openaccountants-mcp` from the repo root also works without installing anything.
 
 The server reads `packages/` from the repo root (override with `OPENACCOUNTANTS_ROOT`, see environment variables below).
+
+To upgrade an existing editable install, run `python -m pip install --upgrade -e ./mcp`
+from the checkout. Update any constraint that pins `mcp` below 1.30.0;
+the resolver now rejects that combination. This requirement applies to this
+fork's source installation; upstream publishes its own package.
 
 ### Connect to your AI client
 
@@ -230,6 +241,15 @@ or:
 The AI will call the MCP tools behind the scenes to load the right country and domain skills, then produce working papers, payslips, formation guides, or whatever output matches your request — all without you uploading a single file.
 
 ## Docker (local development / self-hosting)
+
+The supported SDK limits HTTP request bodies to 4 MiB by default and returns
+413 for larger requests. Stateful Streamable HTTP sessions expire after 30
+minutes with no request in flight; clients using an expired session receive
+404 and must initialise again. An open GET stream keeps its session active.
+The default concurrent-session limit is 10,000; a new session beyond that
+limit receives 503. These are the [SDK's defaults](https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.30.0)
+for HTTP use, including use outside Docker. This server provides no overrides
+for these limits.
 
 For contributors who'd rather iterate inside a container, the repo root ships a `Dockerfile` that builds the MCP server and runs it under FastMCP's Streamable-HTTP transport:
 

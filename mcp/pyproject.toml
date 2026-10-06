@@ -8,10 +8,10 @@ license = "AGPL-3.0-only"
 # The licence text travels with the wheel (dist-info/licenses/LICENSE); a
 # copy of the repository's LICENSE lives next to this file for that purpose.
 license-files = ["LICENSE"]
-# mcp is capped below 2.0: 2.x removes `mcp.server.fastmcp`, which server.py
-# imports, so the server cannot start. Lift the cap only with a reviewed
-# migration to the 2.x HTTP stack.
-dependencies = ["mcp>=1.0.0,<2", "pyyaml>=6.0"]
+# 1.30.0 supplies the HTTP body and stateful-session limits this server uses.
+# Early SDKs also lack required FastMCP APIs or localhost Host/Origin protection.
+# 2.x removes `mcp.server.fastmcp`; lift the cap only after a reviewed migration.
+dependencies = ["mcp>=1.30.0,<2", "pyyaml>=6.0"]
 keywords = [
     "tax", "accounting", "mcp", "ai", "accountant", "vat", "gst",
     "income-tax", "open-source", "self-employed", "freelancer",
