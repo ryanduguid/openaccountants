@@ -83,10 +83,11 @@ calculations or withholding instructions.
 
 Article 12(6)(a) requires both liability incurred in connection with the PE
 or fixed base and the royalty borne by it. Subparagraph (b) refers only to
-(a) not deeming source in either state, while Treasury's original explanation
-describes place of use as residual after both payer residence and the PE/fixed
-base rule. I preserve that wording difference as unresolved; place of use alone
-does not settle treaty source for a resident payer in this draft.
+(a) not deeming source in either state. Treasury's original explanation
+describes the PE/fixed-base rule in bearing terms and uses place of use only
+where the royalty is neither paid by a resident nor borne by a PE/fixed base
+in either state. The resident-payer/use and bearing-without-connection
+outcomes remain unresolved because of these wording differences.
 
 | Boundary | Result under the cited provision |
 | --- | --- |
@@ -107,12 +108,13 @@ does not settle treaty source for a resident payer in this draft.
 | Transparent entity income treated as a resident's income | Derivation still does not establish beneficial ownership, art 17 entitlement or dividend share ownership |
 | US-resident royalty payer, use in Mexico and no relevant PE/fixed base | Treasury's explanation uses US payer residence; operative art 12(6)(b) refers only to subparagraph (a), so the wording difference remains unresolved |
 | Third-state royalty payer, liability connected with a US PE and royalty borne by it, use in Mexico | Art 12(6)(a) assigns US source; both connection and bearing elements are required |
-| Third-state royalty payer, US PE merely bears the amount without the required liability connection, use in Mexico | The paragraph (a) test fails; operative paragraph (b)'s place-of-use rule supplies Mexican source under these stated facts |
+| Third-state royalty payer, US PE bears the royalty without the liability connection, no other PE/fixed base in either state satisfies paragraph (a), use in Mexico | Operative paragraphs (a)-(b) point to Mexican source; Treasury's bearing-based description points differently. The outcome remains unresolved |
 | Third-state royalty payer, no PE/fixed base in either state, use in the US | The residual place-of-use rule supplies US source under the stated facts |
+| Third-state royalty payer, US PE bears the royalty without the liability connection, but another US PE satisfies both paragraph (a) predicates | Paragraph (a) assigns US source through that other PE; paragraph (b) does not apply |
 | Amended art 11A(3) route satisfied | The exemption reaches paragraph 2(a) dividend-equivalent tax only; paragraph 2(b) excess interest remains separate |
 
-Parent ownership, loan-assignee interpretation and the payer-residence/place-of-use
-royalty-source wording remain unresolved.
+Parent ownership, loan-assignee interpretation and both resident-payer/use and
+bearing-without-connection royalty-source outcomes remain unresolved.
 Historical explanation statements about domestic law, foreign-tax-credit
 classification, exchange jurisdictions and filing mechanics are not treated
 as current 2025 law. Current domestic taxability/rates, source and branch
