@@ -113,6 +113,9 @@ NON_GOV_AUTHORITY = frozenset((
                           # gazette and the publisher of its consolidated
                           # legislation. Again a bare national domain: Spain
                           # has no .gob.es requirement for the BOE itself.
+    'riigiteataja.ee',    # Riigi Teataja, Estonia's official gazette and the
+                          # publisher of its consolidated acts and their English
+                          # translations. Bare .ee.
     'ohada.org',          # OHADA itself — the Journal Officiel and the digital
                           # library that carries it. Supranational rather than
                           # national, so no country suffix to recognise it by;

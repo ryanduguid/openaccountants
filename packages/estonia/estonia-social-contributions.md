@@ -1,10 +1,10 @@
 ---
 name: estonia-social-contributions
 description: Use this skill whenever asked about Estonian social security contributions, social tax (sotsiaalmaks), unemployment insurance premiums (töötuskindlustusmakse), or mandatory funded pension (II-pillar / kogumispension) for employers, employees, board members, or self-employed (FIE). Trigger on phrases like "how much social tax do I pay in Estonia", "Estonian payroll on-cost", "sotsiaalmaks 33%", "employer cost above gross", "II pillar pension contribution", "unemployment insurance premium", "minimum social tax base", "Form TSD", "FIE social tax", "Estonia net salary calculation", "what is the employer cost on top of salary", or any question about Estonian social charges. Also trigger when classifying bank-statement transactions that relate to EMTA (Maksu- ja Tolliamet) tax payments, Töötukassa unemployment premiums, or II-pillar pension transfers from Estonian banks (Swedbank, SEB, LHV, Luminor). Also trigger when computing Estonian payroll where the 22% flat income tax, the basic exemption (maksuvaba tulu), and the social tax floor interact. This skill covers social tax (33%), unemployment insurance (employee 1.6% + employer 0.8%), II-pillar funded pension (2/4/6%), the minimum monthly social tax base, the 22% flat PIT, the basic exemption, Form TSD filing, FIE advance payments, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Estonian social-contribution or payroll-charge work.
-version: 0.2
+version: 0.3
 jurisdiction: EE
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social tax (sotsiaalmaks) | 33% (employer-paid, ON TOP of gross), 20pp pension + 13pp health [EMTA tax-rates] |
 | Employer unemployment insurance | 0.8% of gross payroll [EMTA tax-rates] |
 | Employee unemployment insurance | 1.6% of gross (withheld) [EMTA tax-rates] |
-| Mandatory funded pension (II pillar) | Employee 2% / 4% / 6% (default 2%) (withheld) [EMTA tax-rates; PwC] |
+| Mandatory funded pension (II pillar) | Employee 2% / 4% / 6% (default 2%) (withheld) [EMTA tax-rates] |
 | Personal income tax (PIT) | 22% flat, 2025 and 2026 [EMTA tax-rates] |
 | Min monthly social tax base 2025 | EUR 820/month => min social tax EUR 270.60/month [EMTA tax-rates] |
 | Min monthly social tax base 2026 | EUR 886/month => min social tax EUR 292.38/month [EMTA tax-rates] |
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Read this whole section before computing or classifying anything.**
 
-**Contribution overview (employment relationship)**  _(Source for all rows: EMTA tax-rates page (https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/tax-rates); II-pillar default and rates also per PwC Worldwide Tax Summaries (https://taxsummaries.pwc.com/estonia/individual/other-taxes).)_
+**Contribution overview (employment relationship)**  _(Source for all rows: EMTA tax-rates page (https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/tax-rates), which also gives the 2% default and the 4% and 6% elective II-pillar rates.)_
 
 | Charge | Who pays | Rate | Withheld or on-top |
 | --- | --- | --- | --- |
@@ -61,7 +61,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown II-pillar membership | Assume the statutory default rate of 2% if the person is a member; if membership unknown, STOP and ask (mandatory for residents born after 31 Dec 1982) [EMTA tax-rates; PwC] |
+| Unknown II-pillar membership | Assume the statutory default rate of 2% if the person is a member; if membership unknown, STOP and ask (mandatory for residents born after 31 Dec 1982) [EMTA tax-rates; Pensionikeskus] |
 | Unknown total employer cost | Compute as gross x 1.338, subject to the monthly minimum social tax base [EMTA tax-rates] |
 | Unknown whether basic exemption applies | Apply the monthly basic exemption ONLY if the employee filed an application with the employer; otherwise withhold PIT on the full taxable amount [EMTA private-client] |
 | Unknown tax year | Use 2025 figures; note 2026 changes (flat EUR 700 exemption, EUR 886 social-tax floor) [EMTA tax-rates] |
@@ -80,7 +80,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal catalogue
 
-- **R-EE-SOC-1** — II-pillar membership unknown. Trigger: employee net-pay or withholding computation requested without knowing whether the person is a funded-pension (II-pillar) member or their chosen rate. Message: "The mandatory funded pension contribution is 2%, 4% or 6% (default 2%) for II-pillar members, and zero for non-members. Net pay cannot be computed without confirming membership and the elected rate. Membership is mandatory for residents born after 31 December 1982."  _(EMTA tax-rates; PwC)_
+- **R-EE-SOC-1** — II-pillar membership unknown. Trigger: employee net-pay or withholding computation requested without knowing whether the person is a funded-pension (II-pillar) member or their chosen rate. Message: "The mandatory funded pension contribution is 2%, 4% or 6% (default 2%) for II-pillar members, and zero for non-members. Net pay cannot be computed without confirming membership and the elected rate. Membership is mandatory for residents born after 31 December 1982."  _(EMTA tax-rates; Pensionikeskus, Mandatory funded pension — https://www.pensionikeskus.ee/en/ii-pillar/mandatory-funded-pension/)_
 - **R-EE-SOC-2** — Cross-border / posted workers and A1 certificates. Trigger: employee works in more than one EU/EEA state, is posted abroad, or holds an A1 certificate. Message: "Where social-security liability arises is governed by EU Regulation 883/2004 and any A1 certificate, not by this skill. Do not apply Estonian social tax without confirming the applicable legislation. Escalate to a qualified Estonian tax adviser."  _(RESEARCH GAP -- reviewer to confirm coordination treatment)_
 - **R-EE-SOC-3** — FIE arrears / reducing circumstances. Trigger: sole proprietor (FIE) with unpaid social tax advances, or claims to a reduced minimum (part-time, receiving a pension, first-year, etc.). Message: "FIE social tax minimums and reducing circumstances are case-specific. Do not quantify FIE social tax or arrears without the EMTA assessment. Escalate to a qualified Estonian tax adviser."  _(EMTA social-tax)_
 - **R-EE-SOC-4** — Fringe benefits and special remuneration. Trigger: the package includes fringe benefits (erisoodustus), stock options, or in-kind benefits. Message: "Fringe benefits attract income tax AND social tax on the grossed-up value (benefit + income tax thereon), declared on Form TSD annexes by the employer. This grossing-up is outside the simple wage formula in this skill. Escalate to a qualified Estonian tax adviser."  _(EMTA social-tax)_
@@ -240,7 +240,7 @@ These rules apply when payroll/bank data is clear and all required inputs are av
 
 ### Rule 2 -- No upper ceiling on employer social tax (employees)
 
-- **Rule 2** — Social tax applies from the first euro of remuneration with no cap for employees. There is no maximum. (Self-employed FIE have an annual cap of 15x the sum of minimum monthly bases -- see Rule 9.)  _(EMTA tax-rates; PwC)_
+- **Rule 2** — Social tax applies from the first euro of remuneration with no cap for employees. There is no maximum. (Self-employed FIE have an annual cap: social tax on at most 10x the sum of the year's minimum monthly wages -- see Rule 9.)  _(Social Tax Act § 2(1)5 — https://www.riigiteataja.ee/en/akt/514112013022?leiaKehtiv; EMTA, Self-employed persons: social tax — https://www.emta.ee/en/business-client/registration-business/businesses/self-employed-persons/social-tax)_
 
 ### Rule 3 -- Minimum monthly social tax base
 
@@ -259,7 +259,7 @@ These rules apply when payroll/bank data is clear and all required inputs are av
 
 ### Rule 5 -- Mandatory funded pension (II pillar)
 
-- **Rule 5** — Member rate = 2% / 4% / 6%, chosen by application to the registrar; the statutory default is 2% if no higher-rate application is filed. Mandatory for residents born after 31 December 1982; voluntary opt-in for others. No floor, no cap. The state additionally directs 4 percentage points of the social tax pension portion to the member's II-pillar account at no extra employer cost.  _(EMTA tax-rates; PwC)_
+- **Rule 5** — Member rate = 2% / 4% / 6%, chosen by application to the registrar; the statutory default is 2% if no higher-rate application is filed. Mandatory for residents born after 31 December 1982; voluntary opt-in for others. No floor, no cap. The state additionally directs 4 percentage points of the social tax pension portion to the member's II-pillar account at no extra employer cost.  _(EMTA tax-rates; Social Tax Act § 10(4) — https://www.riigiteataja.ee/en/akt/514112013022?leiaKehtiv; Pensionikeskus — https://www.pensionikeskus.ee/en/ii-pillar/mandatory-funded-pension/)_
 
 ### Rule 6 -- Personal income tax is a flat 22%
 
@@ -282,7 +282,7 @@ These rules apply when payroll/bank data is clear and all required inputs are av
 
 ### Rule 9 -- Self-employed (FIE) social tax
 
-- **Rule 9** — FIE pay 33% social tax on business income, via quarterly advance payments. 2025 minimum advance = 820 x 3 x 33% = EUR 811.80/quarter absent reducing circumstances. Annual cap = 15x the sum of minimum monthly bases. Advance deadlines (2025): 17 Mar, 16 Jun, 15 Sep, 15 Dec.  _(EMTA social-tax)_
+- **Rule 9** — FIE pay 33% social tax on business income, via quarterly advance payments. 2025 minimum advance = 820 x 3 x 33% = EUR 811.80/quarter absent reducing circumstances. Annual cap = social tax on 10x the sum of the year's minimum monthly wages: EUR 35,085.60 for 2025 (886 x 10 x 12 x 33%) and EUR 36,867.60 for 2026 ((886 x 10 x 3 + 946 x 10 x 9) x 33%), per Social Tax Act § 2(1)5 and EMTA's self-employed social tax page. Advance deadlines (2025): 17 Mar, 16 Jun, 15 Sep, 15 Dec.  _(EMTA social-tax)_
 
 ### Rule 10 -- Standard on-cost and deductions summary
 
@@ -459,16 +459,16 @@ If the client provides only a bank statement and no other information:
 | Social tax | 33% (20pp pension + 13pp health) | 33% | EMTA tax-rates |
 | Employer unemployment insurance | 0.8% | 0.8% | EMTA tax-rates |
 | Employee unemployment insurance | 1.6% | 1.6% | EMTA tax-rates |
-| Funded pension (II pillar) | 2% / 4% / 6% (default 2%) | 2% / 4% / 6% (default 2%) | EMTA tax-rates; PwC |
-| State II-pillar top-up | 4pp of social tax pension portion, no extra employer cost | 4pp | PwC |
+| Funded pension (II pillar) | 2% / 4% / 6% (default 2%) | 2% / 4% / 6% (default 2%) | EMTA tax-rates |
+| State II-pillar top-up | 4pp of social tax pension portion, no extra employer cost | 4pp | Social Tax Act § 10(4) |
 | Min monthly social tax base | EUR 820 (=> EUR 270.60 tax) | EUR 886 (=> EUR 292.38 tax) | EMTA tax-rates |
 | Basic exemption (standard) | up to EUR 654/mo, tapering 14,400->25,200 [taper RESEARCH GAP] | EUR 700/mo flat | EMTA 2025 overview; EMTA tax-rates |
 | Basic exemption (pensionable age) | EUR 776/mo (EUR 9,312/yr) | EUR 776/mo (EUR 9,312/yr) | EMTA tax-rates / 2025 overview |
 | National minimum wage | EUR 886/mo; EUR 5.31/hr | EUR 946/mo; EUR 5.67/hr (from 1 Apr 2026) | palgakalkulaator.ee; ERR |
 | Total employer on-cost above gross | 33.8% | 33.8% | EMTA tax-rates |
 | FIE min quarterly social-tax advance | EUR 811.80 (820 x 3 x 33%) | EUR 877.14 (886 x 3 x 33%) [derived, not separately quoted] | EMTA social-tax |
-| VAT registration threshold | EUR 40,000 taxable turnover / calendar year | EUR 40,000 | PwC |
-| II-pillar mandatory membership | residents born after 31 Dec 1982 | residents born after 31 Dec 1982 | PwC |
+| VAT registration threshold | EUR 40,000 taxable turnover / calendar year | EUR 40,000 | EMTA, Registration as a VAT payer (VAT Act § 19¹(3)) |
+| II-pillar mandatory membership | residents born after 31 Dec 1982 | residents born after 31 Dec 1982 | Pensionikeskus |
 
 ### Forms
 
@@ -487,7 +487,7 @@ If the client provides only a bank statement and no other information:
 
 | Penalty | Detail | Source |
 | --- | --- | --- |
-| Late payment interest | Statutory interest on overdue tax at 0.06% per day (~21.9% per annum) under the Taxation Act [re-check against current statute] | PwC |
+| Late payment interest | Statutory interest on overdue tax at 0.06% per day (~21.9% per annum) under the Taxation Act | EMTA, Payment of interests |
 | Late or non-declaration | EMTA may issue compliance notices with penalty payments and assess tax; failure to declare/withhold can trigger misdemeanour fines | EMTA social-tax |
 
 ### Worked employer-cost / net-pay table (recomputed)
@@ -540,7 +540,7 @@ Pensionable-age employee, gross EUR 1,500/mo, 2026, exemption EUR 776, not II-pi
 - Social tax -- Estonian Tax and Customs Board: https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/social-tax
 - Tax rates -- Estonian Tax and Customs Board (private client): https://www.emta.ee/en/private-client/taxes-and-payment/declaration-income/tax-rates
 - Overview on what to consider when submitting declarations in 2025 for companies -- EMTA: https://www.emta.ee/en/news/overview-what-consider-when-submitting-declarations-2025-companies
-- Estonia -- Individual -- Other taxes (PwC Worldwide Tax Summaries): https://taxsummaries.pwc.com/estonia/individual/other-taxes
+- Social Tax Act (Sotsiaalmaksuseadus), consolidated English translation -- Riigi Teataja: https://www.riigiteataja.ee/en/akt/514112013022?leiaKehtiv
 - Estonia -- Significant tax changes apply in 2025-2026 (EY) -- NOTE: reflects the superseded security-tax plan; cross-check: https://www.ey.com/en_gl/technical/tax-alerts/estonia-significant-tax-changes-apply-in-2025-2026
 - Security Tax Abolished, but VAT and Income Tax to Rise -- Estonian Chamber of Commerce and Industry (koda.ee): https://www.koda.ee/en/news/security-tax-abolished-vat-and-income-tax-rise-24
 - Employers and unions agree on 946 euro as Estonia's new minimum wage -- ERR: https://news.err.ee/1609943096/employers-and-unions-agree-on-946-as-estonia-s-new-minimum-wage
@@ -553,11 +553,11 @@ Pensionable-age employee, gross EUR 1,500/mo, 2026, exemption EUR 776, not II-pi
 - **Personal income tax (PIT) rate** — 22 (the once-discussed rise to 24% was cancelled)  _(Tax rates -- Estonian Tax and Customs Board (private client): https://www.emta.ee/en/private-client/taxes-and-payment/declaration-income/tax-rates)_
 - **VAT standard rate** — 24 (now permanent)  _(Security Tax Abolished, but VAT and Income Tax to Rise -- Estonian Chamber of Commerce and Industry (koda.ee): https://www.koda.ee/en/news/security-tax-abolished-vat-and-income-tax-rise-24)_
 - **2026 FIE quarterly advance** — 886 x 3 x 33% = EUR 877.14 (derived arithmetically from the published base, not separately quoted)
-- **State pension-portion transfer for II-pillar members** — 4 percentage points (sourced from PwC; verify the precise mechanism against the Funded Pensions Act if exact accuracy is required)  _(Estonia -- Individual -- Other taxes (PwC Worldwide Tax Summaries): https://taxsummaries.pwc.com/estonia/individual/other-taxes)_
-- **Late-payment interest rate** — 0.06 %/day (long-standing statutory rate per the Taxation Act; should be re-checked against the current statute)
+- **State pension-portion transfer for II-pillar members** — 4 percentage points of the 33% social tax go to the registrar of the pension register for persons who have joined the II pillar (16% to state pension insurance, 13% to health insurance)  _(Social Tax Act (Sotsiaalmaksuseadus) § 10(4) — https://www.riigiteataja.ee/en/akt/514112013022?leiaKehtiv)_
+- **Late-payment interest rate** — 0.06 %/day (21.9% a year) on tax arrears until paid  _(EMTA, Payment of interests — https://www.emta.ee/en/business-client/taxes-and-payment/payment-arrears/payment-interests)_
 - **2025 basic-exemption taper thresholds** — EUR 14,400 / EUR 25,200 (income-dependent; a reviewer should confirm these against the Income Tax Act)  _(unsure - needs reviewer confirmation against Income Tax Act)_
 
-2026 figures (minimum social tax base EUR 886, basic exemption EUR 700/month, minimum wage EUR 946 from 1 Apr 2026) are officially confirmed on the EMTA tax-rates page and the agreed minimum-wage announcement and are treated as current. The legislative status of the "security/defence tax" was volatile in 2025: the original Security Tax Act would have added a 2% personal-income tax from 2026 but was repealed in June 2025 (per ERR and koda.ee); the EY 2025-2026 alert reflects the earlier, superseded plan, so cross-check before relying on it for the 2026 personal-income position. PIT remains 22% (the once-discussed rise to 24% was cancelled); the VAT standard rate is now 24% permanently. The 2026 FIE quarterly advance (886 x 3 x 33% = EUR 877.14) is derived arithmetically from the published base, not separately quoted. The 4pp state pension-portion transfer figure for II-pillar members is sourced from PwC; verify the precise mechanism against the Funded Pensions Act if exact accuracy is required. The 0.06%/day late-payment interest rate is the long-standing statutory rate per the Taxation Act and should be re-checked against the current statute. A reviewer should confirm the income-dependent 2025 basic-exemption taper thresholds (EUR 14,400 / EUR 25,200) against the Income Tax Act.
+2026 figures (minimum social tax base EUR 886, basic exemption EUR 700/month, minimum wage EUR 946 from 1 Apr 2026) are officially confirmed on the EMTA tax-rates page and the agreed minimum-wage announcement and are treated as current. The legislative status of the "security/defence tax" was volatile in 2025: the original Security Tax Act would have added a 2% personal-income tax from 2026 but was repealed in June 2025 (per ERR and koda.ee); the EY 2025-2026 alert reflects the earlier, superseded plan, so cross-check before relying on it for the 2026 personal-income position. PIT remains 22% (the once-discussed rise to 24% was cancelled); the VAT standard rate is now 24% permanently. The 2026 FIE quarterly advance (886 x 3 x 33% = EUR 877.14) is derived arithmetically from the published base, not separately quoted. The 4pp state pension-portion transfer for II-pillar members is set by Social Tax Act § 10(4), and EMTA's Payment of interests page confirms the 0.06%/day late-payment interest rate. A reviewer should confirm the income-dependent 2025 basic-exemption taper thresholds (EUR 14,400 / EUR 25,200) against the Income Tax Act.
 
 ## Disclaimer
 
