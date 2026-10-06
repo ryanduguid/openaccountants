@@ -11,6 +11,7 @@ repository; nothing here publishes to PyPI.
 
 ### Fixed
 
+- Point the development clone command at this fork so contributors install its server and guides, and document UTF-8 mode for redirected contributor checks in Windows PowerShell.
 - Include `quality_tier`, `verified_by`, `review_status` and `last_updated` in each `search_skills` hit and at the top level of `get_skill_sections`, using the same catalogue values as `get_skill`. Successful searches instruct clients to fetch the full guide before applying rules because snippets can omit conditions. Strict clients must accept the additional fields; external client compatibility remains unqualified.
 
 ## [0.4.0] — 2026-09-29
