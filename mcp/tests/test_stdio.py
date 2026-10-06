@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import json
 import sys
+import sysconfig
 import tempfile
 import unittest
 from pathlib import Path
@@ -15,7 +16,7 @@ from mcp.client.stdio import stdio_client
 
 class InstalledConsoleTests(unittest.TestCase):
     def _call(self, populated: bool) -> dict:
-        command = Path(sys.executable).parent / (
+        command = Path(sysconfig.get_path("scripts")) / (
             "openaccountants-mcp.exe" if sys.platform == "win32" else "openaccountants-mcp"
         )
         self.assertTrue(command.is_file(), "install ./mcp before running its tests")
