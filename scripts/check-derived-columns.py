@@ -57,9 +57,15 @@ cell that shows its working ("20,000 + 48,000 = TZS 68,000") is read as the
 value after the equals sign.
 
 Usage: python3 scripts/check-derived-columns.py [dir ...]   (default: skills)
+The default scans this checkout from any working directory; explicit paths are used as given.
 Exit status is always 0: this is a review aid, not a gate.
 """
 import glob, os, re, signal, sys
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.paths import REPO_ROOT
 
 try:
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
@@ -209,10 +215,12 @@ def check(path, verified):
     return out
 
 
+base_dir = REPO_ROOT if len(sys.argv) == 1 else os.curdir
+
 total, verified = 0, []
 for root in sys.argv[1:] or ['skills']:
-    for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True)):
-        for hdr, raw, msg in check(p, verified):
+    for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True, root_dir=base_dir)):
+        for hdr, raw, msg in check(os.path.join(base_dir, p), verified):
             print('%s\n    under: %s' % (p, hdr))
             if raw:
                 print('    %s' % raw)

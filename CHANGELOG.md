@@ -53,6 +53,8 @@ The roadmap work that followed the September 2026 evaluation of this fork (pull 
 
 ### Fixed
 
+- Fix the band-continuity, derived-column and total-row advisories to scan their checkout from any working directory, preserving relative reports and explicit directory arguments.
+
 - Make `scripts/check-guide-references.py` scan its repository from any working directory and keep reported paths relative to that repository. Running it elsewhere previously scanned an unrelated `skills/` tree or reported zero references.
 - Make the README inventory and jurisdiction-placement advisories scan their own repository from any working directory. Preserve their findings and relative report paths, including README cross-references to shared documentation.
 
