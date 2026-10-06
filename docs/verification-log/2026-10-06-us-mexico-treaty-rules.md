@@ -69,7 +69,7 @@ registry's date, not a verified signature date on that PDF.
 | Loan-granted wording versus bank/insurance beneficial owner, including an assignee | Art 11(2)(a)(i); original explanation of art 11, with current authoritative interpretation unverified |
 | Specified government, pension and public-lender interest; PE preservation versus REMIC exclusion | Art 11(4), (6); Protocol point 10(a); original explanation |
 | Defined interest, debt/equity character, back-to-back, source and excess limits | Art 11(2), (5), (7)-(8); Protocol point 9 |
-| Defined copyright/rights/know-how/equipment and contingent gains; royalty attribution/source/excess | Art 12; Protocol point 11; original explanation of art 12; arts 6 and 8 boundaries |
+| Defined copyright/rights/know-how/equipment and contingent gains; royalty attribution/source/excess, with a source-wording gap | Art 12; Protocol point 11; original explanation of art 12; arts 6 and 8 boundaries |
 | Enterprise profits versus an individual's fixed-base/presence rule; directional company extension | Arts 7 and 14; Protocol point 14; original explanation |
 | More-than-six-month project/supervision threshold and separate PE grounds | Art 5(1)-(8) |
 | Residence, saving clause, category-specific entitlement and USMCA references | Art 4, Protocol point 2(b), amended art 1, art 17 and 2023 arrangement |
@@ -80,6 +80,13 @@ registry's date, not a verified signature date on that PDF.
 I checked these numerical and classification boundaries directly against
 the cited provisions. They are conditional rule comparisons, not claimant
 calculations or withholding instructions.
+
+Article 12(6)(a) requires both liability incurred in connection with the PE
+or fixed base and the royalty borne by it. Subparagraph (b) refers only to
+(a) not deeming source in either state, while Treasury's original explanation
+describes place of use as residual after both payer residence and the PE/fixed
+base rule. I preserve that wording difference as unresolved; place of use alone
+does not settle treaty source for a resident payer in this draft.
 
 | Boundary | Result under the cited provision |
 | --- | --- |
@@ -98,9 +105,14 @@ calculations or withholding instructions.
 | Individual is present exactly 183 versus more than 183 aggregate days in twelve months | Only more than 183 meets the presence limb; the regularly used fixed-base limb and US-income limits are separate |
 | US profits from same/similar goods sales outside the PE | Art 7(1)(b) can apply unless non-treaty-benefit reasons are demonstrated; the rule is not confined to direct PE attribution |
 | Transparent entity income treated as a resident's income | Derivation still does not establish beneficial ownership, art 17 entitlement or dividend share ownership |
+| US-resident royalty payer, use in Mexico and no relevant PE/fixed base | Treasury's explanation uses US payer residence; operative art 12(6)(b) refers only to subparagraph (a), so the wording difference remains unresolved |
+| Third-state royalty payer, liability connected with a US PE and royalty borne by it, use in Mexico | Art 12(6)(a) assigns US source; both connection and bearing elements are required |
+| Third-state royalty payer, US PE merely bears the amount without the required liability connection, use in Mexico | The paragraph (a) test fails; operative paragraph (b)'s place-of-use rule supplies Mexican source under these stated facts |
+| Third-state royalty payer, no PE/fixed base in either state, use in the US | The residual place-of-use rule supplies US source under the stated facts |
 | Amended art 11A(3) route satisfied | The exemption reaches paragraph 2(a) dividend-equivalent tax only; paragraph 2(b) excess interest remains separate |
 
-Parent ownership and loan-assignee interpretation remain unresolved.
+Parent ownership, loan-assignee interpretation and the payer-residence/place-of-use
+royalty-source wording remain unresolved.
 Historical explanation statements about domestic law, foreign-tax-credit
 classification, exchange jurisdictions and filing mechanics are not treated
 as current 2025 law. Current domestic taxability/rates, source and branch
