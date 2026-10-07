@@ -5,7 +5,7 @@ version: 2.0
 jurisdiction: XK
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-08
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Authority | Tax Administration of Kosovo (TAK — Administrata Tatimore e Kosoves) |
 | Currency | EUR (Kosovo uses the euro) |
 | Filing frequency | Monthly |
-| Deadline | Last day of the month following the reporting month |
+| Deadline | 20th of the month following the reporting month, for both the return and the payment ([Law No. 05/L-037](https://www.atk-ks.org/wp-content/uploads/2017/07/LAW_NO._05_L-037_ON_VALUE_ADDED_TAX___ANNEX.pdf) arts. 53(1) and 54(1)) |
 | Companion skill | **vat-workflow-base v0.1 or later — MUST be loaded** |
 | Contributor | Open Accounting Skills Registry |
 | Validated by | Pending local practitioner validation |
