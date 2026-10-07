@@ -4,7 +4,7 @@ description: Use this skill whenever asked about North Macedonia payroll process
 version: 0.1
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-08
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## North Macedonia Payroll Skill v0.1
 
-**Tier 2 — research-verified. Figures below are sourced from the Public Revenue Office (Управа за јавни приходи / UJP / PRO — ujp.gov.mk), the social funds (Pension & Disability Insurance Fund PIOM, Health Insurance Fund FZOM, Employment Agency AVRSM), the Ministry of Labour and Social Policy (mtsp.gov.mk), the Official Gazette (Службен весник), PwC Worldwide Tax Summaries, and the Eurofast North Macedonia Tax Card 2025 / Payroll Guide 2025. NOT yet signed off by a licensed Macedonian accountant (овластен сметководител) or authorised auditor. Treat every computation as an estimate pending professional review.**
+**Tier 2 — research-verified. Figures below are sourced from the Public Revenue Office (Управа за јавни приходи / UJP / PRO — ujp.gov.mk), the social funds (Pension & Disability Insurance Fund PIOM, Health Insurance Fund FZOM, Employment Agency AVRSM), the Ministry of Labour and Social Policy (mtsp.gov.mk), the Official Gazette (Службен весник), and the Eurofast North Macedonia Tax Card 2025 / Payroll Guide 2025. Rates, base multipliers, deadlines and interest cite the Law on Personal Income Tax (Official Gazette 241/2018 as amended to 274/2022, "PIT Law"), the Law on Mandatory Social Insurance Contributions (Official Gazette 142/2008 as amended to 247/2018, "Contributions Law") and the Law on Tax Procedure (Official Gazette 13/2006 as amended to 35/2018), read from the unofficial consolidated texts of the Ministry of Finance and the PRO; amendments after those consolidations were not traced. NOT yet signed off by a licensed Macedonian accountant (овластен сметководител) or authorised auditor. Treat every computation as an estimate pending professional review.**
 
 > **The single most distinctive North Macedonia fact:** ALL mandatory social contributions (28% in total) are levied on the employee's gross salary, WITHHELD from gross, and remitted by the employer on the employee's behalf. There is **NO separate employer-side contribution on top of gross salary** unless a special law requires one. The employer's payroll cost is the gross salary; it is not grossed up by an additional social charge. (Eurofast Tax Card / Payroll Guide 2025)
 
@@ -34,24 +34,24 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Standard pay frequency | Monthly |
 | Tax year | Calendar year (1 January -- 31 December) |
 | Tax withholding system | Monthly withholding -- employer computes gross, withholds 28% social contributions and the flat 10% PIT, and remits everything via the MPIN integrated-collection declaration (Eurofast Payroll Guide 2025) |
-| Income tax authority | Public Revenue Office (UJP / PRO — Управа за јавни приходи) — https://www.ujp.gov.mk (PwC) |
+| Income tax authority | Public Revenue Office (UJP / PRO — Управа за јавни приходи) — https://www.ujp.gov.mk |
 | Pension authority | Pension and Disability Insurance Fund (PIOM / Фонд за ПИОМ) (Eurofast Tax Card 2025) |
 | Health authority | Health Insurance Fund (FZOM / Фонд за здравствено осигурување) (Eurofast Tax Card 2025) |
 | Employment / unemployment authority | Employment Agency (AVRSM / Агенција за вработување) (Eurofast Payroll Guide 2025) |
 | Minimum-wage setter | Ministry of Labour and Social Policy (mtsp.gov.mk) (Official Gazette 68/25) |
 | Key legislation | Law on Personal Income Tax; Law on Contributions from Mandatory Social Insurance; Law on Pension and Disability Insurance; Law on Labour Relations (Official Gazette 62/05 et seq., latest 111/23); Law on Minimum Salary (amendments Official Gazette 41/2022; 2025 amount in Official Gazette 68/25) |
 | Filing portal | UJP e-services (MPIN electronic declaration) |
-| Income tax | **Flat 10%** on employment income (games of chance 15%); reverted to flat 10% from 2020 (PwC) |
+| Income tax | **Flat 10%** on employment income (games of chance 15%); flat 10% since 2020 (PIT Law art. 11) |
 | Validated by | Pending -- requires sign-off by a licensed Macedonian accountant |
 | Skill version | 0.1 |
 
 ### The three most important North Macedonia facts
 
-> **1. Personal income tax is a FLAT 10%.** It applies to employment income (and most other income — self-employment, royalties/IP, rental, capital, capital gains, insurance, other income); games of chance are 15%; securities held > 2 years have a 0% capital-gains rate. There are no progressive bands for ordinary salary. (PwC — Taxes on personal income)
+> **1. Personal income tax is a FLAT 10%.** It applies to employment income (and most other income — self-employment, royalties/IP, rental, capital, capital gains, insurance, other income); games of chance are 15%; securities held > 2 years have a 0% capital-gains rate. There are no progressive bands for ordinary salary. (PIT Law arts. 11, 12(1)(39-а))
 >
 > **2. The PIT base is gross MINUS contributions MINUS the personal allowance.** Mandatory social contributions are FULLY deductible from the PIT base, and a monthly personal allowance of **MKD 10,270** is exempt before the 10% applies. (Eurofast Tax Card 2025)
 >
-> **3. The 28% social contributions are EMPLOYEE-borne.** Pension & Disability 18.8% + Health 7.5% + Unemployment/Employment 1.2% + Additional/Disability 0.5% = **28.0%**, all withheld from the employee's gross. The employer adds **NOTHING** on top of gross. (Eurofast Tax Card 2025; PwC)
+> **3. The 28% social contributions are EMPLOYEE-borne.** Pension & Disability 18.8% + Health 7.5% + Unemployment/Employment 1.2% + Additional/Disability 0.5% = **28.0%**, all withheld from the employee's gross. The employer adds **NOTHING** on top of gross. (Contributions Law art. 25(1); Eurofast Tax Card 2025)
 
 ## Section 2 -- Income Tax Withholding (данок на личен доход)
 
@@ -59,27 +59,27 @@ The employer withholds personal income tax (PIT) monthly. North Macedonia operat
 
 ### PIT rate schedule (2025)
 
-**PIT rate schedule (2025)**  _(PwC)_
+**PIT rate schedule (2025)**  _(PIT Law art. 11)_
 
 | Income type | Rate | Source |
 | --- | --- | --- |
-| Employment income (salary) | **10%** (flat) | PwC |
-| Self-employment, royalties/IP, rental, capital, capital gains, insurance, other income | 10% (flat) | PwC |
-| Games of chance | 15% | PwC |
-| Capital gains on securities held > 2 years | 0% | PwC |
+| Employment income (salary) | **10%** (flat) | PIT Law art. 11(1) |
+| Self-employment, royalties/IP, rental, capital, capital gains, insurance, other income | 10% (flat) | PIT Law art. 11(1) |
+| Games of chance | 15% | PIT Law art. 11(2) |
+| Capital gains on securities held > 2 years | 0% | PIT Law art. 12(1)(39-а) |
 
-> **Historical note:** A progressive PIT (10% / 18%) was introduced for 2019 only and then suspended; North Macedonia reverted to the flat 10% from 2020 onward. (PwC)
+> **Historical note:** A progressive PIT (10% / 18%) applied for 2019 only; Official Gazette 275/2019 (art. 24) suspended the 18% band for 2020-2022, and art. 11 of the consolidated text to 274/2022 carries only the 10% and 15% rates. (PIT Law art. 11)
 
 ### PIT base formula and the monthly personal allowance
 
-- **Monthly withholding mechanics** — contributions = contribution_base x 28% PIT_base      = gross_salary - contributions - personal_allowance PIT           = max(PIT_base, 0) x 10%  _(PwC)_
+- **Monthly withholding mechanics** — contributions = contribution_base x 28% PIT_base      = gross_salary - contributions - tax_reduction PIT           = max(PIT_base, 0) x 10%  _(PIT Law arts. 9, 11(1))_
 
 **PIT base items table**  _(Eurofast Tax Card 2025)_
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Income tax rate on salary | 10% (flat) | PwC |
-| Monthly personal allowance (PIT exemption for salary earners) | **MKD 10,270** | Eurofast Tax Card 2025 |
+| Income tax rate on salary | 10% (flat) | PIT Law art. 11(1) |
+| Monthly personal allowance (tax reduction, даночно намалување, for salary, wage compensation and pension) | **MKD 10,270** | PIT Law arts. 10, 17(2); amount per Eurofast Tax Card 2025 |
 | Deductibility of contributions | Whole 28% is deductible from the PIT base | Eurofast Tax Card 2025 |
 
 - **Employer computation process** — The employer computes gross salary, deducts the 28% mandatory social contributions, subtracts the monthly personal allowance (MKD 10,270), and applies the flat 10% PIT to the resulting base. Net pay, contributions, and PIT are paid concurrently via a single encrypted payment order generated from the MPIN declaration.  _(Eurofast Payroll Guide 2025)_
@@ -88,7 +88,7 @@ The employer withholds personal income tax (PIT) monthly. North Macedonia operat
 
 ## Section 3 -- Social Contributions (придонеси) -- Contribution Table (2025)
 
-- **Contribution base and employee-borne nature** — All mandatory social contributions are computed on the employee's gross salary, clamped between the minimum and maximum contribution bases (Section 3.2). Every component is employee-borne (withheld from gross) and remitted by the employer; the employer adds nothing on top of gross.  _(Eurofast Tax Card 2025; PwC)_
+- **Contribution base and employee-borne nature** — All mandatory social contributions are computed on the employee's gross salary, clamped between the minimum and maximum contribution bases (Section 3.2). Every component is employee-borne (withheld from gross) and remitted by the employer; the employer adds nothing on top of gross.  _(Contributions Law arts. 15, 16, 25; Eurofast Tax Card 2025)_
 
 ### 3.1 Contribution rates (2025)
 
@@ -96,18 +96,18 @@ The employer withholds personal income tax (PIT) monthly. North Macedonia operat
 
 | Fund | Employee (withheld) | Employer (on top of gross) | Total | Source |
 | --- | --- | --- | --- | --- |
-| Pension and Disability Insurance (Pension Fund / PIOM — Фонд за ПИОМ) | 18.8% | 0% | 18.8% | Eurofast Tax Card 2025 |
-| Health Insurance (Health Fund / FZOM — Фонд за здравство) | 7.5% | 0% | 7.5% | Eurofast Tax Card 2025 |
-| Employment / Unemployment Insurance (Unemployment Fund) | 1.2% | 0% | 1.2% | Eurofast Tax Card 2025 |
-| Additional health / Disability and bodily-injury insurance | 0.5% | 0% | 0.5% | PwC (Other taxes) |
-| **TOTAL mandatory social contributions** | **28.0%** | **0%** | **28.0%** | Eurofast Tax Card 2025 |
+| Pension and Disability Insurance (Pension Fund / PIOM — Фонд за ПИОМ) | 18.8% | 0% | 18.8% | Contributions Law art. 25(1)(1) |
+| Health Insurance (Health Fund / FZOM — Фонд за здравство) | 7.5% | 0% | 7.5% | Contributions Law art. 25(1)(3) |
+| Employment / Unemployment Insurance (Unemployment Fund) | 1.2% | 0% | 1.2% | Contributions Law art. 25(1)(8) |
+| Additional health insurance for injury at work and occupational disease | 0.5% | 0% | 0.5% | Contributions Law art. 25(1)(7) |
+| **TOTAL mandatory social contributions** | **28.0%** | **0%** | **28.0%** | Contributions Law art. 25(1) |
 
 **Arithmetic check (component rows sum to the TOTAL row):**
 - Employee column: 18.8 + 7.5 + 1.2 + 0.5 = **28.0%** ✓
 - Employer column: 0 + 0 + 0 + 0 = **0%** ✓ (no employer-side contribution on top of gross)
 - Total column: 28.0 + 0 = **28.0%** ✓
 
-> **Label discrepancy on the 0.5% component.** The Eurofast Tax Card 2025 lists the four funds as Pension 18.8%, Health 7.5%, Unemployment 1.2%, Disability 0.5%; PwC and several secondary sources describe the 0.5% as "additional health insurance." The TOTAL (28%) and the other three components are consistent across all authoritative sources, so the 0.5% is included either way. (Eurofast Tax Card 2025; PwC) **An outlier source (Rivermate) reports 7.3% health / 27.3% total and a 4× ceiling — this was NOT used; Eurofast + PwC (28% total, 16× ceiling) are treated as authoritative.** **[RESEARCH GAP — reviewer to confirm the exact label/allocation of the 0.5% against the Law on Contributions from Mandatory Social Insurance.]**
+> **Label of the 0.5% component.** The statute names the 0.5% an additional contribution for mandatory health insurance in case of injury at work and occupational disease (Contributions Law art. 25(1)(7)); the Eurofast Tax Card 2025 labels it "Disability". The TOTAL (28%) and the other three components are consistent across all sources, so the 0.5% is included either way. (Contributions Law art. 25(1)) **An outlier source (Rivermate) reports 7.3% health / 27.3% total and a 4× ceiling — this was NOT used; the statute sets 28% in total and a 16× employee ceiling (Contributions Law arts. 16(1), 25(1)).**
 
 ### 3.2 Contribution base — floor and ceiling (2025)
 
@@ -141,7 +141,7 @@ When an input is ambiguous, apply the conservative default below and flag it for
 | Personal allowance entitlement unclear | Apply the **MKD 10,270/month** salary-earner allowance to the PIT base | This is the standard monthly exemption for salary earners (Eurofast Tax Card 2025) |
 | Unknown worker status | Assume **employee** (employer withholds 28% + 10% PIT and remits via MPIN) | Employment income has no de-minimis threshold; default to the withholding obligation |
 
-> **Note on the 0.5% component.** Whether the 0.5% is labelled "disability" (Eurofast) or "additional health" (PwC), it is included in the 28% total either way; the choice of label does not change any computation.
+> **Note on the 0.5% component.** Whether the 0.5% is labelled "disability" (Eurofast) or additional health insurance for injury at work (the statute, Contributions Law art. 25(1)(7)), it is included in the 28% total either way; the choice of label does not change any computation.
 
 ## Section 5 -- Required Inputs and Refusal Catalogue
 
@@ -156,7 +156,7 @@ When an input is ambiguous, apply the conservative default below and flag it for
 ### Refusal catalogue
 
 - **R-MK-PAY-1 — Gross figure unknown** — Trigger: no gross monthly salary provided. Message: "A gross monthly salary is mandatory. Contributions are 28% of the (clamped) gross, and the 10% PIT base is gross minus contributions minus the MKD 10,270 personal allowance. Cannot proceed without the gross figure."
-- **R-MK-PAY-2 — Payroll arrears / late-payment quantification** — Trigger: client has unpaid contributions or withheld PIT from prior periods and wants the arrears + interest quantified. Message: "Overdue social contributions and withheld PIT accrue penalty interest of 0.03% per day plus possible administrative fines and PRO/labour inspections. Exact arrears and interest must be confirmed against a PRO statement. Escalate to a North Macedonia-qualified accountant — do not estimate arrears."  _(PwC — Corporate tax administration)_
+- **R-MK-PAY-2 — Payroll arrears / late-payment quantification** — Trigger: client has unpaid contributions or withheld PIT from prior periods and wants the arrears + interest quantified. Message: "Overdue social contributions and withheld PIT accrue penalty interest of 0.03% per day plus possible administrative fines and PRO/labour inspections. Exact arrears and interest must be confirmed against a PRO statement. Escalate to a North Macedonia-qualified accountant — do not estimate arrears."  _(Law on Tax Procedure art. 123(1))_
 - **R-MK-PAY-3 — Payroll-declaration penalty schedule** — Trigger: client wants the exact monetary fine for failing to file or pay the MPIN declaration on time. Message: "Late payment carries 0.03% per-day penalty interest, and general non-compliance carries 'fines plus interest', but a payroll-declaration-specific monetary fine schedule (separate from the per-day interest) was not found in consulted authoritative sources — published EUR fine ranges relate to VAT/CIT returns, not the MPIN. [RESEARCH GAP — reviewer to confirm against the Law on Contributions / Tax Procedure Law.] Escalate to a North Macedonia-qualified accountant."
 - **R-MK-PAY-4 — Cross-border / posted-worker / treaty coverage** — Trigger: employee works across borders, is a posted worker, or claims treaty/totalisation relief. Message: "Cross-border social-security coordination and which state's contributions apply is outside the scope of this skill. Escalate to a North Macedonia-qualified accountant."
 - **R-MK-PAY-5 — Self-employed / non-employment income** — Trigger: the worker is self-employed or the income is royalties, rental, capital, or games-of-chance. Message: "This skill covers EMPLOYED persons (employer withholds 28% contributions + 10% PIT and remits via MPIN). Self-employment and other income types are taxed at 10% (games of chance 15%) under different mechanics — route to a North Macedonia income-tax skill or a qualified accountant."
@@ -300,17 +300,17 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 1 -- Personal income tax is a flat 10%
 
-- **PIT formula** — PIT_base = gross_salary - contributions - personal_allowance PIT      = max(PIT_base, 0) x 10%  _(PwC)_
-- **No brackets note** — No brackets for salary; games of chance are 15%; reverted to flat 10% from 2020.  _(PwC)_
+- **PIT formula** — PIT_base = gross_salary - contributions - tax_reduction PIT      = max(PIT_base, 0) x 10%  _(PIT Law arts. 9, 11(1))_
+- **No brackets note** — No brackets for salary; games of chance are 15%; flat 10% since 2020.  _(PIT Law art. 11)_
 
 ### Rule 2 -- Contributions are 28% of the (clamped) gross, employee-borne
 
-- **Contribution formula** — contribution_base = clamp(gross_salary, MKD 31,577, MKD 1,010,464) contributions     = contribution_base x 28%   # 18.8% + 7.5% + 1.2% + 0.5% employer_extra    = 0                          # NOTHING on top of gross  _(Eurofast Tax Card 2025; PwC)_
-- **All 28% withheld and remitted** — All 28% is withheld from the employee and remitted by the employer.  _(Eurofast Tax Card 2025; PwC)_
+- **Contribution formula** — contribution_base = clamp(gross_salary, MKD 31,577, MKD 1,010,464) contributions     = contribution_base x 28%   # 18.8% + 7.5% + 1.2% + 0.5% employer_extra    = 0                          # NOTHING on top of gross  _(Contributions Law arts. 15, 16, 25)_
+- **All 28% withheld and remitted** — All 28% is withheld from the employee and remitted by the employer.  _(Contributions Law art. 25(1); Eurofast Tax Card 2025)_
 
 ### Rule 3 -- The personal allowance is MKD 10,270/month
 
-- **Personal allowance rule** — The monthly personal allowance of MKD 10,270 is exempt from PIT for salary earners (2025). It reduces the PIT base only — not the contribution base.  _(Eurofast Tax Card 2025)_
+- **Personal allowance rule** — The personal allowance is the statutory tax reduction (даночно намалување): an annual amount the Minister of Finance publishes by 31 December, indexed by 50% of average-salary growth, of which each monthly payroll deducts one-twelfth; it applies to salary, wage compensation and pension. The 2025 monthly amount is MKD 10,270. It reduces the PIT base only — not the contribution base.  _(PIT Law arts. 9, 10, 17(2); amount per Eurofast Tax Card 2025)_
 
 ### Rule 4 -- Contributions apply only between the floor and the ceiling
 
@@ -322,7 +322,7 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 6 -- Monthly remittance via MPIN and deadlines
 
-- **MPIN remittance deadlines** — The employer files the electronic PIT/contribution calculation to the PRO for approval by the 10th of the month following the salary month, and pays the contributions and withheld PIT by the 15th of that month, via a single encrypted MPIN payment order that also disburses net pay.  _(PwC — Tax administration; Eurofast Payroll Guide 2025)_
+- **MPIN remittance deadlines** — The employer files the electronic PIT/contribution calculation to the PRO by the 10th of the month following the salary month, and the PRO approves it before payment. Contributions fall due on the day the salary is paid (by the 15th of the following month if the salary is not paid), and the withheld PIT is paid with each payment, through a single encrypted MPIN payment order that also disburses net pay.  _(Contributions Law arts. 18(1), (6), 24(2)-(3); PIT Law art. 92(1); Eurofast Payroll Guide 2025)_
 
 ### Rule 7 -- Minimum wage
 
@@ -334,13 +334,13 @@ Apply exactly as written when inputs are clear.
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
-| MPIN (Месечна пресметка за интегрирана наплата — Monthly Integrated Collection declaration) | Monthly electronic payroll declaration reporting gross salaries, contributions, personal allowances and withheld PIT; functions as a single encrypted payment order for net pay, contributions and PIT for all employees | Electronic calculation filed to PRO for approval by the 10th; payment by the 15th of the month following the salary month | PwC |
-| Annual PIT return (draft prepared by the PRO) | Since 2019 individuals do not self-file; the PRO prepares a draft annual return | Draft delivered by 30 April; taxpayer confirms/corrects by 31 May of the year following the tax year; if no action, the draft becomes final | PwC |
+| MPIN (Месечна пресметка за интегрирана наплата — Monthly Integrated Collection declaration) | Monthly electronic payroll declaration reporting gross salaries, contributions, personal allowances and withheld PIT; functions as a single encrypted payment order for net pay, contributions and PIT for all employees | Electronic calculation filed to PRO for approval by the 10th of the following month; contributions and PIT paid on the salary payment date (contributions by the 15th if the salary is unpaid) | Contributions Law arts. 18(1), 24(2)-(3); PIT Law art. 92(1) |
+| Annual PIT return (draft prepared by the PRO) | Since 2019 individuals do not self-file; the PRO prepares a draft annual return | Draft delivered by 30 April; taxpayer confirms/corrects by 31 May of the year following the tax year; if no action, the draft is treated as confirmed | PIT Law art. 96 |
 | M1 / employment registration (Employment Agency) | Registration of the employment relationship; vacancy first published on the AVRSM portal (registration only after 3 working days); M1 document proves registration | Before employment commences | Eurofast Payroll Guide 2025 |
 
 ### Rule 9 -- Penalty interest and statute of limitations
 
-- **Penalty interest and statute of limitations** — Late payment of tax/contributions accrues penalty interest of 0.03% per day. The statute of limitations is 5 years from the end of the calendar year of the tax event (10 years for tax evasion).  _(PwC — Corporate tax administration)_
+- **Penalty interest and statute of limitations** — Late payment of tax/contributions accrues penalty interest of 0.03% per day. The statute of limitations is 5 years from the end of the calendar year of the tax event (10 years for tax evasion).  _(Law on Tax Procedure arts. 110(2)-(3), 123(1))_
 
 ### Rule 10 -- Employer-entity context (informational)
 
@@ -360,7 +360,7 @@ Flag these for reviewer confirmation when data is ambiguous.
 
 ### T2-3 -- 0.5% component label/allocation
 
-*Trigger:* a payslip or fund statement that itemises the 0.5%. *Issue:* Eurofast labels it "disability"; PwC labels it "additional health." *Action:* the 28% total is unaffected; confirm the per-fund allocation against the Law on Contributions if the per-fund split is material. **[RESEARCH GAP.]**
+*Trigger:* a payslip or fund statement that itemises the 0.5%. *Issue:* Eurofast labels it "disability"; the statute treats it as additional health insurance for injury at work and occupational disease (Contributions Law art. 25(1)(7)). *Action:* the 28% total is unaffected; allocate the 0.5% to the health contribution when a per-fund split is needed.
 
 ### T2-4 -- Gross below the floor (part-time / partial month)
 
@@ -439,7 +439,7 @@ References commonly appear in Cyrillic; some banks transliterate to Latin. Curre
 | ПИОМ (Пензиско и инвалидско осигурување) | PIOM | Pension and Disability Insurance Fund |
 | ФЗОМ (Фонд за здравствено осигурување) | FZOM | Health Insurance Fund |
 | Данок на личен доход (ДЛД) | Danok na lichen dohod (DLD) | Personal income tax (10% flat) |
-| Личен ослободување | Lichen oslobóduvanje | Personal allowance |
+| Даночно намалување | Danočno namaluvanje | Personal allowance (tax reduction) |
 | Минимална плата | Minimalna plata | Minimum wage |
 | УЈП (Управа за јавни приходи) | UJP | Public Revenue Office |
 | МПИН | MPIN | Monthly Integrated Collection declaration |
@@ -466,7 +466,7 @@ If the client provides only a bank statement and no other information:
 
 ### Calculation summary (2025, MKD; 28% employee contributions, flat 10% PIT, MKD 10,270 allowance)
 
-**Calculation summary (2025, MKD; 28% employee contributions, flat 10% PIT, MKD 10,270 allowance)**  _(Eurofast Tax Card 2025 / PwC; MKD 10,270 allowance (Eurofast Tax Card 2025); floor/ceiling derived from MKD 63,154 average (Eurofast Payroll Guide 2025))_
+**Calculation summary (2025, MKD; 28% employee contributions, flat 10% PIT, MKD 10,270 allowance)**  _(Contributions Law art. 25(1); PIT Law art. 11(1); MKD 10,270 tax reduction (Eurofast Tax Card 2025); floor/ceiling derived from MKD 63,154 average (Eurofast Payroll Guide 2025))_
 
 | Gross monthly | Contribution base | Contributions (28%) | PIT base | PIT (10%) | Net pay |
 | --- | --- | --- | --- | --- | --- |
@@ -476,7 +476,7 @@ If the client provides only a bank statement and no other information:
 | MKD 63,154 (average) | MKD 63,154 | MKD 17,683.12 | MKD 35,200.88 | MKD 3,520.09 | MKD 41,950.79 |
 | MKD 1,200,000 | MKD 1,010,464 (capped) | MKD 282,929.92 | MKD 906,800.08 | MKD 90,680.01 | MKD 826,390.07 |
 
-All sourced to the rates in Section 3 (Eurofast Tax Card 2025 / PwC), the MKD 10,270 allowance (Eurofast Tax Card 2025), and the floor/ceiling derived from the MKD 63,154 average (Eurofast Payroll Guide 2025).
+All sourced to the rates in Section 3 (Contributions Law art. 25(1); PIT Law art. 11(1)), the MKD 10,270 tax reduction (Eurofast Tax Card 2025), and the floor/ceiling derived from the MKD 63,154 average (Eurofast Payroll Guide 2025).
 
 ### Thresholds (with provenance)
 
@@ -484,9 +484,9 @@ All sourced to the rates in Section 3 (Eurofast Tax Card 2025 / PwC), the MKD 10
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Personal income tax rate (salary) | 10% flat (games of chance 15%; securities held > 2 yrs 0%) | PwC |
-| Monthly personal allowance | MKD 10,270 | Eurofast Tax Card 2025 |
-| Total social contributions | 28.0% (18.8% pension + 7.5% health + 1.2% unemployment + 0.5% additional/disability) | Eurofast Tax Card 2025; PwC |
+| Personal income tax rate (salary) | 10% flat (games of chance 15%; securities held > 2 yrs 0%) | PIT Law arts. 11, 12(1)(39-а) |
+| Monthly personal allowance | MKD 10,270 | PIT Law arts. 10, 17(2); amount per Eurofast Tax Card 2025 |
+| Total social contributions | 28.0% (18.8% pension + 7.5% health + 1.2% unemployment + 0.5% additional health for injury at work) | Contributions Law art. 25(1) |
 | Employer contribution on top of gross | 0% | Eurofast Tax Card / Payroll Guide 2025 |
 | National average gross monthly salary (base reference 2025) | MKD 63,154 | Eurofast Payroll Guide 2025 **[RESEARCH GAP — confirm current published base]** |
 | Minimum contribution base (floor) | 50% of average ≈ MKD 31,577 | Eurofast Tax Card 2025 |
@@ -502,8 +502,8 @@ All sourced to the rates in Section 3 (Eurofast Tax Card 2025 / PwC), the MKD 10
 
 | Penalty | Detail | Source |
 | --- | --- | --- |
-| Late payment of tax/contributions | 0.03% per day penalty interest | PwC — Corporate tax administration |
-| Statute of limitations | 5 years from end of the calendar year of the tax event (10 years for tax evasion) | PwC |
+| Late payment of tax/contributions | 0.03% per day penalty interest | Law on Tax Procedure art. 123(1) |
+| Statute of limitations | 5 years from end of the calendar year of the tax event (10 years for tax evasion) | Law on Tax Procedure art. 110(2)-(3) |
 | Non-compliance (general) | Fines plus interest; possible PRO/labour inspections; no payroll-declaration-specific monetary fine schedule found in consulted authoritative sources | Rivermate **[RESEARCH GAP — confirm payroll-specific fine schedule]** |
 
 ### Authorities
@@ -514,7 +514,7 @@ All sourced to the rates in Section 3 (Eurofast Tax Card 2025 / PwC), the MKD 10
 - **Employment Agency (AVRSM)** — handles employment registration (M1) and the 1.2% unemployment contribution.
 - **Ministry of Labour and Social Policy (mtsp.gov.mk)** — sets the minimum wage.
 
-> **Note:** The official PRO (ujp.gov.mk) detailed rate page could not be loaded directly for primary confirmation during research; figures rely on PwC + Eurofast, which closely corroborate. 2025 figures are confirmed; 2026 figures (indexed minimum wage, updated average-salary base) were not officially confirmed and are out of scope. **[RESEARCH GAP — primary PRO confirmation pending.]**
+> **Note:** The PRO's site (ujp.gov.mk) returned HTTP 502 on 8 October 2026. Rates and multipliers were confirmed against the unofficial consolidated texts of the PIT Law and Contributions Law; the 2025 amounts (average salary, bases, tax reduction) rely on Eurofast and Bloomberg Tax. 2025 figures are confirmed; 2026 figures (indexed minimum wage, updated average-salary base) were not officially confirmed and are out of scope. **[RESEARCH GAP — primary PRO confirmation pending.]**
 
 ### Test suite
 

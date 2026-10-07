@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in North Macedonia
 version: 0.1
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-08
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## North Macedonia Tax Optimization Skill v0.1
 
-**Tier 2 — research-verified. Sources: PRO (Public Revenue Office), PwC/KPMG/Eurofast North Macedonia Tax Card 2025. Figures must agree with `north-macedonia-income-tax.md` / `north-macedonia-social-contributions.md`. NOT yet signed off by a North Macedonian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: Law on Personal Income Tax (Official Gazette 241/2018 as amended to 274/2022), PRO (Public Revenue Office), KPMG/Eurofast North Macedonia Tax Card 2025. Figures must agree with `north-macedonia-income-tax.md` / `north-macedonia-social-contributions.md`. NOT yet signed off by a North Macedonian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 
@@ -47,7 +47,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Lump-sum (paušal)** | Tax (10%) on a **deemed monthly net income** set by the authority, paid as a monthly advance; minimal bookkeeping | Small craft/service/liberal-profession activity, low expenses |
 | **Net-income (tax balance)** | 10% on actual net income from the tax balance | Higher revenue, real expenses, or excluded from lump-sum |
 
-The lump-sum regime is favourable when real profit exceeds the deemed base. **[RESEARCH GAP — reviewer to confirm the lump-sum eligibility, activity list, and the revenue threshold for staying in the regime.]**
+The lump-sum regime is favourable when real profit exceeds the deemed base. Eligibility (Law on Personal Income Tax art. 29): the person cannot keep books, or bookkeeping would seriously hinder the activity, and applies to the PRO each year by the end of the preceding year (or within 15 days of registration); the PRO sets the deemed net income by resolution from the premises, market conditions and comparable businesses. The regime is closed to trade, catering and commission activities (except trade only through green-market stalls), to anyone employing more than one person besides themselves or with outside investors, and to anyone whose prior-year net income exceeded two annual average gross salaries; once a condition lapses, the PRO requires bookkeeping from the next year.
 
 ## Section 3 -- Company Extraction & Allowances
 

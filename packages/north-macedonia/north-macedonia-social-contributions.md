@@ -4,7 +4,7 @@ description: Use this skill whenever asked about North Macedonia (Republic of No
 version: 0.1
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-08
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## North Macedonia Compulsory Social Contributions & Payroll Skill v0.1
 
-> **Confidence: HIGH.** Rate, base and threshold figures rest on the KPMG Tax Card 2025, Eurofast Tax Card 2025, PwC Worldwide Tax Summaries, and Bloomberg Tax's report of the Public Revenue Office (UJP) announcement of 22 January 2025. The official UJP page (ujp.gov.mk) was confirmed for procedural deadlines but did not itself yield the rate tables. English statute names are working translations.
+> **Confidence: HIGH for rates and rules, MEDIUM for the 2025 amounts.** Rates, base multipliers, deadlines and fines cite the Law on Mandatory Social Insurance Contributions (Official Gazette 142/2008 as amended to 247/2018; the Public Revenue Office's unofficial consolidated text, "Contributions Law" below) and the Law on Personal Income Tax (Official Gazette 241/2018 as amended to 274/2022; the Ministry of Finance's unofficial consolidated text, "PIT Law" below); amendments after those consolidations were not traced. The 2025 amounts (average salary, bases, tax reduction) rest on the KPMG and Eurofast Tax Cards 2025 and Bloomberg Tax's report of the Public Revenue Office (UJP) announcement of 22 January 2025. English statute names are working translations.
 
 ## Section 1 -- Quick reference
 
@@ -30,21 +30,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | North Macedonia (Republic of North Macedonia) |
 | Currency | MKD (Macedonian denar). EUR conversions approximate at EUR 1 ≈ MKD 61.5 (denar pegged) |
 | Primary Legislation | Law on Contributions from Compulsory Social Insurance (Закон за придонеси од задолжително социјално осигурување) [KPMG Tax Card 2025] |
-| Supporting Legislation | Law on Personal Income Tax (Закон за данок на личен доход), flat 10% effective 1 Jan 2023 [PwC; KPMG] |
+| Supporting Legislation | Law on Personal Income Tax (Закон за данокот на личен доход), flat 10% [PIT Law art. 11(1)] |
 | Tax / Collection Authority | Public Revenue Office (Управа за јавни приходи / UJP) — https://www.ujp.gov.mk/en [UJP] |
 | Policy owner | Ministry of Finance (https://finance.gov.mk/en-GB) [Ministry of Finance] |
 | Funds | Pension & Disability Insurance Fund (PIOM); Health Insurance Fund (FZOM); Employment Service Agency [KPMG Tax Card 2025] |
 | Total compulsory social contribution rate (2025) | **28.0% of gross salary** — fully employee-borne [KPMG Tax Card 2025; Eurofast Tax Card 2025] |
 | Employer additional contribution | **0% — none.** Employer only calculates, withholds and remits [Eurofast Tax Card 2025; KPMG] |
-| Minimum monthly contribution base (2025) | MKD 31,577 (= 50% of MKD 63,154 average salary) [UJP via Bloomberg Tax, 22 Jan 2025] |
-| Maximum monthly contribution base, employees (2025) | MKD 1,010,464 (~EUR 16,430) [UJP via Bloomberg Tax; KPMG] |
-| Maximum monthly contribution base, self-employed (2025) | MKD 757,848 [UJP via Bloomberg Tax] |
+| Minimum monthly contribution base (2025) | MKD 31,577 (= 50% of MKD 63,154 average salary) [Contributions Law art. 15(1); amount per UJP via Bloomberg Tax, 22 Jan 2025] |
+| Maximum monthly contribution base, employees (2025) | MKD 1,010,464 (~EUR 16,430; 16 average salaries) [Contributions Law art. 16(1); amount per UJP via Bloomberg Tax; KPMG] |
+| Maximum monthly contribution base, self-employed (2025) | MKD 757,848 (12 average salaries) [Contributions Law art. 16(3); amount per UJP via Bloomberg Tax] |
 | Reference average monthly salary (2025) | MKD 63,154 (State Statistical Office) [UJP via Bloomberg Tax; KPMG] |
-| Personal income tax | Flat 10% on employment income, after contributions and allowance [PwC; KPMG] |
-| Monthly PIT personal allowance (2025) | MKD 10,270 (MKD 123,240/year) [Eurofast & KPMG Tax Cards 2025] |
+| Personal income tax | Flat 10% on employment income, after contributions and the tax reduction [PIT Law arts. 9, 11(1)] |
+| Monthly PIT tax reduction (2025) | MKD 10,270 (MKD 123,240/year) [PIT Law arts. 10, 17(2); amount per Eurofast & KPMG Tax Cards 2025] |
 | Minimum gross monthly wage (from Mar 2025) | MKD 36,037 gross (MKD 24,379 net) [Law office Pepeljugoski, citing Official Gazette / Ministry of Labour and Social Policy, 28 Mar 2025] |
-| Payroll reporting form | MPIN (Месечна пресметка за интегрирана наплата / Monthly Calculation for Integrated Payment) [UJP; PwC] |
-| Reporting deadline | MPIN calculation submitted electronically by the 10th of the month for the prior month [UJP; PwC] |
+| Payroll reporting form | MPIN (Месечна пресметка за интегрирана наплата / Monthly Calculation for Integrated Payment) [UJP; Contributions Law art. 18(1)] |
+| Reporting deadline | MPIN calculation submitted electronically by the 10th of the month for the prior month [Contributions Law art. 18(1)] |
 | Payment deadline | On salary payment date; or by the 15th of the current month for the prior month if salary unpaid [UJP] |
 | Validated by | Pending — requires sign-off by a North Macedonia tax professional |
 | Validation date | Pending |
@@ -55,26 +55,26 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Fund / contribution | Rate | Employer-side | Source |
 | --- | --- | --- | --- |
-| Pension & disability insurance (PIOM) | 18.8% | 0% | KPMG Tax Card 2025; PwC |
-| Health insurance (FZOM) | 7.5% | 0% | KPMG Tax Card 2025; PwC |
+| Pension & disability insurance (PIOM) | 18.8% | 0% | Contributions Law art. 25(1)(1) |
+| Health insurance (FZOM) | 7.5% | 0% | Contributions Law art. 25(1)(3) |
 | Employment / unemployment insurance | 1.2% | 0% | KPMG Tax Card 2025; Eurofast |
-| Additional health insurance (work injury / occupational accidents) | 0.5% | 0% | KPMG Tax Card 2025; PwC |
+| Additional health insurance (work injury / occupational accidents) | 0.5% | 0% | Contributions Law art. 25(1)(7) |
 | **TOTAL compulsory social contributions** | **28.0%** | **0%** | KPMG; Eurofast |
 
 *Arithmetic check: 18.8 + 7.5 + 1.2 + 0.5 = 28.0%. Employer column: 0 + 0 + 0 + 0 = 0%.*
 
-> **Labelling caveat.** The 0.5% line is called "additional health insurance" by PwC and Eurofast; KPMG labels it "additional health insurance contributions in case of accidents at work and work-related injuries"; one secondary summary (Mondaq) mislabels it "Disability Fund". The 0.5% rate and the 28.0% total are consistent across all sources [PwC; Eurofast; KPMG].
+> **Labelling.** The statute calls the 0.5% line an additional contribution for mandatory health insurance in case of injury at work and occupational disease (Contributions Law art. 25(1)(7)), which matches KPMG's label; Eurofast and one secondary summary (Mondaq) call it "disability". The 0.5% rate and the 28.0% total are consistent across all sources.
 
-- **Pension & disability insurance (PIOM)** — 18.8%  _(KPMG Tax Card 2025; PwC)_
-- **Health insurance (FZOM)** — 7.5%  _(KPMG Tax Card 2025; PwC)_
+- **Pension & disability insurance (PIOM)** — 18.8%  _(Contributions Law art. 25(1)(1))_
+- **Health insurance (FZOM)** — 7.5%  _(Contributions Law art. 25(1)(3))_
 - **Employment / unemployment insurance** — 1.2%  _(KPMG Tax Card 2025; Eurofast)_
-- **Additional health insurance (work injury / occupational accidents)** — 0.5%  _(KPMG Tax Card 2025; PwC)_
+- **Additional health insurance (work injury / occupational accidents)** — 0.5%  _(Contributions Law art. 25(1)(7))_
 - ****TOTAL compulsory social contributions**** — **28.0%**  _(KPMG; Eurofast)_
 - **Minimum monthly contribution base (2025)** — MKD 31,577 (= 50% of MKD 63,154 average salary)  _(UJP via Bloomberg Tax, 22 Jan 2025)_
 - **Maximum monthly contribution base, employees (2025)** — MKD 1,010,464 (~EUR 16,430)  _(UJP via Bloomberg Tax; KPMG)_
 - **Maximum monthly contribution base, self-employed (2025)** — MKD 757,848  _(UJP via Bloomberg Tax)_
-- **Monthly PIT personal allowance (2025)** — MKD 10,270 (MKD 123,240/year)  _(Eurofast & KPMG Tax Cards 2025)_
-- **Personal income tax** — Flat 10% on employment income, after contributions and allowance  _(PwC; KPMG)_
+- **Monthly PIT tax reduction (2025)** — MKD 10,270 (MKD 123,240/year)  _(PIT Law arts. 10, 17(2); amount per Eurofast & KPMG Tax Cards 2025)_
+- **Personal income tax** — Flat 10% on employment income, after contributions and the tax reduction  _(PIT Law arts. 9, 11(1))_
 - **Minimum gross monthly wage (from Mar 2025)** — MKD 36,037 gross (MKD 24,379 net)  _(Law office Pepeljugoski, citing Official Gazette / Ministry of Labour and Social Policy, 28 Mar 2025)_
 
 ## Section 2 -- Conservative defaults
@@ -87,10 +87,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown who bears the contribution | Treat all 28% as employee-borne; employer 0% additional [Eurofast; KPMG] |
 | Gross salary below the contribution floor | Apply contribution base floor MKD 31,577/month [UJP via Bloomberg Tax] |
 | Gross salary above the employee ceiling | Cap contribution base at MKD 1,010,464/month [UJP via Bloomberg Tax] |
-| Unknown personal allowance | Apply MKD 10,270/month [Eurofast & KPMG Tax Cards 2025] |
-| Unknown PIT rate | Apply flat 10% [PwC; KPMG] |
+| Unknown tax reduction | Apply MKD 10,270/month [PIT Law art. 17(2); Eurofast & KPMG Tax Cards 2025] |
+| Unknown PIT rate | Apply flat 10% [PIT Law art. 11(1)] |
 | Self-employed contribution ceiling | Apply MKD 757,848/month, NOT the employee ceiling [UJP via Bloomberg Tax] |
-| Penalty amounts requested | Do not quantify — penalties follow statutory formulas; escalate (see Section 6 / 10) |
+| Penalty amounts requested | Quote the Contributions Law fines in Section 10 as the statutory amounts; do not compute interest or settlement figures; escalate (see Section 6 / 10) |
 
 ## Section 3 -- Required inputs and refusal catalogue
 
@@ -98,15 +98,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Minimum viable** — gross monthly salary in MKD and confirmation the worker is an employee (Class: employment income). Without a gross figure, STOP. Do not compute contributions from a net figure unless you reverse-engineer it explicitly and flag it.
 
-**Recommended** — pay period/month, whether the salary is at or below the minimum wage, whether the worker is full-time, and whether the personal allowance applies in full (a single employer applies the full monthly allowance).
+**Recommended** — pay period/month, whether the salary is at or below the minimum wage, whether the worker is full-time, and whether the tax reduction applies in full (a single employer applies the full monthly reduction).
 
 **Ideal** — the MPIN calculation for the month, the employment contract, and bank statements showing the net salary payment plus the UJP remittance of contributions and PIT.
 
 ### Refusal catalogue
 
-- **R-MK-SSC-1 -- Self-employed / sole trader contributions** — Trigger: worker is self-employed (трговец поединец / sole proprietor) rather than an employee. Message: "Self-employed contribution bases and the annual self-employed return (due 15 March, settlement 30 June) follow a different ceiling (MKD 757,848/month) and advance-payment regime. Confirm the regime with a North Macedonia tax professional before computing."  _(UJP via Bloomberg Tax; PwC)_
-- **R-MK-SSC-2 -- Penalty / arrears quantification** — Trigger: client asks for the exact fine for late or missing MPIN/contribution filing. Message: "Penalty amounts for payroll/contribution non-compliance follow case-by-case statutory formulas under the General Tax Procedure Law; the illustrative figures in this skill are drawn from the VAT misdemeanour scale and are NOT contribution-specific. Escalate to a North Macedonia tax professional." [RESEARCH GAP — reviewer to confirm exact misdemeanour fines for late MPIN/contribution filing against the current statute]  _(KPMG; PwC)_
-- **R-MK-SSC-3 -- Expat / cross-border / posted workers** — Trigger: worker is a non-resident, posted worker, or covered by a totalisation/social-security agreement. Message: "Residency (worldwide vs Macedonia-sourced) and totalisation-agreement coverage change the contribution and PIT outcome materially. Residents are taxed on worldwide income; non-residents only on Macedonia-sourced income. Escalate to a North Macedonia tax professional."  _(PwC)_
+- **R-MK-SSC-1 -- Self-employed / sole trader contributions** — Trigger: worker is self-employed (трговец поединец / sole proprietor) rather than an employee. Message: "Self-employed contribution bases and the annual self-employed tax balance (due 15 March, with any balance of tax due within 15 days after) follow a different ceiling (MKD 757,848/month) and advance-payment regime. Confirm the regime with a North Macedonia tax professional before computing."  _(Contributions Law art. 16(3); PIT Law arts. 97, 100(1))_
+- **R-MK-SSC-2 -- Penalty / arrears quantification** — Trigger: client asks for the exact fine for late or missing MPIN/contribution filing. Message: "The Contributions Law fixes fines of EUR 2,500 for an incorrect calculation or a breach of the MPIN filing rule, and EUR 3,500 for paying salary without calculating and paying contributions on time, plus 30% of the fine for the responsible person; late payment also carries 0.03% interest a day. Amendments after 2018 were not traced. Escalate to a North Macedonia tax professional."  _(Contributions Law arts. 28-а, 28-б; Law on Tax Procedure art. 123(1))_
+- **R-MK-SSC-3 -- Expat / cross-border / posted workers** — Trigger: worker is a non-resident, posted worker, or covered by a totalisation/social-security agreement. Message: "Residency (worldwide vs Macedonia-sourced) and totalisation-agreement coverage change the contribution and PIT outcome materially. Residents are taxed on worldwide income; non-residents only on Macedonia-sourced income. Escalate to a North Macedonia tax professional."  _(PIT Law art. 5)_
 - **R-MK-SSC-4 -- Pillar Two / corporate top-up tax** — Trigger: client asks how the 15% minimum tax interacts with payroll. Message: "The minimum global profit tax of 15% for in-scope MNE groups and large domestic groups (*Закон за минимален глобален данок на добивка*, Official Gazette of RNM No. 3 of 3 January 2025) is a corporate-level tax and does not change employee social contributions or the flat 10% PIT. Escalate corporate-tax questions to a North Macedonia tax professional." **The date previously given here — "effective 1 Jan 2025" — was wrong.** Article 59(1) applies the Act to fiscal years beginning **1 January 2024**; only the undertaxed profits rule in articles 14–16 starts from 1 January 2025 (art. 59(2)). See `mk-corporate-income-tax`  _(Law on the Minimum Global Profit Tax, arts. 59 and 61 — https://ujp.gov.mk/mk/regulativa/opis/437)_
 
 ## Section 4 -- Payment pattern library
@@ -166,7 +166,7 @@ This is the deterministic pre-classifier for bank-statement transactions related
 
 ## Section 5 -- Worked examples
 
-Six gross-to-net / bank-statement classifications for a hypothetical North Macedonian employer and its staff. All figures in MKD for 2025. PIT base = gross − 28% contributions (on the contribution base) − MKD 10,270 personal allowance; PIT = 10% of that base [PwC; Rivermate]. Contributions and PIT computed on the contribution base, which is clamped to the floor/ceiling.
+Six gross-to-net / bank-statement classifications for a hypothetical North Macedonian employer and its staff. All figures in MKD for 2025. PIT base = gross − 28% contributions (on the contribution base) − MKD 10,270 tax reduction; PIT = 10% of that base [PIT Law arts. 9, 11(1); Rivermate]. Contributions and PIT computed on the contribution base, which is clamped to the floor/ceiling.
 
 ### Example 1 -- Average-salary employee (gross MKD 63,154)
 
@@ -257,7 +257,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 2 -- Contribution composition
 
-- **Contribution composition** — PIOM 18.8% + FZOM 7.5% + employment 1.2% + additional health 0.5% = 28.0%. Each fund is computed on the same contribution base.  _(KPMG Tax Card 2025; PwC)_
+- **Contribution composition** — PIOM 18.8% + FZOM 7.5% + employment 1.2% + additional health 0.5% = 28.0%. Each fund is computed on the same contribution base.  _(Contributions Law art. 25(1))_
 
 ### Rule 3 -- All contributions are employee-borne; employer 0%
 
@@ -265,11 +265,11 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 4 -- PIT is a flat 10%
 
-- **PIT is a flat 10%** — Personal income tax is a flat 10% on employment and most other income, effective 1 Jan 2023 (the earlier 10%/18% progressive schedule was repealed).  _(PwC; KPMG)_
+- **PIT is a flat 10%** — Personal income tax is a flat 10% on employment and most other income. The 2019 schedule's 18% band was suspended for 2020-2022 (Official Gazette 275/2019, art. 24), and art. 11 of the consolidated text to 274/2022 carries only the 10% rate and the 15% games-of-chance rate.  _(PIT Law art. 11)_
 
 ### Rule 5 -- PIT base formula
 
-- **PIT base formula** — PIT_base = gross_salary − total_contributions − monthly_personal_allowance PIT = PIT_base × 10% net_pay = gross_salary − total_contributions − PIT Monthly personal allowance MKD 10,270 (MKD 123,240/year), applied by the employer in monthly withholding.  _(Eurofast & KPMG Tax Cards 2025; PwC; Rivermate)_
+- **PIT base formula** — PIT_base = gross_salary − total_contributions − monthly_tax_reduction PIT = PIT_base × 10% net_pay = gross_salary − total_contributions − PIT Monthly tax reduction MKD 10,270 (MKD 123,240/year), applied by the employer in monthly withholding as one-twelfth of the annual amount.  _(PIT Law arts. 10, 17(2); Eurofast & KPMG Tax Cards 2025; Rivermate)_
 
 ### Rule 6 -- Contribution base floor
 
@@ -281,7 +281,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 8 -- MPIN integrated filing
 
-- **MPIN integrated filing** — Payroll is reported via the MPIN integrated monthly filing to the UJP — gross salaries, contributions per fund, personal allowance, PIT base and withheld PIT per employee. The calculation is submitted electronically by the 10th of the following month.  _(UJP; PwC; Rivermate)_
+- **MPIN integrated filing** — Payroll is reported via the MPIN integrated monthly filing to the UJP — gross salaries, contributions per fund, tax reduction, PIT base and withheld PIT per employee. The calculation is submitted electronically by the 10th of the following month.  _(Contributions Law art. 18(1); Rivermate)_
 
 ### Rule 9 -- Payment timing
 
@@ -289,23 +289,23 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 10 -- Annual PIT return is pre-filled
 
-- **Annual PIT return is pre-filled** — The UJP prepares a pre-filled annual PIT return: it delivers a draft by 30 April and the taxpayer confirms/corrects by 31 May, otherwise the draft is deemed confirmed.  _(PwC)_
+- **Annual PIT return is pre-filled** — The UJP prepares a pre-filled annual PIT return: it delivers a draft by 30 April and the taxpayer confirms/corrects by 31 May, otherwise the draft is deemed confirmed.  _(PIT Law art. 96)_
 
 ### Rule 11 -- Residency scope
 
-- **Residency scope** — Residents are taxed on worldwide income; non-residents only on Macedonia-sourced income.  _(PwC)_
+- **Residency scope** — Residents (a permanent home in North Macedonia, or 183 days' presence in any 12-month period) are taxed on worldwide income; non-residents only on Macedonia-sourced income.  _(PIT Law art. 5)_
 
 ## Section 7 -- Tier 2 catalogue (reviewer judgement)
 
 When payroll data is ambiguous or circumstances are unclear, flag these for reviewer confirmation.
 
-### T2-1 -- Multiple employers and the personal allowance
+### T2-1 -- Multiple employers and the tax reduction
 
 **Trigger:** worker has more than one employer in the same month.
 
-**Issue:** the MKD 10,270 monthly personal allowance is applied once. If two employers each apply it, PIT is under-withheld and an annual adjustment is needed.
+**Issue:** the MKD 10,270 monthly tax reduction is applied once. If two employers each apply it, PIT is under-withheld and an annual adjustment is needed.
 
-**Action:** flag for reviewer; confirm which employer applies the allowance.
+**Action:** flag for reviewer; confirm which employer applies the tax reduction.
 
 ### T2-2 -- Self-employed vs employee classification
 
@@ -327,7 +327,7 @@ When payroll data is ambiguous or circumstances are unclear, flag these for revi
 
 **Trigger:** reconciling the ceiling against a multiplier.
 
-**Issue:** PwC/Eurofast describe the maximum base as 16× average salary; KPMG describes the 2025 pension ceiling as 12× average. Both nonetheless arrive at the published MKD 1,010,464/month, so the binding number is reliable but the stated multiplier basis differs.
+**Issue:** KPMG describes the 2025 pension ceiling as 12× average salary. The statute sets the employee ceiling at 16 average salaries (Contributions Law art. 16(1)) and 12 average salaries only for the self-employed (art. 16(3)); 16 × 63,154 = 1,010,464, the published figure, so KPMG's multiplier describes the self-employed ceiling.
 
 **Action:** use the published figure MKD 1,010,464; flag the multiplier basis for reviewer if a derivation is needed.
 
@@ -335,9 +335,9 @@ When payroll data is ambiguous or circumstances are unclear, flag these for revi
 
 **Trigger:** late or missing MPIN filings or contribution payments.
 
-**Issue:** fines follow statutory formulas under the General Tax Procedure Law; interest on late payment accrues.
+**Issue:** the Contributions Law fixes the fines (Section 10); interest on late payment accrues at 0.03% a day (Law on Tax Procedure art. 123(1)).
 
-**Action:** do not quantify; escalate (see R-MK-SSC-2).
+**Action:** quote the statutory fines, do not compute settlement figures; escalate (see R-MK-SSC-2).
 
 ### T2-6 -- Non-resident / posted / treaty-covered workers
 
@@ -362,7 +362,7 @@ Currency:          MKD
 INPUT DATA
   Gross monthly salary:            MKD [____]
   Worker type:                     [Employee / Self-employed]
-  Full personal allowance applies: [YES/NO]   (single employer = YES)
+  Full tax reduction applies:      [YES/NO]   (single employer = YES)
 
 CONTRIBUTION BASE
   Floor (2025):                    MKD 31,577
@@ -377,8 +377,8 @@ CONTRIBUTIONS (on contribution base)
   TOTAL contributions        28.0%:  MKD [____]   (check = sum of four lines)
 
 PERSONAL INCOME TAX
-  Personal allowance (monthly):    MKD 10,270
-  PIT base = gross − contributions − allowance:  MKD [____]
+  Tax reduction (monthly):         MKD 10,270
+  PIT base = gross − contributions − reduction:  MKD [____]
   PIT @ 10%:                       MKD [____]
 
 NET PAY
@@ -426,15 +426,15 @@ If the client provides only a bank statement and no other information:
 
 1. **Scan for UJP debits** — identify all outgoing payments matching Section 4 patterns (UJP / MPIN / PRIDONESI).
 2. **Scan for net salary debits** — identify "PLATA" / "ЗАРАБОТКА" outgoing payments.
-3. **Reverse-engineer gross (approximate):** for a single-employer employee with the full allowance, net ≈ gross − 28%·gross − 10%·(gross − 28%·gross − 10,270) within the base limits. Solve for gross only as an estimate.
+3. **Reverse-engineer gross (approximate):** for a single-employer employee with the full tax reduction, net ≈ gross − 28%·gross − 10%·(gross − 28%·gross − 10,270) within the base limits. Solve for gross only as an estimate.
 4. **Sanity-check against thresholds:** a full-time worker should not net below ~MKD 24,379 (the 2025 minimum net wage).
-5. **Flag for reviewer:** "Payroll figures derived from bank-statement amounts only. Gross salary, allowance application, and worker classification have not been independently verified. Reviewer must confirm before filing MPIN."
+5. **Flag for reviewer:** "Payroll figures derived from bank-statement amounts only. Gross salary, tax reduction applied, and worker classification have not been independently verified. Reviewer must confirm before filing MPIN."
 
 ## Section 11 -- Reference material
 
-### Gross-to-net reference table (2025, single employer, full allowance)
+### Gross-to-net reference table (2025, single employer, full tax reduction)
 
-**Gross-to-net reference table (2025, single employer, full allowance)**
+**Gross-to-net reference table (2025, single employer, full tax reduction)**
 
 | Gross MKD/month | Contribution base | Contributions 28% | PIT base | PIT 10% | Net pay | Source basis |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -450,10 +450,10 @@ If the client provides only a bank statement and no other information:
 
 | Item | Value | Basis | Source |
 | --- | --- | --- | --- |
-| Minimum monthly contribution base | MKD 31,577 | 50% of MKD 63,154 average salary | UJP via Bloomberg Tax |
-| Maximum monthly contribution base, employees | MKD 1,010,464 | 16× average (PwC/Eurofast) / 12× pension ceiling (KPMG) — both → same figure | UJP via Bloomberg Tax; PwC; KPMG |
-| Maximum monthly contribution base, self-employed | MKD 757,848 | 12× average salary | UJP via Bloomberg Tax |
-| PIT personal allowance (monthly / annual) | MKD 10,270 / MKD 123,240 | Standard salaried personal allowance | Eurofast & KPMG Tax Cards 2025 |
+| Minimum monthly contribution base | MKD 31,577 | 50% of MKD 63,154 average salary | Contributions Law art. 15(1); amount per UJP via Bloomberg Tax |
+| Maximum monthly contribution base, employees | MKD 1,010,464 | 16× average salary | Contributions Law art. 16(1); amount per UJP via Bloomberg Tax |
+| Maximum monthly contribution base, self-employed | MKD 757,848 | 12× average salary | Contributions Law art. 16(3); amount per UJP via Bloomberg Tax |
+| PIT tax reduction (monthly / annual) | MKD 10,270 / MKD 123,240 | Salary, wage compensation and pension only | PIT Law arts. 10, 17(2); amount per Eurofast & KPMG Tax Cards 2025 |
 | Reference average monthly salary | MKD 63,154 | State Statistical Office 2025 | UJP via Bloomberg Tax; KPMG |
 | Minimum gross monthly wage (from Mar 2025) | MKD 36,037 (net 24,379) | Official Gazette / Ministry of Labour | Pepeljugoski |
 
@@ -463,9 +463,9 @@ If the client provides only a bank statement and no other information:
 
 | Type | Rate | Note | Source |
 | --- | --- | --- | --- |
-| Personal income tax (employment & most income) | 10% flat | Effective 1 Jan 2023; replaced 10%/18% progressive | PwC; KPMG |
-| Capital gains on securities/shares held > 2 years | 0% | Exempt if held over 2 years | PwC |
-| Games of chance | 15% | n/a | PwC |
+| Personal income tax (employment & most income) | 10% flat | 18% band suspended 2020-2022 and absent from the consolidated text to 274/2022 | PIT Law art. 11(1) |
+| Capital gains on securities/shares held > 2 years | 0% | Exempt if held over 2 years | PIT Law art. 12(1)(39-а) |
+| Games of chance | 15% | n/a | PIT Law art. 11(2) |
 | Corporate income tax | 10% flat | Minimum global profit tax: 15% for in-scope MNE groups **and large domestic groups**, applying to fiscal years beginning **1 January 2024** (art. 59(1)); the undertaxed profits rule only from 1 January 2025 (art. 59(2)). Published Official Gazette of RNM No. 3 of 3 January 2025 | Law on the Minimum Global Profit Tax, via ujp.gov.mk |
 
 ### Forms
@@ -474,26 +474,27 @@ If the client provides only a bank statement and no other information:
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
-| MPIN (Месечна пресметка за интегрирана наплата / Monthly Calculation for Integrated Payment) | Monthly payroll report: gross, contributions per fund, allowance, PIT base, withheld PIT per employee; integrated single filing for contributions + PIT | Calculation submitted electronically by the 10th of the following month; payment on salary date or by the 15th of the current month for the prior month if salary unpaid | UJP; PwC; Rivermate |
-| Annual personal income tax return (pre-filled) | UJP prepares a pre-filled annual return; taxpayer confirms or corrects | UJP delivers draft by 30 April; taxpayer confirms/corrects by 31 May; if no response the draft is deemed confirmed | PwC |
-| Self-employed annual accounts & return | Annual accounts and return for self-employed keeping records; monthly advance = 1/12 of prior-year tax | Annual return by 15 March; final settlement by 30 June | PwC |
+| MPIN (Месечна пресметка за интегрирана наплата / Monthly Calculation for Integrated Payment) | Monthly payroll report: gross, contributions per fund, allowance, PIT base, withheld PIT per employee; integrated single filing for contributions + PIT | Calculation submitted electronically by the 10th of the following month; payment on salary date or by the 15th of the current month for the prior month if salary unpaid | Contributions Law arts. 18(1), 24(2)-(3) |
+| Annual personal income tax return (pre-filled) | UJP prepares a pre-filled annual return; taxpayer confirms or corrects | UJP delivers draft by 30 April; taxpayer confirms/corrects by 31 May; if no response the draft is deemed confirmed | PIT Law art. 96 |
+| Self-employed annual accounts & return | Annual accounts and return for self-employed keeping records; monthly advance = 1/12 of prior-year tax | Annual tax balance by 15 March; balance of tax due within 15 days after | PIT Law arts. 94, 97, 100(1) |
 
-### Penalties (illustrative — NOT contribution-specific)
+### Penalties
 
-**Penalties (illustrative — NOT contribution-specific)**
+**Penalties**
 
 | Type | Amount | Note | Source |
 | --- | --- | --- | --- |
-| Late / failure to submit return | ~EUR 1,500 (company) + EUR 500 (responsible person) for delayed submission; ~EUR 2,500 + EUR 1,000 for failure to submit | Drawn from the VAT misdemeanour scale; comparable misdemeanour fines apply to payroll/contribution non-compliance | KPMG Tax Card 2025 via Mondaq |
-| Tax assessment after rejected calculation/return | Payment due within 15 days of delivery of the assessment; late-payment interest accrues per the General Tax Procedure Law | Procedural | PwC |
+| Incorrect calculation, wrong payment amount or breach of the MPIN filing rule (art. 18) | EUR 2,500 (in denars) | Payer of contributions | Contributions Law art. 28-а |
+| Salary paid without calculating and paying contributions on time | EUR 3,500 (in denars); 30% of the fine and a 30-day ban for the responsible person | Payer of contributions | Contributions Law art. 28-б |
+| Tax assessment after rejected calculation/return | Payment due within 15 days of delivery of the assessment; late-payment interest of 0.03% a day accrues under the Law on Tax Procedure | Procedural | PIT Law art. 100(3); Law on Tax Procedure art. 123(1) |
 
-> [RESEARCH GAP — reviewer to confirm] The exact statutory misdemeanour fines for late or missing MPIN/contribution filing. The figures above are the VAT-scale illustration from the KPMG card, not contribution-specific.
+> The fines come from the Contributions Law as consolidated to Official Gazette 247/2018; later amendments to the fine amounts were not traced. **[RESEARCH GAP — reviewer to confirm the current amounts]**
 
 ### Sources
 
-- PwC Worldwide Tax Summaries — North Macedonia, Individual: Other taxes — https://taxsummaries.pwc.com/north-macedonia/individual/other-taxes
-- PwC Worldwide Tax Summaries — North Macedonia, Individual: Taxes on personal income — https://taxsummaries.pwc.com/north-macedonia/individual/taxes-on-personal-income
-- PwC Worldwide Tax Summaries — North Macedonia, Individual: Tax administration — https://taxsummaries.pwc.com/north-macedonia/individual/tax-administration
+- Law on Mandatory Social Insurance Contributions (Закон за придонеси од задолжително социјално осигурување), Official Gazette 142/2008 as amended to 247/2018, unofficial consolidated text by the Public Revenue Office, arts. 15, 16, 18, 24, 25, 28-а, 28-б; copy hosted by the Economic Chamber of North Macedonia: https://mchamber.mk/Upload/Editor_Upload//%D0%97%D0%B0%D0%BA%D0%BE%D0%BD%20%D0%B7%D0%B0%20%D0%BF%D1%80%D0%B8%D0%B4%D0%BE%D0%BD%D0%B5%D1%81%D0%B8%20%D0%BE%D0%B4%20%D0%B7%D0%B0%D0%B4%D0%BE%D0%BB%D0%B6%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%BE%20%D1%81%D0%BE%D1%86%D0%B8%D1%98%D0%B0%D0%BB%D0%BD%D0%BE%20%20%D0%BE%D1%81%D0%B8%D0%B3%D1%83%D1%80%D1%83%D0%B2%D0%B0%D1%9A%D0%B5%20%D0%A3%D0%88%D0%9F.pdf
+- Law on Personal Income Tax (Закон за данокот на личен доход), Official Gazette 241/2018, 275/2019, 290/2020, 85/2021 and 274/2022, unofficial consolidated text published by the Ministry of Finance, arts. 5, 9-11, 17, 96, 97, 100: https://portal.mdt.gov.mk/post-body-files/propisi-od-oblasta-na-danocite-taksite-i-drugite-javni-prixodi-file-Rpj2.pdf (listed at https://finance.gov.mk/mk-MK/zakoni-i-propisi/danoci)
+- Law on Tax Procedure (Закон за даночна постапка), Official Gazette 13/2006 as amended to 35/2018, Ministry of Finance unofficial consolidated text, art. 123: https://portal.mdt.gov.mk/post-body-files/propisi-od-oblasta-na-danocite-taksite-i-drugite-javni-prixodi-file-HwLH.pdf
 - KPMG DOOEL Skopje — North Macedonia Tax Card 2025 — https://assets.kpmg.com/content/dam/kpmg/al/pdf/Tax%20Card%202025%20(2).pdf
 - Mondaq / KPMG — North Macedonia Tax Card 2025 (summary) — https://www.mondaq.com/tax-authorities/1583146/north-macedonia-tax-card-2025
 - Eurofast — North Macedonia Tax Card 2025 — https://eurofast.eu/wp-content/uploads/2025/02/NorthMacedoniaTaxCard2025-2.pdf
@@ -503,7 +504,7 @@ If the client provides only a bank statement and no other information:
 
 ### Test suite
 
-**Test 1:** Gross MKD 63,154 (average salary), single employer, full allowance. → Contributions = 17,683.12; PIT base = 35,200.88; PIT = 3,520.09; Net = 41,950.79.
+**Test 1:** Gross MKD 63,154 (average salary), single employer, full tax reduction. → Contributions = 17,683.12; PIT base = 35,200.88; PIT = 3,520.09; Net = 41,950.79.
 
 **Test 2:** Gross MKD 36,037 (minimum wage). → Contributions = 10,090.36; PIT base = 15,676.64; PIT = 1,567.66; Net = 24,378.98 (≈ published net minimum MKD 24,379).
 
@@ -524,10 +525,10 @@ If the client provides only a bank statement and no other information:
 - NEVER treat any part of the 28% as an employer-side cost — in North Macedonia the full 28% is employee-borne; the employer's additional contribution is 0%.
 - NEVER compute contributions on actual gross below the floor — use the MKD 31,577 floor (employees).
 - NEVER compute contributions on gross above the ceiling — cap the base at MKD 1,010,464 (employees) / MKD 757,848 (self-employed).
-- NEVER apply a progressive PIT schedule — PIT is a flat 10% since 1 Jan 2023.
-- NEVER omit the MKD 10,270 monthly personal allowance from the PIT base for a single-employer employee.
-- NEVER apply the personal allowance twice across multiple employers (flag T2-1).
-- NEVER quantify penalties from the illustrative VAT-scale figures — escalate.
+- NEVER apply a progressive PIT schedule — PIT is a flat 10% (PIT Law art. 11(1)).
+- NEVER omit the MKD 10,270 monthly tax reduction from the PIT base for a single-employer employee.
+- NEVER apply the tax reduction twice across multiple employers (flag T2-1).
+- NEVER quote penalties other than the statutory Contributions Law fines — escalate settlement questions.
 - NEVER confuse inbound PIOM/pension credits with outbound contribution remittances.
 - NEVER present figures as definitive — label as estimated and direct the client to their MPIN / UJP records, pending sign-off by a North Macedonia tax professional.
 
