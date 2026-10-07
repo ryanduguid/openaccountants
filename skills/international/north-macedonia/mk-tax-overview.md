@@ -4,7 +4,7 @@ description: "Source-cited draft: tax overview for North Macedonia (tax year 202
 jurisdiction: MK
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-08
 version: 1.1
 review_status: pending_review
 tier: 2
@@ -21,8 +21,8 @@ North Macedonia operates a low, flat-rate tax system administered by the Public 
 - **Currency** — Macedonian denar (MKD)  _(National Bank of the Republic of North Macedonia)_
 - **Tax authority** — Public Revenue Office (Uprava za javni prihodi, UJP)  _([Law on the Public Revenue Office](https://ujp.gov.mk/en))_
 - **Residence basis of taxation** — Residents taxed on worldwide income; non-residents taxed only on Macedonian-source income  _(Law on Personal Income Tax)_
-- **Headline personal income tax rate** — 10% (flat)  _([Law on Personal Income Tax](https://taxsummaries.pwc.com/north-macedonia/individual/taxes-on-personal-income))_
-- **Headline corporate income tax rate** — 10% (flat)  _([Law on Profit Tax](https://taxsummaries.pwc.com/north-macedonia/corporate/taxes-on-corporate-income))_
+- **Headline personal income tax rate** — 10% (flat); 15% on games-of-chance gains  _([Law on Personal Income Tax, art. 11](https://finance.gov.mk/mk-MK/zakoni-i-propisi/danoci), Official Gazette 241/2018 as amended to 274/2022, Ministry of Finance unofficial consolidated text)_
+- **Headline corporate income tax rate** — 10% (flat)  _([Law on Profit Tax, art. 2](https://finance.gov.mk/mk-MK/zakoni-i-propisi/danoci), Official Gazette 112/2014 as amended to 199/2023, Ministry of Finance unofficial consolidated text)_
 - **Does VAT exist** — Yes — standard VAT rate of 18%, with reduced rates of 10% and 5%  _(Law on Value Added Tax)_
 - **Minimum global profit tax — the instrument** — *Закон за минимален глобален данок на добивка* (Law on the Minimum Global Profit Tax), published in the **Official Gazette of RNM No. 3 of 3 January 2025** and in force on the day of publication (art. 61). The previous citation here read "OECD Pillar Two / domestic implementing legislation", which names no instrument  _([Public Revenue Office register](https://ujp.gov.mk/mk/regulativa/opis/437))_
 - **Minimum global profit tax — scope and rate** — **15%** minimum rate, stated in the Act as *петнаесет проценти (15 %)* (art. 1(15)). Applies to constituent entities of an MNE group **or a large domestic group** with consolidated revenue of **EUR 750,000,000 or more in at least two of the four fiscal years** immediately preceding the tested year, prorated for years that are not twelve months (art. 5(1)–(2))  _(Law on the Minimum Global Profit Tax, arts. 1(15) and 5)_
