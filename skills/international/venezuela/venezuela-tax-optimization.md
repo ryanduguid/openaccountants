@@ -4,9 +4,9 @@ description: Use this skill whenever asked about reducing tax in Venezuela, tax 
 jurisdiction: VE
 category: tax-optimization
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-08
 reviewed_by: Jose Padilla
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -30,6 +30,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > day of the computation.
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Jose Padilla** on 2026-06-21; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+
+> **Edited since review (2026-10-08).** The personal-deduction, loss, rate-table and payroll-contribution sections now cite the statutes instead of a secondary tax summary. The statutes required corrections the 2026-06-21 sign-off does not cover: life insurance is not a desgravamen (ISLR Law art. 57(2)); the desgravamen articles are 57-58 of the 2015 text, not 60-61; Paro Forzoso is capped at 10 minimum salaries and the "FAV" row duplicating it is removed; INCES applies to employers with five or more workers; and the Section 14 combined saving is Bs. 100,000, not Bs. 200,000. The export-drawback, SEZ, withholding, group-taxation, other-taxes, VAT and treaty sections still rely on their secondary sources.
 
 ## Section 1 — Quick Reference
 
@@ -103,7 +105,7 @@ When facts are uncertain, this skill defaults to the most conservative (highest-
 
 ### Mechanism
 
-- **Desgravamen único vs. itemized** — Venezuelan ISLR Law (Art. 60 and 61) allows individuals to deduct one of two mutually exclusive sets of personal deductions before applying Tarifa No. 1: - **Desgravamen único (standard):** 774 UT per year. No documentation required. - **Desgravamen detallado (itemized):** Sum of qualifying expenses actually paid to Venezuelan-domiciled entities.  _(ISLR Law Art. 60 and 61)_
+- **Desgravamen único vs. itemized** — Venezuelan ISLR Law (Arts. 57 and 58 of the text reprinted in Gaceta Oficial N° 6.210 Extraordinario, 2015) allows individuals to deduct one of two mutually exclusive sets of personal deductions before applying Tarifa No. 1: - **Desgravamen único (standard):** 774 UT per year. No documentation required. - **Desgravamen detallado (itemized):** Sum of qualifying expenses actually paid in the year to Venezuelan institutes, insurers and providers.  _(ISLR Law Arts. 57 and 58)_
 
 ### Itemized Deduction Categories and Limits
 
@@ -111,11 +113,13 @@ When facts are uncertain, this skill defaults to the most conservative (highest-
 
 | Category | Annual Limit | Notes |
 | --- | --- | --- |
-| Education (taxpayer + dependents under 26) | No cap | All levels; must be paid to registered Venezuelan institutions |
-| Life, surgery, hospitalization, maternity insurance premiums | No cap | Policy must be with Venezuelan-domiciled insurer |
-| Medical, dental, and hospitalization expenses | No cap | Must be medically necessary; receipts required |
-| Mortgage interest — primary residence | 1,000 UT = Bs. 43,000 | Only principal dwelling; Venezuelan lender |
-| Rent — primary residence | 800 UT = Bs. 34,400 | Only principal dwelling; Venezuelan lessor |
+| Education (taxpayer + descendants not older than 25; no age limit for special education) | No cap | All levels; must be paid to Venezuelan educational institutes |
+| Hospitalisation, surgery and maternity insurance premiums | No cap | Policy must be with a Venezuelan-domiciled insurer; life insurance does NOT qualify |
+| Medical, dental, and hospitalization expenses | No cap | Services provided in Venezuela to the taxpayer and dependants; receipts required |
+| Mortgage interest — primary residence | 1,000 UT = Bs. 43,000 | Loan taken to buy the principal dwelling |
+| Rent — primary residence | 800 UT = Bs. 34,400 | Only the dwelling that is the permanent family home |
+
+Payments must fall in the tax year, receipts go with the return, and amounts reimbursed by an employer or insurer, or already deducted as business costs, do not qualify (ISLR Law Art. 57, Parágrafos Primero and Segundo).
 
 ### Eligibility
 
@@ -135,7 +139,7 @@ Example: An individual in the 24% bracket (income 3,000–4,000 UT range) who it
 
 ### Source
 
-PwC Worldwide Tax Summaries — Venezuela Individual, Deductions (reviewed January 2026). Lstributos.com (2025 brackets). Naymaconsultores (2025 filing guidance).
+Ley de Impuesto Sobre la Renta arts. 57-58, as reprinted by Decreto N° 2.163 (Gaceta Oficial N° 6.210 Extraordinario, 30 December 2015; [National Assembly copy](https://www.asambleanacional.gob.ve/storage/documentos/leyes/decreto-n0-2163-mediante-el-cual-se-dicta-el-decreto-con-rango-valor-y-fuerza-de-ley-de-reforma-parcial-del-decreto-con-rango-valor-y-fuerza-de-ley-de-impuesto-sobre-la-renta-20211019151632.pdf)). Lstributos.com (2025 brackets). Naymaconsultores (2025 filing guidance).
 
 ## Section 6 — Major Optimization Lever 2: Loss Carryforward Planning
 
@@ -164,7 +168,7 @@ PwC Worldwide Tax Summaries — Venezuela Individual, Deductions (reviewed Janua
 
 ### Source
 
-PwC Worldwide Tax Summaries — Venezuela Corporate, Deductions (January 2026).
+Ley de Impuesto Sobre la Renta art. 55 (three years, 25% of each year's income, foreign losses against foreign income only). The bar on carrying forward inflation-adjustment losses was not traced to the 2015 text.
 
 ## Section 7 — Major Optimization Lever 3: Individual vs. Corporate Rate Arbitrage
 
@@ -200,7 +204,8 @@ PwC Worldwide Tax Summaries — Venezuela Corporate, Deductions (January 2026).
 | Sector | Flat Rate |
 | --- | --- |
 | Petroleum exploitation, refining, transport, export of hydrocarbons | 50% |
-| Banking and insurance | 40% |
+| Recipients of mining or hydrocarbon royalties | 60% |
+| Banking, financial, insurance and reinsurance (domiciled companies) | 40% |
 
 ### Optimization Logic
 
@@ -208,7 +213,7 @@ PwC Worldwide Tax Summaries — Venezuela Corporate, Deductions (January 2026).
 
 ### Source
 
-PwC Worldwide Tax Summaries — Venezuela Corporate and Individual (January 2026). icalculator.com/ve income-tax-rates.
+Ley de Impuesto Sobre la Renta arts. 50 (Tarifa Nº 1), 52 (Tarifa Nº 2 and the 40% rate, Parágrafo Primero) and 53 (Tarifa Nº 3: 50% for art. 11 hydrocarbon income, 60% for art. 12 royalty income); fixed deductions derived from the bands. icalculator.com/ve income-tax-rates.
 
 ## Section 8 — Major Optimization Lever 4: Special Economic Zone (SEZ) Incentives
 
@@ -402,13 +407,12 @@ Avalara — Venezuelan VAT Compliance (2025). KPMG — Venezuela VAT changes 202
 
 | Fund | Employer Rate | Employee Rate | Salary Base Cap | Notes |
 | --- | --- | --- | --- | --- |
-| IVSS (Mandatory Social Security) | 9–11% | 4% | 5 minimum salaries | Employer rate varies by enterprise risk classification |
-| FAOV (Housing Savings — primary) | 2% | 1% | No cap | Based on integral salary |
-| FAV (Housing — secondary / LPH) | 2% | 0.5% | 10 minimum salaries | Employment Benefit Regime |
-| INCES (Training) | 2% (quarterly wages) | 0.5% (profit-sharing/utilidades) | No cap | Employer quarterly; employee on utilidades only |
-| Paro Forzoso (Unemployment) | 2% | 0.5% | No cap | — |
-| LOPCYMAT (Workplace safety) | 0% | — | No cap | Employer only; rate set by INPSASEL risk assessment |
-| Special Pension Contribution (from May 2024) | 9% | — | — | Employer only |
+| IVSS (Mandatory Social Security) | 9–11% | 4% | 5 minimum salaries | Employer rate varies by enterprise risk classification (Reglamento General de la Ley del Seguro Social arts. 98, 108, 109) |
+| FAOV (Housing Savings) | 2% | 1% | No cap | Based on integral salary (Ley del Régimen Prestacional de Vivienda y Hábitat art. 33) |
+| INCES (Training) | 2% of monthly normal salary, paid quarterly | 0.5% (profit-sharing/utilidades, aguinaldos, year-end bonuses) | No cap | Employers with 5 or more workers; employee on utilidades only (Ley del INCES arts. 49, 50) |
+| Paro Forzoso (Régimen Prestacional de Empleo) | 2% | 0.5% | 10 minimum salaries (floor 1) | 2.5% of the previous month's normal salary, split 80/20 (Ley del Régimen Prestacional de Empleo art. 46) |
+| LOPCYMAT (Workplace safety) | 0% applied | — | No cap | Employer only; LOPCYMAT art. 7 sets 0.75%–10% by INPSASEL risk assessment |
+| Special Pension Contribution (from May 2024) | 9% | — | No cap; per-worker floor at the indexed integral minimum income | Companies only; base is salary plus non-salary bonuses (Ley de Protección de las Pensiones de Seguridad Social arts. 6, 7; Decreto N° 4.952) |
 
 ### Payment Deadlines
 
@@ -417,8 +421,10 @@ Avalara — Venezuelan VAT Compliance (2025). KPMG — Venezuela VAT changes 202
 | Fund | Deadline |
 | --- | --- |
 | IVSS | By the 16th of each month |
-| FAOV | Within first 5 business days of each month |
-| INCES | Within first 5 business days after each quarter closes |
+| FAOV | Within first 5 business days of each month (Ley del Régimen Prestacional de Vivienda y Hábitat art. 34) |
+| Paro Forzoso | Within first 5 business days of each month (Ley del Régimen Prestacional de Empleo art. 47) |
+| INCES | Within 5 days after each quarter closes; the employee 0.5% within 10 days of the utilidades payment (Ley del INCES arts. 49, 50) |
+| Special Pension Contribution | Declared and paid monthly to SENIAT (Ley de Protección de las Pensiones de Seguridad Social art. 9) |
 
 ### Optimization Actions
 
@@ -445,11 +451,11 @@ A company with Bs. 5,000,000 annual payroll at the 11% IVSS rate vs. 9%:
 
 LOPCYMAT: Rate is 0%; no LOPCYMAT cost applies.
 
-**Combined potential payroll saving: Bs. 200,000/year** from safety investment — before considering the ISLR deductibility of the safety investment itself.
+**Combined potential payroll saving: Bs. 100,000/year** (5,000,000 × 2 percentage points of IVSS; LOPCYMAT adds nothing at 0%) from safety investment — before considering the ISLR deductibility of the safety investment itself.
 
 ### Source
 
-PwC — Venezuela Individual Other Taxes (January 2026). Playroll Venezuela payroll guide. Moore Global — Venezuela Tax Guide.
+Reglamento General de la Ley del Seguro Social arts. 98, 108, 109 (Decreto N° 8.922, Gaceta Oficial N° 39.912, 2012); Ley del Régimen Prestacional de Empleo arts. 46, 47; Ley del Régimen Prestacional de Vivienda y Hábitat arts. 33, 34 (Gaceta Oficial N° 6.805 Extraordinario, 2024); Ley del INCES arts. 49, 50 (Gaceta Oficial N° 6.155 Extraordinario, 2014); LOPCYMAT art. 7; Ley de Protección de las Pensiones de Seguridad Social (Gaceta Oficial N° 6.806 Extraordinario, 2024) and Decreto N° 4.952 (Gaceta Oficial N° 42.880, 2024). Playroll Venezuela payroll guide. Moore Global — Venezuela Tax Guide. The IVSS payment date comes from these secondary guides and was not traced to a statute.
 
 ### Pattern 1: Should an individual use desgravamen único or itemized?
 
@@ -457,7 +463,7 @@ START: Individual ISLR filer, Venezuela resident
 
 Step 1: Sum qualifying itemized expenses:
   - Education expenses (no cap)
-  - Insurance premiums (life/surgery/hospitalization/maternity) (no cap)
+  - Insurance premiums (surgery/hospitalization/maternity; not life) (no cap)
   - Medical/dental/hospital expenses (no cap)
   - Mortgage interest on primary residence (cap: 1,000 UT = Bs. 43,000 at 2025 UT)
   - Rent on primary residence (cap: 800 UT = Bs. 34,400 at 2025 UT)
@@ -578,7 +584,7 @@ Step 5: Is the loss from inflation/monetary correction?
 
 **Facts:** María is a Venezuelan-resident architect. FY 2025. Annual professional income: Bs. 180,000 (approximately 4,186 UT). She paid during 2025:
 - Surgery and hospitalization (Venezuelan clinic): Bs. 22,000
-- Life insurance premium (Venezuelan insurer): Bs. 8,000
+- HCM (hospitalisation, surgery and maternity) insurance premium (Venezuelan insurer): Bs. 8,000 (a life insurance premium would not count)
 - Daughter's university fees (Venezuelan university): Bs. 14,000
 - Mortgage interest on her Caracas apartment: Bs. 40,000 (but cap is 1,000 UT = Bs. 43,000 so full amount within cap)
 
@@ -593,7 +599,7 @@ Standard deduction: 774 UT × Bs. 43 = Bs. 33,282
 | Item | Amount | Within Cap? |
 | --- | --- | --- |
 | Surgery/hospitalization | Bs. 22,000 | No cap — fully included |
-| Life insurance premium | Bs. 8,000 | No cap — fully included |
+| HCM insurance premium | Bs. 8,000 | No cap — fully included |
 | University fees | Bs. 14,000 | No cap — fully included |
 | Mortgage interest | Bs. 40,000 | Cap = Bs. 43,000 — fully included |
 | **Total itemized** | **Bs. 84,000** |  |
