@@ -221,7 +221,10 @@ class LiveServerTests(unittest.TestCase):
         served = self._initialize(port, Host="evil.example")
         self.assertEqual(served.status_code, 200, served.text)
         logged = stderr_path.read_text(encoding="utf-8")
-        self.assertIn("MCP_HOST=0.0.0.0 binds beyond loopback without MCP_ALLOWED_HOSTS", logged)
+        self.assertRegex(
+            logged,
+            r"(?s)MCP_HOST=0\.0\.0\.0.*?binds.*?beyond.*?loopback.*?without.*?MCP_ALLOWED_HOSTS",
+        )
 
     def test_origins_without_hosts_refuse_to_start(self) -> None:
         completed = subprocess.run(

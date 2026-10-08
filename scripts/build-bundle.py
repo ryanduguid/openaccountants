@@ -127,13 +127,18 @@ def assemble(package, packages_dir, out_dir):
     written = []
     for src, name in sources:
         dest = os.path.join(out_dir, name)
-        if name == "README.md":
-            with open(src, encoding="utf-8") as fh:
-                text = fh.read()
-            with open(dest, "w", encoding="utf-8", newline="\n") as fh:
-                fh.write(localize_readme(text, shared_dir))
-        else:
-            shutil.copy2(src, dest)
+        try:
+            if name == "README.md":
+                with open(src, encoding="utf-8") as fh:
+                    text = fh.read()
+                with open(dest, "x", encoding="utf-8", newline="\n") as fh:
+                    fh.write(localize_readme(text, shared_dir))
+            else:
+                with open(src, "rb") as source, open(dest, "xb") as target:
+                    shutil.copyfileobj(source, target)
+                shutil.copystat(src, dest)
+        except FileExistsError:
+            sys.exit(f"error: bundle destination already exists: {name}; use a new empty output directory")
         written.append(dest)
     return written
 
