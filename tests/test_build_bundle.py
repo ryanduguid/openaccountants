@@ -24,6 +24,7 @@ import sys
 import unittest
 from collections import defaultdict
 from pathlib import Path
+from unittest import mock
 
 from test_build_packages import BASE, GUIDE, SyntheticTreeCase
 
@@ -79,6 +80,42 @@ class AssembleTests(SyntheticTreeCase):
                     (self.packages / "zzland" / name).write_text("Own copy.")
                     entry["files"].append(name)
                 self.assert_rejected_before_output(document, "appears twice")
+
+    def test_filesystem_aliases_do_not_overwrite_an_earlier_copy(self) -> None:
+        document = self.bundles()
+        document["packages"]["zzland"] = {"files": ["case.md"], "shared": ["CASE.md"]}
+        (self.packages / "zzland" / "case.md").write_bytes(b"Own guide.")
+        (self.packages / "_shared" / "CASE.md").write_bytes(b"Different shared guide.")
+        self.write_manifest(document)
+        output = self.root / "bundle"
+        output_spelling = str(output)
+        original_join = os.path.join
+
+        def insensitive_destination(root, *parts):
+            if os.fspath(root) == output_spelling:
+                parts = tuple(part.lower() for part in parts)
+            return original_join(root, *parts)
+
+        with mock.patch.object(os.path, "normcase", side_effect=lambda name: name), \
+                mock.patch.object(os.path, "join", side_effect=insensitive_destination):
+            with self.assertRaisesRegex(SystemExit, "destination already exists"):
+                build_bundle.assemble("zzland", str(self.packages), str(output))
+        self.assertEqual((output / "case.md").read_bytes(), b"Own guide.")
+
+    def test_files_created_after_the_empty_directory_check_are_preserved(self) -> None:
+        for name in ("README.md", "zz-vat.md"):
+            with self.subTest(name=name):
+                output = self.root / ("late-" + name)
+                original_makedirs = os.makedirs
+
+                def late_file(path, **kwargs):
+                    original_makedirs(path, **kwargs)
+                    (output / name).write_bytes(b"Fabricated concurrent file.")
+
+                with mock.patch.object(os, "makedirs", side_effect=late_file):
+                    with self.assertRaisesRegex(SystemExit, "destination already exists"):
+                        build_bundle.assemble("zzland", str(self.packages), str(output))
+                self.assertEqual((output / name).read_bytes(), b"Fabricated concurrent file.")
 
     def test_manifest_filenames_cannot_escape_or_use_nonportable_paths(self) -> None:
         (self.packages / "escape.md").write_text("Outside the selected package.")
