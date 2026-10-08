@@ -9,17 +9,55 @@ import sysconfig
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 
+def installed_command() -> Path:
+    name = "openaccountants-mcp.exe" if sys.platform == "win32" else "openaccountants-mcp"
+    for scheme in (sysconfig.get_default_scheme(), sysconfig.get_preferred_scheme("user")):
+        command = Path(sysconfig.get_path("scripts", scheme=scheme)) / name
+        if command.is_file():
+            return command
+    raise FileNotFoundError("install ./mcp before running its tests")
+
+
+class ConsoleLocationTests(unittest.TestCase):
+    def test_active_environment_precedes_user_install(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            name = "openaccountants-mcp.exe" if sys.platform == "win32" else "openaccountants-mcp"
+            for directory in (root / "active", root / "user"):
+                directory.mkdir()
+                (directory / name).touch()
+            with mock.patch.object(sysconfig, "get_path", side_effect=[str(root / "active"), str(root / "user")]):
+                self.assertEqual(installed_command(), root / "active" / name)
+
+    def test_user_install_is_found_when_active_scripts_are_empty(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            name = "openaccountants-mcp.exe" if sys.platform == "win32" else "openaccountants-mcp"
+            (root / "user").mkdir()
+            (root / "user" / name).touch()
+            with mock.patch.object(sysconfig, "get_path", side_effect=[str(root / "active"), str(root / "user")]) as paths:
+                self.assertEqual(installed_command(), root / "user" / name)
+                self.assertEqual(paths.call_args_list, [
+                    mock.call("scripts", scheme=sysconfig.get_default_scheme()),
+                    mock.call("scripts", scheme=sysconfig.get_preferred_scheme("user")),
+                ])
+
+    def test_missing_console_reports_the_install_requirement(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            with mock.patch.object(sysconfig, "get_path", return_value=tmp):
+                with self.assertRaisesRegex(FileNotFoundError, "install ./mcp"):
+                    installed_command()
+
+
 class InstalledConsoleTests(unittest.TestCase):
     def _call(self, populated: bool) -> dict:
-        command = Path(sysconfig.get_path("scripts")) / (
-            "openaccountants-mcp.exe" if sys.platform == "win32" else "openaccountants-mcp"
-        )
-        self.assertTrue(command.is_file(), "install ./mcp before running its tests")
+        command = installed_command()
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             packages = root / "packages"
