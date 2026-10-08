@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T08:41:53+00:00",
+ "generated_at": "2026-10-08T09:32:54+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -20867,9 +20867,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Jose Padilla",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-08"
   },
   {
    "slug": "venezuela-iva",
@@ -20893,9 +20893,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Jose Padilla",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-08"
   },
   {
    "slug": "venezuela-social-contributions",
@@ -20906,9 +20906,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Jose Padilla",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-08"
   },
   {
    "slug": "venezuela-tax-optimization",
@@ -20919,9 +20919,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Jose Padilla",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-08"
   },
   {
    "slug": "vietnam-references",

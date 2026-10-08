@@ -4,9 +4,9 @@ description: Use this skill whenever asked about Venezuela personal income tax (
 version: 0.1
 jurisdiction: VE
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-08
 reviewed_by: Jose Padilla
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -19,12 +19,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Venezuelan Income Tax (ISLR) — Individual Skill v0.1
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Jose Padilla** on 2026-06-21; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+>
+> **Edited since review (2026-10-08).** Citations now point to the statutes instead of a secondary tax summary: the Ley de Impuesto Sobre la Renta as reprinted by Decreto N° 2.163 (Gaceta Oficial N° 6.210 Extraordinario, 30 December 2015; [National Assembly copy](https://www.asambleanacional.gob.ve/storage/documentos/leyes/decreto-n0-2163-mediante-el-cual-se-dicta-el-decreto-con-rango-valor-y-fuerza-de-ley-de-reforma-parcial-del-decreto-con-rango-valor-y-fuerza-de-ley-de-impuesto-sobre-la-renta-20211019151632.pdf); "LISLR" below), its Reglamento (Decreto N° 2.507, Gaceta Oficial N° 5.662 Extraordinario, 24 September 2003; "Reglamento" below) and Decreto N° 1.808 on withholding (Gaceta Oficial N° 36.203, 12 May 1997). The statutes changed four statements: the insurance desgravamen covers hospitalisation, surgery and maternity premiums only, not life insurance (LISLR art. 57(2)); the Reglamento lets the Executive extend the 31 March deadline (arts. 146, 149); the estimated-tax rules are stated from Reglamento arts. 156 and 164; and resident professional fees paid by a company are withheld at 3%, not ~10% (Decreto 1.808 art. 9(1)(b)). These edits are not covered by the 2026-06-21 sign-off.
 
 ## Critical Structural Warning — Read First
 
 Venezuela is a **hyperinflationary economy with a dual-track measurement system**. Three caveats govern everything below:
 
-1. **ISLR brackets, deductions and credits are denominated in Tax Units (Unidad Tributaria / UT)**, not in bolívares directly. You must convert UT → VES using the current UT value before quoting any bolívar figure. (PwC Worldwide Tax Summaries, reviewed 12 Jan 2026.)
+1. **ISLR brackets, deductions and credits are denominated in Tax Units (Unidad Tributaria / UT)**, not in bolívares directly. You must convert UT → VES using the current UT value before quoting any bolívar figure. (LISLR arts. 50, 57-59.)
 2. **Penalties are NO LONGER in UT.** Since the 2020 reform of the Código Orgánico Tributario (COT Art. 91), pecuniary fines stated as a multiple are calculated using the **official exchange rate of the highest-value currency published by the BCV** (effectively the USD rate) on the **date of payment**. (COT Art. 91, 2020 reform.)
 3. **The legal minimum wage (Bs. 130/month, frozen since 15 March 2022, Decreto 4.653) is economically negligible** (~USD 0.50/month by Dec 2025). The real income floor is delivered via **non-salary "bonos"** (the "ingreso mínimo integral indexado" of ~USD 160/month, announced 30 April 2025). Do NOT treat the legal minimum wage as the economic minimum, and note that bonos are excluded from the salary base for social security and largely from the ISLR salary base. (Decreto 4.653; executive announcement 30 April 2025.)
 
@@ -37,16 +39,16 @@ Venezuela is a **hyperinflationary economy with a dual-track measurement system*
 | Country | Venezuela (Bolivarian Republic of Venezuela) |
 | Tax | ISLR — Impuesto Sobre la Renta (personal income tax) |
 | Currency | Bolívar (VES / Bs.) — brackets denominated in Tax Units (UT) |
-| Tax year | Calendar year (1 January – 31 December) for wage earners; business-engaged individuals may elect an alternative 12-month period (PwC, reviewed 12 Jan 2026) |
-| Primary legislation | Ley de Impuesto Sobre la Renta (LISLR) |
-| Supporting legislation | Código Orgánico Tributario (COT); Decreto 1.808 (ISLR withholdings); SNAT/2025/000048 (UT value) |
+| Tax year | Calendar year (1 January – 31 December) for wage earners; individuals carrying on commercial, industrial or service activities may elect another 12-month period (Reglamento art. 148) |
+| Primary legislation | Ley de Impuesto Sobre la Renta (LISLR), as reprinted by Decreto N° 2.163, Gaceta Oficial N° 6.210 Extraordinario, 30 December 2015 |
+| Supporting legislation | Reglamento de la LISLR (Decreto N° 2.507, 2003); Código Orgánico Tributario (COT); Decreto 1.808 (ISLR withholdings, 1997); SNAT/2025/000048 (UT value) |
 | Tax authority | SENIAT — Servicio Nacional Integrado de Administración Aduanera y Tributaria |
 | Social security authority | IVSS — Instituto Venezolano de los Seguros Sociales (plus parafiscal regimes) |
 | Tax ID | RIF — Registro Único de Información Fiscal (issued by SENIAT, no fee) |
-| Filing deadline | 31 March of the following year — NO extensions (PwC, reviewed 12 Jan 2026) |
+| Filing deadline | 31 March of the following year: three months after the end of the tax year (Reglamento art. 146); the Ministry of Finance may extend it by resolution (art. 149) |
 | Tax Unit (UT) value | VES 43.00 per UT (SNAT/2025/000048, Official Gazette 2 June 2025) |
 | Top marginal rate (residents) | 34% (Tarifa Nº 1, LISLR) |
-| Non-resident flat rate | 34% on Venezuelan-source income (PwC, reviewed 12 Jan 2026) |
+| Non-resident flat rate | 34% on Venezuelan-source income (LISLR art. 50, Parágrafo Único) |
 | Validated by | Verified by Jose Padilla (CPA) on 2026-06-21 |
 | Validation date | Verified by Jose Padilla (CPA) on 2026-06-21 |
 | Skill version | 0.1 |
@@ -65,7 +67,7 @@ Venezuela is a **hyperinflationary economy with a dual-track measurement system*
 
 ### Resident Graduated Rate Schedule (Tarifa Nº 1)
 
-**Resident Graduated Rate Schedule (Tarifa Nº 1)**  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026 (LISLR Tarifa Nº 1))_
+**Resident Graduated Rate Schedule (Tarifa Nº 1)**  _(LISLR art. 50, Tarifa Nº 1; sustraendos derived from the bands)_
 
 | Taxable income (UT) | Rate | Sustraendo (UT) | Cumulative tax at top of band (UT) |
 | --- | --- | --- | --- |
@@ -78,16 +80,16 @@ Venezuela is a **hyperinflationary economy with a dual-track measurement system*
 | 4,000 – 6,000 | 29% | 575 | 1,165 |
 | Over 6,000 | 34% | 875 | — |
 
-- **Tax formula and continuity note** — Tax = (rate × taxable income in UT) − sustraendo, then × UT value for the VES figure. The sustraendos make the schedule continuous (each band's cumulative tax at its ceiling equals the next band's value at the same point — verified).  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026 (LISLR Tarifa Nº 1))_
+- **Tax formula and continuity note** — Tax = (rate × taxable income in UT) − sustraendo, then × UT value for the VES figure. The sustraendos make the schedule continuous (each band's cumulative tax at its ceiling equals the next band's value at the same point — verified).  _(LISLR art. 50 taxes each fraction at its band rate; the sustraendo restates that as one rate less a fixed amount)_
 
 ### Non-Resident Rates (flat, withheld at source)
 
-**Non-Resident Rates (flat, withheld at source)**  _(PwC, reviewed 12 Jan 2026)_
+**Non-Resident Rates (flat, withheld at source)**  _(LISLR arts. 39, 50; Decreto 1.808 arts. 3, 9)_
 
 | Income type | Rate | Effective rate | Source |
 | --- | --- | --- | --- |
-| Salary / services performed in Venezuela | 34% flat | 34% of gross | PwC, reviewed 12 Jan 2026 |
-| Professional non-business activities | 34% on 90% of gross | ~30.6% of gross | PwC, reviewed 12 Jan 2026 |
+| Salary / services performed in Venezuela | 34% flat | 34% of gross | LISLR art. 50, Parágrafo Único; Decreto 1.808 art. 3 (34% of the total paid) |
+| Professional non-business activities | 34% on 90% of gross | ~30.6% of gross | LISLR art. 39 (net income is 90% of gross); Decreto 1.808 art. 9(1)(a) |
 
 ### Conservative Defaults
 
@@ -144,7 +146,7 @@ Note: Venezuelan bank statements are typically in **bolívares (VES / Bs.)**; so
 
 ### 3.2 Expense Patterns (Debits / Cargos) — Self-Employed Business Expenses
 
-Self-employed business expenses are deductible **following corporate-tax rules** and only against business/professional income, NOT against salary income (PwC, reviewed 12 Jan 2026).
+Self-employed business expenses are deductible **under the same LISLR art. 27 deduction rules that companies use** and only against business/professional income, NOT against salary income: LISLR art. 31 treats employment remuneration itself as net income, so no deduction reduces it.
 
 **3.2 Expense Patterns (Debits / Cargos) — Self-Employed Business Expenses**
 
@@ -165,11 +167,11 @@ Self-employed business expenses are deductible **following corporate-tax rules**
 
 | Pattern | Category | Treatment | Cap | Source |
 | --- | --- | --- | --- | --- |
-| COLEGIO, UNIVERSIDAD, MATRÍCULA (taxpayer/children <26) | Education | Itemized desgravamen | No stated cap | PwC, reviewed 12 Jan 2026 |
-| SEGURO HCM, SEGURO DE VIDA, HOSPITALIZACIÓN | Insurance premiums | Itemized desgravamen | No stated cap; Venezuelan entities | PwC, reviewed 12 Jan 2026 |
-| MÉDICO, ODONTÓLOGO, CLÍNICA, HOSPITAL | Medical/dental | Itemized desgravamen | No stated cap; Venezuelan entities | PwC, reviewed 12 Jan 2026 |
-| HIPOTECA, INTERESES HIPOTECARIOS (primary home) | Mortgage interest | Itemized desgravamen | 1,000 UT/year | PwC, reviewed 12 Jan 2026 |
-| ALQUILER VIVIENDA (primary/permanent home) | Rent | Itemized desgravamen | 800 UT/year | PwC, reviewed 12 Jan 2026 |
+| COLEGIO, UNIVERSIDAD, MATRÍCULA (taxpayer/children <26) | Education | Itemized desgravamen | No stated cap; paid to Venezuelan educational institutes; descendants not older than 25 (no age limit for special education) | LISLR art. 57(1) |
+| SEGURO HCM, HOSPITALIZACIÓN, CIRUGÍA, MATERNIDAD | Insurance premiums | Itemized desgravamen | No stated cap; hospitalisation, surgery and maternity cover only, paid to companies domiciled in Venezuela. Life insurance (SEGURO DE VIDA) is NOT a desgravamen | LISLR art. 57(2) |
+| MÉDICO, ODONTÓLOGO, CLÍNICA, HOSPITAL | Medical/dental | Itemized desgravamen | No stated cap; services provided in Venezuela to the taxpayer and dependants | LISLR art. 57(3) |
+| HIPOTECA, INTERESES HIPOTECARIOS (primary home) | Mortgage interest | Itemized desgravamen | 1,000 UT/year | LISLR art. 57(4) |
+| ALQUILER VIVIENDA (primary/permanent home) | Rent | Itemized desgravamen | 800 UT/year | LISLR art. 57(4) |
 
 ### 3.4 Expense Patterns — NOT Deductible
 
@@ -182,7 +184,7 @@ Self-employed business expenses are deductible **following corporate-tax rules**
 | MULTA, SANCIÓN, INTERESES MORATORIOS | Fines/penalties | NOT deductible | Public policy |
 | PAGO ISLR, IMPUESTO SOBRE LA RENTA | Tax payments | NOT deductible | Income tax cannot reduce income |
 | RETIRO PERSONAL, CONSUMO PROPIO | Drawings | NOT deductible | Not an expense |
-| GASTOS DE EMPLEO (salaried) | Employment expenses | NOT deductible | No employment expenses recognised (PwC, reviewed 12 Jan 2026) |
+| GASTOS DE EMPLEO (salaried) | Employment expenses | NOT deductible | No employment expenses recognised: employment remuneration is net income (LISLR art. 31) |
 
 ### 3.5 Exclusions / Tax-Account Movements
 
@@ -239,14 +241,14 @@ Professional fee for services rendered in Venezuela. If IVA was charged, the gro
 - Less withholdings suffered during the year: VES 5,300
 - **Amount due: 241,739.12 − 5,300 = VES 236,439.12**
 
-**Classification:** Tax due = VES 236,439.12. (Matches PwC sample calculation, reviewed 12 Jan 2026.)
+**Classification:** Tax due = VES 236,439.12. (Recomputed from LISLR arts. 50, 58 and 59.)
 
 ### Example 3 — Itemized desgravámenes with rent cap
 
 **Input:** Resident, gross 8,000 UT. Documented rent on primary home VES 50,000/month × 12 = VES 600,000 = 13,953.49 UT. Education VES 86,000 = 2,000 UT. Elects itemized.
 
 **Reasoning:**
-- Rent desgravamen is **capped at 800 UT/year** (PwC, reviewed 12 Jan 2026). Documented rent of 13,953.49 UT exceeds the cap → allow **800 UT only**.
+- Rent desgravamen is **capped at 800 UT/year** (LISLR art. 57(4)). Documented rent of 13,953.49 UT exceeds the cap → allow **800 UT only**.
 - Education: no stated cap → allow 2,000 UT.
 - Total itemized desgravámenes: 800 + 2,000 = 2,800 UT.
 - Taxable income: 8,000 − 2,800 = 5,200 UT.
@@ -261,7 +263,7 @@ Professional fee for services rendered in Venezuela. If IVA was charged, the gro
 `10/05/2025 ; MERCANTIL ; PAGO HONORARIOS ; CONSULTOR NO RESIDENTE ; SERVICIOS PROFESIONALES ; +200.000,00 ; VES`
 
 **Reasoning:**
-Non-resident performing professional non-business activity. Rate is 34% applied to **90% of gross** (PwC, reviewed 12 Jan 2026), withheld at source.
+Non-resident performing professional non-business activity. Rate is 34% applied to **90% of gross** (LISLR arts. 39, 50; Decreto 1.808 art. 9(1)(a)), withheld at source.
 - Base: 90% × 200,000 = VES 180,000
 - Withholding: 34% × 180,000 = **VES 61,200** (effective 30.6% of gross)
 
@@ -295,9 +297,11 @@ ISLR withheld by a client on professional fees is **not an expense** — it is a
 
 | Status | Tax base | Source |
 | --- | --- | --- |
-| Resident individual | Worldwide income | PwC, reviewed 12 Jan 2026 |
-| Non-resident individual | Venezuelan-source income only | PwC, reviewed 12 Jan 2026 |
-| Foreign resident with a fixed base in Venezuela | National- and foreign-source income attributable to that base | PwC, reviewed 12 Jan 2026 |
+| Resident individual | Worldwide income | LISLR art. 1 |
+| Non-resident individual | Venezuelan-source income only | LISLR art. 1 |
+| Foreign resident with a fixed base in Venezuela | National- and foreign-source income attributable to that base | LISLR art. 1 |
+
+A person is non-resident if their stay does not exceed 183 days in a calendar year and they are not domiciled under the COT; a continuous stay of more than 183 days in the previous calendar year makes them resident (LISLR art. 51).
 
 ### 5.2 The graduated computation (residents)
 
@@ -305,10 +309,10 @@ ISLR withheld by a client on professional fees is **not an expense** — it is a
 
 ### 5.3 Deductions — standard vs itemized
 
-- **Standard deduction** — Standard (desgravamen único): 774 UT/year, no documentation required. Electing it blocks itemized deductions.  _(PwC, reviewed 12 Jan 2026)_
-- **Itemized desgravámenes** — Itemized desgravámenes (Section 3.3): education (taxpayer + children under 26, no age limit for special education); insurance premiums and medical/dental paid to Venezuelan entities; mortgage interest on primary home capped at 1,000 UT/year; rent on primary/permanent home capped at 800 UT/year.  _(PwC, reviewed 12 Jan 2026)_
-- **Employment expenses and business expenses** — Employment expenses: none recognised. Self-employed business expenses follow corporate-tax rules and offset only business income, not salary.  _(PwC, reviewed 12 Jan 2026)_
-- **Loss carryforward** — Up to 3 years; annual offset limited to 25% of current-year taxable income; foreign losses offset only foreign-source income.  _(PwC, reviewed 12 Jan 2026)_
+- **Standard deduction** — Standard (desgravamen único): 774 UT/year, no documentation required. Electing it blocks itemized deductions.  _(LISLR art. 58)_
+- **Itemized desgravámenes** — Itemized desgravámenes (Section 3.3): education at Venezuelan institutes (taxpayer + descendants not older than 25, no age limit for special education); hospitalisation, surgery and maternity insurance premiums paid to companies domiciled in Venezuela; medical, dental and hospital services provided in Venezuela; mortgage interest on primary home capped at 1,000 UT/year; rent on primary/permanent home capped at 800 UT/year. Payments must fall in the tax year, receipts go with the return, and amounts reimbursed by an employer or insurer, or already deducted as business costs, do not qualify.  _(LISLR art. 57 and its Parágrafos Primero and Segundo)_
+- **Employment expenses and business expenses** — Employment expenses: none recognised, because employment remuneration is net income. Self-employed business expenses use the art. 27 deduction rules and offset only business income, not salary.  _(LISLR arts. 27, 31)_
+- **Loss carryforward** — Up to 3 years; annual offset limited to 25% of the year's income; foreign losses offset only foreign-source income.  _(LISLR art. 55)_
 
 ### 5.4 Personal credits (rebajas) — applied after tax is computed
 
@@ -316,15 +320,15 @@ ISLR withheld by a client on professional fees is **not an expense** — it is a
 
 | Credit | Amount | Source |
 | --- | --- | --- |
-| Taxpayer | 10 UT | PwC, reviewed 12 Jan 2026 |
-| Spouse | 10 UT | PwC, reviewed 12 Jan 2026 |
-| Per dependant (minor; incapacitated; or student under 25) | 10 UT each | PwC, reviewed 12 Jan 2026 |
+| Taxpayer | 10 UT | LISLR art. 59 |
+| Spouse not separated of property (not available when the spouses file separately) | 10 UT | LISLR art. 59(1) and Parágrafo Primero |
+| Per resident ascendant or descendant (adult descendants only if unable to work, or studying and under 25) | 10 UT each | LISLR art. 59(2) |
 
 - **VES value of each credit** — At UT = VES 43.00, each 10 UT credit = VES 430.
 
 ### 5.5 Non-resident flat rates
 
-- **Non-resident flat rates** — Salary/services performed in Venezuela: 34% flat, withheld at source. Professional non-business activities: 34% on 90% of gross (effective ~30.6%).  _(PwC, reviewed 12 Jan 2026)_
+- **Non-resident flat rates** — Salary/services performed in Venezuela: 34% flat, withheld at source. Professional non-business activities: 34% on 90% of gross (effective ~30.6%).  _(LISLR arts. 39, 50; Decreto 1.808 arts. 3, 9(1)(a))_
 
 ### 5.6 Filing and administration
 
@@ -332,13 +336,14 @@ ISLR withheld by a client on professional fees is **not an expense** — it is a
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Tax year | Calendar year (wage earners); alternative 12-month period for business-engaged individuals | PwC, reviewed 12 Jan 2026 |
-| Annual return | Declaración definitiva de rentas | PwC, reviewed 12 Jan 2026 |
-| Deadline | **31 March** of the following year — NO extensions; special calendar for contribuyentes especiales | PwC, reviewed 12 Jan 2026 |
-| Spouses | Generally file jointly unless separation criteria met | PwC, reviewed 12 Jan 2026 |
-| Estimated-return threshold (non-employees) | Required only if prior-year income from commercial/professional/leasing activity exceeded **1,500 UT** | PwC, reviewed 12 Jan 2026 |
-| Estimated tax payment | Single payment or 6 equal instalments; bi-weekly advances for non-wage special taxpayers | PwC, reviewed 12 Jan 2026 |
-| Tax ID | RIF — issued by SENIAT, no fee, available online; required to invoice/receive payment | PwC corporate "other taxes", reviewed 12 Jan 2026 |
+| Tax year | Calendar year (wage earners); alternative 12-month period for individuals carrying on commercial, industrial or service activities | Reglamento art. 148 |
+| Who must file | Resident individuals with net annual income above 1,000 UT or gross income above 1,500 UT; non-residents whatever the amount of their Venezuelan income | Reglamento art. 138; LISLR art. 79 |
+| Annual return | Declaración definitiva de rentas | Reglamento art. 146 |
+| Deadline | **31 March** of the following year (three months after the tax year ends); the Ministry of Finance may grant more time by resolution; special calendar for contribuyentes especiales | Reglamento arts. 146, 149 |
+| Spouses | Spouses not separated of property are one taxpayer, but a married woman may file separately for employment income and professional fees; spouses with a marriage settlement or judicial separation of property file separately | LISLR art. 54; Reglamento art. 145 |
+| Estimated-tax threshold (business and professional activity) | Required if prior-year net taxable income exceeded **1,500 UT**; the advance is computed on 80% of the prior year's net income | LISLR art. 80; Reglamento art. 156 |
+| Estimated tax payment | 75% of the resulting tax, paid from the sixth month after the year-end in up to 6 equal monthly instalments; special taxpayers pay advances under SENIAT's separate rules for them (not traced here) | LISLR art. 85, Parágrafo Segundo; Reglamento art. 164 |
+| Tax ID | RIF — issued by SENIAT, no fee, available online; required to invoice/receive payment | SENIAT registration practice (not traced to a statute here) |
 
 ### 5.7 Withholding on self-employed / professional income (Decreto 1.808)
 
@@ -346,29 +351,32 @@ ISLR withheld by a client on professional fees is **not an expense** — it is a
 
 | Item | Rate | Source |
 | --- | --- | --- |
-| Professional/technical services (resident) | ~10% at source | [RESEARCH GAP — reviewer to confirm] secondary payroll/contractor source; confirm against Decreto 1.808 / SENIAT |
-| Invalid/missing RIF | Increased withholding rate | PwC / Decreto 1.808 (mechanism) |
-| IVA (VAT) on services | 16% standard | PwC, reviewed 12 Jan 2026 |
+| Professional non-business fees paid by a company to a resident individual | 3% of the amount paid | Decreto 1.808 art. 9(1)(b) |
+| Professional non-business fees paid to a company domiciled in Venezuela | 5% | Decreto 1.808 art. 9(1)(b) |
+| Professional fees paid to a non-resident individual | 34% on 90% of the amount paid | Decreto 1.808 art. 9(1)(a) |
+| Invalid/missing RIF | Decreto 1.808 sets no separate rate for it; any surcharge rule is unconfirmed | [RESEARCH GAP — reviewer to confirm] |
+| IVA (VAT) on services | 16% standard | See the `venezuela-iva` guide, which flags the rate for confirmation |
 
-**[RESEARCH GAP — reviewer to confirm]** The full itemised Decreto 1.808 ISLR withholding percentage table was not retrieved from a primary source this session. The 10% professional-services figure is from a secondary source and must be confirmed against Decreto 1.808 / SENIAT before relying on it.
+**[RESEARCH GAP — reviewer to confirm]** The art. 9 table was read from the Pandectas Digital transcription of Decreto 1.808, not the Gazette image, and SENIAT's practice of deducting a sustraendo from resident individuals' withholding was not traced to the decree's text.
 
 ### 5.8 Social security and parafiscal contributions
 
-Source for the whole table: PwC Worldwide Tax Summaries, reviewed 12 Jan 2026.
+Sources for the table: Reglamento General de la Ley del Seguro Social arts. 98, 109 (Decreto N° 8.922, Gaceta Oficial N° 39.912, 30 April 2012); Ley del Régimen Prestacional de Empleo art. 46 (Gaceta Oficial N° 38.281, 2005); Ley del Régimen Prestacional de Vivienda y Hábitat art. 33 as reprinted in Gaceta Oficial N° 6.805 Extraordinario, 1 May 2024; Ley del INCES arts. 49-50 (Decreto N° 1.414, Gaceta Oficial N° 6.155 Extraordinario, 19 November 2014); LOPCYMAT art. 7 (Gaceta Oficial N° 38.236, 2005); Ley de Protección de las Pensiones de Seguridad Social arts. 6-9 (Gaceta Oficial N° 6.806 Extraordinario, 8 May 2024) and Decreto N° 4.952 (Gaceta Oficial N° 42.880, 16 May 2024). The `venezuela-social-contributions` guide gives the detail.
 
-**5.8 Social security and parafiscal contributions**  _(PwC Worldwide Tax Summaries, reviewed 12 Jan 2026)_
+**5.8 Social security and parafiscal contributions**
 
 | Regime | Employee | Employer | Base | Cap |
 | --- | --- | --- | --- | --- |
-| Social Security (IVSS / Seguro Social Obligatorio) | 4% | 9% / 10% / 11% (by risk class) | Normal/regular wages | Up to 5 minimum salaries (urban) |
-| Unemployment (Régimen Prestacional de Empleo) | 0.5% | 2% | Normal/regular wages | Up to 10 minimum salaries (urban) |
-| Housing (FAOV / Ley de Vivienda y Hábitat) | 1% | 2% | Total monthly (integral) salary | Máximo 10 salarios mínimos |
-| Worker training (INCES) | 0.5% (from year-end utilidades) | 2% of total wages | Employee: utilidades; employer: payroll | None |
-| LOPCYMAT (workplace risk) | — (employer only) | 0.75% – 10% (risk-dependent) | Total salaries paid | Regulations disputed |
+| Social Security (IVSS / Seguro Social Obligatorio) | 4% | 9% / 10% / 11% (by risk class) | Salary | Up to 5 urban minimum salaries |
+| Unemployment (Régimen Prestacional de Empleo) | 0.5% | 2% | Normal salary of the previous month | Floor 1, ceiling 10 urban minimum salaries |
+| Housing (FAOV / Ley de Vivienda y Hábitat) | 1% | 2% | Integral salary | None in the law |
+| Worker training (INCES) | 0.5% (of annual utilidades, aguinaldos or year-end bonuses) | 2% of monthly normal salary paid | Employers with 5 or more workers | None |
+| LOPCYMAT (workplace risk) | — (employer only) | 0.75% – 10% (risk-dependent) | Salary of each worker | Whether it is collected in practice is unconfirmed [RESEARCH GAP] |
+| Pension protection contribution | — | 9% (companies and other private entities, not individuals) | Total salary and non-salary bonuses paid; per-worker base not below the indexed integral minimum income | None |
 
 - **Employee-side total on normal wages** — Employee-side total (on normal wages): 4% + 0.5% + 1% + 0.5% = 6.0% (IVSS + unemployment + FAOV + INCES employee shares; note INCES employee share is on utilidades, not normal wages). Verify each base separately before summing — bases differ.
 
-**Minimum-salary reference for caps:** VES 130/month (since 15 March 2022, Decreto 4.653), still cited by PwC. **[RESEARCH GAP — reviewer to confirm]** whether caps are administratively indexed to the USD-160 integral income in practice.
+**Minimum-salary reference for caps:** VES 130/month since 15 March 2022 (Decreto N° 4.653 art. 1, Gaceta Oficial N° 6.691 Extraordinario). **[RESEARCH GAP — reviewer to confirm]** whether caps are administratively indexed to the USD-160 integral income in practice.
 
 ### 5.9 Penalties (COT)
 
@@ -392,7 +400,7 @@ Source for the whole table: PwC Worldwide Tax Summaries, reviewed 12 Jan 2026.
 
 ### 6.2 Standard vs itemized deduction election
 
-- **Standard vs itemized deduction election** — - 774 UT standard requires no documents; itemized may exceed it but needs documentation and (for insurance/medical) payment to Venezuelan entities. - **Flag for reviewer:** confirm which election minimises tax and that itemized support exists.
+- **Standard vs itemized deduction election** — - 774 UT standard requires no documents; itemized may exceed it but needs documentation, HCM premiums paid to insurers domiciled in Venezuela and medical services provided in Venezuela. - **Flag for reviewer:** confirm which election minimises tax and that itemized support exists.
 
 ### 6.3 Home/office and mixed-use apportionment
 
@@ -434,8 +442,8 @@ B. DEDUCTIONS (choose ONE method)
   B1. Standard desgravamen único                                   774 UT
    -- OR itemized --
   B2. Education                                                    ______ UT
-  B3. Insurance premiums (VE entities)                             ______ UT
-  B4. Medical / dental (VE entities)                                ______ UT
+  B3. HCM insurance premiums (VE insurers)                         ______ UT
+  B4. Medical / dental (services in VE)                            ______ UT
   B5. Mortgage interest (cap 1,000 UT)                             ______ UT
   B6. Rent — primary home (cap 800 UT)                             ______ UT
   B7. TOTAL DEDUCTIONS                                             ______ UT
@@ -467,7 +475,7 @@ REVIEWER FLAGS:
   [ ] Itemized caps applied (mortgage 1,000 UT / rent 800 UT)?
   [ ] USD lines converted at correct BCV rate/date?
   [ ] Estimated-return threshold (1,500 UT) tested?
-  [ ] Withholding (Decreto 1.808) rate confirmed [RESEARCH GAP]?
+  [ ] Withholding (Decreto 1.808 art. 9) rate and any sustraendo confirmed?
 ```
 
 ## Section 8 — Bank Statement Reading Guide
@@ -519,7 +527,8 @@ ONBOARDING QUESTIONS — VENEZUELA ISLR
 2. Do you have an active RIF? (Required to invoice/receive payment.)
 3. Deduction method: standard 774 UT, or do you want to itemize?
 4. If itemizing: education, insurance, medical, mortgage interest, rent paid?
-   (Insurance/medical must be paid to Venezuelan entities.)
+   (Only hospitalisation/surgery/maternity cover from Venezuelan insurers and
+   medical services provided in Venezuela qualify; life insurance does not.)
 5. Marital/dependant status: spouse? how many qualifying dependants?
 6. Any non-salary bonos received (Cestaticket, Bono contra la Guerra Económica)?
 7. ISLR withheld during the year (do you have comprobantes de retención)?
@@ -539,15 +548,15 @@ ONBOARDING QUESTIONS — VENEZUELA ISLR
 | --- | --- |
 | Tax Unit (UT) value | SNAT/2025/000048, Official Gazette 2 June 2025 — VES 43.00/UT |
 | Graduated rates (Tarifa Nº 1) | Ley de Impuesto Sobre la Renta (LISLR) |
-| Deductions / desgravámenes | LISLR; PwC Worldwide Tax Summaries (reviewed 12 Jan 2026) |
-| Personal credits (rebajas) | LISLR; PwC (reviewed 12 Jan 2026) |
-| Filing / administration | LISLR; PwC (reviewed 12 Jan 2026) — 31 March deadline, 1,500 UT estimated threshold |
-| ISLR withholdings | Decreto 1.808 — **[RESEARCH GAP — reviewer to confirm full table]** |
-| Social security / parafiscal | IVSS; FAOV; INCES; LOPCYMAT; PwC (reviewed 12 Jan 2026) |
+| Deductions / desgravámenes | LISLR arts. 57-58 |
+| Personal credits (rebajas) | LISLR art. 59 |
+| Filing / administration | LISLR arts. 54, 79-85; Reglamento arts. 138, 145-149, 156, 164 — 31 March deadline, 1,500 UT estimated threshold |
+| ISLR withholdings | Decreto 1.808 arts. 2-3, 9 (Gaceta Oficial N° 36.203, 12 May 1997; [Pandectas Digital transcription](https://pandectasdigital.blogspot.com/2016/10/reglamento-parcial-de-la-ley-de.html)) |
+| Social security / parafiscal | Reglamento General de la Ley del Seguro Social arts. 98, 109; Ley del Régimen Prestacional de Empleo art. 46; Ley del Régimen Prestacional de Vivienda y Hábitat art. 33; Ley del INCES arts. 49-50; LOPCYMAT art. 7; Ley de Protección de las Pensiones de Seguridad Social and Decreto N° 4.952 (Section 5.8) |
 | Penalties | Código Orgánico Tributario (COT), Art. 91 (2020 reform); Grant Thornton COT schedule — **[RESEARCH GAP — full table]** |
 | Minimum wage | Decreto 4.653 (15 March 2022) — VES 130/month |
 | Income floor (bonos) | Executive announcement 30 April 2025 — "ingreso mínimo integral indexado" ~USD 160/month |
-| VAT (IVA) | 16% standard (PwC, reviewed 12 Jan 2026) |
+| VAT (IVA) | 16% standard (see the `venezuela-iva` guide) |
 
 ### UT → VES Conversion Reference (2025)
 
@@ -564,7 +573,7 @@ ONBOARDING QUESTIONS — VENEZUELA ISLR
 
 ### Test Suite
 
-**Test 1 — Standard deduction, top band (PwC sample).**
+**Test 1 — Standard deduction, top band.**
 Input: Resident, gross 20,000 UT, standard 774 UT, married + 2 children, withholding VES 5,300.
 Expected: taxable 19,226 UT; tax = (0.34 × 19,226) − 875 = 5,661.84 UT = VES 243,459.12; credits 40 UT = VES 1,720; after credits VES 241,739.12; less VES 5,300 → **due VES 236,439.12**.
 
@@ -604,7 +613,7 @@ Expected: below 1,500 UT → **no estimated return required**.
 - NEVER allow employment expenses as a deduction — none are recognised
 - NEVER allow self-employed business expenses against salary income — only against business income
 - NEVER express COT penalties in UT — they are multiples of the BCV highest-value-currency rate at the date of payment
-- NEVER quote the Decreto 1.808 withholding rate or the full COT penalty table as authoritative — both are flagged [RESEARCH GAP]
+- NEVER quote the full COT penalty table as authoritative — it is flagged [RESEARCH GAP]; quote Decreto 1.808 rates only with the sustraendo caveat in Section 5.7
 - NEVER present tax calculations as definitive — always label as estimated and route to a licensed reviewer
 
 ## Disclaimer
