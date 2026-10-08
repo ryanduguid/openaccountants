@@ -4,7 +4,7 @@ description: "version: 1.0"
 version: 1.0
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-08
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -172,18 +172,28 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Israel → US
 
-**Israel → US Withholding Tax Rates**  _(Art 12(2), 13(2), 14(1), 7)_
+**Israel → US: conditional treaty ceilings and treatment**  _(Art 12(2), 13(2), 14(1)(b), (2), 8)_
 
-| Income Type | Treaty Rate | Treaty Article | Notes |
+This direction means Israeli-source income received by a US treaty resident. The royalty ceilings below apply reciprocally under art 14; this limited correction does not reverify the other rates or current domestic withholding procedures. Confirm residence and applicable treaty entitlement before claiming relief.
+
+| Income Type | Treaty ceiling / treatment | Treaty Article | Notes |
 | --- | --- | --- | --- |
 | Dividends — portfolio | 25% | Art 12(2) | Highest in US treaty network |
 | Dividends — substantial (≥10% voting) | 12.5% | Art 12(2) | Still high |
 | Interest | 17.5% | Art 13(2) | Highest in US treaty network |
-| Royalties — industrial | 10% | Art 14(1) | Patents/know-how |
-| Royalties — copyright/films | 15% | Art 14(1) | Literary/artistic |
-| Fees for included services | 0% | Art 7 | Business profits — no WHT without PE |
+| Royalties — industrial | 15% of gross royalties | Art 14(1)(b), (2)(b) | Rights within the treaty definition; qualifications below |
+| Royalties — copyright/films | 10% of gross royalties | Art 14(1)(b), (2)(a) | Literary, artistic or scientific copyrights and included film/broadcasting material; qualifications below |
+| Services qualifying as art 8 industrial or commercial profits | Conditional source-tax exemption without a source-state PE; otherwise only PE-attributable profits may be taxed under art 8 | Art 8(1), (5)-(7); amended art 19 | Apply the classification and personal-services limitations below; treaty entitlement is required |
 
-**Source:** US-Israel Convention signed 20 November 1975. IRS Table 1.
+**Royalty qualifications:** [Art 14(2)(a)-(c)](https://www.irs.gov/pub/irs-trty/israel.pdf) defines the royalty categories, including qualifying disposal gains contingent on productivity, use or disposition. A sale label does not determine classification. Under art 14(3), the ceilings give way to art 8 only where the royalty is PE-attributable under art 8(6), which requires effective connection; the existence of a PE alone is insufficient. Art 14(4) protects only the amount that would have been paid to an unrelated person. Related-person excess remains taxable under applicable domestic law and treaty provisions.
+
+**Service classification:** [Art 8(5)](https://www.irs.gov/pub/irs-trty/israel.pdf) excludes an individual's employment and independent personal services. Under art 8(7), income governed separately follows its own article except where that article provides otherwise. Check arts 16-19 separately; absence of a PE does not itself classify a payment as art 8 income.
+
+**Furnishing others' personal services:** For amounts received by a US treaty resident for furnishing in Israel the personal services of one or more other persons, [Art 19, as amended by First Protocol art XII](https://www.irs.gov/pub/irs-trty/israel.pdf) removes amounts from art 8 only to the extent both the designation and compensation conditions apply, subject to paragraph 2. The person for whom services were furnished must have designated the performers, had the right to designate them, or the arrangement must effectively have designated them. Actual designation need not be formal or legally authorised. The recipient must also pay compensation directly or indirectly to a person other than another resident of either contracting state who is subject to tax on that compensation. Paragraph 2 disapplies this exclusion where the source-state competent authority is satisfied that neither the entity's creation or organisation, where relevant, nor furnishing services through it has the effect of substantially reducing income, war-profits, excess-profits or similar taxes. Failure of the exclusion does not establish treaty entitlement.
+
+**Limited source comparison:** Arts 8, 14 and amended 19 were compared with the selected IRS English convention/protocol text on 8 October 2026. Unchanged dividend, interest, domestic-rate and comparative claims below retain their earlier verification limits. Authenticated-image and bilingual comparison, a complete later-instrument inventory, detailed arts 16-18 and entitlement analysis, current domestic law and taxpayer eligibility remain unverified. This remains a tier 2 draft awaiting qualified professional review.
+
+**Source:** [US-Israel Convention signed 20 November 1975 and protocols](https://www.irs.gov/pub/irs-trty/israel.pdf). IRS Table 1 was the earlier rate-table reference.
 **Special provisions:**
 
 **This is the OLDEST and LEAST favourable treaty in the US network:**
@@ -192,7 +202,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 2. **17.5% interest rate** is the highest in any US treaty — most modern treaties provide 0%.
 3. A new treaty has been under discussion since the 1990s but has never been concluded.
 4. Israel domestic WHT: dividends 25-30%, interest 15-25%.
-5. Despite the unfavourable treaty rates, US-Israel business flows are massive — practical workaround is structuring payments as business profits (Art 7) where possible.
+5. Classify receipts by their underlying rights and services. Contractual labels do not select art 8. Apply the separate-income and personal-services rules above and confirm treaty entitlement before claiming an exemption.
 6. Israel has a broad treaty network with over 50 countries, many with more favourable rates.
 **Last verified:** May 2026
 
