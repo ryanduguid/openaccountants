@@ -4,7 +4,7 @@ description: "version: 2.2"
 version: 2.2
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-10-06
+last_updated: 2026-10-08
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Oldest recorded verification outside this review | May 2026; not reverified in this batch |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
-**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row, and the Netherlands, Ireland and Switzerland sections, PE rows and summary rows, were checked on 6 October 2026. The Singapore section was compared with selected IRS 2025 guidance and the limited transport agreement on 6 October 2026; controlling-law completeness and exemption eligibility remain unverified. The Mexico section and its PE row were checked against the cited convention, amendment and arrangements on 6 October 2026. The South Korea section and its PE row were also checked on 6 October. The Israel section, PE row and Israel-specific LOB statement were checked on 6 October against the selected English convention, both protocols, related notes and explanations. Germany's REIT pension treatment, France's stated interpretation gaps, Australia's indirect parent-ownership treatment, Switzerland's pension PE/fixed-base attribution and Mexico's parent-ownership, loan-assignee and royalty-source wording gaps remain unresolved. The Quick Reference domestic-law statements and the remaining general LOB overview were not reverified. Current domestic law and procedures, claimant eligibility, complete later-instrument and Article 25 memorandum inventories, exact source-image transcription and bilingual comparison remain unverified. This guide remains a tier 2 draft awaiting qualified professional review.
+**Review scope:** The UK, Germany, France, Canada, India and Japan sections and their PE rows, plus the UK, Germany, France and Japan summary rows, were checked against the cited treaty text on 5 October 2026. The Australia section and its PE row, and the Netherlands, Ireland and Switzerland sections, PE rows and summary rows, were checked on 6 October 2026. The Singapore section was compared with selected IRS 2025 guidance and the limited transport agreement on 6 October 2026; controlling-law completeness and exemption eligibility remain unverified. The Mexico section and its PE row were checked against the cited convention, amendment and arrangements on 6 October 2026. The South Korea section and its PE row were also checked on 6 October. The Israel section, PE row and Israel-specific LOB statement were checked on 6 October against the selected English convention, both protocols, related notes and explanations. Germany's REIT pension treatment, France's stated interpretation gaps, Australia's indirect parent-ownership treatment, the Netherlands' art 35 REMIC excess-inclusion treatment, Ireland's REIT diversification measurement, Switzerland's pension PE/fixed-base attribution and Mexico's parent-ownership, loan-assignee and royalty-source wording gaps remain unresolved. The Quick Reference domestic-law statements and the remaining general LOB overview were not reverified. Current domestic law and procedures, claimant eligibility, complete later-instrument and Article 25 memorandum inventories, exact source-image transcription and bilingual comparison remain unverified. This guide remains a tier 2 draft awaiting qualified professional review.
 
 ## US → UK
 
@@ -166,22 +166,24 @@ These are treaty ceilings or exemptions for US-source payments to Canadian resid
 
 | Income type | Treaty ceiling / treatment | Treaty article | Conditions |
 | --- | --- | --- | --- |
-| Dividends, general | 15% of gross dividends | [art X(2)(b)][ca-treaty] | Subject to the investment-vehicle and PE exceptions below |
+| Dividends, general | 15% of gross dividends | [art X(2)(b)][ca-treaty] | Subject to the investment-vehicle, PE and exempt-organisation exceptions below |
 | Dividends, qualifying corporate holding | 5% of gross dividends | [art X(2)(a)][ca-treaty] | Company beneficial owner owns at least 10% of the payer's voting stock |
 | Interest, general | 0% US source tax | [art XI(1)][ca-treaty] | Includes the arm's-length amount of ordinary related-party interest; exceptions below |
 | Copyright royalties for production or reproduction of literary, dramatic, musical or artistic works | 0% US source tax | [art XII(3)(a)][ca-treaty] | Excludes motion pictures and film, videotape or other reproduction media for television |
 | Computer software payments | 0% US source tax | [art XII(3)(b)][ca-treaty] | Payment for use or the right to use software |
 | Payments for the use of, or the right to use, patents or information concerning industrial, commercial or scientific experience | 0% US source tax | [art XII(3)(c)][ca-treaty] | Experience information supplied in connection with a rental or franchise agreement is excluded; contingent alienation gains under paragraph 4 do not qualify for this use/right-to-use exemption |
-| Other art XII royalties outside paragraph 3 | 10% of gross royalties | [art XII(2)][ca-treaty] | Classify the payment before applying the residual ceiling |
+| Other art XII royalties outside paragraph 3 | 10% of gross royalties | [art XII(2)][ca-treaty] | Classify the payment before applying the residual ceiling; art VIII(6) equipment rentals below are exempt |
 | Services treated as business profits | Exempt from US tax without a US PE | [art VII(1)][ca-treaty] | Check all art V PE rules, including the services tests below |
 
 [Art XII(4)][ca-treaty] includes patent or experience-information alienation gains that are contingent on productivity, use or subsequent disposition. Those gains fall outside the paragraph 3(c) use/right-to-use exemption and require the residual paragraph 2 classification, subject to the exceptions below. Non-contingent alienation amounts need a separate gains analysis.
 
 **Exceptions:** A US regulated investment company (RIC) dividend uses the 15% ceiling. A US real estate investment trust (REIT) dividend cannot use the 5% rate; the 15% ceiling is available only in the cases in [art X(7)(c)][ca-treaty], otherwise US domestic law applies. Dividends, interest or royalties effectively connected with a PE are governed by art VII under arts X(4), XI(3) and XII(5). Special-relationship excess interest or royalties do not receive the article's protection: arts XI(5) and XII(7).
 
+**Exempt organisations and equipment rentals:** [Art XXI(2)][ca-treaty] exempts dividends and interest derived by a Canadian-resident trust, company, organisation or other arrangement that is generally exempt from income taxation in Canada for the year and operated exclusively to administer or provide pension, retirement or employee benefits. [Art XXI(3)][ca-treaty] extends that exemption to an arrangement operated exclusively to earn income for such an arrangement or for an organisation in paragraph 1, and [art XXI(1)][ca-treaty] exempts income of a Canadian-resident religious, scientific, literary, educational or charitable organisation to the extent Canada exempts it. [Art XXI(4)][ca-treaty] removes all three exemptions for income from carrying on a trade or business or from a related person other than a person in paragraphs 1 to 3. [Art VIII(6)][ca-treaty] exempts profits from the use, maintenance or rental of railway rolling stock, motor vehicles, trailers or containers used in the United States for periods not expected to exceed 183 days in aggregate in any twelve-month period, unless the profits are attributable to a US PE and taxable under art VII; those payments do not reach the art XII(2) ceiling.
+
 US-source contingent interest that does not qualify as portfolio interest has a 15% gross ceiling under [art XI(6)(a), read with art X(2)(b)][ca-treaty]. A real estate mortgage investment conduit (REMIC) excess inclusion remains taxable under domestic law under art XI(6)(c). Relatedness alone creates no 10% interest rate. The broadcasting exemption in art XII(3)(d) requires an applicable exchange of notes; it is not included in the listed exemptions.
 
-**Source text checked:** 5 October 2026, covering the stated treaty ceilings, exemptions, conditions and PE rules. Current US withholding procedures and taxpayer-specific eligibility were not reviewed.
+**Source text checked:** 5 October 2026, covering the stated treaty ceilings, exemptions, conditions and PE rules; arts VIII(6) and XXI were checked against the consolidated text on 8 October 2026. Current US withholding procedures and taxpayer-specific eligibility were not reviewed.
 
 [ca-treaty]: https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html
 [ca-record]: https://publications.aws.tpsgc-pwgsc.cloud-nuage.canada.ca/site/eng/9.823645/publication.html
@@ -650,7 +652,7 @@ Israel has LOB provisions in Article 25 as replaced by the 1993 Second Protocol;
 
 ## Summary: Selected treaty ceilings and exemptions
 
-The UK, Germany, France and Japan rows in this summary were source-checked on 5 October 2026; the Netherlands, Ireland and Switzerland rows were checked on 6 October. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment, France's stated interpretation gaps and Switzerland's pension PE/fixed-base attribution remain unresolved. The other summary rows were not reverified.
+The UK, Germany, France and Japan rows in this summary were source-checked on 5 October 2026; the Netherlands, Ireland and Switzerland rows were checked on 6 October. Their US-source ceilings and exemptions depend on the full sections' category and entitlement conditions; these figures do not determine withholding automatically. Germany's REIT pension treatment, France's stated interpretation gaps, the Netherlands' art 35 REMIC excess-inclusion treatment, Ireland's REIT diversification measurement and Switzerland's pension PE/fixed-base attribution remain unresolved. The other summary rows were not reverified.
 
 | Corridor | Dividends (substantial) | Interest | Royalties |
 | --- | --- | --- | --- |

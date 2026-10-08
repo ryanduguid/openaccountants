@@ -4,7 +4,7 @@ description: "version: 1.0"
 version: 1.0
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-08
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -172,16 +172,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Israel → US
 
-**Israel → US Withholding Tax Rates**  _(Art 12(2), 13(2), 14(1), 7)_
+**Israel → US Withholding Tax Rates**  _(Art 12(2), 13(2), 14(2), 8)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
 | Dividends — portfolio | 25% | Art 12(2) | Highest in US treaty network |
 | Dividends — substantial (≥10% voting) | 12.5% | Art 12(2) | Still high |
 | Interest | 17.5% | Art 13(2) | Highest in US treaty network |
-| Royalties — industrial | 10% | Art 14(1) | Patents/know-how |
-| Royalties — copyright/films | 15% | Art 14(1) | Literary/artistic |
-| Fees for included services | 0% | Art 7 | Business profits — no WHT without PE |
+| Royalties — industrial | 15% | Art 14(1)(b), (2)(b) | Patents/know-how |
+| Royalties — copyright/films | 10% | Art 14(1)(b), (2)(a) | Literary/artistic |
+| Enterprise services | 0% | Art 8 | Business profits: no WHT without PE |
 
 **Source:** US-Israel Convention signed 20 November 1975. IRS Table 1.
 **Special provisions:**
@@ -192,7 +192,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 2. **17.5% interest rate** is the highest in any US treaty — most modern treaties provide 0%.
 3. A new treaty has been under discussion since the 1990s but has never been concluded.
 4. Israel domestic WHT: dividends 25-30%, interest 15-25%.
-5. Despite the unfavourable treaty rates, US-Israel business flows are massive — practical workaround is structuring payments as business profits (Art 7) where possible.
+5. Despite the unfavourable treaty rates, US-Israel business flows are massive — practical workaround is structuring payments as business profits (Art 8) where possible.
 6. Israel has a broad treaty network with over 50 countries, many with more favourable rates.
 **Last verified:** May 2026
 
