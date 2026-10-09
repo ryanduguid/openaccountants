@@ -4,7 +4,7 @@ A guide opens with a ``---`` line at byte 0 and its frontmatter runs to the
 next line that is ``---`` or ``...``. Two readers share that rule:
 
 - The **tolerant** reader (:func:`parse_known_keys`, :func:`read_frontmatter`
-  with ``strict=False``) is what ``build-index.py`` has always used. It
+  with ``strict=False``) supplies the index's discovery fields. It
   regex-extracts the known keys line by line, so a guide with a malformed
   block still lands in the inventory with whatever keys it does carry. It
   needs nothing outside the standard library.
@@ -61,6 +61,10 @@ KEY_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):[ \t]*(.*)$")
 
 class FrontmatterError(ValueError):
     """Raised by the strict reader when a block is not safe, unambiguous metadata."""
+
+
+class _StrictMetadata(dict):
+    """Parsed fields with the actual root tier's source spelling kept separately."""
 
 
 # --- Locating the block -----------------------------------------------------
@@ -129,13 +133,15 @@ def parse_known_keys(block, keys=KNOWN_KEYS):
     seen from the other side: the tolerant reader never guesses.
     """
     fields = {key: None for key in keys}
+    seen = set()
     for line in block.splitlines():
         match = KEY_RE.match(line)
         if not match:
             continue
         key = match.group(1)
-        if key not in fields or fields[key] is not None:
+        if key not in fields or key in seen:
             continue
+        seen.add(key)
         fields[key] = clean_value(match.group(2))
     return fields
 
@@ -159,35 +165,116 @@ def _unique_key_loader():
     import yaml
 
     class UniqueKeyLoader(yaml.SafeLoader):
-        pass
+        def flatten_mapping(self, node):
+            # Freeze direct projection provenance, including its absence.
+            if node not in self._scalar_projections:
+                projection = None
+                for key, value in node.value:
+                    if key.tag == "tag:yaml.org,2002:value":
+                        self._projection_keys.add(key)
+                    if projection is None and key in self._projection_keys:
+                        projection = value
+                self._scalar_projections[node] = projection
+            # Merge operands are flattened recursively before construction.
+            merge_seen = False
+            for key_node, _ in node.value:
+                if key_node.tag == "tag:yaml.org,2002:merge":
+                    if merge_seen:
+                        raise yaml.constructor.ConstructorError(
+                            "while constructing a mapping", node.start_mark,
+                            "found duplicate merge key", key_node.start_mark,
+                        )
+                    merge_seen = True
+            return super().flatten_mapping(node)
 
-    def construct_unique_mapping(loader, node, deep=False):
-        loader.flatten_mapping(node)
-        mapping = {}
-        for key_node, value_node in node.value:
-            key = loader.construct_object(key_node, deep=deep)
-            try:
-                hash(key)
-            except TypeError as exc:
+        def construct_mapping(self, node, deep=False):
+            if not isinstance(node, yaml.MappingNode):
                 raise yaml.constructor.ConstructorError(
-                    "while constructing a mapping",
-                    node.start_mark,
-                    "found an unhashable mapping key",
-                    key_node.start_mark,
-                ) from exc
-            if key in mapping:
-                raise yaml.constructor.ConstructorError(
-                    "while constructing a mapping",
-                    node.start_mark,
-                    f"found duplicate key {key!r}",
-                    key_node.start_mark,
+                    "while constructing a mapping", node.start_mark,
+                    f"expected a mapping, but found {node.id}", node.start_mark,
                 )
-            mapping[key] = loader.construct_object(value_node, deep=deep)
-        return mapping
+            self.flatten_mapping(node)
+            mapping = {}
+            for key_node, value_node in node.value:
+                key = self.construct_object(key_node, deep=deep)
+                try:
+                    hash(key)
+                except TypeError as exc:
+                    raise yaml.constructor.ConstructorError(
+                        "while constructing a mapping",
+                        node.start_mark,
+                        "found an unhashable mapping key",
+                        key_node.start_mark,
+                    ) from exc
+                if key in mapping:
+                    raise yaml.constructor.ConstructorError(
+                        "while constructing a mapping",
+                        node.start_mark,
+                        f"found duplicate key {key!r}",
+                        key_node.start_mark,
+                    )
+                mapping[key] = self.construct_object(value_node, deep=deep)
+            return mapping
 
-    UniqueKeyLoader.add_constructor(
-        yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, construct_unique_mapping,
-    )
+        def construct_scalar(self, node):
+            if isinstance(node, yaml.MappingNode):
+                # Deferred children finish before the document is accepted.
+                self.construct_mapping(node)
+                projection = self._scalar_projections[node]
+                if projection is not None:
+                    return self.construct_scalar(projection)
+            return super().construct_scalar(node)
+
+        def construct_document(self, node):
+            self._document_root = node
+            self._ordered_maps = []
+            self._scalar_projections = {}
+            self._projection_keys = set()
+            try:
+                data = super().construct_document(node)
+                # Deferred aliases must finish before their keys are compared.
+                for omap_node, ordered in self._ordered_maps:
+                    keys = []
+                    for index, (key, _) in enumerate(ordered):
+                        mark = omap_node.value[index].value[0][0].start_mark
+                        try:
+                            duplicate = key in keys
+                        except RecursionError as exc:
+                            raise yaml.constructor.ConstructorError(
+                                "while constructing an ordered map", omap_node.start_mark,
+                                "ordered-map keys cannot be compared", mark,
+                            ) from exc
+                        if duplicate:
+                            raise yaml.constructor.ConstructorError(
+                                "while constructing an ordered map", omap_node.start_mark,
+                                f"found duplicate key {key!r}", mark,
+                            )
+                        keys.append(key)
+                return data
+            finally:
+                self._document_root = None
+                self._ordered_maps.clear()
+                self._scalar_projections.clear()
+                self._projection_keys.clear()
+
+        def construct_yaml_map(self, node):
+            if node is self._document_root:
+                data = _StrictMetadata()
+                yield data
+                data.update(self.construct_mapping(node))
+            else:
+                yield from super().construct_yaml_map(node)
+
+        def construct_yaml_omap(self, node):
+            constructor = super().construct_yaml_omap(node)
+            ordered = next(constructor)
+            yield ordered
+            yield from constructor
+            self._ordered_maps.append((node, ordered))
+
+    UniqueKeyLoader.add_constructor("tag:yaml.org,2002:map", UniqueKeyLoader.construct_yaml_map)
+    UniqueKeyLoader.add_constructor("tag:yaml.org,2002:omap", UniqueKeyLoader.construct_yaml_omap)
+
     _LOADER = UniqueKeyLoader
     return _LOADER
 
@@ -209,10 +296,33 @@ def load_frontmatter(block):
     """
     import yaml
 
+    loader_class = _unique_key_loader()
+    loader = None
     try:
-        metadata = yaml.load(block, Loader=_unique_key_loader())
-    except yaml.YAMLError as exc:
+        loader = loader_class(block)
+        node = loader.get_single_node()
+        tier_source = None
+        if isinstance(node, yaml.MappingNode):
+            # Capture direct root entries before construction flattens merges.
+            for key, value in node.value:
+                if key.tag == "tag:yaml.org,2002:str" and key.value == "tier" and key.start_mark.column == 0:
+                    match = KEY_RE.match(block.splitlines()[key.start_mark.line])
+                    if match and match.group(1) == "tier":
+                        tier_source = clean_value(match.group(2))
+                        if tier_source in ("1", "2") and not (
+                                isinstance(value, yaml.ScalarNode) and
+                                value.start_mark.line == value.end_mark.line == key.start_mark.line):
+                            tier_source = None
+        try:
+            metadata = loader.construct_document(node) if node is not None else None
+        except (ValueError, TypeError, KeyError, IndexError, AttributeError, RecursionError) as exc:
+            # PyYAML's safe scalar constructors use these for invalid input.
+            raise FrontmatterError(str(exc) or "invalid YAML scalar") from exc
+    except (yaml.YAMLError, RecursionError) as exc:
         raise FrontmatterError(_problem_text(exc)) from exc
+    finally:
+        if loader is not None:
+            loader.dispose()
 
     if not isinstance(metadata, dict):
         actual = "null" if metadata is None else type(metadata).__name__
@@ -240,7 +350,25 @@ def load_frontmatter(block):
         if any(not isinstance(item, str) or not item.strip() for item in dependencies):
             raise FrontmatterError("`depends_on` entries must be non-empty strings")
 
+    metadata.tier_source = tier_source
     return metadata
+
+
+def review_fields(metadata):
+    """Tier source spelling and review strings, without changing the strict mapping.
+
+    Keep typed dates and other fields out of the index's lexical columns and
+    the validator's format checks. Reviewer markers remain strings; deciding
+    whether they identify a reviewer belongs to ``oa_tools.roster``.
+    """
+    fields = {"tier": metadata.tier_source}
+    fields.update({
+        key: (metadata[key].strip() or None) if key in metadata else None
+        for key in ("reviewed_by", "verified_by")
+    })
+    # A supplied blank status must reach the validator as invalid, not absent.
+    fields["review_status"] = metadata["review_status"].strip() if "review_status" in metadata else None
+    return fields
 
 
 # --- The one entry point -------------------------------------------------------

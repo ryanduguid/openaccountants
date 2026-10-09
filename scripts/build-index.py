@@ -17,10 +17,11 @@ READMEs and files without frontmatter, and writes index.json at the repo root:
 sign-off covers the text, `pending_review` after a substantive edit (or on a
 draft). Only `tier` says whether a guide is accountant-reviewed.
 
-Dependency-free (stdlib only). Guide discovery and the tolerant frontmatter
-reader are the shared ones in scripts/oa_tools/ (guides.py, frontmatter.py);
-malformed YAML is tolerated by regex-extracting the known keys, so a guide with
-a broken block still lands in the inventory with whatever it does carry.
+Guide discovery and lexical columns use the tolerant reader in scripts/oa_tools/.
+Tier spelling and review fields use its strict YAML reader and require PyYAML, already included in
+scripts/requirements-validation.txt. A malformed block still lands in the
+inventory, with a warning and no reviewer claim. Importing this module, help and
+the re-exported tolerant reader remain available with the standard library.
 
 Usage:
     python3 scripts/build-index.py            # write index.json at repo root
@@ -38,10 +39,13 @@ if _HERE not in sys.path:  # this file is loaded by path (importlib) as well as 
     sys.path.insert(0, _HERE)
 
 from oa_tools import guides, paths, roster  # noqa: E402
+from oa_tools.cli import generator_arguments  # noqa: E402
 # Both are used below and re-exported on purpose: the one-off metadata scripts
 # (backfill-metadata.py, normalize-tax-year.py) load this module by path and
 # reach the tolerant reader as `bi.extract_frontmatter` / `bi.parse_known_keys`.
-from oa_tools.frontmatter import extract_frontmatter, parse_known_keys  # noqa: E402
+from oa_tools.frontmatter import (  # noqa: E402
+    FrontmatterError, extract_frontmatter, load_frontmatter, parse_known_keys, review_fields,
+)
 
 REPO_ROOT = paths.REPO_ROOT
 
@@ -70,13 +74,21 @@ def build_index():
         if block is None:
             continue  # not a guide (no frontmatter)
         fields = parse_known_keys(block)
+        try:
+            metadata = load_frontmatter(block)
+        except FrontmatterError as exc:
+            print(f"WARN: {rel_path}: invalid YAML frontmatter: {exc}; omitting reviewer claims", file=sys.stderr)
+            fields.update(reviewed_by=None, verified_by=None)
+        else:
+            fields.update(review_fields(metadata))
 
         jurisdiction = fields["jurisdiction"]
         if jurisdiction and CODE_RE.match(jurisdiction):
             jurisdiction = jurisdiction.upper()
 
         tier = fields["tier"]
-        if isinstance(tier, str) and tier.isdigit():
+        # Keep invalid lexical forms such as 01 visible instead of promoting them to tier 1.
+        if tier in ("1", "2"):
             tier = int(tier)
 
         guides.append({
@@ -114,13 +126,16 @@ def build_index():
 
 
 def main():
-    out_path = os.path.join(REPO_ROOT, "index.json")
-    if "--out" in sys.argv:
-        flag = sys.argv.index("--out")
-        if flag + 1 >= len(sys.argv) or sys.argv[flag + 1].startswith("--"):
-            sys.exit("error: --out requires a file path")
-        out_path = sys.argv[flag + 1]
-    index = build_index()
+    args = generator_arguments((__doc__ or "").split('\n\n')[0], output=os.path.join(REPO_ROOT, "index.json"))
+    if args.help:
+        return
+    out_path = args.out
+    try:
+        index = build_index()
+    except ModuleNotFoundError as exc:
+        if exc.name != "yaml":
+            raise
+        sys.exit("error: index generation requires PyYAML; install scripts/requirements-validation.txt")
     if not index["guides"]:
         # A wrong root or a broken checkout must not overwrite the inventory
         # with an empty one that every consumer would read as "no guides".

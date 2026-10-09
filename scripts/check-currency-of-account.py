@@ -54,7 +54,12 @@ it. The check is cheap; keep running it as jurisdictions are added.
 
 Usage: python3 scripts/check-currency-of-account.py [skills]
 """
+import argparse
 import os, re, collections, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import directory
+from oa_tools.guides import markdown_files, jurisdiction_group
 
 ISO4217 = set("""AED AFN ALL AMD ANG AOA ARS AUD AWG AZN BAM BBD BDT BGN BHD BIF BMD BND
 BOB BRL BSD BTN BWP BYN BZD CAD CDF CHF CLP CNY COP CRC CUP CVE CZK DJF DKK DOP DZD EGP
@@ -80,18 +85,14 @@ def units(path):
 def main(root):
     byjur = collections.defaultdict(collections.Counter)
     files = collections.defaultdict(dict)
-    for dp, _, fns in os.walk(root):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            p = os.path.join(dp, fn)
-            parts = p.split(os.sep)
-            if len(parts) < 3:
-                continue
-            u = units(p)
-            if u:
-                files[parts[2]][p] = u
-                byjur[parts[2]].update(u)
+    for p, source_path in markdown_files(root):
+        jur = jurisdiction_group(p, root)
+        if jur is None:
+            continue
+        u = units(source_path)
+        if u:
+            files[jur][p] = u
+            byjur[jur].update(u)
 
     flags = 0
     for jur in sorted(byjur):
@@ -126,18 +127,14 @@ def symbols(path):
 def main_symbols(root):
     byjur = collections.defaultdict(collections.Counter)
     files = collections.defaultdict(dict)
-    for dp, _, fns in os.walk(root):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            p = os.path.join(dp, fn)
-            parts = p.split(os.sep)
-            if len(parts) < 3:
-                continue
-            u = symbols(p)
-            if u:
-                files[parts[2]][p] = u
-                byjur[parts[2]].update(u)
+    for p, source_path in markdown_files(root):
+        jur = jurisdiction_group(p, root)
+        if jur is None:
+            continue
+        u = symbols(source_path)
+        if u:
+            files[jur][p] = u
+            byjur[jur].update(u)
 
     flags = 0
     for jur in sorted(byjur):
@@ -154,7 +151,11 @@ def main_symbols(root):
 
 
 if __name__ == '__main__':
-    root = sys.argv[1] if len(sys.argv) > 1 else 'skills'
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('root', nargs='?', type=directory, metavar='DIR',
+                        help="directory to scan (default: this checkout's skills)")
+    args = parser.parse_args()
+    root = args.root
     print('== A. ISO codes used as units of account')
     main(root)
     print('\n== B. symbols and local abbreviations')

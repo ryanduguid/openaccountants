@@ -127,6 +127,18 @@ class DuplicateSlugTests(unittest.TestCase):
         server._index.cache_clear()
         self.assertIn("second", server._index())
 
+    def test_the_selected_copy_cannot_borrow_another_copys_signoff(self) -> None:
+        invalid = TWIN_METADATA_B.replace("tier: 1\n", "tier: 2\ntier: 1\n")
+        for selected in ("a/twin.md", "us-federal/twin.md"):
+            with self.subTest(selected=selected):
+                self._write(selected, invalid)
+                self._write("z/twin.md", TWIN_METADATA_B)
+                server._index.cache_clear()
+                row = server._index()["twin"]
+                self.assertEqual(row["relpath"], selected)
+                self.assertEqual(row["quality_tier"], "research-verified")
+                self.assertIsNone(row["verified_by"])
+
     def test_safe_resolve_rejects_a_symlink_escape(self) -> None:
         with tempfile.TemporaryDirectory() as outside_dir:
             outside = Path(outside_dir) / "outside-skill.md"

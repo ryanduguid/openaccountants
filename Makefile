@@ -2,9 +2,8 @@
 # `make check` means a green pull request. `make help` lists the targets and
 # `make -n <target>` prints a target's commands, for anyone without make.
 #
-# Run from the repository root: the review aids under scripts/ resolve paths
-# relative to the working directory. CONTRIBUTING.md ("Reproduce CI locally")
-# maps each target to its workflow job.
+# Run these targets from the repository root. CONTRIBUTING.md
+# ("Reproduce CI locally") maps each target to its workflow job.
 
 PYTHON ?= python3
 

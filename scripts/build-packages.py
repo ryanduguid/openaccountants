@@ -1437,6 +1437,8 @@ def main():
     global PACKAGES_DIR
     reject_unknown_options(sys.argv[1:])
     out = output_dir(sys.argv[1:])
+    # Initialise strict parsing before creating or clearing the output directory.
+    load_frontmatter("name: generator-preflight\n")
     if out is not None:
         PACKAGES_DIR = out
     _SHARED.clear()

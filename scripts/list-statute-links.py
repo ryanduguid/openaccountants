@@ -43,16 +43,18 @@ that they have left the law behind.
 It ranks, it does not accuse. The fix is to say where the reader is actually
 being sent — `Instrument name (as described at [host](url))` — not to find a new
 source, and not to delete the instrument name, which is the one part of the
-citation that is true. Always exits 0.
+citation that is true. Review reports exit 0; invalid arguments exit 2.
 
 Usage: python3 scripts/list-statute-links.py [--selftest] [--jurisdiction NAME]
 """
+import argparse
 import os, re, sys, collections
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:
     sys.path.insert(0, _HERE)
 from oa_tools.sources import PUBLISHER, classify  # noqa: E402
+from oa_tools.guides import markdown_files
 
 LINK = re.compile(r'\[([^\]]{4,160})\]\((https?://[^)\s]+)\)')
 # The citation trailer the generated fact blocks end a bullet with, and a URL
@@ -153,8 +155,8 @@ def selftest():
 
 def main(only=None):
     hits = collections.defaultdict(list)
-    for dp, _, fns in os.walk('skills'):
-        parts = dp.split(os.sep)
+    for path, source in markdown_files():
+        parts = os.path.dirname(path).split(os.sep)
         # Depth 2 is skills/<tree>/file.md, depth 3 skills/<tree>/<jur>/file.md.
         # Requiring depth 3 hid 168 files that are not in a jurisdiction folder
         # -- every US federal guide, every cross-border guide, the orchestrators
@@ -165,14 +167,10 @@ def main(only=None):
         label = parts[2] if len(parts) > 2 else parts[1]
         if only and label != only:
             continue
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            path = os.path.join(dp, fn)
-            with open(path, encoding='utf-8', errors='replace') as fh:
-                for n, line in enumerate(fh, 1):
-                    for anchor, host in misleading(line):
-                        hits[label].append((path, n, anchor, host))
+        with open(source, encoding='utf-8', errors='replace') as fh:
+            for n, line in enumerate(fh, 1):
+                for anchor, host in misleading(line):
+                    hits[label].append((path, n, anchor, host))
     for jur, rows in sorted(hits.items(), key=lambda kv: -len(kv[1])):
         print('%-26s %d' % (jur, len(rows)))
         if only:
@@ -190,10 +188,12 @@ def main(only=None):
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(prog='list-statute-links.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    parser.add_argument('--jurisdiction', metavar='NAME', help='only list this guide group')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
     else:
-        j = None
-        if '--jurisdiction' in sys.argv:
-            j = sys.argv[sys.argv.index('--jurisdiction') + 1]
-        sys.exit(main(j))
+        sys.exit(main(args.jurisdiction))

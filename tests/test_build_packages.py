@@ -17,6 +17,8 @@ import contextlib
 import importlib.util
 import io
 import json
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -214,6 +216,142 @@ class ArgumentGuardTests(SyntheticTreeCase):
                 self.build(*argv)
             self.assertIn("unknown option --us-only", str(caught.exception))
         self.assertTrue((self.packages / "zzland" / "stale.md").is_file(), "nothing was rebuilt")
+
+
+class DependencyPreflightTests(SyntheticTreeCase):
+    def setUp(self) -> None:
+        super().setUp()
+        result = subprocess.run(
+            [sys.executable, "-I", "-S", "-c", "import yaml"],
+            capture_output=True, encoding="utf-8", timeout=30,
+        )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("ModuleNotFoundError: No module named 'yaml'", result.stderr)
+
+    def copy_generator(self) -> Path:
+        scripts = self.root / "scripts"
+        helpers = scripts / "oa_tools"
+        helpers.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(SCRIPTS / "build-packages.py", scripts / "build-packages.py")
+        for name in ("__init__.py", "paths.py", "frontmatter.py"):
+            shutil.copyfile(SCRIPTS / "oa_tools" / name, helpers / name)
+        return scripts / "build-packages.py"
+
+    def run_without_dependencies(self, *argv: str) -> subprocess.CompletedProcess:
+        return subprocess.run(
+            [sys.executable, "-I", "-S", str(self.copy_generator()), *argv],
+            capture_output=True, encoding="utf-8", timeout=30,
+        )
+
+    def package_bytes(self) -> dict[Path, bytes]:
+        return {path.relative_to(self.packages): path.read_bytes()
+                for path in self.packages.rglob("*") if path.is_file()}
+
+    def test_missing_dependency_preserves_existing_generated_and_hand_authored_files(self) -> None:
+        before = self.package_bytes()
+        result = self.run_without_dependencies()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("yaml", result.stderr.lower())
+        self.assertEqual(self.package_bytes(), before)
+
+    def test_missing_dependency_does_not_create_an_out_directory(self) -> None:
+        before = self.package_bytes()
+        parent = self.root / "missing-parent"
+        target = parent / "new"
+        result = self.run_without_dependencies("--out", str(target))
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("yaml", result.stderr.lower())
+        self.assertFalse(target.exists())
+        self.assertFalse(parent.exists())
+        self.assertEqual(self.package_bytes(), before)
+
+    def test_missing_dependency_leaves_an_existing_empty_out_directory_empty(self) -> None:
+        before = self.package_bytes()
+        target = self.root / "empty"
+        target.mkdir()
+        result = self.run_without_dependencies("--out", str(target))
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("yaml", result.stderr.lower())
+        self.assertEqual(list(target.iterdir()), [])
+        self.assertEqual(self.package_bytes(), before)
+
+    def test_invalid_arguments_take_precedence_over_the_missing_dependency(self) -> None:
+        before = self.package_bytes()
+        target = self.root / "new"
+        for argv, message in (
+            (("--unknown",), "unknown option --unknown"),
+            (("--out", str(target), "--unknown"), "unknown option --unknown"),
+            (("--out",), "--out requires a directory path"),
+            (("--out", "--unknown"), "unknown option --unknown"),
+            (("--out", str(self.packages)), "must not exist or must be empty"),
+            (("--out", str(self.packages / "stray.txt")), "must not exist or must be empty"),
+        ):
+            with self.subTest(argv=argv):
+                result = self.run_without_dependencies(*argv)
+                self.assertEqual(result.returncode, 1)
+                self.assertIn(message, result.stderr)
+                self.assertNotIn("yaml", result.stderr.lower())
+                self.assertFalse(target.exists())
+                self.assertEqual(self.package_bytes(), before)
+
+    def test_reader_initialisation_failure_precedes_output_and_state_changes(self) -> None:
+        marker = object()
+
+        def unavailable(block):
+            self.assertEqual(build_packages.PACKAGES_DIR, str(self.packages))
+            self.assertEqual(build_packages._SHARED, {"sentinel": marker})
+            raise ModuleNotFoundError("No module named 'yaml'", name="yaml")
+
+        with mock.patch.dict(build_packages._SHARED, {"sentinel": marker}, clear=True), \
+                mock.patch.object(build_packages, "load_frontmatter", side_effect=unavailable), \
+                mock.patch.object(build_packages.os, "makedirs") as make_directory:
+            with self.assertRaises(ModuleNotFoundError):
+                self.build("--out", str(self.root / "new"))
+            make_directory.assert_not_called()
+            self.assertEqual(build_packages._SHARED, {"sentinel": marker})
+
+    def test_cold_generator_import_and_tolerant_reader_do_not_import_yaml(self) -> None:
+        code = '''
+import builtins
+import importlib.util
+import sys
+
+attempts = []
+original_import = builtins.__import__
+
+def tracked_import(name, *args, **kwargs):
+    if name == "yaml" or name.startswith("yaml."):
+        attempts.append(name)
+    return original_import(name, *args, **kwargs)
+
+builtins.__import__ = tracked_import
+spec = importlib.util.spec_from_file_location("generator", sys.argv[1])
+generator = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(generator)
+from oa_tools import frontmatter
+text = "---\\nname: x\\nname: y\\nbroken: [\\n---\\n"
+block = frontmatter.extract_frontmatter(text)
+if frontmatter.parse_known_keys(block)["name"] != "x":
+    raise RuntimeError("Tolerant block parsing changed")
+if frontmatter.read_frontmatter(text, strict=False)["name"] != "x":
+    raise RuntimeError("Tolerant document parsing changed")
+if attempts:
+    raise RuntimeError("Import or tolerant reading attempted a YAML import")
+try:
+    frontmatter.load_frontmatter("name: generator-preflight\\n")
+except ModuleNotFoundError as exc:
+    if exc.name != "yaml":
+        raise
+else:
+    raise RuntimeError("Strict reader did not fail without PyYAML")
+if attempts != ["yaml"]:
+    raise RuntimeError("Strict reader did not attempt the YAML import")
+'''
+        result = subprocess.run(
+            [sys.executable, "-I", "-S", "-c", code, str(self.copy_generator())],
+            capture_output=True, encoding="utf-8", timeout=30,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
 
 
 class DeclaredBasesTests(SyntheticTreeCase):

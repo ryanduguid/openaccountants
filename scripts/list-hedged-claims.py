@@ -55,7 +55,13 @@ and says which way to err.
 
 Usage: python3 scripts/list-hedged-claims.py [jurisdiction] [--selftest]
 """
+import argparse
 import os, re, sys, collections, signal
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files
 
 # This is meant to be piped into head or grep, and a broken pipe is the reader
 # leaving early rather than an error.
@@ -127,19 +133,15 @@ def selftest():
 
 def main(only=None):
     per_jur = collections.defaultdict(list)
-    for dp, _, fns in os.walk('skills'):
-        parts = dp.split(os.sep)
+    for path, source in markdown_files():
+        parts = os.path.dirname(path).split(os.sep)
         jur = parts[2] if len(parts) >= 3 else parts[-1]
         if jur in SKIP:
             continue
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            for i, line in enumerate(open(os.path.join(dp, fn), encoding='utf-8',
-                                          errors='replace'), 1):
-                label = hedged_in(line)
-                if label is not None:
-                    per_jur[jur].append((fn, i, label, line.strip()))
+        for i, line in enumerate(open(source, encoding='utf-8', errors='replace'), 1):
+            label = hedged_in(line)
+            if label is not None:
+                per_jur[jur].append((os.path.basename(path), i, label, line.strip()))
 
     if only:
         for fn, i, label, line in per_jur.get(only, []):
@@ -156,7 +158,12 @@ def main(only=None):
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(prog='list-hedged-claims.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    parser.add_argument('jurisdiction', nargs='?', help='only list this guide group')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
     else:
-        main(sys.argv[1] if len(sys.argv) > 1 else None)
+        sys.exit(main(args.jurisdiction))

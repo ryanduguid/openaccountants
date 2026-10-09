@@ -25,7 +25,13 @@ other way round. Read the guide.
 
 Usage: python3 scripts/check-deadline-rules.py [--selftest]
 """
+import argparse
 import os, re, sys, calendar
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files
 
 MONTH_NAMES = ('January February March April May June July August September '
                'October November December').split()
@@ -161,23 +167,22 @@ def selftest():
 
 def main():
     hits = 0
-    for dp, _, fns in os.walk('skills'):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            p = os.path.join(dp, fn)
-            for i, line in enumerate(open(p, encoding='utf-8', errors='replace'), 1):
-                d = disagrees(line)
-                if d:
-                    print('%s:%d\n    rule implies %s, guide says %s\n    %s'
-                          % (p, i, d[0], d[1], line.strip()[:150]))
-                    hits += 1
+    for p, source in markdown_files():
+        for i, line in enumerate(open(source, encoding='utf-8', errors='replace'), 1):
+            d = disagrees(line)
+            if d:
+                print('%s:%d\n    rule implies %s, guide says %s\n    %s'
+                      % (p, i, d[0], d[1], line.strip()[:150]))
+                hits += 1
     print('rules disagreeing with the date beside them:', hits)
     return hits
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline tests')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
     else:
         main()

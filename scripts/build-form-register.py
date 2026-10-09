@@ -7,7 +7,14 @@ Review the resulting list manually: a shared identifier is not proof of misuse.
 Usage: python3 scripts/build-form-register.py [--selftest]
 Output: docs/FORM-REGISTER.md
 """
-import os, re, collections
+import os, re, sys, collections
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files
+from oa_tools.cli import generator_arguments
+from oa_tools.paths import REPO_ROOT
 
 # The lookbehind rejects a preceding hyphen as well as a letter or digit, and
 # that single character was 57% of the register. This corpus numbers its own
@@ -47,21 +54,17 @@ def selftest():
 
 def main():
     jur = collections.defaultdict(lambda: collections.defaultdict(set))
-    for dp, _, fns in os.walk('skills'):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
+    for p, source in markdown_files():
+        parts = p.split(os.sep)
+        if len(parts) < 3:
+            continue
+        text = open(source, encoding='utf-8', errors='replace').read()
+        for m in FORM.finditer(text):
+            tok = re.sub(r'\s+', ' ', m.group(1)).strip()
+            if CUR.match(tok) or NOTFORM.match(tok):
                 continue
-            p = os.path.join(dp, fn)
-            parts = p.split(os.sep)
-            if len(parts) < 3:
-                continue
-            text = open(p, encoding='utf-8', errors='replace').read()
-            for m in FORM.finditer(text):
-                tok = re.sub(r'\s+', ' ', m.group(1)).strip()
-                if CUR.match(tok) or NOTFORM.match(tok):
-                    continue
-                jurisdiction = parts[2] if len(parts) >= 4 else parts[1]
-                jur[jurisdiction][tok].add(os.path.basename(p)[:-3])
+            jurisdiction = parts[2] if len(parts) >= 4 else parts[1]
+            jur[jurisdiction][tok].add(os.path.basename(p)[:-3])
 
     rows = tokens = 0
     out = ['# Form register',
@@ -96,13 +99,14 @@ def main():
     out.append('---')
     out.append('')
     out.append('%d jurisdictions, %d shared form identifiers.' % (rows, tokens))
-    open(os.path.join('docs', 'FORM-REGISTER.md'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
+    open(os.path.join(REPO_ROOT, 'docs', 'FORM-REGISTER.md'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
     print('docs/FORM-REGISTER.md: %d jurisdictions, %d shared form identifiers' % (rows, tokens))
 
 
 if __name__ == '__main__':
-    import sys
-    if '--selftest' in sys.argv:
-        selftest()
-    else:
-        main()
+    args = generator_arguments((__doc__ or "").split('\n\n')[0], selftest=True)
+    if not args.help:
+        if args.selftest:
+            selftest()
+        else:
+            main()

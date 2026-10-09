@@ -25,9 +25,14 @@ That is the useful residue of a check that finds nothing wrong: it tells you
 which of several copies of a table is missing the caveat the others carry.
 
 Usage: python3 scripts/check-quick-formula.py [dir ...]   (default: skills)
-Exit status is always 0: this is a review aid, not a gate.
+Review findings exit 0; invalid arguments exit 2.
 """
+import argparse
 import glob, os, re, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import directory
+from oa_tools.paths import REPO_ROOT
 
 SEP = r'(?:--|–|—|-|to|through|a\b|até|ate)'
 RANGE = re.compile(r'^\D*?([\d][\d,.  ]*\d|\d)\s*' + SEP + r'\s*([\d][\d,.  ]*\d|\d)\s*$', re.I)
@@ -46,10 +51,16 @@ def num(s):
     if re.fullmatch(r'\d+,\d{1,2}', t):               return float(t.replace(',','.'))
     return float(t.replace(',','').replace(' ',''))
 
+parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+parser.add_argument('roots', nargs='*', type=directory, metavar='DIR',
+                    help="directories to scan (default: this checkout's skills)")
+args = parser.parse_args()
+
 checked = bad = 0
-for root in sys.argv[1:] or ['skills']:
-    for p in sorted(glob.glob(os.path.join(root,'**','*.md'), recursive=True)):
-        lines = open(p, encoding='utf-8', errors='replace').read().split('\n')
+base_dir = REPO_ROOT if not args.roots else os.curdir
+for root in args.roots or ['skills']:
+    for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True, root_dir=base_dir)):
+        lines = open(os.path.join(base_dir, p), encoding='utf-8', errors='replace').read().split('\n')
         i = 0
         while i < len(lines):
             if not lines[i].strip().startswith('|'): i += 1; continue

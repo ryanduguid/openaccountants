@@ -38,7 +38,12 @@ the one to doubt.
 
 Usage: python3 scripts/check-statute-citations.py [skills]
 """
+import argparse
 import os, re, collections, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import directory
+from oa_tools.guides import markdown_files, jurisdiction_group
 
 TOKEN = re.compile(r'(?<![A-Za-z0-9])((?:[A-Z]{2,6}\d{1,3}[A-Z]?)|(?:[A-Z]{3,6}))(?![A-Za-z0-9])')
 CITE = re.compile(r'(?:Art(?:icle|\.)?|Sec(?:tion|\.)?|§|s\.)\s?(\d{1,4}[A-Z]{0,2}(?:\(\d+\))?)', re.I)
@@ -50,23 +55,19 @@ STOP = {'NEVER', 'ALWAYS', 'STOP', 'NOTE', 'TRUE', 'FALSE', 'YES', 'NO', 'AND', 
 
 def main(root):
     pairs = collections.defaultdict(lambda: collections.defaultdict(set))
-    for dp, _, fns in os.walk(root):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
+    for p, source_path in markdown_files(root):
+        jur = jurisdiction_group(p, root)
+        if jur is None:
+            continue
+        for line in open(source_path, encoding='utf-8', errors='replace'):
+            cs = set(CITE.findall(line))
+            if len(cs) != 1:              # one provision, no ambiguity
                 continue
-            p = os.path.join(dp, fn)
-            parts = p.split(os.sep)
-            if len(parts) < 3:
+            toks = {t for t in TOKEN.findall(line)
+                    if t not in STOP and any(c.isdigit() for c in t)}
+            if len(toks) != 1:            # one named regime, no ambiguity
                 continue
-            for line in open(p, encoding='utf-8', errors='replace'):
-                cs = set(CITE.findall(line))
-                if len(cs) != 1:              # one provision, no ambiguity
-                    continue
-                toks = {t for t in TOKEN.findall(line)
-                        if t not in STOP and any(c.isdigit() for c in t)}
-                if len(toks) != 1:            # one named regime, no ambiguity
-                    continue
-                pairs[parts[2]][toks.pop()].add((cs.pop().upper(), p))
+            pairs[jur][toks.pop()].add((cs.pop().upper(), p))
 
     hits = 0
     for jur in sorted(pairs):
@@ -80,4 +81,8 @@ def main(root):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else 'skills')
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('root', nargs='?', type=directory, metavar='DIR',
+                        help="directory to scan (default: this checkout's skills)")
+    args = parser.parse_args()
+    main(args.root)

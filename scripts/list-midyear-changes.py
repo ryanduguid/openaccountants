@@ -10,7 +10,7 @@ year at whichever rate it read first.
 states. 6 April is a clean boundary in the UK and mid-year everywhere else.
 
 It ranks, it does not accuse: a line can be correct and terse, and a change can
-be so old that nothing straddles it any more. Always exits 0.
+be so old that nothing straddles it any more. Review reports exit 0; invalid arguments exit 2.
 
 IT CURRENTLY REPORTS NOTHING, AND HERE IS HOW TO TELL THAT IS REAL
 
@@ -29,7 +29,13 @@ guide that forced it.
 
 Usage: python3 scripts/list-midyear-changes.py [--selftest] [--since YEAR]
 """
+import argparse
 import os, re, sys, collections, datetime
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files, jurisdiction_group, skill_path_parts
 
 MONTHS = {m.lower(): i for i, m in enumerate(
     ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
@@ -94,23 +100,23 @@ def year_start(text):
     return (int(m.group(1)), MONTHS[m.group(2).lower()]) if m else None
 
 
-def tax_year_starts(root='skills'):
+def tax_year_starts(root=None):
     """{jurisdiction: (day, month)} for every jurisdiction that states one."""
     out = {}
-    for dp, _, fns in os.walk(root):
-        parts = dp.split(os.sep)
+    for path, source in markdown_files(root):
+        parts = skill_path_parts(path, root)
         if len(parts) < 3 or parts[1] in SKIP_TREES:
             continue
-        for fn in sorted(fns):
-            if not fn.endswith('.md') or parts[2] in out:
-                continue
-            with open(os.path.join(dp, fn), encoding='utf-8', errors='replace') as fh:
-                text = fh.read()
-            for m in TAX_YEAR.finditer(text):
-                start = year_start(m.group(1) or m.group(2) or '')
-                if start:
-                    out[parts[2]] = start
-                    break
+        jur = jurisdiction_group(path, root)
+        if jur is None or jur in out:
+            continue
+        with open(source, encoding='utf-8', errors='replace') as fh:
+            text = fh.read()
+        for m in TAX_YEAR.finditer(text):
+            start = year_start(m.group(1) or m.group(2) or '')
+            if start:
+                out[jur] = start
+                break
     return out
 
 
@@ -227,23 +233,20 @@ def main(since=None):
     since = since or datetime.date.today().year - 1
     starts = tax_year_starts()
     hits = collections.defaultdict(list)
-    for dp, _, fns in os.walk('skills'):
-        parts = dp.split(os.sep)
+    for path, source in markdown_files():
+        parts = skill_path_parts(path)
         if len(parts) < 3 or parts[1] in SKIP_TREES:
             continue
-        start = starts.get(parts[2])
+        jur = jurisdiction_group(path)
+        start = starts.get(jur)
         if not start:
             continue           # cannot tell mid-year from year-start
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            path = os.path.join(dp, fn)
-            with open(path, encoding='utf-8', errors='replace') as fh:
-                text = fh.read()
-            for n, line in enumerate(text.splitlines(), 1):
-                got = flagged(line, start, since, text)
-                if got:
-                    hits[parts[2]].append((path, n, got))
+        with open(source, encoding='utf-8', errors='replace') as fh:
+            text = fh.read()
+        for n, line in enumerate(text.splitlines(), 1):
+            got = flagged(line, start, since, text)
+            if got:
+                hits[jur].append((path, n, got))
     for jur, rows in sorted(hits.items(), key=lambda kv: -len(kv[1])):
         d, m = starts[jur]
         print('%-18s (year starts %d/%d)  %d line(s)' % (jur, d, m, len(rows)))
@@ -259,10 +262,12 @@ def main(since=None):
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(prog='list-midyear-changes.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    parser.add_argument('--since', type=int, metavar='YEAR', help='earliest change year (default: previous year)')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
     else:
-        y = None
-        if '--since' in sys.argv:
-            y = int(sys.argv[sys.argv.index('--since') + 1])
-        sys.exit(main(y))
+        sys.exit(main(args.since))

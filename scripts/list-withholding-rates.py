@@ -7,7 +7,13 @@ Treat these as claims to verify, not a complete rate schedule or legal findings.
 
 Usage: python3 scripts/list-withholding-rates.py [--selftest]
 """
+import argparse
 import os, re, sys, collections
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files, jurisdiction_group
 
 KIND = (('dividends', r'dividend'),
         ('interest', r'interest'),
@@ -98,29 +104,26 @@ def selftest():
 def main():
     out = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
     hedged = collections.defaultdict(set)
-    for dp, _, fns in os.walk('skills'):
-        parts = dp.split(os.sep)
-        jur = parts[2] if len(parts) >= 3 else ''
+    for path, source in markdown_files():
+        jur = jurisdiction_group(path)
         if not jur or jur in ('orchestrator', 'cross-border', 'verticals', 'integrations'):
             continue
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
+        fn = os.path.basename(path)
+        context = ''
+        for line in open(source, encoding='utf-8', errors='replace'):
+            if line.lstrip().startswith('#'):
+                context = line if (
+                    re.search(r'\b(?:WHT|withholding)\b', line, re.I)
+                    or (re.search(r'(?:wht|withholding)', fn, re.I)
+                        and re.search(r'\brates\b', line, re.I))
+                ) else ''
+            got = withholding_in(line, context)
+            if not got:
                 continue
-            context = ''
-            for line in open(os.path.join(dp, fn), encoding='utf-8', errors='replace'):
-                if line.lstrip().startswith('#'):
-                    context = line if (
-                        re.search(r'\b(?:WHT|withholding)\b', line, re.I)
-                        or (re.search(r'(?:wht|withholding)', fn, re.I)
-                            and re.search(r'\brates\b', line, re.I))
-                    ) else ''
-                got = withholding_in(line, context)
-                if not got:
-                    continue
-                for kind, res, rate, hedge in got:
-                    out[jur]['%s/%s' % (kind, res)][rate + '%'] += 1
-                    if hedge:
-                        hedged[jur].add(kind)
+            for kind, res, rate, hedge in got:
+                out[jur]['%s/%s' % (kind, res)][rate + '%'] += 1
+                if hedge:
+                    hedged[jur].add(kind)
 
     for jur in sorted(out):
         for key in sorted(out[jur]):
@@ -135,7 +138,11 @@ def main():
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(prog='list-withholding-rates.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
     else:
-        main()
+        sys.exit(main())
