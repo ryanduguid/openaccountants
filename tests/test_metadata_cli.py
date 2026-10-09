@@ -63,6 +63,21 @@ with open(record, 'w', encoding='utf-8') as handle:
 
 
 class MetadataCliTests(unittest.TestCase):
+    def assert_backfill_adds_tier_preserving_values(self, name, text, newline):
+        before = load_frontmatter(extract_frontmatter(text))
+        self.files[name] = text.encode("utf-8")
+        self.restore_inputs()
+        _, dry = self.run_supported("backfill-metadata.py", [], [])
+        self.assertEqual(dry, self.files)
+        _, applied = self.run_supported("backfill-metadata.py", ["--apply"], [])
+        expected = text.replace("jurisdiction: MT" + newline,
+                                "jurisdiction: MT" + newline + "tier: 2" + newline)
+        self.assertEqual(applied[name], expected.encode("utf-8"))
+        self.assertEqual(load_frontmatter(extract_frontmatter(applied[name].decode("utf-8"))),
+                         {**before, "tier": 2})
+        _, repeated = self.run_supported("backfill-metadata.py", ["--apply"], [])
+        self.assertEqual(repeated, applied)
+
     def setUp(self):
         temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
@@ -373,18 +388,7 @@ class MetadataCliTests(unittest.TestCase):
             with self.subTest(newline=nl, closer=closer, block=block):
                 text = ("---\nname: indented-values\njurisdiction: MT\nlast_updated: 2026-01-02\n" +
                         block + closer + "\nSynthetic body without a final newline.").replace("\n", nl)
-                before = load_frontmatter(extract_frontmatter(text))
-                self.files[name] = text.encode("utf-8")
-                self.restore_inputs()
-                _, dry = self.run_supported("backfill-metadata.py", [], [])
-                self.assertEqual(dry, self.files)
-                _, applied = self.run_supported("backfill-metadata.py", ["--apply"], [])
-                expected = text.replace("jurisdiction: MT" + nl, "jurisdiction: MT" + nl + "tier: 2" + nl)
-                self.assertEqual(applied[name], expected.encode("utf-8"))
-                self.assertEqual(load_frontmatter(extract_frontmatter(applied[name].decode("utf-8"))),
-                                 {**before, "tier": 2})
-                _, repeated = self.run_supported("backfill-metadata.py", ["--apply"], [])
-                self.assertEqual(repeated, applied)
+                self.assert_backfill_adds_tier_preserving_values(name, text, nl)
 
     def test_backfill_refuses_unclassified_root_keys_without_inserting_duplicates(self):
         name = "skills/federal/unclassified-root.md"
@@ -426,18 +430,7 @@ class MetadataCliTests(unittest.TestCase):
                 text = ("---\nname: plain-quotes\njurisdiction: MT\nlast_updated: 2026-01-02\n"
                         "description: Coverage includes\n  " + quote + "2025/26" + quote + " and later.\n" +
                         closer + "\nBody must remain unchanged.").replace("\n", nl)
-                before = load_frontmatter(extract_frontmatter(text))
-                self.files[name] = text.encode("utf-8")
-                self.restore_inputs()
-                _, dry = self.run_supported("backfill-metadata.py", [], [])
-                self.assertEqual(dry, self.files)
-                _, applied = self.run_supported("backfill-metadata.py", ["--apply"], [])
-                expected = text.replace("jurisdiction: MT" + nl, "jurisdiction: MT" + nl + "tier: 2" + nl)
-                self.assertEqual(applied[name], expected.encode("utf-8"))
-                self.assertEqual(load_frontmatter(extract_frontmatter(applied[name].decode("utf-8"))),
-                                 {**before, "tier": 2})
-                _, repeated = self.run_supported("backfill-metadata.py", ["--apply"], [])
-                self.assertEqual(repeated, applied)
+                self.assert_backfill_adds_tier_preserving_values(name, text, nl)
 
 
 if __name__ == "__main__":

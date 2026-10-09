@@ -138,7 +138,7 @@ EDITOR_KEY_RE = re.compile(r"^([A-Za-z_][\w-]*):(?:[ \t]+(.*)|$)")
 
 # Only a complete scalar on one line is a safe immediate insertion anchor.
 SINGLE_LINE_VALUE_RE = re.compile(
-    r"""(?:"(?:[^"\\]|\\.)*"|'(?:[^']|'')*'|[^"'|>!&*\[{].*)(?:\s+#.*)?"""
+    r"""(?:(?:"(?:[^"\\]|\\.)*"|'(?:[^']|'')*')(?:\s+#.*)?|[^"'|>!&*\[{].*)"""
 )
 
 

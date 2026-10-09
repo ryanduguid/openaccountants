@@ -119,7 +119,10 @@ def clean_value(raw):
         if len(value) >= 2 and value.rstrip().endswith(quote):
             value = value.strip()[1:-1].strip()
     else:
-        value = re.sub(r"\s+#.*$", "", value).strip()
+        for index in range(value.rfind("\n") + 1, len(value)):
+            if value[index] == "#" and index and value[index - 1].isspace():
+                value = value[:index].rstrip()
+                break
     if value == "" or value.lower() in ("null", "~"):
         return None
     return value

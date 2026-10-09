@@ -684,7 +684,7 @@ class ReviewCLIArgumentTests(AdvisoryCase):
             output = self.run_advisory("check-stale-futures.py", self.unrelated, args)
             self.assertIn("date now past: 3", output)
             outputs.append(output)
-        self.assertEqual(*outputs)
+        self.assertEqual(outputs[0], outputs[1])
 
 
 class ListCLIArgumentTests(AdvisoryCase):
@@ -695,6 +695,8 @@ class ListCLIArgumentTests(AdvisoryCase):
     blocked_scan_driver = ReviewCLIArgumentTests.blocked_scan_driver
     run_without_scan = ReviewCLIArgumentTests.run_without_scan
     selftests = tuple(name for name in cases if name != "list-vat-rates.py")
+    test_help_does_not_scan = ReviewCLIArgumentTests.test_help_does_not_scan
+    test_selftests_do_not_scan = ReviewCLIArgumentTests.test_selftests_do_not_scan
 
     def test_unknown_options_fail_before_scan(self):
         for name in self.cases:
@@ -704,19 +706,6 @@ class ListCLIArgumentTests(AdvisoryCase):
             for args in variants:
                 with self.subTest(script=name, args=args):
                     self.run_without_scan(name, args, 2)
-
-    def test_help_does_not_scan(self):
-        for name in self.cases:
-            with self.subTest(script=name):
-                result = self.run_without_scan(name, ("--help",), 0)
-                self.assertIn("usage:", result.stdout)
-                self.assertIn(name, result.stdout)
-
-    def test_selftests_do_not_scan(self):
-        for name in self.selftests:
-            with self.subTest(script=name):
-                result = self.run_without_scan(name, ("--selftest",), 0)
-                self.assertIn("selftest:", result.stdout)
 
     def test_unsupported_positionals_fail_before_scan(self):
         for name in self.cases:
@@ -814,14 +803,14 @@ class IncompleteFixesArgumentTests(AdvisoryCase):
         for root in (self.root, self.unrelated):
             self.init_git(root)
 
-    def git(self, root, *args, input=None, check=True):
+    def git(self, root, *args, stdin_data=None, check=True):
         return subprocess.run(
             ["git", "-c", "user.email=t@example.invalid", "-c", "user.name=T",
              "-c", "commit.gpgsign=false", "-c", "tag.gpgsign=false",
              "-c", "core.autocrlf=false", "-c", "core.hooksPath=" + str(self.hooks),
              "-c", "init.templateDir=" + str(self.hooks), *args],
-            cwd=root, input=input, capture_output=True, text=input is None,
-            encoding="utf-8" if input is None else None,
+            cwd=root, input=stdin_data, capture_output=True, text=stdin_data is None,
+            encoding="utf-8" if stdin_data is None else None,
             timeout=30, check=check,
         )
 
@@ -981,7 +970,7 @@ class IncompleteFixesArgumentTests(AdvisoryCase):
                 break
         else:
             self.fail("synthetic collision search bound exhausted")
-        blob = self.git(self.unrelated, "hash-object", "-w", "--stdin", input=data).stdout.decode().strip()
+        blob = self.git(self.unrelated, "hash-object", "-w", "--stdin", stdin_data=data).stdout.decode().strip()
         self.assertEqual(blob, oid)
         result = self.run_cli(("--base", prefix))
         self.assertEqual(result.returncode, 0, result.stderr)

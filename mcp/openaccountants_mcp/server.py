@@ -266,7 +266,10 @@ def _load_assurance_metadata(block: str) -> tuple[Any, str | None]:
                             if len(tier) >= 2 and tier.endswith(tier[0]):
                                 tier = tier[1:-1].strip()
                         else:
-                            tier = re.sub(r"\s+#.*$", "", tier).strip()
+                            for index in range(len(tier)):
+                                if tier[index] == "#" and index and tier[index - 1].isspace():
+                                    tier = tier[:index].rstrip()
+                                    break
                         if tier in ("1", "2") and not (
                                 isinstance(value, yaml.ScalarNode) and
                                 value.start_mark.line == value.end_mark.line == key.start_mark.line):
