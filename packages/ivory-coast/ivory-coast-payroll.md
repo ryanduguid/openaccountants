@@ -427,14 +427,14 @@ Statements and payroll documents are typically in **French**. Common terms and p
 | --- | --- | --- |
 | ITS scale | 0/16/21/24/28/32% (§2.1) | CGI Art. 119 bis; DGI booklet 2025 |
 | RICF | fixed 11,000 XOF/part-month (§2.2) | CGI Art. 120 |
-| ITS deadline | 15th of following month | DGI calendar (commonly cited) `[RESEARCH GAP]` |
+| ITS deadline | 15th of the following month (centres des impôts); 10th (TEE and microenterprise taxpayers); 10th, 15th or 20th by sector (DGE/DME) (§2.4) | DGI, Calendrier des obligations fiscales |
 | ITS late penalty | 10% + 1%/month | LPF art. 161 |
 | CNPS retirement | 6.30% EE / 7.70% ER; cap 3,375,000/mo | CLEISS (eff. 1 Jan 2025) |
 | Family + maternity | 5.75% ER; cap 70,000/mo | CLEISS |
 | AT/MP | 2%–5% ER; cap 70,000/mo | CLEISS / CNPS `[RESEARCH GAP — sector rate]` |
 | CMU | 500 XOF/person each side | CLEISS |
 | CNPS periodicity | monthly ≥20 / quarterly <20; due day 15 | CLEISS |
-| CNPS late penalty | 5% first month, then 1%/month | CLEISS |
+| CNPS late penalty | 0.05% per day of delay (CNPS); CLEISS reports 5% for the first month then 1%/month (§3.2) | CNPS, Employeur; CLEISS |
 | DISA | due 31 March; 10% non-filing penalty | CNPS |
 | Employer payroll tax | 2.8% local / 12% expat | CGI art. 146 |
 | FDFP components (inside the 2.8% / 12%) | 0.4% + 1.2% = 1.6% | Annexe fiscale a la LF n° 2024-1109, art. 16 (CGI art. 146) |
@@ -443,14 +443,14 @@ Statements and payroll documents are typically in **French**. Common terms and p
 
 - **ITS scale** — 0/16/21/24/28/32% (§2.1)  _(CGI Art. 119 bis; DGI booklet 2025)_
 - **RICF** — fixed 11,000 XOF/part-month (§2.2)  _(CGI Art. 120)_
-- **ITS deadline** — 15th of following month  _(DGI calendar (commonly cited) `[RESEARCH GAP]`)_
+- **ITS deadline** — 15th of the following month (centres des impôts); 10th (TEE and microenterprise taxpayers); 10th, 15th or 20th by sector (DGE/DME) (§2.4)  _(DGI, Calendrier des obligations fiscales)_
 - **ITS late penalty** — 10% + 1%/month  _(LPF art. 161)_
 - **CNPS retirement** — 6.30% EE / 7.70% ER; cap 3,375,000/mo  _(CLEISS (eff. 1 Jan 2025))_
 - **Family + maternity** — 5.75% ER; cap 70,000/mo  _(CLEISS)_
 - **AT/MP** — 2%–5% ER; cap 70,000/mo  _(CLEISS / CNPS `[RESEARCH GAP — sector rate]`)_
 - **CMU** — 500 XOF/person each side  _(CLEISS)_
 - **CNPS periodicity** — monthly ≥20 / quarterly <20; due day 15  _(CLEISS)_
-- **CNPS late penalty** — 5% first month, then 1%/month  _(CLEISS)_
+- **CNPS late penalty** — 0.05% per day of delay (CNPS); CLEISS reports 5% for the first month then 1%/month (§3.2)  _(CNPS, Employeur; CLEISS)_
 - **DISA** — due 31 March; 10% non-filing penalty  _(CNPS)_
 - **Employer payroll tax** — 2.8% local / 12% expat  _(CGI art. 146)_
 - **FDFP components, inside the employer contribution** — 0.4% + 1.2% = 1.6%, counted within the 2.8% (local) or 12% (expatriate) total, not on top of it  _(Annexe fiscale a la Loi de Finances n° 2024-1109 du 18 decembre 2024, art. 16 (CGI art. 146) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
