@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Angola (
 jurisdiction: AO
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ The most common Angolan business vehicle is the Sociedade por Quotas (Lda), a pr
 - **Incorporation step — tax registration** — Obtain a Tax Identification Number (NIF) for the company and shareholders, and register with the AGT  _(Administracao Geral Tributaria (AGT) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
 - **Incorporation step — commercial registration** — Register the company with the Commercial Registry (Conservatoria do Registo Comercial), typically via the GUE one-stop desk  _(Lei das Sociedades Comerciais (Commercial Companies Law) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
 - **Incorporation timeline** — GUE one-stop registration can be completed in roughly 3-5 business days; full end-to-end (incl. bank account) typically 4-6 weeks (approx — confirm) business days / weeks  _(Guiche Unico da Empresa (GUE) — https://chandrawatpartners.com/incorporating-an-llc-in-angola-key-steps-requirements-and-benefits/)_
-- **Core annual compliance** — Annual financial statements, corporate income tax return (by end of May, general regime), and monthly VAT/IRT/social security filings  _(Codigo do Imposto Industrial (Corporate Income Tax Code) — https://taxsummaries.pwc.com/angola/corporate/tax-administration)_
+- **Core annual compliance** — Annual financial statements; the Imposto Industrial return by the last business day of May (general regime) or April (simplified regime); the monthly VAT declaration by the end of the following month; monthly IRT remittance by the end of the following month; social security contributions by the 10th of the following month  _(Código do Imposto Industrial (Lei n.º 19/14 as amended by Lei n.º 26/20), arts. 51, 61 and 69 — https://lex.ao/docs/assembleia-nacional/2020/lei-n-o-26-20-de-20-de-julho/; Código do IVA (Lei n.º 7/19 as amended and republished by Lei n.º 14/23), art. 44 — https://lex.ao/docs/assembleia-nacional/2019/lei-n-o-7-19-de-24-de-abril/; Código do Imposto sobre os Rendimentos do Trabalho (Lei n.º 18/14 as amended by Lei n.º 28/20), art. 11 — https://lex.ao/docs/assembleia-nacional/2014/lei-n-o-18-14-de-22-de-outubro/; Decreto Presidencial n.º 227/18 (contribution regime of the Protecção Social Obrigatória), art. 15 — https://lex.ao/docs/presidente-da-republica/2018/decreto-presidencial-n-o-227-18-de-27-de-setembro/)_
 
 <!-- openaccountants-cta-block -->
 

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-10T17:59:46+00:00",
+ "generated_at": "2026-10-10T18:19:49+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -2084,7 +2084,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ao-corporate-income-tax",
@@ -2097,7 +2097,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ao-income-tax",
@@ -2110,7 +2110,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ao-payroll-social",
@@ -2123,7 +2123,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ao-tax-overview",
@@ -2136,7 +2136,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ao-vat-gst",
@@ -2149,7 +2149,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ar-company-formation",
