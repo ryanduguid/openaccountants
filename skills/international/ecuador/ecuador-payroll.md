@@ -1,10 +1,10 @@
 ---
 name: ecuador-payroll
 description: Use this skill whenever asked about Ecuador payroll processing for employed persons (relación de dependencia). Trigger on phrases like "Ecuador payroll", "rol de pagos", "aporte IESS", "aporte personal 9.45%", "aporte patronal 11.15%", "retención impuesto a la renta en relación de dependencia", "proyección anual", "décimo tercero", "décimo cuarto", "fondos de reserva", "sueldo neto Ecuador", "net salary Ecuador", "salario básico unificado", "SBU", "gross to net Ecuador", "employer cost Ecuador", or any question about computing employee pay, income-tax withholding, IESS contributions, or mandatory bonuses for Ecuador-based employees. This skill covers IESS personal and patronal contributions, the annual income-tax projection-and-withholding method, the personal-expense rebate, the 13th and 14th salaries, fondos de reserva, the SBU, payslip and filing obligations. ALWAYS read this skill before processing any Ecuador payroll.
-version: 0.1
+version: 0.2
 jurisdiction: EC
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Ecuador Payroll
 
-## Ecuador Payroll Skill v0.1
+## Ecuador Payroll Skill v0.2
 
-Tier 2 — research-verified. Figures sourced from the SRI (Servicio de Rentas Internas), IESS, the Código del Trabajo, PwC Worldwide Tax Summaries, and Ecuadorian payroll references. NOT yet signed off by a licensed Ecuadorian contador. Treat every computation as an estimate pending professional review.
+Tier 2 — research-verified. Figures sourced from the SRI (Servicio de Rentas Internas), the IESS contribution resolutions, the Código del Trabajo, the Ley de Régimen Tributario Interno and Ecuadorian payroll references. NOT yet signed off by a licensed Ecuadorian contador. Treat every computation as an estimate pending professional review.
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ Tier 2 — research-verified. Figures sourced from the SRI (Servicio de Rentas I
 | Key legislation | Ley de Régimen Tributario Interno (LRTI); Código del Trabajo; Ley de Seguridad Social |
 | SBU (salario básico unificado), 2025 | USD 470/month (2026: USD 482) |
 | Validated by | Pending -- requires sign-off by a licensed Ecuadorian contador |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Two facts that govern Ecuador payroll
 

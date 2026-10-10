@@ -1,10 +1,10 @@
 ---
 name: ecuador-income-tax
 description: Use this skill whenever asked about Ecuador personal income tax (Impuesto a la Renta) for self-employed individuals and natural persons. Trigger on phrases like "how much income tax do I pay in Ecuador", "Impuesto a la Renta", "Formulario 102", "Formulario 102A", "declaración de renta personas naturales", "gastos personales", "rebaja por gastos personales", "RIMPE", "Negocio Popular", "Emprendedor", "aporte IESS", "décimo tercero", "décimo cuarto", "fondos de reserva", "noveno dígito", "self-employed tax Ecuador", "non-resident 25%", or any question about filing or computing income tax for a self-employed person, professional, or individual resident/non-resident in Ecuador. Also trigger when preparing or reviewing a Formulario 102/102A, the Anexo de Gastos Personales, an IESS contribution computation, or advising on the RIMPE simplified regime. This skill covers the progressive 0%-37% PIT table, the personal-expense rebate, IESS contributions, the 13th/14th salaries, RIMPE, residency, penalties, and interaction with IVA and social security. ALWAYS read this skill before touching any Ecuador income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: EC
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Ecuador Income Tax -- Personas Naturales / Self-Employed
 
-## Ecuador Income Tax -- Personas Naturales / Self-Employed Skill v0.2
+## Ecuador Income Tax -- Personas Naturales / Self-Employed Skill v0.3
 
-Tier 2 (research-verified). NOT yet accountant-verified. The 2026 PIT table is read verbatim from the official SRI Resolution NAC-DGERCGC25-00000043 PDF (high confidence). The 2025 table and several social-security / gastos-personales figures rely on Big-4 (PwC) and reputable Ecuadorian sources (JEZL, Russell Bedford, HLB Ecuador) rather than line-by-line re-extraction of the original SRI resolutions; those points carry inline [RESEARCH GAP — reviewer to confirm] markers. A licensed Ecuadorian contador/CPA must sign off before filing.
+Tier 2 (research-verified). NOT yet accountant-verified. The 2026 PIT table is read verbatim from the official SRI Resolution NAC-DGERCGC25-00000043 PDF (high confidence). The 2025 table and several social-security / gastos-personales figures rely on reputable Ecuadorian sources (JEZL, Russell Bedford, HLB Ecuador) rather than line-by-line re-extraction of the original SRI resolutions; those points carry inline [RESEARCH GAP — reviewer to confirm] markers. A licensed Ecuadorian contador/CPA must sign off before filing.
 
 ## Section 1 -- Quick Reference
 
@@ -39,13 +39,13 @@ Tier 2 (research-verified). NOT yet accountant-verified. The 2026 PIT table is r
 | Filing deadline | March of the following year, staggered by ninth digit of cédula/RUC (SRI) |
 | Validated by | Pending -- requires sign-off by a licensed Ecuadorian contador/CPA |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Tax Rate Brackets -- General Regime (Personas Naturales)
 
 - **PIT progressivity and indexation** — PIT is progressive 0%-37% on net taxable income. The table is indexed annually to the urban CPI (INEC) at 30 November; the 2026 indexation was 1.0534712934405%.  _(LRTI art. 36; SRI Resolution NAC-DGERCGC25-00000043)_
 
-**2025 (fiscal year filed March 2026) PIT brackets**  _(SRI Resolution NAC-DGERCGC24-00000041, applies from 2025-01-01; exempt base USD 12,081. Source: SRI; JEZL Auditores; PwC. [RESEARCH GAP — reviewer to confirm the 2025 bracket figures line-by-line against the original 2024 SRI resolution PDF, which was binary-encoded.])_
+**2025 (fiscal year filed March 2026) PIT brackets**  _(SRI Resolution NAC-DGERCGC24-00000041, applies from 2025-01-01; exempt base USD 12,081. Source: SRI; JEZL Auditores. [RESEARCH GAP — reviewer to confirm the 2025 bracket figures line-by-line against the original 2024 SRI resolution PDF, which was binary-encoded.])_
 
 | Net taxable income (USD) | Tax on base (USD) | Marginal rate | Cumulative tax at top |
 | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ Tier 2 (research-verified). NOT yet accountant-verified. The 2026 PIT table is r
 | 109,956 + | 24,572 | 37% | -- |
 
 - **How to compute tax in any bracket** — tax = (tax on base) + (net taxable income − bracket floor) × marginal rate. Then subtract the personal-expense rebate (see Section 1, Personal-Expense Rebate). Never compute tax directly in prose -- pass the chargeable figure to the deterministic engine.
-- **Non-residents flat rate** — 25% (flat, on Ecuadorian-source income, withheld at source, NO brackets and NO personal allowance)  _(PwC Worldwide Tax Summaries -- Ecuador Individual)_
+- **Non-residents flat rate** — 25% (the single company rate applied to the whole Ecuadorian-source income of a non-resident individual, withheld at source, NO brackets and NO personal allowance; 37%, the top individual rate, where the recipient sits in a tax haven)  _(LRTI art. 36 b) and art. 39, Codificación 2004-026 consolidated to 2 July 2021 — https://www.bolsadequito.com/uploads/normativa/normativa-relacionada/ley-organica-regimen-tributario-interno.pdf; SRI, Impuesto a la Renta — https://www.sri.gob.ec/impuesto-renta)_
 
 ### IESS Social Security Contributions
 
@@ -105,7 +105,7 @@ Tier 2 (research-verified). NOT yet accountant-verified. The 2026 PIT table is r
 | Item | 2025 | 2026 | Source |
 | --- | --- | --- | --- |
 | Salario Básico Unificado (SBU / minimum wage) | USD 470.00/month | USD 482.00/month (Acuerdo Ministerial MDT-2025-195, from 2026-01-01) | Ministerio del Trabajo; NMS Law; CorralRosales |
-| Décimo Tercer Sueldo (13th salary / Christmas bonus) | = 1/12 of total remuneration earned 1 Dec–30 Nov; paid by 24 Dec | same | EXEMPT from PIT; NOT part of IESS base (Código del Trabajo; PwC) |
+| Décimo Tercer Sueldo (13th salary / Christmas bonus) | = 1/12 of total remuneration earned 1 Dec–30 Nov; paid by 24 Dec | same | EXEMPT from PIT; NOT part of IESS base (Código del Trabajo arts. 111 and 112; LRTI art. 9) |
 | Décimo Cuarto Sueldo (14th salary / education bonus) | = 1 SBU (USD 470) | = 1 SBU (USD 482) | EXEMPT from PIT; paid by 15 Mar (Costa/Insular) or 15 Aug (Sierra/Amazonía) (Código del Trabajo) |
 | IESS remittance deadline | within 15 days following the worked month | same | EcuadorLegalOnline |
 
@@ -312,7 +312,7 @@ Gross monthly salary USD 1,500. Employee IESS aporte personal = 9.45% × 1,500 =
 `10/06/2025 ; PICHINCHA ; TRANSFERENCIA ; CLIENTE EC ; SERVICIOS PRESTADOS EN ECUADOR ; +10,000.00 ; USD`
 
 **Reasoning:**
-Payee is a non-resident (183-day test NOT met). Ecuadorian-source income is taxed at a flat 25% withheld at source, with no brackets and no personal allowance (PwC). Tax = 10,000 × 25% = USD 2,500.
+Payee is a non-resident (183-day test NOT met). Ecuadorian-source income is taxed at a flat 25% withheld at source, with no brackets and no personal allowance (LRTI arts. 36 b) and 39). Tax = 10,000 × 25% = USD 2,500.
 
 **Classification:** Flat 25% non-resident withholding = USD 2,500. No rebate, no table.
 
@@ -353,7 +353,7 @@ Transfer between the taxpayer's own accounts. Neither income nor expense. Exclud
 
 ### 5.2 Taxable Employment Income
 
-- **Taxable employment income definition** — Taxable employment income = total labour compensation NET of employee IESS contributions (9.45%), and EXCLUDING the 13th (Christmas) and 14th (education) salaries, which are exempt. Employers compute monthly PIT withholding on projected annual taxable income (salary net of IESS, excluding 13th/14th) using the art. 36 table, less the projected personal-expense rebate, reconciled annually.  _(LRTI; Código del Trabajo; PwC; Reglamento LRTI)_
+- **Taxable employment income definition** — Taxable employment income = total labour compensation NET of employee IESS contributions (9.45%), and EXCLUDING the 13th (Christmas) and 14th (education) salaries, which are exempt. Employers compute monthly PIT withholding on projected annual taxable income (salary net of IESS, excluding 13th/14th) using the art. 36 table, less the projected personal-expense rebate, reconciled annually.  _(LRTI arts. 9 and 36; Código del Trabajo art. 112; Reglamento LRTI)_
 
 ### 5.3 Personal-Expense Rebate (Rebaja por Gastos Personales)
 
@@ -376,8 +376,8 @@ Transfer between the taxpayer's own accounts. Neither income nor expense. Exclud
 
 ### 5.6 13th and 14th Salaries
 
-- **Décimo Tercer Sueldo** — = 1/12 of total remuneration earned 1 Dec–30 Nov; paid by 24 Dec. EXEMPT from PIT; NOT in IESS base.  _(Código del Trabajo; PwC; EcuadorLegalOnline)_
-- **Décimo Cuarto Sueldo** — = 1 SBU (USD 470 in 2025; USD 482 in 2026); paid by 15 Mar (Costa/Insular) or 15 Aug (Sierra/Amazonía). EXEMPT from PIT.  _(Código del Trabajo; PwC; EcuadorLegalOnline)_
+- **Décimo Tercer Sueldo** — = 1/12 of total remuneration earned 1 Dec–30 Nov; paid by 24 Dec. EXEMPT from PIT; NOT in IESS base.  _(Código del Trabajo arts. 111 and 112 — https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/e2NhcnBldGE6ICJub3RhaXAyMDIzIiwgdXVpZDoiNGIzNzRhMDUtMDNjNy00ZjdmLWE4NGMtZTlkNTkzNDIzY2NhLnBkZiJ9; LRTI art. 9)_
+- **Décimo Cuarto Sueldo** — = 1 SBU (USD 470 in 2025; USD 482 in 2026); paid by 15 Mar (Costa/Insular) or 15 Aug (Sierra/Amazonía). EXEMPT from PIT.  _(Código del Trabajo art. 113 — https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/e2NhcnBldGE6ICJub3RhaXAyMDIzIiwgdXVpZDoiNGIzNzRhMDUtMDNjNy00ZjdmLWE4NGMtZTlkNTkzNDIzY2NhLnBkZiJ9; LRTI art. 9)_
 
 ### 5.7 Non-Deductible Expenses
 
@@ -613,7 +613,8 @@ ONBOARDING QUESTIONS -- ECUADOR INCOME TAX
 - Resolución NAC-DGERCGC25-00000043 -- Tabla Impuesto a la Renta Personas Naturales 2026 (official PDF), SRI: https://www.sri.gob.ec/o/sri-portlet-biblioteca-alfresco-internet/descargar?id=bb7aac3c-251d-4243-9477-10a3ba8e7355&nombre=NAC-DGERCGC25-00000043.pdf
 - Impuesto a la Renta -- quiénes declaran y calendario por noveno dígito, SRI: https://www.sri.gob.ec/en/impuesto-renta
 - Régimen Simplificado para Emprendedores y Negocios Populares (RIMPE), SRI: https://www.sri.gob.ec/en/rimpe
-- Ecuador -- Individual -- Taxes on personal income, PwC Worldwide Tax Summaries: https://taxsummaries.pwc.com/ecuador/individual/taxes-on-personal-income
+- Ley de Régimen Tributario Interno, Codificación 2004-026 consolidated to 2 July 2021 (arts. 9, 36, 37, 39), Bolsa de Valores de Quito copy: https://www.bolsadequito.com/uploads/normativa/normativa-relacionada/ley-organica-regimen-tributario-interno.pdf
+- Código del Trabajo, Codificación 2005-017 consolidated to 4 November 2021 (arts. 111 to 113), Corte Constitucional copy: https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/e2NhcnBldGE6ICJub3RhaXAyMDIzIiwgdXVpZDoiNGIzNzRhMDUtMDNjNy00ZjdmLWE4NGMtZTlkNTkzNDIzY2NhLnBkZiJ9
 - Tabla de impuesto a la renta (IR) 2026, 2025 -- Personas Naturales, JEZL Auditores: https://www.jezl-auditores.com/index.php/tributario/101-tabla-de-impuesto-a-la-renta-ir-2026-2025-personas-naturales-ecuador
 - Régimen Impositivo RIMPE -- tablas Negocios Populares y Emprendedores, JEZL: https://www.jezl-auditores.com/index.php/tributario/152-regimen-impositivo-rimpe
 - Aporte personal al IESS (9.45% / 11.15% / 20.5%), EcuadorLegalOnline: https://www.ecuadorlegalonline.com/laboral/aporte-personal-iess/
