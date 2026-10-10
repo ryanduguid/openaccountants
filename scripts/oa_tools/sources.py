@@ -381,6 +381,11 @@ NON_GOV_AUTHORITY = frozenset((
     'cnss.ga',            # Caisse Nationale de Securite Sociale, Gabon's social
                           # security fund (pensions, family benefits, work
                           # injuries), which imposes and collects the charge.
+    'ccss.sa.cr',         # Caja Costarricense de Seguro Social, Costa Rica's
+                          # social security authority. Its employer pages carry
+                          # the contribution scale and the minimum contribution
+                          # base, but the institution lives on .sa.cr rather
+                          # than .go.cr, so the host carries no government label.
     'legalinfo.mn',       # Mongolia's Unified Legal Information System, run by
                           # the Ministry of Justice and Home Affairs: serves the
                           # consolidated laws with each amendment dated in-line

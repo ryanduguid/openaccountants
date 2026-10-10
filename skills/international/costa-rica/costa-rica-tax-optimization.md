@@ -1,10 +1,10 @@
 ---
 name: costa-rica-tax-optimization
 description: Use this skill whenever asked about reducing tax in Costa Rica, tax planning, or legal strategies to minimise tax for a small business or self-employed person in Costa Rica. Trigger on phrases like "reduce tax Costa Rica", "régimen simplificado Costa Rica", "RTS", "territorial taxation", "PYME exemption", "Costa Rica dividends 15%", "save tax Costa Rica", "tax planning Costa Rica". This skill covers the Régimen de Tributación Simplificada, the territorial system (only CR-source income taxed), the traditional ISR regime and exempt minimum, dividends, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Costa Rican tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: CR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Costa Rica Tax Optimization
 
-## Costa Rica Tax Optimization Skill v0.1
+## Costa Rica Tax Optimization Skill v0.2
 
-**Tier 2 — research-verified. Sources: Ministerio de Hacienda / DGT, PwC Costa Rica. Figures must agree with `costa-rica-income-tax.md` / `costa-rica-social-contributions.md`. NOT yet signed off by a Costa Rican tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: Ley 7092 (consolidated text on SINALEVI), Ministerio de Hacienda / DGT. Figures must agree with `costa-rica-income-tax.md` / `costa-rica-social-contributions.md`. NOT yet signed off by a Costa Rican tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | VAT | RTS taxpayers **do not charge VAT** on sales |
 | ISR | Computed by applying a "rent factor" to the quarterly purchase base (form D-105-2) |
 
-Simple and low-admin for qualifying micro-businesses. (PwC; Hacienda) The 2025 reform took effect 13 Oct 2025.
+Simple and low-admin for qualifying micro-businesses. (Ley 7092 arts 72-74; Hacienda) The 2025 reform took effect 13 Oct 2025.
 
 ## Section 4 -- Traditional Regime & Extraction
 
