@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-10T20:09:03+00:00",
+ "generated_at": "2026-10-10T20:22:38+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -11522,7 +11522,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "kz-company-formation",
@@ -11535,7 +11535,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "kz-corporate-income-tax",
@@ -11548,7 +11548,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "kz-crypto-tax",
@@ -11613,7 +11613,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "kz-payroll-social",
@@ -11626,7 +11626,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "kz-payroll",
@@ -11652,7 +11652,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "kz-social-contributions",
@@ -11665,7 +11665,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "kz-tax-optimization",
@@ -11691,7 +11691,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "audit-quality-assurance-aqa",

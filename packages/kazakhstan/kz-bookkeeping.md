@@ -13,11 +13,11 @@ description: >
   Distinguishes obligations by tax regime (simplified declaration / упрощённая
   декларация vs general / общеустановленный) and explains when ИП are NOT
   required to keep full бухгалтерский учёт.
-version: 1.0
+version: 1.1
 jurisdiction: KZ
 tax_year: 2026
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-11
 category: bookkeeping
 depends_on:
   - income-tax-workflow-base
@@ -276,7 +276,7 @@ correctly on receipts per the 2026 ККМ rules.
 - New **Tax Code of the RK** (adopted 18.07.2025, effective 01.01.2026)
 - MoF orders on **ЭСФ issuance rules (2026)**, **ККМ application & receipt content
   (effective 01.01.2026)**, **goods-traceability mechanism**, and **СНТ** — verify nos.
-- PwC *Kazakhstan — Other taxes*; EY / Baker McKenzie / Moore / Dentons 2026 tax notes
+- EY / Baker McKenzie / Moore / Dentons 2026 tax notes
 
 ### Checklist (run before concluding)
 - [ ] Regime identified: simplified declaration / general (or patent/retail → escalate)?
