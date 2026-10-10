@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Kazakhst
 jurisdiction: KZ
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Registration authority** — Ministry of Justice (state registration of legal entities), issuing a Business Identification Number (BIN)  _(Law on State Registration of Legal Entities (https://secure-immigration.kz/en/company-registration-kazakhstan-guide-2025/))_
 - **Core incorporation documents** — Charter (and a foundation agreement where there is more than one founder); for foreign founders, legalized/apostilled and notarized translated corporate documents  _(Law on State Registration of Legal Entities (https://chandrawatpartners.com/how-to-incorporate-an-llc-too-llp-in-kazakhstan-key-insights-practical-overview/))_
 - **Incorporation timeline** — Small-business LLP registration is often completed within 1-3 business days once documents are in order (approx — confirm)  _(Law on State Registration of Legal Entities (https://leinonen.eu/kaz/news/establishing-a-llc-too-in-kazakhstan/))_
-- **Core annual compliance** — Annual CIT return by 31 March, periodic VAT returns (if registered), monthly payroll-tax reporting and statutory accounting records  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/corporate/tax-administration))_
+- **Core annual compliance** — Annual CIT return by 31 March of the following year (art. 359.1), quarterly VAT returns if registered with payment by the 25th of the second month after the quarter (arts 505 and 506), the quarterly individual income tax and social tax declaration by the 15th of the second month after the quarter (art. 445) with monthly payment of withheld tax and social tax by the 25th (art. 440.4, art. 560), and statutory accounting records  _(Tax Code of the Republic of Kazakhstan, Code No. 214-VIII of 18 July 2025 (in force from 1 January 2026), English text on adilet.zan.kz — https://adilet.zan.kz/eng/docs/K2500000214)_
 
 <!-- openaccountants-cta-block -->
 
