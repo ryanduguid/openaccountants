@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Curacao (tax year 2025) — r
 jurisdiction: CW
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax authority** — Inspectorate of Taxes (Inspectie der Belastingen); collection by the Receiver (Ontvanger)  _(General National Ordinance on National Taxes (Algemene landsverordening Landsbelastingen))_
 - **Basis of taxation** — Residents are taxed on worldwide income; non-residents are taxed only on Curacao-source income  _(Income Tax Ordinance (Landsverordening op de inkomstenbelasting 1943))_
 - **Headline personal income tax rates (2025)** — Progressive 9.75% to 30% across four brackets  _([Income Tax Ordinance (Landsverordening op de inkomstenbelasting 1943) — https://orbitax.com/news/country/article/Curacao-Sets-Individual-Income-57640](https://orbitax.com/news/country/article/Curacao-Sets-Individual-Income-57640))_
-- **Headline corporate profit tax rate (2025)** — 15% on taxable profit up to ANG 500,000; 22% on the excess  _([Profit Tax Ordinance (Landsverordening op de winstbelasting 1940) — https://taxsummaries.pwc.com/curacao](https://taxsummaries.pwc.com/curacao))_
+- **Headline corporate profit tax rate (2025)** — 15% on taxable profit up to ANG 500,000; 22% on the excess  _(Profit Tax Ordinance (Landsverordening op de winstbelasting 1940), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Does VAT/GST exist?** — No EU-style VAT. Curacao levies a turnover tax (Omzetbelasting, OB), a sales/turnover tax, not a creditable VAT  _(Turnover Tax Ordinance (Landsverordening omzetbelasting 1999))_
 - **Standard turnover tax (OB) rate** — 6%  _(Turnover Tax Ordinance (Landsverordening omzetbelasting 1999))_
 - **Personal income tax return deadline** — Generally within the period stated on the assessment notice; typically by 31 May following the tax year (extensions available) (approx — confirm exact date on notice)  _(General National Ordinance on National Taxes (Algemene landsverordening Landsbelastingen))_

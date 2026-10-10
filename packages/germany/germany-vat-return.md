@@ -1,11 +1,11 @@
 ---
 name: germany-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a German VAT return (Umsatzsteuer-Voranmeldung / UStVA) for a self-employed individual or very small business operating under the Regelbesteuerung in Germany. Trigger on phrases like "prepare VAT return", "do the German VAT", "fill in UStVA", "create the return", "Umsatzsteuer", "Vorsteuer", or any request involving German VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Germany only and only Regelbesteuerung (standard taxation). Kleinunternehmer, Organschaft, Differenzbesteuerung, partial exemption, and Ist-Versteuerung edge cases are all in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any German VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: DE
 category: international
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -764,7 +764,6 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 **Other:**
 10. VIES validation -- https://ec.europa.eu/taxation_customs/vies/
 11. ECB euro reference rates -- https://www.ecb.europa.eu/stats/eurofxref/
-12. PWC Tax Summaries Germany -- https://taxsummaries.pwc.com/germany/corporate/other-taxes (used for threshold verification)
 
 ### Key thresholds summary
 
@@ -813,7 +812,7 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 - **v2.0 (April 2026):** Full rewrite to align with three-tier OpenAccountants architecture (Malta v2.0 structure). Quick reference moved to top (Section 1). Supplier pattern library restructured as literal lookup tables (Section 3, 13 sub-tables). Six worked examples added (Section 4). Tier 1 rules compressed with no inline [T1]/[T2]/[T3] tags (Section 5). Tier 2 catalogue restructured to compressed format (Section 6, 7 items). Excel working paper specification added (Section 7). German bank statement reading guide added (Section 8). Onboarding moved to fallback role with inference rules (Section 9). Reference material moved to bottom (Section 10). Companion skill references added (vat-workflow-base v0.1 and eu-vat-directive v0.1). Refusal catalogue added (R-DE-1 through R-DE-5). Malta comparison section removed (now handled by cross-skill reference). Test suite removed (moved to eval harness).
 - **v1.0-draft (April 2026):** Initial skill. Standalone monolithic document covering UStG, Kennzahl mappings, reverse charge mechanics, blocked categories, edge cases, test suite, and Malta comparison. Awaiting Steuerberater validation.
 
-### Self-check (v2.0 of this document)
+### Self-check (v2.1 of this document)
 
 1. Quick reference at top with Kz table and conservative defaults: yes (Section 1).
 2. Supplier library as literal lookup tables: yes (Section 3, 13 sub-tables).
@@ -831,7 +830,7 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAcc
 14. Non-EU SaaS reverse charge (Kz 46/47) explicit: yes (Example 1 + Section 3.9).
 15. Kleinunternehmer refusal (R-DE-1) with 2025 thresholds explicit: yes (Section 2).
 
-## End of Germany VAT Return Skill v2.0
+## End of Germany VAT Return Skill v2.1
 
 This skill is incomplete without BOTH companion files loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture) AND `eu-vat-directive` v0.1 or later (Tier 2, EU directive content). Do not attempt to produce a UStVA without all three files loaded.
 

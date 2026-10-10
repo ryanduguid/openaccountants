@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Iran (tax year 2025) 
 jurisdiction: IR
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporate tax rate and base
 
-- **Standard corporate income tax rate** — 25% of net taxable profit (flat)  _([Direct Taxes Act (DTA), Article 105](https://taxsummaries.pwc.com/))_
+- **Standard corporate income tax rate** — 25% of net taxable profit (flat)  _(Direct Taxes Act, Article 105, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Tax base** — Net taxable profit = total income less deductible expenses and allowable depreciation, per the DTA  _(Direct Taxes Act (DTA), Article 106)_
 - **Corporate residence / scope** — Iranian legal entities are taxed on worldwide income; foreign companies are taxed on income derived from Iran (e.g. Iranian operations, contracts, or a permanent establishment)  _(Direct Taxes Act (DTA))_
 - **Reduced rate — listed companies** — Companies listed on the Tehran Stock Exchange / Iran Fara Bourse may receive a tax rate reduction (commonly a 10% reduction of the applicable rate, increasing if free-float conditions are met) (approx — confirm current discount percentage and conditions)  _(Direct Taxes Act (DTA), Article 143)_

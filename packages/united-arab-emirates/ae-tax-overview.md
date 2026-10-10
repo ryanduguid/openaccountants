@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for United Arab Emirates (tax yea
 jurisdiction: AE
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ The UAE has no personal income tax and only introduced a federal corporate tax i
 - **Corporate residence / tax base** — Resident juridical persons are taxed on worldwide income; non-residents are taxed on UAE-sourced income and income attributable to a UAE permanent establishment  _(Federal Decree-Law No. 47 of 2022 (Corporate Tax Law))_
 - **Corporate tax return deadline** — Return and payment within nine months after the end of the relevant tax period  _(Federal Decree-Law No. 47 of 2022 on the Taxation of Corporations and Businesses, Federal Tax Authority copy, Arts 48 and 53 — https://tax.gov.ae/Datafolder/Files/Legislation/Corporate%20Tax/CT%20law%20final/Federal%20Decree-Law%20No.%2047%20of%202022%20-%20For%20publishing.pdf ; The Official Portal of the UAE Government, Corporate tax — https://u.ae/en/information-and-services/finance-and-investment/taxation/corporate-tax)_
 - **VAT return deadline** — The tax return must reach the Authority by the 28th day following the end of each tax period (monthly or quarterly as assigned), and the payable tax is settled so that it is received by the same date  _(Executive Regulation of Federal Decree-Law No. 8 of 2017 on Value Added Tax (Cabinet Decision No. 52 of 2017 as amended), Federal Tax Authority consolidated text, Art. 64 (1) and (3) — https://tax.gov.ae/Datafolder/Files/Legislation/2026/Law-No-8-of-2017-and-its-amendments--09-2026.pdf)_
-- **Personal capital gains / wealth / inheritance tax** — None — no capital gains, wealth, estate, inheritance or gift tax on individuals  _(The Official Portal of the UAE Government, Taxation — https://u.ae/en/information-and-services/finance-and-investment/taxation ; PwC Worldwide Tax Summaries, Other taxes (inheritance, wealth and gift) — https://taxsummaries.pwc.com/united-arab-emirates/individual/other-taxes)_
+- **Personal capital gains / wealth / inheritance tax** — None — no capital gains, wealth, estate, inheritance or gift tax on individuals  _(The Official Portal of the UAE Government, Taxation — https://u.ae/en/information-and-services/finance-and-investment/taxation)_
 
 <!-- openaccountants-cta-block -->
 

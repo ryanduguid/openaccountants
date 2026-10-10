@@ -4,7 +4,7 @@ description: "Source-cited draft: vat / gst for Mali (tax year 2025) — rates, 
 jurisdiction: ML
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Value-added tax (TVA)
 
-- **Standard VAT rate** — 18 percent  _(Code Général des Impôts (Mali) — Taxe sur la Valeur Ajoutée (https://www.pwc.co.za/en/publications/vat-in-africa/mali-overview.html))_
+- **Standard VAT rate** — 18 percent  _(Code Général des Impôts (Mali), provisions on the Taxe sur la Valeur Ajoutée, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Reduced VAT rate** — 5 percent (A reduced rate of 5% applies to certain designated goods/services (approx — confirm scope; some periods have had only the single 18% rate))  _(Code Général des Impôts (Mali) — Taxe sur la Valeur Ajoutée)_
 - **Zero-rated supplies** — 0 percent (Exports are zero-rated (0%))  _(Code Général des Impôts (Mali) — Taxe sur la Valeur Ajoutée)_
 - **Exempt supplies** — Basic foodstuffs, healthcare, education and certain financial services are exempt (approx — confirm exempt list against CGI)  _(Code Général des Impôts (Mali) — Taxe sur la Valeur Ajoutée)_
