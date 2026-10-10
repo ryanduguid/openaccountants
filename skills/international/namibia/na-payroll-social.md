@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Namibia (ta
 jurisdiction: NA
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,8 +19,8 @@ Employers must withhold Pay-As-You-Earn (PAYE) income tax from employees' remune
 
 - **PAYE withholding** — Every employer paying remuneration must deduct employees' tax on the progressive individual scale from each payment, unless the Minister has authorised otherwise  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), Schedule 2 Part II para 2(1) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
 - **PAYE remittance deadline** — Within 20 days after the end of the month during which the employees' tax was deducted, or within 20 days after ceasing to be an employer  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), Schedule 2 Part II para 2(1) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
-- **Social Security (SSC) employee contribution rate** — 0.9% of basic wage  _(Social Security Act — https://taxsummaries.pwc.com/republic-of-namibia/individual/other-taxes)_
-- **Social Security (SSC) employer contribution rate** — 0.9% of basic wage  _(Social Security Act — https://taxsummaries.pwc.com/republic-of-namibia/individual/other-taxes)_
+- **Social Security (SSC) employee contribution rate** — 0.9% of basic wage  _(Social Security Act, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Social Security (SSC) employer contribution rate** — 0.9% of basic wage  _(Social Security Act, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Combined SSC contribution rate** — 1.8% total (0.9% employer + 0.9% employee)  _(Social Security Act — https://workforceafrica.com/statutory-deductions-in-namibia-employer-guide/)_
 - **SSC maximum monthly wage ceiling** — N$11,000 per month (max contribution N$99 per party) NAD  _(Social Security Act — https://thebrief.com.na/2025/01/social-security-revises-maternity-sick-leave-death-benefits-wage-ceilings/)_
 - **SSC minimum monthly wage floor** — N$500 per month (min contribution N$4.50 per party) NAD  _(Social Security Act — https://thebrief.com.na/2025/01/social-security-revises-maternity-sick-leave-death-benefits-wage-ceilings/)_

@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Timor-Le
 jurisdiction: TL
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ Business registration in Timor-Leste is centralised through SERVE, I.P. (Serviç
 - **Registration timeline** — Company registration through SERVE can be completed in a few days (often 1–3 working days for a simple Lda.) (approx — confirm current timeline)  _([SERVE, I.P. business registration procedures](https://serve.gov.tl/))_
 - **Registration cost** — Low nominal SERVE registration fees (typically under USD 100 for a basic registration) (approx — confirm current fee schedule)  _([SERVE, I.P. business registration procedures](https://serve.gov.tl/))_
 - **Tax identification number** — Businesses must obtain a Tax Identification Number (TIN) from the Timor-Leste Tax Authority before trading  _([Taxes and Duties Act (Law No. 8/2008)](https://attl.gov.tl/))_
-- **Core annual compliance — CIT return** — Lodge the annual income tax form at the time the Tax Administration designates (PwC reports the last day of the third month after year end), pay the balance with it, and pay monthly or quarterly income tax instalments during the year  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 62 to 64 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf ; PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/timor-leste/corporate/tax-administration)_
+- **Core annual compliance — CIT return** — Lodge the annual income tax form at the time the Tax Administration designates (practitioner summaries report the last day of the third month after year end), pay the balance with it, and pay monthly or quarterly income tax instalments during the year  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 62 to 64 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 - **Core annual compliance — monthly returns** — Monthly wage income tax, services tax, sales tax and withholding tax forms and payments by the 15th day after the end of each month  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 9.1, 18.1, 23.1 and 64.3 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 
 <!-- openaccountants-cta-block -->
