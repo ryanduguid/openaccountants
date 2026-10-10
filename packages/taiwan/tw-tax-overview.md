@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Taiwan (tax year 2025) — ra
 jurisdiction: TW
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,16 +17,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Taiwan (Republic of China) taxes individuals and profit-seeking enterprises on a largely territorial (Taiwan-source) basis, administered by the Ministry of Finance through the National Taxation Bureaus. The tax year is the calendar year and the currency is the New Taiwan Dollar (TWD/NT$).
 
-- **Standard tax year** — Calendar year (1 January – 31 December)  _([Income Tax Act](https://taxsummaries.pwc.com/taiwan))_
-- **Currency** — New Taiwan Dollar (TWD / NT$)  _([Ministry of Finance](https://taxsummaries.pwc.com/taiwan))_
+- **Standard tax year** — Calendar year (1 January – 31 December)  _(Income Tax Act, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Currency** — New Taiwan Dollar (TWD / NT$)  _(Ministry of Finance, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Tax authority** — Ministry of Finance, via the National Taxation Bureaus (e.g. NTB of Taipei) and eTax Portal  _([Ministry of Finance Organization Act](https://www.etax.nat.gov.tw/etwmain/en))_
-- **Basis of taxation** — Territorial — Taiwan-source income is taxed; foreign-source income is generally outside the regular income tax but may fall under the Income Basic Tax (AMT)  _([Income Tax Act](https://taxsummaries.pwc.com/taiwan/individual/residence))_
+- **Basis of taxation** — Territorial — Taiwan-source income is taxed; foreign-source income is generally outside the regular income tax but may fall under the Income Basic Tax (AMT)  _(Income Tax Act, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Headline personal income tax rate** — Progressive 5% to 40% for residents; the 40% bracket starts above TWD 5,190,000 of net taxable income for 2026 (TWD 4,980,000 for 2025)  _(Income Tax Act, English text amended 11 Sep 2026, art. 5 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003 ; eTax Portal, Progressive Tax Rate System — https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/progressive-tax-rate)_
 - **Headline corporate income tax rate** — 20% profit-seeking enterprise income tax  _(Income Tax Act, English text amended 11 Sep 2026, art. 5 para. 5 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 - **Does VAT/GST exist?** — Yes — a 5% value-added type business tax (VAT) applies to most goods and services; the Act sets a 5% to 10% band and the Executive Yuan applies 5%  _(Value-added and Non-value-added Business Tax Act, English text amended 28 May 2025, art. 10 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340080)_
 - **Annual individual income tax filing deadline** — 1 May – 31 May of the year following the tax year  _(Income Tax Act, English text amended 11 Sep 2026, art. 71 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 - **Annual corporate income tax filing deadline** — By 31 May following the fiscal year-end (last day of the fifth month after year-end for non-calendar years)  _(Income Tax Act, English text amended 11 Sep 2026, art. 71 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
-- **Income Basic Tax (Alternative Minimum Tax)** — Individuals 20%; enterprises 12% standard rate. A **15%** rate for in-scope MNE groups -- those with consolidated group revenue of EUR 750m or more in at least two of the four preceding fiscal years -- was announced by the Ministry of Finance on 28 August 2024 to take effect from 1 January 2025, and the Executive Yuan can set the IBT rate within statutory limits without a Legislative Yuan amendment. **Its status is genuinely unsettled and this guide does not assert either way**: PwC and the MoF's own announcement still describe the 15% as a draft proposal. Confirm the current MoF instrument before calculating a liability for an in-scope group. A 15% sensitivity calculation must be labelled as a scenario, not as tax due. Note it is not a Qualified Domestic Minimum Top-up Tax for Pillar Two purposes  _(Income Basic Tax Act, art. 8 and 13 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340115)_
+- **Income Basic Tax (Alternative Minimum Tax)** — Individuals 20%; enterprises 12% standard rate. A **15%** rate for in-scope MNE groups -- those with consolidated group revenue of EUR 750m or more in at least two of the four preceding fiscal years -- was announced by the Ministry of Finance on 28 August 2024 to take effect from 1 January 2025, and the Executive Yuan can set the IBT rate within statutory limits without a Legislative Yuan amendment. **Its status is genuinely unsettled and this guide does not assert either way**: practitioner summaries and the MoF's own announcement still describe the 15% as a draft proposal. Confirm the current MoF instrument before calculating a liability for an in-scope group. A 15% sensitivity calculation must be labelled as a scenario, not as tax due. Note it is not a Qualified Domestic Minimum Top-up Tax for Pillar Two purposes  _(Income Basic Tax Act, art. 8 and 13 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340115)_
 
 <!-- openaccountants-cta-block -->
 
