@@ -3,8 +3,8 @@ name: cg-company-formation
 description: "Source-cited draft: company formation & entity choice for Republic of Congo (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CG
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 category: formation
 tier: 2
@@ -73,7 +73,7 @@ Company law in the Republic of Congo is governed by the OHADA Uniform Act on Com
 - **Paid-up capital deposit** — Share capital must be deposited with an approved bank/notary before registration; deposit certificate forms part of the file  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
 - **Incorporation process** — Reserve name, notarise articles of association, deposit capital, register via the Guichet Unique, obtain tax ID (NIU) and trade register (RCCM) entry (approx — confirm)  _(OHADA Uniform Act; Guichet Unique procedures)_
 - **Incorporation timeline** — Roughly a few days to a few weeks via the Guichet Unique (approx — confirm)  _(Guichet Unique procedures)_
-- **Annual accounting compliance** — File annual SYSCOHADA financial statements (DSF) and the CIT return by 20 May  _([OHADA SYSCOHADA accounting framework; Code Général des Impôts (CGI)](https://taxsummaries.pwc.com/republic-of-congo/corporate/tax-administration))_
+- **Annual accounting compliance** — File the OHADA SYSCOHADA financial statements, certified by a chartered accountant where there is no statutory auditor, with the CIT return within four months of the close of the financial year (30 April for a 31 December year-end); the 20 May date applies to individuals' business-profit declarations; filing and payment are electronic for real-regime taxpayers  _(Loi n° 42-2025 du 31 décembre 2025 portant loi de finances pour 2026, Journal officiel édition spéciale n° 3-2026, CGI tome 1 arts 86 F, 94 B and 128 to 130 — https://sgg.cg/JO/2026/congo-jo-2026-3-2.pdf)_
 - **Statutory auditor (commissaire aux comptes)** — Mandatory for SA; required for SARL above OHADA size thresholds (approx — confirm)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
 
 <!-- openaccountants-cta-block -->
