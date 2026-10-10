@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Papua New Guinea (PNG) personal
 jurisdiction: PG
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
+version: 0.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,14 +13,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # papua-new-guinea-income-tax
 
-## Papua New Guinean Income Tax -- Employee & Self-Employed Skill v0.1
+## Papua New Guinean Income Tax -- Employee & Self-Employed Skill v0.2
 
 ## REGIME-CHANGE WARNING -- two regimes in play
 
 REGIME-CHANGE WARNING -- two regimes in play.
-- 2025 tax year is governed by the Income Tax Act 1959 (as amended), with salary/wages tax rates set by the Income Tax (Salary or Wages Tax)(Rates)(2025 Budget) Act 2024.
-- A new Income Tax Act 2025 entered into force on 1 January 2026 (first returns due in 2027). It rewrites and simplifies the law and introduces a narrow 15% CGT regime, changes to benefit valuations, and salary-packaging limits. The individual rate brackets and thresholds below are not reported to have changed under the new Act, but author/reviewer must re-verify 2026 figures against the Act text before publishing 2026-specific advice. [RESEARCH GAP — reviewer to confirm whether the new Income Tax Act 2025 alters individual brackets/thresholds for 2026; Act text at https://www.parliament.gov.pg/uploads/acts/25A-11.pdf]
-- The bracket figures in this skill are confirmed current as of the PwC Worldwide Tax Summaries review dated 27 March 2026.
+- The 2025 tax year is governed by the Income Tax Act 1959 (as amended), with rates set by the Income Tax, Dividend (Withholding) Tax and Interest (Withholding) Tax Rates Act 1984 and, for salary or wages tax, the Income Tax (Salary or Wages Tax) (Rates) Act 1979, each as amended by the 2024 Budget Acts of 2023 and the 2025 Budget Acts of 2024 (Nos. 17 and 18 of 2024).
+- The Income Tax Act 2025 commenced on 1 January 2026 and applies to tax years starting on or after that date (s 165); it repeals the 1959 Act and the Rates Acts for those years (s 163), while the repealed law continues to govern 2025 and earlier years (s 164). It introduces a narrow 15% CGT, a 30% assessment regime for non-residents with a PNG permanent establishment, and new benefit valuation rules. Schedule 1 of the Act keeps the resident brackets below unchanged for 2026, restores the 22% band on a non-resident's first K20,000 that the 2025 Budget had removed, and keeps a dependant tax credit (s 56).
+- The bracket figures in this skill are taken from the Acts as certified: the 2024 Budget Act (No. 25 of 2023) for residents from 1 January 2024, Table 2A of Act No. 18 of 2024 for non-residents in 2025, and Schedule 1 of the Income Tax Act 2025 for 2026. The IRC's salary and wages tax page still shows the 2024 non-resident table.
 
 ## Section 1 -- Quick Reference
 
@@ -34,20 +35,21 @@ REGIME-CHANGE WARNING -- two regimes in play.
 | Primary legislation (2025) | Income Tax Act 1959 (as amended); Income Tax (Salary or Wages Tax)(Rates)(2025 Budget) Act 2024 |
 | New legislation (from 2026) | Income Tax Act 2025 (in force 1 January 2026) |
 | Tax authority | Internal Revenue Commission (IRC) — irc.gov.pg |
-| Tax-free threshold (residents) | PGK 20,000 (effective 1 Jan 2024) — PwC PNG Individual, reviewed 27 Mar 2026 |
-| Top marginal rate | 42% on income over PGK 250,000 — PwC PNG Individual |
-| SWT remittance | Withheld fortnightly; remitted monthly to IRC before the 7th of the following month — PwC PNG Individual, Tax administration |
-| Annual return deadline (via tax agent) | 30 June of the following year — PwC PNG Individual, Tax administration |
-| Annual return deadline (self-lodged) | 28 February of the following year — PwC PNG Individual, Tax administration |
+| Tax-free threshold (residents) | PGK 20,000 (permanent from 1 Jan 2024) — Income Tax (Salary or Wages Tax) (Rates) (2024 Budget) (Amendment) Act 2023, Part 7 Table 1; IRC Salary and Wages Tax page; Income Tax Act 2025 Sch 1 Part I cl (1) |
+| Top marginal rate | 42% on income over PGK 250,000 — same Acts |
+| Non-resident first band | 2025: 30% from the first kina (Act No. 18 of 2024, Table 2A); 2026: 22% on the first PGK 20,000 (Income Tax Act 2025 Sch 1 Part I cl (2)) |
+| SWT remittance | Withheld fortnightly; remitted monthly to IRC by the 7th of the following month — IRC Key Tax Dates; IRC Salary and Wages Tax page |
+| Annual return deadline (2024 returns, lodged in 2025) | 28 February 2025, or a later date under the tax agent lodgement extension program — National Gazette G7 of 7 January 2025 (Income Tax Act 1959 s 223); the notice for 2025 returns is gazetted each January |
+| Annual return deadline (2026 and later tax years) | Individuals: within 3 months after year end (31 March); companies 6 months, or 9 months with a registered tax agent — Income Tax Act 2025 s 135 |
 | Validated by | Pending — requires sign-off by a PNG-registered tax agent / CPA PNG |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Resident Tax Rate Brackets (2024 onward; applies to 2025)
 
-- **Threshold elimination rule** — Tax-free threshold: PGK 20,000. The former 22% first band was eliminated for residents when the threshold rose to PGK 20,000 (effective 1 Jan 2024). Do not use older tables showing a 22% resident first bracket.  _(PwC PNG Individual, Taxes on personal income (reviewed 27 March 2026))_
+- **Threshold elimination rule** — Tax-free threshold: PGK 20,000. The former 22% first band was eliminated for residents when the threshold rose to PGK 20,000 (temporarily from 1 January 2023, permanently from 1 January 2024). Do not use older tables showing a 22% resident first bracket. The Income Tax Act 2025 keeps the same five resident bands for 2026 and sets the fortnightly equivalents at K770, K1,270, K2,693 and K9,615.  _(Income Tax (Salary or Wages Tax) (Rates) (2024 Budget) (Amendment) Act 2023 (No. 25 of 2023), Schedule 1 Part 7 Table 1, PacLII — https://www.paclii.org/pg/legis/num_act/itowt2024ba2023500/ ; Internal Revenue Commission, Public Notice: 2024 Budget - Employee Tax-Free Threshold and Dependant Rebate, 19 January 2024, linked from https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax ; Income Tax Act 2025, Schedule 1 Part I cl (1) and (3), IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
-**Resident Tax Rate Brackets (2024 onward; applies to 2025)**  _(PwC Worldwide Tax Summaries — PNG Individual, Taxes on personal income (reviewed 27 March 2026). Cross-check against the Income Tax (Salary or Wages Tax)(Rates)(2025 Budget) Act 2024 (IRC).)_
+**Resident Tax Rate Brackets (2024 onward; applies to 2025 and 2026)**  _(Income Tax (Salary or Wages Tax) (Rates) (2024 Budget) (Amendment) Act 2023, Part 7 Table 1; Internal Revenue Commission, Salary and Wages Tax (rates from 1 January 2024) — https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax ; Income Tax Act 2025, Schedule 1 Part I cl (1))_
 
 | Taxable income (PGK) | Marginal rate | Cumulative tax at top of band |
 | --- | --- | --- |
@@ -59,9 +61,18 @@ REGIME-CHANGE WARNING -- two regimes in play.
 
 ### Non-Resident Tax Rate Brackets
 
-- **Non-resident threshold rule** — Non-residents do not receive the tax-free threshold. The first Kina is taxed at 22%.  _(PwC Worldwide Tax Summaries — PNG Individual, Taxes on personal income (reviewed 27 March 2026))_
+- **Non-resident threshold rule** — Non-residents do not receive the tax-free threshold. For the 2025 tax year the first kina is taxed at 30%: the 2025 Budget Acts replaced the 22% band on the first K20,000 with a single 30% band to K33,000 for both salary or wages tax (Table 2A) and income tax on other income (Schedule 1A Table 5), both for the period from 1 January 2025. For the 2026 tax year the Income Tax Act 2025 restores the 22% band on the first K20,000.  _(Income Tax (Salary or Wages Tax) (Rates) (2025 Budget) (Amendment) Act 2024 (No. 18 of 2024), s 2 and Table 2A, IRC copy — https://static.irc.gov.pg/2025/January/9RMCiB-media-incometax-salaryorwagestaxratesact2024.pdf ; Income Tax, Dividend (Withholding) Tax and Interest (Withholding) Tax Rates (2025 Budget) (Amendment) Act 2024 (No. 17 of 2024), s 1 and Table 5, PacLII — https://www.paclii.org/pg/legis/num_act/itdtaitr2025ba2024808/ ; Income Tax Act 2025, Schedule 1 Part I cl (2) and (4), IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
-**Non-Resident Tax Rate Brackets**  _(PwC Worldwide Tax Summaries — PNG Individual, Taxes on personal income (reviewed 27 March 2026))_
+**Non-Resident Tax Rate Brackets (2025 tax year)**  _(Act No. 18 of 2024, Table 2A; Act No. 17 of 2024, Schedule 1A Table 5)_
+
+| Taxable income (PGK) | Marginal rate | Cumulative tax at top of band |
+| --- | --- | --- |
+| 0 -- 33,000 | 30% | K 9,900 |
+| 33,001 -- 70,000 | 35% | K 22,850 |
+| 70,001 -- 250,000 | 40% | K 94,850 |
+| Over 250,000 | 42% | -- |
+
+**Non-Resident Tax Rate Brackets (2026 tax year onwards)**  _(Income Tax Act 2025, Schedule 1 Part I cl (2); the fortnightly table in cl (4) applies 22% to the first K770)_
 
 | Taxable income (PGK) | Marginal rate | Cumulative tax at top of band |
 | --- | --- | --- |
@@ -73,7 +84,7 @@ REGIME-CHANGE WARNING -- two regimes in play.
 
 ### Superannuation (Compulsory) — Contribution Rates
 
-**Superannuation (Compulsory) — Contribution Rates**  _(PwC Worldwide Tax Summaries — PNG Individual, Other taxes (reviewed 27 March 2026); Superannuation (General Provisions) Act)_
+**Superannuation (Compulsory) — Contribution Rates**  _(Superannuation (General Provisions) Act 2000, ss 3, 76 and 77 (rates prescribed by regulation), PacLII — https://www.paclii.org/pg/legis/num_act/spa2000396/ ; Bank of Papua New Guinea, Public Notice: Employer and Employee Superannuation Contributions, 21 February 2025 — https://bankpng.gov.pg/sites/default/files/2025-02/20250221%20-%20Public%20Notice%20to%20Employer%20and%20Employee%20Superannuation%20Contribution.pdf)_
 
 | Party | Rate | Base |
 | --- | --- | --- |
@@ -89,10 +100,10 @@ No published Kina floor/ceiling on the contribution base was found. [RESEARCH GA
 
 | Item | Rate / Threshold | Source |
 | --- | --- | --- |
-| GST | 10% on most goods and services | PwC PNG Individual, Other taxes |
-| GST registration threshold | Annual turnover PGK 250,000 (voluntary below) | PwC PNG Individual, Other taxes; IRC GST page |
-| Corporate income tax | 30% (resident companies; PNG PEs of non-residents) | PwC PNG Corporate, Taxes on corporate income; IRC |
-| Capital gains tax (from 1 Jan 2026) | 15% — narrow; extractive/resource interests | PwC "Income Tax Act 2025"; KPMG Guide 2025 |
+| GST | 10% on most goods and services | Goods and Services Tax Act 2003, s 8; IRC GST page |
+| GST registration threshold | Annual turnover PGK 250,000 (voluntary below) | Goods and Services Tax Act 2003, s 43; IRC GST page |
+| Corporate income tax | 30% for resident companies (2025 and 2026); non-resident companies 48% in 2025, and from 2026 a PNG permanent establishment pays 30% plus 15% non-resident tax on repatriated profit | IRC Corporate Tax Rates page; Income Tax Act 2025, ss 14 and 71 and Sch 1 Part I cl (5) and (9) |
+| Capital gains tax (from 1 Jan 2026) | 15% — narrow; resource rights and interests deriving more than 50% of their value from them | Income Tax Act 2025, ss 16 and 83 and Sch 1 Part I cl (21) |
 | Minimum wage (2025) | PGK 3.50 / hour | ILO; WageIndicator |
 | Minimum wage (from 1 Jan 2026) | PGK 5.00 / hour (K5.25 in 2027; K5.50 in 2028) | ILO; WageIndicator |
 
@@ -106,7 +117,7 @@ No published Kina floor/ceiling on the contribution base was found. [RESEARCH GA
 | Unknown business-use % (vehicle, phone, home) | 0% deduction |
 | Unknown expense category | Not deductible |
 | Unknown whether income already SWT-taxed at source | Treat as final-taxed employment income (no return) until confirmed |
-| Unknown whether superannuation applies | Apply 6%/8.4% only for PNG-citizen employees > 59 days in any 3-month period |
+| Unknown whether superannuation applies | Apply 6%/8.4% only for PNG-citizen employees of an employer with 15 or more employees who have been continuously employed for three months or more |
 | Unknown asset / depreciation life | Flag for reviewer — capital allowance rates not set in this skill |
 | Unknown GST registration status | Assume not registered (turnover below PGK 250,000) until confirmed |
 
@@ -256,7 +267,7 @@ Payment for services. Client is GST-registered (turnover over PGK 250,000), so K
 `14/03/2025 ; BSP DD ; NAMBAWAN SUPER ; MEMBER CONTRIBUTION ; -147.00 ; PGK`
 
 **Reasoning:**
-Employee superannuation contribution is 6.0% of gross basic salary. For a fortnight where gross basic salary is K2,450, the employee contribution is 6% × 2,450 = K147.00 (the employer separately contributes 8.4% × 2,450 = K205.80). Source: PwC PNG Individual, Other taxes. The employee contribution is not a business expense.
+Employee superannuation contribution is 6.0% of gross basic salary. For a fortnight where gross basic salary is K2,450, the employee contribution is 6% × 2,450 = K147.00 (the employer separately contributes 8.4% × 2,450 = K205.80). Source: Superannuation (General Provisions) Act 2000, ss 76 and 77, and the Bank of Papua New Guinea's public notice of 21 February 2025. The employee contribution is not a business expense.
 
 **Classification:** Superannuation (employee 6%). Confirm gross basic salary excludes overtime/bonus/commission.
 
@@ -276,7 +287,7 @@ Vehicle fuel for a sole trader. Only the business-use percentage is deductible, 
 `28/09/2025 ; BSP TRANSFER ; INTERNAL REVENUE COMMISSION ; PROVISIONAL TAX 2025 ; -3,000.00 ; PGK`
 
 **Reasoning:**
-Provisional tax is a payment on account against the year's assessed income tax — it is not a business expense. It is credited against the final assessed liability, not deducted from income. Provisional tax is due no earlier than 30 September of the year of income.
+Provisional tax is a payment on account against the year's assessed income tax — it is not a business expense. It is credited against the final assessed liability, not deducted from income. For 2025 the IRC raises the provisional tax assessment from the last return lodged and the notice sets the due date; from the 2026 tax year three instalments fall due on 30 April, 31 July and 31 October (Income Tax Act 2025 s 138).
 
 **Classification:** Provisional tax paid (credit against assessed tax). NOT a deduction.
 
@@ -309,35 +320,37 @@ Transfer between the client's own accounts. Neither income nor expense.
 
 ### 5.1 Residency and the Tax-Free Threshold
 
-- **Residency threshold rule** — Residents receive a PGK 20,000 tax-free threshold (effective 1 Jan 2024). Non-residents receive no threshold — the first Kina is taxed at 22%. Residency must be confirmed before any rate table is applied (see R-PG-1).  _(PwC PNG Individual, Taxes on personal income)_
+- **Residency threshold rule** — Residents receive a PGK 20,000 tax-free threshold (effective 1 Jan 2024). Non-residents receive no threshold: in 2025 the first kina is taxed at 30%, and from 2026 at 22%. Residency must be confirmed before any rate table is applied (see R-PG-1). The IRC treats an individual as resident when they spend more than six months in PNG in the year, continuously or not, subject to any treaty; the Income Tax Act 2025 makes an individual resident if they reside in PNG, are domiciled there without a permanent place of abode elsewhere, or are present for 183 days or more in the tax year (unless their usual abode is abroad and they do not intend to take up residence).  _(Internal Revenue Commission, Taxation of Individuals — https://irc.gov.pg/pages/taxes/individuals/taxation-of-individuals ; Income Tax (Salary or Wages Tax) (Rates) (2025 Budget) (Amendment) Act 2024 (No. 18 of 2024), Table 2A, IRC copy — https://static.irc.gov.pg/2025/January/9RMCiB-media-incometax-salaryorwagestaxratesact2024.pdf ; Income Tax Act 2025, s 10(2) and Schedule 1 Part I cl (1) and (2), IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
 ### 5.2 Salary or Wages Tax (SWT / PAYE)
 
-- **SWT mechanics** — SWT is assessed fortnightly using standard fortnightly tax tables, regardless of actual pay frequency. It operates as a final tax for employees whose only income is fully-taxed employment income — those employees do not lodge an annual return. The employer withholds SWT each fortnight and remits monthly to IRC before the 7th day of the following month.  _(PwC PNG Individual, Tax administration; IRC SWT guidance)_
+- **SWT mechanics** — SWT is assessed fortnightly using the fortnightly tax tables, regardless of actual pay frequency (pay for other periods is converted to a fortnightly equivalent). It operates as a final tax for employees whose only income is fully-taxed employment income — those employees do not lodge an annual return, and no refund arises even where only one fortnight was worked. The employer withholds SWT each fortnight and remits it monthly to the IRC by the 7th day of the following month; an employer who fails to remit pays 20% of the amount plus 20% a year calculated daily. The Income Tax Act 2025 keeps this design: salary and wages tax is a fortnightly tax withheld by the employer (ss 13 and 149, Schedule 6) and is final where the employee is not required to lodge a return (s 13(6)).  _(Internal Revenue Commission, Salary and Wages Tax — https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax ; Internal Revenue Commission, Taxation of Individuals — https://irc.gov.pg/pages/taxes/individuals/taxation-of-individuals ; Internal Revenue Commission, Key Tax Dates — https://irc.gov.pg/key-tax-dates ; Income Tax Act 2025, ss 13, 136 and 149, IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
 ### 5.3 Who Must Lodge an Annual Return
 
-- **Annual return requirement** — Anyone with non-salary income must lodge an annual income tax return, including the self-employed and anyone with interest, dividends, rental, trust distribution, or partnership income.  _(PwC PNG Individual, Tax administration)_
+- **Annual return requirement** — A salary or wage earner lodges a return only where they earn other income above K100 in the year, or where they choose to lodge to claim the 25% rebate on work expenses above K200; everyone else with non-salary income must lodge, including the self-employed and anyone with interest, rental, trust or partnership income (the gazette lists the categories each year; gross investment income of K100 or less is excused unless the Commissioner General asks). Under the Income Tax Act 2025 an individual whose only assessable income is employment income taxed under s 149 need not lodge, as may a non-resident whose only PNG income bore non-resident tax (s 136).  _(Internal Revenue Commission, Taxation of Individuals — https://irc.gov.pg/pages/taxes/individuals/taxation-of-individuals ; National Gazette No. G7 of 7 January 2025, Lodgement of 2024 Income Tax Returns, Part A, PacLII — http://www.paclii.org/pg/other/PGGovGaz/2025/7.pdf ; Income Tax Act 2025, s 136, IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
 ### 5.4 Provisional Tax (self-employed / non-salary income)
 
-- **Provisional tax threshold** — Provisional tax applies to non-salary/wages income exceeding PGK 100.  _(PwC PNG Individual, Tax administration)_
-- **Provisional tax amount basis** — It is generally set equal to the prior year's assessed income tax (reducible by application lodged before the due date).  _(PwC PNG Individual, Tax administration)_
-- **Provisional tax due date** — Provisional tax payment is due no earlier than 30 September of the year of income.  _(PwC PNG Individual, Tax administration)_
-- **Assessment payment due date** — Tax shown on a notice of assessment is due within 30 days of service of the notice.  _(PwC PNG Individual, Tax administration)_
+- **Provisional tax, 2025 (Income Tax Act 1959)** — The Commissioner General issues a provisional tax assessment based on the last income tax return lodged so that tax on the year's non-salary income is collected during the year; companies pay three equal instalments on or before 30 April, 31 July and 31 October, and a taxpayer who expects a lower liability may apply to vary the assessment before the due date. The payments are credited against the assessed tax when the return is lodged. The due date for an individual's provisional tax is the date on the notice; this guide no longer carries an unsourced "not before 30 September" rule.  _(Internal Revenue Commission, Taxation of Companies (Provisional Tax) — https://irc.gov.pg/pages/taxes/businesses-and-employers/taxation-of-companies)_
+- **Provisional tax, 2026 onwards (Income Tax Act 2025, s 138)** — An income taxpayer pays three instalments by the last day of the month after the end of the third, sixth and ninth months of the tax year (30 April, 31 July and 31 October for a calendar year), each one third of the most recent assessed liability (after foreign tax credits, multiplied by the uplift factor in the Regulations) less tax withheld under Part X. An individual whose taxable income is reasonably expected to stay below the K20,000 tax-free threshold pays no instalments.  _(Income Tax Act 2025, s 138, IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
+- **Assessment payment due date** — Personal and company income tax shown on a notice of assessment is due 30 days after the notice, or as the IRC directs. From the 2026 tax year income tax on a self-assessment return is due on the return due date, and tax on any other return on the date in the notice of assessment (s 137).  _(Internal Revenue Commission, Tax Information — https://irc.gov.pg/pages/know-your-taxes/tax-information ; Income Tax Act 2025, s 137, IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
 ### 5.5 Filing Deadlines (individuals)
 
-**5.5 Filing Deadlines (individuals)**  _(PwC PNG Individual, Tax administration)_
+**5.5 Filing Deadlines (individuals)**  _(National Gazette No. G7 of 7 January 2025, Lodgement of 2024 Income Tax Returns, Part E (Income Tax Act 1959 s 223), PacLII — http://www.paclii.org/pg/other/PGGovGaz/2025/7.pdf ; Income Tax Act 2025, s 135, IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
-| Lodgement method | Deadline |
+| Tax year and lodgement method | Deadline |
 | --- | --- |
-| Through a registered tax agent | 30 June of the following year |
-| Self-lodged (no tax agent) | 28 February of the following year |
+| 2024 returns, self-lodged (no tax agent) | On or by 28 February 2025 (the Commissioner General gazettes the same notice each January; the 2025 return notice is published in January 2026) |
+| 2024 returns, through a registered tax agent | Such later date as the tax agent lodgement extension program provides; the gazette sets no fixed 30 June date |
+| 2026 and later tax years, individuals and partnerships | Within 3 months after the end of the tax year (31 March for a calendar year) |
+| 2026 and later tax years, companies | Within 6 months after year end, or 9 months where a registered tax agent prepares the return |
 
-### 5.6 Dependant Rebates — REPEALED
+### 5.6 Dependant Rebates — NOT REPEALED
 
-- **Dependant rebates repealed** — Dependant rebates have been repealed as a simplification measure and are no longer available for 2025 declarations. Do not apply them. (Historical, now-defunct detail: 1st dependant 15% of gross tax, max K450/min K45; 2nd & 3rd dependants 10% each, max K300/min K30; overall cap K1,050/yr; no rebate beyond 3 dependants.)  _(PwC PNG Individual, Other tax credits and incentives)_
+- **Dependant rebate repeal put on hold** — The 2024 Budget announced the repeal of the dependant rebate, but the IRC's public notice of 19 January 2024 records that the Government put the repeal on hold, the amendment was not certified and the IRC does not administer it: employers were told to keep applying the dependant columns of the fortnightly tables (Tables A, B and C) and to reverse any removal already made. The IRC's table text effective 1 January 2024 repeats that the Government decided not to proceed. Nothing in the 2025 Budget Acts repealed the rebate, so it applies to 2025 declarations. Secondary summaries that report the rebate as repealed are wrong on this point.  _(Internal Revenue Commission, Public Notice: 2024 Budget - Employee Tax-Free Threshold and Dependant Rebate, 19 January 2024, and Salary and Wages Tax Table Text Effective 1 January 2024, both linked from https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax)_
+- **Dependant tax credit from 2026 (Income Tax Act 2025, s 56)** — A resident individual who maintains a dependant (a spouse, an unmarried child under 16, a student child aged 16 to 24 in full-time education, an invalid relative, or a resident parent of either spouse, whose own income does not exceed K1,040 a year or K40 a fortnight) receives a credit of the lesser of 15% of the tax before credits or K450 for the first dependant, and the lesser of 10% or K300 for each other dependant, capped at the greater of 35% of the tax or K1,050 a year (so three dependants exhaust it); it cannot create a refund and is apportioned for part-year or shared maintenance. The fortnightly withholding formula deducts one twenty-sixth of the credit where the employee has lodged a declaration.  _(Income Tax Act 2025, s 56, Schedule 1 Part II cl (8) to (12) and Schedule 6 cl 2(3), IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
 ### 5.7 Superannuation
 
@@ -345,27 +358,31 @@ Transfer between the client's own accounts. Neither income nor expense.
 
 | Rule | Detail |
 | --- | --- |
-| Employer obligation | Mandatory for employers with **15 or more** employees — must register with an authorised fund |
-| Employee coverage | Compulsory for **PNG-citizen** employees working **> 59 days in any 3-month period**; voluntary for non-citizens |
-| Employee contribution | **6.0%** of gross basic salary (after-tax) |
-| Employer contribution | **8.4%** of gross basic salary (pre-tax) |
-| Contribution base | Gross **basic** salary — excludes overtime, bonus, commission |
-| Contribution ceiling | None found — [RESEARCH GAP — reviewer to confirm no salary cap on the contribution base] |
+| Employer obligation | Mandatory for employers employing or engaging **15 or more** employees (s 4(1)(a) with the Superannuation (Amendment) Regulation 2004); smaller employers may elect to contribute |
+| Employee coverage | Compulsory for **PNG-citizen** employees **continuously employed for three months or more**; mandatory contributions do not apply to non-citizens (ss 76(6) and 77(6), inserted 2013), who may contribute voluntarily |
+| Employee contribution | **6.0%** of base salary, deducted from pay (s 77) |
+| Employer contribution | **8.4%** of base salary from the employer's own funds (s 76) |
+| Contribution base | "Pay": gross salary, wages and commission earned on duty or paid leave and paid in cash — excludes overtime, allowances, bonuses, compensation and gifts (s 3) |
+| Contribution ceiling | None: the Act and the Bank's notice set no cap on the base |
+| Remittance | Employer contributions within 14 days of the end of each calendar month; employee deductions within 14 days of the deduction (s 78) |
 
-- **Superannuation legislation and funds** — Legislation: Superannuation (General Provisions) Act. Main authorised funds: Nambawan Super (public sector), Nasfund (private sector).  _(Superannuation (General Provisions) Act)_
+- **Superannuation legislation and funds** — Legislation: Superannuation (General Provisions) Act 2000, as amended in 2001, 2002, 2004, 2007 and 2013, with the Bank of Papua New Guinea as regulator. Main authorised funds: Nambawan Super (public sector), Nasfund (private sector). Employer contributions to an approved fund are exempt from salary or wages tax up to 15% of the employee's fully taxable salary, and from 2026 are deductible to the employer up to 15% of the employee's taxed employment income (ITA 2025 s 117).  _(Superannuation (General Provisions) Act 2000, ss 3, 4, 76 to 79, PacLII — https://www.paclii.org/pg/legis/num_act/spa2000396/ ; Superannuation (General Provisions) (Amendment) Act 2013, ss 6 and 7, PacLII — https://www.paclii.org/pg/legis/num_act/spa2013476/ ; Bank of Papua New Guinea, Public Notice: Employer and Employee Superannuation Contributions, 21 February 2025 — https://bankpng.gov.pg/sites/default/files/2025-02/20250221%20-%20Public%20Notice%20to%20Employer%20and%20Employee%20Superannuation%20Contribution.pdf ; Internal Revenue Commission, Taxation of Individuals (Exempt income) — https://irc.gov.pg/pages/taxes/individuals/taxation-of-individuals ; Income Tax Act 2025, s 117, IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
-**Superannuation withdrawal/distribution tax (concessional, by membership length)**  _(PwC PNG Individual, Other taxes)_
+**Superannuation withdrawal/distribution tax (concessional, by years of contributions)**  _(Internal Revenue Commission, Salary and Wages Tax (Superannuation) — https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax ; Income Tax Act 2025, s 119 and Schedule 1 Part I cl (12), IRC certified copy — https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf)_
 
-| Membership length | Withdrawal tax |
+| Years of contributions | Withdrawal tax (2025 IRC table; the same rates in the 2025 Act from 2026) |
 | --- | --- |
 | Under 5 years | Marginal rate |
 | 5 – 9 years | Lesser of 15% or marginal rate |
 | 9 – 15 years | Lesser of 8% or marginal rate |
-| Over 15 years | 2% |
+| 15 years or more | 2% |
+| Any period: 7 years or more of contributions and the member is over 50 or subject to enforced early retirement; death or permanent disability of the member | 2% |
+
+The 2025 Act taxes only the part of a pay-out not representing the member's own taxed contributions (s 119(2)); a lump sum rolled into a retirement savings account with an approved fund is not taxed (s 119(3)).
 
 ### 5.8 GST Interaction
 
-**5.8 GST Interaction**  _(PwC PNG Individual, Other taxes; IRC GST page)_
+**5.8 GST Interaction**  _(Goods and Services Tax Act 2003, ss 8 and 43, PacLII — https://www.paclii.org/pg/legis/num_act/gasta2003226/ ; Internal Revenue Commission, Goods and Services Tax — https://irc.gov.pg/pages/taxes/businesses-and-employers/goods-services-tax)_
 
 | Scenario | Income Tax Treatment |
 | --- | --- |
@@ -373,7 +390,7 @@ Transfer between the client's own accounts. Neither income nor expense.
 | GST-registered, input GST recovered | NOT an expense — exclude |
 | Not GST-registered (turnover < PGK 250,000) | All GST paid on purchases is part of the gross cost (deductible as expense) |
 
-- **GST rate and registration threshold** — GST rate 10%; registration threshold turnover PGK 250,000.  _(PwC PNG Individual, Other taxes; IRC GST page)_
+- **GST rate and registration threshold** — GST is charged at 10% on taxable supplies and imports (GST Act 2003 s 8); registration is compulsory where annual turnover exceeds, or is expected to exceed, K250,000 (s 43), voluntary below; monthly returns and payment are due by the 21st of the following month.  _(Goods and Services Tax Act 2003, ss 8 and 43, PacLII — https://www.paclii.org/pg/legis/num_act/gasta2003226/ ; Internal Revenue Commission, Goods and Services Tax — https://irc.gov.pg/pages/taxes/businesses-and-employers/goods-services-tax ; Internal Revenue Commission, Key Tax Dates — https://irc.gov.pg/key-tax-dates)_
 
 ### 5.9 Non-Deductible Expenses
 
@@ -397,9 +414,10 @@ Transfer between the client's own accounts. Neither income nor expense.
 | --- | --- | --- |
 | Late lodgement of income tax return | Additional tax up to **100% of the tax** for failure to furnish | KPMG PNG Tax Profile; IRC practice |
 | Late payment of income tax / provisional tax | **20% per annum** late-payment penalty | KPMG PNG Tax Profile |
-| SWT (PAYE) non-compliance | Commonly **20% flat additional tax plus 20% interest** on unremitted amounts; remittance due before the 7th of the following month | KPMG PNG Tax Profile; SmartBiz Pacific (IRC practice) |
+| SWT (PAYE) non-compliance | An employer who fails to remit pays a penalty of **20% of the amount not paid plus 20% a year calculated daily** from the due date, and may be fined K500 to K5,000; failing to deduct attracts the same fine and liability for the undeducted amount; remittance is due by the 7th of the following month | IRC, Salary and Wages Tax — https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax |
+| Failure to lodge a gazetted return (2024 and earlier years) | Offence under s 313 of the Income Tax Act 1959: court penalty of **K500 to K5,000 plus K50 for each day** the return is outstanding | National Gazette No. G7 of 7 January 2025, Part F — http://www.paclii.org/pg/other/PGGovGaz/2025/7.pdf |
 
-Caveat: these percentages come from Big-4 profile + secondary IRC-practice sources, not a directly-parsed IRC penalty schedule. [RESEARCH GAP — reviewer to re-confirm exact penalty percentages against the current statute text, including penalty provisions carried into the Income Tax Act 2025.]
+Caveat: the first two rows come from a Big-4 profile, not a directly-parsed IRC penalty schedule. [RESEARCH GAP — reviewer to re-confirm the late-lodgement and late-payment percentages against the Tax Administration Act 2017, which the Income Tax Act 2025 applies to income tax procedure (s 133).]
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -554,7 +572,7 @@ ONBOARDING QUESTIONS -- PAPUA NEW GUINEA INCOME TAX
 8. Phone/internet: what % is business use?
 9. Superannuation: which fund (Nambawan/Nasfund) and your gross basic salary?
 10. Provisional tax: total amount paid in the tax year?
-11. Will the return be lodged via a registered tax agent (30 June) or self-lodged (28 Feb)?
+11. Will the return be lodged via a registered tax agent (under the IRC's lodgement extension program) or self-lodged (28 Feb for 2024 and earlier years; 31 March from the 2026 tax year)?
 ```
 
 ## Section 10 -- Reference Material
@@ -565,29 +583,35 @@ ONBOARDING QUESTIONS -- PAPUA NEW GUINEA INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| Income tax (2025) | Income Tax Act 1959 (as amended) — IRC |
-| Salary/wages tax rates (2025) | Income Tax (Salary or Wages Tax)(Rates)(2025 Budget) Act 2024 — IRC |
-| New regime (from 2026) | Income Tax Act 2025 — Parliament of PNG (https://www.parliament.gov.pg/uploads/acts/25A-11.pdf) |
-| Rate brackets / thresholds | PwC Worldwide Tax Summaries — PNG Individual (reviewed 27 Mar 2026) |
-| SWT, provisional tax, deadlines | PwC PNG Individual, Tax administration |
-| Superannuation | Superannuation (General Provisions) Act; PwC PNG Individual, Other taxes |
-| GST | IRC GST page; PwC PNG Individual, Other taxes |
-| CGT (from 2026) | PwC "Income Tax Act 2025"; KPMG Guide to Income Tax Bill 2025 |
-| Penalties | KPMG PNG Tax Profile; IRC "Know your taxes" |
+| Income tax (2025) | Income Tax Act 1959 (as amended) and Income Tax, Dividend (Withholding) Tax and Interest (Withholding) Tax Rates Act 1984, as amended by Act No. 17 of 2024 — IRC Legislation Home; PacLII |
+| Salary/wages tax rates (2025) | Income Tax (Salary or Wages Tax) (Rates) Act 1979, as amended by Act No. 25 of 2023 (2024 Budget) and Act No. 18 of 2024 (2025 Budget) — IRC copy; PacLII |
+| New regime (from 2026) | Income Tax Act 2025 — IRC certified copy (ss 10, 13, 56, 119, 135 to 138, 149, 165; Schedules 1 and 6) |
+| Rate brackets / thresholds | The Acts above; IRC Salary and Wages Tax page and public notice of 19 January 2024 |
+| SWT, provisional tax, deadlines | IRC Salary and Wages Tax, Taxation of Individuals, Taxation of Companies, Tax Information and Key Tax Dates pages; National Gazette G7 of 7 January 2025; Income Tax Act 2025 ss 135 to 138 |
+| Superannuation | Superannuation (General Provisions) Act 2000 and 2013 Amendment Act (PacLII); Bank of Papua New Guinea public notice of 21 February 2025; IRC Salary and Wages Tax page (pay-out rates); Income Tax Act 2025 ss 117 and 119 |
+| GST | Goods and Services Tax Act 2003 (PacLII); IRC GST page |
+| CGT (from 2026) | Income Tax Act 2025, Part V and Schedule 1 |
+| Penalties | IRC Salary and Wages Tax page; National Gazette G7 of 2025; KPMG PNG Tax Profile for the unverified rows |
 | Tax authority | Internal Revenue Commission (IRC) — irc.gov.pg |
 
 ### Source URLs
 
-- PwC PNG Individual — Taxes on personal income: https://taxsummaries.pwc.com/papua-new-guinea/individual/taxes-on-personal-income
-- PwC PNG Individual — Tax administration: https://taxsummaries.pwc.com/papua-new-guinea/individual/tax-administration
-- PwC PNG Individual — Other taxes: https://taxsummaries.pwc.com/papua-new-guinea/individual/other-taxes
-- PwC PNG Individual — Other tax credits and incentives: https://taxsummaries.pwc.com/papua-new-guinea/individual/other-tax-credits-and-incentives
-- PwC PNG Corporate — Taxes on corporate income: https://taxsummaries.pwc.com/papua-new-guinea/corporate/taxes-on-corporate-income
-- PwC "Income Tax Act 2025": https://www.pwc.com/pg/en/publications/income-tax-act-2025.html
-- KPMG Guide to Income Tax Bill 2025: https://kpmg.com/pg/en/home/insights/2025/03/kpmg_guide_to_income_tax_bill_2025.html
-- Income Tax Act 2025 (full text): https://www.parliament.gov.pg/uploads/acts/25A-11.pdf
-- IRC SWT page: https://irc.gov.pg/taxpayer-information-kit/salary-or-wages-tax
-- IRC SWT rates PDF (2025 Budget Act): https://static.irc.gov.pg/2025/January/9RMCiB-media-incometax-salaryorwagestaxratesact2024.pdf
+- Income Tax Act 2025, IRC certified copy: https://static.irc.gov.pg/2025/October/0uvVvY-media-certifiedincometaxact2025.pdf
+- Income Tax (Salary or Wages Tax) (Rates) (2024 Budget) (Amendment) Act 2023 (No. 25 of 2023), PacLII: https://www.paclii.org/pg/legis/num_act/itowt2024ba2023500/
+- Income Tax (Salary or Wages Tax) (Rates) (2025 Budget) (Amendment) Act 2024 (No. 18 of 2024), IRC copy: https://static.irc.gov.pg/2025/January/9RMCiB-media-incometax-salaryorwagestaxratesact2024.pdf
+- Income Tax, Dividend (Withholding) Tax and Interest (Withholding) Tax Rates (2025 Budget) (Amendment) Act 2024 (No. 17 of 2024), PacLII: https://www.paclii.org/pg/legis/num_act/itdtaitr2025ba2024808/
+- IRC Legislation Home (consolidated Acts to 2021 and the certified 2025 Act): https://irc.gov.pg/pages/know-your-taxes/legislation-home
+- IRC Salary and Wages Tax (rates, allowances, superannuation and long service leave tables, penalties; links to the 19 January 2024 public notice and the 2024 table text): https://irc.gov.pg/pages/know-your-taxes/salary-wages-tax
+- IRC Taxation of Individuals: https://irc.gov.pg/pages/taxes/individuals/taxation-of-individuals
+- IRC Taxation of Companies (provisional tax): https://irc.gov.pg/pages/taxes/businesses-and-employers/taxation-of-companies
+- IRC Tax Information (payment due dates): https://irc.gov.pg/pages/know-your-taxes/tax-information
+- IRC Key Tax Dates: https://irc.gov.pg/key-tax-dates
+- IRC Goods and Services Tax: https://irc.gov.pg/pages/taxes/businesses-and-employers/goods-services-tax
+- National Gazette No. G7 of 7 January 2025, Lodgement of 2024 Income Tax Returns, PacLII: http://www.paclii.org/pg/other/PGGovGaz/2025/7.pdf
+- Superannuation (General Provisions) Act 2000, PacLII: https://www.paclii.org/pg/legis/num_act/spa2000396/
+- Superannuation (General Provisions) (Amendment) Act 2013, PacLII: https://www.paclii.org/pg/legis/num_act/spa2013476/
+- Bank of Papua New Guinea, Public Notice: Employer and Employee Superannuation Contributions, 21 February 2025: https://bankpng.gov.pg/sites/default/files/2025-02/20250221%20-%20Public%20Notice%20to%20Employer%20and%20Employee%20Superannuation%20Contribution.pdf
+- Goods and Services Tax Act 2003, PacLII: https://www.paclii.org/pg/legis/num_act/gasta2003226/
 - ILO — new national minimum wage for PNG: https://www.ilo.org/resource/news/ilo-welcomes-new-national-minimum-wage-papua-new-guinea
 
 ### Test Suite
@@ -606,8 +630,14 @@ Expected: 3,900 + 12,950 = K16,850 (matches cumulative-tax column).
 Input: Resident, taxable income K300,000.
 Expected: 88,850 (cumulative at 250,000) + 42% × 50,000 = 88,850 + 21,000 = K109,850.
 
-Input: Non-resident, taxable income K85,000.
+Input: Non-resident, taxable income K85,000, 2025 tax year.
+Expected: 9,900 (30% × 33,000) + 12,950 (35% × 37,000) + 6,000 (40% × 15,000) = K28,850 (= resident K22,850 + 30% × 20,000 lost threshold).
+
+Input: Non-resident, taxable income K85,000, 2026 tax year.
 Expected: 4,400 (22% × 20,000) + 3,900 (30% × 13,000) + 12,950 (35% × 37,000) + 6,000 (40% × 15,000) = K27,250 (= resident K22,850 + K4,400 lost threshold).
+
+Input: Resident employee, 2026 tax year, fortnightly employment income K1,000, one dependant declared (illustrative application of the Schedule 6 formula; use the IRC's published 2026 tables once issued).
+Expected: Schedule 6 formula (A × B) − C/26: tax on K1,000 at the fortnightly table = 30% × (1,000 − 770) = K69.00; dependant credit is the lesser of 15% of annual tax (26 × 69.00 = 1,794.00; 15% = K269.10) or K450, so C = K269.10 and C/26 = K10.35; SWT withheld = 69.00 − 10.35 = K58.65.
 
 Input: Gross basic fortnight salary K2,450 (excl. OT/bonus/commission).
 Expected: Employee 6% = K147.00; Employer 8.4% = K205.80; combined 14.4% = K352.80.
@@ -622,7 +652,8 @@ Expected: Provisional tax credited against assessed tax → balance due 22,850 �
 
 - NEVER apply a rate table without knowing residency (residents get the K20,000 threshold; non-residents do not)
 - NEVER apply the eliminated 22% first band to a resident
-- NEVER apply repealed dependant rebates
+- NEVER apply the 22% non-resident first band to a 2025 computation (it is 30% from the first kina in 2025 and returns at 22% only from the 2026 tax year)
+- NEVER drop the dependant rebate on the strength of the 2024 Budget announcement: the repeal was put on hold and the 2025 Act keeps the credit
 - NEVER treat provisional tax as a deduction — it is a credit against assessed tax
 - NEVER treat the employee superannuation contribution as a business expense
 - NEVER allow income tax or SWT itself as a deduction
