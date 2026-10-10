@@ -124,7 +124,6 @@ skills/international/uruguay::employee fonasa
 skills/international/uruguay::fonasa
 skills/international/uzbekistan::turnover tax
 skills/international/venezuela::paro forzoso
-skills/international/vietnam::unemployment insurance
 skills/international/zimbabwe::standard corporate income tax
 skills/us-states/md::allegany county
 skills/us-states/md::calvert county
