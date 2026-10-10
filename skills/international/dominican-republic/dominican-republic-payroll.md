@@ -1,10 +1,10 @@
 ---
 name: dominican-republic-payroll
 description: Use this skill whenever asked about Dominican Republic payroll processing for employed persons. Trigger on phrases like "Dominican Republic payroll", "nómina República Dominicana", "TSS", "retención ISR nómina", "descuentos de ley RD", "sueldo neto Dominican Republic", "net salary Dominican Republic", "AFP SFS descuento", "regalía pascual", "salario de navidad", "INFOTEP", "salario mínimo RD", "gross to net Dominican Republic", "employer cost Dominican Republic", or any question about computing employee pay, income-tax withholding (retención de ISR), or social-security (TSS) contributions for Dominican Republic-based employees. This skill covers ISR monthly withholding (DGII escala salarial), TSS contributions (AFP, SFS, SRL, INFOTEP), the regalía pascual (13th salary), minimum wage, payslip and monthly filing obligations. ALWAYS read this skill before processing any Dominican Republic payroll.
-version: 0.1
+version: 0.2
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 reviewed_by: Miguel Lantigua
 review_status: pending_review
 depends_on:
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Dominican Republic Payroll
 
-## Dominican Republic Payroll Skill v0.1
+## Dominican Republic Payroll Skill v0.2
 
-Tier 2 — research-verified. Figures sourced from the DGII (escala salarial FY2025), the Tesorería de la Seguridad Social (TSS), PwC Worldwide Tax Summaries (updated 5 Dec 2025), and Dominican payroll references. NOT yet signed off by a licensed Dominican contador. Treat every computation as an estimate pending professional review.
+Tier 2 — research-verified. Figures sourced from the DGII (escala salarial FY2025), the Tesorería de la Seguridad Social (TSS), the Código Tributario (Título II, art. 296) and Dominican payroll references. NOT yet signed off by a licensed Dominican contador. Treat every computation as an estimate pending professional review.
 
 ## Section 1 -- Quick Reference
 
@@ -63,7 +63,7 @@ See `dominican-republic-social-contributions.md` for full detail. Payroll summar
 
 ### Annual ISR scale (DGII, FY2025)
 
-**Annual ISR scale (DGII, FY2025)**  _(PwC (updated 5 Dec 2025); DGII escala salarial FY2025)_
+**Annual ISR scale (DGII, FY2025)**  _(DGII escala salarial FY2025 — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx; Código Tributario (Ley 11-92), Título II, DGII consolidated text, art. 296 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf)_
 
 | Annual taxable income (RD$) | Tax on lower limit | Rate on excess |
 | --- | --- | --- |
@@ -72,7 +72,7 @@ See `dominican-republic-social-contributions.md` for full detail. Payroll summar
 | 624,329.01 -- 867,123.00 | RD$31,216 | 20% over 624,329.00 |
 | 867,123.01 and above | RD$79,776 | 25% over 867,123.00 |
 
-Source: PwC (updated 5 Dec 2025); DGII escala salarial FY2025. The exempt threshold is inflation-indexed annually (FY2024 was RD$399,923). Withholding begins at ~RD$34,685/month of ISR base (416,220 ÷ 12). [RESEARCH GAP — reviewer to confirm the FY2026 scale before using it for 2026 payrolls.]
+Source: DGII escala salarial FY2025 (https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx); Código Tributario art. 296. The exempt threshold is inflation-indexed annually (FY2024 was RD$399,923). Withholding begins at ~RD$34,685/month of ISR base (416,220 ÷ 12). [RESEARCH GAP — reviewer to confirm the FY2026 scale before using it for 2026 payrolls.]
 
 ## Section 4 -- Worked Examples (gross-to-net, monthly; Apr-2025 ceilings)
 
