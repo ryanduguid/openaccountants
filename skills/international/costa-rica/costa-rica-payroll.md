@@ -1,10 +1,10 @@
 ---
 name: costa-rica-payroll
 description: Use this skill whenever asked about Costa Rica payroll processing for employed persons (planilla). Trigger on phrases like "Costa Rica payroll", "planilla CCSS", "cuotas obrero-patronales", "impuesto al salario", "retención salario Costa Rica", "cargas sociales", "CCSS contribution", "IVM", "SEM", "FODESAF", "aguinaldo", "cesantía", "salario mínimo Costa Rica", "TRIBU-CR retenciones", "form 137", "D-103 replacement", "net salary Costa Rica", "gross to net colones", "SICERE", "INS riesgos del trabajo", "base mínima contributiva", or any question about computing employee pay, salary withholding tax, or social-security contributions for Costa Rica-based employees. This skill covers impuesto al salario (monthly income-tax withholding), CCSS cuotas obrero-patronales (employee and employer), the separate INS work-risk policy, family tax credits, statutory aguinaldo, cesantía, minimum wage, and filing obligations via TRIBU-CR and SICERE. ALWAYS read this skill before processing any Costa Rica payroll.
-version: 0.3
+version: 0.4
 jurisdiction: CR
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Costa Rica Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
+# Costa Rica Payroll Skill v0.4 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Costa Rica Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
+## Costa Rica Payroll Skill v0.4 (Tier 2 — research-verified, pending accountant sign-off)
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Ley del Impuesto sobre la Renta No. 7092, Título II; Decreto Ejecutivo No. 44772-H (2025 brackets); Ley Constitutiva de la CCSS No. 17; Ley de Protección al Trabajador No. 7983; Código de Trabajo; Código de Normas y Procedimientos Tributarios (CNPT) Ley No. 4755; Decreto No. 44756-MTSS (2025 minimum wages) |
 | Filing portals | TRIBU-CR (income-tax withholding); SICERE / Oficina Virtual (CCSS planilla) |
 | Validated by | Pending -- requires sign-off by a Costa Rican Contador Público Autorizado (CPA) |
-| Skill version | 0.3 |
+| Skill version | 0.4 |
 
 > **Tier-2 note.** All figures below are research-verified against official decrees and Big-4 / legal-firm sources but have **not** yet been reviewed section-by-section by a warranted Costa Rican accountant. Where a figure rests on a single secondary source or the official table could not be machine-read, it is flagged inline as `[RESEARCH GAP — reviewer to confirm]`.
 
@@ -309,7 +309,7 @@ These items require a Costa Rican accountant's judgement and are flagged rather 
 5. **Multi-employer reconciliation.** If the employee has more than one employer/source, an annual reconciliation may be required — outside monthly withholding.
 6. **Specialised minimum-wage tiers** (técnico / universitario) and sector-specific arrangements.
 7. **Cesantía exact day-count** within the ~19.5–22 days/year sliding scale and the 8-year cap for a specific tenure.
-8. **Self-employed (actividad lucrativa) annual brackets** — out of scope for employer payroll; the live PwC page now renders 2026 figures and 2025 self-employed figures were not separately confirmed. `[RESEARCH GAP — out of scope]`
+8. **Self-employed (actividad lucrativa) annual brackets** — out of scope for employer payroll. The 2025 bands are in Decreto 44772-H art. 4 (exempt to ₡4,094,000) and the 2026 bands in Ley 7092 art. 15 c) as reformed by Ley 10667 (exempt to ₡6,244,000, reproduced in Decreto 45333-H art. 4); see `costa-rica-income-tax.md`.
 
 ## Section 15 -- Excel Working Paper Template
 

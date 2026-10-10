@@ -1,10 +1,10 @@
 ---
 name: costa-rica-social-contributions
 description: Use this skill whenever asked about Costa Rica social-security / payroll contributions ("cargas sociales") to the CCSS and the related employment-income withholding. Trigger on phrases like "how much CCSS do I pay", "cargas sociales Costa Rica", "CCSS employer cost", "patrono CCSS", "cuota obrero-patronal", "IVM contribution", "SEM CCSS", "planilla CCSS", "Banco Popular deduction", "FODESAF", "INA exemption", "deducciones de planilla", "retención del impuesto al trabajo dependiente", "Costa Rica payroll tax", "social charges 2025/2026", "trabajador independiente CCSS", or any question about Costa Rican employer/employee social contributions, the monthly salary-tax withholding, the minimum contribution base (BMC), or net-pay computation. Also trigger when classifying bank-statement lines that relate to CCSS planilla debits, SICERE payments, INS riesgos-del-trabajo premiums, Banco Popular debits, or D-103 withholding remittances on BAC, BN, BCR, Davivienda, or other Costa Rican bank statements. This skill covers the SEM and IVM rates (including the confirmed 1 Jan 2026 IVM increase), FODESAF/IMAS/INA/FCL/ROP/Banco Popular components, the INS work-risk premium, employer and employee totals, the BMC floor, the monthly progressive salary-tax brackets, family tax credits, aguinaldo treatment, minimum wage, forms D-103/D-101/D-151, the CCSS planilla cycle, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Costa Rican payroll / social-contribution work.
-version: 0.2
+version: 0.3
 jurisdiction: CR
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Costa Rica Social-Security Contributions (Cargas Sociales) & Salary-Tax Withholding —
 
-## Costa Rica Social-Security Contributions (Cargas Sociales) & Salary-Tax Withholding — Skill v0.2
+## Costa Rica Social-Security Contributions (Cargas Sociales) & Salary-Tax Withholding — Skill v0.3
 
-**Tier 2 (research-verified). Confidence: medium.** Several primary authority PDFs (Hacienda CP-103-2024, live CCSS pages, BDO/BLP, OECD) returned HTTP errors during research, so figures were corroborated from multiple secondary tax/legal sources (PwC, BDO, La Nación, EY, BLP, siemprealdía) rather than read off every authority page. Every figure carries an inline citation or an explicit `[RESEARCH GAP — reviewer to confirm]` marker. A Costa Rican CPA / contador público autorizado must sign off before any output is filed or relied upon.
+**Tier 2 (research-verified). Confidence: medium.** The statutory figures are read from the consolidated texts on SINALEVI (Ley 7092 arts 1, 20, 35, 42 and 59; Ley 2412 art. 7; Reglamento del Seguro de Salud art. 62; Reglamento del Seguro de IVM art. 33 and Transitorio XI), from Decreto Ejecutivo 44772-H (Alcance 195, 3 Dec 2024) and 45333-H (La Gaceta 229, 5 Dec 2025), from the CCSS employer page (its 2025 contribution scale, read from a Web Archive capture because ccss.sa.cr refused connections) and from Hacienda's TRIBU-CR declaration codes; the 2026-2028 IVM split (5.58% employer, 4.33% worker, 1.75% State) is the Transitorio XI schedule as reformed in sesión 9038 of 20 June 2019, read from the image SINALEVI publishes with the reform. The fund-by-fund LPT lines still rest on BDO, La Nación, EY and siemprealdía where the authority page was not read. Every figure carries an inline citation or an explicit `[RESEARCH GAP — reviewer to confirm]` marker. A Costa Rican CPA / contador público autorizado must sign off before any output is filed or relied upon.
 
 ## Section 1 — Quick reference
 
@@ -30,9 +30,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Minimum-wage authority** — Consejo Nacional de Salarios (CNS), under MTSS — https://www.mtss.go.cr
 - **Primary social legislation** — Ley Constitutiva de la CCSS (Ley No. 17); Ley de Protección al Trabajador (LPT, Ley No. 7983 — FCL, ROP/OPC, Banco Popular worker quota)
 - **Supporting legislation** — Reglamento del Seguro de Salud; Reglamento del Seguro de IVM; Reglamento para el Aseguramiento Contributivo de los Trabajadores Independientes; Ley del Impuesto sobre la Renta (Ley No. 7092)
-- **Tax basis** — TERRITORIAL — only Costa Rican-source income is taxed, regardless of nationality or residence  _(PwC)_
-- **Employer total social charge** — ≈26.67% of gross (2025) → ≈26.83% (from 1 Jan 2026)  _(siemprealdía, La Nación, BDO)_
-- **Employee total deduction** — ≈10.67% of gross (2025) → ≈10.83% (from 1 Jan 2026)  _(siemprealdía, BDO)_
+- **Tax basis** — TERRITORIAL — only Costa Rican-source income is taxed, regardless of nationality or residence  _(Ley 7092 art. 1)_
+- **Employer total social charge** — 26.67% of gross (2025) → 26.83% (from 1 Jan 2026): SEM 9.25% + IVM 5.42% (5.58% from 2026) + Banco Popular 0.25% + FODESAF 5.00% + IMAS 0.50% + INA 1.50% + LPT Banco Popular 0.25% + FCL 1.50% + OPC 2.00% + INS 1.00%  _(CCSS employer page, 2025 scale; Reglamento del Seguro de Salud art. 62; Reglamento del Seguro de IVM Transitorio XI, sesión 9038)_
+- **Employee total deduction** — 10.67% of gross (2025) → 10.83% (from 1 Jan 2026): SEM 5.50% + IVM 4.17% (4.33% from 2026) + Banco Popular 1.00%  _(CCSS employer page, 2025 scale; Reglamento del Seguro de Salud art. 62; Reglamento del Seguro de IVM Transitorio XI, sesión 9038)_
 - **Salary-tax (impuesto al trabajo dependiente)** — Monthly progressive, 0% to 25% — see Section 5  _(Decreto 44772-H, Hacienda)_
 - **Income-tax-exempt monthly salary (2025)** — ₡922,000/month  _(Decreto 44772-H)_
 - **Minimum wage (unskilled generic, 2026)** — ₡373,092.42/month, effective 1 Jan 2026 (general +1.63%)  _(CNS/MTSS)_
@@ -81,7 +81,7 @@ IVM increase is +0.16pp on each of employer and employee, effective 1 Jan 2026 t
 | Employer total social charge | Use 26.67% of gross for 2025 / 26.83% from 1 Jan 2026; treat INS work-risk as ~1% referential and flag that the real rate is set by the occupational risk class (siemprealdía, BDO) |
 | Employee total deduction | 10.67% of gross for 2025 / 10.83% from 1 Jan 2026 (SEM 5.50% + IVM 4.17%/4.33% + Banco Popular 1.00%) |
 | Low-wage contribution base | If gross salary is below the CCSS BMC (≈₡333,328 SEM / ≈₡311,990 IVM for 2025), compute contributions on the BMC, not the actual lower salary (CCSS BMC data) |
-| Aguinaldo (13th-month) | Exclude from BOTH CCSS social charges and income tax (PwC, MTSS) |
+| Aguinaldo (13th-month) | Exclude from BOTH CCSS social charges and income tax, the latter up to one twelfth of the year's salaries (Ley 2412 art. 7; Ley 7092 art. 35 b); MTSS) |
 | Unknown which year applies | Ask the period; if the payroll month is on/after Jan 2026, use the 2026 IVM rates |
 | Unknown employer size (INA exemption) | Assume INA 1.50% APPLIES (do not drop it) until headcount is confirmed (BDO) |
 | Unknown INS risk class | Use ~1% referential and flag for reviewer; do not present as final |
@@ -220,7 +220,7 @@ Six bank-statement / payroll classifications for a hypothetical San José servic
 **Input line:**
 `18/12/2025 ; PLANILLA AGUINALDO 2025 ; DEBITO ; 13 SALARIO ; -1.800.000 ; CRC`
 
-**Reasoning:** Matches "AGUINALDO" (pattern 3.4). The mandatory 13th-month salary, payable by 20 December, is exempt from BOTH CCSS social charges and income tax (PwC, MTSS). No CCSS or D-103 withholding applies to this line.
+**Reasoning:** Matches "AGUINALDO" (pattern 3.4). The mandatory 13th-month salary, payable by 20 December, is exempt from BOTH CCSS social charges and income tax (Ley 2412 art. 7; Ley 7092 art. 35 b); MTSS). No CCSS or D-103 withholding applies to this line.
 
 **Classification:** EXCLUDE from IVA. No social charge, no salary tax. Confirm it is the genuine aguinaldo (~1/12 of Dec–Nov earnings), not an ordinary bonus.
 
@@ -230,7 +230,7 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 1 — Territorial basis
 
-- **Territorial basis** — Costa Rica taxes individuals on Costa Rican-source income only, regardless of nationality or residence. Foreign-source income of a Costa Rican resident is outside scope.  _(PwC)_
+- **Territorial basis** — Costa Rica taxes individuals on Costa Rican-source income only, regardless of nationality or residence. Foreign-source income of a Costa Rican resident is outside scope.  _(Ley 7092 art. 1)_
 
 ### Rule 2 — Employment-income (salary) tax — monthly progressive brackets, 2025
 
@@ -274,7 +274,7 @@ Cumulative check: 43,000; 43,000 + (2,373,000−1,352,000)×15% = 43,000 + 153,1
 
 ### Rule 9 — Aguinaldo
 
-- **Aguinaldo** — The mandatory 13th-month salary (~1/12 of Dec–Nov total earnings), payable by 20 December, is exempt from both CCSS social charges and income tax.  _(PwC, MTSS)_
+- **Aguinaldo** — The mandatory 13th-month salary (one twelfth of the Dec–Nov earnings, Ley 2412 arts 1-2), payable by 20 December, is excluded from the CCSS contribution base (Ley 2412 art. 7) and from the salary tax up to one twelfth of the year's salaries (Ley 7092 art. 35 b)).  _(Ley 2412 arts 1, 2 and 7; Ley 7092 art. 35 b); MTSS)_
 
 ### Rule 10 — Minimum wage
 
@@ -284,9 +284,9 @@ Cumulative check: 43,000; 43,000 + (2,373,000−1,352,000)×15% = 43,000 + 153,1
 
 - **Self-employed contribution framework** — Independent workers must enroll with CCSS once monthly net income exceeds the reference income (≈₡327,338/month, the SEM BMC, 2025). Their contribution % follows a graduated five-tier scale by net-income band, not the fixed employer/employee split. Do not apply the employee 10.67% to a self-employed person.  _(Reglamento del Trabajador Independiente, CCSS)_
 
-### Rule 12 — Self-employment / business profit (utilidades) — annual brackets, 2026 period
+### Rule 12 — Self-employment / business profit (utilidades) — annual brackets, 2025 and 2026 periods
 
-**Utilidades annual brackets, 2026 period**  _(PwC)_
+**Utilidades annual brackets, 2025 period (returns due 15 March 2026)**  _(Decreto 44772-H art. 4, Alcance 195 to La Gaceta 227, 3 Dec 2024)_
 
 | Annual band (₡) | Rate |
 | --- | --- |
@@ -296,7 +296,15 @@ Cumulative check: 43,000; 43,000 + (2,373,000−1,352,000)×15% = 43,000 + 153,1
 | 10,200,000 – 20,442,000 | 20% |
 | over 20,442,000 | 25% |
 
-`[RESEARCH GAP — these are 2026-period figures; the 2025 utilidades brackets were not separately isolated.]`
+**Utilidades annual brackets, 2026 period**  _(Ley 7092 art. 15 c) as reformed by Ley 10667; Decreto 45333-H art. 4)_
+
+| Annual band (₡) | Rate |
+| --- | --- |
+| 0 – 6,244,000 | 0% |
+| 6,244,000 – 8,329,000 | 10% |
+| 8,329,000 – 10,414,000 | 15% |
+| 10,414,000 – 20,872,000 | 20% |
+| over 20,872,000 | 25% |
 
 ### Rule 13 — Filing
 
@@ -304,14 +312,14 @@ Cumulative check: 43,000; 43,000 + (2,373,000−1,352,000)×15% = 43,000 + 153,1
 
 | Item | Detail | Deadline | Source |
 | --- | --- | --- | --- |
-| D-103 (withholding return) | Monthly retención en la fuente — salaries, allowances, dividends, remittances abroad | First 15 calendar days of the following month | BLP, PwC |
+| D-103 (withholding return; TRIBU-CR 137 self-assessed, 207 informative) | Monthly retención en la fuente — salaries, allowances, dividends, remittances abroad | First 15 calendar days of the following month | Ley 7092 arts 42 and 31 quinquies; Hacienda, Nueva codificación |
 | CCSS planilla (SICERE) | Monthly employer social-contribution return and payment | Reporting window ~26th of month to the 4th business day of the next month | Section 4 / general practice |
-| D-101 (annual income tax) | Self-employed / businesses; calendar fiscal year Jan–Dec | ~15/16 March | PwC |
-| D-151 (annual informative) | Summary of clients, suppliers, specified payments/withholdings | Last business day of February | PwC |
+| D-101 (annual income tax; TRIBU-CR 101) | Self-employed / businesses; calendar fiscal year Jan–Dec | Two months and 15 calendar days after the period end: 15 March (16 March 2026 for FY2025, a Monday) | Ley 7092 arts 20-21; Hacienda |
+| D-151 (informative; TRIBU-CR 270) | Summary of clients, suppliers and specific expenses not covered by an electronic receipt; monthly under TRIBU-CR | Monthly, listed on the 26th of the following month in the TRIBU-CR fiscal calendar | Hacienda, Nueva codificación; TRIBU-CR calendario fiscal |
 
 ### Rule 14 — Non-resident withholding
 
-- **Non-resident withholding** — 25% withholding applies to personal services from a Costa Rican source paid to non-residents (remesas al exterior); reported on Form D-103.  _(PwC)_
+- **Non-resident withholding** — 25% withholding applies to fees, commissions and other personal services rendered without an employment relationship and paid to non-residents (remesas al exterior); salaries and pensions paid abroad bear 10%; reported on the remittance withholding return (TRIBU-CR 140).  _(Ley 7092 arts 23 d) and 59 b)-c))_
 
 ## Section 6 — Tier 2 catalogue (reviewer judgement)
 
@@ -437,7 +445,7 @@ If the client provides only a bank statement and no payroll detail:
 | Family credit — per child (2025) | ₡1,710/month | Decreto 44772-H |
 | Family credit — spouse (2025) | ₡2,590/month | Decreto 44772-H |
 | Minimum wage (unskilled generic, 2026) | ₡373,092.42/month | CNS/MTSS |
-| Non-resident services withholding | 25% (remesas al exterior) | PwC |
+| Non-resident services withholding | 25% on independent personal services (remesas al exterior); 10% on salaries and pensions | Ley 7092 art. 59 b)-c) |
 
 ### Penalties
 
