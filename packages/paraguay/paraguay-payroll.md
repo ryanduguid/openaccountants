@@ -1,11 +1,11 @@
 ---
 name: paraguay-payroll
 description: "Use this skill whenever asked about Paraguay payroll processing for employed persons. Trigger on phrases like \"Paraguay payroll\", \"Paraguayan payroll\", \"planilla de sueldos\", \"planilla de aporte obrero-patronal\", \"IPS Paraguay\", \"aporte obrero\", \"aporte patronal\", \"Instituto de Previsión Social\", \"social security Paraguay\", \"9% IPS\", \"16.5% IPS\", \"IRP Paraguay\", \"Impuesto a la Renta Personal\", \"renta de servicios personales\", \"Formulario 515\", \"Marangatú\", \"salario mínimo Paraguay\", \"minimum wage Paraguay\", \"aguinaldo\", \"13th salary Paraguay\", \"net salary Paraguay\", \"salario neto\", \"gross to net Paraguay\", \"employer contribution Paraguay\", \"DNIT payroll\", \"REI Paraguay\", or any question about computing employee pay, social security contributions, or the income-tax position for Paraguay-based employees. CRITICAL STRUCTURAL FACT: in Paraguay the employer is generally NOT an income-tax (IRP) withholding agent on dependent salaries — IRP is self-assessed annually by the individual. The employer's mandatory payroll burden is IPS social security (employee 9% + employer 16.5% commercial). This skill covers IPS contributions, the minimum wage, the mandatory aguinaldo (13th salary), the IRP self-assessment position, monthly IPS filing, and payslip/income-certificate obligations. ALWAYS read this skill before processing any Paraguay payroll."
-version: 0.1
+version: 0.2
 jurisdiction: PY
 tax_year: 2025
 tax_year_notes: "2025 (minimum-wage floor also stated at the 1 July 2026 level of PYG 3,044,000)"
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -14,11 +14,11 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Paraguay Payroll Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
+# Paraguay Payroll Skill v0.2 (Tier 2 — research-verified, reviewer sign-off pending)
 
-## Paraguay Payroll Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
+## Paraguay Payroll Skill v0.2 (Tier 2 — research-verified, reviewer sign-off pending)
 
-> **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority (DNIT, IPS, MTESS) or a Big-4 summary (PwC Worldwide Tax Summaries) and cited inline. It has **not** yet been section-by-section verified by a licensed Paraguayan accountant (contador público). Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
+> **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority (DNIT, IPS, MTESS) or to the statute (Ley N° 6380/2019; the consolidated IPS charter, Decreto-Ley N° 1.860/1950 as amended by Ley N° 98/1992) and cited inline. It has **not** yet been section-by-section verified by a licensed Paraguayan accountant (contador público). Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
 
 > **READ THIS FIRST — the single most important structural fact.** Paraguay levies a personal income tax (**IRP — Impuesto a la Renta Personal**), but for salaried (dependent) employees **IRP is NOT withheld at source by the employer.** It is a **self-assessed annual tax** filed by the individual taxpayer (Form 515 via Marangatú). The employer's mandatory monthly payroll burden is therefore primarily **IPS social security** (employee withholding + employer contribution). Do not "withhold IRP from a salary" — that is wrong for Paraguay. See Section 2.
 
@@ -33,14 +33,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Standard pay frequency | Monthly |
 | Tax year | Calendar year (1 January -- 31 December) |
 | Income-tax withholding on salaries | **None by the employer** — IRP is self-assessed annually by the individual (Ley N° 6380/2019; DNIT) |
-| Employee IPS contribution (commercial) | **9.0%** of gross wage, withheld by employer (PwC; IPS) |
-| Employer IPS contribution (commercial) | **16.5%** of gross wage (PwC; IPS) |
-| Combined IPS (commercial) | **25.5%** (PwC) |
-| Employee / employer IPS (financial sector) | **11% / 17%** (PwC) |
-| IPS base | Every wage item in cash or in kind, EXCEPT aguinaldo and family allowance; floor = minimum wage (PwC) |
-| IPS ceiling | No salary ceiling confirmed — **[RESEARCH GAP — reviewer to confirm]** (PwC reports none specified) |
-| IRP registration/filing threshold | Gross personal-service income **> PYG 80,000,000/year** (DNIT; PwC) |
-| IRP rates (net taxable income) | 8% up to 50,000,000; 9% on 50,000,001–150,000,000; 10% above 150,000,000 (PwC; DNIT) |
+| Employee IPS contribution (general regime) | **9.0%** of salary, withheld by the employer (IPS charter art. 17(a), as replaced by Ley N° 98/1992; IPS contribution table) |
+| Employer IPS contribution (general regime) | **16.5%** of salary: 14% under art. 17(b) of the IPS charter plus the employer levies the IPS collects on the same planilla: 1% for the SNPP (Ley N° 253/1971 art. 28), 0.50% for the malaria campaign (Ley N° 432/1973) and 1% for the Ministry of Public Health (Ley N° 446/1957), as the IPS contribution table applies (IPS) |
+| Combined IPS (general regime) | **25.5%** (IPS contribution table) |
+| Bank and finance employees | Not IPS: affiliated to the Caja de Jubilaciones y Pensiones de Empleados de Bancos y Afines, where Ley N° 2856/2005 art. 9 sets **13% employee / 19% employer** on total remuneration until the fund reaches financial balance (Ley N° 73/1991 had set 10% / 16%); confirm the rate the Caja currently applies |
+| IPS base | "Salario": the total remuneration in cash, kind or royalties, including overtime, piece-work, commissions, bonuses, severance pay, premiums and fees, EXCEPT aguinaldo (IPS charter art. 76(a)) and the family allowance (Ley N° 430/1973 art. 4(c)); floor = minimum wage (art. 20) |
+| IPS ceiling | None: the charter sets a floor (art. 20) and no ceiling on the contribution base |
+| IRP registration/filing threshold | Gross personal-service income **> PYG 80,000,000** counted from 1 January of the year (Ley N° 6380/2019 arts. 62 and 69; DNIT) |
+| IRP rates (net taxable income) | 8% up to 50,000,000; 9% on 50,000,001–150,000,000; 10% from 150,000,001 (Ley N° 6380/2019 art. 69; DNIT) |
 | Minimum wage | **PYG 3,044,000/month** (general) from 1 Jul 2026 (+5%); **PYG 2,899,048/month** from 1 Jul 2025. Paraguay adjusts in July, so a calendar year spans two floors (Decreto N° 6225 of 17 Jun 2026, reglamentado by MTESS Resolución N° 670/2026; MTESS Resolución N° 677/2025) |
 | Aguinaldo (13th salary) | Mandatory; 1/12 of annual remuneration; payable before 31 Dec; **exempt from IPS and IRP** (Ley N° 417/73) |
 | Tax authority | DNIT — Dirección Nacional de Ingresos Tributarios (absorbed the former SET in 2023) |
@@ -49,7 +49,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Ley N° 6380/2019 (IRP) + Decreto N° 3184/2019; Ley N° 98/92 & Ley N° 213/93 (Código del Trabajo, IPS), reformed by Ley N° 7446/2024; Ley N° 417/73 (aguinaldo) |
 | Filing portals | IPS: **REI** (Registro del Empleador por Internet); DNIT/IRP: **Marangatú** |
 | Validated by | Pending — requires sign-off by a licensed Paraguayan accountant |
-| Skill version | 0.1 (Tier 2) |
+| Skill version | 0.2 (Tier 2) |
 
 ## Section 2 -- Income Tax Position (IRP — self-assessed, NOT employer-withheld)
 
@@ -61,28 +61,28 @@ Paraguay **does** levy a personal income tax — **IRP (Impuesto a la Renta Pers
 
 ### 2.2 IRP registration / filing threshold (the employee's own obligation)
 
-- **Register & pay IRP only if gross personal-service income exceeds** — PYG 80,000,000 per year  _(DNIT — IRP portal; PwC — Taxes on personal income)_
+- **Register & pay IRP only if gross personal-service income exceeds** — PYG 80,000,000, counted from 1 January of the year. A person becomes a taxpayer once their gross taxable personal-service income passes that figure; in that first year the tax is computed on the gross income less the deductible outgoings from the day after the threshold is crossed, and in later years on the whole year  _(Ley N° 6380/2019, art. 62 — https://www.bacn.gov.py/archivos/9332/Ley+6380.pdf ; DNIT — IRP portal — https://www.dnit.gov.py/web/portal-institucional/irp)_
 
-> PwC: "If the taxpayer's gross income from the provision of personal services does not exceed PYG 80 million, they will not be required to pay the tax." Below the threshold, **no IRP is due** and no registration is required.
+> Ley N° 6380/2019 art. 69: where the taxpayer's gross personal-service income does not exceed PYG 80,000,000 in the fiscal year, they must meet the formal obligations the regulations set but are **not obliged to pay the tax**. Below the threshold, **no IRP is due**.
 
 ### 2.3 IRP progressive rate scale (on NET taxable income, FY2025)
 
-**IRP progressive rate scale**  _(PwC; DNIT)_
+**IRP progressive rate scale**  _(Ley N° 6380/2019, art. 69 — https://www.bacn.gov.py/archivos/9332/Ley+6380.pdf ; DNIT — IRP portal — https://www.dnit.gov.py/web/portal-institucional/irp)_
 
 | Net taxable income (PYG) | Rate | Source |
 | --- | --- | --- |
-| Up to 50,000,000 | 8% | PwC; DNIT |
-| 50,000,001 – 150,000,000 | 9% (on the slice in this band) | PwC; DNIT |
-| 150,000,001 and above | 10% (on the slice above 150,000,000) | PwC; DNIT |
+| Up to 50,000,000 | 8% | Ley 6380/2019 art. 69; DNIT |
+| 50,000,001 – 150,000,000 | 9% (on the slice in this band) | Ley 6380/2019 art. 69; DNIT |
+| 150,000,001 and above | 10% (on the slice from 150,000,001) | Ley 6380/2019 art. 69; DNIT |
 
-Applied to **net taxable income** (gross less allowable deductions), not gross. (DNIT — IRP portal; PwC.)
+Applied to **net taxable income** (gross less the deductions in art. 64), not gross; the rate for each band applies to the slice of net income within it and the tax is the sum of the slices (art. 69).
 
 **Cumulative-tax check (recomputed):**
 - At exactly 50,000,000 net: 8% × 50,000,000 = **4,000,000**.
 - At exactly 150,000,000 net: 4,000,000 + 9% × (150,000,000 − 50,000,000) = 4,000,000 + 9,000,000 = **13,000,000**.
 - At 200,000,000 net: 13,000,000 + 10% × (200,000,000 − 150,000,000) = 13,000,000 + 5,000,000 = **18,000,000**. (Self-verified — see Section 9, IRP illustration.)
 
-> A secondary search summary cited a "9% at PYG 100M" break-point; the authoritative PwC/DNIT brackets (50M / 150M thresholds) above are treated as correct. The flat **8%** rate also applies to capital gains and rental income.
+> A secondary search summary cited a "9% at PYG 100M" break-point; art. 69 of the law sets the bands at 50,000,000 and 150,000,000. The flat **8%** rate on capital income and gains, including rental income, is in art. 60.
 
 ### 2.4 IRP deductions
 
@@ -111,40 +111,40 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 
 ### 3.1 Employee contribution (Aporte Obrero)
 
-**Employee IPS contribution rates**  _(PwC — Other taxes; IPS/MTESS)_
+**Employee IPS contribution rates**  _(Decreto-Ley N° 1.860/1950, Carta Orgánica del IPS (consolidated), art. 17(a) as replaced by Ley N° 98/1992, arts. 20 and 76(a) — https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf ; IPS, Tabla de bases mínimas imponibles y porcentajes de aportes — https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=315)_
 
-| Sector | Employee rate | Base | Source |
+| Regime | Employee rate | Base | Source |
 | --- | --- | --- | --- |
-| Commercial / private-sector | **9.0%** of gross wage | Every wage item in cash or in kind, EXCEPT aguinaldo and family allowance; floor = minimum wage | PwC — Other taxes; IPS/MTESS |
-| Financial sector (banks/finance) | **11%** of gross wage | Same | PwC — Other taxes |
+| IPS general regime (private-sector employees, including domestic workers since Ley N° 6.338/2019) | **9.0%** of salary | Total remuneration in cash, kind or royalties, including overtime, commissions, bonuses, premiums and fees, EXCEPT aguinaldo (art. 76(a)) and the family allowance (Ley N° 430/1973 art. 4(c)); floor = minimum wage (art. 20) | IPS charter arts. 17(a), 20, 76(a); IPS |
+| Bank and finance employees (Caja de Jubilaciones y Pensiones de Empleados de Bancos y Afines, not IPS) | **13%** of total remuneration under Ley N° 2856/2005 art. 9(b), the rate that applies until the Caja reaches financial balance (Ley N° 73/1991 had 10%); confirm the Caja's current rate | Total remuneration without deduction except the family allowance and the legal aguinaldo; floor = the bank employees' minimum wage (art. 10) | Ley N° 2856/2005 arts. 9 and 10 — https://paraguay.justia.com/nacionales/leyes/ley-2856-jan-3-2006/gdoc |
 
-- **Floor, ceiling, and illegal over-deduction** — Floor: the contribution base cannot be below the legal minimum wage (Section 5). Ceiling: [RESEARCH GAP — reviewer to confirm] — no salary ceiling confirmed; PwC reports none specified. Treat IPS as uncapped on the full wage absent contrary authority. It is illegal to deduct more than the 9% employee share from the worker's pay (misappropriation offence) — the 16.5% employer share must be paid from the employer's own funds.  _(MTESS)_
+- **Floor, ceiling, and illegal over-deduction** — Floor: no contribution may be lower than the one due on the legal minimum wage, even for apprentices (charter art. 20; Section 5). Ceiling: the charter sets none, so IPS applies to the full salary. The deduction from the worker may not exceed 9% of the salary actually paid; the employer bears any difference needed to reach the minimum (art. 20), and the 16.5% employer share must be paid from the employer's own funds.  _(IPS charter art. 20 — https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf ; MTESS)_
 
 ## Section 4 -- Social Security (IPS) -- Employer Contributions
 
 ### 4.1 Employer contribution (Aporte Patronal)
 
-**Employer IPS contribution rates**  _(PwC — Other taxes; IPS/MTESS)_
+**Employer IPS contribution rates**  _(Decreto-Ley N° 1.860/1950, Carta Orgánica del IPS (consolidated), art. 17(b) as replaced by Ley N° 98/1992 — https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf ; Ley N° 432/1973 — https://paraguay.justia.com/nacionales/leyes/ley-432-dec-28-1973/gdoc ; IPS, Tabla de bases mínimas imponibles y porcentajes de aportes — https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=315)_
 
-| Sector | Employer rate | Base | Source |
+| Regime | Employer rate | Base | Source |
 | --- | --- | --- | --- |
-| Commercial / private-sector | **16.5%** of gross wage | Same base as employee | PwC — Other taxes; IPS/MTESS |
-| Financial sector (banks/finance) | **17%** of gross wage | Same | PwC — Other taxes |
+| IPS general regime | **16.5%** of salary: 14% under charter art. 17(b), plus the employer levies the IPS collects on the same planilla: 1% of total salaries for the SNPP (Ley N° 253/1971 art. 28, deposited with the IPS under art. 29), 0.50% for the malaria campaign (Ley N° 432/1973) and 1% for the Ministry of Public Health (Ley N° 446/1957), as the IPS contribution table applies | Same base as the employee | IPS charter art. 17(b); Ley N° 253/1971 — https://paraguay.justia.com/nacionales/leyes/ley-253-jul-2-1971/gdoc ; Ley N° 432/1973; IPS |
+| Bank and finance employers (Caja de Jubilaciones y Pensiones de Empleados de Bancos y Afines) | **19%** of total remuneration under Ley N° 2856/2005 art. 9(a), until the Caja reaches financial balance (Ley N° 73/1991 had 16%); confirm the Caja's current rate | Same base as the employee (art. 10) | Ley N° 2856/2005 arts. 9 and 10 |
 
 ### 4.2 Combined IPS burden
 
-**Combined IPS burden table**  _(PwC)_
+**Combined IPS burden table**  _(IPS contribution table; Ley N° 2856/2005 art. 9)_
 
-| Sector | Employee | Employer | Combined |
+| Regime | Employee | Employer | Combined |
 | --- | --- | --- | --- |
-| Commercial | 9.0% | 16.5% | **25.5%** |
-| Financial | 11% | 17% | **28%** |
+| IPS general regime | 9.0% | 16.5% | **25.5%** |
+| Caja Bancaria (statutory rates until financial balance) | 13% | 19% | **32%** |
 
-**Total-row check (recomputed):** commercial 9.0 + 16.5 = **25.5** ✓; financial 11 + 17 = **28** ✓. (Self-verified — both additions reconcile.)
+**Total-row check (recomputed):** general 9.0 + 16.5 = **25.5** ✓; Caja Bancaria 13 + 19 = **32** ✓. The 11% / 17% (28%) pair that some summaries print for the financial sector matches neither Ley N° 73/1991 (10% / 16%) nor Ley N° 2856/2005 (13% / 19%); do not use it without the Caja's own confirmation.
 
 ### 4.3 Aguinaldo is IPS-exempt
 
-- **Aguinaldo IPS exemption** — The aguinaldo is NOT subject to IPS contributions and is unembargable (no deductions permitted). See Section 6.  _(PwC; IPS)_
+- **Aguinaldo IPS exemption** — The aguinaldo is NOT subject to IPS contributions: the charter's definition of salary excludes aguinaldos (art. 76(a)), and the family allowance is likewise excluded (Ley N° 430/1973 art. 4(c), as the IPS states). It is unembargable (no deductions permitted). See Section 6.  _(IPS charter art. 76(a) — https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf ; IPS — https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=315)_
 
 ### 4.4 Payment deadline and penalties
 
@@ -155,7 +155,7 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 | Monthly filing | "Planilla de aporte obrero-patronal" via the **REI** system | IPS portal |
 | Payment deadline | Per the IPS **"Calendario de Pago"** (Resolución C.A. N° 066/2022); **"Mora Patronal"** (employer default) arises the day after the due date | Vouga / IPS |
 | Administrative component | Reduced to **1%** by Ley N° 7446/2024 | Ley N° 7446/2024 |
-| Late-payment surcharges (recargos moratorios) | Reported range **1% up to 50%** depending on months of delay, plus interest — **[RESEARCH GAP — reviewer to confirm]** (from secondary aggregators; confirm against the IPS resolution) | worki360/Deel (secondary) |
+| Late-payment surcharges (recargos) | The Consejo de Administración may impose surcharges on contributions paid after the 10th day of the month following the month the salaries were paid; the surcharge may not exceed **2% of the contributions for each month of delay, capped at 50%** (IPS charter art. 71). The exact schedule is in the Consejo's resolutions | IPS charter art. 71 — https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf |
 
 ## Section 5 -- Minimum Wage (Salario Mínimo)
 
@@ -191,13 +191,13 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 | Legal basis | Código del Trabajo + **Ley N° 417/73** | Ley N° 417/73 |
 | Amount | **1/12 of total remuneration earned during the calendar year** | Ley N° 417/73 |
 | Payment deadline | **Before 31 December** | Ley N° 417/73 |
-| IPS treatment | **Exempt** — not in the IPS base | PwC; IPS |
+| IPS treatment | **Exempt** — not in the IPS base | IPS charter art. 76(a); IPS |
 | IRP treatment | **Exempt** — not in the IRP taxable base | Ley N° 417/73 |
 | Other | Unembargable; no deductions permitted | finiquitojusto (secondary) |
 
 ## Section 7 -- Conservative Defaults
 
-- **Conservative defaults list** — When inputs are ambiguous, apply these defaults and flag the assumption to the user: 1. No employer IRP withholding. Never withhold IRP from a monthly salary. Compute IPS only; treat IRP as the employee's own annual self-assessment (Section 2). If asked to "withhold income tax from the salary", explain that Paraguay does not do this for dependent employees. 2. Sector = commercial. Apply the commercial IPS rates (employee 9.0% / employer 16.5%) unless the employer is a bank/finance entity, in which case use 11% / 17% (Section 4). 3. IPS base = full gross (every cash/in-kind wage item) excluding aguinaldo and family allowance, with the minimum-wage floor applied. Apply no ceiling (uncapped) absent confirmed authority — and flag this as a research gap (Section 3). 4. Currency: all amounts in PYG. Never assume USD or any other currency. 5. Pay period: take the minimum-wage floor from the month, since Paraguay adjusts in July rather than January — PYG 3,044,000 from 1 Jul 2026, PYG 2,899,048 from 1 Jul 2025 to 30 Jun 2026. If the month is unknown, ask; never assume the earlier floor. 6. Aguinaldo: compute as 1/12 of annual remuneration, exempt from both IPS and IRP (Section 6). 7. IRP deductions: do not assume any deduction figures — they are a research gap (Section 2.4). Compute IRP illustrations on stated net taxable income only, and label them estimates.
+- **Conservative defaults list** — When inputs are ambiguous, apply these defaults and flag the assumption to the user: 1. No employer IRP withholding. Never withhold IRP from a monthly salary. Compute IPS only; treat IRP as the employee's own annual self-assessment (Section 2). If asked to "withhold income tax from the salary", explain that Paraguay does not do this for dependent employees. 2. Regime = IPS general. Apply the general IPS rates (employee 9.0% / employer 16.5%) unless the employer is a bank or finance entity, whose staff belong to the Caja Bancaria (statutory 13% / 19% under Ley N° 2856/2005; confirm the Caja's current rate before computing) (Section 4). 3. IPS base = full salary (every cash, in-kind or royalty item) excluding aguinaldo and the family allowance, with the minimum-wage floor applied and no ceiling (Section 3). 4. Currency: all amounts in PYG. Never assume USD or any other currency. 5. Pay period: take the minimum-wage floor from the month, since Paraguay adjusts in July rather than January — PYG 3,044,000 from 1 Jul 2026, PYG 2,899,048 from 1 Jul 2025 to 30 Jun 2026. If the month is unknown, ask; never assume the earlier floor. 6. Aguinaldo: compute as 1/12 of annual remuneration, exempt from both IPS and IRP (Section 6). 7. IRP deductions: do not assume any deduction figures — they are a research gap (Section 2.4). Compute IRP illustrations on stated net taxable income only, and label them estimates.
 
 ### 8.1 Required inputs (must have before computing IPS payroll)
 
@@ -206,7 +206,7 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 | Input | Why needed |
 | --- | --- |
 | Monthly **gross** wage in PYG (cash + in kind) | Drives the IPS base and both contribution shares |
-| Employer sector (commercial vs financial) | Selects 9%/16.5% vs 11%/17% IPS rates |
+| Employer sector (IPS general regime vs bank or finance entity) | Selects the 9%/16.5% IPS rates or the Caja Bancaria regime (Section 4) |
 | Pay period (month/year) | Selects the minimum-wage floor. The floor changes on 1 July, not 1 January: PYG 3,044,000 from 1 Jul 2026, PYG 2,899,048 from 1 Jul 2025 to 30 Jun 2026 |
 | Whether the wage includes aguinaldo or family allowance | Those are excluded from the IPS base |
 | Employer registration with IPS (REI) | Must be registered before running payroll |
@@ -320,17 +320,17 @@ Reference only — the employer does not compute this. Employee with **net taxab
 
 ## Section 10 -- Tier 1 Rules (deterministic — apply mechanically)
 
-- **Tier 1 rules list** — 1. The employer does NOT withhold IRP from dependent salaries — IRP is the employee's annual self-assessment (Ley N° 6380/2019; DNIT). 2. Commercial-sector IPS: employee 9.0%, employer 16.5%, combined 25.5% (PwC; IPS). 3. Financial-sector IPS: employee 11%, employer 17%, combined 28% (PwC). 4. IPS base = every cash/in-kind wage item EXCEPT aguinaldo and family allowance (PwC). 5. IPS contribution base cannot fall below the minimum wage in force for the period (PYG 3,044,000 from 1 Jul 2026; PYG 2,899,048 from 1 Jul 2025) (PwC; MTESS). 6. No confirmed IPS salary ceiling — treat as uncapped, flag as a research gap (Section 3). 7. It is illegal to deduct more than the 9% employee share from the worker's pay; the 16.5% employer share is paid from employer funds (MTESS). 8. IRP applies only where the individual's gross personal-service income exceeds PYG 80,000,000/year (DNIT; PwC). 9. IRP rates on net taxable income: 8% up to 50,000,000; 9% on 50,000,001–150,000,000; 10% above 150,000,000 (PwC; DNIT). 10. Aguinaldo = 1/12 of annual remuneration, payable before 31 December, exempt from both IPS and IRP (Ley N° 417/73). 11. Minimum wage = PYG 3,044,000/month from 1 July 2026 (Decreto N° 6225; MTESS Res. 670/2026); PYG 2,899,048/month from 1 July 2025 (MTESS Res. 677/2025). 12. Monthly IPS planilla filed and paid via REI per the IPS "Calendario de Pago"; Mora Patronal arises the day after the due date (IPS; Vouga). 13. IRP Form 515 filed by the individual via Marangatú annually in March, keyed to the RUC ending digit (DNIT). 14. All payroll amounts in PYG (Guaraní) — never another currency.
+- **Tier 1 rules list** — 1. The employer does NOT withhold IRP from dependent salaries — IRP is the employee's annual self-assessment (Ley N° 6380/2019; DNIT). 2. IPS general regime: employee 9.0%, employer 16.5%, combined 25.5% (IPS charter art. 17 as replaced by Ley N° 98/1992; Ley N° 432/1973; IPS contribution table). 3. Bank and finance employees are in the Caja de Jubilaciones y Pensiones de Empleados de Bancos y Afines, not IPS: Ley N° 2856/2005 art. 9 sets 13% employee / 19% employer until the Caja reaches financial balance; confirm the current rate with the Caja. 4. IPS base = every cash, in-kind or royalty remuneration item EXCEPT aguinaldo (charter art. 76(a)) and the family allowance (Ley N° 430/1973 art. 4(c)). 5. IPS contribution base cannot fall below the minimum wage in force for the period (PYG 3,044,000 from 1 Jul 2026; PYG 2,899,048 from 1 Jul 2025) (charter art. 20; MTESS). 6. The charter sets no IPS salary ceiling (Section 3). 7. The deduction from the worker may not exceed 9% of the salary actually paid; the employer bears the difference to the minimum and pays the 16.5% employer share from its own funds (charter art. 20; MTESS). 8. IRP applies only where the individual's gross personal-service income exceeds PYG 80,000,000 counted from 1 January (Ley N° 6380/2019 arts. 62 and 69; DNIT). 9. IRP rates on net taxable income: 8% up to 50,000,000; 9% on 50,000,001–150,000,000; 10% from 150,000,001 (Ley N° 6380/2019 art. 69; DNIT). 10. Aguinaldo = 1/12 of annual remuneration, payable before 31 December, exempt from both IPS and IRP (Ley N° 417/73). 11. Minimum wage = PYG 3,044,000/month from 1 July 2026 (Decreto N° 6225; MTESS Res. 670/2026); PYG 2,899,048/month from 1 July 2025 (MTESS Res. 677/2025). 12. Monthly IPS planilla filed and paid via REI per the IPS "Calendario de Pago"; Mora Patronal arises the day after the due date (IPS; Vouga). 13. IRP Form 515 filed by the individual via Marangatú annually in March, keyed to the RUC ending digit (DNIT). 14. All payroll amounts in PYG (Guaraní) — never another currency.
 
 ## Section 11 -- Tier 2 Catalogue (reviewer judgement required)
 
 These items require a licensed Paraguayan accountant's judgement and/or confirmation against primary sources before reliance.
 
 1. IRP itemized deductions / caps (Section 2.4) — governed by Decreto N° 3184/2019; exact deductible categories and caps not quoted from a figure-level source. Confirm before computing any employee's net taxable income.
-2. IPS contribution ceiling (Section 3) — no salary cap confirmed; PwC reports none specified. Confirm whether IPS is truly uncapped.
-3. Exact IPS late-payment surcharge schedule (Section 4.4) — the 1%–50% range comes from secondary aggregators, not the IPS resolution. Confirm the exact recargos moratorios schedule.
+2. Caja Bancaria rates (Section 4) — Ley N° 2856/2005 art. 9 sets 13% / 19% "for the time needed to reach the Caja's financial balance", falling back towards the earlier percentages afterwards; confirm the rate the Caja applies today before computing a bank employee's payroll.
+3. IPS late-payment surcharge schedule (Section 4.4) — the charter caps surcharges at 2% of the contributions per month of delay and 50% overall (art. 71); confirm the current Consejo de Administración resolution for the exact schedule.
 4. IRP changes for 2026 (Section 2) — no IRP rate or threshold change has been confirmed for 2026; confirm against DNIT before applying one. The **minimum wage is no longer a research gap**: Decreto N° 6225 of 17 June 2026 raised it 5% to PYG 3,044,000 from 1 July 2026, regulated by MTESS Resolución N° 670/2026.
-5. IRP rate break-point (Section 2.3) — one secondary summary cited a "9% at PYG 100M" break-point; this skill uses the authoritative PwC/DNIT 50M/150M thresholds. Confirm against current DNIT guidance.
+5. IRP rate break-point (Section 2.3) — one secondary summary cited a "9% at PYG 100M" break-point; this skill uses the 50M/150M bands in art. 69 of Ley N° 6380/2019, which DNIT's IRP page repeats.
 6. In-kind wage valuation for the IPS base — confirm how in-kind remuneration is valued for contribution purposes.
 
 ### 12.1 Monthly — IPS planilla de aporte obrero-patronal
@@ -349,7 +349,7 @@ These items require a licensed Paraguayan accountant's judgement and/or confirma
 | --- | --- | --- | --- |
 | **Formulario 515** — Declaración Jurada IRP Rentas de Servicios Personales | The individual's annual self-assessment of IRP (only if gross personal-service income > PYG 80M/year) | Annually in **March**, per the "calendario perpetuo" keyed to the RUC ending digit | DNIT — IRP portal; Instructivo Form 515 |
 
-**IRP filing triggers** (the employee's obligation, not the employer's): gross personal-service income exceeding **PYG 80,000,000/year** (DNIT; PwC). The employer's only IRP role is to issue the payslip/income certificate the employee uses for Form 515.
+**IRP filing triggers** (the employee's obligation, not the employer's): gross personal-service income exceeding **PYG 80,000,000** counted from 1 January (Ley N° 6380/2019 arts. 62 and 69; DNIT). The return for fiscal year 2025 fell due in March 2026 on the day set by the last digit of the RUC under the calendario perpetuo (DNIT notice of 5 March 2026; RG N° 01/2007 and 38/2020). The employer's only IRP role is to issue the payslip/income certificate the employee uses for Form 515.
 
 ## Section 13 -- Thresholds Reference Table
 
@@ -357,16 +357,16 @@ These items require a licensed Paraguayan accountant's judgement and/or confirma
 
 | Threshold | Value | Source |
 | --- | --- | --- |
-| IPS employee rate (commercial) | 9.0% of gross | PwC; IPS |
-| IPS employer rate (commercial) | 16.5% of gross | PwC; IPS |
-| IPS combined (commercial) | 25.5% | PwC |
-| IPS employee / employer (financial) | 11% / 17% | PwC |
-| IPS base floor | Minimum wage: PYG 3,044,000 from 1 Jul 2026; PYG 2,899,048 from 1 Jul 2025 | PwC; MTESS |
-| IPS ceiling | None confirmed — **[RESEARCH GAP — reviewer to confirm]** | PwC (reports none) |
-| IRP registration/filing threshold | Gross personal-service income > PYG 80,000,000/year | DNIT; PwC |
-| IRP rate band 1 | 8% on net taxable income up to 50,000,000 | PwC; DNIT |
-| IRP rate band 2 | 9% on net taxable income 50,000,001–150,000,000 | PwC; DNIT |
-| IRP rate band 3 | 10% on net taxable income above 150,000,000 | PwC; DNIT |
+| IPS employee rate (general regime) | 9.0% of salary | IPS charter art. 17(a); IPS |
+| IPS employer rate (general regime) | 16.5% of salary (14% charter art. 17(b) plus 1% SNPP, 0.50% malaria campaign and 1% Ministry of Public Health levies) | IPS charter art. 17(b); Leyes N° 253/1971, 432/1973 and 446/1957; IPS |
+| IPS combined (general regime) | 25.5% | IPS contribution table |
+| Caja Bancaria employee / employer (bank and finance staff, not IPS) | 13% / 19% by statute until financial balance; confirm the current rate | Ley N° 2856/2005 art. 9 |
+| IPS base floor | Minimum wage: PYG 3,044,000 from 1 Jul 2026; PYG 2,899,048 from 1 Jul 2025 | IPS charter art. 20; MTESS |
+| IPS ceiling | None in the charter | IPS charter arts. 17 and 20 |
+| IRP registration/filing threshold | Gross personal-service income > PYG 80,000,000 counted from 1 January | Ley N° 6380/2019 arts. 62 and 69; DNIT |
+| IRP rate band 1 | 8% on net taxable income up to 50,000,000 | Ley N° 6380/2019 art. 69; DNIT |
+| IRP rate band 2 | 9% on net taxable income 50,000,001–150,000,000 | Ley N° 6380/2019 art. 69; DNIT |
+| IRP rate band 3 | 10% on net taxable income from 150,000,001 | Ley N° 6380/2019 art. 69; DNIT |
 | Minimum wage | PYG 3,044,000/month from 1 Jul 2026; PYG 2,899,048/month from 1 Jul 2025 | Decreto N° 6225; MTESS Resoluciones N° 670/2026 and N° 677/2025 |
 | Aguinaldo | 1/12 of annual remuneration; before 31 Dec; IPS & IRP exempt | Ley N° 417/73 |
 | IPS administrative component | 1% (post Ley N° 7446/2024) | Ley N° 7446/2024 |
@@ -483,8 +483,13 @@ If any required input is missing, state what is missing and do not fabricate a f
 
 | # | Title | Publisher | URL |
 | --- | --- | --- | --- |
-| 1 | Paraguay — Individual — Taxes on personal income (IRP) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/paraguay/individual/taxes-on-personal-income |
-| 2 | Paraguay — Individual — Other taxes (IPS social security) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/paraguay/individual/other-taxes |
+| 1 | Ley N° 6380/2019 "De Modernización y Simplificación del Sistema Tributario Nacional" (IRP arts. 47-70; IVA art. 90) | BACN (Biblioteca y Archivo Central del Congreso) | https://www.bacn.gov.py/archivos/9332/Ley+6380.pdf |
+| 2 | Decreto-Ley N° 1.860/1950, Carta Orgánica del IPS, consolidated with Ley N° 98/1992 and later amendments (arts. 17, 20, 71, 76) | Portal Unificado de Información Pública | https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf |
+| 2a | Tabla de bases mínimas imponibles y porcentajes de aportes al IPS | IPS | https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=315 |
+| 2b | Ley N° 432/1973 (0.50% additional employer contribution collected by the IPS) | Justia Paraguay (transcription) | https://paraguay.justia.com/nacionales/leyes/ley-432-dec-28-1973/gdoc |
+| 2b-i | Ley N° 253/1971 (SNPP), arts. 28-29: 1% of total salaries, deposited with the IPS together with the social-security contributions | Justia Paraguay (transcription) | https://paraguay.justia.com/nacionales/leyes/ley-253-jul-2-1971/gdoc |
+| 2c | Ley N° 2856/2005 (Caja de Jubilaciones y Pensiones de Empleados de Bancos y Afines), arts. 9 and 10; Ley N° 73/1991 for the earlier rates | Justia Paraguay (transcription) | https://paraguay.justia.com/nacionales/leyes/ley-2856-jan-3-2006/gdoc |
+| 2d | Calendario Perpetuo de Vencimientos (RG N° 01/2007 and 38/2020), DNIT notice of 26 March 2025 | DNIT | https://www.dnit.gov.py/web/portal-institucional/w/calendario-perpetuo-continua-vigente-para-el-iva-irp-y-rentas |
 | 3 | IRP — Impuesto a la Renta Personal (institutional portal) | DNIT | https://www.dnit.gov.py/en/web/portal-institucional/irp |
 | 4 | IRP Cartilla (al 30.07.24) | DNIT | https://www.dnit.gov.py/documents/20123/233435/IRP+Cartilla+al+30.07.24.pdf |
 | 5 | Instructivo del Formulario N° 515 (IRP RSP) | DNIT | https://www.dnit.gov.py/documents/47797/47809/ |
