@@ -4,7 +4,7 @@ description: "Source-cited draft: company formation & entity choice for Iraq (ta
 jurisdiction: IQ
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,7 +29,7 @@ Companies are formed under Companies Law No. 21 of 1997 (as amended), with the L
 - **Step — tax registration** — Obtain tax clearance from the General Commission for Taxes and register with the tax authority  _(Income Tax Law No. 113 of 1982 (https://bridgewest.eu/company-formation-iraq/))_
 - **Incorporation timeline** — Approximately 12 weeks (approx — confirm)  _(Companies Law No. 21 of 1997 (https://bridgewest.eu/company-formation-iraq/))_
 - **Annual compliance — accounting books** — Legalize accounting books at the Accountants Union and maintain records under the Iraqi unified accounting system  _(Companies Law No. 21 of 1997 (https://bridgewest.eu/company-formation-iraq/))_
-- **Annual compliance — tax return** — File the annual corporate income tax return by 31 May and undergo the mandatory tax inspection  _(Income Tax Law No. 113 of 1982 (https://taxsummaries.pwc.com/iraq/corporate/tax-administration))_
+- **Annual compliance — tax return** — File the annual corporate income tax return by 31 May (before the first day of June of the assessment year) and undergo the mandatory tax inspection  _(Income Tax Law No. 113 of 1982 as amended (to Coalition Provisional Authority Order 49 of 2004), Arabic text published by the General Commission for Taxes, arts 27(2) and 28 — https://tax.mof.gov.iq/uploads/Najwan/law/Income-Tax-Law-No.-113-of-1982-Ar.pdf)_
 
 <!-- openaccountants-cta-block -->
 
