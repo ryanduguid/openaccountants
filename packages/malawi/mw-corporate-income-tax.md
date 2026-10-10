@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Malawi (tax year 2025
 jurisdiction: MW
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Withholding tax on royalties** — **20% where the recipient is resident**, **15% where the recipient is non-resident**, before treaty relief. This line previously read "20% (non-resident)", which has the split the wrong way round and over-deducts five points from a non-resident licensor. The resident 20% is described in the sources consulted as an **advance** tax creditable against the final liability; the non-resident 15% is **final**. Both readings rest on secondary sources because MRA's own schedule page could not be retrieved — a reviewer should confirm the split against the Fourteenth Schedule before this is relied on percent  _(Taxation Act (Chapter 41:01), Fourteenth Schedule; International Trade Portal, Malawi tax rates; SA Tax Guide, Malawi taxes overview)_
 - **Withholding tax on non-resident payments (general)** — Any income arising from a Malawi source and payable to a person not resident in Malawi is liable to a **final withholding tax of 15% of the gross**, unless a treaty reduces it. This is the rule that sets the non-resident figures above, and it is why the resident rates are the higher ones: 20% on a resident is an advance against a later assessment, whereas 15% on a non-resident is the whole tax  _(Taxation Act (Chapter 41:01), Fourteenth Schedule; International Trade Portal, Malawi tax rates)_
 - **WHT on non-resident payments (mining project income)** — 10% on interest, royalty, independent personal services or dividend from a mining project  _(Taxation Act (Chapter 41:01))_
-- **Corporate return filing & balance payment** — Within 180 days of the financial year end  _([Taxation Act (Chapter 41:01)](https://taxsummaries.pwc.com/quick-charts/corporate-income-tax-cit-due-dates))_
+- **Corporate return filing & balance payment** — Within 180 days of the financial year end  _(Taxation Act (Chapter 41:01), return and payment provisions, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Provisional (quarterly) tax** — Provisional tax paid quarterly; instalments must total at least 90% of the final liability (approx — confirm exact quarterly due dates)  _(Taxation Act (Chapter 41:01) (as described at [globallawexperts.com](https://globallawexperts.com/commercial-lawyers-malawi-2026-paye-withholding-tax-corporate-tax-compliance-deadlines/)))_
 
 <!-- openaccountants-cta-block -->

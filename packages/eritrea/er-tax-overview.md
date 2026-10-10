@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Eritrea (tax year 2025) — r
 jurisdiction: ER
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +24,7 @@ Eritrea operates a source-based direct tax system administered by the Inland Rev
 - **Diaspora 'rehabilitation and recovery' tax** — 2% (on worldwide income of Eritrean nationals living abroad)  _(Proclamation on the 2% Rehabilitation and Recovery Tax (diaspora tax) (as described at [rivermate.com](https://rivermate.com/guides/eritrea/taxes)))_
 - **Top personal income tax rate** — 30%  _(Income Tax Proclamation No. 24/2011 (as described at [taxatlas.io](https://taxatlas.io/country/eritrea/income-tax)))_
 - **Standard corporate income tax rate** — 30% (approx — confirm; some sources cite 33%)  _(Income Tax Proclamation No. 24/2011 (as described at [taxratesbycountry.com](https://taxratesbycountry.com/tax-rates-in-eritrea/)))_
-- **Does Eritrea have VAT/GST?** — No VAT/GST. Indirect tax is a sales tax (goods) and services tax  _([Sales and Excise Tax Proclamation (Legal Notice 64/1994)](https://www.pwc.co.za/en/publications/vat-in-africa/eritrea-overview.html))_
+- **Does Eritrea have VAT/GST?** — No VAT/GST. Indirect tax is a sales tax (goods) and services tax  _(Sales and Excise Tax Proclamation (Legal Notice 64/1994), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Main annual filing** — Annual income tax return after the close of the calendar year (approx — confirm exact due date)  _(Income Tax Proclamation No. 24/2011)_
 
 <!-- openaccountants-cta-block -->

@@ -4,7 +4,7 @@ description: "Source-cited draft: tax overview for Burkina Faso (tax year 2025) 
 jurisdiction: BF
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ Burkina Faso is a francophone West African state whose tax system is codified in
 - **Residence basis of taxation** — Residents taxed on Burkina Faso-source income; an individual is resident if they have their habitual abode (résidence habituelle) in Burkina Faso. The system is largely territorial / source-based.  _(Code Général des Impôts (CGI) — https://taxatlas.io/country/burkina-faso)_
 - **Headline personal income tax (IUTS) top marginal rate** — 25 percent  _(Code Général des Impôts (CGI) — Impôt Unique sur les Traitements et Salaires (IUTS) — https://servicepublic.gov.bf/fiches/impots-et-taxes-impot-unique-sur-les-traitements-et-les-salaires-iuts)_
 - **Headline corporate income tax rate** — 27.5 percent  _(Code Général des Impôts (CGI) — Impôt sur les Sociétés (IS) — https://taxatlas.io/country/burkina-faso)_
-- **VAT/GST standard rate** — 18 percent (Taxe sur la Valeur Ajoutée (TVA); Does VAT/GST exist? — Yes)  _(Code Général des Impôts (CGI) — Taxe sur la Valeur Ajoutée (TVA) — https://www.pwc.co.za/en/publications/vat-in-africa/burkina-faso-overview.html)_
+- **VAT/GST standard rate** — 18 percent (Taxe sur la Valeur Ajoutée (TVA); Does VAT/GST exist? — Yes)  _(Code Général des Impôts (Loi n° 058-2017/AN), provisions on the Taxe sur la Valeur Ajoutée, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Main annual corporate filing deadline** — Annual IS return generally due by 30 April following the close of the financial year (approx — confirm)  _(Code Général des Impôts (CGI))_
 - **Payroll tax (IUTS) remittance** — Employer withholds IUTS and remits within the first 10 days of the month following the month of withholding  _(Code Général des Impôts (CGI) — IUTS — https://servicepublic.gov.bf/fiches/impots-et-taxes-impot-unique-sur-les-traitements-et-les-salaires-iuts)_
 

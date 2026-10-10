@@ -4,7 +4,7 @@ description: "Source-cited draft: corporate income tax for Curacao (tax year 202
 jurisdiction: CW
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Profit tax rate on first ANG 500,000** — 15 percent (Taxable profit up to ANG/XCG 500,000)  _(Profit Tax Ordinance (Landsverordening op de winstbelasting 1940) (as described at [legarithm.io](https://legarithm.io/blog/how-are-curacao-companies-taxed/)))_
 - **Profit tax rate above ANG 500,000** — 22 percent (Taxable profit exceeding ANG/XCG 500,000)  _(Profit Tax Ordinance (Landsverordening op de winstbelasting 1940) (as described at [legarithm.io](https://legarithm.io/blog/how-are-curacao-companies-taxed/)))_
 - **Tax base** — Worldwide commercial profit of resident entities, with a participation exemption for qualifying shareholdings; territorial elements apply to certain foreign income  _(Profit Tax Ordinance (Landsverordening op de winstbelasting 1940))_
-- **Reduced 3% regime** — 3 percent (qualifying activities (e.g. aircraft/shipbuilding, certain business support such as call/IT centres, services to unrelated investment institutions))  _([Profit Tax Ordinance (Landsverordening op de winstbelasting 1940)](https://taxsummaries.pwc.com/curacao))_
+- **Reduced 3% regime** — 3 percent (qualifying activities (e.g. aircraft/shipbuilding, certain business support such as call/IT centres, services to unrelated investment institutions))  _(Profit Tax Ordinance (Landsverordening op de winstbelasting 1940), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Exempt company / E-zone reduced rates** — 0% or reduced (e.g. 10%) percent (Certain regimes provide a 0% or reduced (e.g. 10%) effective rate for qualifying exempt companies and Economic Zone activities (approx — confirm current regime conditions))  _(Profit Tax Ordinance / Economic Zones Ordinance (Landsverordening Economische Zones 2000))_
 - **Participation exemption** — Qualifying dividends and capital gains from substantial shareholdings are exempt, subject to conditions  _(Profit Tax Ordinance (Landsverordening op de winstbelasting 1940))_
 - **Pillar Two minimum tax (2025)** — 15 percent (Large multinational groups must pay an effective minimum of 15% (OECD Pillar Two top-up))  _([Minimum Tax Ordinance / OECD Pillar Two (GloBE)](https://www.grantthornton.com.cw/insights/TaxLawChanges2025/))_
