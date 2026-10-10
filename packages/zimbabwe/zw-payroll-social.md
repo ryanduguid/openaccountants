@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Zimbabwe payroll processing for
 jurisdiction: ZW
 category: payroll
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # zimbabwe-payroll
 
-## Zimbabwe Payroll Skill v0.1
+## Zimbabwe Payroll Skill v0.2
 
 > **Verification status:** Tier 2 (research-verified). `verified_by: pending` — this skill has NOT yet been signed off by a registered Zimbabwean tax accountant or ZIMRA-registered tax agent. Every output must be labelled as an estimate and routed to a qualified professional.
 
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currencies | USD (foreign currency) **and** ZiG / ZWG (Zimbabwe Gold) — dual-currency payroll |
 | Standard pay frequency | Monthly (most common); daily, weekly, fortnightly equivalents published by ZIMRA |
 | Tax year | Calendar year (1 January – 31 December 2025) |
-| Tax withholding system | PAYE under a **Final Deduction System (FDS)** — correctly-operated PAYE is the final tax (PwC, Zimbabwe — significant developments) |
+| Tax withholding system | PAYE under a **Final Deduction System (FDS)** — correctly-operated PAYE is the final tax for employees with employment income only who stay with the same FDS employer all year (ZIMRA, Reminder on Final Deduction System year-end procedures; Income Tax Act [Chapter 23:06] Thirteenth Schedule) |
 | Income tax authority | Zimbabwe Revenue Authority (ZIMRA) |
 | Social security authority | National Social Security Authority (NSSA) |
 | Training levy authority | Zimbabwe Manpower Development Fund (ZIMDEF) |
@@ -37,15 +37,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Monthly PAYE return | Form **P2** |
 | PAYE remittance deadline | On or before the **10th of the following month** (ZIMRA, PAYE Explained) |
 | Validated by | Pending — requires sign-off by a registered Zimbabwean tax accountant / ZIMRA tax agent |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
-- **Effective top marginal income tax rate** — 40% × 1.03 (AIDS Levy) = 41.2%  _(PwC, Zimbabwe — significant developments)_
+- **Effective top marginal income tax rate** — 40% × 1.03 (AIDS Levy) = 41.2%  _(ZIMRA, USD Jan-Dec 2025 tax tables (40% above USD 36,000 a year; AIDS levy 3% of tax payable) — https://www.zimra.co.zw/domestic-taxes/tax-tables?download=4211:usd-jan-dec-2025-tax-tables)_
 
 ## Section 2 — Income Tax Withholding (PAYE)
 
 Zimbabwe **has** personal income tax, withheld monthly by the employer as **PAYE** and remitted to ZIMRA. PAYE is computed on **taxable remuneration** (gross pay less allowable deductions such as the employee NSSA contribution). The marginal-rate "deduct" tables below collapse the progressive bands into a single line: `Tax = (income × rate) − deduct`.
 
-> Zimbabwe operates a **Final Deduction System (FDS)**: where PAYE is operated correctly, it is the employee's final tax and most employees do not file an annual income-tax return (PwC, Zimbabwe — significant developments).
+> Zimbabwe operates a **Final Deduction System (FDS)**: where PAYE is operated correctly, it is the employee's final tax and employees whose income is employment income only, whose employer ran PAYE under the FDS for the year and who stayed with that employer for the whole year do not file an annual income-tax return (ZIMRA, Reminder on Final Deduction System year-end procedures).
 
 ### 2a. PAYE — USD (Foreign Currency) MONTHLY Table 2025
 
@@ -109,7 +109,7 @@ Daily, weekly and fortnightly USD equivalents are published in the same PDF (e.g
 
 - **AIDS Levy rule** — 3% of the PAYE / individual's tax payable — a surcharge on the tax, not on income. Stated verbatim on both official ZIMRA tax-table PDFs: "Aids Levy is 3% of the Individuals' Tax payable."  _(official ZIMRA tax-table PDFs)_
 - **Computation order** — (1) compute PAYE from the bracket table; (2) AIDS Levy = PAYE × 3%; (3) total tax withheld = PAYE + AIDS Levy.
-- **Effective top marginal rate** — 40% × 1.03 = 41.2%  _(PwC, Zimbabwe — significant developments)_
+- **Effective top marginal rate** — 40% × 1.03 = 41.2%  _(ZIMRA, USD Jan-Dec 2025 tax tables (40% above USD 36,000 a year; AIDS levy 3% of tax payable) — https://www.zimra.co.zw/domestic-taxes/tax-tables?download=4211:usd-jan-dec-2025-tax-tables)_
 
 ## Section 3 — Social Security (NSSA)
 
@@ -381,7 +381,7 @@ Apply these classifications **in order**; first match wins. Currency tags (USD /
 | Employer registration | ZIMRA (BP number) before operating PAYE | Before first payroll | ZIMRA **[RESEARCH GAP — exact registration-page figures not retrievable]** |
 
 - Payments are made into the **ZIMRA Single Bank Account**, **in the currency in which the income was earned**.
-- Under the **FDS**, correctly-operated PAYE is final; most employees do not file an annual return (PwC, Zimbabwe).
+- Under the **FDS**, correctly-operated PAYE is final; employees with employment income only who stayed with the same FDS employer all year do not file an annual return, while those who start, change or end employment in the year, work part time beside full-time employment, receive pensions or have income outside PAYE must file an ITF 1 (ZIMRA, Reminder on Final Deduction System year-end procedures).
 
 ### Penalties / interest
 
@@ -405,7 +405,7 @@ If the employer is not yet registered with ZIMRA / NSSA / ZIMDEF, stop and tell 
 | R3 | ZWG tax-free threshold | ZWG 2,800/month (33,600/yr) | ZIMRA ZWG 2025 PDF |
 | R4 | ZWG top marginal rate | 40% (from ZWG 84,000.01/month) | ZIMRA ZWG 2025 PDF |
 | R5 | AIDS Levy | 3% of PAYE | ZIMRA tax-table PDFs |
-| R6 | Effective top rate | 41.2% | PwC Zimbabwe |
+| R6 | Effective top rate | 41.2% | ZIMRA USD 2025 tax tables (40%) and AIDS levy 3% |
 | R7 | NSSA POBS | 4.5% EE + 4.5% ER = 9% | NSSA Contributions |
 | R8 | NSSA ceiling | USD 700/month (gazetted quarterly) | NSSA Schedule of Insurable Earnings |
 | R9 | APWCS | Employer-only, industry-rated (e.g. IC 0110 = 1.38%) | NSSA guidance |
@@ -423,7 +423,8 @@ If the employer is not yet registered with ZIMRA / NSSA / ZIMDEF, stop and tell 
 - NSSA contributions: https://www.nssa.org.zw/contributions/
 - NSSA schedule of insurable earnings: https://www.nssa.org.zw/scheduleofinsurableearnings/
 - ZIMDEF FAQs: https://zimdef.org.zw/faqs/
-- PwC Zimbabwe (individual): https://taxsummaries.pwc.com/zimbabwe/individual/significant-developments
+- ZIMRA PAYE system (2025 thresholds, 40% top rate, AIDS levy, 10th-of-month remittance): https://www.zimra.co.zw/domestic-taxes/individual/pay-as-you-earn-paye
+- ZIMRA Final Deduction System year-end procedures (who files an ITF 1): https://www.zimra.co.zw/news/2011:reminder-on-final-deduction-system-year-end-procedures
 
 ## Section 16 — Test Suite
 
