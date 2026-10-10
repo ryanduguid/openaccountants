@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Bahrain personal income tax fo
 jurisdiction: BH
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Bahrain Personal Income Tax -- Self-Employed Skill v0.1
 
-> **HEADLINE: Bahrain has NO personal income tax.** There is no PIT regime of any kind — no brackets, no rates, no personal tax return, no PIT filing deadline, and no PIT payment obligation — for any individual, whether employed, self-employed, resident, or non-resident. Income and capital gains earned outside Bahrain are likewise not taxed in Bahrain. There is no net-wealth tax, no estate/inheritance/gift tax, and no individual capital gains tax. (Source: PwC Tax Summaries — Bahrain Individual, last reviewed 11 Jan 2026, https://taxsummaries.pwc.com/bahrain/individual/taxes-on-personal-income and .../other-taxes.)
+> **HEADLINE: Bahrain has NO personal income tax.** There is no PIT regime of any kind — no brackets, no rates, no personal tax return, no PIT filing deadline, and no PIT payment obligation — for any individual, whether employed, self-employed, resident, or non-resident. Income and capital gains earned outside Bahrain are likewise not taxed in Bahrain. There is no net-wealth tax, no estate/inheritance/gift tax, and no individual capital gains tax. (Source: Bahrain's legislation on lloc.gov.bh has no personal income tax law; the only income tax statute, Decree-Law No. 22 of 1979, taxes oil and hydrocarbon companies — https://lloc.gov.bh/Legislation/HTM/L2279.)
 >
 > This skill therefore does NOT compute income tax. It documents what DOES apply to an individual or self-employed person in Bahrain: **Social Insurance (SIO)** contributions, the expatriate **End-of-Service Benefit (EOSB)** funded scheme, **VAT** for business/self-employed turnover, the **Wage Protection System (WPS)**, and the **corporate-level taxes** that may reach a self-employed person who incorporates.
 
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Kingdom of Bahrain |
-| Personal income tax | **NONE — no PIT regime exists** (PwC, reviewed 11 Jan 2026) |
+| Personal income tax | **NONE — no PIT regime exists** (no personal income tax law exists; Decree-Law No. 22 of 1979 taxes oil companies only) |
 | Currency | Bahraini Dinar (BHD) only |
 | Tax year | Calendar year (1 January -- 31 December) |
 | PIT legislation | **None** — there is no personal income tax statute |
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | VAT filing frequency | Quarterly (most businesses); monthly for large businesses |
 | Validated by | Pending — requires sign-off by a Bahrain-qualified tax/payroll professional |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Personal Income Tax Rate Table
 
@@ -46,7 +46,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (BHD) | Rate |
 | --- | --- |
-| All income, any amount | **0% — there is no personal income tax in Bahrain** (PwC, reviewed 11 Jan 2026) |
+| All income, any amount | **0% — there is no personal income tax in Bahrain** (no personal income tax law exists) |
 
 - **No brackets/allowance/PIT computation** — There are no brackets, no personal allowance, and no PIT computation. Any request to "compute Bahrain personal income tax" must return BHD 0 PIT, with the explanation that no PIT regime exists, and then redirect to SIO / VAT / WPS as relevant.
 
@@ -62,8 +62,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **TOTAL** | **8%** | **17%** | **18%** |
 
 - **Employee total unchanged through phase-in** — Employee total = **8%** (7% pension + 1% unemployment), unchanged through the phase-in.  _((newsofbahrain.com/106412; meinsurancereview.com aid=49089))_
-- **Employer phase-in schedule** — Employer total = **17% from January 2025**, rising to **18% from 1 January 2026**, then **+1% per year until it reaches 21% in 2028**.  _((newsofbahrain.com/106412; mercans.com EOSB/social-security alert 2026))_
-- **Combined rate note** — Combined (employer + employee): **25% in 2025** (17% + 8%) → **26% in 2026** (18% + 8%). PwC's individual "other taxes" page (reviewed 11 Jan 2026) cites the 2025 snapshot of 17%/8%; for 2026 use the 18% employer figure.  _(https://taxsummaries.pwc.com/bahrain/individual/other-taxes)_
+- **Employer phase-in schedule** — Employer total = **17% from January 2025**, rising to **18% from 1 January 2026**, then **+1% per year until it reaches 20% in 2028** (the 17% old-age share written into art. 33 plus the 3% work-injury contribution; press reports quoted 21%).  _((newsofbahrain.com/106412; mercans.com EOSB/social-security alert 2026))_
+- **Combined rate note** — Combined (employer + employee): **25% in 2025** (17% + 8%) → **26% in 2026** (18% + 8%). The employer figure is the old-age, disability and death share (11% when Law No. 14 of 2022 took effect in April 2022, rising by 1% each January until it reaches the 17% written into art. 33) plus the 3% work-injury contribution; the employee figure is the 7% old-age share plus the 1% unemployment insurance contribution.  _(Social Insurance Law (Decree-Law No. 24 of 1976) as amended, arts 33 and 47 — https://lloc.gov.bh/Legislation/HTM/L2476; Law No. 14 of 2022 amending the Social Insurance Law, art. 4 — https://lloc.gov.bh/Legislation/HTM/K1422; Unemployment Insurance Law (Decree-Law No. 78 of 2006), art. 6 — https://lloc.gov.bh/Legislation/HTM/L7806)_
 - **Insurable-earnings ceiling** — BHD 4,000 per month — contributions are computed on a salary capped at BHD 4,000/month.  _((newsofbahrain.com/106412))_
 - **Contribution floor / minimum insurable wage** — **[RESEARCH GAP — reviewer to confirm]** (only the BHD 4,000 ceiling is well-sourced).
 
@@ -73,11 +73,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Component | Employee | Employer | Total |
 | --- | --- | --- | --- |
-| Work injury (only branch covered) | 1% | 3% | **4%** |
+| Work injury | -- | 3% | **3%** |
+| Unemployment insurance (contribution only; benefit requires Bahraini nationality) | 1% | -- | **1%** |
 | **TOTAL** | **1%** | **3%** | **4%** |
 
-- **Work-injury only coverage** — Expats are covered for the **work-injury branch only** — no pension, no unemployment.  _((https://taxsummaries.pwc.com/bahrain/individual/other-taxes; newsofbahrain.com/106412))_
-- **GCC nationals use home-country rates** — **GCC nationals** working in Bahrain contribute at **their home country's** social-security rates under the GCC unified extension/insurance protection scheme — NOT Bahrain's rates.  _((https://taxsummaries.pwc.com/bahrain/individual/other-taxes))_
+- **Work-injury only coverage** — Expats are covered for the **work-injury branch only** (employer 3%) — no pension branch; the 1% unemployment contribution is deducted from every private-sector worker, but unemployment benefit requires Bahraini nationality, and non-Bahraini workers come under an end-of-service gratuity system instead of the pension branch.  _(Social Insurance Law (Decree-Law No. 24 of 1976) as amended, arts 2 and 47 — https://lloc.gov.bh/Legislation/HTM/L2476; Law No. 14 of 2022 amending the Social Insurance Law, art. 10 — https://lloc.gov.bh/Legislation/HTM/K1422; Unemployment Insurance Law (Decree-Law No. 78 of 2006), arts 2 and 6 — https://lloc.gov.bh/Legislation/HTM/L7806; newsofbahrain.com/106412)_
+- **GCC nationals use home-country rates** — **GCC nationals** working in Bahrain contribute at **their home country's** social-security rates under the GCC unified extension/insurance protection scheme — NOT Bahrain's rates.  _(Law No. 68 of 2006 approving the GCC Unified System for the Extension of Insurance Protection — https://lloc.gov.bh/Legislation/HTM/K6806)_
 
 ### Expatriate End-of-Service Benefit (EOSB) -- Funded SIO Scheme (effective 1 March 2024)
 
@@ -194,7 +195,7 @@ This is the deterministic pre-classifier. Because Bahrain has no PIT, there is n
 `25/03/2026 ; NBB CREDIT ; EMPLOYER GULF TECH WLL ; RATIB MARCH ; +1,500.000 ; BHD`
 
 **Reasoning:**
-This is salary. Bahrain has no personal income tax, so the income tax due is BHD 0 regardless of amount. What IS deducted at payroll is the employee's SIO contribution. If the individual is a Bahraini national, employee SIO = 8% of insurable wage (capped at BHD 4,000/month). On BHD 1,500: 8% × 1,500 = **BHD 120.000** employee SIO. (PwC; newsofbahrain.com/106412)
+This is salary. Bahrain has no personal income tax, so the income tax due is BHD 0 regardless of amount. What IS deducted at payroll is the employee's SIO contribution. If the individual is a Bahraini national, employee SIO = 8% of insurable wage (capped at BHD 4,000/month). On BHD 1,500: 8% × 1,500 = **BHD 120.000** employee SIO. (Social Insurance Law arts 33 and 47; Unemployment Insurance Law art. 6; newsofbahrain.com/106412)
 
 **Classification:** PIT = **BHD 0** (no regime). Employee SIO (Bahraini national) = **BHD 120.000**.
 
@@ -207,7 +208,7 @@ This is salary. Bahrain has no personal income tax, so the income tax due is BHD
 Salary BHD 5,000 exceeds the insurable-earnings ceiling of BHD 4,000/month, so contributions are computed on BHD 4,000, not BHD 5,000. (newsofbahrain.com/106412)
 - Employee SIO (Bahraini national) = 8% × 4,000 = **BHD 320.000**.
 - Employer SIO 2026 = 18% × 4,000 = **BHD 720.000**. (mercans.com 2026 alert)
-- Personal income tax = **BHD 0** (no PIT). (PwC, reviewed 11 Jan 2026)
+- Personal income tax = **BHD 0** (no PIT). (no personal income tax law exists)
 
 **Classification:** PIT = BHD 0; employee SIO = BHD 320.000; employer SIO = BHD 720.000 (both on the BHD 4,000 capped wage).
 
@@ -217,7 +218,7 @@ Salary BHD 5,000 exceeds the insurable-earnings ceiling of BHD 4,000/month, so c
 `25/05/2026 ; AUB CREDIT ; EMPLOYER DESERT LOGISTICS WLL ; SALARY MAY ; +900.000 ; BHD`
 
 **Reasoning:**
-Non-GCC expatriate. SIO covers the work-injury branch only: employee 1%, employer 3%. (PwC; newsofbahrain.com/106412)
+Non-GCC expatriate. SIO: employer 3% work-injury contribution; employee 1% unemployment insurance contribution, deducted without benefit entitlement. (Social Insurance Law art. 47; Unemployment Insurance Law arts 2 and 6; newsofbahrain.com/106412)
 - Employee SIO = 1% × 900 = **BHD 9.000**.
 - Employer SIO = 3% × 900 = **BHD 27.000**.
 - EOSB (assume within first 3 years of service) = 4.2% × 900 = **BHD 37.800** (employer-funded, paid to SIO). (mercans.com EOSB alert)
@@ -231,7 +232,7 @@ Non-GCC expatriate. SIO covers the work-injury branch only: employee 1%, employe
 Annual taxable receipts from consulting = BHD 42,000 across the year.
 
 **Reasoning:**
-There is no personal income tax on the BHD 42,000 of self-employment income. (PwC) However, annual taxable supplies exceed the mandatory VAT registration threshold of **BHD 37,500**, so the consultant **must register for VAT** with the NBR and charge VAT at 10%. (bh.bh business-vat_en; NBR portal)
+There is no personal income tax on the BHD 42,000 of self-employment income. (no personal income tax law exists) However, annual taxable supplies exceed the mandatory VAT registration threshold of **BHD 37,500**, so the consultant **must register for VAT** with the NBR and charge VAT at 10%. (bh.bh business-vat_en; NBR portal)
 - Income tax due = **BHD 0**.
 - VAT obligation = **mandatory registration** (turnover > BHD 37,500); charge 10% on taxable supplies; file quarterly; pay within 30 days of period end.
 
@@ -261,34 +262,34 @@ This is a statutory social-insurance remittance, not a tax and not a PIT-relevan
 
 ### 5.1 No Personal Income Tax
 
-- **No personal income tax rule** — There is no personal income tax in Bahrain. Any PIT computation returns **BHD 0**. There is no PIT return, no PIT deadline, no personal allowance, and no concept of "chargeable income" or "allowable deductions" for personal income tax purposes. Do not invent brackets.  _(PwC Tax Summaries — Bahrain Individual, reviewed 11 Jan 2026 (https://taxsummaries.pwc.com/bahrain/individual/taxes-on-personal-income))_
+- **No personal income tax rule** — There is no personal income tax in Bahrain. Any PIT computation returns **BHD 0**. There is no PIT return, no PIT deadline, no personal allowance, and no concept of "chargeable income" or "allowable deductions" for personal income tax purposes. Do not invent brackets.  _(Bahrain's legislation on lloc.gov.bh has no personal income tax law; the only income tax statute, Decree-Law No. 22 of 1979, taxes oil and hydrocarbon companies — https://lloc.gov.bh/Legislation/HTM/L2279)_
 
 ### 5.2 No Wealth, Estate, or Capital Gains Tax on Individuals
 
-- **No wealth/estate/CGT rule** — No net-wealth/net-worth tax, no estate/inheritance/gift tax, and no individual capital gains tax. Foreign-source income and gains of residents or non-residents are not taxed in Bahrain.  _(PwC Tax Summaries — Bahrain Individual "Other taxes", reviewed 11 Jan 2026 (https://taxsummaries.pwc.com/bahrain/individual/other-taxes))_
+- **No wealth/estate/CGT rule** — No net-wealth/net-worth tax, no estate/inheritance/gift tax, and no individual capital gains tax. Foreign-source income and gains of residents or non-residents are not taxed in Bahrain.  _(Bahrain's legislation on lloc.gov.bh has no wealth, estate, gift or individual capital gains tax law; its tax statutes are Decree-Law No. 22 of 1979 (oil companies) — https://lloc.gov.bh/Legislation/HTM/L2279, Decree-Law No. 48 of 2018 (VAT) — https://lloc.gov.bh/Legislation/HTM/L4818 and Decree-Law No. 11 of 2024 (multinational top-up tax) — https://lloc.gov.bh/Legislation/HTM/L1124)_
 
 ### 5.3 Social Insurance (SIO) -- Bahraini Nationals
 
-**SIO Bahraini Nationals table**  _(PwC; newsofbahrain.com/106412; mercans.com 2026 alert)_
+**SIO Bahraini Nationals table**  _(Social Insurance Law (Decree-Law No. 24 of 1976) as amended, arts 33 and 47 — https://lloc.gov.bh/Legislation/HTM/L2476; Law No. 14 of 2022 amending the Social Insurance Law, art. 4 — https://lloc.gov.bh/Legislation/HTM/K1422; Unemployment Insurance Law (Decree-Law No. 78 of 2006), art. 6 — https://lloc.gov.bh/Legislation/HTM/L7806; newsofbahrain.com/106412; mercans.com 2026 alert)_
 
 | Item | Value |
 | --- | --- |
 | Employee contribution | 8% (7% pension + 1% unemployment) |
 | Employer contribution (2025) | 17% |
 | Employer contribution (2026) | 18% |
-| Phase-in | +1%/year to 21% by 2028 |
+| Phase-in | +1%/year to 20% by 2028 (17% old-age share + 3% work injury) |
 | Insurable-earnings ceiling | BHD 4,000/month |
 | Insurable-earnings floor | **[RESEARCH GAP — reviewer to confirm]** |
 
-- **Contributions computed on capped earnings** — Contributions are computed on insurable earnings capped at BHD 4,000/month and remitted monthly by the employer.  _(PwC; newsofbahrain.com/106412; mercans.com 2026 alert)_
+- **Contributions computed on capped earnings** — Contributions are computed on insurable earnings capped at BHD 4,000/month and remitted monthly by the employer; the law sets the shares and the ceiling is an SIO board decision reported in the press.  _(Social Insurance Law (Decree-Law No. 24 of 1976) as amended, art. 33 — https://lloc.gov.bh/Legislation/HTM/L2476; newsofbahrain.com/106412; mercans.com 2026 alert)_
 
 ### 5.4 Social Insurance (SIO) -- Non-GCC Expatriates
 
-- **Work-injury only branch** — Work-injury branch only: employee 1%, employer 3% (total 4%). No pension, no unemployment.  _(PwC; newsofbahrain.com/106412)_
+- **Work-injury only branch** — Work-injury branch only: employee 1%, employer 3% (total 4%). No pension branch; the employee's 1% is the unemployment insurance contribution, whose benefit requires Bahraini nationality.  _(Social Insurance Law (Decree-Law No. 24 of 1976) as amended, art. 47 — https://lloc.gov.bh/Legislation/HTM/L2476; Unemployment Insurance Law (Decree-Law No. 78 of 2006), arts 2 and 6 — https://lloc.gov.bh/Legislation/HTM/L7806; newsofbahrain.com/106412)_
 
 ### 5.5 Social Insurance (SIO) -- GCC Nationals
 
-- **Home-country rates for GCC nationals** — GCC nationals working in Bahrain contribute at their **home country's** social-security rates under the GCC unified insurance-protection scheme, not Bahrain's rates.  _(PwC)_
+- **Home-country rates for GCC nationals** — GCC nationals working in Bahrain contribute at their **home country's** social-security rates under the GCC unified insurance-protection scheme, not Bahrain's rates.  _(Law No. 68 of 2006 approving the GCC Unified System for the Extension of Insurance Protection — https://lloc.gov.bh/Legislation/HTM/K6806)_
 
 ### 5.6 Expatriate End-of-Service Benefit (EOSB)
 
@@ -318,7 +319,7 @@ This is a statutory social-insurance remittance, not a tax and not a PIT-relevan
 
 ### 5.10 Corporate-Level Taxes (context for incorporated self-employed)
 
-**Corporate-Level Taxes table**  _(PwC Tax Summaries — Bahrain Corporate, reviewed 11 Jan 2026 (https://taxsummaries.pwc.com/bahrain/corporate/taxes-on-corporate-income); EY DMTT alert (ey.com Bahrain DMTT))_
+**Corporate-Level Taxes table**  _(Decree-Law No. 22 of 1979 on income tax (oil and hydrocarbon companies), Legislation and Legal Opinion Commission text, art. 2 — https://lloc.gov.bh/Legislation/HTM/L2279; Decree-Law No. 11 of 2024 on the tax on multinational enterprises, art. 3 (revenue test), the definitions article (15% minimum rate) and art. 44 (in force 1 January 2025) — https://lloc.gov.bh/Legislation/HTM/L1124; EY DMTT alert (ey.com Bahrain DMTT))_
 
 | Tax | Rate | Who it hits |
 | --- | --- | --- |
@@ -330,7 +331,7 @@ This is a statutory social-insurance remittance, not a tax and not a PIT-relevan
 
 ### 6.1 SIO Year and Rate Selection
 
-- **Year-specific rate confirmation** — The employer SIO rate is **year-specific** (17% in 2025, 18% in 2026, rising to 21% by 2028). Confirm the period of the payroll run before applying a rate. **Flag for reviewer:** confirm which calendar year's employer rate applies, especially for payrolls straddling 1 January.
+- **Year-specific rate confirmation** — The employer SIO rate is **year-specific** (17% in 2025, 18% in 2026, rising to 20% by 2028). Confirm the period of the payroll run before applying a rate. **Flag for reviewer:** confirm which calendar year's employer rate applies, especially for payrolls straddling 1 January.
 
 ### 6.2 Nationality Classification for SIO
 
@@ -354,7 +355,7 @@ This is a statutory social-insurance remittance, not a tax and not a PIT-relevan
 
 ### 6.7 Municipal Tax on Expat Rentals
 
-- **Municipal tax research gap** — A municipal tax (commonly cited as ~10%) may apply to rental of property occupied by expatriates. **[RESEARCH GAP — reviewer to confirm the exact rate against the PwC corporate "other taxes" page.]**  _(https://taxsummaries.pwc.com/bahrain/corporate/other-taxes)_
+- **Municipal tax research gap** — A municipal tax (commonly cited as ~10%) may apply to rental of property occupied by expatriates. **[RESEARCH GAP — reviewer to confirm the exact rate against the Municipalities Law (Decree-Law No. 35 of 2001) and its implementing decisions; no statute text setting the rate was located.]**  _(Municipalities Law (Decree-Law No. 35 of 2001), as reported; rate text not located)_
 
 ### 6.8 Incorporation Decision
 
@@ -474,10 +475,10 @@ ONBOARDING QUESTIONS -- BAHRAIN INDIVIDUAL / SELF-EMPLOYED
 
 | Topic | Reference |
 | --- | --- |
-| No personal income tax | PwC Tax Summaries — Bahrain Individual, reviewed 11 Jan 2026 (https://taxsummaries.pwc.com/bahrain/individual/taxes-on-personal-income) |
-| No wealth/estate/CGT on individuals | PwC Tax Summaries — Bahrain Individual "Other taxes", reviewed 11 Jan 2026 (https://taxsummaries.pwc.com/bahrain/individual/other-taxes) |
-| SIO rates (locals 8%/17%; expats 1%/3%; GCC home-country) | PwC; newsofbahrain.com/106412; mercans.com 2026 alert |
-| SIO ceiling BHD 4,000/month; employer phase-in to 21% by 2028 | newsofbahrain.com/106412; meinsurancereview.com aid=49089 |
+| No personal income tax | Bahrain's legislation on lloc.gov.bh has no personal income tax law; Decree-Law No. 22 of 1979 taxes oil companies only (https://lloc.gov.bh/Legislation/HTM/L2279) |
+| No wealth/estate/CGT on individuals | No such law exists in Bahrain's legislation; tax statutes are Decree-Law No. 22 of 1979, Decree-Law No. 48 of 2018 and Decree-Law No. 11 of 2024 (https://lloc.gov.bh/Legislation/HTM/L2279; https://lloc.gov.bh/Legislation/HTM/L4818; https://lloc.gov.bh/Legislation/HTM/L1124) |
+| SIO rates (locals 8%/17%; expats 1%/3%; GCC home-country) | Social Insurance Law arts 33 and 47 (https://lloc.gov.bh/Legislation/HTM/L2476); Law No. 14 of 2022 art. 4 (https://lloc.gov.bh/Legislation/HTM/K1422); Unemployment Insurance Law art. 6 (https://lloc.gov.bh/Legislation/HTM/L7806); Law No. 68 of 2006, GCC scheme (https://lloc.gov.bh/Legislation/HTM/K6806); newsofbahrain.com/106412; mercans.com 2026 alert |
+| SIO ceiling BHD 4,000/month; employer phase-in to 20% by 2028 | Law No. 14 of 2022 art. 4 with Social Insurance Law arts 33 and 47 (https://lloc.gov.bh/Legislation/HTM/K1422; https://lloc.gov.bh/Legislation/HTM/L2476); ceiling and press reports (which quoted 21%): newsofbahrain.com/106412; meinsurancereview.com aid=49089 |
 | SIO employer 18% from 1 Jan 2026 | mercans.com EOSB/social-security alert |
 | Expat EOSB 4.2% / 8.4% (from 1 Mar 2024) | mercans.com EOSB alert; SIO EOSB page (https://www.sio.gov.bh/en/end-of-service-benefits) |
 | VAT 10% (since 1 Jan 2022); threshold BHD 37,500 | bh.bh business-vat_en; NBR portal; avalara VAT rates |
@@ -485,7 +486,7 @@ ONBOARDING QUESTIONS -- BAHRAIN INDIVIDUAL / SELF-EMPLOYED
 | VAT registration guide update (Sept 2025) | vatupdate.com 2025/09/24 |
 | WPS (Resolution 68 of 2019); enhanced WPS early 2026 | LMRA pages 631/638; KPMG flash-alert 2025-262 |
 | No private-sector minimum wage; BHD 300 public sector only | truein.com; minimum-wage.org/international/bahrain |
-| Corporate hydrocarbon 46%; DMTT 15% from FY2025 | PwC Corporate, reviewed 11 Jan 2026; EY DMTT alert |
+| Corporate hydrocarbon 46%; DMTT 15% from FY2025 | Decree-Law No. 22 of 1979 art. 2 (https://lloc.gov.bh/Legislation/HTM/L2279); Decree-Law No. 11 of 2024 arts 3 and 44 (https://lloc.gov.bh/Legislation/HTM/L1124); EY DMTT alert |
 
 ### Why There Are No "Tax Boxes"
 
