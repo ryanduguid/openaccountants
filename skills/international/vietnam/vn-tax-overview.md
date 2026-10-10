@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Vietnam tax system at a glance
 
-Vietnam levies tax at the national level through the General Department of Taxation. The tax year is the calendar year and the currency is the Vietnamese Dong (VND). Residents are taxed on worldwide income; non-residents on Vietnam-source income only.
+Vietnam levies tax at the national level through the Tax Department (Cục Thuế) of the Ministry of Finance. The tax year is the calendar year and the currency is the Vietnamese Dong (VND). Residents are taxed on worldwide income; non-residents on Vietnam-source income only.
 
 - **Standard tax year** — Calendar year (1 January - 31 December) by default; an enterprise may elect a fiscal year under the Corporate Income Tax Law, and annual tax statements fall due three months after the calendar or fiscal year end  _(Law on Corporate Income Tax No. 67/2025/QH15 (in force 1 October 2025, applying from the 2025 tax period), art. 5 — https://thuvienphapluat.vn/van-ban/Doanh-nghiep/Law-67-2025-QH15-on-Corporate-Income-Tax-664714.aspx; Law on Tax Administration No. 38/2019/QH14, art. 44.2 — https://thuvienphapluat.vn/van-ban/thue-phi-le-phi/Law-38-2019-QH14-Tax-administration-425672.aspx)_
 - **Currency** — Vietnamese Dong (VND); tax is declared and paid in dong, and taxpayers who keep books in a foreign currency convert them at the applicable exchange rate  _(Law on Tax Administration No. 38/2019/QH14, art. 7 — https://thuvienphapluat.vn/van-ban/thue-phi-le-phi/Law-38-2019-QH14-Tax-administration-425672.aspx)_
