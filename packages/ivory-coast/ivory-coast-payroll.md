@@ -1,10 +1,10 @@
 ---
 name: ivory-coast-payroll
 description: Use this skill whenever asked about Côte d'Ivoire (Ivory Coast) payroll processing for employed persons. Trigger on phrases like "Ivory Coast payroll", "Côte d'Ivoire payroll", "ITS", "Impôt sur les Traitements et Salaires", "salary tax Côte d'Ivoire", "CNPS contributions", "CNPS retraite", "prestations familiales", "FDFP levy", "taxe d'apprentissage", "contribution employeur", "expatriate payroll tax Ivory Coast", "RICF family reduction", "SMIG", "CMU", "DISA", "net salary Côte d'Ivoire", "gross to net XOF", "FCFA payroll", "e-Impôts", or any question about computing employee pay, salary withholding tax, or social security contributions for Ivory Coast-based employees. This skill covers ITS progressive income-tax withholding, the RICF family-charge reduction, CNPS social contributions (employee and employer), the employer payroll tax (local vs expatriate), FDFP training levies, CMU, minimum wage, and filing obligations to the DGI and CNPS. ALWAYS read this skill before processing any Côte d'Ivoire payroll.
-version: 0.1
+version: 0.2
 jurisdiction: CI
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Côte d'Ivoire (Ivory Coast) Payroll
 
-## Côte d'Ivoire (Ivory Coast) Payroll Skill v0.1
+## Côte d'Ivoire (Ivory Coast) Payroll Skill v0.2
 
 > **Tier 2 — research-verified, pending accountant sign-off.** Every figure below carries an inline source or an explicit `[RESEARCH GAP — reviewer to confirm]` marker. Do not treat any output as final until a licensed Ivorian accountant (expert-comptable inscrit à l'Ordre) has reviewed it.
 
@@ -37,9 +37,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Code Général des Impôts (CGI) Art. 119 bis (ITS scale), Art. 120 (RICF), Art. 120 bis (dockers), Art. 138 (payment), Art. 143 (taxe d'apprentissage), Art. 146 (employer contribution table); Ordonnance n° 2023-719 of 13 Sept 2023 (ITS reform, effective 1 Jan 2024); [Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024](https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf), art. 16 |
 | Minimum wage (SMIG) | 75,000 XOF/month (Decree n° 2022-986, in force since 1 Jan 2023) |
 | Validated by | Pending — requires sign-off by an Ivorian expert-comptable |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
-> **Reform alert.** Ordonnance n° 2023-719 (13 Sept 2023) merged the three former salary taxes — the proportional IS, the Contribution Nationale (CN), and the IGR — into a **single progressive ITS**, effective **1 January 2024**. The old "IGR + CN + IS" stack that many legacy calculators still show is **OBSOLETE**. Do NOT use it. (Source: PwC Ivory Coast — Taxes on personal income, last reviewed Mar 2026, https://taxsummaries.pwc.com/ivory-coast/individual/taxes-on-personal-income)
+> **Reform alert.** Ordonnance n° 2023-719 (13 Sept 2023) merged the three former salary taxes — the proportional IS, the Contribution Nationale (CN), and the IGR — into a **single progressive ITS**, effective **1 January 2024**. The old "IGR + CN + IS" stack that many legacy calculators still show is **OBSOLETE**. Do NOT use it. (Source: CGI art. 119 bis, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/)
 
 ## Section 2 — Income Tax Withholding (ITS)
 
@@ -47,7 +47,7 @@ The employer withholds the **ITS** monthly at source on each employee's gross ta
 
 ### 2.1 Progressive Monthly Scale — CGI Article 119 bis (current, 2024–)
 
-**Progressive Monthly Scale**  _(CGI Art. 119 bis, reproduced at loidici.biz (https://loidici.biz/2025/02/21/67781/), and PwC Ivory Coast (https://taxsummaries.pwc.com/ivory-coast/individual/taxes-on-personal-income))_
+**Progressive Monthly Scale**  _(CGI Art. 119 bis, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) (https://cgici.com/), and DGI, Impôts et taxes en Côte d'Ivoire, édition 2025, p. 16 (https://www.dgi.gouv.ci/assets/documents/IMPOTS%20ET%20TAXES%20EN%20COTE%20D%27IVOIRE%20.pdf))_
 
 | Monthly taxable income (XOF) | Marginal rate | Cumulative ITS at top of band (XOF) |
 | --- | --- | --- |
@@ -66,13 +66,13 @@ The 0% floor of 75,000 XOF coincides exactly with the SMIG.
 - 2,400,000 → 144,000 + 24% × 1,600,000 = 528,000
 - 8,000,000 → 528,000 + 28% × 5,600,000 = 2,096,000
 
-**Professional abatement: abolished — confirmed from the statute.** The pre-reform regime applied a 20% professional abatement before the old scale. Article 16 of the *annexe fiscale* to Loi de Finances n° 2024-1109 du 18 décembre 2024 states it plainly: Ordonnance n° 2023-719 *« a supprimé l'abattement de 20 % prévu pour la détermination de la base imposable en matière d'impôts sur les traitements et salaires retenus aux salariés. Ainsi, cette base est désormais constituée par le revenu brut imposable. »* Apply the scale to **gross** taxable salary; there is no standalone abatement. PwC says the same for the employer side. This closes what was an open research gap in v0.1.  _(Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024, art. 16 — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
+**Professional abatement: abolished — confirmed from the statute.** The pre-reform regime applied a 20% professional abatement before the old scale. Article 16 of the *annexe fiscale* to Loi de Finances n° 2024-1109 du 18 décembre 2024 states it plainly: Ordonnance n° 2023-719 *« a supprimé l'abattement de 20 % prévu pour la détermination de la base imposable en matière d'impôts sur les traitements et salaires retenus aux salariés. Ainsi, cette base est désormais constituée par le revenu brut imposable. »* Apply the scale to **gross** taxable salary; there is no standalone abatement. CGI art. 134-3° gives the employer contribution the same art. 119 base, and the consolidated art. 146 (cgici.com) carries the reset rates. This closes what was an open research gap in v0.1.  _(Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024, art. 16 — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
 
 ### 2.2 Family-Charge Reduction — RICF, CGI Article 120
 
 - **RICF definition** — The Réduction d'Impôt pour Charges de Famille (RICF) replaces the old family-quotient system. It is a fixed XOF amount subtracted from the gross monthly ITS — NOT a percentage. Parts run from 1 to 5: the employee receives 1 part, +0.5 part per dependent child (and the configuration of the household), up to a maximum of 5 parts.  _(CGI Art. 120)_
 
-**RICF table**  _(CGI Art. 120 via loidici.biz (https://loidici.biz/2025/02/21/67781/))_
+**RICF table**  _(CGI Art. 120 1°, DGI online consolidated edition (https://cgici.com/); DGI, Impôts et taxes en Côte d'Ivoire, édition 2025, pp. 17-18 (https://www.dgi.gouv.ci/assets/documents/IMPOTS%20ET%20TAXES%20EN%20COTE%20D%27IVOIRE%20.pdf))_
 
 | Parts | Monthly reduction (XOF) | Annual reduction (XOF) |
 | --- | --- | --- |
@@ -86,9 +86,9 @@ The 0% floor of 75,000 XOF coincides exactly with the SMIG.
 | 4.5 | 38,500 | 462,000 |
 | 5 | 44,000 | 528,000 |
 
-- **RICF increment rule** — 11,000 XOF/month per additional full part, 5,500 XOF per half-part.  _(CGI Art. 120 via loidici.biz (https://loidici.biz/2025/02/21/67781/))_
+- **RICF increment rule** — 11,000 XOF/month per additional full part, 5,500 XOF per half-part.  _(CGI Art. 120 1°, DGI online consolidated edition (https://cgici.com/))_
 
-> `[RESEARCH GAP — reviewer to confirm]` The annual figure for 5 parts rendered inconsistently in one extraction (showed "328,000"). **528,000** is the arithmetically consistent value (44,000 × 12 = 528,000) and is used here, but the reviewer must confirm against the official CGI text.
+> **Confirmed in the consolidated CGI art. 120:** the annual reduction for 5 parts is **528,000** XOF (44,000 × 12), as printed in the DGI's online edition and its 2025 booklet; the "328,000" seen in one earlier extraction was a transcription error.
 
 - **Net ITS formula** — Net ITS = gross ITS (from §2.1 scale) − RICF reduction (from §2.2 table), floored at 0.  _(CGI Art. 120)_
 
@@ -103,11 +103,11 @@ The 0% floor of 75,000 XOF coincides exactly with the SMIG.
 | Item | Detail | Source |
 | --- | --- | --- |
 | Withholding | Monthly at source by employer | CGI Art. 119 bis / DGI |
-| Declaration & payment | By the **15th of the following month** via e-Impôts ([e-impots.gouv.ci](https://e-impots.gouv.ci/)) | DGI fiscal calendar (CALENDRIER.pdf); corroborated by multiple guides |
-| Small-withholding option (CGI Art. 138) | If monthly ITS ≤ 1,000 XOF, may pay semi-annually (by 15 Jul / 15 Jan). But if in any month the amount exceeds 5,000 XOF, all sums due for the current semester fall due within the first 15 days of the following month. | CGI Art. 138 |
-| Late penalty | 25% surcharge on the amount due, **plus** 2% interest per month of delay | DGI / PwC |
+| Declaration & payment | By the **15th of the following month** for employers attached to a centre des impôts, the **10th** for TEE and microenterprise taxpayers, and for DGE/DME taxpayers the **10th** (industrial, oil and mining), **15th** (commercial) or **20th** (services), via e-Impôts ([e-impots.gouv.ci](https://e-impots.gouv.ci/)) | DGI, Calendrier des obligations fiscales, pp. 17-19 (https://www.dgi.gouv.ci/assets/documents/CALENDRIER.pdf) |
+| Small-withholding option | If the monthly ITS withheld is at most 10,000 XOF, payment may be made for the half-year by 15 July and 15 January; if in any month the amount exceeds 5,000 XOF, all sums due since the start of the half-year fall due within the first 15 days of the following month. CGI art. 138 sets the same mechanism for the employer contribution with a 1,000 XOF threshold | DGI calendar pp. 18-19; CGI Art. 138 |
+| Late payment | Interest of **10%** plus **1%** per month or part month for withheld ITS (5% plus 0.5% for other taxes); understatement surcharges of 30%, 60% or 150% for withheld taxes | LPF arts. 161 and 162 (https://cgici.com/) |
 
-> `[RESEARCH GAP — reviewer to confirm]` The DGI calendar PDF did not render to text, so whether the ITS deadline shifts by taxpayer regime (DGE large enterprises vs CME/SME) is unconfirmed. The commonly cited date is the **15th of the following month**.
+> **Confirmed from the DGI calendar.** The ITS deadline does shift by taxpayer category: the 15th is the rule for employers attached to a centre des impôts, the 10th for TEE and microenterprise taxpayers, and DGE/DME taxpayers pay on the 10th, 15th or 20th according to sector. The regularisation statement for the year is due by 15 February (centres des impôts) or 10, 15 or 20 February (DGE/DME, by sector).
 
 ## Section 3 — CNPS Social Contributions (effective 1 January 2025)
 
@@ -115,7 +115,7 @@ CNPS contributions are split across five branches. Two distinct monthly base cei
 
 ### 3.1 Contribution Table (effective 1 Jan 2025)
 
-**Contribution Table**  _(CLEISS — Les cotisations en Côte d'Ivoire, effective 1 Jan 2025 (https://www.cleiss.fr/docs/cotisations/cotedivoire.html); PwC Ivory Coast — Other taxes (https://taxsummaries.pwc.com/ivory-coast/individual/other-taxes); CNPS (https://www.cnps.ci/))_
+**Contribution Table**  _(CNPS — Employeur, rates, ceilings, base and deadlines (https://www.cnps.ci/employeur); CLEISS — Les cotisations en Côte d'Ivoire, 1 January 2025 (https://www.cleiss.fr/docs/cotisations/cotedivoire.html))_
 
 | Branch | Employee | Employer | Total | Monthly base ceiling (XOF) |
 | --- | --- | --- | --- | --- |
@@ -143,7 +143,7 @@ CNPS contributions are split across five branches. Two distinct monthly base cei
 | Deadline | Within the first **15 days** following the month/quarter end | CLEISS |
 | Filing channel | Online via e-CNPS (https://e.cnps.ci/) | CNPS |
 | DISA (Déclaration Individuelle des Salaires Annuels) | Annual salary declaration due **by 31 March** of the following year | CNPS DISA form |
-| Late penalty (contributions) | **5%** surcharge for the first month, then **1%** per additional month | CLEISS |
+| Late penalty (contributions) | **0.05% per day** of delay on contributions unpaid at the due date (CNPS); CLEISS reports 5% for the first month then 1% per further month | CNPS, Employeur; CLEISS |
 | DISA non-filing penalty | **10%** of total monthly contributions due | CNPS / CLEISS |
 
 ## Section 4 — Contribution à la Charge des Employeurs (CGI Art. 146)
@@ -165,8 +165,8 @@ CNPS contributions are split across five branches. Two distinct monthly base cei
 
 Both columns close exactly, which is what settles that the totals are inclusive: there is no room in 2.8% for a further 1.6%.
 
-- **Base is gross, with no abatement** — Ordonnance n° 2023-719 du 13 septembre 2023 abolished the 20% professional abatement, so the base is gross taxable remuneration (cash, benefits and benefits in kind). Because that reform left the employer rates untouched, computing them on an unabated base would have raised the employer's charge; art. 16 of the 2025 annexe re-set the component rates specifically **so that the customary 2.8% and 12% are maintained**. PwC states the same: "With the removal of the 20% reduction on gross remuneration paid, as part of the salary tax reform, the above-mentioned usage rates are directly applied to the gross base for the calculation of the employer contribution."  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16; PwC Ivory Coast — Corporate — Other taxes (https://taxsummaries.pwc.com/ivory-coast/corporate/other-taxes))_
-- **Expatriate definition** — "Expatriate" status follows from an expatriate employment contract approved by the Agence Emploi Jeune (AEJ) — it is determined by contract type, not strictly nationality. Confirm the contract classification before applying the 12% rate.  _(PwC Ivory Coast — Corporate — Other taxes)_
+- **Base is gross, with no abatement** — Ordonnance n° 2023-719 du 13 septembre 2023 abolished the 20% professional abatement, so the base is gross taxable remuneration (cash, benefits and benefits in kind). Because that reform left the employer rates untouched, computing them on an unabated base would have raised the employer's charge; art. 16 of the 2025 annexe re-set the component rates specifically **so that the customary 2.8% and 12% are maintained**.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16; CGI art. 146, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/)_
+- **Local staff exemption and the expatriate test** — Pay of local staff is exempt from the contribution employeur proper; the national contribution, the apprenticeship tax and the continuing training tax remain due (CGI art. 134-4°). The CGI does not define "expatriate" in arts. 134 to 146; practice ties the 12% rate to an expatriate employment contract approved by the employment agency, so confirm the contract classification before applying it `[RESEARCH GAP — reviewer to confirm]`  _(CGI art. 134, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/)_
 - **What the 9.2% is** — The *contribution employeur proprement dite* is charged on expatriate staff only. The whole of the 9.2 point gap between the local and expatriate totals is this one component; the other three are identical in both columns.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16 — CGI art. 146)_
 - **Article 263 is repealed** — The IGR reduction for an employee whose first main home as owner came from an approved construction programme no longer exists. Because the reform merged the three cédulaire taxes (impôt sur salaire, contribution nationale, IGR) into one levy, the IGR reduction no longer applies to any employee, and neither do IGR exemptions granted by agreement.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16(4) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
 
@@ -184,7 +184,7 @@ Both columns close exactly, which is what settles that the totals are inclusive:
 - **Taxe d'apprentissage was cut for 2025** — Art. 16(2) of the annexe replaces "0,50%" with "0,40%" in the second paragraph of CGI art. 143. A 0.5% figure is the pre-2025 rate.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16(2) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
 - **Combined FDFP component** — 1.6% of payroll (0.4% + 1.2%), **already counted** in the Section 4 total. Employer tax cost is 2.8% (local) or 12% (expatriate) of gross, full stop.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16 — CGI art. 146)_
 
-> `[RESEARCH GAP — reviewer to confirm]` **Read the consolidated CGI art. 146 itself before sign-off.** The finding above rests on the enacted *annexe fiscale* (which amends the article) plus arithmetic, not on the consolidated article as printed. PwC states the 2.8%/12% rates and the removal of the abatement but is silent on whether the training levies sit inside them. A reviewer with the consolidated CGI should confirm the table and, if a separate FDFP declaration exists administratively, say how it reconciles.
+> **Confirmed in the consolidated CGI art. 146** (DGI online edition updated to 3 January 2026): the table reads exactly as art. 16-3 of the 2025 annexe fiscale sets it (9.2%, 1.2%, 0.4% and 1.2%; totals 2.8% and 12%), and the superseded table (11.5%, 1.5%, 0.5%, 1.5%; totals 3.5% and 15% before the 20% abatement) is shown struck through beneath it. Whether a separate FDFP declaration exists administratively is still for the reviewer.
 
 ## Section 6 — Minimum Wage (SMIG / SMAG)
 
@@ -211,7 +211,7 @@ When a required input is ambiguous or missing, apply the most cautious assumptio
 | Employee/expatriate status | **Expatriate (12% employer payroll tax)** only if a contract clearly shows AEJ-approved expatriate terms; otherwise default to **local (2.8%)** and flag for confirmation | 12% should not be applied without contract evidence; but flag because misclassification cuts both ways. |
 | AT/MP work-injury rate | **5% (top of band)** for accrual until the CNPS risk-class notification is sighted | Avoids under-accruing the employer liability. |
 | Benefits in kind | **Include in ITS taxable base and employer-payroll-tax base** unless proven exempt | The scale applies to gross including benefits in kind. |
-| Professional abatement | **Apply none** (scale on gross) per PwC | See §2.1 research gap; conservative = no abatement = higher withholding. |
+| Professional abatement | **Apply none** (scale on gross) per CGI art. 118 and the 2025 annexe fiscale, art. 16 | Conservative = no abatement = higher withholding. |
 | Filing periodicity | If headcount unknown, assume **monthly** CNPS filing | Monthly is stricter than quarterly. |
 | Pay currency | **XOF/FCFA** — refuse any other currency | No foreign-currency payroll. |
 
@@ -425,37 +425,37 @@ Statements and payroll documents are typically in **French**. Common terms and p
 
 | Item | Value | Source |
 | --- | --- | --- |
-| ITS scale | 0/16/21/24/28/32% (§2.1) | CGI Art. 119 bis; PwC |
+| ITS scale | 0/16/21/24/28/32% (§2.1) | CGI Art. 119 bis; DGI booklet 2025 |
 | RICF | fixed 11,000 XOF/part-month (§2.2) | CGI Art. 120 |
 | ITS deadline | 15th of following month | DGI calendar (commonly cited) `[RESEARCH GAP]` |
-| ITS late penalty | 25% + 2%/month | DGI / PwC |
+| ITS late penalty | 10% + 1%/month | LPF art. 161 |
 | CNPS retirement | 6.30% EE / 7.70% ER; cap 3,375,000/mo | CLEISS (eff. 1 Jan 2025) |
 | Family + maternity | 5.75% ER; cap 70,000/mo | CLEISS |
 | AT/MP | 2%–5% ER; cap 70,000/mo | CLEISS / CNPS `[RESEARCH GAP — sector rate]` |
-| CMU | 500 XOF/person each side | CLEISS / PwC |
+| CMU | 500 XOF/person each side | CLEISS |
 | CNPS periodicity | monthly ≥20 / quarterly <20; due day 15 | CLEISS |
 | CNPS late penalty | 5% first month, then 1%/month | CLEISS |
 | DISA | due 31 March; 10% non-filing penalty | CNPS |
-| Employer payroll tax | 2.8% local / 12% expat | PwC |
+| Employer payroll tax | 2.8% local / 12% expat | CGI art. 146 |
 | FDFP components (inside the 2.8% / 12%) | 0.4% + 1.2% = 1.6% | Annexe fiscale a la LF n° 2024-1109, art. 16 (CGI art. 146) |
 | SMIG / SMAG | 75,000 / 39,960 XOF | Decree n° 2022-986 `[RESEARCH GAP — secondary]` |
-| VAT (context only) | 18% standard | PwC |
+| VAT (context only) | 18% standard | CGI art. 359 |
 
-- **ITS scale** — 0/16/21/24/28/32% (§2.1)  _(CGI Art. 119 bis; PwC)_
+- **ITS scale** — 0/16/21/24/28/32% (§2.1)  _(CGI Art. 119 bis; DGI booklet 2025)_
 - **RICF** — fixed 11,000 XOF/part-month (§2.2)  _(CGI Art. 120)_
 - **ITS deadline** — 15th of following month  _(DGI calendar (commonly cited) `[RESEARCH GAP]`)_
-- **ITS late penalty** — 25% + 2%/month  _(DGI / PwC)_
+- **ITS late penalty** — 10% + 1%/month  _(LPF art. 161)_
 - **CNPS retirement** — 6.30% EE / 7.70% ER; cap 3,375,000/mo  _(CLEISS (eff. 1 Jan 2025))_
 - **Family + maternity** — 5.75% ER; cap 70,000/mo  _(CLEISS)_
 - **AT/MP** — 2%–5% ER; cap 70,000/mo  _(CLEISS / CNPS `[RESEARCH GAP — sector rate]`)_
-- **CMU** — 500 XOF/person each side  _(CLEISS / PwC)_
+- **CMU** — 500 XOF/person each side  _(CLEISS)_
 - **CNPS periodicity** — monthly ≥20 / quarterly <20; due day 15  _(CLEISS)_
 - **CNPS late penalty** — 5% first month, then 1%/month  _(CLEISS)_
 - **DISA** — due 31 March; 10% non-filing penalty  _(CNPS)_
-- **Employer payroll tax** — 2.8% local / 12% expat  _(PwC)_
+- **Employer payroll tax** — 2.8% local / 12% expat  _(CGI art. 146)_
 - **FDFP components, inside the employer contribution** — 0.4% + 1.2% = 1.6%, counted within the 2.8% (local) or 12% (expatriate) total, not on top of it  _(Annexe fiscale a la Loi de Finances n° 2024-1109 du 18 decembre 2024, art. 16 (CGI art. 146) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
 - **SMIG / SMAG** — 75,000 / 39,960 XOF  _(Decree n° 2022-986 `[RESEARCH GAP — secondary]`)_
-- **VAT (context only)** — 18% standard  _(PwC)_
+- **VAT (context only)** — 18% standard  _(CGI art. 359)_
 
 ### Authorities & portals
 
@@ -463,7 +463,9 @@ Statements and payroll documents are typically in **French**. Common terms and p
 - DGI fiscal calendar — https://www.dgi.gouv.ci/assets/documents/CALENDRIER.pdf
 - CNPS — https://www.cnps.ci/ ; e-CNPS — https://e.cnps.ci/
 - CLEISS (cotisations CI) — https://www.cleiss.fr/docs/cotisations/cotedivoire.html
-- PwC Ivory Coast — https://taxsummaries.pwc.com/ivory-coast/
+- DGI consolidated CGI and Livre de Procédures fiscales (édition 2025, updated to 3 January 2026) — https://cgici.com/
+- DGI, Impôts et taxes en Côte d'Ivoire, édition 2025 — https://www.dgi.gouv.ci/assets/documents/IMPOTS%20ET%20TAXES%20EN%20COTE%20D%27IVOIRE%20.pdf
+- Annexe fiscale 2026 (DGBF) — https://www.dgbf.ci/wp-content/uploads/2025/11/Annexe1-Annexe-Fiscale.pdf
 - FDFP — https://fdfp.ci/presentation-du-fdfp/
 - CGI Art. 119 bis / 120 (legal text) — https://loidici.biz/2025/02/21/67781/
 
