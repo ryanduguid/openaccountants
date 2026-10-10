@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Macau (tax year 2025) — rat
 jurisdiction: MO
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,10 +22,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Currency** — Macau pataca (MOP / MOP$)  _(Macau Monetary Authority)_
 - **Tax authority** — Financial Services Bureau (Direccao dos Servicos de Financas, DSF / DSF Macau)  _([Financial Services Bureau (DSF) — https://www.dsf.gov.mo](https://www.dsf.gov.mo))_
 - **Basis of taxation** — Territorial — only Macau-source income is taxed; foreign-source income is generally outside scope  _(Macau Complementary (Profits) Tax Regulation)_
-- **Headline personal (professional) tax rate** — Progressive 0%–12%; effective rate typically under ~6.3% after the standard 25%/30% deduction  _([Macau Professional Tax Regulation — https://taxsummaries.pwc.com/macau-sar/individual/taxes-on-personal-income](https://taxsummaries.pwc.com/macau-sar/individual/taxes-on-personal-income))_
-- **Headline corporate (complementary) tax rate** — 12% on taxable profit above the annual exemption threshold  _([Macau Complementary (Profits) Tax Regulation — https://taxsummaries.pwc.com/macau-sar/corporate/taxes-on-corporate-income](https://taxsummaries.pwc.com/macau-sar/corporate/taxes-on-corporate-income))_
+- **Headline personal (professional) tax rate** — Progressive 0%–12%; effective rate typically under ~6.3% after the standard 25%/30% deduction  _(Macau Professional Tax Regulation as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Headline corporate (complementary) tax rate** — 12% on taxable profit above the annual exemption threshold  _(Macau Complementary (Profits) Tax Regulation as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Complementary tax exemption threshold (2025)** — MOP 600,000 of taxable income exempt; excess taxed at 12% MOP (Annual measure — set yearly in the Budget Law)  _(Macau Budget Law 2025 (annual tax relief measures))_
-- **VAT / GST** — None — Macau has no value added tax or goods and services tax  _([Macau tax framework (no VAT/GST statute exists) — https://taxsummaries.pwc.com/macau-sar/corporate/other-taxes](https://taxsummaries.pwc.com/macau-sar/corporate/other-taxes))_
+- **VAT / GST** — None — Macau has no value added tax or goods and services tax  _(Macau tax framework (no VAT/GST statute exists) as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Other principal taxes** — Property tax, stamp duty, consumption tax (tobacco/spirits only), and gaming tax on casino concessionaires  _(Macau tax framework (Property Tax, Stamp Duty and Consumption Tax regulations))_
 - **Main corporate annual filing deadline** — Group B: 31 March; Group A: 30 June (year following the tax year)  _(Macau Complementary (Profits) Tax Regulation (as described at [mdme.com](https://www.mdme.com/en/knowledge/taxation-doing-business-in-macau-2025/22402/)))_
 - **Main personal annual filing deadline** — Self-employed: by 31 March (or 15 April if organised accounts are kept). Employees: handled by employer PAYE — no individual return  _(Macau Professional Tax Regulation)_

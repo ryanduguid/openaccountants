@@ -4,7 +4,7 @@ description: "Source-cited draft covering Oman corporate income tax for 2025, th
 jurisdiction: OM
 category: international
 tax_year: 2025
-last_updated: 2026-09-12
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Standard rate | 15% of taxable income for an establishment, Omani company or permanent establishment | Income Tax Law, art. 112 |
 | Petroleum | 55% of taxable income from petroleum sales for taxpayers engaged in petroleum exploration | Art. 114 |
 | Withholding | 10% of the gross amount for the categories within arts. 40 and 52 | Art. 113 |
-| Tax base | Taxable profit after statutory adjustments; resident companies are taxed on worldwide income | [PwC, income determination](https://taxsummaries.pwc.com/oman/corporate/income-determination) |
+| Tax base | Taxable profit after statutory adjustments; resident companies are taxed on worldwide income | a secondary summary (link removed) |
 
 The rate provisions are in the Tax Authority's [English Income Tax Law][om-law-en].
 

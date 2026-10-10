@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Isle of 
 jurisdiction: IM
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,8 +27,8 @@ The Isle of Man offers a modern, flexible corporate regime, most commonly the pr
 - **Incorporation government fee** — Standard incorporation fee payable to the Companies Registry, plus registered-agent professional fees (approx — confirm current fee)  _(Companies Act 2006 (https://www.gov.im/categories/business-and-industries/companies-registry/registries/2006-act-companies/))_
 - **Annual return** — Annual return must be filed by the registered agent within 1 month of the company's return date, with the annual fee  _(Companies Act 2006 (https://www.gov.im/categories/business-and-industries/companies-registry/registries/2006-act-companies/))_
 - **Financial statements filing** — Accounts must be prepared but are not filed with the Registry; audit not generally required for 2006 Act companies  _(Companies Act 2006 (https://www.applebyglobal.com/publications/guide-to-companies-in-the-isle-of-man/))_
-- **Annual corporate tax return** — Every company must file an annual income tax return with the Income Tax Division (even at the 0% rate)  _(Income Tax Act 1970 (https://taxsummaries.pwc.com/isle-of-man/corporate/tax-administration))_
-- **Economic substance** — Companies carrying on 'relevant activities' must meet Isle of Man economic substance requirements (approx — confirm Order title)  _(Income Tax (Substance Requirements) Order (https://taxsummaries.pwc.com/isle-of-man/corporate/tax-administration))_
+- **Annual corporate tax return** — Every company must file an annual income tax return with the Income Tax Division (even at the 0% rate)  _(Income Tax Act 1970, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Economic substance** — Companies carrying on 'relevant activities' must meet Isle of Man economic substance requirements (approx — confirm Order title)  _(Income Tax (Substance Requirements) Order, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 <!-- openaccountants-cta-block -->
 

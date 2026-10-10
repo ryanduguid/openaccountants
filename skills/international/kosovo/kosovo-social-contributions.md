@@ -1,10 +1,10 @@
 ---
 name: kosovo-social-contributions
 description: Use this skill whenever asked about Kosovo payroll social contributions and wage taxation for employees and employers. Trigger on phrases like "how much pension contribution in Kosovo", "Kosovo payroll tax", "mandatory pension Trusti", "KPST contribution", "5% pension Kosovo", "Kosovo social security", "do I pay health insurance in Kosovo", "Kosovo PIT on salary", "withholding tax wages Kosovo", "WM declaration", "CM pension form", "secondary employer 10%", or any question about Kosovo employment-tax obligations. Also trigger when classifying bank statement transactions that relate to TAK/ATK tax payments, Trusti/KPST pension transfers, or salary debits from Kosovan banks (BKT, ProCredit, Raiffeisen Kosovo, TEB, NLB, Banka Ekonomike). Also trigger when preparing a monthly WM (wage withholding) or CM (pension contribution) declaration, or the annual PD personal income tax return. This skill covers the mandatory 10% pension split (5% employee + 5% employer), the 0%/8%/10% progressive personal income tax, the flat 10% secondary-employer withholding, the enacted-but-dormant health insurance regime, minimum wage, benefit-in-kind thresholds, payment schedule, penalties, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Kosovo payroll or social-contribution work.
-version: 0.2
+version: 0.3
 jurisdiction: XK
 tax_year: 2025
-last_updated: 2026-10-08
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Kosovo Social Contributions & Wage Taxation
 
-## Kosovo Social Contributions & Wage Taxation Skill v0.2
+## Kosovo Social Contributions & Wage Taxation Skill v0.3
 
-> **Tier 2 (research-verified).** Figures are sourced from [Law No. 05/L-028](https://www.atk-ks.org/wp-content/uploads/2017/07/LAW_NO._05_L_-028__ON_PERSONAL_INCOME_TAX.pdf) on Personal Income Tax as amended by Law No. 08/L-142 ([TAK notice of 27 August 2024 quoting Law No. 08/L-142 art. 5](https://www.atk-ks.org/en/notice-to-taxpayers-personal-income-tax-rates-are-changed/)), [Law No. 04/L-101](https://www.atk-ks.org/wp-content/uploads/2017/07/Law-No.-04-L-101.pdf) on Pension Funds as amended by Laws No. 04/L-168 and 05/L-116, [TAK Public Explanatory Decision No. 01/2013](https://www.atk-ks.org/wp-content/uploads/2017/08/Vendim-Shpjegues-Publik-NR-01-2013Anglisht.pdf), [Law No. 08/L-257](https://www.atk-ks.org/wp-content/uploads/2024/01/LAW_NO._08_L-257_ON_THE_ADMINISTRATION_OF_TAX_PROCEDURES.pdf) on the Administration of Tax Procedures and the TAK guidance portal. PwC is kept only for the benefit-in-kind threshold, and the health-insurance and minimum-wage rows keep their secondary sources. This skill has NOT yet been signed off by a Kosovo-warranted accountant (`verified_by: pending`). Treat every figure as estimated pending professional review.
+> **Tier 2 (research-verified).** Figures are sourced from [Law No. 05/L-028](https://www.atk-ks.org/wp-content/uploads/2017/07/LAW_NO._05_L_-028__ON_PERSONAL_INCOME_TAX.pdf) on Personal Income Tax as amended by Law No. 08/L-142 ([TAK notice of 27 August 2024 quoting Law No. 08/L-142 art. 5](https://www.atk-ks.org/en/notice-to-taxpayers-personal-income-tax-rates-are-changed/)), [Law No. 04/L-101](https://www.atk-ks.org/wp-content/uploads/2017/07/Law-No.-04-L-101.pdf) on Pension Funds as amended by Laws No. 04/L-168 and 05/L-116, [TAK Public Explanatory Decision No. 01/2013](https://www.atk-ks.org/wp-content/uploads/2017/08/Vendim-Shpjegues-Publik-NR-01-2013Anglisht.pdf), [Law No. 08/L-257](https://www.atk-ks.org/wp-content/uploads/2024/01/LAW_NO._08_L-257_ON_THE_ADMINISTRATION_OF_TAX_PROCEDURES.pdf) on the Administration of Tax Procedures and the TAK guidance portal. a secondary practitioner summary is kept only for the benefit-in-kind threshold, and the health-insurance and minimum-wage rows keep their secondary sources. This skill has NOT yet been signed off by a Kosovo-warranted accountant (`verified_by: pending`). Treat every figure as estimated pending professional review.
 
 ## Section 1 -- Quick reference
 
@@ -243,7 +243,7 @@ Six bank statement classifications and computations for a hypothetical Kosovan e
 - Monthly PIT on 670.00: 0% on 250.00 = 0.00; 8% × 200.00 = 16.00; 10% × (670.00 − 450.00) = 10% × 220.00 = 22.00. Total PIT = **EUR 38.00**.
 - Pension contributions are computed on gross wages — *[RESEARCH GAP: whether the taxable BIK enters the pension base is not confirmed; reviewer to verify. Conservatively computed on cash wage EUR 600.]* Employee pension 5% × 600.00 = **EUR 30.00**; employer pension 5% × 600.00 = **EUR 30.00**.
 
-**Source:** Law No. 05/L-028 art. 9(1.8) and (2) (benefits in kind; business travel, work-accident indemnity and transport exclusions); EUR 65 threshold from PwC, Income determination, because the sub-legal act that sets it was not read. *[RESEARCH GAP]*
+**Source:** Law No. 05/L-028 art. 9(1.8) and (2) (benefits in kind; business travel, work-accident indemnity and transport exclusions); EUR 65 threshold from a secondary summary, because the sub-legal act that sets it was not read. *[RESEARCH GAP]*
 
 ### Example 6 -- Ambiguous TAK debit (understatement / interest)
 
@@ -286,7 +286,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 
 ### Rule 7 -- Benefits in kind over EUR 65/month are taxable
 
-- **Benefit in kind threshold** — EUR 65/month EUR (Benefits in kind exceeding this monthly amount are taxable employment income. Reimbursement of business travel, work-accident indemnity, and transport-cost reimbursement are excluded.)  _(Law No. 05/L-028 art. 9(1.8) and (2); EUR 65 figure from PwC, Income determination. *[RESEARCH GAP — confirm in the current sub-legal act.]*)_
+- **Benefit in kind threshold** — EUR 65/month EUR (Benefits in kind exceeding this monthly amount are taxable employment income. Reimbursement of business travel, work-accident indemnity, and transport-cost reimbursement are excluded.)  _(Law No. 05/L-028 art. 9(1.8) and (2); EUR 65 figure from a secondary summary. *[RESEARCH GAP — confirm in the current sub-legal act.]*)_
 
 ### Rule 8 -- Voluntary additional pension
 
@@ -497,7 +497,7 @@ If the client provides only a bank statement and no other information:
 | Mandatory pension | 10% (5% employee + 5% employer) | Law No. 04/L-101 art. 6.2 |
 | Voluntary pension | up to 15% employee / 15% employer in total | Law No. 04/L-101 art. 6.2(c); TAK Decision 01/2013 art. 5 |
 | Health insurance | 0% (Law 04/L-249 dormant) | GrECo/Asinta |
-| Taxable BIK threshold | EUR 65/month | PwC, Income determination (the law leaves it to a sub-legal act, art. 9(1.8)) *[RESEARCH GAP]* |
+| Taxable BIK threshold | EUR 65/month | a secondary summary (the law leaves it to a sub-legal act, art. 9(1.8)) *[RESEARCH GAP]* |
 | Minimum wage (2025) | EUR 350.00/month gross | EY newsroom (eff. 1 Oct 2024) |
 | Minimum wage (from 1 Jan 2026) | EUR 425.00/month | EY newsroom |
 | Minimum wage (from 1 Jul 2026) | EUR 500.00/month | EY newsroom |

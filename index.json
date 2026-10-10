@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-10T23:31:09+00:00",
+ "generated_at": "2026-10-10T23:43:43+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -9741,7 +9741,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "hk-mpf",
@@ -9780,7 +9780,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "hk-vat-gst",
@@ -9793,7 +9793,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "hong-kong-tax",
@@ -10690,7 +10690,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "im-corporate-income-tax",
@@ -10703,7 +10703,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "im-income-tax",
@@ -10716,7 +10716,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "im-payroll-social",
@@ -10742,7 +10742,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "isle-of-man-vat",
@@ -11886,7 +11886,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-08"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "kosovo-social-contributions",
@@ -11899,7 +11899,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-08"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "kosovo-tax-optimization",
@@ -12588,7 +12588,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "li-income-tax",
@@ -12601,7 +12601,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "li-payroll-social",
@@ -12614,7 +12614,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "li-tax-overview",
@@ -12627,7 +12627,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "liechtenstein-vat",
@@ -12822,7 +12822,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "mo-payroll-social",
@@ -12835,7 +12835,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "mo-tax-overview",
@@ -12848,7 +12848,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "mo-vat-gst",
@@ -12861,7 +12861,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "mg-company-formation",
@@ -15383,7 +15383,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "no-income-tax",
@@ -15422,7 +15422,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "norway-mva",
@@ -15461,7 +15461,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "om-corporate-income-tax",
@@ -15474,7 +15474,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-12"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "om-income-tax",
@@ -15487,7 +15487,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "om-payroll-social",
@@ -15500,7 +15500,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "om-tax-overview",
@@ -15513,7 +15513,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "oman-vat",
@@ -19062,7 +19062,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tw-corporate-income-tax",
@@ -19075,7 +19075,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tw-income-tax",
@@ -19114,7 +19114,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tj-company-formation",
@@ -19790,7 +19790,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tr-corporate-income-tax",
@@ -19803,7 +19803,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tr-payroll-social",
@@ -19816,7 +19816,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tr-tax-overview",

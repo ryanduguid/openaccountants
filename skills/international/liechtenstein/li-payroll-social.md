@@ -5,8 +5,8 @@ jurisdiction: LI
 category: payroll
 tax_year: 2025
 tax_year_notes: "2025, with the AHV/IV/FAK contribution table effective 1 January 2026 stated where it has been confirmed; ALV is also stated for 2026; other unconfirmed contribution figures must be checked for the required period"
-version: 0.3
-last_updated: 2026-10-04
+version: 0.4
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Family allowance fund (FAK), 2026** - Included in the AHV/IV/FAK totals above. Do not add a separate employer-only estimate to those totals. [2026 contribution table](https://www.sozialfonds.li/Portal/UserFiles/Downloads/Merkbl%C3%A4tter/Beitragspflicht%20Sozialversicherungen%202026.pdf)
 - **Occupational pension (2nd pillar, BVG)** — Mandatory; the pension institution sets the contributions, the retirement contribution is at least 8% of the insured salary, and the employer pays at least half of each employee's contributions  _(Gesetz über die betriebliche Personalvorsorge (BPVG), LR 831.40, LILEX consolidated text, Art. 7 Abs. 2 and 4 — https://www.gesetze.li/konso/pdf/1988012000)_
 - **Accident insurance (UVG)** — Premiums for compulsory occupational accident and occupational disease insurance are borne by the employer; premiums for non-occupational accident insurance are borne by the insured employee unless agreed otherwise in the employee's favour  _(Gesetz über die obligatorische Unfallversicherung (UVersG), LR 832.20, LILEX consolidated text, Art. 79 — https://www.gesetze.li/konso/pdf/1990046000)_
-- **Wage tax withholding (Quellensteuer / Lohnsteuerabzug)** — Employers deduct tax at source from employment income and board remuneration of resident employees (Art. 24 Abs. 1), where it is credited in the ordinary assessment, and of non-resident employees including cross-border commuters (Art. 24 Abs. 2), together with pension payments from former Liechtenstein employment  _(Steuergesetz (SteG, LGBl. 2010 Nr. 340), consolidated version in force from 1 July 2026 on gesetze.li, Art. 24 Abs. 1 and 2 — https://www.gesetze.li/konso/pdf/2010340000?version=38 ; https://taxsummaries.pwc.com/liechtenstein/individual/tax-administration)_
+- **Wage tax withholding (Quellensteuer / Lohnsteuerabzug)** — Employers deduct tax at source from employment income and board remuneration of resident employees (Art. 24 Abs. 1), where it is credited in the ordinary assessment, and of non-resident employees including cross-border commuters (Art. 24 Abs. 2), together with pension payments from former Liechtenstein employment  _(Steuergesetz (SteG, LGBl. 2010 Nr. 340), consolidated version in force from 1 July 2026 on gesetze.li, Art. 24 Abs. 1 and 2 — https://www.gesetze.li/konso/pdf/2010340000?version=38)_
 - **Contribution / withholding remittance** — Employers deduct the employee contributions from the salary and remit them with the employer share to the AHV-IV-FAK; wage tax withheld under Art. 24 SteG is remitted to the Tax Administration on the schedule it sets each year  _(Liechtensteinische AHV-IV-FAK, Beitragsansätze AHV / IV / FAK / VK (gültig ab 01.01.2026) — https://www.ahv.li/beitraege/arbeitnehmer-arbeitgeber/beitragsansaetze-ahv-iv-fak-vk-gueltig-ab-01012021-1-1-1 ; Steuergesetz (SteG), LR 640.0, LILEX consolidated text, Art. 24 — https://www.gesetze.li/konso/pdf/2010340000)_
 
 <!-- openaccountants-cta-block -->
