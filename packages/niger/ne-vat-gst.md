@@ -4,8 +4,8 @@ description: "Source-cited draft: vat / gst for Niger (tax year 2025) — rates,
 jurisdiction: NE
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,9 +17,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Niger levies a value-added tax (Taxe sur la Valeur Ajoutée, TVA) under the Code Général des Impôts, within the UEMOA VAT framework. The figures below are an unverified draft and must be confirmed by a licensed Niger accountant.
 
-- **Standard VAT (TVA) rate** — 19 percent  _([Code Général des Impôts (Niger) — Taxe sur la Valeur Ajoutée (TVA)](https://www.pwc.co.za/en/publications/vat-in-africa/niger-overview.html))_
+- **Standard VAT (TVA) rate** — 19 percent  _(Code Général des Impôts (Niger), provisions on the Taxe sur la Valeur Ajoutée, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Reduced rate** — A reduced rate may apply to certain supplies; otherwise the single standard rate of 19% applies (approx — confirm)  _(Code Général des Impôts (Niger) — TVA)_
-- **Exports** — Exports are zero-rated (0%)  _([Code Général des Impôts (Niger) — TVA](https://www.pwc.co.za/en/publications/vat-in-africa/niger-overview.html))_
+- **Exports** — Exports are zero-rated (0%)  _(Code Général des Impôts (Niger), TVA export provisions, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Exempt supplies** — Certain essential goods and services (e.g. basic foodstuffs, certain medical, financial and educational supplies) are exempt (approx — confirm)  _(Code Général des Impôts (Niger) — TVA)_
 - **VAT registration threshold (turnover)** — Based on the réel taxation regime turnover threshold; commonly around FCFA 50 million for goods and lower for services XOF (approx — confirm)  _(Code Général des Impôts (Niger))_
 - **VAT filing frequency** — Monthly — return and payment by the 15th of the following month (approx — confirm)  _(Code Général des Impôts (Niger) — TVA)_

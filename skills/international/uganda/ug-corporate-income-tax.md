@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Uganda (tax year 2025
 jurisdiction: UG
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.3
+last_updated: 2026-10-11
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Overview of withholding tax regime** — Uganda applies withholding tax on a range of payments. Non-residents face a general 15% rate on passive income (subject to treaty relief), while resident WHT rates vary by payment type.
 - **WHT on dividends to non-residents** — 15% of the gross dividend (subject to reduction under an applicable double tax treaty)  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), ss 83 and 85 and Third Schedule Part IV — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf)_
-- **WHT on dividends to resident persons** — 15% standard; 10% on dividends paid by a company listed on the stock exchange to individuals; 0% where a resident company holds 25% or more of the voting power of the payer  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), s 118 and Third Schedule Part V — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf ; PwC Worldwide Tax Summaries, Withholding taxes (25% participation exemption) — https://taxsummaries.pwc.com/uganda/corporate/withholding-taxes)_
+- **WHT on dividends to resident persons** — 15% standard; 10% on dividends paid by a company listed on the stock exchange to individuals; 0% where a resident company holds 25% or more of the voting power of the payer  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), s 118 and Third Schedule Part V — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf)_
 - **WHT on interest to non-residents** — 15% (interest on government securities: 20% where the maturity does not exceed ten years, 10% where it is at least ten years)  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), ss 83 and 85 and Third Schedule Part IV — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf)_
 - **WHT on royalties to non-residents** — 15% (subject to treaty reduction)  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), ss 83 and 85 and Third Schedule Part IV — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf)_
 - **WHT on management/professional fees to non-residents** — 15% on management charges and on payments under a Ugandan-source services contract  _(Income Tax Act (Cap 340) in the Uganda Revenue Authority's Domestic Tax Laws of Uganda compendium (as of July 2021), ss 83 and 85 and Third Schedule Part IV — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf)_

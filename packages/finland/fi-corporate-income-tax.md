@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Finland (tax year 202
 jurisdiction: FI
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ Finnish resident companies (e.g. Oy) are taxed on worldwide income at a flat cor
 
 Dividends, interest and royalties paid to non-residents may be subject to Finnish withholding tax, often reduced or eliminated by EU directives or tax treaties.
 
-- **Dividends to non-residents** — 20% (corporate beneficiaries) or 30% (individuals), reduced under treaties/EU rules  _([Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978)](https://taxsummaries.pwc.com/finland/corporate/withholding-taxes))_
+- **Dividends to non-residents** — 20% (corporate beneficiaries) or 30% (individuals), reduced under treaties/EU rules  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Interest to non-residents** — Generally 0% (no domestic WHT on most interest to non-residents)  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978))_
 - **Royalties to non-residents** — 20% (corporate) / 30% (individuals), reduced under treaties and the EU Interest & Royalties Directive (approx — confirm)  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978))_
 
@@ -35,7 +35,7 @@ Dividends, interest and royalties paid to non-residents may be subject to Finnis
 
 Companies file CIT returns electronically and pay tax in advance instalments during the accounting period, with adjustments after assessment.
 
-- **CIT return deadline** — Within 4 months from the end of the month in which the accounting period ends (electronic filing)  _([Act on Assessment Procedure (Laki verotusmenettelystä 1558/1995)](https://taxsummaries.pwc.com/finland/corporate/tax-administration))_
+- **CIT return deadline** — Within 4 months from the end of the month in which the accounting period ends (electronic filing)  _(Act on Assessment Procedure (Laki verotusmenettelystä 1558/1995), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Advance tax — small liabilities** — If total ≤ €2,000: two instalments, due in the 3rd and 9th months of the accounting period  _(Act on Assessment Procedure (Laki verotusmenettelystä 1558/1995))_
 - **Advance tax — larger liabilities** — If total > €2,000: monthly instalments, due on the 23rd of each month  _(Act on Assessment Procedure (Laki verotusmenettelystä 1558/1995))_
 

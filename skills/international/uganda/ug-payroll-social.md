@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Uganda (tax
 jurisdiction: UG
 category: payroll
 tax_year: 2026
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -28,7 +28,7 @@ Mandatory social security in Uganda is run by the National Social Security Fund 
 
 - **PAYE withholding** — Employer withholds income tax monthly on the progressive PAYE scale: from 1 July 2026 residents pay 0% to UGX 335,000, 20% to UGX 410,000, 25% to UGX 485,000 and 30% above, plus a 10% surcharge over UGX 10,000,000 a month (0% / 10% / 20% / 30% at UGX 235,000, 335,000 and 410,000 for 2025/26)  _(Uganda Revenue Authority, PAYE rates page (resident and non-resident scales) — https://ura.go.ug/en/domestic-taxes/paye-rates/ ; Uganda Revenue Authority, Changes to PAYE return form following the Income Tax (Amendment) Act, 2026 (new resident rates from 1 July 2026) — https://ura.go.ug/en/changes-to-paye-return-form-following-the-income-tax-amendment-act-2026/)_
 - **PAYE remittance deadline** — By the 15th day of the month following the return period, with the monthly PAYE return  _(Uganda Revenue Authority, Returns page (filing deadlines) — https://ura.go.ug/en/domestic-taxes/returns/)_
-- **Local Service Tax (LST)** — UGX 5,000 – 100,000 per year, deducted from employees and paid to the local (municipal/district) council, banded by income  _(Local Governments (Amendment) Act, 2008 — https://taxsummaries.pwc.com/uganda/corporate/other-taxes)_
+- **Local Service Tax (LST)** — UGX 5,000 – 100,000 per year, deducted from employees and paid to the local (municipal/district) council, banded by income  _(Local Governments (Amendment) Act, 2008 (Uganda), Local Service Tax provisions, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 Employers operate PAYE on the progressive personal income tax scale and remit monthly. Local Service Tax is an additional payroll-related levy paid to local councils.
 

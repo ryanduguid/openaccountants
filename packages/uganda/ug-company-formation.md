@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Uganda (
 jurisdiction: UG
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Step 1 — Name reservation** — Reserve the company name with URSB via OBRS; fee approximately UGX 35,000  _(Companies Act, 2012 (https://globallawexperts.com/ursb-company-registration-fees/))_
 - **Step 2 — Documents and TIN** — Prepare memorandum and articles of association, file Form 18 (registered office) and Form 20 (directors), and obtain a Tax Identification Number (TIN) from URA  _(Companies Act, 2012 (https://ursb.go.ug/services/business-registration/))_
 - **Step 3 — Registration / incorporation fee** — Flat UGX 105,000 where nominal share capital is UGX 5,000,000 or below; 1.5% of nominal share capital where it exceeds UGX 5,000,000  _(Companies Act, 2012 (https://globallawexperts.com/ursb-company-registration-fees/))_
-- **Stamp duty on formation** — Stamp duty is charged on the statement of nominal share capital delivered to the registrar on incorporation or on an increase of capital, at the Schedule 2 rate (0.5% as reported by PwC)  _(Stamp Duty Act, 2014 in the Uganda Revenue Authority's Domestic Tax Laws compendium (as of July 2021), s 9 and Schedule 2 — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf ; PwC Worldwide Tax Summaries, Other taxes (rate) — https://taxsummaries.pwc.com/uganda/corporate/other-taxes)_
+- **Stamp duty on formation** — Stamp duty is charged on the statement of nominal share capital delivered to the registrar on incorporation or on an increase of capital, at the Schedule 2 rate (0.5% as reported by practitioner summaries)  _(Stamp Duty Act, 2014 in the Uganda Revenue Authority's Domestic Tax Laws compendium (as of July 2021), s 9 and Schedule 2 — https://ura.go.ug/storage/2023/08/10580_DT_LAWS_JULY_2021.pdf)_
 - **Typical all-in incorporation cost (small company)** — Approximately UGX 300,000 – 700,000 including stamp duty, declarations and basic drafting (approx — confirm)  _(Companies Act, 2012 (https://globallawexperts.com/ursb-company-registration-fees/))_
 - **Typical incorporation timeline** — A few days once name reservation and documents are filed via OBRS (subject to URSB processing) (approx — confirm)  _(Companies Act, 2012 (https://ursb.go.ug/services/business-registration/))_
 - **Core annual compliance — annual return** — File an annual return with URSB and keep statutory registers; companies above thresholds must file audited financial statements  _(Companies Act, 2012 (https://ursb.go.ug/services/business-registration/))_
