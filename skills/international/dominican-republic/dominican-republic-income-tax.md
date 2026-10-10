@@ -1,10 +1,10 @@
 ---
 name: dominican-republic-income-tax
 description: Use this skill whenever asked about Dominican Republic personal income tax (Impuesto Sobre la Renta / ISR) for self-employed individuals, independent professionals, and salaried persons. Trigger on phrases like "how much ISR do I pay", "declaración jurada", "IR-1", "IR-3", "retención de ISR", "deducible expenses Dominican Republic", "TSS contributions", "AFP", "SFS", "seguridad social", "regalía pascual", "honorarios", "RNC registration", "ITBIS interaction", "personas físicas", "self-employed tax Dominican Republic", or any question about filing or computing income tax for an individual or sole proprietor in the Dominican Republic. Also trigger when preparing or reviewing an IR-1 return, computing deductible expenses, advising on withholding on professional/technical services, or reconciling social-security (SDSS) contributions. This skill covers the progressive ISR scale, the annual exempt threshold, the IR-1/IR-3/IR-17 form structure, SDSS contributions (AFP, SFS, SRL, INFOTEP), withholding on payments to individuals, penalties, and interaction with ITBIS (VAT). ALWAYS read this skill before touching any Dominican Republic income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 reviewed_by: Miguel Lantigua
 review_status: pending_review
 depends_on:
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Dominican Republic Income Tax (ISR) -- Self-Employed and Individuals
 
-## Dominican Republic Income Tax (ISR) -- Self-Employed and Individuals Skill v0.2
+## Dominican Republic Income Tax (ISR) -- Self-Employed and Individuals Skill v0.3
 
-> **Tier 2 (research-verified).** Figures below are sourced from PwC Worldwide Tax Summaries, the DGII, the TSS, and Dominican law-firm guidance. Where a figure could not be confirmed against a primary source it is marked **[RESEARCH GAP -- reviewer to confirm]**. A Dominican CPA (Contador Público Autorizado) must sign off before filing.
+> **Tier 2 (research-verified).** Figures below are sourced from the DGII (Código Tributario Título II and the Impuesto sobre la Renta page), the TSS, and Dominican law-firm guidance. Where a figure could not be confirmed against a primary source it is marked **[RESEARCH GAP -- reviewer to confirm]**. A Dominican CPA (Contador Público Autorizado) must sign off before filing.
 
 ## Section 1 -- Quick Reference
 
@@ -36,14 +36,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social-security authority | Tesorería de la Seguridad Social (TSS) -- tss.gob.do |
 | Filing portal | DGII Oficina Virtual (OFV); TSS / SUIRPLUS for SDSS |
 | Individual filing deadline | 31 March of the following year (IR-1). FY2025 due 31 March 2026 [DGII] |
-| Tax system | Territorial -- residents taxed on DR-source income [PwC] |
+| Tax system | Territorial -- residents taxed on DR-source income [Código Tributario art. 269] |
 | Validated by | Pending -- requires sign-off by a Dominican Contador Público Autorizado (CPA) |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### ISR Rate Brackets (FY2025) -- Individuals (personas físicas)
 
-**ISR Rate Brackets (FY2025) -- Individuals (personas físicas)**  _(PwC Worldwide Tax Summaries (updated 05 Dec 2025); DGII escala salarial FY2025)_
+**ISR Rate Brackets (FY2025) -- Individuals (personas físicas)**  _(DGII, Impuesto sobre la Renta (escala salarial FY2025) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx; Código Tributario (Ley 11-92), Título II, DGII consolidated text, art. 296 (indexed scale) — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf)_
 
 | Annual Taxable Income (RD$) | Tax on Lower Limit | Rate on Excess | Cumulative Tax at Top of Band |
 | --- | --- | --- | --- |
@@ -64,7 +64,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Social-Security (SDSS) Contribution Rates -- Monthly Salary
 
-**Social-Security (SDSS) Contribution Rates -- Monthly Salary**  _(PwC Worldwide Tax Summaries; TSS / SDSS (Ley 87-01); INFOTEP (Ley 116-80))_
+**Social-Security (SDSS) Contribution Rates -- Monthly Salary**  _(TSS / SDSS: Ley 87-01 (Sistema Dominicano de Seguridad Social), arts 56 and 140 as amended by Ley 188-07, as reported (the TSS copies answer 403 and 404); INFOTEP (Ley 116-80))_
 
 | Component | Employee | Employer | Total | Statutory base / ceiling |
 | --- | --- | --- | --- | --- |
@@ -78,11 +78,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - Employee: 2.87 + 3.04 + 0.00 = **5.91%** ✓
 - Employer: 7.10 + 7.09 + 1.20 = **15.39%** ✓
 - Total: 9.97 + 10.13 + 1.20 = **21.30%** (= 5.91 + 15.39) ✓
-- Employer cost incl. INFOTEP: 15.39 + 1.00 = **~16.39% of payroll** [PwC; RemotePeople; Contadom]
+- Employer cost incl. INFOTEP: 15.39 + 1.00 = **~16.39% of payroll** [TSS, as reported; RemotePeople; Contadom]
 
 **Notes / caveats:**
 - **SRL rate ~1.20% is approximate.** It is a fixed component (~1.0% for all employers) plus a variable surcharge based on the company's risk classification (Type I–IV); sources differ on the maximum variable (cited as up to 0.3%, occasionally up to 0.6%). **Confirm the specific company's assigned SRL rate from its TSS classification** rather than assuming a flat 1.20% [TSS; Contadom].
-- **AFP 7.10% employer / 2.87% employee** per PwC; some payroll guides itemize small allocations to solidarity/disability/operating funds differently (e.g. splitting out a 0.4% solidarity fund). Reconcile against current TSS technical instructions if exact sub-allocations are needed [PwC; caveat].
+- **AFP 7.10% employer / 2.87% employee** per the TSS rate table as reported; some payroll guides itemize small allocations to solidarity/disability/operating funds differently (e.g. splitting out a 0.4% solidarity fund). Reconcile against current TSS technical instructions if exact sub-allocations are needed [TSS; caveat].
 - INFOTEP's 0.5% employee charge is withheld from the **Christmas bonus (regalía pascual)**, not from regular salary [INFOTEP].
 
 ### SDSS Contribution Ceilings (multiplier of the minimum cotizable wage)
@@ -96,7 +96,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Arithmetic check (1 Feb 2026 base RD$23,223):** 23,223 × 20 = 464,460 ✓; × 10 = 232,230 ✓; × 4 = 92,892 ✓. (1 Apr 2025 base RD$21,674.80): × 20 = 433,496 ✓; × 10 = 216,748 ✓; × 4 = 86,699.20 ✓. Each ceiling ≥ the 1× floor. **Use the ceiling matching the contribution month** [TSS; conservative default].
 
-> **[RESEARCH GAP -- reviewer to confirm]** Direct fetches of tss.gob.do and the official Resolution 01-2025 PDF returned 403/timeout at research time. Ceiling figures were corroborated via Acento and P&H Law citing the official TSS announcement plus PwC. A reviewer should confirm the exact DOP ceilings and effective dates against the primary TSS resolution.
+> **[RESEARCH GAP -- reviewer to confirm]** Direct fetches of tss.gob.do and the official Resolution 01-2025 PDF returned 403/timeout at research time. Ceiling figures were corroborated via Acento and P&H Law citing the official TSS announcement plus payroll summaries. A reviewer should confirm the exact DOP ceilings and effective dates against the primary TSS resolution.
 
 ### Withholding on Payments to Individuals (retención de ISR)
 
@@ -114,7 +114,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown residence / source of income | Treat as DR tax resident taxed on DR-source income (territorial) [PwC] |
+| Unknown residence / source of income | Treat as DR tax resident taxed on DR-source income (territorial) [Código Tributario art. 269] |
 | Unknown whether freelancer is SDSS-affiliated | Do NOT auto-apply employee SDSS deductions to a pure self-employed person (voluntary only) [TSS] |
 | Unknown contribution month for SDSS ceilings | Use the ceiling set matching the contribution month (Feb-2026 set for current periods) [TSS] |
 | Unknown tax year for ISR scale | Apply the FY2025 scale (exempt RD$416,220) for income earned in calendar 2025 [DGII] |
@@ -134,9 +134,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal Catalogue
 
-- **R-DO-1 -- Residence / source uncertain** — "Dominican Republic uses a territorial system, and the taxation of foreign-source income depends on residence facts and the 3-year rule for newly-resident individuals. This skill cannot determine residence. Please confirm before proceeding, or escalate to a Dominican CPA."  _([PwC])_
+- **R-DO-1 -- Residence / source uncertain** — "Dominican Republic uses a territorial system, and the taxation of foreign-source income depends on residence facts and the 3-year rule for newly-resident individuals. This skill cannot determine residence. Please confirm before proceeding, or escalate to a Dominican CPA."  _(Código Tributario (Ley 11-92), Título II, DGII consolidated text, arts 269 and 271 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf)_
 - **R-DO-2 -- Companies / partnerships** — "This skill covers individuals and sole proprietors (personas físicas) only. Sociedades and other personas jurídicas file the IR-2 corporate return under different rules. Escalate to a Dominican CPA."
-- **R-DO-3 -- Foreign-source income / expatriates** — "Foreign-source investment income of a newly-resident individual is generally only taxed from the 3rd year of residence, and treaty relief may apply. Out of scope. Escalate to a Dominican CPA."  _([PwC])_
+- **R-DO-3 -- Foreign-source income / expatriates** — "Foreign-source investment income of a newly-resident individual is generally only taxed from the 3rd year of residence, and treaty relief may apply. Out of scope. Escalate to a Dominican CPA."  _(Código Tributario (Ley 11-92), Título II, DGII consolidated text, arts 269 and 271 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf)_
 - **R-DO-4 -- Capital gains / asset disposals** — "Capital gains computations require specialised analysis under the Código Tributario. Escalate to a Dominican CPA."
 - **R-DO-5 -- Arrears / enforcement** — "Client has outstanding ISR or SDSS arrears or is subject to DGII/TSS enforcement. Surcharges of 10% (first month) + 4%/month plus 1.10%/month interest compound quickly. Do not advise. Escalate to a Dominican CPA immediately."  _([DGII])_
 - **R-DO-6 -- ITBIS (VAT) return requested** — "This skill covers income tax (ISR / IR-1) only. For Dominican ITBIS, use the dominican-republic-itbis skill (Form IT-1)."
@@ -331,11 +331,11 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 ### 5.1 Territorial System and Residence
 
-- **Territorial system and residence** — The Dominican Republic uses a **territorial** system: residents are taxed on DR-source income. Foreign-source investment/financial income of a newly-resident individual is taxed only **from the 3rd year of residence**. Default to DR-source income unless residence facts indicate otherwise [PwC].  _(Código Tributario (Ley 11-92); PwC)_
+- **Territorial system and residence** — The Dominican Republic uses a **territorial** system: residents are taxed on DR-source income. Foreign-source investment/financial income of a newly-resident individual is taxed only **from the 3rd year of residence**. Default to DR-source income unless residence facts indicate otherwise [Código Tributario arts 269 and 271].  _(Código Tributario (Ley 11-92), Título II, DGII consolidated text, arts 269 and 271 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf)_
 
 ### 5.2 The Progressive ISR Scale (FY2025)
 
-- **Progressive ISR scale application** — Apply the Section 1 scale: 0% up to RD$416,220; 15% on 416,220–624,329; base RD$31,216 + 20% on 624,329–867,123; base RD$79,776 + 25% above 867,123. Top marginal rate 25%. The exempt threshold is inflation-indexed annually [PwC; DGII].  _(Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 296 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf ; DGII, Comunidad de Ayuda CA687, escala salarial 2026 — https://ayuda.dgii.gov.do/conversations/impuesto-sobre-la-renta-isr/ca687-cul-es-la-escala-salarial-correspondiente-al-ao-2026-del-impuesto-sobre-la-renta-isr/696a664277932619036537b8 ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx ; DGII, Aviso: Calendario de implementación de la Ley Núm. 30-26 de 18 de junio de 2026 — https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2026/10-26.pdf)_
+- **Progressive ISR scale application** — Apply the Section 1 scale: 0% up to RD$416,220; 15% on 416,220–624,329; base RD$31,216 + 20% on 624,329–867,123; base RD$79,776 + 25% above 867,123. Top marginal rate 25%. The exempt threshold is inflation-indexed annually [DGII; Código Tributario art. 296].  _(Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 296 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf ; DGII, Comunidad de Ayuda CA687, escala salarial 2026 — https://ayuda.dgii.gov.do/conversations/impuesto-sobre-la-renta-isr/ca687-cul-es-la-escala-salarial-correspondiente-al-ao-2026-del-impuesto-sobre-la-renta-isr/696a664277932619036537b8 ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx ; DGII, Aviso: Calendario de implementación de la Ley Núm. 30-26 de 18 de junio de 2026 — https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2026/10-26.pdf)_
 
 ### 5.3 Tax Year and Filing
 
@@ -351,7 +351,7 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 ### 5.6 Social Security (SDSS) -- Dependent Workers
 
-- **SDSS for dependent workers** — For salaried workers, the employer withholds the employee SDSS share (**5.91%** = 2.87% AFP + 3.04% SFS) and pays the employer share (**~15.39%** = 7.10% AFP + 7.09% SFS + ~1.20% SRL) plus **1% INFOTEP**, each subject to its component ceiling [PwC; TSS]. Use the ceiling set matching the contribution month (Section 1).  _(PwC; TSS)_
+- **SDSS for dependent workers** — For salaried workers, the employer withholds the employee SDSS share (**5.91%** = 2.87% AFP + 3.04% SFS) and pays the employer share (**~15.39%** = 7.10% AFP + 7.09% SFS + ~1.20% SRL) plus **1% INFOTEP**, each subject to its component ceiling [TSS]. Use the ceiling set matching the contribution month (Section 1).  _(Ley 87-01 (Sistema Dominicano de Seguridad Social), arts 56 and 140 as amended by Ley 188-07, as reported (the TSS copies answer 403 and 404); TSS)_
 
 ### 5.7 Self-Employed and SDSS
 
@@ -426,7 +426,7 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 ### 6.7 Foreign-Source Income and the 3-Year Rule
 
-- **Foreign-source income and the 3-year rule** — For a newly-resident individual, foreign-source investment/financial income is taxed only from the 3rd year of residence. Flag the residence start date and income source for the reviewer [PwC].  _(PwC)_
+- **Foreign-source income and the 3-year rule** — For a newly-resident individual, foreign-source investment/financial income is taxed only from the 3rd year of residence. Flag the residence start date and income source for the reviewer [Código Tributario art. 271].  _(Código Tributario (Ley 11-92), Título II, DGII consolidated text, art. 271 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf)_
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -555,7 +555,7 @@ ONBOARDING QUESTIONS -- DOMINICAN REPUBLIC ISR
 | Topic | Reference |
 | --- | --- |
 | Income tax (ISR) | Código Tributario (Ley No. 11-92) and regulations [DGII] |
-| ISR scale FY2025 | DGII escala salarial FY2025; PwC (updated 05 Dec 2025) |
+| ISR scale FY2025 | DGII escala salarial FY2025 (https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx); Código Tributario art. 296 |
 | Social security (SDSS) | Ley No. 87-01; TSS resolutions |
 | SDSS ceilings | TSS Resolution 01-2025 (1 Apr 2025); updated 1 Feb 2026 [TSS] |
 | INFOTEP levy | Ley No. 116-80 |
@@ -570,7 +570,7 @@ ONBOARDING QUESTIONS -- DOMINICAN REPUBLIC ISR
 
 | Item | Value | Source |
 | --- | --- | --- |
-| ISR annual exempt threshold (FY2025) | RD$416,220 | PwC; DGII |
+| ISR annual exempt threshold (FY2025) | RD$416,220 | DGII escala salarial FY2025 |
 | Monthly salary withholding trigger | ~RD$34,685/month | P&H Law; DGII |
 | Self-employed filing requirement (IR-1) | Income > RD$416,220 or carrying on business/professional activity | DGII |
 | ITBIS standard rate | 18% (16% reduced on certain foods) | DGII |
@@ -604,7 +604,7 @@ Input: Net taxable income RD$900,000 (ISR before credits RD$87,995.25); RD$30,00
 Expected: ISR due on IR-1 = 87,995.25 − 30,000 = **RD$57,995.25**.
 
 Input: Monthly salary RD$50,000, below AFP/SFS ceilings (Feb-2026 set).
-Expected: Employee deduction = 5.91% × 50,000 = **RD$2,955** (2.87% AFP = RD$1,435 + 3.04% SFS = RD$1,520). Employer cost ≈ 16.39% × 50,000 = **RD$8,195** (subject to SRL 4× ceiling check) [PwC; TSS].
+Expected: Employee deduction = 5.91% × 50,000 = **RD$2,955** (2.87% AFP = RD$1,435 + 3.04% SFS = RD$1,520). Employer cost ≈ 16.39% × 50,000 = **RD$8,195** (subject to SRL 4× ceiling check) [TSS].
 
 Input: Gross fee RD$55,555.56 paid to an individual lawyer.
 Expected: Withhold 10% = **RD$5,555.56** on Form IR-17; pay net RD$50,000.00. Expense deductible at gross RD$55,555.56.

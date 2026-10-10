@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Dominican Republic (t
 jurisdiction: DO
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 reviewed_by: Miguel Lantigua
 review_status: pending_review
 tier: 2
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Corporate income tax rates, base and withholding
 
 - **Standard corporate income tax rate** — 27%; 30% for fiscal years 2026 to 2028 where income is RD$1,000,000,000 or more (Law 30-26)  _(Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 297 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf ; DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx ; DGII, Aviso: Calendario de implementación de la Ley Núm. 30-26 de 18 de junio de 2026 — https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2026/10-26.pdf)_
-- **Tax base** — Net taxable income (Dominican-source gross income less deductible expenses incurred to produce/maintain that income)  _([Código Tributario (Law 11-92), Title II](https://taxsummaries.pwc.com/dominican-republic/corporate/income-determination))_
+- **Tax base** — Net taxable income (Dominican-source gross income less deductible expenses incurred to produce/maintain that income)  _(Código Tributario (Ley 11-92), Título II, DGII consolidated text, arts 272 (Dominican-source income) and 284 to 286 (renta imponible and deductions) — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf)_
 - **Asset tax as minimum tax** — 1% of total taxable assets, filed with the income tax return and paid in two equal instalments; creditable against the corporate income tax due, so it operates as a minimum tax  _(DGII, Impuesto sobre la Renta page (rates, 2026 scale and filing dates) — https://dgii.gov.do/cicloContribuyente/obligacionesTributarias/principalesImpuestos/Paginas/impuestoSobreRenta.aspx)_
 - **Monthly advance payments (anticipos)** — Monthly advances based on the prior year's liability or effective rate (twelve instalments where the effective rate is 1.5% or less); from 1 July 2026 Law 30-26 reduces small businesses to three instalments and exempts microbusinesses  _(Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 314 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf ; DGII, Aviso: Calendario de implementación de la Ley Núm. 30-26 de 18 de junio de 2026 — https://dgii.gov.do/publicacionesOficiales/avisosInformativos/Documents/2026/10-26.pdf)_
 - **Withholding tax on dividends (to residents and non-residents)** — 10% on dividends paid or credited in the country, to residents and non-residents alike  _(Código Tributario (Ley 11-92), DGII consolidated text, Título II, art. 308 — https://dgii.gov.do/legislacion/codigoTributario/Cdigo%20Tributario/Titulo2.pdf ; DGII, Guía del Contribuyente No. 11, Retenciones del ISR — https://dgii.gov.do/publicacionesOficiales/bibliotecaVirtual/contribuyentes/retencionesRetribucionesComplementarias/Documents/2-Guia-11-Retenciones%20del%20Impuesto%20Sobre%20la%20Renta.pdf)_

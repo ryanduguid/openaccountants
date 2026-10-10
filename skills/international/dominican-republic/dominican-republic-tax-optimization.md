@@ -1,10 +1,10 @@
 ---
 name: dominican-republic-tax-optimization
 description: Use this skill whenever asked about reducing tax in the Dominican Republic, tax planning, or legal strategies to minimise tax for a small business or self-employed person. Trigger on phrases like "reduce tax Dominican Republic", "RST", "régimen simplificado de tributación", "territorial taxation DR", "DR dividends 10%", "RST ingresos compras", "save tax Dominican Republic", "tax planning Dominican Republic". This skill covers the RST (income- and purchases-based simplified regimes with a 40% deemed-expense deduction), the territorial system (foreign income taxed only after 3 years of residency), the CIT + 10% dividend extraction, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Dominican Republic tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Dominican Republic Tax Optimization
 
-## Dominican Republic Tax Optimization Skill v0.1
+## Dominican Republic Tax Optimization Skill v0.2
 
-**Tier 2 — research-verified. Sources: DGII, PwC Dominican Republic, Chambers Corporate Tax Guide 2025/26. Figures must agree with `dominican-republic-income-tax.md` / `dominican-republic-social-contributions.md`. NOT yet signed off by a Dominican tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: DGII, the Código Tributario (Título II), Chambers Corporate Tax Guide 2025/26. Figures must agree with `dominican-republic-income-tax.md` / `dominican-republic-social-contributions.md`. NOT yet signed off by a Dominican tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 

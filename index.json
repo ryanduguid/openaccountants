@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-10T22:47:58+00:00",
+ "generated_at": "2026-10-10T23:06:45+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -7076,7 +7076,7 @@
    "reviewed_by": "Miguel Lantigua",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "do-customs",
@@ -7193,7 +7193,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "do-tax-registration",
@@ -7245,7 +7245,7 @@
    "reviewed_by": "Miguel Lantigua",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "dominican-republic-income-tax",
@@ -7258,7 +7258,7 @@
    "reviewed_by": "Miguel Lantigua",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "dominican-republic-itbis",
@@ -7284,7 +7284,7 @@
    "reviewed_by": "Miguel Lantigua",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "dominican-republic-social-contributions",
@@ -7297,7 +7297,7 @@
    "reviewed_by": "Miguel Lantigua",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "dominican-republic-tax-optimization",
@@ -7310,7 +7310,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "cd-company-formation",

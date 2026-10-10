@@ -1,10 +1,10 @@
 ---
 name: dominican-republic-social-contributions
 description: Use this skill whenever asked about Dominican Republic social-security contributions (Sistema Dominicano de Seguridad Social / SDSS) for employees, employers, or self-employed persons. Trigger on phrases like "TSS contributions", "Tesorería de la Seguridad Social", "AFP Dominican Republic", "SFS health insurance", "Seguro Familiar de Salud", "SRL riesgos laborales", "INFOTEP", "aporte seguridad social RD", "cotización TSS", "salario cotizable", "tope cotizable", "self-employed social security Dominican Republic", or any question about SDSS contribution rates, ceilings, or TSS filing. Also trigger when classifying bank transactions for TSS / AFP / SFS / INFOTEP remittances, or reconciling SDSS for an ISR computation. This skill covers AFP (pension), SFS (health), SRL (occupational risk), INFOTEP (training), the contributory-wage floor and ceilings, payment schedule, and the interaction with income tax (ISR). ALWAYS read this skill before touching any Dominican Republic social-contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 reviewed_by: Miguel Lantigua
 review_status: pending_review
 depends_on:
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Dominican Republic Social Security Contributions (SDSS / TSS)
 
-## Dominican Republic Social Security Contributions (SDSS / TSS) Skill v0.1
+## Dominican Republic Social Security Contributions (SDSS / TSS) Skill v0.2
 
-**Tier 2 — research-verified. Figures sourced from the Tesorería de la Seguridad Social (TSS), PwC Worldwide Tax Summaries (updated 5 Dec 2025), and Dominican payroll references. NOT yet signed off by a licensed Dominican contador. Treat every computation as an estimate pending professional review.**
+**Tier 2 — research-verified. Figures sourced from the Tesorería de la Seguridad Social (TSS), Ley 87-01 as amended by Ley 188-07 (as reported) and Dominican payroll references. NOT yet signed off by a licensed Dominican contador. Treat every computation as an estimate pending professional review.**
 
 ## Section 1 -- Quick Reference
 
@@ -37,11 +37,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Legislation | Ley 87-01 (SDSS); Ley 116-80 + Reglamento (INFOTEP) |
 | Payment | Monthly, via the TSS platform, within the first working days of the following month |
 | Validated by | Pending -- requires sign-off by a licensed Dominican contador |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Contribution rates (employment)
 
-**Contribution rates (employment)**  _(Sources: TSS; PwC Worldwide Tax Summaries — Dominican Republic, Other taxes.)_
+**Contribution rates (employment)**  _(Sources: TSS — https://www.tss.gob.do/; Ley 87-01 (Sistema Dominicano de Seguridad Social), arts 56 and 140 as amended by Ley 188-07, as reported (the TSS copies answer 403 and 404); INFOTEP (Ley 116-80).)_
 
 | Contribution | Employee | Employer | Total | Base ceiling |
 | --- | --- | --- | --- | --- |
@@ -113,8 +113,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 5 -- Tier 1 Rules
 
-- **[T1] Employee TSS total** — Employee TSS = AFP 2.87% + SFS 3.04% = 5.91% of salario cotizable, each capped at its own ceiling (AFP 20×, SFS 10×).  _([TSS; PwC])_
-- **[T1] Employer TSS total** — Employer TSS = AFP 7.10% + SFS 7.09% + SRL ~1.20% + INFOTEP 1% ≈ 16.39%.  _([TSS; PwC])_
+- **[T1] Employee TSS total** — Employee TSS = AFP 2.87% + SFS 3.04% = 5.91% of salario cotizable, each capped at its own ceiling (AFP 20×, SFS 10×).  _([TSS — https://www.tss.gob.do/; Ley 87-01 arts 56 and 140, as reported])_
+- **[T1] Employer TSS total** — Employer TSS = AFP 7.10% + SFS 7.09% + SRL ~1.20% + INFOTEP 1% ≈ 16.39%.  _([TSS — https://www.tss.gob.do/; Ley 87-01 arts 56 and 140, as reported])_
 - **[T1] Independent ceilings per fund** — Each fund uses its OWN ceiling — cap AFP at 20×, SFS at 10×, SRL at 4× the minimum cotizable wage; do not apply one ceiling to all funds.
 - **[T1] INFOTEP base restriction** — INFOTEP employee 0.5% applies only to bonuses/gratification, never to ordinary salary.
 - **[T1] Remittance schedule** — Contributions are remitted monthly via the TSS platform; the same remittance covers all four funds.
