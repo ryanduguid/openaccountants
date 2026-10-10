@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Bahrain (ta
 jurisdiction: BH
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Social insurance (SIO/GOSI) contributions
 
-- **PAYE-equivalent income tax withholding** — None - no income tax is withheld from wages  _(PwC Worldwide Tax Summaries - Bahrain Individual)_
+- **PAYE-equivalent income tax withholding** — None - no income tax is withheld from wages; Bahrain's legislation has no personal income tax law, and the only income tax statute taxes oil and hydrocarbon companies  _(Decree-Law No. 22 of 1979 on income tax (oil and hydrocarbon companies), Legislation and Legal Opinion Commission text, art. 2 — https://lloc.gov.bh/Legislation/HTM/L2279)_
 - **Employer contribution - Bahraini nationals (2025)** — 17% of insurable salary  _(Social Insurance Law (Decree-Law No. 24 of 1976), as amended (as described at [newsofbahrain.com](https://www.newsofbahrain.com/bahrain/106412.html)))_
 - **Employee contribution - Bahraini nationals (2025)** — 8% (7% pension/old-age + 1% unemployment insurance)  _(Social Insurance Law (Decree-Law No. 24 of 1976), as amended)_
 - **Scheduled annual increase (Bahraini employers)** — Employer retirement contribution rises 1% per year until reaching 21% in 2028  _(Social Insurance Law (Decree-Law No. 24 of 1976), as amended (as described at [fragomen.com](https://www.fragomen.com/insights/middle-east-increase-in-insurance-contribution-rates-for-bahraini-nationals-and-their-employers-in-gcc-countries.html)))_
