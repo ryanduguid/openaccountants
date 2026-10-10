@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-10T13:00:14+00:00",
+ "generated_at": "2026-10-10T14:32:12+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -19203,9 +19203,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Baraka Cassian",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tanzania-payroll",
@@ -19216,9 +19216,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Baraka Cassian",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tanzania-social-contributions",
@@ -19229,9 +19229,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Baraka Cassian",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tanzania-tax-optimization",
