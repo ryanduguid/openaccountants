@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Zimbabwe income tax (PAYE, self
 jurisdiction: ZW
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,9 +12,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # zimbabwe-income-tax
 
-## Zimbabwe Income Tax -- Individual & Self-Employed Skill v0.1
+## Zimbabwe Income Tax -- Individual & Self-Employed Skill v0.2
 
-> **Tier 2 (research-verified).** Figures are drawn from ZIMRA Jan-Dec 2025 PAYE tax tables, ZIMRA corporate/individual rate pages, NSSA contribution schedules, and reputable secondary sources (PwC Worldwide Tax Summaries, Lucent, M&J Consultants). Every figure carries an inline citation or an explicit `[RESEARCH GAP -- reviewer to confirm]` marker. This skill has NOT yet been signed off by a registered Zimbabwean tax practitioner.
+> **Tier 2 (research-verified).** Figures are drawn from ZIMRA Jan-Dec 2025 PAYE tax tables, ZIMRA corporate/individual rate pages, NSSA contribution schedules, ZIMRA's Final Deduction System year-end note, and reputable secondary sources (Lucent, M&J Consultants). Every figure carries an inline citation or an explicit `[RESEARCH GAP -- reviewer to confirm]` marker. This skill has NOT yet been signed off by a registered Zimbabwean tax practitioner.
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | AIDS Levy | 3% of income tax payable (added after tax computed) -- stated on ZIMRA 2025 PAYE tables |
 | Validated by | Pending -- requires sign-off by a registered Zimbabwean tax practitioner |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### How the dual-currency system works
 
@@ -380,7 +380,7 @@ Taxable portion = USD 0.00. Any bonus ABOVE USD 700 is added to taxable earnings
 
 ### 5.10 Final Deduction System (FDS)
 
-- **Final Deduction System (FDS)** — For pure-employment individuals, PAYE is generally a final tax -- most employees do NOT file an annual return. Individuals with non-employment income (trade, multiple employers, investment income) must file the relevant return (ITF1 / ITF12C).  _(PwC Worldwide Tax Summaries (Zimbabwe individual))_
+- **Final Deduction System (FDS)** — For pure-employment individuals, PAYE is generally a final tax -- most employees do NOT file an annual return. Individuals with non-employment income (trade, multiple employers, investment income) must file the relevant return (ITF1 / ITF12C); ZIMRA's note lists who files an ITF 1: employees who start, change or end employment in the year, work part time beside full-time employment, receive pensions, act as executors or have income outside PAYE, with the Commissioner General's press notice each first quarter.  _(ZIMRA, Reminder on Final Deduction System year-end procedures — https://www.zimra.co.zw/news/2011:reminder-on-final-deduction-system-year-end-procedures)_
 
 ## Section 6 -- NSSA Social Security and Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -557,7 +557,7 @@ ONBOARDING QUESTIONS -- ZIMBABWE INCOME TAX
 | Elderly / disability credits | ZIMRA elderly-concession page |
 | VAT registration threshold | ZIMRA VAT registration page |
 | NSSA POBS / APWCS | NSSA contributions & schemes pages; M&J 2025 summary |
-| FDS (PAYE as final tax) | PwC Worldwide Tax Summaries -- Zimbabwe individual |
+| FDS (PAYE as final tax) | ZIMRA, Reminder on Final Deduction System year-end procedures -- https://www.zimra.co.zw/news/2011:reminder-on-final-deduction-system-year-end-procedures |
 
 ### Filing forms and deadlines
 
