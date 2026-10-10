@@ -4,8 +4,8 @@ description: "Source-cited draft: personal income tax for Lesotho (tax year 2025
 jurisdiction: LS
 category: international
 tax_year: 2025
-version: 0.2
-last_updated: 2026-10-04
+version: 0.3
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Personal tax credit (monthly equivalent)** — LSL 1,056 per month LSL/month  _([Income Tax Act](https://www.rsl.org.ls/personal-income-tax))_
 - **Effective tax-free monthly income** — LSL 5,280 per month, calculated as the stated LSL 1,056 monthly credit divided by the 20% lower-band rate for 2025/26  _([Income Tax Act](https://www.rsl.org.ls/personal-income-tax))_
 - **Non-resident rate on Lesotho-source income**: 25%, being *"the standard rate of tax"*, which the Act defines as a rate of 25%. **But a non-resident individual who lives permanently outside Lesotho and is employed full-time in Lesotho, or engaged full-time in a business or trade in Lesotho, is taxed on chargeable employment income and chargeable business income at the resident individual band rates instead**: so the flat 25% is not the rule for a full-time worker  _(Income Tax Act 1993, s.12(1)–(2) and s.3, definition of "standard rate of tax": https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
-- **Individual residence test** — Generally resident if normally resident in Lesotho, or present in Lesotho for 182 days or more in the tax year (approx — confirm exact day count and tests)  _([Income Tax Act](https://taxsummaries.pwc.com/lesotho))_
+- **Individual residence test** — Generally resident if normally resident in Lesotho, or present in Lesotho for 182 days or more in the tax year (approx — confirm exact day count and tests)  _(Income Tax Act 1993 (Lesotho), residence provisions, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Fringe benefits tax (employer-borne)**: 40%, the Fourth Schedule rate (the same rate that applies to trustees, minors and electing non-residents). **The base is grossed up**: s.117 computes the fringe benefits taxable amount as `A × 1/(1−B)`, where A is the sum of the taxable values of all non-exempt fringe benefits provided in the year and B is the 40% rate: so the tax is not simply 40% of the benefit's face value  _(Income Tax Act 1993, s.117 and Fourth Schedule item 1: https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
 - **Capital gains** — No separate CGT — gains on business/investment assets are included in chargeable income and taxed at ordinary rates  _(Income Tax Act (as described at [zmayetlaw.co.ls](https://zmayetlaw.co.ls/lesotho-tax-guide-effective-1-april-2025/)))_
 - **Annual return filing deadline** — 30 June following the end of the 31 March tax year  _([Income Tax Act](https://www.rsl.org.ls/personal-income-tax))_

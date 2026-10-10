@@ -4,7 +4,7 @@ description: "Source-cited draft: vat / gst for Sierra Leone (tax year 2025) —
 jurisdiction: SL
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,8 +16,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Sierra Leone levies a single-rate Goods and Services Tax (GST), a VAT-style consumption tax introduced in 2010 and administered by the NRA under the Goods and Services Tax Act 2009. There is no separate sales tax.
 
-- **Standard GST rate** — 15 percent  _([Goods and Services Tax Act 2009](https://www.pwc.co.za/en/publications/vat-in-africa/sierra-leone-overview.html))_
-- **GST on imports** — 15 percent (applied to imported goods and services for local use)  _([Goods and Services Tax Act 2009](https://www.pwc.co.za/en/publications/vat-in-africa/sierra-leone-overview.html))_
+- **Standard GST rate** — 15 percent  _(Goods and Services Tax Act 2009 (Sierra Leone), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **GST on imports** — 15 percent (applied to imported goods and services for local use)  _(Goods and Services Tax Act 2009 (Sierra Leone), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Zero-rated supplies** — 0 percent (Exports and certain supplies are zero-rated (approx — confirm))  _(Goods and Services Tax Act 2009)_
 - **Exempt supplies** — Basic foodstuffs, financial services, education, medical services and similar items are exempt (approx — confirm)  _(Goods and Services Tax Act 2009)_
 - **Registration threshold** — 100,000 NLe (Annual taxable turnover of NLe 100,000 or more (approx — confirm))  _(Goods and Services Tax Act 2009)_
