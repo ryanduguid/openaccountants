@@ -367,6 +367,20 @@ NON_GOV_AUTHORITY = frozenset((
                           # ministry rather than a francophone one, so the shape
                           # is a bare ccTLD, not a language. Subdomains are
                           # matched, so all three count from this one entry.
+    'dgi.ga',             # Direction Generale des Impots, Gabon's tax authority,
+                          # which publishes the consolidated Code General des
+                          # Impots 2025 as a PDF on its document pages. Bare .ga,
+                          # no "gov" label, the otr.tg shape again: once the Gabon
+                          # guides cited the code instead of a Big-4 summary, the
+                          # sourcing floor scored two of them as citing no
+                          # authority at all.
+    'cnamgs.ga',          # Caisse Nationale d'Assurance Maladie et de Garantie
+                          # Sociale: the statutory health insurance fund, which
+                          # publishes the contribution rates, base, ceiling and
+                          # payment calendar fixed by its decree.
+    'cnss.ga',            # Caisse Nationale de Securite Sociale, Gabon's social
+                          # security fund (pensions, family benefits, work
+                          # injuries), which imposes and collects the charge.
     'legalinfo.mn',       # Mongolia's Unified Legal Information System, run by
                           # the Ministry of Justice and Home Affairs: serves the
                           # consolidated laws with each amendment dated in-line

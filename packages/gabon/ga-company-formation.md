@@ -1,10 +1,10 @@
 ---
 name: ga-company-formation
-description: "Draft covering Gabon company formation and entity choice. Explains the SARL, the SA and the SAS under the OHADA uniform act read from the Journal Officiel: single-member formation, the 1,000,000 CFA franc SARL capital default and the national-derogation clause that can displace it, the 5,000 minimum nominal value of a part sociale, the ordinary 10,000,000 SA minimum, subscription and pay-up fractions, deferral periods, the contributions-in-kind valuer threshold and where funds must be deposited. Use for incorporating in Gabon, choosing an entity, ANPI-Gabon registration or OHADA capital questions. Costs, timelines and the patente still rest on commercial sources. Pending local-accountant review."
+description: "Draft covering Gabon company formation and entity choice. Explains the SARL, the SA and the SAS under the OHADA uniform act read from the Journal Officiel: single-member formation, the 1,000,000 CFA franc SARL capital default and the national-derogation clause that can displace it, the 5,000 minimum nominal value of a part sociale, the ordinary 10,000,000 SA minimum, subscription and pay-up fractions, deferral periods, the contributions-in-kind valuer threshold and where funds must be deposited. Use for incorporating in Gabon, choosing an entity, ANPI-Gabon registration or OHADA capital questions. Costs and timelines still rest on commercial sources; the patente cites the tariff in the 2025 Code Général des Impôts. Pending local-accountant review."
 jurisdiction: GA
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 category: formation
 tier: 2
@@ -42,8 +42,8 @@ National provisions must be checked separately for each member state.
 - **Indicative administrative formation cost** — Roughly XAF 200,000–500,000 in administrative costs (plus notary/registration fees) (approx — confirm)  _(ANPI-Gabon — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
 - **Beneficial ownership disclosure** — Ultimate beneficial owner (UBO) disclosure required at registration  _(OHADA / ANPI-Gabon registration requirements — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
 - **Annual accounts (OHADA SYSCOHADA)** — Prepare and file annual financial statements under the SYSCOHADA accounting framework  _(OHADA Uniform Act on Accounting Law (SYSCOHADA))_
-- **Annual tax compliance** — File CIT return by 30 April, monthly VAT and payroll declarations, plus business license/patente  _(Code Général des Impôts (Gabon) — https://taxsummaries.pwc.com/gabon/corporate/tax-administration)_
-- **Business license tax (patente)** — Annual business license tax, indicatively XAF 15,000–540,000 depending on activity and location (approx — confirm)  _(Code Général des Impôts (Gabon) — Contribution des patentes — https://taxsummaries.pwc.com/gabon/corporate/other-taxes)_
+- **Annual tax compliance** — CIT return before 30 April with instalments on 30 November and 30 January, monthly VAT return by the 20th, payroll withholding paid within the first 15 days of the following month, and the patente instalment before 1 March  _(Code Général des Impôts 2025 (Gabon), arts. 20, 21, 96, 237 and 265 — https://dgi.ga/document/code-general-des-impots-2025/)_
+- **Business license tax (patente)** — Annual fixed duty set by profession in the tariff annexed to the code: Tableau A fixed duties run from XAF 15,000 to 540,000, with per-unit duties for the Tableau B and C professions; companies and real-regime traders pay an instalment equal to the previous year's contribution before 1 March. Law 041/2025 replaces this from 2026 with 0.1% of the previous year's turnover, between XAF 150,000 and 10,000,000, paid before 1 March (RESEARCH GAP: 2026 text not read in the Journal Officiel)  _(Code Général des Impôts 2025 (Gabon), arts. 253, 265, 266 and the tariff under art. 271 — https://dgi.ga/document/code-general-des-impots-2025/)_; _(DGI, Contribution des patentes — https://dgi.ga/entreprises/impots-locaux/impots-geres-par-la-direction-generale-des-impots/)_; _(Deloitte, Loi de Finances pour 2026 — https://blog.avocats.deloitte.fr/gabon-les-principales-mesures-de-la-loi-de-finances-pour-2026/)_
 
 <!-- openaccountants-cta-block -->
 
