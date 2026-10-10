@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in Cyprus, tax pla
 version: 0.2
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-11
 reviewed_by: Christos Thoma
 review_status: current
 depends_on: []
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 # Cyprus Tax Optimization
 
 ## Cyprus Tax Optimization Skill v0.2
-> **Accountant-reviewed (`tier: 1`).** Christos Thoma reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-12; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a Cyprus tax adviser", the draft label the guide carried before that review. **Provenance of the draft:** Cyprus Tax Department, PwC/KPMG/Deloitte Cyprus and 2026 tax-reform commentary; figures must agree with `cyprus-income-tax.md` / `cyprus-social-contributions.md`. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed. Aggressive positions are never advised; every suggestion must be reviewed against the client's facts.
+> **Accountant-reviewed (`tier: 1`).** Christos Thoma reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-12; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a Cyprus tax adviser", the draft label the guide carried before that review. **Provenance of the draft:** Cyprus Tax Department, Big-4 Cyprus commentary and 2026 tax-reform commentary; figures must agree with `cyprus-income-tax.md` / `cyprus-social-contributions.md`, which now cite the consolidated laws on CyLaw. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed. Aggressive positions are never advised; every suggestion must be reviewed against the client's facts.
 
 ## Section 1 -- Quick Reference
 

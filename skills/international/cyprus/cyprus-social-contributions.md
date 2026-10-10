@@ -1,12 +1,12 @@
 ---
 name: cyprus-social-contributions
 description: Use this skill whenever asked about Cyprus social insurance and General Healthcare System (GHS/GESY) contributions for employees, employers, or self-employed individuals. Trigger on phrases like "how much social insurance do I pay in Cyprus", "Cyprus GESY contributions", "GHS rate", "employer on-cost Cyprus", "self-employed social insurance Cyprus", "Social Cohesion Fund", "Redundancy Fund", "HRDA contribution", "insurable earnings ceiling", "Cyprus payroll deductions", "Cyprus PAYE", or any question about Cyprus social-security or healthcare contribution obligations. Also trigger when classifying bank statement transactions that relate to Department of Social Insurance Services (Υπηρεσίες Κοινωνικών Ασφαλίσεων) debits, GHS/GESY payments, HIO (Health Insurance Organisation) payments, or government social-security remittances from Bank of Cyprus, Hellenic Bank, or other Cypriot banks. Also trigger when preparing a T.D.1 (TD1) personal income tax return where contribution deductibility or aggregate income caps are relevant. This skill covers social insurance employee/employer/self-employed rates, GHS/GESY rates across all income categories, employer-only funds (Social Cohesion, Redundancy, HRDA), insurable-earnings and GHS ceilings, payment schedule, registration, penalties, interaction with personal income tax, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Cyprus social-contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-11
 reviewed_by: Christos Thoma
-review_status: current
+review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
 category: international
@@ -17,6 +17,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 # Cyprus Social Insurance & GHS (GESY) Contributions
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Christos Thoma** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+
+> **Edited since review (2026-10-11).** The Big-4 summary citations were replaced with the Social Insurance Law 59(I)/2010 and the General Healthcare System Law 89(I)/2001 on CyLaw and the Social Insurance Services pages. The statutory contribution schedule (8.9% employee and employer and 16.8% self-employed from 2024 under arts 5(1) and 12, applied at 8.8% and 16.6% under the law's actuarial proviso) is new text that awaits the reviewer's confirmation, so `review_status` is `pending_review`.
 
 ## Section 1 -- Quick reference
 
@@ -34,8 +36,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social-security Authority | Ministry of Labour and Social Insurance — Department of Social Insurance Services (DSI / Υπηρεσίες Κοινωνικών Ασφαλίσεων), mlsi.gov.cy/dsi |
 | Healthcare Authority | Health Insurance Organisation (HIO), gesy.org.cy |
 | Tax Authority | Tax Department (Τμήμα Φορολογίας), tax.mof.gov.cy |
-| Social insurance — employee | 8.8% of insurable earnings (effective 1 Jan 2024 for 5 years) [KPMG Tax Card 2025 s.3.1; PwC] |
-| Social insurance — employer | 8.8% of insurable earnings [KPMG Tax Card 2025 s.3.1; PwC] |
+| Social insurance — employee | 8.8% of insurable earnings from 1 Jan 2024 (the step in art. 5(1)(f) of the Social Insurance Law reads 8.9% for 2024 to 2028, applied at 8.8% under the law's actuarial proviso; next scheduled step 2029) [Social Insurance Law 59(I)/2010 art. 5(1); Social Insurance Services; KPMG Tax Card 2025 s.3.1] |
+| Social insurance — employer | 8.8% of insurable earnings (same schedule and proviso) [Social Insurance Law 59(I)/2010 art. 5(1); Social Insurance Services; KPMG Tax Card 2025 s.3.1] |
 | Social insurance — self-employed | 16.6% of notional insurable income (effective 1 Jan 2024) [KPMG Tax Card 2025 s.3.1] |
 | GHS/GESY — employee | 2.65% of gross emoluments [gesy.org.cy; KPMG Tax Card 2025 s.4] |
 | GHS/GESY — employer | 2.90% of employee emoluments [gesy.org.cy; KPMG Tax Card 2025 s.4] |
@@ -69,7 +71,7 @@ The State (Republic's Consolidated Fund) also contributes to the system. The res
 | Ambiguity | Default |
 | --- | --- |
 | Unknown employment status | Ask — do not assume; employee, employer, self-employed and office-holder rates differ materially. If forced, assume employee (employer withholds SI 8.8% + GHS 2.65%) [KPMG s.3.1; gesy.org.cy] |
-| Unknown self-employed SI rate | Apply 16.6% (KPMG Tax Card 2025 — NOT the stale 15.6% still shown on PwC's other-taxes table) [KPMG Tax Card 2025 s.3.1] |
+| Unknown self-employed SI rate | Apply 16.6%, the rate the Social Insurance Services applies from 2024 (art. 12(g) of the Social Insurance Law reads 16.8%, applied at 16.6% under the actuarial proviso); never the pre-2024 15.6% that some secondary tables still show [Social Insurance Law 59(I)/2010 art. 12; KPMG Tax Card 2025 s.3.1] |
 | Earnings above the insurable ceiling | Cap SI / Redundancy / HRDA / Holiday Fund at EUR 66,612 (2025) or EUR 68,904 (2026); do NOT cap Social Cohesion (uncapped) [KPMG s.3.3] |
 | Central Holiday Fund inclusion | Assume payable at 8.0% unless the employer evidences an approved private leave-scheme exemption; most established employers are exempt, so confirm status [KPMG s.3.3] |
 | Unknown minimum wage applied | Apply EUR 1,000/month (after 6 months of continuous employment) [MLSI via Cyprus Mail, Dec 2025] |
@@ -240,7 +242,7 @@ These rules apply when payroll/bank statement data is clear and all required inp
 ### Rule 2 -- Self-employed social insurance rate
 
 - **Self-employed SI rate 2025** — 16.6%  _(up from 15.6% in 2019-2023, effective 1 Jan 2024)_
-- **Self-employed SI base and cap** — On notional/minimum insurable income by occupational category (set quarterly by DSI), capped at EUR 66,612/yr for 2025 (EUR 68,904/yr for 2026). Use 16.6% — do NOT use the 15.6% still shown on PwC Worldwide Tax Summaries (reviewed 18 May 2026).  _(**[RESEARCH GAP — reviewer to reconfirm against latest DSI circular.]**)_
+- **Self-employed SI base and cap** — On notional/minimum insurable income by occupational category (set quarterly by DSI), capped at EUR 66,612/yr for 2025 (EUR 68,904/yr for 2026). Use 16.6%, the applied rate, not the pre-2024 15.6% that some secondary tables still show; art. 12 of the Social Insurance Law sets 15.6% from 2019 and 16.8% from 2024 with the actuarial proviso under which 16.6% is applied.  _(Social Insurance Law 59(I)/2010, art. 12 — http://www.cylaw.org/nomoi/enop/non-ind/2010_1_59/full.html ; **[RESEARCH GAP — reviewer to reconfirm the applied rate against the latest DSI circular.]**)_
 
 ### Rule 3 -- GHS / GESY rates and single aggregate cap
 
@@ -511,13 +513,15 @@ If the client provides only a bank statement and no other information:
 
 - KPMG Limited (Cyprus), *Cyprus Tax Card 2025* (April 2025) — s.1.1 PIT bands, s.3 Social Insurance & employer funds, s.4 GHS: https://assets.kpmg.com/content/dam/kpmg/cy/pdf/2025/cyprus-tax-card-2025-en.pdf
 - KPMG Cyprus, *Amendment to the maximum amount of insurable earnings for 2025*: https://kpmg.com/cy/en/home/insights/2025/01/amendment-to-the-maximum-amount-of-insurable-earnings-for-2025.html
-- PwC, *Cyprus – Individual – Other taxes* (Worldwide Tax Summaries): https://taxsummaries.pwc.com/cyprus/individual/other-taxes — NOTE: shows a stale 15.6% self-employed SI rate; use 16.6%.
+- Social Insurance Law 59(I)/2010 (consolidated), CyLaw: http://www.cylaw.org/nomoi/enop/non-ind/2010_1_59/full.html — art. 5(1) (employee and employer schedule), art. 12 (self-employed schedule), art. 20 (basic insurable earnings).
+- General Healthcare System Law 89(I)/2001 (consolidated), CyLaw: http://www.cylaw.org/nomoi/enop/non-ind/2001_1_89/full.html — art. 19(1) rates (2.65%, 2.90%, 4.00%, 2.65%, 4.70%) and art. 19(4) EUR 180,000 cap and refund.
+- Social Insurance Services, Basic Insurable Earnings 1981-2026: https://www.mlsi.gov.cy/mlsi/sid/sidv2.nsf/All/9AD159715525E49CC22584D90030E8FF
 - Health Insurance Organisation (GeSY), *GHS Financing / Contribution Rates*: https://www.gesy.org.cy/en-us/hiofinancing
 - Department of Social Insurance Services (MLSI), *Basic Insurable Earnings / Contributions*: https://www.mlsi.gov.cy/mlsi/sid/sidv2.nsf/page94_en/page94_en?OpenDocument=
 - Department of Social Insurance Services (MLSI), *Deadlines for payment of contributions*: https://www.mlsi.gov.cy/mlsi/sdg/sdg.nsf/All/D5322D5E5CD6F735C22586A10044EC34
 - Cyprus Mail (reporting MLSI), *Labour Minister announces increase of monthly minimum wage to 1,088 euro* (Dec 2025): https://cyprus-mail.com/2025/12/23/labour-minister-announces-increase-of-monthly-minimum-wage-to-1088-euro
 
-**Research caveats (reviewer attention):** The official MLSI government pages repeatedly failed to fetch (TLS certificate verification error); contribution rates, deadlines and penalties are corroborated via KPMG (Big-4 primary), PwC, the official GeSY site (fetched successfully) and KPSA citing MLSI. The reviewer should re-confirm the late-payment additional charge (3% rising to a max of 27%) and the exact deadlines against the live MLSI page when accessible. The per-category 2025 self-employed minimum insurable amounts were NOT enumerated — fetch the official table from mlsi.gov.cy. PwC's other-taxes table shows a stale 15.6% self-employed SI rate; use 16.6%. SDC, the 2026 insurable-earnings ceiling, the T.D.1 deadlines and the registration form/notification timing are all marked **[RESEARCH GAP]** above.
+**Research caveats (reviewer attention):** The MLSI pages were read on 11 October 2026 (the Social Insurance Services site answers Chrome); contribution rates come from the Social Insurance Law and the General Healthcare System Law on CyLaw, with KPMG and the official GeSY site as corroboration, and deadlines and penalties from KPSA citing MLSI. The reviewer should re-confirm the late-payment additional charge (3% rising to a max of 27%) and the exact deadlines against the live MLSI page. The per-category 2025 self-employed minimum insurable amounts were NOT enumerated — fetch the official table from mlsi.gov.cy. Some secondary tables still show the pre-2024 15.6% self-employed SI rate; use 16.6%. SDC, the 2026 insurable-earnings ceiling, the T.D.1 deadlines and the registration form/notification timing are all marked **[RESEARCH GAP]** above.
 
 ### Test suite
 
