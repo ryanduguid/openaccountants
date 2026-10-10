@@ -62,7 +62,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **TOTAL** | **8%** | **17%** | **18%** |
 
 - **Employee total unchanged through phase-in** — Employee total = **8%** (7% pension + 1% unemployment), unchanged through the phase-in.  _((newsofbahrain.com/106412; meinsurancereview.com aid=49089))_
-- **Employer phase-in schedule** — Employer total = **17% from January 2025**, rising to **18% from 1 January 2026**, then **+1% per year until it reaches 21% in 2028**.  _((newsofbahrain.com/106412; mercans.com EOSB/social-security alert 2026))_
+- **Employer phase-in schedule** — Employer total = **17% from January 2025**, rising to **18% from 1 January 2026**, then **+1% per year until it reaches 20% in 2028** (the 17% old-age share written into art. 33 plus the 3% work-injury contribution; press reports quoted 21%).  _((newsofbahrain.com/106412; mercans.com EOSB/social-security alert 2026))_
 - **Combined rate note** — Combined (employer + employee): **25% in 2025** (17% + 8%) → **26% in 2026** (18% + 8%). The employer figure is the old-age, disability and death share (11% when Law No. 14 of 2022 took effect in April 2022, rising by 1% each January until it reaches the 17% written into art. 33) plus the 3% work-injury contribution; the employee figure is the 7% old-age share plus the 1% unemployment insurance contribution.  _(Social Insurance Law (Decree-Law No. 24 of 1976) as amended, arts 33 and 47 — https://lloc.gov.bh/Legislation/HTM/L2476; Law No. 14 of 2022 amending the Social Insurance Law, art. 4 — https://lloc.gov.bh/Legislation/HTM/K1422; Unemployment Insurance Law (Decree-Law No. 78 of 2006), art. 6 — https://lloc.gov.bh/Legislation/HTM/L7806)_
 - **Insurable-earnings ceiling** — BHD 4,000 per month — contributions are computed on a salary capped at BHD 4,000/month.  _((newsofbahrain.com/106412))_
 - **Contribution floor / minimum insurable wage** — **[RESEARCH GAP — reviewer to confirm]** (only the BHD 4,000 ceiling is well-sourced).
@@ -73,7 +73,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Component | Employee | Employer | Total |
 | --- | --- | --- | --- |
-| Work injury (only branch covered) | 1% | 3% | **4%** |
+| Work injury | -- | 3% | **3%** |
+| Unemployment insurance (contribution only; benefit requires Bahraini nationality) | 1% | -- | **1%** |
 | **TOTAL** | **1%** | **3%** | **4%** |
 
 - **Work-injury only coverage** — Expats are covered for the **work-injury branch only** (employer 3%) — no pension branch; the 1% unemployment contribution is deducted from every private-sector worker, but unemployment benefit requires Bahraini nationality, and non-Bahraini workers come under an end-of-service gratuity system instead of the pension branch.  _(Social Insurance Law (Decree-Law No. 24 of 1976) as amended, arts 2 and 47 — https://lloc.gov.bh/Legislation/HTM/L2476; Law No. 14 of 2022 amending the Social Insurance Law, art. 10 — https://lloc.gov.bh/Legislation/HTM/K1422; Unemployment Insurance Law (Decree-Law No. 78 of 2006), arts 2 and 6 — https://lloc.gov.bh/Legislation/HTM/L7806; newsofbahrain.com/106412)_
@@ -217,7 +218,7 @@ Salary BHD 5,000 exceeds the insurable-earnings ceiling of BHD 4,000/month, so c
 `25/05/2026 ; AUB CREDIT ; EMPLOYER DESERT LOGISTICS WLL ; SALARY MAY ; +900.000 ; BHD`
 
 **Reasoning:**
-Non-GCC expatriate. SIO covers the work-injury branch only: employee 1%, employer 3%. (Social Insurance Law arts 33 and 47; Unemployment Insurance Law art. 6; newsofbahrain.com/106412)
+Non-GCC expatriate. SIO: employer 3% work-injury contribution; employee 1% unemployment insurance contribution, deducted without benefit entitlement. (Social Insurance Law art. 47; Unemployment Insurance Law arts 2 and 6; newsofbahrain.com/106412)
 - Employee SIO = 1% × 900 = **BHD 9.000**.
 - Employer SIO = 3% × 900 = **BHD 27.000**.
 - EOSB (assume within first 3 years of service) = 4.2% × 900 = **BHD 37.800** (employer-funded, paid to SIO). (mercans.com EOSB alert)
@@ -276,7 +277,7 @@ This is a statutory social-insurance remittance, not a tax and not a PIT-relevan
 | Employee contribution | 8% (7% pension + 1% unemployment) |
 | Employer contribution (2025) | 17% |
 | Employer contribution (2026) | 18% |
-| Phase-in | +1%/year to 21% by 2028 |
+| Phase-in | +1%/year to 20% by 2028 (17% old-age share + 3% work injury) |
 | Insurable-earnings ceiling | BHD 4,000/month |
 | Insurable-earnings floor | **[RESEARCH GAP — reviewer to confirm]** |
 
@@ -330,7 +331,7 @@ This is a statutory social-insurance remittance, not a tax and not a PIT-relevan
 
 ### 6.1 SIO Year and Rate Selection
 
-- **Year-specific rate confirmation** — The employer SIO rate is **year-specific** (17% in 2025, 18% in 2026, rising to 21% by 2028). Confirm the period of the payroll run before applying a rate. **Flag for reviewer:** confirm which calendar year's employer rate applies, especially for payrolls straddling 1 January.
+- **Year-specific rate confirmation** — The employer SIO rate is **year-specific** (17% in 2025, 18% in 2026, rising to 20% by 2028). Confirm the period of the payroll run before applying a rate. **Flag for reviewer:** confirm which calendar year's employer rate applies, especially for payrolls straddling 1 January.
 
 ### 6.2 Nationality Classification for SIO
 
@@ -477,7 +478,7 @@ ONBOARDING QUESTIONS -- BAHRAIN INDIVIDUAL / SELF-EMPLOYED
 | No personal income tax | Bahrain's legislation on lloc.gov.bh has no personal income tax law; Decree-Law No. 22 of 1979 taxes oil companies only (https://lloc.gov.bh/Legislation/HTM/L2279) |
 | No wealth/estate/CGT on individuals | No such law exists in Bahrain's legislation; tax statutes are Decree-Law No. 22 of 1979, Decree-Law No. 48 of 2018 and Decree-Law No. 11 of 2024 (https://lloc.gov.bh/Legislation/HTM/L2279; https://lloc.gov.bh/Legislation/HTM/L4818; https://lloc.gov.bh/Legislation/HTM/L1124) |
 | SIO rates (locals 8%/17%; expats 1%/3%; GCC home-country) | Social Insurance Law arts 33 and 47 (https://lloc.gov.bh/Legislation/HTM/L2476); Law No. 14 of 2022 art. 4 (https://lloc.gov.bh/Legislation/HTM/K1422); Unemployment Insurance Law art. 6 (https://lloc.gov.bh/Legislation/HTM/L7806); Law No. 68 of 2006, GCC scheme (https://lloc.gov.bh/Legislation/HTM/K6806); newsofbahrain.com/106412; mercans.com 2026 alert |
-| SIO ceiling BHD 4,000/month; employer phase-in to 21% by 2028 | newsofbahrain.com/106412; meinsurancereview.com aid=49089 |
+| SIO ceiling BHD 4,000/month; employer phase-in to 20% by 2028 | Law No. 14 of 2022 art. 4 with Social Insurance Law arts 33 and 47 (https://lloc.gov.bh/Legislation/HTM/K1422; https://lloc.gov.bh/Legislation/HTM/L2476); ceiling and press reports (which quoted 21%): newsofbahrain.com/106412; meinsurancereview.com aid=49089 |
 | SIO employer 18% from 1 Jan 2026 | mercans.com EOSB/social-security alert |
 | Expat EOSB 4.2% / 8.4% (from 1 Mar 2024) | mercans.com EOSB alert; SIO EOSB page (https://www.sio.gov.bh/en/end-of-service-benefits) |
 | VAT 10% (since 1 Jan 2022); threshold BHD 37,500 | bh.bh business-vat_en; NBR portal; avalara VAT rates |
