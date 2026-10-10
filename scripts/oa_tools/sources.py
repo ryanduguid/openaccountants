@@ -386,6 +386,10 @@ NON_GOV_AUTHORITY = frozenset((
                           # the contribution scale and the minimum contribution
                           # base, but the institution lives on .sa.cr rather
                           # than .go.cr, so the host carries no government label.
+    'sgg.cg',             # Secretariat General du Gouvernement of the Republic
+                          # of Congo, which publishes the Journal officiel (the
+                          # finance laws that rewrite the tax code) under
+                          # sgg.cg/JO/<year>/. Bare .cg, no government label.
     'legalinfo.mn',       # Mongolia's Unified Legal Information System, run by
                           # the Ministry of Justice and Home Affairs: serves the
                           # consolidated laws with each amendment dated in-line
