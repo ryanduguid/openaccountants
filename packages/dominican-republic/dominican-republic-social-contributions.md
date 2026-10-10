@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Legislation | Ley 87-01 (SDSS); Ley 116-80 + Reglamento (INFOTEP) |
 | Payment | Monthly, via the TSS platform, within the first working days of the following month |
 | Validated by | Pending -- requires sign-off by a licensed Dominican contador |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Contribution rates (employment)
 

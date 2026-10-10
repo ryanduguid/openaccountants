@@ -36,7 +36,7 @@ Tier 2 — research-verified. Figures sourced from the DGII (escala salarial FY2
 | Income-tax authority | Dirección General de Impuestos Internos (DGII) |
 | Social security | Tesorería de la Seguridad Social (TSS): AFP, SFS, SRL, INFOTEP |
 | Validated by | Pending -- requires sign-off by a licensed Dominican contador |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### The single most important DR payroll fact
 

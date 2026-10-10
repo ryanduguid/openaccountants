@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax system | Territorial -- residents taxed on DR-source income [Código Tributario art. 269] |
 | Validated by | Pending -- requires sign-off by a Dominican Contador Público Autorizado (CPA) |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### ISR Rate Brackets (FY2025) -- Individuals (personas físicas)
 
