@@ -1,10 +1,10 @@
 ---
 name: ecuador-social-contributions
 description: Use this skill whenever asked about Ecuador social security contributions (IESS), payroll, or personal income tax (Impuesto a la Renta) for a dependent worker, employer, or self-employed/voluntary affiliate. Trigger on phrases like "how much IESS do I pay", "aporte personal IESS", "aporte patronal", "9.45% IESS", "11.15% employer contribution", "fondos de reserva", "decimo tercero", "decimo cuarto", "Ecuador payroll cost", "retencion en relacion de dependencia", "Formulario 102", "Formulario 107", "planilla IESS", "afiliado voluntario", or any question about Ecuadorian social-insurance or wage-tax obligations. Also trigger when classifying bank-statement transactions that relate to IESS debits, SRI tax payments, planilla payments, fondos de reserva, or decimos from Banco Pichincha, Banco del Pacifico, Produbanco, Banco Guayaquil, or other Ecuadorian banks. This skill covers IESS employee/employer rates and their internal breakdown, IECE/SECAP levies, fondos de reserva, the SBU minimum-wage floor, decimo tercero/cuarto, utilidades, the FY2025 and FY2026 progressive income-tax tables, filing forms and deadlines, penalties, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Ecuador IESS, payroll, or income-tax work.
-version: 0.1
+version: 0.2
 jurisdiction: EC
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Ecuador Social Security Contributions (IESS) and Personal Income Tax
 
-## Ecuador Social Security Contributions (IESS) and Personal Income Tax -- Skill v0.1
+## Ecuador Social Security Contributions (IESS) and Personal Income Tax -- Skill v0.2
 
 > Tier 2 (research-verified). All figures carry inline citations to IESS, SRI, the Ministerio del Trabajo, or Big-4-adjacent sources. Where a figure is secondary or unconfirmed, it is marked **[RESEARCH GAP -- reviewer to confirm]**. This skill MUST be signed off by a qualified Ecuadorian professional (contador publico autorizado / abogado tributario) before filing.
 
@@ -37,12 +37,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Income-tax legislation | Ley de Regimen Tributario Interno (LRTI) and its Reglamento |
 | FY2025 income-tax table | SRI Resolution NAC-DGERCGC24-00000041 |
 | FY2026 income-tax table | SRI Resolution NAC-DGERCGC25-00000043 |
-| Employee IESS rate (private dependent) | 9.45% of materia gravada [misalario.ec; PwC] |
+| Employee IESS rate (private dependent) | 9.45% of materia gravada [IESS Res. C.D. 501 Anexo Único as replaced by C.D. 515, Disposición Primera] |
 | Employer IESS base rate | 11.15% of materia gravada [misalario.ec; tagline-soluciones] |
-| Employer IESS rate (PwC, incl. IECE+SECAP) | 12.15% [PwC] |
+| Employer rate, consolidated presentation (incl. IECE+SECAP) | 12.15% = 11.15% IESS [IESS Res. C.D. 501 Anexo Único as replaced by C.D. 515, Disposición Primera] + 0.5% IECE and 0.5% SECAP levies collected with the IESS planilla, outside the IESS rate table [RESEARCH GAP — statutory basis of the two levies; 2026 bills before the Asamblea would redirect the SECAP share] |
 | Combined base IESS rate | 20.60% (9.45% + 11.15%) [misalario.ec] |
-| Fondos de reserva | 8.33%, employer, from the 13th month of service [misalario.ec; PwC] |
-| Voluntary affiliate rate | 17.60% of declared income [PwC; ecuador.unir.net] |
+| Fondos de reserva | 8.33% (one month's pay per year of service after the first), employer, from the 13th month of service [Código del Trabajo art. 196; IESS Res. C.D. 460 art. 11 (8.33% of materia gravada)] |
+| Voluntary affiliate rate | 17.60% of declared income, never below the SBU [IESS Res. C.D. 501 Anexo Único as replaced by C.D. 515, Disposición Sexta; IESS Res. C.D. 467 art. 4] |
 | Contribution floor (SBU) 2025 | USD 470/month [Ministerio del Trabajo] |
 | Contribution floor (SBU) 2026 | USD 482/month [Acuerdo MDT-2025-195; nmslaw.com.ec] |
 | Contribution ceiling | None for dependent workers [misalario.ec] |
@@ -57,25 +57,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Component | Who pays | Rate | Base |
 | --- | --- | --- | --- |
-| IESS aporte personal | Employee (withheld) | 9.45% | Materia gravada [misalario.ec; PwC] |
+| IESS aporte personal | Employee (withheld) | 9.45% | Materia gravada [IESS Res. C.D. 501 Anexo Único as replaced by C.D. 515, Disposición Primera] |
 | IESS aporte patronal (base) | Employer | 11.15% | Materia gravada [misalario.ec] |
 | **Combined base IESS** | **Shared** | **20.60%** | **Materia gravada [misalario.ec]** |
 | IECE | Employer | 0.50% | Total payroll [tagline-soluciones] |
 | SECAP | Employer | 0.50% | Total payroll [tagline-soluciones] |
-| Fondos de reserva | Employer | 8.33% | Remuneration, from month 13 [misalario.ec; PwC] |
+| Fondos de reserva | Employer | 8.33% | Remuneration, from month 13 [Código del Trabajo art. 196; IESS Res. C.D. 460 art. 11] |
 
-> Arithmetic check: 9.45 + 11.15 = 20.60. Employer total per PwC presentation = 11.15 + 0.50 + 0.50 = 12.15 [PwC].
+> Arithmetic check: 9.45 + 11.15 = 20.60 [IESS Res. C.D. 501 Anexo Único as replaced by C.D. 515, Disposición Primera]. Employer total in the consolidated presentation = 11.15 + 0.50 + 0.50 = 12.15 (the IESS table carries 11.15; the two 0.5% levies ride on the planilla, see T2-1).
 
 **Conservative defaults**
 
 | Ambiguity | Default |
 | --- | --- |
 | Unknown worker type | Assume private-sector dependent worker (9.45% / 11.15%) |
-| Employer rate basis in cost model | Use 11.15% base; add 1.00% (IECE+SECAP) for ~12.15% per PwC -- STATE the basis used |
+| Employer rate basis in cost model | Use 11.15% base; add 1.00% (IECE+SECAP) for ~12.15% in the consolidated presentation -- STATE the basis used |
 | Worker under 12 months' service | Do NOT include 8.33% fondos de reserva |
 | Unknown remuneration | Apply SBU floor (USD 470 in 2025 / USD 482 in 2026) |
 | Unknown tax year | Use FY2025 table; flag FY2026 if period falls in 2026 |
-| Unknown whether decimos/utilidades are in base | EXCLUDE them -- they are NOT materia gravada [PwC] |
+| Unknown whether decimos/utilidades are in base | EXCLUDE them -- they are NOT materia gravada [Código del Trabajo art. 112 (decimo tercero); Ley de Seguridad Social art. 11 materia gravada — RESEARCH GAP: art. 11 text not read for decimo cuarto and utilidades] |
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -89,7 +89,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal catalogue
 
-- **R-EC-IESS-1 -- Employer rate basis not specified** — Trigger: a payroll-cost or net-pay computation where the user has not stated which employer rate to apply. Message: "The employer IESS rate is reported two ways: 11.15% (base, local Ecuadorian sources) or 12.15% (PwC, including 0.5% IECE + 0.5% SECAP). Confirm which basis the client wants before I model employer cost."
+- **R-EC-IESS-1 -- Employer rate basis not specified** — Trigger: a payroll-cost or net-pay computation where the user has not stated which employer rate to apply. Message: "The employer IESS rate is reported two ways: 11.15% (the IESS rate table) or 12.15% (consolidated presentation, including 0.5% IECE + 0.5% SECAP). Confirm which basis the client wants before I model employer cost."
 - **R-EC-IESS-2 -- Fondos de reserva on a worker under 12 months** — Trigger: request to include 8.33% fondos de reserva for a worker with under one year of continuous service. Message: "Fondos de reserva are not owed until the 13th month of continuous service with the same employer [misalario.ec]. I will not include them for a worker under 12 months without reviewer confirmation of the start date."  _(misalario.ec)_
 - **R-EC-IESS-3 -- IESS mora patronal / arrears quantification** — Trigger: client has unpaid IESS contributions. Message: "Mora patronal interest accrues at the Banco Central maximum conventional rate plus 4 points, plus fines and responsabilidad patronal [IESS]. Do not quantify arrears without an IESS statement. Escalate to an Ecuadorian professional immediately."  _(IESS)_
 - **R-EC-IESS-4 -- Special/disability sub-rates and the alleged extra 0.1%** — Trigger: request relying on a special disability-pension sub-rate (a secondary source mentioned an additional ~0.1%). Message: "An additional ~0.1% special disability-pension contribution is referenced by a secondary source but is NOT independently confirmed. **[RESEARCH GAP -- reviewer to confirm]** before relying on it."
@@ -143,7 +143,7 @@ Deterministic pre-classifier for Ecuadorian bank-statement transactions. Match b
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
 | SUELDO, ROL DE PAGOS, NOMINA (outgoing) | EXCLUDE -- payroll expense | Wage payment, not a contribution |
-| DECIMO TERCERO, DECIMO CUARTO (outgoing) | EXCLUDE -- statutory bonus | NOT materia gravada [PwC] |
+| DECIMO TERCERO, DECIMO CUARTO (outgoing) | EXCLUDE -- statutory bonus | NOT materia gravada [Código del Trabajo arts. 112 and 113] |
 | UTILIDADES (outgoing) | EXCLUDE -- profit sharing | Labour obligation, not a contribution |
 | SUELDO, ROL DE PAGOS (incoming) | EXCLUDE -- employment income received | Not a contribution |
 
@@ -187,7 +187,7 @@ Worker earns USD 1,200/month materia gravada. Employee aporte personal = 1,200 x
 
 ### Example 3 -- Full employer cost of a USD 1,200 worker past 12 months (FY2025)
 
-**Reasoning (PwC basis, employer side):**
+**Reasoning (consolidated-rate basis, employer side):**
 - Aporte patronal base: 1,200 x 11.15% = USD 133.80 [misalario.ec].
 - IECE: 1,200 x 0.50% = USD 6.00 [tagline-soluciones].
 - SECAP: 1,200 x 0.50% = USD 6.00 [tagline-soluciones].
@@ -195,7 +195,7 @@ Worker earns USD 1,200/month materia gravada. Employee aporte personal = 1,200 x
 - Employer statutory add-on total: 133.80 + 6.00 + 6.00 + 99.96 = **USD 245.76**.
 - Total employer monthly cost (excl. decimos/utilidades): 1,200 + 245.76 = **USD 1,445.76**.
 
-> Decimo tercero (approx 1/12 = USD 100.00) and decimo cuarto (USD 470/12 = USD 39.17 in 2025) are additional labour costs but are NOT materia gravada [PwC; ecuadorlegalonline.com].
+> Decimo tercero (approx 1/12 = USD 100.00) and decimo cuarto (USD 470/12 = USD 39.17 in 2025) are additional labour costs but are NOT materia gravada [Código del Trabajo arts. 111 to 113].
 
 **Classification:** Employer statutory cost USD 245.76 on top of the USD 1,200 wage (worker past 12 months).
 
@@ -237,11 +237,11 @@ Apply exactly as written when worker type, period and remuneration are known.
 
 ### Rule 1 -- Employee IESS contribution
 
-- **employee_IESS** — employee_IESS = materia_gravada x 9.45% (Private-sector dependent worker, withheld by the employer)  _([misalario.ec; PwC])_
+- **employee_IESS** — employee_IESS = materia_gravada x 9.45% (Private-sector dependent worker, withheld by the employer)  _([IESS Res. C.D. 501 Anexo Único as replaced by C.D. 515, Disposición Primera — https://iess.gob.ec/documents/10162/14500438/C.D.+515])_
 
 ### Rule 2 -- Employer IESS contribution
 
-- **employer_IESS** — employer_IESS_base = materia_gravada x 11.15% employer_IESS_PwC = materia_gravada x 12.15% (= 11.15% + 0.5% IECE + 0.5% SECAP) (State which basis is used. Local Ecuadorian sources cite 11.15% base and list IECE/SECAP separately; PwC consolidates to 12.15%)  _([misalario.ec; tagline-soluciones; PwC])_
+- **employer_IESS** — employer_IESS_base = materia_gravada x 11.15% employer_IESS_consolidated = materia_gravada x 12.15% (= 11.15% + 0.5% IECE + 0.5% SECAP) (State which basis is used. The IESS rate table carries 11.15% and lists no IECE or SECAP line; commercial summaries consolidate to 12.15%)  _([IESS Res. C.D. 501 Anexo Único as replaced by C.D. 515, Disposición Primera — https://iess.gob.ec/documents/10162/14500438/C.D.+515; 0.5% IECE and 0.5% SECAP levies collected with the IESS planilla, outside the IESS rate table [RESEARCH GAP — statutory basis of the two levies; 2026 bills before the Asamblea would redirect the SECAP share]])_
 
 ### Rule 3 -- Combined base IESS rate
 
@@ -253,7 +253,7 @@ Apply exactly as written when worker type, period and remuneration are known.
 
 ### Rule 5 -- Fondos de reserva (8.33%, from month 13)
 
-- **fondos_de_reserva** — fondos_de_reserva = remuneration x 8.33% (employer, only from the 13th month of continuous service) (Paid monthly in payroll unless the worker requests accumulation at IESS. Not owed in the first 12 months)  _([misalario.ec; PwC])_
+- **fondos_de_reserva** — fondos_de_reserva = remuneration x 8.33% (employer, only from the 13th month of continuous service) (Paid monthly in payroll unless the worker requests accumulation at IESS. Not owed in the first 12 months)  _([Código del Trabajo arts. 196 and 197 — https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/e2NhcnBldGE6ICJub3RhaXAyMDIzIiwgdXVpZDoiNGIzNzRhMDUtMDNjNy00ZjdmLWE4NGMtZTlkNTkzNDIzY2NhLnBkZiJ9; IESS Res. C.D. 460 art. 11 — https://www.iess.gob.ec/documents/10162/33703/C.D.+460])_
 
 ### Rule 6 -- SBU floor, no ceiling
 
@@ -261,11 +261,11 @@ Apply exactly as written when worker type, period and remuneration are known.
 
 ### Rule 7 -- Voluntary affiliate rate
 
-- **voluntary_affiliate_IESS** — voluntary_affiliate_IESS = declared_monthly_income x 17.60%  _([PwC; ecuador.unir.net])_
+- **voluntary_affiliate_IESS** — voluntary_affiliate_IESS = declared_monthly_income x 17.60% (declared income never below the SBU)  _([IESS Res. C.D. 501 Anexo Único as replaced by C.D. 515, Disposición Sexta — https://iess.gob.ec/documents/10162/14500438/C.D.+515; IESS Res. C.D. 467 art. 4])_
 
 ### Rule 8 -- Decimos and utilidades are NOT materia gravada
 
-- **Decimos/utilidades excluded from base** — Decimo tercero, decimo cuarto, fondos de reserva and utilidades are excluded from the IESS contributable base. Do not apply the 9.45% / 11.15% to these items.  _([PwC])_
+- **Decimos/utilidades excluded from base** — Decimo tercero, decimo cuarto, fondos de reserva and utilidades are excluded from the IESS contributable base. Do not apply the 9.45% / 11.15% to these items.  _([Código del Trabajo art. 112 — https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/e2NhcnBldGE6ICJub3RhaXAyMDIzIiwgdXVpZDoiNGIzNzRhMDUtMDNjNy00ZjdmLWE4NGMtZTlkNTkzNDIzY2NhLnBkZiJ9; Ley de Seguridad Social art. 11 (materia gravada) — RESEARCH GAP: text not read for decimo cuarto and utilidades])_
 
 ### Rule 9 -- Personal income tax (progressive, FY2025)
 
@@ -327,7 +327,7 @@ Flag these for reviewer confirmation when data is ambiguous.
 
 ### T2-1 -- Employer rate basis (11.15% vs 12.15%)
 
-- **T2-1** — Trigger: any employer-cost model. Issue: local sources cite 11.15% base + separate IECE/SECAP; PwC consolidates to 12.15%. Action: confirm which presentation the client uses; state it explicitly in the working paper.
+- **T2-1** — Trigger: any employer-cost model. Issue: the IESS rate table carries 11.15% and no IECE or SECAP line; commercial summaries consolidate to 12.15%. Action: confirm which presentation the client uses; state it explicitly in the working paper.
 
 ### T2-2 -- Internal 11.15% sub-allocation
 
@@ -367,7 +367,7 @@ INPUT DATA
   Months continuous service:   [____]   (>=13 => fondos de reserva due)
   Monthly remuneration (materia gravada): USD [____]
   SBU floor applied:           USD [470 (2025) / 482 (2026)]
-  Employer rate basis:         [11.15% base / 12.15% PwC incl. IECE+SECAP]
+  Employer rate basis:         [11.15% base / 12.15% consolidated incl. IECE+SECAP]
 
 IESS COMPUTATION
   Employee aporte personal (9.45%):   USD [____]
@@ -459,7 +459,7 @@ If the client provides only a bank statement and no other information:
 | Income-tax filing trigger (FY2025) | Annual gross above USD 12,081 | SRI Res. NAC-DGERCGC24-00000041 |
 | Tax-free fraction (FY2026) | USD 12,208 | SRI Res. NAC-DGERCGC25-00000043 |
 | IESS mandatory affiliation | From day 1; no income/hours minimum | IESS / AfiliacionIESS |
-| Fondos de reserva eligibility | From the 13th month of continuous service | misalario.ec |
+| Fondos de reserva eligibility | From the 13th month of continuous service (one month's pay for each full year after the first) | Código del Trabajo arts. 196 and 197 |
 | SBU 2025 (contribution floor) | USD 470/month | Ministerio del Trabajo |
 | SBU 2026 (contribution floor) | USD 482/month | Acuerdo MDT-2025-195; nmslaw.com.ec |
 
@@ -486,13 +486,22 @@ If the client provides only a bank statement and no other information:
 
 ### Utilidades (profit sharing -- labour obligation, not a contribution)
 
-- **Utilidades** — 15% of company pre-tax profits distributed to workers (10% to all workers, 5% by family burden), payable by 15 April. Separate from IESS.  _([PwC])_
+- **Utilidades** — 15% of company pre-tax profits distributed to workers (10% to all workers, 5% by family burden); the liquidation is made by 31 March and the worker's share paid within 15 days of it, so by 15 April. Separate from IESS.  _([Código del Trabajo arts. 97 and 105 — https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/e2NhcnBldGE6ICJub3RhaXAyMDIzIiwgdXVpZDoiNGIzNzRhMDUtMDNjNy00ZjdmLWE4NGMtZTlkNTkzNDIzY2NhLnBkZiJ9])_
+
+### Primary sources
+
+- IESS, Resolución C.D. 515 (30 March 2016) and C.D. 518, compiled text replacing the Anexo Único of C.D. 501: contribution distribution tables (private sector 9.45% / 11.15% / 20.60%; voluntary affiliates 17.60%) — https://iess.gob.ec/documents/10162/14500438/C.D.+515
+- IESS, Resolución C.D. 501 (13 November 2015): original distribution tables — https://iess.gob.ec/documents/10162/33703/C.D.+501
+- IESS, Resolución C.D. 460 (voluntary affiliation regulation; art. 11 fondo de reserva 8.33%) — https://www.iess.gob.ec/documents/10162/33703/C.D.+460
+- Código del Trabajo, Codificación 2005-017 consolidated to 4 November 2021 (Corte Constitucional copy): arts. 97, 105, 111 to 113, 196, 197 — https://esacc.corteconstitucional.gob.ec/storage/api/v1/10_DWL_FL/e2NhcnBldGE6ICJub3RhaXAyMDIzIiwgdXVpZDoiNGIzNzRhMDUtMDNjNy00ZjdmLWE4NGMtZTlkNTkzNDIzY2NhLnBkZiJ9
+- Ley de Régimen Tributario Interno, Codificación 2004-026 consolidated to 2 July 2021 (Bolsa de Valores de Quito copy): arts. 9, 36, 37, 39 — https://www.bolsadequito.com/uploads/normativa/normativa-relacionada/ley-organica-regimen-tributario-interno.pdf
+- SRI, Impuesto a la Renta (rates, filing calendar) — https://www.sri.gob.ec/impuesto-renta
 
 ### Test suite
 
 Private dependent worker, materia gravada USD 1,000, FY2025. Employee IESS = 1,000 x 9.45% = USD 94.50. Employer base = 1,000 x 11.15% = USD 111.50. Combined base = USD 206.00. (Check 94.50 + 111.50 = 206.00.) [misalario.ec]
 
-Same worker, employer total per PwC basis = 1,000 x 12.15% = USD 121.50 (= 111.50 + 5.00 IECE + 5.00 SECAP). [PwC]
+Same worker, employer total in the consolidated presentation = 1,000 x 12.15% = USD 121.50 (= 111.50 + 5.00 IECE + 5.00 SECAP). [IESS C.D. 501/515 for 111.50; IECE and SECAP levies on the planilla]
 
 Worker past 12 months, USD 1,000 base. Fondos de reserva = 1,000 x 8.33% = USD 83.30. [misalario.ec]
 
@@ -508,13 +517,13 @@ Natural person, FY2025 taxable income USD 12,000 (below USD 12,081). PIT = USD 0
 
 Natural person, FY2026 taxable income USD 30,000. PIT = 1,412 + (30,000 - 26,700) x 15% = 1,412 + 3,300 x 15% = 1,412 + 495.00 = **USD 1,907.00**. [SRI Res. NAC-DGERCGC25-00000043]
 
-Voluntary affiliate, declared income USD 1,000. IESS = 1,000 x 17.60% = USD 176.00. [PwC; ecuador.unir.net]
+Voluntary affiliate, declared income USD 1,000. IESS = 1,000 x 17.60% = USD 176.00. [IESS Res. C.D. 501 Anexo Único as replaced by C.D. 515, Disposición Sexta]
 
 ### Prohibitions
 
 - NEVER apply the 9.45% / 11.15% rates to decimo tercero, decimo cuarto, fondos de reserva or utilidades -- they are NOT materia gravada.
 - NEVER include 8.33% fondos de reserva for a worker under 12 months of continuous service.
-- NEVER mix the 11.15% (base) and 12.15% (PwC) employer figures in the same total without stating the basis.
+- NEVER mix the 11.15% (base) and 12.15% (consolidated) employer figures in the same total without stating the basis.
 - NEVER publish the internal 11.15% sub-breakdown as definitive -- it is a RESEARCH GAP until verified against the official IESS PDF.
 - NEVER include the alleged extra ~0.1% disability sub-rate in headline figures without reviewer confirmation.
 - NEVER apply a contribution ceiling for dependent workers -- there is none.

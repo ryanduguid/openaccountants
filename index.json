@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-10T17:28:05+00:00",
+ "generated_at": "2026-10-10T17:59:46+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -7414,7 +7414,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ec-tax-overview",
@@ -7440,7 +7440,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ecuador-iva",
@@ -7466,7 +7466,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ecuador-social-contributions",
@@ -7479,7 +7479,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ecuador-tax-optimization",
@@ -7492,7 +7492,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "eg-bookkeeping",
