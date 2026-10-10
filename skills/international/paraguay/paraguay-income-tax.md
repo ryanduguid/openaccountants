@@ -1,11 +1,11 @@
 ---
 name: paraguay-income-tax
 description: Use this skill whenever asked about Paraguay personal income tax (IRP) for self-employed individuals and personal-service providers. Trigger on phrases like "how much tax do I pay in Paraguay", "IRP", "Impuesto a la Renta Personal", "Form 715", "Form 716", "RSP", "RGC", "renta neta", "declaración jurada", "allowable deductions Paraguay", "IPS contributions", "aporte obrero", "aporte patronal", "Marangatú", "RUC registration", "salario mínimo", "self-employed tax Paraguay", or any question about filing or computing income tax for a Paraguayan resident with Paraguay-source income. Also trigger when preparing or reviewing an IRP RSP (715) or IRP RGC (716) return, computing documented deductible expenses, or advising on IPS social-security contributions and IVA interaction. This skill covers the territorial basis, the 8%/9%/10% progressive scale (personal services), the flat 8% capital regime, the gross-income filing threshold, IPS rates, minimum wage, penalties, and interaction with IVA. ALWAYS read this skill before touching any Paraguay income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: PY
 tax_year: 2025
 tax_year_notes: "2025 (minimum-wage table also stated at the 1 July 2026 level of PYG 3,044,000)"
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Paraguay Personal Income Tax (IRP) -- Self-Employed
 
-## Paraguay Personal Income Tax (IRP) -- Self-Employed Skill v0.1
+## Paraguay Personal Income Tax (IRP) -- Self-Employed Skill v0.2
 
 ## Section 1 -- Quick Reference
 
@@ -27,18 +27,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Paraguay (Republic of Paraguay) |
 | Tax | Personal Income Tax -- IRP (Impuesto a la Renta Personal) |
 | Currency | Guaraní (PYG / ₲) only |
-| Tax year | Calendar year (1 January -- 31 December); liability originates at close of fiscal year (31 Dec) [PwC tax administration] |
-| Basis | **Territorial** -- only Paraguay-source income is taxed; foreign-source income generally exempt [Ley 6380/19; PwC] |
+| Tax year | Calendar year (1 January -- 31 December); the obligation arises at the close of the fiscal year, which coincides with the calendar year; income is counted when received and costs when actually paid [Ley 6380/19 art. 52] |
+| Basis | **Territorial** -- only Paraguay-source income is taxed: income from activities carried out in Paraguay, assets located or rights used economically there, plus the deemed Paraguayan-source items in art. 48 (interest on local deposits and loans, remuneration paid by the State, and personal services performed abroad for IRE or IRP taxpayers) [Ley 6380/19 arts. 47-48] |
 | Primary legislation | Ley N° 6380/2019 ("Modernización y Simplificación del Sistema Tributario Nacional"), in force since Jan 2020 |
 | Supporting legislation | Arts. 14-15, 64 Ley 6380/19 (deductions); Ley N° 125/1991 (Tax Code -- penalties); RG N° 90/2021 (Marangatú e-filing) |
 | Tax authority | DNIT -- Dirección Nacional de Ingresos Tributarios (formerly SET) |
 | Social security authority | IPS -- Instituto de Previsión Social |
 | Labour / minimum wage authority | MTESS -- Ministerio de Trabajo, Empleo y Seguridad Social |
 | Filing portal | Marangatú (electronic; RG N° 90/2021) |
-| Filing deadline | Annual return + payment in **March** of the following year; exact day set by last digit of RUC ("calendario perpetuo") [PwC; DNIT IRP] |
+| Filing deadline | Annual return + payment in **March** of the following year; exact day set by the last digit of the RUC (without the check digit) under the "calendario perpetuo" of RG N° 01/2007 and 38/2020: digit 0 on the 7th, 1 on the 9th, 2 on the 11th, 3 on the 13th, 4 on the 15th, 5 on the 17th, 6 on the 19th, 7 on the 21st, 8 on the 23rd, 9 on the 25th, moving to the next business day when that date is not one [DNIT IRP page; DNIT Calendario Perpetuo notice, 26 March 2025] |
 | Validated by | Pending -- requires sign-off by a Paraguayan licensed accountant / DNIT-registered professional |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### IRP Categories and Forms
 
@@ -46,12 +46,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Category | Form / obligation code | Basis | Rate |
 | --- | --- | --- | --- |
-| Personal services income (RSP -- Rentas de Servicios Personales) | **715 -- IRP RSP** | Net income (renta neta) | Progressive 8% / 9% / 10% [PwC; Ley 6380/19] |
-| Capital gains & income (RGC -- Rentas y Ganancias del Capital) | **716 -- IRP RGC** | Net income | Flat **8%** [PwC; DNIT IRP] |
+| Personal services income (RSP -- Rentas de Servicios Personales) | **715 -- IRP RSP** | Net income (renta neta) | Progressive 8% / 9% / 10% [Ley 6380/19 art. 69; DNIT IRP] |
+| Capital gains & income (RGC -- Rentas y Ganancias del Capital) | **716 -- IRP RGC** | Net income | Flat **8%** [Ley 6380/19 art. 60; DNIT IRP] |
+
+The two categories are assessed separately: costs and gains of one cannot be set against the other (art. 53).
 
 ### Tax Rate Brackets -- Personal Services (RSP), tax year 2025
 
-**Tax Rate Brackets -- Personal Services (RSP), tax year 2025**  _([Source: PwC, last reviewed 7 Feb 2026, https://taxsummaries.pwc.com/paraguay/individual/taxes-on-personal-income ; statutory basis Ley 6380/19])_
+**Tax Rate Brackets -- Personal Services (RSP), tax year 2025**  _([Source: Ley N° 6380/2019, art. 69 (BACN copy of the law) — https://www.bacn.gov.py/archivos/9332/Ley+6380.pdf ; DNIT, IRP — https://www.dnit.gov.py/web/portal-institucional/irp])_
 
 | Annual net taxable income (PYG) | Marginal rate | Cumulative tax at top of band |
 | --- | --- | --- |
@@ -67,7 +69,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Income type | Rate |
 | --- | --- |
-| Dividends, interest, royalties, rentals, capital gains | Flat **8%** on net income [PwC; DNIT IRP] |
+| Dividends, interest, royalties, rentals, capital gains | Flat **8%** on net income [Ley 6380/19 arts. 57, 59 and 60; DNIT IRP] |
 
 ### Gross-Income Filing / Payment Threshold (RSP)
 
@@ -75,10 +77,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Value |
 | --- | --- |
-| Annual gross personal-services income below which IRP is **not payable** | ₲80,000,000 per year [PwC] |
+| Annual gross personal-services income below which IRP is **not payable** | ₲80,000,000 per year: below it the taxpayer meets the formal obligations the regulations set but owes no tax [Ley 6380/19 art. 69] |
+| Becoming a taxpayer | A person is caught once gross taxable personal-service income counted from 1 January exceeds ₲80,000,000; in that first year the tax runs on the gross income less deductible outgoings from the day after the threshold is crossed, and on the whole year thereafter [Ley 6380/19 art. 62] |
 | Above the threshold | Progressive 8% / 9% / 10% scale applies on **net** income |
 
-- **Important distinction** — the ₲80,000,000 figure is the gross-income registration/payment threshold. The 8%/9%/10% brackets are applied to net taxable income (renta neta), not to gross turnover.  _([PwC])_
+- **Important distinction** — the ₲80,000,000 figure is the gross-income registration/payment threshold. The 8%/9%/10% brackets are applied to net taxable income (renta neta), not to gross turnover. Gross income (renta bruta) excludes the employee's own contributions to the pension or social security system and employer payments made directly to medical providers for the employee (art. 63).  _(Ley 6380/19 arts. 62, 63 and 69)_
 
 ### Conservative Defaults
 
@@ -262,7 +265,7 @@ Supermarket / private living expense. Not directly related to the taxed activity
 `10/01/2026 ; ITAU DEBITO ; IPS APORTE OBRERO ; ENERO 2026 ; -260,914 ; PYG`
 
 **Reasoning:**
-Employee IPS contribution (aporte obrero) of 9.0% on the legal minimum wage. This example is a pay period in the year to 30 June 2026, when the minimum wage was ₲2,899,048: 2,899,048 × 9.0% = ₲260,914.32 → ₲260,914. From 1 July 2026 the floor is ₲3,044,000 and the same 9% is ₲273,960. [PwC other-taxes; MTESS Res. 677/2025 and 670/2026] IPS is social security, recorded separately from the IRP deduction analysis; it is not a Box-style IRP expense line.
+Employee IPS contribution (aporte obrero) of 9.0% on the legal minimum wage. This example is a pay period in the year to 30 June 2026, when the minimum wage was ₲2,899,048: 2,899,048 × 9.0% = ₲260,914.32 → ₲260,914. From 1 July 2026 the floor is ₲3,044,000 and the same 9% is ₲273,960. [IPS charter arts. 17(a) and 20; MTESS Res. 677/2025 and 670/2026] IPS is social security, recorded separately from the IRP deduction analysis; it is not a Box-style IRP expense line, although art. 63 of Ley 6380/19 excludes the worker's own contribution from gross income.
 
 **Classification:** IPS aporte obrero = ₲260,914. Record under social security, not as an IRP business deduction.
 
@@ -290,7 +293,7 @@ Transfer between the taxpayer's own accounts. Neither income nor expense. Exclud
 
 ### 5.1 Territorial Basis
 
-- **Territorial basis** — Paraguay taxes only Paraguay-source income. Foreign-source income is generally exempt. Before including any cross-border platform payout in RSP income, confirm the income is Paraguay-source.  _(Legislation: Ley N° 6380/2019 [PwC])_
+- **Territorial basis** — Paraguay taxes only Paraguay-source income: income from activities carried out in Paraguay, from assets located there or rights used economically there (art. 48). Art. 48 also deems Paraguayan-source the returns on local deposits and loans, remuneration the State pays, and personal services an IRP taxpayer performs abroad for IRE or IRP taxpayers. Before including any cross-border platform payout in RSP income, confirm the income is Paraguay-source under that rule.  _(Ley N° 6380/2019, arts. 47-48 — https://www.bacn.gov.py/archivos/9332/Ley+6380.pdf)_
 
 ### 5.2 The "Directly Related + Documented" Deduction Test
 
@@ -314,36 +317,36 @@ Transfer between the taxpayer's own accounts. Neither income nor expense. Exclud
 | Input IVA recovered | NOT an expense -- exclude from deductions |
 | Input IVA non-recoverable / not registered | IS a cost -- gross amount is the expense |
 
-- **Standard/reduced IVA rate** — Standard IVA rate is 10%; a reduced 5% applies to certain goods (basic food basket, some real estate, pharmaceuticals).  _([Source: Ley 6380/19; PwC other-taxes])_
+- **Standard/reduced IVA rate** — The general IVA rate is 10%; 5% applies to residential rent, the sale of immovable property, the listed basic-basket foods (rice, pasta, vegetable oil, yerba mate, milk, eggs, flour and iodised salt), listed agricultural, horticultural, fruit and livestock products and their primary derivatives, and registered human medicines. The Executive may vary the reduced rates between 5% and 10%.  _(Ley N° 6380/2019, art. 90 — https://www.bacn.gov.py/archivos/9332/Ley+6380.pdf)_
 
 ### 5.6 IPS Social Security (Recorded Separately)
 
-- **IPS recorded separately** — IPS contributions are social security, computed on gross salary, and recorded separately from the IRP deduction analysis. See Section 5.7 for rates. They are not an IRP "business expense" line for a self-employed RSP taxpayer's own contributions; independent directors/managers/administrators may contribute to IPS optionally.  _([PwC other-taxes])_
+- **IPS recorded separately** — IPS contributions are social security, computed on gross salary, and recorded separately from the IRP deduction analysis. See Section 5.7 for rates. They are not an IRP "business expense" line for a self-employed RSP taxpayer's own contributions (the worker's contribution is instead excluded from gross income under art. 63 of Ley 6380/19); self-employed people, employers and their directors, managers and administrators may join the IPS voluntarily for pension purposes at 13% of declared income, with the minimum wage as the floor.  _(Ley N° 6380/2019, art. 63; IPS, Inscripción voluntaria: modalidad trabajador independiente — https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=315)_
 
 ### 5.7 IPS Contribution Rates
 
-**Standard IPS contribution rates**  _([Source: PwC other-taxes, last reviewed Feb 2026])_
+**Standard IPS contribution rates**  _([Source: Decreto-Ley N° 1.860/1950, Carta Orgánica del IPS (consolidated), art. 17 as replaced by Ley N° 98/1992 — https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf ; Ley N° 432/1973 — https://paraguay.justia.com/nacionales/leyes/ley-432-dec-28-1973/gdoc ; IPS, Tabla de bases mínimas imponibles y porcentajes de aportes — https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=315])_
 
 | Party | Rate |
 | --- | --- |
-| Employee (Aporte Obrero) | 9.0% of gross salary (withheld by employer) |
-| Employer (Aporte Patronal) | 16.5% of gross salary |
+| Employee (Aporte Obrero) | 9.0% of salary (withheld by employer; art. 17(a)) |
+| Employer (Aporte Patronal) | 16.5% of salary: 14% under art. 17(b) plus the employer levies the IPS collects on the same planilla (1% for the SNPP under Ley N° 253/1971 art. 28, 0.50% for the malaria campaign under Ley N° 432/1973, and 1% for the Ministry of Public Health under Ley N° 446/1957) |
 | **Total** | **25.5%** |
 
-- **Standard IPS total check** — 9.0% + 16.5% = 25.5%. ✓ (Employer 16.5% commonly described as 14% pension/health/maternity + 2.5% other worker-protection/training levies -- secondary breakdown only; the 25.5% total is authoritative.)
+- **Standard IPS total check** — 9.0% + 16.5% = 25.5%. ✓ The State adds 1.5% of the same salaries (art. 17(c)).
 
-**Banks/financial institutions IPS contribution rates**  _([Source: PwC other-taxes])_
+**Bank and finance employees (Caja Bancaria, not IPS)**  _([Source: Ley N° 2856/2005, arts. 9 and 10 — https://paraguay.justia.com/nacionales/leyes/ley-2856-jan-3-2006/gdoc])_
 
 | Party | Rate |
 | --- | --- |
-| Employee | 11% |
-| Employer | 17% |
-| **Total** | **28%** |
+| Employee | 13% of total remuneration (art. 9(b)) |
+| Employer (banks and the other entities in art. 7) | 19% of total remuneration (art. 9(a)) |
+| **Total** | **32%** |
 
-- **Bank sector total check** — 11% + 17% = 28%. ✓
-- **Contribution base floor** — Contribution base may not be below the legal monthly minimum wage (floor).  _([Source: IPS portal])_
-- **No published cap** — No upper ceiling/cap on the general IPS contribution base was found in authoritative sources.  _([RESEARCH GAP -- no published cap; treat absence as default but flag for reviewer.])_
-- **Contribution scope exclusions** — Contributions are on all wage items in cash or kind, EXCEPT the annual mandatory bonus (aguinaldo) and family allowance.  _([PwC])_
+- **Bank sector note** — Bank and finance staff belong to the Caja de Jubilaciones y Pensiones de Empleados de Bancos y Afines, not the IPS general regime. Ley N° 2856/2005 sets 13% / 19% "for the time needed to reach the Caja's financial balance", after which the rates fall back towards the earlier percentages (Ley N° 73/1991: 10% / 16%). Some secondary summaries print 11% / 17%; confirm the rate the Caja currently applies before computing. The base is total remuneration without deduction except the family allowance and the legal aguinaldo, with the bank employees' minimum wage as the floor (art. 10).
+- **Contribution base floor** — No contribution may be lower than the one due on the legal minimum wage, even for apprentices; the deduction from the worker may not exceed 9% of the salary actually paid and the employer bears the difference.  _([Source: IPS charter art. 20; IPS portal])_
+- **No cap** — The charter sets a floor and no ceiling on the general IPS contribution base.  _([Source: IPS charter arts. 17 and 20])_
+- **Contribution scope exclusions** — "Salario" is the total remuneration in cash, kind or royalties, including overtime, piece-work, commissions, bonuses, severance pay, premiums and fees, except aguinaldos (art. 76(a)); the family allowance is also excluded (Ley N° 430/1973 art. 4(c), as the IPS states).  _([Source: IPS charter art. 76(a); IPS portal])_
 - **Micro & Small Enterprises IPS rules** — Micro & Small Enterprises (Ley N° 7444/2025, reglamented 2026): IPS = 25.5% on the established minimum taxable base; for owners/responsibles of Small Enterprises, base = 80% of the SMLV for 36 months from issuance of the MIPYMES card.  _([Source: MTESS Res. 220/2026; irunvillamayor.com.py])_
 - **Payment timing** — contributions for a month are due in the first days of the following month.
 
@@ -364,7 +367,7 @@ Transfer between the taxpayer's own accounts. Neither income nor expense. Exclud
 
 ### 5.9 Filing and Payment
 
-**Filing and Payment table**  _(Legislation: RG N° 90/2021 (Marangatú e-filing); PwC tax administration)_
+**Filing and Payment table**  _(Legislation: Ley N° 6380/2019 art. 52; RG N° 90/2021 (Marangatú e-filing); DNIT, IRP — https://www.dnit.gov.py/web/portal-institucional/irp ; DNIT, Calendario Perpetuo (RG N° 01/2007 and 38/2020) — https://www.dnit.gov.py/web/portal-institucional/w/calendario-perpetuo-continua-vigente-para-el-iva-irp-y-rentas)_
 
 | Item | Detail |
 | --- | --- |
@@ -551,8 +554,12 @@ ONBOARDING QUESTIONS -- PARAGUAY IRP
 | Penalties / infractions | Ley N° 125/1991 (Tax Code) |
 | Electronic filing | RG N° 90/2021 (Marangatú) |
 | Minimum wage | Resolución MTESS N° 677/2025 |
-| Authoritative individual-tax summary | PwC Paraguay (https://taxsummaries.pwc.com/paraguay/individual/taxes-on-personal-income) |
-| DNIT IRP page | https://www.dnit.gov.py/en/web/portal-institucional/irp |
+| IRP scope, threshold and rates | Ley N° 6380/2019 arts. 47-49, 52-53, 57-60, 62-64, 69 (BACN copy: https://www.bacn.gov.py/archivos/9332/Ley+6380.pdf) |
+| IVA rates | Ley N° 6380/2019 art. 90 |
+| IPS rates, floor, base and surcharges | Decreto-Ley N° 1.860/1950, Carta Orgánica del IPS (consolidated), arts. 17, 20, 71, 76 (https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf); IPS contribution table (https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=315); Ley N° 432/1973 |
+| Bank employees' fund | Ley N° 2856/2005 arts. 9 and 10 (https://paraguay.justia.com/nacionales/leyes/ley-2856-jan-3-2006/gdoc) |
+| DNIT IRP page | https://www.dnit.gov.py/web/portal-institucional/irp |
+| DNIT Calendario Perpetuo (RG N° 01/2007 and 38/2020) | https://www.dnit.gov.py/web/portal-institucional/w/calendario-perpetuo-continua-vigente-para-el-iva-irp-y-rentas |
 
 ### Penalties (Ley N° 125/1991; Anexo RG 13/2019)
 
@@ -574,7 +581,7 @@ Paraguay's tax infractions: mora (late payment), contravención (formal breach),
 ### Test Suite
 
 Input: RSP, gross personal-services income ₲70,000,000 (below ₲80,000,000), net ₲55,000,000.
-Expected: Gross is below ₲80,000,000 → IRP not payable for the year. Filing obligations may still apply; tax due = ₲0. [PwC]
+Expected: Gross is below ₲80,000,000 → IRP not payable for the year. Formal obligations may still apply; tax due = ₲0. [Ley 6380/19 art. 69]
 
 Input: RSP, net taxable income ₲120,000,000 (gross above ₲80,000,000).
 Expected: First ₲50,000,000 × 8% = ₲4,000,000; next ₲70,000,000 × 9% = ₲6,300,000. Total tax = 4,000,000 + 6,300,000 = ₲10,300,000.
