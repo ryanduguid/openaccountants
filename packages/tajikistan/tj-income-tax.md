@@ -4,7 +4,7 @@ description: "Source-cited draft: personal income tax for Tajikistan (tax year 2
 jurisdiction: TJ
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Personal income tax rates
 
 - **Overview of personal income tax** — Personal income tax for residents on employment income is broadly applied at a flat 13% under the Tax Code. Non-residents are taxed on Tajik-source income, generally at higher rates. Some sources note a lower band (8%) at the very bottom of the wage scale; confirm with a local adviser.
-- **Resident employment income rate** — 13 percent  _(Tax Code of the Republic of Tajikistan (https://taxsummaries.pwc.com/quick-charts/personal-income-tax-pit-rates))_
+- **Resident employment income rate** — 13 percent  _(Tax Code of the Republic of Tajikistan, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Lower band on low monthly wages** — 8 percent (on monthly employment income up to the statutory threshold (approx — confirm))  _(Tax Code of the Republic of Tajikistan)_
 - **Non-resident income rate (Tajik-source)** — 25 percent (approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
 - **Monthly personal allowance / tax-free amount** — 75 TJS (deducted before applying tax; approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
