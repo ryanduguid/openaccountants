@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T02:17:12+00:00",
+ "generated_at": "2026-10-11T03:36:37+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -19166,7 +19166,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "tj-tax-overview",
@@ -21889,7 +21889,7 @@
    "slug": "crypto-digital-assets-template",
    "path": "skills/templates/crypto-digital-assets-template.md",
    "name": "crypto-digital-assets-template",
-   "jurisdiction": null,
+   "jurisdiction": "GLOBAL",
    "category": "template",
    "tier": 2,
    "verified_by": null,
@@ -21902,7 +21902,7 @@
    "slug": "dividend-investment-income-template",
    "path": "skills/templates/dividend-investment-income-template.md",
    "name": "dividend-investment-income-template",
-   "jurisdiction": null,
+   "jurisdiction": "GLOBAL",
    "category": "template",
    "tier": 2,
    "verified_by": null,
@@ -21915,7 +21915,7 @@
    "slug": "employer-payroll-template",
    "path": "skills/templates/employer-payroll-template.md",
    "name": "employer-payroll-template",
-   "jurisdiction": null,
+   "jurisdiction": "GLOBAL",
    "category": "template",
    "tier": 2,
    "verified_by": null,
@@ -21928,7 +21928,7 @@
    "slug": "estimated-provisional-tax-template",
    "path": "skills/templates/estimated-provisional-tax-template.md",
    "name": "estimated-provisional-tax-template",
-   "jurisdiction": null,
+   "jurisdiction": "GLOBAL",
    "category": "template",
    "tier": 2,
    "verified_by": null,
@@ -21941,7 +21941,7 @@
    "slug": "rental-property-income-template",
    "path": "skills/templates/rental-property-income-template.md",
    "name": "rental-property-income-template",
-   "jurisdiction": null,
+   "jurisdiction": "GLOBAL",
    "category": "template",
    "tier": 2,
    "verified_by": null,

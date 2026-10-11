@@ -5,7 +5,7 @@ jurisdiction: FI
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax authority** — Finnish Tax Administration (Verohallinto / Vero), vero.fi; e-services via MyTax (OmaVero)  _([Act on the Finnish Tax Administration (Laki Verohallinnosta 503/2010)](https://www.vero.fi/en/))_
 - **Basis of taxation** — Residents taxed on worldwide income; non-residents taxed only on Finnish-source income  _(Income Tax Act (Tuloverolaki 1535/1992))_
 - **Personal income tax structure** — Progressive state tax on earned income (12.64%–44.25% in 2025), flat municipal tax (avg ~7.5%), separate flat capital-income tax (30%/34%) (approx — confirm)  _(Income Tax Act (Tuloverolaki 1535/1992))_
-- **Corporate income tax rate** — 20%  _(Income Tax Act (Tuloverolaki 1535/1992), § 124, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Corporate income tax rate** — 20%  _(Income Tax Act (Tuloverolaki 1535/1992), § 124 (the corporate income tax rate is 20), consolidated text on Finlex — https://www.finlex.fi/fi/laki/ajantasa/1992/19921535)_
 - **VAT (arvonlisävero, ALV) standard rate** — Yes — standard rate 25.5% in 2025 percent  _(Value Added Tax Act (Arvonlisäverolaki 1501/1993))_
 - **Individual return deadline** — Corrections to the pre-completed return are due on one of four April dates, assigned per taxpayer: **1, 14, 21 or 28 April 2026** for tax year 2025, confirmed against the Tax Administration. The taxpayer's own date is on the return and in MyTax  _(Act on Assessment Procedure (Laki verotusmenettelystä 1558/1995); vero.fi, "Pre-completed tax return")_
 - **Corporate return deadline** — Within 4 months from the end of the month in which the accounting period ends  _(Act on Assessment Procedure (Laki verotusmenettelystä 1558/1995), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
