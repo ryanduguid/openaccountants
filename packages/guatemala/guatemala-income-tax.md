@@ -1,10 +1,10 @@
 ---
 name: guatemala-income-tax
 description: Use this skill whenever asked about Guatemala income tax (ISR — Impuesto Sobre la Renta) for employees and self-employed individuals. Trigger on phrases like "how much ISR do I pay", "renta del trabajo", "rentas de actividades lucrativas", "régimen opcional simplificado", "régimen sobre utilidades", "pequeño contribuyente", "SAT-1431", "planilla del IVA", "IGSS contributions", "deducción personal", "self-employed tax Guatemala", "ISR empleados", or any question about filing or computing ISR for an employee, sole proprietor, or professional in Guatemala. Also trigger when preparing or reviewing a SAT-1431 annual return, the monthly simplified-regime declaration, computing the Q48,000 personal deduction or the Q12,000 IVA credit, or advising on IGSS payroll contributions. This skill covers the employment-income brackets (5%/7%), the two self-employment regimes (5%/7% on gross vs 25% on profit), the Pequeño Contribuyente 5% regime, allowable deductions, IGSS social security, minimum wage, forms, deadlines, and penalties. ALWAYS read this skill before touching any Guatemala income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: GT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -34,13 +34,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Employment annual return | SAT-1431, due 31 March (within 3 months of year-end) |
 | Validated by | Pending — requires sign-off by a Guatemalan Contador Público y Auditor (CPA) |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 > **Confidence note (Tier 2 / research-verified).** Core ISR rates, the Q48,000 / Q12,000 deductions, VAT 12%/5%, IGSS 4.83%/10.67%, the Pequeño Contribuyente Q465,381.25 limit, and the 2025/2026 minimum wages are confirmed from cited authoritative / Big-4 sources. Items marked **[RESEARCH GAP — reviewer to confirm]** were not confirmed from a primary/Big-4 source and MUST be verified against the SAT ISR Law or IGSS/Código Tributario text before any filing.
 
 ### 1.1 ISR — Employment Income (Renta del Trabajo en Relación de Dependencia)
 
-**Employment income brackets**  _(Article 73, Decreto 10-2012 (PwC Guatemala — Taxes on personal income, reviewed 9 Jan 2026; Vesco Consultores — ISR empleados))_
+**Employment income brackets**  _(Article 73, Decreto 10-2012 (secondary summary, Guatemala — Taxes on personal income, reviewed 9 Jan 2026; Vesco Consultores — ISR empleados))_
 
 | Annual taxable income (GTQ) | Marginal rate | Cumulative tax at top of band |
 | --- | --- | --- |
@@ -53,18 +53,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Self-employed individuals and professionals choose ONE of two regimes (Decreto 10-2012):
 
-**(a) Régimen Opcional Simplificado Sobre Ingresos** — tax on **gross income**, no expense deductions. Paid **monthly**. (Source: PwC; Grupo Macsol; inbers.com)
+**(a) Régimen Opcional Simplificado Sobre Ingresos** — tax on **gross income**, no expense deductions. Paid **monthly**. (Source: the secondary summary; Grupo Macsol; inbers.com)
 
-**Optional Simplified regime brackets**  _(PwC; Grupo Macsol; inbers.com)_
+**Optional Simplified regime brackets**  _(secondary summary; Grupo Macsol; inbers.com)_
 
 | Monthly gross income (GTQ) | Marginal rate | Cumulative tax at top of band |
 | --- | --- | --- |
 | 0 — 30,000 | 5% | Q1,500 |
 | Over 30,000 | Q1,500 fixed + 7% on excess | — |
 
-> **[RESEARCH GAP — reviewer to confirm]** The **Q30,000 monthly threshold** is reported consistently by Guatemalan advisory sources (Grupo Macsol, inbers) but was NOT confirmed directly from PwC/SAT. The 5%/7% rates and Q1,500 fixed amount mirror the statutory Article-44 structure of Decreto 10-2012. Verify the threshold against the SAT ISR Law text before publishing.
+> **[RESEARCH GAP — reviewer to confirm]** The **Q30,000 monthly threshold** is reported consistently by Guatemalan advisory sources (Grupo Macsol, inbers) but was NOT confirmed directly from the secondary summary/SAT. The 5%/7% rates and Q1,500 fixed amount mirror the statutory Article-44 structure of Decreto 10-2012. Verify the threshold against the SAT ISR Law text before publishing.
 
-**(b) Régimen Sobre Utilidades de Actividades Lucrativas** — **25%** on net profit (income minus deductible costs/expenses). Quarterly payments; annual return due **31 March**. (Source: PwC; Concilia)
+**(b) Régimen Sobre Utilidades de Actividades Lucrativas** — **25%** on net profit (income minus deductible costs/expenses). Quarterly payments; annual return due **31 March**. (Source: the secondary summary; Concilia)
 
 **Profit regime table**  _(Decreto 10-2012; Concilia)_
 
@@ -89,7 +89,7 @@ Self-employed individuals and professionals choose ONE of two regimes (Decreto 1
 
 | Item | Value |
 | --- | --- |
-| Standard IVA rate | 12% ([PwC](https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income)) |
+| Standard IVA rate | 12% (a secondary summary (link removed)) |
 | Pequeño Contribuyente rate | 5% (see 1.3) |
 
 ### Conservative Defaults
@@ -509,8 +509,8 @@ ONBOARDING QUESTIONS — GUATEMALA ISR
 
 | Topic | Reference | Source |
 | --- | --- | --- |
-| ISR law | Ley de Actualización Tributaria, Decreto 10-2012 | [PwC](https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income) |
-| Employment brackets (5%/7%) | Decreto 10-2012, Article 73 | [PwC](https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income); [Vesco](https://vescco.tax/blog/todo-sobre-el-isr-empleados-guatemala/) |
+| ISR law | Ley de Actualización Tributaria, Decreto 10-2012 | a secondary summary (link removed) |
+| Employment brackets (5%/7%) | Decreto 10-2012, Article 73 | a secondary summary (link removed); [Vesco](https://vescco.tax/blog/todo-sobre-el-isr-empleados-guatemala/) |
 | Optional Simplified regime | Decreto 10-2012, Art. 44 structure | [Grupo Macsol](https://grupomacsol.com/regimen-opcional-simplificado-sobre-ingresos-de-actividades-lucrativas/) |
 | Profit regime (25%) | Decreto 10-2012 | [Concilia](https://concilia.com.gt/regimen-ingresos-vs-utilidades/) |
 | Pequeño Contribuyente limit | Decreto 31-2024 (eff. 9 Apr 2025) | [Prensa Libre](https://www.prensalibre.com/economia/regimen-de-pequeno-contribuyente-en-guatemala-que-es-que-significa-ventajas-y-nuevo-limite-de-facturacion-en-2025/) |
@@ -519,7 +519,7 @@ ONBOARDING QUESTIONS — GUATEMALA ISR
 
 ### IGSS Social Security Contributions
 
-**IGSS contributions table**  _(PwC — Other taxes; Banco Industrial — IGSS 2026)_
+**IGSS contributions table**  _(secondary summary, Other taxes; Banco Industrial — IGSS 2026)_
 
 | Party | Rate |
 | --- | --- |
@@ -527,7 +527,7 @@ ONBOARDING QUESTIONS — GUATEMALA ISR
 | Employer (cuota patronal) | 10.67% |
 | **TOTAL IGSS** | **15.50%** |
 
-Total = **15.5%** of monthly salary (excluding bonificación incentivo). Rates in effect since September 2022 (IGSS acuerdo reforms); unchanged for 2025/2026. (Source: PwC — Other taxes; Banco Industrial — IGSS 2026)
+Total = **15.5%** of monthly salary (excluding bonificación incentivo). Rates in effect since September 2022 (IGSS acuerdo reforms); unchanged for 2025/2026. (Source: the secondary summary — Other taxes; Banco Industrial — IGSS 2026)
 
 **Arithmetic check:** 4.83% + 10.67% = 15.50%. ✓
 
@@ -580,9 +580,9 @@ Total = **15.5%** of monthly salary (excluding bonificación incentivo). Rates i
 | --- | --- | --- | --- |
 | Employment income annual return | SAT-1431 | 31 March (within 3 months of year-end) | [Vesco](https://vescco.tax/blog/todo-sobre-el-isr-empleados-guatemala/) |
 | Planilla del IVA (to claim Q12,000 IVA credit) | Planilla IVA | 10 January | [Vesco](https://vescco.tax/blog/todo-sobre-el-isr-empleados-guatemala/) |
-| Optional Simplified regime declaration | Monthly (electronic) | First 10 business days of following month | [PwC](https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income) |
-| Pequeño Contribuyente | Monthly | First 10 business days of following month | [PwC](https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income) |
-| Profit Regime | Annual + quarterly | 31 March (annual) | [PwC](https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income) |
+| Optional Simplified regime declaration | Monthly (electronic) | First 10 business days of following month | a secondary summary (link removed) |
+| Pequeño Contribuyente | Monthly | First 10 business days of following month | a secondary summary (link removed) |
+| Profit Regime | Annual + quarterly | 31 March (annual) | a secondary summary (link removed) |
 
 Filing platform: SAT **Agencia Virtual** / **Declaraguate**.
 

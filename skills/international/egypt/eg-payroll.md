@@ -1,10 +1,10 @@
 ---
 name: eg-payroll
 description: Use this skill whenever asked about running payroll for an employer in Egypt, including a sole proprietor who hires staff. Trigger on phrases like "Egypt payroll", "salary tax Egypt", "ضريبة كسب العمل", "payroll tax Egypt", "hiring employees Egypt", "withholding tax on salaries Egypt", "Form 4 Egypt", "نموذج 4", "gross to net salary Egypt", "employer cost Egypt", "end of service Egypt", "employee vs freelancer Egypt", or any request to compute, classify, or advise on Egyptian salary tax (employment income tax) withholding, social-insurance withholding, payroll remittance, or payroll reporting. ALWAYS read this skill before touching any Egypt payroll work.
-version: 1.0
+version: 1.1
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # EG Payroll
 
-## Egypt Payroll (ضريبة كسب العمل) Skill v1.0
+## Egypt Payroll (ضريبة كسب العمل) Skill v1.1
 
 Payroll in Egypt combines two distinct employer obligations on each salary:
 
@@ -49,7 +49,7 @@ This skill is written for an **employer** running monthly payroll — including 
 | Annual reconciliation | annual salary-tax settlement/reconciliation filed by **end of January** of the following year — *verify exact form/deadline* |
 | Late / non-compliance penalty | up to ~**80%** of unpaid tax plus delay interest — *verify current rate* |
 | Quality tier | **Research-verified — pending sign-off by an Egyptian accountant** |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### 2025/2026 salary-tax brackets (annual taxable income, after EGP 20,000 exemption)
 
@@ -67,7 +67,7 @@ This skill is written for an **employer** running monthly payroll — including 
 
 These are the brackets in force for 2025 and carried into 2026 (apply each rate only to the slice of income inside the band):
 
-> *Verify 2026 brackets against ETA / PwC before filing — Egypt has revised these several times since 2023. If a 2026 update has changed the bands or rates, use the published figures and flag the change.*
+> *Verify 2026 brackets against ETA / the secondary summary before filing — Egypt has revised these several times since 2023. If a 2026 update has changed the bands or rates, use the published figures and flag the change.*
 
 ### Bracket-elimination rule (higher earners lose the lower brackets)
 
@@ -245,7 +245,7 @@ Owner is a sole proprietor (own tax via **eg-income-tax**). Hires an assistant a
 
 - Egyptian Tax Authority (ETA) — eta.gov.eg (Unified Tax Law No. 91 of 2005 and amendments; salary-tax brackets, exemption, Form 4, reconciliation).
 - NOSI — Social Insurance and Pensions Law No. 148 of 2019 (insurance wage bands, 11% / 18.75% rates).
-- PwC Worldwide Tax Summaries — Egypt (Individual: taxes on personal income; Other taxes; Tax administration).
+- Secondary practitioner summary (link removed) — Egypt (Individual: taxes on personal income; Other taxes; Tax administration).
 - Labour Law No. 14 of 2025 (effective 1 Sept 2025) — employee status, end-of-service, termination.
 
 ### Test suite (expected behaviour)
@@ -269,7 +269,7 @@ Owner is a sole proprietor (own tax via **eg-income-tax**). Hires an assistant a
 
 ## Disclaimer
 
-This skill is **research-verified** against public sources (ETA, NOSI, PwC) for Egypt **tax year 2026** but is **pending sign-off by a qualified Egyptian accountant**. Salary-tax brackets, the personal exemption, social-insurance wage bands, rates, forms, and deadlines change frequently and must be **verified against current ETA and NOSI guidance** before any payroll is run, any tax is remitted, or any return (including Form 4 / نموذج ٤) is filed. Nothing here is legal, tax, or labour advice. This is YMYL content: a credentialed Egyptian accountant must review and approve every output before it reaches a taxpayer or the authorities. Provided as open-source guidance via **openaccountants.com**.
+This skill is **research-verified** against public sources (ETA, NOSI, the secondary summary) for Egypt **tax year 2026** but is **pending sign-off by a qualified Egyptian accountant**. Salary-tax brackets, the personal exemption, social-insurance wage bands, rates, forms, and deadlines change frequently and must be **verified against current ETA and NOSI guidance** before any payroll is run, any tax is remitted, or any return (including Form 4 / نموذج ٤) is filed. Nothing here is legal, tax, or labour advice. This is YMYL content: a credentialed Egyptian accountant must review and approve every output before it reaches a taxpayer or the authorities. Provided as open-source guidance via **openaccountants.com**.
 
 <!-- openaccountants-cta-block -->
 

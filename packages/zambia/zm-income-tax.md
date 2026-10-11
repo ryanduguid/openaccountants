@@ -4,8 +4,8 @@ description: Use this skill whenever asked about Zambia personal income tax (PAY
 jurisdiction: ZM
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,16 +27,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pension authority | National Pension Scheme Authority (NAPSA) |
 | Health authority | National Health Insurance Management Authority (NHIMA) |
 | Filing portal | ZRA TaxOnline (e-portal) |
-| Annual return deadline | 21 June following the charge year (PwC, ZM individual tax administration) |
+| Annual return deadline | 21 June following the charge year (secondary summary, ZM individual tax administration) |
 | Validated by | Pending -- requires sign-off by a Zambian-qualified accountant (ZICA member) |
 | Validation date | Pending |
 | Skill version | 0.1 |
 
-**Important year note:** The PAYE bands below are identical for the 2025 and 2026 charge years (PwC's 2026 charge-year page shows the same figures, introduced effective 1 Jan 2025). NAPSA, NHIMA, and minimum-wage figures are the 2025 values; where 2026 figures were not officially confirmed they carry a [RESEARCH GAP] marker.
+**Important year note:** The PAYE bands below are identical for the 2025 and 2026 charge years (secondary summary, 's 2026 charge-year page shows the same figures, introduced effective 1 Jan 2025). NAPSA, NHIMA, and minimum-wage figures are the 2025 values; where 2026 figures were not officially confirmed they carry a [RESEARCH GAP] marker.
 
 ### PAYE Bands (2025, unchanged into 2026)
 
-**PAYE Bands (2025, unchanged into 2026)**  _(PwC, ZM individual -- taxes on personal income)_
+**PAYE Bands (2025, unchanged into 2026)**  _(secondary summary, ZM individual -- taxes on personal income)_
 
 | Annual taxable income (ZMW) | Monthly equivalent (ZMW) | Rate | Cumulative tax at band top (annual) |
 | --- | --- | --- | --- |
@@ -45,7 +45,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 85,201 -- 110,400 | 7,101 -- 9,200 | 30% | K12,360 |
 | Over 110,400 | Over 9,200 | 37% | -- |
 
-- **PAYE band progressivity** — Progressive. Only income within each band is taxed at that band's rate. Residents and non-residents are charged the same income-tax rates in principle, though most non-resident income is instead subject to withholding tax.  _(PwC, ZM individual -- taxes on personal income)_
+- **PAYE band progressivity** — Progressive. Only income within each band is taxed at that band's rate. Residents and non-residents are charged the same income-tax rates in principle, though most non-resident income is instead subject to withholding tax.  _(secondary summary, ZM individual -- taxes on personal income)_
 - **Tax-free threshold** — ZMW 5,100/month (K61,200/year): the first K5,100 of monthly emoluments is taxed at 0%  _(Zambia Revenue Authority, PAYE Calculator (current bands) — https://www.zra.org.zm/paye-calculator/)_
 
 **Cumulative tax arithmetic (annual):**
@@ -58,11 +58,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### NAPSA -- Pension Contributions (2025)
 
-**NAPSA -- Pension Contributions (2025)**  _(NAPSA official; PwC ZM individual -- other issues)_
+**NAPSA -- Pension Contributions (2025)**  _(NAPSA official; secondary summary, ZM individual -- other issues)_
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Total contribution rate | 10% of gross monthly earnings | NAPSA official; PwC ZM individual -- other issues |
+| Total contribution rate | 10% of gross monthly earnings | NAPSA official; secondary summary, ZM individual -- other issues |
 | Employee share | 5% | NAPSA official |
 | Employer share | 5% | NAPSA official |
 | Monthly insurable-earnings ceiling | ZMW 34,164.00 | NAPSA 2025 announcement |
@@ -119,7 +119,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Refusal Catalogue
 
 - **R-ZM-1** — Employment status unknown. "PAYE (employee) and turnover/income tax (self-employed) are entirely different regimes. This skill cannot compute tax without knowing the person's status. Please confirm before proceeding."  _(R-ZM-1)_
-- **R-ZM-2** — Turnover near or above K5,000,000. "Turnover tax applies only to annual turnover up to ZMW 5,000,000 (PwC, ZM other taxes). Above this the business files under the standard income-tax regime, and VAT registration may be required. Escalate to a ZICA-qualified accountant."  _(R-ZM-2; PwC, ZM other taxes)_
+- **R-ZM-2** — Turnover near or above K5,000,000. "Turnover tax applies only to annual turnover up to ZMW 5,000,000 (secondary summary, ZM other taxes). Above this the business files under the standard income-tax regime, and VAT registration may be required. Escalate to a ZICA-qualified accountant."  _(R-ZM-2; secondary summary, ZM other taxes)_
 - **R-ZM-3** — Companies, partnerships, group structures. "This skill covers individuals -- employees and sole traders only. Companies and partnerships file separate returns under different rules. Escalate to a ZICA-qualified accountant."  _(R-ZM-3)_
 - **R-ZM-4** — Mining, farming, or special-sector income. "Mining and certain sector incomes are excluded from turnover tax and have bespoke regimes. Out of scope. Escalate to a ZICA-qualified accountant."  _(R-ZM-4)_
 - **R-ZM-5** — Non-resident / withholding-tax matters. "Most non-resident income is taxed via withholding tax, not the PAYE/income-tax bands. Out of scope. Escalate to a ZICA-qualified accountant."  _(R-ZM-5)_
@@ -296,7 +296,7 @@ Net pay = 4,500 − 0 − 225 − 22.50 = **K4,252.50**.
 `12/06/2025 ; MTN MOMO ; RECEIVED FROM CUSTOMER ; SALE ; +3,000.00 ; ZMW`
 
 **Reasoning:**
-Sole trader with annual turnover under K5,000,000, taxed under turnover tax. Turnover tax is **5% on turnover above K12,000/year; 0% on the first K12,000** (PwC, ZM other taxes). No expense deductions. If monthly turnover is K3,000 (K36,000/year), tax = (36,000 − 12,000) × 5% = K24,000 × 5% = **K1,200/year** (≈ K100/month once the annual K12,000 is exhausted). Returns due by the 14th of the following month.
+Sole trader with annual turnover under K5,000,000, taxed under turnover tax. Turnover tax is **5% on turnover above K12,000/year; 0% on the first K12,000** (secondary summary, ZM other taxes). No expense deductions. If monthly turnover is K3,000 (K36,000/year), tax = (36,000 − 12,000) × 5% = K24,000 × 5% = **K1,200/year** (≈ K100/month once the annual K12,000 is exhausted). Returns due by the 14th of the following month.
 
 **Classification:** Turnover base K3,000 (this receipt); no deductions; 5% applies above the K12,000 annual exemption.
 
@@ -340,18 +340,18 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.5 Self-Employed Regimes
 
-**Self-Employed Regimes**  _(PwC, ZM other taxes; PKF Zambia 2025 Tax Alert; PwC, ZM individual)_
+**Self-Employed Regimes**  _(secondary summary, ZM other taxes; PKF Zambia 2025 Tax Alert; secondary summary, ZM individual)_
 
 | Regime | Scope | Rate | Source |
 | --- | --- | --- | --- |
-| Turnover tax | Annual turnover ≤ K5,000,000 (excludes interest, dividends, royalties, consultancy, standard mining) | 0% on first K12,000; 5% above K12,000 | PwC, ZM other taxes; PKF Zambia 2025 Tax Alert |
-| Rental income tax | Rental turnover | 0% ≤ K30,000; 4% K30,000–800,000; 16% > K800,000 | PwC, ZM other taxes |
-| Presumptive (passenger transport) | Per vehicle, annual | See table below | PwC, ZM other taxes |
-| Standard income tax | Turnover > K5,000,000 or excluded income | PAYE bands applied to taxable profit | PwC, ZM individual |
+| Turnover tax | Annual turnover ≤ K5,000,000 (excludes interest, dividends, royalties, consultancy, standard mining) | 0% on first K12,000; 5% above K12,000 | secondary summary, ZM other taxes; PKF Zambia 2025 Tax Alert |
+| Rental income tax | Rental turnover | 0% ≤ K30,000; 4% K30,000–800,000; 16% > K800,000 | secondary summary, ZM other taxes |
+| Presumptive (passenger transport) | Per vehicle, annual | See table below | secondary summary, ZM other taxes |
+| Standard income tax | Turnover > K5,000,000 or excluded income | PAYE bands applied to taxable profit | secondary summary, ZM individual |
 
 - **Turnover tax filing** — Turnover tax applies to businesses with annual turnover of K5,000,000 or less: 0% on monthly turnover of K2,500 or less (K30,000 a year) and 5% above that, on gross turnover with no expense deductions. Returns and payment are due by the 14th of the following month  _(Zambia Revenue Authority, Tax Information, Turnover Tax — https://www.zra.org.zm/tax-information/)_
 
-**Presumptive tax — passenger transport (annual, per vehicle)**  _(PwC, ZM other taxes)_
+**Presumptive tax — passenger transport (annual, per vehicle)**  _(secondary summary, ZM other taxes)_
 
 | Vehicle seating | Annual presumptive tax (ZMW) |
 | --- | --- |
@@ -363,19 +363,19 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.6 Provisional (Advance) Income Tax — non-employment income
 
-- **Provisional tax filing rule** — Businesses and individuals with non-employment income file quarterly provisional returns for the quarters ending 31 March, 30 June, 30 September and 31 December, each instalment payable by the 10th of the following month; the annual return and any balance are due by 21 June (Income Tax Act s 46). New registrants after 31 March file within 90 days of registration  _(Zambia Revenue Authority, Payment Due Dates, Income Tax — https://www.zra.org.zm/payment-due-dates/ ; PwC Worldwide Tax Summaries, Tax administration — https://taxsummaries.pwc.com/zambia/individual/tax-administration)_
+- **Provisional tax filing rule** — Businesses and individuals with non-employment income file quarterly provisional returns for the quarters ending 31 March, 30 June, 30 September and 31 December, each instalment payable by the 10th of the following month; the annual return and any balance are due by 21 June (Income Tax Act s 46). New registrants after 31 March file within 90 days of registration  _(Zambia Revenue Authority, Payment Due Dates, Income Tax — https://www.zra.org.zm/payment-due-dates/)_
 
 ### 5.7 VAT Interaction (self-employed crossing the threshold)
 
-**VAT Interaction**  _(PwC, ZM other taxes; ZRA tax information)_
+**VAT Interaction**  _(secondary summary, ZM other taxes; ZRA tax information)_
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Standard VAT rate | 16% | PwC, ZM other taxes; ZRA tax information |
-| Registration threshold | Annual turnover > K800,000 (or > K200,000 in any consecutive 3-month period) | ZRA tax information; PwC |
+| Standard VAT rate | 16% | secondary summary, ZM other taxes; ZRA tax information |
+| Registration threshold | Annual turnover > K800,000 (or > K200,000 in any consecutive 3-month period) | ZRA tax information; secondary summary |
 | VAT returns | Monthly, due by the 18th (e-filing) | ZRA tax information |
 
-- **K800,000 threshold note** — Note: the K800,000 threshold no longer governs turnover-tax eligibility (now K5m) but still governs VAT registration.  _(Zambia Revenue Authority, Tax Information, Turnover Tax — https://www.zra.org.zm/tax-information/ ; PwC Worldwide Tax Summaries, Other taxes — https://taxsummaries.pwc.com/zambia/corporate/other-taxes)_
+- **K800,000 threshold note** — Note: the K800,000 threshold no longer governs turnover-tax eligibility (now K5m) but still governs VAT registration.  _(Zambia Revenue Authority, Tax Information, Turnover Tax — https://www.zra.org.zm/tax-information/)_
 
 ### 5.8 Non-Deductible Expenses (income-tax taxpayers)
 
@@ -521,10 +521,10 @@ ONBOARDING QUESTIONS -- ZAMBIA INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| PAYE rates / tax-free threshold | PwC Worldwide Tax Summaries — ZM individual, taxes on personal income (taxsummaries.pwc.com/zambia/individual/taxes-on-personal-income); ZRA PAYE leaflet (zra.org.zm/wp-content/uploads/2025/08/Pay-As-You-Earn.pdf) |
-| Filing deadline / provisional tax | PwC — ZM individual, tax administration (taxsummaries.pwc.com/zambia/individual/tax-administration) |
-| Turnover / rental / presumptive tax / VAT | PwC — ZM other taxes (taxsummaries.pwc.com/zambia/corporate/other-taxes); PKF Zambia 2025 Tax Alert |
-| NAPSA ceiling / rate / NAE | NAPSA 2025 announcement (napsa.co.zm); PwC — ZM individual, other issues |
+| PAYE rates / tax-free threshold | a secondary practitioner summary — ZM individual, taxes on personal income; ZRA PAYE leaflet (zra.org.zm/wp-content/uploads/2025/08/Pay-As-You-Earn.pdf) |
+| Filing deadline / provisional tax | secondary summary, ZM individual, tax administration |
+| Turnover / rental / presumptive tax / VAT | secondary summary, ZM other taxes; PKF Zambia 2025 Tax Alert |
+| NAPSA ceiling / rate / NAE | NAPSA 2025 announcement (napsa.co.zm); secondary summary, ZM individual, other issues |
 | NHIMA rate | NHIMA (nhima.co.zm) — secondary; [RESEARCH GAP] |
 | Penalties / due dates | ZRA penalties (zra.org.zm/penalties); ZRA payment due dates (zra.org.zm/payment-due-dates) |
 | Minimum wage | Ministry of Labour & Social Security (mlss.gov.zm); SI No. 3 of 2025 |
@@ -535,11 +535,11 @@ ONBOARDING QUESTIONS -- ZAMBIA INCOME TAX
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Annual individual return deadline | 21 June following the charge year | PwC, ZM individual — tax administration |
-| Statute of limitations | 6 years from end of charge year (except fraud/wilful default) | PwC, ZM individual — tax administration |
+| Annual individual return deadline | 21 June following the charge year | secondary summary, ZM individual — tax administration |
+| Statute of limitations | 6 years from end of charge year (except fraud/wilful default) | secondary summary, ZM individual — tax administration |
 | Monthly PAYE remittance | by the 10th of the following month | ZRA payment due dates |
 | Monthly PAYE return form | ITF P16 (annual reconciliation: P18) | ZRA PAYE leaflet — [RESEARCH GAP: P16 vs P11 inconsistent across sources; confirm on ZRA portal] |
-| Turnover-tax return / payment | by the 14th of the following month | PwC, ZM other taxes |
+| Turnover-tax return / payment | by the 14th of the following month | secondary summary, ZM other taxes |
 | VAT returns | monthly, by the 18th | ZRA tax information |
 
 ### Penalties & Interest
@@ -585,7 +585,7 @@ Input: Sole trader, annual turnover K200,000 (no excluded income), under K5m cei
 Expected: Turnover tax = (200,000 − 12,000) × 5% = K188,000 × 5% = K9,400/year.
 
 Input: Gross annual rent K500,000.
-Expected: Rental income tax at 4% (band K30,000–800,000) = K500,000 × 4% = K20,000. [Confirm whether the first K30,000 is 0% before applying — PwC bands as stated; reviewer to confirm marginal vs flat application.]
+Expected: Rental income tax at 4% (band K30,000–800,000) = K500,000 × 4% = K20,000. [Confirm whether the first K30,000 is 0% before applying — the secondary summary bands as stated; reviewer to confirm marginal vs flat application.]
 
 Input: K850 client dinner claimed as expense (income-tax trader).
 Expected: Remove — not deductible.

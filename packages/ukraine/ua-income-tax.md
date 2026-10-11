@@ -1,10 +1,10 @@
 ---
 name: ua-income-tax
 description: "Ukrainian general-system (загальна система) personal income tax for a self-employed sole proprietor (ФОП): net business profit taxed at 18% PIT plus the 5% military levy with documented business expenses deductible under Art. 177."
-version: 1.1
+version: 1.2
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Income Tax
 
-## Ukraine General-System Personal Income Tax (ПДФО for FOP / Загальна система) — Self-Employed Skill v1.1
+## Ukraine General-System Personal Income Tax (ПДФО for FOP / Загальна система) — Self-Employed Skill v1.2
 
 This skill covers a Ukrainian sole proprietor (ФОП / фізична особа-підприємець) taxed on the general system — net business profit taxed at 18% personal income tax (ПДФО) plus a 5% military levy (військовий збір), with documented business expenses deductible. This is fundamentally different from the simplified єдиний податок (turnover-based, no expense deduction) — for that, use ua-single-tax. Unified social contribution (ЄСВ) is handled by ua-social-contributions and only referenced here.
 
@@ -40,7 +40,7 @@ This skill covers a Ukrainian sole proprietor (ФОП / фізична особ�
 | PIT advance payments | By **20 April, 20 July, 20 October** (no Q4 advance — settled in the declaration) |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a Ukrainian accountant/auditor |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 **Wartime note:** Under martial law the military levy rose from 1.5% to **5%** effective **1 Dec 2024** and remains 5% throughout **2026**. It reverts to 1.5% in the year **after** martial law ends — verify the current status with the ДПС before relying on the rate. Figures below are as of **1 January 2026**.
 
@@ -275,7 +275,7 @@ Monobank ФОП: statement downloadable as CSV/PDF in the app; "Покупки/�
 
 ### Legislation
 
-- **Legislation references** — Tax Code of Ukraine (Податковий кодекс України) — Art. 177 (taxation of FOP income on the general system: object, expenses, advances, declaration), Art. 178 (independent professional activity — out of scope), Section IV / Art. 167.1 (18% PIT rate), Art. 181 (VAT registration threshold), Art. 49.18.5 & 57.1 (filing/payment deadlines), Transitional Provisions §16¹.10 (military levy, 5% under martial law). Law No. 2464-VI "Про збір та облік єдиного внеску…" — ЄСВ (handled in ua-social-contributions). Law No. 4015-IX / No. 4113-IX (2024) — military-levy increase to 5% from 1 Dec 2024 and FOP application rules. State Tax Service: tax.gov.ua / dps.gov.ua; portal cabinet.tax.gov.ua. PwC Worldwide Tax Summaries — Ukraine (Individual).  _(Art. 177, 178, 167.1, 181, 49.18.5, 57.1, Transitional Provisions §16¹.10; Law No. 2464-VI; Law No. 4015-IX / 4113-IX)_
+- **Legislation references** — Tax Code of Ukraine (Податковий кодекс України) — Art. 177 (taxation of FOP income on the general system: object, expenses, advances, declaration), Art. 178 (independent professional activity — out of scope), Section IV / Art. 167.1 (18% PIT rate), Art. 181 (VAT registration threshold), Art. 49.18.5 & 57.1 (filing/payment deadlines), Transitional Provisions §16¹.10 (military levy, 5% under martial law). Law No. 2464-VI "Про збір та облік єдиного внеску…" — ЄСВ (handled in ua-social-contributions). Law No. 4015-IX / No. 4113-IX (2024) — military-levy increase to 5% from 1 Dec 2024 and FOP application rules. State Tax Service: tax.gov.ua / dps.gov.ua; portal cabinet.tax.gov.ua. a secondary practitioner summary — Ukraine (Individual).  _(Art. 177, 178, 167.1, 181, 49.18.5, 57.1, Transitional Provisions §16¹.10; Law No. 2464-VI; Law No. 4015-IX / 4113-IX)_
 
 ### Short test suite
 

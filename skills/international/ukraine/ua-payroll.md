@@ -1,10 +1,10 @@
 ---
 name: ua-payroll
 description: Use this skill whenever asked about Ukrainian payroll for a sole proprietor (ФОП) or small employer who hires staff. Trigger on phrases like "Ukraine payroll", "hiring an employee in Ukraine", "payroll taxes Ukraine", "how much does it cost to employ someone in Ukraine", "ЄСВ on salary", "ПДФО on wages", "military levy on salary", "зарплата податки", "найняти працівника ФОП", "gross to net Ukraine", "employee vs ФОП contractor", or any question about wages, payroll withholding, the employer's social contribution, or the unified PIT/ЄСВ/military-levy report. Covers employer registration duties, the 18% PIT + 5% military levy withheld from the employee, the 22% ЄСВ paid by the employer on top of gross, the minimum-wage ЄСВ floor, the reduced 8.41% ЄСВ for employees with disabilities, the reporting and payment calendar, and misclassification risk when engaging another ФОП instead of hiring. ALWAYS read this skill before any Ukrainian payroll work.
-version: 1.0
+version: 1.1
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Payroll
 
-## Ukraine Payroll for Employers (Зарплата та податки на найманих працівників) — Skill v1.0
+## Ukraine Payroll for Employers (Зарплата та податки на найманих працівників) — Skill v1.1
 
 This skill covers what happens when a Ukrainian sole proprietor (**ФОП / fizychna osoba-pidpryyemets**) or small employer **hires staff under an employment contract (трудовий договір)** and must run payroll. It is distinct from the owner's own taxes: a single-tax ФОП's own single tax and personal ЄСВ are handled by `ua-single-tax` and `ua-social-contributions`. The moment that ФОП hires even one employee, it becomes a **tax agent (податковий агент)** and an **ЄСВ payer for that employee** with a separate set of obligations described below.
 
@@ -44,7 +44,7 @@ This skill covers what happens when a Ukrainian sole proprietor (**ФОП / fizy
 | Unified report | **Податковий розрахунок** (combined PIT + ВЗ + ЄСВ + Form 4ДФ annex) — **quarterly** with monthly breakdown from 2026 |
 | Contributor | Open Accountants Community |
 | Quality tier | **Research-verified — pending sign-off by a Ukrainian accountant** |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Headline rates (1 Jan 2026)
 
@@ -253,7 +253,7 @@ PIT and ВЗ apply to the **full** ₴200,000 (no cap); **ЄСВ stops at the 20
 
 ### References (verify against primary sources before filing)
 
-- **References** — - **Tax Code of Ukraine (ПКУ)** — §167 (PIT 18%), §16¹ subsec. 10 (military levy 5%), §168 (withholding/remittance), §176 (tax-agent reporting). - **Law No. 2464-VI** "On collection and accounting of the Unified Social Contribution" — 22% rate, minimum/maximum base, 8.41% for employees with disability. - **Labour Code of Ukraine (КЗпП)** — ст. 265 (penalties for undeclared/disguised employment), twice-monthly pay rule, hiring notification. - **State Budget Law for 2026** (adopted 03 Dec 2025) — minimum wage ₴8,647 from 1 Jan 2026. - **Law No. 4536-IX** (16 Jul 2025) — quarterly Податковий розрахунок from 1 Jan 2026. - **ДПС / State Tax Service** — tax.gov.ua / dps.gov.ua; Електронний кабінет (cabinet.tax.gov.ua). - **PwC Worldwide Tax Summaries — Ukraine** (corroboration of rates).
+- **References** — - **Tax Code of Ukraine (ПКУ)** — §167 (PIT 18%), §16¹ subsec. 10 (military levy 5%), §168 (withholding/remittance), §176 (tax-agent reporting). - **Law No. 2464-VI** "On collection and accounting of the Unified Social Contribution" — 22% rate, minimum/maximum base, 8.41% for employees with disability. - **Labour Code of Ukraine (КЗпП)** — ст. 265 (penalties for undeclared/disguised employment), twice-monthly pay rule, hiring notification. - **State Budget Law for 2026** (adopted 03 Dec 2025) — minimum wage ₴8,647 from 1 Jan 2026. - **Law No. 4536-IX** (16 Jul 2025) — quarterly Податковий розрахунок from 1 Jan 2026. - **ДПС / State Tax Service** — tax.gov.ua / dps.gov.ua; Електронний кабінет (cabinet.tax.gov.ua). - **a secondary practitioner summary — Ukraine** (corroboration of rates).
 
 ### Self-check / test suite
 
@@ -272,7 +272,7 @@ PIT and ВЗ apply to the **full** ₴200,000 (no cap); **ЄСВ stops at the 20
 
 ## Disclaimer
 
-This skill is **research-verified** against public sources (ДПС / State Tax Service, PwC Worldwide Tax Summaries, reputable Ukrainian payroll/accounting publishers) but is **pending sign-off by a qualified Ukrainian accountant**. Ukrainian payroll rules, minimum wage, caps, the military-levy rate and reporting forms change frequently — especially under martial law — so every figure must be re-verified for the exact month of computation. This is general information, **not** legal, tax or accounting advice, and does not create a professional relationship. Always have a credentialed Ukrainian accountant review payroll before salaries are paid or reports are filed.
+This skill is **research-verified** against public sources (ДПС / State Tax Service, a secondary practitioner summary, reputable Ukrainian payroll/accounting publishers) but is **pending sign-off by a qualified Ukrainian accountant**. Ukrainian payroll rules, minimum wage, caps, the military-levy rate and reporting forms change frequently — especially under martial law — so every figure must be re-verified for the exact month of computation. This is general information, **not** legal, tax or accounting advice, and does not create a professional relationship. Always have a credentialed Ukrainian accountant review payroll before salaries are paid or reports are filed.
 Part of **openaccountants.com** — open-source tax skills for the self-employed.
 
 <!-- openaccountants-cta-block -->

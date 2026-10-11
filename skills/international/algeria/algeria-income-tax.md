@@ -1,10 +1,10 @@
 ---
 name: algeria-income-tax
 description: Use this skill whenever asked about Algeria personal income tax (IRG -- Impôt sur le Revenu Global) for employees and self-employed individuals. Trigger on phrases like "how much IRG do I pay", "barème IRG", "Algeria income tax", "IFU", "impôt forfaitaire unique", "G50", "G12", "G12 bis", "CNAS", "CASNOS", "auto-entrepreneur Algérie", "DZD tax", "salaire net", "self-employed tax Algeria", "déclaration revenu global", or any question about filing or computing income tax for an Algerian employee, sole trader, or micro-operator. Also trigger when preparing or reviewing an IRG payroll computation, an IFU turnover declaration, social contribution (CNAS/CASNOS) calculations, or advising on filing deadlines. This skill covers the IRG progressive scale, schedular/investment rates, the IFU micro regime, CNAS/CASNOS social contributions, the SNMG minimum wage, filing forms and deadlines, and penalties. ALWAYS read this skill before touching any Algerian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: DZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -34,15 +34,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual return deadline | 30 April of the following year (FY2025 extended to 30 June) |
 | Validated by | Pending -- requires sign-off by an Algerian tax professional |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Algeria DOES levy a personal income tax
 
-Unlike several Gulf jurisdictions, Algeria operates a full personal income tax (IRG) with a progressive scale topping out at 35%, plus mandatory social contributions (CNAS for employees, CASNOS for the self-employed) and a turnover-based micro regime (IFU). Residents are taxed on worldwide income; non-residents on Algeria-sourced income only. *(Source: PwC Worldwide Tax Summaries -- Algeria, Individual -- Taxes on personal income, reviewed 14 Jul 2025: https://taxsummaries.pwc.com/algeria/individual/taxes-on-personal-income)*
+Unlike several Gulf jurisdictions, Algeria operates a full personal income tax (IRG) with a progressive scale topping out at 35%, plus mandatory social contributions (CNAS for employees, CASNOS for the self-employed) and a turnover-based micro regime (IFU). Residents are taxed on worldwide income; non-residents on Algeria-sourced income only. *(Source: a secondary practitioner summary -- Algeria, Individual -- Taxes on personal income, reviewed 14 Jul 2025:*
 
 ### IRG Progressive Scale (2025) -- Annual Taxable Income
 
-**IRG Progressive Scale (2025) -- Annual Taxable Income**  _(Source: PwC -- Algeria, Individual, reviewed 14 Jul 2025: https://taxsummaries.pwc.com/algeria/individual/taxes-on-personal-income)_
+**IRG Progressive Scale (2025) -- Annual Taxable Income**  _(Source: the secondary summary -- Algeria, Individual, reviewed 14 Jul 2025:, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Annual taxable income (DZD) | Rate | Cumulative tax at top of band |
 | --- | --- | --- |
@@ -59,12 +59,12 @@ Unlike several Gulf jurisdictions, Algeria operates a full personal income tax (
 - 184,800 + (30% × 960,000 = 288,000) = 472,800
 - 472,800 + (33% × 1,920,000 = 633,600) = 1,106,400
 
-- **Salary exemption** — Monthly salaries ≤ DZD 30,000 are exempt from IRG.  _(Source: PwC -- Income determination: https://taxsummaries.pwc.com/algeria/individual/income-determination)_
-- **Isolation / special-conditions exemption** — PIT exemption of up to 70% of basic salary for special living/isolation conditions (since 1 Jan 2021).  _(Source: PwC -- Income determination, same URL.)_
+- **Salary exemption** — Monthly salaries ≤ DZD 30,000 are exempt from IRG.  _(Source: the secondary summary -- Income determination:, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Isolation / special-conditions exemption** — PIT exemption of up to 70% of basic salary for special living/isolation conditions (since 1 Jan 2021).  _(Source: the secondary summary -- Income determination, same URL.)_
 
 ### Schedular / Investment Income Rates (2025)
 
-**Schedular / Investment Income Rates (2025)**  _(Source: PwC -- Income determination: https://taxsummaries.pwc.com/algeria/individual/income-determination)_
+**Schedular / Investment Income Rates (2025)**  _(Source: the secondary summary -- Income determination:, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Income type | Rate | Notes |
 | --- | --- | --- |
@@ -76,7 +76,7 @@ Unlike several Gulf jurisdictions, Algeria operates a full personal income tax (
 
 ### Rental / Property Income (annual gross ≤ DZD 1,800,000)
 
-**Rental / Property Income (annual gross ≤ DZD 1,800,000)**  _(Source: PwC -- Income determination, same URL.)_
+**Rental / Property Income (annual gross ≤ DZD 1,800,000)**  _(Source: the secondary summary -- Income determination, same URL.)_
 
 | Property type | Withholding rate |
 | --- | --- |
@@ -98,11 +98,11 @@ Unlike several Gulf jurisdictions, Algeria operates a full personal income tax (
 | Minimum annual IFU tax | DZD 20,000 (raised from 10,000 by Loi de Finances 2025) *(Source: IMF Country Report 25/271: https://www.imf.org/-/media/files/publications/cr/2025/english/1dzaea2025002-source-pdf.pdf)* -- **[RESEARCH GAP: some blogs cite DZD 30,000; prefer 20,000 (IMF) and confirm in the 2025 Finance Law text]** |
 | Auto-entrepreneur ceiling | DZD 5,000,000 turnover; reduced IFU rate 0.5% **[RESEARCH GAP -- reviewer to confirm, secondary sources only]** |
 
-- **2025 change** — New taxpayers are exempt from provisional PIT instalments during their first year of activity (effective 1 Jan 2025).  _(Source: PwC -- Tax administration: https://taxsummaries.pwc.com/algeria/individual/tax-administration)_
+- **2025 change** — New taxpayers are exempt from provisional PIT instalments during their first year of activity (effective 1 Jan 2025).  _(Source: the secondary summary -- Tax administration:, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ### Social Contributions -- Quick Rates
 
-**Social Contributions -- Quick Rates**  _(Source: PwC -- Other taxes, reviewed 14 Jul 2025: https://taxsummaries.pwc.com/algeria/individual/other-taxes; CASNOS rate from secondary corroboration -- see Section 5.)_
+**Social Contributions -- Quick Rates**  _(Source: the secondary summary -- Other taxes, reviewed 14 Jul 2025: CASNOS rate from secondary corroboration -- see Section 5.)_
 
 | Regime | Who | Rate |
 | --- | --- | --- |
@@ -261,7 +261,7 @@ Gross monthly salary DZD 120,000. Employee CNAS 9% is deducted first to reach th
 - The monthly barème IRG is the annual scale ÷ 12. Annualised base = 109,200 × 12 = DZD 1,310,400.
 - Annual IRG on 1,310,400: 55,200 (band 2) + 129,600 (band 3) + 30% × (1,310,400 − 960,000 = 350,400) = 55,200 + 129,600 + 105,120 = **DZD 289,920/year** ⇒ **DZD 24,160/month**.
 
-**Classification:** IRG base = DZD 109,200/month; IRG ≈ DZD 24,160/month; net ≈ 120,000 − 10,800 − 24,160 = **DZD 85,040**. *(Salary > DZD 30,000 so not exempt. Source: PwC scale + income-determination.)* **[RESEARCH GAP: any spouse/dependent allowance not applied -- see Section 5.2.]**
+**Classification:** IRG base = DZD 109,200/month; IRG ≈ DZD 24,160/month; net ≈ 120,000 − 10,800 − 24,160 = **DZD 85,040**. *(Salary > DZD 30,000 so not exempt. Source: the secondary summary scale + income-determination.)* **[RESEARCH GAP: any spouse/dependent allowance not applied -- see Section 5.2.]**
 
 ### Example 2 -- Exempt Low Salary
 
@@ -271,7 +271,7 @@ Gross monthly salary DZD 120,000. Employee CNAS 9% is deducted first to reach th
 **Reasoning:**
 Monthly salary DZD 28,000 ≤ DZD 30,000 threshold ⇒ **IRG-exempt**. Social contributions still apply: CNAS 9% × 28,000 = DZD 2,520. Net = 28,000 − 2,520 = DZD 25,480.
 
-**Classification:** IRG = DZD 0. CNAS employee = DZD 2,520. *(Source: PwC -- Income determination, DZD 30,000 exemption.)*
+**Classification:** IRG = DZD 0. CNAS employee = DZD 2,520. *(Source: the secondary summary -- Income determination, DZD 30,000 exemption.)*
 
 ### Example 3 -- IFU Micro-Operator (sale of goods)
 
@@ -321,19 +321,19 @@ Transfer between own accounts. Neither income nor expense.
 
 ### 5.1 Residency and Scope
 
-- **Residency and scope** — Residents are taxed on worldwide income; non-residents only on Algeria-sourced income.  _(Source: PwC -- Taxes on personal income.)_
+- **Residency and scope** — Residents are taxed on worldwide income; non-residents only on Algeria-sourced income.  _(Source: the secondary summary -- Taxes on personal income.)_
 
 ### 5.2 IRG Salary Mechanics and Allowances
 
-- **CNAS-first deduction mechanic** — Gross salary less the employee 9% CNAS contribution gives the IRG taxable base.  _(CNAS 9% from PwC -- Other taxes. The "deduct CNAS first" mechanic is standard payroll practice -- [RESEARCH GAP: confirm exact order against CIDTA salary rules.])_
+- **CNAS-first deduction mechanic** — Gross salary less the employee 9% CNAS contribution gives the IRG taxable base.  _(CNAS 9% from the secondary summary -- Other taxes. The "deduct CNAS first" mechanic is standard payroll practice -- [RESEARCH GAP: confirm exact order against CIDTA salary rules.])_
 - **Monthly barème IRG** — The monthly barème IRG = annual progressive scale ÷ 12.
-- **Salary exemption threshold** — Salaries ≤ DZD 30,000/month are exempt.  _(Source: PwC -- Income determination.)_
+- **Salary exemption threshold** — Salaries ≤ DZD 30,000/month are exempt.  _(Source: the secondary summary -- Income determination.)_
 
-**[RESEARCH GAP -- reviewer to confirm]:** secondary Algerian payroll sources cite a reduction of ~DZD 1,500/month for a non-earning spouse and a per-dependent allowance (≈DZD 12,000/dependent). The PwC authoritative deductions page does NOT confirm these. Do NOT apply them until confirmed against the CIDTA. *(Secondary: https://almawarid.app/blog/comment-calculer-lirg-en-algerie-en-2025-tranches-taux-et-exemples/)*
+**[RESEARCH GAP -- reviewer to confirm]:** secondary Algerian payroll sources cite a reduction of ~DZD 1,500/month for a non-earning spouse and a per-dependent allowance (≈DZD 12,000/dependent). The the secondary summary authoritative deductions page does NOT confirm these. Do NOT apply them until confirmed against the CIDTA. *(Secondary: https://almawarid.app/blog/comment-calculer-lirg-en-algerie-en-2025-tranches-taux-et-exemples/)*
 
 ### 5.3 Deductible vs Non-Deductible (real regime)
 
-- **Deductible/non-deductible items** — Only alimony, mortgage interest, and taxes paid are confirmed deductible for individuals; childcare, education, healthcare, life insurance, and charity are NOT deductible.  _(Source: PwC -- Deductions: https://taxsummaries.pwc.com/algeria/individual/deductions)_
+- **Deductible/non-deductible items** — Only alimony, mortgage interest, and taxes paid are confirmed deductible for individuals; childcare, education, healthcare, life insurance, and charity are NOT deductible.  _(Source: the secondary summary -- Deductions:, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ### 5.4 IFU Regime
 
@@ -344,11 +344,11 @@ Transfer between own accounts. Neither income nor expense.
 
 ### 5.5 Schedular Withholding Rates
 
-- **Schedular withholding rates** — Dividends 15%, interest 10%, capital gains 15% (resident) / 20% (non-resident).  _(Source: PwC -- Income determination.)_
+- **Schedular withholding rates** — Dividends 15%, interest 10%, capital gains 15% (resident) / 20% (non-resident).  _(Source: the secondary summary -- Income determination.)_
 
 ### 5.6 CNAS -- Employee Social Contributions
 
-**CNAS -- Employee Social Contributions total**  _(Source: PwC -- Other taxes, 14 Jul 2025.)_
+**CNAS -- Employee Social Contributions total**  _(Source: the secondary summary -- Other taxes, 14 Jul 2025.)_
 
 | Share | Rate of gross |
 | --- | --- |
@@ -358,7 +358,7 @@ Transfer between own accounts. Neither income nor expense.
 
 **Arithmetic check:** 9% + 26% = 35%. ✓
 
-Coverage: retirement, illness/maternity, unemployment, work accidents. No upper contribution ceiling is confirmed by PwC; the floor is the SNMG. *(Source: PwC -- Other taxes.)*
+Coverage: retirement, illness/maternity, unemployment, work accidents. No upper contribution ceiling is confirmed by the secondary summary; the floor is the SNMG. *(Source: the secondary summary -- Other taxes.)*
 
 **Branch breakdown (secondary -- almawarid.app)**  _(almawarid.app)_
 
@@ -370,7 +370,7 @@ Coverage: retirement, illness/maternity, unemployment, work accidents. No upper 
 | Unemployment (FNAC) | 1.5% | 0.5% |
 | Balance / other | ~0.25% | ~0.25% |
 
-**[RESEARCH GAP -- reviewer to confirm]:** the published sub-rows total ~25.75% employer / 9.25% employee; the exact per-branch allocation reconciling precisely to 26% / 9% must be confirmed against the AAPI official page (https://aapi.dz/en/regimes-sociaux-en/). The headline 26% / 9% / 35% totals are PwC-confirmed; only the per-branch split is uncertain.
+**[RESEARCH GAP -- reviewer to confirm]:** the published sub-rows total ~25.75% employer / 9.25% employee; the exact per-branch allocation reconciling precisely to 26% / 9% must be confirmed against the AAPI official page (https://aapi.dz/en/regimes-sociaux-en/). The headline 26% / 9% / 35% totals are the secondary summary-confirmed; only the per-branch split is uncertain.
 
 ### 5.7 CASNOS -- Self-Employed Social Contributions
 
@@ -391,7 +391,7 @@ Coverage: retirement, illness/maternity, unemployment, work accidents. No upper 
 
 ### 5.9 Filing Forms & Deadlines
 
-**5.9 Filing Forms & Deadlines**  _(Tax-form sources: PwC -- Tax administration: https://taxsummaries.pwc.com/algeria/individual/tax-administration; DGI IFU page; mfdgi IRG salaries page: https://www.mfdgi.gov.dz/fr/particuliers/irg-traitements-et-salaires)_
+**5.9 Filing Forms & Deadlines**  _(Tax-form sources: the secondary summary -- Tax administration: DGI IFU page; mfdgi IRG salaries page: https://www.mfdgi.gov.dz/fr/particuliers/irg-traitements-et-salaires)_
 
 | Obligation | Form | Deadline |
 | --- | --- | --- |
@@ -403,7 +403,7 @@ Coverage: retirement, illness/maternity, unemployment, work accidents. No upper 
 | CNAS monthly contribution remittance | -- | Within first 10 days of following month *(secondary -- almawarid.app)* |
 | CNAS annual salary declaration (DAS) | DAS | 31 January *(secondary -- almawarid.app)* |
 
-- **Taxable period and statute of limitations** — Taxable period: calendar year. Statute of limitations: 4 years.  _(Source: PwC -- Tax administration.)_
+- **Taxable period and statute of limitations** — Taxable period: calendar year. Statute of limitations: 4 years.  _(Source: the secondary summary -- Tax administration.)_
 
 **2026 note:** EY reports Algeria extended the FY2025 annual income tax and transfer-pricing filing deadline. *(Source: https://taxnews.ey.com/news/2026-0907-algeria-extends-filing-deadline-for-2025-annual-income-tax-and-transfer-pricing-declarations)*
 
@@ -416,7 +416,7 @@ Turnover near the DZD 8,000,000 ceiling, or mixed goods/services activities, req
 
 ### 6.2 Spouse / Dependent Allowances
 
-Secondary sources cite a spouse reduction (~DZD 1,500/month) and per-dependent allowance (~DZD 12,000). Not confirmed by PwC.
+Secondary sources cite a spouse reduction (~DZD 1,500/month) and per-dependent allowance (~DZD 12,000). Not confirmed by the secondary summary.
 **Conservative default:** apply NO allowance until confirmed against the CIDTA.
 
 ### 6.3 Home / Mixed-Use Premises (real regime)
@@ -437,7 +437,7 @@ Deductibility is limited under the CIDTA. **[RESEARCH GAP -- confirm exact limit
 ### 6.6 Isolation / Special-Conditions Exemption
 
 Up to 70% of basic salary may be PIT-exempt for special living/isolation conditions.
-**Flag for reviewer:** confirm eligibility and the exempt portion. *(Source: PwC -- Income determination.)*
+**Flag for reviewer:** confirm eligibility and the exempt portion. *(Source: the secondary summary -- Income determination.)*
 
 ### 6.7 Schedular Income Interaction
 
@@ -562,16 +562,16 @@ ONBOARDING QUESTIONS -- ALGERIA INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| IRG progressive scale | CIDTA; PwC -- Taxes on personal income (14 Jul 2025) |
-| Salary exemption (DZD 30,000) | PwC -- Income determination |
-| Schedular rates (dividends/interest/CG) | PwC -- Income determination |
-| Deductions (alimony, mortgage, tax) | PwC -- Deductions |
+| IRG progressive scale | CIDTA; secondary summary, Taxes on personal income (14 Jul 2025) |
+| Salary exemption (DZD 30,000) | secondary summary, Income determination |
+| Schedular rates (dividends/interest/CG) | secondary summary, Income determination |
+| Deductions (alimony, mortgage, tax) | secondary summary, Deductions |
 | IFU eligibility (DZD 8,000,000) | CIDTA Art. 282 ter; DGI IFU page |
 | IFU minimum (DZD 20,000) | IMF Country Report 25/271 |
-| CNAS 9% / 26% / 35% | PwC -- Other taxes |
+| CNAS 9% / 26% / 35% | secondary summary, Other taxes |
 | CASNOS 15% | noteasy-dz.com; AAPI (secondary) |
 | SNMG 2025 / 2026 | observalgerie.com; acf-dz.com; Decree n°26-01 |
-| Filing forms & deadlines | PwC -- Tax administration; DGI mfdgi.gov.dz |
+| Filing forms & deadlines | secondary summary, Tax administration; DGI mfdgi.gov.dz |
 | FY2025 deadline extension | EY Tax News 2026-0907 |
 
 ### Related Business Taxes (context only)
@@ -580,11 +580,11 @@ ONBOARDING QUESTIONS -- ALGERIA INCOME TAX
 
 | Tax | Rate | Source |
 | --- | --- | --- |
-| IBS (corporate) -- manufacturing | 19% | PwC -- Corporate, taxes on corporate income |
-| IBS -- building/public works/tourism | 23% | PwC -- Corporate |
-| IBS -- trade & services (other) | 26% | PwC -- Corporate |
-| IBS minimum (nil returns) | DZD 10,000/year | PwC -- Corporate |
-| TVA (VAT) standard | 19% (reduced 9%, zero 0%) | PwC -- Other taxes |
+| IBS (corporate) -- manufacturing | 19% | secondary summary, Corporate, taxes on corporate income |
+| IBS -- building/public works/tourism | 23% | secondary summary, Corporate |
+| IBS -- trade & services (other) | 26% | secondary summary, Corporate |
+| IBS minimum (nil returns) | DZD 10,000/year | secondary summary, Corporate |
+| TVA (VAT) standard | 19% (reduced 9%, zero 0%) | secondary summary, Other taxes |
 | TAP (professional activity tax) | ~1.5% historically | **[RESEARCH GAP -- being phased toward local levies; confirm in 2025 Finance Law]** |
 
 ### Penalties (secondary -- confirm against CIDTA)

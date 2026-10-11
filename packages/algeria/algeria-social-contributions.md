@@ -1,10 +1,10 @@
 ---
 name: algeria-social-contributions
 description: Use this skill whenever asked about Algeria social security / social insurance contributions (CNAS for salaried employees, CASNOS for self-employed/non-salaried) and the interaction with Algerian personal income tax (IRG). Trigger on phrases like "how much CNAS do I pay", "Algeria payroll contributions", "employer social security Algeria", "CNAS employee deduction", "CASNOS self-employed contribution", "G50 declaration", "DAS annual salary declaration", "IRG on salary", "Algerian minimum wage SNMG", "social security Algeria calculation", or any question about Algerian payroll, contribution or IRG obligations. Also trigger when classifying bank statement transactions that relate to CNAS/CASNOS debits, G50 tax payments, or DGI/Trésor payments from BNA, BEA, CPA, BADR, or other Algerian banks. This skill covers CNAS 26%/9% branch rates, the CASNOS 15% self-employed regime, the SNMG floor, IRG progressive brackets, G50/DAS filing and deadlines, penalties, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Algerian contribution or payroll work.
-version: 0.1
+version: 0.2
 jurisdiction: DZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Algeria Social Security / Social Insurance Contributions (CNAS / CASNOS)
 
-## Algeria Social Security / Social Insurance Contributions (CNAS / CASNOS) Skill v0.1
+## Algeria Social Security / Social Insurance Contributions (CNAS / CASNOS) Skill v0.2
 
-> **Tier 2 (research-verified) skill.** Branch rates rely on CLEISS (authoritative French bilateral social-security source), corroborated by PwC Worldwide Tax Summaries and a 2025 Algerian payroll source. Primary Algerian authorities (CNAS, CASNOS, DGI/Ministère des Finances) were not directly fetched. Every figure carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A warranted Algerian accountant must sign off before filing.
+> **Tier 2 (research-verified) skill.** Branch rates rely on CLEISS (authoritative French bilateral social-security source), corroborated by a secondary practitioner summary and a 2025 Algerian payroll source. Primary Algerian authorities (CNAS, CASNOS, DGI/Ministère des Finances) were not directly fetched. Every figure carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A warranted Algerian accountant must sign off before filing.
 
 ## Section 1 -- Quick reference
 
@@ -33,13 +33,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Self-employed contribution authority | CASNOS (Caisse Nationale de Sécurité Sociale des Non-Salariés) |
 | Tax authority (IRG/IBS) | DGI — Direction Générale des Impôts, Ministère des Finances (mfdgi.gov.dz) |
 | Consolidated rate publisher | CLEISS (cleiss.fr) |
-| Salaried total contribution | 35% of gross — 26% employer + 9% employee (CLEISS / PwC) |
+| Salaried total contribution | 35% of gross — 26% employer + 9% employee (CLEISS) |
 | Self-employed (CASNOS) rate | 15% of declared annual income (7.5% insurance + 7.5% retirement) (CLEISS) |
 | Minimum wage (SNMG) 2024–2025 | 20,000 DZD/month (CLEISS) |
 | Minimum wage (SNMG) from 1 Jan 2026 | 24,000 DZD/month (+20%) (Radio Algérie / North Africa Post) |
-| Personal income tax | IRG — progressive 0%–35% (PwC, FL 2022 schedule still current) |
+| Personal income tax | IRG — progressive 0%–35% (secondary summary, FL 2022 schedule still current) |
 | Salaried monthly IRG exemption | salaries ≤ 30,000 DZD/month effectively exempt (corroborated; see Section 10) |
-| CNAS earnings ceiling | No general ceiling for salaried CNAS (CLEISS / PwC) |
+| CNAS earnings ceiling | No general ceiling for salaried CNAS (CLEISS) |
 | Salaried filing | G50 (tax, incl. IRG withheld) monthly by 20th; CNAS DAC monthly within first 10 days; DAS annual before 31 Jan |
 | Validated by | Pending — requires sign-off by a warranted Algerian accountant |
 | Validation date | Pending |
@@ -48,7 +48,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Regime | Who | Headline rate |
 | --- | --- | --- |
-| CNAS (salaried) | Employees and their employers | 26% employer + 9% employee = 35% of gross (CLEISS / PwC) |
+| CNAS (salaried) | Employees and their employers | 26% employer + 9% employee = 35% of gross (CLEISS) |
 | CASNOS (non-salaried) | Self-employed, professionals, traders | 15% of declared annual income (CLEISS) |
 
 **Conservative defaults**
@@ -77,7 +77,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-DZ-SC-1** — Employment status unknown. Trigger: not stated whether the client is salaried (CNAS) or self-employed (CASNOS). Message: "Employment status is mandatory. Salaried workers contribute 35% via CNAS (26% employer / 9% employee, no ceiling); self-employed contribute 15% via CASNOS within an income band. These regimes are not interchangeable. Cannot proceed without this information."
 - **R-DZ-SC-2** — Contribution arrears / penalties. Trigger: client has unpaid CNAS contributions from prior periods. Message: "Late CNAS contributions attract a 10% penalty plus 3% per month of delay (majoration de retard) and can trigger legal proceedings (CLEISS / Algerian payroll sources). Do not quantify arrears without a CNAS statement. Escalate to a warranted Algerian accountant."
 - **R-DZ-SC-3** — Sector add-ons and exemptions. Trigger: client is in construction, public works, hydraulics, or claims a reduced-rate scheme (e.g. ANSEJ/ANADE start-up exemptions). Message: "An additional 0.375% unemployment-branch contribution applies in construction/public works/hydraulics, and start-up/youth-employment schemes may carry temporary exemptions. These require case-specific confirmation. Escalate to a warranted Algerian accountant."
-- **R-DZ-SC-4** — Non-resident / expat payroll. Trigger: client is a non-resident, on a bilateral social-security agreement, or seconded into/out of Algeria. Message: "Bilateral social-security agreements and secondment relief are outside the scope of this skill. Non-residents are taxed only on Algeria-source professional income (PwC). Escalate to a warranted Algerian accountant."
+- **R-DZ-SC-4** — Non-resident / expat payroll. Trigger: client is a non-resident, on a bilateral social-security agreement, or seconded into/out of Algeria. Message: "Bilateral social-security agreements and secondment relief are outside the scope of this skill. Non-residents are taxed only on Algeria-source professional income (secondary summary). Escalate to a warranted Algerian accountant."
 - **R-DZ-SC-5** — IRG/tax penalty quantification. Trigger: request to quantify statutory IRG late-payment penalties. Message: "Specific statutory IRG late-payment penalty percentages are not confirmed from a primary authority in this skill `[RESEARCH GAP — reviewer to confirm against the Code des Impôts Directs, mfdgi.gov.dz]`. Do not estimate. Escalate to a warranted Algerian accountant."
 
 ## Section 3 -- Payment pattern library
@@ -142,7 +142,7 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ## Section 4 -- Worked examples
 
-Six bank statement classifications from a hypothetical Algerian small employer and a self-employed professional. All amounts in DZD. Currency and figures per CLEISS / PwC research; SNMG 20,000 DZD/month (2024–2025).
+Six bank statement classifications from a hypothetical Algerian small employer and a self-employed professional. All amounts in DZD. Currency and figures per CLEISS / the secondary summary research; SNMG 20,000 DZD/month (2024–2025).
 
 ### Example 1 -- Monthly CNAS contribution debit (BNA)
 
@@ -210,7 +210,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 
 ### Rule 1 -- Salaried CNAS formula
 
-- **CNAS formula** — CNAS_total = gross_salary x 35% CNAS_employer = gross_salary x 26% CNAS_employee = gross_salary x 9%  _(Headline 26% employer / 9% employee / 35% total (CLEISS / PwC). The employer remits both shares monthly. No general earnings ceiling applies (CLEISS / PwC).)_
+- **CNAS formula** — CNAS_total = gross_salary x 35% CNAS_employer = gross_salary x 26% CNAS_employee = gross_salary x 9%  _(Headline 26% employer / 9% employee / 35% total (CLEISS). The employer remits both shares monthly. No general earnings ceiling applies (CLEISS).)_
 
 ### Rule 2 -- CNAS branch breakdown (effective 1 Jan 2024)
 
@@ -225,7 +225,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 | Unemployment insurance | 1% | 0.5% | — | 1.5% |
 | **TOTAL** | **25% (+0.50% FNPOS)** | **9%** | **0.50%** | **34.5%** |
 
-- **Reconciliation of headline vs itemised rates** — The headline 26% employer is the commonly-cited figure including the 0.50% FNPOS and minor sector add-ons; CLEISS itemises pure employer branches at 25% + 0.50% FNPOS = 25.5% (PwC / CLEISS reconciliation). Employer column 11.5 + 1.25 + 11 + 0.25 + 1 = 25.0%; employee column 1.5 + 0 + 6.75 + 0.25 + 0.5 = 9.0%; grand total 34.5% (35% with rounding/sector add-ons).  _(https://www.cleiss.fr/docs/cotisations/algerie.html)_
+- **Reconciliation of headline vs itemised rates** — The headline 26% employer is the commonly-cited figure including the 0.50% FNPOS and minor sector add-ons; CLEISS itemises pure employer branches at 25% + 0.50% FNPOS = 25.5% (secondary summary, / CLEISS reconciliation). Employer column 11.5 + 1.25 + 11 + 0.25 + 1 = 25.0%; employee column 1.5 + 0 + 6.75 + 0.25 + 0.5 = 9.0%; grand total 34.5% (35% with rounding/sector add-ons).  _(https://www.cleiss.fr/docs/cotisations/algerie.html)_
 
 ### Rule 3 -- Construction / public works / hydraulics add-on
 
@@ -233,7 +233,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 
 ### Rule 4 -- Contribution base (salaried)
 
-- **Contribution base definition** — The base is all gross salary elements, excluding family benefits, expense reimbursements, departure/severance bonuses, and certain hardship allowances (CLEISS). The SNMG minimum wage (20,000 DZD/month in 2024–2025; 24,000 DZD/month from 1 Jan 2026) effectively floors the base. No general ceiling (CLEISS / PwC).  _(CLEISS / PwC)_
+- **Contribution base definition** — The base is all gross salary elements, excluding family benefits, expense reimbursements, departure/severance bonuses, and certain hardship allowances (CLEISS). The SNMG minimum wage (20,000 DZD/month in 2024–2025; 24,000 DZD/month from 1 Jan 2026) effectively floors the base. No general ceiling (CLEISS).  _(CLEISS)_
 
 ### Rule 5 -- Employee 9% is deductible for IRG
 
@@ -246,7 +246,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 
 ### Rule 7 -- IRG progressive brackets (annual)
 
-**IRG progressive brackets (annual)**  _(https://taxsummaries.pwc.com/algeria/individual/taxes-on-personal-income)_
+**IRG progressive brackets (annual)**  __
 
 | Annual taxable income (DZD) | Marginal rate | Tax at top of band | Cumulative tax at top of band |
 | --- | --- | --- | --- |
@@ -257,7 +257,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 | 1,920,001 – 3,840,000 | 33% | 633,600 | 1,106,400 |
 | > 3,840,000 | 35% | — | — |
 
-- **Cumulative check** — Progressive 0%–35% on annual taxable income (PwC, FL 2022 schedule still current per PwC last reviewed 14 July 2025). Cumulative check: 0 → +55,200 → +129,600 = 184,800 → +288,000 = 472,800 → +633,600 = 1,106,400.  _(https://taxsummaries.pwc.com/algeria/individual/taxes-on-personal-income)_
+- **Cumulative check** — Progressive 0%–35% on annual taxable income (secondary summary, FL 2022 schedule still current per the secondary summary last reviewed 14 July 2025). Cumulative check: 0 → +55,200 → +129,600 = 184,800 → +288,000 = 472,800 → +633,600 = 1,106,400.  __
 
 ### Rule 8 -- Monthly salary IRG exemption
 
@@ -294,7 +294,7 @@ When bank statement data is ambiguous or client circumstances are unclear, flag 
 
 ### T2-3 -- Rate-source reconciliation (26% vs 25.5%)
 
-- **T2-3** — Trigger: A contribution figure does not reconcile to a clean 26% employer. Issue: CLEISS itemises pure employer branches at 25% + 0.50% FNPOS = 25.5%, while PwC and Algerian summaries cite a headline 26% (rounding/sector add-ons). A second 2025 source (almawarid) allocates branches slightly differently (Health-Maternity 12.5%/1.5%; Retirement 10.5%/6.75%) but reaches the same ~26%/9% totals. Action: Flag for reviewer where the exact branch split matters (e.g. branch-level reconciliation). Use 26%/9%/35% as the headline.
+- **T2-3** — Trigger: A contribution figure does not reconcile to a clean 26% employer. Issue: CLEISS itemises pure employer branches at 25% + 0.50% FNPOS = 25.5%, while the secondary summary and Algerian summaries cite a headline 26% (rounding/sector add-ons). A second 2025 source (almawarid) allocates branches slightly differently (Health-Maternity 12.5%/1.5%; Retirement 10.5%/6.75%) but reaches the same ~26%/9% totals. Action: Flag for reviewer where the exact branch split matters (e.g. branch-level reconciliation). Use 26%/9%/35% as the headline.
 
 ### T2-4 -- CNAS / CASNOS arrears and penalties
 
@@ -306,7 +306,7 @@ When bank statement data is ambiguous or client circumstances are unclear, flag 
 
 ### T2-6 -- 2026 SNMG change and Finance Law 2025 floors
 
-- **T2-6** — Trigger: Computation spans into 2026, or involves the lump-sum/minimum tax regime. Issue: SNMG rises to 24,000 DZD/month from 1 Jan 2026 (Radio Algérie / North Africa Post). Finance Law 2025 reportedly raised the minimum lump-sum tax (IFU/FRT) floor to DZD 30,000 from DZD 10,000 effective 1 Jan 2026 `[RESEARCH GAP — verify exact wording at https://taxsummaries.pwc.com/algeria/individual/significant-developments]`. Action: Flag for reviewer. Confirm which year's SNMG and tax floors apply.  _(Radio Algérie / North Africa Post)_
+- **T2-6** — Trigger: Computation spans into 2026, or involves the lump-sum/minimum tax regime. Issue: SNMG rises to 24,000 DZD/month from 1 Jan 2026 (Radio Algérie / North Africa Post). Finance Law 2025 reportedly raised the minimum lump-sum tax (IFU/FRT) floor to DZD 30,000 from DZD 10,000 effective 1 Jan 2026 `[RESEARCH GAP — verify exact wording at]`. Action: Flag for reviewer. Confirm which year's SNMG and tax floors apply.  _(Radio Algérie / North Africa Post)_
 
 ## Section 7 -- Excel working paper template
 
@@ -406,7 +406,7 @@ If the client provides only a bank statement and no other information:
 
 | Regime | Employer | Employee | Total | Base / band | Source |
 | --- | --- | --- | --- | --- | --- |
-| CNAS (salaried) | 26% | 9% | 35% | gross salary, SNMG floor, no general ceiling | CLEISS / PwC |
+| CNAS (salaried) | 26% | 9% | 35% | gross salary, SNMG floor, no general ceiling | CLEISS |
 | CNAS branch total (itemised) | 25% + 0.50% FNPOS | 9% | 34.5% | as above | CLEISS |
 | Construction/PW/hydraulics add-on | +0.375% | — | +0.375% | unemployment branch | CLEISS |
 | CASNOS (self-employed) | — | 15% | 15% | 216,000 – 4,320,000 DZD/yr declared income | CLEISS |
@@ -420,7 +420,7 @@ If the client provides only a bank statement and no other information:
 | 2024–2025 | 20,000 DZD | CLEISS |
 | From 1 Jan 2026 | 24,000 DZD (+20%) | Radio Algérie / North Africa Post |
 
-### IRG annual brackets (PwC, FL 2022 schedule current)
+### IRG annual brackets (secondary summary, FL 2022 schedule current)
 
 **IRG annual brackets**
 
@@ -433,7 +433,7 @@ If the client provides only a bank statement and no other information:
 | 1,920,001 – 3,840,000 | 33% | 1,106,400 |
 | > 3,840,000 | 35% | — |
 
-- **Other personal taxes and residency rules** — Monthly salary IRG exemption: salaries ≤ 30,000 DZD/month effectively exempt (search result). Other personal taxes: capital gains 15% residents / 20% non-residents; dividends 15%; interest 10% (PwC). Residents taxed on worldwide income; non-residents only on Algeria-source professional income (PwC).  _(https://taxsummaries.pwc.com/algeria/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/algeria/individual/other-taxes)_
+- **Other personal taxes and residency rules** — Monthly salary IRG exemption: salaries ≤ 30,000 DZD/month effectively exempt (search result). Other personal taxes: capital gains 15% residents / 20% non-residents; dividends 15%; interest 10% (secondary summary). Residents taxed on worldwide income; non-residents only on Algeria-source professional income (secondary summary).  __
 
 ### Corporate income tax (IBS) — context only
 
@@ -441,13 +441,13 @@ If the client provides only a bank statement and no other information:
 
 | Activity | IBS rate | Source |
 | --- | --- | --- |
-| Manufacturing / production | 19% | PwC |
-| Building, public works, hydraulics, tourism/thermal | 23% | PwC |
-| Other (services / trade) | 26% | PwC |
-| Minimum CIT on nil returns | DZD 10,000 | PwC |
-| Reduced rate on reinvested manufacturing profits | 10% | PwC |
+| Manufacturing / production | 19% | secondary summary |
+| Building, public works, hydraulics, tourism/thermal | 23% | secondary summary |
+| Other (services / trade) | 26% | secondary summary |
+| Minimum CIT on nil returns | DZD 10,000 | secondary summary |
+| Reduced rate on reinvested manufacturing profits | 10% | secondary summary |
 
-- **Finance Law 2025 minimum lump-sum tax floor** — Finance Law 2025 reportedly raised the minimum lump-sum tax (IFU/FRT) floor to DZD 30,000 from DZD 10,000 effective 1 Jan 2026 `[RESEARCH GAP — reviewer to confirm]`.  _(https://taxsummaries.pwc.com/algeria/corporate/taxes-on-corporate-income)_
+- **Finance Law 2025 minimum lump-sum tax floor** — Finance Law 2025 reportedly raised the minimum lump-sum tax (IFU/FRT) floor to DZD 30,000 from DZD 10,000 effective 1 Jan 2026 `[RESEARCH GAP — reviewer to confirm]`.  __
 
 ### Penalties
 
@@ -486,7 +486,7 @@ Annual net = 960,000 − 86,400 − 161,472 = **712,128 DZD**. (Illustrative on 
 ### Prohibitions
 
 - NEVER compute contributions without first establishing whether the client is salaried (CNAS) or self-employed (CASNOS) — the regimes differ entirely.
-- NEVER apply a general earnings ceiling to salaried CNAS — none is reported (CLEISS / PwC).
+- NEVER apply a general earnings ceiling to salaried CNAS — none is reported (CLEISS).
 - NEVER omit the 0.375% sector add-on for construction/public works/hydraulics without confirming the sector.
 - NEVER apply the raw annual IRG table as if it were the salaried monthly withholding without confirming the schedule — flag the `[RESEARCH GAP]`.
 - NEVER tell a self-employed client they owe contributions below the CASNOS floor — the 216,000 DZD base (32,400 DZD min) always applies.

@@ -1,10 +1,10 @@
 ---
 name: eg-tax-optimization
 description: Use this skill whenever asked about legitimate tax optimization, tax planning, or how to legally reduce tax for self-employed people, freelancers, professionals, sole proprietors, and small businesses in Egypt. Trigger on phrases like "reduce tax Egypt", "save tax freelancer Egypt", "simplified vs general Egypt", "Egypt tax planning", "SME regime worth it Egypt", "lower my tax bill Egypt", "is the simplified regime cheaper", "تخطيط ضريبي مصر", "تقليل الضرائب مصر", "النظام المبسط أم العام", "هل النظام المبسط أوفر", "توفير ضرائب". Covers the choice between the turnover-based simplified SME regime (Law No. 6 of 2025) and the general progressive income-tax system, the break-even logic, e-invoicing as a deductibility lever, VAT threshold management, and the Law No. 5 of 2025 dispute-settlement / amnesty facilities. LEGAL planning only — never tax evasion. AI replies in the user's language (English or Arabic).
-version: 1.0
+version: 1.1
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -184,9 +184,9 @@ Research-verified against the following (accessed May 2026; **verify** against t
 - Egyptian Tax Authority (ETA) — مصلحة الضرائب المصرية — eta.gov.eg
 - **Law No. 6 of 2025** — integrated simplified tax regime for enterprises with turnover ≤ EGP 20m; turnover bands 0.4% / 0.5% / 0.75% / 1.0% / 1.5%; stamp/CGT/dividend/advance-payment exemptions; 5-year commitment; e-invoicing & timely-filing eligibility conditions. (EY Global tax alert; Andersen Egypt; Amereller; Wealth Advisory; HLUL Legal.)
 - **Law No. 5 of 2025** — tax reconciliation / dispute settlement; penalty & interest waivers; non-filer and unregistered-taxpayer relief windows from 13 Feb 2025. (EY Global Tax News; Lexology/Amereller; Andersen Egypt; Orbitax.)
-- **Personal income tax brackets 2025/2026** (0% to 27.5%; EGP 20,000 exemption). (PwC Worldwide Tax Summaries — Egypt, Individual.)
-- **e-invoicing & deductibility** — from 1 July 2023 only e-invoices evidence deductible costs for income tax; e-invoices/e-receipts required for input-VAT credit/refund. (Bloomberg Tax; PwC; KPMG.)
-- **VAT** — standard rate 14%; mandatory registration / e-invoicing threshold reduced to EGP 250,000 under Resolution No. 281 of 2025, register by 31 March 2026. (PwC; Fonoa; DataValue; VATupdate.)
+- **Personal income tax brackets 2025/2026** (0% to 27.5%; EGP 20,000 exemption). (secondary summary, Egypt, Individual.)
+- **e-invoicing & deductibility** — from 1 July 2023 only e-invoices evidence deductible costs for income tax; e-invoices/e-receipts required for input-VAT credit/refund. (Bloomberg Tax; secondary summary; KPMG.)
+- **VAT** — standard rate 14%; mandatory registration / e-invoicing threshold reduced to EGP 250,000 under Resolution No. 281 of 2025, register by 31 March 2026. (secondary summary; Fonoa; DataValue; VATupdate.)
 - Cross-skills: `eg-sme-tax`, `eg-income-tax`, `eg-bookkeeping`, `egypt-vat`.
 
 ## PROHIBITIONS

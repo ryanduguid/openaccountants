@@ -1,10 +1,10 @@
 ---
 name: honduras-social-contributions
 description: Use this skill whenever asked about Honduras payroll contributions, social security, or personal income tax (ISR) for employees, employers, or self-employed individuals. Trigger on phrases like "how much IHSS do I pay", "Honduras social security", "IHSS contribution", "RAP deduction", "INFOP levy", "ISR withholding Honduras", "Honduras income tax table", "tabla progresiva", "techo de cotización", "aguinaldo tax", "13th month Honduras", "Código 111 withholding", "Honduras net salary", or any question about Honduran payroll deductions, employer contributions, or ISR. Also trigger when classifying bank-statement transactions that relate to IHSS, RAP, INFOP, or SAR (tax) debits from Honduran banks (Banco Atlántida, Banco Ficohsa, BAC Credomatic, Banco de Occidente). This skill covers the 2025/2026 ISR progressive table, IHSS (IVM + EM) rates and ceilings, RAP labor-reserve fund, INFOP training levy, 13th/14th month pay, filing forms and deadlines, penalties, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Honduran payroll or ISR work.
-version: 0.3
+version: 0.4
 jurisdiction: HN
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Honduras Payroll Contributions & Income Tax (ISR)
 
-## Honduras Payroll Contributions & Income Tax (ISR) Skill v0.3
+## Honduras Payroll Contributions & Income Tax (ISR) Skill v0.4
 
 > **Tier 2 (research-verified) — NOT yet professionally verified.** Figures are drawn from sourced research (Big-4 summaries, Honduran press citing the IHSS/SAR, and statute references) but have NOT been signed off by a Honduran Contador Público Colegiado. Treat all outputs as estimates pending review.
 
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Republic of Honduras |
 | Currency | Honduran Lempira (HNL / "L") — **HNL only** |
-| Basis of taxation | **Territorial** — Honduran-source income only ([PwC Honduras](https://taxsummaries.pwc.com/honduras/individual)) |
+| Basis of taxation | **Territorial** — Honduran-source income only (a secondary summary (link removed)) |
 | Personal income tax | **YES** — progressive ISR (this is not a no-PIT jurisdiction) |
 | Income tax authority | SAR (Servicio de Administración de Rentas) |
 | Income tax law | Ley del Impuesto Sobre la Renta; annual table per Art. 22 (Decreto 20-2016) |
@@ -87,7 +87,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Employee column 2.5 + 2.5 = **5.0** ✓ Employer column 3.5 + 5.0 = **8.5** ✓ (Riesgos/RAP/INFOP additional, shown separately).
 
-> **Source conflict flag.** [PwC Honduras — Other taxes](https://taxsummaries.pwc.com/honduras/individual/other-taxes) still shows pre-reform figures (EM employee 2.5% on ceiling L 11,109.36; IVM employee 1% on ceiling L 11,336.00). Those **predate the 2025 reform** (Ley para la Regulación de las Aportaciones y Cotizaciones del IHSS) and must NOT be used for 2025. Use the unified ceiling L 11,903.13 and employee total 5.0%. **[RESEARCH GAP — reviewer to confirm the full per-line IVM/EM split against the IHSS law text/official PDF before Q1/Q2 verification.]**
+> **Source conflict flag.** a secondary summary (link removed) still shows pre-reform figures (EM employee 2.5% on ceiling L 11,109.36; IVM employee 1% on ceiling L 11,336.00). Those **predate the 2025 reform** (Ley para la Regulación de las Aportaciones y Cotizaciones del IHSS) and must NOT be used for 2025. Use the unified ceiling L 11,903.13 and employee total 5.0%. **[RESEARCH GAP — reviewer to confirm the full per-line IVM/EM split against the IHSS law text/official PDF before Q1/Q2 verification.]**
 
 **Conservative defaults**
 
@@ -273,7 +273,7 @@ Employers withhold monthly under Art. 22 (Código 111). Salaried employees with 
 
 - **RAP two distinct flows** — rap_labor_reserve   = gross_salary x 4.0%   (EMPLOYER ONLY; capped at 3x highest minimum wage) above_ceiling_base  = max(gross_salary - 11,903.13, 0) rap_employee_above  = above_ceiling_base x 1.5% rap_employer_above  = above_ceiling_base x 1.5%  _([Mismo](https://mismo.team/honduras-payroll-guide-ihss-rap-infop-13th-14th/) · [Godoy Córdoba](https://godoycordoba.com/en/entra-en-vigencia-nueva-ley-del-fondo-de-reserva-laboral-de-capitalizacion-individual-y-ley-para-la-regulacion-de-las-aportaciones-y-cotizaciones-del-ihss/))_
 
-The legacy 1.5% social-housing employee contribution is now **voluntary/optional** with no ceiling ([PwC](https://taxsummaries.pwc.com/honduras/individual/other-taxes)).
+The legacy 1.5% social-housing employee contribution is now **voluntary/optional** with no ceiling (a secondary summary (link removed)).
 
 ### Rule 7 — INFOP is employer-only, 1% of payroll, 5+ employees
 
@@ -464,7 +464,7 @@ Sector- and size-banded; no single national figure. 2025 figures remained in eff
 
 ### Penalties (Código Tributario, Decreto 22-97 consolidated)
 
-**Penalties (Código Tributario, Decreto 22-97 consolidated)**  _([Código Tributario (Decreto 22-97), TSC](https://www.tsc.gob.hn/web/leyes/C%C3%B3digo%20Tributario.pdf) · [Texto Consolidado, SEFIN](http://www.sefin.gob.hn/wp-content/uploads/2018/06/Texto_Consolidado_Codigo_Tributario_25JUNIO2018_Y_ANEXOS.pdf) · [PwC — Tax administration](https://taxsummaries.pwc.com/honduras/individual/tax-administration))_
+**Penalties (Código Tributario, Decreto 22-97 consolidated)**  _([Código Tributario (Decreto 22-97), TSC](https://www.tsc.gob.hn/web/leyes/C%C3%B3digo%20Tributario.pdf) · [Texto Consolidado, SEFIN](http://www.sefin.gob.hn/wp-content/uploads/2018/06/Texto_Consolidado_Codigo_Tributario_25JUNIO2018_Y_ANEXOS.pdf) · a secondary summary (link removed))_
 
 | Penalty | Rate |
 | --- | --- |
@@ -478,8 +478,8 @@ Sector- and size-banded; no single national figure. 2025 figures remained in eff
 
 ### Other context
 
-- **Sales Tax (ISV) general rate** — 15% (general rate)  _([PwC — Other taxes](https://taxsummaries.pwc.com/honduras/corporate/other-taxes))_
-- **Sales Tax (ISV) premium services rate** — 18% percent (certain premium services (alcohol, tobacco, premium telecom))  _([PwC — Other taxes](https://taxsummaries.pwc.com/honduras/corporate/other-taxes))_
+- **Sales Tax (ISV) general rate** — 15% (general rate)  _(a secondary summary (link removed))_
+- **Sales Tax (ISV) premium services rate** — 18% percent (certain premium services (alcohol, tobacco, premium telecom))  _(a secondary summary (link removed))_
 - **Territorial taxation basis** — Honduras taxes on a territorial basis — Honduran-source income only.  _(Other context)_
 
 ### Test suite
@@ -505,7 +505,7 @@ Sector- and size-banded; no single national figure. 2025 figures remained in eff
 ### Prohibitions
 
 - **Never compute without gross salary** — NEVER compute ISR or contributions without the client's gross salary in HNL.  _(Prohibitions)_
-- **Never use pre-reform IHSS ceilings** — NEVER use the pre-reform PwC IHSS ceilings (L 11,109.36 / L 11,336.00) for 2025 — use L 11,903.13.  _(Prohibitions)_
+- **Never use pre-reform IHSS ceilings** — NEVER use the pre-reform the secondary summary IHSS ceilings (L 11,109.36 / L 11,336.00) for 2025 — use L 11,903.13.  _(Prohibitions)_
 - **IHSS caps at ceiling; RAP above-ceiling applies to excess only** — NEVER apply IHSS or RAP-above-ceiling to salary beyond the L 11,903.13 ceiling incorrectly — IHSS caps AT the ceiling, RAP above-ceiling applies to the EXCESS only.  _(Prohibitions)_
 - **Never conflate institutes** — NEVER conflate IHSS, RAP, INFOP, and SAR/ISR — they are separate institutes and obligations.  _(Prohibitions)_
 - **Never omit medical deduction** — NEVER omit the flat L 40,000 medical deduction before applying the ISR table.  _(Prohibitions)_

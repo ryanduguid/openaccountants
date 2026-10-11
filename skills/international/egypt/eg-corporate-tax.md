@@ -1,10 +1,10 @@
 ---
 name: eg-corporate-tax
 description: Use this skill whenever asked about Egyptian corporate income tax for resident companies, branches of foreign companies, and permanent establishments — to compute, review, or explain CIT liability, deductions, losses, thin capitalisation, and filing requirements. Trigger on phrases like "Egypt corporate tax", "Egypt CIT", "Egyptian company tax", "ضريبة دخل الشركات", "شركة مقيمة مصر", "permanent establishment Egypt", or any request to prepare or check an Egyptian corporate tax return. ALWAYS read this skill before touching any Egypt corporate tax work.
-version: 0.1
+version: 0.2
 jurisdiction: EG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Egypt Corporate Income Tax (ضريبة دخل الشركات) Skill
 
-## Egypt Corporate Income Tax (ضريبة دخل الشركات) Skill v0.1
+## Egypt Corporate Income Tax (ضريبة دخل الشركات) Skill v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 This skill covers Egyptian corporate income tax (ضريبة الدخل على الأشخاص الاعتبارية) for **resident companies** (Egyptian joint-stock, LLCs, partnerships), **branches of foreign companies**, and **permanent establishments** of non-residents. The AI must reply in the user's language (English or Arabic / Egyptian Arabic) and may use the native tax terms shown throughout.
 
 > **Currency note:** all figures are in Egyptian Pounds (EGP / ج.م).
-> **YMYL — verify before relying.** Egyptian CIT rates, brackets, and deductions were amended in 2024 and 2025 (Laws 5, 6, 7 of 2025). Where this skill says "verify current value," re-confirm against the Egyptian Tax Authority (ETA — eta.gov.eg), PwC Worldwide Tax Summaries (taxsummaries.pwc.com/egypt), or a Big-4 alert before filing.
+> **YMYL — verify before relying.** Egyptian CIT rates, brackets, and deductions were amended in 2024 and 2025 (Laws 5, 6, 7 of 2025). Where this skill says "verify current value," re-confirm against the Egyptian Tax Authority (ETA — eta.gov.eg), a secondary practitioner summary, or a Big-4 alert before filing.
 
 ## What this file is
 

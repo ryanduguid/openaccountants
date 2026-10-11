@@ -1,10 +1,10 @@
 ---
 name: ua-formation
 description: Use this skill whenever asked about registering or forming a business in Ukraine for a self-employed person. Trigger on phrases like "register a FOP", "how do I become a ФОП", "start a business in Ukraine", "open a sole proprietorship Ukraine", "Diia registration", "ТОВ vs ФОП", "LLC vs sole proprietor Ukraine", "choose КВЕД codes", "single tax election", "register for VAT Ukraine", "open a business bank account Ukraine", "close my ФОП", or any question about the formation, registration, tax-system choice at start-up, or deregistration of a Ukrainian sole proprietor (ФОП) or company (ТОВ). Covers registering via Diia or a state registrar/notary, documents required, choosing КВЕД activity codes, electing the single-tax group (1/2/3) vs the general system, the ₴1,000,000 VAT threshold, ЄСВ registration, opening a bank account, the ФОП-vs-ТОВ decision, and closing a ФОП. ALWAYS read this skill before any Ukrainian business-formation work.
-version: 1.0
+version: 1.1
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Formation
 
-## Ukraine Business Formation (Реєстрація ФОП / ТОВ) — Self-Employed Skill v1.0
+## Ukraine Business Formation (Реєстрація ФОП / ТОВ) — Self-Employed Skill v1.1
 
 This skill covers **how a self-employed person sets up a business in Ukraine**: registering as a **ФОП** (фізична особа-підприємець / sole proprietor), choosing **КВЕД** activity codes and a tax system at registration, the **VAT (ПДВ)** threshold, **ЄСВ** registration, opening a bank account, and the decision between a ФОП and a **ТОВ** (товариство з обмеженою відповідальністю / LLC). It is the entry point. Once formed, route ongoing work to the companion skills: `ua-single-tax`, `ua-income-tax`, `ua-social-contributions`, `ua-bookkeeping`, and `ukraine-vat`.
 
@@ -37,7 +37,7 @@ This skill covers **how a self-employed person sets up a business in Ukraine**: 
 | Primary legislation | Tax Code of Ukraine (Податковий кодекс); Law "On State Registration of Legal Entities, Individual Entrepreneurs and Public Formations" No. 755-IV; Law "On Limited and Additional Liability Companies" No. 2275-VIII; Law on ЄСВ No. 2464-VI |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a Ukrainian accountant |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 > **Wartime note (martial law):** Figures below are as of **1 January 2026**. Single-tax fixed amounts and the ЄСВ minimum are pinned at their 1-Jan values for the whole year and do **not** change mid-year. The elevated 5% military levy (військовий збір) on wages and the 1% military levy on Group 3 income remain in force under martial law. *(Verify current procedure — wartime rules change frequently.)*
 
@@ -232,7 +232,7 @@ Stop and route to a credentialed Ukrainian accountant/lawyer when:
 - **Ministry of Justice** — ЄДР (Unified State Register)
 - **КВЕД-2010** classifier — kved.ukrstat.gov.ua (State Statistics Service)
 - Tax Code of Ukraine; Law No. 755-IV (state registration); Law No. 2275-VIII (LLCs); Law No. 2464-VI (ЄСВ)
-- Big-4 reference: PwC *Worldwide Tax Summaries — Ukraine*
+- Big-4 reference: the secondary summary *Worldwide Tax Summaries — Ukraine*
 
 ## PROHIBITIONS
 
@@ -240,7 +240,7 @@ Stop and route to a credentialed Ukrainian accountant/lawyer when:
 
 ## Disclaimer
 
-This skill is **research-verified** against public sources (State Tax Service tax.gov.ua, Diia diia.gov.ua, Ministry of Justice, and Big-4/PwC material) for the **2026** tax year as of **May 2026**, but is **pending sign-off by a qualified Ukrainian accountant**. Ukrainian rules — especially under martial law — change frequently; figures, thresholds, and procedures marked "verify current value/procedure" must be confirmed against current official sources before relying on them. This is general information, **not** tax, legal, or accounting advice, and does not create a professional relationship. Every output must be reviewed and signed off by a qualified Ukrainian accountant or licensed adviser before it reaches a taxpayer or any authority. Part of the Open Accountants open-source tax-skills project — **openaccountants.com**.
+This skill is **research-verified** against public sources (State Tax Service tax.gov.ua, Diia diia.gov.ua, Ministry of Justice, and Big-4/the secondary summary material) for the **2026** tax year as of **May 2026**, but is **pending sign-off by a qualified Ukrainian accountant**. Ukrainian rules — especially under martial law — change frequently; figures, thresholds, and procedures marked "verify current value/procedure" must be confirmed against current official sources before relying on them. This is general information, **not** tax, legal, or accounting advice, and does not create a professional relationship. Every output must be reviewed and signed off by a qualified Ukrainian accountant or licensed adviser before it reaches a taxpayer or any authority. Part of the Open Accountants open-source tax-skills project — **openaccountants.com**.
 
 <!-- openaccountants-cta-block -->
 

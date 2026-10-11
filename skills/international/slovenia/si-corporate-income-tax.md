@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Slovenia (tax year 20
 jurisdiction: SI
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +24,7 @@ Slovenian-resident companies pay corporate income tax on worldwide profits at a 
 - **Minimum effective tax base limitation** — Prior-year tax losses may reduce the tax base by at most 50% of the year's tax base (art. 36(4)); ZDDPO-2 has no separate revenue-based floor, and the 1% of revenue reference this guide carried until October 2026 was not found in the Act  _(Corporate Income Tax Act (ZDDPO-2, consolidated text, PisRS), art. 36(4) — https://pisrs.si/pregledPredpisa?id=ZAKO4687)_
 - **Tax loss carryforward** — Losses may be set against the tax base of the following five tax periods, oldest first, and may reduce any year's base by at most 50% (art. 36(2) to (4)); this guide said 'indefinitely' until October 2026  _(Corporate Income Tax Act (ZDDPO-2, consolidated text, PisRS), art. 36(2) to (4) — https://pisrs.si/pregledPredpisa?id=ZAKO4687)_
 - **Dividend participation exemption** — Dividends and similar income are excluded from the tax base where the payer is a Slovenian taxpayer, an EU-resident company covered by the Parent-Subsidiary regime, or a company subject to a comparable profit tax that is not resident in a listed low-tax jurisdiction (art. 24(1)); 5% of the dividends received is treated as non-deductible expense (art. 26(1)), so the exemption is 95% in effect  _(Corporate Income Tax Act (ZDDPO-2, consolidated text, PisRS), arts. 24(1) and 26(1) — https://pisrs.si/pregledPredpisa?id=ZAKO4687)_
-- **Pillar Two global minimum tax** — 15% effective minimum tax (IIR, UTPR, QDMTT) for in-scope groups; first reporting for FY2024  _([Minimum Tax Act (ZMD)](https://taxsummaries.pwc.com/slovenia/corporate/taxes-on-corporate-income))_
+- **Pillar Two global minimum tax** — 15% effective minimum tax (IIR, UTPR, QDMTT) for in-scope groups; first reporting for FY2024  _(Minimum Tax Act (ZMD), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Withholding tax on dividends (non-residents)** — 15% (may be reduced or removed by tax treaty or the EU Parent-Subsidiary Directive)  _(Corporate Income Tax Act (ZDDPO-2, consolidated text, PisRS), art. 70(1) — https://pisrs.si/pregledPredpisa?id=ZAKO4687)_
 - **Withholding tax on interest (non-residents)** — 15% (may be reduced or removed by treaty or the EU Interest and Royalties Directive)  _(Corporate Income Tax Act (ZDDPO-2, consolidated text, PisRS), art. 70(1) — https://pisrs.si/pregledPredpisa?id=ZAKO4687)_
 - **Withholding tax on royalties (non-residents)** — 15% (may be reduced or removed by treaty or the EU Interest and Royalties Directive)  _(Corporate Income Tax Act (ZDDPO-2, consolidated text, PisRS), art. 70(1) — https://pisrs.si/pregledPredpisa?id=ZAKO4687)_

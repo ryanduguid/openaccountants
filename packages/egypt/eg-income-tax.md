@@ -1,10 +1,10 @@
 ---
 name: eg-income-tax
 description: Use this skill whenever asked about Egyptian personal income tax for resident individuals, sole proprietors, freelancers, or professionals — to compute, review, or explain it. Trigger on phrases like "Egypt income tax", "ضريبة الدخل", "Egyptian tax brackets", "sole proprietor tax Egypt", "freelancer tax Egypt", "professional income tax Egypt", "إقرار ضريبة الدخل", or any request to prepare or check an Egyptian individual income tax return. ALWAYS read this skill before touching any Egypt personal income tax work.
-version: 1.0
+version: 1.1
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,12 +15,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # EG Income Tax
 
-## Egypt Personal Income Tax (ضريبة الدخل) Skill v1.0
+## Egypt Personal Income Tax (ضريبة الدخل) Skill v1.1
 
 This skill covers Egyptian personal income tax (ضريبة الدخل على الأشخاص الطبيعيين) for **resident individuals**, **sole proprietors (منشأة فردية)**, and **professionals / non-commercial activity (مهن حرة)**. The AI must reply in the user's language (English or Arabic / Egyptian Arabic) and may use the native tax terms shown throughout.
 
 > **Currency note:** all figures are in Egyptian Pounds (EGP / ج.م).
-> **YMYL — verify before relying.** Egyptian brackets and exemptions changed in 2024 and 2025. Where this skill says "verify current value," re-confirm against the Egyptian Tax Authority (ETA — eta.gov.eg), PwC Worldwide Tax Summaries (taxsummaries.pwc.com/egypt) or a Big-4 alert before filing.
+> **YMYL — verify before relying.** Egyptian brackets and exemptions changed in 2024 and 2025. Where this skill says "verify current value," re-confirm against the Egyptian Tax Authority (ETA — eta.gov.eg), a secondary practitioner summary or a Big-4 alert before filing.
 
 ## Section 1 — Quick reference
 
@@ -41,7 +41,7 @@ This skill covers Egyptian personal income tax (ضريبة الدخل على ا�
 | Simplified SME alternative | Law No. 6 of 2025 turnover-based regime for businesses up to EGP 20m — see `eg-sme-tax` |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a qualified Egyptian accountant (محاسب قانوني) |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Progressive tax brackets — tax year 2026
 
@@ -279,9 +279,9 @@ If required inputs are missing, ask (in the user's language): residency status, 
 ### References (verify before filing)
 
 - Egyptian Tax Authority (ETA — مصلحة الضرائب المصرية): eta.gov.eg
-- PwC Worldwide Tax Summaries — Egypt: taxsummaries.pwc.com/egypt
+- Secondary practitioner summary (link removed) — Egypt
 - Income Tax Law No. 91 of 2005 (as amended); 2024 bracket reset; Laws No. 5, 6, 7 of 2025
-- Big-4 / major-firm 2025–2026 tax alerts (PwC, KPMG, EY, Deloitte, Andersen, Matouk Bassiouny)
+- Big-4 / major-firm 2025–2026 tax alerts (secondary summary, KPMG, EY, Deloitte, Andersen, Matouk Bassiouny)
 
 ### Test suite
 
