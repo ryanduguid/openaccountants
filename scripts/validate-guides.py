@@ -86,12 +86,13 @@ from cta_block import MARKER as CTA_MARKER  # noqa: E402
 from cta_block import find_markers as cta_markers  # noqa: E402
 from cta_block import has_cta_link, is_cta_heading  # noqa: E402
 from cta_block import is_optional as cta_optional  # noqa: E402
-from oa_tools import guides, paths  # noqa: E402
+from oa_tools import guides, paths, roster  # noqa: E402
 from oa_tools.frontmatter import (  # noqa: E402
     FrontmatterError,
     extract_frontmatter,
     load_frontmatter,
     parse_known_keys,
+    review_fields,
 )
 
 REPO_ROOT = paths.REPO_ROOT
@@ -174,12 +175,12 @@ TAX_YEAR_MIN, TAX_YEAR_MAX = 2015, 2035
 
 
 LAST_UPDATED_FMT = re.compile(r"\d{4}-\d{2}-\d{2}")
-NON_REVIEWER_MARKERS = {"pending", "pending_review", "none", "no", "false", "-", "n/a", "tbd"}
+NON_REVIEWER_MARKERS = roster.UNREVIEWED_MARKERS
 
 
 def real_reviewer(value):
     """Whether a frontmatter reviewer field makes a real named claim."""
-    return bool(value and str(value).strip().lower() not in NON_REVIEWER_MARKERS)
+    return roster.reviewer_value(value) is not None
 
 
 #: The values `review_status` may take (docs/skill-template.md): review
@@ -553,11 +554,12 @@ def check_guides(bi, errors, warnings, only_files=None, *, parse=None):
             continue
         guides += 1
         try:
-            (parse or load_frontmatter)(block)
+            metadata = (parse or load_frontmatter)(block)
         except FrontmatterError as exc:
             errors.append(f"{rel}: invalid YAML frontmatter: {exc}")
             continue
         fields = bi.parse_known_keys(block)
+        fields.update(review_fields(metadata))
         if not fields["name"]:
             errors.append(f"{rel}: missing required frontmatter key `name`")
         check_state_naming(rel, fields["name"], errors)

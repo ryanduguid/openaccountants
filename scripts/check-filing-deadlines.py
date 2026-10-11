@@ -40,7 +40,12 @@ symptom, and the defect underneath it was a form name.
 
 Usage: python3 scripts/check-filing-deadlines.py [skills]
 """
+import argparse
 import os, re, collections, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import directory
+from oa_tools.guides import markdown_files, jurisdiction_group
 
 MONTH = ('January|February|March|April|May|June|July|August|September|'
          'October|November|December')
@@ -53,23 +58,19 @@ DUE = re.compile(r'\b(due|deadline|file by|lodge by|filed by|submit by)\b', re.I
 
 def main(root):
     pairs = collections.defaultdict(lambda: collections.defaultdict(set))
-    for dp, _, fns in os.walk(root):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
+    for p, source_path in markdown_files(root):
+        jur = jurisdiction_group(p, root)
+        if jur is None:
+            continue
+        for line in open(source_path, encoding='utf-8', errors='replace'):
+            if not DUE.search(line):
                 continue
-            p = os.path.join(dp, fn)
-            parts = p.split(os.sep)
-            if len(parts) < 3:
+            ds, fs = DAY.findall(line), set(FORM.findall(line))
+            if len(ds) != 1 or len(fs) != 1:   # one form, one date, no ambiguity
                 continue
-            for line in open(p, encoding='utf-8', errors='replace'):
-                if not DUE.search(line):
-                    continue
-                ds, fs = DAY.findall(line), set(FORM.findall(line))
-                if len(ds) != 1 or len(fs) != 1:   # one form, one date, no ambiguity
-                    continue
-                d = ds[0]
-                date = '%s %s' % (d[0], d[1]) if d[0] else '%s %s' % (d[3], d[2])
-                pairs[parts[2]][fs.pop()].add((date, p))
+            d = ds[0]
+            date = '%s %s' % (d[0], d[1]) if d[0] else '%s %s' % (d[3], d[2])
+            pairs[jur][fs.pop()].add((date, p))
 
     hits = 0
     for jur in sorted(pairs):
@@ -83,4 +84,8 @@ def main(root):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else 'skills')
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('root', nargs='?', type=directory, metavar='DIR',
+                        help="directory to scan (default: this checkout's skills)")
+    args = parser.parse_args()
+    main(args.root)

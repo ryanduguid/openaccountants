@@ -26,7 +26,7 @@ import os
 from .paths import REPO_ROOT
 
 #: Values of ``reviewed_by`` / ``verified_by`` that mean "nobody".
-UNREVIEWED_MARKERS = frozenset({"pending", "none", "no", "false", "-", "n/a", "tbd"})
+UNREVIEWED_MARKERS = frozenset({"pending", "pending_review", "none", "no", "false", "-", "n/a", "tbd"})
 #: The reviewer string of the one reviewer who asked not to be named.
 WITHHELD_MARKER = "name withheld"
 
@@ -38,12 +38,21 @@ PARTNERS_PATH = os.path.join(REPO_ROOT, "PARTNERS.md")
 HEADLINE_LABELS = ("Guides", "jurisdictions", "accountant-reviewed", "named accountants")
 
 
+def reviewer_value(value):
+    """A stripped reviewer string, or None for blanks, markers and other types."""
+    if isinstance(value, str):
+        value = value.strip()
+        if value and value.lower() not in UNREVIEWED_MARKERS:
+            return value
+    return None
+
+
 def reviewer_name(guide):
     """The reviewer name a guide carries, whatever its tier, or None."""
     for key in ("reviewed_by", "verified_by"):
-        value = guide.get(key)
-        if value and str(value).strip().lower() not in UNREVIEWED_MARKERS:
-            return str(value).strip()
+        value = reviewer_value(guide.get(key))
+        if value is not None:
+            return value
     return None
 
 
@@ -176,6 +185,10 @@ def render_partners(index, profiles):
     total_jurisdictions = index.get("counts", {}).get("jurisdictions", figures["jurisdictions"])
     unused = sorted(name for name in profiles if name not in {row["reviewer"] for row in rows})
 
+    def table_name(name):
+        return (name.replace("\\", "\\\\").replace("|", "\\|")
+                .replace("\r\n", "\n").replace("\r", "\n").replace("\n", "<br>"))
+
     def record(row):
         profile = profiles.get(row["reviewer"]) or {}
         url = profile.get("public_record")
@@ -222,7 +235,7 @@ def render_partners(index, profiles):
             for code, n in sorted(row["jurisdictions"].items(), key=lambda kv: (-kv[1], kv[0]))
         )
         out.append("| {} | {} | {} | {} | {} | {} |".format(
-            row["reviewer"], codes, row["guides"], row["edited_since_review"] or "—",
+            table_name(row["reviewer"]), codes, row["guides"], row["edited_since_review"] or "—",
             row["latest"] or "—", record(row)))
     out += [
         "",
@@ -245,7 +258,7 @@ def render_partners(index, profiles):
     ]
     for code, reviewers in sorted(jurisdictions.items(), key=lambda kv: (-sum(kv[1].values()), kv[0])):
         names = "; ".join(
-            "{} ({})".format(name, n) for name, n in sorted(reviewers.items(), key=lambda kv: (-kv[1], kv[0]))
+            "{} ({})".format(table_name(name), n) for name, n in sorted(reviewers.items(), key=lambda kv: (-kv[1], kv[0]))
         )
         out.append("| {} | {} | {} |".format(code, sum(reviewers.values()), names))
     out += [

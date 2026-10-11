@@ -29,19 +29,14 @@ if _HERE not in sys.path:
     sys.path.insert(0, _HERE)
 
 from oa_tools import roster  # noqa: E402
+from oa_tools.cli import generator_arguments  # noqa: E402
 
 
 def main(argv=None):
-    argv = list(sys.argv[1:] if argv is None else argv)
-    out_path = roster.PARTNERS_PATH
-    if "--out" in argv:
-        flag = argv.index("--out")
-        if flag + 1 >= len(argv) or argv[flag + 1].startswith("--"):
-            sys.exit("error: --out requires a file path")
-        out_path = argv[flag + 1]
-        del argv[flag:flag + 2]
-    if argv:
-        sys.exit("error: unknown option(s): {}".format(" ".join(argv)))
+    args = generator_arguments((__doc__ or "").split('\n\n')[0], argv, output=roster.PARTNERS_PATH)
+    if args.help:
+        return 0
+    out_path = args.out
     if not os.path.isfile(roster.INDEX_PATH):
         sys.exit("error: index.json missing; run python3 scripts/build-index.py first")
     index = roster.load_index(roster.INDEX_PATH)

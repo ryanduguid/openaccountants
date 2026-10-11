@@ -15,7 +15,11 @@ what a guide omits were written on this branch from the summary alone.
 Usage: python3 scripts/list-withholding-scope.py [--selftest] [--classic-only]
        python3 scripts/list-withholding-scope.py --show <jurisdiction>
 """
+import argparse
 import os, re, sys, collections
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.guides import markdown_files, jurisdiction_group, skill_path_parts
 
 # Ordered for reading, not for precedence: a label matching several heads
 # records all of them, because "interest and royalties" is two heads and
@@ -179,33 +183,30 @@ def body_heads_in(line):
     return found or None
 
 
-def scan(root='skills'):
+def scan(root=None):
     """Return {jurisdiction: (label_heads, body_only_extras, all_rates_zero)}."""
     labels = collections.defaultdict(set)
     bodies = collections.defaultdict(set)
     nonzero = collections.defaultdict(bool)
-    for dp, _, fns in os.walk(root):
-        parts = dp.split(os.sep)
+    for path, source_path in markdown_files(root):
+        parts = skill_path_parts(path, root)
         if len(parts) >= 2 and parts[1] in SKIP_TREES:
             continue
-        jur = parts[2] if len(parts) >= 3 else ''
+        jur = jurisdiction_group(path, root)
         if not jur or jur in SKIP_DIRS:
             continue
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            wht_guide = bool(WHT_FILE.search(fn))
-            with open(os.path.join(dp, fn), encoding='utf-8', errors='replace') as fh:
-                for line in fh:
-                    got = heads_in(line, wht_guide)
-                    if got:
-                        labels[jur] |= got
-                        m = BULL.match(line) or ROW.match(line)
-                        if not is_zero(m.group(2)):
-                            nonzero[jur] = True
-                    got = body_heads_in(line)
-                    if got:
-                        bodies[jur] |= got
+        wht_guide = bool(WHT_FILE.search(os.path.basename(path)))
+        with open(source_path, encoding='utf-8', errors='replace') as fh:
+            for line in fh:
+                got = heads_in(line, wht_guide)
+                if got:
+                    labels[jur] |= got
+                    m = BULL.match(line) or ROW.match(line)
+                    if not is_zero(m.group(2)):
+                        nonzero[jur] = True
+                got = body_heads_in(line)
+                if got:
+                    bodies[jur] |= got
     return {j: (labels[j], bodies[j] - labels[j], not nonzero[j]) for j in labels}
 
 
@@ -303,7 +304,7 @@ def selftest():
           % len(cases))
 
 
-def show(jur, root='skills'):
+def show(jur, root=None):
     """Print every withholding line one jurisdiction has, with its file.
 
     This exists because of a mistake made three times on this branch. The
@@ -327,37 +328,30 @@ def show(jur, root='skills'):
     the rows are absent. The same guide-level flag applies here.
     """
     seen = 0
-    for dp, _, fns in sorted(os.walk(root)):
-        parts = dp.split(os.sep)
-        if len(parts) < 3 or parts[2] != jur:
+    for path, source_path in sorted(markdown_files(root)):
+        if jurisdiction_group(path, root) != jur:
             continue
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            in_wht_guide = bool(WHT_FILE.search(fn))
-            path = os.path.join(dp, fn)
-            with open(path, encoding='utf-8', errors='replace') as fh:
-                for n, line in enumerate(fh, 1):
-                    m = BULL.match(line) or ROW.match(line)
-                    if not m:
-                        continue
-                    # A label that says "withholding" always qualifies, even
-                    # when it commits to no rate -- a cross-reference is worth
-                    # reading. Inside a dedicated guide, a row that commits to a
-                    # rate qualifies on that alone, which is what scan() counts.
-                    if not (LABEL.search(m.group(1))
-                            or (in_wht_guide and VALUE.search(m.group(2)))):
-                        continue
-                    heads = {name for name, pat in HEADS
-                             if re.search(pat, m.group(1), re.I)}
-                    body = {name for name, pat in HEADS
-                            if name not in CLASSIC and re.search(pat, m.group(2), re.I)}
-                    tag = ','.join(sorted(heads)) or '-'
-                    extra = (' +body:' + ','.join(sorted(body - heads))) if body - heads else ''
-                    print('%s:%d  [%s%s]\n    %s\n    %s' % (
-                        path, n, tag, extra, m.group(1).strip(),
-                        m.group(2).strip()[:300]))
-                    seen += 1
+        in_wht_guide = bool(WHT_FILE.search(os.path.basename(path)))
+        with open(source_path, encoding='utf-8', errors='replace') as fh:
+            for n, line in enumerate(fh, 1):
+                m = BULL.match(line) or ROW.match(line)
+                if not m:
+                    continue
+                # A label that says "withholding" qualifies without a rate.
+                # A rate in a dedicated guide also qualifies, as scan() counts it.
+                if not (LABEL.search(m.group(1))
+                        or (in_wht_guide and VALUE.search(m.group(2)))):
+                    continue
+                heads = {name for name, pat in HEADS
+                         if re.search(pat, m.group(1), re.I)}
+                body = {name for name, pat in HEADS
+                        if name not in CLASSIC and re.search(pat, m.group(2), re.I)}
+                tag = ','.join(sorted(heads)) or '-'
+                extra = (' +body:' + ','.join(sorted(body - heads))) if body - heads else ''
+                print('%s:%d  [%s%s]\n    %s\n    %s' % (
+                    path, n, tag, extra, m.group(1).strip(),
+                    m.group(2).strip()[:300]))
+                seen += 1
     if not seen:
         print('no withholding-labelled lines found for %r' % jur)
     else:
@@ -415,12 +409,16 @@ def main(classic_only=False):
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(prog='list-withholding-scope.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--show', metavar='NAME', help='show every withholding-labelled line in this guide group')
+    mode.add_argument('--classic-only', action='store_true', help='only list classic withholding heads')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
-    elif '--show' in sys.argv:
-        i = sys.argv.index('--show')
-        if i + 1 >= len(sys.argv):
-            sys.exit('--show needs a jurisdiction, e.g. --show vietnam')
-        sys.exit(show(sys.argv[i + 1]))
+    elif args.show is not None:
+        sys.exit(show(args.show))
     else:
-        sys.exit(main('--classic-only' in sys.argv))
+        sys.exit(main(args.classic_only))

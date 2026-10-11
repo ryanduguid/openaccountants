@@ -59,7 +59,12 @@ four were read and are correct.
 Usage: python3 scripts/check-amount-conflicts.py [skills]
        python3 scripts/check-amount-conflicts.py --selftest
 """
+import argparse
 import os, re, collections, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import directory
+from oa_tools.guides import markdown_files, jurisdiction_group
 
 ROW = re.compile(r'^\s*\|\s*([^|]{6,70}?)\s*\|\s*([^|]{1,70}?)\s*\|\s*$')
 BULL = re.compile(r'^\s*-\s+\*\*([^*]{6,70}?)\*\*\s*[—-]+\s*(.{1,70})')
@@ -97,28 +102,24 @@ def canon(a):
 
 def main(root):
     facts = collections.defaultdict(lambda: collections.defaultdict(set))
-    for dp, _, fns in os.walk(root):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
+    for p, source_path in markdown_files(root):
+        jur = jurisdiction_group(p, root)
+        if jur is None:
+            continue
+        for line in open(source_path, encoding='utf-8', errors='replace'):
+            m = ROW.match(line) or BULL.match(line)
+            if not m:
                 continue
-            p = os.path.join(dp, fn)
-            parts = p.split(os.sep)
-            if len(parts) < 3:
+            lab, val = m.group(1), m.group(2)
+            if not KEY.search(lab):
                 continue
-            for line in open(p, encoding='utf-8', errors='replace'):
-                m = ROW.match(line) or BULL.match(line)
-                if not m:
-                    continue
-                lab, val = m.group(1), m.group(2)
-                if not KEY.search(lab):
-                    continue
-                l = norm(lab)
-                if len(l.split()) < 2:
-                    continue
-                amts = amounts(val)
-                if len(amts) != 1:          # one amount, no ambiguity
-                    continue
-                facts[parts[2]][l].add((canon(amts[0]), p))
+            l = norm(lab)
+            if len(l.split()) < 2:
+                continue
+            amts = amounts(val)
+            if len(amts) != 1:          # one amount, no ambiguity
+                continue
+            facts[jur][l].add((canon(amts[0]), p))
 
     hits = 0
     for jur in sorted(facts):
@@ -150,7 +151,12 @@ def selftest():
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('root', nargs='?', type=directory, metavar='DIR',
+                        help="directory to scan (default: this checkout's skills)")
+    parser.add_argument('--selftest', action='store_true', help='run offline tests')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
     else:
-        main(sys.argv[1] if len(sys.argv) > 1 else 'skills')
+        main(args.root)

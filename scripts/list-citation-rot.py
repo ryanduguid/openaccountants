@@ -73,15 +73,20 @@ small foreign tax authorities, it would have been believed both times.
 It ranks, it does not accuse. Every hit prints the snippet that triggered it so
 a reader can see exactly what the script saw and disagree. A gaming regulator
 cited for betting duty will trip the gambling words; that is a false positive by
-design, preferred over missing a hijacked ministry. Always exits 0, and it must:
+design, preferred over missing a hijacked ministry. Review reports exit 0, and they must:
 it depends on the network, and a checker that fails CI when a foreign tax
-authority has a bad morning teaches people to ignore CI.
+authority has a bad morning teaches people to ignore CI. Invalid arguments exit 2.
 
 Usage: python3 scripts/list-citation-rot.py [--selftest] [--limit N]
                                             [--jurisdiction NAME] [--jobs N]
 """
-import os, re, sys, json, collections, urllib.request, urllib.error, socket, html
+import os, re, sys, json, collections, urllib.request, urllib.error, socket, html, argparse
 from concurrent.futures import ThreadPoolExecutor
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files, skill_path_parts, skill_group
 
 URL = re.compile(r'https?://[^\s)\]>"\'`]+')
 HOST = re.compile(r'https?://([^/\s)\]>"]+)')
@@ -246,27 +251,23 @@ def second_opinion(root, cited):
     return cited[0], 'host root %s; cited URL %s' % (root[1], cited[1])
 
 
-def cited_hosts(only=None):
+def cited_hosts(only=None, root=None):
     """{host: [(path, line, url)]} for every external host cited under skills/."""
     out = collections.defaultdict(list)
-    for dp, _, fns in os.walk('skills'):
-        parts = dp.split(os.sep)
+    for path, source in markdown_files(root):
+        parts = skill_path_parts(path, root)
         if len(parts) > 1 and parts[1] in SKIP_TREES:
             continue
-        if only and (len(parts) < 3 or parts[2] != only):
+        if only and skill_group(path, root) != only:
             continue
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            path = os.path.join(dp, fn)
-            with open(path, encoding='utf-8', errors='replace') as fh:
-                for n, line in enumerate(fh, 1):
-                    for u in URL.findall(line):
-                        u = u.rstrip('.,;:')
-                        h = HOST.match(u).group(1)
-                        if any(h == s or h.endswith('.' + s) for s in SELF):
-                            continue
-                        out[h].append((path, n, u))
+        with open(source, encoding='utf-8', errors='replace') as fh:
+            for n, line in enumerate(fh, 1):
+                for u in URL.findall(line):
+                    u = u.rstrip('.,;:')
+                    h = HOST.match(u).group(1)
+                    if any(h == s or h.endswith('.' + s) for s in SELF):
+                        continue
+                    out[h].append((path, n, u))
     return out
 
 
@@ -314,12 +315,23 @@ def selftest():
     print('selftest: 13 cases pass')
 
 
-def main(argv):
-    only = None
-    if '--jurisdiction' in argv:
-        only = argv[argv.index('--jurisdiction') + 1]
-    limit = int(argv[argv.index('--limit') + 1]) if '--limit' in argv else None
-    jobs = int(argv[argv.index('--jobs') + 1]) if '--jobs' in argv else 8
+def main(argv=None):
+    parser = argparse.ArgumentParser(prog='list-citation-rot.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline classification tests')
+    parser.add_argument('--jurisdiction', metavar='NAME', help='only check this guide group')
+    parser.add_argument('--hosts', metavar='HOSTS', help='comma-separated hosts to check')
+    parser.add_argument('--limit', type=int, metavar='N', help='check at most N citation hosts (0 checks none)')
+    parser.add_argument('--jobs', type=int, default=8, metavar='N', help='number of workers (default: 8)')
+    args = parser.parse_args(argv)
+    if args.limit is not None and args.limit < 0:
+        parser.error('--limit must be non-negative')
+    if args.jobs <= 0:
+        parser.error('--jobs must be positive')
+    if args.selftest:
+        selftest()
+        return 0
+    only, limit, jobs = args.jurisdiction, args.limit, args.jobs
 
     # Prove the fetcher can reach the network before trusting anything it says
     # is unreachable. See CONTROLS.
@@ -331,10 +343,10 @@ def main(argv):
 
     where = cited_hosts(only)
     hosts = sorted(where, key=lambda h: -len(where[h]))
-    if '--hosts' in argv:
-        wanted = set(argv[argv.index('--hosts') + 1].split(','))
+    if args.hosts is not None:
+        wanted = set(args.hosts.split(','))
         hosts = [h for h in hosts if h in wanted]
-    if limit:
+    if limit is not None:
         hosts = hosts[:limit]
     sys.stderr.write('checking %d hosts with %d workers...\n' % (len(hosts), jobs))
 
@@ -386,8 +398,7 @@ def main(argv):
         print('\n== %s (%d) ==' % (heading, len(rows)))
         for host, ev in rows:
             cites = where[host]
-            jurs = sorted({c[0].split(os.sep)[2] for c in cites
-                           if len(c[0].split(os.sep)) > 2})
+            jurs = sorted({skill_group(c[0]) for c in cites} - {None})
             print('\n%s  -- %d citation(s) in %s' % (host, len(cites),
                                                      ', '.join(jurs) or '?'))
             print('   %s' % ev[:300])
@@ -416,7 +427,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
-        selftest()
-    else:
-        sys.exit(main(sys.argv))
+    sys.exit(main())

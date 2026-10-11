@@ -41,7 +41,7 @@ WHAT IT IS NOT
 It is not a defect detector and must never gate CI. A single-sourced guide is
 not a wrong guide; it is a guide with no internal corroboration, which is a
 statement about what a mistake would cost, not evidence that one was made. Most
-of what it returns is correct. Always exits 0.
+of what it returns is correct. Review reports exit 0; invalid arguments exit 2.
 
 It also cannot see a guide that cites four different pages on the same HR
 platform under four different hostnames, and it says nothing about whether the
@@ -50,6 +50,7 @@ number is right -- only about how many independent places it came from.
 Usage: python3 scripts/list-single-source-blocks.py [--selftest]
                     [--min-facts N] [--share F] [--jurisdiction NAME] [--all]
 """
+import argparse
 import os, re, sys, collections
 
 _here = os.path.dirname(os.path.abspath(__file__))
@@ -57,7 +58,9 @@ _here = os.path.dirname(os.path.abspath(__file__))
 
 if _here not in sys.path:
     sys.path.insert(0, _here)
+from oa_tools.cli import non_negative_integer
 from oa_tools.sources import PUBLISHER, classify  # noqa: E402
+from oa_tools.guides import markdown_files, skill_group
 
 URL = re.compile(r'https?://[^\s)\]>"\'`]+')
 HOST = re.compile(r'https?://([^/\s)\]>"]+)')
@@ -98,7 +101,7 @@ def concentration(lines):
         # One bullet is one fact however many times its source is repeated in
         # the line; otherwise a bullet citing the same page twice would count
         # as two independent corroborations of itself.
-        for h in set(found):
+        for h in sorted(set(found)):
             hosts[h] += 1
     return total, hosts
 
@@ -151,33 +154,40 @@ def selftest():
 
 
 def main(argv):
-    only = None
-    if '--jurisdiction' in argv:
-        only = argv[argv.index('--jurisdiction') + 1]
-    min_facts = int(argv[argv.index('--min-facts') + 1]) if '--min-facts' in argv else 4
-    share = float(argv[argv.index('--share') + 1]) if '--share' in argv else 0.75
+    parser = argparse.ArgumentParser(prog='list-single-source-blocks.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    parser.add_argument('--jurisdiction', metavar='NAME', help='only list this guide group')
+    parser.add_argument('--min-facts', type=non_negative_integer, default=4, metavar='N',
+                        help='minimum sourced fact count (default: 4)')
+    parser.add_argument('--share', type=float, default=0.75, metavar='F',
+                        help='minimum share from one host, from 0 through 1 (default: 0.75)')
+    parser.add_argument('--all', action='store_true', help='also list authority and publisher guides')
+    args = parser.parse_args(argv[1:])
+    if not 0 <= args.share <= 1:
+        parser.error('--share must be between 0 and 1')
+    if args.selftest:
+        selftest()
+        return 0
+    only, min_facts, share = args.jurisdiction, args.min_facts, args.share
 
     rows = collections.defaultdict(list)
     scanned = 0
-    for dp, _, fns in os.walk('skills'):
-        parts = dp.split(os.sep)
+    for path, source in markdown_files():
+        parts = os.path.dirname(path).split(os.sep)
         if len(parts) > 1 and parts[1] in SKIP_TREES:
             continue
-        if only and (len(parts) < 3 or parts[2] != only):
+        if only and skill_group(path) != only:
             continue
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            path = os.path.join(dp, fn)
-            with open(path, encoding='utf-8', errors='replace') as fh:
-                total, hosts = concentration(fh)
-            if total < min_facts or not hosts:
-                continue
-            scanned += 1
-            host, n = hosts.most_common(1)[0]
-            if n / total < share:
-                continue
-            rows[classify_host(host)].append((n / total, n, total, host, path))
+        with open(source, encoding='utf-8', errors='replace') as fh:
+            total, hosts = concentration(fh)
+        if total < min_facts or not hosts:
+            continue
+        scanned += 1
+        host, n = hosts.most_common(1)[0]
+        if n / total < share:
+            continue
+        rows[classify_host(host)].append((n / total, n, total, host, path))
 
     for kind, heading in (
             ('other', 'ONE HOST CARRIES THE NUMBERS, AND IT IS NEITHER AN '
@@ -207,7 +217,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
-        selftest()
-    else:
-        sys.exit(main(sys.argv))
+    sys.exit(main(sys.argv))

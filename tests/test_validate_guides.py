@@ -152,11 +152,69 @@ class StrictFrontmatterTests(_ValidatorCase):
     def test_valid_guide_passes(self) -> None:
         self.assertEqual(self._check_guides({"skills/good.md": GOOD}), [])
 
+    def test_quality_checks_use_parsed_reviewer_strings(self) -> None:
+        for reviewer in ('"\\t"', '"\\n"', '"\\u0020"', '"\\x20"',
+                         '"p\\x65nding"', '"pending_review"'):
+            for key in ("reviewed_by", "verified_by"):
+                with self.subTest(reviewer=reviewer, key=key):
+                    text = GOOD.replace("tier: 2\n", f"tier: 1\n{key}: {reviewer}\n")
+                    errors = self._check_guides({"skills/good.md": text})
+                    self.assertEqual(len(errors), 1, errors)
+                    self.assertIn("tier 1 requires", errors[0])
+                    if key == "verified_by":
+                        self.assertEqual(self._check_guides({"skills/good.md": text.replace("tier: 1", "tier: 2")}), [])
+        for reviewer in ('"Alex\\x20Example, CPA"', ">\n  Alex Example,\n  CPA", "|\n  Alex Example\n  CPA"):
+            with self.subTest(reviewer=reviewer):
+                text = GOOD.replace("tier: 2\n", f"tier: 1\nreviewed_by: {reviewer}\n")
+                self.assertEqual(self._check_guides({"skills/good.md": text}), [])
+
+    def test_quality_projection_keeps_cached_mapping_and_lexical_date_checks(self) -> None:
+        text = GOOD.replace("tier: 2\n", 'tier: 1\nreviewed_by: "Alex\\x20Example, CPA"\n')
+        block = build_index.extract_frontmatter(text)
+        metadata = validate_guides.load_frontmatter(block)
+        before = metadata.copy()
+        root = self._tree({"skills/good.md": text})
+        errors = []
+        with mock.patch.object(validate_guides, "REPO_ROOT", str(root)), contextlib.redirect_stdout(io.StringIO()):
+            validate_guides.check_guides(_Trees(["skills/good.md"]), errors, [], parse=lambda _: metadata)
+        self.assertEqual(errors, [])
+        self.assertEqual(metadata, before)
+        for value in ("01", "true", "1.0"):
+            with self.subTest(tier=value):
+                errors = self._check_guides({"skills/good.md": text.replace("tier: 1\n", f"tier: {value}\n")})
+                self.assertTrue(any("must be 1 or 2" in error for error in errors), errors)
+
     def test_malformed_yaml_is_an_error(self) -> None:
         errors = self._check_guides({"skills/bad.md": MALFORMED})
 
         self.assertEqual(len(errors), 1, errors)
         self.assertIn("invalid YAML frontmatter", errors[0])
+
+    def test_continued_tier_cannot_supply_canonical_review_evidence(self) -> None:
+        for tier in ("1", "2"):
+            with self.subTest(tier=tier):
+                text = GOOD.replace("tier: 2\n", f"tier: {tier}\n  extra\nreviewed_by: Alex Example, CPA\n")
+                errors = self._check_guides({"skills/good.md": text})
+                self.assertTrue(any("frontmatter key `tier`" in error for error in errors), errors)
+
+    def test_quality_tier_ignores_key_like_lines_inside_quoted_strings(self) -> None:
+        text = GOOD.replace("description: Synthetic guide used by the validator tests.\n",
+                            'description: "Synthetic description.\ntier: 1\nContinued description."\n')
+        text = text.replace("tier: 2\n", "tier: 2\nreviewed_by: Alex Example, CPA\n")
+        self.assertEqual(self._check_guides({"skills/good.md": text}), [])
+        errors = self._check_guides({"skills/good.md": text.replace(
+            "tier: 2\n", "tier: 2\nreview_status: current\n")})
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("tier 2", errors[0])
+        errors = self._check_guides({"skills/good.md": text.replace("tier: 2\n", "")})
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("missing required frontmatter key `tier`", errors[0])
+        for actual in ("01", "0x1", "+1", '"\\u0031"'):
+            with self.subTest(actual=actual):
+                errors = self._check_guides({"skills/good.md": text.replace(
+                    "tier: 2\n", f"tier: {actual}\n")})
+                self.assertEqual(len(errors), 1, errors)
+                self.assertIn("must be 1 or 2", errors[0])
 
     def test_duplicate_keys_are_an_error(self) -> None:
         doubled = GOOD.replace("tier: 2\n", "tier: 2\ntier: 1\n")
@@ -453,6 +511,29 @@ class DependsOnTests(_ValidatorCase):
         }
 
         self.assertEqual(self._check_depends_on(files), [])
+
+
+class ReviewScalarParserTests(_ValidatorCase):
+    def test_present_blank_status_is_rejected_after_strict_parsing(self) -> None:
+        reviewed = GOOD.replace("tier: 2\n", "tier: 1\nreviewed_by: Alex Example, CPA\n")
+        for raw in ('""', r'"\t"', r'"\n"', r'"\u0020"'):
+            with self.subTest(raw=raw):
+                text = reviewed.replace("tier: 1\n", "tier: 1\nreview_status: " + raw + "\n")
+                errors = self._check_guides({"skills/international/malta/synthetic-guide.md": text})
+                self.assertEqual(len(errors), 1, errors)
+                self.assertIn("`review_status` must be current or pending_review", errors[0])
+        for raw in (None, "current", "pending_review"):
+            with self.subTest(raw=raw):
+                text = reviewed if raw is None else reviewed.replace(
+                    "tier: 1\n", "tier: 1\nreview_status: " + raw + "\n")
+                self.assertEqual(self._check_guides({"skills/international/malta/synthetic-guide.md": text}), [])
+
+    def test_invalid_yaml_date_is_reported_as_frontmatter_error(self) -> None:
+        text = GOOD.replace("last_updated: 2026-01-02", "last_updated: 2026-02-30")
+        errors = self._check_guides({"skills/international/malta/synthetic-guide.md": text})
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("invalid YAML frontmatter", errors[0])
+        self.assertRegex(errors[0], "day.*range")
 
 
 class CtaBlockTests(_ValidatorCase):

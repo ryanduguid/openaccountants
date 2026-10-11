@@ -38,7 +38,12 @@ a jurisdiction, so check what it means locally before believing it.
 
 Usage: python3 scripts/check-tax-authority.py [skills]
 """
+import argparse
 import os, re, collections, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import directory
+from oa_tools.guides import markdown_files, jurisdiction_group
 
 AUTH = ['HMRC', 'IRS', 'ATO', 'SARS', 'MTCA', 'FTB', 'EDD', 'DIAN', 'AFIP', 'SUNAT',
         'SII', 'SAT', 'DGII', 'SIN', 'SRI', 'IRAS', 'LHDN', 'DGT', 'BIR', 'FBR',
@@ -57,19 +62,15 @@ PAT = re.compile(r'(?<![A-Za-z0-9])(' + '|'.join(re.escape(a) for a in
 def main(root):
     byjur = collections.defaultdict(collections.Counter)
     files = collections.defaultdict(dict)
-    for dp, _, fns in os.walk(root):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            p = os.path.join(dp, fn)
-            parts = p.split(os.sep)
-            if len(parts) < 3:
-                continue
-            c = collections.Counter(
-                PAT.findall(open(p, encoding='utf-8', errors='replace').read()))
-            if c:
-                files[parts[2]][p] = c
-                byjur[parts[2]].update(c)
+    for p, source_path in markdown_files(root):
+        jur = jurisdiction_group(p, root)
+        if jur is None:
+            continue
+        c = collections.Counter(
+            PAT.findall(open(source_path, encoding='utf-8', errors='replace').read()))
+        if c:
+            files[jur][p] = c
+            byjur[jur].update(c)
 
     flags = 0
     for jur in sorted(byjur):
@@ -86,4 +87,8 @@ def main(root):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else 'skills')
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('root', nargs='?', type=directory, metavar='DIR',
+                        help="directory to scan (default: this checkout's skills)")
+    args = parser.parse_args()
+    main(args.root)

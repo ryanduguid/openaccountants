@@ -132,12 +132,180 @@ def _safe_resolve(packages_dir: Path, *segments: str) -> Path:
 # Frontmatter + markdown parsing
 # ---------------------------------------------------------------------------
 
-_FM_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n?(.*)$", re.DOTALL)
+_FM_RE = re.compile(
+    r"\A---[^\S\n]*\n(.*?)^(?:---|\.\.\.)[^\S\n]*(?:\n|\Z)\s*(.*)\Z",
+    re.DOTALL | re.MULTILINE,
+)
 _HEADING_RE = re.compile(r"^(#{1,6})\s+(\S.*)$")
 _FENCE_RE = re.compile(r"^ {0,3}(`{3,}|~{3,})(.*)$")
 
 
 _KEYLINE_RE = re.compile(r"^([A-Za-z_][\w-]*):(.*)$")
+
+# Match the repository strict reader's presence-sensitive field types without
+# importing repository-only scripts into the standalone wheel.
+_STRING_FIELDS = frozenset({
+    "name", "description", "jurisdiction", "category", "tax_year_notes",
+    "verified_by", "reviewed_by", "review_status", "license",
+})
+
+
+class _AssuranceLoader(yaml.SafeLoader):
+    """Safe construction with duplicate effective keys and merge directives rejected."""
+
+    def flatten_mapping(self, node):
+        # Freeze direct projection provenance, including its absence.
+        if node not in self._scalar_projections:
+            projection = None
+            for key, value in node.value:
+                if key.tag == "tag:yaml.org,2002:value":
+                    self._projection_keys.add(key)
+                if projection is None and key in self._projection_keys:
+                    projection = value
+            self._scalar_projections[node] = projection
+        # Recursive merge operands need checking before their keys disappear.
+        merge_seen = False
+        for key_node, _ in node.value:
+            if key_node.tag == "tag:yaml.org,2002:merge":
+                if merge_seen:
+                    raise yaml.constructor.ConstructorError(
+                        "while constructing a mapping", node.start_mark,
+                        "found duplicate merge key", key_node.start_mark,
+                    )
+                merge_seen = True
+        return super().flatten_mapping(node)
+
+    def construct_mapping(self, node, deep=False):
+        if not isinstance(node, yaml.MappingNode):
+            raise yaml.constructor.ConstructorError(
+                "while constructing a mapping", node.start_mark,
+                f"expected a mapping, but found {node.id}", node.start_mark,
+            )
+        self.flatten_mapping(node)
+        seen = set()
+        for key_node, _ in node.value:
+            key = self.construct_object(key_node, deep=deep)
+            try:
+                duplicate = key in seen
+                seen.add(key)
+            except TypeError as exc:
+                raise yaml.constructor.ConstructorError(
+                    "while constructing a mapping", node.start_mark,
+                    "found an unhashable mapping key", key_node.start_mark,
+                ) from exc
+            if duplicate:
+                raise yaml.constructor.ConstructorError(
+                    "while constructing a mapping", node.start_mark,
+                    f"found duplicate key {key!r}", key_node.start_mark,
+                )
+        return super().construct_mapping(node, deep=deep)
+
+    def construct_scalar(self, node):
+        if isinstance(node, yaml.MappingNode):
+            # Deferred children finish before the document is accepted.
+            self.construct_mapping(node)
+            projection = self._scalar_projections[node]
+            if projection is not None:
+                return self.construct_scalar(projection)
+        return super().construct_scalar(node)
+
+    def construct_document(self, node):
+        self._ordered_maps = []
+        self._scalar_projections = {}
+        self._projection_keys = set()
+        try:
+            data = super().construct_document(node)
+            # Deferred aliases must finish before their keys are compared.
+            for omap_node, ordered in self._ordered_maps:
+                keys = []
+                for index, (key, _) in enumerate(ordered):
+                    mark = omap_node.value[index].value[0][0].start_mark
+                    try:
+                        duplicate = key in keys
+                    except RecursionError as exc:
+                        raise yaml.constructor.ConstructorError(
+                            "while constructing an ordered map", omap_node.start_mark,
+                            "ordered-map keys cannot be compared", mark,
+                        ) from exc
+                    if duplicate:
+                        raise yaml.constructor.ConstructorError(
+                            "while constructing an ordered map", omap_node.start_mark,
+                            f"found duplicate key {key!r}", mark,
+                        )
+                    keys.append(key)
+            return data
+        finally:
+            self._ordered_maps.clear()
+            self._scalar_projections.clear()
+            self._projection_keys.clear()
+
+    def construct_yaml_omap(self, node):
+        constructor = super().construct_yaml_omap(node)
+        ordered = next(constructor)
+        yield ordered
+        yield from constructor
+        self._ordered_maps.append((node, ordered))
+
+
+_AssuranceLoader.add_constructor("tag:yaml.org,2002:omap", _AssuranceLoader.construct_yaml_omap)
+
+
+def _load_assurance_metadata(block: str) -> tuple[Any, str | None]:
+    """Construct the original block and retain the actual direct tier key's spelling."""
+    loader = _AssuranceLoader(block)
+    try:
+        node = loader.get_single_node()
+        tier = None
+        if isinstance(node, yaml.MappingNode):
+            for key, value in node.value:
+                if key.tag == "tag:yaml.org,2002:str" and key.value == "tier" and key.start_mark.column == 0:
+                    match = _KEYLINE_RE.match(block.splitlines()[key.start_mark.line])
+                    if match and match.group(1) == "tier":
+                        tier = match.group(2).strip()
+                        if tier.startswith(('"', "'")):
+                            if len(tier) >= 2 and tier.endswith(tier[0]):
+                                tier = tier[1:-1].strip()
+                        else:
+                            for index in range(len(tier)):
+                                if tier[index] == "#" and index and tier[index - 1].isspace():
+                                    tier = tier[:index].rstrip()
+                                    break
+                        if tier in ("1", "2") and not (
+                                isinstance(value, yaml.ScalarNode) and
+                                value.start_mark.line == value.end_mark.line == key.start_mark.line):
+                            tier = None
+        try:
+            metadata = loader.construct_document(node) if node is not None else None
+        except (ValueError, TypeError, KeyError, IndexError, AttributeError, RecursionError) as exc:
+            raise yaml.constructor.ConstructorError(
+                None, None, f"invalid YAML scalar ({exc.__class__.__name__}): {exc}", node.start_mark,
+            ) from exc
+        return metadata, tier
+    finally:
+        loader.dispose()
+
+
+def _assurance_problem(meta: Any, tier: str | None) -> str | None:
+    """Validate read-time evidence; full guide validation remains a separate gate."""
+    if not isinstance(meta, dict) or any(not isinstance(key, str) for key in meta):
+        return "frontmatter must be a mapping with string keys"
+    for key in sorted(_STRING_FIELDS & meta.keys()):
+        if not isinstance(meta[key], str):
+            return f"{key} must be a string"
+    if "depends_on" in meta:
+        dependencies = meta["depends_on"]
+        if not isinstance(dependencies, list) or any(
+                not isinstance(item, str) or not item.strip() for item in dependencies):
+            return "depends_on must be a list of non-empty strings"
+    if tier not in ("1", "2"):
+        return "tier must be an explicit canonical 1 or 2"
+    if "review_status" in meta:
+        status = meta["review_status"].strip()
+        if status not in ("current", "pending_review"):
+            return "review_status must be current or pending_review"
+        if status == "current" and (tier != "1" or not _real_verifier(meta)):
+            return "current status requires usable tier-1 sign-off"
+    return None
 
 
 def _salvage_frontmatter(block: str) -> dict[str, Any]:
@@ -160,7 +328,7 @@ def _salvage_frontmatter(block: str) -> dict[str, Any]:
         try:
             parsed = yaml.safe_load(f"{key}: {raw}") if raw else {key: None}
             meta[key] = (parsed or {}).get(key)
-        except yaml.YAMLError:
+        except (yaml.YAMLError, ValueError, TypeError, KeyError, IndexError, AttributeError, RecursionError):
             meta[key] = " ".join(raw.split())
 
     for line in block.split("\n"):
@@ -175,22 +343,37 @@ def _salvage_frontmatter(block: str) -> dict[str, Any]:
 
 
 def _parse_frontmatter(text: str, source: Any = None) -> tuple[dict[str, Any], str]:
-    """Split a markdown file into (frontmatter dict, body)."""
+    """Split a file; recover inventory, but withhold untrustworthy assurance fields."""
     m = _FM_RE.match(text)
     if not m:
         return {}, text
     try:
-        meta = yaml.safe_load(m.group(1)) or {}
-    except yaml.YAMLError as exc:
-        meta = _salvage_frontmatter(m.group(1))
+        meta, tier = _load_assurance_metadata(m.group(1))
+    except (yaml.YAMLError, ValueError, RecursionError) as exc:
+        try:
+            meta = yaml.safe_load(m.group(1))
+        except (yaml.YAMLError, ValueError, TypeError, KeyError, IndexError, AttributeError, RecursionError):
+            meta = _salvage_frontmatter(m.group(1))
+        if not isinstance(meta, dict):
+            meta = {}
+        problem = "invalid or ambiguous YAML"
         log.warning(
             "malformed YAML frontmatter in %s: %s -- salvaged %d key(s)",
             source or "<unknown>",
             str(exc).splitlines()[0] if str(exc) else exc.__class__.__name__,
             len(meta),
         )
+    else:
+        # Keep projection/application failures outside YAML exception handling.
+        problem = _assurance_problem(meta, tier)
     if not isinstance(meta, dict):
         meta = {}
+    if problem:
+        for key in ("reviewed_by", "verified_by", "review_status"):
+            meta.pop(key, None)
+        log.warning("withholding assurance metadata in %s: %s", source or "<unknown>", problem)
+    elif "review_status" in meta:
+        meta["review_status"] = meta["review_status"].strip()
     return meta, m.group(2)
 
 

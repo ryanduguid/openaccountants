@@ -58,9 +58,15 @@ check whether the sibling scopes the old rate to a period ("for supplies before
 ...") rather than asserting it flatly.
 
 Usage: python3 scripts/check-superseded-rates.py [--verbose]
-Exit status is always 0: this is a review aid, not a gate.
+Review findings exit 0; invalid arguments exit 2.
 """
+import argparse
 import glob, io, os, re, sys, collections
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.paths import REPO_ROOT
 
 # A sentence records a change when it carries change language AND a year from 2023 on.
 # Getting old-vs-new right matters more than matching many shapes: an inverted pair
@@ -179,7 +185,7 @@ def selftest():
 def main():
     verbose = '--verbose' in sys.argv
     files = collections.defaultdict(list)
-    for p in sorted(glob.glob('skills/**/*.md', recursive=True)):
+    for p in sorted(glob.glob('skills/**/*.md', recursive=True, root_dir=REPO_ROOT)):
         j = jurisdiction_of(p)
         if j:
             files[j].append(p)
@@ -188,7 +194,7 @@ def main():
     for j in sorted(files):
         superseded = {}          # old rate -> (new rate, file, line, sentence)
         for p in files[j]:
-            for n, line in enumerate(io.open(p, encoding='utf-8', errors='replace'), 1):
+            for n, line in enumerate(io.open(os.path.join(REPO_ROOT, p), encoding='utf-8', errors='replace'), 1):
                 if SECTOR.search(line):
                     continue
                 for old, new in superseded_in(line).items():
@@ -196,7 +202,7 @@ def main():
         if not superseded:
             continue
         for p in files[j]:
-            for n, line in enumerate(io.open(p, encoding='utf-8', errors='replace'), 1):
+            for n, line in enumerate(io.open(os.path.join(REPO_ROOT, p), encoding='utf-8', errors='replace'), 1):
                 for m in CURRENT.finditer(line):
                     rate = m.group(1) or m.group(2)
                     if rate not in superseded:
@@ -225,7 +231,12 @@ def main():
     print('\nsuperseded-rate leads: %d' % hits)
 
 
-if '--selftest' in sys.argv:
-    selftest()
-else:
-    main()
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('--verbose', action='store_true', help='accepted for compatibility')
+    parser.add_argument('--selftest', action='store_true', help='run offline tests')
+    args = parser.parse_args()
+    if args.selftest:
+        selftest()
+    else:
+        main()

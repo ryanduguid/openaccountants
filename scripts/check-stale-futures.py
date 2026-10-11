@@ -6,9 +6,14 @@ Skips provenance and lines with future dates. A past proposed start date does
 not establish enactment; every hit needs source review.
 
 Usage: python3 scripts/check-stale-futures.py [--today YYYY-MM-DD] [dir ...]
-Exit status is always 0: this is a review aid, not a gate.
+Review findings exit 0; invalid arguments exit 2.
 """
+import argparse
 import datetime, glob, os, re, signal, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import directory
+from oa_tools.paths import REPO_ROOT
 
 try:
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
@@ -56,19 +61,38 @@ def parse(m):
         return None
 
 
-def main():
-    argv = sys.argv[1:]
-    today = datetime.date.today()
-    if '--today' in argv:
-        i = argv.index('--today')
-        today = datetime.date(*map(int, argv[i + 1].split('-')))
-        del argv[i:i + 2]
-    roots = argv or ['skills']
+def date_argument(value):
+    try:
+        return datetime.date(*map(int, value.split('-')))
+    except (TypeError, ValueError) as error:
+        raise argparse.ArgumentTypeError('expected a valid YYYY-MM-DD date') from error
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('--today', type=date_argument, default=datetime.date.today(),
+                        metavar='YYYY-MM-DD', help='date to compare against (default: today)')
+    parser.add_argument('--selftest', action='store_true', help='run offline tests')
+    parser.add_argument('roots', nargs='*', type=directory, metavar='DIR',
+                        help="directories to scan (default: this checkout's skills)")
+    argv = sys.argv[1:] if argv is None else list(argv)
+    if '--' in argv:
+        # Parse the separator separately for older argparse versions.
+        separator = argv.index('--')
+        args = parser.parse_intermixed_args(argv[:separator])
+        args.roots.extend(parser.parse_args(argv[separator:]).roots)
+    else:
+        args = parser.parse_intermixed_args(argv)
+    if args.selftest:
+        return selftest()
+    today = args.today
+    base_dir = os.curdir if args.roots else REPO_ROOT
+    roots = args.roots or ['skills']
 
     hits = 0
     for root in roots:
-        for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True)):
-            for ln, line in enumerate(open(p, encoding='utf-8', errors='replace'), 1):
+        for p in sorted(glob.glob(os.path.join(root, '**', '*.md'), recursive=True, root_dir=base_dir)):
+            for ln, line in enumerate(open(os.path.join(base_dir, p), encoding='utf-8', errors='replace'), 1):
                 if not FUTURE.search(line) or PROVENANCE.search(line):
                     continue
                 dates = [parse(m) for m in DATE.finditer(line)]
@@ -111,7 +135,5 @@ def selftest():
     print('selftest: 4 cases pass')
 
 
-if '--selftest' in sys.argv:
-    selftest()
-else:
+if __name__ == '__main__':
     main()

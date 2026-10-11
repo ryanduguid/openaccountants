@@ -165,6 +165,74 @@ class ReviewStatusTests(ToolTreeCase):
         self.assertEqual(server.get_skill("xx-cgt")["review_status"], "pending_review")
         self.assertEqual(server.get_skill("xx-stamp-duty")["review_status"], "current")
 
+    def test_invalid_evidence_is_withheld_in_all_public_routes(self) -> None:
+        slug = "xx-income-tax"
+        valid = _skill(slug, "XX Income Tax", body="Assurance metadata needle. Alex Example contributed.",
+                       extra="reviewed_by: Alex Example, CPA\nreview_status: current\n").replace("tier: 2\n", "tier: 1\n")
+
+        def responses():
+            listed = next(row for row in server.list_skills()["skills"] if row["slug"] == slug)
+            hit = server.search_skills("assurance metadata needle")["results"][0]
+            return {"list": listed, "search": hit, "full": server.get_skill(slug),
+                    "sections": server.get_skill_sections(slug)}
+
+        self.write({"xx/xx-income-tax.md": valid})
+        server._index.cache_clear()
+        baseline = responses()
+        cases = (
+            valid.replace("tier: 1\n", "tier: 2\ntier: 1\n"),
+            valid.replace("tier: 1\n", "tier: 1\n  extra\n"),
+            valid.replace("tier: 1\n", "tier: 2\n  extra\n"),
+            valid.replace("tier: 1\n", "tier: 1\n<<:\n  <<: {a: 1}\n  <<: {b: 2}\n"),
+            valid.replace("tier: 1\n", "tier: 01\n"),
+            valid.replace("reviewed_by: Alex Example, CPA\n", "reviewed_by: true\nverified_by: Ann Legacy\n"),
+            valid.replace("review_status: current\n", "review_status: [current]\n"),
+            valid.replace("last_updated: 2026-01-02\n", "last_updated: 2026-02-30\n"),
+            valid.replace("tier: 1\n", "tier: 1\ndescription: bad: colon\n"),
+            valid.replace("tier: 1\n", "tier: 1\ndescription: true\n"),
+            *(valid.replace("tier: 1\n", "tier: 1\n" + malformed + extra + "\n")
+              for extra in ("extra: !!bool nonsense", 'extra: !!int ""', 'extra: !!float ""',
+                            "last_updated: !!timestamp nonsense")
+              for malformed in ("", "description: bad: colon\n")),
+        )
+        for text in cases:
+            with self.subTest(text=text.split("---")[1]):
+                self.write({"xx/xx-income-tax.md": text})
+                server._index.cache_clear()
+                actual = responses()
+                for route, response in actual.items():
+                    self.assertEqual(set(response), set(baseline[route]))
+                    self.assertEqual(response["quality_tier"], "research-verified")
+                    self.assertIsNone(response["verified_by"])
+                    self.assertEqual(response["review_status"], "")
+                footer = actual["full"]["markdown"].split("## Provenance & attribution", 1)[1]
+                self.assertNotIn("**Verified by:**", footer)
+                self.assertNotIn("verified by Alex", footer)
+                self.assertIn("research-verified", footer)
+                plan = server.start(intent="taxes", jurisdiction="XX")
+                selected = next(row for row in plan["skills_to_load"] if row["slug"] == slug)
+                self.assertEqual(selected["quality_tier"], "research-verified")
+
+    def test_assurance_changes_refresh_only_after_clearing_both_caches(self) -> None:
+        path = "xx/xx-income-tax.md"
+        valid = _skill("xx-income-tax", "XX Income Tax", body="Assurance cache needle.",
+                       extra="reviewed_by: Alex Example, CPA\nreview_status: current\n").replace("tier: 2\n", "tier: 1\n")
+        invalid = valid.replace("tier: 1\n", "tier: 2\ntier: 1\n")
+        self.write({path: valid})
+        server._index.cache_clear()
+        first = server.search_skills("assurance cache needle")["results"]
+        self.assertEqual(first[0]["quality_tier"], "accountant-verified")
+        self.write({path: invalid})
+        self.assertEqual(server.search_skills("assurance cache needle")["results"], first)
+        server._index.cache_clear()
+        second = server.search_skills("assurance cache needle")["results"]
+        self.assertEqual(second[0]["quality_tier"], "research-verified")
+        self.assertIsNone(second[0]["verified_by"])
+        self.write({path: valid})
+        self.assertEqual(server.search_skills("assurance cache needle")["results"], second)
+        server._index.cache_clear()
+        self.assertEqual(server.search_skills("assurance cache needle")["results"], first)
+
     def test_search_and_sections_preserve_canonical_review_metadata(self) -> None:
         cases = (
             ("draft", 2, "reviewed_by: Alex Example, CPA\nreview_status: pending_review\n",

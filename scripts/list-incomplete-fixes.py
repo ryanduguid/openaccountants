@@ -34,8 +34,8 @@ printed with its number so you can read it before deciding.
 
 WHAT IT IS NOT
 
-It ranks, it does not accuse, and it always exits 0. Most of what it returns is
-correct and must stay:
+It ranks, it does not accuse, and completed reviews exit 0. Usage errors exit 2;
+Git failures exit 1. Most of what it returns is correct and must stay:
 
   - **Dated worked examples.** Bolivia's Form 610 example is computed at the
     2025 minimum wage of Bs 2,750 and says so, with a July 2025 due date. The
@@ -64,8 +64,9 @@ quietly fixed, because the same mistake is available to anyone extending the
 pattern list below.
 
 Usage: python3 scripts/list-incomplete-fixes.py [--base origin/main] [--selftest]
+The base must be non-empty and must not begin with a hyphen.
 """
-import re, subprocess, sys, collections
+import argparse, re, subprocess, sys, collections
 
 # A value worth tracking: a percentage, or a number with a decimal point or a
 # thousands separator. Bare small integers are excluded deliberately -- "3" and
@@ -193,14 +194,22 @@ def selftest():
     print('selftest: diff parsing, token boundaries and known misses pass')
 
 
+def base_revision(value):
+    if not value or value.startswith('-'):
+        raise argparse.ArgumentTypeError('base must be non-empty and must not begin with a hyphen')
+    return value
+
+
 def main(base=DEFAULT_BASE):
     try:
-        text = subprocess.run(['git', 'diff', '%s...HEAD' % base],
+        base_revision(base)
+        text = subprocess.run(['git', 'diff', '%s...HEAD' % base, '--'],
                               capture_output=True, text=True, check=True,
                               encoding='utf-8').stdout
-    except (subprocess.CalledProcessError, FileNotFoundError) as exc:
-        print('could not read the diff against %s: %s' % (base, exc))
-        return 0
+    except (argparse.ArgumentTypeError, subprocess.CalledProcessError, OSError) as exc:
+        detail = exc.stderr.strip() if isinstance(exc, subprocess.CalledProcessError) and exc.stderr else str(exc)
+        print('could not read the diff against %s: %s' % (base, detail), file=sys.stderr)
+        return 1
     files = parse_diff(text)
     total = 0
     for path in sorted(files):
@@ -225,10 +234,18 @@ def main(base=DEFAULT_BASE):
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0],
+                                     allow_abbrev=False, add_help=False)
+    parser.add_argument('-h', '--help', action='store_true', help='show this help message and exit')
+    parser.add_argument('--base', type=base_revision, action='append', metavar='REV',
+                        help='base for the committed three-dot diff (default: origin/main)')
+    parser.add_argument('--selftest', action='store_true', help='run the offline selftest')
+    args = parser.parse_args()
+    if args.base and len(args.base) > 1:
+        parser.error('--base may be supplied only once')
+    if args.help:
+        parser.print_help()
+    elif args.selftest:
         selftest()
     else:
-        b = DEFAULT_BASE
-        if '--base' in sys.argv:
-            b = sys.argv[sys.argv.index('--base') + 1]
-        sys.exit(main(b))
+        sys.exit(main(args.base[0] if args.base else DEFAULT_BASE))
