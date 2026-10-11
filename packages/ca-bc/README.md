@@ -1,15 +1,13 @@
 # British Columbia (BC) — AI Tax Assistant | OpenAccountants
 
-> Open-source federal + British Columbia provincial/territorial tax skills for AI.
-> Upload to Claude, ChatGPT, or any AI assistant. Verified by accountants.
+> Federal and British Columbia provincial/territorial tax reference guides for AI.
+> Upload to Claude, ChatGPT, or any AI assistant. Check each guide's review status and limits.
 
 ## What's in this folder
 
 This package is the **British Columbia-specific** provincial/territorial tax skills
-in this folder plus the **federal Canadian** tax and accounting skills (T1, T2125,
-CPP/EI, instalments, GST/HST, T1135, crypto, bookkeeping, payroll, formation,
-financial statements, transfer pricing, tax optimization), which are shared files
-listed below. Upload all of them together.
+in this folder plus the **federal Canadian** guides listed as shared files
+below. Upload all of them together and check their stated coverage.
 
 1. `intake.md`
 2. `bc-eht.md`
@@ -56,13 +54,14 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 ## How to use
 
 1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
-2. Attach your 2025 bank statement (CSV or PDF)
-3. Say: **"Help me with my 2025 taxes. I'm based in British Columbia. Here's my bank statement."**
+2. Attach documents for the period you need help with (CSV or PDF)
+3. Say: **"Help me with my taxes for the period shown in these documents. I'm based in British Columbia. Here's my bank statement."**
 
-The AI will:
+The AI should:
+
 - Ask onboarding questions to confirm your situation
-- Classify every transaction on your bank statement
-- Produce federal T1/T2125 AND British Columbia provincial working papers
+- Check whether the loaded guides cover your requested work and period
+- Prepare draft federal and British Columbia provincial working papers within those guides' conditions
 - Flag anything that needs your CPA's attention
 
 ## Important
@@ -70,29 +69,22 @@ The AI will:
 **This is not tax advice.** Everything produced must be reviewed and signed off by a
 qualified Canadian CPA before filing.
 
-The most up-to-date, verified version of these skills is maintained at
-[openaccountants.com](https://www.openaccountants.com).
+Check each guide's metadata, quality tier, sources and coverage limits before use. Check its applicable period and review status where provided. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
+
+Guide content is available under the source-available OA Guide License; see [LICENSING.md](../../LICENSING.md) for the licence terms and third-party exceptions.
 
 ---
 
 ## Are you a CPA or tax professional in British Columbia?
 
-These British Columbia tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a Canadian CPA to verify it.
+Professional reviews and corrections are welcome:
 
-**You don't need to use GitHub.** Just:
+1. Check the guide's cited primary sources and applicable period.
+2. Edit the relevant source file under `skills/` and submit a pull request to this fork.
+3. State the scope of your review, your qualification and the review date.
 
-1. Download the files in this folder
-2. Check the rates against the CRA and your provincial/territorial finance department
-3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
-
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
-
-Or if you're comfortable with GitHub: fork the repo, fix the source under `skills/international/canada/british-columbia/`, and submit a PR.
-
-**Your name goes on the skill either way.**
+Accountant review requires a named, licensed accountant to review the complete guide and sign it off in a pull request. Contribution credit alone does not establish review. See [the review process](../../CONTRIBUTING.md#review).
 
 ---
 
-*OpenAccountants — open-source accounting skills for AI*
-*Coverage is counted in the repository's `index.json` — [openaccountants.com](https://www.openaccountants.com)*
-*info@openaccountants.com*
+*Coverage is counted in the repository's `index.json`.*

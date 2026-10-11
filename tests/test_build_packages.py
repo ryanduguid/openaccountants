@@ -84,6 +84,24 @@ class SyntheticTreeCase(unittest.TestCase):
 
 
 class RebuildTests(SyntheticTreeCase):
+    def test_package_instructions_match_this_forks_review_and_licence_process(self) -> None:
+        self.build()
+        for package in ("zzland", "us-ca", "ca-on"):
+            with self.subTest(package=package):
+                readme = (self.packages / package / "README.md").read_text(encoding="utf-8")
+                self.assertIn("source-available OA Guide License", readme)
+                self.assertIn("../../LICENSING.md", readme)
+                self.assertIn("../../CONTRIBUTING.md#review", readme)
+                self.assertIn("submit a pull request to this fork", readme)
+                self.assertIn("review status where provided", readme)
+                self.assertIn("period shown in these documents", readme)
+                for unsupported in (
+                    "Verified by accountants.", "verified version", "Free and open source",
+                    "info@openaccountants.com", "credit you publicly", "Your name goes on",
+                    "your 2025 bank statement", "my 2025 taxes", "Help me set up a company",
+                ):
+                    self.assertNotIn(unsupported, readme)
+
     def test_intake_and_readme_request_the_users_period(self) -> None:
         self.build()
         intake = (self.packages / "zzland" / "intake.md").read_text(encoding="utf-8")
