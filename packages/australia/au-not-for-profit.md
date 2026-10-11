@@ -2,22 +2,22 @@
 name: au-not-for-profit
 description: >
   Use this skill whenever asked about Australian not-for-profit (NFP) tax compliance -- income tax exemption self-assessment, the annual NFP self-review return, ACNC charity registration and ATO endorsement, the mutuality principle for licensed clubs and member associations, taxable NFP shade-in rates, deductible gift recipient (DGR) endorsement and gift/contribution deductibility, FBT rebate and exemption caps for NFP employers, GST concessions for NFPs, PAYG withholding for NFP employees, or NFP salary packaging. Trigger on phrases like "NFP tax", "charity tax concession", "DGR", "deductible gift", "mutuality", "self-review return", "FBT rebate", "club taxable income". ALWAYS read this skill before touching any NFP tax work.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 (NFP self-review return season: by 31 Oct 2026)"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.3
+# Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context.** (1) From 1 July 2026 the $2 minimum threshold for DGR gift deductions is REMOVED -- backdated to gifts made from 1 July 2024 (all amounts deductible regardless of size; political donations excluded). (2) The NFP self-review return is an ANNUAL obligation from the 2023-24 income year -- non-charitable NFPs with an active ABN self-assessing as income-tax-exempt must lodge by 31 October each year; the 2023-24 return deadline was extended to 31 March 2025, but 31 October applies from 2024-25 onwards. (3) GIC and SIC incurred on or after 1 July 2025 are non-deductible for taxable NFPs.
+> **Law-change context.** (1) From 1 July 2026 the $2 minimum threshold for DGR gift deductions is REMOVED -- backdated to gifts made from 1 July 2024 (all amounts deductible regardless of size; political donations excluded). (2) The NFP self-review return is an ANNUAL obligation from the 2023-24 income year -- non-charitable NFPs with an active ABN self-assessing as income-tax-exempt must lodge by 31 October each year; the 2023-24 return deadline was extended to 31 March 2025, but 31 October applies from 2024-25 onwards. (3) GIC and SIC incurred on or after 1 July 2025 are non-deductible for taxable NFPs. (4) From 1 October 2026, ancillary funds are renamed giving funds (public and private giving funds), and the public and private ancillary fund guidelines continue as the giving fund guidelines ([Treasury Laws Amendment (Strengthening Accountability for Tax Adviser Misconduct and Other Measures) Act 2026, Sch 7](https://www.legislation.gov.au/C2026A00086/asmade/text)). References to ancillary funds in other instruments are read as including giving funds.
 
 ## Section 1 -- Quick reference
 
@@ -71,7 +71,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | R-AU-NFP-5 | State-based concession applications: payroll tax exemption, land tax, stamp duty, gaming machine concessions -- each state and territory differs | Refuse; escalate to the relevant state revenue office process. This skill is Commonwealth tax only |
 | R-AU-NFP-6 | Charity registration itself: ACNC application, subtype selection (advancing health, education, religion, PBI etc.), governing document review for ACNC purposes | Refuse; escalate to the ACNC registration process or a charity lawyer |
 | R-AU-NFP-7 | Mutuality boundary disputes: whether a particular receipt is mutual or assessable where members and non-members are mixed (e.g. reciprocal club arrangements, joint memberships, corporate members) | Compute both ways; escalate the characterisation judgement |
-| R-AU-NFP-8 | Ancillary funds (private or public): establishment, winding up, distribution rules, trustee obligations | Refuse; escalate. Ancillary funds carry special DGR conditions and ACNC/ATO dual oversight |
+| R-AU-NFP-8 | Giving funds (private or public; called ancillary funds before 1 October 2026): establishment, winding up, distribution rules, trustee obligations | Refuse; escalate. Giving funds carry special DGR conditions and ACNC/ATO dual oversight |
 
 ## Section 3 -- GL sweep library
 
@@ -229,11 +229,11 @@ The BRE test (aggregated turnover < $50m AND <= 80% passive income) applies to N
 
 Only gifts to organisations with DGR status are deductible. DGR status comes from ATO endorsement or listing by name in income tax law.
 
-Those methods are separate from item numbers in s 30-15: item 1 includes listed categories such as public hospitals, museums and eligible named entities; item 2 covers ancillary funds, including public and private ancillary funds. Check the item and the endorsed entity/fund scope on [ABN Lookup](https://abr.business.gov.au/Help/DGR) before assessing a recipient. Ancillary-fund distribution advice remains subject to R-AU-NFP-8.
+Those methods are separate from item numbers in s 30-15: item 1 includes listed categories such as public hospitals, museums and eligible named entities; item 2 covers giving funds (public and private giving funds, called ancillary funds before 1 October 2026). Check the item and the endorsed entity/fund scope on [ABN Lookup](https://abr.business.gov.au/Help/DGR) before assessing a recipient. Giving fund distribution advice remains subject to R-AU-NFP-8.
 
 Most charities are NOT automatically DGRs -- ACNC registration is necessary but not sufficient except for PBIs and HPCs (which generally access DGR endorsement). Confirm the endorsed entity or fund scope before advising any donor.
 
-Gift conditions: voluntary transfer of money or property, no material benefit to the donor, and any special conditions on the DGR category (gift funds, overseas aid etc.). From 1 July 2026 the $2 minimum is removed, backdated to gifts from 1 July 2024. Issued receipts must show the fund name, ABN, that it is for a gift, and (community charities and ancillary funds) the donor's name.
+Gift conditions: voluntary transfer of money or property, no material benefit to the donor, and any special conditions on the DGR category (gift funds, overseas aid etc.). From 1 July 2026 the $2 minimum is removed, backdated to gifts from 1 July 2024. Issued receipts must show the fund name, ABN, that it is for a gift, and (community charities and giving funds) the donor's name.
 
 For an individual making a contribution to an eligible DGR fundraising event in Australia, the contribution must exceed $150 and the GST-inclusive benefit must be no more than $150 and no more than 20% of the contribution. These inclusive benefit limits apply to eligible attendance and auction contributions. Raffle and art-union ticket purchases are excluded from this deduction route, regardless of the amount.
 
@@ -393,7 +393,7 @@ If the client provides only financial statements and an ABN:
 | Self-review return | ato.gov.au NFP self-review return reporting requirement (QC 73184); due date 31 October; first year 2023-24 |
 | Taxable NFP rates | Income Tax Rates Act 1986 s 23; ato.gov.au Taxable NFP organisations (QC 33593, updated 26 August 2025); Changes to company tax rates (NFP $416/55% bands). Currency confirmed: the ATO's Changes to company tax rates page states the base-rate-entity shade-in limit of $762 applies "for the 2021-22 income year and later years", so the $762/$915 crossovers stand for 2026-27 |
 | Mutuality | ato.gov.au Mutuality and taxable income for not-for-profits (NAT 73436); Waratahs formula [(B x 75%) + C] / [(R x S x T) + A]; TD 93/194 |
-| DGR endorsement | ITAA 1997 Div 30; ato.gov.au Is my organisation eligible for DGR endorsement; ABN Lookup DGR tool |
+| DGR endorsement | ITAA 1997 Div 30; ato.gov.au Is my organisation eligible for DGR endorsement; ABN Lookup DGR tool; giving funds renamed from ancillary funds on 1 October 2026 (Act No. 86 of 2026, Sch 7, read 11 October 2026) |
 | Gift deductions | ato.gov.au Gifts and donations (QC 72185, updated 6 July 2026 -- $2 threshold removed from 1 Jul 2026, backdated to 1 Jul 2024) |
 | Contribution minor benefit | ato.gov.au Plan fundraising dinners or auctions with confidence (QC 107542, 16 June 2026); Valuing contributions and minor benefits |
 | FBT rebate | FBTAA 1986 s 65J; ato.gov.au FBT rebatable employers (QC 71167); Completing your FBT return 2026 -- NFP employers |
