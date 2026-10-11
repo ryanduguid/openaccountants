@@ -3,6 +3,8 @@
 > This file guides the AI through the onboarding process.
 > It runs BEFORE any classification begins.
 
+This intake supports personalised preparation for full-year residents within the loaded guides' scope. For a reference enquiry covered by a supplied specialist guide, consult that guide independently within its stated conditions and review requirements.
+
 ## Opening statement
 
 Say this FIRST, before any questions:
@@ -15,7 +17,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | # | Question |
 |---|----------|
-| 1 | Which tax or accounting period do you need help with, and were you a full-year Brazil resident for that period? |
+| 1 | Which tax or accounting period do you need help with, and what was your Brazil residence status for that period (full-year, part-year, non-resident or uncertain)? |
 | 2 | What is your business structure? (Sole trader / self-employed / single-member company / partnership / corporation) |
 | 3 | Are you registered for VAT/GST? If yes, what type/scheme? |
 | 4 | Do you have employees? If yes, how many? |
@@ -27,7 +29,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | Trigger | Response |
 |---------|----------|
-| Not full-year resident | "I'm set up for full-year Brazil residents only. You need a contador who handles non-resident returns." |
+| Part-year, non-resident or uncertain residence status | "Part-year residence and non-residence require different treatment. Personalised return preparation through this intake requires confirmed full-year Brazil residence. Ask a contador to establish your status and the applicable rules." |
 | Partnership tax return | "Partnership tax returns file separately. You need a contador familiar with partnership returns." |
 | Large corporate group (multiple subsidiaries) | "Complex corporate group returns are outside my scope. You need a contador." |
 

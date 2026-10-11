@@ -458,6 +458,8 @@ def build_intake(country_name, practitioner_title, jurisdiction_code):
 > This file guides the AI through the onboarding process.
 > It runs BEFORE any classification begins.
 
+This intake supports personalised preparation for full-year residents within the loaded guides' scope. For a reference enquiry covered by a supplied specialist guide, consult that guide independently within its stated conditions and review requirements.
+
 ## Opening statement
 
 Say this FIRST, before any questions:
@@ -470,7 +472,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | # | Question |
 |---|----------|
-| 1 | Which tax or accounting period do you need help with, and were you a full-year {country_name} resident for that period? |
+| 1 | Which tax or accounting period do you need help with, and what was your {country_name} residence status for that period (full-year, part-year, non-resident or uncertain)? |
 | 2 | What is your business structure? (Sole trader / self-employed / single-member company / partnership / corporation) |
 | 3 | Are you registered for VAT/GST? If yes, what type/scheme? |
 | 4 | Do you have employees? If yes, how many? |
@@ -482,7 +484,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | Trigger | Response |
 |---------|----------|
-| Not full-year resident | "I'm set up for full-year {country_name} residents only. You need a {practitioner_title} who handles non-resident returns." |
+| Part-year, non-resident or uncertain residence status | "Part-year residence and non-residence require different treatment. Personalised return preparation through this intake requires confirmed full-year {country_name} residence. Ask a {practitioner_title} to establish your status and the applicable rules." |
 | Partnership tax return | "Partnership tax returns file separately. You need a {practitioner_title} familiar with partnership returns." |
 | Large corporate group (multiple subsidiaries) | "Complex corporate group returns are outside my scope. You need a {practitioner_title}." |
 
@@ -587,6 +589,8 @@ Tax authority: **{tax_authority}**
    - **"Help me set up a company in {country_name}."**
    - **"Prepare my annual accounts."**
 
+The generated intake supports personalised preparation for full-year residents within the loaded guides' scope. Part-year residence and non-residence require separate treatment. Where a supplied guide covers a specialist reference topic, consult it independently within its stated conditions and review requirements.
+
 The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
@@ -597,7 +601,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified {practitioner_title.removeprefix("qualified ")} before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
+Each guide's metadata records its period and review status. Check its sources and coverage limits before use. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
 
 ---
 

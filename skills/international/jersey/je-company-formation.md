@@ -17,7 +17,7 @@ category: formation
 tax_year: 2026
 tier: 2
 last_updated: 2026-10-11
-version: 1.0
+version: 1.1
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -55,6 +55,8 @@ Article 105 has exceptions for laying accounts before a general meeting and memb
 Article 113 ordinarily requires an auditor for a public company, where the articles require one, or where members resolve to require one. It also contains qualified disapplication and other exceptions. Market traded companies need a recognised auditor. Regulated entities can have further obligations. A private-company label alone does not settle audit requirements.
 
 Revenue Jersey separately requires the relevant signed financial accounts or statements with corporate returns, including dormant resident companies and Jersey branch activity within the return's scope. See the [corporate return notes](https://www.gov.je/TaxesMoney/IncomeTax/Companies/CompanyTaxGuidance/pages/companytaxreturnnotes.aspx).
+
+First establish whether an ordinary company return is required for the year or period. [Income Tax Law, Article 120AC](https://www.jerseylaw.je/laws/current/l_29_1961) disapplies specified ordinary returns for relevant MNE group entities, with conditions in Article 120AB. See `je-corporate-income-tax` and `je-pillar-two`; this tax-return exception does not establish an exemption from company accounting or registry duties.
 
 ## Economic substance
 

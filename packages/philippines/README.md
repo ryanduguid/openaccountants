@@ -41,6 +41,8 @@ Tax authority: **Bureau of Internal Revenue (BIR)**
    - **"Help me set up a company in Philippines."**
    - **"Prepare my annual accounts."**
 
+The generated intake supports personalised preparation for full-year residents within the loaded guides' scope. Part-year residence and non-residence require separate treatment. Where a supplied guide covers a specialist reference topic, consult it independently within its stated conditions and review requirements.
+
 The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
@@ -51,7 +53,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
+Each guide's metadata records its period and review status. Check its sources and coverage limits before use. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
 
 ---
 

@@ -16,7 +16,7 @@ category: international
 tax_year: 2026
 tier: 2
 last_updated: 2026-10-11
-version: 1.0
+version: 1.1
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -30,6 +30,12 @@ depends_on:
 Jersey implements Multinational Corporate Income Tax (MCIT), a domestic covered tax, and a qualified Income Inclusion Rule (IIR). The IIR collects qualifying top-up tax through the applicable parent entity; it is a different obligation. The [Revenue Jersey overview](https://www.gov.je/TaxesMoney/IncomeTax/PillarTwo/pages/aboutpillartwo.aspx) describes a 15% minimum effective rate under the Pillar Two framework. This is not 15% of unadjusted accounting profit, and the two mechanisms must not be added mechanically.
 
 At a preliminary level, check consolidated group revenue of at least EUR 750 million in at least 2 of the 4 preceding accounting periods and the existence of Jersey constituent entities. Those facts trigger further scope analysis, including excluded entities, elections and de minimis provisions. They do not by themselves establish a tax amount. MCIT applies to accounting periods beginning on or after 1 January 2025, according to the [overview](https://www.gov.je/TaxesMoney/IncomeTax/PillarTwo/pages/aboutpillartwo.aspx).
+
+## Ordinary income tax interaction
+
+[Income Tax Law, Articles 120AB and 120AC](https://www.jerseylaw.je/laws/current/l_29_1961) govern relevant MNE group entities. Article 120AB requires Jersey constituent-entity status for the relevant whole or part of the assessment year and a chargeable MNE group under Part 3 of the MCIT Law for a fiscal year ending in that assessment year. Its exemption covers the relevant entity's income, profits and gains under the ordinary Income Tax Law. Part-year membership requires statutory apportionment. Article 120AC disapplies specified ordinary return requirements for qualifying years or periods; separate MCIT registration and reporting still require analysis.
+
+Do not require an ordinary corporate return solely because a generic company page says every incorporated company files annually. Equally, do not infer ordinary-tax exemption merely from MCIT registration or the preliminary revenue test. Establish the entity, chargeable-group status and periods before applying either provision.
 
 ## Registration and payments
 
@@ -54,7 +60,7 @@ One qualifying revenue period out of the four does not meet the preliminary reve
 
 ## Research gaps and provenance
 
-The MCIT and IIR legislation, exclusions, technical computation, safe harbours, registration and return deadlines, elections, transitional provisions and ordering remain research gaps for this pack. The overview's MCIT paragraph contains apparently inconsistent wording about IIR top-ups; it is not used as an ordering rule.
+The detailed MCIT and IIR legislation, exclusions, technical computation, safe harbours, registration and return deadlines, elections, transitional provisions and ordering remain research gaps for this pack. The ordinary-tax interaction above is limited to the cited Income Tax Law provisions. The overview's MCIT paragraph contains apparently inconsistent wording about IIR top-ups; it is not used as an ordering rule.
 
 The primary overview was read on 11 October 2026. See `references.md`. This sourced administrative overview is pending professional review and is not a complete Pillar Two computation guide.
 

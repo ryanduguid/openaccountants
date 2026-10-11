@@ -16,7 +16,7 @@ category: international
 tax_year: 2026
 tier: 2
 last_updated: 2026-10-11
-version: 1.0
+version: 1.1
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -29,7 +29,9 @@ depends_on:
 
 Under [Income Tax Law, Article 123](https://www.jerseylaw.je/laws/current/l_29_1961), a Jersey incorporated company is generally Jersey resident. The exception requires central management and control abroad, residence there, and a jurisdiction whose highest company tax rate meets the statutory 10% test. A foreign incorporated company managed and controlled in Jersey is Jersey resident. Confirm the actual facts and any treaty before changing residence treatment.
 
-JFSC incorporation passes company details to Revenue Jersey for automatic corporate tax registration. A foreign company must notify Revenue Jersey within 6 months of becoming resident or acquiring a potentially taxable Jersey income source. Every Jersey incorporated company must submit an annual return, including a company paying tax at zero. See [company tax guidance](https://www.gov.je/Industry/BusinessAdviceHub/BusinessTaxesSocialSecurity/pages/companytax.aspx).
+JFSC incorporation passes company details to Revenue Jersey for automatic corporate tax registration. A foreign company must notify Revenue Jersey within 6 months of becoming resident or acquiring a potentially taxable Jersey income source. Ordinary annual company return duties include companies paying tax at zero. See [company tax guidance](https://www.gov.je/Industry/BusinessAdviceHub/BusinessTaxesSocialSecurity/pages/companytax.aspx), subject to the statutory multinational exception below.
+
+[Income Tax Law, Articles 120AB and 120AC](https://www.jerseylaw.je/laws/current/l_29_1961) qualify that generic guidance. Article 120AB exempts income, profits and gains of a relevant MNE group entity from ordinary income tax. The entity must be a Jersey constituent entity for the relevant whole or part of the assessment year, and its group must be a chargeable MNE group under the MCIT Law for a fiscal year ending in that assessment year. Part-year status requires apportionment under Article 120AB(3). Article 120AC disapplies the specified ordinary company-return requirement for the year or period in which the company meets that status. Establish these conditions and the separate MCIT obligations before deciding which return is required; registration alone does not establish exemption. See `je-pillar-two`.
 
 ## Rate classification
 
@@ -44,11 +46,15 @@ Classify each source and company under the applicable provisions before applying
 | Company in the statutory cannabis industry category | 20% |
 | Large corporate retailer | Retail computation below |
 
-Definitions, deductions and source rules determine whether an exception applies. The separate multinational regime in `je-pillar-two` can apply alongside ordinary corporate tax; its effective tax calculation is not a flat surcharge on this table.
+Definitions, deductions and source rules determine whether an exception applies. First check relevant MNE group status and the ordinary-tax exemption above. The separate multinational computation in `je-pillar-two` is not a flat surcharge on this table.
 
 ## Large corporate retailer computation
 
-[Income Tax Law, Articles 123H to 123L](https://www.jerseylaw.je/laws/current/l_29_1961) and [retailer guidance](https://www.gov.je/TaxesMoney/IncomeTax/Companies/Guidelines/Pages/LargeCorporateRetailers.aspx) require Jersey residence or a permanent establishment, qualifying gross Jersey retail turnover and the retail proportion test. The standalone turnover threshold is GBP 2 million and retail must represent at least 60% of the company's Jersey trading turnover. Associated retailers have aggregation rules; do not assess each company in isolation.
+[Income Tax Law, Articles 123H to 123L](https://www.jerseylaw.je/laws/current/l_29_1961) and [retailer guidance](https://www.gov.je/TaxesMoney/IncomeTax/Companies/Guidelines/Pages/LargeCorporateRetailers.aspx) require Jersey residence or a permanent establishment, qualifying gross Jersey retail turnover and the retail proportion test. The ordinary 12-month turnover threshold is GBP 2 million and retail must represent at least 60% of the company's Jersey trading turnover.
+
+Article 123J adjusts the turnover eligibility threshold to GBP 2 million x days / 365 when the relevant financial period differs from 12 months. Associated companies aggregate their qualifying retail turnover. Under Article 123J(4), the adjusted threshold uses their common period length when all periods have the same length, or the shortest relevant period when their lengths differ. Establish the statutory associations and periods before deciding eligibility. This turnover adjustment is separate from Article 123L's profit-threshold adjustment.
+
+Bounded eligibility checks assume the residence, retail definitions and 60% test are already satisfied. A standalone 182-day period with GBP 1 million qualifying turnover passes because GBP 1 million exceeds GBP 2 million x 182 / 365. A standalone 548-day period with GBP 2.5 million turnover fails because that turnover is below GBP 2 million x 548 / 365. Two associated companies with 182-day and 365-day relevant periods and GBP 600,000 qualifying turnover each use aggregated GBP 1.2 million and the 182-day threshold under Article 123J(3) and (4). These comparisons use exact fractions and do not determine the group's profit base or payable tax.
 
 For a standalone retailer with an ordinary 12-month relevant financial period, let A be the Article 123L Schedule D amount after applicable allowances and reliefs, excluding the deductions and credits that Article 123L(1) tells the reader to disregard:
 
