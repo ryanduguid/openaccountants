@@ -5,7 +5,7 @@ jurisdiction: IM
 category: international
 tax_year: 2026
 last_updated: 2026-10-11
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,9 +25,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Non-resident income tax rate** — 21% on Isle of Man-source income for 2026/27, with no personal allowance (22% in 2024/25; 21% in 2025/26)  _(Isle of Man Treasury, Income Tax Division, Rates and Allowances (2026/27 table with 2020/21 to 2025/26 history) — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/rates-and-allowances/)_
 - **Annual tax cap (election)** — IMP 220,000 individual / IMP 440,000 jointly assessed couple for 2025/26 and 2026/27, fixed for a 5-year election period  _(Isle of Man Treasury, Income Tax Division, Rates and Allowances (2026/27 table with 2020/21 to 2025/26 history) — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/rates-and-allowances/)_
 - **Deductible interest relief** — Mortgage and loan interest relief is limited to IMP 5,000 for a single person, doubled for a jointly assessed couple; other 2026/27 limits are IMP 15,000 for nursing expenses, IMP 7,000 for charitable donations and IMP 1,800 for private medical insurance  _(Isle of Man Treasury, Income Tax Division, Rates and Allowances (2026/27 table with 2020/21 to 2025/26 history) — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/rates-and-allowances/)_
-- **Residence test** — Generally resident if present 183+ days in a tax year, or present on average 90+ days a year over four years (approx — confirm)  _(Income Tax Act 1970, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Return filing deadline** — Before 6 October following the end of the tax year  _(Income Tax Act 1970, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Late filing penalty** — IMP 100 automatic penalty; further IMP 200 if still outstanding by 5 April following  _(Income Tax Act 1970, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Residence test** — Generally resident if present 183+ days in a tax year, or present on average 90+ days a year over four years (approx — confirm)  _(Isle of Man Government, Further information for contractors (an individual present in the Island for 183 or more days in a tax year may be deemed resident) — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/contractors/further-information-for-contractors/ ; the 90-day four-year average rule rests on Practice Note PN 126/06, not read for this change)_
+- **Return filing deadline** — Before 6 October following the end of the tax year  _(Isle of Man Government, Income Tax returns and penalties (returns due 6 October following the end of the tax year) — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/income-tax-returns-and-penalties/)_
+- **Late filing penalty** — IMP 100 automatic penalty; further IMP 200 if still outstanding six months after the due date (6 April following)  _(Isle of Man Government, Income Tax returns and penalties (£100 penalty after the due date; a second £200 penalty if the return is still outstanding six months later) — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/income-tax-returns-and-penalties/)_
 - **Balancing payment due date** — 6 January following the end of the year of assessment  _(Income Tax Act 1970, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 Resident individuals pay tax at just two rates on income above the personal allowance, and may elect an annual tax cap. Non-residents are taxed only on Isle of Man-source income, generally at the 20% non-resident rate.
