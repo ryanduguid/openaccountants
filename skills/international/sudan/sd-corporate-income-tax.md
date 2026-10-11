@@ -1,10 +1,10 @@
 ---
 name: sd-corporate-income-tax
 description: Use this skill whenever asked about Sudanese corporate income tax (Business Profits Tax) for resident companies, branches of foreign companies, and petroleum operations — to compute, review, or explain BPT liability, sector rates, deductions, losses, free zones, and the petroleum PSA regime. Trigger on phrases like "Sudan corporate tax", "Sudan BPT", "business profits tax Sudan", "ضريبة أرباح الأعمال السودان", "Sudan petroleum tax", or any request to prepare or check a Sudanese corporate tax return. ALWAYS read this skill before touching any Sudan corporate tax work.
-version: 0.2
+version: 0.3
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,12 +15,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Sudan Corporate Income Tax (Business Profits Tax — BPT) Skill
 
-## Sudan Corporate Income Tax (Business Profits Tax — BPT) Skill v0.2
+## Sudan Corporate Income Tax (Business Profits Tax — BPT) Skill v0.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Currency note:** All monetary figures are in Sudanese Pounds (SDG — ج.س). Sudan has undergone multiple currency redenominations; verify current SDG values before filing.
-> **YMYL — verify before relying.** Sudan's tax legislation has been subject to amendments, and the political situation (post-2021 military takeover, ongoing conflict since April 2023) has disrupted tax administration. Where this skill says "verify current value," re-confirm against the Sudan Taxation Chamber (tax.gov.sd), PwC Worldwide Tax Summaries, or a qualified Sudan accountant before filing.
+> **YMYL — verify before relying.** Sudan's tax legislation has been subject to amendments, and the political situation (post-2021 military takeover, ongoing conflict since April 2023) has disrupted tax administration. Where this skill says "verify current value," re-confirm against the Sudan Taxation Chamber (tax.gov.sd) or a qualified Sudan accountant before filing.
 
 ## Section 1 — Scope statement
 
@@ -62,11 +62,11 @@ This skill does NOT cover:
 
 ### Sector-differentiated BPT rates
 
-**Sector-differentiated BPT rates**  _(Income Tax Act 1986, Schedule; PwC; Britacom; Trading Economics)_
+**Sector-differentiated BPT rates**  _(Income Tax Act 1986, Schedule; Britacom; Trading Economics)_
 
 | Sector | Rate | Source |
 | --- | --- | --- |
-| **Standard (general/industrial companies)** | 15% | Income Tax Act 1986, Schedule; PwC Worldwide Tax Summaries — Sudan; Trading Economics |
+| **Standard (general/industrial companies)** | 15% | Income Tax Act 1986, Schedule; Trading Economics |
 | **Banks and financial institutions** | 30% | Income Tax Act 1986, Schedule; Britacom tax profile |
 | **Tobacco / cigarette companies** | 30% | Income Tax Act 1986, Schedule; Britacom tax profile |
 | **Petroleum and natural resources operations** | 30% (under PSA terms; may vary by concession agreement) | Income Tax Act 1986, Schedule; Britacom tax profile |
@@ -76,11 +76,11 @@ This skill does NOT cover:
 
 ### Withholding tax rates on payments
 
-**Withholding tax rates on payments**  _(Income Tax Act 1986; PwC; Britacom)_
+**Withholding tax rates on payments**  _(Income Tax Act 1986; Britacom)_
 
 | Payment type | Rate | Character | Source |
 | --- | --- | --- | --- |
-| **Interest (to non-residents)** | 7% | Final | Income Tax Act 1986; PwC |
+| **Interest (to non-residents)** | 7% | Final | Income Tax Act 1986 |
 | **Royalties (to non-residents)** | 15% | Final | Income Tax Act 1986 |
 | **Technical / management services (to non-residents)** | 15% | Final | Income Tax Act 1986 |
 | **Dividends** | No separate dividend WHT | — | Income Tax Act 1986 (verify current treatment) |
@@ -202,7 +202,6 @@ Before delivering output, verify:
 | --- | --- |
 | Sudan Taxation Chamber | https://tax.gov.sd/en/income-tax-2/ |
 | Income Tax Act 1986 (PDF) | https://tax.gov.sd/wp-content/uploads/2025/02/ — legislation section |
-| PwC Worldwide Tax Summaries — Sudan | https://taxsummaries.pwc.com/sudan |
 | Britacom tax profile | https://www.britacom.org/zt/BRPolicies/Sudan/ |
 | US State Dept Investment Climate Statement | https://www.state.gov/reports/2022-investment-climate-statements/sudan/ |
 | Investment Incentive Law 2021 | Ministry of Investment and International Cooperation, Sudan |
@@ -223,7 +222,7 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
-**Sources:** Income Tax Act 1986 (Sudan) — tax.gov.sd; PwC Worldwide Tax Summaries — Sudan; Britacom tax profile; Trading Economics; US State Department Investment Climate Statement 2022; Investment Incentive Law 2021.
+**Sources:** Income Tax Act 1986 (Sudan) — tax.gov.sd; Britacom tax profile; Trading Economics; US State Department Investment Climate Statement 2022; Investment Incentive Law 2021.
 
 > Contributed by Ahmed Hassan.
 

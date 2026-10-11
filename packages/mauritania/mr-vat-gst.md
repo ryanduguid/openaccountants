@@ -4,7 +4,7 @@ description: "Source-cited draft: vat / gst for Mauritania (tax year 2025) — r
 jurisdiction: MR
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,8 +16,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Mauritania operates a Value Added Tax (Taxe sur la Valeur Ajoutée, TVA) on the supply of goods and services and on imports. The standard rate is 16%, with exports zero-rated.
 
-- **Standard VAT rate** — 16 percent  _(Code Général des Impôts (General Tax Code) — https://taxsummaries.pwc.com/mauritania/corporate/other-taxes)_
-- **Zero rate on exports** — 0 percent  _(Code Général des Impôts (General Tax Code) — https://taxsummaries.pwc.com/mauritania/corporate/other-taxes)_
+- **Standard VAT rate** — 16 percent  _(Code Général des Impôts (General Tax Code))_
+- **Zero rate on exports** — 0 percent  _(Code Général des Impôts (General Tax Code))_
 - **Special higher rate (telecommunications)** — 18 percent (on certain telecommunications services (approx — confirm sector scope and rate))  _(Code Général des Impôts (General Tax Code))_
 - **VAT registration / charging threshold** — 3,000,000 MRU (Annual turnover (excl. tax) equal to or above)  _(Code Général des Impôts (General Tax Code) — https://www.kreston.com/vat-guide/mauritania/)_
 - **VAT return filing frequency** — Monthly  _(Code Général des Impôts (General Tax Code) — https://www.kreston.com/vat-guide/mauritania/)_

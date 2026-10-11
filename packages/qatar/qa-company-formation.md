@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Qatar (t
 jurisdiction: QA
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ The most common vehicle is the Limited Liability Company (LLC / WLL), governed b
 - **Core incorporation steps** — 1) Reserve trade name and obtain initial approval from MOCI; 2) deposit declared capital and obtain a bank Capital Deposit Certificate; 3) submit documents and pay fees via the Single Window to obtain the Commercial Registration; 4) obtain a municipal trade license (Baladiya)  _(Commercial Companies Law No. 11 of 2015 (https://meembusiness.com/llc-company-formation-qatar-process-and-documents/))_
 - **Registration authority** — Ministry of Commerce and Industry (MOCI)  _(Commercial Companies Law No. 11 of 2015 (https://www.moci.gov.qa/en/our-services/investor/commerce-faq/establishing-companies/))_
 - **Annual compliance — CR renewal** — Commercial Registration and trade license must be renewed annually with MOCI / municipality (approx — confirm)  _(Commercial Companies Law No. 11 of 2015 (https://www.moci.gov.qa/en/our-services/investor/commerce-faq/establishing-companies/))_
-- **Annual compliance — tax registration & return** — Register with the GTA via the Dhareeba portal and file an annual tax return within 4 months of the accounting period end (audited financials required above prescribed thresholds)  _(Income Tax Law No. 24 of 2018 (https://taxsummaries.pwc.com/qatar))_
+- **Annual compliance — tax registration & return** — Register with the GTA via the Dhareeba portal and file an annual tax return within 4 months of the accounting period end (audited financials required above prescribed thresholds)  _(Income Tax Law No. 24 of 2018, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 <!-- openaccountants-cta-block -->
 

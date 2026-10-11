@@ -1,10 +1,10 @@
 ---
 name: ma-cpu
 description: Use this skill whenever asked about Morocco's Contribution Professionnelle Unique (CPU) — the single-tax regime that replaced the régime forfaitaire (régime du bénéfice forfaitaire) for small self-employed people and professionals who are not on the auto-entrepreneur status. Trigger on phrases like "CPU Maroc", "Contribution Professionnelle Unique", "régime forfaitaire Maroc", "contribution professionnelle unique calcul", "droit complémentaire AMO CPU", "coefficient bénéfice CPU", "المساهمة المهنية الموحدة", "CPU vs auto-entrepreneur Maroc". Covers eligibility and turnover ceilings, the CPU computation (turnover × profession coefficient → 10% liberatory IR), the effective minimum, the mandatory complementary health contribution (droit complémentaire) banded by profit for AMO, and the filing & payment calendar. Reply in the user's language (English, French, or Moroccan Arabic / Darija) and keep the native terms (CPU, IR, DGI, AMO, CNSS). Cross-reference ma-auto-entrepreneur (simpler, lower ceilings) and ma-income-tax (RNR/RNS) as alternatives.
-version: 1.0
+version: 1.1
 jurisdiction: MA
 tax_year: 2026
-last_updated: 2026-09-11
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -325,7 +325,7 @@ Official forms: **ADP150B** (CA declaration), **RSP150B** (payment bordereau),
 
 This skill is **research-verified** against public sources — the **DGI**
 (tax.gov.ma), the official **DGI "Guide pratique relatif à l'application du régime
-de la CPU"**, **PwC Worldwide Tax Summaries** (Morocco), and reporting on the
+de la CPU"**, and reporting on the
 **Loi de Finances 2025/2026** — as of **May 2026**. It is **YMYL** content and is
 **pending sign-off by a Moroccan accountant (expert-comptable)**. Coefficients,
 rates, ceilings, droit-complémentaire bands, and deadlines change with each Loi de

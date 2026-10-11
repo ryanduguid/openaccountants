@@ -1,10 +1,10 @@
 ---
 name: ma-crypto-tax
 description: Use this skill whenever asked about the taxation and legal status of cryptocurrency / crypto-assets in Morocco for a self-employed individual. Trigger on phrases like "Morocco crypto tax", "Bitcoin Maroc impôt", "cryptomonnaie Maroc légal", "crypto Morocco", "crypto-actifs Maroc", "is crypto legal in Morocco", "taxe cryptomonnaie Maroc", "Bitcoin impôt Maroc", "Office des Changes crypto", "loi 42.25 crypto", "stablecoin dirham", "الضريبة على العملات المشفرة المغرب", "العملات الرقمية المغرب". Covers the RESTRICTED / UNREGULATED status under the November 2017 Bank Al-Maghrib / AMMC / Office des Changes notice, the pending draft Law 42.25 on crypto-assets (verify 2026 status), the ABSENCE of any specific crypto tax regime, how gains MIGHT be treated if realised (profits from disposal of movable property / profits de capitaux mobiliers, or professional income / revenus professionnels if habitual, under the Impôt sur le Revenu), and the exchange-control (réglementation des changes) implications. This is HIGH-UNCERTAINTY, HIGH-RISK territory — the skill must never assert a settled regime. Reply in the user's language (English, French, or Moroccan Arabic / Darija) and keep native French terms in context.
-version: 1.0
+version: 1.1
 jurisdiction: MA
 tax_year: 2026
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -42,7 +42,7 @@ The relevant authorities are **Bank Al-Maghrib (BAM)** — the central bank, the
 | Possible IR treatment of gains | **Uncertain** — by analogy either *profits de capitaux mobiliers* (occasional disposal) **or** *revenus professionnels* (habitual / trading activity) |
 | Exchange control | Crypto transactions treated as an **infraction à la réglementation des changes** — sanctions/fines possible *(verify)* |
 | Quality tier | **Research-verified — pending sign-off by a Moroccan accountant (expert-comptable)** |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Conservative defaults
 
@@ -115,7 +115,6 @@ Verify **every** figure, date, and classification before use. Primary > secondar
 - **AMMC (Autorité Marocaine du Marché des Capitaux)** — ammc.ma — supervisory role under the draft framework.
 - **Direction Générale des Impôts (DGI)** — tax.gov.ma — the **Code Général des Impôts (CGI)**; confirm there is (or is not) any crypto-specific provision or circular; categories *profits de capitaux mobiliers* and *revenus professionnels*.
 - **Secrétariat Général du Gouvernement (SGG)** / **Bulletin Officiel** — to confirm whether **projet de loi n°42.25** and its **décrets d'application** have been **adopted and published**.
-- **PwC Worldwide Tax Summaries — Morocco** — for the general IR framework and any note on crypto *(verify whether PwC has yet added a crypto section)*.
 - **Companion skills:** `ma-income-tax` (professional income / IR computation), `morocco-vat` (TVA), `ma-bookkeeping` (records).
 
 ## PROHIBITIONS
@@ -124,7 +123,7 @@ Verify **every** figure, date, and classification before use. Primary > secondar
 
 ## Disclaimer
 
-This skill is **research-verified** against public sources — the **Office des Changes** (oc.gov.ma), **Bank Al-Maghrib** (bkam.ma), the **AMMC**, the **DGI** (tax.gov.ma) and **PwC Worldwide Tax Summaries (Morocco)**, plus 2025–2026 reporting on **projet de loi n°42.25** — as of **May 2026**, with the legal-status statements carrying a separate September 2026 research date. That later date does not establish a full re-verification of every tax treatment in this guide. It is **YMYL, high-risk** content covering an **unsettled area of law** and is **pending sign-off by a Moroccan accountant (expert-comptable)**. There is **no settled crypto tax regime** in Morocco; everything about how gains might be taxed is **analogy, not established law**, and the legal status rests on a **2017 prohibition notice** with a **draft law still pending**. Dates, the status of Law 42.25, classifications, and any rate must be **re-verified** against the official authorities before use. Nothing here is a substitute for advice from a licensed Moroccan expert-comptable, the DGI, or the Office des Changes. Part of **openaccountants.com** — open-source tax skills for the self-employed.
+This skill is **research-verified** against public sources — the **Office des Changes** (oc.gov.ma), **Bank Al-Maghrib** (bkam.ma), the **AMMC**, the **DGI** (tax.gov.ma), plus 2025–2026 reporting on **projet de loi n°42.25** — as of **May 2026**, with the legal-status statements carrying a separate September 2026 research date. That later date does not establish a full re-verification of every tax treatment in this guide. It is **YMYL, high-risk** content covering an **unsettled area of law** and is **pending sign-off by a Moroccan accountant (expert-comptable)**. There is **no settled crypto tax regime** in Morocco; everything about how gains might be taxed is **analogy, not established law**, and the legal status rests on a **2017 prohibition notice** with a **draft law still pending**. Dates, the status of Law 42.25, classifications, and any rate must be **re-verified** against the official authorities before use. Nothing here is a substitute for advice from a licensed Moroccan expert-comptable, the DGI, or the Office des Changes. Part of **openaccountants.com** — open-source tax skills for the self-employed.
 
 <!-- openaccountants-cta-block -->
 

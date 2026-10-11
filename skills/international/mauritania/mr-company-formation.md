@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Mauritan
 jurisdiction: MR
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Step 3 — Deposit capital** — Open a bank account, deposit the initial capital and obtain proof of deposit  _(Guichet Unique (one-stop shop) procedures — https://www.elidge.com/company-registration-in-mauritania/)_
 - **Step 4 — File at the Guichet Unique** — Submit the single registration form and documents at the one-stop shop; obtain tax ID and CNSS registration  _(Guichet Unique (one-stop shop) procedures — https://www.elidge.com/company-registration-in-mauritania/)_
 - **Incorporation timeline** — Typically 1 to 2 weeks via the Guichet Unique (approx — varies with bank/notary)  _(Guichet Unique (one-stop shop) procedures — https://www.elidge.com/company-registration-in-mauritania/)_
-- **Annual compliance — financial statements** — File annual financial statements and corporate tax return before 31 March of the following year  _(Code Général des Impôts (General Tax Code) — https://taxsummaries.pwc.com/mauritania/corporate/tax-administration)_
+- **Annual compliance — financial statements** — File annual financial statements and corporate tax return before 31 March of the following year  _(Code Général des Impôts (General Tax Code))_
 - **Ongoing compliance — VAT and payroll** — Monthly VAT returns and monthly payroll/social-security filings where applicable  _(Code Général des Impôts (General Tax Code))_
 
 The most common vehicle for investors is the SARL (Société à Responsabilité Limitée), broadly an LLC; larger ventures use the SA (Société Anonyme). Incorporation is centralised through the one-stop shop (Guichet Unique) at the Ministry of Economy and Finance.

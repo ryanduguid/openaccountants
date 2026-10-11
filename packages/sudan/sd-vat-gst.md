@@ -1,10 +1,10 @@
 ---
 name: sd-vat-gst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Sudan VAT return, or to advise on Sudanese VAT registration, filing, and input tax recovery. Trigger on phrases like "Sudan VAT", "Sudan value added tax", "ضريبة القيمة المضافة السودان", "Sudan VAT return", "Sudan VAT registration", "sales tax Sudan", or any Sudan VAT request. ALWAYS read this skill before touching any Sudan VAT work.
-version: 0.1
+version: 0.2
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-07-22
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Sudan VAT (ضريبة القيمة المضافة) Skill
 
-## Sudan VAT (ضريبة القيمة المضافة) Skill v0.1
+## Sudan VAT (ضريبة القيمة المضافة) Skill v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -100,11 +100,11 @@ This skill does NOT cover:
 
 ## Section 3 — Rates and thresholds
 
-**Rates and thresholds**  _(VAT Act 2001; Britacom; PwC; Trading Economics; Sudan Tribune; tax.gov.sd)_
+**Rates and thresholds**  _(VAT Act 2001; Britacom; Trading Economics; Sudan Tribune; tax.gov.sd)_
 
 | Item | Rate | Source |
 | --- | --- | --- |
-| **Standard VAT rate** | **17%** | VAT Act 2001; Britacom; PwC; Trading Economics; Sudan Tribune; tax.gov.sd |
+| **Standard VAT rate** | **17%** | VAT Act 2001; Britacom; Trading Economics; Sudan Tribune; tax.gov.sd |
 | **Telecommunications services** | **40%** | VAT Act 2001 / Ministerial amendments; Britacom tax profile |
 | **Cigarettes** | **30%** | VAT Act 2001 / Ministerial amendments; Britacom tax profile |
 | **Reduced rate (some categories)** | **5%** | VAT Act 2001; sd-icalculator reference |
@@ -298,7 +298,6 @@ Before delivering output, verify:
 | VAT Act 2001 (PDF) | https://tax.gov.sd/wp-content/uploads/2025/02/The-Value-Add-tax.pdf |
 | VAT Regulations 2017 (PDF) | https://tax.gov.sd/wp-content/uploads/2025/02/vat_list.pdf |
 | Britacom tax profile — Sudan | https://www.britacom.org/zt/BRPolicies/Sudan/ |
-| PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/sudan |
 | Sudan Tribune (livestock export VAT) | https://sudantribune.com/article/309388 |
 
 ## PROHIBITIONS
@@ -316,7 +315,7 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
-**Sources:** VAT Act 2001 (Sudan); VAT Regulations 2017; tax.gov.sd; Britacom; PwC; Trading Economics; Sudan Tribune.
+**Sources:** VAT Act 2001 (Sudan); VAT Regulations 2017; tax.gov.sd; Britacom; Trading Economics; Sudan Tribune.
 
 > Contributed by Ahmed Hassan.
 

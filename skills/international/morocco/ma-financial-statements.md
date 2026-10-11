@@ -1,10 +1,10 @@
 ---
 name: ma-financial-statements
 description: "Use this skill whenever asked about financial statements, statutory accounts, or financial reporting obligations for self-employed people and small businesses in Morocco — who has to prepare formal accounts and who does not, the CGNC framework, the components of the états de synthèse (Bilan, CPC, ESG, Tableau de financement, ETIC), the normal vs simplified model, when IFRS applies, how accounts are filed with the DGI and deposited at the commercial court (dépôt légal), and when a statutory auditor (commissaire aux comptes) is required. Trigger on phrases like \"Morocco financial statements\", \"états de synthèse\", \"bilan CPC Maroc\", \"do I file accounts Morocco\", \"comptes annuels Maroc\", \"CGNC états de synthèse\", \"tableau de financement\", \"ETIC\", \"commissaire aux comptes Maroc\", \"dépôt des comptes Maroc\", \"القوائم المالية المغرب\", \"الميزانية المغرب\". Frame for a self-employed reader: auto-entrepreneur and CPU taxpayers do NOT prepare formal financial statements (they keep simple registers — cross-ref ma-bookkeeping); résultat net réel (RNR) taxpayers and companies prepare the full états de synthèse under the CGNC, and résultat net simplifié (RNS) prepares a reduced set. Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-bookkeeping, ma-income-tax, ma-cpu, and ma-auto-entrepreneur."
-version: 1.0
+version: 1.1
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -186,7 +186,7 @@ Other points:
 - **Bank Al-Maghrib Circular 56/G/2007** — IFRS for banks' consolidated accounts.
 - **AMMC** — listed-group consolidated-accounts IFRS option.
 - **Loi de Finances 2026** — current-year confirmation of deadlines/thresholds.
-- Secondary commentary (PwC Morocco, Upsilon Consulting, Deloitte LF 2026, IFRS Foundation jurisdiction profile) used for cross-checking — **not** primary authority.
+- Secondary commentary (Upsilon Consulting, Deloitte LF 2026, IFRS Foundation jurisdiction profile) used for cross-checking — **not** primary authority.
 
 ### Short test suite
 

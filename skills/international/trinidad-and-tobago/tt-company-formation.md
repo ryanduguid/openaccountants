@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Trinidad
 jurisdiction: TT
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Typical incorporation timeline** — Approximately 3 to 6 weeks depending on documentation and approvals (approx — confirm)  _(Companies Registry — https://www.usemultiplier.com/trinidad-and-tobago/company-registration)_
 - **Tax registration after incorporation** — Obtain a BIR (Board of Inland Revenue) file number; register for PAYE, NIS, and VAT (where the threshold is met)  _(Income Tax Act (Chap. 75:01) — https://www.ird.gov.tt/)_
 - **Annual return filing** — Every company delivers an annual return to the Registrar not later than 30 days after each anniversary of its incorporation, continuance or amalgamation  _(Companies Act (Chap. 81:01), Ministry of the Attorney General consolidation to Act 2 of 2013, s 194(1) — https://rgd.legalaffairs.gov.tt/laws2/alphabetical_list/lawspdfs/81.01.pdf)_
-- **Annual tax compliance** — File corporation tax return by 30 April, pay quarterly instalments, and account for Green Fund Levy and Business Levy as applicable  _(Corporation Tax Act (Chap. 75:02) — https://taxsummaries.pwc.com/trinidad-and-tobago/corporate/tax-administration)_
+- **Annual tax compliance** — File corporation tax return by 30 April, pay quarterly instalments, and account for Green Fund Levy and Business Levy as applicable  _(Corporation Tax Act (Chap. 75:02))_
 
 <!-- openaccountants-cta-block -->
 
