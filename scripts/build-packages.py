@@ -458,6 +458,8 @@ def build_intake(country_name, practitioner_title, jurisdiction_code):
 > This file guides the AI through the onboarding process.
 > It runs BEFORE any classification begins.
 
+This intake supports personalised preparation for full-year residents within the loaded guides' scope. For a reference enquiry covered by a supplied specialist guide, consult that guide independently within its stated conditions and review requirements.
+
 ## Opening statement
 
 Say this FIRST, before any questions:
@@ -470,7 +472,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | # | Question |
 |---|----------|
-| 1 | Were you a full-year {country_name} resident in 2025? |
+| 1 | Which tax or accounting period do you need help with, and what was your {country_name} residence status for that period (full-year, part-year, non-resident or uncertain)? |
 | 2 | What is your business structure? (Sole trader / self-employed / single-member company / partnership / corporation) |
 | 3 | Are you registered for VAT/GST? If yes, what type/scheme? |
 | 4 | Do you have employees? If yes, how many? |
@@ -482,7 +484,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | Trigger | Response |
 |---------|----------|
-| Not full-year resident | "I'm set up for full-year {country_name} residents only. You need a {practitioner_title} who handles non-resident returns." |
+| Part-year, non-resident or uncertain residence status | "Part-year residence and non-residence require different treatment. Personalised return preparation through this intake requires confirmed full-year {country_name} residence. Ask a {practitioner_title} to establish your status and the applicable rules." |
 | Partnership tax return | "Partnership tax returns file separately. You need a {practitioner_title} familiar with partnership returns." |
 | Large corporate group (multiple subsidiaries) | "Complex corporate group returns are outside my scope. You need a {practitioner_title}." |
 
@@ -499,7 +501,7 @@ Accept ANY documents the user provides — not just bank statements:
 - VAT/GST returns already filed
 - Any other tax documents
 
-Say: **"Drop all your documents here — bank statements, invoices, receipts, prior returns. Everything you have for 2025. I can read PDFs, CSVs, images, and spreadsheets."**
+Say: **"Drop all your documents here — bank statements, invoices, receipts, prior returns. Everything you have for the period you selected. I can read PDFs, CSVs, images, and spreadsheets."**
 
 **Do NOT insist on bank statements.** If the user only has invoices, work with invoices. If they only have a bank statement, work with that. Use whatever documents are provided.
 
@@ -581,11 +583,13 @@ Tax authority: **{tax_authority}**
 {UPLOAD_STEP}
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
-   - **"Help me with my 2025 {country_name} taxes. Here's my bank statement."**
+   - **"Help me with my {country_name} taxes for the period shown in these documents. Here's my bank statement."**
    - **"Classify my transactions and prepare my books."**
    - **"Run payroll for my employee."**
    - **"Help me set up a company in {country_name}."**
    - **"Prepare my annual accounts."**
+
+The generated intake supports personalised preparation for full-year residents within the loaded guides' scope. Part-year residence and non-residence require separate treatment. Where a supplied guide covers a specialist reference topic, consult it independently within its stated conditions and review requirements.
 
 The AI will:
 - Ask onboarding questions to confirm your situation
@@ -595,9 +599,9 @@ The AI will:
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified {practitioner_title} before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified {practitioner_title.removeprefix("qualified ")} before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
+Check each guide's metadata, quality tier, sources and coverage limits before use. Check its applicable period and review status where provided. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
 
 ---
 
