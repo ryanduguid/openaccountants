@@ -1,18 +1,18 @@
 ---
 name: au-rates-2026-27
 description: Use this skill whenever you need a current Australian tax rate, threshold, cap or due date for the 2026-27 or 2025-26 income year -- individual brackets, HELP repayment, Medicare levy and surcharge, super guarantee and contribution caps, Division 296, company rates, Div 7A benchmark, FBT, CGT caps and concessions, GST, PAYG instalment uplift, cents-per-km, car limits, penalty units, payroll tax, minimum wage or ASIC fees. Single-page rates card; every figure carries its source. Trigger on "what is the current rate", "2026-27 threshold", "how much is the cap", or any AU figure lookup. Load alongside the topic guide.
-version: 1.4
+version: 1.5
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 primary; 2025-26 retained for lodgment-season work"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Rates Card 2026-27 (with 2025-26) v1.4
+# Australia Rates Card 2026-27 (with 2025-26) v1.5
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -20,7 +20,7 @@ Single-page lookup for the figures every other Australian guide relies on. Each 
 
 ## Enacted asset and loss relief
 
-- **Enacted asset and loss relief** — For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for use from 1 July 2026. The new corporate loss carry-back rules were enacted in the same Act; distinguish the October commencement from their income-year application.  _([Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text))_
+- **Enacted asset and loss relief** — For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The Tax Reform No. 2 Act 2026 (assent 26 August 2026; Schedules 1 and 2 commenced on 1 October 2026) makes the $20,000 threshold permanent for assets first used or installed ready for use from 1 July 2026 (Schedule 2). Schedule 1 enacts the replacement corporate loss carry-back for income years starting on or after 1 July 2026; distinguish the October commencement from that income-year application.  _([Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text))_
 
 ## Individual income tax
 
@@ -43,10 +43,11 @@ Single-page lookup for the figures every other Australian guide relies on. Each 
 | --- | --- | --- |
 | LITO | $700 to $37,500; taper 5c/$1 to $45,000; then 1.5c/$1 to nil at $66,667 | ATO Low income tax offset |
 | SBITO | 16% of tax on net small business income, cap $1,000, turnover < $5m | ITAA 1997 Subdiv 328-F |
-| $1,000 standard WRE deduction | From 1 July 2026 (2026-27 returns). Excludes PSI and business-only earners | Tax Reform No. 1 Act 2026 Sch 4; QC 107405 |
-| WFH fixed rate | 70c/hour (2024-25 through 2026-27) | PCG 2023/1 |
+| $1,000 standard WRE deduction | From 2026-27 returns: min($1,000, assessable labour income) less actual work deductions; assessable labour income is PAYG-withheld salary, wages, director and office-holder payments, ETPs and parental leave pay, so sole-trader business income and PSI do not count | Tax Reform No. 1 Act 2026 Sch 4 (ITAA 1997 s 25-130) |
+| WFH fixed rate | 70c per work hour (2024-25 and 2025-26); the ATO page listed no 2026-27 rate when last updated on 8 June 2026 | PCG 2023/1 |
 | Cents per km | 88c (2025-26); **91c (2026-27)**, cap 5,000 business km | ATO cents-per-km rates |
 | Car limit (depreciation) | $69,674 (2025-26); **$69,883 (2026-27)** | ATO car thresholds |
+| Working Australians tax offset | Up to $250 a year from **2027-28** for residents whose net labour income exceeds the tax-free threshold; non-refundable | Tax Reform No. 1 Act 2026 Sch 3 (ITAA 1997 Subdiv 61-E) |
 
 ## HELP/study loans (2025-26 onwards: marginal system)
 
@@ -106,9 +107,10 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 | General transfer balance cap | $2.0m | **$2.1m** | ATO TBC |
 | CGT cap amount | $1,865,000 | **$1,935,000** | ATO key super rates |
 | Div 293 threshold | $250,000 (frozen) | $250,000 | ATO Div 293 |
-| Div 296 | -- | **First year: extra 15% on earnings share of TSB $3m--$10m; extra 25% above $10m; indexed; realised-earnings basis** | Treasury Laws Amendment (Building a Stronger and Fairer Super System) Act 2026 (C2026A00008, assent 13 March 2026) |
+| Div 296 | -- | **First year: extra 15% on earnings share of TSB $3m--$10m; extra 25% above $10m; indexed; realised-earnings basis; 2026-27 tested on TSB at 30 June 2027 only** | Treasury Laws Amendment (Building a Stronger and Fairer Super System) Act 2026 (C2026A00008, assent 13 March 2026) |
 | Downsizer | $300,000 from age 55 | $300,000 | ATO downsizer |
 | SG maximum contribution base | $62,500/quarter | **$270,830/year (annual basis under payday super)** | ATO Super guarantee page |
+| LISTO threshold / maximum | $37,000 / $500 | $37,000 / $500; from 2027-28 the threshold follows the top of the second resident bracket ($45,000) and the maximum is threshold x SG rate x 15% ($810) | Building a Stronger and Fairer Super System Act 2026 Sch 4 |
 
 ## Companies
 
@@ -156,7 +158,7 @@ still the 2025-26 figures because the ATO indexes them later in the year.
 | Item | Value | Source |
 | --- | --- | --- |
 | Rate / registration | 10% / $75,000 ($150,000 NFP; taxi/ride-sourcing regardless of turnover) | GST Act |
-| Instant asset write-off | For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for use from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text). | ITAA 1997 Subdivision 328-D |
+| Instant asset write-off | For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The Tax Reform No. 2 Act 2026 (assent 26 August 2026; Schedules 1 and 2 commenced on 1 October 2026) makes the $20,000 threshold permanent for assets first used or installed ready for use from 1 July 2026 (Schedule 2). [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text). | ITAA 1997 Subdivision 328-D |
 | Penalty unit | $330 (7 Nov 2024 -- 30 Jun 2026); **$364 from 1 Jul 2026** | ATO QC 71196 |
 | GIC | **Not deductible from 1 Jul 2025** (SIC likewise) | Tax Incentives and Integrity Act 2025; QC 73746 |
 
@@ -179,7 +181,7 @@ This card is the single place indexed figures live outside their topic guides. W
 
 ## Provenance
 
-All figures verified 20 August 2026 directly against: ato.gov.au rate pages (QC 73320, 27031, 71196, 73746, 103578, 103927, contributions caps, key super rates, car thresholds, Div 7A rates, GDP adjustment), Department of Health PHI Circular 12/26, Revenue NSW / SRO Vic / QRO current-rates pages, FWC Annual Wage Review 2025-26 decision, ASIC fee indexation page (1 July 2026), and the amending Acts named inline. On 4 October 2026 the resident and non-resident rate scales, HELP thresholds, Medicare low-income thresholds, MLS tiers, PHI rebate rates, SG rate and maximum contribution base, contribution caps, transfer balance cap, CGT cap, Division 293 threshold, FBT rate and thresholds, Division 7A benchmark rate, GIC rates, PAYG GDP adjustment, instant asset write-off status, penalty unit, LITO, cents per kilometre and car limit, national minimum wage, parental leave weeks and the state payroll tax rates and thresholds were checked again against the ATO, state revenue office, Fair Work and Federal Register of Legislation pages; the ASIC fee rows were not re-checked.
+All figures verified 20 August 2026 directly against: ato.gov.au rate pages (QC 73320, 27031, 71196, 73746, 103578, 103927, contributions caps, key super rates, car thresholds, Div 7A rates, GDP adjustment), Department of Health PHI Circular 12/26, Revenue NSW / SRO Vic / QRO current-rates pages, FWC Annual Wage Review 2025-26 decision, ASIC fee indexation page (1 July 2026), and the amending Acts named inline. On 4 October 2026 the resident and non-resident rate scales, HELP thresholds, Medicare low-income thresholds, MLS tiers, PHI rebate rates, SG rate and maximum contribution base, contribution caps, transfer balance cap, CGT cap, Division 293 threshold, FBT rate and thresholds, Division 7A benchmark rate, GIC rates, PAYG GDP adjustment, instant asset write-off status, penalty unit, LITO, cents per kilometre and car limit, national minimum wage, parental leave weeks and the state payroll tax rates and thresholds were checked again against the ATO, state revenue office, Fair Work and Federal Register of Legislation pages; the ASIC fee rows were not re-checked. On 11 October 2026 the working-from-home rate, the Tax Reform No. 1 and No. 2 Acts, the Building a Stronger and Fairer Super System Act 2026 and Act No. 58 of 2026 (Medicare low-income thresholds) were read on the Federal Register of Legislation.
 
 > Contributed by Ryan Duguid.
 

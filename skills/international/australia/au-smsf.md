@@ -2,22 +2,22 @@
 name: au-smsf
 description: >
   Use this skill whenever asked about Australian self-managed superannuation funds -- SMSF accounting, the SMSF annual return (SAR), supervisory levy, fund tax at 15%, exempt current pension income (ECPI), actuarial certificates, non-arm's length income or expenses (NALI/NALE), contribution caps and acceptance rules, minimum pension drawdowns, transfer balance cap and TBAR reporting, SMSF audits, in-house assets, LRBA safe harbour rates, or Division 296. Trigger on phrases like "SMSF", "self-managed super", "SAR", "supervisory levy", "actuarial certificate", "ECPI", "NALI", "TBAR", "minimum pension", "bare trust", or "SMSF audit". ALWAYS read this skill before touching any SMSF work.
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Self-Managed Super Funds (SMSF) -- Accounting, Tax & Compliance Skill v1.2
+# Australia Self-Managed Super Funds (SMSF) -- Accounting, Tax & Compliance Skill v1.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context (2026-27).** Three regime changes hit SMSF files this year. (1) **Division 296** is law (Building a Stronger and Fairer Super System Act 2026): from 2026-27 an EXTRA 15% applies to the earnings proportion attributable to total super balance (TSB) between $3m and $10m, and an extra 25% above $10m -- realised-earnings basis, thresholds indexed, levied on the MEMBER personally, not the fund. (2) **Payday super**: employer contributions now arrive within 7 business days of each payday -- frequent small receipts are the new normal and the fund's ESA/bank details must work. (3) The **NALE rules** as amended by the Treasury Laws Amendment (Support for Small Business and Charities and Other Measures) Act 2024 cap general-expense NALI at TWICE the expense shortfall (applied from 2018-19). This skill covers SMSF accounting, tax and compliance only -- it is NOT financial product advice (see R-AU-SF-1).
+> **Law-change context (2026-27).** Four regime changes hit SMSF files this year. (1) **Division 296** is law (Building a Stronger and Fairer Super System Act 2026): from 2026-27 an EXTRA 15% applies to the earnings proportion attributable to total super balance (TSB) between $3m and $10m, and an extra 25% above $10m -- realised-earnings basis, thresholds indexed, levied on the MEMBER personally, not the fund. (2) **Payday super**: employer contributions now arrive within 7 business days of each payday -- frequent small receipts are the new normal and the fund's ESA/bank details must work. (3) The **NALE rules** as amended by the Treasury Laws Amendment (Support for Small Business and Charities and Other Measures) Act 2024 cap general-expense NALI at TWICE the expense shortfall (applied from 2018-19). (4) **LRBAs over real property are limited to business real property** for borrowing arrangements entered into from 10 August 2026 (Treasury Laws Amendment (Tax Reform No. 1) Act 2026 Sch 5; SIS Act s 67A(2)(c)); refinancing an existing borrowing and acquisitions under arrangements entered into earlier are grandfathered. This skill covers SMSF accounting, tax and compliance only -- it is NOT financial product advice (see R-AU-SF-1).
 
 ## Section 1 -- Quick reference
 
@@ -44,7 +44,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Minimum pension drawdowns | 4% (under 65) to 14% (95+) -- no reduction currently in force |
 | TBAR | Quarterly for ALL SMSFs since 1 July 2023; due 28 days after quarter end |
 | LRBA safe harbour rate (PCG 2016/5) | 2026-27: 9.35% real property (2025-26: 8.95%); 11.35% listed securities (property rate + 2%) |
-| Division 296 | First year 2026-27; extra 15% ($3m-$10m proportion) / 25% (>$10m); member-levied; FLAG, never compute |
+| New LRBAs over real property | Business real property only for arrangements entered into from 10 August 2026 (SIS Act s 67A(2)(c)); pre-existing borrowings, their refinancing, and acquisitions under earlier contracts are grandfathered |
+| Division 296 | First year 2026-27; extra 15% ($3m-$10m proportion) / 25% (>$10m); member-levied; FLAG, never compute. Small-fund cost-base reset choice due by the 2026-27 SAR due date (Section 5.3) |
 | ASIC special purpose trustee company review fee | $70/year from 1 July 2026 |
 | Contributor | Open Accountants |
 | Validated by | Pending |
@@ -79,7 +80,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **R-AU-SF-2 -- In-specie contribution / off-market transfer valuations.** *Trigger:* asked to set the value of an asset contributed or transferred in-specie. *Message:* "Contribution value must be market value with qualified valuation evidence; s 66 acquisition rules also apply. Obtain an independent valuation and escalate."
 
-**R-AU-SF-3 -- LRBA structuring.** *Trigger:* asked to establish a bare/holding trust, draft loan terms, or design a related-party LRBA. *Message:* "LRBA establishment is legal and financial advice. I can classify payments on an EXISTING documented LRBA and check the PCG 2016/5 safe harbour only. Escalate."
+**R-AU-SF-3 -- LRBA structuring.** *Trigger:* asked to establish a bare/holding trust, draft loan terms, or design a related-party LRBA. *Message:* "LRBA establishment is legal and financial advice, and from 10 August 2026 a new LRBA can acquire real property only if it is business real property. I can classify payments on an EXISTING documented LRBA and check the PCG 2016/5 safe harbour only. Escalate."
 
 **R-AU-SF-4 -- Related-party acquisitions.** *Trigger:* proposed purchase from / lease to a member or related party. *Message:* "s 66 prohibits most related-party acquisitions (exceptions: listed securities and business real property at market value, within in-house limits). Transaction design must be escalated before any step is taken."
 
@@ -188,7 +189,8 @@ For a complying fund, additional no-TFN tax is 32%. An amount is excluded where 
 ### 5.3 Member surcharges -- flag, never compute
 
 - **Division 293:** extra 15% on concessional contributions where income + contributions > $250,000 (frozen). ATO-assessed on the member.
-- **Division 296 (NEW, first year 2026-27):** extra 15% on the earnings proportion for TSB between $3m and $10m, extra 25% above $10m (thresholds indexed; realised-earnings basis; ATO-assessed on the MEMBER, payable personally or released from super). The SMSF's job is accurate 30 June member balances and market valuations -- the ATO computes from reported data. **Do not attempt the computation in bookkeeping workflows; flag any member with TSB near $3m.**
+- **Division 296 (NEW, first year 2026-27):** extra 15% on the earnings proportion for TSB between $3m and $10m, extra 25% above $10m (thresholds indexed; realised-earnings basis; ATO-assessed on the MEMBER, payable personally or released from super). The SMSF's job is accurate 30 June member balances and market valuations -- the ATO computes from reported data. **Do not attempt the computation in bookkeeping workflows; flag any member with TSB near $3m.** For 2026-27 only the TSB at 30 June 2027 is tested.
+- **Division 296 cost-base reset choice (small funds):** the trustee of a small superannuation fund can choose, in the approved form, to treat each asset held at the end of 30 June 2026 as having a first-element cost base equal to its market value at that time, with other elements reset to nil and no indexation, for working out Division 296 fund earnings only. The choice covers all assets held at that date, is irrevocable, must be made by the due date for lodging the fund's 2026-27 return, and requires records of the choice and the adjusted cost bases kept for 5 years after they stop being relevant. It does not change the fund's ordinary income tax. Flag it before the 2026-27 SAR for any fund with a member near $3m. (Income Tax (Transitional Provisions) Act 1997 ss 296-50, 296-55, inserted by the Building a Stronger and Fairer Super System Act 2026.)
 
 ## Section 6 -- Pensions
 
@@ -225,7 +227,7 @@ All remaining conditions must also hold: ECPI would otherwise have continued; th
 - **s 65 -- no loans or financial assistance to members/relatives.** Ever, in any amount. 60 penalty units per trustee.
 - **In-house assets (Part 8, s 71):** loans to, investments in, or leases to related parties capped at **5% of fund market value** (measured at acquisition and each 30 June). Exceeding at 30 June -> written disposal plan executed before the end of the NEXT year (s 82). Business real property leased at market rent is excluded.
 - **s 66 -- acquisitions from related parties prohibited**, except listed securities at market value, business real property at market value, and in-house assets within the 5% limit.
-- **Borrowing (s 67):** prohibited except short-term exceptions and a compliant **LRBA (ss 67A-67B)**: single acquirable asset in a separate holding trust, lender recourse limited to that asset. Related-party LRBA terms must satisfy **PCG 2016/5 safe harbour** or evidence arm's-length terms, else the income is NALI: 2026-27 interest **9.35%** real property / **11.35%** listed securities (property rate + 2%); max LVR 70% property / 50% securities; max term 15 years property / 7 years securities; monthly principal-and-interest; registered mortgage/charge; written agreement. (2025-26 rate was 8.95%. Derivation note: the 2026-27 property rate is the RBA indicator rate for investor standard variable housing loans for May 2026 per the PCG 2016/5 methodology; at 20 August 2026 the ATO's QC 18123 table published rows only to 2025-26 -- confirm the ATO row when it appears before relying on it in an audit dispute.)
+- **Borrowing (s 67):** prohibited except short-term exceptions and a compliant **LRBA (ss 67A-67B)**: single acquirable asset in a separate holding trust, lender recourse limited to that asset. For arrangements entered into from 10 August 2026, an LRBA can acquire real property only if it is business real property (s 67A(2)(c), inserted by Schedule 5 to the Treasury Laws Amendment (Tax Reform No. 1) Act 2026); maintaining or refinancing an earlier borrowing, and acquiring an asset under an arrangement entered into earlier, remain covered. Related-party LRBA terms must satisfy **PCG 2016/5 safe harbour** or evidence arm's-length terms, else the income is NALI: 2026-27 interest **9.35%** real property / **11.35%** listed securities (property rate + 2%); max LVR 70% property / 50% securities; max term 15 years property / 7 years securities; monthly principal-and-interest; registered mortgage/charge; written agreement. (2025-26 rate was 8.95%. The 2026-27 rates are published in the ATO's [Other super rates and thresholds](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/other-super-rates-and-thresholds) table.)
 - **Valuations (SIS Reg 8.02B):** all assets at market value each 30 June, on objective supportable evidence -- unlisted trusts, private companies and property are the perennial audit qualification triggers.
 - **Investment strategy (SIS Reg 4.09):** must address risk, return, liquidity, diversification and insurance for members; review REGULARLY -- document a review at least annually and on any significant event (new member, pension commencement, LRBA, market dislocation).
 
@@ -324,11 +326,12 @@ If relief is unavailable, the pension is treated as ceasing on 1 July 2026, ECPI
 | Division 296 | Building a Stronger and Fairer Super System Act 2026 (first year 2026-27) |
 | Pension minimums and shortfall exception | SIS Reg 1.06(9A), Sch 7; ato.gov.au "Income stream (pension) rules and payments" + "Exception to minimum pension payment requirements" |
 | TBC / TBAR | ITAA 1997 Div 294; ato.gov.au "When to lodge a transfer balance account report for SMSFs" (quarterly, 28 days) |
-| LRBA safe harbour | PCG 2016/5 (2026-27: 9.35% property / 11.35% listed securities) |
+| LRBA safe harbour | PCG 2016/5 (2026-27: 9.35% property / 11.35% listed securities; ATO Other super rates and thresholds) |
+| LRBA business real property limit | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 Sch 5 (SIS Act s 67A(2)(c); arrangements from 10 August 2026) |
 | Valuations; investment strategy; separation | SIS Regs 8.02B, 4.09, 4.09A; ato.gov.au "Guide to valuing SMSF assets" |
 | Deductions (audit, actuarial, levy) | TR 93/17 |
 
-All ATO figures verified against ato.gov.au on 20 August 2026.
+All ATO figures verified against ato.gov.au on 20 August 2026. The LRBA rate, the Schedule 5 LRBA limit and the Division 296 small-fund choice were checked on 11 October 2026.
 
 ### Prohibitions
 

@@ -1,10 +1,10 @@
 ---
 name: au-nonresident-cgt
 description: "Use this skill for any non-resident selling Australian assets. Trigger on: \"non-resident CGT Australia\", \"TAP test Australia\", \"taxable Australian property\", \"FRCGW\", \"foreign resident capital gains withholding\", \"15% withholding Australia\", \"12.5% withholding Australia\", \"clearance certificate ATO\", \"sell Australian shares non-resident\", \"sell Australian property non-resident\", \"Australian CGT non-resident seller\", \"no CGT discount non-resident Australia\". Covers the TAP test, the foreign resident rate scale, FRCGW withholding (15%, no threshold, from 1 January 2025), clearance certificates. For Australian residents see au-capital-gains."
-version: 1.5
+version: 1.6
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
@@ -44,10 +44,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Units in a trust | Indirect real property interest only if both the principal asset test and non-portfolio interest test pass |
 | Options/rights to acquire any of the above | TAP |
 | Assets used in Australian permanent establishment of a non-resident | TAP |
-| Shares in an Australian company where assets are predominantly operating business, IP, goodwill, cash | **NOT TAP** |
+| Shares in an Australian company where assets are predominantly operating business, IP, goodwill, cash | **NOT TAP**, unless the principal asset test is met at the event or in the prior 365 days (count fixtures, installed plant and land rights under the wider definition from 1 October 2026) |
 | Portfolio interests (listed or unlisted) | Generally not indirect real property interests if the non-portfolio test fails; check associates, holding history and other TAP categories |
 
-- **Indirect interests: both tests** — A share or unit is an indirect Australian real property interest only if the non-portfolio interest test and the principal asset test are both met. The non-portfolio test counts the holder and associates, generally requires 10% or more, and can be met through a 12-month holding within the preceding 24 months. The principal asset test compares market values, not book values or the entity's business description.  _([ITAA 1997 (Cth) s 855-25](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/855-25); [s 855-30](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/855-30))_
+- **Indirect interests: both tests** — A share or unit is an indirect Australian real property interest only if the non-portfolio interest test and the principal asset test are both met. For CGT events from 1 October 2026 the principal asset test is passed if it is met at the time of the event or at any time in the preceding 365 days (Section 3A). The non-portfolio test counts the holder and associates, generally requires 10% or more, and can be met through a 12-month holding within the preceding 24 months. The principal asset test compares market values, not book values or the entity's business description.  _([ITAA 1997 (Cth) s 855-25](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/855-25); [s 855-30](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/855-30))_
+
+## Section 3A — Changes for CGT events from 1 October 2026
+
+Act No. 86 of 2026 (Treasury Laws Amendment (Strengthening Accountability for Tax Adviser
+Misconduct and Other Measures) Act 2026, assent 15 September 2026) changes the regime for CGT
+events on or after 1 October 2026.
+
+| Change | Effect | Provision |
+| --- | --- | --- |
+| Wider real property | Taxable Australian real property now includes any interest in or right over Australian land, a personal right to call for such an interest, licences and contractual rights over land, things fixed or installed on land (with leases and licences over them), however State law treats them, and Australian water entitlements. Mining, quarrying or prospecting information about Australian areas is treated as real property for the principal asset test. Treaty references to real or immovable property take this meaning | ITAA 1997 ss 855-20, 855-30(6), 995-1 (real property); International Tax Agreements Act 1953 s 3(5) |
+| 365-day principal asset test | An interest passes the principal asset test if it does so at the event or at any time in the 365 days before it, unless a ministerial determination sets another time | ITAA 1997 s 855-25(1)(b), (1A) |
+| Vendor declaration notice | Where a vendor declares a membership interest is not an indirect Australian real property interest, the purchaser can rely on the declaration only if the vendor notified the Commissioner in the approved form (at least 28 days before ownership passes where the period from entering the transaction is more than 31 days) and gave a further declaration that it did, unless the transaction and related transactions total under $50 million or are of a kind the Minister excludes | TAA 1953 Sch 1 ss 14-210(3)-(6), 14-225(2A), 14-226 |
+| Renewable energy transition | A foreign resident company or foreign trust (not an individual) treats a gain on an Australian renewable energy asset, or on a membership interest passing the renewable energy asset test, as a discount capital gain at 50% for CGT events before 1 July 2040 | Income Tax (Transitional Provisions) Act 1997 Div 855 (Sch 3) |
+| Withholding credit timing | From 1 October 2026 a FRCGW amount is credited in the income year the payment is recognised for income tax purposes, on revenue or capital account | TAA 1953 Sch 1 ss 18-15(3), 18-20(1A), 18-25(1A) (Sch 8) |
+
+[Act No. 86 of 2026](https://www.legislation.gov.au/C2026A00086/asmade/text);
+[ATO, Strengthening the foreign resident CGT regime](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/strengthening-the-foreign-resident-cgt-regime)
 
 ## Section 4 — CGT Rate for Non-Residents
 
@@ -66,7 +83,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 5 — Foreign Resident Capital Gains Withholding (FRCGW)
 
-- **FRCGW obligation** — For contracts signed from 1 January 2025, the purchaser must withhold 15% of the sale price on Australian real property, with no value threshold. Contracts from 1 July 2017 to 31 December 2024 attracted 12.5% where the value was $750,000 or more. [ATO, Foreign residents capital gains withholding variations](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-residents-and-variations).  _([ATO, Foreign residents capital gains withholding variations](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-residents-and-variations))_
+- **FRCGW obligation** — For contracts signed from 1 January 2025, the purchaser must withhold 15% of the sale price on Australian real property, with no value threshold. Contracts from 1 July 2017 to 31 December 2024 attracted 12.5% where the value was $750,000 or more.   _([ATO, Foreign residents capital gains withholding variations](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-residents-capital-gains-withholding-variations))_
 - **FRCGW nature** — This is a payment on account (not a final tax). Actual tax liability is computed in the non-resident's Australian tax return.
 
 **FRCGW threshold table**
@@ -85,7 +102,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Variation for non-resident sellers** — If the seller IS a non-resident but believes no tax is payable (e.g. asset is not TAP, or gain is nil due to losses), the seller can apply for a variation to reduce the withholding amount.
 - **Vendor declarations and excluded transactions** — Other TAP interests and options use the vendor declaration rules rather than a clearance certificate, and qualifying transactions on an approved stock exchange are excluded from withholding. Obtain the right document before settlement and arrange payment of the withheld amount to the ATO.  _([ATO, Foreign resident capital gains withholding overview](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-resident-capital-gains-withholding-overview))_
 
-Applications: via ATO online portal (myGov / Tax Agent portal). Processing time: 14-28 days typically.
+Applications: via ATO online services (myGov or Online services for agents). Apply well before settlement; processing is not immediate and the ATO may ask for more information.
 
 ## Section 7 — Filing Obligations for Non-Residents
 
@@ -95,8 +112,8 @@ Applications: via ATO online portal (myGov / Tax Agent portal). Processing time:
 
 ## Section 8 — Interaction with Tax Treaties
 
-- **DTA coverage and Article 13** — Australia has double tax agreements (DTAs) with 45+ countries. Article 13 of most DTAs follows the OECD Model — gains on shares may be taxed by the country of residence of the seller UNLESS the shares derive principally from Australian real property (aligns with the TAP domestic test).
-- **Treaty outcome mirrors domestic TAP rules** — Under most treaties, the outcome mirrors the domestic TAP rules: if TAP → Australia taxes; if not TAP → Australia does not tax (residence country taxes).
+- **DTA coverage and Article 13** — Australia has comprehensive double tax agreements (DTAs) with more than 40 countries. Article 13 of most DTAs follows the OECD Model — gains on shares may be taxed by the country of residence of the seller UNLESS the shares derive principally from Australian real property (aligns with the TAP domestic test).
+- **Treaty outcome mirrors domestic TAP rules** — Under most treaties, the outcome mirrors the domestic TAP rules: if TAP, Australia taxes; if not TAP, Australia does not tax and the residence country taxes. From 1 October 2026, a treaty's real or immovable property takes the wider domestic meaning where the treaty defers to Australian law (International Tax Agreements Act 1953 s 3(5)).
 
 Always check the saving clause and specific treaty wording.
 
@@ -104,6 +121,7 @@ Always check the saving clause and specific treaty wording.
 
 - ITAA 1997 Division 855 (non-resident CGT)
 - Tax Administration Act 1953, Schedule 1, Subdivision 14-D (FRCGW)
+- Treasury Laws Amendment (Strengthening Accountability for Tax Adviser Misconduct and Other Measures) Act 2026 (No. 86), Schedules 2, 3 and 8
 - ATO: ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax
 - ATO: Foreign resident capital gains withholding (ato.gov.au/FRCGW)
 

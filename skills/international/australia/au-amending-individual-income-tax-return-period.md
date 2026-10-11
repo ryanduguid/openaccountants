@@ -2,10 +2,10 @@
 name: au-amending-individual-income-tax-return-period
 description: How an Australian individual requests or receives an amendment to an income tax assessment, the time limit that applies, and how shortfall penalties and the reasonably arguable position test work — for tax agents and accountants advising individual clients.
 jurisdiction: AU
-version: 1.1
+version: 1.2
 category: international
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -59,11 +59,11 @@ Individuals, including sole traders, who need to correct an already-assessed inc
 | BPA under subsection 284-90(1) for a penalty imposed under subsection 284-75(2) | 25% of the shortfall amount, or the part of it, that resulted from taking a position on the law that was not reasonably arguable | MT 2008/2 paragraphs 24 and 57 |
 | Threshold worked through in MT 2008/2 Example 1 | Greater of $10,000 or 1% of the income tax payable | On the example's facts (tax payable of $50,000) the 1% figure is $500, so the $10,000 limb applied and a $7,000 shortfall did not meet the threshold |
 
-**Four-year business amendment period table**  _(https://www.ato.gov.au/Business/Privately-owned-and-wealthy-groups/What-you-should-know/Tailored-engagement/Assessments-and-amendment-periods/)_
+**Four-year business amendment period table**  _(https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/what-you-should-know/tailored-engagement/assessments-and-amendment-periods)_
 
 | What | Value | Note |
 | --- | --- | --- |
-| Source | all figures below | https://www.ato.gov.au/Business/Privately-owned-and-wealthy-groups/What-you-should-know/Tailored-engagement/Assessments-and-amendment-periods/ |
+| Source | all figures below | https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/what-you-should-know/tailored-engagement/assessments-and-amendment-periods |
 | Standard ATO amendment period for most businesses in privately owned and wealthy groups | Four years | Page states the exception is where evidence of fraud or evasion is found, in which case there is no time limit; it also notes different amendment-period rules can apply in some transfer pricing, research and development and capital gains tax cases |
 
 **Sole trader four-year amendment period table**  _(https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/time-limits-on-amendments; https://www.ato.gov.au/law/view/document?docid=PAC/19360027/170)_
@@ -80,7 +80,7 @@ Individuals, including sole traders, who need to correct an already-assessed inc
 
 1. Identify what the correct assessment should be and quantify the difference between the correct tax liability or credit entitlement and the amount calculated on the information already given — this difference is the "shortfall amount" as defined on the ATO false or misleading statements page (https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalties-for-making-false-or-misleading-statements).
 2. Check the amendment time limit against the date the assessment (or amended assessment) was issued, using the time limits in the first table above (https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/time-limits-on-amendments). Establish whether the client is within the individuals period or out of time.
-3. If within the limit, request the amendment through the ATO's amend your tax return process (https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return). The individuals pages read for this draft do not set out the lodgement channels or name the amendment form, so confirm the current channel and form name on that ATO page before lodging; nothing is assumed here.
+3. If within the limit, request the amendment through the ATO's amend your tax return process (https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return); step 13 lists the channels.
 4. Treat the amendment request itself as a statement to the ATO. The false or misleading statements page states that the penalty can arise from a statement made in a tax return, activity statement or amendment request that results in a shortfall amount, so the request must be complete and correct (https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalties-for-making-false-or-misleading-statements).
 5. Test whether penalty exposure arises. The same page states that generally there is no penalty where the taxpayer or agent took reasonable care in making the statement, or where the tax law was applied in a way that agrees with ATO advice, published statements or general administrative practices — but notes that reasonable care does not prevent a separate penalty for taking a position that is not reasonably arguable.
 6. Where the position depended on an arguable view of the law, work the two-limb test in the tables: the position must fail the reasonably arguable standard and the shortfall amount must exceed the threshold for the taxpayer type, as MT 2008/2 works through in its examples (https://www.ato.gov.au/law/view/document?docid=MXR%2FMT20082%2FNAT%2FATO%2F00001).
@@ -110,7 +110,6 @@ Individuals, including sole traders, who need to correct an already-assessed inc
 - Requests for remission of penalty and for penalty relief, and the calculation of interest charges on a shortfall — the pages read for this draft state that penalty can be remitted where fair and reasonable but no remission figures or interest rates were taken from an allowed host for this Guide.
 - Significant global entities and entities in an Applicable MNE Group, where the ATO pages describe a different base penalty and a penalty multiplier for IIR/UTPR or DMT statements.
 - Amendments involving transfer pricing, research and development or capital gains tax where the ATO states different amendment-period rules can apply.
-- The choice of lodgement channel and the correct amendment form name and number: the individuals pages read for this draft do not set these out, so confirm on the ATO amend your tax return page before advising.
 
 ## Sources
 
@@ -118,7 +117,7 @@ Individuals, including sole traders, who need to correct an already-assessed inc
 - https://www.ato.gov.au/individuals-and-families/paying-the-ato/interest-and-penalties/penalties/penalties-for-making-false-or-misleading-statements (reasonably arguable penalty, thresholds and voluntary disclosure table)
 - https://www.ato.gov.au/law/view/pdf?DocId=PSR%2FPS20125%2FNAT%2FATO%2F00001&filename=law%2Fview%2Fpdf%2Fpsr%2Fps2012-005c5.pdf&PiT=20191025000001 (PS LA 2012/5 base penalty amounts by behaviour table)
 - https://www.ato.gov.au/law/view/document?docid=MXR%2FMT20082%2FNAT%2FATO%2F00001 (MT 2008/2 base penalty amount and threshold example table)
-- https://www.ato.gov.au/Business/Privately-owned-and-wealthy-groups/What-you-should-know/Tailored-engagement/Assessments-and-amendment-periods/ (four-year business amendment period table)
+- https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/privately-owned-and-wealthy-groups/what-you-should-know/tailored-engagement/assessments-and-amendment-periods (four-year business amendment period table)
 - https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return (amendment process entry point, cited in the method)
 - https://www.ato.gov.au/individuals-and-families/your-tax-return/amend-your-tax-return/how-to-request-an-amendment-to-your-tax-return (channels, signature and fee rules, cited at step 13)
 - https://www.ato.gov.au/law/view/document?docid=PAC/19360027/170 (section 170 ITAA 1936: amendment periods, item 3A four-year sole trader period, subsections 170(2) to (4))

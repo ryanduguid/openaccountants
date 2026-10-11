@@ -1,10 +1,10 @@
 ---
 name: au-sole-trader-schedule
 description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 70c/hour or actual), motor vehicle (logbook or cents per km at 88c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Sole Trader Schedule
 
-## Australia Sole Trader Business Schedule v1.3
+## Australia Sole Trader Business Schedule v1.4
 
 ## What this file is
 
@@ -73,17 +73,9 @@ This skill does NOT cover:
 | Small business entity threshold | Aggregated turnover < $10M | ITAA 1997 s 328-110 |
 | Cents per km rate (motor vehicle) | 88 cents per km (2024-25 and 2025-26); 91 cents (2026-27) | ATO cents per kilometre method |
 | Cents per km cap | 5,000 business km per car per year | ITAA 1997 s 28-25 |
-| Home office fixed rate | 70 cents per hour (2024-25 through 2026-27; 67c applied 2022-23 and 2023-24) | ATO PCG 2023/1 |
+| Home office fixed rate | 70 cents per work hour for 2024-25 and 2025-26 (67c applied 2022-23 and 2023-24); confirm the 2026-27 rate when the ATO publishes it | ATO PCG 2023/1 |
 | Trading stock threshold (change in value) | $5,000: if an eligible small business entity reasonably estimates that the difference between opening and closing stock is $5,000 or less, the taxpayer can elect not to do a stocktake | ITAA 1997 s 328-285 |
 | Prepaid expenses (SBE) | Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year | ITAA 1936 ss 82KZL and 82KZM |
-
-- **Instant asset write-off threshold** — For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; Schedule 2 commenced on 1 October 2026 and applies to assets first used or installed ready for use from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text).  _(ITAA 1997 Subdivision 328-D)_
-- **Small business entity threshold** — Aggregated turnover < $10M  _(ITAA 1997 s 328-110)_
-- **Cents per km rate (motor vehicle)** — 88 cents per km for 2024-25 and 2025-26; 91 cents per km from 2026-27 cents per km  _(ATO cents per kilometre method)_
-- **Cents per km cap** — 5,000 business km per car per year  _(ITAA 1997 s 28-25)_
-- **Home office fixed rate** — 70 cents per hour for 2024-25 through 2026-27 (67c applied for 2022-23 and 2023-24) cents per hour  _(ATO PCG 2023/1)_
-- **Trading stock threshold (change in value)** — $5,000: if an eligible small business entity reasonably estimates that the difference between opening and closing stock is $5,000 or less, the taxpayer can elect not to do a stocktake  _(ITAA 1997 s 328-285)_
-- **Prepaid expenses (SBE)** — Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year  _(ITAA 1936 ss 82KZL and 82KZM)_
 
 ## Section 4 — Computation rules
 
@@ -99,7 +91,7 @@ This skill does NOT cover:
 
 - **General deduction provision** — Deductions must satisfy the general deduction provision: incurred in gaining or producing assessable income, or necessarily incurred in carrying on a business for that purpose. Losses and outgoings of a capital, private, or domestic nature are not deductible (subject to specific provisions).  _(ITAA 1997 s 8-1)_
 
-**Key deduction categories on the 2025 BPI schedule**
+**Key deduction categories on the 2026 BPI schedule**
 
 | Schedule area | Category | Notes |
 | --- | --- | --- |
@@ -110,7 +102,7 @@ This skill does NOT cover:
 | P8 K | Rent on business premises | Home-office running expenses go to P8 P |
 | P8 P | All other expenses | Includes eligible home-office running expenses, travel, subscriptions and professional fees |
 
-Use the [ATO 2025 BPI expenses instructions](https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2025-instructions/instructions-to-complete-the-bpi-schedule-2025/business-income-and-expenses-p8/expenses-p8) for the primary-production and non-primary-production columns. These labels are for 2024-25; verify the schedule for another year.
+Use the [ATO 2026 BPI expenses instructions](https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2026-instructions/instructions-to-complete-the-bpi-schedule-2026/business-income-and-expenses-p8/expenses-p8) for the primary-production and non-primary-production columns. These labels are for 2025-26; verify the schedule for another year.
 
 ### 4.4 Motor vehicle expenses
 
@@ -136,9 +128,9 @@ Two methods available for sole traders:
 
 ### 4.6 Home office expenses
 
-#### Fixed rate method (70c per hour from 2024-25) — PCG 2023/1
+#### Fixed rate method (70c per work hour for 2024-25 and 2025-26) — PCG 2023/1
 
-- **Fixed rate method** — Covers energy expenses (electricity, gas), phone, internet, stationery, computer consumables. Must keep a record of actual hours worked from home (e.g., timesheets, diary, roster). Separately claim occupancy expenses (rent, mortgage interest, rates, insurance) only if the home is a place of business (rare for sole traders without a dedicated area). Cannot separately claim expenses already covered by the fixed rate (70c from 2024-25).  _(ATO PCG 2023/1)_
+- **Fixed rate method** — Covers energy expenses (electricity, gas), phone, internet, stationery, computer consumables. Must keep a record of actual hours worked from home, made during the year (e.g., timesheets, diary, roster); an estimate is not accepted. Separately claim occupancy expenses (rent, mortgage interest, rates, insurance) only if the home is a place of business (rare for sole traders without a dedicated area). Cannot separately claim expenses already covered by the fixed rate. Decline in value of depreciating assets used for work is claimed separately.  _(ATO PCG 2023/1)_
 
 #### Actual cost method
 

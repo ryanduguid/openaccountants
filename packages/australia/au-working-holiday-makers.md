@@ -11,10 +11,10 @@ description: >
   needed. Trigger on "backpacker tax", "working holiday maker",
   "417 visa tax", "462 visa tax", "WHM employer registration", "Schedule 15",
   "DASP", "backpacker super refund". Covers 2026-27.
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - australia-payroll
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Working Holiday Makers
 
-## Australia Working Holiday Makers v1.1
+## Australia Working Holiday Makers v1.2
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
@@ -179,9 +179,14 @@ assessment scale. She claims the foreign resident Medicare levy exemption for th
 
 ```
 Super guarantee 52,000 x 12%                               6,240
-DASP tax at 65% on the taxable component                   4,056
-Net DASP paid after Lena leaves Australia                  2,184
+Less 15% contributions tax in the fund                      (936)
+Balance, all taxable component (ignoring earnings, fees)   5,304
+DASP tax at 65% on the taxable component                 3,447.60
+Net DASP paid after Lena leaves Australia                1,856.40
 ```
+
+Employer contributions are taxed at 15% in the fund before the DASP is paid, so the 65% applies
+to the balance, not to the gross contributions.
 
 **Step 4, if the employer were unregistered.** Withholding would have been 30% of every pay,
 $15,600 for the year, and Lena would lodge to recover the $6,750 excess. The employer would also

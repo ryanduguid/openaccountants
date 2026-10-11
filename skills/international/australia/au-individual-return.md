@@ -1,11 +1,11 @@
 ---
 name: au-individual-return
-description: Use this skill whenever asked about Australian individual income tax for sole traders. Trigger on phrases like "how much tax do I pay in Australia", "Australian tax return", "sole trader tax", "ABN tax", "Medicare levy", "LITO", "PAYG", "tax brackets Australia", "BAS", "instant asset write-off", "home office deduction", "HELP repayment", "HECS debt", "small business income tax offset", "motor vehicle deduction", or any question about filing or computing income tax for an Australian sole trader. Covers 2024-25 Stage 3 tax rates, Medicare levy and surcharge, LITO, business income computation, allowable deductions, depreciation, instant asset write-off, small business income tax offset, HELP/HECS repayments, and final tax computation. ALWAYS read this skill before touching any Australian income tax work.
-version: 2.3
+description: Use this skill whenever asked about Australian individual income tax for sole traders. Trigger on phrases like "how much tax do I pay in Australia", "Australian tax return", "sole trader tax", "ABN tax", "Medicare levy", "LITO", "PAYG", "tax brackets Australia", "BAS", "instant asset write-off", "home office deduction", "HELP repayment", "HECS debt", "small business income tax offset", "motor vehicle deduction", or any question about filing or computing income tax for an Australian sole trader. Covers 2025-26 resident tax rates, Medicare levy and surcharge, LITO, business income computation, allowable deductions, depreciation, instant asset write-off, small business income tax offset, HELP/HECS repayments, and final tax computation. ALWAYS read this skill before touching any Australian income tax work.
+version: 2.4
 jurisdiction: AU
 tax_year: 2025
 tax_year_notes: "2025-26"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Self-lodged: 31 October following the 30 June year-end. Tax-agent dates depend on the client: 15 May is the general date for eligible clients not required earlier, and engagement before 31 October does not guarantee it. For 2025-26, self-lodgment is due Monday 2 November 2026 because 31 October 2026 falls on a Saturday; confirm agent dates in the ATO lodgment program |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
-| Skill version | 2.3 |
+| Skill version | 2.4 |
 
 ### Tax Rates -- Resident Individual (2025-26) [T1]
 
@@ -90,7 +90,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Rate/threshold | Claim handling |
 | --- | --- | --- |
-| Home office -- fixed rate method | 70 cents per hour (PCG 2023/1, 2024-25 to 2026-27) | T2 -- method choice, hours, and records/substantiation required |
+| Home office -- fixed rate method | 70 cents per work hour for 2024-25 and 2025-26 (PCG 2023/1; the ATO had not published a 2026-27 rate when its page was last updated on 8 June 2026) | T2 -- method choice, hours, and records/substantiation required |
 | Motor vehicle -- cents per km method | 88 cents per km (max 5,000 km) | T2 -- method choice and business-km support required |
 | Instant asset write-off (small business) | $20,000 threshold (assets under $20,000 immediately deductible) | T1 if small-business eligibility and asset cost are clear; otherwise escalate |
 | Superannuation (deductible personal contribution) | Up to concessional cap ($30,000 in 2025-26; $32,500 in 2026-27) | T1 rate-cap lookup; notice of intent must be lodged before claiming |
@@ -122,11 +122,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal Catalogue
 
-- **R-AU-1 -- Companies and trusts** — Companies lodge company tax returns. Trusts lodge trust returns. This skill covers individual sole traders only.  _(R-AU-1)_
-- **R-AU-2 -- Non-residents** — Non-resident tax rates and rules differ significantly. Out of scope.  _(R-AU-2)_
-- **R-AU-3 -- Capital gains tax events** — CGT events require specialised computation (cost base, discounts, exemptions). Out of scope.  _(R-AU-3)_
-- **R-AU-4 -- Complex depreciation (effective life disputes)** — Where the ATO effective life is contested or the asset has no published rate, escalate.  _(R-AU-4)_
-- **R-AU-5 -- Partnership or PSI (Personal Services Income)** — PSI rules and partnership allocations require separate analysis. Escalate.  _(R-AU-5)_
+- **R-AU-1 -- Companies and trusts** — Companies lodge company tax returns and trusts lodge trust returns. This skill covers individuals only; use `au-company-tax` or `au-trust-distributions`.
+- **R-AU-2 -- Non-residents** — Non-resident tax rates and rules differ significantly. Out of scope; see `au-tax-residency` and `au-nonresident-cgt`.
+- **R-AU-3 -- Capital gains tax events** — CGT events require specialised computation (cost base, discounts, exemptions). Out of scope here; use `au-capital-gains`.
+- **R-AU-4 -- Complex depreciation (effective life disputes)** — Where the ATO effective life is contested or the asset has no published rate, escalate.
+- **R-AU-5 -- Partnership or PSI (Personal Services Income)** — PSI rules and partnership allocations require separate analysis. Use `au-psi` or `au-partnerships` and escalate unresolved facts.
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -180,7 +180,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | GST PAYMENT, BAS PAYMENT | EXCLUDE from income tax | T1 | GST is separate. Report net of GST if registered. |
 | PRIVATE HEALTH, MEDIBANK, BUPA, NIB, HCF | NOT a deduction (but affects MLS) | T1 | Private health insurance is NOT tax deductible. But having it avoids Medicare Levy Surcharge. PHI rebate claimed separately. |
 | PERSONAL, GROCERY, ENTERTAINMENT | EXCLUDE | Not deductible | Personal expenses |
-| DONATION, CHARITY, DGR | Deduction (Item D9) | T1 | Deductible if to a deductible gift recipient (DGR). Must be $2+ and genuinely a gift. |
+| DONATION, CHARITY, DGR | Deduction (Item D9) | T1 | Deductible if to a deductible gift recipient (DGR) and genuinely a gift. The $2 minimum no longer applies to gifts made from 1 July 2024 (Treasury Laws Amendment (Delivering an Efficient and Trusted Tax System) Act 2026, Sch 1). |
 
 ### 3.3 SaaS Subscriptions
 
@@ -266,7 +266,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Diminishing value** — Base value x (days held / 365) x (200% / effective life)  _(ITAA 1997 Div 40)_
 - **Prime cost (straight line)** — Cost x (days held / 365) x (100% / effective life)  _(ITAA 1997 Div 40)_
-- **Small business entity simplified depreciation** — Small business entity (turnover < $10M): can use simplified depreciation -- pool all assets over $20,000 at 15% first year, 30% thereafter.  _(ITAA 1997 Div 40)_
+- **Small business entity simplified depreciation** — Small business entity (turnover < $10M): can use simplified depreciation -- pool assets costing $20,000 or more at 15% in the first year and 30% thereafter.  _(ITAA 1997 Div 40)_
 - **Instant asset write-off** - Eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 that are first used or installed ready for taxable use in 2025-26, the year covered here (Treasury Laws Amendment (Strengthening Financial Systems and Other Measures) Act 2025). For assets first used or installed ready for use from 1 July 2026, Schedule 2 of the Treasury Laws Amendment (Tax Reform No. 2) Act 2026 makes the $20,000 threshold permanent; the Act received assent on 26 August 2026 and Schedule 2 commenced on 1 October 2026. _([Act, section 2 and Schedule 2 item 15](https://www.legislation.gov.au/C2026A00071/asmade/text); [ATO, $20,000 instant asset write-off](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/20000-dollars-instant-asset-write-off))_
 
 ### 5.4 Superannuation [T1]
@@ -288,7 +288,7 @@ Use the 2025–26 thresholds below for this return workflow. Use the separately 
 
 - **2026-27 HELP repayment bands** — 2026-27: nil to $69,528; 15c over $69,528 to $129,717; $9,028 + 17c over $129,717 to $186,050; 10% of total repayment income from $186,051.  _([ATO, Study and training loan repayment thresholds and rates](https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds))_
 - **Marginal basis (from 2025-26)** — From 2025-26 compulsory repayments are calculated on a marginal basis (only the income above the minimum repayment threshold), substituted by the Universities Accord (Cutting Student Debt by 20 Per Cent) Act 2025.  _(Universities Accord (Cutting Student Debt by 20 Per Cent) Act 2025)_
-- **Repayment income** — Repayment income = taxable income + reportable fringe benefits + net investment losses + reportable super. HELP repayments are NOT deductible.  _(Higher Education Support Act 2003)_
+- **Repayment income** — Repayment income = taxable income + reportable fringe benefits + net investment losses + reportable super contributions + exempt foreign employment income. HELP repayments are NOT deductible.  _(Higher Education Support Act 2003)_
 
 ### 5.6 Filing and Penalties [T1]
 

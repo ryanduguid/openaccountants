@@ -2,18 +2,18 @@
 name: au-partnerships
 description: >
   Use this skill whenever asked about Australian partnership taxation -- partnership tax returns (form P), how section 90 net income or partnership losses flow through to partners under section 92, partner salaries and drawings, non-commercial loss deferral for partner shares, CGT on fractional partnership interests, admitting or retiring partners, reconstitution versus dissolution, GST registration for partnerships, family or husband-and-wife partnerships, income splitting, Everett assignments, or professional firm profit allocation under PCG 2021/4. Trigger on phrases like "partnership return", "partner salary", "partnership loss", "profit share", "admit a partner", "family partnership", or "Everett". ALWAYS read this skill before touching any partnership work.
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Partnerships -- Division 5 Flow-Through Taxation Skill v1.2
+# Australia Partnerships -- Division 5 Flow-Through Taxation Skill v1.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -103,7 +103,7 @@ Partnership work starts with the P&L and the capital accounts, not the profit sp
 
 Ana and Ben run a cafe in equal partnership (no written agreement -- equal sharing by default). 2026-27: accounting profit $86,000 AFTER crediting each partner $2,000 "interest on capital". Both amounts are appropriations of profit, so s 90 net income = $86,000 + $4,000 = **$90,000**. Each partner's s 92(1) share = **$45,000** -- assessable whether or not drawn (Ana drew only $20,000 cash; she is still assessed on $45,000).
 
-Ana has no other income. 2026-27 resident rates: tax = 15% x ($45,000 - $18,200) = 15% x $26,800 = **$4,020**, plus Medicare levy 2% x $45,000 = $900, less offsets: the small business income tax offset (turnover < $5m) is 16% x $4,020 = $643.20 (under the $1,000 cap), plus any LITO. The partnership itself pays nothing and remits nothing for the partners.
+Ana has no other income. 2026-27 resident rates: tax = 15% x ($45,000 - $18,200) = 15% x $26,800 = **$4,020**, plus Medicare levy 2% x $45,000 = $900, less offsets: the small business income tax offset (turnover < $5m) is 16% x $4,020 = $643.20 (under the $1,000 cap) and LITO at $45,000 is $700 - 5% x ($45,000 - $37,500) = $325, leaving $4,020 - $643.20 - $325 + $900 = **$3,951.80**. The partnership itself pays nothing and remits nothing for the partners.
 
 ### Example 2 -- Partner salary recharacterised where it would create a loss
 
@@ -315,7 +315,7 @@ If the client provides only financial statements:
 
 ### Primary sources (verified 20 August 2026)
 
-**Primary sources table**  _(Primary sources (verified 20 August 2026))_
+**Primary sources table**
 
 | Topic | Source |
 | --- | --- |

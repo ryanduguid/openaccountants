@@ -9,18 +9,18 @@ description: >
   on "GST withholding", "GST at settlement", "margin scheme", "going concern", "new residential
   premises", "subdivision GST". Covers classification, withholding mechanics, worked arithmetic
   and escalation lines. ALWAYS read this skill before touching any property GST work.
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia GST and Real Property Skill v1.2
+# Australia GST and Real Property Skill v1.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, or contracts. Do not rely on it to file, pay, settle, or take a tax position without review by a qualified professional.
 
@@ -45,7 +45,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Div 129 adjustment periods | Non-business-finance acquisitions: No general Div 129 adjustment at <= $1,000 GST-exclusive; 2 (> $1,000 and <= $5,000), 5 (> $5,000 and < $500,000), 10 (>= $500,000) -- s 129-20(3) |
 | Div 135 clawback | Increasing adjustment = 1/10 x supply price x proportion of non-creditable use (s 135-5) |
 | Penalty unit | $364 (from 1 July 2026) |
-| FRCGW (separate regime) | Foreign resident capital gains withholding: 15%, NO price threshold, from 1 January 2025. Income tax withholding, not GST -- different forms; both can apply to one settlement |
+| FRCGW (separate regime) | Foreign resident capital gains withholding: 15%, NO price threshold, from 1 January 2025; Act 86/2026 changes the foreign resident CGT rules from 1 October 2026 (see au-nonresident-cgt). Income tax withholding, not GST -- different forms; both can apply to one settlement |
 | Contributor | Open Accountants |
 | Validated by | Pending |
 
@@ -185,9 +185,11 @@ HoldCo, registered since 1998, has owned a vacant residentially-zoned lot since 
 Margin = $1,650,000 - $400,000            = $1,250,000
 GST    = $1,250,000 x 1/11                = $113,636 (vs $150,000 without the margin scheme)
 RW     = 7% x $1,650,000 (potential residential land, margin scheme) = $115,500
-BAS: G1 $1,250,000 margin-basis reporting per ATO instructions; 1A $113,636
+BAS: G1 $1,250,000 (the margin, not the price); 1A $113,636
 Credit $115,500 - liability $113,636      = $1,864 refund to HoldCo
 ```
+
+The ATO's [margin scheme activity statement guidance](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/property/gst-and-the-margin-scheme/completing-your-activity-statement) puts the margin at G1 (nothing if the margin is nil or negative) and the GST on the margin at 1A, never the amount withheld.
 
 The purchaser has no ITC (s 75-20) but keeps margin scheme eligibility for any future taxable resale.
 
@@ -278,7 +280,7 @@ If the client provides only a settlement statement and a trial balance:
 - NEVER confuse FRCGW (15%, income tax, from 1 Jan 2025) with GST at settlement -- separate forms, both may apply
 - NEVER present computed figures as definitive
 
-### Primary sources (verified 20 August 2026)
+### Primary sources (verified 20 August 2026; margin scheme BAS labels rechecked 11 October 2026)
 
 | Topic | Source |
 |---|---|

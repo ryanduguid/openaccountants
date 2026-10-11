@@ -9,18 +9,18 @@ description: >
   annual RFBA reporting, paper-to-digital transition, and exemption/rebate reconciliation.
   Trigger on "FBT year end", "FBT return", "FBT instalment", "vary FBT", "RFBA timing",
   "FBT due date". Read au-fbt first for benefit-level computation; this skill covers the CYCLE.
-version: 1.0
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027"
-last_updated: 2026-09-14
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia FBT Annual Cycle -- Employer Skill v1.0
+# Australia FBT Annual Cycle -- Employer Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -60,7 +60,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown whether client is on an agent's FBT client list | Assume the 21 May date governs until confirmed in writing |
 | Unknown GST creditability of a benefit | Ask -- decides Type 1 vs Type 2; never assume Type 1 |
 | RFBA needed but FBT return not yet finalised | Report the best current estimate via STP, then correct by update event before finalisation |
-| Not-for-profit employer, salary packaging design, novated lease structuring, international assignees | STOP -- refusal catalogue (Section 8) |
+| Not-for-profit employer, salary packaging design, novated lease structuring, international assignees | STOP -- refusal catalogue (Section 9) |
 
 ---
 

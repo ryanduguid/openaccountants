@@ -1,10 +1,10 @@
 ---
 name: au-gst-bas
 description: Australian Business Activity Statement (BAS) — non-GST sections. Covers PAYG withholding (labels W1-W5), PAYG income tax instalments (labels T1-T9), FBT instalments (label F1), and PAYG withholding reconciliation. Complements australia-gst.md which covers GST labels (1A-9).
-version: 1.4
+version: 1.5
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU GST Bas
 
-## Australia BAS: Non-GST Sections v1.4
+## Australia BAS: Non-GST Sections v1.5
 
 ## What this file is
 
@@ -71,7 +71,7 @@ This skill does NOT cover:
 | Q1 | 1 Jul – 30 Sep | 28 October |
 | Q2 | 1 Oct – 31 Dec | 28 February |
 | Q3 | 1 Jan – 31 Mar | 28 April |
-| Q4 | 1 Apr – 30 Jun | 28 July (if lodging electronically, may be extended to 25 August for Q4) |
+| Q4 | 1 Apr – 30 Jun | 28 July (registered tax and BAS agents lodging electronically generally have 25 August; online self-lodgers may get 2 extra weeks) |
 
 - **Weekend/holiday due date rule** — If the due date falls on a weekend or public holiday, the due date is the next business day. Tax agents may have extended lodgement programmes.  _(ATO lodgement programme)_
 
@@ -97,7 +97,7 @@ This skill does NOT cover:
 | Automatic entry — individuals (including sole traders) | The ATO uses the latest tax return. Automatic entry requires all of: instalment income of $4,000 or more; tax payable on the latest notice of assessment of $1,000 or more; and estimated (notional) tax of $500 or more. | [ATO — Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments) |
 | Instalment rate | As notified by the ATO (varies per taxpayer) | ATO instalment rate notice |
 | GDP-adjusted amount | GDP adjustment is part of the notified instalment-amount calculation, not an automatic increase in T2 | [ATO PAYG variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments) |
-| GDP uplift factor 2024-25 | 6% | [ATO — GDP adjustment for 2024-25 GST and PAYG instalments](https://softwaredevelopers.ato.gov.au/gdp-adjustment-2024-25-gst-and-payg-instalments) |
+| GDP uplift factor | 4% for 2025-26 (5% for 2026-27; 6% for 2024-25) | [ATO — GDP adjustment for 2025-26 GST and PAYG instalments](https://softwaredevelopers.ato.gov.au/gdp-adjustment-2025-26-gst-and-payg-instalments); [2026-27](https://softwaredevelopers.ato.gov.au/GDPupliftfactor) |
 | Voluntary entry | A person new to business, or expecting business and investment income over the threshold, can request voluntary entry to PAYG instalments. | [ATO — Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments) |
 
 ### 3.3 FBT instalments
@@ -149,7 +149,7 @@ Two methods are available:
 
 ### 5.3 STP and BAS alignment
 
-- **STP and BAS labels** — Reporting through STP does not cancel activity-statement obligations arising from GST, PAYG instalments or other tax roles. An STP-reporting small or medium withholder does not need to separately report W1; complete the other PAYG-withholding labels required by the issued activity statement. Different reporting and payment rules apply to large withholders. ATO Online Services may pre-fill W1 and W2 from STP information for eligible electronic activity statements; use payroll records as the primary source, then verify and correct any pre-filled figures. For a small employer with 19 or fewer payees, in-scope payments to closely held payees may be reported through STP quarterly, but arm's-length payees must still be reported on or before payday. That timing concession does not itself remove BAS obligations.  _([ATO — PAYG withholding](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding); [ATO — PAYG withholding pre-fill for activity statements](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/stp-and-activity-statements/ato-payg-withholding-pre-fill-for-activity-statements); [ATO — changes to PAYG withholding cycles](https://www.ato.gov.au/api/public/content/0-a1d50fe2-efe7-4866-9d51-855fd171ac74); [ATO — STP reporting for closely held payees](https://www.ato.gov.au/Business/Single-Touch-Payroll/Concessional-reporting/Closely-held-payees/))_
+- **STP and BAS labels** — Reporting through STP does not cancel activity-statement obligations arising from GST, PAYG instalments or other tax roles. An STP-reporting small or medium withholder does not need to separately report W1; complete the other PAYG-withholding labels required by the issued activity statement. Different reporting and payment rules apply to large withholders. ATO Online Services may pre-fill W1 and W2 from STP information for eligible electronic activity statements; use payroll records as the primary source, then verify and correct any pre-filled figures. For a small employer with 19 or fewer payees, in-scope payments to closely held payees may be reported through STP quarterly, but arm's-length payees must still be reported on or before payday. That timing concession does not itself remove BAS obligations.  _([ATO — PAYG withholding](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding); [ATO — PAYG withholding pre-fill for activity statements](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/stp-and-activity-statements/ato-payg-withholding-pre-fill-for-activity-statements); [ATO — changes to PAYG withholding cycles](https://www.ato.gov.au/api/public/content/0-a1d50fe2-efe7-4866-9d51-855fd171ac74); [ATO — STP reporting for closely held payees](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/concessional-reporting/closely-held-payees))_
 
 ### 5.4 Ceasing PAYG instalments
 
@@ -170,7 +170,7 @@ Before delivering output, verify:
 - [ ] FBT instalment (F1) is 25% of prior year FBT liability or validly varied
 - [ ] Lodgement due date has been correctly identified (including any tax agent extensions)
 - [ ] GST section cross-references to australia-gst.md output
-- [ ] Rates and thresholds match the 2025–26 income year; the historical GDP row is not a current-year rate
+- [ ] Rates and thresholds match the 2025–26 income year, including the 4% GDP adjustment factor
 - [ ] Output format matches the base skill spec
 
 ## Section 7 — Disclaimer
