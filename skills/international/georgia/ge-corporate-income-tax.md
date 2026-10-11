@@ -5,7 +5,7 @@ jurisdiction: GE
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.4
+version: 1.5
 reviewed_by: Gvantsa Amiridze, ACCA
 review_status: pending_review
 tier: 2
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Estonian distribution model overview** — Since 1 January 2017 Georgia taxes corporate profit only when it is distributed or deemed distributed (the Estonian model), so retained and reinvested profit is untaxed. The tax is computed monthly on distributions rather than on annual accounting profit.
 - **Standard corporate income tax rate** — 15% on distributed profit (art. 98(1))  _(Tax Code of Georgia (Legislative Herald of Georgia, English consolidated text, version of 25 June 2026), art. 98(1) — https://matsne.gov.ge/en/document/view/1043717)_
-- **Tax base** — Distributed profit, deemed distributions, non-business expenses, and free-of-charge supplies — retained/reinvested profit is not taxed  _(Tax Code of Georgia — https://matsne.gov.ge/en/document/view/1043717 (as reported; the figure was not re-read against this text for this change))_
+- **Tax base** — Distributed profit, deemed distributions, non-business expenses, and free-of-charge supplies — retained/reinvested profit is not taxed  _(Tax Code of Georgia, art. 97(1) (object of profit taxation: distributed profit, expenses and payments not related to economic activity, free delivery of goods, services or funds, excess representation expenses), English text on Matsne — https://matsne.gov.ge/en/document/view/1043717)_
 - **Computation on deemed distributions / non-business costs** — 15% applied to the grossed-up value of the taxable amount (taxable base / 0.85)  _(Tax Code of Georgia)_
 - **Rate for banks, credit unions, microfinance organisations and loan providers** — 20% (art. 98(4))  _(Tax Code of Georgia (Legislative Herald of Georgia, English consolidated text, version of 25 June 2026), art. 98(4) — https://matsne.gov.ge/en/document/view/1043717)_
 - **Retained / reinvested profit** — Not subject to corporate income tax until distributed  _(Tax Code of Georgia)_

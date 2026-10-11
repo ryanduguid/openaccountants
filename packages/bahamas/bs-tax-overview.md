@@ -5,7 +5,7 @@ jurisdiction: BS
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ The Bahamas is a no-direct-tax jurisdiction: there is no personal income tax, no
 - **Principal tax authority** — Department of Inland Revenue (DIR), Ministry of Finance  _([Department of Inland Revenue](https://inlandrevenue.finance.gov.bs/))_
 - **Basis of taxation** — No tax on worldwide or domestic income of individuals; The Bahamas does not levy income tax on the basis of residence or source  _(a secondary summary (link removed))_
 - **Headline personal income tax rate** — 0 (there is no personal income tax)  _(a secondary summary (link removed))_
-- **Headline corporate income tax rate** — 0% general rate; a 15% Domestic Minimum Top-up Tax applies only to in-scope large multinational groups  _(Domestic Minimum Top-Up Tax Act, 2024 — https://opm.gov.bs/bahamascitpillar2/ (as reported; the figure was not re-read against this text for this change))_
+- **Headline corporate income tax rate** — 0% general rate; a 15% Domestic Minimum Top-up Tax applies only to in-scope large multinational groups  _(Office of the Prime Minister, Domestic Tax Reforms (Domestic Minimum Top-Up Tax Bill, 2024; 15% minimum effective rate for in-scope multinational groups) — https://opm.gov.bs/bahamascitpillar2/ ; no general corporate income tax statute exists)_
 - **Does a VAT/GST exist?** — Yes — Value Added Tax at a standard rate of 10%  _(Value Added Tax Act, 2014, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Capital gains tax** — None — there is no capital gains tax  _(a secondary summary (link removed))_
 - **Inheritance / estate / gift tax** — None — there is no inheritance, estate, or gift tax  _(a secondary summary (link removed))_

@@ -5,7 +5,7 @@ jurisdiction: TW
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.4
+version: 1.5
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,10 +17,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Taiwan (Republic of China) taxes individuals and profit-seeking enterprises on a largely territorial (Taiwan-source) basis, administered by the Ministry of Finance through the National Taxation Bureaus. The tax year is the calendar year and the currency is the New Taiwan Dollar (TWD/NT$).
 
-- **Standard tax year** — Calendar year (1 January – 31 December)  _(Income Tax Act — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003 (as reported; the figure was not re-read against this text for this change))_
+- **Standard tax year** — Calendar year (1 January – 31 December)  _(Income Tax Act, art. 23 (fiscal year 1 January to 31 December unless a different year is approved), English text — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 - **Currency** — New Taiwan Dollar (TWD / NT$)  _(Ministry of Finance, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Tax authority** — Ministry of Finance, via the National Taxation Bureaus (e.g. NTB of Taipei) and eTax Portal  _([Ministry of Finance Organization Act](https://www.etax.nat.gov.tw/etwmain/en))_
-- **Basis of taxation** — Territorial — Taiwan-source income is taxed; foreign-source income is generally outside the regular income tax but may fall under the Income Basic Tax (AMT)  _(Income Tax Act — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003 (as reported; the figure was not re-read against this text for this change))_
+- **Basis of taxation** — Territorial — Taiwan-source income is taxed; foreign-source income is generally outside the regular income tax but may fall under the Income Basic Tax (AMT)  _(Income Tax Act, art. 2 (individuals taxed on income from sources in the Republic of China), English text — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 - **Headline personal income tax rate** — Progressive 5% to 40% for residents; the 40% bracket starts above TWD 5,190,000 of net taxable income for 2026 (TWD 4,980,000 for 2025)  _(Income Tax Act, English text amended 11 Sep 2026, art. 5 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003 ; eTax Portal, Progressive Tax Rate System — https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/progressive-tax-rate)_
 - **Headline corporate income tax rate** — 20% profit-seeking enterprise income tax  _(Income Tax Act, English text amended 11 Sep 2026, art. 5 para. 5 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 - **Does VAT/GST exist?** — Yes — a 5% value-added type business tax (VAT) applies to most goods and services; the Act sets a 5% to 10% band and the Executive Yuan applies 5%  _(Value-added and Non-value-added Business Tax Act, English text amended 28 May 2025, art. 10 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340080)_

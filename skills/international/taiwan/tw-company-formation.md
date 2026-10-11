@@ -5,7 +5,7 @@ jurisdiction: TW
 category: formation
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.4
+version: 1.5
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Core annual compliance
 
 - **Core annual compliance overview** — Incorporated entities must keep statutory books, file annual tax returns and maintain their MOEA registration.
-- **Annual corporate income tax return** — File the profit-seeking enterprise income tax return by 31 May following the fiscal year-end  _(Income Tax Act — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003 (as reported; the figure was not re-read against this text for this change))_
+- **Annual corporate income tax return** — File the profit-seeking enterprise income tax return by 31 May following the fiscal year-end  _(Income Tax Act, art. 71 (return filed 1 to 31 May), English text on the Laws and Regulations Database, amended 2026-09-11 — https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340003)_
 - **Bimonthly VAT returns** — File business (VAT) returns every two months by the 15th of the following month  _(Value-added and Non-value-added Business Tax Act — https://www.etax.nat.gov.tw/etwmain/en/cbec-tax-area/business-tax)_
 - **Company registration upkeep** — Changes to directors, capital, address or business scope must be filed with the MOEA; companies must maintain a Taiwan-resident responsible person/representative  _(Company Act — https://taiwan.acclime.com/guides/how-to-register-company/)_
 
