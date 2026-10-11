@@ -2621,6 +2621,37 @@
     "vat-workflow-base.md"
    ]
   },
+  "jersey": {
+   "jurisdiction": "JE",
+   "name": "Jersey",
+   "files": [
+    "intake.md",
+    "je-company-formation.md",
+    "je-corporate-income-tax.md",
+    "je-cross-border-withholding.md",
+    "je-crypto-tax.md",
+    "je-gst.md",
+    "je-income-tax.md",
+    "je-payroll.md",
+    "je-pillar-two.md",
+    "je-property-transactions.md",
+    "je-social-contributions.md",
+    "references.md",
+    "README.md"
+   ],
+   "shared": [
+    "company-formation-workflow-base.md",
+    "corporate-income-tax-workflow-base.md",
+    "cross-border-workflow-base.md",
+    "crypto-tax-workflow-base.md",
+    "financial-statements-workflow-base.md",
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "jordan": {
    "jurisdiction": "JO",
    "name": "Jordan",
