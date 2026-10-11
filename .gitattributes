@@ -12,3 +12,14 @@
 *.pdf binary
 *.woff binary
 *.woff2 binary
+
+# Collapse generated outputs; review their source guides and generators.
+/packages/** linguist-generated=true
+/index.json linguist-generated=true
+/PARTNERS.md linguist-generated=true
+/llms-full.txt linguist-generated=true
+/docs/COUNTRY-COVERAGE.md linguist-generated=true
+/docs/FORM-REGISTER.md linguist-generated=true
+
+# Federal rates and their runbook are hand-authored and require review.
+/packages/us-federal/** -linguist-generated
