@@ -11,11 +11,11 @@ description: >
   land tax, aggregation, thresholds and rates by state, surcharges, trusts,
   companies, exemptions, objections, GL treatment, and deductibility.
   ALWAYS read this skill before advising on Australian land tax.
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026 land tax year (1 Jan 2026 or 30 Jun 2025 ownership date per state)"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Land Tax
 
-## Australia -- State & Territory Land Tax Skill v1.2
+## Australia -- State & Territory Land Tax Skill v1.3
 
 ## Section 1 -- Quick Reference
 
@@ -41,11 +41,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Valuation authority | Valuer-General of each state/territory |
 | Assessment basis | Unimproved value (NSW, WA) or site value (VIC, SA, TAS) or average unimproved value (ACT) of taxable land, including leasehold interests treated as ownership under local law |
 | Filing portal | State revenue office online portals |
-| Skill version | 1.2 |
+| Skill version | 1.3 |
 
-### 2025-26 Land Tax Thresholds & Base Rates (Summary)
+### Land Tax Thresholds & Base Rates (Summary)
 
-**2025-26 Land Tax Thresholds & Base Rates (Summary)**
+Each row uses the latest year Section 4 sets out for that jurisdiction (NSW and VIC: 2026 land tax year; QLD, WA and TAS: 2025-26; SA and ACT: 2026-27). Check the year before applying a figure.
+
+**Land Tax Thresholds & Base Rates (Summary)**
 
 | State/Territory | Assessment Date | Threshold (General) | Base Rate Above Threshold | Foreign/Absentee Surcharge |
 | --- | --- | --- | --- | --- |
@@ -80,7 +82,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Frequency | Annual | One-off per transaction | Quarterly/annual |
 | Basis | Unimproved/site value | Dutiable value (price paid) | Unimproved or improved value (council choice) |
 | Levied by | State revenue office | State revenue office | Local council |
-| Deductible against rental income | Yes (see Section 9) | Yes (cost base, not immediate deduction) | Yes |
+| Deductible against rental income | Yes (see Section 9) | No (forms part of the CGT cost base) | Yes |
 
 ### 2.3 How Land Value Is Determined
 
@@ -94,11 +96,11 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 
 - **Payment plans** — All state revenue offices offer payment plans for land tax. Interest and penalty tax may apply to late payments. Contact the relevant revenue office before the due date to arrange.
 
-## Section 4 -- Thresholds and Rates by State (2025-26)
+## Section 4 -- Thresholds and Rates by State (latest published year for each)
 
 ### 4.1 New South Wales (NSW)
 
-**NSW Land Tax Rates (2026 land tax year -- assessed 31 Dec 2025)**
+**NSW Land Tax Rates (2026 land tax year -- assessed 31 Dec 2025; thresholds frozen from 2024, checked 11 October 2026)**
 
 | Land Value | Rate |
 | --- | --- |
@@ -240,7 +242,7 @@ These rates exclude any separately applicable Metropolitan Region Improvement Ta
 
 - **PPR exemption** — Owner-occupied principal place of residence is exempt in all states that levy land tax. The property must be the owner's main residence at the assessment date.
 - **Moving out rule** — If the owner moves out and rents the property, the PPR exemption is lost from the next assessment date. Some states allow a limited absence (e.g. 6 years in NSW for CGT, but land tax has its own rules -- verify per state).
-- **Deceased estate rule** — Most states allow a 2-year exemption period after the death of the owner, during which the deceased estate continues to receive the PPR exemption.
+- **Deceased estate rule** — Most states let a deceased estate keep the PPR exemption for a limited period after the owner's death (commonly about 2 years); the period and conditions differ by state, so check the relevant revenue office before relying on it.
 
 ### 7.2 Primary Production Exemption
 

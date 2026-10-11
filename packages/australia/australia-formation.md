@@ -1,10 +1,10 @@
 ---
 name: australia-formation
 description: Use this skill whenever asked about forming, incorporating, or registering a company in Australia. Trigger on phrases like "set up a company in Australia", "Pty Ltd", "ASIC registration", "Australian company formation", "register a business Australia", "ABN", "ACN", "proprietary limited", "sole trader Australia", "partnership Australia", or any question about starting a business entity in Australia. Covers entity types (Pty Ltd, Ltd, sole trader, partnership, trust), registration process, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Australian company formation.
-version: 1.3
+version: 1.4
 jurisdiction: AU
-tax_year: 2025
-last_updated: 2026-10-04
+tax_year: 2026
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - company-formation-workflow-base
@@ -15,9 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Australia Formation
 
-## Australia Company Formation Skill v1.3
-
-Australia Company Formation Skill v1.3
+## Australia Company Formation Skill v1.4
 
 ## Section 1 -- Quick Reference
 
@@ -30,8 +28,8 @@ Australia Company Formation Skill v1.3
 | Company registrar | Australian Securities and Investments Commission (ASIC) -- asic.gov.au |
 | Key legislation | Corporations Act 2001 (Cth) |
 | Typical formation time | 1--3 business days (online via BRS) |
-| Corporate tax rate | 25% (base rate entities, turnover < $50M); 30% (all others) |
-| Skill version | 1.3 |
+| Corporate tax rate | 25% for base rate entities (aggregated turnover under $50m and base rate entity passive income no more than 80% of assessable income); 30% for all others |
+| Skill version | 1.4 |
 
 ## Section 2 -- Entity Types Comparison
 
@@ -46,7 +44,7 @@ Australia Company Formation Skill v1.3
 | Max. shareholders | 1 | N/A | 50 counted non-employee holders, excluding qualifying CSF holders as explained below | Unlimited | N/A |
 | Tax treatment | Personal income tax | Partners taxed individually | Company tax rate | Company tax rate | Trust distributions taxed in beneficiaries' hands |
 | Admin burden | Very low | Low | Medium | High | Medium--High |
-| ASIC registration | No | No (ABN only) | Yes ($611) | Yes | Only if trustee is a company |
+| ASIC registration | No | No (ABN only) | Yes ($636) | Yes | Only if trustee is a company |
 | Audit required | No | No | Usually if large; small-company foreign control, CSF proceeds and audit directions can also require an audit, subject to applicable relief | Yes | No (unless regulated) |
 
 For the 50-holder limit, exclude holders issued shares under a crowd-sourced funding (CSF) offer. Also exclude purchasers of shares originally issued under a CSF offer while the company's shares have not started trading on a financial market in Australia or overseas. That secondary-holder exclusion ends when market trading starts; original CSF holders remain excluded for their qualifying shares (ASIC RG 261 paragraphs 305 to 308). Thus 50 counted holders plus 100 qualifying CSF holders do not breach the limit merely because there are 150 holders.
@@ -60,7 +58,7 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 
 ### Step 1: Choose Company Name
 
-- **Choose Company Name** — Check availability on ASIC's company name check tool; Must include "Pty Ltd" or "Proprietary Limited"; Can reserve name for 2 months ($62 fee) or register directly; Identical or near-identical names will be rejected  _(ASIC)_
+- **Choose Company Name** — Check availability on ASIC's company name check tool; Must include "Pty Ltd" or "Proprietary Limited"; Can reserve name for 2 months ($65 fee) or register directly; Identical or near-identical names will be rejected  _(ASIC)_
 
 ### Step 2: Obtain Consent from Officeholders
 
@@ -74,7 +72,7 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 
 ### Step 4: Register via Business Registration Service (BRS)
 
-- **Register via BRS** — Go to register.business.gov.au; Can simultaneously apply for: company registration, ABN, TFN, GST, PAYG withholding; Fee: $611 (Pty Ltd, 2025--26 financial year); ASIC processes and issues ACN (Australian Company Number) typically within 1--3 days  _(BRS / ASIC)_
+- **Register via BRS** — Go to register.business.gov.au; Can simultaneously apply for: company registration, ABN, TFN, GST, PAYG withholding; Fee: $636 (company with share capital, from 1 July 2026); ASIC processes and issues ACN (Australian Company Number) typically within 1--3 days  _(BRS / ASIC)_
 
 ### Step 5: Receive Certificate of Registration
 
@@ -87,7 +85,7 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 
 ### Step 7: Register for GST (if applicable)
 
-- **GST registration threshold** — $75,000 (or will be); $150,000 for non-profits AUD (Mandatory if annual turnover is or will be at threshold; voluntary registration permitted below threshold)
+- **GST registration threshold** — Registration is required when GST turnover is or will be $75,000 or more ($150,000 for non-profit bodies); voluntary registration is permitted below the threshold.
 - **GST turnover, not bank receipts** — The threshold uses the GST turnover definition, which differs from every receipt in the bank account. Taxi and ride-sourcing activities must register regardless of turnover, and voluntary registration below the threshold brings reporting obligations.  _([ATO, Registering for GST](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst))_
 
 ### Step 8: Register for PAYG Withholding (if employing)
@@ -112,15 +110,17 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 
 | Cost Component | Amount (AUD) | Notes |
 | --- | --- | --- |
-| ASIC company registration | $611 | One-time (Pty Ltd, 2025--26) |
-| Name reservation (optional) | $62 | Valid 2 months |
-| Business name registration (if different from company name) | $45/year or $104/3 years | Only if trading under a different name |
+| ASIC company registration | $636 | One-time (company with share capital, from 1 July 2026) |
+| Name reservation (optional) | $65 | Valid 2 months |
+| Business name registration (if different from company name) | $47/year or $108/3 years | Only if trading under a different name |
 | ABN registration | Free | Via ABR |
 | GST registration | Free | Via ATO |
-| ASIC annual review fee | $329/year | Pty Ltd (2025--26) |
-| **Total initial cost (government)** | **$611--$673** | Excluding professional fees |
+| ASIC annual review fee | $342/year | Pty Ltd (from 1 July 2026; $1,591 for a public company) |
+| **Total initial cost (government)** | **$636--$701** | Excluding professional fees |
 | Legal / accountant setup fees | $500--$2,000 | Constitution, shareholder agreement, tax setup |
-| **Total with professional help** | **$1,100--$2,700** |  |
+| **Total with professional help** | **$1,136--$2,701** |  |
+
+ASIC fees are indexed each 1 July; the amounts above apply from 1 July 2026 ([ASIC, Fees for commonly lodged documents](https://www.asic.gov.au/for-business-and-companies/forms-and-fees/all-fees/fees-for-commonly-lodged-documents), checked 11 October 2026).
 
 ### Annual Maintenance
 
@@ -128,11 +128,11 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 
 | Item | Cost (AUD) |
 | --- | --- |
-| ASIC annual review fee | $329 |
+| ASIC annual review fee | $342 |
 | Accountant / tax agent fees | $1,500--$5,000/year |
-| Business name renewal (if applicable) | $45/year |
+| Business name renewal (if applicable) | $47/year |
 | Registered office service (if using) | $200--$600/year |
-| ASIC late fees | $98 (≤1 month) / $411 (>1 month) |
+| ASIC late fees | $102 (≤1 month) / $428 (>1 month) |
 
 ## Section 6 -- Post-Formation Compliance
 
@@ -144,7 +144,7 @@ Check the preparation, lodgement and audit conditions in `australia-financial-st
 | Company tax return | Due date varies (usually by 15 May via tax agent for 30 June year-end) | ATO |
 | BAS (Business Activity Statement) | Quarterly or monthly (GST, PAYG, instalment) | ATO |
 | PAYG summaries / STP finalisation | 14 July following the financial year | ATO |
-| Superannuation guarantee | Quarterly (28 days after quarter end) | Super fund / ATO |
+| Superannuation guarantee | Received by the fund within 7 business days of each payday (Payday Super, from 1 July 2026) | Super fund / ATO |
 | Change notifications to ASIC | Within 28 days of change | ASIC |
 | Financial records | Maintain for 7 years | Internal |
 | Directors' duties | Ongoing (s180--184 Corporations Act) | ASIC |
@@ -176,7 +176,7 @@ Commonwealth Bank (CBA), Westpac, ANZ, NAB (Big 4); Macquarie, Bendigo (mid-tier
 | Nominee directors | Permitted (ASIC register shows actual director names) |
 | Physical presence required? | No (online registration); resident director must be genuinely resident |
 | Foreign ownership restrictions | Foreign Investment Review Board (FIRB) approval may be required for certain sectors and thresholds |
-| ABN for foreign entities | Foreign companies can register an ARBN ($506) and apply for ABN |
+| ABN for foreign entities | A foreign company carrying on business in Australia registers with ASIC ($636 from 1 July 2026), receives an ARBN and can apply for an ABN |
 | Tax treaty benefits | Australia has extensive DTA network; check withholding rates |
 
 - **Foreign founders** — Examine the resident director requirement, the founders' tax residency, foreign investment rules and the difference between incorporating an Australian company and registering an existing foreign company, and record the chosen structure and the reasons for it before applying.
@@ -184,9 +184,9 @@ Commonwealth Bank (CBA), Westpac, ANZ, NAB (Big 4); Macquarie, Bendigo (mid-tier
 ## Section 9 -- Common Mistakes and Refusals
 
 - **R-AU-F1 -- No Australian-resident director** — Every Pty Ltd must have at least one director who ordinarily resides in Australia. A company cannot be registered without this. Advise the client to appoint a local director or use a resident director service (with proper governance).  _(R-AU-F1)_
-- **R-AU-F2 -- Failing to pay ASIC annual review fee** — ASIC charges $329/year. If the annual review is not completed and fee is not paid, ASIC will deregister the company. Late fees apply: $98 within 1 month, $411 after 1 month.  _(R-AU-F2)_
+- **R-AU-F2 -- Failing to pay ASIC annual review fee** — ASIC charges $342/year for a proprietary company from 1 July 2026. If the annual review fee stays unpaid, ASIC can start deregistering the company. Late fees apply: $102 within 1 month, $428 after 1 month.  _(R-AU-F2)_
 - **R-AU-F3 -- GST threshold ignorance** — If annual turnover reaches $75,000, GST registration is mandatory. Failing to register when required results in penalties and backdated GST assessments.  _(R-AU-F3)_
-- **R-AU-F4 -- Superannuation non-compliance** — For 2025-26, employers must contribute at least 12% of the eligible ordinary time earnings base under SGAA s 23(2), including sacrificed ordinary time earnings. The 2024-25 rate was 11.5%. On a $100,000 eligible base, the 2025-26 contribution is $12,000. Non-payment results in the Superannuation Guarantee Charge (SGC), which is not tax-deductible.  _(R-AU-F4)_
+- **R-AU-F4 -- Superannuation non-compliance** — The SG rate is 12% (11.5% for 2024-25). From 1 July 2026, Payday Super applies it to each payment of qualifying earnings, and the contribution must reach the employee's fund within seven business days of payday; on $100,000 of qualifying earnings the minimum is $12,000. Late or short payment results in the Superannuation Guarantee Charge (SGC), which is not tax-deductible. See `au-super-guarantee.md`.  _(R-AU-F4)_
 - **R-AU-F5 -- Shell company without substance** — This skill will not assist in forming a company with no genuine business activity in Australia. ASIC and the ATO actively pursue sham structures.  _(R-AU-F5)_
 
 ## Section 10 -- Timeline

@@ -1,10 +1,10 @@
 ---
 name: australia-transfer-pricing
 description: Use this skill whenever asked about Australia transfer pricing rules, documentation requirements, or ATO transfer pricing compliance. Trigger on phrases like "transfer pricing Australia", "Australian TP documentation", "ATO transfer pricing", "master file Australia", "local file Australia", "CbCR Australia", "APA Australia", "Subdivision 815", "International Dealings Schedule", "IDS", "significant global entity", or any question about intercompany pricing for Australian entities.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - transfer-pricing-workflow-base
@@ -15,9 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Australia Transfer Pricing
 
-## Australia Transfer Pricing Skill v1.3
-
-Australia Transfer Pricing Skill v1.3
+## Australia Transfer Pricing Skill v1.4
 
 ## Section 1 -- Quick Reference
 
@@ -34,7 +32,7 @@ Australia Transfer Pricing Skill v1.3
 | BEPS signatory? | Yes |
 | Currency | AUD |
 | Documentation language | English |
-| Skill version | 1.3 |
+| Skill version | 1.4 |
 
 ## Section 2 -- Documentation Requirements
 
@@ -207,7 +205,7 @@ For a $100,000 shortfall above the threshold, RAP gives a **$10,000** base penal
 | Distributors with limited related-party dealings | Materiality-based simplification |
 | Management/technical services | Threshold-based simplification |
 
-ATO publishes Practical Compliance Guidelines indicating risk zones for various transaction types.
+The simplified record-keeping options (small taxpayers, low-value services, low-level inbound and outbound loans, materiality and others) and their eligibility conditions are in PCG 2017/2; check that each condition is met for the year before relying on one. ATO publishes other Practical Compliance Guidelines indicating risk zones for various transaction types.
 
 ## Section 9 -- Recent Developments
 
@@ -218,7 +216,9 @@ ATO publishes Practical Compliance Guidelines indicating risk zones for various 
 | 2024-2025 | Updated Local File instructions (Part A and Part B) |
 | 2024 | Enhanced ATO compliance focus on intangibles and financial transactions |
 | 10 December 2024 | Pillar Two primary legislation received royal assent. Detailed subordinate rules were registered on 23 December 2024. The IIR and domestic minimum tax apply to fiscal years starting from 1 January 2024; UTPR starts from 1 January 2025. Application dates are separate from enactment. See [ATO Pillar Two implementation](https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/multinationals/global-and-domestic-minimum-tax) |
-| 2022 | Multinational Tax Integrity Package -- increased penalties for SGEs |
+| 8 April 2024 | Treasury Laws Amendment (Making Multinationals Pay Their Fair Share—Integrity and Transparency) Act 2024: earnings-based thin capitalisation tests for income years starting on or after 1 July 2023 and debt deduction creation rules from 1 July 2024 |
+| Periods from 1 July 2024 | Public CBC reporting: certain CBC reporting parents must publish selected tax information ([ATO Public CBC report overview](https://www.ato.gov.au/forms-and-instructions/instructions-to-complete-the-public-country-by-country-report/public-cbc-report-overview), updated 9 June 2026) |
+| 2015-16 | SGE regime: doubled administrative penalties and higher failure-to-lodge penalties for SGEs |
 | Ongoing | ATO PCGs on profit allocation to permanent establishments |
 | Ongoing | OECD Amount B: Australia participating in design; implementation timeline TBC |
 | Ongoing | Tax Avoidance Taskforce targeting multinationals |

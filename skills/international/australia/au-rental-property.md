@@ -1,10 +1,10 @@
 ---
 name: au-rental-property
 description: Use this skill whenever asked about Australian rental property income and deductions. Trigger on phrases like "rental income Australia", "negative gearing", "rental deductions", "investment property tax", "Division 40", "Division 43", "capital works deduction", "depreciation schedule", "rental property CGT", "rental withholding", "body corporate fees", "strata levy deduction", "repairs vs improvements", "TR 97/23", "GST on property", "land tax on an investment property", "stamp duty on a rental", or any question about completing the rental property schedule in an Australian individual tax return. This skill covers rental income reporting, deductible expenses, depreciation (Div 40 plant and Div 43 building), negative gearing including the enacted 1 July 2027 limit, CGT on disposal, foreign resident withholding, the GST decision path, the state and territory taxes that attach to property, and common transaction classifications. ALWAYS read this skill before touching any Australian rental property work.
-version: "1.6"
+version: "1.7"
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Rental Property
 
-## Australia Rental Property -- Income & Deductions Skill v1.6
+## Australia Rental Property -- Income & Deductions Skill v1.7
 
 ## Section 1 -- Quick Reference
 
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax / tax agent lodgement (Online Services for Agents) |
 | Filing deadline | 31 October (self-lodgement); agent-managed deadlines vary |
-| Skill version | 1.6 |
+| Skill version | 1.7 |
 
 ### Select the income year before calculating
 
@@ -96,12 +96,14 @@ income year, except where a section says otherwise.
 | Reimbursement from tenant (excess utilities) | Assessable |
 | Key money / lease premium | Assessable |
 
-- **All gross rental income** — All gross rental income is assessable. Report at Item 21 (Rent) on the Individual Tax Return. (Report at Item 21 (Rent) on the Individual Tax Return)
+- **All gross rental income** — All gross rental income is assessable. Report it at Item 21 (Rent) of the supplementary section of the individual tax return.
 
 ### 2.2 Negative Gearing
 
 - **Negative gearing** — Where total deductions exceed gross rental income, the net rental loss reduces other assessable income (salary, business income). This remains the position for income years up to and including 2026-27.
-- **Enacted limit from 1 July 2027** — Negative gearing for residential property investments is limited to new builds from 1 July 2027. Properties held at 7:30 pm AEST on 12 May 2026 are exempt from the limit. The measure was announced in the 2026-27 Federal Budget and the ATO states it is now law. Establish the acquisition date and whether the property is a new build before projecting a rental loss into 2027-28 or later.  _([ATO, Reforming negative gearing and capital gains tax](https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals/tax-reform-boosting-home-ownership-reforming-negative-gearing-and-capital-gains-tax); [Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/latest))_
+- **Enacted limit from 2027-28 (ITAA 1997 s 26-55)** — From the 2027-28 income year, where deductions for using or holding residential dwellings as residential accommodation exceed the assessable income from them, the excess is not deductible that year. It becomes a quarantined amount that first reduces residential capital gains in the net capital gain calculation (s 102-5, steps 3 and 4) and is otherwise carried forward to the next year as a residential dwelling expense. Disregard income and deductions for a dwelling interest last acquired before 7:30 pm (ACT time) on 12 May 2026, counting from the contract date (s 26-55(3)); a dwelling that is a new residential dwelling for the taxpayer under the Minister's determination; and dwellings used for an activity the Minister has determined. A net gain from those excepted dwellings, and gains on residential dwellings held as revenue assets, reduce the excess (s 26-55(6)). The rule does not apply to widely held unit trusts or complying superannuation entities, a beneficiary's share of trust net income referable to residential dwellings counts as residential income (s 26-55(7)), and expenditure denied by the section does not enter the cost base (s 110-38(8A)). Hotels, motels, boarding houses, student accommodation, caravans and boats are not residential dwellings (s 26-60).  _([Treasury Laws Amendment (Tax Reform No. 1) Act 2026, Sch 2](https://www.legislation.gov.au/C2026A00049/asmade/text); [ATO, Reforming negative gearing and capital gains tax](https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals/tax-reform-boosting-home-ownership-reforming-negative-gearing-and-capital-gains-tax))_
+- **Extensions for death and relationship breakdown** — Schedule 4 to the Treasury Laws Amendment (Tax Reform No. 2) Act 2026 also applies from 2027-28. A surviving spouse who acquires a deceased spouse's interest, a co-owner who acquires a deceased co-owner's interest, and a person who acquires an interest under a family law order, agreement or award inherits the pre-12 May 2026 acquisition status and the new residential dwelling status of the transferor (ss 26-56 to 26-58), and the extended new-dwelling status also applies for the CGT discount (s 26-59). For these tests the main residence rule in s 118-192(2) is disregarded.  _([Treasury Laws Amendment (Tax Reform No. 2) Act 2026, Sch 4](https://www.legislation.gov.au/C2026A00071/asmade/text))_
+- **Example (2028-29)** — An established dwelling acquired in July 2028 earns $50,000 rent and has $65,000 of deductions. $50,000 is deductible and $15,000 is carried forward; in a later year with net rental income, the carried-forward amount is deducted against it (the statutory example in s 26-55(1)).
 
 ### 2.3 Deductible Expenses (Immediate)
 
@@ -206,22 +208,21 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 
 | Element | Treatment |
 | --- | --- |
-| Cost base | Purchase price + stamp duty + legal fees + capital improvements - Div 43 deductions claimed |
-| Capital proceeds | Sale price - agent commission - legal fees on sale |
-| Net capital gain | Proceeds - cost base |
+| Cost base | Purchase price + stamp duty + legal fees on purchase and sale + agent commission on sale + capital improvements - Div 43 deductions claimed |
+| Capital proceeds | Sale price under the contract; selling costs belong in the cost base, not here |
+| Capital gain | Capital proceeds - cost base; capital losses and the discount then apply to reach the net capital gain (see `au-capital-gains.md`) |
 | 50% CGT discount | Available if held 12+ months (individuals/trusts only) |
 | Main residence exemption (partial) | Available if property was main residence for part of ownership period |
 | 6-year absence rule | Treat as main residence for up to 6 years of absence if no other main residence claimed |
 | Non-residents | Work out preserved discount entitlement for qualifying resident periods and any pre-8 May 2012 rules; see au-nonresident-cgt |
 
-### 2.9 Non-Resident Rental Withholding
+### 2.9 Foreign Resident Landlords and Vendors
 
-**Non-Resident Rental Withholding Rules**  _([ATO, FRCGW](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding))_
+**Foreign Resident Landlords and Vendors**  _([ATO, FRCGW](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding))_
 
 | Rule | Detail |
 | --- | --- |
-| Applies to | Non-resident landlords receiving Australian rental income |
-| Rate | Payer (tenant/agent) must withhold amounts as directed by ATO |
+| Rental income | No general withholding applies to rent paid to a foreign resident landlord. The landlord lodges an Australian return and pays tax at foreign resident rates, with no tax-free threshold; the ATO can direct a tenant or agent to pay amounts to it under a garnishee notice |
 | FRCGW (foreign resident CGT withholding) | For contracts signed from 1 January 2025, 15% of the sale price on all Australian real property, with no value threshold. For contracts from 1 July 2017 to 31 December 2024, 12.5% where the value was $750,000 or more. [ATO, FRCGW](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding) |
 | Clearance certificate | An Australian resident vendor obtains one and gives it to the purchaser before settlement to avoid FRCGW. Apply for it early; processing is not immediate |
 | Variation | A foreign resident vendor can apply for a variation where 15% exceeds the expected Australian tax on the sale |
@@ -307,7 +308,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 
 ### Step 5: Report on Tax Return
 
-- **Reporting outcome** — Positive: included in assessable income and taxed at marginal rates. Negative: offsets other assessable income (salary, business) dollar-for-dollar.
+- **Reporting outcome** — Positive: included in assessable income and taxed at marginal rates. Negative: offsets other assessable income (salary, business) dollar-for-dollar up to and including 2026-27; from 2027-28 apply the s 26-55 quarantining test in Section 2.2 first.
 
 ## Section 5 -- Filing Requirements
 
@@ -334,7 +335,7 @@ The table follows Table A, Residential property operators (67110), in the *Incom
 
 ### 6.3 Holiday Homes
 
-- **Holiday home deduction limitation** — If the property is available for rent at below-market rates, or restricted to holiday periods only, or rented to relatives at reduced rates -- deductions are limited to income received (no negative gearing). ATO scrutinises holiday letting closely.
+- **Holiday home deduction limitation** — Deductions follow genuine availability for rent. Periods of private use, or of advertising on terms that make letting unlikely, are not deductible, and where the property is let to a relative or friend at below-market rent the ATO limits deductions to the rent received. Apportion under PCG 2026/2 and test section 26-50 below. The ATO scrutinises holiday letting closely.
 - **Section 26-50 leisure facilities** — Section 26-50 denies expenses associated with owning or using a leisure facility unless it is used or held mainly to produce assessable income. Offering a holiday home for a few rental weeks does not meet that requirement; keep advertisements, agent agreements, booking records and evidence of commercially realistic rent and tenant access.
 - **TR 2026/1 and the 2026 compliance guidelines** — TR 2026/1 sets out when rental receipts are assessable, when outgoings are deductible and how to apportion mixed use for individuals not in business. PCG 2026/2 gives the apportionment methods the ATO accepts, and PCG 2026/3 its compliance approach to section 26-50 for holiday homes that are also let. Read them before claiming a loss on a property with any private use.  _([ATO, What's new in the rental properties guide 2026](https://www.ato.gov.au/forms-and-instructions/rental-properties-2026/whats-new-in-the-rental-properties-guide); [ITAA 1997 (Cth) s 26-50](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/26-50); [ATO, How to claim rental expenses](https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-expenses/how-to-claim-rental-expenses))_
 

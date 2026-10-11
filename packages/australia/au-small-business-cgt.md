@@ -2,18 +2,18 @@
 name: au-small-business-cgt
 description: >
   Use this skill whenever an Australian small business owner, company, trust or partnership asks about the Division 152 small business CGT concessions -- selling a business, premises, goodwill, or shares/units in a trading entity; the $2m turnover or $6m maximum net asset value gateways; the active asset test; the 15-year exemption; the 50% active asset reduction; the retirement exemption; the small business rollover; significant individual or CGT concession stakeholder tests; or contributing sale proceeds to super under the CGT cap. Trigger on "small business CGT", "SBCGT", "Div 152", "active asset", "retirement exemption", "CGT cap election". ALWAYS read this skill before touching any Div 152 work.
-version: 1.0
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-09-14
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Small Business CGT Concessions -- Division 152 Skill v1.0
+# Australia Small Business CGT Concessions -- Division 152 Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -188,10 +188,10 @@ The CGT cap is a lifetime running total across both concessions. Contributions s
 | General 50% discount replaced by cost-base indexation + 30% minimum tax rate on gains accruing from 1 July 2027 (individuals and trusts, incl. gains through partnerships); discount retained for new residential dwellings and affordable housing | **Law** -- applies from 1 July 2027 |
 | Deemed disposal/re-acquisition of assets held 30 June 2027; later disposals split into pre/post components across four asset categories | **Law** -- from 1 July 2027 |
 | Pre-CGT (pre-20 Sep 1985) status removed after 30 June 2027 | **Law** |
-| Capital losses must be applied against discounted gains first | **Law** -- from 1 July 2027 (removes taxpayer choice) |
-| **Small business 50% active asset reduction gateway: aggregated turnover $2m -> $10m** | **Law** -- enacted in the Act (added by government amendments during passage), commencing **1 July 2027**, and applying **ONLY to the 50% reduction**. The 15-year exemption, retirement exemption and rollover keep the $2m turnover / $6m MNAV gateways |
+| Capital losses must reduce gains in a fixed category order: deferred non-residential, deferred residential (both pre-1 July 2027 gains), then non-residential, then residential gains (s 102-5(1)); choice remains only within a category | **Law** -- from 2027-28 |
+| **Small business 50% active asset reduction gateway: aggregated turnover $2m -> $10m** | **Law** -- enacted in the Act (added by government amendments during passage): the $2m CGT small business entity limit is disregarded for the 50% reduction (ss 152-10(1AA) note 2, 152-200, 152-205(2)), for assessments for 2027-28 onward, and **ONLY for the 50% reduction**. The 15-year exemption, retirement exemption and rollover keep the $2m turnover / $6m MNAV gateways |
 | 50% discount for early-stage investors/founders (start-up carve-out) | **Announced only** -- Treasury consultation; not law |
-| 30% minimum tax on discretionary trusts from 1 July 2028 | **Announced only** -- consultation closed 31 July 2026; not law |
+| 30% minimum tax on discretionary trusts from 1 July 2028 | **Not law** -- exposure draft legislation released 3 September 2026; not yet introduced as a bill |
 
 Practical consequences: CGT events **up to 30 June 2027** use everything in this skill unchanged. From 1 July 2027, Div 152 itself survives -- the AAR still halves the gain -- but the base it halves is an indexed gain, the 30% minimum rate applies underneath, and a $2m-$10m turnover business gains AAR access (but still needs the $6m MNAV or another gateway for the other three concessions). How the minimum rate, indexation, deemed re-acquisition and the Div 152 waterfall interleave in detail awaits ATO guidance -- **any disposal, rollover tail (J2/J5/J6) or contribution-timing question straddling 1 July 2027 escalates (R-AU-SBC-5)**. Never advise accelerating or deferring a sale around the date.
 

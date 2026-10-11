@@ -10,10 +10,10 @@ description: >
   "franking credits refund", "substantiation", "do I need a receipt", "capital or revenue",
   "apportion private use", "small business concessions". It routes to the specialist guides
   rather than restating their rules.
-version: 0.3
+version: 0.4
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - au-individual-return
@@ -22,7 +22,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Deductions, Offsets and Concessions v0.3
+# Australia Deductions, Offsets and Concessions v0.4
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
@@ -109,7 +109,7 @@ This skill does NOT cover:
 ### Step 1 - Is there a nexus with assessable income?
 
 - **Nexus test** — A loss or outgoing is deductible to the extent it is incurred in gaining or producing assessable income, or necessarily incurred in carrying on a business for that purpose.  _([ITAA 1997 s 8-1](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/8-1))_
-- **ATO three conditions for employees** — The ATO states the test for an employee as three conditions: the taxpayer spent the money and was not reimbursed, the expense directly relates to earning income, and there is a record to prove it. An employer instruction to buy something does not by itself make it deductible.  _([ATO, Claiming deductions](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/how-to-claim-deductions))_
+- **ATO three conditions for employees** — The ATO states the test for an employee as three conditions: the taxpayer spent the money and was not reimbursed, the expense directly relates to earning income, and there is a record to prove it. An employer instruction to buy something does not by itself make it deductible.  _([ATO, Claiming deductions](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/claiming-deductions))_
 
 ### Step 2 - Is it private, domestic or capital in nature?
 
@@ -133,38 +133,69 @@ This skill does NOT cover:
 
 ## Section 5 - The standard deduction for work-related expenses, from 2026-27
 
-- **Standard deduction for work-related expenses** — A standard deduction of up to $1,000 for work-related expenses applies to Australian tax residents who earn income from work. It commenced on 1 July 2026 and first applies to the 2026-27 individual tax return. It does not apply to the 2025-26 return. AUD
+Section 25-130 of the ITAA 1997, inserted by Schedule 4 to the Treasury Laws Amendment (Tax
+Reform No. 1) Act 2026, applies to assessments for 2026-27 and later years. It does not apply to
+the 2025-26 return.
 
-A standard deduction of up to $1,000 for work-related expenses applies to Australian tax residents
-who earn income from work. It commenced on 1 July 2026 and first applies to the 2026-27 individual
-tax return. It does not apply to the 2025-26 return.
+**Who can claim.** An individual who is an Australian resident at any time in the year and derives
+assessable labour income. Assessable labour income means amounts subject to PAYG withholding as
+salary or wages, director's fees, office holder or religious practitioner payments, return to work
+payments, termination and retirement payments, and parental leave pay (s 25-130(4)). Business
+income, personal services income and investment income are not assessable labour income, so a
+taxpayer with only those cannot claim it.
 
-According to the ATO's summary of the measure:
+**How the amount is worked out (s 25-130(2)).**
 
-- Current arrangements continue for a taxpayer with more than $1,000 of work-related expenses, and
-  for a taxpayer who earns only business or investment income.
-- Some deductions remain claimable in addition to the standard deduction, including expenses that
-  are not work-related such as investment expenses and charitable donations, union and professional
-  association membership fees, and income protection insurance premiums.
-- The measure prevents a double benefit where an expense covered by the standard deduction is
-  salary packaged.
-- Substantiation and capital allowance rules were updated to support the measure.
+```
+standard deduction = max(0, min($1,000, assessable labour income) - actual work deductions)
+```
 
-The measure is law, enacted by the Treasury Laws Amendment (Tax Reform No. 1) Act 2026 and the
-Income Tax Rates Amendment (Tax Reform No. 1) Act 2026.
-[ATO, Standard deduction for work-related expenses](https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals/standard-deduction-for-work-related-expenses);
-[Treasury Laws Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00049/latest);
-[Income Tax Rates Amendment (Tax Reform No. 1) Act 2026](https://www.legislation.gov.au/C2026A00050/latest)
+Actual work deductions are the taxpayer's deductions, to the extent they relate to gaining or
+producing assessable labour income, under section 8-1, Division 28 (car expenses), section 25-100
+(travel between workplaces), section 25-10 (repairs to work assets), Subdivisions 40-B and 40-D
+(decline in value and balancing adjustments of work assets) and section 25-125 (COVID-19 tests).
+Those deductions are still claimed in full; the standard deduction tops the total up to $1,000.
+Work-related deductions of $780 therefore give a $220 standard deduction and $1,000 in total, and
+deductions of $1,000 or more give a standard deduction of nil.
 
-**Practical effect.** For a work-only taxpayer whose substantiated work-related expenses are under
-$1,000, the standard deduction is the better claim and removes the need to build a schedule of
-small items. For a taxpayer above $1,000, nothing changes and the full substantiation rules
-continue to apply to the actual claim.
+**Outside the calculation.** Income protection, personal sickness and accident insurance premiums,
+and trade, business or professional association fees, do not reduce the standard deduction
+(s 25-130(3)) and remain deductible in addition. So do deductions that are not work-related, such
+as investment expenses, gifts to deductible gift recipients and the cost of managing tax affairs.
 
-**Confirm the detailed operation before applying it.** The mechanics that matter in practice, in
-particular whether the standard deduction is applied automatically or elected, and exactly which
-items sit outside it, must be checked against the ATO's 2026-27 return instructions when they are
-published. This guide states the measure as the ATO summarised it on 26 June 2026.
+**Related changes in the same Schedule.**
+
+- A depreciating asset expected to be used mainly to produce assessable labour income cannot be
+  allocated to a low-value pool when first used from 2026-27 (s 40-425(9)); assets pooled for
+  2025-26 or earlier are unaffected.
+- On a balancing adjustment event for a work asset, a taxpayer who has claimed the standard
+  deduction in a year overlapping the asset's effective life may choose a fixed 50% reduction of
+  the balancing adjustment amount instead of apportioning (s 40-291A).
+- The award transport payment and laundry substantiation exceptions in Subdivision 900-I are
+  repealed.
+- From FBT years starting on or after 1 April 2027, the otherwise deductible rule does not reduce a
+  salary packaged expense payment benefit of a kind the standard deduction covers, and the work
+  related item exemption (portable electronic devices, software, protective clothing, briefcases,
+  tools of trade) no longer applies to items provided under salary packaging (FBTAA ss 24(1A) and
+  58X(2)).
+
+[Treasury Laws Amendment (Tax Reform No. 1) Act 2026, Sch 4](https://www.legislation.gov.au/C2026A00049/asmade/text);
+[ATO, New legislation: individuals](https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals)
+
+**Practical effect.** A work-only taxpayer with substantiated work-related expenses under $1,000
+ends up with $1,000 of work deductions in total, while the substantiated items still have to meet
+the ordinary rules. Above $1,000 nothing changes. The standard deduction is reported in the
+2026-27 return; check the 2027 return instructions for the label when the ATO publishes them.
+
+### 5.1 Working Australians tax offset, from 2027-28
+
+Schedule 3 to the same Act inserts Subdivision 61-E, applying to assessments for 2027-28 and later
+years. A resident individual whose net labour income exceeds the tax-free threshold receives a
+non-refundable offset equal to the lesser of $250 and the basic income tax liability that would
+apply if taxable income were only that net labour income. Net labour income is labour amounts
+(assessable labour income, sole trader business income, personal services income, ESS discounts and
+labour hire payments) less the related labour deductions, including the standard deduction. The
+offset cannot be refunded, transferred or carried forward (s 63-10 table item 3).
 
 ## Section 6 - Substantiation
 
@@ -179,7 +210,7 @@ rules for work expenses, car expenses, travel expenses and business travel expen
 | The $300 total work expense rule | Where total work expense claims for the year are $300 or less, the written evidence rule is relaxed, but the expense must still have been incurred and the claim must still be reasonable. This is not a free $300 |
 | Car expenses, cents per kilometre method | Up to 5,000 business kilometres per car per year. No written evidence of the kilometres is required, but the basis of the estimate must be able to be shown, for example diary records |
 | Car expenses, logbook method | A logbook covering a continuous period of at least 12 weeks, valid for five years, plus odometer readings and expense records |
-| Working from home, fixed rate method | A record of the total hours worked from home for the year, plus evidence that the expenses were incurred. The rate was 70 cents per hour for 2024-25 and 2025-26 |
+| Working from home, fixed rate method | A record of the actual hours worked from home, kept during the year (an estimate is not accepted), plus evidence that the expenses were incurred. The rate is 70 cents per work hour for 2024-25 and 2025-26; the ATO had not published a 2026-27 rate when its page was last updated on 8 June 2026 |
 | Travel with an allowance | Reasonable amounts determined annually by the Commissioner can remove the need to keep receipts, but not the requirement to have incurred the expense |
 | Record retention | Generally five years from the date the return is lodged, and longer where a CGT asset or a carried-forward loss depends on the record |
 
@@ -194,15 +225,17 @@ the rate for the year being prepared rather than carrying last year's forward.
 | --- | --- | --- |
 | Division 40 decline in value | Depreciating assets | Prime cost or diminishing value, over the asset's effective life. The Commissioner's effective life determination is a safe starting point |
 | Immediate deduction for low cost items | Items costing $300 or less used mainly to produce non-business income | Does not apply to a set, or to substantially identical items, that together cost more than $300 |
-| Instant asset write-off | Small business entities using the simplified depreciation rules | The limit is set per income year. It was $20,000 per asset for assets first used or installed ready for use between 1 July 2025 and 30 June 2026, for businesses with aggregated turnover under $10 million |
+| Instant asset write-off | Small business entities using the simplified depreciation rules | $20,000 per asset for businesses with aggregated turnover under $10 million. For 2025-26 the threshold was a temporary increase; Schedule 2 to the Treasury Laws Amendment (Tax Reform No. 2) Act 2026 makes it permanent for assets first used or installed ready for use from 1 July 2026 |
 | Small business general pool | Assets costing at or above the instant asset write-off limit | 15% in the first year, 30% each year after |
 | Division 43 capital works | Buildings and structural improvements | A fixed annual rate over a fixed period, claimed separately from Division 40 |
 | Division 40-880 | Certain business-related capital expenditure not deductible elsewhere | Spread over five years |
 | Car limit | Cars used for a business or income-producing purpose | Caps both the depreciation base and the GST credit. Look up the limit for the income year |
 
-**Confirm the instant asset write-off limit for the year being prepared.** The limit has changed
-repeatedly. As at 16 September 2026 the ATO had published the $20,000 limit for 2025-26; the limit
-for 2026-27 must be confirmed on the ATO instant asset write-off page before it is applied.
+**The 2026-27 limit is settled.** The Treasury Laws Amendment (Tax Reform No. 2) Act 2026 received
+assent on 26 August 2026, and its Schedule 2, which commenced on 1 October 2026, sets the
+threshold at $20,000 for assets first used or installed ready for use from 1 July 2026, without an
+end date. The acquisition date alone does not decide the year: test first use or installation.
+[Tax Reform No. 2 Act 2026, Schedule 2](https://www.legislation.gov.au/C2026A00071/asmade/text);
 [ATO, Instant asset write-off](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business/instant-asset-write-off)
 
 ## Section 8 - Tax offsets
@@ -221,6 +254,7 @@ for 2026-27 must be confirmed on the ATO instant asset write-off page before it 
 | Small business income tax offset | No | For an individual with net small business income from a sole trader business or a share from a small business partnership or trust. Confirm the rate and cap for the income year |
 | Zone and overseas forces offsets | No | Narrow eligibility rules |
 | Beneficiary tax offset | No | For recipients of certain Commonwealth benefits and allowances |
+| Working Australians tax offset | No | Up to $250 from 2027-28 for residents with net labour income above the tax-free threshold. See Section 5.1 |
 
 ### 8.2 Unused offsets and other liabilities
 
@@ -280,13 +314,16 @@ Her substantiated amounts for the year:
 | Donation to a deductible gift recipient | $200 | Not work-related, claimable in addition |
 | Interest on a margin loan on income-producing shares | $1,300 | Investment expense, claimable in addition |
 
-**Step 1, choose the work-related expense basis.** Her work-related expenses of $780 are less than
-$1,000, so the standard deduction of $1,000 produces the larger claim.
+**Step 1, work out the standard deduction.** Her salary is assessable labour income, and her
+work-related deductions under section 8-1 total $780. The standard deduction is $1,000 less $780,
+or $220, so her work-related deductions total $1,000. Union fees and income protection premiums do
+not reduce the standard deduction (s 25-130(3)).
 
 **Step 2, total deductions.**
 
 ```
-Standard deduction for work-related expenses      1,000
+Work-related expenses (s 8-1)                       780
+Standard deduction for work-related expenses        220
 Union fees                                          620
 Income protection premiums                          540
 DGR donation                                        200
@@ -322,14 +359,14 @@ Less PAYG withheld                              = 19,000.00
 Refund                                          =    211.20
 ```
 
-**Step 7, compare with claiming actual work-related expenses.** Claiming the actual $780 instead
-of the $1,000 standard deduction would give taxable income of $88,560, tax of $17,088, a Medicare
-levy of $1,771.20 and a refund of $140.80. The standard deduction is worth $70.40 more, being the
-$220 difference in deductions at her 30% marginal rate plus the 2% Medicare levy.
+**Step 7, compare with the 2025-26 rules.** Without the standard deduction her deductions would
+be $3,440, giving taxable income of $88,560, tax of $17,088, a Medicare levy of $1,771.20 and a
+refund of $140.80. The $220 standard deduction is worth $70.40, being $220 at her 30% marginal
+rate plus the 2% Medicare levy.
 
 **What the example shows.** The value of a deduction is the deduction multiplied by the marginal
-rate and the levy, not the deduction itself. It also shows why the four extra items matter: each
-is outside the standard deduction, so each still reduces tax in full.
+rate and the levy, not the deduction itself. It also shows why the four extra items matter: none
+of them reduces the standard deduction, so each still reduces tax in full.
 
 ## Section 12 - Common errors
 
@@ -371,10 +408,10 @@ is outside the standard deduction, so each still reduces tax in full.
   https://www.legislation.gov.au/C2026A00049/latest
 - Income Tax Rates Amendment (Tax Reform No. 1) Act 2026,
   https://www.legislation.gov.au/C2026A00050/latest
-- ATO, Standard deduction for work-related expenses,
-  https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals/standard-deduction-for-work-related-expenses
+- ATO, New legislation: individuals,
+  https://www.ato.gov.au/about-ato/new-legislation/in-detail/individuals
 - ATO, Claiming deductions,
-  https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/how-to-claim-deductions
+  https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/claiming-deductions
 - ATO, About tax offsets,
   https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/about-tax-offsets
 - ATO, Low income tax offset,
@@ -388,8 +425,10 @@ is outside the standard deduction, so each still reduces tax in full.
 - ATO, Tax rates: Australian resident,
   https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents
 
-Sources were checked on 16 September 2026. The working from home fixed rate and the instant asset
-write-off limit for 2026-27 had not been published at that date.
+Sources were checked on 16 September 2026. On 11 October 2026 Schedules 3 and 4 of the Tax Reform
+No. 1 Act and Schedule 2 of the Tax Reform No. 2 Act were read on the Federal Register of
+Legislation, and the ATO working from home page (updated 8 June 2026) still listed 70 cents only
+for 2024-25 and 2025-26.
 
 ## Section 15 - Disclaimer
 

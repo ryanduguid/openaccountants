@@ -11,10 +11,10 @@ description: >
   "1A 1B W1 W2 T7 5A", "net amount on BAS", "fix a BAS", "BAS due date". For the GST
   classification rules behind the labels see australia-gst; for the label-level PAYG detail see
   au-gst-bas.
-version: 0.3
+version: 0.4
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - australia-gst
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Australia BAS Preparation
 
-## Australia BAS Preparation v0.3
+## Australia BAS Preparation v0.4
 
 > **General reference only.** This skill is general tax and accounting reference material for
 > AI-assisted workflows. It has not been reviewed for any specific person's facts, documents,
@@ -212,7 +212,7 @@ These are three different things. Treat them separately.
 | Value limit | None | Under $20m: less than $12,500. $20m to under $100m: less than $25,000. $100m to under $500m: less than $50,000. $500m to under $1b: less than $100,000. $1b and over: less than $560,000 |
 | Other conditions | Cannot claim additional GST credits after the four-year credit time limit has ended | Must not result from recklessness or intentional disregard of a GST law |
 
-- **Net sum value limit and audit exclusion** — The value limit applies to the net sum of debit errors less credit errors on the same BAS. Where the net sum exceeds the limit, correct up to the limit on the later BAS and revise the original period for the excess. An error cannot be corrected on a later BAS while the entity is subject to an ATO audit or other compliance activity for the relevant period.  _([ATO, Types of GST errors; LI 2023/32, Correcting GST Errors Determination 2023](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/correcting-gst-errors/types-of-gst-errors))_
+- **Net sum value limit and audit exclusion** — The value limit applies to the net sum of debit errors less credit errors on the same BAS. Where the net sum exceeds the limit, correct up to the limit on the later BAS and revise the original period for the excess. An error cannot be corrected on a later BAS while the entity is subject to an ATO audit or other compliance activity for the relevant period.  _([ATO, Types of GST errors; LI 2023/32, Correcting GST Errors Determination 2023](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/completing-your-bas-for-gst/correcting-gst-errors/types-of-gst-errors))_
 
 ### 7.3 Revising an earlier BAS
 
@@ -355,7 +355,7 @@ Drawn from the ATO's published analysis of GST corrections and from recurring pr
 - Entering the instalment rate at 5A instead of the calculated instalment.
 - Varying an instalment down without support, then falling under the 85% threshold.
 
-[ATO, Managing GST in your business](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business)
+[ATO, GST](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst); [ATO, Types of GST errors](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/completing-your-bas-for-gst/correcting-gst-errors/types-of-gst-errors)
 
 ## Section 12 - Self-checks
 
@@ -383,11 +383,11 @@ Before lodging, confirm:
 - ATO, Due dates for lodging and paying your BAS, https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/due-dates-for-lodging-and-paying-your-bas
 - ATO, Identify your accounting basis, https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/completing-your-bas-for-gst/identify-your-accounting-basis
 - ATO, Simpler BAS GST bookkeeping guide, https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/goods-and-services-tax-gst/simpler-bas-gst-bookkeeping-guide
-- ATO, Types of GST errors, https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/managing-gst-in-your-business/reporting-paying-and-activity-statements/correcting-gst-errors/types-of-gst-errors
+- ATO, Types of GST errors, https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/completing-your-bas-for-gst/correcting-gst-errors/types-of-gst-errors
 - ATO, PAYG instalments: how to complete your activity statement, https://www.ato.gov.au/forms-and-instructions/payg-instalments-how-to-complete-your-activity-statement
 - ATO, How to vary your PAYG instalments, https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments
 
-Sources were checked on 16 September 2026. Rates, thresholds and administrative processes change; confirm each figure against the cited page for the period being reported.
+Sources were checked on 16 September 2026; the GST error time and value limits were rechecked against the ATO page (updated 14 September 2026) on 11 October 2026. Rates, thresholds and administrative processes change; confirm each figure against the cited page for the period being reported.
 
 ## Section 14 - Disclaimer
 

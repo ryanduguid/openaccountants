@@ -1,11 +1,12 @@
 ---
 name: au-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Australian tax returns AND mentions freelancing, self-employment, contracting, sole trading, or ABN-based work. Trigger on phrases like "help me do my taxes", "prepare my ITR", "I'm a sole trader in Australia", "I'm a freelancer in Australia", "do my taxes as a contractor", "prepare my BAS and income tax", or any similar phrasing where the user is an Australian-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Australian self-employed tax workflow -- every other skill in the stack (australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy, au-payg-instalments, au-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Australian full-year residents only; sole traders only.
-version: 0.3
+version: 0.4
 jurisdiction: AU
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-10
+tax_year_notes: "2025-26"
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Freelance Intake
 
-## Australia Sole Trader Intake Skill v0.3
+## Australia Sole Trader Intake Skill v0.4
 
 ## What this file is
 
@@ -23,7 +24,7 @@ This skill does not compute any tax figures. Its job is to collect all the facts
 
 ## Design principles
 
-v0.1 follows the same upload-first, inference-then-confirm pattern as mt-freelance-intake v0.1:
+This skill follows the same upload-first, inference-then-confirm pattern as mt-freelance-intake v0.1:
 
 1. **Compact refusal sweep** using `ask_user_input_v0` -- 3 interactive questions, ~30 seconds.
 2. **Upload-first workflow** -- after the refusal check, the user dumps everything they have.
@@ -53,7 +54,7 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 - **Opening message structure** — When triggered, respond with ONE message that: 1. One-line greeting (no paragraph of expectation-setting) 2. One-line summary of the flow (scope check -> upload -> gaps -> handoff to return assembly) 3. One-line reviewer reminder (must be reviewed by registered tax agent before filing) 4. Launch the refusal sweep immediately using `ask_user_input_v0`
 
-> Let's get your 2025 Australian returns ready. Quick scope check, then you upload your documents, then I fill in the gaps. Target time: 10 minutes.
+> Let's get your 2025-26 Australian returns ready. Quick scope check, then you upload your documents, then I fill in the gaps. Target time: 10 minutes.
 >
 > Reminder: everything I produce needs to be reviewed and signed off by a registered tax agent before you lodge anything with the ATO. I'm not a substitute for review.
 >
@@ -75,7 +76,7 @@ Present the refusal sweep as a single `ask_user_input_v0` call with 3 questions,
 **The 3 questions to ask first**
 
 ```
-Q1: "Australian residency in 2024-25?"
+Q1: "Australian residency in 2025-26?"
     Options: ["Full year", "Part year", "Did not live in Australia"]
 
 Q2: "Business structure?"
@@ -86,7 +87,7 @@ Q3: "Do you have an ABN?"
 ```
 
 - **Q1 evaluation** — Q1 = Full year -> continue. Q1 = Part year or did not live in Australia -> stop. "I'm set up for full-year Australian residents only. Part-year or non-residents have different rules around foreign income and dual residency. You need a registered tax agent who handles non-resident returns."
-- **Q2 evaluation** — Q2 = Sole trader -> continue. Q2 = Partnership -> stop. "Partnerships lodge a separate partnership return and distribute income to partners. You need a registered tax agent familiar with partnership returns." Q2 = Company (Pty Ltd) -> stop. "I don't cover company returns. Companies lodge a separate company tax return with different rules. You need a registered tax agent." Q2 = Trust -> stop. "Trust returns have separate distribution and reporting requirements. You need a registered tax agent familiar with trust returns." Q2 = Not sure -> ask one follow-up: "Do you operate under your own name (or a registered business name) with an individual ABN? Or do you have a registered company with ASIC? If you invoice under your own ABN, you're a sole trader. If you have an ACN and Pty Ltd, you're a company."
+- **Q2 evaluation** — Q2 = Sole trader -> continue. Q2 = Partnership -> stop. "Partnerships lodge a separate partnership return and distribute income to partners. This workflow covers sole traders only; the `au-partnerships` guide covers the partnership return and partner shares, and a registered tax agent must review it." Q2 = Company (Pty Ltd) -> stop. "Companies lodge a separate company tax return with different rules. This workflow covers sole traders only; use the company and trust workflow (`workflows/australia-company-trust.md`) with a registered tax agent." Q2 = Trust -> stop. "Trust returns have separate distribution and reporting requirements. This workflow covers sole traders only; use the company and trust workflow (`workflows/australia-company-trust.md`) with a registered tax agent." Q2 = Not sure -> ask one follow-up: "Do you operate under your own name (or a registered business name) with an individual ABN? Or do you have a registered company with ASIC? If you invoice under your own ABN, you're a sole trader. If you have an ACN and Pty Ltd, you're a company."
 - **Q3 evaluation** — Q3 = Yes -> continue. Q3 = No -> stop. "You need an ABN to operate as a sole trader. Apply at abr.gov.au. Once you have your ABN, come back and we can prepare your returns." Q3 = Applied but not yet received -> continue with a flag: ABN pending, will need to confirm before lodging.
 
 **Second batch of scope questions**
@@ -115,16 +116,16 @@ Once the refusal sweep passes, immediately ask for the document dump. Single mes
 
 **Example:**
 
-> Scope is good. Now upload everything you have for 2024-25 -- drop it all in at once:
+> Scope is good. Now upload everything you have for 2025-26 -- drop it all in at once:
 >
-> - Business bank statement(s) for all of 2024-25 (1 July 2024 - 30 June 2025) (CSV or PDF)
-> - Sales invoices issued in 2024-25
+> - Business bank statement(s) for all of 2025-26 (1 July 2025 - 30 June 2026) (CSV or PDF)
+> - Sales invoices issued in 2025-26
 > - Purchase invoices / receipts for business expenses
-> - Prior year tax return (2023-24 ITR, or at least last year's notice of assessment)
+> - Prior year tax return (2024-25 ITR, or at least last year's notice of assessment)
 > - PAYG payment summary / income statement from any employer (if also employed)
 > - Private health insurance statement (from your insurer)
 > - HELP/HECS statement (if applicable)
-> - BAS lodgements for 2024-25 (if GST registered)
+> - BAS lodgements for 2025-26 (if GST registered)
 > - Superannuation statements (personal contributions)
 > - Motor vehicle logbook (if claiming vehicle expenses)
 > - Any ATO correspondence or notices
@@ -138,7 +139,7 @@ Then wait. Do not ask any other questions while waiting.
 
 **If the user says "I don't know what I have":** Switch to guided mode:
 > Check these places:
-> - Business bank: download 2024-25 statements as PDF or CSV (1 July 2024 - 30 June 2025)
+> - Business bank: download 2025-26 statements as PDF or CSV (1 July 2025 - 30 June 2026)
 > - myGov / ATO online: download income statement, prior returns, NOA
 > - Email: search for "invoice", "BAS", "ATO", "super", "health insurance"
 > - Your health insurer's portal: download the annual tax statement
@@ -171,12 +172,12 @@ Then wait. Do not ask any other questions while waiting.
 - Total turnover reconciliation against bank deposits
 - Any foreign clients (withholding tax implications)
 
-- **Instant asset write-off threshold for 2024-25** — 20000 AUD (threshold under which items eligible for instant asset write-off)
+- **Instant asset write-off threshold for 2025-26** — AUD 20,000: assets costing less than $20,000 and first used or installed ready for use in 2025-26 by an eligible small business entity using simplified depreciation
 
 **Purchase invoices / receipts:**
 - Expense category (revenue, capital)
 - GST amount on each (claimable input tax credit for GST registered)
-- Any items eligible for instant asset write-off (under $20,000 threshold for 2024-25)
+- Any items eligible for instant asset write-off (under the $20,000 threshold for 2025-26)
 - Any items that must be depreciated (above threshold or excluded assets)
 - Any blocked categories (entertainment, personal, non-deductible fines/penalties)
 
@@ -249,12 +250,12 @@ After inference, present a single compact summary message. Use a structured form
 > - Accounting fees: $1,500
 > - Phone / internet: $1,800 (TBD -- need business use %)
 > - Motor vehicle: $4,200 fuel + maintenance (TBD -- method and business use %)
-> - Equipment: MacBook Pro $3,200 (Nov 2024) -- instant asset write-off eligible (under $20K)
+> - Equipment: MacBook Pro $3,200 (Nov 2025) -- instant asset write-off eligible (under $20K)
 > - GST credits on purchases: ~$1,100 (claimable)
 >
 > **Super Contributions (from super statement)**
 > - Personal deductible contributions: $8,000
-> - Concessional cap remaining: $22,000 (of $30,000 cap)
+> - Concessional cap remaining: $22,000 (of the $30,000 cap for 2025-26)
 >
 > **PAYG Instalments (from BAS)**
 > - Q1 instalment: $1,200
@@ -265,7 +266,7 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Private Health Insurance (from insurer statement)**
 > - Combined hospital + extras, full year cover
-> - Rebate tier: Base tier (under 65, income under $97K single -- TBD after final taxable income)
+> - Rebate tier: Base tier (under 65, income for surcharge purposes $101,000 or less single in 2025-26 -- TBD after final taxable income)
 > - Rebate claimed as premium reduction
 >
 > **HELP Debt**
@@ -276,7 +277,7 @@ After inference, present a single compact summary message. Use a structured form
 > 1. Phone / internet -- need business use percentage
 > 2. Motor vehicle -- need method (cents-per-km or logbook) and business use %
 > 3. MacBook Pro $3,200 -- eligible for instant asset write-off under $20K threshold
-> 4. Super contributions well within $30K concessional cap -- no excess issue
+> 4. Super contributions well within the $30K concessional cap for 2025-26 -- no excess issue
 > 5. PHI rebate tier may shift depending on final taxable income
 > 6. HELP compulsory repayment to be calculated from repayment income
 >
@@ -299,7 +300,7 @@ After the user confirms the summary (or corrects it), ask about things that cann
 ```
 Q: "Home office claim method?"
    Options: [
-     "Fixed rate method (rate for the return year to be verified) -- I track hours worked from home",
+     "Fixed rate method (70c per hour for 2025-26) -- I track hours worked from home",
      "Actual cost method -- I have records of running expenses and floor area",
      "I work from a separate business premises (not home)",
      "I don't work from home",
@@ -307,27 +308,27 @@ Q: "Home office claim method?"
    ]
 ```
 
-- **Home office option handling** — If option 1 -> ask for total hours worked from home during 2024-25 (text input). If option 2 -> flag as complex: actual cost method requires detailed records of electricity, gas, internet, phone, depreciation of furniture. Ask for floor area percentage of dedicated workspace. If option 3 -> rent is already captured in expenses. No home office calculation needed. If option 4 -> skip home office entirely. If option 5 -> explain both methods and record the preference; verify the return-year rate before calculating a fixed-rate claim. Ask for hours.
-- **Fixed rate home office method:** The Library establishes 70 cents/hour for 2025-26 only. For this 2024-25 intake, keep `rate_per_hour` null and the calculation pending until a source for that year is supplied. Collect hours and substantiation now.
+- **Home office option handling** — If option 1 -> ask for total hours worked from home during 2025-26 (text input). If option 2 -> flag as complex: actual cost method requires detailed records of electricity, gas, internet, phone, depreciation of furniture. Ask for floor area percentage of dedicated workspace. If option 3 -> rent is already captured in expenses. No home office calculation needed. If option 4 -> skip home office entirely. If option 5 -> explain both methods and record the preference; verify the return-year rate before calculating a fixed-rate claim. Ask for hours.
+- **Fixed rate home office method:** 70 cents per work hour for 2025-26 (PCG 2023/1; [ATO, Fixed rate method](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/deductions-you-can-claim/work-related-deductions/working-from-home-expenses/fixed-rate-method)). The claim needs a record of actual hours kept during the year; an estimate is not accepted.
 
 **Motor vehicle gap-filling question**
 
 ```
 Q: "Motor vehicle method?"
    Options: [
-     "Cents-per-km (88c/km, max 5,000 business km)",
+     "Cents-per-km (88c/km for 2025-26, max 5,000 business km)",
      "Logbook method (I kept a logbook for 12+ weeks)",
      "No vehicle used for business"
    ]
 ```
 
-- **Cents-per-km motor vehicle rate 2024-25** — 88 cents/km (maximum 5,000 business km)
-- **Motor vehicle option handling** — If option 1 -> ask for estimated business kilometres driven in 2024-25 (max 5,000). Rate is 88 cents/km for 2024-25. If option 2 -> ask for logbook business-use percentage and total car expenses. If option 3 -> skip vehicle entirely. Flag all private-use percentages as T2 -- registered tax agent must confirm the percentage is reasonable and documented.
+- **Cents-per-km motor vehicle rate 2025-26** — 88 cents/km (maximum 5,000 business km per car)
+- **Motor vehicle option handling** — If option 1 -> ask for estimated business kilometres driven in 2025-26 (max 5,000). Rate is 88 cents/km for 2025-26. If option 2 -> ask for logbook business-use percentage and total car expenses. If option 3 -> skip vehicle entirely. Flag all private-use percentages as T2 -- registered tax agent must confirm the percentage is reasonable and documented.
 
 **Other income question**
 
 ```
-Q: "Any other income in 2024-25?"
+Q: "Any other income in 2025-26?"
    Options: [
      "Interest income (bank accounts)",
      "Dividend income (shares)",
@@ -373,7 +374,7 @@ The downstream skill (`au-return-assembly`) consumes a JSON structure. It is int
 ```json
 {
   "jurisdiction": "AU",
-  "tax_year": "2024-25",
+  "tax_year": "2025-26",
   "taxpayer": {
     "name": "",
     "date_of_birth": "",
@@ -447,7 +448,7 @@ The downstream skill (`au-return-assembly`) consumes a JSON structure. It is int
   "home_office": {
     "method": "fixed_rate | actual_cost | none",
     "hours_worked_from_home": 0,
-    "rate_per_hour": null,
+    "rate_per_hour": 0.70,
     "floor_area_pct": 0
   },
   "motor_vehicle": {
@@ -469,7 +470,7 @@ The downstream skill (`au-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
-- **Concessional contributions cap default value** — 30000 AUD (default concessional_cap field value in intake package)
+- **Concessional contributions cap default value** — AUD 30,000, the 2025-26 general cap (default concessional_cap field value in the intake package; carry-forward amounts are added separately)
 
 ## Section 9 -- Refusal handling
 
@@ -552,9 +553,10 @@ For an unprepared user (has to go fetch documents):
 
 ### Change log
 
+- **v0.4 (October 2026):** Rolled forward to the 2025-26 income year (self-lodgment due Monday 2 November 2026); PHI and fixed-rate figures updated; company and trust refusals point to the company and trust workflow, and partnership refusals to `au-partnerships`.
 - **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
-## End of Intake Skill v0.3
+## End of Intake Skill v0.4
 
 ## Disclaimer
 

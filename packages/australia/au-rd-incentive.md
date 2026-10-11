@@ -2,22 +2,22 @@
 name: au-rd-incentive
 description: >
   Use this skill whenever asked about the Australian R&D Tax Incentive (R&DTI) -- the Division 355 tax offset for eligible research and development, who can claim (incorporated R&D entities only), the refundable offset for companies under $20m aggregated turnover, the non-refundable offset with intensity tiers for larger companies, core vs supporting R&D activities, excluded activities, registration with AusIndustry/DISR within 10 months of year end, the $20,000 expenditure threshold, the $150 million cap, feedstock and clawback adjustments, aggregated turnover grouping, and record-keeping. Trigger on phrases like "R&D tax incentive", "R&DTI", "R&D offset", "research and development tax", "43.5% offset", "refundable R&D", "Division 355", "AusIndustry registration", "core R&D activities", "feedstock adjustment", or "R&D intensity". ALWAYS read this skill before touching any R&D tax offset work.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia R&D Tax Incentive Skill v1.3
+# Australia R&D Tax Incentive Skill v1.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context.** The R&DTI was reformed for income years starting on or after 1 July 2021 (Treasury Laws Amendment (A Tax Plan for the COVID-19 Economic Recovery) Act 2020): the old flat 43.5% refundable and 38.5% non-refundable rates were replaced with company-tax-rate-plus-premium rates and a two-tier R&D intensity test; the expenditure cap rose from $100m to $150m; a uniform clawback rule and Part IVA were extended to the offset. From income years starting on or after 1 July 2025, R&D activities relating to tobacco or gambling are ineligible unless conducted for the sole purpose of harm minimisation. The statutory four-year amendment period applies to R&D claims. Verify all rates before relying.
+> **Law-change context.** The R&DTI was reformed for income years starting on or after 1 July 2021 (Treasury Laws Amendment (A Tax Plan for the COVID-19 Economic Recovery) Act 2020): the old flat 43.5% refundable and 38.5% non-refundable rates were replaced with company-tax-rate-plus-premium rates and a two-tier R&D intensity test; the expenditure cap rose from $100m to $150m; a uniform clawback rule and Part IVA were extended to the offset. From income years starting on or after 1 July 2025, R&D activities relating to tobacco, tobacco products and accessories or gambling are ineligible unless conducted solely to generate new knowledge about minimising harm ([Treasury Laws Amendment (Delivering an Efficient and Trusted Tax System) Act 2026, Sch 4](https://www.legislation.gov.au/C2026A00058/asmade/text), assent 30 June 2026); an earlier DISR finding for such a year does not bind the Commissioner to the extent it would treat an excluded activity as R&D. The statutory four-year amendment period applies to R&D claims. Verify all rates before relying.
 
 > **AUDIT FLASH POINT** The R&DTI is one of the ATO's most actively audited concession areas. Whether an activity is a "core R&D activity" is a technical/engineering judgement about scientific uncertainty and the knowledge threshold, NOT an accounting judgement. Registration is with AusIndustry/DISR; the offset is claimed with the ATO. Both agencies run compliance programs, and expenditure claimed is published in an annual transparency report.
 
@@ -187,7 +187,7 @@ $6,660 is added to assessable income. The clawback recovers only the 18.5% incen
 
 ### Rule 6 -- Excluded core activities (s 355-25(2))
 
-- **Excluded core activities** — The following CANNOT be core R&D activities (though some may qualify as supporting if directly related and dominant-purpose tests are met): 1. Market research/testing/development or sales promotion (incl. consumer surveys). 2. Prospecting, exploring or drilling for minerals or petroleum (to discover, locate, size or value deposits). 3. Management studies or efficiency surveys. 4. Research in the social sciences, arts or humanities. 5. Commercial, legal and administrative aspects of patenting, licensing or other IP activities. 6. Activities associated with complying with statutory requirements or standards (incl. routine testing/analysis). 7. Reproduction of a commercial product or process (by physical examination or from plans/public information). 8. Developing, modifying or customising computer software for the dominant purpose of internal administration of the entity or a connected/affiliated entity. **Tobacco and gambling:** from income years starting on or after 1 July 2025, activities relating to tobacco or gambling are ineligible as core or supporting unless conducted for the sole purpose of harm minimisation.  _(s 355-25(2))_
+- **Excluded core activities** — The following CANNOT be core R&D activities (though some may qualify as supporting if directly related and dominant-purpose tests are met): 1. Market research/testing/development or sales promotion (incl. consumer surveys). 2. Prospecting, exploring or drilling for minerals or petroleum (to discover, locate, size or value deposits). 3. Management studies or efficiency surveys. 4. Research in the social sciences, arts or humanities. 5. Commercial, legal and administrative aspects of patenting, licensing or other IP activities. 6. Activities associated with complying with statutory requirements or standards (incl. routine testing/analysis). 7. Reproduction of a commercial product or process (by physical examination or from plans/public information). 8. Developing, modifying or customising computer software for the dominant purpose of internal administration of the entity or a connected/affiliated entity. **Tobacco and gambling:** from income years starting on or after 1 July 2025, activities relating to tobacco (including tobacco products and accessories) or gambling are ineligible as core or supporting unless conducted solely to generate new knowledge about minimising harm (s 355-25(2)(i), (j), (3), (4) and s 355-30, inserted by Act No. 58 of 2026, Sch 4).  _(s 355-25(2))_
 
 ### Rule 7 -- Registration and the 10-month deadline
 
@@ -299,9 +299,9 @@ If the client provides only financial statements:
 | Minimum notional deduction | At least $20,000, with the expenditure-specific RSP/monetary CRC exceptions in Rule 8 |
 | Registration deadline | Normally 10 months after income year end, each year; Rule 7 covers extensions. Register before claiming |
 | Amendment period | Generally 4 years; special rules give effect to DISR findings |
-| Tobacco/gambling | Ineligible for income years from 1 July 2025 unless sole-purpose harm minimisation |
+| Tobacco/gambling | Ineligible for income years from 1 July 2025 unless sole-purpose harm minimisation (Act No. 58 of 2026, Sch 4) |
 
-### Primary sources (verified 20 August 2026)
+### Primary sources (verified 20 August 2026; tobacco and gambling exclusion read in the Act on 11 October 2026)
 
 **Primary sources**
 

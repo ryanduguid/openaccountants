@@ -2,18 +2,18 @@
 name: au-super-guarantee
 description: >
   Use this skill whenever asked about Australian Superannuation Guarantee (SG) obligations, payday super deadlines, voluntary super contributions, concessional and non-concessional caps, Division 293 tax, Division 296 large-balance tax, government co-contribution, spouse contribution tax offset, carry-forward rules, or any question about super for sole traders or employers. Trigger on phrases like "how much super do I pay", "SG rate", "super guarantee", "payday super", "7 business days super", "SG shortfall", "concessional cap", "Division 293", "Division 296", "$3 million super tax", "salary sacrifice super", "personal super contribution deduction", "co-contribution", "BPAY super", "super clearing house", "super fund contribution", or any question about Australian superannuation. Also trigger when classifying bank statement transactions showing super fund payments, BPAY super debits, or clearing house payments. ALWAYS read this skill before touching any SG-related work.
-version: 3.4
+version: 3.5
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.4
+# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.5
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -57,8 +57,6 @@ The remaining payday calculations and indexed figures below concern 2026–27. [
 
 **Conservative defaults**
 
-**Conservative defaults**
-
 | Ambiguity | Default |
 | --- | --- |
 | Unknown entity structure | Ask -- sole trader vs company affects SG obligation |
@@ -69,6 +67,8 @@ The remaining payday calculations and indexed figures below concern 2026–27. [
 | Unknown TSB for carry-forward | Assume >= $500,000 (no carry-forward); ask client |
 | Unknown s 290-170 notice status | Assume NOT lodged; warn about deadline |
 | Unknown contractor vs employee | Flag for reviewer -- multi-factor test |
+
+## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
@@ -85,12 +85,31 @@ The remaining payday calculations and indexed figures below concern 2026–27. [
 - **R-AU-SG-3 -- Family law splits** — *Trigger:* super splitting in divorce. *Message:* "Family law superannuation splits require legal advice. Out of scope." _(R-AU-SG-3)_
 - **R-AU-SG-4 -- SGC computation** — *Trigger:* client has missed payday super deadlines and asks about the Super Guarantee Charge. *Message:* "SGC under the payday super regime is ATO-assessed per payday from STP and fund data -- it is not self-assessed and should be escalated to a qualified practitioner. Components: final SG shortfall + notional earnings (GIC rate, compounding daily) + administrative uplift + any choice loading. Note the NEW SGC (payday regime) is tax-deductible; the OLD quarterly-regime SGC remains non-deductible." _(R-AU-SG-4)_
 
-**Direct super fund payments pattern table (source heading missing; header row truncated in source)**
+## Section 3 -- Payment pattern library
+
+Match by case-insensitive substring on the counterparty or description. A pattern only proposes a
+classification; payroll records and fund receipt evidence decide it.
+
+### 3.1 Direct super fund payments
+
+**Direct super fund payments pattern table**
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| BPAY SUPER, BPAY (+ fund name) | EXCLUDE -- super contribution | BPAY is common payment method for super |
-| BPAY (biller code matching known super fund) | EXCLUDE -- super contribution | Check BPAY biller code |
+| SUPER, SUPERANNUATION | EXCLUDE -- super contribution | Generic super payment |
+| AUSTRALIAN SUPER, AUSTRALIANSUPER, AUSTSUPER | EXCLUDE -- super contribution | AustralianSuper |
+| REST, REST SUPER | EXCLUDE -- super contribution | Rest |
+| HOSTPLUS | EXCLUDE -- super contribution | Hostplus |
+| CBUS, CBUS SUPER | EXCLUDE -- super contribution | Cbus |
+| AUSTRALIAN RETIREMENT TRUST, ART, SUNSUPER | EXCLUDE -- super contribution | Australian Retirement Trust (formerly Sunsuper and QSuper) |
+| UNISUPER | EXCLUDE -- super contribution | UniSuper |
+| HESTA | EXCLUDE -- super contribution | HESTA |
+| AWARE SUPER | EXCLUDE -- super contribution | Aware Super |
+| COLONIAL FIRST STATE, CFS | EXCLUDE -- super contribution | Retail fund |
+| AMP SUPER, AMP | EXCLUDE -- super contribution | Retail fund; AMP also banks, so confirm |
+| MLC SUPER, MLC | EXCLUDE -- super contribution | Retail fund |
+| BT SUPER | EXCLUDE -- super contribution | Retail fund |
+| SMSF (+ fund name) | EXCLUDE -- super contribution | Self-managed super fund |
 
 Under payday super, employer SG debits track the PAY CYCLE (weekly/fortnightly/monthly), not quarters. Frequent small super debits are the new normal, not an anomaly.
 
@@ -100,16 +119,17 @@ Under payday super, employer SG debits track the PAY CYCLE (weekly/fortnightly/m
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| (payroll software / clearing house name, e.g. BEAM, SUPERCHOICE, CLICKSUPER, WRKR) | EXCLUDE -- super contribution | Commercial clearing houses; SG for multiple employees in one debit |
-| ATO SUPER, ATO CLEARING HOUSE, ATO SBSCH, SMALL BUSINESS SUPERANNUATION | EXCLUDE -- super contribution (HISTORICAL) | ATO SBSCH **closed permanently 1 July 2026** (closed to new users 1 Oct 2025). Valid only on statements dated before July 2026; payments sent on/after 1 July 2026 were returned |
+| BPAY SUPER, BPAY (+ fund name) | EXCLUDE -- super contribution | BPAY is common payment method for super |
+| BPAY (biller code matching known super fund) | EXCLUDE -- super contribution | Check BPAY biller code |
 
 ### 3.3 Clearing house payments
 
-**ATO SBSCH pattern table**
+**Clearing house pattern table**
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| ATO SGC, SUPER GUARANTEE CHARGE | EXCLUDE -- SGC payment | ATO-assessed under payday regime; payment due on assessment day. New-regime SGC is deductible; old-regime (pre-Jul-2026 quarters) SGC is not |
+| (payroll software / clearing house name, e.g. BEAM, SUPERCHOICE, CLICKSUPER, WRKR) | EXCLUDE -- super contribution | Commercial clearing houses; SG for multiple employees in one debit |
+| ATO SUPER, ATO CLEARING HOUSE, ATO SBSCH, SMALL BUSINESS SUPERANNUATION | EXCLUDE -- super contribution (HISTORICAL) | ATO SBSCH **closed permanently 1 July 2026** (closed to new users 1 Oct 2025). Valid only on statements dated before July 2026; payments sent on/after 1 July 2026 were returned |
 
 **Timing trap:** a contribution is on time only when RECEIVED BY THE FUND -- receipt by a clearing house does not stop the clock. Clearing-house processing time is the employer's risk.
 
@@ -119,8 +139,7 @@ Under payday super, employer SG debits track the PAY CYCLE (weekly/fortnightly/m
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| SALARY, WAGES (outgoing) | Not super | Payroll expense -- SG is separate from wages |
-| PAYROLL | Not super | Wages payment |
+| ATO SGC, SUPER GUARANTEE CHARGE | EXCLUDE -- SGC payment | ATO-assessed under payday regime; payment due on assessment day. New-regime SGC is deductible; old-regime (pre-Jul-2026 quarters) SGC is not |
 
 ### 3.5 Salary and wages (not super)
 
@@ -128,29 +147,17 @@ Under payday super, employer SG debits track the PAY CYCLE (weekly/fortnightly/m
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| ATO IAS, ATO BAS | EXCLUDE -- tax | Activity statement payment (PAYG/GST) |
-| ATO INCOME TAX | EXCLUDE -- tax | Not super |
+| SALARY, WAGES (outgoing) | Not super | Payroll expense -- SG is separate from wages |
+| PAYROLL | Not super | Wages payment |
 
 ### 3.6 ATO tax payments (not super)
 
 **ATO tax payments pattern table**
 
-| Item | Value | Movement at 1 Jul 2026 |
+| Pattern | Treatment | Notes |
 | --- | --- | --- |
-| SG rate | 12% | unchanged (terminal since 1 Jul 2025) |
-| Maximum contribution base | $270,830 (ANNUAL) | replaced quarterly $62,500 |
-| Maximum SG per employee per year | $32,499.60 | new basis |
-| Concessional cap | $32,500 | up from $30,000 |
-| Non-concessional cap | $130,000 | up from $120,000 |
-| Bring-forward (3 years, TSB < $1.84m) | $390,000 | up from $360,000 |
-| General transfer balance cap | $2,100,000 | up from $2,000,000 |
-| Carry-forward TSB threshold | $500,000 | unchanged (not indexed) |
-| Div 293 threshold | $250,000 | unchanged (frozen) |
-| Co-contribution max | $500 | unchanged (frozen) |
-| Co-contribution lower threshold | $49,293 | up from $47,488 |
-| Co-contribution upper threshold | $64,293 | up from $62,488 |
-| LISTO threshold / max | $37,000 / $500 | unchanged (frozen) |
-| Spouse offset max / shade-out | $540 / $37,000-$40,000 | unchanged (frozen) |
+| ATO IAS, ATO BAS | EXCLUDE -- tax | Activity statement payment (PAYG/GST) |
+| ATO INCOME TAX | EXCLUDE -- tax | Not super |
 
 ## Section 4 -- Worked examples
 
@@ -243,7 +250,7 @@ SG applies only to the first $270,830 of qualifying earnings paid in the financi
 
 ### Rule 5 -- Sole traders have NO SG obligation to themselves
 
-- **Sole trader / director SG obligation** — Drawings are not salary. Only voluntary contributions. Company directors paying themselves a salary: YES SG applies (director is employee of company). _(Rule 4)_
+- **Sole trader / director SG obligation** — Drawings are not salary. Only voluntary contributions. Company directors paying themselves a salary: YES SG applies (director is employee of company).
 
 ### Rule 6 -- Concessional contributions cap
 
@@ -255,7 +262,7 @@ $32,500 (2026-27; indexed up from $30,000 on 1 July 2026). Includes employer SG 
 
 ### Rule 8 -- Non-concessional cap
 
-- **Non-concessional cap** — $130,000 (2026-27; 4 x concessional cap). Bring-forward tiers by TSB at 30 June 2026: < $1.84m -> $390,000 over 3 years; $1.84m to < $1.97m -> $260,000 over 2 years; $1.97m to < $2.1m -> $130,000 (no bring-forward); >= $2.1m -> nil. AUD
+- **Non-concessional cap** — $130,000 (2026-27; 4 x concessional cap). Bring-forward tiers by TSB at 30 June 2026: < $1.84m -> $390,000 over 3 years; $1.84m to < $1.97m -> $260,000 over 2 years; $1.97m to < $2.1m -> $130,000 (no bring-forward); >= $2.1m -> nil.
 
 ### Rule 9 -- s 290-170 notice (personal contribution deduction)
 
@@ -278,11 +285,18 @@ For $210,000 taxable income, $20,000 reportable fringe benefits, $30,000 low-tax
 
 Sources: [ATO: Division 293](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/division-293-tax-on-concessional-contributions-by-high-income-earners), ITAA 1997 ss 293-20 to 293-30. Threshold: $250,000, not indexed.
 
+### Rule 10A -- Division 296 (large balances, from 2026-27)
+
+- **What it is** — An additional tax, assessed on the individual, on a proportion of superannuation earnings where the total superannuation balance (TSB) exceeds the large superannuation balance threshold: an extra 15% on the earnings proportion attributable to the TSB above $3 million, plus a further amount on the proportion above the very large balance threshold of $10 million, giving the extra 15% / 25% headline rates. Enacted by the Treasury Laws Amendment (Building a Stronger and Fairer Super System) Act 2026 (No. 8, assent 13 March 2026) and its Imposition Act; ITAA 1997 Division 296. The first year is 2026-27.
+- **Design points** — Both thresholds are indexed from 2027-28 (in $150,000 and $500,000 increments). Earnings follow realised concepts rather than the 2023 unrealised-gains proposal. The test uses the greater of the TSB just before the start of the year and at its end; for 2026-27 only the TSB at 30 June 2027 counts, and a member who dies on or before 30 June 2027 is not liable for 2026-27. Child recipients of super income streams and people with structured settlement contributions are excluded (ss 296-20, 296-25).
+- **Who to flag** — any client whose 30 June TSB approaches $3 million: contribution strategy, asset location and pension-phase decisions all interact with Division 296. **This skill does not compute Division 296**; escalate, because the amount depends on ATO-calculated earnings from fund reporting.
+- **Do not confuse** Division 293 (contributions tax for incomes over $250,000, unchanged) with Division 296 (large-balance earnings tax from 2026-27).
+
+[Act No. 8 of 2026](https://www.legislation.gov.au/C2026A00008/asmade/text); [ATO, Key super rates: Division 296 tax thresholds](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds)
+
 ### Rule 11 -- Redesigned SGC (QE days from 1 July 2026)
 
-- **Redesigned SGC (QE days from 1 July 2026)** — ATO-assessed per payday (no SG statement is lodged; ATO matches STP against fund reporting). Components: 1. **Final SG shortfall** -- unpaid SG on qualifying earnings at 12% 2. **Notional earnings** -- GIC-rate interest on the shortfall, compounding daily from the day after the deadline 3. **Administrative uplift** -- starts at 60% of (shortfall + notional earnings); reduced 20 points for a clean 2-year history and up to 40 points for voluntary disclosure (0% if disclosed within 30 days with clean history) 4. **Choice loading** -- 25% of contributions where choice-of-fund rules breached, capped at $1,200 per notice period Payment due the day the assessment is made. Unpaid 28 days after assessment -> Notice to Pay -> late payment penalty of 25% or 50% of unpaid SGC. **The new SGC is tax-deductible** (all four components); GIC on late SGC and the late payment penalty are not, and old-regime SGC (quarters before 1 July 2026) remains non-deductible. First-year approach: PCG 2026/1. _(PCG 2026/1)_  _(PCG 2026/1)_
-
-## Personal deduction notice validity
+- **Redesigned SGC (QE days from 1 July 2026)** — ATO-assessed per payday (no SG statement is lodged; ATO matches STP against fund reporting). Components: 1. **Final SG shortfall** -- unpaid SG on qualifying earnings at 12% 2. **Notional earnings** -- GIC-rate interest on the shortfall, compounding daily from the day after the deadline 3. **Administrative uplift** -- starts at 60% of (shortfall + notional earnings); reduced 20 points for a clean 2-year history and up to 40 points for voluntary disclosure (0% if disclosed within 30 days with clean history) 4. **Choice loading** -- 25% of contributions where choice-of-fund rules breached, capped at $1,200 per notice period Payment due the day the assessment is made. Unpaid 28 days after assessment -> Notice to Pay -> late payment penalty of 25% or 50% of unpaid SGC. **The new SGC is tax-deductible** (all four components); GIC on late SGC and the late payment penalty are not, and old-regime SGC (quarters before 1 July 2026) remains non-deductible. First-year approach: PCG 2026/1.
 
 ---
 
@@ -325,6 +339,12 @@ Sources: [ATO: Division 293](https://www.ato.gov.au/individuals-and-families/sup
 **Trigger:** Employer pays a clearing house 4-5 business days after payday.
 **Issue:** Fund receipt, not clearing house receipt, is the on-time test; processing lag can push receipt past day 7.
 **Action:** Flag for reviewer; recommend earlier remittance or payroll-integrated payment.
+
+### T2-8 -- New employee and the choice of fund form
+
+**Trigger:** New employee with no fund nominated.
+**Issue:** For contributions made from 27 March 2026, an employer that has not given a required standard choice form by the due time cannot treat contributions made in that period to the stapled fund or the default fund as meeting the choice of fund rules, until it gives the form (SGAA s 32C(1B), (2A)). The stapled-fund request can be made before or after the form is given (s 32R(1A)). From 1 July 2026, targeted, non-public advertising of a super product to a new employee between accepting the offer and the employer's first compliance with the choice of fund rules is a civil penalty contravention, with exceptions for the stapled fund, the employer's nominated default fund and certain MySuper products (Corporations Act s 992AB).
+**Action:** Confirm the choice form was given on time and the stapled-fund request was made; flag choice-loading exposure (Rule 11).  _(Treasury Laws Amendment (Supporting Choice in Superannuation and Other Measures) Act 2026, Schs 1 and 2)_
 
 ---
 
@@ -423,32 +443,36 @@ If the client provides only a bank statement:
 
 ### Key rates and thresholds (2026-27)
 
-**Key rates and thresholds (2026-27)**  _(ato.gov.au)_
+**Key rates and thresholds (2026-27)**  _(ATO key superannuation rates and thresholds; Building a Stronger and Fairer Super System Act 2026 Sch 4)_
 
-| Topic | Source |
-| --- | --- |
-| SG rate, MCB tables | ato.gov.au -- Key superannuation rates and thresholds: Super guarantee (Tables 21, 23, 24) |
-| Payday super deadlines, business-day definition, exceptions | ato.gov.au -- Payment deadlines for payday super (QC 105846) |
-| Annual MCB mechanics and formula | ato.gov.au -- Maximum contributions base (QC 105844) |
-| Redesigned SGC components, deductibility, penalties | ato.gov.au -- What happens if you don't pay super correctly (payday super) + About payday super (QC 105838) |
-| Contribution caps | ato.gov.au -- Contributions caps (QC 18123) |
-| Transfer balance cap | ato.gov.au -- General transfer balance cap 2026-27 (SMSF newsroom) |
-| Co-contribution thresholds | ato.gov.au -- Government contributions (Table 25) |
-| SBSCH closure | ato.gov.au -- The SBSCH has closed permanently (QC 107658) |
-| Legislation | Treasury Laws Amendment (Payday Superannuation) Act 2025 (No. 57/2025); Superannuation Guarantee Charge Amendment Act 2025 (No. 58/2025); F2026L00133 |
-| First-year compliance | PCG 2026/1 |
+| Item | Value | Movement at 1 Jul 2026 |
+| --- | --- | --- |
+| SG rate | 12% | unchanged (terminal since 1 Jul 2025) |
+| Maximum contribution base | $270,830 (ANNUAL) | replaced quarterly $62,500 |
+| Maximum SG per employee per year | $32,499.60 | new basis |
+| Concessional cap | $32,500 | up from $30,000 |
+| Non-concessional cap | $130,000 | up from $120,000 |
+| Bring-forward (3 years, TSB < $1.84m) | $390,000 | up from $360,000 |
+| General transfer balance cap | $2,100,000 | up from $2,000,000 |
+| Carry-forward TSB threshold | $500,000 | unchanged (not indexed) |
+| Div 293 threshold | $250,000 | unchanged (frozen) |
+| Co-contribution max | $500 | unchanged (frozen) |
+| Co-contribution lower threshold | $49,293 | up from $47,488 |
+| Co-contribution upper threshold | $64,293 | up from $62,488 |
+| LISTO threshold / max | $37,000 / $500 | unchanged for 2026-27; rises from 2027-28 (see LISTO below) |
+| Spouse offset max / shade-out | $540 / $37,000-$40,000 | unchanged (frozen) |
 
 ### LISTO (Low Income Super Tax Offset)
 
-- **LISTO (Low Income Super Tax Offset)** — Adjusted taxable income <= $37,000: 15% of concessional contributions, max $500 (min $10). Paid directly into super fund by ATO.
+- **LISTO (Low Income Super Tax Offset)** — Adjusted taxable income <= $37,000: 15% of concessional contributions, max $500 (min $10). Paid directly into super fund by ATO. From 2027-28 the income threshold becomes the top of the second resident bracket ($45,000) and the maximum becomes that threshold x the SG charge percentage x 15% ($810 at 12%).  _(Building a Stronger and Fairer Super System Act 2026 Sch 4)_
 
 ### Spouse contribution tax offset
 
 - **Spouse contribution tax offset** — Max $540 (18% of $3,000). Full offset if spouse income <= $37,000; nil from $40,000. Spouse must have TSB below the general transfer balance cap and not exceed their non-concessional cap.
 
-### Primary sources (all figures verified 1 August 2026)
+### Primary sources (figures verified 1 August 2026; Division 296, LISTO and onboarding rules checked against the Acts on 11 October 2026)
 
-**Primary sources (all figures verified 1 August 2026)**  _(ato.gov.au primary sources)_
+**Primary sources**
 
 | Topic | Source |
 | --- | --- |
@@ -479,7 +503,7 @@ If the client provides only a bank statement:
 
 **Test 7:** $5,000 to spouse's fund, spouse income $36,000, spouse TSB $300,000. -> Offset = $540.
 
-Sole trader asks about SG to self. -> $0. No obligation. Advise voluntary contributions.
+**Test 8:** Sole trader asks about SG to self. -> $0. No obligation. Advise voluntary contributions.
 
 **Test 9:** Payday Friday 4 Sep 2026; contribution received by fund Wednesday 16 Sep 2026 (8 business days). -> LATE. ATO-assessed SGC per Rule 11; new-regime SGC deductible.
 

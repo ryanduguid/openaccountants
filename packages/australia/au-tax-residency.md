@@ -1,10 +1,10 @@
 ---
 name: au-tax-residency
 description: "Use this skill for any question about Australian tax residency. Trigger on: \"am I an Australian tax resident\", \"Australian residency test\", \"leaving Australia tax\", \"ceasing Australian residency\", \"domicile test Australia\", \"183-day test Australia\", \"resides test Australia\", \"exit CGT Australia\", \"Australian resident abroad\", \"dual resident Australia\", \"moving from Australia\", \"Australian expat tax status\". Covers the four residency tests, how to formally cease Australian residency, exit CGT consequences, and partial-year residency."
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
@@ -64,7 +64,7 @@ A person is an Australian tax resident if they satisfy **any one** of these:
 
 ## Section 5 — Dual Residency
 
-- **Dual residency tie-breaker rules** — Australia's DTAs with 45+ countries contain tie-breaker rules for individuals resident in both Australia and the treaty country: 1. Permanent home: resident of the country where permanent home is available. 2. Centre of vital interests: if homes in both, resident where personal/economic ties are closer. 3. Habitual abode: if still unclear, where person habitually abides. 4. Nationality: if still unclear, by nationality. 5. Competent authority agreement.
+- **Dual residency tie-breaker rules** — Australia's comprehensive DTAs (more than 40) contain tie-breaker rules for individuals resident in both Australia and the treaty country: 1. Permanent home: resident of the country where permanent home is available. 2. Centre of vital interests: if homes in both, resident where personal/economic ties are closer. 3. Habitual abode: if still unclear, where person habitually abides. 4. Nationality: if still unclear, by nationality. 5. Competent authority agreement.
 - **Read the actual treaty** — Domestic residence and treaty residence are separate findings. Where both countries treat the person as resident, apply the residence article of the treaty in force and any modifying provisions, and record its effect on each class of income. Temporary resident concessions need a separate assessment: an Australian tax resident on a temporary visa may qualify, but the visa alone does not answer the tax conditions.  _([ATO, Foreign residents and capital gains tax](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax))_
 
 ## Section 6 — Partial-Year Residency
