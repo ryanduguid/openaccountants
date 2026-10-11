@@ -5,7 +5,7 @@ jurisdiction: FI
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ Finnish resident companies (e.g. Oy) are taxed on worldwide income at a flat cor
 
 Dividends, interest and royalties paid to non-residents may be subject to Finnish withholding tax, often reduced or eliminated by EU directives or tax treaties.
 
-- **Dividends to non-residents** — 20% (corporate beneficiaries) or 30% (individuals), reduced under treaties/EU rules  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Dividends to non-residents** — 20% (corporate beneficiaries) or 30% (individuals), reduced under treaties/EU rules  _(Act on the Taxation of Non-Residents' Income (627/1978), § 7 (20% on dividends, interest and royalties paid to a non-resident entity; 30% to other non-residents), consolidated text on Finlex — https://www.finlex.fi/fi/laki/ajantasa/1978/19780627)_
 - **Interest to non-residents** — Generally 0% (no domestic WHT on most interest to non-residents)  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978))_
 - **Royalties to non-residents** — 20% (corporate) / 30% (individuals), reduced under treaties and the EU Interest & Royalties Directive (approx — confirm)  _(Act on the Taxation of Non-Residents' Income (Laki rajoitetusti verovelvollisen tulon verottamisesta 627/1978))_
 
