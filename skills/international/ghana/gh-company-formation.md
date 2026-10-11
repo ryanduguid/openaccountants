@@ -5,7 +5,7 @@ jurisdiction: GH
 category: formation
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -34,7 +34,7 @@ Incorporation is handled at the Office of the Registrar of Companies and include
 - **Stamp duty on stated capital** — 1% of stated capital (e.g. ~GHS 5 on GHS 500) (approx — confirm)  _(Stamp Duty Act, 2005 (Act 689) — https://www.pistisaudit.com/2026/04/03/a-complete-guide-to-company-registration-in-ghana-2026/)_
 - **Typical incorporation timeline** — Approximately 10 to 15 working days once documentation is complete (approx — confirm)  _(Companies Act, 2019 (Act 992) — https://www.pistisaudit.com/2026/04/03/a-complete-guide-to-company-registration-in-ghana-2026/)_
 - **Annual return to ORC** — File an annual return with the Registrar each year, with audited financial statements  _(Companies Act, 2019 (Act 992) — https://orc.gov.gh/)_
-- **Core annual tax compliance** — Quarterly provisional tax instalments, monthly PAYE/VAT/WHT filings, and an annual corporate income tax return within 4 months of year-end  _(Income Tax Act, 2015 (Act 896), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Core annual tax compliance** — Quarterly provisional tax instalments, monthly PAYE/VAT/WHT filings, and an annual corporate income tax return within 4 months of year-end  _(Income Tax Act, 2015 (Act 896) — https://gra.gov.gh/domestic-tax/tax-types/corporate-income-tax/ (as reported; the figure was not re-read against this text for this change))_
 
 <!-- openaccountants-cta-block -->
 

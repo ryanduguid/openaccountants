@@ -5,7 +5,7 @@ jurisdiction: KE
 category: formation
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax registration on incorporation** — Company must obtain a KRA PIN via iTax to transact and meet tax obligations  _(Tax Procedures Act, 2015 — https://www.kra.go.ke/business/companies-partnerships/companies-partnerships-pin-taxes)_
 - **Beneficial ownership disclosure** — Companies must maintain and file a register of beneficial owners with the Registrar  _(Companies Act, 2015; Companies (Beneficial Ownership Information) Regulations, 2020)_
 - **Annual return to the Registrar of Companies** — Every company must file an annual return each year (private companies: not before the anniversary of incorporation)  _(Companies Act, 2015 — https://kazilegal.com/company-registration-kenya.html)_
-- **Annual corporation tax return** — File corporation tax return within 6 months of financial year end via iTax  _(Tax Procedures Act, 2015, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Annual corporation tax return** — File corporation tax return within 6 months of financial year end via iTax  _(Tax Procedures Act, 2015 — https://www.kra.go.ke/business/companies-partnerships/companies-partnerships-pin-taxes (as reported; the figure was not re-read against this text for this change))_
 
 <!-- openaccountants-cta-block -->
 

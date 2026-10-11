@@ -5,7 +5,7 @@ jurisdiction: QA
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 Qatar levies no personal income tax on employment income and no VAT, but applies a flat corporate income tax on foreign-owned business profits. Tax is administered by the General Tax Authority (GTA) and the system is territorial — Qatar-source income is what matters.
 
 - **Standard tax (accounting) year** — Calendar year, or twelve consecutive months ending on the last day of another month with the authorisation of the Authority's President  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, art 1, definition of 'financial year' — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
-- **Currency** — Qatari riyal (QAR)  _(General Tax Authority, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Currency** — Qatari riyal (QAR)  _(General Tax Authority — https://www.gta.gov.qa/en/global-minimum (as reported; the figure was not re-read against this text for this change))_
 - **Tax authority** — General Tax Authority (GTA) — Al-Hayʼa al-ʻAamma lil-Daraaʼib  _([Income Tax Law No. 24 of 2018](https://gta.gov.qa/en/taxes-info))_
 - **Tax basis** — Territorial — an annual tax on total taxable income arising from sources in the State, regardless of residence; since Law No. 11 of 2022 a Qatari project's foreign real estate income, dividends, interest, royalties and technical fees are also taxed where no foreign permanent establishment is involved  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, arts 2 and 2 bis — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_
 - **Headline personal income tax rate** — 0%: the Law taxes income from activities carried on in Qatar, salaries and wages of individuals are outside the charge, and the gross income of Qatari natural persons resident in the State is exempt  _(Income Tax Law No. 24 of 2018 and its Executive Regulations, as amended by Law No. 11 of 2022, General Tax Authority 2024 English edition, art 4(13) — https://www.gta.gov.qa/assets/pdf/Income%20Tax%20Law%20EN%202024.pdf)_

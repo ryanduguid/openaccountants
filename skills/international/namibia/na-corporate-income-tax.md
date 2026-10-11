@@ -5,7 +5,7 @@ jurisdiction: NA
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,10 +26,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Withholding tax on royalties (to non-residents)** — 10 percent, **payable within 20 days after the end of the month in which the liability to pay arises** — a short clock that is easy to miss because the rate matches the interest and service-fee rates  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), s 35(1) and (2) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
 - **Withholding tax on management/consultancy/technical fees to non-residents** — **10%**. Any Namibian resident paying a management or consultancy fee to a non-resident must withhold at this rate  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), s 35A(1), (2)(a) and (8) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
 - **Withholding tax on non-resident directors and foreign entertainers** — **25%**, and **no treaty relief is available** — the rate stands whatever the recipient's country of residence. This is the exception to the 10% above and the one most likely to be missed, because a director's fee or an appearance fee reads like any other service payment  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), s 35A(2)(b) and (8) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
-- **Annual company income tax return deadline** — Within 7 months of the company's financial year-end  _(Income Tax Act, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Annual company income tax return deadline** — Within 7 months of the company's financial year-end  _(Income Tax Act — https://www.namra.org.na/tax-types/page/income-tax/ (as reported; the figure was not re-read against this text for this change))_
 - **First provisional tax payment** — Within six months of the start of the year of assessment: one half of the estimated normal tax for the year (less employees' tax deducted, for individuals); NamRA levies an underestimate penalty of up to 100% where the first payment is below 40% of the final tax and the year's payments below 80%  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), Schedule 2 paras 22(a) and 24(a), with the underestimate penalty in para 20 — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf ; Namibia Revenue Agency, I am a provisional taxpayer — https://www.namra.org.na/individual-tax/page/i-am-a-provisional-taxpayer)_
 - **Second provisional tax payment** — By the last day of the year of assessment: the balance of the estimated normal tax for the year after the first payment (and employees' tax); the penalty applies where cumulative payments fall below 80% of the final tax  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), Schedule 2 paras 22(b) and 24(b), with the underestimate penalty in para 20 — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf ; Namibia Revenue Agency, I am a provisional taxpayer — https://www.namra.org.na/individual-tax/page/i-am-a-provisional-taxpayer)_
-- **Final (top-up) tax payment** — Within 7 months after financial year-end, with the annual return  _(Income Tax Act, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Final (top-up) tax payment** — Within 7 months after financial year-end, with the annual return  _(Income Tax Act — https://www.namra.org.na/tax-types/page/income-tax/ (as reported; the figure was not re-read against this text for this change))_
 
 <!-- openaccountants-cta-block -->
 

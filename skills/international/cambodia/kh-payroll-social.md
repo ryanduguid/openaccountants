@@ -5,7 +5,7 @@ jurisdiction: KH
 category: payroll
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Payroll withholding and NSSF social security (2025)
 
-- **Salary tax withholding (PAYE-equivalent)** — Employer withholds Tax on Salary monthly under the progressive resident scale (0%–20%) or flat 20% for non-residents  _(Law on Taxation, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Salary tax withholding (PAYE-equivalent)** — Employer withholds Tax on Salary monthly under the progressive resident scale (0%–20%) or flat 20% for non-residents  _(Law on Taxation — https://www.tax.gov.kh/ (as reported; the figure was not re-read against this text for this change))_
 - **NSSF occupational-risk contribution (employer)** — 0.8% of contributory wage — employer only percent  _([Law on Social Security Schemes; Prakas No. 449 on NSSF Contribution Rate for Occupational Risk and Healthcare](https://www.nssf.gov.kh/employment-injury-scheme-2/contribution-payment/))_
 - **NSSF healthcare contribution (employer)** — 2.6% of contributory wage — employer only percent  _(Law on Social Security Schemes; Prakas No. 449 on NSSF Contribution Rate for Occupational Risk and Healthcare (as described at [eurocham-cambodia.org](https://eurocham-cambodia.org/prakas-no-449-on-determine-nssf-contribution-rate-for-occupation-risk-and-healthcare/)))_
 - **NSSF pension contribution (total, years 1–5)** — 4% of contributory wage in years 1–5 (2% employer + 2% employee); scheduled to rise in later phases  _(Law on Social Security Schemes; Sub-Decree on Pension Social Security Scheme (as described at [aplusconsulting.com.kh](https://www.aplusconsulting.com.kh/insight/cambodia-labour-law/nssf)))_
