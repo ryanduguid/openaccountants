@@ -5,7 +5,7 @@ jurisdiction: AZ
 category: formation
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,8 +26,8 @@ The most common vehicle is the limited liability company (LLC / MMC), registered
 - **Registration timeline** — Typically 2-3 business days for a locally-owned LLC ((approx — confirm) foreign-owned can take longer) (approx — confirm)  _(Law on State Registration of Legal Entities and the State Register — https://accounting.az/en/company-registration-in-azerbaijan/)_
 - **State registration fee — LLC** — AZN 15 AZN ((approx — confirm) plus any professional service fees) (approx — confirm)  _(Law on State Duty of the Republic of Azerbaijan — https://dlb.az/company-registration/)_
 - **Post-registration setup** — Obtain electronic (ASAN Imza) signature for the director, company seal, corporate bank account, and register employment contracts in the state e-registry  _(Labour Code of the Republic of Azerbaijan — https://accounting.az/en/company-registration-in-azerbaijan/)_
-- **Annual compliance — profit tax** — File annual profit tax return and pay by 31 March; make quarterly current (advance) payments  _(Tax Code of the Republic of Azerbaijan — https://e-qanun.az/framework/46948 (as reported; the figure was not re-read against this text for this change))_
-- **Ongoing compliance — VAT and payroll** — Monthly VAT returns (if registered) and monthly PIT/social/medical/unemployment reporting, due by the 20th of the following month  _(Tax Code of the Republic of Azerbaijan — https://e-qanun.az/framework/46948 (as reported; the figure was not re-read against this text for this change))_
+- **Annual compliance — profit tax** — File annual profit tax return and pay by 31 March; make quarterly current (advance) payments  _(Tax Code of the Republic of Azerbaijan, arts 149.1.1 and 149.2 (resident enterprises file the declaration by 31 March of the following year) and 151.1 (current payments within 15 days after each quarter), consolidated text on e-qanun.az — https://e-qanun.az/framework/46948)_
+- **Ongoing compliance — VAT and payroll** — Monthly VAT returns (if registered) and monthly PIT/social/medical/unemployment reporting, due by the 20th of the following month  _(Tax Code of the Republic of Azerbaijan, art. 177.2 (VAT declaration for each reporting period by the 20th of the following month) and art. 150.3.1 (monthly income tax on employees' income remitted by the 20th of the following month), consolidated text on e-qanun.az — https://e-qanun.az/framework/46948 ; social, medical and unemployment insurance reporting rests on the Social Insurance Law, not re-read for this change)_
 - **Accounting / reporting framework** — Financial statements prepared under National Accounting Standards or IFRS depending on entity category (Law on Accounting) ((approx — confirm) category thresholds) (approx — confirm)  _(Law on Accounting of the Republic of Azerbaijan — https://www.caspianlegalcenter.az/insights/more/corporate-tax-azerbaijan)_
 
 <!-- openaccountants-cta-block -->
