@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Tajikistan 
 jurisdiction: TJ
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
