@@ -2,7 +2,7 @@
 name: au-rd-incentive
 description: >
   Use this skill whenever asked about the Australian R&D Tax Incentive (R&DTI) -- the Division 355 tax offset for eligible research and development, who can claim (incorporated R&D entities only), the refundable offset for companies under $20m aggregated turnover, the non-refundable offset with intensity tiers for larger companies, core vs supporting R&D activities, excluded activities, registration with AusIndustry/DISR within 10 months of year end, the $20,000 expenditure threshold, the $150 million cap, feedstock and clawback adjustments, aggregated turnover grouping, and record-keeping. Trigger on phrases like "R&D tax incentive", "R&DTI", "R&D offset", "research and development tax", "43.5% offset", "refundable R&D", "Division 355", "AusIndustry registration", "core R&D activities", "feedstock adjustment", or "R&D intensity". ALWAYS read this skill before touching any R&D tax offset work.
-version: 1.4
+version: 1.5
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -13,11 +13,11 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia R&D Tax Incentive Skill v1.4
+# Australia R&D Tax Incentive Skill v1.5
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context.** The R&DTI was reformed for income years starting on or after 1 July 2021 (Treasury Laws Amendment (A Tax Plan for the COVID-19 Economic Recovery) Act 2020): the old flat 43.5% refundable and 38.5% non-refundable rates were replaced with company-tax-rate-plus-premium rates and a two-tier R&D intensity test; the expenditure cap rose from $100m to $150m; a uniform clawback rule and Part IVA were extended to the offset. From income years starting on or after 1 July 2025, R&D activities relating to tobacco, tobacco products and accessories or gambling are ineligible unless conducted solely to generate new knowledge about minimising harm ([Treasury Laws Amendment (Delivering an Efficient and Trusted Tax System) Act 2026, Sch 4](https://www.legislation.gov.au/C2026A00058/asmade/text), assent 30 June 2026); an earlier DISR finding for such a year does not bind the Commissioner to the extent it would treat an excluded activity as R&D. The statutory four-year amendment period applies to R&D claims. Verify all rates before relying.
+> **Law-change context.** The R&DTI was reformed for income years starting on or after 1 July 2021 (Treasury Laws Amendment (A Tax Plan for the COVID-19 Economic Recovery) Act 2020): the old flat 43.5% refundable and 38.5% non-refundable rates were replaced with company-tax-rate-plus-premium rates and a two-tier R&D intensity test; the expenditure cap rose from $100m to $150m; a uniform clawback rule and Part IVA were extended to the offset. From income years starting on or after 1 July 2025, R&D activities relating to tobacco, tobacco products and accessories or gambling are ineligible unless conducted solely to generate new knowledge about minimising harm ([Treasury Laws Amendment (Delivering an Efficient and Trusted Tax System) Act 2026, Sch 4](https://www.legislation.gov.au/C2026A00058/asmade/text), assent 30 June 2026); an earlier DISR finding for such a year does not bind the Commissioner to the extent it would treat an excluded activity as R&D. The statutory four-year amendment period applies to R&D claims. **Announced, not law:** the 2026-27 Budget (12 May 2026) proposes, from 1 July 2028, removing supporting R&D activities, raising the core offset rate by 4.5 percentage points, lowering the intensity premium threshold from 2% to 1.5%, limiting the refundable offset to a company's first 10 years, raising the minimum spend from $20,000 to $50,000, the refundable turnover threshold from $20m to $50m and the expenditure cap from $150m to $200m ([ATO, Better targeting the R&DTI](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-better-targeting-the-research-and-development-tax-incentive), checked 11 October 2026). Never apply these to a claim or plan around them as if enacted. Verify all rates before relying.
 
 > **AUDIT FLASH POINT** The R&DTI is one of the ATO's most actively audited concession areas. Whether an activity is a "core R&D activity" is a technical/engineering judgement about scientific uncertainty and the knowledge threshold, NOT an accounting judgement. Registration is with AusIndustry/DISR; the offset is claimed with the ATO. Both agencies run compliance programs, and expenditure claimed is published in an annual transparency report.
 
@@ -300,8 +300,9 @@ If the client provides only financial statements:
 | Registration deadline | Normally 10 months after income year end, each year; Rule 7 covers extensions. Register before claiming |
 | Amendment period | Generally 4 years; special rules give effect to DISR findings |
 | Tobacco/gambling | Ineligible for income years from 1 July 2025 unless sole-purpose harm minimisation (Act No. 58 of 2026, Sch 4) |
+| Announced reform from 1 July 2028 | Not law: core-only offsets (+4.5 points), 1.5% intensity threshold, refundable offset for the first 10 years and turnover under $50m, $50,000 minimum spend, $200m cap |
 
-### Primary sources (verified 20 August 2026; tobacco and gambling exclusion read in the Act on 11 October 2026)
+### Primary sources (verified 20 August 2026; tobacco and gambling exclusion read in the Act and the announced 2028 reform checked on 11 October 2026)
 
 **Primary sources**
 
