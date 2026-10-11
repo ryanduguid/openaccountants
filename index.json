@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T07:16:30+00:00",
+ "generated_at": "2026-10-11T07:23:00+00:00",
  "counts": {
   "guides": 1886,
   "jurisdictions": 244,
@@ -2643,7 +2643,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "au-partnerships",
