@@ -74,6 +74,20 @@ Gross salary, business turnover, net trading profit and pension Article 130C rel
 
 [Article 13B](https://www.jerseylaw.je/laws/current/ro_6108) ordinarily uses **2024 income for 2026 Articles 13 and 13A**, against **2026 limits**. The prior-full-time-education/training estimate exception requires Comptroller acceptance. Article 12 instead uses estimated current-year income, and Article 13E uses actual concession-year income.
 
+## Applications and approved periods
+
+[Contributions Order, Articles 16A and 16B](https://www.jerseylaw.je/laws/current/ro_6108) govern applications for exceptions and concessions under Part 1. Apply in writing in the form and manner required by the Minister or Comptroller. Supply the required earnings or income information and evidence in the required manner and timeframe. Article 16A(3) requires an application within 6 months of the date from which it seeks the exception or concession. Under Article 16A(4), the Minister or Comptroller may accept a late application if satisfied that circumstances justify acceptance.
+
+Record the requested start date, application date and supporting evidence. For a late application, retain the authority's acceptance separately from the decision establishing relief and its approved period. Article 16B permits the authority to extend an exception, concession or credited-contribution period and set conditions for exercising those powers. Neither late acceptance nor an extension is automatic. Read these general provisions alongside the specific Article 13D startup cut-offs below; do not infer an earlier startup period from the six-month rule.
+
+These synthetic cases illustrate the general application procedure. They do not establish income eligibility, an approved period or payable contributions:
+
+| Requested relief start | Application date and evidence | Procedural result |
+|---|---|---|
+| 1 January 2026 | 15 June 2026; required form and evidence supplied | Within the general application period; establish applicable relief and its approved period separately |
+| 1 January 2026 | 1 August 2026; no late-acceptance decision | Outside the general application period; do not assume relief applies |
+| 1 January 2026 | 1 August 2026; actual written late-acceptance decision | Late application accepted; obtain the relief decision, approved period and conditions |
+
 ## Exceptions and the four reduced-rate branches
 
 [Article 12](https://www.jerseylaw.je/laws/current/ro_6108) makes a Class 2 person eligible for low-income relief if estimated **2026 T does not exceed S/3**, or GBP 24,248. Equality satisfies the income condition. The Comptroller determines the exception's period and may impose conditions. Notify a failed condition immediately; the exception ends when a condition ceases to be fulfilled. No contributions are credited while this exception applies. Previously paid or credited contributions may still support benefits under Article 12(10).

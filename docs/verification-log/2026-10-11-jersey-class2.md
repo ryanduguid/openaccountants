@@ -4,7 +4,7 @@ I added a dedicated Class 2 guide and corrected the social-contributions overvie
 
 ## Primary sources and decisions
 
-I read Social Security Law Articles 3, 4 and 8 and Schedule 1B; Contributions Order Articles 12 to 13E and Schedule 2; the Classification and Residence Orders; Collection Order registration, payment and notification provisions; Income Tax Article 70A; and the cited government guidance on 11 October 2026. The [source register](../../skills/international/jersey/references.md) records the captures, hashes and applicable consolidation dates.
+I read Social Security Law Articles 3, 4 and 8 and Schedule 1B; Contributions Order Articles 12 to 13E, 16A and 16B, and Schedule 2; the Classification and Residence Orders; Collection Order registration, payment and notification provisions; Income Tax Article 70A; and the cited government guidance on 11 October 2026. The [source register](../../skills/international/jersey/references.md) records the captures, hashes and applicable consolidation dates.
 
 The new guide distinguishes statutory income eligibility from applicable relief, 2024 ordinary assessment inputs from actual 2026 startup reconciliation, and published payment amounts from annual percentage illustrations. Schedule 2's self-employment income and total income are reconciled separately; neither is inferred from raw turnover, tax profit or the pension guide's relevant earnings. Final penny rounding remains unverified, so the country guide explicitly blocks the workflow base's generic rounding fallback for payable amounts.
 
@@ -20,6 +20,10 @@ The required plan consultation supported the dedicated guide after examining the
 
 Exact example checks passed for 17 synthetic statutory branches, all 10 published boundary rows, 3 reconciliation rows, 3 limit rows and 4 application cut-off rows. Decimal arithmetic agrees with an independent fraction-based piecewise calculation. Article 12 equality, monthly components, actual startup-payment totals, benefit-assumption subtraction and the conditional trading expense were also checked. These checks verify the illustrations and transcription, not operational rounding, income mapping or benefit entitlement.
 
-Generated-tree checks, repository gates and the required independent final review must be completed before publication. Their results and the immutable revision will be recorded with the PR.
+The independent final review identified omitted Articles 16A and 16B and two incorrect formal source titles. I checked the complete application provisions against the official consolidation; its capture hash matches the registered full source. The guide now separates timely applications, discretionary late acceptance, relief decisions and approved periods, while retaining the specific startup cut-offs. The source titles were corrected against their official consolidations.
+
+Three synthetic application cases were checked against Articles 16A and 16B: a date within the general six-month period, a later application without acceptance, and a later application supported by an actual acceptance decision. They retain separate relief and approved-period requirements. These cases do not verify an exact six-month anniversary boundary or an authority's grant.
+
+Generated-tree checks, repository gates and resolution of the independent final review must be completed before publication. Their results and the immutable revision will be recorded with the PR.
 
 Complete income mapping, grant conditions, rounding, broader mixed-employment practice, credits, pension-age and overseas cases, bank references, general penalties, tax-expense timing, benefit assessment and standalone LTC computation remain outstanding. Licensed accountant sign-off and an end-to-end taxpayer-output trial have not been obtained.
