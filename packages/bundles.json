@@ -244,6 +244,22 @@
     "payroll-workflow-base.md"
    ]
   },
+  "anguilla": {
+   "jurisdiction": "AI",
+   "name": "Anguilla",
+   "files": [
+    "intake.md",
+    "ai-gst.md",
+    "ai-payroll.md",
+    "references.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "argentina": {
    "jurisdiction": "AR",
    "name": "Argentina",

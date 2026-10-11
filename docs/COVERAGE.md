@@ -24,38 +24,35 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,887** |
-| Distinct `jurisdiction` codes | **244** |
+| Guide files indexed | **1,889** |
+| Distinct `jurisdiction` codes | **245** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,723** |
+| `tier: 2` (source-cited draft) | **1,725** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **185** |
+| Country directories under `skills/international/` | **186** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **256** |
+| Generated bundles under `packages/` | **257** |
 
 US coverage is complete at state level: all 50 states plus DC are present.
-Accountant-reviewed guides exist in 24 of the 244 jurisdiction codes;
+Accountant-reviewed guides exist in 24 of the 245 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
 jurisdiction.
 
-### Guides two tax years behind
+### Guides with earlier period labels
 
-Seven guides carry `tax_year: 2024`, the oldest in the corpus. They are correctly
-labelled — the spec defines `tax_year` as the coverage *start* year, so 2024 is
-right for a 2024-25 or 2024/25 guide — and each states the year it covers in its
-own quick-reference table, so nothing in them is presented as current when it is
-not. They are a coverage gap, not an error:
+Five guides carry a `tax_year` of 2024 or earlier. These are the indexed
+period labels; they do not establish current law or complete topic coverage.
+The Anguilla payroll draft explicitly requires verification of the applicable
+law before calculating an engagement liability from its 2022 baseline.
 
-| Guide | Covers | Current period as at this writing |
+| Guide | Indexed `tax_year` | Reference scope |
 |---|---|---|
-| `au-individual-return` | 1 Jul 2024 – 30 Jun 2025 | 2025-26 is the lodgment year |
-| `au-medicare-levy` | 2024-25 | 2025-26 |
-| `hk-salaries-tax` | YA 2024/25 | YA 2025/26 |
-| `hk-mpf` | 2024 | 2026 |
-| `bangladesh-pit` | 2024 (1 Jul – 30 Jun) | 2025-26 |
-| `ghana-pit` | 2024 calendar year | 2026 |
-| `thailand-pit` | 2024 calendar year | 2026 |
+| `ai-payroll` | 2022 | Statutory consolidation as at 31 December 2022 |
+| `bangladesh-pit` | 2024 | Personal income tax |
+| `hk-mpf` | 2024 | Mandatory Provident Fund |
+| `hk-salaries-tax` | 2024 | Salaries tax |
+| `thailand-pit` | 2024 | Personal income tax |
 
 Regenerate this list with:
 
@@ -63,8 +60,7 @@ Regenerate this list with:
 python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] for g in d['guides'] if str(g.get('tax_year')) <= '2024' and g.get('tax_year')))"
 ```
 
-Everything else in the corpus is on `tax_year` 2025 (1,632), 2026 (152), or is
-year-agnostic and carries none (75).
+The other guides carry `tax_year` 2025 (1,592), 2026 (217), or no year (75).
 
 > **Names on tier-2 guides.** 99 guides carry a named `reviewed_by` while
 > marked `tier: 2`. The name records corrections an accountant contributed
