@@ -1,11 +1,11 @@
 ---
 name: paraguay-social-contributions
 description: Use this skill whenever asked about Paraguay IPS social security contributions (aportes IPS) for employed persons, domestic workers, or independent contributors. Trigger on phrases like "aportes IPS", "IPS Paraguay", "social security Paraguay", "aporte obrero", "aporte patronal", "9% IPS", "16.5% IPS", "25.5% IPS", "Instituto de Previsión Social", "trabajo doméstico IPS", "domestic worker social security Paraguay", "empleada doméstica aportes", "REI Paraguay", "planilla de aporte obrero-patronal", "número patronal", "IPS deadline", "recargos IPS", "salario mínimo Paraguay IPS base", "how much IPS do I pay", or any question about computing or classifying IPS social-security contributions for a Paraguay-based worker. Also trigger when classifying bank statement transactions that relate to IPS debits or aporte obrero-patronal payments from Paraguayan banks (Itaú, Continental, Visión, Regional, Ueno). This skill covers the general-regime employee/employer rates, the post-2019 domestic-worker rate, the contribution base, the minimum-wage floor, monthly REI filing, payment deadlines by número patronal, surcharges, and edge cases. ALWAYS read this skill before touching any Paraguay IPS work.
-version: 0.1
+version: 0.2
 jurisdiction: PY
 tax_year: 2025
 tax_year_notes: "2025 (minimum-wage floor also stated at the 1 July 2026 level of PYG 3,044,000)"
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -16,13 +16,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Paraguay IPS Social Security Contributions (Aportes)
 
-## Paraguay IPS Social Security Contributions (Aportes) -- Skill v0.1
+## Paraguay IPS Social Security Contributions (Aportes) -- Skill v0.2
 
-Paraguay IPS Social Security Contributions (Aportes) -- Skill v0.1
+Paraguay IPS Social Security Contributions (Aportes) -- Skill v0.2
 
 ## Tier 2 status disclaimer
 
-> **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority (IPS, SET/DNIT, MTESS, BACN) or a Big-4 summary (PwC Worldwide Tax Summaries) and cited inline. It has **not** yet been section-by-section verified by a licensed Paraguayan accountant (contador público). Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
+> **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority (IPS, SET/DNIT, MTESS, BACN) or to the statute (the consolidated IPS charter, Decreto-Ley N° 1.860/1950 as amended by Ley N° 98/1992, and the laws listed under Key sources) and cited inline. It has **not** yet been section-by-section verified by a licensed Paraguayan accountant (contador público). Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
 
 ## READ THIS FIRST — the single most important rate fact
 
@@ -226,9 +226,9 @@ Matches "DNIT" / "MARANGATU" (pattern 3.3). This is an IVA tax payment, not an I
 **Input:** Employer asks the IPS rate for a bank employee, expecting "11% / 17% = 28%".
 
 **Reasoning:**
-- There is **no** differentiated 28% IPS tariff. Bank employees were historically affiliated to a separate pension fund (Caja Bancaria), not charged a higher IPS rate.
+- There is **no** differentiated 28% IPS tariff. Bank and finance employees are affiliated to the Caja de Jubilaciones y Pensiones de Empleados de Bancos y Afines, a separate fund, not charged a higher IPS rate.
 - If the worker is in fact within the IPS general regime, the rate is 9% / 16.5% = 25.5% (as Example 1/2).
-- The 11% / 17% figure appears in some third-party summaries (e.g. PwC) but reflects the separate bank-fund framing, not an IPS sub-rate.
+- The 11% / 17% figure that some third-party summaries print matches neither statute: Ley N° 73/1991 set the Caja's rates at 10% employee / 16% employer, and Ley N° 2856/2005 art. 9 raised them to 13% / 19% on total remuneration (excluding the family allowance and the legal aguinaldo, art. 10) until the Caja reaches financial balance. Confirm the Caja's current rate before computing.  _(Ley N° 2856/2005 arts. 9 and 10 — https://paraguay.justia.com/nacionales/leyes/ley-2856-jan-3-2006/gdoc)_
 
 **Classification:** Do NOT author a 28% IPS computation. Flag for reviewer to confirm fund affiliation (IPS general regime vs Caja Bancaria) before computing.
 
@@ -403,7 +403,7 @@ The July 2026 monthly and daily adjustment is published in MTESS Resolution 670/
 
 ### Filing & payment
 
-- **Filing and payment rules** — System: REI (Registro Electrónico de Información) — monthly planilla; auto-calculates 16.5% patronal + 9% obrero; produces the certificado de no adeudar. Payment: via authorized banks (Itaú, Continental, Visión Banco, Regional, etc.). Deadline: monthly, staggered by the last digit of the employer's número patronal (first business days of the following month); rolls to the next business day if non-business. Late payment: recargos (surcharges) + daily interest under Law N° 98/1992 and the IPS Carta Orgánica. [RESEARCH GAP — reviewer to confirm] exact surcharge schedule.  _(Law N° 98/1992; IPS Carta Orgánica)_
+- **Filing and payment rules** — System: REI (Registro Electrónico de Información) — monthly planilla; auto-calculates 16.5% patronal + 9% obrero; produces the certificado de no adeudar. Payment: via authorized banks (Itaú, Continental, Visión Banco, Regional, etc.). Deadline: monthly, staggered by the last digit of the employer's número patronal (first business days of the following month); rolls to the next business day if non-business. Late payment: the Consejo de Administración may impose surcharges (recargos) on contributions paid after the 10th day of the month following the month the salaries were paid, capped at 2% of the contributions for each month of delay and 50% in total (IPS charter art. 71); the current schedule is in the Consejo's resolutions.  _(Decreto-Ley N° 1.860/1950, Carta Orgánica del IPS (consolidated), art. 71 — https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf)_
 
 ### Legal framework
 
@@ -411,7 +411,11 @@ The July 2026 monthly and daily adjustment is published in MTESS Resolution 670/
 
 ### Key sources
 
-- PwC Worldwide Tax Summaries (Paraguay — Other taxes): https://taxsummaries.pwc.com/paraguay/individual/other-taxes — confirms 9% / 16.5% / 25.5%.
+- Decreto-Ley N° 1.860/1950, Carta Orgánica del IPS, consolidated with Ley N° 98/1992 and later amendments (Portal Unificado de Información Pública): https://informacionpublica.paraguay.gov.py/public/241273-CartaOrgnicadelIPSpdf-CartaOrgnicadelIPS.pdf — art. 17(a) worker 9%, art. 17(b) employer 14%, art. 17(c) State 1.5%; art. 20 minimum base and the 9% cap on the worker's deduction; art. 71 surcharges; art. 76(a) definition of salary excluding aguinaldos.
+- IPS, Tabla de bases mínimas imponibles y porcentajes de aportes al IPS: https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=315 — the current rate table (9% / 16.5%), the art. 20 floor and the exclusion of the family allowance and aguinaldo under Ley N° 430/1973 art. 4(c).
+- Ley N° 253/1971 (SNPP) arts. 28-29, Justia transcription: https://paraguay.justia.com/nacionales/leyes/ley-253-jul-2-1971/gdoc — 1% of total salaries, deposited with the IPS together with the social-security contributions; with the 0.50% of Ley N° 432/1973 and the 1% for the Ministry of Public Health under Ley N° 446/1957 it makes up the 2.5% the employer pays above the 14% in art. 17(b).
+- Ley N° 432/1973 (0.50% additional employer contribution collected by the IPS for the malaria campaign), Justia transcription: https://paraguay.justia.com/nacionales/leyes/ley-432-dec-28-1973/gdoc
+- Ley N° 2856/2005 (Caja de Jubilaciones y Pensiones de Empleados de Bancos y Afines), arts. 9 and 10, Justia transcription: https://paraguay.justia.com/nacionales/leyes/ley-2856-jan-3-2006/gdoc
 - IPS portal (aportes): https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=275
 - BACN Law 6.338 (domestic work): https://www.bacn.gov.py/conoce-tu-ley/9146/trabajo-domestico-ley-n-6338-que-modifica-el-articulo-10-de-la-ley-n-540715
 - BACN Law 1286 (IPS): https://www.bacn.gov.py/leyes-paraguayas/8309/ley-n-1286-modifica-y-amplia-disposiciones-de-las-leyes-que-rigen-el-instituto-de-prevision-social-ips
@@ -422,7 +426,7 @@ The July 2026 monthly and daily adjustment is published in MTESS Resolution 670/
 
 ### Author flags (read before relying)
 
-1. **Bank/financial 28% rate:** PwC publishes an 11% / 17% (28%) figure, and the sibling `paraguay-payroll` skill repeats it. Per the IPS "separate caja" framing and this skill's design, do not author a differentiated 28% IPS rate. If addressing banks, note the historical separate fund (Caja Bancaria), not a higher IPS tariff. This is a known discrepancy to reconcile across the Paraguay skill set.
+1. **Bank/financial 28% rate:** some secondary summaries publish an 11% / 17% (28%) figure. Do not author a differentiated 28% IPS rate: bank and finance staff belong to the Caja de Jubilaciones y Pensiones de Empleados de Bancos y Afines, whose statutory rates are 13% employee / 19% employer under Ley N° 2856/2005 art. 9 (10% / 16% under the earlier Ley N° 73/1991) until the Caja reaches financial balance; the sibling `paraguay-payroll` skill now says the same. Confirm the Caja's current rate before computing a bank employee's contributions.
 2. **Domestic-worker law number:** use Law N° 6.338/2019 (not "6.368").
 3. **Minimum wage is time-sensitive, and the boundary is July** — ₲ 3.044.000 from Jul 2026; ₲ 2.899.048 from Jul 2025 to Jun 2026. Re-check each June for the next adjustment. Every worked example and test below uses the 2025-26 floor: at the 2026-27 floor the obrero 9% is ₲ 273.960, the patronal 16.5% is ₲ 502.260 and the combined 25.5% is ₲ 776.220.
 4. **Independent-regime and special-regime rates** (13% independent; ANDE 6%/12%; Magisterio 5.5%/2.5%; pensioners 6%) are secondary/lower-confidence — [RESEARCH GAP]; confirm before use.

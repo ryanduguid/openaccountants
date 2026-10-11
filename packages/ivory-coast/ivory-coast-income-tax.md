@@ -1,10 +1,10 @@
 ---
 name: ivory-coast-income-tax
 description: Use this skill whenever asked about Côte d'Ivoire (Ivory Coast) personal income tax, salary tax, or self-employed/business income tax. Trigger on phrases like "how much tax do I pay in Côte d'Ivoire", "Ivory Coast income tax", "ITS", "impôt sur les traitements et salaires", "salaire net", "net pay Abidjan", "CNPS contributions", "régime de l'entreprenant", "microentreprise tax", "BIC", "BNC", "taxe sur salaires", "RICF family reduction", "DGI", or any question about computing or filing income tax for an employee, self-employed person, or small business in Côte d'Ivoire. Also trigger when reading an Ivorian payslip or bank statement (FCFA / XOF), computing employer payroll tax, or advising on the entreprenant / microentreprise / réel regimes. This skill covers the post-2024-reform monthly ITS progressive scale, the RICF family-responsibility reduction, employer payroll tax, CNPS social security, business income regimes by turnover, withholding on BNC, filing deadlines, and penalties. ALWAYS read this skill before touching any Ivorian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: CI
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Côte d'Ivoire (Ivory Coast) Income Tax
 
-## Côte d'Ivoire (Ivory Coast) Income Tax -- Skill v0.1
+## Côte d'Ivoire (Ivory Coast) Income Tax -- Skill v0.2
 
-> **Tier 2 — research-verified, NOT yet professionally verified.** All figures are sourced inline to primary law (Ordonnance n°2023-719; Loi de Finances 2025), the Direction Générale des Impôts (DGI), CNPS, and Big-4 commentary (PwC Worldwide Tax Summaries; Deloitte). Items with weak provenance are flagged `[RESEARCH GAP — reviewer to confirm]`. A warranted Ivorian tax practitioner (expert-comptable / conseil fiscal) must sign off before filing.
+> **Tier 2 — research-verified, NOT yet professionally verified.** All figures are sourced inline to the consolidated Code général des Impôts and Livre de Procédures fiscales (the DGI's online edition, updated to 3 January 2026), the annexes fiscales published by the DGBF, the DGI's 2025 tax booklet and fiscal calendar, the CNPS and CLEISS. Items with weak provenance are flagged `[RESEARCH GAP — reviewer to confirm]`. A warranted Ivorian tax practitioner (expert-comptable / conseil fiscal) must sign off before filing.
 
 ## Section 1 -- Quick Reference
 
@@ -34,22 +34,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social security | **Caisse Nationale de Prévoyance Sociale (CNPS)** |
 | Filing portal | DGI e-services (e-impots / SIGICI) |
 | Salary tax collection | **PAYE** — withheld and remitted monthly by the employer |
-| Annual business-profit deadline | **30 May** (standard) / **30 June** (companies subject to statutory audit) (PwC, tax administration) |
+| Annual business-profit deadline | **30 May** (standard) / **30 June** (companies whose accounts must be certified by a statutory auditor) (CGI art. 35; DGI fiscal calendar) |
 | Validated by | Pending — requires sign-off by a warranted Ivorian tax practitioner |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
-> **Côte d'Ivoire DOES have a personal income tax.** Residents are taxed on worldwide income (PwC, taxes on personal income).
+> **Côte d'Ivoire DOES have a personal income tax.** Salaries are taxable when the earner is domiciled in Côte d'Ivoire, wherever the work is done or the employer sits, and when an earner domiciled abroad works in Côte d'Ivoire; pensions follow the same two tests, subject to treaties  _(CGI art. 115, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/)_
 
 ### CRITICAL — which scale is current
 
-A 2023/2024 reform (**Ordonnance n°2023-719**, effective **1 Jan 2024**) **merged** the three former salary levies — *IS/ITS*, *Contribution Nationale (CN)*, and *Impôt Général sur le Revenu (IGR)* — into a **single monthly progressive tax on salaries ("ITS")**. Many calculator/SEO sites still publish the **pre-2024 (abolished)** barème (0/10/15/20/25/35/60% plus separate 1.5% IGR + 1.5% CN). **Do NOT use the old scale.** The scale below is confirmed against the Ordonnance legal text (loidici.biz) and PwC, which agree exactly; Deloitte confirms LF 2025 left it unchanged.
+A 2023/2024 reform (**Ordonnance n°2023-719**, effective **1 Jan 2024**) **merged** the three former salary levies — *IS/ITS*, *Contribution Nationale (CN)*, and *Impôt Général sur le Revenu (IGR)* — into a **single monthly progressive tax on salaries ("ITS")**. Many calculator/SEO sites still publish the **pre-2024 (abolished)** barème (0/10/15/20/25/35/60% plus separate 1.5% IGR + 1.5% CN). **Do NOT use the old scale.** The scale below is read in CGI art. 119 bis as consolidated by the DGI (cgici.com) and in the DGI's 2025 tax booklet; the 2025 and 2026 annexes fiscales leave it unchanged.
 
 ### ITS — Current Monthly Progressive Scale (per Art. 119 bis)
 
 Applied **monthly**, per taxpayer (spouses taxed separately).
 
-**ITS Monthly Progressive Scale**  _(Source: PwC Worldwide Tax Summaries (Ivory Coast, taxes on personal income); Ordonnance n°2023-719, Art. 119 bis (loidici.biz).)_
+**ITS Monthly Progressive Scale**  _(Source: CGI art. 119 bis (Ordonnance n°2023-719, art. 1), DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/; DGI, Impôts et taxes en Côte d'Ivoire, édition 2025, p. 16 — https://www.dgi.gouv.ci/assets/documents/IMPOTS%20ET%20TAXES%20EN%20COTE%20D%27IVOIRE%20.pdf)_
 
 | Monthly taxable income (FCFA) | Rate | Cumulative tax at top of band (FCFA) |
 | --- | --- | --- |
@@ -71,7 +71,7 @@ Applied **monthly**, per taxpayer (spouses taxed separately).
 
 A flat **monthly reduction** of the computed gross ITS, by number of "parts" (shares), capped at 5 parts.
 
-**RICF reduction by parts**  _(Source: PwC (deductions); loidici.biz (reform note).)_
+**RICF reduction by parts**  _(Source: CGI art. 120 1°, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/; DGI, Impôts et taxes en Côte d'Ivoire, édition 2025, pp. 17-18 — https://www.dgi.gouv.ci/assets/documents/IMPOTS%20ET%20TAXES%20EN%20COTE%20D%27IVOIRE%20.pdf)_
 
 | Parts | Monthly reduction (FCFA) |
 | --- | --- |
@@ -83,7 +83,7 @@ A flat **monthly reduction** of the computed gross ITS, by number of "parts" (sh
 
 **Shares (parts) allocation:**
 
-**Shares (parts) allocation**  _(Source: PwC (deductions); loidici.biz.)_
+**Shares (parts) allocation**  _(Source: CGI art. 120 2°, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/)_
 
 | Situation | Parts |
 | --- | --- |
@@ -95,7 +95,7 @@ A flat **monthly reduction** of the computed gross ITS, by number of "parts" (sh
 | Minor/infirm adult dependent | +1.0 |
 | **Maximum** | **5.0** |
 
-- **Over-70 retirees additional reduction** — 75% reduction of the tax computed after the RICF; exempt pension portion raised from 200,000 to 320,000 FCFA  _(loidici.biz; PwC)_
+- **Over-70 retirees additional reduction** — 75% reduction of the tax computed after the RICF (art. 120 1°). Employer contributions to complementary pension and provident schemes are exempt within one tenth of gross monthly taxable pay, excluding benefits in kind, and 320,000 FCFA a month (art. 116-9, as amended by Ordonnance n°2023-719)  _(CGI arts. 116 and 120, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/)_
 
 ### Conservative Defaults
 
@@ -130,9 +130,9 @@ A flat **monthly reduction** of the computed gross ITS, by number of "parts" (sh
 - **R-CI-1** — Family situation (parts) unknown. "The RICF reduction depends on the number of parts. Compute provisionally at 1.0 part (no reduction) and flag, or obtain the family situation before finalising."
 - **R-CI-2** — Companies / partnerships. "This skill covers individuals (employees, sole proprietors, liberal professions). Sociétés (SA, SARL, SAS) file corporate IS returns. Escalate to an expert-comptable."
 - **R-CI-3** — Non-resident / expatriate complex cases. "Non-resident taxation, treaty relief, and split-year residence have distinct rules. Out of scope. Escalate."
-- **R-CI-4** — Capital gains on property/shares. "Building-sale gains (17%) and certain share-sale gains need specialised analysis. Escalate."
+- **R-CI-4** — Capital gains on property/shares. "Gains on buildings and shares need specialised analysis; no separate individual capital gains rate was found in the CGI. Escalate."
 - **R-CI-5** — Arrears / DGI enforcement (mise en demeure, taxation d'office). "Penalties escalate to a 100% surcharge plus interest. Do not advise — escalate to an expert-comptable immediately."
-- **R-CI-6** — VAT (TVA) return requested. "This skill covers income tax only. TVA standard rate is 18% (PwC) — use a dedicated VAT skill."
+- **R-CI-6** — VAT (TVA) return requested. "This skill covers income tax only. TVA standard rate is 18% (CGI art. 359) — use a dedicated VAT skill."
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -278,7 +278,7 @@ All amounts in **FCFA (XOF)**. ITS scale and RICF per Section 1.
 ### Example 4 -- Employer payroll tax (taxe sur salaires), expatriate
 
 **Input:** Employer employs one expatriate on monthly taxable remuneration **1,000,000**.
-- Expatriate employer payroll tax = 12% × 1,000,000 = **120,000** (PwC; former 20% abatement removed)
+- Expatriate employer payroll tax = 12% × 1,000,000 = **120,000** (CGI art. 146 as reset by the 2025 annexe fiscale, art. 16-3; the 20% abatement of the base was removed by Ordonnance n°2023-719)
 - (Local employee equivalent would be 2.8% × 1,000,000 = **28,000**)
 
 **Classification:** Employer-borne taxe sur salaires = 120,000 (expat) — this is an employer cost, NOT withheld from the employee.
@@ -288,7 +288,7 @@ All amounts in **FCFA (XOF)**. ITS scale and RICF per Section 1.
 **Input line:**
 `15/06/2025 ; ECOBANK VIREMENT ; CLIENT BTP CI ; HONORAIRES FACTURE 2025-014 ; +925 000 ; XOF`
 
-**Reasoning.** Registered resident liberal professional (BNC). The payer withholds **7.5%** WHT at source on the gross fee (PwC / arcop.ci). If the gross invoice was 1,000,000, then WHT = 75,000 and the net received = 925,000. The BNC profit is taxed under the réel regime at the BIC/standard rate of **25%** on net profit; the 7.5% is a creditable advance, not final, for residents.
+**Reasoning.** Registered resident liberal professional (BNC). The payer withholds **7.5%** WHT at source on the gross fee (CGI arts. 92 et seq. and 93; DGI booklet 2025 p. 15). If the gross invoice was 1,000,000, then WHT = 75,000 and the net received = 925,000. The BNC profit is taxed under the réel regime at **25%** (CGI art. 90); the 7.5% is a creditable advance, not final, for residents.
 
 **Classification:** Gross fee 1,000,000; WHT credit 75,000; net received 925,000. Annual BNC profit taxed at 25% with WHT credited.
 
@@ -306,15 +306,16 @@ All amounts in **FCFA (XOF)**. ITS scale and RICF per Section 1.
 
 ### 5.1 ITS taxable base
 
-- **ITS taxable base composition** — Includes all cash remuneration — base salary, living/housing allowances, bonuses, and employer-paid social contributions. The 2024 reform eliminated the former 20% abatement / standard employment-expense deduction. Benefits in kind (housing, electricity, water, A/C) are taxed at DGI deemed scheduled values.  _(PwC, deductions & other taxes; PwC, income determination)_
+- **ITS taxable base composition** — Includes all cash remuneration — base salary, living/housing allowances, bonuses, and employer-paid social contributions. The 2024 reform eliminated the former 20% abatement / standard employment-expense deduction. Benefits in kind (housing, electricity, water, A/C) are taxed at DGI deemed scheduled values.  _(CGI arts. 116 and 118, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/; annexe fiscale 2025, art. 16, on the removed 20% abatement — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
 
-**Some non-taxable thresholds**  _(PwC, income determination)_
+**Some non-taxable thresholds**  _(CGI art. 116, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/)_
 
 | Item | Exempt up to |
 | --- | --- |
-| Food allowance | 30,000 FCFA/month |
-| Business-expense allowance | 10% of taxable cash income |
-| Non-mandatory social contributions | ≤10% of gross income and ≤3,800,000 FCFA/year |
+| Transport allowance | Exempt up to the amount fixed by joint order of the Employment and Budget ministers (art. 116-10); the 30,000 FCFA/month commonly reported was not read in a primary text `[RESEARCH GAP — reviewer to confirm]` |
+| Special allowances for job-related expenses actually used for that purpose | Up to one tenth of total remuneration, allowances included (art. 116-1) |
+| Employer contributions to complementary pension and provident schemes | Within one tenth of gross monthly taxable pay (excluding benefits in kind) and 320,000 FCFA a month, so 3,840,000 FCFA a year (art. 116-9) |
+| Trainee indemnity | Exempt for up to six months on the part of the monthly indemnity up to 150,000 FCFA (art. 116-12) |
 
 ### 5.2 ITS computation order
 
@@ -322,7 +323,7 @@ All amounts in **FCFA (XOF)**. ITS scale and RICF per Section 1.
 
 ### 5.3 Employer payroll tax (taxe sur salaires, employer-borne)
 
-**Employer payroll tax rates**  _(Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024, art. 16 (CGI art. 146) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf; PwC (corporate & individual, other taxes))_
+**Employer payroll tax rates**  _(Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024, art. 16 (CGI art. 146) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf; CGI art. 146, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/)_
 
 | Component | Local staff | Expatriate staff |
 | --- | --- | --- |
@@ -334,11 +335,11 @@ All amounts in **FCFA (XOF)**. ITS scale and RICF per Section 1.
 
 - **The total is inclusive — do not add FDFP on top** — The taxe d'apprentissage and the taxe additionnelle formation professionnelle continue are components of the 2.8% / 12%, not further charges. Adding a separate 1.6% FDFP levy overstates a local employer's tax cost by 57%. The two columns sum exactly (1.2 + 0.4 + 1.2 = 2.8; 9.2 + 1.2 + 0.4 + 1.2 = 12.0)  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16 — CGI art. 146)_
 - **Taxe d'apprentissage cut for 2025** — Art. 16(2) of the annexe replaces "0,50%" with "0,40%" in the second paragraph of CGI art. 143; a 0.5% figure is the pre-2025 rate  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16(2))_
-- **Former reduction eliminated / employer cost note** — The 20% abatement was abolished by Ordonnance n° 2023-719 and the base is gross taxable remuneration; art. 16 of the 2025 annexe re-set the component rates so that the customary 2.8% and 12% totals are maintained on that unabated base. This is an employer cost — not withheld from the employee.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16; PwC (corporate & individual, other taxes))_
+- **Former reduction eliminated / employer cost note** — The 20% abatement was abolished by Ordonnance n° 2023-719 and the base is gross taxable remuneration; art. 16 of the 2025 annexe re-set the component rates so that the customary 2.8% and 12% totals are maintained on that unabated base. This is an employer cost — not withheld from the employee.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16; CGI art. 146 — https://cgici.com/)_
 
 ### 5.4 CNPS social security
 
-**CNPS contribution branches**  _(Source: PwC (individual & corporate, other taxes).)_
+**CNPS contribution branches**  _(Source: CNPS, Employeur (rates, ceilings, base and deadlines) — https://www.cnps.ci/employeur; CLEISS, Les cotisations en Côte d'Ivoire, 1 January 2025 — https://www.cleiss.fr/docs/cotisations/cotedivoire.html)_
 
 | Branch | Employee | Employer | Combined | Monthly ceiling (FCFA) |
 | --- | --- | --- | --- | --- |
@@ -346,7 +347,7 @@ All amounts in **FCFA (XOF)**. ITS scale and RICF per Section 1.
 | Family allowances (incl. maternity) | — | 5.75% | 5.75% | 70,000 |
 | Work-injury (accidents du travail) | — | 2% to 5% (by risk) | 2%–5% | 70,000 |
 
-**Arithmetic check:** pension employee 6.3% + employer 7.7% = **14.0%** combined ✓. Note the two ceilings: pension capped at **3,375,000/month**; family-allowance and work-injury capped at **70,000/month**.
+**Arithmetic check:** pension employee 6.3% + employer 7.7% = **14.0%** combined ✓. Note the two ceilings: pension capped at **3,375,000/month**; family-allowance and work-injury capped at **70,000/month**. The pension ceiling is 45 times the SMIG (CNPS); with the SMIG at 75,000 FCFA since 1 January 2023 that is 3,375,000 FCFA (CLEISS), although the CNPS employer page still prints the pre-2023 figure of 1,647,315 FCFA and a 60,000 FCFA SMIG.
 
 ### 5.5 Minimum wage (SMIG)
 
@@ -356,37 +357,37 @@ All amounts in **FCFA (XOF)**. ITS scale and RICF per Section 1.
 
 ### 5.6 Business income regimes (by annual turnover, CA TTC)
 
-**Business income regimes by turnover**  _(Sources: blog.ivoire-juriste.com; ccesp.ci; ivoire-juriste.com.)_
+**Business income regimes by turnover**  _(Sources: CGI arts. 34, 45, 71 bis, 73 and 77, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/; DGI, Impôts et taxes en Côte d'Ivoire, édition 2025, pp. 9-13 and 127-128 — https://www.dgi.gouv.ci/assets/documents/IMPOTS%20ET%20TAXES%20EN%20COTE%20D%27IVOIRE%20.pdf)_
 
 | Regime | Turnover band (FCFA TTC) | Tax |
 | --- | --- | --- |
-| **Entreprenant — TCE (Taxe Communale)** | < 5,000,000 | <1.2M: fixed daily forfait set by the local authority. 1.2M–5M: **2.5%** (commerce/retail) or **2%** (services/crafts) |
-| **Entreprenant — TEE (Taxe d'État)** | 5,000,001 – 50,000,000 | **4%** (commerce/retail), **5%** (services); halved (50%) for CGA members. Paid monthly (1/12), due 10th |
-| **Microentreprises** | 50,000,001 – 200,000,000 | **7%** of CA TTC; **5%** for CGA members |
-| **Réel Simplifié (RSI)** | option from ~100M; standard ≥200M up to 500M `[RESEARCH GAP — reviewer to confirm exact RSI/RNI boundary in CGI]` | BIC/BNC at standard rate |
-| **Réel Normal (RNI)** | > 500,000,000 | BIC/BNC at standard rate |
+| **Entreprenant — TCE (Taxe Communale)** | ≤ 5,000,000 | **2%** of turnover (commerce and trading) or **2.5%** (other activities, services included); street and market traders under 1,200,000 pay a forfait set by the municipal council (DGI booklet pp. 127-128) |
+| **Entreprenant — TEE (Taxe d'État)** | 5,000,001 – 50,000,000 | **5%** of turnover TTC, **4%** for commerce and trading (CGI art. 77); replaces patente, profit tax and VAT (art. 72). Paid in twelfths by the 10th of each month in 2025; the 2026 annexe fiscale (art. 36, amending CGI art. 79) moves payment to four equal fractions due 31 March, 30 June, 30 September and 30 November |
+| **Microentreprises** | 50,000,001 – 200,000,000 | **6%** of turnover TTC; **4%** for CGA members and taxpayers whose accounts are kept by an expert-comptable under a DGI convention (CGI art. 71 bis, as amended by the 2025 annexe fiscale) |
+| **Réel Simplifié (RSI)** | 200,000,001 – 500,000,000 (CGI art. 45) | BIC/BNC at standard rate |
+| **Réel Normal (RNI)** | > 500,000,000 (CGI art. 34); a business stays in the regime until turnover has been below the limit for three consecutive years, one for new businesses | BIC/BNC at standard rate |
 
-The entreprenant ≤50M and microentreprise 50,000,001–200,000,000 bands are consistently reported; RSI/RNI exact boundaries vary between secondary sources — **flagged as a research gap**.
+The bands are read in the consolidated CGI (arts. 34, 45, 71 bis and 73); the 7% and 5% microenterprise rates quoted by secondary sources are the pre-2025 rates.
 
 ### 5.7 Profit-tax rates (réel regimes) and minimum tax
 
-**Profit-tax rates and minimum tax**  _(Source: PwC (taxes on corporate income).)_
+**Profit-tax rates and minimum tax**  _(Source: CGI arts. 39, 51 and 90, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/; DGI, Impôts et taxes en Côte d'Ivoire, édition 2025, pp. 8-9 and 13-15 — https://www.dgi.gouv.ci/assets/documents/IMPOTS%20ET%20TAXES%20EN%20COTE%20D%27IVOIRE%20.pdf)_
 
 | Item | Rate |
 | --- | --- |
 | BIC / standard profit tax (general) | **25%** |
-| Telecom / IT / communications | **30%** |
-| BNC (liberal professions) | taxed at the BIC rate (**25%**) under the réel regimes |
-| Minimum tax (IMF) | **0.5% of turnover**, floor **3,000,000**, cap **35,000,000** FCFA |
+| Telecom / IT / communications, and gambling | **30%** (art. 51) |
+| BNC (liberal professions) | **25%** (art. 90) |
+| Minimum tax (IMF, réel normal) | **0.5% of turnover TTC**, floor **3,000,000** (500,000 for service stations and butane distributors), cap **35,000,000** FCFA (art. 39; the simplified regime's IMF is also 0.5% with a 3,000,000 floor, art. 53) |
 
 ### 5.8 Withholding on BNC service payments
 
-**Withholding on BNC service payments**  _(Source: arcop.ci; fideca.com.)_
+**Withholding on BNC service payments**  _(Source: CGI arts. 92 and 93, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/; DGI, Impôts et taxes en Côte d'Ivoire, édition 2025, pp. 14-15 — https://www.dgi.gouv.ci/assets/documents/IMPOTS%20ET%20TAXES%20EN%20COTE%20D%27IVOIRE%20.pdf)_
 
 | Payee | WHT rate | Final? |
 | --- | --- | --- |
-| Registered resident | **7.5%** of gross | Creditable advance (not final) |
-| Non-resident / no professional establishment in CI | **20%** of gross | **Final (libératoire)** |
+| Registered resident (non-salaried professionals, medical and paramedical included) | **7.5%** of gross amounts paid (arts. 92 et seq. and 93) | Creditable advance (not final) |
+| Non-resident / no professional establishment in CI | **25%** of the net amount after a 20% deduction from gross receipts (art. 92-1 d) and 92-2 a)), subject to treaties | **Final (libératoire)** |
 
 ### 5.9 Other individual taxes
 
@@ -394,9 +395,9 @@ The entreprenant ≤50M and microentreprise 50,000,001–200,000,000 bands are c
 
 | Tax | Rate |
 | --- | --- |
-| VAT (TVA), standard | **18%** (PwC, other taxes) |
-| Capital gains — buildings sold by individuals | **17%** (PwC, other taxes) |
-| Capital gains — generally (other) | Generally not taxable for individuals; certain share gains taxable (PwC) |
+| VAT (TVA), standard | **18%** on a tax-exclusive base; 9% on milk, infant milk and durum-wheat pasta (CGI art. 359) |
+| Capital gains — buildings sold by individuals | No separate individual rate was found in the consolidated CGI or the DGI booklet; the 17% quoted by commercial summaries was not traced `[RESEARCH GAP — reviewer to confirm]` |
+| Capital gains — generally (other) | Gains realised in a business fall in BIC/BNC profit (CGI arts. 1 et seq.); treatment of private share gains not read `[RESEARCH GAP — reviewer to confirm]` |
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -545,32 +546,32 @@ ONBOARDING QUESTIONS -- CÔTE D'IVOIRE INCOME TAX
 | --- | --- |
 | Merged ITS salary scale (current) | Ordonnance n°2023-719 du 13 sept. 2023, Art. 119 bis (eff. 1 Jan 2024) |
 | No change to scale for 2025 | Loi de Finances 2025, n°2024-1109 du 18 déc. 2024 (Deloitte) |
-| Salary scale & RICF figures | PwC Worldwide Tax Summaries — Ivory Coast (individual) |
-| Employer payroll tax (2.8%/12%) | PwC — other taxes (corporate & individual) |
-| CNPS contributions & ceilings | PwC — other taxes; CNPS |
-| Business regimes by turnover | blog.ivoire-juriste.com; ccesp.ci; ivoire-juriste.com |
-| Corporate/BIC rate & IMF minimum tax | PwC — taxes on corporate income |
-| BNC withholding (7.5%/20%) | arcop.ci; fideca.com |
+| Salary scale & RICF figures | CGI arts. 119 bis and 120, DGI consolidated edition (cgici.com); DGI booklet 2025 pp. 16-18 |
+| Employer payroll tax (2.8%/12%) | CGI art. 146 (DGI consolidated edition); annexe fiscale 2025, art. 16-3 |
+| CNPS contributions & ceilings | CNPS, Employeur (cnps.ci); CLEISS, Les cotisations en Côte d'Ivoire |
+| Business regimes by turnover | CGI arts. 34, 45, 71 bis, 73 and 77; DGI booklet 2025 |
+| Corporate/BIC rate & IMF minimum tax | CGI arts. 39 and 51; DGI booklet 2025 pp. 8-9 |
+| BNC withholding (7.5% / 25% non-resident) | CGI arts. 92 and 93; DGI booklet 2025 pp. 14-15 |
 | SMIG / SMAG | Décret n°2022-986; guidedufonctionnaire.com; sikafinance.com |
-| Filing deadlines (30 May / 30 June) | PwC — tax administration |
-| Penalties | DGI (dgi.gouv.ci); CGI / Livre des Procédures Fiscales |
+| Filing deadlines (30 May / 30 June) | CGI art. 35; DGI, Calendrier des obligations fiscales |
+| Penalties | Livre de Procédures fiscales arts. 161 to 163 (DGI consolidated edition, cgici.com) |
 
 ### Filing, payment, administration
 
-- **Tax year = calendar year.** Salary tax is **withheld monthly by the employer (PAYE)**; the employer files monthly returns for both employee and employer payroll taxes. Employees with a local employer generally do not file a separate return; **spouses are taxed and file separately** (PwC, tax administration).
-- **Monthly payment due dates (for the preceding month):** industrial/mining/oil — **10th**; sales companies — **15th**; service providers — **20th**; other registered entities — **15th**; entreprenant & micro-enterprise — **10th** (PwC, tax administration).
-- **Annual business-profit deadlines:** companies subject to statutory audit — **30 June**; other companies — **30 May** (PwC).
+- **Tax year = calendar year.** Salary tax is **withheld monthly by the employer (PAYE)** on each employee's own pay and parts (CGI arts. 119 bis and 120); the employer files monthly returns for both the employee ITS and the employer contributions, an annual salary summary (état 301) by 30 May, or 30 June where the accounts are audited, and an ITS regularisation statement in February. Employees with a local employer generally do not file a separate return  _(DGI, Calendrier des obligations fiscales, pp. 17-20 — https://www.dgi.gouv.ci/assets/documents/CALENDRIER.pdf; CGI art. 138 — https://cgici.com/)_
+- **Monthly payment due dates (for the preceding month):** taxpayers of the centres des impôts — **15th**; entreprenant (TEE) and microenterprise taxpayers — **10th**; taxpayers of the large and medium enterprise directorates (DGE/DME) — **10th** for industrial, oil and mining companies, **15th** for commercial companies, **20th** for service providers. Withholdings of at most 10,000 FCFA a month may be paid for the half-year by 15 July and 15 January  _(DGI, Calendrier des obligations fiscales, pp. 17-19 — https://www.dgi.gouv.ci/assets/documents/CALENDRIER.pdf)_
+- **Annual business-profit deadlines:** companies whose accounts must be certified by a statutory auditor — **30 June**; other companies — **30 May**; BNC result returns by 15 April (centres des impôts) or 20 April (DGE/DME)  _(CGI art. 35 — https://cgici.com/; DGI, Calendrier des obligations fiscales, pp. 8-12 — https://www.dgi.gouv.ci/assets/documents/CALENDRIER.pdf)_
 
 ### Penalties (DGI / CGI / Livre des Procédures Fiscales)
 
-**Penalties table**  _(Source: DGI (dgi.gouv.ci); DGI "IMPÔTS ET TAXES EN CÔTE D'IVOIRE" PDF.)_
+**Penalties table**  _(Source: Livre de Procédures fiscales arts. 161 to 163, DGI online consolidated edition (Code général des Impôts 2025 updated to 3 January 2026) — https://cgici.com/)_
 
 | Situation | Charge |
 | --- | --- |
-| Late filing before formal notice (mise en demeure) | **5%** of duties declared |
-| Filed within 7 days after mise en demeure | **10%** of duties |
-| No filing after mise en demeure | Taxation d'office **+ 100%** surcharge |
-| Late payment | **10%** flat from day 1, **plus monthly interest** `[RESEARCH GAP — exact monthly interest % not confirmed against primary CGI; reviewer to confirm]` |
+| Late payment (any tax) | Interest of **5%** plus **0.5%** per month or part month of further delay; **10%** plus **1%** a month for taxes withheld at source, turnover taxes, indirect taxes and ITS (LPF art. 161-1) |
+| Understated or incomplete base | Surcharge of **15%** (understatement up to a quarter of the tax due), **30%** (above a quarter) or **100%** (fraud), on top of interest; **30% / 60% / 150%** for withheld taxes, turnover taxes and ITS (LPF art. 162) |
+| Return filed late under taxation d'office | **10%** surcharge, raised to **50%** (income and profit taxes, property and patente) or **100%** (withheld taxes, turnover taxes, ITS) if not regularised within 30 days of the administration's request (LPF art. 163-1) |
+| Duties assessed under taxation d'office | **50%** (income and profit taxes, property, patente) or **100%** (withheld taxes, turnover taxes, ITS); **200%** where no declaration of existence was filed (LPF art. 163-2) |
 
 ### Test Suite
 

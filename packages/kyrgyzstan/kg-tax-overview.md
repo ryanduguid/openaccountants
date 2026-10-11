@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Kyrgyzstan (tax year 2025) �
 jurisdiction: KG
 category: international
 tax_year: 2025
-version: 0.2
-last_updated: 2026-10-04
+version: 0.3
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ Kyrgyzstan operates a low, broadly flat tax system codified in the Tax Code of t
 - **Currency** — Kyrgyzstani som (KGS)  _(Tax Code of the Kyrgyz Republic)_
 - **Tax authority** — State Tax Service under the Ministry of Finance of the Kyrgyz Republic  _([Tax Code of the Kyrgyz Republic](https://sti.gov.kg/))_
 - **Basis of taxation** — Residents are taxed on worldwide income; non-residents are taxed on Kyrgyzstan-source income only  _(Tax Code of the Kyrgyz Republic)_
-- **Headline personal income tax rate** — 10%  _([Tax Code of the Kyrgyz Republic](https://taxsummaries.pwc.com/kyrgyzstan))_
+- **Headline personal income tax rate** — 10%  _(Tax Code of the Kyrgyz Republic, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Standard corporate profit tax rate** — 10%  _(Tax Code of the Kyrgyz Republic (as described at [kgaccount.com](https://kgaccount.com/en/income-tax-2/)))_
 - **Value Added Tax** — Yes — VAT exists, standard rate 12%  _(Tax Code of the Kyrgyz Republic)_
 - **Sales tax** — Yes — a separate turnover-based sales tax of 0%–5% applies in addition to or instead of VAT, depending on activity and payment method (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_

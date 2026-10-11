@@ -4,7 +4,7 @@ description: "Source-cited draft: tax overview for Philippines (tax year 2025) �
 jurisdiction: PH
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 reviewed_by: Jonathan I. Ruiz, CPA
 review_status: pending_review
 tier: 2
@@ -20,8 +20,8 @@ The Philippines taxes individuals and corporations under the National Internal R
 - **Standard tax year** — Calendar year ending 31 December; corporations may elect a fiscal year  _(National Internal Revenue Code (NIRC) of 1997, as amended)_
 - **Currency** — Philippine peso (PHP)  _(National Internal Revenue Code (NIRC) of 1997, as amended)_
 - **National tax authority** — Bureau of Internal Revenue (BIR)  _([National Internal Revenue Code (NIRC) of 1997, as amended (https://www.bir.gov.ph/)](https://www.bir.gov.ph/))_
-- **Individual residence basis** — Resident citizens are taxed on worldwide income; resident aliens and non-resident citizens are taxed only on Philippine-source income  _([National Internal Revenue Code (NIRC), Section 23](https://taxsummaries.pwc.com/philippines/individual/residence))_
-- **Corporate residence basis** — Domestic corporations are taxed on worldwide income; resident and non-resident foreign corporations are taxed only on Philippine-source income  _([National Internal Revenue Code (NIRC), Section 23](https://taxsummaries.pwc.com/philippines/corporate/taxes-on-corporate-income))_
+- **Individual residence basis** — Resident citizens are taxed on worldwide income; resident aliens and non-resident citizens are taxed only on Philippine-source income  _(National Internal Revenue Code, Section 23, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Corporate residence basis** — Domestic corporations are taxed on worldwide income; resident and non-resident foreign corporations are taxed only on Philippine-source income  _(National Internal Revenue Code, Section 23, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Top personal income tax rate** — 35 percent (graduated rates from 0% to 35%; first PHP 250,000 of taxable income is exempt)  _(National Internal Revenue Code (NIRC), Section 24(A), as amended by TRAIN Law (RA 10963))_
 - **Regular corporate income tax rate** — 25 percent (reduced to 20% for qualifying domestic MSMEs)  _(National Internal Revenue Code (NIRC), Section 27, as amended by CREATE Act (RA 11534))_
 - **Value-added tax** — 12 percent (VAT applies at a standard rate of 12%)  _(National Internal Revenue Code (NIRC), Section 106 and Section 108)_

@@ -4,7 +4,7 @@ description: Morocco — Personal Income Tax on Professional Income (Impôt sur 
 jurisdiction: MA
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -303,7 +303,6 @@ Then: classify transactions (§3), build the net result, run the scale (§1), te
 - **Loi de Finances 2025** — IR reform: exempt band raised to **MAD 40,000**, top rate reduced to **37%**, brackets widened.
 - **Loi de Finances 2026** — confirm carry-over of the scale and any revaluation of the family deduction and CM parameters.
 - **DGI** — tax.gov.ma; **SIMPL-IR** télédéclaration — irpart.tax.gov.ma.
-- **PwC Worldwide Tax Summaries — Morocco** — taxsummaries.pwc.com/morocco.
 
 ### Short test suite
 
@@ -328,7 +327,7 @@ Then: classify transactions (§3), build the net result, run the scale (§1), te
 
 ## Disclaimer
 
-This skill is **research-verified** against public sources (DGI / tax.gov.ma, the SIMPL-IR portal, PwC Worldwide Tax Summaries, and reporting on the Loi de Finances 2025/2026) as of **May 2026**. It is **YMYL** content and is **pending sign-off by a Moroccan accountant (expert-comptable)**. The progressive scale, the somme-à-déduire amounts, the family deduction, the cotisation minimale rates and floor, RNS ceilings, and filing deadlines change with each Loi de Finances and must be **re-verified** before use. Nothing here is a substitute for advice from a licensed Moroccan expert-comptable or the DGI. Part of **openaccountants.com** — open-source tax skills for the self-employed.
+This skill is **research-verified** against public sources (DGI / tax.gov.ma, the SIMPL-IR portal, and reporting on the Loi de Finances 2025/2026) as of **May 2026**. It is **YMYL** content and is **pending sign-off by a Moroccan accountant (expert-comptable)**. The progressive scale, the somme-à-déduire amounts, the family deduction, the cotisation minimale rates and floor, RNS ceilings, and filing deadlines change with each Loi de Finances and must be **re-verified** before use. Nothing here is a substitute for advice from a licensed Moroccan expert-comptable or the DGI. Part of **openaccountants.com** — open-source tax skills for the self-employed.
 
 <!-- openaccountants-cta-block -->
 

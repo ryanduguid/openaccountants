@@ -1,10 +1,10 @@
 ---
 name: cameroon-income-tax
 description: Use this skill whenever asked about Cameroon personal income tax (IRPP) for salaried or self-employed individuals. Trigger on phrases like "how much income tax do I pay in Cameroon", "IRPP", "impot sur le revenu", "CNPS contributions", "PAYE Cameroon", "IGS", "Impot General Synthetique", "Centre de Gestion Agree", "CGA", "barème IRPP", "Credit Foncier", "FNE", "monthly salary tax Cameroon", "net taxable income", "minimum tax", or any question about filing or computing income tax for a salaried or self-employed client in Cameroon. Also trigger when preparing or reviewing a monthly PAYE return, the annual recapitulative declaration, the DIPE employer summary, computing CNPS social security, or advising on the IGS/actual-earnings turnover regimes. This skill covers the progressive IRPP scale (CAC-inclusive), CNPS branches, Credit Foncier/FNE, council tax and CRTV royalty, the IGS small-business regime, filing deadlines, and penalties. ALWAYS read this skill before touching any Cameroon income tax work.
-version: 0.3
+version: 0.4
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -30,15 +30,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Direction Generale des Impots (DGI), Cameroon -- https://impots.cm |
 | Social security body | Caisse Nationale de Prevoyance Sociale (CNPS) -- https://www.cnps.cm |
 | Filing portal | DGI online declaration platform (impots.cm) |
-| Monthly PAYE deadline | 15th of the month following salary payment [PwC tax administration] |
-| Annual declaration deadline | 31 July / 30 September / 31 October depending on taxpayer class (see 5.10) [PwC] |
+| Monthly PAYE deadline | 15th of the month following salary payment [secondary summary, tax administration] |
+| Annual declaration deadline | 31 July / 30 September / 31 October depending on taxpayer class (see 5.10) [secondary summary] |
 | Validated by | Live status: https://openaccountants.com/skills/cameroon-income-tax |
 | Validation date | Live status: https://openaccountants.com/skills/cameroon-income-tax |
-| Skill version | 0.3 |
+| Skill version | 0.4 |
 
 ### IRPP Rate Brackets (2025) -- CAC-inclusive scale
 
-**IRPP Rate Brackets (2025)**  _([PwC -- https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income])_
+**IRPP Rate Brackets (2025)**  _([secondary summary])_
 
 | Net taxable income band (XAF / year) | Rate | Cumulative tax at top of band |
 | --- | --- | --- |
@@ -47,25 +47,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 3,000,001 -- 5,000,000 | 27.5% | XAF 935,000 |
 | Over 5,000,000 | 38.5% | -- |
 
-- **Progressive scale application basis** — Progressive scale applied to overall annual net taxable income, rounded down to the nearest XAF 1,000. The headline rates already include the 10% CAC surcharge (statutory base scale 10/15/25/35% + 10% CAC = 11/16.5/27.5/38.5%).  _([PwC -- https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income])_
-- **Cumulative check** — 2,000,000 x 11% = 220,000; + 1,000,000 x 16.5% = 165,000 -> 385,000; + 2,000,000 x 27.5% = 550,000 -> 935,000. Above 5,000,000, tax = 935,000 + 38.5% of the excess over 5,000,000.  _([PwC])_
+- **Progressive scale application basis** — Progressive scale applied to overall annual net taxable income, rounded down to the nearest XAF 1,000. The headline rates already include the 10% CAC surcharge (statutory base scale 10/15/25/35% + 10% CAC = 11/16.5/27.5/38.5%).  _([secondary summary])_
+- **Cumulative check** — 2,000,000 x 11% = 220,000; + 1,000,000 x 16.5% = 165,000 -> 385,000; + 2,000,000 x 27.5% = 550,000 -> 935,000. Above 5,000,000, tax = 935,000 + 38.5% of the excess over 5,000,000.  _([secondary summary])_
 
 ### Schedular / special rates
 
-**Schedular / special rates**  _([PwC -- taxes-on-personal-income])_
+**Schedular / special rates**  _([secondary summary, taxes-on-personal-income])_
 
 | Income type | Overall rate (CAC-inclusive) | Source |
 | --- | --- | --- |
-| Income from stocks/shares (dividends, investment income) | 16.5% (15% + CAC) | [PwC -- taxes-on-personal-income] |
-| Other non-commercial / business / professional net profits (actual-earnings regime) | 33% (30% + CAC) | [PwC -- taxes-on-personal-income] |
-| Minimum tax (turnover-based, non-salaried, regime-dependent) | 2.2% or 5.5% of turnover | [PwC -- taxes-on-personal-income] |
+| Income from stocks/shares (dividends, investment income) | 16.5% (15% + CAC) | [secondary summary, taxes-on-personal-income] |
+| Other non-commercial / business / professional net profits (actual-earnings regime) | 33% (30% + CAC) | [secondary summary, taxes-on-personal-income] |
+| Minimum tax (turnover-based, non-salaried, regime-dependent) | 2.2% or 5.5% of turnover | [secondary summary, taxes-on-personal-income] |
 
-- **Minimum tax non-application** — Minimum tax does NOT apply to salaried workers or taxpayers under the IGS/discharge system.  _([PwC])_
+- **Minimum tax non-application** — Minimum tax does NOT apply to salaried workers or taxpayers under the IGS/discharge system.  _([secondary summary])_
 
 ### Salary income determination
 
-- **Residency scope** — Residents (fiscal domicile in Cameroon) are taxed on worldwide income.  _([PwC -- income-determination])_
-- **Net salary base** — Net salary base = gross salary, less a standard 30% lump-sum deduction for professional expenses, less mandatory social contributions (CNPS employee portion).  _([PwC -- income-determination])_
+- **Residency scope** — Residents (fiscal domicile in Cameroon) are taxed on worldwide income.  _([secondary summary, income-determination])_
+- **Net salary base** — Net salary base = gross salary, less a standard 30% lump-sum deduction for professional expenses, less mandatory social contributions (CNPS employee portion).  _([secondary summary, income-determination])_
 
 Statutory wording (CGI art. 34, 2022 consolidated edition, the latest full edition the DGI publishes online: https://www.impots.cm/sites/default/files/documents/CGI%202022.pdf): net taxable income is the gross sums paid plus the benefits in kind or in cash granted, less professional expenses computed at a flat 30% and less the contributions paid to the State and to the CNPS for compulsory retirement. The article sets no cap on the 30% deduction and no ordering rule beyond deducting both amounts from the gross. The 2023 to 2025 finance laws were not checked against this article; the Finance Law 2026 explanatory statement (https://www.dgb.cm/wp-content/uploads/2025/12/Expose-des-Motifs_LF-2026_fr.pdf) lists no amendment to it.
 
@@ -99,7 +99,7 @@ Statutory wording (CGI art. 34, 2022 consolidated edition, the latest full editi
 - **R-CM-3** — Non-resident / expatriate withholding. "Non-resident and expatriate taxation (withholding on Cameroon-source income, treaty relief) has different rules and is out of scope. Escalate to a Cameroon-qualified practitioner."  _(R-CM-3)_
 - **R-CM-4** — Capital gains / property disposals. "Capital gains and property-transfer taxation require specialised analysis. Out of scope. Escalate."  _(R-CM-4)_
 - **R-CM-5** — Arrears / enforcement. "Client has outstanding tax arrears or is subject to DGI enforcement. Penalties (10%/month late filing, 1.5%/month interest, and 30%-100%/150% bad-faith assessment uplifts) are severe. Do not advise. Escalate immediately."  _(R-CM-5)_
-- **R-CM-6** — VAT return requested. "This skill covers IRPP only. Cameroon standard VAT is 19.25% (17.5% + 10% CAC) and is computed separately. [PwC overview]"  _(R-CM-6)_
+- **R-CM-6** — VAT return requested. "This skill covers IRPP only. Cameroon standard VAT is 19.25% (17.5% + 10% CAC) and is computed separately. [secondary summary, overview]"  _(R-CM-6)_
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -138,7 +138,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 | ELECTRICITE, ENEO, EAU, CAMWATER | Utilities | Deductible (business %) | Apportion if home/mixed use -- default 0% if mixed |
 | ORANGE, MTN, CAMTEL (telecom) | Telecoms | Deductible (business %) | Business portion only |
 
-- **Applicability note** — These deductions apply ONLY to self-employed taxpayers under the actual-earnings (regime du reel) regime. Salaried taxpayers rely on the standard 30% lump-sum professional-expense deduction; IGS taxpayers pay a synthetic tax on turnover and do not itemise.  _([PwC income-determination; openhubdigital 2025 Finance Law])_
+- **Applicability note** — These deductions apply ONLY to self-employed taxpayers under the actual-earnings (regime du reel) regime. Salaried taxpayers rely on the standard 30% lump-sum professional-expense deduction; IGS taxpayers pay a synthetic tax on turnover and do not itemise.  _([secondary summary, income-determination; openhubdigital 2025 Finance Law])_
 
 ### 3.3 Expense Patterns (Debits) -- NOT Deductible
 
@@ -262,17 +262,17 @@ Classification: EXCLUDE.
 
 ### 5.1 Residency and Scope
 
-- **Residency and Scope** — Residents (fiscal domicile in Cameroon) are taxed on worldwide income; non-residents are out of scope for this skill (R-CM-3).  _([PwC -- income-determination])_
+- **Residency and Scope** — Residents (fiscal domicile in Cameroon) are taxed on worldwide income; non-residents are out of scope for this skill (R-CM-3).  _([secondary summary, income-determination])_
 
 ### 5.2 Salary IRPP Base
 
-- **Salary IRPP Base** — Net taxable salary = gross salary - 30% lump-sum professional-expense deduction - mandatory CNPS employee contributions, rounded down to the nearest XAF 1,000, then the progressive scale in Section 1.  _([PwC -- income-determination; taxes-on-personal-income])_
+- **Salary IRPP Base** — Net taxable salary = gross salary - 30% lump-sum professional-expense deduction - mandatory CNPS employee contributions, rounded down to the nearest XAF 1,000, then the progressive scale in Section 1.  _([secondary summary, income-determination; taxes-on-personal-income])_
 
 Statutory basis: CGI art. 34 (2022 consolidated edition): the flat 30% professional expenses and the compulsory CNPS retirement contributions are both deducted from the gross sums paid and benefits granted, with no cap; see the salary income determination note above for the edition checked.
 
 ### 5.3 Progressive Scale (CAC-inclusive)
 
-- **Progressive Scale application** — Apply 11% / 16.5% / 27.5% / 38.5% per Section 1. The rates already include the 10% CAC surcharge.  _([PwC])_
+- **Progressive Scale application** — Apply 11% / 16.5% / 27.5% / 38.5% per Section 1. The rates already include the 10% CAC surcharge.  _([secondary summary])_
 
 ### 5.4 Schedular Income
 
@@ -281,16 +281,16 @@ Statutory basis: CGI art. 34 (2022 consolidated edition): the flat 30% professio
 | Income type | Treatment |
 | --- | --- |
 | Salary | Progressive scale (Section 1) |
-| Dividends / investment income from shares | Flat 16.5% (15% + CAC) [PwC] |
-| Non-commercial / business / professional profit (actual-earnings) | Flat 33% (30% + CAC) [PwC] |
+| Dividends / investment income from shares | Flat 16.5% (15% + CAC) [secondary summary] |
+| Non-commercial / business / professional profit (actual-earnings) | Flat 33% (30% + CAC) [secondary summary] |
 
 ### 5.5 Minimum Tax
 
-- **Minimum Tax** — For non-salaried taxpayers under actual-earnings, minimum tax is 2.2% or 5.5% of turnover depending on the applicable regime. It does NOT apply to salaried workers or IGS taxpayers.  _([PwC])_
+- **Minimum Tax** — For non-salaried taxpayers under actual-earnings, minimum tax is 2.2% or 5.5% of turnover depending on the applicable regime. It does NOT apply to salaried workers or IGS taxpayers.  _([secondary summary])_
 
 ### 5.6 Social Security -- CNPS (Caisse Nationale de Prevoyance Sociale)
 
-- **CNPS ceiling** — Monthly contribution ceiling for the pension branch: XAF 750,000/month (XAF 9,000,000/year), raised from XAF 300,000 by Presidential Decree.  _([PwC -- other-taxes; CNPS])_
+- **CNPS ceiling** — Monthly contribution ceiling for the pension branch: XAF 750,000/month (XAF 9,000,000/year), raised from XAF 300,000 by Presidential Decree.  _([secondary summary, other-taxes; CNPS])_
 
 **CNPS Branches Table**
 
@@ -303,29 +303,29 @@ Statutory basis: CGI art. 34 (2022 consolidated edition): the flat 30% professio
 | **TOTAL CNPS (general regime, highest risk class)** | **4.2%** | **16.2%** (4.2% + 7% + 5%) |
 | Voluntary insurance (self-employed / optional pension) | 8.4% of declared income | n/a |
 
-- **Employer total check** — Lowest class 4.2 + 7 + 1.75 = 12.95%; highest class 4.2 + 7 + 5 = 16.2%. Employee total = 4.2% (pension only). Sources: employee 4.2% / ceiling XAF 750,000 [PwC -- other-taxes]; employer pension 4.2%, family 7%, occupational 1.75-5% [Rivermate -- rivermate.com/guides/cameroon/taxes]; equal employer/employee pension split [CNPS -- cnps.cm].  _([PwC -- other-taxes]; [Rivermate]; [CNPS -- cnps.cm])_
+- **Employer total check** — Lowest class 4.2 + 7 + 1.75 = 12.95%; highest class 4.2 + 7 + 5 = 16.2%. Employee total = 4.2% (pension only). Sources: employee 4.2% / ceiling XAF 750,000 [secondary summary, other-taxes]; employer pension 4.2%, family 7%, occupational 1.75-5% [Rivermate -- rivermate.com/guides/cameroon/taxes]; equal employer/employee pension split [CNPS -- cnps.cm].  _([secondary summary, other-taxes]; [Rivermate]; [CNPS -- cnps.cm])_
 
 [RESEARCH GAP -- reviewer to confirm] the exact per-branch employer split and occupational-risk class rates against CNPS regulatory texts (cnps.cm/en/medias/textes-reglementaires1.html); secondary sources are consistent but CNPS did not publish per-branch percentages directly.
 
 ### 5.7 Housing Fund and Employment Fund
 
-**Housing Fund and Employment Fund**  _([PwC -- other-taxes])_
+**Housing Fund and Employment Fund**  _([secondary summary, other-taxes])_
 
 | Fund | Employee | Employer | Source |
 | --- | --- | --- | --- |
-| Credit Foncier du Cameroun (CFC, housing) | 1% | 1.5% | [PwC -- other-taxes] |
-| Fonds National de l'Emploi (FNE, employment) | 0% | 1% | [PwC -- other-taxes] |
+| Credit Foncier du Cameroun (CFC, housing) | 1% | 1.5% | [secondary summary, other-taxes] |
+| Fonds National de l'Emploi (FNE, employment) | 0% | 1% | [secondary summary, other-taxes] |
 
-- **Computation basis** — Both are computed on taxable salary.  _([PwC -- other-taxes])_
+- **Computation basis** — Both are computed on taxable salary.  _([secondary summary, other-taxes])_
 
 ### 5.8 Other Individual Withholdings
 
-**Other Individual Withholdings**  _([PwC -- other-taxes])_
+**Other Individual Withholdings**  _([secondary summary, other-taxes])_
 
 | Levy | Amount | Source |
 | --- | --- | --- |
-| Local Council Tax (Taxe Communale, poll component) | Banded by monthly salary from XAF 62,000 (XAF 250/month) to above 500,000 (XAF 2,500/month); band table in `cameroon-payroll` §3 | [Reviewed table 2026-06-21; PwC -- other-taxes for the top band] |
-| CRTV audiovisual royalty (RAV) | Banded by monthly salary from XAF 50,001 (XAF 750/month) to above 1,000,000 (XAF 13,000/month); band table in `cameroon-payroll` §3 | [Reviewed table 2026-06-21; PwC -- other-taxes for the top band] |
+| Local Council Tax (Taxe Communale, poll component) | Banded by monthly salary from XAF 62,000 (XAF 250/month) to above 500,000 (XAF 2,500/month); band table in `cameroon-payroll` §3 | [Reviewed table 2026-06-21; secondary summary, other-taxes for the top band] |
+| CRTV audiovisual royalty (RAV) | Banded by monthly salary from XAF 50,001 (XAF 750/month) to above 1,000,000 (XAF 13,000/month); band table in `cameroon-payroll` §3 | [Reviewed table 2026-06-21; secondary summary, other-taxes for the top band] |
 
 ### 5.9 Self-Employed Regimes (2025 Finance Law)
 
@@ -348,17 +348,17 @@ The 2025 Finance Law consolidated the prior layered regimes. Thresholds on annua
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Year-end | 31 December | [PwC -- tax-administration] |
-| Monthly PAYE return (salary) | Filed and paid by 15th of the month following salary payment; employer withholds and remits | [PwC] |
-| Annual recapitulative -- senior citizens + public/semi-public employees | 31 July | [PwC] |
-| Annual recapitulative -- private-sector employees (Large Taxpayers Unit + specialised centres) | 30 September | [PwC] |
-| Annual recapitulative -- other individual taxpayers | 31 October | [PwC] |
-| Employer annual income summary (DIPE / etat recapitulatif) | 15 March | [PwC] |
-| Regularisation/balance -- Large Taxpayers' Unit | 15 March | [PwC] |
-| Regularisation/balance -- Medium-sized & Specialised Centres | 15 April | [PwC] |
-| Regularisation/balance -- Divisional Tax Centres | 15 May | [PwC] |
+| Year-end | 31 December | [secondary summary, tax-administration] |
+| Monthly PAYE return (salary) | Filed and paid by 15th of the month following salary payment; employer withholds and remits | [secondary summary] |
+| Annual recapitulative -- senior citizens + public/semi-public employees | 31 July | [secondary summary] |
+| Annual recapitulative -- private-sector employees (Large Taxpayers Unit + specialised centres) | 30 September | [secondary summary] |
+| Annual recapitulative -- other individual taxpayers | 31 October | [secondary summary] |
+| Employer annual income summary (DIPE / etat recapitulatif) | 15 March | [secondary summary] |
+| Regularisation/balance -- Large Taxpayers' Unit | 15 March | [secondary summary] |
+| Regularisation/balance -- Medium-sized & Specialised Centres | 15 April | [secondary summary] |
+| Regularisation/balance -- Divisional Tax Centres | 15 May | [secondary summary] |
 | IGS (self-employed) | Quarterly, within 15 days of each quarter-end | [cga.inov.cm] |
-| Record retention | 10 years | [PwC -- tax-administration] |
+| Record retention | 10 years | [secondary summary, tax-administration] |
 
 ### 5.11 Penalties
 
@@ -366,9 +366,9 @@ The 2025 Finance Law consolidated the prior layered regimes. Thresholds on annua
 
 | Penalty | Amount | Source |
 | --- | --- | --- |
-| Late filing / late declaration | 10% per month, capped at 30% of tax due | [PwC -- tax-administration] |
-| Late payment interest | 1.5% per month of tax due | [PwC -- tax-administration] |
-| Assessment-related (good/bad faith) | 30% to 100%/150% under the General Tax Code | [PwC; hallelaw 2025 guide] |
+| Late filing / late declaration | 10% per month, capped at 30% of tax due | [secondary summary, tax-administration] |
+| Late payment interest | 1.5% per month of tax due | [secondary summary, tax-administration] |
+| Assessment-related (good/bad faith) | 30% to 100%/150% under the General Tax Code | [secondary summary; hallelaw 2025 guide] |
 
 [RESEARCH GAP -- reviewer to confirm] the exact bad-faith multiplier in the 2025 Code General des Impots.
 
@@ -396,7 +396,7 @@ The 2025 Finance Law consolidated the prior layered regimes. Thresholds on annua
 
 ### 6.6 30% Professional Deduction Mechanics
 
-- **30% Professional Deduction Mechanics** — The standard 30% lump-sum salary deduction figure is from PwC; confirm cap/ordering against the CGI. Flag for reviewer.
+- **30% Professional Deduction Mechanics** — The standard 30% lump-sum salary deduction figure is from the secondary summary; confirm cap/ordering against the CGI. Flag for reviewer.
 
 ### 6.7 Entertainment / Gifts
 
@@ -510,14 +510,14 @@ ONBOARDING QUESTIONS -- CAMEROON IRPP
 
 | Topic | Reference |
 | --- | --- |
-| Progressive IRPP scale + CAC | Code General des Impots; [PwC -- taxes-on-personal-income] |
-| Salary income determination (30% deduction) | [PwC -- income-determination] |
-| Other individual levies (council tax, CRTV, CFC, FNE) | [PwC -- other-taxes] |
-| CNPS social security | CNPS (cnps.cm); [PwC -- other-taxes]; [Rivermate] |
+| Progressive IRPP scale + CAC | Code General des Impots; [secondary summary, taxes-on-personal-income] |
+| Salary income determination (30% deduction) | [secondary summary, income-determination] |
+| Other individual levies (council tax, CRTV, CFC, FNE) | [secondary summary, other-taxes] |
+| CNPS social security | CNPS (cnps.cm); [secondary summary, other-taxes]; [Rivermate] |
 | Self-employed regimes (IGS / actual-earnings, 2025 Finance Law) | [openhubdigital -- 2025 Finance Law]; [cga.inov.cm -- IGS 2025] |
-| Filing deadlines and administration | [PwC -- tax-administration] |
-| Penalties | [PwC -- tax-administration]; [hallelaw 2025 guide] |
-| VAT (context) | Standard 19.25% (17.5% + CAC); [PwC overview] |
+| Filing deadlines and administration | [secondary summary, tax-administration] |
+| Penalties | [secondary summary, tax-administration]; [hallelaw 2025 guide] |
+| VAT (context) | Standard 19.25% (17.5% + CAC); [secondary summary, overview] |
 | Minimum wage (SMIG) | See below |
 | Primary authorities | DGI -- https://impots.cm ; CNPS -- https://www.cnps.cm |
 

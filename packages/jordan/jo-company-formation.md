@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Jordan (
 jurisdiction: JO
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,8 +24,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Incorporation steps** — 1) Reserve company name and file application + notarized Articles of Association with the CCD and pay fees; 2) Open a Jordanian bank account and deposit capital; 3) Receive registration certificate; 4) Register for tax (ISTD) and social security (SSC)  _(Companies Law No. 22 of 1997 (as described at [commenda.io](https://www.commenda.io/jordan/setting-up-a-subsidiary-company)))_
 - **Incorporation timeline** — Typically 2 to 6 weeks depending on entity type and foreign-investment approvals (approx — confirm)  _(Companies Law No. 22 of 1997 (as described at [usemultiplier.com](https://www.usemultiplier.com/jordan/company-registration)))_
 - **Tax registration** — Companies must register with the ISTD for income tax and General Sales Tax after incorporation  _([Income Tax Law No. 34 of 2014](https://www.istd.gov.jo/EN))_
-- **Core annual compliance** — File annual income tax return (by end of 4th month after year-end), audited financial statements, periodic GST returns, monthly social security filings, and renew company registration  _([Companies Law No. 22 of 1997](https://taxsummaries.pwc.com/jordan))_
-- **Audit requirement** — Companies are generally required to have annual financial statements audited by a licensed Jordanian auditor  _([Companies Law No. 22 of 1997](https://www.pwc.com/m1/en/tax/documents/doing-business-guides/dbij.pdf))_
+- **Core annual compliance** — File the annual income tax return and pay the balance within four months of the end of the tax period (Income Tax Law art. 17/A and 18/A); have the annual balance sheet and final accounts audited by a licensed auditor and lay them before the general assembly, with a copy to the Companies Controller, within the first three months of the new fiscal year (Companies Law art. 62 for limited liability companies, art. 75 bis for private shareholding companies); file General Sales Tax returns and pay monthly social security contributions  _(Income Tax Law No. 34 of 2014 as amended by Law No. 38 of 2018 (ISTD English translation), arts 17/A and 18/A — https://www.istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/income_tax_law_no._%2838_%29_of_2018.pdf; Companies Law No. 22 of 1997 and its amendments (English translation to the 2006 amendments, WIPO Lex), arts 62 and 75 bis — https://www.wipo.int/wipolex/en/text/495533; General Sales Tax Law No. 6 of 1994 (ISTD English translation) — https://istd.gov.jo/ebv4.0/root_storage/en/eb_list_page/gst_law.pdf; Social Security Corporation — https://www.ssc.gov.jo/)_
+- **Audit requirement** — A limited liability company's manager must have the annual balance sheet and final accounts audited by a licensed auditor under recognised international auditing principles and present them, with a copy to the Controller, within the first three months of the new fiscal year (art. 62); a private shareholding company's board does the same through the company auditors (art. 75 bis); a limited partnership in shares must have an auditor elected by its general assembly (art. 87)  _(Companies Law No. 22 of 1997 and its amendments (English translation to the 2006 amendments, WIPO Lex), arts 62, 75 bis and 87 — https://www.wipo.int/wipolex/en/text/495533)_
 
 <!-- openaccountants-cta-block -->
 

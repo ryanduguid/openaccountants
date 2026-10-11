@@ -1,10 +1,10 @@
 ---
 name: moldova-income-tax
 description: Use this skill whenever asked about Moldova (Republic of Moldova) personal income tax for self-employed individuals and individuals. Trigger on phrases like "how much tax do I pay in Moldova", "impozit pe venit", "CET18", "Declaratia persoanei fizice", "flat 12% tax", "income tax return Moldova", "deductible expenses", "personal exemption / scutire personala", "CAS / BASS social insurance", "CNAM / CAM health insurance", "fixed annual contribution", "self-employed tax Moldova", "freelancer tax Moldova", "IT Park 7%", "independent retail 1%", or any question about filing or computing personal income tax for a resident individual or sole proprietor in Moldova. Also trigger when preparing or reviewing a CET18 return, computing the monthly payroll PIT base, or advising on social (CAS) and health (CNAM) contributions. This skill covers the flat 12% PIT, reduced 7% farming rate, final withholding rates (dividends, royalties, winnings), personal/dependent exemptions, employer/employee CAS and CNAM, fixed annual contributions for the self-employed, the CET18 return, penalties, and interaction with VAT and the IT Park regime. ALWAYS read this skill before touching any Moldova income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: MD
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Moldova (Republic of Moldova) Income Tax -- Self-Employed and Individuals
 
-## Moldova (Republic of Moldova) Income Tax -- Self-Employed and Individuals Skill v0.2
+## Moldova (Republic of Moldova) Income Tax -- Self-Employed and Individuals Skill v0.3
 
-> **Tier 2 (research-verified).** Figures below were assembled from PwC Worldwide Tax Summaries, the Moldovan State Social Insurance Budget Law for 2025, and corroborating Moldovan secondary sources. They have NOT yet been signed off by a warranted Moldovan accountant. Treat every output as a draft for professional review. See the caveats in Section 10.
+> **Tier 2 (research-verified).** Figures below were assembled from a secondary practitioner summary, the Moldovan State Social Insurance Budget Law for 2025, and corroborating Moldovan secondary sources. They have NOT yet been signed off by a warranted Moldovan accountant. Treat every output as a draft for professional review. See the caveats in Section 10.
 
 ## Section 1 -- Quick Reference
 
@@ -31,46 +31,46 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax year | Calendar year (1 January -- 31 December) |
 | Primary legislation | Tax Code of the Republic of Moldova (Codul Fiscal, Law No. 1163/1997), Title II -- Income Tax |
 | Supporting legislation | Law No. 489/1999 (public social insurance system); Law No. 1593/2002 (mandatory health insurance contributions); Law on the State Social Insurance Budget for 2025; Law on Mandatory Health Insurance Funds for 2025; Law No. 228 of 10 July 2025 (new simplified independent-activity regime, effective 1 Jan 2026 -- NOT 2025) |
-| Tax authority | Serviciul Fiscal de Stat (State Tax Service, SFS) -- sfs.md [PwC Moldova] |
-| Social-insurance administrator | Casa Națională de Asigurări Sociale (CNAS) -- cnas.gov.md [PwC Moldova] |
-| Health-insurance administrator | Compania Națională de Asigurări în Medicină (CNAM) -- cnam.md [PwC Moldova] |
+| Tax authority | Serviciul Fiscal de Stat (State Tax Service, SFS) -- sfs.md [secondary summary, Moldova] |
+| Social-insurance administrator | Casa Națională de Asigurări Sociale (CNAS) -- cnas.gov.md [secondary summary, Moldova] |
+| Health-insurance administrator | Compania Națională de Asigurări în Medicină (CNAM) -- cnam.md [secondary summary, Moldova] |
 | Filing portal | SFS e-services (sfs.md) |
 | Annual return | CET18 -- Declarația persoanei fizice cu privire la impozitul pe venit |
-| Filing & payment deadline | 30 April of the year following the reporting year [PwC Moldova Individual -- Tax administration] |
+| Filing & payment deadline | 30 April of the year following the reporting year [secondary summary, Moldova Individual -- Tax administration] |
 | Validated by | Pending -- requires sign-off by a warranted Moldovan accountant |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Tax Rates (2025)
 
-- **Flat tax framing** — Moldova levies a flat personal income tax, not progressive brackets.  _([PwC Moldova Individual -- Taxes on personal income])_
+- **Flat tax framing** — Moldova levies a flat personal income tax, not progressive brackets.  _([secondary summary, Moldova Individual -- Taxes on personal income])_
 
 **Tax Rates (2025) table**
 
 | Income type | Rate | Notes |
 | --- | --- | --- |
-| Resident individual -- employment, professional & entrepreneurial income, capital gains, other taxable income | 12% | Flat rate, no brackets [PwC Moldova] |
-| Farming / agricultural enterprises -- entrepreneurial income | 7% | Reduced rate [PwC Moldova] |
-| Dividends (general) -- final withholding | 6% | Withheld at source [PwC Moldova] |
-| Royalties -- final withholding | 12% | Withheld at source [PwC Moldova] |
-| Gambling / lottery / sports-bet winnings -- final withholding | 18% | On the amount exceeding MDL 297 [PwC Moldova] |
-| Independent retail-sale individuals (Chapter 10² regime, in force through 2025) | 1% | 1% of declared income, not less than MDL 3,000/year [PwC Moldova] |
+| Resident individual -- employment, professional & entrepreneurial income, capital gains, other taxable income | 12% | Flat rate, no brackets [secondary summary, Moldova] |
+| Farming / agricultural enterprises -- entrepreneurial income | 7% | Reduced rate [secondary summary, Moldova] |
+| Dividends (general) -- final withholding | 6% | Withheld at source [secondary summary, Moldova] |
+| Royalties -- final withholding | 12% | Withheld at source [secondary summary, Moldova] |
+| Gambling / lottery / sports-bet winnings -- final withholding | 18% | On the amount exceeding MDL 297 [secondary summary, Moldova] |
+| Independent retail-sale individuals (Chapter 10² regime, in force through 2025) | 1% | 1% of declared income, not less than MDL 3,000/year [secondary summary, Moldova] |
 
 - **No progressive band** — Moldova has no separate progressive band -- the 12% applies from the first taxable leu, after exemptions are deducted.
 
 ### Personal & Dependent Exemptions (2025)
 
-- **Availability condition** — Available only to residents whose annual taxable income does not exceed MDL 360,000.  _([PwC Moldova Individual -- Deductions; salarii.md])_
+- **Availability condition** — Available only to residents whose annual taxable income does not exceed MDL 360,000.  _([secondary summary, Moldova Individual -- Deductions; salarii.md])_
 
 **Personal & Dependent Exemptions (2025) table**
 
 | Exemption | Annual (MDL) | Monthly (MDL) | Source |
 | --- | --- | --- | --- |
-| Personal exemption (standard) | 29,700 | 2,475 | [PwC; salarii.md] |
-| Personal exemption (increased / major) | 34,620 | 2,885 | [PwC; salarii.md] |
-| Spouse (major) exemption -- transferable if spouse has no income | 21,780 | 1,815 | [PwC Moldova Individual -- Deductions] |
-| Dependent exemption (per dependent) | 9,900 | 825 | [PwC; salarii.md] |
-| Dependent with severe childhood disability | 21,780 | 1,815 | [PwC Moldova Individual -- Deductions] |
+| Personal exemption (standard) | 29,700 | 2,475 | [secondary summary; salarii.md] |
+| Personal exemption (increased / major) | 34,620 | 2,885 | [secondary summary; salarii.md] |
+| Spouse (major) exemption -- transferable if spouse has no income | 21,780 | 1,815 | [secondary summary, Moldova Individual -- Deductions] |
+| Dependent exemption (per dependent) | 9,900 | 825 | [secondary summary; salarii.md] |
+| Dependent with severe childhood disability | 21,780 | 1,815 | [secondary summary, Moldova Individual -- Deductions] |
 
 Arithmetic check: 2,475 × 12 = 29,700; 2,885 × 12 = 34,620; 825 × 12 = 9,900; 1,815 × 12 = 21,780. ✓
 
@@ -80,9 +80,9 @@ Arithmetic check: 2,475 × 12 = 29,700; 2,885 × 12 = 34,620; 825 × 12 = 9,900;
 
 | Threshold | Amount (MDL) | Notes | Source |
 | --- | --- | --- | --- |
-| Personal-exemption income ceiling | 360,000 | Exemptions only if annual taxable income ≤ this | [PwC; salarii.md] |
-| Mandatory VAT registration | 1,200,000 | Turnover over last 12 consecutive months (2025; raised to 1.5m from 1 Jan 2026, 1.7m from 1 Mar 2026) | [KPMG TaxNewsFlash; PwC] |
-| Independent-retail minimum tax | 3,000 | 1% tax but not less than this per year | [PwC Moldova] |
+| Personal-exemption income ceiling | 360,000 | Exemptions only if annual taxable income ≤ this | [secondary summary; salarii.md] |
+| Mandatory VAT registration | 1,200,000 | Turnover over last 12 consecutive months (2025; raised to 1.5m from 1 Jan 2026, 1.7m from 1 Mar 2026) | [KPMG TaxNewsFlash; secondary summary] |
+| Independent-retail minimum tax | 3,000 | 1% tax but not less than this per year | [secondary summary, Moldova] |
 | Minimum monthly wage | 5,500 | 169 hrs/month, approx MDL 32.54/hr; from 1 Jan 2025 (rises to 6,300 from 1 Jan 2026) | [Government of Moldova; WageIndicator] |
 | Average monthly forecast salary | 16,100 | Used for benefit ceilings, IT-Park minimum, fine bases (rises to 17,400 for 2026) | [Government of Moldova (gov.md)] |
 
@@ -116,13 +116,13 @@ Arithmetic check: 2,475 × 12 = 29,700; 2,885 × 12 = 34,620; 825 × 12 = 9,900;
 ### Refusal Catalogue
 
 - **R-MD-1** — Residency determines whether the flat 12% resident rules and exemptions apply. This skill cannot compute tax without knowing whether the client is a Moldovan tax resident. Please confirm before proceeding.
-- **R-MD-2** — Annual taxable income near or above MDL 360,000 removes the personal exemption [PwC]. Confirm exact income and exemption entitlement with a reviewer before claiming any exemption.  _([PwC])_
+- **R-MD-2** — Annual taxable income near or above MDL 360,000 removes the personal exemption [secondary summary]. Confirm exact income and exemption entitlement with a reviewer before claiming any exemption.  _([secondary summary])_
 - **R-MD-3** — This skill covers resident individuals and sole proprietors only. Legal entities (SRL, SA) file corporate income tax. Escalate to a warranted Moldovan accountant.
-- **R-MD-4** — Non-resident and foreign-citizen taxation has different rules and a 3-day filing trigger on ceasing activity [PwC]. Out of scope. Escalate to a warranted accountant.  _([PwC])_
+- **R-MD-4** — Non-resident and foreign-citizen taxation has different rules and a 3-day filing trigger on ceasing activity [secondary summary]. Out of scope. Escalate to a warranted accountant.  _([secondary summary])_
 - **R-MD-5** — Capital-gains computations require specialised analysis under the Tax Code. Escalate to a warranted accountant.
-- **R-MD-6** — IT Park residents pay a single 7% tax on turnover that already bundles PIT, CAS and CNAM [PwC]. Do not run the general 12% computation. Use the IT-Park regime and escalate to a reviewer.  _([PwC])_
+- **R-MD-6** — IT Park residents pay a single 7% tax on turnover that already bundles PIT, CAS and CNAM [secondary summary]. Do not run the general 12% computation. Use the IT-Park regime and escalate to a reviewer.  _([secondary summary])_
 - **R-MD-7** — Law No. 228/2025 introduces a new simplified freelancer regime (15% up to MDL 1,200,000, 35% above) effective 1 January 2026. It does NOT apply to tax year 2025. For 2025, the legacy rules in this skill apply [EY Tax Alert Moldova, 1 Sep 2025].  _([EY Tax Alert Moldova, 1 Sep 2025])_
-- **R-MD-8** — Tax-evasion fines run 80%-100% of the evaded amount and late-payment interest accrues daily [PwC]. Do not advise. Escalate to a warranted accountant immediately.  _([PwC])_
+- **R-MD-8** — Tax-evasion fines run 80%-100% of the evaded amount and late-payment interest accrues daily [secondary summary]. Do not advise. Escalate to a warranted accountant immediately.  _([secondary summary])_
 - **R-MD-9** — This skill covers personal income tax (CET18) only. For Moldova VAT, use the dedicated Moldova VAT skill.
 
 ## Section 3 -- Transaction Pattern Library
@@ -146,9 +146,9 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 | SALARIU, SALARY, ЗАРПЛАТА, EMPLOYER [name] | Employment income | Employment income (PIT/CAS/CNAM already withheld) | NOT self-employment; usually already taxed at source |
 | CHIRIE PRIMITA, RENT RECEIVED, АРЕНДА | Rental income | Other income -- not self-employment |  |
 | DOBANDA, INTEREST, ПРОЦЕНТЫ | Investment income | Interest income |  |
-| DIVIDEND, DIVIDENDE | Investment income -- final WHT 6% | Dividends | 6% withheld at source -- generally final [PwC] |
-| ROYALTY, REDEVENTA | Royalty income -- final WHT 12% | Royalties | 12% withheld at source [PwC] |
-| CASTIG LOTERIE, WINNINGS, ВЫИГРЫШ | Winnings -- final WHT 18% | Gambling/lottery/sports | 18% on amount exceeding MDL 297 [PwC] |
+| DIVIDEND, DIVIDENDE | Investment income -- final WHT 6% | Dividends | 6% withheld at source -- generally final [secondary summary] |
+| ROYALTY, REDEVENTA | Royalty income -- final WHT 12% | Royalties | 12% withheld at source [secondary summary] |
+| CASTIG LOTERIE, WINNINGS, ВЫИГРЫШ | Winnings -- final WHT 18% | Gambling/lottery/sports | 18% on amount exceeding MDL 297 [secondary summary] |
 | RESTITUIRE SFS, TAX REFUND | EXCLUDE | Not income | Tax refund from prior year |
 | GRANT, SUBVENTIE | Check nature | Capital grants EXCLUDE; revenue grants = business income |  |
 
@@ -308,7 +308,7 @@ Employer also pays CAS 24% on top: 16,100 × 0.24 = MDL 3,864.00 (employer cost,
 `20.06.2025 ; VICTORIABANK ; SC EXEMPLU SRL ; DIVIDENDE 2024 ; +47,000.00 ; MDL`
 
 **Reasoning:**
-Dividends suffer a 6% final withholding tax at source [PwC]. If MDL 47,000 is the net amount received, the gross was 47,000 / 0.94 = MDL 50,000 and the 6% tax (MDL 3,000) was already withheld. No further PIT is due; this is generally final.
+Dividends suffer a 6% final withholding tax at source [secondary summary]. If MDL 47,000 is the net amount received, the gross was 47,000 / 0.94 = MDL 50,000 and the 6% tax (MDL 3,000) was already withheld. No further PIT is due; this is generally final.
 
 **Classification:** Investment income, final WHT 6% already settled. Exclude from the 12% PIT base. Flag to reviewer whether amount shown is gross or net.
 
@@ -336,7 +336,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.1 The Flat 12% Rate
 
-- **Flat 12% rate rule** — Resident individuals pay a flat 12% on employment, professional and entrepreneurial income, capital gains, and other taxable income -- there are no progressive brackets in 2025. Farming/agricultural enterprises are taxed at a reduced 7% on entrepreneurial income.  _(Tax Code, Title II [PwC Moldova Individual -- Taxes on personal income; PwC])_
+- **Flat 12% rate rule** — Resident individuals pay a flat 12% on employment, professional and entrepreneurial income, capital gains, and other taxable income -- there are no progressive brackets in 2025. Farming/agricultural enterprises are taxed at a reduced 7% on entrepreneurial income.  _(Tax Code, Title II [secondary summary, Moldova Individual -- Taxes on personal income; secondary summary,])_
 
 ### 5.2 The Monthly Payroll PIT Base
 
@@ -344,15 +344,15 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.3 Personal and Dependent Exemptions
 
-- **Standard personal exemption** — MDL 29,700/year (MDL 2,475/month)  _([PwC; salarii.md])_
-- **Increased/major personal exemption** — MDL 34,620/year (MDL 2,885/month) for qualifying persons  _([PwC; salarii.md])_
-- **Spouse (major) exemption** — MDL 21,780/year, transferable if the spouse has no income  _([PwC])_
-- **Dependent exemption** — MDL 9,900/year per dependent (MDL 21,780/year for a dependent with a severe childhood disability)  _([PwC; salarii.md])_
-- **Exemption ceiling** — All exemptions are available only if annual taxable income does not exceed MDL 360,000  _([PwC; salarii.md])_
+- **Standard personal exemption** — MDL 29,700/year (MDL 2,475/month)  _([secondary summary; salarii.md])_
+- **Increased/major personal exemption** — MDL 34,620/year (MDL 2,885/month) for qualifying persons  _([secondary summary; salarii.md])_
+- **Spouse (major) exemption** — MDL 21,780/year, transferable if the spouse has no income  _([secondary summary])_
+- **Dependent exemption** — MDL 9,900/year per dependent (MDL 21,780/year for a dependent with a severe childhood disability)  _([secondary summary; salarii.md])_
+- **Exemption ceiling** — All exemptions are available only if annual taxable income does not exceed MDL 360,000  _([secondary summary; salarii.md])_
 
 ### 5.4 Deductibility of Contributions from the PIT Base
 
-- **Deductibility of employee CAS/CNAM** — Both employee CAS (6%) and employee CNAM (9%) are deductible when computing the PIT taxable base. This is what makes the Example 3 base lower than gross.  _([PwC Moldova Individual -- Deductions])_
+- **Deductibility of employee CAS/CNAM** — Both employee CAS (6%) and employee CNAM (9%) are deductible when computing the PIT taxable base. This is what makes the Example 3 base lower than gross.  _([secondary summary, Moldova Individual -- Deductions])_
 
 ### 5.5 Social Insurance (CAS / BASS)
 
@@ -360,12 +360,12 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 | Payer | Rate / amount | Base | Notes |
 | --- | --- | --- | --- |
-| Employer (private sector, standard) | 24% | Gross remuneration, meal tickets, other | No salary ceiling; 32% for special working conditions [PwC] |
+| Employer (private sector, standard) | 24% | Gross remuneration, meal tickets, other | No salary ceiling; 32% for special working conditions [secondary summary] |
 | Employee | 6% | Gross salary | Withheld by employer; deductible from PIT base [buhgalter.md; rivermate; playroll] |
 | Self-employed (individual insurance contract, general) | MDL 20,518/year (fixed) | -- | Annual fixed amount, 2025 [State Social Insurance Budget Law 2025] |
 | Self-employed (justice sector -- lawyers, notaries, bailiffs, forensic experts, mediators, authorised administrators) | MDL 27,772/year (fixed) | -- | Annual fixed amount, 2025 [State Social Insurance Budget Law 2025] |
 
-- **Agriculture CAS split** — Agriculture: 24% total (18% employer-paid + 6% from the state budget)  _([PwC])_
+- **Agriculture CAS split** — Agriculture: 24% total (18% employer-paid + 6% from the state budget)  _([secondary summary])_
 
 ### 5.6 Health Insurance (CNAM / CAM)
 
@@ -373,10 +373,10 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 | Payer | Rate / amount | Base | Notes |
 | --- | --- | --- | --- |
-| Employee | 9% | Wages and other remuneration | Fully employee-borne; employers do NOT pay a separate percentage, only withhold and remit; deductible from PIT base [PwC; playroll; salarii.md] |
+| Employee | 9% | Wages and other remuneration | Fully employee-borne; employers do NOT pay a separate percentage, only withhold and remit; deductible from PIT base [secondary summary; playroll; salarii.md] |
 | Individual paying fixed sum (notaries, lawyers, bailiffs, family doctors in private practice, etc.) | MDL 12,636/year (fixed) | -- | Fixed annual premium, 2025 (unchanged into 2026) [IPN; logos-pres] |
 
-> Some EOR guides report an employer health split of 4.5% / 4.5%. This is OUTDATED -- since 2021 Moldova's CNAM on salaries is a single 9% employee-borne contribution with no separate employer percentage [confirmed by PwC and playroll].
+> Some EOR guides report an employer health split of 4.5% / 4.5%. This is OUTDATED -- since 2021 Moldova's CNAM on salaries is a single 9% employee-borne contribution with no separate employer percentage [confirmed by the secondary summary and playroll].
 
 ### 5.7 Contribution & Payroll Totals (Standard Private-Sector Employee)
 
@@ -396,19 +396,19 @@ Arithmetic check -- employee column: 6 + 9 = 15. ✓ Employer column: 24 + 0 = 2
 
 | Income | Rate | Source |
 | --- | --- | --- |
-| Dividends (general) | 6% | [PwC] |
-| Royalties | 12% | [PwC] |
-| Gambling / lottery / sports winnings (on amount exceeding MDL 297) | 18% | [PwC] |
+| Dividends (general) | 6% | [secondary summary] |
+| Royalties | 12% | [secondary summary] |
+| Gambling / lottery / sports winnings (on amount exceeding MDL 297) | 18% | [secondary summary] |
 
 - **Withholding finality** — These are withheld at source and are generally final -- exclude from the 12% PIT base.
 
 ### 5.9 Independent Retail-Sale Regime (Chapter 10², 2025 only)
 
-- **Independent retail-sale regime** — Individuals doing independent retail sales (not legal entities) are taxed at 1% of declared income, not less than MDL 3,000 per year. In force during 2025; superseded by Law No. 228/2025 from 1 Jan 2026.  _([PwC])_
+- **Independent retail-sale regime** — Individuals doing independent retail sales (not legal entities) are taxed at 1% of declared income, not less than MDL 3,000 per year. In force during 2025; superseded by Law No. 228/2025 from 1 Jan 2026.  _([secondary summary])_
 
 ### 5.10 IT Park (MITP) Single Tax
 
-- **IT Park single tax** — Residents of the Moldova Innovation Technology Park pay a single 7% tax on turnover (excl. VAT), covering corporate income tax, employee PIT, social and health contributions, and most local/real-estate/road taxes -- but not less than a per-employee minimum equal to 30% of the average monthly forecast salary. Eligibility requires 70%+ of revenue from qualifying IT activities. If a client is an IT-Park resident, do NOT run the general 12% computation (Refusal R-MD-6).  _([PwC; deschidecompanie.md])_
+- **IT Park single tax** — Residents of the Moldova Innovation Technology Park pay a single 7% tax on turnover (excl. VAT), covering corporate income tax, employee PIT, social and health contributions, and most local/real-estate/road taxes -- but not less than a per-employee minimum equal to 30% of the average monthly forecast salary. Eligibility requires 70%+ of revenue from qualifying IT activities. If a client is an IT-Park resident, do NOT run the general 12% computation (Refusal R-MD-6).  _([secondary summary; deschidecompanie.md])_
 
 ### 5.11 Filing & Payment
 
@@ -416,11 +416,11 @@ Arithmetic check -- employee column: 6 + 9 = 15. ✓ Employer column: 24 + 0 = 2
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Annual return | CET18 -- Declarația persoanei fizice cu privire la impozitul pe venit | [PwC; logos-pres] |
-| Filing deadline | 30 April of the year following the reporting year (e.g., 30 April 2026 for 2025) | [PwC; logos-pres] |
-| PIT settlement | Same deadline -- 30 April of the following year | [PwC] |
+| Annual return | CET18 -- Declarația persoanei fizice cu privire la impozitul pe venit | [secondary summary; logos-pres] |
+| Filing deadline | 30 April of the year following the reporting year (e.g., 30 April 2026 for 2025) | [secondary summary; logos-pres] |
+| PIT settlement | Same deadline -- 30 April of the following year | [secondary summary] |
 | Payroll PIT/CAS/CNAM remittance | By the 25th of the month following payment | [playroll] |
-| Foreign-citizen return | Within 3 days of ending activity in Moldova | [PwC] |
+| Foreign-citizen return | Within 3 days of ending activity in Moldova | [secondary summary] |
 
 ### 5.12 Penalties
 
@@ -428,13 +428,13 @@ Arithmetic check -- employee column: 6 + 9 = 15. ✓ Employer column: 24 + 0 = 2
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Late filing / failure to file | MDL 500 to MDL 1,000 per return, capped at MDL 10,000 total | [PwC Corporate -- Tax administration] |
-| Understatement (incorrect return reducing tax/CAS/CNAM) | 20% to 30% of the under-declared amount | [PwC] |
-| Diminishing taxable income (deferred-payment beneficiaries, 2023-2025 profit) | 12% to 15% of undeclared/diminished income | [PwC; intelcont] |
-| Tax evasion | 80% to 100% of the evaded amount (plus criminal sanctions where evasion exceeds 50 average forecast salaries) | [PwC] |
-| Late-payment interest (majorare de întârziere) | NBM short-term policy rate rounded up + 5 percentage points; set at 9% per annum for 2025; accrues daily | [PwC; intelcont; Orbitax] |
+| Late filing / failure to file | MDL 500 to MDL 1,000 per return, capped at MDL 10,000 total | [secondary summary, Corporate -- Tax administration] |
+| Understatement (incorrect return reducing tax/CAS/CNAM) | 20% to 30% of the under-declared amount | [secondary summary] |
+| Diminishing taxable income (deferred-payment beneficiaries, 2023-2025 profit) | 12% to 15% of undeclared/diminished income | [secondary summary; intelcont] |
+| Tax evasion | 80% to 100% of the evaded amount (plus criminal sanctions where evasion exceeds 50 average forecast salaries) | [secondary summary] |
+| Late-payment interest (majorare de întârziere) | NBM short-term policy rate rounded up + 5 percentage points; set at 9% per annum for 2025; accrues daily | [secondary summary; intelcont; Orbitax] |
 
-> The 0.0301%/day figure on PwC's individual page reflects a later/2026 rate, not the 2025 9% p.a. figure [caveat].
+> The 0.0301%/day figure on the secondary summary's individual page reflects a later/2026 rate, not the 2025 9% p.a. figure [caveat].
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -470,7 +470,7 @@ Arithmetic check -- employee column: 6 + 9 = 15. ✓ Employer column: 24 + 0 = 2
 
 ### 6.6 Deductibility of Self-Employed Fixed Contributions
 
-- Employee CAS (6%) and CNAM (9%) are explicitly deductible from the PIT base [PwC]. Whether the fixed annual CAS (MDL 20,518) and fixed CNAM (MDL 12,636) reduce a self-employed person's PIT base is **[RESEARCH GAP -- reviewer to confirm]**.
+- Employee CAS (6%) and CNAM (9%) are explicitly deductible from the PIT base [secondary summary]. Whether the fixed annual CAS (MDL 20,518) and fixed CNAM (MDL 12,636) reduce a self-employed person's PIT base is **[RESEARCH GAP -- reviewer to confirm]**.
 
 ### 6.7 Bad Debt Write-Off
 
@@ -616,7 +616,7 @@ ONBOARDING QUESTIONS -- MOLDOVA PERSONAL INCOME TAX
 | Topic | Reference |
 | --- | --- |
 | Personal income tax (flat 12%) | Tax Code (Codul Fiscal, Law No. 1163/1997), Title II |
-| Exemptions & deductions | Tax Code, Title II [PwC Moldova Individual -- Deductions] |
+| Exemptions & deductions | Tax Code, Title II [secondary summary, Moldova Individual -- Deductions] |
 | Social insurance (CAS/BASS) | Law No. 489/1999; State Social Insurance Budget Law for 2025 |
 | Health insurance (CNAM/CAM) | Law No. 1593/2002; Mandatory Health Insurance Funds Law for 2025 |
 | Independent-activity regime (from 2026) | Law No. 228 of 10 July 2025 (NOT 2025) |
@@ -627,11 +627,11 @@ ONBOARDING QUESTIONS -- MOLDOVA PERSONAL INCOME TAX
 
 ### Caveats (read before relying on figures)
 
-- PwC Worldwide Tax Summaries pages were last reviewed 14 January 2026 and now display 2026 figures; the 2025 exemption amounts (MDL 29,700 / 34,620 / 21,780 / 9,900), which are unchanged into 2026, were independently confirmed against 2025-specific Moldovan sources (salarii.md, buhgalter.md).
+- Secondary practitioner summary (link removed) pages were last reviewed 14 January 2026 and now display 2026 figures; the 2025 exemption amounts (MDL 29,700 / 34,620 / 21,780 / 9,900), which are unchanged into 2026, were independently confirmed against 2025-specific Moldovan sources (salarii.md, buhgalter.md).
 - The exact 2025 fixed annual CAS amounts (general MDL 20,518; justice MDL 27,772) come from the State Social Insurance Budget Law for 2025 reported via secondary aggregators (cis-legislation, WebSearch); the primary cis-legislation page could not be fetched directly. **The official CNAS / sfs.md figures should be confirmed before publishing.** [RESEARCH GAP -- reviewer to confirm exact 2025 fixed-contribution MDL digits.]
 - The MDL 12,636 fixed annual CNAM premium for 2025 is confirmed unchanged into 2026 [IPN; logos-pres].
 - The 4.5% / 4.5% employer health split seen in some EOR guides is OUTDATED -- CNAM on salaries is a single 9% employee-borne contribution.
-- The late-payment interest rate is set annually (NBM rate +5pp = 9% p.a. for 2025). The 0.0301%/day figure on PwC's individual page reflects a later period.
+- The late-payment interest rate is set annually (NBM rate +5pp = 9% p.a. for 2025). The 0.0301%/day figure on the secondary summary's individual page reflects a later period.
 - The 1% independent-retail regime and the old independent-activity regime are superseded by Law No. 228/2025 effective 1 Jan 2026 -- for 2025 the legacy rules apply.
 - **Recommend a verified accountant confirm the exact 2025 fixed-contribution MDL figures, the depreciation rates, and the personal-exemption income ceiling against the SFS Tax Code and the 2025 social-insurance budget law before relying on them.**
 

@@ -15,11 +15,11 @@ description: >
   (acomptes). Reply in the user's language (English, French, or Moroccan Arabic /
   Darija). Cross-reference ma-auto-entrepreneur and ma-cpu for the simplified
   turnover-based alternatives.
-version: 1.0
+version: 1.1
 jurisdiction: MA
 tax_year: 2026
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-11
 category: international
 depends_on:
   - income-tax-workflow-base
@@ -438,7 +438,6 @@ cotisation minimale (§5.6), and present a **draft** for the expert-comptable.
 - **Loi de Finances 2026** — confirm carry-over of the scale and any revaluation of
   the family deduction and CM parameters.
 - **DGI** — tax.gov.ma; **SIMPL-IR** télédéclaration — irpart.tax.gov.ma.
-- **PwC Worldwide Tax Summaries — Morocco** — taxsummaries.pwc.com/morocco.
 
 ### Short test suite
 
@@ -482,7 +481,7 @@ cotisation minimale (§5.6), and present a **draft** for the expert-comptable.
 ## Disclaimer
 
 This skill is **research-verified** against public sources (DGI / tax.gov.ma, the
-SIMPL-IR portal, PwC Worldwide Tax Summaries, and reporting on the Loi de Finances
+SIMPL-IR portal, and reporting on the Loi de Finances
 2025/2026) as of **May 2026**. It is **YMYL** content and is **pending sign-off by a
 Moroccan accountant (expert-comptable)**. The progressive scale, the
 somme-à-déduire amounts, the family deduction, the cotisation minimale rates and

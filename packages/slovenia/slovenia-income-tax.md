@@ -1,10 +1,10 @@
 ---
 name: slovenia-income-tax
 description: Use this skill whenever asked about Slovenia (Slovenija) personal income tax for self-employed individuals (s.p. / samostojni podjetnik) and resident individuals. Trigger on phrases like "how much dohodnina do I pay", "income tax Slovenia", "informativni izračun dohodnine", "IID", "DohDej", "davek od dohodka iz dejavnosti", "normirani odhodki", "lump-sum expenses", "splošna olajšava", "general allowance", "ZPIZ contributions", "ZZZS health", "long-term care contribution", "OZP", "OPSVZ", "minimalna plača", "self-employed tax Slovenia", or any question about filing or computing Slovenian personal income tax for a resident, sole proprietor, or employee. Also trigger when preparing or reviewing an IID or DohDej return, computing the progressive dohodnina scale, social security contributions, or advising on advance-tax (akontacija) installments. This skill covers the 2025 five-band progressive scale, capital-income cedular rates, ZPIZ/ZZZS/unemployment/parental/injury and new long-term-care (ZDOsk-1) contributions, the OZP flat health contribution, the normirani odhodki regime, allowances, forms, deadlines, and penalties. ALWAYS read this skill before touching any Slovenian income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -25,20 +25,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Personal income tax (dohodnina) |
 | Currency | EUR only |
 | Tax year | Calendar year (1 January -- 31 December) |
-| Primary legislation | Personal Income Tax Act (Zakon o dohodnini, ZDoh-2) (PwC, taxsummaries.pwc.com/slovenia) |
+| Primary legislation | Personal Income Tax Act (Zakon o dohodnini, ZDoh-2) (secondary summary) |
 | Supporting legislation | Pension & Disability Insurance Act (ZPIZ-2); Health Care & Health Insurance Act (ZZVZZ); compulsory health contribution under ZVZZNZ (OZP, from 2024); Long-Term Care Act (Zakon o dolgotrajni oskrbi, ZDOsk-1, LTC contribution from 1 July 2025) (KPMG GMS Flash Alert 2025-133) |
 | Tax authority | Financial Administration of the Republic of Slovenia (FURS / Finančna uprava Republike Slovenije) (fu.gov.si) |
 | Filing portal | eDavki (edavki.durs.si) |
-| Social security collection | FURS collects; pension administered by ZPIZ, health by ZZZS (PwC) |
+| Social security collection | FURS collects; pension administered by ZPIZ, health by ZZZS (secondary summary) |
 | Self-employed return deadline | 31 March of the following year (DohDej, via eDavki) (FURS) |
-| Individual self-assessment deadline | 31 July of the following year where no IID is issued (PwC) |
+| Individual self-assessment deadline | 31 July of the following year where no IID is issued (secondary summary) |
 | Validated by | Pending -- requires sign-off by a Slovenian tax adviser / pooblaščeni računovodja |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Tax Rate Brackets -- Progressive Scale (dohodnina) 2025
 
-**Tax Rate Brackets -- Progressive Scale (dohodnina) 2025**  _(official 2025 scale, Zveza računovodij, finančnikov in revizorjev Slovenije (zvezarfr.si); cross-checked against PwC Worldwide Tax Summaries (taxsummaries.pwc.com/slovenia/individual/taxes-on-personal-income))_
+**Tax Rate Brackets -- Progressive Scale (dohodnina) 2025**  _(official 2025 scale, Zveza računovodij, finančnikov in revizorjev Slovenije (zvezarfr.si); cross-checked against a secondary practitioner summary)_
 
 | Annual Tax Base (EUR) | Rate | Tax on Lower Limit + Marginal | Cumulative Tax at Top |
 | --- | --- | --- | --- |
@@ -52,23 +52,23 @@ Applies to the annual tax base (net annual income after allowances) for income t
 
 ### Capital Income -- Cedular (Separate, Final) Rates 2025
 
-**Capital Income -- Cedular (Separate, Final) Rates 2025**  _(PwC income-determination)_
+**Capital Income -- Cedular (Separate, Final) Rates 2025**  _(secondary summary, income-determination)_
 
 | Income Type | Rate | Basis |
 | --- | --- | --- |
-| Dividends | 25% flat, final | Separate from progressive scale (PwC income-determination) |
-| Interest | 25% flat, final | Bank deposit interest exempt up to EUR 1,000/year (EU institutions) (PwC) |
-| Rental income | 25% flat, final | Cedular schedular tax (PwC income-determination) |
-| Capital gains -- held 0–5 yrs | 25% | Final tax by holding period (PwC) |
-| Capital gains -- held 5–10 yrs | 20% | Final tax (PwC) |
-| Capital gains -- held 10–15 yrs | 15% | Final tax (PwC) |
-| Capital gains -- held over 15 yrs | 0% | Exempt (PwC) |
+| Dividends | 25% flat, final | Separate from progressive scale (secondary summary, income-determination) |
+| Interest | 25% flat, final | Bank deposit interest exempt up to EUR 1,000/year (EU institutions) (secondary summary) |
+| Rental income | 25% flat, final | Cedular schedular tax (secondary summary, income-determination) |
+| Capital gains -- held 0–5 yrs | 25% | Final tax by holding period (secondary summary) |
+| Capital gains -- held 5–10 yrs | 20% | Final tax (secondary summary) |
+| Capital gains -- held 10–15 yrs | 15% | Final tax (secondary summary) |
+| Capital gains -- held over 15 yrs | 0% | Exempt (secondary summary) |
 
-Capital income is NOT added to the progressive base and is NOT taxed on the 16/26/33/39/50% scale. A secondary source quoted 27.5% for dividends/interest; the authoritative PwC income-determination page confirms 25% -- use 25%.
+Capital income is NOT added to the progressive base and is NOT taxed on the 16/26/33/39/50% scale. A secondary source quoted 27.5% for dividends/interest; the authoritative the secondary summary income-determination page confirms 25% -- use 25%.
 
 ### Allowances (Olajšave) 2025
 
-**Allowances (Olajšave) 2025**  _(zvezarfr.si official 2025 scale & allowances; PwC deductions page)_
+**Allowances (Olajšave) 2025**  _(zvezarfr.si official 2025 scale & allowances; secondary summary, deductions page)_
 
 | Allowance | Value (EUR) |
 | --- | --- |
@@ -85,7 +85,7 @@ Capital income is NOT added to the progressive base and is NOT taxed on the 16/2
 | Young workers (resident under 29, employment income) | 1,367.60 |
 | Disability allowance (100% disabled resident) | 18,188.61 |
 
-Sources: zvezarfr.si official 2025 scale & allowances; PwC deductions page. (PwC deductions tables showed 2024 figures at fetch time -- 2025 amounts here come from the Slovenian accountancy association and should be cross-checked against the FURS-published 2025 lestvica.)
+Sources: zvezarfr.si official 2025 scale & allowances; the secondary summary deductions page. (the secondary summary deductions tables showed 2024 figures at fetch time -- 2025 amounts here come from the Slovenian accountancy association and should be cross-checked against the FURS-published 2025 lestvica.)
 
 ### Conservative Defaults
 
@@ -117,7 +117,7 @@ Refusal if minimum is missing -- SOFT WARN. No bank statement at all = hard stop
 
 ### Refusal Catalogue
 
-- **R-SI-1** — Slovenia taxes residents on worldwide income and non-residents only on Slovenian-source income. This skill cannot compute dohodnina without confirmed tax-residency status. Please confirm before proceeding.  _(PwC)_
+- **R-SI-1** — Slovenia taxes residents on worldwide income and non-residents only on Slovenian-source income. This skill cannot compute dohodnina without confirmed tax-residency status. Please confirm before proceeding.  _(secondary summary)_
 - **R-SI-2** — This skill covers resident individuals and sole proprietors (s.p.) only. Limited companies (d.o.o.) pay corporate income tax (davek od dohodkov pravnih oseb) under a separate regime. Escalate to a Slovenian tax adviser.
 - **R-SI-3** — Capital-gains computations require verified acquisition dates, cost basis, and holding-period mapping to the 25/20/15/0% schedule. Where records are incomplete, escalate to a Slovenian tax adviser.
 - **R-SI-4** — The lump-sum expense (normirani odhodki) regime changed twice around 2025 -- restrictive tiered rules from 1 Jan 2025, then raised revenue caps from 2026. The deemed-expense percentage for a given 2025 turnover must be verified against the current ZDoh-2 text / FURS guidance. Do not compute the deemed deduction without that confirmation.
@@ -142,9 +142,9 @@ How to read this table. Match by case-insensitive substring on the counterparty 
 | PAYPAL, WISE PAYOUT, REVOLUT PAYOUT | Business income | Platform payout | Verify business vs personal account |
 | UPWORK, FIVERR, TOPTAL | Business income | Freelance platform | Net of platform commission |
 | PLAČA, PLACA, OD MZP, SALARY, EMPLOYER [name] | Employment income (progressive base) | NOT self-employment -- separate income line |  |
-| NAJEMNINA, RENT RECEIVED | Capital income -- rental | Cedular 25% (separate, final) | Not on progressive scale (PwC) |
-| OBRESTI, INTEREST | Capital income -- interest | Cedular 25%; exempt up to EUR 1,000 bank deposit | (PwC) |
-| DIVIDENDA, DIVIDEND | Capital income -- dividend | Cedular 25% (final) | (PwC) |
+| NAJEMNINA, RENT RECEIVED | Capital income -- rental | Cedular 25% (separate, final) | Not on progressive scale (secondary summary) |
+| OBRESTI, INTEREST | Capital income -- interest | Cedular 25%; exempt up to EUR 1,000 bank deposit | (secondary summary) |
+| DIVIDENDA, DIVIDEND | Capital income -- dividend | Cedular 25% (final) | (secondary summary) |
 | FURS VRAČILO, TAX REFUND, VRACILO DOHODNINE | EXCLUDE | Not income | Prior-year tax refund |
 | SUBVENCIJA, DOTACIJA, GRANT | Check nature | Revenue grant = business income; capital grant EXCLUDE |  |
 
@@ -247,7 +247,7 @@ Classification: Deductible expense = EUR 29.99 (or net if VAT-recoverable).
 
 Input line: `30.04.2025 ; NLB DOBROPIS ; DIVIDENDA XYZ D.D. ; ; +800.00 ; EUR`
 
-Reasoning: Dividend income is taxed cedularly at a flat 25%, final and SEPARATE from the progressive scale (PwC income-determination). It is NOT added to the business/employment base. Tax = 800 × 25% = EUR 200.00 (typically withheld at source).
+Reasoning: Dividend income is taxed cedularly at a flat 25%, final and SEPARATE from the progressive scale (secondary summary, income-determination). It is NOT added to the business/employment base. Tax = 800 × 25% = EUR 200.00 (typically withheld at source).
 
 Classification: Capital income -- dividend. Cedular 25% = EUR 200.00. Do NOT add to progressive base.
 
@@ -279,11 +279,11 @@ Classification: EXCLUDE.
 
 ### 5.1 Residency and Scope
 
-- **Residency and Scope** — Residents are taxed on worldwide income; non-residents only on Slovenian-source income. Confirm residency before any computation.  _(ZDoh-2 (PwC))_
+- **Residency and Scope** — Residents are taxed on worldwide income; non-residents only on Slovenian-source income. Confirm residency before any computation.  _(ZDoh-2 (secondary summary))_
 
 ### 5.2 The Progressive Scale (dohodnina)
 
-**5.2 The Progressive Scale (dohodnina)**  _(zvezarfr.si official 2025 scale; PwC)_
+**5.2 The Progressive Scale (dohodnina)**  _(zvezarfr.si official 2025 scale; secondary summary)_
 
 | Annual Tax Base (EUR) | Rate |
 | --- | --- |
@@ -297,15 +297,15 @@ The 2025 annual scale is applied to the tax base (net annual income after allowa
 
 ### 5.3 Capital Income -- Cedular Treatment
 
-- **Capital Income -- Cedular Treatment** — Dividends, interest, and rental income are taxed at a flat 25% as final tax, separate from the progressive scale. Bank deposit interest is exempt up to EUR 1,000/year (EU institutions). Capital gains are taxed by holding period: 25% (0–5 yrs), 20% (5–10 yrs), 15% (10–15 yrs), 0% (>15 yrs)  _(PwC income-determination)_
+- **Capital Income -- Cedular Treatment** — Dividends, interest, and rental income are taxed at a flat 25% as final tax, separate from the progressive scale. Bank deposit interest is exempt up to EUR 1,000/year (EU institutions). Capital gains are taxed by holding period: 25% (0–5 yrs), 20% (5–10 yrs), 15% (10–15 yrs), 0% (>15 yrs)  _(secondary summary, income-determination)_
 
 ### 5.4 General and Family Allowances
 
-- **General and Family Allowances** — General (basic) allowance for 2025: EUR 5,260.00 for total annual income above EUR 16,832.00. For total annual income ≤ EUR 16,832.00, an increased allowance applies: 5,260.00 + (19,736.99 − 1.17259 × total annual income). Family allowances apply per Section 1 (1st child 2,838.30; 2nd 3,085.52; etc.). Young workers (resident under 29) get an extra EUR 1,367.60 on employment income; 100%-disabled resident allowance is EUR 18,188.61.  _(zvezarfr.si; PwC)_
+- **General and Family Allowances** — General (basic) allowance for 2025: EUR 5,260.00 for total annual income above EUR 16,832.00. For total annual income ≤ EUR 16,832.00, an increased allowance applies: 5,260.00 + (19,736.99 − 1.17259 × total annual income). Family allowances apply per Section 1 (1st child 2,838.30; 2nd 3,085.52; etc.). Young workers (resident under 29) get an extra EUR 1,367.60 on employment income; 100%-disabled resident allowance is EUR 18,188.61.  _(zvezarfr.si; secondary summary)_
 
 ### 5.5 Social Security Contributions -- Employment
 
-**Employee contributions (pre-1 July 2025)**  _(PwC other-taxes; KPMG Flash Alert 2025-133)_
+**Employee contributions (pre-1 July 2025)**  _(secondary summary, other-taxes; KPMG Flash Alert 2025-133)_
 
 | Class | Rate (pre-1 July 2025) |
 | --- | --- |
@@ -317,9 +317,9 @@ The 2025 annual scale is applied to the tax base (net annual income after allowa
 | + Long-term care (ZDOsk-1, from 1 July 2025) | +1.00% |
 | **Total (from 1 July 2025)** | **23.10%** |
 
-Verification: 15.50 + 6.36 + 0.14 + 0.10 = 22.10%; +1.00% LTC = 23.10%. (PwC other-taxes; KPMG Flash Alert 2025-133.)
+Verification: 15.50 + 6.36 + 0.14 + 0.10 = 22.10%; +1.00% LTC = 23.10%. (secondary summary, other-taxes; KPMG Flash Alert 2025-133.)
 
-**Employer contributions (pre-1 July 2025)**  _(PwC other-taxes; KPMG)_
+**Employer contributions (pre-1 July 2025)**  _(secondary summary, other-taxes; KPMG)_
 
 | Class | Rate (pre-1 July 2025) |
 | --- | --- |
@@ -332,7 +332,7 @@ Verification: 15.50 + 6.36 + 0.14 + 0.10 = 22.10%; +1.00% LTC = 23.10%. (PwC oth
 | + Long-term care (ZDOsk-1, from 1 July 2025) | +1.00% |
 | **Total (from 1 July 2025)** | **17.10%** |
 
-Verification: 8.85 + 6.56 + 0.06 + 0.10 + 0.53 = 16.10%; +1.00% LTC = 17.10%. (PwC other-taxes; KPMG.) Contributions are due on the day wages/salaries are paid (PwC).
+Verification: 8.85 + 6.56 + 0.06 + 0.10 + 0.53 = 16.10%; +1.00% LTC = 17.10%. (secondary summary, other-taxes; KPMG.) Contributions are due on the day wages/salaries are paid (secondary summary).
 
 ### 5.6 OZP Flat Health Contribution
 
@@ -550,9 +550,9 @@ ONBOARDING QUESTIONS -- SLOVENIA INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| Personal income tax (rates, base, allowances) | Personal Income Tax Act (ZDoh-2) (PwC) |
-| Pension & disability contributions | ZPIZ-2; administered by ZPIZ (PwC) |
-| Health contributions | ZZVZZ; administered by ZZZS (PwC) |
+| Personal income tax (rates, base, allowances) | Personal Income Tax Act (ZDoh-2) (secondary summary) |
+| Pension & disability contributions | ZPIZ-2; administered by ZPIZ (secondary summary) |
+| Health contributions | ZZVZZ; administered by ZZZS (secondary summary) |
 | OZP flat health contribution | ZVZZNZ (from 2024); EUR 37.17/month from 1 Mar 2025 (ZDS) |
 | Long-term care contribution | Long-Term Care Act (ZDOsk-1), from 1 July 2025 (KPMG 2025-133) |
 | Collection / portal | FURS; eDavki (edavki.durs.si) (FURS) |
@@ -567,7 +567,7 @@ ONBOARDING QUESTIONS -- SLOVENIA INCOME TAX
 | --- | --- | --- |
 | Informativni izračun dohodnine (IID) | Pre-filled annual income tax assessment issued by FURS to most resident individuals (employment/pension income) | FURS issues by end March / early April; taxpayer objects within 15 days of receipt (receipt deemed 15 days after dispatch) if data incorrect; otherwise IID becomes final (FURS) |
 | Davek od dohodka iz dejavnosti (DohDej) | Annual self-employment business-income return (s.p.; actual-cost or normirani odhodki) | 31 March for the prior calendar year, via eDavki (FURS) |
-| Self-assessed annual return (no IID) | For residents who do not receive a pre-filled IID (e.g. certain foreign-source income) | 31 July of the year following the tax year (PwC) |
+| Self-assessed annual return (no IID) | For residents who do not receive a pre-filled IID (e.g. certain foreign-source income) | 31 July of the year following the tax year (secondary summary) |
 | Monthly contribution statement (OPSVZ/REK) | Monthly calculation & payment of self-employed social contributions | File by the 15th, pay by the 20th of the month for the prior month (FURS) [RESEARCH GAP -- re-confirm exact dates against the current FURS calendar] |
 
 - **Advance PIT installment threshold** — Advance PIT (akontacija) is paid in monthly installments where the advance exceeds EUR 400.  _(FURS)_
@@ -593,7 +593,7 @@ Penalty bands are from a compliance-advisory summary, not the literal ZDavP-2 te
 | normirani odhodki revenue cap (2025) | EUR 60,000 full-time s.p. (EUR 50,000 part-time); raised to 120,000/50,000 from 2026 | Sibiz |
 | Self-employed minimum contribution base | 60% of the prior-year average monthly gross wage: EUR 1,436.95/month from 1 March 2025 (ZPIZ-2 art. 144(4)) | Unija; ZPIZ-2 |
 | Self-employed maximum contribution base | 3.5 × insured's average monthly wage | tax-checker |
-| Bank deposit interest exemption | EUR 1,000/year (EU institutions) | PwC |
+| Bank deposit interest exemption | EUR 1,000/year (EU institutions) | secondary summary |
 | 2025 minimum gross monthly wage | EUR 1,277.72 | WageIndicator |
 
 ### Test Suite

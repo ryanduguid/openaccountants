@@ -4,7 +4,7 @@ description: "Source-cited draft: vat / gst for Guyana (tax year 2025) — rates
 jurisdiction: GY
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Standard VAT rate** — 14 percent  _(Value-Added Tax Act 2005 (https://gra.gov.gy/vat-registration/))_
 - **Zero rate** — 0 percent (On specified supplies (e.g. exports and certain basic items))  _(Value-Added Tax Act 2005 — Schedule of zero-rated supplies (https://gra.gov.gy/vat-registration/))_
-- **Exempt supplies** — Certain supplies are exempt (no VAT charged, no input credit) — e.g. specified financial, education, medical and residential supplies (approx — confirm)  _(Value-Added Tax Act 2005 — Schedule of exempt supplies (https://taxsummaries.pwc.com/guyana/corporate/other-taxes))_
+- **Exempt supplies** — Certain supplies are exempt (no VAT charged, no input credit) — e.g. specified financial, education, medical and residential supplies (approx — confirm)  _(Value-Added Tax Act 2005 — Schedule of exempt supplies, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Compulsory registration threshold** — 15000000 GYD (Of taxable activity over 12 months (or expected to exceed within a shorter period))  _(Value-Added Tax Act 2005 (https://gra.gov.gy/vat-registration/))_
 - **Voluntary registration** — Available to persons below the G$15,000,000 threshold  _(Value-Added Tax Act 2005 (https://gra.gov.gy/vat-registration/))_
 - **Filing frequency** — Monthly — VAT return and payment due by the 21st day of the month following the tax period  _(Value-Added Tax Act 2005 (https://gra.gov.gy/vat-registration/))_

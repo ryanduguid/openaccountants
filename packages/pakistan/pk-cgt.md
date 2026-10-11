@@ -4,8 +4,8 @@ description: Use this skill whenever asked about Pakistan Capital Gains Tax. Tri
 jurisdiction: PK
 category: international
 tax_year: 2025
-version: 1.0
-last_updated: 2026-09-29
+version: 1.1
+last_updated: 2026-10-11
 reviewed_by: Ibrar Ali
 review_status: pending_review
 tier: 2
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Cgt
 
-## Pakistan — Capital Gains Tax — Skill v1.0
+## Pakistan — Capital Gains Tax — Skill v1.1
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-12 Ibrar Ali checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Property collection agent | Buyer's bank / property registrar at execution |
 | Filing | Annual income tax return — IRIS portal |
 | Validated by | Pending — requires sign-off by a Pakistani Chartered Accountant (ICAP) or Cost & Management Accountant (ICMAP) or registered FBR tax practitioner |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### CGT rate at a glance — TY 2025-26 (verify against current Finance Act)
 
@@ -84,7 +84,7 @@ assume away:
    quoting a non-filer penalty on the newest cohort is a year behind.
 
 **Where the secondary sources disagree with the collection agent, and how to
-read that.** PwC states that for non-ATL persons the personal income tax rates
+read that.** the secondary summary states that for non-ATL persons the personal income tax rates
 apply "provided that the rate of tax shall not be less than 15%". KPMG states
 normal slab rates for individuals and AOPs and the 29% corporate rate for
 companies. Neither matches NCCPL's flat published rates. The reconciliation is
@@ -101,7 +101,7 @@ described non-ATL treatment as normal-slab/29%. The second moved it back to
 error. The schedule has **both** boundaries, and the non-ATL treatment is
 neither a slab nor a floor. The lesson is narrow and worth keeping: **for a tax
 collected at source, read the collection agent's own notification before any
-secondary summary.** NCCPL publishes the table it deducts under; PwC and KPMG
+secondary summary.** NCCPL publishes the table it deducts under; the Big Four summaries
 describe the statute in prose, and the two are not the same document.
 
 **Super tax under §4C is collected by NCCPL too, on the same gains.** It is a
@@ -128,7 +128,7 @@ aggregate because their rate is nil.
 
 **Still to be confirmed:** whether the Finance Act 2026 moved anything for TY
 2026-27. The securities rows are NCCPL's TY 2026 schedule; the property rows
-below are PwC's reading of the 1 July 2024 split and have not been checked
+below are the secondary summary's reading of the 1 July 2024 split and have not been checked
 against an FBR notification. Where the practitioner cannot confirm the
 current-year rate, apply the conservative default (see §7).
 
@@ -385,7 +385,7 @@ Mr. Iqbal, a resident filer, acquired BTC in 2023 for Rs. 2,000,000 (equivalent 
 11. **ICAP and ICMAP technical guidance** — practitioner commentary on Finance Act changes and Section 37 / 37A operation.
 12. **FBR Information Circulars on Capital Gains** — including the post-FA 2024 circulars clarifying the flat-rate regime on PSX securities.
 
-## End of Skill — Pakistan CGT v1.0
+## End of Skill — Pakistan CGT v1.1
 
 <!-- openaccountants-cta-block -->
 

@@ -1,10 +1,10 @@
 ---
 name: latvia-tax-optimization
 description: Use this skill whenever asked about reducing tax in Latvia, tax planning, or legal strategies to minimise tax for a self-employed person or small company in Latvia. Trigger on phrases like "reduce tax Latvia", "Latvia 0% retained profit", "distributed profits tax", "reinvested profit Latvia", "micro-enterprise tax", "mikrouzņēmuma nodoklis", "FIK vs SIA", "Latvia dividends", "save tax Latvia", "tax planning Latvia". This skill covers the distributed-profits CIT (0% on reinvested profit, 20% only on distribution), the micro-enterprise tax regime, the self-employed vs company choice, the 2026 alternative dividend regime, and the substance/anti-avoidance red lines. ALWAYS read this skill before advising on any Latvian tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: LV
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Latvia Tax Optimization
 
-## Latvia Tax Optimization Skill v0.1
+## Latvia Tax Optimization Skill v0.2
 
-**Tier 2 — research-verified. Sources: VID (State Revenue Service), Finanšu ministrija, PwC/KPMG Latvia. Figures must agree with `latvia-income-tax.md` / `latvia-social-contributions.md` / `latvia-payroll.md`. NOT yet signed off by a Latvian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: VID (State Revenue Service), Finanšu ministrija, the secondary summary/KPMG Latvia. Figures must agree with `latvia-income-tax.md` / `latvia-social-contributions.md` / `latvia-payroll.md`. NOT yet signed off by a Latvian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 
@@ -50,7 +50,7 @@ For anyone reinvesting to grow (hiring, equipment, expansion), the SIA defers al
 
 ## Section 3 -- Micro-Enterprise Tax (simplicity for the small)
 
-- **Micro-enterprise tax coverage** — A single 25% of turnover tax covers CIT + PIT + (part of) social insurance for qualifying micro-enterprises.  _(PwC)_
+- **Micro-enterprise tax coverage** — A single 25% of turnover tax covers CIT + PIT + (part of) social insurance for qualifying micro-enterprises.  _(secondary summary)_
 - **Micro-enterprise limitations** — Simple and predictable; but no expense deduction and turnover caps + activity limits apply. [RESEARCH GAP — reviewer to confirm the current turnover cap and eligibility.]  _([RESEARCH GAP — reviewer to confirm the current turnover cap and eligibility.])_
 
 Best for very small, low-expense activities; model against the FIK/SIA routes.

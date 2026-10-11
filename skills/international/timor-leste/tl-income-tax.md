@@ -4,8 +4,8 @@ description: "Source-cited draft: personal income tax for Timor-Leste (tax year 
 jurisdiction: TL
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ Timor-Leste distinguishes Wage Income Tax (WIT, withheld by employers) from inco
 - **Individual residence test** — A natural person is resident when present in Timor-Leste for 183 days or more in aggregate in any 12-month period that commences or ends during the year, unless the person's permanent place of abode is outside Timor-Leste; Government employees posted abroad remain resident  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 2 (definition of resident natural person) — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 - **Treatment of WIT on resident wages** — Wage Income Tax withheld by the employer is generally a final tax for employees with a single employer  _(Taxes and Duties Act (Law No. 8/2008) — https://attl.gov.tl/wage-income-tax/)_
 - **WIT remittance deadline** — Employer must remit withheld WIT by the 15th day of the month following the deduction  _(Taxes and Duties Act (Law No. 8/2008) — https://attl.gov.tl/wage-income-tax/)_
-- **Annual income tax return deadline (non-wage income)** — Individuals who operate a business lodge an annual income tax form at the time the Tax Administration designates (s 62); employees whose income is covered by wage income tax or a final withholding do not lodge; PwC reports the last day of the third month after year end  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 62 and 63 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf ; Autoridade Tributária Timor-Leste, Annual Income Tax Return Guidelines — https://attl.gov.tl/annual-income-tax-return-guidelines/ ; PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/timor-leste/corporate/tax-administration)_
+- **Annual income tax return deadline (non-wage income)** — Individuals who operate a business lodge an annual income tax form at the time the Tax Administration designates (s 62); employees whose income is covered by wage income tax or a final withholding do not lodge; practitioner summaries report the last day of the third month after year end  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 62 and 63 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf ; Autoridade Tributária Timor-Leste, Annual Income Tax Return Guidelines — https://attl.gov.tl/annual-income-tax-return-guidelines/)_
 - **Deductions for non-wage business income** — Expenses incurred in deriving gross income are deductible under s 30, subject to the specific rules on depreciation, amortisation, bad debts and other items that follow it  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 30 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 
 <!-- openaccountants-cta-block -->

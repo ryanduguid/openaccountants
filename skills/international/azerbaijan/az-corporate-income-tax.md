@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Azerbaijan (tax year 
 jurisdiction: AZ
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Corporate profit tax rate and base
 
 - **Standard corporate profit tax rate** — 20% on the profit of enterprises (art. 105.1), applying to resident enterprises and to the permanent establishments of non-residents  _(Tax Code of the Republic of Azerbaijan (e-qanun.az consolidated text, Azerbaijani, with amendments to May 2026), art. 105.1 — https://e-qanun.az/framework/46948)_
-- **Tax base — resident enterprise** — Worldwide gross income less deductible business expenses (taxable profit)  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/income-determination)_
-- **Tax base — non-resident with a PE** — Income attributable to the Azerbaijan permanent establishment, taxed at 20%  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/taxes-on-corporate-income)_
-- **Simplified tax (turnover-based) alternative** — 2% of receipts from goods, works and services and of non-sales income (art. 220.1), for persons not registered for VAT whose taxable transactions are AZN 200,000 or less in every month of a consecutive 12-month period (art. 218.1.1); certain activities are excluded (art. 218.4). The 4% Baku rate quoted by older secondary sources is no longer in the Code  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 218.1.1, 218.4 and 220.1 — https://e-qanun.az/framework/46948 ; https://taxsummaries.pwc.com/azerbaijan/corporate/taxes-on-corporate-income)_
+- **Tax base — resident enterprise** — Worldwide gross income less deductible business expenses (taxable profit)  _(Tax Code of the Republic of Azerbaijan — https://e-qanun.az/framework/46948 (as reported; the figure was not re-read against this text for this change))_
+- **Tax base — non-resident with a PE** — Income attributable to the Azerbaijan permanent establishment, taxed at 20%  _(Tax Code of the Republic of Azerbaijan — https://e-qanun.az/framework/46948 (as reported; the figure was not re-read against this text for this change))_
+- **Simplified tax (turnover-based) alternative** — 2% of receipts from goods, works and services and of non-sales income (art. 220.1), for persons not registered for VAT whose taxable transactions are AZN 200,000 or less in every month of a consecutive 12-month period (art. 218.1.1); certain activities are excluded (art. 218.4). The 4% Baku rate quoted by older secondary sources is no longer in the Code  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 218.1.1, 218.4 and 220.1 — https://e-qanun.az/framework/46948)_
 - **Withholding tax on dividends** — 5% at source on dividends paid by a resident enterprise (art. 122.1)  _(Tax Code of the Republic of Azerbaijan (e-qanun.az consolidated text, Azerbaijani, with amendments to May 2026), art. 122.1 — https://e-qanun.az/framework/46948)_
 - **Withholding tax on interest** — 10% at source on interest paid to non-residents and to individuals (art. 123.1)  _(Tax Code of the Republic of Azerbaijan (e-qanun.az consolidated text, Azerbaijani, with amendments to May 2026), art. 123.1 — https://e-qanun.az/framework/46948)_
 - **Withholding tax on royalties** — 14% at source on royalties from an Azerbaijani source (art. 124.1)  _(Tax Code of the Republic of Azerbaijan (e-qanun.az consolidated text, Azerbaijani, with amendments to May 2026), art. 124.1 — https://e-qanun.az/framework/46948)_

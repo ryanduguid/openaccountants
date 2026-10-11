@@ -4,7 +4,7 @@ description: "Source-cited draft: company formation & entity choice for Monteneg
 jurisdiction: ME
 category: formation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Limited liability company (DOO)** — Društvo sa ograničenom odgovornošću — most common form; 1 to 30 founders, liability limited to contributions  _(Company Law (Zakon o privrednim društvima) — https://multilaw.com/Multilaw/Multilaw/Global_Business_Entities_Guide/Montenegro_-_Limited_Liability_Company.aspx)_
 - **Joint-stock company (AD)** — Akcionarsko društvo — share-capital company suited to larger ventures  _(Company Law (Zakon o privrednim društvima) — https://multilaw.com/Multilaw/Multilaw/Global_Business_Entities_Guide/Montenegro_-_Limited_Liability_Company.aspx)_
-- **Entrepreneur (preduzetnik)** — Sole trader / self-employed registration; taxed under entrepreneurial PIT scale  _(Company Law (Zakon o privrednim društvima) — https://taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income)_
+- **Entrepreneur (preduzetnik)** — Sole trader / self-employed registration; taxed under entrepreneurial PIT scale  _(Company Law (Zakon o privrednim društvima))_
 
 The limited liability company (DOO) is by far the most common vehicle, alongside joint-stock companies and entrepreneur registrations. Companies register with the Central Registry of Business Entities (CRPS).
 
@@ -34,7 +34,7 @@ A DOO can be formed with nominal share capital and 100% foreign ownership. Incor
 ## Core annual compliance
 
 - **Annual financial statements** — Filed annually (typically by end of March of the following year) (approx — confirm exact statutory filing deadline)  _(Accounting Law (Zakon o računovodstvu) — https://news.bloombergtax.com/daily-tax-report/montenegro-tax-agency-announces-further-deadline-extension-for-2025-corporate-income-tax-returns-financial-statements)_
-- **Annual corporate income tax return** — Filed by end of March of the following year  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica) — https://taxsummaries.pwc.com/montenegro/corporate/tax-administration)_
+- **Annual corporate income tax return** — Filed by end of March of the following year  _(Corporate Profit Tax Law (Zakon o porezu na dobit pravnih lica))_
 - **Beneficial ownership register** — Companies must register and maintain beneficial-owner data in the central register  _(Law on Prevention of Money Laundering and Terrorism Financing (Zakon o sprečavanju pranja novca i finansiranja terorizma) — https://likeabird.me/mandatory-beneficial-company-owners-registration-in-montenegro-guide/)_
 - **VAT registration & monthly returns** — Register once turnover exceeds €30,000 over 365 days; file monthly VAT returns EUR  _(Value Added Tax Law (Zakon o porezu na dodatu vrijednost) — https://adriacom.me/montenegro-vat/)_
 

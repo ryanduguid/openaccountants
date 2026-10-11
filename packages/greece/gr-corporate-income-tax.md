@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Greece (tax year 2025
 jurisdiction: GR
 category: international
 tax_year: 2025
-version: 0.2
-last_updated: 2026-10-04
+version: 0.4
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,20 +17,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Resident companies are taxed on worldwide profits; non-resident companies on Greek-source profits, including those of a Greek permanent establishment. The standard rate for 2025 is 22%.
 
-- **Standard corporate income tax rate** — 22%  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/taxes-on-corporate-income))_
+- **Standard corporate income tax rate** — 22%  _(Income Tax Code (Law 4172/2013), art. 58(1) (22% from tax year 2021), Ministry of Finance administrative codification (May 2024) — https://minfin.gov.gr/dioikitiki-kodikopoiisi-toy-kodika-forologias-eisodimatos/)_
 - **Credit institutions / financial entities rate** — 29% (for credit institutions taxed under sector-specific provisions)  _(Greek Income Tax Code (Law 4172/2013) (as described at [flick.network](https://www.flick.network/en-gr/corporate-tax-in-greece)))_
-- **Tax base** — Accounting profit adjusted for tax (non-deductible expenses, tax depreciation, etc.); residents taxed on worldwide income, non-residents on Greek-source income  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/income-determination))_
-- **Corporate tax residence** — A company is Greek tax resident if incorporated in Greece, has its registered seat in Greece, or its place of effective management is in Greece  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/corporate-residence))_
-- **Advance corporate tax prepayment** — 80% percent (of current-year corporate tax is prepaid with the annual return (approx — confirm rate for 2025))  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/tax-administration))_
+- **Tax base** — Accounting profit adjusted for tax (non-deductible expenses, tax depreciation, etc.); residents taxed on worldwide income, non-residents on Greek-source income  _(Greek Income Tax Code (Law 4172/2013), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Corporate tax residence** — A company is Greek tax resident if incorporated in Greece, has its registered seat in Greece, or its place of effective management is in Greece  _(Income Tax Code (Law 4172/2013), art. 4(3) (incorporated under Greek law, registered seat in Greece, or place of effective management in Greece), Ministry of Finance administrative codification — https://minfin.gov.gr/dioikitiki-kodikopoiisi-toy-kodika-forologias-eisodimatos/)_
+- **Advance corporate tax prepayment** — 80% percent (of current-year corporate tax is prepaid with the annual return (approx — confirm rate for 2025))  _(Income Tax Code (Law 4172/2013), art. 71(1) (prepayment of eighty per cent (80%) of the tax on the return), Ministry of Finance administrative codification — https://minfin.gov.gr/dioikitiki-kodikopoiisi-toy-kodika-forologias-eisodimatos/)_
 
 ## Withholding taxes on outbound payments
 
 Domestic withholding tax rates apply to dividends, interest and royalties, subject to reduction under EU directives or applicable double tax treaties.
 
-- **Withholding tax on dividends** — 5% (may be reduced to 0% under EU Parent-Subsidiary Directive or treaty)  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/withholding-taxes))_
-- **Withholding tax on interest** — 15% (reducible under EU Interest-Royalties Directive or treaty)  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/withholding-taxes))_
-- **Withholding tax on royalties** — 20% (reducible under EU Interest-Royalties Directive or treaty)  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/withholding-taxes))_
-- **Withholding tax on management/consultancy fees and technical services** — **20%**, and the scope is far narrower than the rate suggests. It does **not** apply to a legal entity tax-resident in Greece (exempt, general government bodies aside), and it does **not** apply to a non-resident legal entity that has **no permanent establishment** in Greece. It applies to a **non-EU** legal entity that maintains a **PE in Greece**; an **EU** entity receiving the same fees through its Greek PE is exempt. So the ordinary cross-border case — a Greek company paying an EU consultancy with no Greek presence — carries **no Greek withholding at all**, and deducting 20% there withholds the entire amount wrongly. Establish the recipient's tax residence, EU status and PE position before withholding. This line previously read "paid to certain non-residents / domestic recipients", which points at the two groups that are exempt  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/withholding-taxes))_
+- **Withholding tax on dividends** — 5% (may be reduced to 0% under EU Parent-Subsidiary Directive or treaty)  _(Income Tax Code (Law 4172/2013), art. 64(1)(a) (five per cent (5%)), Ministry of Finance administrative codification — https://minfin.gov.gr/dioikitiki-kodikopoiisi-toy-kodika-forologias-eisodimatos/)_
+- **Withholding tax on interest** — 15% (reducible under EU Interest-Royalties Directive or treaty)  _(Income Tax Code (Law 4172/2013), art. 64(1)(b) (fifteen per cent (15%)), Ministry of Finance administrative codification — https://minfin.gov.gr/dioikitiki-kodikopoiisi-toy-kodika-forologias-eisodimatos/)_
+- **Withholding tax on royalties** — 20% (reducible under EU Interest-Royalties Directive or treaty)  _(Income Tax Code (Law 4172/2013), art. 64(1)(c) (twenty per cent (20%)), Ministry of Finance administrative codification — https://minfin.gov.gr/dioikitiki-kodikopoiisi-toy-kodika-forologias-eisodimatos/)_
+- **Withholding tax on management/consultancy fees and technical services** — **20%**, and the scope is far narrower than the rate suggests. It does **not** apply to a legal entity tax-resident in Greece (exempt, general government bodies aside), and it does **not** apply to a non-resident legal entity that has **no permanent establishment** in Greece. It applies to a **non-EU** legal entity that maintains a **PE in Greece**; an **EU** entity receiving the same fees through its Greek PE is exempt. So the ordinary cross-border case — a Greek company paying an EU consultancy with no Greek presence — carries **no Greek withholding at all**, and deducting 20% there withholds the entire amount wrongly. Establish the recipient's tax residence, EU status and PE position before withholding. This line previously read "paid to certain non-residents / domestic recipients", which points at the two groups that are exempt  _(Income Tax Code (Law 4172/2013), art. 64(1)(d) (twenty per cent (20%) on fees for technical works, management and consultancy services), Ministry of Finance administrative codification — https://minfin.gov.gr/dioikitiki-kodikopoiisi-toy-kodika-forologias-eisodimatos/)_
 
 ## Corporate filing and payment deadlines
 

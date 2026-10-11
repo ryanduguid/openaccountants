@@ -18,17 +18,17 @@ description: >
   fixed-deduction regimes. For business income taxed on the GENERAL regime (ОУР) use
   kz-income-tax. For VAT (НДС) use kazakhstan-vat. For social payments use
   kz-social-contributions.
-version: 1.0
+version: 1.1
 jurisdiction: KZ
 tax_year: 2026
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-11
 category: international
 depends_on:
   - income-tax-workflow-base
 ---
 
-# Kazakhstan Special Tax Regimes for Small Business (СНР) — Self-Employed Skill v1.0
+# Kazakhstan Special Tax Regimes for Small Business (СНР) — Self-Employed Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -71,7 +71,7 @@ writes in** (Russian, Kazakh, or English).
 | MZP / МЗП (2026) | **85,000 ₸** (minimum monthly wage, unchanged from 2025) |
 | Regime-choice deadline | Notification (уведомление) by **1 March 2026**; no notice → auto-moved to ОУР |
 | Quality tier | **Research-verified — pending sign-off by a Kazakhstan accountant** |
-| Skill version | **1.0** |
+| Skill version | **1.1** |
 
 ### Conservative defaults
 
@@ -311,8 +311,8 @@ Escalate (do **not** self-resolve) when the matter involves:
   deduction regime.
 - **State Revenue Committee (КГД)** — kgd.gov.kz; filing portal **cabinet.salyk.kz**; **E-Salyq
   Business** app; eGov (egov.kz).
-- **PwC Worldwide Tax Summaries** — taxsummaries.pwc.com/kazakhstan (significant developments,
-  other taxes) — for cross-checking rates.
+- **Tax Code on Adilet** — adilet.zan.kz/eng/docs/K2500000214 (English text of Code No. 214-VIII) — for
+  cross-checking rates.
 - **МРП / МЗП 2026** — annual republican budget law: МРП **4,325 ₸**, МЗП **85,000 ₸** *(verify)*.
 
 ### 8.2 Self-check / test suite
@@ -362,8 +362,8 @@ The AI must **NOT**:
 
 ## Disclaimer
 
-This skill is **research-verified** against public 2026 sources (КГД / kgd.gov.kz, PwC Worldwide Tax
-Summaries, and Big-4 / professional 2026 reform notes) but is **pending sign-off by a qualified
+This skill is **research-verified** against public 2026 sources (КГД / kgd.gov.kz, the Tax Code on
+adilet.zan.kz, and Big-4 / professional 2026 reform notes) but is **pending sign-off by a qualified
 Kazakhstan accountant or tax adviser**. The 2026 Tax Code (No. 214-VIII) took effect only on
 **1 January 2026**; rates, ceilings, МРП/МЗП values, forms (Форма 910.00), prohibited-activity
 lists, maslikhat rates, and deadlines may change or be clarified by subordinate regulation. Figures

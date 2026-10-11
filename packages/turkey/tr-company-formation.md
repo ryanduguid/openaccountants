@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Turkey (
 jurisdiction: TR
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Incorporation process** — Register via MERSIS (central registry), notarize/declare articles of association, deposit capital, register with the Trade Registry, and obtain tax number; foreigners may own 100%  _(Foreign Direct Investment Law No. 4875 (consolidated text, mevzuat.gov.tr), art. 3(a) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.4875.pdf ; process: https://ozbekcpa.com/company-formation-in-turkey/)_
 - **Typical incorporation timeline** — Approximately 1–2 weeks once documents are ready (approx — varies by registry/locale; confirm)  _(Turkish Commercial Code No. 6102 (https://ozbekcpa.com/company-formation-in-turkey/))_
 - **Competition Authority levy** — 0.04% (four per ten thousand) of the capital of newly founded joint stock and limited companies, and of the increase on a capital increase, paid to the Competition Authority  _(Law No. 4054 on the Protection of Competition (consolidated text, mevzuat.gov.tr), art. 39(1)(c) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.4054.pdf)_
-- **Core annual compliance** — Statutory accounting (Uniform Chart of Accounts), monthly VAT & withholding returns, quarterly advance CIT, annual CIT return (1 to 25 April by statute; see tr-corporate-income-tax), and the ordinary general meeting within three months after the end of the financial year  _(Turkish Commercial Code No. 6102 (consolidated text, mevzuat.gov.tr), art. 409(1) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6102.pdf ; Corporate Tax Law No. 5520 (consolidated text, mevzuat.gov.tr), art. 14(3) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.5520.pdf ; accounting and return cycle: https://taxsummaries.pwc.com/turkey/corporate/tax-administration)_
+- **Core annual compliance** — Statutory accounting (Uniform Chart of Accounts), monthly VAT & withholding returns, quarterly advance CIT, annual CIT return (1 to 25 April by statute; see tr-corporate-income-tax), and the ordinary general meeting within three months after the end of the financial year  _(Turkish Commercial Code No. 6102 (consolidated text, mevzuat.gov.tr), art. 409(1) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6102.pdf ; Corporate Tax Law No. 5520 (consolidated text, mevzuat.gov.tr), art. 14(3) — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.5520.pdf ; accounting and return cycle (as reported))_
 - **Capital top-up deadline for existing companies** — Joint stock and limited companies below the new minimums must raise their capital to the art. 332 and 580 amounts by 31 December 2026 or are deemed dissolved; a non-public registered-capital company with issued capital of at least TRY 250,000 must raise its initial and issued capital to TRY 500,000 by the same date or is treated as having left the system  _(Turkish Commercial Code No. 6102 (consolidated text, mevzuat.gov.tr), provisional art. 15, added by Law 7511 of 23 May 2024 — https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6102.pdf)_
 
 <!-- openaccountants-cta-block -->

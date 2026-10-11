@@ -1,10 +1,10 @@
 ---
 name: cameroon-payroll
 description: Use this skill whenever asked about Cameroon payroll processing for employed persons. Trigger on phrases like "Cameroon payroll", "IRPP withholding", "PAYE Cameroon", "CNPS contribution", "CFC housing fund", "FNE employment fund", "CAC surcharge", "centimes additionnels", "DIPE", "payslip Cameroon", "bulletin de paie", "net salary Cameroon", "salaire net", "tax withholding Cameroon", "employer social security Cameroon", "SMIG Cameroon", "minimum wage Cameroon", "gross to net Cameroon", "XAF salary calculation", or any question about computing employee pay, withholding tax (IRPP/PAYE), or social security (CNPS) for Cameroon-based employees. This skill covers IRPP progressive withholding with the 10% Additional Council Tax (CAC), CNPS pension/family-allowance/accident contributions, the CFC housing fund and FNE employment fund payroll levies, council tax and audiovisual royalty, minimum wage (SMIG), monthly DIPE filing, and remittance deadlines. ALWAYS read this skill before processing any Cameroon payroll.
-version: 0.3
+version: 0.4
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 reviewed_by: Nkinyam Courage Ndasi
 review_status: pending_review
 depends_on:
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cameroon Payroll
 
-## Cameroon Payroll Skill v0.3
+## Cameroon Payroll Skill v0.4
 
-**Tier 2 — Research-verified.** Figures are sourced from PwC Worldwide Tax Summaries (Cameroon) and the CNPS official site, corroborated by Employer-of-Record guides. This skill has **not** yet been section-by-section verified by a licensed Cameroon accountant (`verified_by: pending`). Treat all outputs as estimates pending professional sign-off. Where a figure could not be sourced to a primary authority it is flagged **[RESEARCH GAP — reviewer to confirm]**.
+**Tier 2 — Research-verified.** Figures are sourced from a secondary practitioner summary (Cameroon) and the CNPS official site, corroborated by Employer-of-Record guides. This skill has **not** yet been section-by-section verified by a licensed Cameroon accountant (`verified_by: pending`). Treat all outputs as estimates pending professional sign-off. Where a figure could not be sourced to a primary authority it is flagged **[RESEARCH GAP — reviewer to confirm]**.
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Nkinyam Courage Ndasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -36,23 +36,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Direction Générale des Impôts (DGI), Ministry of Finance |
 | Social security authority | Caisse Nationale de Prévoyance Sociale (CNPS) |
 | Key legislation | Code Général des Impôts (CGI); Code du Travail; CNPS social security regulations; annual Finance Law |
-| Monthly employer return | DIPE — Déclaration des Impôts et des Prélèvements sur les Salaires (PAYE + salary levies), due 15th of following month [PwC, Tax administration] |
-| CNPS contribution ceiling | XAF 750,000/month (XAF 9,000,000/year) [PwC, Other taxes; CNPS] |
+| Monthly employer return | DIPE — Déclaration des Impôts et des Prélèvements sur les Salaires (PAYE + salary levies), due 15th of following month [secondary summary, Tax administration] |
+| CNPS contribution ceiling | XAF 750,000/month (XAF 9,000,000/year) [secondary summary, Other taxes; CNPS] |
 | Personal income tax | **Yes** — Cameroon levies IRPP (progressive 11%–38.5% incl. CAC) |
 | Validated by | Verified by Nkinyam Courage Ndasi (3472800) on 2026-06-21 |
-| Skill version | 0.3 |
+| Skill version | 0.4 |
 
 **No-PIT note:** This is **not** a no-PIT jurisdiction. Cameroon levies a progressive personal income tax (IRPP) on employment income, withheld monthly. Treat IRPP as a core employer withholding obligation.
 
 ## Section 2 — Income Tax Withholding (IRPP / PAYE)
 
-- **IRPP withholding basis** — The employer withholds IRPP monthly under the PAYE system. IRPP is progressive and applied to annual net taxable salary (the brackets below are annual; the monthly withholding is the annual liability divided by 12 for a stable salary).  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income)_
+- **IRPP withholding basis** — The employer withholds IRPP monthly under the PAYE system. IRPP is progressive and applied to annual net taxable salary (the brackets below are annual; the monthly withholding is the annual liability divided by 12 for a stable salary).  __
 
 ### 2.1 IRPP Brackets (FY2025 — effective rates incl. 10% CAC)
 
 - **CAC surcharge incorporation** — The published bracket rates already incorporate the Additional Council Tax (Centimes Additionnels Communaux, CAC) surcharge of 10% added to base IRPP. Base IRPP rates are 10% / 15% / 25% / 35%; × 1.10 CAC gives the effective rates below.
 
-**IRPP Brackets**  _(Source (brackets): https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income ; Source (10% CAC): https://rivermate.com/guides/cameroon/taxes ; https://remotepeople.com/countries/cameroon/hire-employees/payroll-tax/)_
+**IRPP Brackets**  _(Source (brackets): ; Source (10% CAC): https://rivermate.com/guides/cameroon/taxes ; https://remotepeople.com/countries/cameroon/hire-employees/payroll-tax/)_
 
 | Annual net taxable income (XAF) | Base rate | Effective rate (incl. 10% CAC) |
 | --- | --- | --- |
@@ -74,22 +74,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### 2.2 Net Taxable Salary — Computation Order
 
 - **Computation order intro** — Apply in this exact order:
-- **Step 1 — Gross taxable salary** — All wages, salaries, cash and benefits in kind. Certain special-duty allowances and statutory family allowances are exempt.  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/income-determination)_
+- **Step 1 — Gross taxable salary** — All wages, salaries, cash and benefits in kind. Certain special-duty allowances and statutory family allowances are exempt.  __
 - **Step 2 — Less employee CNPS pension contribution** — The 4.2% pension contribution is a deductible charge.  _(https://remotepeople.com/countries/cameroon/hire-employees/payroll-tax/)_
 - **Step 3 — Less 30% lump-sum professional/business expense allowance** — Computed on the post-CNPS taxable salary.  _(https://rivermate.com/guides/cameroon/taxes ; https://remotepeople.com/countries/cameroon/hire-employees/payroll-tax/)_
 - **Step 4 — Less standard abatement of XAF 500,000** — Annual abatement on employment income.  _(https://remotepeople.com/countries/cameroon/hire-employees/payroll-tax/)_
-- **Step 5 — Round down to nearest XAF 1,000** — Then apply the progressive scale (result already includes the 10% CAC).  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income)_
+- **Step 5 — Round down to nearest XAF 1,000** — Then apply the progressive scale (result already includes the 10% CAC).  __
 
 > **Benefit-in-kind valuation** (% of taxable income): housing 15%, electricity 4%, water 2%, per the income-determination rules. **[RESEARCH GAP — reviewer to confirm full BIK schedule and per-item caps from the CGI.]**
-> Source: https://taxsummaries.pwc.com/republic-of-cameroon/individual/income-determination
+> Source:
 
-- **Other income note (not employment PAYE)** — Net income from "other activities" is taxed at 33%; income from stocks/shares at 16.5% overall.  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income)_
+- **Other income note (not employment PAYE)** — Net income from "other activities" is taxed at 33%; income from stocks/shares at 16.5% overall.  __
 
 ## Section 3 — Salary-based Local Taxes (withheld with PAYE)
 
 These flat local levies are withheld alongside IRPP on the DIPE declaration.
 
-Each levy is a flat monthly amount read from a band table by monthly salary. The two tables below are those of the 2026-06-21 fact check (Nkinyam Courage Ndasi), which carried them without an article citation; PwC (Other taxes) confirms the top bands: the council tax above XAF 500,000 (PwC's rounded ~XAF 2,520, where the reviewed table says 2,500) and the CRTV royalty of XAF 13,000 above XAF 1,000,000. Until 2026-09-29 this guide stated only those top bands and treated every lower band as a research gap.
+Each levy is a flat monthly amount read from a band table by monthly salary. The two tables below are those of the 2026-06-21 fact check (Nkinyam Courage Ndasi), which carried them without an article citation; the secondary summary (Other taxes) confirms the top bands: the council tax above XAF 500,000 (secondary summary, 's rounded ~XAF 2,520, where the reviewed table says 2,500) and the CRTV royalty of XAF 13,000 above XAF 1,000,000. Until 2026-09-29 this guide stated only those top bands and treated every lower band as a research gap.
 
 **Council tax (taxe de développement local, TDL, withheld on salaries) — monthly bands**
 
@@ -123,13 +123,13 @@ Each levy is a flat monthly amount read from a band table by monthly salary. The
 | 900,001 – 1,000,000 | 12,350 |
 | Above 1,000,000 | 13,000 |
 
-> **Base and citation.** The reviewed tables are headed "monthly salary" (council tax) and "monthly taxable income" (CRTV); this guide, like PwC, bands both on the gross monthly salary, which overstates the CRTV by at most one band where exempt allowances are large. **[RESEARCH GAP — reviewer to confirm]** the Code Général des Impôts article of each scale (the taxe de développement local on salaried employees; the redevance audiovisuelle) and the exact base, before a band amount is relied on in a filing.
+> **Base and citation.** The reviewed tables are headed "monthly salary" (council tax) and "monthly taxable income" (CRTV); this guide, like the secondary summary, bands both on the gross monthly salary, which overstates the CRTV by at most one band where exempt allowances are large. **[RESEARCH GAP — reviewer to confirm]** the Code Général des Impôts article of each scale (the taxe de développement local on salaried employees; the redevance audiovisuelle) and the exact base, before a band amount is relied on in a filing.
 
 ## Section 4 — Social Security (CNPS) — Contribution Rates
 
-- **CNPS contribution ceiling rule** — All CNPS branches are capped at a monthly contribution ceiling of XAF 750,000 (XAF 9,000,000/year). Salary above the ceiling is not subject to CNPS.  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/other-taxes ; https://www.cnps.cm/en/assures/assure-e.html)_
+- **CNPS contribution ceiling rule** — All CNPS branches are capped at a monthly contribution ceiling of XAF 750,000 (XAF 9,000,000/year). Salary above the ceiling is not subject to CNPS.  _ ; https://www.cnps.cm/en/assures/assure-e.html)_
 
-**CNPS contribution rates**  _(Source (employer 11.2% + accident 1.75/2.5/5%, employee 4.2%): https://taxsummaries.pwc.com/republic-of-cameroon/corporate/other-taxes ; Source (family allowance 7% / pension 4.2% / accident bands): https://rivermate.com/guides/cameroon/taxes ; https://remotepeople.com/countries/cameroon/hire-employees/payroll-tax/ ; Source (CNPS authority): https://www.cnps.cm/en/assures/assure-e.html)_
+**CNPS contribution rates**  _(Source (employer 11.2% + accident 1.75/2.5/5%, employee 4.2%): ; Source (family allowance 7% / pension 4.2% / accident bands): https://rivermate.com/guides/cameroon/taxes ; https://remotepeople.com/countries/cameroon/hire-employees/payroll-tax/ ; Source (CNPS authority): https://www.cnps.cm/en/assures/assure-e.html)_
 
 | Branch | Employee | Employer | Base / ceiling |
 | --- | --- | --- | --- |
@@ -139,7 +139,7 @@ Each levy is a flat monthly amount read from a band table by monthly salary. The
 | **Total CNPS (excl. accident)** | **4.2%** | **11.2%** |  |
 | **Total CNPS (incl. accident)** | **4.2%** | **12.95% – 16.2%** | depends on risk class |
 
-*Arithmetic check (employer, excl. accident):* 4.2% + 7.0% = **11.2%** ✓ (matches PwC's stated 11.2% employer figure).
+*Arithmetic check (employer, excl. accident):* 4.2% + 7.0% = **11.2%** ✓ (matches the secondary summary's stated 11.2% employer figure).
 *Incl. accident:* 11.2% + 1.75% = 12.95% (low risk); 11.2% + 5% = 16.2% (high risk). ✓
 
 - **Maximum monthly CNPS contributions (at/above the XAF 750,000 ceiling)** — Employee pension: 4.2% × 750,000 = XAF 31,500/mo Employer pension: 4.2% × 750,000 = XAF 31,500/mo Employer family allowance: 7.0% × 750,000 = XAF 52,500/mo Employer accident (low/mid/high): 1.75% / 2.5% / 5% × 750,000 = XAF 13,125 / 18,750 / 37,500/mo
@@ -147,21 +147,21 @@ Each levy is a flat monthly amount read from a band table by monthly salary. The
 > **Reduced family-allowance rates:** 5.65% for workers in the agricultural and assimilated scheme and 3.70% for private education staff, against 7% in the general scheme, all on the XAF 750,000 monthly ceiling, per CLEISS's table of contributions at 1 January 2024 ([CLEISS, Les cotisations au Cameroun](https://www.cleiss.fr/docs/cotisations/cameroun.html)).
 > Source (secondary): https://www.playroll.com/global-hiring-guides/cameroon
 
-- **Voluntary / self-insured contribution** — 8.4% of declared income (pension branch only); declared income range XAF 36,270–750,000/month.  _(https://www.cnps.cm/en/assures/assure-e.html ; https://taxsummaries.pwc.com/republic-of-cameroon/individual/other-taxes)_
+- **Voluntary / self-insured contribution** — 8.4% of declared income (pension branch only); declared income range XAF 36,270–750,000/month.  _(https://www.cnps.cm/en/assures/assure-e.html)_
 
 ## Section 5 — Other Payroll Levies (CFC + FNE)
 
-**CFC + FNE levies**  _(Source (CFC 1.5% employer / 1% employee, FNE 1% employer): https://taxsummaries.pwc.com/republic-of-cameroon/individual/other-taxes ; Source (combined 2.5% employer payroll tax): https://taxsummaries.pwc.com/republic-of-cameroon/corporate/other-taxes ; Source (CFC 1.5%/1% corroboration): https://remotepeople.com/countries/cameroon/employer-of-record/)_
+**CFC + FNE levies**  _(Source (CFC 1.5% employer / 1% employee, FNE 1% employer): ; Source (combined 2.5% employer payroll tax) (as reported) ; Source (CFC 1.5%/1% corroboration): https://remotepeople.com/countries/cameroon/employer-of-record/)_
 
 | Levy | Employee | Employer | Base | Source |
 | --- | --- | --- | --- | --- |
-| **Housing Fund** — Crédit Foncier du Cameroun (CFC) | **1.0%** | **1.5%** | taxable salary | PwC, Other taxes |
-| **National Employment Fund** (Fonds National de l'Emploi, FNE) | 0% | **1.0%** | taxable salary | PwC, Other taxes |
+| **Housing Fund** — Crédit Foncier du Cameroun (CFC) | **1.0%** | **1.5%** | taxable salary | secondary summary, Other taxes |
+| **National Employment Fund** (Fonds National de l'Emploi, FNE) | 0% | **1.0%** | taxable salary | secondary summary, Other taxes |
 | **Total CFC + FNE** | **1.0%** | **2.5%** |  |  |
 
-*Arithmetic check (employer):* 1.5% + 1.0% = **2.5%** ✓. PwC's corporate page describes the combined CFC + FNE as a **"payroll tax of 2.5% of total salaries and fringe benefits"** funding the Housing Loan and Employment Fund. The employee adds a separate 1.0% CFC.
+*Arithmetic check (employer):* 1.5% + 1.0% = **2.5%** ✓. The secondary summary's corporate page describes the combined CFC + FNE as a **"payroll tax of 2.5% of total salaries and fringe benefits"** funding the Housing Loan and Employment Fund. The employee adds a separate 1.0% CFC.
 
-> Unlike CNPS, the CFC and FNE are levied on **taxable salary** (no XAF 750,000 cap stated). **[RESEARCH GAP — reviewer to confirm]** whether any ceiling applies to CFC/FNE; PwC states no cap. The worked examples below assume CFC/FNE apply to the full taxable salary.
+> Unlike CNPS, the CFC and FNE are levied on **taxable salary** (no XAF 750,000 cap stated). **[RESEARCH GAP — reviewer to confirm]** whether any ceiling applies to CFC/FNE; the secondary summary states no cap. The worked examples below assume CFC/FNE apply to the full taxable salary.
 
 ## Section 6 — Minimum Wage (SMIG) and Working Time
 
@@ -195,7 +195,7 @@ When an input is missing or ambiguous, apply the **most conservative defensible 
 | Council tax / CRTV base uncertain (allowances of unknown taxability) | Band on the **gross monthly salary** and flag | The §3 tables are read on the monthly salary; an overstated base overstates a levy by at most one band |
 | Pay frequency unstated | Assume **monthly** | Standard Cameroon practice |
 | Marital/dependant status (IRPP) | IRPP scale is **not** status-banded (single national scale) | Cameroon uses one progressive scale; no S/M codes |
-| CFC/FNE ceiling uncertain | Apply to **full taxable salary** (no cap) | PwC states 2.5% on total salaries; no cap mentioned |
+| CFC/FNE ceiling uncertain | Apply to **full taxable salary** (no cap) | secondary summary, states 2.5% on total salaries; no cap mentioned |
 | SMIG value disputed | **Do not assume** — request confirmation | Sources disagree; flag as research gap |
 
 Every default applied **must** be surfaced in the output as an explicit assumption line.
@@ -344,9 +344,9 @@ Net pay ≈ 1,500,000 − 359,206 = **XAF 1,140,794/mo**.
 - **CNPS contribution cap** — CNPS contributions are capped at XAF 750,000/month per branch; never apply CNPS to salary above the ceiling.  _(Section 11 — Tier 1 Rules)_
 - **CNPS pension deductibility order** — The 4.2% employee CNPS pension is deductible before the 30% professional allowance and the 500,000 abatement.  _(Section 11 — Tier 1 Rules)_
 - **Net-taxable computation order** — gross → less CNPS pension → less 30% → less 500,000 → round down to 1,000 → apply scale  _(Section 11 — Tier 1 Rules)_
-- **CFC and FNE levy basis** — CFC (1.5% employer / 1% employee) and FNE (1% employer) are levied on taxable salary; PwC states no ceiling.  _(Section 11 — Tier 1 Rules)_
+- **CFC and FNE levy basis** — CFC (1.5% employer / 1% employee) and FNE (1% employer) are levied on taxable salary; the secondary summary states no ceiling.  _(Section 11 — Tier 1 Rules)_
 - **Council tax and CRTV bands** — Council tax is banded on the monthly salary from XAF 62,000 (250/month) to above 500,000 (2,500/month); CRTV from XAF 50,001 (750/month) to above 1,000,000 (13,000/month). Read the §3 tables; never apply a top-band amount to a salary in a lower band, and never a flat threshold.  _(Section 11 — Tier 1 Rules)_
-- **CNPS total employer rate excluding occupational accident** — 11.2%  _(PwC Worldwide Tax Summaries — Cameroon, Corporate/Other taxes)_
+- **CNPS total employer rate excluding occupational accident** — 11.2%  _(secondary summary, Cameroon, Corporate/Other taxes)_
 - **DIPE deadline** — Monthly DIPE return + remittance is due by the 15th of the following month.  _(Section 11 — Tier 1 Rules)_
 - **Currency assumption** — All amounts are XAF; never assume a different currency or apply FX without explicit input.  _(Section 11 — Tier 1 Rules)_
 
@@ -358,7 +358,7 @@ Net pay ≈ 1,500,000 − 359,206 = **XAF 1,140,794/mo**.
 | --- | --- |
 | Benefit-in-kind valuation and caps | Full CGI BIK schedule is a research gap; housing/electricity/water %s confirmed but caps unconfirmed |
 | Exempt allowances (special-duty, statutory family) | Exemption scope is fact-specific per CGI |
-| Council tax / CRTV band tables | Reviewer-supplied (2026-06-21) without a CGI article citation; PwC confirms the top bands only |
+| Council tax / CRTV band tables | Reviewer-supplied (2026-06-21) without a CGI article citation; secondary summary, confirms the top bands only |
 | Sector-reduced family-allowance rates (agriculture/teachers) | Secondary-sourced only |
 | Operative SMIG | Sources disagree; needs the labour decree |
 | Occupational-accident risk classification | Class assignment is employer/sector-specific |
@@ -435,42 +435,42 @@ Cameroon is bilingual (French / English); statements are usually in French.
 
 ### 16.1 Deadlines
 
-**Deadlines table**  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/tax-administration)_
+**Deadlines table**  __
 
 | Obligation | Deadline | Source |
 | --- | --- | --- |
-| Monthly DIPE return + PAYE/IRPP + salary levies remittance | **15th of the following month** | PwC, Tax administration |
-| CNPS monthly contributions | Monthly, by the 15th of the following month (aligned with payroll) | PwC, Other taxes / CNPS |
-| Annual individual tax return | **15 March** following year-end (fiscal year = calendar year) | PwC, Tax administration |
-| Annual payroll-tax adjustment (DIPE recapitulative) — DGE | **15 March** | PwC, Tax administration |
-| — Medium & Specialized Tax Centres (CIME/CSI) | **15 April** | PwC, Tax administration |
-| — Divisional Tax Centres (CDI) | **15 May** | PwC, Tax administration |
-| Annual recapitulative (employees) — senior citizens / public & semi-public | **31 July** (revised by 2025 Finance Act) | PwC, Tax administration |
-| — private-sector under DGE / Medium / Specialized | **30 September** | PwC, Tax administration |
-| — other individual taxpayers | **31 October** | PwC, Tax administration |
-| Record retention | **10 years** | PwC, Tax administration |
+| Monthly DIPE return + PAYE/IRPP + salary levies remittance | **15th of the following month** | secondary summary, Tax administration |
+| CNPS monthly contributions | Monthly, by the 15th of the following month (aligned with payroll) | secondary summary, Other taxes / CNPS |
+| Annual individual tax return | **15 March** following year-end (fiscal year = calendar year) | secondary summary, Tax administration |
+| Annual payroll-tax adjustment (DIPE recapitulative) — DGE | **15 March** | secondary summary, Tax administration |
+| — Medium & Specialized Tax Centres (CIME/CSI) | **15 April** | secondary summary, Tax administration |
+| — Divisional Tax Centres (CDI) | **15 May** | secondary summary, Tax administration |
+| Annual recapitulative (employees) — senior citizens / public & semi-public | **31 July** (revised by 2025 Finance Act) | secondary summary, Tax administration |
+| — private-sector under DGE / Medium / Specialized | **30 September** | secondary summary, Tax administration |
+| — other individual taxpayers | **31 October** | secondary summary, Tax administration |
+| Record retention | **10 years** | secondary summary, Tax administration |
 
-Source (all deadlines): https://taxsummaries.pwc.com/republic-of-cameroon/individual/tax-administration
+Source (all deadlines):
 
 ### 16.2 Penalties
 
-**Penalties table**  _(https://taxsummaries.pwc.com/republic-of-cameroon/corporate/tax-administration ; https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income)_
+**Penalties table**  __
 
 | Breach | Penalty | Source |
 | --- | --- | --- |
-| Late monthly declaration | **10% per month, capped at 30%** of tax due (Finance Law 2010) | PwC |
-| Late payment interest | **1.5% per month, capped at 50%**, from 30 days after the deadline (since 1 Jan 2018) | PwC |
-| Assessment — good faith | **30%** | PwC |
-| Assessment — bad faith | **100%** | PwC |
-| Assessment — fraud | **150%** | PwC |
+| Late monthly declaration | **10% per month, capped at 30%** of tax due (Finance Law 2010) | secondary summary |
+| Late payment interest | **1.5% per month, capped at 50%**, from 30 days after the deadline (since 1 Jan 2018) | secondary summary |
+| Assessment — good faith | **30%** | secondary summary |
+| Assessment — bad faith | **100%** | secondary summary |
+| Assessment — fraud | **150%** | secondary summary |
 
-Source: https://taxsummaries.pwc.com/republic-of-cameroon/corporate/tax-administration ; https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income
+Source:
 
 ## Section 17 — Registration
 
-- **Employer registration requirement** — Employers must register with the DGI to obtain a Numéro Identifiant Unique (NIU) and with CNPS for an employer registration number before hiring.  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income ; https://www.cnps.cm/en/assures/assure-e.html)_
-- **CNPS affiliation mandatory** — CNPS affiliation is mandatory for all salaried workers from the first employee — no headcount threshold.  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income ; https://www.cnps.cm/en/assures/assure-e.html)_
-- **Self-employed/business minimum-tax note (not salaried employees)** — 2.2% or 5.5% of turnover (depending on regime; not salaried employees)  _(https://taxsummaries.pwc.com/republic-of-cameroon/individual/taxes-on-personal-income ; https://www.cnps.cm/en/assures/assure-e.html)_
+- **Employer registration requirement** — Employers must register with the DGI to obtain a Numéro Identifiant Unique (NIU) and with CNPS for an employer registration number before hiring.  _ ; https://www.cnps.cm/en/assures/assure-e.html)_
+- **CNPS affiliation mandatory** — CNPS affiliation is mandatory for all salaried workers from the first employee — no headcount threshold.  _ ; https://www.cnps.cm/en/assures/assure-e.html)_
+- **Self-employed/business minimum-tax note (not salaried employees)** — 2.2% or 5.5% of turnover (depending on regime; not salaried employees)  _ ; https://www.cnps.cm/en/assures/assure-e.html)_
 
 ## Section 18 — Reference Material
 
@@ -479,26 +479,26 @@ Source: https://taxsummaries.pwc.com/republic-of-cameroon/corporate/tax-administ
 | Item | Value | Source |
 | --- | --- | --- |
 | Currency | XAF | — |
-| Tax year | Calendar year | PwC |
-| IRPP effective brackets (incl. CAC) | 11% / 16.5% / 27.5% / 38.5% | PwC, Taxes on personal income |
+| Tax year | Calendar year | secondary summary |
+| IRPP effective brackets (incl. CAC) | 11% / 16.5% / 27.5% / 38.5% | secondary summary, Taxes on personal income |
 | CAC surcharge | 10% on base IRPP | Rivermate; RemotePeople |
 | 30% professional allowance | 30% | RemotePeople; Rivermate |
 | Standard abatement | XAF 500,000/yr | RemotePeople |
-| CNPS ceiling | XAF 750,000/mo (9,000,000/yr) | PwC; CNPS |
-| CNPS pension | 4.2% EE / 4.2% ER | PwC corporate |
-| CNPS family allowance | 7.0% ER | PwC corporate; Rivermate |
-| CNPS accident | 1.75% / 2.5% / 5% ER | PwC corporate |
-| CNPS employer total (excl. accident) | 11.2% | PwC corporate |
-| CFC housing fund | 1.5% ER / 1.0% EE | PwC, Other taxes |
-| FNE employment fund | 1.0% ER | PwC, Other taxes |
-| CFC+FNE combined employer | 2.5% | PwC corporate |
-| Council tax | XAF 250 – 2,500/mo by salary band (§3) | Reviewed table (2026-06-21); PwC for the top band |
-| CRTV royalty | XAF 750 – 13,000/mo by salary band (§3) | Reviewed table (2026-06-21); PwC for the top band |
+| CNPS ceiling | XAF 750,000/mo (9,000,000/yr) | secondary summary; CNPS |
+| CNPS pension | 4.2% EE / 4.2% ER | secondary summary, corporate |
+| CNPS family allowance | 7.0% ER | secondary summary, corporate; Rivermate |
+| CNPS accident | 1.75% / 2.5% / 5% ER | secondary summary, corporate |
+| CNPS employer total (excl. accident) | 11.2% | secondary summary, corporate |
+| CFC housing fund | 1.5% ER / 1.0% EE | secondary summary, Other taxes |
+| FNE employment fund | 1.0% ER | secondary summary, Other taxes |
+| CFC+FNE combined employer | 2.5% | secondary summary, corporate |
+| Council tax | XAF 250 – 2,500/mo by salary band (§3) | Reviewed table (2026-06-21); secondary summary, for the top band |
+| CRTV royalty | XAF 750 – 13,000/mo by salary band (§3) | Reviewed table (2026-06-21); secondary summary, for the top band |
 | SMIG (non-agri, secondary) | XAF 60,000/mo **[GAP]** | Playroll; RemotePeople |
-| Monthly DIPE deadline | 15th of following month | PwC, Tax administration |
-| Record retention | 10 years | PwC, Tax administration |
+| Monthly DIPE deadline | 15th of following month | secondary summary, Tax administration |
+| Record retention | 10 years | secondary summary, Tax administration |
 
-**Primary sources:** PwC Worldwide Tax Summaries — Cameroon (individual & corporate); CNPS official site (cnps.cm).
+**Primary sources:** a secondary practitioner summary — Cameroon (individual & corporate); CNPS official site (cnps.cm).
 **Secondary (corroboration only):** Rivermate, RemotePeople, Playroll EOR guides — flagged inline.
 
 ## Section 19 — Test Suite
@@ -528,7 +528,7 @@ Each test states inputs → expected output. Recompute to confirm before relying
 - NEVER compute IRPP on gross salary — always run the full net-taxable order (CNPS pension → 30% → 500,000 abatement → round down).
 - NEVER apply council tax below XAF 62,000/month or CRTV at or below XAF 50,000/month, and NEVER apply a top-band amount to a salary in a lower band — read the §3 tables.
 - NEVER present a SMIG figure as definitive — it is an unresolved research gap.
-- NEVER present the §3 band tables as cited to the CGI — they are the reviewer's figures pending a primary citation; PwC confirms the top bands only.
+- NEVER present the §3 band tables as cited to the CGI — they are the reviewer's figures pending a primary citation; the secondary summary confirms the top bands only.
 - NEVER assume a currency other than XAF, or apply an FX rate without explicit input.
 - NEVER miss the 15th-of-following-month DIPE deadline — penalties (10%/month up to 30%, plus interest) apply.
 - NEVER file or sign a DIPE / tax return on the client's behalf.

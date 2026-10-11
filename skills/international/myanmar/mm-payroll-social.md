@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Myanmar (ta
 jurisdiction: MM
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,16 +16,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Payroll withholding and social security
 
 - **Employer registration and withholding obligation** — Employers with 5 or more workers must register with the Social Security Board (SSB) and contribute under the Social Security Law 2012. Employers also withhold personal income tax from salaries monthly and remit it to the IRD.  _(Social Security Law 2012)_
-- **SSB coverage requirement** — Mandatory for establishments employing 5 or more workers  _(Social Security Law 2012 (https://taxsummaries.pwc.com/myanmar/individual/other-taxes))_
-- **Employer SSB contribution rate** — 3% of the employee's monthly salary  _(Social Security Law 2012 (https://taxsummaries.pwc.com/myanmar/individual/other-taxes))_
-- **Employee SSB contribution rate** — 2% of the employee's monthly salary  _(Social Security Law 2012 (https://taxsummaries.pwc.com/myanmar/individual/other-taxes))_
+- **SSB coverage requirement** — Mandatory for establishments employing 5 or more workers  _(Social Security Law 2012, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Employer SSB contribution rate** — 3% of the employee's monthly salary  _(Social Security Law 2012, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Employee SSB contribution rate** — 2% of the employee's monthly salary  _(Social Security Law 2012, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Insurable monthly wage cap** — 300,000 MMK (per month)  _(Social Security Law 2012 (https://www.qhrm.io/qhrm-blog/myanmar-ssb-contribution-rates-2026))_
 - **Maximum employer contribution** — 9,000 MMK per month (3% x 300,000 MMK cap) (per month)  _(Social Security Law 2012 (https://www.qhrm.io/qhrm-blog/myanmar-ssb-contribution-rates-2026))_
 - **Maximum employee contribution** — 6,000 MMK per month (2% x 300,000 MMK cap) (per month)  _(Social Security Law 2012 (https://www.qhrm.io/qhrm-blog/myanmar-ssb-contribution-rates-2026))_
 - **SSB remittance deadline** — Contributions payable by the 15th of the following month  _(Social Security Law 2012 (https://www.qhrm.io/qhrm-blog/myanmar-ssb-contribution-rates-2026))_
-- **Salary income tax withholding** — Employers withhold personal income tax monthly from employees' salaries and remit to the IRD  _(Income Tax Law (Myanmar) (https://taxsummaries.pwc.com/myanmar/individual/taxes-on-personal-income))_
-- **Salary tax remittance deadline** — Withheld salary tax remitted to the IRD within 15 days from the date of deduction (approx — confirm)  _(Income Tax Law (Myanmar) (https://taxsummaries.pwc.com/myanmar/corporate/withholding-taxes))_
-- **Annual salary statement** — Employers file an annual statement of salaries paid and tax withheld after the end of the financial year  _(Income Tax Law (Myanmar) (https://taxsummaries.pwc.com/myanmar/individual/taxes-on-personal-income))_
+- **Salary income tax withholding** — Employers withhold personal income tax monthly from employees' salaries and remit to the IRD  _(Income Tax Law (Myanmar), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Salary tax remittance deadline** — Withheld salary tax remitted to the IRD within 15 days from the date of deduction (approx — confirm)  _(Income Tax Law (Myanmar), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Annual salary statement** — Employers file an annual statement of salaries paid and tax withheld after the end of the financial year  _(Income Tax Law (Myanmar), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 <!-- openaccountants-cta-block -->
 

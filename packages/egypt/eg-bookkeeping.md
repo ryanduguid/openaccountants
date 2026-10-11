@@ -1,10 +1,10 @@
 ---
 name: eg-bookkeeping
 description: Use this skill whenever asked about Egyptian record-keeping, bookkeeping, or the mandatory ETA digital systems for self-employed people, sole proprietors (منشأة فردية), and professionals (أصحاب المهن الحرة). Trigger on phrases like "Egypt e-invoicing", "الفاتورة الإلكترونية", "ETA e-receipt", "الإيصال الإلكتروني", "bookkeeping Egypt", "records sole proprietor Egypt", "EGS item coding", "digital signature ETA", "what books must I keep in Egypt", or any request to set up, review, or explain the books and records an Egyptian self-employed taxpayer must keep. ALWAYS read this skill before touching any Egyptian record-keeping or e-invoicing/e-receipt work.
-version: 1.1
+version: 1.2
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # EG Bookkeeping
 
-## Egypt Record-Keeping & Bookkeeping (مسك الدفاتر والسجلات) Skill v1.1
+## Egypt Record-Keeping & Bookkeeping (مسك الدفاتر والسجلات) Skill v1.2
 
 This skill explains the books, records, and **mandatory digital systems** an Egyptian self-employed person, sole proprietor (منشأة فردية), or professional (صاحب مهنة حرة) must maintain. Egypt has moved aggressively to a fully digital tax ecosystem: the **e-invoicing system (منظومة الفاتورة الإلكترونية)** for B2B/B2G, and the **e-receipt system (منظومة الإيصال الإلكتروني)** for B2C. Being inside these systems is now a precondition for deducting input VAT and for deducting costs. Reply to the user in their own language (English or Arabic).
 
@@ -36,7 +36,7 @@ This skill explains the books, records, and **mandatory digital systems** an Egy
 | Digital signature | Required for e-invoices (HSM / USB token / approved cloud signing) |
 | Record retention | **5 years** (per Unified Tax Procedures Law) — *verify current value; some advisers cite 7 years* |
 | Quality tier | **Research-verified — pending sign-off by an Egyptian accountant (محاسب قانوني)** |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 - **Country** — Egypt (جمهورية مصر العربية)
 - **Scope** — Self-employed individuals, sole proprietors (منشأة فردية), and professionals (مهن حرة). Not large corporates, banks, or regulated sectors.
@@ -178,7 +178,7 @@ A retailer with EGP 4 million annual turnover opts into Law No. 6 of 2025 (turno
 - SME tax incentives **Law No. 6 of 2025** (simplified regime).
 - ETA Decisions **123/2025, 225/2025, 281/2025** (e-receipt phases / threshold).
 - GS1 Egypt (gs1eg.org) — GTIN/EGS/GPC item coding.
-- PwC *Worldwide Tax Summaries — Egypt*; KPMG / EY / Grant Thornton tax alerts (2025–2026).
+- Secondary practitioner summary (link removed) *Worldwide Tax Summaries — Egypt*; KPMG / EY / Grant Thornton tax alerts (2025–2026).
 
 ### Checklist for the AI before answering
 
@@ -203,7 +203,7 @@ A retailer with EGP 4 million annual turnover opts into Law No. 6 of 2025 (turno
 
 ## Disclaimer
 
-This skill is **research-verified** against public Egyptian Tax Authority material and reputable secondary sources (PwC, KPMG, EY, Grant Thornton, GS1 Egypt) as of **May 2026**, but it has **not yet been signed off by a qualified Egyptian accountant (محاسب قانوني)**. Egypt's e-invoicing and e-receipt rules, thresholds, phase dates, penalties, and retention periods change frequently by ETA decision. Treat every figure marked "verify" as provisional and confirm it on **eta.gov.eg** or with a licensed Egyptian tax professional before relying on it. This is general information, not tax advice, and must be reviewed by a qualified human before filing or acting. Part of **openaccountants.com** — an open-source library of tax skills for AI agents serving self-employed people.
+This skill is **research-verified** against public Egyptian Tax Authority material and reputable secondary sources (secondary summary, KPMG, EY, Grant Thornton, GS1 Egypt) as of **May 2026**, but it has **not yet been signed off by a qualified Egyptian accountant (محاسب قانوني)**. Egypt's e-invoicing and e-receipt rules, thresholds, phase dates, penalties, and retention periods change frequently by ETA decision. Treat every figure marked "verify" as provisional and confirm it on **eta.gov.eg** or with a licensed Egyptian tax professional before relying on it. This is general information, not tax advice, and must be reviewed by a qualified human before filing or acting. Part of **openaccountants.com** — an open-source library of tax skills for AI agents serving self-employed people.
 
 <!-- openaccountants-cta-block -->
 

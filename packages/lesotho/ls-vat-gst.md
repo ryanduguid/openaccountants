@@ -4,8 +4,8 @@ description: "Source-cited draft: vat / gst for Lesotho (tax year 2025) — rate
 jurisdiction: LS
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Voluntary registration** — Permitted below the threshold where statutory requirements are met  _(Value Added Tax Act 2001 (https://www.rsl.org.ls/value-added-tax-vat))_
 - **VAT filing frequency** — Monthly  _(Value Added Tax Act 2001 (https://www.rsl.org.ls/value-added-tax-vat))_
 - **VAT return & payment deadline** — 20th of the month following the tax period  _(Value Added Tax Act 2001 (https://www.rsl.org.ls/value-added-tax-vat))_
-- **Reverse charge on imported services** — Recipient of imported services accounts for VAT under a reverse-charge mechanism where the supply would be taxable if made in Lesotho (approx — confirm scope)  _(Value Added Tax Act 2001 (https://www.pwc.co.za/en/publications/vat-in-africa/lesotho-overview.html))_
+- **Reverse charge on imported services** — Recipient of imported services accounts for VAT under a reverse-charge mechanism where the supply would be taxable if made in Lesotho (approx — confirm scope)  _(Value Added Tax Act 2001 (Lesotho), imported services provisions, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **E-invoicing** — Electronic invoicing being rolled out under VAT e-invoicing regulations (approx — confirm go-live and scope)  _(VAT (E-Invoicing) Regulations (https://www.vatcalc.com/lesotho/lesotho-e-invoicing-plans/))_
 
 <!-- openaccountants-cta-block -->

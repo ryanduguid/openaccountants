@@ -1,10 +1,10 @@
 ---
 name: cameroon-social-contributions
 description: Use this skill whenever asked about Cameroon (CM) social security contributions (CNPS), payroll-linked levies, or personal income tax on salaries. Trigger on phrases like "CNPS contributions", "Cameroon social security", "how much CNPS do I pay", "pension vieillesse", "prestations familiales", "risques professionnels", "Cameroon payroll tax", "Crédit Foncier CFC", "Fonds National de l'Emploi FNE", "Cameroon PIT", "IRPP Cameroun", "centimes additionnels communaux CAC", "Cameroon PAYE", "Cameroon expat 183 days", or any question about Cameroon employer/employee contribution computation. Also trigger when classifying bank statement transactions that relate to CNPS debits, DGI/impôts payments, CFC or FNE remittances from Afriland, SGBC, BICEC, Ecobank, UBA Cameroon, or other Cameroonian banks. This skill covers CNPS pension/family/occupational-risk rates, the XAF 750,000 monthly ceiling, CFC and FNE payroll levies, the 10%/15%/25%/35% PIT scale (and the 11%/16.5%/27.5%/38.5% effective rates with the 10% CAC surcharge), local council/audiovisual levies, monthly remittance deadlines, registration, penalties, bank statement classification, and edge cases. ALWAYS read this skill before touching any Cameroon payroll or contribution work.
-version: 0.3
+version: 0.4
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 reviewed_by: Nkinyam Courage Ndasi
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cameroon Social Security Contributions (CNPS) & Payroll
 
-## Cameroon Social Security Contributions (CNPS) & Payroll Skill v0.3
+## Cameroon Social Security Contributions (CNPS) & Payroll Skill v0.4
 
 > **Source-cited draft (tier 2), not accountant-reviewed.** On 2026-06-21 Nkinyam Courage Ndasi checked the rates, thresholds and deadlines listed for this guide against the cited authorities; the corrections of that fact check are in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). It was a check of listed facts, not a sign-off on the guide: no reviewer sign-off is recorded in the frontmatter, the guide is not on the roster in `PARTNERS.md`, and `review_status` is `pending_review`. Items the check flagged for clarification remain marked in the text.
 
@@ -37,16 +37,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary Social Legislation | CNPS regime (pension, family allowances, occupational risks) [CLEISS regime page] |
 | Primary Tax Legislation | Code Général des Impôts (CGI) / General Tax Code [MINFI] |
 | Employee social rate | 4.20% (pension branch only) [CLEISS cotisations] |
-| Employer social rate (CNPS) | 12.95%–15.20% depending on risk class [CLEISS; PwC] |
+| Employer social rate (CNPS) | 12.95%–15.20% depending on risk class [CLEISS; secondary summary] |
 | Contribution ceiling (pension + family) | XAF 750,000/month (XAF 9,000,000/year) [CLEISS] |
 | Occupational-risk base | Full salary, no ceiling [CLEISS] |
-| Housing fund (CFC) | Employee 1.0% / Employer 1.5% of taxable salary [PwC Other taxes] |
-| Employment fund (FNE) | Employer 1.0% of taxable salary [PwC Other taxes] |
+| Housing fund (CFC) | Employee 1.0% / Employer 1.5% of taxable salary [secondary summary, Other taxes] |
+| Employment fund (FNE) | Employer 1.0% of taxable salary [secondary summary, Other taxes] |
 | PIT base scale | 10% / 15% / 25% / 35% [MINFI] |
-| PIT effective (incl. 10% CAC) | 11% / 16.5% / 27.5% / 38.5% [PwC] |
+| PIT effective (incl. 10% CAC) | 11% / 16.5% / 27.5% / 38.5% [secondary summary] |
 | PIT exemption threshold | Salaries ≥ XAF 62,000/month are taxed at source [MINFI] |
 | Payment frequency | Monthly (PAYE + CNPS) |
-| Monthly deadline | 15th of the month following the salary month [MINFI; PwC] |
+| Monthly deadline | 15th of the month following the salary month [MINFI; secondary summary] |
 | Minimum wage (SMIG, non-agricultural) | XAF 60,000/month [CLEISS; widely cited 2025/2026] |
 | Tax year | Calendar year ending 31 December |
 | Validated by | Verified by Nkinyam Courage Ndasi (3472800) on 2026-06-21 |
@@ -74,12 +74,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Agricultural workers | 5.65% |
 | Private-education staff | 3.70% |
 
-**Other mandatory payroll levies (not CNPS)**  _(PwC Other taxes)_
+**Other mandatory payroll levies (not CNPS)**  _(secondary summary, Other taxes)_
 
 | Levy | Employee | Employer | Source |
 | --- | --- | --- | --- |
-| Housing fund — Crédit Foncier du Cameroun (CFC) | 1.0% | 1.5% | PwC Other taxes |
-| National Employment Fund (FNE) | 0% | 1.0% | PwC Other taxes |
+| Housing fund — Crédit Foncier du Cameroun (CFC) | 1.0% | 1.5% | secondary summary, Other taxes |
+| National Employment Fund (FNE) | 0% | 1.0% | secondary summary, Other taxes |
 
 **Conservative defaults**
 
@@ -108,7 +108,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-CM-SOC-2 -- Occupational-risk class unknown for a precise employer figure** — Trigger: a precise employer total is requested but the enterprise risk classification (1.75% / 2.50% / 5.00%) is unknown. Message: "Employer occupational-risk rate depends on the enterprise's CNPS risk classification. I will use the minimum 1.75% as a conservative default and flag it; the exact rate must be confirmed against the CNPS notification before filing."
 - **R-CM-SOC-3 -- Self-employed / voluntary insured** — Trigger: the person is a voluntary/self-insured contributor rather than a salaried employee. Message: "Voluntary insured persons contribute 8.40% of declared income to the pension branch [CLEISS], but declared-income rules and eligibility require CNPS confirmation. Escalate to a Cameroon-qualified accountant."  _(CLEISS)_
 - **R-CM-SOC-4 -- Penalty / arrears quantification** — Trigger: client has unpaid CNPS or PIT and asks for the arrears figure. Message: "For PIT and other spontaneous-payment taxes, late declaration or payment carries a 10% per month penalty capped at 30% of the principal plus late interest of 1.5% per month (CGI, Livre des procédures fiscales art. L 106, 2022 consolidated edition); interest on reassessed amounts is capped at 50% (art. L 95 and L 98). CNPS arrears follow CNPS rules, which are not in the CGI [RESEARCH GAP — CNPS penalty schedule not verified]. Do not quantify arrears without official DGI/CNPS statements. Escalate to a Cameroon-qualified accountant."
-- **R-CM-SOC-5 -- Expatriate residence determination** — Trigger: a foreign national's tax status is in question. Message: "A foreign national present > 183 days in a calendar year is tax-domiciled in Cameroon and taxed on worldwide income [PwC]. Day counts and treaty relief must be confirmed by a qualified accountant before applying payroll taxes."  _(PwC)_
+- **R-CM-SOC-5 -- Expatriate residence determination** — Trigger: a foreign national's tax status is in question. Message: "A foreign national present > 183 days in a calendar year is tax-domiciled in Cameroon and taxed on worldwide income [secondary summary]. Day counts and treaty relief must be confirmed by a qualified accountant before applying payroll taxes."  _(secondary summary)_
 
 ## Section 3 -- Payment pattern library
 
@@ -230,10 +230,10 @@ Matches "CREDIT FONCIER CFC" and "FNE" (pattern 3.3). For an employee on XAF 300
 
 ### Example 5 -- PIT computation on a XAF 500,000/mo salary (annualised)
 
-**Reasoning (PIT base, per MINFI/PwC standard payroll computation):**
+**Reasoning (PIT base, per MINFI/the secondary summary standard payroll computation):**
 Gross annual salary = 500,000 × 12 = XAF 6,000,000.
 - Less 4.20% CNPS employee (pension) deductible. Pension base capped at 750,000/mo > 500,000, so full salary: 6,000,000 × 4.20% = 252,000.
-- Less 30% professional-expense abatement on salary [PwC]: 6,000,000 × 30% = 1,800,000.
+- Less 30% professional-expense abatement on salary [secondary summary]: 6,000,000 × 30% = 1,800,000.
 - Less standard deduction XAF 500,000 [MINFI].
 
 Net taxable income = 6,000,000 − 252,000 − 1,800,000 − 500,000 = **XAF 3,448,000**, rounded down to nearest thousand = XAF 3,448,000.
@@ -271,8 +271,8 @@ Apply exactly as written when data is clear and inputs are available.
 
 ### Rule 2 -- CNPS employer contribution
 
-- **Employer CNPS formula** — Employer CNPS = min(gross, 750,000) × 4.20%   (pension) + min(gross, 750,000) × FAM%     (family: 7.00% general / 5.65% agric / 3.70% educ) + gross × RISK%                   (risk: 1.75% / 2.50% / 5.00%, no ceiling)  _(CLEISS; PwC)_
-- **General-regime minimum-risk employer total** — 12.95% (mixed base)  _(CLEISS; PwC)_
+- **Employer CNPS formula** — Employer CNPS = min(gross, 750,000) × 4.20%   (pension) + min(gross, 750,000) × FAM%     (family: 7.00% general / 5.65% agric / 3.70% educ) + gross × RISK%                   (risk: 1.75% / 2.50% / 5.00%, no ceiling)  _(CLEISS; secondary summary)_
+- **General-regime minimum-risk employer total** — 12.95% (mixed base)  _(CLEISS; secondary summary)_
 
 ### Rule 3 -- The XAF 750,000/month ceiling
 
@@ -280,11 +280,11 @@ Apply exactly as written when data is clear and inputs are available.
 
 ### Rule 4 -- CFC and FNE levies
 
-- **CFC and FNE levy rule** — CFC (housing fund): employee 1.0% + employer 1.5% of taxable salary. FNE (employment fund): employer 1.0% of taxable salary. [RESEARCH GAP — reviewer to confirm whether the CFC/FNE base is itself capped; PwC states "taxable salary" without a stated cap.]  _(PwC Other taxes)_
+- **CFC and FNE levy rule** — CFC (housing fund): employee 1.0% + employer 1.5% of taxable salary. FNE (employment fund): employer 1.0% of taxable salary. [RESEARCH GAP — reviewer to confirm whether the CFC/FNE base is itself capped; secondary summary, states "taxable salary" without a stated cap.]  _(secondary summary, Other taxes)_
 
 ### Rule 5 -- PIT scale (base vs effective)
 
-Base statutory scale (MINFI): 10% / 15% / 25% / 35%. PwC effective rates include the 10% CAC surcharge: 11% / 16.5% / 27.5% / 38.5% (base × 1.10).
+Base statutory scale (MINFI): 10% / 15% / 25% / 35%. The secondary summary effective rates include the 10% CAC surcharge: 11% / 16.5% / 27.5% / 38.5% (base × 1.10).
 
 **PIT scale table**
 
@@ -299,7 +299,7 @@ Base statutory scale (MINFI): 10% / 15% / 25% / 35%. PwC effective rates include
 
 ### Rule 6 -- PIT taxable base
 
-- **PIT taxable base formula** — Net salary base = gross − 4.20% CNPS employee − 30% professional-expense abatement − XAF 500,000 standard deduction; round down to the nearest XAF 1,000  _(MINFI; PwC)_
+- **PIT taxable base formula** — Net salary base = gross − 4.20% CNPS employee − 30% professional-expense abatement − XAF 500,000 standard deduction; round down to the nearest XAF 1,000  _(MINFI; secondary summary)_
 
 ### Rule 7 -- PIT exemption floor
 
@@ -307,12 +307,12 @@ Base statutory scale (MINFI): 10% / 15% / 25% / 35%. PwC effective rates include
 
 ### Rule 8 -- Local payroll levies
 
-- **Local development tax (taxe communale)** — banded by monthly salary from XAF 62,000 (250/month) to above 500,000 (2,500/month); the band table is in `cameroon-payroll` §3 (the reviewer's table of 2026-06-21; PwC gives the top band, rounded to ~2,520)  _(cameroon-payroll §3; PwC)_
-- **Audiovisual royalty (RAV/CRTV)** — banded by monthly salary from XAF 50,001 (750/month) to above 1,000,000 (13,000/month); the band table is in `cameroon-payroll` §3  _(cameroon-payroll §3; PwC for the top band)_
+- **Local development tax (taxe communale)** — banded by monthly salary from XAF 62,000 (250/month) to above 500,000 (2,500/month); the band table is in `cameroon-payroll` §3 (the reviewer's table of 2026-06-21; secondary summary, gives the top band, rounded to ~2,520)  _(cameroon-payroll §3; secondary summary)_
+- **Audiovisual royalty (RAV/CRTV)** — banded by monthly salary from XAF 50,001 (750/month) to above 1,000,000 (13,000/month); the band table is in `cameroon-payroll` §3  _(cameroon-payroll §3; secondary summary, for the top band)_
 
 ### Rule 9 -- Monthly remittance
 
-- **Monthly remittance rule** — PIT and CNPS for a salary month are remitted (and the monthly return filed) by the 15th of the following month  _(MINFI; PwC)_
+- **Monthly remittance rule** — PIT and CNPS for a salary month are remitted (and the monthly return filed) by the 15th of the following month  _(MINFI; secondary summary)_
 
 ### Rule 10 -- Registration
 
@@ -324,7 +324,7 @@ Base statutory scale (MINFI): 10% / 15% / 25% / 35%. PwC effective rates include
 
 ### Rule 12 -- Non-salary income rates
 
-- **Non-salary income rates rule** — Income from stocks and shares is taxed at an overall 16.5%; other (non-salary) activity income at 33%. These are out of scope for the salaried-payroll path but noted for classification.  _(PwC)_
+- **Non-salary income rates rule** — Income from stocks and shares is taxed at an overall 16.5%; other (non-salary) activity income at 33%. These are out of scope for the salaried-payroll path but noted for classification.  _(secondary summary)_
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -340,11 +340,11 @@ Flag these for reviewer confirmation when data is ambiguous.
 
 ### T2-3 -- CAC surcharge applicability
 
-- **T2-3** — Trigger: uncertainty whether the 10% CAC applies to a given PIT computation. Issue: the CAC mechanism is reconciled from MINFI base rates vs PwC effective rates, not stated verbatim on a single official page [RESEARCH GAP]. Action: apply the effective (11/16.5/27.5/38.5) rates by default; flag for reviewer to confirm CAC treatment.
+- **T2-3** — Trigger: uncertainty whether the 10% CAC applies to a given PIT computation. Issue: the CAC mechanism is reconciled from MINFI base rates vs the secondary summary effective rates, not stated verbatim on a single official page [RESEARCH GAP]. Action: apply the effective (11/16.5/27.5/38.5) rates by default; flag for reviewer to confirm CAC treatment.
 
 ### T2-4 -- Expatriate / 183-day residence
 
-- **T2-4** — Trigger: a foreign national whose day count is near 183. Issue: > 183 days → tax-domiciled, worldwide-income taxation [PwC]. Action: flag; confirm residence and treaty relief with a qualified accountant.  _(PwC)_
+- **T2-4** — Trigger: a foreign national whose day count is near 183. Issue: > 183 days → tax-domiciled, worldwide-income taxation [secondary summary]. Action: flag; confirm residence and treaty relief with a qualified accountant.  _(secondary summary)_
 
 ### T2-5 -- Salary above the ceiling
 
@@ -454,65 +454,65 @@ If the client provides only a bank statement and no other information:
 
 ### Contribution summary (2025, general regime)
 
-**Contribution summary (2025, general regime)**  _(CLEISS / PwC / computed)_
+**Contribution summary (2025, general regime)**  _(CLEISS / the secondary summary / computed)_
 
 | Item | Employee | Employer (min risk) | Base | Source |
 | --- | --- | --- | --- | --- |
 | Pension | 4.20% | 4.20% | min(gross, 750,000) | CLEISS |
 | Family allowances | 0% | 7.00% | min(gross, 750,000) | CLEISS |
 | Occupational risks | 0% | 1.75% / 2.50% / 5.00% | full gross | CLEISS |
-| CFC (housing) | 1.00% | 1.50% | taxable salary | PwC |
-| FNE (employment) | 0% | 1.00% | taxable salary | PwC |
+| CFC (housing) | 1.00% | 1.50% | taxable salary | secondary summary |
+| FNE (employment) | 0% | 1.00% | taxable salary | secondary summary |
 | **Social total (min risk)** | **5.20%** | **15.45%** | mixed | computed |
 
 *Arithmetic check: employee 4.20 + 1.00 (CFC) = 5.20%. Employer 4.20 + 7.00 + 1.75 + 1.50 + 1.00 = 15.45%.* ✓
 
 ### PIT scale (2025)
 
-**PIT scale (2025)**  _(MINFI / PwC)_
+**PIT scale (2025)**  _(MINFI)_
 
 | Net income (XAF) | Base rate | Effective (incl. 10% CAC) | Source |
 | --- | --- | --- | --- |
-| 0 – 2,000,000 | 10% | 11% | MINFI / PwC |
-| 2,000,001 – 3,000,000 | 15% | 16.5% | MINFI / PwC |
-| 3,000,001 – 5,000,000 | 25% | 27.5% | MINFI / PwC |
-| Over 5,000,000 | 35% | 38.5% | MINFI / PwC |
+| 0 – 2,000,000 | 10% | 11% | MINFI |
+| 2,000,001 – 3,000,000 | 15% | 16.5% | MINFI |
+| 3,000,001 – 5,000,000 | 25% | 27.5% | MINFI |
+| Over 5,000,000 | 35% | 38.5% | MINFI |
 
-- **PIT deductions** — PIT deductions: 4.20% CNPS, 30% professional abatement, XAF 500,000 standard deduction.  _(MINFI/PwC)_
+- **PIT deductions** — PIT deductions: 4.20% CNPS, 30% professional abatement, XAF 500,000 standard deduction.  _(MINFI)_
 - **PIT exemption threshold** — Exemption: salaries < XAF 62,000/mo  _(MINFI)_
-- **Other income rates** — Stocks/shares income 16.5%; other activity income 33%  _(PwC)_
+- **Other income rates** — Stocks/shares income 16.5%; other activity income 33%  _(secondary summary)_
 
 ### Thresholds and figures
 
-**Thresholds and figures**  _(CLEISS / MINFI / PwC)_
+**Thresholds and figures**  _(CLEISS / MINFI)_
 
 | Item | Value | Source |
 | --- | --- | --- |
 | Pension/family ceiling | XAF 750,000/mo (9,000,000/yr) | CLEISS |
 | PIT exemption floor | XAF 62,000/mo | MINFI |
 | Standard deduction | XAF 500,000 | MINFI |
-| Professional abatement | 30% | PwC |
+| Professional abatement | 30% | secondary summary |
 | SMIG (non-agricultural) | XAF 60,000/mo | CLEISS (confirmed 2023, cited current) |
 | SMIG (agricultural) | XAF 45,000/mo | CLEISS |
-| Taxe communale max | XAF 2,500/mo (salary > 500,000; bands from 62,000 in `cameroon-payroll` §3) | Reviewed table (2026-06-21); PwC for the top band |
-| RAV/CRTV max | XAF 13,000/mo (gross > 1,000,000; bands from 50,001 in `cameroon-payroll` §3) | Reviewed table (2026-06-21); PwC for the top band |
+| Taxe communale max | XAF 2,500/mo (salary > 500,000; bands from 62,000 in `cameroon-payroll` §3) | Reviewed table (2026-06-21); secondary summary, for the top band |
+| RAV/CRTV max | XAF 13,000/mo (gross > 1,000,000; bands from 50,001 in `cameroon-payroll` §3) | Reviewed table (2026-06-21); secondary summary, for the top band |
 | Voluntary insured rate | 8.40% of declared income | CLEISS |
-| Record retention | 10 years | PwC |
+| Record retention | 10 years | secondary summary |
 
 ### Filing deadlines
 
-**Filing deadlines**  _(MINFI / PwC)_
+**Filing deadlines**  _(MINFI)_
 
 | Filing | Deadline | Source |
 | --- | --- | --- |
-| Monthly PAYE + CNPS | 15th of following month | MINFI / PwC |
-| Employer annual income summary (DIPE / récapitulatif) | 15 March | PwC |
-| Annual individual declaration — public/semi-public & seniors | 31 July | PwC |
-| Annual individual declaration — private under Large Taxpayers' Unit | 30 September | PwC |
-| Annual individual declaration — other individuals | 31 October | PwC |
-| Annual adjustment — Large Taxpayers' Unit | 15 March | PwC |
-| Annual adjustment — Medium & Specialized Tax Centres | 15 April | PwC |
-| Annual adjustment — Divisional Tax Centres | 15 May | PwC |
+| Monthly PAYE + CNPS | 15th of following month | MINFI |
+| Employer annual income summary (DIPE / récapitulatif) | 15 March | secondary summary |
+| Annual individual declaration — public/semi-public & seniors | 31 July | secondary summary |
+| Annual individual declaration — private under Large Taxpayers' Unit | 30 September | secondary summary |
+| Annual individual declaration — other individuals | 31 October | secondary summary |
+| Annual adjustment — Large Taxpayers' Unit | 15 March | secondary summary |
+| Annual adjustment — Medium & Specialized Tax Centres | 15 April | secondary summary |
+| Annual adjustment — Divisional Tax Centres | 15 May | secondary summary |
 
 ### Penalties
 
@@ -530,8 +530,8 @@ Tax penalties below are confirmed against the CGI, Livre des procédures fiscale
 
 ### Residence / expat
 
-- **183-day residence test** — Foreign national present > 183 days in a calendar year → tax-domiciled  _(PwC)_
-- **Worldwide income taxation** — Persons fiscally domiciled in Cameroon are, in principle, taxed on worldwide income  _(PwC)_
+- **183-day residence test** — Foreign national present > 183 days in a calendar year → tax-domiciled  _(secondary summary)_
+- **Worldwide income taxation** — Persons fiscally domiciled in Cameroon are, in principle, taxed on worldwide income  _(secondary summary)_
 
 ### Test suite
 

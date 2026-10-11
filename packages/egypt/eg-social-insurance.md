@@ -1,10 +1,10 @@
 ---
 name: eg-social-insurance
 description: Use this skill whenever asked about Egypt social insurance contributions for an employee, employer, or self-employed business owner, professional, craftsman, merchant, farmer, freelancer, or irregular worker. Trigger on phrases like "Egypt social insurance", "التأمينات الاجتماعية", "social insurance contributions Egypt", "self-employed social insurance Egypt", "Law 148 2019", "NOSI", "insurance wage Egypt", "comprehensive social insurance scheme", "تأمين أصحاب الأعمال", or any request to compute, classify, or advise on Egyptian social insurance obligations. Distinguishes employee, employer, and self-employed contributions. ALWAYS read this skill before touching any Egypt social insurance work.
-version: 1.0
+version: 1.1
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # EG Social Insurance
 
-## Egypt Social Insurance (التأمينات الاجتماعية) Skill v1.0
+## Egypt Social Insurance (التأمينات الاجتماعية) Skill v1.1
 
 Social insurance in Egypt is governed by the **Social Insurance and Pensions Law No. 148 of 2019** (قانون التأمينات الاجتماعية والمعاشات رقم ١٤٨ لسنة ٢٠١٩), effective 1 January 2020. It is administered by the **National Organization for Social Insurance — NOSI** (الهيئة القومية للتأمين الاجتماعي), under the Ministry of Finance / Ministry of Social Solidarity (وزارة التضامن الاجتماعي).
 
@@ -48,7 +48,7 @@ This skill covers contribution computation for three distinct payer types:
 | Late-payment penalty | treasury-bill average rate (prior month) **+ 2%** on overdue amounts — *verify* |
 | Payment deadline | by the **15th of the month following** the contribution month |
 | Quality tier | **Research-verified — pending sign-off by an Egyptian accountant** |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 - **Employee share** — 11% percent of insurance wage
 - **Employer share** — 18.75% percent of insurance wage
@@ -196,7 +196,7 @@ A managing partner whose name is in the company's commercial register is insured
 
 - Social Insurance and Pensions Law No. **148 of 2019** and its Executive Regulations (اللائحة التنفيذية).
 - **NOSI** — National Organization for Social Insurance (الهيئة القومية للتأمين الاجتماعي). Verify min/max wage and rates each January.
-- **PwC Worldwide Tax Summaries — Egypt, Individual / Other taxes** (employee 11%, employer 18.75%, 2026 min EGP 2,700 / max EGP 16,700, board flat 21%).
+- **Secondary practitioner summary (link removed) — Egypt, Individual / Other taxes** (employee 11%, employer 18.75%, 2026 min EGP 2,700 / max EGP 16,700, board flat 21%).
 - **BDO**, **Mercans**, **Fragomen** statutory alerts on the January 2026 insurable wage increase.
 - Cross-reference: **eg-payroll** (employer remittance + income-tax interaction), **egypt-vat** (indirect tax for the same self-employed client).
 
@@ -221,7 +221,7 @@ A managing partner whose name is in the company's commercial register is insured
 
 ## Disclaimer
 
-This skill is **research-verified** against NOSI, the Social Insurance and Pensions Law No. 148 of 2019, PwC Worldwide Tax Summaries, and Big-4 / payroll-provider statutory alerts, current as of **May 2026 for tax year 2026**. Social insurance is a **Your-Money-or-Your-Life (YMYL)** domain: the minimum and maximum insurance wages are re-indexed by 15% every January, and rates or subsidy rules may change. **Every output must be reviewed and signed off by a qualified Egyptian accountant (محاسب قانوني) before reliance or submission.** Where a current value cannot be confirmed, the skill provides the formula and flags "verify current value."
+This skill is **research-verified** against NOSI, the Social Insurance and Pensions Law No. 148 of 2019, a secondary practitioner summary, and Big-4 / payroll-provider statutory alerts, current as of **May 2026 for tax year 2026**. Social insurance is a **Your-Money-or-Your-Life (YMYL)** domain: the minimum and maximum insurance wages are re-indexed by 15% every January, and rates or subsidy rules may change. **Every output must be reviewed and signed off by a qualified Egyptian accountant (محاسب قانوني) before reliance or submission.** Where a current value cannot be confirmed, the skill provides the formula and flags "verify current value."
 
 Part of **openaccountants.com** — open-source tax skills for the self-employed.
 

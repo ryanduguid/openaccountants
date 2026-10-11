@@ -13,11 +13,11 @@ description: >
   in the user's language (Russian, Kazakh, or English). Does NOT cover individual income
   tax (ИПН), VAT (НДС), corporate tax, or the simplified declaration mechanics themselves —
   this skill only computes the social-payment layer that sits on top of any regime.
-version: 1.0
+version: 1.1
 jurisdiction: KZ
 tax_year: 2026
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-11
 category: international
 depends_on: [social-contributions-workflow-base]
 ---
@@ -150,7 +150,7 @@ employs staff pays both for themselves and for each employee).
 
 - **Employee withholding:** **2%** of income (cap 20 МЗП monthly base).
 - **Employer contribution:** **3%** of employee income in 2026 (income cap 10 МЗП per
-  employee → max base 850,000 ₸; PwC also notes a 3,400,000 ₸ income cap reference).
+  employee → max base 850,000 ₸).
 - **ИП for themselves:** a **fixed** contribution of **5% of 1.4 МЗП**.
   - 1.4 × 85,000 = 119,000 ₸ base × 5% = **5,950 ₸ per month**.
 - Remitted to the Social Health Insurance Fund (ФСМС).
@@ -267,7 +267,7 @@ Escalate to a Kazakhstan accountant (do not auto-decide) when:
 
 **Authorities to cross-check before sign-off:** КГД (kgd.gov.kz / cabinet.salyk.kz),
 ГФСС (State Social Insurance Fund), ФСМС (fms.kz), ЕНПФ (enpf.kz), and Big-4 2026 notes
-(PwC Kazakhstan "Individual — Other taxes").
+(the Social Code, arts 248 to 251, and the Law on Compulsory Social Health Insurance, arts 27 and 28, on adilet.zan.kz).
 
 **Test suite (the AI must reproduce these):**
 
@@ -301,7 +301,7 @@ Escalate to a Kazakhstan accountant (do not auto-decide) when:
 
 ## Disclaimer
 
-This skill is **research-verified** against public 2026 sources (КГД, ЕНПФ, PwC Kazakhstan,
+This skill is **research-verified** against public 2026 sources (КГД, ЕНПФ, the Social Code and the health insurance law on adilet.zan.kz,
 and Kazakh accounting press) but is **pending sign-off by a qualified Kazakhstan accountant**.
 The new Tax Code took effect 1 January 2026 and rates/bases (especially the ОПВР phase-in,
 ОСМС shares, and the СО base for ИП) are subject to amendment and differing interpretations.

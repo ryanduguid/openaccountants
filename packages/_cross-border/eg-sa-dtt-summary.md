@@ -6,11 +6,11 @@ description: >
   Trigger on "Egypt Saudi tax treaty", "DTT Egypt KSA", "ضريبة الازدواج مصر السعودية",
   "cross-border Egypt Saudi", "Egypt Saudi Arabia withholding". ALWAYS read this skill
   before applying treaty rates.
-version: 1.0
+version: 1.1
 jurisdiction: EG-SA
 category: cross-border
 tax_year: 2025
-last_updated: 2026-08-02
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - eg-corporate-tax
@@ -361,8 +361,8 @@ The original Article 27 (main-purpose test) has been **replaced by the MLI Artic
 ## Sources
 
 - **Official treaty text (synthesised with MLI):** https://www.eta.gov.eg/sites/default/files/2021-07/SAUDI.pdf
-- **PwC Saudi Arabia — Withholding taxes:** https://taxsummaries.pwc.com/saudi-arabia/corporate/withholding-taxes
-- **PwC Egypt — Withholding taxes:** https://taxsummaries.pwc.com/egypt/corporate/withholding-taxes
+- **Secondary practitioner summary (link removed) Saudi Arabia — Withholding taxes:**
+- **Secondary practitioner summary (link removed) Egypt — Withholding taxes:**
 - **TaxInPangea — Egypt-Saudi Arabia treaty:** https://www.taxinpangea.com/treaties/egypt-saudi-arabia
 - **ZATCA Treaty Network:** https://zatca.gov.sa/en/RulesRegulations/Taxes/Pages/TaxTreaties.aspx
 

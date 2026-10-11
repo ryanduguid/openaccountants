@@ -1,10 +1,10 @@
 ---
 name: el-salvador-income-tax
 description: Use this skill whenever asked about El Salvador personal income tax (Impuesto sobre la Renta) for self-employed individuals and individuals. Trigger on phrases like "how much income tax do I pay in El Salvador", "Impuesto sobre la Renta", "ISR", "declaración de renta", "F-11", "F-14", "retención de renta", "pago a cuenta", "honorarios", "10% withholding professional fees", "ISSS", "AFP", "self-employed tax El Salvador", "renta El Salvador", or any question about filing or computing income tax for a self-employed individual or salaried person in El Salvador. Also trigger when preparing or reviewing an F-11 annual return, computing deductible expenses or the 10% professional-fee withholding, or advising on the progressive renta table, social-security (ISSS) or pension (AFP) contributions. This skill covers the progressive ISR table (0/10/20/30%), the 2025 reform raising the exempt threshold to USD 6,600, monthly retención tables, ISSS and AFP contributions, the 10% honorarios withholding, deductions, filing forms and penalties, and interaction with IVA. ALWAYS read this skill before touching any El Salvador income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # El Salvador Income Tax (Impuesto sobre la Renta) -- Self-Employed & Individuals
 
-## El Salvador Income Tax (Impuesto sobre la Renta) -- Self-Employed & Individuals Skill v0.1
+## El Salvador Income Tax (Impuesto sobre la Renta) -- Self-Employed & Individuals Skill v0.2
 
 > **Tier 2 (research-verified) skill — confidence: medium.** The 2025 reform (Decreto Legislativo 293 / Decreto Ejecutivo 10) published official **monthly** retención tables; the exact **annual** Art. 37 breakpoints and middle-bracket fixed amounts are partly inferred by annualising the monthly table and should be re-verified by a Salvadoran CPA against Decreto Ejecutivo 10 before Q1 verification. Items marked **[RESEARCH GAP — reviewer to confirm]** are not fully sourced.
 
@@ -37,11 +37,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual filing deadline | Within 4 months of fiscal year-end → **by 30 April** of the following year (Código Tributario; Art. 48 LISR) |
 | Validated by | Pending — requires sign-off by a Salvadoran CPA familiar with LISR |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Brackets -- Annual ISR Table (Art. 37 LISR, effective tax year 2025)
 
-**Annual ISR Table**  _(Art. 37 LISR table as reformed for tax year 2025; Diario El Mundo (citing Ministerio de Hacienda Decreto Ejecutivo 10, 2025); PwC Worldwide Tax Summaries.)_
+**Annual ISR Table**  _(Art. 37 LISR table as reformed for tax year 2025; Diario El Mundo (citing Ministerio de Hacienda Decreto Ejecutivo 10, 2025); a secondary practitioner summary.)_
 
 | Tramo | Annual Net Income (USD) | Marginal rate on excess | Cuota fija (fixed amount) |
 | --- | --- | --- | --- |
@@ -71,7 +71,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Non-Domiciled Individuals
 
-**Non-Domiciled Individuals**  _(PwC El Salvador — Taxes on personal income.)_
+**Non-Domiciled Individuals**  _(secondary summary, El Salvador — Taxes on personal income.)_
 
 | Basis | Rate |
 | --- | --- |
@@ -84,8 +84,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Threshold | Amount (USD) | Effective / Note | Source |
 | --- | --- | --- | --- |
 | Personal income-tax exempt threshold | 6,600.00 / year (550.00 / month) | Tax year 2025, raised from USD 4,064; Decreto Legislativo 293 / Decreto Ejecutivo 10 | Diario El Mundo; Ministerio de Hacienda |
-| Filing exemption for salaried individuals | ≤ 9,100.00 / year | Salaried individuals with income ≤ USD 9,100 whose tax was fully withheld are **not required to file**; receive an embedded single deduction of USD 1,600 | PwC — Deductions / Tax administration |
-| Embedded single deduction (no-file salaried) | 1,600.00 | Built into the ≤ USD 9,100 no-file regime | PwC — Deductions |
+| Filing exemption for salaried individuals | ≤ 9,100.00 / year | Salaried individuals with income ≤ USD 9,100 whose tax was fully withheld are **not required to file**; receive an embedded single deduction of USD 1,600 | secondary summary, Deductions / Tax administration |
+| Embedded single deduction (no-file salaried) | 1,600.00 | Built into the ≤ USD 9,100 no-file regime | secondary summary, Deductions |
 | IVA mandatory registration threshold | annual taxable + exempt operations > 5,714.29 (or total assets > 2,285.71) | Must register as IVA contributor (F-210); below both = "sujeto excluido" | Ministerio de Hacienda / DGII / Consortium Legal |
 
 ### Conservative Defaults
@@ -359,11 +359,11 @@ Employers withhold monthly per the official retención table (Decreto Ejecutivo 
 
 ### 5.6 Filing Exemption for Salaried Individuals
 
-- **Filing exemption for salaried individuals** — Salaried individuals earning ≤ USD 9,100/year whose tax was fully withheld are not required to file F-11. They receive an embedded single deduction of USD 1,600.  _(PwC — Deductions / Tax administration)_
+- **Filing exemption for salaried individuals** — Salaried individuals earning ≤ USD 9,100/year whose tax was fully withheld are not required to file F-11. They receive an embedded single deduction of USD 1,600.  _(secondary summary, Deductions / Tax administration)_
 
 ### 5.7 Deductions for Filers (over USD 9,100)
 
-**Deductions for Filers**  _(PwC — Deductions; LISR)_
+**Deductions for Filers**  _(secondary summary, Deductions; LISR)_
 
 | Deduction | Limit |
 | --- | --- |
@@ -372,7 +372,7 @@ Employers withhold monthly per the official retención table (Decreto Ejecutivo 
 | Charitable donations | up to 20% of net income |
 | Voluntary pension contributions | up to 10% of reported income |
 
-Individuals over the USD 9,100 threshold may deduct (PwC — Deductions; LISR). *Apply caps strictly. Medical and education are separate USD 800 limits per item per PwC.*
+Individuals over the USD 9,100 threshold may deduct (secondary summary, Deductions; LISR). *Apply caps strictly. Medical and education are separate USD 800 limits per item per the secondary summary.*
 
 ### 5.8 ISSS (Health / Social Security)
 
@@ -383,7 +383,7 @@ Individuals over the USD 9,100 threshold may deduct (PwC — Deductions; LISR). 
 | Employee | 3% of monthly salary | insurable salary capped at USD 1,000/month | USD 30 |
 | Employer | 7.50% of monthly salary | insurable salary capped at USD 1,000/month | USD 75 |
 
-- **ISSS cap and applicability** — Above USD 1,000 insurable salary, the contribution is fixed at USD 30 (employee) / USD 75 (employer). ISSS is mandatory for employees, NOT compulsory for independent professionals (voluntary affiliation possible).  _(PwC — Other taxes; ISSS.)_
+- **ISSS cap and applicability** — Above USD 1,000 insurable salary, the contribution is fixed at USD 30 (employee) / USD 75 (employer). ISSS is mandatory for employees, NOT compulsory for independent professionals (voluntary affiliation possible).  _(secondary summary, Other taxes; ISSS.)_
 
 ### 5.9 AFP (Pension Fund)
 
@@ -395,7 +395,7 @@ Individuals over the USD 9,100 threshold may deduct (PwC — Deductions; LISR). 
 | Employer | 8.75% of IBC |
 | **Total** | **16.00%** |
 
-- **No cap since Jan 2023** — No statutory maximum insurable salary since January 2023 — the tope cotizable was eliminated; contributions apply to the full IBC. Some payroll calculators cite a referential cap (~USD 7,045.06 in 2026) but this is not a current legal ceiling — apply no cap. **[RESEARCH GAP — reviewer to confirm]** whether any referential maximum insurable salary applies in 2025.  _(PwC — Other taxes; SSF; Ley Integral del Sistema de Pensiones.)_
+- **No cap since Jan 2023** — No statutory maximum insurable salary since January 2023 — the tope cotizable was eliminated; contributions apply to the full IBC. Some payroll calculators cite a referential cap (~USD 7,045.06 in 2026) but this is not a current legal ceiling — apply no cap. **[RESEARCH GAP — reviewer to confirm]** whether any referential maximum insurable salary applies in 2025.  _(secondary summary, Other taxes; SSF; Ley Integral del Sistema de Pensiones.)_
 
 ### 5.10 Combined Payroll Contribution Summary (Employee on Salary)
 

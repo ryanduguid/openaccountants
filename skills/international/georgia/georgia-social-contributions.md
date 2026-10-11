@@ -1,10 +1,10 @@
 ---
 name: georgia-social-contributions
 description: "Use this skill whenever asked about social contributions, social security, or the mandatory funded pension in the country of Georgia (GE — Tbilisi, Caucasus; NOT the U.S. state of Georgia). Trigger on phrases like \"Georgia pension contribution\", \"funded pension 2%\", \"Georgia social security\", \"do I pay social contributions in Georgia\", \"pension agency Georgia\", \"Georgia payroll withholding\", \"Georgia PIT 20%\", \"Georgia employer on-cost\", \"Georgia salary net pay\", \"saპensio / sapensio fund\", \"state co-contribution Georgia\", or any question about employment-based social-insurance levies for a Georgian employer or employee. Also trigger when classifying bank statement transactions involving the Pension Agency (LEPL Pension Fund), Revenue Service of Georgia (rs.ge), unified monthly income-tax declaration debits, or PIT withholding from Georgian banks (TBC, Bank of Georgia, Liberty Bank). CRITICAL: Georgia (the country) has NO classic social-security/health/unemployment payroll system — the only mandatory employment social-insurance levy is the funded pension (2% employee + 2% employer + tiered state co-contribution). This skill covers the funded pension rates and tiers, mandatory/voluntary participation, flat 20% PIT withholding, monthly compliance, bank-statement classification, and edge cases. ALWAYS read this skill before touching any Georgia social-contribution or payroll work."
-version: 0.1
+version: 0.2
 jurisdiction: GE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 reviewed_by: Gvantsa Amiridze, ACCA
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Georgia (Country) Social Contributions & Funded Pension
 
-## Georgia (Country) Social Contributions & Funded Pension Skill v0.1
+## Georgia (Country) Social Contributions & Funded Pension Skill v0.2
 
 > **JURISDICTION WARNING.** This skill is for **Georgia the country** (GE — capital Tbilisi, ISO `GE`, currency GEL). It is **NOT** for the U.S. state of Georgia. Search engines and training data heavily conflate the two. If a client mentions USD, the IRS, Atlanta, or a U.S. SSN, STOP — this is the wrong skill.
 
@@ -29,21 +29,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Primary Legislation (PIT)** — Tax Code of Georgia (income tax / payroll withholding)  _(Tax Code of Georgia)_
 - **Pension Authority** — Pension Agency of Georgia — LEPL Pension Fund (pensions.ge)
 - **Tax Authority (PIT)** — Revenue Service of Georgia (rs.ge)
-- **Classic social security (health/unemployment)** — **NONE** — Georgia has no payroll-tax-funded social-security system  _(PwC, Individual — Other taxes)_
+- **Classic social security (health/unemployment)** — **NONE** — Georgia has no payroll-tax-funded social-security system  _(secondary summary, Individual — Other taxes)_
 - **Funded pension — employee** — 2% of taxable gross salary  _(matsne 4280127)_
 - **Funded pension — employer** — 2% of taxable gross salary  _(matsne 4280127)_
-- **Funded pension — state co-contribution** — 2% up to GEL 24,000 annual income; 1% from GEL 24,000–60,000; 0% above GEL 60,000  _(matsne 4280127; PwC)_
-- **Funded pension — self-employed (opt-in)** — 4% of income, voluntary  _(matsne 4280127; PwC)_
-- **Personal income tax (PIT)** — Flat 20%, no brackets, withheld at source  _(PwC, Individual — Taxes on personal income)_
-- **Tax year** — Calendar year  _(PwC, Individual — Tax administration)_
-- **Monthly declaration deadline** — 15th day of the month following the salary-payment month  _(PwC, Corporate — Tax administration)_
+- **Funded pension — state co-contribution** — 2% up to GEL 24,000 annual income; 1% from GEL 24,000–60,000; 0% above GEL 60,000  _(matsne 4280127; secondary summary)_
+- **Funded pension — self-employed (opt-in)** — 4% of income, voluntary  _(matsne 4280127; secondary summary)_
+- **Personal income tax (PIT)** — Flat 20%, no brackets, withheld at source  _(secondary summary, Individual — Taxes on personal income)_
+- **Tax year** — Calendar year  _(secondary summary, Individual — Tax administration)_
+- **Monthly declaration deadline** — 15th day of the month following the salary-payment month  _(secondary summary, Corporate — Tax administration)_
 - **Pension transfer deadline** — No later than the 15th of the month following the salary-payment month  _(F-Chain, 1 May 2025 rules)_
-- **Annual individual return** — Due 1 April of the following year (income not taxed at source)  _(PwC, Individual — Tax administration)_
-- **Late-payment interest** — 0.05% of the unpaid amount per overdue day  _(Tax Code of Georgia; PwC/GSL)_
+- **Annual individual return** — Due 1 April of the following year (income not taxed at source)  _(secondary summary, Individual — Tax administration)_
+- **Late-payment interest** — 0.05% of the unpaid amount per overdue day  _(Tax Code of Georgia; secondary summary, /GSL)_
 - **Validated by** — Pending — requires sign-off by a qualified Georgian tax adviser
 - **Validation date** — Pending
 
-**Funded pension contribution stack (the ONLY mandatory employment social-insurance levy)**  _(matsne 4280127; PwC Individual — Other taxes)_
+**Funded pension contribution stack (the ONLY mandatory employment social-insurance levy)**  _(matsne 4280127; secondary summary, Individual — Other taxes)_
 
 | Annual taxable income band | Employee | Employer | State | Total credited to individual account |
 | --- | --- | --- | --- | --- |
@@ -51,7 +51,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | GEL 24,000 – 60,000 (portion in band) | 2% | 2% | 1% | **5%** |
 | Above GEL 60,000 (portion in band) | 2% | 2% | 0% | **4%** |
 
-- **Arithmetic check** — 2 + 2 + 2 = 6; 2 + 2 + 1 = 5; 2 + 2 + 0 = 4.  _(matsne 4280127; PwC Individual — Other taxes)_
+- **Arithmetic check** — 2 + 2 + 2 = 6; 2 + 2 + 1 = 5; 2 + 2 + 0 = 4.  _(matsne 4280127; secondary summary, Individual — Other taxes)_
 - **NOTE on tiers** — Employee and employer each pay a flat 2% on the **full** taxable salary — there is no upper ceiling on the 2%+2% portion. Only the **state** share is income-tiered/capped (matsne 4280127). The GEL 24,000 / 60,000 thresholds apply to **annual** income; whether they are applied per-month-prorated or reconciled annually is **[RESEARCH GAP — reviewer to confirm against rs.ge guidance]**.  _(matsne 4280127)_
 
 **Conservative defaults**
@@ -61,7 +61,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Employee age / enactment-status unknown | Treat as MANDATORY participant (under 60 / women under 55) — apply 2% employee + 2% employer on full taxable salary (matsne 4280127) |
 | State co-contribution share uncertain | Apply 2% only up to GEL 24,000, 1% from 24,000–60,000, ZERO above 60,000 — never assume a state top-up above GEL 60,000 |
 | Self-employed participation unknown | Treat as VOLUNTARY / OFF by default; apply 4% only if the individual has elected in (matsne 4280127) |
-| Any health / unemployment / "social security" payroll levy | Do NOT model one — none exists in Georgia (PwC) |
+| Any health / unemployment / "social security" payroll levy | Do NOT model one — none exists in Georgia (secondary summary) |
 | Currency unstated | Assume GEL; if USD/IRS appears, STOP — wrong jurisdiction |
 
 ## Section 2 -- Required inputs and refusal catalogue
@@ -140,7 +140,7 @@ Deterministic pre-classifier for bank statement transactions related to Georgian
 
 ## Section 4 -- Worked examples
 
-Bank-statement classifications and computations for a hypothetical Tbilisi employer and its employees. All amounts in GEL. PIT is a flat 20% withheld at source; funded pension is 2% employee + 2% employer (matsne 4280127; PwC).
+Bank-statement classifications and computations for a hypothetical Tbilisi employer and its employees. All amounts in GEL. PIT is a flat 20% withheld at source; funded pension is 2% employee + 2% employer (matsne 4280127; secondary summary).
 
 ### Example 1 -- Low salary, mandatory participant (annual ≤ GEL 24,000)
 
@@ -206,7 +206,7 @@ Check: 4% × 50,000 = 2,000. ✓
 **Facts:** The reference says "VAT" (დღგ), not pension or PIT.
 
 **Reasoning:**
-Matches the Revenue Service pattern (3.3) but the reference is **VAT**, not pension or PIT withholding. This is a VAT remittance (standard rate 18%, registration threshold GEL 100,000 turnover — GSL/PwC), entirely separate from the funded pension. Do NOT classify as a social/pension contribution.
+Matches the Revenue Service pattern (3.3) but the reference is **VAT**, not pension or PIT withholding. This is a VAT remittance (standard rate 18%, registration threshold GEL 100,000 turnover — GSL), entirely separate from the funded pension. Do NOT classify as a social/pension contribution.
 
 **Classification:** EXCLUDE from social-contribution classification — VAT payment (handle under a VAT skill).
 
@@ -228,7 +228,7 @@ Apply exactly as written when the data is clear and the engagement is confirmed 
 
 ### Rule 1 -- There is NO classic social security
 
-- **No classic social security** — Georgia has no payroll-tax-funded health, unemployment, or social-security fund. The ONLY mandatory employment social-insurance levy is the funded pension. Do not model any other social contribution.  _(PwC, Individual — Other taxes)_
+- **No classic social security** — Georgia has no payroll-tax-funded health, unemployment, or social-security fund. The ONLY mandatory employment social-insurance levy is the funded pension. Do not model any other social contribution.  _(secondary summary, Individual — Other taxes)_
 
 ### Rule 2 -- Funded pension formula
 
@@ -236,7 +236,7 @@ Apply exactly as written when the data is clear and the engagement is confirmed 
 
 ### Rule 3 -- PIT is a flat 20%, withheld at source
 
-- **PIT flat 20%** — Employers withhold 20% PIT on gross salary (PAYE-style) and remit it with the unified monthly income-tax declaration. There are no progressive brackets.  _(PwC, Individual — Taxes on personal income)_
+- **PIT flat 20%** — Employers withhold 20% PIT on gross salary (PAYE-style) and remit it with the unified monthly income-tax declaration. There are no progressive brackets.  _(secondary summary, Individual — Taxes on personal income)_
 
 ### Rule 4 -- Net pay computation
 
@@ -248,7 +248,7 @@ Apply exactly as written when the data is clear and the engagement is confirmed 
 
 ### Rule 6 -- Participation is mandatory for working-age employees
 
-- **Mandatory participation** — Mandatory for all employees who were under age 60 (women under 55) at the law's entry into force (1 Jan 2019); participation begins automatically on the first employer contribution.  _(matsne 4280127; PwC)_
+- **Mandatory participation** — Mandatory for all employees who were under age 60 (women under 55) at the law's entry into force (1 Jan 2019); participation begins automatically on the first employer contribution.  _(matsne 4280127; secondary summary)_
 
 ### Rule 7 -- Voluntary groups
 
@@ -260,7 +260,7 @@ Apply exactly as written when the data is clear and the engagement is confirmed 
 
 ### Rule 9 -- Monthly compliance
 
-- **Monthly compliance** — PIT and the unified monthly income-tax declaration are due by the **15th** of the month following the salary-payment month; pension contributions must be transferred no later than the same **15th**.  _(PwC, Corporate — Tax administration; F-Chain 2025)_
+- **Monthly compliance** — PIT and the unified monthly income-tax declaration are due by the **15th** of the month following the salary-payment month; pension contributions must be transferred no later than the same **15th**.  _(secondary summary, Corporate — Tax administration; F-Chain 2025)_
 
 ### Rule 10 -- Single declaration since 1 May 2025
 
@@ -268,11 +268,11 @@ Apply exactly as written when the data is clear and the engagement is confirmed 
 
 ### Rule 11 -- Calendar tax year; annual return 1 April
 
-- **Calendar tax year; annual return 1 April** — The tax year is the calendar year. Annual individual income tax returns (for income not taxed at source) are due by 1 April of the following year.  _(PwC, Individual — Tax administration)_
+- **Calendar tax year; annual return 1 April** — The tax year is the calendar year. Annual individual income tax returns (for income not taxed at source) are due by 1 April of the following year.  _(secondary summary, Individual — Tax administration)_
 
 ### Rule 12 -- Late interest
 
-- **Late interest** — Late payment of tax/contributions accrues interest at 0.05% of the unpaid amount per overdue day.  _(Tax Code of Georgia; PwC/GSL)_
+- **Late interest** — Late payment of tax/contributions accrues interest at 0.05% of the unpaid amount per overdue day.  _(Tax Code of Georgia; secondary summary, /GSL)_
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -391,17 +391,17 @@ If the client provides only a bank statement and no other information:
 
 | Item | Rate / value | Source |
 | --- | --- | --- |
-| Funded pension — employee | 2% of taxable salary | matsne 4280127; PwC |
-| Funded pension — employer | 2% of taxable salary | matsne 4280127; PwC |
-| Funded pension — state (≤ GEL 24,000) | 2% | matsne 4280127; PwC |
-| Funded pension — state (GEL 24,000–60,000) | 1% | matsne 4280127; PwC |
-| Funded pension — state (> GEL 60,000) | 0% | matsne 4280127; PwC |
-| Funded pension — self-employed (voluntary) | 4% of income | matsne 4280127; PwC |
-| Personal income tax (PIT) | Flat 20% | PwC Individual — Taxes on personal income |
-| Corporate income tax (Estonian/distributed-profits model) | 15% (20% for banks/credit/microfinance institutions from 1 Jan 2023) | GSL; PwC Corporate |
-| Dividend/interest WHT (individuals/non-residents) | 5% | GSL; PwC Corporate — Withholding taxes |
-| VAT standard rate | 18% | GSL; PwC Corporate — Other taxes |
-| Late-payment interest | 0.05% per overdue day | Tax Code of Georgia; PwC/GSL |
+| Funded pension — employee | 2% of taxable salary | matsne 4280127; secondary summary |
+| Funded pension — employer | 2% of taxable salary | matsne 4280127; secondary summary |
+| Funded pension — state (≤ GEL 24,000) | 2% | matsne 4280127; secondary summary |
+| Funded pension — state (GEL 24,000–60,000) | 1% | matsne 4280127; secondary summary |
+| Funded pension — state (> GEL 60,000) | 0% | matsne 4280127; secondary summary |
+| Funded pension — self-employed (voluntary) | 4% of income | matsne 4280127; secondary summary |
+| Personal income tax (PIT) | Flat 20% | secondary summary, Individual — Taxes on personal income |
+| Corporate income tax (Estonian/distributed-profits model) | 15% (20% for banks/credit/microfinance institutions from 1 Jan 2023) | GSL; secondary summary, Corporate |
+| Dividend/interest WHT (individuals/non-residents) | 5% | GSL; secondary summary, Corporate — Withholding taxes |
+| VAT standard rate | 18% | GSL; secondary summary, Corporate — Other taxes |
+| Late-payment interest | 0.05% per overdue day | Tax Code of Georgia; secondary summary, /GSL |
 
 ### Thresholds (2025)
 
@@ -409,13 +409,13 @@ If the client provides only a bank statement and no other information:
 
 | Threshold | Value | Effect | Source |
 | --- | --- | --- | --- |
-| State co-contribution upper-tier start | GEL 24,000 annual income | State share drops from 2% to 1% above this | matsne 4280127; PwC |
-| State co-contribution cut-off | GEL 60,000 annual income | No state share above this; only 2% + 2% continue | matsne 4280127; PwC |
+| State co-contribution upper-tier start | GEL 24,000 annual income | State share drops from 2% to 1% above this | matsne 4280127; secondary summary |
+| State co-contribution cut-off | GEL 60,000 annual income | No state share above this; only 2% + 2% continue | matsne 4280127; secondary summary |
 | Mandatory-pension age exemption | Age 60 (men) / 55 (women) at enactment | Above this at enactment = voluntary only | matsne 4280127 |
 | Pension opt-out age | Age 40+ before effective date | May withdraw within the 3-to-5-month window after joining | matsne 4280127 |
-| VAT registration threshold | GEL 100,000 taxable turnover in any continuous 12 months | Mandatory VAT registration | GSL; PwC |
-| Micro Business PIT exemption | Turnover under GEL 30,000, no employees | Business income PIT-exempt | PwC Individual |
-| Small Business turnover regime | Turnover under GEL 500,000 (GEL 700,000 for wine tourism / agrotourism) | 1% turnover tax (3% on excess above GEL 500,000) | PwC Individual; GSL |
+| VAT registration threshold | GEL 100,000 taxable turnover in any continuous 12 months | Mandatory VAT registration | GSL; secondary summary |
+| Micro Business PIT exemption | Turnover under GEL 30,000, no employees | Business income PIT-exempt | secondary summary, Individual |
+| Small Business turnover regime | Turnover under GEL 500,000 (GEL 700,000 for wine tourism / agrotourism) | 1% turnover tax (3% on excess above GEL 500,000) | secondary summary, Individual; GSL |
 
 ### Forms / declarations
 
@@ -423,9 +423,9 @@ If the client provides only a bank statement and no other information:
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
-| Unified monthly income-tax declaration (rs.ge) | Reports salaries paid, PIT withheld; auto-derives pension data from 1 May 2025 | 15th of the month following the salary-payment month | PwC; F-Chain 2025 |
+| Unified monthly income-tax declaration (rs.ge) | Reports salaries paid, PIT withheld; auto-derives pension data from 1 May 2025 | 15th of the month following the salary-payment month | secondary summary; F-Chain 2025 |
 | Pension contribution transfer (Pension Agency) | Transfer of employer 2% + employee 2% to individual accounts | No later than the 15th of the month following the salary-payment month | F-Chain 2025 |
-| Annual individual income tax return | Declare income not taxed at source (self-employed, capital gains, etc.) | 1 April of the year following the tax year | PwC Individual — Tax administration |
+| Annual individual income tax return | Declare income not taxed at source (self-employed, capital gains, etc.) | 1 April of the year following the tax year | secondary summary, Individual — Tax administration |
 
 ### Penalties
 
@@ -433,8 +433,8 @@ If the client provides only a bank statement and no other information:
 
 | Penalty | Amount | Source |
 | --- | --- | --- |
-| Late payment of tax/contributions | Interest at 0.05% of the unpaid amount per overdue day | Tax Code of Georgia; PwC/GSL |
-| Failure to submit a required document | GEL 100 per document failure; exact declaration fines **[RESEARCH GAP — reviewer to confirm against the current Tax Code of Georgia]** | PwC/GSL |
+| Late payment of tax/contributions | Interest at 0.05% of the unpaid amount per overdue day | Tax Code of Georgia; secondary summary, /GSL |
+| Failure to submit a required document | GEL 100 per document failure; exact declaration fines **[RESEARCH GAP — reviewer to confirm against the current Tax Code of Georgia]** | secondary summary, /GSL |
 
 ### Minimum wage
 
@@ -442,7 +442,7 @@ There is no effective statutory national minimum wage. The nominal figure (Presi
 
 ### Calculation examples (2025)
 
-**Calculation examples (2025)**  _(matsne 4280127; PwC)_
+**Calculation examples (2025)**  _(matsne 4280127; secondary summary)_
 
 | Monthly gross | Annual | State tier | Employee pension (2%) | Employer pension (2%) | PIT (20%) | Net pay |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -450,7 +450,7 @@ There is no effective statutory national minimum wage. The nominal figure (Presi
 | GEL 3,000 | GEL 36,000 | 1% band | GEL 60 | GEL 60 | GEL 600 | GEL 2,340 |
 | GEL 6,000 | GEL 72,000 | 0% above 60k | GEL 120 | GEL 120 | GEL 1,200 | GEL 4,680 |
 
-- **Arithmetic check** — 1,000 − 200 − 20 = 780; 3,000 − 600 − 60 = 2,340; 6,000 − 1,200 − 120 = 4,680. ✓  _(matsne 4280127; PwC)_
+- **Arithmetic check** — 1,000 − 200 − 20 = 780; 3,000 − 600 − 60 = 2,340; 6,000 − 1,200 − 120 = 4,680. ✓  _(matsne 4280127; secondary summary)_
 
 ### Test suite
 

@@ -1,10 +1,10 @@
 ---
 name: slovenia-social-contributions
 description: Use this skill whenever asked about Slovenia social security contributions (prispevki za socialno varnost) for employees, employers, self-employed (samostojni podjetnik / s.p.), or pensioners. Trigger on phrases like "how much social security in Slovenia", "Slovenian payroll contributions", "prispevki za socialno varnost", "PIZ pension contribution", "ZZZS health contribution", "long-term care contribution Slovenia", "ZDOsk-1 LTC", "compulsory health contribution OZP", "REK-O form", "M-1 registration", "employer cost Slovenia", "gross to net Slovenia", "samostojni podjetnik prispevki", "self-employed contribution base Slovenia", or any question about Slovenian SSC obligations, rates, bases, ceilings, or deadlines. Also trigger when classifying bank statement transactions that relate to FURS contribution debits, ZPIZ/ZZZS payments, or eDavki/SPOT social-security transfers from NLB, NKBM, SKB, Intesa Sanpaolo, or other Slovenian banks. Also trigger when preparing payroll or an informative tax calculation (informativni izracun dohodnine) where contribution amounts and PIT withholding interact. This skill covers employee/employer contribution rates, the 1 July 2025 long-term care change, the flat OZP health contribution, the self-employed min/max base, REK-O and M-1 forms, payment deadlines, penalties, interaction with personal income tax (dohodnina), bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Slovenian SSC or payroll work.
-version: 0.2
+version: 0.3
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Slovenia Social Security Contributions (prispevki za socialno varnost) -- Payroll & Self-Employed
 
-## Slovenia Social Security Contributions (prispevki za socialno varnost) -- Payroll & Self-Employed Skill v0.2
+## Slovenia Social Security Contributions (prispevki za socialno varnost) -- Payroll & Self-Employed Skill v0.3
 
 ## Section 1 -- Quick reference
 
@@ -46,7 +46,7 @@ Read this whole section before computing or classifying anything.
 
 Does Slovenia have personal income tax? YES. Slovenia levies dohodnina (personal income tax) with five progressive brackets for 2025 plus a flat schedular rate on capital income. Contributions are computed on gross income and PIT is withheld separately on top -- they are distinct deductions in payroll. This skill is primarily about contributions; PIT brackets are reproduced in Section 10 for gross-to-net context.
 
-**Employee contribution components (% of gross, do NOT include the separate 1% LTC line)**  _(Source: PwC Worldwide Tax Summaries -- Slovenia, Individual, Other taxes; SPOT)_
+**Employee contribution components (% of gross, do NOT include the separate 1% LTC line)**  _(Source: a secondary practitioner summary -- Slovenia, Individual, Other taxes; SPOT)_
 
 | Component | Employee rate | Authority |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ Does Slovenia have personal income tax? YES. Slovenia levies dohodnina (personal
 | Long-term care (LTC, ZDOsk-1) -- from 1 Jul 2025 | +1.00% | ZZZS |
 | **Total from 1 Jul 2025** | **23.10%** | -- |
 
-**Employer contribution components (% of gross, do NOT include the separate 1% LTC line)**  _(Source: PwC; SPOT; KPMG GMS Flash Alert 2025-133)_
+**Employer contribution components (% of gross, do NOT include the separate 1% LTC line)**  _(Source: the secondary summary; SPOT; KPMG GMS Flash Alert 2025-133)_
 
 | Component | Employer rate | Authority |
 | --- | --- | --- |
@@ -223,11 +223,11 @@ These rules apply when bank statement / payroll data is clear and all required i
 
 ### Rule 1 -- Employee SSC formula
 
-- **Employee SSC formula** — employee_SSC = gross x employee_rate where employee_rate = 22.10% for pay periods up to 30 Jun 2025 = 23.10% for pay periods from 1 Jul 2025 (LTC +1pp) PLUS flat OZP = EUR 37.17/month (EUR 35 for Jan-Feb 2025), withheld per insured person NO ceiling for employees  _(Source: PwC; SPOT; KPMG GMS Flash Alert 2025-133)_
+- **Employee SSC formula** — employee_SSC = gross x employee_rate where employee_rate = 22.10% for pay periods up to 30 Jun 2025 = 23.10% for pay periods from 1 Jul 2025 (LTC +1pp) PLUS flat OZP = EUR 37.17/month (EUR 35 for Jan-Feb 2025), withheld per insured person NO ceiling for employees  _(Source: the secondary summary; SPOT; KPMG GMS Flash Alert 2025-133)_
 
 ### Rule 2 -- Employer SSC formula
 
-- **Employer SSC formula** — employer_SSC = gross x employer_rate where employer_rate = 16.10% for pay periods up to 30 Jun 2025 = 17.10% for pay periods from 1 Jul 2025 (LTC +1pp) NO ceiling for employees  _(Source: PwC; SPOT)_
+- **Employer SSC formula** — employer_SSC = gross x employer_rate where employer_rate = 16.10% for pay periods up to 30 Jun 2025 = 17.10% for pay periods from 1 Jul 2025 (LTC +1pp) NO ceiling for employees  _(Source: the secondary summary; SPOT)_
 
 ### Rule 3 -- The 1 July 2025 LTC change splits 2025 into two periods
 
@@ -235,11 +235,11 @@ These rules apply when bank statement / payroll data is clear and all required i
 
 ### Rule 4 -- Component breakdown does NOT include the separate LTC line
 
-- **Component breakdown rule** — The statutory employee breakdown (15.50% PIZ / 6.36% health / 0.14% unemployment / 0.10% parental / 0.00% work-injury = 22.10%) and employer breakdown (8.85% / 6.56% / 0.06% / 0.10% / 0.53% = 16.10%) are the long-standing rates. The 1% LTC is additive on top, which is why each total rises by 1pp from 1 July 2025. Do not double-count.  _(Source: PwC; SPOT)_
+- **Component breakdown rule** — The statutory employee breakdown (15.50% PIZ / 6.36% health / 0.14% unemployment / 0.10% parental / 0.00% work-injury = 22.10%) and employer breakdown (8.85% / 6.56% / 0.06% / 0.10% / 0.53% = 16.10%) are the long-standing rates. The 1% LTC is additive on top, which is why each total rises by 1pp from 1 July 2025. Do not double-count.  _(Source: the secondary summary; SPOT)_
 
 ### Rule 5 -- The flat OZP is a euro amount, not a percentage
 
-- **Flat OZP rule** — The compulsory health contribution (OZP/OPZ), introduced 1 January 2024, is a FLAT per-capita amount: EUR 35/month in Jan-Feb 2025, EUR 37.17/month from 1 March 2025. It is adjusted annually on 1 March. It is separate from the percentage health insurance (6.36%/6.56%) and is withheld by the employer for employees.  _(Source: KPMG GMS Flash Alert 2024-046; PwC)_
+- **Flat OZP rule** — The compulsory health contribution (OZP/OPZ), introduced 1 January 2024, is a FLAT per-capita amount: EUR 35/month in Jan-Feb 2025, EUR 37.17/month from 1 March 2025. It is adjusted annually on 1 March. It is separate from the percentage health insurance (6.36%/6.56%) and is withheld by the employer for employees.  _(Source: KPMG GMS Flash Alert 2024-046; secondary summary)_
 
 ### Rule 6 -- No ceiling for employees; cap only for self-employed
 
@@ -251,7 +251,7 @@ These rules apply when bank statement / payroll data is clear and all required i
 
 ### Rule 8 -- Contribution base is gross employment income
 
-- **Contribution base rule** — Contributions are computed on the gross amount of employment income. The employer withholds employee contributions and PIT and pays the employer-side contributions at the time of salary payment.  _(Source: PwC; SPOT)_
+- **Contribution base rule** — Contributions are computed on the gross amount of employment income. The employer withholds employee contributions and PIT and pays the employer-side contributions at the time of salary payment.  _(Source: the secondary summary; SPOT)_
 
 ### Rule 9 -- Payment / filing schedule
 
@@ -265,7 +265,7 @@ These rules apply when bank statement / payroll data is clear and all required i
 
 ### Rule 10 -- Slovenia HAS personal income tax (kept separate from SSC)
 
-- **PIT separation rule** — PIT (dohodnina) is withheld as akontacija dohodnine on top of contributions; the two are distinct payroll deductions. Annual PIT is reconciled via the informative tax calculation (informativni izracun dohodnine, IID). Do not net PIT against contributions. (See Section 10 for 2025 brackets.)  _(Source: PwC; FURS)_
+- **PIT separation rule** — PIT (dohodnina) is withheld as akontacija dohodnine on top of contributions; the two are distinct payroll deductions. Annual PIT is reconciled via the informative tax calculation (informativni izracun dohodnine, IID). Do not net PIT against contributions. (See Section 10 for 2025 brackets.)  _(Source: the secondary summary; FURS)_
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -408,7 +408,7 @@ If the client provides only a bank statement and no other information:
 
 ### 2025 personal income tax (dohodnina) brackets -- for gross-to-net context
 
-**2025 PIT brackets**  _(Source: PwC Worldwide Tax Summaries -- Slovenia, Individual.)_
+**2025 PIT brackets**  _(Source: a secondary practitioner summary -- Slovenia, Individual.)_
 
 | Band | Lower (EUR) | Upper (EUR) | Rate | Tax on lower bound (EUR) |
 | --- | --- | --- | --- | --- |
@@ -419,9 +419,9 @@ If the client provides only a bank statement and no other information:
 | Bracket 5 | 78,016.32 | -- | 50% | 24,358.43 |
 | Capital income (interest, dividends, capital gains, rental) | flat 25% (schedular, generally final); rental may have deductible costs |  |  |  |
 
-(Cumulative-tax check, PwC figures: 9,210.26 x 16% = 1,473.64; +(27,089.00-9,210.26) x 26% = 6,122.11; +(54,178.00-27,089.00) x 33% = 15,061.48; +(78,016.32-54,178.00) x 39% = 24,358.42 -- PwC tabulates 24,358.43, a EUR 0.01 rounding difference; use the PwC figure. Source: PwC Worldwide Tax Summaries -- Slovenia, Individual, Taxes on personal income.)
+(Cumulative-tax check, the secondary summary figures: 9,210.26 x 16% = 1,473.64; +(27,089.00-9,210.26) x 26% = 6,122.11; +(54,178.00-27,089.00) x 33% = 15,061.48; +(78,016.32-54,178.00) x 39% = 24,358.42 -- the secondary summary tabulates 24,358.43, a EUR 0.01 rounding difference; use the the secondary summary figure. Source: a secondary practitioner summary -- Slovenia, Individual, Taxes on personal income.)
 
-General (basic) personal allowance 2025: EUR 5,260.00 general allowance; additional general allowance for income up to EUR 16,832.00 computed as 19,736.99 - 1.17259 x total income. (Source: PwC) -- [RESEARCH GAP -- if FURS publishes ZDoh-2 inflation-indexed thresholds that differ slightly for 2025, prefer the FURS-published values.]
+General (basic) personal allowance 2025: EUR 5,260.00 general allowance; additional general allowance for income up to EUR 16,832.00 computed as 19,736.99 - 1.17259 x total income. (Source: the secondary summary) -- [RESEARCH GAP -- if FURS publishes ZDoh-2 inflation-indexed thresholds that differ slightly for 2025, prefer the FURS-published values.]
 
 ### Contribution rate summary (2025)
 

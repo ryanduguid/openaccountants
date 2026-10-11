@@ -1,10 +1,10 @@
 ---
 name: ua-tax-optimization
 description: Use this skill whenever asked about legal tax optimization or tax planning for self-employed people in Ukraine. Trigger on phrases like "reduce tax Ukraine", "Diia City", "single tax vs general system", "tax planning Ukraine freelancer", "optimise FOP taxes", "should I be on єдиний податок or загальна система", "lower my tax as an IT freelancer in Ukraine", "Group 3 5% vs general system", "Diia City gig contract", "do I need to register for VAT", or any question about legitimately structuring a Ukrainian self-employed person's affairs to pay less tax. Covers choosing the right regime, the ₴1,000,000 VAT threshold lever, the Diia City IT regime, ЄСВ minimisation, expense documentation on the general system, foreign-client / FX considerations, and the red flags of fictitious-FOP misclassification. This skill is about LEGAL planning only — it never advises evasion. ALWAYS read this skill before any Ukrainian self-employed tax-planning work, and cross-read ua-single-tax, ua-income-tax, ua-payroll and ua-formation.
-version: 1.1
+version: 1.2
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Tax Optimization
 
-## Ukraine Tax Optimization & Planning (Self-Employed) — Skill v1.1
+## Ukraine Tax Optimization & Planning (Self-Employed) — Skill v1.2
 
 > **Scope:** Legal tax planning only. This skill helps a self-employed person in Ukraine choose and operate the most efficient *lawful* structure. It does **not** help anyone evade tax, disguise employment, or build fictitious arrangements (see PROHIBITIONS). Every output here is a starting point for a conversation with a qualified Ukrainian accountant or tax lawyer.
 
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | Електронний кабінет платника (cabinet.tax.gov.ua); Diia City portal (city.diia.gov.ua) |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a Ukrainian accountant |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 ### Verified 2026 base figures (pin date: 1 January 2026)
 
@@ -169,7 +169,7 @@ The following are risks to flag, not techniques to recommend. If a client's situ
 
 ## Section 8 — Reference
 
-Tax Code of Ukraine (Податковий кодекс) — single tax (Chapter 1, Section XIV), PIT (Section IV), military levy, VAT (Section V). State Tax Service of Ukraine (ДПС) — tax.gov.ua; taxpayer cabinet cabinet.tax.gov.ua. Diia City — city.diia.gov.ua; the Diia City law and the Tax Code provisions on residents and gig contracts. National Bank of Ukraine (НБУ) — currency-control rules for foreign-currency receipts. Big-4 / professional guidance — PwC Worldwide Tax Summaries (Ukraine), EY, BDO and similar for Diia City and general-system mechanics. Companion skills — ua-single-tax, ua-income-tax, ua-payroll, ua-formation, ua-social-contributions, ukraine-vat.
+Tax Code of Ukraine (Податковий кодекс) — single tax (Chapter 1, Section XIV), PIT (Section IV), military levy, VAT (Section V). State Tax Service of Ukraine (ДПС) — tax.gov.ua; taxpayer cabinet cabinet.tax.gov.ua. Diia City — city.diia.gov.ua; the Diia City law and the Tax Code provisions on residents and gig contracts. National Bank of Ukraine (НБУ) — currency-control rules for foreign-currency receipts. Big-4 / professional guidance — a secondary practitioner summary (Ukraine), EY, BDO and similar for Diia City and general-system mechanics. Companion skills — ua-single-tax, ua-income-tax, ua-payroll, ua-formation, ua-social-contributions, ukraine-vat.
 
 > **Verify-before-advising checklist:** (1) 2026 minimum wage and the resulting ЄСВ figure; (2) whether the ₴1,000,000 VAT-threshold reform for single-tax payers has been enacted; (3) current military-levy rates for Group 3 and for Diia City specialists; (4) the Group 3 annual income cap; (5) Diia City eligibility thresholds and the €240,000 gig cap. All flagged "verify" above.
 

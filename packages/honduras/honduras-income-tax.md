@@ -1,10 +1,10 @@
 ---
 name: honduras-income-tax
 description: Use this skill whenever asked about Honduras personal income tax (ISR — Impuesto Sobre la Renta) for individuals (personas naturales), including self-employed professionals. Trigger on phrases like "how much ISR do I pay", "Honduras income tax", "Declaración Jurada", "Form 102", "tabla progresiva", "aportación solidaria", "solidarity contribution", "IHSS contributions", "RAP", "Honduran tax return", "renta neta gravable", "self-employed tax Honduras", "ingreso exento", or any question about filing or computing ISR for an individual or self-employed client in Honduras. Also trigger when preparing or reviewing a Declaración Jurada de ISR — Persona Natural, classifying deductible expenses, advising on Pagos a Cuenta (advance payments), or the solidarity contribution. This skill covers the progressive ISR table, solidarity contribution, alternative minimum tax, capital gains, non-resident withholding, IHSS/RAP social security, filing forms and deadlines. ALWAYS read this skill before touching any Honduras income tax work.
-version: 0.4
+version: 0.5
 jurisdiction: HN
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -24,21 +24,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Honduras (República de Honduras) |
 | Tax | Impuesto Sobre la Renta (ISR) — personal income tax on individuals |
 | Currency | Honduran Lempira (HNL / "L") only |
-| Tax year | Calendar year (1 January — 31 December) [PwC, tax administration] |
-| Basis of taxation | Territorial — Honduran-source income; non-residents taxed only on Honduran-source income [PwC] |
+| Tax year | Calendar year (1 January — 31 December) [secondary summary, tax administration] |
+| Basis of taxation | Territorial — Honduran-source income; non-residents taxed only on Honduran-source income [secondary summary] |
 | Primary legislation | Ley del Impuesto Sobre la Renta; Código Tributario (Decreto 170-2016) |
 | Solidarity contribution | Decreto 278-2013 (Aportación Solidaria) |
 | Tax authority | SAR — Servicio de Administración de Rentas (sar.gob.hn) |
 | Filing portal | DET Live (detlive.sar.gob.hn) |
 | Annual return form | Declaración Jurada del ISR — Persona Natural, Form 102 / 102-1 [SAR DET Live] |
-| Filing & payment deadline | 30 April of the year following the tax year [Radio HRN; PwC] |
+| Filing & payment deadline | 30 April of the year following the tax year [Radio HRN; secondary summary] |
 | Validated by | Pending — requires sign-off by a Honduran-licensed accountant (Perito Mercantil / Contador Público) |
 | Validation date | Pending |
-| Skill version | 0.4 |
+| Skill version | 0.5 |
 
 ### ISR Progressive Table — 2026 (CURRENT)
 
-**ISR Progressive Table — 2026 (CURRENT)**  _(Acuerdo SAR-01-2026 of 5 January 2026 (Servicio de Administración de Rentas; La Gaceta No. 37,051 of 23 January 2026, copy hosted by the Tribunal Superior de Cuentas), resolution PRIMERO and the Tabla Progresiva 2026 — https://www.tsc.gob.hn/web/leyes/Acuerdo-SAR-01-2026.pdf ; SAR Comunicado 02-2026; Deloitte HN 12 Jan 2026; PwC, updated 27 Feb 2026)_
+**ISR Progressive Table — 2026 (CURRENT)**  _(Acuerdo SAR-01-2026 of 5 January 2026 (Servicio de Administración de Rentas; La Gaceta No. 37,051 of 23 January 2026, copy hosted by the Tribunal Superior de Cuentas), resolution PRIMERO and the Tabla Progresiva 2026 — https://www.tsc.gob.hn/web/leyes/Acuerdo-SAR-01-2026.pdf ; SAR Comunicado 02-2026; Deloitte HN 12 Jan 2026; the secondary summary, updated 27 Feb 2026)_
 
 | Annual net taxable income (HNL) | Monthly equivalent (HNL) | Rate | Cumulative tax at top of band |
 | --- | --- | --- | --- |
@@ -47,7 +47,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 348,154.11 – 809,660.75 | 32,346.19 – 70,805.06 | 20% | L 110,275.80 |
 | 809,660.76 and above | 70,805.07 and above | 25% | — |
 
-Indexed for inflation each year by SAR using the prior year's interannual CPI: Acuerdo SAR-01-2026 adjusts the scale by 4.98%, the Banco Central de Honduras CPI variation for 2025, from fiscal year 2026, and its resolution SEGUNDO directs withholding agents to use the table for monthly withholding. [Acuerdo SAR-01-2026; SAR Comunicado 02-2026; Deloitte HN 12 Jan 2026; PwC, updated 27 Feb 2026]
+Indexed for inflation each year by SAR using the prior year's interannual CPI: Acuerdo SAR-01-2026 adjusts the scale by 4.98%, the Banco Central de Honduras CPI variation for 2025, from fiscal year 2026, and its resolution SEGUNDO directs withholding agents to use the table for monthly withholding. [Acuerdo SAR-01-2026; SAR Comunicado 02-2026; Deloitte HN 12 Jan 2026; secondary summary, updated 27 Feb 2026]
 
 **Cumulative-tax derivation (recomputed):**
 - Band 2: (348,154.10 − 228,324.32) × 15% = 119,829.78 × 0.15 = **L 17,974.47**
@@ -72,13 +72,13 @@ Indexed using 3.88% CPI. [KPMG TaxNewsFlash 14 Jan 2025; Bloomberg Línea; SAR]
 
 ### Surtaxes, Minimum Tax and Capital Gains
 
-**Surtaxes, Minimum Tax and Capital Gains**  _(Decreto 278-2013; PwC)_
+**Surtaxes, Minimum Tax and Capital Gains**  _(Decreto 278-2013; secondary summary)_
 
 | Item | Rate / threshold | Source |
 | --- | --- | --- |
 | Solidarity Contribution (Aportación Solidaria) | 5% surtax on net taxable income **exceeding L1,000,000** | Decreto 278-2013 |
-| Alternative Minimum Tax (high earners) | 1.5% of **gross income** for domiciled individuals with gross income **≥ L10,000,000**, when it exceeds progressive ISR otherwise due | PwC |
-| Capital gains | Flat **10%** | PwC |
+| Alternative Minimum Tax (high earners) | 1.5% of **gross income** for domiciled individuals with gross income **≥ L10,000,000**, when it exceeds progressive ISR otherwise due | secondary summary |
+| Capital gains | Flat **10%** | secondary summary |
 
 ### Conservative Defaults
 
@@ -162,8 +162,8 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 | --- | --- | --- |
 | IHSS, SEGURO SOCIAL, COTIZACION IHSS | Statutory deduction | Employee EM+IVM contributions — see Section 5 |
 | RAP, APORTACION RAP, REGIMEN APORTACIONES PRIVADAS | Statutory deduction | Mandatory private pension/severance — see Section 5 |
-| INFOP | Employer-only levy | 1% employer only — NOT an employee deduction [PwC] |
-| IMPUESTO VECINAL, IMPUESTO PERSONAL MUNICIPAL | Municipal tax | Withheld by employers with 5+ workers, graduated 1.50–5.25 per thousand of gross [PwC] |
+| INFOP | Employer-only levy | 1% employer only — NOT an employee deduction [secondary summary] |
+| IMPUESTO VECINAL, IMPUESTO PERSONAL MUNICIPAL | Municipal tax | Withheld by employers with 5+ workers, graduated 1.50–5.25 per thousand of gross [secondary summary] |
 
 ### 3.4 Expense Patterns — NOT Deductible
 
@@ -275,7 +275,7 @@ Advance income-tax instalment (Pago a Cuenta). Not an expense — it is a credit
 
 ### 5.1 Territorial Scope
 
-- **Territorial Scope** — Honduras taxes on a territorial basis — only Honduran-source income is taxable for both residents and non-residents. Foreign-source income of residents is generally outside scope; confirm source before including any item.  _(Ley del ISR; PwC)_
+- **Territorial Scope** — Honduras taxes on a territorial basis — only Honduran-source income is taxable for both residents and non-residents. Foreign-source income of residents is generally outside scope; confirm source before including any item.  _(Ley del ISR; secondary summary)_
 
 ### 5.2 Progressive ISR — Resident Individuals
 
@@ -287,7 +287,7 @@ Advance income-tax instalment (Pago a Cuenta). Not an expense — it is a credit
 
 ### 5.4 Alternative Minimum Tax
 
-- **Alternative Minimum Tax** — Domiciled individuals with gross income ≥ L10,000,000 pay the greater of progressive ISR or 1.5% of gross income. Flag any client at or above this threshold for reviewer.  _(PwC)_
+- **Alternative Minimum Tax** — Domiciled individuals with gross income ≥ L10,000,000 pay the greater of progressive ISR or 1.5% of gross income. Flag any client at or above this threshold for reviewer.  _(secondary summary)_
 
 ### 5.5 Capital Gains
 
@@ -325,13 +325,13 @@ Advance income-tax instalment (Pago a Cuenta). Not an expense — it is a credit
 
 **Totals verification (recomputed):** Employee 2.5 + 2.5 + 1.5 = **6.5%** ✓; Employer 5.0 + 3.5 + 1.5 = **10.0%** ✓; State 0.5% on IVM only.
 
-**Employer-only:** INFOP (training fund) 1% of payroll, no employee portion. [PwC]
+**Employer-only:** INFOP (training fund) 1% of payroll, no employee portion. [secondary summary]
 
-**Caveat:** PwC's "other taxes" page lists pre-reform IHSS ceilings (L11,109 EM / L11,336 IVM) and a 1% employee IVM rate. The 2025 reform figures above (2.5% employee IVM, unified L11,903.13 ceiling) supersede them. [RESEARCH GAP — confirm 2026 IHSS/RAP ceiling directly with IHSS/RAP; only the 2025 ceiling is confirmed.]
+**Caveat:** the secondary summary's "other taxes" page lists pre-reform IHSS ceilings (L11,109 EM / L11,336 IVM) and a 1% employee IVM rate. The 2025 reform figures above (2.5% employee IVM, unified L11,903.13 ceiling) supersede them. [RESEARCH GAP — confirm 2026 IHSS/RAP ceiling directly with IHSS/RAP; only the 2025 ceiling is confirmed.]
 
 ### 5.9 Non-Resident Withholding (Honduran-source income)
 
-**Non-Resident Withholding (Honduran-source income)**  _(PwC, withholding taxes)_
+**Non-Resident Withholding (Honduran-source income)**  _(secondary summary, withholding taxes)_
 
 | Payment type | WHT rate |
 | --- | --- |
@@ -341,7 +341,7 @@ Advance income-tax instalment (Pago a Cuenta). Not an expense — it is a credit
 | Salaries/fees for services (in or outside HN) | 25% |
 | Any other income not specified | 10% |
 
-Honduras has no double-tax treaties (only TIEAs with the US and some Central American countries). [PwC]
+Honduras has no double-tax treaties (only TIEAs with the US and some Central American countries). [secondary summary]
 
 ### 5.10 Filing, Forms & Deadlines
 
@@ -349,13 +349,13 @@ Honduras has no double-tax treaties (only TIEAs with the US and some Central Ame
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Tax year | Calendar year ending 31 December | PwC |
+| Tax year | Calendar year ending 31 December | secondary summary |
 | Annual return | Declaración Jurada del ISR — Persona Natural, Form 102 / 102-1, via DET Live | SAR DET Live |
-| Filing & payment deadline | 30 April of the following year | Radio HRN; PwC |
-| Who must file | Individuals with annual net income exceeding the exempt base (L217,493.16 for FY2025); self-employed earning fees, commissions, royalties, service income, interest or rental income | Radio HRN; PwC |
-| Pure salaried employees | ISR withheld monthly via PAYE; generally need not file unless other income exists | PwC |
+| Filing & payment deadline | 30 April of the following year | Radio HRN; secondary summary |
+| Who must file | Individuals with annual net income exceeding the exempt base (L217,493.16 for FY2025); self-employed earning fees, commissions, royalties, service income, interest or rental income | Radio HRN; secondary summary |
+| Pure salaried employees | ISR withheld monthly via PAYE; generally need not file unless other income exists | secondary summary |
 | Suspension | If below the exempt base but previously filed, file a Notification of Suspension before 30 Apr | Radio HRN |
-| Advance payments | Pagos a Cuenta paid in instalments during the year, settled with the annual return | PwC; SAR |
+| Advance payments | Pagos a Cuenta paid in instalments during the year, settled with the annual return | secondary summary; SAR |
 | RTN | Registro Tributario Nacional required to file and operate | SAR |
 
 ### 5.11 Penalties
@@ -531,13 +531,13 @@ ONBOARDING QUESTIONS -- HONDURAS ISR
 
 | Item | Source |
 | --- | --- |
-| 2026 progressive table (exact) | Deloitte HN 12 Jan 2026; SAR Comunicado 02-2026; PwC (27 Feb 2026); Bloomberg Línea |
+| 2026 progressive table (exact) | Deloitte HN 12 Jan 2026; SAR Comunicado 02-2026; secondary summary (27 Feb 2026); Bloomberg Línea |
 | 2025 progressive table | KPMG TaxNewsFlash 14 Jan 2025; Bloomberg Línea; SAR |
 | Solidarity contribution | Decreto 278-2013; SEFIN consolidated text (25 Jun 2018) |
-| AMT, capital gains, WHT | PwC Honduras — taxes on personal income / withholding taxes |
+| AMT, capital gains, WHT | secondary summary, Honduras — taxes on personal income / withholding taxes |
 | Social security rates & 2025 ceiling | El Heraldo; Dinero HN; RAP comunicado 2025 |
-| Filing, deadline, who files | Radio HRN; PwC tax administration; SAR |
-| ISV, municipal tax, INFOP | PwC Honduras — other taxes / taxes on personal income |
+| Filing, deadline, who files | Radio HRN; secondary summary, tax administration; SAR |
+| ISV, municipal tax, INFOP | secondary summary, Honduras — other taxes / taxes on personal income |
 
 ### Minimum Wage (2025 reference, Commerce & Construction)
 
@@ -559,8 +559,8 @@ Maquila/Free Zone: +7.5% adjustment. [RESEARCH GAP — reviewer to confirm] the 
 
 | Tax | Rate | Source |
 | --- | --- | --- |
-| Sales tax (ISV/VAT) | 15% general; 18% on certain premium services | PwC |
-| Municipal tax (impuesto vecinal/personal) | 1.50–5.25 per thousand of gross, withheld by employers with 5+ workers | PwC |
+| Sales tax (ISV/VAT) | 15% general; 18% on certain premium services | secondary summary |
+| Municipal tax (impuesto vecinal/personal) | 1.50–5.25 per thousand of gross, withheld by employers with 5+ workers | secondary summary |
 
 ### Test Suite
 

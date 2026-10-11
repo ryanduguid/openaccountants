@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Tajikistan (tax year 2025) �
 jurisdiction: TJ
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,11 +23,11 @@ Tajikistan taxes are governed by the Tax Code of the Republic of Tajikistan (cur
 - **Currency** — Tajikistani somoni (TJS)  _(Tax Code of the Republic of Tajikistan)_
 - **Tax authority** — Tax Committee under the Government of the Republic of Tajikistan  _(Tax Code of the Republic of Tajikistan (https://andoz.tj))_
 - **Residence basis of taxation** — Residents taxed on worldwide income; non-residents taxed on Tajik-source income only  _(Tax Code of the Republic of Tajikistan)_
-- **Headline personal income tax rate (employment income)** — 13 percent  _(Tax Code of the Republic of Tajikistan (https://taxsummaries.pwc.com/quick-charts/personal-income-tax-pit-rates))_
-- **Headline corporate income tax rate** — 18% standard; 13% for production-of-goods activities  _(Tax Code of the Republic of Tajikistan (https://taxsummaries.pwc.com/quick-charts/corporate-income-tax-cit-rates))_
+- **Headline personal income tax rate (employment income)** — 13 percent  _(Tax Code of the Republic of Tajikistan — https://andoz.tj (as reported; the figure was not re-read against this text for this change))_
+- **Headline corporate income tax rate** — 18% standard; 13% for production-of-goods activities  _(Tax Code of the Republic of Tajikistan — https://andoz.tj (as reported; the figure was not re-read against this text for this change))_
 - **Does VAT exist?** — Yes — VAT applies at a standard rate of 14% for 2024-2026  _(Tax Code of the Republic of Tajikistan)_
 - **Social tax (combined)** — 25% employer + 1% employee  _(Tax Code of the Republic of Tajikistan)_
-- **Annual corporate income tax return deadline** — By 1 April of the year following the tax year  _(Tax Code of the Republic of Tajikistan (https://taxsummaries.pwc.com/quick-charts/corporate-income-tax-cit-due-dates))_
+- **Annual corporate income tax return deadline** — By 1 April of the year following the tax year  _(Tax Code of the Republic of Tajikistan — https://andoz.tj (as reported; the figure was not re-read against this text for this change))_
 - **Annual personal income tax return deadline (where required)** — By 1 April of the year following the tax year (approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
 
 <!-- openaccountants-cta-block -->

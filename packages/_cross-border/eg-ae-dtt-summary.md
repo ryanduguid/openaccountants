@@ -6,11 +6,11 @@ description: >
   Trigger on "Egypt UAE tax treaty", "DTT Egypt UAE", "ضريبة الازدواج مصر الإمارات",
   "cross-border Egypt UAE", "Egypt United Arab Emirates withholding". ALWAYS read this
   skill before applying treaty rates.
-version: 1.0
+version: 1.1
 jurisdiction: EG-AE
 category: cross-border
 tax_year: 2025
-last_updated: 2026-08-02
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - eg-corporate-tax
@@ -357,7 +357,7 @@ The new treaty includes a standalone **Principal Purpose Test (PPT)** (Article 3
 ## Sources
 
 - **Deloitte Middle East — New UAE-Egypt Tax Treaty analysis:** https://www.deloitte.com/middle-east/en/services/tax/perspectives/update-on-the-new-uae-and-egypt-tax-treaty.html
-- **PwC Egypt — Withholding taxes:** https://taxsummaries.pwc.com/egypt/corporate/withholding-taxes
+- **Secondary practitioner summary (link removed) Egypt — Withholding taxes:**
 - **TaxInPangea — UAE-Egypt treaty:** https://www.taxinpangea.com/treaties/united-arab-emirates-egypt
 - **UAE Ministry of Finance — Tax Treaties:** https://www.mof.gov.ae/en/resourcesAndBudget/Pages/TaxTreaties.aspx
 - **Egypt ETA — Bilateral agreements:** https://eta.gov.eg/en/content/bilateral-agreements

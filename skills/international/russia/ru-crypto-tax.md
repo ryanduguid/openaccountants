@@ -1,10 +1,10 @@
 ---
 name: ru-crypto-tax
 description: Use this skill whenever asked about the taxation of cryptocurrency or digital currency (цифровая валюта) for individuals in Russia. Trigger on phrases like "crypto tax Russia", "цифровая валюта налог", "Bitcoin tax Russia", "mining tax Russia", "майнинг налог", "налог на криптовалюту", "crypto НДФЛ", "is crypto legal in Russia", "реестр майнеров", "продажа криптовалюты налог", "crypto property Russia", or any request to compute, classify, or advise on Russian tax on disposal of digital currency, mining income, or holding crypto. Covers Federal Law No. 418-ФЗ (29 Nov 2024) which treats digital currency as PROPERTY (имущество), the two distinct НДФЛ tax bases (disposal gains capped at 15 %, mining income on the general 13–22 % scale), cost-basis deduction, the mining registry (реестр майнеров) and reporting, the ban on domestic crypto payments, the experimental legal regime (ЭПР) for foreign-trade settlements, the 3-НДФЛ declaration, and the absence of VAT (НДС) on digital currency. For ordinary income tax see ru-income-tax; for self-employed see ru-self-employed-npd.
-version: 1.0
+version: 1.1
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -40,7 +40,7 @@ Reply to the user in their own language; keep the native Russian terms in parent
 | VAT (НДС) | **None** — operations with digital currency and mining are **exempt from НДС** |
 | Non-resident rate | **30 %** on Russian-source crypto income, no cost-basis structure parity (verify) |
 | Quality tier | **Research-verified — pending sign-off by a qualified Russian accountant** |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Conservative defaults
 
@@ -185,7 +185,7 @@ Annual mining income (value at receipt) = 6 000 000 ₽, no other income.
 - Налоговый кодекс РФ, глава 23 (НДФЛ) — rates, tax base, 3-НДФЛ
 - ФНС — nalog.gov.ru; mining portal nalog.gov.ru/mining/
 - Банк России — cbr.ru, experimental legal regime (ЭПР) for foreign-trade settlements
-- Secondary: PwC Tax Summaries (Russia), Kontur, reputable Russian tax-law firms
+- Secondary: Kontur, reputable Russian tax-law firms
 
 ### Test suite (expected behaviour)
 
@@ -214,7 +214,7 @@ Annual mining income (value at receipt) = 6 000 000 ₽, no other income.
 
 ## Disclaimer
 
-This skill is research-verified against ФНС (nalog.gov.ru), the Банк России, PwC and reputable Russian crypto-tax / legal sources, but has not been signed off by a credentialed Russian accountant. Russian digital-currency rules are new (effective 1 January 2025) and parts — especially the experimental legal regime (ЭПР) for cross-border settlements, the 2026 regulated-exchange framework, and some mining thresholds — are still evolving. Figures, rates and in-force status must be re-verified at the time of filing. This is general information, not tax advice. Every output must be reviewed and signed off by a qualified Russian accountant before it reaches the taxpayer or the ФНС.
+This skill is research-verified against ФНС (nalog.gov.ru), the Банк России and reputable Russian crypto-tax / legal sources, but has not been signed off by a credentialed Russian accountant. Russian digital-currency rules are new (effective 1 January 2025) and parts — especially the experimental legal regime (ЭПР) for cross-border settlements, the 2026 regulated-exchange framework, and some mining thresholds — are still evolving. Figures, rates and in-force status must be re-verified at the time of filing. This is general information, not tax advice. Every output must be reviewed and signed off by a qualified Russian accountant before it reaches the taxpayer or the ФНС.
 
 Part of openaccountants.com — open-source tax skills for the self-employed.
 

@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Bulgaria
 jurisdiction: BG
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Incorporation timeline** — Approx. 3–7 business days once documents are prepared and submitted (approx — confirm)  _(Commercial Register and Register of Non-Profit Legal Entities Act — https://www.expanship.com/bg/blog/incorporation-requirements-in-bulgaria)_
 - **State registration fee** — approx. BGN 110 on paper / BGN 55 electronic for an OOD BGN ((approx — confirm); Commercial Register filing fee (lower for electronic filing))  _(Tariff of State Fees Collected by the Registry Agency)_
 - **Annual financial statements filing** — Annual financial statements published in the Commercial Register, generally by 30 September following the year-end (approx — confirm)  _(Accountancy Act (Zakon za schetovodstvoto))_
-- **Annual corporate tax compliance** — File annual CIT return and pay CIT between 1 March and 30 June following the tax year  _(Corporate Income Tax Act (ZKPO) — https://taxsummaries.pwc.com/bulgaria/corporate/tax-administration)_
+- **Annual corporate tax compliance** — File annual CIT return and pay CIT between 1 March and 30 June following the tax year  _(Corporate Income Tax Act (ZKPO))_
 - **VAT registration obligation** — Register for VAT once taxable turnover exceeds BGN 100,000 in 12 months (or voluntarily)  _(Value Added Tax Act (ZDDS) — https://eurofast.eu/wp-content/uploads/2025/02/BulgariaTaxCard2025-5bbc2399-822d-42cb-b32e-cbd12beb4b3c.pdf)_
 
 The most common Bulgarian business vehicle is the limited liability company (OOD, or EOOD if single-member), governed by the Commercial Act and registered with the Commercial Register at the Registry Agency. The statutory minimum share capital is a token BGN 2.

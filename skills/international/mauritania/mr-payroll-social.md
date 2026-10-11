@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Mauritania 
 jurisdiction: MR
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,12 +21,12 @@ Employers withhold salary income tax (ITS) under PAYE-style rules and pay social
 - **CNSS employer — old age, work injury and family allowances (combined)** — 13% of gross salary capped at MRU 70,000 per month  _([CLEISS, Les cotisations en Mauritanie, 1 January 2025](https://www.cleiss.fr/docs/cotisations/mauritanie.html))_
 - **ONMT employer — occupational health** — 2% of gross salary capped at MRU 70,000 per month  _([CLEISS, Les cotisations en Mauritanie, 1 January 2025](https://www.cleiss.fr/docs/cotisations/mauritanie.html))_
 - **CNSS employee contribution** — 1% of gross salary capped at MRU 70,000 per month  _([CLEISS, Les cotisations en Mauritanie, 1 January 2025](https://www.cleiss.fr/docs/cotisations/mauritanie.html))_
-- **CNSS monthly wage cap** — MRU 70,000 of gross monthly salary per CLEISS at 1 January 2025; PwC's Tax Summaries page still gives MRU 15,000, so confirm the current cap with the CNSS before applying it  _([CLEISS](https://www.cleiss.fr/docs/cotisations/mauritanie.html); [PwC](https://taxsummaries.pwc.com/mauritania/corporate/other-taxes))_
+- **CNSS monthly wage cap** — MRU 70,000 of gross monthly salary per CLEISS at 1 January 2025; an older secondary summary still gives MRU 15,000, so confirm the current cap with the CNSS before applying it  _([CLEISS](https://www.cleiss.fr/docs/cotisations/mauritanie.html); a secondary summary (link removed))_
 - **CNAM health-insurance employer contribution** — 5% of total salary, uncapped  _([CLEISS, Les cotisations en Mauritanie, 1 January 2025](https://www.cleiss.fr/docs/cotisations/mauritanie.html))_
 - **CNAM health-insurance employee contribution** — 4% of total salary, uncapped  _([CLEISS, Les cotisations en Mauritanie, 1 January 2025](https://www.cleiss.fr/docs/cotisations/mauritanie.html))_
-- **Apprenticeship tax (employer)** — 0.6% of total salaried staff earnings  _(Code Général des Impôts (General Tax Code) — https://taxsummaries.pwc.com/mauritania/corporate/other-taxes)_
-- **Salary income tax (ITS) withholding** — Employer withholds tax at the 15% / 25% / 40% progressive monthly scale and remits it  _(Code Général des Impôts (General Tax Code) — https://taxsummaries.pwc.com/mauritania/individual/taxes-on-personal-income)_
-- **Payroll tax / contribution remittance deadline** — By the 15th of the month following the payroll month  _(Code Général des Impôts (General Tax Code) — https://taxsummaries.pwc.com/mauritania/individual/tax-administration)_
+- **Apprenticeship tax (employer)** — 0.6% of total salaried staff earnings  _(Code Général des Impôts (General Tax Code))_
+- **Salary income tax (ITS) withholding** — Employer withholds tax at the 15% / 25% / 40% progressive monthly scale and remits it  _(Code Général des Impôts (General Tax Code))_
+- **Payroll tax / contribution remittance deadline** — By the 15th of the month following the payroll month  _(Code Général des Impôts (General Tax Code))_
 
 <!-- openaccountants-cta-block -->
 

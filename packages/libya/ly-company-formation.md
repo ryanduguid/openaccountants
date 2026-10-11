@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Libya (t
 jurisdiction: LY
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,8 +23,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Registration body** — Companies must register at the Commercial Register Office (Sijil Tijari) of the local municipality  _(Commercial Activity Law No. 23 of 2010 (https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/libya))_
 - **Core incorporation steps** — Reserve company name, notarize articles of association, deposit share capital, register with the Commercial Register, obtain tax and chamber-of-commerce registration (approx — confirm)  _(Commercial Activity Law No. 23 of 2010 (https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/libya))_
 - **Typical incorporation timeline** — Roughly 4 to 12 weeks depending on sector and foreign-ownership approvals (approx — confirm)  _(Commercial Activity Law No. 23 of 2010 (https://www.healyconsultants.com/libya-company-registration/setup-llc/))_
-- **Tax registration on formation** — New companies must register with the Tax Department and obtain a tax identification number  _(Income Tax Law No. 7 of 2010 (https://taxsummaries.pwc.com/libya/corporate/tax-administration))_
-- **Core annual compliance** — Audited financial statements, annual CIT return within four months of year-end (or one month of audit report), quarterly CIT payments, and monthly payroll/social-security filings  _(Income Tax Law No. 7 of 2010 (https://taxsummaries.pwc.com/libya/corporate/tax-administration))_
+- **Tax registration on formation** — New companies must register with the Tax Department and obtain a tax identification number  _(Income Tax Law No. 7 of 2010, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Core annual compliance** — Audited financial statements, annual CIT return within four months of year-end (or one month of audit report), quarterly CIT payments, and monthly payroll/social-security filings  _(Income Tax Law No. 7 of 2010, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 <!-- openaccountants-cta-block -->
 

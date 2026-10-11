@@ -1,10 +1,10 @@
 ---
 name: luxembourg-tax-optimization
 description: Use this skill whenever asked about reducing tax in Luxembourg, tax planning, or legal strategies to minimise tax for a self-employed person or small company in Luxembourg. Trigger on phrases like "reduce tax Luxembourg", "self-employed vs SARL", "SARL-S", "Luxembourg deductions", "third-pillar pension deduction", "interest deduction Luxembourg", "save tax Luxembourg", "tax planning Luxembourg". This skill covers the self-employed-vs-company choice, the SARL EUR 17,500 allowance, business and interest deductions, private-pension (third pillar) relief, the CNAP contribution, personal abatements, and the substance/reasonable-salary red lines. ALWAYS read this skill before advising on any Luxembourg tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: LU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Luxembourg Tax Optimization
 
-## Luxembourg Tax Optimization Skill v0.1
+## Luxembourg Tax Optimization Skill v0.2
 
-Tier 2 — research-verified. Sources: Administration des contributions directes (ACD), PwC Luxembourg, Guichet.lu. Figures must agree with `luxembourg-income-tax.md` / `luxembourg-social-contributions.md`. NOT yet signed off by a Luxembourg tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.
+Tier 2 — research-verified. Sources: Administration des contributions directes (ACD), the secondary summary Luxembourg, Guichet.lu. Figures must agree with `luxembourg-income-tax.md` / `luxembourg-social-contributions.md`. NOT yet signed off by a Luxembourg tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.
 
 ## Section 1 -- Quick Reference
 

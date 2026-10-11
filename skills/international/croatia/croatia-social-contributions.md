@@ -1,10 +1,10 @@
 ---
 name: croatia-social-contributions
 description: Use this skill whenever asked about Croatian social security contributions (doprinosi) and the related personal income tax (porez na dohodak) on employment income for the 2026 tax year. Trigger on phrases like "how much pension contribution do I pay", "Croatia payroll contributions", "Pillar I and Pillar II pension", "mirovinsko osiguranje", "zdravstveno osiguranje", "16.5% health contribution", "20% pension contribution", "gross to net Croatia", "Croatian salary calculation", "doprinosi za mirovinsko", "HZZO contribution", "Croatia income tax rate", "porez na dohodak", "JOPPD", "Croatian minimum wage 2025", or any question about a Croatian employee's gross-to-net pay, employer on-costs, or contribution caps. Also trigger when classifying bank statement transactions that relate to HZMO, HZZO, Porezna uprava, doprinosi, or plaća payments from Croatian banks (Zagrebačka banka, PBZ, Erste, OTP, Raiffeisen). Also trigger when preparing or reviewing a JOPPD report where contribution bases, low-salary relief, or the pension base cap are relevant. This skill covers employee pension contributions (15% Pillar I + 5% Pillar II), the 16.5% employer health contribution, low-salary pension relief, monthly/annual base caps, the floor base, the two-band income tax, JOPPD filing, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Croatian contributions or payroll work.
-version: 0.2
+version: 0.3
 jurisdiction: HR
 tax_year: 2026
-last_updated: 2026-10-06
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Croatia Social Security Contributions (Doprinosi) -- Employment
 
-## Croatia Social Security Contributions (Doprinosi) -- Employment Skill v0.2
+## Croatia Social Security Contributions (Doprinosi) -- Employment Skill v0.3
 
 ## Section 1 -- Quick reference
 
@@ -67,7 +67,7 @@ Arithmetic check: employee pension 15% + 5% = 20%. Employer total = 16.5% (singl
 | --- | --- |
 | Local income tax rate unknown | Use default 20% (lower band) / 30% (higher band) -- statutory fallback (Porezna uprava 7322) |
 | Employee Pillar II membership unknown | Assume in Pillar II: 15% Pillar I + 5% Pillar II = 20% (Porezna uprava 7319) |
-| Employer on-costs | 16.5% health only -- do NOT add legacy unemployment/injury contributions (PwC) |
+| Employer on-costs | 16.5% health only -- do NOT add legacy unemployment/injury contributions (secondary summary) |
 | Unknown gross salary | STOP -- do not compute contributions or net pay without gross |
 | Low salary, base unclear | Apply low-salary pension relief formula; never go below EUR 757.34 floor ([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html)) |
 | Personal allowance/dependants unknown | Apply basic EUR 600/month only; do not assume dependants (Deloitte) |
@@ -90,7 +90,7 @@ Arithmetic check: employee pension 15% + 5% = 20%. Employer total = 16.5% (singl
 - **R-HR-SSC-2 -- Local income tax rate not confirmed** — Trigger: an exact net figure is requested but the residence municipality and its adopted rates are unknown. Message: "Croatian personal income tax rates are set by each local self-government unit within statutory bands (lower 15%-23%, higher 25%-33%). The 20%/30% default is an estimate only and is the statutory fallback where no local rate is set. Confirm the employee's residence municipality and its adopted rates before presenting a definitive net."  _(Porezna uprava 7322; Deloitte)_
 - **R-HR-SSC-3 -- Pillar II status uncertain for older worker** — Trigger: employee may pre-date the 2002 pension reform or be over the age cut-off and Pillar II membership is unconfirmed. Message: "Mandatory Pillar II membership generally applies to those who entered insurance in/after 2002 or were under 40 at the 2002 reform; older workers may be Pillar I only (full 20% to Pillar I). [RESEARCH GAP -- reviewer to confirm.] Confirm Pillar II status with HZMO / the pension fund before splitting the 20% pension contribution."  _(Porezna uprava 7319; conservative_defaults)_
 - **R-HR-SSC-4 -- Self-employed / sole proprietor (obrt) bases** — Trigger: client is an obrtnik (sole proprietor) taxed on income, or a flat-rate (paušalni) taxpayer, not an employee. Message: "Self-employed minimum bases differ: an obrtnik dohodaš faces a minimum monthly gross base of EUR 1,295.45 for 2026 (= 0.65 x average gross salary EUR 1,993; code 0101), with contributions at the same rates ([NN 150/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html), art. 6). This skill computes employment payroll; escalate self-employed base determination to a Croatian accountant."
-- **R-HR-SSC-5 -- Penalties, arrears, and default interest** — Trigger: unpaid or late contributions / JOPPD from prior periods. Message: "Exact statutory fine amounts and the default-interest rate for late JOPPD/contributions were not found on the consulted authority pages [RESEARCH GAP -- reviewer to confirm against Zakon o doprinosima and Opci porezni zakon (General Tax Act)]. Do not quantify arrears or penalties without a Porezna uprava statement. Escalate to a Croatian accountant."  _(caveats; PwC)_
+- **R-HR-SSC-5 -- Penalties, arrears, and default interest** — Trigger: unpaid or late contributions / JOPPD from prior periods. Message: "Exact statutory fine amounts and the default-interest rate for late JOPPD/contributions were not found on the consulted authority pages [RESEARCH GAP -- reviewer to confirm against Zakon o doprinosima and Opci porezni zakon (General Tax Act)]. Do not quantify arrears or penalties without a Porezna uprava statement. Escalate to a Croatian accountant."  _(caveats; secondary summary)_
 - **R-HR-SSC-6 -- Cross-border / posted / expat workers** — Trigger: worker is posted, a non-resident, or covered by an A1 certificate / social security coordination. Message: "EU coordination (Reg. 883/2004), A1 certificates, and totalisation are outside this skill's scope. Escalate to a Croatian accountant." [RESEARCH GAP -- outside research scope]
 
 ## Section 3 -- Payment pattern library
@@ -266,7 +266,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 3 -- Employer health contribution
 
-- **Employer health contribution** — Employer pays 16.5% health insurance on the FULL gross salary, on top of the gross wage. The health base is NOT capped. This is the ONLY mandatory employer "according to base" contribution: since the 2019 reform it absorbed the former 1.7% unemployment and 0.5% occupational-injury contributions, which are no longer levied separately. There is NO employer pension contribution -- all pension (20%) is employee-side. Do NOT add separate unemployment/injury lines.  _(PwC; Porezna uprava 7319)_
+- **Employer health contribution** — Employer pays 16.5% health insurance on the FULL gross salary, on top of the gross wage. The health base is NOT capped. This is the ONLY mandatory employer "according to base" contribution: since the 2019 reform it absorbed the former 1.7% unemployment and 0.5% occupational-injury contributions, which are no longer levied separately. There is NO employer pension contribution -- all pension (20%) is employee-side. Do NOT add separate unemployment/injury lines.  _(secondary summary; Porezna uprava 7319)_
 
 ### Rule 4 -- Contribution base caps
 
@@ -525,14 +525,14 @@ Arithmetic notes (recomputed; rates Porezna uprava 7322, caps NN 150/2025, relie
 
 ### Penalties
 
-**Penalties**  _(PwC; Rivermate)_
+**Penalties**  _(secondary summary; Rivermate)_
 
 | Type | Treatment | Source |
 | --- | --- | --- |
-| Late/missing JOPPD or late payment of contributions and tax | Administrative fines per Zakon o doprinosima and Opci porezni zakon (General Tax Act), plus statutory default interest. Specific fine amounts and the default-interest rate were NOT published on the consulted authority pages [RESEARCH GAP -- reviewer to confirm against the statutes]. | PwC |
+| Late/missing JOPPD or late payment of contributions and tax | Administrative fines per Zakon o doprinosima and Opci porezni zakon (General Tax Act), plus statutory default interest. Specific fine amounts and the default-interest rate were NOT published on the consulted authority pages [RESEARCH GAP -- reviewer to confirm against the statutes]. | secondary summary |
 | Undeclared work | Increased employer penalties; an unregistered employment relationship is presumed to have lasted six months, obliging the employer to pay full wages plus social contributions for that period. | Rivermate |
 
-- **Late/missing JOPPD or late payment of contributions and tax** — Administrative fines per Zakon o doprinosima and Opci porezni zakon (General Tax Act), plus statutory default interest. Specific fine amounts and the default-interest rate were NOT published on the consulted authority pages [RESEARCH GAP -- reviewer to confirm against the statutes].  _(PwC)_
+- **Late/missing JOPPD or late payment of contributions and tax** — Administrative fines per Zakon o doprinosima and Opci porezni zakon (General Tax Act), plus statutory default interest. Specific fine amounts and the default-interest rate were NOT published on the consulted authority pages [RESEARCH GAP -- reviewer to confirm against the statutes].  _(secondary summary)_
 - **Undeclared work** — Increased employer penalties; an unregistered employment relationship is presumed to have lasted six months, obliging the employer to pay full wages plus social contributions for that period.  _(Rivermate)_
 
 ### Test suite
@@ -559,7 +559,7 @@ First-job permanent contract, gross EUR 2,000/mo. -> Employee pension EUR 400.00
 ### Prohibitions
 
 - NEVER compute Croatian net pay or employer cost without the gross monthly salary -- never reverse from net without escalation.
-- NEVER add legacy unemployment (1.7%) or occupational-injury (0.5%) contributions on the employer side -- consolidated into the 16.5% health contribution since 2019 (PwC).
+- NEVER add legacy unemployment (1.7%) or occupational-injury (0.5%) contributions on the employer side -- consolidated into the 16.5% health contribution since 2019 (secondary summary).
 - NEVER apply an employer pension contribution -- all pension (20%) is employee-side; only health (16.5%) is employer-side.
 - NEVER cap the employer health contribution -- its base is uncapped.
 - NEVER forget the EUR 11,958.00 monthly pension base cap or the EUR 143,496.00 annual Pillar I cap for high earners.

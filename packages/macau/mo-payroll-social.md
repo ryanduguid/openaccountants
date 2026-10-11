@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Macau (tax 
 jurisdiction: MO
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Social Security Fund (FSS) and payroll
 
 - **FSS structure overview** — Macau's mandatory Social Security Fund (FSS) uses flat per-employee contributions rather than percentage-of-salary rates. Employers also operate a quarterly PAYE-style withholding of professional tax for staff. Employers of non-resident workers pay an additional monthly levy.
-- **FSS mandatory contribution (total)** — MOP 90 per local employee per month (flat amount) (Total FSS contribution per local employee per month)  _([Macau Social Security System Law](https://taxsummaries.pwc.com/macau-sar/individual/other-taxes))_
+- **FSS mandatory contribution (total)** — MOP 90 per local employee per month (flat amount) (Total FSS contribution per local employee per month)  _(Macau Social Security System Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **FSS employer share** — MOP 60 per local employee per month  _([Macau Social Security System Law](https://www.fss.gov.mo/en))_
 - **FSS employee share** — MOP 30 per local employee per month (withheld by employer)  _([Macau Social Security System Law](https://www.fss.gov.mo/en))_
 - **Contribution basis** — Flat per-head amount — NOT a percentage of salary and NOT capped by a wage base  _(Macau Social Security System Law)_

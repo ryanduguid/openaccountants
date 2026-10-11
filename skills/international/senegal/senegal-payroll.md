@@ -1,10 +1,10 @@
 ---
 name: senegal-payroll
 description: Use this skill whenever asked about Senegal payroll processing for employed persons. Trigger on phrases like "Senegal payroll", "Sénégal paie", "IRPP Senegal", "retenue à la source Senegal", "TRIMF", "IPRES contribution", "CSS Senegal", "prestations familiales", "CFCE", "IPM health Senegal", "quotient familial Senegal", "parts fiscales", "net salary Senegal", "salaire net Sénégal", "PAYE Senegal", "employer social charges Senegal", "SMIG Senegal", "minimum wage Senegal", "form F4 Senegal", "gross to net Senegal", "bulletin de paie", or any question about computing employee pay, income tax withholding, or social contributions for Senegal-based employees. Senegal DOES levy personal income tax (IRPP) on salaries plus a fixed local salary tax (TRIMF). This skill covers progressive IRPP withholding with family-quotient splitting, TRIMF, IPRES pensions, CSS family allowances and work-injury, IPM health cover, the employer payroll tax (CFCE), minimum wage, filing obligations, and penalties. ALWAYS read this skill before processing any Senegal payroll.
-version: 0.2
+version: 0.3
 jurisdiction: SN
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Senegal Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
+# Senegal Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Senegal Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
+## Senegal Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
 
 > Senegal is **not** a no-income-tax jurisdiction. Salaries bear progressive personal income tax (IRPP) withheld at source, a separate fixed local salary tax (TRIMF), mandatory social contributions (IPRES, CSS, IPM), and an employer-only payroll tax (CFCE). All five must be handled together.
 
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Republic of Senegal (République du Sénégal) |
 | Currency | West African CFA franc — XOF / FCFA only |
 | Standard pay frequency | Monthly (mensuel) |
-| Tax year | Calendar year (1 January — 31 December) — PwC, Senegal Tax Administration |
+| Tax year | Calendar year (1 January — 31 December) — the secondary summary, Senegal Tax Administration |
 | Income tax system | IRPP — progressive, withheld at source (retenue à la source) with family-quotient (parts) splitting — CGI Art. 173 |
 | Fixed local salary tax | TRIMF (Taxe Représentative de l'Impôt du Minimum Fiscal) — CGI |
 | Tax authority | Direction Générale des Impôts et des Domaines (DGID) |
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Employer payroll tax | CFCE — Contribution Forfaitaire à la Charge de l'Employeur, 3% of payroll |
 | Monthly remittance form | F4 (practitioner-cited) — declared/remitted before the 15th of the following month |
 | Validated by | Pending — requires sign-off by a Senegalese chartered accountant (expert-comptable) |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ## Section 2 — Income Tax Withholding (IRPP)
 
@@ -54,7 +54,7 @@ The employer withholds IRPP monthly at source on gross remuneration (including f
 
 ### 2.2 Progressive IRPP scale (annual taxable income, per part, XOF)
 
-**Progressive IRPP scale**  _(Source: PwC Tax Summaries — Senegal, Taxes on personal income (last reviewed 31 March 2026). https://taxsummaries.pwc.com/senegal/individual/taxes-on-personal-income)_
+**Progressive IRPP scale**  _(Source: a secondary practitioner summary — Senegal, Taxes on personal income (last reviewed 31 March 2026)., as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Annual taxable income per part (XOF) | Marginal rate | Cumulative tax at top of band (XOF) |
 | --- | --- | --- |
@@ -74,11 +74,11 @@ The employer withholds IRPP monthly at source on gross remuneration (including f
 - 13,500,000 → 2,324,000 + (13,500,000 − 8,000,000) × 37% = 2,324,000 + 2,035,000 = 4,359,000 ✓
 - 50,000,000 → 4,359,000 + (50,000,000 − 13,500,000) × 40% = 4,359,000 + 14,600,000 = 18,959,000 ✓
 
-> [RESEARCH GAP — reviewer to confirm] Secondary French payroll sources render the middle of the scale as a 25% band (1,500,001–4,000,000) plus a 30% band (4,000,001–8,000,000) — a 6-rate scale topping at 40%/43%. PwC merges these into a single 30% band on 1,500,001–4,000,000 (used above). The authoritative arbiter is article 173 of the CGI as enacted by Loi 2012-31 and since amended. The eRegulations PDF at https://senegal.eregulations.org/media/t-code-general-impots[1].pdf is the pre-2013 code (Loi 92-40 as amended to 2004; OCR-read on 4 October 2026), whose article 173 concerns share acquisitions, so it does not settle the current scale. Confirm the middle bands against the current CGI text before publishing computations that fall in the 1.5M–8M range.
+> [RESEARCH GAP — reviewer to confirm] Secondary French payroll sources render the middle of the scale as a 25% band (1,500,001–4,000,000) plus a 30% band (4,000,001–8,000,000) — a 6-rate scale topping at 40%/43%. The secondary summary merges these into a single 30% band on 1,500,001–4,000,000 (used above). The authoritative arbiter is article 173 of the CGI as enacted by Loi 2012-31 and since amended. The eRegulations PDF at https://senegal.eregulations.org/media/t-code-general-impots[1].pdf is the pre-2013 code (Loi 92-40 as amended to 2004; OCR-read on 4 October 2026), whose article 173 concerns share acquisitions, so it does not settle the current scale. Confirm the middle bands against the current CGI text before publishing computations that fall in the 1.5M–8M range.
 
 ### 2.3 Family quotient (quotient familial / parts)
 
-**Family quotient**  _(Source: PwC Tax Summaries — Senegal (confirms the splitting mechanism). https://taxsummaries.pwc.com/senegal/individual/taxes-on-personal-income)_
+**Family quotient**  _(Source: a secondary practitioner summary — Senegal (confirms the splitting mechanism)., as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Situation | Parts (standard pattern) |
 | --- | --- |
@@ -92,7 +92,7 @@ Income is split into "parts" by family situation; each part is taxed through the
 
 ### 2.4 Minimum Personal Income Tax (MPIT) floor
 
-**MPIT floor**  _(Source: PwC Tax Summaries — Senegal. https://taxsummaries.pwc.com/senegal/individual/taxes-on-personal-income)_
+**MPIT floor**  _(Source: a secondary practitioner summary — Senegal., as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Annual income | MPIT floor (XOF) |
 | --- | --- |
@@ -119,11 +119,11 @@ A separate fixed monthly local salary tax, withheld at source by the employer an
 
 ## Section 4 — Social Contributions — IPRES (Pensions)
 
-Both PwC and CLEISS (the French official social-security liaison body) agree; the CLEISS table is effective 1 January 2026.
+Both the secondary summary and CLEISS (the French official social-security liaison body) agree; the CLEISS table is effective 1 January 2026.
 
 ### 4.1 Régime Général (all employees)
 
-**Régime Général**  _(PwC Tax Summaries — Senegal, Other taxes (https://taxsummaries.pwc.com/senegal/corporate/other-taxes) · CLEISS (https://www.cleiss.fr/docs/cotisations/senegal.html))_
+**Régime Général**  _(secondary summary, Senegal, Other taxes · CLEISS (https://www.cleiss.fr/docs/cotisations/senegal.html))_
 
 | Party | Rate | Monthly ceiling (XOF) |
 | --- | --- | --- |
@@ -135,7 +135,7 @@ Check: 5.6% + 8.4% = 14.0% ✓. Annual ceiling ≈ 432,000 × 12 = 5,184,000 XOF
 
 ### 4.2 Régime Complémentaire des Cadres (executives / cadres only)
 
-**Régime Complémentaire des Cadres**  _(PwC Tax Summaries — Senegal, Other taxes (https://taxsummaries.pwc.com/senegal/corporate/other-taxes) · CLEISS (https://www.cleiss.fr/docs/cotisations/senegal.html))_
+**Régime Complémentaire des Cadres**  _(secondary summary, Senegal, Other taxes · CLEISS (https://www.cleiss.fr/docs/cotisations/senegal.html))_
 
 | Party | Rate | Monthly ceiling (XOF) |
 | --- | --- | --- |
@@ -147,14 +147,14 @@ Check: 2.4% + 3.6% = 6.0% ✓.
 
 ## Section 5 — Social Contributions — CSS (Family Allowances + Work Injury) — Employer Only
 
-**CSS branches**  _(PwC (https://taxsummaries.pwc.com/senegal/corporate/other-taxes) · CLEISS (https://www.cleiss.fr/docs/cotisations/senegal.html))_
+**CSS branches**  _(secondary summary, · CLEISS (https://www.cleiss.fr/docs/cotisations/senegal.html))_
 
 | Branch | Rate | Party | Monthly ceiling (XOF) | Source |
 | --- | --- | --- | --- | --- |
-| Family allowances (prestations familiales) | 7% | Employer only | 63,000 | PwC; CLEISS |
-| Work injury / occupational disease (accidents du travail / maladies professionnelles) | 1%, 3% or 5% (by risk class) | Employer only | 63,000 | PwC; CLEISS |
+| Family allowances (prestations familiales) | 7% | Employer only | 63,000 | secondary summary; CLEISS |
+| Work injury / occupational disease (accidents du travail / maladies professionnelles) | 1%, 3% or 5% (by risk class) | Employer only | 63,000 | secondary summary; CLEISS |
 
-- **Common ceiling and risk class** — Both CSS branches are capped at the same 63,000 XOF/month base. The work-injury rate depends on the employer's assessed risk class — confirm the specific rate with CSS for the employer in question.  _(PwC; CLEISS)_
+- **Common ceiling and risk class** — Both CSS branches are capped at the same 63,000 XOF/month base. The work-injury rate depends on the employer's assessed risk class — confirm the specific rate with CSS for the employer in question.  _(secondary summary; CLEISS)_
 
 ## Section 6 — Health — IPM (Institution de Prévoyance Maladie)
 
@@ -162,19 +162,19 @@ Check: 2.4% + 3.6% = 6.0% ✓.
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Total contribution (PwC "employment medical coverage") | 6% total, split equally employer/employee (3% / 3%) | PwC |
-| Contribution base | Between 60,000 and 250,000 XOF/month | PwC |
+| Total contribution (secondary summary, "employment medical coverage") | 6% total, split equally employer/employee (3% / 3%) | secondary summary |
+| Contribution base | Between 60,000 and 250,000 XOF/month | secondary summary |
 | Branch rate range (CLEISS) | Between 2% and 7.5% | CLEISS |
 | Ceiling (CLEISS) | 250,000 XOF/month | CLEISS |
 | Practitioner-cited caps | Employer up to ~30,000 XOF/month; employee ~10,000 XOF/month (varies by IPM) | Practitioner guides |
 
 Mandatory employer-sponsored health cover via an IPM.
 
-Check: 3% employer + 3% employee = 6.0% total ✓ (PwC split).
+Check: 3% employer + 3% employee = 6.0% total ✓ (secondary summary, split).
 
-> [RESEARCH GAP — reviewer to confirm] PwC (6% on a 60,000–250,000 base) and CLEISS (2%–7.5%, 250,000 ceiling) describe the same branch differently. The exact rate, base and caps are set by the specific IPM the employer is affiliated to. Confirm the IPM's own rules before computing IPM deductions for a given employer.
+> [RESEARCH GAP — reviewer to confirm] the secondary summary (6% on a 60,000–250,000 base) and CLEISS (2%–7.5%, 250,000 ceiling) describe the same branch differently. The exact rate, base and caps are set by the specific IPM the employer is affiliated to. Confirm the IPM's own rules before computing IPM deductions for a given employer.
 
-Sources: PwC (https://taxsummaries.pwc.com/senegal/corporate/other-taxes) · CLEISS (https://www.cleiss.fr/docs/cotisations/senegal.html).
+Sources: the secondary summary · CLEISS (https://www.cleiss.fr/docs/cotisations/senegal.html).
 
 ## Section 7 — CFCE (Employer Payroll Tax)
 
@@ -182,7 +182,7 @@ Sources: PwC (https://taxsummaries.pwc.com/senegal/corporate/other-taxes) · CLE
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Rate | 3% of total gross payroll (salaries, indemnities, emoluments, benefits in kind) | Sénégal Services / DGID; PwC |
+| Rate | 3% of total gross payroll (salaries, indemnities, emoluments, benefits in kind) | Sénégal Services / DGID; secondary summary |
 | Party | Employer only | Sénégal Services / DGID |
 | Monthly payment deadline | By the 15th of the following month (same return/conditions as salary withholding) | Sénégal Services / DGID |
 | Annual summary declaration | Before 31 December each year | Sénégal Services / DGID démarche |
@@ -191,7 +191,7 @@ Contribution Forfaitaire à la Charge de l'Employeur — an employer-only payrol
 
 > [RESEARCH GAP — reviewer to confirm] An "expatriate differential" (3% local vs 6% expatriate CFCE) is sometimes cited but could not be confirmed from any authoritative source. Treat CFCE as a flat 3% for all employees unless the CGI states otherwise; do not publish a 6% expat figure without CGI confirmation.
 
-Sources: Sénégal Services (https://senegalservices.sn/demarche/sacquitter-de-limposition-a-la-contribution-forfaitaire-a-la-charge-des-employeurs-cfce) · PwC (https://taxsummaries.pwc.com/senegal/corporate/other-taxes). (The official DGID CFCE page could not be fetched due to a TLS certificate error; corroborated via the government Sénégal Services mirror.)
+Sources: Sénégal Services (https://senegalservices.sn/demarche/sacquitter-de-limposition-a-la-contribution-forfaitaire-a-la-charge-des-employeurs-cfce) · the secondary summary. (The official DGID CFCE page could not be fetched due to a TLS certificate error; corroborated via the government Sénégal Services mirror.)
 
 ## Section 8 — Conservative Defaults
 
@@ -204,7 +204,7 @@ Sources: Sénégal Services (https://senegalservices.sn/demarche/sacquitter-de-l
 | Work-injury risk class | Use the **highest cited rate, 5%** | Avoids understating employer cost — confirm actual class with CSS |
 | IPM rate | Flag as **[RESEARCH GAP]**, do not compute a number | Rate is IPM-specific; refuse a definitive figure |
 | Deductibility of social contributions from IRPP base | Compute IRPP on (gross − professional deduction) only; flag the gap | Ordering unconfirmed [RESEARCH GAP] |
-| IRPP middle bands (25%/30% question) | Use PwC merged 30% band; flag any 1.5M–8M result | PwC is the cited source; CGI confirmation pending |
+| IRPP middle bands (25%/30% question) | Use the secondary summary merged 30% band; flag any 1.5M–8M result | secondary summary, is the cited source; CGI confirmation pending |
 | TRIMF amount | Use 900 floor / 36,000 cap endpoints only; flag intermediate values | Full band table unconfirmed [RESEARCH GAP] |
 | Residency | Treat as **resident** only if confirmed; otherwise flag | Non-resident withholding rules are out of scope here |
 
@@ -310,7 +310,7 @@ Arithmetic check: 174,000 + 54,000 = 228,000 ✓; 228,000 / 12 = 19,000 ✓.
 
 Arithmetic check: 924,000 + 70,000 = 994,000 ✓; 994,000 / 12 = 82,833.33 ✓ (round per DGID rules).
 
-> Note: this result spans the 4M+ band, but the IRPP base (4,200,000) sits just above the 4,000,000 boundary. The 1,500,001–4,000,000 portion uses the PwC merged 30% rate — flag the 25%/30% [RESEARCH GAP] to the user.
+> Note: this result spans the 4M+ band, but the IRPP base (4,200,000) sits just above the 4,000,000 boundary. The 1,500,001–4,000,000 portion uses the the secondary summary merged 30% rate — flag the 25%/30% [RESEARCH GAP] to the user.
 
 ### Example C — Cadre, 1,000,000/month, married + 2 children, non-cadre vs cadre schemes
 
@@ -368,20 +368,20 @@ Arithmetic check: 500,000 + 36,288 + 4,410 + 3,150 + 15,000 = 558,848 ✓.
 
 ## Section 12 — Tier 1 Rules (deterministic, no judgement)
 
-- **1. Tax year** — Tax year is the calendar year.  _(PwC, Senegal Tax Administration)_
-- **2. IRPP withholding scope** — IRPP is withheld at source on gross remuneration including benefits in kind and bonuses.  _(PwC)_
+- **1. Tax year** — Tax year is the calendar year.  _(secondary summary, Senegal Tax Administration)_
+- **2. IRPP withholding scope** — IRPP is withheld at source on gross remuneration including benefits in kind and bonuses.  _(secondary summary)_
 - **3. Professional deduction rule** — The professional deduction is 30% of gross employment income, capped at 1,800,000 XOF/year (150,000/month).  _(Rivermate (confirm CGI))_
-- **4. IPRES Régime Général** — IPRES Régime Général: employee 5.6% + employer 8.4% = 14.0%, monthly ceiling 432,000 XOF.  _(PwC; CLEISS)_
-- **5. IPRES Régime Complémentaire des Cadres** — IPRES Régime Complémentaire des Cadres: employee 2.4% + employer 3.6% = 6.0%, monthly ceiling 1,296,000 XOF.  _(PwC; CLEISS)_
-- **6. CSS family allowances** — CSS family allowances: 7% employer-only, ceiling 63,000 XOF/month.  _(PwC; CLEISS)_
-- **7. CSS work-injury** — CSS work-injury: 1%/3%/5% by risk class, employer-only, ceiling 63,000 XOF/month.  _(PwC; CLEISS)_
-- **8. CFCE rate** — CFCE: 3% of total gross payroll, employer-only.  _(Sénégal Services / DGID; PwC)_
+- **4. IPRES Régime Général** — IPRES Régime Général: employee 5.6% + employer 8.4% = 14.0%, monthly ceiling 432,000 XOF.  _(secondary summary; CLEISS)_
+- **5. IPRES Régime Complémentaire des Cadres** — IPRES Régime Complémentaire des Cadres: employee 2.4% + employer 3.6% = 6.0%, monthly ceiling 1,296,000 XOF.  _(secondary summary; CLEISS)_
+- **6. CSS family allowances** — CSS family allowances: 7% employer-only, ceiling 63,000 XOF/month.  _(secondary summary; CLEISS)_
+- **7. CSS work-injury** — CSS work-injury: 1%/3%/5% by risk class, employer-only, ceiling 63,000 XOF/month.  _(secondary summary; CLEISS)_
+- **8. CFCE rate** — CFCE: 3% of total gross payroll, employer-only.  _(Sénégal Services / DGID; secondary summary)_
 - **9. Monthly remittance deadline** — Monthly withholding (IRPP + TRIMF + CFCE) is declared and remitted before the 15th of the following month.  _(Sénégal Services / DGID)_
-- **10. MPIT floor rule** — MPIT floor: 900 XOF (income < 600,000) up to 36,000 XOF (income ≥ 12,000,000).  _(PwC)_
+- **10. MPIT floor rule** — MPIT floor: 900 XOF (income < 600,000) up to 36,000 XOF (income ≥ 12,000,000).  _(secondary summary)_
 
 ## Section 13 — Tier 2 Catalogue (requires reviewer judgement)
 
-1. Exact IRPP middle bands (25%/30% split vs PwC merged 30%) — CGI Art. 173. [RESEARCH GAP]
+1. Exact IRPP middle bands (25%/30% split vs the secondary summary merged 30%) — CGI Art. 173. [RESEARCH GAP]
 2. Exact TRIMF bracket-by-bracket schedule. [RESEARCH GAP]
 3. Family-quotient part counts and the statutory maximum number of parts. [RESEARCH GAP]
 4. Whether IRPP base is net of social contributions and the deduction ordering. [RESEARCH GAP]
@@ -459,23 +459,23 @@ When onboarding a new Senegal payroll client and information is incomplete:
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Tax year | Calendar year | PwC |
-| Monthly employer withholding (IRPP + TRIMF + CFCE) | Declared/remitted before the 15th of the following month; declaration form **F4** (practitioner-cited) | PwC; Sénégal Services / DGID |
+| Tax year | Calendar year | secondary summary |
+| Monthly employer withholding (IRPP + TRIMF + CFCE) | Declared/remitted before the 15th of the following month; declaration form **F4** (practitioner-cited) | secondary summary; Sénégal Services / DGID |
 | Annual salary summary declaration | Early in the following year (commonly cited ~1 March); CFCE annual recap before 31 December | Practitioner sources; Sénégal Services [RESEARCH GAP on exact form/date] |
-| Individual annual income tax return | Before 1 May of each year for prior-year income; pure-PAYE employees may be exempt | PwC, Senegal Tax Administration |
+| Individual annual income tax return | Before 1 May of each year for prior-year income; pure-PAYE employees may be exempt | secondary summary, Senegal Tax Administration |
 
-Sources: PwC Tax Administration (https://taxsummaries.pwc.com/senegal/individual/tax-administration) · DGID IR simulator (http://www.impotsetdomaines.gouv.sn/fr/simulateur/ir).
+Sources: the secondary summary Tax Administration · DGID IR simulator (http://www.impotsetdomaines.gouv.sn/fr/simulateur/ir).
 
 ## Section 18 — Penalties and Interest
 
-**Penalties and interest table**  _(PwC Tax Summaries — Senegal, Tax administration (https://taxsummaries.pwc.com/senegal/corporate/tax-administration))_
+**Penalties and interest table**  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Trigger | Penalty / interest | Source |
 | --- | --- | --- |
-| Late filing of a return | 200,000 XOF per return | PwC |
-| Spontaneous late payment | 5% interest on the amount due, plus 0.5% per month (or part-month) of delay | PwC |
-| Assessed via audit — WHT and VAT | 50% penalty | PwC |
-| Assessed via audit — other taxes | 25% penalty | PwC |
+| Late filing of a return | 200,000 XOF per return | secondary summary |
+| Spontaneous late payment | 5% interest on the amount due, plus 0.5% per month (or part-month) of delay | secondary summary |
+| Assessed via audit — WHT and VAT | 50% penalty | secondary summary |
+| Assessed via audit — other taxes | 25% penalty | secondary summary |
 
 ## Section 19 — Minimum Wage (SMIG / SMAG)
 
@@ -492,7 +492,7 @@ Sources: PwC Tax Administration (https://taxsummaries.pwc.com/senegal/individual
 
 ### 20.1 Reference anchors
 
-- PwC Tax Summaries — Senegal (individual + corporate). https://taxsummaries.pwc.com/senegal
+- Secondary practitioner summary (link removed) — Senegal (individual + corporate).
 - CLEISS — Senegal social-security contributions, effective 01/01/2026. https://www.cleiss.fr/docs/cotisations/senegal.html
 - DGID — impotsetdomaines.gouv.sn (CFCE page, IR simulator).
 - CGI (Code Général des Impôts), official PDF via eRegulations. https://senegal.eregulations.org/media/t-code-general-impots[1].pdf

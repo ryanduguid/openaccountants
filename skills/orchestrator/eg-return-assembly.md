@@ -1,10 +1,10 @@
 ---
 name: eg-return-assembly
 description: Use this skill as the final orchestrator that assembles the complete Egyptian filing package for an Egypt-resident self-employed person. It computes nothing itself — it sequences and stitches together the Egypt content skills into one reviewer-ready filing package (income tax return, VAT returns, social insurance, e-invoicing precondition, ETA submission). Trigger on phrases like "file my Egyptian tax return", "submit income tax return Egypt", "ETA filing", "assemble my Egypt return", "قدّم الإقرار الضريبي", "إقرار ضريبة الدخل مصر".
-version: 0.1
+version: 0.2
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - eg-freelance-intake
@@ -103,7 +103,7 @@ All filings are electronic via the ETA portal; payment is electronic at the time
 | Social insurance (تأمينات اجتماعية) | Both | Per NOSI schedule (typically monthly) | Per NOSI rules — confirm | `eg-social-insurance` |
 | e-invoice / e-receipt reporting | Both (precondition) | Real-time | Same day the document is issued | `egypt-vat` |
 
-> **VAT deadline — flag (uncertainty).** Sources disagree. The ETA-practice and the `egypt-vat` skill state **end of the following month**. VAT Law No. 67 of 2016 / PwC describe a statutory window of **two months after the tax period, with the April return due by 15 June**. Use the **earlier (end of following month)** conservatively and **confirm the exact monthly deadline with the reviewer / on eta.gov.eg** before filing.
+> **VAT deadline — flag (uncertainty).** Sources disagree. The ETA-practice and the `egypt-vat` skill state **end of the following month**. VAT Law No. 67 of 2016 / the secondary summary describe a statutory window of **two months after the tax period, with the April return due by 15 June**. Use the **earlier (end of following month)** conservatively and **confirm the exact monthly deadline with the reviewer / on eta.gov.eg** before filing.
 
 > **Simplified-return due date — flag.** The simplified annual return uses the due date in the Unified Tax Procedures Law and a separate form; the precise 2026 calendar date was **not verifiable** at time of writing — confirm on ETA.
 
@@ -143,7 +143,7 @@ All filings are electronic via the ETA portal; payment is electronic at the time
 
 | Item | Reference / value | Status |
 | --- | --- | --- |
-| Individual income tax return deadline | **31 March** following the tax year | Verified (ETA / PwC) |
+| Individual income tax return deadline | **31 March** following the tax year | Verified (ETA) |
 | Sole proprietorship / partnership deadline | 30 April (where applicable) | Verified (secondary) |
 | Simplified regime | Law No. 6 of 2025 (turnover ≤ EGP 20m; separate form; ~5-yr lock-in) | Verified (EY / law firms) |
 | Simplified VAT frequency | Quarterly, within 1 month after quarter | Verified (Law 6/2025 commentary) |

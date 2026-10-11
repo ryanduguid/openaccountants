@@ -4,8 +4,8 @@ description: "Source-cited draft: vat / gst for Equatorial Guinea (tax year 2025
 jurisdiction: GQ
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,13 +16,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Value Added Tax (VAT)
 
 - **VAT system overview** — Equatorial Guinea operates a CEMAC-harmonised VAT with a 15% standard rate, a 5% reduced rate, and a 0% rate for certain goods. VAT returns are filed monthly.
-- **Standard VAT rate** — 15%  _(General Tax Code of Equatorial Guinea (VAT); CEMAC VAT Directive — https://taxsummaries.pwc.com/equatorial-guinea/corporate/other-taxes)_
-- **Reduced VAT rate** — 5% on a limited list of basic consumables and books  _(General Tax Code of Equatorial Guinea (VAT) — https://taxsummaries.pwc.com/equatorial-guinea/corporate/other-taxes)_
-- **Zero VAT rate** — 0% on specified products (e.g. certain medical products, some construction equipment)  _(General Tax Code of Equatorial Guinea (VAT) — https://taxsummaries.pwc.com/equatorial-guinea/corporate/other-taxes)_
+- **Standard VAT rate** — 15%  _(General Tax Code of Equatorial Guinea (VAT); CEMAC VAT Directive)_
+- **Reduced VAT rate** — 5% on a limited list of basic consumables and books  _(General Tax Code of Equatorial Guinea (VAT))_
+- **Zero VAT rate** — 0% on specified products (e.g. certain medical products, some construction equipment)  _(General Tax Code of Equatorial Guinea (VAT))_
 - **VAT registration threshold** — Turnover-based registration threshold set in the Tax Code (approx — confirm exact XAF threshold; not stated in consulted sources)  _(General Tax Code of Equatorial Guinea (VAT))_
-- **VAT return filing frequency** — Monthly — return filed within 15 days after the end of the month  _(General Tax Code of Equatorial Guinea (VAT) — https://www.pwc.co.za/en/publications/vat-in-africa/equatorial-guinea-overview.html)_
+- **VAT return filing frequency** — Monthly — return filed within 15 days after the end of the month  _(General Tax Code of Equatorial Guinea (VAT))_
 - **Reverse charge** — VAT on services supplied by non-established (foreign) suppliers is accounted for by the EG recipient under the reverse-charge mechanism (approx — confirm exact reverse-charge scope)  _(General Tax Code of Equatorial Guinea (VAT); CEMAC VAT Directive)_
-- **VAT legal basis** — Introduced 28 October 2004 under the Tax Code per CEMAC Directive No. 1/99/CEMAC-028-CM-03  _(CEMAC VAT Directive No. 1/99/CEMAC-028-CM-03; General Tax Code of Equatorial Guinea — https://www.pwc.co.za/en/publications/vat-in-africa/equatorial-guinea-overview.html)_
+- **VAT legal basis** — Introduced 28 October 2004 under the Tax Code per CEMAC Directive No. 1/99/CEMAC-028-CM-03  _(CEMAC VAT Directive No. 1/99/CEMAC-028-CM-03; General Tax Code of Equatorial Guinea, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Input VAT credit** — VAT-registered businesses may deduct input VAT on taxable business purchases against output VAT (approx — confirm deduction restrictions)  _(General Tax Code of Equatorial Guinea (VAT))_
 
 <!-- openaccountants-cta-block -->

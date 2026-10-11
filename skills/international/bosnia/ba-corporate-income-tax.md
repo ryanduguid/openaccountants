@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Bosnia and Herzegovin
 jurisdiction: BA
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporate income tax rates, base and withholding
 
-- **Standard CIT rate** — 10% (FBiH, RS and Brčko District)  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, art 31 — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf ; Zakon o porezu na dobit RS (Sl. glasnik RS 94/15), art 36(1) — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dobit%20od%2001_01_2016.pdf ; PwC Worldwide Tax Summaries (Brčko District) — https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/taxes-on-corporate-income)_
+- **Standard CIT rate** — 10% (FBiH, RS and Brčko District)  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, art 31 — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf ; Zakon o porezu na dobit RS (Sl. glasnik RS 94/15), art 36(1) — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dobit%20od%2001_01_2016.pdf)_
 - **Tax base** — FBiH: the profit in the financial statements increased by non-deductible expenses and other non-recognised items and reduced by non-taxable items, set out in the tax balance (porezni bilans); RS: the difference between taxable income and deductible expenses for the tax year  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, art 7 — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf ; Zakon o porezu na dobit RS (Sl. glasnik RS 94/15), art 5(1) — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dobit%20od%2001_01_2016.pdf)_
 - **Scope for residents** — FBiH taxpayers are resident companies and other legal persons (with a credit for profit tax paid on foreign profits), FBiH-registered branches of RS and Brčko District companies, permanent establishments of non-residents, and non-residents receiving FBiH-source income  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, arts 3 and 32 — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf)_
 
@@ -38,15 +38,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Republika Srpska (RS)**
 
-- **Withholding tax — Republika Srpska, all heads** — **10%** uniformly, on dividends, interest, royalties, entertainment, art and sport, professional, scientific, technical and educational **services**, **insurance and reinsurance premiums**, **telecommunications**, and the **lease of movable property**  _(RS Corporate Income Tax Law (https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/withholding-taxes))_
+- **Withholding tax — Republika Srpska, all heads** — **10%** uniformly, on dividends, interest, royalties, entertainment, art and sport, professional, scientific, technical and educational **services**, **insurance and reinsurance premiums**, **telecommunications**, and the **lease of movable property**  _(RS Corporate Income Tax Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 **Brčko District**
 
-- **Withholding tax on dividends (Brčko District)** — **0% — Brčko District levies no withholding tax on dividends**  _(Brcko District Corporate Income Tax Law (https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/withholding-taxes))_
-- **Withholding tax — Brčko District, all other heads** — **10%** uniformly, on interest, royalties, entertainment and sport, management, consulting, financial, technical and administrative **services**, **insurance premiums**, **telecommunications**, the **lease of movable property**, and other services  _(Brcko District Corporate Income Tax Law (https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/withholding-taxes))_
-- **Treaty relief on withholding tax** — Reduced rates available under BiH double tax treaties (e.g. 0% with Ireland; many treaties require 25% direct ownership for the lower dividend rate)  _(BiH Double Taxation Treaties (https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/withholding-taxes))_
+- **Withholding tax on dividends (Brčko District)** — **0% — Brčko District levies no withholding tax on dividends**  _(Brcko District Corporate Income Tax Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Withholding tax — Brčko District, all other heads** — **10%** uniformly, on interest, royalties, entertainment and sport, management, consulting, financial, technical and administrative **services**, **insurance premiums**, **telecommunications**, the **lease of movable property**, and other services  _(Brcko District Corporate Income Tax Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Treaty relief on withholding tax** — Reduced rates available under BiH double tax treaties (e.g. 0% with Ireland; many treaties require 25% direct ownership for the lower dividend rate)  _(BiH Double Taxation Treaties, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **CIT return and payment deadline** — FBiH: within 30 days after the deadline for filing the annual financial statements (end of March for a calendar-year taxpayer), with any balance paid within 20 working days of filing; RS: within 90 days after the end of the tax year (31 March for a calendar year)  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, arts 49(1) and 53(2) — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf ; Zakon o porezu na dobit RS (Sl. glasnik RS 94/15), art 38(1) — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dobit%20od%2001_01_2016.pdf)_
-- **CIT advance payments** — Equal monthly instalments based on the previous year's return; in FBiH each instalment is due by the end of the current month for the previous month, a company in its first year pays none until its first return, and the balance is settled on the annual return  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, arts 52 and 53 — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf ; PwC Worldwide Tax Summaries (RS) — https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/taxes-on-corporate-income)_
+- **CIT advance payments** — Equal monthly instalments based on the previous year's return; in FBiH each instalment is due by the end of the current month for the previous month, a company in its first year pays none until its first return, and the balance is settled on the annual return  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, arts 52 and 53 — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf)_
 
 <!-- openaccountants-cta-block -->
 

@@ -1,10 +1,10 @@
 ---
 name: moldova-social-contributions
 description: Use this skill whenever asked about Moldova payroll social contributions, health insurance, or personal income tax for employees, employers, or self-employed individuals. Trigger on phrases like "Moldova payroll", "CNAS contribution", "CNAM health insurance", "how much social insurance in Moldova", "Moldova employer cost", "24% social contribution", "9% health insurance Moldova", "Moldova PIT 12%", "IPC21 declaration", "fixed social contribution self-employed Moldova", "Moldova minimum wage", "MDL salary calculation", "Moldova IT Park 7%", or any question about Moldovan State Social Insurance (CNAS), Mandatory Health Insurance (CNAM), or income tax withholding. Also trigger when classifying bank statement transactions that relate to CNAS, CNAM, SFS (Serviciul Fiscal de Stat), or payroll tax payments from Moldovan banks (Maib, MICB/Moldindconbank, OTP, Victoriabank). Also trigger when preparing a monthly IPC21 declaration or an annual CET18 individual return where contribution and PIT computations are relevant. This skill covers the 12% flat PIT, employer 24%/32% CNAS rates, employee 9% CNAM, fixed annual contributions for the self-employed, minimum wage and average-salary thresholds, payroll forms, penalties, the IT Park single-tax regime, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Moldovan payroll or contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: MD
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -24,17 +24,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Republic of Moldova |
 | Primary Legislation | Tax Code of the Republic of Moldova (Codul fiscal); Law No. 489/1999 on the state social insurance system; Law No. 303/2024 on the state social insurance budget for 2025; Law No. 1593/2002 on mandatory health insurance contributions |
 | Tax / Contribution Authorities | State Tax Service (Serviciul Fiscal de Stat / SFS, sfs.md) collects payroll PIT, social and health contributions via the monthly IPC21 declaration; CNAS (Casa Nationala de Asigurari Sociale, cnas.gov.md) administers social insurance/pensions; CNAM (Compania Nationala de Asigurari in Medicina, cnam.md) administers mandatory health insurance |
-| Personal income tax (PIT) | Flat 12% (PwC, *Taxes on personal income*) |
-| Employer social insurance (CNAS) | 24% of gross remuneration; 32% for special/hazardous working conditions (PwC, *Corporate -- Other taxes* / *Individual -- Other taxes*) |
-| Employee social insurance (CNAS) | 0% -- employees pay NO state social insurance (PwC, *Individual -- Other taxes*) |
-| Employee health insurance (CNAM) | 9% of wages, withheld by employer (PwC, *Individual -- Other taxes*) |
-| Employer health insurance (CNAM) | 0% -- abolished in the October 2018 reform (PwC, *Corporate -- Other taxes*) |
-| Standard PIT personal allowance (2025) | 29,700 MDL/year (~2,475 MDL/month), only if annual taxable income <= 360,000 MDL (Intelcont; PwC carries the same figure for 2026) |
+| Personal income tax (PIT) | Flat 12% (secondary summary, *Taxes on personal income) |
+| Employer social insurance (CNAS) | 24% of gross remuneration; 32% for special/hazardous working conditions (secondary summary, *Corporate -- Other taxes* / *Individual -- Other taxes) |
+| Employee social insurance (CNAS) | 0% -- employees pay NO state social insurance (secondary summary, *Individual -- Other taxes) |
+| Employee health insurance (CNAM) | 9% of wages, withheld by employer (secondary summary, *Individual -- Other taxes) |
+| Employer health insurance (CNAM) | 0% -- abolished in the October 2018 reform (secondary summary, *Corporate -- Other taxes) |
+| Standard PIT personal allowance (2025) | 29,700 MDL/year (~2,475 MDL/month), only if annual taxable income <= 360,000 MDL (Intelcont; secondary summary, carries the same figure for 2026) |
 | Minimum wage (2025) | 5,500 MDL/month gross, full-time (Govt Decision No. 846 of Dec 2024; WageIndicator) |
 | Minimum wage (2026, confirmed) | 6,300 MDL/month (Govt decision of 17 Dec 2025; MOLDPRES) |
 | Forecast average monthly salary | 16,100 MDL for 2025; 17,400 MDL for 2026 (Min. of Labour / social.gov.md) |
 | Payroll return | Form IPC21, monthly, by the 25th of the following month (Rivermate; SFS) |
-| Annual individual return | Form CET18, by 30 April of the following year (PwC, *Individual -- Tax administration*) |
+| Annual individual return | Form CET18, by 30 April of the following year (secondary summary, *Individual -- Tax administration) |
 | Currency | MDL (Moldovan leu) only |
 | Validated by | Pending -- requires sign-off by a licensed Moldovan accountant |
 | Validation date | Pending |
@@ -43,18 +43,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Component | Payer | Rate / amount | Authority |
 | --- | --- | --- | --- |
-| State social insurance (CNAS) | Employer | 24% of gross (32% special conditions) | PwC, *Corporate -- Other taxes* |
-| State social insurance (CNAS) | Employee | 0% | PwC, *Individual -- Other taxes* |
-| Mandatory health insurance (CNAM) | Employee (employer withholds) | 9% of wages | PwC, *Individual -- Other taxes* |
-| Mandatory health insurance (CNAM) | Employer | 0% | PwC, *Corporate -- Other taxes* |
-| Personal income tax (PIT/PAYE) | Employee (employer withholds) | 12% flat on base after allowance and CNAM | PwC, *Individual -- Taxes on personal income* |
+| State social insurance (CNAS) | Employer | 24% of gross (32% special conditions) | secondary summary, *Corporate -- Other taxes |
+| State social insurance (CNAS) | Employee | 0% | secondary summary, *Individual -- Other taxes |
+| Mandatory health insurance (CNAM) | Employee (employer withholds) | 9% of wages | secondary summary, *Individual -- Other taxes |
+| Mandatory health insurance (CNAM) | Employer | 0% | secondary summary, *Corporate -- Other taxes |
+| Personal income tax (PIT/PAYE) | Employee (employer withholds) | 12% flat on base after allowance and CNAM | secondary summary, *Individual -- Taxes on personal income |
 
 **Conservative defaults**
 
 | Ambiguity | Default |
 | --- | --- |
 | Unknown working conditions | Assume standard 24% employer CNAS (NOT 32%) and flag for reviewer |
-| Source cites a 6% "employee social insurance" figure | Treat as 0% (pre-2018 legacy figure); do NOT apply 6% (PwC; see caveats) |
+| Source cites a 6% "employee social insurance" figure | Treat as 0% (pre-2018 legacy figure); do NOT apply 6% (secondary summary; see caveats) |
 | Source cites a 4.5%/4.5% employer/employee health split | Treat as 9% fully employee-borne, 0% employer (post-2018 reform) |
 | Unknown tax year | Use 2025 figures (5,500 MDL min wage, 20,518 MDL fixed SSC); apply 2026 figures only from 1 Jan 2026 |
 | Unknown whether personal allowance applies | Apply standard 29,700 MDL/year ONLY if annual income <= 360,000 MDL; otherwise nil allowance |
@@ -129,7 +129,7 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ## Section 4 -- Worked examples
 
-Six bank statement / payroll classifications for a hypothetical Moldovan employer and its employees. All figures in MDL, 2025 tax year. PIT is computed as 12% of (gross − 9% CNAM − monthly personal allowance), allowance = 29,700/12 = 2,475 MDL/month (Intelcont; PwC, *Individual -- Taxes on personal income* / *Deductions*).
+Six bank statement / payroll classifications for a hypothetical Moldovan employer and its employees. All figures in MDL, 2025 tax year. PIT is computed as 12% of (gross − 9% CNAM − monthly personal allowance), allowance = 29,700/12 = 2,475 MDL/month (Intelcont; secondary summary, *Individual -- Taxes on personal income* / *Deductions).
 
 ### Example 1 -- Standard employee at minimum wage (5,500 MDL)
 
@@ -167,7 +167,7 @@ Matches "CNAS" (pattern 3.1). For a 10,000 MDL gross employee, employer CNAS 24%
 `25.04.2025 ; CASA NATIONALA DE ASIGURARI SOCIALE ; DEBIT ; CONTRIBUTIE 32% ; -6,400.00 ; MDL`
 
 **Reasoning:**
-Matches "CASA NATIONALA DE ASIGURARI SOCIALE" (pattern 3.1) with a 32% reference. For a 20,000 MDL gross employee in special/hazardous conditions, employer CNAS 32% = 20,000 × 0.32 = **6,400.00** (PwC, *Individual -- Other taxes*). For the same employee: CNAM 9% = 1,800.00; PIT base = 20,000 − 1,800 − 2,475 = 15,725.00; PIT 12% = 1,887.00; net pay = 20,000 − 1,800 − 1,887 = 16,313.00. The 32% rate must be reviewer-confirmed (R-MD-SC-3).
+Matches "CASA NATIONALA DE ASIGURARI SOCIALE" (pattern 3.1) with a 32% reference. For a 20,000 MDL gross employee in special/hazardous conditions, employer CNAS 32% = 20,000 × 0.32 = **6,400.00** (secondary summary, *Individual -- Other taxes). For the same employee: CNAM 9% = 1,800.00; PIT base = 20,000 − 1,800 − 2,475 = 15,725.00; PIT 12% = 1,887.00; net pay = 20,000 − 1,800 − 1,887 = 16,313.00. The 32% rate must be reviewer-confirmed (R-MD-SC-3).
 
 **Classification:** EXCLUDE from VAT -- employer social insurance (special conditions). Flag 32% rate for reviewer.
 
@@ -187,57 +187,57 @@ Matches "CONTRIBUTIE SOCIALA FIXA" (pattern 3.1). The 2025 fixed annual SSC for 
 `30.03.2025 ; CNAM PRIMA ASIGURARE MEDICALA ; DEBIT ; 2025 ; -12,636.00 ; MDL`
 
 **Reasoning:**
-Matches "PRIMA ASIGURARE MEDICALA" (pattern 3.2). The fixed annual CNAM premium for non-salaried individuals = **12,636 MDL**, unchanged for 2025 and 2026 (PwC, *Individual -- Deductions*). Early-payment discounts may apply. This is distinct from the employee 9% withholding. Excludes from VAT.
+Matches "PRIMA ASIGURARE MEDICALA" (pattern 3.2). The fixed annual CNAM premium for non-salaried individuals = **12,636 MDL**, unchanged for 2025 and 2026 (secondary summary, *Individual -- Deductions). Early-payment discounts may apply. This is distinct from the employee 9% withholding. Excludes from VAT.
 
 **Classification:** EXCLUDE from VAT -- fixed annual health insurance premium (self-employed / non-salaried).
 
 ## Section 5 -- Tier 1 rules
 
-These rules apply when payroll/contribution data is clear and all required inputs are available. Apply exactly as written. All citations are to PwC Worldwide Tax Summaries (reviewed Jan 2026), CNAS, and the named statutes unless otherwise noted.
+These rules apply when payroll/contribution data is clear and all required inputs are available. Apply exactly as written. All citations are to a secondary practitioner summary (reviewed Jan 2026), CNAS, and the named statutes unless otherwise noted.
 
 ### Rule 1 -- Personal income tax is a single flat 12%
 
-- **PIT flat rate** — PIT on employment, professional/entrepreneurial and most other income = 12% flat for resident individuals. There are no progressive brackets.  _(PwC, *Individual -- Taxes on personal income*)_
+- **PIT flat rate** — PIT on employment, professional/entrepreneurial and most other income = 12% flat for resident individuals. There are no progressive brackets.  _(secondary summary, *Individual -- Taxes on personal income)_
 
 ### Rule 2 -- PIT base (PAYE) formula
 
-- **Monthly PIT / net pay formula** — monthly_PIT = 12% x (gross_remuneration - employee_CNAM - monthly_personal_allowance) employee_CNAM = 9% x gross_remuneration monthly_personal_allowance = 29,700 / 12 = 2,475 MDL   (only if annual income <= 360,000 MDL) net_pay = gross_remuneration - employee_CNAM - monthly_PIT CNAM (9%) is deducted before PIT; the personal allowance is then subtracted.  _(PwC, *Individual -- Taxes on personal income* / *Deductions*)_
+- **Monthly PIT / net pay formula** — monthly_PIT = 12% x (gross_remuneration - employee_CNAM - monthly_personal_allowance) employee_CNAM = 9% x gross_remuneration monthly_personal_allowance = 29,700 / 12 = 2,475 MDL   (only if annual income <= 360,000 MDL) net_pay = gross_remuneration - employee_CNAM - monthly_PIT CNAM (9%) is deducted before PIT; the personal allowance is then subtracted.  _(secondary summary, *Individual -- Taxes on personal income* / *Deductions)_
 
 ### Rule 3 -- Employer state social insurance (CNAS) = 24%
 
-- **Employer CNAS rate** — 24% percent of gross salary, meal tickets and other remuneration (minimum monthly base cannot be lower than national minimum monthly salary (5,500 MDL in 2025), or 25% of it for part-time; NO ceiling; 32% applies to special/hazardous working conditions (reviewer-confirm per R-MD-SC-3))  _(PwC, *Corporate -- Other taxes*; PwC, *Individual -- Other taxes*)_
+- **Employer CNAS rate** — 24% percent of gross salary, meal tickets and other remuneration (minimum monthly base cannot be lower than national minimum monthly salary (5,500 MDL in 2025), or 25% of it for part-time; NO ceiling; 32% applies to special/hazardous working conditions (reviewer-confirm per R-MD-SC-3))  _(secondary summary, *Corporate -- Other taxes; secondary summary, *Individual -- Other taxes)_
 
 ### Rule 4 -- Employees pay NO state social insurance
 
-- **Employee CNAS = 0%** — The employee state social insurance contribution is 0% under the current system. The "6% employee" figure on many EOR/aggregator sites reflects the pre-October-2018 regime and is incorrect for 2025 (see caveats).  _(PwC, *Individual -- Other taxes*)_
+- **Employee CNAS = 0%** — The employee state social insurance contribution is 0% under the current system. The "6% employee" figure on many EOR/aggregator sites reflects the pre-October-2018 regime and is incorrect for 2025 (see caveats).  _(secondary summary, *Individual -- Other taxes)_
 
 ### Rule 5 -- Health insurance (CNAM) = 9%, fully employee-borne
 
-- **Employee CNAM rate** — 9% percent of wages (fully borne by employee and withheld by employer; employer pays 0% health insurance; old 4.5%/4.5% split abolished in October 2018 reform)  _(PwC, *Individual -- Other taxes* / *Corporate -- Other taxes*)_
+- **Employee CNAM rate** — 9% percent of wages (fully borne by employee and withheld by employer; employer pays 0% health insurance; old 4.5%/4.5% split abolished in October 2018 reform)  _(secondary summary, *Individual -- Other taxes* / *Corporate -- Other taxes)_
 
 ### Rule 6 -- Total payroll wedge
 
-- **Total payroll wedge formula** — employer_total_cost = gross x 1.24            (gross + 24% CNAS; 1.32 for special conditions) employee_deductions = 9% CNAM + 12% PIT (on the post-allowance base)  _(PwC, *Corporate -- Other taxes* / *Individual -- Taxes on personal income*)_
+- **Total payroll wedge formula** — employer_total_cost = gross x 1.24            (gross + 24% CNAS; 1.32 for special conditions) employee_deductions = 9% CNAM + 12% PIT (on the post-allowance base)  _(secondary summary, *Corporate -- Other taxes* / *Individual -- Taxes on personal income)_
 
 ### Rule 7 -- Personal allowances (annual)
 
-**Personal allowances (annual)**  _(PwC, *Individual -- Deductions*)_
+**Personal allowances (annual)**  _(secondary summary, *Individual -- Deductions)_
 
 | Allowance | Annual amount | Condition | Source |
 | --- | --- | --- | --- |
-| Standard personal | 29,700 MDL | Only if annual taxable income <= 360,000 MDL | Intelcont; PwC (same for 2026) |
-| Major (increased) personal | 34,620 MDL | Qualifying individuals (e.g. disability) [RESEARCH GAP -- reviewer to confirm exact conditions] | PwC, *Individual -- Deductions* |
-| Spouse's major allowance | 21,780 MDL | Qualifying spouse | PwC, *Individual -- Deductions* |
-| Per dependent | 9,900 MDL (21,780 MDL if dependent has severe disability since childhood) | Per qualifying dependent | PwC, *Individual -- Deductions* |
+| Standard personal | 29,700 MDL | Only if annual taxable income <= 360,000 MDL | Intelcont; secondary summary (same for 2026) |
+| Major (increased) personal | 34,620 MDL | Qualifying individuals (e.g. disability) [RESEARCH GAP -- reviewer to confirm exact conditions] | secondary summary, *Individual -- Deductions |
+| Spouse's major allowance | 21,780 MDL | Qualifying spouse | secondary summary, *Individual -- Deductions |
+| Per dependent | 9,900 MDL (21,780 MDL if dependent has severe disability since childhood) | Per qualifying dependent | secondary summary, *Individual -- Deductions |
 
 ### Rule 8 -- Fixed annual contributions for self-employed / individually insured
 
-**Fixed annual contributions table**  _(CNAS Aug-2025 declaration; PwC, *Individual -- Deductions*)_
+**Fixed annual contributions table**  _(CNAS Aug-2025 declaration; secondary summary, *Individual -- Deductions)_
 
 | Contribution | 2025 amount | 2026 amount | Source |
 | --- | --- | --- | --- |
 | Fixed annual social insurance (CNAS) | 20,518 MDL (1,709.84 MDL/month) | 22,878 MDL | CNAS Aug-2025 declaration |
-| Fixed annual health premium (CNAM) | 12,636 MDL | 12,636 MDL (unchanged) | PwC, *Individual -- Deductions* |
+| Fixed annual health premium (CNAM) | 12,636 MDL | 12,636 MDL (unchanged) | secondary summary, *Individual -- Deductions |
 
 ### Rule 9 -- Payroll filing: monthly IPC21
 
@@ -245,7 +245,7 @@ These rules apply when payroll/contribution data is clear and all required input
 
 ### Rule 10 -- Annual individual return: CET18
 
-- **CET18 filing deadline** — The annual individual income tax return (Form CET18) is due by 30 April of the year following the reporting year. Foreign citizens earning income from Moldovan residents file a short-stay return within 3 days of ending the activity.  _(PwC, *Individual -- Tax administration*)_
+- **CET18 filing deadline** — The annual individual income tax return (Form CET18) is due by 30 April of the year following the reporting year. Foreign citizens earning income from Moldovan residents file a short-stay return within 3 days of ending the activity.  _(secondary summary, *Individual -- Tax administration)_
 
 ### Rule 11 -- Minimum wage and average salary
 
@@ -261,11 +261,11 @@ When payroll data is ambiguous or client circumstances are unclear, flag these s
 
 ### T2-1 -- Special / hazardous working conditions (32% vs 24%)
 
-- **T2-1** — Trigger: Employer claims the 32% employer CNAS rate, or the work involves hazardous conditions. Issue: The 32% rate (vs the standard 24%) and any sector-specific splits (e.g. an 18% employer + 6% state-budget split mentioned in one PwC pass for agriculture) must be confirmed against the current state social insurance budget law. Action: Flag for reviewer. Default to 24% until confirmed.
+- **T2-1** — Trigger: Employer claims the 32% employer CNAS rate, or the work involves hazardous conditions. Issue: The 32% rate (vs the standard 24%) and any sector-specific splits (e.g. an 18% employer + 6% state-budget split mentioned in one the secondary summary pass for agriculture) must be confirmed against the current state social insurance budget law. Action: Flag for reviewer. Default to 24% until confirmed.
 
 ### T2-2 -- Conflicting secondary data (6% employee SSC / 4.5%-4.5% health split)
 
-- **T2-2** — Trigger: A source (Rivermate, Safeguard Global, G-P, Native Teams, etc.) reports a 6% employee social insurance contribution and/or a 4.5%/4.5% employer-employee health split. Issue: These reflect the pre-October-2018 regime and are contradicted by PwC's current pages (24% employer CNAS, 9% employee-borne CNAM, no employee SSC). Action: Apply PwC/CNAS (0% employee SSC, 9% employee CNAM). Flag for reviewer to confirm the precise 2025 employee-side position against the Tax Code / Law 489/1999, especially for special categories.
+- **T2-2** — Trigger: A source (Rivermate, Safeguard Global, G-P, Native Teams, etc.) reports a 6% employee social insurance contribution and/or a 4.5%/4.5% employer-employee health split. Issue: These reflect the pre-October-2018 regime and are contradicted by the secondary summary's current pages (24% employer CNAS, 9% employee-borne CNAM, no employee SSC). Action: Apply the secondary summary/CNAS (0% employee SSC, 9% employee CNAM). Flag for reviewer to confirm the precise 2025 employee-side position against the Tax Code / Law 489/1999, especially for special categories.
 
 ### T2-3 -- Personal allowance cap (360,000 MDL)
 
@@ -277,7 +277,7 @@ When payroll data is ambiguous or client circumstances are unclear, flag these s
 
 ### T2-5 -- Tax-year boundary (2025 vs 2026 figures)
 
-- **T2-5** — Trigger: Computation spans the 2025/2026 boundary, or it is unclear which year's figures apply. Issue: Minimum wage rises from 5,500 to 6,300 MDL, fixed SSC from 20,518 to 22,878 MDL, and forecast average salary from 16,100 to 17,400 MDL effective 1 Jan 2026. PwC pages now display 2026 figures because they were re-reviewed in January 2026. Action: Use 2025 figures for periods up to 31 Dec 2025; 2026 figures from 1 Jan 2026. Flag any cross-boundary computation for reviewer.
+- **T2-5** — Trigger: Computation spans the 2025/2026 boundary, or it is unclear which year's figures apply. Issue: Minimum wage rises from 5,500 to 6,300 MDL, fixed SSC from 20,518 to 22,878 MDL, and forecast average salary from 16,100 to 17,400 MDL effective 1 Jan 2026. The secondary summary pages now display 2026 figures because they were re-reviewed in January 2026. Action: Use 2025 figures for periods up to 31 Dec 2025; 2026 figures from 1 Jan 2026. Flag any cross-boundary computation for reviewer.
 
 ### T2-6 -- Self-employed / individually insured status
 
@@ -378,66 +378,66 @@ If the client provides only a bank statement and no other information:
 
 ### Contribution & rate summary (2025; sources in column)
 
-**Contribution & rate summary (2025; sources in column)**  _(PwC; CNAS)_
+**Contribution & rate summary (2025; sources in column)**  _(secondary summary; CNAS)_
 
 | Item | Payer | Rate / amount | Source |
 | --- | --- | --- | --- |
-| State social insurance (CNAS), standard | Employer | 24% of gross | PwC, *Corporate -- Other taxes* |
-| State social insurance (CNAS), special conditions | Employer | 32% of gross | PwC, *Individual -- Other taxes* |
-| State social insurance (CNAS) | Employee | 0% | PwC, *Individual -- Other taxes* |
-| Mandatory health insurance (CNAM) | Employee | 9% of wages | PwC, *Individual -- Other taxes* |
-| Mandatory health insurance (CNAM) | Employer | 0% | PwC, *Corporate -- Other taxes* |
-| Personal income tax (PIT) | Employee | 12% flat | PwC, *Individual -- Taxes on personal income* |
+| State social insurance (CNAS), standard | Employer | 24% of gross | secondary summary, *Corporate -- Other taxes |
+| State social insurance (CNAS), special conditions | Employer | 32% of gross | secondary summary, *Individual -- Other taxes |
+| State social insurance (CNAS) | Employee | 0% | secondary summary, *Individual -- Other taxes |
+| Mandatory health insurance (CNAM) | Employee | 9% of wages | secondary summary, *Individual -- Other taxes |
+| Mandatory health insurance (CNAM) | Employer | 0% | secondary summary, *Corporate -- Other taxes |
+| Personal income tax (PIT) | Employee | 12% flat | secondary summary, *Individual -- Taxes on personal income |
 | Fixed annual SSC (self-employed) | Individual | 20,518 MDL (2025); 22,878 MDL (2026) | CNAS |
-| Fixed annual health premium (self-employed) | Individual | 12,636 MDL (2025 & 2026) | PwC, *Individual -- Deductions* |
+| Fixed annual health premium (self-employed) | Individual | 12,636 MDL (2025 & 2026) | secondary summary, *Individual -- Deductions |
 
-- **Standard employee totals summary** — Standard employee totals (per cell): employee column = 0% CNAS + 9% CNAM = 9%; employer column = 24% CNAS + 0% CNAM = 24%; combined statutory wedge above gross = 24% (employer) + 9% (employee withholding) + 12% PIT on net-of-allowance base.  _(PwC)_
+- **Standard employee totals summary** — Standard employee totals (per cell): employee column = 0% CNAS + 9% CNAM = 9%; employer column = 24% CNAS + 0% CNAM = 24%; combined statutory wedge above gross = 24% (employer) + 9% (employee withholding) + 12% PIT on net-of-allowance base.  _(secondary summary)_
 
 ### Other Moldovan rates (context; not payroll, but cited for cross-checks)
 
-**Other Moldovan rates (context; not payroll, but cited for cross-checks)**  _(PwC; Invest Moldova)_
+**Other Moldovan rates (context; not payroll, but cited for cross-checks)**  _(secondary summary; Invest Moldova)_
 
 | Tax | Rate | Source |
 | --- | --- | --- |
-| Corporate income tax (standard) | 12% | PwC, *Corporate -- Taxes on corporate income* |
-| SME regime (non-VAT) | 4% of turnover | PwC, *Corporate -- Taxes on corporate income* |
-| Farming | 7% | PwC, *Corporate -- Taxes on corporate income* |
+| Corporate income tax (standard) | 12% | secondary summary, *Corporate -- Taxes on corporate income |
+| SME regime (non-VAT) | 4% of turnover | secondary summary, *Corporate -- Taxes on corporate income |
+| Farming | 7% | secondary summary, *Corporate -- Taxes on corporate income |
 | IT Park (MITP) single tax | 7% of turnover (>= 30% of forecast avg salary/employee) | Invest Moldova |
-| VAT (standard) | 20% (reduced 8% / 6%) | PwC, *Corporate -- Other taxes* |
+| VAT (standard) | 20% (reduced 8% / 6%) | secondary summary, *Corporate -- Other taxes |
 
 ### Thresholds (sources in column)
 
-**Thresholds (sources in column)**  _(Intelcont; PwC; WageIndicator; MOLDPRES; social.gov.md; KPMG)_
+**Thresholds (sources in column)**  _(Intelcont; secondary summary; WageIndicator; MOLDPRES; social.gov.md; KPMG)_
 
 | Threshold | 2025 | 2026 | Source |
 | --- | --- | --- | --- |
-| Standard personal allowance | 29,700 MDL/yr (~2,475/mo), only if income <= 360,000 MDL | 29,700 MDL/yr (PwC carries same) | Intelcont; PwC |
-| Major personal allowance | 34,620 MDL/yr | -- [RESEARCH GAP -- reviewer to confirm 2026] | PwC, *Individual -- Deductions* |
-| Spouse's major allowance | 21,780 MDL/yr | -- [RESEARCH GAP -- reviewer to confirm 2026] | PwC, *Individual -- Deductions* |
-| Per dependent | 9,900 MDL/yr (21,780 if severe disability) | -- [RESEARCH GAP -- reviewer to confirm 2026] | PwC, *Individual -- Deductions* |
+| Standard personal allowance | 29,700 MDL/yr (~2,475/mo), only if income <= 360,000 MDL | 29,700 MDL/yr (secondary summary, carries same) | Intelcont; secondary summary |
+| Major personal allowance | 34,620 MDL/yr | -- [RESEARCH GAP -- reviewer to confirm 2026] | secondary summary, *Individual -- Deductions |
+| Spouse's major allowance | 21,780 MDL/yr | -- [RESEARCH GAP -- reviewer to confirm 2026] | secondary summary, *Individual -- Deductions |
+| Per dependent | 9,900 MDL/yr (21,780 if severe disability) | -- [RESEARCH GAP -- reviewer to confirm 2026] | secondary summary, *Individual -- Deductions |
 | Minimum wage | 5,500 MDL/mo | 6,300 MDL/mo (confirmed) | WageIndicator; MOLDPRES |
 | Forecast average monthly salary | 16,100 MDL | 17,400 MDL | social.gov.md |
-| SSC minimum contribution base | National minimum wage (5,500 MDL); 25% for part-time | National minimum wage (6,300 MDL) | PwC, *Corporate -- Other taxes* |
+| SSC minimum contribution base | National minimum wage (5,500 MDL); 25% for part-time | National minimum wage (6,300 MDL) | secondary summary, *Corporate -- Other taxes |
 | VAT mandatory registration | 1,200,000 MDL / 12 months | 1,500,000 MDL (from 1 Jan); 1,700,000 MDL (from 1 Mar) | KPMG |
 
 ### Forms
 
-**Forms**  _(Rivermate; SFS; PwC)_
+**Forms**  _(Rivermate; SFS; secondary summary)_
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
 | IPC21 | Monthly combined declaration of withheld PIT + CNAS + CNAM (employer return) | 25th of the following month | Rivermate; SFS |
-| CET18 | Annual individual income tax return / reconciliation | 30 April of the following year | PwC, *Individual -- Tax administration* |
-| Foreign-citizen short-stay return | Return for foreign citizens earning income from Moldovan residents | Within 3 days of ending the activity | PwC, *Individual -- Tax administration* |
+| CET18 | Annual individual income tax return / reconciliation | 30 April of the following year | secondary summary, *Individual -- Tax administration |
+| Foreign-citizen short-stay return | Return for foreign citizens earning income from Moldovan residents | Within 3 days of ending the activity | secondary summary, *Individual -- Tax administration |
 
 ### Penalties
 
-**Penalties**  _(CNAS; PwC)_
+**Penalties**  _(CNAS; secondary summary)_
 
 | Penalty | Rate | Basis | Source |
 | --- | --- | --- | --- |
 | Late payment of social insurance (CNAS) | 0.1% of the amount owed per day | Law No. 489/1999, art. 28 | CNAS |
-| Interest on late payment of PIT | 0.0301% per day on total tax due | Tax Code (rate set annually) | PwC, *Individual -- Tax administration* |
+| Interest on late payment of PIT | 0.0301% per day on total tax due | Tax Code (rate set annually) | secondary summary, *Individual -- Tax administration |
 
 ### Test suite
 

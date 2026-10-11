@@ -4,8 +4,8 @@ description: "Source-cited draft: personal income tax for Mauritania (tax year 2
 jurisdiction: MR
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Monthly taxable remuneration exceeding MRU 21,000** — 40% on monthly taxable remuneration above MRU 21,000  _(General Tax Code, Law 2019-018 of 29 April 2019 as amended to the Finance Law for 2022 (Ministry of Finance official version, January 2023), art. 114 — https://finances.gov.mr/sites/default/files/2023-03/CGI-Fr-2023.pdf)_
 - **Tax-free threshold (monthly remuneration)** — A deduction of MRU 6,000 a month from remuneration (art. 110(c)); the 15% band then applies to taxable remuneration up to MRU 9,000 (art. 114)  _(General Tax Code, Law 2019-018 of 29 April 2019 as amended to the Finance Law for 2022 (Ministry of Finance official version, January 2023), arts. 110(c) and 114 — https://finances.gov.mr/sites/default/files/2023-03/CGI-Fr-2023.pdf)_
 - **Tax residence test** — Individuals with a home, principal place of abode, or centre of economic interest in Mauritania are residents (approx — confirm statutory test)  _(Code Général des Impôts (General Tax Code))_
-- **Scope of taxation — residents** — Employees domiciled in Mauritania are taxed on their remuneration even where the work is done abroad or the employer is abroad (art. 111(2)(a)); domicile means a permanent home or the centre of vital interests in Mauritania (art. 111(3)); PwC reports foreign-source income as exempt where it was taxed abroad  _(General Tax Code, Law 2019-018 of 29 April 2019 as amended to the Finance Law for 2022 (Ministry of Finance official version, January 2023), art. 111(2)(a) and (3) — https://finances.gov.mr/sites/default/files/2023-03/CGI-Fr-2023.pdf ; foreign income rule: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/mauritania/individual/taxes-on-personal-income)_
+- **Scope of taxation — residents** — Employees domiciled in Mauritania are taxed on their remuneration even where the work is done abroad or the employer is abroad (art. 111(2)(a)); domicile means a permanent home or the centre of vital interests in Mauritania (art. 111(3)); practitioner summaries report foreign-source income as exempt where it was taxed abroad  _(General Tax Code, Law 2019-018 of 29 April 2019 as amended to the Finance Law for 2022 (Ministry of Finance official version, January 2023), art. 111(2)(a) and (3) — https://finances.gov.mr/sites/default/files/2023-03/CGI-Fr-2023.pdf)_
 - **Scope of taxation — non-residents** — Employees domiciled outside Mauritania are taxed only where the paid activity is carried on in Mauritania (art. 111(2)(b))  _(General Tax Code, Law 2019-018 of 29 April 2019 as amended to the Finance Law for 2022 (Ministry of Finance official version, January 2023), art. 111(2)(b) — https://finances.gov.mr/sites/default/files/2023-03/CGI-Fr-2023.pdf)_
 - **Business Profits Tax for Individuals (IBAPP) — actual-income regime** — Higher of 30% of the tax base or 2.5% of taxable revenue  _(Code Général des Impôts (General Tax Code) — https://www.ghamauritanie.com/wp-content/uploads/2025/05/LIVRET-FISCAL-2025-ENG.pdf)_
 - **Lump-sum (forfait) regime for small individual businesses** — 3% of annual turnover  _(Code Général des Impôts (General Tax Code) — https://www.ghamauritanie.com/wp-content/uploads/2025/05/LIVRET-FISCAL-2025-ENG.pdf)_

@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Laos (tax y
 jurisdiction: LA
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -58,7 +58,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Employer social security contribution** — 6% of basic salary  _(Law on Social Security (Lao PDR) — https://laos.acclime.com/guides/social-security-obligations/)_
 - **Employee social security contribution** — 5.5% of basic salary  _(Law on Social Security (Lao PDR) — https://laos.acclime.com/guides/social-security-obligations/)_
 - **Combined contribution rate** — 11.5% of basic salary  _(Law on Social Security (Lao PDR) — https://laos.acclime.com/guides/social-security-obligations/)_
-- **Contribution salary ceiling** — LAK 4,500,000 per month  _(NSSFO Notification No. 0824/NSSFO — https://taxsummaries.pwc.com/lao-pdr/individual/other-taxes)_
+- **Contribution salary ceiling** — LAK 4,500,000 per month  _(NSSFO Notification No. 0824/NSSFO, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Maximum monthly employee contribution** — LAK 247,500 (5.5% × LAK 4,500,000)  _(Law on Social Security (Lao PDR) — https://laos.acclime.com/guides/social-security-obligations/)_
 - **Maximum monthly employer contribution** — LAK 270,000 (6% × LAK 4,500,000)  _(Law on Social Security (Lao PDR) — https://laos.acclime.com/guides/social-security-obligations/)_
 

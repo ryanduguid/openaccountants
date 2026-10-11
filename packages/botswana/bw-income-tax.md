@@ -4,8 +4,8 @@ description: "Source-cited draft: personal income tax for Botswana (tax year 202
 jurisdiction: BW
 category: international
 tax_year: 2026
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Band 5: 156,001 – 400,000** — BWP 13,050 + 25% on the excess over BWP 156,000 (resident individuals)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 1 — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part II annual tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
 - **Band 6: over 400,000** — BWP 74,050 + 27.5% on the excess over BWP 400,000 (resident individuals; new top band from 1 July 2026, when 25% above BWP 156,000 applied for 2025/26)  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, Schedule 1 Part I para 1 — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part II annual tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
 
-Resident individuals are taxed on a progressive scale from 0% to 27.5% under the Income Tax Act, 2026, in force from 1 July 2026 (0% to 25% for 2025/26). The first BWP 48,000 of taxable income is tax-free. Bands below are the cumulative-tax format BURS/PwC publish.
+Resident individuals are taxed on a progressive scale from 0% to 27.5% under the Income Tax Act, 2026, in force from 1 July 2026 (0% to 25% for 2025/26). The first BWP 48,000 of taxable income is tax-free. Bands below are the cumulative-tax format BURS publishes.
 
 ## Non-resident individual tax bands
 
@@ -44,9 +44,9 @@ Individual residence turns on a permanent place of abode in Botswana or a 183-da
 ## Filing, payment and key features
 
 - **Individual return deadline** — Within three months after the 30 June tax year-end, so on or before 30 September  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, s 123(1)(b) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026)_
-- **Return filing requirement** — Required where annual income exceeds the BWP 48,000 resident threshold  _(Income Tax Act (Cap. 52:01) — https://taxsummaries.pwc.com/botswana/individual/tax-administration)_
+- **Return filing requirement** — Required where annual income exceeds the BWP 48,000 resident threshold  _(Income Tax Act (Cap. 52:01))_
 - **Employment income collection** — Pay As You Earn (PAYE): employers withhold tax from employment income using the BURS tax deduction tables  _(Income Tax Act, 2026 (Act No. 13 of 2026), Government Gazette Supplement A of 1 July 2026, BURS copy, s 129(1) — https://www.burs.org.bw/index.php/tax/tax-laws-2026?download=954:income-tax-act-amendment-2026 ; BURS Tax Table and Guidance Notes for Employee's Income, effective 1 July 2026, Part I tax deduction tables — https://www.burs.org.bw/index.php/tax/tax-downloads?download=953:tax-table-2026)_
-- **Social-security contributions** — None — Botswana has no general mandatory state social-security/pension contribution for employees or employers  _(Income Tax Act (Cap. 52:01) / PwC Worldwide Tax Summaries — Botswana — https://taxsummaries.pwc.com/botswana/individual/other-taxes)_
+- **Social-security contributions** — None — Botswana has no general mandatory state social-security/pension contribution for employees or employers  _(Income Tax Act (Cap. 52:01); secondary practitioner summary, Botswana)_
 
 Employees are taxed primarily through PAYE; individuals with income above the threshold file an annual return by 30 September.
 

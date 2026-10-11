@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Ghana (tax year 2026)
 jurisdiction: GH
 category: international
 tax_year: 2026
-last_updated: 2026-10-06
-version: 1.2
+last_updated: 2026-10-11
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,14 +29,14 @@ The general company tax rate is 25%, with statutory sector rates that are higher
 
 The corporate tax base is chargeable income (assessable income less allowable deductions, including capital allowances). Ghana also imposes withholding taxes on dividends, interest, royalties and service fees, plus levies on top of the headline rate.
 
-- **Corporate tax base** — Chargeable income = assessable income (worldwide for residents) less allowable deductions and capital allowances  _(Income Tax Act, 2015 (Act 896) — https://taxsummaries.pwc.com/ghana/corporate/income-determination)_
+- **Corporate tax base** — Chargeable income = assessable income (worldwide for residents) less allowable deductions and capital allowances  _(Income Tax Act, 2015 (Act 896) — https://gra.gov.gh/domestic-tax/tax-types/corporate-income-tax/ (as reported; the figure was not re-read against this text for this change))_
 - **Withholding tax on dividends** — 8% to residents and non-residents; dividends paid by a resident company are a final withholding payment  _(GRA, Withholding Tax (WHT) — https://gra.gov.gh/domestic-tax/tax-types/withholding-tax/)_
 - **Withholding tax on interest** — 8% (residents: excluding interest to individuals and to resident financial institutions; non-residents: excluding individuals, and final unless derived through a Ghanaian permanent establishment)  _(GRA, Withholding Tax (WHT) — https://gra.gov.gh/domestic-tax/tax-types/withholding-tax/)_
 - **Withholding tax on royalties / natural resource payments** — 15% (residents and non-residents)  _(GRA, Withholding Tax (WHT) — https://gra.gov.gh/domestic-tax/tax-types/withholding-tax/)_
 - **Withholding tax on management, consulting and technical service fees (non-resident)** — 20% (final tax)  _(GRA, Withholding Tax (WHT) — https://gra.gov.gh/domestic-tax/tax-types/withholding-tax/)_
 - **Withholding tax on resident supplies by a resident entity** — Goods 3%, works 5% and services 7.5% where payments exceed GHS 2,000 a year; the tax is filed and paid within 15 days after the end of the month  _(GRA, Withholding Tax (WHT) — https://gra.gov.gh/domestic-tax/tax-types/withholding-tax/)_
-- **Treaty relief on outbound payments** — Reduced rates may apply under Ghana's double tax treaties for eligible recipients  _(Income Tax Act, 2015 (Act 896) — https://taxsummaries.pwc.com/ghana/corporate/withholding-taxes)_
-- **Annual return filing deadline** — Within 4 months after the end of the accounting year  _(Income Tax Act, 2015 (Act 896) — https://taxsummaries.pwc.com/ghana/corporate/tax-administration)_
+- **Treaty relief on outbound payments** — Reduced rates may apply under Ghana's double tax treaties for eligible recipients  _(Income Tax Act, 2015 (Act 896) — https://gra.gov.gh/domestic-tax/tax-types/corporate-income-tax/ (as reported; the figure was not re-read against this text for this change))_
+- **Annual return filing deadline** — Within 4 months after the end of the accounting year  _(Income Tax Act, 2015 (Act 896) — https://gra.gov.gh/domestic-tax/tax-types/corporate-income-tax/ (as reported; the figure was not re-read against this text for this change))_
 - **Provisional tax payment** — A self-assessment estimate is filed within the first quarter and the tax paid in four quarterly instalments by 31 March, 30 June, 30 September and 31 December  _(GRA, Corporate Income Tax (CIT) — https://gra.gov.gh/domestic-tax/tax-types/corporate-income-tax/)_
 
 <!-- openaccountants-cta-block -->

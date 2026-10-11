@@ -1,10 +1,10 @@
 ---
 name: kosovo-payroll
 description: Use this skill whenever asked about Kosovo payroll processing for employed persons. Trigger on phrases like "Kosovo payroll", "Kosova paga", "tatimi mbi pagat", "personal income tax Kosovo", "tatimi në të ardhura personale", "withholding tax Kosovo", "mbajtja në burim", "pension contribution Kosovo", "kontributi pensional", "KPST", "Trusti pensional", "ATK", "TAK", "Administrata Tatimore e Kosovës", "EDI declaration", "WM form Kosovo", "net salary Kosovo", "paga neto", "gross to net Kosovo", "PAYE Kosovo", "employer contributions Kosovo", "minimum wage Kosovo", "paga minimale", "secondary employer Kosovo", "benefit in kind Kosovo", or any question about computing employee pay, withholding personal income tax, or mandatory pension contributions for Kosovo-based employees. This skill covers PIT monthly withholding (progressive 0%/8%/10% bands for the primary employer, flat 10% for secondary employers), mandatory pension contributions (5% employee + 5% employer to KPST), voluntary supplementary pension, benefit-in-kind thresholds, minimum wage, new-hire reporting, and the monthly WM declaration and annual reconciliation. ALWAYS read this skill before processing any Kosovo payroll.
-version: 0.2
+version: 0.3
 jurisdiction: XK
 tax_year: 2025
-last_updated: 2026-10-08
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Kosovo Payroll
 
-## Kosovo Payroll Skill v0.2
+## Kosovo Payroll Skill v0.3
 
-**Tier 2 — research-verified. Figures below are sourced from the Tax Administration of Kosovo (Administrata Tatimore e Kosovës — TAK/ATK), Law No. 05/L-028 on Personal Income Tax as amended by Law No. 08/L-142 (effective 23 August 2024), Law No. 04/L-101 on Pension Funds (as amended by Laws No. 04/L-168 and 05/L-116), TAK Public Explanatory Decision No. 01/2013 on pension contributions, Law No. 08/L-257 on the Administration of Tax Procedures (which repealed Law No. 03/L-222), and the Kosovo Pension Savings Trust (Trusti i Kursimeve Pensionale të Kosovës — KPST). PwC Worldwide Tax Summaries remain the source only for the benefit-in-kind threshold, which the law leaves to a sub-legal act not read for this guide. NOT yet signed off by a licensed Kosovo accountant or tax adviser. Treat every computation as an estimate pending professional review.**
+**Tier 2 — research-verified. Figures below are sourced from the Tax Administration of Kosovo (Administrata Tatimore e Kosovës — TAK/ATK), Law No. 05/L-028 on Personal Income Tax as amended by Law No. 08/L-142 (effective 23 August 2024), Law No. 04/L-101 on Pension Funds (as amended by Laws No. 04/L-168 and 05/L-116), TAK Public Explanatory Decision No. 01/2013 on pension contributions, Law No. 08/L-257 on the Administration of Tax Procedures (which repealed Law No. 03/L-222), and the Kosovo Pension Savings Trust (Trusti i Kursimeve Pensionale të Kosovës — KPST). a secondary practitioner summary remains the source only for the benefit-in-kind threshold, which the law leaves to a sub-legal act not read for this guide. NOT yet signed off by a licensed Kosovo accountant or tax adviser. Treat every computation as an estimate pending professional review.**
 
 ## Section 1 -- Quick Reference
 
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | [Law No. 05/L-028](https://www.atk-ks.org/wp-content/uploads/2017/07/LAW_NO._05_L_-028__ON_PERSONAL_INCOME_TAX.pdf) on Personal Income Tax (as amended by Law No. 08/L-142, eff. 23 Aug 2024); [Law No. 04/L-101](https://www.atk-ks.org/wp-content/uploads/2017/07/Law-No.-04-L-101.pdf) on Pension Funds (as amended by Laws No. 04/L-115, 04/L-168 and 05/L-116); [Law No. 08/L-257](https://www.atk-ks.org/wp-content/uploads/2024/01/LAW_NO._08_L-257_ON_THE_ADMINISTRATION_OF_TAX_PROCEDURES.pdf) on the Administration of Tax Procedures (adopted 14 December 2023; art. 122 repeals Law No. 03/L-222) |
 | Filing portal | TAK EDI electronic declaration system (via atk-ks.org) |
 | Validated by | Pending -- requires sign-off by a licensed Kosovo accountant / tax adviser |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 **Read this whole section before computing anything. The shared payroll runbook lives in `payroll-workflow-base` — follow that runbook with this skill supplying the Kosovo-specific content.**
 
@@ -138,7 +138,7 @@ Both are withheld from gross wage. (Law No. 05/L-028 art. 38(1); Law No. 04/L-10
 
 ### Benefit-in-kind threshold
 
-- **BIK tax-free threshold** — Benefits in kind are taxable as wages to the extent they exceed EUR 65 per month. The first EUR 65/month of benefits in kind is tax-free; only the excess is added to the PIT base. Meals and transport provided in kind, actual business travel reimbursed within ministerial limits and work-accident indemnity are not wages.  _(Law No. 05/L-028 art. 9(1.8) and (2) leaves the threshold to a sub-legal act of the Minister, which was not read; the EUR 65 figure is from PwC, Income determination. **[RESEARCH GAP — confirm the figure in the current administrative instruction.]**)_
+- **BIK tax-free threshold** — Benefits in kind are taxable as wages to the extent they exceed EUR 65 per month. The first EUR 65/month of benefits in kind is tax-free; only the excess is added to the PIT base. Meals and transport provided in kind, actual business travel reimbursed within ministerial limits and work-accident indemnity are not wages.  _(Law No. 05/L-028 art. 9(1.8) and (2) leaves the threshold to a sub-legal act of the Minister, which was not read; the EUR 65 figure is from a secondary summary. **[RESEARCH GAP — confirm the figure in the current administrative instruction.]**)_
 
 ### National Minimum Gross Wage (paga minimale)
 
@@ -168,7 +168,7 @@ When an input is unknown, the skill MUST apply the conservative default below an
 | Mandatory pension | **5% employee + 5% employer, no voluntary top-up** | Voluntary contributions are optional and not assumed unless elected. (Law No. 04/L-101 art. 6.2) |
 | PIT base | **Gross − employee pension (+ BIK above EUR 65)** | TAK Decision 01/2013 art. 6 sets the base as gross after the employee's pension share. |
 | Minimum wage | **EUR 350/month for 2025 pay periods; EUR 425 from 1 Jan 2026** | EUR 350 was the rate in force during 2025; the increase takes effect 1 Jan 2026. (Balkanweb; WageIndicator) |
-| Benefit in kind | **Tax-free only up to EUR 65/month; excess added to PIT base** | Threshold set by sub-legal act under art. 9(1.8); figure from PwC. **[RESEARCH GAP]** |
+| Benefit in kind | **Tax-free only up to EUR 65/month; excess added to PIT base** | Threshold set by sub-legal act under art. 9(1.8); figure from practitioner summaries. **[RESEARCH GAP]** |
 | Pension base cap | **None** | Law No. 04/L-101 art. 6.2 sets no ceiling. |
 | Employer cost estimate | **Gross × 1.05** (add 5% employer pension) | Single mandatory employer-borne contribution; PIT is not an employer cost. (Law No. 04/L-101 art. 6.2(a)) |
 | Remittance timing | **15th of the following month** for the monthly WM declaration and payment | Within 15 days after the end of each month. (Law No. 05/L-028 art. 38(5)) |
@@ -330,7 +330,7 @@ A secondary employer applies a flat 10% to all wage income — no 0% or 8% band.
 | Employer pension (5% of cash gross 600) | on top | 30.00 |
 | **Total employer cash cost** | 600 + 30 | **630.00** (plus the cost of providing the EUR 100 benefit) |
 
-Only the EUR 35 BIK excess over the EUR 65/month threshold enters the PIT base; the first EUR 65 is tax-free. (Law No. 05/L-028 art. 9(1.8); EUR 65 figure from PwC, Income determination) **[T2-5 — whether the taxable BIK also enters the pension base was not resolved; this example applies the 5% pension to cash gross only and flags it.]**
+Only the EUR 35 BIK excess over the EUR 65/month threshold enters the PIT base; the first EUR 65 is tax-free. (Law No. 05/L-028 art. 9(1.8); EUR 65 figure from a secondary summary) **[T2-5 — whether the taxable BIK also enters the pension base was not resolved; this example applies the 5% pension to cash gross only and flags it.]**
 
 ## Section 10 -- Tier 1 Rules (deterministic — the skill applies these directly)
 
@@ -341,7 +341,7 @@ Only the EUR 35 BIK excess over the EUR 65/month threshold enters the PIT base; 
 - **T1-5 Voluntary supplementary pension** — Voluntary supplementary pension up to 15% each (employer + employee, 30% combined) is permitted; the employee's share up to 15% of gross reduces the PIT base and the employer's share up to 15% is deductible for the employer.  _(Law No. 04/L-101 art. 6.2(c); TAK Decision 01/2013 arts. 5 and 6)_
 - **T1-6 Employer cost formula** — Employer cost = gross salary + 5% employer pension (gross × 1.05). PIT is fully employee-borne via withholding and is NOT an employer cost.  _(Law No. 04/L-101 art. 6.2(a))_
 - **T1-7 Monthly computation** — Withholding on wages is computed monthly to match the pay period; the monthly bands drive each pay run.  _(Law No. 05/L-028 art. 38(1) and (2))_
-- **T1-8 BIK threshold** — Benefits in kind are taxable as wages to the extent they exceed EUR 65/month; the first EUR 65/month is tax-free.  _(Law No. 05/L-028 art. 9(1.8); figure from PwC, Income determination)_
+- **T1-8 BIK threshold** — Benefits in kind are taxable as wages to the extent they exceed EUR 65/month; the first EUR 65/month is tax-free.  _(Law No. 05/L-028 art. 9(1.8); figure from a secondary summary)_
 - **T1-9 Monthly WM deadline** — Monthly WM declaration and payment of withheld PIT and pension contributions is due by the 15th of the following month via the TAK EDI system.  _(Law No. 05/L-028 art. 38(5))_
 - **T1-10 Annual PIT return deadline** — The annual individual PIT return is due 31 March of the following year; the tax period is the calendar year.  _(Law No. 05/L-028 arts. 2(1.27) and 48(1))_
 - **T1-11 New-hire notification** — The employer must notify TAK of each new employment contract one day before the employee starts work; the fine is EUR 500 for each undeclared worker.  _([Law No. 08/L-257](https://www.atk-ks.org/wp-content/uploads/2024/01/LAW_NO._08_L-257_ON_THE_ADMINISTRATION_OF_TAX_PROCEDURES.pdf) arts. 43(5) and 102(3))_
@@ -486,7 +486,7 @@ When key facts are missing, ask the user these questions before computing. If a 
 | 4 | Law No. 05/L-116 amending Law No. 04/L-101 (Albanian; Official Gazette 3/2017) | Central Bank of Kosovo (BQK) | https://bqk-kos.org/wp-content/uploads/2024/10/Ligji-05L116-per-ndryshimin-e-fondeve-pensionale.pdf |
 | 5 | TAK Public Explanatory Decision No. 01/2013 on the pension law (rates, PIT base, minimum-wage base) | Tax Administration of Kosovo (ATK) | https://www.atk-ks.org/wp-content/uploads/2017/08/Vendim-Shpjegues-Publik-NR-01-2013Anglisht.pdf |
 | 6 | Law No. 08/L-257 on the Administration of Tax Procedures (fines, interest, new-hire notice, records) | Tax Administration of Kosovo (ATK) | https://www.atk-ks.org/wp-content/uploads/2024/01/LAW_NO._08_L-257_ON_THE_ADMINISTRATION_OF_TAX_PROCEDURES.pdf |
-| 7 | Kosovo — Individual — Income determination (BIK EUR 65 threshold only) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/kosovo/individual/income-determination |
+| 7 | Kosovo — Individual — Income determination (BIK EUR 65 threshold only) | secondary practitioner summary (link removed) | n/a |
 | 8 | Notice to taxpayers — Personal Income Tax rates are changed (Law No. 08/L-142, eff. 23 Aug 2024) | Tax Administration of Kosovo (ATK) | https://www.atk-ks.org/en/notice-to-taxpayers-personal-income-tax-rates-are-changed/ |
 | 9 | Kosovo minimum wage decision — EUR 425 (Jan 2026) / EUR 500 (Jul 2026), prior EUR 350 | Balkanweb / News24 (reporting Government decision 10/273) | https://www.balkanweb.com/en/425-euro-nga-janari-dhe-500-nga-korriku-hyn-ne-fuqi-vendimi-per-pagen-minimale-ne-kosove/ |
 | 10 | Minimum Wage Updated in Kosovo from 01 January 2026 | WageIndicator.org | https://wageindicator.org/salary/minimum-wage/minimum-wages-news/2026/minimum-wage-updated-in-kosovo-from-01-january-2026-january-01-2026 |

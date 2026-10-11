@@ -1,10 +1,10 @@
 ---
 name: guatemala-payroll
 description: Use this skill whenever asked about Guatemala payroll processing for employed persons. Trigger on phrases like "Guatemala payroll", "nómina Guatemala", "ISR Guatemala", "retención ISR", "rentas del trabajo en relación de dependencia", "cuota laboral IGSS", "cuota patronal", "IGSS contribution", "INTECAP", "IRTRA", "bonificación incentivo", "bono 14", "aguinaldo", "salario mínimo Guatemala", "net salary Guatemala", "salario neto", "PAYE Guatemala", "tax withholding Guatemala", "employer contributions Guatemala", "RetenISR", "constancia de retención", "SAT Guatemala", "gross to net Guatemala", "GTQ payroll", "quetzal salary", or any question about computing employee pay, withholding income tax (ISR), or mandatory social-security contributions for Guatemala-based employees. This skill covers ISR withholding on employment income (Decreto 10-2012), employee and employer IGSS/INTECAP/IRTRA contributions, the standard personal deduction and IVA credit, statutory bonuses (bonificación incentivo, aguinaldo, Bono 14), minimum wage by economic circumscription, non-resident withholding, and SAT/IGSS filing obligations. ALWAYS read this skill before processing any Guatemala payroll.
-version: 0.1
+version: 0.2
 jurisdiction: GT
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Guatemala Payroll
 
-## Guatemala Payroll Skill v0.1
+## Guatemala Payroll Skill v0.2
 
-**Tier 2 — research-verified. Figures below are sourced from the Guatemalan Tax Administration (Superintendencia de Administración Tributaria, SAT), the Guatemalan Social Security Institute (Instituto Guatemalteco de Seguridad Social, IGSS), the Ley de Actualización Tributaria (Decreto 10-2012), the Código Tributario (Decreto 6-91), labour decrees (78-89, 76-78, 42-92), PwC Worldwide Tax Summaries, EY, Deloitte, Baker Tilly Guatemala, and the official gazette (Diario de Centro América). NOT yet signed off by a licensed Guatemalan accountant (Contador Público y Auditor) or tax adviser. Treat every computation as an estimate pending professional review.**
+**Tier 2 — research-verified. Figures below are sourced from the Guatemalan Tax Administration (Superintendencia de Administración Tributaria, SAT), the Guatemalan Social Security Institute (Instituto Guatemalteco de Seguridad Social, IGSS), the Ley de Actualización Tributaria (Decreto 10-2012), the Código Tributario (Decreto 6-91), labour decrees (78-89, 76-78, 42-92), a secondary practitioner summary, EY, Deloitte, Baker Tilly Guatemala, and the official gazette (Diario de Centro América). NOT yet signed off by a licensed Guatemalan accountant (Contador Público y Auditor) or tax adviser. Treat every computation as an estimate pending professional review.**
 
 ## Section 1 -- Quick Reference
 
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Guatemala (Republic of Guatemala / República de Guatemala) |
 | Currency | Guatemalan Quetzal (GTQ / Q) only |
 | Standard pay frequency | Monthly (quincenal — twice monthly — also common) |
-| Tax year | Calendar year (1 January -- 31 December) (PwC) |
+| Tax year | Calendar year (1 January -- 31 December) (secondary summary) |
 | Income tax (ISR) withholding system | Monthly withholding by the employer on projected annual income, divided by 12; annual final settlement (liquidación) in December (Decreto 10-2012; oficsa) |
 | Income tax authority | Superintendencia de Administración Tributaria (SAT) |
 | Social security authority | Instituto Guatemalteco de Seguridad Social (IGSS) |
@@ -37,13 +37,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Ley de Actualización Tributaria (Decreto 10-2012); Código Tributario (Decreto 6-91); Bonificación Incentivo (Decreto 78-89); Aguinaldo (Decreto 76-78); Bono 14 (Decreto 42-92) |
 | Filing portal | SAT — Agencia Virtual / RetenISR (Sistema de Retenciones Web -ISR-) (portal.sat.gob.gt) |
 | Validated by | Pending -- requires sign-off by a licensed Guatemalan Contador Público y Auditor / tax adviser |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Read this whole section before computing anything. The shared payroll runbook lives in `payroll-workflow-base` — follow that runbook with this skill supplying the Guatemala-specific content.**
 
 ### The single most important Guatemala facts
 
-- **ISR on employment income** — Guatemala DOES have a personal income tax (ISR) on employment income, withheld at source by the employer under Decreto 10-2012. It is mildly progressive: 5% on the first Q300,000 of annual taxable income and Q15,000 + 7% on the excess.  _(PwC; Decreto 10-2012)_
+- **ISR on employment income** — Guatemala DOES have a personal income tax (ISR) on employment income, withheld at source by the employer under Decreto 10-2012. It is mildly progressive: 5% on the first Q300,000 of annual taxable income and Q15,000 + 7% on the excess.  _(secondary summary; Decreto 10-2012)_
 - **Q250 bonificación incentivo non-salary** — The Q250/month bonificación incentivo (Decreto 78-89) is non-salary by law. It is excluded from the IGSS contribution base and from benefit calculations. Its ISR treatment is flagged as Tier-2.  _(misalario; copades)_
 
 ## Section 2 -- Income Tax Withholding (ISR — Rentas del Trabajo)
@@ -52,28 +52,28 @@ The employer withholds ISR on "rentas del trabajo en relación de dependencia". 
 
 ### ISR Brackets — Resident Employment Income (2025 and 2026)
 
-**ISR Brackets table**  _(PwC — taxes on personal income; Decreto 10-2012; Prensa Libre citing SAT)_
+**ISR Brackets table**  _(secondary summary, taxes on personal income; Decreto 10-2012; Prensa Libre citing SAT)_
 
 | Annual taxable income (renta imponible) | Marginal rate | Tax formula |
 | --- | --- | --- |
 | Q0.01 – Q300,000.00 | 5% | 5% × taxable income |
 | Over Q300,000.00 | 7% on the excess | Q15,000 fixed + 7% × (taxable income − 300,000) |
 
-(PwC — taxes on personal income; Decreto 10-2012; Prensa Libre citing SAT) The fixed Q15,000 = 5% × Q300,000 (verify: 0.05 × 300,000 = 15,000 ✓), so the schedule is continuous at the Q300,000 boundary. These rates are set in Decreto 10-2012 and have **not** changed for 2025/2026.
+(secondary summary, taxes on personal income; Decreto 10-2012; Prensa Libre citing SAT) The fixed Q15,000 = 5% × Q300,000 (verify: 0.05 × 300,000 = 15,000 ✓), so the schedule is continuous at the Q300,000 boundary. These rates are set in Decreto 10-2012 and have **not** changed for 2025/2026.
 
 ### Deductions in Computing Annual Taxable Income
 
-**Deductions table**  _(PwC)_
+**Deductions table**  _(secondary summary)_
 
 | Deduction | Amount (annual) | Notes / source |
 | --- | --- | --- |
-| Personal expenses (sin comprobación) | Q48,000.00 | Standard, no receipts required (PwC — deductions; Prensa Libre) |
-| IVA (VAT) credit on personal expenses | Up to Q12,000.00 | Must be backed by tax invoices (facturas) (PwC; Prensa Libre) |
-| IGSS employee contributions (cuota laboral) | Actual paid (4.83% of salary base) | Deductible (PwC — deductions) |
-| Donations | Restricted (commonly up to 5% of net income) | (PwC) **[T2 — confirm exact cap and base]** |
-| Life insurance premiums | Deductible | (PwC) **[T2 — confirm conditions/limits]** |
+| Personal expenses (sin comprobación) | Q48,000.00 | Standard, no receipts required (secondary summary, deductions; Prensa Libre) |
+| IVA (VAT) credit on personal expenses | Up to Q12,000.00 | Must be backed by tax invoices (facturas) (secondary summary; Prensa Libre) |
+| IGSS employee contributions (cuota laboral) | Actual paid (4.83% of salary base) | Deductible (secondary summary, deductions) |
+| Donations | Restricted (commonly up to 5% of net income) | (secondary summary) **[T2 — confirm exact cap and base]** |
+| Life insurance premiums | Deductible | (secondary summary) **[T2 — confirm conditions/limits]** |
 
-> The Q48,000 + Q12,000 = the commonly cited **Q60,000 combined base deduction floor**. (Prensa Libre; PwC) Practical effect: an employee earning **≤ ~Q4,000/month (≈Q48,000/yr salary)** effectively pays no ISR after the standard personal deduction alone.
+> The Q48,000 + Q12,000 = the commonly cited **Q60,000 combined base deduction floor**. (Prensa Libre; secondary summary) Practical effect: an employee earning **≤ ~Q4,000/month (≈Q48,000/yr salary)** effectively pays no ISR after the standard personal deduction alone.
 
 ### 2026 reform — Decreto 13-2026
 
@@ -91,7 +91,7 @@ The employer withholds ISR on "rentas del trabajo en relación de dependencia". 
 
 ### Monthly Withholding Method (resident)
 
-- **Deterministic withholding order** — 1. Start with annual projected gross salary (12 ordinary monthly salaries; add Bono 14 and aguinaldo if treated as taxable — see Tier-2 note). 2. Subtract the Q48,000 standard personal deduction. 3. Subtract the IVA credit of up to Q12,000 (only if backed by facturas; default to Q0 if unconfirmed). 4. Subtract the actual IGSS employee contributions (4.83% of the salary base). 5. Subtract any confirmed donations / life-insurance premiums (default Q0). 6. The result is the annual taxable income (renta imponible). 7. Apply the bracket schedule → annual ISR. 8. Divide annual ISR by 12 → monthly ISR withholding. 9. At the December final settlement (liquidación), reconcile against amounts already withheld.  _(Decreto 10-2012; oficsa; PwC)_
+- **Deterministic withholding order** — 1. Start with annual projected gross salary (12 ordinary monthly salaries; add Bono 14 and aguinaldo if treated as taxable — see Tier-2 note). 2. Subtract the Q48,000 standard personal deduction. 3. Subtract the IVA credit of up to Q12,000 (only if backed by facturas; default to Q0 if unconfirmed). 4. Subtract the actual IGSS employee contributions (4.83% of the salary base). 5. Subtract any confirmed donations / life-insurance premiums (default Q0). 6. The result is the annual taxable income (renta imponible). 7. Apply the bracket schedule → annual ISR. 8. Divide annual ISR by 12 → monthly ISR withholding. 9. At the December final settlement (liquidación), reconcile against amounts already withheld.  _(Decreto 10-2012; oficsa; secondary summary)_
 
 ## Section 3 -- Contributions: Employee Deductions (IGSS cuota laboral)
 
@@ -101,26 +101,26 @@ The employee pays a single mandatory social-security deduction: the IGSS cuota l
 
 | Contribution | Rate | Payer | Authority | Base | Source |
 | --- | --- | --- | --- | --- | --- |
-| IGSS (cuota laboral) | 4.83% | Employee (withheld) | IGSS | Ordinary + extraordinary salary, **excluding** the Q250 bonificación incentivo | PwC — other taxes |
+| IGSS (cuota laboral) | 4.83% | Employee (withheld) | IGSS | Ordinary + extraordinary salary, **excluding** the Q250 bonificación incentivo | secondary summary, other taxes |
 | **Total employee contribution** | **4.83%** | Employee (withheld) | — | — | (single line — no other employee levy) |
 
 - **Contribution base** — The contribution base is the base salary = ordinary + extraordinary wages, generally excluding the Q250 bonificación incentivo (non-salary by Decreto 78-89).  _(misalario; copades)_
-- **No IGSS ceiling or floor** — No IGSS contribution ceiling or floor was found in any authoritative source — IGSS contributions apply to the full ordinary + extraordinary salary with no cap. **[T2 — confirm there is no salary cap against current IGSS regulations.]**  _(PwC; IGSS)_
+- **No IGSS ceiling or floor** — No IGSS contribution ceiling or floor was found in any authoritative source — IGSS contributions apply to the full ordinary + extraordinary salary with no cap. **[T2 — confirm there is no salary cap against current IGSS regulations.]**  _(secondary summary; IGSS)_
 
 ## Section 4 -- Contributions: Employer Contributions (IGSS / INTECAP / IRTRA)
 
 The employer pays a cuota patronal that bundles three levies on the same salary base (ordinary + extraordinary, excluding the Q250 bonificación incentivo).
 
-**Employer contribution table**  _(PwC)_
+**Employer contribution table**  _(secondary summary)_
 
 | Contribution | Rate | Authority | Source |
 | --- | --- | --- | --- |
-| IGSS (cuota patronal) | 10.67% | IGSS | IGSS (official); PwC |
+| IGSS (cuota patronal) | 10.67% | IGSS | IGSS (official); secondary summary |
 | INTECAP | 1.00% | INTECAP | copades; misalario |
 | IRTRA | 1.00% | IRTRA | copades; misalario |
-| **Total employer contribution** | **12.67%** | — | verify: 10.67 + 1.00 + 1.00 = 12.67 ✓ (PwC) |
+| **Total employer contribution** | **12.67%** | — | verify: 10.67 + 1.00 + 1.00 = 12.67 ✓ (secondary summary) |
 
-**Combined employee + employer social-security wedge**  _(PwC; IGSS)_
+**Combined employee + employer social-security wedge**  _(secondary summary; IGSS)_
 
 | Component | Employee | Employer | Combined |
 | --- | --- | --- | --- |
@@ -129,7 +129,7 @@ The employer pays a cuota patronal that bundles three levies on the same salary 
 | IRTRA | — | 1.00% | 1.00% |
 | **Total** | **4.83%** | **12.67%** | **17.50%** |
 
-> Verify the totals: employee column 4.83% ✓; employer column 10.67 + 1.00 + 1.00 = 12.67% ✓; combined 4.83 + 12.67 = 17.50% ✓; IGSS-only combined 4.83 + 10.67 = 15.50% ✓. (PwC; IGSS)
+> Verify the totals: employee column 4.83% ✓; employer column 10.67 + 1.00 + 1.00 = 12.67% ✓; combined 4.83 + 12.67 = 17.50% ✓; IGSS-only combined 4.83 + 10.67 = 15.50% ✓. (secondary summary; IGSS)
 
 - **Tax treatment of employer IGSS contribution** — The employer IGSS contribution is "renta no imponible" (non-taxable income) for ISR purposes. The levies sit on top of salary as an employer cost — they are never deducted from the employee.  _(IGSS)_
 
@@ -195,11 +195,11 @@ Guatemala uses two economic circumscriptions: CE1 = Department of Guatemala; CE2
 
 ## Section 7 -- Conservative Defaults
 
-**Conservative defaults table**  _(PwC; Prensa Libre)_
+**Conservative defaults table**  _(secondary summary; Prensa Libre)_
 
 | Field | Default | Rationale |
 | --- | --- | --- |
-| IVA credit (Q12,000) | **Q0 unless facturas are confirmed** | The IVA credit requires invoice backing; absent proof, do not grant it. (PwC; Prensa Libre) |
+| IVA credit (Q12,000) | **Q0 unless facturas are confirmed** | The IVA credit requires invoice backing; absent proof, do not grant it. (secondary summary; Prensa Libre) |
 | Donations / life-insurance deductions | **Q0** | Apply only when confirmed and documented. |
 | Decreto 13-2026 Q3,024 extra deduction | **Do NOT apply** | Reform unconfirmed against the final decree text. **[RESEARCH GAP]** |
 | Residency | **Resident** (progressive 5% / 7% with deductions) | Apply the 15% non-resident flat rate only when non-residence is confirmed. |
@@ -384,18 +384,18 @@ Bank statement context: `NOMINA … Q7,482.92` plus `BONIFICACION INCENTIVO … 
 
 ## Section 11 -- Tier 1 Rules (deterministic — the skill applies these directly)
 
-- **T1-1 Resident ISR schedule** — Resident ISR on employment income (2025–2026): 5% on annual taxable income up to Q300,000; Q15,000 + 7% on the excess. The schedule is continuous (Q15,000 = 5% × 300,000).  _(PwC; Decreto 10-2012)_
-- **T1-2 Standard personal deduction and IVA credit** — Standard personal deduction = Q48,000/year (sin comprobación); plus an IVA credit of up to Q12,000/year but only if backed by facturas (default Q0).  _(PwC; Prensa Libre)_
-- **T1-3 IGSS employee contributions deductible** — Employee IGSS contributions (4.83% of the salary base) are deductible in computing taxable income.  _(PwC)_
-- **T1-4 Employee social security** — Employee social security = 4.83% IGSS cuota laboral on the salary base (ordinary + extraordinary, excluding the Q250 incentivo). No employee INTECAP/IRTRA. No salary cap found.  _(PwC; IGSS)_
-- **T1-5 Employer social security** — Employer social security = 12.67% cuota patronal = IGSS 10.67% + INTECAP 1% + IRTRA 1%, on the same base, paid on top of salary.  _(IGSS; PwC; copades)_
-- **T1-6 Combined social-security wedge** — Combined social-security wedge = 17.50% (employee 4.83% + employer 12.67%).  _(PwC)_
+- **T1-1 Resident ISR schedule** — Resident ISR on employment income (2025–2026): 5% on annual taxable income up to Q300,000; Q15,000 + 7% on the excess. The schedule is continuous (Q15,000 = 5% × 300,000).  _(secondary summary; Decreto 10-2012)_
+- **T1-2 Standard personal deduction and IVA credit** — Standard personal deduction = Q48,000/year (sin comprobación); plus an IVA credit of up to Q12,000/year but only if backed by facturas (default Q0).  _(secondary summary; Prensa Libre)_
+- **T1-3 IGSS employee contributions deductible** — Employee IGSS contributions (4.83% of the salary base) are deductible in computing taxable income.  _(secondary summary)_
+- **T1-4 Employee social security** — Employee social security = 4.83% IGSS cuota laboral on the salary base (ordinary + extraordinary, excluding the Q250 incentivo). No employee INTECAP/IRTRA. No salary cap found.  _(secondary summary; IGSS)_
+- **T1-5 Employer social security** — Employer social security = 12.67% cuota patronal = IGSS 10.67% + INTECAP 1% + IRTRA 1%, on the same base, paid on top of salary.  _(IGSS; secondary summary; copades)_
+- **T1-6 Combined social-security wedge** — Combined social-security wedge = 17.50% (employee 4.83% + employer 12.67%).  _(secondary summary)_
 - **T1-7 Bonificación incentivo exclusion** — The Q250/month bonificación incentivo (Decreto 78-89) is non-salary: excluded from the IGSS base and from benefit calculations, and paid on top of base salary.  _(misalario; copades)_
 - **T1-8 Aguinaldo and Bono 14 timing** — Aguinaldo (Decreto 76-78) and Bono 14 (Decreto 42-92) are each one month's salary (pro-rated): aguinaldo 50% in the first 15 days of December and the rest by 15 January; Bono 14 by 15 July.  _(Mintrabajo)_
 - **T1-9 Non-resident employment income** — Non-resident employment income: 15% flat definitive on gross, no deductions; remit within the first 10 business days of the following month with a constancia.  _(Decreto 10-2012; Baker Tilly)_
 - **T1-10 Withholding order** — Withholding order: project annual income → subtract Q48,000 personal deduction, IVA credit (if proven), actual IGSS, confirmed donations/insurance → annual taxable income → apply 5% / 7% schedule → divide by 12 → monthly ISR; reconcile at the December liquidación.  _(Decreto 10-2012; oficsa)_
 - **T1-11 Employer IGSS registration threshold** — Employer IGSS registration threshold = 1 worker since 17 Jan 2023 (Acuerdo JD 1529); register within 30 business days of the obligation arising.  _(IGSS; EY; Prensa Libre)_
-- **T1-12 Currency and tax year** — Currency is GTQ (Quetzal) only; the tax year is the calendar year.  _(PwC)_
+- **T1-12 Currency and tax year** — Currency is GTQ (Quetzal) only; the tax year is the calendar year.  _(secondary summary)_
 
 ## Section 12 -- Tier 2 Catalogue (reviewer judgement required)
 
@@ -563,10 +563,10 @@ When key facts are missing, ask the user these questions before computing. If a 
 
 | # | Source | Publisher | URL |
 | --- | --- | --- | --- |
-| 1 | Guatemala — Individual — Taxes on personal income (ISR brackets 5% / 7%) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income |
-| 2 | Guatemala — Individual — Deductions (Q48,000 / Q12,000, IGSS deductible) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/guatemala/individual/deductions |
-| 3 | Guatemala — Individual — Other taxes (IGSS 4.83% / 12.67%, 17.50% combined) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/guatemala/individual/other-taxes |
-| 4 | Guatemala — Individual — Tax administration (calendar tax year) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/guatemala/individual/tax-administration |
+| 1 | Guatemala — Individual — Taxes on personal income (ISR brackets 5% / 7%) | secondary summary | |
+| 2 | Guatemala — Individual — Deductions (Q48,000 / Q12,000, IGSS deductible) | secondary summary | |
+| 3 | Guatemala — Individual — Other taxes (IGSS 4.83% / 12.67%, 17.50% combined) | secondary summary | |
+| 4 | Guatemala — Individual — Tax administration (calendar tax year) | secondary summary | |
 | 5 | A partir de qué salario se paga ISR (Q48,000 / Q12,000, 5% / 7%) | Prensa Libre (citing SAT) | https://www.prensalibre.com/economia/a-partir-de-que-salario-se-paga-isr-en-guatemala-y-como-se-calcula/ |
 | 6 | RetenISR — Sistema de Retenciones Web -ISR- | SAT | https://portal.sat.gob.gt/portal/sistemas-web/retencioneswebisr/ |
 | 7 | Régimen de retenciones de ISR a no residentes (15% flat, Art. 104) | Baker Tilly Guatemala | https://www.bakertilly.gt/en/insights/el-r%C3%A9gimen-de-retenciones-de-impuesto-sobre-la-renta-a-no-residentes-en-guatemala |

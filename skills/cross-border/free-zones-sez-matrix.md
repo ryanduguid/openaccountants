@@ -1,10 +1,10 @@
 ---
 name: free-zones-sez-matrix
 description: "Use this skill whenever a company asks about establishing or trading through a free zone, special economic zone (SEZ), free trade zone (FTZ), enterprise zone, or financial center. Trigger on phrases like \"SEZ\", \"free zone\", \"FTZ\", \"Mainland vs free zone UAE\", \"DIFC\", \"ADGM\", \"DMCC\", \"JAFZA\", \"QFC\", \"DAFZA\", \"DWC\", \"Saudi SEZ\", \"King Abdullah Economic City\", \"NEOM\", \"Singapore IDIs\", \"Hong Kong tax\", \"Shenzhen Qianhai\", \"Hainan FTP\", \"Shanghai FTZ\", \"Madeira IBC\", \"Madeira Free Zone\", \"Gibraltar\", \"Malta MFSA passporting\", \"Cyprus IBC\", \"Bahamas IBC\", \"BVI BC\", \"Cayman exempted company\", \"Mauritius GBL\", \"Labuan\", \"Jebel Ali\", \"RAK ICC\", \"ADGM RegLab\", or any request to assess the tax and operational rules of an SEZ. Maps ~50 zones across UAE, Saudi Arabia, China, India, Africa, Latin America, the Caribbean, and Europe. Does NOT cover: VAT/customs free-circulation rules within the zone beyond a summary, immigration / employment law, real-estate leasing, sector-specific licensing. ALWAYS read this skill before incorporating in a zone or advising on the tax incentives."
-version: 0.2
+version: 0.3
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - cross-border-workflow-base
@@ -224,7 +224,7 @@ The UAE has ~45 free zones plus three financial center zones (DIFC, ADGM, QFC). 
 | **Hong Kong** | Hong Kong DMTT effective 2025 for in-scope MNEs; tax on Mainland-China-sourced income may also enter scope. |
 | **Singapore** | DTT (QDMTT) and IIR from 2025; UTPR not yet enacted. |
 | **Madeira IBC** | Portugal QDMTT under EU Directive; benefits clawed back for in-scope groups. |
-| **Mauritius** | QDMTT enacted by the Finance (Miscellaneous Provisions) Act 2025 (assented 8 August 2025; Income Tax Act sections 50P to 50Z) for years of assessment commencing on or after 1 July 2025, with the Income Tax (Qualified Domestic Minimum Top-up Tax) Regulations 2026 in operation from the same date; no IIR or UTPR ([PwC Mauritius](https://www.pwc.com/mu/en/services/tax/Taxtimes/pillar-two.html)). |
+| **Mauritius** | QDMTT enacted by the Finance (Miscellaneous Provisions) Act 2025 (assented 8 August 2025; Income Tax Act sections 50P to 50Z) for years of assessment commencing on or after 1 July 2025, with the Income Tax (Qualified Domestic Minimum Top-up Tax) Regulations 2026 in operation from the same date; no IIR or UTPR (a secondary summary (link removed)). |
 
 ## Section 11 — Output specification
 

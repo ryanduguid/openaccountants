@@ -1,12 +1,12 @@
 ---
 name: cyprus-payroll
 description: Use this skill whenever asked about Cyprus payroll processing for employed persons. Trigger on phrases like "Cyprus payroll", "PAYE Cyprus", "TD7", "TD63", "TD59", "TD1 Cyprus", "Social Insurance Cyprus", "GESY", "GHS contribution", "Cyprus payslip", "net salary Cyprus", "tax withholding Cyprus", "employer social cost Cyprus", "Redundancy Fund", "HRDA", "Social Cohesion Fund", "Central Holiday Fund", "insurable earnings ceiling Cyprus", "minimum wage Cyprus", "ERGANI", "50% expat exemption Cyprus", "20% new-resident exemption", "TAX FOR ALL", "TFA", "gross to net Cyprus", "salary calculation Cyprus", or any question about computing employee pay, withholding income tax, or social contributions for Cyprus-based employees. This skill covers PAYE income tax withholding, Social Insurance (employee and employer), General Healthcare System (GHS/GESY), the employer-only Redundancy / HRDA / Social Cohesion / Central Holiday funds, the new-resident 20% and 50% income-tax exemptions, minimum wage, and filing obligations. ALWAYS read this skill before processing any Cyprus payroll.
-version: 0.2
+version: 0.3
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-11
 reviewed_by: Christos Thoma
-review_status: current
+review_status: pending_review
 depends_on:
   - payroll-workflow-base
 category: payroll
@@ -16,8 +16,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cyprus Payroll
 
-## Cyprus Payroll Skill v0.2
-> **Accountant-reviewed (`tier: 1`).** Christos Thoma reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-12; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified)", the draft label the guide carried before that review. **Provenance of the draft:** figures were drawn primarily from Big-4 guides (PwC, KPMG, Andersen) and the Government of Cyprus Business-in-Cyprus portal, because the Cyprus Tax Department (tax.gov.cy) and Social Insurance Services (sid.mlsi.gov.cy) authority PDFs were not directly retrievable at research time. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed and must be checked against the official 2025 tax card and the Social Insurance Services contribution table before use.
+## Cyprus Payroll Skill v0.3
+> **Accountant-reviewed (`tier: 1`).** Christos Thoma reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-12; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified)", the draft label the guide carried before that review. **Provenance of the draft:** figures were drawn primarily from Big-4 guides and the Government of Cyprus Business-in-Cyprus portal, because the Cyprus Tax Department and Social Insurance Services authority PDFs were not directly retrievable at research time. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed and must be checked against the official 2025 tax card and the Social Insurance Services contribution table before use.
+
+> **Edited since review (2026-10-11).** The Big-4 summary citations were replaced with the consolidated laws on CyLaw (Income Tax Law 118(I)/2002 and Law 244(I)/2025 for the rate tables and the art. 8 exemptions, Social Insurance Law 59(I)/2010 and General Healthcare System Law 89(I)/2001 for the contributions, Assessment and Collection of Taxes Law 4/1978 for the TD1 deadline) and the Tax Department's TF7 and TD63 pages. The statutory social insurance schedule (8.9% and 16.8% from 2024, applied at 8.8% and 16.6% under the actuarial proviso) is new text that awaits the reviewer's confirmation, so `review_status` is `pending_review`.
 
 ## Section 1 -- Quick Reference
 
@@ -37,17 +39,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Income Tax Law N.118(I)/2002 (PAYE; Art. 8(21A) 20% and Art. 8(23A) 50% exemptions); Social Insurance Law N.59(I)/2010; GHS Law N.89(I)/2001; Termination of Employment Law (Redundancy Fund); Human Resource Development Law (HRDA); Social Cohesion Fund provisions |
 | Filing portal | TAX FOR ALL (TFA) -- tax.gov.cy / taxportal.mof.gov.cy |
 | Validated by | Pending -- requires sign-off by a Cyprus-warranted accountant |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ## Section 2 -- Income Tax Withholding (PAYE)
 
-The employer withholds income tax monthly under PAYE on a **cumulative basis**: it projects the employee's annual chargeable income, applies the progressive brackets, and spreads the resulting tax evenly across pay periods, adjusting month-by-month. The employee declares allowances and exemptions on **form TD59** at the start of each tax year (or on hiring); the employer issues an annual **TD63 emoluments certificate** after year-end (Income Tax Law N.118(I)/2002; PwC Worldwide Tax Summaries, reviewed 18 May 2026).
+The employer withholds income tax monthly under PAYE on a **cumulative basis**: it projects the employee's annual chargeable income, applies the progressive brackets, and spreads the resulting tax evenly across pay periods, adjusting month-by-month. The employee declares allowances and exemptions on **form TD59** at the start of each tax year (or on hiring); the employer issues an annual **TD63 emoluments certificate** after year-end, an obligation the Tax Department enforces for current and former employees (Income Tax Law N.118(I)/2002; Tax Department, Certificate of earnings (T.D. 63) — https://www.gov.cy/mof-tax/en/documents/certificate-of-earnings-t-d-63/ ; Declaration for claiming tax deductions (T.D. 59) — https://www.gov.cy/mof-tax/en/documents/declaration-for-claiming-tax-deductions-t-d-59/).
 
 There are **no FS4-style status categories** in Cyprus — the same progressive scale applies to every individual regardless of marital status. The 0% band IS the personal allowance; there is no separate married/parent scale.
 
 ### Income Tax Rate Table -- 2025 (applies to PAYE for pay periods in calendar 2025)
 
-**Income Tax Rate Table -- 2025**  _(Cyprus Tax Department; PwC Worldwide Tax Summaries (reviewed 18 May 2026))_
+**Income Tax Rate Table -- 2025**  _(Income Tax Law 118(I)/2002, Second Schedule para 1(b), consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html ; Cyprus Tax Department)_
 
 | Chargeable Income (EUR) | Marginal Rate | Tax on Band (EUR) | Cumulative Tax at Top of Band (EUR) |
 | --- | --- | --- | --- |
@@ -57,11 +59,11 @@ There are **no FS4-style status categories** in Cyprus — the same progressive 
 | 36,301 -- 60,000 | 30% | 7,110.00 | 10,885.00 |
 | 60,001 + | 35% | -- | (10,885 + 35% of excess over 60,000) |
 
-Source: Cyprus Tax Department; PwC Worldwide Tax Summaries (reviewed 18 May 2026). Cumulative figures recomputed: 8,500 × 20% = 1,700; 8,300 × 25% = 2,075 (→ 3,775); 23,700 × 30% = 7,110 (→ 10,885).
+Source: Income Tax Law 118(I)/2002, Second Schedule para 1(b); Cyprus Tax Department. Cumulative figures recomputed: 8,500 × 20% = 1,700; 8,300 × 25% = 2,075 (→ 3,775); 23,700 × 30% = 7,110 (→ 10,885).
 
 ### Income Tax Rate Table -- 2026 reform (use ONLY for pay periods from 1 Jan 2026)
 
-**Income Tax Rate Table -- 2026 reform**  _(Tax Reform Laws approved by Parliament 22 Dec 2025, effective 1 Jan 2026 (ITR World Tax))_
+**Income Tax Rate Table -- 2026 reform**  _(Income Tax Law 118(I)/2002, Second Schedule para 1(c), inserted by Law 244(I)/2025 (passed 22 December 2025, in force 1 January 2026) — http://www.cylaw.org/nomoi/arith/2025_1_244.pdf)_
 
 | Chargeable Income (EUR) | Marginal Rate | Tax on Band (EUR) | Cumulative Tax at Top of Band (EUR) |
 | --- | --- | --- | --- |
@@ -71,12 +73,12 @@ Source: Cyprus Tax Department; PwC Worldwide Tax Summaries (reviewed 18 May 2026
 | 42,001 -- 72,000 | 30% | 9,000.00 | 13,500.00 |
 | 72,001 + | 35% | -- | (13,500 + 35% of excess over 72,000) |
 
-Source: Tax Reform Laws approved by Parliament 22 Dec 2025, effective 1 Jan 2026 (ITR World Tax). Cumulative recomputed: 10,000 × 20% = 2,000; 10,000 × 25% = 2,500 (→ 4,500); 30,000 × 30% = 9,000 (→ 13,500). **[RESEARCH GAP — reviewer to confirm]** the final published law text for any conditions on the new 2026 family/household reliefs.
+Source: Law 244(I)/2025, inserting para 1(c) into the Second Schedule of the Income Tax Law. Cumulative recomputed: 10,000 × 20% = 2,000; 10,000 × 25% = 2,500 (→ 4,500); 30,000 × 30% = 9,000 (→ 13,500). The same law adds per-parent allowances of EUR 1,000, EUR 1,250 and EUR 1,500 for the first, second and each further dependent child, subject to family income conditions; **[RESEARCH GAP — reviewer to confirm]** how the TD59 declaration carries those reliefs into PAYE.
 
 ### PAYE Computation Method
 
 - **PAYE computation steps** — 1. Project annual chargeable income = annual gross emoluments **minus** deductible employee Social Insurance (8.8%) **minus** deductible employee GHS (2.65%) **minus** any documented new-resident exemption (20% or 50%, see Section 6). 2. Apply the progressive bracket table for the relevant year to that projected chargeable income to get projected annual tax. 3. Divide by the number of pay periods (12 monthly), then adjust cumulatively each period for variations in pay.  _(Income Tax Law N.118(I)/2002)_
-- **Deductibility of employee SI and GHS** — Employee SI and GHS contributions ARE deductible before computing the income-tax base  _(PwC; conservative default applied throughout this skill)_
+- **Deductibility of employee SI and GHS** — Employee Social Insurance contributions (art. 14(1)(b)) and GHS contributions (art. 14(1)(e)) are deducted in arriving at taxable income, within the one-fifth cap of art. 14(2)  _(Income Tax Law 118(I)/2002, art. 14 — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html)_
 
 ## Section 3 -- Social Contributions -- Employee Deductions
 
@@ -84,7 +86,7 @@ Employee deductions are **Social Insurance 8.8%** + **GHS 2.65%**, each subject 
 
 ### Employee Contribution Rates (2025)
 
-**Employee Contribution Rates (2025)**  _(Social Insurance Fund 8.8% fixed since 1 Jan 2024 for 5 years (PwC; Andersen Cyprus); 2025 maximum insurable earnings figures (KPMG Cyprus; Social Insurance Services); GHS employee 2.65% (PwC; gesy.org.cy))_
+**Employee Contribution Rates (2025)**  _(Social Insurance Law 59(I)/2010, art. 5(1): the 2024 to 2028 step in para (f) reads 8.9% each for employee and employer with a proviso for a smaller increase after the actuarial study, under which the Social Insurance Services applies 8.8% — http://www.cylaw.org/nomoi/enop/non-ind/2010_1_59/full.html ; 2025 and 2026 maximum insurable earnings as announced by the Social Insurance Services (KPMG Cyprus); GHS employee 2.65% (General Healthcare System Law 89(I)/2001, art. 19(1)(a) — http://www.cylaw.org/nomoi/enop/non-ind/2001_1_89/full.html))_
 
 | Contribution | Rate | Base | Annual Ceiling (EUR) | Monthly Ceiling (EUR) | Weekly Ceiling (EUR) |
 | --- | --- | --- | --- | --- | --- |
@@ -92,7 +94,7 @@ Employee deductions are **Social Insurance 8.8%** + **GHS 2.65%**, each subject 
 | General Healthcare System (GHS/GESY) (employee) | 2.65% | Emoluments | 180,000 (all income sources combined) | -- | -- |
 | **Total employee contributions (below both ceilings)** | **11.45%** | -- | -- | -- | -- |
 
-Sources: Social Insurance Fund 8.8% fixed since 1 Jan 2024 for 5 years (PwC; Andersen Cyprus). 2025 maximum insurable earnings 66,612/yr (5,551/mo, 1,281/wk), up from 62,868/5,239/1,209 in 2024 (KPMG Cyprus; Social Insurance Services); from 1 January 2026 they are 68,904/yr (5,742/mo, 1,325/wk) per the Social Insurance Services announcement of 22 December 2025. GHS employee 2.65% capped at 180,000/yr (PwC; gesy.org.cy). Total recomputed: 8.8% + 2.65% = 11.45%. **Plus PAYE income tax on top.**
+Sources: Social Insurance Law 59(I)/2010, art. 5(1)(f) (2024 to 2028 step; the next scheduled step is 2029) as applied by the Social Insurance Services at 8.8%. 2025 maximum insurable earnings 66,612/yr (5,551/mo, 1,281/wk), up from 62,868/5,239/1,209 in 2024 (KPMG Cyprus; Social Insurance Services); from 1 January 2026 they are 68,904/yr (5,742/mo, 1,325/wk) per the Social Insurance Services announcement of 22 December 2025. GHS employee 2.65% capped at 180,000/yr (General Healthcare System Law 89(I)/2001, art. 19(1)(a) and (4)). Total recomputed: 8.8% + 2.65% = 11.45%. **Plus PAYE income tax on top.**
 
 Note the SI ceiling (66,612 for 2025; 68,904 for 2026) and the GHS ceiling (180,000) differ. For an employee below both ceilings the deductions are a flat 11.45% of gross; above 66,612 the SI portion stops growing while GHS continues up to 180,000.
 
@@ -102,7 +104,7 @@ Employers pay matching Social Insurance and GHS plus three (or four) employer-on
 
 ### Employer Contribution Rates (2025)
 
-**Employer Contribution Rates (2025)**  _(businessincyprus.gov.cy; Andersen; PwC; gesy.org.cy)_
+**Employer Contribution Rates (2025)**  _(Social Insurance Law 59(I)/2010, art. 5(1); General Healthcare System Law 89(I)/2001, art. 19(1)(b); businessincyprus.gov.cy; Andersen)_
 
 | Contribution | Rate | Base | Ceiling (EUR) | Who |
 | --- | --- | --- | --- | --- |
@@ -115,7 +117,7 @@ Employers pay matching Social Insurance and GHS plus three (or four) employer-on
 | **Total employer load (below insurable ceiling)** | **15.40%** | -- | -- | -- |
 | Central Holiday Fund (conditional) | 8.0% | Emoluments | Applies only where employer is NOT exempt | Employer only |
 
-Sources: SI 8.8% employer (PwC; Andersen). Redundancy 1.2% + HRDA 0.5% on insurable earnings capped at 66,612 (businessincyprus.gov.cy; Andersen). GHS employer 2.90% capped at 180,000 (PwC; gesy.org.cy). Social Cohesion 2.0% on total actual earnings with no ceiling (businessincyprus.gov.cy; Andersen). Central Holiday Fund 8.0% applies only where the employer does not operate its own approved annual-leave scheme — common in tourism/construction/seasonal sectors (businessincyprus.gov.cy).
+Sources: SI 8.8% employer (Social Insurance Law 59(I)/2010, art. 5(1)(f) as applied by the Social Insurance Services; Andersen). Redundancy 1.2% + HRDA 0.5% on insurable earnings capped at 66,612 (businessincyprus.gov.cy; Andersen). GHS employer 2.90% capped at 180,000 (General Healthcare System Law 89(I)/2001, art. 19(1)(b) and (4)). Social Cohesion 2.0% on total actual earnings with no ceiling (businessincyprus.gov.cy; Andersen). Central Holiday Fund 8.0% applies only where the employer does not operate its own approved annual-leave scheme — common in tourism/construction/seasonal sectors (businessincyprus.gov.cy).
 
 **Arithmetic check (employer column):** 8.8 + 1.2 + 0.5 + 2.90 = 13.40 (capped/standard subtotal); + 2.0 (uncapped Social Cohesion) = **15.40%** total load below the insurable-earnings ceiling, excluding the conditional 8.0% Central Holiday Fund.
 
@@ -142,7 +144,7 @@ Sources: SI 8.8% employer (PwC; Andersen). Redundancy 1.2% + HRDA 0.5% on insura
 | GHS (self-employed) | 4.00% | Earnings | 180,000/yr (max ~7,200/yr) |
 | GHS (pensioners / rent, interest, dividend earners) | 2.65% | Income | 180,000/yr (max 4,770/yr) |
 
-Source: self-employed SI rose from 15.6% to 16.6% on 1 Jan 2024, assessed quarterly on deemed earnings (Andersen; KPMG; cyprustaxlife). PwC's page still showed 15.6% at research time; 16.6% is used here per the more recent corroborating sources. **[RESEARCH GAP — reviewer to confirm]** the deemed-income table per occupational category for any self-employed computation. Self-employed contributions are NOT processed through this employer-payroll skill — see a Cyprus self-employed SSC skill.
+Source: self-employed SI rose from 15.6% to 16.6% on 1 Jan 2024, assessed quarterly on deemed earnings (Social Insurance Law 59(I)/2010, art. 12: 15.6% from 2019 in para (f); the 2024 step in para (g) reads 16.8%, applied at 16.6% under the actuarial proviso; Andersen; KPMG). Some secondary summaries still show 15.6%; 16.6% is the rate the Social Insurance Services applies. **[RESEARCH GAP — reviewer to confirm]** the deemed-income table per occupational category for any self-employed computation. Self-employed contributions are NOT processed through this employer-payroll skill — see a Cyprus self-employed SSC skill.
 
 ## Section 5 -- Minimum Wage and Hiring Mechanics
 
@@ -194,7 +196,7 @@ Cyprus offers two mutually relevant employment-income exemptions. Apply them ONL
 | Eligibility | First employment in Cyprus from **1 Jan 2022**; not Cyprus-resident for **15 consecutive years** prior |
 | Duration | **17 consecutive years** |
 
-Sources: Income Tax Law Art. 8(21A) and Art. 8(23A) (Harneys; PwC). The exemption reduces only the **income-tax (PAYE) base** — it does NOT reduce the Social Insurance or GHS contribution base (those are computed on full emoluments, subject to their own ceilings).
+Sources: Income Tax Law 118(I)/2002, art. 8(21A) (lower of 20% or EUR 8,550, seven tax years from the year after employment began, for a person employed abroad by a non-resident employer for the three years before) and art. 8(23A) (50% where remuneration exceeds EUR 55,000, 17 tax years, 15 prior years of non-residence, first employment from 1 January 2022), consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html ; Harneys. The exemption reduces only the **income-tax (PAYE) base** — it does NOT reduce the Social Insurance or GHS contribution base (those are computed on full emoluments, subject to their own ceilings).
 
 ## Section 7 -- Conservative Defaults
 
@@ -354,9 +356,9 @@ This illustrates the asymmetry: SI/Redundancy/HRDA freeze at 66,612 while Social
 
 ## Section 11 -- Tier 1 Rules (deterministic — apply directly)
 
-- **PAYE withholding basis** — PAYE is withheld monthly on a cumulative basis on projected annual chargeable income  _(Income Tax Law N.118(I)/2002; PwC)_
+- **PAYE withholding basis** — PAYE is withheld monthly on a cumulative basis on projected annual chargeable income and declared on the monthly TF7 through Tax For All  _(Income Tax Law N.118(I)/2002; Tax Department, Submission of Declarations (T.F.7) — https://www.gov.cy/mof-tax/en/documents/submission-of-declarations-t-f-7/)_
 
-**2025 PIT brackets**  _(Cyprus Tax Department; PwC, reviewed 18 May 2026)_
+**2025 PIT brackets**  _(Income Tax Law 118(I)/2002, Second Schedule para 1(b); Cyprus Tax Department)_
 
 | Band | Rate |
 | --- | --- |
@@ -366,7 +368,7 @@ This illustrates the asymmetry: SI/Redundancy/HRDA freeze at 66,612 while Social
 | 36,301–60,000 | 30% |
 | above 60,000 | 35% |
 
-**2026 reform brackets (pay periods from 1 Jan 2026)**  _(Parliament approved 22 Dec 2025; ITR World Tax)_
+**2026 reform brackets (pay periods from 1 Jan 2026)**  _(Income Tax Law 118(I)/2002, Second Schedule para 1(c), inserted by Law 244(I)/2025)_
 
 | Band | Rate |
 | --- | --- |
@@ -376,11 +378,11 @@ This illustrates the asymmetry: SI/Redundancy/HRDA freeze at 66,612 while Social
 | 42,001–72,000 | 30% |
 | above 72,000 | 35% |
 
-- **Employee deductions SI + GHS** — SI 8.8% + GHS 2.65% = 11.45%, each capped separately (SI at 66,612; GHS at 180,000), plus PAYE  _(PwC; Andersen; gesy.org.cy)_
+- **Employee deductions SI + GHS** — SI 8.8% + GHS 2.65% = 11.45%, each capped separately (SI at 66,612; GHS at 180,000), plus PAYE  _(Social Insurance Law 59(I)/2010, art. 5(1) as applied; General Healthcare System Law 89(I)/2001, art. 19(1)(a) and (4); Andersen)_
 - **2025 maximum insurable earnings** — EUR 66,612/yr, EUR 5,551/mo, EUR 1,281/wk — caps SI, Redundancy and HRDA  _(KPMG Cyprus; Social Insurance Services)_
 - **Employer load below the insurable ceiling** — SI 8.8% + Redundancy 1.2% + HRDA 0.5% + GHS 2.90% = 13.40%, plus Social Cohesion 2.0% on uncapped total earnings = 15.40%  _(businessincyprus.gov.cy; Andersen)_
 - **Social Cohesion Fund basis** — Social Cohesion Fund 2.0% is computed on TOTAL actual earnings with NO ceiling  _(businessincyprus.gov.cy; Andersen)_
-- **Deductibility of SI/GHS before PAYE base** — Employee SI and GHS contributions are deductible before computing the PAYE income-tax base  _(PwC; conservative default)_
+- **Deductibility of SI/GHS before PAYE base** — Employee SI and GHS contributions are deducted in arriving at taxable income, within the one-fifth cap  _(Income Tax Law 118(I)/2002, art. 14(1)(b), (e) and (2))_
 - **SI/GHS coverage from first euro** — SI/GHS coverage applies from the first euro of employment income; no de minimis  _(Social Insurance Services)_
 - **Employer registration requirement** — Employer must register with Social Insurance Services (form YKA 01-001) before the first hire and notify each new hire via ERGANI at least one day before commencement.
 - **Employee TIN mandatory on TD7** — Employee TIN is mandatory on every monthly and annual TD7 from tax year 2025 regardless of income level  _(Cyprus Tax Department)_
@@ -486,7 +488,7 @@ If the engagement turns out to be a self-employed person, stop: this employer-pa
 
 | Threshold | Value | Source |
 | --- | --- | --- |
-| Personal income tax filing threshold | Personal return (TD1) generally required where gross annual income exceeds EUR 19,500 (2025) | PwC; Cyprus Tax Department |
+| Personal income tax filing threshold | Personal return (TD1) generally required where gross annual income exceeds EUR 19,500 (2025); the return is due by 31 July of the following year (Assessment and Collection of Taxes Law 4/1978, art. 5(1A)) | Assessment and Collection of Taxes Law 4/1978; Cyprus Tax Department, Individual Income Tax Return |
 | Social Insurance employer registration | Required before hiring any employee — no minimum employee count or wage threshold | Social Insurance Services |
 | GHS / SI employee coverage | Applies from the first euro of employment income; no de minimis | gesy.org.cy; Social Insurance Services |
 | Employee TIN requirement | Mandatory on all monthly and annual TD7 returns from tax year 2025, regardless of income level | Cyprus Tax Department |
@@ -525,11 +527,11 @@ If the engagement turns out to be a self-employed person, stop: this employer-pa
 
 | Item | Value | Source |
 | --- | --- | --- |
-| 2025 PIT brackets | 0/20/25/30/35% at 19,500 / 28,000 / 36,300 / 60,000 | Cyprus Tax Department; PwC (reviewed 18 May 2026) |
-| 2026 PIT brackets | 0/20/25/30/35% at 22,000 / 32,000 / 42,000 / 72,000 | Parliament 22 Dec 2025; ITR World Tax |
-| Social Insurance | 8.8% employee + 8.8% employer; 16.6% self-employed | PwC; Andersen |
-| 2025 max insurable earnings | EUR 66,612/yr; 5,551/mo; 1,281/wk | KPMG Cyprus; Social Insurance Services |
-| GHS/GESY | 2.65% employee; 2.90% employer; 4.00% self-employed; cap 180,000/yr | PwC; gesy.org.cy |
+| 2025 PIT brackets | 0/20/25/30/35% at 19,500 / 28,000 / 36,300 / 60,000 | Income Tax Law 118(I)/2002, Second Schedule para 1(b); Cyprus Tax Department |
+| 2026 PIT brackets | 0/20/25/30/35% at 22,000 / 32,000 / 42,000 / 72,000 | Income Tax Law 118(I)/2002, Second Schedule para 1(c), inserted by Law 244(I)/2025 |
+| Social Insurance | 8.8% employee + 8.8% employer; 16.6% self-employed (statutory schedule 8.9% and 16.8% from 2024, applied at these rates under the actuarial proviso) | Social Insurance Law 59(I)/2010, arts 5(1) and 12; Social Insurance Services; Andersen |
+| 2025 max insurable earnings | EUR 66,612/yr; 5,551/mo; 1,281/wk (EUR 68,904; 5,742; 1,325 from 2026) | KPMG Cyprus; Social Insurance Services |
+| GHS/GESY | 2.65% employee; 2.90% employer; 4.00% self-employed; cap 180,000/yr | General Healthcare System Law 89(I)/2001, art. 19 |
 | Redundancy Fund | 1.2% employer, capped at 66,612 | businessincyprus.gov.cy; Andersen |
 | HRDA Fund | 0.5% employer, capped at 66,612 | businessincyprus.gov.cy; Andersen |
 | Social Cohesion Fund | 2.0% employer, NO cap | businessincyprus.gov.cy; Andersen |
@@ -541,8 +543,10 @@ If the engagement turns out to be a self-employed person, stop: this employer-pa
 
 ### Sources
 
-1. PwC Worldwide Tax Summaries — Cyprus Individual: Taxes on personal income (reviewed 18 May 2026) — https://taxsummaries.pwc.com/cyprus/individual/taxes-on-personal-income
-2. PwC Worldwide Tax Summaries — Cyprus Individual: Other taxes (Social Insurance, GHS, funds) — https://taxsummaries.pwc.com/cyprus/individual/other-taxes
+1. Income Tax Law 118(I)/2002 (consolidated), CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html (Second Schedule rates; art. 8(21A) and (23A); art. 14); Law 244(I)/2025 — http://www.cylaw.org/nomoi/arith/2025_1_244.pdf
+2. Social Insurance Law 59(I)/2010 (consolidated), CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2010_1_59/full.html (arts 5(1) and 12); General Healthcare System Law 89(I)/2001 (consolidated), CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2001_1_89/full.html (art. 19); Assessment and Collection of Taxes Law 4/1978 — http://www.cylaw.org/nomoi/enop/non-ind/1978_1_4/full.html (art. 5(1A))
+2a. Tax Department — Submission of Declarations (T.F.7) — https://www.gov.cy/mof-tax/en/documents/submission-of-declarations-t-f-7/ ; Certificate of earnings (T.D. 63) — https://www.gov.cy/mof-tax/en/documents/certificate-of-earnings-t-d-63/ ; Declaration for claiming tax deductions (T.D. 59) — https://www.gov.cy/mof-tax/en/documents/declaration-for-claiming-tax-deductions-t-d-59/
+2b. Social Insurance Services — Basic Insurable Earnings — https://www.mlsi.gov.cy/mlsi/sid/sidv2.nsf/page94_en/page94_en?OpenDocument
 3. KPMG Cyprus — Amendment to the maximum amount of insurable earnings for 2025 — https://kpmg.com/cy/en/home/insights/2025/01/amendment-to-the-maximum-amount-of-insurable-earnings-for-2025.html
 4. Andersen Cyprus — Social Insurance Contributions for the Year 2025 — https://gr.andersen.com/news/cyprus-news-social-insurance-contributions-for-the-year-2025/
 5. Government of Cyprus (Business in Cyprus) — Social Insurance Registration and Contributions — https://www.businessincyprus.gov.cy/social-insurance-registration-and-contributions/
@@ -556,7 +560,7 @@ If the engagement turns out to be a self-employed person, stop: this employer-pa
 
 - Confidence is **high** for the core 2025 payroll mechanics; most figures are corroborated by two or more Big-4 / official sources.
 - The official Cyprus Tax Department (tax.gov.cy) and Social Insurance Services (sid.mlsi.gov.cy) PDFs were not directly retrievable at research time; figures are from Big-4 guides and the Business-in-Cyprus portal. **Confirm against the official 2025 tax card and Social Insurance Services contribution table.**
-- Self-employed SI is stated at 16.6% (Andersen/KPMG/cyprustaxlife) although PwC's page still listed 15.6%.
+- Self-employed SI is stated at 16.6%, the rate the Social Insurance Services applies, although the statutory schedule in art. 12 of the Social Insurance Law reads 16.8% from 2024 and some secondary summaries still list 15.6%.
 - GHS employer rate 2.90% vs occasionally-quoted 3.00% — 2.90% used here; confirm against gesy.org.cy.
 - Central Holiday Fund 8.0% applies only to non-exempt employers; treat as conditional, not universal.
 - Exact monetary penalty amounts and the annual public-interest rate are **[RESEARCH GAP — reviewer to confirm]**.

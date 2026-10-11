@@ -1,10 +1,10 @@
 ---
 name: emerging-market-corridors
 description: "version: 1.0"
-version: 1.0
+version: 1.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-10-08
+last_updated: 2026-10-11
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -55,7 +55,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties — other | 8% | Art 12 | Copyright, patents, etc. |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** Saudi Arabia-UK Convention signed 2007. HMRC DT16603. PwC Saudi Arabia WHT table.
+**Source:** Saudi Arabia-UK Convention signed 2007. HMRC DT16603. The secondary summary Saudi Arabia WHT table.
 **Special provisions:** Saudi domestic WHT: 5% on dividends, 5% on interest, 15% on royalties. Treaty interest rate of 0% is better than Saudi domestic 5%. Split royalty rates (5% equipment, 8% other). Saudi Arabia does not tax personal income — treaty primarily relevant for corporate cross-border flows. New UK-GCC FTA signed May 2026 covers trade but does not affect treaty WHT rates.
 **Last verified:** May 2026
 
@@ -72,7 +72,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 0% | Art 12(1) | Taxable only in residence state |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** UK-South Africa Convention signed 2002, amended by 2010 Protocol (effective April 2012). HMRC. PwC South Africa WHT table.
+**Source:** UK-South Africa Convention signed 2002, amended by 2010 Protocol (effective April 2012). HMRC. The secondary summary South Africa WHT table.
 **Special provisions:** Three-tier dividend structure (5%/10%/15%). SA domestic WHT: dividends 20%, interest 15%, royalties 15%. Zero interest and royalties is highly favourable — one of SA's best treaty rates. 2010 Protocol updated dividend article. London remains a key financial centre for South African businesses.
 **Last verified:** May 2026
 
@@ -88,7 +88,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 0% | Art 12 | Taxable only in residence state |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** South Africa-Netherlands Convention. MLI-modified synthesised text (SARS June 2024). PwC South Africa WHT table.
+**Source:** South Africa-Netherlands Convention. MLI-modified synthesised text (SARS June 2024). The secondary summary South Africa WHT table.
 **Special provisions:** Netherlands has historically been a key holding company jurisdiction for African investments. Zero interest and royalties make the NL-ZA corridor highly attractive. SA domestic WHT: dividends 20%, interest 15%, royalties 15%. Treaty modified by MLI — PPT applies. Netherlands conditional WHT (25.8%) does not apply (SA is not on low-tax list).
 **Last verified:** May 2026
 
@@ -105,7 +105,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 10% | Art 12 | Standard rate |
 | Fees for technical services | 10% | Protocol | Protocol provision |
 
-**Source:** India-Singapore DTAA. PwC India and Singapore WHT tables.
+**Source:** India-Singapore DTAA. The secondary summary India and Singapore WHT tables.
 **Special provisions:** Singapore is India's largest FDI source. LOB article introduced by 2005 Protocol requires Singapore recipient to pass "shell/conduit company" test. Capital gains on shares — treaty allows source-country taxation (India) subject to conditions (unlike pre-2017 India-Mauritius treaty). India domestic WHT: 20% on most categories. FTS provision added by protocol.
 **Last verified:** May 2026
 
@@ -122,7 +122,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Fees for technical services | 10% | Art 13 | Standard rate |
 | Capital gains on shares | Taxable in India | Art 13 | 2016 Protocol amendment — source taxation |
 
-**Source:** India-Mauritius DTAA signed 1983, amended by 2016 Protocol and 2024 Protocol. ClearTax India. PwC Mauritius.
+**Source:** India-Mauritius DTAA signed 1983, amended by 2016 Protocol and 2024 Protocol. ClearTax India. The secondary summary Mauritius.
 **Special provisions:**
 
 **CRITICAL — This is one of the most scrutinised treaty corridors globally:**
@@ -150,7 +150,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 10% | Art 12 | TR domestic WHT 20% — treaty reduces |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** Turkey-Germany Convention. PwC Germany and Turkey WHT tables. Turkish domestic rates re-checked September 2026 against Presidential Decree No. 9286 and `tr-corporate-income-tax.md`.
+**Source:** Turkey-Germany Convention. The secondary summary Germany and Turkey WHT tables. Turkish domestic rates re-checked September 2026 against Presidential Decree No. 9286 and `tr-corporate-income-tax.md`.
 **Special provisions:** Large Turkish diaspora in Germany creates substantial cross-border flows. Turkey's domestic WHT on dividends is **15%**, raised from 10% by Presidential Decree No. 9286 published and effective 22 December 2024, which reversed the reduction from 15% to 10% made on 22 December 2021. This block previously read "10% (recently increased from 7.5%)", which understated the rate by five points and had the direction of the last change backwards. The practical consequence of the correction: at 15% domestic the treaty's 15% portfolio rate is no longer a reduction, so a portfolio shareholder gains nothing from the treaty and only the ≥25% substantial holding at 5% is worth claiming. Royalties still reduce from 20% domestic to 10% by treaty. On interest the treaty's 10% matches the domestic 10% and so adds nothing — but Turkish domestic law withholds **0%** on cross-border lending by a licensed non-resident bank or financial institution, which beats the treaty; if the German lender is a bank, check that before deducting 10%. Turkish rates sit in Presidential Decrees and move often, so confirm the decree in force on the payment date. The 25% threshold for reduced dividends is higher than the modern standard.
 **Last verified:** September 2026 (Turkish domestic rates only; the German side and the treaty articles were not re-checked)
 
@@ -166,7 +166,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 10% | Art 12 | TR domestic 20% reduced |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** Turkey-Netherlands Convention. PwC Netherlands and Turkey WHT tables.
+**Source:** Turkey-Netherlands Convention. The secondary summary Netherlands and Turkey WHT tables.
 **Special provisions:** One of the LEAST generous treaties in both countries' networks. 20% portfolio dividend rate and 15% substantial rate are the highest in the Netherlands treaty table. Netherlands has been a traditional holding company jurisdiction for Turkish investments — these rates limit the benefit. Treaty is older and has not been renegotiated.
 **Last verified:** May 2026
 

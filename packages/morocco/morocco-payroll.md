@@ -4,7 +4,7 @@ description: Morocco — Payroll for a Self-Employed Person Who Hires Employees 
 jurisdiction: MA
 category: payroll
 tax_year: 2026
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -222,7 +222,6 @@ All figures are **illustrative 2026** computations to **verify** before filing. 
 - **DGI** — tax.gov.ma (Code Général des Impôts; IR salarial; SIMPL-IR).
 - **CNSS** — cnss.ma (contribution rates, ceiling, Damancom, DNS/BDS, penalties).
 - **Loi de Finances 2026** (Morocco) — confirms IR scale continuity.
-- **PwC Worldwide Tax Summaries — Morocco** (individual taxes; social security).
 - Moroccan payroll practitioners (cross-checked: Upsilon Consulting, ClicPaie, Humantal, Sahl Compta) — used for corroboration only; primary sources govern.
 
 ## PROHIBITIONS

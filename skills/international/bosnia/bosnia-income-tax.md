@@ -1,10 +1,10 @@
 ---
 name: bosnia-income-tax
 description: "Use this skill whenever asked about Bosnia and Herzegovina personal income tax (porez na dohodak) for employees or self-employed individuals. Trigger on phrases like \"how much tax do I pay in Bosnia\", \"FBiH income tax\", \"Republika Srpska income tax\", \"Brcko District tax\", \"porez na dohodak\", \"doprinosi\", \"social contributions Bosnia\", \"net pay BAM\", \"personal allowance\", \"lichni odbitak\", \"godisnja poreska prijava\", \"minimum wage Bosnia\", \"VAT registration UINO\", \"PDV\", or any question about computing or filing personal income tax and payroll contributions for a B&H worker or sole trader. CRITICAL: Bosnia has NO single national income tax — there are three separate entity/district systems (FBiH, RS, Brcko District). ALWAYS determine the taxpayer's entity FIRST. Also trigger when reviewing a monthly payroll specification (MIP-1023 / Obrazac 1002) or an annual return (GPD-1051). ALWAYS read this skill before touching any B&H income tax work."
-version: 0.2
+version: 0.3
 jurisdiction: BA
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,15 +15,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bosnia and Herzegovinan Income Tax -- Personal/Self-Employed
 
-## Bosnia and Herzegovinan Income Tax -- Personal/Self-Employed Skill v0.2
+## Bosnia and Herzegovinan Income Tax -- Personal/Self-Employed Skill v0.3
 
-> **Tier 2 (research-verified).** Confidence: medium. Figures are sourced from PwC Worldwide Tax Summaries (2025), the FBiH Official Gazette / Orbitax / Unija legislative summaries, WageIndicator, and the Indirect Taxation Authority (UINO). Several figures carry explicit `[RESEARCH GAP — reviewer to confirm]` markers and MUST be confirmed against the entity-level statutes before filing.
+> **Tier 2 (research-verified).** Confidence: medium. Figures are sourced from a secondary practitioner summary (2025), the FBiH Official Gazette / Orbitax / Unija legislative summaries, WageIndicator, and the Indirect Taxation Authority (UINO). Several figures carry explicit `[RESEARCH GAP — reviewer to confirm]` markers and MUST be confirmed against the entity-level statutes before filing.
 
 ## Section 0 -- READ THIS FIRST: There Is No National Income Tax
 
-- **No national income tax** — Bosnia and Herzegovina does NOT levy a single national personal income tax. Direct taxes (personal income tax and social contributions) are administered at the entity/district level by three separate systems with different rates, allowances, and contribution structures.  _(PwC Worldwide Tax Summaries, Bosnia and Herzegovina – Individual – Taxes on personal income (2025), https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/taxes-on-personal-income)_
+- **No national income tax** — Bosnia and Herzegovina does NOT levy a single national personal income tax. Direct taxes (personal income tax and social contributions) are administered at the entity/district level by three separate systems with different rates, allowances, and contribution structures.  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
-**Entity/district PIT systems table**  _(PwC Worldwide Tax Summaries, Bosnia and Herzegovina – Individual – Taxes on personal income (2025))_
+**Entity/district PIT systems table**  _(secondary summary, Bosnia and Herzegovina – Individual – Taxes on personal income (2025))_
 
 | System | Authority | PIT rate | Website |
 | --- | --- | --- | --- |
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Brčko District (BD)** | Brčko District Tax Administration | Flat **10%** | — |
 
 - **VAT is only state-level tax** — Indirect tax (VAT / PDV) is the only state-level direct-revenue tax, administered by the Indirect Taxation Authority (Uprava za indirektno oporezivanje / UINO) at 17% (www.uino.gov.ba).  _(Law on Value Added Tax (BiH), ITA English translation, arts 1 and 23 — https://www.uino.gov.ba/portal/wp-content/uploads/95-ENGLESKI-PROPISI/1-VAT-PDV/1-Law_on_VAT_BiH.pdf)_
-- **Determine entity before computing** — You MUST determine the taxpayer's entity before computing anything. If the entity is unknown, see the Conservative Defaults (Section 1) — default to FBiH and flag for the reviewer.  _(PwC Worldwide Tax Summaries (2025))_
+- **Determine entity before computing** — You MUST determine the taxpayer's entity before computing anything. If the entity is unknown, see the Conservative Defaults (Section 1) — default to FBiH and flag for the reviewer.  _(secondary summary (2025))_
 
 ## Section 1 -- Quick Reference
 
@@ -52,11 +52,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual PIT return deadline | FBiH & RS: **31 March** of following year; BD: **28 February** (only where withholding insufficient) |
 | Validated by | Pending — requires sign-off by a B&H tax adviser / certified accountant |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Personal Income Tax Rates (2025)
 
-**PIT rates table**  _(PwC, Individual – Taxes on personal income (2025))_
+**PIT rates table**  _(secondary summary, Individual – Taxes on personal income (2025))_
 
 | Jurisdiction | Type | Rate | Base |
 | --- | --- | --- | --- |
@@ -65,12 +65,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Republika Srpska — small entrepreneurs (paušalci) | Flat lump-sum on revenue | **2%** | Total annual revenue, if below the qualifying threshold |
 | Brčko District (BD) | Flat | **10%** | Taxable personal income |
 
-- **No progressive brackets** — All three systems use flat rates (no progressive brackets — there is no "cumulative tax" table to compute).  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 9 — https://www.fmf.gov.ba/Content/Open/102395 ; Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 1 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf ; PwC Worldwide Tax Summaries (Brčko District) — https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/taxes-on-personal-income)_
+- **No progressive brackets** — All three systems use flat rates (no progressive brackets — there is no "cumulative tax" table to compute).  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 9 — https://www.fmf.gov.ba/Content/Open/102395 ; Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 1 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf)_
 - **RS paušal threshold** — The RS small entrepreneur (paušal) regime is elective: the December 2024 amendments (in force 1 January 2025) let a taxpayer whose annual revenue exceeded BAM 50,000 but not BAM 100,000 request the status under art 25(1), so the revenue ceiling is BAM 100,000 and the taxpayer must request the status  _(Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 110/24), art 5 — https://poreskaupravars.org/wp-content/uploads/2024/12/Scan25122024-1.pdf)_
 
 ### Personal Allowances (2025)
 
-**Personal allowances table**  _(PwC, Individual – Deductions (2025), https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/deductions)_
+**Personal allowances table**  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Jurisdiction | Personal allowance | Dependent additions |
 | --- | --- | --- |
@@ -80,7 +80,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Conservative Defaults
 
-**Conservative defaults table**  _(PwC (2025); Unija, Amendments to the Law on Contributions in the FBiH (eff. 1 July 2025), https://unija.com/en/amendments-to-the-law-on-contibutions-in-the-fbih/)_
+**Conservative defaults table**  _(the secondary summary (2025); Unija, Amendments to the Law on Contributions in the FBiH (eff. 1 July 2025), https://unija.com/en/amendments-to-the-law-on-contibutions-in-the-fbih/)_
 
 | Ambiguity | Default |
 | --- | --- |
@@ -98,7 +98,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### FBiH Contributions (% of gross salary)
 
-**FBiH contributions table**  _(PwC, Individual – Other taxes (2025), https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/other-taxes; employer reduction per Unija/Orbitax (Official Gazette FBiH, 7 May 2025; effective 1 July 2025).)_
+**FBiH contributions table**  _(secondary summary, Individual – Other taxes (2025), employer reduction per Unija/Orbitax (Official Gazette FBiH, 7 May 2025; effective 1 July 2025).)_
 
 | Contribution | Employee | Employer (from 1 July 2025) |
 | --- | --- | --- |
@@ -107,7 +107,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unemployment insurance | 1.5% | 0.5% (unchanged) |
 | **TOTAL on gross** | **31.0%** | **5.0%** |
 
-**FBiH employer levies on net salary table**  _(PwC, Individual – Other taxes (2025))_
+**FBiH employer levies on net salary table**  _(secondary summary, Individual – Other taxes (2025))_
 
 | Employer levy (base = net salary) | Rate |
 | --- | --- |
@@ -133,18 +133,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Brčko District Contributions
 
-**BD contributions table**  _(PwC, Individual – Other taxes (2025))_
+**BD contributions table**  _(secondary summary, Individual – Other taxes (2025))_
 
 | Contribution | Detail |
 | --- | --- |
 | Pension | Employee may elect to contribute to **either** the RS or FBiH pension fund; rate depends on the chosen fund |
 | Health insurance | **12.0%** of gross |
 
-- **BD employer/employee split research gap** — `[RESEARCH GAP — reviewer to confirm]` the exact BD employer/employee split, which follows the chosen entity fund.  _(PwC, Individual – Other taxes (2025))_
+- **BD employer/employee split research gap** — `[RESEARCH GAP — reviewer to confirm]` the exact BD employer/employee split, which follows the chosen entity fund.  _(secondary summary, Individual – Other taxes (2025))_
 
 ### Contribution Base Notes (self-employed / entrepreneurs)
 
-- **FBiH self-employed contribution base coefficients** — FBiH self-employed/entrepreneur contribution bases are set by coefficient multiples of the published average salary (e.g. ~1.1 liberal professions, 0.65 crafts, 0.55 without books, 0.29 sole traders with books). The monthly base BAM amounts are published annually by the Federal Minister of Finance by 31 December. `[RESEARCH GAP — reviewer to confirm]` the exact 2025 BAM base figures from the official Službene novine — not obtained. No explicit monthly contribution ceiling was confirmed for either entity for 2025; the minimum base is effectively tied to the minimum wage.  _(PwC (2025) + caveats)_
+- **FBiH self-employed contribution base coefficients** — FBiH self-employed/entrepreneur contribution bases are set by coefficient multiples of the published average salary (e.g. ~1.1 liberal professions, 0.65 crafts, 0.55 without books, 0.29 sole traders with books). The monthly base BAM amounts are published annually by the Federal Minister of Finance by 31 December. `[RESEARCH GAP — reviewer to confirm]` the exact 2025 BAM base figures from the official Službene novine — not obtained. No explicit monthly contribution ceiling was confirmed for either entity for 2025; the minimum base is effectively tied to the minimum wage.  _(secondary summary (2025) + caveats)_
 
 ### Required Inputs
 
@@ -284,7 +284,7 @@ This is the deterministic pre-classifier. When a bank-statement transaction matc
 - **Net pay: 1,077.78 − 77.78 = 1,000.00**
 
 **Cross-check:** This reconciles to the published FBiH 2025 minimum wage of **1,000 BAM net** (WageIndicator). ✓
-Source: WageIndicator, Minimum Wage FBiH from 01 Jan 2025; PwC (2025).
+Source: WageIndicator, Minimum Wage FBiH from 01 Jan 2025; the secondary summary (2025).
 
 ### Example 2 — FBiH single employee, gross 3,000 BAM
 
@@ -303,7 +303,7 @@ Source: WageIndicator, Minimum Wage FBiH from 01 Jan 2025; PwC (2025).
 - Water protection 0.5% × net 1,893 = **9.47**
 - **Total employer cost ≈ 3,000 + 150 + 9.47 + 9.47 = 3,168.94**
 
-**`[RESEARCH GAP — reviewer to confirm]`** the exact base for the two 0.5% levies ("net salary" definition). Source: PwC (2025); Unija (eff. 1 July 2025).
+**`[RESEARCH GAP — reviewer to confirm]`** the exact base for the two 0.5% levies ("net salary" definition). Source: the secondary summary (2025); Unija (eff. 1 July 2025).
 
 ### Example 3 — FBiH married employee, 2 children, gross 4,000 BAM
 
@@ -348,11 +348,11 @@ Source: Zakon o doprinosima RS (Sl. glasnik RS 114/17) art 22(1), as amended by 
 
 **Reasoning:** Default to **FBiH** (10%, larger entity, higher of 10% vs RS 8% — avoids understating tax). Compute as Example 2: net pay **1,893.00**. Flag: "Entity assumed FBiH under conservative default — reviewer must confirm; RS would yield a different result (8% PIT, 31.0% employee contributions, no employer contributions)."
 
-Source: PwC (2025) per Conservative Defaults (Section 1).
+Source: the secondary summary (2025) per Conservative Defaults (Section 1).
 
 ### 5.1 Determine the Entity First
 
-- **Entity determination rule** — No computation is valid without the entity. FBiH = 10% PIT + 31.0% employee / 5.0% employer (H2 2025) contributions. RS = 8% PIT + 31.0% employee / 0% employer. BD = 10% PIT + 12% health + elective RS/FBiH pension.  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 9 — https://www.fmf.gov.ba/Content/Open/102395 ; Zakon o doprinosima FBiH (Sl. novine FBiH 35/98 to 33/25), Federal Ministry of Finance consolidated text, art 10 — https://www.fmf.gov.ba/Content/Open/102606 ; Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 1 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf ; Zakon o doprinosima RS (Sl. glasnik RS 114/17), art 22(1) as amended — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon-o-doprinosima-SLGL-114_17.pdf ; PwC Worldwide Tax Summaries (Brčko District) — https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/other-taxes)_
+- **Entity determination rule** — No computation is valid without the entity. FBiH = 10% PIT + 31.0% employee / 5.0% employer (H2 2025) contributions. RS = 8% PIT + 31.0% employee / 0% employer. BD = 10% PIT + 12% health + elective RS/FBiH pension.  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 9 — https://www.fmf.gov.ba/Content/Open/102395 ; Zakon o doprinosima FBiH (Sl. novine FBiH 35/98 to 33/25), Federal Ministry of Finance consolidated text, art 10 — https://www.fmf.gov.ba/Content/Open/102606 ; Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 1 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf ; Zakon o doprinosima RS (Sl. glasnik RS 114/17), art 22(1) as amended — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon-o-doprinosima-SLGL-114_17.pdf)_
 
 ### 5.2 Residence and Source
 
@@ -364,7 +364,7 @@ Source: PwC (2025) per Conservative Defaults (Section 1).
 
 ### 5.4 Personal and Dependent Allowances
 
-**Personal and dependent allowances table**  _(PwC, Deductions (2025))_
+**Personal and dependent allowances table**  _(secondary summary, Deductions (2025))_
 
 | Entity | Personal | Dependents |
 | --- | --- | --- |
@@ -374,7 +374,7 @@ Source: PwC (2025) per Conservative Defaults (Section 1).
 
 ### 5.5 Withholding (PAYE-style)
 
-- **Withholding rule** — Employers withhold PIT and employee contributions monthly and remit them with salary. FBiH: salary-tax specification due the same day as payment, no later than 1 day after. RS: monthly specification due by the 10th of the following month.  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 27(1) — https://www.fmf.gov.ba/Content/Open/102395 ; PwC Worldwide Tax Summaries, Individual, Tax administration (RS and Brčko District))_
+- **Withholding rule** — Employers withhold PIT and employee contributions monthly and remit them with salary. FBiH: salary-tax specification due the same day as payment, no later than 1 day after. RS: monthly specification due by the 10th of the following month.  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 27(1) — https://www.fmf.gov.ba/Content/Open/102395 ; a secondary practitioner summary, Individual, Tax administration (RS and Brčko District))_
 
 ### 5.6 FBiH Employer-Rate Change (1 July 2025)
 
@@ -394,7 +394,7 @@ Source: PwC (2025) per Conservative Defaults (Section 1).
 
 ### 5.10 Annual Returns and Deadlines
 
-**Annual returns and deadlines table**  _(PwC, Tax administration (2025))_
+**Annual returns and deadlines table**  _(secondary summary, Tax administration (2025))_
 
 | Entity | Return | Deadline |
 | --- | --- | --- |
@@ -402,22 +402,22 @@ Source: PwC (2025) per Conservative Defaults (Section 1).
 | RS | Annual income tax return (godišnja poreska prijava) | **31 March** of following year |
 | BD | Annual PIT return (only where withholding insufficient) | **28 February** of following year |
 
-- **Form codes research gap** — `[RESEARCH GAP — reviewer to confirm]` exact form codes against the current entity authority forms.  _(PwC, Tax administration (2025))_
+- **Form codes research gap** — `[RESEARCH GAP — reviewer to confirm]` exact form codes against the current entity authority forms.  _(secondary summary, Tax administration (2025))_
 
 ### 5.11 Monthly Payroll Specifications
 
-**Monthly payroll specifications table**  _(PwC, Tax administration (2025))_
+**Monthly payroll specifications table**  _(secondary summary, Tax administration (2025))_
 
 | Entity | Form | Deadline |
 | --- | --- | --- |
 | FBiH | Monthly salary tax/contributions specification (Specifikacija MIP-1023) | Same day as salary payment, no later than 1 day after |
 | RS | Monthly salary tax/contributions specification (Obrazac 1002) | By the 10th of the following month |
 
-- **Form codes research gap** — Form codes drawn from common practice — `[RESEARCH GAP — reviewer to confirm]`.  _(PwC, Tax administration (2025))_
+- **Form codes research gap** — Form codes drawn from common practice — `[RESEARCH GAP — reviewer to confirm]`.  _(secondary summary, Tax administration (2025))_
 
 ### 5.12 Corporate Context (incorporation comparison)
 
-- **Corporate income tax rate** — Corporate income tax is 10% across FBiH, RS, and BD — relevant when a self-employed individual considers incorporation.  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, art 31 — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf ; Zakon o porezu na dobit RS (Sl. glasnik RS 94/15), art 36(1) — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dobit%20od%2001_01_2016.pdf ; PwC Worldwide Tax Summaries (Brčko District) — https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/taxes-on-corporate-income)_
+- **Corporate income tax rate** — Corporate income tax is 10% across FBiH, RS, and BD — relevant when a self-employed individual considers incorporation.  _(Zakon o porezu na dobit FBiH (Sl. novine FBiH 15/16 and 15/20), Porezna uprava FBiH consolidated text, art 31 — https://www.pufbih.ba/v1/public/upload/zakoni/9080b-zakon-o-porezu-na-dobit-precisceni.pdf ; Zakon o porezu na dobit RS (Sl. glasnik RS 94/15), art 36(1) — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dobit%20od%2001_01_2016.pdf)_
 
 ### 6.1 Home Office Deduction (self-employed)
 
@@ -445,7 +445,7 @@ Source: PwC (2025) per Conservative Defaults (Section 1).
 
 ### 6.7 RS Deductible Items
 
-- **RS deductible items** — Mortgage interest (full), life insurance and voluntary pension premiums up to BAM 1,200 each, dependent family member BAM 1,800 a year (raised from 900 on 1 July 2021); confirm documentation  _(Zakon o izmjenama Zakona o porezu na dohodak (Sl. glasnik RS 49/21), art 1 — https://poreskaupravars.org/wp-content/uploads/2021/06/Zakon-o-doprinosima.pdf ; PwC Worldwide Tax Summaries, Deductions — https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/deductions)_
+- **RS deductible items** — Mortgage interest (full), life insurance and voluntary pension premiums up to BAM 1,200 each, dependent family member BAM 1,800 a year (raised from 900 on 1 July 2021); confirm documentation  _(Zakon o izmjenama Zakona o porezu na dohodak (Sl. glasnik RS 49/21), art 1 — https://poreskaupravars.org/wp-content/uploads/2021/06/Zakon-o-doprinosima.pdf)_
 
 ### 6.8 Capital Allowances (individuals)
 
@@ -568,26 +568,26 @@ ONBOARDING QUESTIONS -- BOSNIA AND HERZEGOVINA INCOME TAX
 
 | Item | Value | Source |
 | --- | --- | --- |
-| FBiH PIT rate | 10% flat | PwC, *Taxes on personal income* (2025) |
-| RS PIT rate | 8% flat | PwC (2025) |
-| RS paušal rate | 2% on revenue (threshold unconfirmed) | PwC (2025) — `[RESEARCH GAP]` threshold |
-| BD PIT rate | 10% flat | PwC (2025) |
-| FBiH personal allowance | 300 BAM/mo (3,600/yr) | PwC, *Deductions* (2025) |
+| FBiH PIT rate | 10% flat | secondary summary, *Taxes on personal income* (2025) |
+| RS PIT rate | 8% flat | secondary summary (2025) |
+| RS paušal rate | 2% on revenue (threshold unconfirmed) | secondary summary (2025) — `[RESEARCH GAP]` threshold |
+| BD PIT rate | 10% flat | secondary summary (2025) |
+| FBiH personal allowance | 300 BAM/mo (3,600/yr) | secondary summary, *Deductions* (2025) |
 | RS personal allowance | 12,000 BAM/yr (1,800 per dependant) | Zakon o porezu na dohodak RS art 10(3) as amended (Sl. glasnik RS 49/21 and 119/21) |
-| BD personal allowance | 6,000 BAM/yr | PwC, *Deductions* (2025) |
-| FBiH employee contributions | 31.0% (17.0 + 12.5 + 1.5) | PwC, *Other taxes* (2025) |
-| FBiH employer contributions (from 1 Jul 2025) | 5.0% (2.5 + 2.0 + 0.5) + 0.5% disaster + 0.5% water on net | PwC (2025); Unija/Orbitax (Gazette 7 May 2025) |
+| BD personal allowance | 6,000 BAM/yr | secondary summary, *Deductions* (2025) |
+| FBiH employee contributions | 31.0% (17.0 + 12.5 + 1.5) | secondary summary, *Other taxes* (2025) |
+| FBiH employer contributions (from 1 Jul 2025) | 5.0% (2.5 + 2.0 + 0.5) + 0.5% disaster + 0.5% water on net | secondary summary (2025); Unija/Orbitax (Gazette 7 May 2025) |
 | RS employee contributions | 31.0% (18.5 + 10.2 + 0.6 + 1.7) | Zakon o doprinosima RS (Sl. glasnik RS 114/17) art 22(1), as amended by Sl. glasnik RS 112/19 and 119/21 |
-| RS employer contributions | 0% | PwC (2025) |
-| BD health insurance | 12% of gross | PwC (2025) |
+| RS employer contributions | 0% | secondary summary (2025) |
+| BD health insurance | 12% of gross | secondary summary (2025) |
 | FBiH minimum wage 2025 | 1,000 BAM net / 1,562 BAM gross/mo | WageIndicator (eff. 1 Jan 2025) |
 | RS minimum wage 2025 (tiered) | 900 net (1,344.26 gross) basic → 1,300 net (2,000 gross) higher-education | WageIndicator (eff. 1 Jan 2025) |
 | VAT (PDV) rate | 17% single rate | UINO (official) |
 | VAT registration threshold | 100,000 BAM turnover (raised from 50,000 on 2 Dec 2023) | vatcalc; UINO |
-| Corporate income tax | 10% (all entities) | PwC, *Corporate* (2025) |
-| FBiH/RS annual return deadline | 31 March | PwC, *Tax administration* (2025) |
-| BD annual return deadline | 28 February | PwC, *Tax administration* (2025) |
-| Penalties | Entity-level fines + default interest; ranges not captured | PwC (2025) — `[RESEARCH GAP]` figure-level |
+| Corporate income tax | 10% (all entities) | secondary summary, *Corporate* (2025) |
+| FBiH/RS annual return deadline | 31 March | secondary summary, *Tax administration* (2025) |
+| BD annual return deadline | 28 February | secondary summary, *Tax administration* (2025) |
+| Penalties | Entity-level fines + default interest; ranges not captured | secondary summary (2025) — `[RESEARCH GAP]` figure-level |
 
 ### Authorities and Legislation
 
@@ -604,11 +604,11 @@ ONBOARDING QUESTIONS -- BOSNIA AND HERZEGOVINA INCOME TAX
 
 ### Primary Sources
 
-1. PwC Worldwide Tax Summaries — Bosnia and Herzegovina – Individual – Taxes on personal income — https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/taxes-on-personal-income
-2. PwC — Individual – Other taxes — https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/other-taxes
-3. PwC — Individual – Deductions — https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/deductions
-4. PwC — Individual – Tax administration — https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/tax-administration
-5. PwC — Corporate – Taxes on corporate income — https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/taxes-on-corporate-income
+1. Secondary practitioner summary (link removed) — Bosnia and Herzegovina – Individual – Taxes on personal income
+2. Secondary practitioner summary (link removed) — Individual – Other taxes
+3. Secondary practitioner summary (link removed) — Individual – Deductions
+4. Secondary practitioner summary (link removed) — Individual – Tax administration
+5. Secondary practitioner summary (link removed) — Corporate – Taxes on corporate income
 6. Orbitax — FBiH Approves Cut in Employer Social Security Contribution Rates — https://orbitax.com/news/archive.php/Federation-of-Bosnia-and-Herze-58893
 7. Unija — Amendments to the Law on Contributions in the FBiH (eff. 1 July 2025) — https://unija.com/en/amendments-to-the-law-on-contibutions-in-the-fbih/
 8. WageIndicator — Minimum Wage FBiH from 01 Jan 2025

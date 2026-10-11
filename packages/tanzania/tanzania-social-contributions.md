@@ -3,19 +3,22 @@ name: tanzania-social-contributions
 description: Use this skill whenever asked about Tanzania (Mainland) payroll taxes and social security contributions for employers and employees. Trigger on phrases like "Tanzania PAYE", "how much NSSF do I pay", "NSSF contribution", "PSSSF", "Skills and Development Levy", "SDL Tanzania", "Workers Compensation Fund", "WCF Tanzania", "TZS payroll", "Tanzania payroll deductions", "PAYE bracket Tanzania", "social security Tanzania", "pension contribution Tanzania", or any question about Tanzanian employer/employee statutory contributions. Also trigger when classifying bank statement transactions that relate to TRA payments, NSSF/PSSSF pension debits, SDL, or WCF remittances from CRDB, NMB, NBC, or other Tanzanian banks. This skill covers PAYE progressive brackets, NSSF/PSSSF pension splits, SDL, WCF, monthly remittance deadlines, penalties, minimum wage, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Tanzanian payroll or contributions work.
 jurisdiction: TZ
 category: international
+version: 0.2
 tax_year: 2026
-last_updated: 2026-09-29
+last_updated: 2026-10-11
 reviewed_by: Baraka Cassian
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Tanzania (Mainland) Social Security & Payroll Contributions
 
-## Tanzania (Mainland) Social Security & Payroll Contributions Skill v0.1
+## Tanzania (Mainland) Social Security & Payroll Contributions Skill v0.2
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Baraka Cassian** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+>
+> **Edited since review (2026-10-11).** Citations now point to the statutes and the agencies' own publications instead of a secondary tax summary: the Income Tax Act, Cap 332 (the Revised Edition 2023 published by TRA, "ITA" below), the Tax Administration Act, Cap 438 ("TAA"), the National Social Security Fund Act, Cap 50, the Public Service Social Security Fund Act 2018, the Vocational Education and Training Act, Cap 82, the Workers Compensation Act, Cap 263, GN 605A/2025 and TRA's "Pay As You Earn", SDL and penalties pages. Two statements changed: the PSSSF split of 15% employer and 5% employee is now cited to s.18 of the PSSSF Act 2018, which closes that research gap; and the minimum-wage note no longer quotes a single cross-sector average, because GN 605A/2025 sets sectoral rates only (Example 3 and Rule 11 are reworded). The PAYE computations, which already deducted the employee pension first, are unchanged. These edits are not covered by the 2026-06-12 sign-off.
 
 ## Section 1 -- Quick reference
 
@@ -31,16 +34,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax year | Calendar year (1 Jan – 31 Dec) |
 | Primary Legislation (PAYE) | Income Tax Act, Cap. 332 |
 | Pension Legislation (private) | National Social Security Fund Act, Cap. 50 |
-| Pension Legislation (public) | Public Service Social Security Act, 2018 |
+| Pension Legislation (public) | Public Service Social Security Fund Act, 2018 |
 | Levy Legislation | Vocational Education and Training Act (SDL); Workers Compensation Act (WCF) |
 | Tax Authority | Tanzania Revenue Authority (TRA) |
 | Pension funds | NSSF (private/informal sector); PSSSF (public sector) |
 | Personal income tax? | YES — Tanzania has PAYE (this is NOT a no-PIT jurisdiction) |
 | Resident PAYE rates | 0% / 8% / 20% / 25% / 30% progressive (TRA) |
-| Non-resident employment rate | 15% flat, final tax (PwC) |
+| Non-resident employment rate | 15% withheld from gross employment income, treated as final (ITA First Schedule para 4(a)(ii); TRA — Pay As You Earn) |
 | Tax-free threshold | First TZS 270,000/month (TRA) |
 | NSSF total | 20% of gross wage — 10% employer / 10% employee (NSSF) |
-| PSSSF total | 20% of gross wage — 15% employer / 5% employee (secondary; see gap) |
+| PSSSF total | 20% of monthly salary — 15% employer / 5% employee (PSSSF Act 2018, s.18) |
 | NHIF (public service) | 6% of basic salary — 3% employer / 3% employee, mandatory for public servants (NHIF Act, Cap 395) |
 | SDL | 3.5% of gross emoluments, employer ≥10 employees (TRA) |
 | WCF | 0.5% of cash paid to employees, employer-only, private and public sector alike (Workers Compensation Act, Cap 263; Tariff Regulations) |
@@ -52,7 +55,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Employer | Employee | Total | Base | Source |
 | --- | --- | --- | --- | --- | --- |
-| PAYE | — | 0%–30% progressive | — | Monthly income after pension | TRA |
+| PAYE | — | 0%–30% progressive | — | Monthly income after pension | ITA s.61; TRA — Pay As You Earn |
 | NSSF pension | 10% | 10% | 20% | Gross wage | NSSF |
 | SDL | 3.5% | — | 3.5% | Gross emoluments (if ≥10 employees) | TRA |
 | WCF | 0.5% | — | 0.5% | Cash paid to employees | Workers Compensation Act, Cap 263; Tariff Regulations; WCF |
@@ -65,7 +68,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown sector (private vs public) | Assume private → NSSF (10%/10%); confirm before PSSSF |
 | Unknown employee headcount for SDL | If unknown, flag — SDL only applies at ≥10 employees (TRA) |
 | Sector unknown for WCF | 0.5% either way: the tariff is the same for private and public employers (WCF) |
-| Unknown whether pension already deducted before PAYE | Deduct mandatory pension before computing PAYE base (TRA) |
+| Unknown whether pension already deducted before PAYE | Deduct mandatory pension before computing PAYE base (ITA s.61; TRA) |
 | Zanzibar vs Mainland not stated | Assume Mainland; STOP on levies if Zanzibar (different regime) |
 
 ## Section 2 -- Required inputs and refusal catalogue
@@ -84,7 +87,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-TZ-SC-2 — Zanzibar payroll levies** — Trigger: employment located in Zanzibar. Message: "PAYE brackets are identical in Zanzibar per TRA, but SDL and certain social levies operate under a separate Zanzibar regime. Do not apply Mainland SDL/levy figures to Zanzibar without confirming the Zanzibar schedule. Escalate to a practitioner."
 - **R-TZ-SC-3 — WCF arrears** — Trigger: a WCF statement shows arrears or an assessment that differs from 0.5% of cash paid. Message: "The tariff is 0.5% of cash sums paid to employees for private and public employers (Workers Compensation Act, Cap 263; Tariff Regulations); a different figure on a WCF statement is arrears, an assessment or interest at 2% of the unpaid amount per month, not a rate. Reconcile against the WCF statement before paying; escalate if the assessment is disputed."
 - **R-TZ-SC-4 — Arrears / penalty quantification** — Trigger: client has unpaid PAYE, NSSF, SDL, or WCF from prior periods. Message: "Statutory penalties (TRA 2.5%/month, NSSF 5%/month) compound on unpaid amounts. Do not attempt to quantify arrears without official statements. Escalate to a practitioner."
-- **R-TZ-SC-5 — Presumptive tax / non-PAYE individuals** — Trigger: individual under the presumptive regime (turnover ≤ TZS 100 million). Message: "The presumptive income tax regime is outside the scope of this payroll skill and its rate bands are not captured here. Escalate to a practitioner. [RESEARCH GAP — presumptive bands not extracted]"
+- **R-TZ-SC-5 — Presumptive tax / non-PAYE individuals** — Trigger: individual under the presumptive regime (turnover up to TZS 100 million for the year of income 2025; up to TZS 200 million from 1 July 2026 under Finance Act 2026 s.27). Message: "The presumptive income tax regime is outside the scope of this payroll skill; the Tanzania income-tax skill carries the bands. Escalate to a practitioner."
 
 ## Section 3 -- Payment pattern library
 
@@ -178,16 +181,16 @@ Six bank statement / payroll classifications for a hypothetical private-sector e
 - NSSF employee 10% = 29,000. PAYE base = 290,000 − 29,000 = 261,000.
 - PAYE base 261,000 ≤ 270,000 tax-free threshold → PAYE = **Nil** (TRA).
 - Net pay = 290,000 − 29,000 = **261,000**.
-- Note: 290,000 gross is below the new general minimum-wage baseline of TZS 358,322/month effective 1 Jan 2026 (GN 605A/2025) — flag wage compliance.
+- Note: minimum wages are sectoral (GN 605A/2025, in force 1 Jan 2026). 290,000 gross is above the TZS 175,000 rate for unlisted sectors and the hospital rate of 250,000, but below many sector rates (telecommunications is 644,000) — confirm the employee's sub-sector in the Second Schedule before flagging wage compliance.
 
-**Classification:** PAYE Nil; NSSF ee 29,000 withheld. Flag minimum-wage compliance.
+**Classification:** PAYE Nil; NSSF ee 29,000 withheld. Confirm the sub-sector minimum wage.
 
 ### Example 4 — Non-resident employee (flat 15%)
 
 **Input:** Non-resident employee, gross monthly employment income TZS 4,000,000.
 
 **Reasoning:**
-- Non-resident employment income is taxed at a **flat 15% final tax** (PwC) — progressive brackets do NOT apply.
+- Non-resident employment income is withheld at a **flat 15%** of the gross payment, which TRA treats as final (ITA First Schedule para 4(a)(ii); TRA — Pay As You Earn) — progressive brackets do NOT apply.
 - PAYE = 15% × 4,000,000 = **600,000**.
 - Pension: NSSF applicability to non-residents is case-specific; flag for reviewer.
 
@@ -219,11 +222,11 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 1 — PAYE is computed on income AFTER mandatory pension
 
-- **PAYE base formula** — PAYE base = gross monthly income − mandatory NSSF/PSSSF employee contribution. Pension contributions are deductible before applying the PAYE schedule.  _(TRA)_
+- **PAYE base formula** — PAYE base = gross monthly income − mandatory NSSF/PSSSF employee contribution. The contribution to an approved retirement fund reduces total income (ITA s.61), and TRA applies the same reduction in monthly withholding, capped at the statutory contribution.  _(ITA s.61; TRA — Pay As You Earn)_
 
 ### Rule 2 — Resident PAYE progressive schedule (monthly, TZS)
 
-**Resident PAYE progressive schedule**  _(TRA (Income Tax for Individuals); PwC (last reviewed 14 Jan 2026))_
+**Resident PAYE progressive schedule**  _(ITA First Schedule para 1(1), the annual scale substituted by Finance Act 2021 s.25 and divided by twelve; TRA (Income Tax for Individuals))_
 
 | Monthly PAYE base (TZS) | Tax |
 | --- | --- |
@@ -233,7 +236,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 | 760,001 – 1,000,000 | 68,000 + 25% of excess over 760,000 |
 | Above 1,000,000 | 128,000 + 30% of excess over 1,000,000 |
 
-- **Cumulative figures verification and lowest band note** — Cumulative figures verified: at 520,000 → 20,000; at 760,000 → 68,000; at 1,000,000 → 128,000. Lowest band is 8% (TRA/PwC) — do not use the outdated 9% from some secondary calculators.  _(TRA/PwC)_
+- **Cumulative figures verification and lowest band note** — Cumulative figures verified: at 520,000 → 20,000; at 760,000 → 68,000; at 1,000,000 → 128,000. Lowest band is 8% (ITA First Schedule; TRA) — do not use the outdated 9% from some secondary calculators.  _(ITA First Schedule para 1(1); TRA)_
 
 ### Rule 3 — Tax-free threshold
 
@@ -241,20 +244,20 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 4 — Non-resident flat rate
 
-- **Non-resident employment income rate** — Non-resident employment income is taxed at a flat 15% final tax. The progressive schedule does not apply.  _(PwC)_
+- **Non-resident employment income rate** — Non-resident employment income is withheld at 15% of the gross payment, which TRA treats as final; a non-resident whose only Tanzanian income is such employment need not file a return. The progressive schedule does not apply.  _(ITA First Schedule para 4(a)(ii) and s.118(b); TRA — Pay As You Earn)_
 
 ### Rule 5 — NSSF (private sector) contribution
 
-- **NSSF total contribution and split** — Total NSSF = 20% of gross monthly wage, joint employer/employee. Standard split: 10% employer / 10% employee (employee share capped at 10%). Permitted alternative: 15% employer / 5% employee; employer may remit the full 20% without deducting from the employee. The legal obligation to remit rests on the employer. No published floor or ceiling on the contribution base. Employers must register with NSSF and register every employee; membership is mandatory for private-sector employees.  _(NSSF Act, Cap 50, s.13; NSSF; PwC)_
+- **NSSF total contribution and split** — Total NSSF = 20% of gross monthly wage, joint employer/employee. Standard split: 10% employer / 10% employee (employee share capped at 10%). Permitted alternative: 15% employer / 5% employee; employer may remit the full 20% without deducting from the employee. The legal obligation to remit rests on the employer. The First Schedule applies the contribution to every complete shilling of wages, with no floor or ceiling. Employers must register with NSSF and register every employee; membership is mandatory for private-sector employees.  _(NSSF Act, Cap 50, ss.11-14 and First Schedule; NSSF — Rate of Contributions)_
 
 ### Rule 6 — PSSSF (public sector) contribution
 
-- **PSSSF total contribution and split** — Total PSSSF = 20%, split 15% employer / 5% employee, under the Public Service Social Security Act, 2018. [RESEARCH GAP — split sourced from secondary material; reviewer to confirm against PSSSF official documentation.]  _(Public Service Social Security Act, 2018)_
+- **PSSSF total contribution and split** — Total PSSSF = 20% of the member's monthly salary: 5% deducted by the employer from the member's salary and 15% contributed by the employer to the member's account, or such amounts as the Minister determines by order in the Gazette after an actuarial valuation.  _(Public Service Social Security Fund Act, 2018, s.18(1)-(2))_
 - **NHIF (public service)** — Public servants also contribute to the National Health Insurance Fund: 6% of basic salary, 3% employer and 3% employee, mandatory.  _(National Health Insurance Fund Act, Cap 395)_
 
 ### Rule 7 — Skills and Development Levy (SDL)
 
-- **SDL rate and threshold** — SDL = 3.5% of total gross monthly emoluments paid to all employees, payable by employers with 10 or more employees (TRA — authoritative; ignore secondary "4 or more" sources). Form ITX 300.01.E. Employer-borne. Exemptions: government departments / wholly govt-financed institutions, certain interns, and farm employers whose employees are solely engaged in farming.  _(TRA)_
+- **SDL rate and threshold** — SDL = 3.5% of total gross monthly emoluments paid to all employees, payable by employers with 10 or more employees (VETA Act, Cap 82, s.14; the headcount rose from four to ten under Finance Act 2021 s.81, so "4 or more" sources are out of date). Form ITX 300.01.E. Employer-borne. Exemptions: Government departments and wholly Government-financed public institutions, diplomatic missions, the UN and its organisations, foreign aid and technical-assistance institutions, religious institutions whose employees only administer places of worship, give religious instruction or provide public health, charitable organisations holding a TAA s.11 ruling, registered educational institutions from nursery schools to universities, local government authorities, interns under the TAESA programme, and farm employers whose employees are directly and solely engaged in farming.  _(VETA Act ss.14 and 19; TRA — Skills Development Levy)_
 
 ### Rule 8 — Workers Compensation Fund (WCF)
 
@@ -266,7 +269,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 | Item | Deadline | Source |
 | --- | --- | --- |
-| PAYE + SDL (TRA) | 7th day of the month following the payroll month | TRA |
+| PAYE + SDL (TRA) | 7th day of the month following the payroll month | ITA s.109(1); TRA |
 | WCF | Within the contribution month or by the end of the following month | Workers Compensation (Payment of Tariff) Regulations |
 | NSSF | Within one month after the end of the month it relates to (NSSF Act s.14); practitioners cite end of following month | NSSF Act Cap. 50 |
 | HESLB | 15th of the month following the deduction | HESLB Act Cap. 178 |
@@ -277,14 +280,14 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 | Item | Penalty | Source |
 | --- | --- | --- |
-| PAYE/SDL late (TRA) | Higher of 2.5% of unpaid tax per month (or part) or 15 currency points (body corporate); plus interest | TRA |
+| PAYE/SDL late (TRA) | Higher of 2.5% of unpaid tax per month (or part) or 15 currency points (body corporate); plus interest at the statutory rate (the prevailing Bank of Tanzania discount rate), compounded monthly | TAA ss.3, 76 and 78; TRA |
 | NSSF late | 5% of unpaid amount per month or part-month | NSSF Act Cap. 50 |
 | WCF late | Interest of 2% of the unpaid amount per month of delay | WCF regulations |
 | HESLB late or not deducted | 10% of the monthly deduction | HESLB Act Cap. 178 |
 
 ### Rule 11 — Minimum wage (private sector, effective 1 Jan 2026)
 
-- **Minimum wage** — New order Government Notice No. 605A (13 Oct 2025) raises the baseline by an average 33.4% to TZS 358,322/month (cross-sector average; rates are sector-specific). Sectors not specifically covered: TZS 175,000/month. Based on a 45-hour workweek.  _(TanzLII GN 605A/2025; PKF)_
+- **Minimum wage** — The Labour Institutions (Minimum Wage for Private Sector) Order, 2025 (GN 605A of 13 October 2025, in force 1 January 2026) sets hourly, daily, weekly, fortnightly and monthly rates for sixteen sectors or areas in its Second Schedule; monthly rates run from TZS 80,000 (other domestic workers) to TZS 765,900 (international energy companies), with TZS 175,000 for any sector not specified. There is no single national figure; the Tanzania payroll skill reproduces the monthly schedule.  _(GN 605A/2025, paras 1, 4 and 7 and Schedules)_
 
 ### Rule 12 — Statutory remittances are not VATable supplies
 
@@ -316,7 +319,7 @@ When payroll data is ambiguous or client circumstances are unclear, flag these s
 
 ### T2-5 — Public vs private sector / fund selection
 
-- **Public vs private sector fund selection** — Trigger: Unclear whether the employer is in the public sector (PSSSF) or private/informal sector (NSSF). Issue: Fund and split differ — NSSF 10%/10% vs PSSSF 15%/5%. The PSSSF split itself is sourced from secondary material. Action: Flag for reviewer. Confirm sector and the applicable fund.
+- **Public vs private sector fund selection** — Trigger: Unclear whether the employer is in the public sector (PSSSF) or private/informal sector (NSSF). Issue: Fund and split differ — NSSF 10%/10% vs PSSSF 15%/5%. The PSSSF split is set by s.18 of the PSSSF Act 2018 and may be varied by ministerial order. Action: Flag for reviewer. Confirm sector and the applicable fund.
 
 ### T2-6 — Zanzibar employment
 
@@ -436,15 +439,15 @@ If the client provides only a bank statement and no other information:
 | --- | --- | --- |
 | Tax-free threshold | TZS 270,000/month (TZS 3,240,000/year) | TRA |
 | Top marginal PAYE | 30% (over TZS 1,000,000/month base) | TRA |
-| Non-resident PAYE | 15% flat final | PwC |
+| Non-resident PAYE | 15% flat final | ITA First Schedule para 4(a)(ii); TRA — Pay As You Earn |
 | NSSF total | 20% (10% er / 10% ee) | NSSF |
-| PSSSF total | 20% (15% er / 5% ee) [GAP — secondary] | Public Service SSA 2018 |
+| PSSSF total | 20% of monthly salary (15% er / 5% ee) | PSSSF Act 2018 s.18 |
 | SDL | 3.5%, employer ≥10 staff | TRA |
 | WCF | 0.5% (private and public) | Workers Compensation Act, Cap 263; WCF |
 | NHIF (public service) | 6% of basic salary (3% er / 3% ee) | NHIF Act, Cap 395 |
 | HESLB | 15% of a loan beneficiary's monthly salary, by the 15th of the following month | HESLB Act, Cap 178 |
-| Minimum wage (1 Jan 2026) | TZS 358,322/month avg; TZS 175,000 uncovered sectors | GN 605A/2025; PKF |
-| Corporate income tax (context) | 30% standard; 25% newly DSE-listed 3 yrs | PwC / TRA |
+| Minimum wage (1 Jan 2026) | Sectoral, TZS 80,000 to 765,900/month; TZS 175,000 for unlisted sectors | GN 605A/2025 Second Schedule |
+| Corporate income tax (context) | 30% standard; 25% for a newly DSE-listed company with at least 30% public equity, for 3 years | ITA First Schedule para 3(1)-(2)(a) |
 
 ### Penalties
 
@@ -452,7 +455,7 @@ If the client provides only a bank statement and no other information:
 
 | Item | Penalty | Source |
 | --- | --- | --- |
-| PAYE/SDL late (TRA) | Higher of 2.5%/month (or part) of unpaid tax or 15 currency points (body corporate) + interest | TRA |
+| PAYE/SDL late (TRA) | Higher of 2.5%/month (or part) of unpaid tax or 15 currency points (body corporate) + interest at the statutory rate, compounded monthly | TAA ss.76 and 78; TRA |
 | NSSF late | 5% of unpaid amount per month or part-month | NSSF Act Cap. 50 |
 | WCF late | 2% of the unpaid amount per month of delay | WCF regulations |
 | HESLB late or not deducted | 10% of the monthly deduction | HESLB Act Cap. 178 |
@@ -473,7 +476,21 @@ If the client provides only a bank statement and no other information:
 
 **Test 7:** Private employer, total payroll 50,000,000, 30 staff. → SDL = 3.5%×50,000,000 = 1,750,000 (employer-borne). WCF (0.5%) = 250,000.
 
-**Test 8:** Public-sector employee, gross 1,200,000, PSSSF 15/5. → PSSSF ee 5% = 60,000; PSSSF er 15% = 180,000; total 20% = 240,000 [GAP — confirm PSSSF split].
+**Test 8:** Public-sector employee, gross 1,200,000, PSSSF 15/5. → PSSSF ee 5% = 60,000; PSSSF er 15% = 180,000; total 20% = 240,000 (PSSSF Act 2018 s.18).
+
+### Sources
+
+- Income Tax Act, Cap 332, Revised Edition 2023 (TRA copy; s.61 retirement contributions, s.104 withholding by employers, s.109 payment of tax withheld, First Schedule rates) — https://www.tra.go.tz/images/uploads/acts/The_Income_Tax_Act.pdf
+- Tax Administration Act, Cap 438 (ss.3, 76-78) — https://tanzlii.org/akn/tz/act/2015/10
+- National Social Security Fund Act, Cap 50 (ss.11-14 and First Schedule) — https://tanzlii.org/akn/tz/act/1997/28 ; NSSF, "Rate of Contributions" — https://www.nssf.go.tz/pages/rate-of-contributions
+- Public Service Social Security Fund Act 2018 (s.18) — https://tanzlii.org/akn/tz/act/2018/2
+- Workers Compensation Act, Cap 263 (ss.74-75) — https://tanzlii.org/akn/tz/act/2008/20 ; WCF, "Michango" — https://www.wcf.go.tz/pages/contribution
+- Labour Institutions (Minimum Wage for Private Sector) Order, 2025, GN 605A/2025 — https://tanzlii.org/akn/tz/act/gn/2025/605a
+- TRA, "Pay As You Earn" (PAYE base, secondary employment, non-resident rate) — https://tra.go.tz/page/pay-as-you-earn
+- TRA, "Income Tax for Individuals" (monthly scale) — https://www.tra.go.tz/page/income-tax-for-individuals
+- TRA, "Skills Development Levy (SDL)" — https://www.tra.go.tz/page/skills-development-levy-sdl
+- TRA, "Interest, Penalties & Offences" — https://www.tra.go.tz/page/interest-penalties-offences
+- TRA, "Taxes and Duties at a Glance 2025/2026" (July 2025) — https://www.tra.go.tz/images/uploads/pages/TAXES_AND_DUTIES_AT_A_GLANCE_2025_2026.pdf
 
 ### Prohibitions
 
@@ -481,8 +498,8 @@ If the client provides only a bank statement and no other information:
 - NEVER apply progressive brackets to a non-resident — non-resident employment income is a flat 15% final tax.
 - NEVER compute PAYE on gross — always deduct the mandatory employee pension contribution first (TRA).
 - NEVER charge SDL to an employer with fewer than 10 employees (TRA).
-- NEVER present a definitive WCF figure without confirming the current tariff with WCF [RESEARCH GAP].
-- NEVER apply the PSSSF 15/5 split as definitive without confirming against PSSSF documentation [RESEARCH GAP].
+- NEVER present a WCF figure other than 0.5% of earnings unless a WCF assessment notice supports it (Workers Compensation Act, Cap 263, s.74; WCF).
+- NEVER vary the PSSSF 15/5 split without a ministerial order under s.18(2) of the PSSSF Act 2018.
 - NEVER apply Mainland SDL/levy figures to Zanzibar without the Zanzibar schedule.
 - NEVER deduct more than 10% from an employee for NSSF — the employee share is capped at 10%.
 - NEVER quantify arrears or penalties without official TRA/NSSF statements — escalate to a practitioner.

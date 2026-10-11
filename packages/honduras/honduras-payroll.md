@@ -1,10 +1,10 @@
 ---
 name: honduras-payroll
 description: Use this skill whenever asked about Honduras payroll processing for employed persons. Trigger on phrases like "Honduras payroll", "ISR Honduras", "Impuesto Sobre la Renta withholding", "IHSS deduction", "RAP contribution", "INFOP", "planilla Honduras", "aguinaldo", "decimo tercer mes", "decimo cuarto mes", "catorceavo", "tabla progresiva ISR", "net salary Honduras", "PAYE Honduras", "salario minimo Honduras", "techo de cotizacion IHSS", "employer payroll Honduras", "gross to net Honduras", "salario neto Honduras", or any question about computing employee pay, income-tax withholding, or social-security/private-fund contributions for Honduras-based employees. This skill covers ISR (income tax) withholding by the employer, IHSS social security (EM + IVM + occupational risk), RAP private contributions, the INFOP training levy, the 13th and 14th month statutory salaries, minimum wage, and filing obligations to SAR. ALWAYS read this skill before processing any Honduras payroll.
-version: 0.2
+version: 0.3
 jurisdiction: HN
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Honduras Payroll
 
-## Honduras Payroll Skill v0.2
+## Honduras Payroll Skill v0.3
 
 > **Tier 2 (research-verified) — NOT yet accountant-verified.** Several figures carry `[RESEARCH GAP — reviewer to confirm]` markers. A licensed Honduran contador público must reconcile those before any output is presented as final.
 
@@ -28,22 +28,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Honduras (República de Honduras) |
 | Currency | Lempira (HNL / L) only — wages must be paid in Lempiras (Labor Code) |
 | Standard pay frequency | Manual workers: weekly max; office/intellectual + domestic: monthly max (Labor Code Art. 368) |
-| Tax year | Calendar year (1 January -- 31 December) (PwC — Tax administration) |
+| Tax year | Calendar year (1 January -- 31 December) (secondary summary, Tax administration) |
 | Income tax | YES — ISR (Impuesto Sobre la Renta), progressive 0% / 15% / 20% / 25%, employer-withheld monthly |
 | Tax authority | SAR (Servicio de Administración de Rentas) |
 | Social security authority | IHSS (Instituto Hondureño de Seguridad Social) |
 | Private fund | RAP (Régimen de Aportaciones Privadas) |
 | Training levy | INFOP (Instituto Nacional de Formación Profesional) |
 | Annual ISR return form | Declaración Jurada del ISR – Persona Natural, código **102**, via SAR DET Live (SAR) |
-| Annual ISR deadline | **30 April** (rolls to next business day) (SAR; PwC) |
+| Annual ISR deadline | **30 April** (rolls to next business day) (SAR; secondary summary) |
 | Key legislation | Ley del Impuesto Sobre la Renta; Código Tributario (Decreto 22-97); Ley del IHSS; Decreto 47-2024 (RAP reform); Código del Trabajo; Acuerdo 02-95 (Reglamento Décimo Cuarto Mes) |
 | Filing portal | SAR DET Live (`detlive.sar.gob.hn`) |
 | Validated by | Pending -- requires sign-off by a licensed Honduran contador público |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ## Section 2 -- Income Tax Withholding (ISR — Impuesto Sobre la Renta)
 
-Honduras **does** levy personal income tax on employees. The employer is the **withholding agent (agente de retención)**: it deducts ISR monthly from payroll and remits it monthly to SAR (PwC — Tax administration). The progressive table (*tabla progresiva*) is updated annually by SAR for inflation and is expressed on **annual Renta Neta Gravable** (taxable net income). Rates: **0% / 15% / 20% / 25%**.
+Honduras **does** levy personal income tax on employees. The employer is the **withholding agent (agente de retención)**: it deducts ISR monthly from payroll and remits it monthly to SAR (secondary summary, Tax administration). The progressive table (*tabla progresiva*) is updated annually by SAR for inflation and is expressed on **annual Renta Neta Gravable** (taxable net income). Rates: **0% / 15% / 20% / 25%**.
 
 ### ISR Progressive Table — Fiscal Year 2025 (CONFIRMED)
 
@@ -100,8 +100,8 @@ Honduras **does** levy personal income tax on employees. The employer is the **w
 
 ### Withholding mechanism
 
-- ISR is **withheld monthly by the employer** from payroll and remitted monthly to SAR (PwC — Tax administration).
-- Pure-salary employees whose tax is fully withheld generally **do not file** an annual return; those with fees, commissions, royalties, rental, or interest income **must file** Form 102 (PwC — Tax administration).
+- ISR is **withheld monthly by the employer** from payroll and remitted monthly to SAR (secondary summary, Tax administration).
+- Pure-salary employees whose tax is fully withheld generally **do not file** an annual return; those with fees, commissions, royalties, rental, or interest income **must file** Form 102 (secondary summary, Tax administration).
 
 ## Section 3 -- Social Security -- IHSS (Employee + Employer)
 
@@ -119,7 +119,7 @@ IHSS runs two contributory regimes plus occupational-risk cover. For 2025 both E
 
 **Column totals (employee side, EM + IVM, at/above ceiling):** 2.5% + 2.5% = **5.0%**. **Column totals (employer side, EM + IVM + min. occupational risk):** 5.0% + 3.5% + 0.2% = **8.7%** (8.5% without occupational risk; occupational risk varies by risk class).
 
-> **[RESEARCH GAP — reviewer to confirm]** IHSS/Dinero HN report the IVM **employee** rate as **2.5%**; PwC (Other taxes) reports **1.0%** and shows older ceilings (L11,109.36 / L11,336.00). This skill uses the IHSS-published 2.5% and the L11,903.13 ceiling as the default. The IVM employee percentage and the EM/IVM employer percentages must be reconciled against the current IHSS resolution before any output is finalized.
+> **[RESEARCH GAP — reviewer to confirm]** IHSS/Dinero HN report the IVM **employee** rate as **2.5%**; the secondary summary (Other taxes) reports **1.0%** and shows older ceilings (L11,109.36 / L11,336.00). This skill uses the IHSS-published 2.5% and the L11,903.13 ceiling as the default. The IVM employee percentage and the EM/IVM employer percentages must be reconciled against the current IHSS resolution before any output is finalized.
 
 **Monthly L-amounts at the 2025 ceiling (L11,903.13)**
 
@@ -143,16 +143,16 @@ IHSS runs two contributory regimes plus occupational-risk cover. For 2025 both E
 
 - The Fondo de Reserva Laboral is **employer-only** and replaces the legacy severance reserve.
 - The above-ceiling savings (1.5% + 1.5%) apply ONLY to the salary slice above L11,903.13/month.
-- **[RESEARCH GAP — reviewer to confirm]** PwC describes the legacy "RAP 1.5%" as **optional** post-reform. Confirm mandatory vs optional treatment under Decreto 47-2024 before finalizing.
+- **[RESEARCH GAP — reviewer to confirm]** the secondary summary describes the legacy "RAP 1.5%" as **optional** post-reform. Confirm mandatory vs optional treatment under Decreto 47-2024 before finalizing.
 
 ## Section 5 -- INFOP Training Levy
 
-**INFOP details**  _(PwC — Other taxes; Mismo)_
+**INFOP details**  _(secondary summary, Other taxes; Mismo)_
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Rate | **1% of total accrued monthly payroll** | PwC — Other taxes; Mismo |
-| Who pays | **Employer-only** | PwC; Mismo |
+| Rate | **1% of total accrued monthly payroll** | secondary summary, Other taxes; Mismo |
+| Who pays | **Employer-only** | secondary summary; Mismo |
 | Applicability threshold | Commonly cited as **5+ employees** | Mismo — **[RESEARCH GAP — reviewer to confirm threshold against INFOP law]** |
 | Payment deadline | Within **10 business days after month-end** | Mismo |
 
@@ -203,7 +203,7 @@ Lowest-sector wages (agriculture, small business) are materially below the avera
 
 | Unknown | Conservative default | Why |
 | --- | --- | --- |
-| Employee birth year / IVM rate split | Use **IVM employee 2.5%** (IHSS-published) | Higher than PwC's 1.0%; avoids under-withholding. Flag for reconciliation. |
+| Employee birth year / IVM rate split | Use **IVM employee 2.5%** (IHSS-published) | Higher than the secondary summary's 1.0%; avoids under-withholding. Flag for reconciliation. |
 | Occupational-risk class | Use **0.2%** (lowest band) for employer cost ONLY if class unknown, but FLAG | Avoids over-stating cost; but note range to 3.4% |
 | Whether salary exceeds IHSS ceiling | Compute IHSS on **min(salary, L11,903.13)** | Ceiling is statutory |
 | RAP above-ceiling savings | Apply 1.5% + 1.5% on the **excess over L11,903.13** | Mandatory per Decreto 47-2024 (pending optional-status flag) |
@@ -265,7 +265,7 @@ Classify bank-statement lines deterministically. Match case-insensitively; longe
 
 ## Section 11 -- Worked Examples
 
-> All figures use the **2025** ISR table and the L11,903.13 IHSS ceiling. IHSS IVM employee rate = 2.5% (IHSS-published default; pending PwC reconciliation). Amounts rounded to the cent.
+> All figures use the **2025** ISR table and the L11,903.13 IHSS ceiling. IHSS IVM employee rate = 2.5% (IHSS-published default; pending the secondary summary reconciliation). Amounts rounded to the cent.
 
 ### Example 1 — Low earner, below exempt threshold
 
@@ -361,9 +361,9 @@ Classify bank-statement lines deterministically. Match case-insensitively; longe
 
 | Question | Why it needs a reviewer |
 | --- | --- |
-| IVM employee rate (2.5% vs PwC 1.0%) | Conflicting authoritative sources |
+| IVM employee rate (2.5% vs the secondary summary 1.0%) | Conflicting authoritative sources |
 | Exact EM/IVM employer percentages vs current IHSS acuerdo | Ceiling changed; percentages need verification |
-| RAP mandatory vs optional post-Decreto 47-2024 | PwC suggests optional treatment |
+| RAP mandatory vs optional post-Decreto 47-2024 | secondary summary, suggests optional treatment |
 | Exact ISR late-filing multa % and interest rate | Código Tributario not cleanly extracted |
 | 13th/14th month full exemption vs 10× min-wage cap | Secondary-source conflict |
 | 2026 general-sector minimum wage (Acuerdo 233-2026) | Press-only, not on official table |
@@ -436,9 +436,9 @@ If the engagement lacks key data:
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Tax year | Calendar year ending 31 Dec | PwC — Tax administration |
+| Tax year | Calendar year ending 31 Dec | secondary summary, Tax administration |
 | Annual ISR return (natural persons) | Due **30 April** (rolls to next business day). Form **102**, via SAR DET Live | SAR; SAR DET Live ISR_PN |
-| Employer ISR withholding | Withheld monthly; remitted **monthly** to SAR | PwC |
+| Employer ISR withholding | Withheld monthly; remitted **monthly** to SAR | secondary summary |
 | IHSS planilla | Filed and paid **monthly** (late filing can block employee healthcare access) | Mismo |
 | RAP deposits | **Monthly** (reserve fund + above-ceiling savings) | Mismo |
 | INFOP | Within **10 business days** after month-end | Mismo |
@@ -452,7 +452,7 @@ Governed by the **Código Tributario (Decreto 22-97 and reforms)** and the ISR/I
 | Item | Detail | Source |
 | --- | --- | --- |
 | Late-filed return | Fine (multa) + surcharge (recargo) + interest (interés) per the Tax Code. For ISV the cited rate is **5% of tax per month or fraction** of delay (Art. 11 ISV law); a comparable monthly surcharge applies to ISR. | SAR; Código Tributario |
-| Late payment (mora) | Assessed tax payable within **10 days** of assessment; interest + surcharges accrue from the original due date. | Código Tributario; PwC |
+| Late payment (mora) | Assessed tax payable within **10 days** of assessment; interest + surcharges accrue from the original due date. | Código Tributario; secondary summary |
 | Escalation | Repeated/total or partial non-payment can become criminal **defraudación fiscal**. | Código Tributario |
 | Statute of limitations | Generally **4–7 years**. | Código Tributario |
 
@@ -472,7 +472,7 @@ Governed by the **Código Tributario (Decreto 22-97 and reforms)** and the ISR/I
 | RAP above-ceiling savings | 1.5% | 1.5% | salary above L11,903.13 |
 | INFOP | — | 1.0% | total payroll (5+ employees) |
 
-*IVM employee rate: IHSS/Dinero HN = 2.5% (used here); PwC = 1.0% — **needs primary-source reconciliation.**
+*IVM employee rate: IHSS/Dinero HN = 2.5% (used here); the secondary summary = 1.0% — **needs primary-source reconciliation.**
 
 ## Section 20 -- Reference Material
 
@@ -486,15 +486,15 @@ Governed by the **Código Tributario (Decreto 22-97 and reforms)** and the ISR/I
 | Medical deduction | L40,000 | Bloomberg Línea; Galindo & Asociados |
 | IHSS 2025 ceiling | L11,903.13 | Dinero HN |
 | IHSS EM | 2.5% ee / 5.0% er | Mismo; Dinero HN |
-| IHSS IVM | 2.5%\* ee / 3.5% er | Dinero HN (\*PwC 1.0%) |
+| IHSS IVM | 2.5%\* ee / 3.5% er | Dinero HN (\*the secondary summary 1.0%) |
 | RAP reserve fund | 4.0% employer | Mismo (Decreto 47-2024) |
 | RAP above-ceiling | 1.5% + 1.5% | Mismo |
-| INFOP | 1.0% employer, 10 biz-day deadline | PwC; Mismo |
+| INFOP | 1.0% employer, 10 biz-day deadline | secondary summary; Mismo |
 | Min wage 2025 average | L13,985.16/mo | EY; Secretaría de Trabajo |
 | Maquila 2025 / 2026 | L11,972.29 / L12,930.07 | EY; SETRASS Acuerdo 109-2024 |
 | Annual ISR deadline | 30 April, Form 102 | SAR |
 
-Key authorities: SAR (`sar.gob.hn`, DET Live), IHSS, RAP, INFOP, Secretaría de Trabajo (`trabajo.gob.hn`), Banco Central de Honduras. Big-4/secondary: PwC Tax Summaries, KPMG TaxNewsFlash, EY, Auxadi, Galindo & Asociados, Mismo, Bloomberg Línea, Finiquito Justo.
+Key authorities: SAR (`sar.gob.hn`, DET Live), IHSS, RAP, INFOP, Secretaría de Trabajo (`trabajo.gob.hn`), Banco Central de Honduras. Big-4/secondary: a secondary practitioner summary, KPMG TaxNewsFlash, EY, Auxadi, Galindo & Asociados, Mismo, Bloomberg Línea, Finiquito Justo.
 
 ## Section 21 -- Test Suite
 
@@ -532,7 +532,7 @@ Each test recomputes end-to-end. Expected values use the 2025 table and IVM empl
 - **IHSS ceiling application** — NEVER apply IHSS EM/IVM contributions above the L11,903.13/month ceiling.
 - **Employer-only obligations** — NEVER omit the employer-only obligations: RAP reserve fund (4%) and INFOP (1%, 5+ employees).
 - **Currency requirement** — NEVER pay or compute wages in a foreign currency — Lempiras only.
-- **PwC IVM rate conflict flag** — NEVER use PwC's 1.0% IVM employee rate without flagging the conflict with the IHSS-published 2.5%.
+- **Secondary practitioner summary (link removed) IVM rate conflict flag** — NEVER use the secondary summary's 1.0% IVM employee rate without flagging the conflict with the IHSS-published 2.5%.
 - **2026 minimum wage press-only status** — NEVER present the 2026 general-sector minimum wage (Acuerdo 233-2026) as confirmed — it is press-only.
 - **ISR late-filing penalty unconfirmed** — NEVER state an exact ISR late-filing penalty — the precise figure is an unconfirmed research gap.
 - **Remittance deadlines** — NEVER miss the monthly IHSS/RAP/ISR remittance or the 10-business-day INFOP deadline.

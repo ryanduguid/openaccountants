@@ -4,8 +4,8 @@ description: Use this skill whenever asked about Barbados personal income tax, N
 jurisdiction: BB
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 1 -- Quick Reference
 
-**Section 1 -- Quick Reference table**  _(Source: PwC Worldwide Tax Summaries — Barbados Individual (reviewed 11 January 2026), https://taxsummaries.pwc.com/barbados/individual/taxes-on-personal-income; BRA — https://bra.gov.bb)_
+**Section 1 -- Quick Reference table**  _(Source: Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), ss 52 (returns by 30 April) and 85 (residence) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73; BRA — https://bra.gov.bb)_
 
 | Field | Value |
 | --- | --- |
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### PIT Rate Brackets (effective 1 January 2020; confirmed current as of 11 January 2026)
 
-**PIT Rate Brackets**  _(Source: PwC Worldwide Tax Summaries — Barbados Individual, https://taxsummaries.pwc.com/barbados/individual/taxes-on-personal-income)_
+**PIT Rate Brackets**  _(Source: Income Tax (Amendment) Act, 2020-10 (Barbados Revenue Authority copy), s 6, replacing s 42(1)(j) of the Income Tax Act: 12.5% of every complete dollar of taxable income up to $50,000 and 28.5% above it from 1 January 2020 — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+%29+Act%2c+2020-10.pdf&name=Income+Tax+%28Amendment%29+Act%2c+2020-10)_
 
 | Taxable Income (BBD) | Rate | Cumulative Tax at Top of Band |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Personal Allowances (deducted before applying rate brackets)
 
-**Personal Allowances**  _(Source: PwC Worldwide Tax Summaries — Barbados Individual (Deductions), https://taxsummaries.pwc.com/barbados/individual/deductions)_
+**Personal Allowances**  _(Source: Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 38B(1)(a) to (c): $25,000 from income year 2007; $40,000 for an individual aged 60 or over in receipt of a pension; $3,000 for a spouse with no income — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
 | Allowance | BBD | Notes |
 | --- | --- | --- |
@@ -54,18 +54,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Individual aged 60+ receiving a pension | 40,000 | Replaces standard allowance |
 | Spouse with no income (fully supported or cohabitant) | 3,000 | Additional allowance for taxpayer |
 
-- **Non-resident allowance restriction** — Non-residents are not entitled to any personal allowances.  _(Source: PwC Worldwide Tax Summaries — Barbados Individual (Deductions), https://taxsummaries.pwc.com/barbados/individual/deductions)_
+- **Non-resident allowance restriction** — Non-residents are not entitled to the personal allowances; the Act allows a non-resident who is a Commonwealth citizen throughout the year a restricted deduction under s 39(2).  _(Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 39 — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
 ### Special Flat Rates
 
-**Special Flat Rates**  _(Source: PwC Worldwide Tax Summaries — Barbados Individual (Income Determination), https://taxsummaries.pwc.com/barbados/individual/income-determination)_
+**Special Flat Rates**  _(Source: Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 64A and s 65(4A) as amended by the Income Tax (Amendment) Act, 2020-10, ss 8 and 9 (15% withheld from interest and from dividends paid to resident individuals), s 9(1)(u) (half of an author's royalties exempt) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73; https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+%29+Act%2c+2020-10.pdf&name=Income+Tax+%28Amendment%29+Act%2c+2020-10; the 15% residential rental rate was not traced to a section `[RESEARCH GAP — reviewer to confirm the statutory basis of the 15% rental rate]`)_
 
 | Income Type | Rate | Notes |
 | --- | --- | --- |
 | Residential rental income | 15% flat | Applied to gross rental receipts |
 | Local interest income (> BBD 100) | 15% WHT at source | Final tax — do not re-report on PIT return |
 | Local dividends (declared after 30 June 1992) | 15% WHT at source | Final tax — do not re-report on PIT return |
-| 50% of royalty income | Exempt | Remaining 50% taxed at marginal rates |
+| 50% of an author's royalties (Copyright Act) | Exempt | Remaining 50% taxed at marginal rates; other royalties fully taxable |
 | Capital gains | 0% | Barbados has no capital gains tax |
 
 ### NIS Contributions -- Private Sector Employee (Rates effective 1 April 2025)
@@ -340,7 +340,7 @@ Tax:
 Total PIT liability:        BBD 13,375
 ```
 
-Source: PwC Worldwide Tax Summaries — Barbados Individual, https://taxsummaries.pwc.com/barbados/individual/taxes-on-personal-income
+Source: Income Tax Act, Cap. 73, s 38B (allowances) and s 42 as amended by the Income Tax (Amendment) Act, 2020-10 (rates) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73; https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+%29+Act%2c+2020-10.pdf&name=Income+Tax+%28Amendment%29+Act%2c+2020-10
 
 ### Example 3 -- Self-Employed, NIS + PIT
 
@@ -377,7 +377,7 @@ NIS contribution: BBD 63,360 × 17.25% = BBD 10,929.60
 30 April 2026:     Balance of PIT due + NIS due by 15 January 2026
 ```
 
-Source: PwC Tax Administration — https://taxsummaries.pwc.com/barbados/individual/tax-administration; NIS — https://www.nis.gov.bb/contribution-rates/
+Source: Income Tax Act, Cap. 73, ss 52, 64B(2) and 66 — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73; NIS — https://www.nis.gov.bb/contribution-rates/
 
 ### Example 4 -- Minimum Wage Earner, Zero PIT
 
@@ -417,7 +417,7 @@ Taxable income:              BBD 0 (negative -- clamp to zero)
 PIT liability: BBD 0
 ```
 
-Source: PwC Deductions — https://taxsummaries.pwc.com/barbados/individual/deductions
+Source: Income Tax Act, Cap. 73, s 38B — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73
 
 ### Example 6 -- Internal Transfer (Exclude)
 
@@ -435,7 +435,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 - **Residency determination test** — A person is resident in Barbados if present for more than 182 days in the calendar year (arrival and departure both count), OR if "ordinarily resident" (has permanent accommodation available and has notified the Revenue Commissioner of intent to reside for at least 2 consecutive years).  _(Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 86(5) to (7) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
-**Residency status taxation table**  _(Source: PwC Residence — https://taxsummaries.pwc.com/barbados/individual/residence)_
+**Residency status taxation table**  _(Source: Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 85(5) and (6): deemed resident after more than 182 days in the year or when ordinarily resident — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
 | Status | Taxed on |
 | --- | --- |
@@ -455,13 +455,13 @@ All assessable income is reported on the PIT return filed via TAMIS. Key rules:
 - **Royalties** — 50% exempt; include only the other 50% as assessable income.
 - **Capital gains** — none; Barbados has no capital gains tax.
 
-Source: PwC Income Determination — https://taxsummaries.pwc.com/barbados/individual/income-determination
+Source: Income Tax Act, Cap. 73, ss 8 and 9 (amounts included in and exempt from assessable income) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73
 
 ### 5.3 Allowable Deductions
 
-- **Wholly and exclusively test** — An expense is deductible if incurred wholly and exclusively in the production of assessable income. Mixed-use expenses must be apportioned.  _(Income Tax Act; PwC Deductions — https://taxsummaries.pwc.com/barbados/individual/deductions)_
+- **Wholly and exclusively test** — An expense is deductible if made or incurred for the purpose of the production of assessable income from property or a business (the Act's test, commonly described as 'wholly and exclusively'). Mixed-use expenses must be apportioned.  _(Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 10(1)(a) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
-**Key deduction caps**  _(Income Tax Act; PwC Deductions — https://taxsummaries.pwc.com/barbados/individual/deductions)_
+**Key deduction caps**  _(Income Tax Act, Cap. 73, ss 10 and 11 (amounts deductible and not deductible) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
 | Item | Cap |
 | --- | --- |
@@ -472,7 +472,7 @@ Source: PwC Income Determination — https://taxsummaries.pwc.com/barbados/indiv
 | Charitable donations (registered, non-exempt charity) | Up to 10% of assessable income |
 | Charitable donations (exempt charity) | Unlimited |
 
-- **Not deductible items** — NOT deductible: Employee NIS contributions; motor vehicle depreciation (unless business use documented); rental allowances (abolished after income year 2014); fines and penalties; income tax itself.  _(Income Tax Act; PwC Deductions — https://taxsummaries.pwc.com/barbados/individual/deductions)_
+- **Not deductible items** — NOT deductible: Employee NIS contributions; motor vehicle depreciation (unless business use documented); rental allowances (abolished after income year 2014); fines and penalties; income tax itself.  _(Income Tax Act, Cap. 73, ss 10 and 11 (amounts deductible and not deductible) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
 ### 5.4 PAYE Rules
 
@@ -484,7 +484,7 @@ Source: PwC Income Determination — https://taxsummaries.pwc.com/barbados/indiv
 
 ### 5.6 Payment Schedules
 
-**Self-employed / >25% business or rental income schedule**  _(Source: PwC Tax Administration — https://taxsummaries.pwc.com/barbados/individual/tax-administration)_
+**Self-employed / >25% business or rental income schedule**  _(Source: Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 64B(2) and (3): three prepayments of 25% of the preceding year's tax by 15 June, 15 September and 15 December for an individual who carries on a business or receives rents; s 66(2) and (5) for the balance by the return date — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
 | Instalment | Due Date | Amount |
 | --- | --- | --- |
@@ -495,7 +495,7 @@ Source: PwC Income Determination — https://taxsummaries.pwc.com/barbados/indiv
 
 *First-year self-employed person: request BRA set an appropriate prepayment amount.*
 
-**Salaried taxpayers with less than 25% from business schedule**  _(Source: PwC Tax Administration — https://taxsummaries.pwc.com/barbados/individual/tax-administration)_
+**Salaried taxpayers with less than 25% from business schedule**  _(Source: Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 66(3) and (4): 50% of the estimated tax by the return date and 50% by 30 September for an individual whose emoluments are at least 75% of assessable income — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
 | Payment | Due Date | Amount |
 | --- | --- | --- |
@@ -517,7 +517,7 @@ Source: PwC Income Determination — https://taxsummaries.pwc.com/barbados/indiv
 
 ### 5.10 Non-Resident Withholding Taxes
 
-**Non-Resident Withholding Taxes**  _(Source: PwC Withholding Taxes — https://taxsummaries.pwc.com/barbados/corporate/withholding-taxes)_
+**Non-Resident Withholding Taxes**  _(Source: Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 65(2) (preference dividends 25%) and s 65(4) (15% on dividends to non-residents) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73; Income Tax (Amendment) Act, 2020-10 (Barbados Revenue Authority copy), Second Schedule (regulations 90 and 90B: interest and royalties to non-residents 0%) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+%29+Act%2c+2020-10.pdf&name=Income+Tax+%28Amendment%29+Act%2c+2020-10)_
 
 | Payment Type | Rate | Notes |
 | --- | --- | --- |
@@ -529,7 +529,7 @@ Source: PwC Income Determination — https://taxsummaries.pwc.com/barbados/indiv
 
 ### 5.11 Penalties and Interest
 
-**Penalties and Interest**  _(Source: PwC Tax Administration — https://taxsummaries.pwc.com/barbados/individual/tax-administration; BRA Income Tax FAQs — https://bra.gov.bb/FAQs/Income-Tax/)_
+**Penalties and Interest**  _(Source: Barbados Revenue Authority, Guide to Self Assessment: late filing penalty $500 from income year 2011, 5% late payment penalty, interest 1% per month — https://bra.gov.bb/Popular-Topics/Self-Assessment-Self-Employment/Guide-to-Self-Assessment; Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 67 — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73; BRA Income Tax FAQs — https://bra.gov.bb/FAQs/Income-Tax/)_
 
 | Infraction | Penalty |
 | --- | --- |
@@ -539,9 +539,9 @@ Source: PwC Income Determination — https://taxsummaries.pwc.com/barbados/indiv
 
 ### 5.12 Other Levies
 
-- **Stamp Duty** — Real estate, leases, private company shares: BBD 10 per BBD 1,000 (or part thereof) of value. Mortgages: BBD 3 per BBD 500 (or part thereof). Listed shares: exempt.  _(Income Tax Act / Stamp Duty Act; PwC Other Taxes — https://taxsummaries.pwc.com/barbados/individual/other-taxes)_
+- **Stamp Duty** — Real estate, leases, private company shares: BBD 10 per BBD 1,000 (or part thereof) of value. Mortgages: BBD 3 per BBD 500 (or part thereof). Listed shares: exempt.  _(Stamp Duty Act, Cap. 91, Schedule, as reported; the Act's text on caipo.gov.bb was not reachable `[RESEARCH GAP — reviewer to confirm the Schedule rates]`)_
 - **Training Levy** — Collected via NIS system. Rate: 0.50% each (employee + employer) = 1.00% combined, applied to insurable earnings. Self-employed pay 0.50%.  _(NIS — https://www.nis.gov.bb/contribution-rates/)_
-- **Resilience and Regeneration Fund** — Effective 1 April 2025, employee rate 0.25%; employer rate 0.25%; self-employed 0.25%. Applied to gross earnings (not capped at NIS ceiling). (Previously 0.10% employee, nil employer.)  _(PwC Other Taxes — https://taxsummaries.pwc.com/barbados/individual/other-taxes; NIS — https://www.nis.gov.bb/contribution-rates/)_
+- **Resilience and Regeneration Fund** — Effective 1 April 2025, employee rate 0.25%; employer rate 0.25%; self-employed 0.25%. Applied to gross earnings (not capped at NIS ceiling). (Previously 0.10% employee, nil employer.)  _(NIS, Contribution Rates and Earnings Ceilings (Resilience and Regeneration Fund 0.25% employee and 0.25% employer from the March 2025 Budget) — https://www.nis.gov.bb/contribution-rates/)_
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -749,9 +749,9 @@ ONBOARDING QUESTIONS -- BARBADOS INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| PIT rates | Income Tax Act, Cap. 73; PwC Worldwide Tax Summaries — Barbados Individual |
-| Residency rules | Income Tax Act, Cap. 73; PwC — https://taxsummaries.pwc.com/barbados/individual/residence |
-| Allowable deductions | Income Tax Act, Cap. 73, s.14 (comparable); PwC — https://taxsummaries.pwc.com/barbados/individual/deductions |
+| PIT rates | Income Tax Act, Cap. 73, s 42 as amended by the Income Tax (Amendment) Act, 2020-10, s 6 (https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+%29+Act%2c+2020-10.pdf&name=Income+Tax+%28Amendment%29+Act%2c+2020-10) |
+| Residency rules | Income Tax Act, Cap. 73, s 85(5) and (6) (https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73) |
+| Allowable deductions | Income Tax Act, Cap. 73, ss 10 and 11 (https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73) |
 | PAYE | BRA — https://bra.gov.bb/Popular-Topics/Employing-People/Guide-to-PAYE |
 | Self-employment filing | BRA — https://bra.gov.bb/Popular-Topics/Self-Employment/Filing-Your-Tax-Return |
 | Self-assessment guide | BRA — https://bra.gov.bb/Popular-Topics/Self-Assessment-Self-Employment/Guide-to-Self-Assessment |
@@ -759,15 +759,15 @@ ONBOARDING QUESTIONS -- BARBADOS INCOME TAX
 | NIS self-employed | NISSS — https://www.nis.gov.bb/self-employed/ |
 | Reverse Tax Credit | BRA — https://bra.gov.bb/Credits-Rebates/Reverse-Tax-Credit |
 | VAT registration | BRA — https://bra.gov.bb/Popular-Topics/Value-Added-Tax/Who-Must-Register-for-VAT |
-| Penalties | PwC — https://taxsummaries.pwc.com/barbados/individual/tax-administration |
-| Stamp duty | PwC Other Taxes — https://taxsummaries.pwc.com/barbados/individual/other-taxes |
+| Penalties | BRA Guide to Self Assessment (https://bra.gov.bb/Popular-Topics/Self-Assessment-Self-Employment/Guide-to-Self-Assessment); Income Tax Act, Cap. 73, s 67 |
+| Stamp duty | Stamp Duty Act, Cap. 91, Schedule (text not reached; rates as reported) |
 | Minimum wage | Minimum Wage (National and Sectoral Minimum Wage) (No. 2) Order, 2025 |
 | TAMIS portal | https://tamis.bra.gov.bb |
 | TIN / sole trader registration | BRA — https://bra.gov.bb/About/Services/Registration/Sole-Traders-Partnerships |
 
 ### Key Dates Calendar
 
-**Key Dates Calendar**  _(Source: PwC Tax Administration — https://taxsummaries.pwc.com/barbados/individual/tax-administration)_
+**Key Dates Calendar**  _(Source: Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), ss 52, 64B and 66 — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 
 | Date | Obligation |
 | --- | --- |

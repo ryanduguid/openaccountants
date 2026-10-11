@@ -1,10 +1,10 @@
 ---
 name: el-salvador-payroll
 description: Use this skill whenever asked about El Salvador payroll processing for employed persons. Trigger on phrases like "El Salvador payroll", "planilla El Salvador", "ISSS", "AFP Crecer", "AFP Confía", "retención de renta", "ISR planilla", "descuentos de ley", "sueldo neto El Salvador", "net salary El Salvador", "aguinaldo", "INSAFORP", "salario mínimo El Salvador", "gross to net El Salvador", "employer cost El Salvador", "cotización ISSS AFP", or any question about computing employee pay, income-tax withholding (retención), or social-security/pension contributions for El Salvador-based employees. This skill covers ISR monthly withholding (Decreto Ejecutivo 10, in force 8 May 2025), ISSS health contributions (employee + employer, $1,000 base cap), AFP pension contributions, the INSAFORP training levy, minimum wage, the mandatory aguinaldo (Christmas bonus), vacation, payslip and monthly filing obligations. ALWAYS read this skill before processing any El Salvador payroll.
-version: 0.1
+version: 0.2
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # El Salvador Payroll
 
-## El Salvador Payroll Skill v0.1
+## El Salvador Payroll Skill v0.2
 
-**Tier 2 — research-verified. Figures sourced from the Ministerio de Hacienda (Decreto Ejecutivo 10, 2025), ISSS, the Superintendencia del Sistema Financiero (AFP), PwC Worldwide Tax Summaries, and Salvadoran payroll references. NOT yet signed off by a licensed Salvadoran contador. Treat every computation as an estimate pending professional review.**
+**Tier 2 — research-verified. Figures sourced from the Ministerio de Hacienda (Decreto Ejecutivo 10, 2025), ISSS, the Superintendencia del Sistema Financiero (AFP), a secondary practitioner summary, and Salvadoran payroll references. NOT yet signed off by a licensed Salvadoran contador. Treat every computation as an estimate pending professional review.**
 
 ## Section 1 -- Quick Reference
 
@@ -36,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Training levy | INSAFORP (Instituto Salvadoreño de Formación Profesional) — employer 1% |
 | Key legislation | Ley de Impuesto sobre la Renta; Decreto Ejecutivo 10 (2025) retención tables; Ley del Seguro Social; Ley del Sistema de Ahorro para Pensiones (SAP); Código de Trabajo |
 | Validated by | Pending -- requires sign-off by a licensed Salvadoran contador / abogado laboral |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### The single most important El Salvador payroll fact
 
@@ -65,20 +65,20 @@ Source: Ministerio de Hacienda, Decreto Ejecutivo No. 10 (30 Apr 2025), in force
 
 ISSS covers health, maternity, and work-risk benefits. Contributions are computed on a salary base capped at USD 1,000/month.
 
-**ISSS contributions table**  _(ISSS; PwC)_
+**ISSS contributions table**  _(ISSS; secondary summary)_
 
 | Contribution | Rate | Capped base | Maximum / month |
 | --- | --- | --- | --- |
 | ISSS — employee | 3% | USD 1,000 | USD 30.00 |
 | ISSS — employer | 7.5% | USD 1,000 | USD 75.00 |
 
-- **ISSS cap rule** — Salary above USD 1,000 does NOT increase the ISSS contribution — both sides are frozen at USD 30 / USD 75.  _(ISSS; PwC)_
+- **ISSS cap rule** — Salary above USD 1,000 does NOT increase the ISSS contribution — both sides are frozen at USD 30 / USD 75.  _(ISSS; secondary summary)_
 
 ## Section 4 -- Pension — AFP (Sistema de Ahorro para Pensiones)
 
 Pension contributions go to the employee's chosen AFP (Crecer or Confía). The contributory-base salary cap was eliminated from January 2023 — AFP applies to the full salary with no maximum.
 
-**AFP contributions table**  _(SSF; Ley SAP; PwC)_
+**AFP contributions table**  _(SSF; Ley SAP; secondary summary)_
 
 | Contribution | Rate | Cap |
 | --- | --- | --- |
@@ -86,7 +86,7 @@ Pension contributions go to the employee's chosen AFP (Crecer or Confía). The c
 | AFP — employer | 8.75% | None |
 | **Total AFP** | **16.00%** | None |
 
-- **AFP employee rate composition** — The 7.25% employee rate already includes the AFP commission and disability/survivor insurance premium.  _(SSF; Ley SAP; PwC)_
+- **AFP employee rate composition** — The 7.25% employee rate already includes the AFP commission and disability/survivor insurance premium.  _(SSF; Ley SAP; secondary summary)_
 
 ## Section 5 -- Employer On-Costs (full picture)
 

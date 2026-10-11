@@ -4,8 +4,8 @@ description: "Source-cited draft: vat / gst for Libya (tax year 2025) — rates,
 jurisdiction: LY
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,12 +15,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## VAT / GST in Libya
 
-- **VAT / GST** — No VAT or general sales tax exists in Libya  _(Income Tax Law No. 7 of 2010 — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
-- **VAT registration threshold** — Not applicable — no VAT regime exists  _(Income Tax Law No. 7 of 2010 — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
-- **VAT filing frequency** — Not applicable — no VAT returns are filed  _(Income Tax Law No. 7 of 2010 — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
-- **Reverse charge** — Not applicable — there is no VAT, so no reverse-charge mechanism on cross-border services  _(Income Tax Law No. 7 of 2010 — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
-- **Import service fee** — 5% service fee on the value of most imports  _([Customs Law](https://taxsummaries.pwc.com/libya/corporate/other-taxes))_
-- **Stamp duty on contracts (nearest indirect tax)** — Main contracts 1%; subcontracts 0.1% of contract value  _(Stamp Duty Law — https://taxsummaries.pwc.com/libya/corporate/other-taxes)_
+- **VAT / GST** — No VAT or general sales tax exists in Libya  _(Income Tax Law No. 7 of 2010, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **VAT registration threshold** — Not applicable — no VAT regime exists  _(Income Tax Law No. 7 of 2010, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **VAT filing frequency** — Not applicable — no VAT returns are filed  _(Income Tax Law No. 7 of 2010, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Reverse charge** — Not applicable — there is no VAT, so no reverse-charge mechanism on cross-border services  _(Income Tax Law No. 7 of 2010, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Import service fee** — 5% service fee on the value of most imports  _(Customs Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Stamp duty on contracts (nearest indirect tax)** — Main contracts 1%; subcontracts 0.1% of contract value  _(Stamp Duty Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 <!-- openaccountants-cta-block -->
 

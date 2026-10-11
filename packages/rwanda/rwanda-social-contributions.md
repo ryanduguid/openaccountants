@@ -1,10 +1,10 @@
 ---
 name: rwanda-social-contributions
 description: Use this skill whenever asked about Rwanda payroll taxes, PAYE, or social security / RSSB contributions for employees and employers. Trigger on phrases like "how much PAYE in Rwanda", "RSSB pension contribution", "Rwanda social security rate", "what is the pension rate 2025", "occupational hazards contribution", "maternity scheme RSSB", "CBHIS deduction", "RAMA / medical insurance scheme", "net pay calculation Rwanda", "casual labour tax rate", "Rwanda monthly declaration deadline", or any question about an employee's or employer's RSSB / RRA obligations. Also trigger when classifying bank statement transactions that relate to RRA tax payments, RSSB contribution debits, or PAYE remittances from Bank of Kigali, BPR, Equity Bank Rwanda, I&M Bank or other Rwandan banks. Also trigger when preparing or reviewing a monthly unified PAYE + RSSB declaration on E-Tax / MyRRA. This skill covers the 2025 PAYE brackets, the five RSSB schemes (pension, occupational hazards, maternity, CBHIS, medical), their differing contribution bases, the unified monthly declaration, penalties and interest under the Tax Procedures Law, expat/KIFC treatment, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Rwanda payroll or social-contribution work.
-version: 0.2
+version: 0.3
 jurisdiction: RW
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Rwanda PAYE & RSSB Social Contributions
 
-## Rwanda PAYE & RSSB Social Contributions Skill v0.2
+## Rwanda PAYE & RSSB Social Contributions Skill v0.3
 
 > Rwanda **does** levy personal income tax. This is a standard PAYE + social-insurance jurisdiction. Payroll obligations are filed jointly to the **Rwanda Revenue Authority (RRA)** and the **Rwanda Social Security Board (RSSB)** via a single monthly declaration on **E-Tax / MyRRA**.
 
@@ -30,25 +30,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Republic of Rwanda |
 | Tax year | Calendar year (1 Jan -- 31 Dec) |
 | Currency | RWF (Rwandan Franc) -- RWF only |
-| PAYE legislation | Law No. 027/2022 of 20/10/2022 establishing taxes on income, Art. 56 (PwC Rwanda -- Individual income tax) |
+| PAYE legislation | Law No. 027/2022 of 20/10/2022 establishing taxes on income, Art. 56 (secondary summary, Rwanda -- Individual income tax) |
 | Procedures / penalties | Tax Procedures Law No. 020/2023 (effective 1 April 2023) |
 | Tax authority | Rwanda Revenue Authority (RRA) |
 | Social security board | Rwanda Social Security Board (RSSB) |
 | Filing portal | E-Tax / MyRRA (unified PAYE + RSSB declaration) |
-| PAYE basis | Progressive monthly brackets; residents on worldwide income, non-residents on Rwanda-sourced income (PwC Rwanda -- Taxes on personal income) |
-| Casual labour rate | Flat 15% (PwC Rwanda -- Taxes on personal income) |
-| Pension (2025) | 6% employee + 6% employer = 12% of gross (PwC Rwanda -- Other taxes) |
-| Occupational hazards | 0% employee + 2% employer of gross (PwC Rwanda -- Other taxes) |
-| Maternity | 0.3% employee + 0.3% employer of gross excl. transport (PwC Rwanda -- Other taxes) |
-| CBHIS | 0.5% employee + 0% employer of net salary (PwC Rwanda -- Other taxes) |
+| PAYE basis | Progressive monthly brackets; residents on worldwide income, non-residents on Rwanda-sourced income (secondary summary, Rwanda -- Taxes on personal income) |
+| Casual labour rate | Flat 15% (secondary summary, Rwanda -- Taxes on personal income) |
+| Pension (2025) | 6% employee + 6% employer = 12% of gross (secondary summary, Rwanda -- Other taxes) |
+| Occupational hazards | 0% employee + 2% employer of gross (secondary summary, Rwanda -- Other taxes) |
+| Maternity | 0.3% employee + 0.3% employer of gross excl. transport (secondary summary, Rwanda -- Other taxes) |
+| CBHIS | 0.5% employee + 0% employer of net salary (secondary summary, Rwanda -- Other taxes) |
 | Medical (RAMA, if enrolled) | 7.5% employee + 7.5% employer of basic salary (RRA -- Medical Insurance Scheme) |
-| Monthly declaration deadline | 15th of the following month (PwC Rwanda -- Tax administration) |
+| Monthly declaration deadline | 15th of the following month (secondary summary, Rwanda -- Tax administration) |
 | Medical scheme payment deadline | 10th of the following month (RRA -- Medical Insurance Scheme) |
-| Annual individual return | 31 March following the tax period (PwC Rwanda -- Tax administration) |
+| Annual individual return | 31 March following the tax period (secondary summary, Rwanda -- Tax administration) |
 | Validated by | Pending -- requires sign-off by a Rwandan licensed accountant / RRA-registered tax agent |
 | Validation date | Pending |
 
-**RSSB scheme overview (2025)**  _(PwC Rwanda -- Corporate "Other taxes" (https://taxsummaries.pwc.com/rwanda/corporate/other-taxes); PwC sample personal income tax calculation (https://taxsummaries.pwc.com/rwanda/individual/sample-personal-income-tax-calculation); RRA -- Medical Insurance Scheme)_
+**RSSB scheme overview (2025)**  _(secondary summary, Rwanda -- Corporate "Other taxes"; secondary summary, sample personal income tax calculation; RRA -- Medical Insurance Scheme)_
 
 | Scheme | Employee | Employer | Total | Contribution base |
 | --- | --- | --- | --- | --- |
@@ -59,7 +59,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Medical (RAMA, if enrolled) | 7.5% | 7.5% | 15% | Basic salary |
 
 *Arithmetic check: Pension 6+6=12; Occ. hazards 0+2=2; Maternity 0.3+0.3=0.6; CBHIS 0.5+0=0.5; Medical 7.5+7.5=15. Each total row equals the sum of its components.*
-Source for the full breakdown: PwC Rwanda -- Corporate "Other taxes" (https://taxsummaries.pwc.com/rwanda/corporate/other-taxes) and the PwC sample personal income tax calculation (https://taxsummaries.pwc.com/rwanda/individual/sample-personal-income-tax-calculation). Medical scheme: RRA -- Medical Insurance Scheme (https://www.rra.gov.rw/en/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=469&cHash=dc8044c4d18d710cf5ab2cc68f2283b4).
+Source for the full breakdown: the secondary summary Rwanda -- Corporate "Other taxes" and the the secondary summary sample personal income tax calculation. Medical scheme: RRA -- Medical Insurance Scheme (https://www.rra.gov.rw/en/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=469&cHash=dc8044c4d18d710cf5ab2cc68f2283b4).
 
 - **Note on differing bases** — This is the single most error-prone feature of Rwanda payroll: the four mandatory schemes use different contribution bases. Pension and occupational hazards are on gross; maternity is on gross excluding transport; CBHIS is on net (after PAYE and the other deductions); medical (RAMA) is on basic salary. Do not apply one base across all schemes.
 
@@ -77,9 +77,9 @@ Source for the full breakdown: PwC Rwanda -- Corporate "Other taxes" (https://ta
 
 ## Section 2 -- PAYE brackets and rates (2025)
 
-Progressive **monthly** brackets, in force since November 2023 (Law No. 027/2022 of 20/10/2022, Art. 56 second-year rates, still current for 2025). Source: RRA "new rates" guide (https://www.rra.gov.rw/en/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=1669&cHash=8a281f98a1e1d9501765985f3a91fe8d) and PwC Rwanda -- Taxes on personal income (https://taxsummaries.pwc.com/rwanda/individual/taxes-on-personal-income).
+Progressive **monthly** brackets, in force since November 2023 (Law No. 027/2022 of 20/10/2022, Art. 56 second-year rates, still current for 2025). Source: RRA "new rates" guide (https://www.rra.gov.rw/en/details?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=1669&cHash=8a281f98a1e1d9501765985f3a91fe8d) and the secondary summary Rwanda -- Taxes on personal income.
 
-**PAYE brackets 2025**  _(RRA new rates guide; PwC Rwanda -- Taxes on personal income)_
+**PAYE brackets 2025**  _(RRA new rates guide; secondary summary, Rwanda -- Taxes on personal income)_
 
 | Monthly taxable income (RWF) | Rate | Tax on this band | Cumulative tax at top of band |
 | --- | --- | --- | --- |
@@ -90,11 +90,11 @@ Progressive **monthly** brackets, in force since November 2023 (Law No. 027/2022
 
 *Cumulative check: band 2 = 10% × 40,000 = 4,000 → cumulative 4,000. Band 3 = 20% × 100,000 = 20,000 → cumulative 24,000. Consistent.*
 
-- **PAYE shortcut formula** — If B <= 60,000        PAYE = 0 If 60,001..100,000    PAYE = (B - 60,000) * 0.10 If 100,001..200,000   PAYE = 4,000 + (B - 100,000) * 0.20 If B >= 200,001       PAYE = 24,000 + (B - 200,000) * 0.30  _(RRA new rates guide; PwC Rwanda -- Taxes on personal income)_
-- **Casual labour rate** — 15% (flat, special rate; not the progressive brackets)  _(PwC Rwanda -- Taxes on personal income)_
-- **PAYE taxable base** — PAYE taxable base = gross employment income less the employee's deductible social-security contributions (pension, occupational hazards, maternity).  _(PwC Rwanda -- Taxes on personal income (social security deductible before PAYE) and the PwC sample calculation)_
-- **Residency** — Residents taxed on worldwide income; non-residents on Rwanda-sourced income. No local/municipal income taxes.  _(PwC Rwanda -- Taxes on personal income)_
-- **KIFC exemption** — New residents in Kigali International Financial Centre--licensed activities may be exempt from PIT on foreign-sourced income for their first 5 years. Do not auto-apply -- case-specific; escalate.  _(PwC Rwanda -- Taxes on personal income)_
+- **PAYE shortcut formula** — If B <= 60,000        PAYE = 0 If 60,001..100,000    PAYE = (B - 60,000) * 0.10 If 100,001..200,000   PAYE = 4,000 + (B - 100,000) * 0.20 If B >= 200,001       PAYE = 24,000 + (B - 200,000) * 0.30  _(RRA new rates guide; secondary summary, Rwanda -- Taxes on personal income)_
+- **Casual labour rate** — 15% (flat, special rate; not the progressive brackets)  _(secondary summary, Rwanda -- Taxes on personal income)_
+- **PAYE taxable base** — PAYE taxable base = gross employment income less the employee's deductible social-security contributions (pension, occupational hazards, maternity).  _(secondary summary, Rwanda -- Taxes on personal income (social security deductible before PAYE) and the the secondary summary sample calculation)_
+- **Residency** — Residents taxed on worldwide income; non-residents on Rwanda-sourced income. No local/municipal income taxes.  _(secondary summary, Rwanda -- Taxes on personal income)_
+- **KIFC exemption** — New residents in Kigali International Financial Centre--licensed activities may be exempt from PIT on foreign-sourced income for their first 5 years. Do not auto-apply -- case-specific; escalate.  _(secondary summary, Rwanda -- Taxes on personal income)_
 
 ## Section 3 -- Required inputs and refusal catalogue
 
@@ -111,7 +111,7 @@ Progressive **monthly** brackets, in force since November 2023 (Law No. 027/2022
 - **R-RW-1 -- Medical (RAMA) contribution without basic salary** — Trigger: employer is RAMA-enrolled but only the gross figure is supplied. Message: "The medical scheme contribution (7.5% employee + 7.5% employer) is computed on basic salary, not gross. Cannot compute without the basic-salary component."
 - **R-RW-2 -- KIFC foreign-income exemption** — Trigger: client claims the 5-year KIFC exemption on foreign-sourced income. Message: "The KIFC PIT exemption depends on holding a qualifying KIFC licence and on the source/timing of the income. This is case-specific and outside the scope of this skill. Escalate to a Rwandan licensed accountant / RRA-registered tax agent."
 - **R-RW-3 -- Arrears, penalties and interest** — Trigger: client has unpaid PAYE/RSSB and asks for the total owed. Message: "Late-payment interest (0.5%--1.5%/month, capped at 100% of annual tax) and administrative fines (5%--30%, plus a possible 60% non-declaration penalty) under Tax Procedures Law No. 020/2023 depend on the exact delay and turnover band. Do not estimate. Request an RRA statement and escalate to a reviewer."  _(Tax Procedures Law No. 020/2023)_
-- **R-RW-4 -- Pension phased increases beyond 2025** — Trigger: client asks for pension contributions for 2027 onward. Message: "The scheduled pension step-ups (7% each from 2027 up to 10% each by 2030) are reported by PwC but I have not confirmed the underlying RSSB ministerial order text. Treat the 2025 6%+6% rate as firm; flag future years for reviewer confirmation. [RESEARCH GAP -- reviewer to confirm 2027--2030 steps against the RSSB order.]"
+- **R-RW-4 -- Pension phased increases beyond 2025** — Trigger: client asks for pension contributions for 2027 onward. Message: "The scheduled pension step-ups (7% each from 2027 up to 10% each by 2030) are reported by the secondary summary but I have not confirmed the underlying RSSB ministerial order text. Treat the 2025 6%+6% rate as firm; flag future years for reviewer confirmation. [RESEARCH GAP -- reviewer to confirm 2027--2030 steps against the RSSB order.]"
 - **R-RW-5 -- Minimum wage** — Trigger: client asks for the national minimum wage. Message: "Rwanda has no enforceable national minimum wage; the 1974 statutory rate is obsolete and effective wages are set by sector/collective agreement. The widely cited ~RWF 60,000/month figure is unconfirmed press/HR-guide speculation. [RESEARCH GAP -- no gazetted statutory rate; reviewer to confirm.]"
 
 ## Section 4 -- Payment pattern library
@@ -232,27 +232,27 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 1 -- Compute employee social security first, then PAYE
 
-- **Order of computation** — Deduct pension, occupational hazards and maternity (employee shares) from gross to get the PAYE taxable base. CBHIS is computed after PAYE (it sits on net).  _(PwC Rwanda -- sample personal income tax calculation)_
+- **Order of computation** — Deduct pension, occupational hazards and maternity (employee shares) from gross to get the PAYE taxable base. CBHIS is computed after PAYE (it sits on net).  _(secondary summary, Rwanda -- sample personal income tax calculation)_
 
 ### Rule 2 -- Use the correct base per scheme
 
-- **Contribution bases** — Pension & occupational hazards → gross. Maternity → gross excl. transport & termination/retirement benefits. CBHIS → net (gross + benefits − PAYE − pension − occ. hazards − maternity). Medical/RAMA → basic salary.  _(PwC Rwanda -- Other taxes; RRA -- Medical Insurance Scheme)_
+- **Contribution bases** — Pension & occupational hazards → gross. Maternity → gross excl. transport & termination/retirement benefits. CBHIS → net (gross + benefits − PAYE − pension − occ. hazards − maternity). Medical/RAMA → basic salary.  _(secondary summary, Rwanda -- Other taxes; RRA -- Medical Insurance Scheme)_
 
 ### Rule 3 -- Pension is 6% + 6% in 2025 and includes transport
 
-- **Pension rate and base 2025** — From 1 Jan 2025 the pension rate is 6% employee + 6% employer (doubled from 3%+3%), and the base now includes the transport allowance (harmonised with the PAYE base). Future step-ups (2027--2030) are scheduled but unconfirmed at source — see Rule 11.  _(PwC Rwanda -- Other taxes)_
+- **Pension rate and base 2025** — From 1 Jan 2025 the pension rate is 6% employee + 6% employer (doubled from 3%+3%), and the base now includes the transport allowance (harmonised with the PAYE base). Future step-ups (2027--2030) are scheduled but unconfirmed at source — see Rule 11.  _(secondary summary, Rwanda -- Other taxes)_
 
 ### Rule 4 -- Occupational hazards is employer-only
 
-- **Occupational hazards** — 2% employer, 0% employee, on gross. Never deduct it from the employee.  _(PwC Rwanda -- Other taxes)_
+- **Occupational hazards** — 2% employer, 0% employee, on gross. Never deduct it from the employee.  _(secondary summary, Rwanda -- Other taxes)_
 
 ### Rule 5 -- Maternity is 0.3% each, excluding transport
 
-- **Maternity** — 0.3% employee + 0.3% employer on gross excluding transport and termination/retirement benefits.  _(PwC Rwanda -- Other taxes)_
+- **Maternity** — 0.3% employee + 0.3% employer on gross excluding transport and termination/retirement benefits.  _(secondary summary, Rwanda -- Other taxes)_
 
 ### Rule 6 -- CBHIS is employee-only on net
 
-- **CBHIS** — 0.5% employee, 0% employer, on net salary as defined in Rule 2.  _(PwC Rwanda -- Other taxes)_
+- **CBHIS** — 0.5% employee, 0% employer, on net salary as defined in Rule 2.  _(secondary summary, Rwanda -- Other taxes)_
 
 ### Rule 7 -- Medical (RAMA) only if enrolled
 
@@ -260,19 +260,19 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 8 -- PAYE brackets are monthly and progressive
 
-- **PAYE brackets** — 0% to 60,000; 10% on 60,001--100,000; 20% on 100,001--200,000; 30% above 200,000. Casual labour is a flat 15%.  _(RRA new-rates guide; PwC Rwanda -- Taxes on personal income)_
+- **PAYE brackets** — 0% to 60,000; 10% on 60,001--100,000; 20% on 100,001--200,000; 30% above 200,000. Casual labour is a flat 15%.  _(RRA new-rates guide; secondary summary, Rwanda -- Taxes on personal income)_
 
 ### Rule 9 -- Residency drives scope
 
-- **Residency scope** — Residents: worldwide income. Non-residents: Rwanda-sourced only. No local income taxes.  _(PwC Rwanda -- Taxes on personal income)_
+- **Residency scope** — Residents: worldwide income. Non-residents: Rwanda-sourced only. No local income taxes.  _(secondary summary, Rwanda -- Taxes on personal income)_
 
 ### Rule 10 -- Unified monthly declaration deadline
 
-- **Filing deadlines** — PAYE + RSSB (except voluntary pension) are declared and paid via E-Tax/MyRRA by the 15th of the following month. RSSB medical itself is due the 10th. Annual individual return due 31 March of the following year.  _(PwC Rwanda -- Tax administration; RRA PAYE declaration page (https://www.rra.gov.rw/en/domestic-tax-services/employment-tax-paye/declare-paye))_
+- **Filing deadlines** — PAYE + RSSB (except voluntary pension) are declared and paid via E-Tax/MyRRA by the 15th of the following month. RSSB medical itself is due the 10th. Annual individual return due 31 March of the following year.  _(secondary summary, Rwanda -- Tax administration; RRA PAYE declaration page (https://www.rra.gov.rw/en/domestic-tax-services/employment-tax-paye/declare-paye))_
 
 ### Rule 11 -- Treat 2025 rates as firm; flag future years
 
-- **Pension future rates** — The 2025 6%+6% pension rate is firm. The scheduled increases (7% each in 2027, 8% in 2028, 9% in 2029, 10% in 2030) come from PwC only and lack confirmed primary-order text. Do not apply them silently. [RESEARCH GAP -- reviewer to confirm 2027--2030 steps.]
+- **Pension future rates** — The 2025 6%+6% pension rate is firm. The scheduled increases (7% each in 2027, 8% in 2028, 9% in 2029, 10% in 2030) come from the secondary summary only and lack confirmed primary-order text. Do not apply them silently. [RESEARCH GAP -- reviewer to confirm 2027--2030 steps.]
 
 ## Section 7 -- Tier 2 catalogue (reviewer judgement)
 
@@ -403,15 +403,15 @@ If the client provides only a bank statement and no payroll detail:
 
 ### Corporate income tax (context only -- not payroll)
 
-**CIT rates**  _(PwC Rwanda -- Taxes on corporate income (https://taxsummaries.pwc.com/rwanda/corporate/taxes-on-corporate-income))_
+**CIT rates**  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Item | Rate | Source |
 | --- | --- | --- |
-| Standard CIT | 28% (reduced from 30%, effective tax year 2025) | PwC Rwanda -- Taxes on corporate income |
-| Newly listed (5 yr), ≥30% public float | 25% | PwC Rwanda -- Taxes on corporate income |
-| Newly listed (5 yr), ≥40% public float | 20% | PwC Rwanda -- Taxes on corporate income |
-| Small business (turnover RWF 12m--20m) | 3% of turnover | PwC Rwanda -- Taxes on corporate income |
-| Micro-enterprise (turnover < RWF 12m) | Flat RWF 60,000--300,000 by bracket | PwC Rwanda -- Taxes on corporate income |
+| Standard CIT | 28% (reduced from 30%, effective tax year 2025) | secondary summary, Rwanda -- Taxes on corporate income |
+| Newly listed (5 yr), ≥30% public float | 25% | secondary summary, Rwanda -- Taxes on corporate income |
+| Newly listed (5 yr), ≥40% public float | 20% | secondary summary, Rwanda -- Taxes on corporate income |
+| Small business (turnover RWF 12m--20m) | 3% of turnover | secondary summary, Rwanda -- Taxes on corporate income |
+| Micro-enterprise (turnover < RWF 12m) | Flat RWF 60,000--300,000 by bracket | secondary summary, Rwanda -- Taxes on corporate income |
 
 ### Penalties & interest -- Tax Procedures Law No. 020/2023 (effective 1 April 2023)
 
@@ -451,7 +451,7 @@ No enforceable national minimum wage. The 1974 statutory rate is obsolete; effec
 
 ### Pension phased increases (scheduled, indicative)
 
-**Pension phased increase schedule**  _(PwC Rwanda -- Other taxes (https://taxsummaries.pwc.com/rwanda/corporate/other-taxes). [RESEARCH GAP -- 2027--2030 steps not confirmed against the underlying RSSB ministerial order; reviewer to confirm.])_
+**Pension phased increase schedule**  _(the secondary summary Rwanda -- Other taxes. [RESEARCH GAP -- 2027--2030 steps not confirmed against the underlying RSSB ministerial order; reviewer to confirm.])_
 
 | Effective | Employee | Employer | Total |
 | --- | --- | --- | --- |

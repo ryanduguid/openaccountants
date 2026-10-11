@@ -1,10 +1,10 @@
 ---
 name: moldova-payroll
 description: Use this skill whenever asked about Moldova (Republic of Moldova) payroll processing for employed persons. Trigger on phrases like "Moldova payroll", "Moldova PAYE", "impozit pe venit", "income tax withholding Moldova", "CNAS", "BASS", "social insurance Moldova", "CNAM", "FAOAM", "health insurance Moldova", "Form IPC21", "darea de seama IPC21", "scutire personala", "personal exemption Moldova", "net salary Moldova", "salariu net", "gross to net Moldova", "minimum wage Moldova", "salariul minim", "employer social contribution Moldova", "SFS Moldova", "Serviciul Fiscal de Stat", "MDL payroll", or any question about computing employee pay, withholding income tax, or social/health contributions for Moldova-based employees. This skill covers flat 12% income-tax withholding, employee social insurance (CNAS 6%), mandatory health insurance (CNAM 9%), the 24% employer social contribution, personal/dependent exemptions, minimum wage, the unified monthly IPC21 return, and filing obligations. ALWAYS read this skill before processing any Moldova payroll.
-version: 0.2
+version: 0.3
 jurisdiction: MD
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Moldova Payroll
 
-## Moldova Payroll Skill v0.2
+## Moldova Payroll Skill v0.3
 
-Tier 2 (research-verified). Figures below are drawn primarily from PwC Worldwide Tax Summaries (reviewed Jan 2026), EY Moldova tax alerts, and Moldovan accounting portals (buhgalter.md, salarii.md) because the State Tax Service (sfs.md), CNAS (cnas.gov.md) and CNAM (cnam.md) authority rate pages were not directly retrievable at research time (homepages did not expose the schedule; some authority pages returned HTTP 403). A Moldova-licensed accountant must confirm against the current annual Social Insurance Budget Law, the Health Insurance Fund Law and the Tax Code before sign-off.
+Tier 2 (research-verified). Figures below are drawn primarily from a secondary practitioner summary (reviewed Jan 2026), EY Moldova tax alerts, and Moldovan accounting portals (buhgalter.md, salarii.md) because the State Tax Service (sfs.md), CNAS (cnas.gov.md) and CNAM (cnam.md) authority rate pages were not directly retrievable at research time (homepages did not expose the schedule; some authority pages returned HTTP 403). A Moldova-licensed accountant must confirm against the current annual Social Insurance Budget Law, the Health Insurance Fund Law and the Tax Code before sign-off.
 
 ## Section 1 -- Quick Reference
 
@@ -37,39 +37,39 @@ Tier 2 (research-verified). Figures below are drawn primarily from PwC Worldwide
 | Key legislation | Tax Code (Codul Fiscal, Law No. 1163/1997) — flat 12% under art. 15; Law No. 489/1999 on the public social insurance system + annual Social Insurance Budget Law (CNAS rates); Law No. 1593/2002 on mandatory health insurance premiums + annual Health Insurance Fund Law (CNAM 9%); Law No. 1432/2000 + Government Decision (guaranteed minimum monthly wage) |
 | Filing portal | SFS electronic services (Form IPC21 filed electronically) |
 | Validated by | Pending -- requires sign-off by a Moldova-licensed accountant |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ## Section 2 -- Income Tax Withholding (flat 12%)
 
-Moldova levies a flat 12% personal income tax (impozit pe venit) on employment and most other resident income under Tax Code art. 15. There are no progressive brackets and no marital-status scales — the same 12% applies to every individual. Non-residents are taxed at 12% on Moldovan-source income (PwC Worldwide Tax Summaries, reviewed Jan 2026).
+Moldova levies a flat 12% personal income tax (impozit pe venit) on employment and most other resident income under Tax Code art. 15. There are no progressive brackets and no marital-status scales — the same 12% applies to every individual. Non-residents are taxed at 12% on Moldovan-source income (secondary summary, reviewed Jan 2026).
 
 The employer withholds income tax monthly at source (PAYE-style) together with the employee social-insurance and health-insurance contributions, and remits all three on the unified monthly Form IPC21.
 
 ### Income Tax Rate -- 2025 (unchanged into 2026)
 
-**Income Tax Rate -- 2025 (unchanged into 2026)**  _(Tax Code art. 15; PwC, reviewed Jan 2026)_
+**Income Tax Rate -- 2025 (unchanged into 2026)**  _(Tax Code art. 15; the secondary summary, reviewed Jan 2026)_
 
 | Income | Rate | Source |
 | --- | --- | --- |
-| Monthly/annual taxable employment income (after CNAM and exemptions) | 12% (flat) | Tax Code art. 15; PwC, reviewed Jan 2026 |
+| Monthly/annual taxable employment income (after CNAM and exemptions) | 12% (flat) | Tax Code art. 15; the secondary summary, reviewed Jan 2026 |
 
 ### Special non-payroll rates (documented for completeness — NOT applied in standard payroll)
 
-**Special non-payroll rates**  _(PwC (taxes on personal income))_
+**Special non-payroll rates**  _(secondary summary (taxes on personal income))_
 
 | Income type | Rate | Source |
 | --- | --- | --- |
-| Dividends | 6% | PwC (taxes on personal income) |
-| Certain farming/agricultural distributions | 7% | PwC (taxes on personal income) |
-| Gambling / lottery winnings | 18% | PwC (taxes on personal income) |
+| Dividends | 6% | secondary summary (taxes on personal income) |
+| Certain farming/agricultural distributions | 7% | secondary summary (taxes on personal income) |
+| Gambling / lottery winnings | 18% | secondary summary (taxes on personal income) |
 
 These are not part of standard salary withholding and are listed only so the agent does not misclassify a dividend or winnings line as employment income.
 
 ### PIT Computation Method (the calculation ORDER matters)
 
-- **PIT computation order** — 1. Gross salary = contractual gross (including meal tickets and other remunerations). 2. Employee CNAM = 9% × gross. CNAM is deductible before the income-tax base is computed. 3. Monthly exemptions = personal exemption + any dependent/spouse exemptions (see Section 6). 4. PIT base = gross − CNAM 9% − monthly exemptions. 5. PIT = 12% × PIT base. 6. Employee CNAS = 6% × gross (NOT deducted from the PIT base — it is computed on gross in parallel; PwC).  _(buhgalter.md worked example)_
+- **PIT computation order** — 1. Gross salary = contractual gross (including meal tickets and other remunerations). 2. Employee CNAM = 9% × gross. CNAM is deductible before the income-tax base is computed. 3. Monthly exemptions = personal exemption + any dependent/spouse exemptions (see Section 6). 4. PIT base = gross − CNAM 9% − monthly exemptions. 5. PIT = 12% × PIT base. 6. Employee CNAS = 6% × gross (NOT deducted from the PIT base — it is computed on gross in parallel; secondary summary).  _(buhgalter.md worked example)_
 
-Important: only CNAM (9%) and the exemptions reduce the PIT base. Employee CNAS (6%) does NOT reduce the PIT base in this model — it is withheld on gross in parallel. This follows the buhgalter.md worked example and the PwC deduction guidance. [RESEARCH GAP — reviewer to confirm] the precise statutory deduction set against the current Tax Code annex, since some calculators net both contributions before PIT.
+Important: only CNAM (9%) and the exemptions reduce the PIT base. Employee CNAS (6%) does NOT reduce the PIT base in this model — it is withheld on gross in parallel. This follows the buhgalter.md worked example and the the secondary summary deduction guidance. [RESEARCH GAP — reviewer to confirm] the precise statutory deduction set against the current Tax Code annex, since some calculators net both contributions before PIT.
 
 ## Section 3 -- Social & Health Contributions -- Employee Deductions
 
@@ -77,34 +77,34 @@ Each month the employer withholds three amounts from the employee's gross salary
 
 ### Employee Deductions (2025)
 
-**Employee Deductions (2025)**  _(PwC (other taxes); buhgalter.md)_
+**Employee Deductions (2025)**  _(secondary summary (other taxes); buhgalter.md)_
 
 | Deduction | Rate | Base | Ceiling | Source |
 | --- | --- | --- | --- | --- |
-| Social insurance contribution (CNAS / BASS) | 6% | Gross salary + other remunerations | No ceiling on the percentage rate | PwC (other taxes) |
-| Mandatory health insurance (CNAM / FAOAM) | 9% | Gross salary + other remunerations | No ceiling | PwC (other taxes) |
-| Personal income tax (PIT) | 12% | Gross − CNAM 9% − exemptions | n/a (flat) | Tax Code art. 15; PwC |
+| Social insurance contribution (CNAS / BASS) | 6% | Gross salary + other remunerations | No ceiling on the percentage rate | secondary summary (other taxes) |
+| Mandatory health insurance (CNAM / FAOAM) | 9% | Gross salary + other remunerations | No ceiling | secondary summary (other taxes) |
+| Personal income tax (PIT) | 12% | Gross − CNAM 9% − exemptions | n/a (flat) | Tax Code art. 15; the secondary summary |
 | **Total employee deductions (before exemptions, no PIT exemption)** | **27% of gross (6% + 9% + 12%)** | -- | -- | buhgalter.md |
 
-Arithmetic check (employee column): 6% (CNAS) + 9% (CNAM) + 12% (PIT, before exemptions) = 27% of gross. With exemptions the effective PIT is lower, so the realised total deduction is below 27% — see worked examples. CNAM (9%) is fully borne by the employee; there is no separate employer health premium (PwC).
+Arithmetic check (employee column): 6% (CNAS) + 9% (CNAM) + 12% (PIT, before exemptions) = 27% of gross. With exemptions the effective PIT is lower, so the realised total deduction is below 27% — see worked examples. CNAM (9%) is fully borne by the employee; there is no separate employer health premium (secondary summary).
 
-Source conflict: several EOR/secondary sites show CNAM as a 4.5% employer + 4.5% employee split. The authoritative PwC position and the Tax Code treatment used here is 9% employee-only, no employer health premium. salarii.md additionally mislabels the 9% as "CNAS" when it is CNAM. [RESEARCH GAP — reviewer to confirm] against the current annual Health Insurance Fund Law before relying on this for a specific employer's setup.
+Source conflict: several EOR/secondary sites show CNAM as a 4.5% employer + 4.5% employee split. The authoritative the secondary summary position and the Tax Code treatment used here is 9% employee-only, no employer health premium. salarii.md additionally mislabels the 9% as "CNAS" when it is CNAM. [RESEARCH GAP — reviewer to confirm] against the current annual Health Insurance Fund Law before relying on this for a specific employer's setup.
 
 ## Section 4 -- Social Contributions -- Employer Contributions
 
-The employer pays a social insurance contribution (CNAS / BASS) on top of gross salary. For the standard private sector this is 24%. There is no separate employer-paid health-insurance percentage on payroll — the full 9% CNAM is the employee's withheld premium (PwC).
+The employer pays a social insurance contribution (CNAS / BASS) on top of gross salary. For the standard private sector this is 24%. There is no separate employer-paid health-insurance percentage on payroll — the full 9% CNAM is the employee's withheld premium (secondary summary).
 
 ### Employer Contribution Rates (2025)
 
-**Employer Contribution Rates (2025)**  _(PwC (other taxes))_
+**Employer Contribution Rates (2025)**  _(secondary summary (other taxes))_
 
 | Employment category | Employer CNAS rate | Base | Notes | Source |
 | --- | --- | --- | --- | --- |
-| Standard private sector | 24% | Gross salary + meal tickets + other remunerations | Default | PwC (other taxes) |
-| Special / hazardous working conditions | 32% | Same base | Higher rate for jobs in special working conditions | PwC (other taxes) |
-| Agriculture sector | 24% total = **18% employer + 6% state budget** | Same base | Employer pays only 18%; the state budget funds the remaining 6% | PwC (other taxes) |
-| Higher education / certain medical institutions | 24% | Same base | Same as standard | PwC (other taxes) |
-| Employer health-insurance premium | **0% (none)** | -- | No separate employer CNAM; the 9% is employee-only | PwC (other taxes) |
+| Standard private sector | 24% | Gross salary + meal tickets + other remunerations | Default | secondary summary (other taxes) |
+| Special / hazardous working conditions | 32% | Same base | Higher rate for jobs in special working conditions | secondary summary (other taxes) |
+| Agriculture sector | 24% total = **18% employer + 6% state budget** | Same base | Employer pays only 18%; the state budget funds the remaining 6% | secondary summary (other taxes) |
+| Higher education / certain medical institutions | 24% | Same base | Same as standard | secondary summary (other taxes) |
+| Employer health-insurance premium | **0% (none)** | -- | No separate employer CNAM; the 9% is employee-only | secondary summary (other taxes) |
 
 Arithmetic check (agriculture row): 18% (employer) + 6% (state budget) = 24% total — matches the standard total but the employer outlay is only 18% of gross.
 
@@ -118,7 +118,7 @@ Arithmetic check (agriculture row): 18% (employer) + 6% (state budget) = 24% tot
 | Employer | CNAS 24% | 24% |
 | Employer health premium | none | 0% |
 
-There is no general wage ceiling on the percentage CNAS/CNAM rates for employees. Fixed-sum amounts (CNAM fixed annual MDL 12,636 for 2025/2026; CNAS fixed annual example MDL 22,878 for 2026) apply only to non-employee categories (self-employed) and are NOT processed through this employer-payroll skill (PwC). [RESEARCH GAP — reviewer to confirm] the exact fixed-sum figures for the relevant year if a self-employed person is in scope.
+There is no general wage ceiling on the percentage CNAS/CNAM rates for employees. Fixed-sum amounts (CNAM fixed annual MDL 12,636 for 2025/2026; CNAS fixed annual example MDL 22,878 for 2026) apply only to non-employee categories (self-employed) and are NOT processed through this employer-payroll skill (secondary summary). [RESEARCH GAP — reviewer to confirm] the exact fixed-sum figures for the relevant year if a self-employed person is in scope.
 
 ## Section 5 -- Minimum Wage and Reference Wages
 
@@ -145,16 +145,16 @@ Minimum wage is full-time gross. [RESEARCH GAP — reviewer to confirm] sector-s
 
 Exemptions reduce the income-tax (PIT) base only. They do NOT reduce the CNAS or CNAM contribution base. Apply an exemption only when the employee has declared and documented eligibility. Annual figures are converted to monthly by dividing by 12.
 
-**Personal and Dependent Exemptions table**  _(PwC (deductions); buhgalter.md; salarii.md)_
+**Personal and Dependent Exemptions table**  _(secondary summary (deductions); buhgalter.md; salarii.md)_
 
 | Exemption | Annual (MDL) | Monthly (MDL) | Condition | Source |
 | --- | --- | --- | --- | --- |
-| Standard personal exemption (scutire personală) | 29,700 | 2,475 | Resident individuals with annual taxable income ≤ MDL 360,000 | PwC (deductions); buhgalter.md; salarii.md |
-| Major / increased personal exemption (scutire personală majorată) | 34,620 | 2,885 | Privileged categories (certain disabilities, war-injury, rehabilitated repression victims) | PwC (deductions) |
-| Per dependent (scutire pentru persoane întreținute) | 9,900 | 825 | Per qualifying dependent | PwC (deductions); buhgalter.md |
-| Increased dependent (severe childhood disability) | 21,780 | 1,815 | Per qualifying dependent with severe childhood disability | PwC (deductions) |
-| Spouse (major) exemption | 21,780 | 1,815 | Transferable spouse exemption where the spouse does not use their own; available only against the major exemption category | PwC (deductions) |
-| Income cap for the STANDARD personal exemption | 360,000/yr | -- | Standard personal exemption lost where annual taxable income exceeds this | PwC (deductions) |
+| Standard personal exemption (scutire personală) | 29,700 | 2,475 | Resident individuals with annual taxable income ≤ MDL 360,000 | secondary summary (deductions); buhgalter.md; salarii.md |
+| Major / increased personal exemption (scutire personală majorată) | 34,620 | 2,885 | Privileged categories (certain disabilities, war-injury, rehabilitated repression victims) | secondary summary (deductions) |
+| Per dependent (scutire pentru persoane întreținute) | 9,900 | 825 | Per qualifying dependent | secondary summary (deductions); buhgalter.md |
+| Increased dependent (severe childhood disability) | 21,780 | 1,815 | Per qualifying dependent with severe childhood disability | secondary summary (deductions) |
+| Spouse (major) exemption | 21,780 | 1,815 | Transferable spouse exemption where the spouse does not use their own; available only against the major exemption category | secondary summary (deductions) |
+| Income cap for the STANDARD personal exemption | 360,000/yr | -- | Standard personal exemption lost where annual taxable income exceeds this | secondary summary (deductions) |
 
 Arithmetic check (monthly conversions): 29,700/12 = 2,475.00; 34,620/12 = 2,885.00; 9,900/12 = 825.00; 21,780/12 = 1,815.00. All exact.
 
@@ -162,7 +162,7 @@ The 2025 amounts are confirmed by the State Tax Service's bulletin on the 2025 f
 
 ## Section 7 -- Conservative Defaults
 
-- **Conservative defaults** — 1. Employer CNAS rate. Default to 24% (standard private sector). Use 32% only if the role is confirmed to be in special/hazardous working conditions; use 18% employer + 6% state only if the employer is confirmed agriculture-sector (PwC). 2. Health insurance split. Treat CNAM as 9% employee-only, with no employer health premium. Ignore secondary EOR sites showing a 4.5%/4.5% split (PwC). 3. Calculation order. Deduct 9% CNAM and the applicable exemptions from gross before applying 12% PIT; apply 6% CNAS to gross in parallel (not deducted from the PIT base). Confirmed by the buhgalter.md worked example. 4. No exemption unless declared. Apply only the standard personal exemption (MDL 2,475/month) by default, and only if the employee is a resident below the MDL 360,000 income cap. Do NOT apply major, dependent, or spouse exemptions without documentation. 5. Income cap. If annual taxable income exceeds MDL 360,000, drop the standard personal exemption (PwC). 6. Monthly IPC21 filing. Assume the employer files Form IPC21 and remits PIT + CNAS + CNAM by the 25th of the month following the payroll month (Rivermate; PwC). 7. Currency. All amounts in MDL; never convert to EUR/USD on the working paper.  _(PwC; buhgalter.md; Rivermate)_
+- **Conservative defaults** — 1. Employer CNAS rate. Default to 24% (standard private sector). Use 32% only if the role is confirmed to be in special/hazardous working conditions; use 18% employer + 6% state only if the employer is confirmed agriculture-sector (secondary summary). 2. Health insurance split. Treat CNAM as 9% employee-only, with no employer health premium. Ignore secondary EOR sites showing a 4.5%/4.5% split (secondary summary). 3. Calculation order. Deduct 9% CNAM and the applicable exemptions from gross before applying 12% PIT; apply 6% CNAS to gross in parallel (not deducted from the PIT base). Confirmed by the buhgalter.md worked example. 4. No exemption unless declared. Apply only the standard personal exemption (MDL 2,475/month) by default, and only if the employee is a resident below the MDL 360,000 income cap. Do NOT apply major, dependent, or spouse exemptions without documentation. 5. Income cap. If annual taxable income exceeds MDL 360,000, drop the standard personal exemption (secondary summary). 6. Monthly IPC21 filing. Assume the employer files Form IPC21 and remits PIT + CNAS + CNAM by the 25th of the month following the payroll month (Rivermate; secondary summary). 7. Currency. All amounts in MDL; never convert to EUR/USD on the working paper.  _(secondary summary; buhgalter.md; Rivermate)_
 
 ## Section 8 -- Required Inputs + Refusal Catalogue
 
@@ -183,7 +183,7 @@ The 2025 amounts are confirmed by the State Tax Service's bulletin on the 2025 f
 
 ### Refusal Catalogue (stop and ask, do not guess)
 
-- **Refusal Catalogue** — No exemption declaration → default to the standard personal exemption ONLY if residency and the income cap are confirmed; otherwise refuse and ask. Residency unknown → refuse to apply any exemption; flag (non-residents are taxed at 12% on Moldovan-source income with exemption rules differing). Employer category unknown → default to 24% employer CNAS but flag explicitly; do not silently apply 32% or 18%. No employee personal tax code (IDNP) → refuse to file IPC21. Annual income near or above MDL 360,000 → flag; the standard personal exemption may be lost. Self-employed / fixed-sum category → out of scope for this employer-payroll skill; redirect to a Moldova self-employed contribution skill. CNAM split claimed at 4.5%/4.5% → refuse to use; default to 9% employee-only per PwC and flag the conflict.
+- **Refusal Catalogue** — No exemption declaration → default to the standard personal exemption ONLY if residency and the income cap are confirmed; otherwise refuse and ask. Residency unknown → refuse to apply any exemption; flag (non-residents are taxed at 12% on Moldovan-source income with exemption rules differing). Employer category unknown → default to 24% employer CNAS but flag explicitly; do not silently apply 32% or 18%. No employee personal tax code (IDNP) → refuse to file IPC21. Annual income near or above MDL 360,000 → flag; the standard personal exemption may be lost. Self-employed / fixed-sum category → out of scope for this employer-payroll skill; redirect to a Moldova self-employed contribution skill. CNAM split claimed at 4.5%/4.5% → refuse to use; default to 9% employee-only per the secondary summary and flag the conflict.
 
 ## Section 9 -- Transaction / Payment Pattern Library
 
@@ -314,11 +314,11 @@ Employer cost: CNAS 18% (employer portion) = 10,000 × 18% = 1,800.00; the remai
 | PIT 12% = 31,850 × 12% | 3,822.00 |
 | **Net pay** = 35,000 − 2,100 − 3,150 − 3,822 | **25,928.00** |
 
-Employer cost: CNAS 24% = 8,400.00; total employer outlay = 43,400.00/month. Annual gross = 35,000 × 12 = 420,000 > 360,000, so the standard personal exemption is unavailable (PwC).
+Employer cost: CNAS 24% = 8,400.00; total employer outlay = 43,400.00/month. Annual gross = 35,000 × 12 = 420,000 > 360,000, so the standard personal exemption is unavailable (secondary summary).
 
 ## Section 11 -- Tier 1 Rules (deterministic — apply directly)
 
-- **Tier 1 rules 1-14** — 1. Personal income tax is a flat 12% (Tax Code art. 15) on employment and most other resident income; non-residents 12% on Moldovan-source income (PwC). 2. Employee withholdings from gross each month: CNAS 6% + CNAM 9% + PIT 12% (PIT after CNAM and exemptions) (PwC; buhgalter.md). 3. PIT base = gross − 9% CNAM − applicable monthly exemptions; apply 12% to that base (buhgalter.md worked example). 4. Employee CNAS 6% is computed on gross and does NOT reduce the PIT base in this model (buhgalter.md). 5. Employer pays 24% CNAS on top of gross for the standard private sector; base = gross salary + meal tickets + other remunerations (PwC). 6. Special-conditions employment employer CNAS = 32%; agriculture sector total 24% but only 18% paid by the employer and 6% by the state budget (PwC). 7. Mandatory health insurance (CNAM 9%) is fully borne by the employee — there is no separate employer health premium on payroll (PwC). 8. Standard annual personal exemption MDL 29,700 (MDL 2,475/month), available only where annual taxable income ≤ MDL 360,000 (PwC; EY; salarii.md). 9. Major personal exemption MDL 34,620/yr; per-dependent MDL 9,900/yr; severe-childhood-disability dependent and spouse (major) exemptions MDL 21,780/yr (PwC). 10. Guaranteed minimum monthly wage = MDL 5,500 from 1 Jan 2025 (up from MDL 5,000); rises to MDL 6,300 from 1 Jan 2026 (WageIndicator; gov.md). 11. Monthly unified payroll return Form IPC21 (PIT + CNAS + CNAM) is filed with SFS and all amounts paid by the 25th of the following month (Rivermate; PwC). 12. Annual individual income declaration due by 30 April of the following year where filing is required (news-pravda Moldova). 13. Percentage rates (24% employer CNAS, 6% employee CNAS, 9% CNAM, 12% PIT) were unchanged for 2026, confirming continuity from 2025 (PwC / search confirmation). 14. No general wage ceiling applies to the percentage CNAS/CNAM rates for employees; fixed-sum ceilings apply only to non-employee categories (PwC).  _(PwC; buhgalter.md; EY; salarii.md; WageIndicator; gov.md; Rivermate; news-pravda Moldova)_
+- **Tier 1 rules 1-14** — 1. Personal income tax is a flat 12% (Tax Code art. 15) on employment and most other resident income; non-residents 12% on Moldovan-source income (secondary summary). 2. Employee withholdings from gross each month: CNAS 6% + CNAM 9% + PIT 12% (PIT after CNAM and exemptions) (secondary summary; buhgalter.md). 3. PIT base = gross − 9% CNAM − applicable monthly exemptions; apply 12% to that base (buhgalter.md worked example). 4. Employee CNAS 6% is computed on gross and does NOT reduce the PIT base in this model (buhgalter.md). 5. Employer pays 24% CNAS on top of gross for the standard private sector; base = gross salary + meal tickets + other remunerations (secondary summary). 6. Special-conditions employment employer CNAS = 32%; agriculture sector total 24% but only 18% paid by the employer and 6% by the state budget (secondary summary). 7. Mandatory health insurance (CNAM 9%) is fully borne by the employee — there is no separate employer health premium on payroll (secondary summary). 8. Standard annual personal exemption MDL 29,700 (MDL 2,475/month), available only where annual taxable income ≤ MDL 360,000 (secondary summary; EY; salarii.md). 9. Major personal exemption MDL 34,620/yr; per-dependent MDL 9,900/yr; severe-childhood-disability dependent and spouse (major) exemptions MDL 21,780/yr (secondary summary). 10. Guaranteed minimum monthly wage = MDL 5,500 from 1 Jan 2025 (up from MDL 5,000); rises to MDL 6,300 from 1 Jan 2026 (WageIndicator; gov.md). 11. Monthly unified payroll return Form IPC21 (PIT + CNAS + CNAM) is filed with SFS and all amounts paid by the 25th of the following month (Rivermate; secondary summary). 12. Annual individual income declaration due by 30 April of the following year where filing is required (news-pravda Moldova). 13. Percentage rates (24% employer CNAS, 6% employee CNAS, 9% CNAM, 12% PIT) were unchanged for 2026, confirming continuity from 2025 (secondary summary, / search confirmation). 14. No general wage ceiling applies to the percentage CNAS/CNAM rates for employees; fixed-sum ceilings apply only to non-employee categories (secondary summary).  _(secondary summary; buhgalter.md; EY; salarii.md; WageIndicator; gov.md; Rivermate; news-pravda Moldova)_
 
 ## Section 12 -- Tier 2 Catalogue (reviewer judgement required)
 
@@ -326,11 +326,11 @@ Employer cost: CNAS 24% = 8,400.00; total employer outlay = 43,400.00/month. Ann
 
 | Topic | Judgement call |
 | --- | --- |
-| CNAM split (9% employee-only vs 4.5%/4.5%) | Source conflict. PwC/Tax Code position is 9% employee-only. **[RESEARCH GAP — reviewer to confirm]** against the current Health Insurance Fund Law for a specific employer setup. |
+| CNAM split (9% employee-only vs 4.5%/4.5%) | Source conflict. The secondary summary/Tax Code position is 9% employee-only. **[RESEARCH GAP — reviewer to confirm]** against the current Health Insurance Fund Law for a specific employer setup. |
 | Employer CNAS category | Whether the role is standard (24%), special/hazardous (32%), or agriculture (18% + 6% state); materially changes employer cost. |
 | Calculation order / deductibility | Whether only CNAM (and not CNAS) reduces the PIT base. **[RESEARCH GAP — reviewer to confirm]** the precise statutory deduction set. |
 | Exemption eligibility | Major exemption category (disability/war-injury/rehabilitated), spouse-transfer mechanics, and the MDL 360,000 income-cap effect on the standard exemption. |
-| Exact-year exemption figures | The 2025 dependent/spouse/major amounts vs the PwC page now labelled 2026. **[RESEARCH GAP — reviewer to confirm]** against the 2025 Tax Policy annex. |
+| Exact-year exemption figures | The 2025 dependent/spouse/major amounts vs the the secondary summary page now labelled 2026. **[RESEARCH GAP — reviewer to confirm]** against the 2025 Tax Policy annex. |
 | Late-payment interest rate | The daily late-payment interest (majorare de întârziere) is set annually by the Ministry of Finance. **[RESEARCH GAP — reviewer to confirm]** the current 2025/2026 rate on sfs.md. |
 | Fixed-sum (self-employed) amounts | CNAM/CNAS fixed annual amounts for non-employees. **[RESEARCH GAP — reviewer to confirm]** exact figures for the relevant year. |
 | Benefits in kind | Treatment and valuation of non-cash benefits and meal tickets in the PIT/contribution base. **[RESEARCH GAP — reviewer to confirm]** current rules. |
@@ -385,37 +385,37 @@ Notes: (1) CNAM (J) and exemptions (H, I) reduce the PIT base; employee CNAS (K)
 
 ## Section 16 -- Filing Obligations (Forms)
 
-**Filing Obligations (Forms)**  _(Rivermate; PwC; news-pravda Moldova)_
+**Filing Obligations (Forms)**  _(Rivermate; secondary summary; news-pravda Moldova)_
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
-| **IPC21 — Darea de seamă privind reținerea impozitului pe venit, a primelor de asigurare obligatorie de asistență medicală și a contribuțiilor de asigurări sociale de stat obligatorii** | Unified monthly payroll return: income tax withheld + employee/employer social insurance (CNAS) + mandatory health insurance (CNAM); filed electronically with SFS | By the **25th of the month following** the reporting month; same deadline for payment of withheld tax and contributions | Rivermate; PwC |
+| **IPC21 — Darea de seamă privind reținerea impozitului pe venit, a primelor de asigurare obligatorie de asistență medicală și a contribuțiilor de asigurări sociale de stat obligatorii** | Unified monthly payroll return: income tax withheld + employee/employer social insurance (CNAS) + mandatory health insurance (CNAM); filed electronically with SFS | By the **25th of the month following** the reporting month; same deadline for payment of withheld tax and contributions | Rivermate; secondary summary |
 | **Annual individual income declaration (CET18 / unified return)** | Individual annual income tax return where required (e.g. multiple income sources, over threshold) | By **30 April** following the tax year (2025 income due 30 Apr 2026) | news-pravda Moldova |
 
 ### Key Thresholds
 
-**Key Thresholds**  _(PwC (deductions); WageIndicator.org; gov.md)_
+**Key Thresholds**  _(secondary summary (deductions); WageIndicator.org; gov.md)_
 
 | Threshold | Value | Source |
 | --- | --- | --- |
-| Standard personal exemption | MDL 29,700/yr (MDL 2,475/month) | PwC (deductions); buhgalter.md |
-| Income cap for the standard personal exemption | MDL 360,000/yr | PwC (deductions) |
-| Major personal exemption | MDL 34,620/yr | PwC (deductions) |
-| Per-dependent exemption | MDL 9,900/yr (MDL 825/month) | PwC (deductions) |
-| Severe-childhood-disability dependent / spouse (major) exemption | MDL 21,780/yr | PwC (deductions) |
+| Standard personal exemption | MDL 29,700/yr (MDL 2,475/month) | secondary summary (deductions); buhgalter.md |
+| Income cap for the standard personal exemption | MDL 360,000/yr | secondary summary (deductions) |
+| Major personal exemption | MDL 34,620/yr | secondary summary (deductions) |
+| Per-dependent exemption | MDL 9,900/yr (MDL 825/month) | secondary summary (deductions) |
+| Severe-childhood-disability dependent / spouse (major) exemption | MDL 21,780/yr | secondary summary (deductions) |
 | Minimum monthly wage (2025) | MDL 5,500 | WageIndicator.org |
 | Minimum monthly wage (2026) | MDL 6,300 | gov.md |
 
 ### Penalties
 
-**Penalties**  _(PwC (tax administration); intelcont.md)_
+**Penalties**  _(secondary summary (tax administration); intelcont.md)_
 
 | Breach | Penalty | Source |
 | --- | --- | --- |
-| Under-declaring tax / SSC / health contributions via returns with incorrect data | Fine of **20%–30% of the reduced amount** | PwC (tax administration) |
-| Failure to correctly complete / submit a tax return | **MDL 500–1,000 per return, capped at MDL 10,000** | PwC (tax administration) |
+| Under-declaring tax / SSC / health contributions via returns with incorrect data | Fine of **20%–30% of the reduced amount** | secondary summary (tax administration) |
+| Failure to correctly complete / submit a tax return | **MDL 500–1,000 per return, capped at MDL 10,000** | secondary summary (tax administration) |
 | Diminishing declared taxable income (general) | Fine of **12%–15%** of the undeclared/diminished taxable income | intelcont.md (Tax Code summary) |
-| Late payment of tax/contributions | Daily late-payment interest (majorare de întârziere) accrues per day; rate set annually by the Tax Code/MoF; capped so interest does not exceed the liability under an adjusted return. **[RESEARCH GAP — reviewer to confirm]** the current daily rate on sfs.md | PwC (tax administration) |
+| Late payment of tax/contributions | Daily late-payment interest (majorare de întârziere) accrues per day; rate set annually by the Tax Code/MoF; capped so interest does not exceed the liability under an adjusted return. **[RESEARCH GAP — reviewer to confirm]** the current daily rate on sfs.md | secondary summary (tax administration) |
 
 ## Section 17 -- Interaction with Other Skills
 
@@ -437,52 +437,52 @@ Payroll → Social Insurance: CNAS contributions paid through payroll count towa
 
 ## Section 18 -- Reference Material
 
-**Section 18 Reference Material Table**  _(PwC; Tax Code art. 15; Rivermate; WageIndicator.org; gov.md; salarii.md; buhgalter.md; news-pravda Moldova)_
+**Section 18 Reference Material Table**  _(the secondary summary; Tax Code art. 15; Rivermate; WageIndicator.org; gov.md; salarii.md; buhgalter.md; news-pravda Moldova)_
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Personal income tax | Flat 12% | Tax Code art. 15; PwC |
-| Special non-payroll rates | 6% dividends; 7% certain farming distributions; 18% gambling/lottery | PwC (taxes on personal income) |
-| Employee social insurance (CNAS / BASS) | 6% | PwC (other taxes) |
-| Employee health insurance (CNAM / FAOAM) | 9% (employee-only) | PwC (other taxes) |
-| Employer social insurance (CNAS) — standard | 24% | PwC (other taxes) |
-| Employer CNAS — special/hazardous | 32% | PwC (other taxes) |
-| Employer CNAS — agriculture | 18% employer + 6% state budget (24% total) | PwC (other taxes) |
-| Employer health premium | none (0%) | PwC (other taxes) |
-| Standard personal exemption | MDL 29,700/yr (MDL 2,475/mo), income cap MDL 360,000 | PwC (deductions); buhgalter.md; salarii.md |
-| Major personal exemption | MDL 34,620/yr | PwC (deductions) |
-| Per-dependent exemption | MDL 9,900/yr (MDL 825/mo) | PwC (deductions) |
-| Severe-disability dependent / spouse (major) exemption | MDL 21,780/yr | PwC (deductions) |
+| Personal income tax | Flat 12% | Tax Code art. 15; the secondary summary |
+| Special non-payroll rates | 6% dividends; 7% certain farming distributions; 18% gambling/lottery | secondary summary (taxes on personal income) |
+| Employee social insurance (CNAS / BASS) | 6% | secondary summary (other taxes) |
+| Employee health insurance (CNAM / FAOAM) | 9% (employee-only) | secondary summary (other taxes) |
+| Employer social insurance (CNAS) — standard | 24% | secondary summary (other taxes) |
+| Employer CNAS — special/hazardous | 32% | secondary summary (other taxes) |
+| Employer CNAS — agriculture | 18% employer + 6% state budget (24% total) | secondary summary (other taxes) |
+| Employer health premium | none (0%) | secondary summary (other taxes) |
+| Standard personal exemption | MDL 29,700/yr (MDL 2,475/mo), income cap MDL 360,000 | secondary summary (deductions); buhgalter.md; salarii.md |
+| Major personal exemption | MDL 34,620/yr | secondary summary (deductions) |
+| Per-dependent exemption | MDL 9,900/yr (MDL 825/mo) | secondary summary (deductions) |
+| Severe-disability dependent / spouse (major) exemption | MDL 21,780/yr | secondary summary (deductions) |
 | Minimum monthly wage 2025 | MDL 5,500 | WageIndicator.org |
 | Minimum monthly wage 2026 | MDL 6,300 | gov.md |
 | Reference average monthly wage 2025 | MDL 16,100 | salarii.md |
-| Monthly return | Form IPC21, due 25th of following month | Rivermate; PwC |
+| Monthly return | Form IPC21, due 25th of following month | Rivermate; secondary summary |
 | Annual individual declaration | Due 30 April following year | news-pravda Moldova |
 
-- **Personal income tax** — Flat 12%  _(Tax Code art. 15; PwC)_
-- **Special non-payroll rates** — 6% dividends; 7% certain farming distributions; 18% gambling/lottery  _(PwC (taxes on personal income))_
-- **Employee social insurance (CNAS / BASS)** — 6%  _(PwC (other taxes))_
-- **Employee health insurance (CNAM / FAOAM)** — 9% (employee-only)  _(PwC (other taxes))_
-- **Employer social insurance (CNAS) — standard** — 24%  _(PwC (other taxes))_
-- **Employer CNAS — special/hazardous** — 32%  _(PwC (other taxes))_
-- **Employer CNAS — agriculture** — 18% employer + 6% state budget (24% total)  _(PwC (other taxes))_
-- **Employer health premium** — none (0%)  _(PwC (other taxes))_
-- **Standard personal exemption** — MDL 29,700/yr (MDL 2,475/mo), income cap MDL 360,000  _(PwC (deductions); buhgalter.md; salarii.md)_
-- **Major personal exemption** — MDL 34,620/yr  _(PwC (deductions))_
-- **Per-dependent exemption** — MDL 9,900/yr (MDL 825/mo)  _(PwC (deductions))_
-- **Severe-disability dependent / spouse (major) exemption** — MDL 21,780/yr  _(PwC (deductions))_
+- **Personal income tax** — Flat 12%  _(Tax Code art. 15; the secondary summary)_
+- **Special non-payroll rates** — 6% dividends; 7% certain farming distributions; 18% gambling/lottery  _(secondary summary (taxes on personal income))_
+- **Employee social insurance (CNAS / BASS)** — 6%  _(secondary summary (other taxes))_
+- **Employee health insurance (CNAM / FAOAM)** — 9% (employee-only)  _(secondary summary (other taxes))_
+- **Employer social insurance (CNAS) — standard** — 24%  _(secondary summary (other taxes))_
+- **Employer CNAS — special/hazardous** — 32%  _(secondary summary (other taxes))_
+- **Employer CNAS — agriculture** — 18% employer + 6% state budget (24% total)  _(secondary summary (other taxes))_
+- **Employer health premium** — none (0%)  _(secondary summary (other taxes))_
+- **Standard personal exemption** — MDL 29,700/yr (MDL 2,475/mo), income cap MDL 360,000  _(secondary summary (deductions); buhgalter.md; salarii.md)_
+- **Major personal exemption** — MDL 34,620/yr  _(secondary summary (deductions))_
+- **Per-dependent exemption** — MDL 9,900/yr (MDL 825/mo)  _(secondary summary (deductions))_
+- **Severe-disability dependent / spouse (major) exemption** — MDL 21,780/yr  _(secondary summary (deductions))_
 - **Minimum monthly wage 2025** — MDL 5,500  _(WageIndicator.org)_
 - **Minimum monthly wage 2026** — MDL 6,300  _(gov.md)_
 - **Reference average monthly wage 2025** — MDL 16,100  _(salarii.md)_
-- **Monthly return** — Form IPC21, due 25th of following month  _(Rivermate; PwC)_
+- **Monthly return** — Form IPC21, due 25th of following month  _(Rivermate; secondary summary)_
 - **Annual individual declaration** — Due 30 April following year  _(news-pravda Moldova)_
 
 ### Sources
 
-1. PwC Worldwide Tax Summaries — Moldova Individual: Other taxes (social & health contributions) (reviewed Jan 2026) — https://taxsummaries.pwc.com/moldova/individual/other-taxes
-2. PwC Worldwide Tax Summaries — Moldova Individual: Taxes on personal income (flat 12%) — https://taxsummaries.pwc.com/moldova/individual/taxes-on-personal-income
-3. PwC Worldwide Tax Summaries — Moldova Individual: Deductions (personal/dependent exemptions) — https://taxsummaries.pwc.com/moldova/individual/deductions
-4. PwC Worldwide Tax Summaries — Moldova Corporate: Tax administration (penalties, deadlines) — https://taxsummaries.pwc.com/moldova/corporate/tax-administration
+1. Secondary practitioner summary (link removed) — Moldova Individual: Other taxes (social & health contributions) (reviewed Jan 2026)
+2. Secondary practitioner summary (link removed) — Moldova Individual: Taxes on personal income (flat 12%)
+3. Secondary practitioner summary (link removed) — Moldova Individual: Deductions (personal/dependent exemptions)
+4. Secondary practitioner summary (link removed) — Moldova Corporate: Tax administration (penalties, deadlines)
 5. EY Moldova Tax Alert 3 — September 2024 (2025 exemption increases) — https://www.ey.com/en_ro/technical/tax-alerts/ey-moldova-tax-alert-3---september-2024
 6. Buhgalter.md — How to calculate salary and taxes in Moldova in 2025 (worked example) — https://www.buhgalter.md/en/cum-se-calculeaza-salariul-in-moldova/
 7. WageIndicator.org — Minimum Wage Updated in Moldova from 01 January 2025 (MDL 5,500) — https://wageindicator.org/salary/minimum-wage/minimum-wages-news/2025/minimum-wage-updated-in-moldova-from-01-january-2025-january-01-2025
@@ -495,10 +495,10 @@ Payroll → Social Insurance: CNAS contributions paid through payroll count towa
 ### Research Caveats (read before relying on figures)
 
 - Confidence is **high** for the core 2025 payroll mechanics; most figures are corroborated by two or more Big-4 / official-portal sources.
-- The live SFS / CNAS / CNAM rate pages were not directly retrievable at research time (homepages did not expose the schedule; intelcont/cnam pages returned HTTP 403), so primary-authority figures were corroborated via PwC and Moldovan accounting portals rather than read off the authority's own rate schedule. **Confirm against the current annual Social Insurance Budget Law, Health Insurance Fund Law and the Tax Code.**
-- **CNAM split conflict:** several EOR/secondary sites present CNAM as a 4.5% employer + 4.5% employee split, while PwC and the Tax Code position state 9% employee-only with no employer health premium. The 9% employee-only position is adopted here; verify before relying on it.
+- The live SFS / CNAS / CNAM rate pages were not directly retrievable at research time (homepages did not expose the schedule; intelcont/cnam pages returned HTTP 403), so primary-authority figures were corroborated via the secondary summary and Moldovan accounting portals rather than read off the authority's own rate schedule. **Confirm against the current annual Social Insurance Budget Law, Health Insurance Fund Law and the Tax Code.**
+- **CNAM split conflict:** several EOR/secondary sites present CNAM as a 4.5% employer + 4.5% employee split, while the secondary summary and the Tax Code position state 9% employee-only with no employer health premium. The 9% employee-only position is adopted here; verify before relying on it.
 - salarii.md mislabels the 9% as "CNAS" — it is CNAM.
-- 2025-specific dependent/spouse exemption amounts (MDL 9,900 / 21,780) and the major exemption (MDL 34,620) are taken from PwC (now labelled 2026) and salarii.md's 2025 table; they match across both years — verify the 2025 Tax Policy annex for exact-year precision.
+- 2025-specific dependent/spouse exemption amounts (MDL 9,900 / 21,780) and the major exemption (MDL 34,620) are taken from the secondary summary (now labelled 2026) and salarii.md's 2025 table; they match across both years — verify the 2025 Tax Policy annex for exact-year precision.
 - No general wage ceiling applies to the percentage CNAS/CNAM rates for employees; fixed-sum ceilings apply only to non-employee (self-employed) categories.
 - The daily late-payment interest rate (majorare de întârziere) is set annually by the Ministry of Finance and was not captured as a precise 2025 figure — confirm the current rate on sfs.md.
 

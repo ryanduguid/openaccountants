@@ -4,8 +4,8 @@ description: "Source-cited draft for Angola personal income tax in tax year 2025
 jurisdiction: AO
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -59,9 +59,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **IRT band AOA 2,500,001 to 5,000,000** — AOA 517,249 + 24% on the excess over 2,500,001  _([Lei n.º 18/24, Anexo I, 10.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **IRT band AOA 5,000,001 to 10,000,000** — AOA 1,117,249 + 24.5% on the excess over 5,000,001  _([Lei n.º 18/24, Anexo I, 11.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **IRT band above AOA 10,000,000** — AOA 2,342,248 + 25% on the excess over 10,000,001 (12.º Escalão, *Acima 10 000 001*)  _([Lei n.º 18/24, Anexo I, 12.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
-- **Individual residence basis** — IRT applies to income from work performed in Angola; residents and non-residents are taxed on Angola-source employment income (approx — confirm)  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
+- **Individual residence basis** — IRT is due by individuals, resident in Angola or not, on income from services rendered directly or indirectly to persons or entities with their domicile, seat, effective management or permanent establishment in Angola; crew of ships and aircraft of such enterprises are always treated as earning the income in Angola  _(Código do Imposto sobre os Rendimentos do Trabalho (Lei n.º 18/14 as amended by Lei n.º 28/20), art. 4 — https://lex.ao/docs/assembleia-nacional/2014/lei-n-o-18-14-de-22-de-outubro/)_
 - **Independent services (Group B)**: article 16(2) applies 6.5% where tax is withheld at source. Article 16(3) applies 25% to the taxable base not subject to withholding. These are separate mechanisms; the monthly Group A bands do not provide the Group B withholding scale. Incidental services have a separate cross-reference to Industrial Tax rules in article 16(4). [Lei n.º 28/20, art. 16](https://www.bancoeconomico.ao/media/3172/lei28-20-22dejulhoalteracoescirt.pdf).
-- **Filing requirement for employees** — Employees with only employment income are not required to file; IRT is withheld monthly by the employer  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
+- **Filing requirement for employees** — Group A tax is assessed and paid monthly by the paying entity, which files the annual Modelo 2 in February listing each beneficiary; the code sets no individual return for employees with only Group A income  _(Código do Imposto sobre os Rendimentos do Trabalho (Lei n.º 18/14 as amended by Lei n.º 28/20), arts. 10, 11 and 12 — https://lex.ao/docs/assembleia-nacional/2014/lei-n-o-18-14-de-22-de-outubro/)_
 
 ## Group C — the third IRT group this guide had omitted entirely
 

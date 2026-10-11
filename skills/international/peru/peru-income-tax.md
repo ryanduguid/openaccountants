@@ -1,10 +1,10 @@
 ---
 name: peru-income-tax
 description: Use this skill whenever asked about Peru income tax (Impuesto a la Renta) for individuals — especially rentas de trabajo (4ta categoría independent services and 5ta categoría employment). Trigger on phrases like "how much income tax do I pay in Peru", "Impuesto a la Renta", "Formulario Virtual 709", "renta anual", "recibos por honorarios", "cuarta categoría", "quinta categoría", "rentas de trabajo", "deducción 7 UIT", "deducción adicional 3 UIT", "suspensión de retenciones 4ta", "SUNAT income tax", "UIT", "tramos del impuesto", "renta neta", or any question about filing or computing Peruvian individual income tax. Also trigger when preparing or reviewing a Formulario Virtual N° 709, computing the 7-UIT and 20% deductions, or advising on monthly withholding and suspension. This skill covers the UIT-indexed progressive scale (8/14/17/20/30%), the 7-UIT and additional 3-UIT deductions, the 20% cap for 4ta categoría, withholding, suspension thresholds, FV 709 filing and the cronograma de vencimientos. ALWAYS read this skill before touching any Peru income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: PE
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Peru Income Tax (Impuesto a la Renta — Rentas de Trabajo)
 
-## Peru Income Tax (Impuesto a la Renta — Rentas de Trabajo) Skill v0.2
+## Peru Income Tax (Impuesto a la Renta — Rentas de Trabajo) Skill v0.3
 
 > **DISAMBIGUATION.** This skill is for **PERU** (the Andean republic, capital **Lima**). Currency is the **sol (S/ / PEN)** — **NOT** the Panamanian balboa. The tax authority is **SUNAT** (Superintendencia Nacional de Aduanas y de Administración Tributaria). The tax is **Impuesto a la Renta**. If you find content referencing Panama, the balboa, or a flat-rate Panamanian scale, it is wrong — discard it and use this file.
 
@@ -41,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | TY2025: staggered by last RUC digit, **27 May 2026 — 10 June 2026** (Res. Sup. N° 386-2025/SUNAT) — see Section 5.6 |
 | Validated by | Verified by Maria Clemencia Valverde Rios (CPA) on 2026-06-29 |
 | Validation date | Verified by Maria Clemencia Valverde Rios (CPA) on 2026-06-29 |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Progressive Scale — Rentas de Trabajo (4ta + 5ta + foreign-source)
 
@@ -469,7 +469,7 @@ ONBOARDING QUESTIONS — PERU IMPUESTO A LA RENTA (RENTAS DE TRABAJO)
 | --- | --- |
 | Progressive scale (8/14/17/20/30%) | SUNAT Orientación — Tasas del impuesto rentas de trabajo: https://orientacion.sunat.gob.pe/7076-05-tasas-del-impuesto-rentas-de-trabajo |
 | Tax computation method | SUNAT Orientación — Cálculo del impuesto: https://orientacion.sunat.gob.pe/3071-02-calculo-del-impuesto |
-| Categories, 20% & 7-UIT, non-resident 30% | PwC Worldwide Tax Summaries — Peru Individual: https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income (and /deductions, /tax-administration, /income-determination) |
+| Categories, 20% & 7-UIT, non-resident 30% | secondary summary, Peru Individual: (and /deductions, /tax-administration, /income-determination) |
 | Additional 3-UIT deduction | SUNAT — Deducción adicional para rentas de trabajo: https://renta.sunat.gob.pe/personas/deduccion-adicional-para-rentas-de-trabajo |
 | FV 709 cronograma (TY2025) | SUNAT — Cronograma Renta Anual 2025 FV 709: https://renta.sunat.gob.pe/personas/cronograma-de-declaracion-renta-anual-2025-formulario-ndeg-709 (Res. Sup. N° 386-2025/SUNAT) |
 | Suspension of 4ta withholding | SUNAT — Suspensión de retenciones: https://personas.sunat.gob.pe/trabajador-independiente/suspension-retenciones |

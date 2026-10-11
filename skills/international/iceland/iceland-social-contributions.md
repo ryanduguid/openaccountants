@@ -1,10 +1,10 @@
 ---
 name: iceland-social-contributions
 description: Use this skill whenever asked about Iceland (Ísland) social security contributions, payroll levies, and mandatory pension for employers, employees, and self-employed individuals. Trigger on phrases like "how much social security do I pay in Iceland", "tryggingagjald", "social security contribution Iceland", "payroll tax Iceland", "lífeyrissjóður", "mandatory pension fund", "occupational pension contribution", "4% employee pension", "11.5% employer pension", "séreignarsparnaður", "additional voluntary pension", "A1 certificate Iceland", "fishermen social security", "staðgreiðsla withholding", "self-employed pension reiknað endurgjald", or any question about Icelandic social/payroll contribution obligations. Also trigger when classifying bank statement transactions for tryggingagjald remittances, pension fund (lífeyrissjóður) debits, or Skatturinn withholding payments from Landsbankinn, Íslandsbanki, Arion banki, or other Icelandic banks. This skill covers the 6.35% general payroll levy (tryggingagjald), fishermen and A1 reduced rates, the 15.5% mandatory occupational pension split (4% employee / 11.5% employer), voluntary pension, self-employed contributions, employer pension tax-free caps, the monthly PAYE/staðgreiðsla remittance cycle, bank statement classification, and edge cases. ALWAYS read this skill before touching any Icelandic social contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: IS
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Iceland Social Security Contributions and Mandatory Pension
 
-## Iceland Social Security Contributions and Mandatory Pension -- Skill v0.1
+## Iceland Social Security Contributions and Mandatory Pension -- Skill v0.2
 
-Tier 2 (research-verified) skill. Figures are drawn from Skatturinn (Iceland Revenue and Customs) official Key Rates 2025 and 2026 pages, KPMG Icelandic Tax Facts 2025, PwC Worldwide Tax Summaries, and the Central Bank of Iceland. This skill has NOT yet been signed off by an Icelandic licensed accountant/tax adviser. All outputs require professional review before filing. Items marked [RESEARCH GAP — reviewer to confirm] were not pinned to an authoritative English-language source in research and must be verified.
+Tier 2 (research-verified) skill. Figures are drawn from Skatturinn (Iceland Revenue and Customs) official Key Rates 2025 and 2026 pages, KPMG Icelandic Tax Facts 2025, a secondary practitioner summary, and the Central Bank of Iceland. This skill has NOT yet been signed off by an Icelandic licensed accountant/tax adviser. All outputs require professional review before filing. Items marked [RESEARCH GAP — reviewer to confirm] were not pinned to an authoritative English-language source in research and must be verified.
 
 ## Section 1 -- Quick reference
 
@@ -34,16 +34,16 @@ Tier 2 (research-verified) skill. Figures are drawn from Skatturinn (Iceland Rev
 | General payroll levy (tryggingagjald) | 6.35% of total gross remuneration, employer-paid, NO ceiling (2025 & 2026 unchanged) (Skatturinn Key Rates 2025/2026; KPMG sec 4.2) |
 | Fishermen/seamen levy | 7.00% (6.35% + 0.65% surcharge) (KPMG sec 4.2) |
 | A1-certificate (EU/EEA) reduced levy | 0.425% (KPMG sec 4.2 & fn 6) |
-| Mandatory pension — employee | 4% of total wages (deductible from income-tax base) (PwC; KPMG sec 4.2/13.1) |
-| Mandatory pension — employer | 11.5% of total wages (minimum) (PwC; KPMG fn 7) |
-| Mandatory pension — total minimum | 15.5% (4% + 11.5%) (PwC; Central Bank of Iceland) |
-| Pension age range | Ages 16–70 (mandatory obligation) (PwC; Central Bank of Iceland) |
+| Mandatory pension — employee | 4% of total wages (deductible from income-tax base) (secondary summary; KPMG sec 4.2/13.1) |
+| Mandatory pension — employer | 11.5% of total wages (minimum) (secondary summary; KPMG fn 7) |
+| Mandatory pension — total minimum | 15.5% (4% + 11.5%) (secondary summary; Central Bank of Iceland) |
+| Pension age range | Ages 16–70 (mandatory obligation) (secondary summary; Central Bank of Iceland) |
 | Self-employed | Pays tryggingagjald 6.35% AND full pension 15.5% on reckoned remuneration (KPMG sec 13.1 fn 31 & 4.2) |
-| Remittance cycle | Monthly PAYE/staðgreiðsla; due by the 15th of the following month (PwC tax admin; Skatturinn) |
+| Remittance cycle | Monthly PAYE/staðgreiðsla; due by the 15th of the following month (secondary summary, tax admin; Skatturinn) |
 | Currency | ISK only (Icelandic króna) |
 | Validated by | Pending — requires sign-off by an Icelandic licensed accountant/tax adviser |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Contribution overview (per ISK 100 of gross wages, general case)**
 
@@ -81,7 +81,7 @@ Arithmetic check: employer 6.35 + 11.50 = 17.85; combined 17.85 + 4.00 = 21.85. 
 - **R-IS-SSC-1 — Gross remuneration unknown** — Trigger: gross pay or reckoned remuneration not provided. Message: "Gross remuneration is mandatory for tryggingagjald and pension computation. Both the 6.35% levy and the 15.5% pension are percentages of total wages with no ceiling. Cannot proceed without this figure."
 - **R-IS-SSC-2 — Penalty / arrears quantification** — Trigger: client has overdue tryggingagjald or withholding and wants the penalty quantified. Message: "Icelandic default-interest (dráttarvextir) and the statutory mark-up (álag) are set by law and re-set periodically by the Central Bank; the exact current percentage was not confirmed from an English-language authoritative source [RESEARCH GAP — reviewer to confirm]. Do not estimate penalties. Escalate to an Icelandic licensed accountant with the Skatturinn statement of account."
 - **R-IS-SSC-3 — A1 certificate / posted worker** — Trigger: worker claims to remain insured abroad under an EU/EEA A1 certificate. Message: "Reduced tryggingagjald (0.425%) applies only on production of a valid A1 certificate confirming the worker is socially insured in another EU/EEA state. Pension and social-security coordination for posted workers is fact-specific. Escalate to a reviewer; do not apply the reduced levy without sighting the A1."
-- **R-IS-SSC-4 — Employer pension tax-free cap / fringe benefit** — Trigger: employer contributes above the statutory minimum, or client asks whether the employer's pension contribution is taxable to the employee. Message: "Employer pension contributions are tax-free to the employee only up to 12% of remuneration AND ISK 2,000,000 per year; the excess is taxable employee income (PwC; KPMG fn 8). Confirm the contribution structure with a reviewer before treating any portion as tax-free."
+- **R-IS-SSC-4 — Employer pension tax-free cap / fringe benefit** — Trigger: employer contributes above the statutory minimum, or client asks whether the employer's pension contribution is taxable to the employee. Message: "Employer pension contributions are tax-free to the employee only up to 12% of remuneration AND ISK 2,000,000 per year; the excess is taxable employee income (secondary summary; KPMG fn 8). Confirm the contribution structure with a reviewer before treating any portion as tax-free."
 
 ## Section 3 -- Payment pattern library
 
@@ -156,7 +156,7 @@ Classification: EXCLUDE from VAT. Deductible employer payroll levy. Arithmetic: 
 
 Input line: `10.02.2025 ; GILDI LÍFEYRISSJÓÐUR ; DEBIT ; LÍFEYRIR JAN ; -310,000 ; ISK`
 
-Reasoning: Matches "LÍFEYRISSJÓÐUR" (pattern 3.2). On ISK 2,000,000 of wages the mandatory pension is 15.5% = ISK 310,000, split 4% employee (ISK 80,000, withheld from pay) + 11.5% employer (ISK 230,000) (PwC; KPMG fn 7; Central Bank of Iceland). Exclude from VAT.
+Reasoning: Matches "LÍFEYRISSJÓÐUR" (pattern 3.2). On ISK 2,000,000 of wages the mandatory pension is 15.5% = ISK 310,000, split 4% employee (ISK 80,000, withheld from pay) + 11.5% employer (ISK 230,000) (secondary summary; KPMG fn 7; Central Bank of Iceland). Exclude from VAT.
 
 Classification: EXCLUDE from VAT. Employer portion is a payroll cost; employee 4% is deductible from the employee's income-tax base. Arithmetic: 2,000,000 × 0.155 = 310,000; 80,000 + 230,000 = 310,000. ✓
 
@@ -206,7 +206,7 @@ These rules apply when payroll/bank-statement data is clear and all required inp
 
 ### Rule 3 — Mandatory pension split
 
-- **Mandatory pension formula** — Mandatory pension = total_wages × 15.5% = employee 4% + employer 11.5% (minimum). The employee's 4% is deductible from the employee's income-tax base; the employer's 11.5% is a payroll cost.  _(PwC; KPMG sec 4.2/13.1; Central Bank of Iceland)_
+- **Mandatory pension formula** — Mandatory pension = total_wages × 15.5% = employee 4% + employer 11.5% (minimum). The employee's 4% is deductible from the employee's income-tax base; the employer's 11.5% is a payroll cost.  _(secondary summary; KPMG sec 4.2/13.1; Central Bank of Iceland)_
 
 ### Rule 4 — Alternative/private pension fund adds 2% employer
 
@@ -222,15 +222,15 @@ These rules apply when payroll/bank-statement data is clear and all required inp
 
 ### Rule 7 — Pension obligation age range
 
-- **Pension obligation age range rule** — Mandatory pension applies to wage earners and self-employed aged 16–70.  _(PwC; Central Bank of Iceland)_
+- **Pension obligation age range rule** — Mandatory pension applies to wage earners and self-employed aged 16–70.  _(secondary summary; Central Bank of Iceland)_
 
 ### Rule 8 — Employer pension tax-free cap
 
-- **Employer pension tax-free cap rule** — Employer pension contributions are tax-free to the employee unless they exceed 12% of remuneration AND ISK 2,000,000 per year — the excess is taxable employee income.  _(PwC; KPMG fn 8)_
+- **Employer pension tax-free cap rule** — Employer pension contributions are tax-free to the employee unless they exceed 12% of remuneration AND ISK 2,000,000 per year — the excess is taxable employee income.  _(secondary summary; KPMG fn 8)_
 
 ### Rule 9 — Remittance schedule (PAYE / staðgreiðsla)
 
-- **Remittance schedule rule** — Employer withholds income tax and tryggingagjald monthly; the remittance (skilagrein staðgreiðslu) is due by the 15th of the month following the wage-payment month (14 days after wages paid).  _(PwC tax admin; Skatturinn)_
+- **Remittance schedule rule** — Employer withholds income tax and tryggingagjald monthly; the remittance (skilagrein staðgreiðslu) is due by the 15th of the month following the wage-payment month (14 days after wages paid).  _(secondary summary, tax admin; Skatturinn)_
 
 ### Rule 10 — Contributions are not VAT supplies
 
@@ -250,7 +250,7 @@ When data is ambiguous or client circumstances are unclear, flag these situation
 
 ### T2-3 — Employer contribution above tax-free cap
 
-- **T2-3** — Trigger: Employer contributes more than 11.5%, or total employer pension nears 12% / ISK 2,000,000/year. Issue: Excess over 12% of remuneration AND ISK 2,000,000/year becomes taxable employee income (PwC; KPMG fn 8). Action: Flag for reviewer to quantify the taxable fringe benefit.  _(PwC; KPMG fn 8)_
+- **T2-3** — Trigger: Employer contributes more than 11.5%, or total employer pension nears 12% / ISK 2,000,000/year. Issue: Excess over 12% of remuneration AND ISK 2,000,000/year becomes taxable employee income (secondary summary; KPMG fn 8). Action: Flag for reviewer to quantify the taxable fringe benefit.  _(secondary summary; KPMG fn 8)_
 
 ### T2-4 — Self-employed reckoned remuneration (reiknað endurgjald)
 
@@ -378,9 +378,9 @@ Internal-composition note: KPMG (sec 1.3) describes the 6.35% total as bundling 
 
 | Contributor | Rate | Notes | Source |
 | --- | --- | --- | --- |
-| Employee | 4% of total wages | Deductible from income-tax base | PwC; KPMG sec 4.2/13.1 |
-| Employer | 11.5% of total wages (min) | + 2% extra to alt./private fund | PwC; KPMG fn 7 |
-| **Total minimum** | **15.5%** | 4% + 11.5% | PwC; Central Bank of Iceland |
+| Employee | 4% of total wages | Deductible from income-tax base | secondary summary; KPMG sec 4.2/13.1 |
+| Employer | 11.5% of total wages (min) | + 2% extra to alt./private fund | secondary summary; KPMG fn 7 |
+| **Total minimum** | **15.5%** | 4% + 11.5% | secondary summary; Central Bank of Iceland |
 | Voluntary employee | up to +4% (deductible) | optional (séreignarsparnaður) | KPMG sec 4.2 |
 | Voluntary employer match | typically +2% | optional | KPMG sec 4.2 |
 | Self-employed | 15.5% (both parts) | on reckoned remuneration | KPMG sec 13.1 fn 31 |
@@ -399,7 +399,7 @@ The 4% employee pension is deductible from the income-tax base; the figures belo
 | 2 | 472,006 – 1,325,127 | 37.99% |
 | 3 | over 1,325,127 | 46.29% |
 
-**Income year 2026 bracket table**  _(Skatturinn Key Rates 2026; PwC; Bloomberg Tax MOF 23 Dec 2025)_
+**Income year 2026 bracket table**  _(Skatturinn Key Rates 2026; secondary summary; Bloomberg Tax MOF 23 Dec 2025)_
 
 | Band | Monthly ISK | Combined rate |
 | --- | --- | --- |
@@ -408,7 +408,7 @@ The 4% employee pension is deductible from the income-tax base; the figures belo
 | 3 | over 1,398,450 | 46.29% |
 
 - **Personal tax credit** — 2025 ISK 68,691/month (824,288/year); 2026 ISK 72,492/month (869,898/year)  _(Skatturinn Key Rates)_
-- **Capital income tax** — flat 22% for individuals  _(Skatturinn; PwC)_
+- **Capital income tax** — flat 22% for individuals  _(Skatturinn; secondary summary)_
 
 ### Thresholds
 
@@ -417,10 +417,10 @@ The 4% employee pension is deductible from the income-tax base; the figures belo
 | Item | Value | Source |
 | --- | --- | --- |
 | VAT (VSK) registration | ISK 2,000,000 taxable turnover in any rolling 12 months; register (RSK 5.02) within 8 days | Skatturinn VAT; Avalara |
-| Pension obligation age range | 16–70 | PwC; Central Bank of Iceland |
-| Employer pension tax-free cap | excess over BOTH 12% of remuneration AND ISK 2,000,000/year is taxable | PwC; KPMG fn 8 |
+| Pension obligation age range | 16–70 | secondary summary; Central Bank of Iceland |
+| Employer pension tax-free cap | excess over BOTH 12% of remuneration AND ISK 2,000,000/year is taxable | secondary summary; KPMG fn 8 |
 | Construction Fund for the Elderly | ISK 14,093 (assessment 2025) / 14,614 (assessment 2026), individuals 16–69 | Skatturinn Key Rates 2025/2026 |
-| National Broadcasting fee (Útvarpsgjald) | ISK 21,400 (assessment 2025) / 22,200 (assessment 2026); 2026 income threshold ISK 2,617,618 | Skatturinn Key Rates 2025/2026; PwC |
+| National Broadcasting fee (Útvarpsgjald) | ISK 21,400 (assessment 2025) / 22,200 (assessment 2026); 2026 income threshold ISK 2,617,618 | Skatturinn Key Rates 2025/2026; secondary summary |
 | Children's income flat rate | 6% on a child's (born 2010+) income over ISK 300,000/year (2026, up from 180,000) | Skatturinn Key Rates 2026; Bloomberg Tax |
 | Minimum wage | NONE statutory — collective-agreement floors only (~ISK 425,985/month under some 2025 SGS agreements, indicative) | Union/secondary **[RESEARCH GAP — reviewer to confirm]** |
 
@@ -430,8 +430,8 @@ The 4% employee pension is deductible from the income-tax base; the figures belo
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
-| Skilagrein staðgreiðslu | Monthly withholding return (income tax + tryggingagjald) | 15th of month following wage payment | PwC tax admin; Skatturinn |
-| Individual income tax return (framtal) | Annual personal return | by 14 March of following year; final assessment by 31 May | PwC tax admin; KPMG |
+| Skilagrein staðgreiðslu | Monthly withholding return (income tax + tryggingagjald) | 15th of month following wage payment | secondary summary, tax admin; Skatturinn |
+| Individual income tax return (framtal) | Annual personal return | by 14 March of following year; final assessment by 31 May | secondary summary, tax admin; KPMG |
 | RSK 5.02 | VAT registration application | within 8 days of crossing ISK 2,000,000 / 12 months | Skatturinn; Avalara |
 | Corporate income tax return | Annual company return | 31 May (set annually; was 31 May 2025) | KPMG Tax Facts 2025 |
 
@@ -443,7 +443,7 @@ The 4% employee pension is deductible from the income-tax base; the figures belo
 | --- | --- | --- |
 | Default interest (dráttarvextir) | Statutory rate (Central Bank base + premium) on overdue claims; cannot be negotiated. Exact % not in an English authoritative source **[RESEARCH GAP — reviewer to confirm]** | Skatturinn Collection of Liabilities |
 | Surcharge / mark-up (álag) | Statutory mark-up added to principal in defined circumstances (income-tax álag commonly up to 25% of understated tax); exact % unconfirmed **[RESEARCH GAP — reviewer to confirm]** | Skatturinn Collection of Liabilities |
-| Late withholding remittance | Triggers penalty interest + possible surcharge; persistent default → collection action | Skatturinn; PwC |
+| Late withholding remittance | Triggers penalty interest + possible surcharge; persistent default → collection action | Skatturinn; secondary summary |
 
 ### Test suite
 
@@ -461,7 +461,7 @@ Employer contributes 14% pension on ISK 2,500,000/year remuneration. → 14% of 
 
 Bank line "STAÐGREIÐSLA" bundling income tax + tryggingagjald. → Split using the skilagrein return; do not treat the whole debit as either one. Flag if the return is unavailable.
 
-Worker aged 72. → Mandatory pension obligation runs 16–70; flag for reviewer whether contributions are still due (PwC; Central Bank of Iceland).
+Worker aged 72. → Mandatory pension obligation runs 16–70; flag for reviewer whether contributions are still due (secondary summary; Central Bank of Iceland).
 
 ### Prohibitions
 

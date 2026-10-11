@@ -1,10 +1,10 @@
 ---
 name: bulgaria-income-tax
 description: Use this skill whenever asked about Bulgaria personal income tax (данък върху доходите на физическите лица) for self-employed individuals, freelancers, sole traders (ET), and individuals. Trigger on phrases like "how much income tax do I pay in Bulgaria", "flat tax Bulgaria", "10% tax", "GDD", "godishna danachna deklaratsiya", "Art. 50 return", "form 2001", "ZDDFL", "freelancer tax Bulgaria", "self-employed tax Bulgaria", "normative expense deduction", "25% deduction", "40% deduction liberal profession", "ET sole trader 15%", "self-insured contributions", "osiguritelen dohod", "insurable income", "NRA / NAP", "NSSI / NOI", "dividend withholding tax Bulgaria", or any question about filing or computing personal income tax for a self-employed, freelance, sole-trader, or individual client in Bulgaria. Also trigger when preparing or reviewing an annual return (Art. 50 ZDDFL / form 2001) or quarterly advance PIT, computing the 25%/40%/60%/10% normative expense deduction, classifying freelancer/sole-trader bank-statement lines, or advising on social-security and health contributions for self-insured persons. This skill covers the FLAT 10% PIT (15% for sole traders / ET), the 5% final dividend withholding tax, normative expense deductions, child tax relief, social-security and health contributions for employees and self-insured persons, the annual return and quarterly advance forms, penalties, the BGN-to-EUR euro changeover (effective 1 Jan 2026), and interaction with VAT and contributions. ALWAYS read this skill before touching any Bulgarian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: BG
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -23,30 +23,30 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Bulgaria (Republic of Bulgaria) |
 | Tax | Personal Income Tax -- flat rate |
-| Currency | BGN (Bulgarian lev) until 31 Dec 2025; **EUR from 1 Jan 2026** at the fixed rate 1 EUR = 1.95583 BGN (PwC, *Other taxes*; BTA) |
+| Currency | BGN (Bulgarian lev) until 31 Dec 2025; **EUR from 1 Jan 2026** at the fixed rate 1 EUR = 1.95583 BGN (secondary summary, *Other taxes; BTA) |
 | Tax year | Calendar year (1 January -- 31 December) |
-| Primary legislation | Personal Income Taxes Act (ZDDFL / ЗДДФЛ). Sole-trader (ET) base determined under the Corporate Income Tax Act (ZKPO / ЗКПО) (PwC, *Income determination*) |
+| Primary legislation | Personal Income Taxes Act (ZDDFL / ЗДДФЛ). Sole-trader (ET) base determined under the Corporate Income Tax Act (ZKPO / ЗКПО) (secondary summary, *Income determination) |
 | Supporting legislation | Social Insurance Code (KSO / КСО); Health Insurance Act (ZZO / ЗЗО) |
 | Tax authority | National Revenue Agency (NRA / НАП), https://nra.bg |
 | Social security administrator | National Social Security Institute (NSSI / НОИ), https://www.nssi.bg |
 | Policy oversight | Ministry of Finance, https://www.minfin.bg |
 | Filing portal | NRA e-services (electronic filing) |
-| Annual return deadline | 30 April of the following year (individuals); 1 March -- 30 June for sole traders / ET (PwC, *Tax administration*) |
+| Annual return deadline | 30 April of the following year (individuals); 1 March -- 30 June for sole traders / ET (secondary summary, *Tax administration) |
 | Validated by | Pending -- requires sign-off by a Bulgarian licensed accountant / tax adviser |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rates (2025/2026)
 
-**Bulgaria has a single FLAT personal income tax rate. There are NO progressive brackets.** (PwC, *Taxes on personal income*)
+**Bulgaria has a single FLAT personal income tax rate. There are NO progressive brackets.** (secondary summary, *Taxes on personal income)
 
 **Tax Rates table**
 
 | Income type | Rate | Base | Source |
 | --- | --- | --- | --- |
-| Individuals -- all income (employment, freelance / other self-employment, rental, capital gains, other) | **10%** | Annual taxable base | PwC, *Taxes on personal income* |
-| Sole traders (ET -- едноличен търговец) | **15%** | Taxable profit determined under the Corporate Income Tax Act (income minus expenses plus tax adjustments) | PwC, *Income determination* |
-| Dividends and liquidation proceeds | **5%** (final withholding tax) | Gross dividend / liquidation proceeds, Bulgarian and foreign payers | PwC, *Income determination* |
+| Individuals -- all income (employment, freelance / other self-employment, rental, capital gains, other) | **10%** | Annual taxable base | secondary summary, *Taxes on personal income |
+| Sole traders (ET -- едноличен търговец) | **15%** | Taxable profit determined under the Corporate Income Tax Act (income minus expenses plus tax adjustments) | secondary summary, *Income determination |
+| Dividends and liquidation proceeds | **5%** (final withholding tax) | Gross dividend / liquidation proceeds, Bulgarian and foreign payers | secondary summary, *Income determination |
 
 - **No personal/tax-free allowance band** — The flat 10% applies from the first lev of taxable base. Relief is delivered through normative expense deductions and specific tax reliefs (see Sections 5 and 6), not through a 0% band.
 
@@ -56,46 +56,46 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Activity | Statutory deduction from gross | Source |
 | --- | --- | --- |
-| Freelancers / general self-employment | **25%** | PwC, *Deductions* |
-| Liberal professions, royalties / copyright | **40%** | PwC, *Deductions* |
-| Rental income (immovable property) | **10%** | PwC, *Deductions* |
-| Registered agricultural producers | **60%** | PwC, *Deductions* |
+| Freelancers / general self-employment | **25%** | secondary summary, *Deductions |
+| Liberal professions, royalties / copyright | **40%** | secondary summary, *Deductions |
+| Rental income (immovable property) | **10%** | secondary summary, *Deductions |
+| Registered agricultural producers | **60%** | secondary summary, *Deductions |
 
 - **Statutory nature of deduction** — These are statutory percentages applied automatically -- they are NOT itemised receipts. Sole traders (ET) do NOT use normative deductions; they deduct actual expenses under the Corporate Income Tax Act base.
 
 ### Social Security and Health Contribution Rates (2025, employees -- Category III, born after 1959)
 
-Contributions are levied only on **insurable income** between the statutory monthly minimum and maximum (see Thresholds). Persons born after 31 Dec 1959 pay the 1st-pillar state pension (14.8%) PLUS the 5% 2nd-pillar Universal Pension Fund; the two together make up the pension contribution. (PwC, *Other taxes*; Ministry of Economy)
+Contributions are levied only on **insurable income** between the statutory monthly minimum and maximum (see Thresholds). Persons born after 31 Dec 1959 pay the 1st-pillar state pension (14.8%) PLUS the 5% 2nd-pillar Universal Pension Fund; the two together make up the pension contribution. (secondary summary, *Other taxes; Ministry of Economy)
 
 **Social Security and Health Contribution Rates table**
 
 | Fund | Total rate | Employer | Employee | Source |
 | --- | --- | --- | --- | --- |
-| Pension fund (1st pillar, state DOO) | **14.8%** | 8.22% | 6.58% | Ministry of Economy / PwC, *Other taxes* |
-| 2nd-pillar Universal Pension Fund (born after 1959) | **5.0%** | 2.8% | 2.2% | Ministry of Economy / PwC, *Other taxes* |
+| Pension fund (1st pillar, state DOO) | **14.8%** | 8.22% | 6.58% | Ministry of Economy / the secondary summary, *Other taxes* |
+| 2nd-pillar Universal Pension Fund (born after 1959) | **5.0%** | 2.8% | 2.2% | Ministry of Economy / the secondary summary, *Other taxes* |
 | General Sickness & Maternity Fund | **3.5%** | 2.1% | 1.4% | Ministry of Economy |
 | Unemployment Fund | **1.0%** | 0.6% | 0.4% | Ministry of Economy |
-| Accident at Work & Occupational Disease Fund | **0.4% -- 1.1%** (by risk class) | 0.4%--1.1% | 0% (employer only) | PwC, *Other taxes* |
-| Health Insurance (NZOK / NHIF) | **8.0%** | 4.8% | 3.2% | PwC, *Other taxes* |
-| **Social security subtotal (excl. health)** | **24.7% -- 25.4%** | 14.12% -- 14.82% | 10.58% | PwC, *Other taxes* |
-| **GRAND TOTAL contribution burden (social security + health)** | **32.7% -- 33.4%** | **18.92% -- 19.62%** | **13.78%** | PwC, *Other taxes*; Ministry of Economy |
+| Accident at Work & Occupational Disease Fund | **0.4% -- 1.1%** (by risk class) | 0.4%--1.1% | 0% (employer only) | secondary summary, *Other taxes |
+| Health Insurance (NZOK / NHIF) | **8.0%** | 4.8% | 3.2% | secondary summary, *Other taxes |
+| **Social security subtotal (excl. health)** | **24.7% -- 25.4%** | 14.12% -- 14.82% | 10.58% | secondary summary, *Other taxes |
+| **GRAND TOTAL contribution burden (social security + health)** | **32.7% -- 33.4%** | **18.92% -- 19.62%** | **13.78%** | secondary summary, *Other taxes; Ministry of Economy |
 
-> **Arithmetic check (per-fund).** Employee column: pension 6.58 + 2nd-pillar 2.2 + sickness/maternity 1.4 + unemployment 0.4 + accident 0 + health 3.2 = **13.78%**. Employer column (low, 0.4% accident): 8.22 + 2.8 + 2.1 + 0.6 + 0.4 + 4.8 = **18.92%**; (high, 1.1% accident) = **19.62%**. Combined total = 13.78 + 18.92 = **32.70%** to 13.78 + 19.62 = **33.40%**. This reconciles with the PwC aggregate (social security 24.7%--25.4% + health 8.0% = 32.7%--33.4%; employer 18.92%--19.62%, employee 13.78%) and matches the sibling **bulgaria-social-contributions** skill. The earlier "27.3%" figure was incorrect: it omitted the 5% 2nd-pillar Universal Pension Fund from the employee/employer split.
+> **Arithmetic check (per-fund).** Employee column: pension 6.58 + 2nd-pillar 2.2 + sickness/maternity 1.4 + unemployment 0.4 + accident 0 + health 3.2 = **13.78%**. Employer column (low, 0.4% accident): 8.22 + 2.8 + 2.1 + 0.6 + 0.4 + 4.8 = **18.92%**; (high, 1.1% accident) = **19.62%**. Combined total = 13.78 + 18.92 = **32.70%** to 13.78 + 19.62 = **33.40%**. This reconciles with the the secondary summary aggregate (social security 24.7%--25.4% + health 8.0% = 32.7%--33.4%; employer 18.92%--19.62%, employee 13.78%) and matches the sibling **bulgaria-social-contributions** skill. The earlier "27.3%" figure was incorrect: it omitted the 5% 2nd-pillar Universal Pension Fund from the employee/employer split.
 
-> **[RESEARCH GAP -- reviewer to confirm]** The per-fund EMPLOYER/EMPLOYEE split within the pension funds (e.g. 1st-pillar 8.22%/6.58%, 2nd-pillar 2.8%/2.2%) is taken from the Ministry of Economy / PwC reconciliation; the precise statutory split should be confirmed against the Social Insurance Code (KSO) Art. 6 and the current Public Social Insurance Budget Act for the specific scenario. The work-accident rate (0.4%--1.1%) is keyed to the employer's economic-activity / NACE risk class in the Budget Act annex.
+> **[RESEARCH GAP -- reviewer to confirm]** The per-fund EMPLOYER/EMPLOYEE split within the pension funds (e.g. 1st-pillar 8.22%/6.58%, 2nd-pillar 2.8%/2.2%) is taken from the Ministry of Economy / the secondary summary reconciliation; the precise statutory split should be confirmed against the Social Insurance Code (KSO) Art. 6 and the current Public Social Insurance Budget Act for the specific scenario. The work-accident rate (0.4%--1.1%) is keyed to the employer's economic-activity / NACE risk class in the Budget Act annex.
 
 ### Self-Insured Persons (freelancers / self-employed registered as SOL, born after 1959)
 
-Self-insured persons pay ALL contributions themselves on a self-declared insurable income between the statutory min and max, reconciled annually against actual income. They do **NOT** pay unemployment or accident-fund contributions. (PwC, *Other taxes*; Ruskov & Kollegen; innovires)
+Self-insured persons pay ALL contributions themselves on a self-declared insurable income between the statutory min and max, reconciled annually against actual income. They do **NOT** pay unemployment or accident-fund contributions. (secondary summary, *Other taxes; Ruskov & Kollegen; innovires)
 
 **Self-Insured Persons table**
 
 | Component | Rate | Source |
 | --- | --- | --- |
-| Pension fund (1st pillar, state DOO) | 14.8% | PwC, *Other taxes*; Ruskov & Kollegen |
-| 2nd-pillar Universal Pension Fund (born after 1959) | 5.0% | PwC, *Other taxes*; Ruskov & Kollegen |
-| Health insurance (NZOK / NHIF) | 8.0% | PwC, *Other taxes*; Ruskov & Kollegen |
-| **Mandatory minimum (pension 14.8 + 2nd pillar 5.0 + health 8.0, maternity opted out)** | **27.8%** | sum (PwC; Ruskov & Kollegen; innovires) |
+| Pension fund (1st pillar, state DOO) | 14.8% | secondary summary, *Other taxes; Ruskov & Kollegen |
+| 2nd-pillar Universal Pension Fund (born after 1959) | 5.0% | secondary summary, *Other taxes; Ruskov & Kollegen |
+| Health insurance (NZOK / NHIF) | 8.0% | secondary summary, *Other taxes; Ruskov & Kollegen |
+| **Mandatory minimum (pension 14.8 + 2nd pillar 5.0 + health 8.0, maternity opted out)** | **27.8%** | sum (secondary summary; Ruskov & Kollegen; innovires) |
 | General Sickness & Maternity (OPTIONAL) | +3.5% | Ruskov & Kollegen; innovires |
 | **With maternity coverage opted in** | **31.3%** | sum |
 
@@ -237,7 +237,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ## Section 4 -- Worked Examples
 
-All BGN figures apply through 31 Dec 2025; EUR equivalents (1 EUR = 1.95583 BGN) apply from 1 Jan 2026 (PwC, *Other taxes*; BTA).
+All BGN figures apply through 31 Dec 2025; EUR equivalents (1 EUR = 1.95583 BGN) apply from 1 Jan 2026 (secondary summary, *Other taxes; BTA).
 
 ### Example 1 -- Freelancer client payment (income)
 
@@ -245,7 +245,7 @@ All BGN figures apply through 31 Dec 2025; EUR equivalents (1 EUR = 1.95583 BGN)
 `15.03.2025 ; UNICREDIT ПРЕВОД ; STUDIO KREBS EOOD ; ХОНОРАР ФАКТУРА 2025-003 ; +9,600.00 ; BGN`
 
 **Reasoning:**
-Freelancer professional fee, not VAT-registered. Full BGN 9,600 is gross business income. The 25% normative deduction is applied later at the annual computation, NOT line by line (PwC, *Deductions*).
+Freelancer professional fee, not VAT-registered. Full BGN 9,600 is gross business income. The 25% normative deduction is applied later at the annual computation, NOT line by line (secondary summary, *Deductions).
 
 **Classification:** Gross business income = BGN 9,600.
 
@@ -253,7 +253,7 @@ Freelancer professional fee, not VAT-registered. Full BGN 9,600 is gross busines
 
 **Inputs:** General freelancer (25% normative deduction), gross annual income BGN 48,000. Self-insured, declares insurable income of BGN 2,000/month (within the BGN 1,077--4,130 Apr--Dec **2025** band; from 2026 the equivalent band is euro-denominated and moves again on 1 August), with maternity coverage opted in (31.3%).
 
-**Reasoning (PwC, *Deductions* / *Taxes on personal income* / *Other taxes*; Ruskov & Kollegen):**
+**Reasoning (secondary summary, *Deductions* / *Taxes on personal income* / *Other taxes; Ruskov & Kollegen):**
 - Normative deduction 25% = BGN 48,000 x 25% = **BGN 12,000**
 - Income after normative deduction = 48,000 - 12,000 = **BGN 36,000**
 - Annual insurable base = 2,000 x 12 = BGN 24,000; contributions 31.3% = **BGN 7,512**
@@ -268,7 +268,7 @@ Freelancer professional fee, not VAT-registered. Full BGN 9,600 is gross busines
 
 **Inputs:** Sole trader (ET), taxable profit under the CIT-Act base (income minus actual expenses plus adjustments) = BGN 50,000.
 
-**Reasoning (PwC, *Income determination*):**
+**Reasoning (secondary summary, *Income determination):**
 ET profit is taxed at **15%**, NOT 10%, and uses actual expenses (not normative deductions). 50,000 x 15% = **BGN 7,500**.
 
 **Classification:** ET tax = BGN 7,500. Filed/paid 1 March -- 30 June.
@@ -278,16 +278,16 @@ ET profit is taxed at **15%**, NOT 10%, and uses actual expenses (not normative 
 **Input line:**
 `30.06.2025 ; DSK ПРЕВОД ; ALPHA TECH OOD ; ДИВИДЕНТ ; +20,000.00 ; BGN (net after WHT)`
 
-**Reasoning (PwC, *Income determination*):**
+**Reasoning (secondary summary, *Income determination):**
 Dividends carry a **5% final withholding tax**. On gross BGN 20,000 the WHT is BGN 1,000 and net received is BGN 19,000. Because the tax is final, the dividend is **EXCLUDED** from the 10% taxable base -- do not tax it again.
 
 **Classification:** 5% WHT = BGN 1,000 (final). Exclude from the 10% annual base.
 
 ### Example 5 -- Employee monthly payroll (10% PIT on net base)
 
-**Inputs:** Employee (Category III, born after 1959), gross monthly remuneration BGN 3,000 (within the BGN 1,077--4,130 Apr--Dec **2025** insurable band). Employee contribution rate **13.78%** (PwC, *Other taxes*; Ministry of Economy).
+**Inputs:** Employee (Category III, born after 1959), gross monthly remuneration BGN 3,000 (within the BGN 1,077--4,130 Apr--Dec **2025** insurable band). Employee contribution rate **13.78%** (secondary summary, *Other taxes; Ministry of Economy).
 
-**Reasoning (PwC, *Other taxes*; Ministry of Economy):**
+**Reasoning (secondary summary, *Other taxes; Ministry of Economy):**
 The monthly PIT base = gross pay minus mandatory EMPLOYEE social-security and health contributions; the 10% is then applied and withheld by the employer:
 - Employee contributions = 3,000 x 13.78% = **BGN 413.40**
 - Monthly PIT base = 3,000 - 413.40 = **BGN 2,586.60**
@@ -300,7 +300,7 @@ The monthly PIT base = gross pay minus mandatory EMPLOYEE social-security and he
 
 **Inputs:** Individual with 2 dependent children, annual taxable base before relief BGN 30,000.
 
-**Reasoning (PwC, *Deductions*):**
+**Reasoning (secondary summary, *Deductions):**
 Child relief for two children reduces the annual taxable base by **BGN 12,000**. New base = 30,000 - 12,000 = BGN 18,000. Tax saving = 12,000 x 10% = **BGN 1,200**. (One child = BGN 6,000 reduction; three+ = BGN 18,000; disabled child = BGN 12,000.)
 
 **Classification:** Reduced base BGN 18,000; tax saving BGN 1,200.
@@ -318,11 +318,11 @@ Child relief for two children reduces the annual taxable base by **BGN 12,000**.
 
 ### 5.1 Flat-Rate Principle
 
-- **Flat-rate principle** — Bulgaria applies a single flat **10%** PIT to virtually all individual income (employment, freelance/other self-employment, rental, capital gains, other), with **no progressive bands and no tax-free allowance** (PwC, *Taxes on personal income*). The two exceptions are sole traders (ET) at **15%** and dividends at **5%** final withholding (PwC, *Income determination*).  _(Personal Income Taxes Act (ZDDFL))_
+- **Flat-rate principle** — Bulgaria applies a single flat **10%** PIT to virtually all individual income (employment, freelance/other self-employment, rental, capital gains, other), with **no progressive bands and no tax-free allowance** (secondary summary, *Taxes on personal income). The two exceptions are sole traders (ET) at **15%** and dividends at **5%** final withholding (secondary summary, *Income determination).  _(Personal Income Taxes Act (ZDDFL))_
 
 ### 5.2 Normative Expense Deductions (non-ET individuals)
 
-**Normative Expense Deductions table (5.2)**  _(ZDDFL (PwC, *Deductions*))_
+**Normative Expense Deductions table (5.2)**  _(ZDDFL (secondary summary, *Deductions))_
 
 | Activity | Normative deduction |
 | --- | --- |
@@ -331,11 +331,11 @@ Child relief for two children reduces the annual taxable base by **BGN 12,000**.
 | Rental income (immovable property) | 10% |
 | Registered agricultural producers | 60% |
 
-- **Deduction application** — Freelancers and self-employed individuals (non-ET) deduct a STATUTORY normative percentage from gross income BEFORE the 10% PIT -- they do not itemise receipts.  _(ZDDFL (PwC, *Deductions*))_
+- **Deduction application** — Freelancers and self-employed individuals (non-ET) deduct a STATUTORY normative percentage from gross income BEFORE the 10% PIT -- they do not itemise receipts.  _(ZDDFL (secondary summary, *Deductions))_
 
 ### 5.3 Sole Trader (ET) Base
 
-- **Sole trader ET base** — Sole traders compute taxable profit under the CIT-Act base (income minus ACTUAL expenses plus tax adjustments) and pay **15%**. They do NOT use normative deductions and file/pay 1 March -- 30 June.  _(ZDDFL referring to the Corporate Income Tax Act (ZKPO) (PwC, *Income determination*))_
+- **Sole trader ET base** — Sole traders compute taxable profit under the CIT-Act base (income minus ACTUAL expenses plus tax adjustments) and pay **15%**. They do NOT use normative deductions and file/pay 1 March -- 30 June.  _(ZDDFL referring to the Corporate Income Tax Act (ZKPO) (secondary summary, *Income determination))_
 
 ### 5.4 Contributions Reduce the PIT Base
 
@@ -373,15 +373,15 @@ Child relief for two children reduces the annual taxable base by **BGN 12,000**.
 
 ### 5.6 Dividends
 
-- **Dividend final withholding treatment** — Dividends and liquidation proceeds (Bulgarian and foreign payers) carry a **5% FINAL** withholding tax. Once withheld, they are excluded from the 10% annual base -- no double taxation.  _(ZDDFL (PwC, *Income determination*))_
+- **Dividend final withholding treatment** — Dividends and liquidation proceeds (Bulgarian and foreign payers) carry a **5% FINAL** withholding tax. Once withheld, they are excluded from the 10% annual base -- no double taxation.  _(ZDDFL (secondary summary, *Income determination))_
 
 ### 5.7 Child Tax Relief
 
-- **Child tax relief amounts** — The annual taxable base is reduced by: **BGN 6,000 / EUR 3,067.75** (one child), **BGN 12,000 / EUR 6,135.50** (two), **BGN 18,000 / EUR 9,203.25** (three or more), and **BGN 12,000 / EUR 6,135.50** for a disabled child (PwC, *Deductions*; EUR at 1 EUR = 1.95583 BGN). Only one parent may claim; usable monthly in advance via the employer or through the annual/quarterly return.  _(ZDDFL (PwC, *Deductions*))_
+- **Child tax relief amounts** — The annual taxable base is reduced by: **BGN 6,000 / EUR 3,067.75** (one child), **BGN 12,000 / EUR 6,135.50** (two), **BGN 18,000 / EUR 9,203.25** (three or more), and **BGN 12,000 / EUR 6,135.50** for a disabled child (the secondary summary, *Deductions*; EUR at 1 EUR = 1.95583 BGN). Only one parent may claim; usable monthly in advance via the employer or through the annual/quarterly return.  _(ZDDFL (secondary summary, *Deductions))_
 
 ### 5.8 Filing and Payment
 
-**Filing and Payment table**  _(ZDDFL (PwC, *Tax administration*))_
+**Filing and Payment table**  _(ZDDFL (secondary summary, *Tax administration))_
 
 | Item | Detail |
 | --- | --- |
@@ -398,7 +398,7 @@ Child relief for two children reduces the annual taxable base by **BGN 12,000**.
 
 | Scenario | Income Tax Treatment |
 | --- | --- |
-| VAT registration threshold | Turnover above **BGN 100,000 (EUR 51,130)** over the relevant/previous calendar year (PwC, *Income determination*) |
+| VAT registration threshold | Turnover above **BGN 100,000 (EUR 51,130)** over the relevant/previous calendar year (secondary summary, *Income determination) |
 | VAT collected on sales (registered) | NOT income -- exclude from the gross base |
 | Input VAT recovered (registered) | NOT an expense (ET) -- exclude |
 | Not VAT-registered | Gross (VAT-inclusive) amount is the cost/income |
@@ -420,7 +420,7 @@ Child relief for two children reduces the annual taxable base by **BGN 12,000**.
 
 ### 6.1 Correct Normative-Deduction Percentage
 
-- **Normative deduction percentages by activity** — 25% (general), 40% (liberal professions / royalties), 60% (registered agricultural producers), 10% (rental) -- the activity classification drives a materially different result (PwC, *Deductions*). **Conservative default:** 25% (general self-employment) until activity confirmed. **Flag for reviewer:** Confirm the activity matches the claimed deduction percentage.  _(PwC, *Deductions*)_
+- **Normative deduction percentages by activity** — 25% (general), 40% (liberal professions / royalties), 60% (registered agricultural producers), 10% (rental) -- the activity classification drives a materially different result (secondary summary, *Deductions). **Conservative default:** 25% (general self-employment) until activity confirmed. **Flag for reviewer:** Confirm the activity matches the claimed deduction percentage.  _(secondary summary, *Deductions)_
 
 ### 6.2 Self-Insured Maternity-Coverage Election
 
@@ -444,7 +444,7 @@ Child relief for two children reduces the annual taxable base by **BGN 12,000**.
 
 ### 6.7 Residency Determination
 
-- **Residency determination rule** — Resident (permanent address with centre of vital interests, OR >183 days in any 12-month period) = worldwide income; non-resident = Bulgarian-source only (PwC, *Taxes on personal income*). **Flag for reviewer:** Confirm residency where presence is borderline.  _(PwC, *Taxes on personal income*)_
+- **Residency determination rule** — Resident (permanent address with centre of vital interests, OR >183 days in any 12-month period) = worldwide income; non-resident = Bulgarian-source only (secondary summary, *Taxes on personal income). **Flag for reviewer:** Confirm residency where presence is borderline.  _(secondary summary, *Taxes on personal income)_
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -570,15 +570,15 @@ ONBOARDING QUESTIONS -- BULGARIA INCOME TAX
 
 | Topic | Reference | Source |
 | --- | --- | --- |
-| Flat 10% PIT; residency | Personal Income Taxes Act (ZDDFL) | PwC, *Taxes on personal income* |
-| Sole trader (ET) 15% base | ZDDFL + Corporate Income Tax Act (ZKPO) | PwC, *Income determination* |
-| Dividends 5% final WHT | ZDDFL | PwC, *Income determination* |
-| Normative deductions; child relief | ZDDFL | PwC, *Deductions* |
-| Social security / health contributions | Social Insurance Code (KSO); Health Insurance Act (ZZO) | Ministry of Economy; PwC, *Other taxes* |
-| Insurable-income bands | Public Social Insurance Budget Act | PwC, *Other taxes*; Eurofast |
-| Filing, advance PIT, deadlines, early-filing discount | ZDDFL | PwC, *Tax administration* |
+| Flat 10% PIT; residency | Personal Income Taxes Act (ZDDFL) | secondary summary, *Taxes on personal income |
+| Sole trader (ET) 15% base | ZDDFL + Corporate Income Tax Act (ZKPO) | secondary summary, *Income determination |
+| Dividends 5% final WHT | ZDDFL | secondary summary, *Income determination |
+| Normative deductions; child relief | ZDDFL | secondary summary, *Deductions |
+| Social security / health contributions | Social Insurance Code (KSO); Health Insurance Act (ZZO) | Ministry of Economy; secondary summary, *Other taxes |
+| Insurable-income bands | Public Social Insurance Budget Act | secondary summary, *Other taxes; Eurofast |
+| Filing, advance PIT, deadlines, early-filing discount | ZDDFL | secondary summary, *Tax administration |
 | Penalties / late-payment interest | ZDDFL; Ministry of Finance | Ministry of Finance; Orbitax |
-| Euro changeover (1 Jan 2026, 1 EUR = 1.95583 BGN) | Euro accession measures | PwC, *Other taxes*; BTA |
+| Euro changeover (1 Jan 2026, 1 EUR = 1.95583 BGN) | Euro accession measures | secondary summary, *Other taxes; BTA |
 
 ### Penalties
 
@@ -596,13 +596,13 @@ ONBOARDING QUESTIONS -- BULGARIA INCOME TAX
 
 | Change | Detail | Source |
 | --- | --- | --- |
-| Euro adoption | From 1 Jan 2026, EUR replaces BGN at 1 EUR = 1.95583 BGN | PwC, *Other taxes*; BTA |
+| Euro adoption | From 1 Jan 2026, EUR replaces BGN at 1 EUR = 1.95583 BGN | secondary summary, *Other taxes; BTA |
 | Minimum wage 2026 | BGN 1,213 / **EUR 620.20** per month; minimum hourly EUR 3.74 (~12.6% increase) | BTA |
 | Maximum insurable income 2026 | EUR 2,111.64/month to 31 Jul; **EUR 2,300/month from 1 Aug 2026** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
 | Self-employed minimum base 2026 | EUR 550.66/month to 31 Jul; **EUR 620.20/month from 1 Aug 2026** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
 | Late-payment interest formula | ECB rate + 8 pp (replaces BNB + 10 pp) | Penkov, Markov & Partners |
 
-> **[RESEARCH GAP -- reviewer to confirm]** NRA/NSSI primary-source pages (nra.bg, nssi.bg) were not directly fetched; figures rely on PwC Worldwide Tax Summaries and official Ministry of Economy/Finance pages (authoritative and mutually consistent). The exact 2026 insurable-income bands beyond those published in EUR should be re-verified against the finalised 2026 Public Social Insurance Budget Act. Late-payment interest fluctuates with the BNB/ECB base rate each half-year.
+> **[RESEARCH GAP -- reviewer to confirm]** NRA/NSSI primary-source pages (nra.bg, nssi.bg) were not directly fetched; figures rely on a secondary practitioner summary and official Ministry of Economy/Finance pages (authoritative and mutually consistent). The exact 2026 insurable-income bands beyond those published in EUR should be re-verified against the finalised 2026 Public Social Insurance Budget Act. Late-payment interest fluctuates with the BNB/ECB base rate each half-year.
 
 ### Test Suite
 

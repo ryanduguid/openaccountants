@@ -1,10 +1,10 @@
 ---
 name: albania-tax-optimization
 description: Use this skill whenever asked about reducing tax in Albania, tax planning, or legal strategies to minimise tax for a self-employed person or small business in Albania. Trigger on phrases like "reduce tax Albania", "0% tax small business Albania", "simplified profit tax", "freelancer Albania", "self-employed vs company Albania", "save tax Albania", "tax planning Albania". This skill covers the 0% PIT for small businesses under ALL 14m (to 2029), the simplified profit-tax regime, the freelancer single-client reclassification rule, the standard rates above the thresholds, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Albanian tax optimisation.
-version: 0.2
+version: 0.3
 jurisdiction: AL
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,11 +14,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Albania Tax Optimization
 
-## Albania Tax Optimization Skill v0.2
+## Albania Tax Optimization Skill v0.3
 
 Albania Tax Optimization Skill v0.2
 
-**Tier 2 — research-verified. Sources: Tatime (General Directorate of Taxes), PwC Albania, Karanovic & Partners. Figures must agree with `albania-income-tax.md` / `albania-social-contributions.md`. NOT yet signed off by an Albanian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: Tatime (General Directorate of Taxes), the secondary summary Albania, Karanovic & Partners. Figures must agree with `albania-income-tax.md` / `albania-social-contributions.md`. NOT yet signed off by an Albanian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 

@@ -1,10 +1,10 @@
 ---
 name: peru-social-contributions
 description: Use this skill whenever asked about Peru payroll contributions, social security, health insurance, pensions, or employment income tax. Trigger on phrases like "EsSalud contribution", "how much is EsSalud", "ONP vs AFP", "AFP deductions", "pension contribution Peru", "quinta categoría tax", "fifth-category income tax", "PLAME filing", "Formulario 0601", "Peru payroll tax", "renta de quinta", "descuentos de planilla", "CTS calculation", "gratificaciones", "Peru minimum wage", "RMV", "UIT", or any question about Peruvian payroll, social contributions, or employment income tax. Also trigger when classifying bank statement transactions that relate to SUNAT payments, EsSalud, ONP, AFP/AFPnet debits, or payroll runs from BCP, BBVA, Interbank, or Scotiabank Peru. This skill covers EsSalud (9% health), ONP (13% public pension), AFP/SPP (private pension ~12.84%–13.06%), fifth-category income tax (8%–30% on UIT brackets), the 7-UIT exemption, minimum wage (RMV), CTS, gratificaciones, PLAME/Form 0601 monthly filing, the annual return, registration, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Peru payroll or contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: PE
 tax_year: 2026
-last_updated: 2026-09-29
+last_updated: 2026-10-11
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Peru Social Security, Health & Payroll Contributions
 
-## Peru Social Security, Health & Payroll Contributions Skill v0.1
+## Peru Social Security, Health & Payroll Contributions Skill v0.2
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Maria Clemencia Valverde Rios** on 2026-06-29; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -35,12 +35,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Health authority | EsSalud (Seguro Social de Salud) |
 | Public pension | ONP (Oficina de Normalización Previsional) — Sistema Nacional de Pensiones |
 | Private pension | AFP / SPP (Sistema Privado de Pensiones), regulated by the SBS |
-| Indexing unit (UIT) 2025 | PEN 5,350 ([PwC, individual taxes on personal income](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income)) |
-| Indexing unit (UIT) 2026 | PEN 5,500 ([PwC, reviewed 21 Jan 2026](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income)) |
+| Indexing unit (UIT) 2025 | PEN 5,350 (a secondary summary (link removed)) |
+| Indexing unit (UIT) 2026 | PEN 5,500 (a secondary summary (link removed)) |
 | Minimum wage (RMV) | PEN 1,130/month from 1 Jan 2025 (D.S. 006-2024-TR) — still in force ([Andina](https://andina.pe/agencia/noticia-remuneracion-minima-vital-sube-a-1130-soles-a-partir-del-1-enero-2025-1012953.aspx)) |
-| EsSalud (health) | 9% of remuneration, employer-borne, no cap ([PwC, other taxes](https://taxsummaries.pwc.com/peru/individual/other-taxes)) |
-| ONP (public pension) | 13% of remuneration, employee-borne ([PwC, other taxes](https://taxsummaries.pwc.com/peru/individual/other-taxes)) |
-| AFP (private pension) | ~12.84%–13.06% of remuneration, employee-borne ([PwC](https://taxsummaries.pwc.com/peru/individual/other-taxes); [TrámitesPerú](https://tramitesperu.com/comparadores/afp-comisiones/)) |
+| EsSalud (health) | 9% of remuneration, employer-borne, no cap (a secondary summary (link removed)) |
+| ONP (public pension) | 13% of remuneration, employee-borne (a secondary summary (link removed)) |
+| AFP (private pension) | ~12.84%–13.06% of remuneration, employee-borne (a secondary summary (link removed); [TrámitesPerú](https://tramitesperu.com/comparadores/afp-comisiones/)) |
 | Monthly filing | PLAME (Planilla Electrónica), Formulario Virtual 0601: version 4.5 for the periods October to December 2025, version 4.6 for the periods from January 2026 (Resolución de Superintendencia N.° 000016-2026/SUNAT, art. 2) ([SUNAT](https://orientacion.sunat.gob.pe/pdt-plame)) |
 | Filing deadline | Monthly, by last digit of employer RUC per SUNAT cronograma (≈14th–24th of following month) ([SUNAT](https://orientacion.sunat.gob.pe/pdt-plame)) |
 | Annual return (FY2025) | Due 27 May – 10 Jun 2026 by RUC digit ([NVC Abogados](https://nvcabogados.com/annual-income-tax-return-2025-in-peru/)) |
@@ -53,10 +53,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Rate | Borne by | Cap |
 | --- | --- | --- | --- |
-| EsSalud (health) | 9% | Employer | None; min base = RMV ([PwC](https://taxsummaries.pwc.com/peru/individual/other-taxes)) |
-| ONP (public pension) — IF employee in ONP | 13% | Employee | None ([PwC](https://taxsummaries.pwc.com/peru/individual/other-taxes)) |
+| EsSalud (health) | 9% | Employer | None; min base = RMV (a secondary summary (link removed)) |
+| ONP (public pension) — IF employee in ONP | 13% | Employee | None (a secondary summary (link removed)) |
 | AFP (private pension) — IF employee in AFP | ~12.84%–13.06% | Employee | None on the 10%; prima capped at RMA ([TrámitesPerú](https://tramitesperu.com/comparadores/afp-comisiones/)) |
-| Fifth-category income tax | 8%–30% progressive (UIT brackets) | Employee (withheld) | n/a ([PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income)) |
+| Fifth-category income tax | 8%–30% progressive (UIT brackets) | Employee (withheld) | n/a (a secondary summary (link removed)) |
 
 - **Pension is one OR the other** — Every employee belongs to EITHER ONP (public) OR an AFP (private), never both. The employer withholds whichever applies. Employers do NOT pay a separate pension match.
 
@@ -179,7 +179,7 @@ Matches "AFPNET" / "AFP INTEGRA" (pattern 3.2). This is the employer remitting e
 **Scenario (not a bank line — a computation):** Employee earns PEN 5,000/month gross.
 
 **Reasoning:**
-EsSalud = 9% of remuneration, employer-borne, no cap, minimum base RMV ([PwC, other taxes](https://taxsummaries.pwc.com/peru/individual/other-taxes)). 5,000 × 9% = **PEN 450.00**. As actual pay (5,000) exceeds the RMV (1,130), the minimum base does not bite. This is an employer cost — NOT deducted from the employee.
+EsSalud = 9% of remuneration, employer-borne, no cap, minimum base RMV (a secondary summary (link removed)). 5,000 × 9% = **PEN 450.00**. As actual pay (5,000) exceeds the RMV (1,130), the minimum base does not bite. This is an employer cost — NOT deducted from the employee.
 
 **Classification:** Employer EsSalud cost = PEN 450.00/month. Excluded from the employee's net pay computation.
 
@@ -200,7 +200,7 @@ EsSalud = 9% of remuneration, employer-borne, no cap, minimum base RMV ([PwC, ot
 **Scenario:** Same PEN 5,000/month employee, but affiliated to ONP, not an AFP.
 
 **Reasoning:**
-ONP = 13% of remuneration, employee-borne ([PwC, other taxes](https://taxsummaries.pwc.com/peru/individual/other-taxes)). 5,000 × 13% = **PEN 650.00/month** withheld. Note this exceeds the AFP total in Example 4 (642.00) — the regimes genuinely differ. The employee is in ONP OR AFP, never both.
+ONP = 13% of remuneration, employee-borne (a secondary summary (link removed)). 5,000 × 13% = **PEN 650.00/month** withheld. Note this exceeds the AFP total in Example 4 (642.00) — the regimes genuinely differ. The employee is in ONP OR AFP, never both.
 
 **Classification:** Employee ONP deduction = PEN 650.00/month, withheld from gross.
 
@@ -220,11 +220,11 @@ These rules apply when payslip/bank data is clear and all required inputs are av
 
 ### Rule 1 — EsSalud formula
 
-- **EsSalud formula** — EsSalud = max(remuneration, RMV) × 9%      [employer-borne, no upper cap]  _(RMV = PEN 1,130 (from 1 Jan 2025; [Andina](https://andina.pe/agencia/noticia-remuneracion-minima-vital-sube-a-1130-soles-a-partir-del-1-enero-2025-1012953.aspx)). 9% rate ([PwC](https://taxsummaries.pwc.com/peru/individual/other-taxes)). If the employer runs a private EPS plan, up to 25% of the EsSalud obligation is credited to the EPS (~2.25% to EPS, ~6.75% still to EsSalud) ([PwC](https://taxsummaries.pwc.com/peru/individual/other-taxes)).)_
+- **EsSalud formula** — EsSalud = max(remuneration, RMV) × 9%      [employer-borne, no upper cap]  _(RMV = PEN 1,130 (from 1 Jan 2025; [Andina](https://andina.pe/agencia/noticia-remuneracion-minima-vital-sube-a-1130-soles-a-partir-del-1-enero-2025-1012953.aspx)). 9% rate (a secondary summary (link removed)). If the employer runs a private EPS plan, up to 25% of the EsSalud obligation is credited to the EPS (~2.25% to EPS, ~6.75% still to EsSalud) (a secondary summary (link removed)).)_
 
 ### Rule 2 — Pension is ONP OR AFP, never both
 
-- **Pension is ONP OR AFP, never both** — If ONP: 13% × remuneration, employee-borne. If AFP: 10% + 1.37% prima + AFP commission, employee-borne. Determine the regime before computing.  _([PwC](https://taxsummaries.pwc.com/peru/individual/other-taxes))_
+- **Pension is ONP OR AFP, never both** — If ONP: 13% × remuneration, employee-borne. If AFP: 10% + 1.37% prima + AFP commission, employee-borne. Determine the regime before computing.  _(a secondary summary (link removed))_
 
 ### Rule 3 — AFP three components
 
@@ -251,7 +251,7 @@ These rules apply when payslip/bank data is clear and all required inputs are av
 
 ### Rule 6 — Fifth-category income tax brackets (residents)
 
-**Fifth-category income tax brackets table**  _([PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income))_
+**Fifth-category income tax brackets table**  _(a secondary summary (link removed))_
 
 | Bracket | Annual taxable income (UIT) | 2026 PEN range | Rate |
 | --- | --- | --- | --- |
@@ -263,12 +263,12 @@ These rules apply when payslip/bank data is clear and all required inputs are av
 
 ### Rule 7 — The 7-UIT exemption (residents only)
 
-- **Taxable base formula** — Taxable base = annual gross employment income − 7 UIT [− up to 3 UIT documented expenses]  _([PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income))_
-- **7 UIT values and additional deduction** — 7 UIT: 2025 = 7 × 5,350 = PEN 37,450; 2026 = 7 × 5,500 = PEN 38,500. An additional up to 3 UIT is deductible for documented expenses (property lease, professional services, hotels, restaurants, etc.)  _([PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income))_
+- **Taxable base formula** — Taxable base = annual gross employment income − 7 UIT [− up to 3 UIT documented expenses]  _(a secondary summary (link removed))_
+- **7 UIT values and additional deduction** — 7 UIT: 2025 = 7 × 5,350 = PEN 37,450; 2026 = 7 × 5,500 = PEN 38,500. An additional up to 3 UIT is deductible for documented expenses (property lease, professional services, hotels, restaurants, etc.)  _(a secondary summary (link removed))_
 
 ### Rule 8 — Non-domiciled flat rate
 
-- **Non-domiciled flat rate** — flat 30% on gross Peruvian-source employment income, NO 7-UIT exemption, NO additional deductions  _([PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income))_
+- **Non-domiciled flat rate** — flat 30% on gross Peruvian-source employment income, NO 7-UIT exemption, NO additional deductions  _(a secondary summary (link removed))_
 
 ### Rule 9 — Monthly PLAME filing
 
@@ -448,8 +448,8 @@ If the client provides only a bank statement and no other information:
 
 | Item | Rate | Borne by | Source |
 | --- | --- | --- | --- |
-| EsSalud (health) | 9% (min base RMV, no cap) | Employer | [PwC, other taxes](https://taxsummaries.pwc.com/peru/individual/other-taxes) |
-| ONP (public pension) | 13% | Employee | [PwC, other taxes](https://taxsummaries.pwc.com/peru/individual/other-taxes) |
+| EsSalud (health) | 9% (min base RMV, no cap) | Employer | a secondary summary (link removed) |
+| ONP (public pension) | 13% | Employee | a secondary summary (link removed) |
 | AFP mandatory | 10% | Employee | [AFP Habitat](https://www.afphabitat.com.pe/aprende-de-prevision/cuanto-te-cobra-tu-afp-descuentos-comisiones-y-seguro/) |
 | AFP prima (≤RMA) | 1.37% | Employee | [Misha](https://misha.pe/laboral/prima-seguro-afp/) |
 | AFP commission (flujo) | 1.47%–1.69% | Employee | [TrámitesPerú](https://tramitesperu.com/comparadores/afp-comisiones/) |
@@ -461,13 +461,13 @@ If the client provides only a bank statement and no other information:
 
 | Bracket | UIT range | Rate | Source |
 | --- | --- | --- | --- |
-| 1 | Up to 5 UIT | 8% | [PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income) |
-| 2 | 5–20 UIT | 14% | [PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income) |
-| 3 | 20–35 UIT | 17% | [PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income) |
-| 4 | 35–45 UIT | 20% | [PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income) |
-| 5 | Over 45 UIT | 30% | [PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income) |
+| 1 | Up to 5 UIT | 8% | a secondary summary (link removed) |
+| 2 | 5–20 UIT | 14% | a secondary summary (link removed) |
+| 3 | 20–35 UIT | 17% | a secondary summary (link removed) |
+| 4 | 35–45 UIT | 20% | a secondary summary (link removed) |
+| 5 | Over 45 UIT | 30% | a secondary summary (link removed) |
 
-- **Non-domiciled note** — Non-domiciled: flat 30%, no exemption ([PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income)).  _([PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income))_
+- **Non-domiciled note** — Non-domiciled: flat 30%, no exemption (a secondary summary (link removed)).  _(a secondary summary (link removed))_
 
 ### Key indexing values
 
@@ -475,7 +475,7 @@ If the client provides only a bank statement and no other information:
 
 | Value | 2025 | 2026 | Source |
 | --- | --- | --- | --- |
-| UIT | PEN 5,350 | PEN 5,500 | [PwC](https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income) |
+| UIT | PEN 5,350 | PEN 5,500 | a secondary summary (link removed) |
 | 7-UIT exemption | PEN 37,450 | PEN 38,500 | derived (7 × UIT) |
 | RMV (minimum wage) | PEN 1,130 (from 1 Jan 2025) | PEN 1,130 | [Andina](https://andina.pe/agencia/noticia-remuneracion-minima-vital-sube-a-1130-soles-a-partir-del-1-enero-2025-1012953.aspx) |
 

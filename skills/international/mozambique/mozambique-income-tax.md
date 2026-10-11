@@ -1,10 +1,10 @@
 ---
 name: mozambique-income-tax
 description: Use this skill whenever asked about Mozambique personal income tax (IRPS) for employees, self-employed individuals, and small businesses. Trigger on phrases like "how much IRPS do I pay", "Modelo 10", "income tax return Mozambique", "IRPS rates", "PAYE Mozambique", "INSS contributions", "ISPC simplified regime", "first category income", "second category income", "imposto sobre o rendimento", "rendimento colectável", "self-employed tax Mozambique", "pagamentos por conta", or any question about filing or computing IRPS for a resident or non-resident individual. Also trigger when preparing or reviewing a Modelo 10 return, computing INSS payroll deductions, applying the progressive IRPS scale, or advising on the 2026 Law 11/2025 reform. This skill covers IRPS rate brackets, income categories, personal/dependent deductions, INSS social security, ISPC, sector minimum wages, filing deadlines, penalties, and the Law 11/2025 reform. ALWAYS read this skill before touching any Mozambique income tax or payroll work.
-version: 0.3
+version: 0.4
 jurisdiction: MZ
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -33,13 +33,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 31 March (employment-only) / 30 April (all other cases) of following year |
 | Validated by | Pending -- requires sign-off by a Mozambican tax professional |
 | Validation date | Pending |
-| Skill version | 0.3 |
+| Skill version | 0.4 |
 
 Regime note. The 2025 tax year and earlier follow the long-standing CIRPS. Law No. 11/2025 (29 Dec 2025) enters into force 1 January 2026: it does not change the rate brackets but redefines residency, abolishes simplified/exemption regimes, ends the employee filing waiver, and adds digital-service withholding. See Section 11. Source: DLA Piper Africa / SAL & Caldeira — https://www.dlapiperafrica.com/en/mozambique/insights/2026/Changes-to-the-Personal-Income-Tax-Code
 
 ### IRPS Rate Brackets (Resident -- 2025, continuing under 2026 reform)
 
-**IRPS Rate Brackets (Resident -- 2025, continuing under 2026 reform)**  _(PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income (last reviewed 04 Mar 2026); AT IRPS rate page — https://www.at.gov.mz/por/Comercio-Internacional/Procedimento-Fiscais/Taxas-IRPS (AT page returned a TLS error to the fetcher; PwC corroborates the same schedule).)_
+**IRPS Rate Brackets (Resident -- 2025, continuing under 2026 reform)**  _(a secondary practitioner summary (last reviewed 04 Mar 2026); AT IRPS rate page — https://www.at.gov.mz/por/Comercio-Internacional/Procedimento-Fiscais/Taxas-IRPS (AT page returned a TLS error to the fetcher; secondary summary, corroborates the same schedule).)_
 
 | Annual taxable income (MZN) | Rate | Deductible amount (parcela a abater, MZN) | Cumulative tax at bracket top (MZN) |
 | --- | --- | --- | --- |
@@ -49,9 +49,9 @@ Regime note. The 2025 tax year and earlier follow the long-standing CIRPS. Law N
 | 504,000 -- 1,512,000 | 25% | 35,700 | 342,300 |
 | Over 1,512,000 | 32% | 141,540 | -- |
 
-- **IRPS calculation mechanism** — tax = (annual income × bracket rate) − deductible amount (parcela a abater) for the bracket  _(PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income)_
+- **IRPS calculation mechanism** — tax = (annual income × bracket rate) − deductible amount (parcela a abater) for the bracket  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
-The 25% bracket's parcela a abater is MZN 35,700: that value makes the schedule continuous at 504,000 (both formulas give 90,300) and at 1,512,000 (both give 342,300), and the 32% parcela of 141,540 is derived from it. PwC's Worldwide Tax Summaries print 37,500, a digit transposition that `scripts/check-quick-formula.py` and `scripts/check-derived-columns.py` flagged; the Ordem dos Contabilistas e Auditores de Moçambique applies 35,700 in its IRPS manual (worked example: 1,103,870 × 25% − 35,700 = 240,267.50)  _([OCAM, Formação Contínua IRPS, 4.ª edição](https://ocam.org.mz/wp-content/uploads/2024/06/4_Edio_de_Formao_Continua_IRPS_.pdf))_
+The 25% bracket's parcela a abater is MZN 35,700: that value makes the schedule continuous at 504,000 (both formulas give 90,300) and at 1,512,000 (both give 342,300), and the 32% parcela of 141,540 is derived from it. The secondary summary print 37,500, a digit transposition that `scripts/check-quick-formula.py` and `scripts/check-derived-columns.py` flagged; the Ordem dos Contabilistas e Auditores de Moçambique applies 35,700 in its IRPS manual (worked example: 1,103,870 × 25% − 35,700 = 240,267.50)  _([OCAM, Formação Contínua IRPS, 4.ª edição](https://ocam.org.mz/wp-content/uploads/2024/06/4_Edio_de_Formao_Continua_IRPS_.pdf))_
 >
 > **The authority still cannot be reached.** The citation above records a TLS error from an
 > earlier attempt; retried on **11 September 2026**, `www.at.gov.mz` now **resets the
@@ -59,11 +59,11 @@ The 25% bracket's parcela a abater is MZN 35,700: that value makes the schedule 
 > changed but the result has not. The parcelas remain corroborated only by a commercial
 > summary, and the research gap stands.
 
-- **Non-residents withholding rate** — 20% percent (flat withholding on Mozambique-source income (including employment))  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income)_
+- **Non-residents withholding rate** — 20% percent (flat withholding on Mozambique-source income (including employment))  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ### INSS Social Security Contributions
 
-**INSS Social Security Contributions**  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/other-taxes ; INSS — https://www.inss.gov.mz/duvidas/)_
+**INSS Social Security Contributions**  _(secondary summary; INSS — https://www.inss.gov.mz/duvidas/)_
 
 | Party | Rate of monthly salary |
 | --- | --- |
@@ -71,7 +71,7 @@ The 25% bracket's parcela a abater is MZN 35,700: that value makes the schedule 
 | Employer | 4% |
 | **Total** | **7%** |
 
-- **INSS base** — Base: all salaries, wages, regular bonuses and other regular income; meal subsidy excluded. No contribution ceiling identified from authoritative sources (state explicitly: no ceiling found). Employer withholds the employee's 3% and remits the full 7%.  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/other-taxes ; INSS — https://www.inss.gov.mz/duvidas/)_
+- **INSS base** — Base: all salaries, wages, regular bonuses and other regular income; meal subsidy excluded. No contribution ceiling identified from authoritative sources (state explicitly: no ceiling found). Employer withholds the employee's 3% and remits the full 7%.  _(secondary summary; INSS — https://www.inss.gov.mz/duvidas/)_
 
 Arithmetic check: employee 3% + employer 4% = total 7%. ✓
 
@@ -206,7 +206,7 @@ Gross IRPS = 600,000 × 25% − 35,700 = 150,000 − 35,700 = 114,300.
 Less personal deduction (single/married taxpayer) MZN 1,800 → 114,300 − 1,800 = 112,500 annual IRPS.
 INSS employee contribution = 3% × 50,000 = MZN 1,500/month.
 
-Classification: 1st category. Annual gross IRPS MZN 114,300; after MZN 1,800 personal deduction, MZN 112,500. INSS employee MZN 1,500/month. (Personal deduction per PwC — https://taxsummaries.pwc.com/mozambique/individual/deductions.)
+Classification: 1st category. Annual gross IRPS MZN 114,300; after MZN 1,800 personal deduction, MZN 112,500. INSS employee MZN 1,500/month. (Personal deduction per the secondary summary)
 
 ### Example 2 -- Resident employee, lower salary, two dependents
 
@@ -227,7 +227,7 @@ Input line:
 `10/04/2025 ; STANDARD BANK ; CLIENTE INTERNACIONAL ; HONORÁRIOS ; +200,000.00 ; MZN`
 
 Reasoning:
-Payment to a non-resident for Mozambique-source services. Non-residents are taxed at a flat 20% withholding on MZ-source income (PwC). The progressive scale and personal deductions do NOT apply.
+Payment to a non-resident for Mozambique-source services. Non-residents are taxed at a flat 20% withholding on MZ-source income (secondary summary). The progressive scale and personal deductions do NOT apply.
 IRPS withheld = 200,000 × 20% = 40,000.
 
 Classification: Non-resident, flat 20%. IRPS MZN 40,000. No personal deductions.
@@ -248,7 +248,7 @@ Input line:
 `08/04/2025 ; MILLENNIUM BIM ; INSS ; CONTRIBUIÇÃO MARÇO ; -3,500.00 ; MZN`
 
 Reasoning:
-For a MZN 50,000 monthly payroll: total INSS = 7% × 50,000 = MZN 3,500 (employee 3% = 1,500 + employer 4% = 2,000). Employer remits the full 7%. Per the INSS site the remittance window runs from the 20th of the current month to the 10th of the following month; PwC states the 15th — flag the discrepancy (Section 6).
+For a MZN 50,000 monthly payroll: total INSS = 7% × 50,000 = MZN 3,500 (employee 3% = 1,500 + employer 4% = 2,000). Employer remits the full 7%. Per the INSS site the remittance window runs from the 20th of the current month to the 10th of the following month; the secondary summary states the 15th — flag the discrepancy (Section 6).
 
 Classification: INSS remittance MZN 3,500 (1,500 employee + 2,000 employer). Statutory, not a Box-2 business expense.
 
@@ -266,15 +266,15 @@ Classification: EXCLUDE.
 
 ### 5.1 Residency Determines the Regime
 
-- **Residency determines the regime** — Resident: progressive 10%–32% scale on worldwide income; personal/dependent deductions apply. Non-resident: flat 20% withholding on Mozambique-source income; no progressive scale, no personal deductions. From 2026 (Law 11/2025) residency no longer hinges on the >180-day test — see Section 11.  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income)_
+- **Residency determines the regime** — Resident: progressive 10%–32% scale on worldwide income; personal/dependent deductions apply. Non-resident: flat 20% withholding on Mozambique-source income; no progressive scale, no personal deductions. From 2026 (Law 11/2025) residency no longer hinges on the >180-day test — see Section 11.  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ### 5.2 The Progressive Scale (resident)
 
-- **Progressive scale computation** — Annual tax = annual taxable income × bracket rate − parcela a abater (Section 1 table). For monthly PAYE, annualise the salary, compute annual tax, then divide as withholding (employer remits by the 20th of the following month — Section 7).  _(PwC; AT IRPS process page — https://www.at.gov.mz/por/Processos-Fiscais/Imposto-sobre-o-Rendimento-de-Pessoas-Singulares-IRPS)_
+- **Progressive scale computation** — Annual tax = annual taxable income × bracket rate − parcela a abater (Section 1 table). For monthly PAYE, annualise the salary, compute annual tax, then divide as withholding (employer remits by the 20th of the following month — Section 7).  _(secondary summary; AT IRPS process page — https://www.at.gov.mz/por/Processos-Fiscais/Imposto-sobre-o-Rendimento-de-Pessoas-Singulares-IRPS)_
 
 ### 5.3 Income Categories
 
-**5.3 Income Categories**  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income)_
+**5.3 Income Categories**  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Category | Scope | Notes |
 | --- | --- | --- |
@@ -284,7 +284,7 @@ Classification: EXCLUDE.
 
 ### 5.4 Personal / Dependent Collection Deductions
 
-**5.4 Personal / Dependent Collection Deductions**  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/deductions)_
+**5.4 Personal / Dependent Collection Deductions**  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Item | Annual deduction (MZN) |
 | --- | --- |
@@ -294,7 +294,7 @@ Classification: EXCLUDE.
 | 3 dependents | 1,200 |
 | 4+ dependents | 1,800 |
 
-- **Double-taxation relief credit** — Double-taxation relief credit is also available.  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/deductions)_
+- **Double-taxation relief credit** — Double-taxation relief credit is also available.  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 [RESEARCH GAP — reviewer to confirm] **Status as at September 2026.** These are legacy values. **Lei n.º 11/2025, de 29 de dezembro** (Boletim da República n.º 248), which amends the IRPS Code approved by Lei n.º 33/2007, **entered into force on 1 January 2026** — it is no longer "pending". The Government had **180 days, to June 2026**, to approve the complementary regulations, and that window has now closed. So these deductions are not merely unconfirmed for 2026: the law that may have changed them has been in force for the whole of the year, and the regulation deadline has passed. Confirm against the amended IRPS Code and the Autoridade Tributária before applying any figure in this table to a 2026 computation, and note that the companion **Lei n.º 12/2025** made the equivalent amendments to the IRPC Code.
 
@@ -316,7 +316,7 @@ Classification: EXCLUDE.
 
 ### 5.7 INSS (Social Security)
 
-- **INSS rules** — Employee 3% + employer 4% = 7% of monthly salary (Section 1). Base excludes the meal subsidy. No ceiling identified. Employer withholds the 3% employee share and remits the full 7%. Worker registration: within 30 days of the start of the employment relationship. Foreign employees may apply for exemption from registration if contributing to a comparable scheme in their home country.  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/other-taxes ; INSS — https://www.inss.gov.mz/duvidas/)_
+- **INSS rules** — Employee 3% + employer 4% = 7% of monthly salary (Section 1). Base excludes the meal subsidy. No ceiling identified. Employer withholds the 3% employee share and remits the full 7%. Worker registration: within 30 days of the start of the employment relationship. Foreign employees may apply for exemption from registration if contributing to a comparable scheme in their home country.  _(secondary summary; INSS — https://www.inss.gov.mz/duvidas/)_
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -334,7 +334,7 @@ Classification: EXCLUDE.
 
 ### 6.4 INSS Payment Deadline Conflict
 
-[RESEARCH GAP — reviewer to confirm] The INSS official site states the remittance window runs from the 20th of the current month to the 10th of the following month; PwC states contributions are due by the 15th of the following month. The INSS site is the primary authority — default to the 10th and flag for the reviewer to resolve against INSS legislation. Sources: INSS — https://www.inss.gov.mz/duvidas/ ; PwC — https://taxsummaries.pwc.com/mozambique/individual/other-taxes
+[RESEARCH GAP — reviewer to confirm] The INSS official site states the remittance window runs from the 20th of the current month to the 10th of the following month; the secondary summary states contributions are due by the 15th of the following month. The INSS site is the primary authority — default to the 10th and flag for the reviewer to resolve against INSS legislation. Sources: INSS — https://www.inss.gov.mz/duvidas/
 
 ### 6.5 ISPC vs Organized Accounting (2026 transition)
 
@@ -474,12 +474,12 @@ ONBOARDING QUESTIONS -- MOZAMBIQUE IRPS
 
 | Topic | Reference |
 | --- | --- |
-| IRPS rates | Código do IRPS; PwC — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income |
+| IRPS rates | Código do IRPS; secondary summary |
 | AT rate page | https://www.at.gov.mz/por/Comercio-Internacional/Procedimento-Fiscais/Taxas-IRPS (TLS error to fetcher) |
-| Personal/dependent deductions | PwC — https://taxsummaries.pwc.com/mozambique/individual/deductions |
-| INSS contributions & rules | PwC — https://taxsummaries.pwc.com/mozambique/individual/other-taxes ; INSS — https://www.inss.gov.mz/duvidas/ |
-| Filing & administration | AT IRPS FAQ — https://www.at.gov.mz/por/Perguntas-Frequentes2/IRPS ; PwC — https://taxsummaries.pwc.com/mozambique/individual/tax-administration |
-| Law 11/2025 reform | DLA Piper — https://www.dlapiperafrica.com/en/mozambique/insights/2026/Changes-to-the-Personal-Income-Tax-Code ; PwC PT Inforfisco — https://www.pwc.pt/pt/pwcinforfisco/flash/mocambique/mocambique-irps-alteracoes-cirps.html ; EY — https://www.ey.com/pt_mz/technical/tax-alerts/alteracoes-do-codigo-do-irps-em-mocambique ; Law text — https://www.lexlink.eu/conteudo/geral/mocambique/4123555/lei-no-112025/147/por-tema |
+| Personal/dependent deductions | secondary summary |
+| INSS contributions & rules | secondary summary; INSS — https://www.inss.gov.mz/duvidas/ |
+| Filing & administration | AT IRPS FAQ — https://www.at.gov.mz/por/Perguntas-Frequentes2/IRPS |
+| Law 11/2025 reform | DLA Piper — https://www.dlapiperafrica.com/en/mozambique/insights/2026/Changes-to-the-Personal-Income-Tax-Code ; EY — https://www.ey.com/pt_mz/technical/tax-alerts/alteracoes-do-codigo-do-irps-em-mocambique ; Law text — https://www.lexlink.eu/conteudo/geral/mocambique/4123555/lei-no-112025/147/por-tema |
 
 ### Filing -- Forms & Deadlines (2025 regime)
 
@@ -487,13 +487,13 @@ ONBOARDING QUESTIONS -- MOZAMBIQUE IRPS
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Tax year | Calendar year | PwC |
+| Tax year | Calendar year | secondary summary |
 | Annual return | Modelo 10 (declaração anual de rendimentos) | AT IRPS process page |
 | Filing — employment only | 1 Jan → **31 March** of following year | AT IRPS FAQ — https://www.at.gov.mz/por/Perguntas-Frequentes2/IRPS |
 | Filing — all other cases | 1 Jan → **30 April** of following year | AT IRPS FAQ |
 | IRPS payment | **31 May** of following year | AT IRPS FAQ |
 | Self-employed advance payments | 3 equal instalments: **20 June, 20 September, 20 November** | AT IRPS process page |
-| Employer PAYE remittance | By the **20th** of the following month | PwC — https://taxsummaries.pwc.com/mozambique/individual/tax-administration |
+| Employer PAYE remittance | By the **20th** of the following month | secondary summary |
 | Online platform | eDeclaração — https://edeclaracao.at.gov.mz/ | AT |
 
 ### Penalties (IRPS)
@@ -544,7 +544,7 @@ Set by Ministerial Diplomas Nos. 87–94/2025 (approved 22 Sep 2025). There is n
 
 ### Municipal Personal Tax (Imposto Pessoal Autárquico)
 
-Small annual flat tax that varies by municipality (e.g., Maputo cited ~MZN 510 for 2024 per PwC). [RESEARCH GAP — reviewer to confirm] current-year value per municipality. Source: PwC.
+Small annual flat tax that varies by municipality (e.g., Maputo cited ~MZN 510 for 2024 per the secondary summary). [RESEARCH GAP — reviewer to confirm] current-year value per municipality. Source: the secondary summary.
 
 ### Test Suite
 
@@ -580,18 +580,18 @@ Key changes (verify final regulations, due within 180 days of the law):
 5. Capital gains: new autonomous regime (Art. 54-A) taxed on the 10%–32% scale.
 6. Second-category taxpayers: must keep organized accounting.
 
-Sources: DLA Piper Africa / SAL & Caldeira — https://www.dlapiperafrica.com/en/mozambique/insights/2026/Changes-to-the-Personal-Income-Tax-Code ; PwC PT Inforfisco — https://www.pwc.pt/pt/pwcinforfisco/flash/mocambique/mocambique-irps-alteracoes-cirps.html ; EY — https://www.ey.com/pt_mz/technical/tax-alerts/alteracoes-do-codigo-do-irps-em-mocambique ; Law text — https://www.lexlink.eu/conteudo/geral/mocambique/4123555/lei-no-112025/147/por-tema
+Sources: DLA Piper Africa / SAL & Caldeira — https://www.dlapiperafrica.com/en/mozambique/insights/2026/Changes-to-the-Personal-Income-Tax-Code ; EY — https://www.ey.com/pt_mz/technical/tax-alerts/alteracoes-do-codigo-do-irps-em-mocambique ; Law text — https://www.lexlink.eu/conteudo/geral/mocambique/4123555/lei-no-112025/147/por-tema
 
 ## Section 12 -- Open Items (figures NOT confirmed from authoritative fetched sources)
 
 [RESEARCH GAP — reviewer to confirm] each of the following before publishing a number:
 
 1. ISPC threshold (MZN 2,500,000 turnover), 3% rate, and fixed amount (MZN 75,000) — commonly published but not reconfirmed from a fetched AT page this session (AT TLS error). Verify on the AT ISPC page — https://www.at.gov.mz/por/Processos-Fiscais/Imposto-Simplificado-para-Pequenos-Contribuintes-ISPC . Note ISPC is abolished for IRPS from 2026.
-2. AT official IRPS rate/process pages could not be fetched directly (certificate error); bracket data corroborated by PwC — confirm against AT when accessible.
+2. AT official IRPS rate/process pages could not be fetched directly (certificate error); bracket data corroborated by the secondary summary — confirm against AT when accessible.
 3. Exact IRPS penalty/interest rates (juros de mora %, fixed fines under RGIT) — not obtained; verify before publishing numbers.
-4. INSS payment deadline conflict — INSS site says by the 10th of the following month; PwC says by the 15th. Resolve against INSS legislation.
+4. INSS payment deadline conflict — INSS site says by the 10th of the following month; the secondary summary says by the 15th. Resolve against INSS legislation.
 5. Whether the MZN 1,800 personal deduction / dependent deductions survive Law 11/2025 — not confirmed for 2026.
-6. Municipal personal tax (Imposto Pessoal Autárquico) — varies by municipality (Maputo ~MZN 510 for 2024 per PwC); confirm current-year value.
+6. Municipal personal tax (Imposto Pessoal Autárquico) — varies by municipality (Maputo ~MZN 510 for 2024 per the secondary summary); confirm current-year value.
 
 ## PROHIBITIONS
 

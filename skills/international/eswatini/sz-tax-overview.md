@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Eswatini (tax year 2025) — 
 jurisdiction: SZ
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Basis of taxation** — Source basis: gross income is the total amount received by or accrued to a person from a source within or deemed to be within Eswatini, whatever the recipient's residence  _(Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, s 7 (definition of gross income) — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf)_
 - **Top personal income tax rate** — 33% on annual taxable income above SZL 200,000 (SZL 47,500 plus 33% of the excess)  _(Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, Third Schedule Part II — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf ; Eswatini Revenue Service, Rates and Thresholds — https://www.ers.org.sz/IncomeTax/RatesandThres)_
 - **Corporate income tax rate** — 25% of taxable income for 2025 declarations (years of assessment ending from 30 June 2025), down from the 27.5% applied since 1 July 2013; s 6(3) lets the Minister fix the Third Schedule rates annually  _(Eswatini Revenue Service, Income Tax Return Submission and Payment Notice for tax year end 2025, para 5 — https://www.ers.org.sz:8000/whatsnew-file/1753959572719-FULL_PAGE___Income_Tax_Returns_Notice_2025.pdf ; Eswatini Revenue Service, Rates and Thresholds — https://www.ers.org.sz/IncomeTax/RatesandThres ; Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, s 6(3) and Third Schedule Part I — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf)_
-- **Does Eswatini have VAT?** — Yes; VAT replaced sales tax on 1 April 2012 and applies at a standard rate of 15%, with the rate set by the VAT Regulations under s 24(3)  _(Value Added Tax Act, 2011, s 24(3) (rate set by the VAT Regulations) — https://www.ers.org.sz:8000/documents/ValueAddedTaxAct2011.pdf ; Eswatini Revenue Service, VAT in Eswatini — https://www.ers.org.sz/VAT/Eswatini ; 15% rate: PwC Worldwide Tax Summaries — https://taxsummaries.pwc.com/eswatini/corporate/other-taxes)_
+- **Does Eswatini have VAT?** — Yes; VAT replaced sales tax on 1 April 2012 and applies at a standard rate of 15%, with the rate set by the VAT Regulations under s 24(3)  _(Value Added Tax Act, 2011, s 24(3) (rate set by the VAT Regulations) — https://www.ers.org.sz:8000/documents/ValueAddedTaxAct2011.pdf ; Eswatini Revenue Service, VAT in Eswatini — https://www.ers.org.sz/VAT/Eswatini)_
 - **Individual income tax return deadline** — For the 2025 year of assessment, individuals required to file do so by 30 November 2025 under the Commissioner General's annual notice  _(Eswatini Revenue Service, Income Tax Return Submission and Payment Notice for tax year end 2025, paras 1, 2 and 4 — https://www.ers.org.sz:8000/whatsnew-file/1753959572719-FULL_PAGE___Income_Tax_Returns_Notice_2025.pdf ; Eswatini Revenue Service, Income Tax Returns — https://www.ers.org.sz/IncomeTax/IncomeTaxReturn)_
 - **Company income tax return deadline** — Set by the Commissioner General's annual notice under s 33: for the 2025 year of assessment all non-individual entities file and pay by 31 October 2025, and clients with other approved tax years within four months after their financial year end  _(Eswatini Revenue Service, Income Tax Return Submission and Payment Notice for tax year end 2025, para 4 — https://www.ers.org.sz:8000/whatsnew-file/1753959572719-FULL_PAGE___Income_Tax_Returns_Notice_2025.pdf ; Income Tax Order, 1975 (as amended), Eswatini Revenue Service consolidation, s 33(1) — https://www.ers.org.sz:8000/documents/IncomeTaxOrder1975.pdf)_
 

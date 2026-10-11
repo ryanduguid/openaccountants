@@ -1,10 +1,10 @@
 ---
 name: mozambique-payroll
 description: Use this skill whenever asked about Mozambique payroll processing for employed persons. Trigger on phrases like "Mozambique payroll", "IRPS withholding", "IRPS Moçambique", "INSS deduction", "segurança social Moçambique", "PAYE Mozambique", "Form 19", "Modelo 19", "M/19", "tax withholding Mozambique", "salário líquido Moçambique", "net salary Mozambique", "employer INSS Mozambique", "salário mínimo Moçambique", "minimum wage Mozambique", "MAIBOR penalty", "gross to net Mozambique", "non-resident 20% Mozambique", "Lista Nominal", or any question about computing employee pay, income-tax withholding, or social-security contributions for Mozambique-based employees. This skill covers IRPS (income tax) monthly withholding by the employer, INSS social security (employee 3% + employer 4%), the monthly PAYE table, non-resident flat withholding, minimum wage by sector, and filing obligations to the Autoridade Tributária (AT) and INSS. ALWAYS read this skill before processing any Mozambique payroll.
-version: 0.3
+version: 0.4
 jurisdiction: MZ
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Mozambique Payroll
 
-## Mozambique Payroll Skill v0.3
+## Mozambique Payroll Skill v0.4
 
 > **Tier 2 (research-verified) — NOT yet accountant-verified.** Several figures carry `[RESEARCH GAP — reviewer to confirm]` markers. A licensed Mozambican *contabilista* or *técnico de contas* must reconcile those before any output is presented as final. In particular the full **monthly PAYE per-cell deduction matrix** (income band × dependents) and the **exact statutory penalty schedule** are incomplete here.
 
@@ -28,19 +28,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Mozambique (República de Moçambique) |
 | Currency | Metical (MZN / MT) only |
 | Standard pay frequency | Monthly (most common) |
-| Tax year | Calendar year (1 January -- 31 December) (PwC) |
+| Tax year | Calendar year (1 January -- 31 December) (secondary summary) |
 | Income tax | YES — IRPS (Imposto sobre o Rendimento das Pessoas Singulares), progressive 10%–32%, employer-withheld monthly |
 | Tax authority | AT (Autoridade Tributária de Moçambique) |
 | Social security authority | INSS (Instituto Nacional de Segurança Social) |
 | Resident PAYE | Monthly PAYE table keyed to monthly remuneration × number of dependents (RSM 2025 p.14) |
-| Non-resident tax | Flat **20%** final withholding on MZ-source employment income (PwC; RSM 2025 p.14) |
+| Non-resident tax | Flat **20%** final withholding on MZ-source employment income (secondary summary; RSM 2025 p.14) |
 | IRPS PAYE form | **IRPS Form 19 (Modelo M/19)** (RSM 2025 pp.3–4) |
 | IRPS PAYE deadline | By the **20th** of the following month (RSM 2025 pp.3–4) |
 | INSS return deadline | By the **10th** of the following month (RSM 2025 pp.3–4) |
 | Annual Nominal List (Lista Nominal) | By **30 April** each year (RSM 2025 pp.3–4) |
 | Key legislation | Código do IRPS; Lei n.º 11/2025 (IRPS reform, eff. 29 Dec 2025); Código Geral Tributário; Lei do INSS; INSS Note n.º 246/INSS/GAB-DG/432/2024 |
 | Validated by | Pending -- requires sign-off by a licensed Mozambican accountant |
-| Skill version | 0.3 |
+| Skill version | 0.4 |
 
 ## Section 2 -- Income Tax Withholding (IRPS — Imposto sobre o Rendimento das Pessoas Singulares)
 
@@ -48,9 +48,9 @@ Mozambique **does** levy personal income tax on employees. The employer is the *
 
 The IRPS employment-income brackets (10%–32%) and thresholds were **re-confirmed unchanged by Lei n.º 11/2025** (effective 29 December 2025) (DLA Piper Africa).
 
-### IRPS Annual Progressive Table — residents (PwC, 2024 tax year; unchanged by Lei 11/2025)
+### IRPS Annual Progressive Table — residents (secondary summary, 2024 tax year; unchanged by Lei 11/2025)
 
-**IRPS Annual Progressive Table — residents**  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income (last reviewed 04 Mar 2026))_
+**IRPS Annual Progressive Table — residents**  _(secondary summary (last reviewed 04 Mar 2026))_
 
 | Annual taxable income (MZN) | Marginal rate | Deduction (MZN) |
 | --- | --- | --- |
@@ -60,9 +60,9 @@ The IRPS employment-income brackets (10%–32%) and thresholds were **re-confirm
 | 504,000 – 1,512,000 | **25%** | 35,700 |
 | Over 1,512,000 | **32%** | 141,540 |
 
-- **Subtract method formula** — tax = annual taxable income × rate − deduction  _(PwC)_
+- **Subtract method formula** — tax = annual taxable income × rate − deduction  _(secondary summary)_
 
-*Continuity note:* the first three bands tie out exactly under the subtract method (at 42,000 → 10%×42,000 = 15%×42,000 − 2,100 = **4,200**; at 168,000 → 15%×168,000 − 2,100 = 20%×168,000 − 10,500 = **23,100**). With the 35,700 parcela the 25% and 32% bands also tie out: at 504,000 both formulas give 90,300 and at 1,512,000 both give 342,300. PwC prints 37,500 for the 25% band, a digit transposition; OCAM's IRPS manual applies 35,700 (see mozambique-income-tax.md).
+*Continuity note:* the first three bands tie out exactly under the subtract method (at 42,000 → 10%×42,000 = 15%×42,000 − 2,100 = **4,200**; at 168,000 → 15%×168,000 − 2,100 = 20%×168,000 − 10,500 = **23,100**). With the 35,700 parcela the 25% and 32% bands also tie out: at 504,000 both formulas give 90,300 and at 1,512,000 both give 342,300. The secondary summary prints 37,500 for the 25% band, a digit transposition; OCAM's IRPS manual applies 35,700 (see mozambique-income-tax.md).
 
 ### Monthly PAYE table — THE operative payroll mechanism (RSM 2025 p.14)
 
@@ -81,7 +81,7 @@ The IRPS employment-income brackets (10%–32%) and thresholds were **re-confirm
 
 ### Non-residents
 
-- **Non-resident flat withholding on MZ-source employment income** — 20%  _(PwC; RSM 2025 p.14)_
+- **Non-resident flat withholding on MZ-source employment income** — 20%  _(secondary summary; RSM 2025 p.14)_
 
 This also applies to a resident not present in the country (see residency note) and to income paid to a service provider.
 
@@ -103,7 +103,7 @@ This also applies to a resident not present in the country (see residency note) 
 
 ### Deduction before taxable income
 
-- **Employee 3% INSS deductible** — The employee's 3% INSS contribution is deductible from gross income for IRPS purposes. The skill therefore computes IRPS on `gross − employee INSS`.  _(PwC)_
+- **Employee 3% INSS deductible** — The employee's 3% INSS contribution is deductible from gross income for IRPS purposes. The skill therefore computes IRPS on `gross − employee INSS`.  _(secondary summary)_
 
 ## Section 3 -- Social Security (INSS) — Employee + Employer
 
@@ -120,7 +120,7 @@ This also applies to a resident not present in the country (see residency note) 
 - **INSS base** — Base: monthly regular remuneration (salary, wages, regular bonuses).  _(RSM 2025 p.16)_
 - **Excluded from base** — Meal subsidies; profit-sharing, dividends, holiday pay and similar irregular payments are NOT in the contribution base.  _(RSM 2025 p.16)_
 - **No salary floor or ceiling** — No salary floor or ceiling is specified in the authoritative sources — contributions are on full regular remuneration.  _(RSM 2025 pp.16–17)_
-- **Employee 3% IRPS-deductible** — Employee's 3% is IRPS-deductible.  _(PwC)_
+- **Employee 3% IRPS-deductible** — Employee's 3% is IRPS-deductible.  _(secondary summary)_
 - **Registration requirement** — Employers must register ALL employees (Mozambican and expat). Expats are exempt only if they prove coverage in another country's scheme (request to INSS required).  _(RSM 2025 pp.16–17)_
 - **Expat refund** — Foreign employees can reclaim their 3% if they leave permanently before retirement entitlement; the right expires 1 year after the last contribution.  _(RSM 2025 pp.16–17)_
 
@@ -154,7 +154,7 @@ When an input is missing or ambiguous, apply the conservative assumption (the on
 | Whether monthly pay ≤ 20,249.99 floor | Apply **0% PAYE** only when clearly at/below the floor | Floor is the published exemption |
 | INSS base composition | Include only **regular** remuneration; exclude meal subsidy, profit-share, dividends, holiday pay | RSM 2025 p.16 |
 | INSS ceiling | **None** — contribute on full regular remuneration | No ceiling in sources |
-| Employee INSS deductibility for IRPS | Always deduct employee **3%** before IRPS base | PwC |
+| Employee INSS deductibility for IRPS | Always deduct employee **3%** before IRPS base | secondary summary |
 | Expat INSS | Register and contribute **3%/4%** unless foreign-scheme coverage proven | RSM 2025 pp.16–17 |
 | Tax year | Default to **2025** table unless date triggers Lei 11/2025 changes (≥ 29 Dec 2025) | Skill tax_year is 2025 |
 | Currency | Metical (MZN) | Local currency |
@@ -215,7 +215,7 @@ Classify bank-statement lines deterministically. Match case-insensitively; longe
 
 ## Section 8 -- Worked Examples
 
-> Resident examples compute IRPS via the **annual progressive table** (PwC, sourced) on `gross − employee 3% INSS`, then divide by 12 for a monthly estimate. This is an **estimation method**: the operative monthly PAYE per-cell matrix (with dependents) is a research gap, and below the **20,250/month** floor the monthly PAYE table withholds **0%** even where the annualised method would show tax. Where the two diverge, the example shows both and FLAGS it. INSS employee = 3%, employer = 4%, no ceiling. Amounts to the cent.
+> Resident examples compute IRPS via the **annual progressive table** (secondary summary, sourced) on `gross − employee 3% INSS`, then divide by 12 for a monthly estimate. This is an **estimation method**: the operative monthly PAYE per-cell matrix (with dependents) is a research gap, and below the **20,250/month** floor the monthly PAYE table withholds **0%** even where the annualised method would show tax. Where the two diverge, the example shows both and FLAGS it. INSS employee = 3%, employer = 4%, no ceiling. Amounts to the cent.
 
 ### Example 1 — Minimum-wage earner (agriculture), below the PAYE floor
 
@@ -295,9 +295,9 @@ Classify bank-statement lines deterministically. Match case-insensitively; longe
 
 - **1. IRPS withholding and filing** — IRPS is employer-withheld monthly and remitted to the AT via Form 19 (M/19) by the 20th of the following month.  _(RSM 2025 pp.3–4)_
 - **2. INSS rate, base and filing** — INSS is employee 3% + employer 4% = 7%, on regular remuneration, no ceiling, filed and paid by the 10th of the following month.  _(INSS Note 246/2024; RSM 2025)_
-- **3. Employee INSS deductible before IRPS base** — The employee's 3% INSS is deductible from gross before the IRPS base.  _(PwC)_
+- **3. Employee INSS deductible before IRPS base** — The employee's 3% INSS is deductible from gross before the IRPS base.  _(secondary summary)_
 - **4. 0% IRPS floor** — Monthly remuneration at or below ≈20,250 MZN withholds 0% IRPS under the operative monthly PAYE table.  _(RSM 2025 p.14)_
-- **5. Non-resident flat rate** — Non-residents pay a flat 20% final withholding on MZ-source employment income.  _(PwC; RSM 2025 p.14)_
+- **5. Non-resident flat rate** — Non-residents pay a flat 20% final withholding on MZ-source employment income.  _(secondary summary; RSM 2025 p.14)_
 - **6. Exclusions from INSS base** — Meal subsidies and irregular payments (profit-share, dividends, holiday pay) are excluded from the INSS base.  _(RSM 2025 p.16)_
 - **7. Nominal List deadline** — The annual Nominal List (Lista Nominal) is due 30 April.  _(RSM 2025 pp.3–4)_
 - **8. Lei 11/2025 residency change** — Lei 11/2025 (eff. 29 Dec 2025) left the 10%–32% employment brackets unchanged but redefined residency (no 180-day test) — confirm residency before choosing the table.  _(DLA Piper Africa)_
@@ -340,7 +340,7 @@ Suggested layout (one row per employee per month):
 | L | Net pay | `=D-K` |
 | M | Total employer cost | `=D+F` |
 
-- **Resident annual-IRPS formula (column I)** — =IF(H<=42000, H*0.10, IF(H<=168000, H*0.15-2100, IF(H<=504000, H*0.20-10500, IF(H<=1512000, H*0.25-37500, H*0.32-141540))))  _(PwC deductions)_
+- **Resident annual-IRPS formula (column I)** — =IF(H<=42000, H*0.10, IF(H<=168000, H*0.15-2100, IF(H<=504000, H*0.20-10500, IF(H<=1512000, H*0.25-37500, H*0.32-141540))))  _(secondary summary, deductions)_
 
 > The column-J `IF(G,0,...)` 0%-floor shortcut and the resident annual-÷12 estimate are stand-ins for the **operative monthly PAYE matrix**, which must replace them once the full per-cell table is transcribed. **[RESEARCH GAP — reviewer to confirm.]**
 
@@ -423,14 +423,14 @@ Governed by the Código Geral Tributário and the Fiscal Offences regime (Regime
 
 | Topic | Figure | Source |
 | --- | --- | --- |
-| IRPS resident brackets | 10% / 15% / 20% / 25% / 32% (deductions —/2,100/10,500/35,700/141,540) | PwC |
+| IRPS resident brackets | 10% / 15% / 20% / 25% / 32% (deductions —/2,100/10,500/35,700/141,540) | secondary summary |
 | IRPS monthly PAYE 0% floor | ≈20,250 MZN/month | RSM 2025 p.14 |
-| IRPS non-resident | flat 20% final WHT | PwC; RSM 2025 p.14 |
+| IRPS non-resident | flat 20% final WHT | secondary summary; RSM 2025 p.14 |
 | Self-employment / service provider | 20% | RSM 2025 p.15 |
 | Artists / athletes | 10% | RSM 2025 p.15 |
 | Digital services / e-money agents | 10% final WHT (Lei 11/2025) | DLA Piper Africa |
 | INSS rates | employee 3% / employer 4% / total 7% | INSS Note 246/2024; RSM 2025 p.16 |
-| INSS employee 3% IRPS-deductible | yes | PwC |
+| INSS employee 3% IRPS-deductible | yes | secondary summary |
 | M/19 (IRPS PAYE) deadline | 20th of following month | RSM 2025 pp.3–4 |
 | INSS return deadline | 10th of following month | RSM 2025 pp.3–4 |
 | Nominal List deadline | 30 April | RSM 2025 pp.3–4 |
@@ -440,10 +440,10 @@ Governed by the Código Geral Tributário and the Fiscal Offences regime (Regime
 | Min wage 2026 (financial sector, from 1 Apr 2026) | 20,361.43 MZN/month | AIM via Club of Mozambique |
 | Late-payment interest | MAIBOR (12-mo) + 2% | South African Tax Guide / KPMG (secondary) |
 
-Key authorities: AT (Autoridade Tributária de Moçambique), INSS, Banco de Moçambique (MAIBOR). Big-4 / secondary: PwC Tax Summaries, RSM Mozambique Tax Pocket Guide 2025, DLA Piper Africa, KPMG, Club of Mozambique.
+Key authorities: AT (Autoridade Tributária de Moçambique), INSS, Banco de Moçambique (MAIBOR). Big-4 / secondary: a secondary practitioner summary, RSM Mozambique Tax Pocket Guide 2025, DLA Piper Africa, KPMG, Club of Mozambique.
 
 Source URLs:
-- PwC IRPS & social security — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/mozambique/individual/other-taxes
+- Secondary practitioner summary (link removed) IRPS & social security
 - RSM Mozambique Tax Pocket Guide 2025 — https://www.rsm.global/mozambique/sites/default/files/media/2025/Mozambique%20Tax%20Pocket%20Guide%202025%20ENG.pdf
 - DLA Piper Africa (Lei 11/2025 IRPS changes) — https://www.dlapiperafrica.com/en/mozambique/insights/2026/Changes-to-the-Personal-Income-Tax-Code
 - Minimum wage 2025 — https://clubofmozambique.com/news/mozambique-minimum-wages-increase-2-9-to-9-depending-on-sector-with-retroactive-effect-from-1-july/

@@ -1,10 +1,10 @@
 ---
 name: serbia-tax-optimization
 description: Use this skill whenever asked about reducing tax in Serbia, tax planning, or legal strategies to minimise tax for an entrepreneur or small company in Serbia. Trigger on phrases like "reduce tax Serbia", "paušalno", "flat-rate entrepreneur", "lump-sum tax Serbia", "preduzetnik", "self-employed vs DOO", "Serbia freelancer tax", "save tax Serbia", "tax planning Serbia". This skill covers the flat-rate (paušalno) entrepreneur regime, the income-expenses (bookkeeping) regime, the DOO company route, the 10% tax-base-growth cap, and the disguised-employment red line. ALWAYS read this skill before advising on any Serbian tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: RS
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,13 +14,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Serbia Tax Optimization
 
-## Serbia Tax Optimization Skill v0.1
+## Serbia Tax Optimization Skill v0.2
 
 Serbia Tax Optimization Skill v0.1
 
-## Serbia Tax Optimization Skill v0.1
+## Serbia Tax Optimization Skill v0.2
 
-**Tier 2 — research-verified. Sources: Poreska uprava (Tax Administration), PwC Serbia, NALED, Creative Finance. Figures must agree with `serbia-income-tax.md` / `serbia-social-contributions.md`. NOT yet signed off by a Serbian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: Poreska uprava (Tax Administration), the secondary summary Serbia, NALED, Creative Finance. Figures must agree with `serbia-income-tax.md` / `serbia-social-contributions.md`. NOT yet signed off by a Serbian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 

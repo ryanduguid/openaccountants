@@ -1,10 +1,10 @@
 ---
 name: croatia-income-tax
 description: Use this skill whenever asked about Croatia (Hrvatska) personal income tax (porez na dohodak) for self-employed individuals and employees. Trigger on phrases like "how much tax do I pay in Croatia", "porez na dohodak", "godišnja porezna prijava", "osobni odbitak", "personal allowance Croatia", "obrt tax", "paušalni obrt", "JOPPD", "DOH form", "PO-SD", "doprinosi", "mirovinsko", "net salary Croatia", "neto plaća", "self-employed Croatia", "sole trader Croatia", "prirez", or any question about computing or filing personal income tax for an individual or sole trader (obrtnik) in Croatia. Also trigger when preparing or reviewing a payroll net-pay computation, an annual income tax return, or advising on the lump-sum (paušalni) regime. This skill covers progressive PIT rates (default 20%/30% with local-unit ranges), final/flat income taxes (12%/24%/36%), the personal allowance and dependant coefficients, employee and self-employed contributions (pension 20% + health 16.5%), the JOPPD/DOH/PO-SD forms, and penalties. ALWAYS read this skill before touching any Croatian income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: HR
 tax_year: 2025
-last_updated: 2026-10-06
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -34,11 +34,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual return deadline | End of February of the following year (self-employed; most employees auto-assessed) |
 | Validated by | Pending -- requires sign-off by a Croatian tax adviser (porezni savjetnik) / ovlašteni računovođa |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Tax Rate Brackets (2025)
 
-- **Annual vs final income split** — Croatia splits income into annual income (employment, self-employment, other) taxed progressively and reconciled annually, and final income (capital, property, certain other) taxed at flat rates and not aggregated.  _(PwC, Income determination)_
+- **Annual vs final income split** — Croatia splits income into annual income (employment, self-employment, other) taxed progressively and reconciled annually, and final income (capital, property, certain other) taxed at flat rates and not aggregated.  _(secondary summary, Income determination)_
 - **Local surtax abolished** — Local surtax (prirez) was abolished from 1 January 2024 and folded into the income-tax rate ranges.  _([ZPD amendment NN 114/2023, in force 1 January 2024: surtax references deleted, art. 19.a added](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1609.html))_
 
 **Default progressive rates (annual income)**  _(porezna-uprava.gov.hr/en/income-tax/7363; [ZPD arts. 19 and 19.a, as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html): EUR 60,000.00 a year, EUR 5,000.00 a month under art. 24(3), and 20% / 30% where the local unit adopts no decision)_
@@ -57,7 +57,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Large city (veliki grad) or county seat | 15% -- 22% | 25% -- 32% |
 | City of Zagreb | 15% -- 23% | 25% -- 33% |
 
-**Final / flat income (not aggregated into the annual assessment)**  _(ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)) for the 12%, 24% and 36% rates and the 30% rental expense allowance; PwC, Income determination for the seasonal-work and undeclared-assets rows)_
+**Final / flat income (not aggregated into the annual assessment)**  _(ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)) for the 12%, 24% and 36% rates and the 30% rental expense allowance; the secondary summary, Income determination for the seasonal-work and undeclared-assets rows)_
 
 | Category | Rate | Notes |
 | --- | --- | --- |
@@ -349,7 +349,7 @@ Classification: EXCLUDE.
 
 ### 5.1 Residence and Scope
 
-- **Residence and scope** — Tax year is the calendar year. Residents are taxed on worldwide income; non-residents on Croatian-source income. Income splits into annual income (employment, self-employment, other) taxed progressively and reconciled annually, and final income (capital, property, certain other) taxed at flat rates and not aggregated.  _(Zakon o porezu na dohodak; PwC, Tax administration)_
+- **Residence and scope** — Tax year is the calendar year. Residents are taxed on worldwide income; non-residents on Croatian-source income. Income splits into annual income (employment, self-employment, other) taxed progressively and reconciled annually, and final income (capital, property, certain other) taxed at flat rates and not aggregated.  _(Zakon o porezu na dohodak; secondary summary, Tax administration)_
 
 ### 5.2 Progressive Rates and Local Units
 
@@ -400,7 +400,7 @@ Classification: EXCLUDE.
 
 ### 5.8 Final / Flat Income
 
-**Final / Flat Income table**  _(ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)); the seasonal-work row: PwC, Income determination)_
+**Final / Flat Income table**  _(ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)); the seasonal-work row: the secondary summary, Income determination)_
 
 | Category | Rate | Base |
 | --- | --- | --- |
@@ -415,7 +415,7 @@ Classification: EXCLUDE.
 
 ### 5.9 Lump-Sum (Paušalni Obrt) Regime
 
-- **Lump-sum paušalni obrt regime** — Available to sole traders with annual receipts up to EUR 60,000 who are not VAT-registered. Lump-sum income is determined across statutory receipt brackets and taxed at 12%, paid quarterly. The PO-SD annual report is filed by 15 January.  _(Zakon o porezu na dohodak; Porezna uprava (obrtnici-paušalisti); PwC)_
+- **Lump-sum paušalni obrt regime** — Available to sole traders with annual receipts up to EUR 60,000 who are not VAT-registered. Lump-sum income is determined across statutory receipt brackets and taxed at 12%, paid quarterly. The PO-SD annual report is filed by 15 January.  _(Zakon o porezu na dohodak; Porezna uprava (obrtnici-paušalisti); secondary summary)_
 
 **Paušalni annual lump-sum income by receipt band (2025)**  _([NN 25/2025, art. 1 (new art. 14 of the 2025 Naredba)](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_02_25_231.html), which restates the lump-sum income set by the paušal ordinance)_
 
@@ -630,7 +630,7 @@ ONBOARDING QUESTIONS -- CROATIA INCOME TAX
 | Personal allowance | porezna-uprava.gov.hr/en/personal-allowance/7358 |
 | Contributions & 2025 base caps | Zakon o doprinosima; NN 137/2024 (narodne-novine.nn.hr/clanci/sluzbeni/2024_11_137_2266.html) |
 | Final / flat income | ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)) |
-| Tax administration & residence | PwC, Croatia -- Tax administration |
+| Tax administration & residence | secondary summary, Croatia -- Tax administration |
 | Deductions / dependants | [ZPD art. 14(1) and (3), as amended by NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html); ZPD art. 17(1): six times the art. 14(1) basic allowance a year ([consolidated text](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak); allowance set by [NN 152/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html)) |
 | Minimum wage 2025 / 2026 | [Uredba, NN 124/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_10_124_2072.html); [Uredba, NN 132/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html) |
 
@@ -653,7 +653,7 @@ ONBOARDING QUESTIONS -- CROATIA INCOME TAX
 | Annual first-pillar base cap | EUR 129,456.00 | NN 137/2024 |
 | Self-employed min. monthly base (craft) | EUR 1,168.70 | NN 137/2024 (code 0101) |
 | Capital income / rental flat rate | 12% | ZPD arts. 57(1), 62 and 70 ([consolidated text, NN 115/16 to 152/24](https://www.zakon.hr/z/85/Zakon-o-porezu-na-dohodak)) |
-| VAT registration / paušalni ceiling | EUR 60,000 turnover/yr | PwC, Income determination |
+| VAT registration / paušalni ceiling | EUR 60,000 turnover/yr | secondary summary, Income determination |
 | Minimum wage 2025 | EUR 970.00 gross/mo | [Uredba, NN 124/2024](https://narodne-novine.nn.hr/clanci/sluzbeni/2024_10_124_2072.html) |
 | Minimum wage 2026 | EUR 1,050.00 gross/mo | [Uredba, NN 132/2025](https://narodne-novine.nn.hr/clanci/sluzbeni/2025_10_132_1931.html) |
 | 2026 monthly base cap | EUR 11,958.00 | NN 150/2025 |

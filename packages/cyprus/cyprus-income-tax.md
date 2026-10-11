@@ -1,12 +1,12 @@
 ---
 name: cyprus-income-tax
 description: Use this skill whenever asked about Cyprus personal income tax for self-employed individuals or employees. Trigger on phrases like "how much tax do I pay in Cyprus", "TD1", "IR1", "income tax return Cyprus", "allowable deductions", "Social Insurance", "GHS", "GESY", "provisional tax", "temporary tax", "chargeable income", "non-dom", "Special Defence Contribution", "SDC", "50% expat exemption", "183-day rule", "60-day rule", "self-employed tax Cyprus", or any question about filing or computing income tax for a self-employed individual or employee in Cyprus. Also trigger when preparing or reviewing a TD1/IR1 return, computing deductible expenses, advising on provisional (temporary) tax instalments, or assessing tax residency under the 183-day or 60-day rule. This skill covers PIT rate bands (2025 and the 2026 reform), Social Insurance and GHS/GESY contributions, employer-only funds, the 1/5 deductions cap, expat exemptions, SDC for domiciled residents, penalties, and interaction with VAT and social insurance. ALWAYS read this skill before touching any Cyprus income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-11
 reviewed_by: Christos Thoma
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -16,9 +16,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Cyprus Income Tax -- Self-Employed and Individuals
 
-## Cyprus Income Tax -- Self-Employed and Individuals Skill v0.1
+## Cyprus Income Tax -- Self-Employed and Individuals Skill v0.2
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Christos Thoma** on 2026-06-12; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The verified figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29). Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
+
+> **Edited since review (2026-10-11).** The Big-4 summary citations were replaced with the consolidated laws on CyLaw (Income Tax Law 118(I)/2002, Special Contribution for the Defence Law 117(I)/2002, Social Insurance Law 59(I)/2010, General Healthcare System Law 89(I)/2001, Assessment and Collection of Taxes Law 4/1978), the amending Laws 244(I)/2025 and 245(I)/2025, and the Tax Department and Social Insurance Services pages. The dividend SDC transition (17% kept for profits up to 2025 paid within six years), the statutory social insurance schedule (8.9% and 16.8% from 2024, applied at 8.8% and 16.6% under the actuarial proviso) and the 2026 penalty amounts are new text that awaits the reviewer's confirmation, so `review_status` is `pending_review`.
 
 ## Section 1 -- Quick Reference
 
@@ -42,11 +44,11 @@ placeholder
 | Filing deadline (TD1/IR1, employees/individuals) | 31 July of the following year (tax year 2025 -> 31 July 2026, extensions common) (Source: SPL Audit Cyprus; Gov.cy) |
 | Validated by | Pending -- requires sign-off by a Cyprus-licensed accountant |
 | Validation date | Verified by Christos Thoma (ACA (ICAEW)) on 2026-06-10 |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Brackets -- 2025 (Tax Year 2025)
 
-**Tax Rate Brackets -- 2025**  _(PwC Worldwide Tax Summaries -- Cyprus Individual Taxes on personal income.)_
+**Tax Rate Brackets -- 2025**  _(Income Tax Law 118(I)/2002, Second Schedule para 1(b) (tax years 2008 to 2025), consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html)_
 
 | Taxable Income (EUR) | Rate | Cumulative Tax at Top |
 | --- | --- | --- |
@@ -60,7 +62,7 @@ Cyprus has no separate personal allowance -- the 0% band IS the tax-free thresho
 
 ### Tax Rate Brackets -- 2026 Reform (income arising on or after 1 January 2026)
 
-**Tax Rate Brackets -- 2026 Reform**  _(PwC; cyprustaxaccounting.com)_
+**Tax Rate Brackets -- 2026 Reform**  _(Income Tax Law 118(I)/2002, Second Schedule para 1(c) (tax year 2026 onwards), inserted by Law 244(I)/2025, passed 22 December 2025 and in force from 1 January 2026 — http://www.cylaw.org/nomoi/arith/2025_1_244.pdf ; consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html)_
 
 | Taxable Income (EUR) | Rate | Cumulative Tax at Top |
 | --- | --- | --- |
@@ -74,7 +76,7 @@ Apply ONLY to income arising from 1 Jan 2026 onward. For tax year 2025, use the 
 
 ### Social Insurance and GHS Contribution Rates -- 2025
 
-**Social Insurance and GHS Contribution Rates -- 2025**  _(KPMG Cyprus; PwC Worldwide Tax Summaries; Social Insurance Services.)_
+**Social Insurance and GHS Contribution Rates -- 2025**  _(Social Insurance Law 59(I)/2010, arts 5(1) and 12 and the maximum insurable earnings orders, consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2010_1_59/full.html ; General Healthcare System Law 89(I)/2001, art. 19(1) and (4) — http://www.cylaw.org/nomoi/enop/non-ind/2001_1_89/full.html ; Social Insurance Services, Basic Insurable Earnings — https://www.mlsi.gov.cy/mlsi/sid/sidv2.nsf/page94_en/page94_en?OpenDocument ; KPMG Cyprus for the 2025 and 2026 ceilings as announced by the Social Insurance Services.)_
 
 | Contribution | Employee | Employer | Self-employed | Base / Ceiling (2025) |
 | --- | --- | --- | --- | --- |
@@ -91,19 +93,19 @@ Component check -- Employer column (capped funds, excl. Holiday Fund): SI 8.8% +
 
 Component check -- Self-employed column: Social Insurance 16.6% + GHS 4.00% = 20.6% total (SI on deemed/notional minimum insurable income per occupational category, max EUR 66,612; GHS on income capped at EUR 180,000).
 
-> The 8.8%/8.8% Social Insurance rate was fixed from 1 Jan 2024 for five years (previously 8.3%). Source: KPMG Cyprus; Social Insurance Services.
+> The Social Insurance Law's schedule (art. 5(1)(f)) sets the employee and employer shares at 8.9% each for contribution years from 1 January 2024 to 2028 (8.3% in 2019 to 2023) and the self-employed share at 16.8% (art. 12(g)), with a proviso that lets a smaller increase be applied when the actuarial study made before each step allows it; the rates the Social Insurance Services applies from 1 January 2024 are 8.8%, 8.8% and 16.6%, with the next scheduled step in 2029. Source: Social Insurance Law 59(I)/2010, arts 5(1) and 12; Social Insurance Services; KPMG Cyprus.
 
 ### Special Defence Contribution (SDC) -- 2025
 
-**Special Defence Contribution (SDC) -- 2025**  _(PwC; Constantinos Markou & Co)_
+**Special Defence Contribution (SDC) -- 2025**  _(Special Contribution for the Defence of the Republic Law 117(I)/2002, arts 2(3) and 3, consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_117/full.html ; Law 245(I)/2025, in force 1 January 2026 — http://www.cylaw.org/nomoi/arith/2025_1_245.pdf)_
 
 | Income type | SDC rate (2025) | Note |
 | --- | --- | --- |
-| Dividends | 17% | From 1 Jan 2026 reduced to 5% (Source: PwC; cyprustaxaccounting.com) |
-| Interest | 17% | Reduced effective 3% where total annual income <= EUR 12,000 [RESEARCH GAP -- reviewer to confirm exact SDC interest reduced-rate mechanics against the SDC Law] |
-| Rent | 3% on 75% of gross (effective 2.25%) | SDC on rent abolished from 1 Jan 2026 (Source: PwC; ATCA) |
+| Dividends | 17% | From 1 Jan 2026 the rate in art. 3(1)(a) is 5%; dividends paid out of profits of tax years up to 2025 keep 17% when received within six years of Law 245(I)/2025 coming into force, and the 2024 and 2025 profits paid in 2026 and 2027 are named expressly (Law 245(I)/2025) |
+| Interest | 17% | Art. 3(2)(a)(i): an individual whose total annual income including the interest does not exceed EUR 12,000 may claim a refund of the SDC withheld on the interest above 3%; the 3% rate also applies to Cyprus and EU government savings certificates and development bonds and listed corporate bonds (art. 3(2)(b)) |
+| Rent | 3% on 75% of gross (effective 2.25%) | Rent was removed from the SDC base by Law 245(I)/2025 from 1 Jan 2026; rent then bears income tax and GHS only |
 
-SDC applies ONLY to individuals who are Cyprus tax resident AND domiciled. Non-domiciled residents are exempt. Source: PwC; Constantinos Markou & Co.
+SDC applies ONLY to individuals who are Cyprus tax resident AND domiciled (SDC Law art. 2(3): domicile of origin in Cyprus, or deemed domicile after residence in 17 of the last 20 tax years). Non-domiciled residents are exempt.
 
 ### Conservative Defaults
 
@@ -328,7 +330,7 @@ Input line:
 `05/02/2025 ; EUROBANK CYPRUS EMBASMA ; UK PENSION PROVIDER ; MONTHLY PENSION x12 = 18,000/yr ; +1,500.00 ; EUR`
 
 Reasoning:
-Foreign (overseas) pension income may be taxed at a flat 5% on the amount exceeding EUR 5,000 per year (from 1 January 2026; EUR 3,420 applied up to 31 December 2025), OR at normal PIT bands (annual election). Source: PwC Worldwide Tax Summaries -- Income determination.
+Foreign (overseas) pension income may be taxed at a flat 5% on the amount exceeding EUR 5,000 per year (from 1 January 2026; EUR 3,420 applied up to 31 December 2025), OR at normal PIT bands (annual election), and the pension is not aggregated with other income under the flat method. Source: Income Tax Law 118(I)/2002, art. 20, as amended by Law 244(I)/2025 s. 12 (the EUR 3,420 figure replaced by EUR 5,000).
 - Flat method: (18,000 - 3,420) x 5% = 14,580 x 5% = EUR 729
 - Compare against normal bands and elect the lower; election is made each year.
 
@@ -340,15 +342,15 @@ Classification: Flag for reviewer -- confirm the annual election. Present both m
 
 ### 5.2 Residency and Scope of Charge
 
-Source: PwC Worldwide Tax Summaries -- Cyprus.
+Source: Income Tax Law 118(I)/2002, art. 2 (definition of "resident of the Republic") and art. 5 (charge), consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html ; Tax Department, Tax Residency/Domicility — https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/
 
 - **Worldwide vs source:** Cyprus tax residents are taxed on worldwide income; non-residents are taxed only on Cyprus-source income.
-- **183-day rule:** Resident if physically present in Cyprus more than 183 days in the tax (calendar) year.
-- **60-day rule:** Resident if present >= 60 days AND not tax resident elsewhere / not present > 183 days in any other state, AND carries on business / is employed / holds an office in a Cyprus company at any time in the year, AND maintains a permanent home in Cyprus (owned or rented).
+- **183-day rule:** Resident if physically present in Cyprus for one or more periods exceeding 183 days in total in the tax (calendar) year (art. 2(a)(i)).
+- **60-day rule:** Resident if not present in any other state for periods exceeding 183 days in total in the same tax year AND, cumulatively, present in Cyprus for at least 60 days, carries on a business in Cyprus and/or is employed in Cyprus and/or holds an office in a Cyprus tax resident person at any time in the year (the condition fails if that business, employment or office ends during the year), AND maintains a permanent home in Cyprus owned or rented by the individual (art. 2(a)(ii)).
 
 ### 5.3 Income Determination
 
-**Income Determination**  _(PwC Worldwide Tax Summaries -- Income determination)_
+**Income Determination**  _(Income Tax Law 118(I)/2002, arts 5, 8 (exemptions), 9(2) (20% rental deduction) and 20 (foreign pensions); Special Contribution for the Defence Law 117(I)/2002, art. 3; Law 245(I)/2025 (rent removed from SDC) — CyLaw)_
 
 | Income type | PIT treatment |
 | --- | --- |
@@ -368,28 +370,28 @@ Source: PwC Worldwide Tax Summaries -- Cyprus.
 
 ### 5.5 Social Insurance and GHS (GESY)
 
-**Social Insurance and GHS (GESY) contribution rates**  _(KPMG Cyprus; PwC; Social Insurance Services)_
+**Social Insurance and GHS (GESY) contribution rates**  _(Social Insurance Law 59(I)/2010, arts 5(1) and 12 — http://www.cylaw.org/nomoi/enop/non-ind/2010_1_59/full.html ; General Healthcare System Law 89(I)/2001, art. 19 — http://www.cylaw.org/nomoi/enop/non-ind/2001_1_89/full.html ; Social Insurance Services; KPMG Cyprus for the announced ceilings)_
 
 | Contribution | Employee | Employer | Self-employed | Ceiling (2025) |
 | --- | --- | --- | --- | --- |
-| Social Insurance | 8.8% | 8.8% | 16.6% | EUR 66,612/year (EUR 5,551/month, EUR 1,281/week) |
+| Social Insurance | 8.8% | 8.8% | 16.6% | EUR 66,612/year (EUR 5,551/month, EUR 1,281/week); EUR 68,904/year (EUR 5,742/month, EUR 1,325/week) from 1 January 2026 |
 | GHS / GESY | 2.65% | 2.90% | 4.00% | EUR 180,000/year total income |
 
-- **GHS rate on pensioners and other income** — GHS pensioners 2.65%; GHS other income (rents, dividends, interest) 2.65% -- all within the EUR 180,000 combined cap.  _(KPMG Cyprus; PwC; Social Insurance Services)_
-- **Self-employed Social Insurance basis** — Self-employed Social Insurance is assessed on deemed/notional minimum insurable income set per occupational category (max EUR 66,612); the self-employed may elect to contribute on actual earnings if below the prescribed minimum.  _(KPMG Cyprus; PwC; Social Insurance Services)_
+- **GHS rate on pensioners and other income** — GHS pensioners 2.65% (art. 19(1)(d)); office holders 2.65% (art. 19(1)(e)); other income such as rents, dividends and interest 2.65% (art. 19(1)(g)); the Republic adds 4.70% (art. 19(1)(h)). Where the contributor's emoluments, pensions and income together exceed EUR 180,000, contributions are due only on EUR 180,000, counted in the order emoluments, pensions, then other income, and any excess paid is refunded (art. 19(4)).  _(General Healthcare System Law 89(I)/2001, art. 19)_
+- **Self-employed Social Insurance basis** — Self-employed Social Insurance is assessed on deemed/notional minimum insurable income set per occupational category (max EUR 66,612 in 2025); the self-employed may elect to contribute on actual earnings if below the prescribed minimum. The statutory schedule in art. 12 of the Social Insurance Law reads 16.8% from 2024, 18% from 2029, 19.4% from 2034 and 20.4% from 2039, subject to the actuarial proviso under which 16.6% is applied.  _(Social Insurance Law 59(I)/2010, art. 12; Social Insurance Services)_
 
 [RESEARCH GAP -- reviewer to confirm] The specific 2025 weekly minimum insurable amounts per occupational category come from the official Social Insurance Services table (mlsi.gov.cy) and were not captured here. Do not assert a self-employed Social Insurance figure without that table.
 
 ### 5.6 Deductions Cap (1/5 Rule)
 
-- **Combined contributions/insurance deduction cap** — Combined life insurance premiums + Social Insurance + GHS + pension/provident fund contributions are deductible up to a maximum of 1/5 (20%) of chargeable income.  _(PwC Worldwide Tax Summaries -- Deductions)_
-- **Life insurance premium deduction limit** — Life insurance premium deduction limited to 7% of the insured sum.  _(PwC Worldwide Tax Summaries -- Deductions)_
-- **Pension/provident fund contribution limit** — Pension/provident fund contributions limited to 10% of remuneration.  _(PwC Worldwide Tax Summaries -- Deductions)_
-- **Medical-fund contribution limit** — Medical-fund contributions limited to 2% of total income.  _(PwC Worldwide Tax Summaries -- Deductions)_
+- **Combined contributions/insurance deduction cap** — Life insurance premiums, Social Insurance contributions, pension and provident fund contributions, medical fund premiums and GHS contributions are deducted under art. 14(1), and the total deduction under that article may not exceed one fifth (1/5) of the individual's taxable income (art. 14(2)).  _(Income Tax Law 118(I)/2002, art. 14 — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html)_
+- **Life insurance premium deduction limit** — The life insurance premium deduction may not exceed 7% of the sum insured payable on death or permanent disability (art. 14(1)(a)); cashing in a policy within three years adds 30% of the deducted premiums back to income.  _(Income Tax Law 118(I)/2002, art. 14(1)(a))_
+- **Pension/provident fund contribution limit** — Contributions to an approved pension or provident fund are deductible up to 10% of the individual's total income (art. 14(1)(c)).  _(Income Tax Law 118(I)/2002, art. 14(1)(c))_
+- **Medical-fund contribution limit** — Medical fund premiums and contributions are deductible up to 2% of total income (art. 14(1)(d)); GHS contributions are deductible in full within the 1/5 cap (art. 14(1)(e)).  _(Income Tax Law 118(I)/2002, art. 14(1)(d) and (e))_
 
 ### 5.7 Expatriate Exemptions
 
-**Expatriate Exemptions**  _(PwC; Cyprus Tax Department Circular 4/2024)_
+**Expatriate Exemptions**  _(Income Tax Law 118(I)/2002, art. 8(21), (21A), (21B) and (23A), consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html ; Cyprus Tax Department Circular 4/2024)_
 
 | Exemption | Rule | Duration |
 | --- | --- | --- |
@@ -397,14 +399,14 @@ Source: PwC Worldwide Tax Summaries -- Cyprus.
 | 20% exemption (Art. 8(21A); Art. 8(21) for employments that began before 26 July 2022) | Lower of 20% of employment income or EUR 8,550/year, for individuals not Cyprus tax resident in the 3 prior consecutive tax years before employment; closed to new entrants from the publication of Law 17(I)/2026 | 7 years |
 | 25% exemption (Art. 8(21B), "Minds in Cyprus", Law 17(I)/2026) | From tax year 2026: 25% of gross employment income or business profits exempt, capped at EUR 25,000 a year, for individuals who commence employment or a business activity in Cyprus between 1 January 2025 and 31 December 2030, were not Cyprus tax resident in the 7 years before commencement and had been Cyprus tax resident at some earlier time; granted once per lifetime | 7 years from the year of commencement |
 
-- **Exemptions cannot be combined** — The 50%, 20% and 25% exemptions cannot be combined with one another. Flag any expat-exemption claim for reviewer to confirm eligibility evidence.  _(PwC; Cyprus Tax Department Circular 4/2024; Law 17(I)/2026)_
+- **Exemptions cannot be combined** — Where the 50% exemption is granted, the exemptions in art. 8(21), (21A), (21B) and (23) are not, and the 50% exemption is granted once in a lifetime (art. 8(23A) provisos). Flag any expat-exemption claim for reviewer to confirm eligibility evidence.  _(Income Tax Law 118(I)/2002, art. 8(23A); Cyprus Tax Department Circular 4/2024; Law 17(I)/2026)_
 
 ### 5.8 Special Defence Contribution (SDC)
 
-- **SDC applicability** — Applies ONLY to individuals who are Cyprus tax resident AND domiciled. Non-domiciled residents are exempt.  _(PwC; ATCA; Constantinos Markou & Co.)_
-- **SDC 2025 rates** — dividends 17%; interest 17% (reduced effective 3% where total annual income <= EUR 12,000 [RESEARCH GAP -- reviewer to confirm exact mechanics]); rent 3% on 75% of gross (effective 2.25%)  _(PwC; ATCA; Constantinos Markou & Co.)_
-- **Deemed domicile** — Treated as domiciled if Cyprus tax resident for at least 17 of the last 20 tax years.  _(PwC; ATCA; Constantinos Markou & Co.)_
-- **2026 SDC changes** — From 1 Jan 2026: dividend SDC reduced to 5%; SDC on rent abolished.  _(PwC; ATCA; Constantinos Markou & Co.)_
+- **SDC applicability** — Applies ONLY to individuals who are Cyprus tax resident AND domiciled in Cyprus. Non-domiciled residents are exempt: an individual with a Cyprus domicile of origin who has acquired and keeps a domicile of choice abroad, or who was non-resident for at least 20 consecutive years before the law took effect, is not domiciled.  _(Special Contribution for the Defence Law 117(I)/2002, art. 2(3) — http://www.cylaw.org/nomoi/enop/non-ind/2002_1_117/full.html)_
+- **SDC 2025 rates** — dividends 17%; interest 17%, with a refund of the SDC withheld above 3% for an individual whose total annual income including the interest does not exceed EUR 12,000 (art. 3(2)(a)(i)), and 3% on government savings certificates, development bonds and listed corporate bonds (art. 3(2)(b)); rent 3% on 75% of gross (effective 2.25%) for 2025.  _(Special Contribution for the Defence Law 117(I)/2002, art. 3; Law 245(I)/2025)_
+- **Deemed domicile** — Treated as domiciled if Cyprus tax resident for at least 17 of the last 20 tax years before the tax year, and the deemed domicile continues until 20 years of non-residence have accrued.  _(Special Contribution for the Defence Law 117(I)/2002, art. 2(3) provisos)_
+- **2026 SDC changes** — From 1 Jan 2026: dividend SDC 5% (art. 3(1)(a) as replaced by Law 245(I)/2025), with 17% kept on dividends paid out of profits of tax years up to 2025 that are received within six years of the law's commencement; rent removed from the SDC base.  _(Law 245(I)/2025, in force 1 January 2026 — http://www.cylaw.org/nomoi/arith/2025_1_245.pdf)_
 
 ### 5.9 Non-Deductible Expenses
 
@@ -433,18 +435,18 @@ Source: PwC Worldwide Tax Summaries -- Cyprus.
 
 ### 5.11 Provisional (Temporary) Tax
 
-**Provisional (Temporary) Tax**  _(PwC; Tax Department)_
+**Provisional (Temporary) Tax**  _(Assessment and Collection of Taxes Law 4/1978, Part IV, arts 24 to 26, consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/1978_1_4/full.html ; Tax Department)_
 
 | Item | Detail |
 | --- | --- |
-| Who | Individuals with non-PAYE income (self-employment/other) |
+| Who | Persons with income other than emoluments: they submit a provisional computation of the year's taxable income before 31 July of the tax year and may revise it any time before 31 December (art. 24); a person who first earns such income after 30 June submits the computation by 31 December |
 | Instalments | Two equal instalments: 31 July and 31 December of the tax year |
 | Final balancing payment | Self-assessment by 31 July of the following year (employees) / 1 August |
-| Underestimation surcharge | 10% surcharge if provisional tax declared is less than 75% of the final liability |
+| Underestimation surcharge | Where the provisional taxable income is less than three quarters (75%) of the final figure, an additional amount of one tenth (10%) of the difference between the final tax and the provisional tax paid is due (art. 26(1)); overpaid provisional tax is refunded with interest (art. 26(2)) |
 
 ### 5.12 Filing Deadlines and Penalties
 
-**Filing Deadlines and Penalties**  _(SPL Audit Cyprus; Gov.cy; PwC)_
+**Filing Deadlines and Penalties**  _(Assessment and Collection of Taxes Law 4/1978, art. 5(1A) (return by 31 July of the following year) and art. 50A (fixed penalties of EUR 150, EUR 250 and EUR 500 from 2026, waived where the Commissioner's public announcement extends the deadline), consolidated text on CyLaw — http://www.cylaw.org/nomoi/enop/non-ind/1978_1_4/full.html ; Tax Department, Individual Income Tax Return — https://www.gov.cy/mof-tax/en/documents/forologiki-dilosi-eisodimatos-atomoy/ ; SPL Audit Cyprus; Gov.cy)_
 
 | Item | Detail |
 | --- | --- |
@@ -664,33 +666,40 @@ ONBOARDING QUESTIONS -- CYPRUS INCOME TAX
 
 | Threshold | Value | Source |
 | --- | --- | --- |
-| PIT tax-free threshold (2025) | EUR 19,500 | PwC Worldwide Tax Summaries |
-| PIT tax-free threshold (2026 reform) | EUR 22,000 | PwC; cyprustaxaccounting.com |
-| Social Insurance ceiling (2025) | EUR 66,612/year (5,551/month, 1,281/week) | KPMG Cyprus; Social Insurance Services |
-| GHS ceiling (2025) | EUR 180,000/year total income | PwC Worldwide Tax Summaries |
-| 183-day residency rule | > 183 days in tax year | PwC |
-| 60-day residency rule | >= 60 days + permanent home + Cyprus business/employment/office + not resident elsewhere | PwC |
-| Deemed domicile (SDC) | Resident 17 of last 20 tax years | PwC |
-| VAT compulsory registration | EUR 15,600 turnover (prior 12 months) | PwC / Cyprus VAT context |
+| PIT tax-free threshold (2025) | EUR 19,500 | Income Tax Law 118(I)/2002, Second Schedule para 1(b) |
+| PIT tax-free threshold (2026 reform) | EUR 22,000 | Income Tax Law 118(I)/2002, Second Schedule para 1(c), inserted by Law 244(I)/2025 |
+| Social Insurance ceiling (2025) | EUR 66,612/year (5,551/month, 1,281/week); EUR 68,904 (5,742/month, 1,325/week) from 2026 | Social Insurance Services; KPMG Cyprus |
+| GHS ceiling (2025) | EUR 180,000/year total income | General Healthcare System Law 89(I)/2001, art. 19(4) |
+| 183-day residency rule | > 183 days in tax year | Income Tax Law 118(I)/2002, art. 2 |
+| 60-day residency rule | >= 60 days + permanent home + Cyprus business/employment/office + not present > 183 days in another state | Income Tax Law 118(I)/2002, art. 2 |
+| Deemed domicile (SDC) | Resident 17 of last 20 tax years | Special Contribution for the Defence Law 117(I)/2002, art. 2(3) |
+| VAT compulsory registration | EUR 15,600 turnover (prior 12 months) | VAT Law 95(I)/2000, First Schedule (see cyprus-vat-return) |
 | Self-employed audited-accounts / accelerated filing | Annual income > EUR 120,000 (from 2026) | SPL Audit Cyprus |
 | National minimum wage (2025) | EUR 1,000/month after 6 months (EUR 900 first 6 months) | Ministry of Labour & Social Insurance; Cyprus Mail |
 | National minimum wage (from 1 Jan 2026) | EUR 1,088/month (EUR 979 first 6 months) | Ministry of Labour & Social Insurance; Cyprus Mail |
 
 ### 2026 New Deductions (apply only from tax year 2026)
 
-**2026 New Deductions**  _(PwC -- Deductions)_
+**2026 New Deductions**  _(Law 244(I)/2025, amending the Income Tax Law from 1 January 2026 — http://www.cylaw.org/nomoi/arith/2025_1_244.pdf ; the child allowance amounts were read in the law; the other rows carry the figures published when the reform passed and are [RESEARCH GAP -- reviewer to confirm against Law 244(I)/2025 and the Tax Department's Tax Reform 2026 page, https://www.gov.cy/mof-tax/en/documents/forologiki-metarrythmisi-2026/])_
 
 | Deduction | Limit |
 | --- | --- |
 | Natural-disaster insurance | up to EUR 500 |
 | Cultural donations | up to EUR 50,000 |
-| Child allowance | EUR 1,000-1,500 per child (doubled for single parents) |
+| Child allowance | EUR 1,000 for the first, EUR 1,250 for the second and EUR 1,500 for the third and each further dependent child, per parent, for children dependent at 31 December of the tax year, subject to the family income conditions in the law (Law 244(I)/2025) |
 | Home loan interest / rent | up to EUR 2,000 |
 | Energy-efficiency / EV | up to EUR 1,000 |
 
 ### Cited Sources
 
-- PwC Worldwide Tax Summaries -- Cyprus Individual: Taxes on personal income / Other taxes / Income determination / Deductions (taxsummaries.pwc.com/cyprus/individual)
+- Income Tax Law 118(I)/2002 (consolidated), CyLaw: http://www.cylaw.org/nomoi/enop/non-ind/2002_1_118/full.html -- art. 2 (residence), art. 8(21), (21A), (21B), (23A) (exemptions), art. 9(2) (rent), art. 14 (deductions and the 1/5 cap), art. 20 (foreign pensions), Second Schedule (rates)
+- Law 244(I)/2025 (Income Tax amending law, 2026 reform), CyLaw: http://www.cylaw.org/nomoi/arith/2025_1_244.pdf
+- Special Contribution for the Defence of the Republic Law 117(I)/2002 (consolidated), CyLaw: http://www.cylaw.org/nomoi/enop/non-ind/2002_1_117/full.html -- art. 2(3) (domicile), art. 3 (rates); Law 245(I)/2025: http://www.cylaw.org/nomoi/arith/2025_1_245.pdf
+- Social Insurance Law 59(I)/2010 (consolidated), CyLaw: http://www.cylaw.org/nomoi/enop/non-ind/2010_1_59/full.html -- arts 5(1) and 12 (contribution schedules)
+- General Healthcare System Law 89(I)/2001 (consolidated), CyLaw: http://www.cylaw.org/nomoi/enop/non-ind/2001_1_89/full.html -- art. 19 (rates and the EUR 180,000 cap)
+- Assessment and Collection of Taxes Law 4/1978 (consolidated), CyLaw: http://www.cylaw.org/nomoi/enop/non-ind/1978_1_4/full.html -- art. 5(1A) (31 July return), arts 24 to 26 (provisional tax), art. 50A (fixed penalties)
+- Tax Department (gov.cy/mof-tax): Individual Income Tax Return, Tax Residency/Domicility, Tax Reform 2026 pages
+- Social Insurance Services (mlsi.gov.cy) -- Basic Insurable Earnings: https://www.mlsi.gov.cy/mlsi/sid/sidv2.nsf/page94_en/page94_en?OpenDocument
 - KPMG Cyprus -- Amendment to maximum insurable earnings for 2025
 - Social Insurance Services / Ministry of Labour and Social Insurance (mlsi.gov.cy) -- insurable earnings, self-employed categories, minimum wage
 - Cyprus Mail -- minimum wage increase to EUR 1,088 (Dec 2025)

@@ -1,10 +1,10 @@
 ---
 name: venezuela-payroll
 description: Use this skill whenever asked about Venezuela payroll processing for employed persons. Trigger on phrases like "Venezuela payroll", "ISLR Venezuela", "Impuesto Sobre la Renta withholding", "retención ISLR", "Unidad Tributaria", "valor de la UT", "IVSS deduction", "Seguro Social Venezuela", "FAOV", "Ley de Vivienda y Hábitat", "INCES", "Paro Forzoso", "Régimen Prestacional de Empleo", "LOPCYMAT", "AR-I", "AR-C", "ARC", "comprobante de retención", "salario mínimo Venezuela", "Ingreso Mínimo Integral", "bono de guerra económica", "cestaticket", "desgravamen único", "rebaja personal", "net salary Venezuela", "salario neto Venezuela", "gross to net Venezuela", "IGTF", "bolívares payroll", or any question about computing employee pay, income-tax withholding, or social-security/parafiscal contributions for Venezuela-based employees. This skill covers ISLR (income tax) withholding by the employer, IVSS social security, Paro Forzoso (employment benefit), FAOV (housing), INCES (training), LOPCYMAT (workplace safety), the 9% pension protection contribution companies pay on salary plus non-salary bonuses, the frozen legal minimum wage vs the USD-indexed non-salary bonuses (Ingreso Mínimo Integral), the AR-I / AR-C withholding mechanism, and filing obligations to SENIAT. ALWAYS read this skill before processing any Venezuela payroll.
-version: 0.2
+version: 0.3
 jurisdiction: VE
 tax_year: 2025
-last_updated: 2026-10-08
+last_updated: 2026-10-11
 reviewed_by: Jose Padilla
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Venezuela Payroll
 
-## Venezuela Payroll Skill v0.2
+## Venezuela Payroll Skill v0.3
 > **Accountant-reviewed (`tier: 1`).** Jose Padilla reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-21; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2 (research-verified), not yet accountant-verified", the draft label the guide carried before that review. **Not covered by the review:** items flagged for further clarification were excluded, so the figures below that still carry the `[RESEARCH GAP — reviewer to confirm]` marker remain unconfirmed; a licensed Venezuelan contador público colegiado must reconcile those before any output that depends on them is presented as final.
 
 > **Edited since review (2026-10-08).** Rates and thresholds now cite the statutes instead of a secondary tax summary (Section 19 lists them). The statutes required corrections that the 2026-06-21 sign-off does not cover: FAOV has no ceiling (Ley del Régimen Prestacional de Vivienda y Hábitat art. 33); the INCES employer 2% is on monthly normal salary and applies to employers with five or more workers (Ley del INCES art. 49); the ISLR withholding threshold is total annual remuneration above 1,000 UT, not net enrichment (Decreto 1.808 art. 2); and the 9% pension protection contribution that companies have paid since May 2024 on salary plus non-salary bonuses is added (Ley de Protección de las Pensiones de Seguridad Social art. 7; Decreto N° 4.952). `review_status` is `pending_review` until a reviewer signs these off.
@@ -46,7 +46,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Ley de Impuesto Sobre la Renta (Art. 50, Art. 31; Gaceta Oficial N° 6.210 Extraordinario, 2015); ISLR Reglamento (Decreto N° 2.507, 2003); Decreto 1.808 (withholding, 1997); Código Orgánico Tributario (COT); Ley del Seguro Social and its Reglamento General (2012); Ley del Régimen Prestacional de Empleo; Ley del Régimen Prestacional de Vivienda y Hábitat (reprinted 2024); Ley del INCES (2014); LOPCYMAT; Ley de Protección de las Pensiones de Seguridad Social (2024) |
 | Filing portal | SENIAT en línea (`declaraciones.seniat.gob.ve`) |
 | Validated by | Verified by Jose Padilla (CPA) on 2026-06-21 |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ## Section 2 -- Income Tax Withholding (ISLR — Impuesto Sobre la Renta)
 
@@ -382,7 +382,7 @@ Apply IVSS/Paro caps (`min(B, ceiling)`) in production; omitted above for clarit
 
 ## Section 14 -- Other Taxes Touching Payroll / Individuals
 
-**Other Taxes Touching Payroll / Individuals**  _(Source: PwC Worldwide Tax Summaries — Venezuela (other taxes, last reviewed 12 Jan 2026). Not checked against the IGTF law or the Ley de Impuesto a los Grandes Patrimonios; both rates are set by executive decree within ranges in those laws, so confirm the decree in force before using them.)_
+**Other Taxes Touching Payroll / Individuals**  _(Source: Secondary practitioner summary — Venezuela (other taxes, last reviewed 12 Jan 2026). Not checked against the IGTF law or the Ley de Impuesto a los Grandes Patrimonios; both rates are set by executive decree within ranges in those laws, so confirm the decree in force before using them.)_
 
 | Tax | Detail |
 | --- | --- |
@@ -467,11 +467,11 @@ The **2020 COT reform** re-denominated many penalties from UT to the **official 
 | Minimum wage | VES 130/month (frozen Mar 2022) | Decreto N° 4.653 art. 1 (Gaceta Oficial N° 6.691 Extraordinario); WageIndicator |
 | Ingreso Mínimo Integral | US$240 (US$200 bono + US$40 cestaticket), non-salary | Guacamaya |
 | Annual ISLR deadline | 31 March (installments 31 Mar / 21 Apr / 12 May) | Efecto Cocuyo; El Diario |
-| IGTF | 3% on FX/crypto payments | PwC |
-| Net wealth tax | 0.25% on net worth ≥ 150,000,000 UT | PwC |
+| IGTF | 3% on FX/crypto payments | secondary summary |
+| Net wealth tax | 0.25% on net worth ≥ 150,000,000 UT | secondary summary |
 | COT penalties | 100–300% omission; BCV-rate-denominated | Grant Thornton |
 
-Key authorities: SENIAT (`seniat.gob.ve`), IVSS, BANAVIH/FAOV, INCES, INPSASEL, BCV. Big-4/secondary: PwC Worldwide Tax Summaries (IGTF and net wealth tax only), Grant Thornton Venezuela, Moore/Forvis Mazars (retention tables), Efecto Cocuyo, El Diario, Nayma Consultores, Guacamaya, CloudPay, Rivermate, lega.law.
+Key authorities: SENIAT (`seniat.gob.ve`), IVSS, BANAVIH/FAOV, INCES, INPSASEL, BCV. Big-4/secondary: practitioner summaries (IGTF and net wealth tax only), Grant Thornton Venezuela, Moore/Forvis Mazars (retention tables), Efecto Cocuyo, El Diario, Nayma Consultores, Guacamaya, CloudPay, Rivermate, lega.law.
 
 ## Section 20 -- Test Suite
 

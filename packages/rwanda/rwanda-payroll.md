@@ -1,10 +1,10 @@
 ---
 name: rwanda-payroll
 description: Use this skill whenever asked about Rwanda payroll processing for employed persons. Trigger on phrases like "Rwanda payroll", "PAYE Rwanda", "RRA PAYE", "RSSB contribution", "pension Rwanda", "occupational hazards Rwanda", "maternity contribution Rwanda", "RAMA", "medical insurance Rwanda", "CBHI", "Mutuelle de Santé", "Ejo Heza", "casual labour Rwanda", "net salary Rwanda", "tax withholding Rwanda", "employer RSSB", "minimum wage Rwanda", "gross to net Rwanda", "salary calculation Rwanda", "RWF payroll", "Frw salary", or any question about computing employee pay, income-tax (PAYE) withholding, or social-security contributions for Rwanda-based employees. This skill covers PAYE income-tax withholding by the employer, RSSB pension, occupational hazards, maternity leave benefits, medical insurance and CBHI contributions, casual-labour withholding, minimum wage, and filing obligations to RRA/RSSB. ALWAYS read this skill before processing any Rwanda payroll.
-version: 0.1
+version: 0.2
 jurisdiction: RW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Rwanda Payroll
 
-## Rwanda Payroll Skill v0.1
+## Rwanda Payroll Skill v0.2
 
 > **Tier 2 (research-verified) — NOT yet accountant-verified.** Several figures carry `[RESEARCH GAP — reviewer to confirm]` markers. A licensed Rwandan tax practitioner / accountant must reconcile those before any output is presented as final.
 
@@ -28,27 +28,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Rwanda (Republic of Rwanda) |
 | Currency | Rwandan Franc (RWF / Frw) only |
 | Standard pay frequency | Monthly (most common) |
-| Tax year | Calendar year (1 January -- 31 December) (PwC — Tax administration) |
+| Tax year | Calendar year (1 January -- 31 December) (secondary summary, Tax administration) |
 | Income tax | YES — PAYE (Pay-As-You-Earn), progressive 0% / 10% / 20% / 30%, employer-withheld monthly (Law 027/2022) |
 | Tax authority | RRA (Rwanda Revenue Authority) |
 | Social security authority | RSSB (Rwanda Social Security Board) |
-| Pension scheme | RSSB pension (12% total in 2025; phasing to 20% by 2030) (PwC — Other taxes) |
+| Pension scheme | RSSB pension (12% total in 2025; phasing to 20% by 2030) (secondary summary, Other taxes) |
 | Other RSSB schemes | Occupational hazards, maternity leave benefits, medical insurance (RAMA), CBHI |
-| PAYE monthly deadline | **15th day of the following month** (PwC — Tax administration) |
+| PAYE monthly deadline | **15th day of the following month** (secondary summary, Tax administration) |
 | RSSB monthly deadline | **15th day of the following month** (RRA — RSSB declaration & payment) |
-| Annual ISR return deadline | **31 March** of following year; employment-only earners exempt (PwC) |
+| Annual ISR return deadline | **31 March** of following year; employment-only earners exempt (secondary summary) |
 | Key legislation | Law No. 027/2022 (income tax); Law No. 020/2023 (tax procedures); RSSB pension/social-security laws |
 | Filing portal | RRA online portal (e-tax / declaration system) |
 | Validated by | Pending -- requires sign-off by a licensed Rwandan tax practitioner |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 -- Income Tax Withholding (PAYE — Pay-As-You-Earn)
 
-Rwanda **does** levy personal income tax on employees. The employer is the **withholding agent**: it deducts PAYE monthly from payroll and remits it monthly to RRA by the 15th of the following month (PwC — Tax administration). The brackets are expressed on **MONTHLY taxable employment income in RWF** and were set by **Law No. 027/2022 of 20/10/2022**, with the bracket structure fully phased in from **November 2023** (PwC, last reviewed 18 Feb 2026; RRA calculation guide).
+Rwanda **does** levy personal income tax on employees. The employer is the **withholding agent**: it deducts PAYE monthly from payroll and remits it monthly to RRA by the 15th of the following month (secondary summary, Tax administration). The brackets are expressed on **MONTHLY taxable employment income in RWF** and were set by **Law No. 027/2022 of 20/10/2022**, with the bracket structure fully phased in from **November 2023** (secondary summary, last reviewed 18 Feb 2026; RRA calculation guide).
 
 ### PAYE Progressive Table — Monthly Taxable Income (2025, CONFIRMED)
 
-**PAYE Progressive Table — Monthly Taxable Income (2025, CONFIRMED)**  _(Source: RRA calculation guide (Law 027/2022, monthly bands, raised 0% threshold); PwC — Taxes on personal income.)_
+**PAYE Progressive Table — Monthly Taxable Income (2025, CONFIRMED)**  _(Source: RRA calculation guide (Law 027/2022, monthly bands, raised 0% threshold); secondary summary, Taxes on personal income.)_
 
 | Monthly taxable income (RWF) | Marginal rate | Tax on this bracket (cumulative at top) |
 | --- | --- | --- |
@@ -57,8 +57,8 @@ Rwanda **does** levy personal income tax on employees. The employer is the **wit
 | 100,001 – 200,000 | **20%** | Frw 24,000 |
 | 200,001 and above | **30%** | — |
 
-- **Residency scope** — Same rates apply to residents and non-residents  _(PwC)_
-- **Local taxes** — No local / municipal income taxes in Rwanda  _(PwC)_
+- **Residency scope** — Same rates apply to residents and non-residents  _(secondary summary)_
+- **Local taxes** — No local / municipal income taxes in Rwanda  _(secondary summary)_
 - **0% threshold history** — The 0% threshold (first Frw 60,000/month) was raised from the prior Frw 30,000 when Law 027/2022 took effect  _(RRA)_
 
 **Subtract-method constants (2025)**  _(monthly tax = (monthly taxable income × rate) − subtract)_
@@ -85,18 +85,18 @@ Rwanda **does** levy personal income tax on employees. The employer is the **wit
 
 ### Withholding mechanism
 
-- **PAYE withholding cadence** — PAYE is withheld monthly by the employer from payroll and remitted monthly to RRA by the 15th  _(PwC)_
-- **Annual return exemption** — Individuals earning only employment income are exempt from filing an annual return — PAYE is final. Those with additional income types must file by 31 March.  _(PwC — Tax administration)_
+- **PAYE withholding cadence** — PAYE is withheld monthly by the employer from payroll and remitted monthly to RRA by the 15th  _(secondary summary)_
+- **Annual return exemption** — Individuals earning only employment income are exempt from filing an annual return — PAYE is final. Those with additional income types must file by 31 March.  _(secondary summary, Tax administration)_
 
 ## Section 3 -- RSSB Pension Scheme (Employee + Employer)
 
 All persons working in Rwanda (nationals and foreigners) must contribute to RSSB-managed schemes. The **employer deducts, declares and pays both employer and employee shares** (RRA — RSSB declaration).
 
-> **MAJOR 2025 CHANGE:** the pension rate **doubled from 6% to 12% effective 1 January 2025**, split equally employer/employee, with phased increases to **20% by 2030** (PwC — Other taxes; VisionsAfrica advisory). The contribution **base was expanded in 2025 to include the transport allowance** (previously excluded) (VisionsAfrica).
+> **MAJOR 2025 CHANGE:** the pension rate **doubled from 6% to 12% effective 1 January 2025**, split equally employer/employee, with phased increases to **20% by 2030** (secondary summary, Other taxes; VisionsAfrica advisory). The contribution **base was expanded in 2025 to include the transport allowance** (previously excluded) (VisionsAfrica).
 
 ### Pension Contribution Schedule (basis: gross salary)
 
-**Pension Contribution Schedule (basis: gross salary)**  _(Source: PwC — Other taxes (full schedule, splits, basis); VisionsAfrica (2025 base now includes transport).)_
+**Pension Contribution Schedule (basis: gross salary)**  _(Source: the secondary summary — Other taxes (full schedule, splits, basis); VisionsAfrica (2025 base now includes transport).)_
 
 | Effective | Total | Employer | Employee |
 | --- | --- | --- | --- |
@@ -106,18 +106,18 @@ All persons working in Rwanda (nationals and foreigners) must contribute to RSSB
 | From 1 Jan 2029 | 18% | 9% | 9% |
 | From 1 Jan 2030 | 20% | 10% | 10% |
 
-- **Prior rate** — Prior rate (through 2024) was 6% total / 3% each  _(PwC)_
+- **Prior rate** — Prior rate (through 2024) was 6% total / 3% each  _(secondary summary)_
 - **Salary ceiling** — No salary ceiling/cap on pension was found in authoritative sources — contributions appear uncapped (percentage of full gross). [RESEARCH GAP — reviewer to confirm absence of a ceiling with RSSB].
 
 *Column check (2025):* employer 6% + employee 6% = **12%** total. Tie out.
 
 ## Section 4 -- RSSB Occupational Hazards Scheme
 
-**Occupational Hazards Scheme**  _(PwC — Other taxes)_
+**Occupational Hazards Scheme**  _(secondary summary, Other taxes)_
 
 | Item | Total | Employer | Employee | Basis | Source |
 | --- | --- | --- | --- | --- | --- |
-| Occupational hazards | **2%** | **2%** | **0%** | Gross salary | PwC — Other taxes |
+| Occupational hazards | **2%** | **2%** | **0%** | Gross salary | secondary summary, Other taxes |
 
 Employer pays **100%** of the 2%; the employee pays nothing.
 
@@ -125,13 +125,13 @@ Employer pays **100%** of the 2%; the employee pays nothing.
 
 ## Section 5 -- RSSB Maternity Leave Benefits Scheme
 
-**Maternity Leave Benefits Scheme**  _(PwC — Other taxes)_
+**Maternity Leave Benefits Scheme**  _(secondary summary, Other taxes)_
 
 | Item | Total | Employer | Employee | Source |
 | --- | --- | --- | --- | --- |
-| Maternity leave benefits | **0.6%** | **0.3%** | **0.3%** | PwC — Other taxes |
+| Maternity leave benefits | **0.6%** | **0.3%** | **0.3%** | secondary summary, Other taxes |
 
-- **Basis** — Basis: gross pay including benefits in kind, excluding transport allowance and termination/retirement benefits  _(PwC)_
+- **Basis** — Basis: gross pay including benefits in kind, excluding transport allowance and termination/retirement benefits  _(secondary summary)_
 
 *Column check:* employer 0.3% + employee 0.3% = **0.6%** total. Tie out.
 
@@ -152,14 +152,14 @@ Basis is basic salary, not full gross (distinct from pension/occupational/matern
 
 ## Section 7 -- Community-Based Health Insurance (CBHI / Mutuelle de Santé)
 
-**CBHI Scheme**  _(PwC — Other taxes)_
+**CBHI Scheme**  _(secondary summary, Other taxes)_
 
 | Item | Total | Employer | Employee | Source |
 | --- | --- | --- | --- | --- |
-| CBHI / CBHIS | **0.5%** | **0% (collects only)** | **0.5%** | PwC — Other taxes |
+| CBHI / CBHIS | **0.5%** | **0% (collects only)** | **0.5%** | secondary summary, Other taxes |
 
-- **Employee-only contribution** — Employee-only contribution; the employer collects and remits it but pays no employer share.  _(PwC)_
-- **CBHI base** — Basis: NET salary = gross salary + taxable benefits − PAYE − pension − occupational hazards − maternity contributions. (Medical insurance is not subtracted in arriving at the CBHI base.)  _(PwC)_
+- **Employee-only contribution** — Employee-only contribution; the employer collects and remits it but pays no employer share.  _(secondary summary)_
+- **CBHI base** — Basis: NET salary = gross salary + taxable benefits − PAYE − pension − occupational hazards − maternity contributions. (Medical insurance is not subtracted in arriving at the CBHI base.)  _(secondary summary)_
 
 *Column check:* employer 0% + employee 0.5% = **0.5%** total. Tie out.
 
@@ -211,7 +211,7 @@ When an input is missing or ambiguous, apply the **conservative** assumption (th
 | Salary ceiling on RSSB | Apply percentages on **full gross/basic** (no cap) | No ceiling found; flag |
 | Tax year | Default to **2025** brackets unless date ≥ 1 Jan 2026 | Skill tax_year is 2025 |
 | Currency | Rwandan Franc (RWF) | Local currency |
-| Annual return for employment-only earner | Treat PAYE as **final**; no annual return | PwC |
+| Annual return for employment-only earner | Treat PAYE as **final**; no annual return | secondary summary |
 
 ## Section 11 -- Required Inputs + Refusal Catalogue
 
@@ -348,13 +348,13 @@ Classify bank-statement lines deterministically. Match case-insensitively; longe
 
 ## Section 14 -- Tier 1 Rules (hard, non-negotiable)
 
-- **Rule 1** — PAYE is employer-withheld monthly and remitted to RRA by the 15th of the following month; never skip it for salaried staff  _(PwC)_
+- **Rule 1** — PAYE is employer-withheld monthly and remitted to RRA by the 15th of the following month; never skip it for salaried staff  _(secondary summary)_
 - **Rule 2** — Use the monthly taxable-income table and apply the subtract-method constants exactly (6,000 / 16,000 / 36,000).
-- **Rule 3** — Pension is 12% (6%/6%) for 2025 — never use the old 6% rate for a 2025 period  _(PwC; VisionsAfrica)_
+- **Rule 3** — Pension is 12% (6%/6%) for 2025 — never use the old 6% rate for a 2025 period  _(secondary summary; VisionsAfrica)_
 - **Rule 4** — The pension base includes the transport allowance from 2025  _(VisionsAfrica)_
 - **Rule 5** — Occupational hazards (2%) is employer-only; maternity (0.6%) splits 0.3%/0.3%.
 - **Rule 6** — Medical insurance (15%, 7.5%/7.5%) is on basic salary and applies only where the employer is enrolled (public, or private with ≥ 7 employees, all staff enrolled)  _(RRA)_
-- **Rule 7** — CBHI (0.5%) is employee-only, on net salary; the employer collects but pays no share  _(PwC)_
+- **Rule 7** — CBHI (0.5%) is employee-only, on net salary; the employer collects but pays no share  _(secondary summary)_
 - **Rule 8** — RSSB contributions are remitted monthly by the 15th of the following month  _(RRA)_
 - **Rule 9** — Every output is an estimate pending licensed-accountant sign-off.
 
@@ -434,11 +434,11 @@ If the engagement lacks key data:
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Tax year | Calendar year ending 31 Dec | PwC — Tax administration |
-| PAYE | Declared and remitted to RRA **monthly**, by the **15th** of the following month, via the RRA online portal | PwC; RRA — Declare PAYE |
+| Tax year | Calendar year ending 31 Dec | secondary summary, Tax administration |
+| PAYE | Declared and remitted to RRA **monthly**, by the **15th** of the following month, via the RRA online portal | secondary summary; RRA — Declare PAYE |
 | RSSB contributions | Declared and paid **monthly**, by the **15th** of the following month | RRA — RSSB declaration & payment |
 | Medical-scheme remittance | One RRA medical page references the **10th** of the following month — general RSSB deadline is the 15th. **[RESEARCH GAP — reviewer to reconcile the medical-scheme-specific date]** | RRA — Medical Insurance Scheme |
-| Annual return | Generally due **31 March** of the following year; **employment-only earners are exempt** (PAYE is final) | PwC — Tax administration |
+| Annual return | Generally due **31 March** of the following year; **employment-only earners are exempt** (PAYE is final) | secondary summary, Tax administration |
 | Registration | Employers must register for **PAYE** with RRA and with **RSSB**; medical-scheme enrolment requires ≥ 7 employees (all enrolled) | RRA — PAYE obligations; RRA — Medical Insurance |
 
 ## Section 20 -- Penalties (late filing / late payment)
@@ -463,20 +463,20 @@ Governed by the **Tax Procedures Law (Law No. 020/2023)** and RSSB rules.
 
 | Topic | Figure | Source |
 | --- | --- | --- |
-| PAYE 0% band | 0 – 60,000 RWF/month | RRA; PwC |
-| PAYE bands | 10% / 20% / 30% at 100,000 / 200,000 edges | RRA; PwC (Law 027/2022) |
+| PAYE 0% band | 0 – 60,000 RWF/month | RRA; secondary summary |
+| PAYE bands | 10% / 20% / 30% at 100,000 / 200,000 edges | RRA; secondary summary (Law 027/2022) |
 | Casual labour | 15% flat (< 30 days) | RRA calculation guide |
-| Pension 2025 | 12% total (6% ee / 6% er), gross incl. transport | PwC; VisionsAfrica |
-| Occupational hazards | 2% employer-only, gross | PwC |
-| Maternity | 0.6% total (0.3% / 0.3%), gross excl. transport/termination | PwC |
+| Pension 2025 | 12% total (6% ee / 6% er), gross incl. transport | secondary summary; VisionsAfrica |
+| Occupational hazards | 2% employer-only, gross | secondary summary |
+| Maternity | 0.6% total (0.3% / 0.3%), gross excl. transport/termination | secondary summary |
 | Medical insurance | 15% total (7.5% / 7.5%), basic; ≥ 7 employees to enrol | RRA — Medical Insurance |
-| CBHI | 0.5% employee-only, net | PwC |
-| PAYE / RSSB deadline | 15th of following month | PwC; RRA |
-| Annual return | 31 March; employment-only exempt | PwC |
+| CBHI | 0.5% employee-only, net | secondary summary |
+| PAYE / RSSB deadline | 15th of following month | secondary summary; RRA |
+| Annual return | 31 March; employment-only exempt | secondary summary |
 | Penalties | 20% / 40% / 60% + 1.5%/month interest | ALSM (Law 020/2023) — flagged |
 | Minimum wage | No enforceable statutory rate (1974 Frw 100/day obsolete) | Mywage.org / WageIndicator |
 
-Key authorities: RRA (`rra.gov.rw`, e-tax portal), RSSB. Big-4/secondary: PwC Tax Summaries (individual + corporate other taxes), VisionsAfrica advisory, ALSM (Law 020/2023 summary), Mywage.org / WageIndicator.
+Key authorities: RRA (`rra.gov.rw`, e-tax portal), RSSB. Big-4/secondary: a secondary practitioner summary (individual + corporate other taxes), VisionsAfrica advisory, ALSM (Law 020/2023 summary), Mywage.org / WageIndicator.
 
 ## Section 22 -- Test Suite
 

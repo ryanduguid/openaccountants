@@ -1,10 +1,10 @@
 ---
 name: luxembourg-payroll
 description: Use this skill whenever asked about Luxembourg payroll processing for employed persons. Trigger on phrases like "Luxembourg payroll", "retenue d'impot Luxembourg", "wage withholding Luxembourg", "fiche de retenue", "tax card Luxembourg", "tax class 1 1a 2", "CCSS contributions", "centre commun de la securite sociale", "pension contribution Luxembourg", "assurance dependance", "dependency insurance", "Mutualite des Employeurs", "MDE", "accident insurance Luxembourg", "sante au travail", "SSM Luxembourg", "salaire social minimum", "social minimum wage Luxembourg", "CIS CISSM CIM tax credit", "solidarity surcharge Luxembourg", "fonds pour l'emploi", "MyGuichet payroll", "extrait de compte salaire", "net salary Luxembourg", "gross to net Luxembourg", "PAYE Luxembourg", or any question about computing employee pay, wage withholding tax, or social security contributions for Luxembourg-based employees. This skill covers monthly wage withholding tax (PAYE via the tax card), CCSS social security (employee and employer), the dependency-insurance abatement, employer-only funds (accident, occupational health, Mutualite des Employeurs), the social minimum wage, tax credits (CIS, CISSM, CIM) and filing obligations. ALWAYS read this skill before processing any Luxembourg payroll.
-version: 0.1
+version: 0.2
 jurisdiction: LU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Luxembourg Payroll
 
-## Luxembourg Payroll Skill v0.1
+## Luxembourg Payroll Skill v0.2
 
-**Tier 2 (research-verified).** The 2025 income tax scale (post "Entlaaschtungs-Pak" +2.5 index-bracket adjustment), the solidarity surcharge and the CIS/CISSM/CIM tax credits are confirmed against PwC Worldwide Tax Summaries. The CCSS contribution rate table (sickness 2.80%+2.80%, pension 8%+8%, dependency 1.40%, accident base 0.700%, Mutualite des Employeurs 0.07-2.64%, sante au travail 0.14%) is taken directly from the official CCSS *Avis aux employeurs - Taux de cotisation au 01.01.2025* (notice of 17.01.2025) and is firm. The min/max contribution base and the May 2025 indexation are corroborated from Orbitax and WAT Fiduciary. The live CCSS HTML "parametres sociaux" page and several Big-4 newsletter pages returned HTTP 403 to automated fetch, so the official CCSS PDF and Orbitax/WAT were used to corroborate the May 2025 figures. Figures carry **[RESEARCH GAP — reviewer to confirm]** markers where the primary authority figure could not be pinned to a single fixed published value (notably class 1a withholding mechanics and the exact statutory penalty for late annual-statement filing).
+**Tier 2 (research-verified).** The 2025 income tax scale (post "Entlaaschtungs-Pak" +2.5 index-bracket adjustment), the solidarity surcharge and the CIS/CISSM/CIM tax credits are confirmed against a secondary practitioner summary. The CCSS contribution rate table (sickness 2.80%+2.80%, pension 8%+8%, dependency 1.40%, accident base 0.700%, Mutualite des Employeurs 0.07-2.64%, sante au travail 0.14%) is taken directly from the official CCSS *Avis aux employeurs - Taux de cotisation au 01.01.2025* (notice of 17.01.2025) and is firm. The min/max contribution base and the May 2025 indexation are corroborated from Orbitax and WAT Fiduciary. The live CCSS HTML "parametres sociaux" page and several Big-4 newsletter pages returned HTTP 403 to automated fetch, so the official CCSS PDF and Orbitax/WAT were used to corroborate the May 2025 figures. Figures carry **[RESEARCH GAP — reviewer to confirm]** markers where the primary authority figure could not be pinned to a single fixed published value (notably class 1a withholding mechanics and the exact statutory penalty for late annual-statement filing).
 
 ## Section 1 -- Quick Reference
 
@@ -34,11 +34,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social security authority | Centre commun de la securite sociale (CCSS, ccss.public.lu) -- single collector of all social contributions |
 | Key legislation | Loi modifiee du 4 decembre 1967 concernant l'impot sur le revenu (LIR) and the Reglement grand-ducal fixing the withholding scale (bareme); Code de la securite sociale (CSS); Reglement grand-ducal du 26 mars 2014 (electronic salary-statement filing). 2025 income tax scale adjusted under the law of 20 December 2024 ("Entlaaschtungs-Pak", +2.5 index brackets) |
 | Filing portal | MyGuichet.lu (wage withholding + annual salary statement); CCSS / SECUline (social declarations) |
-| Income tax-free band (tax class 1, 2025) | EUR 0 -- 13,230 at 0% (PwC LU 2025) |
+| Income tax-free band (tax class 1, 2025) | EUR 0 -- 13,230 at 0% (secondary summary, LU 2025) |
 | Social-contribution ceiling (max base = 5x SSM) | EUR 13,188.96/month (1 Jan 2025, index 944.43) -> EUR 13,518.68/month (from 1 May 2025, index 968.04); annual max approx EUR 162,224 (CCSS Avis 17.01.2025; Orbitax) |
 | Social-contribution floor (min base = SSM unskilled) | EUR 2,637.79/month (Jan 2025) -> EUR 2,703.74/month (May 2025) (CCSS Avis 17.01.2025) |
 | Validated by | Pending -- requires sign-off by a Luxembourg reviewer (expert-comptable / fiduciaire) |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Headline contribution rates (2025)**  _(CCSS Avis aux employeurs 17.01.2025)_
 
@@ -71,11 +71,11 @@ The employer withholds income tax each pay period under the wage-withholding pro
 | 1a | Single parents; persons aged 65+; certain widow(er)s (higher tax-free allowance, ~EUR 26,460 for 2025) |
 | 2 | Married / civil-partnership couples taxed jointly, using income-splitting |
 
-The withholding tables differ by class. This skill enumerates the **class 1** marginal scale from the research data; class 1a applies a higher tax-free allowance and class 2 broadly applies the class-1 scale to half of joint income ("splitting"). **[RESEARCH GAP — reviewer to confirm the exact class 1a tax-free allowance (~EUR 26,460 is reported by secondary summaries) and the class 1a / class 2 withholding-table mechanics against the ACD bareme; only the class 1 marginal scale is enumerated below.]** (Source: PwC LU 2025.)
+The withholding tables differ by class. This skill enumerates the **class 1** marginal scale from the research data; class 1a applies a higher tax-free allowance and class 2 broadly applies the class-1 scale to half of joint income ("splitting"). **[RESEARCH GAP — reviewer to confirm the exact class 1a tax-free allowance (~EUR 26,460 is reported by secondary summaries) and the class 1a / class 2 withholding-table mechanics against the ACD bareme; only the class 1 marginal scale is enumerated below.]** (Source: the secondary summary LU 2025.)
 
 ### 2025 Income Tax Scale -- Tax Class 1 (marginal rates)
 
-**2025 Income Tax Scale -- Tax Class 1**  _(Source: PwC Worldwide Tax Summaries (Luxembourg, Individual, Taxes on personal income). Post "Entlaaschtungs-Pak" +2.5 index-bracket adjustment of 1 January 2025.)_
+**2025 Income Tax Scale -- Tax Class 1**  _(Source: a secondary practitioner summary (Luxembourg, Individual, Taxes on personal income). Post "Entlaaschtungs-Pak" +2.5 index-bracket adjustment of 1 January 2025.)_
 
 | Taxable Income (EUR) | Marginal Rate |
 | --- | --- |
@@ -105,9 +105,9 @@ The withholding tables differ by class. This skill enumerates the **class 1** ma
 
 ### Solidarity Surcharge (contribution au fonds pour l'emploi)
 
-- **Solidarity surcharge standard rate** — 7% % of income tax due (Standard)  _(Source: PwC Worldwide Tax Summaries)_
-- **Solidarity surcharge step-up threshold and rate** — 9% where taxable income exceeds EUR 150,000 (tax classes 1 and 1a) or EUR 300,000 (tax class 2)  _(Source: PwC Worldwide Tax Summaries)_
-- **Top effective marginal rate** — The surcharge funds the Fonds pour l'emploi. The top effective marginal rate is therefore approximately 45.78% (42% x 1.09).  _(Source: PwC Worldwide Tax Summaries)_
+- **Solidarity surcharge standard rate** — 7% % of income tax due (Standard)  _(Source: a secondary practitioner summary)_
+- **Solidarity surcharge step-up threshold and rate** — 9% where taxable income exceeds EUR 150,000 (tax classes 1 and 1a) or EUR 300,000 (tax class 2)  _(Source: a secondary practitioner summary)_
+- **Top effective marginal rate** — The surcharge funds the Fonds pour l'emploi. The top effective marginal rate is therefore approximately 45.78% (42% x 1.09).  _(Source: a secondary practitioner summary)_
 
 ### No Valid Tax Card
 
@@ -115,7 +115,7 @@ The withholding tables differ by class. This skill enumerates the **class 1** ma
 
 ### Tax Credits Applied Through Withholding
 
-**Tax Credits table**  _(Source: PwC Worldwide Tax Summaries; guichet.public.lu (CISSM).)_
+**Tax Credits table**  _(Source: a secondary practitioner summary; guichet.public.lu (CISSM).)_
 
 | Credit | Amount | Notes |
 | --- | --- | --- |
@@ -147,14 +147,14 @@ The CCSS is the single collector of all Luxembourg social contributions. The emp
 
 ### The Dependency-Insurance Abatement (material)
 
-**Dependency abatement table**  _(Source: CCSS Avis aux employeurs 17.01.2025; PwC LU Other taxes.)_
+**Dependency abatement table**  _(Source: CCSS Avis aux employeurs 17.01.2025; secondary summary, LU Other taxes.)_
 
 | Period | Monthly abatement (1/4 of SSM) |
 | --- | --- |
 | 1 Jan 2025 (index 944.43) | EUR 659.45 |
 | From 1 May 2025 (index 968.04) | EUR 675.94 |
 
-- **No floor/ceiling on dependency** — The dependency contribution has no minimum and no maximum ceiling — it applies to the full (post-abatement) income even above the 5 x SSM cap that limits the other branches.  _(Source: CCSS Avis aux employeurs 17.01.2025; PwC LU Other taxes.)_
+- **No floor/ceiling on dependency** — The dependency contribution has no minimum and no maximum ceiling — it applies to the full (post-abatement) income even above the 5 x SSM cap that limits the other branches.  _(Source: CCSS Avis aux employeurs 17.01.2025; secondary summary, LU Other taxes.)_
 
 ### Social-Contribution Ceiling (Max Base) and Floor (Min Base)
 
@@ -242,9 +242,9 @@ Note: figures vary with the MDE class and the accident bonus-malus factor — bo
 
 | Item | Amount | Notes / Source |
 | --- | --- | --- |
-| Employee tax credit (CIS) | EUR 0 -- 600/year | Income-dependent; via tax card (PwC) |
-| Social minimum wage tax credit (CISSM) | EUR 81/month (gross EUR 1,800 -- 3,000); degressive to EUR 0 at EUR 3,600 | Formula 81/600 x (3,600 - gross) between EUR 3,000 and 3,600 (PwC; Guichet.lu) |
-| Single-parent tax credit (CIM) | EUR 750 -- 3,504/year | Tax class 1a (PwC) |
+| Employee tax credit (CIS) | EUR 0 -- 600/year | Income-dependent; via tax card (secondary summary) |
+| Social minimum wage tax credit (CISSM) | EUR 81/month (gross EUR 1,800 -- 3,000); degressive to EUR 0 at EUR 3,600 | Formula 81/600 x (3,600 - gross) between EUR 3,000 and 3,600 (secondary summary; Guichet.lu) |
+| Single-parent tax credit (CIM) | EUR 750 -- 3,504/year | Tax class 1a (secondary summary) |
 | Class 1a tax-free allowance (2025) | ~EUR 26,460 | [RESEARCH GAP — reported by secondary summaries; verify against ACD bareme] |
 
 Statutory leave, the 13th month and overtime premia are not enumerated in the research data for this skill. [RESEARCH GAP — reviewer to confirm Luxembourg statutory annual leave, public holidays, sick-pay continuation rules and any 13th-month / bonus treatment before relying on them.]
@@ -408,12 +408,12 @@ Reasoning: This is the wage withholding tax (income tax + solidarity surcharge) 
 
 ## Section 10 -- Tier 1 Rules (deterministic)
 
-- **2025 income tax scale (tax class 1)** — 0% up to EUR 13,230, then progressive marginal rates 8% to 42%, with the top 42% rate from EUR 234,870 (post "Entlaaschtungs-Pak" +2.5 index-bracket adjustment of 1 Jan 2025)  _(PwC Worldwide Tax Summaries.)_
-- **Solidarity surcharge** — 7% of the income tax due, rising to 9% where taxable income exceeds EUR 150,000 (classes 1/1a) or EUR 300,000 (class 2). Top effective marginal rate ≈ 45.78%  _(PwC.)_
+- **2025 income tax scale (tax class 1)** — 0% up to EUR 13,230, then progressive marginal rates 8% to 42%, with the top 42% rate from EUR 234,870 (post "Entlaaschtungs-Pak" +2.5 index-bracket adjustment of 1 Jan 2025)  _(secondary summary, .)_
+- **Solidarity surcharge** — 7% of the income tax due, rising to 9% where taxable income exceeds EUR 150,000 (classes 1/1a) or EUR 300,000 (class 2). Top effective marginal rate ≈ 45.78%  _(secondary summary, .)_
 - **Income tax withheld at source** — Income tax is withheld at source (monthly PAYE) by the employer from the ACD official tables based on the employee's tax class (1, 1a, 2) and electronic tax card; the employer offsets the CIS, CISSM and CIM credits. If no valid card exists, withhold at class 1, minimum 33%.  _(LIR; guichet.public.lu retenue-impot.)_
 - **Pension contribution 2025** — 8.00% employee + 8.00% employer (+ 8.00% State = 24.00% total)  _(CCSS Avis aux employeurs 17.01.2025.)_
 - **Sickness/health 2025** — in-kind 2.80% employee + 2.80% employer; cash-benefit majoration 0.25% employee + 0.25% employer (so 3.05% each side combined)  _(CCSS Avis 17.01.2025.)_
-- **Dependency (long-term care)** — 1.40% employee only (no employer share), on gross after an abatement of 1/4 of the SSM (EUR 659.45/month Jan 2025; EUR 675.94 from May 2025), with NO floor or ceiling  _(CCSS Avis 17.01.2025; PwC LU Other taxes.)_
+- **Dependency (long-term care)** — 1.40% employee only (no employer share), on gross after an abatement of 1/4 of the SSM (EUR 659.45/month Jan 2025; EUR 675.94 from May 2025), with NO floor or ceiling  _(CCSS Avis 17.01.2025; secondary summary, LU Other taxes.)_
 - **Accident insurance and occupational health** — Accident insurance: base 0.700% employer only, adjusted by a bonus-malus factor (0.595% at 0.85 up to 1.050% at 1.50). Occupational health 0.14% employer only (private sector using STM).  _(CCSS Avis 17.01.2025.)_
 
 **Mutualite des Employeurs (MDE) 2025 by absenteeism class**  _(CCSS Avis 17.01.2025.)_
@@ -430,7 +430,7 @@ Reasoning: This is the wage withholding tax (income tax + solidarity surcharge) 
 - **Minimum contribution base = SSM unskilled (aged 18+)** — EUR 2,637.79/month (1 Jan 2025) then EUR 2,703.74/month (1 May 2025). Skilled SSM is ~+20% (EUR 3,165.31 then EUR 3,244.48).  _(CCSS Avis 17.01.2025; WAT Fiduciary.)_
 - **CCSS invoicing and remittance** — The CCSS invoices the employer the combined employee + employer contributions monthly (extrait de compte); the employer deducts the employee share and remits the full amount, payable within 10 days of the statement's issue.  _(CCSS recouvrement.)_
 - **Wage withholding remittance frequency** — Monthly if monthly withholding >= EUR 750; quarterly if EUR 75--749; annually if < EUR 75; declared and paid via MyGuichet.lu by the 10th of the month following the period.  _(guichet.public.lu retenue-impot.)_
-- **Tax credits** — CIS EUR 0--600/year; CIM EUR 750--3,504/year (class 1a); CISSM EUR 81/month for gross EUR 1,800--3,000, degressive to zero at EUR 3,600  _(PwC; Guichet.lu.)_
+- **Tax credits** — CIS EUR 0--600/year; CIM EUR 750--3,504/year (class 1a); CISSM EUR 81/month for gross EUR 1,800--3,000, degressive to zero at EUR 3,600  _(secondary summary; Guichet.lu.)_
 - **Employer registration** — File the declaration d'exploitation with the CCSS within 8 days of the first employee's entry; declare each new hire (declaration d'entree) and each departure (declaration de sortie) within 8 days.  _(guichet.public.lu; CCSS.)_
 - **Annual salary statement** — Transmit the electronic salary statement (extrait de compte salaire / certificat de salaire) of all salaries paid and tax withheld to the ACD before 1 March of the year following the tax year (RGD 26.03.2014).  _(guichet.public.lu extrait-compte-salaire.)_
 - **Two 2025 parameter sets** — Use index 944.43 figures for Jan--Apr 2025 and index 968.04 figures from 1 May 2025.  _(Section 10 item 17)_
@@ -629,8 +629,8 @@ Payroll → Self-employed: Self-employed and non-salaried persons are handled ou
 
 1. Centre commun de la securite sociale (CCSS) — Avis aux employeurs - Taux de cotisation au 01.01.2025 pour salaries (official notice, 17.01.2025): https://ccss.public.lu/dam-assets/publications/2025/ccss-20250117-avis-80-99-fr-de.pdf
 2. CCSS — Social parameters: https://ccss.public.lu/en/parametres-sociaux.html
-3. PwC Worldwide Tax Summaries — Luxembourg, Individual, Taxes on personal income (2025 scale, tax classes, solidarity surcharge): https://taxsummaries.pwc.com/luxembourg/individual/taxes-on-personal-income
-4. PwC Worldwide Tax Summaries — Luxembourg, Individual, Other taxes (social security rates, ceiling, dependency contribution): https://taxsummaries.pwc.com/luxembourg/individual/other-taxes
+3. Secondary practitioner summary (link removed) — Luxembourg, Individual, Taxes on personal income (2025 scale, tax classes, solidarity surcharge):
+4. Secondary practitioner summary (link removed) — Luxembourg, Individual, Other taxes (social security rates, ceiling, dependency contribution):
 5. Guichet.lu (ACD) — Withholding tax on salaries (fiche de retenue, declaration/payment deadlines, form): https://guichet.public.lu/en/entreprises/ressources-humaines/remuneration/fiche-retenue-impot/retenue-impot.html
 6. Guichet.lu (ACD) — Filing salary and pension statements (annual statement, 1 March deadline): https://guichet.public.lu/en/entreprises/ressources-humaines/remuneration/fiche-retenue-impot/extrait-compte-salaire-pension.html
 7. Orbitax — Luxembourg Minimum and Maximum Social Security Contribution Basis Amounts Increased from May 2025: https://orbitax.com/news/country/article/Luxembourg-Minimum-and-Maximum-59351

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in Venezuela, tax 
 jurisdiction: VE
 category: tax-optimization
 tax_year: 2025
-last_updated: 2026-10-08
+last_updated: 2026-10-11
 reviewed_by: Jose Padilla
 review_status: pending_review
 tier: 1
@@ -75,7 +75,7 @@ When facts are uncertain, this skill defaults to the most conservative (highest-
 4. **Thin capitalization**: Default to treating any related-party debt exceeding a 1:1 debt-to-equity ratio as non-deductible.
 5. **IGTF**: Default to assuming the tax applies at applicable rates until the client produces an Official Gazette decree confirming full elimination or their SENIAT-confirmed "special taxpayer" exemption.
 6. **SEZ incentives**: Treat incentives as unavailable until the client produces Resolution 015-25 certification from the Ministry of Finance.
-7. **Export drawback**: Per PwC (January 2026), the customs duty drawback program is "not currently being applied in practice." Do not rely on it in a planning scenario without current confirmation.
+7. **Export drawback**: Per a secondary practitioner summary (January 2026), the customs duty drawback program is "not currently being applied in practice." Do not rely on it in a planning scenario without current confirmation.
 
 ## Section 4 — Refusal Catalogue
 
@@ -246,7 +246,7 @@ Note: These are structured as reimbursements/drawbacks, not direct exemptions. T
 
 ### Source
 
-VATupdate — SEZs tax incentives (September 2023). Lexology — SEZ implementing rules (Resolution 015-25, May 2025). PwC — Tax Credits and Incentives (January 2026). PwC explicitly notes export drawback is "not currently being applied in practice" — SEZ refunds are a distinct mechanism; confirm status with SENIAT before relying on them.
+VATupdate — SEZs tax incentives (September 2023). Lexology — SEZ implementing rules (Resolution 015-25, May 2025). Secondary practitioner summary — Tax Credits and Incentives (January 2026). that summary notes export drawback is "not currently being applied in practice" — SEZ refunds are a distinct mechanism; confirm status with SENIAT before relying on them.
 
 ## Section 9 — Major Optimization Lever 5: Treaty Withholding Rate Reduction on Dividends
 
@@ -284,7 +284,7 @@ VATupdate — SEZs tax incentives (September 2023). Lexology — SEZ implementin
 
 ### Source
 
-PwC Worldwide Tax Summaries — Venezuela Withholding Taxes (January 2026).
+Secondary practitioner summary — Venezuela Withholding Taxes (January 2026).
 
 ## Section 10 — Major Optimization Lever 6: Thin Capitalization Management
 
@@ -317,7 +317,7 @@ If the company restructures to equity = debt = Bs. 250,000 (capitalizing Bs. 50,
 
 ### Source
 
-PwC Worldwide Tax Summaries — Venezuela Group Taxation (January 2026).
+Secondary practitioner summary — Venezuela Group Taxation (January 2026).
 
 ## Section 11 — Major Optimization Lever 7: LOCTI Contribution — Sector Classification
 
@@ -351,7 +351,7 @@ PwC Worldwide Tax Summaries — Venezuela Group Taxation (January 2026).
 
 ### Source
 
-PwC Worldwide Tax Summaries — Venezuela Corporate Other Taxes (January 2026). IBA Tax Country Report — Venezuela 2025. Baker McKenzie LOCTI bulletin (2024).
+Secondary practitioner summary — Venezuela Corporate Other Taxes (January 2026). IBA Tax Country Report — Venezuela 2025. Baker McKenzie LOCTI bulletin (2024).
 
 ## Section 12 — Major Optimization Lever 8: ISAE (Municipal Business Tax) Deductibility
 
@@ -373,7 +373,7 @@ If ISAE is not claimed: Bs. 102,000 of avoidable ISLR is paid unnecessarily.
 
 ### Source
 
-PwC Worldwide Tax Summaries — Venezuela Corporate Other Taxes (January 2026). Acceso a la Justicia — ISAE explainer.
+Secondary practitioner summary — Venezuela Corporate Other Taxes (January 2026). Acceso a la Justicia — ISAE explainer.
 
 ## Section 13 — Major Optimization Lever 9: VAT Rate Structuring
 
@@ -399,7 +399,7 @@ PwC Worldwide Tax Summaries — Venezuela Corporate Other Taxes (January 2026). 
 
 ### Source
 
-Avalara — Venezuelan VAT Compliance (2025). KPMG — Venezuela VAT changes 2025 (August 2025). PwC — Corporate Other Taxes (January 2026). VATupdate — Exemption until June 2026 (July 2025).
+Avalara — Venezuelan VAT Compliance (2025). KPMG — Venezuela VAT changes 2025 (August 2025). Secondary practitioner summary — Corporate Other Taxes (January 2026). VATupdate — Exemption until June 2026 (July 2025).
 
 ### Rate Table
 
@@ -704,7 +704,7 @@ Recommendation: María should use itemized deductions. Annual ISLR saving of **B
 
 Note: ISLR computed as a simplified illustration. The dividend tax base is the positive difference between book income and fiscal income (LIFO method) — this may differ from the full after-tax profit. Engage a Venezuelan CPA to compute the exact dividend tax base before distribution.
 
-Note on Spain treaty 0% rate: the 10% general dividend rate is confirmed by PwC/Deloitte. The specific shareholding threshold qualifying for the 0% tier is cited in treaty commentary but **must be verified against the treaty text** before client use — do not rely on the 0% rate without confirming the threshold with a tax adviser.
+Note on Spain treaty 0% rate: the 10% general dividend rate is confirmed by Deloitte and other practitioner summaries. The specific shareholding threshold qualifying for the 0% tier is cited in treaty commentary but **must be verified against the treaty text** before client use — do not rely on the 0% rate without confirming the threshold with a tax adviser.
 
 ## Section 17 — Tier 1 Prompts (Basic Optimization)
 
@@ -864,7 +864,7 @@ CPA/EA signature required before filing: [ ] Pending [ ] Obtained
 | Applying the thin-cap exception to what is economically a related-party loan routed through a third-party bank | SENIAT has challenged back-to-back arrangements; substance-over-form principle applies |
 | Computing penalties in UT | COT 2020 reform (Art. 91) denominates penalties in USD at the BCV official rate; using UT gives the wrong answer |
 | Recommending SEZ incentives without current Ministry of Finance certification | Incentives require annual Resolution 015-25 certification; uncertified companies receive no refund |
-| Advising reliance on the export drawback program | PwC (January 2026) states this is "not currently being applied in practice" |
+| Advising reliance on the export drawback program | A secondary practitioner summary (January 2026) states this is "not currently being applied in practice" |
 | Providing definitive advice on the January 2026 Hydrocarbons Law Reform for existing petroleum contracts | 180-day transition period ongoing; requires specialist and engagement with Ministry of Hydrocarbons |
 
 ## Section 22 — Annual Tax Planning Calendar

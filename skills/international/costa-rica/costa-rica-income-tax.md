@@ -1,10 +1,10 @@
 ---
 name: costa-rica-income-tax
 description: Use this skill whenever asked about Costa Rica income tax for self-employed individuals or persons with profit-generating activity. Trigger on phrases like "how much tax do I pay in Costa Rica", "impuesto sobre la renta", "D-101", "declaración de renta", "renta del trabajo dependiente", "impuesto a las utilidades", "deducción del 25%", "Ley 10667", "trabajador independiente", "CCSS self-employed", "pagos parciales", "régimen simplificado", "TRIBU-CR", "salario base", "self-employed tax Costa Rica", "Costa Rica freelancer tax", or any question about filing or computing income tax for a self-employed Costa Rican client. Also trigger when preparing or reviewing a D-101, computing the 25% standard deduction vs documented expenses, advising on CCSS (Caja) self-employed contributions, or advising on partial-payment instalments. This skill covers the annual self-employed brackets, salaried monthly brackets, the Law 10667 25% standard deduction, CCSS contributions, family tax credits, VAT (IVA) interaction, the simplified regime, penalties, and the TRIBU-CR platform. ALWAYS read this skill before touching any Costa Rica income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: CR
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,26 +15,26 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Costa Rican Income Tax -- Self-Employed
 
-## Costa Rican Income Tax -- Self-Employed Skill v0.1
+## Costa Rican Income Tax -- Self-Employed Skill v0.2
 
-> **Tier 2 (research-verified).** Figures below are drawn from Big-4 / law-firm summaries (PwC, BDO, García & Bodán, EY, ICS), reputable payroll guides, the CCSS contribution scale, and reporting of the 2026 decrees. Several rates trace to secondary reporting of Decreto Ejecutivo 45333-H and the CCSS scale rather than a directly-fetched primary government page. Every figure with weak provenance or a known reconciliation issue carries an explicit **[RESEARCH GAP — reviewer to confirm]** marker. A licensed Costa Rican contador público autorizado (CPA) must sign off before filing.
+> **Tier 2 (research-verified).** Figures below are read from the consolidated text of Ley 7092 on SINALEVI (Procuraduría General de la República, version 81 of 83), Decreto Ejecutivo 45333-H in La Gaceta 229 of 5 December 2025, Decreto Ejecutivo 44772-H in Alcance 195 to La Gaceta 227 of 3 December 2024, Ley 10667 in Alcance 51 of 24 April 2025, Ley 6826 (IVA) on SINALEVI, the CCSS employer contribution scale and Hacienda's TRIBU-CR declaration codes and calendars; the gazette and CCSS pages were read from Web Archive captures because imprentanacional.go.cr and ccss.sa.cr refused connections on the research date. Every figure with weak provenance or a known reconciliation issue carries an explicit **[RESEARCH GAP — reviewer to confirm]** marker. A licensed Costa Rican contador público autorizado (CPA) must sign off before filing.
 
 ## Section 1 -- Quick Reference
 
 - **Country** — Costa Rica (República de Costa Rica, ISO CR)
 - **Tax** — Impuesto sobre la Renta (income tax) — personal / self-employed
 - **Currency** — CRC (Costa Rican colón, ₡)
-- **Tax year** — Calendar year (1 January -- 31 December); old Oct–Sep fiscal year abolished (PwC; Alegra)  _(PwC; Alegra)_
+- **Tax year** — Calendar year (1 January -- 31 December), fixed by Ley 9635 (2018); the former October–September fiscal year no longer applies  _(Ley 7092 art. 4)_
 - **Primary legislation** — Ley del Impuesto sobre la Renta No. 7092 (and reglamento)
-- **Supporting legislation** — Ley No. 10667 (self-employed 25% standard deduction, eff. 1 Jan 2026); Ley No. 9635 "Fortalecimiento de las Finanzas Públicas" (IVA + capital income tax); Código de Normas y Procedimientos Tributarios No. 4755 (penalties); Ley Constitutiva de la CCSS No. 17; Decreto Ejecutivo 45333-H (2026 brackets); Decreto Ejecutivo 44772-H (2025 brackets); Decreto Ejecutivo 45303-MTSS (2026 minimum wages)
+- **Supporting legislation** — Ley No. 10667 (reformed art. 15 c): the self-employed annual brackets from 1 Jan 2026); Ley No. 9635 "Fortalecimiento de las Finanzas Públicas" (IVA + capital income tax); Código de Normas y Procedimientos Tributarios No. 4755 (penalties); Ley Constitutiva de la CCSS No. 17; Decreto Ejecutivo 45333-H (2026 brackets); Decreto Ejecutivo 44772-H (2025 brackets); Decreto Ejecutivo 45303-MTSS (2026 minimum wages)
 - **Tax authority** — Ministerio de Hacienda — Dirección General de Tributación (DGT)
 - **Social security** — Caja Costarricense de Seguro Social (CCSS)
 - **Filing portal** — TRIBU-CR (replaced ATV on 4 Aug 2025) — hacienda.go.cr
-- **Filing deadline** — D-101 annual return: 15 March of the following year  _(PwC; Alegra)_
+- **Filing deadline** — Annual return (D-101, TRIBU-CR form 101): within two months and 15 calendar days of the period end, so 15 March of the following year  _(Ley 7092 arts 20 and 21)_
 - **Tax basis** — Territorial — only Costa Rica-source income is taxable  _(Ley 7092)_
 - **Validated by** — Pending — requires sign-off by a Costa Rican contador público autorizado
 - **Validation date** — Pending
-- **Skill version** — 0.1
+- **Skill version** — 0.2
 
 **Section 1 -- Quick Reference table**
 
@@ -43,23 +43,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Costa Rica (República de Costa Rica, ISO CR) |
 | Tax | Impuesto sobre la Renta (income tax) — personal / self-employed |
 | Currency | CRC (Costa Rican colón, ₡) |
-| Tax year | Calendar year (1 January -- 31 December); old Oct–Sep fiscal year abolished (PwC; Alegra) |
+| Tax year | Calendar year (1 January -- 31 December), fixed by Ley 9635 (2018); the former October–September fiscal year no longer applies (Ley 7092 art. 4) |
 | Primary legislation | Ley del Impuesto sobre la Renta No. 7092 (and reglamento) |
-| Supporting legislation | Ley No. 10667 (self-employed 25% standard deduction, eff. 1 Jan 2026); Ley No. 9635 "Fortalecimiento de las Finanzas Públicas" (IVA + capital income tax); Código de Normas y Procedimientos Tributarios No. 4755 (penalties); Ley Constitutiva de la CCSS No. 17; Decreto Ejecutivo 45333-H (2026 brackets); Decreto Ejecutivo 44772-H (2025 brackets); Decreto Ejecutivo 45303-MTSS (2026 minimum wages) |
+| Supporting legislation | Ley No. 10667 (reformed art. 15 c): the self-employed annual brackets from 1 Jan 2026); Ley No. 9635 "Fortalecimiento de las Finanzas Públicas" (IVA + capital income tax); Código de Normas y Procedimientos Tributarios No. 4755 (penalties); Ley Constitutiva de la CCSS No. 17; Decreto Ejecutivo 45333-H (2026 brackets); Decreto Ejecutivo 44772-H (2025 brackets); Decreto Ejecutivo 45303-MTSS (2026 minimum wages) |
 | Tax authority | Ministerio de Hacienda — Dirección General de Tributación (DGT) |
 | Social security | Caja Costarricense de Seguro Social (CCSS) |
 | Filing portal | TRIBU-CR (replaced ATV on 4 Aug 2025) — hacienda.go.cr |
-| Filing deadline | D-101 annual return: 15 March of the following year (PwC; Alegra) |
+| Filing deadline | Annual return (D-101, TRIBU-CR form 101): within two months and 15 calendar days of the period end, so 15 March of the following year (Ley 7092 arts 20 and 21) |
 | Tax basis | Territorial — only Costa Rica-source income is taxable (Ley 7092) |
 | Validated by | Pending — requires sign-off by a Costa Rican contador público autorizado |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Brackets
 
-- **Two parallel labor-income schedules** — Costa Rica runs two parallel labor-income schedules: salaried employees are taxed on MONTHLY brackets (final withholding by the employer), while the self-employed / persons with profit-generating activity are taxed on ANNUAL brackets. Both run 0/10/15/20/25%.  _(PwC; Decreto 45333-H via García & Bodán / BDO)_
+- **Two parallel labor-income schedules** — Costa Rica runs two parallel labor-income schedules: salaried employees are taxed on MONTHLY brackets (final withholding by the employer), while the self-employed / persons with profit-generating activity are taxed on ANNUAL brackets. Both run 0/10/15/20/25%.  _(Ley 7092 arts 15 c) and 33; Decreto 45333-H arts 1 and 4)_
 
-**Self-Employed / Profit-Generating Activity — Annual (impuesto a las utilidades, 2026)**  _(Decreto 45333-H; García & Bodán; Tico Times)_
+**Self-Employed / Profit-Generating Activity — Annual (impuesto a las utilidades, 2026)**  _(Ley 7092 art. 15 c) as reformed by Ley 10667; Decreto 45333-H art. 4)_
 
 | Annual Net Income (₡) | Rate | Cumulative Tax at Top of Band |
 | --- | --- | --- |
@@ -71,7 +71,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Cumulative check: band 2 = 2,085,000 × 10% = 208,500; band 3 = 2,085,000 × 15% = 312,750 (→521,250); band 4 = 10,458,000 × 20% = 2,091,600 (→2,612,850).
 
-**Salaried Employees — Monthly (renta del trabajo dependiente, 2026)**  _(Decreto 45333-H via García & Bodán; PwC)_
+**Salaried Employees — Monthly (renta del trabajo dependiente, 2026)**  _(Decreto 45333-H art. 1, La Gaceta 229, 5 Dec 2025; Ley 7092 art. 33)_
 
 | Monthly Gross (₡) | Rate | Cumulative Tax at Top of Band |
 | --- | --- | --- |
@@ -83,7 +83,7 @@ Cumulative check: band 2 = 2,085,000 × 10% = 208,500; band 3 = 2,085,000 × 15%
 
 Cumulative check: band 2 = 429,000 × 10% = 42,900; band 3 = 1,017,000 × 15% = 152,550 (→195,450); band 4 = 2,363,000 × 20% = 472,600 (→668,050).
 
-**Self-Employed — Annual (PRIOR period 2025, governs FY2025 returns filed in 2026)**  _(PwC; Decreto 44772-H)_
+**Self-Employed — Annual (PRIOR period 2025, governs FY2025 returns filed in 2026)**  _(Decreto 44772-H art. 4, Alcance 195 to La Gaceta 227, 3 Dec 2024)_
 
 | Annual Net Income (₡) | Rate | Cumulative Tax at Top of Band |
 | --- | --- | --- |
@@ -95,19 +95,19 @@ Cumulative check: band 2 = 429,000 × 10% = 42,900; band 3 = 1,017,000 × 15% = 
 
 Cumulative check: band 2 = 2,021,000 × 10% = 202,100; band 3 = 4,085,000 × 15% = 612,750 (→814,850); band 4 = 10,242,000 × 20% = 2,048,400 (→2,863,250).
 
-[RESEARCH GAP — reviewer to confirm] The 2026 salaried (₡918k/1,347k/2,364k/4,727k) and self-employed (₡6,244k/8,329k/10,414k/20,872k) thresholds come from García & Bodán / BDO / ICS / Tico Times reporting of Decreto Ejecutivo 45333-H (published in La Gaceta 5 Dec 2025; in force 1 Jan 2026), not the decree text in La Gaceta. Note: 2026 brackets were reindexed by a -0.38% CPI deflation vs 2025 (García & Bodán; ICS), so some thresholds nudged DOWN — e.g. the self-employed top-rate floor fell from ₡20,442,000 (2025) to ₡20,872,000 only in nominal terms because of the prior-year reform; confirm direction band-by-band against La Gaceta. Caution on PwC: as of the date of writing, PwC Worldwide Tax Summaries still shows the 2025 self-employed schedule (0 / ₡4,094,000 / ₡6,115,000 / ₡10,200,000 / ₡20,442,000) under a "2026" heading — do NOT rely on the PwC page for the current self-employed thresholds; use the Decreto 45333-H figures above. Verify against La Gaceta before filing.
+The 2026 salaried (₡918,000 / 1,347,000 / 2,364,000 / 4,727,000) and self-employed (₡6,244,000 / 8,329,000 / 10,414,000 / 20,872,000) thresholds and the ₡1,710 / ₡2,590 monthly credits were read in the text of Decreto Ejecutivo 45333-H (La Gaceta 229, 5 December 2025, pages 2-3): a -0.38% CPI adjustment under arts 1-3 and 5, in force 1 January 2026 (art. 7), repealing Decreto 44772-H (art. 6). The self-employed bands are those written into art. 15 c) by Ley 10667 (Alcance 51 to La Gaceta, 24 April 2025), which the decree reproduces unchanged; the law's Transitorio Único defers their cost-of-living indexation to the second year of the reform, so the first CPI adjustment of those bands falls in 2027. The 2025 self-employed bands (₡4,094,000 / 6,115,000 / 10,200,000 / 20,442,000) are those of Decreto 44772-H art. 4, so the 2026 exempt band rose by statute, not by indexation.
 
 ### Schedular & Withholding Rates (separate from labor income)
 
-**Schedular & Withholding Rates**  _(PwC; Fonoa)_
+**Schedular & Withholding Rates**  _(Ley 7092 arts 28 bis, 31 ter and 59; Ley 6826 arts 10 and 11)_
 
 | Item | Rate | Source |
 | --- | --- | --- |
-| Capital income — movable & immovable (rentas de capital, Ley 9635) | 15% | PwC |
-| Dividends | 15% (lower in limited cases) | PwC |
-| Capital gains | 15% (one-time 2.25% election for assets acquired before 1 Jul 2019) | PwC |
-| VAT (IVA) standard rate | 13% (reduced 4% / 2% / 1%) | Fonoa; PwC |
-| Non-resident remittances (remesas al exterior) | 8.5%–30% by income type (≈10% professional fees, 15% dividends, 25% salaries/pensions) | PwC |
+| Capital income — movable & immovable (rentas de capital, Ley 9635) | 15% | Ley 7092 art. 31 ter |
+| Dividends | 15% as capital income; exempt when the shareholder is a Costa Rican company carrying on a taxed activity or when paid in the payer's own shares; 15% or 5% on remittance abroad under art. 59 g) | Ley 7092 arts 31 ter, 28 bis 3) and 59 g) |
+| Capital gains | 15%; for assets acquired before 1 July 2019 the first sale may instead be taxed at 2.25% of the sale price | Ley 7092 art. 31 ter |
+| VAT (IVA) standard rate | 13% (reduced 4% / 2% / 1%) | Ley 6826 arts 10 and 11 |
+| Non-resident remittances (remesas al exterior) | 8.5%–30% by income type: 10% salaries and pensions; 25% fees, commissions and other independent personal services; 25% technical advice, patents, trade marks, franchises and royalties; 15% dividends (5% where art. 59 g) allows), interest and other financial charges; 8.5% transport and communications; 5.5% reinsurance and insurance premiums; 20% films, recordings and international news; 50% radio and television serials; 15% occasional public performances; 30% any other Costa Rican-source remittance | Ley 7092 art. 59 |
 
 ### Family Tax Credits (2026, against computed income tax)
 
@@ -118,7 +118,7 @@ Cumulative check: band 2 = 2,021,000 × 10% = 202,100; band 3 = 4,085,000 × 15%
 | Per child | ₡1,710 | ₡20,520 | García & Bodán; BDO (Decreto 45333-H) |
 | Spouse | ₡2,590 | ₡31,080 | García & Bodán; BDO (Decreto 45333-H) |
 
-Annual figures are the authoritative ones (García & Bodán; BDO both give per-child ₡20,520/yr and spouse ₡31,080/yr). The monthly spouse figure reconciles as ₡31,080 ÷ 12 = ₡2,590 exactly; some secondary sources (e.g. PwC reporting) round this to ₡2,600 — use ₡2,590 for monthly withholding to stay consistent with the annual ₡31,080. Per-child monthly ₡20,520 ÷ 12 = ₡1,710 ✓.
+Annual figures are the statutory ones: Decreto 45333-H art. 5 sets ₡20,520 per child and ₡31,080 per spouse for self-employed taxpayers, twelve times the monthly ₡1,710 and ₡2,590 of art. 2. The ₡2,600 spouse figure that still circulates is the 2025 monthly credit under Decreto 44772-H art. 2 (₡1,720 per child; ₡31,200 and ₡20,640 a year); use ₡2,590 for 2026 monthly withholding.
 
 ### Conservative Defaults
 
@@ -352,7 +352,7 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 ### 5.1 Territorial Basis
 
-- **Territorial basis** — Only Costa Rica-source income is taxable, irrespective of nationality or residency. Foreign-source income of residents is generally exempt. If income source is ambiguous, STOP and escalate (R-CR-3).  _(Ley del Impuesto sobre la Renta No. 7092; PwC)_
+- **Territorial basis** — Only Costa Rica-source income is taxable, irrespective of nationality or residency. Foreign-source income of residents is generally exempt. If income source is ambiguous, STOP and escalate (R-CR-3).  _(Ley 7092 art. 1)_
 
 ### 5.2 Two Parallel Labor Schedules
 
@@ -360,12 +360,12 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 | Income type | Schedule | 2026 exemption | Final? |
 | --- | --- | --- | --- |
-| Salaried (renta del trabajo dependiente) | Monthly brackets 0/10/15/20/25% | ₡918,000/month | Yes — employer withholding is final (PwC) |
+| Salaried (renta del trabajo dependiente) | Monthly brackets 0/10/15/20/25% | ₡918,000/month | Yes — the tax withheld is the sole and final tax for persons with only this income (Ley 7092 art. 33) |
 | Self-employed / utilidades | Annual brackets 0/10/15/20/25% | ₡6,244,000/year | No — annual D-101 required |
 
-### 5.3 Law 10667 — 25% Standard Deduction (eff. 1 Jan 2026)
+### 5.3 25% Standard Deduction (Ley 7092 art. 8 s)) and Law 10667
 
-- **25% Standard Deduction election** — The self-employed may deduct a flat 25% of GROSS income without receipts, OR claim documented actual expenses — whichever yields the greater deduction (per-taxpayer election). Applies to professionals, technicians, personal-service providers, sales/commission and insurance agents working without an employment relationship.  _(Tico Times; Ley 10667)_
+- **25% Standard Deduction election** — Professionals and technicians who serve clients without an employment relationship, and sales, commission and insurance agents, may deduct the expenses needed to earn their income under the general rules or instead take a single deduction of 25% of gross income or commissions with no supporting proof (per-taxpayer election). The election has long been in art. 8 s) of Ley 7092; Ley 10667 (17 March 2025, in force 1 January 2026) did not create it and only reformed art. 15 c), raising the exempt self-employed band to ₡6,244,000 and resetting the bands above it.  _(Ley 7092 art. 8 s); Ley 10667 artículo único, Alcance 51, 24 Apr 2025)_
 
 ### 5.4 Revenue Recognition
 
@@ -373,7 +373,7 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 ### 5.5 Family Tax Credits (2026)
 
-- **Family tax credits** — Per child ₡1,710/month (₡20,520/yr); spouse ₡2,590/month (₡31,080/yr). Applied against computed income tax. Monthly spouse = ₡31,080 ÷ 12 = ₡2,590; some secondary sources round to ₡2,600.  _(García & Bodán; BDO — Decreto 45333-H)_
+- **Family tax credits** — Per child ₡1,710/month (₡20,520/yr); spouse ₡2,590/month (₡31,080/yr). Applied against computed income tax. Monthly spouse = ₡31,080 ÷ 12 = ₡2,590; ₡2,600 was the 2025 monthly figure under Decreto 44772-H art. 2.  _(Decreto 45333-H arts 2 and 5)_
 
 ### 5.6 CCSS — Employee and Employer (salaried)
 
@@ -421,7 +421,7 @@ The state tops up SALUD so each category totals 12.00%; the state + LPT (Art. 78
 | Input IVA blocked / non-recoverable | IS an expense (documented-expense election) |
 | Non-recoverable foreign VAT | IS an expense — full gross is cost |
 
-- **IVA standard rate and registration threshold** — 13% (reduced 4%/2%/1%); no registration threshold — registration required for any habitual or incidental sale of goods/services.  _(Fonoa; PwC)_
+- **IVA standard rate and registration threshold** — 13% (reduced 4%/2%/1%); no registration threshold — registration required for any habitual or incidental sale of goods/services.  _(Ley 6826 arts 10 and 11; Fonoa)_
 
 ### 5.9 Régimen de Tributación Simplificada (RTS)
 
@@ -429,24 +429,24 @@ The state tops up SALUD so each category totals 12.00%; the state + LPT (Art. 78
 
 ### 5.10 Partial Payments (Pagos Parciales / Anticipos)
 
-- **Partial payments** — Self-employed/businesses pay advance income-tax instalments during the year (form D-103), credited against the D-101. Typically quarterly. Not an expense — a credit against the final liability.  _(PwC; ICS)_
+- **Partial payments** — Taxpayers under Title I make three advance instalments a year: 75% of the base (the prior year's tax or the average of the last three periods, whichever is higher) is split into three equal payments due by the last business day of March, June and September and credited against the annual liability; the balance is paid with the annual return. Not an expense — a credit against the final liability.  _(Ley 7092 art. 22)_
 
 ### 5.11 Filing Deadlines and Forms
 
-**Filing Deadlines and Forms table**  _(Hacienda; Alegra; PwC)_
+**Filing Deadlines and Forms table**  _(Ley 7092 arts 20-22, 42 and 74; Hacienda, Nueva codificación de declaraciones en TRIBU-CR; Hacienda, Presentación de declaraciones tributarias setiembre 2026; TRIBU-CR calendario fiscal)_
 
 | Form | Purpose | Deadline | Via |
 | --- | --- | --- | --- |
-| D-101 | Annual income tax return (self-employed/individuals/entities, traditional regime) | 15 March of following year (2 months 15 days after FY close); for FY2025 the statutory 15 March 2026 is a Sunday, so Hacienda's calendar (CP-11-2026) sets the due date as Mon 16 March 2026 | TRIBU-CR |
-| D-103 | Partial payments / anticipos | Quarterly | TRIBU-CR |
-| D-104 | Monthly VAT (IVA) return | Within first 15 calendar days of following month | TRIBU-CR |
-| D-105 | Régimen Simplificado (VAT + income tax) | Quarterly (within 15 days after quarter-end) | TRIBU-CR |
-| D-151 | Annual informative return (clients/suppliers/expenses) | Generally late February for prior calendar year | TRIBU-CR |
+| D-101 (TRIBU-CR 101) | Annual income tax return (self-employed/individuals/entities, traditional regime) | 15 March of following year (two months and 15 calendar days after the period end, Ley 7092 arts 20-21); for FY2025 the statutory 15 March 2026 is a Sunday, so Hacienda's calendar (CP-11-2026) sets the due date as Mon 16 March 2026 | TRIBU-CR |
+| Pagos parciales | Advance instalments of the annual tax (Ley 7092 art. 22) | Last business day of March, June and September | TRIBU-CR |
+| D-104 (TRIBU-CR 150) | Monthly VAT (IVA) return | Within the first 15 calendar days of the following month (the September 2026 return fell due on 15 October 2026) | TRIBU-CR |
+| D-105 (TRIBU-CR 104 income tax, 153 IVA) | Régimen Simplificado (VAT + income tax) | Quarterly, within the first 15 calendar days of January, April, July and October (Ley 7092 art. 74) | TRIBU-CR |
+| D-151 (TRIBU-CR 270) | Informative summary of clients, suppliers and specific expenses not covered by an electronic receipt; TRIBU-CR made it monthly | Monthly; the TRIBU-CR fiscal calendar lists it on the 26th of the following month | TRIBU-CR |
 | D-140 / RUT | Taxpayer registration before commencing activity | Before starting activity (≤10 business days) | TRIBU-CR |
 
-All persons doing lucrative activity must file the D-101 even with zero income. (Hacienda; Alegra; PwC.)
+All persons doing lucrative activity must file the annual return even when the income is exempt or no tax is due; only persons taxed solely under the salary tax are excused. (Ley 7092 art. 20.)
 
-[RESEARCH GAP — reviewer to confirm] D-104 monthly, D-151 February, and D-103 quarterly schedules are standard but TRIBU-CR (live since 4 Aug 2025) may have restated form codes/calendars. Confirm on the TRIBU-CR portal.
+TRIBU-CR (live since 4 August 2025) renumbered the declarations: the former D-101 is form 101, D-103 salary withholding is 137 (self-assessed) and 207 (informative), D-104 is 150, D-105 is 104 (income tax) and 153 (IVA), remittance withholding is 140, and D-151 is 270, now a monthly informative return. Source: Hacienda, Nueva codificación de declaraciones para Persona Física (TRIBU-CR).
 
 ### 5.12 Penalties (Código de Normas y Procedimientos Tributarios No. 4755)
 
@@ -642,7 +642,12 @@ ONBOARDING QUESTIONS -- COSTA RICA INCOME TAX
 
 ### Sources
 
-- PwC Worldwide Tax Summaries — Costa Rica (Individual: taxes on personal income; other taxes), reviewed 29 Dec 2025.
+- Ley 7092, Ley del Impuesto sobre la Renta, consolidated text on SINALEVI (Procuraduría General de la República), version 81 of 83, read 11 Oct 2026: arts 1, 4, 8 s), 15, 20-23, 27 ter, 28 bis, 31 ter, 31 quáter, 31 quinquies, 32-35, 42, 59 and 72-74 (https://sinalevi.go.cr/ResultadosNormativa/Informacion?param1=10969&param2=0&param3=1&param4=).
+- Decreto Ejecutivo 45333-H, La Gaceta 229, 5 Dec 2025, pp. 2-3 (Imprenta Nacional, https://www.imprentanacional.go.cr/pub/2025/12/05/COMP_05_12_2025.pdf, read from the Web Archive capture of 5 Dec 2025): 2026 salary brackets and credits, company bands, self-employed bands and credits.
+- Decreto Ejecutivo 44772-H, Alcance 195 to La Gaceta 227, 3 Dec 2024 (https://www.imprentanacional.go.cr/pub/2024/12/03/ALCA195_03_12_2024.pdf): 2025 brackets and credits.
+- Ley 10667, Alcance 51 to La Gaceta, 24 Apr 2025 (https://www.imprentanacional.go.cr/pub/2025/04/24/ALCA51_24_04_2025.pdf): reform of art. 15 c) and its Transitorio Único.
+- Ley 6826, Ley del Impuesto al Valor Agregado, consolidated text on SINALEVI (param1=32526): arts 10 and 11.
+- Hacienda, Nueva codificación de declaraciones para Persona Física en TRIBU-CR (https://www.hacienda.go.cr/docs/a_2NuevaCodificacionDeDeclaracionesParaPersonaFisica-TRIBU-CR-PF.pdf); Presentación de declaraciones tributarias setiembre 2026 (https://www.hacienda.go.cr/docs/PresentacionDeclaracionesTributariasSETIEMBRE2026.pdf); TRIBU-CR calendario fiscal (https://ovitribucr.hacienda.go.cr/calendario-fiscal/).
 - García & Bodán — "Costa Rica updates income tax brackets for 2026" (Decreto 45333-H; brackets + credits).
 - BDO Costa Rica — "New income tax brackets for 2026" (confirms salaried + self-employed 2026 thresholds and credits); "Adjustment to CCSS Employer-Employee Contributions Effective January 2026" (employee 10.83%, employer 26.83%).
 - ICS Costa Rica — 2026 brackets (Decreto 45333-H; -0.38% CPI reindex); self-employed social charges note.

@@ -4,8 +4,8 @@ description: "Source-cited draft: vat / gst for Chad (tax year 2025) — rates, 
 jurisdiction: TD
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,9 +19,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Chad levies value-added tax (Taxe sur la Valeur Ajoutée, TVA) on taxable supplies of goods and services. Rates and rules below are a source-cited draft for 2025.
 
-- **Standard VAT rate** — 18%  _(Code Général des Impôts (Chad) — TVA — https://taxsummaries.pwc.com/chad/corporate/other-taxes)_
-- **Reduced VAT rate** — 9% on certain locally produced goods (e.g. cement, sugar, oil, soap, textiles, iron)  _(Code Général des Impôts (Chad) — TVA — https://taxsummaries.pwc.com/chad/corporate/other-taxes)_
-- **Zero-rated supplies** — 0% on exports and related international transport, and on local agri-food products (excluding alcohol)  _(Code Général des Impôts (Chad) — TVA — https://taxsummaries.pwc.com/chad/corporate/other-taxes)_
+- **Standard VAT rate** — 18%  _(Code Général des Impôts (Chad) — TVA)_
+- **Reduced VAT rate** — 9% on certain locally produced goods (e.g. cement, sugar, oil, soap, textiles, iron)  _(Code Général des Impôts (Chad) — TVA)_
+- **Zero-rated supplies** — 0% on exports and related international transport, and on local agri-food products (excluding alcohol)  _(Code Général des Impôts (Chad) — TVA)_
 - **VAT registration threshold** — Businesses under the normal regime (turnover above XAF 500,000,000) charge VAT; smaller taxpayers fall under simplified/flat regimes (approx — confirm exact VAT-specific turnover threshold)  _(Code Général des Impôts (Chad) — TVA / tax regimes)_
 - **VAT return frequency** — Monthly — filed and paid by the 15th of the following month (approx — confirm exact monthly due date)  _(Code Général des Impôts (Chad) — TVA administration)_
 - **VAT on digital / platform services** — VAT obligation extended to non-resident digital platforms, effective January 2025

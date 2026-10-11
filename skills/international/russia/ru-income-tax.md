@@ -1,10 +1,10 @@
 ---
 name: ru-income-tax
 description: Use this skill whenever asked about Russian personal income tax (НДФЛ / nalog na dokhody fizicheskikh lits) for individuals or for individual entrepreneurs (ИП) on the general system (ОСНО). Trigger on phrases like "НДФЛ", "income tax Russia", "13% 15% Russia", "progressive scale Russia", "3-НДФЛ", "ИП ОСНО", "professional deduction Russia", "профессиональный вычет", "tax residency Russia 183 days", "personal income tax Russia 2026", or any request to compute, classify, or advise on Russian НДФЛ. This skill covers the progressive НДФЛ scale (13/15/18/20/22%) effective from 1 Jan 2025, tax residency, the non-resident 30% rate, ИП on ОСНО paying НДФЛ on net business profit with the professional deduction, the annual 3-НДФЛ declaration, advance payments, and the standard/social/property deduction overview. For simplified alternatives see ru-usn (УСН) and ru-self-employed-npd (НПД / самозанятые).
-version: 1.0
+version: 1.1
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -42,7 +42,7 @@ This skill computes and explains Russian personal income tax — **НДФЛ** (*
 | ИП ОСНО + VAT | ИП on ОСНО are also **НДС** (VAT) payers — standard НДС rate **22 % from 1 Jan 2026** (Law 425-FZ); see russia-vat |
 | Currency | Russian rouble (₽ / RUB) |
 | Quality tier | **Research-verified — pending sign-off by a qualified Russian accountant** |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Progressive resident rate table (2026)
 
@@ -297,7 +297,7 @@ Always reconcile the **назначение платежа** (payment purpose) f
 
 ## Disclaimer
 
-This skill is **research-verified** against ФНС (nalog.gov.ru), PwC Worldwide Tax Summaries (Russian Federation), and reputable secondary sources, and is current to **tax year 2026** as understood in **May 2026**. It is **not a substitute for professional advice**. Russian tax law — especially non-resident rules, deduction caps, and the НДС rate — changes frequently and is affected by sanctions and treaty suspensions. Every output **must be reviewed and signed off by a qualified Russian accountant** before it is relied upon or submitted to the ФНС. Figures marked "verify current value" must be confirmed against the live Налоговый кодекс гл. 23 and ФНС guidance for the applicable year.
+This skill is **research-verified** against ФНС (nalog.gov.ru), and reputable secondary sources, and is current to **tax year 2026** as understood in **May 2026**. It is **not a substitute for professional advice**. Russian tax law — especially non-resident rules, deduction caps, and the НДС rate — changes frequently and is affected by sanctions and treaty suspensions. Every output **must be reviewed and signed off by a qualified Russian accountant** before it is relied upon or submitted to the ФНС. Figures marked "verify current value" must be confirmed against the live Налоговый кодекс гл. 23 and ФНС guidance for the applicable year.
 
 Part of **openaccountants.com** — open-source tax skills for self-employed people.
 

@@ -1,10 +1,10 @@
 ---
 name: ma-social-contributions
 description: Use this skill whenever asked about Morocco social contributions for the self-employed — the CNSS scheme for travailleurs non-salariés (TNS), the mandatory AMO health-insurance generalisation, and the dedicated social cover for auto-entrepreneurs. Trigger on phrases like "CNSS auto-entrepreneur", "AMO Maroc", "social security Morocco self-employed", "TNS Maroc", "cotisation CNSS indépendant", "couverture sociale travailleur non salarié", "تغطية صحية للعمل الحر", "CNSS Maroc cotisation", "retraite TNS Maroc", "AMO travailleur non salarié". Covers the profession-by-profession TNS rollout, the forfaitaire (SMIG-indexed) contribution base, AMO and retraite rates and minimums, registration and quarterly payment, and the contrast with employee CNSS (employer/employee split, salary ceiling) for those who hire. Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-auto-entrepreneur and ma-cpu, which bundle their own social-cover components.
-version: 1.1
+version: 1.2
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -259,7 +259,7 @@ assumptions, and the open items for the reviewer to sign off.
 
 ### Legal & source references
 
-- **Legal & source references list** — - **Loi-cadre n° 09-21** relative à la protection sociale (généralisation roadmap). - **Loi n° 98-15** — régime AMO de base for the **non-salariés (TNS)**. - **Loi n° 99-15** — régime de **pension (retraite)** for the non-salariés. - **Category décrets** — fix the **forfaitaire base** per socioprofessional group (CPU payers, commerçants/artisans, médecins, pharmaciens, dentistes, notaires, adouls, avocats, architects, etc.). **Verify each on cnss.ma.** - **Décret n° 2.21.477 (2021)** — mandatory CNSS/AMO for **auto-entrepreneurs**. - **Loi de Finances 2026** — confirm current rates, SMIG, ceiling, and minimums. - Authority: **CNSS** — cnss.ma (TNS portal, DAMANCOM for employers). Tax interaction: **DGI** — tax.gov.ma. AE register: **RNAE** — rn.ae.gov.ma. - Secondary corroboration: PwC Worldwide Tax Summaries (Morocco), CLEISS (cotisations Maroc), Moroccan accounting practices (figures cross-checked May 2026).  _(Loi-cadre n° 09-21; Loi n° 98-15; Loi n° 99-15; Décret n° 2.21.477 (2021); Loi de Finances 2026)_
+- **Legal & source references list** — - **Loi-cadre n° 09-21** relative à la protection sociale (généralisation roadmap). - **Loi n° 98-15** — régime AMO de base for the **non-salariés (TNS)**. - **Loi n° 99-15** — régime de **pension (retraite)** for the non-salariés. - **Category décrets** — fix the **forfaitaire base** per socioprofessional group (CPU payers, commerçants/artisans, médecins, pharmaciens, dentistes, notaires, adouls, avocats, architects, etc.). **Verify each on cnss.ma.** - **Décret n° 2.21.477 (2021)** — mandatory CNSS/AMO for **auto-entrepreneurs**. - **Loi de Finances 2026** — confirm current rates, SMIG, ceiling, and minimums. - Authority: **CNSS** — cnss.ma (TNS portal, DAMANCOM for employers). Tax interaction: **DGI** — tax.gov.ma. AE register: **RNAE** — rn.ae.gov.ma. - Secondary corroboration: CLEISS (cotisations Maroc), Moroccan accounting practices (figures cross-checked May 2026).  _(Loi-cadre n° 09-21; Loi n° 98-15; Loi n° 99-15; Décret n° 2.21.477 (2021); Loi de Finances 2026)_
 
 ### Short test suite
 
@@ -287,8 +287,8 @@ assumptions, and the open items for the reviewer to sign off.
 ## Disclaimer
 
 This skill is **research-verified** against public sources (CNSS / cnss.ma including the
-official TNS and AMO rate pages, the généralisation framework laws, PwC Worldwide Tax
-Summaries, CLEISS, and reporting on the Loi de Finances 2025/2026) as of **May 2026**.
+official TNS and AMO rate pages, the généralisation framework laws,
+CLEISS, and reporting on the Loi de Finances 2025/2026) as of **May 2026**.
 It is **YMYL** content and is **pending sign-off by a Moroccan expert-comptable**. The
 social-protection roll-out is **ongoing and category-specific**; rates, the SMIG, the
 forfaitaire bases, ceilings, brackets, and effective dates change with each décret and

@@ -1,10 +1,10 @@
 ---
 name: nicaragua-payroll
 description: Use this skill whenever asked about Nicaragua payroll processing for employed persons. Trigger on phrases like "Nicaragua payroll", "nomina Nicaragua", "INSS deduction", "INSS laboral", "INSS patronal", "IR rentas del trabajo", "retencion IR Nicaragua", "INATEC 2%", "Form IR-122", "Form IR-106", "planilla INSS", "salario neto Nicaragua", "net salary Nicaragua", "cordoba payroll", "employer social security Nicaragua", "salario minimo Nicaragua", "minimum wage Nicaragua", "gross to net Nicaragua", or any question about computing employee pay, income-tax withholding, or social-security contributions for Nicaragua-based employees. This skill covers IR (rentas del trabajo) progressive withholding, INSS employee/employer contributions (Regimen Integral), the INATEC training levy, sector minimum wages, payroll filing obligations (IR-122, IR-106, INSS planilla), and penalties. The reporting currency is the Nicaraguan cordoba (NIO / C$). ALWAYS read this skill before processing any Nicaragua payroll.
-version: 0.2
+version: 0.3
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Nicaragua Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
+# Nicaragua Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Nicaragua Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
+## Nicaragua Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
 
 ## Section 1 -- Quick Reference
 
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Nicaragua (Republic of Nicaragua) |
 | Currency | Nicaraguan cordoba (NIO / C$) only |
 | Standard pay frequency | Monthly (most common); biweekly (quincenal) permitted |
-| Tax year | Calendar year (1 January -- 31 December); alternative 12-month periods may be authorized [PwC, Ley 822] |
+| Tax year | Calendar year (1 January -- 31 December); alternative 12-month periods may be authorized [secondary summary, Ley 822] |
 | Income-tax system | IR -- Rentas del Trabajo (PAYE-style monthly withholding by employer) |
 | Tax authority | Direccion General de Ingresos (DGI) -- dgi.gob.ni |
 | Social-security authority | Instituto Nicaraguense de Seguridad Social (INSS) -- inss.gob.ni |
@@ -43,11 +43,11 @@ This is a **Tier-2 research-verified** skill. Several figures are flagged **[RES
 ## Section 2 -- Income Tax Withholding (IR -- Rentas del Trabajo)
 
 - **IR withholding method overview** — The employer withholds income tax monthly on employment income (rentas del trabajo) and remits it to the DGI. The tax is computed by annualizing the employee's monthly taxable income, applying the progressive table, then dividing the annual liability by 12 (or by the number of pay periods).
-- **Taxable base** — Taxable base = gross salary minus the employee's INSS contribution. The 7% employee INSS deduction is taken before the IR table is applied.  _([PwC Worldwide Tax Summaries — Nicaragua, last reviewed 12 Jan 2026])_
+- **Taxable base** — Taxable base = gross salary minus the employee's INSS contribution. The 7% employee INSS deduction is taken before the IR table is applied.  _([secondary summary, Nicaragua, last reviewed 12 Jan 2026])_
 
 ### IR Progressive Annual Brackets — residents (NIO)
 
-**IR Progressive Annual Brackets — residents (NIO)**  _([Source: PwC Worldwide Tax Summaries — Nicaragua / Ley de Concertacion Tributaria (Ley 822), Art. 23. https://taxsummaries.pwc.com/nicaragua/individual/taxes-on-personal-income])_
+**IR Progressive Annual Brackets — residents (NIO)**  _([Source: a secondary practitioner summary — Nicaragua / Ley de Concertacion Tributaria (Ley 822), Art. 23.])_
 
 | Annual taxable income (NIO) | Base tax (NIO) | Marginal rate on excess over lower bound |
 | --- | --- | --- |
@@ -64,9 +64,9 @@ This is a **Tier-2 research-verified** skill. Several figures are flagged **[RES
 
 ### Key rules
 
-- **IR exemption** — The first C$100,000 of annual net employment income is exempt (the 0% band is the tax-free allowance — there is no separate personal allowance).  _([PwC / Ley 822])_
-- **Non-residents flat rate** — Non-residents: flat 20% definitive withholding on Nicaraguan-source income (no bracket table, no annualization).  _([PwC — Nicaragua, taxes on personal income])_
-- **Tax year** — Tax year = calendar year.  _([PwC])_
+- **IR exemption** — The first C$100,000 of annual net employment income is exempt (the 0% band is the tax-free allowance — there is no separate personal allowance).  _([secondary summary, / Ley 822])_
+- **Non-residents flat rate** — Non-residents: flat 20% definitive withholding on Nicaraguan-source income (no bracket table, no annualization).  _([secondary summary, Nicaragua, taxes on personal income])_
+- **Tax year** — Tax year = calendar year.  _([secondary summary])_
 
 ### Monthly withholding method (deterministic)
 
@@ -76,7 +76,7 @@ If pay is irregular (bonuses, 13th-month aguinaldo), reconcile via the annual IR
 
 ## Section 3 -- Social Security -- INSS Employee Deductions (Regimen Integral)
 
-- **Employee INSS overview** — Employee INSS is computed on gross salary/wages at a total of 7.00%. Rates per the 2019 INSS reform (effective 1 Feb 2019, current for 2025).  _([Latin Alliance reform summary; PwC — Nicaragua, other taxes])_
+- **Employee INSS overview** — Employee INSS is computed on gross salary/wages at a total of 7.00%. Rates per the 2019 INSS reform (effective 1 Feb 2019, current for 2025).  _([Latin Alliance reform summary; secondary summary, Nicaragua, other taxes])_
 
 ### INSS Employee Contribution Components (2025)
 
@@ -99,7 +99,7 @@ For biweekly (quincenal) pay, contributions are computed on the period's gross a
 
 ## Section 4 -- Social Security -- INSS Employer Contributions + INATEC
 
-- **Employer INSS overview** — Employer INSS is computed on gross salary/wages. The total rate depends on headcount (the 50-employee line changes only the IVM portion).  _([Latin Alliance — 2019 reform; PwC])_
+- **Employer INSS overview** — Employer INSS is computed on gross salary/wages. The total rate depends on headcount (the 50-employee line changes only the IVM portion).  _([Latin Alliance — 2019 reform; secondary summary])_
 
 ### INSS Employer Contribution Components (2025)
 
@@ -325,7 +325,7 @@ Gross monthly: C$60,000. Resident. Headcount >= 50.
 
 ### Example E — Non-resident employee
 
-Gross monthly: C$50,000. Non-resident (flat 20% definitive withholding, no bracket table, no exemption). [PwC]
+Gross monthly: C$50,000. Non-resident (flat 20% definitive withholding, no bracket table, no exemption). [secondary summary]
 
 **Example E table**
 
@@ -343,10 +343,10 @@ Whether INSS applies to a non-resident depends on the employment relationship; c
 ## Section 10 -- Tier 1 Rules (deterministic — apply automatically)
 
 - **Rule 1** — Employee INSS = 7.00% of gross, deducted before IR.  _([2019 reform])_
-- **Rule 2** — IR taxable base = gross − employee INSS.  _([PwC / Ley 822])_
+- **Rule 2** — IR taxable base = gross − employee INSS.  _([secondary summary, / Ley 822])_
 - **Rule 3** — Annualize monthly taxable income before applying the IR table; divide the resulting annual IR by 12 for the monthly withholding.
 - **Rule 4** — First C$100,000 annual net is exempt (0% band).  _([Ley 822 Art. 23])_
-- **Rule 5** — Non-residents: flat 20% definitive withholding, no brackets, no exemption.  _([PwC])_
+- **Rule 5** — Non-residents: flat 20% definitive withholding, no brackets, no exemption.  _([secondary summary])_
 - **Rule 6** — Employer INSS = 21.5% (< 50 staff) or 22.5% (>= 50 staff) of gross.  _([2019 reform])_
 - **Rule 7** — INATEC = 2.0% of gross payroll, employer-paid, via the INSS invoice.  _([INATEC decree])_
 - **Rule 8** — Gross must not be below the applicable sector minimum wage.  _([CNSM / Bloomberg Linea])_
@@ -456,10 +456,10 @@ A precise statutory registration deadline window could not be isolated from an o
 
 | Form | Purpose | Deadline |
 | --- | --- | --- |
-| IR-122 | Monthly IR withholding remittance | Within the first days of the following month — commonly stated as the **first 5 working days**, but the exact day was **not** confirmed from an official DGI source. **[RESEARCH GAP — reviewer to confirm]** [PwC tax administration] |
+| IR-122 | Monthly IR withholding remittance | Within the first days of the following month — commonly stated as the **first 5 working days**, but the exact day was **not** confirmed from an official DGI source. **[RESEARCH GAP — reviewer to confirm]** [secondary summary, tax administration] |
 | IR-106 | Annual IR return | Within **90 days after year-end** (~31 March). For TY2025, DGI announced Form 106 with deadline **28 February 2026**. [EY Nicaragua DGI annual-declaration alert] |
 
-- **Filing exemption / aggregate income rule** — Employees with a single employer and no education/health/professional-service deductions are exempt from filing. Employees with two or more employers whose aggregate income exceeds C$100,000/year must file annually.  _([PwC tax administration])_
+- **Filing exemption / aggregate income rule** — Employees with a single employer and no education/health/professional-service deductions are exempt from filing. Employees with two or more employers whose aggregate income exceeds C$100,000/year must file annually.  _([secondary summary, tax administration])_
 
 ### Social security (INSS) filing
 
@@ -504,16 +504,16 @@ A precise statutory registration deadline window could not be isolated from an o
 
 | Item | Value | Source |
 | --- | --- | --- |
-| IR exemption (annual) | C$100,000 | Ley 822 Art. 23 / PwC |
-| IR top marginal rate | 30% over C$500,000 | Ley 822 / PwC |
-| Non-resident IR | 20% definitive | PwC |
-| Employee INSS | 7.00% (4.75 IVM + 2.25 health) | 2019 reform / PwC |
+| IR exemption (annual) | C$100,000 | Ley 822 Art. 23 / the secondary summary |
+| IR top marginal rate | 30% over C$500,000 | Ley 822 |
+| Non-resident IR | 20% definitive | secondary summary |
+| Employee INSS | 7.00% (4.75 IVM + 2.25 health) | 2019 reform |
 | Employer INSS < 50 | 21.5% | 2019 reform / Latin Alliance |
 | Employer INSS >= 50 | 22.5% | 2019 reform / Latin Alliance |
 | INATEC | 2.0% | INATEC decree |
 | INSS ceiling | None (disputed) | 2019 reform — **[RESEARCH GAP]** |
 | INSS payment deadline | First 10 business days of following month | INSS Reglamento General |
-| IR-106 annual deadline | 90 days after year-end (~31 Mar); TY2025 = 28 Feb 2026 | EY / PwC |
+| IR-106 annual deadline | 90 days after year-end (~31 Mar); TY2025 = 28 Feb 2026 | EY |
 | INSS mora | 2% monthly | INSS Reglamento General |
 
 ### Numbered Test Suite (recompute to confirm before relying on this skill)

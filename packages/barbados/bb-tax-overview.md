@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Barbados (tax year 2025) — 
 jurisdiction: BB
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,7 +20,7 @@ Barbados taxes individuals and companies under the Income Tax Act, administered 
 - **Tax year (income year)** — Calendar year for individuals; a company's income year is its fiscal period, which may not exceed 53 weeks  _(Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 2, definition of income year — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73 ; Barbados Revenue Authority, Income Tax: Corporations — https://bra.gov.bb/About/Tax-Types/Income-Tax/Corporations)_
 - **Currency** — Barbados dollar (BBD), pegged at BBD 2.00 = USD 1.00 (peg is administrative, not statutory in the Income Tax Act)  _(Central Bank of Barbados Act)_
 - **Tax authority** — Barbados Revenue Authority (BRA)  _([Barbados Revenue Authority Act, 2014-1](https://bra.gov.bb/))_
-- **Residence basis (individuals)** — An individual resident and domiciled in Barbados is taxed on worldwide income; resident but non-domiciled individuals are taxed on Barbados-source income and on foreign income to the extent remitted/benefited in Barbados  _(Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 86(5) to (7) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73 ; PwC Worldwide Tax Summaries, Taxes on personal income — https://taxsummaries.pwc.com/barbados/individual/taxes-on-personal-income)_
+- **Residence basis (individuals)** — An individual resident and domiciled in Barbados is taxed on worldwide income; resident but non-domiciled individuals are taxed on Barbados-source income and on foreign income to the extent remitted/benefited in Barbados  _(Income Tax Act, Cap. 73, L.R.O. 2007 consolidation (Barbados Revenue Authority copy), s 85(5) and (6) (deemed residence: more than 182 days in the year or ordinarily resident; the earlier citation to s 86 pointed at the commencement section) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+Act%2c+Cap.+73.pdf&name=Income+Tax+Act%2c+Cap.+73)_
 - **Residence basis (companies)** — Companies resident in Barbados are taxed on worldwide income; non-resident companies are taxed only on Barbados-source income  _(Barbados Revenue Authority, Income Tax: Corporations — https://bra.gov.bb/About/Tax-Types/Income-Tax/Corporations)_
 - **Headline personal income tax rates** — 12.5% on taxable income up to BBD 50,000 and 28.5% above it, after the BBD 25,000 personal allowance (income years 2020 to 2025); from income year 2026 the rates fall to 11.5% on BBD 25,001 to 75,000 and 27.5% above BBD 75,000  _(Income Tax (Amendment) Act, 2020-10 (Barbados Revenue Authority copy), s 6, amending s 42(1) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+%29+Act%2c+2020-10.pdf&name=Income+Tax+%28Amendment%29+Act%2c+2020-10 ; Barbados Revenue Authority, Policy Note OGC 001/2026, reduction in personal income tax rates (April 2026) — https://bra.gov.bb/attachment?file=Attachments%2FPolicy+Note+2026_Reduction+in+Personal+Income+Tax+Rates_April+2026.pdf&name=Policy+Note+2026_Reduction+in+Personal+Income+Tax+Rates_April+2026)_
 - **Headline corporate income tax rate** — 9% general corporation tax rate from income year 2024  _(Income Tax (Amendment and Validation) Act, 2024-15 (Barbados Revenue Authority copy), s 6, inserting s 43(8) — https://bra.gov.bb/attachment?file=Attachments%2fIncome+Tax+%28Amendment+and+Validation%29+Act%2c+2024-15.pdf&name=Income+Tax+%28Amendment+and+Validation%29+Act%2c+2024-15)_

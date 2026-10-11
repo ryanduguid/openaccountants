@@ -1,10 +1,10 @@
 ---
 name: eg-real-estate-tax
 description: Use this skill whenever asked about Egyptian real estate tax (ضريبة العقارات) under Law 196/2008 — annual rental value tax on owned property in Egypt. Trigger on "Egypt real estate tax", "ضريبة العقارات", "real estate levy Egypt", "annual rental value tax", or any property-tax compliance question for Egyptian owners/landlords.
-version: 0.1
+version: 0.2
 jurisdiction: EG
 tax_year: 2025
-last_updated: 2026-07-22
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Egypt Real Estate Tax (ضريبة العقارات) Skill v0.1
+# Egypt Real Estate Tax (ضريبة العقارات) Skill v0.2
 
-## Egypt Real Estate Tax (ضريبة العقارات) Skill v0.1
+## Egypt Real Estate Tax (ضريبة العقارات) Skill v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 This skill covers Egyptian real estate tax (ضريبة العقارات المبنية) under **Law No. 196 of 2008** (the Unified Real Estate Tax Law), as amended by **Law No. 117 of 2014** and **Law No. 3 of 2026**. The AI must reply in the user's language (English or Arabic / Egyptian Arabic) and may use the native tax terms shown throughout.
 
 > **Currency note:** all figures are in Egyptian Pounds (EGP / ج.م).
-> **YMYL — verify before relying.** Egyptian property tax thresholds and exemptions were amended in 2014 and again in 2026 (Law 3/2026). Where this skill says "verify current value," re-confirm against the Real Estate Taxation Authority (RETA), the Egyptian Tax Authority (eta.gov.eg), PwC Worldwide Tax Summaries (taxsummaries.pwc.com/egypt), or a Big-4 alert before filing.
+> **YMYL — verify before relying.** Egyptian property tax thresholds and exemptions were amended in 2014 and again in 2026 (Law 3/2026). Where this skill says "verify current value," re-confirm against the Real Estate Taxation Authority (RETA), the Egyptian Tax Authority (eta.gov.eg), a secondary practitioner summary, or a Big-4 alert before filing.
 
 ## What this file is
 
@@ -265,7 +265,7 @@ This is a one-time transfer tax, NOT the annual property tax. See the property r
 | **Law 3/2026** | March 2026 amendments (exemption threshold, digital filing, penalty waiver) | — |
 | **Law 91/2005 Art 23** | CIT non-deductibility of non-business taxes | — |
 | **Law 91/2005 Art 47** | Real estate wealth tax on rental income | — |
-| **PwC Worldwide Tax Summaries** | Egypt — property tax | taxsummaries.pwc.com/egypt |
+| **secondary summary** | Egypt — property tax | |
 | **Andersen Egypt** | Real Estate Tax Laws in Egypt (English law translation) | eg.andersen.com/real-estate-tax-laws |
 | **RETA** | Real Estate Taxation Authority (44 offices nationwide) | — |
 

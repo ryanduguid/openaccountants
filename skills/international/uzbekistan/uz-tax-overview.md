@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Uzbekistan (tax year 2025) �
 jurisdiction: UZ
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,7 +19,7 @@ Uzbekistan operates a codified tax system under the Tax Code of the Republic of 
 
 - **Tax year** — Calendar year (1 January to 31 December); the Code makes the calendar year the tax period for each tax, with the month or quarter as the reporting period  _(Tax Code of the Republic of Uzbekistan (lex.uz consolidated text in Uzbek Cyrillic, amendments in force to 25 July 2026), art. 406 (and the matching tax period articles of each tax) — https://lex.uz/ru/docs/4674902)_
 - **National currency** — Uzbekistani soum (UZS)  _(Tax Code of the Republic of Uzbekistan)_
-- **Tax authority** — State Tax Committee of the Republic of Uzbekistan (soliq.uz)  _(Tax Code of the Republic of Uzbekistan, https://taxsummaries.pwc.com/republic-of-uzbekistan)_
+- **Tax authority** — State Tax Committee of the Republic of Uzbekistan (soliq.uz)  _(Tax Code of the Republic of Uzbekistan — https://lex.uz/ru/docs/4674902 (as reported; the figure was not re-read against this text for this change))_
 - **Individual residence basis** — Residents are taxed on worldwide income and non-residents on Uzbek-source income only; an individual is resident when present in Uzbekistan for more than 183 days in total in any consecutive twelve-month period beginning or ending in the tax period (art. 30)  _(Tax Code of the Republic of Uzbekistan (lex.uz consolidated text in Uzbek Cyrillic, amendments in force to 25 July 2026), arts. 30 and 381 to 382 — https://lex.uz/ru/docs/4674902)_
 - **Headline personal income tax rate** — 12% for resident individuals; dividends and interest received by residents are taxed at 5% (art. 381)  _(Tax Code of the Republic of Uzbekistan (lex.uz consolidated text in Uzbek Cyrillic, amendments in force to 25 July 2026), art. 381 — https://lex.uz/ru/docs/4674902)_
 - **Headline corporate income tax rate** — 15% for taxpayers not listed in the special rows of art. 337; 20% for banks, polyethylene granule producers, mobile operators and income from services in markets and trade complexes; 5% on dividend income  _(Tax Code of the Republic of Uzbekistan (lex.uz consolidated text in Uzbek Cyrillic, amendments in force to 25 July 2026), art. 337, row 12 of the rate table — https://lex.uz/ru/docs/4674902)_

@@ -4,8 +4,8 @@ description: "Source-cited draft: personal income tax for Brunei (tax year 2025)
 jurisdiction: BN
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Personal income tax (none)
 
 - **Brunei personal income tax status** — Brunei does not levy any personal income tax. Individuals pay no tax on salary, business income, dividends, interest or capital gains. The only payroll-related deductions for citizens and permanent residents are TAP and SCP social-fund contributions (see payroll-social).
-- **Personal income tax on individuals** — 0% (no personal income tax exists in Brunei)  _([Income Tax Act (Cap. 35)](https://taxsummaries.pwc.com/brunei-darussalam/individual/taxes-on-personal-income))_
+- **Personal income tax on individuals** — 0% (no personal income tax exists in Brunei)  _(Income Tax Act (Cap. 35) — https://www.mofe.gov.bn/Divisions/income-tax.aspx (as reported; the figure was not re-read against this text for this change))_
 - **Resident individual income tax bands** — Not applicable (no income tax bands exist for residents)  _(Income Tax Act (Cap. 35))_
 - **Non-resident individual income tax** — Not applicable (no income tax on non-resident individuals' personal income (note: payments to non-resident companies/contractors may be subject to corporate withholding tax))  _(Income Tax Act (Cap. 35))_
 - **Tax-free threshold** — Not applicable (all personal income is untaxed)  _(Income Tax Act (Cap. 35))_

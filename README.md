@@ -1,5 +1,10 @@
 # OpenAccountants
 
+**Fork status**
+
+[![Fork code quality](https://app.codacy.com/project/badge/Grade/aae907e043db42b1ad1791f8a4d64028?branch=main)](https://app.codacy.com/gh/ryanduguid/openaccountants/dashboard)
+[![Fork Validate Guides](https://github.com/ryanduguid/openaccountants/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/ryanduguid/openaccountants/actions/workflows/validate.yml)
+
 > [!NOTE]
 > **This is a maintained fork.** `ryanduguid/openaccountants` carries the guide
 > corpus of [`openaccountants/openaccountants`](https://github.com/openaccountants/openaccountants)
