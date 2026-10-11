@@ -1,10 +1,10 @@
 ---
 name: azerbaijan-tax-optimization
 description: Use this skill whenever asked about reducing tax in Azerbaijan, tax planning, or legal strategies to minimise tax for a small business or entrepreneur in Azerbaijan. Trigger on phrases like "reduce tax Azerbaijan", "simplified tax 2%", "micro business Azerbaijan", "startup exemption", "Azerbaijan dividends 5%", "tech park Azerbaijan", "save tax Azerbaijan", "tax planning Azerbaijan". This skill covers the 2% simplified turnover tax, micro-business and startup exemptions, regional/technology-park incentives, dividend taxation, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Azerbaijani tax optimisation.
-version: 0.2
+version: 0.3
 jurisdiction: AZ
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Azerbaijan Tax Optimization
 
-## Azerbaijan Tax Optimization Skill v0.2
+## Azerbaijan Tax Optimization Skill v0.3
 
-**Tier 2 — research-verified. Sources: State Tax Service, PwC Azerbaijan, Caspian Legal Center, 2025 Tax Code amendments. Figures must agree with `azerbaijan-income-tax.md` / `azerbaijan-social-contributions.md`. NOT yet signed off by an Azerbaijani tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: State Tax Service, the secondary summary Azerbaijan, Caspian Legal Center, 2025 Tax Code amendments. Figures must agree with `azerbaijan-income-tax.md` / `azerbaijan-social-contributions.md`. NOT yet signed off by an Azerbaijani tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 

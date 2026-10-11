@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Moldova 
 jurisdiction: MD
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ The most common Moldovan business vehicle is the limited liability company (SRL)
 - **Typical incorporation timeline** — Around 1 business day for standard registration; a few days where additional documents are required (approx - confirm)  _(Law on State Registration of Legal Entities and Individual Entrepreneurs)_
 - **State registration fee** — Nominal state fee (commonly under MDL 1,500 for standard registration) (approx - confirm current ASP tariff)  _(Law on State Registration of Legal Entities and Individual Entrepreneurs)_
 - **Core incorporation steps** — Reserve company name, prepare and sign articles of association, register with ASP (State Register), obtain tax/VAT and social-insurance registration, open a bank account  _(Law on State Registration of Legal Entities and Individual Entrepreneurs)_
-- **Core annual compliance** — Annual financial statements filed with the tax service/statistics, annual CIT return by 25 March, monthly VAT and payroll filings  _([Accounting and Financial Reporting Law / Fiscal Code (Codul Fiscal) — https://taxsummaries.pwc.com/moldova/corporate/tax-administration](https://taxsummaries.pwc.com/moldova/corporate/tax-administration))_
+- **Core annual compliance** — Annual financial statements filed with the tax service/statistics, annual CIT return by 25 March, monthly VAT and payroll filings  _(Accounting and Financial Reporting Law / Fiscal Code (Codul Fiscal) as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 <!-- openaccountants-cta-block -->
 

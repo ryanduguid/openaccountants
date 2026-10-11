@@ -1,10 +1,10 @@
 ---
 name: bulgaria-payroll
 description: Use this skill whenever asked about Bulgaria payroll processing for employed persons. Trigger on phrases like "Bulgaria payroll", "Bulgarian salary", "заплата", "ZDDFL", "ЗДДФЛ", "flat tax Bulgaria", "10% income tax Bulgaria", "data varhu dohodite", "social security Bulgaria", "осигуровки", "osigurovki", "ДОО", "DOO", "pension fund Bulgaria", "Универсален пенсионен фонд", "Universal Pension Fund", "UPF Bulgaria", "2nd pillar Bulgaria", "health insurance Bulgaria", "здравно осигуряване", "НЗОК", "NZOK", "NHIF", "Declaration 1", "Declaration 6", "Декларация образец 1", "Декларация образец 6", "Obrazets 1", "Obrazets 6", "net salary Bulgaria", "gross to net Bulgaria", "PAYE Bulgaria", "tax withholding Bulgaria", "employer contributions Bulgaria", "employer on-cost Bulgaria", "minimum wage Bulgaria", "минимална работна заплата", "МРЗ", "minimum insurable income", "МОД", "maximum insurable income", "осигурителен доход", "TZPB", "work accident Bulgaria", "NRA", "НАП", "NSSI", "НОИ", "Art. 62 notification", "employment contract registration Bulgaria", or any question about computing employee pay, withholding income tax, or mandatory social/health contributions for Bulgaria-based employees. This skill covers the 10% flat income tax withholding, state social insurance (ДОО) contributions (pension, supplementary 2nd-pillar pension, sickness/maternity, unemployment, work-accident), health insurance, the insurable-income floor and ceiling, minimum wage, the euro changeover from 1 January 2026, Declaration 1 / Declaration 6 filing, and Art. 62 employment-contract registration. ALWAYS read this skill before processing any Bulgaria payroll.
-version: 0.1
+version: 0.2
 jurisdiction: BG
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bulgaria Payroll
 
-## Bulgaria Payroll Skill v0.1
+## Bulgaria Payroll Skill v0.2
 
-**Tier 2 — research-verified. Figures below are sourced from the National Revenue Agency (НАП / NRA), the National Social Security Institute (НОИ / NSSI), the Bulgarian Ministry of Economy and Industry, PwC Worldwide Tax Summaries, the European Central Bank, and cross-checked against Big-4-adjacent payroll guides (Leinonen, Lano, Innovires, Eurofast). NOT yet signed off by a licensed Bulgarian accountant (счетоводител) or registered auditor. Treat every computation as an estimate pending professional review. Bulgaria adopts the euro on 1 January 2026 at the irrevocably fixed rate EUR 1 = BGN 1.95583 — this skill carries 2025 BGN figures and shows the EUR equivalents for the changeover.**
+**Tier 2 — research-verified. Figures below are sourced from the National Revenue Agency (НАП / NRA), the National Social Security Institute (НОИ / NSSI), the Bulgarian Ministry of Economy and Industry, a secondary practitioner summary, the European Central Bank, and cross-checked against Big-4-adjacent payroll guides (Leinonen, Lano, Innovires, Eurofast). NOT yet signed off by a licensed Bulgarian accountant (счетоводител) or registered auditor. Treat every computation as an estimate pending professional review. Bulgaria adopts the euro on 1 January 2026 at the irrevocably fixed rate EUR 1 = BGN 1.95583 — this skill carries 2025 BGN figures and shows the EUR equivalents for the changeover.**
 
 ## Section 1 -- Quick Reference
 
@@ -35,9 +35,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Health authority | National Health Insurance Fund (NHIF / Национална здравноосигурителна каса, НЗОК) |
 | Key legislation | Personal Income Taxes Act (ЗДДФЛ / ZDDFL); Social Insurance Code (Кодекс за социално осигуряване / KSO); Health Insurance Act (ЗЗО / ZZO); Labour Code (Кодекс на труда) Art. 62; annual State Social Insurance Budget Act (ЗБДОО) setting min/max insurable income; Tax-Insurance Procedure Code (ДОПК) |
 | Filing portal | NRA e-services (електронни услуги на НАП) |
-| Income tax | **Flat 10%** on taxable employment income -- no progressive bands, no general personal allowance for ordinary salary (mi.government.bg; PwC) |
+| Income tax | **Flat 10%** on taxable employment income -- no progressive bands, no general personal allowance for ordinary salary (mi.government.bg; secondary summary) |
 | Validated by | Pending -- requires sign-off by a licensed Bulgarian accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Read this whole section before computing anything. The shared payroll runbook lives in `payroll-workflow-base` — follow that runbook with this skill supplying the Bulgaria-specific content.**
 
@@ -45,9 +45,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **1. Income tax is a FLAT 10%.** There is no progressive band and no general personal allowance for ordinary salary. The 10% applies to **gross pay minus the employee's own mandatory social and health contributions** -- not to raw gross. (ZDDFL; mi.government.bg)
 >
-> **2. Contributions are capped.** Both employer and employee social/health contributions stop at the **maximum monthly insurable income** ceiling: BGN 4,130 from 1 Apr 2025, EUR 2,111.64 from 1 Jan 2026, and **EUR 2,300 from 1 August 2026**. Above the ceiling only the 10% income tax continues to apply. (mi.government.bg; PwC; State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026)
+> **2. Contributions are capped.** Both employer and employee social/health contributions stop at the **maximum monthly insurable income** ceiling: BGN 4,130 from 1 Apr 2025, EUR 2,111.64 from 1 Jan 2026, and **EUR 2,300 from 1 August 2026**. Above the ceiling only the 10% income tax continues to apply. (mi.government.bg; the secondary summary; State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026)
 >
-> **3. Work-accident contribution is the only variable.** The Accident at Work and Occupational Disease Fund (TZPB) rate is 0.4%--1.1%, set by the employer's economic-activity risk class, and is paid ENTIRELY by the employer. It is the sole reason the employer/total rate is a band. (PwC)
+> **3. Work-accident contribution is the only variable.** The Accident at Work and Occupational Disease Fund (TZPB) rate is 0.4%--1.1%, set by the employer's economic-activity risk class, and is paid ENTIRELY by the employer. It is the sole reason the employer/total rate is a band. (secondary summary)
 
 ## Section 2 -- Income Tax Withholding (данък върху доходите, ЗДДФЛ)
 
@@ -75,11 +75,11 @@ There are no status categories, no marital-status rate tables, and no cumulative
 
 ## Section 3 -- Social Security and Health -- Contribution Tables (2025)
 
-All social and health contributions are computed on **insurable income**, clamped between the monthly minimum and the monthly maximum (cap). The tables below are for an employee **born on/after 1 January 1960** (the common case). Rates per Leinonen, the Ministry of Economy summary, and PwC; the per-fund employer/employee split is cross-verified between Leinonen and mi.government.bg.
+All social and health contributions are computed on **insurable income**, clamped between the monthly minimum and the monthly maximum (cap). The tables below are for an employee **born on/after 1 January 1960** (the common case). Rates per Leinonen, the Ministry of Economy summary, and the secondary summary; the per-fund employer/employee split is cross-verified between Leinonen and mi.government.bg.
 
 ### 3.1 Employee born on/after 1 Jan 1960 (the default case)
 
-**Contribution table -- born on/after 1960**  _(PwC)_
+**Contribution table -- born on/after 1960**  _(secondary summary)_
 
 | Fund (Bulgarian) | Employee | Employer | Total | Source |
 | --- | --- | --- | --- | --- |
@@ -87,9 +87,9 @@ All social and health contributions are computed on **insurable income**, clampe
 | Supplementary mandatory Universal Pension Fund -- 2nd pillar (ДЗПО / УПФ) | 2.2% | 2.8% | 5.0% | mi.government.bg |
 | General Disease & Maternity (Общо заболяване и майчинство) | 1.4% | 2.1% | 3.5% | Leinonen |
 | Unemployment (Безработица) | 0.4% | 0.6% | 1.0% | Leinonen |
-| Accident at Work & Occupational Disease -- TZPB (ТЗПБ) | 0% | 0.4%--1.1% | 0.4%--1.1% | PwC |
-| Health Insurance -- NHIF (НЗОК) | 3.2% | 4.8% | 8.0% | PwC |
-| **TOTAL** | **13.78%** | **18.92%--19.62%** | **32.70%--33.40%** | PwC |
+| Accident at Work & Occupational Disease -- TZPB (ТЗПБ) | 0% | 0.4%--1.1% | 0.4%--1.1% | secondary summary |
+| Health Insurance -- NHIF (НЗОК) | 3.2% | 4.8% | 8.0% | secondary summary |
+| **TOTAL** | **13.78%** | **18.92%--19.62%** | **32.70%--33.40%** | secondary summary |
 
 **Arithmetic check (component rows sum to the TOTAL row):**
 - Employee column: 6.58 + 2.2 + 1.4 + 0.4 + 0 + 3.2 = **13.78%** ✓
@@ -97,7 +97,7 @@ All social and health contributions are computed on **insurable income**, clampe
 - Employer column (high TZPB 1.1%): 8.22 + 2.8 + 2.1 + 0.6 + 1.1 + 4.8 = **19.62%** ✓
 - Total (low): 13.78 + 18.92 = **32.70%** ✓; Total (high): 13.78 + 19.62 = **33.40%** ✓
 
-The employer/employee split is roughly 60/40 by design. (PwC)
+The employer/employee split is roughly 60/40 by design. (secondary summary)
 
 ### 3.2 Employee born before 1 Jan 1960
 
@@ -108,19 +108,19 @@ The employer/employee split is roughly 60/40 by design. (PwC)
 | Pension Fund -- state (NO separate 2nd-pillar Universal Pension Fund) | 8.78% (approx) | 11.02% (approx) | 19.8% | Innovires (cites the 19.8% split as 11.88% / 7.92%) |
 | General Disease & Maternity | 1.4% | 2.1% | 3.5% | Leinonen |
 | Unemployment | 0.4% | 0.6% | 1.0% | Leinonen |
-| Accident at Work & Occupational Disease (TZPB) | 0% | 0.4%--1.1% | 0.4%--1.1% | PwC |
-| Health Insurance (NHIF) | 3.2% | 4.8% | 8.0% | PwC |
+| Accident at Work & Occupational Disease (TZPB) | 0% | 0.4%--1.1% | 0.4%--1.1% | secondary summary |
+| Health Insurance (NHIF) | 3.2% | 4.8% | 8.0% | secondary summary |
 
 For persons born before 1960 the pension is **19.8%** to the state Pension Fund and there is **NO** separate 5% Universal Pension Fund (Pillar II) contribution -- it is rolled into the state fund. **[RESEARCH GAP -- reviewer to confirm the exact pre-1960 employer/employee split against the KSO; Innovires cites 11.88% / 7.92% within the 19.8%, but this is a secondary source and is not used in the default-case worked examples.]**
 
 ### 3.3 Insurable-income floor and ceiling (2025)
 
-**Insurable-income floor and ceiling table**  _(mi.government.bg / PwC)_
+**Insurable-income floor and ceiling table**  _(mi.government.bg)_
 
 | Threshold | 1 Jan -- 31 Mar 2025 | 1 Apr -- 31 Dec 2025 | From 1 Jan 2026 (EUR) | Source |
 | --- | --- | --- | --- | --- |
 | Minimum monthly insurable income (employees) | BGN 933 | BGN 1,077 | A **range by economic activity and occupation group** (Annexes 1 and 1A): EUR 550.66–901.41 to 31 Jul 2026; **EUR 620.20–1,532.41 from 1 Aug 2026** | mi.government.bg / State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
-| Maximum monthly insurable income (cap, all funds) | BGN 3,750 | BGN 4,130 | EUR 2,111.64 to 31 Jul 2026; **EUR 2,300 from 1 Aug 2026** | mi.government.bg / PwC / State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
+| Maximum monthly insurable income (cap, all funds) | BGN 3,750 | BGN 4,130 | EUR 2,111.64 to 31 Jul 2026; **EUR 2,300 from 1 Aug 2026** | mi.government.bg / the secondary summary / State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
 
 Occupation-specific minimum insurance thresholds (минимални осигурителни доходи) may set a **higher** floor per profession than the general minimum wage. (mi.government.bg)
 
@@ -130,7 +130,7 @@ Occupation-specific minimum insurance thresholds (минимални осигу�
 
 | Ambiguity | Conservative default | Rationale |
 | --- | --- | --- |
-| Work-accident (TZPB) employer rate unknown | Use **1.1%** (top of band) -> employer 19.62%, combined 33.40% | Avoids under-withholding; the actual 0.4%--1.1% rate is set by economic-activity code (PwC) |
+| Work-accident (TZPB) employer rate unknown | Use **1.1%** (top of band) -> employer 19.62%, combined 33.40% | Avoids under-withholding; the actual 0.4%--1.1% rate is set by economic-activity code (secondary summary) |
 | Employee birth-year / pension scheme unknown | Assume **born on/after 1 Jan 1960** (14.8% pension + 5% Universal Pension Fund) | Pre-1960 employees are now past statutory retirement age; the 19.8% single-fund treatment is increasingly rare |
 | Minimum insurable base unclear | Use the **occupation-specific** minimum insurance threshold from the Budget Act annex for the employer's activity and the employee's occupation class. Only if that cannot be established, fall back to the period floor: BGN 1,077 (1 Apr–31 Dec 2025), EUR 550.66 (1 Jan–31 Jul 2026), EUR 620.20 (from 1 Aug 2026) | Contributions must be on at least the profession's minimum осигурителен доход, not just the general floor — for 2026 the annex range runs as high as EUR 1,532.41, so the floor is rarely the right answer (mi.government.bg; SSB Act 2026, Annexes 1 and 1A) |
 | Income above the ceiling | Cap insurable income at the ceiling for the month — **EUR 2,111.64** to 31 Jul 2026, **EUR 2,300** from 1 Aug 2026; income above bears 10% PIT but NO further contributions | The ceiling is a hard cap on all funds (mi.government.bg) |
@@ -298,11 +298,11 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 1 -- Income tax is a flat 10% on net-of-contributions base
 
-- **PIT formula** — PIT_base = gross_remuneration - mandatory_employee_contributions PIT      = PIT_base x 10% No brackets, no monthly personal allowance.  _(mi.government.bg; PwC)_
+- **PIT formula** — PIT_base = gross_remuneration - mandatory_employee_contributions PIT      = PIT_base x 10% No brackets, no monthly personal allowance.  _(mi.government.bg; secondary summary)_
 
 ### Rule 2 -- Contribution formula (employee born after 1959)
 
-- **Contribution formula** — insurable_income     = clamp(gross_remuneration, minimum_insurable, maximum_insurable) employee_contribution = insurable_income x 13.78% employer_contribution = insurable_income x (18.92% .. 19.62%)   # TZPB 0.4%–1.1% total_contribution    = insurable_income x (32.70% .. 33.40%) Where (1 Apr -- 31 Dec 2025): minimum_insurable = BGN 1,077 (or the higher occupation floor); maximum_insurable = BGN 4,130 = EUR 2,111.64. Where (1 Jan -- 31 Jul 2026): minimum_insurable = the Annex 1/1A figure for the activity and occupation, floor EUR 550.66; maximum_insurable = EUR 2,111.64. Where (1 Aug -- 31 Dec 2026): floor EUR 620.20; maximum_insurable = EUR 2,300.  _(mi.government.bg / PwC)_
+- **Contribution formula** — insurable_income     = clamp(gross_remuneration, minimum_insurable, maximum_insurable) employee_contribution = insurable_income x 13.78% employer_contribution = insurable_income x (18.92% .. 19.62%)   # TZPB 0.4%–1.1% total_contribution    = insurable_income x (32.70% .. 33.40%) Where (1 Apr -- 31 Dec 2025): minimum_insurable = BGN 1,077 (or the higher occupation floor); maximum_insurable = BGN 4,130 = EUR 2,111.64. Where (1 Jan -- 31 Jul 2026): minimum_insurable = the Annex 1/1A figure for the activity and occupation, floor EUR 550.66; maximum_insurable = EUR 2,111.64. Where (1 Aug -- 31 Dec 2026): floor EUR 620.20; maximum_insurable = EUR 2,300.  _(mi.government.bg)_
 
 ### Rule 3 -- Contributions apply only between the floor and the ceiling
 
@@ -310,7 +310,7 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 4 -- Health insurance is 8% of the same base
 
-- **Health insurance total rate** — 8.0% total, split 4.8% employer / 3.2% employee, on the same insurable-income base  _(PwC)_
+- **Health insurance total rate** — 8.0% total, split 4.8% employer / 3.2% employee, on the same insurable-income base  _(secondary summary)_
 
 ### Rule 5 -- Birth year determines the pension treatment
 
@@ -318,7 +318,7 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 6 -- Work-accident contribution is employer-only
 
-- **TZPB employer-only rule** — The TZPB contribution (0.4%--1.1%, set by the employer's economic-activity risk class) is paid ENTIRELY by the employer and is never withheld from the employee. It is the only reason the employer/total rate is a band.  _(PwC)_
+- **TZPB employer-only rule** — The TZPB contribution (0.4%--1.1%, set by the employer's economic-activity risk class) is paid ENTIRELY by the employer and is never withheld from the employee. It is the only reason the employer/total rate is a band.  _(secondary summary)_
 
 ### Rule 7 -- Monthly remittance and deadline
 
@@ -474,7 +474,7 @@ If the client provides only a bank statement and no other information:
 
 ### Calculation summary (2025, BGN; born after 1959; 0.4% accident class unless noted)
 
-**Calculation summary (2025, BGN; born after 1959; 0.4% accident class unless noted)**  _(Leinonen / mi.government.bg / PwC; BGN 4,130 cap (mi.government.bg); ECB fixed 1.95583 rate)_
+**Calculation summary (2025, BGN; born after 1959; 0.4% accident class unless noted)**  _(Leinonen / mi.government.bg / the secondary summary; BGN 4,130 cap (mi.government.bg); ECB fixed 1.95583 rate)_
 
 | Gross monthly | Insurable income | Employee (13.78%) | Employer (18.92%) | PIT (10% of base) | Net pay |
 | --- | --- | --- | --- | --- | --- |
@@ -483,11 +483,11 @@ If the client provides only a bank statement and no other information:
 | BGN 6,000 | BGN 4,130 (capped) | BGN 569.11 | BGN 781.40 | BGN 543.09 | BGN 4,887.80 |
 | EUR 1,500 (2026) | EUR 1,500 | EUR 206.70 | EUR 283.80 | EUR 129.33 | EUR 1,163.97 |
 
-*All sourced to the rates in Section 3 (Leinonen / mi.government.bg / PwC) and the BGN 4,130 cap (mi.government.bg). EUR figures use the fixed 1.95583 rate (ECB).*
+*All sourced to the rates in Section 3 (Leinonen / mi.government.bg) and the BGN 4,130 cap (mi.government.bg). EUR figures use the fixed 1.95583 rate (ECB).*
 
 ### Thresholds (with provenance)
 
-**Thresholds (with provenance)**  _(mi.government.bg / PwC / Leinonen / ECB)_
+**Thresholds (with provenance)**  _(mi.government.bg / the secondary summary / Leinonen / ECB)_
 
 | Item | Value | Source |
 | --- | --- | --- |
@@ -495,18 +495,18 @@ If the client provides only a bank statement and no other information:
 | Minimum monthly wage 2025 | BGN 1,077 (from 1 Jan 2025; was BGN 933 in 2024); hourly ≈ BGN 6.49 | mi.government.bg |
 | Minimum monthly wage 2026 (EUR) | EUR 620.20/month (EUR 3.74/hr) from 1 Jan 2026 | Council of Ministers Decree No. 243 of 13.11.2025 |
 | Minimum monthly insurable income (employees) | BGN 933 (Jan--Mar 2025) then BGN 1,077 (Apr--Dec 2025); 2026 is a range by activity and occupation: EUR 550.66--901.41 (Jan--Jul), **EUR 620.20--1,532.41 (Aug--Dec)** | mi.government.bg / SSB Act 2026, Annexes 1 and 1A |
-| Maximum monthly insurable income | BGN 3,750 (Jan--Mar 2025) then BGN 4,130 (Apr--Dec 2025) = EUR 2,111.64; **EUR 2,300 from 1 Aug 2026** | mi.government.bg / PwC / SSB Act 2026 |
-| Self-employed min monthly insurable base 2026 | EUR 550.66 (= BGN 1,077) to 31 Jul 2026; **EUR 620.20 from 1 Aug 2026** | PwC / SSB Act 2026, State Gazette No. 68 of 28 July 2026 |
+| Maximum monthly insurable income | BGN 3,750 (Jan--Mar 2025) then BGN 4,130 (Apr--Dec 2025) = EUR 2,111.64; **EUR 2,300 from 1 Aug 2026** | mi.government.bg / the secondary summary / SSB Act 2026 |
+| Self-employed min monthly insurable base 2026 | EUR 550.66 (= BGN 1,077) to 31 Jul 2026; **EUR 620.20 from 1 Aug 2026** | The secondary summary / SSB Act 2026, State Gazette No. 68 of 28 July 2026 |
 | Euro changeover | 1 Jan 2026 at fixed 1.95583 BGN/EUR | ECB |
 
 ### Penalties
 
-**Penalties**  _(Innovires / PwC)_
+**Penalties**  _(Innovires)_
 
 | Penalty | Detail | Source |
 | --- | --- | --- |
 | Failure to register an Art. 62 contract | Reported EUR 7,500--15,000 per case (secondary); Labour Code sets per-violation fines, higher for repeat breaches | Innovires **[RESEARCH GAP -- confirm against Labour Code]** |
-| Late payment of contributions / withheld PIT | Statutory interest = Bulgarian National Bank base rate + 10 percentage points per annum, plus possible administrative fines | PwC **[RESEARCH GAP -- confirm against DOPK]** |
+| Late payment of contributions / withheld PIT | Statutory interest = Bulgarian National Bank base rate + 10 percentage points per annum, plus possible administrative fines | secondary summary, **[RESEARCH GAP -- confirm against DOPK] |
 
 ### Authorities
 

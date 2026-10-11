@@ -1,10 +1,10 @@
 ---
 name: azerbaijan-payroll
 description: Use this skill whenever asked about Azerbaijan payroll processing for employed persons. Trigger on phrases like "Azerbaijan payroll", "Azerbaijani salary", "emek haqqi", "PIT withholding Azerbaijan", "income tax of physical persons", "SSPF", "DSMF", "social insurance Azerbaijan", "unemployment insurance contribution", "mandatory medical insurance Azerbaijan", "unified payroll declaration", "net salary Azerbaijan", "gross to net AZN", "salary calculation Azerbaijan", "minimum wage Azerbaijan", "oil/gas sector payroll", "non-oil private sector PIT holiday", or any question about computing employee pay, withholding tax, or social/health/unemployment contributions for Azerbaijan-based employees. This skill covers PIT withheld at source (PAYE-style), State Social Protection Fund (SSPF) contributions, the Unemployment Insurance Contribution (UIC), mandatory medical insurance, the 2025 non-oil private-sector PIT holiday and its 2026 replacement, and the unified monthly payroll declaration. ALWAYS read this skill before processing any Azerbaijan payroll. MUST be loaded alongside payroll-workflow-base.
-version: 0.1
+version: 0.2
 jurisdiction: AZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,13 +15,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Azerbaijan Payroll
 
-## Azerbaijan Payroll Skill v0.1
+## Azerbaijan Payroll Skill v0.2
 
-> **Tier 2 — research-verified.** Figures below are sourced from PwC Worldwide Tax Summaries, the State Tax Service of Azerbaijan (taxes.gov.az), Mercans, Caspian Legal Center, APA.az and EY. They have **not** yet been signed off by a licensed Azerbaijani accountant. Any line marked **[RESEARCH GAP — reviewer to confirm]** must be verified against the Tax Code before the output is relied upon.
+> **Tier 2 — research-verified.** Figures below are sourced from a secondary practitioner summary, the State Tax Service of Azerbaijan (taxes.gov.az), Mercans, Caspian Legal Center, APA.az and EY. They have **not** yet been signed off by a licensed Azerbaijani accountant. Any line marked **[RESEARCH GAP — reviewer to confirm]** must be verified against the Tax Code before the output is relied upon.
 
 > **TWO HARD BRANCHES BEFORE YOU COMPUTE ANYTHING.** Azerbaijani payroll depends on (1) the **tax year** and (2) the **employment sector**.
-> - **Tax year:** 2025 is the **final year** of the 2019–2025 seven-year PIT holiday for the non-oil/gas private sector (0% PIT up to AZN 8,000/month). The holiday **expired 31 Dec 2025**; from **1 Jan 2026** a new progressive PIT and revised social/health thresholds apply. Do **not** apply 2026 brackets to 2025 wages, or vice versa (PwC — Significant developments).
-> - **Sector:** "non-oil/gas, non-government **PRIVATE** sector" is the default and carries the holiday/subsidy rules. "**Oil/gas** sector" and "**government/state** sector" use the standard 14%/25% PIT and the 3%/22% SSPF split, which differ materially (PwC — Taxes on personal income; Other taxes).
+> - **Tax year:** 2025 is the **final year** of the 2019–2025 seven-year PIT holiday for the non-oil/gas private sector (0% PIT up to AZN 8,000/month). The holiday **expired 31 Dec 2025**; from **1 Jan 2026** a new progressive PIT and revised social/health thresholds apply. Do **not** apply 2026 brackets to 2025 wages, or vice versa (secondary summary, Significant developments).
+> - **Sector:** "non-oil/gas, non-government **PRIVATE** sector" is the default and carries the holiday/subsidy rules. "**Oil/gas** sector" and "**government/state** sector" use the standard 14%/25% PIT and the 3%/22% SSPF split, which differ materially (secondary summary, Taxes on personal income; Other taxes).
 
 ## Section 1 — Quick Reference
 
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | AZN (Azerbaijani manat) only |
 | Standard pay frequency | Monthly |
 | Tax year | Calendar year (1 January – 31 December) |
-| Tax withholding system | PIT (income tax of physical persons) withheld at source, PAYE-style — remitted on the **same day** wages are paid (Tax Code; PwC — Tax administration) |
+| Tax withholding system | PIT (income tax of physical persons) withheld at source, PAYE-style — remitted on the **same day** wages are paid (Tax Code; secondary summary, Tax administration) |
 | Tax authority | State Tax Service under the Ministry of Economy (taxes.gov.az) |
 | Social security authority | State Social Protection Fund (SSPF / DSMF), administered jointly via the unified payroll declaration |
 | Key legislation | Tax Code of the Republic of Azerbaijan (Income Tax of Physical Persons, Arts. 96–101); Law "On Social Insurance"; Law "On Unemployment Insurance"; Mandatory Medical Insurance legislation |
@@ -41,15 +41,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Monthly filing | Unified payroll declaration (PIT + SSPF + UIC + medical) — due **by the 20th** of the following month (taxes.gov.az tax calendar) |
 | Minimum monthly wage (2025) | AZN 400 (raised from AZN 345, Presidential Order, from 1 Jan 2025) (APA.az / AZERTAC) |
 | Validated by | Pending — requires sign-off by a licensed Azerbaijani accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Conservative defaults (apply when an input is missing)**
 
 | Ambiguity | Default | Rationale |
 | --- | --- | --- |
-| Tax year not stated | 2025 rules (holiday in force) | The requested year is 2025; the holiday applied for the full year (PwC — Significant developments) |
-| Sector not stated | Non-oil/gas **private** sector | Most employers fall here; carries the holiday/subsidy rules (PwC) |
-| 2025 non-oil private PIT, wage ≤ AZN 8,000 | 0% PIT | 7-year holiday in force through 31 Dec 2025 (PwC) |
+| Tax year not stated | 2025 rules (holiday in force) | The requested year is 2025; the holiday applied for the full year (secondary summary, Significant developments) |
+| Sector not stated | Non-oil/gas **private** sector | Most employers fall here; carries the holiday/subsidy rules (secondary summary) |
+| 2025 non-oil private PIT, wage ≤ AZN 8,000 | 0% PIT | 7-year holiday in force through 31 Dec 2025 (secondary summary) |
 | State subsidy on private SSPF (through 2025) | Treat as 100% subsidised | Confirmed schedule, Law "On Social Insurance" / APA.az |
 | State subsidy from 2026 | 80% (2026–2028) | Reduces per statutory schedule (APA.az) |
 | Whether subsidy reduces remittance or is reimbursed | **[RESEARCH GAP — reviewer to confirm]** | Mechanism not confirmed from a fetched circular |
@@ -82,11 +82,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 3 — Income Tax Withholding (PIT / Income Tax of Physical Persons)
 
-The employer withholds PIT at source and **remits it on the same day** the income is paid to the employee (Tax Code; PwC — Tax administration). PIT is computed **monthly on taxable employment income** (gross salary). There is no separate personal allowance under the holiday regime — the **0% band IS the relief** for the private sector in 2025.
+The employer withholds PIT at source and **remits it on the same day** the income is paid to the employee (Tax Code; secondary summary, Tax administration). PIT is computed **monthly on taxable employment income** (gross salary). There is no separate personal allowance under the holiday regime — the **0% band IS the relief** for the private sector in 2025.
 
 ### 3.1 Non-oil/gas, non-government PRIVATE sector — **2025** (holiday, in force 2019 → 31 Dec 2025)
 
-**3.1 Non-oil/gas PRIVATE sector 2025 PIT bands**  _(PwC — Taxes on personal income & Significant developments. This holiday expired 31 Dec 2025; it is the relevant rule for the 2025 tax year.)_
+**3.1 Non-oil/gas PRIVATE sector 2025 PIT bands**  _(the secondary summary — Taxes on personal income & Significant developments. This holiday expired 31 Dec 2025; it is the relevant rule for the 2025 tax year.)_
 
 | Monthly taxable income (AZN) | Rate | Cumulative monthly PIT |
 | --- | --- | --- |
@@ -97,7 +97,7 @@ The employer withholds PIT at source and **remits it on the same day** the incom
 
 ### 3.2 Oil/gas sector and government/state sector — standard rates (all years)
 
-**3.2 Oil/gas and government sector PIT bands**  _(PwC — Taxes on personal income.)_
+**3.2 Oil/gas and government sector PIT bands**  _(secondary summary, Taxes on personal income.)_
 
 | Monthly taxable income (AZN) | Rate | Cumulative monthly PIT |
 | --- | --- | --- |
@@ -108,7 +108,7 @@ The employer withholds PIT at source and **remits it on the same day** the incom
 
 ### 3.3 Non-oil/gas PRIVATE sector — NEW progressive structure **from 1 Jan 2026** (replaces the expired holiday)
 
-**3.3 New progressive PIT structure from 2026**  _(PwC — Significant developments; Mercans statutory alert; Caspian Legal Center (2026 amendments).)_
+**3.3 New progressive PIT structure from 2026**  _(secondary summary, Significant developments; Mercans statutory alert; Caspian Legal Center (2026 amendments).)_
 
 | Monthly taxable income (AZN) | Rate | Cumulative monthly PIT |
 | --- | --- | --- |
@@ -122,24 +122,24 @@ The employer withholds PIT at source and **remits it on the same day** the incom
 
 ## Section 4 — Social Insurance (SSPF / DSMF) — Employee and Employer
 
-State social insurance is computed **monthly on gross salary**, split at the **AZN 200** threshold for the non-oil private sector. There is **no upper ceiling** (PwC — Other taxes).
+State social insurance is computed **monthly on gross salary**, split at the **AZN 200** threshold for the non-oil private sector. There is **no upper ceiling** (secondary summary, Other taxes).
 
 ### 4.1 Non-oil/gas PRIVATE sector — SSPF (2019–2025; wages ≤ AZN 8,000 continue on this split in 2026)
 
-**4.1 Non-oil/gas private sector SSPF split**  _(PwC — Other taxes.)_
+**4.1 Non-oil/gas private sector SSPF split**  _(secondary summary, Other taxes.)_
 
 | Portion of gross | Employee | Employer |
 | --- | --- | --- |
 | First AZN 200 | 3% | 2% |
 | Above AZN 200 | AZN 6 + 10% on the excess | AZN 44 + 15% on the excess |
 
-the employee base AZN 6 = 3% × 200 (consistent). The employer base **AZN 44 does NOT equal 2% × 200 (= AZN 4)** — AZN 44 is the legacy fixed amount (22% × 200) carried forward in the statutory formula, while the headline rate on the first band is quoted as 2%. PwC states both "2% on first AZN 200" and "AZN 44 base above AZN 200" together. **[RESEARCH GAP — reviewer to confirm the exact statutory first-band employer figure: AZN 4 (2% × 200) or AZN 44 (legacy).]** This skill applies PwC's **AZN 44 + 15%** wording for the employer above-threshold computation.
+the employee base AZN 6 = 3% × 200 (consistent). The employer base **AZN 44 does NOT equal 2% × 200 (= AZN 4)** — AZN 44 is the legacy fixed amount (22% × 200) carried forward in the statutory formula, while the headline rate on the first band is quoted as 2%. The secondary summary states both "2% on first AZN 200" and "AZN 44 base above AZN 200" together. **[RESEARCH GAP — reviewer to confirm the exact statutory first-band employer figure: AZN 4 (2% × 200) or AZN 44 (legacy).]** This skill applies the secondary summary's **AZN 44 + 15%** wording for the employer above-threshold computation.
 
-- **Worked check (AZN 1,000 gross)** — Employee SSPF = 6 + 10% × (1,000 − 200) = 6 + 80 = **AZN 86** Employer SSPF = 44 + 15% × (1,000 − 200) = 44 + 120 = **AZN 164**  _(PwC — Other taxes.)_
+- **Worked check (AZN 1,000 gross)** — Employee SSPF = 6 + 10% × (1,000 − 200) = 6 + 80 = **AZN 86** Employer SSPF = 44 + 15% × (1,000 − 200) = 44 + 120 = **AZN 164**  _(secondary summary, Other taxes.)_
 
 ### 4.2 Oil/gas and government sectors — SSPF (standard, all years)
 
-**4.2 Oil/gas and government sectors SSPF**  _(PwC — Other taxes.)_
+**4.2 Oil/gas and government sectors SSPF**  _(secondary summary, Other taxes.)_
 
 | Base | Employee | Employer |
 | --- | --- | --- |
@@ -147,7 +147,7 @@ the employee base AZN 6 = 3% × 200 (consistent). The employer base **AZN 44 doe
 
 ### 4.3 High earners FROM 1 Jan 2026 (non-oil private) — wages above AZN 8,000
 
-**4.3 High earners SSPF from 2026**  _(Mercans statutory alert; PwC — Significant developments. The combined rate on the > AZN 8,000 portion falls from 25% to 21% from 2026.)_
+**4.3 High earners SSPF from 2026**  _(Mercans statutory alert; the secondary summary — Significant developments. The combined rate on the > AZN 8,000 portion falls from 25% to 21% from 2026.)_
 
 | Portion of gross | Employee | Employer | Combined |
 | --- | --- | --- | --- |
@@ -171,7 +171,7 @@ the employee base AZN 6 = 3% × 200 (consistent). The employer base **AZN 44 doe
 
 ### 5.1 Unemployment Insurance Contribution (UIC) — all sectors (since 1 Jan 2018)
 
-**5.1 UIC all sectors**  _(PwC — Other taxes; Mercans. Unchanged for 2026.)_
+**5.1 UIC all sectors**  _(the secondary summary — Other taxes; Mercans. Unchanged for 2026.)_
 
 | Base | Employee | Employer | Total |
 | --- | --- | --- | --- |
@@ -179,7 +179,7 @@ the employee base AZN 6 = 3% × 200 (consistent). The employer base **AZN 44 doe
 
 ### 5.2 Mandatory Medical (Health) Insurance — **2021–2025** regime
 
-**5.2 Mandatory Medical Insurance 2021-2025**  _(PwC — Other taxes (effective 1 Jan 2021).)_
+**5.2 Mandatory Medical Insurance 2021-2025**  _(secondary summary, Other taxes (effective 1 Jan 2021).)_
 
 | Portion of gross | Employee | Employer |
 | --- | --- | --- |
@@ -190,7 +190,7 @@ base AZN 160 = 2% × 8,000 (consistent for both sides).
 
 ### 5.3 Mandatory Medical (Health) Insurance — **from 1 Jan 2026** (threshold lowered to AZN 2,500)
 
-**5.3 Mandatory Medical Insurance from 2026**  _(Mercans statutory alert; PwC — Significant developments; Caspian Legal Center. The total rate on the AZN 2,500–8,000 band drops from 4% to 1%. Exact wording (whether the 2% applies to the first AZN 2,500 only) is corroborated by Mercans and Caspian but the official confirmation circular was not fetched — [RESEARCH GAP — reviewer to confirm].)_
+**5.3 Mandatory Medical Insurance from 2026**  _(Mercans statutory alert; the secondary summary — Significant developments; Caspian Legal Center. The total rate on the AZN 2,500–8,000 band drops from 4% to 1%. Exact wording (whether the 2% applies to the first AZN 2,500 only) is corroborated by Mercans and Caspian but the official confirmation circular was not fetched — [RESEARCH GAP — reviewer to confirm].)_
 
 | Portion of gross | Employee | Employer |
 | --- | --- | --- |
@@ -340,14 +340,14 @@ Bank-statement lines and ledger postings, with a deterministic classification. A
 
 ## Section 9 — Tier 1 Rules (deterministic — apply without asking)
 
-- **PIT withholding and remittance timing** — Withhold PIT at source and remit it on the same day wages are paid.  _(Tax Code; PwC — Tax administration)_
-- **2025 non-oil/gas private sector PIT** — 0% PIT up to AZN 8,000/month; 14% on the excess — the final year of the 2019–2025 holiday  _(PwC — Significant developments)_
-- **Oil/gas and government sectors PIT** — 14% up to AZN 2,500/month, then AZN 350 + 25% on the excess  _(PwC — Taxes on personal income)_
-- **From 1 Jan 2026 (private) progressive PIT** — progressive 3% up to 2,500; AZN 75 + 10% on 2,501–8,000; AZN 625 + 14% above 8,000 (lowest band rises to 5% in 2027, 7% from 2028)  _(PwC; Mercans; Caspian)_
-- **SSPF, non-oil private** — employee 3% on first AZN 200 + AZN 6 + 10% above; employer 2% on first AZN 200 + AZN 44 + 15% above; no ceiling  _(PwC — Other taxes)_
-- **SSPF, oil/gas and government** — employee 3%, employer 22% flat  _(PwC — Other taxes)_
-- **UIC** — 0.5% employee + 0.5% employer, all sectors  _(PwC; Mercans)_
-- **Medical (2021–2025)** — 2% each on first AZN 8,000; 0.5% each (AZN 160 + 0.5%) above  _(PwC — Other taxes)_
+- **PIT withholding and remittance timing** — Withhold PIT at source and remit it on the same day wages are paid.  _(Tax Code; secondary summary, Tax administration)_
+- **2025 non-oil/gas private sector PIT** — 0% PIT up to AZN 8,000/month; 14% on the excess — the final year of the 2019–2025 holiday  _(secondary summary, Significant developments)_
+- **Oil/gas and government sectors PIT** — 14% up to AZN 2,500/month, then AZN 350 + 25% on the excess  _(secondary summary, Taxes on personal income)_
+- **From 1 Jan 2026 (private) progressive PIT** — progressive 3% up to 2,500; AZN 75 + 10% on 2,501–8,000; AZN 625 + 14% above 8,000 (lowest band rises to 5% in 2027, 7% from 2028)  _(secondary summary; Mercans; Caspian)_
+- **SSPF, non-oil private** — employee 3% on first AZN 200 + AZN 6 + 10% above; employer 2% on first AZN 200 + AZN 44 + 15% above; no ceiling  _(secondary summary, Other taxes)_
+- **SSPF, oil/gas and government** — employee 3%, employer 22% flat  _(secondary summary, Other taxes)_
+- **UIC** — 0.5% employee + 0.5% employer, all sectors  _(secondary summary; Mercans)_
+- **Medical (2021–2025)** — 2% each on first AZN 8,000; 0.5% each (AZN 160 + 0.5%) above  _(secondary summary, Other taxes)_
 - **Medical (from 2026)** — threshold drops to AZN 2,500; 2% each up to 2,500, 0.5% each above  _(Mercans; Caspian)_
 - **High earners from 2026 (private, > AZN 8,000)** — combined SSPF on the excess falls to 21% (employee 10%, employer 11%)  _(Mercans)_
 - **State subsidy schedule** — State subsidy covers 100% of private SSPF through 31 Dec 2025; 80% (2026–2028), 60% (2029–2030), 40% (2031–2032); excludes oil/gas  _(Law "On Social Insurance"; APA.az)_
@@ -468,7 +468,7 @@ Fallback: "Any bonuses or benefits in kind this month?"
 | Form | Purpose | Deadline |
 | --- | --- | --- |
 | Unified monthly payroll declaration (PIT + SSPF + UIC + medical) | Report gross wages, withheld PIT, SSPF, UIC and medical contributions per employee; filed electronically via e-taxes.gov.az | By the **20th** of the month following the reporting month (taxes.gov.az tax calendar) |
-| PIT remittance to the State Tax Service | Withheld PIT must be remitted | **Same day** income is paid (Tax Code; PwC — Tax administration) |
+| PIT remittance to the State Tax Service | Withheld PIT must be remitted | **Same day** income is paid (Tax Code; secondary summary, Tax administration) |
 
 ### Annual
 
@@ -476,7 +476,7 @@ Fallback: "Any bonuses or benefits in kind this month?"
 
 | Form | Purpose | Deadline |
 | --- | --- | --- |
-| Annual personal income tax return (individuals) | For residents with income not taxed at source or foreign-source income, and non-residents with Azerbaijani-source income not withheld | **31 March** of the following year (3-month extension available if tax already paid) (PwC — Tax administration) |
+| Annual personal income tax return (individuals) | For residents with income not taxed at source or foreign-source income, and non-residents with Azerbaijani-source income not withheld | **31 March** of the following year (3-month extension available if tax already paid) (secondary summary, Tax administration) |
 
 ### 15.1 Context figures (for cross-reference only — not payroll computations)
 
@@ -484,8 +484,8 @@ Fallback: "Any bonuses or benefits in kind this month?"
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Corporate profit tax | Flat 20% | PwC — Taxes on corporate income |
-| Dividend withholding | 5% at source (from 1 Jan 2024) | PwC — Withholding taxes |
+| Corporate profit tax | Flat 20% | secondary summary, Taxes on corporate income |
+| Dividend withholding | 5% at source (from 1 Jan 2024) | secondary summary, Withholding taxes |
 | Minimum monthly wage (2025) | AZN 400 | APA.az / AZERTAC |
 
 ### 15.2 Penalties
@@ -494,12 +494,12 @@ Fallback: "Any bonuses or benefits in kind this month?"
 
 | Type | Amount | Source |
 | --- | --- | --- |
-| Late tax payment | 0.1% per day on the unpaid tax | PwC / Grant Thornton AZ guides; Tax Code — **[RESEARCH GAP — verify article reference]** |
+| Late tax payment | 0.1% per day on the unpaid tax | secondary summary, / Grant Thornton AZ guides; Tax Code — **[RESEARCH GAP — verify article reference]** |
 | Failure to submit a return / declaration | AZN 40 financial sanction per return | Azerbaijan Tax Code; Caspian — **[RESEARCH GAP — verify article reference]** |
 
 ### 15.3 Sources
 
-1. PwC Worldwide Tax Summaries — Azerbaijan: Taxes on personal income; Other taxes; Significant developments; Tax administration; Corporate / Withholding taxes — https://taxsummaries.pwc.com/azerbaijan
+1. Secondary practitioner summary (link removed) — Azerbaijan: Taxes on personal income; Other taxes; Significant developments; Tax administration; Corporate / Withholding taxes
 2. State Tax Service under the Ministry of Economy — https://www.taxes.gov.az/en (tax calendar: /en/page/vergi-teqvimi)
 3. Mercans — "Azerbaijan – Changes in Tax rate and Social Security Rates – 1st January 2026"
 4. Caspian Legal Center — "Payroll Taxes in Azerbaijan (2026)" — https://www.caspianlegalcenter.az

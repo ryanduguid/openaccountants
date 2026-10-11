@@ -1,10 +1,10 @@
 ---
 name: montenegro-social-contributions
 description: Use this skill whenever asked about Montenegro social security contributions and payroll deductions for employees, self-employed individuals (entrepreneurs), or employers. Trigger on phrases like "Montenegro social contributions", "PIO contribution", "pension and disability insurance Montenegro", "how much salary tax in Montenegro", "Montenegrin payroll", "Europe Now reform", "Evropa sad", "IOPPD return", "net to gross Montenegro", "employer cost Montenegro", "Montenegro minimum wage", "prirez surtax", or any question about Montenegrin salary taxes and contributions. Also trigger when classifying bank statement transactions that relate to Poreska uprava / Uprava prihoda i carina debits, salary payments, or social contribution remittances from Montenegrin banks (CKB, NLB, Hipotekarna, Lovćen, Erste, Prva banka). Also trigger when computing personal income tax (porez na dohodak) on salary under the post-October-2024 "Europe Now 2.0" schedule, or when reconciling the IOPPD monthly return. This skill covers the post-reform employee PIO (10%), unemployment (0.5% + 0.5%), abolished health contribution (0%), Labour Fund (0.2%), the 0/9/15% salary PIT bands, the EUR 700 exemption, the municipal surtax, minimum-wage floors, the IOPPD filing cycle, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Montenegrin social-contribution or salary-tax work.
-version: 0.1
+version: 0.2
 jurisdiction: ME
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Montenegro Social Security Contributions & Salary Tax
 
-## Montenegro Social Security Contributions & Salary Tax Skill v0.1
+## Montenegro Social Security Contributions & Salary Tax Skill v0.2
 
-> **Tier 2 — research-verified, NOT accountant-verified.** Figures are drawn from PwC Worldwide Tax Summaries (last reviewed 27 March 2026) and corroborating law-firm commentary (BDK Advokati, CEE Legal Matters), **not** directly from the Montenegrin Official Gazette or a downloadable Poreska uprava rate schedule. A warranted Montenegrin accountant must confirm every figure against the current Law on Mandatory Social Insurance Contributions and the latest minimum-wage decree before this skill is used for filing. See Section 11 for known research gaps.
+> **Tier 2 — research-verified, NOT accountant-verified.** Figures are drawn from a secondary practitioner summary (last reviewed 27 March 2026) and corroborating law-firm commentary (BDK Advokati, CEE Legal Matters), **not** directly from the Montenegrin Official Gazette or a downloadable Poreska uprava rate schedule. A warranted Montenegrin accountant must confirm every figure against the current Law on Mandatory Social Insurance Contributions and the latest minimum-wage decree before this skill is used for filing. See Section 11 for known research gaps.
 
 ## Section 1 — Quick reference
 
@@ -26,22 +26,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Montenegro (Crna Gora) |
-| Primary legislation | Law on Mandatory Social Insurance Contributions (*Zakon o doprinosima za obavezno socijalno osiguranje*), as amended by "Europe Now" (2022) and "Europe Now 2.0" (effective ~1 Oct 2024) [PwC; BDK Advokati] |
-| Supporting legislation | Personal Income Tax Law (*Zakon o porezu na dohodak fizičkih lica*); Corporate Profit Tax Law; VAT Law [PwC] |
+| Primary legislation | Law on Mandatory Social Insurance Contributions (*Zakon o doprinosima za obavezno socijalno osiguranje*), as amended by "Europe Now" (2022) and "Europe Now 2.0" (effective ~1 Oct 2024) [secondary summary; BDK Advokati] |
+| Supporting legislation | Personal Income Tax Law (*Zakon o porezu na dohodak fizičkih lica*); Corporate Profit Tax Law; VAT Law [secondary summary] |
 | Tax authority | Poreska uprava Crne Gore / Uprava prihoda i carina Crne Gore (Tax Administration / Revenue and Customs Administration), Ministry of Finance [gov.me/en/taxadministration] |
 | E-filing portal | ePrijava / Taxis — https://eprijava.tax.gov.me [gov.me] |
-| Currency | EUR (Montenegro uses the euro unilaterally) [PwC] |
-| Employee PIO (pension/disability) | 10% of gross salary [PwC] |
-| Employee unemployment | 0.5% of gross salary [PwC] |
+| Currency | EUR (Montenegro uses the euro unilaterally) [secondary summary] |
+| Employee PIO (pension/disability) | 10% of gross salary [secondary summary] |
+| Employee unemployment | 0.5% of gross salary [secondary summary] |
 | Employee health | 0% — abolished [CEE Legal Matters; Europe Now reforms] |
 | **Combined employee contribution** | **10.5% of gross salary** (10% PIO + 0.5% unemployment) [TaxRavens] |
-| Employer PIO | 0% — eliminated by Europe Now 2.0 (previously 5.5%) [PwC; BDK Advokati] |
-| Employer unemployment | 0.5% of gross salary [PwC] |
+| Employer PIO | 0% — eliminated by Europe Now 2.0 (previously 5.5%) [secondary summary; BDK Advokati] |
+| Employer unemployment | 0.5% of gross salary [secondary summary] |
 | Employer Labour Fund (Fond rada) | 0.2% of gross salary [TaxRavens — verify, see §11] |
 | **Combined employer contribution** | **~0.7% of gross salary** (0.5% unemployment + 0.2% Labour Fund) [TaxRavens] |
-| Salary PIT | 0% to EUR 700; 9% on EUR 700.01–1,000; 15% above EUR 1,000 (monthly gross) [PwC] |
-| Municipal surtax (prirez) | 13% of the PIT amount in most municipalities; 15% in Podgorica and Cetinje [PwC] |
-| PIO annual ceiling | EUR 68,765/year (PwC, stated "for 2024") — **lowest-confidence figure, see §11** [PwC] |
+| Salary PIT | 0% to EUR 700; 9% on EUR 700.01–1,000; 15% above EUR 1,000 (monthly gross) [secondary summary] |
+| Municipal surtax (prirez) | 13% of the PIT amount in most municipalities; 15% in Podgorica and Cetinje [secondary summary] |
+| PIO annual ceiling | EUR 68,765/year (secondary summary, stated "for 2024") — **lowest-confidence figure, see §11** [secondary summary] |
 | Net minimum wage (standard) | EUR 670/month (roles up to secondary education) [countryeconomy.com] |
 | Net minimum wage (degree roles) | EUR 800/month (university-degree roles; dual structure from Sept 2024) [countryeconomy.com] |
 | Monthly payroll return | IOPPD — filed electronically to Poreska uprava by the 15th of the following month, paid simultaneously [Mellow] |
@@ -56,12 +56,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 2.1 Social contribution rates (post-"Europe Now 2.0", effective ~1 Oct 2024)
 
-**Social contribution rates table**  _(PwC / CEE Legal Matters / TaxRavens)_
+**Social contribution rates table**  _(secondary summary, / CEE Legal Matters / TaxRavens)_
 
 | Contribution | Employee | Employer | Total | Source |
 | --- | --- | --- | --- | --- |
-| Pension & disability (PIO) | 10.0% | 0.0% | 10.0% | PwC |
-| Unemployment insurance | 0.5% | 0.5% | 1.0% | PwC |
+| Pension & disability (PIO) | 10.0% | 0.0% | 10.0% | secondary summary |
+| Unemployment insurance | 0.5% | 0.5% | 1.0% | secondary summary |
 | Health insurance | 0.0% | 0.0% | 0.0% (abolished) | CEE Legal Matters |
 | Labour Fund (Fond rada) | 0.0% | 0.2% | 0.2% | TaxRavens — verify, §11 |
 | **Total contributions** | **10.5%** | **0.7%** | **11.2%** | TaxRavens |
@@ -74,13 +74,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 2.2 Personal income tax on salary (monthly gross) — 0 / 9 / 15
 
-**PIT bands table**  _(PwC)_
+**PIT bands table**  _(secondary summary)_
 
 | Band (monthly gross) | Rate | Source |
 | --- | --- | --- |
-| EUR 0 – 700.00 | 0% (fully exempt) | PwC |
-| EUR 700.01 – 1,000.00 | 9% on the portion in this band | PwC |
-| Above EUR 1,000.00 | 15% on the portion above EUR 1,000 | PwC |
+| EUR 0 – 700.00 | 0% (fully exempt) | secondary summary |
+| EUR 700.01 – 1,000.00 | 9% on the portion in this band | secondary summary |
+| Above EUR 1,000.00 | 15% on the portion above EUR 1,000 | secondary summary |
 
 **Marginal-tax build-up table**
 
@@ -96,14 +96,14 @@ So the maximum PIT in the 9% band is **9% × 300 = EUR 27.00**, and PIT on any g
 
 ### 2.3 Municipal surtax (prirez)
 
-- **Surtax basis** — The surtax is charged on the assessed PIT amount, not on income.  _(PwC)_
+- **Surtax basis** — The surtax is charged on the assessed PIT amount, not on income.  _(secondary summary)_
 
-**Municipal surtax table**  _(PwC)_
+**Municipal surtax table**  _(secondary summary)_
 
 | Municipality | Surtax rate (on PIT amount) | Source |
 | --- | --- | --- |
-| Podgorica, Cetinje | 15% | PwC |
-| All other municipalities | 13% | PwC |
+| Podgorica, Cetinje | 15% | secondary summary |
+| All other municipalities | 13% | secondary summary |
 
 ### 2.4 Minimum-wage floors (net)
 
@@ -114,30 +114,30 @@ So the maximum PIT in the 9% band is **9% × 300 = EUR 27.00**, and PIT on any g
 | Up to secondary-school (high-school) diploma | EUR 670 | countryeconomy.com |
 | University-degree-required roles | EUR 800 | countryeconomy.com |
 
-- **Contribution base floor** — The effective contribution base cannot fall below the applicable net minimum wage grossed up. **The exact gross-up factor is a RESEARCH GAP — reviewer to confirm against the SSC Law.**  _(PwC)_
+- **Contribution base floor** — The effective contribution base cannot fall below the applicable net minimum wage grossed up. **The exact gross-up factor is a RESEARCH GAP — reviewer to confirm against the SSC Law.**  _(secondary summary)_
 
 ### 2.5 PIO annual ceiling
 
-- **PIO annual ceiling** — EUR 68,765 (stated for 2024) EUR/year  _(PwC)_
+- **PIO annual ceiling** — EUR 68,765 (stated for 2024) EUR/year  _(secondary summary)_
 
 **This is the single lowest-confidence number in the skill — see §11 caveat 1. One secondary source (TaxRavens) cites a materially lower figure (~EUR 54,533/year), which is unreconciled.**
 
 ### 2.6 Reference — corporate profit tax (CIT) and VAT (context only)
 
-**CIT and VAT reference table**  _(PwC)_
+**CIT and VAT reference table**  _(secondary summary)_
 
 | Tax | Rate | Source |
 | --- | --- | --- |
-| CIT — profit up to EUR 100,000 | 9% | PwC |
-| CIT — profit EUR 100,000.01 – 1,500,000 | EUR 9,000 + 12% on profit above EUR 100,000 | PwC |
-| CIT — profit above EUR 1,500,000 | EUR 177,000 + 15% on profit above EUR 1,500,000 | PwC |
-| VAT standard | 21% | PwC |
-| VAT reduced | 7% (bread, milk/dairy, medicines, schoolbooks) | PwC |
-| VAT — exports | 0% | PwC |
+| CIT — profit up to EUR 100,000 | 9% | secondary summary |
+| CIT — profit EUR 100,000.01 – 1,500,000 | EUR 9,000 + 12% on profit above EUR 100,000 | secondary summary |
+| CIT — profit above EUR 1,500,000 | EUR 177,000 + 15% on profit above EUR 1,500,000 | secondary summary |
+| VAT standard | 21% | secondary summary |
+| VAT reduced | 7% (bread, milk/dairy, medicines, schoolbooks) | secondary summary |
+| VAT — exports | 0% | secondary summary |
 
 These are not part of payroll but are listed so an agent does not misattribute a CIT/VAT line as a contribution.
 
-**CIT cumulative-tax check.** At EUR 100,000 profit: 9% × 100,000 = EUR 9,000 ✓ (matches the base of the second band). At EUR 1,500,000: EUR 9,000 + 12% × (1,500,000 − 100,000) = 9,000 + 12% × 1,400,000 = 9,000 + 168,000 = **EUR 177,000** ✓ (matches the base of the third band). Consistent. [A 15% VAT figure also appears on PwC for certain hospitality/accommodation supplies — see §11 caveat 4; treat 7% as the standard reduced rate.]
+**CIT cumulative-tax check.** At EUR 100,000 profit: 9% × 100,000 = EUR 9,000 ✓ (matches the base of the second band). At EUR 1,500,000: EUR 9,000 + 12% × (1,500,000 − 100,000) = 9,000 + 12% × 1,400,000 = 9,000 + 168,000 = **EUR 177,000** ✓ (matches the base of the third band). Consistent. [A 15% VAT figure also appears on the secondary summary for certain hospitality/accommodation supplies — see §11 caveat 4; treat 7% as the standard reduced rate.]
 
 ## Section 3 — Conservative defaults
 
@@ -147,7 +147,7 @@ These are not part of payroll but are listed so an agent does not misattribute a
 | --- | --- |
 | Unknown exact employee/employer split | Employee = 10.5% of gross (10% PIO + 0.5% unemployment); employer = ~0.7% (0.5% unemployment + 0.2% Labour Fund) [TaxRavens] |
 | Labour Fund cannot be confirmed for the period | Use employer 0.5% (unemployment only); flag that Labour Fund 0.2% may also apply [§11] |
-| Municipality not stated | Apply 15% surtax (Podgorica/Cetinje high case) as the conservative figure [PwC] |
+| Municipality not stated | Apply 15% surtax (Podgorica/Cetinje high case) as the conservative figure [secondary summary] |
 | Gross salary unknown but minimum-wage role | Use the grossed-up applicable net minimum (EUR 670 standard / EUR 800 degree role) as the floor [countryeconomy.com] |
 | 15% PIT band mechanics unclear | Use the marginal reading (15% only on the portion above EUR 1,000) but flag for reviewer [§11 caveat 3] |
 | PIO ceiling relevance unclear | Apply the EUR 68,765 cap but mark it [RESEARCH GAP — reviewer to confirm] [§11 caveat 1] |
@@ -162,7 +162,7 @@ These are not part of payroll but are listed so an agent does not misattribute a
 ### Refusal catalogue
 
 - **R-ME-SSC-1** — Trigger: the input cites employee ~24% / employer ~10%, or a residual health-insurance contribution. Message: "Those are pre-October-2024 rates. Europe Now 2.0 reduced the employee burden to 10.5% (10% PIO + 0.5% unemployment), eliminated the employer PIO contribution, and abolished health contributions. Recompute using the post-reform schedule and confirm the period."  _(§11 caveat 6)_
-- **R-ME-SSC-2** — Trigger: annual income is at or above ~EUR 55,000 and the result depends on the PIO cap. Message: "The PIO annual ceiling is the lowest-confidence figure in this skill — PwC states EUR 68,765 'for 2024' while another source cites ~EUR 54,533. Do not finalise a high-earner computation that turns on the cap without a warranted accountant confirming the current ceiling."  _(§11 caveat 1)_
+- **R-ME-SSC-2** — Trigger: annual income is at or above ~EUR 55,000 and the result depends on the PIO cap. Message: "The PIO annual ceiling is the lowest-confidence figure in this skill — the secondary summary states EUR 68,765 'for 2024' while another source cites ~EUR 54,533. Do not finalise a high-earner computation that turns on the cap without a warranted accountant confirming the current ceiling."  _(§11 caveat 1)_
 - **R-ME-SSC-3** — Trigger: self-employed worker whose contribution base or whether the activity is the primary income source is unclear. Message: "Self-employed contributions depend on the base used and whether the activity is the worker's primary income source. Confirm the base and primary-source status per case before computing."  _(§11 caveat 7)_
 - **R-ME-SSC-4** — Trigger: unpaid IOPPD or contribution arrears. Message: "Specific Montenegrin penalty and default-interest amounts were not confirmed from an authoritative source in this skill's research. Default interest accrues and fines apply, but do not quantify arrears — escalate to a warranted accountant."  _(§11 caveat 5)_
 - **R-ME-SSC-5** — Trigger: the question is actually about VAT or corporate profit tax. Message: "That is a VAT (21%/7%) or CIT (9/12/15%) matter, not a payroll contribution. The §2.6 reference is context only; load the relevant Montenegro VAT or CIT skill before advising."
@@ -316,11 +316,11 @@ Apply exactly as written when the gross salary, worker type, and municipality ar
 
 ### Rule 1 — Employee deduction formula
 
-- **Employee deduction formula** — employee_PIT     = PIT_marginal(gross)                      # 0 / 9% / 15% per §2.2 surtax           = surtax_rate × employee_PIT                # 13% or 15% per §2.3 employee_PIO     = 10%  × gross employee_unemp   = 0.5% × gross net_pay          = gross − employee_PIT − surtax − employee_PIO − employee_unemp Where PIT_marginal(gross) = 0 if gross ≤ 700; 9% × (gross − 700) if 700 < gross ≤ 1,000; 27.00 + 15% × (gross − 1,000) if gross > 1,000.  _(PwC)_
+- **Employee deduction formula** — employee_PIT     = PIT_marginal(gross)                      # 0 / 9% / 15% per §2.2 surtax           = surtax_rate × employee_PIT                # 13% or 15% per §2.3 employee_PIO     = 10%  × gross employee_unemp   = 0.5% × gross net_pay          = gross − employee_PIT − surtax − employee_PIO − employee_unemp Where PIT_marginal(gross) = 0 if gross ≤ 700; 9% × (gross − 700) if 700 < gross ≤ 1,000; 27.00 + 15% × (gross − 1,000) if gross > 1,000.  _(secondary summary)_
 
 ### Rule 2 — Employer cost formula
 
-- **Employer cost formula** — employer_unemp     = 0.5% × gross employer_labourfund= 0.2% × gross      # verify per §11 total_employer_cost= gross + employer_unemp + employer_labourfund Employer PIO is 0% and employer health is 0% post-reform.  _(PwC; CEE Legal Matters)_
+- **Employer cost formula** — employer_unemp     = 0.5% × gross employer_labourfund= 0.2% × gross      # verify per §11 total_employer_cost= gross + employer_unemp + employer_labourfund Employer PIO is 0% and employer health is 0% post-reform.  _(secondary summary; CEE Legal Matters)_
 
 ### Rule 3 — Health insurance is abolished
 
@@ -328,19 +328,19 @@ Apply exactly as written when the gross salary, worker type, and municipality ar
 
 ### Rule 4 — First EUR 700 of monthly gross salary is exempt
 
-- **EUR 700 exemption** — PIT applies only above EUR 700/month.  _(PwC)_
+- **EUR 700 exemption** — PIT applies only above EUR 700/month.  _(secondary summary)_
 
 ### Rule 5 — Surtax is on the PIT amount, not on income
 
-- **Surtax base** — surtax = surtax_rate × PIT, never surtax_rate × gross. 15% in Podgorica/Cetinje, 13% elsewhere.  _(PwC)_
+- **Surtax base** — surtax = surtax_rate × PIT, never surtax_rate × gross. 15% in Podgorica/Cetinje, 13% elsewhere.  _(secondary summary)_
 
 ### Rule 6 — Contribution base floor is the minimum wage
 
-- **Minimum wage floor** — The effective contribution base cannot be below the applicable net minimum wage grossed up (EUR 670 standard / EUR 800 degree role). The exact gross-up is [RESEARCH GAP — reviewer to confirm].  _(countryeconomy.com; PwC)_
+- **Minimum wage floor** — The effective contribution base cannot be below the applicable net minimum wage grossed up (EUR 670 standard / EUR 800 degree role). The exact gross-up is [RESEARCH GAP — reviewer to confirm].  _(countryeconomy.com; secondary summary)_
 
 ### Rule 7 — PIO ceiling
 
-- **PIO ceiling application** — PIO is not levied on annual income above EUR 68,765 (PwC, "for 2024"). Above the cap, stop applying the 10% PIO. Flag the cap as low-confidence (§11 caveat 1).  _(PwC)_
+- **PIO ceiling application** — PIO is not levied on annual income above EUR 68,765 (secondary summary, "for 2024"). Above the cap, stop applying the 10% PIO. Flag the cap as low-confidence (§11 caveat 1).  _(secondary summary)_
 
 ### Rule 8 — Monthly remittance via IOPPD
 
@@ -348,7 +348,7 @@ Apply exactly as written when the gross salary, worker type, and municipality ar
 
 ### Rule 9 — Entrepreneurial income PIT (annual)
 
-- **Entrepreneurial income PIT bands** — For self-employed/entrepreneurial income (not salary): 0% up to EUR 8,400; 9% on EUR 8,400.01–12,000; 15% above EUR 12,000 (annual). Self-employed pay both the employee and the (now 0%) employer portions on a base of at least the minimum wage.  _(PwC; TaxRavens)_
+- **Entrepreneurial income PIT bands** — For self-employed/entrepreneurial income (not salary): 0% up to EUR 8,400; 9% on EUR 8,400.01–12,000; 15% above EUR 12,000 (annual). Self-employed pay both the employee and the (now 0%) employer portions on a base of at least the minimum wage.  _(secondary summary; TaxRavens)_
 
 ### Rule 10 — Combined burden shorthand
 
@@ -360,7 +360,7 @@ When data is ambiguous or the result turns on a low-confidence figure, flag for 
 
 ### T2-1 — High earner near or above the PIO ceiling
 
-**Trigger:** annual income ≈ EUR 55,000+. **Issue:** PwC's EUR 68,765 cap is a 2024 figure; TaxRavens cites ~EUR 54,533. The two are unreconciled and the 2025/2026 indexed cap is unconfirmed. **Action:** flag; do not finalise without the current SSC Law ceiling. [§11 caveat 1]
+**Trigger:** annual income ≈ EUR 55,000+. **Issue:** the secondary summary's EUR 68,765 cap is a 2024 figure; TaxRavens cites ~EUR 54,533. The two are unreconciled and the 2025/2026 indexed cap is unconfirmed. **Action:** flag; do not finalise without the current SSC Law ceiling. [§11 caveat 1]
 
 ### T2-2 — 15% PIT band mechanics
 
@@ -368,7 +368,7 @@ When data is ambiguous or the result turns on a low-confidence figure, flag for 
 
 ### T2-3 — Labour Fund (Fond rada) applicability
 
-**Trigger:** any employer-cost computation. **Issue:** the 0.2% Labour Fund comes only from TaxRavens and is not itemised by PwC. **Action:** flag; if unconfirmed, present employer cost both with (0.7%) and without (0.5%) the Labour Fund. [§11 caveat 2]
+**Trigger:** any employer-cost computation. **Issue:** the 0.2% Labour Fund comes only from TaxRavens and is not itemised by the secondary summary. **Action:** flag; if unconfirmed, present employer cost both with (0.7%) and without (0.5%) the Labour Fund. [§11 caveat 2]
 
 ### T2-4 — Self-employed / freelancer base
 
@@ -461,17 +461,17 @@ REVIEWER FLAGS
 
 ## Section 11 — Research gaps & caveats (read before relying on any figure)
 
-**PRIMARY SOURCE LIMITATION.** Figures come from PwC Worldwide Tax Summaries (reviewed 27 March 2026) and law-firm commentary (BDK Advokati, CEE Legal Matters), not from the Montenegrin Official Gazette or a parsed Poreska uprava rate schedule. The gov.me pages and the ePrijava/Taxis portal were identified but not parsed for raw figures. A warranted Montenegrin accountant must confirm everything below before filing.
+**PRIMARY SOURCE LIMITATION.** Figures come from a secondary practitioner summary (reviewed 27 March 2026) and law-firm commentary (BDK Advokati, CEE Legal Matters), not from the Montenegrin Official Gazette or a parsed Poreska uprava rate schedule. The gov.me pages and the ePrijava/Taxis portal were identified but not parsed for raw figures. A warranted Montenegrin accountant must confirm everything below before filing.
 
-**PIO annual ceiling [LOWEST CONFIDENCE].** EUR 68,765 is explicitly a "2024" PwC figure; the 2025/2026 indexed cap is unconfirmed, and TaxRavens cites a materially lower ~EUR 54,533. [RESEARCH GAP — reviewer to confirm the current ceiling.]
+**PIO annual ceiling [LOWEST CONFIDENCE].** EUR 68,765 is explicitly a "2024" the secondary summary figure; the 2025/2026 indexed cap is unconfirmed, and TaxRavens cites a materially lower ~EUR 54,533. [RESEARCH GAP — reviewer to confirm the current ceiling.]
 
-**Labour Fund 0.2%.** Sourced only from TaxRavens; not itemised by PwC. [RESEARCH GAP — reviewer to confirm it still applies and at what rate.]
+**Labour Fund 0.2%.** Sourced only from TaxRavens; not itemised by the secondary summary. [RESEARCH GAP — reviewer to confirm it still applies and at what rate.]
 
 **15% PIT band mechanics.** Sources differ on full-gross vs marginal application above EUR 1,000. This skill uses the marginal reading. [RESEARCH GAP — reviewer to confirm.]
 
-**VAT reduced rate.** PwC references both 7% and a 15% rate for certain hospitality/accommodation supplies. Standard reduced rate treated here as 7%. [RESEARCH GAP — reviewer to confirm the 15% reclassification.]
+**VAT reduced rate.** the secondary summary references both 7% and a 15% rate for certain hospitality/accommodation supplies. Standard reduced rate treated here as 7%. [RESEARCH GAP — reviewer to confirm the 15% reclassification.]
 
-**Penalties & VAT registration threshold.** Specific penalty/default-interest amounts were not confirmed; the EUR 30,000 VAT registration threshold (cited by PwC) is also unconfirmed against a primary source. [RESEARCH GAP — reviewer to confirm.]
+**Penalties & VAT registration threshold.** Specific penalty/default-interest amounts were not confirmed; the EUR 30,000 VAT registration threshold (cited by the secondary summary) is also unconfirmed against a primary source. [RESEARCH GAP — reviewer to confirm.]
 
 **Stale pre-reform rates.** Many EOR/payroll sites still publish employee ~24% / employer ~10% and a health contribution. These are STALE; the October-2024 Europe Now 2.0 figures in this skill supersede them.
 
@@ -483,14 +483,14 @@ REVIEWER FLAGS
 
 ### 12.1 Reference — net-pay table (marginal PIT, Podgorica 15% surtax, employee 10.5%)
 
-**Net-pay table (marginal PIT, Podgorica 15% surtax, employee 10.5%)**  _(§2.1/§2.2 [PwC])_
+**Net-pay table (marginal PIT, Podgorica 15% surtax, employee 10.5%)**  _(§2.1/§2.2 [secondary summary])_
 
 | Gross/month | PIT | Surtax (15%) | Employee contrib (10.5%) | Net pay | Source basis |
 | --- | --- | --- | --- | --- | --- |
-| EUR 700.00 | 0.00 | 0.00 | 73.50 | 626.50 | §2.1/§2.2 [PwC] |
-| EUR 1,000.00 | 27.00 | 4.05 | 105.00 | 863.95 | §2.1/§2.2 [PwC] |
-| EUR 2,000.00 | 177.00 | 26.55 | 210.00 | 1,586.45 | §2.1/§2.2 [PwC] |
-| EUR 3,500.00 | 402.00 | 60.30 | 367.50 | 2,670.20 | §2.1/§2.2 [PwC] |
+| EUR 700.00 | 0.00 | 0.00 | 73.50 | 626.50 | §2.1/§2.2 [secondary summary] |
+| EUR 1,000.00 | 27.00 | 4.05 | 105.00 | 863.95 | §2.1/§2.2 [secondary summary] |
+| EUR 2,000.00 | 177.00 | 26.55 | 210.00 | 1,586.45 | §2.1/§2.2 [secondary summary] |
+| EUR 3,500.00 | 402.00 | 60.30 | 367.50 | 2,670.20 | §2.1/§2.2 [secondary summary] |
 
 *(Row 4 here uses Podgorica 15% surtax = 15% × 402.00 = 60.30, so net = 3,500 − 402.00 − 60.30 − 367.50 = 2,670.20. Example 4 in §6 used Nikšić 13% surtax, giving a different surtax and net — both are correct for their stated municipality.)*
 
@@ -498,32 +498,32 @@ REVIEWER FLAGS
 
 ### 12.2 Forms and deadlines
 
-**Forms and deadlines**  _(Mellow / PwC)_
+**Forms and deadlines**  _(Mellow)_
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
 | IOPPD | Monthly combined return of PIT + employee/employer contributions on salaries; e-filed via ePrijava/Taxis, paid simultaneously | 15th of the month after salary payment | Mellow |
-| Annual PIT return (GPP) | Annual reconciliation for multiple-source / self-employment income | End of April following the tax year (verify exact date with Poreska uprava) | PwC |
-| Corporate profit tax return | Annual CIT return | End of March following the tax year | PwC |
+| Annual PIT return (GPP) | Annual reconciliation for multiple-source / self-employment income | End of April following the tax year (verify exact date with Poreska uprava) | secondary summary |
+| Corporate profit tax return | Annual CIT return | End of March following the tax year | secondary summary |
 
 ### 12.3 Thresholds
 
-**Thresholds**  _(PwC)_
+**Thresholds**  _(secondary summary)_
 
 | Threshold | Value | Source |
 | --- | --- | --- |
-| Salary PIT exemption | First EUR 700/month of gross is exempt | PwC |
-| Entrepreneurial income exemption | First EUR 8,400/year exempt | PwC |
-| PIO annual ceiling | EUR 68,765/year (PwC "2024" — low confidence, §11) | PwC |
-| VAT registration threshold | EUR 30,000 taxable turnover in preceding 12 months (verify) | PwC |
+| Salary PIT exemption | First EUR 700/month of gross is exempt | secondary summary |
+| Entrepreneurial income exemption | First EUR 8,400/year exempt | secondary summary |
+| PIO annual ceiling | EUR 68,765/year (secondary summary, "2024" — low confidence, §11) | secondary summary |
+| VAT registration threshold | EUR 30,000 taxable turnover in preceding 12 months (verify) | secondary summary |
 
 ### 12.4 Penalties
 
-**Penalties**  _(PwC)_
+**Penalties**  _(secondary summary)_
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Late filing / late payment | Default interest on overdue taxes & contributions; fines for failure to file IOPPD or to withhold/remit. **Specific amounts not confirmed — [RESEARCH GAP, §11 caveat 5].** | PwC |
+| Late filing / late payment | Default interest on overdue taxes & contributions; fines for failure to file IOPPD or to withhold/remit. **Specific amounts not confirmed — [RESEARCH GAP, §11 caveat 5].** | secondary summary |
 
 ### 12.5 Test suite
 

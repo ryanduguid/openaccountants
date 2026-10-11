@@ -1,10 +1,10 @@
 ---
 name: montenegro-payroll
 description: Use this skill whenever asked about Montenegro payroll processing for employed persons. Trigger on phrases like "Montenegro payroll", "Crna Gora plata", "porez na dohodak fizičkih lica", "PIT Montenegro", "withholding tax Montenegro", "IOPPD form", "IOPPD obrazac", "social contributions Montenegro", "doprinosi za socijalno osiguranje", "PIO pension Montenegro", "Fond PIO", "penziono i invalidsko osiguranje", "unemployment contribution Montenegro", "health insurance Montenegro", "prirez Montenegro", "municipal surtax Montenegro", "Europe Now 2", "Evropa sad 2", "net salary Montenegro", "neto plata", "bruto neto Crna Gora", "PAYE Montenegro", "employer contributions Montenegro", "minimum wage Montenegro", "minimalna zarada", "gross to net Montenegro", "Uprava prihoda i carina", or any question about computing employee pay, withholding personal income tax, or mandatory social contributions for Montenegro-based employees. This skill covers progressive PIT withholding on gross salary, the municipal surtax (prirez) on assessed PIT, employee social contributions (PIO + unemployment), the residual employer contributions, the dual-tier minimum wage, and IOPPD filing obligations under the post-October-2024 "Europe Now 2.0" reform. ALWAYS read this skill before processing any Montenegro payroll.
-version: 0.1
+version: 0.2
 jurisdiction: ME
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Montenegro Payroll
 
-## Montenegro Payroll Skill v0.1
+## Montenegro Payroll Skill v0.2
 
-**Tier 2 — research-verified. Figures below are sourced from PwC Worldwide Tax Summaries, KPMG Montenegro (October 2024 Tax Alert), Eurofast (Montenegro Tax Card 2025), Karanovic & Partners and Perfectum, referencing the Revenue and Customs Administration of Montenegro (Uprava prihoda i carina Crne Gore), the Fund for Pension and Disability Insurance (Fond PIO) and the Ministry of Labour. NOT yet signed off by a licensed Montenegrin accountant or tax adviser. The figures incorporate the "Europe Now 2.0" (Evropa sad 2) reform effective 1 October 2024. Treat every computation as an estimate pending professional review.**
+**Tier 2 — research-verified. Figures below are sourced from a secondary practitioner summary, KPMG Montenegro (October 2024 Tax Alert), Eurofast (Montenegro Tax Card 2025), Karanovic & Partners and Perfectum, referencing the Revenue and Customs Administration of Montenegro (Uprava prihoda i carina Crne Gore), the Fund for Pension and Disability Insurance (Fond PIO) and the Ministry of Labour. NOT yet signed off by a licensed Montenegrin accountant or tax adviser. The figures incorporate the "Europe Now 2.0" (Evropa sad 2) reform effective 1 October 2024. Treat every computation as an estimate pending professional review.**
 
 ## Section 1 -- Quick Reference
 
@@ -28,8 +28,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Montenegro (Crna Gora) — ISO 3166-1 alpha-2: ME |
 | Currency | EUR only (Montenegro uses the euro unilaterally) |
 | Standard pay frequency | Monthly |
-| Tax year | Calendar year (1 January -- 31 December) (PwC — Tax administration) |
-| Tax withholding system | Monthly PAYE — the employer withholds personal income tax (porez na dohodak fizičkih lica) and all contributions at source on the gross salary (PwC; Eurofast 2025) |
+| Tax year | Calendar year (1 January -- 31 December) (secondary summary, Tax administration) |
+| Tax withholding system | Monthly PAYE — the employer withholds personal income tax (porez na dohodak fizičkih lica) and all contributions at source on the gross salary (secondary summary; Eurofast 2025) |
 | Income / contributions authority | Revenue and Customs Administration of Montenegro (Uprava prihoda i carina Crne Gore), under the Ministry of Finance — https://www.upravaprihoda.gov.me/ |
 | Pension authority | Fund for Pension and Disability Insurance (Fond PIO) |
 | Employment / minimum-wage authority | Ministry of Labour and Social Welfare |
@@ -37,22 +37,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Reform package | "Europe Now 2.0" (Evropa sad 2), effective 1 October 2024 (KPMG Oct 2024 Tax Alert) |
 | Filing form | IOPPD (Obrazac IOPPD) — integrated monthly return of calculated/paid PIT and contributions, filed to the Revenue and Customs Administration (Perfectum; payroll guides) |
 | Validated by | Pending -- requires sign-off by a licensed Montenegrin accountant / tax adviser |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Read this whole section before computing anything. The shared payroll runbook lives in `payroll-workflow-base` — follow that runbook with this skill supplying the Montenegro-specific content.**
 
 ### The two most important Montenegro facts
 
-- **Fact 1 — PIT computed on gross salary** — PIT is computed on GROSS salary, not on a reduced base. Unlike many neighbouring jurisdictions, Montenegro's progressive PIT bands apply directly to the gross monthly salary (0% up to EUR 700, 9% on EUR 700.01–1,000, 15% above EUR 1,000.01). Social contributions are NOT subtracted before computing PIT.  _(PwC — Taxes on personal income; Eurofast 2025 p.3)_
-- **Fact 2 — Europe Now 2.0 reform effect** — The "Europe Now 2.0" reform (1 October 2024) gutted the contribution wedge. The employer pension share fell from 5.5% to 0%, the employee pension share fell from 15% to 10%, and the mandatory health contribution is 0% for both sides. Post-reform the employee social wedge is 10.5% and the employer wedge is ~1.17%. Eurofast's 2025 card still PRINTS stale pre-reform column totals (15.5% employee / 6.47% employer) — those are WRONG; use the itemised post-reform rows.  _(KPMG Oct 2024 Tax Alert; PwC; Eurofast 2025 p.4 — see Section 4 source conflict)_
+- **Fact 1 — PIT computed on gross salary** — PIT is computed on GROSS salary, not on a reduced base. Unlike many neighbouring jurisdictions, Montenegro's progressive PIT bands apply directly to the gross monthly salary (0% up to EUR 700, 9% on EUR 700.01–1,000, 15% above EUR 1,000.01). Social contributions are NOT subtracted before computing PIT.  _(secondary summary, Taxes on personal income; Eurofast 2025 p.3)_
+- **Fact 2 — Europe Now 2.0 reform effect** — The "Europe Now 2.0" reform (1 October 2024) gutted the contribution wedge. The employer pension share fell from 5.5% to 0%, the employee pension share fell from 15% to 10%, and the mandatory health contribution is 0% for both sides. Post-reform the employee social wedge is 10.5% and the employer wedge is ~1.17%. Eurofast's 2025 card still PRINTS stale pre-reform column totals (15.5% employee / 6.47% employer) — those are WRONG; use the itemised post-reform rows.  _(KPMG Oct 2024 Tax Alert; secondary summary; Eurofast 2025 p.4 — see Section 4 source conflict)_
 
 ## Section 2 -- Income Tax Withholding (porez na dohodak fizičkih lica)
 
-The employer withholds personal income tax (PIT) monthly at source on the gross monthly salary using progressive, marginal bands, then applies the municipal surtax (prirez) to the assessed PIT. PIT and surtax are withheld and remitted monthly. (PwC; Eurofast 2025)
+The employer withholds personal income tax (PIT) monthly at source on the gross monthly salary using progressive, marginal bands, then applies the municipal surtax (prirez) to the assessed PIT. PIT and surtax are withheld and remitted monthly. (secondary summary; Eurofast 2025)
 
 ### Employment-income PIT bands (2025) — applied to GROSS monthly salary
 
-**Employment-income PIT bands (2025) — applied to GROSS monthly salary**  _(PwC — Taxes on personal income; Eurofast Tax Card 2025 p.3)_
+**Employment-income PIT bands (2025) — applied to GROSS monthly salary**  _(secondary summary, Taxes on personal income; Eurofast Tax Card 2025 p.3)_
 
 | Band | Monthly gross salary | Marginal rate |
 | --- | --- | --- |
@@ -60,17 +60,17 @@ The employer withholds personal income tax (PIT) monthly at source on the gross 
 | 2 | EUR 700.01 – 1,000.00 | 9% |
 | 3 | over EUR 1,000.01 | 15% |
 
-- **Marginal band application** — The bands are marginal: only the slice of gross within each band is taxed at that band's rate. The 0% band IS the tax-free allowance — there is no separate personal allowance applied on top.  _(PwC — Taxes on personal income; Eurofast Tax Card 2025 p.3)_
+- **Marginal band application** — The bands are marginal: only the slice of gross within each band is taxed at that band's rate. The 0% band IS the tax-free allowance — there is no separate personal allowance applied on top.  _(secondary summary, Taxes on personal income; Eurofast Tax Card 2025 p.3)_
 
 ### Monthly withholding method (deterministic)
 
-- **Monthly withholding steps** — 1. Start with gross monthly salary (bruto plata). 2. Compute PIT by applying each marginal band to the slice of gross within it: 0% on the portion up to EUR 700.00; 9% on the portion from EUR 700.01 to EUR 1,000.00 (max EUR 27.00 in this band — verify: 300 × 9% = 27.00 ✓); 15% on the portion above EUR 1,000.01. 3. Compute the municipal surtax (prirez) = surtax rate × assessed PIT (NOT × income) — see below. 4. Total tax withheld = PIT + surtax. 5. Separately withhold employee social contributions at 10.5% of gross (Section 3). 6. Net pay = gross − employee social contributions − PIT − surtax.  _(PwC; Eurofast 2025)_
+- **Monthly withholding steps** — 1. Start with gross monthly salary (bruto plata). 2. Compute PIT by applying each marginal band to the slice of gross within it: 0% on the portion up to EUR 700.00; 9% on the portion from EUR 700.01 to EUR 1,000.00 (max EUR 27.00 in this band — verify: 300 × 9% = 27.00 ✓); 15% on the portion above EUR 1,000.01. 3. Compute the municipal surtax (prirez) = surtax rate × assessed PIT (NOT × income) — see below. 4. Total tax withheld = PIT + surtax. 5. Separately withhold employee social contributions at 10.5% of gross (Section 3). 6. Net pay = gross − employee social contributions − PIT − surtax.  _(secondary summary; Eurofast 2025)_
 
 Note the order does not matter for the arithmetic because every deduction is computed on gross independently: contributions on gross, PIT on gross, surtax on the PIT amount. There is no "income after contributions" intermediate base for PIT.
 
 ### Municipal surtax (prirez) on assessed PIT
 
-**Municipal surtax (prirez) on assessed PIT**  _(PwC — Taxes on personal income)_
+**Municipal surtax (prirez) on assessed PIT**  _(secondary summary, Taxes on personal income)_
 
 | Location | Surtax rate (× assessed PIT) |
 | --- | --- |
@@ -85,32 +85,32 @@ Note the order does not matter for the arithmetic because every deduction is com
 
 | Income type | Rate | Note |
 | --- | --- | --- |
-| Self-employment / entrepreneurial (annual, marginal) | 0% to EUR 8,400; 9% EUR 8,400.01–12,000; 15% above EUR 12,000.01 | Annual entrepreneurial income — out of scope for employer payroll (PwC) |
-| Capital gains, rental, interest, dividends, royalties | 15% flat | Not employment income (PwC; Eurofast 2025) |
+| Self-employment / entrepreneurial (annual, marginal) | 0% to EUR 8,400; 9% EUR 8,400.01–12,000; 15% above EUR 12,000.01 | Annual entrepreneurial income — out of scope for employer payroll (secondary summary) |
+| Capital gains, rental, interest, dividends, royalties | 15% flat | Not employment income (secondary summary; Eurofast 2025) |
 
 ## Section 3 -- Contributions: Employee Deductions
 
-Employees bear a total social-contribution wedge of 10.5% of gross, withheld at source. (PwC — Other taxes; KPMG Oct 2024 Tax Alert; Eurofast 2025 p.4)
+Employees bear a total social-contribution wedge of 10.5% of gross, withheld at source. (secondary summary, Other taxes; KPMG Oct 2024 Tax Alert; Eurofast 2025 p.4)
 
-**Employee contributions table**  _(PwC — Other taxes; KPMG Oct 2024 Tax Alert; Eurofast 2025 p.4)_
+**Employee contributions table**  _(secondary summary, Other taxes; KPMG Oct 2024 Tax Alert; Eurofast 2025 p.4)_
 
 | Contribution | Employee rate | Base | Authority | Note |
 | --- | --- | --- | --- | --- |
 | Pension and Disability Insurance (PIO) | 10.0% | Gross salary (capped — see ceiling) | Fond PIO | Cut from 15% to 10% on 1 Oct 2024 (KPMG) |
-| Unemployment insurance | 0.5% | Gross salary | Revenue & Customs Admin | (Eurofast 2025 p.4; PwC) |
+| Unemployment insurance | 0.5% | Gross salary | Revenue & Customs Admin | (Eurofast 2025 p.4; secondary summary) |
 | Health insurance | 0.0% | — | — | Mandatory employee health contribution abolished (Eurofast 2025 p.4 — Health Fund 0.0%) |
 | **Total employee contributions** | **10.5%** | Gross | — | 10.0% + 0.5% + 0.0% — verify: 10.0 + 0.5 = 10.5 ✓ |
 
 ### PIO contribution base ceiling
 
-**PIO contribution base ceiling**  _(PwC — Other taxes)_
+**PIO contribution base ceiling**  _(secondary summary, Other taxes)_
 
 | Cap | Amount | Year | Note |
 | --- | --- | --- | --- |
-| Annual PIO contribution base ceiling | EUR 68,765 | 2024 published figure (reset annually) | PwC — Other taxes |
+| Annual PIO contribution base ceiling | EUR 68,765 | 2024 published figure (reset annually) | secondary summary, Other taxes |
 | Implied monthly PIO base cap | EUR 5,730.42 | derived | = 68,765 ÷ 12 (verify: 68,765 / 12 = 5,730.4166… ≈ 5,730.42) |
 
-Source conflict flagged. PwC publishes the annual PIO base ceiling as EUR 68,765 (2024); the ceiling is reset annually and the 2025/2026 figure was NOT independently confirmed from Fond PIO / the Official Gazette in this research. One secondary source (TaxRavens) cites a conflicting ~EUR 54,533. [RESEARCH GAP — reviewer to confirm the current-year PIO base ceiling with the Tax Administration / Fond PIO before relying on it.] Whether the EUR 0.5% unemployment contribution is also subject to the PIO ceiling, or applies to uncapped gross, is not confirmed — this skill applies unemployment to full gross and flags it. [T2-2]
+Source conflict flagged. The secondary summary publishes the annual PIO base ceiling as EUR 68,765 (2024); the ceiling is reset annually and the 2025/2026 figure was NOT independently confirmed from Fond PIO / the Official Gazette in this research. One secondary source (TaxRavens) cites a conflicting ~EUR 54,533. [RESEARCH GAP — reviewer to confirm the current-year PIO base ceiling with the Tax Administration / Fond PIO before relying on it.] Whether the EUR 0.5% unemployment contribution is also subject to the PIO ceiling, or applies to uncapped gross, is not confirmed — this skill applies unemployment to full gross and flags it. [T2-2]
 
 ## Section 4 -- Contributions: Employer Contributions
 
@@ -130,7 +130,7 @@ Post-reform the employer wedge is small — the employer pays no PIO and no heal
 
 - **Total employer cost formula** — Total employer cost = gross salary + (1.17% × gross) = gross × 1.0117.  _(Derived from Eurofast itemised rates + KPMG reform)_
 
-Source conflict flagged — do NOT use Eurofast's printed totals. The Eurofast 2025 Tax Card prints column totals "Employees 15.5%" and "Employer 6.47%". These are internally inconsistent with the itemised rows in the same table: the 15.5% reflects the PRE-reform employee pension of 15% (now 10%), and the 6.47% reflects pre-reform employer rates (PIO employer 5.5%, now 0%). PwC and KPMG confirm the post-1-Oct-2024 employee total is 10.5% and the employer PIO is 0%. This skill uses the itemised post-reform figures (employee 10.5%, employer 1.17%). [T2-3 — an accountant should confirm against the consolidated Law on Mandatory Social Security Contributions in the Official Gazette.]
+Source conflict flagged — do NOT use Eurofast's printed totals. The Eurofast 2025 Tax Card prints column totals "Employees 15.5%" and "Employer 6.47%". These are internally inconsistent with the itemised rows in the same table: the 15.5% reflects the PRE-reform employee pension of 15% (now 10%), and the 6.47% reflects pre-reform employer rates (PIO employer 5.5%, now 0%). The secondary summary and KPMG confirm the post-1-Oct-2024 employee total is 10.5% and the employer PIO is 0%. This skill uses the itemised post-reform figures (employee 10.5%, employer 1.17%). [T2-3 — an accountant should confirm against the consolidated Law on Mandatory Social Security Contributions in the Official Gazette.]
 
 ### Combined wage wedge
 
@@ -171,12 +171,12 @@ Source conflict flagged. Some 2025 trackers (Trading Economics, minimum-wage.org
 
 | Field | Default | Rationale |
 | --- | --- | --- |
-| Employee social-contribution rate | **10.5% of gross** (PIO 10% + unemployment 0.5%; health 0%) | Confirmed by PwC, KPMG (Oct 2024 reform) and Eurofast itemised table; use itemised figures, NOT Eurofast's printed 15.5% total. |
+| Employee social-contribution rate | **10.5% of gross** (PIO 10% + unemployment 0.5%; health 0%) | Confirmed by the secondary summary, KPMG (Oct 2024 reform) and Eurofast itemised table; use itemised figures, NOT Eurofast's printed 15.5% total. |
 | Employer social-contribution rate | **1.17% of gross** (unemployment 0.5% + Labour Fund 0.2% + Chamber 0.27% + Prevention of Disability 0.2%; PIO and health 0%) | Itemised from Eurofast 2025 card; the card's printed 6.47% total is a stale pre-reform aggregate. |
-| Municipal surtax | **13% of assessed PIT** (15% if the employee resides in Podgorica or Cetinje) | PwC; surtax is on the PIT amount, not on income. Use the employee's municipality of residence. (Eurofast cites a 10–15% range.) |
-| PIO base ceiling | **EUR 68,765/yr → ~EUR 5,730.42/month** (apply the cap to the PIO base only) | PwC 2024 figure; reset annually — flag for reviewer confirmation. **[RESEARCH GAP]** |
+| Municipal surtax | **13% of assessed PIT** (15% if the employee resides in Podgorica or Cetinje) | The secondary summary; surtax is on the PIT amount, not on income. Use the employee's municipality of residence. (Eurofast cites a 10–15% range.) |
+| PIO base ceiling | **EUR 68,765/yr → ~EUR 5,730.42/month** (apply the cap to the PIO base only) | The secondary summary 2024 figure; reset annually — flag for reviewer confirmation. **[RESEARCH GAP]** |
 | Unemployment-contribution base | **Full gross (uncapped)** | The PIO ceiling's application to unemployment is unconfirmed; applying to full gross is the conservative assumption. **[T2-2]** |
-| PIT base | **Gross salary (no deduction of contributions before PIT)** | Montenegro applies PIT bands directly to gross. (PwC) |
+| PIT base | **Gross salary (no deduction of contributions before PIT)** | Montenegro applies PIT bands directly to gross. (secondary summary) |
 | Monthly filing | **File IOPPD and remit PIT + surtax + contributions by the 15th of the following month** | Eurofast tax calendar + payroll guides + Perfectum. |
 
 ## Section 7 -- Required Inputs and Refusal Catalogue
@@ -348,19 +348,19 @@ The PIO contribution base is capped at ~EUR 5,730.42/month (= EUR 68,765/yr ÷ 1
 
 ## Section 10 -- Tier 1 Rules (deterministic — the skill applies these directly)
 
-- **Tax year** — Tax year = calendar year (1 Jan – 31 Dec).  _(PwC — Tax administration)_
-- **Employment-income PIT bands (marginal, on gross monthly salary)** — 0% up to EUR 700.00, 9% on EUR 700.01–1,000.00, 15% above EUR 1,000.01. Social contributions are NOT deducted before computing PIT.  _(PwC; Eurofast 2025 p.3)_
-- **0% band nature** — The 0% band is the tax-free allowance — there is no separate personal allowance.  _(PwC)_
-- **Municipal surtax (prirez)** — Charged on the assessed PIT amount: 13% nationwide, 15% in Podgorica and Cetinje. Eurofast cites a 10–15% municipal range. [T2-1]  _(PwC)_
-- **Employee social contributions total** — 10.5% of gross: PIO 10.0% + unemployment 0.5% + health 0.0%  _(PwC; KPMG; Eurofast 2025 p.4)_
+- **Tax year** — Tax year = calendar year (1 Jan – 31 Dec).  _(secondary summary, Tax administration)_
+- **Employment-income PIT bands (marginal, on gross monthly salary)** — 0% up to EUR 700.00, 9% on EUR 700.01–1,000.00, 15% above EUR 1,000.01. Social contributions are NOT deducted before computing PIT.  _(secondary summary; Eurofast 2025 p.3)_
+- **0% band nature** — The 0% band is the tax-free allowance — there is no separate personal allowance.  _(secondary summary)_
+- **Municipal surtax (prirez)** — Charged on the assessed PIT amount: 13% nationwide, 15% in Podgorica and Cetinje. Eurofast cites a 10–15% municipal range. [T2-1]  _(secondary summary)_
+- **Employee social contributions total** — 10.5% of gross: PIO 10.0% + unemployment 0.5% + health 0.0%  _(secondary summary; KPMG; Eurofast 2025 p.4)_
 - **Employer social contributions total** — ~1.17% of gross: unemployment 0.5% + Labour Fund 0.2% + Chamber of Commerce 0.27% + Prevention of Disability Fund 0.2%; PIO and health both 0%  _(Eurofast 2025 p.4 itemised; KPMG)_
 - **Europe Now 2.0 reform** — The "Europe Now 2.0" reform (1 Oct 2024) cut PIO from 20.5% to 10% total (employer 5.5%→0%, employee 15%→10%) and confirmed health at 0%/0%.  _(KPMG Oct 2024 Tax Alert)_
-- **Stale totals prohibition** — Do NOT use Eurofast's printed column totals (15.5% employee / 6.47% employer) — they are stale pre-reform aggregates. Use the itemised rows (10.5% / 1.17%).  _(KPMG; PwC)_
-- **PIO contribution base cap** — EUR 68,765/yr (2024 published; ≈ EUR 5,730.42/month). The ceiling resets annually.  _(PwC [RESEARCH GAP — confirm current-year cap.])_
+- **Stale totals prohibition** — Do NOT use Eurofast's printed column totals (15.5% employee / 6.47% employer) — they are stale pre-reform aggregates. Use the itemised rows (10.5% / 1.17%).  _(KPMG; secondary summary)_
+- **PIO contribution base cap** — EUR 68,765/yr (2024 published; ≈ EUR 5,730.42/month). The ceiling resets annually.  _(secondary summary, [RESEARCH GAP — confirm current-year cap.])_
 - **Total employer cost** — Total employer cost = gross × 1.0117 (gross + 1.17% contributions). PIT and surtax are withheld from the employee, not added to employer cost.
-- **Net pay** — Net pay = gross − employee contributions (10.5%) − PIT − surtax. Each is computed independently on its own base.  _(PwC; Eurofast)_
+- **Net pay** — Net pay = gross − employee contributions (10.5%) − PIT − surtax. Each is computed independently on its own base.  _(secondary summary; Eurofast)_
 - **IOPPD filing/remittance** — Employers file the integrated monthly IOPPD return and remit PIT + surtax + all contributions simultaneously, due by the 15th of the following month.  _(Eurofast tax calendar; Perfectum; payroll guides)_
-- **Annual PIT return deadline** — Annual PIT return due 30 April; single-employer employees with only employment income need not file.  _(Eurofast 2025 p.10; PwC)_
+- **Annual PIT return deadline** — Annual PIT return due 30 April; single-employer employees with only employment income need not file.  _(Eurofast 2025 p.10; secondary summary)_
 - **Minimum wage (dual net tier) from 1 Oct 2024** — EUR 600 net (jobs up to high-school qualification) and EUR 800 net (higher qualification).  _(KPMG; Karanovic & Partners [RESEARCH GAP — current gross-up unconfirmed.])_
 - **Currency** — Montenegro uses EUR only.
 
@@ -370,10 +370,10 @@ The PIO contribution base is capped at ~EUR 5,730.42/month (= EUR 68,765/yr ÷ 1
 
 | Ref | Issue | What the reviewer must resolve |
 | --- | --- | --- |
-| **[T2-1]** | Exact municipal surtax rate | PwC states 13% (15% Podgorica/Cetinje); Eurofast states a 10–15% range by municipality. Confirm the specific municipality's surtax by-law. |
+| **[T2-1]** | Exact municipal surtax rate | The secondary summary states 13% (15% Podgorica/Cetinje); Eurofast states a 10–15% range by municipality. Confirm the specific municipality's surtax by-law. |
 | **[T2-2]** | Unemployment-contribution base vs the PIO ceiling | Whether the 0.5% unemployment contribution is subject to the PIO base ceiling or applies to uncapped gross is unconfirmed; this skill applies it to full gross. Confirm with the Tax Administration. |
-| **[T2-3]** | Post-reform contribution totals vs Eurofast printed totals | Eurofast prints 15.5% / 6.47% (pre-reform); itemised rows give 10.5% / 1.17% (post-reform, per PwC/KPMG). Confirm against the consolidated Law on Mandatory Social Security Contributions in the Official Gazette. |
-| **[T2-4]** | Current-year PIO base ceiling | PwC publishes EUR 68,765 (2024); TaxRavens cites ~EUR 54,533. Confirm the current-year cap with Fond PIO / the Official Gazette. **[RESEARCH GAP]** |
+| **[T2-3]** | Post-reform contribution totals vs Eurofast printed totals | Eurofast prints 15.5% / 6.47% (pre-reform); itemised rows give 10.5% / 1.17% (post-reform, per the secondary summary/KPMG). Confirm against the consolidated Law on Mandatory Social Security Contributions in the Official Gazette. |
+| **[T2-4]** | Current-year PIO base ceiling | The secondary summary publishes EUR 68,765 (2024); TaxRavens cites ~EUR 54,533. Confirm the current-year cap with Fond PIO / the Official Gazette. **[RESEARCH GAP]** |
 | **[T2-5]** | Minimum wage gross/net and tier structure | EUR 600/EUR 800 net (KPMG) vs ~EUR 670 net / ~EUR 700 gross single figure (trackers). Confirm with the Ministry of Labour. **[RESEARCH GAP]** |
 | **[T2-6]** | Overtime / night / holiday premiums and maximum hours | Not in this research dataset — confirm from the Labour Law (Zakon o radu) and any collective agreement. **[RESEARCH GAP]** |
 | **[T2-7]** | Benefits in kind, severance, per-diem/travel-allowance tax limits | Not in this research dataset — reviewer to populate. **[RESEARCH GAP]** |
@@ -396,7 +396,7 @@ The PIO contribution base is capped at ~EUR 5,730.42/month (= EUR 68,765/yr ÷ 1
 
 | Form | Purpose | Deadline |
 | --- | --- | --- |
-| Annual personal income tax return (GPP-FL / godišnja prijava) | Annual PIT reconciliation. Individuals with only single-employer employment income are NOT obliged to file. | 30 April for the previous year. (Eurofast 2025 p.10; PwC — Tax administration) |
+| Annual personal income tax return (GPP-FL / godišnja prijava) | Annual PIT reconciliation. Individuals with only single-employer employment income are NOT obliged to file. | 30 April for the previous year. (Eurofast 2025 p.10; secondary summary, Tax administration) |
 | Withholding tax on dividends/distributions | Declaration and payment of dividend-distribution withholding | 28 February for the previous year. (Eurofast 2025 p.10) |
 | Annual corporate income tax return | CIT return (employer entity) | 31 March for the previous year. (Eurofast 2025 p.10) |
 | VAT return | Declaration and payment of VAT | 15th of the following month. (Eurofast 2025 p.10) |
@@ -505,9 +505,9 @@ When key facts are missing, ask the user these questions before computing. If a 
 
 | # | Source | Publisher | URL |
 | --- | --- | --- | --- |
-| 1 | Montenegro — Individual — Taxes on personal income (PIT bands 0/9/15%, 15% other income, 13%/15% surtax) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income |
-| 2 | Montenegro — Individual — Other taxes (PIO 10% employee, unemployment 0.5%/0.5%, PIO annual cap EUR 68,765) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/montenegro/individual/other-taxes |
-| 3 | Montenegro — Corporate — Other taxes / Taxes on corporate income (VAT 21/15/7/0%; CIT context) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/montenegro/corporate/other-taxes |
+| 1 | Montenegro — Individual — Taxes on personal income (PIT bands 0/9/15%, 15% other income, 13%/15% surtax) | secondary summary | |
+| 2 | Montenegro — Individual — Other taxes (PIO 10% employee, unemployment 0.5%/0.5%, PIO annual cap EUR 68,765) | secondary summary | |
+| 3 | Montenegro — Corporate — Other taxes / Taxes on corporate income (VAT 21/15/7/0%; CIT context) | secondary summary | |
 | 4 | Montenegro Tax Card 2025 (itemised SSC table, PIT bands, CIT 9/12/15%, VAT, tax calendar, penalties) | Eurofast | https://eurofast.eu/wp-content/uploads/2025/02/MontenegroTaxCard2025.pdf |
 | 5 | Amendments to the Montenegrin Labor Law and Law on Mandatory Social Security Contributions — Oct 2024 Tax Alert (PIO 20.5%→10%; min wage EUR 600/EUR 800 net; effective 1 Oct 2024) | KPMG Montenegro | https://assets.kpmg.com/content/dam/kpmg/me/pdf/2024/10/Amendments-to-the-Montenegrin-Labor-Law-and-Law-on-Mandatory-Social-Security-Contributions.pdf |
 | 6 | Recent Changes in the Montenegrin Labour Regulations (Europe Now 2; dual-tier minimum wage; Oct 2024 contributions) | Karanovic & Partners | https://www.karanovicpartners.com/news/recent-changes-in-the-montenegrin-labour-regulations/ |
@@ -516,7 +516,7 @@ When key facts are missing, ask the user these questions before computing. If a 
 
 ### Primary authorities note
 
-Primary authorities: Revenue and Customs Administration of Montenegro (https://www.upravaprihoda.gov.me/); Fund for Pension and Disability Insurance (Fond PIO); Ministry of Labour and Social Welfare. **[RESEARCH GAP — no direct primary-source (Official Gazette / upravaprihoda.gov.me) page was machine-readable in this research; figures rest on Big-4 (PwC, KPMG) and Eurofast secondary summaries and should be confirmed against the in-force legislation.]**
+Primary authorities: Revenue and Customs Administration of Montenegro (https://www.upravaprihoda.gov.me/); Fund for Pension and Disability Insurance (Fond PIO); Ministry of Labour and Social Welfare. **[RESEARCH GAP — no direct primary-source (Official Gazette / upravaprihoda.gov.me) page was machine-readable in this research; figures rest on Big-4 (secondary summary, KPMG) and Eurofast secondary summaries and should be confirmed against the in-force legislation.]**
 
 ### Test Suite
 

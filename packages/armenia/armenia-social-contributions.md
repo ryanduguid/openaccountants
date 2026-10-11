@@ -1,10 +1,10 @@
 ---
 name: armenia-social-contributions
 description: "Source-cited draft covering Armenian employee payroll withholding and social contributions from 2025. Explains the general 20% salary income tax rate, the conditional 10% rate for qualifying high-technology research and development staff, funded pension contributions, military stamp payments and health-insurance deductions. Use for Armenia payroll tax, salary withholding, net pay, pension caps, SRC remittances or payroll bank-statement classification. Includes eligibility evidence, required inputs, calculation rules, worked examples and a working-paper template. Individual-entrepreneur contributions and unresolved commencement or citizenship questions require separate review. Pending sign-off by an Armenian accountant."
-version: 0.2
+version: 0.3
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Armenia Social Contributions & Payroll Withholding
 
-## Armenia Social Contributions & Payroll Withholding Skill v0.2
+## Armenia Social Contributions & Payroll Withholding Skill v0.3
 
 ## Section 1 -- Quick reference
 
@@ -31,17 +31,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax Authority | State Revenue Committee of the Republic of Armenia (SRC) — e-filing at src.am |
 | Currency | AMD only |
 | Personal income tax | General 20% from 1 January 2023; qualifying R&D salary 10%, subject to Rule 1. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest). |
-| Employer separate social tax | NONE — private sector has no employer-paid social security contribution; employer withholds employee amounts only — PwC / Vardanyan & Partners |
-| Funded pension (employee) | 5% of gross if gross < AMD 500,000; else 10% of gross − AMD 25,000, capped — PwC |
-| Funded pension max contribution | AMD 87,500/month (base capped at AMD 1,125,000 = 15× min wage) — PwC |
-| Military stamp duty (employee) | AMD 1,000/month if gross ≤ AMD 1,000,000; AMD 15,000/month if > AMD 1,000,000 (from Dec 2025) — PwC / Vardanyan |
-| Mandatory health insurance (employee) | AMD 4,800/month (gross 200,001–500,000); AMD 10,800/month (gross > 500,000); exempt ≤ 200,000 (from 25 Dec 2025) — PwC |
+| Employer separate social tax | NONE — private sector has no employer-paid social security contribution; employer withholds employee amounts only — the secondary summary / Vardanyan & Partners |
+| Funded pension (employee) | 5% of gross if gross < AMD 500,000; else 10% of gross − AMD 25,000, capped — the secondary summary |
+| Funded pension max contribution | AMD 87,500/month (base capped at AMD 1,125,000 = 15× min wage) — the secondary summary |
+| Military stamp duty (employee) | AMD 1,000/month if gross ≤ AMD 1,000,000; AMD 15,000/month if > AMD 1,000,000 (from Dec 2025) — the secondary summary / Vardanyan |
+| Mandatory health insurance (employee) | AMD 4,800/month (gross 200,001–500,000); AMD 10,800/month (gross > 500,000); exempt ≤ 200,000 (from 25 Dec 2025) — the secondary summary |
 | Minimum monthly wage | AMD 75,000 (effective 1 Jan 2023, unchanged through 2025/2026) — tradingeconomics / arka.am |
 | Monthly filing + payment deadline | 20th day of the month following the reporting month, via SRC e-portal — SRC / Vardanyan |
 | Validated by | Pending — requires sign-off by an Armenian licensed tax adviser |
 | Validation date | Pending |
 
-- **Pension birth-date eligibility** — Mandatory funded pension applies only to employees born on or after 1 January 1974. Those born before are exempt.  _(PwC)_
+- **Pension birth-date eligibility** — Mandatory funded pension applies only to employees born on or after 1 January 1974. Those born before are exempt.  _(secondary summary)_
 
 **Payroll deduction overview (employees, private sector):**
 
@@ -50,10 +50,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Item | Payer | Rate / amount | Authority |
 | --- | --- | --- | --- |
 | Personal income tax (PIT) | Employee (withheld) | Gross × the verified Rule 1 rate, 20% or 10% | [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest) |
-| Funded pension contribution | Employee (withheld) | 5% (< 500k) or 10% − 25,000 (≥ 500k), capped 87,500 | PwC |
-| Military stamp duty | Employee (withheld) | AMD 1,000 (≤ 1,000,000) or AMD 15,000 (> 1,000,000) | PwC / Vardanyan |
-| Mandatory health insurance | Employee (withheld) | AMD 0 / 4,800 / 10,800 by band | PwC |
-| Employer separate social tax | Employer | **AMD 0 — none** | PwC / Vardanyan |
+| Funded pension contribution | Employee (withheld) | 5% (< 500k) or 10% − 25,000 (≥ 500k), capped 87,500 | secondary summary |
+| Military stamp duty | Employee (withheld) | AMD 1,000 (≤ 1,000,000) or AMD 15,000 (> 1,000,000) | secondary summary, / Vardanyan |
+| Mandatory health insurance | Employee (withheld) | AMD 0 / 4,800 / 10,800 by band | secondary summary |
+| Employer separate social tax | Employer | **AMD 0 — none** | secondary summary, / Vardanyan |
 
 **Conservative defaults**
 
@@ -208,7 +208,7 @@ Matches "STATE REVENUE COMMITTEE" / "ՊԵԿ" (pattern 3.1). This is the employer
 
 ## Section 5 -- Tier 1 rules
 
-These rules apply when payroll data is clear and all required inputs are available. Apply exactly as written. All figures per PwC Worldwide Tax Summaries (Armenia) and Vardanyan & Partners unless marked otherwise.
+These rules apply when payroll data is clear and all required inputs are available. Apply exactly as written. All figures per the secondary summary Worldwide Tax Summaries (Armenia) and Vardanyan & Partners unless marked otherwise.
 
 ### Rule 1 -- Select the salary PIT rate
 
@@ -220,23 +220,23 @@ Set `pit_rate = 0.10` for a salary payment meeting all of those conditions, or `
 
 ### Rule 2 -- No separate employer social tax
 
-- **No employer social tax** — Armenia's private sector has no separate employer-paid social security contribution. The employer only withholds and remits employee amounts. Never add an employer social-tax line for private-sector employers.  _(PwC / Vardanyan & Partners)_
+- **No employer social tax** — Armenia's private sector has no separate employer-paid social security contribution. The employer only withholds and remits employee amounts. Never add an employer social-tax line for private-sector employers.  _(secondary summary, / Vardanyan & Partners)_
 
 ### Rule 3 -- Funded pension contribution (employees)
 
-- **Funded pension contribution formula** — if gross_monthly < 500,000: pension = 0.05 × gross_monthly else: base = min(gross_monthly, 1,125,000)      # base ceiling = 15 × min wage 75,000 pension = 0.10 × base − 25,000             # max 87,500 at base = 1,125,000 Applies only to employees born on or after 1 January 1974; those born earlier are exempt. There is no separate employer pension share — the state co-finances from the budget.  _(PwC)_
+- **Funded pension contribution formula** — if gross_monthly < 500,000: pension = 0.05 × gross_monthly else: base = min(gross_monthly, 1,125,000)      # base ceiling = 15 × min wage 75,000 pension = 0.10 × base − 25,000             # max 87,500 at base = 1,125,000 Applies only to employees born on or after 1 January 1974; those born earlier are exempt. There is no separate employer pension share — the state co-finances from the budget.  _(secondary summary)_
 
 ### Rule 4 -- Pension base ceiling and maximum
 
-- **Pension base ceiling and maximum** — The pension calculation base is capped at AMD 1,125,000/month (15 × the AMD 75,000 minimum wage), giving a maximum employee contribution of AMD 87,500/month (10% × 1,125,000 − 25,000).  _(PwC)_
+- **Pension base ceiling and maximum** — The pension calculation base is capped at AMD 1,125,000/month (15 × the AMD 75,000 minimum wage), giving a maximum employee contribution of AMD 87,500/month (10% × 1,125,000 − 25,000).  _(secondary summary)_
 
 ### Rule 5 -- Military stamp duty (Insurance Foundation for Servicemen), employees
 
-- **Military stamp duty** — Two-tier, from December 2025: AMD 1,000/month if monthly gross ≤ AMD 1,000,000; AMD 15,000/month if gross > AMD 1,000,000. Withheld monthly by the employer. (Replaced the prior multi-tier AMD 1,500–15,000 schedule.)  _(PwC / Vardanyan)_
+- **Military stamp duty** — Two-tier, from December 2025: AMD 1,000/month if monthly gross ≤ AMD 1,000,000; AMD 15,000/month if gross > AMD 1,000,000. Withheld monthly by the employer. (Replaced the prior multi-tier AMD 1,500–15,000 schedule.)  _(secondary summary, / Vardanyan)_
 
 ### Rule 6 -- Mandatory health insurance contribution (employees), from 25 Dec 2025
 
-- **Mandatory health insurance contribution formula** — For Armenian citizens under employment contracts: if gross_monthly <= 200,000:      health = 0          # exempt elif gross_monthly <= 500,000:    health = 4,800      # band 200,001–500,000 else:                             health = 10,800     # gross > 500,000 Effective from 25 December 2025 per PwC (some secondary sources say first payroll January 2026). [RESEARCH GAP — reviewer to confirm exact go-live and any later phase-in for sub-AMD-200,000 earners]  _(PwC)_
+- **Mandatory health insurance contribution formula** — For Armenian citizens under employment contracts: if gross_monthly <= 200,000:      health = 0          # exempt elif gross_monthly <= 500,000:    health = 4,800      # band 200,001–500,000 else:                             health = 10,800     # gross > 500,000 Effective from 25 December 2025 per the secondary summary (some secondary sources say first payroll January 2026). [RESEARCH GAP — reviewer to confirm exact go-live and any later phase-in for sub-AMD-200,000 earners]  _(secondary summary)_
 
 ### Rule 7 -- Net pay formula (private-sector employee)
 
@@ -248,11 +248,11 @@ Set `pit_rate = 0.10` for a salary payment meeting all of those conditions, or `
 
 ### Rule 9 -- Other withholding-tax rates (context, not employee social contributions)
 
-- **Other withholding-tax rates** — Royalties 10%; **interest 10%** (this line read "20% (from 1 Jan 2023)", which contradicted `am-corporate-income-tax.md` and is wrong — PwC groups interest, royalties, income from the lease of property and non-securities capital gains together at 10%); property lease income 10% (plus an additional 10% if annual lease income exceeds AMD 60,000,000); dividends 5% (refundable if reinvested in the same entity within the tax year); **income from services 20%**; insurance and transportation 5%. For the full non-resident table see `am-corporate-income-tax.md`, which is the guide to load for this question  _(PwC — Armenia, Corporate, Withholding taxes)_
+- **Other withholding-tax rates** — Royalties 10%; **interest 10%** (this line read "20% (from 1 Jan 2023)", which contradicted `am-corporate-income-tax.md` and is wrong — the secondary summary groups interest, royalties, income from the lease of property and non-securities capital gains together at 10%); property lease income 10% (plus an additional 10% if annual lease income exceeds AMD 60,000,000); dividends 5% (refundable if reinvested in the same entity within the tax year); **income from services 20%**; insurance and transportation 5%. For the full non-resident table see `am-corporate-income-tax.md`, which is the guide to load for this question  _(secondary summary, Armenia, Corporate, Withholding taxes)_
 
 ### Rule 10 -- Annual personal income tax declaration
 
-- **Annual personal income tax declaration** — Required only for income not taxed at source. For FY2025 the deadline is 1 November 2026; from 2027 the window is 2 March – 1 July of the following year.  _(PwC)_
+- **Annual personal income tax declaration** — Required only for income not taxed at source. For FY2025 the deadline is 1 November 2026; from 2027 the window is 2 March – 1 July of the following year.  _(secondary summary)_
 
 ### Rule 11 -- Minimum monthly wage
 
@@ -264,7 +264,7 @@ When payroll data is ambiguous or client circumstances are unclear, flag these s
 
 ### T2-1 -- Period straddling the December 2025 reform
 
-- **Period straddling reform** — Trigger: payroll period spans late 2025, or it is unclear whether the new military-stamp two-tier schedule and health contribution apply. Issue: Pre-December-2025 periods used the prior multi-tier military stamp duty (AMD 1,500–15,000) and had no mandatory health insurance contribution. The exact go-live of both items is documented mainly by PwC/Vardanyan, not directly from the SRC text. Action: Flag for reviewer. Confirm the effective date against the SRC/arlis.am Tax Code before computing affected periods. [RESEARCH GAP — reviewer to confirm exact effective date]
+- **Period straddling reform** — Trigger: payroll period spans late 2025, or it is unclear whether the new military-stamp two-tier schedule and health contribution apply. Issue: Pre-December-2025 periods used the prior multi-tier military stamp duty (AMD 1,500–15,000) and had no mandatory health insurance contribution. The exact go-live of both items is documented mainly by the secondary summary/Vardanyan, not directly from the SRC text. Action: Flag for reviewer. Confirm the effective date against the SRC/arlis.am Tax Code before computing affected periods. [RESEARCH GAP — reviewer to confirm exact effective date]
 
 ### T2-2 -- Individual entrepreneur (sole proprietor) contributions
 
@@ -284,7 +284,7 @@ When payroll data is ambiguous or client circumstances are unclear, flag these s
 
 ### T2-6 -- Arrears, penalties, and the "stamp tax" conflict
 
-- **Arrears, penalties, and the stamp tax conflict** — Trigger: unpaid contributions, or a query about whether Armenia has a stamp tax. Issue: PwC's corporate page states Armenia "does not have stamp taxes," but the individual page, Vardanyan, and other guides confirm the military insurance stamp duty (a stamp fee to the Insurance Foundation for Servicemen) is withheld from payroll. Treat it as a mandatory payroll deduction, not a classic stamp tax. Late-payment interest is 0.075%/day up to 730 days. Action: Treat the military stamp as a payroll deduction. Do not quantify arrears without the SRC statement; escalate to a licensed adviser.
+- **Arrears, penalties, and the stamp tax conflict** — Trigger: unpaid contributions, or a query about whether Armenia has a stamp tax. Issue: the secondary summary's corporate page states Armenia "does not have stamp taxes," but the individual page, Vardanyan, and other guides confirm the military insurance stamp duty (a stamp fee to the Insurance Foundation for Servicemen) is withheld from payroll. Treat it as a mandatory payroll deduction, not a classic stamp tax. Late-payment interest is 0.075%/day up to 730 days. Action: Treat the military stamp as a payroll deduction. Do not quantify arrears without the SRC statement; escalate to a licensed adviser.
 
 ## Section 7 -- Excel working paper template
 
@@ -369,7 +369,7 @@ If the client provides only a bank statement and no other information:
 
 ### Calculation examples (general 20% PIT, Dec 2025+, employee born ≥ 1974, Armenian citizen)
 
-**Calculation examples (Dec 2025+, employee born ≥ 1974, Armenian citizen)**  _(PwC Worldwide Tax Summaries (Armenia) and Vardanyan & Partners)_
+**Calculation examples (Dec 2025+, employee born ≥ 1974, Armenian citizen)**  _(secondary summary (Armenia) and Vardanyan & Partners)_
 
 | Gross (AMD) | PIT (20%) | Pension | Military stamp | Health | Total withheld | Net pay |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -380,26 +380,26 @@ If the client provides only a bank statement and no other information:
 | 1,000,000 | 200,000 | 75,000 | 1,000 | 10,800 | 286,800 | 713,200 |
 | 1,500,000 | 300,000 | 87,500 | 15,000 | 10,800 | 413,300 | 1,086,700 |
 
-Source for all rates/thresholds: PwC Worldwide Tax Summaries (Armenia) and Vardanyan & Partners. Pension at 1,000,000 = 10% × 1,000,000 − 25,000 = 75,000 (base below the 1,125,000 cap). Military stamp at exactly 1,000,000 = AMD 1,000 (≤ 1,000,000 tier).
+Source for all rates/thresholds: a secondary practitioner summary (Armenia) and Vardanyan & Partners. Pension at 1,000,000 = 10% × 1,000,000 − 25,000 = 75,000 (base below the 1,125,000 cap). Military stamp at exactly 1,000,000 = AMD 1,000 (≤ 1,000,000 tier).
 
 ### Thresholds and key amounts
 
-**Thresholds and key amounts**  _(PwC / Vardanyan / tradingeconomics / arka.am)_
+**Thresholds and key amounts**  _(secondary summary, / Vardanyan / tradingeconomics / arka.am)_
 
 | Item | Value | Source |
 | --- | --- | --- |
 | Salary PIT rate | General 20%; qualifying R&D salary 10%, subject to Rule 1 | [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest) |
-| Pension 5%→10% threshold | AMD 500,000/month gross | PwC |
-| Pension base ceiling | AMD 1,125,000/month (15 × AMD 75,000) | PwC |
-| Pension fixed deduction (10% formula) | AMD 25,000 | PwC |
-| Pension maximum contribution | AMD 87,500/month | PwC |
-| Pension birth-date eligibility | Born on/after 1 Jan 1974 | PwC |
-| Military stamp band break | AMD 1,000,000/month (1,000 vs 15,000) | PwC / Vardanyan |
-| Health insurance entry threshold | Gross > AMD 200,000/month | PwC |
-| Health insurance band break | AMD 500,000/month (4,800 vs 10,800) | PwC |
+| Pension 5%→10% threshold | AMD 500,000/month gross | secondary summary |
+| Pension base ceiling | AMD 1,125,000/month (15 × AMD 75,000) | secondary summary |
+| Pension fixed deduction (10% formula) | AMD 25,000 | secondary summary |
+| Pension maximum contribution | AMD 87,500/month | secondary summary |
+| Pension birth-date eligibility | Born on/after 1 Jan 1974 | secondary summary |
+| Military stamp band break | AMD 1,000,000/month (1,000 vs 15,000) | secondary summary, / Vardanyan |
+| Health insurance entry threshold | Gross > AMD 200,000/month | secondary summary |
+| Health insurance band break | AMD 500,000/month (4,800 vs 10,800) | secondary summary |
 | Minimum monthly wage | AMD 75,000 | tradingeconomics / arka.am |
-| Property lease surcharge trigger | Annual lease income > AMD 60,000,000 | PwC |
-| Corporate income tax (context) | 18% on net profit | Vardanyan / PwC |
+| Property lease surcharge trigger | Annual lease income > AMD 60,000,000 | secondary summary |
+| Corporate income tax (context) | 18% on net profit | Vardanyan |
 
 ### Penalties
 
@@ -412,16 +412,16 @@ Source for all rates/thresholds: PwC Worldwide Tax Summaries (Armenia) and Varda
 
 ### Forms and deadlines
 
-**Forms and deadlines**  _(SRC / Vardanyan / PwC)_
+**Forms and deadlines**  _(SRC / Vardanyan)_
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
 | Monthly unified payroll / income-tax & social-payment report (SRC e-portal) | Report and remit withheld PIT, funded pension, military stamp, health insurance | 20th of the following month | SRC / Vardanyan |
-| Annual personal income tax declaration | Self-declaration of income NOT taxed at source | FY2025: 1 Nov 2026; from 2027: 2 Mar – 1 Jul of following year | PwC |
+| Annual personal income tax declaration | Self-declaration of income NOT taxed at source | FY2025: 1 Nov 2026; from 2027: 2 Mar – 1 Jul of following year | secondary summary |
 
 ### Individual entrepreneur summary (verify before use)
 
-- Pension: 5% of gross if annual basic income ≤ AMD 6,000,000 (paid monthly); else 10% of income − AMD 300,000. — PwC
+- Pension: 5% of gross if annual basic income ≤ AMD 6,000,000 (paid monthly); else 10% of income − AMD 300,000. — the secondary summary
 - Military stamp: AMD 12,000/year (annual income ≤ AMD 12,000,000) or AMD 120,000/year (> AMD 12,000,000), from January 2026. [RESEARCH GAP — secondary source only]
 - Health insurance: AMD 129,600/year for 2025 income ≥ AMD 2,400,001, due by 20 April. [RESEARCH GAP — verify]
 
@@ -457,7 +457,7 @@ Unless specified otherwise, each employee is confirmed to use the general 20% PI
 - **Pension requires birth year knowledge** — NEVER compute the funded pension without knowing the employee's birth year (eligibility hinges on birth on/after 1 Jan 1974).  _(unsure)_
 - **No pre-Dec 2025 application without confirmation** — NEVER apply the two-tier military stamp duty or the health insurance contribution to periods before December 2025 without reviewer confirmation.  _(unsure)_
 - **Never report gross as net pay** — NEVER report the gross figure as net pay — salary credits on statements are net of all withholdings.  _(unsure)_
-- **Military stamp is a mandatory payroll deduction** — NEVER treat the military stamp duty as a classic stamp tax or omit it because one PwC page says Armenia "has no stamp taxes" — it is a mandatory payroll deduction.  _(unsure)_
+- **Military stamp is a mandatory payroll deduction** — NEVER treat the military stamp duty as a classic stamp tax or omit it because one the secondary summary page says Armenia "has no stamp taxes" — it is a mandatory payroll deduction.  _(unsure)_
 - **IE rules differ from employee withholding** — NEVER apply employee withholding formulas to an individual entrepreneur — the IE annual-income rules differ.  _(unsure)_
 - **Pension cap enforcement** — NEVER exceed the pension maximum of AMD 87,500/month or compute pension on a base above AMD 1,125,000/month.  _(unsure)_
 - **No arrears quantification without SRC statement** — NEVER quantify arrears or penalties without the SRC account statement — escalate to a licensed adviser.  _(unsure)_
@@ -465,7 +465,7 @@ Unless specified otherwise, each employee is confirmed to use the general 20% PI
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon. This is a Tier-2 (research-verified) skill: several December 2025 / January 2026 figures rest on PwC and Vardanyan & Partners guides rather than directly fetched SRC/arlis.am text, and items marked "[RESEARCH GAP — reviewer to confirm]" require independent confirmation.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon. This is a Tier-2 (research-verified) skill: several December 2025 / January 2026 figures rest on the secondary summary and Vardanyan & Partners guides rather than directly fetched SRC/arlis.am text, and items marked "[RESEARCH GAP — reviewer to confirm]" require independent confirmation.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 

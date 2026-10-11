@@ -1,10 +1,10 @@
 ---
 name: armenia-income-tax
 description: Use this skill whenever asked about Armenian personal income tax for individuals, self-employed individual entrepreneurs (IE), and employees. Trigger on phrases like "how much income tax in Armenia", "Armenian PIT", "flat 20% tax", "funded pension contribution", "turnover tax", "micro-business regime", "individual entrepreneur tax", "withholding on salary Armenia", "annual income declaration", "AMD net pay", "State Revenue Committee", "stamp duty on salary", "health insurance contribution", or any question about filing or computing personal/self-employment income tax for an Armenian-resident or Armenian-source taxpayer. Also trigger when preparing or reviewing an Armenian payroll calculation, an annual individual income tax declaration, a turnover-tax return, or advising on the micro-business regime. This skill covers the flat PIT rate, schedular rates (dividends, interest, royalties, rent, property sales), residency tests, mandatory funded pension, health-insurance and stamp-duty payroll levies, turnover-tax and micro-business special regimes, filing deadlines, and penalties. ALWAYS read this skill before touching any Armenian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,13 +15,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Armenia Personal Income Tax -- Self-Employed & Individuals
 
-## Armenia Personal Income Tax -- Self-Employed & Individuals Skill v0.1
+## Armenia Personal Income Tax -- Self-Employed & Individuals Skill v0.2
 
-> **Tier 2 -- research-verified.** Most figures below were cross-checked via PwC Worldwide Tax Summaries (last reviewed 5 Feb 2026) and Vardanyan & Partners (a local Armenian law firm), and are attributed as such.
+> **Tier 2 -- research-verified.** Most figures below were cross-checked via a secondary practitioner summary (last reviewed 5 Feb 2026) and Vardanyan & Partners (a local Armenian law firm), and are attributed as such.
 >
 > **Read against the Tax Code itself** (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122), Armenia's official legal information system) and corrected where they diverged: the individual entrepreneur's rate (art. 125(3.1) — 23% profit tax, not the 20% income tax this guide previously applied to business income), the turnover-tax rate table and its expense deductions (art. 258), the turnover and micro-enterprise thresholds (arts. 254, 267), what the micro regime actually exempts (art. 269), the flat income tax rate and its phase-down (art. 150(1)), and the minimum monthly wage (AMD 75,000 from 1 January 2023, Law on Minimum Monthly Salary, [arlis.am](https://www.arlis.am/hy/acts/172160)).
 >
-> Everything still marked _(PwC)_ has **not** been read against the Code. Items flagged **[RESEARCH GAP -- reviewer to confirm]** are explicitly uncertain.
+> Everything still marked _(secondary summary)_ has **not** been read against the Code. Items flagged **[RESEARCH GAP -- reviewer to confirm]** are explicitly uncertain.
 
 ## Section 1 -- Quick Reference
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual filing deadline (TY2025) | 1 November 2026 (transitional); from TY2026: 2 March -- 1 July of the following year |
 | Validated by | Pending -- requires sign-off by a qualified Armenian tax practitioner |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Headline rate (2025)
 
@@ -49,27 +49,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### PIT Rate Schedule (2025)
 
-**PIT Rate Schedule (2025)**  _(PwC)_
+**PIT Rate Schedule (2025)**  _(secondary summary)_
 
 | Income type | Rate | Notes | Source |
 | --- | --- | --- | --- |
-| Employment income (general) | 20% (flat) | Single flat rate since 1 Jan 2023 (phased reduction from 23% completed). Withheld monthly by employer. | PwC |
+| Employment income (general) | 20% (flat) | Single flat rate since 1 Jan 2023 (phased reduction from 23% completed). Withheld monthly by employer. | secondary summary |
 | Business income of a **registered individual entrepreneur** (general regime) | **23% profit tax** | Not income tax. Art. 104(1)(1) + art. 125(3.1). Applies absent a valid special-regime election. | Tax Code — [arlis.am](https://www.arlis.am/hy/acts/219122) |
 | Self-employment income of an individual who is **not** a registered IE | 20% (flat) | Ordinary income tax under art. 150(1). | Tax Code — [arlis.am](https://www.arlis.am/hy/acts/219122) |
-| Other income (general) | 20% (flat) | Residents worldwide; non-residents Armenian-source. | PwC |
-| Dividends | 5% | Withheld at source; refundable if reinvested in the same resident entity in the same tax year. Non-resident treaty rates may differ (5%/10%). | PwC |
-| Interest income | 20% | Effective from 1 Jan 2023. | PwC |
-| Royalties | 10% | Effective from 1 Jan 2023. | PwC |
-| Property lease / rental income | 10% on gross rent | If annual rental income exceeds AMD 60,000,000, an additional 10% applies to the excess **[RESEARCH GAP -- reviewer to confirm; flagged from prior years, not reconfirmed this session]**. | PwC |
-| Sale of property (real estate / vehicles) to a tax agent (legal entity / IE) | 10% (or 20% in specific cases) | 10% generally; 20% in certain cases (e.g. building/developer sales). Sales of property **between private individuals are EXEMPT**. | PwC |
+| Other income (general) | 20% (flat) | Residents worldwide; non-residents Armenian-source. | secondary summary |
+| Dividends | 5% | Withheld at source; refundable if reinvested in the same resident entity in the same tax year. Non-resident treaty rates may differ (5%/10%). | secondary summary |
+| Interest income | 20% | Effective from 1 Jan 2023. | secondary summary |
+| Royalties | 10% | Effective from 1 Jan 2023. | secondary summary |
+| Property lease / rental income | 10% on gross rent | If annual rental income exceeds AMD 60,000,000, an additional 10% applies to the excess **[RESEARCH GAP -- reviewer to confirm; flagged from prior years, not reconfirmed this session]**. | secondary summary |
+| Sale of property (real estate / vehicles) to a tax agent (legal entity / IE) | 10% (or 20% in specific cases) | 10% generally; 20% in certain cases (e.g. building/developer sales). Sales of property **between private individuals are EXEMPT**. | secondary summary |
 
 ### PIT Rate Schedule (2025)
 
-> **Note (rate stability):** The flat 20% rate has applied since 1 Jan 2023 and is unchanged for the 2025 tax year. _Source: PwC._
+> **Note (rate stability):** The flat 20% rate has applied since 1 Jan 2023 and is unchanged for the 2025 tax year. _Source: the secondary summary._
 
 ### Special-regime rate map (small business / self-employed)
 
-**Special-regime rate map (small business / self-employed)**  _(PwC / Vardanyan & Partners)_
+**Special-regime rate map (small business / self-employed)**  _(secondary summary, / Vardanyan & Partners)_
 
 | Regime | Eligibility ceiling | Rate(s) | Source |
 | --- | --- | --- | --- |
@@ -187,7 +187,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ## Section 4 -- Worked Examples
 
-> All figures recomputed end-to-end. Rates per PwC / Vardanyan & Partners as cited in Section 1.
+> All figures recomputed end-to-end. Rates per the secondary summary / Vardanyan & Partners as cited in Section 1.
 
 ### Example 1 -- Employee, monthly gross AMD 400,000 (below pension 500k threshold)
 
@@ -286,28 +286,28 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 5.2 Residency Tests
 
-- **Residency test criteria** — An individual is an Armenian tax resident if ANY of the following holds: ≥183 days physical presence in Armenia during the tax year (1 Jan -- 31 Dec); OR Centre of vital interests is in Armenia; OR the individual is in Armenian civil / state service. Default to resident treatment when status is unknown (Section 1).  _(Tax Code; PwC -- Residence)_
+- **Residency test criteria** — An individual is an Armenian tax resident if ANY of the following holds: ≥183 days physical presence in Armenia during the tax year (1 Jan -- 31 Dec); OR Centre of vital interests is in Armenia; OR the individual is in Armenian civil / state service. Default to resident treatment when status is unknown (Section 1).  _(Tax Code; secondary summary, Residence)_
 
 ### 5.3 Schedular Rates
 
-**5.3 Schedular Rates**  _(PwC)_
+**5.3 Schedular Rates**  _(secondary summary)_
 
 | Income type | Rate | Source |
 | --- | --- | --- |
-| Dividends | 5% (refundable if reinvested same year, same resident entity) | PwC |
-| Interest | 20% | PwC |
-| Royalties | 10% | PwC |
-| Property lease / rental | 10% on gross (+10% on excess over AMD 60m/yr **[RESEARCH GAP]**) | PwC |
-| Sale of property to a tax agent | 10% (or 20% in certain cases); private-to-private EXEMPT | PwC |
+| Dividends | 5% (refundable if reinvested same year, same resident entity) | secondary summary |
+| Interest | 20% | secondary summary |
+| Royalties | 10% | secondary summary |
+| Property lease / rental | 10% on gross (+10% on excess over AMD 60m/yr **[RESEARCH GAP]**) | secondary summary |
+| Sale of property to a tax agent | 10% (or 20% in certain cases); private-to-private EXEMPT | secondary summary |
 
 ### 5.4 Mandatory Funded Pension Contribution
 
-- **Employee funded pension formula** — If gross < AMD 500,000: contribution = 5% × gross. If gross ≥ AMD 500,000: contribution = 10% × gross − AMD 25,000. Base capped at AMD 1,125,000/month (= 15 × minimum monthly salary of AMD 75,000), giving a maximum employee contribution of AMD 87,500/month. Arithmetic check at cap: 10% × 1,125,000 − 25,000 = 112,500 − 25,000 = 87,500.  _(Law on Funded Pensions; PwC -- Other taxes)_
-- **IE funded pension formula** — If income ≤ AMD 6,000,000: contribution = 5% × income. If income > AMD 6,000,000: contribution = 10% × income − AMD 300,000. Aligned to the AMD 1,125,000/month base cap (= AMD 13,500,000/year), giving the same annual maximum AMD 1,050,000 (= 87,500 × 12).  _(PwC)_
+- **Employee funded pension formula** — If gross < AMD 500,000: contribution = 5% × gross. If gross ≥ AMD 500,000: contribution = 10% × gross − AMD 25,000. Base capped at AMD 1,125,000/month (= 15 × minimum monthly salary of AMD 75,000), giving a maximum employee contribution of AMD 87,500/month. Arithmetic check at cap: 10% × 1,125,000 − 25,000 = 112,500 − 25,000 = 87,500.  _(Law on Funded Pensions; secondary summary, Other taxes)_
+- **IE funded pension formula** — If income ≤ AMD 6,000,000: contribution = 5% × income. If income > AMD 6,000,000: contribution = 10% × income − AMD 300,000. Aligned to the AMD 1,125,000/month base cap (= AMD 13,500,000/year), giving the same annual maximum AMD 1,050,000 (= 87,500 × 12).  _(secondary summary)_
 
 ### 5.4 Mandatory Funded Pension Contribution
 
-- **Applicability** — Mandatory for employees born on/after 1 Jan 1974; the State co-finances the remainder from the budget.  _(Law on Funded Pensions; PwC -- Other taxes)_
+- **Applicability** — Mandatory for employees born on/after 1 Jan 1974; the State co-finances the remainder from the budget.  _(Law on Funded Pensions; secondary summary, Other taxes)_
 
 ### 5.5 Employer Social Security Contributions -- NONE
 
@@ -315,7 +315,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 5.6 Stamp (Military / Defence) Duty on Salaries
 
-**5.6 Stamp (Military / Defence) Duty on Salaries**  _(PwC -- Other taxes)_
+**5.6 Stamp (Military / Defence) Duty on Salaries**  _(secondary summary, Other taxes)_
 
 | Monthly gross | Stamp duty |
 | --- | --- |
@@ -328,18 +328,18 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 5.7 Mandatory Health Insurance Contribution
 
-- **Health insurance contribution overview** — Law "On Universal Health Insurance" was adopted December 2025; contributions apply from 2026 (NOT from 25 Dec 2025). Mandatory only for employees with monthly gross > AMD 200,000. The full reference premium is AMD 129,600/year (≈ AMD 10,800/month) per adult.  _(PwC -- Other taxes; armenian-lawyer.com; profin.am)_
+- **Health insurance contribution overview** — Law "On Universal Health Insurance" was adopted December 2025; contributions apply from 2026 (NOT from 25 Dec 2025). Mandatory only for employees with monthly gross > AMD 200,000. The full reference premium is AMD 129,600/year (≈ AMD 10,800/month) per adult.  _(secondary summary, Other taxes; armenian-lawyer.com; profin.am)_
 
-**5.7 Mandatory Health Insurance Contribution**  _(PwC)_
+**5.7 Mandatory Health Insurance Contribution**  _(secondary summary)_
 
-| Monthly gross | Reference premium tier (per PwC) |
+| Monthly gross | Reference premium tier (per the secondary summary) |
 | --- | --- |
 | AMD 200,001 -- 500,000 | AMD 4,800/month |
 | ≥ AMD 500,001 | AMD 10,800/month |
 
 ### 5.7 Mandatory Health Insurance Contribution
 
-- **IE health insurance flat amount** — Individual entrepreneurs: flat AMD 129,600 annually, if annual gross income > AMD 2,400,001.  _(PwC)_
+- **IE health insurance flat amount** — Individual entrepreneurs: flat AMD 129,600 annually, if annual gross income > AMD 2,400,001.  _(secondary summary)_
 
 ### 5.7 Mandatory Health Insurance Contribution
 
@@ -353,7 +353,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 5.9 Turnover Tax Regime (Small Business / Self-Employed)
 
-- **Eligibility** — Prior-year sales turnover ≤ AMD 115,000,000.  _(PwC -- Corporate Other taxes)_
+- **Eligibility** — Prior-year sales turnover ≤ AMD 115,000,000.  _(secondary summary, Corporate Other taxes)_
 
 **5.9 Turnover Tax Regime (Small Business / Self-Employed)**
 
@@ -376,7 +376,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 5.11 PIT Withholding and Remittance
 
-- **Withholding and remittance** — Employers (tax agents) withhold flat 20% PIT monthly from employment income and remit to the State Budget by the 20th day of the following month, together with funded-pension, stamp-duty, and health-insurance amounts. Where supporting documentation is lacking, tax agents withhold at 20%.  _(PwC -- Tax administration)_
+- **Withholding and remittance** — Employers (tax agents) withhold flat 20% PIT monthly from employment income and remit to the State Budget by the 20th day of the following month, together with funded-pension, stamp-duty, and health-insurance amounts. Where supporting documentation is lacking, tax agents withhold at 20%.  _(secondary summary, Tax administration)_
 
 ### 5.12 Non-Deductible / Excluded Items (general regime IE)
 
@@ -535,11 +535,11 @@ ONBOARDING QUESTIONS -- ARMENIA INCOME TAX
 
 | Topic | Reference | Source |
 | --- | --- | --- |
-| Flat PIT rate, schedular rates | Tax Code HO-165-N | PwC -- Taxes on personal income |
-| Residency tests | Tax Code | PwC -- Residence |
-| Funded pension, health insurance, stamp duty | Law on Funded Pensions; Tax Code amendments | PwC -- Other taxes |
-| Turnover tax, VAT threshold, micro-business | Tax Code | PwC -- Corporate Other taxes; Vardanyan & Partners |
-| Withholding, filing deadlines | Tax Code | PwC -- Tax administration |
+| Flat PIT rate, schedular rates | Tax Code HO-165-N | secondary summary, Taxes on personal income |
+| Residency tests | Tax Code | secondary summary, Residence |
+| Funded pension, health insurance, stamp duty | Law on Funded Pensions; Tax Code amendments | secondary summary, Other taxes |
+| Turnover tax, VAT threshold, micro-business | Tax Code | secondary summary, Corporate Other taxes; Vardanyan & Partners |
+| Withholding, filing deadlines | Tax Code | secondary summary, Tax administration |
 | Penalties | Tax Code (as amended 1 Jan 2025) | Vardanyan & Partners -- Tax calendar 2025 |
 | Minimum wage | Government decision | Armenpress |
 
@@ -549,9 +549,9 @@ ONBOARDING QUESTIONS -- ARMENIA INCOME TAX
 
 | Form / report | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
-| Annual individual income tax declaration | Individuals with income not taxed at source (foreign-source, certain self-employment/other); universal-declaration filers | TY2025: by **1 November 2026** (transitional); from TY2026: **2 March -- 1 July** of following year | PwC |
-| Monthly unified payroll / income tax & social payment calculation | Tax-agent report of withheld PIT, funded pension, stamp duty, health insurance | Payment + report by **20th** of following month | PwC |
-| Turnover tax return | Quarterly small-business / IE return | Quarterly; pay within **20 days** of period end | PwC |
+| Annual individual income tax declaration | Individuals with income not taxed at source (foreign-source, certain self-employment/other); universal-declaration filers | TY2025: by **1 November 2026** (transitional); from TY2026: **2 March -- 1 July** of following year | secondary summary |
+| Monthly unified payroll / income tax & social payment calculation | Tax-agent report of withheld PIT, funded pension, stamp duty, health insurance | Payment + report by **20th** of following month | secondary summary |
+| Turnover tax return | Quarterly small-business / IE return | Quarterly; pay within **20 days** of period end | secondary summary |
 | Regime eligibility statement (turnover / micro) | Elect/confirm special regime | By **20 February** (existing); within **20 days** of registration (new) | Vardanyan & Partners |
 
 ### Penalties

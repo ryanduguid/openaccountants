@@ -1,10 +1,10 @@
 ---
 name: bosnia-social-contributions
 description: "Use this skill whenever asked about Bosnia and Herzegovina (BiH) payroll social security contributions, salary taxes, or personal income tax withholding. Trigger on phrases like \"how much social contributions in Bosnia\", \"BiH payroll\", \"Federation of BiH contributions\", \"Republika Srpska contributions\", \"doprinosi\", \"MIO/PIO\", \"PIO/MIO\", \"Brcko District payroll\", \"BiH net to gross\", \"gross to net salary Bosnia\", \"FBiH employer contributions 5%\", \"RS 31% contributions\", \"BiH personal income tax\", \"porez na dohodak\", \"BAM salary tax\", \"do I pay social security in Bosnia\", or any question about computing Bosnian payroll deductions, employer on-costs, or PIT withholding. CRITICAL: Bosnia and Herzegovina has NO single nationwide payroll/social-security system — contributions and PIT are set and collected at ENTITY level (Federation of BiH, Republika Srpska, Brcko District) with materially different rates and bases. ALWAYS branch on entity before computing. Also trigger when classifying bank-statement transactions that relate to payroll-tax payments to Porezna uprava FBiH, Poreska uprava RS, entity pension/health funds, or UINO (VAT). ALWAYS read this skill before touching any BiH social-contributions or payroll work."
-version: 0.2
+version: 0.3
 jurisdiction: BA
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bosnia and Herzegovina Social Security Contributions & Payroll
 
-## Bosnia and Herzegovina Social Security Contributions & Payroll Skill v0.2
+## Bosnia and Herzegovina Social Security Contributions & Payroll Skill v0.3
 
 ## Section 1 -- Quick reference
 
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **STOP — entity branch first.** Bosnia and Herzegovina is a federal state with THREE separate payroll/PIT regimes. You CANNOT compute anything until you know which entity applies: **Federation of BiH (FBiH)**, **Republika Srpska (RS)**, or **Brcko District (BD)**. Only VAT is unified nationally.
 
-**Quick reference fields**  _(authority and legislation per the research brief; PwC Worldwide Tax Summaries (https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/other-taxes); UINO (https://www.uino.gov.ba/portal/en/news/the-threshold-for-entering-the-vat-system-has-been-increased-to-bam-100-000/).)_
+**Quick reference fields**  _(authority and legislation per the research brief; a secondary practitioner summary; UINO (https://www.uino.gov.ba/portal/en/news/the-threshold-for-entering-the-vat-system-has-been-increased-to-bam-100-000/).)_
 
 | Field | Value |
 | --- | --- |
@@ -44,7 +44,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Validated by | Pending — requires sign-off by a BiH-licensed tax advisor / certified accountant |
 | Validation date | Pending |
 
-**Headline rate overview (per entity)**  _(PwC (https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/other-taxes and .../taxes-on-personal-income); FBiH employer cut per Orbitax (https://orbitax.com/news/archive.php/Federation-of-Bosnia-and-Herze-58893) and Unija (https://unija.com/en/amendments-to-the-law-on-contibutions-in-the-fbih/).)_
+**Headline rate overview (per entity)**  _(the secondary summary and .../taxes-on-personal-income); FBiH employer cut per Orbitax (https://orbitax.com/news/archive.php/Federation-of-Bosnia-and-Herze-58893) and Unija (https://unija.com/en/amendments-to-the-law-on-contibutions-in-the-fbih/).)_
 
 | Item | FBiH | RS | BD |
 | --- | --- | --- | --- |
@@ -212,11 +212,11 @@ Five bank-statement / payslip classifications for hypothetical BiH employees, in
 
 ## Section 5 -- Tier 1 rules
 
-These rules apply when the entity is known, inputs are complete, and (for FBiH) the pay-period date is known. Apply exactly as written. All rates from PwC unless noted.
+These rules apply when the entity is known, inputs are complete, and (for FBiH) the pay-period date is known. Apply exactly as written. All rates from the secondary summary unless noted.
 
 ### Rule 1 -- Branch on entity FIRST
 
-- **Branch on entity first** — There is no nationwide payroll/social-security system. Determine FBiH / RS / BD before any calculation.  _(Research brief; PwC.)_
+- **Branch on entity first** — There is no nationwide payroll/social-security system. Determine FBiH / RS / BD before any calculation.  _(Research brief; secondary summary, .)_
 
 ### Rule 2 -- FBiH employee contributions = 31.0% of gross
 
@@ -228,7 +228,7 @@ These rules apply when the entity is known, inputs are complete, and (for FBiH) 
 
 ### Rule 4 -- FBiH extra employer charges are on NET salary
 
-- **FBiH extra employer charges on net salary** — Protection from natural/other disasters 0.5% + water protection charge 0.5%, both levied on net salary. Do NOT apply these in RS or BD.  _(PwC: .../individual/other-taxes)_
+- **FBiH extra employer charges on net salary** — Protection from natural/other disasters 0.5% + water protection charge 0.5%, both levied on net salary. Do NOT apply these in RS or BD.  _(secondary summary)_
 
 ### Rule 5 -- RS employee contributions = 31.0% of gross; no employer contributions
 
@@ -236,11 +236,11 @@ These rules apply when the entity is known, inputs are complete, and (for FBiH) 
 
 ### Rule 6 -- Brcko District = 12.0% health on gross + pension fund election
 
-- **BD contribution rule** — BD: 12.0% health insurance on gross; for pension the individual elects to pay into either the RS or FBiH pension fund (use that fund's pension rate).  _(PwC: .../individual/other-taxes)_
+- **BD contribution rule** — BD: 12.0% health insurance on gross; for pension the individual elects to pay into either the RS or FBiH pension fund (use that fund's pension rate).  _(secondary summary)_
 
 ### Rule 7 -- Personal income tax is flat and entity-specific
 
-- **Personal income tax by entity** — FBiH 10%, RS 8%, Brčko District 10%  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 9 — https://www.fmf.gov.ba/Content/Open/102395 ; Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 1 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf ; PwC Worldwide Tax Summaries (Brčko District) — https://taxsummaries.pwc.com/bosnia-and-herzegovina/individual/taxes-on-personal-income)_
+- **Personal income tax by entity** — FBiH 10%, RS 8%, Brčko District 10%  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 9 — https://www.fmf.gov.ba/Content/Open/102395 ; Zakon o izmjenama i dopunama Zakona o porezu na dohodak (Sl. glasnik RS 119/21), art 1 — https://www.poreskaupravars.org/dokumenti/zakoni/Zakon%20o%20porezu%20na%20dohodak.pdf)_
 
 ### Rule 8 -- FBiH PIT base
 
@@ -252,15 +252,15 @@ These rules apply when the entity is known, inputs are complete, and (for FBiH) 
 
 ### Rule 10 -- Gross salary is the contribution base in all entities
 
-- **Contribution base rule** — All social contributions in FBiH, RS and BD use gross salary as the base. Only the FBiH disaster/water charges use net salary.  _(PwC: .../individual/other-taxes)_
+- **Contribution base rule** — All social contributions in FBiH, RS and BD use gross salary as the base. Only the FBiH disaster/water charges use net salary.  _(secondary summary)_
 
 ### Rule 11 -- PAYE-style withholding
 
-- **PAYE-style withholding rule** — The employer is the income payer / withholding agent and calculates and withholds both contributions and PIT at source with each salary payment.  _(PwC tax administration)_
+- **PAYE-style withholding rule** — The employer is the income payer / withholding agent and calculates and withholds both contributions and PIT at source with each salary payment.  _(secondary summary, tax administration)_
 
 ### Rule 12 -- Monthly reporting and payment deadlines
 
-**Monthly reporting and payment deadlines**  _(PwC tax administration: https://taxsummaries.pwc.com/Bosnia-and-Herzegovina/Individual/Tax-administration; UINO.)_
+**Monthly reporting and payment deadlines**  _(secondary summary, tax administration: UINO.)_
 
 | Item | Entity | Deadline |
 | --- | --- | --- |
@@ -271,7 +271,7 @@ These rules apply when the entity is known, inputs are complete, and (for FBiH) 
 
 ### Rule 13 -- Annual PIT return deadlines
 
-- **Annual PIT return deadlines** — FBiH and RS annual PIT returns due 31 March of the following year; Brcko District annual return due 28 February (not required if all PIT settled via monthly withholding).  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 36(1) — https://www.fmf.gov.ba/Content/Open/102395 ; PwC Worldwide Tax Summaries, Individual, Tax administration (RS and Brčko District))_
+- **Annual PIT return deadlines** — FBiH and RS annual PIT returns due 31 March of the following year; Brcko District annual return due 28 February (not required if all PIT settled via monthly withholding).  _(Zakon o porezu na dohodak FBiH (Sl. novine FBiH 10/08, 9/10, 44/11, 7/13 and 65/13), Federal Ministry of Finance consolidated text, art 36(1) — https://www.fmf.gov.ba/Content/Open/102395 ; a secondary practitioner summary, Individual, Tax administration (RS and Brčko District))_
 
 ### Rule 14 -- Minimum wage 2025 (drives minimum contribution base)
 
@@ -407,13 +407,13 @@ If the client provides only a bank statement and no other information:
 
 ### Contribution rate tables (recomputed; totals verified)
 
-**FBiH — employee (on gross)**  _(PwC .../individual/other-taxes)_
+**FBiH — employee (on gross)**  _(secondary summary)_
 
 | Component | Rate | Source |
 | --- | --- | --- |
-| Pension / disability (MIO/PIO) | 17.0% | PwC .../individual/other-taxes |
-| Health insurance | 12.5% | PwC .../individual/other-taxes |
-| Unemployment insurance | 1.5% | PwC .../individual/other-taxes |
+| Pension / disability (MIO/PIO) | 17.0% | secondary summary |
+| Health insurance | 12.5% | secondary summary |
+| Unemployment insurance | 1.5% | secondary summary |
 | **Total employee** | **31.0%** | 17.0 + 12.5 + 1.5 = 31.0 ✓ |
 
 **FBiH — employer (on gross)**  _(Orbitax; Unija)_
@@ -425,46 +425,46 @@ If the client provides only a bank statement and no other information:
 | Unemployment insurance | 0.5% | 0.5% | Orbitax; Unija |
 | **Total employer** | **5.0%** | **10.5%** | 2.5+2.0+0.5=5.0 ✓ ; 6.0+4.0+0.5=10.5 ✓ |
 
-**FBiH — additional employer charges (on NET salary)**  _(PwC .../individual/other-taxes)_
+**FBiH — additional employer charges (on NET salary)**  _(secondary summary)_
 
 | Component | Rate | Source |
 | --- | --- | --- |
-| Protection from natural/other disasters | 0.5% | PwC .../individual/other-taxes |
-| Water protection charge | 0.5% | PwC .../individual/other-taxes |
+| Protection from natural/other disasters | 0.5% | secondary summary |
+| Water protection charge | 0.5% | secondary summary |
 
-**RS — employee (on gross); no employer-side contributions**  _(PwC .../individual/other-taxes)_
+**RS — employee (on gross); no employer-side contributions**  _(secondary summary)_
 
 | Component | Rate | Source |
 | --- | --- | --- |
-| Pension / disability | 18.5% | PwC .../individual/other-taxes |
+| Pension / disability | 18.5% | secondary summary |
 | Health insurance | 10.2% | Zakon o doprinosima RS art 22(1), amended by Sl. glasnik RS 119/21 |
-| Unemployment insurance | 0.6% | PwC .../individual/other-taxes |
-| Child protection | 1.7% | PwC .../individual/other-taxes |
+| Unemployment insurance | 0.6% | secondary summary |
+| Child protection | 1.7% | secondary summary |
 | **Total employee** | **31.0%** | 18.5+10.2+0.6+1.7=31.0 ✓ |
 
-**Brcko District — employee (on gross)**  _(PwC .../individual/other-taxes)_
+**Brcko District — employee (on gross)**  _(secondary summary)_
 
 | Component | Rate | Source |
 | --- | --- | --- |
-| Health insurance | 12.0% | PwC .../individual/other-taxes |
-| Pension | elected fund: RS 18.5% or FBiH 17.0% | PwC .../individual/other-taxes |
+| Health insurance | 12.0% | secondary summary |
+| Pension | elected fund: RS 18.5% or FBiH 17.0% | secondary summary |
 | Other components / allowance | [RESEARCH GAP — reviewer to confirm] | — |
 
 ### PIT, CIT and VAT (recomputed)
 
-**PIT, CIT and VAT table**  _(PwC .../individual/taxes-on-personal-income; Mondaq tax card 2026; PwC corporate other taxes)_
+**PIT, CIT and VAT table**  _(secondary summary; Mondaq tax card 2026; secondary summary, corporate other taxes)_
 
 | Tax | Jurisdiction | Rate / structure | Source |
 | --- | --- | --- | --- |
-| Personal income tax | FBiH | 10% flat | PwC .../individual/taxes-on-personal-income |
-| Personal income tax | RS | 8% flat (small entrepreneurs 2% on annual revenue) | PwC .../individual/taxes-on-personal-income |
-| Personal income tax | Brcko District | 10% flat | PwC .../individual/taxes-on-personal-income |
+| Personal income tax | FBiH | 10% flat | secondary summary |
+| Personal income tax | RS | 8% flat (small entrepreneurs 2% on annual revenue) | secondary summary |
+| Personal income tax | Brcko District | 10% flat | secondary summary |
 | Corporate income tax | BiH (nationwide) | 10% flat | Mondaq tax card 2026 |
-| VAT | BiH (nationwide) | 17% single standard rate, no reduced rate | PwC corporate other taxes |
+| VAT | BiH (nationwide) | 17% single standard rate, no reduced rate | secondary summary, corporate other taxes |
 
 ### Thresholds
 
-**Thresholds table**  _(UINO; PwC; Rivermate)_
+**Thresholds table**  _(UINO; secondary summary; Rivermate)_
 
 | Threshold | Amount | Detail | Source |
 | --- | --- | --- | --- |
@@ -474,16 +474,16 @@ If the client provides only a bank statement and no other information:
 
 ### Filing & payment deadlines
 
-**Filing & payment deadlines table**  _(PwC tax administration; UINO)_
+**Filing & payment deadlines table**  _(secondary summary, tax administration; UINO)_
 
 | Form / item | Jurisdiction | Deadline | Source |
 | --- | --- | --- | --- |
-| Annual PIT return | FBiH | 31 March (following year) | PwC tax administration |
-| Annual PIT return | RS | 31 March (following year) | PwC tax administration |
-| Annual PIT return | Brcko District | 28 February (not required if all PIT settled via monthly withholding) | PwC tax administration |
-| Monthly salary/tax specification | FBiH | On payment day, no later than one day after payment | PwC tax administration |
-| Monthly contributions + PIT payment | FBiH | With salary payment, no later than end of following month | PwC tax administration |
-| Monthly salary-tax specification | RS | By the 10th of the following month | PwC tax administration |
+| Annual PIT return | FBiH | 31 March (following year) | secondary summary, tax administration |
+| Annual PIT return | RS | 31 March (following year) | secondary summary, tax administration |
+| Annual PIT return | Brcko District | 28 February (not required if all PIT settled via monthly withholding) | secondary summary, tax administration |
+| Monthly salary/tax specification | FBiH | On payment day, no later than one day after payment | secondary summary, tax administration |
+| Monthly contributions + PIT payment | FBiH | With salary payment, no later than end of following month | secondary summary, tax administration |
+| Monthly salary-tax specification | RS | By the 10th of the following month | secondary summary, tax administration |
 | VAT return (PDV prijava) | National (UINO) | By the 10th of the month following the period | UINO |
 
 ### Filing & payment deadlines
@@ -492,12 +492,12 @@ If the client provides only a bank statement and no other information:
 
 ### Penalties (VAT — national)
 
-**Penalties (VAT — national) table**  _(PwC corporate other taxes)_
+**Penalties (VAT — national) table**  _(secondary summary, corporate other taxes)_
 
 | Penalty | Rate / Amount | Source |
 | --- | --- | --- |
-| Failure to calculate/pay VAT | 50% of the VAT amount, minimum BAM 100 | PwC corporate other taxes |
-| Failure to submit VAT declaration on time | BAM 300 | PwC corporate other taxes |
+| Failure to calculate/pay VAT | 50% of the VAT amount, minimum BAM 100 | secondary summary, corporate other taxes |
+| Failure to submit VAT declaration on time | BAM 300 | secondary summary, corporate other taxes |
 
 ### Penalties (VAT — national)
 

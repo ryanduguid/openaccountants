@@ -1,10 +1,10 @@
 ---
 name: albania-payroll
 description: Use this skill whenever asked about Albania payroll processing for employed persons. Trigger on phrases like "Albania payroll", "Albanian payroll", "lista e pagave", "payroll list Albania", "PAYE Albania", "withholding tax Albania", "tatimi mbi te ardhurat Albania", "social insurance Albania", "sigurime shoqerore", "sigurime shendetesore", "health insurance contribution Albania", "ISSH contribution", "net salary Albania", "neto pagese", "gross to net Albania", "employer contribution Albania", "16.7%", "11.2%", "DIVA Albania", "minimum wage Albania", "paga minimale", "tatime.gov.al payroll", or any question about computing employee pay, withholding tax (PIT), or social/health insurance contributions for Albania-based employees. This skill covers cumulative monthly PIT withholding under Law 29/2023, social and health insurance contributions (employee and employer shares), the social-insurance floor and ceiling, the minimum wage, the monthly payroll-list declaration, and the annual DIVA reconciliation. ALWAYS read this skill before processing any Albania payroll.
-version: 0.1
+version: 0.2
 jurisdiction: AL
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,11 +13,11 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Albania Payroll Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
+# Albania Payroll Skill v0.2 (Tier 2 — research-verified, reviewer sign-off pending)
 
-## Albania Payroll Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
+## Albania Payroll Skill v0.2 (Tier 2 — research-verified, reviewer sign-off pending)
 
-> **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority or Big-4 summary (PwC Worldwide Tax Summaries, KPMG Albania) and cited inline. It has **not** yet been section-by-section verified by a licensed Albanian accountant. Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
+> **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority or Big-4 summary (secondary summary, KPMG Albania) and cited inline. It has **not** yet been section-by-section verified by a licensed Albanian accountant. Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
 
 ## Section 1 -- Quick Reference
 
@@ -30,83 +30,83 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Standard pay frequency | Monthly |
 | Tax year | Calendar year (1 January -- 31 December) |
 | Tax withholding system | Cumulative monthly PAYE-style withholding by the employer (payroll agent), reconciled annually (Law 29/2023) |
-| PIT annual rates | 13% up to 2,040,000 ALL; 23% on the excess (PwC; KPMG) |
-| Employer contribution rate | 16.7% (15% social + 1.7% health) (PwC) |
-| Employee contribution rate | 11.2% (9.5% social + 1.7% health) (PwC) |
+| PIT annual rates | 13% up to 2,040,000 ALL; 23% on the excess (secondary summary; KPMG) |
+| Employer contribution rate | 16.7% (15% social + 1.7% health) (secondary summary) |
+| Employee contribution rate | 11.2% (9.5% social + 1.7% health) (secondary summary) |
 | Social-insurance base (2025) | Floor 40,000 ALL / ceiling 176,416 ALL per month (HLB Albania; rate guides) |
-| Health-insurance base | Full gross salary — no floor, no ceiling (PwC) |
+| Health-insurance base | Full gross salary — no floor, no ceiling (secondary summary) |
 | Minimum wage | **50,000 ALL/month** gross from 1 January 2026 (CoM Decision No. 776 of 19.12.2025); 40,000 ALL for 2025 |
 | Tax authority | General Directorate of Taxation — Drejtoria e Pergjithshme e Tatimeve (GDT/DPT), tatime.gov.al |
 | Social-insurance authority | Social Insurance Institute — Instituti i Sigurimeve Shoqerore (ISSH), issh.gov.al |
 | Collection | Contributions and PIT declared and paid **jointly** via the GDT e-filing portal |
 | Key legislation | Law No. 29/2023 "On Income Tax" (effective 1 Jan 2024); Law No. 9136/2003 (contributions collection); Law No. 9920/2008 "On Tax Procedures"; VKM (Council of Ministers Decision) on the minimum wage |
-| Monthly declaration deadline | 20th of the month following the payroll period (PwC; tatime.gov.al) |
-| Annual reconciliation | DIVA (Deklarata Individuale Vjetore e te Ardhurave) — 31 March of the following year (PwC) |
+| Monthly declaration deadline | 20th of the month following the payroll period (secondary summary; tatime.gov.al) |
+| Annual reconciliation | DIVA (Deklarata Individuale Vjetore e te Ardhurave) — 31 March of the following year (secondary summary) |
 | Validated by | Pending — requires sign-off by a licensed Albanian accountant |
 | Skill version | 0.1 (Tier 2) |
 
 ## Section 2 -- Income Tax Withholding (PIT, Law 29/2023)
 
-Albania **does** levy personal income tax on employment income. The regime was reformed by **Law No. 29/2023 "On Income Tax"**, effective from 1 January 2024 and **unchanged for tax year 2025** (PwC — Significant developments; KPMG Albania). The employer acts as withholding/payroll agent and withholds PIT monthly, with an annual reconciliation.
+Albania **does** levy personal income tax on employment income. The regime was reformed by **Law No. 29/2023 "On Income Tax"**, effective from 1 January 2024 and **unchanged for tax year 2025** (secondary summary, Significant developments; KPMG Albania). The employer acts as withholding/payroll agent and withholds PIT monthly, with an annual reconciliation.
 
 ### 2.1 Annual rate brackets (statutory basis)
 
-**Annual rate brackets (statutory basis)**  _(PwC Worldwide Tax Summaries; KPMG Albania)_
+**Annual rate brackets (statutory basis)**  _(secondary summary; KPMG Albania)_
 
 | Annual employment income (ALL) | Rate | Source |
 | --- | --- | --- |
-| 0 -- 2,040,000 | 13% | PwC Worldwide Tax Summaries; KPMG Albania |
-| Over 2,040,000 | 23% on the excess above 2,040,000 | PwC; KPMG |
+| 0 -- 2,040,000 | 13% | secondary summary; KPMG Albania |
+| Over 2,040,000 | 23% on the excess above 2,040,000 | secondary summary; KPMG |
 
-### 2.2 Operational monthly withholding table (PwC — the figures payroll software uses)
+### 2.2 Operational monthly withholding table (secondary summary, the figures payroll software uses)
 
-The annual 13%/23% structure is implemented through a banded **monthly** withholding table. Use the **PwC 2025 table** below (break-points 50,000 / 60,000 / 200,000 ALL). **Do NOT** use the table still shown on the tatime.gov.al English page — see the caveat in Section 11.
+The annual 13%/23% structure is implemented through a banded **monthly** withholding table. Use the **The secondary summary 2025 table** below (break-points 50,000 / 60,000 / 200,000 ALL). **Do NOT** use the table still shown on the tatime.gov.al English page — see the caveat in Section 11.
 
-**Operational monthly withholding table**  _(PwC — Taxes on personal income)_
+**Operational monthly withholding table**  _(secondary summary, Taxes on personal income)_
 
 | Monthly gross salary (ALL) | Monthly PIT | Source |
 | --- | --- | --- |
-| Up to 50,000 | **0%** (fully exempt) | PwC — Taxes on personal income |
-| 50,001 -- 60,000 | 0% on the first 35,000; **13%** on the portion exceeding 35,000 | PwC — Taxes on personal income |
-| Above 60,000 | 0% on the first 30,000; **13%** on the portion 30,001 -- 200,000; **22,100 ALL + 23%** on the portion exceeding 200,000 | PwC — Taxes on personal income |
+| Up to 50,000 | **0%** (fully exempt) | secondary summary, Taxes on personal income |
+| 50,001 -- 60,000 | 0% on the first 35,000; **13%** on the portion exceeding 35,000 | secondary summary, Taxes on personal income |
+| Above 60,000 | 0% on the first 30,000; **13%** on the portion 30,001 -- 200,000; **22,100 ALL + 23%** on the portion exceeding 200,000 | secondary summary, Taxes on personal income |
 
 - **Arithmetic check on the 22,100 ALL constant** — In the "above 60,000" band the 13% slice runs from 30,001 to 200,000 → 13% × (200,000 − 30,000) = 13% × 170,000 = 22,100 ALL. The constant reconciles to the cumulative tax at the 200,000 cutover. (Self-verified.)  _(Self-verified)_
 
 ### 2.3 Withholding method
 
-- **Cumulative monthly withholding** — Cumulative monthly PAYE-style withholding by the employer, proportional to the annual 13%/23% thresholds, reconciled annually.  _(KPMG; PwC)_
+- **Cumulative monthly withholding** — Cumulative monthly PAYE-style withholding by the employer, proportional to the annual 13%/23% thresholds, reconciled annually.  _(KPMG; secondary summary)_
 - **Joint declaration** — PIT and contributions are declared and paid together monthly via the GDT portal.
-- **Residence basis** — Residents are taxed on worldwide income; non-residents are taxed only on Albania-sourced (territorial) income.  _(PwC)_
+- **Residence basis** — Residents are taxed on worldwide income; non-residents are taxed only on Albania-sourced (territorial) income.  _(secondary summary)_
 
-> **[RESEARCH GAP — reviewer to confirm]** Whether the 11.2% employee social+health contributions are deducted from gross *before* PIT is computed. The research `conservative_defaults` instruct deducting contributions first, but the PwC monthly table is defined on **monthly gross salary**. This skill applies the PwC banded table to **gross salary** for the band determination (the literal PwC reading) in all worked examples, and flags the alternative (contributions-first) method here. The precise mechanics of the phased deductions in the 50,000–60,000 band reportedly depend on standard annual deduction tiers (600,000 / 420,000 / 360,000 ALL); a licensed Albanian accountant must confirm the exact formula against current GDT Albanian-language guidance and the payroll software.
+> **[RESEARCH GAP — reviewer to confirm]** Whether the 11.2% employee social+health contributions are deducted from gross *before* PIT is computed. The research `conservative_defaults` instruct deducting contributions first, but the the secondary summary monthly table is defined on **monthly gross salary**. This skill applies the the secondary summary banded table to **gross salary** for the band determination (the literal the secondary summary reading) in all worked examples, and flags the alternative (contributions-first) method here. The precise mechanics of the phased deductions in the 50,000–60,000 band reportedly depend on standard annual deduction tiers (600,000 / 420,000 / 360,000 ALL); a licensed Albanian accountant must confirm the exact formula against current GDT Albanian-language guidance and the payroll software.
 
 ## Section 3 -- Social and Health Insurance -- Employee Deductions
 
-Employee contributions total **11.2%** of gross, split between social insurance and health insurance, withheld by the employer (PwC — Other taxes).
+Employee contributions total **11.2%** of gross, split between social insurance and health insurance, withheld by the employer (secondary summary, Other taxes).
 
-**Employee deductions table**  _(PwC)_
+**Employee deductions table**  _(secondary summary)_
 
 | Contribution | Employee rate | Base | Source |
 | --- | --- | --- | --- |
-| Social insurance (pension/social) | 9.5% | Monthly gross between floor 40,000 ALL and ceiling 176,416 ALL (2025) | PwC; HLB Albania |
-| Health insurance | 1.7% | **Full** monthly gross — no floor, no ceiling | PwC |
-| **Total employee** | **11.2%** | see component bases | PwC |
+| Social insurance (pension/social) | 9.5% | Monthly gross between floor 40,000 ALL and ceiling 176,416 ALL (2025) | secondary summary; HLB Albania |
+| Health insurance | 1.7% | **Full** monthly gross — no floor, no ceiling | secondary summary |
+| **Total employee** | **11.2%** | see component bases | secondary summary |
 
 - **Column check** — 9.5% + 1.7% = 11.2% ✓ (Self-verified.)  _(Self-verified)_
-- **Social component floor/ceiling** — The 9.5% social component is capped at the ceiling (176,416 ALL) and floored at 40,000 ALL (2025).  _(PwC; HLB Albania)_
-- **Health component no cap/floor** — The 1.7% health component is assessed on full gross with no cap or floor.  _(PwC)_
+- **Social component floor/ceiling** — The 9.5% social component is capped at the ceiling (176,416 ALL) and floored at 40,000 ALL (2025).  _(secondary summary; HLB Albania)_
+- **Health component no cap/floor** — The 1.7% health component is assessed on full gross with no cap or floor.  _(secondary summary)_
 
 ## Section 4 -- Social and Health Insurance -- Employer Contributions
 
-Employer contributions total **16.7%** of gross (PwC — Other taxes).
+Employer contributions total **16.7%** of gross (secondary summary, Other taxes).
 
-**Employer contributions table**  _(PwC)_
+**Employer contributions table**  _(secondary summary)_
 
 | Contribution | Employer rate | Base | Source |
 | --- | --- | --- | --- |
-| Social insurance (pension/social) | 15% | Monthly gross between floor 40,000 ALL and ceiling 176,416 ALL (2025) | PwC; HLB Albania |
-| Health insurance | 1.7% | **Full** monthly gross — no floor, no ceiling | PwC |
-| **Total employer** | **16.7%** | see component bases | PwC |
+| Social insurance (pension/social) | 15% | Monthly gross between floor 40,000 ALL and ceiling 176,416 ALL (2025) | secondary summary; HLB Albania |
+| Health insurance | 1.7% | **Full** monthly gross — no floor, no ceiling | secondary summary |
+| **Total employer** | **16.7%** | see component bases | secondary summary |
 
 - **Column check** — 15% + 1.7% = 16.7% ✓ (Self-verified.)  _(Self-verified)_
 
@@ -124,12 +124,12 @@ Employer contributions total **16.7%** of gross (PwC — Other taxes).
 
 ### 4.2 Self-employed (reference only — not employer payroll)
 
-**Self-employed contributions table**  _(PwC — Other taxes; PwC; HLB Albania)_
+**Self-employed contributions table**  _(secondary summary, Other taxes; secondary summary; HLB Albania)_
 
 | Contribution | Rate | Base | Source |
 | --- | --- | --- | --- |
-| Self-employed (non-agriculture) social insurance | 23% (combined) | Not less than the minimum salary; minimum monthly base 40,000 ALL (2025) | PwC — Other taxes |
-| Self-employed health insurance | 3.4% (combined) | Not less than twice the minimum salary (≈ 80,000 ALL in 2025) | PwC; HLB Albania |
+| Self-employed (non-agriculture) social insurance | 23% (combined) | Not less than the minimum salary; minimum monthly base 40,000 ALL (2025) | secondary summary, Other taxes |
+| Self-employed health insurance | 3.4% (combined) | Not less than twice the minimum salary (≈ 80,000 ALL in 2025) | secondary summary; HLB Albania |
 
 > **[RESEARCH GAP — reviewer to confirm]** The self-employed health base of "twice the minimum salary" is stated as 100,000 ALL in 2026 sources (2× the 2026 minimum of 50,000). The 2025 equivalent (2× 40,000 = 80,000 ALL) was not directly confirmed from a primary source for 2025. Self-employed payroll is out of scope for this skill — see `albania-income-tax` / `albania-self-employed` for the self-employed regime.
 
@@ -140,9 +140,9 @@ Employer contributions total **16.7%** of gross (PwC — Other taxes).
 | Item | 2025 value | Source |
 | --- | --- | --- |
 | National minimum wage | 40,000 ALL/month gross (in force since March 2023, based on 174 normal working hours/month) | HLB Albania; Karanovic & Partners |
-| Social-insurance floor | 40,000 ALL/month (equal to minimum wage) | PwC; HLB Albania |
+| Social-insurance floor | 40,000 ALL/month (equal to minimum wage) | secondary summary; HLB Albania |
 | Social-insurance ceiling | 176,416 ALL/month (indexed with the minimum wage) | HLB Albania; rate guides |
-| Health-insurance base | Full gross — no floor, no ceiling | PwC |
+| Health-insurance base | Full gross — no floor, no ceiling | secondary summary |
 
 ### 5.1 2026 change (forward-looking, NOT applied to 2025 payroll)
 
@@ -154,12 +154,12 @@ Employer contributions total **16.7%** of gross (PwC — Other taxes).
 
 When inputs are ambiguous, apply these defaults and flag the assumption to the user:
 
-- **1. Monthly withholding table** — Use the PwC 2025 monthly table (50,000 / 60,000 / 200,000 ALL break-points), NOT the outdated table on the tatime.gov.al English page (30,000 / 150,000 / 15,600 ALL), which reflects the pre-2024 Law 8438/1998 regime.  _(PwC; caveat Section 11)_
+- **1. Monthly withholding table** — Use the the secondary summary 2025 monthly table (50,000 / 60,000 / 200,000 ALL break-points), NOT the outdated table on the tatime.gov.al English page (30,000 / 150,000 / 15,600 ALL), which reflects the pre-2024 Law 8438/1998 regime.  _(secondary summary; caveat Section 11)_
 - **2. Contribution base (2025)** — Apply social-insurance floor 40,000 ALL and ceiling 176,416 ALL. For periods from 1 January 2026, the floor becomes 50,000 ALL and the ceiling rises (exact 2026 ceiling unresolved — see Section 5.1).
 - **3. Health insurance base** — The 1.7% employer + 1.7% employee health components are computed on full gross with no cap or floor; apply the cap/floor only to the 15%/9.5% social-insurance components.
-- **4. PIT band determination** — Determine the PIT band from monthly gross salary per the PwC table. (The alternative — deducting 11.2% contributions before PIT — is flagged as a research gap in Section 2.3; do not silently switch methods.)
+- **4. PIT band determination** — Determine the PIT band from monthly gross salary per the the secondary summary table. (The alternative — deducting 11.2% contributions before PIT — is flagged as a research gap in Section 2.3; do not silently switch methods.)
 - **5. Currency** — All amounts in ALL. Never assume EUR.
-- **6. Residence** — Assume the employee is an Albanian tax resident unless told otherwise (worldwide-income basis). For non-residents, only Albania-sourced employment income is taxed.  _(PwC)_
+- **6. Residence** — Assume the employee is an Albanian tax resident unless told otherwise (worldwide-income basis). For non-residents, only Albania-sourced employment income is taxed.  _(secondary summary)_
 
 ## Section 7 -- Required Inputs and Refusal Catalogue
 
@@ -185,7 +185,7 @@ When inputs are ambiguous, apply these defaults and flag the assumption to the u
 | Salary stated in EUR or another currency | **Refuse to compute.** Ask for the ALL gross amount (or the FX basis the employer uses). |
 | Pay period in 2026 or later | Compute using 2025 figures **only if** the user confirms; otherwise flag that the floor (50,000 ALL) and ceiling changed and the 2026 ceiling is unresolved (Section 5.1). |
 | Employee may be a non-resident | Confirm residence; do not apply worldwide basis to a non-resident. |
-| User asks for the "official" monthly table and quotes the tatime.gov.al 30,000/150,000 figures | Do not use them — explain they are the pre-2024 regime; use the PwC 2025 table (Section 11). |
+| User asks for the "official" monthly table and quotes the tatime.gov.al 30,000/150,000 figures | Do not use them — explain they are the pre-2024 regime; use the the secondary summary 2025 table (Section 11). |
 | Self-employed / sole trader, not an employee | Out of scope — direct to the self-employed/income-tax skill (Section 4.2). |
 | Request to compute exact penalty amounts for late filing / unregistered workers | State the 10% late-payment penalty + interest (sourced) and flag that exact administrative-fine figures are unconfirmed (Section 10). |
 | Net-to-gross "gross-up" with a target net | Possible but iterative; state that the result is an estimate and that the contributions-vs-PIT ordering gap (Section 2.3) affects the answer. |
@@ -230,7 +230,7 @@ Deterministic classification of typical Albanian bank-statement lines (descripti
 
 ## Section 9 -- Worked Examples
 
-All figures in ALL, tax year 2025. Social base = gross clamped to [40,000 ; 176,416]; health base = full gross; PIT per the PwC monthly table (Section 2.2). Each line is recomputed end-to-end below.
+All figures in ALL, tax year 2025. Social base = gross clamped to [40,000 ; 176,416]; health base = full gross; PIT per the the secondary summary monthly table (Section 2.2). Each line is recomputed end-to-end below.
 
 ### Example A — Gross 45,000 ALL/month (within social band, below PIT threshold)
 
@@ -346,26 +346,26 @@ A part-time / partial-month wage can be below the 40,000 ALL social floor. The *
 
 ## Section 10 -- Tier 1 Rules (deterministic — apply mechanically)
 
-- **PIT rate bands (annual)** — PIT exists on employment income; 13% up to 2,040,000 ALL/year, 23% above  _(PwC; KPMG)_
-- **Monthly withholding table to use** — Use the PwC 2025 monthly withholding table (break-points 50,000 / 60,000 / 200,000 ALL), not the pre-2024 tatime.gov.al English table (Section 11)  _(PwC)_
-- **Salary ≤ 50,000 ALL/month** — 0% PIT  _(PwC)_
-- **Salary 50,001–60,000 ALL/month** — 0% on first 35,000, 13% on the excess  _(PwC)_
-- **Salary > 60,000 ALL/month** — 0% on first 30,000, 13% on 30,001–200,000, then 22,100 ALL + 23% on the excess over 200,000  _(PwC)_
-- **Employer contributions rate** — 16.7% (15% social + 1.7% health)  _(PwC)_
-- **Employee contributions rate** — 11.2% (9.5% social + 1.7% health)  _(PwC)_
-- **Combined employer + employee burden** — 27.9%  _(PwC; arithmetic verified Section 4.1)_
+- **PIT rate bands (annual)** — PIT exists on employment income; 13% up to 2,040,000 ALL/year, 23% above  _(secondary summary; KPMG)_
+- **Monthly withholding table to use** — Use the the secondary summary 2025 monthly withholding table (break-points 50,000 / 60,000 / 200,000 ALL), not the pre-2024 tatime.gov.al English table (Section 11)  _(secondary summary)_
+- **Salary ≤ 50,000 ALL/month** — 0% PIT  _(secondary summary)_
+- **Salary 50,001–60,000 ALL/month** — 0% on first 35,000, 13% on the excess  _(secondary summary)_
+- **Salary > 60,000 ALL/month** — 0% on first 30,000, 13% on 30,001–200,000, then 22,100 ALL + 23% on the excess over 200,000  _(secondary summary)_
+- **Employer contributions rate** — 16.7% (15% social + 1.7% health)  _(secondary summary)_
+- **Employee contributions rate** — 11.2% (9.5% social + 1.7% health)  _(secondary summary)_
+- **Combined employer + employee burden** — 27.9%  _(secondary summary; arithmetic verified Section 4.1)_
 - **2025 social base floor/ceiling** — floor 40,000 ALL, ceiling 176,416 ALL; cap/floor apply ONLY to the 15%/9.5% social components  _(HLB Albania; rate guides)_
-- **Health components basis** — Health components (1.7% each) are on full gross — no floor, no ceiling  _(PwC)_
+- **Health components basis** — Health components (1.7% each) are on full gross — no floor, no ceiling  _(secondary summary)_
 - **2025 minimum wage** — 40,000 ALL/month  _(HLB Albania; Karanovic & Partners)_
-- **Monthly payroll declaration deadline** — Monthly payroll list (PIT + social + health) declared and paid electronically by the 20th of the following month  _(PwC; tatime.gov.al)_
-- **DIVA annual return deadline** — DIVA annual return due 31 March of the following year; balance of tax also due 31 March  _(PwC)_
+- **Monthly payroll declaration deadline** — Monthly payroll list (PIT + social + health) declared and paid electronically by the 20th of the following month  _(secondary summary; tatime.gov.al)_
+- **DIVA annual return deadline** — DIVA annual return due 31 March of the following year; balance of tax also due 31 March  _(secondary summary)_
 - **Employer/employee registration requirement** — Employers (including foreign companies without a local entity) must register with the GDT and register each employee at least one day before work starts  _(Rivermate; tatime.gov.al)_
 - **Late payment penalty** — Late payment of tax/contributions → 10% penalty + default interest under the Law on Tax Procedures (No. 9920/2008)  _(Playroll; statute)_
 
 ## Section 11 -- Tier 2 Catalogue (reviewer judgement required)
 
 These items require a licensed Albanian accountant's judgement and/or confirmation against primary sources before reliance.
-1. **Monthly bracket discrepancy.** The tatime.gov.al English page still displays an **outdated** monthly table (0% to 30,000; 13% on 30,001–150,000; 15,600 ALL + 23% over 150,000) reflecting the pre-2024 **Law 8438/1998** regime. The current 2025 structure (Law 29/2023) is the **PwC** table used in this skill (50,000 / 60,000 / 200,000 break-points). A reviewer should confirm the exact monthly withholding formula against current GDT Albanian-language guidance and the payroll software, including the phased-deduction mechanics of the 50,000–60,000 band (reportedly linked to standard annual deduction tiers of 600,000 / 420,000 / 360,000 ALL).
+1. **Monthly bracket discrepancy.** The tatime.gov.al English page still displays an **outdated** monthly table (0% to 30,000; 13% on 30,001–150,000; 15,600 ALL + 23% over 150,000) reflecting the pre-2024 **Law 8438/1998** regime. The current 2025 structure (Law 29/2023) is the **The secondary summary** table used in this skill (50,000 / 60,000 / 200,000 break-points). A reviewer should confirm the exact monthly withholding formula against current GDT Albanian-language guidance and the payroll software, including the phased-deduction mechanics of the 50,000–60,000 band (reportedly linked to standard annual deduction tiers of 600,000 / 420,000 / 360,000 ALL).
 2. **Contributions-vs-PIT ordering** (Section 2.3) — confirm whether the 11.2% employee contributions are deducted before PIT.
 3. **2026 social ceiling** (Section 5.1) — HLB (186,416 ALL) vs Karanovic/secondary (220,520 ALL); confirm from ISSH/GDT before applying any 2026 period.
 4. **Penalty amounts** (Section 10, rule 15 and below) — the 10% late-payment penalty + interest is from secondary summaries; exact administrative fines for late payroll declaration and for unregistered workers must be confirmed against the primary text of Law No. 9920/2008.
@@ -374,39 +374,39 @@ These items require a licensed Albanian accountant's judgement and/or confirmati
 
 ### 12.1 Monthly — Payroll list ("Lista e pagave")
 
-**Monthly payroll list filing table**  _(PwC; tatime.gov.al; Rivermate)_
+**Monthly payroll list filing table**  _(secondary summary; tatime.gov.al; Rivermate)_
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
-| Monthly payroll / withholding & contributions declaration ("Lista e pagave") | Declare and pay employees' PIT withheld plus employer + employee social and health contributions, filed electronically via the GDT portal | By the **20th** of the month following the payroll period | PwC; tatime.gov.al; Rivermate |
+| Monthly payroll / withholding & contributions declaration ("Lista e pagave") | Declare and pay employees' PIT withheld plus employer + employee social and health contributions, filed electronically via the GDT portal | By the **20th** of the month following the payroll period | secondary summary; tatime.gov.al; Rivermate |
 
 ### 12.2 Annual — DIVA
 
-**Annual DIVA filing table**  _(PwC — Tax administration; tatime.gov.al)_
+**Annual DIVA filing table**  _(secondary summary, Tax administration; tatime.gov.al)_
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
-| Annual Individual Income Declaration — DIVA (Deklarata Individuale Vjetore e te Ardhurave) | Year-end reconciliation of total income; balance of tax due | **31 March** of the year following the tax year | PwC — Tax administration; tatime.gov.al |
+| Annual Individual Income Declaration — DIVA (Deklarata Individuale Vjetore e te Ardhurave) | Year-end reconciliation of total income; balance of tax due | **31 March** of the year following the tax year | secondary summary, Tax administration; tatime.gov.al |
 
-- **DIVA filing triggers** — Resident with annual taxable income over 1,200,000 ALL; or individuals with more than one employer (any amount); or other non-final-withholding income over 50,000 ALL. Self-employed / traders always file.  _(PwC — Tax administration)_
+- **DIVA filing triggers** — Resident with annual taxable income over 1,200,000 ALL; or individuals with more than one employer (any amount); or other non-final-withholding income over 50,000 ALL. Self-employed / traders always file.  _(secondary summary, Tax administration)_
 
 ## Section 13 -- Thresholds Reference Table
 
-**Thresholds Reference Table**  _(PwC; KPMG; HLB Albania; Karanovic & Partners; tatime.gov.al; Council of Ministers Decision No. 776/2025)_
+**Thresholds Reference Table**  _(the secondary summary; KPMG; HLB Albania; Karanovic & Partners; tatime.gov.al; Council of Ministers Decision No. 776/2025)_
 
 | Threshold | Value | Source |
 | --- | --- | --- |
-| Annual PIT rate threshold (13% → 23%) | 2,040,000 ALL annual taxable employment income | PwC; KPMG |
-| Monthly fully-exempt salary ceiling | 50,000 ALL/month (≤ this is 0% PIT) | PwC |
-| Monthly 23% cutover | 200,000 ALL/month taxable salary | PwC |
-| Social-insurance floor (2025) | 40,000 ALL/month | PwC; HLB Albania; rate guides |
+| Annual PIT rate threshold (13% → 23%) | 2,040,000 ALL annual taxable employment income | secondary summary; KPMG |
+| Monthly fully-exempt salary ceiling | 50,000 ALL/month (≤ this is 0% PIT) | secondary summary |
+| Monthly 23% cutover | 200,000 ALL/month taxable salary | secondary summary |
+| Social-insurance floor (2025) | 40,000 ALL/month | secondary summary; HLB Albania; rate guides |
 | Social-insurance ceiling (2025) | 176,416 ALL/month | HLB Albania; rate guides |
-| Health-insurance base | Full gross — no floor, no ceiling | PwC |
+| Health-insurance base | Full gross — no floor, no ceiling | secondary summary |
 | Minimum wage (2025) | 40,000 ALL/month | HLB Albania; Karanovic & Partners |
 | Minimum wage (from 1 Jan 2026) | 50,000 ALL/month | Council of Ministers Decision No. 776/2025 |
-| DIVA annual filing trigger | Annual income > 1,200,000 ALL, OR any income from > 1 employer, OR other non-final income > 50,000 ALL | PwC — Tax administration |
-| Monthly declaration deadline | 20th of following month | PwC; tatime.gov.al |
-| DIVA deadline | 31 March following year | PwC |
+| DIVA annual filing trigger | Annual income > 1,200,000 ALL, OR any income from > 1 employer, OR other non-final income > 50,000 ALL | secondary summary, Tax administration |
+| Monthly declaration deadline | 20th of following month | secondary summary; tatime.gov.al |
+| DIVA deadline | 31 March following year | secondary summary |
 
 Sanity check: ceiling (176,416) ≥ floor (40,000) ✓; all rates 1.7%–23% are plausible payroll percentages ✓. (Self-verified.)
 
@@ -506,10 +506,10 @@ If any required input is missing, state what is missing and **do not** fabricate
 
 | # | Title | Publisher | URL |
 | --- | --- | --- | --- |
-| 1 | Albania — Individual — Taxes on personal income | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income |
-| 2 | Albania — Individual — Other taxes (social and health insurance) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/albania/individual/other-taxes |
-| 3 | Albania — Individual — Tax administration | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/albania/individual/tax-administration |
-| 4 | Albania — Individual — Significant developments | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/albania/individual/significant-developments |
+| 1 | Albania — Individual — Taxes on personal income | secondary summary | |
+| 2 | Albania — Individual — Other taxes (social and health insurance) | secondary summary | |
+| 3 | Albania — Individual — Tax administration | secondary summary | |
+| 4 | Albania — Individual — Significant developments | secondary summary | |
 | 5 | Taxation of Employment Income in 2024 | KPMG Albania | https://kpmg.com/al/en/insights/2023/09/taxation-of-employment-income-in-2024.html |
 | 6 | Increase of the Minimum Wage in Albania from 1 January 2026 | HLB Albania | https://www.hlb.al/increase-of-the-minimum-wage-in-albania-from-1-january-2026-what-changes-for-employers-and-employees/ |
 | 7 | Albania Adopts New Decision on National Minimum Wage (No. 776/2025) | Karanovic & Partners | https://www.karanovicpartners.com/news/albania-adopts-new-decision-on-national-minimum-wage/ |
@@ -537,7 +537,7 @@ If any required input is missing, state what is missing and **do not** fabricate
 ## PROHIBITIONS
 
 - **Non-ALL currency refusal** — NEVER compute Albanian payroll in EUR or any non-ALL currency — refuse and ask for the ALL gross.
-- **Outdated monthly table prohibition** — NEVER use the outdated tatime.gov.al English monthly table (30,000 / 150,000 / 15,600) — it reflects the pre-2024 Law 8438/1998 regime; use the PwC 2025 table.
+- **Outdated monthly table prohibition** — NEVER use the outdated tatime.gov.al English monthly table (30,000 / 150,000 / 15,600) — it reflects the pre-2024 Law 8438/1998 regime; use the the secondary summary 2025 table.
 - **Floor/ceiling not applicable to health** — NEVER apply the social-insurance floor/ceiling to the health-insurance components — health (1.7% each) is on full gross with no cap or floor.
 - **No health cap** — NEVER apply the 1.7% health cap — there is none.
 - **2025 figures not for 2026 without flag** — NEVER apply 2025 figures (floor 40,000 / ceiling 176,416 / min wage 40,000) to a 2026 or later period without flagging the 1 Jan 2026 changes and the unresolved 2026 ceiling.

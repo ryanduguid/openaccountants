@@ -1,10 +1,10 @@
 ---
 name: albania-income-tax
 description: Use this skill whenever asked about Albania personal income tax for self-employed individuals and employees. Trigger on phrases like "how much tax do I pay in Albania", "Albanian income tax", "DIVA", "D1 annual return", "tatime.gov.al", "self-employed Albania", "ALL tax brackets", "0% small business tax", "social and health contributions Albania", "PAYE Albania", "13% 23% income tax", "dividend tax Albania", "disguised employment", or any question about filing or computing personal income tax for a resident or non-resident individual in Albania. Also trigger when preparing or reviewing an annual individual return, computing the 0%/15%/23% self-employed regime, applying the monthly PAYE withholding schedule, or advising on social/health contributions. This skill covers progressive employment rates, the self-employed business regime, investment income, social/health contributions, the per-child deduction, filing thresholds, penalties, and interaction with VAT. ALWAYS read this skill before touching any Albanian income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: AL
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Albania Personal Income Tax -- Self-Employed & Individuals
 
-## Albania Personal Income Tax -- Self-Employed & Individuals Skill v0.2
+## Albania Personal Income Tax -- Self-Employed & Individuals Skill v0.3
 
 ## Section 1 -- Quick Reference
 
@@ -26,20 +26,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Albania (Republic of Albania) |
 | Tax | Personal income tax (Tatimi mbi të Ardhurat Personale) |
 | Currency | ALL only (Albanian lek) |
-| Tax year | Calendar year (1 January -- 31 December) [PwC: Tax administration] |
+| Tax year | Calendar year (1 January -- 31 December) [secondary summary, Tax administration] |
 | Primary legislation | Law No. 29/2023, dated 30.03.2023, "On Income Tax" (effective 1 Jan 2024; repealed Law No. 8438/1998) |
 | Supporting legislation | General Instruction No. 26, dated 08.09.2023 (implementing); Law No. 7703/1993 "On Social Insurance" (as amended); Law No. 10383/2011 (health insurance); Law No. 9920/2008 "On Tax Procedures" (as amended) |
 | Tax authority | General Directorate of Taxes / Albanian Tax Administration (Drejtoria e Përgjithshme e Tatimeve, DPT) |
 | Filing portal | tatime.gov.al e-filing |
-| Annual return deadline | 31 March of the following year (e.g. 31 March 2026 for 2025) [PwC; tatime.gov.al] |
+| Annual return deadline | 31 March of the following year (e.g. 31 March 2026 for 2025) [secondary summary; tatime.gov.al] |
 | Validated by | Pending — requires sign-off by an Albanian-qualified accountant/tax advisor |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 | Research confidence | Medium — several figures flagged [RESEARCH GAP] below require reviewer confirmation against current Council of Ministers (CoM) decisions and General Instruction No. 26/2023 |
 
 ### Tax Rate Brackets (2025)
 
-**Employment income — ANNUAL (year-end reconciliation)**  _([Law 29/2023; PwC: Taxes on personal income])_
+**Employment income — ANNUAL (year-end reconciliation)**  _([Law 29/2023; secondary summary, Taxes on personal income])_
 
 | Annual Taxable Income (ALL) | Rate | Cumulative Tax at Top |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Cumulative check: 2,040,000 × 13% = ALL 265,200. Above the breakpoint, tax = 265,200 + 23% × (income − 2,040,000). A personal allowance reduces the taxable base at lower incomes — see the monthly schedule below.
 
-**Employment income — MONTHLY withholding (PAYE) schedule (official tatime.gov.al table)**  _([tatime.gov.al: Tax on personal income; PwC])_
+**Employment income — MONTHLY withholding (PAYE) schedule (official tatime.gov.al table)**  _([tatime.gov.al: Tax on personal income; secondary summary])_
 
 | Monthly Gross (ALL) | Tax |
 | --- | --- |
@@ -59,9 +59,9 @@ Cumulative check: 2,040,000 × 13% = ALL 265,200. Above the breakpoint, tax = 26
 
 Arithmetic check on the ALL 22,100 base: at monthly gross ALL 200,000 the prior-band tax = 13% × (200,000 − 30,000) = 13% × 170,000 = ALL 22,100. Consistent.
 
-[RESEARCH GAP — reviewer to confirm] The monthly 23% breakpoint (ALL 200,000/month = ALL 2,400,000/year) does NOT line up with the annual 23% breakpoint (ALL 2,040,000/year = ALL 170,000/month). The research notes two different official presentations of the monthly table (a simplified 0/13/23 version on tatime.gov.al vs. the allowance-phase-out version above from PwC). Reconcile both against General Instruction No. 26/2023 for the authoritative monthly algorithm before relying on month-by-month figures; the year-end reconciliation uses the annual 13%/23% brackets.
+[RESEARCH GAP — reviewer to confirm] The monthly 23% breakpoint (ALL 200,000/month = ALL 2,400,000/year) does NOT line up with the annual 23% breakpoint (ALL 2,040,000/year = ALL 170,000/month). The research notes two different official presentations of the monthly table (a simplified 0/13/23 version on tatime.gov.al vs. the allowance-phase-out version above from the secondary summary). Reconcile both against General Instruction No. 26/2023 for the authoritative monthly algorithm before relying on month-by-month figures; the year-end reconciliation uses the annual 13%/23% brackets.
 
-**Self-employed / business / trader income — ANNUAL taxable profit**  _([HLB Albania; PwC])_
+**Self-employed / business / trader income — ANNUAL taxable profit**  _([HLB Albania; secondary summary])_
 
 | Annual Taxable Profit (ALL) | Statutory Rate | Effective Rate 2025 |
 | --- | --- | --- |
@@ -70,7 +70,7 @@ Arithmetic check on the ALL 22,100 base: at monthly gross ALL 200,000 the prior-
 
 Self-employed and registered entrepreneurs with annual turnover up to ALL 14,000,000 enjoy a 0% rate until 31 December 2029 (statutory rate 15%); profit above ALL 14,000,000 is taxed at 23%. Subject to profession-based exclusions (CoM Decision No. 753) and the anti-disguised-employment rule below.
 
-**Investment income**  _([PwC; HLB Albania])_
+**Investment income**  _([secondary summary; HLB Albania])_
 
 | Type | Rate |
 | --- | --- |
@@ -83,8 +83,8 @@ Self-employed and registered entrepreneurs with annual turnover up to ALL 14,000
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown residency | Treat as Albanian tax resident (worldwide income); non-residents taxed on Albania-source income only [PwC] |
-| Unknown self-employed eligibility for 0% band | Do NOT assume 0% — confirm turnover ≤ ALL 14m AND activity not on CoM Decision 753 excluded list AND no disguised-employment reclassification [PwC] |
+| Unknown residency | Treat as Albanian tax resident (worldwide income); non-residents taxed on Albania-source income only [secondary summary] |
+| Unknown self-employed eligibility for 0% band | Do NOT assume 0% — confirm turnover ≤ ALL 14m AND activity not on CoM Decision 753 excluded list AND no disguised-employment reclassification [secondary summary] |
 | Single-client / few-client self-employment | Apply disguised-employment reclassification (employment rates 13%/23%) unless proven otherwise [HLB Albania] |
 | Unknown contribution base ceiling | Use the year's official CoM-decision floor/ceiling; verify before computing; health insurance has NO ceiling [Eurofast Payroll Guide 2025] |
 | Unknown business-use % (vehicle, phone, home) | 0% deduction |
@@ -263,7 +263,7 @@ Monthly gross ALL 250,000 → top band (200,001+): PIT = ALL 22,100 + 23% on the
 Annual turnover ALL 9,500,000 ≤ ALL 14,000,000, activity confirmed eligible (not on CoM Decision 753 list) and no disguised-employment reclassification.
 - Taxable profit = 9,500,000 − 3,200,000 = ALL 6,300,000
 - PIT rate = **0% until 31 Dec 2029** → income tax = **ALL 0**
-- Note: self-employed social insurance 23% and health 3.4% still apply on their statutory bases (Section 5). On a monthly base of ALL 50,000: social = 23% × 50,000 = ALL 11,500/month; health = 3.4% × 100,000 = ALL 3,400/month [PwC: other taxes].
+- Note: self-employed social insurance 23% and health 3.4% still apply on their statutory bases (Section 5). On a monthly base of ALL 50,000: social = 23% × 50,000 = ALL 11,500/month; health = 3.4% × 100,000 = ALL 3,400/month [secondary summary, other taxes].
 
 **Classification:** Self-employed business profit ALL 6,300,000; income tax ALL 0 (0% band); contributions due separately.
 
@@ -321,15 +321,15 @@ Because ≥80% of the self-employed income is from a single client, the anti-dis
 
 ### 5.1 Tax Year and Residency
 
-- **Tax year and residency** — The tax year is the calendar year (1 Jan – 31 Dec). Residents are taxed on worldwide income; non-residents on Albania-source income only.  _(Law No. 29/2023, "On Income Tax" [PwC: Taxes on personal income])_
+- **Tax year and residency** — The tax year is the calendar year (1 Jan – 31 Dec). Residents are taxed on worldwide income; non-residents on Albania-source income only.  _(Law No. 29/2023, "On Income Tax" [secondary summary, Taxes on personal income])_
 
 ### 5.2 Employment Income — Progressive Rates
 
-- **Employment progressive rates** — Annual taxable employment income: 13% up to ALL 2,040,000; 23% on the excess (cumulative tax at the breakpoint = ALL 265,200). In-year withholding uses the monthly PAYE schedule (Section 1); year-end reconciliation applies the annual brackets.  _(Law 29/2023 (effective 1 Jan 2024, continuing 2025) [Law 29/2023; PwC; tatime.gov.al])_
+- **Employment progressive rates** — Annual taxable employment income: 13% up to ALL 2,040,000; 23% on the excess (cumulative tax at the breakpoint = ALL 265,200). In-year withholding uses the monthly PAYE schedule (Section 1); year-end reconciliation applies the annual brackets.  _(Law 29/2023 (effective 1 Jan 2024, continuing 2025) [Law 29/2023; secondary summary; tatime.gov.al])_
 
 ### 5.3 Self-Employed / Business Income
 
-- **Self-employed / business income rate** — Statutory rate 15% on profit up to ALL 14,000,000 and 23% above — BUT a 0% rate applies to the up-to-ALL-14m band until 31 December 2029. Profit above ALL 14,000,000 is taxed at 23%.  _(Law 29/2023; HLB Albania commentary [HLB Albania; PwC])_
+- **Self-employed / business income rate** — Statutory rate 15% on profit up to ALL 14,000,000 and 23% above — BUT a 0% rate applies to the up-to-ALL-14m band until 31 December 2029. Profit above ALL 14,000,000 is taxed at 23%.  _(Law 29/2023; HLB Albania commentary [HLB Albania; secondary summary, ])_
 
 ### 5.4 Anti-Disguised-Employment Rule
 
@@ -341,12 +341,12 @@ Because ≥80% of the self-employed income is from a single client, the anti-dis
 
 | Type | Rate |
 | --- | --- |
-| Dividends | 8% [PwC; HLB] |
-| Interest, royalties, rental income, capital gains (real estate & securities), crypto, other | 15% [PwC: income determination; HLB] |
+| Dividends | 8% [secondary summary; HLB] |
+| Interest, royalties, rental income, capital gains (real estate & securities), crypto, other | 15% [secondary summary, income determination; HLB] |
 
 ### 5.6 Social and Health Contributions — Employees
 
-**Social and health contributions — employees table**  _(Law No. 7703/1993 (social insurance); Law No. 10383/2011 (health) [PwC: other taxes])_
+**Social and health contributions — employees table**  _(Law No. 7703/1993 (social insurance); Law No. 10383/2011 (health) [secondary summary, other taxes])_
 
 | Contribution | Employee | Employer |
 | --- | --- | --- |
@@ -354,13 +354,13 @@ Because ≥80% of the self-employed income is from a single client, the anti-dis
 | Health insurance | 1.7% | 1.7% |
 | **TOTAL** | **11.2%** | **16.7%** |
 
-*Column checks: employee 9.5 + 1.7 = 11.2%; employer 15.0 + 1.7 = 16.7%; combined employer + employee = 11.2 + 16.7 = 27.9%.* [PwC: other taxes]
+*Column checks: employee 9.5 + 1.7 = 11.2%; employer 15.0 + 1.7 = 16.7%; combined employer + employee = 11.2 + 16.7 = 27.9%.* [secondary summary, other taxes]
 
-Social insurance is computed on a gross monthly base between an annual floor and ceiling set by Council of Ministers decision (2025 floor aligned with the minimum wage ALL 40,000; ceiling ALL 176,416 for 2025 per PwC and HLB Albania; from 1 January 2026 the minimum is ALL 50,000 and the maximum is disputed between ALL 186,416 (PwC, HLB) and ALL 220,520 (the ARS reading of DCM No. 776), see albania-social-contributions.md). Health insurance (1.7% each side) has **no ceiling** — it applies to full gross. [PwC; Eurofast Payroll Guide 2025]
+Social insurance is computed on a gross monthly base between an annual floor and ceiling set by Council of Ministers decision (2025 floor aligned with the minimum wage ALL 40,000; ceiling ALL 176,416 for 2025 per the secondary summary and HLB Albania; from 1 January 2026 the minimum is ALL 50,000 and the maximum is disputed between ALL 186,416 (the secondary summary, HLB) and ALL 220,520 (the ARS reading of DCM No. 776), see albania-social-contributions.md). Health insurance (1.7% each side) has **no ceiling** — it applies to full gross. [secondary summary; Eurofast Payroll Guide 2025]
 
 ### 5.7 Social and Health Contributions — Self-Employed (non-agricultural)
 
-**Social and health contributions — self-employed table**  _([PwC: other taxes])_
+**Social and health contributions — self-employed table**  _([secondary summary, other taxes])_
 
 | Contribution | Rate | Base |
 | --- | --- | --- |
@@ -373,7 +373,7 @@ Social insurance is computed on a gross monthly base between an annual floor and
 
 ### 5.9 Filing Thresholds
 
-- **Annual filing thresholds** — The annual individual return is mandatory if ANY of: Annual income > ALL 1,200,000 from all sources; OR the taxpayer had multiple employers (any income level); OR more than ALL 50,000 of income not subject to final withholding. Self-employed persons must always file.  _([PwC: tax administration; tatime.gov.al; HLB])_
+- **Annual filing thresholds** — The annual individual return is mandatory if ANY of: Annual income > ALL 1,200,000 from all sources; OR the taxpayer had multiple employers (any income level); OR more than ALL 50,000 of income not subject to final withholding. Self-employed persons must always file.  _([secondary summary, tax administration; tatime.gov.al; HLB])_
 
 ### 5.10 Deadlines and Penalties
 
@@ -381,8 +381,8 @@ Social insurance is computed on a gross monthly base between an annual floor and
 
 | Item | Detail |
 | --- | --- |
-| Annual return (D1 / DIVA) | 31 March of the following year; final tax due same date [PwC; tatime.gov.al] |
-| Monthly payroll & withholding declaration | E-filed by the 20th of the following month [PwC] |
+| Annual return (D1 / DIVA) | 31 March of the following year; final tax due same date [secondary summary; tatime.gov.al] |
+| Monthly payroll & withholding declaration | E-filed by the 20th of the following month [secondary summary] |
 | Late filing — individual taxpayer | ALL 3,000 (plus interest) [HLB; tatime.gov.al] |
 | Late filing — income-tax-registered taxpayer | ALL 10,000 [tatime.gov.al] |
 | Late filing — other taxpayers (non-individual) | ALL 5,000 [tatime.gov.al] |
@@ -541,7 +541,7 @@ ONBOARDING QUESTIONS -- ALBANIA INCOME TAX
 | Tax procedures / penalties | Law No. 9920/2008 (as amended; note Law No. 79/2025 from Jan 2026) |
 | Minimum wage 2025 | ALL 40,000/month [ARS; HLB] |
 | Minimum wage 2026 | ALL 50,000/month (CoM Decision No. 776, dated 19.12.2025) [ARS; HLB] |
-| VAT registration threshold | Turnover > ALL 10,000,000 (register within 15 days); standard VAT 20% [PwC; tatime.gov.al] |
+| VAT registration threshold | Turnover > ALL 10,000,000 (register within 15 days); standard VAT 20% [secondary summary; tatime.gov.al] |
 | Filing portal & monthly table | tatime.gov.al |
 
 ### Forms
@@ -550,8 +550,8 @@ ONBOARDING QUESTIONS -- ALBANIA INCOME TAX
 
 | Form | Purpose | Deadline |
 | --- | --- | --- |
-| Annual Individual Income Declaration (Deklarata Individuale Vjetore e të Ardhurave — D1 / "DIVA") | Annual PIT return (residents worldwide, certain non-residents; high earners, multiple-employer cases, untaxed income) | 31 March of the following year [PwC; tatime.gov.al] |
-| Monthly payroll & withholding declaration | Employer reports/remits withheld PIT and social/health contributions | 20th of the following month [PwC] |
+| Annual Individual Income Declaration (Deklarata Individuale Vjetore e të Ardhurave — D1 / "DIVA") | Annual PIT return (residents worldwide, certain non-residents; high earners, multiple-employer cases, untaxed income) | 31 March of the following year [secondary summary; tatime.gov.al] |
+| Monthly payroll & withholding declaration | Employer reports/remits withheld PIT and social/health contributions | 20th of the following month [secondary summary] |
 
 ### Key Thresholds (with provenance)
 
@@ -560,21 +560,21 @@ ONBOARDING QUESTIONS -- ALBANIA INCOME TAX
 | Threshold | Value | Source |
 | --- | --- | --- |
 | Tax-free monthly employment income | ALL 50,000/month | tatime.gov.al |
-| Employment 23% breakpoint (annual) | ALL 2,040,000 | Law 29/2023; PwC |
+| Employment 23% breakpoint (annual) | ALL 2,040,000 | Law 29/2023; secondary summary |
 | Self-employed 0% PIT turnover ceiling | ALL 14,000,000/year (0% until 31 Dec 2029) | HLB Albania |
-| Annual return mandatory filing | income > ALL 1,200,000 OR multiple employers OR > ALL 50,000 untaxed | PwC; tatime.gov.al; HLB |
+| Annual return mandatory filing | income > ALL 1,200,000 OR multiple employers OR > ALL 50,000 untaxed | secondary summary; tatime.gov.al; HLB |
 | Per-child deduction | ALL 48,000/year/child <18 (income < ALL 1,200,000) | HLB Albania |
 | Children's education deduction | up to ALL 100,000/year (income < ALL 1,200,000) | HLB Albania |
-| VAT registration | turnover > ALL 10,000,000 | PwC; tatime.gov.al |
+| VAT registration | turnover > ALL 10,000,000 | secondary summary; tatime.gov.al |
 | 2025 contribution floor | ALL 40,000/month (= minimum wage) | Eurofast; ARS; HLB |
-| 2025 contribution ceiling | ALL 176,416/month | Eurofast Payroll Guide 2025; HLB Albania; PwC |
+| 2025 contribution ceiling | ALL 176,416/month | Eurofast Payroll Guide 2025; HLB Albania; secondary summary |
 
 ### Sources
 
-1. PwC Worldwide Tax Summaries — Albania, Individual: Taxes on personal income — https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income (reviewed 19 Feb 2026)
-2. PwC — Albania, Individual: Other taxes (social/health contributions) — https://taxsummaries.pwc.com/albania/individual/other-taxes
-3. PwC — Albania, Individual: Tax administration — https://taxsummaries.pwc.com/albania/individual/tax-administration
-4. PwC — Albania, Individual: Income determination — https://taxsummaries.pwc.com/albania/individual/income-determination
+1. Secondary practitioner summary (link removed) — Albania, Individual: Taxes on personal income (reviewed 19 Feb 2026)
+2. Secondary practitioner summary (link removed) — Albania, Individual: Other taxes (social/health contributions)
+3. Secondary practitioner summary (link removed) — Albania, Individual: Tax administration
+4. Secondary practitioner summary (link removed) — Albania, Individual: Income determination
 5. General Directorate of Taxes (tatime.gov.al) — Tax on personal income (official monthly bracket table) — https://www.tatime.gov.al/eng/c/4/96/108/tax-on-personal-income
 6. tatime.gov.al — Value Added Tax — https://www.tatime.gov.al/eng/c/4/96/110/value-added-tax
 7. tatime.gov.al — Key amendments to the law "On tax procedures" (penalties) — https://www.tatime.gov.al/eng/d/8/45/0/627/on-the-key-amendments-to-the-law-on-tax-procedures

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T00:25:18+00:00",
+ "generated_at": "2026-10-11T00:32:45+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -1889,7 +1889,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "albania-payroll",
@@ -1902,7 +1902,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "albania-social-contributions",
@@ -1915,7 +1915,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "albania-tax-optimization",
@@ -1928,7 +1928,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "albania-vat",
@@ -2292,7 +2292,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "am-tax-overview",
@@ -2305,7 +2305,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "armenia-income-tax",
@@ -2318,7 +2318,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "armenia-payroll",
@@ -2331,7 +2331,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-11"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "armenia-social-contributions",
@@ -2344,7 +2344,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-11"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "armenia-tax-optimization",
@@ -2357,7 +2357,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "armenia-vat",
@@ -3059,7 +3059,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "az-corporate-income-tax",
@@ -3072,7 +3072,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "az-tax-overview",
@@ -3085,7 +3085,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "azerbaijan-income-tax",
@@ -3098,7 +3098,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "azerbaijan-payroll",
@@ -3111,7 +3111,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "azerbaijan-social-contributions",
@@ -3124,7 +3124,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "azerbaijan-tax-optimization",
@@ -3137,7 +3137,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "azerbaijan-vat",
@@ -4229,7 +4229,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ba-tax-overview",
@@ -4242,7 +4242,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bosnia-income-tax",
@@ -4255,7 +4255,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bosnia-payroll",
@@ -4268,7 +4268,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bosnia-social-contributions",
@@ -4281,7 +4281,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bosnia-tax-optimization",
@@ -4294,7 +4294,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bosnia-vat",
@@ -4710,7 +4710,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bg-corporate-income-tax",
@@ -4723,7 +4723,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bg-tax-overview",
@@ -4736,7 +4736,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bulgaria-income-tax",
@@ -4749,7 +4749,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bulgaria-payroll",
@@ -4762,7 +4762,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bulgaria-social-contributions",
@@ -4775,7 +4775,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-09"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bulgaria-tax-optimization",
@@ -4788,7 +4788,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bulgaria-vat-return",
@@ -5074,7 +5074,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "cameroon-payroll",
@@ -5087,7 +5087,7 @@
    "reviewed_by": "Nkinyam Courage Ndasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "cameroon-social-contributions",
@@ -5100,7 +5100,7 @@
    "reviewed_by": "Nkinyam Courage Ndasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "cameroon-vat",
@@ -8779,7 +8779,7 @@
    "reviewed_by": "Gvantsa Amiridze, ACCA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ge-tax-overview",
@@ -8792,7 +8792,7 @@
    "reviewed_by": "Gvantsa Amiridze, ACCA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "georgia-income-tax",
@@ -8805,7 +8805,7 @@
    "reviewed_by": "Gvantsa Amiridze, ACCA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "georgia-payroll",
@@ -8818,7 +8818,7 @@
    "reviewed_by": "Gvantsa Amiridze, ACCA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "georgia-social-contributions",
@@ -8831,7 +8831,7 @@
    "reviewed_by": "Gvantsa Amiridze, ACCA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "georgia-tax-optimization",
@@ -8844,7 +8844,7 @@
    "reviewed_by": "Gvantsa Amiridze, ACCA",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "georgia-vat",
@@ -13797,7 +13797,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "md-corporate-income-tax",
@@ -13810,7 +13810,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "md-tax-overview",
@@ -13823,7 +13823,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "moldova-income-tax",
@@ -13836,7 +13836,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "moldova-payroll",
@@ -13849,7 +13849,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "moldova-social-contributions",
@@ -13862,7 +13862,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "moldova-tax-optimization",
@@ -13875,7 +13875,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "moldova-vat",
@@ -14044,7 +14044,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "me-corporate-income-tax",
@@ -14057,7 +14057,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "me-tax-overview",
@@ -14070,7 +14070,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "montenegro-income-tax",
@@ -14083,7 +14083,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "montenegro-payroll",
@@ -14096,7 +14096,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "montenegro-social-contributions",
@@ -14109,7 +14109,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "montenegro-tax-optimization",
@@ -14122,7 +14122,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "montenegro-vat",
@@ -16852,7 +16852,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "rwanda-payroll",
@@ -16865,7 +16865,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "rwanda-social-contributions",
@@ -16878,7 +16878,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "rwanda-vat",
@@ -20700,7 +20700,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "uz-tax-overview",
@@ -20713,7 +20713,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "uzbekistan-income-tax",
@@ -20726,7 +20726,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "uzbekistan-payroll",
@@ -20739,7 +20739,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "uzbekistan-social-contributions",
@@ -20752,7 +20752,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "uzbekistan-tax-optimization",
@@ -20765,7 +20765,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "uzbekistan-vat",
