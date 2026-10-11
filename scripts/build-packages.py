@@ -470,7 +470,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | # | Question |
 |---|----------|
-| 1 | Were you a full-year {country_name} resident in 2025? |
+| 1 | Which tax or accounting period do you need help with, and were you a full-year {country_name} resident for that period? |
 | 2 | What is your business structure? (Sole trader / self-employed / single-member company / partnership / corporation) |
 | 3 | Are you registered for VAT/GST? If yes, what type/scheme? |
 | 4 | Do you have employees? If yes, how many? |
@@ -499,7 +499,7 @@ Accept ANY documents the user provides — not just bank statements:
 - VAT/GST returns already filed
 - Any other tax documents
 
-Say: **"Drop all your documents here — bank statements, invoices, receipts, prior returns. Everything you have for 2025. I can read PDFs, CSVs, images, and spreadsheets."**
+Say: **"Drop all your documents here — bank statements, invoices, receipts, prior returns. Everything you have for the period you selected. I can read PDFs, CSVs, images, and spreadsheets."**
 
 **Do NOT insist on bank statements.** If the user only has invoices, work with invoices. If they only have a bank statement, work with that. Use whatever documents are provided.
 
@@ -581,7 +581,7 @@ Tax authority: **{tax_authority}**
 {UPLOAD_STEP}
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
-   - **"Help me with my 2025 {country_name} taxes. Here's my bank statement."**
+   - **"Help me with my {country_name} taxes for the period shown in these documents. Here's my bank statement."**
    - **"Classify my transactions and prepare my books."**
    - **"Run payroll for my employee."**
    - **"Help me set up a company in {country_name}."**
@@ -595,7 +595,7 @@ The AI will:
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified {practitioner_title} before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified {practitioner_title.removeprefix("qualified ")} before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 

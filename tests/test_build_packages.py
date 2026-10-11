@@ -84,6 +84,16 @@ class SyntheticTreeCase(unittest.TestCase):
 
 
 class RebuildTests(SyntheticTreeCase):
+    def test_intake_and_readme_request_the_users_period(self) -> None:
+        self.build()
+        intake = (self.packages / "zzland" / "intake.md").read_text(encoding="utf-8")
+        readme = (self.packages / "zzland" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("Which tax or accounting period", intake)
+        self.assertIn("period you selected", intake)
+        self.assertNotIn("2025", intake + readme)
+        self.assertNotIn("qualified qualified", readme)
+        self.assertIn("a qualified tax professional", readme)
+
     def test_generated_text_is_utf8_with_lf_on_every_platform(self) -> None:
         self.build()
         for path in self.packages.rglob("*"):

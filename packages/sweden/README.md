@@ -37,7 +37,7 @@ Tax authority: **Skatteverket**
 1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
-   - **"Help me with my 2025 Sweden taxes. Here's my bank statement."**
+   - **"Help me with my Sweden taxes for the period shown in these documents. Here's my bank statement."**
    - **"Classify my transactions and prepare my books."**
    - **"Run payroll for my employee."**
    - **"Help me set up a company in Sweden."**
