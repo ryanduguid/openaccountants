@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Lebanon (ta
 jurisdiction: LB
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,13 +15,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## National Social Security Fund (NSSF) contributions
 
-- **Employer — sickness/maternity contribution** — 8% on a maximum monthly base of LL 120 million  _(Social Security Law (Decree-Law No. 13955 of 1963) — https://taxsummaries.pwc.com/lebanon/corporate/other-taxes)_
-- **Employer — family benefits contribution** — 6% on a maximum monthly base of LL 18 million  _(Social Security Law (Decree-Law No. 13955 of 1963) — https://taxsummaries.pwc.com/lebanon/corporate/other-taxes)_
-- **Employer — end-of-service indemnity contribution** — 8.5% of total annual earnings (no ceiling) (approx — PwC cites 5%; verify current end-of-service rate with NSSF)  _(Social Security Law (Decree-Law No. 13955 of 1963) — https://taxsummaries.pwc.com/lebanon/corporate/other-taxes)_
-- **Employee — medical scheme contribution** — 3% on a maximum monthly base of LL 120 million  _(Social Security Law (Decree-Law No. 13955 of 1963) — https://taxsummaries.pwc.com/lebanon/corporate/other-taxes)_
-- **Wage ceiling — sickness/maternity & medical** — LL 120 million per month LBP  _(Social Security Law (Decree-Law No. 13955 of 1963) — https://taxsummaries.pwc.com/lebanon/corporate/other-taxes)_
-- **Wage ceiling — family allowances** — LL 18 million per month LBP  _(Social Security Law (Decree-Law No. 13955 of 1963) — https://taxsummaries.pwc.com/lebanon/corporate/other-taxes)_
-- **Payroll (salary) tax withholding** — Employer withholds progressive payroll tax (2%–25%) at source — separate from NSSF  _(Income Tax Law (Decree-Law No. 144 of 1959), Chapter 3 — https://taxsummaries.pwc.com/lebanon/individual/taxes-on-personal-income)_
+- **Employer — sickness/maternity contribution** — 8% on a maximum monthly base of LL 120 million  _(Social Security Law (Decree-Law No. 13955 of 1963))_
+- **Employer — family benefits contribution** — 6% on a maximum monthly base of LL 18 million  _(Social Security Law (Decree-Law No. 13955 of 1963))_
+- **Employer — end-of-service indemnity contribution** — 8.5% of total annual earnings (no ceiling) (approx — practitioner summaries cites 5%; verify current end-of-service rate with NSSF)  _(Social Security Law (Decree-Law No. 13955 of 1963))_
+- **Employee — medical scheme contribution** — 3% on a maximum monthly base of LL 120 million  _(Social Security Law (Decree-Law No. 13955 of 1963))_
+- **Wage ceiling — sickness/maternity & medical** — LL 120 million per month LBP  _(Social Security Law (Decree-Law No. 13955 of 1963))_
+- **Wage ceiling — family allowances** — LL 18 million per month LBP  _(Social Security Law (Decree-Law No. 13955 of 1963))_
+- **Payroll (salary) tax withholding** — Employer withholds progressive payroll tax (2%–25%) at source — separate from NSSF  _(Income Tax Law (Decree-Law No. 144 of 1959), Chapter 3)_
 - **Payroll tax remittance** — Withheld payroll tax remitted quarterly to the tax authority (approx — confirm remittance frequency/deadline)  _(Income Tax Law (Decree-Law No. 144 of 1959))_
 - **NSSF contribution remittance** — Declared and paid to the NSSF on a monthly/quarterly basis (approx — confirm exact remittance schedule with NSSF)  _(Social Security Law (Decree-Law No. 13955 of 1963))_
 

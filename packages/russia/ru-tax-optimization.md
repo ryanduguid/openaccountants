@@ -1,10 +1,10 @@
 ---
 name: ru-tax-optimization
 description: Use this skill whenever asked about legal tax optimization or tax planning for a self-employed person, freelancer, or individual entrepreneur (ИП) in Russia — choosing the cheapest legitimate regime among самозанятый/НПД, УСН «Доходы» (6%), УСН «Доходы минус расходы» (15%), the ПСН patent, and ОСНО; the break-even logic between them; cutting УСН/ОСНО tax with the страховые взносы offset; regional reduced УСН rates (1%/5%) and the risks of "registering in a low-rate region"; managing the 2026 УСН VAT (НДС) threshold of 20M ₽; and the legal red lines (the самозанятый 2-year ban on income from a former employer, ФНС misclassification scrutiny, and the prohibited «дробление бизнеса» splitting scheme). Trigger on phrases like "reduce tax Russia", "lower taxes ИП", "НПД vs УСН", "tax planning Russia freelancer", "patent vs simplified Russia", "какой режим выгоднее", "как платить меньше налогов ИП", "самозанятый или ИП", or any request to compare regimes or plan tax legally for a self-employed person in Russia. This skill covers LEGAL planning only and never advises evasion. The AI replies in the user's own language.
-version: 1.0
+version: 1.1
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -23,7 +23,7 @@ The core levers are: (1) the **regime choice** — НПД vs УСН-6% vs УСН
 
 **Related skills.** For the самозанятый/НПД rules in depth, see **ru-self-employed-npd**. For УСН object choice, limits, and VAT-on-УСН mechanics, see **ru-usn**. For ИП НДФЛ on ОСНО and the progressive scale, see **ru-income-tax**. For the fixed and 1%-over-300k contributions, see **ru-social-contributions** (the sibling skill that fills the "payroll / contributions" slot; a standalone `ru-payroll` skill was not present in this repository at the time of writing — *verify* and update the cross-reference if one is added).
 
-> **YMYL notice.** Russian tax law changed substantially for 2026: the base VAT rate rose from 20% to 22%; the УСН VAT-exemption threshold dropped from 60M ₽ to 20M ₽ (Federal Law 176-ФЗ of 2024 and 425-ФЗ of 28.11.2025); the ПСН income limit dropped from 60M ₽ to 20M ₽ (Federal Law 359-ФЗ of 29.09.2025); and the government now restricts which activities may get a regional reduced УСН rate (Federal Law 425-ФЗ; Government Order 4176-р of 30.12.2025). All figures below are research-verified against ФНС (nalog.gov.ru), КонсультантПлюс, Гарант, PwC and major Russian accounting publishers as of **May 2026**. **Always confirm against nalog.gov.ru before acting**, and have a credentialed Russian accountant sign off on any plan.
+> **YMYL notice.** Russian tax law changed substantially for 2026: the base VAT rate rose from 20% to 22%; the УСН VAT-exemption threshold dropped from 60M ₽ to 20M ₽ (Federal Law 176-ФЗ of 2024 and 425-ФЗ of 28.11.2025); the ПСН income limit dropped from 60M ₽ to 20M ₽ (Federal Law 359-ФЗ of 29.09.2025); and the government now restricts which activities may get a regional reduced УСН rate (Federal Law 425-ФЗ; Government Order 4176-р of 30.12.2025). All figures below are research-verified against ФНС (nalog.gov.ru), КонсультантПлюс, Гарант and major Russian accounting publishers as of **May 2026**. **Always confirm against nalog.gov.ru before acting**, and have a credentialed Russian accountant sign off on any plan.
 
 ## 1. Quick Reference
 
@@ -148,7 +148,7 @@ All figures illustrative, 2026 rules, **research-verified — confirm before act
 - **Subordinate acts:** Government Order 4176-р of 30.12.2025 (activities eligible for reduced УСН rate); Минтруд order 657н of 19.11.2025 (самозанятый monitoring from 02.2026).
 - **2026 key figures (verify):** НПД rates 4%/6%, cap 2.4M ₽; ИП fixed взносы 57,390 ₽ + 1% over 300k (max +321,818 ₽); УСН VAT threshold 20M ₽; УСН special VAT 5%/7%; base VAT 22%; ПСН income limit 20M ₽; НДФЛ progressive 13/15/18/20/22% at 2.4M/5M/20M/50M ₽ thresholds; УСН regime ceiling ~490.5M ₽.
 - **Cross-skill:** ru-self-employed-npd · ru-usn · ru-income-tax · ru-social-contributions.
-- Secondary research (May 2026): PwC Tax Summaries (Russia), КонсультантПлюс, Гарант, Контур, Главбух, РБК. Reputable but secondary — confirm against primary ФНС sources.
+- Secondary research (May 2026): КонсультантПлюс, Гарант, Контур, Главбух, РБК. Reputable but secondary — confirm against primary ФНС sources.
 
 ## PROHIBITIONS
 

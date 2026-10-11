@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Mongolia
 jurisdiction: MN
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Step 1 — name reservation** — Reserve the company name with the state registration authority; the company must be established within 30 days of obtaining the name  _(Law on State Registration of Legal Entities — https://mongoliainc.com/setting-up-a-business-in-mongolia/establishment-of-llc/)_
 - **Step 2 — capital deposit** — Open a temporary bank account at a Mongolian commercial bank and deposit the paid-in capital (USD 100,000 or MNT equivalent for a foreign-invested company)  _(Company Law of Mongolia — https://mongoliainc.com/setting-up-a-business-in-mongolia/establishment-of-llc/)_
 - **Registration timeline** — Approximately 3–5 business days after submitting the required documents (approx — confirm)  _(Law on State Registration of Legal Entities — https://gsl.org/en/offers/incorporation-of-a-company-in-mongolia-formation-of-a-limited-liability-company-with-foreign-investment/)_
-- **Core annual compliance — CIT** — File the annual corporate income tax return by 10 February, with quarterly returns during the year  _(Corporate Income Tax Law of Mongolia — https://taxsummaries.pwc.com/mongolia/corporate/tax-administration)_
+- **Core annual compliance — CIT** — File the annual corporate income tax return by 10 February, with quarterly returns during the year  _(Corporate Income Tax Law of Mongolia, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Core annual compliance — financial statements** — Prepare annual financial statements under Mongolian accounting standards (IFRS-based) and file with the relevant authorities (approx — confirm filing dates)  _(Accounting Law of Mongolia — https://www.investmongolia.gov.mn/taxation/)_
 
 <!-- openaccountants-cta-block -->

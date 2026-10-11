@@ -5,7 +5,7 @@ jurisdiction: MM
 category: international
 tax_year: 2025
 tax_year_notes: "Rates and reliefs are those the Internal Revenue Department states for the 2025 Union Taxation Law (ပြည်ထောင်စု၏အခွန်အကောက်ဥပဒေ). Myanmar re-enacts the Union Taxation Law annually, so confirm the year's law before applying these to any other year."
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -108,14 +108,14 @@ _(2025 Union Taxation Law, s.25 — https://www.ird.gov.mm/tax-knowledge/taxes/i
   within **21 days** of their issue  _(IRD, Payment — https://www.ird.gov.mm/tax-knowledge/taxes/individual)_
 - **Salary withholding (PAYS)** — Employers withhold income tax monthly from
   salaries and remit it to the IRD; an annual salary statement is filed after
-  year-end  _(Income Tax Law (as described at [taxsummaries.pwc.com](https://taxsummaries.pwc.com/myanmar/individual/taxes-on-personal-income)))_
+  year-end  _(Income Tax Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Annual return deadline** — Within three months of the end of the financial
   year ((approx — confirm; not stated on the IRD's individual-tax page, and
   Myanmar has changed its financial year twice since 2018, so confirm the year-end
-  before converting this to a date))  _(Income Tax Law (as described at [taxsummaries.pwc.com](https://taxsummaries.pwc.com/myanmar)))_
+  before converting this to a date))  _(Income Tax Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Individual residence test** — A foreigner is resident if present in Myanmar
   for 183 days or more in the tax year, or domiciled or principally resident there
-  ((approx — confirm against the Income Tax Law; not stated on the IRD page read))  _(Income Tax Law (as described at [taxsummaries.pwc.com](https://taxsummaries.pwc.com/myanmar/individual/residence)))_
+  ((approx — confirm against the Income Tax Law; not stated on the IRD page read))  _(Income Tax Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ## 7. What this replaces
 

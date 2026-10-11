@@ -5,7 +5,7 @@ jurisdiction: AT
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > **Why these five heads were missing, and what it says about the source.**
 >
 > The three bullets above (dividends, interest, royalties) are exactly what
-> PwC's Austria withholding-taxes page carries. That page does not mention §99
+> the secondary summary's Austria withholding page carries. That page does not mention §99
 > EStG at all. So a guide built by reading it faithfully, citing it correctly,
 > and verifying every figure against it would still miss the entire §99 charge —
 > and §99 is the head an Austrian business is most likely to trip over, because
@@ -45,7 +45,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > figure the guide does not state. The §99 rates here come from the Austrian
 > business service portal (USP) and the Federal Ministry of Finance (BMF)
 > instead.
-- **Heads beyond these three: checked, not settled** — Whether Austria withholds on commercial or technical consulting fees, on supervisory board fees, or on other service payments to non-residents is **not answered by the source this guide cites**: PwC's Austria withholding page establishes no categories beyond dividends, interest and royalties/licences, and says so. That is a gap in the evidence and not a finding that no such head exists — the two read identically from here. Check §98 and §99 EStG, or ask an Austrian adviser, before telling a payer that a consulting fee to a non-resident carries no Austrian withholding  _(Einkommensteuergesetz (EStG))_
+- **Heads beyond these three: checked, not settled** — Whether Austria withholds on commercial or technical consulting fees, on supervisory board fees, or on other service payments to non-residents is **not answered by the source this guide cites**: the secondary summary's Austria withholding page establishes no categories beyond dividends, interest and royalties/licences, and says so. That is a gap in the evidence and not a finding that no such head exists — the two read identically from here. Check §98 and §99 EStG, or ask an Austrian adviser, before telling a payer that a consulting fee to a non-resident carries no Austrian withholding  _(Einkommensteuergesetz (EStG))_
 - **Group taxation (Gruppenbesteuerung)** — Available: the results of group members are attributed to the group parent, which must hold more than 50% of the member's capital and voting rights  _(Körperschaftsteuergesetz 1988 (KStG), RIS consolidated text, § 9 Abs. 4 — https://ogd.ris.bka.gv.at/eli/bgbl/1988/401/P9/NOR40263406)_
 - **CIT advance payments** — Quarterly prepayments due 15 February, 15 May, 15 August, 15 November  _(Körperschaftsteuergesetz 1988 (KStG), RIS consolidated text, § 24 Abs. 3 Z 1 — https://ogd.ris.bka.gv.at/eli/bgbl/1988/401/P24/NOR40269397 ; Einkommensteuergesetz 1988 (EStG), RIS consolidated text, § 45 Abs. 2 — https://ogd.ris.bka.gv.at/eli/bgbl/1988/400/P45/NOR40174045)_
 - **CIT return filing deadline** — End of April of the following year (end of June when filed electronically via FinanzOnline); the tax office may extend the deadline on application, and represented taxpayers obtain longer extensions under the quota arrangement  _(Bundesabgabenordnung (BAO), RIS consolidated text, § 134 Abs. 1 and 2 — https://ogd.ris.bka.gv.at/eli/bgbl/1961/194/P134/NOR40263545)_
