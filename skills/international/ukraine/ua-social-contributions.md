@@ -1,10 +1,10 @@
 ---
 name: ua-social-contributions
 description: "Ukrainian Unified Social Contribution (ЄСВ / USC) for self-employed people (FOP and independent professionals): the 22% rate, minimum and maximum monthly base, quarterly payment, the obligation to pay even at zero income, exemptions, and 2026 reporting changes."
-version: 1.0
+version: 1.1
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Social Contributions
 
-## Ukraine Unified Social Contribution (Єдиний соціальний внесок / ЄСВ / USC) — Self-Employed Skill v1.0
+## Ukraine Unified Social Contribution (Єдиний соціальний внесок / ЄСВ / USC) — Self-Employed Skill v1.1
 
 The Unified Social Contribution (ЄСВ) is Ukraine's single mandatory social-security charge. It replaced four separate state social funds (pension, unemployment, temporary disability/sickness, and accident-at-work insurance) with one consolidated contribution. For self-employed people it is **separate from and on top of** income tax / the single tax — see the companion skill `ua-single-tax` for the simplified-system tax itself.
 
@@ -41,7 +41,7 @@ The Unified Social Contribution (ЄСВ) is Ukraine's single mandatory social-se
 | Payment deadlines | Quarterly — by the **20th** of the month after each calendar quarter (20 Apr, 20 Jul, 20 Oct, 20 Jan) |
 | Contributor | Open Accountants Community |
 | Quality tier | **Research-verified — pending sign-off by a Ukrainian accountant** |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Base and amount table (as of 1 Jan 2026; verify current minimum wage)
 
@@ -112,7 +112,7 @@ The Unified Social Contribution (ЄСВ) is Ukraine's single mandatory social-se
 
 ### Maximum cap
 
-- **Maximum cap** — The base is **capped**. For 2026 the operative cap is **20 × minimum wage = ₴172,940**, giving a maximum monthly contribution of **22% × ₴172,940 = ₴38,046.80**. > **Verify the maximum-base multiplier.** Sources conflict. The State Budget Law for 2026 (3 Dec 2025) and current specialist Ukrainian tax catalogues (dtkt.ua, Factor, Holovbukh) state the FOP maximum base is **20 × minimum wage (₴172,940)**. A separate **15 ×** cap (₴129,705 → ₴28,535.10) applies **only to military / police service members**, not to FOP. One international summary (PwC) described the 20× increase as "postponed," leaving 15× — this appears to be outdated for the FOP base. The cap only ever matters for a FOP paying voluntarily above the minimum, so the minimum-case figures above are unaffected. **A Ukrainian accountant must confirm the exact cap before relying on it.**
+- **Maximum cap** — The base is **capped**. For 2026 the operative cap is **20 × minimum wage = ₴172,940**, giving a maximum monthly contribution of **22% × ₴172,940 = ₴38,046.80**. > **Verify the maximum-base multiplier.** Sources conflict. The State Budget Law for 2026 (3 Dec 2025) and current specialist Ukrainian tax catalogues (dtkt.ua, Factor, Holovbukh) state the FOP maximum base is **20 × minimum wage (₴172,940)**. A separate **15 ×** cap (₴129,705 → ₴28,535.10) applies **only to military / police service members**, not to FOP. One international summary (secondary summary) described the 20× increase as "postponed," leaving 15× — this appears to be outdated for the FOP base. The cap only ever matters for a FOP paying voluntarily above the minimum, so the minimum-case figures above are unaffected. **A Ukrainian accountant must confirm the exact cap before relying on it.**
 
 ### Mid-year start / stop (pro-ration)
 
@@ -203,7 +203,7 @@ Law of Ukraine **No. 2464-VI** "On collection and accounting of the unified soci
 **State Tax Service of Ukraine** — tax.gov.ua / dps.gov.ua (ЄСВ rates, calendar, Електронний кабінет).
 **Pension Fund of Ukraine** — pfu.gov.ua (FOP ЄСВ guidance, e.g. "Сплата ЄСВ для ФОП з 1 січня 2026 року").
 **State Budget Law for 2026** (03 Dec 2025) — minimum wage ₴8,647 from 1 Jan 2026.
-PwC Worldwide Tax Summaries — Ukraine, Individual / Other taxes (note the cap discrepancy in §3).
+a secondary practitioner summary — Ukraine, Individual / Other taxes (note the cap discrepancy in §3).
 Specialist Ukrainian tax catalogues: dtkt.ua, Factor (factor.academy / i.factor.ua), Holovbukh (buhplatforma), taxer.ua, buh.ua.
 
 ### Self-check test suite
@@ -235,7 +235,7 @@ Specialist Ukrainian tax catalogues: dtkt.ua, Factor (factor.academy / i.factor.
 
 ## Disclaimer
 
-This skill is **research-verified** from public sources (State Tax Service of Ukraine, Pension Fund of Ukraine, PwC Worldwide Tax Summaries, and reputable Ukrainian specialist sources) as of **May 2026** for tax year 2026. It is **not** a substitute for professional advice and **must be signed off by a qualified Ukrainian accountant / tax adviser** before being relied upon for filing or payment. Rates, the minimum wage, the maximum-base multiplier, deadlines, and exemption rules can change — especially under martial law — so always verify the current values with ДПС / the Pension Fund. Part of the Open Accountants community library at **openaccountants.com**; contributions and corrections welcome.
+This skill is **research-verified** from public sources (State Tax Service of Ukraine, Pension Fund of Ukraine, a secondary practitioner summary, and reputable Ukrainian specialist sources) as of **May 2026** for tax year 2026. It is **not** a substitute for professional advice and **must be signed off by a qualified Ukrainian accountant / tax adviser** before being relied upon for filing or payment. Rates, the minimum wage, the maximum-base multiplier, deadlines, and exemption rules can change — especially under martial law — so always verify the current values with ДПС / the Pension Fund. Part of the Open Accountants community library at **openaccountants.com**; contributions and corrections welcome.
 
 <!-- openaccountants-cta-block -->
 

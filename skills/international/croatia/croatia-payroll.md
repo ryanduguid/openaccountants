@@ -1,10 +1,10 @@
 ---
 name: croatia-payroll
 description: Use this skill whenever asked about Croatia payroll processing for employed persons. Trigger on phrases like "Croatia payroll", "Hrvatska plaća", "JOPPD form", "income tax Croatia", "porez na dohodak", "mirovinsko osiguranje", "pension Pillar I Pillar II", "I. stup II. stup", "zdravstveno osiguranje", "health contribution Croatia", "net salary Croatia", "neto plaća", "PAYE Croatia", "tax withholding Croatia", "employer contributions Croatia", "doprinosi", "minimum wage Croatia", "minimalna plaća", "personal allowance Croatia", "osobni odbitak", "gross to net Croatia", "bruto neto", "ePorezna", "Porezna uprava", "predujam poreza na dohodak", or any question about computing employee pay, withholding income tax, or mandatory social contributions for Croatia-based employees. This skill covers PAYE income tax withholding (two-rate local system), employee pension contributions (Pillar I + Pillar II), the employer health insurance contribution, the personal allowance, dependent-child allowances, minimum wage, contribution floors and ceilings, and JOPPD filing obligations. ALWAYS read this skill before processing any Croatia payroll.
-version: 0.2
+version: 0.3
 jurisdiction: HR
 tax_year: 2025
-last_updated: 2026-10-06
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Croatia Payroll
 
-## Croatia Payroll Skill v0.2
+## Croatia Payroll Skill v0.3
 
-Tier 2 — research-verified. Figures below are sourced from the Croatian Tax Administration (Ministarstvo financija — Porezna uprava), the Croatian Pension Insurance Institute (HZMO), the Croatian Health Insurance Fund (HZZO), the Income Tax and Contributions Acts and the annual orders in Narodne novine, PwC Worldwide Tax Summaries, KPMG, CMS, TPA, Lano and FINACRO. NOT yet signed off by a licensed Croatian accountant (ovlašteni računovođa) or tax adviser (porezni savjetnik). Treat every computation as an estimate pending professional review.
+Tier 2 — research-verified. Figures below are sourced from the Croatian Tax Administration (Ministarstvo financija — Porezna uprava), the Croatian Pension Insurance Institute (HZMO), the Croatian Health Insurance Fund (HZZO), the Income Tax and Contributions Acts and the annual orders in Narodne novine, a secondary practitioner summary, KPMG, CMS, TPA, Lano and FINACRO. NOT yet signed off by a licensed Croatian accountant (ovlašteni računovođa) or tax adviser (porezni savjetnik). Treat every computation as an estimate pending professional review.
 
 ## Section 1 -- Quick Reference
 
@@ -37,7 +37,7 @@ Tier 2 — research-verified. Figures below are sourced from the Croatian Tax Ad
 | Filing portal | ePorezna (eporezna.porezna-uprava.hr) |
 | Surtax (prirez) | ABOLISHED from 1 January 2024 — replaced by wider local income-tax rate ranges ([ZPD amendment NN 114/2023, in force 1 January 2024: surtax references deleted, art. 19.a added](https://narodne-novine.nn.hr/clanci/sluzbeni/2023_10_114_1609.html)) |
 | Validated by | Pending -- requires sign-off by a licensed Croatian accountant / tax adviser |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 Read this whole section before computing anything. The shared payroll runbook lives in `payroll-workflow-base` — follow that runbook with this skill supplying the Croatia-specific content.
 
@@ -63,11 +63,11 @@ The employer (payer) withholds income tax monthly under PAYE (predujam poreza na
 
 ### Local rate ranges — selecting the JLS rate
 
-Each JLS sets two rates within the 15%–23% (lower) and 25%–33% (higher) statutory bands. The City of Zagreb sits at the top of both bands (commonly cited around 23% lower / 33% higher). The exact figure for a given employer/employee location is set per municipality and changes annually (13 units changed their rates for 2026), so a reviewer must look up the specific location. (PwC) [T2-1 — reviewer to confirm the exact JLS rate for the employee's municipality.]
+Each JLS sets two rates within the 15%–23% (lower) and 25%–33% (higher) statutory bands. The City of Zagreb sits at the top of both bands (commonly cited around 23% lower / 33% higher). The exact figure for a given employer/employee location is set per municipality and changes annually (13 units changed their rates for 2026), so a reviewer must look up the specific location. (secondary summary) [T2-1 — reviewer to confirm the exact JLS rate for the employee's municipality.]
 
 ### Monthly Withholding Method
 
-- **Deterministic withholding order** — 1. Start with gross salary (bruto plaća). 2. Subtract the 20% employee pension contribution (computed on the relieved base — see Section 3). The PwC sample states: gross salary minus 20% employee pension = income. 3. Subtract the monthly personal allowance (osobni odbitak) — basic EUR 600 plus any declared dependent/child allowances. 4. The result is the monthly tax base (porezna osnovica). 5. Apply the JLS lower rate to the portion of the base up to EUR 5,000, and the higher rate to any portion above EUR 5,000. 6. The sum is the withheld income tax for the month. The employer then adds the 16.5% health insurance contribution on top of gross (an employer cost, not a deduction — see Section 4).  _(PwC sample personal income tax calculation)_
+- **Deterministic withholding order** — 1. Start with gross salary (bruto plaća). 2. Subtract the 20% employee pension contribution (computed on the relieved base — see Section 3). The the secondary summary sample states: gross salary minus 20% employee pension = income. 3. Subtract the monthly personal allowance (osobni odbitak) — basic EUR 600 plus any declared dependent/child allowances. 4. The result is the monthly tax base (porezna osnovica). 5. Apply the JLS lower rate to the portion of the base up to EUR 5,000, and the higher rate to any portion above EUR 5,000. 6. The sum is the withheld income tax for the month. The employer then adds the 16.5% health insurance contribution on top of gross (an employer cost, not a deduction — see Section 4).  _(secondary summary, sample personal income tax calculation)_
 
 ### Personal Allowance (osobni odbitak) — 2025–2026
 
@@ -109,7 +109,7 @@ Returning Croatian emigrants who have been abroad for 2+ years may qualify for a
 | Pension — Pillar II (mandatory funded, II. stup) | 5% | Employee (withheld) | Funded pension fund | Mandatory for those born after 1 January 1962 |
 | **Total employee pension** | **20%** | Employee (withheld) | — | 15% + 5% — verify: 15 + 5 = 20 ✓ |
 
-- **Non-Pillar II employees** — For employees not in Pillar II (born on or before 1 Jan 1962), the full 20% goes to Pillar I. [T2-5 — confirm Pillar II status for borderline DOB.]  _(PwC)_
+- **Non-Pillar II employees** — For employees not in Pillar II (born on or before 1 Jan 1962), the full 20% goes to Pillar I. [T2-5 — confirm Pillar II status for borderline DOB.]  _(secondary summary)_
 
 ### Low-Income Relief on the Pension Base
 
@@ -140,7 +140,7 @@ The average gross salary behind each year's order is the January to August avera
 
 ## Section 4 -- Contributions: Employer Contributions (Health)
 
-Croatia is unusual: there is a single employer-borne mandatory contribution — health insurance — paid on top of gross salary. The employer does NOT match the employee pension, pays no maternity-fund levy, and applies no surtax. (PwC; Deloitte)
+Croatia is unusual: there is a single employer-borne mandatory contribution — health insurance — paid on top of gross salary. The employer does NOT match the employee pension, pays no maternity-fund levy, and applies no surtax. (secondary summary; Deloitte)
 
 **Employer contribution table**  _(Zakon o doprinosima arts. 13(1) and 14(1) ([consolidated text](https://www.zakon.hr/z/365/Zakon-o-doprinosima)))_
 
@@ -188,12 +188,12 @@ An earlier version of this table gave EUR 1,295.45 for directors NOT in employme
 
 ## Section 6 -- Conservative Defaults
 
-**Conservative Defaults table**  _(Porezna uprava; PwC; Lano)_
+**Conservative Defaults table**  _(Porezna uprava; secondary summary; Lano)_
 
 | Field | Default | Rationale |
 | --- | --- | --- |
 | Local income-tax rates | **20% lower / 30% higher** (national default) | Statutory fallback when a JLS does not set rates by the deadline; use when the employee's municipality is unknown. (Porezna uprava) |
-| Pillar II membership | **Assume a member** (5% Pillar II + 15% Pillar I) | Mandatory for everyone born after 1 January 1962 — essentially the entire active 2025–2026 workforce. (PwC) |
+| Pillar II membership | **Assume a member** (5% Pillar II + 15% Pillar I) | Mandatory for everyone born after 1 January 1962 — essentially the entire active 2025–2026 workforce. (secondary summary) |
 | Personal allowance | **Basic allowance only (EUR 600/month)** | Dependent/child allowances require a tax card (Porezna kartica / PK) on file. Absent that card, withhold using only the basic allowance. |
 | Pension base for gross > EUR 1,300 | **Full gross (no relief), capped at EUR 10,788/month (2025) or EUR 11,958/month (2026)** | No low-income relief above EUR 1,300; apply the monthly cap for the pay year. (ZD art. 21.a; NN 137/2024; NN 150/2025) |
 | Low-income pension relief | **Apply per the gross-salary tier** | The relief is automatic for low earners — compute it; do not omit it. (ZD art. 21.a) |
@@ -384,7 +384,7 @@ Child allowances apply only if declared on a tax card (PK). The schedule uses st
 
 ## Section 10 -- Tier 1 Rules (deterministic — the skill applies these directly)
 
-- **T1 rules list** — 1. [T1] Income tax 2025–2026 uses a two-rate progressive system: lower rate to a monthly tax base of EUR 5,000 (EUR 60,000/yr), higher rate above. Threshold raised from EUR 4,200/month (EUR 50,400/yr) in 2024. (ZPD arts. 19 and 24(3), NN 152/2024) 2. [T1] There is NO single national rate and NO surtax (prirez abolished 1 Jan 2024). Each JLS sets two rates within 15–23% (lower) / 25–33% (higher); the employee's residence municipality decides which rates apply. Default if unset = 20% / 30%. (Porezna uprava; ZPD art. 19.a) 3. [T1] Basic monthly personal allowance = EUR 600 (EUR 7,200/yr), effective 2025, unchanged for 2026. (ZPD art. 14(1), NN 152/2024) 4. [T1] Child allowances (monthly, on top of basic, only if declared on a tax card) = statutory coefficient × the EUR 600 basic allowance: 1st child 0.5 → EUR 300, 2nd child 0.7 → EUR 420, 3rd child 1.0 → EUR 600; then 4th 1.4 → EUR 840, 5th 1.9 → EUR 1,140, 6th to 9th 2.5, 3.2, 4.0 and 4.9. (ZPD art. 14(3)) 5. [T1] Employee pension = 20% of gross on the relieved base: 15% Pillar I (HZMO) + 5% Pillar II for those born after 1 Jan 1962; otherwise the full 20% to Pillar I. (ZD art. 13(1)) 6. [T1] Pension base low-income relief: gross ≤ EUR 700 → base = gross − EUR 300; gross EUR 700.01–1,300 → base = gross − [0.5 × (1,300 − gross)]; gross > EUR 1,300 → full gross. (ZD art. 21.a) 7. [T1] Pension monthly cap = 6.0 × average gross salary: EUR 10,788.00 for 2025 and EUR 11,958.00 for 2026. Annual Pillar I ceiling = EUR 129,456.00 (2025) / EUR 143,496.00 (2026). (NN 137/2024; NN 150/2025) 8. [T1] Employer health insurance = 16.5% of gross, paid on top of gross, NOT capped. It is the only employer-borne mandatory contribution. (ZD art. 14(1)) 9. [T1] Withholding order: gross → subtract 20% pension (relieved/capped base) → subtract personal allowance → apply local lower rate to base ≤ 5,000 and higher rate above → withheld income tax. Employer adds 16.5% health on top. (PwC sample calc) 10. [T1] Monthly JOPPD filed via ePorezna reports income tax AND all contributions together; there is no separate contributions filing. (Lano; Porezna uprava) 11. [T1] Minimum gross wage: EUR 970/month (2025) → EUR 1,050/month (2026, NN 132/2025). Minimum monthly contribution base 2026: general EUR 757.34; board member employed full-time EUR 1,295.45; board member not employed EUR 1,993.00 (2025: 683.24 / 1,168.70 / 1,798.00). (NN 132/2025; NN 150/2025; NN 137/2024) 12. [T1] Croatia uses EUR since 1 January 2023; any HRK figure is obsolete and must be reconverted/re-verified. (Tax reform record)
+- **T1 rules list** — 1. [T1] Income tax 2025–2026 uses a two-rate progressive system: lower rate to a monthly tax base of EUR 5,000 (EUR 60,000/yr), higher rate above. Threshold raised from EUR 4,200/month (EUR 50,400/yr) in 2024. (ZPD arts. 19 and 24(3), NN 152/2024) 2. [T1] There is NO single national rate and NO surtax (prirez abolished 1 Jan 2024). Each JLS sets two rates within 15–23% (lower) / 25–33% (higher); the employee's residence municipality decides which rates apply. Default if unset = 20% / 30%. (Porezna uprava; ZPD art. 19.a) 3. [T1] Basic monthly personal allowance = EUR 600 (EUR 7,200/yr), effective 2025, unchanged for 2026. (ZPD art. 14(1), NN 152/2024) 4. [T1] Child allowances (monthly, on top of basic, only if declared on a tax card) = statutory coefficient × the EUR 600 basic allowance: 1st child 0.5 → EUR 300, 2nd child 0.7 → EUR 420, 3rd child 1.0 → EUR 600; then 4th 1.4 → EUR 840, 5th 1.9 → EUR 1,140, 6th to 9th 2.5, 3.2, 4.0 and 4.9. (ZPD art. 14(3)) 5. [T1] Employee pension = 20% of gross on the relieved base: 15% Pillar I (HZMO) + 5% Pillar II for those born after 1 Jan 1962; otherwise the full 20% to Pillar I. (ZD art. 13(1)) 6. [T1] Pension base low-income relief: gross ≤ EUR 700 → base = gross − EUR 300; gross EUR 700.01–1,300 → base = gross − [0.5 × (1,300 − gross)]; gross > EUR 1,300 → full gross. (ZD art. 21.a) 7. [T1] Pension monthly cap = 6.0 × average gross salary: EUR 10,788.00 for 2025 and EUR 11,958.00 for 2026. Annual Pillar I ceiling = EUR 129,456.00 (2025) / EUR 143,496.00 (2026). (NN 137/2024; NN 150/2025) 8. [T1] Employer health insurance = 16.5% of gross, paid on top of gross, NOT capped. It is the only employer-borne mandatory contribution. (ZD art. 14(1)) 9. [T1] Withholding order: gross → subtract 20% pension (relieved/capped base) → subtract personal allowance → apply local lower rate to base ≤ 5,000 and higher rate above → withheld income tax. Employer adds 16.5% health on top. (secondary summary, sample calc) 10. [T1] Monthly JOPPD filed via ePorezna reports income tax AND all contributions together; there is no separate contributions filing. (Lano; Porezna uprava) 11. [T1] Minimum gross wage: EUR 970/month (2025) → EUR 1,050/month (2026, NN 132/2025). Minimum monthly contribution base 2026: general EUR 757.34; board member employed full-time EUR 1,295.45; board member not employed EUR 1,993.00 (2025: 683.24 / 1,168.70 / 1,798.00). (NN 132/2025; NN 150/2025; NN 137/2024) 12. [T1] Croatia uses EUR since 1 January 2023; any HRK figure is obsolete and must be reconverted/re-verified. (Tax reform record)
 
 ## Section 11 -- Tier 2 Catalogue (reviewer judgement required)
 
@@ -540,7 +540,7 @@ When key facts are missing, ask the user these questions before computing. If a 
 | --- | --- | --- | --- |
 | 1 | Naredba o iznosima osnovica za obračun doprinosa za 2026. (caps, minimum bases) | Narodne novine 150/2025 | https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_150_2237.html |
 | 2 | Zakon o izmjenama i dopunama Zakona o porezu na dohodak (EUR 600 allowance, EUR 60,000 / 5,000 threshold, local rate ranges) | Narodne novine 152/2024 | https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2505.html |
-| 3 | Croatia — Individual — Sample personal income tax calculation | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/croatia/individual/sample-personal-income-tax-calculation |
+| 3 | Croatia — Individual — Sample personal income tax calculation | secondary summary | |
 | 4 | Income tax — general rules, rates, taxpayer and annual return | Porezna uprava (Croatian Tax Administration) | https://porezna-uprava.gov.hr/en/income-t-ax-information-on-the-general-rules-rates-taxpayer-and-submitting-annual-income-tax-return/7322 |
 | 5 | Application for Insurance and End of Insurance (HZMO registration deadlines) | HZMO | https://www.mirovinsko.hr/en/application-for-insurance-and-end-of-insurance/234 |
 | 6 | Key Changes in Salaries and Income Tax as of January 1, 2026 | FINACRO | https://finacro.hr/en/dobro-je-znati/key-changes-in-salaries-and-income-tax-as-of-january-1-2026/ |

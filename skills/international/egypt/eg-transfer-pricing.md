@@ -1,10 +1,10 @@
 ---
 name: eg-transfer-pricing
 description: Use this skill whenever asked about Egyptian transfer pricing documentation, benchmarking, or related-party transaction review — for residents with cross-border or domestic related-party dealings. Trigger on "Egypt TP", "Egypt transfer pricing", "Master File Egypt", "CbCR Egypt", "ضريبة نفقات الشركات المرتبطة مصر". ALWAYS read this skill before touching any Egypt TP work.
-version: 0.1
+version: 0.2
 jurisdiction: EG
 tax_year: 2025
-last_updated: 2026-07-22
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - transfer-pricing-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Egypt Transfer Pricing
 
-## Egypt Transfer Pricing (تسعير المعاملات بين الشركات المرتبطة) Skill v0.1
+## Egypt Transfer Pricing (تسعير المعاملات بين الشركات المرتبطة) Skill v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 This skill covers Egyptian **transfer pricing (TP)** compliance for resident companies, permanent establishments of non-residents, and Egyptian-parented MNE groups. Egypt was the first country in the Middle East to introduce TP legislation (Article 30, Income Tax Law No. 91 of 2005). The framework is OECD-aligned, following BEPS Action 13's three-tier documentation model. The AI must reply in the user's language (English or Arabic / Egyptian Arabic) and may use the native tax terms shown throughout.
 
 > **Currency note:** all figures are in Egyptian Pounds (EGP / ج.م).
-> **YMYL — verify before relying.** Egyptian TP guidelines, thresholds, and penalty rates are subject to amendment (most recently Laws 5, 6, 7 of 2025). Where this skill says "verify current value," re-confirm against the Egyptian Tax Authority (ETA — eta.gov.eg), PwC Worldwide Tax Summaries (taxsummaries.pwc.com/egypt), or a Big-4 alert before filing.
+> **YMYL — verify before relying.** Egyptian TP guidelines, thresholds, and penalty rates are subject to amendment (most recently Laws 5, 6, 7 of 2025). Where this skill says "verify current value," re-confirm against the Egyptian Tax Authority (ETA — eta.gov.eg), a secondary practitioner summary, or a Big-4 alert before filing.
 
 ## What this file is
 
@@ -52,7 +52,7 @@ This skill covers Egyptian **transfer pricing (TP)** compliance for resident com
 | OECD TPG adoption | Egyptian TPG modeled on OECD TPG (2017 ed., acknowledged as global standard) |
 | Currency | EGP (ج.م) |
 | Documentation language | Arabic; English accepted for MNE groups with non-Arabic parents |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 — Legal Foundation
 
@@ -330,7 +330,7 @@ Egypt's TP penalty regime follows a percentage-of-transaction-value model, cappe
 - **OECD Transfer Pricing Guidelines (January 2022 edition)** — acknowledged by ETA as a reference
 - **Andersen in Egypt "Transfer Pricing Regulations in Egypt and India" (Dec 2025)** — eg.andersen.com
 - **Thomson Reuters "Egypt Enhances Transfer Pricing Rules" (Jul 2018)** — tax.thomsonreuters.com
-- **PwC Worldwide Tax Summaries — Egypt** — taxsummaries.pwc.com/egypt
+- **Secondary practitioner summary (link removed) — Egypt**
 
 ## Disclaimer
 

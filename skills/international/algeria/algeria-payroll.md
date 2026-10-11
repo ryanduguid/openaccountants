@@ -1,10 +1,10 @@
 ---
 name: algeria-payroll
 description: Use this skill whenever asked about Algeria payroll processing for employed persons. Trigger on phrases like "Algeria payroll", "IRG Traitements et Salaires", "IRG withholding Algeria", "retenue à la source Algérie", "CNAS deduction", "cotisation sociale Algérie", "G50 declaration", "DAS CNAS", "bordereau CNAS", "salaire net Algérie", "PAYE Algeria", "net salary Algeria", "SNMG", "salaire minimum Algérie", "abattement 40% salaire", "employer social security Algeria", "gross to net Algeria", "barème IRG", or any question about computing employee pay, income-tax withholding, or social-security contributions for Algeria-based employees. This skill covers IRG (income tax) withholding by the employer, CNAS social security (employee 9% + employer 26%), the branch-by-branch contribution breakdown, the 40% salary abattement, the SNMG minimum wage, and filing obligations to the DGI (G50) and CNAS (monthly + annual DAS). ALWAYS read this skill before processing any Algeria payroll.
-version: 0.1
+version: 0.2
 jurisdiction: DZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Algeria Payroll
 
-## Algeria Payroll Skill v0.1
+## Algeria Payroll Skill v0.2
 
 > **Tier 2 (research-verified) — NOT yet accountant-verified.** Several figures carry `[RESEARCH GAP — reviewer to confirm]` markers. A licensed Algerian expert-comptable / commissaire aux comptes must reconcile those before any output is presented as final.
 
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | Algerian Dinar (DZD / DA) only — wages paid in Dinars |
 | Standard pay frequency | Monthly (most common) |
 | Tax year | Calendar year (1 January -- 31 December) |
-| Income tax | YES — IRG (Impôt sur le Revenu Global, Traitements et Salaires), progressive 0% / 23% / 27% / 30% / 33% / 35%, employer-withheld monthly (retenue à la source) (PwC; DGI/Radio Algérienne) |
+| Income tax | YES — IRG (Impôt sur le Revenu Global, Traitements et Salaires), progressive 0% / 23% / 27% / 30% / 33% / 35%, employer-withheld monthly (retenue à la source) (secondary summary; DGI/Radio Algérienne) |
 | Tax authority | DGI (Direction Générale des Impôts) |
 | Social security authority | CNAS (Caisse Nationale des Assurances Sociales) |
 | IRG declaration form | **G50** (bordereau-avis de versement, monthly) (Rivermate) |
@@ -37,15 +37,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Code des Impôts Directs (IRG, Traitements et Salaires); Loi de Finances 2022 (current IRG scale); Loi 83-11 (sécurité sociale); Code des Procédures Fiscales |
 | Filing portals | DGI (G50); CNAS télédéclaration (`teledeclaration.cnas.dz`) |
 | Validated by | Pending -- requires sign-off by a licensed Algerian expert-comptable |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Section 2 -- Income Tax Withholding (IRG — Traitements et Salaires)
 
-Algeria **does** levy personal income tax on salaries. The employer is the **withholding agent**: it deducts IRG monthly from payroll (*retenue à la source*) and remits it on the **G50** declaration (PwC — Taxes on personal income; Rivermate). The progressive scale was introduced by the **Loi de Finances 2022 (FL 2022), effective 1 January 2022**, and remains the current scale for 2025 (no replacement scale published for 2025/2026 as of the research date).
+Algeria **does** levy personal income tax on salaries. The employer is the **withholding agent**: it deducts IRG monthly from payroll (*retenue à la source*) and remits it on the **G50** declaration (secondary summary, Taxes on personal income; Rivermate). The progressive scale was introduced by the **Loi de Finances 2022 (FL 2022), effective 1 January 2022**, and remains the current scale for 2025 (no replacement scale published for 2025/2026 as of the research date).
 
 ### IRG Progressive Scale — annual taxable salary income (DZD)
 
-**IRG Progressive Scale — annual taxable salary income (DZD)**  _(PwC Worldwide Tax Summaries (Algeria — Individual / Taxes on personal income, "effective FL 2022, marginal rate 35%"); DGI press release via Radio Algérienne (news.radioalgerie.dz/fr/node/3142))_
+**IRG Progressive Scale — annual taxable salary income (DZD)**  _(a secondary practitioner summary (Algeria — Individual / Taxes on personal income, "effective FL 2022, marginal rate 35%"); DGI press release via Radio Algérienne (news.radioalgerie.dz/fr/node/3142))_
 
 | Annual taxable income (DZD) | Marginal rate | Cumulative tax at top of band (DZD) |
 | --- | --- | --- |
@@ -84,11 +84,11 @@ Algeria **does** levy personal income tax on salaries. The employer is the **wit
 
 ## Section 3 -- Social Security -- CNAS (Employee + Employer)
 
-CNAS social security runs across five branches. The total statutory rate is 35% of gross salary = employer 26% + employee 9% (PwC — Other taxes; Rivermate). Contributions are levied on gross salary with no upper ceiling (uncapped) for the general salaried regime; the effective floor is the SNMG minimum wage — contributions cannot be based on less than the SNMG (PwC; Rivermate; CLEISS).
+CNAS social security runs across five branches. The total statutory rate is 35% of gross salary = employer 26% + employee 9% (secondary summary, Other taxes; Rivermate). Contributions are levied on gross salary with no upper ceiling (uncapped) for the general salaried regime; the effective floor is the SNMG minimum wage — contributions cannot be based on less than the SNMG (secondary summary; Rivermate; CLEISS).
 
 ### Operative payroll figures
 
-**Operative payroll figures**  _(PwC (taxsummaries.pwc.com/algeria/individual/other-taxes); Rivermate (rivermate.com/guides/algeria/taxes))_
+**Operative payroll figures**  _(secondary summary; Rivermate (rivermate.com/guides/algeria/taxes))_
 
 | Side | Rate | Base |
 | --- | --- | --- |
@@ -111,7 +111,7 @@ CNAS social security runs across five branches. The total statutory rate is 35% 
 
 *Column check:* employer 11.5 + 1.25 + 11.0 + 0.25 + 1.0 = **25.0%**; employee 1.5 + 0 + 6.75 + 0.25 + 0.5 = **9.0%**; other = **0.5%**; grand total = **34.5%**.
 
-- **Reconciliation note** — CLEISS itemises the employer side as 25% + 0.5% FNPOS social-housing levy = 25.5%; adding 0.5% for œuvres sociales (social works) brings the headline employer figure to the commonly cited 26%. The Big-4 / payroll summaries (PwC, Rivermate) state the headline as a flat employer 26% / employee 9% / total 35%. Both describe the same regime; the 35% headline includes the social-works and housing-fund components that CLEISS lists separately. Use 26% employer / 9% employee / 35% total as the operative payroll figures, with the CLEISS table as the branch detail.  _(CLEISS; PwC; Rivermate)_
+- **Reconciliation note** — CLEISS itemises the employer side as 25% + 0.5% FNPOS social-housing levy = 25.5%; adding 0.5% for œuvres sociales (social works) brings the headline employer figure to the commonly cited 26%. The Big-4 / payroll summaries (secondary summary, Rivermate) state the headline as a flat employer 26% / employee 9% / total 35%. Both describe the same regime; the 35% headline includes the social-works and housing-fund components that CLEISS lists separately. Use 26% employer / 9% employee / 35% total as the operative payroll figures, with the CLEISS table as the branch detail.  _(CLEISS; secondary summary; Rivermate)_
 
 ### Sector add-on (construction)
 
@@ -143,7 +143,7 @@ The SNMG is a single national figure applying to public and private sectors. It 
 | CNAS base below SNMG | Floor the contribution base at the **SNMG** (20,000 DA for 2025) | Contributions cannot be below SNMG |
 | CNAS ceiling | **None** — compute on full gross (uncapped) | General salaried regime is uncapped |
 | Currency | Algerian Dinar (DZD) | Wages are paid in Dinars |
-| Headline CNAS split | **26% employer / 9% employee / 35% total** | Operative figure per PwC/Rivermate |
+| Headline CNAS split | **26% employer / 9% employee / 35% total** | Operative figure per the secondary summary/Rivermate |
 
 When an input is missing or ambiguous, apply the conservative assumption (the one that does NOT understate withholding/contributions) and FLAG it for the reviewer.
 
@@ -270,7 +270,7 @@ Building on Example 4 (gross 80,000 DA/month, general sector):
 
 ## Section 9 -- Tier 1 Rules (hard, non-negotiable)
 
-- **Tier 1 Rules** — 1. IRG is employer-withheld monthly (retenue à la source) and remitted to the DGI on the G50; never skip it for salaried staff (PwC; Rivermate). 2. Apply the IRG base order: gross → minus 9% CNAS → minus 40% abattement (1,000–1,500 DA/month) → annualise → progressive scale (subtract-method) → ÷ 12. 3. Salaries ≤ 30,000 DA/month are fully IRG-exempt — override IRG to 0 (DGI/Radio Algérienne). 4. CNAS is employee 9% + employer 26% = 35% total, on uncapped gross, floored at the SNMG (PwC; Rivermate; CLEISS). 5. The CNAS contribution base can never fall below the SNMG (20,000 DA for 2025; 24,000 DA for 2026). 6. Construction / public-works employers add CACOBATPH 0.375% each (employer and employee) (CLEISS). 7. Wages are paid in Algerian Dinars. 8. CNAS contributions are remitted monthly; the DAS annual return is due 31 January; the G50 is due by the 20th of the following month (Rivermate; Radio Algérienne; Fatoura). 9. Every output is an estimate pending licensed-accountant sign-off.  _(PwC; Rivermate; DGI/Radio Algérienne; CLEISS; Fatoura)_
+- **Tier 1 Rules** — 1. IRG is employer-withheld monthly (retenue à la source) and remitted to the DGI on the G50; never skip it for salaried staff (secondary summary; Rivermate). 2. Apply the IRG base order: gross → minus 9% CNAS → minus 40% abattement (1,000–1,500 DA/month) → annualise → progressive scale (subtract-method) → ÷ 12. 3. Salaries ≤ 30,000 DA/month are fully IRG-exempt — override IRG to 0 (DGI/Radio Algérienne). 4. CNAS is employee 9% + employer 26% = 35% total, on uncapped gross, floored at the SNMG (secondary summary; Rivermate; CLEISS). 5. The CNAS contribution base can never fall below the SNMG (20,000 DA for 2025; 24,000 DA for 2026). 6. Construction / public-works employers add CACOBATPH 0.375% each (employer and employee) (CLEISS). 7. Wages are paid in Algerian Dinars. 8. CNAS contributions are remitted monthly; the DAS annual return is due 31 January; the G50 is due by the 20th of the following month (Rivermate; Radio Algérienne; Fatoura). 9. Every output is an estimate pending licensed-accountant sign-off.  _(secondary summary; Rivermate; DGI/Radio Algérienne; CLEISS; Fatoura)_
 
 ## Section 10 -- Tier 2 Catalogue (reviewer judgement required)
 
@@ -376,7 +376,7 @@ Suggested layout (one row per employee per month):
 | CNAS (all branches) | 9% | 26% | uncapped gross; floor = SNMG |
 | CACOBATPH (construction only) | 0.375% | 0.375% | gross (construction sector) |
 
-*Check:* CNAS employee 9% + employer 26% = **35% total** (operative figures, PwC/Rivermate); CLEISS branch detail sums to 25% employer + 9% employee + 0.5% other = 34.5% (same regime, social-works component shown separately).
+*Check:* CNAS employee 9% + employer 26% = **35% total** (operative figures, the secondary summary/Rivermate); CLEISS branch detail sums to 25% employer + 9% employee + 0.5% other = 34.5% (same regime, social-works component shown separately).
 
 ## Section 18 -- Reference Material
 
@@ -384,11 +384,11 @@ Suggested layout (one row per employee per month):
 
 | Topic | Figure | Source |
 | --- | --- | --- |
-| IRG scale (current) | 0% / 23% / 27% / 30% / 33% / 35%, FL 2022 | PwC; DGI/Radio Algérienne |
-| IRG exempt threshold (annual) | 240,000 DZD | PwC; Radio Algérienne |
+| IRG scale (current) | 0% / 23% / 27% / 30% / 33% / 35%, FL 2022 | secondary summary; DGI/Radio Algérienne |
+| IRG exempt threshold (annual) | 240,000 DZD | secondary summary; Radio Algérienne |
 | IRG monthly full exemption | ≤ 30,000 DA/month | DGI / Radio Algérienne (node/3142) |
 | Salary abattement | 40%, floor 12,000 / cap 18,000 DZD per year | Radio Algérienne (node/3142) |
-| CNAS split | 9% employee / 26% employer / 35% total | PwC; Rivermate |
+| CNAS split | 9% employee / 26% employer / 35% total | secondary summary; Rivermate |
 | CNAS branch detail | 25% er + 9% ee + 0.5% other = 34.5% | CLEISS (effective 1 Jan 2024) |
 | CACOBATPH (construction) | 0.375% each | CLEISS |
 | SNMG 2025 / 2026 | 20,000 / 24,000 DZD/month | Algeria Invest; Radio Algérienne; WageIndicator |
@@ -396,7 +396,7 @@ Suggested layout (one row per employee per month):
 | DAS deadline | 31 January | Radio Algérienne; Fatoura; CNAS portal |
 | CNAS penalty | 15% + 2%/month surcharge | Fatoura / CNAS |
 
-Key authorities: DGI (`mfdgi.gov.dz`), CNAS (`cnas.dz`, `teledeclaration.cnas.dz`), CLEISS (`cleiss.fr`). Big-4 / secondary: PwC Worldwide Tax Summaries, Rivermate, Algeria Invest, Radio Algérienne, WageIndicator, Fatoura.
+Key authorities: DGI (`mfdgi.gov.dz`), CNAS (`cnas.dz`, `teledeclaration.cnas.dz`), CLEISS (`cleiss.fr`). Big-4 / secondary: a secondary practitioner summary, Rivermate, Algeria Invest, Radio Algérienne, WageIndicator, Fatoura.
 
 ## Section 19 -- Test Suite
 

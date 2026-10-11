@@ -1,10 +1,10 @@
 ---
 name: eg-financial-statements
 description: Use this skill whenever asked about Egyptian financial statements, financial reporting, or the accounting standards an Egyptian business must follow. Trigger on phrases like "Egypt financial statements", "Egyptian Accounting Standards", "EAS", "القوائم المالية", "المعايير المحاسبية المصرية", "do I file accounts Egypt", "audit Egypt company", "audited financial statements Egypt", "balance sheet Egypt", "IFRS Egypt", "EGX listed company accounts", "FRA filing", or any request to explain who must prepare, audit, or file financial statements in Egypt — and what a self-employed person files instead. ALWAYS read this skill before advising on Egyptian financial reporting or audit.
-version: 1.0
+version: 1.1
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # EG Financial Statements
 
-## Egypt Financial Statements & Financial Reporting (القوائم المالية) Skill v1.0
+## Egypt Financial Statements & Financial Reporting (القوائم المالية) Skill v1.1
 
 This skill explains who must prepare formal financial statements (القوائم المالية) in Egypt, which accounting standards apply (the Egyptian Accounting Standards — EAS / المعايير المحاسبية المصرية), when an audit by a registered auditor (مراجع حسابات / محاسب قانوني) is required, and how all of this is filed.
 
@@ -147,7 +147,7 @@ A client is a joint-stock company listed on the Egyptian Exchange.
 - Egyptian Accounting Standards (EAS) — 2015 set, amended 2019 & 2023.
 - ESAROAS — auditing standards, MoI Decision No. 166/2008 (ISA-aligned); Decree No. 3725 of 2025 new standards effective 1 Jan 2027.
 - ETA — eta.gov.eg | FRA — fra.gov.eg | EGX — egx.com.eg | GAFI.
-- Big-4 / IFRS Foundation jurisdiction profile for Egypt; PwC Tax Summaries — Egypt.
+- Big-4 / IFRS Foundation jurisdiction profile for Egypt; a secondary practitioner summary — Egypt.
 
 ## PROHIBITIONS
 
@@ -155,7 +155,7 @@ A client is a joint-stock company listed on the Egyptian Exchange.
 
 ## Disclaimer
 
-This skill is research-verified against public sources (Egyptian Accounting Standards materials, the IFRS Foundation jurisdiction profile, the Financial Regulatory Authority, PwC, and Big-4 commentary) and is pending sign-off by a qualified Egyptian accountant (محاسب قانوني). It is general information for self-employed people and small businesses, not professional accounting, audit, or legal advice. Thresholds, standards, and filing rules change — and several Egyptian reforms are in progress for 2025–2027. Verify the current position with the ETA, the FRA, and a registered Egyptian accountant before acting. Part of the open-source tax skills at openaccountants.com.
+This skill is research-verified against public sources (Egyptian Accounting Standards materials, the IFRS Foundation jurisdiction profile, the Financial Regulatory Authority, the secondary summary, and Big-4 commentary) and is pending sign-off by a qualified Egyptian accountant (محاسب قانوني). It is general information for self-employed people and small businesses, not professional accounting, audit, or legal advice. Thresholds, standards, and filing rules change — and several Egyptian reforms are in progress for 2025–2027. Verify the current position with the ETA, the FRA, and a registered Egyptian accountant before acting. Part of the open-source tax skills at openaccountants.com.
 
 <!-- openaccountants-cta-block -->
 

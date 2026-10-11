@@ -1,10 +1,10 @@
 ---
 name: croatia-tax-optimization
 description: Use this skill whenever asked about reducing tax in Croatia, tax planning, saving tax, allowances or deductions a client might be missing, or any question about legal strategies to minimise income tax for a self-employed person or small business in Croatia. Trigger on phrases like "reduce tax Croatia", "paušalni obrt", "lump-sum tax", "flat-rate sole proprietor", "obrt vs d.o.o.", "save tax Croatia", "tax planning Croatia", "deductions I'm missing", "returnee tax relief", "young person tax relief", "porezno planiranje". This skill covers the paušalni (lump-sum) regime vs standard obrt vs d.o.o. company, deductions most people miss, the personal allowance and dependants, the returnee and youth reliefs, capital-allowance timing, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Croatian tax optimisation.
-version: 0.2
+version: 0.3
 jurisdiction: HR
 tax_year: 2025
-last_updated: 2026-10-06
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Croatia Tax Optimization
 
-## Croatia Tax Optimization Skill v0.2
+## Croatia Tax Optimization Skill v0.3
 
-**Tier 2 — research-verified. Sources: Porezna uprava (Tax Administration), the Income Tax, Profit Tax and VAT Acts and their 1 Jan 2025 amendments in Narodne novine, PwC Worldwide Tax Summaries and KPMG Croatia. Figures must agree with `croatia-income-tax.md` / `croatia-social-contributions.md`. NOT yet signed off by a licensed Croatian tax adviser. Every suggestion must be reviewed by a credentialed professional; aggressive positions are never advised.**
+**Tier 2 — research-verified. Sources: Porezna uprava (Tax Administration), the Income Tax, Profit Tax and VAT Acts and their 1 Jan 2025 amendments in Narodne novine, a secondary practitioner summary and KPMG Croatia. Figures must agree with `croatia-income-tax.md` / `croatia-social-contributions.md`. NOT yet signed off by a licensed Croatian tax adviser. Every suggestion must be reviewed by a credentialed professional; aggressive positions are never advised.**
 
 ## Section 1 -- Quick Reference
 

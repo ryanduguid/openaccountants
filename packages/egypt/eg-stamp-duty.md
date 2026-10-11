@@ -1,10 +1,10 @@
 ---
 name: eg-stamp-duty
 description: Use this skill whenever asked about Egyptian stamp duty, document duty, or any tax-stamped contract question — including company formation capital duty, employment contracts, lease stamping, and electronic document stamping. Trigger on "Egypt stamp duty", "ضريبة الدمغة", "document tax Egypt", "capital duty Egypt", "e-stamp Egypt", "stamp tax Egypt". ALWAYS read this skill before computing or discussing Egypt stamp duty.
-version: 0.1
+version: 0.2
 jurisdiction: EG
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Egypt Stamp Duty (ضريبة الدمغة) Skill v0.1
+# Egypt Stamp Duty (ضريبة الدمغة) Skill v0.2
 
-## Egypt Stamp Duty (ضريبة الدمغة) Skill v0.1
+## Egypt Stamp Duty (ضريبة الدمغة) Skill v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 This skill covers Egyptian **stamp duty** (ضريبة الدمغة / ضريبة الأختام) imposed under **Law No. 111 of 1980** (قانون ضريبة الدمغة) on legal documents, instruments, contracts, banking transactions, insurance premiums, company formation documents, and securities transactions. The AI must reply in the user's language (English or Arabic / Egyptian Arabic) and may use the native tax terms shown throughout.
 
 > **Currency note:** all figures are in Egyptian Pounds (EGP / ج.م).
-> **YMYL — verify before relying.** Egyptian stamp duty rates are frequently amended by decree (most recently Laws 30/2023, 157/2025). Where this skill says "verify current value," re-confirm against the Egyptian Tax Authority (ETA — eta.gov.eg), PwC Worldwide Tax Summaries (taxsummaries.pwc.com/egypt), or a Big-4 alert before filing.
+> **YMYL — verify before relying.** Egyptian stamp duty rates are frequently amended by decree (most recently Laws 30/2023, 157/2025). Where this skill says "verify current value," re-confirm against the Egyptian Tax Authority (ETA — eta.gov.eg), a secondary practitioner summary, or a Big-4 alert before filing.
 
 ## What this file is
 
@@ -62,7 +62,7 @@ This skill covers Egyptian **stamp duty** (ضريبة الدمغة / ضريبة 
 | Same-day securities | Stamp duty **does not apply** on sale/purchase of securities occurring on the same day |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by Egypt-licensed CPA (محاسب قانوني) |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Key rate schedule — nominal (fixed) stamp duty
 
@@ -79,7 +79,7 @@ This skill covers Egyptian **stamp duty** (ضريبة الدمغة / ضريبة 
 | Lease agreements | Nominal + proportional on annual rent | See proportional schedule |
 | Certificates / extracts | Fixed per copy | Commercial register, tax certificate, etc. |
 
-> **Verify** all nominal rates against the current schedule annexed to Law 111/1980 — rates have been adjusted by multiple amendments. The ~EGP 1 per page figure is the commonly cited baseline as reported by PwC and Lloyd's Bank trade portal.
+> **Verify** all nominal rates against the current schedule annexed to Law 111/1980 — rates have been adjusted by multiple amendments. The ~EGP 1 per page figure is the commonly cited baseline as reported by the secondary summary and Lloyd's Bank trade portal.
 
 ### Key rate schedule — proportional stamp duty
 
@@ -465,7 +465,7 @@ The following are exempt from stamp duty under Law 111/1980 and subsequent amend
 | Law No. 199/2020 (Securities stamp duty reform) | Official Gazette, 29 Sep 2020 |
 | Law No. 30/2023 (Insurance stamp duty revision) | Official Gazette Issue 25, 15 Jun 2023 |
 | Investment Law No. 72/2017 | GAFI website / legislation |
-| PwC Worldwide Tax Summaries — Egypt | taxsummaries.pwc.com/egypt |
+| secondary summary, Egypt | |
 | EY Global Tax News — Egypt stamp duty | globaltaxnews.ey.com |
 | ITIDA (e-signature regulator) | https://www.itida.gov.eg |
 | Egypt Trust (e-seal provider) | https://egypttrust.com |

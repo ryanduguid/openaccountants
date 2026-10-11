@@ -1,10 +1,10 @@
 ---
 name: ua-crypto-tax
 description: "Taxation of cryptocurrency / virtual assets for individuals in Ukraine under the framework legislated to take effect from 1 January 2026: 18% PIT + 5% military levy on annual gains, the one-off 5% PIT transition for pre-law assets sold in 2026, taxable events, cost basis, and record-keeping."
-version: 1.0
+version: 1.1
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Crypto Tax
 
-## Ukraine — Taxation of Virtual Assets / Cryptocurrency for Individuals (2026) v1.0
+## Ukraine — Taxation of Virtual Assets / Cryptocurrency for Individuals (2026) v1.1
 
 CRITICAL — READ FIRST — LEGISLATIVE STATUS (as of May 2026). The rules in this skill describe Draft Law No. 10225-d ("On Amendments to the Tax Code of Ukraine and Certain Other Legislative Acts of Ukraine Regarding the Regulation of the Virtual Asset Market"), introduced 24 April 2025. As of the last verification it had passed only the FIRST reading in the Verkhovna Rada (246 of 450 votes). It had NOT been adopted in the second/final reading, NOT signed by the President, and was therefore NOT in force, even though the bill itself sets a target effective date of 1 January 2026. Substantial amendments were expected before the second reading. Until the final text is enacted and published, every figure and rule below is a PROPOSAL and may change. You MUST re-verify the current in-force status on tax.gov.ua / zakon.rada.gov.ua / the Verkhovna Rada bill card before relying on any number. Treat all outputs as draft pending confirmation of enactment.
 
@@ -38,7 +38,7 @@ CRITICAL — READ FIRST — LEGISLATIVE STATUS (as of May 2026). The rules in th
 | Tax year | Calendar year |
 | Contributor | Open Accountants Community |
 | Quality tier | **Research-verified — pending sign-off by a Ukrainian accountant/auditor** |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Conservative defaults (apply when facts or the final law are uncertain)
 
@@ -185,7 +185,7 @@ Verkhovna Rada — Draft Law No. 10225-d, "On Amendments to the Tax Code of Ukra
 NSSMC (НКЦПФР) — the "tax matrix" concept paper on virtual-asset taxation (token classes; mining/staking/airdrop options).
 EY Ukraine — IT/Tax/Law digest on the draft law (rates, taxable events, transition, declaration).
 Global Legal Insights — Blockchain & Cryptocurrency Laws & Regulations 2026 (Ukraine).
-PwC / CMS / Lexology crypto-tax commentary on the 2026 framework.
+the secondary summary / CMS / Lexology crypto-tax commentary on the 2026 framework.
 Underlying 2022 Law of Ukraine "On Virtual Assets" (foundational definitions).
 
 ### Quick test suite (expected answers under the draft)

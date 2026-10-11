@@ -1,10 +1,10 @@
 ---
 name: ua-einvoice
 description: Use this skill whenever asked about Ukrainian electronic invoicing and digital tax reporting for self-employed people and small businesses. Trigger on phrases like "Ukraine tax invoice", "податкова накладна", "ЄРПН", "VAT invoice registration Ukraine", "register tax invoice Ukraine", "СЕА ПДВ", "VAT account Ukraine", "ПРРО receipt", "fiscal receipt Ukraine FOP", "blocked tax invoice", "зупинення реєстрації ПН", "СМКОР", "КЕП Ukraine", "Електронний кабінет", "SAF-T Ukraine", or any question about how a Ukrainian VAT payer or ФОП issues invoices and reports electronically. Covers the VAT tax invoice and its mandatory ЄРПН registration, the SMKOR registration-blocking system, the СЕА ПДВ electronic VAT administration system and the VAT account, ПРРО software fiscal receipts for retail, qualified electronic signatures (КЕП), the Електронний кабінет, and the status of SAF-T UA. ALWAYS read this skill before any Ukrainian e-invoicing or digital tax-reporting work.
-version: 1.0
+version: 1.1
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Einvoice
 
-## Ukraine Electronic Invoicing & Digital Tax Reporting — Self-Employed Skill v1.0
+## Ukraine Electronic Invoicing & Digital Tax Reporting — Self-Employed Skill v1.1
 
 This skill explains how a Ukrainian self-employed person interacts with the State Tax Service's digital machinery: issuing and registering the VAT tax invoice (**податкова накладна**) in the Unified Register (**ЄРПН**), the risk engine that can freeze that registration (**СМКОР**), the electronic VAT administration system (**СЕА ПДВ**) and its VAT account, software fiscal receipts (**ПРРО**) for anyone taking money at retail, qualified electronic signatures (**КЕП**), the taxpayer portal (**Електронний кабінет**), and where SAF-T UA stands in 2026.
 
@@ -42,7 +42,7 @@ The single most important split: a **non-VAT ФОП** has *light* duties (keep p
 | SAF-T UA | On-demand only (no general mandatory periodic filing as of May 2026 — *verify*) |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a Ukrainian accountant/auditor |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 > **Wartime note.** Martial law has been in force since 24 Feb 2022 and remains in force in 2026. Several deadlines below run on the *special martial-law schedule*, which differs from the peacetime Tax Code baseline. When martial law ends the peacetime ЄРПН deadlines resume. Always confirm the current regime before quoting a date.
 
@@ -221,7 +221,7 @@ Registration is temporarily permitted on weekends during martial law (so a deadl
 - CMU Resolution **No. 1165** — СМКОР risk criteria, blocking and Data Table procedure.
 - Law **No. 265/95-ВР** on RRO/ПРРО and fiscal receipts.
 - State Tax Service — **tax.gov.ua / dps.gov.ua**; portal **cabinet.tax.gov.ua**.
-- PwC Worldwide Tax Summaries — Ukraine (VAT threshold ₴1 m, rate 20%, ЄРПН/СЕА overview).
+- Secondary practitioner summary (link removed) — Ukraine (VAT threshold ₴1 m, rate 20%, ЄРПН/СЕА overview).
 
 ### Self-employed e-invoicing checklist
 

@@ -1,10 +1,10 @@
 ---
 name: ua-financial-statements
 description: Use this skill whenever asked about Ukrainian financial statements and financial reporting (фінансова звітність) for legal entities, or whether a self-employed person must prepare them. Trigger on phrases like "Ukraine financial statements", "фінансова звітність", "П(С)БО", "НП(С)БО", "IFRS Ukraine", "МСФЗ", "do I file accounts as a FOP", "balance sheet Ukraine", "звіт про фінансові результати", "Форма 1-м", "Форма 1-мс", "enterprise size category Ukraine", "micro small medium large enterprise Ukraine", "statutory audit Ukraine", "Держстат financial report", "ТОВ financial statements", or any question about who must prepare and file financial statements, which accounting standards apply, the simplified report forms, deadlines, or audit obligations. This skill is about FORMAL FINANCIAL STATEMENTS for legal entities. A FOP (sole proprietor) does NOT prepare these — defer FOP records to ua-bookkeeping and FOP tax to ua-single-tax / ua-income-tax. ALWAYS read this skill before any Ukrainian financial-statement or financial-reporting work.
-version: 1.0
+version: 1.1
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # UA Financial Statements
 
-## Ukraine Financial Statements & Financial Reporting — Self-Employed Skill v1.0
+## Ukraine Financial Statements & Financial Reporting — Self-Employed Skill v1.1
 
 This skill explains who in Ukraine must prepare **formal financial statements** (фінансова звітність), which accounting standards apply (national П(С)БО / НП(С)БО vs international МСФЗ / IFRS), the enterprise size categories that drive the report form, where statements are filed, the deadlines, and statutory audit obligations.
 
@@ -38,7 +38,7 @@ For ФОП record-keeping read **ua-bookkeeping**; for single-tax groups, rates 
 | Filing deadlines | Annual statements: file with **ДПС by 1 March** and with **Держстat by 28 February** of the year following the reporting year; PIEs/issuers/extractors **publish by 30 April**; large & medium enterprises **publish by 1 June** (see Section 3) |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a Ukrainian accountant |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 - **Reporting period** — The financial year in Ukraine is the calendar year (1 January – 31 December). Figures, forms and thresholds are stated as of May 2026 for the 2025 reporting year filed in 2026.
 - **Threshold currency caveat** — The size thresholds in this skill are expressed in EUR in §996-XIV. They are applied by converting the EUR figures to UAH at the NBU rate at the balance sheet date (31 December). Always recompute with the current rate.  _(§996-XIV)_
@@ -190,7 +190,7 @@ These illustrate the decision flow. They are method demonstrations, not filed re
 - Law of Ukraine №4196-IX (09.01.2025) — EU-aligned SME classification criteria.
 - НП(С)БО 1 (general-purpose statements); НП(С)БО 25 (simplified micro/small statements).
 - ДПС (tax.gov.ua) and Держстат (ukrstat.gov.ua) official guidance.
-- Big-4 / mid-tier summaries: Forvis Mazars, Crowe, PwC, BDO, KPMG (Ukraine).
+- Big-4 / mid-tier summaries: Forvis Mazars, Crowe, the secondary summary, BDO, KPMG (Ukraine).
 - IFRS Foundation jurisdiction profile — Ukraine; IAS Plus (Deloitte) Ukraine.
 
 ## PROHIBITIONS

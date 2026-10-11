@@ -1,10 +1,10 @@
 ---
 name: el-salvador-tax-optimization
 description: Use this skill whenever asked about reducing tax in El Salvador, tax planning, or legal strategies to minimise tax for a business or self-employed person. Trigger on phrases like "reduce tax El Salvador", "foreign source income exempt", "territorial taxation El Salvador", "tech incentive 15 years", "El Salvador dividends 5%", "free trade zone", "save tax El Salvador", "tax planning El Salvador". This skill covers the foreign-source-income exemption (territorial reform), the 15-year tech (software/AI/cybersecurity) income-tax exemption, dividend treatment, free-trade-zone incentives, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Salvadoran tax optimisation.
-version: 0.2
+version: 0.3
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # El Salvador Tax Optimization
 
-## El Salvador Tax Optimization Skill v0.2
+## El Salvador Tax Optimization Skill v0.3
 
-**Tier 2 — research-verified. Sources: Ministerio de Hacienda, PwC El Salvador, EY (2024 ISR reform alert). Figures must agree with `el-salvador-income-tax.md` / `el-salvador-social-contributions.md` / `el-salvador-payroll.md`. NOT yet signed off by a Salvadoran tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: Ministerio de Hacienda, the secondary summary El Salvador, EY (2024 ISR reform alert). Figures must agree with `el-salvador-income-tax.md` / `el-salvador-social-contributions.md` / `el-salvador-payroll.md`. NOT yet signed off by a Salvadoran tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 

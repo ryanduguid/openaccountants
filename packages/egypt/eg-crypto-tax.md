@@ -1,10 +1,10 @@
 ---
 name: eg-crypto-tax
 description: Use this skill whenever asked about the legal status or taxation of cryptocurrency in Egypt — Bitcoin, stablecoins, tokens, NFTs, mining, staking, or trading — for individuals, freelancers, or small businesses. Trigger on phrases like "crypto tax Egypt", "is crypto legal in Egypt", "Bitcoin Egypt tax", "cryptocurrency Egypt", "ضريبة العملات المشفرة", "هل البيتكوين قانوني في مصر", "العملات الرقمية مصر", or any request to classify, compute, or explain Egyptian tax on crypto gains. ALWAYS read this skill before touching any Egypt crypto question. The AI must reply in the user's language (English or Arabic / Egyptian Arabic).
-version: 1.0
+version: 1.1
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-09-28
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -17,14 +17,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This guide loads on top of `income-tax-workflow-base` (in `skills/foundation/`), which supplies the order of operations, the output specification and the self-checks; this guide supplies the Egyptian rules only. Neither file on its own is a complete tax-computation or return-preparation process — load both, and have the output reviewed before filing.
 
-## Egypt Cryptocurrency — Legal Status & Tax (العملات المشفرة) Skill v1.0
+## Egypt Cryptocurrency — Legal Status & Tax (العملات المشفرة) Skill v1.1
 
 This skill covers the **regulatory** and **possible tax** treatment of cryptocurrency (العملات المشفرة / العملات الرقمية) in Egypt for individuals and small businesses. The AI must reply in the user's language (English or Arabic / Egyptian Arabic) and may use the native terms shown throughout.
 
 > **READ FIRST — this is the single most important point in this skill.**
 > Crypto is **not a regulated, licensed activity in Egypt**. Under the Central Bank Law, issuing, trading, promoting, or operating a crypto platform requires a **CBE licence that has not, in general, been granted to anyone**. Dealing in crypto in Egypt therefore carries **real legal risk, including criminal penalties**. And there is **no specific crypto tax law and no clear ETA guidance** — anything said about tax below is *uncertain and provisional*. This skill is **informational only**. It is **not** encouragement to deal in crypto, and it does **not** make crypto dealing legal or safe.
 
-> **YMYL — verify before relying.** Egyptian crypto law and any tax position may change. Re-confirm against the **Central Bank of Egypt (CBE — cbe.org.eg)**, the **Egyptian Tax Authority (ETA — eta.gov.eg)**, **PwC Worldwide Tax Summaries (taxsummaries.pwc.com/egypt)** or a Big-4 / local-counsel alert before acting. **Always involve a qualified Egyptian lawyer (محامٍ) for the legal-risk question — not just an accountant.**
+> **YMYL — verify before relying.** Egyptian crypto law and any tax position may change. Re-confirm against the **Central Bank of Egypt (CBE — cbe.org.eg)**, the **Egyptian Tax Authority (ETA — eta.gov.eg)**, **a secondary practitioner summary** or a Big-4 / local-counsel alert before acting. **Always involve a qualified Egyptian lawyer (محامٍ) for the legal-risk question — not just an accountant.**
 
 ## Section 1 — Quick reference
 
@@ -42,7 +42,7 @@ This skill covers the **regulatory** and **possible tax** treatment of cryptocur
 | Religious ruling | Fatwa declaring crypto haram (the Grand Mufti / Dar al-Ifta, 2018) — moral/social weight, **not** a law |
 | Contributor | Open Accountants Community |
 | **Quality tier** | **Research-verified — pending sign-off by a qualified Egyptian accountant (محاسب قانوني) and lawyer (محامٍ)** |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ⚠️ **Prominent warning (اقرأ بعناية).** In Egypt, crypto is **not a normal investment asset with a known tax rate**. The activity itself is **legally restricted and may expose the person to criminal liability** (imprisonment and large fines — see Section 2). Do **not** present a clean "buy → gain → pay X% tax" picture as if Egypt worked like a crypto-friendly jurisdiction. It does not.
 
@@ -153,7 +153,7 @@ When asked something covered above, the correct answer is **"this is not establi
 
 ### References (verify before relying)
 
-- **Reference list** — - **CBE — Central Bank of Egypt** (cbe.org.eg): Banking Law No. 194 of 2020, Art. 206; public warnings against crypto dealing. - **ETA — Egyptian Tax Authority** (eta.gov.eg): Income Tax Law No. 91 of 2005 (as amended) — the general framework; **no crypto-specific guidance**. - **PwC Worldwide Tax Summaries** (taxsummaries.pwc.com/egypt) — general Egyptian tax background. - **Dar al-Ifta / Grand Mufti** — 2018 fatwa (religious opinion, not law). - Companion skills: `eg-income-tax` (brackets, filing), `eg-bookkeeping`, `egypt-vat`. The declared `income-tax-workflow-base` dependency is unavailable.  _(CBE cbe.org.eg; ETA eta.gov.eg; PwC Worldwide Tax Summaries taxsummaries.pwc.com/egypt; Dar al-Ifta / Grand Mufti 2018 fatwa)_
+- **Reference list** — - **CBE — Central Bank of Egypt** (cbe.org.eg): Banking Law No. 194 of 2020, Art. 206; public warnings against crypto dealing. - **ETA — Egyptian Tax Authority** (eta.gov.eg): Income Tax Law No. 91 of 2005 (as amended) — the general framework; **no crypto-specific guidance**. - **a secondary practitioner summary** — general Egyptian tax background. - **Dar al-Ifta / Grand Mufti** — 2018 fatwa (religious opinion, not law). - Companion skills: `eg-income-tax` (brackets, filing), `eg-bookkeeping`, `egypt-vat`. The declared `income-tax-workflow-base` dependency is unavailable.  _(CBE cbe.org.eg; ETA eta.gov.eg; secondary summary; Dar al-Ifta / Grand Mufti 2018 fatwa)_
 
 ## PROHIBITIONS (محظورات)
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Cambodia personal income tax, T
 jurisdiction: KH
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,12 +25,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax (business/professional) | Tax on Income (TOI) -- annual progressive tax on physical persons |
 | Currency | Khmer Riel (KHR). Wages often quoted in USD (USD ≈ KHR 4,000–4,100); statutory tax tables are in KHR |
 | Tax year | Calendar year (1 January -- 31 December) |
-| Primary legislation | Law on Taxation; rate tables set by **Sub-Decree No. 196 ANKr.BK of 28 Sept 2022**, effective 1 Jan 2023 (current for 2025/2026) [PwC; DFDL] |
-| Tax authority | General Department of Taxation (GDT), Ministry of Economy and Finance — www.tax.gov.kh [PwC; Acclime] |
-| Social security | National Social Security Fund (NSSF) [NSSF; PwC] |
-| Filing portal | GDT E-Filing / e-Tax system [PwC; Acclime] |
-| Monthly TOS deadline | 20th day of the following month [PwC; Acclime] |
-| Annual TOI deadline | 31 March (within 3 months of calendar year-end) [PwC; Acclime] |
+| Primary legislation | Law on Taxation; rate tables set by **Sub-Decree No. 196 ANKr.BK of 28 Sept 2022**, effective 1 Jan 2023 (current for 2025/2026) [secondary summary; DFDL] |
+| Tax authority | General Department of Taxation (GDT), Ministry of Economy and Finance — www.tax.gov.kh [secondary summary; Acclime] |
+| Social security | National Social Security Fund (NSSF) [NSSF; secondary summary] |
+| Filing portal | GDT E-Filing / e-Tax system [secondary summary; Acclime] |
+| Monthly TOS deadline | 20th day of the following month [secondary summary; Acclime] |
+| Annual TOI deadline | 31 March (within 3 months of calendar year-end) [secondary summary; Acclime] |
 | Validated by | Pending — requires sign-off by a qualified Cambodian tax practitioner |
 | Validation date | Pending |
 | Skill version | 0.1 |
@@ -43,7 +43,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 1.1 Tax on Salary (TOS) -- Monthly Brackets, RESIDENTS
 
-**TOS monthly brackets, residents**  _([PwC; DFDL; MEF open data])_
+**TOS monthly brackets, residents**  _([secondary summary; DFDL; MEF open data])_
 
 | Monthly taxable salary (KHR) | Rate | Cumulative tax at top of band (KHR) |
 | --- | --- | --- |
@@ -63,12 +63,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Rate / Treatment |
 | --- | --- |
-| Cambodia-sourced salary | Flat **20%**, **final tax** — no brackets, no allowances [PwC] |
-| Tax on Fringe Benefits (all employees) | Flat **20%** of the value of the benefit, **employer-borne**, monthly [PwC] |
+| Cambodia-sourced salary | Flat **20%**, **final tax** — no brackets, no allowances [secondary summary] |
+| Tax on Fringe Benefits (all employees) | Flat **20%** of the value of the benefit, **employer-borne**, monthly [secondary summary] |
 
 ### 1.3 Annual Tax on Income (TOI) -- Sole proprietors / individuals / partnerships
 
-**Annual TOI brackets**  _([Orbitax; PwC])_
+**Annual TOI brackets**  _([Orbitax; secondary summary])_
 
 | Annual taxable income (KHR) | Rate | Cumulative tax at top of band (KHR) |
 | --- | --- | --- |
@@ -80,8 +80,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 *Cumulative-tax check: 5% × 6,000,000 = 300,000 → 300,000; + 10% × 78,000,000 = 7,800,000 → 8,100,000; + 15% × 48,000,000 = 7,200,000 → 15,300,000. Reconciled.*
 
-- **Sole proprietorship definition (for TOI)** — a business owned 100% by one physical person; husband, wife and dependent children are treated as one physical person.  _([PwC])_
-- **Monthly TOI prepayment** — 1% of monthly turnover (inclusive of all taxes except VAT) under the self-assessment/real regime, creditable against annual TOI and minimum tax. (Micro/small simplified-regime taxpayers may differ — verify per turnover-based classification.)  _([PwC])_
+- **Sole proprietorship definition (for TOI)** — a business owned 100% by one physical person; husband, wife and dependent children are treated as one physical person.  _([secondary summary])_
+- **Monthly TOI prepayment** — 1% of monthly turnover (inclusive of all taxes except VAT) under the self-assessment/real regime, creditable against annual TOI and minimum tax. (Micro/small simplified-regime taxpayers may differ — verify per turnover-based classification.)  _([secondary summary])_
 
 ### 1.4 Dependent Allowances (resident TOS only)
 
@@ -202,16 +202,16 @@ Cambodian descriptions mix English, Khmer transliteration, and USD/KHR amounts. 
 
 ## Section 4 -- NSSF (National Social Security Fund) Contributions
 
-**NSSF scheme rates table**  _([NSSF; PwC])_
+**NSSF scheme rates table**  _([NSSF; secondary summary])_
 
 | Scheme | Total rate | Employer share | Employee share | Contributory-wage band (KHR/month) |
 | --- | --- | --- | --- | --- |
-| Occupational Risk (ORC) | 0.8% | 0.8% | 0.0% | 400,000 floor – 1,200,000 ceiling [NSSF; PwC] |
+| Occupational Risk (ORC) | 0.8% | 0.8% | 0.0% | 400,000 floor – 1,200,000 ceiling [NSSF; secondary summary] |
 | Health Care (HIP) | 2.6% | 2.6% (full burden since 1 Jan 2018) | 0.0% | 200,000 floor – 1,200,000 ceiling [NSSF; Aplus] |
-| Pension (Old-Age), years 1–5 | 4.0% | 2.0% | 2.0% | 400,000 floor – 1,200,000 ceiling [PwC; NSSF] |
+| Pension (Old-Age), years 1–5 | 4.0% | 2.0% | 2.0% | 400,000 floor – 1,200,000 ceiling [secondary summary; NSSF] |
 | **TOTAL (years 1–5)** | **7.4%** | **5.4%** | **2.0%** | ceiling KHR 1,200,000 |
 
-NSSF is not a flat percentage of actual salary. It is calculated on a banded "contributory/assigned wage" with a ceiling of KHR 1,200,000/month. Three schemes apply. [NSSF; PwC]
+NSSF is not a flat percentage of actual salary. It is calculated on a banded "contributory/assigned wage" with a ceiling of KHR 1,200,000/month. Three schemes apply. [NSSF; secondary summary]
 
 *Column check: employer 0.8 + 2.6 + 2.0 = 5.4%; employee 0.0 + 0.0 + 2.0 = 2.0%; total 0.8 + 2.6 + 4.0 = 7.4%; and 5.4 + 2.0 = 7.4. Reconciled.*
 
@@ -219,7 +219,7 @@ NSSF is not a flat percentage of actual salary. It is calculated on a banded "co
 
 ### 4.1 Pension escalation
 
-- **Pension escalation** — Pension rises over time: 4% (years 1–5) → 8% (years 6–10) and then ~2.75% increases each subsequent 10-year period, split evenly employer/employee. Use 4% (2%/2%) for current-period computations unless the reviewer confirms a later phase.  _([PwC])_
+- **Pension escalation** — Pension rises over time: 4% (years 1–5) → 8% (years 6–10) and then ~2.75% increases each subsequent 10-year period, split evenly employer/employee. Use 4% (2%/2%) for current-period computations unless the reviewer confirms a later phase.  _([secondary summary])_
 
 ### 4.2 Contribution ceilings (computed)
 
@@ -228,7 +228,7 @@ NSSF is not a flat percentage of actual salary. It is calculated on a banded "co
 
 ### 4.3 Registration threshold
 
-- **NSSF registration threshold** — 8 or more employees employees (must register with NSSF within 45 days and contribute to ORC, health care and pension. (Some practitioner sources note enforcement has effectively extended toward all employers/≥1 employee — verify current Prakas. [RESEARCH GAP — reviewer to confirm scope]))  _([PwC])_
+- **NSSF registration threshold** — 8 or more employees employees (must register with NSSF within 45 days and contribute to ORC, health care and pension. (Some practitioner sources note enforcement has effectively extended toward all employers/≥1 employee — verify current Prakas. [RESEARCH GAP — reviewer to confirm scope]))  _([secondary summary])_
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
@@ -236,7 +236,7 @@ NSSF is not a flat percentage of actual salary. It is calculated on a banded "co
 
 ### 5.1 Residency Test
 
-- **Residency test** — A person is resident if ANY of: domiciled in Cambodia; principal place of abode in Cambodia; or present in Cambodia more than 182 days in any 12-month period ending in the tax year. Residents are taxed on worldwide salary; non-residents on Cambodia-sourced salary only. (Most sources say "more than 182 days" — treat as the >182-day test. [RESEARCH GAP — confirm exact wording vs 183 in Law on Taxation])  _([PwC; Acclime])_
+- **Residency test** — A person is resident if ANY of: domiciled in Cambodia; principal place of abode in Cambodia; or present in Cambodia more than 182 days in any 12-month period ending in the tax year. Residents are taxed on worldwide salary; non-residents on Cambodia-sourced salary only. (Most sources say "more than 182 days" — treat as the >182-day test. [RESEARCH GAP — confirm exact wording vs 183 in Law on Taxation])  _([secondary summary; Acclime])_
 
 ### 5.2 Resident TOS Computation (monthly)
 
@@ -244,15 +244,15 @@ NSSF is not a flat percentage of actual salary. It is calculated on a banded "co
 
 ### 5.3 Non-Resident TOS Computation
 
-- **Non-resident TOS computation** — Flat 20% of Cambodia-sourced salary. Final tax. No allowances, no brackets.  _([PwC])_
+- **Non-resident TOS computation** — Flat 20% of Cambodia-sourced salary. Final tax. No allowances, no brackets.  _([secondary summary])_
 
 ### 5.4 Tax on Fringe Benefits
 
-- **Tax on fringe benefits** — Flat 20% of the value of the benefit (housing, vehicle, school fees, low-interest loans, etc.), employer-borne, remitted monthly. Not added to the employee's TOS base.  _([PwC])_
+- **Tax on fringe benefits** — Flat 20% of the value of the benefit (housing, vehicle, school fees, low-interest loans, etc.), employer-borne, remitted monthly. Not added to the employee's TOS base.  _([secondary summary])_
 
 ### 5.5 Annual TOI (sole proprietor / physical person)
 
-- **Annual TOI computation steps** — 1. Determine annual net business income (turnover less deductible business expenses incurred to earn it). 2. Apply the annual band table (Section 1.3) by the marginal method. 3. Credit the 1% monthly turnover prepayments paid during the year (and minimum tax, if applicable) against the annual liability. 4. Husband, wife and dependent children of a sole proprietor are treated as one physical person.  _([PwC])_
+- **Annual TOI computation steps** — 1. Determine annual net business income (turnover less deductible business expenses incurred to earn it). 2. Apply the annual band table (Section 1.3) by the marginal method. 3. Credit the 1% monthly turnover prepayments paid during the year (and minimum tax, if applicable) against the annual liability. 4. Husband, wife and dependent children of a sole proprietor are treated as one physical person.  _([secondary summary])_
 
 ### 5.6 Non-Deductible Items (TOI)
 
@@ -272,9 +272,9 @@ NSSF is not a flat percentage of actual salary. It is calculated on a banded "co
 
 | Obligation | Deadline | Channel |
 | --- | --- | --- |
-| Monthly TOS return + payment | 20th of the following month | GDT e-filing [PwC; Acclime] |
-| Monthly TOI prepayment (1% turnover) | 20th of the following month | GDT e-filing [PwC] |
-| Annual TOI return | 31 March (within 3 months of year-end) | GDT e-Tax [PwC; Acclime] |
+| Monthly TOS return + payment | 20th of the following month | GDT e-filing [secondary summary; Acclime] |
+| Monthly TOI prepayment (1% turnover) | 20th of the following month | GDT e-filing [secondary summary] |
+| Annual TOI return | 31 March (within 3 months of year-end) | GDT e-Tax [secondary summary; Acclime] |
 | NSSF contributions | Monthly per NSSF schedule | NSSF portal [NSSF] |
 
 ### 5.8 Penalties
@@ -283,10 +283,10 @@ NSSF is not a flat percentage of actual salary. It is calculated on a banded "co
 
 | Trigger | Charge |
 | --- | --- |
-| Minor/negligent error or late payment | 10% additional tax [PwC; Acclime] |
-| Unilateral reassessment / failure to file by deadline | 25% additional tax [PwC] |
-| Repeat offense / obstruction (2nd notice within 3 years) | 40% additional tax [PwC] |
-| Interest on unpaid tax | 1.5% per month (current statutory rate) [PwC; RUMAVI] |
+| Minor/negligent error or late payment | 10% additional tax [secondary summary; Acclime] |
+| Unilateral reassessment / failure to file by deadline | 25% additional tax [secondary summary] |
+| Repeat offense / obstruction (2nd notice within 3 years) | 40% additional tax [secondary summary] |
+| Interest on unpaid tax | 1.5% per month (current statutory rate) [secondary summary; RUMAVI] |
 
 *Some practitioner summaries cite "2% monthly interest"; the current statutory rate is 1.5%/month — treat 1.5% as authoritative. [RESEARCH GAP — reviewer to confirm against current Prakas]*
 
@@ -508,13 +508,13 @@ ONBOARDING QUESTIONS -- CAMBODIA INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| TOS & TOI rate tables (2023→) | Sub-Decree No. 196 ANKr.BK of 28 Sept 2022, effective 1 Jan 2023 [PwC; DFDL; Orbitax] |
-| Residency & sourcing | Law on Taxation; PwC "Taxes on personal income" [PwC] |
+| TOS & TOI rate tables (2023→) | Sub-Decree No. 196 ANKr.BK of 28 Sept 2022, effective 1 Jan 2023 [secondary summary; DFDL; Orbitax] |
+| Residency & sourcing | Law on Taxation; secondary summary, "Taxes on personal income" [secondary summary] |
 | Dependent allowances | KHR 150,000/month per child and per non-working spouse [Acclime; DFDL] |
-| Non-resident salary / fringe benefits | Flat 20% [PwC] |
-| NSSF schemes, rates, ceiling | NSSF Contribution Payment; PwC "Other taxes" [NSSF; PwC; Aplus] |
-| Filing deadlines (TOS 20th; TOI 31 March) | PwC "Corporate tax administration"; Acclime [PwC; Acclime] |
-| Penalties (10/25/40%; 1.5%/month) | PwC; Acclime; RUMAVI [PwC; Acclime; RUMAVI] |
+| Non-resident salary / fringe benefits | Flat 20% [secondary summary] |
+| NSSF schemes, rates, ceiling | NSSF Contribution Payment; secondary summary, "Other taxes" [NSSF; secondary summary; Aplus] |
+| Filing deadlines (TOS 20th; TOI 31 March) | secondary summary, "Corporate tax administration"; Acclime [secondary summary; Acclime] |
+| Penalties (10/25/40%; 1.5%/month) | secondary summary; Acclime; RUMAVI [secondary summary; Acclime; RUMAVI] |
 | Tax authority | General Department of Taxation (GDT), www.tax.gov.kh |
 
 ### Minimum Wage (context — sector-specific, not economy-wide)
@@ -532,7 +532,7 @@ Mandatory additional garment-sector benefits: transport/accommodation USD 7/mont
 
 ### Sources
 
-- PwC Tax Summaries — Cambodia, Individual: taxes on personal income; Individual: other taxes; Corporate: tax administration. https://taxsummaries.pwc.com/cambodia
+- Secondary practitioner summary (link removed) — Cambodia, Individual: taxes on personal income; Individual: other taxes; Corporate: tax administration.
 - DFDL — "Changes to Tax on Income and Tax on Salary tables"; "Increase in minimum wage for 2026." https://www.dfdl.com
 - Orbitax — "Cambodia Sets New Individual Income Tax Brackets from 2023." https://orbitax.com/news/archive.php/Cambodia-Sets-New-Individual-I-51045
 - MEF Open Data — Monthly salary tax brackets. https://data.mef.gov.kh
@@ -544,7 +544,7 @@ Mandatory additional garment-sector benefits: transport/accommodation USD 7/mont
 - Xinhua — 2026 USD 210 minimum wage. https://english.news.cn
 - RUMAVI — Cambodia tax guide 2026. https://rumavi.com
 
-*Note: tax.gov.kh returns HTTP 403 to automated fetches; the official Sub-Decree 196 PDF could not be retrieved directly. All figures above are cross-confirmed via the national authority (NSSF, MEF open data) and Big-4/established practitioner guides (PwC, DFDL, KPMG, Acclime, Orbitax).*
+*Note: tax.gov.kh returns HTTP 403 to automated fetches; the official Sub-Decree 196 PDF could not be retrieved directly. All figures above are cross-confirmed via the national authority (NSSF, MEF open data) and Big-4/established practitioner guides (secondary summary, DFDL, KPMG, Acclime, Orbitax).*
 
 ### Test Suite
 
