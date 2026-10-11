@@ -1,6 +1,6 @@
 # Jersey pack: sources and coverage
 
-This pack contains eleven source-cited guides checked against the stated primary sections on 11 October 2026. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
+This pack contains twelve source-cited guides checked against the stated primary sections on 11 October 2026. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
 
 ## Coverage and remaining work
 
@@ -14,7 +14,7 @@ Every row is partial. A sourced overview or bounded example does not close the o
 | Pillar Two | Preliminary scope, regime distinction and payment framework | Legislation, elections, technical computation and return deadlines |
 | Consumption/imports | Registration, ordinary GST return, place-of-supply checks, personal import relief | Full exemption/zero-rate schedules, partial exemption, excise and tariffs |
 | Payroll | ITIS notice, LTC separation, ordinary Class 1 example, monthly return | Gross-pay inclusion, benefits, special workers and operational rounding |
-| Social contributions | Dated Class 1 rates/caps; Class 2 and LTC scope | Class 2 reduced rate, credits, non-monthly conversion and LTC assessment |
+| Social contributions | Dated Class 1 rates/caps; statutory Class 2 relief branches and startup reconciliation with conditional examples | Complete Class 2 income mapping, grant conditions, rounding, credits, non-monthly conversion and LTC assessment |
 | Formation/reporting | Statutory accounts/records/audit checks, annual confirmation, company substance | Fees, complete formation/licensing, regulated and partnership reporting |
 | Cross-border/withholding | Article 118B categories, landlord collection, treaty relief procedure | Dividend deduction detail, treaty-specific benefits, transfer pricing |
 | Capital/property | Trading boundary, LTT examples, stamp/EPTT/probate distinctions | Full schedules, parish rates, EPTT scope and transaction deadlines |
@@ -63,6 +63,14 @@ The table records successful, untruncated captures used by guide citations. SHA-
 | S5.02 | [2026 budget tax summary](https://www.gov.je/taxesmoney/incometax/technical/guidelines/pages/2026budgetsummary.aspx) | `c8beee505508d4ba39d9acb9ce6c5d11e7b88eb614949389ba591a990df0ac14` |
 | S6.01 | [Social Security (Jersey) Law 1974](https://www.jerseylaw.je/laws/current/l_22_1974) | `7b616036fe345df90155721bc018939db5326e813ef9bf7af14c34d313815258` |
 | S7.06 | [Pension contributions and tax relief](https://www.gov.je/TaxesMoney/IncomeTax/Individuals/AllowancesReliefs/pages/deductionsforpensioncontributions.aspx) | `e9489ae965d289adc79a7db649438532b76c7ffb96d5e317b49fdc44344a0ac3` |
+| S11.01 | [Social Security (Contributions) (Jersey) Order 1975](https://www.jerseylaw.je/laws/current/ro_6108) | `2815a5bd29066b2698d1a35777991594d76bf76419608750d9db56acc4942f0d` |
+| S11.02 | [Social Security (Classification) (Jersey) Order 1974](https://www.jerseylaw.je/laws/current/ro_6107) | `5de873ce6131ab8f686bf5b494f3da1af2892b7db084db713ef8624dc4507251` |
+| S11.03 | [Social Security (Residence Conditions) (Jersey) Order 1974](https://www.jerseylaw.je/laws/current/ro_6081) | `3788e23409582d3f10aa2ca1e1e44d365ec48ad875573608469c92598e59611a` |
+| S11.04 | [Social Security (Collection of Contributions) (Jersey) Order 2013](https://www.jerseylaw.je/laws/current/ro_89_2013) | `39b3247ce7e2a8011399bdcf6df35fae04e97a9396b1544f1e11e9653aa18886` |
+| S11.05 | [Protecting your contribution record](https://www.gov.je/Working/Contributions/Payments/pages/protectingcontributionsrecords.aspx) | `0fd316c5928476713006f34b435f04dde20a4657c9974dfae8a24a69b9dc5a17` |
+| S11.06 | [About contributions](https://www.gov.je/Working/Contributions/Payments/pages/aboutcontributions.aspx) | `75906800b1b05f21439c5993effd55c0575ef4b49b85f44988c17ea53724fa5d` |
+| S11.07 | [Long Term Incapacity Allowance: 2026 LEL corroboration](https://www.gov.je/Benefits/SicknessInjury/pages/longtermincapacityallowance.aspx) | `b4680b90ac1556280ad4387927804b2f467555fa3c77e20b33c2976f7372692e` |
+| S11.08 | [Self-employment tax return help](https://www.gov.je/taxesmoney/incometax/individuals/yourtaxreturn/helpguides/pages/selfemploymenttaxformhelp.aspx) | `521e524067c61452dc82866979afaa673e51f7718cbe37b7a1aa76e66b36449b` |
 
 ## Material source decisions
 
@@ -72,7 +80,9 @@ The table records successful, untruncated captures used by guide citations. SHA-
 - Personal rates and allowances use the 2026 schedule, Budget summary and Income Tax Law Articles 92A to 92C. The child's and childcare amounts are conditional ceilings or additions. The examples assume only the full basic threshold and no foreign tax or specialist adjustments.
 - Corporate residence uses Article 123. Articles 120AB and 120AC exempt relevant MNE group entities from ordinary income tax and disapply specified returns for qualifying years or periods; they qualify the generic company page's blanket annual-return wording. Sector classification uses Articles 123C to 123DA and the return notes. Retail eligibility and tax use Articles 123H to 123L, including aggregation and period provisions. The example is a standalone ordinary annual period; the tax amount is calculated before its effective rate.
 - Monthly Class 1 uses the 2026 employer schedule and Social Security Law Schedule 1A. The generic migration page's 2% upper-band employer figure conflicts with the dated schedule and law's 2.5%; the guide uses the latter. Examples show percentage arithmetic and exclude operational rounding and exemptions.
-- Class 2 and LTC use their specific guidance. The Class 2 page has an inconsistent threshold in a startup example; that example is not used. No reduced-rate or LTC payable amount is computed.
+- Class 2 uses Social Security Law Articles 3, 4 and 8 and Schedule 1B, Contributions Order Articles 12 to 13E and Schedule 2, and the Classification, Residence and Collection Orders. The dedicated guide distinguishes 2024 ordinary income, estimated 2026 Article 12 income and actual 2026 startup-reconciliation income. Conditional examples use established E/T inputs, applicable relief and liability periods; operational penny assessments remain unverified. The published SEL amount differs from the statutory Social Security Fund 'standard contribution'.
+- The Class 2 page's GBP 72,248 and GBP 13,968 example figures conflict with the dated 2026 limits. Its total-income-only examples do not establish the statutory E/T branches. The Article 12 inclusive income test differs from the protecting-records page's strict/not-working wording; grant conditions remain unresolved. The Article 13C offset is limited to its specified classification. No broader top-up, benefit repayment or standalone LTC payable amount is inferred.
+- Income Tax Article 70A supplies the Class 2 trading/professional expense percentages. Its liability-year wording and the 2025 return help's paid-amount instructions require reconciliation where timing differs. Raw turnover or tax profit does not establish every Schedule 2 income component, and the guide blocks that unsupported mapping.
 - ITIS uses the employer guidance's valid-notice rule, 22% missing-rate default and inclusion of LTC. The payroll example's 12% is an assumed valid notice, not a published statutory rate.
 - GST uses the domestic business and return guidance, place-of-supply sections and Direction 2026/03. The personal GBP 60 relief excludes business imports. Detailed mixed-supply and customs calculations remain open.
 - Accounts use Companies Law Articles 103 to 105, 108 and 113 in the snapshot effective from 30 September 2026. The substance outline uses Articles 3 to 5A; published specialist guidance and partnership law still need investigation.
@@ -83,6 +93,6 @@ The table records successful, untruncated captures used by guide citations. SHA-
 
 ## Period and verification limits
 
-Numerical schedules are labelled 2026. The captured current Income Tax and company substance laws apply from 17 June 2026, Companies Law from 30 September 2026 and Stamp Duties Law from 1 January 2026. Earlier events require their own point-in-time version. Current personal return guidance offers the 2025 assessment return in the 2026 filing cycle; future filing timetables require confirmation. No future-year rate is inferred.
+Numerical schedules are labelled 2026. The captured current Income Tax and company substance laws apply from 17 June 2026, Companies Law from 30 September 2026 and Stamp Duties Law from 1 January 2026. Social Security Law and Residence Order apply from 1 January 2026, Contributions Order from 22 April 2025, Classification Order from 1 January 2022 and Collection Order from 1 January 2024. Earlier events require their own point-in-time version. Current personal return guidance offers the 2025 assessment return in the 2026 filing cycle; future filing timetables require confirmation. No future-year rate is inferred.
 
 Worked examples use synthetic inputs and exact arithmetic. Eligibility comparisons use fractions and integer cross multiplication. Calculation checks, repository gates and consultation do not confer professional review or certify the outstanding topics. The dated verification entry is in `docs/verification-log/2026-10-11-jersey-core-pack.md` in the repository.

@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**1,886 Guides** across **244 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,887 Guides** across **244 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (1886 guides, 244 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (1887 guides, 244 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -1003,6 +1003,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - jp-nonpermanent-resident | JP | tier 2 | reviewed_by -
 - jp-social-insurance | JP | tier 2 | reviewed_by -
 - japan-references | JP | tier 2 | reviewed_by -
+- je-class2-contributions | JE | tier 2 | reviewed_by -
 - je-company-formation | JE | tier 2 | reviewed_by -
 - je-corporate-income-tax | JE | tier 2 | reviewed_by -
 - je-cross-border-withholding | JE | tier 2 | reviewed_by -
@@ -2108,7 +2109,7 @@ Key rules:
 
 ## Current inventory
 
-**1,886 Guides** across **244 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,887 Guides** across **244 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
