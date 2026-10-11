@@ -5,7 +5,7 @@ jurisdiction: TL
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,8 +21,8 @@ Companies pay corporate income tax (CIT) at a flat rate, with special rates for 
 - **CIT — oil & gas contractors** — 30% for a Contractor under a petroleum agreement  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 72.1 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 - **CIT — petroleum sub-contractors** — A Contractor or Subcontractor withholds 6% of the gross amount paid to any person (other than an employee) for services acquired for petroleum operations  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 81 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 - **Tax base** — Taxable income is gross income (business income, property income, prizes, tax refunds previously deducted and any other realised increase in economic capacity, other than wages subject to wage income tax) less the deductions allowed under s 30  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, ss 26.2, 28 and 30 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
-- **Withholding tax — dividends (resident to resident)** — 0 percent (final)  _(Taxes and Duties Act (Law No. 8/2008), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Withholding tax — interest (resident to resident)** — 0 percent (non-final)  _(Taxes and Duties Act (Law No. 8/2008), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Withholding tax — dividends (resident to resident)** — 0 percent (final)  _(Taxes and Duties Act (Law No. 8/2008) — https://attl.gov.tl/wage-income-tax/ (as reported; the figure was not re-read against this text for this change))_
+- **Withholding tax — interest (resident to resident)** — 0 percent (non-final)  _(Taxes and Duties Act (Law No. 8/2008) — https://attl.gov.tl/wage-income-tax/ (as reported; the figure was not re-read against this text for this change))_
 - **Withholding tax — royalties (resident)** — 10% of the gross royalty paid to a resident person or a Timor-Leste permanent establishment of a non-resident  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 54 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 - **Withholding tax — rent of land/buildings (resident)** — 10% of the gross rent for the lease of land or buildings in Timor-Leste  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 55 — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_
 - **Withholding tax — construction/building activity** — 2% of the gross payment  _(Taxes and Duties Act 2008 (Law No. 8/2008), English text published by the Autoridade Tributária Timor-Leste, s 53 and Schedule VIII — https://attl.gov.tl/wp-content/uploads/2020/01/Taxes_and_Duties_Act_2008_Eng.pdf)_

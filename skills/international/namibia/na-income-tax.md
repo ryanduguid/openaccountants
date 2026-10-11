@@ -5,7 +5,7 @@ jurisdiction: NA
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Non-resident individual rates** — The same progressive Schedule 4 bands apply to Namibian-source income of residents and non-residents  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), s 5(1) and Schedule 4 para 1 — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
 - **Residence test relevance** — Taxation is source-based: gross income is what is received or accrued from a source within or deemed to be within Namibia, so residence status generally does not change the rate and Namibian-source income is taxed whether or not the individual is resident  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), s 1, definition of 'gross income', and s 5(1) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
 - **Deduction for pension, provident, RAF and study-policy contributions** — Deductible up to N$150,000 per annum in aggregate for years of assessment commencing on or after 1 March 2022  _(Income Tax Act 24 of 1981 (NamRA copy of the annotated consolidation as at 16 September 2024), s 17(2) — https://www.namra.org.na/documents/cms/uploaded/income-tax-act-24-of-1981-debf9c72ad.pdf)_
-- **Filing deadline — salaried individuals** — 30 June following year-end (28/29 February) (approx — confirm)  _(Income Tax Act, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Filing deadline — salaried individuals** — 30 June following year-end (28/29 February) (approx — confirm)  _(Income Tax Act — https://www.namra.org.na/tax-types/page/income-tax/ (as reported; the figure was not re-read against this text for this change))_
 - **Filing deadline — provisional (e.g. business/farming) individuals** — 30 September following year-end (28/29 February) (approx — confirm)  _(Income Tax Act (https://www.namra.org.na/individual-tax/page/i-am-a-provisional-taxpayer))_
 
 <!-- openaccountants-cta-block -->

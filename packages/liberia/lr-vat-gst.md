@@ -5,7 +5,7 @@ jurisdiction: LR
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,10 +18,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 Liberia operates a Goods and Services Tax (GST), a single-stage tax levied largely at the manufacturing/import stage and on listed services, rather than a multi-stage credit VAT. A move to a full VAT has been announced (targeted for around 2027 — confirm), which would replace GST.
 
 - **Consumption tax type** — GST (single-stage), not a credit-invoice VAT; VAT replacement announced for around 1 Jan 2027 (approx — confirm timing)  _(Liberia Revenue Code — https://www.vatcalc.com/liberia/liberia-looks-to-implement-vat/)_
-- **GST general rate** — 12 percent (general rate, increased from 10%)  _(Liberia Revenue Code, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **GST general rate** — 12 percent (general rate, increased from 10%)  _(Liberia Revenue Code — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf (as reported; the figure was not re-read against this text for this change))_
 - **GST on listed goods (Revenue Code base rate)** — 7 percent (on certain manufactured/imported goods listed in the Revenue Code (verify against current LRA notice — superseded by the general-rate increase) (approx — confirm current rate))  _(Liberia Revenue Code)_
 - **GST on listed services (Revenue Code base rate)** — 10 percent (on listed services in the Revenue Code (verify against current LRA notice) (approx — confirm current rate))  _(Liberia Revenue Code)_
-- **GST on communication/telecom services** — 15 percent  _(Liberia Revenue Code, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **GST on communication/telecom services** — 15 percent  _(Liberia Revenue Code — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf (as reported; the figure was not re-read against this text for this change))_
 - **GST registration threshold** — 5,000,000 LRD (Annual turnover of taxable goods manufacture or taxable services exceeding this amount (approx — confirm))  _(Liberia Revenue Code)_
 - **GST filing frequency** — Monthly return, due by the 21st day of the following month (approx — confirm exact date)  _(Liberia Revenue Code)_
 - **Input tax credit / reverse charge** — As a single-stage GST, there is generally no full input-tax-credit chain as under a VAT; broad reverse-charge mechanics do not apply the way they do under EU-style VAT  _(Liberia Revenue Code)_

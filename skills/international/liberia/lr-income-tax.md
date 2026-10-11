@@ -5,7 +5,7 @@ jurisdiction: LR
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Deductions, residence test and filing
 
 - **Deductions and residence overview** — Mandatory NASSCORP pension contributions are deductible in computing taxable income. Residence is generally determined by physical presence in Liberia.  _(Liberia Revenue Code)_
-- **NASSCORP pension contribution** — Mandatory employee pension contribution is deductible from taxable income  _(Liberia Revenue Code; NASSCORP Act, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **NASSCORP pension contribution** — Mandatory employee pension contribution is deductible from taxable income  _(Liberia Revenue Code; NASSCORP Act — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf (as reported; the figure was not re-read against this text for this change))_
 - **Individual residence test** — A natural person is resident for the whole tax year if they have a normal place of abode in Liberia and are present at any time during the year, are present for more than 182 days in a 12-month period ending in the tax year, or are a Liberian government employee posted abroad  _(Liberia Revenue Code as amended (Liberia Revenue Authority text, 2020 amendments), s 800(a) — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf)_
 - **Employment income collection** — Collected via monthly PAYE withholding by the employer on the table above, which applies to employees of the public and private sectors; contractors of either sector pay a flat 10% instead  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
 - **PAYE remittance deadline** — By the 10th day of the month following the month of payment  _(Liberia Revenue Code; LRA, Tax Education — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_

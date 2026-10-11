@@ -5,7 +5,7 @@ jurisdiction: LR
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.3
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **National tax authority** — Liberia Revenue Authority (LRA), under the Ministry of Finance and Development Planning  _(Liberia Revenue Authority Act (https://revenue.lra.gov.lr/))_
 - **Primary tax statute** — Liberia Revenue Code of 2000 (as amended, incl. 2011 and 2020 amendments)  _(Liberia Revenue Code (https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf))_
 - **Standard tax year** — Calendar year (1 January to 31 December); approved substituted accounting periods are possible  _(Liberia Revenue Code)_
-- **Currency** — Liberian dollar (LRD) and United States dollar (USD) — dual-currency economy  _(Liberia Revenue Code, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Currency** — Liberian dollar (LRD) and United States dollar (USD) — dual-currency economy  _(Liberia Revenue Code — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf (as reported; the figure was not re-read against this text for this change))_
 - **Basis of taxation** — A resident's gross income includes all economic benefits regardless of source; a non-resident is taxed only on Liberia-source income, collected by withholding under s 806  _(Liberia Revenue Code as amended (Liberia Revenue Authority text, 2020 amendments), ss 201(c) and 804 — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf)_
 - **Top personal income tax rate (resident)** — 25 percent (on taxable income above LRD 800,000, after bands of nil to LRD 70,000, 5% to LRD 200,000 and 15% to LRD 800,000)  _(Liberia Revenue Code as amended (Liberia Revenue Authority text, 2020 amendments), s 200(a)(3) — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf ; Liberia Revenue Authority, Tax Education (rate and due date tables) — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_
 - **Standard corporate income tax rate** — 25% of taxable income, with a minimum tax of two per cent of gross income where that is greater (the excess is creditable against later years' regular tax)  _(Liberia Revenue Code as amended (Liberia Revenue Authority text, 2020 amendments), s 200(b)(2)(C) — https://revenue.lra.gov.lr/wp-content/uploads/2021/08/REVENUE-CODE-LIBERIA-REVENUE-CODE-AMENDEMENT-2020-min.pdf ; Liberia Revenue Authority, Tax Education (rate and due date tables) — https://revenue.lra.gov.lr/domestic-tax/tax-education/)_

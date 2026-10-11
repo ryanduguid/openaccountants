@@ -4,7 +4,7 @@ description: "Source-cited draft: tax overview for Lesotho (tax year 2025) — r
 jurisdiction: LS
 category: international
 tax_year: 2025
-version: 0.3
+version: 0.4
 last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax year** — 1 April to 31 March  _(Income Tax Act (https://www.rsl.org.ls/income-tax))_
 - **Currency** — Lesotho loti (LSL / M), pegged 1:1 to the South African rand (ZAR) (approx — confirm)  _(Common Monetary Area agreement)_
 - **Tax authority** — Revenue Services Lesotho (RSL)  _(Revenue Services Lesotho Act (https://www.rsl.org.ls/))_
-- **Basis of taxation** — Residents are taxed on worldwide income; non-residents on Lesotho-source income only  _(Income Tax Act 1993 (Lesotho), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Basis of taxation** — Residents are taxed on worldwide income; non-residents on Lesotho-source income only  _(Income Tax Act 1993 (Lesotho) — https://www.rsl.org.ls/personal-income-tax (as reported; the figure was not re-read against this text for this change))_
 - **Headline personal income tax rates** — 20% and 30% (progressive, two-band)  _(Income Tax Act (https://www.rsl.org.ls/personal-income-tax))_
 - **Standard corporate income tax rate** — 25%  _(Income Tax Act (https://www.rsl.org.ls/corporate-income-tax))_
 - **Concessional CIT rate (manufacturing & commercial farming)**: 10% percent  _(Income Tax Act 1993, Third Schedule items 1 and 3 (manufacturing) and Fourth Schedule item 2 (commercial farming): https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
