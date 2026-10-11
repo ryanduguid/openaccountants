@@ -32,6 +32,28 @@ Skills are drafted from, and cite, primary sources only:
 
 Training-data recall and unsourced web results are **not** acceptable sources for a rate or threshold.
 
+### Verifying source evidence
+
+Before marking a material claim verified, record the document title, official
+URL, capture date, version or consolidation date, and supporting section or
+page. Check that a downloaded document matches the linked title and instrument
+number. Distinguish enactment, commencement and application dates, and follow
+the amendments and commencement instruments needed for the period covered.
+An incomplete official index cannot establish that no later rule exists.
+
+Retain the source bytes and extraction output with hashes and the pages read.
+For a PDF, compare the passage supporting the claim with its source page,
+including table headings, row and column relationships, footnotes and
+exceptions. Successful native extraction, OCR confidence and an empty list of
+pages needing OCR do not establish complete text. Preserve raw extracts and
+record any omissions or reading-order defects separately.
+
+When official sources disagree or the operative amendment chain is incomplete,
+record the unresolved claim and the evidence needed to settle it. A successful
+download or extraction does not close that gap. The
+[12 October 2026 source checks](verification-log/2026-10-12-source-evidence-limits.md)
+record examples of missing PDF text and a misdirected official download link.
+
 ## Conservative by design
 
 When the correct treatment is genuinely uncertain, skills are written to **assume the higher-tax / more-compliant position** and to flag the uncertainty rather than guess in the taxpayer's favour. Every skill surfaces **audit flash points** — the specific spots where a real practitioner should look before anything is filed.
