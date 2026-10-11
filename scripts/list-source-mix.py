@@ -12,12 +12,13 @@ and how many at a secondary source, and lists the jurisdictions with no
 authority citation at all. Those carry the most inherited risk.
 
 It ranks, it does not accuse: a secondary source is often right, and an
-authority citation does not prove the figures came from it. Always exits 0.
+authority citation does not prove the figures came from it. Review reports exit 0; invalid arguments exit 2.
 
 Usage: python3 scripts/list-source-mix.py [--selftest] [--jurisdiction NAME]
        python3 scripts/list-source-mix.py --unclassified   # allowlist candidates
        python3 scripts/list-source-mix.py --load-bearing   # entries to check first
 """
+import argparse
 import os, re, sys, collections
 
 DOMAIN = re.compile(r'https?://([^/\s\)\]>"]+)')
@@ -25,6 +26,7 @@ DOMAIN = re.compile(r'https?://([^/\s\)\]>"]+)')
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:
     sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files, jurisdiction_group, skill_path_parts
 from oa_tools.sources import (  # noqa: E402  (the classification lives there; see its docstring)
     GOV, NON_GOV_AUTHORITY, AUTHORITY_SUFFIX, NOT_AUTHORITY, classify)
 
@@ -45,24 +47,23 @@ SKIP_TREES = ('us-states', 'foundation', 'templates', 'patterns', 'orchestrator'
               'cross-border', 'verticals', 'integrations')
 
 
-def scan(root='skills'):
+def scan(root=None):
     """Return {jurisdiction: Counter({'authority': n, 'secondary': n})}."""
     out = collections.defaultdict(collections.Counter)
     domains = collections.defaultdict(collections.Counter)
-    for dp, _, fns in os.walk(root):
-        parts = dp.split(os.sep)
+    for path, source_path in markdown_files(root):
+        parts = skill_path_parts(path, root)
         if len(parts) < 3 or parts[1] in SKIP_TREES:
             continue
-        jur = parts[2]
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            with open(os.path.join(dp, fn), encoding='utf-8', errors='replace') as fh:
-                for m in DOMAIN.finditer(fh.read()):
-                    kind = classify(m.group(1))
-                    if kind:
-                        out[jur][kind] += 1
-                        domains[jur][m.group(1).lower()] += 1
+        jur = jurisdiction_group(path, root)
+        if jur is None:
+            continue
+        with open(source_path, encoding='utf-8', errors='replace') as fh:
+            for m in DOMAIN.finditer(fh.read()):
+                kind = classify(m.group(1))
+                if kind:
+                    out[jur][kind] += 1
+                    domains[jur][m.group(1).lower()] += 1
     return out, domains
 
 
@@ -309,14 +310,19 @@ def main(only=None):
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(prog='list-source-mix.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--jurisdiction', metavar='NAME', help='only list this guide group')
+    mode.add_argument('--unclassified', action='store_true', help='list unclassified domains')
+    mode.add_argument('--load-bearing', action='store_true', help='list authority domains to verify')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
-    elif '--unclassified' in sys.argv:
+    elif args.unclassified:
         sys.exit(unclassified())
-    elif '--load-bearing' in sys.argv:
+    elif args.load_bearing:
         sys.exit(load_bearing())
     else:
-        j = None
-        if '--jurisdiction' in sys.argv:
-            j = sys.argv[sys.argv.index('--jurisdiction') + 1]
-        sys.exit(main(j))
+        sys.exit(main(args.jurisdiction))

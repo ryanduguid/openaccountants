@@ -19,6 +19,11 @@ import json
 import os
 import sys
 
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.cli import generator_arguments  # noqa: E402
+
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_PATH = os.path.join(REPO_ROOT, "llms-full.txt")
 DIVIDER = "\n\n" + "=" * 72 + "\n\n"
@@ -61,12 +66,13 @@ def build_text():
 
 
 def main():
-    # --out <path> lets CI regenerate to a temp file for staleness comparison.
-    out_path = OUT_PATH
-    if "--out" in sys.argv:
-        out_path = sys.argv[sys.argv.index("--out") + 1]
+    args = generator_arguments((__doc__ or "").split('\n\n')[0], output=OUT_PATH)
+    if args.help:
+        return
+    out_path = args.out
+    text = build_text()
     with open(out_path, "w", encoding="utf-8", newline="\n") as fh:
-        fh.write(build_text())
+        fh.write(text)
     print(f"{os.path.basename(out_path)} written ({os.path.getsize(out_path):,} bytes)")
 
 

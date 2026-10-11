@@ -31,7 +31,8 @@ class QualityMetadataValidationTests(unittest.TestCase):
         self.assertIn("must be 1 or 2", errors_for("3")[0])
 
     def test_tier_one_requires_a_real_reviewer(self) -> None:
-        for placeholder in (None, "", "pending", "pending_review", "n/a", "tbd"):
+        for placeholder in (None, "", " \t\n", "pending", "pending_review", "n/a", "tbd",
+                            True, 42, ["Alex"], {"name": "Alex"}):
             with self.subTest(placeholder=placeholder):
                 self.assertIn("tier 1 requires", errors_for("1", placeholder)[0])
 

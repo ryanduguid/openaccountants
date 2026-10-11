@@ -19,7 +19,17 @@ line before concluding anything.
 
 Usage: python3 scripts/check-form-jurisdiction.py
 """
-import os, re, collections
+import argparse
+import os, re, sys, collections
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.parse_args()
+
 FORM = re.compile(r'\bForm\s+([A-Z0-9][A-Z0-9\-\./]{1,14}[A-Z0-9])\b')
 def juris(p):
     parts = p.split(os.sep)
@@ -29,15 +39,13 @@ def juris(p):
     return parts[1] if len(parts) > 1 else '?'
 use = collections.defaultdict(collections.Counter)   # form -> juris -> count
 where = collections.defaultdict(list)
-for dp,_,fns in os.walk('skills'):
-    for fn in fns:
-        if not fn.endswith('.md'): continue
-        p = os.path.join(dp, fn); j = juris(p)
-        for i,line in enumerate(open(p,encoding='utf-8',errors='replace'),1):
-            for m in FORM.finditer(line):
-                f = m.group(1).rstrip('.')
-                use[f][j] += 1
-                where[(f,j)].append((p,i))
+for p, source in markdown_files(sort_filenames=False):
+    j = juris(p)
+    for i,line in enumerate(open(source,encoding='utf-8',errors='replace'),1):
+        for m in FORM.finditer(line):
+            f = m.group(1).rstrip('.')
+            use[f][j] += 1
+            where[(f,j)].append((p,i))
 sus = []
 for f, js in use.items():
     if len(js) < 2: continue

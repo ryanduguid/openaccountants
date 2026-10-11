@@ -44,7 +44,7 @@ Exits 0 always. This ranks leads for a human; it does not gate anything.
 Usage: python3 scripts/check-cited-hosts.py [--selftest] [--grade hard|deep-link|reserved]
        python3 scripts/check-cited-hosts.py --no-network   # parse and classify only
 """
-import os, sys, glob, time, socket, ipaddress, collections
+import os, sys, glob, time, socket, ipaddress, collections, argparse
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -223,10 +223,18 @@ def selftest():
     return 0 if ok else 1
 
 
-def main(argv):
+def main(argv=None):
+    parser = argparse.ArgumentParser(prog='check-cited-hosts.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline classification tests')
+    parser.add_argument('--no-network', action='store_true', help='parse citations without resolving hosts')
+    parser.add_argument('--grade', choices=('hard', 'deep-link', 'reserved'), help='only list this grade')
+    args = parser.parse_args(argv)
+    if args.selftest:
+        return selftest()
     hosts, nfiles = collect_hosts()
     print(f'scanned {nfiles} files; {len(hosts)} unique hostnames cited')
-    if '--no-network' in argv:
+    if args.no_network:
         print('(--no-network: parsed and classified only, nothing resolved)')
         return 0
 
@@ -238,9 +246,7 @@ def main(argv):
         if verdict:
             findings[verdict[0]].append((host, verdict[1]))
 
-    wanted = None
-    if '--grade' in argv:
-        wanted = argv[argv.index('--grade') + 1]
+    wanted = args.grade
 
     total = sum(len(v) for v in findings.values())
     for g, blurb in (
@@ -267,4 +273,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    sys.exit(selftest() if '--selftest' in sys.argv else main(sys.argv))
+    sys.exit(main())

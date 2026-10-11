@@ -36,7 +36,12 @@ doubt. Expect that to be the common case.
 
 Usage: python3 scripts/check-research-gap-conflicts.py [skills]
 """
+import argparse
 import os, re, collections, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import directory
+from oa_tools.guides import markdown_files, jurisdiction_group
 
 GAP = re.compile(r'\[RESEARCH GAP[^\]]*\]')
 NUM = re.compile(r'\b\d{1,3}(?:,\d{3})+(?:\.\d+)?\b|\b\d{4,}(?:\.\d+)?\b|\b\d{1,3}\.\d{1,2}%')
@@ -54,20 +59,16 @@ def distinctive(f):
 def main(root):
     gapfigs  = collections.defaultdict(lambda: collections.defaultdict(set))
     factfigs = collections.defaultdict(lambda: collections.defaultdict(set))
-    for dp, _, fns in os.walk(root):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            p = os.path.join(dp, fn)
-            parts = p.split(os.sep)
-            if len(parts) < 3:
-                continue
-            text = open(p, encoding='utf-8', errors='replace').read()
-            for s in re.split(r'(?<=[.!?])\s+|\n', text):
-                tgt = gapfigs if GAP.search(s) else factfigs
-                for f in set(NUM.findall(s)):
-                    if distinctive(f):
-                        tgt[parts[2]][f].add(p)
+    for p, source_path in markdown_files(root):
+        jur = jurisdiction_group(p, root)
+        if jur is None:
+            continue
+        text = open(source_path, encoding='utf-8', errors='replace').read()
+        for s in re.split(r'(?<=[.!?])\s+|\n', text):
+            tgt = gapfigs if GAP.search(s) else factfigs
+            for f in set(NUM.findall(s)):
+                if distinctive(f):
+                    tgt[jur][f].add(p)
 
     hits = 0
     base = lambda ps: ','.join(sorted(os.path.basename(x) for x in ps))
@@ -82,4 +83,8 @@ def main(root):
     return hits
 
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else 'skills')
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('root', nargs='?', type=directory, metavar='DIR',
+                        help="directory to scan (default: this checkout's skills)")
+    args = parser.parse_args()
+    main(args.root)

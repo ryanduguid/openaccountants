@@ -14,11 +14,9 @@ What gets backfilled (missing keys only):
                 `git log --name-only` pass over history (no per-file
                 subprocesses). Inserted as `last_updated: YYYY-MM-DD`.
 
-  tier          `tier: 2` (source-cited draft) by default. `tier: 1` ONLY
-                when the frontmatter already records a real review:
-                `reviewed_by` non-empty, or `verified_by` set to something
-                other than the unreviewed markers (pending/none/tbd/...).
-                The exact tier-1 file list is printed in the report.
+  tier          `tier: 2` (source-cited draft). A reviewer name alone records
+                attribution; tier 1 requires explicit whole-guide sign-off
+                under CONTRIBUTING.md. Existing tier keys are preserved.
 
   jurisdiction  Derived from the path only where unambiguous:
                 - skills/us-states/<code>/*            -> US-<CODE>
@@ -48,9 +46,9 @@ What gets backfilled (missing keys only):
                 skills/templates) are LEFT ALONE and reported — we do not
                 invent a convention.
 
-Insertion point: after the last tax_year / tax_year_notes / jurisdiction
-line when present, else immediately before the closing `---`. New keys go in
-the order jurisdiction, tier, last_updated.
+Insertion point: after the last single-line tax_year / tax_year_notes /
+jurisdiction value when present. A multiline anchor uses the closing delimiter
+as the insertion point. New keys go in the order jurisdiction, tier, last_updated.
 
 Stdlib only. Usage:
     python3 scripts/backfill-metadata.py             # dry run (default)
@@ -63,12 +61,20 @@ import re
 import subprocess
 import sys
 
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+
+from oa_tools.cli import metadata_arguments
+from oa_tools import roster
+from oa_tools.frontmatter import FRONTMATTER_END_RE
+
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD_INDEX = os.path.join(REPO_ROOT, "scripts", "build-index.py")
 
 # verified_by values that do NOT count as a real review (same set
 # scripts/build-index.py uses for the accountant_reviewed count).
-UNREVIEWED_MARKERS = {"pending", "none", "no", "false", "-", "n/a", "tbd"}
+UNREVIEWED_MARKERS = roster.UNREVIEWED_MARKERS
 
 # skills/international/<dir> -> ISO-3166 alpha-2, used ONLY when no sibling
 # file in the dir already carries a jurisdiction value.
@@ -127,10 +133,13 @@ LEAVE_DIRS = {
     "skills/international/eu",
 }
 
-KEY_LINE_RES = {
-    key: re.compile(r"^%s:" % key)
-    for key in ("jurisdiction", "tier", "last_updated", "tax_year", "tax_year_notes")
-}
+METADATA_KEYS = ("jurisdiction", "tier", "last_updated", "tax_year", "tax_year_notes")
+EDITOR_KEY_RE = re.compile(r"^([A-Za-z_][\w-]*):(?:[ \t]+(.*)|$)")
+
+# Only a complete scalar on one line is a safe immediate insertion anchor.
+SINGLE_LINE_VALUE_RE = re.compile(
+    r"""(?:(?:"(?:[^"\\]|\\.)*"|'(?:[^']|'')*')(?:\s+#.*)?|[^"'|>!&*\[{].*)"""
+)
 
 
 def load_build_index():
@@ -218,16 +227,72 @@ def frontmatter_line_span(lines):
     if not lines or lines[0].strip() != "---":
         return None
     for i in range(1, len(lines)):
-        if lines[i].strip() in ("---", "..."):
+        if FRONTMATTER_END_RE.match(lines[i]):
             return (1, i)
     return None
 
 
 def is_reviewed(fields):
-    if fields["reviewed_by"]:
-        return True
-    verified = fields["verified_by"]
-    return bool(verified) and verified.strip().lower() not in UNREVIEWED_MARKERS
+    """Whether fields record explicit tier-1 review; names alone are attribution."""
+    return roster.reviewer_of(fields) is not None
+
+
+def frontmatter_key_lines(lines, start, end):
+    """Find column-zero keys, treating quoted scalar continuation lines as opaque.
+
+    Tagged, anchored, flow and nested mapping values, and indented quoted nodes,
+    are outside this editor's lexical contract. Refuse them before any insertion.
+    """
+    keys = []
+    quote = None
+    block_value = False
+    plain_value = False
+    for i in range(start, end):
+        content = lines[i].rstrip("\r\n")
+        if quote is None:
+            if not content.strip() or content.lstrip().startswith("#"):
+                continue
+            match = EDITOR_KEY_RE.match(content)
+            if match is None:
+                if not content.startswith((" ", "\t")) or not keys:
+                    raise ValueError(f"unsupported mapping syntax on line {i + 1}")
+                if not block_value:
+                    continuation = re.sub(r"^(?:-[ \t]+)+", "", content.lstrip())
+                    if ((not plain_value and continuation[:1] in "\"'!&*[{?:") or
+                            re.search(r":(?:[ \t]|$)", continuation)):
+                        raise ValueError(f"unsupported indented value on line {i + 1}")
+                continue
+            keys.append((i, match.group(1)))
+            content = (match.group(2) or "").strip()
+            block_value = bool(re.fullmatch(r"[|>](?:[1-9][+-]?|[+-][1-9]?)?(?:[ \t]+#.*)?", content))
+            plain_value = bool(content and not block_value and content[0] not in "#\"'!&*[{")
+            if not content or content.startswith("#"):
+                continue
+            if content[0] in "!&*[{":
+                raise ValueError(f"unsupported tagged, anchored or flow value on line {i + 1}")
+            if content[0] not in "\"'":
+                continue
+            quote = content[0]
+            cursor = 1
+        else:
+            cursor = 0
+        while cursor < len(content):
+            if quote == '"' and content[cursor] == "\\":
+                cursor += 2
+            elif content[cursor] == quote:
+                if quote == "'" and content[cursor:cursor + 2] == "''":
+                    cursor += 2
+                    continue
+                trailing = content[cursor + 1:].strip()
+                if trailing and not trailing.startswith("#"):
+                    raise ValueError(f"ambiguous quoted value on line {i + 1}")
+                quote = None
+                break
+            else:
+                cursor += 1
+    if quote is not None:
+        raise ValueError("unfinished quoted value")
+    return keys
 
 
 def process_file(rel, bi, git_dates, sibling_values, apply_changes, report):
@@ -237,30 +302,38 @@ def process_file(rel, bi, git_dates, sibling_values, apply_changes, report):
     block = bi.extract_frontmatter(text)
     if block is None:
         return  # doc file / broken frontmatter: not a guide, validator's job
-    fields = bi.parse_known_keys(block)
-
     lines = text.splitlines(keepends=True)
     span = frontmatter_line_span(lines)
     if span is None:
         return
     start, end = span
 
-    # Raw key-line presence (guards against present-but-empty keys: never
-    # insert a duplicate key line).
-    present = {key: False for key in KEY_LINE_RES}
+    try:
+        key_lines = frontmatter_key_lines(lines, start, end)
+    except ValueError as exc:
+        report["unsafe_frontmatter"].append((rel, str(exc)))
+        return
+    fields = bi.parse_known_keys("".join(lines[i] for i, _ in key_lines))
+    # Presence protects empty and duplicate keys as well as populated ones.
+    present = {key: False for key in METADATA_KEYS}
     anchor = None
-    for i in range(start, end):
-        content = lines[i].rstrip("\r\n")
-        for key, key_re in KEY_LINE_RES.items():
-            if key_re.match(content):
-                present[key] = True
-                if key in ("tax_year", "tax_year_notes", "jurisdiction"):
-                    anchor = i + 1
+    for i, key in key_lines:
+        if key in present:
+            present[key] = True
+            if key in ("tax_year", "tax_year_notes", "jurisdiction"):
+                anchor = i + 1
     for key in ("jurisdiction", "tier", "last_updated"):
         if present[key] and not fields[key]:
             report["empty_key"].append((rel, key))
     if anchor is None:
-        anchor = end  # insert just before the closing ---
+        anchor = end  # insert just before the closing delimiter
+    else:
+        value = lines[anchor - 1].split(":", 1)[1].strip()
+        following = next((line for line in lines[anchor:end]
+                          if line.strip() and not line.lstrip().startswith("#")), "")
+        if not SINGLE_LINE_VALUE_RE.fullmatch(value) or following.startswith((" ", "\t")):
+            # Preserve multiline quoted, block, flow and plain values intact.
+            anchor = end
 
     additions = []  # (key, value) in insertion order
 
@@ -273,10 +346,7 @@ def process_file(rel, bi, git_dates, sibling_values, apply_changes, report):
             report["jurisdiction"][reason] = report["jurisdiction"].get(reason, 0) + 1
 
     if not present["tier"]:
-        tier = 1 if is_reviewed(fields) else 2
-        additions.append(("tier", str(tier)))
-        if tier == 1:
-            report["tier1"].append(rel)
+        additions.append(("tier", "2"))
         report["tier"] += 1
 
     if not present["last_updated"]:
@@ -300,8 +370,11 @@ def process_file(rel, bi, git_dates, sibling_values, apply_changes, report):
     report["rows"].append((rel, ", ".join(f"{k}: {v}" for k, v in additions)))
 
 
-def main():
-    apply_changes = "--apply" in sys.argv[1:]
+def main(argv=None):
+    args = metadata_arguments("Backfill missing guide metadata.", argv)
+    if args.help:
+        return
+    apply_changes = args.apply
     bi = load_build_index()
     git_dates = git_last_updated_map()
 
@@ -322,7 +395,7 @@ def main():
     report = {
         "rows": [], "tier": 0, "last_updated": 0, "tier1": [],
         "jurisdiction": {}, "jurisdiction_left": {}, "no_git_date": [],
-        "empty_key": [],
+        "empty_key": [], "unsafe_frontmatter": [],
     }
     for rel in guides:
         process_file(rel, bi, git_dates, sibling_values, apply_changes, report)
@@ -354,7 +427,8 @@ def main():
                 print(f"    {rel}")
 
     for label, key in (("no git date (file not in history?)", "no_git_date"),
-                       ("key present but EMPTY (not touched)", "empty_key")):
+                       ("key present but EMPTY (not touched)", "empty_key"),
+                       ("unsupported frontmatter (not touched)", "unsafe_frontmatter")):
         if report[key]:
             print(f"\n{label}:")
             for item in report[key]:
