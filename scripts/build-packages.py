@@ -206,6 +206,18 @@ UPLOAD_STEP = (
     "JURISDICTION=<folder>` puts them together in one ready-to-upload folder"
 )
 
+PACKAGE_NOTICE = """Check each guide's metadata, quality tier, sources and coverage limits before use. Check its applicable period and review status where provided. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
+
+Guide content is available under the source-available OA Guide License; see [LICENSING.md](https://github.com/ryanduguid/openaccountants/blob/main/LICENSING.md) for the licence terms and third-party exceptions."""
+
+REVIEW_PROCESS = """Professional reviews and corrections are welcome:
+
+1. Check the guide's cited primary sources and applicable period.
+2. Edit the relevant source file under `skills/` and submit a pull request to this fork.
+3. State the scope of your review, your qualification and the review date.
+
+Accountant review requires a named, licensed accountant to review the complete guide and sign it off in a pull request. Contribution credit alone does not establish review. See [the review process](https://github.com/ryanduguid/openaccountants/blob/main/CONTRIBUTING.md#review)."""
+
 # Country code → display name mapping
 COUNTRY_NAMES = {
     "MT": "Malta", "GB": "United Kingdom", "DE": "Germany", "AU": "Australia",
@@ -546,7 +558,7 @@ Then proceed to classification using the loaded country skills.
 
 
 def build_readme(country_name, files, practitioner_title, jurisdiction_code, shared=()):
-    """Build per-jurisdiction README with keyword enrichment and accountant CTA."""
+    """Build per-jurisdiction README with scope and contribution instructions."""
     file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)]) + "\n" + shared_section(shared)
 
     meta = COUNTRY_METADATA.get(jurisdiction_code, {})
@@ -571,8 +583,8 @@ Tax authority: **{tax_authority}**
 
     return f"""# {country_name} — AI Accounting Assistant | OpenAccountants
 
-> Open-source accounting skills for {country_name}. Upload to Claude, ChatGPT, or any AI assistant.
-> Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
+> Accounting reference guides for {country_name}. Upload to Claude, ChatGPT, or any AI assistant.
+> Coverage depends on the guides listed below and their stated limits.
 
 ## What's in this folder
 
@@ -584,48 +596,33 @@ Tax authority: **{tax_authority}**
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my {country_name} taxes for the period shown in these documents. Here's my bank statement."**
-   - **"Classify my transactions and prepare my books."**
-   - **"Run payroll for my employee."**
-   - **"Help me set up a company in {country_name}."**
-   - **"Prepare my annual accounts."**
+   - **"Explain which obligations these guides cover and what evidence is missing."**
+   - **"Prepare draft working papers for the obligations these guides cover."**
 
 The generated intake supports personalised preparation for full-year residents within the loaded guides' scope. Part-year residence and non-residence require separate treatment. Where a supplied guide covers a specialist reference topic, consult it independently within its stated conditions and review requirements.
 
-The AI will:
+The AI should:
+
 - Ask onboarding questions to confirm your situation
-- Load the right domain skills (tax, bookkeeping, payroll, etc.)
-- Produce working papers for each obligation
+- Check whether the loaded guides cover your requested work and period
+- Prepare draft working papers within those guides' conditions
 - Flag anything that needs your {practitioner_title}'s attention
 
 ## Important
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified {practitioner_title.removeprefix("qualified ")} before filing or acting upon.
 
-Check each guide's metadata, quality tier, sources and coverage limits before use. Check its applicable period and review status where provided. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
+{PACKAGE_NOTICE}
 
 ---
 
 ## Are you a {practitioner_title}?
 
-These {country_name} tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
-
-**You don't need to use GitHub.** Just:
-
-1. Download the files in this folder
-2. Check the rates against {tax_authority}'s website
-3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
-
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
-
-Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
-
-**Your name goes on the skill either way.**
+{REVIEW_PROCESS}
 
 ---
 
-*OpenAccountants — open-source accounting skills for AI*
-*Coverage is counted in the repository's `index.json` — [openaccountants.com](https://www.openaccountants.com)*
-*info@openaccountants.com*
+*Coverage is counted in the repository's `index.json`.*
 """
 
 
@@ -847,12 +844,12 @@ US_STATE_NAMES = {
 
 
 def build_us_state_readme(state_name, state_code, files, shared=()):
-    """Build README for a US state package with accountant CTA."""
+    """Build README for a US state package."""
     file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)]) + "\n" + shared_section(shared)
     return f"""# {state_name} ({state_code.upper()}) — AI Tax Assistant | OpenAccountants
 
-> Open-source federal + {state_name} state tax skills for AI.
-> Upload to Claude, ChatGPT, or any AI assistant. Verified by accountants.
+> Federal and {state_name} state tax reference guides for AI.
+> Upload to Claude, ChatGPT, or any AI assistant. Check each guide's review status and limits.
 
 ## What's in this folder
 
@@ -865,13 +862,14 @@ which are shared files listed below. Upload all of them together.
 ## How to use
 
 {UPLOAD_STEP}
-2. Attach your 2025 bank statement (CSV or PDF)
-3. Say: **"Help me with my 2025 taxes. I'm based in {state_name}. Here's my bank statement."**
+2. Attach documents for the period you need help with (CSV or PDF)
+3. Say: **"Help me with my taxes for the period shown in these documents. I'm based in {state_name}. Here's my bank statement."**
 
-The AI will:
+The AI should:
+
 - Ask onboarding questions to confirm your situation
-- Classify every transaction on your bank statement
-- Produce federal AND {state_name} state working papers
+- Check whether the loaded guides cover your requested work and period
+- Prepare draft federal and {state_name} state working papers within those guides' conditions
 - Flag anything that needs your CPA or EA's attention
 
 ## Important
@@ -879,32 +877,17 @@ The AI will:
 **This is not tax advice.** Everything produced must be reviewed and signed off by a
 qualified CPA, EA, or tax attorney before filing.
 
-The most up-to-date, verified version of these skills is maintained at
-[openaccountants.com](https://www.openaccountants.com).
+{PACKAGE_NOTICE}
 
 ---
 
 ## Are you a CPA, EA, or tax professional in {state_name}?
 
-These {state_name} tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
-
-**You don't need to use GitHub.** Just:
-
-1. Download the files in this folder
-2. Check the rates against your state tax authority's website and the IRS
-3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
-
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
-
-Or if you're comfortable with GitHub: fork the repo, fix the source under `skills/us-states/{state_code}/` or `skills/federal/`, and submit a PR.
-
-**Your name goes on the skill either way.**
+{REVIEW_PROCESS}
 
 ---
 
-*OpenAccountants — open-source accounting skills for AI*
-*Coverage is counted in the repository's `index.json` — [openaccountants.com](https://www.openaccountants.com)*
-*info@openaccountants.com*
+*Coverage is counted in the repository's `index.json`.*
 """
 
 
@@ -1028,29 +1011,28 @@ def build_canada_province_readme(province_name, province_code, files, shared=())
     file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)]) + "\n" + shared_section(shared)
     return f"""# {province_name} ({province_code.upper()}) — AI Tax Assistant | OpenAccountants
 
-> Open-source federal + {province_name} provincial/territorial tax skills for AI.
-> Upload to Claude, ChatGPT, or any AI assistant. Verified by accountants.
+> Federal and {province_name} provincial/territorial tax reference guides for AI.
+> Upload to Claude, ChatGPT, or any AI assistant. Check each guide's review status and limits.
 
 ## What's in this folder
 
 This package is the **{province_name}-specific** provincial/territorial tax skills
-in this folder plus the **federal Canadian** tax and accounting skills (T1, T2125,
-CPP/EI, instalments, GST/HST, T1135, crypto, bookkeeping, payroll, formation,
-financial statements, transfer pricing, tax optimization), which are shared files
-listed below. Upload all of them together.
+in this folder plus the **federal Canadian** guides listed as shared files
+below. Upload all of them together and check their stated coverage.
 
 {file_list}
 
 ## How to use
 
 {UPLOAD_STEP}
-2. Attach your 2025 bank statement (CSV or PDF)
-3. Say: **"Help me with my 2025 taxes. I'm based in {province_name}. Here's my bank statement."**
+2. Attach documents for the period you need help with (CSV or PDF)
+3. Say: **"Help me with my taxes for the period shown in these documents. I'm based in {province_name}. Here's my bank statement."**
 
-The AI will:
+The AI should:
+
 - Ask onboarding questions to confirm your situation
-- Classify every transaction on your bank statement
-- Produce federal T1/T2125 AND {province_name} provincial working papers
+- Check whether the loaded guides cover your requested work and period
+- Prepare draft federal and {province_name} provincial working papers within those guides' conditions
 - Flag anything that needs your CPA's attention
 
 ## Important
@@ -1058,32 +1040,17 @@ The AI will:
 **This is not tax advice.** Everything produced must be reviewed and signed off by a
 qualified Canadian CPA before filing.
 
-The most up-to-date, verified version of these skills is maintained at
-[openaccountants.com](https://www.openaccountants.com).
+{PACKAGE_NOTICE}
 
 ---
 
 ## Are you a CPA or tax professional in {province_name}?
 
-These {province_name} tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a Canadian CPA to verify it.
-
-**You don't need to use GitHub.** Just:
-
-1. Download the files in this folder
-2. Check the rates against the CRA and your provincial/territorial finance department
-3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
-
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
-
-Or if you're comfortable with GitHub: fork the repo, fix the source under `skills/international/canada/{CA_PROVINCE_DIRS.get(province_code, province_code)}/`, and submit a PR.
-
-**Your name goes on the skill either way.**
+{REVIEW_PROCESS}
 
 ---
 
-*OpenAccountants — open-source accounting skills for AI*
-*Coverage is counted in the repository's `index.json` — [openaccountants.com](https://www.openaccountants.com)*
-*info@openaccountants.com*
+*Coverage is counted in the repository's `index.json`.*
 """
 
 
