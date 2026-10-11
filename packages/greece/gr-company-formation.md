@@ -5,7 +5,7 @@ jurisdiction: GR
 category: formation
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -37,7 +37,7 @@ Companies are registered electronically through GEMI (General Commercial Registr
 Greek companies must keep statutory accounting records, file annual financial statements and the corporate income tax return, and meet VAT and payroll obligations.
 
 - **Annual financial statements** — Prepared under Greek Accounting Standards (Law 4308/2014) and published to GEMI  _(Law 4308/2014 (Greek Accounting Standards); Law 4919/2022 (GEMI) https://global.ecovis.com/greece/tax-guide/)_
-- **Annual corporate income tax return** — Filed electronically via AADE by the last working day of the sixth month after year-end  _(Greek Income Tax Code (Law 4172/2013), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Annual corporate income tax return** — Filed electronically via AADE by the last working day of the sixth month after year-end  _(Income Tax Code (Law 4172/2013), art. 68(2) (return filed by the last working day of the sixth month after the end of the tax year), Ministry of Finance administrative codification (May 2024) — https://minfin.gov.gr/wp-content/uploads/2024/05/%CE%A195%CE%A6%CE%97-59%CE%93_%CE%94%CE%B9%CE%BF%CE%B9%CE%BA%CE%B7%CF%84%CE%B9%CE%BA%CE%AE-%CE%9A%CF%89%CE%B4%CE%B9%CE%BA%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%83%CE%B7-%CE%9A%CF%8E%CE%B4%CE%B9%CE%BA%CE%B1-%CE%A6%CE%BF%CF%81%CE%BF%CE%BB%CE%BF%CE%B3%CE%AF%CE%B1%CF%82-%CE%95%CE%B9%CF%83%CE%BF%CE%B4%CE%AE%CE%BC%CE%B1%CF%84%CE%BF%CF%82.pdf)_
 - **VAT compliance** — Periodic VAT returns (monthly or quarterly per books) plus electronic transmission of data to the myDATA platform  _(Greek VAT Code (Law 2859/2000); myDATA framework https://www.taxually.com/manuals/greece)_
 - **myDATA e-books** — Mandatory electronic transmission of accounting data (revenue/expense/classification) to AADE's myDATA platform  _(AADE myDATA decision (Law 4174/2013 / Tax Procedure Code) https://www.aade.gr/en)_
 - **Payroll filings** — Monthly e-EFKA detailed statement (APD) and income tax withholding remittance for employers  _(Law 4670/2020 (e-EFKA); Greek Income Tax Code (Law 4172/2013) https://ypergasias.gov.gr/en/social-security/insured-persons/insurance-contributions/)_
