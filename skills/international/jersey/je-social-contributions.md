@@ -15,7 +15,7 @@ category: international
 tax_year: 2026
 tier: 2
 last_updated: 2026-10-11
-version: 1.0
+version: 1.1
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -60,11 +60,11 @@ Class 1 payments are due within 15 days after month end under the same [schedule
 
 ## Class 2
 
-The [Class 2 guidance](https://www.gov.je/Working/Contributions/Payments/pages/class2contributionsstatement.aspx) addresses self-employed, non-employed and insufficiently covered employed people. It describes liability after more than 6 months of Jersey residence, between age 18 and pension age, subject to credits and exemptions. Substantial control of a company can make a working owner Class 2 rather than ordinary Class 1.
+Use [je-class2-contributions](je-class2-contributions.md) for insured status, reduced-rate branches, startup concessions and reconciliation. [Social Security Law, Article 3](https://www.jerseylaw.je/laws/current/l_22_1974) and the [Residence Order, Article 2](https://www.jerseylaw.je/laws/current/ro_6081) use school leaving age and prescribed residence conditions with exceptions. Age 18 and 6 months since arrival are not unconditional tests. The [Classification Order, Schedule 1 Part 2](https://www.jerseylaw.je/laws/current/ro_6107) includes low-earnings employment and specified company ownership/control cases; confirm the applicable classification.
 
-The published 2026 annual bands are 12.5% up to GBP 72,744 and 2.5% from there to GBP 331,584, with no further contribution above that upper limit. The notice normally uses income from 2 years earlier, including relevant earned and unearned income. The published default maximum monthly amount is GBP 1,297. Do not apply these bands to current salary and declare a payable amount without checking the reduced-rate rules, eligibility, credits and notice.
+The [2026 Class 2 guidance](https://www.gov.je/Working/Contributions/Payments/pages/class2contributionsstatement.aspx) gives annual bands of 12.5% up to GBP 72,744 and 2.5% from there to GBP 331,584, and a full monthly amount of GBP 1,297. [Contributions Order, Articles 13 to 13B and Schedule 2](https://www.jerseylaw.je/laws/current/ro_6108) ordinarily use 2024 income with 2026 limits, but different branches use different deemed earnings. Current salary or total taxable income alone cannot establish a reduced-rate payment.
 
-Class 2 is payable by day 15 of the following month. Mixed employment uses a top-up calculation with Class 1 coverage. The startup plan is a separately approved and reviewed arrangement, not an automatic exemption. See the [Class 2 guidance](https://www.gov.je/Working/Contributions/Payments/pages/class2contributionsstatement.aspx).
+[Collection Order, Article 6](https://www.jerseylaw.je/laws/current/ro_89_2013) ordinarily requires payment by day 15 of the following month, subject to a verified extension. The Article 13C Class 1 offset applies to its specific low-earnings classification; company ownership alone does not establish it. Article 13D startup concessions require application and qualifying conditions; Article 13E reconciliation uses actual concession-year income and payments. Follow the [dedicated guide](je-class2-contributions.md) and the official notice for the applicable periods and amounts.
 
 ## Long-term care
 
@@ -72,7 +72,7 @@ Class 2 is payable by day 15 of the following month. Mixed employment uses a top
 
 ## Limits and provenance
 
-Operational rounding, non-monthly conversion, exemptions, credits, pension-age cases, complete Class 2 reduced-rate and startup reconciliation, and standalone long-term care assessment remain research gaps.
+Operational rounding, non-monthly conversion, exemptions, credits, pension-age cases and standalone long-term care assessment remain research gaps. The dedicated Class 2 guide supplies the statutory reduced-rate and startup procedure with conditional arithmetic; complete income mapping, administrative grant conditions, broader top-up practice, benefit assessment and tax-expense timing remain unresolved.
 
 The dated 2026 employer schedule and the current Social Security Law agree on 2.5% for the employer upper band. The generic moving-to-Jersey page says 2%; its conflicting figure is not used here. Primary sources were read on 11 October 2026. See `references.md`; this draft awaits professional review.
 

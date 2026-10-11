@@ -6,18 +6,19 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `je-company-formation.md`
-3. `je-corporate-income-tax.md`
-4. `je-cross-border-withholding.md`
-5. `je-crypto-tax.md`
-6. `je-gst.md`
-7. `je-income-tax.md`
-8. `je-payroll.md`
-9. `je-pension-contributions.md`
-10. `je-pillar-two.md`
-11. `je-property-transactions.md`
-12. `je-social-contributions.md`
-13. `references.md`
+2. `je-class2-contributions.md`
+3. `je-company-formation.md`
+4. `je-corporate-income-tax.md`
+5. `je-cross-border-withholding.md`
+6. `je-crypto-tax.md`
+7. `je-gst.md`
+8. `je-income-tax.md`
+9. `je-payroll.md`
+10. `je-pension-contributions.md`
+11. `je-pillar-two.md`
+12. `je-property-transactions.md`
+13. `je-social-contributions.md`
+14. `references.md`
 
 ## Shared files this package needs
 
