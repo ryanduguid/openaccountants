@@ -1,6 +1,6 @@
 # Jersey pack: sources and coverage
 
-This pack contains ten source-cited guides checked against the stated primary sections on 11 October 2026. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
+This pack contains eleven source-cited guides checked against the stated primary sections on 11 October 2026. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
 
 ## Coverage and remaining work
 
@@ -9,7 +9,7 @@ Every row is partial. A sourced overview or bounded example does not close the o
 | Topic | Supplied scope | Outstanding evidence or mechanics |
 |---|---|---|
 | Tax-system scope | Personal and corporate residence and source rules | Special residence concessions and complete entity source rules |
-| Personal income tax | 2026 comparison, eligible threshold outline, bounded examples | Full relief computation, pension limits, credits and rounding |
+| Personal income tax | 2026 comparison, eligible threshold outline, ordinary Article 131I holder-contribution deduction, bounded examples | Other reliefs, scheme approval and special pension cases, credits and rounding |
 | Corporate tax | Sector classification, statutory standalone retailer calculation, returns | General deductions, distributions, losses and payment mechanics |
 | Pillar Two | Preliminary scope, regime distinction and payment framework | Legislation, elections, technical computation and return deadlines |
 | Consumption/imports | Registration, ordinary GST return, place-of-supply checks, personal import relief | Full exemption/zero-rate schedules, partial exemption, excise and tariffs |
@@ -62,8 +62,11 @@ The table records successful, untruncated captures used by guide citations. SHA-
 | S5.01 | [Stamp Duties and Fees (Jersey) Law 1998](https://www.jerseylaw.je/laws/current/l_8_1998) | `454eb8b52ebd7e50e4dc72e305f5259076abe3f7131b610f18cf4dfaecc108c6` |
 | S5.02 | [2026 budget tax summary](https://www.gov.je/taxesmoney/incometax/technical/guidelines/pages/2026budgetsummary.aspx) | `c8beee505508d4ba39d9acb9ce6c5d11e7b88eb614949389ba591a990df0ac14` |
 | S6.01 | [Social Security (Jersey) Law 1974](https://www.jerseylaw.je/laws/current/l_22_1974) | `7b616036fe345df90155721bc018939db5326e813ef9bf7af14c34d313815258` |
+| S7.06 | [Pension contributions and tax relief](https://www.gov.je/TaxesMoney/IncomeTax/Individuals/AllowancesReliefs/pages/deductionsforpensioncontributions.aspx) | `e9489ae965d289adc79a7db649438532b76c7ffb96d5e317b49fdc44344a0ac3` |
 
 ## Material source decisions
+
+- Pension deductions use Income Tax Law Articles 4, 130, 130C, 131H and 131I with the complete official pension-contribution guidance. The holder's deduction aggregates actual approved contributions and uses total income before all approved pension contributions. The official subscription example is reproduced using its stated expense assumption; it supplies no general subscription deduction rule. The illustrative zero floor represents no positive deduction when a ceiling is exhausted. Scheme approval, other pension provisions and professional sign-off remain separate.
 
 - Personal rates and allowances use the 2026 schedule, Budget summary and Income Tax Law Articles 92A to 92C. The child's and childcare amounts are conditional ceilings or additions. The examples assume only the full basic threshold and no foreign tax or specialist adjustments.
 - Corporate residence uses Article 123. Articles 120AB and 120AC exempt relevant MNE group entities from ordinary income tax and disapply specified returns for qualifying years or periods; they qualify the generic company page's blanket annual-return wording. Sector classification uses Articles 123C to 123DA and the return notes. Retail eligibility and tax use Articles 123H to 123L, including aggregation and period provisions. The example is a standalone ordinary annual period; the tax amount is calculated before its effective rate.

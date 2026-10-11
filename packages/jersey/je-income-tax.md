@@ -8,7 +8,7 @@ description: >
   Covers ordinary individual assessments with source links and simplified
   arithmetic examples. Requires separate classification of foreign income,
   relief eligibility and payments already collected. Specialist residence
-  concessions, full pension limits and a person's final assessment require
+  concessions, special pension cases and a person's final assessment require
   further verification. This source-cited draft awaits professional review
   and does not establish that the Jersey pack is complete.
 jurisdiction: JE
@@ -16,7 +16,7 @@ category: international
 tax_year: 2026
 tier: 2
 last_updated: 2026-10-11
-version: 1.0
+version: 1.1
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -52,7 +52,7 @@ Mandatory independent taxation applies to everyone from 1 January 2026. The comp
 
 ## Calculation and examples
 
-1. Classify taxable income and establish allowable deductions. Do not treat all receipts or all pension payments as deductible.
+1. Classify taxable income and establish allowable deductions. Use [je-pension-contributions](je-pension-contributions.md) for the aggregate holder-paid approved Jersey scheme deduction under Article 131I. Establish relevant earnings and pre-contribution total income before applying its limits; do not treat all receipts or all pension payments as deductible.
 2. Determine the exemption threshold from eligible reliefs, including any required apportionment.
 3. Compute the standard and marginal amounts separately. Use zero when the person is exempt, otherwise the lower calculation.
 4. Apply applicable foreign tax relief and other assessment adjustments under their specific provisions. Reconcile ITIS payments with the assessment; ITIS is collection on account.
@@ -72,7 +72,7 @@ The [2026 schedule](https://www.gov.je/TaxesMoney/IncomeTax/Individuals/Allowanc
 
 If Revenue Jersey sends a return, complete it. Current [personal return guidance](https://www.gov.je/TaxesMoney/IncomeTax/Individuals/YourTaxReturn/Pages/GuidanceNotesTaxReturn.aspx) gives midnight 31 May for paper returns and midnight 31 July for online returns. The captured page offers the 2025 assessment return for the 2026 filing cycle. Confirm the notice and published timetable for the relevant assessment year before using these dates in a future-year calendar.
 
-The full pension deduction restrictions, high value residence regime, compensatory allowance computation, non-resident relief formula, assessment rounding and payment-on-account rules remain research gaps. The simplified examples do not produce a final assessment for those cases.
+The ordinary Article 131I pension-holder deduction is covered in [je-pension-contributions](je-pension-contributions.md). Special pension cases, the high value residence regime, compensatory allowance computation, non-resident relief formula, assessment rounding and payment-on-account rules remain research gaps. The simplified examples do not produce a final assessment for those cases.
 
 ## Self-checks and provenance
 
