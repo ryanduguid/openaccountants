@@ -9,11 +9,11 @@ description: >
   PAYG instalments, or bucket companies receiving trust distributions. Trigger on phrases like
   "company tax rate", "base rate entity", "franking credits", "franking account", or "company
   losses". ALWAYS read this skill before touching any company tax work.
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Australia Company Income Tax -- Private SME Company Skill
 
-## Australia Company Income Tax -- Private SME Company Skill v1.2
+## Australia Company Income Tax -- Private SME Company Skill v1.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -49,7 +49,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Franking deficit tax (FDT) | Deficit at year end -> franking account tax return + FDT by 31 July (30 June balancers) |
 | Distribution statement (private company) | Within 4 months of the end of the income year of the distribution |
 | Loss carry-forward | COT (s 165-12) or business continuity test (s 165-13: same business s 165-210; similar business s 165-211 for losses of years starting on/after 1 July 2015) |
-| Loss carry-back | Replacement enacted for income years starting on or after 1 July 2026; Schedule 2 commenced on 1 October 2026. Test Rule 8 conditions. |
+| Loss carry-back | Replacement enacted for income years starting on or after 1 July 2026; Schedule 1 of the Tax Reform No. 2 Act 2026 commenced on 1 October 2026. Test Rule 8 conditions. |
 | Return due (2025-26, typical agent client) | 15 May 2027 lodge and pay (31 March 2027 if 2024-25 total income > $2m) |
 | Return due (self-preparer small company) | Generally 28 February 2027 lodge and pay (31 October 2026 if prior years outstanding) |
 | PAYG instalment GDP uplift | 5% for 2026-27 (4% for 2025-26) |
@@ -360,7 +360,7 @@ If the client provides only financial statements and a trial balance:
 
 ### Primary sources (verified 20 August 2026)
 
-**Primary sources (verified 20 August 2026)**  _(Primary sources (verified 20 August 2026))_
+**Primary sources (verified 20 August 2026; loss carry-back schedule and lodgment dates rechecked 11 October 2026)**
 
 | Topic | Source |
 | --- | --- |

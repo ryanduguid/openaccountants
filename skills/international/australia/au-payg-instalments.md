@@ -1,10 +1,10 @@
 ---
 name: au-payg-instalments
 description: Use this skill whenever asked about Australian PAYG Instalments for sole traders. Trigger on phrases like "PAYG instalments", "BAS T1 T2 T7 T9", "instalment rate", "instalment amount", "ATO instalment", "GDP uplift", "GIC", "variation of instalments", or any question about income tax prepayments through the Business Activity Statement. Covers entry/exit thresholds, instalment rate method (T1/T2), instalment amount method (T7), GDP uplift factor, voluntary variation, GIC exposure on under-estimation, and quarterly/annual election. ALWAYS read this skill before touching any PAYG instalment work for Australia.
-version: 2.5
+version: 2.6
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Entry thresholds | Instalment income of $4,000 or more, tax payable on the latest assessment of $1,000 or more, and notional tax of $500 or more (individuals and trusts) |
 | Exit threshold | Automatic exit when notional tax is under $500, instalment income is under $4,000, the tax debt on assessment is under $1,000 or the calculated rate is 0.0% |
 | Methods | Rate: T1, T2 or varied T3, result T11/5A. Amount: notified T7 or varied T8/T9/5A |
-| GDP adjustment factor | 5% for 2026-27 (6% in 2024-25); set each year and applied to the instalment amount method only |
+| GDP adjustment factor | 5% for 2026-27 (4% for 2025-26; 6% for 2024-25); set each year and applied to the instalment amount method only |
 | Variation safe harbour | 85% of correct instalment amount |
 | GIC rate | Base rate + 7% (updated quarterly) |
 | Contributor | Open Accountants Community |
@@ -140,7 +140,7 @@ Q1 business income = $42,000. Interest income = $800. ATO rate (T2) = 8.50%.
 
 Input: ATO-notified instalment amount (T7) = $3,150 per quarter.
 
-Output: The notified T7 amount is $3,180. Enter $3,180 at 5A and pay by the notice due date.
+Output: Enter the notified $3,150 at 5A (T7 is pre-filled) and pay by the notice due date. No income calculation is needed.
 
 ### Example 3 -- Variation of instalment rate
 
@@ -179,7 +179,7 @@ Classification: Combined BAS payment (GST + PAYG). PAYG instalment component = 5
 
 ### 5.4 GDP adjustment factor
 
-- **GDP adjustment factor 2026-27** — 5%, applied to the instalment amount (T7) for quarters starting on or after 1 April 2026; it was 6% in 2024-25. The factor is set each year from ABS data or by legislation and does not affect the rate method or annual payers.  _([ATO, How we calculate your PAYG instalment amount or rate](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/calculate-your-payg-instalments/how-we-calculate-your-payg-instalment-amount-or-rate))_
+- **GDP adjustment factor 2026-27** — 5%, applied to the instalment amount (T7) for quarters starting on or after 1 April 2026; it was 4% for 2025-26 and 6% for 2024-25. The factor is set each year from ABS data or by legislation and does not affect the rate method or annual payers.  _([ATO, How we calculate your PAYG instalment amount or rate](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/calculate-your-payg-instalments/how-we-calculate-your-payg-instalment-amount-or-rate))_
 
 ### 5.5 Variation
 
@@ -218,17 +218,17 @@ For example, Q3 estimated annual tax of $12,000, earlier instalments of $8,000 a
 
 ## Section 8 -- Edge cases
 
-A new business without an ATO instalment notification will commonly have no first-year instalments. Voluntary entry is available. Once notified, follow the instalment obligations even before the first return is assessed; allow for the eventual tax balance.
+**New business.** A new business without an ATO instalment notification will commonly have no first-year instalments. Voluntary entry is available. Once notified, follow the instalment obligations even before the first return is assessed; allow for the eventual tax balance.
 
-Instalment rate method auto-adjusts. If using amount method, consider variation in low-income quarters.
+**Seasonal income.** The instalment rate method adjusts with income each quarter. Under the amount method, consider a variation in low-income quarters.
 
-Instalment income = total across all activities. Single rate applies to aggregate.
+**Several activities.** Instalment income is the total across all business and investment activities, and a single rate applies to the aggregate.
 
-Interest, dividends, rent are instalment income. Employees with significant investment income may enter PAYG system.
+**Investment income.** Interest, dividends and rent are instalment income. Employees with significant investment income may enter the PAYG instalment system.
 
-ATO-notified rate already includes Medicare levy (2%) and any surcharge. No separate adjustment needed.
+**Medicare levy.** The ATO-notified rate already includes the Medicare levy (2%) and any surcharge. No separate adjustment is needed.
 
-Apply if notional tax drops below $500 or instalment income ceases.
+**Exit.** The ATO removes the taxpayer from the system when notional tax falls below $500, instalment income falls below $4,000, the tax debt on assessment is below $1,000, or instalment income ceases.
 
 ## Section 9 -- Self-checks
 

@@ -1,10 +1,10 @@
 ---
 name: australia-financial-statements
 description: Use this skill when preparing, reviewing, or advising on annual financial statements for an Australian company. Trigger on phrases like "ASIC financial report", "AASB", "Australian Accounting Standards", "general purpose financial statements", "special purpose financial statements", "large proprietary company", "small proprietary company", "directors' report Australia", "audit Australia", "Form 388", "Corporations Act 2001 reporting", or any question about preparing and filing statutory accounts under the Corporations Act 2001. Covers AASB frameworks, size thresholds (large/small proprietary), required statements, formats, notes, lodgement deadlines, and audit requirements.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - financial-statements-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Australia Financial Statements
 
-## Australia Financial Statements Skill v1.3
+## Australia Financial Statements Skill v1.4
 
 ## Section 1 -- Quick Reference
 
@@ -31,7 +31,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Accounting standards | Australian Accounting Standards (AASB) — substantially IFRS-equivalent |
 | Financial year | Usually 1 July – 30 June; any 12-month period permitted |
 | Lodgement deadline | 4 months after year-end (general); 3 months (disclosing entities) |
-| Late lodgement penalty | Civil penalty; ASIC may impose up to AUD 1,110 per day |
+| Late lodgement | Late fee of AUD 102 (within 1 month) or AUD 428 (more than 1 month) from 1 July 2026, on top of the directors' exposure for breaching s 319 |
 | Digital filing | Form 388 through the ASIC company officeholder, registered agent or auditor portal |
 
 ## Section 2 -- Reporting Framework
@@ -100,7 +100,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Notes to the Financial Statements | Required (full IFRS) | Required (reduced — AASB 1060) |
 | Directors' Report (s.298–300) | Required | Required |
 | Directors' Declaration (s.295(4)) | Required | Required |
-| Auditor's Report | Required | Required |
+| Auditor's Report | Where an audit is required (Section 10) | Where an audit is required (Section 10) |
 
 ## Section 5 -- Year-End Adjustments Checklist
 
@@ -248,8 +248,8 @@ Total equity
 | Deadline — all others | 4 months after financial year-end |
 | Documents lodged | Financial report + directors' report + auditor's report where required |
 | Fee | No filing fee for Form 388 |
-| Late lodgement | Civil penalty provisions; ASIC may impose administrative penalties |
-| Annual review fee | Separate from lodgement (AUD 310 for proprietary companies, 2024) |
+| Late lodgement | Late fee AUD 102 within 1 month or AUD 428 after 1 month (from 1 July 2026; [ASIC INFO 30](https://www.asic.gov.au/for-business-and-companies/forms-and-fees/all-fees/fees-for-commonly-lodged-documents)); failing to lodge also breaches s 319 |
+| Annual review fee | Separate from lodgement (AUD 342 for proprietary companies from 1 July 2026) |
 | Extension | Possible by application to ASIC under s.340 |
 
 ASIC's [Form 388 instructions](https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports/how-to-lodge-a-financial-report) identify these three portals. The Regulatory Portal transaction for AFS licensee financial statements is a separate process described in INFO 31.

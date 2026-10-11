@@ -2,21 +2,22 @@
 name: au-div7a
 description: >
   Use this skill whenever asked about Division 7A of the ITAA 1936 -- private company loans, payments or debt forgiveness to shareholders or their associates, complying loan agreements, minimum yearly repayments, the benchmark interest rate, distributable surplus, unpaid present entitlements (UPEs) to corporate beneficiaries after Bendel, use of company assets by shareholders, or deemed dividends. Trigger on phrases like "Div 7A", "Division 7A", "shareholder loan", "director loan account", "debit loan", "minimum yearly repayment", "benchmark interest rate", "complying loan", "deemed dividend", "distributable surplus", "UPE", "bucket company", "unpaid present entitlement", or when a GL shows debit balances in shareholder/director accounts. ALWAYS read this skill before touching any Div 7A work.
-version: 1.3
+version: 1.4
 jurisdiction: AU
-tax_year: 2025
-last_updated: 2026-10-04
+tax_year: 2026
+tax_year_notes: "2026-27"
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Division 7A -- Private Company Loans Skill v1.3
+# Australia Division 7A -- Private Company Loans Skill v1.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context.** The High Court decided *Commissioner of Taxation v Bendel* [2026] HCA 18 on 10 June 2026: a UPE owed to a corporate beneficiary is not, of itself, a Div 7A loan. The ATO's decision impact statement (26 June 2026) accepts the decision. Several ATO products are under review or awaiting withdrawal -- Rule 11 carries the status table as at 1 August 2026. Verify before relying.
+> **Law-change context.** The High Court decided *Commissioner of Taxation v Bendel* [2026] HCA 18 on 10 June 2026: a UPE owed to a corporate beneficiary is not, of itself, a Div 7A loan. The ATO's decision impact statement (26 June 2026) accepts the decision. Several ATO products are under review or awaiting withdrawal -- Rule 11 carries the status table, rechecked on 11 October 2026. Verify before relying.
 
 ## Section 1 -- Quick reference
 
@@ -50,6 +51,26 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | UPE on trust balance sheet | Passive UPE = no Div 7A loan (post-Bendel), but flag s 100A / Subdiv EA screen (T2-1, T2-2) |
 | Company asset used privately | Assume s 109CA payment at arm's-length value; check minor (<$300) and licence-fee carve-outs |
 | Repayment near year end followed by redraw | Assume s 109R disregard applies; flag |
+
+## Section 2 -- Required inputs and refusal catalogue
+
+### Required inputs
+
+**Minimum viable** -- company's GL (shareholder/director/associate loan accounts, drawings), prior year Div 7A schedules, loan agreements with dates and terms, the company's lodgment history (for lodgment day).
+
+**Recommended** -- trust deeds and distribution minutes where UPEs exist, company financial statements (for distributable surplus), dividend statements (for set-offs), asset-use facts (who uses what, on what terms).
+
+**Ideal** -- full repayment history per loan, security documents for 25-year loans, franking account, prior ATO correspondence or 109RB applications.
+
+### Refusal catalogue
+
+**R-AU-D7A-1 -- Section 100A analysis.** *Trigger:* UPE or trust distribution pattern suggests a reimbursement agreement (benefit flowing to someone other than the presently entitled beneficiary). *Message:* "Section 100A carries trustee-level top-marginal-rate assessment and no amendment period limit. Escalate -- TR 2022/4 / PCG 2022/2 analysis is specialist work."
+
+**R-AU-D7A-2 -- Interposed entities and Subdivision EA/EB.** *Trigger:* payments or loans routed through other entities, or a trust with a UPE making payments/loans to the company's shareholders. *Message:* "Identify and map the chain, then escalate -- Subdiv E interposed-entity amounts (s 109T) are Commissioner-determined under ss 109V/109W; Subdiv EA amounts arise automatically under ss 109XA/109XB; Subdiv EB deemed entitlements are Commissioner-determined under s 109XI."
+
+**R-AU-D7A-3 -- s 109RB discretion applications.** *Trigger:* client wants an honest-mistake ruling on a breached loan. *Message:* "Corrective-action strategy and the discretion application are practitioner work. Assemble the facts; escalate."
+
+**R-AU-D7A-4 -- Restructures and forgiveness planning.** *Trigger:* proposals to forgive, refinance, or restructure Div 7A exposure. *Message:* "Planning is advice. Compute current exposure only; escalate the strategy."
 
 ## Section 3 -- GL sweep library
 
@@ -151,9 +172,9 @@ Shareholder repays $20,000 on 25 June 2027, redraws $25,000 on 15 July 2027. A r
 
 - **Exclusions and the discretion** — s 109K: payments/loans to other companies (not as trustee) excluded. s 109L: amounts otherwise assessable or made non-assessable elsewhere. s 109M: loans in the ordinary course of business on usual arm's-length terms. s 109RB: the Commissioner may disregard a deemed dividend (or allow franking) for honest mistakes/inadvertent omissions -- factors include corrective action and speed, prior history; escalate applications (R-AU-D7A-3).  _(ss 109K, 109L, 109M, 109RB)_
 
-### Rule 11 -- UPEs after Bendel: guidance status (as at 1 August 2026)
+### Rule 11 -- UPEs after Bendel: guidance status (as at 11 October 2026)
 
-**UPEs after Bendel: guidance status (as at 1 August 2026)**
+**UPEs after Bendel: guidance status (as at 11 October 2026)**
 
 | Item | Status |
 | --- | --- |
@@ -188,7 +209,7 @@ Practical position for 2026-27: a passive UPE creates no Div 7A consequence; act
 
 ### T2-5 -- Trust minimum tax horizon (announced, not law)
 
-- **Trust minimum tax horizon (announced, not law)** — **Trigger:** structuring decisions for bucket companies extending past 1 July 2028. **Issue:** 2026-27 Budget announced 30% minimum tax on discretionary trusts (corporate beneficiaries denied the offset) from 1 July 2028, with restructure rollover relief from 1 July 2027 -- consultation only, not enacted. **Action:** note on any advice touching 2028+; escalate planning.  _(2026-27 Budget)_
+- **Trust minimum tax horizon (announced, not law)** — **Trigger:** structuring decisions for bucket companies extending past 1 July 2028. **Issue:** 2026-27 Budget announced 30% minimum tax on discretionary trusts (corporate beneficiaries denied the offset) from 1 July 2028, with restructure rollover relief from 1 July 2027 -- exposure draft legislation released 3 September 2026, not enacted. **Action:** note on any advice touching 2028+; escalate planning.  _(2026-27 Budget)_
 
 ### T2-6 -- Loans that are really wages
 

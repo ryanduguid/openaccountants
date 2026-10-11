@@ -1,10 +1,10 @@
 ---
 name: australia-bookkeeping
 description: Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", "how do I classify this transaction", "what evidence do I need", "capital or revenue", "private use apportionment", "fix a bookkeeping error", "accounting versus tax treatment", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
-version: 1.4
+version: 1.5
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -233,21 +233,22 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 
 **ATO Individual Tax Return Categories (Sole Trader — Business Schedule)**
 
-| 2025 BPI label | Category | Nominal Codes |
+| 2026 BPI label | Category | Nominal Codes |
 | --- | --- | --- |
 | P8 I / J (income section) | Other business income, primary / non-primary production | 4000–4500 |
 | P8 Cost of sales | Cost of sales | 5000–5200 |
 | P8 F | Contractors and commission | 5040 |
 | P8 G | Superannuation | 6110 |
 | P8 I (expenses section) | Bad debts | 6700 |
-| P8 J (expenses section) | Lease expense (plant/equipment) | 6000 |
+| P8 J (expenses section) | Lease expenses (plant and equipment, not property rent) | Add a lease expense account where used |
+| P8 K | Rent expenses (business premises) | 6000 |
 | P8 Q | Interest expense within Australia | 6440 |
 | P8 M | Depreciation; complete simplified-depreciation details and reconciliation where required | 6600–6630 |
 | P8 N | Motor vehicle expenses | 6300–6320 |
 | P8 O | Repairs and maintenance | 6050 |
 | P8 P | All other expenses | 6000–6800 (remainder) |
 
-These labels follow the [ATO 2025 BPI expenses instructions](https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2025-instructions/instructions-to-complete-the-bpi-schedule-2025/business-income-and-expenses-p8/expenses-p8). Keep the income and expenses sections separate where letters repeat, and check the applicable form for another year.
+These labels follow the [ATO 2026 BPI expenses instructions](https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2026-instructions/instructions-to-complete-the-bpi-schedule-2026/business-income-and-expenses-p8/expenses-p8) for 2025-26. Keep the income and expenses sections separate where letters repeat, and check the applicable form for another year.
 
 ### Non-Deductible Expenses (ATO)
 
@@ -322,7 +323,7 @@ These are selected Table B asset classes in the 2025 determination. Match the ac
 
 ### Car Limit
 
-- **Car cost limit for depreciation** — For 2025-26, the limit is AUD 69,674. For 2026-27, it is AUD 69,883. Only the business-use portion of the applicable limit can be depreciated. AUD
+- **Car cost limit for depreciation** — For 2025-26, the limit is AUD 69,674. For 2026-27, it is AUD 69,883. Only the business-use portion of the applicable limit can be depreciated.
 
 ## Section 6 -- P&L Format
 

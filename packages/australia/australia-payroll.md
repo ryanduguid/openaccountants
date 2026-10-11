@@ -11,18 +11,18 @@ description: >
   "activity statement", "annual leave", "long service leave",
   "minimum wage Australia", or any question about running payroll in Australia.
   ALWAYS read this skill before processing any Australian payroll work.
-version: 2.3
+version: 2.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia -- Payroll Skill v2.3
+# Australia -- Payroll Skill v2.4
 
 ## Section 1 -- Quick Reference
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pay frequency | Weekly, fortnightly, monthly (fortnightly most common) |
 | Employer registration | ABN + PAYG withholding registration via ATO |
 | Validated by | Pending -- requires sign-off by an Australian CPA, CA, or registered tax agent |
-| Skill version | 2.3 |
+| Skill version | 2.4 |
 
 ## Section 2 -- Income Tax Withholding (PAYG)
 
@@ -65,8 +65,8 @@ PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -
 | Item | Detail |
 | --- | --- |
 | Standard rate | 2% of taxable income |
-| Low-income threshold (single) | No levy up to $28,011; reduced levy $28,012--$35,014 |
-| Low-income threshold (family) | No levy up to $47,238; reduced $47,239--$59,048 |
+| Low-income threshold (single, 2025-26) | No levy up to $28,011; reduced levy $28,012--$35,013 (the ATO sets the 2026-27 thresholds later in the year) |
+| Low-income threshold (family, 2025-26) | No levy up to $47,238; reduced $47,239--$59,047, plus $4,338 per dependent child |
 | Medicare Levy Surcharge | 1.0%--1.5% additional for high earners without private hospital cover |
 
 - **Medicare levy incorporation** — The Medicare levy is incorporated into PAYG withholding calculations via the tax tables.
@@ -77,7 +77,7 @@ PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -
 
 ### Study and Training Support Loans (STSL)
 
-- **STSL description** — Formerly HECS-HELP. Compulsory repayments are withheld via PAYG based on Schedule 8 thresholds. Updated STSL repayment thresholds apply from 24 September 2025, reducing compulsory repayments for most borrowers.  _(Schedule 8)_
+- **STSL description** — Formerly HECS-HELP. Compulsory repayments are withheld via PAYG using the Schedule 8 formulas in force on the payment date. The marginal repayment system took effect for withholding from 24 September 2025; for payments from 1 July 2026 use the 2026-27 Schedule 8 (weekly threshold $1,337).  _([ATO, Schedule 8](https://www.ato.gov.au/tax-rates-and-codes/schedule-8-statement-of-formulas-for-calculating-study-and-training-support-loans-components))_
 
 ## Section 3 -- Social Security: Employee Deductions
 
@@ -95,23 +95,19 @@ Australia does not have a separate employee social security contribution. The Me
 
 There is no employee-paid social insurance premium equivalent to NIC (UK) or social security tax (US).
 
-|---|
+## Section 4 -- Superannuation Guarantee
+
+**Superannuation Guarantee rates and rules**
+
+| Item | Detail |
+| --- | --- |
 | SG rate | 12% of qualifying earnings |
 | Maximum contribution base | $270,830 per year (ANNUAL, year-to-date basis; quarterly base abolished for earnings paid from 1 Jul 2026) |
 | Minimum earnings threshold | Abolished (no $450/month threshold from 1 Jul 2022) |
 | Payment deadline | Received by the employee's fund within **7 business days of each payday** (clearing house receipt does not count) |
 | Eligible employees | Assess SGAA eligibility. An under-18 employee must work more than 30 actual hours in the week; exactly 30 does not qualify |
 
-Apply the hours test each week, including within a fortnightly pay cycle. Some labour contractors qualify for SG; domestic/private work and other statutory exclusions need separate assessment. Check award or agreement obligations too. See Rule 1 in [au-super-guarantee](au-super-guarantee.md) and [business.gov.au: superannuation](https://business.gov.au/finance/superannuation).
-
 - **SG under-18 hours test** — An under-18 employee must work more than 30 actual hours in the week to qualify for SG; exactly 30 does not qualify. Apply the hours test each week, including within a fortnightly pay cycle. Some labour contractors qualify for SG; domestic/private work and other statutory exclusions need separate assessment. Check award or agreement obligations too. See Rule 1 in [au-super-guarantee](au-super-guarantee.md) and [business.gov.au: superannuation](https://business.gov.au/finance/superannuation).
-
-**Superannuation Guarantee summary**
-
-| Item | Detail |
-| --- | --- |
-| Payment deadline (earnings paid from 1 Jul 2026) | Received by the employee's fund within **7 business days of each payday** (clearing house receipt does not count) |
-| New employee / new fund | 20 business days for the first contribution |
 
 - **Deadline exceptions** — new employee / new fund -- 20 business days for the first contribution; out-of-cycle payments (bonuses) ride with the next regular payday's deadline; ATO exceptional-circumstances determinations -- 20 business days.
 - **Legacy** — quarterly due dates (28 Oct/28 Jan/28 Apr/28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026. The ATO Small Business Super Clearing House closed permanently on 1 July 2026 -- small employers now use payroll-software super payments or commercial clearing houses.
@@ -121,6 +117,8 @@ Apply the hours test each week, including within a fortnightly pay cycle. Some l
 
 - **SGC redesign components** — For earnings paid from 1 July 2026, SGC is **ATO-assessed per payday** (no SGC statement is lodged; the ATO matches STP data against fund reporting). Components: - The final SG shortfall (12% of qualifying earnings unpaid) - Notional earnings (GIC-rate interest, compounding daily from the day after the deadline) - An administrative uplift (starts at 60% of shortfall + notional earnings; reduced for clean history and voluntary disclosure, to 0% if disclosed within 30 days with a clean 2-year record) - Choice loading (25%, capped at $1,200 per notice period) where choice-of-fund rules were breached  _(PCG 2026/1)_
 - **SGC deductibility and penalties** — The redesigned SGC **is tax-deductible** (GIC on late SGC and the late payment penalty are not). Old-regime SGC for quarters before 1 July 2026 remains non-deductible. Unpaid SGC 28 days after assessment triggers a Notice to Pay, then a 25% or 50% late payment penalty. First-year ATO approach: PCG 2026/1.  _(PCG 2026/1)_
+
+## Section 5 -- Employer On-costs
 
 ### Workers' Compensation Insurance
 
@@ -135,18 +133,20 @@ Apply the hours test each week, including within a fortnightly pay cycle. Some l
 | NSW, 2024-25 to 2026-27 | $1,200,000 | 5.45%; apportion the threshold for interstate wages and part-year employment, with one threshold per group |
 | VIC, from 1 July 2025 | $1,000,000 ($900,000 in 2024-25) | 4.85%, or 1.2125% for qualifying regional employers; deduction phases out between $3m and $5m Australian wages. Combined surcharges of 1% above $10m and 2% above $100m national wages apply to the Victorian share above those thresholds |
 | QLD, current at 14 September 2026 | $1,300,000 | 4.75% where Australian taxable wages are at most $6.5m; 4.95% above $6.5m. Check grouping, deduction reduction, regional discount and mental health levy separately |
-| WA | $1,000,000 | 5.50% |
-| SA | $1,500,000 | Varies (0%--4.95%) |
+| WA | $1,000,000 | 5.5%; the deduction falls by $2 for every $13 of Australian wages above $1m and is nil at $7.5m |
+| SA | $1,500,000 | 0% rising to 4.95% for Australian wages between $1.5m and $1.7m, then 4.95%; maximum deduction $600,000 |
 | TAS, 2026-27 | $1,250,000 | 4% for the $1.25m to $2m wage band; 6.1% above $2m. Use the state calculation for the applicable wage and deduction amounts |
 | ACT, 2025-26 | $2,000,000 | 6.85% base plus a 0.5% surcharge for Australian wages over $50m to $100m and 1% above $100m. From January 2026, wages over $150m instead use 8.75% with no additional surcharge |
 | ACT, 2026-27 | $1,750,000 | Australian wages: up to $20m, 6.75%; over $20m to $50m, 6.85%; over $50m to $100m, 7.35%; over $100m to $150m, 7.85%; over $150m, 8.75%. Eligible universities have a 6.85% cap |
 | NT, 2025-26 | $2,500,000 ($1,500,000 in 2024-25) | 5.5% |
 | NT, 2026-27 | $2,500,000 | 6.5% for employers or groups with Australia-wide wages of at least $100m; 5.5% otherwise |
 
-- **Payroll tax nature:** Payroll tax is a state/territory tax on total Australian wages above the threshold. Check registration, grouping, wage nexus, deductions and period apportionment separately in each relevant jurisdiction. The six dated schedules above were checked against [Revenue NSW](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates), [Victoria SRO](https://www.sro.vic.gov.au/about-us/rates-and-statistics/current-rates/payroll-tax-current-rates), [Queensland Revenue Office](https://qro.qld.gov.au/payroll-tax/calculate/rates-thresholds/), [Tasmania SRO](https://www.sro.tas.gov.au/payroll-tax/rates-thresholds), [ACT Revenue](https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax) and [NT Treasury](https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-tax-rates-and-thresholds). The retained WA and SA summaries are undated and require the applicable official schedule before use. For full-year NSW-only taxable wages of $2m with the full $1.2m deduction, payroll tax is $800,000 x 5.45% = $43,600.
+- **Payroll tax nature:** Payroll tax is a state/territory tax on total Australian wages above the threshold. Check registration, grouping, wage nexus, deductions and period apportionment separately in each relevant jurisdiction. The schedules above were checked against [Revenue NSW](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates), [Victoria SRO](https://www.sro.vic.gov.au/about-us/rates-and-statistics/current-rates/payroll-tax-current-rates), [Queensland Revenue Office](https://qro.qld.gov.au/payroll-tax/calculate/rates-thresholds/), [Tasmania SRO](https://www.sro.tas.gov.au/payroll-tax/rates-thresholds), [ACT Revenue](https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax), [NT Treasury](https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-tax-rates-and-thresholds), [WA Treasury](https://www.wa.gov.au/government/multi-step-guides/payroll-tax-employer-guide/calculation-payroll-tax-employer-guide) and [RevenueSA](https://www.revenuesa.sa.gov.au/payrolltax/rates-and-thresholds). For full-year NSW-only taxable wages of $2m with the full $1.2m deduction, payroll tax is $800,000 x 5.45% = $43,600.
 
-- **Payroll tax nature** — Payroll tax is a state/territory tax on total Australian wages above the threshold. Interstate employers must register in each jurisdiction where they have employees. Deduction formulas, grouping, contractor and nexus rules are in `au-payroll-tax.md`.
+- **Interstate employers** — Interstate employers must register in each jurisdiction where they pay wages once Australia-wide wages exceed its threshold. Deduction formulas, grouping, contractor and nexus rules are in `au-payroll-tax.md`.
 - **Payroll tax figures** — The table carries the 2026-27 thresholds and rates published by Payroll Tax Australia on 2 September 2026 and by each revenue office. The ACT moved to a $1.75m threshold with tiered rates from 1 July 2026, and the NT threshold rose to $2.5m from 1 July 2025.  _([Payroll Tax Australia, Rates and thresholds](https://www.payrolltax.gov.au/harmonisation/payroll-tax-rates-and-thresholds))_
+
+## Section 6 -- Fair Work Entitlements
 
 ### National Minimum Wage (from the first full pay period on or after 1 July 2026)
 
@@ -270,9 +270,11 @@ Not strictly required on payslips but must be provided to employees on request. 
 
 Confirm the ATO withholding class, including any determination varying it. The deferral does not cover an entity choosing or required to pay GST monthly. If a due date is a weekend or public holiday, use the next business day. For example, a large withholder deducting on Monday 7 September 2026 pays by Monday 14 September 2026. (TAA 1953 Sch 1 Subdiv 16-B; [ATO, Paying and reporting PAYG withholding amounts](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/payg-withholding/paying-and-reporting-withheld-amounts).)
 
-### Superannuation Remittance
+## Section 8 -- Deadlines and Penalties
 
-**Superannuation Remittance**
+### Annual Obligations
+
+**Annual obligations**
 
 | Task | Deadline |
 | --- | --- |
@@ -281,11 +283,9 @@ Confirm the ATO withholding class, including any determination varying it. The d
 | Workers' comp annual declaration | Per state insurer schedule |
 | Payroll tax annual reconciliation | Per state revenue office (typically July/August) |
 
-- **Legacy** — quarterly due dates (28 Oct / 28 Jan / 28 Apr / 28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026.
+### Penalties
 
-### Annual Obligations
-
-**Annual Obligations**
+**Penalties**
 
 | Violation | Consequence |
 | --- | --- |
@@ -293,17 +293,6 @@ Confirm the ATO withholding class, including any determination varying it. The d
 | Failure to withhold PAYG | Employer liable for amount that should have been withheld |
 | Late BAS/IAS lodgement | General interest charge (GIC) + potential failure-to-lodge penalty |
 | Payslip and record-keeping non-compliance | Court-ordered penalties of up to $21,840 per contravention for an individual and $109,200 for a company with fewer than 15 employees (60 and 300 penalty units at the $364 unit from 1 July 2026); $546,000 for larger companies, and higher maximums for serious contraventions ([Fair Work Ombudsman, Litigation](https://www.fairwork.gov.au/about-us/compliance-and-enforcement/litigation)) |
-
-### Penalties
-
-**Penalties**
-
-| Skill | Interaction |
-| --- | --- |
-| payroll-workflow-base | Provides generic payroll processing steps; this skill adds Australian-specific rules |
-| australia-bookkeeping | Payroll journals: salaries + super + payroll tax to P&L; PAYG liability + super liability + net pay to BS |
-| au-gst-bas | PAYG withholding (W1/W2) reported on BAS/IAS; GST does not apply to wages |
-| au-payg-instalments | Instalment obligations sit alongside withholding on the same activity statement |
 
 ## Sources for current rates and reporting
 

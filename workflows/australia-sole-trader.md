@@ -33,6 +33,7 @@
 From the AU bundle:
 - `au-freelance-intake` — REQUIRED entry point; structured intake package
 - `au-individual-return` — rates, offsets, deductions, HELP, final computation
+- `au-deductions-offsets` — work-related deductions, the 2026-27 standard deduction and offsets
 - `au-sole-trader-schedule` — BPI schedule items P1–P20
 - `au-medicare-levy` — levy, reductions, MLS, PHI rebate tiers
 - `australia-gst` — GST registration, BAS labels 1A–9, tax invoices
@@ -53,7 +54,7 @@ Work through the BPI schedule with `au-sole-trader-schedule`: assessable busines
 With `australia-gst` + `au-gst-bas`: reconcile GST collected (1A) and credits (1B) for each quarter, confirm lodged BAS totals match the books, and check the annual GST turnover threshold if not registered ($75,000). Note: GST-registered figures in the income tax return are GST-exclusive.
 
 ### Phase 4 — Income tax computation
-With `au-individual-return`: taxable income = business profit + other income − deductions. Apply the current-year resident brackets, then Medicare levy (with `au-medicare-levy` low-income reduction if applicable), Medicare levy surcharge check against PHI status, LITO, small business income tax offset (16%, capped $1,000), and HELP repayment if a debt exists. Credit PAYG instalments already paid.
+With `au-individual-return`: taxable income = business profit + other income − deductions. Apply the current-year resident brackets, then Medicare levy (with `au-medicare-levy` low-income reduction if applicable), Medicare levy surcharge check against PHI status, LITO, small business income tax offset (16%, capped $1,000), and HELP repayment if a debt exists. From 2026-27 the standard deduction (s 25-130, up to $1,000) is tested against assessable labour income (salary, wages and similar PAYG-withheld payments) and work-related deductions only; business deductions at the BPI schedule do not reduce it (`au-deductions-offsets`). Credit PAYG instalments already paid.
 
 ### Phase 5 — Super and next-year instalments
 With `au-super-guarantee`: for any employees, verify SG payments hit funds by the payday-super deadline (7 business days from each payday from 1 July 2026; quarterly for earlier periods). For the sole trader personally: personal deductible contributions against the concessional cap, the carry-forward rules, and the notice-of-intent-before-lodgment trap. Then `au-payg-instalments` for the next-year schedule and variation/GIC risk.
