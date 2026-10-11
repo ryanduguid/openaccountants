@@ -15,7 +15,7 @@
 
 ## Expected, but not enforced
 
-`tax_year` was previously listed as required. It is not: `scripts/validate-guides.py` checks its format when the key is present and does not test for its presence, and 74 guides omit it, mostly workflow bases that are genuinely year-agnostic. Write it on anything new, but do not treat its absence in an existing file as a validation failure.
+`scripts/validate-guides.py` checks the format of `tax_year` when the key is present and does not require its presence. Existing guides may omit it, including year-agnostic workflow bases. Write it on anything new, but do not treat its absence in an existing file as a validation failure.
 
 | Key | Format | Notes |
 |-----|--------|-------|
