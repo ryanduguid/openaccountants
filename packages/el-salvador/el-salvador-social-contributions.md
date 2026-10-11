@@ -314,7 +314,7 @@ When payroll data is ambiguous or client circumstances are unclear, flag these s
 
 Trigger: monthly salary exceeds, or is near, ~USD 7,045.06/month.
 
-Issue: AFP contributions are computed on the capped base, not full salary. The exact SSF maximum is administratively variable and was sourced as a 2026 figure from an AFP administrator and a secondary site. the secondary summary describes AFP as having "no ceiling," reflecting the elimination of the old USD-cap in Jan 2023, so the high SSF max-contributory base is a separate, evolving parameter.
+Issue: AFP contributions are computed on the capped base, not full salary. The exact SSF maximum is administratively variable and was sourced as a 2026 figure from an AFP administrator and a secondary site. The secondary summary describes AFP as having "no ceiling," reflecting the elimination of the old USD-cap in Jan 2023, so the high SSF max-contributory base is a separate, evolving parameter.
 
 Action: Re-verify the cap against the current SSF/AFP publication. Flag for reviewer. [RESEARCH GAP]
 

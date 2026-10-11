@@ -185,7 +185,7 @@ Verkhovna Rada — Draft Law No. 10225-d, "On Amendments to the Tax Code of Ukra
 NSSMC (НКЦПФР) — the "tax matrix" concept paper on virtual-asset taxation (token classes; mining/staking/airdrop options).
 EY Ukraine — IT/Tax/Law digest on the draft law (rates, taxable events, transition, declaration).
 Global Legal Insights — Blockchain & Cryptocurrency Laws & Regulations 2026 (Ukraine).
-the secondary summary / CMS / Lexology crypto-tax commentary on the 2026 framework.
+The secondary summary / CMS / Lexology crypto-tax commentary on the 2026 framework.
 Underlying 2022 Law of Ukraine "On Virtual Assets" (foundational definitions).
 
 ### Quick test suite (expected answers under the draft)
