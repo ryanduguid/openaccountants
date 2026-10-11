@@ -1808,11 +1808,11 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - global-saas-vendors | GLOBAL | tier 2 | reviewed_by -
 - global-travel-expenses | GLOBAL | tier 2 | reviewed_by -
 - global-vehicle-expenses | GLOBAL | tier 2 | reviewed_by -
-- crypto-digital-assets-template | - | tier 2 | reviewed_by -
-- dividend-investment-income-template | - | tier 2 | reviewed_by -
-- employer-payroll-template | - | tier 2 | reviewed_by -
-- estimated-provisional-tax-template | - | tier 2 | reviewed_by -
-- rental-property-income-template | - | tier 2 | reviewed_by -
+- crypto-digital-assets-template | GLOBAL | tier 2 | reviewed_by -
+- dividend-investment-income-template | GLOBAL | tier 2 | reviewed_by -
+- employer-payroll-template | GLOBAL | tier 2 | reviewed_by -
+- estimated-provisional-tax-template | GLOBAL | tier 2 | reviewed_by -
+- rental-property-income-template | GLOBAL | tier 2 | reviewed_by -
 - us-ak-sales-tax | US-AK | tier 2 | reviewed_by -
 - us-al-income-tax | US-AL | tier 2 | reviewed_by -
 - us-al-sales-tax | US-AL | tier 2 | reviewed_by -
