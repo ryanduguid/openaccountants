@@ -1,5 +1,10 @@
 # Coverage
 
+Country and territory guide presence is tracked separately in
+[COUNTRY-COVERAGE.md](COUNTRY-COVERAGE.md), against a dated authoritative
+geographical catalogue. The jurisdiction totals below include US states and
+global or cross-border labels and do not establish comprehensive country coverage.
+
 **This file is the record of this repository's coverage numbers, derived from
 `index.json`.** Every other surface that states a count (the README headline,
 `llms.txt`, `docs/QUALITY-TIERS.md`, the generated `PARTNERS.md`) is checked
