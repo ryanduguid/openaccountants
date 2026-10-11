@@ -2,7 +2,7 @@
 name: ai-payroll
 description: >
   Anguilla Universal Social Levy for ordinary monthly employee and employer
-  remuneration, using the statutory consolidation dated 31 December 2022.
+  remuneration, using the unofficial online consolidation dated 31 December 2022.
   Covers separate liabilities, the remuneration threshold, employer wage
   limit, conditional allowances, deductions, monthly reporting and payment.
   Use for Anguilla payroll, employee levy, employer levy, USL returns or
@@ -15,10 +15,10 @@ description: >
 jurisdiction: AI
 category: payroll
 tax_year: 2022
-tax_year_notes: "Law as at 31 December 2022; later amendments require verification"
+tax_year_notes: "Unofficial consolidation as at 31 December 2022; operative law requires verification"
 tier: 2
-last_updated: 2026-10-11
-version: 0.1
+last_updated: 2026-10-12
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -35,9 +35,9 @@ Self-employed USL, Social Security contributions, non-monthly conversion, concur
 
 ## Period coverage and source currency
 
-The [*Universal Social Levy Act*, R.S.A. c. U12][U1] is expressly the law as at 31 December 2022. It consolidates Act 26 of 2021, in force 1 January 2022, and Act 14 of 2022, in force 22 December 2022. This statutory baseline was read on 11 October 2026. Complete later amendments and applicable regulations remain unverified. The editing date does not establish current 2026 law.
+The online copy of the [*Universal Social Levy Act*, R.S.A. c. U12][U1] hosted by the government states that it shows the law as at 31 December 2022. It consolidates Act 26 of 2021, in force 1 January 2022, and Act 14 of 2022, in force 22 December 2022. This dated text was read on 11 October 2026. The [law library's disclaimer](https://laws.gov.ai/?selected_page=disclaimer) classifies its online versions as unofficial and warns that the revision may omit laws, regulations or amendments. Complete operative provisions, later amendments and applicable regulations remain unverified. The editing date does not establish current 2026 law.
 
-Before an engagement calculation, verify the requested period's law, amendments, required regulations, currency and authority instructions. If the source conditions cannot be established, fire `R-AI-USL-PERIOD`; do not produce a payable estimate from this dated baseline. Apply that condition when using any figures or calculation section separately.
+Before an engagement calculation, obtain the applicable official law or authoritative confirmation of the required provisions. Verify the requested period's law, amendments, required regulations, currency and authority instructions. If the source conditions cannot be established, fire `R-AI-USL-PERIOD`; do not produce a payable estimate from this dated baseline. Apply that condition when using any figures or calculation section separately.
 
 [Hansard for 22 September 2026][U3] records the defeat of Motion 13 seeking legislation to repeal USL. A motion's title cannot establish an enacted repeal. This record does not prove that there was no other later legislation.
 
@@ -143,7 +143,7 @@ Verify operative law and currency before applying any figure. Reconcile all remu
 
 ## Currency and revisions
 
-Version 0.1, edited 11 October 2026. Initial monthly employer/employee reference using the 31 December 2022 consolidation. Post-2022 amendments, all applicable regulations, benefit valuation, operational rounding, record retention and full special-case compliance remain unverified. This companion is a Tier 2 draft pending professional review.
+Version 0.2, edited 12 October 2026. Monthly employer/employee reference using the unofficial online consolidation dated 31 December 2022. Records the library's provenance limitation and requires official law or authoritative confirmation before an engagement calculation. Complete operative provisions, post-2022 amendments, all applicable regulations, benefit valuation, operational rounding, record retention and full special-case compliance remain unverified. This companion is a Tier 2 draft pending professional review.
 
 [U1]: https://laws.gov.ai/storage/pdfs/2022%20AXA%20Revised%20Statutes%20and%20Regulations/PDF%20(Acts)/U-R.S.A.s/U012-Universal%20Social%20Levy%20Act.pdf
 [U2]: https://www.ird.gov.ai/Services/Tax/usl

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T12:13:19+00:00",
+ "generated_at": "2026-10-11T13:03:24+00:00",
  "counts": {
   "guides": 1889,
   "jurisdictions": 245,
@@ -2175,7 +2175,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2022",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-12"
   },
   {
    "slug": "ar-company-formation",
