@@ -5,7 +5,7 @@ jurisdiction: LB
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,8 +15,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporate tax rates and base
 
-- **Standard corporate income tax rate** — 17%  _(Income Tax Law (Decree-Law No. 144 of 1959), Chapter 1, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Tax on capital gains from disposal of fixed assets** — 15%  _(Income Tax Law (Decree-Law No. 144 of 1959), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Standard corporate income tax rate** — 17%  _(Investment Development Authority of Lebanon, Tax System (17% tax on corporate profit for joint stock and limited liability companies) — https://investinlebanon.gov.lb/en/doing_business/tax_system ; Income Tax Law (Decree-Law No. 144 of 1959) as amended, not re-read for this change)_
+- **Tax on capital gains from disposal of fixed assets** — 15%  _(Investment Development Authority of Lebanon, Tax System (15% tax on profits from the sale of fixed assets, including shares) — https://investinlebanon.gov.lb/en/doing_business/tax_system)_
 - **Tax base / territoriality** — Profit is taxable in Lebanon if generated through effort or activity exerted in Lebanon  _(Income Tax Law (Decree-Law No. 144 of 1959), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Real-profit method** — Mandatory for corporations, LLCs, foreign-company branches, and entities with 4+ employees or importing goods  _(Income Tax Law (Decree-Law No. 144 of 1959), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Deemed-profit method** — Applies to insurance, savings institutions, transport companies, oil refineries, and public-works contractors; profit deemed then taxed at 17%  _(Income Tax Law (Decree-Law No. 144 of 1959), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
@@ -27,7 +27,7 @@ Lebanese resident corporate entities are taxed at a flat 17% on net profits real
 
 Distributions and certain cross-border payments are subject to withholding under the Tax on Movable Capital and the non-resident withholding regime.
 
-- **Withholding tax on dividends** — 10%  _(Tax on Movable Capital (Decree-Law No. 146 of 1959), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Withholding tax on dividends** — 10%  _(Investment Development Authority of Lebanon, Tax System (withholding tax of 10% on all proceeds from movable capital generated in Lebanon) — https://investinlebanon.gov.lb/en/doing_business/tax_system ; Tax on Movable Capital (Decree-Law No. 146 of 1959), not re-read for this change)_
 - **Withholding tax on bank/treasury interest** — 7% (Non-refundable and not carried forward)  _(Tax on Movable Capital (Decree-Law No. 146 of 1959), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Withholding on other movable-capital income** — 10% (directors'/shareholders' fees, profit distributions, corporate loan interest)  _(Tax on Movable Capital (Decree-Law No. 146 of 1959), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Non-resident WHT on services** — 8.5%  _(2022 Budget Law, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
