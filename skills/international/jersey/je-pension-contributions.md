@@ -16,7 +16,7 @@ category: international
 tax_year: 2026
 tier: 2
 last_updated: 2026-10-11
-version: 1.0
+version: 1.1
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -40,6 +40,8 @@ All amounts below are GBP for one holder and one assessment year. Unknown or unc
 - **C: qualifying contributions paid.** Reconcile the holder's payments to each approved scheme and aggregate the actual contributions paid during the assessment year. Article 131I permits an expense deduction for that year, subject to its limits.
 - **R: relevant earnings before the pension deduction.** [Article 130C](https://www.jerseylaw.je/laws/current/l_29_1961) includes income assessed to tax from employment or office emoluments excluding pension income; Schedule D income immediately derived from the individual's trade, profession or vocation, including a partner personally acting in a partnership; and the Jersey land-dealing income charged under Schedule A by Article 51(1)(b). Gross business receipts are not automatically assessed earnings. Ordinary investment income and company distributions in the official examples do not enter R. Do not classify all property income alike: the statutory land-dealing category differs from ordinary passive rental income.
 - **T: total income before approved pension contributions.** Establish total income under [Article 4 and Article 131I(3)](https://www.jerseylaw.je/laws/current/l_29_1961). For this restriction, calculate T before deducting the total approved pension contributions paid, including any contributions ultimately disallowed. T can include taxable investment, distribution or property income that is outside R. Establish other allowable expenses under their own provisions; gross receipts, R and T are different inputs.
+
+The [general pension guidance](https://www.gov.je/TaxesMoney/IncomeTax/Individuals/AllowancesReliefs/pages/deductionsforpensioncontributions.aspx) also lists main-residence interest payments and ordinary annual contributions among amounts disregarded for this income test. The captured current Article 131I(3) expressly requires total income before approved pension contributions. Resolve the treatment of those additional items under the applicable year's Article 4 and deduction provisions, or obtain Revenue Jersey confirmation, before using them to establish T. The ordinary examples below do not settle that source difference.
 
 Keep evidence of approval, payment dates, the reconciliation of actual payments to C and the income schedules supporting R and T. Retain the full contribution amount separately from the allowable deduction for return preparation. Follow the relevant return and assessment instructions in [je-income-tax](je-income-tax.md); the current personal-return page concerns the 2025 assessment return filed in 2026, not a verified timetable for filing 2026 income.
 

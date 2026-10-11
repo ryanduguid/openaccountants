@@ -14,6 +14,8 @@ The illustrative formula uses a zero floor where a ceiling is exhausted. It repr
 
 The official subscriptions example starts with GBP 180,000 and uses GBP 179,500 after its stated GBP 500 expense. I preserve that assumption without asserting general subscription deductibility. The holder contributes GBP 44,000 and may deduct GBP 20,500 on those inputs. Using unadjusted total income of GBP 180,000 produces GBP 20,000, a different assumption. The guide also includes Article 130C's specific land-dealing category rather than excluding all property income from relevant earnings.
 
+The independent publication review identified broader wording on the general pension page about main-residence interest payments and ordinary annual contributions. The current Article 131I(3) expressly specifies approved pension contributions. I added a source-reconciliation note requiring the applicable Article 4 and deduction provisions or Revenue Jersey confirmation for those other items. The ordinary examples do not establish their treatment.
+
 ## Verification and limits
 
 I checked 16 synthetic arithmetic cases using Decimal and an independent piecewise integer-pence method. They reconcile all six official examples, including both separate holders in example 5, and test paid-contribution, relevant-earnings and fixed ceilings, zero inputs and penny boundaries. The 12 published table rows were read back and matched to the independently checked values. These checks establish the stated arithmetic, not taxpayer classification, expense eligibility or assessment rounding.
