@@ -105,6 +105,9 @@ class RebuildTests(SyntheticTreeCase):
         self.assertIn("consult that guide independently", intake)
         self.assertIn("consult it independently", readme)
         self.assertIn("review status", readme)
+        self.assertIn("review status where provided", readme)
+        self.assertIn("quality tier", readme)
+        self.assertNotIn("Each guide's metadata records", readme)
         self.assertNotIn("verified version", readme)
 
     def test_generated_text_is_utf8_with_lf_on_every_platform(self) -> None:

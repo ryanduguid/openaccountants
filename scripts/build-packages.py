@@ -601,7 +601,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified {practitioner_title.removeprefix("qualified ")} before filing or acting upon.
 
-Each guide's metadata records its period and review status. Check its sources and coverage limits before use. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
+Check each guide's metadata, quality tier, sources and coverage limits before use. Check its applicable period and review status where provided. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
 
 ---
 
