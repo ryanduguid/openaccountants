@@ -2,7 +2,7 @@
 name: au-fbt
 description: >
   Use this skill whenever asked about Australian Fringe Benefits Tax -- identifying fringe benefits in a general ledger, car fringe benefits (statutory formula or operating cost), the electric vehicle exemption, meal entertainment, minor benefits, expense payments and the otherwise-deductible rule, LAFHA, loan benefits, employee contributions, reportable fringe benefits amounts (RFBA), FBT gross-up and return preparation. Trigger on phrases like "FBT", "fringe benefits tax", "car fringe benefit", "novated lease FBT", "EV FBT exemption", "entertainment FBT", "minor benefit", "50/50 method", "LAFHA", "living away from home", "gross-up", "Type 1 Type 2", "RFBA", "reportable fringe benefits", or when sweeping a GL for FBT exposure. The FBT year runs 1 April to 31 March. ALWAYS read this skill before touching any FBT work.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027 (1 April 2026 - 31 March 2027)"
@@ -13,7 +13,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.3
+# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.4
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -57,6 +57,26 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown employee contribution | Assume nil; ask |
 | Entertainment attendee split unknown | Flag -- actual method needs the employee/non-employee split |
 | Not-for-profit employer | STOP -- capping/rebate rules out of scope (R-AU-FBT-1) |
+
+## Section 2 -- Required inputs and refusal catalogue
+
+### Required inputs
+
+**Minimum viable** -- entity type and FBT registration status, GL for the FBT year (1 April - 31 March), motor vehicle list with cost/dates/users, entertainment account detail, any salary packaging arrangements.
+
+**Recommended** -- logbooks and odometer records, employee contribution records, declarations (or alternative records under the 1 April 2024 measures), prior year FBT return and workpapers, lease agreements for novated/associate leases.
+
+**Ideal** -- per-employee benefit register, car parking market surveys, LAFH declarations and expense evidence, loan agreements with rates and balances.
+
+### Refusal catalogue
+
+**R-AU-FBT-1 -- NFP capping and rebates.** *Trigger:* employer is a PBI, health promotion charity, public/not-for-profit hospital, or rebatable employer. *Message:* "Salary packaging caps ($30,000/$17,000 grossed-up; $15,900/$9,010 in benefit value), meal entertainment card arrangements and the FBT rebate are specialist territory. Out of scope -- escalate."
+
+**R-AU-FBT-2 -- Employee share schemes.** *Trigger:* benefit involves shares/options. *Message:* "ESS interests are generally excluded from FBT and taxed under ESS rules. Out of scope."
+
+**R-AU-FBT-3 -- Car parking commercial valuation.** *Trigger:* car parking benefits arise and a taxable value beyond the threshold test is needed. *Message:* "Commercial parking station rate selection, market valuation, and the statutory spaces method involve valuation judgment. Compute exposure flag only; escalate valuation."
+
+**R-AU-FBT-4 -- Airline transport, board, remote area housing.** *Trigger:* these benefit categories appear. *Message:* "Specialised valuation rules. Out of scope -- escalate."
 
 ## Section 3 -- GL sweep library
 
@@ -160,7 +180,7 @@ If the employee would have deducted the interest (e.g. loan used for their incom
 
 ### Rule 5 -- Electric vehicle exemption (and its edges)
 
-- **Electric vehicle exemption** — Exempt if ALL: battery electric or hydrogen fuel cell car (PHEVs excluded from 1 April 2025 -- see below); designed to carry < 1 tonne and < 9 passengers (motorcycles/scooters never qualify); first held AND used on or after 1 July 2022; used by a current employee or their associates; luxury car tax has NEVER been payable on any supply or importation -- check whether LCT was actually payable from the sale documents (the car's LCT value against the fuel-efficient threshold for the financial year of the relevant sale; $91,661 for 2026-27 sales), never by raw price comparison. Associated running costs are also exempt. **The exempt benefit still generates an RFBA** via notional taxable value (Rule 9). PHEV grandfathering: exempt use before 1 April 2025 plus a financially binding commitment continuing on and after that date; optional extensions are not binding. **Transition warning -- ANNOUNCED, NOT YET LAW:** the 2026-27 Budget (5 May 2026) winds the exemption back from 1 April 2027: full exemption retained only for electric cars costing $75,000 or less (0% statutory formula rate); cars above $75,000 but below the LCT threshold get a 25% discount on FBT payable (15% statutory formula rate); from 1 April 2029 all eligible electric cars drop to the 25% discount. Existing leases are grandfathered. The current exemption runs unchanged to 31 March 2027. Flag any new EV novated lease commencing on or after 1 April 2027 and verify enactment status (ato.gov.au new legislation QC 107286) before advising -- this is an announcement only, not enacted law.  _(ato.gov.au new legislation QC 107286; LCT thresholds 2026-27 ($91,661 for 2026-27 sales))_
+- **Electric vehicle exemption** — Exempt if ALL: battery electric or hydrogen fuel cell car (PHEVs excluded from 1 April 2025 -- see below); designed to carry < 1 tonne and < 9 passengers (motorcycles/scooters never qualify); first held AND used on or after 1 July 2022; used by a current employee or their associates; luxury car tax has NEVER been payable on any supply or importation -- check whether LCT was actually payable from the sale documents (the car's LCT value against the fuel-efficient threshold for the financial year of the relevant sale; $91,661 for 2026-27 sales), never by raw price comparison. Associated running costs are also exempt. **The exempt benefit still generates an RFBA** via notional taxable value (Rule 9). PHEV grandfathering: exempt use before 1 April 2025 plus a financially binding commitment continuing on and after that date; optional extensions are not binding. **Transition warning -- ANNOUNCED, NOT YET LAW:** the 2026-27 Budget (12 May 2026) winds the exemption back from 1 April 2027: full exemption retained only for electric cars costing $75,000 or less (0% statutory formula rate); cars above $75,000 but below the LCT threshold get a 25% discount on FBT payable (15% statutory formula rate); from 1 April 2029 all eligible electric cars drop to the 25% discount. Existing leases are grandfathered. The current exemption runs unchanged to 31 March 2027. Flag any new EV novated lease commencing on or after 1 April 2027 and verify enactment status (ato.gov.au new legislation QC 107286) before advising -- this is an announcement only, not enacted law.  _(ato.gov.au new legislation QC 107286; LCT thresholds 2026-27 ($91,661 for 2026-27 sales))_
 
 ### Rule 6 -- Car parking
 
@@ -312,7 +332,7 @@ If the client provides only a GL and payroll data:
 
 ### Primary sources (verified 1 August 2026)
 
-**Primary sources**  _(Primary sources (verified 1 August 2026))_
+**Primary sources**
 
 | Topic | Source |
 | --- | --- |
@@ -320,7 +340,7 @@ If the client provides only a GL and payroll data:
 | Lodgment/payment dates | ato.gov.au -- Lodging your FBT return and paying; agent lodgment program May/June 2027 |
 | Cars: statutory, operating cost, logbooks | FBT guide for employers Ch 7; ato.gov.au rates page (deemed interest 8.27%) |
 | EV exemption, PHEV end, home charging | ato.gov.au -- Electric cars exemption; PCG 2024/2; LCT thresholds 2026-27 |
-| Announced EV wind-back (not yet law) | ato.gov.au new legislation QC 107286 -- Electric car discount (2026-27 Budget, 5 May 2026); exposure draft legislation released September 2026, consultation closed 28 September 2026: full exemption to 31 March 2027, then from 1 April 2027 a $75,000 price cap with a 25% concession above it, and a flat 25% concession from 1 April 2029 |
+| Announced EV wind-back (not yet law) | ato.gov.au new legislation QC 107286 -- Electric car discount (2026-27 Budget, 12 May 2026); exposure draft legislation released September 2026, consultation closed 28 September 2026: full exemption to 31 March 2027, then from 1 April 2027 a $75,000 price cap with a 25% concession above it, and a flat 25% concession from 1 April 2029 |
 | Car parking | ato.gov.au -- Car parking fringe benefits (threshold $11.48; small business exemption) |
 | Minor benefits | s 58P FBTAA; TR 2007/12 |
 | Meal entertainment | Division 9A FBTAA; s 51AEA ITAA36 |

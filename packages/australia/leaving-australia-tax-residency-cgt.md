@@ -4,11 +4,11 @@ description: "Use for planning departure from Australia: tax residency, CGT even
 jurisdiction: AU
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
-version: 1.0
+version: 1.1
 ---
 
 # Leaving Australia: residency, the CGT departure choice, and what follows you
@@ -27,6 +27,17 @@ Guide is the answer's backbone.
 their accountants. Rules stated for the 2025-26 income year; the residency-law modernisation
 announced years ago (the 45-day bright-line proposal) **remains unlegislated** — the old
 tests still govern, but watch this space before relying on edge cases.
+
+## Part 1 — Residency: when you stop being an Australian resident
+
+Residency ends on the date the facts change, not on a form. Apply all four tests in
+subsection 6(1) of the ITAA 1936 (resides, domicile, 183-day and superannuation) as TR 2023/1
+explains them; the domicile test keeps an Australian-domiciled person resident until they have
+a permanent place of abode overseas. Record the departure date, homes available in each
+country, family arrangements, employment terms and intentions. The detailed tests are in
+`au-tax-residency.md`; Part 7 lists the facts that most often move the date.
+
+---
 
 ## Part 2 — CGT event I1: the deemed disposal, and the election
 
@@ -100,7 +111,9 @@ within a 6-year window) rarely helps a planned move.
   top rate on the fund); professional trustees or winding up are the standard fixes.
 - **Australian-source income keeps its own rules:** rent (taxable by assessment; resident
   rates with an adjusted tax-free threshold apply in a part-year departure year, and
-  foreign-resident rates in a full non-resident year; negative-gearing losses carry forward), **fully franked dividends**
+  foreign-resident rates in a full non-resident year; a net rental loss reduces other
+  Australian assessable income and any excess carries forward as a tax loss, and from 2027-28
+  check the s 26-55 residential loss quarantine in `au-rental-property.md`), **fully franked dividends**
   (no further Australian tax for non-residents — franking does the job; unfranked: 30%
   withholding, treaty-reduced), **interest** (10% final withholding). Bank and broker
   paperwork: update tax-residency declarations so the right withholding applies at source.

@@ -35,11 +35,13 @@ Tax authority: **Skatteetaten**
 1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
-   - **"Help me with my 2025 Norway taxes. Here's my bank statement."**
+   - **"Help me with my Norway taxes for the period shown in these documents. Here's my bank statement."**
    - **"Classify my transactions and prepare my books."**
    - **"Run payroll for my employee."**
    - **"Help me set up a company in Norway."**
    - **"Prepare my annual accounts."**
+
+The generated intake supports personalised preparation for full-year residents within the loaded guides' scope. Part-year residence and non-residence require separate treatment. Where a supplied guide covers a specialist reference topic, consult it independently within its stated conditions and review requirements.
 
 The AI will:
 - Ask onboarding questions to confirm your situation
@@ -49,9 +51,9 @@ The AI will:
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
+Check each guide's metadata, quality tier, sources and coverage limits before use. Check its applicable period and review status where provided. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
 
 ---
 

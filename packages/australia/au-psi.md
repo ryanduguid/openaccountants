@@ -9,22 +9,22 @@ description: >
   for PSBs. Trigger on phrases like "PSI", "personal services", "PSB", "results test", "80% rule",
   "attribution", or a GL showing an entity invoicing one individual's skills. ALWAYS read this
   skill before any PSI work.
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Personal Services Income (PSI) -- Divisions 84-87 Skill v1.1
+# Australia Personal Services Income (PSI) -- Divisions 84-87 Skill v1.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context.** Two 2025-26 developments reshape PSI work. (1) The ATO finalised draft PCG 2024/D2 as **PCG 2025/5** (issued 28 November 2025): qualifying as a personal services business does NOT immunise income splitting or profit retention from Part IVA -- Rule 11 carries the low-risk / higher-risk framework, including the ATO's statement that it will not pursue Part IVA compliance where a taxpayer makes a genuine attempt to move to a low-risk arrangement by 30 June 2027. (2) The $1,000 standard deduction for work-related expenses (Treasury Laws Amendment (Tax Reform No. 1) Act 2026, from 1 July 2026) does NOT extend to PSI earners -- Rule 12.
+> **Law-change context.** Two 2025-26 developments reshape PSI work. (1) The ATO finalised draft PCG 2024/D2 as **PCG 2025/5** (issued 28 November 2025): qualifying as a personal services business does NOT immunise income splitting or profit retention from Part IVA -- Rule 11 carries the low-risk / higher-risk framework, including the ATO's statement that it will not pursue Part IVA compliance where a taxpayer makes a genuine attempt to move to a low-risk arrangement by 30 June 2027. (2) The $1,000 standard deduction for work-related expenses (Treasury Laws Amendment (Tax Reform No. 1) Act 2026, from 2026-27) depends on assessable labour income: PSI derived as a sole trader and PSI attributed from an entity do not count, while salary a PSE actually pays the individual does -- Rule 12.
 
 ## Section 1 -- Quick reference
 
@@ -213,7 +213,7 @@ There is **no safe percentage of diversion** (para 41). Record-keeping expectati
 
 - **PSI rules do not make anyone an employee** (s 84-10): super guarantee, payroll tax, workers comp and Fair Work status are decided under their own laws.
 - **Employee in substance?** If the "contractor" is actually an employee (contract-rights analysis per *Personnel Contracting* [2022] HCA 1; TR 2023/4), the payer has PAYG/SG obligations and the PSI analysis is moot. Representing an employment relationship as independent contracting risks **sham contracting** penalties (Fair Work Act ss 357-359). Reclassification questions escalate (R-AU-PSI-5).
-- **Standard deduction excluded:** the up-to-**$1,000 standard deduction** for work-related expenses (Treasury Laws Amendment (Tax Reform No. 1) Act 2026 Sch 4; from 1 July 2026, first applying to 2026-27 returns) is for employment-style work income and does **not** apply to taxpayers whose relevant income is PSI or business income -- substantiated actual claims continue for them. Never net it against PSI or attributed amounts.
+- **Standard deduction and PSI:** the up-to-**$1,000 standard deduction** for work-related expenses (ITAA 1997 s 25-130, inserted by Treasury Laws Amendment (Tax Reform No. 1) Act 2026 Sch 4; first applying to 2026-27 assessments) is available only to an individual with **assessable labour income** -- amounts subject to PAYG withholding as salary or wages, director's or office-holder payments, return to work payments, termination payments or parental leave pay (s 25-130(4)). PSI derived as a sole trader, and PSI attributed from a PSE under Div 86 (withheld under Div 13), are not assessable labour income, so substantiated actual claims continue for them. Salary a PSE actually pays the individual under PAYG withholding is assessable labour income, so the individual can claim the standard deduction, reduced by their work-related deductions for that salary. Never treat the standard deduction as a deduction of the PSE or net it against attributed amounts.
 
 ---
 
@@ -316,7 +316,7 @@ REVIEWER FLAGS
 | Business premises test | All 4 conditions at all times in the year (s 87-30) |
 | Salary carve-out from attribution | Paid as salary within 14 days after the PAYG payment period (s 86-15(4)) |
 | Agents regime commission floor | >= 75% commission/results-based (s 87-40) |
-| Standard deduction (2026-27) | Up to $1,000; work expenses; EXCLUDES PSI/business-only earners |
+| Standard deduction (2026-27) | Up to $1,000; needs assessable labour income (s 25-130(4)); sole-trader PSI, business income and attributed PSI do not count; PSE salary under PAYG withholding does |
 | PCG 2025/5 transition | Genuine move to low-risk arrangement by 30 June 2027 |
 
 ### Primary sources (verified 20 August 2026)
@@ -351,7 +351,7 @@ REVIEWER FLAGS
 
 **Test 9:** PSB trust distributes 60% of net PSI to a non-working beneficiary. -> Higher risk (splitting, remuneration not commensurate); escalate R-AU-PSI-6.
 
-**Test 10:** Employee asks to claim the $1,000 standard deduction; sole trader with only PSI asks the same. -> Employee yes (2026-27 onward); PSI earner no.
+**Test 10:** Employee asks to claim the $1,000 standard deduction; sole trader with only PSI asks the same; a director paid PAYG-withheld salary by a PSE asks the same. -> Employee yes (2026-27 onward); sole trader no; director yes on the salary, never on attributed PSI.
 
 ### Prohibitions
 
@@ -361,7 +361,7 @@ REVIEWER FLAGS
 - NEVER pass the results test on an hourly-rate contract without documented result-basis, tools and defect liability
 - NEVER count labour-hire or agency panel availability as offers to the public
 - NEVER deduct rent/mortgage interest to the individual or an associate, associate non-principal wages, or a second private-use car against PSI
-- NEVER claim the $1,000 standard deduction against PSI
+- NEVER claim the $1,000 standard deduction on sole-trader PSI or attributed PSI
 - NEVER treat PSB status as Part IVA protection -- run the PCG 2025/5 screen every time
 - NEVER design salary/distribution/retention levels, prepare PSBD applications, or opine on dominant purpose -- compute, flag, escalate
 - NEVER present figures as definitive

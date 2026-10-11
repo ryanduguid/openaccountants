@@ -1,10 +1,10 @@
 ---
 name: au-crypto-tax
 description: Use this skill whenever asked about Australian cryptocurrency taxation. Trigger on phrases like "crypto tax Australia", "Bitcoin CGT", "ATO crypto", "crypto capital gains", "personal use asset crypto", "staking income", "airdrop tax", "DeFi tax Australia", "crypto cost base", "crypto trading tax", "Coinbase tax", "Swyftx tax", "CoinSpot tax", "NFT tax Australia", or any question about how cryptocurrency is taxed by the ATO. This skill covers CGT treatment of crypto assets, the personal use asset exemption, trading vs investing distinction, staking and airdrop income, DeFi events, record-keeping requirements, and exchange-specific transaction patterns. ALWAYS read this skill before touching any Australian crypto tax work.
-version: "1.4"
+version: "1.5"
 jurisdiction: AU
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: crypto
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Crypto Tax
 
-## Australia Crypto Tax -- CGT & Income Skill v1.4
+## Australia Crypto Tax -- CGT & Income Skill v1.5
 
 ## Section 1 -- Quick Reference
 
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax / tax agent lodgement |
 | Filing deadline | 31 October (self-lodgement); agent-managed deadlines vary |
-| Skill version | 1.4 |
+| Skill version | 1.5 |
 
 ### Core Principle
 
@@ -89,8 +89,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Transfer between own wallets | No -- same beneficial ownership |
 | Lost/stolen crypto (no private key) | Possible CGT event -- must demonstrate irrecoverability |
 
-A CGT event occurs when you:
-
 ### 2.2 Cost Base Calculation
 
 **Cost Base Calculation**
@@ -100,9 +98,9 @@ A CGT event occurs when you:
 | Purchase price in AUD | Yes |
 | Exchange fees / commission on acquisition | Yes |
 | Gas fees on acquisition transaction | Yes |
-| Exchange fees / commission on disposal | Reduces capital proceeds (or included in cost base of new asset in swap) |
+| Exchange fees / commission on disposal | Second-element (incidental) cost of the disposed asset's cost base; do not also subtract it from capital proceeds |
 | Wallet transfer fees (own wallets) | Included in cost base of the asset |
-| Subscription to portfolio tracking tool | Included (third element -- ownership costs) |
+| Subscription to crypto tax or portfolio software | Not a cost base element; software used to keep tax records or prepare the return is generally deductible as a cost of managing tax affairs (ITAA 1997 s 25-5) |
 
 - **Method for identical assets** — FIFO, LIFO, or specific identification -- must be consistent and documented. ATO does not mandate a method but requires consistency.
 - **Fees and missing parcel records** — Classify each fee by the transaction it belongs to: a fee on acquisition enters the cost base of that asset, a fee on disposal is an incidental cost of that event, and a network fee is not automatically deductible or an addition to every asset's cost base. Where a parcel or acquisition record is missing, investigate exchange exports, wallet history and bank transfers before falling back to the $0 conservative default.  _(ATO, Transactions: acquiring and disposing of crypto assets (https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets))_
@@ -270,13 +268,13 @@ Use the ATO [DeFi and wrapping guidance](https://www.ato.gov.au/individuals-and-
 
 - **Calculate Gain/Loss per Event** — Capital proceeds − cost base = capital gain (or capital loss).
 
-### Step 3: Apply 50% Discount (if eligible)
+### Step 3: Offset Capital Losses
 
-- **Apply 50% Discount (if eligible)** — For each gain where asset held ≥ 12 months: net capital gain = gain × 50%.
+- **Offset Capital Losses** — Apply current year, then prior year, capital losses against gross capital gains BEFORE any discount. **Correct order:** gross gains − capital losses = gains remaining. Where there is a choice, apply losses first to gains that do not qualify for the discount.
 
-### Step 4: Offset Capital Losses
+### Step 4: Apply 50% Discount (if eligible)
 
-- **Offset Capital Losses** — Apply current and prior year capital losses against gross capital gains BEFORE applying the 50% discount. **Correct order:** Gross gains − capital losses = net gain. Then apply 50% discount to remaining gains eligible.
+- **Apply 50% Discount (if eligible)** — For each remaining gain on an asset held at least 12 months by an individual or trust: discounted gain = remaining gain × 50%. The total of remaining gains after the discount is the net capital gain.
 
 ### Step 5: Add Ordinary Income
 

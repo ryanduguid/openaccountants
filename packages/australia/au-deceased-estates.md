@@ -9,22 +9,22 @@ description: >
   2019/5, CGT event K3, super death benefits via the estate, testamentary trusts, and
   losses that die with the deceased. Trigger on "deceased estate", "date of death
   return", "executor tax", "inherited property CGT".
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Deceased Estates -- Date-of-Death Returns, Estate Trust Returns & Death CGT Skill v1.1
+# Australia Deceased Estates -- Date-of-Death Returns, Estate Trust Returns & Death CGT Skill v1.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context (three live fronts, verified 20 August 2026).** (1) The enacted individual rate cut (16% -> 15% from 1 July 2026, -> 14% from 1 July 2027) flows into date-of-death returns and the first-3-years concessional estate rates for 2026-27; the ATO's published year-4+ compressed bands are current only to 2025-26 -- see Rule 5. (2) Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026): from 1 July 2027 the 50% CGT discount is replaced by cost base indexation plus a 30% minimum rate on capital gains, and pre-CGT (pre-20 September 1985) status ends after 30 June 2027 -- this is LAW and interacts with Div 128 legatee cost bases (Rule 14). (3) The announced 30% minimum tax on discretionary trust distributions from 1 July 2028 explicitly CARVES OUT testamentary trusts and deceased estates -- ANNOUNCED, NOT LAW (Rule 13). Verify all three before relying.
+> **Law-change context (three live fronts, verified 11 October 2026).** (1) The enacted individual rate cut (16% -> 15% from 1 July 2026, -> 14% from 1 July 2027) flows into date-of-death returns and the first-3-years concessional estate rates for 2026-27; the ATO's published year-4+ compressed bands are current only to 2025-26 -- see Rule 5. (2) Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026): from 1 July 2027 the 50% CGT discount is replaced by cost base indexation plus a 30% minimum rate on capital gains, and pre-CGT (pre-20 September 1985) status ends after 30 June 2027 -- this is LAW and interacts with Div 128 legatee cost bases (Rule 14). (3) The proposed 30% minimum tax on discretionary trusts from 1 July 2028 (exposure draft released 3 September 2026) CARVES OUT deceased estates and, subject to conditions, testamentary trusts -- NOT LAW (Rule 13). Verify all three before relying.
 
 ## Section 1 -- Quick reference
 
@@ -191,7 +191,7 @@ Any capital gain or loss on death is disregarded where the asset passes to the L
 
 ### Rule 7 -- Inherited main residence and the 2-year window (s 118-195)
 
-Full exemption for a dwelling that was (a) the deceased's pre-CGT asset, or (b) their main residence just before death and not then income-producing, IF EITHER the ownership interest ends (contract settles) within 2 years of death -- post-death renting is irrelevant under this limb -- OR from death the dwelling was the main residence of the deceased's spouse, a person with a right to occupy under the will, or the disposing beneficiary. Failing both limbs, s 118-200 gives a days-based partial exemption. The Commissioner can extend the 2 years; PCG 2019/5 makes extensions up to 18 months AUTOMATIC where all five safe-harbour conditions hold (Example 4), with discretionary requests beyond it. Foreign-resident overlays kill the exemption: a deceased who was a foreign resident more than 6 years at death (no life event) had no main-residence status to inherit, and a beneficiary selling while a long-term foreign resident loses their period too -- flag and escalate (R-AU-DE-4, au-nonresident-cgt).
+Full exemption for a dwelling that was (a) the deceased's pre-CGT asset, or (b) their main residence just before death and not then income-producing, IF EITHER the ownership interest ends (contract settles) within 2 years of death -- post-death renting is irrelevant under this limb -- OR from death the dwelling was the main residence of the deceased's spouse, a person with a right to occupy under the will, or the disposing beneficiary. The right to occupy must be granted by the terms of the will itself: the ATO's [draft TD 2026/D1](https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D1/NAT/ATO/00001) (released for comment in 2026, replacing three withdrawn ATO IDs) treats a right given by the trustee under a broad discretion, or by a later deed or agreement among the beneficiaries, as outside this limb. Failing both limbs, s 118-200 gives a days-based partial exemption. The Commissioner can extend the 2 years; PCG 2019/5 makes extensions up to 18 months AUTOMATIC where all five safe-harbour conditions hold (Example 4), with discretionary requests beyond it. Foreign-resident overlays kill the exemption: a deceased who was a foreign resident more than 6 years at death (no life event) had no main-residence status to inherit, and a beneficiary selling while a long-term foreign resident loses their period too -- flag and escalate (R-AU-DE-4, au-nonresident-cgt).
 
 ### Rule 8 -- CGT event K3 (s 104-215): the Div 128 override
 
@@ -219,11 +219,11 @@ Before interim or final distributions: quantify final-return tax, estate tax by 
 
 ### Rule 13 -- Announced 30% trustee minimum tax: the testamentary carve-out
 
-The 2026-27 Budget measure (30% minimum tax on discretionary trust distributions from 1 July 2028; Treasury consultation closed 31 July 2026) explicitly CARVES OUT deceased estates and testamentary trusts -- pre-1 July 2028 testamentary trusts excluded where genuinely testamentary with assets from the estate (or injected before 12 May 2026), later ones only if beneficiaries are limited to individuals/tax-exempts. ANNOUNCED, NOT LAW: never model it, never restructure around it, and treat carve-out design as unstable (R-AU-DE-6 for planning requests). See au-trust-distributions Rule 14 for the full landscape table.
+The 2026-27 Budget measure (30% minimum tax on the net income of discretionary trusts from 1 July 2028, payable by the trustee) carves out deceased estates and, subject to conditions about the trust's assets and beneficiaries, testamentary trusts. Treasury released exposure draft legislation on 3 September 2026 (consultation 3 to 18 September 2026); the ATO page updated that day states the measure is not yet law. NOT LAW: never model it, never restructure around it, and treat carve-out design as unstable (R-AU-DE-6 for planning requests). See au-trust-distributions Rule 14 for the full landscape table.
 
 ### Rule 14 -- 1 July 2027 CGT reform interaction (LAW)
 
-Tax Reform No. 1 Act 2026 (Assent 26 June 2026): from 1 July 2027, for gains accruing after that date, the 50% discount for individuals and trusts is replaced by cost base indexation plus a 30% minimum rate, and pre-CGT status ends after 30 June 2027. Deceased-estate flow-ons to flag on every file: (a) the market-value-at-death uplift for a deceased's pre-CGT assets (s 128-15(4) item 4) only works its old magic while pre-CGT status exists -- deaths after the transition sit under the new regime; (b) the inherited discount clock (Rule 6) matters differently once discounts give way to indexation; (c) estates and s 99 assessments will need the new trustee gain-categorisation statements. Detailed ATO guidance is still emerging -- verify before advising on any post-June-2027 death or estate disposal.
+Tax Reform No. 1 Act 2026 (Assent 26 June 2026): from 1 July 2027, for gains accruing after that date, the 50% discount for individuals and trusts is replaced by cost base indexation plus a 30% minimum rate, and pre-CGT status ends after 30 June 2027. Deceased-estate flow-ons to flag on every file: (a) the market-value-at-death uplift for a deceased's pre-CGT assets (s 128-15(4) item 4) only works its old magic while pre-CGT status exists -- deaths after the transition sit under the new regime; (b) the inherited discount clock (Rule 6) matters differently once discounts give way to indexation; (c) estates holding assets across 1 July 2027 need the valuations and records the transitional rules in ss 112-155 to 112-185 rely on, and estate trustees pick up the new obligations to categorise capital gains and issue beneficiary statements (au-trust-distributions Rule 14). Detailed ATO guidance is still emerging -- verify before advising on any post-June-2027 death or estate disposal.
 
 ---
 
@@ -235,7 +235,7 @@ Tax Reform No. 1 Act 2026 (Assent 26 June 2026): from 1 July 2027, for gains acc
 
 ### T2-2 -- Dwelling occupied by spouse or right-to-occupy beneficiary
 
-**Trigger:** widow/widower stays in the home; will grants occupation rights; life interests. **Issue:** s 118-195 occupation limb can fully exempt WITHOUT the 2-year clock, but life and equitable interests have their own CGT rules and can also ground a PCG 2019/5 circumstance. **Action:** document occupier identity and instrument; escalate life-interest structures (legal + TR 2006/14 territory).
+**Trigger:** widow/widower stays in the home; will grants occupation rights; life interests. **Issue:** s 118-195 occupation limb can fully exempt WITHOUT the 2-year clock, but life and equitable interests have their own CGT rules and can also ground a PCG 2019/5 circumstance. **Action:** document occupier identity and the will clause granting the right (a trustee-discretion or deed-of-arrangement right does not qualify under draft TD 2026/D1); escalate life-interest structures (legal + TR 2006/14 territory).
 
 ### T2-3 -- Estate sells vs transmits
 
@@ -308,7 +308,7 @@ REVIEWER FLAGS
 4. Count estate years honestly: the part-year to the first 30 June is year 1; year 4 pricing is a cliff (Example 3).
 5. Screen every asset for K3 at day one -- beneficiary residency at PASSING is what counts, and the charge lands in the final return.
 6. Never let the 2-year dwelling window expire silently: diarise it at engagement, and document PCG 2019/5 conditions contemporaneously.
-7. Label reform items correctly: 15% rate flow-through (LAW, 2026-27), 1 July 2027 CGT changes (LAW), 30% trustee minimum tax with testamentary carve-out (ANNOUNCED).
+7. Label reform items correctly: 15% rate flow-through (LAW, 2026-27), 1 July 2027 CGT changes (LAW), 30% trustee minimum tax with testamentary carve-out (EXPOSURE DRAFT, NOT LAW).
 
 ---
 
@@ -339,7 +339,7 @@ If engaged mid-administration with a shoebox:
 | K3 measurement | MV at death − cost base, in the deceased's final return; pre-CGT disregarded; DGR gifts excepted (s 118-60) |
 | Losses at death | Revenue and capital carry-forwards lapse -- usable only in/for the final return |
 
-### Primary sources (verified 20 August 2026 against ato.gov.au)
+### Primary sources (verified 20 August 2026 against ato.gov.au; estate rates, TD 2026/D1 and minimum-tax status rechecked 11 October 2026)
 
 | Topic | Source |
 |---|---|
@@ -349,11 +349,11 @@ If engaged mid-administration with a shoebox:
 | Present entitlement during administration | IT 2622 (6 December 1990); *FCT v Whiting* (1943) 68 CLR 199; ITAA 1936 ss 95-99A, 101A |
 | Estate tax rates | ato.gov.au -- Tax rates – deceased estate (QC 49909, updated 4 June 2026); Income Tax Rates Act 1986 |
 | Death CGT rollover and cost bases | ITAA 1997 Div 128 (ss 128-10, 128-15, 128-20, 128-50); s 115-30(1) item 4; ato.gov.au -- Cost base of inherited assets (QC 66053); Inherited property and CGT (QC 66054) |
-| Main residence on death | ITAA 1997 ss 118-195, 118-200; ato.gov.au -- Extensions to the 2-year ownership period (QC 66057); PCG 2019/5 |
+| Main residence on death | ITAA 1997 ss 118-195, 118-200; ato.gov.au -- Extensions to the 2-year ownership period (QC 66057); PCG 2019/5; [draft TD 2026/D1](https://www.ato.gov.au/law/view/document?docid=DXT/TD2026D1/NAT/ATO/00001) (right to occupy under the will) |
 | CGT event K3 | ITAA 1997 s 104-215; s 118-60 |
 | Super death benefits | ITAA 1997 Div 302 (ss 302-10, 302-60, 302-140/145, 302-195); ITAA 1936 s 101A(3); ato.gov.au -- Superannuation death benefits (QC 44997); Paying superannuation death benefits (QC 45254); Schedule 12 withholding table |
 | Testamentary trusts | ITAA 1936 Div 6AA, s 102AG(2)(a)(i), s 102AG(2AA) (Treasury Laws Amendment (2019 Measures No. 3) Act 2020, from 1 July 2019) |
-| 2026 reforms | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Assent 26 June 2026); 2026-27 Budget (12 May 2026) + Treasury consultation 8 July 2026 (30% minimum tax, testamentary carve-out -- ANNOUNCED, NOT LAW) |
+| 2026 reforms | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Assent 26 June 2026); 2026-27 Budget (12 May 2026), Treasury consultation 8 July 2026 and exposure draft 3 September 2026 (30% minimum tax, testamentary carve-out -- NOT LAW; [ATO status page](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-introducing-a-minimum-tax-on-discretionary-trusts)) |
 
 ### Test suite
 

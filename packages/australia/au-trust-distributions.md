@@ -2,18 +2,18 @@
 name: au-trust-distributions
 description: >
   Use this skill whenever asked about Australian discretionary or family trust distributions -- trustee resolutions, present entitlement, section 95 net income versus trust income, streaming capital gains or franked distributions, minors' penalty rates under Division 6AA, section 99A trustee assessments, family trust elections, interposed entity elections, family trust distribution tax, section 100A reimbursement agreements, unpaid present entitlements after Bendel, TFN withholding for closely held trusts, or trust losses. Trigger on phrases like "trust distribution", "trustee resolution", "distribution minute", "streaming", "FTE", "FTDT", "s 100A", "bucket company", "UPE", or "30 June deadline". ALWAYS read this skill before touching any trust distribution work.
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Trust Distributions -- Discretionary & Family Trusts Skill v1.2
+# Australia Trust Distributions -- Discretionary & Family Trusts Skill v1.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -221,14 +221,14 @@ Never present an announced measure as enacted, and never advise restructures aro
 
 **2026 reform landscape**  _(Treasury Laws Amendment (Tax Reform No. 1) Act 2026; 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026)_
 
-| Measure | Status (verified 20 August 2026) |
+| Measure | Status (verified 20 August 2026; Act provisions read 11 October 2026) |
 | --- | --- |
 | Treasury Laws Amendment (Tax Reform No. 1) Act 2026 + Income Tax Rates Amendment (Tax Reform No. 1) Act 2026 | **LAW** -- Royal Assent 26 June 2026 |
 | 50% CGT discount for individuals, trusts, partnerships replaced by cost base indexation + 30% minimum rate on capital gains (direct or through trusts) | **LAW**, applies from 1 July 2027, and only to gains accruing after that date; discount retained for eligible new dwellings/affordable housing |
 | New trustee obligations to categorise capital gains and issue statements so beneficiaries can apply indexation and the 30% minimum rate | **LAW**, from 1 July 2027 -- detailed ATO forms/guidance still emerging; verify before building 2027-28 templates |
-| Pre-CGT (pre-20 Sep 1985) status ends after 30 June 2027; capital losses ordered against discounted gains first; SBE 50% reduction turnover threshold $2m -> $10m | **LAW** (same Act) |
-| 30% minimum tax on TRUSTEE distributions of discretionary trusts from 1 July 2028 (trustee-level tax on s 95(1) net income; non-refundable offset for individual beneficiaries; corporate beneficiaries DENIED the offset; franking credits proposed to stop flowing through; directors jointly/severally liable) | **ANNOUNCED, NOT LAW** -- 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026, consultation closed 31 July 2026; expected in a LATER bill |
-| Carve-outs from the announced minimum tax: testamentary trusts (pre-1 July 2028 trusts excluded if genuinely testamentary and assets from the estate or injected before 12 May 2026; later ones only if beneficiaries limited to individuals/tax-exempts), fixed trusts, widely held trusts, complying super funds, special disability trusts, deceased estates, charities, primary production income, Div 6AA vulnerable-minor categories | **ANNOUNCED, NOT LAW** -- design still in consultation |
+| Pre-CGT (pre-20 Sep 1985) assets are deemed reacquired at market value on 1 July 2027 (s 112-175); capital losses must reduce deferred pre-July 2027 gains before later gains (s 102-5(1)); the $2m CGT small business entity limit is disregarded for the 50% active asset reduction, so small business entities under $10m qualify (s 152-205(2)) | **LAW** (same Act), from 2027-28 |
+| 30% minimum tax on TRUSTEE distributions of discretionary trusts from 1 July 2028 (trustee-level tax on s 95(1) net income; non-refundable offset for individual beneficiaries; corporate beneficiaries DENIED the offset; franking credits proposed to stop flowing through; directors jointly/severally liable) | **NOT LAW** -- 2026-27 Budget (12 May 2026); Treasury consultation paper 8 July 2026; exposure draft legislation released 3 September 2026 (consultation 3 to 18 September 2026); not yet introduced as a bill ([ATO status page](https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-introducing-a-minimum-tax-on-discretionary-trusts), updated 3 September 2026) |
+| Carve-outs from the announced minimum tax: testamentary trusts (pre-1 July 2028 trusts excluded if genuinely testamentary and assets from the estate or injected before 12 May 2026; later ones only if beneficiaries limited to individuals/tax-exempts), fixed trusts, widely held trusts, complying super funds, special disability trusts, deceased estates, charities, primary production income, Div 6AA vulnerable-minor categories | **NOT LAW** -- exposure draft stage; design can change before enactment |
 | Restructure rollover relief (Subdiv 328-G-style, from 1 July 2027, ~3 years) out of discretionary trusts | **ANNOUNCED, NOT LAW** |
 
 ## Section 6 -- Tier 2 catalogue
@@ -340,7 +340,7 @@ If the client provides only financial statements and a trial balance:
 | TFN withholding threshold | Below $120 for a whole-year amount; for a part-year payment, below $120 x applicable days / 365 |
 | Franking-credit ceiling without FTE (non-fixed trust) | $5,000 per beneficiary |
 | CGT reform start (LAW) | 1 July 2027 (indexation + 30% minimum rate; trustee statements) |
-| Trustee minimum tax (ANNOUNCED, not law) | 30% from 1 July 2028; testamentary and other carve-outs under consultation |
+| Trustee minimum tax (exposure draft, not law) | 30% from 1 July 2028; testamentary and other carve-outs in the 3 September 2026 exposure draft |
 
 ### Primary sources (verified 20 August 2026)
 

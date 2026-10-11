@@ -3,6 +3,8 @@
 > This file guides the AI through the onboarding process.
 > It runs BEFORE any classification begins.
 
+This intake supports personalised preparation for full-year residents within the loaded guides' scope. For a reference enquiry covered by a supplied specialist guide, consult that guide independently within its stated conditions and review requirements.
+
 ## Opening statement
 
 Say this FIRST, before any questions:
@@ -15,7 +17,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | # | Question |
 |---|----------|
-| 1 | Were you a full-year Monaco resident in 2025? |
+| 1 | Which tax or accounting period do you need help with, and what was your Monaco residence status for that period (full-year, part-year, non-resident or uncertain)? |
 | 2 | What is your business structure? (Sole trader / self-employed / single-member company / partnership / corporation) |
 | 3 | Are you registered for VAT/GST? If yes, what type/scheme? |
 | 4 | Do you have employees? If yes, how many? |
@@ -27,7 +29,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | Trigger | Response |
 |---------|----------|
-| Not full-year resident | "I'm set up for full-year Monaco residents only. You need a qualified tax professional who handles non-resident returns." |
+| Part-year, non-resident or uncertain residence status | "Part-year residence and non-residence require different treatment. Personalised return preparation through this intake requires confirmed full-year Monaco residence. Ask a qualified tax professional to establish your status and the applicable rules." |
 | Partnership tax return | "Partnership tax returns file separately. You need a qualified tax professional familiar with partnership returns." |
 | Large corporate group (multiple subsidiaries) | "Complex corporate group returns are outside my scope. You need a qualified tax professional." |
 
@@ -44,7 +46,7 @@ Accept ANY documents the user provides — not just bank statements:
 - VAT/GST returns already filed
 - Any other tax documents
 
-Say: **"Drop all your documents here — bank statements, invoices, receipts, prior returns. Everything you have for 2025. I can read PDFs, CSVs, images, and spreadsheets."**
+Say: **"Drop all your documents here — bank statements, invoices, receipts, prior returns. Everything you have for the period you selected. I can read PDFs, CSVs, images, and spreadsheets."**
 
 **Do NOT insist on bank statements.** If the user only has invoices, work with invoices. If they only have a bank statement, work with that. Use whatever documents are provided.
 

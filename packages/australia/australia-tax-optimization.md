@@ -1,10 +1,10 @@
 ---
 name: australia-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Australian taxpayers — individuals, sole traders, and small business owners. Trigger on phrases like "reduce my tax", "tax planning Australia", "salary vs dividends", "negative gearing", "instant asset write-off", "superannuation strategy", "CGT discount", "trust distribution", "income splitting", "GAAR", "Part IVA", or any question about structuring affairs to legally minimize Australian tax. Covers entity selection, deduction optimization, capital allowances, loss utilization, timing strategies, GST planning, superannuation, and red lines. ALWAYS read this skill before giving Australian tax optimization advice.
-version: 1.3
+version: 1.4
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -202,7 +202,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | Strategy | Detail |
 | --- | --- |
 | CGT 50% discount | Individuals and trusts — hold assets >12 months for 50% discount on net capital gain |
-| Negative gearing | Investment property/share portfolio borrowing costs exceed income → net loss offsets other income. No cap in Australia |
+| Negative gearing | Investment property/share portfolio borrowing costs exceed income, so the net loss offsets other income. From 2027-28, excess deductions on residential dwellings acquired after 7:30 pm on 12 May 2026 (other than new residential dwellings) are quarantined under s 26-55; see `au-rental-property` |
 | Franking credits | Australian company dividends carry franking credits. Excess credits refundable for individuals and super funds |
 | Super in pension phase | The 2025-26 general transfer balance cap is $2 million. Establish the member's personal cap and previous retirement-phase use separately. The cap limits transfers into retirement phase, not later investment earnings. Earnings supporting qualifying retirement-phase income streams may be exempt, subject to the fund and pension conditions |
 | Transition to retirement (TTR) | Access super as an income stream from preservation age while still working. A TTR income stream outside retirement phase generally has fund earnings taxed at 15%. It can enter retirement phase automatically at age 65, after a qualifying release condition is notified to the provider, or when paid to a reversionary beneficiary. The existing stream need not restart to qualify for the earnings exemption; check the conditions below |
@@ -236,11 +236,11 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 ### Absolute Prohibitions
 
-- **NEVER advise backdating trust distribution resolutions past 30 June** — NEVER advise backdating trust distribution resolutions past 30 June
-- **NEVER advise sham contracting arrangements** — NEVER advise sham contracting arrangements
-- **NEVER advise fabricating deductions or inflating claims** — NEVER advise fabricating deductions or inflating claims
-- **NEVER structure arrangements with the dominant purpose of tax avoidance** — NEVER structure arrangements with the dominant purpose of tax avoidance
-- **NEVER advise ignoring Division 7A requirements for private company loans** — NEVER advise ignoring Division 7A requirements for private company loans
+- NEVER advise backdating trust distribution resolutions past 30 June
+- NEVER advise sham contracting arrangements
+- NEVER advise fabricating deductions or inflating claims
+- NEVER structure arrangements with the dominant purpose of tax avoidance
+- NEVER advise ignoring Division 7A requirements for private company loans
 
 ## Section 11 — Annual Tax Planning Calendar
 
@@ -252,7 +252,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | August–September | Obtain prior-year tax assessment. Review loss carry-forward position |
 | October | Self-lodger deadline (31 Oct). Review investment portfolio for CGT planning |
 | November–December | Mid-year tax review. Adjust PAYG instalments if income changed materially |
-| January | Superannuation guarantee due (Q2). Review Division 7A loan repayments |
+| January | Review Division 7A loan repayments. Employer SG is now due within 7 business days of each payday (payday super from 1 July 2026); the last quarterly SG date was 28 July 2026 |
 | February–March | Lodge Q2 BAS. Model year-end tax position. Begin pre-30 June planning |
 | April–May | Execute prepayment strategies. Make concessional super contributions. Review asset purchases for instant write-off |
 | June (before 30 June) | **Critical month.** Finalise trust distribution resolutions. Make super contributions (allow processing time — contribute by ~25 June). Prepay expenses. Realise capital losses. Lodge PAYG variation if needed |

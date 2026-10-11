@@ -3,8 +3,8 @@ name: australia-references
 jurisdiction: AU
 category: international
 tier: 2
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
 
@@ -26,18 +26,6 @@ Before incorporating material, check its exact licence, the proposed use and the
 - Integration approach:
   - Check the applicable AGPL terms and preserve third-party copyleft rights for any derivative material; the general OA Guide License mapping does not replace them.
   - Use as a validation reference for income tax brackets, Medicare levy surcharge thresholds, HECS-HELP repayment rates, and superannuation contribution caps.
-
-## Aussie Tax Helper
-
-- Repository: [kazimurtaza/aussie-tax-helper](https://github.com/kazimurtaza/aussie-tax-helper)
-- License: Apache-2.0
-- Stars: 6
-- Language: English
-- Scope: ATO 2024-25 tax calculator with work-from-home deduction comparison (Fixed Rate method vs Actual Cost method).
-- Why it matters: Practical focus on the WFH deduction methods that are a common pain point for individual filers. Check the Apache-2.0 terms for the proposed reuse.
-- Integration approach:
-  - Reference for WFH deduction logic and ATO rate tables.
-  - Review the Apache-2.0 obligations and destination terms before incorporating material.
 
 ## Quick Tax Calc
 

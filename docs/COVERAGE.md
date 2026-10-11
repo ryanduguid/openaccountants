@@ -1,5 +1,10 @@
 # Coverage
 
+Country and territory guide presence is tracked separately in
+[COUNTRY-COVERAGE.md](COUNTRY-COVERAGE.md), against a dated authoritative
+geographical catalogue. The jurisdiction totals below include US states and
+global or cross-border labels and do not establish comprehensive country coverage.
+
 **This file is the record of this repository's coverage numbers, derived from
 `index.json`.** Every other surface that states a count (the README headline,
 `llms.txt`, `docs/QUALITY-TIERS.md`, the generated `PARTNERS.md`) is checked
@@ -19,17 +24,17 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,875** |
-| Distinct `jurisdiction` codes | **243** |
+| Guide files indexed | **1,885** |
+| Distinct `jurisdiction` codes | **244** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,711** |
+| `tier: 2` (source-cited draft) | **1,721** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **184** |
+| Country directories under `skills/international/` | **185** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **255** |
+| Generated bundles under `packages/` | **256** |
 
 US coverage is complete at state level: all 50 states plus DC are present.
-Accountant-reviewed guides exist in 24 of the 243 jurisdiction codes;
+Accountant-reviewed guides exist in 24 of the 244 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
 jurisdiction.
