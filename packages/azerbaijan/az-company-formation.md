@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Azerbaij
 jurisdiction: AZ
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,8 +26,8 @@ The most common vehicle is the limited liability company (LLC / MMC), registered
 - **Registration timeline** — Typically 2-3 business days for a locally-owned LLC ((approx — confirm) foreign-owned can take longer) (approx — confirm)  _(Law on State Registration of Legal Entities and the State Register — https://accounting.az/en/company-registration-in-azerbaijan/)_
 - **State registration fee — LLC** — AZN 15 AZN ((approx — confirm) plus any professional service fees) (approx — confirm)  _(Law on State Duty of the Republic of Azerbaijan — https://dlb.az/company-registration/)_
 - **Post-registration setup** — Obtain electronic (ASAN Imza) signature for the director, company seal, corporate bank account, and register employment contracts in the state e-registry  _(Labour Code of the Republic of Azerbaijan — https://accounting.az/en/company-registration-in-azerbaijan/)_
-- **Annual compliance — profit tax** — File annual profit tax return and pay by 31 March; make quarterly current (advance) payments  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/tax-administration)_
-- **Ongoing compliance — VAT and payroll** — Monthly VAT returns (if registered) and monthly PIT/social/medical/unemployment reporting, due by the 20th of the following month  _(Tax Code of the Republic of Azerbaijan — https://taxsummaries.pwc.com/azerbaijan/corporate/tax-administration)_
+- **Annual compliance — profit tax** — File annual profit tax return and pay by 31 March; make quarterly current (advance) payments  _(Tax Code of the Republic of Azerbaijan, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Ongoing compliance — VAT and payroll** — Monthly VAT returns (if registered) and monthly PIT/social/medical/unemployment reporting, due by the 20th of the following month  _(Tax Code of the Republic of Azerbaijan, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Accounting / reporting framework** — Financial statements prepared under National Accounting Standards or IFRS depending on entity category (Law on Accounting) ((approx — confirm) category thresholds) (approx — confirm)  _(Law on Accounting of the Republic of Azerbaijan — https://www.caspianlegalcenter.az/insights/more/corporate-tax-azerbaijan)_
 
 <!-- openaccountants-cta-block -->

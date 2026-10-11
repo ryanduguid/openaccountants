@@ -1,10 +1,10 @@
 ---
 name: montenegro-income-tax
 description: Use this skill whenever asked about Montenegro personal income tax (porez na dohodak fizičkih lica) for self-employed individuals, sole proprietors (preduzetnik), and employees. Trigger on phrases like "how much tax do I pay in Montenegro", "Montenegro income tax", "GPP-FL", "IOPPD", "prirez", "municipal surtax", "Europe Now", "Evropa sad", "self-employed tax Montenegro", "Montenegro payroll", "pension contribution Montenegro", "PIO", "Montenegro net salary", or any question about computing or filing personal income tax, payroll withholding, or social contributions for an individual or sole proprietor in Montenegro. Also trigger when preparing or reviewing a GPP-FL annual return or an IOPPD monthly payroll report, computing employee/employer social contributions, or advising on the progressive 0/9/15% rate structure and the 13/15% municipal surtax. This skill covers PIT rate bands (employment monthly vs self-employment annual), the post-Europe-Now-2 contribution structure, municipal surtax, residency, VAT registration threshold, forms, and deadlines. ALWAYS read this skill before touching any Montenegro income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: ME
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Montenegro Personal Income Tax -- Self-Employed
 
-## Montenegro Personal Income Tax -- Self-Employed Skill v0.2
+## Montenegro Personal Income Tax -- Self-Employed Skill v0.3
 
-> **Tier 2 (research-verified).** Figures below are drawn from PwC Worldwide Tax Summaries (reviewed 27 March 2026), KPMG Montenegro, and Orbitax. They have NOT yet been signed off by a Montenegrin licensed accountant. Treat every computed liability as an estimate pending professional review.
+> **Tier 2 (research-verified).** Figures below are drawn from a secondary practitioner summary (reviewed 27 March 2026), KPMG Montenegro, and Orbitax. They have NOT yet been signed off by a Montenegrin licensed accountant. Treat every computed liability as an estimate pending professional review.
 
 ## Section 1 -- Quick Reference
 
@@ -39,13 +39,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Monthly payroll report deadline | 15th of the following month (Form IOPPD) |
 | Validated by | Pending — requires sign-off by a Montenegrin licensed accountant |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
-### Tax Rate Brackets (2025; rates unchanged into 2026 per PwC review 27 March 2026)
+### Tax Rate Brackets (2025; rates unchanged into 2026 per a secondary summary reviewed 27 March 2026)
 
-- **Two different bases** — Employment (salary) brackets are applied per MONTH on gross salary. Self-employment / business (entrepreneur) brackets are applied per YEAR on annual income. Do not mix the two thresholds.  _(PwC)_
+- **Two different bases** — Employment (salary) brackets are applied per MONTH on gross salary. Self-employment / business (entrepreneur) brackets are applied per YEAR on annual income. Do not mix the two thresholds.  _(secondary summary)_
 
-**Employment Income — MONTHLY gross salary**  _(PwC, reviewed 27 Mar 2026)_
+**Employment Income — MONTHLY gross salary**  _(secondary summary, reviewed 27 Mar 2026)_
 
 | Monthly Gross (EUR) | Rate | Cumulative Tax at Top of Band |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > Check: at EUR 1,000 gross, PIT = (1,000 − 700) × 9% = EUR 27.00. At EUR 1,500 gross, PIT = 27.00 + (1,500 − 1,000) × 15% = 27.00 + 75.00 = **EUR 102.00**.
 
-**Self-Employment / Business (Entrepreneur) Income — ANNUAL**  _(PwC, reviewed 27 Mar 2026)_
+**Self-Employment / Business (Entrepreneur) Income — ANNUAL**  _(secondary summary, reviewed 27 Mar 2026)_
 
 | Annual Income (EUR) | Rate | Cumulative Tax at Top of Band |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > Check: at EUR 12,000 annual, PIT = (12,000 − 8,400) × 9% = EUR 324.00. At EUR 20,000 annual, PIT = 324.00 + (20,000 − 12,000) × 15% = 324.00 + 1,200.00 = **EUR 1,524.00**.
 
-**Other Income — flat 15%**  _(PwC, reviewed 27 Mar 2026)_
+**Other Income — flat 15%**  _(secondary summary, reviewed 27 Mar 2026)_
 
 | Income Type | Rate |
 | --- | --- |
@@ -75,7 +75,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 15% flat |
 | Capital gains | 15% flat |
 
-**Gaming / Gambling Winnings — progressive**  _(PwC, reviewed 27 Mar 2026)_
+**Gaming / Gambling Winnings — progressive**  _(secondary summary, reviewed 27 Mar 2026)_
 
 | Winnings (EUR) | Rate | Cumulative Tax at Top of Band |
 | --- | --- | --- |
@@ -87,7 +87,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Municipal Surtax (Prirez)
 
-- **Surtax basis** — The municipal surtax is levied ON the PIT amount assessed, NOT on income. It is a tax-on-tax.  _(PwC)_
+- **Surtax basis** — The municipal surtax is levied ON the PIT amount assessed, NOT on income. It is a tax-on-tax.  _(secondary summary)_
 
 **Municipal Surtax Rate Table**
 
@@ -99,9 +99,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > Effective top marginal rate in Podgorica/Cetinje = 15% PIT × 1.15 = **17.25%**. In other municipalities = 15% × 1.13 = **16.95%**.
 
-### Social Contributions (post-Europe-Now-2, effective 1 October 2024) (PwC)
+### Social Contributions (post-Europe-Now-2, effective 1 October 2024) (secondary summary)
 
-**Social Contributions Table**  _(PwC)_
+**Social Contributions Table**  _(secondary summary)_
 
 | Contribution | Employee | Employer | Total |
 | --- | --- | --- | --- |
@@ -112,9 +112,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > Column check — Employee: 10.0 + 0.5 + 0.0 = **10.5%**. Employer: 0.0 + 0.5 + 0.0 = **0.5%**. Total: 10.0 + 1.0 + 0.0 = **11.0%** (= 10.5 + 0.5). Confirmed.
 
-- **Employer pension abolition** — Employer share of pension/disability was abolished from 1 October 2024 under Europe Now 2.  _(PwC)_
+- **Employer pension abolition** — Employer share of pension/disability was abolished from 1 October 2024 under Europe Now 2.  _(secondary summary)_
 - **Health contribution abolition** — Compulsory health insurance contributions were abolished from 1 January 2022 under Europe Now 1 (previously 8.5% employee + 2.3% employer = 10.8%); health is now funded from general taxation.  _(Orbitax/KPMG)_
-- **Pension/disability contribution ceiling** — EUR 68,765 (2024 figure, indexed by PIO Fund; [RESEARCH GAP — reviewer to confirm the 2025/2026 indexed ceiling with the PIO Fund.])  _(PwC)_
+- **Pension/disability contribution ceiling** — EUR 68,765 (2024 figure, indexed by PIO Fund; [RESEARCH GAP — reviewer to confirm the 2025/2026 indexed ceiling with the PIO Fund.])  _(secondary summary)_
 
 ### Conservative Defaults
 
@@ -297,7 +297,7 @@ Employment income, EUR 1,200 gross/month, employed in Podgorica (15% surtax).
 `30/04/2025 ; NLB DOZNAKA ; POSLODAVAC DOO ; ZARADA APRIL ; +700.00 ; EUR`
 
 **Reasoning:**
-Gross EUR 700/month falls entirely within the 0% PIT band (PwC: first EUR 700 taxed at 0%).
+Gross EUR 700/month falls entirely within the 0% PIT band (secondary summary, first EUR 700 taxed at 0%).
 
 - PIT = **EUR 0.00**. Surtax = 0% of 0 = **EUR 0.00**.
 - Employee social contributions: 700 × 10.5% = **EUR 73.50**.
@@ -322,7 +322,7 @@ Gross EUR 700/month falls entirely within the 0% PIT band (PwC: first EUR 700 ta
 `05/02/2025 ; ERSTE PRENOS ; ZAKUPAC ; ZAKUP STANA FEB ; +500.00 ; EUR`
 
 **Reasoning:**
-Rental income is taxed at a flat 15% (PwC), not on the progressive SE bands. (Any statutory standardised cost deduction against rental income is a reviewer item.)
+Rental income is taxed at a flat 15% (secondary summary), not on the progressive SE bands. (Any statutory standardised cost deduction against rental income is a reviewer item.)
 
 - PIT on gross 500: 500 × 15% = **EUR 75.00** (before any allowable cost deduction — flag for reviewer).
 
@@ -352,25 +352,25 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.1 Employment Income — Monthly Progressive PIT
 
-- **Employment monthly PIT rule** — Salary is taxed monthly: 0% on the first EUR 700 gross, 9% on EUR 700.01–1,000, 15% above EUR 1,000. The employer withholds PIT and employee contributions and remits monthly (PAYE-style). The 0% band on the first EUR 700 means most minimum-wage and low earners pay no PIT.  _(Law on Personal Income Tax (Zakon o porezu na dohodak fizičkih lica); PwC, reviewed 27 Mar 2026)_
+- **Employment monthly PIT rule** — Salary is taxed monthly: 0% on the first EUR 700 gross, 9% on EUR 700.01–1,000, 15% above EUR 1,000. The employer withholds PIT and employee contributions and remits monthly (PAYE-style). The 0% band on the first EUR 700 means most minimum-wage and low earners pay no PIT.  _(Law on Personal Income Tax (Zakon o porezu na dohodak fizičkih lica); secondary summary, reviewed 27 Mar 2026)_
 
 ### 5.2 Self-Employment / Business Income — Annual Progressive PIT
 
-- **Self-employment annual PIT rule** — Entrepreneur (preduzetnik) income is taxed annually: 0% up to EUR 8,400, 9% on EUR 8,400.01–12,000, 15% above EUR 12,000. Apply to net annual business income after allowable expenses.  _(Law on Personal Income Tax; PwC)_
+- **Self-employment annual PIT rule** — Entrepreneur (preduzetnik) income is taxed annually: 0% up to EUR 8,400, 9% on EUR 8,400.01–12,000, 15% above EUR 12,000. Apply to net annual business income after allowable expenses.  _(Law on Personal Income Tax; secondary summary)_
 
 > [RESEARCH GAP — reviewer to confirm] Whether the EUR 700 monthly 0% band is also reflected proportionally in self-employment computations versus the EUR 8,400 annual band should be confirmed by the accountant reviewer.
 
 ### 5.3 Other Income — Flat 15%
 
-- **Other income flat rate** — Rental, dividend, interest, royalty, and capital-gains income are taxed at a flat 15%. These do not use the progressive bands.  _(PwC)_
+- **Other income flat rate** — Rental, dividend, interest, royalty, and capital-gains income are taxed at a flat 15%. These do not use the progressive bands.  _(secondary summary)_
 
 ### 5.4 Gaming / Gambling Winnings — Progressive
 
-- **Gaming winnings progressive rate** — 0% up to EUR 50, 10% on EUR 50.01–1,500, 15% above EUR 1,500.  _(PwC)_
+- **Gaming winnings progressive rate** — 0% up to EUR 50, 10% on EUR 50.01–1,500, 15% above EUR 1,500.  _(secondary summary)_
 
 ### 5.5 Municipal Surtax (Prirez)
 
-- **Surtax computation rule** — Surtax is charged ON the PIT amount: 13% in most municipalities, 15% in Podgorica and Cetinje. It is a tax-on-tax — never add it to the income rate. Effective top marginal = 17.25% (Podgorica/Cetinje) or 16.95% (other municipalities).  _(Law on Local Self-Government Financing; PwC)_
+- **Surtax computation rule** — Surtax is charged ON the PIT amount: 13% in most municipalities, 15% in Podgorica and Cetinje. It is a tax-on-tax — never add it to the income rate. Effective top marginal = 17.25% (Podgorica/Cetinje) or 16.95% (other municipalities).  _(Law on Local Self-Government Financing; secondary summary)_
 
 ### 5.6 Social Contributions
 
@@ -383,14 +383,14 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 | Health | 0.0% (abolished Jan 2022) | 0.0% (abolished Jan 2022) |
 | **Total** | **10.5%** | **0.5%** |
 
-- **Pension/disability contribution ceiling** — EUR 68,765 (2024 figure, indexed by PIO Fund; [RESEARCH GAP — reviewer to confirm the 2025/2026 indexed ceiling with the PIO Fund.])  _(PwC)_
+- **Pension/disability contribution ceiling** — EUR 68,765 (2024 figure, indexed by PIO Fund; [RESEARCH GAP — reviewer to confirm the 2025/2026 indexed ceiling with the PIO Fund.])  _(secondary summary)_
 
-> A possible employer "labor fund" / professional-rehabilitation-of-disabled-persons levy and chamber/union contributions appear in some guides but were NOT confirmed on PwC for the current period. [RESEARCH GAP — reviewer to confirm with the Revenue and Customs Administration before relying on them.]
+> A possible employer "labor fund" / professional-rehabilitation-of-disabled-persons levy and chamber/union contributions appear in some guides but were NOT confirmed on the secondary summary for the current period. [RESEARCH GAP — reviewer to confirm with the Revenue and Customs Administration before relying on them.]
 
 ### 5.7 Payroll Burden Summary
 
-- **Employer total payroll burden** — Only 0.5% unemployment insurance on top of gross salary (pension/disability and health employer shares abolished).  _(PwC)_
-- **Employee total deductions** — 10.5% social contributions + progressive PIT (0/9/15%) + municipal surtax on the PIT amount.  _(PwC)_
+- **Employer total payroll burden** — Only 0.5% unemployment insurance on top of gross salary (pension/disability and health employer shares abolished).  _(secondary summary)_
+- **Employee total deductions** — 10.5% social contributions + progressive PIT (0/9/15%) + municipal surtax on the PIT amount.  _(secondary summary)_
 
 ### 5.8 Non-Deductible Expenses (Sole Proprietors)
 
@@ -406,8 +406,8 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.9 VAT Interaction
 
-- **Standard VAT (PDV) rate** — 21%  _(PwC)_
-- **Mandatory VAT registration threshold** — EUR 30,000 (taxable turnover in preceding 12 months; register within 10 days; voluntary registration allowed below)  _(PwC)_
+- **Standard VAT (PDV) rate** — 21%  _(secondary summary)_
+- **Mandatory VAT registration threshold** — EUR 30,000 (taxable turnover in preceding 12 months; register within 10 days; voluntary registration allowed below)  _(secondary summary)_
 
 **VAT Interaction Table**
 
@@ -419,7 +419,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 ### 5.10 Residency
 
-- **Resident test** — Resident if present at least 183 days in the tax year, OR has domicile / centre of personal and economic interests in Montenegro. Residents are taxed on worldwide income; non-residents on Montenegro-source income only.  _(Law on Personal Income Tax; PwC)_
+- **Resident test** — Resident if present at least 183 days in the tax year, OR has domicile / centre of personal and economic interests in Montenegro. Residents are taxed on worldwide income; non-residents on Montenegro-source income only.  _(Law on Personal Income Tax; secondary summary)_
 
 ### 5.11 Filing Deadlines and Penalties
 
@@ -427,7 +427,7 @@ Transfer between own accounts. Neither income nor expense. Exclude entirely.
 
 | Item | Detail |
 | --- | --- |
-| Annual PIT return (GPP-FL) | 30 April of the following year (PwC/forms) |
+| Annual PIT return (GPP-FL) | 30 April of the following year (secondary summary, /forms) |
 | Monthly payroll report (IOPPD) + payment | 15th of the following month (Rivermate) |
 | Late payment of tax/contributions | Statutory default interest accrues; fines and audit exposure. [RESEARCH GAP — reviewer to confirm exact default-interest rate and fine amounts from the Tax Administration Law and Law on Contributions.] |
 | Non-compliance / repeated | Intensified inspections, possible restrictions on business operations, misdemeanor fines for failure to file/register (Rivermate). [RESEARCH GAP — reviewer to confirm fine amounts.] |
@@ -583,14 +583,14 @@ ONBOARDING QUESTIONS -- MONTENEGRO INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| PIT rates (employment/SE/other/gaming) | Law on Personal Income Tax; PwC (reviewed 27 Mar 2026) |
-| Social contributions | Law on Contributions for Mandatory Social Insurance; PwC |
-| Municipal surtax (prirez) | Law on Local Self-Government Financing; PwC |
+| PIT rates (employment/SE/other/gaming) | Law on Personal Income Tax; secondary summary (reviewed 27 Mar 2026) |
+| Social contributions | Law on Contributions for Mandatory Social Insurance; secondary summary |
+| Municipal surtax (prirez) | Law on Local Self-Government Financing; secondary summary |
 | Health contribution abolition (Jan 2022) | Europe Now 1; Orbitax / KPMG |
-| Employer pension share abolition (Oct 2024) | Europe Now 2; PwC |
-| Residency (183 days / centre of interests) | Law on Personal Income Tax; PwC |
-| VAT registration (EUR 30,000; 21%) | PwC |
-| Contribution ceiling (EUR 68,765, 2024) | PwC (indexed by PIO Fund) |
+| Employer pension share abolition (Oct 2024) | Europe Now 2; secondary summary |
+| Residency (183 days / centre of interests) | Law on Personal Income Tax; secondary summary |
+| VAT registration (EUR 30,000; 21%) | secondary summary |
+| Contribution ceiling (EUR 68,765, 2024) | secondary summary (indexed by PIO Fund) |
 | Annual return (GPP-FL) | Revenue and Customs Administration; deadline 30 April |
 | Monthly payroll report (IOPPD) | Revenue and Customs Administration; deadline 15th of following month (Rivermate) |
 | Filing portal | eprijava.tax.gov.me / www.poreskauprava.gov.me |
@@ -607,7 +607,7 @@ ONBOARDING QUESTIONS -- MONTENEGRO INCOME TAX
 
 ### CRITICAL Stale-Data Warning
 
-Many EOR/payroll secondary guides (e.g. Rivermate, some 2025/2026 guides) still list PRE-REFORM social contribution rates — employee 15% pension + 8.5% health, employer 5.5% pension + 2.3% health + labour-fund levy. **These are OUTDATED.** The Europe Now reforms abolished health contributions (1 Jan 2022) and the employer pension/disability share, and cut the employee pension rate to 10% (1 Oct 2024). PwC (reviewed 27 March 2026), KPMG Montenegro, and Orbitax confirm the current structure: **employee 10.5% total, employer 0.5% only, no health contribution.** Always use the post-reform figures.
+Many EOR/payroll secondary guides (e.g. Rivermate, some 2025/2026 guides) still list PRE-REFORM social contribution rates — employee 15% pension + 8.5% health, employer 5.5% pension + 2.3% health + labour-fund levy. **These are OUTDATED.** The Europe Now reforms abolished health contributions (1 Jan 2022) and the employer pension/disability share, and cut the employee pension rate to 10% (1 Oct 2024). The secondary summary (reviewed 27 March 2026), KPMG Montenegro, and Orbitax confirm the current structure: **employee 10.5% total, employer 0.5% only, no health contribution.** Always use the post-reform figures.
 
 ### Sources
 
@@ -615,13 +615,13 @@ Many EOR/payroll secondary guides (e.g. Rivermate, some 2025/2026 guides) still 
 
 | Title | Publisher |
 | --- | --- |
-| Montenegro — Individual — Taxes on personal income | PwC Worldwide Tax Summaries (reviewed 27 Mar 2026) — taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income |
-| Montenegro — Individual — Other taxes (social security, VAT) | PwC Worldwide Tax Summaries (reviewed 27 Mar 2026) — taxsummaries.pwc.com/montenegro/individual/other-taxes |
-| Montenegro — Individual — Residence | PwC Worldwide Tax Summaries (reviewed 27 Mar 2026) — taxsummaries.pwc.com/montenegro/individual/residence |
+| Montenegro — Individual — Taxes on personal income | secondary summary (reviewed 27 Mar 2026) |
+| Montenegro — Individual — Other taxes (social security, VAT) | secondary summary (reviewed 27 Mar 2026) |
+| Montenegro — Individual — Residence | secondary summary (reviewed 27 Mar 2026) |
 | Montenegro Abolishes Compulsory Health Insurance Contributions | Orbitax — orbitax.com/news/archive.php/Montenegro-Abolishes-Compulsor-49057 |
 | Novelties in Personal Taxation and Labor Law in 2022 (Europe Now) | KPMG Montenegro |
 | Minimum Wage in Montenegro for 2025 (dual-tier EUR 670 / EUR 800 net) | RemotePeople |
-| Employment Taxes in Montenegro (IOPPD monthly deadline) | Rivermate (deadlines only; contribution rates treated as partly stale, cross-checked against PwC) |
+| Employment Taxes in Montenegro (IOPPD monthly deadline) | Rivermate (deadlines only; contribution rates treated as partly stale, cross-checked against the secondary summary) |
 
 ### Test Suite
 

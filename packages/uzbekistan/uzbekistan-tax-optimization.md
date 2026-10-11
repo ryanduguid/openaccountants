@@ -1,10 +1,10 @@
 ---
 name: uzbekistan-tax-optimization
 description: Use this skill whenever asked about reducing tax in Uzbekistan, tax planning, or legal strategies to minimise tax for a sole proprietor, small business, or IT company in Uzbekistan. Trigger on phrases like "reduce tax Uzbekistan", "turnover tax Uzbekistan", "1% tax sole proprietor", "individual entrepreneur Uzbekistan", "IT Park Uzbekistan", "Uzbekistan dividends 0%", "save tax Uzbekistan", "tax planning Uzbekistan". This skill covers the turnover-tax regime (1% for small IE/self-employed from 2026), the 0% PIT on dividends, the IT Park regime, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Uzbek tax optimisation.
-version: 0.3
+version: 0.4
 jurisdiction: UZ
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Uzbekistan Tax Optimization
 
-## Uzbekistan Tax Optimization Skill v0.3
+## Uzbekistan Tax Optimization Skill v0.4
 
-**Tier 2 — research-verified. Sources: State Tax Committee, PwC, EY Uzbekistan, IT Park Uzbekistan. Figures must agree with `uzbekistan-income-tax.md` / `uzbekistan-social-contributions.md`. NOT yet signed off by an Uzbek tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: State Tax Committee, the secondary summary, EY Uzbekistan, IT Park Uzbekistan. Figures must agree with `uzbekistan-income-tax.md` / `uzbekistan-social-contributions.md`. NOT yet signed off by an Uzbek tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 

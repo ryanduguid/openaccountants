@@ -1,10 +1,10 @@
 ---
 name: georgia-income-tax
 description: Use this skill whenever asked about personal income tax in the country of Georgia (Sakartvelo, GE — NOT the US state). Trigger on phrases like "how much tax do I pay in Georgia", "Georgia flat tax", "20% income tax", "small business status", "1% tax Georgia", "individual entrepreneur", "micro business status", "Georgian rental income tax", "funded pension Georgia", "rs.ge declaration", "Revenue Service of Georgia", "GEL tax", "VAT registration Georgia", or any question about filing or computing income tax for an individual, self-employed person, or individual entrepreneur tax-resident in Georgia. Also trigger when preparing or reviewing an annual income tax declaration, a monthly Small Business turnover declaration, computing the 2%+2% funded pension, or advising on PIT advance instalments. This skill covers the flat 20% PIT, Small Business Status (1%/3%), Micro Business Status (0%), rental and capital-gains rates, withholding taxes, the mandatory funded pension, VAT thresholds, deadlines, and penalties. ALWAYS read this skill before touching any Georgia income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: GE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 reviewed_by: Gvantsa Amiridze, ACCA
 review_status: pending_review
 depends_on:
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Georgia (Country) Personal Income Tax — Individuals and Self-Employed
 
-## Georgia (Country) Personal Income Tax — Individuals and Self-Employed Skill v0.1
+## Georgia (Country) Personal Income Tax — Individuals and Self-Employed Skill v0.2
 
 > **JURISDICTION WARNING.** This skill covers the **COUNTRY of Georgia (Sakartvelo / GE)**, a sovereign state in the South Caucasus — **NOT the US state of Georgia**. Currency is the **Georgian Lari (GEL)**. The tax authority is the **Revenue Service of Georgia** (`rs.ge`). If the client is in the US state of Georgia, STOP and use the US Georgia state skill instead.
 
@@ -29,50 +29,50 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Georgia (Sakartvelo), South Caucasus |
 | Tax | Personal Income Tax (PIT) — flat rate |
 | Currency | GEL (Georgian Lari) only |
-| Tax year | Calendar year (1 January – 31 December) [PwC, Tax administration] |
+| Tax year | Calendar year (1 January – 31 December) [secondary summary, Tax administration] |
 | Primary legislation | Tax Code of Georgia (Law No. 3591, in force since 1 January 2011, as amended) |
 | Supporting legislation | Law of Georgia on Funded Pension (No. 3303-რს, in force 1 January 2019; amended by Law No. 4312 of 27 June 2024) |
 | Tax authority | Revenue Service of Georgia (sakhelmtsifo shemosavlebis samsakhuri), under the Ministry of Finance |
 | Filing portal | `rs.ge` (Revenue Service e-portal) |
-| Annual filing deadline | Before 1 April of the following year [PwC, Tax administration] |
+| Annual filing deadline | Before 1 April of the following year [secondary summary, Tax administration] |
 | Validated by | Pending — requires sign-off by a qualified Georgian tax professional |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Personal Income Tax Rate (2025)
 
-- **Flat rate — no progressive brackets** — Georgia applies a single FLAT rate of personal income tax. There are NO progressive brackets.  _(PwC, Taxes on personal income)_
+- **Flat rate — no progressive brackets** — Georgia applies a single FLAT rate of personal income tax. There are NO progressive brackets.  _(secondary summary, Taxes on personal income)_
 
-**Personal Income Tax Rate (2025)**  _(PwC, Taxes on personal income / Income determination)_
+**Personal Income Tax Rate (2025)**  _(secondary summary, Taxes on personal income / Income determination)_
 
 | Income type | Rate | Base |
 | --- | --- | --- |
-| Standard personal income (employment, business, most other) | **20%** | Taxable personal income — residents on worldwide income; non-residents on Georgian-source income only [PwC, Taxes on personal income] |
-| Residential rental income (individual, NOT claiming deductions) | **5%** | Gross rental income; if deductions are claimed instead, the 20% rate applies [PwC, Income determination] |
-| Capital gain — sale of vehicle, or apartment/house with attached land plot (non-business individual) | **5%** | Gain where not exempt; >2-year holding is generally exempt [PwC, Income determination] |
+| Standard personal income (employment, business, most other) | **20%** | Taxable personal income — residents on worldwide income; non-residents on Georgian-source income only [secondary summary, Taxes on personal income] |
+| Residential rental income (individual, NOT claiming deductions) | **5%** | Gross rental income; if deductions are claimed instead, the 20% rate applies [secondary summary, Income determination] |
+| Capital gain — sale of vehicle, or apartment/house with attached land plot (non-business individual) | **5%** | Gain where not exempt; >2-year holding is generally exempt [secondary summary, Income determination] |
 
 ### Special Individual-Entrepreneur Regimes (instead of 20% PIT)
 
-**Special Individual-Entrepreneur Regimes (instead of 20% PIT)**  _(PwC, Taxes on personal income)_
+**Special Individual-Entrepreneur Regimes (instead of 20% PIT)**  _(secondary summary, Taxes on personal income)_
 
 | Status | Rate | Base / Cap | Source |
 | --- | --- | --- | --- |
-| **Small Business Status** | **1%** of gross turnover; **3%** on turnover above GEL 500,000 | Annual turnover up to GEL 500,000; status revoked from 1 Jan of the third year if the cap is exceeded for two consecutive years | PwC, Taxes on personal income |
-| **Micro Business Status** | **0% (exempt)** | Annual turnover below GEL 30,000, no employees | PwC, Taxes on personal income |
+| **Small Business Status** | **1%** of gross turnover; **3%** on turnover above GEL 500,000 | Annual turnover up to GEL 500,000; status revoked from 1 Jan of the third year if the cap is exceeded for two consecutive years | secondary summary, Taxes on personal income |
+| **Micro Business Status** | **0% (exempt)** | Annual turnover below GEL 30,000, no employees | secondary summary, Taxes on personal income |
 
 > **Agritourism / wine tourism GEL 700,000 variant:** the standard small-business turnover cap is GEL 500,000; a higher cap of GEL 700,000 applies to wine tourism / agrotourism activity. Verify against a primary source before relying on it.
 
 ### Withholding Taxes on Passive Income (Final WHT)
 
-**Withholding Taxes on Passive Income (Final WHT)**  _(PwC, Corporate — withholding taxes)_
+**Withholding Taxes on Passive Income (Final WHT)**  _(secondary summary, Corporate — withholding taxes)_
 
 | Payment | Rate | Notes | Source |
 | --- | --- | --- | --- |
-| Dividends to individuals | **5%** | Final WHT | PwC, Corporate — withholding taxes |
-| Interest to individuals / non-residents without PE | **5%** | Final WHT | PwC, Corporate — withholding taxes |
-| Royalties | **5%** | Domestic WHT rate | PwC, Corporate — withholding taxes |
-| Service fees to non-residents | **10%** | Domestic WHT rate | PwC, Corporate — withholding taxes |
-| Interest / royalties / other Georgian-source income to non-residents in offshore / "black-listed" jurisdictions | **15%** | Penal rate | PwC, Corporate — withholding taxes |
+| Dividends to individuals | **5%** | Final WHT | secondary summary, Corporate — withholding taxes |
+| Interest to individuals / non-residents without PE | **5%** | Final WHT | secondary summary, Corporate — withholding taxes |
+| Royalties | **5%** | Domestic WHT rate | secondary summary, Corporate — withholding taxes |
+| Service fees to non-residents | **10%** | Domestic WHT rate | secondary summary, Corporate — withholding taxes |
+| Interest / royalties / other Georgian-source income to non-residents in offshore / "black-listed" jurisdictions | **15%** | Penal rate | secondary summary, Corporate — withholding taxes |
 
 ### Conservative Defaults
 
@@ -80,7 +80,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown regime (standard vs Small/Micro Business Status) | Standard individual taxed at flat **20%** PIT [PwC] |
+| Unknown regime (standard vs Small/Micro Business Status) | Standard individual taxed at flat **20%** PIT [secondary summary] |
 | Foreign-source income of a Georgian resident | Treat as **taxable at 20%** until the specific income type is confirmed exempt — do NOT assume exemption |
 | Unknown pension participation | Assume employee is **enrolled** (2% employee + 2% employer) unless over the age cut-off or validly opted out |
 | Unknown VAT status | Assume **VAT registration required** once rolling 12-month turnover crosses **GEL 100,000** |
@@ -100,9 +100,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Refusal Catalogue
 
 - **R-GE-1 — Wrong Georgia** — Confirm this is the COUNTRY of Georgia (Sakartvelo), not the US state. The two have entirely different tax systems. If this is the US state, stop and use the US Georgia state skill.
-- **R-GE-2 — Residency unknown** — Tax residency (183+ days physical presence in any continuous 12-month period ending in the current tax year) determines whether the individual is taxed on worldwide or only Georgian-source income. Confirm residency before computing.  _([PwC, Residence])_
+- **R-GE-2 — Residency unknown** — Tax residency (183+ days physical presence in any continuous 12-month period ending in the current tax year) determines whether the individual is taxed on worldwide or only Georgian-source income. Confirm residency before computing.  _([secondary summary, Residence])_
 - **R-GE-3 — Companies / legal entities** — This skill covers individuals, the self-employed, and registered Individual Entrepreneurs only. Georgian LLCs (შპს) and other legal persons file corporate tax (the Estonian-model distributed-profits regime). Escalate to a qualified Georgian accountant.
-- **R-GE-4 — Capital gains / property disposals** — Capital-gains treatment on property/vehicle sales depends on holding-period exemptions (>2 years) and business vs non-business character. Confirm the facts before applying the 5% rate; escalate complex disposals.  _([PwC, Income determination])_
+- **R-GE-4 — Capital gains / property disposals** — Capital-gains treatment on property/vehicle sales depends on holding-period exemptions (>2 years) and business vs non-business character. Confirm the facts before applying the 5% rate; escalate complex disposals.  _([secondary summary, Income determination])_
 - **R-GE-5 — Foreign-source / cross-border income** — Treatment of a resident's foreign-source income varies by category and treaty. Do not assume exemption. Escalate to a qualified Georgian accountant for cross-border facts.
 - **R-GE-6 — Arrears / enforcement** — Client has outstanding tax arrears or is subject to Revenue Service enforcement. Late-payment interest accrues under the Tax Code [RESEARCH GAP — exact rate not confirmed from a primary source]. Do not advise; escalate to a qualified Georgian accountant immediately.
 - **R-GE-7 — VAT return requested** — This skill covers personal income tax only. For Georgian VAT (18%), use the georgia-vat skill if available, or escalate.
@@ -198,7 +198,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 `12/03/2025 ; TBC TRANSFER IN ; SHPS ALPHA ; PAYMENT INV-2025-007 ; +5,000.00 ; GEL`
 
 **Reasoning:**
-Business receipt for a standard (non-SBS) self-employed individual. Not VAT-registered. The full GEL 5,000 is business income taxed at the flat 20% PIT after allowable deductions. [PwC, Taxes on personal income]
+Business receipt for a standard (non-SBS) self-employed individual. Not VAT-registered. The full GEL 5,000 is business income taxed at the flat 20% PIT after allowable deductions. [secondary summary, Taxes on personal income]
 
 **Classification:** Income (20% regime) = GEL 5,000. If this individual's annual taxable profit is, say, GEL 5,000 net, PIT = 5,000 × 20% = **GEL 1,000**.
 
@@ -208,14 +208,14 @@ Business receipt for a standard (non-SBS) self-employed individual. Not VAT-regi
 `05/04/2025 ; BANK OF GEORGIA ; CLIENT BETA ; momsakhureba ; +8,000.00 ; GEL`
 
 **Reasoning:**
-Individual Entrepreneur with **Small Business Status**. Tax is on turnover, not profit: 1% on annual turnover up to GEL 500,000. This GEL 8,000 receipt goes on the **monthly turnover declaration** (transfer line). [PwC, Taxes on personal income]
+Individual Entrepreneur with **Small Business Status**. Tax is on turnover, not profit: 1% on annual turnover up to GEL 500,000. This GEL 8,000 receipt goes on the **monthly turnover declaration** (transfer line). [secondary summary, Taxes on personal income]
 
 **Classification:** Turnover (SBS) = GEL 8,000. Tax on this receipt = 8,000 × 1% = **GEL 80**. No expense deduction applies.
 
 ### Example 3 — Small Business Status above the GEL 500,000 cap (3%)
 
 **Reasoning:**
-A Small Business Status holder reaches GEL 520,000 of annual turnover. The first GEL 500,000 is taxed at 1% and the GEL 20,000 excess at 3%. [PwC, Taxes on personal income]
+A Small Business Status holder reaches GEL 520,000 of annual turnover. The first GEL 500,000 is taxed at 1% and the GEL 20,000 excess at 3%. [secondary summary, Taxes on personal income]
 
 **Computation:**
 - 500,000 × 1% = GEL 5,000
@@ -230,14 +230,14 @@ If turnover exceeds GEL 500,000 for **two consecutive years**, Small Business St
 `01/02/2025 ; LIBERTY BANK ; TENANT ; kira tebervali ; +1,200.00 ; GEL`
 
 **Reasoning:**
-Individual rents out residential space and does NOT claim deductions, so the preferential 5% rate applies to gross rent. (If deductions were claimed, the 20% rate would apply.) [PwC, Income determination]
+Individual rents out residential space and does NOT claim deductions, so the preferential 5% rate applies to gross rent. (If deductions were claimed, the 20% rate would apply.) [secondary summary, Income determination]
 
 **Classification:** Rental income = GEL 1,200/month → GEL 14,400/year. Tax = 14,400 × 5% = **GEL 720** for the year.
 
 ### Example 5 — Employee salary with funded pension (2% + 2%)
 
 **Reasoning:**
-An enrolled employee earns gross salary GEL 3,000/month. Employer withholds 20% PIT and the 2% employee funded-pension contribution; the employer also pays a 2% employer contribution (employer cost, not deducted from the employee). The state adds a co-contribution depending on the annual income band. [PwC; National Bank of Georgia]
+An enrolled employee earns gross salary GEL 3,000/month. Employer withholds 20% PIT and the 2% employee funded-pension contribution; the employer also pays a 2% employer contribution (employer cost, not deducted from the employee). The state adds a co-contribution depending on the annual income band. [secondary summary; National Bank of Georgia]
 
 **Computation (one month, GEL 3,000 gross):**
 - Employee funded pension (2%): 3,000 × 2% = GEL 60
@@ -245,7 +245,7 @@ An enrolled employee earns gross salary GEL 3,000/month. Employer withholds 20% 
 - Employer funded pension (2%, employer cost): 3,000 × 2% = GEL 60 (not deducted from employee)
 - **Employee net pay ≈ 3,000 − 600 − 60 = GEL 2,340**
 
-State co-contribution: this employee's annualised income is 36,000, which falls in the GEL 24,000–60,000 band, so the state adds **1%** (= GEL 30 on this month's GEL 3,000). [PwC, Other taxes]
+State co-contribution: this employee's annualised income is 36,000, which falls in the GEL 24,000–60,000 band, so the state adds **1%** (= GEL 30 on this month's GEL 3,000). [secondary summary, Other taxes]
 
 ### Example 6 — Dividend received (5% final WHT)
 
@@ -253,7 +253,7 @@ State co-contribution: this employee's annualised income is 36,000, which falls 
 `20/06/2025 ; TBC ; SHPS GAMMA ; dividend ; +4,750.00 ; GEL`
 
 **Reasoning:**
-Dividend paid to an individual is subject to 5% final withholding tax. If GEL 4,750 was received net after 5% WHT, the gross was 4,750 / 0.95 = GEL 5,000 and GEL 250 WHT was withheld at source. No further PIT is due — it is final. [PwC, Corporate — withholding taxes]
+Dividend paid to an individual is subject to 5% final withholding tax. If GEL 4,750 was received net after 5% WHT, the gross was 4,750 / 0.95 = GEL 5,000 and GEL 250 WHT was withheld at source. No further PIT is due — it is final. [secondary summary, Corporate — withholding taxes]
 
 **Classification:** Investment income, final WHT settled. Exclude from PIT base. Confirm whether the figure is gross or net with the reviewer.
 
@@ -261,11 +261,11 @@ Dividend paid to an individual is subject to 5% final withholding tax. If GEL 4,
 
 ### 5.1 Flat Rate of Personal Income Tax
 
-- **Flat rate of PIT** — Personal income is subject to a single flat rate of **20%**. There are no progressive brackets and no general tax-free personal allowance. Do not invent brackets.  _(Tax Code of Georgia [PwC, Taxes on personal income])_
+- **Flat rate of PIT** — Personal income is subject to a single flat rate of **20%**. There are no progressive brackets and no general tax-free personal allowance. Do not invent brackets.  _(Tax Code of Georgia [secondary summary, Taxes on personal income])_
 
 ### 5.2 Residency and Scope
 
-- **Residency test and scope** — Tax residency = physical presence of 183 days or more in any continuous 12-month period ending in the current tax year. Residency is determined per tax period; days do not carry forward. Residents are taxed on worldwide income; non-residents only on Georgian-source income. Foreign-source income of a resident is, under Georgia's territorial-leaning rules, often exempt in practice — but treatment varies by income type. Default to taxable at 20% until the specific type is confirmed exempt.  _(Tax Code of Georgia [PwC, Residence])_
+- **Residency test and scope** — Tax residency = physical presence of 183 days or more in any continuous 12-month period ending in the current tax year. Residency is determined per tax period; days do not carry forward. Residents are taxed on worldwide income; non-residents only on Georgian-source income. Foreign-source income of a resident is, under Georgia's territorial-leaning rules, often exempt in practice — but treatment varies by income type. Default to taxable at 20% until the specific type is confirmed exempt.  _(Tax Code of Georgia [secondary summary, Residence])_
 
 ### 5.3 Small Business Status (Individual Entrepreneur)
 
@@ -282,7 +282,7 @@ Dividend paid to an individual is subject to 5% final withholding tax. If GEL 4,
 
 ### 5.4 Micro Business Status
 
-**5.4 Micro Business Status**  _(Tax Code of Georgia [PwC, Taxes on personal income])_
+**5.4 Micro Business Status**  _(Tax Code of Georgia [secondary summary, Taxes on personal income])_
 
 | Condition | Rule |
 | --- | --- |
@@ -292,7 +292,7 @@ Dividend paid to an individual is subject to 5% final withholding tax. If GEL 4,
 
 ### 5.5 Rental and Capital-Gains Rates
 
-**5.5 Rental and Capital-Gains Rates**  _(Tax Code of Georgia [PwC, Income determination])_
+**5.5 Rental and Capital-Gains Rates**  _(Tax Code of Georgia [secondary summary, Income determination])_
 
 | Item | Rate |
 | --- | --- |
@@ -303,7 +303,7 @@ Dividend paid to an individual is subject to 5% final withholding tax. If GEL 4,
 
 ### 5.6 Withholding Taxes (Final)
 
-**5.6 Withholding Taxes (Final)**  _(Tax Code of Georgia [PwC, Corporate — withholding taxes])_
+**5.6 Withholding Taxes (Final)**  _(Tax Code of Georgia [secondary summary, Corporate — withholding taxes])_
 
 | Payment | Rate |
 | --- | --- |
@@ -315,22 +315,22 @@ Dividend paid to an individual is subject to 5% final withholding tax. If GEL 4,
 
 ### 5.7 Mandatory Funded Pension
 
-**5.7 Mandatory Funded Pension**  _(Law of Georgia on Funded Pension (No. 3303-რს) [National Bank of Georgia; PwC, Other taxes])_
+**5.7 Mandatory Funded Pension**  _(Law of Georgia on Funded Pension (No. 3303-რს) [National Bank of Georgia; secondary summary, Other taxes])_
 
 | Contributor | Rate | Cap |
 | --- | --- | --- |
 | **Employee** | 2% | No cap |
 | **Employer** | 2% | No cap |
-| **State co-contribution** | 2% if annual income < GEL 24,000; 1% if GEL 24,000–60,000; 0% above GEL 60,000 | State co-contribution ceases once accumulated annual income reaches GEL 60,000 [PwC, Other taxes — GEL 24,000/60,000 thresholds sourced to PwC, not directly confirmed from the NBG English page] |
+| **State co-contribution** | 2% if annual income < GEL 24,000; 1% if GEL 24,000–60,000; 0% above GEL 60,000 | State co-contribution ceases once accumulated annual income reaches GEL 60,000 [secondary summary, Other taxes — GEL 24,000/60,000 thresholds sourced to the secondary summary, not directly confirmed from the NBG English page] |
 | **Self-employed (voluntary)** | 4% of annual income (own contribution; no separate employer share) | — |
 
-- **Scheme structure** — The scheme operates on a 2% + 2% + up to 2% basis on gross (untaxed) salary income.  _(Law of Georgia on Funded Pension (No. 3303-რს) [National Bank of Georgia; PwC, Other taxes])_
+- **Scheme structure** — The scheme operates on a 2% + 2% + up to 2% basis on gross (untaxed) salary income.  _(Law of Georgia on Funded Pension (No. 3303-რს) [National Bank of Georgia; secondary summary, Other taxes])_
 - **Arithmetic check** — Arithmetic check (employee + employer columns): employee 2% + employer 2% = 4% mandatory payroll cost, plus a state co-contribution of 0–2% on top. There is no aggregate "total" cap on the employee or employer 2% — only the state co-contribution is income-capped at GEL 60,000.
 - **Participation** — Participation: mandatory for employees who had NOT reached age 60 (men) / 55 (women) when the law took effect (1 January 2019); older employees and the self-employed participate voluntarily.
 
 ### 5.8 No General Social Security
 
-- **No general social security** — Georgia has NO general social security / social insurance contributions. The funded pension is the only mandatory payroll-linked levy.  _([PwC, Other taxes])_
+- **No general social security** — Georgia has NO general social security / social insurance contributions. The funded pension is the only mandatory payroll-linked levy.  _([secondary summary, Other taxes])_
 
 ### 5.9 VAT Interaction
 
@@ -347,16 +347,16 @@ Dividend paid to an individual is subject to 5% final withholding tax. If GEL 4,
 
 ### 5.10 Filing, Instalments, and Penalties
 
-**5.10 Filing, Instalments, and Penalties**  _(Tax Code of Georgia [PwC, Tax administration])_
+**5.10 Filing, Instalments, and Penalties**  _(Tax Code of Georgia [secondary summary, Tax administration])_
 
 | Item | Detail |
 | --- | --- |
-| Annual individual income tax declaration | Due **before 1 April** of the year following the tax year (commonly cited as 31 March / by 1 April) [PwC — exact wording: "before 1 April"] |
-| Self-employed PIT advance instalments | Four instalments: **15 May, 15 July, 15 September, 15 December** [PwC, Tax administration] |
+| Annual individual income tax declaration | Due **before 1 April** of the year following the tax year (commonly cited as 31 March / by 1 April) [secondary summary, exact wording: "before 1 April"] |
+| Self-employed PIT advance instalments | Four instalments: **15 May, 15 July, 15 September, 15 December** [secondary summary, Tax administration] |
 | Small Business / Individual Entrepreneur turnover declaration | **Monthly**, by the 15th of the following month; zero declaration required [JustAdvisors] |
-| Property/asset-sale (capital gain) declaration | By the 15th day of the month following the transaction month (monthly basis since January 2024) [PwC, Tax administration] |
+| Property/asset-sale (capital gain) declaration | By the 15th day of the month following the transaction month (monthly basis since January 2024) [secondary summary, Tax administration] |
 | Monthly VAT declaration | By the 15th of the following month [Andersen in Georgia] |
-| Employer PIT/pension monthly reporting & remittance | Generally by the 15th of the following month [PwC, Tax administration] |
+| Employer PIT/pension monthly reporting & remittance | Generally by the 15th of the following month [secondary summary, Tax administration] |
 | Late filing penalty | 5% of tax due if ≤2 months late; 10% of tax due if >2 months late; nil if tax due is zero |
 | Late payment interest | 0.05% per day on the principal tax debt, from the day after the payment deadline |
 
@@ -520,31 +520,31 @@ ONBOARDING QUESTIONS — GEORGIA (COUNTRY) INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| Flat 20% PIT; Small/Micro Business Status | Tax Code of Georgia (Law No. 3591) [PwC, Taxes on personal income] |
-| Residency (183-day rule) | Tax Code of Georgia [PwC, Residence] |
-| Rental and capital-gains 5% rates | Tax Code of Georgia [PwC, Income determination] |
-| Withholding taxes (5% / 10% / 15%) | Tax Code of Georgia [PwC, Corporate — withholding taxes] |
+| Flat 20% PIT; Small/Micro Business Status | Tax Code of Georgia (Law No. 3591) [secondary summary, Taxes on personal income] |
+| Residency (183-day rule) | Tax Code of Georgia [secondary summary, Residence] |
+| Rental and capital-gains 5% rates | Tax Code of Georgia [secondary summary, Income determination] |
+| Withholding taxes (5% / 10% / 15%) | Tax Code of Georgia [secondary summary, Corporate — withholding taxes] |
 | Funded pension (2%+2%+state) | Law on Funded Pension No. 3303-რს [National Bank of Georgia; matsne.gov.ge] |
 | VAT (18%, GEL 100,000 threshold) | Tax Code of Georgia [Andersen in Georgia] |
-| Deadlines and instalments | Tax Code of Georgia [PwC, Tax administration; JustAdvisors] |
+| Deadlines and instalments | Tax Code of Georgia [secondary summary, Tax administration; JustAdvisors] |
 | Minimum wage | Presidential Decree No. 351 (1999): GEL 20/month private, GEL 115/month public [CXC Global] — effectively obsolete; market wages far higher |
 | Penalties / late-payment interest | Tax Code of Georgia — late filing 5% of tax due (≤2 months) / 10% (>2 months), nil if no tax is due; late payment 0.05% per overdue day |
 
 ### Sources
 
-1. PwC Worldwide Tax Summaries — Georgia, Individual: Taxes on personal income — https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income
-2. PwC Worldwide Tax Summaries — Georgia, Individual: Other taxes (pension, VAT, social security) — https://taxsummaries.pwc.com/georgia/individual/other-taxes
-3. PwC Worldwide Tax Summaries — Georgia, Individual: Income determination — https://taxsummaries.pwc.com/georgia/individual/income-determination
-4. PwC Worldwide Tax Summaries — Georgia, Individual: Tax administration — https://taxsummaries.pwc.com/georgia/individual/tax-administration
-5. PwC Worldwide Tax Summaries — Georgia, Individual: Residence — https://taxsummaries.pwc.com/georgia/individual/residence
-6. PwC Worldwide Tax Summaries — Georgia, Corporate: Withholding taxes — https://taxsummaries.pwc.com/georgia/corporate/withholding-taxes
+1. Secondary practitioner summary (link removed) — Georgia, Individual: Taxes on personal income
+2. Secondary practitioner summary (link removed) — Georgia, Individual: Other taxes (pension, VAT, social security)
+3. Secondary practitioner summary (link removed) — Georgia, Individual: Income determination
+4. Secondary practitioner summary (link removed) — Georgia, Individual: Tax administration
+5. Secondary practitioner summary (link removed) — Georgia, Individual: Residence
+6. Secondary practitioner summary (link removed) — Georgia, Corporate: Withholding taxes
 7. National Bank of Georgia — Funded Pension Scheme — https://nbg.gov.ge/en/page/funded-pension-scheme
 8. Legislative Herald of Georgia (matsne.gov.ge) — On Funded Pension — https://www.matsne.gov.ge/en/document/view/4280127
 9. Andersen in Georgia — Rules for Mandatory and Voluntary VAT Registration — https://ge.andersen.com/rules-for-mandatory-and-voluntary-vat-registration-in-georgia/
 10. JustAdvisors — Small Business in Georgia 2025: Updated Tax Declaration — https://en.justadvisors.ge/blog/finance/deklaration_pe_2025
 11. CXC Global — Georgia Payroll & Benefits guide (minimum wage) — https://www.cxcglobal.com/global-hiring-guide/georgia/payroll-and-benefits-in-georgia/
 
-> **Research caveats (reviewer to confirm against primary sources):** (1) exact penalty / late-payment interest amounts under the Tax Code of Georgia; (2) precise treatment/exemption of resident foreign-source income by category; (3) capital-gains exemption holding-period (>2 years) mechanics for property/vehicles; (4) whether the annual-return deadline is "31 March" or "before 1 April" (PwC says "before 1 April"); (5) the GEL 24,000 / 60,000 state pension co-contribution thresholds are sourced to PwC, not directly confirmed from the NBG English page (which states only the 2%+2%+2% principle); (6) the agritourism GEL 700,000 small-business variant; (7) whether the 2% employee pension contribution reduces the 20% PIT base. No FX rate was fixed — convert GEL at current rates as needed.
+> **Research caveats (reviewer to confirm against primary sources):** (1) exact penalty / late-payment interest amounts under the Tax Code of Georgia; (2) precise treatment/exemption of resident foreign-source income by category; (3) capital-gains exemption holding-period (>2 years) mechanics for property/vehicles; (4) whether the annual-return deadline is "31 March" or "before 1 April" (secondary summary, says "before 1 April"); (5) the GEL 24,000 / 60,000 state pension co-contribution thresholds are sourced to the secondary summary, not directly confirmed from the NBG English page (which states only the 2%+2%+2% principle); (6) the agritourism GEL 700,000 small-business variant; (7) whether the 2% employee pension contribution reduces the 20% PIT base. No FX rate was fixed — convert GEL at current rates as needed.
 
 ### Test Suite
 

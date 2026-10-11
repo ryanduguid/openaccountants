@@ -1,10 +1,10 @@
 ---
 name: georgia-payroll
 description: "Use this skill whenever asked about Georgia (the country / Republic of Georgia — Sakartvelo, Caucasus) payroll processing for employed persons. Trigger on phrases like \"Georgia payroll\", \"Georgian payroll\", \"khelfasi\", \"salary tax Georgia\", \"PIT withholding Georgia\", \"20% income tax Georgia\", \"PAYE Georgia\", \"funded pension Georgia\", \"pension contribution Georgia\", \"Pension Agency\", \"pensions.ge\", \"Revenue Service Georgia\", \"rs.ge payroll\", \"monthly withholding declaration Georgia\", \"net salary Georgia\", \"gross to net Georgia\", \"employer cost Georgia\", \"minimum wage Georgia\", or any question about computing employee pay, salary withholding tax, or mandatory funded pension contributions for Georgia-based employees. This skill covers the flat 20% personal income tax withheld at source (PAYE), the mandatory funded pension (employer 2% + employee 2% + state co-contribution), participation rules, the monthly withholding declaration on rs.ge, and penalties. CRITICAL: jurisdiction code GE here is the COUNTRY of Georgia (currency GEL, lari) — NOT the US state of Georgia (USD). ALWAYS read this skill before processing any Georgia (country) payroll."
-version: 0.1
+version: 0.2
 jurisdiction: GE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 reviewed_by: Gvantsa Amiridze, ACCA
 review_status: pending_review
 depends_on:
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Georgia Payroll
 
-## Georgia Payroll Skill v0.1
+## Georgia Payroll Skill v0.2
 
-> **Tier 2 — Research-verified.** Rates and structure are cross-verified across PwC Worldwide Tax Summaries (Georgia, Individual & Corporate), the Law of Georgia "On Funded Pension" (matsne.gov.ge), the Tax Code of Georgia, Mondaq/Eurofast and Georgian practitioner sources (TPsolution, CXC Global). Official Georgian-language statute PDFs were not directly text-extracted line-by-line; figures rely on the English consolidations on matsne.gov.ge plus Big-4 and specialist summaries. Every figure below carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A qualified Georgian tax adviser / authorised accountant must validate this skill before production use.
+> **Tier 2 — Research-verified.** Rates and structure are cross-verified across a secondary practitioner summary (Georgia, Individual & Corporate), the Law of Georgia "On Funded Pension" (matsne.gov.ge), the Tax Code of Georgia, Mondaq/Eurofast and Georgian practitioner sources (TPsolution, CXC Global). Official Georgian-language statute PDFs were not directly text-extracted line-by-line; figures rely on the English consolidations on matsne.gov.ge plus Big-4 and specialist summaries. Every figure below carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A qualified Georgian tax adviser / authorised accountant must validate this skill before production use.
 
 > **CRITICAL DISAMBIGUATION.** Jurisdiction code **GE = the country / Republic of Georgia (Sakartvelo, Caucasus), currency GEL (Georgian lari)**. This skill has **nothing to do with the US state of Georgia** (USD, Form G-7, ~5.19% flat state rate). If a request concerns the US state, this is the WRONG skill — escalate.
 
@@ -32,20 +32,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Jurisdiction code | GE |
 | Currency | GEL (Georgian lari) only |
 | Standard pay frequency | Monthly |
-| Tax year | Calendar year (1 January -- 31 December). Source: PwC WWTS Georgia, Tax administration. |
-| Has personal income tax? | Yes -- **flat 20%** on gross employment income, withheld at source (PAYE). Source: PwC WWTS Georgia, Corporate: Other taxes. |
-| Personal income tax (salary) | 20% flat on gross salary. **No tax-free personal allowance; no progressive bands.** Source: PwC WWTS Georgia. |
-| Funded pension -- employer | 2% of gross salary. Source: Law on Funded Pension Art. 3(6); PwC WWTS Georgia, Individual: Other taxes. |
+| Tax year | Calendar year (1 January -- 31 December). Source: the secondary summary Georgia, Tax administration. |
+| Has personal income tax? | Yes -- **flat 20%** on gross employment income, withheld at source (PAYE). Source: the secondary summary Georgia, Corporate: Other taxes. |
+| Personal income tax (salary) | 20% flat on gross salary. **No tax-free personal allowance; no progressive bands.** Source: the secondary summary Georgia. |
+| Funded pension -- employer | 2% of gross salary. Source: Law on Funded Pension Art. 3(6); the secondary summary Georgia, Individual: Other taxes. |
 | Funded pension -- employee (withheld) | 2% of gross salary. Source: Law on Funded Pension Art. 3(6). |
 | Funded pension -- state co-contribution | 2% if annual income < GEL 24,000; 1% on the GEL 24,000--60,000 portion; 0% above GEL 60,000 (paid by the Government, not the employer). Source: Law on Funded Pension Art. 3(6). |
-| Other employer social/payroll tax | **None** -- there is no general employer social-security or payroll tax in Georgia beyond the 2% funded pension. Source: PwC WWTS Georgia, Corporate: Other taxes. |
+| Other employer social/payroll tax | **None** -- there is no general employer social-security or payroll tax in Georgia beyond the 2% funded pension. Source: the secondary summary Georgia, Corporate: Other taxes. |
 | Tax authority | Revenue Service of Georgia (Sakartvelos Shemosavlebis Samsakhuri), Ministry of Finance |
 | Pension administrator | LEPL Pension Agency (pensions.ge) |
 | Filing portal | rs.ge / eservices.rs.ge |
 | Primary forms | Monthly withholding (PIT) declaration; annual individual income tax declaration; funded-pension transfer to the Pension Agency |
-| Monthly declaration deadline | By the **15th** of the month following the payment month; PIT payment due on the day wages are paid. Source: PwC WWTS Georgia, Tax administration; TPsolution. |
+| Monthly declaration deadline | By the **15th** of the month following the payment month; PIT payment due on the day wages are paid. Source: the secondary summary Georgia, Tax administration; TPsolution. |
 | Validated by | Pending -- requires sign-off by a qualified Georgian tax adviser / authorised accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 **Legislation table**
 
@@ -64,13 +64,13 @@ Every rule in this skill is tagged with a confidence tier:
 
 ## Section 2 -- Personal Income Tax (PIT) Withholding -- PAYE
 
-- **PIT flat rate and withholding at source** — Employment income is taxed at a flat 20%, withheld at source by the employer at the moment of salary payment and remitted to the Revenue Service. There is no progressive bracket for employment income, and no GENERAL tax-free personal allowance — but Tax Code Article 82 does grant specific exemptions to defined categories (see "No allowances, no cap adjustment").  _(Tax Code of Georgia Art. 82; PwC WWTS Georgia. Corrected by Gvantsa Amiridze (ACCA, Georgia))_
+- **PIT flat rate and withholding at source** — Employment income is taxed at a flat 20%, withheld at source by the employer at the moment of salary payment and remitted to the Revenue Service. There is no progressive bracket for employment income, and no GENERAL tax-free personal allowance — but Tax Code Article 82 does grant specific exemptions to defined categories (see "No allowances, no cap adjustment").  _(Tax Code of Georgia Art. 82; the secondary summary Georgia. Corrected by Gvantsa Amiridze (ACCA, Georgia))_
 
 ### PIT formula [T1]
 
-- **PIT formula** — PIT = Gross salary × 20%  _(PwC WWTS Georgia, Corporate: Other taxes; Tax Code of Georgia)_
+- **PIT formula** — PIT = Gross salary × 20%  _(secondary summary, Corporate: Other taxes; Tax Code of Georgia)_
 - **No allowances, no cap adjustment** — There is no GENERAL tax-free band, no standard deduction, and no marital/dependant adjustment for salary. But it is wrong to tell a taxpayer that no relief exists at all: Tax Code Article 82 grants specific personal exemptions to defined categories — for example individuals engaged in agricultural production, and certain protected categories, on taxable income up to GEL 3,000 / GEL 6,000 in a calendar year. Check Article 82 against the taxpayer's circumstances before concluding there is no relief.  _([Tax Code of Georgia Art. 82; rs.ge Persons Tax FAQ. Corrected by Gvantsa Amiridze (ACCA, Georgia)](https://rs.ge/PersonsTaxFAQ?cat=1&tab=1))_
-- **PIT payment and declaration timing** — PIT payment is due on the day wages are paid; the monthly withholding declaration is filed by the 15th of the following month via rs.ge.  _(PwC WWTS Georgia, Tax administration; Tax Code)_
+- **PIT payment and declaration timing** — PIT payment is due on the day wages are paid; the monthly withholding declaration is filed by the 15th of the following month via rs.ge.  _(secondary summary, Tax administration; Tax Code)_
 
 ### Other PIT rates (context — NOT employment income) [T1 / informational]
 
@@ -78,15 +78,15 @@ Every rule in this skill is tagged with a confidence tier:
 
 | Income type | Rate | Note | Source |
 | --- | --- | --- | --- |
-| Residential rental (individual, no deductions claimed) | 5% flat on gross | Optional; otherwise 20% on net. Not employment income. | PwC WWTS Georgia, Individual: Income determination |
-| Small-business status individual entrepreneur | 1% of turnover (3% if standard turnover > GEL 500,000/yr; wine-tourism/agrotourism threshold is GEL 700,000) | Self-employed / IE regime, not employees. | PwC WWTS Georgia, Individual |
-| Micro-business status individual | 0% (exempt) | Annual turnover < GEL 30,000, no employees. Not employment income. | PwC WWTS Georgia, Individual |
+| Residential rental (individual, no deductions claimed) | 5% flat on gross | Optional; otherwise 20% on net. Not employment income. | secondary summary, Individual: Income determination |
+| Small-business status individual entrepreneur | 1% of turnover (3% if standard turnover > GEL 500,000/yr; wine-tourism/agrotourism threshold is GEL 700,000) | Self-employed / IE regime, not employees. | secondary summary, Individual |
+| Micro-business status individual | 0% (exempt) | Annual turnover < GEL 30,000, no employees. Not employment income. | secondary summary, Individual |
 
 > These special regimes apply to **self-employed individuals**, not to employees. Do not apply them to a payroll computation. If a "salary" turns out to be IE turnover, this is [T3] — out of scope for payroll.
 
 ## Section 3 -- Funded Pension Contributions
 
-- **Mandatory funded pension overview** — A mandatory funded pension has been in force since 1 January 2019. For each participating employee it is funded by three sources: the employer (2%), the employee (2%, withheld by the employer), and the State (a co-contribution on a sliding scale).  _(Law on Funded Pension Art. 3(6); PwC WWTS Georgia, Individual: Other taxes)_
+- **Mandatory funded pension overview** — A mandatory funded pension has been in force since 1 January 2019. For each participating employee it is funded by three sources: the employer (2%), the employee (2%, withheld by the employer), and the State (a co-contribution on a sliding scale).  _(Law on Funded Pension Art. 3(6); the secondary summary Georgia, Individual: Other taxes)_
 
 ### Funded pension rate table [T1]
 
@@ -94,7 +94,7 @@ Every rule in this skill is tagged with a confidence tier:
 
 | Source | Rate | Base | Who pays / how | Source |
 | --- | --- | --- | --- | --- |
-| Employer | 2% | Employee gross salary | Employer, on top of gross | Law on Funded Pension Art. 3(6); PwC |
+| Employer | 2% | Employee gross salary | Employer, on top of gross | Law on Funded Pension Art. 3(6); the secondary summary |
 | Employee | 2% | Employee gross salary | Withheld from gross by employer | Law on Funded Pension Art. 3(6) |
 | State co-contribution | 2% / 1% / 0% (see schedule) | Participant's **annual** income | Government of Georgia | Law on Funded Pension Art. 3(6) |
 | **Combined employer + employee (private)** | **4%** | Gross salary | 2% employer + 2% employee | derived from Art. 3(6) |
@@ -126,11 +126,11 @@ Every rule in this skill is tagged with a confidence tier:
 
 - **Mandatory participation** — Participation is mandatory for employees.  _(Law on Funded Pension)_
 - **Voluntary opt-out for pre-2019 60/55** — Voluntary opt-out is available only for those who had reached 60 (men) / 55 (women) before the law's entry into force (1 Jan 2019). For such persons participation is voluntary.  _(Law on Funded Pension; CD3)_
-- **Self-employed pension contribution** — Self-employed individuals contribute 4% of annual income (no employer component, since there is no employer). (Self-employed is not payroll — see Section 6 refusal catalogue.)  _(PwC WWTS Georgia, Individual: Other taxes; Law on Funded Pension)_
+- **Self-employed pension contribution** — Self-employed individuals contribute 4% of annual income (no employer component, since there is no employer). (Self-employed is not payroll — see Section 6 refusal catalogue.)  _(secondary summary, Individual: Other taxes; Law on Funded Pension)_
 
 ## Section 4 -- Gross-to-Net Computation Order
 
-- **Gross-to-net computation order** — 1.  Determine gross salary (khelfasi), in GEL. 2.  PIT = gross × 20%                              (withheld from gross). 3.  Employee funded pension = gross × 2%           (withheld from gross). 4.  Net pay = gross − PIT − employee pension = gross × (1 − 0.20 − 0.02) = gross × 0.78. 5.  Employer funded pension = gross × 2%           (paid on top of gross). 6.  Total employer cash cost = gross + employer pension = gross × 1.02. 7.  State co-contribution is added to the employee's pension account by the Government (per the Section 3 schedule); it is NOT an employer or employee cash cost.  _(PwC WWTS Georgia (PIT 20% withholding); Law on Funded Pension Art. 3(6) (2% + 2%))_
+- **Gross-to-net computation order** — 1.  Determine gross salary (khelfasi), in GEL. 2.  PIT = gross × 20%                              (withheld from gross). 3.  Employee funded pension = gross × 2%           (withheld from gross). 4.  Net pay = gross − PIT − employee pension = gross × (1 − 0.20 − 0.02) = gross × 0.78. 5.  Employer funded pension = gross × 2%           (paid on top of gross). 6.  Total employer cash cost = gross + employer pension = gross × 1.02. 7.  State co-contribution is added to the employee's pension account by the Government (per the Section 3 schedule); it is NOT an employer or employee cash cost.  _(the secondary summary Georgia (PIT 20% withholding); Law on Funded Pension Art. 3(6) (2% + 2%))_
 - **Arithmetic check multipliers** — Arithmetic check: net multiplier = 1 − 0.20 − 0.02 = 0.78; employer cost multiplier = 1 + 0.02 = 1.02.  _([T1])_
 - **Pension-exempt employee computation** — For an employee who is exempt from the funded pension (60+/55+ before 1 Jan 2019 and has not opted in), drop the 2% lines: net = gross × 0.80; employer cost = gross (no employer pension).  _([T1])_
 
@@ -140,11 +140,11 @@ Every rule in this skill is tagged with a confidence tier:
 
 | # | Default assumption | Rationale / source |
 | --- | --- | --- |
-| CD1 | Employer total statutory on-cost = **2% of gross** (the funded-pension employer share) — there is no other employer payroll/social tax in Georgia. | Georgia has no general employer social-security tax. PwC WWTS Georgia, Corporate. |
+| CD1 | Employer total statutory on-cost = **2% of gross** (the funded-pension employer share) — there is no other employer payroll/social tax in Georgia. | Georgia has no general employer social-security tax. The secondary summary Georgia, Corporate. |
 | CD2 | Compute the employee/employer 2% + 2% on **full gross salary**; do **not** assume a GEL 60,000 cap on the private share — the GEL 24,000/60,000 thresholds are confirmed only for the STATE co-contribution. Flag [T2]. | Threshold schedule confirmed for State portion only; private cap unverified. `[RESEARCH GAP]` |
 | CD3 | Assume **mandatory enrolment** for the employee, except those aged 60+ (men) / 55+ (women) **before 1 Jan 2019**, for whom participation is voluntary. | Law on Funded Pension (mandatory participation). |
 | CD4 | Treat the statutory **GEL 20/month** private-sector minimum wage as **non-binding**; use the agreed contractual salary as the payroll base. | The 1999 statutory minimum is obsolete and not enforced. CXC Global; wage.is. |
-| CD5 | Treat the income as standard **employment income** (PAYE) unless told otherwise; do not apply small-business/micro-business/IE regimes to payroll. | Those regimes apply to self-employed individuals, not employees. PwC WWTS Georgia. |
+| CD5 | Treat the income as standard **employment income** (PAYE) unless told otherwise; do not apply small-business/micro-business/IE regimes to payroll. | Those regimes apply to self-employed individuals, not employees. The secondary summary Georgia. |
 
 ## Section 6 -- Required Inputs and Refusal Catalogue
 
@@ -201,9 +201,9 @@ Map bank-statement narrations (often Georgian / transliterated) to payroll class
 
 | Form | Purpose | Deadline | Portal | Source |
 | --- | --- | --- | --- | --- |
-| **Monthly withholding (PIT) declaration** | Employer reports PIT withheld on salaries (and other withholding — dividends, interest, services) | By the **15th** of the month following the payment month; **PIT payment due on the day wages are paid** | rs.ge / eservices.rs.ge | PwC WWTS Georgia, Tax administration; TPsolution; expathub.ge |
-| **Funded pension contribution** | Employer transfers employer 2% + withheld employee 2% to the Pension Agency | Monthly, alongside payroll (Pension Agency / Revenue Service systems) | Pension Agency systems | Law on Funded Pension; PwC |
-| **Annual individual income tax declaration** | Resident individuals whose income was **not** taxed at source must file | Before **1 April** for the prior calendar year | rs.ge | PwC WWTS Georgia, Tax administration |
+| **Monthly withholding (PIT) declaration** | Employer reports PIT withheld on salaries (and other withholding — dividends, interest, services) | By the **15th** of the month following the payment month; **PIT payment due on the day wages are paid** | rs.ge / eservices.rs.ge | secondary summary, Tax administration; TPsolution; expathub.ge |
+| **Funded pension contribution** | Employer transfers employer 2% + withheld employee 2% to the Pension Agency | Monthly, alongside payroll (Pension Agency / Revenue Service systems) | Pension Agency systems | Law on Funded Pension; secondary summary |
+| **Annual individual income tax declaration** | Resident individuals whose income was **not** taxed at source must file | Before **1 April** for the prior calendar year | rs.ge | secondary summary, Tax administration |
 
 ## Section 8 -- Filing Obligations
 
@@ -290,15 +290,15 @@ For an enrolled employee earning GEL 3,000/month (= GEL 36,000/yr):
 
 | # | Rule | Source |
 | --- | --- | --- |
-| T1-1 | PIT on salary is a **flat 20%** of gross, withheld at source (PAYE). No tax-free allowance, no progressive bands, no marital/dependant adjustment. | PwC WWTS Georgia, Corporate: Other taxes; Tax Code |
-| T1-2 | PIT payment is due on the **day wages are paid**; the monthly withholding declaration is filed by the **15th** of the following month via rs.ge. | PwC WWTS Georgia, Tax administration; TPsolution |
+| T1-1 | PIT on salary is a **flat 20%** of gross, withheld at source (PAYE). No tax-free allowance, no progressive bands, no marital/dependant adjustment. | secondary summary, Corporate: Other taxes; Tax Code |
+| T1-2 | PIT payment is due on the **day wages are paid**; the monthly withholding declaration is filed by the **15th** of the following month via rs.ge. | secondary summary, Tax administration; TPsolution |
 | T1-3 | Mandatory funded pension: **employer 2% + employee 2%** of gross salary, in force since 1 Jan 2019; employee 2% is withheld, employer 2% is on top of gross. | Law on Funded Pension Art. 3(6) |
 | T1-4 | **State** co-contribution: 2% if annual income < GEL 24,000; 1% on the GEL 24,000--60,000 portion; 0% above GEL 60,000; thresholds reset each calendar year. Paid by the Government, not the employer. | Law on Funded Pension Art. 3(6) |
 | T1-5 | Net pay = gross × 0.78 for an enrolled employee (gross × 0.80 if pension-exempt). Total employer cash cost = gross × 1.02 (gross × 1.00 if pension-exempt). | derived from T1-1 + T1-3 |
-| T1-6 | There is **no general employer social-security or payroll tax** beyond the 2% funded pension — total mandatory employer on-cost is just 2%. | PwC WWTS Georgia, Corporate: Other taxes |
+| T1-6 | There is **no general employer social-security or payroll tax** beyond the 2% funded pension — total mandatory employer on-cost is just 2%. | secondary summary, Corporate: Other taxes |
 | T1-7 | Funded-pension participation is **mandatory** for employees; voluntary opt-out only for those aged 60 (men) / 55 (women) before 1 Jan 2019. | Law on Funded Pension |
-| T1-8 | The tax year is the **calendar year**. Resident individuals whose income was NOT taxed at source must file an annual PIT declaration before **1 April**. | PwC WWTS Georgia, Tax administration |
-| T1-9 | Self-employed individuals contribute **4%** of annual income to the funded pension (no employer component). Not payroll. | PwC WWTS Georgia, Individual: Other taxes |
+| T1-8 | The tax year is the **calendar year**. Resident individuals whose income was NOT taxed at source must file an annual PIT declaration before **1 April**. | secondary summary, Tax administration |
+| T1-9 | Self-employed individuals contribute **4%** of annual income to the funded pension (no employer component). Not payroll. | secondary summary, Individual: Other taxes |
 
 ### Context rates (for cross-skill reference; not payroll) [T1]
 
@@ -306,11 +306,11 @@ For an enrolled employee earning GEL 3,000/month (= GEL 36,000/yr):
 
 | Item | Rate / value | Source |
 | --- | --- | --- |
-| Standard VAT | 18% | PwC WWTS Georgia, Corporate: Other taxes; see georgia-vat.md |
-| VAT mandatory registration threshold | GEL 100,000 turnover in any continuous 12-month period | PwC WWTS Georgia, Corporate: Other taxes |
-| Optional rental PIT (individual, no deductions) | 5% on gross residential rent | PwC WWTS Georgia, Individual: Income determination |
-| Small-business status IE | 1% of turnover (3% if standard turnover > GEL 500,000/yr; wine-tourism/agrotourism threshold is GEL 700,000) | PwC WWTS Georgia, Individual |
-| Micro-business status individual | 0% (turnover < GEL 30,000, no employees) | PwC WWTS Georgia, Individual |
+| Standard VAT | 18% | secondary summary, Corporate: Other taxes; see georgia-vat.md |
+| VAT mandatory registration threshold | GEL 100,000 turnover in any continuous 12-month period | secondary summary, Corporate: Other taxes |
+| Optional rental PIT (individual, no deductions) | 5% on gross residential rent | secondary summary, Individual: Income determination |
+| Small-business status IE | 1% of turnover (3% if standard turnover > GEL 500,000/yr; wine-tourism/agrotourism threshold is GEL 700,000) | secondary summary, Individual |
+| Micro-business status individual | 0% (turnover < GEL 30,000, no employees) | secondary summary, Individual |
 
 ## Section 12 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -386,19 +386,19 @@ If the engagement is mid-year or records are incomplete:
 
 | Item | Value | Source |
 | --- | --- | --- |
-| PIT (salary) rate | 20% flat on gross; no allowance | PwC WWTS Georgia, Corporate: Other taxes |
-| Funded pension — employer | 2% of gross | Law on Funded Pension Art. 3(6); PwC |
+| PIT (salary) rate | 20% flat on gross; no allowance | secondary summary, Corporate: Other taxes |
+| Funded pension — employer | 2% of gross | Law on Funded Pension Art. 3(6); the secondary summary |
 | Funded pension — employee (withheld) | 2% of gross | Law on Funded Pension Art. 3(6) |
 | Funded pension — State | 2% (< GEL 24,000) / 1% (24,000--60,000) / 0% (> 60,000), annual | Law on Funded Pension Art. 3(6) |
-| Self-employed funded pension | 4% of annual income | PwC WWTS Georgia, Individual: Other taxes |
+| Self-employed funded pension | 4% of annual income | secondary summary, Individual: Other taxes |
 | Net pay multiplier (enrolled / exempt) | 0.78 / 0.80 | derived |
 | Employer cost multiplier (enrolled / exempt) | 1.02 / 1.00 | derived |
-| Monthly withholding declaration deadline | 15th of following month; PIT due on payment day | PwC WWTS Georgia, Tax administration; TPsolution |
-| Annual individual return deadline | Before 1 April (income not taxed at source) | PwC WWTS Georgia, Tax administration |
-| Tax year | Calendar year | PwC WWTS Georgia, Tax administration |
-| Standard VAT / registration threshold | 18% / GEL 100,000 in any 12 months | PwC WWTS Georgia, Corporate: Other taxes |
-| Small-business status cap | GEL 500,000 standard annual turnover (1%, 3% above); GEL 700,000 for wine tourism / agrotourism | PwC WWTS Georgia, Individual |
-| Micro-business status cap | GEL 30,000 annual turnover, no employees (0%) | PwC WWTS Georgia, Individual |
+| Monthly withholding declaration deadline | 15th of following month; PIT due on payment day | secondary summary, Tax administration; TPsolution |
+| Annual individual return deadline | Before 1 April (income not taxed at source) | secondary summary, Tax administration |
+| Tax year | Calendar year | secondary summary, Tax administration |
+| Standard VAT / registration threshold | 18% / GEL 100,000 in any 12 months | secondary summary, Corporate: Other taxes |
+| Small-business status cap | GEL 500,000 standard annual turnover (1%, 3% above); GEL 700,000 for wine tourism / agrotourism | secondary summary, Individual |
+| Micro-business status cap | GEL 30,000 annual turnover, no employees (0%) | secondary summary, Individual |
 | Private-sector statutory minimum wage | GEL 20/month (1999; obsolete/non-binding) | CXC Global; wage.is |
 
 ### Penalties [T2]
@@ -422,17 +422,17 @@ If the engagement is mid-year or records are incomplete:
 
 ### Sources
 
-1. PwC Worldwide Tax Summaries — Georgia, Individual: Taxes on personal income. https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income
-2. PwC Worldwide Tax Summaries — Georgia, Individual: Other taxes (funded pension contributions). https://taxsummaries.pwc.com/georgia/individual/other-taxes
-3. PwC Worldwide Tax Summaries — Georgia, Individual: Tax administration. https://taxsummaries.pwc.com/georgia/individual/tax-administration
-4. PwC Worldwide Tax Summaries — Georgia, Corporate: Other taxes (VAT; payroll PIT withholding 20%). https://taxsummaries.pwc.com/georgia/corporate/other-taxes
+1. Secondary practitioner summary (link removed) — Georgia, Individual: Taxes on personal income.
+2. Secondary practitioner summary (link removed) — Georgia, Individual: Other taxes (funded pension contributions).
+3. Secondary practitioner summary (link removed) — Georgia, Individual: Tax administration.
+4. Secondary practitioner summary (link removed) — Georgia, Corporate: Other taxes (VAT; payroll PIT withholding 20%).
 5. Law of Georgia "On Funded Pension" — Legislative Herald of Georgia. https://www.matsne.gov.ge/en/document/view/4280127
 6. Tax Code of Georgia — Legislative Herald of Georgia. https://matsne.gov.ge/en/document/view/1043717
 7. Mondaq (Eurofast) — "Georgia's Pension Evolution: From Mandatory Participation to Tailored Investment Strategies." https://www.mondaq.com/employee-benefits-compensation/1433340/georgias-pension-evolution-from-mandatory-participation-to-tailored-investment-strategies
 8. TPsolution — "Monthly and Annual Tax Reporting Obligations in Georgia." https://tpsolution.ge/tax-reporting-obligations-in-georgia/
 9. CXC Global — "Payroll and benefits in Georgia" (minimum wage). https://www.cxcglobal.com/global-hiring-guide/georgia/payroll-and-benefits-in-georgia/
 
-> **Reviewer note on tax year / 2026.** No 2026-specific changes were confirmed; figures reflect 2025 and were current as of the PwC review dated 21 Jan 2026. Re-confirm before applying to a 2026 payroll. Source: research caveat (4).
+> **Reviewer note on tax year / 2026.** No 2026-specific changes were confirmed; figures reflect 2025 and were current as of the secondary summary's review dated 21 Jan 2026. Re-confirm before applying to a 2026 payroll. Source: research caveat (4).
 
 ## Section 17 -- Test Suite
 

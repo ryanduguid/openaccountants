@@ -1,10 +1,10 @@
 ---
 name: azerbaijan-income-tax
 description: Use this skill whenever asked about Azerbaijan personal income tax for individuals, employees, and self-employed individual entrepreneurs. Trigger on phrases like "how much income tax do I pay in Azerbaijan", "Azerbaijan payroll tax", "DSMF social insurance", "simplified tax regime", "individual entrepreneur tax", "private non-oil sector holiday", "oil and gas sector tax", "annual income tax return Azerbaijan", "AZN withholding", "compulsory medical insurance", "unemployment insurance contribution", "taxes.gov.az", or any question about computing, withholding, or filing personal income tax in the Republic of Azerbaijan. Also trigger when classifying AZN bank-statement lines for an individual entrepreneur, computing payroll deductions, or advising on the 2025 holiday regime versus the 2026 progressive reform. This skill covers personal income tax brackets (private non-oil, oil/gas/public, 2026 reform), DSMF/UIC/medical contributions, the simplified-tax regime, micro-entrepreneur exemptions, filing deadlines, and penalties. ALWAYS read this skill before touching any Azerbaijan income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: AZ
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Azerbaijan Income Tax -- Individuals & Self-Employed
 
-## Azerbaijan Income Tax -- Individuals & Self-Employed Skill v0.2
+## Azerbaijan Income Tax -- Individuals & Self-Employed Skill v0.3
 
-> **CONFIDENCE: MEDIUM.** Several figures rely on Big-4 (PwC) and reputable local-firm summaries rather than direct extraction from the Azeri-language Tax Code, and the figures span a major regime change at 1 January 2026 (the 7-year private non-oil holiday expired 31 December 2025). Items marked **[RESEARCH GAP — reviewer to confirm]** must be reconfirmed against the official portal at [taxes.gov.az](https://www.taxes.gov.az/en) before any return is filed.
+> **CONFIDENCE: MEDIUM.** Several figures rely on Big-4 (secondary summary) and reputable local-firm summaries rather than direct extraction from the Azeri-language Tax Code, and the figures span a major regime change at 1 January 2026 (the 7-year private non-oil holiday expired 31 December 2025). Items marked **[RESEARCH GAP — reviewer to confirm]** must be reconfirmed against the official portal at [taxes.gov.az](https://www.taxes.gov.az/en) before any return is filed.
 
 ## Section 1 -- Quick Reference
 
@@ -34,14 +34,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | State Tax Service under the Ministry of Economy (Dövlət Vergi Xidməti) |
 | Social security body | State Social Protection Fund (DSMF/SSPF), Ministry of Labour and Social Protection of Population |
 | Filing portal | taxes.gov.az |
-| Filing deadline | 31 March of the following year (annual return) [PwC] |
+| Filing deadline | 31 March of the following year (annual return) [secondary summary] |
 | Validated by | Pending — requires sign-off by an Azerbaijani tax professional |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Personal Income Tax Brackets — 2025 (current tax year)
 
-**Private non-oil/non-gas sector employees — 7-year holiday (1 Jan 2019 – 31 Dec 2025) [PwC]**  _(PwC)_
+**Private non-oil/non-gas sector employees — 7-year holiday (1 Jan 2019 – 31 Dec 2025) [secondary summary]**  _(secondary summary)_
 
 | Monthly income (AZN) | Rate | Cumulative tax at top |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 *Example: AZN 10,000/month → 14% × (10,000 − 8,000) = AZN 280.*
 
-**Oil/gas sector and government/public sector employees (also the standard rate after the holiday ends)**  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 101.1 — https://e-qanun.az/framework/46948 ; https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income)_
+**Oil/gas sector and government/public sector employees (also the standard rate after the holiday ends)**  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 101.1 — https://e-qanun.az/framework/46948)_
 
 | Monthly income (AZN) | Rate | Cumulative tax at top |
 | --- | --- | --- |
@@ -85,14 +85,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Personal Exemptions and Payroll Reference (2025)
 
-**Personal Exemptions and Payroll Reference (2025)**  _(PwC/APA/GRATA)_
+**Personal Exemptions and Payroll Reference (2025)**  _(secondary summary, /APA/GRATA)_
 
 | Item | Value | Source |
 | --- | --- | --- |
 | Minimum monthly wage | AZN 400/month (from 1 Jan 2025; unchanged into 2026) | APA |
 | Personal monthly exemption (oil/gas & public sector, primary workplace, monthly income below AZN 2,500) | AZN 200/month (AZN 2,400/year where annual income below AZN 30,000) | GRATA |
-| Withholding method | Employers withhold income tax + social/medical/unemployment at source (PAYE-style); withheld income tax transferred same day as payment | PwC |
-| VAT standard rate | 18% | PwC |
+| Withholding method | Employers withhold income tax + social/medical/unemployment at source (PAYE-style); withheld income tax transferred same day as payment | secondary summary |
+| VAT standard rate | 18% | secondary summary |
 
 ### Conservative Defaults
 
@@ -146,9 +146,9 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 | STRIPE PAYOUT, PAYPAL, WISE, PAYONEER | Gross revenue | Business income | Platform payout — match to underlying invoices |
 | UPWORK, FIVERR, FREELANCE | Gross revenue | Business income | Net of platform commission |
 | ƏMƏK HAQQI (salary), MAAŞ (wage), EMPLOYER [name] | Employment income | Employment income | Subject to PAYE withholding — NOT entrepreneurial income |
-| İCARƏ (rent received), KİRAYƏ | Rental income | Rental income | Rent/royalty WHT 14% may apply [PwC] |
-| FAİZ (interest received) | Investment income | Interest income | Interest WHT 10% [PwC] |
-| DİVİDEND | Investment income | Investment income | Dividend WHT 5% [PwC] |
+| İCARƏ (rent received), KİRAYƏ | Rental income | Rental income | Rent/royalty WHT 14% may apply [secondary summary] |
+| FAİZ (interest received) | Investment income | Interest income | Interest WHT 10% [secondary summary] |
+| DİVİDEND | Investment income | Investment income | Dividend WHT 5% [secondary summary] |
 | VERGİ QAYTARILMASI (tax refund) | EXCLUDE | Not income | Refund of prior-year tax |
 
 ### 3.2 Expense Patterns (Debits) -- Deductible (General-regime entrepreneur)
@@ -256,7 +256,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 `15.02.2025 ; KAPITAL BANK ; ƏMƏK HAQQI ; TECH STUDIO LLC FEB MAAŞ ; +6,000.00 ; AZN`
 
 **Reasoning:**
-Private non-oil/non-gas employee, monthly gross AZN 6,000, 2025 holiday regime. Income up to AZN 8,000 is taxed at **0%** [PwC]. Income tax = AZN 0. (Social/medical/unemployment contributions still apply — see Example 5.)
+Private non-oil/non-gas employee, monthly gross AZN 6,000, 2025 holiday regime. Income up to AZN 8,000 is taxed at **0%** [secondary summary]. Income tax = AZN 0. (Social/medical/unemployment contributions still apply — see Example 5.)
 
 **Classification:** Monthly income tax = AZN 0 (holiday band).
 
@@ -266,7 +266,7 @@ Private non-oil/non-gas employee, monthly gross AZN 6,000, 2025 holiday regime. 
 `28.02.2025 ; PASHA BANK ; MAAŞ ; FINTECH AZ LLC ; +10,000.00 ; AZN`
 
 **Reasoning:**
-Monthly gross AZN 10,000, private non-oil, 2025. First AZN 8,000 at 0%; excess taxed at 14% [PwC]. Tax = 14% × (10,000 − 8,000) = 14% × 2,000 = **AZN 280**.
+Monthly gross AZN 10,000, private non-oil, 2025. First AZN 8,000 at 0%; excess taxed at 14% [secondary summary]. Tax = 14% × (10,000 − 8,000) = 14% × 2,000 = **AZN 280**.
 
 **Classification:** Monthly income tax = AZN 280.
 
@@ -276,7 +276,7 @@ Monthly gross AZN 10,000, private non-oil, 2025. First AZN 8,000 at 0%; excess t
 `28.02.2025 ; ABB ; ƏMƏK HAQQI ; SOCAR DOWNSTREAM ; +4,000.00 ; AZN`
 
 **Reasoning:**
-Oil/gas sector employee, monthly gross AZN 4,000, 2025. Schedule: 14% up to AZN 2,500, then AZN 350 + 25% on the excess [PwC]. Tax = 350 + 25% × (4,000 − 2,500) = 350 + 375 = **AZN 725**. Employer DSMF on this sector is 22% of gross.
+Oil/gas sector employee, monthly gross AZN 4,000, 2025. Schedule: 14% up to AZN 2,500, then AZN 350 + 25% on the excess [secondary summary]. Tax = 350 + 25% × (4,000 − 2,500) = 350 + 375 = **AZN 725**. Employer DSMF on this sector is 22% of gross.
 
 **Classification:** Monthly income tax = AZN 725.
 
@@ -296,9 +296,9 @@ From 1 Jan 2026 the holiday is gone; the progressive schedule applies [Mercans]:
 `AZN 6,000 monthly gross — private non-oil sector employee`
 
 **Reasoning (employee DSMF):**
-2025 private non-oil employee DSMF = 3% on the first AZN 200, then AZN 6 + 10% on the portion above AZN 200 [PwC]. Compute: 3% × 200 = AZN 6 (the stated AZN 6 base reconciles); plus 10% × (6,000 − 200) = 10% × 5,800 = AZN 580. Employee DSMF = 6 + 580 = **AZN 586**.
+2025 private non-oil employee DSMF = 3% on the first AZN 200, then AZN 6 + 10% on the portion above AZN 200 [secondary summary]. Compute: 3% × 200 = AZN 6 (the stated AZN 6 base reconciles); plus 10% × (6,000 − 200) = 10% × 5,800 = AZN 580. Employee DSMF = 6 + 580 = **AZN 586**.
 
-> **[RESEARCH GAP — reviewer to confirm]** The PwC employer formula is stated as "2% on first AZN 200; **AZN 44** + 15% on the portion above AZN 200." Arithmetically, 2% × AZN 200 = AZN 4, not AZN 44, so the AZN 44 base does not reconcile to a 2% rate on the first AZN 200. Confirm the correct employer base figure with the State Tax Service before relying on it. Using the formula as published: employer DSMF on AZN 6,000 = 44 + 15% × 5,800 = 44 + 870 = **AZN 914** (per source, base unverified).
+> **[RESEARCH GAP — reviewer to confirm]** The the secondary summary employer formula is stated as "2% on first AZN 200; **AZN 44** + 15% on the portion above AZN 200." Arithmetically, 2% × AZN 200 = AZN 4, not AZN 44, so the AZN 44 base does not reconcile to a 2% rate on the first AZN 200. Confirm the correct employer base figure with the State Tax Service before relying on it. Using the formula as published: employer DSMF on AZN 6,000 = 44 + 15% × 5,800 = 44 + 870 = **AZN 914** (per source, base unverified).
 
 **Classification:** Employee DSMF = AZN 586 (verified); employer DSMF = AZN 914 per published formula (base flagged).
 
@@ -318,18 +318,18 @@ Individual entrepreneur under the simplified tax regime (annual turnover not exc
 
 ### 5.1 Residence and Scope
 
-- **Residence and scope** — Residents are taxed on worldwide income; non-residents are taxed only on Azerbaijan-source income [PwC]. Confirm residence before computing.  _(Tax Code of the Republic of Azerbaijan; PwC)_
+- **Residence and scope** — Residents are taxed on worldwide income; non-residents are taxed only on Azerbaijan-source income [secondary summary]. Confirm residence before computing.  _(Tax Code of the Republic of Azerbaijan; secondary summary)_
 
 ### 5.2 Personal Income Tax — 2025 by Sector
 
-**5.2 Personal Income Tax — 2025 by Sector**  _(PwC)_
+**5.2 Personal Income Tax — 2025 by Sector**  _(secondary summary)_
 
 | Sector | Schedule (monthly) | Source |
 | --- | --- | --- |
-| Private non-oil/non-gas (holiday) | 0% up to AZN 8,000; 14% on the excess | PwC |
-| Oil/gas + government/public | 14% up to AZN 2,500; AZN 350 + 25% on the excess | PwC |
+| Private non-oil/non-gas (holiday) | 0% up to AZN 8,000; 14% on the excess | secondary summary |
+| Oil/gas + government/public | 14% up to AZN 2,500; AZN 350 + 25% on the excess | secondary summary |
 
-The 7-year holiday ran 1 Jan 2019 – 31 Dec 2025 for private non-oil/non-gas employees [PwC].
+The 7-year holiday ran 1 Jan 2019 – 31 Dec 2025 for private non-oil/non-gas employees [secondary summary].
 
 ### 5.3 Personal Income Tax — 2026 Reform (private non-oil)
 
@@ -337,37 +337,37 @@ The 7-year holiday ran 1 Jan 2019 – 31 Dec 2025 for private non-oil/non-gas em
 
 ### 5.4 Social Insurance (DSMF) — 2025
 
-**5.4 Social Insurance (DSMF) — 2025**  _(PwC)_
+**5.4 Social Insurance (DSMF) — 2025**  _(secondary summary)_
 
 | Party / sector | Rate | Source |
 | --- | --- | --- |
-| Employee — private non-oil | 3% on first AZN 200; AZN 6 + 10% above AZN 200 | PwC |
-| Employer — private non-oil | 2% on first AZN 200; AZN 44 + 15% above AZN 200 **[base flagged — see Example 5]** | PwC |
-| Employee — oil/gas & government | 3% of gross monthly salary | PwC |
-| Employer — oil/gas & government | 22% of gross monthly salary | PwC |
+| Employee — private non-oil | 3% on first AZN 200; AZN 6 + 10% above AZN 200 | secondary summary |
+| Employer — private non-oil | 2% on first AZN 200; AZN 44 + 15% above AZN 200 **[base flagged — see Example 5]** | secondary summary |
+| Employee — oil/gas & government | 3% of gross monthly salary | secondary summary |
+| Employer — oil/gas & government | 22% of gross monthly salary | secondary summary |
 
 - **2026 reform DSMF change** — **2026 reform:** the combined DSMF rate on the wage portion **above AZN 8,000** (private non-oil) drops from 25% to **21% (10% employee + 11% employer)**; the portion up to AZN 8,000 is unchanged [Mercans]. Self-check: 10% + 11% = 21% (combined column reconciles).  _(Mercans)_
 
 ### 5.5 Unemployment Insurance Contribution (UIC) — 2025
 
-**5.5 Unemployment Insurance Contribution (UIC) — 2025**  _(PwC)_
+**5.5 Unemployment Insurance Contribution (UIC) — 2025**  _(secondary summary)_
 
 | Party | Rate | Source |
 | --- | --- | --- |
-| Employee | 0.5% of gross salary | PwC |
-| Employer | 0.5% of gross salary | PwC |
-| **Combined** | **1.0%** | PwC |
+| Employee | 0.5% of gross salary | secondary summary |
+| Employer | 0.5% of gross salary | secondary summary |
+| **Combined** | **1.0%** | secondary summary |
 
 Self-check: 0.5% + 0.5% = 1.0% (combined reconciles).
 
 ### 5.6 Compulsory Medical Insurance — 2025
 
-**5.6 Compulsory Medical Insurance — 2025**  _(PwC)_
+**5.6 Compulsory Medical Insurance — 2025**  _(secondary summary)_
 
 | Income band | Employee | Employer | Source |
 | --- | --- | --- | --- |
-| Up to AZN 8,000 | 2% | 2% | PwC |
-| Above AZN 8,000 | AZN 160 + 0.5% on the excess | AZN 160 + 0.5% on the excess | PwC |
+| Up to AZN 8,000 | 2% | 2% | secondary summary |
+| Above AZN 8,000 | AZN 160 + 0.5% on the excess | AZN 160 + 0.5% on the excess | secondary summary |
 
 Self-check: at exactly AZN 8,000, 2% × 8,000 = AZN 160 — so the AZN 160 base reconciles to the cap of the lower band for each party.
 
@@ -380,53 +380,53 @@ Self-check: at exactly AZN 8,000, 2% × 8,000 = AZN 160 — so the AZN 160 base 
 | General | 20% on net taxable profit [ExpertSM] | Plus VAT if turnover > AZN 200,000 |
 | Simplified | 2% of gross turnover [ExpertSM/Deel] | Eligibility: turnover ≤ AZN 200,000 and not VAT-registered; replaces PIT, profit tax, VAT, asset tax |
 
-- **Self-employed social insurance research gap** — **Self-employed social insurance** is activity- and region-dependent (minimum-wage-based multiples apply); exact percentages were not found in authoritative secondary sources **[RESEARCH GAP — reviewer to confirm]** [PwC].  _(PwC)_
+- **Self-employed social insurance research gap** — **Self-employed social insurance** is activity- and region-dependent (minimum-wage-based multiples apply); exact percentages were not found in authoritative secondary sources **[RESEARCH GAP — reviewer to confirm]** [secondary summary].  _(secondary summary)_
 
 ### 5.8 Withholding Tax on Non-Employment Income
 
-**5.8 Withholding Tax on Non-Employment Income**  _(PwC)_
+**5.8 Withholding Tax on Non-Employment Income**  _(secondary summary)_
 
 | Income type | Rate | Source |
 | --- | --- | --- |
-| Dividends | 5% | PwC |
-| Interest | 10% | PwC |
-| Rent / royalties | 14% | PwC |
-| Non-resident, no-PE income (general) | 10% | PwC |
-| Non-resident leasing / insurance | 4% | PwC |
-| Non-resident telecom / transport | 6% | PwC |
+| Dividends | 5% | secondary summary |
+| Interest | 10% | secondary summary |
+| Rent / royalties | 14% | secondary summary |
+| Non-resident, no-PE income (general) | 10% | secondary summary |
+| Non-resident leasing / insurance | 4% | secondary summary |
+| Non-resident telecom / transport | 6% | secondary summary |
 
 ### 5.9 VAT Interaction
 
-**5.9 VAT Interaction**  _(PwC/ExpertSM/Deel)_
+**5.9 VAT Interaction**  _(secondary summary, /ExpertSM/Deel)_
 
 | Scenario | Income Tax Treatment | Source |
 | --- | --- | --- |
-| Standard VAT rate | 18% | PwC |
-| Mandatory VAT registration | Taxable turnover > AZN 200,000 in any 12 consecutive months (or single transaction over the threshold) | PwC |
+| Standard VAT rate | 18% | secondary summary |
+| Mandatory VAT registration | Taxable turnover > AZN 200,000 in any 12 consecutive months (or single transaction over the threshold) | secondary summary |
 | VAT collected on sales (VAT-registered) | NOT income — exclude | — |
 | Simplified-regime entrepreneur | Cannot be VAT-registered; VAT does not apply | ExpertSM/Deel |
 
 ### 5.10 Exemptions
 
-**5.10 Exemptions**  _(GRATA/PwC/Caspian Legal Center)_
+**5.10 Exemptions**  _(GRATA/the secondary summary/Caspian Legal Center)_
 
 | Exemption | Detail | Source |
 | --- | --- | --- |
 | Personal monthly exemption (oil/gas & public, primary workplace) | AZN 200/month where monthly income below AZN 2,500 (AZN 2,400/year where annual income below AZN 30,000) | GRATA |
-| Private non-oil employees (2025) | Were under the 0% holiday band rather than the AZN 200 exemption | PwC |
+| Private non-oil employees (2025) | Were under the 0% holiday band rather than the AZN 200 exemption | secondary summary |
 | Micro-entrepreneur 75% income exemption | See Section 6.1 | Caspian Legal Center |
 
 ### 5.11 Filing and Payment
 
-**5.11 Filing and Payment**  _(PwC)_
+**5.11 Filing and Payment**  _(secondary summary)_
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Annual income tax return | Due **31 March** of the following year (3-month extension possible if tax already paid) | PwC |
-| Who must file | Residents with income not taxed at source or foreign income; non-residents with Azeri-source income not subject to withholding; individual entrepreneurs | PwC |
-| Quarterly advance payments (independent entrepreneurs) | No later than the **15th** of the month following each quarter; final payment by 31 March | PwC |
-| Cessation declaration | Within **30 days** of stopping business activity | PwC |
-| Withheld income tax | Transferred **same day** as the income payment | PwC |
+| Annual income tax return | Due **31 March** of the following year (3-month extension possible if tax already paid) | secondary summary |
+| Who must file | Residents with income not taxed at source or foreign income; non-residents with Azeri-source income not subject to withholding; individual entrepreneurs | secondary summary |
+| Quarterly advance payments (independent entrepreneurs) | No later than the **15th** of the month following each quarter; final payment by 31 March | secondary summary |
+| Cessation declaration | Within **30 days** of stopping business activity | secondary summary |
+| Withheld income tax | Transferred **same day** as the income payment | secondary summary |
 
 ### 5.12 Penalties
 
@@ -447,7 +447,7 @@ Self-check: at exactly AZN 8,000, 2% × 8,000 = AZN 160 — so the AZN 160 base 
 
 ### 6.2 Simplified vs General Regime Choice
 
-- **Simplified vs general regime choice** — - Simplified (2% of receipts from goods, works and services and of non-sales income, art. 220.1) requires taxable transactions of AZN 200,000 or less in every month of a consecutive 12-month period and no VAT registration (art. 218.1.1); certain activities are excluded (art. 218.4). The 4% Baku rate quoted by older secondary sources is no longer in the Code. - General regime (20% of net profit for individual entrepreneurs, art. 101.3) allows expense deductions but adds VAT obligations above AZN 200,000 (art. 155.1). - **Flag for reviewer:** confirm the entrepreneur's activity is eligible for the simplified tax.  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 101.3, 218.1.1 and 220.1 — https://e-qanun.az/framework/46948 ; https://taxsummaries.pwc.com/azerbaijan/individual/taxes-on-personal-income)_
+- **Simplified vs general regime choice** — - Simplified (2% of receipts from goods, works and services and of non-sales income, art. 220.1) requires taxable transactions of AZN 200,000 or less in every month of a consecutive 12-month period and no VAT registration (art. 218.1.1); certain activities are excluded (art. 218.4). The 4% Baku rate quoted by older secondary sources is no longer in the Code. - General regime (20% of net profit for individual entrepreneurs, art. 101.3) allows expense deductions but adds VAT obligations above AZN 200,000 (art. 155.1). - **Flag for reviewer:** confirm the entrepreneur's activity is eligible for the simplified tax.  _(Tax Code of the Republic of Azerbaijan (Vərgi Məcəlləsi, consolidated text on e-qanun.az), art. 101.3, 218.1.1 and 220.1 — https://e-qanun.az/framework/46948)_
 
 ### 6.3 Home Office Deduction (general-regime entrepreneur)
 
@@ -605,12 +605,12 @@ ONBOARDING QUESTIONS -- AZERBAIJAN INCOME TAX
 
 | Threshold | Value | Source |
 | --- | --- | --- |
-| VAT mandatory registration | AZN 200,000 taxable turnover in any 12 consecutive months (or single transaction over it) | PwC |
+| VAT mandatory registration | AZN 200,000 taxable turnover in any 12 consecutive months (or single transaction over it) | secondary summary |
 | Simplified-regime eligibility (turnover) | Annual turnover ≤ AZN 200,000 and not VAT-registered | Deel |
-| Tax holiday income ceiling (private non-oil, 2025) | Monthly wage up to AZN 8,000 at 0% | PwC |
+| Tax holiday income ceiling (private non-oil, 2025) | Monthly wage up to AZN 8,000 at 0% | secondary summary |
 | Micro-entrepreneur 75% exemption ceiling | Annual income up to AZN 45,000 | Caspian Legal Center |
 | Minimum monthly wage | AZN 400/month (from 1 Jan 2025) | APA |
-| Medical insurance band split | AZN 8,000/month | PwC |
+| Medical insurance band split | AZN 8,000/month | secondary summary |
 
 ### 2025 vs 2026 — At a Glance
 
@@ -618,7 +618,7 @@ ONBOARDING QUESTIONS -- AZERBAIJAN INCOME TAX
 
 | Item | 2025 | 2026 |
 | --- | --- | --- |
-| Private non-oil PIT | 0% to 8,000; 14% excess [PwC] | 3% / 10% / 14% [Mercans] |
+| Private non-oil PIT | 0% to 8,000; 14% excess [secondary summary] | 3% / 10% / 14% [Mercans] |
 | Lowest band trajectory | n/a (holiday) | 3% (2026) → 5% (2027) → 7% (2028) [Mercans] |
 | Combined DSMF above AZN 8,000 (private non-oil) | 25% | 21% (10% EE + 11% ER) [Mercans] |
 | Minimum monthly wage | AZN 400 [APA] | AZN 400 (unchanged) [APA] |

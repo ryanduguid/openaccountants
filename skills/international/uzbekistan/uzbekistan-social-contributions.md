@@ -1,10 +1,10 @@
 ---
 name: uzbekistan-social-contributions
 description: Use this skill whenever asked about Uzbekistan employer social tax (social insurance contributions), payroll withholding, personal income tax (PIT), or the Individual Accumulated Pension Fund (INPS) for employees and employers in the Republic of Uzbekistan. Trigger on phrases like "how much social tax do I pay in Uzbekistan", "Uzbek payroll tax", "social insurance contributions Uzbekistan", "INPS pension", "izhtimoiy soliq", "soliq.uz social tax", "12% social tax", "Uzbekistan PIT withholding", "do I withhold pension in Uzbekistan", "budget organisation social tax 25%", "Uzbek minimum wage payroll", or any question about employer/employee statutory contributions in Uzbekistan. Also trigger when classifying bank statement transactions that relate to Soliq (State Tax Committee) debits, social tax remittances, PIT withholding payments, or pension fund transfers from Uzbek banks (NBU, Ipoteka Bank, Asaka Bank, Kapitalbank, Hamkorbank, etc.). This skill covers employer social tax rates (12% private / 25% budget / 7% / 4.7% / 1% incentives), the flat 12% PIT, the 0.1% INPS carve-out, monthly reporting deadlines, residency rules, minimum wage and BCU, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Uzbekistan social-tax or payroll work.
-version: 0.2
+version: 0.3
 jurisdiction: UZ
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -25,20 +25,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary Legislation | Tax Code of the Republic of Uzbekistan (Налоговый кодекс), as amended (social tax and PIT governed by the Tax Code) |
 | Latest amendments | Adopted December 2025, effective 1 January 2026 (EY Uzbekistan Tax Alert, Jan 2026) |
 | Tax Authority | State Tax Committee of the Republic of Uzbekistan (Soliq) — soliq.uz; Pension Fund under the Ministry of Economy and Finance |
-| Employer social tax — private (non-budget) | 12% of gross payroll (PwC, reviewed 16 Jan 2026) |
-| Employer social tax — budget (state-funded) organisations | 25% of gross payroll (PwC) |
-| Employer social tax — organisations employing persons with disabilities | 4.7% of gross payroll (PwC) |
-| Employer social tax — Assoc. "SOS Children's Villages of Uzbekistan" | 7% of gross payroll (PwC) |
+| Employer social tax — private (non-budget) | 12% of gross payroll (secondary summary, reviewed 16 Jan 2026) |
+| Employer social tax — budget (state-funded) organisations | 25% of gross payroll (secondary summary) |
+| Employer social tax — organisations employing persons with disabilities | 4.7% of gross payroll (secondary summary) |
+| Employer social tax — Assoc. "SOS Children's Villages of Uzbekistan" | 7% of gross payroll (secondary summary) |
 | Employer social tax — time-limited incentives | 1% of gross payroll (sector/condition specific) (EY, Jan 2026) |
-| Personal income tax (PIT) | Flat 12% on residents' employment income, rent, capital gains, most income (PwC) |
+| Personal income tax (PIT) | Flat 12% on residents' employment income, rent, capital gains, most income (secondary summary) |
 | INPS (Individual Accumulated Pension Fund) | 0.1% of employee gross — carved OUT of the 12% PIT, NOT an extra deduction (LegalAct.uz) |
-| Social tax base | Gross payroll of local and foreign employees (PwC) |
+| Social tax base | Gross payroll of local and foreign employees (secondary summary) |
 | Social tax floor / ceiling | None published [RESEARCH GAP — reviewer to confirm against current Tax Code] |
 | Reporting frequency | Monthly |
-| Reporting/payment deadline | 15th day of the month following the reporting month (PwC) |
+| Reporting/payment deadline | 15th day of the month following the reporting month (secondary summary) |
 | Currency | UZS (Uzbekistani soum) only |
 | Minimum wage | UZS 1,271,000/month from 1 Aug 2025 (WageCentre) [cross-check Presidential Decree] |
-| Base Calculation Unit (BCU) | UZS 412,000 from 1 Aug 2025 (PwC significant developments) |
+| Base Calculation Unit (BCU) | UZS 412,000 from 1 Aug 2025 (secondary summary, significant developments) |
 | Validated by | Pending — requires sign-off by a qualified Uzbek tax professional |
 | Validation date | Pending |
 
@@ -46,10 +46,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Category | Who | Employer rate | Source |
 | --- | --- | --- | --- |
-| Other taxpayers (private / non-budget) | Standard commercial employers | 12% | PwC |
-| Budget organisations | State-funded organisations | 25% | PwC |
-| Organisations employing persons with disabilities | Qualifying employers | 4.7% | PwC |
-| SOS Children's Villages of Uzbekistan | That specific association | 7% | PwC |
+| Other taxpayers (private / non-budget) | Standard commercial employers | 12% | secondary summary |
+| Budget organisations | State-funded organisations | 25% | secondary summary |
+| Organisations employing persons with disabilities | Qualifying employers | 4.7% | secondary summary |
+| SOS Children's Villages of Uzbekistan | That specific association | 7% | secondary summary |
 | Incentive (time-limited, sector/condition) | Cotton-textile/garment clusters, children's content producers, fruit/veg packaging, low-income-employee hirers, youth/vocational hires | 1% | EY (Jan 2026) |
 
 - **Employer category rates mutual exclusivity** — These are mutually exclusive employer-category rates — an employer pays exactly one social tax rate on its gross payroll, not the sum of several. There is no "total" of these rows.
@@ -58,7 +58,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Rate | Who bears it | Net effect | Source |
 | --- | --- | --- | --- | --- |
-| Personal income tax (PIT) | 12% | Employee (withheld by employer) | Reduces net pay | PwC |
+| Personal income tax (PIT) | 12% | Employee (withheld by employer) | Reduces net pay | secondary summary |
 | INPS pension allocation | 0.1% | Employee — carved OUT of the 12% PIT | Zero additional deduction | LegalAct.uz |
 | **Total employee deduction** | **12%** | Employee | 12% of gross (the 0.1% INPS is part of the 12%, not added on top) | LegalAct.uz |
 
@@ -187,7 +187,7 @@ Matches social tax pattern (3.1). UZS 600,000 = 12% × UZS 5,000,000 gross payro
 `14.04.2025 ; СОЦНАЛОГ МАРТ ; DEBIT ; СОЦИАЛЬНЫЙ НАЛОГ ; -1,000,000 ; UZS`
 
 **Reasoning:**
-Budget organisation → social tax rate 25% (PwC). Gross UZS 4,000,000. Employer social tax = 25% × 4,000,000 = UZS 1,000,000. PIT on the employee = 12% × 4,000,000 = UZS 480,000; net pay = 4,000,000 − 480,000 = UZS 3,520,000. Total employer cost = 4,000,000 + 1,000,000 = UZS 5,000,000.
+Budget organisation → social tax rate 25% (secondary summary). Gross UZS 4,000,000. Employer social tax = 25% × 4,000,000 = UZS 1,000,000. PIT on the employee = 12% × 4,000,000 = UZS 480,000; net pay = 4,000,000 − 480,000 = UZS 3,520,000. Total employer cost = 4,000,000 + 1,000,000 = UZS 5,000,000.
 
 **Classification:** EXCLUDE from VAT. Budget-organisation social tax at 25%.
 
@@ -207,22 +207,22 @@ PIT is withheld cumulatively (LegalAct.uz): monthly PIT = YTD PIT to current mon
 `14.05.2025 ; IJTIMOIY SOLIQ APREL ; DEBIT ; SOCIAL TAX ; -141,000 ; UZS`
 
 **Reasoning:**
-Organisation employing persons with disabilities → social tax rate 4.7% (PwC). Gross UZS 3,000,000. Employer social tax = 4.7% × 3,000,000 = UZS 141,000. PIT on the employee = 12% × 3,000,000 = UZS 360,000; net pay = 3,000,000 − 360,000 = UZS 2,640,000.
+Organisation employing persons with disabilities → social tax rate 4.7% (secondary summary). Gross UZS 3,000,000. Employer social tax = 4.7% × 3,000,000 = UZS 141,000. PIT on the employee = 12% × 3,000,000 = UZS 360,000; net pay = 3,000,000 − 360,000 = UZS 2,640,000.
 
 **Classification:** EXCLUDE from VAT. Reduced 4.7% social tax. Confirm the organisation qualifies before applying the reduced rate (R-UZ-ST-2 logic).
 
 ## Section 5 -- Tier 1 rules
 
-These rules apply when payroll/bank statement data is clear and all required inputs are available. Apply exactly as written. (Primary authority: PwC Worldwide Tax Summaries, reviewed 16 Jan 2026; INPS treatment per LegalAct.uz; 2026 changes per EY Jan 2026.)
+These rules apply when payroll/bank statement data is clear and all required inputs are available. Apply exactly as written. (Primary authority: a secondary practitioner summary, reviewed 16 Jan 2026; INPS treatment per LegalAct.uz; 2026 changes per EY Jan 2026.)
 
 ### Rule 1 -- Employer social tax formula (one rate per employer)
 
-- **Employer social tax formula** — Employer social tax = gross_payroll x rate rate = 12%   if private / "other taxpayers"            (PwC) rate = 25%   if budget (state-funded) organisation     (PwC) rate = 4.7%  if organisation employing persons w/ disabilities (PwC) rate = 7%    if SOS Children's Villages of Uzbekistan   (PwC) rate = 1%    if a qualifying time-limited incentive applies (EY)  _(PwC; EY)_
+- **Employer social tax formula** — Employer social tax = gross_payroll x rate rate = 12%   if private / "other taxpayers"            (secondary summary) rate = 25%   if budget (state-funded) organisation     (secondary summary) rate = 4.7%  if organisation employing persons w/ disabilities (secondary summary) rate = 7%    if SOS Children's Villages of Uzbekistan   (secondary summary) rate = 1%    if a qualifying time-limited incentive applies (EY)  _(secondary summary; EY)_
 - **Social tax base** — The social tax base is the payroll expenses paid under art. 371 to local and foreign employees (art. 404); the Code sets no floor or ceiling on it.  _(Tax Code of the Republic of Uzbekistan (Soliq kodeksi, consolidated text on lex.uz), art. 404 — https://lex.uz/docs/4674902)_
 
 ### Rule 2 -- PIT is a flat 12% (not progressive)
 
-- **PIT flat rate rule** — Uzbekistan uses a FLAT 12% PIT on residents' employment income, rent, capital gains and most other income (PwC). There are no progressive bands. Resident dividends and interest are taxed at 5% (JSC dividends PIT-exempt 1 Apr 2022–31 Dec 2028).  _(PwC)_
+- **PIT flat rate rule** — Uzbekistan uses a FLAT 12% PIT on residents' employment income, rent, capital gains and most other income (secondary summary). There are no progressive bands. Resident dividends and interest are taxed at 5% (JSC dividends PIT-exempt 1 Apr 2022–31 Dec 2028).  _(secondary summary)_
 
 ### Rule 3 -- INPS is carved OUT of the 12% PIT
 
@@ -235,11 +235,11 @@ These rules apply when payroll/bank statement data is clear and all required inp
 
 ### Rule 5 -- Monthly reporting and payment
 
-- **Monthly reporting and payment deadline** — Employers report and pay PIT, employer social tax, and the INPS allocation monthly, by the 15th day of the month following the reporting month (PwC). Payment is due the same date.  _(PwC)_
+- **Monthly reporting and payment deadline** — Employers report and pay PIT, employer social tax, and the INPS allocation monthly, by the 15th day of the month following the reporting month (secondary summary). Payment is due the same date.  _(secondary summary)_
 
 ### Rule 6 -- Non-resident rates
 
-- **Non-resident rates** — Non-residents: 12% on most Uzbek-source income (incl. employment and royalties); 10% on dividends/interest; 6% on freight/transport (PwC). Escalate cross-border cases (R-UZ-ST-5).  _(PwC)_
+- **Non-resident rates** — Non-residents: 12% on most Uzbek-source income (incl. employment and royalties); 10% on dividends/interest; 6% on freight/transport (secondary summary). Escalate cross-border cases (R-UZ-ST-5).  _(secondary summary)_
 
 ### Rule 7 -- Social tax is an employer cost, PIT is an employee cost
 
@@ -247,15 +247,15 @@ These rules apply when payroll/bank statement data is clear and all required inp
 
 ### Rule 8 -- Tax residency
 
-- **Tax residency rule** — Tax residency = 183+ days in any 12-month period beginning or ending in the tax year; or, if under 183 days, more days in Uzbekistan than in any other single country. Early residency election available with a long-term employment contract (PwC). Tax year = calendar year.  _(PwC)_
+- **Tax residency rule** — Tax residency = 183+ days in any 12-month period beginning or ending in the tax year; or, if under 183 days, more days in Uzbekistan than in any other single country. Early residency election available with a long-term employment contract (secondary summary). Tax year = calendar year.  _(secondary summary)_
 
 ### Rule 9 -- Minimum wage and BCU
 
-- **Minimum wage and BCU rule** — Minimum wage = UZS 1,271,000/month from 1 Aug 2025 (WageCentre) [cross-check Presidential Decree]. Base Calculation Unit (BCU) = UZS 412,000 from 1 Aug 2025 (PwC). The minimum wage and BCU are separate figures; BCU is used for fees, fines, state duties and certain thresholds — NOT directly as the social tax base.  _(WageCentre; PwC)_
+- **Minimum wage and BCU rule** — Minimum wage = UZS 1,271,000/month from 1 Aug 2025 (WageCentre) [cross-check Presidential Decree]. Base Calculation Unit (BCU) = UZS 412,000 from 1 Aug 2025 (secondary summary). The minimum wage and BCU are separate figures; BCU is used for fees, fines, state duties and certain thresholds — NOT directly as the social tax base.  _(WageCentre; secondary summary)_
 
 ### Rule 10 -- 2026 changes (confirmed)
 
-- **2026 confirmed changes** — From 1 January 2026 (EY, PwC): fixed-amount PIT for individual entrepreneurs (IEs) is cancelled; IE turnover tax up to UZS 1 billion set at 1%; e-commerce CIT raised to 15% and e-commerce turnover tax to 4%; tax returns auto-prepared by the authority with a 5-business-day correction window. The 12% employer social tax and flat 12% PIT are unchanged into 2026 — but re-verify rates before each tax year (rates may be re-indexed annually).  _(EY; PwC)_
+- **2026 confirmed changes** — From 1 January 2026 (EY, the secondary summary): fixed-amount PIT for individual entrepreneurs (IEs) is cancelled; IE turnover tax up to UZS 1 billion set at 1%; e-commerce CIT raised to 15% and e-commerce turnover tax to 4%; tax returns auto-prepared by the authority with a 5-business-day correction window. The 12% employer social tax and flat 12% PIT are unchanged into 2026 — but re-verify rates before each tax year (rates may be re-indexed annually).  _(EY; secondary summary)_
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -279,11 +279,11 @@ When payroll/bank statement data is ambiguous or client circumstances are unclea
 
 ### T2-5 -- Annual individual PIT declaration
 
-- **Annual individual PIT declaration flag** — Trigger: Resident has property/IP income, income from two or more sources, foreign income, or income from non-withholding sources. Issue: Such residents must file an annual PIT declaration in addition to employer withholding — filing by 1 April, payment by 1 June of the following year (PwC). Action: Flag for reviewer. Employer monthly withholding does not discharge the individual's annual filing obligation.  _(PwC)_
+- **Annual individual PIT declaration flag** — Trigger: Resident has property/IP income, income from two or more sources, foreign income, or income from non-withholding sources. Issue: Such residents must file an annual PIT declaration in addition to employer withholding — filing by 1 April, payment by 1 June of the following year (secondary summary). Action: Flag for reviewer. Employer monthly withholding does not discharge the individual's annual filing obligation.  _(secondary summary)_
 
 ### T2-6 -- Expatriate departure return
 
-- **Expatriate departure return flag** — Trigger: An expatriate employee is leaving Uzbekistan. Issue: Expatriates file a departure (exit) return — one month before departure (unless departing before 1 February) (PwC). Action: Flag for reviewer to confirm timing and final-period reconciliation.  _(PwC)_
+- **Expatriate departure return flag** — Trigger: An expatriate employee is leaving Uzbekistan. Issue: Expatriates file a departure (exit) return — one month before departure (unless departing before 1 February) (secondary summary). Action: Flag for reviewer to confirm timing and final-period reconciliation.  _(secondary summary)_
 
 ## Section 7 -- Excel working paper template
 
@@ -372,7 +372,7 @@ If the client provides only a bank statement and no other information:
 
 ### Computation examples (private employer, 12% social tax, resident employee)
 
-**Computation examples table**  _(PwC; LegalAct.uz; WageCentre)_
+**Computation examples table**  _(secondary summary; LegalAct.uz; WageCentre)_
 
 | Gross/month (UZS) | PIT 12% (UZS) | of which INPS 0.1% (UZS) | Net pay (UZS) | Employer social tax 12% (UZS) | Total employer cost (UZS) |
 | --- | --- | --- | --- | --- | --- |
@@ -381,67 +381,67 @@ If the client provides only a bank statement and no other information:
 | 5,000,000 | 600,000 | 5,000 | 4,400,000 | 600,000 | 5,600,000 |
 | 10,000,000 | 1,200,000 | 10,000 | 8,800,000 | 1,200,000 | 11,200,000 |
 
-*All derived from the flat 12% PIT and 12% employer social tax (PwC); INPS 0.1% carve-out per LegalAct.uz. Minimum wage UZS 1,271,000 from 1 Aug 2025 (WageCentre).*
+*All derived from the flat 12% PIT and 12% employer social tax (secondary summary); INPS 0.1% carve-out per LegalAct.uz. Minimum wage UZS 1,271,000 from 1 Aug 2025 (WageCentre).*
 
 ### Other employer categories (social tax on gross UZS 4,000,000)
 
-**Other employer categories table**  _(PwC; EY)_
+**Other employer categories table**  _(secondary summary; EY)_
 
 | Category | Rate | Social tax (UZS) | Source |
 | --- | --- | --- | --- |
-| Private / other taxpayers | 12% | 480,000 | PwC |
-| Budget organisation | 25% | 1,000,000 | PwC |
-| SOS Children's Villages | 7% | 280,000 | PwC |
-| Disability-employing org | 4.7% | 188,000 | PwC |
+| Private / other taxpayers | 12% | 480,000 | secondary summary |
+| Budget organisation | 25% | 1,000,000 | secondary summary |
+| SOS Children's Villages | 7% | 280,000 | secondary summary |
+| Disability-employing org | 4.7% | 188,000 | secondary summary |
 | Incentive (qualifying, time-limited) | 1% | 40,000 | EY |
 
 ### Key tax rates (context)
 
-**Key tax rates table**  _(PwC)_
+**Key tax rates table**  _(secondary summary)_
 
 | Tax | Rate | Source |
 | --- | --- | --- |
-| Personal income tax (PIT) | 12% flat | PwC |
-| PIT — resident dividends/interest | 5% | PwC |
-| WHT — non-resident dividends/interest | 10% | PwC |
-| WHT — non-resident other income | 12% (freight/transport 6%) | PwC |
-| Corporate income tax (standard) | 15% (20% banks, cement, polyethylene, mobile operators, markets/malls) | PwC |
-| VAT (standard) | 12% | PwC |
-| Turnover (simplified) tax | generally 4% (turnover < UZS 1bn); IE 1% from 2026 | PwC |
+| Personal income tax (PIT) | 12% flat | secondary summary |
+| PIT — resident dividends/interest | 5% | secondary summary |
+| WHT — non-resident dividends/interest | 10% | secondary summary |
+| WHT — non-resident other income | 12% (freight/transport 6%) | secondary summary |
+| Corporate income tax (standard) | 15% (20% banks, cement, polyethylene, mobile operators, markets/malls) | secondary summary |
+| VAT (standard) | 12% | secondary summary |
+| Turnover (simplified) tax | generally 4% (turnover < UZS 1bn); IE 1% from 2026 | secondary summary |
 
 ### Thresholds
 
-**Thresholds table**  _(PwC; WageCentre)_
+**Thresholds table**  _(secondary summary; WageCentre)_
 
 | Threshold | Value | Source |
 | --- | --- | --- |
-| Tax residency | 183+ days in any 12-month period beginning/ending in the tax year; else more days in UZ than any other country | PwC |
-| Turnover (simplified) eligibility | Annual turnover < UZS 1 billion | PwC |
-| VAT/CIT base threshold | Turnover > UZS 1 billion → standard CIT (15%) + VAT (12%) | PwC |
-| IE turnover tax 2026 | Up to UZS 1 billion at 1%; fixed-amount IE PIT cancelled | PwC |
+| Tax residency | 183+ days in any 12-month period beginning/ending in the tax year; else more days in UZ than any other country | secondary summary |
+| Turnover (simplified) eligibility | Annual turnover < UZS 1 billion | secondary summary |
+| VAT/CIT base threshold | Turnover > UZS 1 billion → standard CIT (15%) + VAT (12%) | secondary summary |
+| IE turnover tax 2026 | Up to UZS 1 billion at 1%; fixed-amount IE PIT cancelled | secondary summary |
 | Minimum wage | UZS 1,271,000/month from 1 Aug 2025 [cross-check Decree] | WageCentre |
-| Base Calculation Unit (BCU) | UZS 412,000 from 1 Aug 2025 | PwC |
+| Base Calculation Unit (BCU) | UZS 412,000 from 1 Aug 2025 | secondary summary |
 
 ### Forms and deadlines
 
-**Forms and deadlines table**  _(PwC)_
+**Forms and deadlines table**  _(secondary summary)_
 
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
-| Monthly tax report (PIT, Social Tax, INPS) | Employer reports/pays withheld PIT, employer social tax, INPS allocation | 15th of the month after the reporting month; payment same date | PwC |
-| Annual individual PIT declaration | Residents with property/IP income, 2+ sources, foreign income, or non-withholding income | File by 1 April; pay by 1 June of the following year | PwC |
-| Departure (exit) return | Expatriates leaving Uzbekistan | One month before departure (unless departing before 1 February) | PwC |
+| Monthly tax report (PIT, Social Tax, INPS) | Employer reports/pays withheld PIT, employer social tax, INPS allocation | 15th of the month after the reporting month; payment same date | secondary summary |
+| Annual individual PIT declaration | Residents with property/IP income, 2+ sources, foreign income, or non-withholding income | File by 1 April; pay by 1 June of the following year | secondary summary |
+| Departure (exit) return | Expatriates leaving Uzbekistan | One month before departure (unless departing before 1 February) | secondary summary |
 
 ### Penalties
 
-**Penalties table**  _(RemotePeople; UzDaily; PwC)_
+**Penalties table**  _(RemotePeople; UzDaily; secondary summary)_
 
 | Item | Detail | Source |
 | --- | --- | --- |
 | Late payment interest (penya) | 1/300 of the Central Bank of Uzbekistan refinancing rate per day of delay | RemotePeople (secondary) |
 | Late report grace | No fine for delays up to 5 days if filed on time over the prior 3 months; single consolidated fine across tax types (penalty-reduction reform) | UzDaily (secondary) |
 | Fixed-amount fines (registration/understatement) | [RESEARCH GAP — reviewer to confirm against current Tax Code] | — |
-| Statute of limitations | Three-year limitation period for tax assessment | PwC |
+| Statute of limitations | Three-year limitation period for tax assessment | secondary summary |
 
 ### Test suite
 

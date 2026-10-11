@@ -1,10 +1,10 @@
 ---
 name: bulgaria-tax-optimization
 description: Use this skill whenever asked about reducing tax in Bulgaria, tax planning, or legal strategies to minimise tax for a freelancer, sole trader, or small company in Bulgaria. Trigger on phrases like "reduce tax Bulgaria", "10% flat tax", "Bulgaria freelancer 7.5%", "svobodna profesiya", "normative expense deduction", "sole trader vs EOOD", "Bulgaria dividends 5%", "save tax Bulgaria", "Bulgaria tax haven", "tax planning Bulgaria". This skill covers the freelancer (self-insured professional) 25% normative-expense regime giving a 7.5% effective rate, sole-trader vs EOOD company choice, the 5% dividend withholding, deductions and child reliefs, and the substance/anti-avoidance red lines. ALWAYS read this skill before advising on any Bulgarian tax optimisation.
-version: 0.2
+version: 0.3
 jurisdiction: BG
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,13 +14,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bulgaria Tax Optimization
 
-## Bulgaria Tax Optimization Skill v0.2
+## Bulgaria Tax Optimization Skill v0.3
 
 Bulgaria Tax Optimization Skill v0.2
 
-## Bulgaria Tax Optimization Skill v0.2
+## Bulgaria Tax Optimization Skill v0.3
 
-Tier 2 — research-verified. Sources: NRA (National Revenue Agency), PwC Bulgaria, Innovires/NomadTax. Figures must agree with `bulgaria-income-tax.md` / `bulgaria-social-contributions.md`. NOT yet signed off by a Bulgarian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.
+Tier 2 — research-verified. Sources: NRA (National Revenue Agency), the secondary summary Bulgaria, Innovires/NomadTax. Figures must agree with `bulgaria-income-tax.md` / `bulgaria-social-contributions.md`. NOT yet signed off by a Bulgarian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.
 
 ## Section 1 -- Quick Reference
 
