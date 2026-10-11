@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Chad (tax year 2025) — rate
 jurisdiction: TD
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,15 +17,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Chad (Tchad) is a Central African CEMAC member that taxes income, profits and consumption under its General Tax Code (Code Général des Impôts). Figures below are a source-cited draft for tax year 2025 and require review by a licensed Chad accountant.
 
-- **Tax year** — Calendar year (1 January to 31 December)  _([Code Général des Impôts (Chad)](https://taxsummaries.pwc.com/chad/corporate/tax-administration))_
+- **Tax year** — Calendar year (1 January to 31 December)  _(Code Général des Impôts (Chad), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Currency** — Central African CFA franc (XAF) (CEMAC monetary union)
 - **Tax authority** — Direction Générale des Impôts (DGI), Ministère des Finances et du Budget (approx — confirm exact authority name)  _(Code Général des Impôts (Chad))_
-- **Residence basis of taxation** — Residents taxed on worldwide income; non-residents taxed only on Chad-source income  _([Code Général des Impôts (Chad) — Personal income tax (IRPP)](https://taxsummaries.pwc.com/chad/individual/taxes-on-personal-income))_
-- **Top personal income tax (IRPP) rate** — 30%  _([Code Général des Impôts (Chad) — IRPP](https://taxsummaries.pwc.com/chad/individual/taxes-on-personal-income))_
-- **Standard corporate income tax (IS) rate** — 35%  _([Code Général des Impôts (Chad) — Impôt sur les sociétés](https://taxsummaries.pwc.com/chad/corporate/taxes-on-corporate-income))_
-- **Does Chad have VAT?** — Yes — VAT (TVA) at a standard rate of 18%  _([Code Général des Impôts (Chad) — Taxe sur la valeur ajoutée (TVA)](https://taxsummaries.pwc.com/chad/corporate/other-taxes))_
-- **Minimum corporate tax (IMF)** — 1.5% of turnover  _([Code Général des Impôts (Chad) — Impôt Minimum Forfaitaire](https://taxsummaries.pwc.com/chad/corporate/taxes-on-corporate-income))_
-- **Annual corporate tax return deadline** — On or before 30 April following the close of the financial year (approx — confirm exact statutory date)  _([Code Général des Impôts (Chad) — Tax administration](https://taxsummaries.pwc.com/chad/corporate/tax-administration))_
+- **Residence basis of taxation** — Residents taxed on worldwide income; non-residents taxed only on Chad-source income  _(Code Général des Impôts (Chad) — Personal income tax (IRPP), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Top personal income tax (IRPP) rate** — 30%  _(Code Général des Impôts (Chad) — IRPP, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Standard corporate income tax (IS) rate** — 35%  _(Code Général des Impôts (Chad) — Impôt sur les sociétés, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Does Chad have VAT?** — Yes — VAT (TVA) at a standard rate of 18%  _(Code Général des Impôts (Chad) — Taxe sur la valeur ajoutée (TVA), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Minimum corporate tax (IMF)** — 1.5% of turnover  _(Code Général des Impôts (Chad) — Impôt Minimum Forfaitaire, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Annual corporate tax return deadline** — On or before 30 April following the close of the financial year (approx — confirm exact statutory date)  _(Code Général des Impôts (Chad) — Tax administration, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Regional framework** — Member of CEMAC (Central African Economic and Monetary Community) and OHADA business-law zone (CEMAC / OHADA treaties)
 
 <!-- openaccountants-cta-block -->

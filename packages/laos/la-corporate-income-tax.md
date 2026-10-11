@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Laos (tax year 2025) 
 jurisdiction: LA
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -65,8 +65,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **⚠ Increased rate — 30% on casino business** — **Article 16(1.3)**: **thirty percent (30%)** for **casino business** (*ກິດຈະການກາຊິໂນ*). Also absent from this guide  _([Law on Income Tax (Revised), art. 16(1.3)](https://laoofficialgazette.gov.la/kcfinder/upload/files/88-25-6-2025_0001.pdf))_
 - **⚠ The 13% listed-company rate is not in article 16** — This guide gives *"Companies listed on the Lao Securities Exchange — 13% for the first 4 years from listing"*. Article 16's reduced limb contains **only the 5% and 7% rates** below. The 13% may sit elsewhere in the revised Law, or in the Law on Investment Promotion, or it may not have survived the repeal — **this was not established, and the row should not be relied on until it is** [RESEARCH GAP]  _([Law on Income Tax (Revised), art. 16(2)](https://laoofficialgazette.gov.la/kcfinder/upload/files/88-25-6-2025_0001.pdf))_
 - **Overview of profit tax rates** — Lao PDR levies profit tax (corporate income tax) at a flat standard rate with several sector-specific rates. The standard rate was reduced from 24% to 20%. Figures below are an unverified draft.
-- **Standard profit tax rate** — 20%  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
-- **Companies listed on the Lao Securities Exchange** — 13% for the first 4 years from listing  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
+- **Standard profit tax rate** — 20%  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Companies listed on the Lao Securities Exchange** — 13% for the first 4 years from listing  _(Law on Income Tax (Law No. 67/NA, 2019))_
 - **Tobacco — 22%, confirmed** — **Article 16(1.1)**: **twenty-two percent (22%)** for enterprises producing, importing and selling **tobacco products**, of which **two percent (2%) must be paid into the Tobacco Control Fund** under the Law on Tobacco Control. Confirmed against the replacing Law  _([Law on Income Tax (Revised), art. 16(1.1)](https://laoofficialgazette.gov.la/kcfinder/upload/files/88-25-6-2025_0001.pdf))_
 - **Mineral / mining — 35%, confirmed, and it reaches exporters too** — **Article 16(1.4)** of the replacing Law: **thirty-five percent (35%)** for **mineral exploration and extraction concession business *and* mineral exporters** (*ຜູ້ສົ່ງອອກແຮ່ທາດ*). The "(approx — confirm)" resolves, and the charge is wider than "under concession" suggests  _([Law on Income Tax (Revised), art. 16(1.4)](https://laoofficialgazette.gov.la/kcfinder/upload/files/88-25-6-2025_0001.pdf))_
 - **⚠ The 5% rate is wider than "education" and it is time-limited** — **Article 16(2.1)**: **five percent (5%)** for business connected with **innovation**, building **modern schools and hospitals**, **production factories and education equipment**, and **production and greening of urban areas** — **until the end of the profit-tax incentive period fixed by the Law on Investment Promotion**. This guide narrowed it to "education / training & research centres" and omitted the time limit, which is the part that decides whether it still applies  _([Law on Income Tax (Revised), art. 16(2.1)](https://laoofficialgazette.gov.la/kcfinder/upload/files/88-25-6-2025_0001.pdf))_
@@ -75,32 +75,32 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Lump-sum tax for micro/SME businesses
 
 - **Overview of lump-sum tax for micro/SME businesses** — Small businesses that do not keep full Lao accounting books pay a lump-sum (presumptive) tax on turnover instead of standard profit tax.
-- **Annual turnover of LAK 50 million or less** — 0% (exempt from lump-sum tax)  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
-- **Lump-sum tax — manufacturing/agriculture (turnover LAK 50m–400m)** — 1% of turnover  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
-- **Lump-sum tax — commerce (turnover LAK 50m–400m)** — 2% of turnover  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
-- **Lump-sum tax — services (turnover LAK 50m–400m)** — 3% of turnover  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
+- **Annual turnover of LAK 50 million or less** — 0% (exempt from lump-sum tax)  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Lump-sum tax — manufacturing/agriculture (turnover LAK 50m–400m)** — 1% of turnover  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Lump-sum tax — commerce (turnover LAK 50m–400m)** — 2% of turnover  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Lump-sum tax — services (turnover LAK 50m–400m)** — 3% of turnover  _(Law on Income Tax (Law No. 67/NA, 2019))_
 
 ## Withholding tax and filing
 
 - **Overview of withholding tax and filing** — Lao PDR withholds on **six** heads of domestic income, not three, and runs a **separate deemed-profit regime for foreign contractors** on top. The annual return and instalment deadlines are below.
-- **Withholding on dividends** — 10% (domestic-law rate; treaties may reduce, e.g. 5% for ≥10% holdings)  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
-- **Withholding on interest** — 10%  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
-- **Withholding on royalties (IP)** — 5% percent. Note the asymmetry: royalties are the **lowest**-rated head at 5%, while an ordinary consulting invoice is at 10%  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
-- **Withholding on service fees** — **10%** on brokerage, consulting and service fees  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
-- **Withholding on rent** — **10%** on the sale and lease of assets  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
-- **Withholding on artist and athlete income** — **10%**  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
-- **Withholding on share transfers** — **2%**  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
-- **Foreign Withholding Tax (FWHT) on foreign contractors — a separate regime, and a final tax** — A foreign supplier without a Lao presence is not taxed on profit but on **deemed profit by activity**, and the FWHT bundles **profit tax and VAT** into one deduction. The deemed-profit tax element runs **1.4%** (agricultural manufacturing), **2%** (industrial production), **3%** (commerce and services) and **6%** (electricity and mineral supply), with **10% VAT** added on services. It is the **final** tax on the foreign supplier — there is no return and no refund of it — so the rate has to be right in the contract, not corrected later  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
+- **Withholding on dividends** — 10% (domestic-law rate; treaties may reduce, e.g. 5% for ≥10% holdings)  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Withholding on interest** — 10%  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Withholding on royalties (IP)** — 5% percent. Note the asymmetry: royalties are the **lowest**-rated head at 5%, while an ordinary consulting invoice is at 10%  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Withholding on service fees** — **10%** on brokerage, consulting and service fees  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Withholding on rent** — **10%** on the sale and lease of assets  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Withholding on artist and athlete income** — **10%**  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Withholding on share transfers** — **2%**  _(Law on Income Tax (Law No. 67/NA, 2019))_
+- **Foreign Withholding Tax (FWHT) on foreign contractors — a separate regime, and a final tax** — A foreign supplier without a Lao presence is not taxed on profit but on **deemed profit by activity**, and the FWHT bundles **profit tax and VAT** into one deduction. The deemed-profit tax element runs **1.4%** (agricultural manufacturing), **2%** (industrial production), **3%** (commerce and services) and **6%** (electricity and mineral supply), with **10% VAT** added on services. It is the **final** tax on the foreign supplier — there is no return and no refund of it — so the rate has to be right in the contract, not corrected later  _(Law on Income Tax (Law No. 67/NA, 2019))_
 
 > **The three heads this guide used to name were the first three rows of the
-> source it cites.** PwC's Lao PDR withholding page carries six domestic rows and
+> source it cites.** the secondary summary's Lao PDR withholding page carries six domestic rows and
 > the FWHT deemed-profit table; the guide reproduced dividends, interest and
 > royalties and stopped. A Lao payer engaging a foreign consultant, leasing an
 > asset, or booking a performer would have found nothing here — and for a foreign
 > contractor the FWHT is a final tax, so getting it wrong is not recoverable.
-- **Annual profit tax return deadline** — By 20 January of the year following the tax year. Confirmed: the return and the financial statements have different dates, 20 January and 31 March, and the two filings draw on the same accounts  _(Tax Administration Law (Lao PDR); PwC Worldwide Tax Summaries, Lao PDR corporate tax administration)_
+- **Annual profit tax return deadline** — By 20 January of the year following the tax year. Confirmed: the return and the financial statements have different dates, 20 January and 31 March, and the two filings draw on the same accounts  _(Tax Administration Law (Lao PDR))_
 - **Annual financial statement filing** — By 31 March following a 31 December year-end  _(Accounting Law (Lao PDR) — https://news.bloombergtax.com/daily-tax-report-international/laos-tax-agency-issues-notice-on-2025-financial-statement-filing-deadline-for-enterprise-account-holders)_
-- **Tax base** — Domestic companies taxed on worldwide income; foreign companies on Lao-source income  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
+- **Tax base** — Domestic companies taxed on worldwide income; foreign companies on Lao-source income  _(Law on Income Tax (Law No. 67/NA, 2019))_
 
 <!-- openaccountants-cta-block -->
 

@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Botswana (t
 jurisdiction: BW
 category: payroll
 tax_year: 2026
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,15 +24,15 @@ Employers operate PAYE — withholding income tax from employee remuneration usi
 
 Botswana has no general mandatory state social-security or national pension contribution. There is no statutory employer/employee social-security payroll levy beyond PAYE.
 
-- **Mandatory social security** — None — no general statutory social-security or national pension contribution for employees or employers  _([PwC Worldwide Tax Summaries — Botswana](https://taxsummaries.pwc.com/botswana/individual/other-taxes))_
-- **Occupational pensions** — Workplace pension/provident funds are voluntary/employer-arranged and regulated, not a universal state scheme (approx — confirm)  _([Retirement Funds Act](https://taxsummaries.pwc.com/botswana/individual/other-taxes))_
+- **Mandatory social security** — None — no general statutory social-security or national pension contribution for employees or employers  _(a secondary summary (link removed))_
+- **Occupational pensions** — Workplace pension/provident funds are voluntary/employer-arranged and regulated, not a universal state scheme (approx — confirm)  _(Retirement Funds Act, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ## Vocational Training Levy
 
 A separate employer/turnover levy funds vocational training; it is not a payroll deduction but is a standing employer obligation.
 
-- **Vocational Training Levy — up to BWP 2bn turnover** — 0.2% of annual turnover (turnover up to BWP 2 billion)  _([Vocational Training Act / Value Added Tax Act administration](https://taxsummaries.pwc.com/botswana/corporate/other-taxes))_
-- **Vocational Training Levy — above BWP 2bn turnover** — 0.05% on turnover above BWP 2 billion  _([Vocational Training Act / Value Added Tax Act administration](https://taxsummaries.pwc.com/botswana/corporate/other-taxes))_
+- **Vocational Training Levy — up to BWP 2bn turnover** — 0.2% of annual turnover (turnover up to BWP 2 billion)  _(Vocational Training Act / Value Added Tax Act administration, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Vocational Training Levy — above BWP 2bn turnover** — 0.05% on turnover above BWP 2 billion  _(Vocational Training Act / Value Added Tax Act administration, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ## Employer obligations and deadlines
 

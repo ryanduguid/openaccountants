@@ -5,8 +5,8 @@ jurisdiction: KY
 category: payroll
 tax_year: 2025
 tax_year_notes: "Statutory text read here is the National Pensions Act (2024 Revision), revised as at 31 December 2023; the National Pensions (General) Regulations (2018 Revision); and the Health Insurance Act (2021 Revision), revised as at 31 December 2020. Later amendments and commencement orders have not been exhaustively checked."
-version: 0.1
-last_updated: 2026-09-10
+version: 0.2
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,11 +17,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## 1. There is no income tax, and therefore no payroll tax
 
 - **No PAYE / payroll income tax withholding**: there is no income tax, so
-  nothing is withheld from wages  _(PwC Worldwide Tax Summaries: Cayman Islands (Individual): https://taxsummaries.pwc.com/cayman-islands/individual/taxes-on-personal-income)_
+  nothing is withheld from wages  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **No state social-security contribution**: there is no government
   social-security or national-insurance payroll tax. The two mandatory employer
   obligations below are **private** contracts the law compels: a pension plan and
-  a health insurance contract  _(PwC Worldwide Tax Summaries: Cayman Islands (Individual: Other taxes): https://taxsummaries.pwc.com/cayman-islands/individual/other-taxes)_
+  a health insurance contract  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ## 2. Pensions: National Pensions Act (2024 Revision)
 

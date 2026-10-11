@@ -1,10 +1,10 @@
 ---
 name: belarus-tax-optimization
 description: Use this skill whenever asked about reducing tax in Belarus, tax planning, or legal strategies to minimise tax for an individual entrepreneur or small company in Belarus. Trigger on phrases like "reduce tax Belarus", "individual entrepreneur Belarus", "IP vs LLC", "simplified tax Belarus", "self-employed Belarus", "HTP", "High-Tech Park", "save tax Belarus", "tax planning Belarus". This skill covers the (now-restricted) individual-entrepreneur regimes, the self-employed scheme, the HTP/IT regime, the 2025 dividend/capital-gains changes, and the major IP-to-LLC transition red line. ALWAYS read this skill before advising on any Belarusian tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: BY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Belarus Tax Optimization
 
-## Belarus Tax Optimization Skill v0.1
+## Belarus Tax Optimization Skill v0.2
 
-**Tier 2 — research-verified. Sources: MNS (Ministry of Taxes and Duties), PwC, Allford/Chandrawat. Figures must agree with `belarus-income-tax.md` / `belarus-social-contributions.md`. NOT yet signed off by a Belarusian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed. NOTE: Belarus is TIGHTENING its small-business regimes — this playbook is as much about compliance as savings.**
+**Tier 2 — research-verified. Sources: MNS (Ministry of Taxes and Duties), Allford/Chandrawat. Figures must agree with `belarus-income-tax.md` / `belarus-social-contributions.md`. NOT yet signed off by a Belarusian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed. NOTE: Belarus is TIGHTENING its small-business regimes — this playbook is as much about compliance as savings.**
 
 ## Section 1 -- Quick Reference
 

@@ -1,10 +1,10 @@
 ---
 name: kenya-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Kenya VAT return (VAT-3), classify transactions for Kenyan VAT purposes, or advise on VAT registration and filing in Kenya. Trigger on phrases like "Kenya VAT", "KRA VAT", "VAT-3 Kenya", "input tax Kenya", "output tax Kenya", "Kenya Revenue Authority VAT", or any Kenya VAT request. ALWAYS read this skill before touching any Kenya VAT work.
-version: 2.1
+version: 2.2
 jurisdiction: KE
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | PIN | Personal Identification Number — tax registration |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Kenyan CPA(K) or tax practitioner |
-| Skill version | 2.1 |
+| Skill version | 2.2 |
 
 ### Key VAT-3 return fields
 
@@ -279,7 +279,7 @@ DHL courier. 16% VAT. Gross Ksh 5,800. Net = Ksh 5,000 + Ksh 800 input tax. DHL 
 
 ### 5.1 Standard rate 16%
 
-- **Standard rate** — 16% of the taxable value of taxable supplies, imported taxable goods and imported taxable services (s. 5(2)(b)); 8% on the petroleum products listed in s. 5(2A)  _(Value Added Tax Act, 2013 (Cap. 476), as at 1 July 2026 on Kenya Law, s. 5(2)(b) — https://new.kenyalaw.org/akn/ke/act/2013/35/eng@2026-07-01 ; https://taxsummaries.pwc.com/kenya/corporate/other-taxes)_
+- **Standard rate** — 16% of the taxable value of taxable supplies, imported taxable goods and imported taxable services (s. 5(2)(b)); 8% on the petroleum products listed in s. 5(2A)  _(Value Added Tax Act, 2013 (Cap. 476), as at 1 July 2026 on Kenya Law, s. 5(2)(b) — https://new.kenyalaw.org/akn/ke/act/2013/35/eng@2026-07-01)_
 
 ### 5.2 Zero rate
 
