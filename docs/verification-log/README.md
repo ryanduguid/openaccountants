@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-12 | [Source evidence: PDF omissions and document identity](2026-10-12-source-evidence-limits.md) |
 | 2026-10-11 | [Jersey: Class 2 contribution branches and startup reconciliation](2026-10-11-jersey-class2.md) |
 | 2026-10-11 | [Jersey: ordinary pension-holder contribution deduction](2026-10-11-jersey-pension-deduction.md) |
 | 2026-10-11 | [Jersey: first sourced tax-topic pack](2026-10-11-jersey-core-pack.md) |
