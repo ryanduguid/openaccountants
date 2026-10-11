@@ -5,8 +5,8 @@ jurisdiction: NI
 category: formation
 tax_year: 2025
 tax_year_notes: "The Código de Comercio dates from 1916 and the Digesto Jurídico Nicaragüense records it as Vigente. It is old law: later legislation — investment, banking and sector statutes — may qualify the founder-eligibility and capital provisions in §1, and a reviewer should check for those before relying on them."
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -94,7 +94,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Commercial registry fee** — 1% of registered capital, capped at approx. C$30,000 (about USD 1,200) NIO (approx — confirm)  _(Arancel del Registro Público (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
 - **Incorporation timeline** — Approximately 4–6 weeks (approx — confirm)  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
 - **Foreign ownership** — 100% foreign ownership of a Nicaraguan S.A. is permitted; a local legal representative is required. **Read this against art. 205 in §1**: the Code makes a founder who is neither a national nor a foreigner *domiciled* in Nicaragua a ground for the judge to refuse registration. Ownership after formation and eligibility to be a founder are different questions, and the second is unresolved here  _(Código de Comercio de Nicaragua (https://www.bizlatinhub.com/company-formation-incorporation-in-nicaragua-a-six-step-guide/))_
-- **Core annual compliance** — Annual IR return, monthly IVA and IR-withholding returns, monthly INSS/INATEC filings, municipal sales tax (1% monthly) and the annual municipal registration tax (2%)  _(Ley de Concertación Tributaria (Law 822) / Plan de Arbitrios Municipal (https://taxsummaries.pwc.com/nicaragua/corporate/other-taxes))_
+- **Core annual compliance** — Annual IR return, monthly IVA and IR-withholding returns, monthly INSS/INATEC filings, municipal sales tax (1% monthly) and the annual municipal registration tax (2%)  _(Ley de Concertación Tributaria (Law 822) / Plan de Arbitrios Municipal, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 <!-- openaccountants-cta-block -->
 

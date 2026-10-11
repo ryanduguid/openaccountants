@@ -1,10 +1,10 @@
 ---
 name: luxembourg-social-contributions
 description: Use this skill whenever asked about Luxembourg social security contributions (cotisations sociales) for employees, employers, or the self-employed (independants). Trigger on phrases like "how much social security in Luxembourg", "CCSS contributions", "Luxembourg payroll deductions", "pension contribution Luxembourg 2026", "assurance dependance", "dependency insurance", "Mutualite des employeurs", "accident insurance Luxembourg", "CNS health contribution", "CNAP pension", "social parameters 2026", "contribution ceiling 5x SSM", "declaration d'entree", "decompte CCSS", or any question about Luxembourg social-security obligations for a payroll, employer registration, or self-employed client. Also trigger when classifying bank statement transactions that relate to CCSS debits, social-security direct debits, or government contribution payments from BCEE, BGL BNP Paribas, Banque de Luxembourg, Spuerkeess, or other Luxembourg banks. This skill covers the 2026 contribution rates (including the pension reform of 18 Dec 2025), employee/employer/self-employed splits, the SSM floor and 5x-SSM ceiling, the dependency abatement, registration and wage-declaration forms, payment deadlines, penalties, and bank statement classification patterns. Personal income tax (PIT) is administered separately by the ACD and is documented here only for context. ALWAYS read this skill before touching any Luxembourg social-contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: LU
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Luxembourg Social Security Contributions (Cotisations Sociales)
 
-## Luxembourg Social Security Contributions (Cotisations Sociales) Skill v0.1
+## Luxembourg Social Security Contributions (Cotisations Sociales) Skill v0.2
 
-**Tier 2 — research-verified.** Figures are corroborated from multiple authoritative sources (CCSS/IGSS social-parameter notices, FEDIL, PwC Worldwide Tax Summaries, CLEISS, Orbitax, Securex, salary.lu) and the Ministry of Health and Social Security pension-reform page. Several primary CCSS/IGSS/MDE/AAA rate-notice pages returned HTTP 403 on direct fetch, so the exact official "avis aux employeurs" rate-notice values should be confirmed on the official PDF before filing. Where a figure is uncertain or period-dependent it is marked **[RESEARCH GAP — reviewer to confirm]**.
+**Tier 2 — research-verified.** Figures are corroborated from multiple authoritative sources (CCSS/IGSS social-parameter notices, FEDIL, a secondary practitioner summary, CLEISS, Orbitax, Securex, salary.lu) and the Ministry of Health and Social Security pension-reform page. Several primary CCSS/IGSS/MDE/AAA rate-notice pages returned HTTP 403 on direct fetch, so the exact official "avis aux employeurs" rate-notice values should be confirmed on the official PDF before filing. Where a figure is uncertain or period-dependent it is marked **[RESEARCH GAP — reviewer to confirm]**.
 
 ## Section 1 -- Quick reference
 
@@ -29,15 +29,15 @@ Read this whole section before computing or classifying anything.
 | --- | --- |
 | Country | Luxembourg (Grand Duchy of Luxembourg) |
 | Primary legislation | Code de la securite sociale (CSS); long-term care under CSS Book V |
-| 2026 change | Loi du 18 decembre 2025 portant reforme de l'assurance pension (Bill 8634), in force 1 Jan 2026: pension contribution raised from 8.00% to 8.50% per party (taxsummaries.pwc.com / m3s.gouvernement.lu) |
+| 2026 change | Loi du 18 decembre 2025 portant reforme de l'assurance pension (Bill 8634), in force 1 Jan 2026: pension contribution raised from 8.00% to 8.50% per party (m3s.gouvernement.lu) |
 | Collection body | Centre commun de la securite sociale (CCSS) -- single collector for all branches; https://ccss.public.lu (CCSS) |
 | Oversight | Inspection generale de la securite sociale (IGSS) |
 | Branch funds | CNS (health), CNAP (pension), AAA (accident), MDE (employer mutual) |
-| Personal income tax authority | Administration des contributions directes (ACD) -- separate; PIT not in the SSC base (PwC) |
+| Personal income tax authority | Administration des contributions directes (ACD) -- separate; PIT not in the SSC base (secondary summary) |
 | Currency | EUR only |
-| Pension rate (each side), 2026 | 8.50% (was 8.00% in 2025) -- fedil.lu / taxsummaries.pwc.com |
+| Pension rate (each side), 2026 | 8.50% (was 8.00% in 2025) -- fedil.lu |
 | Health rate on ordinary cash salary (each side) | 3.05% (2.80% in-kind + 0.25% cash surcharge) -- fedil.lu / cleiss.fr |
-| Dependency (long-term care) | 1.40%, employee only, no ceiling -- taxsummaries.pwc.com |
+| Dependency (long-term care) | 1.40%, employee only, no ceiling -- secondary summary |
 | Family benefits | 1.70%, employer only, **PUBLIC-sector employers ONLY** (private sector 0%, state-funded) -- cleiss.fr / fedil.lu |
 | Occupational health | 0.14%, employer only -- fedil.lu |
 | Accident insurance | 0.65% base (2026, was 0.70% in 2025) x bonus-malus factor, employer only -- orbitax.com / fedil.lu |
@@ -49,7 +49,7 @@ Read this whole section before computing or classifying anything.
 | Validated by | Pending -- requires sign-off by a Luxembourg payroll/tax professional |
 | Validation date | Pending |
 
-**Branch overview (2026)**  _(cleiss.fr; fedil.lu; taxsummaries.pwc.com; pixie.lu)_
+**Branch overview (2026)**  _(cleiss.fr; fedil.lu; pixie.lu)_
 
 | Branch (fund) | Employee | Employer | Total | Ceiling applies? |
 | --- | --- | --- | --- | --- |
@@ -62,7 +62,7 @@ Read this whole section before computing or classifying anything.
 | Accident (AAA) | 0% | 0.65% x factor | 0.65% x factor | Yes (5x SSM) |
 | Mutualite des employeurs (MDE) | 0% | approx 0.23%-2.66% | approx 0.23%-2.66% | Yes (5x SSM) |
 
-*Sources: cleiss.fr; fedil.lu; taxsummaries.pwc.com; pixie.lu. The State separately funds an additional 8.50% pension share (m3s.gouvernement.lu); it is not withheld from pay. Family benefits (1.70%) are levied only on PUBLIC-sector employers; in the private sector they are state-funded and the employer pays 0% (cleiss.fr / fedil.lu).*
+*Sources: cleiss.fr; fedil.lu; pixie.lu. The State separately funds an additional 8.50% pension share (m3s.gouvernement.lu); it is not withheld from pay. Family benefits (1.70%) are levied only on PUBLIC-sector employers; in the private sector they are state-funded and the employer pays 0% (cleiss.fr / fedil.lu).*
 
 Health in-kind 2.80 + 2.80 = 5.60 ✓. Cash surcharge 0.25 + 0.25 = 0.50 ✓. Pension 8.50 + 8.50 = 17.00 ✓. Each total row equals the exact sum of its employee and employer columns (family benefits total is 1.70% for public-sector employers and 0% for private-sector employers).
 
@@ -168,8 +168,8 @@ Six bank statement / payroll classifications for a hypothetical Luxembourg-resid
 **Reasoning:**
 Gross EUR 5,000 is below the ceiling of EUR 13,518.68 in force at 1 Jan 2026 (fedil.lu), so the full gross is the base for capped branches.
 - Health 3.05% = 5,000.00 x 0.0305 = EUR 152.50 (fedil.lu)
-- Pension 8.50% = 5,000.00 x 0.085 = EUR 425.00 (fedil.lu / taxsummaries.pwc.com)
-- Dependency 1.40% on (5,000.00 - 675.94 abatement) = 4,324.06 x 0.014 = EUR 60.54 (taxsummaries.pwc.com)
+- Pension 8.50% = 5,000.00 x 0.085 = EUR 425.00 (fedil.lu)
+- Dependency 1.40% on (5,000.00 - 675.94 abatement) = 4,324.06 x 0.014 = EUR 60.54 (secondary summary)
 
 Total employee SSC = 152.50 + 425.00 + 60.54 = **EUR 638.04**. Net of SSC (before PIT) = 5,000.00 - 638.04 = **EUR 4,361.96**. The credit line reconciles to the cent (PIT is withheld separately by the ACD and is not modelled here).
 
@@ -183,7 +183,7 @@ Total employee SSC = 152.50 + 425.00 + 60.54 = **EUR 638.04**. Net of SSC (befor
 **Reasoning:**
 For the EUR 5,000 employee above, the employer share (private-sector employer, accident factor 1.0, MDE Class 1 assumed):
 - Health 3.05% = EUR 152.50 (fedil.lu)
-- Pension 8.50% = EUR 425.00 (fedil.lu / taxsummaries.pwc.com)
+- Pension 8.50% = EUR 425.00 (fedil.lu)
 - Occupational health 0.14% = 5,000 x 0.0014 = EUR 7.00 (fedil.lu)
 - Accident 0.65% x 1.0 = 5,000 x 0.0065 = EUR 32.50 (orbitax.com / fedil.lu)
 - MDE 0.23% (2026 Class 1 assumed) = 5,000 x 0.0023 = EUR 11.50 (pixie.lu) **[RESEARCH GAP — reviewer to confirm the exact 2026 per-class MDE rate against the official MDE notice]**
@@ -201,8 +201,8 @@ Employer share = 152.50 + 425.00 + 7.00 + 32.50 + 11.50 = EUR 628.50. The CCSS d
 **Reasoning:**
 Gross EUR 15,000 exceeds the ceiling EUR 13,518.68 in force at 1 Jan 2026, so capped branches use the ceiling; dependency uses uncapped income.
 - Health 3.05% on 13,518.68 = EUR 412.32 (fedil.lu)
-- Pension 8.50% on 13,518.68 = EUR 1,149.09 (fedil.lu / taxsummaries.pwc.com)
-- Dependency 1.40% on (15,000.00 - 675.94) = 14,324.06 x 0.014 = EUR 200.54 -- **no ceiling** (taxsummaries.pwc.com)
+- Pension 8.50% on 13,518.68 = EUR 1,149.09 (fedil.lu)
+- Dependency 1.40% on (15,000.00 - 675.94) = 14,324.06 x 0.014 = EUR 200.54 -- **no ceiling** (secondary summary)
 
 Total employee SSC = 412.32 + 1,149.09 + 200.54 = **EUR 1,761.95**. Net of SSC = 15,000.00 - 1,761.95 = **EUR 13,238.05**. Reconciles to the cent. Note the dependency base (14,324.06) exceeds the contribution ceiling because dependency has no ceiling.
 
@@ -214,7 +214,7 @@ Total employee SSC = 412.32 + 1,149.09 + 200.54 = **EUR 1,761.95**. Net of SSC =
 `10.02.2026 ; ADMINISTRATION DES CONTRIBUTIONS ; DEBIT ; RETENUE IMPOT JANVIER ; -2,100.00 ; EUR`
 
 **Reasoning:**
-Matches "ADMINISTRATION DES CONTRIBUTIONS" (pattern 3.3). This is the withheld wage tax (retenue d'impot sur traitements) remitted to the ACD, plus the employment-fund solidarity surcharge -- NOT a social contribution. Do not classify as SSC. Income tax sits outside the social-security base (taxsummaries.pwc.com).
+Matches "ADMINISTRATION DES CONTRIBUTIONS" (pattern 3.3). This is the withheld wage tax (retenue d'impot sur traitements) remitted to the ACD, plus the employment-fund solidarity surcharge -- NOT a social contribution. Do not classify as SSC. Income tax sits outside the social-security base (secondary summary).
 
 **Classification:** EXCLUDE from VAT. Income-tax remittance, NOT social security.
 
@@ -227,7 +227,7 @@ Matches "ADMINISTRATION DES CONTRIBUTIONS" (pattern 3.3). This is the withheld w
 A first-year self-employed person is provisionally based on the SSM (cleiss.fr). The self-employed pay BOTH shares. On the SSM EUR 2,703.74/month (in force 1 Jan 2026, fedil.lu):
 - Pension 17.00% (8.50% + 8.50%) = 2,703.74 x 0.17 = EUR 459.64 (cleiss.fr / fedil.lu)
 - Health 6.10% (in-kind 5.60% + cash 0.50%, both shares) = 2,703.74 x 0.061 = EUR 164.93 (cleiss.fr) **[RESEARCH GAP — whether the 0.50% cash surcharge applies to the independant depends on benefit entitlement; reviewer to confirm]**
-- Dependency 1.40% on (2,703.74 - 675.94) = 2,027.80 x 0.014 = EUR 28.39 (taxsummaries.pwc.com)
+- Dependency 1.40% on (2,703.74 - 675.94) = 2,027.80 x 0.014 = EUR 28.39 (secondary summary)
 - Accident 0.65% x 1.0 = 2,703.74 x 0.0065 = EUR 17.57 (orbitax.com / cleiss.fr)
 
 Monthly total = 459.64 + 164.93 + 28.39 + 17.57 = **EUR 670.53**. The State adds a further 8.50% to the self-employed pension (cleiss.fr); that is not debited from the contributor. Reconcile against the CCSS provisional assessment.
@@ -242,8 +242,8 @@ Monthly total = 459.64 + 164.93 + 28.39 + 17.57 = **EUR 670.53**. The State adds
 **Reasoning:**
 A non-periodic bonus is treated as benefits/non-periodic remuneration: the 0.25% cash-benefit surcharge does NOT apply, so health is 2.80% (not 3.05%) on this component (cleiss.fr). Assume the year-to-date base is below the ceiling. (Note: from 1 June 2026 the index-992.24 parameters apply; this December 2026 example still uses the post-1-June ceiling of EUR 13,856.65 for the cap test, but the EUR 3,000 bonus is below either ceiling.)
 - Health 2.80% = 3,000.00 x 0.028 = EUR 84.00
-- Pension 8.50% = 3,000.00 x 0.085 = EUR 255.00 (fedil.lu / taxsummaries.pwc.com)
-- Dependency 1.40% = 3,000.00 x 0.014 = EUR 42.00, subject to the abatement note below (taxsummaries.pwc.com)
+- Pension 8.50% = 3,000.00 x 0.085 = EUR 255.00 (fedil.lu)
+- Dependency 1.40% = 3,000.00 x 0.014 = EUR 42.00, subject to the abatement note below (secondary summary)
 
 Employee SSC on the bonus (health + pension) = 84.00 + 255.00 = **EUR 339.00**, plus dependency of up to EUR 42.00. **[RESEARCH GAP — reviewer to confirm whether the monthly dependency abatement (EUR 692.83 from 1 June 2026) is consumed once per month across all components; if already used on regular salary it is not applied again here.]**
 
@@ -255,7 +255,7 @@ These rules apply when the pay period, gross remuneration, and remuneration type
 
 ### Rule 1 -- Contribution formula (employee, ordinary cash salary)
 
-- **employee_SSC formula** — employee_SSC = health_3.05% x min(gross, ceiling) + pension_8.50% x min(gross, ceiling) + dependency_1.40% x max(0, gross - 675.94)   // dependency has NO ceiling Health 3.05% = 2.80% in-kind + 0.25% cash surcharge (fedil.lu); pension 8.50% (fedil.lu / taxsummaries.pwc.com); dependency 1.40% with the EUR 675.94/month abatement and no ceiling (taxsummaries.pwc.com).  _(fedil.lu / taxsummaries.pwc.com)_
+- **employee_SSC formula** — employee_SSC = health_3.05% x min(gross, ceiling) + pension_8.50% x min(gross, ceiling) + dependency_1.40% x max(0, gross - 675.94)   // dependency has NO ceiling Health 3.05% = 2.80% in-kind + 0.25% cash surcharge (fedil.lu); pension 8.50% (fedil.lu); dependency 1.40% with the EUR 675.94/month abatement and no ceiling (secondary summary).  _(fedil.lu)_
 
 ### Rule 2 -- Contribution formula (employer)
 
@@ -263,7 +263,7 @@ These rules apply when the pay period, gross remuneration, and remuneration type
 
 ### Rule 3 -- The pension rate is 8.50% each side in 2026 (was 8.00% in 2025)
 
-- **Pension rate 2026** — Combined employee + employer = 17.00% in 2026 (was 16.00% in 2025), plus an 8.50% State share (total 25.50%, was 24.00%). Effective 1 Jan 2026 under the loi du 18 decembre 2025 portant reforme de l'assurance pension (Bill 8634), scheduled to hold through 2032.  _(taxsummaries.pwc.com / m3s.gouvernement.lu / orbitax.com)_
+- **Pension rate 2026** — Combined employee + employer = 17.00% in 2026 (was 16.00% in 2025), plus an 8.50% State share (total 25.50%, was 24.00%). Effective 1 Jan 2026 under the loi du 18 decembre 2025 portant reforme de l'assurance pension (Bill 8634), scheduled to hold through 2032.  _(m3s.gouvernement.lu / orbitax.com)_
 
 ### Rule 4 -- Health is 3.05% on cash salary, 2.80% on benefits/bonuses
 
@@ -271,7 +271,7 @@ These rules apply when the pay period, gross remuneration, and remuneration type
 
 ### Rule 5 -- Dependency insurance: 1.40%, employee only, no ceiling, with abatement
 
-- **Dependency insurance rule** — Levied on professional income (and, for residents, certain net portfolio income/capital gains) reduced by EUR 675.94/month (= 1/4 of the SSM; the official notice rounds 2,703.74 / 4 to EUR 675.93 -- a 1-cent difference; reconcile to the value on the prevailing CCSS notice). No employer share and NO upper ceiling. The abatement rises with each SSM indexation.  _(taxsummaries.pwc.com)_
+- **Dependency insurance rule** — Levied on professional income (and, for residents, certain net portfolio income/capital gains) reduced by EUR 675.94/month (= 1/4 of the SSM; the official notice rounds 2,703.74 / 4 to EUR 675.93 -- a 1-cent difference; reconcile to the value on the prevailing CCSS notice). No employer share and NO upper ceiling. The abatement rises with each SSM indexation.  _(secondary summary)_
 
 ### Rule 6 -- The 5x-SSM ceiling caps all branches except dependency
 
@@ -325,7 +325,7 @@ These rules apply when the pay period, gross remuneration, and remuneration type
 
 ### Rule 13 -- Personal income tax is separate from SSC
 
-- **PIT separation rule** — PIT is administered by the ACD (progressive 0%-42% over 23 brackets, plus a 7%/9% employment-fund solidarity surcharge); it is not part of the social-security contribution base. Do not mix PIT into the contribution computation.  _(taxsummaries.pwc.com)_
+- **PIT separation rule** — PIT is administered by the ACD (progressive 0%-42% over 23 brackets, plus a 7%/9% employment-fund solidarity surcharge); it is not part of the social-security contribution base. Do not mix PIT into the contribution computation.  _(secondary summary)_
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -359,7 +359,7 @@ When data is ambiguous or circumstances are unclear, flag these for reviewer con
 
 **Trigger:** Resident client with portfolio income or capital gains.
 
-**Issue:** For residents the dependency base can include certain net portfolio income and capital gains, not just professional income (taxsummaries.pwc.com). This is outside ordinary payroll.
+**Issue:** For residents the dependency base can include certain net portfolio income and capital gains, not just professional income (secondary summary). This is outside ordinary payroll.
 
 **Action:** Flag for reviewer; the dependency base may exceed wages.
 
@@ -481,14 +481,14 @@ If the client provides only a bank statement and no payroll detail:
 
 placeholder
 
-**Branch rate table (2026, with 2025 comparatives)**  _(cleiss.fr / fedil.lu / taxsummaries.pwc.com / orbitax.com / pixie.lu)_
+**Branch rate table (2026, with 2025 comparatives)**  _(cleiss.fr / fedil.lu / orbitax.com / pixie.lu)_
 
 | Branch | 2026 employee | 2026 employer | 2025 employee | 2025 employer | Source |
 | --- | --- | --- | --- | --- | --- |
 | Health -- in-kind | 2.80% | 2.80% | 2.80% | 2.80% | cleiss.fr |
 | Health -- cash surcharge | 0.25% | 0.25% | 0.25% | 0.25% | fedil.lu |
-| Pension | 8.50% | 8.50% | 8.00% | 8.00% | fedil.lu / taxsummaries.pwc.com |
-| Dependency | 1.40% | 0% | 1.40% | 0% | taxsummaries.pwc.com |
+| Pension | 8.50% | 8.50% | 8.00% | 8.00% | fedil.lu |
+| Dependency | 1.40% | 0% | 1.40% | 0% | secondary summary |
 | Family benefits (public sector only) | 0% | 1.70% (public) / 0% (private) | 0% | 1.70% (public) / 0% (private) | cleiss.fr / fedil.lu |
 | Occupational health | 0% | 0.14% | 0% | 0.14% | fedil.lu |
 | Accident (base, pre-factor) | 0% | 0.65% | 0% | 0.70% | orbitax.com / fedil.lu |
@@ -496,7 +496,7 @@ placeholder
 
 ### Thresholds (with provenance)
 
-**Thresholds (with provenance)**  _(fedil.lu / igss.gouvernement.lu / salary.lu / taxsummaries.pwc.com / orbitax.com)_
+**Thresholds (with provenance)**  _(fedil.lu / igss.gouvernement.lu / salary.lu / orbitax.com)_
 
 | Item | Value | Source |
 | --- | --- | --- |
@@ -506,7 +506,7 @@ placeholder
 | SSM qualified (+20%), in force 1 Jan 2026 | EUR 3,244.48/month | fedil.lu |
 | SSM unqualified, from 1 June 2026 | EUR 2,771.33/month | salary.lu |
 | SSM qualified (+20%), from 1 June 2026 | EUR 3,325.59/month | salary.lu |
-| Dependency abatement (in force 1 Jan 2026) | EUR 675.94/month (1/4 SSM; official notice rounds to EUR 675.93); recompute per period | fedil.lu / taxsummaries.pwc.com |
+| Dependency abatement (in force 1 Jan 2026) | EUR 675.94/month (1/4 SSM; official notice rounds to EUR 675.93); recompute per period | fedil.lu |
 | 2025 baseline (1 Jan 2025) | SSM EUR 2,637.79/month, ceiling EUR 13,188.96/month (index 944.43) | orbitax.com |
 
 Arithmetic check: 5 x 2,703.74 = 13,518.70 (the official ceiling EUR 13,518.68 differs by rounding at the index; use the cited official figure). 5 x 2,771.33 = 13,856.65 ✓. Abatement 2,703.74 / 4 = 675.935 ≈ 675.94 (official notice rounds to 675.93). From 1 June 2026: 2,771.33 / 4 = 692.83.

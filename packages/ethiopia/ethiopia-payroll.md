@@ -1,10 +1,10 @@
 ---
 name: ethiopia-payroll
 description: Use this skill whenever asked about Ethiopia payroll processing for employed persons. Trigger on phrases like "Ethiopia payroll", "Ethiopian PAYE", "employment income tax Ethiopia", "Schedule A tax Ethiopia", "pension contribution Ethiopia", "POESSA", "social security Ethiopia", "Form 17 Ethiopia", "net salary Ethiopia", "ETB payroll", "gross to net Ethiopia", "withholding tax Ethiopia", "salary calculation Ethiopia", "Proclamation 1395/2025", "employer pension Ethiopia 11%", or any question about computing employee pay, employment income tax withholding, or pension/social-security contributions for Ethiopia-based employees. This skill covers Schedule A PAYE withholding (post-7-July-2025 brackets), private-organisation pension contributions (employee 7% / employer 11%), filing obligations, and remittance deadlines. ALWAYS read this skill before processing any Ethiopia payroll.
-version: 0.2
+version: 0.3
 jurisdiction: ET
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,15 +13,15 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Ethiopia Payroll Skill v0.2 (Tier 2 -- Research-Verified)
+# Ethiopia Payroll Skill v0.3 (Tier 2 -- Research-Verified)
 
-## Ethiopia Payroll Skill v0.2 (Tier 2 -- Research-Verified)
+## Ethiopia Payroll Skill v0.3 (Tier 2 -- Research-Verified)
 
-> **Tier 2 status:** Figures below are research-verified against PwC Worldwide Tax Summaries and the Income Tax (Amendment) Proclamation No. 1395/2025 (effective 7 July 2025). Items marked **[RESEARCH GAP -- reviewer to confirm]** could not be confirmed from a primary authoritative source and MUST be checked by a licensed Ethiopian accountant before reliance.
+> **Tier 2 status:** Figures below are research-verified against a secondary practitioner summary and the Income Tax (Amendment) Proclamation No. 1395/2025 (effective 7 July 2025). Items marked **[RESEARCH GAP -- reviewer to confirm]** could not be confirmed from a primary authoritative source and MUST be checked by a licensed Ethiopian accountant before reliance.
 
 ## Section 1 -- Quick Reference
 
-**Section 1 -- Quick Reference**  _(PwC Worldwide Tax Summaries -- Ethiopia (reviewed 18 Dec 2025), Tax administration and Significant developments pages.)_
+**Section 1 -- Quick Reference**  _(secondary summary, Ethiopia (reviewed 18 Dec 2025), Tax administration and Significant developments pages.)_
 
 | Field | Value |
 | --- | --- |
@@ -35,9 +35,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Income Tax Proclamation as amended by Proclamation No. 1395/2025 (eff. 7 July 2025); Federal Tax Administration Proclamation No. 983/2016; Private Organisation Employees' Pension Proclamation |
 | Monthly declaration form | Form 17 (monthly salary / withholding declaration) |
 | Validated by | Pending -- requires sign-off by a licensed Ethiopian accountant |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
-Source for legislation and authorities: PwC Worldwide Tax Summaries -- Ethiopia (reviewed 18 Dec 2025), Tax administration and Significant developments pages.
+Source for legislation and authorities: a secondary practitioner summary -- Ethiopia (reviewed 18 Dec 2025), Tax administration and Significant developments pages.
 
 ## Section 2 -- Employment Income Tax (PAYE / Schedule "A")
 
@@ -45,7 +45,7 @@ The employer withholds employment income tax monthly under Schedule "A". Employe
 
 ### Monthly tax brackets (effective 7 July 2025, FY 2025/26)
 
-**Monthly tax brackets (effective 7 July 2025, FY 2025/26)**  _(PwC Worldwide Tax Summaries -- Ethiopia, Taxes on personal income (reviewed 18 Dec 2025); TaxDev (IFS) "Ethiopia's revised income tax explained"; Afriwise (Proc. No. 1395/2025, effective 7 July 2025).)_
+**Monthly tax brackets (effective 7 July 2025, FY 2025/26)**  _(a secondary practitioner summary -- Ethiopia, Taxes on personal income (reviewed 18 Dec 2025); TaxDev (IFS) "Ethiopia's revised income tax explained"; Afriwise (Proc. No. 1395/2025, effective 7 July 2025).)_
 
 | Monthly taxable salary (ETB) | Marginal rate | Quick-deduction constant (ETB) |
 | --- | --- | --- |
@@ -60,24 +60,24 @@ The employer withholds employment income tax monthly under Schedule "A". Employe
 
 ### Key facts and 2025 reform changes
 
-- Tax-free threshold **raised from ETB 600 to ETB 2,000/month** (PwC; TaxDev).
-- Brackets reduced from **seven to six**; the **old 10% lowest taxable band was removed** -- the lowest taxable rate is now **15%**. (Some secondary summaries still quote "10%--35%"; that is the pre-reform schedule and is outdated. The 15% lowest rate is the current PwC table.)
-- Top rate **35%** unchanged but now begins above **ETB 14,000/month** (PwC).
-- Residents are taxed on worldwide income; non-residents on Ethiopian-source income; the **same Schedule A rates apply to both** (PwC, Taxes on personal income).
-- No published per-bracket personal relief/allowance for employment income beyond the ETB 2,000 exempt band -- tax is computed bracket-by-bracket. **[RESEARCH GAP -- the official annual-equivalent bracket table is not published by PwC; only monthly is confirmed.]**
+- Tax-free threshold **raised from ETB 600 to ETB 2,000/month** (secondary summary; TaxDev).
+- Brackets reduced from **seven to six**; the **old 10% lowest taxable band was removed** -- the lowest taxable rate is now **15%**. (Some secondary summaries still quote "10%--35%"; that is the pre-reform schedule and is outdated. The 15% lowest rate is the current the secondary summary table.)
+- Top rate **35%** unchanged but now begins above **ETB 14,000/month** (secondary summary).
+- Residents are taxed on worldwide income; non-residents on Ethiopian-source income; the **same Schedule A rates apply to both** (secondary summary, Taxes on personal income).
+- No published per-bracket personal relief/allowance for employment income beyond the ETB 2,000 exempt band -- tax is computed bracket-by-bracket. **[RESEARCH GAP -- the official annual-equivalent bracket table is not published by the secondary summary; only monthly is confirmed.]**
 
 ### Computation method (per pay run)
 
-- **PAYE computation formula** — taxable_salary  = gross taxable employment income for the month (cash salary + taxable allowances/benefits) PAYE            = taxable_salary x marginal_rate - quick_deduction_constant (apply the row whose range contains taxable_salary)  _(Section 2, PwC Worldwide Tax Summaries -- Ethiopia)_
+- **PAYE computation formula** — taxable_salary  = gross taxable employment income for the month (cash salary + taxable allowances/benefits) PAYE            = taxable_salary x marginal_rate - quick_deduction_constant (apply the row whose range contains taxable_salary)  _(Section 2, a secondary practitioner summary -- Ethiopia)_
 - **PAYE not cumulative** — PAYE is not cumulative across the year (unlike Malta's FSS) -- each month is computed standalone on that month's taxable salary.  _(Section 2)_
 
 ## Section 3 -- Pension / Social Security Contributions
 
-**Scheme:** Private Organisation Employees' Social Security, administered by **POESSA** (Private Organisation Employees Social Security Agency). A parallel scheme covers government employees. The contribution base is **basic salary** (not gross; excludes allowances/overtime), per PwC.
+**Scheme:** Private Organisation Employees' Social Security, administered by **POESSA** (Private Organisation Employees Social Security Agency). A parallel scheme covers government employees. The contribution base is **basic salary** (not gross; excludes allowances/overtime), per the secondary summary.
 
 ### Contribution rates
 
-**Contribution rates**  _(PwC Worldwide Tax Summaries -- Ethiopia, Other taxes (employee 7%, employer 11%, base = basic salary, no ceiling stated).)_
+**Contribution rates**  _(a secondary practitioner summary -- Ethiopia, Other taxes (employee 7%, employer 11%, base = basic salary, no ceiling stated).)_
 
 | Party | Rate | Base |
 | --- | --- | --- |
@@ -85,19 +85,19 @@ The employer withholds employment income tax monthly under Schedule "A". Employe
 | Employer | 11% | Basic salary |
 | **Combined total** | **18%** | Basic salary |
 
-- **Self-check combined pension rate** — employee 7% + employer 11% = 18% combined. Confirmed.  _(PwC Worldwide Tax Summaries -- Ethiopia, Other taxes)_
+- **Self-check combined pension rate** — employee 7% + employer 11% = 18% combined. Confirmed.  _(secondary summary, Ethiopia, Other taxes)_
 
 ### Coverage and mechanics
 
-- Mandatory for **Ethiopian citizens**; optional for foreign nationals of Ethiopian origin; **not available to other foreign nationals / expats** (PwC).
+- Mandatory for **Ethiopian citizens**; optional for foreign nationals of Ethiopian origin; **not available to other foreign nationals / expats** (secondary summary).
 - The **employer remits both portions** (employee 7% withheld + employer 11%).
 - Funds old-age pension, survivors', and work-injury / invalidity benefits.
 
 ### Contribution ceiling
 
-- **No ceiling per PwC** — PwC (primary source) states there is NO ceiling on the contribution base.  _(PwC Worldwide Tax Summaries -- Ethiopia)_
+- **No ceiling per the secondary summary** — the secondary summary (primary source) states there is NO ceiling on the contribution base.  _(secondary summary, Ethiopia)_
 
-Several secondary payroll guides (e.g. Multiplier, Playroll) cite a **maximum insurable earning of ETB 15,000/month** (which would cap combined contributions at ETB 2,700/month). This **could not be confirmed from a primary authoritative source** (the ISSA country-profile PDF returned HTTP 403). **[RESEARCH GAP -- reviewer to confirm whether a POESSA directive imposes an ETB 15,000/month insurable-earnings ceiling. Default below applies NO ceiling, per PwC.]**
+Several secondary payroll guides (e.g. Multiplier, Playroll) cite a **maximum insurable earning of ETB 15,000/month** (which would cap combined contributions at ETB 2,700/month). This **could not be confirmed from a primary authoritative source** (the ISSA country-profile PDF returned HTTP 403). **[RESEARCH GAP -- reviewer to confirm whether a POESSA directive imposes an ETB 15,000/month insurable-earnings ceiling. Default below applies NO ceiling, per the secondary summary.]**
 
 ## Section 4 -- Conservative Defaults
 
@@ -107,11 +107,11 @@ Several secondary payroll guides (e.g. Multiplier, Playroll) cite a **maximum in
 | --- | --- | --- |
 | Residency / source | Treat as **resident**, taxed on the stated employment income | Same Schedule A rates apply either way; no rate difference |
 | Pension eligibility | Treat employee as an **Ethiopian citizen** (pension applies) unless told otherwise | Pension is mandatory for citizens; assuming it applies is the conservative (higher-cost) stance |
-| Pension base | Use **basic salary only**; if only "gross" is given, **ask** before assuming the whole amount is basic | Contributions on too-large a base over-deduct; PwC base = basic salary |
-| Pension ceiling | Apply **no ceiling** (PwC) | Primary source says no ceiling; do not silently cap at 15,000 |
+| Pension base | Use **basic salary only**; if only "gross" is given, **ask** before assuming the whole amount is basic | Contributions on too-large a base over-deduct; the secondary summary base = basic salary |
+| Pension ceiling | Apply **no ceiling** (secondary summary) | Primary source says no ceiling; do not silently cap at 15,000 |
 | Taxable vs non-taxable allowances | Treat all stated allowances as **taxable** unless a specific exemption is provided | Avoids understating PAYE |
 | Pay frequency | Assume **monthly** | Standard Ethiopian practice |
-| PAYE remittance date | Use **end of the following month** (PwC) and FLAG the 8th-day discrepancy | See Section 8 |
+| PAYE remittance date | Use **end of the following month** (secondary summary) and FLAG the 8th-day discrepancy | See Section 8 |
 
 Never present any computed figure as definitive -- always label it estimated and direct to a licensed Ethiopian accountant.
 
@@ -197,12 +197,12 @@ Note: pension is on basic salary (10,000), NOT on the 2,000 allowance.
 - Basic salary = gross taxable = **ETB 30,000/month**.
 - PAYE: over 14,000 -> 30,000 x 35% - 2,050 = 10,500 - 2,050 = **ETB 8,450**.
   - Bracket cross-check: cumulative tax at 14,000 = 2,850; plus (30,000-14,000)x35% = 5,600; total = **8,450**. Reconciles.
-- Employee pension (no ceiling, PwC): 30,000 x 7% = **ETB 2,100**.
+- Employee pension (no ceiling, the secondary summary): 30,000 x 7% = **ETB 2,100**.
 - Net pay = 30,000 - 8,450 - 2,100 = **ETB 19,450**.
 - Employer pension: 30,000 x 11% = **ETB 3,300**.
 - Employer total cost = 30,000 + 3,300 = **ETB 33,300**.
 
-**[RESEARCH GAP]** If a confirmed ETB 15,000 insurable-earnings ceiling existed, employee pension would cap at 15,000 x 7% = 1,050 and employer at 15,000 x 11% = 1,650 (combined 2,700). This skill does **not** apply that cap by default (PwC says no ceiling).
+**[RESEARCH GAP]** If a confirmed ETB 15,000 insurable-earnings ceiling existed, employee pension would cap at 15,000 x 7% = 1,050 and employer at 15,000 x 11% = 1,650 (combined 2,700). This skill does **not** apply that cap by default (secondary summary, says no ceiling).
 
 ### Example 5 -- Boundary at exactly ETB 7,000 (band edge)
 
@@ -215,24 +215,24 @@ Note: pension is on basic salary (10,000), NOT on the 2,000 allowance.
 
 ## Section 8 -- Filing and Remittance Obligations
 
-**Section 8 -- Filing and Remittance Obligations**  _(PwC Worldwide Tax Summaries -- Ethiopia, Tax administration; Rivermate -- Employment taxes in Ethiopia (Form 17).)_
+**Section 8 -- Filing and Remittance Obligations**  _(secondary summary, Ethiopia, Tax administration; Rivermate -- Employment taxes in Ethiopia (Form 17).)_
 
 | Item | Detail | Deadline |
 | --- | --- | --- |
 | Monthly declaration (Form 17) | Gross salaries, employer + employee pension, income tax withheld, net paid | Monthly |
-| PAYE remittance to Ministry of Revenue | Withheld employment income tax | **End of the month following** the month income was earned (PwC) |
+| PAYE remittance to Ministry of Revenue | Withheld employment income tax | **End of the month following** the month income was earned (secondary summary) |
 | Pension remittance to POESSA | Combined 18% (7% employee + 11% employer) | **Within 30 days** of deduction |
 | Personal annual return | **Not required** for employees with only employment income -- employer withholding is final | N/A |
 
-**[RESEARCH GAP -- remittance-day discrepancy]:** PwC states PAYE is due by **the end of the following month**. Several secondary guides cite the **8th day** (or last day) of the following month. This skill defaults to **end of the following month** (PwC) but the reviewer must confirm the exact statutory day against the Federal Tax Administration Proclamation No. 983/2016.
+**[RESEARCH GAP -- remittance-day discrepancy]:** the secondary summary states PAYE is due by **the end of the following month**. Several secondary guides cite the **8th day** (or last day) of the following month. This skill defaults to **end of the following month** (secondary summary) but the reviewer must confirm the exact statutory day against the Federal Tax Administration Proclamation No. 983/2016.
 
 **Calendar note:** Ethiopia uses the Ethiopian calendar (~7--8 day lag from Gregorian); confirm the effective Gregorian due date when scheduling payments.
 
-Source: PwC Worldwide Tax Summaries -- Ethiopia, Tax administration; Rivermate -- Employment taxes in Ethiopia (Form 17).
+Source: a secondary practitioner summary -- Ethiopia, Tax administration; Rivermate -- Employment taxes in Ethiopia (Form 17).
 
 ## Section 9 -- Employer Registration
 
-- Employers -- including **foreign companies employing staff in Ethiopia even without a permanent establishment** -- must register with the Ministry of Revenue as an employer to withhold and remit PAYE (Rivermate; PwC).
+- Employers -- including **foreign companies employing staff in Ethiopia even without a permanent establishment** -- must register with the Ministry of Revenue as an employer to withhold and remit PAYE (Rivermate; secondary summary).
 - **No published de-minimis revenue/headcount threshold** for PAYE -- the obligation arises on employing staff. **[RESEARCH GAP -- no authoritative threshold located.]**
 
 ## Section 10 -- Penalties
@@ -247,12 +247,12 @@ Governed by the **Federal Tax Administration Proclamation No. 983/2016** (still 
 | Art. 105 | Late payment of tax | Medium-level penalty |
 | Art. 109 | Understatement of tax | Low-level penalty |
 
-- **Cash-transaction penalty (Proc. 1395/2025)** — 2x amount paid multiplier (cash payments over ETB 50,000 made outside electronic/cheque channels)  _(PwC, Significant developments)_
-- **Statute of limitations** — 5 years years (from the filing date)  _(PwC)_
+- **Cash-transaction penalty (Proc. 1395/2025)** — 2x amount paid multiplier (cash payments over ETB 50,000 made outside electronic/cheque channels)  _(secondary summary, Significant developments)_
+- **Statute of limitations** — 5 years years (from the filing date)  _(secondary summary)_
 
-**[RESEARCH GAP -- exact penalty amounts]:** The specific ETB-per-month late-filing figures, late-payment percentages, and interest rates under Articles 104/105 could not be extracted from a primary source (the Proc. 983/2016 PDF was unparseable; PwC does not state the rates). Reviewer must read the gazetted text of Arts. 104/105/110.
+**[RESEARCH GAP -- exact penalty amounts]:** The specific ETB-per-month late-filing figures, late-payment percentages, and interest rates under Articles 104/105 could not be extracted from a primary source (the Proc. 983/2016 PDF was unparseable; the secondary summary does not state the rates). Reviewer must read the gazetted text of Arts. 104/105/110.
 
-Source: PwC -- Significant developments; Proclamation 983/2016 (gazetted text, not machine-readable via fetch).
+Source: the secondary summary -- Significant developments; Proclamation 983/2016 (gazetted text, not machine-readable via fetch).
 
 ## Section 11 -- Minimum Wage
 
@@ -264,7 +264,7 @@ Source: RemotePeople -- Minimum wage Ethiopia; WageIndicator -- Ethiopia; Capita
 
 ## Section 12 -- Tier 1 Rules (deterministic -- always apply)
 
-- **Tier 1 rules list** — 1. Apply the **post-7-July-2025** Schedule A brackets (lowest taxable rate 15%, top 35% above ETB 14,000). NEVER use the pre-reform 10% lowest band. 2. PAYE is computed **per month, standalone** -- not cumulative across the year. 3. Pension is **employee 7% / employer 11%** on **basic salary only** (exclude allowances/overtime). 4. The **employer remits both** the 7% and 11% pension portions (combined 18%). 5. Net pay = gross taxable salary - PAYE - employee pension (7% of basic). 6. Apply **no pension ceiling** by default (PwC); only apply a ceiling if the reviewer confirms one. 7. All amounts in **ETB**. 8. Employees with only employment income do **not** file a personal return.
+- **Tier 1 rules list** — 1. Apply the **post-7-July-2025** Schedule A brackets (lowest taxable rate 15%, top 35% above ETB 14,000). NEVER use the pre-reform 10% lowest band. 2. PAYE is computed **per month, standalone** -- not cumulative across the year. 3. Pension is **employee 7% / employer 11%** on **basic salary only** (exclude allowances/overtime). 4. The **employer remits both** the 7% and 11% pension portions (combined 18%). 5. Net pay = gross taxable salary - PAYE - employee pension (7% of basic). 6. Apply **no pension ceiling** by default (secondary summary); only apply a ceiling if the reviewer confirms one. 7. All amounts in **ETB**. 8. Employees with only employment income do **not** file a personal return.
 
 ## Section 13 -- Tier 2 Catalogue (reviewer judgement required)
 
@@ -329,25 +329,25 @@ Note: pension formulas reference **basic salary (B3)**, not gross taxable (B5).
 
 | Item | Value | Source |
 | --- | --- | --- |
-| PAYE brackets (monthly) | 0% / 15% / 20% / 25% / 30% / 35% | PwC; TaxDev; Afriwise |
-| Tax-free threshold | ETB 2,000/month | PwC; TaxDev |
-| Top rate threshold | Over ETB 14,000/month | PwC |
-| Employee pension | 7% of basic salary | PwC, Other taxes |
-| Employer pension | 11% of basic salary | PwC, Other taxes |
-| Combined pension | 18% of basic salary | PwC (7%+11%) |
-| Pension ceiling | None (default) | PwC |
-| PAYE remittance | End of following month | PwC, Tax administration |
+| PAYE brackets (monthly) | 0% / 15% / 20% / 25% / 30% / 35% | secondary summary; TaxDev; Afriwise |
+| Tax-free threshold | ETB 2,000/month | secondary summary; TaxDev |
+| Top rate threshold | Over ETB 14,000/month | secondary summary |
+| Employee pension | 7% of basic salary | secondary summary, Other taxes |
+| Employer pension | 11% of basic salary | secondary summary, Other taxes |
+| Combined pension | 18% of basic salary | secondary summary (7%+11%) |
+| Pension ceiling | None (default) | secondary summary |
+| PAYE remittance | End of following month | secondary summary, Tax administration |
 | Pension remittance | Within 30 days of deduction | Secondary guides **[RESEARCH GAP]** |
-| Dividends WHT | 15% | PwC, Significant developments |
-| Interest WHT | 10% | PwC |
-| Royalties WHT | 10% | PwC |
-| Cash-transaction penalty | 2x amount paid (cash > ETB 50,000) | PwC, Significant developments |
-| Statute of limitations | 5 years from filing | PwC |
+| Dividends WHT | 15% | secondary summary, Significant developments |
+| Interest WHT | 10% | secondary summary |
+| Royalties WHT | 10% | secondary summary |
+| Cash-transaction penalty | 2x amount paid (cash > ETB 50,000) | secondary summary, Significant developments |
+| Statute of limitations | 5 years from filing | secondary summary |
 | Minimum wage (private) | None | RemotePeople; WageIndicator |
 | Effective date of reform | 7 July 2025 | Afriwise (Proc. 1395/2025) |
 
 Primary sources:
-- PwC Worldwide Tax Summaries -- Ethiopia: Taxes on personal income; Other taxes; Tax administration; Significant developments (reviewed 18 Dec 2025).
+- Secondary practitioner summary (link removed) -- Ethiopia: Taxes on personal income; Other taxes; Tax administration; Significant developments (reviewed 18 Dec 2025).
 - TaxDev (IFS) -- "Ethiopia's revised income tax explained".
 - Afriwise -- Update on Income Tax (Amendment) Proclamation No. 1395/2025.
 - Federal Tax Administration Proclamation No. 983/2016 (penalties).
@@ -369,7 +369,7 @@ Each test recomputes end-to-end. PAYE per Section 2; pension per Section 3 (no c
 
 ## PROHIBITIONS
 
-- **Prohibitions list** — - NEVER use the pre-reform 10% lowest band -- the lowest taxable rate is 15% (effective 7 July 2025). - NEVER compute pension on gross/allowances -- use **basic salary only**. - NEVER omit the employer's 11% pension portion -- the employer remits both 7% and 11%. - NEVER silently apply an ETB 15,000 pension ceiling -- it is unconfirmed; PwC says no ceiling. - NEVER treat PAYE as cumulative across the year -- it is computed standalone each month. - NEVER deduct pension for a non-Ethiopian expat without confirming eligibility. - NEVER present the quick-deduction constants as statutory -- they are derived. - NEVER invent exact penalty amounts or the annual bracket table -- mark as research gaps. - NEVER state a single remittance day as certain -- flag the end-of-month vs 8th discrepancy. - NEVER present payroll computations as definitive -- always label as estimated and direct to a licensed Ethiopian accountant.
+- **Prohibitions list** — - NEVER use the pre-reform 10% lowest band -- the lowest taxable rate is 15% (effective 7 July 2025). - NEVER compute pension on gross/allowances -- use **basic salary only**. - NEVER omit the employer's 11% pension portion -- the employer remits both 7% and 11%. - NEVER silently apply an ETB 15,000 pension ceiling -- it is unconfirmed; the secondary summary says no ceiling. - NEVER treat PAYE as cumulative across the year -- it is computed standalone each month. - NEVER deduct pension for a non-Ethiopian expat without confirming eligibility. - NEVER present the quick-deduction constants as statutory -- they are derived. - NEVER invent exact penalty amounts or the annual bracket table -- mark as research gaps. - NEVER state a single remittance day as certain -- flag the end-of-month vs 8th discrepancy. - NEVER present payroll computations as definitive -- always label as estimated and direct to a licensed Ethiopian accountant.
 
 ## Disclaimer
 

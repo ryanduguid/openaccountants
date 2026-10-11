@@ -1,10 +1,10 @@
 ---
 name: senegal-social-contributions
 description: Use this skill whenever asked about Senegal social security / social insurance contributions and employer payroll taxes for employees, directors, or expatriate staff. Trigger on phrases like "how much IPRES do I pay", "Senegal social security", "CSS contribution", "IPM health insurance", "CFCE payroll tax", "Senegal payroll deductions", "IPRES cadre scheme", "retenue IRPP", "cotisation sociale Sénégal", "Senegal employer charges", or any question about Senegalese payroll contribution obligations. Also trigger when classifying bank statement transactions that relate to IPRES, CSS, IPM, CFCE, or DGID/Trésor Public payroll debits from CBAO, SGBS, Ecobank, BICIS, or other Senegalese banks. Also trigger when preparing the monthly PAYE (retenue à la source) and the annual recapitulative payroll returns. This skill covers IPRES (general + cadre), CSS (family allowances + work injury), IPM health insurance, CFCE employer payroll tax, the IRPP progressive scale, minimum PIT (MPIT), contribution ceilings, payment/filing schedule, penalties, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Senegal payroll or social-contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: SN
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,11 +15,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Senegal Social Security & Payroll Contributions
 
-## Senegal Social Security & Payroll Contributions Skill v0.1
+## Senegal Social Security & Payroll Contributions Skill v0.2
 
 > **Currency:** West African CFA franc — **XOF** (written CFA / FCFA). All figures below are in XOF.
 > **Senegal levies personal income tax (IRPP).** The "no income tax" special case does **not** apply.
-> **Primary authority throughout:** PwC Worldwide Tax Summaries — Senegal (last reviewed 31 March 2026, reflecting 2025/2026 law). Secondary HR/payroll sources are flagged inline and used only where PwC is silent.
+> **Primary authority throughout:** a secondary practitioner summary — Senegal (last reviewed 31 March 2026, reflecting 2025/2026 law). Secondary HR/payroll sources are flagged inline and used only where the secondary summary is silent.
 
 ## Section 1 -- Quick reference
 
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Health institution** — IPM — Institution de Prévoyance Maladie (employer-level fund)
 - **Employer payroll tax** — CFCE — Contribution Forfaitaire à la Charge de l'Employeur (3%)
 - **Tax authority** — DGID — Direction Générale des Impôts et des Domaines; collection via Trésor Public
-- **Rate publisher (research basis)** — PwC Worldwide Tax Summaries — Senegal (reviewed 31 Mar 2026)
+- **Rate publisher (research basis)** — a secondary practitioner summary — Senegal (reviewed 31 Mar 2026)
 - **PAYE frequency** — Monthly withholding (retenue à la source) on gross remuneration
 - **Currency** — XOF (CFA franc) only
 - **Validated by** — Pending — requires sign-off by a Senegalese chartered accountant (expert-comptable / OHADA)
@@ -51,22 +51,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Health institution | IPM — Institution de Prévoyance Maladie (employer-level fund) |
 | Employer payroll tax | CFCE — Contribution Forfaitaire à la Charge de l'Employeur (3%) |
 | Tax authority | DGID — Direction Générale des Impôts et des Domaines; collection via Trésor Public |
-| Rate publisher (research basis) | PwC Worldwide Tax Summaries — Senegal (reviewed 31 Mar 2026) |
+| Rate publisher (research basis) | secondary summary, Senegal (reviewed 31 Mar 2026) |
 | PAYE frequency | Monthly withholding (retenue à la source) on gross remuneration |
 | Currency | XOF (CFA franc) only |
 | Validated by | Pending — requires sign-off by a Senegalese chartered accountant (expert-comptable / OHADA) |
 | Validation date | Pending |
 
-**Contribution overview (employer + employee shares)**  _(PwC (other-taxes / corporate), reviewed 31 Mar 2026)_
+**Contribution overview (employer + employee shares)**  _(secondary summary (other-taxes / corporate), reviewed 31 Mar 2026)_
 
 | Scheme | Employer | Employee | Total | Monthly base ceiling | Source |
 | --- | --- | --- | --- | --- | --- |
-| IPRES — General (Régime Général) | 8.4% | 5.6% | 14% | 432,000 | PwC (other-taxes), reviewed 31 Mar 2026 |
-| IPRES — Cadre (Régime Complémentaire des Cadres) | 3.6% | 2.4% | 6% | 1,296,000 | PwC (other-taxes), reviewed 31 Mar 2026 |
-| CSS — Family allowances (prestations familiales) | 7% | 0% | 7% | 63,000 | PwC (corporate/other-taxes), reviewed 31 Mar 2026 |
-| CSS — Work injury (accidents du travail) | 1% / 3% / 5% | 0% | 1–5% | 63,000 | PwC (corporate/other-taxes), reviewed 31 Mar 2026 |
-| IPM — Health insurance | 3% | 3% | 6% | 60,000–250,000 | PwC (corporate/other-taxes), reviewed 31 Mar 2026 — see gap note |
-| CFCE — Employer payroll tax | 3% | 0% | 3% | No ceiling (full payroll) | PwC (corporate/other-taxes), reviewed 31 Mar 2026 |
+| IPRES — General (Régime Général) | 8.4% | 5.6% | 14% | 432,000 | secondary summary (other-taxes), reviewed 31 Mar 2026 |
+| IPRES — Cadre (Régime Complémentaire des Cadres) | 3.6% | 2.4% | 6% | 1,296,000 | secondary summary (other-taxes), reviewed 31 Mar 2026 |
+| CSS — Family allowances (prestations familiales) | 7% | 0% | 7% | 63,000 | secondary summary (corporate/other-taxes), reviewed 31 Mar 2026 |
+| CSS — Work injury (accidents du travail) | 1% / 3% / 5% | 0% | 1–5% | 63,000 | secondary summary (corporate/other-taxes), reviewed 31 Mar 2026 |
+| IPM — Health insurance | 3% | 3% | 6% | 60,000–250,000 | secondary summary (corporate/other-taxes), reviewed 31 Mar 2026 — see gap note |
+| CFCE — Employer payroll tax | 3% | 0% | 3% | No ceiling (full payroll) | secondary summary (corporate/other-taxes), reviewed 31 Mar 2026 |
 
 > **Arithmetic check:** IPRES General 8.4 + 5.6 = 14% ✓. IPRES Cadre 3.6 + 2.4 = 6% ✓. IPM 3 + 3 = 6% ✓. CSS and CFCE are 100% employer-borne ✓.
 
@@ -95,9 +95,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **R-SN-SOC-1 -- Cadre vs non-cadre status unknown** — The IPRES complementary cadre scheme (extra 6%, employer 3.6% / employee 2.4%) applies only to executives/managers. Cannot finalise IPRES without confirming cadre status. Defaulting to non-cadre (General only) and flagging for reviewer. (Trigger: not stated whether the employee is a cadre.)
 - **R-SN-SOC-2 -- CSS work-injury rate** — The CSS accidents-du-travail rate (1%, 3%, or 5%) is set by the Caisse de Sécurité Sociale per risk category on the employer's registration. Do not assume a rate; obtain the CSS registration certificate. Defaulting to 5% conservatively and flagging. (Trigger: work-injury rate not provided.)
-- **R-SN-SOC-3 -- IPM rate/ceiling ambiguity** — [RESEARCH GAP — reviewer to confirm] PwC's individual and corporate pages describe IPM differently (2%–7.5% each vs 6% split 3%/3%) and the precise rate/ceiling depends on the specific IPM fund the employer joined. Do not present IPM as definitive — confirm against the actual IPM scheme. (Trigger: IPM computation requested.)
-- **R-SN-SOC-4 -- Family quotient / parts** — [RESEARCH GAP — reviewer to confirm] The exact family-quotient share schedule and the maximum-parts cap are not enumerated in PwC and must be confirmed against the CGI/DGID. Compute on 1 part and flag for reviewer. (Trigger: IRPP requested with dependants.)
-- **R-SN-SOC-5 -- Arrears / back-contributions** — Late social-contribution and IRPP regularisation carries 5% interest plus 0.5% per month of delay (PwC). Do not quantify arrears without the institution's statement. Escalate to a Senegalese expert-comptable. (Trigger: unpaid prior-period contributions.)
+- **R-SN-SOC-3 -- IPM rate/ceiling ambiguity** — [RESEARCH GAP — reviewer to confirm] the secondary summary's individual and corporate pages describe IPM differently (2%–7.5% each vs 6% split 3%/3%) and the precise rate/ceiling depends on the specific IPM fund the employer joined. Do not present IPM as definitive — confirm against the actual IPM scheme. (Trigger: IPM computation requested.)
+- **R-SN-SOC-4 -- Family quotient / parts** — [RESEARCH GAP — reviewer to confirm] The exact family-quotient share schedule and the maximum-parts cap are not enumerated in the secondary summary and must be confirmed against the CGI/DGID. Compute on 1 part and flag for reviewer. (Trigger: IRPP requested with dependants.)
+- **R-SN-SOC-5 -- Arrears / back-contributions** — Late social-contribution and IRPP regularisation carries 5% interest plus 0.5% per month of delay (secondary summary). Do not quantify arrears without the institution's statement. Escalate to a Senegalese expert-comptable. (Trigger: unpaid prior-period contributions.)
 
 ## Section 3 -- Payment pattern library
 
@@ -155,7 +155,7 @@ Deterministic pre-classifier for Senegalese bank statement transactions related 
 
 ## Section 4 -- Worked examples
 
-Bank statement classifications and computations for a hypothetical Dakar-based services company and its staff. All amounts XOF. PwC figures (reviewed 31 Mar 2026) underlie every rate.
+Bank statement classifications and computations for a hypothetical Dakar-based services company and its staff. All amounts XOF. The secondary summary figures (reviewed 31 Mar 2026) underlie every rate.
 
 ### Example 1 -- Non-cadre at the IPRES general ceiling (CBAO)
 
@@ -193,7 +193,7 @@ CSS base is capped at 63,000/month. Family allowances 7% × 63,000 = 4,410. Work
 `30.06.2026 ; IPM COTISATION MALADIE ; DEBIT ; JUIN ; -15,000 ; XOF`
 
 **Reasoning:**
-[RESEARCH GAP — reviewer to confirm] Using PwC corporate-page figures: IPM 6% total split 3% employer / 3% employee on a base capped at 250,000. For an employee at/above the 250,000 ceiling: 6% × 250,000 = 15,000 (employer 3% × 250,000 = 7,500; employee 3% × 250,000 = 7,500; 7,500 + 7,500 = 15,000 ✓). Matches pattern 3.3. PwC's individual page describes IPM differently (2%–7.5% each) — do not finalise without confirming the fund's actual rate.
+[RESEARCH GAP — reviewer to confirm] Using the secondary summary corporate-page figures: IPM 6% total split 3% employer / 3% employee on a base capped at 250,000. For an employee at/above the 250,000 ceiling: 6% × 250,000 = 15,000 (employer 3% × 250,000 = 7,500; employee 3% × 250,000 = 7,500; 7,500 + 7,500 = 15,000 ✓). Matches pattern 3.3. The secondary summary's individual page describes IPM differently (2%–7.5% each) — do not finalise without confirming the fund's actual rate.
 
 **Classification:** EXCLUDE — IPM health contribution. Flag IPM rate/ceiling for reviewer.
 
@@ -203,7 +203,7 @@ CSS base is capped at 63,000/month. Family allowances 7% × 63,000 = 4,410. Work
 `30.06.2026 ; CFCE CONTRIBUTION FORFAITAIRE ; DEBIT ; PAIE JUIN ; -150,000 ; XOF`
 
 **Reasoning:**
-CFCE is 3% of **total gross payroll with no ceiling** (PwC, employer-only). Monthly payroll 5,000,000 → 3% × 5,000,000 = 150,000 ✓. Matches pattern 3.4. Employer-only; never deducted from the employee.
+CFCE is 3% of **total gross payroll with no ceiling** (secondary summary, employer-only). Monthly payroll 5,000,000 → 3% × 5,000,000 = 150,000 ✓. Matches pattern 3.4. Employer-only; never deducted from the employee.
 
 **Classification:** EXCLUDE — CFCE employer payroll tax. Deductible business cost; not VAT-bearing.
 
@@ -221,7 +221,7 @@ CFCE is 3% of **total gross payroll with no ceiling** (PwC, employer-only). Mont
 
 **Input:** Annual taxable income 3,000,000; single, no dependants → 1 part (most conservative default).
 
-**Reasoning (progressive scale, PwC individual page):**
+**Reasoning (progressive scale, the secondary summary individual page):**
 - 0–630,000 @ 0% = 0
 - 630,001–1,500,000 @ 20% × 870,000 = 174,000
 - 1,500,001–3,000,000 @ 30% × 1,500,000 = 450,000
@@ -237,7 +237,7 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 1 -- IPRES General applies to all employees
 
-- **IPRES General rule** — IPRES General = 14% total (employer 8.4% / employee 5.6%) on monthly base capped at 432,000. Per-employee contribution = 14% × min(gross, 432,000).  _(PwC, reviewed 31 Mar 2026)_
+- **IPRES General rule** — IPRES General = 14% total (employer 8.4% / employee 5.6%) on monthly base capped at 432,000. Per-employee contribution = 14% × min(gross, 432,000).  _(secondary summary, reviewed 31 Mar 2026)_
 
 ### Rule 2 -- IPRES Cadre is ADDITIONAL and only for executives
 
@@ -245,21 +245,21 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 3 -- CSS is 100% employer-borne, base capped at 63,000
 
-- **CSS rule** — Family allowances = 7%. Work injury = 1%, 3%, or 5% per CSS-assigned risk category. Both on base capped at 63,000/month. Never deduct CSS from the employee.  _(PwC)_
+- **CSS rule** — Family allowances = 7%. Work injury = 1%, 3%, or 5% per CSS-assigned risk category. Both on base capped at 63,000/month. Never deduct CSS from the employee.  _(secondary summary)_
 
 ### Rule 4 -- IPM health insurance [RESEARCH GAP]
 
-- **IPM rule** — [RESEARCH GAP — reviewer to confirm] Per PwC corporate page: 6% total split 3% employer / 3% employee on base 60,000–250,000. PwC individual page gives 2%–7.5% each. Fund-specific. Do not present as definitive.
+- **IPM rule** — [RESEARCH GAP — reviewer to confirm] Per the secondary summary corporate page: 6% total split 3% employer / 3% employee on base 60,000–250,000. The secondary summary individual page gives 2%–7.5% each. Fund-specific. Do not present as definitive.
 
 ### Rule 5 -- CFCE has NO ceiling
 
-- **CFCE rule** — CFCE = 3% of total gross payroll, employer-only, no ceiling — applies to full payroll. It is an employer payroll tax, not a withholding from the employee.  _(PwC)_
+- **CFCE rule** — CFCE = 3% of total gross payroll, employer-only, no ceiling — applies to full payroll. It is an employer payroll tax, not a withholding from the employee.  _(secondary summary)_
 
 ### Rule 6 -- IRPP is progressive, applied per share (family quotient)
 
-- **IRPP progressivity rule** — Income is divided into shares (parts), tax computed per share on the scale below, then multiplied by the number of shares. Default to 1 part if parts unknown.  _(PwC)_
+- **IRPP progressivity rule** — Income is divided into shares (parts), tax computed per share on the scale below, then multiplied by the number of shares. Default to 1 part if parts unknown.  _(secondary summary)_
 
-**IRPP annual scale (PwC individual page)**  _(PwC individual page)_
+**IRPP annual scale (secondary summary, individual page)**  _(secondary summary, individual page)_
 
 | Annual taxable income (XOF) | Marginal rate | Cumulative tax at top of band |
 | --- | --- | --- |
@@ -275,9 +275,9 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 7 -- Minimum Personal Income Tax (MPIT) floor
 
-- **MPIT floor rule** — A minimum tax applies even where the scale yields less. IRPP due = max(scale tax after quotient, MPIT band amount).  _(PwC individual page)_
+- **MPIT floor rule** — A minimum tax applies even where the scale yields less. IRPP due = max(scale tax after quotient, MPIT band amount).  _(secondary summary, individual page)_
 
-**MPIT band table**  _(PwC individual page)_
+**MPIT band table**  _(secondary summary, individual page)_
 
 | Annual income (XOF) | Minimum tax (XOF) |
 | --- | --- |
@@ -290,7 +290,7 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 8 -- PAYE is monthly
 
-- **PAYE frequency rule** — Employers withhold IRPP and the employee shares of social contributions monthly on gross remuneration (including fringe benefits and bonuses) and remit to DGID/Trésor and the institutions.  _(PwC tax-administration page)_
+- **PAYE frequency rule** — Employers withhold IRPP and the employee shares of social contributions monthly on gross remuneration (including fringe benefits and bonuses) and remit to DGID/Trésor and the institutions.  _(secondary summary, tax-administration page)_
 
 ### Rule 9 -- Ceilings cap the BASE, not the contribution
 
@@ -298,7 +298,7 @@ Apply exactly as written when inputs are clear.
 
 ### Rule 10 -- Minimum wage (SMIG) for sanity-checks only
 
-- **SMIG rule** — [RESEARCH GAP — reviewer to confirm] SMIG (general, non-agricultural) = 150,000/month (hourly 303.49) as of 1 Jan 2025, per secondary HR sources (Rivermate, Playroll) — PwC does not publish SMIG. Use only as a plausibility floor; confirm against the official décret SMIG.  _(Rivermate, Playroll (secondary HR sources))_
+- **SMIG rule** — [RESEARCH GAP — reviewer to confirm] SMIG (general, non-agricultural) = 150,000/month (hourly 303.49) as of 1 Jan 2025, per secondary HR sources (Rivermate, Playroll) — the secondary summary does not publish SMIG. Use only as a plausibility floor; confirm against the official décret SMIG.  _(Rivermate, Playroll (secondary HR sources))_
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -314,19 +314,19 @@ Flag these for reviewer confirmation when data is ambiguous.
 
 ### T2-3 -- IPM fund and rate
 
-- **IPM fund and rate** — Trigger: IPM computation needed but fund unknown. [RESEARCH GAP] Issue: PwC individual vs corporate pages disagree (2–7.5% each vs 6% split 3/3); fund-specific. Action: Confirm the employer's actual IPM scheme rate/ceiling before finalising. Flag.
+- **IPM fund and rate** — Trigger: IPM computation needed but fund unknown. [RESEARCH GAP] Issue: the secondary summary individual vs corporate pages disagree (2–7.5% each vs 6% split 3/3); fund-specific. Action: Confirm the employer's actual IPM scheme rate/ceiling before finalising. Flag.
 
 ### T2-4 -- Family quotient parts and cap
 
-- **Family quotient parts and cap** — Trigger: Employee has a spouse and/or dependent children. [RESEARCH GAP] Issue: PwC confirms the quotient mechanism but not the per-situation share schedule or maximum-parts cap. Secondary sources suggest single = 1; married = 1.5–2; +0.5/child, with a statutory cap. Action: Confirm against the CGI/DGID before applying parts > 1.
+- **Family quotient parts and cap** — Trigger: Employee has a spouse and/or dependent children. [RESEARCH GAP] Issue: the secondary summary confirms the quotient mechanism but not the per-situation share schedule or maximum-parts cap. Secondary sources suggest single = 1; married = 1.5–2; +0.5/child, with a statutory cap. Action: Confirm against the CGI/DGID before applying parts > 1.
 
 ### T2-5 -- Expatriate / seconded staff
 
-- **Expatriate / seconded staff** — Trigger: Foreign national or secondee. Issue: Totalisation agreements, residence, and which schemes apply may differ; PwC general rates may not capture exemptions. Action: Flag for reviewer; confirm residence and any social-security agreement.
+- **Expatriate / seconded staff** — Trigger: Foreign national or secondee. Issue: Totalisation agreements, residence, and which schemes apply may differ; the secondary summary general rates may not capture exemptions. Action: Flag for reviewer; confirm residence and any social-security agreement.
 
 ### T2-6 -- Arrears / late regularisation
 
-- **Arrears / late regularisation** — Trigger: Unpaid prior-period IRPP or contributions. Issue: 5% interest + 0.5%/month of delay (PwC). Penalties compound. Action: Do not estimate; obtain institution statements; escalate to an expert-comptable.  _(PwC)_
+- **Arrears / late regularisation** — Trigger: Unpaid prior-period IRPP or contributions. Issue: 5% interest + 0.5%/month of delay (secondary summary). Penalties compound. Action: Do not estimate; obtain institution statements; escalate to an expert-comptable.  _(secondary summary)_
 
 ## Section 7 -- Excel working paper template
 
@@ -404,9 +404,9 @@ If only a bank statement is provided and no payroll detail:
 
 ## Section 10 -- Reference material
 
-### Contribution quick-calc at common bases (2026, PwC reviewed 31 Mar 2026)
+### Contribution quick-calc at common bases (2026, secondary summary reviewed 31 Mar 2026)
 
-**Contribution quick-calc at common bases**  _(PwC reviewed 31 Mar 2026)_
+**Contribution quick-calc at common bases**  _(secondary summary, reviewed 31 Mar 2026)_
 
 | Scheme | Base used | Employer | Employee | Total |
 | --- | --- | --- | --- | --- |
@@ -419,23 +419,23 @@ If only a bank statement is provided and no payroll detail:
 
 > **Check:** 8.4%×432,000=36,288; 5.6%×432,000=24,192; sum 60,480 ✓. 3.6%×1,296,000=46,656; 2.4%×1,296,000=31,104; sum 77,760 ✓. 7%×63,000=4,410 ✓. 3%×63,000=1,890 ✓. 3%×250,000=7,500 each, 15,000 ✓. 3%×1,000,000=30,000 ✓.
 
-### Filing, forms & deadlines (PwC tax-administration pages, reviewed 31 Mar 2026)
+### Filing, forms & deadlines (secondary summary, tax-administration pages, reviewed 31 Mar 2026)
 
-**Filing, forms & deadlines**  _(PwC tax-administration pages, reviewed 31 Mar 2026)_
+**Filing, forms & deadlines**  _(secondary summary, tax-administration pages, reviewed 31 Mar 2026)_
 
 | Obligation | Deadline | Source |
 | --- | --- | --- |
-| Monthly PAYE (IRPP + employee social shares) | Withheld and remitted monthly | PwC individual/tax-administration |
-| Individual IRPP annual return | Before 1 May of the following year (employees with only PAYE wages are exempt from filing) | PwC individual/tax-administration |
-| Annual recapitulative payroll-tax return | 31 January (for prior financial year) | PwC corporate/tax-administration |
-| Annual recapitulative return on service payments | 31 January | PwC corporate/tax-administration |
-| Annual recapitulative return on rent payments | 31 January | PwC corporate/tax-administration |
-| CIT return (context) | 30 April | PwC corporate/tax-administration |
-| CIT instalments (context) | 15 Feb, 30 Apr, 15 Jun | PwC corporate/tax-administration |
+| Monthly PAYE (IRPP + employee social shares) | Withheld and remitted monthly | secondary summary, individual/tax-administration |
+| Individual IRPP annual return | Before 1 May of the following year (employees with only PAYE wages are exempt from filing) | secondary summary, individual/tax-administration |
+| Annual recapitulative payroll-tax return | 31 January (for prior financial year) | secondary summary, corporate/tax-administration |
+| Annual recapitulative return on service payments | 31 January | secondary summary, corporate/tax-administration |
+| Annual recapitulative return on rent payments | 31 January | secondary summary, corporate/tax-administration |
+| CIT return (context) | 30 April | secondary summary, corporate/tax-administration |
+| CIT instalments (context) | 15 Feb, 30 Apr, 15 Jun | secondary summary, corporate/tax-administration |
 
-### Penalties (PwC corporate/tax-administration, reviewed 31 Mar 2026)
+### Penalties (secondary summary, corporate/tax-administration, reviewed 31 Mar 2026)
 
-**Penalties**  _(PwC corporate/tax-administration, reviewed 31 Mar 2026)_
+**Penalties**  _(secondary summary, corporate/tax-administration, reviewed 31 Mar 2026)_
 
 | Penalty | Amount/rate |
 | --- | --- |
@@ -473,7 +473,7 @@ If only a bank statement is provided and no payroll detail:
 - NEVER treat a DGID/Trésor "RAS IRPP" debit as a social contribution — it is PAYE income tax.
 - NEVER quote SMIG as authoritative — it is from secondary sources only ([RESEARCH GAP]).
 - NEVER estimate arrears/penalties without the institution's statement — escalate to an expert-comptable.
-- NEVER present any figure as definitive — label as estimated, cite PwC, and direct to a Senegalese chartered accountant.
+- NEVER present any figure as definitive — label as estimated, cite the secondary summary, and direct to a Senegalese chartered accountant.
 
 ## Disclaimer
 

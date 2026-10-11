@@ -1,10 +1,10 @@
 ---
 name: iceland-tax-optimization
 description: Use this skill whenever asked about reducing tax in Iceland, tax planning, or legal strategies to minimise tax for a self-employed person or small company in Iceland. Trigger on phrases like "reduce tax Iceland", "ehf vs self-employed", "Iceland dividends 22%", "reiknað endurgjald", "reference salary", "Iceland company tax 20%", "save tax Iceland", "tax planning Iceland". This skill covers the ehf-company-plus-dividend structure vs self-employment, the mandatory owner reference-salary rule (reiknað endurgjald), capital-income vs labour-income treatment, pension and personal reliefs, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Icelandic tax optimisation.
-version: 0.1
+version: 0.2
 jurisdiction: IS
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -14,9 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Iceland Tax Optimization
 
-## Iceland Tax Optimization Skill v0.1
+## Iceland Tax Optimization Skill v0.2
 
-**Tier 2 — research-verified. Sources: Skatturinn (Iceland Revenue), KPMG Iceland Tax Facts 2025, PwC Iceland. Figures must agree with `iceland-income-tax.md` / `iceland-social-contributions.md`. NOT yet signed off by an Icelandic tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: Skatturinn (Iceland Revenue), KPMG Iceland Tax Facts 2025, the secondary summary Iceland. Figures must agree with `iceland-income-tax.md` / `iceland-social-contributions.md`. NOT yet signed off by an Icelandic tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 

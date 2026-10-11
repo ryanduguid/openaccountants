@@ -1,10 +1,10 @@
 ---
 name: iceland-payroll
 description: Use this skill whenever asked about Iceland payroll processing for employed persons. Trigger on phrases like "Iceland payroll", "Icelandic payroll", "staðgreiðsla", "PAYE Iceland", "withholding Iceland", "tryggingagjald", "social security contribution Iceland", "persónuafsláttur", "personal tax credit Iceland", "lífeyrissjóður", "mandatory pension Iceland", "séreignarsparnaður", "supplementary pension", "launagreiðendaskrá", "employer registry Iceland", "RSK 5.02", "launamiði", "skilagreining", "net salary Iceland", "tax withholding Iceland", "employer social cost Iceland", "kjarasamningur", "minimum wage Iceland", "municipal income tax Iceland", "gross to net Iceland", "salary calculation Iceland", or any question about computing employee pay, withholding income tax (state + municipal), or social contributions for Iceland-based employees. This skill covers PAYE (staðgreiðsla) income tax withholding, the personal tax credit, employer social security contribution (tryggingagjald), mandatory occupational pension (employee 4% + employer 11.5%), supplementary private pension, no statutory minimum wage (collective-agreement minimums), and filing obligations to Skatturinn. ALWAYS read this skill before processing any Iceland payroll.
-version: 0.1
+version: 0.2
 jurisdiction: IS
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Iceland Payroll
 
-## Iceland Payroll Skill v0.1
+## Iceland Payroll Skill v0.2
 
-Tier 2 (research-verified). Core 2025 figures (tax brackets, personal tax credit, tryggingagjald) are drawn directly from Skatturinn (Iceland Revenue and Customs) key-rates and tax-bracket pages and corroborated by PwC Worldwide Tax Summaries. The state-vs-municipal split of each bracket is approximate (Skatturinn publishes only the COMBINED withholding rate); the exact late-payment surcharge on staðgreiðsla/tryggingagjald and the minimum-wage figures (which are NOT statutory) are flagged as research gaps below. An Iceland-registered accountant must confirm against the official Skatturinn rate tables and the applicable collective agreement (kjarasamningur) before sign-off.
+Tier 2 (research-verified). Core 2025 figures (tax brackets, personal tax credit, tryggingagjald) are drawn directly from Skatturinn (Iceland Revenue and Customs) key-rates and tax-bracket pages and corroborated by a secondary practitioner summary. The state-vs-municipal split of each bracket is approximate (Skatturinn publishes only the COMBINED withholding rate); the exact late-payment surcharge on staðgreiðsla/tryggingagjald and the minimum-wage figures (which are NOT statutory) are flagged as research gaps below. An Iceland-registered accountant must confirm against the official Skatturinn rate tables and the applicable collective agreement (kjarasamningur) before sign-off.
 
 ## Section 1 -- Quick Reference
 
@@ -37,7 +37,7 @@ Tier 2 (research-verified). Core 2025 figures (tax brackets, personal tax credit
 | Key legislation | Lög nr. 90/2003 um tekjuskatt (Income Tax Act); Lög nr. 45/1987 um staðgreiðslu opinberra gjalda (PAYE/withholding); Lög nr. 113/1990 um tryggingagjald (Social Security Contribution Act); Lög nr. 129/1997 um skyldutryggingu lífeyrisréttinda (Mandatory Pension Insurance Act) |
 | Filing portal | Skatturinn service portal (thjonusta.skatturinn.is) / island.is |
 | Validated by | Pending -- requires sign-off by an Iceland-registered accountant |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 This skill's PRIMARY tax year is 2025. Officially-confirmed 2026 figures (Skatturinn) are noted alongside where they differ, but DO NOT use the 2026 figures for a 2025 pay period.
 
@@ -61,7 +61,7 @@ Cumulative recomputed: 472,005 × 31.49% = 148,634.37; bracket-2 band width 1,32
 
 ### State / municipal split of each bracket (approximate)
 
-**State / municipal split of each bracket (approximate)**  _(PwC Worldwide Tax Summaries (state/municipal split))_
+**State / municipal split of each bracket (approximate)**  _(secondary summary (state/municipal split))_
 
 | Bracket | Combined | State component (approx) | Municipal component (withholding average) |
 | --- | --- | --- | --- |
@@ -69,7 +69,7 @@ Cumulative recomputed: 472,005 × 31.49% = 148,634.37; bracket-2 band width 1,32
 | 2 | 37.99% | ~23.05% | 14.94% |
 | 3 | 46.29% | ~31.35% | 14.94% |
 
-Skatturinn publishes only the COMBINED rate, so the state-component figures are APPROXIMATE. Withholding always uses the 14.94% average municipal rate; the **final assessed municipal rate ranges 12.44%–14.94% by municipality** and is trued up at the annual assessment (Skatturinn; PwC). Using the maximum municipal rate at withholding avoids under-withholding.
+Skatturinn publishes only the COMBINED rate, so the state-component figures are APPROXIMATE. Withholding always uses the 14.94% average municipal rate; the **final assessed municipal rate ranges 12.44%–14.94% by municipality** and is trued up at the annual assessment (Skatturinn; secondary summary). Using the maximum municipal rate at withholding avoids under-withholding.
 
 ### Personal tax credit (persónuafsláttur)
 
@@ -84,7 +84,7 @@ Available to residents aged 16+. The monthly figure × 12 (824,292 for 2025; 869
 
 ### PAYE Computation Method (staðgreiðsla)
 
-- **PAYE computation steps** — 1. Start from gross remuneration for the period. 2. Deduct the employee's mandatory pension contribution (4%) — it is deductible from the income-tax base (PwC). This gives the taxable base. 3. Apply the combined bracket table to the taxable base to get gross monthly income tax. 4. Subtract the monthly personal tax credit (persónuafsláttur). If gross tax < credit, income tax withheld = 0 and the unused credit carries forward within the year (or transfers to a spouse). 5. The result is the income tax withheld for the period; net pay = gross − pension − income tax.  _(PwC)_
+- **PAYE computation steps** — 1. Start from gross remuneration for the period. 2. Deduct the employee's mandatory pension contribution (4%) — it is deductible from the income-tax base (secondary summary). This gives the taxable base. 3. Apply the combined bracket table to the taxable base to get gross monthly income tax. 4. Subtract the monthly personal tax credit (persónuafsláttur). If gross tax < credit, income tax withheld = 0 and the unused credit carries forward within the year (or transfers to a spouse). 5. The result is the income tax withheld for the period; net pay = gross − pension − income tax.  _(secondary summary)_
 
 Iceland's staðgreiðsla applies the schedule to each period's pay (not a full-year cumulative projection like UK PAYE); the annual assessment (álagning) trues up state/municipal differences and any unused/over-used credit.
 
@@ -94,15 +94,15 @@ The only mandatory employee deduction besides income tax is the **mandatory occu
 
 ### Employee Contribution Rates (2025)
 
-**Employee Contribution Rates (2025)**  _(PwC Worldwide Tax Summaries — Iceland Individual: Other taxes)_
+**Employee Contribution Rates (2025)**  _(secondary summary, Iceland Individual: Other taxes)_
 
 | Contribution | Rate | Base | Floor | Ceiling | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Mandatory pension (employee) | 4% (minimum) | Total wages | none | none | Withheld by employer; **deductible** from the income-tax base (PwC) |
-| Supplementary private pension (séreignarsparnaður) -- OPTIONAL | up to 4% | Wages | none | none | Voluntary; **deductible**; employer commonly matches up to 2% under collective agreements (PwC) |
+| Mandatory pension (employee) | 4% (minimum) | Total wages | none | none | Withheld by employer; **deductible** from the income-tax base (secondary summary) |
+| Supplementary private pension (séreignarsparnaður) -- OPTIONAL | up to 4% | Wages | none | none | Voluntary; **deductible**; employer commonly matches up to 2% under collective agreements (secondary summary) |
 | **Total mandatory employee deduction (pension)** | **4%** | -- | -- | -- | Plus PAYE income tax on top |
 
-Sources: PwC Worldwide Tax Summaries — Iceland Individual: Other taxes. The 4% mandatory employee pension is the statutory minimum under Lög nr. 129/1997; collective agreements (kjarasamningar) may set a higher rate — confirm per the applicable agreement.
+Sources: a secondary practitioner summary — Iceland Individual: Other taxes. The 4% mandatory employee pension is the statutory minimum under Lög nr. 129/1997; collective agreements (kjarasamningar) may set a higher rate — confirm per the applicable agreement.
 
 > Iceland has NO employee-side social security tax. tryggingagjald (Section 4) is paid solely by the employer.
 
@@ -112,7 +112,7 @@ Employers pay (a) the social security contribution **tryggingagjald** and (b) th
 
 ### Employer Contribution Rates (2025)
 
-**Employer Contribution Rates (2025)**  _(Skatturinn "Key rates and amounts" 2025 & 2026; PwC Corporate: Other taxes; PwC Individual: Other taxes; Lög nr. 129/1997)_
+**Employer Contribution Rates (2025)**  _(Skatturinn "Key rates and amounts" 2025 & 2026; the secondary summary Corporate: Other taxes; the secondary summary Individual: Other taxes; Lög nr. 129/1997)_
 
 | Contribution | Rate | Base | Floor | Ceiling | Who |
 | --- | --- | --- | --- | --- | --- |
@@ -124,15 +124,15 @@ Arithmetic check (employer column): 6.35% + 11.5% = 17.85%.
 
 ### tryggingagjald rate variants
 
-**tryggingagjald rate variants**  _(Skatturinn 2025/2026; PwC Corporate: Other taxes)_
+**tryggingagjald rate variants**  _(Skatturinn 2025/2026; secondary summary, Corporate: Other taxes)_
 
 | Variant | Rate | Applies to | Source |
 | --- | --- | --- | --- |
-| General rate | 6.35% | All standard employment | Skatturinn 2025/2026; PwC |
-| Fishermen / seamen surcharge | +0.65% (≈7.00% total) | Gross wages of seamen | PwC Corporate: Other taxes |
-| A1 (posted EEA worker) reduced rate | 0.425% | Gross wages where worker covered under an A1 certificate in the home country | PwC Corporate: Other taxes |
+| General rate | 6.35% | All standard employment | Skatturinn 2025/2026; secondary summary |
+| Fishermen / seamen surcharge | +0.65% (≈7.00% total) | Gross wages of seamen | secondary summary, Corporate: Other taxes |
+| A1 (posted EEA worker) reduced rate | 0.425% | Gross wages where worker covered under an A1 certificate in the home country | secondary summary, Corporate: Other taxes |
 
-Several EOR/payroll-vendor blogs cite 6.85% or 6.90% for tryggingagjald — these appear stale or to aggregate sub-components. The authoritative **6.35%** general rate (Skatturinn 2025 & 2026; PwC) is used throughout this skill.
+Several EOR/payroll-vendor blogs cite 6.85% or 6.90% for tryggingagjald — these appear stale or to aggregate sub-components. The authoritative **6.35%** general rate (Skatturinn 2025 & 2026; secondary summary) is used throughout this skill.
 
 ### Combined Employer + Employee Snapshot (standard case)
 
@@ -146,7 +146,7 @@ Several EOR/payroll-vendor blogs cite 6.85% or 6.90% for tryggingagjald — thes
 
 ### Employer pension contributions taxable to the employee
 
-- **Employer pension taxable threshold** — Employer pension contributions become taxable income to the employee only where they exceed BOTH 12% of remuneration AND ISK 2,000,000 per year (PwC). Below either threshold they are tax-free to the employee.  _(PwC)_
+- **Employer pension taxable threshold** — Employer pension contributions become taxable income to the employee only where they exceed BOTH 12% of remuneration AND ISK 2,000,000 per year (secondary summary). Below either threshold they are tax-free to the employee.  _(secondary summary)_
 
 ## Section 5 -- Minimum Wage and Hiring Mechanics
 
@@ -176,20 +176,20 @@ There is no minimum employee count or wage threshold for payroll registration �
 
 ## Section 6 -- Other Taxable / Special Categories
 
-**Other Taxable / Special Categories**  _(Skatturinn 2025 / PwC / island.is)_
+**Other Taxable / Special Categories**  _(Skatturinn 2025 / the secondary summary / island.is)_
 
 | Category | Treatment | Source |
 | --- | --- | --- |
 | Capital income (interest, dividends, capital gains, rent) | Flat **22%**. ISK 300,000 per person of interest/dividend income from regulated securities is tax-free; 50% of residential rental income is tax-free (max two properties) | Skatturinn 2025 |
 | Children born 2010 or later | Annual income exceeding **ISK 180,000** taxed at a flat **6%** (no personal credit) | Skatturinn 2025 |
-| Non-resident directors'/committee members' fees | **20% state + 14.94% municipal = 34.94%** | PwC |
+| Non-resident directors'/committee members' fees | **20% state + 14.94% municipal = 34.94%** | secondary summary |
 | RÚV broadcasting fee | ISK 21,400 (2025) levied annually on individuals with income above ISK 2,474,942 — collected via the tax ASSESSMENT, **not** payroll withholding | Skatturinn / island.is |
 
 Capital income, the broadcasting fee and self-employed calculated remuneration are NOT processed through this employer-payroll skill except where they affect an employee's overall position.
 
 ## Section 7 -- Conservative Defaults
 
-- **Conservative defaults when inputs missing/ambiguous** — 1. Combined withholding rates. Use 31.49% / 37.99% / 46.29% (state + 14.94% average municipal) on monthly taxable income bands 0–472,005 / 472,006–1,325,127 / over 1,325,127 ISK. The final municipal rate varies 12.44%–14.94% by municipality; withholding ALWAYS uses 14.94% and the true-up happens at the annual assessment, so under-withholding is avoided. 2. tryggingagjald = 6.35% general rate. Confirmed by Skatturinn 2025 & 2026 and PwC. Ignore the higher 6.85%/6.90% figures from EOR blogs (likely stale/aggregated). Apply the 0.65% seamen surcharge or 0.425% A1 rate only when the engagement confirms those facts. 3. Mandatory pension = 4% employee + 11.5% employer (minimum 15.5%). Actual rate may be higher under the applicable collective agreement — confirm per kjarasamningur. 4. Pension is deductible before income tax. Deduct the 4% employee pension from gross before applying the bracket table. 5. Personal tax credit. Apply the full monthly persónuafsláttur (ISK 68,691 for 2025) to the PRIMARY employer only; carry forward of unused credit within the year is allowed. Do not over-credit across multiple employers. 6. Year-correct figures. Use 2025 brackets and credit (68,691/mo) for 2025 pay periods; use the 2026 figures (brackets at 498,122 / 1,398,450; credit 72,492/mo) only for 2026 pay periods. 7. No statutory minimum wage. Do not assume a floor; flag that minimum pay depends on the collective agreement.  _(Skatturinn 2025 & 2026; PwC)_
+- **Conservative defaults when inputs missing/ambiguous** — 1. Combined withholding rates. Use 31.49% / 37.99% / 46.29% (state + 14.94% average municipal) on monthly taxable income bands 0–472,005 / 472,006–1,325,127 / over 1,325,127 ISK. The final municipal rate varies 12.44%–14.94% by municipality; withholding ALWAYS uses 14.94% and the true-up happens at the annual assessment, so under-withholding is avoided. 2. tryggingagjald = 6.35% general rate. Confirmed by Skatturinn 2025 & 2026 and the secondary summary. Ignore the higher 6.85%/6.90% figures from EOR blogs (likely stale/aggregated). Apply the 0.65% seamen surcharge or 0.425% A1 rate only when the engagement confirms those facts. 3. Mandatory pension = 4% employee + 11.5% employer (minimum 15.5%). Actual rate may be higher under the applicable collective agreement — confirm per kjarasamningur. 4. Pension is deductible before income tax. Deduct the 4% employee pension from gross before applying the bracket table. 5. Personal tax credit. Apply the full monthly persónuafsláttur (ISK 68,691 for 2025) to the PRIMARY employer only; carry forward of unused credit within the year is allowed. Do not over-credit across multiple employers. 6. Year-correct figures. Use 2025 brackets and credit (68,691/mo) for 2025 pay periods; use the 2026 figures (brackets at 498,122 / 1,398,450; credit 72,492/mo) only for 2026 pay periods. 7. No statutory minimum wage. Do not assume a floor; flag that minimum pay depends on the collective agreement.  _(Skatturinn 2025 & 2026; secondary summary)_
 
 ### Required Inputs (refuse to finalise a payroll run without these)
 
@@ -334,7 +334,7 @@ Annual income of ISK 500,000 earned by a child born in 2012 → taxed at a flat 
 
 ## Section 11 -- Tier 1 Rules (deterministic — apply directly)
 
-- **Tier 1 Rules 1-18** — 1. Income tax is withheld monthly under staðgreiðsla, combining a state and a municipal income tax (Lög nr. 45/1987; Skatturinn). 2. 2025 combined withholding brackets (monthly taxable income): 31.49% on 0–472,005; 37.99% on 472,006–1,325,127; 46.29% above 1,325,127 ISK (Skatturinn "Tax brackets 2025"). 3. Withholding uses the average municipal rate 14.94%; the final assessed municipal rate ranges 12.44%–14.94% by municipality and is trued up at the annual assessment (Skatturinn; PwC). 4. 2025 personal tax credit (persónuafsláttur) = ISK 68,691/month (ISK 824,288/year), deducted from monthly gross tax for residents 16+; unused credit carries forward within the year and up to 100% transfers to a spouse (Skatturinn). 5. The 4% employee mandatory pension is deducted from gross BEFORE computing the income-tax base (PwC; conservative default). 6. Employer social security contribution (tryggingagjald) general rate = 6.35% of total gross remuneration, employer-only, no floor and no ceiling (Skatturinn 2025 & 2026; PwC). 7. tryggingagjald adds 0.65% for fishermen/seamen (≈7.00% total) and has a reduced 0.425% component for A1-certificated posted EEA workers (PwC). 8. Mandatory occupational pension: minimum 15.5% of wages = 4% employee (withheld, deductible) + 11.5% employer; collective agreements may set higher employer rates (Lög nr. 129/1997; PwC). 9. Optional supplementary private pension (séreignarsparnaður): employee may contribute up to 4% (deductible); employers commonly match up to 2% under collective agreements (PwC). 10. Employer pension contributions become taxable to the employee only where they exceed BOTH 12% of remuneration AND ISK 2,000,000/year (PwC). 11. Capital income (interest, dividends, gains, rent) is taxed at a flat 22%; ISK 300,000/person of interest/dividend income from regulated securities is tax-free; 50% of residential rental income is tax-free (max two properties) (Skatturinn 2025). 12. Iceland has NO statutory minimum wage; minimum pay is set by collective agreements covering ~88–90% of workers (verify the applicable kjarasamningur). 13. Employers must register on launagreiðendaskrá via form RSK 5.02 at least 8 days before the first wage payment / start of operations (Skatturinn). 14. Monthly PAYE return (skilagreining) and tryggingagjald are reported and paid by the 15th of the month following the wage month (Skatturinn; Lög nr. 45/1987). 15. Under-withholding identified at the annual assessment is collected increased by 2.5% of the difference; over-withholding is refunded (PwC Individual: Tax administration). 16. Children born 2010 or later are taxed at a flat 6% on annual income exceeding ISK 180,000, with no personal credit (Skatturinn 2025). 17. Non-resident directors'/committee members' fees are taxed at 20% state + 14.94% municipal = 34.94% (PwC). 18. The individual annual return (framtal) is due 14 March of the year following the tax year; the final assessment (álagning) is generally completed by 31 May (PwC; Skatturinn).  _(Lög nr. 45/1987; Skatturinn; PwC; Lög nr. 129/1997)_
+- **Tier 1 Rules 1-18** — 1. Income tax is withheld monthly under staðgreiðsla, combining a state and a municipal income tax (Lög nr. 45/1987; Skatturinn). 2. 2025 combined withholding brackets (monthly taxable income): 31.49% on 0–472,005; 37.99% on 472,006–1,325,127; 46.29% above 1,325,127 ISK (Skatturinn "Tax brackets 2025"). 3. Withholding uses the average municipal rate 14.94%; the final assessed municipal rate ranges 12.44%–14.94% by municipality and is trued up at the annual assessment (Skatturinn; secondary summary). 4. 2025 personal tax credit (persónuafsláttur) = ISK 68,691/month (ISK 824,288/year), deducted from monthly gross tax for residents 16+; unused credit carries forward within the year and up to 100% transfers to a spouse (Skatturinn). 5. The 4% employee mandatory pension is deducted from gross BEFORE computing the income-tax base (secondary summary; conservative default). 6. Employer social security contribution (tryggingagjald) general rate = 6.35% of total gross remuneration, employer-only, no floor and no ceiling (Skatturinn 2025 & 2026; secondary summary). 7. tryggingagjald adds 0.65% for fishermen/seamen (≈7.00% total) and has a reduced 0.425% component for A1-certificated posted EEA workers (secondary summary). 8. Mandatory occupational pension: minimum 15.5% of wages = 4% employee (withheld, deductible) + 11.5% employer; collective agreements may set higher employer rates (Lög nr. 129/1997; the secondary summary). 9. Optional supplementary private pension (séreignarsparnaður): employee may contribute up to 4% (deductible); employers commonly match up to 2% under collective agreements (secondary summary). 10. Employer pension contributions become taxable to the employee only where they exceed BOTH 12% of remuneration AND ISK 2,000,000/year (secondary summary). 11. Capital income (interest, dividends, gains, rent) is taxed at a flat 22%; ISK 300,000/person of interest/dividend income from regulated securities is tax-free; 50% of residential rental income is tax-free (max two properties) (Skatturinn 2025). 12. Iceland has NO statutory minimum wage; minimum pay is set by collective agreements covering ~88–90% of workers (verify the applicable kjarasamningur). 13. Employers must register on launagreiðendaskrá via form RSK 5.02 at least 8 days before the first wage payment / start of operations (Skatturinn). 14. Monthly PAYE return (skilagreining) and tryggingagjald are reported and paid by the 15th of the month following the wage month (Skatturinn; Lög nr. 45/1987). 15. Under-withholding identified at the annual assessment is collected increased by 2.5% of the difference; over-withholding is refunded (secondary summary, Individual: Tax administration). 16. Children born 2010 or later are taxed at a flat 6% on annual income exceeding ISK 180,000, with no personal credit (Skatturinn 2025). 17. Non-resident directors'/committee members' fees are taxed at 20% state + 14.94% municipal = 34.94% (secondary summary). 18. The individual annual return (framtal) is due 14 March of the year following the tax year; the final assessment (álagning) is generally completed by 31 May (secondary summary; Skatturinn).  _(Lög nr. 45/1987; Skatturinn; the secondary summary; Lög nr. 129/1997)_
 
 ## Section 12 -- Tier 2 Catalogue (reviewer judgement required)
 
@@ -343,7 +343,7 @@ Annual income of ISK 500,000 earned by a child born in 2012 → taxed at a flat 
 | Topic | Judgement call |
 | --- | --- |
 | Applicable collective agreement (kjarasamningur) | Which agreement/sector applies, the actual minimum wage, and any higher mandatory pension rate. **[RESEARCH GAP — reviewer to confirm]** the specific agreement. |
-| State/municipal split & municipality rate | The employee's municipality of residence sets the final municipal rate (12.44%–14.94%); the state-component split is approximate (PwC). True-up at assessment. |
+| State/municipal split & municipality rate | The employee's municipality of residence sets the final municipal rate (12.44%–14.94%); the state-component split is approximate (secondary summary). True-up at assessment. |
 | Personal-credit allocation | Allocation of the personal credit across multiple employers / spouse transfer / carry-forward within the year. |
 | Supplementary pension match | Whether the employer matches séreignarsparnaður (commonly up to 2%) and the deductibility position. |
 | Employer pension >12% / >ISK 2m test | Whether employer pension contributions cross BOTH thresholds and become taxable to the employee. |
@@ -404,7 +404,7 @@ If the engagement turns out to be a self-employed person (reiknað endurgjald / 
 
 ## Section 16 -- Filing Obligations (Forms)
 
-**Filing Obligations (Forms)**  _(Skatturinn; Lög nr. 45/1987; PwC)_
+**Filing Obligations (Forms)**  _(Skatturinn; Lög nr. 45/1987; the secondary summary)_
 
 | Form | Purpose | Deadline |
 | --- | --- | --- |
@@ -412,11 +412,11 @@ If the engagement turns out to be a self-employed person (reiknað endurgjald / 
 | **Skilagreining staðgreiðslu — monthly withholding/PAYE return** | Report gross wages, withheld income tax and personal credit used per employee; filed via the Skatturinn service portal or payroll system | By the 15th of the month following the wage month (reportable from the 1st) (Skatturinn; Lög nr. 45/1987) |
 | **Tryggingagjald — monthly return/payment** | Report and pay the employer social security contribution | Same monthly cycle — by the 15th of the following month, paid together with the withholding (Skatturinn) |
 | **Launamiði / staðgreiðsluskýrsla — annual wage statement** | Year-end employee earnings and tax-withheld reconciliation submitted to Skatturinn; feeds the pre-filled individual return | Early in the year following the income year (Skatturinn) |
-| **Framtal — individual income tax return** | Annual self-assessment by the employee | By 14 March of the year following the tax year (short extensions up to ~5 days) (PwC; Skatturinn) |
+| **Framtal — individual income tax return** | Annual self-assessment by the employee | By 14 March of the year following the tax year (short extensions up to ~5 days) (secondary summary; Skatturinn) |
 
 ### Key Thresholds
 
-**Key Thresholds**  _(Skatturinn / PwC / island.is)_
+**Key Thresholds**  _(Skatturinn / the secondary summary / island.is)_
 
 | Threshold | Value | Source |
 | --- | --- | --- |
@@ -426,19 +426,19 @@ If the engagement turns out to be a self-employed person (reiknað endurgjald / 
 | Personal tax credit (2025) | ISK 68,691/month (ISK 824,288/year) | Skatturinn "Key rates and amounts 2025" |
 | Capital income tax-free allowance | ISK 300,000/person on interest & dividends from regulated securities (2025) | Skatturinn 2025 |
 | Child flat-6% threshold | Annual income over ISK 180,000 (children born 2010 or later) | Skatturinn 2025 |
-| Excess employer-pension taxable threshold | Taxable to employee only if > 12% of remuneration AND > ISK 2,000,000/year | PwC |
+| Excess employer-pension taxable threshold | Taxable to employee only if > 12% of remuneration AND > ISK 2,000,000/year | secondary summary |
 | RÚV broadcasting-fee income threshold | Income above ISK 2,474,942 (fee ISK 21,400 for 2025) | Skatturinn / island.is |
-| VAT registration | ISK 2,000,000 turnover per 12 months (standard VAT 24% / reduced 11%) — **[RESEARCH GAP — reviewer to confirm]** (secondary source) | Skatturinn / PwC |
+| VAT registration | ISK 2,000,000 turnover per 12 months (standard VAT 24% / reduced 11%) — **[RESEARCH GAP — reviewer to confirm]** (secondary source) | Skatturinn |
 
 ### Penalties
 
-**Penalties**  _(Lög nr. 45/1987; Skatturinn; PwC Individual: Tax administration; Grant Thornton)_
+**Penalties**  _(Lög nr. 45/1987; Skatturinn; the secondary summary Individual: Tax administration; Grant Thornton)_
 
 | Penalty | Detail | Source |
 | --- | --- | --- |
 | Late payment of withholding / tryggingagjald | Late-payment surcharge (álag) plus penalty interest (dráttarvextir) accrue from the due date. **[RESEARCH GAP — reviewer to confirm]** the exact current percentage for staðgreiðsla — not confirmed from an authoritative English source in this research. | Lög nr. 45/1987; Skatturinn |
-| Year-end assessment shortfall (under-withholding) | The difference between amount withheld and final assessed tax is collected increased by **2.5%** of the difference; over-withholding is refunded. | PwC Individual: Tax administration |
-| Late / incorrect individual return | Surcharge (álag) up to 15% may be imposed on an under-reported tax base; reassessment possible for 6 prior years (2 years if returns properly filed). | PwC Individual: Tax administration |
+| Year-end assessment shortfall (under-withholding) | The difference between amount withheld and final assessed tax is collected increased by **2.5%** of the difference; over-withholding is refunded. | secondary summary, Individual: Tax administration |
+| Late / incorrect individual return | Surcharge (álag) up to 15% may be imposed on an under-reported tax base; reassessment possible for 6 prior years (2 years if returns properly filed). | secondary summary, Individual: Tax administration |
 | VAT late payment (comparator) | 1% per day surcharge up to a maximum of 10%, then penalty interest from one month after the due date. | Skatturinn / Grant Thornton (secondary) |
 
 ## Section 17 -- Interaction with Other Skills
@@ -461,43 +461,43 @@ If the engagement turns out to be a self-employed person (reiknað endurgjald / 
 
 ## Section 18 -- Reference Material
 
-**Reference Material table**  _(Skatturinn; PwC)_
+**Reference Material table**  _(Skatturinn; secondary summary)_
 
 | Item | Value | Source |
 | --- | --- | --- |
 | 2025 combined brackets | 31.49% / 37.99% / 46.29% at monthly 472,005 / 1,325,127 | Skatturinn "Tax brackets 2025" |
-| State/municipal split (approx) | ~16.55 / 23.05 / 31.35% state + 14.94% municipal (withholding average) | PwC |
-| Final municipal rate range | 12.44%–14.94% by municipality (trued up at assessment) | Skatturinn; PwC |
+| State/municipal split (approx) | ~16.55 / 23.05 / 31.35% state + 14.94% municipal (withholding average) | secondary summary |
+| Final municipal rate range | 12.44%–14.94% by municipality (trued up at assessment) | Skatturinn; secondary summary |
 | Personal tax credit 2025 | ISK 68,691/month (ISK 824,288/year) | Skatturinn "Key rates and amounts 2025" |
 | Personal tax credit 2026 | ISK 72,492/month (ISK 869,898/year) | Skatturinn "Key rates and amounts 2026" |
-| tryggingagjald general | 6.35% employer-only, no ceiling | Skatturinn 2025 & 2026; PwC |
-| tryggingagjald seamen | +0.65% (≈7.00% total) | PwC Corporate: Other taxes |
-| tryggingagjald A1 reduced | 0.425% | PwC Corporate: Other taxes |
-| Mandatory pension | 4% employee + 11.5% employer (min 15.5%) | PwC; Lög nr. 129/1997 |
-| Supplementary pension | up to 4% employee (deductible); employer match commonly up to 2% | PwC |
+| tryggingagjald general | 6.35% employer-only, no ceiling | Skatturinn 2025 & 2026; secondary summary |
+| tryggingagjald seamen | +0.65% (≈7.00% total) | secondary summary, Corporate: Other taxes |
+| tryggingagjald A1 reduced | 0.425% | secondary summary, Corporate: Other taxes |
+| Mandatory pension | 4% employee + 11.5% employer (min 15.5%) | The secondary summary; Lög nr. 129/1997 |
+| Supplementary pension | up to 4% employee (deductible); employer match commonly up to 2% | secondary summary |
 | Capital income tax | flat 22%; ISK 300,000 interest/dividend allowance; 50% rental exemption (max 2 properties) | Skatturinn 2025 |
 | Child flat rate | 6% on annual income over ISK 180,000 (born 2010+) | Skatturinn 2025 |
-| Non-resident director fee | 34.94% (20% state + 14.94% municipal) | PwC |
+| Non-resident director fee | 34.94% (20% state + 14.94% municipal) | secondary summary |
 | 2026 brackets | same 31.49% / 37.99% / 46.29% at monthly 498,122 / 1,398,450 | Skatturinn "Key rates and amounts 2026" |
 | Minimum wage | None statutory; ~ISK 425,985–454,977/month (2025) by collective agreement | Secondary (Playroll / VR) — **[RESEARCH GAP]** |
-| VAT | standard 24% / reduced 11%; registration at ISK 2,000,000 turnover | Skatturinn / PwC (secondary for threshold) |
+| VAT | standard 24% / reduced 11%; registration at ISK 2,000,000 turnover | Skatturinn / the secondary summary (secondary for threshold) |
 
 - **2025 combined brackets** — 31.49% / 37.99% / 46.29% at monthly 472,005 / 1,325,127  _(Skatturinn "Tax brackets 2025")_
-- **State/municipal split (approx)** — ~16.55 / 23.05 / 31.35% state + 14.94% municipal (withholding average)  _(PwC)_
-- **Final municipal rate range** — 12.44%–14.94% by municipality (trued up at assessment)  _(Skatturinn; PwC)_
+- **State/municipal split (approx)** — ~16.55 / 23.05 / 31.35% state + 14.94% municipal (withholding average)  _(secondary summary)_
+- **Final municipal rate range** — 12.44%–14.94% by municipality (trued up at assessment)  _(Skatturinn; secondary summary)_
 - **Personal tax credit 2025** — ISK 68,691/month (ISK 824,288/year)  _(Skatturinn "Key rates and amounts 2025")_
 - **Personal tax credit 2026** — ISK 72,492/month (ISK 869,898/year)  _(Skatturinn "Key rates and amounts 2026")_
-- **tryggingagjald general** — 6.35% employer-only, no ceiling  _(Skatturinn 2025 & 2026; PwC)_
-- **tryggingagjald seamen** — +0.65% (≈7.00% total)  _(PwC Corporate: Other taxes)_
-- **tryggingagjald A1 reduced** — 0.425%  _(PwC Corporate: Other taxes)_
-- **Mandatory pension** — 4% employee + 11.5% employer (min 15.5%)  _(PwC; Lög nr. 129/1997)_
-- **Supplementary pension** — up to 4% employee (deductible); employer match commonly up to 2%  _(PwC)_
+- **tryggingagjald general** — 6.35% employer-only, no ceiling  _(Skatturinn 2025 & 2026; secondary summary)_
+- **tryggingagjald seamen** — +0.65% (≈7.00% total)  _(secondary summary, Corporate: Other taxes)_
+- **tryggingagjald A1 reduced** — 0.425%  _(secondary summary, Corporate: Other taxes)_
+- **Mandatory pension** — 4% employee + 11.5% employer (min 15.5%)  _(the secondary summary; Lög nr. 129/1997)_
+- **Supplementary pension** — up to 4% employee (deductible); employer match commonly up to 2%  _(secondary summary)_
 - **Capital income tax** — flat 22%; ISK 300,000 interest/dividend allowance; 50% rental exemption (max 2 properties)  _(Skatturinn 2025)_
 - **Child flat rate** — 6% on annual income over ISK 180,000 (born 2010+)  _(Skatturinn 2025)_
-- **Non-resident director fee** — 34.94% (20% state + 14.94% municipal)  _(PwC)_
+- **Non-resident director fee** — 34.94% (20% state + 14.94% municipal)  _(secondary summary)_
 - **2026 brackets** — same 31.49% / 37.99% / 46.29% at monthly 498,122 / 1,398,450  _(Skatturinn "Key rates and amounts 2026")_
 - **Minimum wage** — None statutory; ~ISK 425,985–454,977/month (2025) by collective agreement  _(Secondary (Playroll / VR) — **[RESEARCH GAP]**)_
-- **VAT** — standard 24% / reduced 11%; registration at ISK 2,000,000 turnover  _(Skatturinn / PwC (secondary for threshold))_
+- **VAT** — standard 24% / reduced 11%; registration at ISK 2,000,000 turnover  _(Skatturinn / the secondary summary (secondary for threshold))_
 
 ### Sources
 
@@ -506,17 +506,17 @@ If the engagement turns out to be a self-employed person (reiknað endurgjald / 
 3. Skatturinn — Key rates and amounts 2026 — https://www.skatturinn.is/english/individuals/key-rates-and-amounts/2026/
 4. Skatturinn — Launagreiðendaskrá (employer registry / registration) — https://www.skatturinn.is/atvinnurekstur/ad-hefja-rekstur/launagreidendaskra/
 5. Skatturinn — Staðgreiðsla og reiknað endurgjald í atvinnurekstri — https://www.skatturinn.is/atvinnurekstur/stadgreidsla-og-reiknad-endurgjald/
-6. PwC Worldwide Tax Summaries — Iceland Individual: Other taxes (pension & social contributions) — https://taxsummaries.pwc.com/iceland/individual/other-taxes
-7. PwC Worldwide Tax Summaries — Iceland Corporate: Other taxes (tryggingagjald rates) — https://taxsummaries.pwc.com/iceland/corporate/other-taxes
-8. PwC Worldwide Tax Summaries — Iceland Individual: Taxes on personal income (state/municipal split) — https://taxsummaries.pwc.com/iceland/individual/taxes-on-personal-income
-9. PwC Worldwide Tax Summaries — Iceland Individual: Tax administration (deadlines, penalties) — https://taxsummaries.pwc.com/iceland/individual/tax-administration
+6. Secondary practitioner summary (link removed) — Iceland Individual: Other taxes (pension & social contributions)
+7. Secondary practitioner summary (link removed) — Iceland Corporate: Other taxes (tryggingagjald rates)
+8. Secondary practitioner summary (link removed) — Iceland Individual: Taxes on personal income (state/municipal split)
+9. Secondary practitioner summary (link removed) — Iceland Individual: Tax administration (deadlines, penalties)
 10. Ísland.is (Government of Iceland portal) — Tax on wages and pensions — https://island.is/en/taxes-individuals
 
 ### Research Caveats (read before relying on figures)
 
-- Confidence is **high** for the core 2025 payroll mechanics; brackets, personal credit and tryggingagjald are corroborated by Skatturinn AND PwC.
-- **tryggingagjald rate:** Skatturinn (2025 & 2026 key rates) and PwC both state the general employer rate is **6.35%**. Several EOR/payroll vendor blogs cite 6.85% or 6.90% — these appear stale or to aggregate sub-components; the authoritative 6.35% is used here.
-- **State-vs-municipal split** (16.55 / 23.05 / 31.35% state) is from PwC, Skatturinn publishes only the COMBINED rate, so the state-component figures are approximate and the municipal 14.94% is the withholding average (final municipal rate 12.44%–14.94% by municipality).
+- Confidence is **high** for the core 2025 payroll mechanics; brackets, personal credit and tryggingagjald are corroborated by Skatturinn AND the secondary summary.
+- **tryggingagjald rate:** Skatturinn (2025 & 2026 key rates) and the secondary summary both state the general employer rate is **6.35%**. Several EOR/payroll vendor blogs cite 6.85% or 6.90% — these appear stale or to aggregate sub-components; the authoritative 6.35% is used here.
+- **State-vs-municipal split** (16.55 / 23.05 / 31.35% state) is from the secondary summary, Skatturinn publishes only the COMBINED rate, so the state-component figures are approximate and the municipal 14.94% is the withholding average (final municipal rate 12.44%–14.94% by municipality).
 - **Minimum wage is NOT statutory.** Figures (≈ISK 425,985–454,977/month for 2025) come from secondary sources (Playroll, VR union) and must be confirmed against the specific applicable collective agreement (kjarasamningur), which varies by union/sector and updates mid-contract.
 - The exact current **late-payment surcharge** on withholding tax / tryggingagjald (álag and dráttarvextir under Lög nr. 45/1987) was not confirmed from an authoritative English source — **[RESEARCH GAP — reviewer to confirm]**. The 2.5% under-withholding add-on and the VAT 1%/day-to-10% figures are documented but the staðgreiðsla-specific surcharge needs verification.
 - The **VAT registration threshold (ISK 2,000,000)** is from secondary sources and should be confirmed against Skatturinn VAT pages if relevant.

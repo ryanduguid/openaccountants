@@ -1,10 +1,10 @@
 ---
 name: latvia-income-tax
 description: Use this skill whenever asked about Latvia personal income tax (iedzīvotāju ienākuma nodoklis, IIN) for employees, self-employed / economic-activity individuals, pensioners, or capital-income recipients. Trigger on phrases like "how much income tax do I pay in Latvia", "Latvia PIT rate", "gada ienākumu deklarācija", "annual income declaration", "non-taxable minimum", "neapliekamais minimums", "VSAOI", "social contributions Latvia", "solidarity tax", "solidaritātes nodoklis", "micro-enterprise tax", "mikrouzņēmuma nodoklis", "MET", "economic activity registration", "capital gains Latvia", "dividend tax Latvia", "self-employed Latvia tax", "EDS", or any question about filing or computing Latvian personal income tax. Also trigger when preparing or reviewing a Latvian annual income declaration (form GID), a capital-gains return (GD/GDz), or a monthly payroll computation, computing the fixed non-taxable minimum and allowances, or advising on VSAOI / solidarity tax interaction. This skill covers the 25.5% / 33% progressive PIT, the +3% high-income surtax, the fixed non-taxable minimum and allowances, VSAOI rates and bases, the solidarity tax, the micro-enterprise tax regime, capital-income tax, penalties, and the interaction with VAT and social insurance. ALWAYS read this skill before touching any Latvian income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: LV
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Latvia Personal Income Tax
 
-## Latvia Personal Income Tax -- Skill v0.2
+## Latvia Personal Income Tax -- Skill v0.3
 
 > **Tier 2 (research-verified).** Figures are sourced to VID, VSAA, the Ministry of Finance (FM), the Cabinet of Ministers, and Big-4 / Orbitax secondary guides, and are mutually consistent. They have **not** yet been signed off by a Latvian-qualified tax adviser. Items marked **[RESEARCH GAP — reviewer to confirm]** require human confirmation before filing.
 
@@ -35,10 +35,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social insurance agency | Valsts sociālās apdrošināšanas aģentūra (VSAA) |
 | Policy ministry | Finanšu ministrija (Ministry of Finance / FM) |
 | Filing portal | EDS -- Electronic Declaration System (eds.vid.gov.lv) |
-| Annual return deadline | 1 March -- 1 June of the following year; 1 April -- 1 July if annual income exceeds EUR 105,300 (PwC) |
+| Annual return deadline | 1 March -- 1 June of the following year; 1 April -- 1 July if annual income exceeds EUR 105,300 (secondary summary) |
 | Validated by | Pending — requires sign-off by a Latvian-qualified tax adviser |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### PIT Rate Brackets (2025 -- annual reconciliation)
 
@@ -84,25 +84,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Total check (standard)** — 10.50% + 23.59% = 34.09% ✓
 
-**VSAOI pension-age reduced**  _(PwC, .../individual/other-taxes)_
+**VSAOI pension-age reduced**  _(secondary summary)_
 
 | Class | Rate | Base / ceiling | Source |
 | --- | --- | --- | --- |
-| Employee VSAOI (pension-age reduced) | 9.25% | Up to EUR 105,300/year | PwC, .../individual/other-taxes |
-| Employer VSAOI (pension-age reduced) | 20.77% | Up to EUR 105,300/year | PwC, other-taxes |
-| **Total VSAOI (pension-age reduced)** | **30.02%** | Up to EUR 105,300/year | PwC, other-taxes |
+| Employee VSAOI (pension-age reduced) | 9.25% | Up to EUR 105,300/year | secondary summary |
+| Employer VSAOI (pension-age reduced) | 20.77% | Up to EUR 105,300/year | secondary summary, other-taxes |
+| **Total VSAOI (pension-age reduced)** | **30.02%** | Up to EUR 105,300/year | secondary summary, other-taxes |
 
 - **Total check (reduced)** — 9.25% + 20.77% = 30.02% ✓
 
 ### Capital Income (2025)
 
-**Capital Income (2025)**  _(PwC, taxes-on-personal-income)_
+**Capital Income (2025)**  _(secondary summary, taxes-on-personal-income)_
 
 | Income type | Rate | Note | Source |
 | --- | --- | --- | --- |
-| Dividends | 25.5% | Exempt from PIT if already subject to Latvian CIT | PwC, taxes-on-personal-income |
-| Interest | 25.5% | Flat | PwC |
-| Capital gains | 25.5% | Flat (increased from 20% in 2024) | PwC |
+| Dividends | 25.5% | Exempt from PIT if already subject to Latvian CIT | secondary summary, taxes-on-personal-income |
+| Interest | 25.5% | Flat | secondary summary |
+| Capital gains | 25.5% | Flat (increased from 20% in 2024) | secondary summary |
 
 ### Conservative Defaults
 
@@ -311,7 +311,7 @@ All examples use the 2025 figures: PIT 25.5%, fixed non-taxable minimum EUR 510/
 **Input line:**
 `20.05.2025 ; CITADELE ; SIA PRIEDE ; DIVIDENDE 2024 ; +5,000.00 ; EUR`
 
-**Reasoning:** Dividend from a Latvian company that has already paid corporate income tax (CIT/UIN) on the underlying profit is **exempt** from PIT (PwC). If the distribution had NOT borne Latvian CIT, the 25.5% capital-income rate would apply.
+**Reasoning:** Dividend from a Latvian company that has already paid corporate income tax (CIT/UIN) on the underlying profit is **exempt** from PIT (secondary summary). If the distribution had NOT borne Latvian CIT, the 25.5% capital-income rate would apply.
 
 **Classification:** Capital income EUR 5,000 — **PIT EUR 0.00** (CIT already paid). Confirm CIT status with reviewer.
 
@@ -320,7 +320,7 @@ All examples use the 2025 figures: PIT 25.5%, fixed non-taxable minimum EUR 510/
 **Input line:**
 `18.06.2025 ; SEB ; BROKER PĀRDOŠANA ; AKCIJAS ; +8,000.00 ; EUR`
 
-**Reasoning:** Shares acquired for EUR 5,000, sold for EUR 8,000. Capital gain = 8,000 − 5,000 = **EUR 3,000**. Capital-gains PIT at 25.5% = 3,000 × 0.255 = **EUR 765.00**. Because the quarterly gain exceeds EUR 1,000, a capital-gains return (GD/GDz) must be filed **quarterly**, by the 15th of the month following the quarter (PwC).
+**Reasoning:** Shares acquired for EUR 5,000, sold for EUR 8,000. Capital gain = 8,000 − 5,000 = **EUR 3,000**. Capital-gains PIT at 25.5% = 3,000 × 0.255 = **EUR 765.00**. Because the quarterly gain exceeds EUR 1,000, a capital-gains return (GD/GDz) must be filed **quarterly**, by the 15th of the month following the quarter (secondary summary).
 
 **Classification:** Capital gain EUR 3,000; PIT EUR 765.00; quarterly capital-gains return required.
 
@@ -337,7 +337,7 @@ All examples use the 2025 figures: PIT 25.5%, fixed non-taxable minimum EUR 510/
 
 ### 5.1 Progressive PIT at Annual Reconciliation
 
-- **Progressive PIT at Annual Reconciliation** — Legislation: Law "On Personal Income Tax". For 2025: 25.5% on annual income up to EUR 105,300; 33% on the portion above EUR 105,300; an additional 3% surtax on the portion above EUR 200,000 (VID, https://www.vid.gov.lv/en/personal-income-tax-rates). Monthly payroll PIT is withheld at the flat 25.5%; the 33% and +3% are settled through the annual income declaration. The +3% surtax: VID lists it as a 2025 rate, PwC notes first application via 2026 returns — [RESEARCH GAP — reviewer to confirm].  _(VID, https://www.vid.gov.lv/en/personal-income-tax-rates)_
+- **Progressive PIT at Annual Reconciliation** — Legislation: Law "On Personal Income Tax". For 2025: 25.5% on annual income up to EUR 105,300; 33% on the portion above EUR 105,300; an additional 3% surtax on the portion above EUR 200,000 (VID, https://www.vid.gov.lv/en/personal-income-tax-rates). Monthly payroll PIT is withheld at the flat 25.5%; the 33% and +3% are settled through the annual income declaration. The +3% surtax: VID lists it as a 2025 rate, the secondary summary notes first application via 2026 returns — [RESEARCH GAP — reviewer to confirm].  _(VID, https://www.vid.gov.lv/en/personal-income-tax-rates)_
 
 ### 5.2 Non-Taxable Minimum and Allowances
 
@@ -363,7 +363,7 @@ All examples use the 2025 figures: PIT 25.5%, fixed non-taxable minimum EUR 510/
 | Employer | 23.59% | 20.77% |
 | **Total** | **34.09%** | **30.02%** |
 
-- **Base and healthcare earmark** — On gross income up to the maximum base of EUR 105,300/year. The employee 10.50% includes 1 percentage point earmarked for healthcare (VSAA, https://www.vsaa.gov.lv/en/contributions-0; PwC for the reduced rate). Totals check: 10.50 + 23.59 = 34.09; 9.25 + 20.77 = 30.02.  _(VSAA, https://www.vsaa.gov.lv/en/contributions-0)_
+- **Base and healthcare earmark** — On gross income up to the maximum base of EUR 105,300/year. The employee 10.50% includes 1 percentage point earmarked for healthcare (VSAA, https://www.vsaa.gov.lv/en/contributions-0; secondary summary, for the reduced rate). Totals check: 10.50 + 23.59 = 34.09; 9.25 + 20.77 = 30.02.  _(VSAA, https://www.vsaa.gov.lv/en/contributions-0)_
 
 ### 5.6 Self-Employed VSAOI
 
@@ -391,7 +391,7 @@ All examples use the 2025 figures: PIT 25.5%, fixed non-taxable minimum EUR 510/
 | Mandatory VAT registration | EUR 50,000 taxable supplies / 12 months | VID, self-employed-persons-individual-entrepreneurs |
 | Social-insurance maximum base | EUR 105,300/year | FM, changes-taxation-and-finances-2025 |
 | High-income surtax threshold | EUR 200,000/year | VID, personal-income-tax-rates |
-| Capital-gains quarterly reporting | EUR 1,000/quarter | PwC, tax-administration |
+| Capital-gains quarterly reporting | EUR 1,000/quarter | secondary summary, tax-administration |
 
 ### 5.11 Filing Deadlines and Penalties
 
@@ -399,13 +399,13 @@ All examples use the 2025 figures: PIT 25.5%, fixed non-taxable minimum EUR 510/
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Annual declaration (GID) | 1 March -- 1 June following year; 1 April -- 1 July if income > EUR 105,300 | PwC, tax-administration |
-| Refund-only claims | Within 3 years | PwC |
-| Capital-gains return (GD/GDz) | Quarterly by 15th of following month if quarterly gains > EUR 1,000; else annually by 15 January | PwC |
+| Annual declaration (GID) | 1 March -- 1 June following year; 1 April -- 1 July if income > EUR 105,300 | secondary summary, tax-administration |
+| Refund-only claims | Within 3 years | secondary summary |
+| Capital-gains return (GD/GDz) | Quarterly by 15th of following month if quarterly gains > EUR 1,000; else annually by 15 January | secondary summary |
 | Self-employed reports | Annual by 17 January; quarterly by the 17th | VID, self-employed |
 | Late-payment interest | 0.05%/day, capped when it reaches 40% of principal overdue | Orbitax |
 | Understatement penalty | 20% if understatement ≤ 15% of correct liability; 30% if > 15% | Orbitax |
-| Self-employed minimum payment | EUR 50 minimum if economic-activity income below minimum wage / zero | PwC, tax-administration |
+| Self-employed minimum payment | EUR 50 minimum if economic-activity income below minimum wage / zero | secondary summary, tax-administration |
 
 > From 1 January 2026 late-payment interest is calculated twice monthly (on the 1st and 15th) rather than daily — the 0.05%/day rule stated is the 2025 basis (Orbitax).
 
@@ -571,7 +571,7 @@ ONBOARDING QUESTIONS -- LATVIA PERSONAL INCOME TAX
 | Micro-enterprise tax | Micro-Enterprise Tax Law; VID, https://www.vid.gov.lv/en/microenterprise-tax |
 | Minimum wage | Cabinet of Ministers, https://www.mk.gov.lv/en/article/national-minimum-wage-amount-740-euros-next-year |
 | Interest and penalties | Law "On Taxes and Fees"; Orbitax country chapter |
-| Tax administration / deadlines | PwC, https://taxsummaries.pwc.com/latvia/individual/tax-administration |
+| Tax administration / deadlines | secondary summary |
 
 ### Authoritative Sources
 
@@ -586,9 +586,9 @@ ONBOARDING QUESTIONS -- LATVIA PERSONAL INCOME TAX
 | Changes in taxation 2025 | Ministry of Finance | https://www.fm.gov.lv/en/changes-taxation-and-finances-2025 |
 | Non-taxable minimum and allowances | Ministry of Finance | https://www.fm.gov.lv/en/non-taxable-minimum-and-tax-allowances |
 | National minimum wage 740 euros | Cabinet of Ministers | https://www.mk.gov.lv/en/article/national-minimum-wage-amount-740-euros-next-year |
-| Taxes on personal income | PwC | https://taxsummaries.pwc.com/latvia/individual/taxes-on-personal-income |
-| Other taxes | PwC | https://taxsummaries.pwc.com/latvia/individual/other-taxes |
-| Tax administration | PwC | https://taxsummaries.pwc.com/latvia/individual/tax-administration |
+| Taxes on personal income | secondary summary | |
+| Other taxes | secondary summary | |
+| Tax administration | secondary summary | |
 | Key Tax changes 2025 | Grant Thornton Latvia | https://www.grantthornton.lv/en/insights/key-tax-rates-in-latvia-2025/ |
 | Interest and Penalties | Orbitax | https://orbitax.com/taxhub/countrychapters/LV/Latvia/e5f4c7d16b644b02bdb68eb4bbc3ab94/Interest-and-Penalties-580 |
 

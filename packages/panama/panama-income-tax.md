@@ -1,10 +1,10 @@
 ---
 name: panama-income-tax
 description: Use this skill whenever asked about Panama personal income tax (ISR — Impuesto sobre la Renta) for individuals, self-employed persons, or payroll. Trigger on phrases like "how much income tax do I pay in Panama", "Panama ISR", "declaración jurada de rentas", "income tax return Panama", "allowable deductions Panama", "CSS contributions", "Caja de Seguro Social", "seguro educativo", "territorial taxation", "Panama-source income", "self-employed CSS Law 462", "décimo tercer mes", "estimated tax instalments", "DGI filing", "non-resident withholding Panama", or any question about filing or computing personal income tax or social security for an individual or self-employed client in Panama. Also trigger when classifying a Panamanian bank statement, computing CSS/educational-insurance payroll deductions, or advising on the 15 March filing deadline. This skill covers the progressive ISR brackets, personal deductions, CSS + educational insurance under Law 462 of 2025, filing deadlines, estimated tax, penalties, minimum wage, and the territorial source rule. ALWAYS read this skill before touching any Panama income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: PA
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 1 — Quick Reference
 
-**Section 1 Quick Reference table**  _(PwC, taxes-on-personal-income; PwC, tax-administration)_
+**Section 1 Quick Reference table**  _(secondary summary, taxes-on-personal-income; secondary summary, tax-administration)_
 
 | Field | Value |
 | --- | --- |
@@ -25,21 +25,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Personal income tax — ISR (Impuesto sobre la Renta), natural persons |
 | Currency | USD (the Balboa B/. is pegged 1:1 and circulates as coin; USD notes are legal tender) |
 | Tax year | Calendar year (1 January – 31 December) |
-| Tax basis | **Territorial** — only Panamanian-source income is taxed, for residents and non-residents alike (PwC, taxes-on-personal-income) |
+| Tax basis | **Territorial** — only Panamanian-source income is taxed, for residents and non-residents alike (secondary summary, taxes-on-personal-income) |
 | Tax authority | Dirección General de Ingresos (DGI), under the Ministerio de Economía y Finanzas (MEF) |
 | Social security | Caja de Seguro Social (CSS) |
-| Filing portal | e-Tax 2.0 (DGI online portal) (PwC, tax-administration) |
-| Filing deadline (individuals) | **15 March** of the following year; one-month extension available on request (PwC, tax-administration) |
-| Estimated tax instalments | 30 June, 30 September, 31 December (PwC, tax-administration) |
-| Local/municipal income tax | None (PwC, taxes-on-personal-income) |
-| Alternate minimum tax for individuals | None (PwC, taxes-on-personal-income) |
+| Filing portal | e-Tax 2.0 (DGI online portal) (secondary summary, tax-administration) |
+| Filing deadline (individuals) | **15 March** of the following year; one-month extension available on request (secondary summary, tax-administration) |
+| Estimated tax instalments | 30 June, 30 September, 31 December (secondary summary, tax-administration) |
+| Local/municipal income tax | None (secondary summary, taxes-on-personal-income) |
+| Alternate minimum tax for individuals | None (secondary summary, taxes-on-personal-income) |
 | Validated by | Pending — requires sign-off by a Panamanian licensed accountant (CPA) |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Income Tax Rate Brackets (tax year 2025)
 
-**Income Tax Rate Brackets (tax year 2025)**  _(PwC, taxes-on-personal-income — reviewed 18 Jan 2026)_
+**Income Tax Rate Brackets (tax year 2025)**  _(secondary summary, taxes-on-personal-income — reviewed 18 Jan 2026)_
 
 | Taxable Income (USD) | Tax on this band | Cumulative Tax at Top of Band |
 | --- | --- | --- |
@@ -47,23 +47,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 11,001 – 50,000 | 15% on excess over 11,000 | USD 5,850 |
 | Over 50,000 | USD 5,850 fixed + 25% on excess over 50,000 | — |
 
-- **Arithmetic check** — Top of the 15% band: (50,000 − 11,000) × 15% = 39,000 × 15% = USD 5,850. The "Over 50,000" row therefore carries a fixed base of USD 5,850 plus 25% on the excess.  _(PwC, taxes-on-personal-income)_
-- **Territorial rule** — Citizens, residents, and non-residents are taxed only on Panama-source income. Non-residents' Panama-source income is generally subject to withholding by the payer.  _(PwC, taxes-on-personal-income)_
+- **Arithmetic check** — Top of the 15% band: (50,000 − 11,000) × 15% = 39,000 × 15% = USD 5,850. The "Over 50,000" row therefore carries a fixed base of USD 5,850 plus 25% on the excess.  _(secondary summary, taxes-on-personal-income)_
+- **Territorial rule** — Citizens, residents, and non-residents are taxed only on Panama-source income. Non-residents' Panama-source income is generally subject to withholding by the payer.  _(secondary summary, taxes-on-personal-income)_
 
 ### Personal Deductions / Allowances (tax year 2025)
 
-**Personal Deductions / Allowances table**  _(PwC, deductions)_
+**Personal Deductions / Allowances table**  _(secondary summary, deductions)_
 
 | Deduction | Cap | Source |
 | --- | --- | --- |
-| Personal exemption (married individual) | USD 800 | PwC, deductions |
-| Per-dependent deduction (USD 250) | **[RESEARCH GAP — reviewer to confirm]** secondary sources cite "$800 basic + $250 per dependent" but PwC authoritative page does not confirm the $250 figure | Unconfirmed |
-| Mortgage interest (primary home in Panama or home improvements) | up to USD 15,000/year | PwC, deductions |
-| Retirement / pension fund contributions | up to USD 15,000 | PwC, deductions |
-| Education expenses | up to USD 3,600 per student (since Jan 2019) | PwC, deductions |
-| Medical expenses incurred in Panama | deductible, documented; no cap stated | PwC, deductions |
-| Charitable donations (approved local educational/charitable institutions + non-profit dues) | max USD 50,000/year | PwC, deductions |
-| Unreimbursed employment expenses (moving, travel, entertainment) | NOT deductible | PwC, deductions |
+| Personal exemption (married individual) | USD 800 | secondary summary, deductions |
+| Per-dependent deduction (USD 250) | **[RESEARCH GAP — reviewer to confirm]** secondary sources cite "$800 basic + $250 per dependent" but the secondary summary authoritative page does not confirm the $250 figure | Unconfirmed |
+| Mortgage interest (primary home in Panama or home improvements) | up to USD 15,000/year | secondary summary, deductions |
+| Retirement / pension fund contributions | up to USD 15,000 | secondary summary, deductions |
+| Education expenses | up to USD 3,600 per student (since Jan 2019) | secondary summary, deductions |
+| Medical expenses incurred in Panama | deductible, documented; no cap stated | secondary summary, deductions |
+| Charitable donations (approved local educational/charitable institutions + non-profit dues) | max USD 50,000/year | secondary summary, deductions |
+| Unreimbursed employment expenses (moving, travel, entertainment) | NOT deductible | secondary summary, deductions |
 
 ### Conservative Defaults
 
@@ -73,7 +73,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Source of income unknown (Panama vs foreign) | STOP — territorial rule means foreign-source income is exempt; confirm source before including |
 | Resident vs non-resident unknown | Treat as STOP — non-residents are subject to withholding, not self-assessment |
-| Unknown marital status | Apply no personal exemption (the USD 800 exemption is married-only per PwC) |
+| Unknown marital status | Apply no personal exemption (the USD 800 exemption is married-only per the secondary summary) |
 | Unknown dependent count | 0 dependents (the $250/dependent figure is unconfirmed anyway) |
 | Unknown business-use % (vehicle, phone, home) | 0% deduction |
 | Unknown expense category | Not deductible |
@@ -120,16 +120,16 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 | UPWORK, FIVERR, TOPTAL | Business income | Freelance platform — net of platform commission; **likely foreign-source if client and work are abroad — confirm** |
 | SALARIO, PLANILLA, SUELDO, EMPLEADOR [name] | Employment income | Subject to CSS + educational insurance + ISR withholding by employer |
 | ALQUILER, RENTA RECIBIDA | Rental income | Panama-source if property in Panama |
-| INTERESES (cuenta de ahorro / depósito a plazo panameño) | EXCLUDE | Interest on Panamanian bank savings and time deposits is exempt (PwC, taxes-on-personal-income) |
-| INTERESES (valores del Estado / government securities) | EXCLUDE | Interest on Panamanian government securities is exempt (PwC, taxes-on-personal-income) |
+| INTERESES (cuenta de ahorro / depósito a plazo panameño) | EXCLUDE | Interest on Panamanian bank savings and time deposits is exempt (secondary summary, taxes-on-personal-income) |
+| INTERESES (valores del Estado / government securities) | EXCLUDE | Interest on Panamanian government securities is exempt (secondary summary, taxes-on-personal-income) |
 | DEVOLUCIÓN DGI, REINTEGRO IMPUESTO | EXCLUDE | Tax refund from prior year |
 | DÉCIMO TERCER MES, XIII MES | Special — see Section 6 | 13th-month bonus; CSS/ISR treatment flagged [RESEARCH GAP] |
 
 ### 3.2 Expense Patterns (Debits / Débitos) — Potentially Deductible
 
-Note: Panama allows employment/business expenses only where wholly business-related and documented; unreimbursed employment expenses (moving, travel, entertainment) are not deductible (PwC, deductions). For self-employed, ordinary and necessary business expenses to produce Panama-source income are deductible.
+Note: Panama allows employment/business expenses only where wholly business-related and documented; unreimbursed employment expenses (moving, travel, entertainment) are not deductible (secondary summary, deductions). For self-employed, ordinary and necessary business expenses to produce Panama-source income are deductible.
 
-**Potentially Deductible Expenses table**  _(PwC, deductions)_
+**Potentially Deductible Expenses table**  _(secondary summary, deductions)_
 
 | Pattern | Category | Treatment | Notes |
 | --- | --- | --- | --- |
@@ -141,24 +141,24 @@ Note: Panama allows employment/business expenses only where wholly business-rela
 | GOOGLE WORKSPACE, MICROSOFT 365, ADOBE, CANVA, ZOOM | Software subscription | Deductible (business) | Recurring SaaS = operating expense |
 | ANTHROPIC, OPENAI, GITHUB, AWS, HOSTING, DOMINIO | IT infrastructure | Deductible (business) |  |
 | COMISIÓN BANCARIA, CARGO BANCO, MANTENIMIENTO CUENTA | Bank charges | Deductible (business) | Business account only |
-| INTERÉS HIPOTECARIO, HIPOTECA (vivienda principal) | Mortgage interest | Personal deduction up to USD 15,000/yr (PwC, deductions) | Primary home in Panama or improvements |
-| FONDO DE PENSIÓN, JUBILACIÓN, APORTE PENSIÓN | Pension contribution | Personal deduction up to USD 15,000 (PwC, deductions) |  |
-| COLEGIO, UNIVERSIDAD, MATRÍCULA, EDUCACIÓN | Education | Personal deduction up to USD 3,600 per student (PwC, deductions) |  |
-| CLÍNICA, HOSPITAL, FARMACIA, MÉDICO (en Panamá) | Medical | Personal deduction, documented, no cap stated (PwC, deductions) | Must be incurred in Panama |
-| DONACIÓN (institución aprobada) | Charitable donation | Personal deduction max USD 50,000/yr (PwC, deductions) | Approved local institutions |
+| INTERÉS HIPOTECARIO, HIPOTECA (vivienda principal) | Mortgage interest | Personal deduction up to USD 15,000/yr (secondary summary, deductions) | Primary home in Panama or improvements |
+| FONDO DE PENSIÓN, JUBILACIÓN, APORTE PENSIÓN | Pension contribution | Personal deduction up to USD 15,000 (secondary summary, deductions) |  |
+| COLEGIO, UNIVERSIDAD, MATRÍCULA, EDUCACIÓN | Education | Personal deduction up to USD 3,600 per student (secondary summary, deductions) |  |
+| CLÍNICA, HOSPITAL, FARMACIA, MÉDICO (en Panamá) | Medical | Personal deduction, documented, no cap stated (secondary summary, deductions) | Must be incurred in Panama |
+| DONACIÓN (institución aprobada) | Charitable donation | Personal deduction max USD 50,000/yr (secondary summary, deductions) | Approved local institutions |
 
 ### 3.3 Expense Patterns (Debits) — NOT Deductible
 
-**NOT Deductible Expenses table**  _(PwC, deductions)_
+**NOT Deductible Expenses table**  _(secondary summary, deductions)_
 
 | Pattern | Category | Treatment | Notes |
 | --- | --- | --- | --- |
-| RESTAURANTE, ALMUERZO, CENA, ENTRETENIMIENTO | Entertainment | NOT deductible | Unreimbursed employment entertainment blocked (PwC, deductions) |
+| RESTAURANTE, ALMUERZO, CENA, ENTRETENIMIENTO | Entertainment | NOT deductible | Unreimbursed employment entertainment blocked (secondary summary, deductions) |
 | SUPERMERCADO, RIBA SMITH, EL REY, SUPER 99, PERSONAL | Personal expenses | NOT deductible | Private living costs |
 | MULTA, SANCIÓN, INFRACCIÓN | Fines/penalties | NOT deductible | Public policy |
 | PAGO ISR, IMPUESTO SOBRE LA RENTA, DGI | Tax payment | NOT deductible | Income tax cannot reduce income |
 | RETIRO, RETIRO PERSONAL, CAJERO (personal) | Drawings | NOT deductible | Not an expense |
-| MUDANZA, VIAJE PERSONAL (employee, unreimbursed) | Moving/travel | NOT deductible | Blocked for employees (PwC, deductions) |
+| MUDANZA, VIAJE PERSONAL (employee, unreimbursed) | Moving/travel | NOT deductible | Blocked for employees (secondary summary, deductions) |
 
 ### 3.4 Social Security & Statutory (Debits)
 
@@ -172,13 +172,13 @@ Note: Panama allows employment/business expenses only where wholly business-rela
 
 ### 3.5 Exclusions (Neither Income nor Expense)
 
-**Exclusions table**  _(PwC, taxes-on-personal-income)_
+**Exclusions table**  _(secondary summary, taxes-on-personal-income)_
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
 | TRANSFERENCIA PROPIA, ENTRE CUENTAS, CUENTA PROPIA | EXCLUDE | Own-account transfer |
 | PRÉSTAMO, ABONO PRÉSTAMO, CAPITAL (loan principal) | EXCLUDE | Loan principal movement |
-| INTERESES (ahorro/plazo panameño, valores del Estado) | EXCLUDE | Exempt income (PwC, taxes-on-personal-income) |
+| INTERESES (ahorro/plazo panameño, valores del Estado) | EXCLUDE | Exempt income (secondary summary, taxes-on-personal-income) |
 
 ### 3.6 Panamanian Banks — Statement Format Reference
 
@@ -220,7 +220,7 @@ Recurring SaaS subscription used to produce business income. Ordinary and necess
 `22/04/2025 ; COMPRA TARJETA ; RESTAURANTE MARKET ; CENA CLIENTE ; -120.00 ; USD`
 
 **Reasoning:**
-Entertainment. Unreimbursed entertainment is not deductible per PwC deductions guidance. No partial deduction.
+Entertainment. Unreimbursed entertainment is not deductible per the secondary summary deductions guidance. No partial deduction.
 
 **Classification:** NOT deductible. Remove entirely.
 
@@ -229,10 +229,10 @@ Entertainment. Unreimbursed entertainment is not deductible per PwC deductions g
 **Input:** Monthly gross salary USD 2,000, employee, current (from April 2025) rates.
 
 **Reasoning:**
-- Employee CSS: 2,000 × 9.75% = USD 195.00 (PwC, other-taxes)
-- Educational insurance (employee): 2,000 × 1.25% = USD 25.00 (PwC, other-taxes; FMM)
+- Employee CSS: 2,000 × 9.75% = USD 195.00 (secondary summary, other-taxes)
+- Educational insurance (employee): 2,000 × 1.25% = USD 25.00 (secondary summary, other-taxes; FMM)
 - Total employee statutory withholding = 195.00 + 25.00 = **USD 220.00**
-- No salary ceiling applies (PwC, other-taxes)
+- No salary ceiling applies (secondary summary, other-taxes)
 
 **Classification:** Employee statutory deductions = USD 220.00/month. (ISR withholding computed separately on the progressive table.)
 
@@ -260,11 +260,11 @@ Entertainment. Unreimbursed entertainment is not deductible per PwC deductions g
 
 ### 5.1 The Territorial Source Rule
 
-- **Territorial source rule** — Only Panamanian-source income is taxable, for residents and non-residents alike. Income from services performed, or assets located, outside Panama is not taxable regardless of where it is received or banked. Classify the source of every income stream before computing tax. When source is genuinely ambiguous (e.g. cross-border services), invoke R-PA-1.  _(PwC, taxes-on-personal-income)_
+- **Territorial source rule** — Only Panamanian-source income is taxable, for residents and non-residents alike. Income from services performed, or assets located, outside Panama is not taxable regardless of where it is received or banked. Classify the source of every income stream before computing tax. When source is genuinely ambiguous (e.g. cross-border services), invoke R-PA-1.  _(secondary summary, taxes-on-personal-income)_
 
 ### 5.2 Progressive ISR Computation (natural persons)
 
-**Progressive ISR Computation table**  _(PwC, taxes-on-personal-income (reviewed 18 Jan 2026))_
+**Progressive ISR Computation table**  _(secondary summary, taxes-on-personal-income (reviewed 18 Jan 2026))_
 
 | Taxable Income (USD) | Computation |
 | --- | --- |
@@ -272,39 +272,39 @@ Entertainment. Unreimbursed entertainment is not deductible per PwC deductions g
 | 11,001 – 50,000 | (income − 11,000) × 15% |
 | Over 50,000 | 5,850 + (income − 50,000) × 25% |
 
-- **No local or AMT** — No local/municipal income tax; no individual alternate minimum tax.  _(PwC, taxes-on-personal-income)_
+- **No local or AMT** — No local/municipal income tax; no individual alternate minimum tax.  _(secondary summary, taxes-on-personal-income)_
 
 ### 5.3 Exempt Income
 
-- **Exempt income list** — Interest on Panamanian government securities. Interest on Panamanian bank savings accounts and time deposits. Foreign-source income (territorial rule).  _(PwC, taxes-on-personal-income)_
+- **Exempt income list** — Interest on Panamanian government securities. Interest on Panamanian bank savings accounts and time deposits. Foreign-source income (territorial rule).  _(secondary summary, taxes-on-personal-income)_
 
 ### 5.4 Personal Deductions
 
-- **Personal Deductions key caps** — See Section 1 table. Key caps: personal exemption USD 800 (married); mortgage interest USD 15,000; pension USD 15,000; education USD 3,600/student; charitable donations USD 50,000; medical (no cap stated). All require documentation. The USD 250/dependent figure is [RESEARCH GAP — reviewer to confirm].  _(PwC, deductions)_
+- **Personal Deductions key caps** — See Section 1 table. Key caps: personal exemption USD 800 (married); mortgage interest USD 15,000; pension USD 15,000; education USD 3,600/student; charitable donations USD 50,000; medical (no cap stated). All require documentation. The USD 250/dependent figure is [RESEARCH GAP — reviewer to confirm].  _(secondary summary, deductions)_
 
 ### 5.5 Social Security (CSS) + Educational Insurance — Law 462 of 18 March 2025
 
-**Basis:** PwC, other-taxes; Fábrega Molino (FMM); Morgan & Morgan.
+**Basis:** the secondary summary, other-taxes; Fábrega Molino (FMM); Morgan & Morgan.
 
-**Employees (current, from April 2025 payroll) table**  _(PwC, other-taxes; FMM)_
+**Employees (current, from April 2025 payroll) table**  _(secondary summary, other-taxes; FMM)_
 
 | Component | Rate | Source |
 | --- | --- | --- |
-| CSS (employee) | 9.75% of gross salary | PwC, other-taxes; FMM |
-| Educational insurance (employee) | 1.25% of salary | PwC, other-taxes; FMM |
+| CSS (employee) | 9.75% of gross salary | secondary summary, other-taxes; FMM |
+| Educational insurance (employee) | 1.25% of salary | secondary summary, other-taxes; FMM |
 | **Total employee** | **11.00%** | sum: 9.75 + 1.25 = 11.00 |
 
-**Employers (phased increase under Law 462) table**  _(PwC, other-taxes; Morgan & Morgan)_
+**Employers (phased increase under Law 462) table**  _(secondary summary, other-taxes; Morgan & Morgan)_
 
 | Component | Rate | Source |
 | --- | --- | --- |
-| CSS (employer) — from 1 Apr 2025 | 13.25% | PwC, other-taxes; Morgan & Morgan |
+| CSS (employer) — from 1 Apr 2025 | 13.25% | secondary summary, other-taxes; Morgan & Morgan |
 | CSS (employer) — from 1 Mar 2027 | 14.25% | Morgan & Morgan |
 | CSS (employer) — from 1 Mar 2029 | 15.25% | Morgan & Morgan |
-| Educational insurance (employer) | 1.50% of salary | PwC, other-taxes |
+| Educational insurance (employer) | 1.50% of salary | secondary summary, other-taxes |
 | **Total employer (current, from Apr 2025)** | **14.75%** | sum: 13.25 + 1.50 = 14.75 |
 
-**Combined headline (current, from April 2025) table**  _(PwC, other-taxes; Morgan & Morgan)_
+**Combined headline (current, from April 2025) table**  _(secondary summary, other-taxes; Morgan & Morgan)_
 
 | Party | CSS | Educational insurance | Total |
 | --- | --- | --- | --- |
@@ -313,7 +313,7 @@ Entertainment. Unreimbursed entertainment is not deductible per PwC deductions g
 | **Combined** | **23.00%** | **2.75%** | **25.75%** |
 
 - **Arithmetic check** — Employee column: 9.75 + 1.25 = 11.00. Employer column: 13.25 + 1.50 = 14.75. Combined CSS: 9.75 + 13.25 = 23.00. Combined education: 1.25 + 1.50 = 2.75. Combined total: 11.00 + 14.75 = 25.75 (= 23.00 + 2.75). All reconcile.
-- **Salary ceiling/floor** — CSS and educational insurance apply with no maximum taxable limit (no ceiling) and no floor for employees.  _(PwC, other-taxes)_
+- **Salary ceiling/floor** — CSS and educational insurance apply with no maximum taxable limit (no ceiling) and no floor for employees.  _(secondary summary, other-taxes)_
 
 ### 5.6 Self-Employed / Independent Workers (NEW under Law 462)
 
@@ -332,7 +332,7 @@ Entertainment. Unreimbursed entertainment is not deductible per PwC deductions g
 
 ### 5.8 Filing, Estimated Tax, and Withholding
 
-**Filing, Estimated Tax, and Withholding table**  _(PwC, tax-administration; Casattis)_
+**Filing, Estimated Tax, and Withholding table**  _(secondary summary, tax-administration; Casattis)_
 
 | Item | Detail |
 | --- | --- |
@@ -343,19 +343,19 @@ Entertainment. Unreimbursed entertainment is not deductible per PwC deductions g
 | Estimated tax instalments | Three equal instalments: 30 June, 30 September, 31 December |
 | Who must file | All taxpayers **except** employees with a single salary source where the employer withholds. Must file if claiming non-business expenses, or receiving representation allowances / salary in kind |
 | Non-residents | Panama-source income subject to withholding by the payer |
-| Form code | **[RESEARCH GAP — reviewer to confirm]** the exact DGI individual return form code (commonly the "Declaración Jurada de Rentas" for personas naturales; PwC does not give a form number) |
+| Form code | **[RESEARCH GAP — reviewer to confirm]** the exact DGI individual return form code (commonly the "Declaración Jurada de Rentas" for personas naturales; secondary summary, does not give a form number) |
 
 ### 5.9 Non-Deductible Expenses (summary)
 
-**Non-Deductible Expenses table**  _(PwC, deductions)_
+**Non-Deductible Expenses table**  _(secondary summary, deductions)_
 
 | Expense | Reason |
 | --- | --- |
-| Entertainment (unreimbursed) | Blocked (PwC, deductions) |
+| Entertainment (unreimbursed) | Blocked (secondary summary, deductions) |
 | Personal living expenses | Not business-related |
 | Fines and penalties | Public policy |
 | Income tax (ISR) itself | Tax on income |
-| Unreimbursed moving/travel (employees) | Blocked (PwC, deductions) |
+| Unreimbursed moving/travel (employees) | Blocked (secondary summary, deductions) |
 | Drawings / personal withdrawals | Not an expense |
 | Foreign-source-related expenses | Match exempt foreign income — not deductible against Panama-source |
 
@@ -383,11 +383,11 @@ Entertainment. Unreimbursed entertainment is not deductible per PwC deductions g
 
 ### 6.6 Dependent Deductions
 
-- **Dependent deductions** — The USD 250/dependent deduction is unconfirmed against the authoritative PwC page. Conservative default: 0 dependent deduction. Flag for reviewer: Confirm the current dependent-deduction figure against DGI / Código Fiscal before claiming.
+- **Dependent deductions** — The USD 250/dependent deduction is unconfirmed against the authoritative the secondary summary page. Conservative default: 0 dependent deduction. Flag for reviewer: Confirm the current dependent-deduction figure against DGI / Código Fiscal before claiming.
 
 ### 6.7 Medical Expenses (no stated cap)
 
-- **Medical expenses** — PwC states medical expenses incurred in Panama are deductible (documented) with no cap stated. Flag for reviewer: Confirm documentation and that expenses were incurred in Panama.  _(PwC, deductions)_
+- **Medical expenses** — the secondary summary states medical expenses incurred in Panama are deductible (documented) with no cap stated. Flag for reviewer: Confirm documentation and that expenses were incurred in Panama.  _(secondary summary, deductions)_
 
 ## Section 7 — Excel Working Paper Template
 
@@ -524,14 +524,14 @@ ONBOARDING QUESTIONS — PANAMA INCOME TAX
 
 | Topic | Reference |
 | --- | --- |
-| Income tax rates (natural persons) | PwC Worldwide Tax Summaries — Panama, taxes-on-personal-income (reviewed 18 Jan 2026): https://taxsummaries.pwc.com/panama/individual/taxes-on-personal-income |
-| Personal deductions | PwC — Panama, deductions: https://taxsummaries.pwc.com/panama/individual/deductions |
-| Social security & educational insurance | PwC — Panama, other-taxes: https://taxsummaries.pwc.com/panama/individual/other-taxes |
-| Filing / estimated tax / administration | PwC — Panama, tax-administration: https://taxsummaries.pwc.com/panama/individual/tax-administration |
+| Income tax rates (natural persons) | secondary summary, Panama, taxes-on-personal-income (reviewed 18 Jan 2026): |
+| Personal deductions | secondary summary, Panama, deductions: |
+| Social security & educational insurance | secondary summary, Panama, other-taxes: |
+| Filing / estimated tax / administration | secondary summary, Panama, tax-administration: |
 | Law 462 of 2025 (CSS reform) — highlights | Fábrega Molino: https://fmm.com.pa/panama-social-security-reform-2025-key-highlights-of-law-no-462/ |
 | Law 462 of 2025 — employer phased rates & self-employed | Morgan & Morgan: https://morimor.com/law-no-462-of-march-18-2025-key-reforms-to-the-social-security-fund-css-of-panama/ |
 | Self-employed CSS obligations | Pension Policy International: https://www.pensionpolicyinternational.com/panama-la-ley-462-de-la-css-beneficios-y-nuevas-obligaciones-a-trabajadores-independientes/ |
-| Filing deadlines & extensions | DGI Panamá, Calendario Tributario: https://dgi.mef.gob.pa/Calendario/Calendario.php ; PwC — Panama, tax-administration (the Casattis page cited until October 2026 sits on an expired domain) |
+| Filing deadlines & extensions | DGI Panamá, Calendario Tributario: https://dgi.mef.gob.pa/Calendario/Calendario.php ; the secondary summary — Panama, tax-administration (the Casattis page cited until October 2026 sits on an expired domain) |
 | Penalties (non-primary) | Limitless Legal: https://www.limitlesslegal.com/en-us/blog/avoid-fines-for-non-declaration-panama-business |
 | Minimum wage (Decree 13/2025) | Galindo Arias & López; Lovill; MITRADEL (see Section 10.2) |
 | MEF official CSS reform PDF (primary, unparsed) | https://www.mef.gob.pa/wp-content/uploads/2025/05/250428-Republic-of-Panama-CSS-Reform-Takeaways.pdf |
@@ -569,7 +569,7 @@ Input: Same USD 2,000 salary, employer side (from April 2025).
 Expected: Employer CSS = 2,000 × 13.25% = 265.00; employer educational insurance = 2,000 × 1.50% = 30.00; total employer statutory = **USD 295.00** (14.75% of 2,000).
 
 Input: USD 1,200 interest credited from a Panamanian bank time deposit.
-Expected: EXCLUDE — exempt income (PwC, taxes-on-personal-income). Not in taxable income.
+Expected: EXCLUDE — exempt income (secondary summary, taxes-on-personal-income). Not in taxable income.
 
 Input: USD 5,000 received for consulting work performed entirely abroad for a foreign client.
 Expected: EXCLUDE — foreign-source income is not taxable under the territorial rule. Confirm source with reviewer (R-PA-1).

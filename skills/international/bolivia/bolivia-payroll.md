@@ -1,11 +1,11 @@
 ---
 name: bolivia-payroll
 description: Use this skill whenever asked about Bolivia payroll processing for employed (dependent) persons. Trigger on phrases like "Bolivia payroll", "planilla Bolivia", "RC-IVA", "Regimen Complementario al IVA", "retencion RC-IVA", "Form 608", "Formulario 608", "Form 110", "Formulario 110", "Form 610", "aporte laboral", "aporte patronal", "Gestora Publica", "AFP Bolivia", "Caja Nacional de Salud", "CNS", "riesgo comun", "riesgo profesional", "aporte solidario", "Aporte Nacional Solidario", "ANS", "aguinaldo", "segundo aguinaldo", "indemnizacion", "desahucio", "salario minimo nacional", "SMN Bolivia", "total ganado", "descuentos planilla Bolivia", "net salary Bolivia", "gross to net Bolivia", "withholding Bolivia", or any question about computing employee pay, RC-IVA withholding, or social/pension contributions for Bolivia-based employees. This skill covers RC-IVA (13%) wage withholding via the employer as agente de retencion, employee pension-side contributions (Aporte Laboral 12.71%), the Aporte Nacional Solidario, employer social charges (Aporte Patronal 17.21% general / 19.51% mining), the minimum wage (SMN), statutory bonuses (aguinaldo), severance, and filing obligations. ALWAYS read this skill before processing any Bolivia payroll.
-version: 0.1
+version: 0.2
 jurisdiction: BO
 tax_year: 2025
 tax_year_notes: "2025 (SMN-derived thresholds also stated at the 2026 SMN of Bs 3,300, DS 5516)"
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bolivia Payroll
 
-## Bolivia Payroll Skill v0.1
+## Bolivia Payroll Skill v0.2
 
-**Tier 2 (research-verified).** The RC-IVA 13% flat rate, the employee Aporte Laboral (12.71%: 10% vejez + 1.71% riesgo comun + 0.50% comision Gestora + 0.50% aporte solidario), the 60-SMN pension cap, the Aporte Nacional Solidario brackets (1.15% / 5.74% / 11.48% above Bs 13,000 / Bs 25,000 / Bs 35,000) and the employer Aporte Patronal (17.21% general / 19.51% mining) are taken from PwC Worldwide Tax Summaries (Bolivia) and corroborated by Bolivian payroll/advisory guides (Planifica, Bolivia Impuestos, TopTrabajos). The flat 13% RC-IVA and the agente-de-retencion mechanism rest on Ley N° 843 (Arts. 19-36) and DS 21531; the ANS brackets and the 3.5% Aporte Patronal Solidario rest on Ley N° 1582 (1 Oct 2024). The 2025 SMN (Bs 2,750) is from DS 5383 (1 May 2025); the 2026 SMN (Bs 3,300) is from DS 5516 (Jan 2026). **Several official SIN/SIAT and MEFP pages repeatedly failed TLS verification or returned 403 in the research environment, so secondary (Big-4 / Bolivian advisory) sources were relied upon and must be re-verified against the authority before publication.** Figures carry **[RESEARCH GAP — reviewer to confirm]** markers where the primary authority figure could not be pinned to a single fixed published value (notably the exact DS 5383 presumed-VAT-credit change, the aguinaldo RC-IVA treatment, and whether the ANS is deductible from the RC-IVA base). Confidence: **medium**.
+**Tier 2 (research-verified).** The RC-IVA 13% flat rate, the employee Aporte Laboral (12.71%: 10% vejez + 1.71% riesgo comun + 0.50% comision Gestora + 0.50% aporte solidario), the 60-SMN pension cap, the Aporte Nacional Solidario brackets (1.15% / 5.74% / 11.48% above Bs 13,000 / Bs 25,000 / Bs 35,000) and the employer Aporte Patronal (17.21% general / 19.51% mining) are taken from a secondary practitioner summary (Bolivia) and corroborated by Bolivian payroll/advisory guides (Planifica, Bolivia Impuestos, TopTrabajos). The flat 13% RC-IVA and the agente-de-retencion mechanism rest on Ley N° 843 (Arts. 19-36) and DS 21531; the ANS brackets and the 3.5% Aporte Patronal Solidario rest on Ley N° 1582 (1 Oct 2024). The 2025 SMN (Bs 2,750) is from DS 5383 (1 May 2025); the 2026 SMN (Bs 3,300) is from DS 5516 (Jan 2026). **Several official SIN/SIAT and MEFP pages repeatedly failed TLS verification or returned 403 in the research environment, so secondary (Big-4 / Bolivian advisory) sources were relied upon and must be re-verified against the authority before publication.** Figures carry **[RESEARCH GAP — reviewer to confirm]** markers where the primary authority figure could not be pinned to a single fixed published value (notably the exact DS 5383 presumed-VAT-credit change, the aguinaldo RC-IVA treatment, and whether the ANS is deductible from the RC-IVA base). Confidence: **medium**.
 
 ## Section 1 -- Quick Reference
 
@@ -39,9 +39,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | RC-IVA non-taxable minimum (2025) | 2 SMN = Bs 5,500/month (2 x Bs 2,750) (Ley 843; DS 5383) |
 | RC-IVA non-taxable minimum (2026) | 2 SMN = Bs 6,600/month (2 x Bs 3,300) (DS 5516) |
 | Validated by | Pending -- requires sign-off by a Bolivian reviewer (contador / auditor) |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
-**Headline rates (2025)**  _(PwC Worldwide Tax Summaries (Bolivia); Ley 843; Ley 1582)_
+**Headline rates (2025)**  _(secondary summary (Bolivia); Ley 843; Ley 1582)_
 
 | Item | Employee | Employer |
 | --- | --- | --- |
@@ -58,15 +58,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Total employer social (Aporte Patronal), mining** | -- | **19.51%** |
 | Aporte Nacional Solidario (ANS, employee) | marginal 1.15% / 5.74% / 11.48% above Bs 13,000 / 25,000 / 35,000 | -- |
 
-- **Pension cap and RC-IVA base note** — Employee pension contributions (Aporte Laboral 12.71%) and old-age/riesgo-comun branches are capped at 60 SMN/month (Bs 165,000 in 2025 = 60 x Bs 2,750; Bs 198,000 in 2026 = 60 x Bs 3,300). The RC-IVA base is computed on total ganado less the deductible employee pension contributions less 2 SMN less VAT credits.  _(PwC; Ley 065)_
+- **Pension cap and RC-IVA base note** — Employee pension contributions (Aporte Laboral 12.71%) and old-age/riesgo-comun branches are capped at 60 SMN/month (Bs 165,000 in 2025 = 60 x Bs 2,750; Bs 198,000 in 2026 = 60 x Bs 3,300). The RC-IVA base is computed on total ganado less the deductible employee pension contributions less 2 SMN less VAT credits.  _(secondary summary; Ley 065)_
 
 ## Section 2 -- Personal Income Tax Withholding (RC-IVA, the agente-de-retencion mechanism)
 
-Bolivia **does** have a personal income tax for salaried workers: the **Regimen Complementario al IVA (RC-IVA)**, a **flat 13%** levied on individuals' income (Ley N° 843, Arts. 19-36). For **dependent employees** the employer is the **agente de retencion** — it computes and withholds RC-IVA monthly, files a consolidated planilla tributaria, and remits via **Form 608**. There is **no joint filing**; married couples file separately. (Sources: Ley 843; DS 21531; PwC Worldwide Tax Summaries.)
+Bolivia **does** have a personal income tax for salaried workers: the **Regimen Complementario al IVA (RC-IVA)**, a **flat 13%** levied on individuals' income (Ley N° 843, Arts. 19-36). For **dependent employees** the employer is the **agente de retencion** — it computes and withholds RC-IVA monthly, files a consolidated planilla tributaria, and remits via **Form 608**. There is **no joint filing**; married couples file separately. (Sources: Ley 843; DS 21531; secondary summary, .)
 
 ### RC-IVA Computation Method (dependent employees, monthly)
 
-- **RC-IVA computation steps** — 1. Start from total ganado (gross monthly earnings). 2. Subtract the deductible employee pension contributions (Aporte Laboral, 12.71%) — Section 3. 3. Subtract the non-taxable minimum = 2 SMN/month (Bs 5,500 in 2025; Bs 6,600 in 2026). 4. Apply 13% to the remaining base → gross RC-IVA. 5. Offset against the gross RC-IVA the employee's VAT credit: (a) the presumed VAT-credit allowance, plus (b) 13% of the VAT on invoices (facturas) the employee submits via Form 110. 6. The net of step 5 (if positive) is the RC-IVA withheld; if the credit exceeds the gross RC-IVA, no RC-IVA is withheld and the surplus credit carries forward as a saldo a favor del dependiente.  _(Ley 843; DS 21531; PwC)_
+- **RC-IVA computation steps** — 1. Start from total ganado (gross monthly earnings). 2. Subtract the deductible employee pension contributions (Aporte Laboral, 12.71%) — Section 3. 3. Subtract the non-taxable minimum = 2 SMN/month (Bs 5,500 in 2025; Bs 6,600 in 2026). 4. Apply 13% to the remaining base → gross RC-IVA. 5. Offset against the gross RC-IVA the employee's VAT credit: (a) the presumed VAT-credit allowance, plus (b) 13% of the VAT on invoices (facturas) the employee submits via Form 110. 6. The net of step 5 (if positive) is the RC-IVA withheld; if the credit exceeds the gross RC-IVA, no RC-IVA is withheld and the surplus credit carries forward as a saldo a favor del dependiente.  _(Ley 843; DS 21531; secondary summary)_
 - **Non-taxable minimum (paso 3)** — 2 SMN/month = Bs 5,500 in 2025 (2 x Bs 2,750) and Bs 6,600 in 2026 (2 x Bs 3,300)  _(Ley 843; DS 5383; DS 5516)_
 - **Presumed VAT credit (paso 5a)** — Historically the presumed credit equalled 13% of 2 SMN, which together with the 2-SMN minimum made the effective RC-IVA exemption roughly 4 SMN of gross salary. DS 5383 (1 May 2025) reportedly reduced the presumed-credit reference from 2 SMN to 1 SMN, lowering the threshold so workers earning above ~Bs 9,400/month may owe RC-IVA unless they submit enough invoices. [RESEARCH GAP — reviewer to confirm the exact wording of DS 5383 on the presumed VAT-credit allowance against the decree itself; multiple advisory sources report the 2-SMN→1-SMN reduction but it was not confirmed from the Gaceta Oficial.]  _(advisory summaries — Rigoberto Paredes; Bolivia Impuestos)_
 
@@ -80,7 +80,7 @@ Bolivia **does** have a personal income tax for salaried workers: the **Regimen 
 | --- | --- | --- | --- |
 | RC-IVA (personal income tax) | Flat | **13%** | Total ganado − employee pension contributions (12.71%) − 2 SMN minimum − VAT credits (presumed + submitted facturas). (Ley 843, Arts. 19-36.) |
 
-- **No progressive scale** — There is no progressive scale: RC-IVA is a single 13% rate. The exemption is delivered through the 2-SMN minimum and the VAT-credit offset, not a 0% band, so for most low/mid earners the effective RC-IVA is nil once the minimum and presumed credit are applied.  _(PwC; Ley 843)_
+- **No progressive scale** — There is no progressive scale: RC-IVA is a single 13% rate. The exemption is delivered through the 2-SMN minimum and the VAT-credit offset, not a 0% band, so for most low/mid earners the effective RC-IVA is nil once the minimum and presumed credit are applied.  _(secondary summary; Ley 843)_
 
 ### Direct / independent RC-IVA taxpayers
 
@@ -88,19 +88,19 @@ Bolivia **does** have a personal income tax for salaried workers: the **Regimen 
 
 ## Section 3 -- Social Security -- Employee Deductions (Aporte Laboral)
 
-The employee bears the pension-side contributions (collected by the Gestora Publica) plus, for higher earners, the Aporte Nacional Solidario. Health (CNS) is employer-only (Section 4). All are computed on total ganado (gross). (Sources: PwC Worldwide Tax Summaries; Planifica; TopTrabajos; Ley 065; Ley 1582.)
+The employee bears the pension-side contributions (collected by the Gestora Publica) plus, for higher earners, the Aporte Nacional Solidario. Health (CNS) is employer-only (Section 4). All are computed on total ganado (gross). (Sources: a secondary practitioner summary; Planifica; TopTrabajos; Ley 065; Ley 1582.)
 
 ### Employee Contribution Rates (2025)
 
-**Employee Contribution Rates (2025)**  _(PwC Worldwide Tax Summaries; Ley 065; Planifica)_
+**Employee Contribution Rates (2025)**  _(secondary summary; Ley 065; Planifica)_
 
 | Contribution (Spanish) | Rate | Base | Destination / Source |
 | --- | --- | --- | --- |
-| Aporte de Vejez (old-age pension) | 10.00% | Total ganado (capped at 60 SMN) | Individual pension account — Gestora Publica (PwC; Ley 065) |
-| Prima de Riesgo Comun (disability/death) | 1.71% | Total ganado (capped at 60 SMN) | Gestora Publica (PwC) |
-| Comision de administracion (Gestora) | 0.50% | Total ganado | Gestora Publica admin fee (PwC; Planifica) |
-| Aporte Solidario del Asegurado | 0.50% | Total ganado | Fondo Solidario / Pension Solidaria de Vejez (PwC; Planifica) |
-| **TOTAL employee pension-side (Aporte Laboral)** | **12.71%** | Total ganado | = 10.00 + 1.71 + 0.50 + 0.50; **deductible from the RC-IVA base** (PwC) |
+| Aporte de Vejez (old-age pension) | 10.00% | Total ganado (capped at 60 SMN) | Individual pension account — Gestora Publica (secondary summary; Ley 065) |
+| Prima de Riesgo Comun (disability/death) | 1.71% | Total ganado (capped at 60 SMN) | Gestora Publica (secondary summary) |
+| Comision de administracion (Gestora) | 0.50% | Total ganado | Gestora Publica admin fee (secondary summary; Planifica) |
+| Aporte Solidario del Asegurado | 0.50% | Total ganado | Fondo Solidario / Pension Solidaria de Vejez (secondary summary; Planifica) |
+| **TOTAL employee pension-side (Aporte Laboral)** | **12.71%** | Total ganado | = 10.00 + 1.71 + 0.50 + 0.50; **deductible from the RC-IVA base** (secondary summary) |
 
 Arithmetic check: 10.00 + 1.71 + 0.50 + 0.50 = 12.71%. ✓
 
@@ -118,28 +118,28 @@ Arithmetic check: 10.00 + 1.71 + 0.50 + 0.50 = 12.71%. ✓
 
 > Computation: the three rates are additive on each band (the standard Bolivian ANS method). Example for Bs 30,000: (25,000 − 13,000) x 1.15% + (30,000 − 25,000) x 6.89% = 138.00 + 344.50 = Bs 482.50. [RESEARCH GAP — reviewer to confirm the precise marginal-vs-stacked computation with a worked example against the MEFP/SIN; the data describes the rates as cumulative marginal across Bs 13,000 / 25,000 / 35,000.]
 
-> [RESEARCH GAP — reviewer to confirm whether the ANS is deductible from the RC-IVA base.] The 12.71% Aporte Laboral is confirmed deductible (PwC); the worked examples below treat the ANS as a further deductible employee social contribution but flag it for the reviewer.
+> [RESEARCH GAP — reviewer to confirm whether the ANS is deductible from the RC-IVA base.] The 12.71% Aporte Laboral is confirmed deductible (secondary summary); the worked examples below treat the ANS as a further deductible employee social contribution but flag it for the reviewer.
 
 ### Pension contribution ceiling (tope)
 
-- **Pension contribution ceiling** — Pension (vejez and riesgo comun) contributions are levied up to a cap of 60 SMN per month = Bs 165,000 in 2025 (60 x Bs 2,750) and Bs 198,000 in 2026 (60 x Bs 3,300). PwC quotes the cap as ~USD 28,450, which corresponds to the 2026 figure at the official Bs 6.96/USD peg (198,000 ÷ 6.96 = 28,448), not to the 2025 one. [RESEARCH GAP — reviewer to confirm] The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions. Also unresolved: whether the 0.50% comision, the 0.50% aporte solidario and the ANS sit under the 60-SMN cap or are computed on uncapped total ganado. `bolivia-social-contributions` and `bolivia-income-tax` state the same position.  _(PwC; Ley 065; DS 5383; DS 5516)_
+- **Pension contribution ceiling** — Pension (vejez and riesgo comun) contributions are levied up to a cap of 60 SMN per month = Bs 165,000 in 2025 (60 x Bs 2,750) and Bs 198,000 in 2026 (60 x Bs 3,300). The secondary summary quotes the cap as ~USD 28,450, which corresponds to the 2026 figure at the official Bs 6.96/USD peg (198,000 ÷ 6.96 = 28,448), not to the 2025 one. [RESEARCH GAP — reviewer to confirm] The 60-SMN multiplier itself rests on the secondary summary and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions. Also unresolved: whether the 0.50% comision, the 0.50% aporte solidario and the ANS sit under the 60-SMN cap or are computed on uncapped total ganado. `bolivia-social-contributions` and `bolivia-income-tax` state the same position.  _(secondary summary; Ley 065; DS 5383; DS 5516)_
 
 ## Section 4 -- Social Security -- Employer Contributions (Aporte Patronal)
 
-The employer pays the short-term health contribution (CNS), the work-accident branch, the housing fund and the Aporte Patronal Solidario — all employer-only, all on total ganado. The employer does not pay RC-IVA (it only withholds it) and does not pay the employee pension branches. (Sources: PwC Worldwide Tax Summaries — Corporate, Other taxes; Planifica; Ley 1582.)
+The employer pays the short-term health contribution (CNS), the work-accident branch, the housing fund and the Aporte Patronal Solidario — all employer-only, all on total ganado. The employer does not pay RC-IVA (it only withholds it) and does not pay the employee pension branches. (Sources: a secondary practitioner summary — Corporate, Other taxes; Planifica; Ley 1582.)
 
 ### Employer Contribution Rates (2025)
 
-**Employer Contribution Rates (2025)**  _(PwC; Planifica; Ley 1582)_
+**Employer Contribution Rates (2025)**  _(secondary summary; Planifica; Ley 1582)_
 
 | Contribution (Spanish) | Rate | Base | Destination / Notes |
 | --- | --- | --- | --- |
-| Caja Nacional de Salud (CNS) — short-term health | 10.00% | Total ganado | CNS (or chosen Caja) (PwC; Planifica) |
-| Riesgo Profesional (work-accident) | 1.71% | Total ganado | Gestora Publica (PwC) |
-| Aporte Patronal Pro-Vivienda (FONVIS / housing) | 2.00% | Total ganado | Housing fund (PwC; Planifica) |
-| Aporte Patronal Solidario (APS) | 3.50% | Total ganado | Raised from 3.00% to 3.50% by Ley 1582 (eff. 1 Oct 2024) (Ley 1582; PwC) |
-| **TOTAL employer social (Aporte Patronal) — general** | **17.21%** | Total ganado | = 10.00 + 1.71 + 2.00 + 3.50 (PwC) |
-| **TOTAL employer social (Aporte Patronal) — mining** | **19.51%** | Total ganado | General 17.21% + ~2.30% mining (PwC) |
+| Caja Nacional de Salud (CNS) — short-term health | 10.00% | Total ganado | CNS (or chosen Caja) (secondary summary; Planifica) |
+| Riesgo Profesional (work-accident) | 1.71% | Total ganado | Gestora Publica (secondary summary) |
+| Aporte Patronal Pro-Vivienda (FONVIS / housing) | 2.00% | Total ganado | Housing fund (secondary summary; Planifica) |
+| Aporte Patronal Solidario (APS) | 3.50% | Total ganado | Raised from 3.00% to 3.50% by Ley 1582 (eff. 1 Oct 2024) (Ley 1582; secondary summary) |
+| **TOTAL employer social (Aporte Patronal) — general** | **17.21%** | Total ganado | = 10.00 + 1.71 + 2.00 + 3.50 (secondary summary) |
+| **TOTAL employer social (Aporte Patronal) — mining** | **19.51%** | Total ganado | General 17.21% + ~2.30% mining (secondary summary) |
 
 Arithmetic check (general): 10.00 + 1.71 + 2.00 + 3.50 = 17.21%. ✓ Mining: 17.21 + 2.30 = 19.51%. ✓
 
@@ -162,11 +162,11 @@ Note the decree number. The 2026 rise was first decreed by **DS 5503 of 17 Decem
 
 ### Statutory Bonuses and Benefits
 
-**Statutory Bonuses and Benefits table**  _(PwC; Deel; Ministerio de Trabajo; DS 21531; DS 1802)_
+**Statutory Bonuses and Benefits table**  _(secondary summary; Deel; Ministerio de Trabajo; DS 21531; DS 1802)_
 
 | Item (Spanish) | Detail | RC-IVA treatment |
 | --- | --- | --- |
-| Aguinaldo (Christmas bonus) | Mandatory 13th-month salary (1 monthly salary), payable by ~20 December (Ministerio de Trabajo) | **[RESEARCH GAP — conflicting sources.]** PwC: all bonuses **except** the Christmas bonus are taxed (implying the aguinaldo de Navidad is RC-IVA-exempt per DS 21531); some Bolivian sources list the aguinaldo as taxable. **Reconcile before finalizing.** |
+| Aguinaldo (Christmas bonus) | Mandatory 13th-month salary (1 monthly salary), payable by ~20 December (Ministerio de Trabajo) | **[RESEARCH GAP — conflicting sources.]** the secondary summary: all bonuses **except** the Christmas bonus are taxed (implying the aguinaldo de Navidad is RC-IVA-exempt per DS 21531); some Bolivian sources list the aguinaldo as taxable. **Reconcile before finalizing.** |
 | Segundo Aguinaldo ("Esfuerzo por Bolivia", DS 1802) | Second 13th-month payment, **only** mandatory if national GDP growth exceeds **4.5%** | Not RC-IVA taxed (DS 1802) |
 | Indemnizacion (severance) | 1 month salary per year of service (pro-rata after 3 months) | **RC-IVA-exempt** (DS 21531) |
 | Desahucio (unjustified-dismissal compensation) | 3 months salary | **RC-IVA-exempt** (DS 21531) |
@@ -189,7 +189,7 @@ When an input is ambiguous, apply the conservative default and flag for the revi
 | ANS deductibility | Treat the ANS as a deductible employee social contribution for the RC-IVA base, but **flag** — confirm with the reviewer (R-BO-P-8). |
 | Pension cap | Apply the **60-SMN** cap (Bs 165,000/month in 2025; Bs 198,000 in 2026) to vejez and riesgo comun; flag whether comision/aporte solidario/ANS are also capped. |
 | SMN / year | Use **Bs 2,750** for 2025 pay periods and **Bs 3,300** for 2026 pay periods; never mix. The SMN drives the 2-SMN minimum and the 60-SMN cap. |
-| Aguinaldo RC-IVA | Treat the **Christmas aguinaldo** as RC-IVA-exempt (PwC view) but **flag** the conflicting Bolivian-source view; treat indemnizacion and desahucio as RC-IVA-exempt (DS 21531). |
+| Aguinaldo RC-IVA | Treat the **Christmas aguinaldo** as RC-IVA-exempt (secondary summary, view) but **flag** the conflicting Bolivian-source view; treat indemnizacion and desahucio as RC-IVA-exempt (DS 21531). |
 | Currency | All amounts in **BOB (Bs)**. Do not convert to USD in computations. |
 
 ## Section 7 -- Required Inputs and Refusal Catalogue
@@ -385,18 +385,18 @@ Employer Aporte Patronal = 17.21% x total ganado. For Example 3 (Bs 12,000): CNS
 ## Section 10 -- Tier 1 Rules (deterministic)
 
 - **RC-IVA is flat 13% personal income tax** — RC-IVA is Bolivia's personal income tax, levied at a flat 13% on individuals' income including salaried/dependent workers. There is no progressive scale.  _(Ley N° 843, Arts. 19+)_
-- **Employer as agente de retencion** — For dependent employees the employer is the agente de retencion: it deducts the employee pension contributions (12.71%), subtracts a non-taxable minimum of 2 SMN, applies 13%, then offsets the presumed VAT credit plus 13% of the VAT on submitted facturas (Form 110).  _(Ley 843; DS 21531; PwC)_
+- **Employer as agente de retencion** — For dependent employees the employer is the agente de retencion: it deducts the employee pension contributions (12.71%), subtracts a non-taxable minimum of 2 SMN, applies 13%, then offsets the presumed VAT credit plus 13% of the VAT on submitted facturas (Form 110).  _(Ley 843; DS 21531; secondary summary)_
 - **Non-taxable minimum (2 SMN)** — Bs 5,500 in 2025 and Bs 6,600 in 2026; historically the presumed VAT credit (13% of 2 SMN) made the effective exemption ~4 SMN of gross salary.  _(Ley 843; DS 5383; DS 5516)_
 - **DS 5383 presumed-VAT-credit reduction** — DS 5383 (1 May 2025) reportedly reduced the presumed-VAT-credit reference from 2 SMN to 1 SMN, raising RC-IVA liability for mid-earners (above ~Bs 9,400/month) unless they submit invoices. [RESEARCH GAP — verify exact wording.]  _(Advisory: Rigoberto Paredes; Bolivia Impuestos)_
-- **Employee pension-side contribution (Aporte Laboral)** — 12.71% of total ganado: 10% vejez + 1.71% riesgo comun + 0.50% comision Gestora + 0.50% aporte solidario; capped at 60 SMN and deductible from the RC-IVA base.  _(PwC; Ley 065; Planifica)_
-- **Employer social charges (Aporte Patronal)** — 17.21% of total ganado for general employers (19.51% mining): 10% CNS health + 1.71% riesgo profesional + 2% pro-vivienda + 3.5% Aporte Patronal Solidario.  _(PwC; Ley 1582)_
-- **Aporte Patronal Solidario increase** — The Aporte Patronal Solidario rose from 3.0% to 3.5% under Ley 1582 (eff. 1 Oct 2024); the employer total moved from 16.71% to 17.21%.  _(Ley 1582; PwC)_
+- **Employee pension-side contribution (Aporte Laboral)** — 12.71% of total ganado: 10% vejez + 1.71% riesgo comun + 0.50% comision Gestora + 0.50% aporte solidario; capped at 60 SMN and deductible from the RC-IVA base.  _(secondary summary; Ley 065; Planifica)_
+- **Employer social charges (Aporte Patronal)** — 17.21% of total ganado for general employers (19.51% mining): 10% CNS health + 1.71% riesgo profesional + 2% pro-vivienda + 3.5% Aporte Patronal Solidario.  _(secondary summary; Ley 1582)_
+- **Aporte Patronal Solidario increase** — The Aporte Patronal Solidario rose from 3.0% to 3.5% under Ley 1582 (eff. 1 Oct 2024); the employer total moved from 16.71% to 17.21%.  _(Ley 1582; secondary summary)_
 - **Aporte Nacional Solidario (ANS)** — Applies only to total ganado above Bs 13,000/month, cumulative marginal: 1.15% (over Bs 13,000) + 5.74% (over Bs 25,000) + 11.48% (over Bs 35,000); pre-Ley 1582 the rates were 1% / 5% / 10%.  _(Ley 1582; MEFP)_
-- **Pension cap** — 60 SMN/month = Bs 165,000 in 2025 (Bs 198,000 in 2026) on vejez and riesgo comun.  _(PwC; Ley 065)_
+- **Pension cap** — 60 SMN/month = Bs 165,000 in 2025 (Bs 198,000 in 2026) on vejez and riesgo comun.  _(secondary summary; Ley 065)_
 - **SMN (National Minimum Wage)** — Bs 2,750/month for 2025 (DS 5383, +10%); Bs 3,300/month for 2026 (DS 5516, +20%, retroactive to 1 Jan 2026). The SMN drives both the 2-SMN minimum and the 60-SMN cap.  _(DS 5383; DS 5516)_
 - **RC-IVA monthly remittance deadline** — Employers file Form 608 v.4 by the due date set by the last digit of the NIT (NIT ending 0 → day 13, 1 → 14, … 9 → day 22 of the following month); weekend/holiday deadlines roll to the next business day.  _(SIN Calendario Tributario 2025)_
 - **Form 110 and Form 610 usage** — Employees claim VAT credits via Form 110 (now through the "Mis Facturas" app under RND 102000000025 / RND 1020-25), submitted monthly to the employer; direct/independent RC-IVA taxpayers use Form 610.  _(SIAT)_
-- **Aguinaldo, segundo aguinaldo, indemnizacion, desahucio** — Christmas aguinaldo (1 month salary, payable by ~20 December) is mandatory; the segundo aguinaldo (DS 1802) is only mandatory when GDP growth > 4.5%. Indemnizacion (1 month/year) and desahucio (3 months) are RC-IVA-exempt (DS 21531); the aguinaldo's RC-IVA treatment is unsettled across sources. [RESEARCH GAP.]  _(PwC; DS 21531; DS 1802; Deel)_
+- **Aguinaldo, segundo aguinaldo, indemnizacion, desahucio** — Christmas aguinaldo (1 month salary, payable by ~20 December) is mandatory; the segundo aguinaldo (DS 1802) is only mandatory when GDP growth > 4.5%. Indemnizacion (1 month/year) and desahucio (3 months) are RC-IVA-exempt (DS 21531); the aguinaldo's RC-IVA treatment is unsettled across sources. [RESEARCH GAP.]  _(secondary summary; DS 21531; DS 1802; Deel)_
 - **Penalty for omision de pago** — Penalty for omision de pago is 60% of the unpaid tax (in UFV), reducible to 80% off (pay within 20 days of the Vista de Cargo) or 60% off (before appealing the Resolucion Determinativa); tax debt is indexed to UFV plus interest from the due date.  _(Ley 2492; RND 102200000016)_
 - **Contribution base and currency** — Pension/health contributions are computed on total ganado (gross); all amounts are in bolivianos (BOB).
 
@@ -414,7 +414,7 @@ Items requiring professional judgement; apply the default and flag the question.
 
 ### 11.3 Aguinaldo RC-IVA treatment
 
-- **Default and question** — Default: treat the Christmas aguinaldo as RC-IVA-exempt (PwC) but flag. Question: "Is the aguinaldo de Navidad RC-IVA-exempt (PwC/DS 21531) or taxable (some Bolivian sources)?" — R-BO-P-6. [RESEARCH GAP.]  _(R-BO-P-6)_
+- **Default and question** — Default: treat the Christmas aguinaldo as RC-IVA-exempt (secondary summary) but flag. Question: "Is the aguinaldo de Navidad RC-IVA-exempt (secondary summary, /DS 21531) or taxable (some Bolivian sources)?" — R-BO-P-6. [RESEARCH GAP.]  _(R-BO-P-6)_
 
 ### 11.4 ANS deductibility and computation
 
@@ -426,7 +426,7 @@ Items requiring professional judgement; apply the default and flag the question.
 
 ### 11.6 Mining vs general employer
 
-- **Default and question** — Default: general 17.21%. Question: "Is the employer in the mining sector? If so, employer charges are 19.51%."  _(PwC)_
+- **Default and question** — Default: general 17.21%. Question: "Is the employer in the mining sector? If so, employer charges are 19.51%."  _(secondary summary)_
 
 ### 11.7 APS effective rate
 
@@ -579,10 +579,10 @@ Per `payroll-workflow-base`. One row per employee per pay period. Suggested colu
 
 ### Sources
 
-1. PwC Worldwide Tax Summaries — Bolivia, Individual, Taxes on personal income (RC-IVA 13%): https://taxsummaries.pwc.com/bolivia/individual/taxes-on-personal-income
-2. PwC Worldwide Tax Summaries — Bolivia, Individual, Other taxes (employee 12.71% AFP, ANS scale 1.15%-11.48%, 60-SMN cap, Bs 13,000 threshold): https://taxsummaries.pwc.com/bolivia/individual/other-taxes
-3. PwC Worldwide Tax Summaries — Bolivia, Corporate, Other taxes (employer social charges 17.21% general / 19.51% mining): https://taxsummaries.pwc.com/bolivia/corporate/other-taxes
-4. PwC Worldwide Tax Summaries — Bolivia, Individual, Tax administration (employer monthly RC-IVA consolidated return): https://taxsummaries.pwc.com/bolivia/individual/tax-administration
+1. Secondary practitioner summary (link removed) — Bolivia, Individual, Taxes on personal income (RC-IVA 13%):
+2. Secondary practitioner summary (link removed) — Bolivia, Individual, Other taxes (employee 12.71% AFP, ANS scale 1.15%-11.48%, 60-SMN cap, Bs 13,000 threshold):
+3. Secondary practitioner summary (link removed) — Bolivia, Corporate, Other taxes (employer social charges 17.21% general / 19.51% mining):
+4. Secondary practitioner summary (link removed) — Bolivia, Individual, Tax administration (employer monthly RC-IVA consolidated return):
 5. Servicio de Impuestos Nacionales (SIN) — RC-IVA (SIAT Info): https://siatinfo.impuestos.gob.bo/index.php/impuesto-asunto/rc-iva
 6. SIN / SIAT — 610 Regimen Complementario del IVA - Contribuyente Directo (Forms 608/610/110): https://siatinfo.impuestos.gob.bo/index.php/declaraciones-juradas-en-formato-electronico/regimen-complementario-al-iva/610-regimen-complementario-del-iva-contribuyente-directo
 7. SIN — Texto Formularios 110 y 610 (julio 2025): https://www.impuestos.gob.bo/wp-content/uploads/2025/10/TEXTO-FORMULARIOS-110-610.pdf
@@ -600,9 +600,9 @@ Per `payroll-workflow-base`. One row per employee per pay period. Suggested colu
 ### Known Gaps
 
 1. **DS 5383 presumed VAT credit:** multiple advisory sources say it reduced the presumed-credit reference from 2 SMN to 1 SMN, increasing liability, but this was **not confirmed from the decree itself**. The conservative (1-SMN) figure is used. (R-BO-P-7.)
-2. **Employer total 17.21% (PwC) vs 16.71% (some Bolivian guides):** the difference is the Aporte Patronal Solidario at 3.5% (post-Ley 1582) vs 3.0% (pre-1582). 17.21% (3.5% APS) is used; confirm the effective date for payroll application.
-3. **Aguinaldo RC-IVA treatment:** PwC states all bonuses except the Christmas bonus are taxable, while some Bolivian sources list the aguinaldo as taxable and only indemnizacion/desahucio/quinquenio as exempt (DS 21531). Reconcile before finalizing. (R-BO-P-6.)
-4. **Pension cap scope:** PwC cites 60 SMN (~USD 28,450); whether the 0.50% comision, 0.50% aporte solidario and the ANS sit under the cap or on uncapped total ganado is unconfirmed. The Gestora monthly payment deadline was not confirmed from the Gestora Publica site.
+2. **Employer total 17.21% (secondary summary) vs 16.71% (some Bolivian guides):** the difference is the Aporte Patronal Solidario at 3.5% (post-Ley 1582) vs 3.0% (pre-1582). 17.21% (3.5% APS) is used; confirm the effective date for payroll application.
+3. **Aguinaldo RC-IVA treatment:** the secondary summary states all bonuses except the Christmas bonus are taxable, while some Bolivian sources list the aguinaldo as taxable and only indemnizacion/desahucio/quinquenio as exempt (DS 21531). Reconcile before finalizing. (R-BO-P-6.)
+4. **Pension cap scope:** the secondary summary cites 60 SMN (~USD 28,450); whether the 0.50% comision, 0.50% aporte solidario and the ANS sit under the cap or on uncapped total ganado is unconfirmed. The Gestora monthly payment deadline was not confirmed from the Gestora Publica site.
 5. **ANS computation:** the brackets are applied cumulatively/marginally across Bs 13,000 / 25,000 / 35,000 per the MEFP description; the precise marginal-vs-stacked computation and **ANS deductibility from the RC-IVA base** need a worked example confirmed with the authority. (R-BO-P-8.)
 6. **2026 SMN Bs 3,300 (DS 5516):** reported by multiple secondary sources and consistent, but confirm against the Gaceta Oficial.
 7. **IDF fixed-fine amounts** vary by RND and taxpayer type and were not enumerated in detail.

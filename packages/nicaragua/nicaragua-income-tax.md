@@ -1,10 +1,10 @@
 ---
 name: nicaragua-income-tax
 description: Use this skill whenever asked about Nicaragua income tax (Impuesto sobre la Renta, IR) on employment income — rentas del trabajo. Trigger on phrases like "how much tax do I pay in Nicaragua", "Impuesto sobre la Renta", "IR rentas del trabajo", "retención IR", "IR-122", "IR-106", "annual income tax return Nicaragua", "INSS laboral", "córdoba tax", "DGI", "payroll income tax Nicaragua", "exempt threshold C$100,000", or any question about computing or filing income tax on salary for a Nicaraguan resident employee. Also trigger when preparing or reviewing monthly IR withholding, annualizing a salary to the progressive scale, computing the deductible 7% INSS laboral before IR, or advising on the annual IR-106 filing obligation. This skill covers the progressive employment-income scale (exempt up to C$100,000/yr, then 15/20/25/30%), the deductibility of INSS laboral, monthly withholding via IR-122, the annual IR-106 return, non-resident definitive withholding, and the interaction with INSS. ALWAYS read this skill before touching any Nicaragua income-tax work.
-version: 0.1
+version: 0.2
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Nicaraguan Income Tax -- Rentas del Trabajo
 
-## Nicaraguan Income Tax -- Rentas del Trabajo Skill v0.1
+## Nicaraguan Income Tax -- Rentas del Trabajo Skill v0.2
 
 > **DISAMBIGUATION:** "NI" in this skill means **NICARAGUA**, the Central American republic. It does **NOT** mean Northern Ireland or UK National Insurance. There is no HMRC, no pound sterling, and no UK content anywhere in this skill. Currency is the **córdoba (C$ / NIO)**. The tax authority is the **DGI (Dirección General de Ingresos)**. Social security is administered by **INSS (Instituto Nicaragüense de Seguridad Social)**.
 
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual individual return | IR-106 (due within 90 days after year-end, ~31 March) |
 | Validated by | Pending — requires sign-off by a Nicaraguan licensed accountant (Contador Público Autorizado, CCPN) |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Progressive Annual Scale — Rentas del Trabajo (2025)
 
@@ -445,16 +445,16 @@ ONBOARDING QUESTIONS -- NICARAGUA INCOME TAX (IR)
 
 | Source | Coverage | URL |
 | --- | --- | --- |
-| PwC — Taxes on personal income | Progressive scale, non-resident WHT | https://taxsummaries.pwc.com/nicaragua/individual/taxes-on-personal-income |
-| PwC — Other taxes | INSS rates | https://taxsummaries.pwc.com/nicaragua/individual/other-taxes |
-| PwC — Tax administration | IR-122, IR-106, deadlines | https://taxsummaries.pwc.com/nicaragua/individual/tax-administration |
+| secondary summary, Taxes on personal income | Progressive scale, non-resident WHT | |
+| secondary summary, Other taxes | INSS rates | |
+| secondary summary, Tax administration | IR-122, IR-106, deadlines | |
 | Lorente Consultores | Ley 822 reforms, employee tax burden | https://www.lorenteconsultores.com/post/el-trabajador-y-su-carga-impositiva-lo-que-establece-la-ley-822-y-sus-reformas |
 | DGI — "Aprendamos a Tributar" | Official DGI guidance | https://www.dgi.gob.ni/pdfArchivo/22 |
 | Mercer | 2019 INSS reform detail | https://www.mercer.com/en-us/insights/law-and-policy/nicaragua-revises-social-security-arrangements/ |
 | GCH (Servicio Contable Nicaragua) | Current INSS/INATEC rates, no ceiling | https://www.serviciocontablenicaragua.com/la-gestion-de-nomina-en-nicaragua/ |
 | INSS official | Social security authority | https://www.inss.gob.ni/ |
 
-Big Four coverage for Nicaragua individuals is essentially PwC-only on taxsummaries; EY and Deloitte do not maintain a standalone Nicaragua individual page. PwC is corroborated by Nicaraguan professional sources (CCPN — Colegio de Contadores Públicos de Nicaragua, and the firms cited above).
+Big Four coverage for Nicaragua individuals is essentially the secondary summary-only on taxsummaries; EY and Deloitte do not maintain a standalone Nicaragua individual page. The secondary summary is corroborated by Nicaraguan professional sources (CCPN — Colegio de Contadores Públicos de Nicaragua, and the firms cited above).
 
 ### Test Suite
 

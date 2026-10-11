@@ -1,11 +1,11 @@
 ---
 name: bolivia-social-contributions
 description: Use this skill whenever asked about Bolivia social-security (seguridad social) contributions and dependent-employee payroll taxation for the 2025 tax year. Trigger on phrases like "how much do I pay to the Gestora", "aportes AFP Bolivia", "12.71% worker contribution", "aporte solidario", "Aporte Nacional Solidario", "ANS calculation", "Caja de Salud employer contribution", "Pro-Vivienda housing fund", "RC-IVA withholding", "Form 110 invoices", "Form 608", "total ganado contributions", "Bolivia payroll cost", "Gestora Pública contribution", or any question about Bolivian employer/employee social-security obligations. Also trigger when classifying bank statement transactions that relate to Gestora Pública, Caja de Salud (CNS), APS, or SIN/SIAT payments from Bolivian banks (Banco Unión, BNB, Banco Mercantil Santa Cruz, Banco BISA, Banco de Crédito BCP). Also trigger when preparing or reconciling RC-IVA (personal income tax) where social-contribution deductibility is relevant. This skill covers the 12.71% employee rate, the ANS high-earner surcharge, the 17.21% (19.51% mining) employer rate, the RC-IVA flat 13% mechanics, minimum wage (SMN), contribution base (total ganado), payment/filing deadlines, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Bolivian social-contribution or RC-IVA work.
-version: 0.3
+version: 0.4
 jurisdiction: BO
 tax_year: 2025
 tax_year_notes: "2025 (SMN-derived thresholds also stated at the 2026 SMN of Bs 3,300, DS 5516)"
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -16,9 +16,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Bolivia Social Security Contributions & RC-IVA — Dependent Employment
 
-## Bolivia Social Security Contributions & RC-IVA — Dependent Employment Skill v0.3
+## Bolivia Social Security Contributions & RC-IVA — Dependent Employment Skill v0.4
 
-> **Tier 2 (research-verified) skill.** Figures below are corroborated by PwC Worldwide Tax Summaries and reputable Bolivian law firms/consultancies (Rigoberto Paredes, Planifica) and primary norms (Ley 065, Ley 1582, DS 5383). Where a figure is unconfirmed against the primary statute it is marked **[RESEARCH GAP — reviewer to confirm]**. This skill must be signed off by a Bolivian-qualified professional before any output is filed or acted upon.
+> **Tier 2 (research-verified) skill.** Figures below are corroborated by a secondary practitioner summary and reputable Bolivian law firms/consultancies (Rigoberto Paredes, Planifica) and primary norms (Ley 065, Ley 1582, DS 5383). Where a figure is unconfirmed against the primary statute it is marked **[RESEARCH GAP — reviewer to confirm]**. This skill must be signed off by a Bolivian-qualified professional before any output is filed or acted upon.
 
 ## Section 1 — Quick reference
 
@@ -38,19 +38,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Servicio de Impuestos Nacionales (SIN, www.impuestos.gob.bo / siat.impuestos.gob.bo) |
 | Labour/wage policy | Ministerio de Trabajo (mintrabajo.gob.bo) |
 | Contribution base | Total ganado (total monthly gross remuneration) |
-| Employee social-security rate | 12.71% of total ganado (PwC) |
-| ANS (high earners) | 1.15% / 5.74% / 11.48% above Bs 13,000 / 25,000 / 35,000 per month (Ley 1582; PwC) |
-| Employer social-security rate | 17.21% general / 19.51% mining (PwC) |
-| Personal income tax | RC-IVA — flat 13%, no progressive brackets (Ley 843; PwC) |
-| Corporate income tax | IUE — 25% (Ley 843; PwC) |
+| Employee social-security rate | 12.71% of total ganado (secondary summary) |
+| ANS (high earners) | 1.15% / 5.74% / 11.48% above Bs 13,000 / 25,000 / 35,000 per month (Ley 1582; secondary summary) |
+| Employer social-security rate | 17.21% general / 19.51% mining (secondary summary) |
+| Personal income tax | RC-IVA — flat 13%, no progressive brackets (Ley 843; secondary summary) |
+| Corporate income tax | IUE — 25% (Ley 843; secondary summary) |
 | 2025 minimum wage (SMN) | Bs 2,750/month, from 1 May 2025 retroactive to Jan 2025 (DS 5383) |
 | Currency | Boliviano (BOB / Bs) only |
 | Tax year | 2025 |
 | Validated by | Pending — requires sign-off by a Bolivian-qualified professional |
 | Validation date | Pending |
 
-- **Who Bolivia taxes** — Bolivia taxes on a territorial basis — only Bolivian-source income is taxed, regardless of nationality or residence.  _(PwC, Bolivia — Individual — Taxes on personal income)_
-- **Important framing — RC-IVA** — Bolivia's personal income tax is the RC-IVA (Régimen Complementario al Impuesto al Valor Agregado — Complementary Regime to VAT), a flat 13% on Bolivian-source dependent and capital income, with NO progressive bracket schedule. It is largely offsettable against the 13% VAT credit generated by purchase invoices the employee submits on Form 110. This skill therefore covers BOTH (a) the social-security contribution stack and (b) the RC-IVA withholding mechanics that sit on top of payroll.  _(PwC; Ley 843)_
+- **Who Bolivia taxes** — Bolivia taxes on a territorial basis — only Bolivian-source income is taxed, regardless of nationality or residence.  _(secondary summary, Bolivia — Individual — Taxes on personal income)_
+- **Important framing — RC-IVA** — Bolivia's personal income tax is the RC-IVA (Régimen Complementario al Impuesto al Valor Agregado — Complementary Regime to VAT), a flat 13% on Bolivian-source dependent and capital income, with NO progressive bracket schedule. It is largely offsettable against the 13% VAT credit generated by purchase invoices the employee submits on Form 110. This skill therefore covers BOTH (a) the social-security contribution stack and (b) the RC-IVA withholding mechanics that sit on top of payroll.  _(secondary summary; Ley 843)_
 
 ## Section 1A — Contribution & rate tables
 
@@ -66,7 +66,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Worker solidarity contribution | Aporte Solidario del Asegurado | 0.5% | Total ganado |
 | **EMPLOYEE TOTAL (base)** |  | **12.71%** | **Total ganado** |
 
-- **Arithmetic check** — 10% + 1.71% + 0.5% + 0.5% = 12.71%. The pension portion (10%) goes to the worker's individual capitalisation account in the SIP managed by the Gestora Pública. The 12.71% excludes the ANS, which applies only to high earners.  _(Planifica; Rigoberto Paredes; PwC)_
+- **Arithmetic check** — 10% + 1.71% + 0.5% + 0.5% = 12.71%. The pension portion (10%) goes to the worker's individual capitalisation account in the SIP managed by the Gestora Pública. The 12.71% excludes the ANS, which applies only to high earners.  _(Planifica; Rigoberto Paredes; secondary summary)_
 
 ### National Solidarity Contribution (ANS) — high-earning employees only
 
@@ -80,7 +80,7 @@ Per Ley 1582 (effective October 2024). Applied to the positive difference of tot
 | Tranche 2 (cumulative, on top of T1) | 5.74% | Bs 25,000 |
 | Tranche 3 (cumulative, on top of T1+T2) | 11.48% | Bs 35,000 |
 
-PwC summarises the scale as "1.15% up to 11.48%". Ley 1582 (1 October 2024), in the Fondo Solidario financing article it inserts into Ley 065, applies each rate to the positive difference between the Total Solidario and its own threshold and sums the three: 11.48% above Bs 35,000, 5.74% above Bs 25,000 and 1.15% above Bs 13,000, which is the model used here ([LexiVox, Ley 1582](https://www.lexivox.org/norms/BO-L-N1582.html)).
+The secondary summary summarises the scale as "1.15% up to 11.48%". Ley 1582 (1 October 2024), in the Fondo Solidario financing article it inserts into Ley 065, applies each rate to the positive difference between the Total Solidario and its own threshold and sums the three: 11.48% above Bs 35,000, 5.74% above Bs 25,000 and 1.15% above Bs 13,000, which is the model used here ([LexiVox, Ley 1582](https://www.lexivox.org/norms/BO-L-N1582.html)).
 
 ### Employer contributions (paid on top of total ganado)
 
@@ -95,7 +95,7 @@ PwC summarises the scale as "1.15% up to 11.48%". Ley 1582 (1 October 2024), in 
 | **EMPLOYER TOTAL (general)** |  | **17.21%** | **Total ganado** |
 | **EMPLOYER TOTAL (mining sector)** |  | **19.51%** | **Total ganado** |
 
-- **Arithmetic check and notes** — 10% + 1.71% + 2% + 3.5% = 17.21% (Planifica; PwC). The employer solidarity contribution was raised from 3.0% to 3.5% by Ley 1582, effective October 2024 (Ley 1582; CISS). The mining-sector total of 19.51% (PwC) is 2.30 pp above the general rate; the extra 2.30 pp is the mining-sector employer solidarity contribution of 2.3% of Total Ganado that Ley 1582 sets alongside the general 3.5% ([LexiVox, Ley 1582](https://www.lexivox.org/norms/BO-L-N1582.html)). The 10% Caja de Salud rate is the standard CNS rate; some cajas/sectors may differ ([RESEARCH GAP — reviewer to confirm] sector-specific cajas).  _(Planifica; PwC; Ley 1582; CISS)_
+- **Arithmetic check and notes** — 10% + 1.71% + 2% + 3.5% = 17.21% (Planifica; secondary summary). The employer solidarity contribution was raised from 3.0% to 3.5% by Ley 1582, effective October 2024 (Ley 1582; CISS). The mining-sector total of 19.51% (secondary summary) is 2.30 pp above the general rate; the extra 2.30 pp is the mining-sector employer solidarity contribution of 2.3% of Total Ganado that Ley 1582 sets alongside the general 3.5% ([LexiVox, Ley 1582](https://www.lexivox.org/norms/BO-L-N1582.html)). The 10% Caja de Salud rate is the standard CNS rate; some cajas/sectors may differ ([RESEARCH GAP — reviewer to confirm] sector-specific cajas).  _(Planifica; secondary summary; Ley 1582; CISS)_
 
 ### Tax rates (for context — see Section 1B for RC-IVA mechanics)
 
@@ -103,10 +103,10 @@ PwC summarises the scale as "1.15% up to 11.48%". Ley 1582 (1 October 2024), in 
 
 | Tax | Type | Rate | Notes |
 | --- | --- | --- | --- |
-| RC-IVA (personal income tax) | Flat | 13% | On dependent/capital income net of social contributions and ANS; offsettable with Form 110 VAT credit (Ley 843; PwC) |
-| IUE (corporate income tax) | Flat | 25% | General CIT. Mining +12.5%/+7.5% surtax + 1%–7% royalties; high-ROE financial/insurance +25% surtax (PwC) |
-| IVA (VAT) | — | 13% nominal (14.94% effective tax-inclusive) | (SIN; PwC) |
-| IT (Transactions Tax) | — | 3% of gross income | Offsettable only against IUE, not against purchase invoices (SIN; PwC) |
+| RC-IVA (personal income tax) | Flat | 13% | On dependent/capital income net of social contributions and ANS; offsettable with Form 110 VAT credit (Ley 843; secondary summary) |
+| IUE (corporate income tax) | Flat | 25% | General CIT. Mining +12.5%/+7.5% surtax + 1%–7% royalties; high-ROE financial/insurance +25% surtax (secondary summary) |
+| IVA (VAT) | — | 13% nominal (14.94% effective tax-inclusive) | (SIN; secondary summary) |
+| IT (Transactions Tax) | — | 3% of gross income | Offsettable only against IUE, not against purchase invoices (SIN; secondary summary) |
 
 ## Section 1B — Thresholds & key figures
 
@@ -120,12 +120,12 @@ PwC summarises the scale as "1.15% up to 11.48%". Ley 1582 (1 October 2024), in 
 | RC-IVA non-taxable allowance | 2 × SMN = Bs 5,500/month in 2025 (2 × Bs 2,750) and Bs 6,600/month in 2026 (2 × Bs 3,300) | Ley 843; DS 5383; DS 5516; Rigoberto Paredes |
 | RC-IVA presumed deduction (DS 5383) | 13% of 1 SMN, reduced from 13% of 2 SMN = Bs 357.50/month in 2025 and Bs 429.00/month in 2026 | DS 5383; DS 5516; Rigoberto Paredes |
 | RC-IVA practical threshold | ≈ Bs 9,451–9,456/month gross in 2025, ≈ Bs 11,341/month in 2026, above which RC-IVA becomes payable absent invoice offset. The threshold is 3 SMN ÷ 0.8729, so it moves with the SMN | Rigoberto Paredes; Visión360; derived for 2026 from DS 5516 |
-| ANS entry threshold | Bs 13,000/month total ganado (then 25,000 / 35,000) | Ley 1582; PwC |
-| Pension contribution ceiling (tope) | 60 national minimum salaries/month = **Bs 165,000 in 2025** (60 × Bs 2,750) and **Bs 198,000 in 2026** (60 × Bs 3,300) | PwC; DS 5383; DS 5516 — **see caveat below** |
-| VAT (IVA) rate | 13% nominal (14.94% effective tax-inclusive) | SIN; PwC |
-| Transactions Tax (IT) rate | 3% of gross income | SIN; PwC |
+| ANS entry threshold | Bs 13,000/month total ganado (then 25,000 / 35,000) | Ley 1582; secondary summary |
+| Pension contribution ceiling (tope) | 60 national minimum salaries/month = **Bs 165,000 in 2025** (60 × Bs 2,750) and **Bs 198,000 in 2026** (60 × Bs 3,300) | secondary summary; DS 5383; DS 5516 — **see caveat below** |
+| VAT (IVA) rate | 13% nominal (14.94% effective tax-inclusive) | SIN; secondary summary |
+| Transactions Tax (IT) rate | 3% of gross income | SIN; secondary summary |
 
-**Pension ceiling caveat — [RESEARCH GAP — reviewer to confirm].** PwC states a cap of 60 national minimum salaries/month, quoted as ≈ USD 28,450. Given that multiplier the Bs figure is not itself in doubt — it is 60 × the SMN this pack already sources to DS 5383 and DS 5516: **Bs 165,000/month for 2025** and **Bs 198,000/month for 2026**. The USD quote corresponds to the 2026 figure, not the 2025 one (198,000 ÷ the official Bs 6.96/USD peg = USD 28,448); read against the 2025 SMN it does not tie, which is what made it look unreconcilable. The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions. `bolivia-payroll` and `bolivia-income-tax` state the same position.
+**Pension ceiling caveat — [RESEARCH GAP — reviewer to confirm].** the secondary summary states a cap of 60 national minimum salaries/month, quoted as ≈ USD 28,450. Given that multiplier the Bs figure is not itself in doubt — it is 60 × the SMN this pack already sources to DS 5383 and DS 5516: **Bs 165,000/month for 2025** and **Bs 198,000/month for 2026**. The USD quote corresponds to the 2026 figure, not the 2025 one (198,000 ÷ the official Bs 6.96/USD peg = USD 28,448); read against the 2025 SMN it does not tie, which is what made it look unreconcilable. The 60-SMN multiplier itself rests on the secondary summary and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions. `bolivia-payroll` and `bolivia-income-tax` state the same position.
 
 ## Section 1C — Conservative defaults
 
@@ -133,11 +133,11 @@ PwC summarises the scale as "1.15% up to 11.48%". Ley 1582 (1 October 2024), in 
 
 | Ambiguity | Default | Rationale |
 | --- | --- | --- |
-| Employee social-security deduction | 12.71% of total ganado | Standard worker rate (PwC; Planifica; Rigoberto Paredes); excludes ANS |
-| Whether ANS applies | Only if total ganado > Bs 13,000/month; otherwise 0 | Ley 1582; PwC |
-| ANS rates to use | 1.15% / 5.74% / 11.48% (Ley 1582, eff. Oct 2024) | Post-Ley-1582 official rates; PwC confirms scale. Older 1%/5%/10% figures are pre-2024 — do NOT use |
-| Employer social-security cost | 17.21% of total ganado (general); 19.51% if mining | PwC corporate other-taxes |
-| RC-IVA | 13% flat on income net of social contributions and ANS, with 2-SMN exemption and invoice-based VAT offset | Ley 843; PwC; DS 5383 |
+| Employee social-security deduction | 12.71% of total ganado | Standard worker rate (secondary summary; Planifica; Rigoberto Paredes); excludes ANS |
+| Whether ANS applies | Only if total ganado > Bs 13,000/month; otherwise 0 | Ley 1582; secondary summary |
+| ANS rates to use | 1.15% / 5.74% / 11.48% (Ley 1582, eff. Oct 2024) | Post-Ley-1582 official rates; the secondary summary confirms scale. Older 1%/5%/10% figures are pre-2024 — do NOT use |
+| Employer social-security cost | 17.21% of total ganado (general); 19.51% if mining | secondary summary, corporate other-taxes |
+| RC-IVA | 13% flat on income net of social contributions and ANS, with 2-SMN exemption and invoice-based VAT offset | Ley 843; secondary summary; DS 5383 |
 | Unknown sector | Assume general (17.21%), not mining; flag for reviewer | Conservative — lower of the two only if confirmed non-mining |
 | Unknown total ganado | STOP — do not compute contributions without the gross | Base is total ganado; no default gross |
 | 2025 vs 2026 SMN | Take the SMN from the period being computed: Bs 2,750 (DS 5383) for 2025, Bs 3,300 (DS 5516) for 2026 | Every SMN-derived figure in this skill — the 2-SMN RC-IVA allowance, the presumed deduction, the 60-SMN pension ceiling — moves with it. The skill is written for tax_year 2025 and the 2026 values are stated alongside |
@@ -152,7 +152,7 @@ PwC summarises the scale as "1.15% up to 11.48%". Ley 1582 (1 October 2024), in 
 
 - **R-BO-SS-1 — Total ganado unknown** — Trigger: gross monthly remuneration not provided. Message: "Monthly total ganado is mandatory. All Bolivian social-security contributions (12.71% employee, 17.21%/19.51% employer) and RC-IVA are computed on it. Cannot proceed without the gross figure."
 - **R-BO-SS-2 — ANS mechanism / high earner** — Trigger: total ganado above Bs 13,000/month and the client needs a definitive ANS figure. Message: "The National Solidarity Contribution (ANS) under Ley 1582 uses thresholds at Bs 13,000 / 25,000 / 35,000 at 1.15% / 5.74% / 11.48%. The exact application mechanism (marginal-slice vs aggregate) is not fully confirmed against the statute in this skill. Escalate to a Bolivian-qualified professional before filing."
-- **R-BO-SS-3 — Pension ceiling for very high earners** — Trigger: total ganado near/above 60 SMN (Bs 165,000/month in 2025; Bs 198,000/month in 2026). Message: "The 60-SMN pension contribution ceiling comes from PwC and is not confirmed against an APS/Gestora circular, and which branches sit under it is unresolved. The Bs amount follows from the SMN once the multiplier is accepted. Do not cap contributions without confirming that the ceiling applies and to which branches. Escalate to a Bolivian-qualified professional."
+- **R-BO-SS-3 — Pension ceiling for very high earners** — Trigger: total ganado near/above 60 SMN (Bs 165,000/month in 2025; Bs 198,000/month in 2026). Message: "The 60-SMN pension contribution ceiling comes from the secondary summary and is not confirmed against an APS/Gestora circular, and which branches sit under it is unresolved. The Bs amount follows from the SMN once the multiplier is accepted. Do not cap contributions without confirming that the ceiling applies and to which branches. Escalate to a Bolivian-qualified professional."
 - **R-BO-SS-4 — Contribution arrears / penalties** — Trigger: unpaid contributions or late RC-IVA from prior periods. Message: "Penalty and surcharge percentages for late contributions (APS) and tax non-compliance (Código Tributario, Ley 2492) are not captured authoritatively in this skill. Do not quantify arrears or penalties. Escalate to a Bolivian-qualified professional with the APS/SIN statements."
 - **R-BO-SS-5 — Independent/voluntary affiliates** — Trigger: self-employed, independent (trabajador independiente), or voluntary SIP affiliate. Message: "This skill covers dependent (employee) payroll. Independent and voluntary SIP affiliation uses a different declared base and rate structure. Escalate to a Bolivian-qualified professional."
 
@@ -288,11 +288,11 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 1 — Contribution base
 
-- **Contribution base** — The base for all contributions and the pension is total ganado — total monthly remuneration (salary, overtime, bonuses, commissions, etc.), up to the pension ceiling (see Rule 7).  _(PwC; Ley 065)_
+- **Contribution base** — The base for all contributions and the pension is total ganado — total monthly remuneration (salary, overtime, bonuses, commissions, etc.), up to the pension ceiling (see Rule 7).  _(secondary summary; Ley 065)_
 
 ### Rule 2 — Employee contribution
 
-- **Employee SS formula** — Employee SS = total_ganado × 12.71% = 10% (pension) + 1.71% (common risk) + 0.5% (admin) + 0.5% (worker solidarity)  _(Planifica; Rigoberto Paredes; PwC)_
+- **Employee SS formula** — Employee SS = total_ganado × 12.71% = 10% (pension) + 1.71% (common risk) + 0.5% (admin) + 0.5% (worker solidarity)  _(Planifica; Rigoberto Paredes; secondary summary)_
 
 ### Rule 3 — National Solidarity Contribution (ANS), high earners only
 
@@ -300,11 +300,11 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 4 — Employer contribution
 
-- **Employer SS formula** — Employer SS (general) = total_ganado × 17.21% = 10% (health) + 1.71% (professional risk) + 2% (housing) + 3.5% (employer solidarity) Employer SS (mining) = total_ganado × 19.51%  _(Planifica; PwC; Ley 1582)_
+- **Employer SS formula** — Employer SS (general) = total_ganado × 17.21% = 10% (health) + 1.71% (professional risk) + 2% (housing) + 3.5% (employer solidarity) Employer SS (mining) = total_ganado × 19.51%  _(Planifica; secondary summary; Ley 1582)_
 
 ### Rule 5 — RC-IVA (personal income tax) is flat 13%
 
-- **RC-IVA flat rate rule** — Bolivia has no progressive bracket schedule. RC-IVA = 13% on dependent income net of social-security contributions and ANS, after the 2-SMN exemption and the presumed deduction, offsettable with Form 110 invoice VAT credit.  _(Ley 843; PwC)_
+- **RC-IVA flat rate rule** — Bolivia has no progressive bracket schedule. RC-IVA = 13% on dependent income net of social-security contributions and ANS, after the 2-SMN exemption and the presumed deduction, offsettable with Form 110 invoice VAT credit.  _(Ley 843; secondary summary)_
 
 ### Rule 6 — RC-IVA withholding formula (dependent employee, 2025)
 
@@ -312,11 +312,11 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 7 — Pension contribution ceiling
 
-- **Pension ceiling** — Contributions are levied on total ganado up to a ceiling of 60 national minimum salaries/month = Bs 165,000 in 2025 (60 × Bs 2,750) and Bs 198,000 in 2026 (60 × Bs 3,300). [RESEARCH GAP — reviewer to confirm] The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions.  _(PwC; DS 5383; DS 5516)_
+- **Pension ceiling** — Contributions are levied on total ganado up to a ceiling of 60 national minimum salaries/month = Bs 165,000 in 2025 (60 × Bs 2,750) and Bs 198,000 in 2026 (60 × Bs 3,300). [RESEARCH GAP — reviewer to confirm] The 60-SMN multiplier itself rests on the secondary summary and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions.  _(secondary summary; DS 5383; DS 5516)_
 
 ### Rule 8 — Employer is the withholding agent
 
-- **Employer withholding agent rule** — Employers withhold and remit both the employee contributions (12.71% + ANS) and the employer contributions (17.21%/19.51%) monthly to the Gestora Pública, and withhold/remit RC-IVA monthly to SIN.  _(PwC; SIN/SIAT; APS)_
+- **Employer withholding agent rule** — Employers withhold and remit both the employee contributions (12.71% + ANS) and the employer contributions (17.21%/19.51%) monthly to the Gestora Pública, and withhold/remit RC-IVA monthly to SIN.  _(secondary summary; SIN/SIAT; APS)_
 
 ### Rule 9 — Minimum wage
 
@@ -351,7 +351,7 @@ When data is ambiguous or client circumstances are unclear, flag these situation
 ### T2-2 — Mining-sector employer composition
 
 **Trigger:** Mining employer; client needs the 19.51% breakdown.
-**Issue:** PwC gives 19.51% but does not itemise the extra 2.30 pp over the 17.21% general rate.
+**Issue:** the secondary summary gives 19.51% but does not itemise the extra 2.30 pp over the 17.21% general rate.
 **Action:** Flag for reviewer; obtain the sector-specific contribution schedule.
 
 ### T2-3 — Very high earner near the pension ceiling
@@ -475,7 +475,7 @@ If the client provides only a bank statement and no other information:
 
 ### Worked computation table (2025, general sector, SMN = Bs 2,750)
 
-**Worked computation table (2025, general sector, SMN = Bs 2,750)**  _(rates per PwC / Ley 1582 / DS 5383; arithmetic computed in this skill)_
+**Worked computation table (2025, general sector, SMN = Bs 2,750)**  _(rates per the secondary summary / Ley 1582 / DS 5383; arithmetic computed in this skill)_
 
 | Total ganado (Bs) | Employee SS (12.71%) | ANS | Employer SS (17.21%) | RC-IVA payable (no invoices) |
 | --- | --- | --- | --- | --- |
@@ -484,7 +484,7 @@ If the client provides only a bank statement and no other information:
 | 13,000 | 1,652.30 | 0 | 2,237.30 | 402.70 |
 | 30,000 | 3,813.00 | 482.50 | 5,163.00 | 2,269.09 |
 
-Notes on the table (rates per PwC / Ley 1582 / DS 5383; arithmetic computed in this skill):
+Notes on the table (rates per the secondary summary / Ley 1582 / DS 5383; arithmetic computed in this skill):
 - 8,000: see Example 1. RC-IVA 0 (below practical threshold).
 - 12,000: see Example 2. RC-IVA = Bs 289.22.
 - 13,000: SS = 13,000 × 12.71% = 1,652.30; employer = 13,000 × 17.21% = 2,237.30; RC-IVA base = 13,000 − 1,652.30 = 11,347.70; less 5,500 = 5,847.70; × 13% = 760.20; less presumed 357.50 = **Bs 402.70**.
@@ -492,10 +492,10 @@ Notes on the table (rates per PwC / Ley 1582 / DS 5383; arithmetic computed in t
 
 ### Tax framework (context)
 
-- **RC-IVA** — 13% (personal income tax, flat, territorial, offsettable with Form 110 invoices)  _(Ley 843; PwC)_
-- **IUE** — 25% (corporate income tax; mining +12.5%/+7.5% surtax + 1%–7% royalties; high-ROE financial/insurance +25% surtax)  _(PwC)_
-- **IVA** — 13% nominal (14.94% effective tax-inclusive)  _(SIN; PwC)_
-- **IT** — 3% of gross income, offsettable only against IUE  _(SIN; PwC)_
+- **RC-IVA** — 13% (personal income tax, flat, territorial, offsettable with Form 110 invoices)  _(Ley 843; secondary summary)_
+- **IUE** — 25% (corporate income tax; mining +12.5%/+7.5% surtax + 1%–7% royalties; high-ROE financial/insurance +25% surtax)  _(secondary summary)_
+- **IVA** — 13% nominal (14.94% effective tax-inclusive)  _(SIN; secondary summary)_
+- **IT** — 3% of gross income, offsettable only against IUE  _(SIN; secondary summary)_
 
 ### Penalties
 
@@ -508,11 +508,11 @@ Notes on the table (rates per PwC / Ley 1582 / DS 5383; arithmetic computed in t
 
 ### Sources
 
-- PwC Worldwide Tax Summaries — *Bolivia — Individual — Other taxes* (employee 12.71%; 60-min-salary ceiling ≈ USD 28,450; ANS scale 1.15%–11.48%), *Corporate — Other taxes* (employer 17.21% general / 19.51% mining; IVA 13%/14.94%; IT 3%), *Corporate — Taxes on corporate income* (IUE 25%; mining surtaxes/royalties; DS 5327 offset), *Individual — Taxes on personal income* (RC-IVA 13%; territorial).
+- Secondary practitioner summary (link removed) — *Bolivia — Individual — Other taxes* (employee 12.71%; 60-min-salary ceiling ≈ USD 28,450; ANS scale 1.15%–11.48%), *Corporate — Other taxes* (employer 17.21% general / 19.51% mining; IVA 13%/14.94%; IT 3%), *Corporate — Taxes on corporate income* (IUE 25%; mining surtaxes/royalties; DS 5327 offset), *Individual — Taxes on personal income* (RC-IVA 13%; territorial).
 - Planifica Consultores — employee 10/1.71/0.5/0.5 = 12.71%; employer 10+1.71+2+3.5 = 17.21%; APS Circular APS/DP/DJ/N°100/2025 (retroactive reintegro due last business day Aug 2025).
 - Rigoberto Paredes & Asociados — worker/employer components; RC-IVA mechanics; DS 5383 presumed deduction reduced to 13% of 1 SMN; ≈ Bs 9,451 threshold.
 - Ley N° 1582 de 01/10/2024 (MEFP/Gaceta Oficial) — employer solidarity 3%→3.5%; ANS thresholds/rates.
-- Bolivia Impuestos — ANS post-Ley-1582 rates 1.15% / 5.74% / 11.48% (source returned HTTP 403 on direct fetch; corroborated via PwC + search snippet).
+- Bolivia Impuestos — ANS post-Ley-1582 rates 1.15% / 5.74% / 11.48% (source returned HTTP 403 on direct fetch; corroborated via the secondary summary + search snippet).
 - Orbitax — 2025 SMN Bs 2,750 (+10%, eff. 1 May 2025 retroactive to January, DS 5383).
 - SIN / SIAT — RC-IVA, Form 110 / Form 608 V.4 monthly filing by last NIT digit; 120-day invoice validity.
 - CISS — confirms employer solidarity raised to 3.5% under Ley 1582.

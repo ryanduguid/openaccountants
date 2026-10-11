@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Peru (ta
 jurisdiction: PE
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Step 2 — Public deed** — Draft the bylaws (minuta) and elevate to a public deed before a notary  _(Ley General de Sociedades (Ley 26887) — https://www.bizlatinhub.com/incorporate-sac-peru/)_
 - **Step 3 — SUNARP registration** — Register the company in SUNARP's Register of Legal Entities (about 7–10 business days)  _(SUNARP - Registro de Personas Juridicas — https://www.bizlatinhub.com/incorporate-sac-peru/)_
 - **Step 4 — SUNAT RUC registration** — Obtain the RUC tax identification number from SUNAT and elect the tax regime  _(SUNAT - Registro Unico de Contribuyentes (RUC) — https://www.sunat.gob.pe)_
-- **Core annual compliance** — Annual income tax return, monthly IGV and PLAME filings, electronic accounting books, annual shareholder meeting and ultimate beneficial owner reporting  _(Ley General de Sociedades (Ley 26887) and SUNAT obligations — https://taxsummaries.pwc.com/peru/corporate/tax-administration)_
+- **Core annual compliance** — Annual income tax return, monthly IGV and PLAME filings, electronic accounting books, annual shareholder meeting and ultimate beneficial owner reporting  _(Ley General de Sociedades (Ley 26887) and SUNAT obligations)_
 - **Ultimate beneficial owner (UBO) declaration** — Companies must file a beneficial-ownership affidavit with SUNAT  _(Decreto Legislativo 1372 (beneficiario final) — https://nodomiciliados.sunat.gob.pe/en/node/67)_
 
 <!-- openaccountants-cta-block -->
