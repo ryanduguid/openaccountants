@@ -5,7 +5,7 @@ jurisdiction: IM
 category: formation
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ The Isle of Man offers a modern, flexible corporate regime, most commonly the pr
 - **Incorporation government fee** — Standard incorporation fee payable to the Companies Registry, plus registered-agent professional fees (approx — confirm current fee)  _(Companies Act 2006 (https://www.gov.im/categories/business-and-industries/companies-registry/registries/2006-act-companies/))_
 - **Annual return** — Annual return must be filed by the registered agent within 1 month of the company's return date, with the annual fee  _(Companies Act 2006 (https://www.gov.im/categories/business-and-industries/companies-registry/registries/2006-act-companies/))_
 - **Financial statements filing** — Accounts must be prepared but are not filed with the Registry; audit not generally required for 2006 Act companies  _(Companies Act 2006 (https://www.applebyglobal.com/publications/guide-to-companies-in-the-isle-of-man/))_
-- **Annual corporate tax return** — Every company must file an annual income tax return with the Income Tax Division (even at the 0% rate)  _(Income Tax Act 1970, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Annual corporate tax return** — Every company must file an annual income tax return with the Income Tax Division (even at the 0% rate)  _(Isle of Man Government, Business and Corporations (corporate taxpayers are assessed on a pay-and-file accounting-period basis and must file their income tax returns online unless exempt) — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/business-and-corporations/)_
 - **Economic substance** — Companies carrying on 'relevant activities' must meet Isle of Man economic substance requirements (approx — confirm Order title)  _(Income Tax (Substance Requirements) Order, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 <!-- openaccountants-cta-block -->
