@@ -1,6 +1,6 @@
 # Country and territory coverage
 
-Generated from `country-catalogue.json` and `index.json`. Regenerate with `python3 scripts/check-country-coverage.py --write-report`.
+Generated from `country-catalogue.json` and `index.json`. Regenerate with `python3 scripts/check-country-coverage.py --markdown > docs/COUNTRY-COVERAGE.md`.
 
 The target contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 

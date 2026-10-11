@@ -38,7 +38,7 @@ After regenerating `index.json`, run:
 
 ```sh
 python3 scripts/check-country-coverage.py
-python3 scripts/check-country-coverage.py --write-report
+python3 scripts/check-country-coverage.py --markdown > docs/COUNTRY-COVERAGE.md
 python3 scripts/check-country-coverage.py --check-report
 ```
 

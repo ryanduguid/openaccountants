@@ -31,7 +31,7 @@ def render(catalogue, rows):
     out = [
         "# Country and territory coverage", "",
         "Generated from `country-catalogue.json` and `index.json`. Regenerate with "
-        "`python3 scripts/check-country-coverage.py --write-report`.", "",
+        "`python3 scripts/check-country-coverage.py --markdown > docs/COUNTRY-COVERAGE.md`.", "",
         "The target contains the country-or-area rows in the "
         f"[UN M49 table]({catalogue['source_url']}) captured on "
         f"{catalogue['retrieved_on']}, plus the repository's existing Taiwan and Kosovo "
@@ -59,7 +59,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     output = parser.add_mutually_exclusive_group()
     output.add_argument("--json", action="store_true", help="Emit the inventory as JSON")
-    output.add_argument("--write-report", action="store_true", help="Regenerate docs/COUNTRY-COVERAGE.md")
+    output.add_argument("--markdown", action="store_true", help="Emit the coverage report as Markdown")
     output.add_argument("--check-report", action="store_true", help="Fail if the saved report is stale")
     args = parser.parse_args(argv)
     catalogue = json.loads(CATALOGUE.read_text(encoding="utf-8"))
@@ -68,12 +68,11 @@ def main(argv=None):
         print(json.dumps({"source_url": catalogue["source_url"],
                           "retrieved_on": catalogue["retrieved_on"], "areas": rows},
                          ensure_ascii=False, indent=2))
-    elif args.write_report:
-        REPORT.write_text(render(catalogue, rows), encoding="utf-8", newline="\n")
-        print("Wrote docs/COUNTRY-COVERAGE.md")
+    elif args.markdown:
+        print(render(catalogue, rows), end="")
     elif args.check_report:
         if not REPORT.exists() or REPORT.read_text(encoding="utf-8") != render(catalogue, rows):
-            print("Country coverage report is stale; run with --write-report")
+            print("Country coverage report is stale; regenerate it with --markdown")
             return 1
         print("Country coverage report matches the catalogue and index")
     else:

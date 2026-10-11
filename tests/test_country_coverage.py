@@ -1,9 +1,14 @@
 """Country presence must not count global topics, states or unsigned drafts as review."""
 
 import importlib.util
+from contextlib import redirect_stdout
+import io
+import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
 
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
@@ -48,6 +53,28 @@ class CountryCoverageTests(unittest.TestCase):
         self.assertIn("does not establish comprehensive topic coverage", report)
         self.assertIn("| XK | Kosovo | 0 | 0 |", report)
         self.assertTrue(report.endswith("\n"))
+
+    def test_cli_markdown_is_read_only_and_report_check_detects_drift(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            catalogue = root / "catalogue.json"
+            saved_report = root / "coverage.md"
+            catalogue.write_text(json.dumps(self.catalogue), encoding="utf-8")
+            (root / "index.json").write_text('{"guides": []}', encoding="utf-8")
+            with patch.object(country_coverage, "ROOT", root), \
+                 patch.object(country_coverage, "CATALOGUE", catalogue), \
+                 patch.object(country_coverage, "REPORT", saved_report):
+                output = io.StringIO()
+                with redirect_stdout(output):
+                    self.assertEqual(country_coverage.main(["--markdown"]), 0)
+                self.assertFalse(saved_report.exists())
+                self.assertIn("| DE | Germany | 0 | 0 |", output.getvalue())
+                saved_report.write_text(output.getvalue(), encoding="utf-8")
+                with redirect_stdout(io.StringIO()):
+                    self.assertEqual(country_coverage.main(["--check-report"]), 0)
+                    (root / "index.json").write_text(
+                        '{"guides": [{"jurisdiction": "DE", "tier": 2}]}', encoding="utf-8")
+                    self.assertEqual(country_coverage.main(["--check-report"]), 1)
 
 
 if __name__ == "__main__":
