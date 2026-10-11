@@ -139,3 +139,4 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 | 2026-09-12 | [Kuwait Zakat consistency correction, 13 September 2026](2026-09-12-kuwait-zakat-consistency-correction-13-september-2026.md) |
 | 2026-09-29 | [South Africa: the reviewed 2026/27 table did not match SARS](2026-09-29-south-africa-the-reviewed-2026-27-table-did-not-match-sars.md) |
 | 2026-10-12 | [Country source readiness: Cook Islands, Niue and Caribbean Netherlands](2026-10-12-country-source-readiness.md) |
+| 2026-10-12 | [Palau, Solomon Islands and Turks and Caicos: source readiness](2026-10-12-palau-solomon-tci-source-readiness.md) |
