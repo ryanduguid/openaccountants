@@ -1,10 +1,10 @@
 ---
 name: americas-corridors
 description: "version: 1.0"
-version: 1.0
+version: 1.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -79,7 +79,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Brazil → Argentina
 
-**Brazil → Argentina Withholding Tax Rates**  _(Brazil-Argentina DTA. PwC Argentina WHT table.)_
+**Brazil → Argentina Withholding Tax Rates**  _(Brazil-Argentina DTA. The secondary summary Argentina WHT table.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -88,7 +88,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties — general | 10%/15% | Art 12 | Split by type |
 | Technical services | 15% | Art 12/14 | Service fees |
 
-**Source:** Brazil-Argentina DTA. PwC Argentina WHT table.
+**Source:** Brazil-Argentina DTA. The secondary summary Argentina WHT table.
 **Special provisions:** Brazil uniquely does not withhold on dividends — treaty rate relevant only from Argentine side. Argentina domestic WHT on interest is 15.05-35%, reduced by treaty. Royalties split: 10% for certain categories, 15% for others. Both countries have limited treaty networks. MERCOSUR economic integration provides trade benefits but does not affect treaty rates.
 **Last verified:** May 2026
 
@@ -111,7 +111,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Mexico → Spain
 
-**Mexico → Spain Withholding Tax Rates**  _(Mexico-Spain Convention. PwC Mexico/Spain WHT tables.)_
+**Mexico → Spain Withholding Tax Rates**  _(Mexico-Spain Convention. The secondary summary Mexico/Spain WHT tables.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -122,13 +122,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 10% | Art 12 | All categories 10% |
 | Technical services | 0% | Art 7/14 | Business profits / independent services |
 
-**Source:** Mexico-Spain Convention. PwC Mexico/Spain WHT tables.
+**Source:** Mexico-Spain Convention. The secondary summary Mexico/Spain WHT tables.
 **Special provisions:** Spanish multinational investments in Mexico are substantial. 25% capital threshold for reduced dividends reflects older treaty practice. Mexico's 4.9% bank interest rate appears in multiple Mexican treaties. Spain domestic WHT: 19% on dividends to non-residents.
 **Last verified:** May 2026
 
 ## Brazil → Portugal
 
-**Brazil → Portugal Withholding Tax Rates**  _(Brazil-Portugal Convention. PwC Brazil WHT guidance.)_
+**Brazil → Portugal Withholding Tax Rates**  _(Brazil-Portugal Convention. The secondary summary Brazil WHT guidance.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -137,13 +137,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 15% | Art 12 | Standard rate |
 | Technical services | 15% | Art 12/14 | Service fees |
 
-**Source:** Brazil-Portugal Convention. PwC Brazil WHT guidance.
+**Source:** Brazil-Portugal Convention. The secondary summary Brazil WHT guidance.
 **Special provisions:** Historic Lusophone corridor. Brazil does not impose domestic dividend WHT — treaty rate relevant only from Portuguese side. Portugal domestic WHT: 25% across categories. Both countries are in the CPLP (Community of Portuguese Language Countries). One of Brazil's oldest treaty relationships.
 **Last verified:** May 2026
 
 ## Chile → Spain
 
-**Chile → Spain Withholding Tax Rates**  _(Chile-Spain Convention. PwC Chile WHT table.)_
+**Chile → Spain Withholding Tax Rates**  _(Chile-Spain Convention. The secondary summary Chile WHT table.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -155,13 +155,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties — other (industrial/commercial) | 10% | Art 12 | Industrial royalties |
 | Technical services | 0% | Art 7/14 | Business profits / independent services |
 
-**Source:** Chile-Spain Convention. PwC Chile WHT table.
+**Source:** Chile-Spain Convention. The secondary summary Chile WHT table.
 **Special provisions:** Spain is a major investor in Chile. Chile's integrated tax system uses a credit mechanism for dividends. Split royalty rates (5%/10%). Two-tier interest (5%/15%). Chile domestic WHT on royalties is 30% — treaty provides significant reduction.
 **Last verified:** May 2026
 
 ## Colombia → Spain
 
-**Colombia → Spain Withholding Tax Rates**  _(Colombia-Spain Convention. PwC Colombia WHT guidance.)_
+**Colombia → Spain Withholding Tax Rates**  _(Colombia-Spain Convention. The secondary summary Colombia WHT guidance.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -171,7 +171,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 10% | Art 12 | CO domestic WHT 20% |
 | Technical services | 10% | Art 12 | Included in royalties article |
 
-**Source:** Colombia-Spain Convention. PwC Colombia WHT guidance.
+**Source:** Colombia-Spain Convention. The secondary summary Colombia WHT guidance.
 **Special provisions:** Spain is a major FDI source for Colombia. Colombia domestic WHT: 20% on royalties, 15-20% on interest, 20% on dividends. Treaty provides meaningful reduction across all categories. Colombia is part of the Pacific Alliance and OECD.
 **Last verified:** May 2026
 

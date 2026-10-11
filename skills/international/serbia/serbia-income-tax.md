@@ -1,10 +1,10 @@
 ---
 name: serbia-income-tax
 description: Use this skill whenever asked about Serbia (Republic of Serbia) personal income tax for self-employed individuals, entrepreneurs, freelancers, and employees. Trigger on phrases like "how much tax do I pay in Serbia", "porez na dohodak", "PP GPDG", "annual income tax", "paušalac", "flat-rate entrepreneur", "freelancer self-taxation", "Model A Model B", "non-taxable salary cap", "PIO contributions", "PPP-PD", "self-employed tax Serbia", "frilenseri", "dinar tax", or any question about filing or computing Serbian personal income tax. Also trigger when preparing or reviewing a PP GPDG annual return, a PPDG-1S/PPDG-1R entrepreneur return, a freelancer quarterly self-taxation return, or payroll withholding (PPP-PD), and when computing social security contributions (PIO, health, unemployment). This skill covers the 10% flat employment/entrepreneur tax, freelancer Models A and B, scheduler income taxes (capital gains, dividends, interest, rental, royalties, other), the annual supplementary progressive tax, social contribution rates and base limits, and penalties. ALWAYS read this skill before touching any Serbian income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: RS
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Serbia Personal Income Tax -- Self-Employed & Individuals
 
-## Serbia Personal Income Tax -- Self-Employed & Individuals Skill v0.1
+## Serbia Personal Income Tax -- Self-Employed & Individuals Skill v0.2
 
 ## Section 1 -- Quick Reference
 
@@ -34,22 +34,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual return deadline | 15 May following the income year -- 15 May 2026 for 2025 income (Poreska uprava; KPMG Feb 2026) |
 | Validated by | Pending -- requires sign-off by a Serbian tax adviser / licensed accountant |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Headline Income Tax Rates (2025 income year)
 
-**Headline Income Tax Rates (2025 income year) table**  _(PwC; Eurofast; KPMG Dec 2025)_
+**Headline Income Tax Rates (2025 income year) table**  _(secondary summary; Eurofast; KPMG Dec 2025)_
 
 | Income type | Rate | Base / notes | Source |
 | --- | --- | --- | --- |
-| Employment income (monthly withholding) | 10% flat | Gross salary minus non-taxable cap RSD 28,423/month (2025); RSD 34,221/month from 1 Jan 2026 | PwC; Eurofast; KPMG Dec 2025 |
+| Employment income (monthly withholding) | 10% flat | Gross salary minus non-taxable cap RSD 28,423/month (2025); RSD 34,221/month from 1 Jan 2026 | secondary summary; Eurofast; KPMG Dec 2025 |
 | Self-employment / entrepreneur (actual income, bookkeeping) | 10% flat | On taxable profit | welcometoserbia.gov.rs |
 | Self-employment / entrepreneur (flat-rate / paušalno) | 10% | Applied to a deemed lump-sum base set by the Tax Administration; effective tax is a fixed monthly amount; annual base growth capped at 10% through end 2027 | Poreska uprava; NALED |
-| Capital gains | 15% | Resident exempt if asset held 10+ consecutive years | PwC income-determination |
-| Investment income (dividends, interest, investment fund) | 15% | -- | PwC income-determination |
-| Rental / real-estate income | 20% on 75% of gross (25% standard deduction), or on income after documented actual costs | -- | PwC income-determination; audere.rs |
-| Royalty / copyright income | 20% | After standard cost deduction of 50%, 43% or 34% depending on royalty type | PwC income-determination |
-| Other income | 20% (15% for insurance proceeds) | -- | PwC income-determination |
+| Capital gains | 15% | Resident exempt if asset held 10+ consecutive years | secondary summary, income-determination |
+| Investment income (dividends, interest, investment fund) | 15% | -- | secondary summary, income-determination |
+| Rental / real-estate income | 20% on 75% of gross (25% standard deduction), or on income after documented actual costs | -- | secondary summary, income-determination; audere.rs |
+| Royalty / copyright income | 20% | After standard cost deduction of 50%, 43% or 34% depending on royalty type | secondary summary, income-determination |
+| Other income | 20% (15% for insurance proceeds) | -- | secondary summary, income-determination |
 
 ### Annual Supplementary Tax -- 2025 income (filed 2026)
 
@@ -71,7 +71,7 @@ The rates are **not** applied to gross income. Build the base in this order, the
 
 The RSD 10,878,192 break (6× the average annual salary) is measured on the **base**, not on gross income, so a taxpayer does not reach the 15% rate until total income is roughly 5,439,096 + 725,213 + 10,878,192 ≈ RSD 17.0m. KPMG's worked example follows exactly this order (income → less 5,439,096 → less 725,213 → 10% on the first 10,878,192 of the remainder, 15% above), as does taxadvisorserbia.com.
 
-PwC states the top band loosely as "the previous 10% with an additional 15%", which reads as 25% on the top slice. That is *not* the same as the marginal 15% in KPMG's example, and this guide follows KPMG's worked arithmetic. Where a figure is material, confirm against the KPMG alert rather than the PwC prose (PwC; KPMG Feb 2026).
+The secondary summary states the top band loosely as "the previous 10% with an additional 15%", which reads as 25% on the top slice. That is *not* the same as the marginal 15% in KPMG's example, and this guide follows KPMG's worked arithmetic. Where a figure is material, confirm against the KPMG alert rather than the the secondary summary prose (secondary summary; KPMG Feb 2026).
 
 ### Annual Tax Deductions (2025 income)
 
@@ -87,14 +87,14 @@ PwC states the top band loosely as "the previous 10% with an additional 15%", wh
 
 ### Social Security Contributions (2025)
 
-**Social Security Contributions table**  _(PwC other-taxes)_
+**Social Security Contributions table**  _(secondary summary, other-taxes)_
 
 | Contribution | Employee | Employer | Total | Source |
 | --- | --- | --- | --- | --- |
-| Pension & disability (PIO) | 14% | 10% | 24% | PwC other-taxes; Orbitax |
-| Health insurance | 5.15% | 5.15% | 10.3% | PwC other-taxes |
-| Unemployment insurance | 0.75% | 0% (employee only) | 0.75% | PwC other-taxes; welcometoserbia.gov.rs |
-| **TOTAL** | **19.90%** | **15.15%** | **35.05%** | PwC other-taxes |
+| Pension & disability (PIO) | 14% | 10% | 24% | secondary summary, other-taxes; Orbitax |
+| Health insurance | 5.15% | 5.15% | 10.3% | secondary summary, other-taxes |
+| Unemployment insurance | 0.75% | 0% (employee only) | 0.75% | secondary summary, other-taxes; welcometoserbia.gov.rs |
+| **TOTAL** | **19.90%** | **15.15%** | **35.05%** | secondary summary, other-taxes |
 
 Employee column check: 14% + 5.15% + 0.75% = **19.90%**. Employer column check: 10% + 5.15% + 0% = **15.15%**. Total column check: 24% + 10.3% + 0.75% = **35.05%**, and 19.90% + 15.15% = **35.05%**. Self-employed entrepreneurs and freelancers pay **both** portions themselves: PIO 24% + health 10.3% + unemployment 0.75% = 35.05% (welcometoserbia.gov.rs).
 
@@ -106,15 +106,15 @@ Employee column check: 14% + 5.15% + 0.75% = **19.90%**. Employer column check: 
 
 | Ambiguity | Default | Source |
 | --- | --- | --- |
-| Residency unknown | Treat as resident (worldwide income); flag for reviewer | PwC residence |
+| Residency unknown | Treat as resident (worldwide income); flag for reviewer | secondary summary, residence |
 | Period spans 2025/2026 | Use RSD 28,423 non-taxable cap for 2025 periods; RSD 34,221 only from 1 Jan 2026 | Eurofast; KPMG Dec 2025 |
 | Social base limits, year unknown | Use 2025 floor RSD 45,950 / ceiling RSD 656,425; reset each year | Orbitax |
 | Entrepreneur regime unknown | Default to actual-income (bookkeeping) 10%; flat-rate only if eligible and elected | Poreska uprava |
 | Flat-rate eligibility unclear | Excluded if VAT-registered or turnover > RSD 6,000,000/yr | Poreska uprava; pausal.rs |
 | Rental expense basis unknown | Apply 25% standard deduction (75% taxable at 20%) | audere.rs |
-| Royalty cost-deduction class unknown | Use the lowest standard deduction (34%) until type confirmed | PwC income-determination |
+| Royalty cost-deduction class unknown | Use the lowest standard deduction (34%) until type confirmed | secondary summary, income-determination |
 | Freelancer model unknown | Compute both Model A and Model B; present the lower tax, flag for reviewer | frilenseri.purs.gov.rs |
-| Capital-asset holding period unknown | Treat gain as taxable (no 10-year exemption) | PwC income-determination |
+| Capital-asset holding period unknown | Treat gain as taxable (no 10-year exemption) | secondary summary, income-determination |
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -304,7 +304,7 @@ Check: 12,157.70 + 29,850.00 = 42,007.70; 150,000 − 42,007.70 = 107,992.30 ✓
 **Input line:**
 `10/04/2025 ; OTP UPLATA ; ZAKUPAC ; ZAKUP STAN APR ; +80,000.00 ; RSD`
 
-**Reasoning:** Rental income taxed at 20% on 75% of gross after the 25% standard deduction, unless documented actual costs are higher (PwC income-determination; audere.rs).
+**Reasoning:** Rental income taxed at 20% on 75% of gross after the 25% standard deduction, unless documented actual costs are higher (secondary summary, income-determination; audere.rs).
 - Taxable = 80,000 × 75% = 60,000.
 - Tax = 60,000 × 20% = **RSD 12,000**. Effective rate = 12,000 / 80,000 = 15%.
 
@@ -329,15 +329,15 @@ Check: 5,835,691 × 0.10 = 583,569.10 ✓
 
 ### 5.1 Residency
 
-- **Residency taxation basis** — Resident individuals are taxed on worldwide income; non-residents on Serbian-source income only. Default to resident and flag if uncertain.  _(PwC residence)_
+- **Residency taxation basis** — Resident individuals are taxed on worldwide income; non-residents on Serbian-source income only. Default to resident and flag if uncertain.  _(secondary summary, residence)_
 
 ### 5.2 Employment Income -- 10% Flat
 
-- **Employment income taxation** — 10% flat PIT on gross salary minus the monthly non-taxable cap: RSD 28,423 for 2025, rising to RSD 34,221 from 1 Jan 2026 (CPI-indexed each 1 February). Withheld monthly at source by the employer and reported on PPP-PD with each salary payment.  _(PwC; Eurofast; KPMG Dec 2025)_
+- **Employment income taxation** — 10% flat PIT on gross salary minus the monthly non-taxable cap: RSD 28,423 for 2025, rising to RSD 34,221 from 1 Jan 2026 (CPI-indexed each 1 February). Withheld monthly at source by the employer and reported on PPP-PD with each salary payment.  _(secondary summary; Eurofast; KPMG Dec 2025)_
 
 ### 5.3 Social Security Contributions
 
-- **Social Security Contributions rule** — Split: employee 19.90% (PIO 14% + health 5.15% + unemployment 0.75%) and employer 15.15% (PIO 10% + health 5.15%; no employer unemployment). Combined 35.05% of gross. 2025 base limits: floor RSD 45,950/month, ceiling RSD 656,425/month (RSD 7,877,100/year). Self-employed/entrepreneurs and freelancers pay the full 35.05% themselves.  _(PwC other-taxes; Orbitax; Eurofast; welcometoserbia.gov.rs)_
+- **Social Security Contributions rule** — Split: employee 19.90% (PIO 14% + health 5.15% + unemployment 0.75%) and employer 15.15% (PIO 10% + health 5.15%; no employer unemployment). Combined 35.05% of gross. 2025 base limits: floor RSD 45,950/month, ceiling RSD 656,425/month (RSD 7,877,100/year). Self-employed/entrepreneurs and freelancers pay the full 35.05% themselves.  _(secondary summary, other-taxes; Orbitax; Eurofast; welcometoserbia.gov.rs)_
 
 ### 5.4 Entrepreneur Income Tax -- 10%
 
@@ -353,18 +353,18 @@ Check: 5,835,691 × 0.10 = 583,569.10 ✓
 
 ### 5.7 Capital Gains and Investment Income
 
-- **Capital gains and investment income rule** — Capital gains: 15% (resident exemption if the asset is held 10+ consecutive years). Dividends, interest and investment-fund income: 15%.  _(PwC income-determination)_
+- **Capital gains and investment income rule** — Capital gains: 15% (resident exemption if the asset is held 10+ consecutive years). Dividends, interest and investment-fund income: 15%.  _(secondary summary, income-determination)_
 
 ### 5.8 Rental, Royalty and Other Income
 
-**5.8 Rental, Royalty and Other Income table**  _(PwC; audere.rs)_
+**5.8 Rental, Royalty and Other Income table**  _(secondary summary; audere.rs)_
 
 | Income type | Rate | Base | Source |
 | --- | --- | --- | --- |
-| Rental / real estate | 20% | 75% of gross (25% standard deduction) or income after documented actual costs | PwC; audere.rs |
-| Royalty / copyright | 20% | After standard cost deduction 50% / 43% / 34% by type | PwC income-determination |
-| Other income | 20% | -- | PwC income-determination |
-| Insurance proceeds | 15% | -- | PwC income-determination |
+| Rental / real estate | 20% | 75% of gross (25% standard deduction) or income after documented actual costs | secondary summary; audere.rs |
+| Royalty / copyright | 20% | After standard cost deduction 50% / 43% / 34% by type | secondary summary, income-determination |
+| Other income | 20% | -- | secondary summary, income-determination |
+| Insurance proceeds | 15% | -- | secondary summary, income-determination |
 
 ### 5.9 VAT (PDV) Interaction
 
@@ -381,7 +381,7 @@ Check: 5,835,691 × 0.10 = 583,569.10 ✓
 | Form | Purpose | Deadline | Source |
 | --- | --- | --- | --- |
 | PP GPDG | Annual personal income tax return (supplementary annual tax); pre-filled on eTax/ePorezi, verified/corrected and submitted | 15 May following the income year (15 May 2026 for 2025); tax payable by the same date | Poreska uprava; KPMG Feb 2026 |
-| PPP-PD | Aggregate withholding return for salaries (PIT + contributions), filed electronically with each salary payment | On/before the date of income payment | PwC tax-administration |
+| PPP-PD | Aggregate withholding return for salaries (PIT + contributions), filed electronically with each salary payment | On/before the date of income payment | secondary summary, tax-administration |
 | PP OPO / freelancer self-taxation return | Self-assessed income tax + contributions on copyright/income from abroad, via frilenseri portal | Quarterly (within 30 days of quarter end) | frilenseri.purs.gov.rs |
 | PPDG-1S / PPDG-1R | Annual entrepreneur returns -- flat-rate (1S) and actual-income/bookkeeping (1R) | Annual; self-employment income returns electronic-only from 2026 | KPMG Dec 2025 |
 
@@ -395,10 +395,10 @@ Check: 5,835,691 × 0.10 = 583,569.10 ✓
 
 | Item | Detail | Source |
 | --- | --- | --- |
-| Failure to file | 20%-75% of tax determined in control; minimum RSD 400,000 (legal person) / RSD 80,000 (entrepreneur) | PwC; ekapija.com |
-| Failure to pay | 10%-50% of tax determined in control; minimum RSD 250,000 (legal person) / RSD 50,000 (entrepreneur) | PwC income-determination |
+| Failure to file | 20%-75% of tax determined in control; minimum RSD 400,000 (legal person) / RSD 80,000 (entrepreneur) | secondary summary; ekapija.com |
+| Failure to pay | 10%-50% of tax determined in control; minimum RSD 250,000 (legal person) / RSD 50,000 (entrepreneur) | secondary summary, income-determination |
 | Late-payment interest | NBS reference rate + 10 percentage points per annum; deferred/installment-tax interest at NBS reference rate alone | ZPPPA |
-| Repeat violations | Two offence charges within two years can trigger an activity ban of 6 months to 3 years (plus monetary penalty) | PwC income-determination |
+| Repeat violations | Two offence charges within two years can trigger an activity ban of 6 months to 3 years (plus monetary penalty) | secondary summary, income-determination |
 
 [RESEARCH GAP -- specific monetary fines for individuals (non-entrepreneur natural persons) under the Law on Personal Income Tax are not in the research data; reviewer to confirm from the statute.]
 
@@ -575,8 +575,8 @@ ONBOARDING QUESTIONS -- SERBIA PERSONAL INCOME TAX
 
 | Topic | Reference | Source |
 | --- | --- | --- |
-| Personal income tax | Law on Personal Income Tax (Zakon o porezu na dohodak građana) | PwC |
-| Social contributions | Law on Mandatory Social Insurance Contributions | PwC other-taxes |
+| Personal income tax | Law on Personal Income Tax (Zakon o porezu na dohodak građana) | secondary summary |
+| Social contributions | Law on Mandatory Social Insurance Contributions | secondary summary, other-taxes |
 | Procedure & penalties | Law on Tax Procedure and Tax Administration (ZPPPA) | ZPPPA (English) |
 | 2026 amendments | Dec 2025 amendments effective 1 Jan 2026 | KPMG Serbia (Dec 2025) |
 | Tax authority | Poreska uprava (purs.gov.rs); eTax/ePorezi (eporezi.purs.gov.rs); frilenseri.purs.gov.rs | Poreska uprava |

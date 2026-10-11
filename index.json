@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T00:32:45+00:00",
+ "generated_at": "2026-10-11T00:42:42+00:00",
  "counts": {
   "guides": 1875,
   "jurisdictions": 243,
@@ -199,7 +199,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ifrs-local-gaap-reconciliation",
@@ -407,7 +407,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-12"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "americas-corridors",
@@ -420,7 +420,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "asia-pacific-corridors",
@@ -433,7 +433,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "eg-ae-dtt-corridor",
@@ -446,7 +446,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-08-02"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "eg-sa-dtt-corridor",
@@ -459,7 +459,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-08-02"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "emerging-market-corridors",
@@ -472,7 +472,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-08"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "eu-intra-rates",
@@ -485,7 +485,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "uk-major-partners",
@@ -4151,7 +4151,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bolivia-iva",
@@ -4177,7 +4177,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bolivia-social-contributions",
@@ -4190,7 +4190,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "bolivia-tax-optimization",
@@ -4203,7 +4203,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ba-company-formation",
@@ -8116,7 +8116,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "et-tax-overview",
@@ -8129,7 +8129,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ethiopia-income-tax",
@@ -8142,7 +8142,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ethiopia-payroll",
@@ -8155,7 +8155,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ethiopia-social-contributions",
@@ -8168,7 +8168,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ethiopia-vat",
@@ -9871,7 +9871,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "iceland-payroll",
@@ -9884,7 +9884,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "iceland-social-contributions",
@@ -9897,7 +9897,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "iceland-tax-optimization",
@@ -9910,7 +9910,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "iceland-vat",
@@ -9949,7 +9949,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "is-tax-overview",
@@ -9962,7 +9962,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "in-advance-tax",
@@ -12159,7 +12159,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "latvia-payroll",
@@ -12172,7 +12172,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "latvia-social-contributions",
@@ -12185,7 +12185,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "latvia-tax-optimization",
@@ -12198,7 +12198,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "latvia-vat-return",
@@ -12237,7 +12237,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "lv-tax-overview",
@@ -12744,7 +12744,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "luxembourg-payroll",
@@ -12757,7 +12757,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "luxembourg-social-contributions",
@@ -12770,7 +12770,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "luxembourg-tax-optimization",
@@ -12783,7 +12783,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "luxembourg-vat-return",
@@ -14317,7 +14317,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "mozambique-payroll",
@@ -14330,7 +14330,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "mozambique-social-contributions",
@@ -14343,7 +14343,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "mozambique-vat",
@@ -14928,7 +14928,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ni-corporate-income-tax",
@@ -14941,7 +14941,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ni-tax-overview",
@@ -14954,7 +14954,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "nicaragua-income-tax",
@@ -14967,7 +14967,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "nicaragua-iva",
@@ -14993,7 +14993,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "nicaragua-social-contributions",
@@ -15006,7 +15006,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ne-company-formation",
@@ -15760,7 +15760,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "panama-itbms",
@@ -15786,7 +15786,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "panama-social-contributions",
@@ -15799,7 +15799,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "pg-company-formation",
@@ -15942,7 +15942,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "pe-corporate-income-tax",
@@ -15955,7 +15955,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "pe-tax-overview",
@@ -15968,7 +15968,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "peru-igv",
@@ -15994,7 +15994,7 @@
    "reviewed_by": "Maria Clemencia Valverde Rios",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "peru-payroll",
@@ -16007,7 +16007,7 @@
    "reviewed_by": "Maria Clemencia Valverde Rios",
    "review_status": "current",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "peru-social-contributions",
@@ -16020,7 +16020,7 @@
    "reviewed_by": "Maria Clemencia Valverde Rios",
    "review_status": "current",
    "tax_year": "2026",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "ph-company-formation",
@@ -17294,7 +17294,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "senegal-payroll",
@@ -17307,7 +17307,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "senegal-social-contributions",
@@ -17320,7 +17320,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "senegal-vat",
@@ -17346,7 +17346,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "sn-corporate-income-tax",
@@ -17359,7 +17359,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "sn-tax-overview",
@@ -17372,7 +17372,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "can-a-foreigner-start-a-business-in-serbia",
@@ -17411,7 +17411,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "serbia-payroll",
@@ -17424,7 +17424,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "serbia-social-contributions",
@@ -17437,7 +17437,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "serbia-tax-optimization",
@@ -17450,7 +17450,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "serbia-vat",
@@ -21324,7 +21324,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-11"
   },
   {
    "slug": "es-freelance-intake",

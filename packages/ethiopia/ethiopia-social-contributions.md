@@ -1,10 +1,10 @@
 ---
 name: ethiopia-social-contributions
 description: Use this skill whenever asked about Ethiopia payroll taxes, social security / pension contributions, or employment income tax (PAYE) for employees or employers. Trigger on phrases like "Ethiopia pension contribution", "POESSA", "how much PAYE in Ethiopia", "Ethiopian payroll tax", "employee pension deduction", "employer social security Ethiopia", "11% pension", "7% pension", "Ethiopia income tax bracket", "Birr salary tax", "net pay Ethiopia", "Proclamation 1395/2025", or any question about Ethiopian payroll/PAYE/pension obligations. Also trigger when classifying bank statement transactions that relate to POESSA pension remittances, Ministry of Revenue PAYE remittances, or salary debits from Commercial Bank of Ethiopia (CBE), Awash Bank, Dashen Bank, or other Ethiopian banks. This skill covers the post-July-2025 PAYE brackets, the 7%/11% pension split, contribution base, remittance deadlines, eligibility (citizens vs foreign nationals), bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Ethiopian payroll, PAYE, or pension work.
-version: 0.2
+version: 0.3
 jurisdiction: ET
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Ethiopia Social Security & Payroll Tax
 
-## Ethiopia Social Security & Payroll Tax Skill v0.2
+## Ethiopia Social Security & Payroll Tax Skill v0.3
 
-> **Reform note.** Ethiopia overhauled personal income taxation via the **Income Tax (Amendment) Proclamation No. 1395/2025** (approved by Parliament 17 July 2025; effective **7 July 2025**, with local withholding provisions effective 1 August 2025). Every PAYE figure in this skill reflects the post-reform regime. Source: Afriwise, "Update on Ethiopia's New Income Tax Amendment Proclamation"; PwC Worldwide Tax Summaries — Ethiopia (last reviewed 18 Dec 2025), https://taxsummaries.pwc.com/ethiopia/individual/taxes-on-personal-income.
+> **Reform note.** Ethiopia overhauled personal income taxation via the **Income Tax (Amendment) Proclamation No. 1395/2025** (approved by Parliament 17 July 2025; effective **7 July 2025**, with local withholding provisions effective 1 August 2025). Every PAYE figure in this skill reflects the post-reform regime. Source: Afriwise, "Update on Ethiopia's New Income Tax Amendment Proclamation"; a secondary practitioner summary — Ethiopia (last reviewed 18 Dec 2025),
 
 ## Section 1 -- Quick reference
 
@@ -36,24 +36,24 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax Authority | Ministry of Revenue (MoR), mor.gov.et |
 | Pension Authority (private sector) | Private Organisation Employees Social Security Agency (POESSA) |
 | Pension Authority (public sector) | Public Servants' Social Security Agency |
-| Employee pension rate | 7% of basic salary [PwC, Other taxes] |
-| Employer pension rate | 11% of basic salary [PwC, Other taxes] |
-| Total pension rate | 18% of basic salary [PwC, Other taxes] |
-| Contribution base | Basic salary (normal-hours basic pay), NOT total gross with allowances [PwC, Other taxes] |
-| PAYE exemption threshold | First 2,000 ETB/month exempt [PwC; Proclamation 1395/2025] |
-| PAYE top rate | 35% on monthly salary over 14,000 ETB [PwC; Proclamation 1395/2025] |
+| Employee pension rate | 7% of basic salary [secondary summary, Other taxes] |
+| Employer pension rate | 11% of basic salary [secondary summary, Other taxes] |
+| Total pension rate | 18% of basic salary [secondary summary, Other taxes] |
+| Contribution base | Basic salary (normal-hours basic pay), NOT total gross with allowances [secondary summary, Other taxes] |
+| PAYE exemption threshold | First 2,000 ETB/month exempt [secondary summary; Proclamation 1395/2025] |
+| PAYE top rate | 35% on monthly salary over 14,000 ETB [secondary summary; Proclamation 1395/2025] |
 | Currency | Ethiopian Birr (ETB) only |
-| Tax year | 8 July – 7 July (Ethiopian fiscal year; Hamle 1 – Sene 30) [PwC, Tax administration] |
+| Tax year | 8 July – 7 July (Ethiopian fiscal year; Hamle 1 – Sene 30) [secondary summary, Tax administration] |
 | Validated by | Pending — requires sign-off by a licensed Ethiopian tax practitioner |
 | Validation date | Pending |
 
-**Who is covered by the pension scheme**  _(PwC, Other taxes)_
+**Who is covered by the pension scheme**  _(secondary summary, Other taxes)_
 
 | Category | Pension status | Source |
 | --- | --- | --- |
-| Ethiopian citizens (private-org employees) | Mandatory | PwC, Other taxes |
-| Foreign nationals of Ethiopian origin | Optional | PwC, Other taxes |
-| Other (non-Ethiopian-origin) foreign nationals | Excluded — not available | PwC, Other taxes |
+| Ethiopian citizens (private-org employees) | Mandatory | secondary summary, Other taxes |
+| Foreign nationals of Ethiopian origin | Optional | secondary summary, Other taxes |
+| Other (non-Ethiopian-origin) foreign nationals | Excluded — not available | secondary summary, Other taxes |
 
 **Conservative defaults**
 
@@ -70,37 +70,37 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 2.1 Pension contributions (the core of this skill)
 
-**Pension contribution rate table**  _(PwC, Other taxes)_
+**Pension contribution rate table**  _(secondary summary, Other taxes)_
 
 | Party | Rate | Base | Source |
 | --- | --- | --- | --- |
-| Employee | 7% | Basic salary | PwC, Other taxes |
-| Employer | 11% | Basic salary | PwC, Other taxes |
-| **Total** | **18%** | Basic salary | PwC, Other taxes |
+| Employee | 7% | Basic salary | secondary summary, Other taxes |
+| Employer | 11% | Basic salary | secondary summary, Other taxes |
+| **Total** | **18%** | Basic salary | secondary summary, Other taxes |
 
 *Arithmetic check: 7% + 11% = 18%.*
 
-- **Pension contribution base** — Base = basic salary (gross basic pay for normal working hours), explicitly NOT total gross including allowances  _(PwC, Other taxes)_
-- **No statutory floor or ceiling on contributable salary** — No statutory floor or ceiling on contributable salary was found in authoritative sources (POESSA/PwC). [RESEARCH GAP — reviewer to confirm] whether any salary cap applies; do not assert one either way.  _(POESSA/PwC)_
-- **Vesting period** — An employee must contribute at least 10 years to qualify for a retirement pension  _(PwC, Other taxes; 2merkato labour-law background)_
-- **Remittance timing** — The employer deducts the employee's 7% and remits both contributions (18% total) within 30 days of the deduction / the last day of the salary month  _(PwC, Other taxes)_
-- **Enforcement after non-payment** — If an employer fails to pay contributions for three months, the Social Security Agency may deduct arrears directly from the company's bank account  _(PwC, Other taxes)_
+- **Pension contribution base** — Base = basic salary (gross basic pay for normal working hours), explicitly NOT total gross including allowances  _(secondary summary, Other taxes)_
+- **No statutory floor or ceiling on contributable salary** — No statutory floor or ceiling on contributable salary was found in authoritative sources (POESSA). [RESEARCH GAP — reviewer to confirm] whether any salary cap applies; do not assert one either way.  _(POESSA)_
+- **Vesting period** — An employee must contribute at least 10 years to qualify for a retirement pension  _(secondary summary, Other taxes; 2merkato labour-law background)_
+- **Remittance timing** — The employer deducts the employee's 7% and remits both contributions (18% total) within 30 days of the deduction / the last day of the salary month  _(secondary summary, Other taxes)_
+- **Enforcement after non-payment** — If an employer fails to pay contributions for three months, the Social Security Agency may deduct arrears directly from the company's bank account  _(secondary summary, Other taxes)_
 
 ### 2.2 Employment income tax (PAYE) — monthly brackets (effective 7 July 2025)
 
-**PAYE monthly brackets**  _(PwC; Proclamation 1395/2025)_
+**PAYE monthly brackets**  _(secondary summary; Proclamation 1395/2025)_
 
 | Monthly salary (ETB) | Marginal rate | Source |
 | --- | --- | --- |
-| 0 – 2,000 | 0% (exempt) | PwC; Proclamation 1395/2025 |
-| 2,001 – 4,000 | 15% | PwC; Proclamation 1395/2025 |
-| 4,001 – 7,000 | 20% | PwC; Proclamation 1395/2025 |
-| 7,001 – 10,000 | 25% | PwC; Proclamation 1395/2025 |
-| 10,001 – 14,000 | 30% | PwC; Proclamation 1395/2025 |
-| Over 14,000 | 35% | PwC; Proclamation 1395/2025 |
+| 0 – 2,000 | 0% (exempt) | secondary summary; Proclamation 1395/2025 |
+| 2,001 – 4,000 | 15% | secondary summary; Proclamation 1395/2025 |
+| 4,001 – 7,000 | 20% | secondary summary; Proclamation 1395/2025 |
+| 7,001 – 10,000 | 25% | secondary summary; Proclamation 1395/2025 |
+| 10,001 – 14,000 | 30% | secondary summary; Proclamation 1395/2025 |
+| Over 14,000 | 35% | secondary summary; Proclamation 1395/2025 |
 
-- **Minimum taxable income** — 2,000 ETB/month (was 600). Income at or below 2,000 ETB is fully exempt  _(PwC; Proclamation 1395/2025)_
-- **Bracket structure change** — Brackets reduced from seven to six; lowest positive rate raised from 10% to 15%; top rate 35% now applies above 14,000 ETB/month (previously above 10,900 ETB)  _(PwC; PaySpace; MyWorkPay)_
+- **Minimum taxable income** — 2,000 ETB/month (was 600). Income at or below 2,000 ETB is fully exempt  _(secondary summary; Proclamation 1395/2025)_
+- **Bracket structure change** — Brackets reduced from seven to six; lowest positive rate raised from 10% to 15%; top rate 35% now applies above 14,000 ETB/month (previously above 10,900 ETB)  _(secondary summary; PaySpace; MyWorkPay)_
 
 ### 2.3 PAYE quick-calculation (deduction) method — **DERIVED**
 
@@ -261,7 +261,7 @@ These rules apply when payroll/bank-statement data is clear and all required inp
 
 ### Rule 1 -- Pension formula
 
-- **Pension formula** — employee_pension = basic_salary × 7% employer_pension = basic_salary × 11% total_pension    = basic_salary × 18% Base = basic salary, not total gross with allowances  _(PwC, Other taxes)_
+- **Pension formula** — employee_pension = basic_salary × 7% employer_pension = basic_salary × 11% total_pension    = basic_salary × 18% Base = basic salary, not total gross with allowances  _(secondary summary, Other taxes)_
 
 ### Rule 2 -- PAYE formula (quick-calc method)
 
@@ -269,15 +269,15 @@ These rules apply when payroll/bank-statement data is clear and all required inp
 
 ### Rule 3 -- Exemption threshold
 
-- **Exemption threshold** — The first 2,000 ETB/month is exempt. Salary at or below 2,000 ETB → 0 PAYE  _(PwC; Proclamation 1395/2025)_
+- **Exemption threshold** — The first 2,000 ETB/month is exempt. Salary at or below 2,000 ETB → 0 PAYE  _(secondary summary; Proclamation 1395/2025)_
 
 ### Rule 4 -- Pension eligibility by citizenship
 
-- **Pension eligibility by citizenship** — Mandatory for Ethiopian citizens; optional for Ethiopian-origin foreign nationals; unavailable to other foreign nationals. Do not apply the 7%/11% deduction outside eligible categories.  _(PwC, Other taxes)_
+- **Pension eligibility by citizenship** — Mandatory for Ethiopian citizens; optional for Ethiopian-origin foreign nationals; unavailable to other foreign nationals. Do not apply the 7%/11% deduction outside eligible categories.  _(secondary summary, Other taxes)_
 
 ### Rule 5 -- Pension base excludes allowances
 
-- **Pension base excludes allowances** — Compute pension on basic salary only. Allowances are outside the base unless a reviewer confirms otherwise  _(PwC, Other taxes)_
+- **Pension base excludes allowances** — Compute pension on basic salary only. Allowances are outside the base unless a reviewer confirms otherwise  _(secondary summary, Other taxes)_
 
 ### Rule 6 -- Remittance deadlines
 
@@ -285,26 +285,26 @@ These rules apply when payroll/bank-statement data is clear and all required inp
 
 | Obligation | Deadline | Source |
 | --- | --- | --- |
-| Pension (employee 7% + employer 11%) | Within 30 days of deduction / last day of salary month | PwC, Other taxes |
-| PAYE | By the end of the month following the month income was earned | PwC, Tax administration |
+| Pension (employee 7% + employer 11%) | Within 30 days of deduction / last day of salary month | secondary summary, Other taxes |
+| PAYE | By the end of the month following the month income was earned | secondary summary, Tax administration |
 
 Account for the Ethiopian-calendar offset (~7–8 days vs Gregorian) when mapping deadlines.
 
 ### Rule 7 -- Employee return-filing
 
-- **Employee return-filing** — Employees with only employment income are NOT required to file a personal return; the employer's withholding and remittance discharges the obligation  _(PwC, Tax administration)_
+- **Employee return-filing** — Employees with only employment income are NOT required to file a personal return; the employer's withholding and remittance discharges the obligation  _(secondary summary, Tax administration)_
 
 ### Rule 8 -- Vesting
 
-- **Vesting** — A retirement pension requires at least 10 years of contributions. Do not promise a pension entitlement below 10 years.  _(PwC, Other taxes; 2merkato)_
+- **Vesting** — A retirement pension requires at least 10 years of contributions. Do not promise a pension entitlement below 10 years.  _(secondary summary, Other taxes; 2merkato)_
 
 ### Rule 9 -- Enforcement after non-payment
 
-- **Enforcement after non-payment** — After three months of unpaid contributions, the Social Security Agency may deduct arrears directly from the employer's bank account  _(PwC, Other taxes)_
+- **Enforcement after non-payment** — After three months of unpaid contributions, the Social Security Agency may deduct arrears directly from the employer's bank account  _(secondary summary, Other taxes)_
 
 ### Rule 10 -- Tax year and statute of limitations
 
-- **Tax year and statute of limitations** — Tax year = 8 July – 7 July. Authorities may assess within 5 years of the declaration filing date  _(PwC, Tax administration)_
+- **Tax year and statute of limitations** — Tax year = 8 July – 7 July. Authorities may assess within 5 years of the declaration filing date  _(secondary summary, Tax administration)_
 
 ## Section 7 -- Tier 2 catalogue
 
@@ -447,7 +447,7 @@ If the client provides only a bank statement and no other information:
 | Late payment | Interest on unpaid tax; possible suspension of tax clearance | Secondary — **[RESEARCH GAP]** |
 | Fraud | Criminal sanctions | Secondary — **[RESEARCH GAP]** |
 | 2025 penalty waiver directive | Relief program exists | LexAfrica, May 2025 |
-| Pension non-payment (3 months) | Direct bank-account deduction of arrears | PwC, Other taxes (confirmed) |
+| Pension non-payment (3 months) | Direct bank-account deduction of arrears | secondary summary, Other taxes (confirmed) |
 
 ### Test suite
 

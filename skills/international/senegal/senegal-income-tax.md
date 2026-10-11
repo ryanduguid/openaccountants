@@ -1,10 +1,10 @@
 ---
 name: senegal-income-tax
 description: Use this skill whenever asked about Senegal personal income tax (IRPP — Impôt sur le Revenu des Personnes Physiques) for employees and self-employed individuals. Trigger on phrases like "how much tax do I pay in Senegal", "IRPP", "impôt sur le revenu Sénégal", "barème IRPP", "quotient familial", "TRIMF", "Contribution Globale Unique", "CGU", "IPRES", "CSS", "CFCE", "déclaration de revenus", "abattement 30%", "net salary Senegal", "salaire net", "self-employed tax Senegal", or any question about filing or computing income tax for an individual resident in Senegal. Also trigger when preparing or reviewing an annual IRPP return, computing the family quotient, the 30% lump-sum deduction, social contributions, or payroll withholding (PAYE). This skill covers the progressive IRPP barème, the family-quotient parts system, TRIMF, social security (IPRES/CSS/CFCE), CGU for small businesses, filing deadlines, and benefits-in-kind. ALWAYS read this skill before touching any Senegal income tax work. Figures use West African CFA franc (XOF / FCFA).
-version: 0.1
+version: 0.2
 jurisdiction: SN
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Senegal Personal Income Tax (IRPP) —
 
-## Senegal Personal Income Tax (IRPP) — Skill v0.1
+## Senegal Personal Income Tax (IRPP) — Skill v0.2
 
-> **Tier 2 — research-verified, pending accountant sign-off.** This skill was assembled from secondary sources (PwC Worldwide Tax Summaries — Senegal, the DGID, and Senegalese payroll references) and cross-checked against the Code Général des Impôts (CGI). Several figures could not be reconciled to a single authoritative text and are marked **[RESEARCH GAP — reviewer to confirm]**. Do not file on the basis of this skill without a Senegalese chartered accountant (Expert-Comptable / member of ONECCA) confirming the flagged items.
+> **Tier 2 — research-verified, pending accountant sign-off.** This skill was assembled from secondary sources (secondary summary, Senegal, the DGID, and Senegalese payroll references) and cross-checked against the Code Général des Impôts (CGI). Several figures could not be reconciled to a single authoritative text and are marked **[RESEARCH GAP — reviewer to confirm]**. Do not file on the basis of this skill without a Senegalese chartered accountant (Expert-Comptable / member of ONECCA) confirming the flagged items.
 
 ## Section 1 — Quick Reference
 
@@ -34,10 +34,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Direction Générale des Impôts et des Domaines (DGID) — www.dgid.sn / impotsetdomaines.gouv.sn |
 | Social security | IPRES (pensions); CSS (Caisse de Sécurité Sociale) |
 | Filing portal | DGID e-services (www.dgid.sn) |
-| Annual IRPP filing deadline | Before 1 May of the following year (PwC, tax administration page) |
+| Annual IRPP filing deadline | Before 1 May of the following year (secondary summary, tax administration page) |
 | Validated by | Pending — requires sign-off by a Senegalese Expert-Comptable (ONECCA) |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### IRPP Progressive Scale — Barème (tax year 2025)
 
@@ -54,9 +54,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Cumulative-tax arithmetic (verified)** — Band 2: 870,000 × 20% = 174,000 → cumulative 174,000; Band 3: 2,500,000 × 30% = 750,000 → cumulative 924,000; Band 4: 4,000,000 × 35% = 1,400,000 → cumulative 2,324,000; Band 5: 5,500,000 × 37% = 2,035,000 → cumulative 4,359,000  _(CGI Article 174 (post-2022 reform))_
 
-> **[RESEARCH GAP — reviewer to confirm] — Top bracket conflict.** PwC's Senegal page (last reviewed 31 Mar 2026, https://taxsummaries.pwc.com/senegal/individual/taxes-on-personal-income) shows a **7-band** schedule topping out at **43%** (bands 13,500,001–50,000,000 @ 40% and 50,000,000+ @ 43%). This conflicts with the 6-band / 40% structure consistently reported by Senegalese payroll/tax sources and with CGI Article 174 as cited. The **6-band / 40%** structure above is used here; the PwC 43% top band must be reconciled against the current CGI text before any figure above 13,500,000 FCFA/part is published.
+> **[RESEARCH GAP — reviewer to confirm] — Top bracket conflict.** the secondary summary's Senegal page (last reviewed 31 Mar 2026, shows a **7-band** schedule topping out at **43%** (bands 13,500,001–50,000,000 @ 40% and 50,000,000+ @ 43%). This conflicts with the 6-band / 40% structure consistently reported by Senegalese payroll/tax sources and with CGI Article 174 as cited. The **6-band / 40%** structure above is used here; the the secondary summary 43% top band must be reconciled against the current CGI text before any figure above 13,500,000 FCFA/part is published.
 
-> **[RESEARCH GAP — reviewer to confirm] — First (0%) threshold.** Senegalese sources consistently give **630,000 FCFA** (post-reform); PwC and Rivermate give 600,000. The 630,000 figure is used here pending confirmation.
+> **[RESEARCH GAP — reviewer to confirm] — First (0%) threshold.** Senegalese sources consistently give **630,000 FCFA** (post-reform); the secondary summary and Rivermate give 600,000. The 630,000 figure is used here pending confirmation.
 
 ### Conservative Defaults
 
@@ -69,7 +69,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown whether cadre (executive) | Apply IPRES Régime Général only (no RC supplement) until confirmed |
 | Unknown business-use % (vehicle, phone) | 0% deduction |
 | Unknown expense category | Not deductible |
-| Unknown taxable benefit-in-kind value | Use the PwC notional scale (Section 11), flag for reviewer |
+| Unknown taxable benefit-in-kind value | Use the the secondary summary notional scale (Section 11), flag for reviewer |
 | Income above 13,500,000 FCFA/part | STOP — top-band rate unresolved (40% vs 43%); escalate |
 | Self-employed turnover ≤ 50,000,000 FCFA | Consider CGU eligibility (Section 7); confirm activity type |
 
@@ -88,7 +88,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Refusal Catalogue
 
 - **R-SN-1 — Family situation unknown** — "The family quotient (number of parts) is essential to compute IRPP. This skill cannot compute tax without marital status and number of dependent children. Please confirm before proceeding."  _(R-SN-1)_
-- **R-SN-2 — Income above the unresolved top band** — "Taxable income per part exceeds 13,500,000 FCFA. The top IRPP rate is unresolved in research (40% per CGI Art. 174 vs 43% per PwC). Escalate to a Senegalese Expert-Comptable to confirm the rate before computing."  _(R-SN-2)_
+- **R-SN-2 — Income above the unresolved top band** — "Taxable income per part exceeds 13,500,000 FCFA. The top IRPP rate is unresolved in research (40% per CGI Art. 174 vs 43% per the secondary summary). Escalate to a Senegalese Expert-Comptable to confirm the rate before computing."  _(R-SN-2)_
 - **R-SN-3 — Non-resident / dual-resident** — "Non-resident and dual-resident taxation follow different rules (and withholding regimes). Out of scope. Escalate to a Senegalese Expert-Comptable."  _(R-SN-3)_
 - **R-SN-4 — Companies / partnerships** — "This skill covers individuals (employees, sole traders, CGU). Companies pay corporate tax (Impôt sur les Sociétés) and file separate returns. Out of scope."  _(R-SN-4)_
 - **R-SN-5 — Penalties / enforcement** — "Senegalese late-filing/late-payment penalty rates were not obtainable from an authoritative source in this research (see Section 9). Do not quote penalty figures. Escalate to a Senegalese Expert-Comptable who can read CGI Livre IV."  _(R-SN-5)_
@@ -216,15 +216,15 @@ Deterministic pre-classifier. When a bank-statement / payslip line matches a pat
 
 ### 5.7 Proportional rates by income type
 
-> **[RESEARCH GAP — reviewer to confirm].** PwC reports proportional rates layered alongside the progressive IRPP by income nature: wages/salaries 11%, dividends 10%, income from land 20%, other income 25% (https://taxsummaries.pwc.com/senegal/individual/taxes-on-personal-income). In practice the salary computation now runs through the single progressive barème above. Whether all proportional rates still apply post-reform must be confirmed before relying on them.
+> **[RESEARCH GAP — reviewer to confirm].** the secondary summary reports proportional rates layered alongside the progressive IRPP by income nature: wages/salaries 11%, dividends 10%, income from land 20%, other income 25%. In practice the salary computation now runs through the single progressive barème above. Whether all proportional rates still apply post-reform must be confirmed before relying on them.
 
 ## Section 6 — Social Security & Payroll Levies
 
-All figures below confirmed by PwC (https://taxsummaries.pwc.com/senegal/individual/other-taxes) and the official DGID flyer (parsed via https://africapaierh.com/juridique/cotisations-sociales-et-impots-au-senegal/); the two sources agree.
+All figures below confirmed by the secondary summary and the official DGID flyer (parsed via https://africapaierh.com/juridique/cotisations-sociales-et-impots-au-senegal/); the two sources agree.
 
 ### 6.1 IPRES — Retirement (pension)
 
-**IPRES Table**  _(PwC (https://taxsummaries.pwc.com/senegal/individual/other-taxes); DGID flyer (https://africapaierh.com/juridique/cotisations-sociales-et-impots-au-senegal/))_
+**IPRES Table**  _(secondary summary; DGID flyer (https://africapaierh.com/juridique/cotisations-sociales-et-impots-au-senegal/))_
 
 | Regime | Employer | Employee | Total | Monthly ceiling (base) |
 | --- | --- | --- | --- | --- |
@@ -235,7 +235,7 @@ All figures below confirmed by PwC (https://taxsummaries.pwc.com/senegal/individ
 
 ### 6.2 CSS — Caisse de Sécurité Sociale (employer-only)
 
-**CSS Table**  _(PwC (https://taxsummaries.pwc.com/senegal/individual/other-taxes); DGID flyer)_
+**CSS Table**  _(secondary summary; DGID flyer)_
 
 | Branch | Rate | Payer | Monthly ceiling (base) |
 | --- | --- | --- | --- |
@@ -246,7 +246,7 @@ All figures below confirmed by PwC (https://taxsummaries.pwc.com/senegal/individ
 
 ### 6.3 Health insurance (IPM / employment medical coverage)
 
-> **[RESEARCH GAP — reviewer to confirm] — exact split and caps.** PwC: ~6% on a base of 60,000–250,000 FCFA/month, split between employer and employee; secondary sources cite employer cap ~30,000 FCFA/month and employee portion ~10,000 FCFA/month. "Non-work-related illness" coverage: 2%–7.5% shared employer/employee, base up to 250,000 FCFA/month (PwC, https://taxsummaries.pwc.com/senegal/individual/other-taxes). Confirm the exact split before computing.
+> **[RESEARCH GAP — reviewer to confirm] — exact split and caps.** the secondary summary: ~6% on a base of 60,000–250,000 FCFA/month, split between employer and employee; secondary sources cite employer cap ~30,000 FCFA/month and employee portion ~10,000 FCFA/month. "Non-work-related illness" coverage: 2%–7.5% shared employer/employee, base up to 250,000 FCFA/month (the secondary summary,. Confirm the exact split before computing.
 
 ### 6.4 CFCE — Contribution Forfaitaire à la Charge de l'Employeur
 
@@ -288,11 +288,11 @@ A flat minimum personal tax due by every resident receiving salary/pension (unle
 
 ## Section 8 — Filing & Payment Deadlines
 
-- **Filing and payment deadlines** — Tax year: calendar year. Annual IRPP return: all individuals subject to PIT must file before 1 May of each year (some local sources say "before 30 April" — effectively the same). Salary-only earners whose tax is fully withheld at source by the employer are generally exempt from filing. PAYE / withholding: employers withhold IRPP + TRIMF + employee IPRES monthly on gross remuneration (incl. benefits-in-kind and bonuses); remitted to DGID/CSS/IPRES typically by ~the 15th of the following month [RESEARCH GAP — confirm exact remittance date against the DGID calendar]. CGU: see Section 7.  _(https://taxsummaries.pwc.com/senegal/individual/tax-administration ; Rivermate (https://rivermate.com/guides/senegal/taxes))_
+- **Filing and payment deadlines** — Tax year: calendar year. Annual IRPP return: all individuals subject to PIT must file before 1 May of each year (some local sources say "before 30 April" — effectively the same). Salary-only earners whose tax is fully withheld at source by the employer are generally exempt from filing. PAYE / withholding: employers withhold IRPP + TRIMF + employee IPRES monthly on gross remuneration (incl. benefits-in-kind and bonuses); remitted to DGID/CSS/IPRES typically by ~the 15th of the following month [RESEARCH GAP — confirm exact remittance date against the DGID calendar]. CGU: see Section 7.  _ ; Rivermate (https://rivermate.com/guides/senegal/taxes))_
 
 ## Section 9 — Penalties
 
-> **[RESEARCH GAP — reviewer to confirm] — penalties not sourced.** Specific Senegalese late-filing / late-payment penalty rates and interest (majorations / intérêts de retard) were not obtainable from an authoritative source in this research (PwC's tax-administration page omits them). Do not invent or quote penalty figures. They must be extracted directly from the Senegalese Code Général des Impôts, Livre IV (procédures fiscales). Reference copy: https://senegal.eregulations.org/media/t-code-general-impots[1].pdf. Escalate any penalty question to a Senegalese Expert-Comptable (see R-SN-5).
+> **[RESEARCH GAP — reviewer to confirm] — penalties not sourced.** Specific Senegalese late-filing / late-payment penalty rates and interest (majorations / intérêts de retard) were not obtainable from an authoritative source in this research (secondary summary, 's tax-administration page omits them). Do not invent or quote penalty figures. They must be extracted directly from the Senegalese Code Général des Impôts, Livre IV (procédures fiscales). Reference copy: https://senegal.eregulations.org/media/t-code-general-impots[1].pdf. Escalate any penalty question to a Senegalese Expert-Comptable (see R-SN-5).
 
 ### 10.1 Cadre (executive) status — IPRES RC
 
@@ -304,7 +304,7 @@ A flat minimum personal tax due by every resident receiving salary/pension (unle
 
 ### 10.3 Benefits-in-kind valuation
 
-- **Benefits-in-kind valuation rule** — Taxable benefits use the PwC notional scale (Section 11). Flag for reviewer: confirm each benefit and whether the statutory travel allowance exemption applies.
+- **Benefits-in-kind valuation rule** — Taxable benefits use the the secondary summary notional scale (Section 11). Flag for reviewer: confirm each benefit and whether the statutory travel allowance exemption applies.
 
 ### 10.4 Proportional vs progressive rates
 
@@ -320,7 +320,7 @@ A flat minimum personal tax due by every resident receiving salary/pension (unle
 
 ## Section 11 — Benefits-in-Kind Notional Values
 
-**Benefits-in-Kind Notional Values Table**  _(PwC (https://taxsummaries.pwc.com/senegal/individual/income-determination))_
+**Benefits-in-Kind Notional Values Table**  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 | Benefit | Notional value (FCFA/month) |
 | --- | --- |
@@ -529,13 +529,13 @@ ONBOARDING QUESTIONS -- SENEGAL IRPP
 | Topic | Reference |
 | --- | --- |
 | IRPP progressive scale | CGI Articles 173–174 (post-2022 reform) — cross-checked AfricaPaieRH / AfroTools |
-| 30% abattement (cap 900,000) | DGID flyer (via AfricaPaieRH); PwC deductions page |
+| 30% abattement (cap 900,000) | DGID flyer (via AfricaPaieRH); secondary summary, deductions page |
 | Family quotient (parts) | AfroTools IRPP guide; DGID parts simulator (https://www.dgid.sn/simulateur-part/) |
 | TRIMF | Horus payroll KB (https://helpdesk.horus-solutions.org/kb/faq.php?id=14) — annual scale flagged |
-| IPRES / CSS / CFCE rates | PwC "other taxes"; DGID flyer (both agree) |
-| Benefits-in-kind | PwC income-determination page |
+| IPRES / CSS / CFCE rates | secondary summary, "other taxes"; DGID flyer (both agree) |
+| Benefits-in-kind | secondary summary, income-determination page |
 | CGU (synthetic tax) | CGI Art. 141+; DGID CGU pages; KOF Experts guide |
-| Filing deadline | PwC tax-administration page |
+| Filing deadline | secondary summary, tax-administration page |
 | Penalties | **[RESEARCH GAP]** — CGI Livre IV (eregulations PDF) |
 | Minimum wage (SMIG) | **[RESEARCH GAP]** — see below |
 

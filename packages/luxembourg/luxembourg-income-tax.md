@@ -1,10 +1,10 @@
 ---
 name: luxembourg-income-tax
 description: Use this skill whenever asked about Luxembourg personal income tax for self-employed individuals (indépendants) and individuals. Trigger on phrases like "how much tax do I pay in Luxembourg", "déclaration d'impôt", "Form 100", "modèle 100", "tax class", "classe d'impôt", "barème", "revenu imposable", "solidarity surcharge", "employment fund", "fonds pour l'emploi", "CCSS contributions", "cotisations sociales", "self-employed tax Luxembourg", "indépendant", "advance tax payments", "avances trimestrielles", "salaire social minimum", or any question about filing or computing Luxembourg income tax for a self-employed or individual client. Also trigger when preparing or reviewing a Form 100 / Form 163 return, computing deductible business expenses, estimating social contributions, or advising on quarterly advance payments. This skill covers the 23-band progressive PIT scale (0%–42%), the employment-fund (solidarity) surcharge, tax classes 1/1a/2, CCSS social contributions (employee, employer, self-employed), Form 100 structure, advance payments, penalties, and interaction with VAT and the social-security ceiling. ALWAYS read this skill before touching any Luxembourg income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: LU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -34,11 +34,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 31 December of the year following the income year; income year 2025 due 31 December 2026, filing window opens 7 April 2026 [Guichet.lu] |
 | Verified by | Pending -- requires sign-off by a Luxembourg-qualified tax adviser / expert-comptable |
 | Verification date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Brackets -- 2025 Progressive Scale (barème), Tax Class 1
 
-**2025 Progressive Scale Tax Class 1**  _([PwC])_
+**2025 Progressive Scale Tax Class 1**  _([secondary summary])_
 
 | Taxable Income (EUR) | Marginal Rate | Cumulative Tax at Top of Band (EUR) |
 | --- | --- | --- |
@@ -66,22 +66,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 176,160 -- 234,870 | 41% | 81,125.10 |
 | 234,870+ | 42% | -- |
 
-- **Tax-free threshold** — The first EUR 13,230 of taxable income (class 1) is taxed at 0% -- this is Luxembourg's tax-free threshold after the 2.5 index-bracket inflation adjustment for 2025. There is no separate flat personal allowance; the 0% band IS the allowance.  _([PwC])_
+- **Tax-free threshold** — The first EUR 13,230 of taxable income (class 1) is taxed at 0% -- this is Luxembourg's tax-free threshold after the 2.5 index-bracket inflation adjustment for 2025. There is no separate flat personal allowance; the 0% band IS the allowance.  _([secondary summary])_
 
 ### Employment-Fund (Solidarity) Surcharge
 
-**Employment-Fund Surcharge table**  _([PwC])_
+**Employment-Fund Surcharge table**  _([secondary summary])_
 
 | Taxable Income | Surcharge on PIT (classes 1 and 1a) | Surcharge on PIT (class 2) |
 | --- | --- | --- |
 | Up to threshold | 7% | 7% |
 | Above EUR 150,000 (class 1/1a) / EUR 300,000 (class 2) | 9% | 9% |
 
-- **Surcharge application** — Applied on top of the PIT computed from the scale above.  _([PwC])_
+- **Surcharge application** — Applied on top of the PIT computed from the scale above.  _([secondary summary])_
 
 ### Tax Classes
 
-**Tax Classes table**  _([PwC])_
+**Tax Classes table**  _([secondary summary])_
 
 | Class | Who | Treatment |
 | --- | --- | --- |
@@ -105,7 +105,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Section 1A -- Why default to Class 1
 
-Classes 1a and 2 give more favourable treatment via splitting and abatements. Defaulting to class 1 avoids overstating reliefs and gives the highest (most conservative) tax estimate for a single individual. Never silently assume class 2 or 1a -- it materially understates tax. [PwC]
+Classes 1a and 2 give more favourable treatment via splitting and abatements. Defaulting to class 1 avoids overstating reliefs and gives the highest (most conservative) tax estimate for a single individual. Never silently assume class 2 or 1a -- it materially understates tax. [secondary summary]
 
 ### Required Inputs
 
@@ -289,7 +289,7 @@ Client entertainment (frais de représentation). Representation costs are restri
 `10/01/2025 ; BCEE DOMICILIATION ; CCSS COTISATIONS ; INDÉPENDANT T4 2024 ; -2,909.34 ; EUR`
 
 **Reasoning:**
-CCSS social contribution for a self-employed person. Social contributions are deductible -- but as a **special expense (dépense spéciale)**, not as an operating expense in the income-and-expenditure account. They reduce taxable income at the return level. [PwC; Guichet.lu]
+CCSS social contribution for a self-employed person. Social contributions are deductible -- but as a **special expense (dépense spéciale)**, not as an operating expense in the income-and-expenditure account. They reduce taxable income at the return level. [secondary summary; Guichet.lu]
 
 **Classification:** Social-contribution deduction = EUR 2,909.34. Do NOT include in operating expenses.
 
@@ -318,7 +318,7 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 **Scenario:** Single freelancer, class 1, taxable income (after social-contribution and operating-expense deductions) = EUR 45,000.
 
 **Reasoning:**
-Apply the 2025 class-1 scale. From Section 1, the cumulative tax at the top of the EUR 44,910 band is EUR 5,646.60. The remaining EUR 90.00 (45,000 − 44,910) falls in the 32% band: 90 × 32% = EUR 28.80. PIT = EUR 5,646.60 + EUR 28.80 = **EUR 5,675.40**. Solidarity surcharge at 7% (income below EUR 150,000) = EUR 5,675.40 × 7% = EUR 397.28. **Total = EUR 6,072.68.** [PwC]
+Apply the 2025 class-1 scale. From Section 1, the cumulative tax at the top of the EUR 44,910 band is EUR 5,646.60. The remaining EUR 90.00 (45,000 − 44,910) falls in the 32% band: 90 × 32% = EUR 28.80. PIT = EUR 5,646.60 + EUR 28.80 = **EUR 5,675.40**. Solidarity surcharge at 7% (income below EUR 150,000) = EUR 5,675.40 × 7% = EUR 397.28. **Total = EUR 6,072.68.** [secondary summary]
 
 **Classification:** PIT EUR 5,675.40 + surcharge EUR 397.28 = EUR 6,072.68 (estimate -- pass to the deterministic engine for the official figure).
 
@@ -332,15 +332,15 @@ Apply the 2025 class-1 scale. From Section 1, the cumulative tax at the top of t
 
 ### 5.3 Progressive Scale and Solidarity Surcharge
 
-- **Progressive Scale and Solidarity Surcharge** — PIT is progressive over 23 bands from 0% to 42% (Section 1). On top of the PIT computed, the employment-fund (solidarity) surcharge applies: 7% of the PIT, rising to 9% where taxable income exceeds EUR 150,000 (classes 1 and 1a) or EUR 300,000 (class 2).  _(LIR barème (2025, 2.5 index-bracket adjustment); [PwC])_
+- **Progressive Scale and Solidarity Surcharge** — PIT is progressive over 23 bands from 0% to 42% (Section 1). On top of the PIT computed, the employment-fund (solidarity) surcharge applies: 7% of the PIT, rising to 9% where taxable income exceeds EUR 150,000 (classes 1 and 1a) or EUR 300,000 (class 2).  _(LIR barème (2025, 2.5 index-bracket adjustment); [secondary summary])_
 
 ### 5.4 Tax Classes
 
-- **Tax Classes** — Three classes (Section 1): class 1 (single, full scale), class 1a (single with dependent child / widowed / 65+, more favourable), class 2 (married/partnered joint taxation with income-splitting, most favourable). Never apply a class without confirmation; default to class 1.  _([PwC])_
+- **Tax Classes** — Three classes (Section 1): class 1 (single, full scale), class 1a (single with dependent child / widowed / 65+, more favourable), class 2 (married/partnered joint taxation with income-splitting, most favourable). Never apply a class without confirmation; default to class 1.  _([secondary summary])_
 
 ### 5.5 Social Contributions -- Employee
 
-**Social Contributions Employee table**  _([Guichet.lu; PwC])_
+**Social Contributions Employee table**  _([Guichet.lu; secondary summary])_
 
 | Contribution | Employee Rate | Base | Capped at ceiling? |
 | --- | --- | --- | --- |
@@ -350,7 +350,7 @@ Apply the 2025 class-1 scale. From Section 1, the cumulative tax at the top of t
 | Dependency / long-term care (assurance dépendance) | 1.40% | gross income less EUR 675.94/month abatement | **No -- uncapped** |
 | **Employee total** | **12.45%** | -- | -- |
 
-- **Dependency contribution abatement** — The dependency contribution applies the EUR 675.94/month abatement (EUR 8,045.32/year for 2025) and is NOT subject to the ceiling. (Component check: 8.00 + 2.80 + 0.25 + 1.40 = 12.45%.)  _([PwC])_
+- **Dependency contribution abatement** — The dependency contribution applies the EUR 675.94/month abatement (EUR 8,045.32/year for 2025) and is NOT subject to the ceiling. (Component check: 8.00 + 2.80 + 0.25 + 1.40 = 12.45%.)  _([secondary summary])_
 
 ### 5.6 Social Contributions -- Employer
 
@@ -371,7 +371,7 @@ Apply the 2025 class-1 scale. From Section 1, the cumulative tax at the top of t
 
 ### 5.7 Social Contributions -- Self-Employed (Indépendants)
 
-**Social Contributions Self-Employed table**  _([Baloise; PwC])_
+**Social Contributions Self-Employed table**  _([Baloise; secondary summary])_
 
 | Contribution | Self-Employed Rate | Notes |
 | --- | --- | --- |
@@ -381,7 +381,7 @@ Apply the 2025 class-1 scale. From Section 1, the cumulative tax at the top of t
 | Dependency / long-term care | 1.40% | on income less EUR 675.94/month abatement; uncapped |
 | **Component sum (this skill's figures)** | **23.50%** | (16.00 + 5.60 + 0.50 + 1.40) |
 
-> **[RESEARCH GAP -- reviewer to confirm.]** The research data states a self-employed **total of ~24.5%**, but its own component breakdown (pension 16% + health-in-kind 5.6% + health-cash 0.5% + dependency 1.4%) sums to **23.5%** -- a 1.0 percentage-point discrepancy that the source itself flags ("confirm exact health split with CCSS"). Accident insurance may also apply on top. Do NOT publish a single self-employed rate to a client without the reviewer confirming the exact CCSS combined rate and whether accident cover is added. Base = net professional income, capped at 5× the social minimum wage (max monthly EUR 13,518.68 from May 2025; annual EUR 162,224.16); dependency uncapped. [Baloise; PwC]
+> **[RESEARCH GAP -- reviewer to confirm.]** The research data states a self-employed **total of ~24.5%**, but its own component breakdown (pension 16% + health-in-kind 5.6% + health-cash 0.5% + dependency 1.4%) sums to **23.5%** -- a 1.0 percentage-point discrepancy that the source itself flags ("confirm exact health split with CCSS"). Accident insurance may also apply on top. Do NOT publish a single self-employed rate to a client without the reviewer confirming the exact CCSS combined rate and whether accident cover is added. Base = net professional income, capped at 5× the social minimum wage (max monthly EUR 13,518.68 from May 2025; annual EUR 162,224.16); dependency uncapped. [Baloise; secondary summary]
 
 ### 5.8 Social-Contribution Ceiling (Plafond Cotisable)
 
@@ -403,17 +403,17 @@ Apply the 2025 class-1 scale. From Section 1, the cumulative tax at the top of t
 | SSM unskilled (18+), monthly | EUR 2,637.79 | EUR 2,703.74 | [Orbitax] |
 | SSM skilled (qualifié), monthly (+20%) | EUR 3,165.35 | EUR 3,244.48 | [All Eyes On Me] |
 
-**Tax credit table**  _([PwC])_
+**Tax credit table**  _([secondary summary])_
 
 | Tax credit | Amount | Notes | Source |
 | --- | --- | --- | --- |
-| Employee tax credit (CIS -- crédit d'impôt salarié) | EUR 0–600/year by income | granted from ~EUR 936 gross annual; phased out above ~EUR 80,000 | [PwC] |
-| Minimum-wage tax credit (CISSM) | EUR 81.00/month for monthly gross EUR 1,800–3,000; degressive 81/600 × (3,600 − gross) between EUR 3,000–3,600 | prorated for part-time; ensures a worker on the unskilled SSM has no PIT in all classes | [PwC] |
-| Single-parent tax credit (CIM) | EUR 750–3,504/year |  | [PwC; Guichet.lu] |
+| Employee tax credit (CIS -- crédit d'impôt salarié) | EUR 0–600/year by income | granted from ~EUR 936 gross annual; phased out above ~EUR 80,000 | [secondary summary] |
+| Minimum-wage tax credit (CISSM) | EUR 81.00/month for monthly gross EUR 1,800–3,000; degressive 81/600 × (3,600 − gross) between EUR 3,000–3,600 | prorated for part-time; ensures a worker on the unskilled SSM has no PIT in all classes | [secondary summary] |
+| Single-parent tax credit (CIM) | EUR 750–3,504/year |  | [secondary summary; Guichet.lu] |
 
 ### 5.10 Wage-Tax Withholding (Employees)
 
-- **Wage-Tax Withholding** — The employer withholds wage tax (retenue sur traitements et salaires) per the tax card (fiche de retenue, on the RTS scale) plus social contributions monthly. The tax class on the card determines the scale applied. Employees not required to file a full return may file Form 163 (décompte annuel) to claim refunds.  _([PwC; Guichet.lu])_
+- **Wage-Tax Withholding** — The employer withholds wage tax (retenue sur traitements et salaires) per the tax card (fiche de retenue, on the RTS scale) plus social contributions monthly. The tax class on the card determines the scale applied. Employees not required to file a full return may file Form 163 (décompte annuel) to claim refunds.  _([secondary summary; Guichet.lu])_
 
 ### 5.11 Filing, Advances, and Penalties
 
@@ -622,9 +622,9 @@ ONBOARDING QUESTIONS -- LUXEMBOURG INCOME TAX
 
 | Topic | Reference | Source |
 | --- | --- | --- |
-| Income tax law (barème, classes, deductions) | LIR -- Loi modifiée du 4 décembre 1967 | [PwC] |
+| Income tax law (barème, classes, deductions) | LIR -- Loi modifiée du 4 décembre 1967 | [secondary summary] |
 | Social contributions | Code de la sécurité sociale; CCSS | [Guichet.lu] |
-| 2025 scale (2.5 index-bracket adjustment) | Loi du 12 juillet 2024 + budget/index laws | [PwC] |
+| 2025 scale (2.5 index-bracket adjustment) | Loi du 12 juillet 2024 + budget/index laws | [secondary summary] |
 | Annual return | Form 100 (modèle 100), MyGuichet.lu | [Guichet.lu] |
 | Employee annual adjustment | Form 163 (décompte annuel) | [Guichet.lu] |
 | Direct tax authority | Administration des contributions directes (ACD) | [Guichet.lu] |
@@ -633,17 +633,17 @@ ONBOARDING QUESTIONS -- LUXEMBOURG INCOME TAX
 
 ### Key Numbers at a Glance (2025)
 
-**Key Numbers at a Glance (2025)**  _([PwC]; [Guichet.lu]; [Orbitax]; [Expatica]; [Baloise])_
+**Key Numbers at a Glance (2025)**  _([secondary summary]; [Guichet.lu]; [Orbitax]; [Expatica]; [Baloise])_
 
 | Item | Value | Source |
 | --- | --- | --- |
-| PIT tax-free threshold (class 1) | EUR 13,230 | [PwC] |
-| Top marginal rate | 42% above EUR 234,870 | [PwC] |
-| Solidarity surcharge | 7% (9% above EUR 150,000 class 1/1a; EUR 300,000 class 2) | [PwC] |
-| Employee social total | 12.45% | [Guichet.lu; PwC] |
+| PIT tax-free threshold (class 1) | EUR 13,230 | [secondary summary] |
+| Top marginal rate | 42% above EUR 234,870 | [secondary summary] |
+| Solidarity surcharge | 7% (9% above EUR 150,000 class 1/1a; EUR 300,000 class 2) | [secondary summary] |
+| Employee social total | 12.45% | [Guichet.lu; secondary summary] |
 | Employer social total (excl. MDE, coeff 1.0) | 11.94% | [Guichet.lu] |
-| Self-employed component sum | 23.50% (research states ~24.5% total -- see Section 5.7 gap) | [Baloise; PwC] |
-| Dependency abatement | EUR 675.94/month (EUR 8,045.32/year) | [PwC] |
+| Self-employed component sum | 23.50% (research states ~24.5% total -- see Section 5.7 gap) | [Baloise; secondary summary] |
+| Dependency abatement | EUR 675.94/month (EUR 8,045.32/year) | [secondary summary] |
 | Social ceiling (from 1 May 2025) | EUR 13,518.68/month (EUR 162,224.16/year) | [Orbitax] |
 | SSM unskilled (from 1 May 2025) | EUR 2,703.74/month | [Orbitax] |
 | VAT registration threshold | EUR 50,000 turnover | [Expatica] |
@@ -652,9 +652,9 @@ ONBOARDING QUESTIONS -- LUXEMBOURG INCOME TAX
 
 - Employer accident insurance (0.75%) is modulated by a firm-specific bonus/malus coefficient (0.85–1.5); MDE class (0.72%/1.22%/1.46%/2.84%) depends on prior-year absenteeism. Exact employer cost varies by employer. The live CCSS schedule (ccss.public.lu/en/parametres-sociaux.html) returned HTTP 403 and could not be fetched; cross-check the MDE class rates against the current CCSS schedule. [RESEARCH GAP -- reviewer to confirm against CCSS.]
 - Social parameters changed at 1 May 2025 (indexation): SSM and ceiling differ between Jan–Apr and May–Dec.
-- The self-employed health split (5.60% in-kind + 0.50% cash) and the ~24.5% headline come from an insurer source (Baloise) plus PwC component rates, not a single official CCSS table; the components sum to 23.5%. [RESEARCH GAP -- reviewer to confirm.]
-- One secondary source cited a different first-bracket figure (EUR 12,438) reflecting a pre-2025 or class-specific scale; the EUR 13,230 figure (PwC, post-2.5-index-adjustment class-1 scale) is used here.
-- The 42% top-rate threshold appears as EUR 234,870 in the detailed PwC table and as EUR 200,004 / EUR 234,900 in some summaries; EUR 234,870 is the working figure. [RESEARCH GAP -- verify against the official ACD barème before relying on it for high incomes.]
+- The self-employed health split (5.60% in-kind + 0.50% cash) and the ~24.5% headline come from an insurer source (Baloise) plus the secondary summary component rates, not a single official CCSS table; the components sum to 23.5%. [RESEARCH GAP -- reviewer to confirm.]
+- One secondary source cited a different first-bracket figure (EUR 12,438) reflecting a pre-2025 or class-specific scale; the EUR 13,230 figure (secondary summary, post-2.5-index-adjustment class-1 scale) is used here.
+- The 42% top-rate threshold appears as EUR 234,870 in the detailed the secondary summary table and as EUR 200,004 / EUR 234,900 in some summaries; EUR 234,870 is the working figure. [RESEARCH GAP -- verify against the official ACD barème before relying on it for high incomes.]
 - Statutory LIR depreciation (amortissement) rates are NOT in the research data. [RESEARCH GAP -- reviewer to confirm.]
 
 ### Test Suite

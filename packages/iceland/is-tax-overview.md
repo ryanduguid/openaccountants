@@ -4,8 +4,8 @@ description: "Source-cited draft: tax overview for Iceland (tax year 2025) — r
 jurisdiction: IS
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Iceland tax system at a glance (2025)
 
 - **Overview description** — Iceland levies progressive personal income tax (combined state + municipal), a flat-rate corporate income tax, and a value added tax. The tax authority is Skatturinn (Iceland Revenue and Customs) and the standard tax year is the calendar year.
-- **Standard tax year** — Calendar year (1 January – 31 December); other fiscal years allowed only with approval of the Internal Revenue Directorate  _(Act No. 90/2003 on Income Tax (Lög um tekjuskatt), https://taxsummaries.pwc.com/iceland/corporate/tax-administration)_
+- **Standard tax year** — Calendar year (1 January – 31 December); other fiscal years allowed only with approval of the Internal Revenue Directorate  _(Act No. 90/2003 on Income Tax (Lög um tekjuskatt), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Currency** — Icelandic króna (ISK)  _(Act No. 90/2003 on Income Tax)_
 - **Tax authority** — Skatturinn (Iceland Revenue and Customs)  _(Act No. 90/2003 on Income Tax, https://www.skatturinn.is/english/)_
 - **Basis of taxation** — Individuals with unlimited tax liability (domicile in Iceland, or presence of more than 183 days in any 12-month period) and resident companies are taxed on worldwide income; persons with limited tax liability pay tax only on Icelandic-source income  _(Skatturinn, Individuals: Tax liability — https://www.skatturinn.is/english/individuals/tax-liability/ ; Skatturinn, Companies: Foreign service providers — https://www.skatturinn.is/english/companies/foreign-service-providers/)_

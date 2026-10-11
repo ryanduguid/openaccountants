@@ -1,10 +1,10 @@
 ---
 name: panama-payroll
 description: Use this skill whenever asked about Panama payroll processing for employed persons (planilla). Trigger on phrases like "Panama payroll", "planilla CSS", "Caja de Seguro Social", "cuota obrero-patronal", "seguro educativo", "riesgos profesionales", "ISR Panama", "retención de salario Panama", "impuesto sobre la renta salario", "décimo tercer mes", "décimo Panama", "13th month Panama", "SIPE", "salario mínimo Panama", "Form 03 Panama", "planilla 03", "net salary Panama", "gross to net balboa", "MITRADEL", "DGI retención", or any question about computing employee pay, salary withholding tax, or social-security contributions for Panama-based employees. This skill covers ISR (monthly income-tax withholding on salaries), CSS social-security contributions (employee and employer), educational insurance, professional-risk insurance, the mandatory décimo tercer mes, minimum wage, and filing obligations via SIPE/DGI. ALWAYS read this skill before processing any Panama payroll.
-version: 0.1
+version: 0.2
 jurisdiction: PA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Panama Payroll Skill v0.1 (Tier 2 — research-verified, pending accountant sign-off)
+# Panama Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Panama Payroll Skill v0.1 (Tier 2 — research-verified, pending accountant sign-off)
+## Panama Payroll Skill v0.2 (Tier 2 — research-verified, pending accountant sign-off)
 
 ## Section 1 -- Quick Reference
 
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Republic of Panama (national, code PA) |
 | Currency | PAB -- Panamanian Balboa (B/.); pegged 1:1 with USD and USD circulates as legal tender |
 | Standard pay frequency | Monthly or quincenal (bi-monthly, 15th + month-end); weekly permitted |
-| Tax system | **Territorial** -- only Panamanian-source income is taxed (PwC, *Taxes on personal income*) |
+| Tax system | **Territorial** -- only Panamanian-source income is taxed (secondary summary, *Taxes on personal income) |
 | Tax year | Calendar / fiscal year (1 January -- 31 December) |
 | Income-tax withholding system | ISR (Impuesto Sobre la Renta) -- monthly employer withholding on salaries, projected over 13 months (12 + décimo) |
 | Income-tax authority | Dirección General de Ingresos (DGI), Ministerio de Economía y Finanzas (MEF) |
@@ -35,17 +35,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Código Fiscal (ISR brackets, confirmed on DGI *Tarifa* page); **Ley No. 462 de 18 marzo 2025** (CSS reform, employer-rate phase-in); Cabinet Decree No. 221 of 18 Nov 1971 (décimo); Executive Decree No. 13 of 31 Dec 2025 (2026 minimum wage) |
 | Filing portals | SIPE (Sistema de Ingresos y Prestaciones Económicas -- CSS planilla, consolidates CSS + ISR); DGI e-Tax |
 | Validated by | Pending -- requires sign-off by a Panamanian Contador Público Autorizado (CPA) |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
-> **Tier-2 note.** Figures below are research-verified. The load-bearing fully-verified figures are: the three ISR brackets (0 / 15 / 25% at B/.11,000 / B/.50,000), confirmed on the DGI *Tarifa* page and PwC; and the post-Law-462 CSS rates (employee 9.75%, employer 13.25% rising to 14.25% / 15.25%, educational 1.25% / 1.50%, **no wage ceiling**), confirmed by PwC and Fabrega Molino. Several specifics could NOT be obtained from a primary CSS/DGI page and are flagged inline as `[RESEARCH GAP — reviewer to confirm]`: the riesgos-profesionales rate-by-class table, the internal health/pension split of the 9.75%, the 7.25% décimo SS rate, exact late-payment penalty formulas, and the full 59-rate minimum-wage annex.
+> **Tier-2 note.** Figures below are research-verified. The load-bearing fully-verified figures are: the three ISR brackets (0 / 15 / 25% at B/.11,000 / B/.50,000), confirmed on the DGI *Tarifa* page and the secondary summary; and the post-Law-462 CSS rates (employee 9.75%, employer 13.25% rising to 14.25% / 15.25%, educational 1.25% / 1.50%, **no wage ceiling**), confirmed by the secondary summary and Fabrega Molino. Several specifics could NOT be obtained from a primary CSS/DGI page and are flagged inline as `[RESEARCH GAP — reviewer to confirm]`: the riesgos-profesionales rate-by-class table, the internal health/pension split of the 9.75%, the 7.25% décimo SS rate, exact late-payment penalty formulas, and the full 59-rate minimum-wage annex.
 
 ## Section 2 -- Income Tax Withholding (ISR on salaries)
 
-- **ISR withholding computation method** — The employer withholds ISR monthly from wages, salaries, and other remuneration for personal services. Panama taxes only Panamanian-source income (territorial system). Multiply the monthly salary by 13 (12 months + décimo/XIII month) to estimate annual income, apply the bracket table to the annual figure, then deduct proportionally each month (one-twelfth of the annual liability).  _(PwC *Panama — Individual — Tax administration*; method consistency across secondary payroll guides)_
+- **ISR withholding computation method** — The employer withholds ISR monthly from wages, salaries, and other remuneration for personal services. Panama taxes only Panamanian-source income (territorial system). Multiply the monthly salary by 13 (12 months + décimo/XIII month) to estimate annual income, apply the bracket table to the annual figure, then deduct proportionally each month (one-twelfth of the annual liability).  _(secondary summary, *Panama — Individual — Tax administration; method consistency across secondary payroll guides)_
 
 ### ISR Brackets (annual net taxable income, B/. = USD)
 
-**ISR Brackets table**  _(DGI *Tarifa* page (https://dgi.mef.gob.pa/DInforme/Tarifa) and PwC *Taxes on personal income* (tax year 2026, last reviewed 18 Jan 2026))_
+**ISR Brackets table**  _(DGI *Tarifa* page (https://dgi.mef.gob.pa/DInforme/Tarifa) and the secondary summary *Taxes on personal income* (tax year 2026, last reviewed 18 Jan 2026))_
 
 | Annual net taxable income (B/.) | Marginal rate | Tax on the band (B/.) | Cumulative tax at top of band (B/.) |
 | --- | --- | --- | --- |
@@ -53,24 +53,24 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | over 11,000 to 50,000 | 15% | 5,850 | 5,850 |
 | over 50,000 | 25% | (open) | (open) |
 
-- **Cumulative-tax check** — 15% × (50,000 − 11,000) = 15% × 39,000 = 5,850 at B/.50,000. Tax above that point = 5,850 + 25% × (annual income − 50,000). ✔  _(DGI *Tarifa* / PwC (computed))_
-- **No local/municipal income taxes on salaries** — No local / municipal income taxes on salaries.  _(PwC)_
-- **Tax-free allowance** — B/.11,000 B/. per year (annual)  _(DGI *Tarifa* / PwC)_
+- **Cumulative-tax check** — 15% × (50,000 − 11,000) = 15% × 39,000 = 5,850 at B/.50,000. Tax above that point = 5,850 + 25% × (annual income − 50,000). ✔  _(DGI *Tarifa* / the secondary summary (computed))_
+- **No local/municipal income taxes on salaries** — No local / municipal income taxes on salaries.  _(secondary summary)_
+- **Tax-free allowance** — B/.11,000 B/. per year (annual)  _(DGI *Tarifa*)_
 
 ### Computation Method (employer withholding)
 
-- **Employer ISR withholding steps** — 1. Take the employee's monthly gross remuneration and project annual income = monthly × 13 (12 + décimo). 2. Apply the annual ISR bracket schedule to the projected annual figure. 3. Divide the resulting annual ISR by 12 to obtain the monthly amount to withhold. 4. Withheld ISR is remitted to DGI monthly, by the 15th of the following month.  _(PwC / secondary payroll guides)_
+- **Employer ISR withholding steps** — 1. Take the employee's monthly gross remuneration and project annual income = monthly × 13 (12 + décimo). 2. Apply the annual ISR bracket schedule to the projected annual figure. 3. Divide the resulting annual ISR by 12 to obtain the monthly amount to withhold. 4. Withheld ISR is remitted to DGI monthly, by the 15th of the following month.  _(secondary summary, / secondary payroll guides)_
 
 Note: the décimo is included in the annualisation factor (×13) for projecting the ISR base, but the décimo payment itself has special SS treatment (Section 8) and its own ISR treatment where the worker's income level is taxable.
 
 ### Section 2.1 -- Individual filing (context)
 
-- **Individual filing rules** — Tax year = calendar year. An employee with a single salary source already withheld by the employer is generally exempt from filing. Others file by 15 March of the following year; estimated tax (for filers) is due in 3 installments — 30 June, 30 September, 31 December.  _(PwC *Tax administration*)_
-- **Form 03 and planilla 03** — The employer provides each employee an annual Form 03 (Comprobante de Ingresos) and files an annual employer information return (planilla 03) of salaries/withholdings, due 31 March of the following year.  _(PwC *Tax administration*)_
+- **Individual filing rules** — Tax year = calendar year. An employee with a single salary source already withheld by the employer is generally exempt from filing. Others file by 15 March of the following year; estimated tax (for filers) is due in 3 installments — 30 June, 30 September, 31 December.  _(secondary summary, *Tax administration)_
+- **Form 03 and planilla 03** — The employer provides each employee an annual Form 03 (Comprobante de Ingresos) and files an annual employer information return (planilla 03) of salaries/withholdings, due 31 March of the following year.  _(secondary summary, *Tax administration)_
 
 ### Section 2.2 -- Key personal deductions (relevant only if the employee files)
 
-**Key personal deductions table**  _(PwC *Panama — Individual — Deductions*)_
+**Key personal deductions table**  _(secondary summary, *Panama — Individual — Deductions)_
 
 | Deduction | Limit (B/.) |
 | --- | --- |
@@ -85,7 +85,7 @@ These reduce the taxable base on an employee's own return; they are not normally
 
 ## Section 3 -- Social Security -- Employee Deductions (CSS, from 1 Apr 2025)
 
-**Employee CSS deductions table**  _(PwC *Other taxes*; Fabrega Molino *Panama Social Security Reform 2025*)_
+**Employee CSS deductions table**  _(secondary summary, *Other taxes; Fabrega Molino *Panama Social Security Reform 2025*)_
 
 | Contribution | Employee rate | Ceiling |
 | --- | --- | --- |
@@ -93,14 +93,14 @@ These reduce the taxable base on an employee's own return; they are not normally
 | Educational insurance (Seguro Educativo) | 1.25% | **none** |
 | **TOTAL employee deduction** | **11.00%** | **none** |
 
-- **Sum check** — 9.75 + 1.25 = 11.00%. ✔  _(PwC *Other taxes*)_
-- **No wage ceiling** — No wage ceiling / cap on CSS or educational insurance — no maximum limit on the taxable amount.  _(PwC)_
+- **Sum check** — 9.75 + 1.25 = 11.00%. ✔  _(secondary summary, *Other taxes)_
+- **No wage ceiling** — No wage ceiling / cap on CSS or educational insurance — no maximum limit on the taxable amount.  _(secondary summary)_
 
 The internal split of the 9.75% between health (Enfermedad y Maternidad) and pension (IVM) was not obtainable from a primary CSS page. `[RESEARCH GAP — reviewer to confirm the health/pension split of the 9.75% employee rate]`
 
 ## Section 4 -- Social Security -- Employer Contributions (CSS, from 1 Apr 2025)
 
-**Employer CSS contributions table**  _(PwC *Other taxes*; Fabrega Molino on Law 462)_
+**Employer CSS contributions table**  _(secondary summary, *Other taxes; Fabrega Molino on Law 462)_
 
 | Contribution | Employer rate | Ceiling |
 | --- | --- | --- |
@@ -109,7 +109,7 @@ The internal split of the 9.75% between health (Enfermedad y Maternidad) and pen
 | **Subtotal (CSS + educational)** | **14.75%** | **none** |
 | Professional risk (Riesgos Profesionales) | 0.33% – 6.25% (by industry risk class) | n/a |
 
-- **Sum check employer subtotal** — 13.25 + 1.50 = 14.75%. ✔ The riesgos-profesionales rate is additional to the 14.75% and varies by occupational risk class.  _(PwC / Fabrega Molino)_
+- **Sum check employer subtotal** — 13.25 + 1.50 = 14.75%. ✔ The riesgos-profesionales rate is additional to the 14.75% and varies by occupational risk class.  _(secondary summary, / Fabrega Molino)_
 
 `[RESEARCH GAP — reviewer to confirm: the riesgos-profesionales 0.33%–6.25% band is from a single secondary guide (allaboutpanamacity); the exact rate-by-industry-class table could not be confirmed on an official CSS page. Obtain the company-specific rate from CSS before relying on it.]`
 
@@ -145,13 +145,13 @@ The internal split of the 9.75% between health (Enfermedad y Maternidad) and pen
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Income-tax-free annual amount | B/.11,000/year | DGI *Tarifa* / PwC |
-| ISR bracket edges (annual) | 11,000 / 50,000 | DGI *Tarifa* / PwC |
-| ISR marginal rates | 0 / 15 / 25% | DGI *Tarifa* / PwC |
-| Cumulative ISR at B/.50,000 | B/.5,850 | DGI *Tarifa* / PwC (computed) |
-| ISR annualisation factor | × 13 (12 months + décimo) | PwC / secondary payroll guides |
-| Employee CSS + educational | 11.00% (9.75% + 1.25%), no ceiling | PwC / Fabrega Molino |
-| Employer CSS + educational | 14.75% (13.25% + 1.50%), no ceiling | PwC / Fabrega Molino |
+| Income-tax-free annual amount | B/.11,000/year | DGI *Tarifa* |
+| ISR bracket edges (annual) | 11,000 / 50,000 | DGI *Tarifa* |
+| ISR marginal rates | 0 / 15 / 25% | DGI *Tarifa* |
+| Cumulative ISR at B/.50,000 | B/.5,850 | DGI *Tarifa* / the secondary summary (computed) |
+| ISR annualisation factor | × 13 (12 months + décimo) | secondary summary, / secondary payroll guides |
+| Employee CSS + educational | 11.00% (9.75% + 1.25%), no ceiling | secondary summary, / Fabrega Molino |
+| Employer CSS + educational | 14.75% (13.25% + 1.50%), no ceiling | secondary summary, / Fabrega Molino |
 | Employer riesgos profesionales | 0.33%–6.25% by class `[RESEARCH GAP]` | allaboutpanamacity (secondary) |
 | Décimo SS rate (reduced) | 7.25% `[RESEARCH GAP]` | allaboutpanamacity / PKF (secondary) |
 | Retirement age | men 62 / women 57 | Fabrega Molino |
@@ -195,8 +195,8 @@ Representative hourly rates (examples, NOT exhaustive — use the MITRADEL annex
 
 ## Section 9 -- Conservative Defaults
 
-- **ISR base default** — ISR base is GROSS Panamanian-source salary, projected ×13. Project annual income = monthly × 13, apply brackets, divide by 12. Do not pre-deduct CSS from the ISR base unless the reviewer confirms a net-of-CSS treatment.  _(PwC)_
-- **Employee deduction default** — Employee deduction = 11.00% (CSS 9.75% + educational 1.25%), no ceiling, on every pay period.  _(PwC / Fabrega Molino)_
+- **ISR base default** — ISR base is GROSS Panamanian-source salary, projected ×13. Project annual income = monthly × 13, apply brackets, divide by 12. Do not pre-deduct CSS from the ISR base unless the reviewer confirms a net-of-CSS treatment.  _(secondary summary)_
+- **Employee deduction default** — Employee deduction = 11.00% (CSS 9.75% + educational 1.25%), no ceiling, on every pay period.  _(secondary summary, / Fabrega Molino)_
 - **Employer subtotal default** — Employer subtotal = 14.75% (CSS 13.25% + educational 1.50%) for periods up to 28 Feb 2027; switch to 15.75% from 1 Mar 2027, 16.75% from 1 Mar 2029.  _(Law 462)_
 - **Riesgos profesionales default** — Riesgos profesionales is a SEPARATE employer cost (0.33%–6.25% by class) on top of the 14.75% subtotal — never fold it in. Default to the lowest band only as an illustrative placeholder and flag. `[RESEARCH GAP]`
 - **Minimum wage default** — Minimum wage is per activity/size/region. Never assume a single national floor — use the MITRADEL Decree 13 annex cell matching the role. `[RESEARCH GAP]`
@@ -310,16 +310,16 @@ All examples use current rates: ISR brackets 0 / 15 / 25% (edges 11,000 / 50,000
 
 ## Section 13 -- Tier 1 Rules (deterministic — apply automatically)
 
-- **Rule 1 ISR projection** — Project ISR base = monthly gross (Panamanian-source) × 13; apply annual brackets 0% / 15% / 25% with edges B/.11,000 / B/.50,000; divide annual ISR by 12 for the monthly amount.  _(DGI *Tarifa* / PwC)_
+- **Rule 1 ISR projection** — Project ISR base = monthly gross (Panamanian-source) × 13; apply annual brackets 0% / 15% / 25% with edges B/.11,000 / B/.50,000; divide annual ISR by 12 for the monthly amount.  _(DGI *Tarifa*)_
 - **Rule 2 cumulative ISR formula** — Cumulative ISR at B/.50,000 = B/.5,850; above B/.50,000, ISR = 5,850 + 25% × (annual − 50,000).
 - **Rule 3 final withholding** — ISR withheld monthly is the employee's final tax if there is a single salary source — no annual return required.
-- **Rule 4 employee CSS** — Withhold employee CSS + educational = 11.00% of gross (9.75% + 1.25%); no ceiling.  _(PwC / Fabrega Molino)_
+- **Rule 4 employee CSS** — Withhold employee CSS + educational = 11.00% of gross (9.75% + 1.25%); no ceiling.  _(secondary summary, / Fabrega Molino)_
 - **Rule 5 employer CSS** — Compute employer CSS + educational = 14.75% of gross (13.25% + 1.50%) for periods up to 28 Feb 2027; 15.75% from 1 Mar 2027; 16.75% from 1 Mar 2029.  _(Law 462)_
 - **Rule 6 riesgos profesionales separate** — Add the separate riesgos-profesionales employer cost (0.33%–6.25% by class) — never fold it into the CSS subtotal. `[RESEARCH GAP]`
 - **Rule 7 décimo** — Décimo = ≈ one month's salary, paid in 3 installments (15 Apr / 15 Aug / 15 Dec); SS at the reduced 7.25%; ISR where taxable; cannot be garnished. `[RESEARCH GAP on 7.25%]`
 - **Rule 8 ISR remittance deadline** — Remit ISR to DGI monthly by the 15th of the following month. `[RESEARCH GAP on date]`
 - **Rule 9 SIPE filing and registration** — File the CSS planilla via SIPE before the 21st of the month; pay within the following month; register each new hire with CSS within ~5 working days of hire. `[RESEARCH GAP — SIPE timing from secondary sources]`
-- **Rule 10 Form 03 and planilla 03** — Issue each employee Form 03 (Comprobante de Ingresos) and file the annual employer return (planilla 03) by 31 March of the following year.  _(PwC)_
+- **Rule 10 Form 03 and planilla 03** — Issue each employee Form 03 (Comprobante de Ingresos) and file the annual employer return (planilla 03) by 31 March of the following year.  _(secondary summary)_
 
 ## Section 14 -- Tier 2 Catalogue (reviewer judgement required)
 
@@ -406,11 +406,11 @@ If you cannot identify the correct figures for a specific employee or period:
 | --- | --- | --- |
 | Monthly ISR remittance | Pay ISR withheld from salaries to DGI | By the **15th** of the following month `[RESEARCH GAP — secondary source]` |
 | Form 03 (Comprobante de Ingresos) | Annual income certificate to each employee | Annually |
-| Planilla 03 (employer information return) | Annual return of salaries / withholdings | **31 March** of the following year (PwC) |
+| Planilla 03 (employer information return) | Annual return of salaries / withholdings | **31 March** of the following year (secondary summary) |
 
 ### Social Security (CSS / SIPE)
 
-**Social Security filings table**  _(PwC *Tax administration* (planilla 03, Form 03); SIPE timing and registration windows from secondary payroll providers (neeyamo, papayaglobal))_
+**Social Security filings table**  _(secondary summary, *Tax administration* (planilla 03, Form 03); SIPE timing and registration windows from secondary payroll providers (neeyamo, papayaglobal))_
 
 | Filing | Purpose | Deadline |
 | --- | --- | --- |
@@ -435,13 +435,13 @@ If you cannot identify the correct figures for a specific employee or period:
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Income-tax-free annual amount | B/.11,000 | DGI *Tarifa* / PwC |
-| ISR bracket edges (annual) | 11,000 / 50,000 | DGI *Tarifa* / PwC |
-| ISR marginal rates | 0 / 15 / 25% | DGI *Tarifa* / PwC |
-| Cumulative ISR at B/.50,000 | B/.5,850 | DGI *Tarifa* / PwC (computed) |
-| ISR annualisation factor | × 13 | PwC / secondary |
-| Employee CSS + educational | 11.00% (9.75% + 1.25%), no ceiling | PwC / Fabrega Molino |
-| Employer CSS + educational | 14.75% (13.25% + 1.50%) → 15.75% (2027) → 16.75% (2029) | PwC / Fabrega Molino / Law 462 |
+| Income-tax-free annual amount | B/.11,000 | DGI *Tarifa* |
+| ISR bracket edges (annual) | 11,000 / 50,000 | DGI *Tarifa* |
+| ISR marginal rates | 0 / 15 / 25% | DGI *Tarifa* |
+| Cumulative ISR at B/.50,000 | B/.5,850 | DGI *Tarifa* / the secondary summary (computed) |
+| ISR annualisation factor | × 13 | secondary summary, / secondary |
+| Employee CSS + educational | 11.00% (9.75% + 1.25%), no ceiling | secondary summary, / Fabrega Molino |
+| Employer CSS + educational | 14.75% (13.25% + 1.50%) → 15.75% (2027) → 16.75% (2029) | secondary summary, / Fabrega Molino / Law 462 |
 | Riesgos profesionales | 0.33%–6.25% by class | allaboutpanamacity `[RESEARCH GAP]` |
 | Décimo SS rate | 7.25% (reduced) | secondary `[RESEARCH GAP]` |
 | Retirement age | men 62 / women 57 | Fabrega Molino |

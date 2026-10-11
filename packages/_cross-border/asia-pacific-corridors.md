@@ -1,10 +1,10 @@
 ---
 name: asia-pacific-corridors
 description: "version: 1.0"
-version: 1.0
+version: 1.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 category: cross-border
 tier: 2
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Singapore → India
 
-**Singapore → India treaty rates**  _(Singapore-India DTAA. PwC Singapore and India WHT tables.)_
+**Singapore → India treaty rates**  _(Singapore-India DTAA. The secondary summary Singapore and India WHT tables.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -53,13 +53,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 10% | Art 12 | Standard rate |
 | Fees for technical services | 10% | Protocol | Protocol provision |
 
-**Source:** Singapore-India DTAA. PwC Singapore and India WHT tables.
+**Source:** Singapore-India DTAA. The secondary summary Singapore and India WHT tables.
 **Special provisions:** India-Singapore is a high-volume corridor (SG is India's largest FDI source). FTS clause added by protocol. India requires Form 10F (Form 41 from 2026) + TRC. India domestic WHT: 20% on dividends, 20% on interest, 10% on royalties/FTS. LOB article exists.
 **Last verified:** May 2026
 
 ## Singapore → Japan
 
-**Singapore → Japan treaty rates**  _(Singapore-Japan DTA. PwC Singapore and Japan WHT tables.)_
+**Singapore → Japan treaty rates**  _(Singapore-Japan DTA. The secondary summary Singapore and Japan WHT tables.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -69,13 +69,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 10% | Art 12 | Japan domestic WHT 20% |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** Singapore-Japan DTA. PwC Singapore and Japan WHT tables.
+**Source:** Singapore-Japan DTA. The secondary summary Singapore and Japan WHT tables.
 **Special provisions:** Japan domestic WHT on dividends is 15-20%. Treaty reduces substantially. 25% threshold for reduced dividend rate is higher than modern standard (usually 10%). 6-month holding period required.
 **Last verified:** May 2026
 
 ## Singapore → Hong Kong
 
-**Singapore → Hong Kong treaty rates**  _(Singapore-Hong Kong DTA (CDTA). PwC Singapore WHT table. IRAS.)_
+**Singapore → Hong Kong treaty rates**  _(Singapore-Hong Kong DTA (CDTA). The secondary summary Singapore WHT table. IRAS.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -89,13 +89,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - Interest: Treaty does not override HK's 0% (HK has no WHT on interest); SG WHT 15% reduced to treaty rate
 - Royalties: 5% on copyright/literary/artistic; 10% on other royalties
 
-**Source:** Singapore-Hong Kong DTA (CDTA). PwC Singapore WHT table. IRAS.
+**Source:** Singapore-Hong Kong DTA (CDTA). The secondary summary Singapore WHT table. IRAS.
 **Special provisions:** Neither jurisdiction levies WHT on dividends domestically. HK has no general WHT on interest. HK's only royalty WHT (4.95%) applies to closely connected non-residents — treaty may reduce further. Key corridor for Asian holding structures.
 **Last verified:** May 2026
 
 ## Japan → Australia
 
-**Japan → Australia treaty rates**  _(Japan-Australia Convention (2008, revised). PwC Japan WHT table.)_
+**Japan → Australia treaty rates**  _(Japan-Australia Convention (2008, revised). The secondary summary Japan WHT table.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -105,13 +105,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 5% | Art 12 | JP domestic WHT 20% reduced |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** Japan-Australia Convention (2008, revised). PwC Japan WHT table.
+**Source:** Japan-Australia Convention (2008, revised). The secondary summary Japan WHT table.
 **Special provisions:** Modern treaty with 0% rate for ≥80% parent-subsidiary dividends. 5% rate for ≥10% holdings. Australia's franking credit system affects effective dividend taxation. Royalties at 5% reflect favourable treatment.
 **Last verified:** May 2026
 
 ## Japan → India
 
-**Japan → India treaty rates**  _(Japan-India DTAA. PwC Japan and India WHT tables. ClearTax India.)_
+**Japan → India treaty rates**  _(Japan-India DTAA. The secondary summary Japan and India WHT tables. ClearTax India.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -120,7 +120,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 10% | Art 12 | Standard rate |
 | Fees for technical services | 10% | Protocol | Protocol provision |
 
-**Source:** Japan-India DTAA. PwC Japan and India WHT tables. ClearTax India.
+**Source:** Japan-India DTAA. The secondary summary Japan and India WHT tables. ClearTax India.
 **Special provisions:** Flat 10% across all categories is unusual — no split between portfolio and substantial dividends. India FTS provision applies. India domestic WHT: 20% on most categories — treaty provides significant reduction. Bilateral investment flows are substantial (Japan is major FDI source for India).
 **Last verified:** May 2026
 
@@ -159,7 +159,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## South Korea → Japan
 
-**South Korea → Japan treaty rates**  _(South Korea-Japan Convention. PwC Japan WHT table.)_
+**South Korea → Japan treaty rates**  _(South Korea-Japan Convention. The secondary summary Japan WHT table.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -169,7 +169,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 10% | Art 12 | Standard rate |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** South Korea-Japan Convention. PwC Japan WHT table.
+**Source:** South Korea-Japan Convention. The secondary summary Japan WHT table.
 **Special provisions:** 25% threshold for reduced dividend rate reflects older treaty practice. Korea domestic WHT on dividends: 20%. Japan-Korea relations affect treaty administration. Both countries are major trading partners.
 **Last verified:** May 2026
 
@@ -190,7 +190,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Malaysia → Singapore
 
-**Malaysia → Singapore treaty rates**  _(Malaysia-Singapore DTA. PwC Singapore WHT table. IRAS.)_
+**Malaysia → Singapore treaty rates**  _(Malaysia-Singapore DTA. The secondary summary Singapore WHT table. IRAS.)_
 
 | Income Type | Treaty Rate | Treaty Article | Notes |
 | --- | --- | --- | --- |
@@ -199,7 +199,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Royalties | 8%/10% | Art 12 | Split by type |
 | Technical services | 0% | Art 7 | Business profits — no WHT without PE |
 
-**Source:** Malaysia-Singapore DTA. PwC Singapore WHT table. IRAS.
+**Source:** Malaysia-Singapore DTA. The secondary summary Singapore WHT table. IRAS.
 **Special provisions:** Historical ASEAN partners with deep economic integration. Malaysia abolished dividend WHT (single-tier system). Singapore has no dividend WHT. Interest reduced from MY domestic 15%. Royalties: 8% for copyright/literary/artistic; 10% for industrial/commercial.
 **Last verified:** May 2026
 

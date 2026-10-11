@@ -1,10 +1,10 @@
 ---
 name: iceland-income-tax
 description: Use this skill whenever asked about Iceland (Ísland) personal income tax for self-employed individuals and employees. Trigger on phrases like "how much tax do I pay in Iceland", "skattframtal", "RSK 1.01", "income tax return Iceland", "staðgreiðsla", "reiknað endurgjald", "calculated remuneration", "persónuafsláttur", "personal tax credit", "útsvar", "municipal tax", "tryggingagjald", "lífeyrissjóður pension", "capital income tax 22%", "VSK / VAT registration", "Skatturinn", or any question about filing or computing income tax for a self-employed (sjálfstætt starfandi) or employed individual resident in Iceland. Also trigger when preparing or reviewing an annual return (skattframtal) or business income statement (rekstrarframtal RSK 4.11), computing deductible expenses, or advising on monthly withholding (staðgreiðsla). This skill covers the 3-bracket combined state + municipal income tax, personal tax credit, capital income tax, mandatory occupational pension, tryggingagjald, calculated remuneration, penalties, and interaction with VAT (VSK). ALWAYS read this skill before touching any Icelandic income tax work.
-version: 0.1
+version: 0.2
 jurisdiction: IS
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Iceland Income Tax -- Self-Employed and Individuals
 
-## Iceland Income Tax -- Self-Employed and Individuals Skill v0.1
+## Iceland Income Tax -- Self-Employed and Individuals Skill v0.2
 
-> **Tier 2 (research-verified) skill.** Figures are drawn from Skatturinn (Iceland Revenue and Customs) official 2025 pages and PwC Worldwide Tax Summaries. This skill has NOT yet been signed off by an Icelandic licensed accountant/tax adviser. All outputs require professional review before filing. Items marked **[RESEARCH GAP — reviewer to confirm]** were not pinned to an authoritative source in research and must be verified.
+> **Tier 2 (research-verified) skill.** Figures are drawn from Skatturinn (Iceland Revenue and Customs) official 2025 pages and a secondary practitioner summary. This skill has NOT yet been signed off by an Icelandic licensed accountant/tax adviser. All outputs require professional review before filing. Items marked **[RESEARCH GAP — reviewer to confirm]** were not pinned to an authoritative source in research and must be verified.
 
 ## Section 1 -- Quick Reference
 
@@ -34,10 +34,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Skatturinn — Iceland Revenue and Customs (Ríkisskattstjóri) |
 | Filing portal | skattur.is (filing); skatturinn.is (info); island.is (citizen service) |
 | Filing deadline | Mid-March of the following year — income year 2025 deadline was 13 March 2026 (Skatturinn) |
-| Final assessment (álagning) | No later than 10 months after year-end; generally finalised 31 May (PwC) |
+| Final assessment (álagning) | No later than 10 months after year-end; generally finalised 31 May (secondary summary) |
 | Validated by | Pending — requires sign-off by an Icelandic licensed accountant/tax adviser |
 | Validation date | Pending |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ### Tax Rate Brackets — 2025 (combined state income tax + average municipal útsvar; withholding rates)
 
@@ -61,7 +61,7 @@ These are the **withholding (staðgreiðsla) rates** applied monthly at source. 
 | --- | --- | --- |
 | Personal tax credit | 68,691 | 824,288 |
 
-Subtracted from **computed tax** (not from income). Unused portion is transferable between spouses. Source: Skatturinn, [Key rates and amounts 2025](https://www.skatturinn.is/english/individuals/key-rates-and-amounts/2025/). (PwC/island.is round-figure cited as 824,292 — use the Skatturinn figure 824,288.)
+Subtracted from **computed tax** (not from income). Unused portion is transferable between spouses. Source: Skatturinn, [Key rates and amounts 2025](https://www.skatturinn.is/english/individuals/key-rates-and-amounts/2025/). (secondary summary, /island.is round-figure cited as 824,292 — use the Skatturinn figure 824,288.)
 
 ### Other Income-Tax Rates — 2025
 
@@ -70,8 +70,8 @@ Subtracted from **computed tax** (not from income). Unused portion is transferab
 | Item | Rate | Notes | Source |
 | --- | --- | --- | --- |
 | Capital income tax (fjármagnstekjuskattur) | 22% (flat) | Capital gains (real estate, shares), dividends, interest. First ISK 300,000/yr of interest + shareholding income per person is tax-free. | Skatturinn key rates 2025 |
-| Municipal tax component (útsvar) | 14.94% withheld; 12.44%–14.94% final by municipality | Embedded in combined bracket rates; final depends on residence municipality. | PwC, Taxes on personal income |
-| Directors'/committee fees | 20% income tax + municipal tax | Special withholding category. | PwC, Taxes on personal income |
+| Municipal tax component (útsvar) | 14.94% withheld; 12.44%–14.94% final by municipality | Embedded in combined bracket rates; final depends on residence municipality. | secondary summary, Taxes on personal income |
+| Directors'/committee fees | 20% income tax + municipal tax | Special withholding category. | secondary summary, Taxes on personal income |
 | Children born 2010 or later | 6% | On a child's income exceeding ISK 180,000/yr. | Skatturinn key rates 2025 |
 
 ### Conservative Defaults
@@ -80,8 +80,8 @@ Subtracted from **computed tax** (not from income). Unused portion is transferab
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown municipal tax rate | Use 14.94% (max/withholding rate); final assessment may be lower (PwC) |
-| Unknown tryggingagjald rate | Use 6.35% general rate (Skatturinn / PwC) |
+| Unknown municipal tax rate | Use 14.94% (max/withholding rate); final assessment may be lower (secondary summary) |
+| Unknown tryggingagjald rate | Use 6.35% general rate (Skatturinn) |
 | Unknown minimum wage | No statutory minimum — confirm the applicable collective agreement; do NOT hard-code a figure |
 | Unknown self-employed remuneration | STOP — calculated remuneration (reiknað endurgjald) must be set at market salary per Skatturinn's occupation table |
 | Unknown business-use % (vehicle, phone, home) | 0% deduction |
@@ -182,7 +182,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 | ICELANDAIR, PLAY, FLUG (flight) | Flights | Deductible if business travel | Must be wholly business purpose |
 | HÓTEL, HOTEL, BOOKING.COM, AIRBNB | Accommodation | Deductible if business travel | Per diem rules may apply |
 | HOPP, BÍLALEIGA (car rental), LEIGUBÍLL (taxi), STRÆTÓ (bus) | Local transport | Deductible if business purpose |  |
-| BENSÍN, ELDSNEYTI (fuel), N1, OLÍS, ORKAN | Vehicle fuel | T2 -- business % only | Verifiable km cost approx. ISK 83–142/km (PwC); requires mileage log |
+| BENSÍN, ELDSNEYTI (fuel), N1, OLÍS, ORKAN | Vehicle fuel | T2 -- business % only | Verifiable km cost approx. ISK 83–142/km (secondary summary); requires mileage log |
 | BÍLASTÆÐI (parking) | Parking | T2 -- business % only |  |
 
 ### 3.6 Expense Patterns (Debits) -- NOT Deductible
@@ -326,7 +326,7 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 ### 5.3 Municipal Tax (útsvar)
 
-- **Municipal tax (útsvar)** — The municipal component is withheld at 14.94% but the final municipal rate ranges 12.44%–14.94% depending on the municipality of residence. Use 14.94% for conservative withholding.  _(PwC)_
+- **Municipal tax (útsvar)** — The municipal component is withheld at 14.94% but the final municipal rate ranges 12.44%–14.94% depending on the municipality of residence. Use 14.94% for conservative withholding.  _(secondary summary)_
 
 ### 5.4 Capital Income Tax
 
@@ -334,11 +334,11 @@ Transfer between the client's own accounts. Neither income nor expense. Exclude 
 
 ### 5.5 Mandatory Occupational Pension (lífeyrissjóður)
 
-- **Mandatory pension** — Minimum total 15.5% of remuneration: 4% employee + 11.5% employer. Mandatory for ages 16–70. The 4% employee contribution is deductible from the income tax base. Self-employed pay both portions on their calculated remuneration. Employer contribution becomes taxable income to the employee only if it exceeds BOTH 12% of remuneration AND ISK 2,000,000/yr. Voluntary private pension (séreignarsparnaður): up to an additional 4% (employee), deductible within limits; employer match commonly up to 2%. Pension component check: 4% + 11.5% = 15.5% total ✓.  _(Act No. 129/1997; PwC)_
+- **Mandatory pension** — Minimum total 15.5% of remuneration: 4% employee + 11.5% employer. Mandatory for ages 16–70. The 4% employee contribution is deductible from the income tax base. Self-employed pay both portions on their calculated remuneration. Employer contribution becomes taxable income to the employee only if it exceeds BOTH 12% of remuneration AND ISK 2,000,000/yr. Voluntary private pension (séreignarsparnaður): up to an additional 4% (employee), deductible within limits; employer match commonly up to 2%. Pension component check: 4% + 11.5% = 15.5% total ✓.  _(Act No. 129/1997; the secondary summary)_
 
 ### 5.6 Social Security Tax (tryggingagjald)
 
-- **Tryggingagjald** — General rate 6.35% on gross remuneration. +0.65% surcharge for fishermen (so 7.00% combined for that category). Reduced to 0.425% for workers covered by an A1 form (EEA). Employer pays it; self-employed pay it on calculated remuneration.  _(Act No. 113/1990; Skatturinn 2025 ("payroll tax 6.35%"); PwC corporate other-taxes)_
+- **Tryggingagjald** — General rate 6.35% on gross remuneration. +0.65% surcharge for fishermen (so 7.00% combined for that category). Reduced to 0.425% for workers covered by an A1 form (EEA). Employer pays it; self-employed pay it on calculated remuneration.  _(Act No. 113/1990; Skatturinn 2025 ("payroll tax 6.35%"); the secondary summary corporate other-taxes)_
 
 ### 5.7 Calculated Remuneration (reiknað endurgjald)
 
@@ -376,11 +376,11 @@ For income above ISK 2,474,942/yr, ages 16–69 (Skatturinn, Key rates 2025):
 | --- | --- | --- |
 | Annual return (skattframtal RSK 1.01) | Pre-filled; filed online via skattur.is; deadline mid-March (13 March 2026 for income year 2025) | Skatturinn |
 | Business income statement (rekstrarframtal RSK 4.11) | Filed with the annual return by sole proprietors | FreelancePay |
-| Final assessment (álagning) | No later than 10 months after year-end; generally finalised 31 May | PwC |
-| Under/over-payment on assessment | Shortfall increased by 2.5%; over-withholding refunded increased by 2.5% | PwC |
-| Late payment after assessment | Collected over five due dates (1st of July–December), each payable within 30 days; late-payment interest (dráttarvextir) thereafter | PwC |
-| Reassessment / statute of limitations | Tax authority may reassess within six years | PwC |
-| Capital income / WHT returns (dividends, interest) | Quarterly: 20 Apr, 20 Jul, 20 Oct, 20 Jan; payment within 15 days | PwC |
+| Final assessment (álagning) | No later than 10 months after year-end; generally finalised 31 May | secondary summary |
+| Under/over-payment on assessment | Shortfall increased by 2.5%; over-withholding refunded increased by 2.5% | secondary summary |
+| Late payment after assessment | Collected over five due dates (1st of July–December), each payable within 30 days; late-payment interest (dráttarvextir) thereafter | secondary summary |
+| Reassessment / statute of limitations | Tax authority may reassess within six years | secondary summary |
+| Capital income / WHT returns (dividends, interest) | Quarterly: 20 Apr, 20 Jul, 20 Oct, 20 Jan; payment within 15 days | secondary summary |
 | Late/non-filing penalty | **[RESEARCH GAP — reviewer to confirm]** — Skatturinn typically estimates income (áætlun) for non-filers and adds surcharges; exact fixed-fine mechanics not pinned to an authoritative source | Skatturinn |
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
@@ -391,7 +391,7 @@ For income above ISK 2,474,942/yr, ages 16–69 (Skatturinn, Key rates 2025):
 
 ### 6.2 Motor Vehicle Business Use
 
-- **Motor vehicle business use** — Only the business-use percentage of fuel, insurance, maintenance, and depreciation is deductible. Client must maintain a mileage log. PwC indicates verifiable car operating costs of approx. ISK 83–142/km. Conservative default: 0% business use until mileage log provided.  _(PwC)_
+- **Motor vehicle business use** — Only the business-use percentage of fuel, insurance, maintenance, and depreciation is deductible. Client must maintain a mileage log. The secondary summary indicates verifiable car operating costs of approx. ISK 83–142/km. Conservative default: 0% business use until mileage log provided.  _(secondary summary)_
 
 ### 6.3 Phone / Internet Mixed Use
 
@@ -399,7 +399,7 @@ For income above ISK 2,474,942/yr, ages 16–69 (Skatturinn, Key rates 2025):
 
 ### 6.4 Per Diem / Travel Subsistence
 
-- **Per diem / travel subsistence** — Per diem for travel outside the contractual workplace may be deductible. Flag for reviewer to confirm the applicable per-diem rates and that travel is genuinely business.  _(PwC)_
+- **Per diem / travel subsistence** — Per diem for travel outside the contractual workplace may be deductible. Flag for reviewer to confirm the applicable per-diem rates and that travel is genuinely business.  _(secondary summary)_
 
 ### 6.5 Depreciation of Capital Assets (fyrningar)
 
@@ -411,7 +411,7 @@ For income above ISK 2,474,942/yr, ages 16–69 (Skatturinn, Key rates 2025):
 
 ### 6.7 A1 / EEA Social-Security Coordination
 
-- **A1 / EEA social-security coordination** — EEA workers can avoid Icelandic pension contributions with an A1 certificate if equivalent contributions are made in the home country; tryggingagjald reduced to 0.425%. Flag for reviewer to confirm the A1 certificate and home-country coverage.  _(PwC)_
+- **A1 / EEA social-security coordination** — EEA workers can avoid Icelandic pension contributions with an A1 certificate if equivalent contributions are made in the home country; tryggingagjald reduced to 0.425%. Flag for reviewer to confirm the A1 certificate and home-country coverage.  _(secondary summary)_
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -567,11 +567,11 @@ ONBOARDING QUESTIONS -- ICELAND INCOME TAX
 | Children (born 2010+) rate / threshold | 6% above 180,000/yr | Skatturinn, Key rates 2025 |
 | Broadcasting fee / threshold | 21,400 above income 2,474,942/yr | Skatturinn, Key rates 2025 |
 | Elderly fund fee | 14,093 above income 2,474,942/yr | Skatturinn, Key rates 2025 |
-| Mandatory pension total / employee / employer | 15.5% / 4% / 11.5% | PwC, Other taxes |
-| Tryggingagjald (general) | 6.35% (+0.65% fishermen; 0.425% A1) | Skatturinn / PwC |
+| Mandatory pension total / employee / employer | 15.5% / 4% / 11.5% | secondary summary, Other taxes |
+| Tryggingagjald (general) | 6.35% (+0.65% fishermen; 0.425% A1) | Skatturinn |
 | VAT standard / reduced | 24% / 11% | Skatturinn, VAT page |
 | VAT registration threshold | 2,000,000 turnover / 12 months | Skatturinn, VAT page |
-| Director/committee fees | 20% income tax + municipal | PwC, Taxes on personal income |
+| Director/committee fees | 20% income tax + municipal | secondary summary, Taxes on personal income |
 | Minimum wage | No statutory minimum — collective-agreement based; ~425,000–455,000/mo indicative only **[RESEARCH GAP — reviewer to confirm against the relevant collective agreement]** | commoner-law.com (secondary) |
 | Self-employed employer-register exemption | annual reiknað endurgjald under 700,000 **[RESEARCH GAP — reviewer to confirm with Skatturinn]** | FreelancePay (secondary) |
 | VIRK rehabilitation fund levy | 0.10% of salaries (employer) **[RESEARCH GAP — reviewer to confirm against collective agreement]** | Rivermate (secondary) |
@@ -582,8 +582,8 @@ ONBOARDING QUESTIONS -- ICELAND INCOME TAX
 - Skatturinn — Key rates and amounts 2025: https://www.skatturinn.is/english/individuals/key-rates-and-amounts/2025/
 - Skatturinn — Filing a tax return: https://www.skatturinn.is/english/individuals/filing-a-tax-return/
 - Skatturinn — Value Added Tax (VAT): https://www.skatturinn.is/english/companies/value-added-tax/
-- PwC — Iceland Individual: Taxes on personal income / Other taxes / Deductions / Tax administration: https://taxsummaries.pwc.com/iceland/individual/
-- PwC — Iceland Corporate: Other taxes (tryggingagjald, VAT): https://taxsummaries.pwc.com/iceland/corporate/other-taxes
+- Secondary practitioner summary (link removed) — Iceland Individual: Taxes on personal income / Other taxes / Deductions / Tax administration:
+- Secondary practitioner summary (link removed) — Iceland Corporate: Other taxes (tryggingagjald, VAT):
 - Ísland.is — Personal tax credit and income tax brackets / Self-employed: https://island.is/en/
 
 ### Test Suite

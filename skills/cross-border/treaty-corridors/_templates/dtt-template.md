@@ -13,8 +13,8 @@ jurisdiction: GLOBAL
 category: template
 tax_year: 2025
 tier: 2
-last_updated: 2026-07-12
-version: 0.1
+last_updated: 2026-10-11
+version: 0.2
 depends_on: []
 verified_by: pending
 ---
@@ -176,7 +176,7 @@ verified_by: pending
 ## Sources
 
 - [Source 1: official treaty text URL]
-- [Source 2: PwC / Deloitte / EY tax summaries]
+- [Source 2: the secondary summary / Deloitte / EY tax summaries]
 - [Source 3: OECD Treaties Database]
 
 **Last verified:** [month year]

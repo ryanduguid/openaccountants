@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Latvia (tax year 2025
 jurisdiction: LV
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.2
+last_updated: 2026-10-11
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +25,7 @@ Latvia operates a distribution-based (Estonian-style) corporate income tax: prof
 - **Withholding tax on dividends to non-residents** — 0% in general (dividends are not among the payments listed in 5. pants (1)); 20% on payments and dividends to persons in listed low-tax or tax-free jurisdictions  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums), consolidated text on likumi.lv, 5. pants (1) and (6) — https://likumi.lv/ta/id/292700#p5)_
 - **Withholding tax on interest to non-residents** — 0% in general; 20% on payments to persons in listed low-tax or tax-free jurisdictions  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums), consolidated text on likumi.lv, 5. pants (1) and (6) — https://likumi.lv/ta/id/292700#p5)_
 - **Withholding tax on royalties to non-residents** — 0% in general; 20% on payments to persons in listed low-tax or tax-free jurisdictions  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums), consolidated text on likumi.lv, 5. pants (1) and (6) — https://likumi.lv/ta/id/292700#p5)_
-- **Withholding tax on management and consulting fees to non-residents** — 20% of the remuneration for management and consultancy services (may be reduced to 0% under a tax treaty where the non-resident has no permanent establishment and provides a residence certificate)  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums), consolidated text on likumi.lv, 5. pants (1) 1) — https://likumi.lv/ta/id/292700#p5 ; PwC Worldwide Tax Summaries, Withholding taxes (treaty relief procedure) — https://taxsummaries.pwc.com/latvia/corporate/withholding-taxes)_
+- **Withholding tax on management and consulting fees to non-residents** — 20% of the remuneration for management and consultancy services (may be reduced to 0% under a tax treaty where the non-resident has no permanent establishment and provides a residence certificate)  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums), consolidated text on likumi.lv, 5. pants (1) 1) — https://likumi.lv/ta/id/292700#p5)_
 - **Withholding tax on real-estate proceeds to non-residents** — 3% of the proceeds from the alienation of Latvian real estate, including shares in companies whose assets are mostly Latvian real estate; 5% of rent for Latvian real property  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums), consolidated text on likumi.lv, 5. pants (1) 2) and 4), and (2) — https://likumi.lv/ta/id/292700#p5)_
 - **CIT return and payment deadlines** — Return by the 20th of the month following the month in which a tax base arises; tax paid by the 23rd  _(Corporate Income Tax Law (Uzņēmumu ienākuma nodokļa likums) — https://www.vid.gov.lv/en/corporate-income-tax)_
 

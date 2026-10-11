@@ -1,10 +1,10 @@
 ---
 name: panama-social-contributions
 description: Use this skill whenever asked about Panama social security and payroll contributions (Caja de Seguro Social / CSS) for employees, employers, or self-employed independent professionals. Trigger on phrases like "Panama CSS contributions", "Caja de Seguro Social", "cuota obrero-patronal", "seguro educativo", "how much social security do I pay in Panama", "Panama payroll taxes", "Law 462 / Ley 462 CSS reform", "Panama employer contribution rate", "self-employed CSS Panama", "IVM contribution", "Panama planilla", or any question about Panama CSS, educational insurance tax, or payroll obligations. Also trigger when classifying bank-statement transactions that relate to CSS debits, seguro educativo, planilla payments, or DGI tax payments from Banco General, Banistmo, BAC, or other Panamanian banks. Also trigger when Panama personal income tax (Impuesto sobre la Renta) withholding or the territorial-income rules are relevant. This skill covers employee/employer CSS rates, the Law 462 staggered employer-rate increase, educational insurance tax, self-employed IVM/health rates, the (lack of) contribution ceiling, late-payment surcharges, interaction with territorial income tax, the 13th month, minimum wage context, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Panama CSS or payroll work.
-version: 0.1
+version: 0.2
 jurisdiction: PA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -28,13 +28,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Social-insurance authority | Caja de Seguro Social (CSS) |
 | Tax authority | Dirección General de Ingresos (DGI), Ministerio de Economía y Finanzas (MEF) |
 | Minimum-wage authority | Ministerio de Trabajo y Desarrollo Laboral (MITRADEL) |
-| Employee CSS rate | **9.75%** of gross (unchanged by Ley 462) [PwC; Ley 462] |
-| Employee educational insurance | **1.25%** of gross [PwC] |
+| Employee CSS rate | **9.75%** of gross (unchanged by Ley 462) [secondary summary; Ley 462] |
+| Employee educational insurance | **1.25%** of gross [secondary summary] |
 | Employer CSS rate (1 Apr 2025) | **13.25%** of gross [Ley 462; MEF] |
-| Employer educational insurance | **1.50%** of gross [PwC] |
-| Contribution ceiling | **None** — no maximum taxable amount for CSS or educational insurance [PwC] |
+| Employer educational insurance | **1.50%** of gross [secondary summary] |
+| Contribution ceiling | **None** — no maximum taxable amount for CSS or educational insurance [secondary summary] |
 | Self-employed IVM (mandatory) | **9.36%** of declared income [Ley 462; Morgan & Morgan] |
-| Personal income tax | Territorial — Panama-source income only; 0% / 15% / 25% bands [PwC] |
+| Personal income tax | Territorial — Panama-source income only; 0% / 15% / 25% bands [secondary summary] |
 | 13th month (Décimo) | Mandatory; paid 15 Apr, 15 Aug, 15 Dec [Código de Trabajo] |
 | Validated by | Pending — requires sign-off by a Panamanian-qualified accountant (Contador Público Autorizado) |
 | Validation date | Pending |
@@ -44,7 +44,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Component | Employee | Employer |
 | --- | --- | --- |
 | CSS social security (Seguro Social) | 9.75% | 13.25% [Ley 462; MEF] |
-| Educational Insurance Tax (Seguro Educativo) | 1.25% | 1.50% [PwC] |
+| Educational Insurance Tax (Seguro Educativo) | 1.25% | 1.50% [secondary summary] |
 | **Total** | **11.00%** | **14.75%** |
 
 *Arithmetic check: employee 9.75 + 1.25 = 11.00%. Employer 13.25 + 1.50 = 14.75%. Combined obrero-patronal load = 11.00 + 14.75 = 25.75% of gross, with no ceiling.*
@@ -165,7 +165,7 @@ Six bank-statement classifications and payroll computations for a hypothetical P
 - Employee CSS 9.75% × 2,000 = **195.00**; educational 1.25% × 2,000 = **25.00**; employee total = **220.00**
 - Employer CSS 13.25% × 2,000 = **265.00**; educational 1.50% × 2,000 = **30.00**; employer total = **295.00**
 
-Because Panama has **no contribution ceiling** [PwC], the same percentages apply no matter how high the salary rises — there is no cap on the taxable base.
+Because Panama has **no contribution ceiling** [secondary summary], the same percentages apply no matter how high the salary rises — there is no cap on the taxable base.
 
 **Classification:** EXCLUDE -- CSS payroll. Note the absence of a ceiling distinguishes Panama from capped systems.
 
@@ -199,7 +199,7 @@ Because Panama has **no contribution ceiling** [PwC], the same percentages apply
 
 **Computation (annual PIT, 2025 bands):**
 - Band 0–11,000: 0
-- Band 11,000–50,000 at 15%: (30,000 − 11,000) × 15% = 19,000 × 15% = **2,850.00** [PwC]
+- Band 11,000–50,000 at 15%: (30,000 − 11,000) × 15% = 19,000 × 15% = **2,850.00** [secondary summary]
 - One estimated installment ≈ 2,850 / 3 = **950.00**
 
 **Input line:**
@@ -223,7 +223,7 @@ Apply these when data is clear and all required inputs are available.
 
 ### Rule 1 -- Employee contribution formula
 
-- **Employee withholding formula** — Employee withholding = gross × (9.75% CSS + 1.25% educational) = gross × 11.00%. No ceiling on the base.  _([PwC; Ley 462])_
+- **Employee withholding formula** — Employee withholding = gross × (9.75% CSS + 1.25% educational) = gross × 11.00%. No ceiling on the base.  _([secondary summary; Ley 462])_
 
 ### Rule 2 -- Employer contribution formula (Ley 462 staggered)
 
@@ -241,7 +241,7 @@ Apply these when data is clear and all required inputs are available.
 
 ### Rule 3 -- No contribution ceiling
 
-- **No contribution ceiling** — There is no maximum taxable amount for either CSS or the educational insurance tax. The percentage applies to the full gross, however high.  _([PwC])_
+- **No contribution ceiling** — There is no maximum taxable amount for either CSS or the educational insurance tax. The percentage applies to the full gross, however high.  _([secondary summary])_
 
 ### Rule 4 -- Self-employed independents (Ley 462)
 
@@ -249,15 +249,15 @@ Apply these when data is clear and all required inputs are available.
 
 ### Rule 5 -- Educational insurance is separate from CSS
 
-- **Educational insurance separate levy** — Seguro Educativo (1.25% employee / 1.50% employer) is a distinct payroll levy from the CSS social-security contribution but is remitted on the same gross base with no ceiling.  _([PwC])_
+- **Educational insurance separate levy** — Seguro Educativo (1.25% employee / 1.50% employer) is a distinct payroll levy from the CSS social-security contribution but is remitted on the same gross base with no ceiling.  _([secondary summary])_
 
 ### Rule 6 -- Personal income tax is territorial
 
-- **Territorial income tax** — Only Panama-source income is taxed. Foreign-source income is exempt for residents and non-residents alike. There are no local/municipal income taxes.  _([PwC])_
+- **Territorial income tax** — Only Panama-source income is taxed. Foreign-source income is exempt for residents and non-residents alike. There are no local/municipal income taxes.  _([secondary summary])_
 
 ### Rule 7 -- Income-tax bands (2025)
 
-**Income-tax bands table (Rule 7)**  _([PwC])_
+**Income-tax bands table (Rule 7)**  _([secondary summary])_
 
 | Taxable income (USD) | Cumulative tax at top of band | Rate on excess |
 | --- | --- | --- |
@@ -265,11 +265,11 @@ Apply these when data is clear and all required inputs are available.
 | 11,000 – 50,000 | 5,850 | 15% (on amount over 11,000) |
 | Over 50,000 | — | 25% |
 
-*Cumulative check: at 50,000 → (50,000 − 11,000) × 15% = 39,000 × 15% = 5,850. ✓* [PwC]
+*Cumulative check: at 50,000 → (50,000 − 11,000) × 15% = 39,000 × 15% = 5,850. ✓* [secondary summary]
 
 ### Rule 8 -- Who must file income tax
 
-- **Filing requirement** — All taxpayers EXCEPT employees with a single source of wage income whose tax is fully withheld monthly by the employer. Self-employed/independent professionals must file. Filing via DGI eTax 2; taxpayers hold a RUC (Registro Único de Contribuyente).  _([PwC])_
+- **Filing requirement** — All taxpayers EXCEPT employees with a single source of wage income whose tax is fully withheld monthly by the employer. Self-employed/independent professionals must file. Filing via DGI eTax 2; taxpayers hold a RUC (Registro Único de Contribuyente).  _([secondary summary])_
 
 ### Rule 9 -- Income-tax deadlines
 
@@ -277,9 +277,9 @@ Apply these when data is clear and all required inputs are available.
 
 | Item | Date |
 | --- | --- |
-| Tax year | Calendar year (1 Jan – 31 Dec) [PwC] |
-| Return due | **15 March** following year; 2-month extension to **15 May** generally available [PwC] |
-| Estimated tax (filers) | 3 equal installments: **30 Jun, 30 Sep, 31 Dec** [PwC] |
+| Tax year | Calendar year (1 Jan – 31 Dec) [secondary summary] |
+| Return due | **15 March** following year; 2-month extension to **15 May** generally available [secondary summary] |
+| Estimated tax (filers) | 3 equal installments: **30 Jun, 30 Sep, 31 Dec** [secondary summary] |
 
 ### Rule 10 -- 13th month (Décimo Tercer Mes)
 
@@ -417,11 +417,11 @@ If the client provides only a bank statement and no other information:
 
 | Regime | Component | Rate | Source |
 | --- | --- | --- | --- |
-| Employee | CSS social security | 9.75% | PwC; Ley 462 |
-| Employee | Educational insurance | 1.25% | PwC |
+| Employee | CSS social security | 9.75% | secondary summary; Ley 462 |
+| Employee | Educational insurance | 1.25% | secondary summary |
 | Employee | **Total** | **11.00%** | (9.75 + 1.25) |
 | Employer (1 Apr 2025) | CSS social security | 13.25% | Ley 462; MEF |
-| Employer | Educational insurance | 1.50% | PwC |
+| Employer | Educational insurance | 1.50% | secondary summary |
 | Employer | **Total (current)** | **14.75%** | (13.25 + 1.50) |
 | Employer (from 1 Mar 2027) | **Total** | **15.75%** (future) | Ley 462 |
 | Employer (from 1 Mar 2029) | **Total** | **16.75%** (future) | Ley 462 |
@@ -434,9 +434,9 @@ If the client provides only a bank statement and no other information:
 
 | Taxable income (USD) | Cumulative tax | Rate on excess | Source |
 | --- | --- | --- | --- |
-| 0 – 11,000 | 0 | 0% | PwC |
-| 11,000 – 50,000 | 5,850 | 15% | PwC |
-| Over 50,000 | — | 25% | PwC |
+| 0 – 11,000 | 0 | 0% | secondary summary |
+| 11,000 – 50,000 | 5,850 | 15% | secondary summary |
+| Over 50,000 | — | 25% | secondary summary |
 
 ### Pension & retirement context
 
@@ -470,7 +470,7 @@ If the client provides only a bank statement and no other information:
 
 **Test 6:** Panama-source taxable income B/.80,000. → PIT = 5,850 + (80,000 − 50,000) × 25% = 5,850 + 7,500 = **13,350.00**.
 
-**Test 7:** Employee with single wage source, tax fully withheld monthly. → No income-tax return filing required [PwC].
+**Test 7:** Employee with single wage source, tax fully withheld monthly. → No income-tax return filing required [secondary summary].
 
 **Test 8:** Foreign-source income only, Panama resident. → Income-tax = **0** (territorial; foreign-source exempt). CSS still applies to any Panama employment.
 

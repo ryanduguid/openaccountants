@@ -1,10 +1,10 @@
 ---
 name: latvia-payroll
 description: Use this skill whenever asked about Latvia payroll processing for employed persons. Trigger on phrases like "Latvia payroll", "VSAOI", "IIN Latvia", "PIT withholding Latvia", "social contributions Latvia", "Darba devēja ziņojums", "employer's report Latvia", "non-taxable minimum Latvia", "algas nodokļa grāmatiņa", "wage tax book", "solidarity tax Latvia", "business risk state fee", "uzņēmējdarbības riska valsts nodeva", "net salary Latvia", "gross to net Latvia", "minimum wage Latvia", "EDS report", "VID withholding", "salary calculation Latvia", or any question about computing employee pay, personal income tax withholding, or state social insurance contributions for Latvia-based employees. This skill covers IIN (personal income tax) — flat 25.5% monthly withholding, with the 33% band and +3% surtax settled at the annual income declaration — VSAOI state social insurance (employee and employer shares), the business risk state fee, the fixed non-taxable minimum, dependant and disability allowances, solidarity tax, minimum wage, and EDS filing obligations for tax year 2025. ALWAYS read this skill before processing any Latvia payroll.
-version: 0.2
+version: 0.3
 jurisdiction: LV
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Latvia Payroll
 
-## Latvia Payroll Skill v0.2
+## Latvia Payroll Skill v0.3
 
 Tier 2 — research-verified. NOT yet signed off by a Latvian-licensed accountant. Treat every figure as provisional pending professional review.
 
@@ -30,7 +30,7 @@ Tier 2 — research-verified. NOT yet signed off by a Latvian-licensed accountan
 | Standard pay frequency | Monthly (most common) |
 | Tax year | Calendar year (1 January -- 31 December) |
 | Tax withholding system | Monthly PIT withholding by employer as tax agent (IIN), reconciled via annual income declaration |
-| Personal income tax (PIT / IIN) | Progressive at annual reconciliation: 25.5% (annual income up to EUR 105,300) / 33% (above), +3% surtax over EUR 200,000. Monthly payroll is withheld at a **flat 25.5%** (VID; PwC). |
+| Personal income tax (PIT / IIN) | Progressive at annual reconciliation: 25.5% (annual income up to EUR 105,300) / 33% (above), +3% surtax over EUR 200,000. Monthly payroll is withheld at a **flat 25.5%** (VID; secondary summary). |
 | Tax authority | State Revenue Service (Valsts ieņēmumu dienests, VID) -- via Electronic Declaration System (EDS, eds.vid.gov.lv) |
 | Social insurance authority | State Social Insurance Agency (Valsts sociālās apdrošināšanas aģentūra, VSAA) |
 | Mandatory social contributions | VSAOI -- employer 23.59% + employee 10.50% = 34.09% (standard, 2025) |
@@ -38,7 +38,7 @@ Tier 2 — research-verified. NOT yet signed off by a Latvian-licensed accountan
 | Key legislation | Law "On Personal Income Tax" (Likums "Par iedzīvotāju ienākuma nodokli", IIN); Law "On State Social Insurance" (Likums "Par valsts sociālo apdrošināšanu"); Solidarity Tax Law (Solidaritātes nodokļa likums); Labour Law (Darba likums) |
 | Filing portal | VID Electronic Declaration System (EDS) -- eds.vid.gov.lv |
 | Validated by | Pending -- requires sign-off by a Latvian-licensed accountant |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 The 2025 PIT reform took effect 1 January 2025: the income-tested differentiated non-taxable minimum was abolished and replaced with a fixed EUR 510/month minimum, and the prior three-rate PIT was replaced with the two-rate 25.5%/33% system. (Source: Ministry of Finance, "Changes in taxation and finances from 2025"; Lex & Finance.)
 
@@ -48,9 +48,9 @@ The employer acts as the tax agent: it withholds personal income tax (IIN) and t
 
 ### PIT Rates (2025) — progressive at ANNUAL reconciliation, flat 25.5% withheld MONTHLY
 
-VID applies the progressive PIT scale to **annual** income; the higher rates are settled on the annual income declaration. Employers withhold a **flat 25.5% monthly** regardless of the monthly amount. (Source: VID "Personal Income Tax rates" — "25.5% — monthly income"; "income under EUR 105,300 — 25.5%, income from EUR 105,300 — 33%"; PwC Worldwide Tax Summaries — Latvia.)
+VID applies the progressive PIT scale to **annual** income; the higher rates are settled on the annual income declaration. Employers withhold a **flat 25.5% monthly** regardless of the monthly amount. (Source: VID "Personal Income Tax rates" — "25.5% — monthly income"; "income under EUR 105,300 — 25.5%, income from EUR 105,300 — 33%"; a secondary practitioner summary — Latvia.)
 
-**PIT Rates 2025 table**  _(VID "Personal Income Tax rates"; PwC Worldwide Tax Summaries — Latvia)_
+**PIT Rates 2025 table**  _(VID "Personal Income Tax rates"; secondary summary, Latvia)_
 
 | Annual taxable income (EUR) | Rate | Withheld monthly by employer? |
 | --- | --- | --- |
@@ -58,12 +58,12 @@ VID applies the progressive PIT scale to **annual** income; the higher rates are
 | Above 105,300 | 33% | **No.** Settled on the annual income declaration the following year; monthly payroll still withholds 25.5%. |
 | Above 200,000 total annual income | +3% surtax (on the excess, on top of 33%) | **No.** Annual income declaration only. |
 
-- **No monthly EUR 8,775 PIT bracket** — There is no monthly EUR 8,775 PIT bracket. EUR 8,775 ≈ 105,300/12 is only the monthly equivalent of the annual band boundary; it is NOT a statutory monthly withholding threshold. Monthly payroll always withholds at 25.5%; the 33% and +3% are annual-reconciliation items.  _(VID "Personal Income Tax rates"; PwC)_
+- **No monthly EUR 8,775 PIT bracket** — There is no monthly EUR 8,775 PIT bracket. EUR 8,775 ≈ 105,300/12 is only the monthly equivalent of the annual band boundary; it is NOT a statutory monthly withholding threshold. Monthly payroll always withholds at 25.5%; the 33% and +3% are annual-reconciliation items.  _(VID "Personal Income Tax rates"; secondary summary)_
 
 ### Monthly Withholding Method
 
-- **Monthly PIT withholding formula** — Taxable income = Gross monthly salary - employee VSAOI (10.50% of gross) - non-taxable minimum (if wage tax book held — see Section 5) - applicable allowances (dependant / disability / repressed) Monthly PIT withheld = 25.5% × taxable income (flat, all months)  _(VID; PwC)_
-- **33% and 3% surtax reconciliation timing** — The 33% rate (annual income above EUR 105,300) and the +3% surtax (annual income above EUR 200,000) are reconciled by the individual on the annual income declaration (gada ienākumu deklarācija); they are NOT applied in routine monthly payroll.  _(VID; PwC)_
+- **Monthly PIT withholding formula** — Taxable income = Gross monthly salary - employee VSAOI (10.50% of gross) - non-taxable minimum (if wage tax book held — see Section 5) - applicable allowances (dependant / disability / repressed) Monthly PIT withheld = 25.5% × taxable income (flat, all months)  _(VID; secondary summary)_
+- **33% and 3% surtax reconciliation timing** — The 33% rate (annual income above EUR 105,300) and the +3% surtax (annual income above EUR 200,000) are reconciled by the individual on the annual income declaration (gada ienākumu deklarācija); they are NOT applied in routine monthly payroll.  _(VID; secondary summary)_
 
 Order of operations note: employee VSAOI is deducted from gross *before* PIT is computed; the non-taxable minimum and allowances are then subtracted from the post-VSAOI amount. Always confirm sequencing for edge cases with the reviewer. [RESEARCH GAP — reviewer to confirm exact statutory ordering of VSAOI vs. non-taxable-minimum deduction in the monthly base.]
 
@@ -73,7 +73,7 @@ The employee VSAOI share is withheld by the employer from gross salary before PI
 
 ### Employee VSAOI Rates (2025)
 
-**Employee VSAOI Rates table**  _(VSAA "On contributions"; MindLink national social insurance rates 2025; PwC)_
+**Employee VSAOI Rates table**  _(VSAA "On contributions"; MindLink national social insurance rates 2025; secondary summary)_
 
 | Employee category | Employee rate | Base | Floor | Ceiling |
 | --- | --- | --- | --- | --- |
@@ -88,7 +88,7 @@ The employer pays its VSAOI share on top of gross salary.
 
 ### Employer VSAOI Rates (2025)
 
-**Employer VSAOI Rates table**  _(VSAA "On contributions"; MindLink 2025; PwC. 1 percentage point of the total funds health/healthcare services.)_
+**Employer VSAOI Rates table**  _(VSAA "On contributions"; MindLink 2025; the secondary summary. 1 percentage point of the total funds health/healthcare services.)_
 
 | Employee category | Employer rate | Combined (employer + employee) | Base | Ceiling |
 | --- | --- | --- | --- | --- |
@@ -105,11 +105,11 @@ The employer pays its VSAOI share on top of gross salary.
 
 - **Fee nature** — This is a flat per-head amount, NOT a percentage of wages, and is part of total employer cost.  _(VID; Cabinet Regulation 2025; mkd.gov.lv; ifinanses 2026)_
 
-The retirement-age split (employer 20.77% / employee 9.25% = 30.02%) is set by paragraph 3 of Cabinet Regulation No. 786 on the distribution of the state social insurance contribution rate, and the standard 23.59% / 10.50% = 34.09% by section 18(1) of the law On State Social Insurance; PwC Worldwide Tax Summaries and MindLink's 2025 table match them ([likumi.lv, Cabinet Regulation No. 786](https://likumi.lv/ta/id/319695); [likumi.lv, Par valsts sociālo apdrošināšanu](https://likumi.lv/ta/id/45466)).
+The retirement-age split (employer 20.77% / employee 9.25% = 30.02%) is set by paragraph 3 of Cabinet Regulation No. 786 on the distribution of the state social insurance contribution rate, and the standard 23.59% / 10.50% = 34.09% by section 18(1) of the law On State Social Insurance; a secondary practitioner summary and MindLink's 2025 table match them ([likumi.lv, Cabinet Regulation No. 786](https://likumi.lv/ta/id/319695); [likumi.lv, Par valsts sociālo apdrošināšanu](https://likumi.lv/ta/id/45466)).
 
 ### Solidarity Tax (solidaritātes nodoklis)
 
-**Solidarity Tax table**  _(lexfinance.lv; PwC; VSAA)_
+**Solidarity Tax table**  _(lexfinance.lv; secondary summary; VSAA)_
 
 | Item | Detail |
 | --- | --- |
@@ -118,7 +118,7 @@ The retirement-age split (employer 20.77% / employee 9.25% = 30.02%) is set by p
 | Year-end reconciliation | VID reconciles down to an **effective 25%** solidarity tax rate (legislated since 2021); the difference is refunded/reconciled |
 | Administered by | VID |
 
-- **Routine payroll treatment above cap** — In routine monthly payroll, continue applying the full VSAOI rate above the cap; the reconciliation to the effective 25% rate is an annual / VID-driven process, not a payroll-run adjustment.  _(lexfinance.lv; PwC; VSAA)_
+- **Routine payroll treatment above cap** — In routine monthly payroll, continue applying the full VSAOI rate above the cap; the reconciliation to the effective 25% rate is an annual / VID-driven process, not a payroll-run adjustment.  _(lexfinance.lv; secondary summary; VSAA)_
 
 ### Fixed Non-Taxable Minimum and Allowances (2025)
 
@@ -348,21 +348,21 @@ The 30.02% split (employer 20.77%, employee 9.25%) is set by Cabinet Regulation 
 | Business risk state fee | flat, per employee | 0.36 |
 | Total employer cost | 10,000 + 2,359.00 + 0.36 | **12,359.36** |
 
-- **Flat monthly withholding regardless of salary level** — Monthly payroll withholds a flat 25.5% on the taxable base regardless of how high the monthly salary is — there is no monthly 33% bracket. The 33% rate is only applied at the annual income declaration on annual income above EUR 105,300, and the +3% surtax on annual income above EUR 200,000 is likewise an annual-declaration item. Track YTD gross against the EUR 105,300 VSAOI cap; once annual income exceeds it, VSAOI is reconciled to the solidarity-tax treatment (see Section 4) and annual PIT moves into the 33% band — but neither changes the in-year 25.5% monthly withholding.  _(VID "Personal Income Tax rates"; PwC)_
+- **Flat monthly withholding regardless of salary level** — Monthly payroll withholds a flat 25.5% on the taxable base regardless of how high the monthly salary is — there is no monthly 33% bracket. The 33% rate is only applied at the annual income declaration on annual income above EUR 105,300, and the +3% surtax on annual income above EUR 200,000 is likewise an annual-declaration item. Track YTD gross against the EUR 105,300 VSAOI cap; once annual income exceeds it, VSAOI is reconciled to the solidarity-tax treatment (see Section 4) and annual PIT moves into the 33% band — but neither changes the in-year 25.5% monthly withholding.  _(VID "Personal Income Tax rates"; secondary summary)_
 
 ## Section 10 -- Tier 1 Rules (Deterministic — apply directly)
 
-- **1. PIT annual progressive / monthly flat withholding** — PIT (2025) is progressive at annual reconciliation: 25.5% on annual income up to EUR 105,300, 33% above. Monthly payroll withholds a flat 25.5% on the monthly taxable base — there is no monthly 33% bracket. The 33% is settled on the annual income declaration.  _(VID "Personal Income Tax rates"; PwC)_
-- **2. +3% surtax annual only** — The +3% surtax on total annual income over EUR 200,000 is assessed only on the annual income declaration — never in monthly payroll.  _(VID; PwC)_
+- **1. PIT annual progressive / monthly flat withholding** — PIT (2025) is progressive at annual reconciliation: 25.5% on annual income up to EUR 105,300, 33% above. Monthly payroll withholds a flat 25.5% on the monthly taxable base — there is no monthly 33% bracket. The 33% is settled on the annual income declaration.  _(VID "Personal Income Tax rates"; secondary summary)_
+- **2. +3% surtax annual only** — The +3% surtax on total annual income over EUR 200,000 is assessed only on the annual income declaration — never in monthly payroll.  _(VID; secondary summary)_
 - **3. Fixed non-taxable minimum** — EUR 510/month (EUR 6,120/year) for 2025, replacing the abolished differentiated minimum.  _(Ministry of Finance; lexfinance.lv)_
 - **4. Pensioner non-taxable minimum** — EUR 1,000/month (EUR 12,000/year) for both 2025 and 2026.  _(Ministry of Finance)_
 - **5. Dependant allowance** — EUR 250/month (EUR 3,000/year) per dependant.  _(Ministry of Finance)_
 - **6. Disability / repressed persons allowances** — Disability Group I/II allowance EUR 154/month; Group III EUR 120/month; politically repressed persons EUR 154/month.  _(Ministry of Finance)_
 - **7. Wage tax book gateway** — The non-taxable minimum and all allowances apply at payroll only at the employer holding the wage tax book (algas nodokļa grāmatiņa).  _(VID)_
-- **8. Standard VSAOI rate** — 34.09% (employer 23.59% + employee 10.50%); the employer withholds the employee share and remits the total.  _(VSAA; PwC)_
+- **8. Standard VSAOI rate** — 34.09% (employer 23.59% + employee 10.50%); the employer withholds the employee share and remits the total.  _(VSAA; secondary summary)_
 - **9. Retirement-age VSAOI rate** — 30.02% (employer 20.77% + employee 9.25%).  _(MindLink 2025 — reviewer-pending)_
-- **10. VSAOI base and cap** — VSAOI is computed on gross salary before PIT; the annual cap is EUR 105,300 for 2025.  _(VSAA; PwC)_
-- **11. Solidarity tax on above-cap income** — Income above the EUR 105,300 cap is subject to solidarity tax at an effective 25%; full 34.09% is withheld during the year and VID reconciles to 25%.  _(lexfinance.lv; PwC; VSAA)_
+- **10. VSAOI base and cap** — VSAOI is computed on gross salary before PIT; the annual cap is EUR 105,300 for 2025.  _(VSAA; secondary summary)_
+- **11. Solidarity tax on above-cap income** — Income above the EUR 105,300 cap is subject to solidarity tax at an effective 25%; full 34.09% is withheld during the year and VID reconciles to 25%.  _(lexfinance.lv; secondary summary; VSAA)_
 - **12. National minimum wage 2025** — National minimum monthly wage for 2025 is EUR 740 gross.  _(Ministry of Welfare)_
 - **13. Minimum VSAOI contribution base** — A minimum VSAOI contribution base equal to the minimum wage applies; the employer must top up below-minimum cases, assessed quarterly by VSAA (subject to exemptions).  _(VSAA)_
 - **14. Business risk state fee** — The employer pays a business risk state fee of EUR 0.36 per employee per month (flat, employer only; unchanged for 2025 and 2026).  _(VID; Cabinet Regulation; mkd.gov.lv)_
@@ -376,7 +376,7 @@ The 30.02% split (employer 20.77%, employee 9.25%) is set by Cabinet Regulation 
 
 | Item | Why it needs reviewer judgement |
 | --- | --- |
-| Retirement-age VSAOI split (20.77% / 9.25%) | Cabinet Regulation No. 786, paragraph 3 ([likumi.lv](https://likumi.lv/ta/id/319695)); PwC and MindLink agree. |
+| Retirement-age VSAOI split (20.77% / 9.25%) | Cabinet Regulation No. 786, paragraph 3 ([likumi.lv](https://likumi.lv/ta/id/319695)); the secondary summary and MindLink agree. |
 | Minimum-contribution exemptions | First-3-months, multiple-employer, disability and student exemptions must be detailed against current statute. [RESEARCH GAP] |
 | Ordering of VSAOI vs. non-taxable minimum in the PIT base | Confirm exact statutory sequencing. [RESEARCH GAP] |
 | Annual reconciliation of the 33% band | Monthly payroll withholds flat 25.5% (VID); the 33% band on annual income above EUR 105,300 is settled by the individual on the annual income declaration. Confirm any employer reporting touchpoints for high earners. |
@@ -448,7 +448,7 @@ If you cannot establish wage tax book status, pension status, or YTD gross, STOP
 
 **Filing Obligations (Forms and Deadlines)**
 
-**Filing Obligations (Forms and Deadlines)**  _(VID; PwC tax-administration)_
+**Filing Obligations (Forms and Deadlines)**  _(VID; secondary summary, tax-administration)_
 
 | Form / item | Purpose | Deadline |
 | --- | --- | --- |
@@ -456,7 +456,7 @@ If you cannot establish wage tax book status, pension status, or YTD gross, STOP
 | PIT + VSAOI payment | Remittance of withheld PIT and total VSAOI to the single tax account | By the **23rd** of the month following the reporting month |
 | Employee registration ("Information regarding employees") | Notify VID of a new employee before work starts; report status change/termination | **≥ 1 hour before** work starts (electronic EDS) or **1 day before** (paper); status change/loss within **3 days** |
 | Annual income statement / certificate to employee | Employer issues annual income and withheld-tax certificate for the employee's personal declaration | By **1 February** of the following year (on request) |
-| Annual income declaration (gada ienākumu deklarācija) | Individual reconciles annual PIT, applies the 33% band and the +3% surtax over EUR 200,000, claims allowances | Filed by the **individual** (not the employer); standard window **1 March – 1 June** of the following year; **1 April – 1 July** if annual income exceeds **EUR 105,300** (VID; PwC tax-administration). |
+| Annual income declaration (gada ienākumu deklarācija) | Individual reconciles annual PIT, applies the 33% band and the +3% surtax over EUR 200,000, claims allowances | Filed by the **individual** (not the employer); standard window **1 March – 1 June** of the following year; **1 April – 1 July** if annual income exceeds **EUR 105,300** (VID; secondary summary, tax-administration). |
 
 ### Key Thresholds (2025)
 
@@ -488,8 +488,8 @@ If you cannot establish wage tax book status, pension status, or YTD gross, STOP
 - VSAA — On contributions (VSAOI rates): https://www.vsaa.gov.lv/en/contributions-0
 - Ministry of Finance — Non-taxable minimum and tax allowances: https://www.fm.gov.lv/en/non-taxable-minimum-and-tax-allowances
 - Ministry of Finance — Changes in taxation and finances from 2025: https://www.fm.gov.lv/en/changes-taxation-and-finances-2025
-- PwC Worldwide Tax Summaries — Latvia (Other taxes / social security): https://taxsummaries.pwc.com/latvia/individual/other-taxes
-- PwC Worldwide Tax Summaries — Latvia (Taxes on personal income): https://taxsummaries.pwc.com/latvia/individual/taxes-on-personal-income
+- Secondary practitioner summary (link removed) — Latvia (Other taxes / social security):
+- Secondary practitioner summary (link removed) — Latvia (Taxes on personal income):
 - MindLink — National social insurance rates: https://mindlink.lv/useful/national-social-insurance-rates
 - Lex & Finance — Latvia's New PIT System in 2025: https://www.lexfinance.lv/en/blogs/latvias-new-personal-income-tax-pit-system-in-2025
 - Ministry of Welfare — Minimum wage 2025/2026: https://www.lm.gov.lv/en/article/minimum-wage-latvia-will-be-780-euros
@@ -498,10 +498,10 @@ If you cannot establish wage tax book status, pension status, or YTD gross, STOP
 - VID — Electronic Declaration System (EDS): https://www.vid.gov.lv/en/electronic-declaration-system-eds
 - VID — Uzņēmējdarbības riska valsts nodeva (business risk state fee): https://www.vid.gov.lv/lv/uznemejdarbibas-riska-valsts-nodeva
 - mkd.gov.lv — Business risk state fee unchanged at 36 cents in 2025: https://www.mkd.gov.lv/lv/jaunums/uznemejdarbibas-riska-valsts-nodeva-2025gada
-- PwC Worldwide Tax Summaries — Latvia (Tax administration; annual declaration deadlines): https://taxsummaries.pwc.com/latvia/individual/tax-administration
+- Secondary practitioner summary (link removed) — Latvia (Tax administration; annual declaration deadlines):
 - VSAA — Tax-exempt minimum for pensions in 2025: https://www.vsaa.gov.lv/en/article/application-tax-exempt-minimum-amount-pensions-2025
 - KPMG Latvia — Amendments to the Law "On Taxes and Fees" (late-payment interest, Sept 2025): https://kpmg.com/lv/en/home/insights/2025/09/amendments-to-the-law-on-taxes-and-fees.html
-- KPMG Baltics — Tax Card Latvia 2025: https://assets.kpmg.com/content/dam/kpmg/lv/pdf/Taxcard/Tax_card_Latvia_2025_.pdf [The PDF was not machine-parsed; the figures it would corroborate (25.5%/33%, VSAOI 23.59%/10.50%, EUR 105,300 cap, EUR 510 minimum, EUR 740 minimum wage, EUR 0.36 fee) are confirmed against VID, PwC, VSAA, FM, section 18(1) of the law On State Social Insurance and Cabinet Regulation No. 786.]
+- KPMG Baltics — Tax Card Latvia 2025: https://assets.kpmg.com/content/dam/kpmg/lv/pdf/Taxcard/Tax_card_Latvia_2025_.pdf [The PDF was not machine-parsed; the figures it would corroborate (25.5%/33%, VSAOI 23.59%/10.50%, EUR 105,300 cap, EUR 510 minimum, EUR 740 minimum wage, EUR 0.36 fee) are confirmed against VID, the secondary summary, VSAA, FM, section 18(1) of the law On State Social Insurance and Cabinet Regulation No. 786.]
 
 ### Tax-Year Boundary Warning
 

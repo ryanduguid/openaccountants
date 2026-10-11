@@ -1,10 +1,10 @@
 ---
 name: serbia-social-contributions
 description: Use this skill whenever asked about Serbian payroll taxes and mandatory social security contributions (doprinosi za obavezno socijalno osiguranje) for employees and employers in the Republic of Serbia. Trigger on phrases like "Serbia payroll tax", "how much social contributions in Serbia", "PIO contribution", "RFZO health contribution", "Serbia salary tax 10%", "non-taxable salary amount", "neoporezivi iznos", "minimum contribution base", "maximum contribution base", "PPP-PD return", "Serbia net to gross", "gross to net Serbia", "annual personal income tax Serbia", "PP GPDG", or any question about Serbian payroll, salary tax, or social insurance obligations. Also trigger when classifying bank statement transactions that relate to Poreska uprava (Tax Administration), PIO Fund, RFZO, or NSZ payments from Serbian banks (Banca Intesa, Komercijalna banka, OTP, Raiffeisen, UniCredit). This skill covers the flat 10% salary tax, the monthly non-taxable amount, employee (19.90%) and employer (15.15%) contribution rates split across PIO / RFZO / NSZ, floor/ceiling contribution bases, the consolidated PPP-PD monthly return, the annual supplementary PIT (PP GPDG), minimum wage, penalties, and bank statement classification patterns. ALWAYS read this skill before touching any Serbian payroll or social contribution work.
-version: 0.1
+version: 0.2
 jurisdiction: RS
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Serbia Social Security Contributions & Payroll Tax
 
-## Serbia Social Security Contributions & Payroll Tax Skill v0.1
+## Serbia Social Security Contributions & Payroll Tax Skill v0.2
 
-> **Tier 2 (research-verified) skill.** Figures are drawn from PwC Worldwide Tax Summaries, KPMG Serbia tax alerts, Eurofast, Orbitax, and Serbian law-firm summaries, cross-referenced to the *Law on Personal Income Tax* and the *Law on Mandatory Social Insurance Contributions*. It has NOT yet been signed off by a Serbian licensed tax advisor. Treat every output as an estimate pending professional review. Items marked **[RESEARCH GAP — reviewer to confirm]** require a licensed Serbian advisor to verify against primary sources before production use.
+> **Tier 2 (research-verified) skill.** Figures are drawn from a secondary practitioner summary, KPMG Serbia tax alerts, Eurofast, Orbitax, and Serbian law-firm summaries, cross-referenced to the *Law on Personal Income Tax* and the *Law on Mandatory Social Insurance Contributions*. It has NOT yet been signed off by a Serbian licensed tax advisor. Treat every output as an estimate pending professional review. Items marked **[RESEARCH GAP — reviewer to confirm]** require a licensed Serbian advisor to verify against primary sources before production use.
 
 ## Section 1 -- Quick reference
 
@@ -28,12 +28,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Supporting legislation** — Labour Law (Zakon o radu) — minimum wage; amendments adopted Dec 2025 (Official Gazette RS); minimum wage Official Gazette RS Nos. 67/2025 and 78/2025
 - **Tax authority** — Tax Administration of the Republic of Serbia (Poreska uprava) — eporezi.purs.gov.rs; Ministry of Finance (mfin.gov.rs)
 - **Social funds** — PIO Fund (pension/disability, pio.rs); RFZO (health, rfzo.rs); NSZ (unemployment, nsz.gov.rs)
-- **Salary tax** — Flat 10% on gross salary minus the monthly non-taxable amount  _(PwC / KPMG)_
+- **Salary tax** — Flat 10% on gross salary minus the monthly non-taxable amount  _(secondary summary, / KPMG)_
 - **Non-taxable monthly amount (2025)** — RSD 28,423 (1 Jan–31 Dec 2025)  _(Eurofast / KPMG)_
 - **Non-taxable monthly amount (2026)** — RSD 34,221 (from 1 Jan 2026; next indexation 1 Jan 2027)  _(KPMG Dec 2025 alert)_
-- **Employee social contribution rate** — 19.90% of gross (14% PIO + 5.15% RFZO + 0.75% NSZ)  _(PwC)_
-- **Employer social contribution rate** — 15.15% of gross (10% PIO + 5.15% RFZO; no unemployment)  _(PwC)_
-- **Combined social burden** — 35.05% of gross (19.90% employee + 15.15% employer)  _(PwC / Eurofast)_
+- **Employee social contribution rate** — 19.90% of gross (14% PIO + 5.15% RFZO + 0.75% NSZ)  _(secondary summary)_
+- **Employer social contribution rate** — 15.15% of gross (10% PIO + 5.15% RFZO; no unemployment)  _(secondary summary)_
+- **Combined social burden** — 35.05% of gross (19.90% employee + 15.15% employer)  _(secondary summary, / Eurofast)_
 - **Minimum monthly contribution base (2025)** — RSD 45,950  _(Eurofast)_
 - **Minimum monthly contribution base (2026)** — RSD 51,297  _(Orbitax)_
 - **Maximum monthly contribution base (2025)** — RSD 656,425  _(Eurofast)_
@@ -53,12 +53,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | Labour Law (Zakon o radu) — minimum wage; amendments adopted Dec 2025 (Official Gazette RS); minimum wage Official Gazette RS Nos. 67/2025 and 78/2025 |
 | Tax authority | Tax Administration of the Republic of Serbia (Poreska uprava) — eporezi.purs.gov.rs; Ministry of Finance (mfin.gov.rs) |
 | Social funds | PIO Fund (pension/disability, pio.rs); RFZO (health, rfzo.rs); NSZ (unemployment, nsz.gov.rs) |
-| Salary tax | Flat 10% on gross salary minus the monthly non-taxable amount — PwC / KPMG |
+| Salary tax | Flat 10% on gross salary minus the monthly non-taxable amount — the secondary summary / KPMG |
 | Non-taxable monthly amount (2025) | RSD 28,423 (1 Jan–31 Dec 2025) — Eurofast / KPMG |
 | Non-taxable monthly amount (2026) | RSD 34,221 (from 1 Jan 2026; next indexation 1 Jan 2027) — KPMG Dec 2025 alert |
-| Employee social contribution rate | 19.90% of gross (14% PIO + 5.15% RFZO + 0.75% NSZ) — PwC |
-| Employer social contribution rate | 15.15% of gross (10% PIO + 5.15% RFZO; no unemployment) — PwC |
-| Combined social burden | 35.05% of gross (19.90% employee + 15.15% employer) — PwC / Eurofast |
+| Employee social contribution rate | 19.90% of gross (14% PIO + 5.15% RFZO + 0.75% NSZ) — the secondary summary |
+| Employer social contribution rate | 15.15% of gross (10% PIO + 5.15% RFZO; no unemployment) — the secondary summary |
+| Combined social burden | 35.05% of gross (19.90% employee + 15.15% employer) — the secondary summary / Eurofast |
 | Minimum monthly contribution base (2025) | RSD 45,950 — Eurofast |
 | Minimum monthly contribution base (2026) | RSD 51,297 — Orbitax |
 | Maximum monthly contribution base (2025) | RSD 656,425 — Eurofast |
@@ -80,7 +80,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unemployment (NSZ) | 0.75% | 0% | 0.75% |
 | **TOTAL** | **19.90%** | **15.15%** | **35.05%** |
 
-*Verify the TOTAL row: employee 14 + 5.15 + 0.75 = 19.90; employer 10 + 5.15 + 0 = 15.15; combined 24 + 10.30 + 0.75 = 35.05. All reconcile. Source: PwC Serbia — Individual — Other taxes.*
+*Verify the TOTAL row: employee 14 + 5.15 + 0.75 = 19.90; employer 10 + 5.15 + 0 = 15.15; combined 24 + 10.30 + 0.75 = 35.05. All reconcile. Source: the secondary summary Serbia — Individual — Other taxes.*
 
 **Conservative defaults:**
 
@@ -273,13 +273,13 @@ These rules apply when the data is clear and all required inputs are available. 
 
 ### Rule 2 -- Employee contributions = 19.90% of the contribution base
 
-- **Employee contributions formula** — employee_contributions = 19.90% x contribution_base = 14% PIO + 5.15% RFZO + 0.75% NSZ  _(PwC)_
-- **Withholding note** — Withheld by the employer from gross pay — PwC.  _(PwC)_
+- **Employee contributions formula** — employee_contributions = 19.90% x contribution_base = 14% PIO + 5.15% RFZO + 0.75% NSZ  _(secondary summary)_
+- **Withholding note** — Withheld by the employer from gross pay — the secondary summary.  _(secondary summary)_
 
 ### Rule 3 -- Employer contributions = 15.15% of the contribution base
 
-- **Employer contributions formula** — employer_contributions = 15.15% x contribution_base = 10% PIO + 5.15% RFZO + 0% NSZ (no employer unemployment)  _(PwC)_
-- **Paid on top note** — Paid on top of the employee's gross salary — PwC.  _(PwC)_
+- **Employer contributions formula** — employer_contributions = 15.15% x contribution_base = 10% PIO + 5.15% RFZO + 0% NSZ (no employer unemployment)  _(secondary summary)_
+- **Paid on top note** — Paid on top of the employee's gross salary — the secondary summary.  _(secondary summary)_
 
 ### Rule 4 -- Contribution base floor and ceiling
 
@@ -294,7 +294,7 @@ These rules apply when the data is clear and all required inputs are available. 
 
 ### Rule 6 -- Combined social burden = 35.05%
 
-- **Combined social burden** — 19.90% (employee) + 15.15% (employer) = 35.05% of gross, subject to the floor/ceiling base.  _(PwC / Eurofast)_
+- **Combined social burden** — 19.90% (employee) + 15.15% (employer) = 35.05% of gross, subject to the floor/ceiling base.  _(secondary summary, / Eurofast)_
 
 ### Rule 7 -- Monthly reporting via PPP-PD
 
@@ -303,7 +303,7 @@ These rules apply when the data is clear and all required inputs are available. 
 ### Rule 8 -- Annual (supplementary) PIT for residents — PP GPDG
 
 - **Filing threshold and deadline** — Residents with net 2025 income above RSD 5,439,096 (3x average annual salary) must file PP GPDG by 15 May 2026.  _(KPMG)_
-- **Annual PIT rates** — 10% on net income above the threshold up to RSD 10,878,192; 15% above that.  _(KPMG / PwC)_
+- **Annual PIT rates** — 10% on net income above the threshold up to RSD 10,878,192; 15% above that.  _(KPMG)_
 - **Standard and dependent deductions** — Standard personal deduction RSD 725,213 (40% of average annual salary); RSD 271,955 per dependent (15%); combined deductions capped at 50% of net income.  _(KPMG)_
 - **Under-40 additional deduction** — Taxpayers under 40 on 31 Dec 2025 get an additional deduction of RSD 5,439,096 on employment/self-employment income.  _(KPMG)_
 
@@ -443,7 +443,7 @@ If the client provides only a bank statement and no other information:
 
 ### Parameter table by tax year
 
-**Parameter table by tax year**  _(Eurofast / KPMG Dec 2025; Eurofast / Orbitax; Orbitax (2026); Zunic Law / RS Partners; PwC / KPMG; PwC)_
+**Parameter table by tax year**  _(Eurofast / KPMG Dec 2025; Eurofast / Orbitax; Orbitax (2026); Zunic Law / RS Partners; secondary summary, / KPMG; secondary summary)_
 
 | Parameter | 2025 | 2026 | Source |
 | --- | --- | --- | --- |
@@ -452,29 +452,29 @@ If the client provides only a bank statement and no other information:
 | Maximum monthly contribution base | RSD 656,425 | RSD 732,820 | Eurofast / Orbitax |
 | Maximum annual contribution base | [RESEARCH GAP — 2025 not captured] | RSD 8,793,840 | Orbitax (2026) |
 | Net minimum wage per hour | RSD 308 (Jan–Sep) / RSD 337 (Oct–Dec, OG 67/2025) | RSD 371 (OG 78/2025) | Zunic Law / RS Partners |
-| Salary tax rate | 10% flat | 10% flat | PwC / KPMG |
-| Employee contribution rate | 19.90% | 19.90% | PwC |
-| Employer contribution rate | 15.15% | 15.15% | PwC |
+| Salary tax rate | 10% flat | 10% flat | secondary summary, / KPMG |
+| Employee contribution rate | 19.90% | 19.90% | secondary summary |
+| Employer contribution rate | 15.15% | 15.15% | secondary summary |
 
 ### Contribution split (per fund)
 
-**Contribution split (per fund)**  _(PwC / Eurofast)_
+**Contribution split (per fund)**  _(secondary summary, / Eurofast)_
 
 | Fund | Employee | Employer | Combined | Source |
 | --- | --- | --- | --- | --- |
-| Pension & disability (PIO) | 14% | 10% | 24% | PwC |
-| Health (RFZO) | 5.15% | 5.15% | 10.30% | PwC |
-| Unemployment (NSZ) | 0.75% | 0% | 0.75% | PwC |
-| **TOTAL** | **19.90%** | **15.15%** | **35.05%** | PwC / Eurofast |
+| Pension & disability (PIO) | 14% | 10% | 24% | secondary summary |
+| Health (RFZO) | 5.15% | 5.15% | 10.30% | secondary summary |
+| Unemployment (NSZ) | 0.75% | 0% | 0.75% | secondary summary |
+| **TOTAL** | **19.90%** | **15.15%** | **35.05%** | secondary summary, / Eurofast |
 
 ### Annual supplementary PIT thresholds (2025 income, filed 2026)
 
-**Annual supplementary PIT thresholds (2025 income, filed 2026)**  _(KPMG Feb 2026 alert; KPMG / PwC)_
+**Annual supplementary PIT thresholds (2025 income, filed 2026)**  _(KPMG Feb 2026 alert; KPMG)_
 
 | Item | Value | Source |
 | --- | --- | --- |
 | Filing threshold (3x avg annual salary) | RSD 5,439,096 | KPMG Feb 2026 alert |
-| 10%/15% bracket break (6x avg annual salary) | RSD 10,878,192 | KPMG / PwC |
+| 10%/15% bracket break (6x avg annual salary) | RSD 10,878,192 | KPMG |
 | Standard personal deduction (40%) | RSD 725,213 | KPMG Feb 2026 alert |
 | Dependent deduction (15% each) | RSD 271,955 per dependent | KPMG Feb 2026 alert |
 | Combined deductions cap | 50% of net income | KPMG Feb 2026 alert |
@@ -483,14 +483,14 @@ If the client provides only a bank statement and no other information:
 
 ### Context rates (NOT social contributions)
 
-**Context rates (NOT social contributions)**  _(PwC; PwC Corporate WHT)_
+**Context rates (NOT social contributions)**  _(secondary summary; secondary summary, Corporate WHT)_
 
 | Item | Rate | Source |
 | --- | --- | --- |
-| Corporate income tax | 15% flat | PwC |
-| VAT standard | 20% | PwC |
-| VAT reduced | 10% (some secondary sources state 8% — see caveats) | PwC |
-| Non-resident WHT (dividends, interest, royalties, lease, services) | 20% (25% to tax-haven jurisdictions; reducible under treaties) | PwC Corporate WHT |
+| Corporate income tax | 15% flat | secondary summary |
+| VAT standard | 20% | secondary summary |
+| VAT reduced | 10% (some secondary sources state 8% — see caveats) | secondary summary |
+| Non-resident WHT (dividends, interest, royalties, lease, services) | 20% (25% to tax-haven jurisdictions; reducible under treaties) | secondary summary, Corporate WHT |
 
 ### Forms
 

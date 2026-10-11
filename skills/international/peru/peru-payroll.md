@@ -1,10 +1,10 @@
 ---
 name: peru-payroll
 description: Use this skill whenever asked about Peru payroll processing for employed persons. Trigger on phrases like "Peru payroll", "nómina Perú", "planilla Perú", "renta de quinta categoría", "retención de quinta", "impuesto a la renta quinta", "PLAME", "Formulario 601", "EsSalud", "aporte EsSalud 9%", "ONP", "SNP 13%", "AFP", "aporte AFP", "comisión AFP", "prima de seguro AFP", "SBS AFP", "T-Registro", "UIT Perú", "RMV", "salario mínimo Perú", "sueldo mínimo Perú", "net salary Peru", "sueldo neto", "PAYE Peru", "tax withholding Peru", "employer contributions Peru", "SUNAT planilla", "gross to net Peru", "PEN payroll", "sol salary", or any question about computing employee pay, withholding fifth-category income tax, or mandatory social contributions (EsSalud, ONP, AFP) for Peru-based employees. This skill covers fifth-category income-tax withholding (7-UIT exemption + 8%–30% progressive schedule), EsSalud (employer), the ONP/AFP pension choice (employee-borne), the RMV minimum wage, non-domiciled flat withholding, T-Registro registration, and PLAME/SUNAT filing obligations. ALWAYS read this skill before processing any Peru payroll.
-version: 0.3
+version: 0.4
 jurisdiction: PE
 tax_year: 2026
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:
@@ -16,8 +16,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Peru Payroll
 
-## Peru Payroll Skill v0.3
-> **Accountant-reviewed (`tier: 1`).** Maria Clemencia Valverde Rios reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-29; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a licensed Peruvian accountant", the draft label the guide carried before that review. **Provenance of the draft:** the Peruvian tax authority (Superintendencia Nacional de Aduanas y de Administración Tributaria, SUNAT), the pension/AFP supervisor (Superintendencia de Banca, Seguros y AFP, SBS), the social-health insurer (EsSalud), the public pension office (ONP), the Presidencia/MTPE (minimum wage Supreme Decree 006-2024-TR), Garrigues, and PwC Worldwide Tax Summaries. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed; treat a computation that depends on one as an estimate pending professional review.
+## Peru Payroll Skill v0.4
+> **Accountant-reviewed (`tier: 1`).** Maria Clemencia Valverde Rios reviewed the rates and thresholds in this guide against the cited authorities on 2026-06-29; the reviewed figures are stated in the sections below with their sources (the separate "Verified rates & thresholds" list that carried them was folded into the body on 2026-09-29), and the sign-off is recorded in the frontmatter (`reviewed_by`, `review_status: current`) and on the roster in `PARTNERS.md`. Until 2026-09-29 this banner still read "Tier 2, research-verified, not yet signed off by a licensed Peruvian accountant", the draft label the guide carried before that review. **Provenance of the draft:** the Peruvian tax authority (Superintendencia Nacional de Aduanas y de Administración Tributaria, SUNAT), the pension/AFP supervisor (Superintendencia de Banca, Seguros y AFP, SBS), the social-health insurer (EsSalud), the public pension office (ONP), the Presidencia/MTPE (minimum wage Supreme Decree 006-2024-TR), Garrigues, and a secondary practitioner summary. **Not covered by the review:** items flagged for further clarification were excluded, so any item below still marked `[RESEARCH GAP — reviewer to confirm]` remains unconfirmed; treat a computation that depends on one as an estimate pending professional review.
 
 ## Section 1 -- Quick Reference
 
@@ -28,28 +28,28 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Peru (Republic of Peru / República del Perú) |
 | Currency | Peruvian Sol (PEN / S/) only |
 | Standard pay frequency | Monthly |
-| Tax year | Calendar year (1 January -- 31 December) (PwC) |
-| Income tax withholding system | Monthly withholding by the employer on projected annual fifth-category income, less 7 UIT, divided across the year; annual adjustment (PwC; Decreto Supremo 179-2004-EF, TUO LIR) |
+| Tax year | Calendar year (1 January -- 31 December) (secondary summary) |
+| Income tax withholding system | Monthly withholding by the employer on projected annual fifth-category income, less 7 UIT, divided across the year; annual adjustment (secondary summary; Decreto Supremo 179-2004-EF, TUO LIR) |
 | Income tax authority | Superintendencia Nacional de Aduanas y de Administración Tributaria (SUNAT) |
 | Health insurance authority | EsSalud (Seguro Social de Salud) |
 | Public pension authority | Oficina de Normalización Previsional (ONP / Sistema Nacional de Pensiones, SNP) |
 | Private pension supervisor | Superintendencia de Banca, Seguros y AFP (SBS); pensions run by the four AFPs |
-| Reference unit | UIT (Unidad Impositiva Tributaria) = **S/ 5,500** for 2026 (PwC) |
+| Reference unit | UIT (Unidad Impositiva Tributaria) = **S/ 5,500** for 2026 (secondary summary) |
 | Filing portal | SUNAT — SOL / PLAME (Formulario Virtual N° 601) |
 | Validated by | Verified by Maria Clemencia Valverde Rios (CPA) on 2026-06-29 |
-| Skill version | 0.3 |
+| Skill version | 0.4 |
 
 Read this whole section before computing anything. The shared payroll runbook lives in `payroll-workflow-base` — follow that runbook with this skill supplying the Peru-specific content.
 
 ### The single most important Peru facts
 
-> **Peru DOES have a personal income tax on employment income** ("renta de quinta categoría"), withheld at source monthly by the employer. The first **7 UIT (S/ 38,500 for 2026)** of annual employment income are exempt; the excess is taxed on a progressive **8% / 14% / 17% / 20% / 30%** schedule. (PwC; TUO LIR)
+> **Peru DOES have a personal income tax on employment income** ("renta de quinta categoría"), withheld at source monthly by the employer. The first **7 UIT (S/ 38,500 for 2026)** of annual employment income are exempt; the excess is taxed on a progressive **8% / 14% / 17% / 20% / 30%** schedule. (secondary summary; TUO LIR)
 
-> **The pension is employee-borne and the employee chooses ONE system**: public **ONP/SNP at 13%**, or a private **AFP** (≈12.5%–13% total: 10% mandatory + 1.37% insurance prima + a per-AFP commission). The employer **withholds** the pension; the employer's only contribution on top of salary is **EsSalud at 9%** (health). (PwC; SBS; ONP)
+> **The pension is employee-borne and the employee chooses ONE system**: public **ONP/SNP at 13%**, or a private **AFP** (≈12.5%–13% total: 10% mandatory + 1.37% insurance prima + a per-AFP commission). The employer **withholds** the pension; the employer's only contribution on top of salary is **EsSalud at 9%** (health). (secondary summary; SBS; ONP)
 
 ## Section 2 -- Income Tax Withholding (Renta de Quinta Categoría)
 
-The employer projects the employee's annual fifth-category remuneration, subtracts the 7 UIT exemption, applies the progressive schedule, and withholds the result in monthly installments declared through PLAME. (PwC; TUO LIR Art. 40–46)
+The employer projects the employee's annual fifth-category remuneration, subtracts the 7 UIT exemption, applies the progressive schedule, and withholds the result in monthly installments declared through PLAME. (the secondary summary; TUO LIR Art. 40–46)
 
 ### Reference unit — UIT (Unidad Impositiva Tributaria)
 
@@ -57,12 +57,12 @@ The employer projects the employee's annual fifth-category remuneration, subtrac
 
 | Tax year | UIT | Source |
 | --- | --- | --- |
-| 2026 | **S/ 5,500** | PwC (confirmed) |
+| 2026 | **S/ 5,500** | secondary summary (confirmed) |
 | 2025 | S/ 5,350 | secondary summaries **[RESEARCH GAP — confirm against the SUNAT/MEF Supreme Decree]** |
 
 The brackets are defined in UIT, so the UIT value is load-bearing.
 
-All worked examples below use the confirmed **UIT 2026 = S/ 5,500**. (PwC)
+All worked examples below use the confirmed **UIT 2026 = S/ 5,500**. (secondary summary)
 
 ### Standard and additional deductions
 
@@ -70,14 +70,14 @@ All worked examples below use the confirmed **UIT 2026 = S/ 5,500**. (PwC)
 
 | Deduction | Amount | Notes / source |
 | --- | --- | --- |
-| Standard fixed deduction | **7 UIT** = 7 × 5,500 = **S/ 38,500** (2026) | First 7 UIT of annual employment income exempt (PwC; TUO LIR Art. 46) |
-| Additional deduction (qualifying expenses) | **Up to 3 UIT** = up to S/ 16,500 (2026) | Property lease, independent professional services, hotels, restaurants, etc., subject to requirements (PwC; TUO LIR Art. 46) |
+| Standard fixed deduction | **7 UIT** = 7 × 5,500 = **S/ 38,500** (2026) | First 7 UIT of annual employment income exempt (the secondary summary; TUO LIR Art. 46) |
+| Additional deduction (qualifying expenses) | **Up to 3 UIT** = up to S/ 16,500 (2026) | Property lease, independent professional services, hotels, restaurants, etc., subject to requirements (the secondary summary; TUO LIR Art. 46) |
 
 > The additional **3 UIT** deduction requires documentary support and qualifying expense categories; the employer does not apply it at source by default — it is reconciled by the taxpayer. Default it to **S/ 0** at the withholding stage unless the employee has filed the qualifying support (see Conservative Defaults).
 
 ### Progressive Brackets — Domiciled Employment Income (2026)
 
-**Progressive brackets table**  _(PwC — taxes on personal income; TUO LIR Art. 53)_
+**Progressive brackets table**  _(the secondary summary — taxes on personal income; TUO LIR Art. 53)_
 
 | Band | Net taxable income (UIT) | Net taxable income (S/, 2026) | Marginal rate | Cumulative tax at the top of the band (S/) |
 | --- | --- | --- | --- | --- |
@@ -99,17 +99,17 @@ Cumulative-tax check (recomputed):
 
 | Income type | Withholding | Basis | Source |
 | --- | --- | --- | --- |
-| Salaries/wages to non-domiciled employees | **30% flat** | Gross Peruvian-source income, **no deductions**, no 7 UIT exemption | PwC — TUO LIR |
+| Salaries/wages to non-domiciled employees | **30% flat** | Gross Peruvian-source income, **no deductions**, no 7 UIT exemption | secondary summary, TUO LIR |
 
 ### Monthly Withholding Method (domiciled)
 
-- **Deterministic withholding order** — 1. Start with **projected annual remuneration** (ordinary monthly salary across the year; in practice Peru also pays **two gratificaciones** — see the note below — which are taxable fifth-category income). 2. Subtract the **7 UIT** standard exemption (S/ 38,500 for 2026). 3. Subtract any **confirmed additional deduction** (up to 3 UIT; default S/ 0 at source). 4. The result is the **net annual taxable income**. 5. Apply the progressive schedule → **annual income tax**. 6. Distribute the annual tax across the remaining periods per SUNAT's installment method → **monthly withholding**, with a year-end adjustment.  _(PwC; TUO LIR; SUNAT)_
+- **Deterministic withholding order** — 1. Start with **projected annual remuneration** (ordinary monthly salary across the year; in practice Peru also pays **two gratificaciones** — see the note below — which are taxable fifth-category income). 2. Subtract the **7 UIT** standard exemption (S/ 38,500 for 2026). 3. Subtract any **confirmed additional deduction** (up to 3 UIT; default S/ 0 at source). 4. The result is the **net annual taxable income**. 5. Apply the progressive schedule → **annual income tax**. 6. Distribute the annual tax across the remaining periods per SUNAT's installment method → **monthly withholding**, with a year-end adjustment.  _(secondary summary; TUO LIR; SUNAT)_
 
 > **Gratificaciones note.** Peruvian law grants two statutory gratificaciones per year (July and December), each ≈ one month's salary, which **are** taxable fifth-category income — so a real annual projection commonly uses ~14 months, not 12. To keep the arithmetic transparent and within the researched dataset, the worked examples below project on **12 months only** and flag this; a reviewer should add the gratificaciones (and the related 9% bonificación extraordinaria paid in lieu of EsSalud on gratificaciones) to the projection. **[RESEARCH GAP — confirm the exact gratificación projection mechanics and timing.]**
 
 ## Section 3 -- Contributions: Employee Deductions (Pension — ONP or AFP)
 
-The employee pays a **pension contribution, withheld from salary**, into exactly **one** system. The employer contributes **nothing** to the pension on top — pensions are entirely employee-borne. (PwC; SBS; ONP)
+The employee pays a **pension contribution, withheld from salary**, into exactly **one** system. The employer contributes **nothing** to the pension on top — pensions are entirely employee-borne. (secondary summary; SBS; ONP)
 
 ### Option A — ONP / SNP (public, defined-benefit)
 
@@ -117,7 +117,7 @@ The employee pays a **pension contribution, withheld from salary**, into exactly
 
 | Contribution | Rate | Payer | Authority | Base / cap | Source |
 | --- | --- | --- | --- | --- | --- |
-| ONP / SNP | **13%** | Employee (withheld) | ONP | Monthly remuneration; **no cap** | PwC; ONP |
+| ONP / SNP | **13%** | Employee (withheld) | ONP | Monthly remuneration; **no cap** | secondary summary; ONP |
 
 ### Option B — AFP (private, individual accounts)
 
@@ -140,18 +140,18 @@ The employee pays a **pension contribution, withheld from salary**, into exactly
 
 ## Section 4 -- Contributions: Employer Contributions (EsSalud)
 
-The employer's only payroll contribution on top of salary is **EsSalud (health)**. (PwC; EsSalud)
+The employer's only payroll contribution on top of salary is **EsSalud (health)**. (secondary summary; EsSalud)
 
 **EsSalud table**
 
 | Contribution | Rate | Authority | Base / cap | Source |
 | --- | --- | --- | --- | --- |
-| EsSalud (health) | **9%** | EsSalud | Monthly remuneration; **no upper cap**; **minimum base = 1 RMV** | PwC; EsSalud |
+| EsSalud (health) | **9%** | EsSalud | Monthly remuneration; **no upper cap**; **minimum base = 1 RMV** | secondary summary; EsSalud |
 
 - **EsSalud borne entirely by employer** — 9% of the monthly remuneration, borne entirely by the **employer** and never deducted from the employee; declared and paid within the first five days of the following month  _(Ley 26790 (Ley de Modernización de la Seguridad Social en Salud), EsSalud text, Art. 6(a) — https://www.essalud.gob.pe/transparencia/pdf/publicacion/ley26790.pdf ; EsSalud, Seguro Regular: aportes (gob.pe) — https://www.gob.pe/218-seguro-regular-essalud-seguro-aportes)_
 - **No upper ceiling** — No upper ceiling; the base cannot be below the minimum wage (RMV)  _(Ley 26790 (Ley de Modernización de la Seguridad Social en Salud), EsSalud text, Art. 6(a) — https://www.essalud.gob.pe/transparencia/pdf/publicacion/ley26790.pdf ; EsSalud, Seguro Regular: aportes (gob.pe) — https://www.gob.pe/218-seguro-regular-essalud-seguro-aportes)_
 - **Minimum base** — The EsSalud base may not be less than the minimum wage (RMV); EsSalud is computed on at least one RMV even where a part-time worker earns less  _(EsSalud, Seguro Regular: aportes (gob.pe) — https://www.gob.pe/218-seguro-regular-essalud-seguro-aportes)_
-- **EPS credit** — Up to 25% of EPS (private health-plan) payments may be credited against EsSalud.  _(PwC)_
+- **EPS credit** — Up to 25% of EPS (private health-plan) payments may be credited against EsSalud.  _(secondary summary)_
 - **Filing channel** — Declared/paid via PLAME (Formulario Virtual N° 601).  _(SUNAT)_
 
 ### Employer-side wedge summary
@@ -160,9 +160,9 @@ The employer's only payroll contribution on top of salary is **EsSalud (health)*
 
 | Component | Employee | Employer | Source |
 | --- | --- | --- | --- |
-| EsSalud (health) | — | 9% | PwC; EsSalud |
-| Pension (ONP 13% **or** AFP ≈12.84%–13.06%) | withheld from employee | — | PwC; SBS; ONP |
-| Income tax (5th cat.) | withheld from employee | — | PwC |
+| EsSalud (health) | — | 9% | secondary summary; EsSalud |
+| Pension (ONP 13% **or** AFP ≈12.84%–13.06%) | withheld from employee | — | secondary summary; SBS; ONP |
+| Income tax (5th cat.) | withheld from employee | — | secondary summary |
 | **Net employer-borne add-on over salary** | — | **≈ 9% (EsSalud)** | (pension + income tax are employee withholdings) |
 
 > **Tax treatment / scope:** beyond EsSalud, employers also owe statutory benefits **not covered by this withholding/contribution skill** — CTS (compensación por tiempo de servicios), two gratificaciones per year, and vacation. These are flagged **out of scope** here and must be provisioned separately. **[RESEARCH GAP — CTS/gratificación/vacation accrual mechanics not in this dataset.]**
@@ -190,7 +190,7 @@ The employer's only payroll contribution on top of salary is **EsSalud (health)*
 
 | Field | Default | Rationale |
 | --- | --- | --- |
-| Additional deduction (up to 3 UIT) | **S/ 0 at source** | Requires qualifying-expense documentation; not applied by the employer at withholding stage. (PwC; TUO LIR) |
+| Additional deduction (up to 3 UIT) | **S/ 0 at source** | Requires qualifying-expense documentation; not applied by the employer at withholding stage. (secondary summary; TUO LIR) |
 | Domicile status | **Domiciled** (progressive 8%–30% with 7 UIT exemption) | Apply the 30% non-domiciled flat rate only when non-domicile is confirmed. |
 | Pension system | **Confirm with the employee** — do NOT assume ONP vs AFP; if unknown, flag and request it | ONP (13%) and AFP (≈12.84%–13.06%) differ; the choice is the employee's and must be on record. |
 | AFP commission scheme | **Use the per-AFP "comisión sobre flujo (mixta)" from the SBS table for the current devengue** | Commission varies by AFP; default to the live SBS figure, not an average. |
@@ -344,7 +344,7 @@ Salary S/ 20,000 > RMA S/ 12,598.91, so the **prima is capped** at the RMA; the 
 | Income tax (30% flat, no deductions, no 7 UIT) | 15,000 × 30% | 4,500.00 |
 | **Net to non-domiciled employee** | 15,000 − 4,500 | **10,500.00** |
 
-> Non-domiciled employment income is taxed at a **30% flat rate on gross** (TUO LIR) — no 7 UIT exemption, no progressive schedule. (PwC) EsSalud/pension treatment for a non-domiciled assignment must be confirmed per the specific arrangement **[RESEARCH GAP]**.
+> Non-domiciled employment income is taxed at a **30% flat rate on gross** (TUO LIR) — no 7 UIT exemption, no progressive schedule. (secondary summary) EsSalud/pension treatment for a non-domiciled assignment must be confirmed per the specific arrangement **[RESEARCH GAP]**.
 
 ### Example 6 — Employer cost for an S/ 8,000/month employee
 
@@ -362,9 +362,9 @@ Salary S/ 20,000 > RMA S/ 12,598.91, so the **prima is capped** at the RMA; the 
 
 ## Section 10 -- Tier 1 Rules (deterministic — the skill applies these directly)
 
-- **UIT 2026 and 7 UIT exemption** — UIT 2026 = S/ 5,500; the 7 UIT standard exemption = S/ 38,500 for 2026.  _(PwC; TUO LIR)_
+- **UIT 2026 and 7 UIT exemption** — UIT 2026 = S/ 5,500; the 7 UIT standard exemption = S/ 38,500 for 2026.  _(secondary summary; TUO LIR)_
 
-**Domiciled 5th-category progressive income tax bands**  _(PwC; TUO LIR Art. 53)_
+**Domiciled 5th-category progressive income tax bands**  _(the secondary summary; TUO LIR Art. 53)_
 
 | Band | Rate |
 | --- | --- |
@@ -374,16 +374,16 @@ Salary S/ 20,000 > RMA S/ 12,598.91, so the **prima is capped** at the RMA; the 
 | 35–45 UIT | 20% |
 | >45 UIT | 30% |
 
-- **Additional up to 3 UIT deduction** — The additional up to 3 UIT deduction is not applied by the employer at source by default — default S/ 0 and reconcile at taxpayer level.  _(PwC; TUO LIR Art. 46)_
-- **Non-domiciled employment income tax rate** — 30% flat on gross, no deductions, no 7 UIT exemption  _(PwC; TUO LIR)_
-- **Pension is employee-borne** — The pension is employee-borne and withheld, into exactly one system: ONP/SNP 13% (no cap) or AFP (10% mandatory + 1.37% prima + per-AFP commission). The employer contributes nothing to the pension.  _(PwC; SBS; ONP)_
+- **Additional up to 3 UIT deduction** — The additional up to 3 UIT deduction is not applied by the employer at source by default — default S/ 0 and reconcile at taxpayer level.  _(the secondary summary; TUO LIR Art. 46)_
+- **Non-domiciled employment income tax rate** — 30% flat on gross, no deductions, no 7 UIT exemption  _(secondary summary; TUO LIR)_
+- **Pension is employee-borne** — The pension is employee-borne and withheld, into exactly one system: ONP/SNP 13% (no cap) or AFP (10% mandatory + 1.37% prima + per-AFP commission). The employer contributes nothing to the pension.  _(secondary summary; SBS; ONP)_
 - **AFP prima cap** — AFP prima (1.37%) is capped at the RMA (S/ 12,598.91, Q2 2026); the 10% mandatory and the commission are charged on full remuneration.  _(SBS)_
-- **EsSalud rate** — 9%, employer-borne, no upper cap, base floored at 1 RMV; up to 25% of EPS payments creditable.  _(PwC; EsSalud)_
-- **Employer's only on-top payroll contribution** — The employer's only on-top payroll contribution is 9% EsSalud; pension and income tax are employee withholdings.  _(PwC)_
+- **EsSalud rate** — 9%, employer-borne, no upper cap, base floored at 1 RMV; up to 25% of EPS payments creditable.  _(secondary summary; EsSalud)_
+- **Employer's only on-top payroll contribution** — The employer's only on-top payroll contribution is 9% EsSalud; pension and income tax are employee withholdings.  _(secondary summary)_
 - **RMV (minimum wage)** — S/ 1,130/month since 1 January 2025 (DS 006-2024-TR)  _(Presidencia; Garrigues)_
 - **Filing mechanics for income tax, EsSalud, ONP, AFP** — Income tax (5th cat.), EsSalud, and ONP are declared monthly via PLAME (Formulario Virtual N° 601) to SUNAT; AFP amounts are paid within the first 5 business days of the following month.  _(SUNAT; SBS)_
 - **T-Registro registration deadline** — New workers must be registered in T-Registro within 24 hours of start date.  _(SUNAT)_
-- **Currency and tax year** — Currency is PEN (Sol) only; the tax year is the calendar year.  _(PwC)_
+- **Currency and tax year** — Currency is PEN (Sol) only; the tax year is the calendar year.  _(secondary summary)_
 
 ## Section 11 -- Tier 2 Catalogue (reviewer judgement required)
 
@@ -395,7 +395,7 @@ These items depend on facts or sources not fully resolved in this research. The 
 | --- | --- | --- |
 | **[T2-1]** | UIT 2025 (S/ 5,350) | Confirm against the SUNAT/MEF Supreme Decree if the run targets 2025. **[RESEARCH GAP]** |
 | **[T2-2]** | AFP commission rates and the RMA prima cap | Both reset periodically (commission monthly devengue; RMA quarterly). Pull the live SBS figure at publication time. **[RESEARCH GAP]** |
-| **[T2-3]** | EsSalud 9% rate and RMV-floor cite | The SUNAT EsSalud page did not itself state the 9% or the RMV minimum base in the fetched content; 9% is via PwC and the RMV floor is a general labour rule — confirm the exact regulatory cite. |
+| **[T2-3]** | EsSalud 9% rate and RMV-floor cite | The SUNAT EsSalud page did not itself state the 9% or the RMV minimum base in the fetched content; 9% is via the secondary summary and the RMV floor is a general labour rule — confirm the exact regulatory cite. |
 | **[T2-4]** | Gratificaciones in the income-tax projection | Confirm the 14-month projection mechanics, timing, and the 9% bonificación extraordinaria paid in lieu of EsSalud on gratificaciones. **[RESEARCH GAP]** |
 | **[T2-5]** | Additional 3 UIT deduction | Confirm the qualifying-expense categories, documentation, and whether/when the employer reflects it. |
 | **[T2-6]** | EPS credit (25%) mechanics | Confirm how the EPS credit against EsSalud is computed and filed. |
@@ -542,8 +542,8 @@ When key facts are missing, ask the user these questions before computing. If a 
 
 | # | Source | Publisher | URL |
 | --- | --- | --- | --- |
-| 1 | Peru — Individual — Taxes on personal income (UIT 5,500; 7 UIT; 8%–30% schedule; 30% non-domiciled) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income |
-| 2 | Peru — Individual — Other taxes (EsSalud 9%; ONP 13%) | PwC Worldwide Tax Summaries | https://taxsummaries.pwc.com/peru/individual/other-taxes |
+| 1 | Peru — Individual — Taxes on personal income (UIT 5,500; 7 UIT; 8%–30% schedule; 30% non-domiciled) | secondary summary | |
+| 2 | Peru — Individual — Other taxes (EsSalud 9%; ONP 13%) | secondary summary | |
 | 3 | Declaración y pago de los aportes EsSalud | SUNAT (orientación) | https://orientacion.sunat.gob.pe/08-declaracion-y-pago-de-los-aportes-essalud |
 | 4 | Declaración y pago de aportes al Sistema Nacional de Pensiones (ONP) | SUNAT (orientación) | https://orientacion.sunat.gob.pe/declaracion-y-pago-de-aportes-al-sistema-nacional-de-pensiones-onp |
 | 5 | Comisiones y prima del SPP (AFP table, devengue 2026-06; RMA cap) | SBS | https://www.sbs.gob.pe/app/spp/empleadores/comisiones_spp/paginas/comision_prima.aspx |

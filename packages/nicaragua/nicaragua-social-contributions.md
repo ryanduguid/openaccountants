@@ -1,10 +1,10 @@
 ---
 name: nicaragua-social-contributions
 description: Use this skill whenever asked about Nicaragua (ISO NI) social security and payroll taxes for employees and employers. Trigger on phrases like "how much INSS do I pay", "Nicaragua social security", "INSS employer contribution", "INSS laboral patronal", "INATEC 2%", "Nicaragua payroll tax", "Régimen Integral", "IVM IVM-RP", "córdoba payroll", "IR rentas del trabajo", "Nicaragua income tax withholding", "Form IR-122", "Form IR-106", "retención salarial Nicaragua", or any question about Nicaraguan INSS/INATEC/payroll IR obligations. Also trigger when classifying Nicaraguan bank statement transactions that relate to INSS debits, INATEC payments, DGI retention remittances, or payroll runs from BANPRO, BAC, LAFISE, FICOHSA or other Nicaraguan banks. This skill covers INSS employee/employer rates by regime, the INATEC training levy, the IR progressive employment-income schedule, monthly and annual filing deadlines, registration, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Nicaraguan social-contribution or payroll work.
-version: 0.2
+version: 0.3
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -29,15 +29,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority (income tax) | DGI (Dirección General de Ingresos) |
 | Primary income-tax legislation | Ley No. 822 (Ley de Concertación Tributaria, LCT), Art. 23; as reformed by Ley No. 891 |
 | Social-security legal basis | Decreto 06-2019 (Feb 2019 INSS reform) |
-| Employee INSS (Régimen Integral) | 7.00% of gross salary (no ceiling, "sin techo") — Decreto 06-2019 / PwC |
-| Employer INSS (Régimen Integral) | 21.50% (≤50 employees) / 22.50% (>50 employees) — PwC / Decreto 06-2019 |
+| Employee INSS (Régimen Integral) | 7.00% of gross salary (no ceiling, "sin techo") — Decreto 06-2019 |
+| Employer INSS (Régimen Integral) | 21.50% (≤50 employees) / 22.50% (>50 employees) — the secondary summary / Decreto 06-2019 |
 | INATEC levy (employer) | 2.00% of total gross payroll — Ley Orgánica del INATEC |
 | Income-tax basis | Territorial — only Nicaraguan-source income taxed (LCT) |
 | Income-tax exempt band | First C$100,000/year exempt (LCT Art. 23) |
 | Income-tax top marginal rate | 30% on income above C$500,000/year (LCT Art. 23) |
-| Non-resident WHT (Nicaraguan-source) | 20% definitive WHT — PwC |
+| Non-resident WHT (Nicaraguan-source) | 20% definitive WHT — the secondary summary |
 | Monthly remittance form | IR-122 (retenciones), due 5th of following month — DGI FAQ |
-| Annual individual return | IR-106, due within 90 days of year-end (~31 March) — PwC |
+| Annual individual return | IR-106, due within 90 days of year-end (~31 March) — the secondary summary |
 | Validated by | Pending — requires sign-off by a Nicaraguan licensed accountant (contador público autorizado) |
 | Validation date | Pending |
 
@@ -75,7 +75,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-NI-SOC-2 -- Penalty / surcharge quantification** — Exact penalty, surcharge and value-maintenance (mantenimiento de valor) amounts under the Código Tributario (Ley No. 562) could not be confirmed from an authoritative source. Do not estimate. Escalate to a licensed Nicaraguan accountant. [RESEARCH GAP — reviewer to confirm] (Trigger: client asks to quantify late-filing or late-payment penalties (multa, recargo por mora, mantenimiento de valor).)  _(Código Tributario (Ley No. 562))_
 - **R-NI-SOC-3 -- Non-Nicaraguan-source income** — Nicaragua uses a territorial system — only Nicaraguan-source income is taxed (LCT). Source determination requires case-specific analysis. Escalate to a licensed accountant before computing IR. (Trigger: income may be foreign-source.)  _(LCT)_
 - **R-NI-SOC-4 -- Special regimes / Free Trade Zone** — Special regimes (Zona Franca / Free Trade Zone, mining, fishing) have distinct INSS and minimum-wage treatment. Escalate to a licensed Nicaraguan accountant. (Trigger: client operates under Zona Franca, mining, fishing, or other special regime.)
-- **R-NI-SOC-5 -- INSS sub-component precision** — PwC confirms only the headline totals (7.00% employee; 21.50% / 22.50% employer). The sub-component split is taken from a Nicaraguan tax-reference source consistent with Decreto 06-2019 but not from inss.gob.ni directly. Flag for reviewer if component-level precision is required. [RESEARCH GAP — reviewer to confirm components] (Trigger: client needs the exact IVM / Salud / Riesgos Profesionales / Víctimas de Guerra split rather than the headline total.)  _(PwC; Decreto 06-2019)_
+- **R-NI-SOC-5 -- INSS sub-component precision** — the secondary summary confirms only the headline totals (7.00% employee; 21.50% / 22.50% employer). The sub-component split is taken from a Nicaraguan tax-reference source consistent with Decreto 06-2019 but not from inss.gob.ni directly. Flag for reviewer if component-level precision is required. [RESEARCH GAP — reviewer to confirm components] (Trigger: client needs the exact IVM / Salud / Riesgos Profesionales / Víctimas de Guerra split rather than the headline total.)  _(secondary summary; Decreto 06-2019)_
 
 ## Section 3 -- Payment pattern library
 
@@ -198,7 +198,7 @@ Matches pattern 3.1. Employee earns C$8,000/month gross. Employee INSS = 7% × C
 `12.05.2025 ; DGI RETENCION NO RESIDENTE ; DEBITO ; PAGO SERVICIOS ; -10,000.00 ; NIO`
 
 **Reasoning:**
-Matches "DGI RETENCION" (pattern 3.3). Payment of C$50,000 of Nicaraguan-source income to a non-resident. Non-residents face a **20% definitive WHT** (PwC), not the progressive schedule: 20% × C$50,000 = **C$10,000.00**. The progressive brackets do NOT apply to non-residents.
+Matches "DGI RETENCION" (pattern 3.3). Payment of C$50,000 of Nicaraguan-source income to a non-resident. Non-residents face a **20% definitive WHT** (secondary summary), not the progressive schedule: 20% × C$50,000 = **C$10,000.00**. The progressive brackets do NOT apply to non-residents.
 
 **Classification:** EXCLUDE from IVA. 20% non-resident definitive WHT = C$10,000.00. Confirm Nicaraguan source before applying.
 
@@ -212,7 +212,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 
 ### Rule 2 -- Régimen Integral rates (standard formal employment)
 
-**Régimen Integral component rates**  _(PwC; nicatributos.com; Decreto 06-2019)_
+**Régimen Integral component rates**  _(secondary summary; nicatributos.com; Decreto 06-2019)_
 
 | Component | Employee | Employer ≤50 | Employer >50 |
 | --- | --- | --- | --- |
@@ -222,7 +222,7 @@ These rules apply when bank statement data is clear and all required inputs are 
 | Víctimas de Guerra | — | 1.50% | 1.50% |
 | **Total** | **7.00%** | **21.50%** | **22.50%** |
 
-Source: PwC (headline totals 7.00% / 21.50% / 22.50%); component split per nicatributos.com consistent with Decreto 06-2019. [RESEARCH GAP — component split not confirmed on inss.gob.ni directly.] The State separately funds 1.75% (Enfermedad y Maternidad).
+Source: the secondary summary (headline totals 7.00% / 21.50% / 22.50%); component split per nicatributos.com consistent with Decreto 06-2019. [RESEARCH GAP — component split not confirmed on inss.gob.ni directly.] The State separately funds 1.75% (Enfermedad y Maternidad).
 
 ### Rule 3 -- Régimen IVM-RP rates (pension + occupational risk only, no health)
 
@@ -251,7 +251,7 @@ This is on top of the 7.00% employee INSS withholding (which is borne by the emp
 
 Income tax on rentas del trabajo (LCT Art. 23). System is territorial — only Nicaraguan-source income.
 
-**IR progressive schedule**  _(PwC; LCT Art. 23 as reformed by Ley No. 891)_
+**IR progressive schedule**  _(the secondary summary; LCT Art. 23 as reformed by Ley No. 891)_
 
 | Annual taxable income (C$) | Base tax (C$) | Marginal % on excess over lower bound |
 | --- | --- | --- |
@@ -261,7 +261,7 @@ Income tax on rentas del trabajo (LCT Art. 23). System is territorial — only N
 | 350,000.01 – 500,000 | 45,000 | 25% |
 | 500,000.01 and above | 82,500 | 30% |
 
-Cumulative-tax check: 100,000×15% = 15,000 → base for next band. 15,000 + 150,000×20% = 15,000 + 30,000 = 45,000 → base for next. 45,000 + 150,000×25% = 45,000 + 37,500 = 82,500 → base for top band. Source: PwC; LCT Art. 23 as reformed by Ley No. 891.
+Cumulative-tax check: 100,000×15% = 15,000 → base for next band. 15,000 + 150,000×20% = 15,000 + 30,000 = 45,000 → base for next. 45,000 + 150,000×25% = 45,000 + 37,500 = 82,500 → base for top band. Source: the secondary summary; LCT Art. 23 as reformed by Ley No. 891.
 
 ### Rule 7 -- IR taxable base is gross less employee INSS
 
@@ -269,7 +269,7 @@ Cumulative-tax check: 100,000×15% = 15,000 → base for next band. 15,000 + 150
 
 ### Rule 8 -- Non-residents: 20% definitive WHT
 
-- **Non-resident WHT** — Nicaraguan-source income paid to non-residents (whether domiciled or not) is subject to a 20% definitive withholding tax. The progressive schedule does not apply.  _(PwC)_
+- **Non-resident WHT** — Nicaraguan-source income paid to non-residents (whether domiciled or not) is subject to a 20% definitive withholding tax. The progressive schedule does not apply.  _(secondary summary)_
 
 ### Rule 9 -- Monthly remittance deadline (Form IR-122)
 
@@ -277,11 +277,11 @@ Cumulative-tax check: 100,000×15% = 15,000 → base for next band. 15,000 + 150
 
 ### Rule 10 -- Annual individual return (Form IR-106)
 
-- **Annual individual return deadline** — Annual individual return is Form IR-106, due within 90 days after year-end (~31 March). Final tax payment also due within 90 days after year-end.  _(PwC)_
+- **Annual individual return deadline** — Annual individual return is Form IR-106, due within 90 days after year-end (~31 March). Final tax payment also due within 90 days after year-end.  _(secondary summary)_
 
 ### Rule 11 -- Single-employer filing exemption
 
-- **Single-employer filing exemption** — An individual with a single employer and no other qualifying income/deductions is generally not required to file an annual return — the employer's monthly withholding is final. An annual return is required where aggregate income from multiple employers exceeds C$100,000.  _(PwC / DGI FAQ)_
+- **Single-employer filing exemption** — An individual with a single employer and no other qualifying income/deductions is generally not required to file an annual return — the employer's monthly withholding is final. An annual return is required where aggregate income from multiple employers exceeds C$100,000.  _(secondary summary, / DGI FAQ)_
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -404,28 +404,28 @@ If the client provides only a bank statement and no other information:
 
 ### Contribution summary (Régimen Integral, 2025)
 
-**Contribution summary table**  _(PwC; Decreto 06-2019)_
+**Contribution summary table**  _(secondary summary; Decreto 06-2019)_
 
 | Party | Rate | Source |
 | --- | --- | --- |
-| Employee INSS | 7.00% | PwC; Decreto 06-2019 |
-| Employer INSS, ≤50 employees | 21.50% | PwC; Decreto 06-2019 |
-| Employer INSS, >50 employees | 22.50% | PwC; Decreto 06-2019 |
+| Employee INSS | 7.00% | secondary summary; Decreto 06-2019 |
+| Employer INSS, ≤50 employees | 21.50% | secondary summary; Decreto 06-2019 |
+| Employer INSS, >50 employees | 22.50% | secondary summary; Decreto 06-2019 |
 | INATEC (employer) | 2.00% | Ley Orgánica del INATEC |
 | State contribution | 1.75% | nicatributos.com / Decreto 06-2019 |
 
 ### IR (employment income) brackets, 2025
 
-**IR brackets table**  _(PwC; LCT Art. 23)_
+**IR brackets table**  _(the secondary summary; LCT Art. 23)_
 
 | Annual taxable income (C$) | Base tax (C$) | Marginal % | Source |
 | --- | --- | --- | --- |
-| 0 – 100,000 | 0 | 0% | PwC; LCT Art. 23 |
-| 100,000.01 – 200,000 | 0 | 15% | PwC; LCT Art. 23 |
-| 200,000.01 – 350,000 | 15,000 | 20% | PwC; LCT Art. 23 |
-| 350,000.01 – 500,000 | 45,000 | 25% | PwC; LCT Art. 23 |
-| 500,000.01 + | 82,500 | 30% | PwC; LCT Art. 23 |
-| Non-resident (Nicaraguan-source) | — | 20% definitive WHT | PwC |
+| 0 – 100,000 | 0 | 0% | The secondary summary; LCT Art. 23 |
+| 100,000.01 – 200,000 | 0 | 15% | The secondary summary; LCT Art. 23 |
+| 200,000.01 – 350,000 | 15,000 | 20% | The secondary summary; LCT Art. 23 |
+| 350,000.01 – 500,000 | 45,000 | 25% | The secondary summary; LCT Art. 23 |
+| 500,000.01 + | 82,500 | 30% | The secondary summary; LCT Art. 23 |
+| Non-resident (Nicaraguan-source) | — | 20% definitive WHT | secondary summary |
 
 ### Minimum wage by sector (1 Mar 2025 to 28 Feb 2026 under Acuerdo Ministerial ALTB-01-02-2025; +4% from 1 Mar 2026 to 28 Feb 2027)
 
@@ -447,12 +447,12 @@ Note: each 2026 figure is 4% above its 2025 figure and applies retroactively fro
 
 ### Filing & remittance deadlines
 
-**Filing deadlines table**  _(DGI FAQ; PwC; INSS / Ley Orgánica del INATEC)_
+**Filing deadlines table**  _(DGI FAQ; secondary summary; INSS / Ley Orgánica del INATEC)_
 
 | Obligation | Form | Deadline | Source |
 | --- | --- | --- | --- |
 | Monthly IR withholding | IR-122 | 5th of following month | DGI FAQ |
-| Annual individual return | IR-106 | Within 90 days of year-end (~31 Mar) | PwC |
+| Annual individual return | IR-106 | Within 90 days of year-end (~31 Mar) | secondary summary |
 | INSS / INATEC monthly remittance | INSS planilla | Monthly (via INSS) | INSS / Ley Orgánica del INATEC |
 
 ### Registration
@@ -494,7 +494,7 @@ Note: each 2026 figure is 4% above its 2025 figure and applies retroactively fro
 - NEVER apply the progressive IR schedule to a non-resident — non-residents pay 20% definitive WHT.
 - NEVER tax foreign-source income — Nicaragua is territorial; confirm source first.
 - NEVER quantify penalties, surcharges, or mantenimiento de valor — the figures are unconfirmed; escalate.
-- NEVER present the INSS sub-component split (IVM/Salud/RP/Guerra) as authoritative — only the 7.00% / 21.50% / 22.50% totals are PwC-confirmed.
+- NEVER present the INSS sub-component split (IVM/Salud/RP/Guerra) as authoritative — only the 7.00% / 21.50% / 22.50% totals are the secondary summary-confirmed.
 - NEVER confuse DGI (income tax, IR-122) debits with INSS (social security) debits — separate authorities.
 - NEVER assume employer size — the ≤50 vs >50 rate difference is material; confirm or flag.
 - NEVER present figures as definitive — label as estimated and direct the client to their INSS planilla and DGI account.

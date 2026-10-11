@@ -1,10 +1,10 @@
 ---
 name: serbia-payroll
 description: Use this skill whenever asked about Serbia payroll processing for employed persons. Trigger on phrases like "Serbia payroll", "Serbian payroll", "obracun zarade", "zarada", "salary tax Serbia", "porez na zarade", "social contributions Serbia", "doprinosi", "PIO Serbia", "PPP-PD", "ePorezi payroll", "CROSO", "M obrazac", "net salary Serbia", "neto zarada", "bruto na neto", "gross to net Serbia", "employer cost Serbia", "minimum wage Serbia", "minimalna zarada", "non-taxable amount Serbia", "neoporezivi iznos", or any question about computing employee pay, salary withholding tax, or mandatory social insurance contributions for Serbia-based employees. This skill covers the 10% flat salary tax on the gross-minus-non-taxable base, the 35.05% combined social insurance contributions (employee 19.9% + employer 15.15%), contribution floors/ceilings, minimum wage, statutory non-taxable benefits, the supplementary annual personal income tax (PP-GPDG), and filing on the consolidated PPP-PD return via ePorezi. ALWAYS read this skill before processing any Serbia payroll.
-version: 0.1
+version: 0.2
 jurisdiction: RS
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Serbia Payroll
 
-## Serbia Payroll Skill v0.1
+## Serbia Payroll Skill v0.2
 
-> **Tier 2 — Research-verified.** Rates and structure are cross-verified across PwC Worldwide Tax Summaries, Eurofast Tax Card 2025, Orbitax, KPMG Serbia and Forvis Mazars Serbia. Official PURS / Ministry of Finance rulebook PDFs were not directly text-extracted; figures rely on Big-4 and specialist summaries that cite the official Ministry of Finance publications. Every figure below carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A qualified Serbian tax adviser (poreski savetnik) must validate this skill before production use.
+> **Tier 2 — Research-verified.** Rates and structure are cross-verified across a secondary practitioner summary, Eurofast Tax Card 2025, Orbitax, KPMG Serbia and Forvis Mazars Serbia. Official PURS / Ministry of Finance rulebook PDFs were not directly text-extracted; figures rely on Big-4 and specialist summaries that cite the official Ministry of Finance publications. Every figure below carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A qualified Serbian tax adviser (poreski savetnik) must validate this skill before production use.
 
 ## Section 1 -- Quick Reference
 
@@ -31,8 +31,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Standard pay frequency | Monthly |
 | Tax year | Calendar year (1 January -- 31 December) |
 | Has personal income tax? | Yes -- flat 10% salary tax + supplementary annual PIT for high earners |
-| Salary tax | 10% flat on (gross salary − monthly non-taxable amount). Source: Eurofast Tax Card 2025; PwC. |
-| Combined social contributions | 35.05% of gross (employee 19.9% + employer 15.15%). Source: PwC Worldwide Tax Summaries; Eurofast Tax Card 2025. |
+| Salary tax | 10% flat on (gross salary − monthly non-taxable amount). Source: Eurofast Tax Card 2025; the secondary summary. |
+| Combined social contributions | 35.05% of gross (employee 19.9% + employer 15.15%). Source: a secondary practitioner summary; Eurofast Tax Card 2025. |
 | Monthly non-taxable amount (2025) | RSD 28,423 (effective 1 Feb 2025 -- 31 Jan 2026). Source: Eurofast; KPMG RS. |
 | Monthly non-taxable amount (2026) | RSD 34,221 (adopted Dec 2025). Source: KPMG RS tax alert (Dec 2025); Eurofast. |
 | Min monthly contribution base (2025) | RSD 45,950. Source: Orbitax; Eurofast; Mondaq. |
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing portal | ePorezi (https://eporezi.purs.gov.rs) -- requires qualified electronic certificate |
 | Primary forms | PPP-PD (salary tax + contributions), PP-GPDG (annual PIT), M Form (CROSO registration) |
 | Validated by | Pending -- requires sign-off by a qualified Serbian tax adviser |
-| Skill version | 0.1 |
+| Skill version | 0.2 |
 
 ## Confidence Tier Definitions
 
@@ -54,7 +54,7 @@ Every rule in this skill is tagged with a confidence tier:
 
 ## Section 2 -- Salary Tax (Porez na Zarade)
 
-- **Salary tax overview** — Employment income is taxed at a flat 10% salary tax on the gross salary less a monthly non-taxable amount. The tax is a final withholding tax: the employer computes it, withholds it from the employee, and remits it.  _(Eurofast Tax Card 2025; KPMG RS; Forvis Mazars; PwC.)_
+- **Salary tax overview** — Employment income is taxed at a flat 10% salary tax on the gross salary less a monthly non-taxable amount. The tax is a final withholding tax: the employer computes it, withholds it from the employee, and remits it.  _(Eurofast Tax Card 2025; KPMG RS; Forvis Mazars; secondary summary, .)_
 
 ### Salary tax formula [T1]
 
@@ -74,21 +74,21 @@ Every rule in this skill is tagged with a confidence tier:
 
 ## Section 3 -- Social Insurance Contributions (Doprinosi)
 
-- **Social insurance overview** — Total mandatory social insurance contributions are 35.05% of gross salary, split between employee (withheld from gross) and employer (paid on top of gross).  _(PwC Worldwide Tax Summaries; Eurofast Tax Card 2025.)_
+- **Social insurance overview** — Total mandatory social insurance contributions are 35.05% of gross salary, split between employee (withheld from gross) and employer (paid on top of gross).  _(secondary summary; Eurofast Tax Card 2025.)_
 
 ### Contribution rate table (2025 and 2026) [T1]
 
-**Contribution rate table**  _(PwC; Eurofast)_
+**Contribution rate table**  _(secondary summary; Eurofast)_
 
 | Contribution class | Employee | Employer | Combined | Base | Source |
 | --- | --- | --- | --- | --- | --- |
-| Pension & Disability Insurance (PIO) | 14.00% | 10.00% | 24.00% | Gross (floor/ceiling apply) | PwC; Eurofast |
-| Health Insurance (zdravstveno) | 5.15% | 5.15% | 10.30% | Gross (floor/ceiling apply) | PwC; Eurofast |
-| Unemployment Insurance (osiguranje za slucaj nezaposlenosti) | 0.75% | 0.00% | 0.75% | Gross (employee-only; employer abolished 2019) | PwC; Eurofast |
-| **TOTAL** | **19.90%** | **15.15%** | **35.05%** | Gross | PwC; Eurofast |
+| Pension & Disability Insurance (PIO) | 14.00% | 10.00% | 24.00% | Gross (floor/ceiling apply) | secondary summary; Eurofast |
+| Health Insurance (zdravstveno) | 5.15% | 5.15% | 10.30% | Gross (floor/ceiling apply) | secondary summary; Eurofast |
+| Unemployment Insurance (osiguranje za slucaj nezaposlenosti) | 0.75% | 0.00% | 0.75% | Gross (employee-only; employer abolished 2019) | secondary summary; Eurofast |
+| **TOTAL** | **19.90%** | **15.15%** | **35.05%** | Gross | secondary summary; Eurofast |
 
 - **Arithmetic check** — Employee column 14.00 + 5.15 + 0.75 = 19.90%. Employer column 10.00 + 5.15 + 0.00 = 15.15%. Combined column 24.00 + 10.30 + 0.75 = 35.05%. Each component row sums across to its combined value (e.g. 14.00 + 10.00 = 24.00). [T1]
-- **No employer unemployment contribution** — There is no employer unemployment contribution -- it was abolished in 2019.  _(PwC; Eurofast)_
+- **No employer unemployment contribution** — There is no employer unemployment contribution -- it was abolished in 2019.  _(secondary summary; Eurofast)_
 
 ### Contribution base floor and ceiling [T1]
 
@@ -191,7 +191,7 @@ Map bank-statement narrations (typically in Serbian) to payroll classifications.
 | Form | Purpose | Deadline | Portal | Source |
 | --- | --- | --- | --- | --- |
 | **PPP-PD** | Consolidated individual electronic tax return for withheld salary tax + all social contributions; lists every employee per income payment | Filed on or before the day salary is paid; tax and contributions due no later than the salary payment date | ePorezi (qualified e-certificate required) | PURS; TaxAdvisorSerbia; Playroll |
-| **PP-GPDG** | Supplementary annual personal income tax return for high earners (annual income above 3× average annual salary) | 15 May of the year following the income year (e.g. 15 May 2025 for 2025 income); pre-filled by PURS | ePorezi | PwC; Eurofast; Forvis Mazars; KPMG |
+| **PP-GPDG** | Supplementary annual personal income tax return for high earners (annual income above 3× average annual salary) | 15 May of the year following the income year (e.g. 15 May 2025 for 2025 income); pre-filled by PURS | ePorezi | secondary summary; Eurofast; Forvis Mazars; KPMG |
 | **M Form (CROSO)** | Registration of an employee into compulsory social insurance via the Central Registry | Before the employee starts work | CROSO (croso.gov.rs) | Playroll |
 
 > **PPP-PD timing caveat:** the PPP-PD is filed at/before each salary payment with tax due on payment. The commonly-cited "15th of the following month" relates more to certain other obligations. `[RESEARCH GAP — reviewer to confirm exact PPP-PD timing against current PURS guidance.]` Source: research caveat (5).
@@ -202,7 +202,7 @@ Map bank-statement narrations (typically in Serbian) to payroll classifications.
 
 ## Section 9 -- Supplementary Annual Personal Income Tax (Godisnji porez)
 
-- **Supplementary annual PIT overview** — A supplementary annual personal income tax applies only to individuals whose total annual income exceeds 3× the average annual salary. It is separate from the monthly 10% salary tax and is reconciled via the pre-filled PP-GPDG.  _(PwC; Eurofast; Forvis Mazars; KPMG)_
+- **Supplementary annual PIT overview** — A supplementary annual personal income tax applies only to individuals whose total annual income exceeds 3× the average annual salary. It is separate from the monthly 10% salary tax and is reconciled via the pre-filled PP-GPDG.  _(secondary summary; Eurofast; Forvis Mazars; KPMG)_
 
 ### Average annual salary (income year 2025) [T1]
 
@@ -211,14 +211,14 @@ Map bank-statement narrations (typically in Serbian) to payroll classifications.
 | Item | Value | Source |
 | --- | --- | --- |
 | Average **annual** salary (2024) | RSD 1,813,032 (published by the Republic Statistical Office, 26 Feb 2025) | Forvis Mazars |
-| 3× average annual salary (filing threshold) | RSD 5,439,096 | PwC; Eurofast |
+| 3× average annual salary (filing threshold) | RSD 5,439,096 | secondary summary; Eurofast |
 | 6× average annual salary (10%/15% break, measured on the base, not on gross income) | RSD 10,878,192 | KPMG Feb 2026; taxadvisorserbia.com |
 
 > 2026 annual PIT thresholds (based on the 2025 average salary) will be published in early 2027. `[RESEARCH GAP — reviewer to confirm 2025-income-year thresholds when published.]` Source: research caveat (4).
 
 ### Annual PIT bands (2025 income) [T1]
 
-**Annual PIT bands**  _(PwC; Eurofast)_
+**Annual PIT bands**  _(secondary summary; Eurofast)_
 
 Bands apply to the **base**, built as: annual income − non-taxable amount (RSD 5,439,096) − allowances (capped at 50% of the amount after the non-taxable amount). They are not applied to gross income.
 
@@ -238,7 +238,7 @@ Income at or below RSD 5,439,096 produces no base and no filing obligation.
 | Personal allowance | 40% of avg annual salary = RSD 725,213 (= 1,813,032 × 40%) | Eurofast Tax Card 2025; Forvis Mazars |
 | Per dependent | 15% of avg annual salary = RSD 271,955 each (= 1,813,032 × 15%) | Eurofast; Forvis Mazars |
 | Total allowances cap | 50% of taxable income | Eurofast; Forvis Mazars |
-| Young taxpayer relief (under 40 on 31 Dec of tax year) | Additional deduction of 3× avg annual salary (RSD 5,439,096) on employment / self-employment / author income | PwC; Eurofast |
+| Young taxpayer relief (under 40 on 31 Dec of tax year) | Additional deduction of 3× avg annual salary (RSD 5,439,096) on employment / self-employment / author income | secondary summary; Eurofast |
 
 - **Arithmetic check** — 1,813,032 × 40% = 725,213.40 → RSD 725,213. 1,813,032 × 15% = 271,955.40 → RSD 271,955. [T1]
 
@@ -331,14 +331,14 @@ Uses 2026 parameters: non-taxable RSD 34,221; floor RSD 51,297; ceiling RSD 732,
 
 | # | Rule | Source |
 | --- | --- | --- |
-| T1-1 | Salary tax = (gross − monthly non-taxable amount) × 10%, floored at 0. Non-taxable amount RSD 28,423 (Feb 2025–Jan 2026), RSD 34,221 (2026). | Eurofast; KPMG; PwC |
-| T1-2 | Combined social contributions = 35.05% of base: employee 19.9% (14% PIO + 5.15% health + 0.75% unemployment), employer 15.15% (10% PIO + 5.15% health). No employer unemployment contribution. | PwC; Eurofast |
+| T1-1 | Salary tax = (gross − monthly non-taxable amount) × 10%, floored at 0. Non-taxable amount RSD 28,423 (Feb 2025–Jan 2026), RSD 34,221 (2026). | Eurofast; KPMG; secondary summary |
+| T1-2 | Combined social contributions = 35.05% of base: employee 19.9% (14% PIO + 5.15% health + 0.75% unemployment), employer 15.15% (10% PIO + 5.15% health). No employer unemployment contribution. | secondary summary; Eurofast |
 | T1-3 | Employee contributions and salary tax are withheld from gross; employer contributions are paid on top. Employer total cash cost = gross × 1.1515 within the floor/ceiling band. | Eurofast |
 | T1-4 | Contributions are computed on a base = MIN(MAX(gross, floor), ceiling). 2025: floor RSD 45,950, ceiling RSD 656,425 (annual max RSD 7,877,100). 2026: floor RSD 51,297, ceiling RSD 732,820. | Orbitax; Eurofast; TaxRavens |
 | T1-5 | Salary tax has no ceiling; only contributions are capped. The non-taxable amount applies to actual gross, not the contribution base. | derived from Eurofast mechanics |
 | T1-6 | Salary tax and all contributions are reported on the consolidated PPP-PD via ePorezi at/before each salary payment; payment due no later than the salary payment date. | PURS; TaxAdvisorSerbia; Playroll |
 | T1-7 | Employees must be registered into compulsory social insurance via CROSO (M Form) before commencement of work; the business must hold a PIB and APR registration. | Playroll |
-| T1-8 | Self-employed entrepreneurs pay both employee and employer portions (combined 35.05%: PIO 24% + health 10.3% + unemployment 0.75%) on their own base. | PwC; TaxRavens |
+| T1-8 | Self-employed entrepreneurs pay both employee and employer portions (combined 35.05%: PIO 24% + health 10.3% + unemployment 0.75%) on their own base. | secondary summary; TaxRavens |
 | T1-9 | New-employee payroll tax/contribution relief (incentives for newly hired workers) is extended through 31 December 2026. | KPMG RS tax alert (Dec 2025) |
 
 ### Context rates (for cross-skill reference; not payroll) [T1]
@@ -418,21 +418,21 @@ Validation rows: confirm B6 ≥ B4 and B6 ≤ B5; confirm B11 + B8 + B10 = B3.
 
 ## Section 17 -- Reference Material
 
-**Reference Material**  _(Eurofast; PwC; KPMG RS; Orbitax; TaxRavens; Forvis Mazars; TSG.rs; research payroll_items)_
+**Reference Material**  _(Eurofast; secondary summary; KPMG RS; Orbitax; TaxRavens; Forvis Mazars; TSG.rs; research payroll_items)_
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Salary tax rate | 10% flat on (gross − non-taxable) | Eurofast; PwC |
+| Salary tax rate | 10% flat on (gross − non-taxable) | Eurofast; secondary summary |
 | Non-taxable amount 2025 / 2026 | RSD 28,423 / RSD 34,221 | KPMG RS; Eurofast |
-| Employee contributions | 19.90% (PIO 14% + health 5.15% + unemployment 0.75%) | PwC; Eurofast |
-| Employer contributions | 15.15% (PIO 10% + health 5.15%) | PwC; Eurofast |
-| Combined contributions | 35.05% | PwC; Eurofast |
+| Employee contributions | 19.90% (PIO 14% + health 5.15% + unemployment 0.75%) | secondary summary; Eurofast |
+| Employer contributions | 15.15% (PIO 10% + health 5.15%) | secondary summary; Eurofast |
+| Combined contributions | 35.05% | secondary summary; Eurofast |
 | Contribution floor 2025 / 2026 | RSD 45,950 / RSD 51,297 | Orbitax; Eurofast; TaxRavens |
 | Contribution ceiling 2025 / 2026 | RSD 656,425 / RSD 732,820 | Orbitax; Eurofast; TaxRavens |
 | Annual max contribution base 2025 | RSD 7,877,100 | Orbitax |
 | Average annual salary (2024) | RSD 1,813,032 | Forvis Mazars |
-| Annual PIT thresholds (2025 income) | 3× = 5,439,096; 6× = 10,878,192 | PwC; Eurofast |
-| Annual PIT rates | 0% / 10% / 15% | PwC; Eurofast |
+| Annual PIT thresholds (2025 income) | 3× = 5,439,096; 6× = 10,878,192 | secondary summary; Eurofast |
+| Annual PIT rates | 0% / 10% / 15% | secondary summary; Eurofast |
 | Annual PIT personal allowance | RSD 725,213 (40% of avg) | Eurofast; Forvis Mazars |
 | Annual PIT per-dependent allowance | RSD 271,955 (15% of avg) | Eurofast; Forvis Mazars |
 | Minimum wage 2025 (Jan–Sep / from 1 Oct) | RSD 308 / RSD 337 net per hour | TSG.rs |
@@ -465,8 +465,8 @@ Validation rows: confirm B6 ≥ B4 and B6 ≤ B5; confirm B11 + B8 + B10 = B3.
 
 ### Sources
 
-1. PwC Worldwide Tax Summaries — Serbia, Individual: Other taxes (social security rates), last reviewed 25 Feb 2026. https://taxsummaries.pwc.com/serbia/individual/other-taxes
-2. PwC Worldwide Tax Summaries — Serbia, Individual: Taxes on personal income. https://taxsummaries.pwc.com/serbia/individual/taxes-on-personal-income
+1. Secondary practitioner summary (link removed) — Serbia, Individual: Other taxes (social security rates), last reviewed 25 Feb 2026.
+2. Secondary practitioner summary (link removed) — Serbia, Individual: Taxes on personal income.
 3. Eurofast — Serbia Tax Card 2025. https://eurofast.eu/wp-content/uploads/2025/02/SerbiaTaxCard_2025-1.pdf
 4. Eurofast — Changes in Non-Taxable Amount, Minimum and Maximum Contribution Base in Serbia. https://eurofast.eu/changes-in-non-taxable-amount-minimum-and-maximum-contribution-base-in-serbia/
 5. Orbitax — Serbia Social Security Contribution Basis Amounts for 2025. https://orbitax.com/news/country/article/Serbia-Social-Security-Contrib-57687
@@ -519,7 +519,7 @@ Each test states inputs and the recomputed expected output. Reviewers should rer
 ### Test 8 -- Below filing threshold, no annual PIT
 
 **Input:** 2024 total income RSD 4,000,000 (< 3× avg = 5,439,096).
-**Expected:** No supplementary annual PIT due. PP-GPDG not required. Source: PwC.
+**Expected:** No supplementary annual PIT due. PP-GPDG not required. Source: the secondary summary.
 
 ### Test 9 -- Total remittance reconciliation, 2025
 
