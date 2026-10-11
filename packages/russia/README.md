@@ -66,7 +66,7 @@ The AI should:
 
 Check each guide's metadata, quality tier, sources and coverage limits before use. Check its applicable period and review status where provided. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.
 
-Guide content is available under the source-available OA Guide License; see [LICENSING.md](../../LICENSING.md) for the licence terms and third-party exceptions.
+Guide content is available under the source-available OA Guide License; see [LICENSING.md](https://github.com/ryanduguid/openaccountants/blob/main/LICENSING.md) for the licence terms and third-party exceptions.
 
 ---
 
@@ -78,7 +78,7 @@ Professional reviews and corrections are welcome:
 2. Edit the relevant source file under `skills/` and submit a pull request to this fork.
 3. State the scope of your review, your qualification and the review date.
 
-Accountant review requires a named, licensed accountant to review the complete guide and sign it off in a pull request. Contribution credit alone does not establish review. See [the review process](../../CONTRIBUTING.md#review).
+Accountant review requires a named, licensed accountant to review the complete guide and sign it off in a pull request. Contribution credit alone does not establish review. See [the review process](https://github.com/ryanduguid/openaccountants/blob/main/CONTRIBUTING.md#review).
 
 ---
 

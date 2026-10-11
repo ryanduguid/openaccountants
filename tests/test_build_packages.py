@@ -90,8 +90,8 @@ class RebuildTests(SyntheticTreeCase):
             with self.subTest(package=package):
                 readme = (self.packages / package / "README.md").read_text(encoding="utf-8")
                 self.assertIn("source-available OA Guide License", readme)
-                self.assertIn("../../LICENSING.md", readme)
-                self.assertIn("../../CONTRIBUTING.md#review", readme)
+                self.assertIn("https://github.com/ryanduguid/openaccountants/blob/main/LICENSING.md", readme)
+                self.assertIn("https://github.com/ryanduguid/openaccountants/blob/main/CONTRIBUTING.md#review", readme)
                 self.assertIn("submit a pull request to this fork", readme)
                 self.assertIn("review status where provided", readme)
                 self.assertIn("period shown in these documents", readme)
