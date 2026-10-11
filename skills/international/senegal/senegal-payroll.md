@@ -1,7 +1,7 @@
 ---
 name: senegal-payroll
 description: Use this skill whenever asked about Senegal payroll processing for employed persons. Trigger on phrases like "Senegal payroll", "Sénégal paie", "IRPP Senegal", "retenue à la source Senegal", "TRIMF", "IPRES contribution", "CSS Senegal", "prestations familiales", "CFCE", "IPM health Senegal", "quotient familial Senegal", "parts fiscales", "net salary Senegal", "salaire net Sénégal", "PAYE Senegal", "employer social charges Senegal", "SMIG Senegal", "minimum wage Senegal", "form F4 Senegal", "gross to net Senegal", "bulletin de paie", or any question about computing employee pay, income tax withholding, or social contributions for Senegal-based employees. Senegal DOES levy personal income tax (IRPP) on salaries plus a fixed local salary tax (TRIMF). This skill covers progressive IRPP withholding with family-quotient splitting, TRIMF, IPRES pensions, CSS family allowances and work-injury, IPM health cover, the employer payroll tax (CFCE), minimum wage, filing obligations, and penalties. ALWAYS read this skill before processing any Senegal payroll.
-version: 0.3
+version: 0.4
 jurisdiction: SN
 tax_year: 2026
 last_updated: 2026-10-11
@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Senegal Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
+# Senegal Payroll Skill v0.4 (Tier 2 — research-verified, pending accountant sign-off)
 
-## Senegal Payroll Skill v0.3 (Tier 2 — research-verified, pending accountant sign-off)
+## Senegal Payroll Skill v0.4 (Tier 2 — research-verified, pending accountant sign-off)
 
 > Senegal is **not** a no-income-tax jurisdiction. Salaries bear progressive personal income tax (IRPP) withheld at source, a separate fixed local salary tax (TRIMF), mandatory social contributions (IPRES, CSS, IPM), and an employer-only payroll tax (CFCE). All five must be handled together.
 
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Employer payroll tax | CFCE — Contribution Forfaitaire à la Charge de l'Employeur, 3% of payroll |
 | Monthly remittance form | F4 (practitioner-cited) — declared/remitted before the 15th of the following month |
 | Validated by | Pending — requires sign-off by a Senegalese chartered accountant (expert-comptable) |
-| Skill version | 0.3 |
+| Skill version | 0.4 |
 
 ## Section 2 — Income Tax Withholding (IRPP)
 
@@ -54,7 +54,7 @@ The employer withholds IRPP monthly at source on gross remuneration (including f
 
 ### 2.2 Progressive IRPP scale (annual taxable income, per part, XOF)
 
-**Progressive IRPP scale**  _(Source: a secondary practitioner summary — Senegal, Taxes on personal income (last reviewed 31 March 2026)., as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+**Progressive IRPP scale**  _(Code général des impôts, art. 173 as amended by Loi n° 2022-19 of 27 May 2022 (brackets 0 to 630,000; to 1,500,000; to 4,000,000; to 8,000,000; to 13,500,000; to 50,000,000; above, at 0%, 20%, 30%, 35%, 37%, 40% and 43%), DGID annotated edition January 2025 — https://www.dgid.sn/storage/docs/CGI-2025.pdf)_
 
 | Annual taxable income per part (XOF) | Marginal rate | Cumulative tax at top of band (XOF) |
 | --- | --- | --- |

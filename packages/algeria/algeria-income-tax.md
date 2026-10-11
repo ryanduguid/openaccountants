@@ -1,7 +1,7 @@
 ---
 name: algeria-income-tax
 description: Use this skill whenever asked about Algeria personal income tax (IRG -- Impôt sur le Revenu Global) for employees and self-employed individuals. Trigger on phrases like "how much IRG do I pay", "barème IRG", "Algeria income tax", "IFU", "impôt forfaitaire unique", "G50", "G12", "G12 bis", "CNAS", "CASNOS", "auto-entrepreneur Algérie", "DZD tax", "salaire net", "self-employed tax Algeria", "déclaration revenu global", or any question about filing or computing income tax for an Algerian employee, sole trader, or micro-operator. Also trigger when preparing or reviewing an IRG payroll computation, an IFU turnover declaration, social contribution (CNAS/CASNOS) calculations, or advising on filing deadlines. This skill covers the IRG progressive scale, schedular/investment rates, the IFU micro regime, CNAS/CASNOS social contributions, the SNMG minimum wage, filing forms and deadlines, and penalties. ALWAYS read this skill before touching any Algerian income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: DZ
 tax_year: 2025
 last_updated: 2026-10-11
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Annual return deadline | 30 April of the following year (FY2025 extended to 30 June) |
 | Validated by | Pending -- requires sign-off by an Algerian tax professional |
 | Validation date | Pending |
-| Skill version | 0.2 |
+| Skill version | 0.3 |
 
 ### Algeria DOES levy a personal income tax
 
@@ -42,7 +42,7 @@ Unlike several Gulf jurisdictions, Algeria operates a full personal income tax (
 
 ### IRG Progressive Scale (2025) -- Annual Taxable Income
 
-**IRG Progressive Scale (2025) -- Annual Taxable Income**  _(Source: the secondary summary -- Algeria, Individual, reviewed 14 Jul 2025:, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+**IRG Progressive Scale (2025) -- Annual Taxable Income**  _(Direction Générale des Impôts, IRG traitements et salaires (barème progressif: 0% to DZD 240,000; 23% to 480,000; 27% to 960,000; 30% to 1,920,000; 33% to 3,840,000; 35% above) — https://www.mfdgi.gov.dz/fr/particuliers/irg-traitements-et-salaires)_
 
 | Annual taxable income (DZD) | Rate | Cumulative tax at top of band |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ Unlike several Gulf jurisdictions, Algeria operates a full personal income tax (
 - 184,800 + (30% × 960,000 = 288,000) = 472,800
 - 472,800 + (33% × 1,920,000 = 633,600) = 1,106,400
 
-- **Salary exemption** — Monthly salaries ≤ DZD 30,000 are exempt from IRG.  _(Source: the secondary summary -- Income determination:, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Salary exemption** — Monthly salaries ≤ DZD 30,000 are exempt from IRG.  _(Direction Générale des Impôts, IRG traitements et salaires (salaries not exceeding DZD 30,000 per month are exempt; CIDTA arts 5 and 68) — https://www.mfdgi.gov.dz/fr/particuliers/irg-traitements-et-salaires)_
 - **Isolation / special-conditions exemption** — PIT exemption of up to 70% of basic salary for special living/isolation conditions (since 1 Jan 2021).  _(Source: the secondary summary -- Income determination, same URL.)_
 
 ### Schedular / Investment Income Rates (2025)
