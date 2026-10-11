@@ -22,7 +22,7 @@ Employers in Tajikistan withhold personal income tax from wages and pay social t
 - **Combined social tax** — 26% (25% employer + 1% employee)  _(Tax Code of the Republic of Tajikistan)_
 - **Recipient fund** — State Social Protection Fund (pensions, social insurance, employment programs)  _(Tax Code of the Republic of Tajikistan)_
 - **Wage base for social tax** — Gross employment remuneration; no statutory cap specified (approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
-- **Income tax withholding (PAYE-equivalent)** — Employer withholds 13% income tax from wages (after allowance and 1% social deduction)  _(Tax Code of the Republic of Tajikistan)_
+- **Income tax withholding (PAYE-equivalent)** — Employer withholds 12% income tax from wages (Tax Code art. 183(1)) (after allowance and 1% social deduction)  _(Tax Code of the Republic of Tajikistan)_
 - **Payroll tax remittance deadline** — By the 15th day of the month following the payroll month (approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
 - **Statutory retirement age** — 63 for men, 58 for women (approx — confirm)  _(Law on Pension Insurance and State Pensions)_
 - **Employer registration** — Employers must register with the tax authority and Social Protection Fund before running payroll  _(Tax Code of the Republic of Tajikistan)_

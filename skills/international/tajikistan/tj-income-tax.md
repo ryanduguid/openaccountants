@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Personal income tax rates
 
-- **Overview of personal income tax** — Personal income tax for residents on employment income is broadly applied at a flat 13% under the Tax Code. Non-residents are taxed on Tajik-source income, generally at higher rates. Some sources note a lower band (8%) at the very bottom of the wage scale; confirm with a local adviser.
+- **Overview of personal income tax** — Personal income tax for residents on employment income is broadly applied at a flat 12% under the Tax Code (art. 183(1)). Non-residents are taxed on Tajik-source income, generally at higher rates. Some sources note a lower band (8%) at the very bottom of the wage scale; confirm with a local adviser.
 - **Resident employment income rate** — 12 percent  _(Tax Code of the Republic of Tajikistan, art. 183(1) (12 percent on a resident's taxable income at the main place of employment above the personal deduction), unofficial English translation on the Tax Committee site — https://andoz.tj/docs/kodex/Kodex_14_05_2025_Nav_ENG_en.pdf)_
 - **Lower band on low monthly wages** — 8 percent (on monthly employment income up to the statutory threshold (approx — confirm))  _(Tax Code of the Republic of Tajikistan)_
 - **Non-resident income rate (Tajik-source)** — 25 percent (approx — confirm)  _(Tax Code of the Republic of Tajikistan)_
