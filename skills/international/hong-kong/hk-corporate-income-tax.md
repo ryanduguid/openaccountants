@@ -5,7 +5,7 @@ jurisdiction: HK
 category: international
 tax_year: 2025
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,8 +22,8 @@ Hong Kong levies profits tax on income arising in or derived from a trade, profe
 - **Unincorporated business rate — first HKD 2,000,000** — 7.5%  _([Inland Revenue Ordinance (Cap. 112), Schedule 8](https://www.ird.gov.hk/eng/faq/2tr.htm))_
 - **Unincorporated business rate — above HKD 2,000,000** — 15%  _([Inland Revenue Ordinance (Cap. 112), Schedule 8](https://www.ird.gov.hk/eng/faq/2tr.htm))_
 - **Two-tiered rate — group restriction** — Only ONE entity within a group of connected entities may elect the lower-tier (8.25%/7.5%) rate in a year of assessment  _([Inland Revenue Ordinance (Cap. 112), Schedule 8AA](https://www.ird.gov.hk/eng/faq/2tr.htm))_
-- **Tax base** — Profits arising in or derived from a trade, profession or business carried on in Hong Kong (excluding profits from the sale of capital assets); offshore-source profits generally not chargeable  _(Inland Revenue Ordinance (Cap. 112), section 14, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
-- **Capital gains** — Not taxable — Hong Kong has no capital gains tax  _(Inland Revenue Ordinance (Cap. 112), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Tax base** — Profits arising in or derived from a trade, profession or business carried on in Hong Kong (excluding profits from the sale of capital assets); offshore-source profits generally not chargeable  _(Inland Revenue Department, A guide to Profits Tax (persons carrying on a trade, profession or business in Hong Kong are chargeable on profits arising in or derived from Hong Kong, excluding profits from the sale of capital assets; Inland Revenue Ordinance (Cap. 112) s 14) — https://www.ird.gov.hk/eng/tax/bus_pft.htm)_
+- **Capital gains** — Not taxable — Hong Kong has no capital gains tax  _(Inland Revenue Department, A guide to Profits Tax (assessable profits exclude profits arising from the sale of capital assets; Inland Revenue Ordinance (Cap. 112) s 14) — https://www.ird.gov.hk/eng/tax/bus_pft.htm)_
 - **Withholding tax on dividends** — 0% (no withholding tax on dividends)  _(Inland Revenue Ordinance (Cap. 112), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Withholding tax on interest** — 0% (no withholding tax on interest)  _(Inland Revenue Ordinance (Cap. 112), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Withholding tax on royalties to a non-resident (non-associate)** — Effective 4.95% (16.5% on deemed assessable profits of 30% of gross); 2.475% on first HKD 6,666,667 where two-tiered rate applies  _(Inland Revenue Ordinance (Cap. 112), section 15(1)(a)/(b) and 21A, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_

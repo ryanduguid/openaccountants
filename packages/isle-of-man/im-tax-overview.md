@@ -5,7 +5,7 @@ jurisdiction: IM
 category: international
 tax_year: 2026
 last_updated: 2026-10-11
-version: 1.2
+version: 1.3
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -27,7 +27,7 @@ The Isle of Man is a self-governing British Crown Dependency with its own low-ta
 - **Headline corporate income tax rate** — 0% standard rate for resident and non-resident companies; 10% on banking business income and on retail profits above IMP 500,000 (10%/15% for 2024/25); 20% on Isle of Man land and property income, including petroleum extraction from 6 April 2024; a 15% Pillar Two top-up applies to in-scope groups  _(Isle of Man Treasury, Income Tax Division, Corporate Tax Rates — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/business-and-corporations/corporate-tax-rates/)_
 - **Does VAT/GST exist?** — Yes — UK-aligned VAT under a Customs and Excise revenue-sharing agreement with the UK; standard rate 20%  _([Value Added Tax Act 1996](https://www.gov.im/categories/tax-vat-and-your-money/customs-and-excise/vat/))_
 - **Capital gains tax and inheritance tax** — The Island has no capital gains tax and no inheritance tax  _(Isle of Man Treasury, Income Tax Division, Moving to the Island - New Residents — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/moving-to-the-island-new-residents/)_
-- **Personal income tax return deadline** — Before 6 October following the end of the tax year  _(Income Tax Act 1970, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Personal income tax return deadline** — Before 6 October following the end of the tax year  _(Isle of Man Government, Income Tax returns and penalties (returns due 6 October following the end of the tax year) — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/individuals/residents/income-tax-returns-and-penalties/)_
 - **Company income tax return deadline** — 12 months and one day after the end of the accounting period, which is also the date by which any income tax liability must be paid  _(Isle of Man Treasury, Income Tax Division, Pay and File — https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/business-and-corporations/pay-and-file/)_
 
 <!-- openaccountants-cta-block -->
