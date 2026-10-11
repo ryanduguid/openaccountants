@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-12 | [Falkland Islands: pension wording, dated amounts and applied company law](2026-10-12-falkland-source-boundaries.md) |
 | 2026-10-12 | [Palau: healthcare and pension source boundaries](2026-10-12-palau-healthcare-pension-sources.md) |
 | 2026-10-12 | [Source evidence: PDF omissions and document identity](2026-10-12-source-evidence-limits.md) |
 | 2026-10-11 | [Jersey: Class 2 contribution branches and startup reconciliation](2026-10-11-jersey-class2.md) |
