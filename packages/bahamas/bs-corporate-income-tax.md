@@ -4,8 +4,8 @@ description: "Source-cited draft: corporate income tax for Bahamas (tax year 202
 jurisdiction: BS
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,8 +17,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 There is no general corporate income tax in The Bahamas. Companies instead pay an annual business licence tax measured on turnover (covered separately) plus VAT, customs duties, stamp duty, and real property tax where applicable. Since 2024 a 15% Domestic Minimum Top-up Tax applies, but only to in-scope large multinational enterprise groups.
 
-- **General corporate income tax rate** — 0% (no general corporate income tax)  _(PwC Worldwide Tax Summaries — Bahamas (Corporate) (https://taxsummaries.pwc.com/the-bahamas/corporate/taxes-on-corporate-income))_
-- **Withholding tax on dividends, interest, royalties** — 0% (The Bahamas imposes no withholding tax on dividends, interest, or royalties paid to residents or non-residents)  _(PwC Worldwide Tax Summaries — Bahamas (Corporate) (https://taxsummaries.pwc.com/the-bahamas/corporate/withholding-taxes))_
+- **General corporate income tax rate** — 0% (no general corporate income tax)  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Withholding tax on dividends, interest, royalties** — 0% (The Bahamas imposes no withholding tax on dividends, interest, or royalties paid to residents or non-residents)  _(secondary practitioner summary, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ## Domestic Minimum Top-up Tax (Pillar Two)
 

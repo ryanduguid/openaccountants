@@ -4,8 +4,8 @@ description: "Source-cited draft: company formation & entity choice for Greece (
 jurisdiction: GR
 category: formation
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.1
+last_updated: 2026-10-11
+version: 1.2
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -37,7 +37,7 @@ Companies are registered electronically through GEMI (General Commercial Registr
 Greek companies must keep statutory accounting records, file annual financial statements and the corporate income tax return, and meet VAT and payroll obligations.
 
 - **Annual financial statements** — Prepared under Greek Accounting Standards (Law 4308/2014) and published to GEMI  _(Law 4308/2014 (Greek Accounting Standards); Law 4919/2022 (GEMI) https://global.ecovis.com/greece/tax-guide/)_
-- **Annual corporate income tax return** — Filed electronically via AADE by the last working day of the sixth month after year-end  _(Greek Income Tax Code (Law 4172/2013) https://taxsummaries.pwc.com/greece/corporate/tax-administration)_
+- **Annual corporate income tax return** — Filed electronically via AADE by the last working day of the sixth month after year-end  _(Greek Income Tax Code (Law 4172/2013), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **VAT compliance** — Periodic VAT returns (monthly or quarterly per books) plus electronic transmission of data to the myDATA platform  _(Greek VAT Code (Law 2859/2000); myDATA framework https://www.taxually.com/manuals/greece)_
 - **myDATA e-books** — Mandatory electronic transmission of accounting data (revenue/expense/classification) to AADE's myDATA platform  _(AADE myDATA decision (Law 4174/2013 / Tax Procedure Code) https://www.aade.gr/en)_
 - **Payroll filings** — Monthly e-EFKA detailed statement (APD) and income tax withholding remittance for employers  _(Law 4670/2020 (e-EFKA); Greek Income Tax Code (Law 4172/2013) https://ypergasias.gov.gr/en/social-security/insured-persons/insurance-contributions/)_

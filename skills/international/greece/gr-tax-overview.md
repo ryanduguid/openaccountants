@@ -4,7 +4,7 @@ description: "Source-cited draft: tax overview for Greece (tax year 2025) — ra
 jurisdiction: GR
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,12 +15,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Greek tax system at a glance
 
 - **Legal framework and administration** — Greece levies taxes under the Greek Income Tax Code (Law 4172/2013) and the VAT Code (Law 2859/2000), administered by the Independent Authority for Public Revenue (AADE). The figures below are 2025 headline rates for orientation; each is detailed in the topic-specific sections.
-- **Tax year** — Calendar year (1 January – 31 December); no other taxable year permitted for individuals  _(Greek Income Tax Code (Law 4172/2013), https://taxsummaries.pwc.com/greece/individual/tax-administration)_
+- **Tax year** — Calendar year (1 January – 31 December); no other taxable year permitted for individuals  _(Greek Income Tax Code (Law 4172/2013), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Currency** — Euro (EUR) (Eurozone membership)
 - **Tax authority** — Independent Authority for Public Revenue (AADE — Ανεξάρτητη Αρχή Δημοσίων Εσόδων)  _(Law 4389/2016 (establishment of AADE), https://www.aade.gr/en)_
-- **Basis of taxation** — Residents are taxed on worldwide income; non-residents are taxed only on Greek-source income  _(Greek Income Tax Code (Law 4172/2013), https://taxsummaries.pwc.com/greece/individual/taxes-on-personal-income)_
-- **Top personal income tax rate (employment/pension/business scale)** — 44 percent (applies to income over EUR 60,000)  _(Greek Income Tax Code (Law 4172/2013), as amended, https://taxsummaries.pwc.com/greece/individual/taxes-on-personal-income)_
-- **Standard corporate income tax rate** — 22 percent  _(Greek Income Tax Code (Law 4172/2013), https://taxsummaries.pwc.com/greece/corporate/taxes-on-corporate-income)_
+- **Basis of taxation** — Residents are taxed on worldwide income; non-residents are taxed only on Greek-source income  _(Greek Income Tax Code (Law 4172/2013), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Top personal income tax rate (employment/pension/business scale)** — 44 percent (applies to income over EUR 60,000)  _(Greek Income Tax Code (Law 4172/2013), as amended, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
+- **Standard corporate income tax rate** — 22 percent  _(Greek Income Tax Code (Law 4172/2013), as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Value Added Tax (VAT / FPA) standard rate** — 24 percent (Greece operates a VAT system as an EU member state)  _(Greek VAT Code (Law 2859/2000), https://www.avalara.com/us/en/vatlive/country-guides/europe/greece/greek-vat-rates.html)_
 - **Annual personal income tax return window** — Returns filed between 15 March and 15 July of the year following the tax year. AADE extended the 2025 tax year close to **24 July 2026**  _(Greek Income Tax Code (Law 4172/2013); AADE annual return decision)_
 - **Corporate income tax return deadline** — Set each year by AADE decision. For FY2025 calendar-year companies it was **15 July 2026, extended to 24 July 2026**  _(Greek Income Tax Code (Law 4172/2013) Art. 67 and 68; AADE annual filing decision. AADE extended the 2025 tax year deadline from 15 July 2026 to 24 July 2026 for both natural and legal persons)_

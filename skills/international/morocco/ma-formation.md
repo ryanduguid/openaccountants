@@ -1,10 +1,10 @@
 ---
 name: ma-formation
 description: Use this skill whenever asked about registering or forming a business in Morocco as a self-employed person — choosing and obtaining a legal status, the identifiers every business needs, and the tax regime picked at registration. Trigger on phrases like "register auto-entrepreneur Morocco", "créer auto-entrepreneur", "comment s'inscrire auto-entrepreneur Maroc", "ICE Maroc", "obtenir un IF", "Registre de Commerce Maroc", "start business Morocco", "créer une SARL Maroc", "patente / taxe professionnelle", "كيفاش نسجل مقاول ذاتي", "تسجيل شركة المغرب". Covers RNAE auto-entrepreneur registration (ae.gov.ma / Poste Maroc), obtaining the ICE, the IF (Identifiant Fiscal) from the DGI, the RC (Registre de Commerce), the taxe professionnelle (ex-patente) and its new-business exemption, regulated professions, choosing the regime (auto-entrepreneur vs CPU vs RNR/RNS), VAT registration, and forming a SARL / SARL-AU via the CRI / OMPIC, with timing and cost. Reply in the user's language (English, French, or Moroccan Arabic / Darija) and keep the native terms. Cross-reference ma-auto-entrepreneur, ma-cpu, ma-income-tax, and morocco-vat for the downstream tax detail.
-version: 1.0
+version: 1.1
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -190,7 +190,7 @@ A self-employed person who wants **limited liability** or to scale beyond the in
 - **Loi 5-96** (sociétés) and **Loi 24-10** — SARL / SARL-AU, removal of minimum capital; **CRI** guichet unique.
 - **CGI** — IR regimes (AE / CPU / RNR / RNS), **VAT thresholds & rates**.
 - **Loi de Finances 2026** and **Note Circulaire DGI** — current ceilings, rates, thresholds, and the VAT-rate convergence.
-- Cross-references: **PwC Worldwide Tax Summaries (Morocco)**, **Baker Tilly Morocco** (CPU), **mcinet.gov.ma** (self-employment).
+- Cross-references: **Baker Tilly Morocco** (CPU), **mcinet.gov.ma** (self-employment).
 - Authorities: **DGI** (tax.gov.ma / SIMPL), **OMPIC**, **CRI**, **CNSS**.
 
 ### Short test suite
@@ -210,7 +210,7 @@ A self-employed person who wants **limited liability** or to scale beyond the in
 
 ## Disclaimer
 
-This skill is **research-verified** against public sources — the **DGI** (tax.gov.ma), **OMPIC** (ompic.ma) and `ice.gov.ma`, the **RNAE** portal (`rn.ae.gov.ma` / Poste Maroc), **CRI** guidance, **PwC Worldwide Tax Summaries** (Morocco), and reporting on the **Loi de Finances 2025/2026** — as of **May 2026**. It is **YMYL** content and is **pending sign-off by a Moroccan accountant (expert-comptable)**. Registration procedures, identifiers, fees, ceilings, rates, exemptions, and deadlines change with each Loi de Finances and by region and must be **re-verified** before use. Nothing here is a substitute for advice from a licensed Moroccan expert-comptable, the DGI, OMPIC, or your CRI. Part of **openaccountants.com** — open-source tax skills for the self-employed.
+This skill is **research-verified** against public sources — the **DGI** (tax.gov.ma), **OMPIC** (ompic.ma) and `ice.gov.ma`, the **RNAE** portal (`rn.ae.gov.ma` / Poste Maroc), **CRI** guidance, and reporting on the **Loi de Finances 2025/2026** — as of **May 2026**. It is **YMYL** content and is **pending sign-off by a Moroccan accountant (expert-comptable)**. Registration procedures, identifiers, fees, ceilings, rates, exemptions, and deadlines change with each Loi de Finances and by region and must be **re-verified** before use. Nothing here is a substitute for advice from a licensed Moroccan expert-comptable, the DGI, OMPIC, or your CRI. Part of **openaccountants.com** — open-source tax skills for the self-employed.
 
 <!-- openaccountants-cta-block -->
 

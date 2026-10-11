@@ -24,7 +24,7 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | Baraka Cassian | TZ | 6 | 3 | 2026-10-11 | — |
 | Ashish Bista | NP | 5 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
 | Christos Thoma | CY | 5 | 3 | 2026-10-11 | — |
-| Jose Padilla | VE | 5 | 4 | 2026-10-08 | — |
+| Jose Padilla | VE | 5 | 4 | 2026-10-11 | — |
 | Rob Hoffman | US-FL | 5 | — | 2026-09-28 | — |
 | Ibrar Ali | PK | 4 | 1 | 2026-09-29 | — |
 | Maria Clemencia Valverde Rios | PE | 4 | — | 2026-10-04 | — |

@@ -4,8 +4,8 @@ description: "Source-cited draft: payroll & social contributions for Lithuania (
 jurisdiction: LT
 category: payroll
 tax_year: 2025
-last_updated: 2026-10-04
-version: 1.3
+last_updated: 2026-10-11
+version: 1.4
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Employee pension contribution** — 8.72% (12.52% if enrolled in additional Pillar II accumulation) (approx - confirm)  _(Law on State Social Insurance — https://www.sodra.lt/en/benefits/contribution-rates/contribution-rates-for-employees)_
 - **Employee compulsory health insurance (PSD)** — 6.98% of gross salary  _(Law on Health Insurance (Sveikatos draudimo istatymas) — https://www.sodra.lt/en/benefits/contribution-rates/contribution-rates-for-employees)_
 - **Employer social insurance - standard** — ~1.77% of gross salary (social insurance 1.45% + Long-term Employment Fund 0.16% + Guarantee Fund 0.16%)  _(Law on State Social Insurance — https://boundlesshq.com/guides/lithuania/taxes/)_
-- **Social insurance contribution ceiling** — 60 times the average monthly wage per year (~EUR 138,270 for 2025); above the cap only 6.98% health insurance continues (approx - confirm)  _(Law on State Social Insurance — https://taxsummaries.pwc.com/lithuania/individual/other-taxes)_
+- **Social insurance contribution ceiling** — 60 times the average monthly wage per year (~EUR 138,270 for 2025); above the cap only 6.98% health insurance continues (approx - confirm)  _(Law on State Social Insurance, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 - **Minimum contribution base** — Contributions calculated on at least the minimum monthly wage (EUR 1,038 in 2025)  _(Law on State Social Insurance — https://mercans.com/resources/statutory-alerts/lithuania-updates-to-minimum-wage-non-taxable-amount-and-sodra-rate/)_
 - **Minimum monthly wage (MMA)** — EUR 1,038 per month (2025)  _(Government Resolution on the Minimum Monthly Wage — https://elvprojektai.lt/en/news/minimum-wage-in-lithuania-2025-2026/)_
 - **Payroll income tax withholding (GPM)** — Employer withholds GPM on salary at 20%, with 25% on the annual portion between 36 and 60 VDU and 32% above 60 VDU in the 2026 scale (32% above 60 VDU in 2025), net of the applicable NPD (art. 6(1) and 23)  _(Law on Personal Income Tax IX-1007 (Gyventojų pajamų mokesčio įstatymas, consolidated text in force from 11 June 2026, e-seimas), art. 6(1) and 23 — https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.171369/asr)_

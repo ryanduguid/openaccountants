@@ -1,10 +1,10 @@
 ---
 name: sd-income-tax
 description: Use this skill whenever asked about Sudanese personal income tax for resident individuals, sole proprietors, professionals, and non-residents earning Sudan-source income — to compute, review, or explain it. Trigger on phrases like "Sudan income tax", "Sudan personal tax", "ضريبة الدخل السودان", "Sudan tax brackets", "Sudan PAYE", "Sudan freelance tax", or any request to prepare or check a Sudanese individual income tax return. ALWAYS read this skill before touching any Sudan personal income tax work.
-version: 0.2
+version: 0.3
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -13,14 +13,14 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Sudan Personal Income Tax (ضريبة الدخل) Skill v0.2
+# Sudan Personal Income Tax (ضريبة الدخل) Skill v0.3
 
-## Sudan Personal Income Tax (ضريبة الدخل) Skill v0.2
+## Sudan Personal Income Tax (ضريبة الدخل) Skill v0.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Currency note:** All figures are in Sudanese Pounds (SDG — ج.س). Sudan has undergone multiple currency redenominations; verify current SDG values before filing.
-> **YMYL — verify before relying.** Sudan's tax legislation has been subject to amendments and the political situation has disrupted tax administration. Where this skill says "verify current value," re-confirm against the Sudan Taxation Chamber (tax.gov.sd), PwC Worldwide Tax Summaries, or a qualified Sudan accountant before filing.
+> **YMYL — verify before relying.** Sudan's tax legislation has been subject to amendments and the political situation has disrupted tax administration. Where this skill says "verify current value," re-confirm against the Sudan Taxation Chamber (tax.gov.sd) or a qualified Sudan accountant before filing.
 
 ## Section 1 — Scope statement
 
@@ -278,12 +278,11 @@ Sudanese bank statements (كشف حساب) may appear in Arabic or English. Comm
 
 ## Section 9 — Reference material
 
-**Reference material**  _(Sudan Taxation Chamber; PwC Worldwide Tax Summaries; Trading Economics; Britacom; TaxRatesByCountry)_
+**Reference material**  _(Sudan Taxation Chamber; Trading Economics; Britacom; TaxRatesByCountry)_
 
 | Resource | Reference |
 | --- | --- |
 | Sudan Taxation Chamber — Income Tax | https://tax.gov.sd/en/income-tax-2/ |
-| PwC Worldwide Tax Summaries — Sudan | https://taxsummaries.pwc.com/sudan |
 | Trading Economics — Sudan PIT rate | https://tradingeconomics.com/sudan/personal-income-tax-rate |
 | Britacom tax profile — Sudan | https://www.britacom.org/zt/BRPolicies/Sudan/ |
 | TaxRatesByCountry — Sudan | https://taxratesbycountry.com/tax-rates-in-sudan/ |
@@ -303,7 +302,7 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
-**Sources:** Income Tax Act 1986 (Sudan) — tax.gov.sd; PwC Worldwide Tax Summaries — Sudan; Trading Economics; Britacom tax profile; TaxRatesByCountry.
+**Sources:** Income Tax Act 1986 (Sudan) — tax.gov.sd; Trading Economics; Britacom tax profile; TaxRatesByCountry.
 
 > Contributed by Ahmed Hassan.
 

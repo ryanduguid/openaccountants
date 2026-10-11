@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Bahamas tax obligations for in
 jurisdiction: BS
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -33,9 +33,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### There Is No Personal Income Tax
 
-The Bahamas has **no personal income tax** of any kind. This is not a low rate or a zero band -- the tax itself does not exist. Confirmed absent (Source: PwC Worldwide Tax Summaries -- Bahamas Individual, last reviewed 24 February 2026):
+The Bahamas has **no personal income tax** of any kind. This is not a low rate or a zero band -- the tax itself does not exist. Confirmed absent (Source: secondary practitioner summary, last reviewed 24 February 2026):
 
-**Confirmed absent taxes**  _(PwC Worldwide Tax Summaries -- Bahamas Individual, last reviewed 24 February 2026)_
+**Confirmed absent taxes**  _(secondary practitioner summary, last reviewed 24 February 2026)_
 
 | Tax | Status |
 | --- | --- |
@@ -48,9 +48,9 @@ The Bahamas has **no personal income tax** of any kind. This is not a low rate o
 
 ### NIB Contribution Rates (Effective 1 July 2024)
 
-A 1.5 percentage-point increase was implemented 1 July 2024 to address Pensions Branch fund sustainability. (Source: nibrateincrease.com; PwC Tax Summaries -- Bahamas Individual Other Taxes)
+A 1.5 percentage-point increase was implemented 1 July 2024 to address Pensions Branch fund sustainability. (Source: nibrateincrease.com)
 
-**NIB contribution rates**  _(nibrateincrease.com; PwC Tax Summaries -- Bahamas Individual Other Taxes)_
+**NIB contribution rates**  _(nibrateincrease.com)_
 
 | Category | Rate from 1 Jul 2024 | Previous rate |
 | --- | --- | --- |
@@ -104,9 +104,9 @@ A 1.5 percentage-point increase was implemented 1 July 2024 to address Pensions 
 
 ### Business Licence Fee Schedule
 
-(Source: Inland Revenue -- inlandrevenue.finance.gov.bs/tax-incentives/business-licence-new-rates-1/; PwC Corporate Other Taxes)
+(Source: Inland Revenue -- inlandrevenue.finance.gov.bs/tax-incentives/business-licence-new-rates-1/)
 
-**Business Licence Fee Schedule**  _(inlandrevenue.finance.gov.bs/tax-incentives/business-licence-new-rates-1/; PwC Corporate Other Taxes)_
+**Business Licence Fee Schedule**  _(inlandrevenue.finance.gov.bs/tax-incentives/business-licence-new-rates-1/)_
 
 | Annual turnover | Licence tax |
 | --- | --- |
@@ -704,8 +704,8 @@ ONBOARDING QUESTIONS -- BAHAMAS TAX COMPLIANCE
 
 | Topic | Reference / Authority |
 | --- | --- |
-| No personal income tax | PwC Worldwide Tax Summaries -- Bahamas Individual (reviewed 24 Feb 2026); no enabling legislation exists |
-| NIB contribution rates | National Insurance Board -- nibrateincrease.com; nib-bahamas.com; PwC Individual Other Taxes |
+| No personal income tax | secondary practitioner summary (reviewed 24 Feb 2026); no enabling legislation exists |
+| NIB contribution rates | National Insurance Board -- nibrateincrease.com; nib-bahamas.com |
 | NIB insurable wage ceiling | nib-bahamas.com/2024-adjustments-to-the-insurable-wage-ceiling-pensions-and-grants/ |
 | NIB biennial review mechanism | nib-bahamas.com/biennial-adjustments-to-pensions-grants-and-the-wage-ceiling |
 | NIB registration (Form R1) | nib-bahamas.com/Registration |
@@ -720,7 +720,7 @@ ONBOARDING QUESTIONS -- BAHAMAS TAX COMPLIANCE
 | RPT 2025 amendments (BSD 150k cap) | Real Property Tax Amendment Bill 2025 -- laws.bahamas.gov.bs |
 | Stamp duty rates | Churchill & Jones Realty -- churchilljonesrealty.com/stamp-duties-taxes/ |
 | Stamp duty + VAT invoice rule (Jul 2025) | Higgs & Johnson 2025 Tax Legislative Updates |
-| Customs duties (general) | PwC Corporate Other Taxes; Bahamas Customs -- bahamascustoms.gov.bs |
+| Customs duties (general) | Bahamas Customs -- bahamascustoms.gov.bs |
 | Minimum wage (BSD 6.50/hr from Jan 2023) | WageIndicator; Playroll Bahamas minimum wage guide |
 | Procedural obligations overview | Higgs & Johnson -- higgsjohnson.com/principal-procedural-obligations-of-a-taxpayer-in-the-bahamas/ |
 

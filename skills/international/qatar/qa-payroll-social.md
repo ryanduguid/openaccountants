@@ -5,8 +5,8 @@ jurisdiction: QA
 category: payroll
 tax_year: 2025
 tax_year_notes: "Law No. 1 of 2022 was issued on 19 April 2022 (18/9/1443 H) and published in Official Gazette issue 7 on 3 July 2022. Article 4 brings it into force six months after publication, except articles 4 (fifth paragraph), 13 (first paragraph) and 30 (first paragraph), which applied from the date of issue. Its executive regulations are Cabinet Resolution No. 3 of 2025."
-version: 0.1
-last_updated: 2026-09-10
+version: 0.2
+last_updated: 2026-10-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## 1. Employment income
 
 - **No PAYE / payroll income tax withholding**: Qatar levies no income tax on
-  employment income, so nothing is withheld from wages  _([Income Tax Law No. 24 of 2018](https://taxsummaries.pwc.com/qatar/corporate/other-taxes))_
+  employment income, so nothing is withheld from wages  _(Income Tax Law No. 24 of 2018, as reported `[RESEARCH GAP — the statute's text was not read for this change; the secondary summary that carried the figure is no longer cited]`)_
 
 ## 2. Coverage
 
