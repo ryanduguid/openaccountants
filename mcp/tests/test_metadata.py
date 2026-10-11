@@ -100,8 +100,11 @@ class LicenceTests(unittest.TestCase):
 
         root_licence = REPO_ROOT / "LICENSE"
         if root_licence.is_file():
+            # Compare with line endings normalised: a checkout made before
+            # .gitattributes pinned LF can hold CRLF while the blob stays LF.
             self.assertEqual(
-                licence.read_bytes(), root_licence.read_bytes(),
+                licence.read_bytes().replace(b"\r\n", b"\n"),
+                root_licence.read_bytes().replace(b"\r\n", b"\n"),
                 "mcp/LICENSE must stay a verbatim copy of the repository LICENSE",
             )
 
