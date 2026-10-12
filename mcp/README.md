@@ -2,9 +2,9 @@
 
 <!-- mcp-name: io.github.openaccountants/openaccountants-mcp -->
 
-A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to the open-source accounting skills in a checkout of this repository — at the time of writing 1,854 skills from 182 country packages, 51 US state packages (50 states + DC) sharing the federal set in `packages/_shared/`, 13 Canadian province/territory packages, and six domain bundles (`_cross-border`, `_verticals`, `_integrations`, `_financial-reporting`, `_patterns`, `_intelligence`), across tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border and more — no manual file uploads.
+A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor and other MCP clients on-demand access to source-available accounting guides in a configured checkout of this repository. The catalogue covers tax, bookkeeping, payroll, formation, financial statements and cross-border obligations.
 
-> **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown in a checkout of this repository. The **hosted server** at `https://www.openaccountants.com/api/mcp` belongs to the upstream project: it reads the production database and exposes a larger surface that includes the **accountant-reviewed** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is upstream's product; this self-hosted one is the open research base.
+> **Separate services.** This self-hosted server reads the Markdown guides in a configured checkout. The hosted endpoint at `https://www.openaccountants.com/api/mcp` belongs to the upstream project and is not operated from this fork. Its content, capabilities and review services must be checked separately.
 
 > **This fork.** The hosted endpoint is not operated from this fork (see the [root README](../README.md)), and a wheel built from `mcp/` here ships **only the server code — no guides**. Point `OPENACCOUNTANTS_ROOT` at a checkout of this repository, or install the server editable from one (`pip install -e ./mcp`); the working directory is not consulted. If it cannot find `packages/`, it logs a warning when it first builds the catalogue and every tool says so explicitly — an `error` field from `list_skills` / `search_skills`, `status: "error"` from `start`, a raised error from `get_skill` — instead of answering with an empty catalogue as if that were the corpus.
 
@@ -27,7 +27,7 @@ Install once, configure once — skills are available in every conversation from
 US states work the same way. Federal guides carry `jurisdiction: US`, so `US-CA` returns only the California package's own skills; ask for `US` separately:
 
 ```
-You:    "Help me with my California taxes. Here's my bank statement."
+You:    "Help me with my California taxes. Here are my relevant redacted invoices."
           ↓
 Claude: calls list_skills(jurisdiction="US-CA") → us-ca-540-individual-return, us-ca-sales-tax, us-ca-payroll, …
 Claude: calls list_skills(jurisdiction="US")    → us-form-1040-individual-return, us-quarterly-estimated-tax, …
@@ -51,7 +51,7 @@ Special packages are also available:
 
 ## Tools
 
-The self-hosted server exposes 6 read-only tools below. The hosted server at `https://www.openaccountants.com/api/mcp` is a superset — it adds `get_rates`, `list_jurisdictions`, `list_verifiers`, `compare_jurisdictions`, `plan_cross_border`, and the `request_accountant_review` handoff. Install the hosted MCP if you want the AI-to-human routing; install this one if you want the open research base.
+The self-hosted server exposes the six tools below. Upstream services are separate and do not publish or verify this fork's changes.
 
 | Tool | Description |
 |------|-------------|
@@ -83,7 +83,7 @@ Model:   start(intent="taxes", jurisdiction="MT")
           → { status: "ready",
               skills_to_load: [mt-freelance-intake, malta-income-tax, …],
               expectations: "I'll help you build a working paper for your accountant…",
-              next_action: "Run the intake skill first, then classify transactions",
+              next_action: "Load the full guides, establish the requested period and applicable sources, then run the intake",
               guardrails: [...] }
           ↓
 Model:   get_skill("mt-freelance-intake")  →  scope-check questions
@@ -123,7 +123,7 @@ Point any remote-capable MCP client at:
 https://www.openaccountants.com/api/mcp
 ```
 
-The hosted server is the upstream project's full product surface (live database, accountant-reviewed tier, `request_accountant_review`, `get_rates`, and more — see the note at the top). It is not run from this fork, and its behaviour may differ from the code in this tree.
+The hosted endpoint belongs to the upstream project. Check its current capabilities and review terms with that service; its behaviour may differ from this fork.
 
 ### Option 2 — Install from PyPI (upstream's package)
 
@@ -232,7 +232,7 @@ Run `openaccountants-mcp` (or `python -m openaccountants_mcp`) as a **stdio** tr
 
 ### Start chatting
 
-> Help me with my 2025 taxes. Here's my bank statement.
+> Help me with my 2025 taxes. Here are my relevant redacted transaction records.
 
 or:
 
