@@ -406,7 +406,7 @@ def _catalogue() -> tuple[
             "last_updated": str(meta.get("last_updated") or ""),
             "tax_year": (
                 meta["tax_year"]
-                if type(meta.get("tax_year")) is int and 2015 <= meta["tax_year"] <= 2035
+                if isinstance(meta.get("tax_year"), int) and 2015 <= meta["tax_year"] <= 2035
                 else None
             ),
             "tax_year_notes": str(meta.get("tax_year_notes") or ""),
