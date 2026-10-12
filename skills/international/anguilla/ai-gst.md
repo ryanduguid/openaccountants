@@ -16,8 +16,8 @@ category: international
 tax_year: 2025
 tax_year_notes: "Enacted 2025 baseline; later amendments require verification"
 tier: 2
-last_updated: 2026-10-11
-version: 0.1
+last_updated: 2026-10-12
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -65,9 +65,9 @@ Use the [Act][G1], [*General Services Tax Regulations, 2025*][G2], [*Goods Tax A
 
 Reconcile taxable supplies for the actual and expected tests separately. Equality satisfies each XCD 300,000 test. [Act ss 9 to 11][G1] also govern persons required to register, compulsory registration and effective dates. A person required to register is a taxable person even before receiving a certificate.
 
-The actual-test ordinary effective date is the beginning of the following tax period under s 11(1)(a). The expected-test date follows s 11(1)(b); record the beginning of the relevant period rather than copying the actual-test date. The Comptroller can determine registration retrospectively for a person who failed to apply under s 11(2).
+The actual-test ordinary effective date is the beginning of the following tax period under s 11(4)(a). The expected-test date is the beginning of the tested 12-month period under s 11(4)(b). Where a person required to register fails to apply, the Comptroller may register the person from the date determined by the Comptroller under s 11(3).
 
-Accommodation providers, State/statutory-body and auctioneer cases have special registration treatment under s 10(4). Capital replacement or cessation and related-person aggregation require the Comptroller's statutory determination under s 10(2) and (3). Voluntary registration has conditions under s 10(5) and the [regulations][G2]. Do not treat these as automatic exclusions from turnover. Refer a special case before applying an ordinary threshold calculation.
+State/statutory-body, auctioneer and accommodation-provider cases have special registration treatment under ss 10(6), (7), (8). Under s 10(2), the Comptroller may have regard to related persons or persons acting in concert; s 10(3) values supplies under s 15. The cessation or capital-replacement condition in s 10(4) requires the Comptroller to be satisfied before the ordinary registration requirement is displaced. Voluntary registration has conditions under s 10(5) and the [regulations][G2]. Do not treat these as automatic exclusions from turnover. Refer a special case before applying an ordinary threshold calculation.
 
 ### Ordinary output GST
 
@@ -144,7 +144,7 @@ Verify the period law before every applied figure. Reconcile inclusive and exclu
 
 ## Currency and revisions
 
-Version 0.1, edited 11 October 2026. Initial bounded 2025 legislative reference and hypothetical positions. Complete post-2025 amendments, specialised schedules, operational rounding, authority notices and calendar exceptions remain unverified. This companion is a Tier 2 draft pending professional review.
+Version 0.2, edited 12 October 2026. Corrects registration pinpoints and the fork referral notice in this bounded 2025 legislative reference. Complete post-2025 amendments, specialised schedules, operational rounding, authority notices and calendar exceptions remain unverified. This companion is a Tier 2 draft pending professional review.
 
 [G1]: https://www.ird.gov.ai/Content/documents/Act%208%20-%20General%20Services%20Act,%202025%20-%20G.pdf
 [G2]: https://www.ird.gov.ai/Content/documents/22%20-%20General%20Services%20Tax%20Regulations,%202025%20-%20G.pdf
@@ -158,13 +158,15 @@ Version 0.1, edited 11 October 2026. Initial bounded 2025 legislative reference 
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

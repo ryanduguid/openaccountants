@@ -1,11 +1,11 @@
 ---
 name: workflow-base
 description: Universal workflow base for all accounting and compliance skills worldwide — tax, bookkeeping, payroll, e-invoicing, company formation, financial statements, transfer pricing, and tax optimization. Contains jurisdiction-agnostic workflow architecture — conservative defaults principle, reviewer assumption, output specification (Excel working paper + reviewer brief + action list), self-check framework, confidence tier definitions, execution pacing, citation discipline, and prohibition framework. No rates, no thresholds, no form references, no country-specific rules. MUST be loaded alongside at least one content skill that provides the actual rules for the relevant obligation and jurisdiction. Domain-specific workflow bases (bookkeeping-workflow-base, payroll-workflow-base, etc.) extend this base with domain-specific steps. Every output is reviewed by a credentialed professional before filing.
-version: 0.1
+version: 0.2
 jurisdiction: GLOBAL
 category: foundation
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-12
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Workflow Base
 
-## Universal Workflow Base v0.1
+## Universal Workflow Base v0.2
 
 ## What this file is, and what it is not
 
@@ -29,16 +29,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 1.1 -- Conservative defaults principle
 
-- **Conservative defaults principle** — When uncertain about any tax or compliance position, choose the treatment that costs the taxpayer or business more tax, never less. This principle is constant across every jurisdiction and every obligation type. The reviewer can correct an over-conservative position after the fact. The reviewer cannot easily recover from an aggressive position surfacing in audit.  _(unsure)_
-- **Data states framing** — Every item falls into one of three data states. These are about what the documents tell us, not about how complex the rules are. The rules are in statutes — they are what they are. What varies is whether we have enough information to apply them.  _(unsure)_
+Before an engagement calculation, establish the user's requested period and obligation, confirm the content guide covers them, and verify the applicable primary law, amendments, regulations and the guide's source conditions. Read the full guide's scope, period warnings and refusals before using a section separately. If a condition is unknown, stop the affected calculation and return Needs Input or the guide's refusal. Never substitute a higher-tax assumption for unknown law. Dated reference explanations and labelled hypothetical examples remain available within their stated assumptions; a source year or editing date does not certify operative law.
+
+- **Conservative defaults principle** - Apply a conservative default only to a missing fact when applicable law is established and the content guide expressly permits that default. Disclose the fact, alternative and impact for review; otherwise return Needs Input.
+- **Data states framing** - Classify factual evidence against established applicable law. Unknown law is a separate source condition requiring Needs Input or the guide's refusal.
 - **Classified** — The source documents (bank statements, invoices, prior returns, uploaded files) carry every fact needed to apply the rule. We applied it. The result is in the working paper with the citation. No flag, no question, no reviewer attention needed unless the amount alone is material.  _(unsure)_
-- **Assumed** — The source documents do not carry a fact needed to apply the rule (business-use percentage, counterparty status, whether an asset is for personal or business use, whether an election was made). We applied the conservative default — the treatment that costs the taxpayer more tax, never less. You MUST do all three: 1. Apply the conservative default and include the result in the working paper. 2. Disclose the assumption in the reviewer brief — what was assumed, what the alternative is, and the cash impact if the assumption is wrong. 3. Ask the user via the structured question form if they can resolve it, OR flag for the reviewer if the user cannot answer (e.g., "did you make this election?" is for the user; "is this expense substantiated?" is for the reviewer). You may not silently assume. Every assumption must be disclosed.  _(unsure)_
+- **Assumed** - A fact needed to apply an established rule is missing and the content guide expressly permits a factual default. Include the supported result in the working paper and disclose the assumption, alternative and impact in the reviewer brief. Ask the user to resolve facts they possess, or flag the item for the reviewer. If the guide does not permit a default, use Needs Input. Never silently assume or use this state to establish unknown law.
 - **Needs input** — The situation cannot proceed without information that neither the documents nor conservative defaults can resolve. Either (a) the user must provide a document or fact, or (b) the situation triggers a refusal under the prohibition framework. If it's a missing document/fact — ask once, clearly. If it's a refusal — stop, output the refusal, recommend a credentialed professional.  _(unsure)_
 
-The old tier labels implied the rules themselves had different confidence levels. They don't. The Malta VAT rate is 18%. That's not "T1 deterministic" — it's just a fact. What varies is whether the bank statement tells us enough to classify a transaction at 18% (classified), or whether we have to assume it's standard-rated because we can't tell (assumed), or whether we need to ask the user what this payment was for (needs input).
-
-- **Ordering principle** — Conservatism means: more income or output tax recognized, fewer deductions or input credits taken, fewer reliefs claimed, longer recovery periods, higher rates assumed. When in doubt about which way is conservative, ask: which choice produces a higher tax liability? That is the conservative choice.  _(unsure)_
-- **Jurisdiction-specific conservative default examples** — The content skill specifies the concrete defaults for each ambiguity type. Examples that recur across jurisdictions: Unknown rate on a supply or sale --> standard rate (highest applicable); Unknown deductibility or recoverability of a cost --> not deductible / not recoverable; Unknown business-use proportion --> 0% business use; Unknown counterparty status (B2B vs B2C, domestic vs foreign) --> treatment that produces more tax; Unknown whether income is reportable --> reportable; Unknown whether a prior election was made --> not made; Unknown filing status or entity classification --> the option that produces the highest liability.  _(unsure)_
+- **Ordering principle** - Within established applicable law and the content guide's permitted factual defaults, identify the treatment that produces the higher liability. This ordering cannot establish an unknown rate, legal classification or source condition.
+- **Jurisdiction-specific defaults** - The content guide defines which missing facts permit a default, such as a business-use proportion or election evidence. Do not infer rates, exemptions, filing status or period law from generic examples. Follow the guide's Needs Input and refusal conditions when a default is unavailable.
 
 ### 1.2 -- Reviewer assumption
 
@@ -50,7 +50,7 @@ The old tier labels implied the rules themselves had different confidence levels
 
 ### 1.4 -- Citation discipline
 
-- **Citation discipline** — Every rate, threshold, classification rule, or position must cite a primary source from the relevant jurisdiction's legal framework. "The law requires..." without a citation is not acceptable. "Generally accepted practice..." is not acceptable. The content skill defines what counts as a primary source in its jurisdiction (statutes, regulations, rulings, official guidance, form instructions). The principle is universal: If you cannot cite a primary source for a position, you do not have a position. Either find one, apply a conservative default and flag the absence of clear authority, or refuse the position. Citations must be year-appropriate -- the version applicable to the period being prepared, not the version current at the date of preparation. If you are uncertain whether a specific citation exists in the form you are about to cite, cite the statute it interprets and add a footnote asking the reviewer to verify the specific regulatory cite. The point of the discipline: the reviewer signs the filing. The reviewer needs to verify, in minutes, that every position rests on a real and current primary source. Without citation discipline, the reviewer has to redo every position from scratch -- at which point the AI added no value.  _(unsure)_
+- **Citation discipline** - Every applied rate, threshold, classification rule or position must cite an established primary source for the requested period. The content guide identifies the required statutes, regulations, rulings, official guidance or form instructions. Find the applicable authority or stop the affected engagement calculation with Needs Input or the guide's refusal. A factual default cannot replace missing legal authority. Record an unverified regulatory citation as missing evidence and follow the guide's source conditions before applying it. The reviewer must be able to trace each position to its operative source.
 
 ## Section 2 -- The workflow (follow exactly)
 
@@ -58,7 +58,7 @@ You are helping prepare a tax or compliance filing. The output will be reviewed 
 
 ### Step 1 -- Confirm the companion content skills are loaded
 
-0. **Confirm companion content skills loaded** — This workflow base requires at least one content skill loaded alongside it. If no content skill is loaded, stop and ask the user what obligation and jurisdiction they are working on. Do not proceed without at least one content skill. If the user's request crosses content skill boundaries, confirm which content skills are loaded and proceed with the ones available. If a needed content skill is missing, name it explicitly and ask the user to load it.
+0. **Confirm companion content skills loaded** - This workflow base requires at least one content guide for the obligation and jurisdiction. If one is missing, name it and ask the user to load it. Before classification or an engagement calculation, establish the guide's period coverage, operative primary law and source conditions under Section 1.1. Stop the affected calculation if any required condition is unresolved. A multi-domain request needs the applicable source checks for each obligation.
 
 ### Step 2 -- Read the data
 
@@ -502,13 +502,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

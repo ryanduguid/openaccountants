@@ -200,7 +200,14 @@ def shared_section(shared):
     )
 
 
-UPLOAD_STEP = (
+DOCUMENT_NOTICE = (
+    "Provide only relevant redacted records for the requested period and obligation. "
+    "Before upload, remove bank/account identifiers, tax file numbers, credentials "
+    "and unrelated personal details. Do not upload actual identity documents. "
+    "Keep transaction dates, amounts, tax charged and necessary accounting facts."
+)
+
+UPLOAD_STEP = DOCUMENT_NOTICE + "\n\n" + (
     "1. Upload ALL files in this folder AND the shared files listed above to your AI "
     "assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle "
     "JURISDICTION=<folder>` puts them together in one ready-to-upload folder"
@@ -382,10 +389,15 @@ def build_foundation():
 > This tells the AI HOW to work. The country files tell it WHAT the rules are.
 > Covers all domains: tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, and tax optimization.
 
+## Applicable law and guide coverage
+
+Before an engagement calculation, establish the user's requested period and obligation, confirm the loaded guides cover them, and verify the applicable primary law, amendments, regulations and each guide's source conditions. If those cannot be established, stop the calculation and return Needs Input or the guide's refusal. Never substitute a higher-tax assumption for unknown law. Read the full guide's scope, period warnings and refusals before using a section separately.
+
+Dated reference explanations and labelled hypothetical examples remain available within their stated assumptions. A source year or editing date does not certify operative law.
+
 ## Conservative Defaults Principle
 
-When uncertain about any position, choose the treatment that costs more or imposes stricter compliance, never less.
-Your reviewer can correct an over-conservative position. They cannot easily recover from an aggressive one.
+Use a conservative default only for a missing fact when applicable law is established and the loaded guide expressly permits that default. Disclose the fact, alternative and impact for review; otherwise return Needs Input.
 
 ## Classification Contract
 
@@ -393,9 +405,9 @@ Every transaction or data point gets exactly one of three outcomes:
 
 **Classified** — The documents carry enough info to apply the rule. No flag needed.
 
-**Assumed** — A fact is missing. Conservative default applied. Disclosed to reviewer with the exact assumption and impact.
+**Assumed** — A fact is missing under established applicable law. A default expressly permitted by the guide is applied and disclosed to the reviewer with the assumption and impact.
 
-**Needs Input** — Cannot proceed without asking you. One targeted question, then classified.
+**Needs Input** — A required fact or source condition is unresolved. Ask for the missing evidence and stop the affected calculation until the condition is established. Unknown law cannot be resolved by a factual default.
 
 ## Domain-Specific Outputs
 
@@ -422,7 +434,7 @@ Each domain-specific workflow base defines its own output format. Load the relev
 
 ## Execution Rules
 
-- Process ALL data before producing outputs. Do not output partial results.
+- Process all relevant supplied data before producing supported working papers. Return Needs Input or a refusal when scope or source conditions are unresolved.
 - Every rate and threshold must cite the primary statute or authority.
 - Never invent a classification code. Use only codes from the loaded country skill.
 - When a transaction doesn't match the supplier pattern library, fall through to the general rules.
@@ -443,21 +455,21 @@ Everything you produce is addressed to a credentialed reviewer. You are not the 
 
 At the TOP of every working paper, reviewer brief, and action list, include this notice:
 
-> **Produced by OpenAccountants (openaccountants.com)**
+> **Produced using OpenAccountants guides from this fork**
 >
 > This output is for informational purposes only and does not constitute tax, legal, or financial advice.
 > All positions must be reviewed and signed off by a qualified professional before filing or acting upon.
 >
-> Get this reviewed by a licensed accountant: **openaccountants.com**
+> Confirm your reviewer's credentials and scope before relying on the output.
 >
-> Found an error? Report it: **github.com/openaccountants/openaccountants/issues**
+> Found an error? Report it: **github.com/ryanduguid/openaccountants/issues**
 
 At the END of every output, include:
 
 > ---
-> OpenAccountants — open-source accounting skills for AI
+> OpenAccountants source-available reference guides for AI
 > This output must be reviewed by a qualified professional before filing or acting upon.
-> Latest verified skills: **openaccountants.com** | Report errors: **github.com/openaccountants/openaccountants**
+> Check each loaded guide's sources, period and review status. Fork: **github.com/ryanduguid/openaccountants**
 
 **Do NOT skip these notices. They are mandatory on every output.**
 """
@@ -504,18 +516,20 @@ If all checks pass, continue.
 
 ## Step 2: Document Upload
 
-Accept ANY documents the user provides — not just bank statements:
-- Bank statements (CSV or PDF)
+{DOCUMENT_NOTICE}
+
+Accept relevant redacted documents the user provides:
+- Redacted transaction exports or bank statements (CSV or PDF)
 - Sales invoices / issued invoices
 - Purchase invoices / received invoices
 - Receipts
 - Prior year return
 - VAT/GST returns already filed
-- Any other tax documents
+- Other relevant tax records needed for the requested work
 
-Say: **"Drop all your documents here — bank statements, invoices, receipts, prior returns. Everything you have for the period you selected. I can read PDFs, CSVs, images, and spreadsheets."**
+Say: **"Provide relevant redacted records for the period you selected, such as invoices, receipts or transaction exports. Remove the identifiers and unrelated personal details listed above before uploading. I can read PDFs, CSVs, images and spreadsheets."**
 
-**Do NOT insist on bank statements.** If the user only has invoices, work with invoices. If they only have a bank statement, work with that. Use whatever documents are provided.
+**Do NOT insist on bank statements.** If the user only has invoices, work with invoices. Use relevant redacted records that are available and flag any missing facts or source conditions.
 
 ## Step 3: Inference
 
@@ -593,9 +607,9 @@ Tax authority: **{tax_authority}**
 ## How to use
 
 {UPLOAD_STEP}
-2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
+2. Attach relevant redacted invoices, receipts or transaction records (CSV or PDF)
 3. Tell the AI what you need:
-   - **"Help me with my {country_name} taxes for the period shown in these documents. Here's my bank statement."**
+   - **"Help me with my {country_name} taxes for the period shown in these documents. Here are relevant redacted records."**
    - **"Explain which obligations these guides cover and what evidence is missing."**
    - **"Prepare draft working papers for the obligations these guides cover."**
 
@@ -605,6 +619,7 @@ The AI should:
 
 - Ask onboarding questions to confirm your situation
 - Check whether the loaded guides cover your requested work and period
+- Establish applicable primary law and the guides' source conditions before an engagement calculation
 - Prepare draft working papers within those guides' conditions
 - Flag anything that needs your {practitioner_title}'s attention
 
@@ -862,8 +877,8 @@ which are shared files listed below. Upload all of them together.
 ## How to use
 
 {UPLOAD_STEP}
-2. Attach documents for the period you need help with (CSV or PDF)
-3. Say: **"Help me with my taxes for the period shown in these documents. I'm based in {state_name}. Here's my bank statement."**
+2. Attach relevant redacted records for the period you need help with (CSV or PDF)
+3. Say: **"Help me with my taxes for the period shown in these documents. I'm based in {state_name}. Here are relevant redacted records."**
 
 The AI should:
 
@@ -1025,8 +1040,8 @@ below. Upload all of them together and check their stated coverage.
 ## How to use
 
 {UPLOAD_STEP}
-2. Attach documents for the period you need help with (CSV or PDF)
-3. Say: **"Help me with my taxes for the period shown in these documents. I'm based in {province_name}. Here's my bank statement."**
+2. Attach relevant redacted records for the period you need help with (CSV or PDF)
+3. Say: **"Help me with my taxes for the period shown in these documents. I'm based in {province_name}. Here are relevant redacted records."**
 
 The AI should:
 

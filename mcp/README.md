@@ -55,7 +55,7 @@ The self-hosted server exposes 6 read-only tools below. The hosted server at `ht
 
 | Tool | Description |
 |------|-------------|
-| `start` | **Front door.** Call first whenever a user asks for tax/accounting help. Takes optional `intent` (free text — e.g. `"taxes"`, `"VAT return"`, `"set up a company"`) and `jurisdiction` (e.g. `"MT"`, `"GB"`, `"US-CA"`). Returns either a clarification question or a ready-to-execute plan (`skills_to_load`, `expectations`, `next_action`, `guardrails`). |
+| `start` | **Front door.** Call first whenever a user asks for tax/accounting help. Takes optional `intent` (free text, such as `"taxes"`, `"VAT return"`, `"set up a company"`) and `jurisdiction` (such as `"MT"`, `"GB"`, `"US-CA"`). Returns either a clarification question or a plan ready to load guides (`skills_to_load`, `expectations`, `next_action`, `guardrails`). Engagement calculations still require the source and period checks. |
 | `list_skills` | List published skills with quality tier and reviewing accountant, a page at a time. Optional `jurisdiction` (ISO code, e.g. `MT`, `GB`, `US-CA`) and `category` (case-insensitive; the names used before 2026-09-29, `state`, `us-states`, `federal-tax`, `financial-reporting` and `patterns`, still select the guides in their canonical categories) filters; `limit` (1 to 1,000, default 100) and `offset` page through the matches, and the response carries `total`, `returned` and `next_offset` (None on the last page). |
 | `get_skill` | Given a skill `slug`, returns the full markdown plus a provenance/attribution footer. |
 | `get_skill_sections` | Given a `slug`, returns the skill parsed into sections (`heading`, `content`, `level`) with its guide review metadata. |
@@ -64,7 +64,11 @@ The self-hosted server exposes 6 read-only tools below. The hosted server at `ht
 
 Guide review metadata comprises `quality_tier`, `verified_by`, `review_status` and `last_updated`. These fields appear in each `list_skills` row and `search_skills` hit, and at the top level of `get_skill` and `get_skill_sections`. An `accountant-verified` guide with `pending_review` awaits renewed review of its current text. A tier 2 guide exposes `verified_by: null`; missing review status or update date is an empty string.
 
-Search snippets can omit conditions. Fetch the full guide with `get_skill(slug)` before applying a rule. The server provides metadata and retrieval instructions; external clients must use them. Clients that reject additional response keys need to accept these four fields.
+Full and section responses also expose `tax_year` as an integer from 2015 to 2035 or `null`, and `tax_year_notes` as a string (empty if absent). These describe the guide's source or figure coverage, not assured applicability to an engagement period. An editing date cannot fill a missing source year. These fields do not appear in list or search summaries; clients that reject additional response keys must accept them on the two retrieval routes.
+
+Search snippets can omit conditions. Fetch the full guide with `get_skill(slug)` before applying a rule or using a section separately. Establish the requested period, scope, applicable primary law and guide-specific source conditions before calculating an engagement liability. Unknown law requires `Needs Input` or the guide's refusal. Factual defaults are permitted only under established law and the guide's stated conditions. Dated reference explanations and labelled hypothetical examples remain usable within their assumptions.
+
+Full-guide provenance identifies the configured `packages/` catalogue and recorded review status; it does not certify a calculation or identify the loaded Git revision. The fork repository and upstream services are separate. Document requests require relevant redacted records, preserving accounting facts while excluding bank/account identifiers, tax file numbers, credentials and actual identity documents. These are delivered instructions and metadata; live client adherence remains unverified.
 
 Skill access is **read-only** and **path-sandboxed** to the `packages/` directory; `submit_feedback` does not call GitHub itself, it only constructs a URL.
 

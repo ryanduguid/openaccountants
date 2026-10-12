@@ -18,7 +18,7 @@ tax_year: 2022
 tax_year_notes: "Unofficial consolidation as at 31 December 2022; operative law requires verification"
 tier: 2
 last_updated: 2026-10-12
-version: 0.2
+version: 0.3
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -143,7 +143,7 @@ Verify operative law and currency before applying any figure. Reconcile all remu
 
 ## Currency and revisions
 
-Version 0.2, edited 12 October 2026. Monthly employer/employee reference using the unofficial online consolidation dated 31 December 2022. Records the library's provenance limitation and requires official law or authoritative confirmation before an engagement calculation. Complete operative provisions, post-2022 amendments, all applicable regulations, benefit valuation, operational rounding, record retention and full special-case compliance remain unverified. This companion is a Tier 2 draft pending professional review.
+Version 0.3, edited 12 October 2026. Corrects the fork referral notice. Monthly employer/employee reference using the unofficial online consolidation dated 31 December 2022. Records the library's provenance limitation and requires official law or authoritative confirmation before an engagement calculation. Complete operative provisions, post-2022 amendments, all applicable regulations, benefit valuation, operational rounding, record retention and full special-case compliance remain unverified. This companion is a Tier 2 draft pending professional review.
 
 [U1]: https://laws.gov.ai/storage/pdfs/2022%20AXA%20Revised%20Statutes%20and%20Regulations/PDF%20(Acts)/U-R.S.A.s/U012-Universal%20Social%20Levy%20Act.pdf
 [U2]: https://www.ird.gov.ai/Services/Tax/usl
@@ -155,13 +155,15 @@ Version 0.2, edited 12 October 2026. Monthly employer/employee reference using t
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

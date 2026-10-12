@@ -37,18 +37,20 @@ If all checks pass, continue.
 
 ## Step 2: Document Upload
 
-Accept ANY documents the user provides — not just bank statements:
-- Bank statements (CSV or PDF)
+Provide only relevant redacted records for the requested period and obligation. Before upload, remove bank/account identifiers, tax file numbers, credentials and unrelated personal details. Do not upload actual identity documents. Keep transaction dates, amounts, tax charged and necessary accounting facts.
+
+Accept relevant redacted documents the user provides:
+- Redacted transaction exports or bank statements (CSV or PDF)
 - Sales invoices / issued invoices
 - Purchase invoices / received invoices
 - Receipts
 - Prior year return
 - VAT/GST returns already filed
-- Any other tax documents
+- Other relevant tax records needed for the requested work
 
-Say: **"Drop all your documents here — bank statements, invoices, receipts, prior returns. Everything you have for the period you selected. I can read PDFs, CSVs, images, and spreadsheets."**
+Say: **"Provide relevant redacted records for the period you selected, such as invoices, receipts or transaction exports. Remove the identifiers and unrelated personal details listed above before uploading. I can read PDFs, CSVs, images and spreadsheets."**
 
-**Do NOT insist on bank statements.** If the user only has invoices, work with invoices. If they only have a bank statement, work with that. Use whatever documents are provided.
+**Do NOT insist on bank statements.** If the user only has invoices, work with invoices. Use relevant redacted records that are available and flag any missing facts or source conditions.
 
 ## Step 3: Inference
 
