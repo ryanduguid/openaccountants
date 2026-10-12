@@ -48,8 +48,11 @@ That page was image checked. The document also says its guidance is not
 binding in law.
 
 The retained guidance does not establish whether a later order extended the
-exemption. The actual designation, exemption and extension instruments must
-be obtained before selecting treatment for Mount Pleasant Airport employment.
+exemption. A [later source review](2026-10-12-falkland-correction-designation-sources.md)
+captures the 2024 change to the defence-employment procedure and a dated
+designated-employer list. Period-specific grant scope, conditions and
+eligibility remain required before selecting treatment for Mount Pleasant
+Airport employment.
 
 ## Company formation requires the applied Act and local amendments
 
