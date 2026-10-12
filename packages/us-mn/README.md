@@ -75,9 +75,11 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 ## How to use
 
+Provide only relevant redacted records for the requested period and obligation. Before upload, remove bank/account identifiers, tax file numbers, credentials and unrelated personal details. Do not upload actual identity documents. Keep transaction dates, amounts, tax charged and necessary accounting facts.
+
 1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
-2. Attach documents for the period you need help with (CSV or PDF)
-3. Say: **"Help me with my taxes for the period shown in these documents. I'm based in Minnesota. Here's my bank statement."**
+2. Attach relevant redacted records for the period you need help with (CSV or PDF)
+3. Say: **"Help me with my taxes for the period shown in these documents. I'm based in Minnesota. Here are relevant redacted records."**
 
 The AI should:
 

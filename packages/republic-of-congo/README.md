@@ -24,10 +24,12 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 ## How to use
 
+Provide only relevant redacted records for the requested period and obligation. Before upload, remove bank/account identifiers, tax file numbers, credentials and unrelated personal details. Do not upload actual identity documents. Keep transaction dates, amounts, tax charged and necessary accounting facts.
+
 1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
-2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
+2. Attach relevant redacted invoices, receipts or transaction records (CSV or PDF)
 3. Tell the AI what you need:
-   - **"Help me with my Republic Of Congo taxes for the period shown in these documents. Here's my bank statement."**
+   - **"Help me with my Republic Of Congo taxes for the period shown in these documents. Here are relevant redacted records."**
    - **"Explain which obligations these guides cover and what evidence is missing."**
    - **"Prepare draft working papers for the obligations these guides cover."**
 
@@ -37,6 +39,7 @@ The AI should:
 
 - Ask onboarding questions to confirm your situation
 - Check whether the loaded guides cover your requested work and period
+- Establish applicable primary law and the guides' source conditions before an engagement calculation
 - Prepare draft working papers within those guides' conditions
 - Flag anything that needs your qualified tax professional's attention
 

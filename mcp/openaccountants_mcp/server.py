@@ -5,15 +5,15 @@ Exposes read-only tools and guided-workflow prompts that let an MCP client
 (Claude Desktop, Cursor, etc.) discover, search, and read tax-skill content
 from the bundled ``packages/`` tree.
 
-This mirrors the tool/prompt surface of the hosted server at
-``https://www.openaccountants.com/api/mcp`` so both stay in sync:
+The tools and prompts originated from the separate upstream hosted server at
+``https://www.openaccountants.com/api/mcp``. This fork serves its own checkout:
 
     Tools    list_skills, get_skill, get_skill_sections, search_skills
     Prompts  skill-review, tax-return, vat-check, find-deductions,
              skill-feedback, compare-jurisdictions
 
 Where the hosted server reads from the OpenAccountants database, this one
-reads the open-source markdown packages on disk, so results reflect whatever
+reads the source-available guide packages on disk, so results reflect whatever
 checkout you point it at.  The package itself ships no guides: a wheel built
 from this tree contains only the server code, so an install whose code is
 not loaded from a checkout (an editable install) and that is not pointed at
@@ -102,7 +102,31 @@ SEARCH_LIMIT = 25          # results returned per search; the total is still rep
 MAX_QUERY_CHARS = 200      # a longer "query" is a document, not a search term
 LIST_DEFAULT_LIMIT = 100   # list_skills page size when the caller names none
 LIST_MAX_LIMIT = 1000      # the largest page a caller may ask for
-SOURCE_BASE = "https://openaccountants.com/skills"
+FORK_REPO = "https://github.com/ryanduguid/openaccountants"
+
+_APPLICATION_SCOPE = (
+    "Before an engagement calculation, establish the user's requested period "
+    "and obligation, confirm the guide covers them, and verify the applicable "
+    "primary law, amendments, regulations and the guide's source conditions. "
+    "If any of those is unknown, stop the calculation and return Needs Input "
+    "or the guide's refusal; never substitute a higher-tax assumption for "
+    "unknown law. Read the full guide's scope, period warnings and refusals "
+    "before using a section separately. You may explain dated reference rules "
+    "and labelled hypothetical examples within their stated assumptions. "
+    "tax_year and tax_year_notes describe source or figure coverage; they "
+    "do not certify operative law."
+)
+_FACT_DEFAULTS = (
+    "Apply a conservative default only to a missing fact when the applicable "
+    "law is established and the loaded guide expressly permits that default. "
+    "Disclose the fact, alternative and impact for review; otherwise return Needs Input."
+)
+_DOCUMENT_GUARDRAIL = (
+    "Request only relevant redacted records. Do not request actual identity "
+    "documents, bank/account identifiers, tax file numbers, credentials or "
+    "unrelated personal data. Keep transaction dates, amounts, tax charged "
+    "and necessary accounting facts."
+)
 
 # Feedback flows construct a GitHub New Issue URL the user opens themselves.
 FEEDBACK_REPO = "openaccountants/openaccountants"
@@ -380,6 +404,12 @@ def _catalogue() -> tuple[
                 else None
             ),
             "last_updated": str(meta.get("last_updated") or ""),
+            "tax_year": (
+                meta["tax_year"]
+                if isinstance(meta.get("tax_year"), int) and 2015 <= meta["tax_year"] <= 2035
+                else None
+            ),
+            "tax_year_notes": str(meta.get("tax_year_notes") or ""),
             # Review freshness, distinct from the tier: "pending_review" on an
             # accountant-verified skill means it was substantively edited after
             # the sign-off and awaits another review.
@@ -575,17 +605,9 @@ def _read_skill(slug: str) -> tuple[dict[str, Any], str]:
 
 
 def _provenance_footer(rec: dict[str, Any]) -> str:
-    """Branding/attribution footer appended to get_skill markdown."""
+    """Identify the loaded reference and its recorded review, without certifying a calculation."""
     tier = rec["quality_tier"]
     verifier = rec.get("verified_by")
-    attribution = (
-        f'> Computed using the OpenAccountants "{rec["title"]}" skill, '
-        f"verified by {verifier}. Have a qualified professional review before filing."
-        if tier == "accountant-verified" and verifier
-        else f'> Computed using the OpenAccountants "{rec["title"]}" skill '
-        "(research-verified — not yet signed off by a credentialed accountant). "
-        "Have a qualified professional review before filing."
-    )
     lines = [
         "",
         "---",
@@ -594,16 +616,22 @@ def _provenance_footer(rec: dict[str, Any]) -> str:
         f"- **Skill:** {rec['title']} (`{rec['slug']}`)",
         f"- **Jurisdiction:** {rec['jurisdiction']}",
         f"- **Quality tier:** {tier}",
+        f"- **Review status:** {rec.get('review_status') or 'not recorded'}",
     ]
     if tier == "accountant-verified" and verifier:
-        lines.append(f"- **Verified by:** {verifier}")
+        lines.append(f"- **Recorded reviewer:** {verifier}")
     lines += [
-        f"- **Source:** OpenAccountants — {SOURCE_BASE}/{rec['slug']}",
+        f"- **Loaded source:** configured catalogue `packages/{rec['relpath']}`",
+        f"- **Fork repository reference:** {FORK_REPO} (does not identify the loaded revision)",
         "",
-        "**When you present this computation to the user, attribute it:**",
-        attribution,
-        "",
+        "Cite the loaded guide, its applicable primary sources and recorded review status "
+        "in any working paper. Retrieval supplies reference content; a qualified "
+        "professional must review a calculation before filing or acting upon it.",
     ]
+    if rec.get("review_status") == "pending_review":
+        review = "renewed professional review" if tier == "accountant-verified" else "professional review"
+        lines.append(f"This guide awaits {review}; its recorded tier does not approve the current text.")
+    lines.append("")
     return "\n".join(lines)
 
 
@@ -744,7 +772,7 @@ _TRANSPORT_SECURITY_WARNING = _transport_security_warning(
 mcp = FastMCP(
     "OpenAccountants",
     instructions=(
-        "OpenAccountants MCP — open-source tax & accounting skills for AI agents, "
+        "OpenAccountants MCP supplies source-available tax and accounting guides for AI agents, "
         "one per jurisdiction and obligation, read from a checkout of the "
         "repository.\n\n"
         "**Front door**: call `start` first whenever a user asks for help with "
@@ -755,9 +783,13 @@ mcp = FastMCP(
         "doesn't fit the catalogue.\n\n"
         "After `start` returns a plan, fetch each slug with `get_skill` (full "
         "markdown) or `get_skill_sections` (section-by-section).  Each skill "
-        "reports a quality tier: research-verified (drafted from authoritative "
-        "sources, awaiting credentialed sign-off) or accountant-verified (a "
-        "named licensed practitioner has signed off).  Always advise the user "
+        "reports a recorded quality tier: research-verified (a draft awaiting "
+        "credentialed sign-off) or accountant-verified (recorded accountant "
+        "review). These labels do not verify operative law or current reviewer "
+        "credentials. Check review_status: "
+        "pending_review means the current text awaits professional review. "
+        + _APPLICATION_SCOPE + "\n\n" + _DOCUMENT_GUARDRAIL + "\n\n"
+        "Always advise the user "
         "to have output reviewed by a qualified professional before filing, "
         "and cite the skill (and its verifier where accountant-verified).\n\n"
         "**Feedback**: when a user reports a problem with a skill, a missing "
@@ -900,14 +932,16 @@ def get_skill(slug: str) -> dict[str, Any]:
         "quality_tier": rec["quality_tier"],
         "verified_by": rec["verified_by"],
         "review_status": rec["review_status"],
+        "tax_year": rec["tax_year"],
+        "tax_year_notes": rec["tax_year_notes"],
         "markdown": body + "\n" + _provenance_footer(rec),
         "last_updated": rec["last_updated"],
         "next_action": (
-            "Apply this skill's rules to the user's scenario. If this is an "
+            _APPLICATION_SCOPE + " If this is an "
             "intake/scope-check skill, run it BEFORE classifying anything. "
-            "Compute using ONLY the rates and thresholds in this skill — never "
-            "from general knowledge — and attribute the result per the "
-            "provenance footer above."
+            "After those checks, use only the supported rules and rates from "
+            "the loaded guide and verified primary sources. Cite the reference "
+            "and recorded review status in the working paper."
         ),
         "guardrails": _GUARDRAILS,
     }
@@ -917,8 +951,8 @@ def get_skill(slug: str) -> dict[str, Any]:
 def get_skill_sections(slug: str) -> dict[str, Any]:
     """Fetch sections (heading + content + level) and guide review metadata.
 
-    quality_tier, verified_by, review_status and last_updated are top-level
-    fields with the same values as get_skill.
+    quality_tier, verified_by, review_status, last_updated, tax_year and
+    tax_year_notes are top-level fields with the same values as get_skill.
 
     Args:
         slug: Skill slug (e.g. "malta-income-tax").
@@ -928,8 +962,8 @@ def get_skill_sections(slug: str) -> dict[str, Any]:
         "slug": slug,
         "sections": _split_sections(body),
         "next_action": (
-            "Apply each section's rules to the user's scenario in order. "
-            "Compute using ONLY the rates and thresholds in these sections, and "
+            _APPLICATION_SCOPE + " After those checks, apply each section's "
+            "conditions in context using only supported rules and rates, and "
             "tag every transaction as Classified, Assumed, or Needs Input."
         ),
         "guardrails": _GUARDRAILS,
@@ -937,6 +971,8 @@ def get_skill_sections(slug: str) -> dict[str, Any]:
         "verified_by": rec["verified_by"],
         "review_status": rec["review_status"],
         "last_updated": rec["last_updated"],
+        "tax_year": rec["tax_year"],
+        "tax_year_notes": rec["tax_year_notes"],
     }
 
 
@@ -1129,9 +1165,11 @@ _INTENT_SYNONYMS: dict[str, str] = {
 # Guardrails inlined here so callers get them even though intake.md / foundation.md
 # in the packages tree aren't indexed (they carry no `name:` field by design).
 _GUARDRAILS: list[str] = [
-    "Use ONLY rates, thresholds, and rules from the loaded skills — do not compute from general knowledge.",
-    "When uncertain, default to the more conservative treatment (higher tax / stricter compliance). An over-conservative position can be softened by a reviewer; an aggressive one is harder to recover from.",
+    _APPLICATION_SCOPE,
+    "Use only supported rates, thresholds and rules from the loaded guides and verified primary sources; do not compute from general knowledge.",
+    _FACT_DEFAULTS,
     "Distinguish three transaction outcomes: Classified (rule applies clearly), Assumed (conservative default applied — flag for reviewer), Needs Input (ask the user).",
+    _DOCUMENT_GUARDRAIL,
     "Output is a working paper, not a return. Always advise the user to have a qualified professional review before filing.",
 ]
 
@@ -1393,12 +1431,14 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
         "expectations": (
             f"I'll help the user with {label} for {jx} as a working paper for their "
             "qualified accountant to review. I won't file anything. Flow: intake "
-            "(scope check) → load skills → classify transactions → produce a "
-            "working paper with assumptions disclosed and items flagged for review."
+            "(scope check), load guides, establish applicable period law, then "
+            "prepare supported working papers with assumptions disclosed and "
+            "items flagged for review."
         ),
         "skills_to_load": skills,
         "next_action": (
-            "Call get_skill on each slug above in order.  Run any *-intake skill "
+            "This plan is ready to load guides. " + _APPLICATION_SCOPE + " "
+            "Call get_skill on each slug above in order. Run any *-intake skill "
             "first to scope-check the user before classification.  If the user's "
             "scenario falls outside the skill's scope (non-resident, unsupported "
             "entity type, etc.), say so and stop instead of guessing."
@@ -1519,7 +1559,7 @@ def submit_feedback(
 
 
 # ---------------------------------------------------------------------------
-# Prompts (mirror the hosted server)
+# Prompts for this fork
 # ---------------------------------------------------------------------------
 
 
@@ -1527,8 +1567,10 @@ def submit_feedback(
 def skill_review(skillSlug: str, scenario: str) -> str:
     return (
         f'Load the accounting skill "{skillSlug}" using get_skill_sections.\n\n'
-        f"Then apply every rule to this scenario:\n\n{scenario}\n\n"
-        "For each section: state the rule, apply it, show computation, flag what needs review."
+        f"{_APPLICATION_SCOPE}\n\n{_FACT_DEFAULTS}\n\n{_DOCUMENT_GUARDRAIL}\n\n"
+        f"Review this scenario within those conditions:\n\n{scenario}\n\n"
+        "For each supported section, state the dated rule and assumptions, "
+        "show any supported computation, and flag missing evidence or required review."
     )
 
 
@@ -1537,21 +1579,28 @@ def skill_review(skillSlug: str, scenario: str) -> str:
     description="Complete tax return workflow — intake, classification, working paper.",
 )
 def tax_return(country: str, tax_year: str = "2025", entity_type: str = "self-employed") -> str:
-    return f"""You are preparing a {tax_year} tax return for a {entity_type} taxpayer in {country}.
+    return f"""You are helping with a tax-return enquiry for a {entity_type} taxpayer in {country}.
+
+Year argument: {tax_year}. Confirm the requested period; a default argument is not confirmation of the user's period.
+
+{_APPLICATION_SCOPE}
+
+{_FACT_DEFAULTS}
+
+{_DOCUMENT_GUARDRAIL}
 
 Step 1: Load all available skills for {country} using list_skills, then fetch each one using get_skill.
 Step 2: Run the intake interview from the intake skill. Ask only questions the documents don't answer.
-Step 3: When the user provides their bank statement or transaction list, classify every transaction using the rules in the skills. Use the three-outcome system: Classified (clear), Assumed (conservative default applied, flag for reviewer), Needs Input (ask the user).
+Step 3: Once the source and period conditions are established, use relevant redacted records to classify supported transactions. Use Classified, Assumed (permitted factual default, disclosed for review), or Needs Input.
 Step 4: Produce a working paper with:
   - Classified transactions grouped by tax category
   - Computed totals for each return line item
   - All assumptions disclosed
   - Items flagged for accountant review
   - Filing deadlines and payment dates
-Step 5: End with: "This working paper was prepared using skills verified by [verifier name] at openaccountants.com. Have your accountant review before filing."
+Step 5: Cite the loaded guides, their applicable primary sources and recorded review status. Have a qualified professional review before filing or acting upon the working paper.
 
-Conservative defaults: when uncertain, assume MORE tax, never less.
-No LLM computes tax amounts — use only the rates and thresholds from the skills."""
+Use only supported rates and thresholds from the loaded guides and verified primary sources."""
 
 
 @mcp.prompt(
@@ -1560,6 +1609,14 @@ No LLM computes tax amounts — use only the rates and thresholds from the skill
 )
 def vat_check(country: str, period: str = "the current period") -> str:
     return f"""You are preparing a VAT/GST return for {country} for the period {period}.
+
+Resolve a label such as 'the current period' to the actual requested dates before calculation.
+
+{_APPLICATION_SCOPE}
+
+{_FACT_DEFAULTS}
+
+{_DOCUMENT_GUARDRAIL}
 
 Step 1: Fetch the VAT/GST skill for {country} using get_skill.
 Step 2: When the user provides transactions, classify each one using the skill's rate categories and supplier pattern library.
@@ -1571,7 +1628,7 @@ Step 4: Produce a return working paper showing:
   - Any items flagged as Assumed or Needs Input
 Step 5: Map totals to the country's return form boxes (e.g. UK VAT100 Box 1-9, Malta VAT3, Germany UStVA Kennzahlen).
 
-Use the supplier pattern library from the skill. If a vendor matches, apply the known classification. If no match, classify from the transaction description and flag as Assumed."""
+Use a supplier pattern only after establishing the source and period conditions and the facts it requires. If no match, use a factual default only where the guide permits it; otherwise return Needs Input."""
 
 
 @mcp.prompt(
@@ -1581,9 +1638,15 @@ Use the supplier pattern library from the skill. If a vendor matches, apply the 
 def find_deductions(country: str, entity_type: str = "self-employed") -> str:
     return f"""You are a tax deduction finder for a {entity_type} taxpayer in {country}.
 
+{_APPLICATION_SCOPE}
+
+{_FACT_DEFAULTS}
+
+{_DOCUMENT_GUARDRAIL}
+
 Step 1: Fetch the income tax skill for {country} using get_skill.
 Step 2: Extract the full list of allowable deductions, capital allowances, and tax credits from the skill.
-Step 3: When the user provides their expenses or bank statement, check each expense against the deduction list.
+Step 3: After the source and period checks, use relevant redacted expense records to check each supported expense against the deduction conditions.
 Step 4: Identify:
   - Deductions already claimed (matched to transactions)
   - Deductions the user COULD claim but hasn't (no matching transaction found — prompt them to check)
@@ -1640,6 +1703,14 @@ def compare_jurisdictions(countries: str, income: str = "", entity_type: str = "
     )
     return f"""You are comparing tax treatment for a {entity_type} across these jurisdictions: {countries}.
 
+{_APPLICATION_SCOPE}
+
+{_FACT_DEFAULTS}
+
+{_DOCUMENT_GUARDRAIL}
+
+Establish the applicable period and currency for each jurisdiction. If an engagement comparison lacks operative law, show the evidence needed rather than ranking payable amounts.
+
 Step 1: Fetch the income tax, VAT, and SSC skills for each country using get_skill.
 Step 2: For each country, extract:
   - {income_line}
@@ -1649,7 +1720,7 @@ Step 2: For each country, extract:
   - Filing frequency and deadlines
 Step 3: Produce a comparison table showing side-by-side treatment.
 Step 4: Highlight key differences that would affect a taxpayer choosing between jurisdictions.
-Step 5: End with: "This comparison uses rules from openaccountants.com. Cross-border tax planning requires professional advice — treaty implications, PE risk, and tie-breaker rules are beyond the scope of this comparison."
+Step 5: Cite the loaded guides, their applicable primary sources and recorded review status. Cross-border tax planning requires professional advice; treaty implications, permanent establishment risk and tie-breaker rules remain outside this comparison.
 
 Use only data from the skills. Do not supplement with general knowledge."""
 

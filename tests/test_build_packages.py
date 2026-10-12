@@ -137,6 +137,35 @@ class RebuildTests(SyntheticTreeCase):
                     content.decode("utf-8")
                     self.assertNotIn(b"\r\n", content)
 
+    def test_document_requests_require_relevant_redacted_records(self) -> None:
+        self.build()
+        outputs = [
+            (self.packages / "zzland" / "intake.md").read_text(encoding="utf-8"),
+            (self.packages / "zzland" / "README.md").read_text(encoding="utf-8"),
+            build_packages.build_us_state_readme("Example State", "zz", ["example.md"]),
+            build_packages.build_canada_province_readme("Example Province", "zz", ["example.md"]),
+        ]
+        for output in outputs:
+            with self.subTest(heading=output.splitlines()[0]):
+                for requirement in ("relevant", "redacted", "bank/account identifiers", "tax file numbers", "identity documents"):
+                    self.assertIn(requirement, output)
+                self.assertNotIn("Accept ANY documents", output)
+                self.assertNotIn("Drop all your documents", output)
+                self.assertNotIn("Here's my bank statement.", output)
+        intake = outputs[0]
+        self.assertIn("Do NOT insist on bank statements", intake)
+        self.assertIn("only has invoices", intake)
+        self.assertIn("transaction dates, amounts, tax charged", intake)
+
+    def test_compressed_foundation_stops_for_unknown_law_before_factual_defaults(self) -> None:
+        self.build()
+        foundation = (self.packages / "_shared" / "foundation.md").read_text(encoding="utf-8")
+        for requirement in ("requested period", "applicable primary law", "source conditions", "unknown law", "missing fact"):
+            self.assertIn(requirement, foundation)
+        self.assertIn("Needs Input", foundation)
+        self.assertIn("hypothetical", foundation)
+        self.assertNotIn("When uncertain about any position, choose", foundation)
+
     def test_hand_authored_packages_survive_and_stale_output_is_removed(self) -> None:
         output = self.build()
         self.assertEqual((self.packages / "us-federal" / "us-form-1040.md").read_text(encoding="utf-8"), FEDERAL_GUIDE)
