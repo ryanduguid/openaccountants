@@ -19,7 +19,7 @@
 
 | Key | Format | Notes |
 |-----|--------|-------|
-| `tax_year` | **bare integer**, e.g. `2025` | The year of the guide's **primary figures** (its coverage start year). It moves when the figures do: a guide whose rate tables are the 2026 figures says `tax_year: 2026`, and a guide that carries the 2025 figures with the 2026 ones noted beside them stays `2025`. CI errors on anything that is not an integer 2015-2035. Ranges, fiscal calendars, and qualifiers ("2025-26", "2026/27", "YA 2026", "2567 (2024)") go in `tax_year_notes`, never here |
+| `tax_year` | **bare integer**, e.g. `2025` | The year of the guide's **primary figures**. It moves when the figures do: a guide whose rate tables are the 2026 figures says `tax_year: 2026`, and a guide that carries the 2025 figures with the 2026 ones noted beside them stays `2025`. CI errors on anything that is not an integer 2015-2035. Ranges, fiscal calendars, and qualifiers ("2025-26", "2026/27", "YA 2026", "2567 (2024)") go in `tax_year_notes`, never here |
 
 ## Optional keys
 
@@ -84,13 +84,15 @@ Every published guide ends with the `<!-- openaccountants-cta-block -->` marker 
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a
@@ -109,7 +111,7 @@ description: >
   Include trigger phrases the AI should match. Be specific about scope.]
 jurisdiction: XX   # REQUIRED — MT, GB, DE, US, US-CA, GLOBAL, INTL, EU-27, etc.
 category: international   # see the category vocabulary above
-tax_year: 2025             # bare integer = coverage start year
+tax_year: 2025             # bare integer = year of the primary figures
 tax_year_notes: "2025-26"  # optional — only when a bare year can't express it
 tier: 2                    # 1 = accountant-reviewed | 2 = source-cited draft
 last_updated: 2026-07-04   # YYYY-MM-DD
@@ -130,10 +132,12 @@ verified_by: pending       # or "Name, Credential" — stored field name stays v
 
 **This file is a content skill that loads on top of a workflow base** (e.g. `us-tax-workflow-base`, `crypto-tax-workflow-base`, `bookkeeping-workflow-base`).
 
+Before treating this file as an operational companion, fill every mandatory slot in Section 7 of the [universal workflow base](../skills/foundation/workflow-base.md), including the topical refusals, permitted factual defaults, reviewer thresholds and at least five hypothetical worked positions. Read the applicable domain base and provide its required content and outputs. The sections below are an outline; they do not replace either contract.
+
 [Describe: what it computes, where it fits in the pipeline, what it does NOT cover.
 Reference the upstream skills it depends on and the downstream skills that consume its output.]
 
-**Tax year coverage.** This skill is current for **tax year 2025** as of its currency date.
+**Tax year coverage.** State the year of the primary figures, the periods the rules cover and any limits in `tax_year_notes`. An editing date does not establish operative law. Before an engagement calculation, verify the primary law, amendments, regulations and the guide's source conditions for the requested period. An unresolved source condition requires Needs Input.
 
 **The reviewer is the customer of this output.** Per the base, this skill assumes a credentialed reviewer reviews and signs the return. The skill produces working papers and a brief, not a return.
 
@@ -208,4 +212,4 @@ Before delivering output, verify:
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+This guide is maintained in the [ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants). Check its quality tier, recorded review status and cited primary sources for the requested period. The upstream website does not publish or verify this fork's changes.
