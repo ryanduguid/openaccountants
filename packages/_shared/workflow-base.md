@@ -204,7 +204,7 @@ Order by cash effect descending.]
 - This work product is a computation and classification aid prepared by an AI system under the supervision of the reviewing professional.
 - The reviewing professional is responsible for the final positions and all communications with the taxing authority.
 - This work product is based on the source data provided and accepts it as accurate.
-- Law is current as of [content skill version date].
+- Applicable law: [requested period, verified operative primary sources and source conditions]. A guide's editing date does not establish legal currency. Unresolved source conditions require Needs Input or the guide's refusal.
 - Any position requiring judgment is flagged above with conservative defaults applied.]
 ```
 
@@ -464,7 +464,7 @@ This base defines workflow architecture. Content skills define substantive rules
 
 ### Validation status
 
-This file is v0.1 of `workflow-base`, created April 2026 as a consolidation of the shared architectural principles from `us-tax-workflow-base` v0.2 and `vat-workflow-base` v0.2.0. Both of those files remain in production for their respective skill stacks (US federal income tax and EU/international VAT). This universal base is for all new skills going forward.
+This file is v0.2 of `workflow-base`. Version 0.1 was created in April 2026 as a consolidation of the shared architectural principles from `us-tax-workflow-base` v0.2 and `vat-workflow-base` v0.2.0. Both of those files remain in production for their respective skill stacks (US federal income tax and EU/international VAT). This universal base is for all new skills going forward.
 
 ### Architectural lineage
 
@@ -480,21 +480,21 @@ Jurisdiction-specific refusals (e.g., R-US-PARTNERSHIP, R-US-CRYPTO) -- those st
 
 ### Change log
 
+v0.2 (12 October 2026): Establish period and primary-source conditions before engagement calculations, restrict defaults to permitted missing facts under established law, and correct this fork's provenance instructions.
+
 v0.1 (April 2026): Initial creation. Extracted jurisdiction-agnostic principles from `us-tax-workflow-base` v0.2 and `vat-workflow-base` v0.2.0. Establishes the universal contract for all new skills.
 
 ### Self-check (of this document)
 
 1. Workflow at top of file after principles: yes (Section 2). 2. Imperatives not descriptions: yes throughout. 3. Output specification mandates Excel + brief + action list + review checklist: yes (Section 3). 4. Structured question form rules present: yes (Section 4). 5. Self-check framework present: yes (Section 5, eighteen checks). 6. No tax content, no rates, no thresholds, no form references, no jurisdiction-specific figures: verified. 7. Companion skill contract present: yes (Section 7, 13 mandatory + 3 optional). 8. Inferred-profile-first ordering: yes (Step 3 before Step 4). 9. Prohibition framework present: yes (Section 6). 10. Citation discipline as a first-class principle: yes (Section 1.4). 11. Reviewer assumed throughout: yes. 12. Reference material at bottom: yes (Section 9).
 
-## End of Universal Workflow Base v0.1
+## End of Universal Workflow Base v0.2
 
 This base is incomplete without at least one content skill loaded alongside it. If you are reading this without any content skill loaded, ask the user what obligation and jurisdiction they are working on and refuse to proceed until the appropriate content skill is loaded.
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
