@@ -2,7 +2,7 @@
 
 The captured Palau investment sources leave regulatory effectiveness and later tax
 treatment unresolved. I checked the original Act, selected regulations, current
-administrative-code provisions and linked reporting forms on 13 October 2026 in
+administrative code provisions and linked reporting forms on 13 October 2026 in
 Australia/Sydney.
 
 ## The original Act occupies 31 pages of a compound PDF
@@ -37,17 +37,17 @@ capture](https://www.palaulaw.gov.pw/view/recDSCrr7U82XA1d7?source=documents&tit
 provides a route following presidential approval or qualifying inaction: section 127
 requires transmission on adoption day, presidential action within 20 consecutive
 calendar days after receipt, and effectiveness 30 days after agency adoption,
-subject to later-date and emergency exceptions. Sections 122 to 123 and 128 address
-public inspection and publication; section 123 retains an actual-knowledge
-exception. Actual transmission, receipt, presidential action, compliance and later
-amendments remain unverified. Blank signing fields alone cannot determine legal
-force.
+subject to exceptions for later dates and emergency rules. Sections 122 to 123 and
+128 address public inspection and publication; section 123 retains an actual
+knowledge exception. Actual transmission, receipt, presidential action, compliance
+and later amendments remain unverified. Blank signing fields alone cannot determine
+legal force.
 
 ## The two reporting payments have different labels
 
-Regulation 17(a), on physical page 27, lists January 31, April 30, July 31 and
-October 31. It prescribes a $25 filing fee for the first report submitted each
-calendar year, no filing fee for subsequent reports, and a separate $25 late fee.
+Regulation 17(a), on physical page 27, lists 31 January, 30 April, 31 July and 31
+October. It prescribes a $25 filing fee for the first report submitted each calendar
+year, no filing fee for subsequent reports, and a separate $25 late fee.
 Modification, suspension or revocation for untimely reporting requires written
 direction followed by failure to submit within 30 calendar days after receiving
 notice. The selected page image confirms these conditions.
@@ -56,8 +56,8 @@ The linked [quarterly report
 form](https://www.palaugov.pw/wp-content/uploads/QUARTERLY-REPORT-FORM-fillable.pdf)
 prints `VERSION 07.10.2025`, the four deadlines and a $25 late fee. The
 [checklist](https://www.palaugov.pw/wp-content/uploads/QUARTERLY-REPORT-CHECKLIST-021026.pdf)
-places 'Initial Payment of $25.00' under first-quarter requirements. Its
-first-quarter document list differs from its second-to-fourth-quarter list. Both
+places 'Initial Payment of $25.00' under first-quarter requirements. Its document
+list for the first quarter differs from the joint list for quarters 2 to 4. Both
 documents were read in full native text. The literal version and filename dates were
 not normalised; the checklist's quarter label was not equated with the regulation's
 first report submitted each calendar year.
@@ -73,7 +73,7 @@ exact glyph fidelity. Poppler rendered selected images because the installed
 pdf-inspector API cannot render standalone pages.
 
 Regulatory OCR covered physical pages 1 to 4, 23 to 30 and 35 to 38. The remaining
-regulatory text, material images and full current-law chain need review. No filing
+regulatory text, material images and full current law chain need review. No filing
 calendar, fee calculation or current infrastructure-credit treatment was selected.
 The actual Social Security Operational Rules and Board timing instrument also remain
 missing. Professional sign-off and country completeness remain open, as do the
