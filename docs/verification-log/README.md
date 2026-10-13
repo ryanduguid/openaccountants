@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-13 | [Palau: investment and reporting source boundaries](2026-10-13-palau-investment-source-boundaries.md) |
 | 2026-10-12 | [Falkland Islands: correction order and defence-employment source chain](2026-10-12-falkland-correction-designation-sources.md) |
 | 2026-10-12 | [Anguilla: registration references and publication controls](2026-10-12-anguilla-publication-controls.md) |
 | 2026-10-12 | [Falkland Islands: payroll formula and Medical Services Tax source limits](2026-10-12-falkland-payroll-formula-sources.md) |
