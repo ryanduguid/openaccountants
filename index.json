@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T06:31:23+00:00",
+ "generated_at": "2026-10-14T01:01:41+00:00",
  "counts": {
   "guides": 1889,
   "jurisdictions": 245,
@@ -1421,7 +1421,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "cross-border-workflow-base",
@@ -1512,7 +1512,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "payroll-workflow-base",
@@ -1525,7 +1525,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "social-contributions-workflow-base",
@@ -1538,7 +1538,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "statutory-audit-workflow-base",
@@ -1603,7 +1603,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-14"
   },
   {
    "slug": "wealth-estate-tax-workflow-base",
