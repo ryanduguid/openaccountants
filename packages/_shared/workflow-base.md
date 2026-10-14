@@ -1,11 +1,11 @@
 ---
 name: workflow-base
-description: Universal workflow base for all accounting and compliance skills worldwide — tax, bookkeeping, payroll, e-invoicing, company formation, financial statements, transfer pricing, and tax optimization. Contains jurisdiction-agnostic workflow architecture — conservative defaults principle, reviewer assumption, output specification (Excel working paper + reviewer brief + action list), self-check framework, confidence tier definitions, execution pacing, citation discipline, and prohibition framework. No rates, no thresholds, no form references, no country-specific rules. MUST be loaded alongside at least one content skill that provides the actual rules for the relevant obligation and jurisdiction. Domain-specific workflow bases (bookkeeping-workflow-base, payroll-workflow-base, etc.) extend this base with domain-specific steps. Every output is reviewed by a credentialed professional before filing.
+description: Universal workflow base for all accounting and compliance skills worldwide — tax, bookkeeping, payroll, e-invoicing, company formation, financial statements, transfer pricing, and tax optimization. Contains jurisdiction-agnostic workflow architecture — conservative defaults principle, reviewer assumption, output specification (Excel working paper + reviewer brief + action list + review checklist), self-check framework, confidence tier definitions, execution pacing, citation discipline, and prohibition framework. No rates, no thresholds, no form references, no country-specific rules. MUST be loaded alongside at least one content skill that provides the actual rules for the relevant obligation and jurisdiction. Domain-specific workflow bases (bookkeeping-workflow-base, payroll-workflow-base, etc.) extend this base with domain-specific steps. Every output is reviewed by a credentialed professional before filing.
 version: 0.2
 jurisdiction: GLOBAL
 category: foundation
 tax_year: 2025
-last_updated: 2026-10-12
+last_updated: 2026-10-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,6 +22,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 **This file must always be loaded with at least one content skill.** Content skills provide the actual rules for the relevant obligation and jurisdiction. This file alone cannot produce any tax or compliance output. Loading it without at least one content skill is a configuration error and Claude must refuse to proceed.
 
 **This file is the contract.** When a content skill says it conforms to this base, what it means is: it fills the slots specified in the companion skill contract, it produces outputs in the format specified in this base, its computations and classifications can be validated by the self-checks in this base, it respects the prohibition framework, and it participates in the workflow defined here.
+
+**Domain extensions.** Load this base with the applicable domain base and country content. This base governs source conditions, profile confirmation, refusal handling, reviewer delivery and the four universal outputs. A domain base adds its computation sequence, outputs and checks. Preserve every required output and check from both bases. Outputs may share a workbook or document if each required component remains identifiable; the action list already belongs in the chat and reviewer brief. Country sources establish substantive law for the requested period and cannot waive these controls.
 
 **The reviewer assumption.** This base is built for a product where every output is reviewed and signed off by a human professional credentialed in the relevant jurisdiction -- a CPA, Enrolled Agent, tax attorney, chartered accountant, warranted auditor, or equivalent licensed practitioner. The reviewer is the immediate consumer of the skill output, not the taxpayer or business owner. The reviewer is responsible for the final filing. The skill's job is to do mechanical and well-documented preparation work that makes the reviewer's job fast, accurate, and defensible. The skill is not the preparer of record. The reviewer is.
 
@@ -62,6 +64,8 @@ You are helping prepare a tax or compliance filing. The output will be reviewed 
 
 ### Step 2 -- Read the data
 
+Use redacted source records and stable taxpayer, employee and account references. Request only the facts needed for the calculation. Keep tax identifiers, identity documents, bank details, passwords, signing tokens and other credentials outside agent inputs and outputs. The reviewer retains those values and completes authentication, submission and payment personally; this workflow prepares records for review.
+
 0. **Read the data** — The user will provide source data (bank statements, transaction records, invoices, prior-period filings, or verbal descriptions). Read every line. Do not skim. Identify: The period being prepared (the single most important fact -- every threshold, rate, and figure depends on it); The currency (must match the jurisdiction's requirements or be flagged); The number of transactions or items; Any obvious format problems (missing columns, truncated data, unreadable encoding); Any documents the user referenced but did not actually attach. If the data is unreadable, in the wrong currency without conversion documentation, or covers a different jurisdiction than the loaded skills, stop and tell the user before proceeding.
 
 ### Step 3 -- Infer the profile from the data
@@ -78,7 +82,7 @@ You are helping prepare a tax or compliance filing. The output will be reviewed 
 
 ### Step 6 -- Do the work the content skill specifies
 
-0. **Do the work the content skill specifies** — Hand control to the content skill. The content skill defines the actual work -- what gets classified, what gets computed, what rules apply. This base does not know any of that. For every position the content skill takes, it must: 1. State the position (the classification, the amount, the computed figure) 2. Show the source data (which transactions, which prior-period line, which user-provided fact) 3. Cite the primary source (statute, regulation, official guidance, form instructions -- per Section 1.4) 4. Note any uncertainty (if the position required judgment, say so explicitly and flag for reviewer attention) 5. Apply conservative defaults where data is missing (per Section 1.1). Every transaction, every computation, every position MUST end up in exactly one of these states: cleanly resolved with a citation (T1), resolved with a conservative default and a flag (T2), or marked as out-of-scope and refused (T3). No position may be silently asserted without a source. No transaction may be silently dropped.
+0. **Do the work the content skill specifies** — Hand control to the content skill. The content skill defines the actual work -- what gets classified, what gets computed, what rules apply. This base does not know any of that. For every position the content skill takes, it must: 1. State the position (the classification, the amount, the computed figure) 2. Show the source data (which transactions, which prior-period line, which user-provided fact) 3. Cite the primary source (statute, regulation, official guidance, form instructions -- per Section 1.4) 4. Note any uncertainty (if the position required judgment, say so explicitly and flag for reviewer attention) 5. Apply conservative defaults where data is missing (per Section 1.1). Every transaction, every computation, every position MUST end up in exactly one of these states: cleanly resolved with a citation (T1), resolved with an authorised factual default and a flag (T2), or unresolved (T3). Record whether each T3 item needs evidence or fires a loaded refusal; Needs Input is not itself a refusal code. No position may be silently asserted without a source. No transaction may be silently dropped.
 
 ### Step 6.5 -- Ask the user about T2 ambiguities
 
@@ -86,7 +90,7 @@ You are helping prepare a tax or compliance filing. The output will be reviewed 
 
 ### Step 7 -- Build the outputs
 
-0. **Build the outputs** — By the time you reach Step 7, you have a complete classification/computation for every item. Build the three mandatory outputs: 1. The Excel working paper (per Section 3, Output 1). Write the file, run the recalc script, verify zero formula errors. Loop until clean. 2. The reviewer brief (per Section 3, Output 2). The brief cites bottom-line figures from the recalculated workbook, not from the model's own arithmetic. 3. The action list (per Section 3, Output 3). Items requiring reviewer or client action before filing. 4. The review checklist (per Section 3, Output 4). Structured sign-off document for the reviewing practitioner. Pre-populated from the working paper: every flag, every conservative default, every T2 position, every cross-check result becomes a checklist item the reviewer must explicitly accept or reject. Step 7 is not complete until all four are built and the recalc has reported success.
+0. **Build the outputs** — By the time you reach Step 7, you have a complete classification/computation for every item. Build the four mandatory outputs: 1. The Excel working paper (per Section 3, Output 1). Write the file, run the recalc script, verify zero formula errors. Loop until clean. 2. The reviewer brief (per Section 3, Output 2). The brief cites bottom-line figures from the recalculated workbook, not from the model's own arithmetic. 3. The action list (per Section 3, Output 3). Items requiring reviewer or client action before filing. 4. The review checklist (per Section 3, Output 4). Structured sign-off document for the reviewing practitioner. Pre-populated from the working paper: every flag, every conservative default, every T2 position, every cross-check result becomes a checklist item the reviewer must explicitly accept or reject. Step 7 is not complete until all four are built and the recalc has reported success.
 
 ### Step 7.5 -- Review pass (where the content skill requires it)
 
@@ -103,6 +107,8 @@ You are helping prepare a tax or compliance filing. The output will be reviewed 
 ## Section 3 -- Output specification
 
 Four outputs per engagement. All four are mandatory. Never produce one without the others.
+
+These are four logical outputs, not a requirement for four separate files. Add the domain's outputs and supporting schedules, retaining each named component. A refusal before computation produces its message and scope trace in the reply; it does not produce a partially classified return or require a completed workbook and normal reviewer brief.
 
 ### Output 1 -- Excel working paper
 
@@ -125,7 +131,9 @@ Four outputs per engagement. All four are mandatory. Never produce one without t
 | K | Reviewer attention reason if Y | Black |
 | L | Excluded? Reason if yes | Black |
 
-- **Row completeness and flag rules** — Every item in the source data appears as one row. Excluded items have a reason in column L. Default-applied items have "Y" in column H. Reviewer attention items have "Y" in column J.  _(unsure)_
+**Domain column mapping.** A domain may retain its established columns, such as the VAT return-box column. Record a map from each universal field above to its named column in the workbook and reviewer brief. Add columns for missing citation, default reason and reviewer-attention fields; do not overwrite a domain field. Apply row checks and the checklist using this map. Without a domain map, use A to L above.
+
+- **Row completeness and flag rules** - Every source item appears as one row. Record exclusion reasons, default flags and reviewer attention in their mapped fields. In the default layout these are L, H and J respectively.
 - **Summary sheet(s)** — Summary sheet(s) -- one row per classification code, with totals computed via `=SUMIFS()` formulas referencing the Transactions sheet. Formulas, not hardcoded values.  _(unsure)_
 - **Filing form sheet** — Filing form sheet (where applicable) -- final filing-ready figures structured to match the jurisdiction's actual form layout. Cross-sheet references in green text.  _(unsure)_
 - **Color conventions** — Color conventions (from the xlsx skill): Blue text: hardcoded inputs from source data; Black text: formulas; Green text: cross-sheet references; Yellow background: cells requiring reviewer attention.  _(xlsx skill)_
@@ -243,7 +251,7 @@ For each high flag from the reviewer brief:
 SECTION B: CONSERVATIVE DEFAULTS APPLIED
 ═══════════════════════════════════════════════════════════════
 
-For each conservative default from the working paper (column H = Y):
+For each conservative default from the working paper (the mapped default-applied field is Y; column H in the default layout):
 
 □ DEFAULT-[N]: [Item description] — [amount]
   Default applied: [what was assumed]
@@ -381,7 +389,7 @@ Check 6 -- No double-counting. Each item has exactly one classification code or 
 
 Check 7 -- Every position has a primary source citation. Spot-check at least five citations -- they must point to identifiable primary sources in the relevant jurisdiction.
 Check 8 -- Citations are period-appropriate. Citations reference the version applicable to the period being prepared.
-Check 9 -- No invented citations. Every citation refers to a source that actually exists. If uncertain, cite the statute and flag for reviewer verification.
+Check 9 -- No invented citations. Every citation refers to an identifiable primary source applicable to the requested period. An unresolved source condition requires Needs Input or the applicable refusal before calculation; a reviewer flag cannot establish unknown law.
 
 ### Cross-document consistency checks
 
@@ -391,9 +399,9 @@ Check 12 -- Bottom line is consistent across documents. The bottom-line figure i
 
 ### Conservatism, scope, and refusal checks
 
-Check 13 -- Conservative defaults are actually conservative. For every default applied, the chosen treatment costs the taxpayer more tax than the alternative. If a default would reduce liability, it is misclassified -- fix it.
+Check 13 -- Defaults are authorised and their impact is disclosed. Each default resolves a missing fact under established law and is expressly permitted by the country guide. Verify its stated alternative and cash impact. Apply the guide's lawful liability ordering where it permits one; a higher amount cannot establish unknown law or justify underpaying an employee.
 Check 14 -- Scope is respected. No position in the brief addresses anything outside the loaded content skill's scope. Out-of-scope output is stripped and noted.
-Check 15 -- Refusal sweep with named codes. The brief contains an explicit refusal trace listing every R-code from the prohibition framework AND the content skill's catalogue, with a one-sentence note on why each was cleared or fired.
+Check 15 -- Refusal sweep with named codes. The brief contains an explicit refusal trace listing every R-code from the prohibition framework and loaded catalogues, with a one-sentence note on why each was cleared or fired. If refusal occurs before a brief exists, include the trace in the reply. A referenced code without a loaded trigger and exact message is a configuration gap requiring Needs Input, not an invented refusal.
 Check 16 -- Reviewer-actionable language. The brief is written for a credentialed professional. Form references are present. Technical terms are precise. Layperson softening is absent.
 
 ### Refusal discipline checks

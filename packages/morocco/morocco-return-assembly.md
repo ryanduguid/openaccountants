@@ -6,13 +6,17 @@ version: 0.1
 jurisdiction: MA
 tax_year: 2026
 tier: 2
-last_updated: 2026-09-28
+review_status: pending_review
+last_updated: 2026-10-15
 category: orchestrator
 depends_on:
   - ma-freelance-intake
 ---
 
 # Morocco Return Assembly — Filing Package Orchestrator (assemblage de la déclaration marocaine)
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -36,15 +40,15 @@ Collect these from the upstream skills before assembling. Do not re-interrogate 
 |---|---|---|
 | Residency, activity type (commerciale/artisanale vs services/profession libérale), confirmed regime | `ma-freelance-intake` | Routing the declaration |
 | Annual turnover (chiffre d'affaires) in MAD | intake / regime skill | Band checks, ceiling-breach flag |
-| ICE, RC number, identifiant fiscal (IF) | intake | All DGI / SIMPL filings |
+| Redacted business reference; reviewer confirms holding ICE, RC number and identifiant fiscal (IF) | intake confirmation only | Reviewer completes identifying fields outside agent outputs |
 | Flat-tax turnover figure (1% commercial / 2% services) | `ma-auto-entrepreneur` | Auto-entrepreneur quarterly declaration |
 | CPU liability figure | `ma-cpu` | CPU annual declaration |
 | Net profit (résultat net) under RNR or RNS | `ma-income-tax` | IR déclaration du revenu global |
 | TVA output/input position, declaration frequency | `morocco-vat` | TVA returns (if registered) |
 | CNSS / AMO registration status and contribution figures | `ma-social-contributions` | CNSS filing |
-| SIMPL / platform credentials | intake | Submission |
+| Reviewer confirms SIMPL / platform access readiness | confirmation only; credentials remain outside the agent | Reviewer submission |
 
-If a content skill did not run or returned no validated output, **note the gap in the reviewer brief and continue** with available data rather than halting.
+If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.
 
 ---
 
@@ -93,6 +97,8 @@ All SIMPL filings are electronic; payment is electronic (télépaiement) at fili
 
 ## SIMPL submission
 
+The following steps are a checklist for the credentialed reviewer after sign-off. The agent prepares the package and does not collect credentials or identifiers, authenticate, submit or pay. Record only redacted confirmation references supplied by the reviewer.
+
 1. **Account / platform.** For CPU and IR (RNR/RNS), log in to **SIMPL** (simpl.tax.gov.ma) using the identifiant fiscal (IF) and SIMPL credentials. For **auto-entrepreneur**, use the national auto-entrepreneur platform instead — these are separate systems.
 2. **Select the correct form** — one income-tax declaration only (auto-entrepreneur turnover *or* CPU *or* IR revenu global), plus the TVA return at the frequency `morocco-vat` set, if registered.
 3. **Attach schedules** — accounts / P&L (états de synthèse where required under RNR), TVA reconciliation, and supporting workpapers from the content skills.
@@ -110,7 +116,7 @@ All SIMPL filings are electronic; payment is electronic (télépaiement) at fili
 - [ ] TVA returns prepared at the correct frequency (monthly vs quarterly per `morocco-vat`), or confirmed not registered.
 - [ ] CNSS / AMO registration current and contributions reconciled.
 - [ ] Deadlines mapped to dates (calendar above); IR ~1 May and TVA 20th-of-month dates confirmed on DGI.
-- [ ] Correct portal selected (SIMPL for CPU/IR; auto-entrepreneur platform for flat tax); credentials working.
+- [ ] Reviewer confirms the correct portal (SIMPL for CPU/IR; auto-entrepreneur platform for flat tax) and working access without sharing credentials.
 - [ ] Télépaiement method ready; expected tax-due figure available from content skills.
 - [ ] All open flags (deadlines, ceiling breach, data gaps, conservative defaults) listed in the reviewer brief.
 - [ ] Package routed for **qualified Moroccan expert-comptable** sign-off before any submission.

@@ -5,7 +5,7 @@ version: 0.3
 jurisdiction: US
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-15
 reviewed_by: James Wallach
 review_status: pending_review
 tier: 2
@@ -16,6 +16,9 @@ depends_on:
 
 # US Federal Return Assembly
 
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
+
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
 **When this skill is invoked, either directly or via `us-ca-return-assembly`, execute the full workflow without pausing for user permission.**
@@ -23,11 +26,11 @@ depends_on:
 - **Do NOT ask "how deep should I go"** or "do you want the full package." The answer is always: full package, all deliverables, every step.
 - **Do NOT announce your token budget.** Run the work.
 - **Do NOT pause between content skills for status updates.** One consolidated status message at the end is fine. Per-skill status between each upstream skill is noise.
-- **Self-checks are targets, not blockers.** If a check fails, flag it in the reviewer brief and continue. Do not halt the workflow for ambiguous edge cases — the reviewer handles those.
-- **If you run out of context mid-execution,** finish the computation work (numbers, positions, flags) first, then produce whatever formatted deliverables you can, and state clearly at the end which were not produced. Partial output with an honest status beats a question asking permission.
+- **Check failure handling.** Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
+- **If context is exhausted,** preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish.
 - **Primary source citations belong in the final reviewer brief,** not in intermediate computation steps. Compute first, cite once at the end.
 
-**Failure mode to avoid:** halting mid-execution to ask the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," pick the most defensible path and proceed, flagging the decision in the reviewer brief.
+**Failure mode to avoid:** halting mid-execution to ask the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," resolve the pacing choice within the confirmed scope and controls; hold any unresolved evidence, rule or failed check for the required input or refusal.
 
 ## What this file is
 
@@ -280,7 +283,7 @@ The Alex Chen test run revealed a failure mode: building the Excel workbook by i
 
 **Why this matters:** Excel workbooks that claim to be the authoritative computation but contain formula bugs are worse than no workbook. A reviewer who trusts the workbook and finds errors loses confidence in the entire package. Get the workbook right or don't ship it.
 
-**If you run out of context mid-workbook build:** ship a simplified flat-value workbook (just the final numbers, no cross-sheet formulas) with a note in the reviewer brief that "the live-formula working paper was not completed due to execution constraints; numbers are final but not interactively recomputable." Flat values with an honest note beat broken formulas.
+**If context is exhausted during workbook construction:** preserve the supported calculations and evidence for resumption. Record the unfinished live-formula and recalculation requirements and withhold delivery. A flat-value workbook does not satisfy the mandatory working-paper checks.
 
 ### Artifact 1: Excel working paper (`[taxpayer]_2025_federal_working_paper.xlsx`)
 

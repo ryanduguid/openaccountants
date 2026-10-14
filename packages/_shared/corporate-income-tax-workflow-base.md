@@ -1,14 +1,16 @@
 ---
 name: corporate-income-tax-workflow-base
-description: Tier 1 workflow base for corporate income tax skills serving small, medium, and large companies across jurisdictions. Contains the workflow runbook, conservative defaults principle, structured intake form, reviewer-oriented output spec, self-checks, global refusal catalogue, citation discipline, and content skill slot contract. Workflow architecture only — no tax content, no rates, no thresholds, no form line references, no year-specific figures. MUST be loaded alongside at least one content skill that provides actual corporate income tax rules and current-year figures for a specific jurisdiction. Assumes a human reviewer credentialed under the local equivalent of Circular 230 (CPA, CA, CTA, EA, Chartered Tax Advisor, Steuerberater, expert-comptable, commercialista, etc.) reviews and signs off on every output before it reaches the taxpayer or the tax authority.
+description: Workflow base for corporate income tax skills serving small, medium, and large companies across jurisdictions. Contains the workflow runbook, conservative defaults principle, structured intake form, reviewer-oriented output spec, self-checks, global refusal catalogue, citation discipline, and content skill slot contract. Workflow architecture only — no tax content, no rates, no thresholds, no form line references, no year-specific figures. MUST be loaded alongside at least one content skill that provides actual corporate income tax rules and current-year figures for a specific jurisdiction. Assumes a human reviewer credentialed under the local equivalent of Circular 230 (CPA, CA, CTA, EA, Chartered Tax Advisor, Steuerberater, expert-comptable, commercialista, etc.) reviews and signs off on every output before it reaches the taxpayer or the tax authority.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-10-14
+last_updated: 2026-10-15
 review_status: pending_review
 category: foundation
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
+depends_on:
+  - workflow-base
 ---
 
 # Corporate Income Tax Workflow Base
@@ -17,7 +19,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## What this file is
 
-This is the **Tier 1 workflow base** for any corporate income tax content skill. It does not contain country-specific tax rules. It contains:
+**Shared controls.** Load `workflow-base` with this domain base and the required country or regional companions. Its source and period gates, profile confirmation, refusal handling, reviewer delivery, four universal outputs and 18 checks govern this workflow. This domain adds every intake/content slot, output and check specified below. Combine identifiable output components only as the universal base permits. Every default listed below requires established applicable law and explicit permission in the country guide for that missing fact; otherwise use Needs Input. A missing required source condition, slot, refusal message or runtime capability prevents a deliverable financial result. Preserve any exact tool-unavailable stop message below.
+
+
+This is the **workflow base** for any corporate income tax content skill. It does not contain country-specific tax rules. It contains:
 
 - The standard runbook for preparing a corporate income tax computation, return, and reviewer brief
 - The structured intake form for gathering inputs from a corporate client
@@ -35,16 +40,16 @@ This is the **Tier 1 workflow base** for any corporate income tax content skill.
 This base assumes:
 
 - The **taxpayer** is a **corporation** (incorporated entity) — not a partnership, trust, sole proprietorship, or individual
-- The **filing currency** is the corporation's functional currency
+- Establish functional, presentation and filing currencies separately. The country's verified filing rules determine the filing currency and any conversion basis, date and exchange-rate evidence. An unknown conversion rule requires Needs Input.
 - The corporation maintains accounting records under either local GAAP or IFRS (see `ifrs-local-gaap-reconciliation.md` for reconciliation)
 - A **credentialed reviewer** (CPA / CA / CTA / Steuerberater / equivalent) reviews and signs off on every output before it is filed
 - The corporation is in scope for the country's general corporate income tax — NOT a special regime (banking, insurance, REIT, fund, oil and gas, mining, shipping, aviation, charity — these require sector skills)
 
 ## Section 2 — The runbook
 
-### Step 0 — Onboarding (always first)
+### Step 0 — Complete the corporate onboarding fields
 
-0. **Onboarding intake** — Run the intake form (Section 4). Confirm: - Country of incorporation - Country of tax residence (place of effective management — POEM) - Filing year-end date - Corporate size and threshold tests (small / medium / large / MNE) - Accounting framework (local GAAP / IFRS / Ind AS / etc.) - Any consolidated / group tax filing status (Organschaft, intégration fiscale, group relief, etc.) - Any in-scope regime overlays (Pillar Two, CFC, BEAT, GILTI) If any of: cross-border activities; multiple shareholders with different tax residences; loss-making with restructuring; ongoing audit; M&A in the year → flag to reviewer before computation.
+0. **Onboarding intake** - Complete all 26 fields in Section 4 within the universal read, infer and confirm steps, using supplied evidence before asking for missing facts. Confirm incorporation, tax residence and POEM, year-end, corporate size, accounting framework, group filing status and applicable overlays. Flag cross-border activity, shareholders with different tax residences, restructuring, audits and M&A for review. Before computation, run all loaded refusal catalogues. A flag or intake confirmation cannot override a fired refusal, including R-CIT-6 for a current audit or notice of deficiency.
 
 ### Step 1 — Reconcile accounting profit to tax profit
 
@@ -91,7 +96,7 @@ This base assumes:
 
 ## Section 3 — Conservative defaults principle
 
-- **Conservative defaults principle** — When uncertain about any position, choose the treatment that costs more or imposes stricter compliance, never less. Your reviewer can correct an over-conservative position. They cannot easily recover from an aggressive one. Applied to corporate income tax: - Where a deduction is uncertain → flag, do not claim - Where income classification is uncertain → use the higher-taxed classification - Where a provision could be deductible OR non-deductible → exclude from claim, document the alternative - Where an exemption is uncertain → treat as taxable - Where treaty access is uncertain → withhold at domestic rate - Where loss carryforward is uncertain → defer recognition of the DTA
+- **Conservative defaults principle** - Use only a missing-fact default expressly permitted by the country guide under established law. Disclose the alternative and impact. The examples below apply only with that permission and the required legal conditions; otherwise return Needs Input: - Deduction evidence missing: flag and do not claim - Evidence for an income classification missing: use the permitted classification - Provision evidence missing: exclude the claim and document the alternative - Exemption eligibility evidence missing: use the established taxable treatment - Treaty eligibility evidence missing: use the established domestic withholding treatment - Loss carryforward evidence missing: defer DTA recognition only under the applicable accounting rule. A higher amount cannot resolve unknown law or a recognition rule.
 
 ## Section 4 — Structured intake form
 
@@ -99,7 +104,7 @@ Every corporate income tax computation begins with:
 
 ```
 [BASIC INFORMATION]
-1. Corporation legal name and tax ID
+1. Corporation reference and confirmation that the reviewer holds its legal name and tax ID (redact identifiers from agent inputs)
 2. Country of incorporation
 3. Country of tax residence (and any conflict with incorporation country)
 4. Tax year-end (calendar year, financial year, accounting period)
@@ -200,6 +205,8 @@ Refuse to compute and escalate to a credentialed practitioner if:
 - **R-CIT-12** — The corporation has dual-resident status or hybrid mismatches — escalate
 
 **Global refusal catalogue table**
+
+The table's complete Trigger text is also the canonical message for its code. On refusal, output the code, a colon and space, then that text verbatim. Retain the action in the text; do not invent a replacement message. A missing trigger or message in another loaded catalogue requires Needs Input. Record the cleared or fired codes in the reviewer brief, or in the reply if refusal occurs before a brief exists.
 
 | Refusal | Trigger |
 | --- | --- |

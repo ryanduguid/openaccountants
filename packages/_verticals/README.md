@@ -10,3 +10,4 @@ Available verticals: Banking Sector, Charity Nonprofit, Construction Sector, Con
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
+- [`workflow-base.md`](../_shared/workflow-base.md)

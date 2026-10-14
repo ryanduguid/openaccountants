@@ -4,7 +4,7 @@ description: Final orchestrator skill that assembles the complete Japanese filin
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-15
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -12,6 +12,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # JP Return Assembly
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 ## Japan Return Assembly Skill v1.0
 
@@ -23,15 +26,15 @@ Specifically:
 
 - Do NOT ask the user "how deep do you want me to go" or "do you want the full package" or any variant. The user asked for their tax returns. They want their tax returns. Produce them.
 - Do NOT announce how many tokens or tool calls this will take. Execute.
-- Do NOT ask which deliverables to prioritise. Produce all deliverables listed in Section 4. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why.
+- Do NOT ask which deliverables to prioritise. Produce all deliverables listed in Section 4. If context is exhausted, preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish.
 - Do NOT re-validate scope that intake already validated. If `jp-freelance-intake` produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about residency, business structure, or anything else intake already captured.
 - Do NOT pause between content skills to check in. Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine.
-- Self-checks are targets, not blockers. If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check had an ambiguous answer.
+- Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - Primary source citations go in the final reviewer brief, not in intermediate computation steps.
 
 The user has already been told (by the intake skill) that the final package requires 税理士 signoff before filing. State it once in the final output and move on.
 
-Failure mode to avoid: The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
+Failure mode to avoid: The skill halts mid-execution and asks the user a meta-question about workflow pacing. Resolve routine pacing choices within the confirmed scope. A missing fact, rule or failed check requires the input or refusal handling above; a reviewer flag cannot replace it.
 
 ## What this file is
 
@@ -51,7 +54,7 @@ Produces the complete Japanese filing package for:
 
 The skill enforces the following execution order:
 
-If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
+If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.
 
 0. **japan-consumption-tax step** — 消費税確定申告書 (consumption tax return). Runs first because consumption tax figures affect income tax computation (consumption tax paid is a deductible expense for income tax if using tax-inclusive accounting, or a reconciliation item if using tax-exclusive). Determine method: 本則課税 (standard), 簡易課税 (simplified), or 2割特例 (20% special provision). For 本則課税: compute 課税売上 (taxable sales), 課税仕入れ (taxable purchases), 仕入税額控除 (input tax credit). For 簡易課税: apply みなし仕入率 (deemed purchase rate) by 事業区分 (business category: 第1種~第6種, e.g., services = 第5種 at 50%). For 2割特例: tax = 売上消費税 x 20% (available through 令和8年9月30日を含む課税期間). Verify eligibility for chosen method. Output: 消費税額 due, method used, form values.
 0. **japan-income-tax step** — 所得税確定申告書 with 青色申告決算書 or 収支内訳書. Depends on consumption tax: if 税込経理 (tax-inclusive accounting), consumption tax paid is an expense (租税公課); if 税抜経理 (tax-exclusive), no impact on income but reconciliation needed. Compute 売上 (revenue), 売上原価 (COGS if applicable), 経費 (expenses by category), 差引金額 (net income before adjustments). Apply 青色申告特別控除 (blue return special deduction): ¥650,000 (e-Tax + double-entry), ¥550,000 (double-entry paper), ¥100,000 (simplified). Compute 事業所得 (business income). Add other income categories if applicable. Apply 所得控除 (income deductions): 基礎控除 ¥480,000, 社会保険料控除, 小規模企業共済等掛金控除, 生命保険料控除, 地震保険料控除, 配偶者控除/特別控除, 扶養控除, 医療費控除, 寄附金控除 (ふるさと納税), etc. Compute 課税所得 (taxable income). Apply 所得税率 (progressive rates): 5% up to ¥1,950,000; 10% up to ¥3,300,000; 20% up to ¥6,950,000; 23% up to ¥9,000,000; 33% up to ¥18,000,000; 40% up to ¥40,000,000; 45% above. Apply 復興特別所得税 (reconstruction special income tax): 2.1% of income tax. Apply 配当控除 (dividend credit) if applicable. Apply 住宅借入金等特別控除 (housing loan deduction) if applicable. Credit 源泉徴収税額 (withholding tax) and 予定納税額 (estimated tax paid). Output: 申告納税額 (tax payable) or 還付金 (refund), all form line values.
@@ -360,16 +363,16 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ## Section 5 -- Refusals
 
-- **R-JP-A1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(Section 5)_
-- **R-JP-A2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(Section 5)_
-- **R-JP-A3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(Section 5)_
+- **R-JP-A1** — Upstream skill did not run. Name the missing skill and hold its dependent calculations and the complete filing package. Independent supported preparation may continue with its limited scope stated.  _(Section 5)_
+- **R-JP-A2** — Upstream self-check failed. Name the failed check, correct it and rerun before using the affected result. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5)_
+- **R-JP-A3** — Cross-skill reconciliation failed. Name the reconciliation and discrepancy, correct it and rerun. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5)_
 - **R-JP-A4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(Section 5)_
 - **R-JP-A5** — Out-of-scope item discovered during assembly. E.g., 不動産の譲渡所得, 山林所得, or complex international tax. Flag and exclude from computation.  _(Section 5)_
 - **R-JP-A6** — Classification dispute risk. If the 事業所得 vs 雑所得 boundary is questionable (e.g., low revenue, no 開業届, no proper books), prominently flag in reviewer brief. The 税理士 must confirm the classification is defensible.  _(Section 5)_
 
 ## Section 6 -- Self-checks
 
-- **Check JP1** — All upstream skills executed. japan-consumption-tax, japan-income-tax, japan-social-insurance all produced output. jp-estimated-tax produced output or 予定納税 was computed from income tax output.  _(Section 6)_
+- **Check JP1** - Every upstream result required for the confirmed scope is supported and passes its producer checks. Record an evidenced reason for each inapplicable obligation. A missing, placeholder, refused, Needs Input or invalid result fails this check and holds its dependent results and the complete filing package.  _(Section 6)_
 - **Check JP2** — Revenue matches across consumption tax and income tax. 課税売上高 = 決算書 売上金額 within ¥1 tolerance (adjusting for accounting method: 税込 vs 税抜).  _(Section 6)_
 - **Check JP3** — 事業所得 classification is defensible. 開業届 filed, blue return approved (if blue), proper bookkeeping maintained. If any factor is missing, flag.  _(Section 6)_
 - **Check JP4** — 青色申告特別控除 level is correct. ¥650,000 only if e-Tax AND double-entry. ¥550,000 only if double-entry. Otherwise ¥100,000 or zero (white return).  _(Section 6)_
@@ -392,7 +395,7 @@ The final output is three files:
 
 3. `client_action_list.md` -- Single markdown file with step-by-step actions: immediate filings and payments, 予定納税 schedule, 住民税 reference, 消費税 中間納付 if applicable, ongoing compliance reminders.
 
-If execution runs out of context mid-build: produce whatever is complete, then state at the end which of the three files were not produced or are partial.
+If context is exhausted, preserve the supported calculations and evidence for resumption, identify incomplete deliverables and withhold the complete filing package until every mandatory output and check is complete.
 
 All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.
 

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T19:57:30+00:00",
+ "generated_at": "2026-10-14T21:19:10+00:00",
  "counts": {
   "guides": 1889,
   "jurisdictions": 245,
@@ -1421,7 +1421,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-14"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "cross-border-workflow-base",
@@ -1510,9 +1510,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": null,
-   "last_updated": "2026-10-14"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "payroll-workflow-base",
@@ -1523,9 +1523,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": null,
-   "last_updated": "2026-10-14"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "social-contributions-workflow-base",
@@ -1536,9 +1536,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": null,
-   "last_updated": "2026-10-14"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "statutory-audit-workflow-base",
@@ -1603,7 +1603,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-14"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "wealth-estate-tax-workflow-base",
@@ -1629,7 +1629,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-12"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "amazon-seller-integration",
@@ -21376,7 +21376,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "bd-freelance-intake",
@@ -21428,7 +21428,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "ca-freelance-intake",
@@ -21454,7 +21454,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "de-freelance-intake",
@@ -21480,7 +21480,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "eg-freelance-intake",
@@ -21506,7 +21506,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "es-freelance-intake",
@@ -21532,7 +21532,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "fr-freelance-intake",
@@ -21558,7 +21558,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "global-router",
@@ -21595,9 +21595,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Mayur Deokar",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "jp-freelance-intake",
@@ -21623,7 +21623,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "kz-freelance-intake",
@@ -21673,9 +21673,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "mt-freelance-intake",
@@ -21701,7 +21701,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "mx-freelance-intake",
@@ -21753,7 +21753,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "pk-freelance-intake",
@@ -21779,7 +21779,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "ru-freelance-intake",
@@ -21857,7 +21857,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "us-ca-freelance-intake",
@@ -21883,7 +21883,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "us-federal-return-assembly",
@@ -21896,7 +21896,7 @@
    "reviewed_by": "James Wallach",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "us-ny-freelance-intake",
@@ -21922,7 +21922,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "us-tx-freelance-intake",
@@ -21948,7 +21948,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "global-ad-platforms",

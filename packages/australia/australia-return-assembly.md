@@ -6,13 +6,16 @@ jurisdiction: AU
 category: orchestrator
 tax_year: 2025
 tax_year_notes: "2025-26"
-last_updated: 2026-10-11
+last_updated: 2026-10-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # AU Return Assembly
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 ## Australia Return Assembly Skill v0.5
 
@@ -24,15 +27,15 @@ Specifically:
 
 - **Do NOT ask the user "how deep do you want me to go"** or "do you want the full package" or any variant. The user asked for their tax returns. They want their tax returns. Produce them.
 - **Do NOT announce how many tokens or tool calls this will take.** Execute.
-- **Do NOT ask which deliverables to prioritise.** Produce all deliverables listed in Section 4. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why.
+- **Do NOT ask which deliverables to prioritise.** Produce all deliverables listed in Section 4. If context is exhausted, preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish.
 - **Do NOT re-validate scope that intake already validated.** If `au-freelance-intake` produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about residency, business structure, or anything else intake already captured.
 - **Do NOT pause between content skills to check in.** Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine.
-- **Self-checks are targets, not blockers.** If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check had an ambiguous answer.
+- **Check failure handling.** Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - **Primary source citations go in the final reviewer brief, not in intermediate computation steps.**
 
 **The user has already been told (by the intake skill) that the final package requires registered tax agent signoff before lodging. State it once in the final output and move on.**
 
-**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
+**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. Resolve routine pacing choices within the confirmed scope. A missing fact, rule or failed check requires the input or refusal handling above; a reviewer flag cannot replace it.
 
 ## What this file is
 
@@ -46,13 +49,13 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Section 2 -- Execution order and dependency chain
 
-0. **Run australia-gst first** — BAS return (quarterly, if GST registered). Runs first because GST turnover figures feed into the ITR. For GST-registered: prepare any outstanding quarterly BAS; verify previously lodged quarters. Output: BAS box values (1A GST on sales, 1B GST on purchases), net GST position, turnover (ex-GST). If australia-gst cannot produce validated output, compute BAS figures from the intake package data and flag the gap in the reviewer brief.
-0. **Run au-individual-return second** — Individual tax return (ITR). Depends on BAS output: business income must use ex-GST turnover for GST-registered traders. Depends on BAS output: GST credits are excluded from deductible expenses (net amounts only). Output: ITR label values, taxable income, tax on taxable income, tax offsets, tax liability. If au-individual-return cannot produce validated output, compute ITR figures from the intake package data and flag the gap in the reviewer brief.
-0. **Run au-super-guarantee third** — Voluntary super contributions reconciliation. Depends on ITR: personal deductible contributions reduce taxable income. Verifies contributions are within the $30,000 concessional cap for 2025-26, plus any eligible carry-forward amounts. Output: contribution amounts, cap utilisation, any excess contributions. If au-super-guarantee cannot produce validated output, compute super figures from the intake package data and flag the gap in the reviewer brief.
-0. **Run au-medicare-levy fourth** — Medicare levy and surcharge. Depends on ITR: levy is 2% of taxable income; surcharge applies if no PHI and income above threshold. Checks PHI status from intake package. Output: Medicare levy amount, surcharge amount (if applicable), PHI rebate adjustment. If au-medicare-levy cannot produce validated output, compute Medicare figures from the intake package data and flag the gap in the reviewer brief.
-0. **Run au-payg-instalments fifth** — PAYG instalment schedule (next year). Depends on ITR: instalment income and rate for 2026-27 based on the 2025-26 return. Reconciles instalments paid during 2025-26 against final tax liability. Output: instalment credit for current year, next-year instalment schedule. If au-payg-instalments cannot produce validated output, compute PAYG instalment figures from the notice of assessment and flag the gap in the reviewer brief.
+0. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
 
-- **Upstream failure handling** — If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.  _(Section 2 -- Execution order and dependency chain)_
+- **Upstream failure handling** — If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.  _(Section 2 -- Execution order and dependency chain)_
 
 ## Section 3 -- Cross-skill reconciliation
 
@@ -141,7 +144,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 ## Executive Summary
 - Filing status: [Single / Married / etc.]
 - Residence: Australia (full-year), [State]
-- Business: Sole trader, ABN [number]
+- Business: Sole trader, [stable redacted reference]; reviewer confirms holding the ABN outside agent inputs and outputs
 - GST registration: Yes / No
 - Business income (ex-GST): $X
 - Total deductions: $X
@@ -289,15 +292,15 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Section 5 -- Refusals
 
-- **R-AU-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(Section 5 -- Refusals)_
-- **R-AU-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(Section 5 -- Refusals)_
-- **R-AU-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(Section 5 -- Refusals)_
+- **R-AU-1** — Upstream skill did not run. Name the missing skill and hold its dependent calculations and the complete filing package. Independent supported preparation may continue with its limited scope stated.  _(Section 5 -- Refusals)_
+- **R-AU-2** — Upstream self-check failed. Name the failed check, correct it and rerun before using the affected result. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5 -- Refusals)_
+- **R-AU-3** — Cross-skill reconciliation failed. Name the reconciliation and discrepancy, correct it and rerun. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5 -- Refusals)_
 - **R-AU-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(Section 5 -- Refusals)_
 - **R-AU-5** — Out-of-scope item discovered during assembly. E.g., rental income requiring rental schedule, capital gains requiring CGT schedule, foreign income requiring FITO. Flag and exclude from computation.  _(Section 5 -- Refusals)_
 
 ## Section 6 -- Self-checks
 
-- **Check AU1 -- All upstream skills executed** — australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy all produced output. au-payg-instalments produced output or was computed from ITR figures.  _(Section 6 -- Self-checks)_
+- **Check AU1 -- All upstream skills executed** - Every upstream result required for the confirmed scope is supported and passes its producer checks. Record an evidenced reason for each inapplicable obligation. A missing, placeholder, refused, Needs Input or invalid result fails this check and holds its dependent results and the complete filing package.  _(Section 6 -- Self-checks)_
 - **Check AU2 -- BAS G1 matches ITR business income** — Within $1 tolerance.  _(Section 6 -- Self-checks)_
 - **Check AU3 -- Super within concessional cap** — Total concessional contributions do not exceed $30,000 for 2025-26 (or the cap plus carry-forward unused amounts).  _(Section 6 -- Self-checks)_
 - **Check AU4 -- Medicare levy surcharge correctly assessed** — MLS applied only if no adequate PHI and income above threshold; MLS not applied if PHI held for full year.  _(Section 6 -- Self-checks)_
@@ -316,7 +319,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 - **Output file 2: reviewer brief** — `reviewer_brief.md` -- Single markdown file covering all sections from Section 4 above: executive summary, BAS, ITR, super, Medicare, PAYG, cross-skill reconciliation, flags, positions, planning notes.  _(Section 7 -- Output files)_
 - **Output file 3: client action list** — `client_action_list.md` -- Single markdown file with step-by-step actions: immediate lodgements and payments, quarterly calendar for 2026-27, ongoing compliance reminders.  _(Section 7 -- Output files)_
 
-**If execution runs out of context mid-build:** produce whatever is complete, then state at the end which of the three files were not produced or are partial.
+**If context is exhausted:** preserve the supported calculations and evidence for resumption, identify incomplete deliverables and withhold the complete filing package until every mandatory output and check is complete.
 
 **All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.**
 
@@ -328,7 +331,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 - `au-individual-return` -- ITR label values and computation output
 - `au-super-guarantee` -- Super reconciliation output
 - `au-medicare-levy` -- Medicare levy and surcharge output
-- `au-payg-instalments` -- Instalment schedule (or fallback computation)
+- `au-payg-instalments` -- Instalment schedule (validated output required)
 
 **Outputs:** The final reviewer package. No downstream skill.
 
@@ -341,7 +344,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 5. Capital gains tax (CGT) schedule is not supported -- if capital gains exist, the skill flags it but the CGT schedule must be completed separately.
 6. Foreign income and foreign income tax offset (FITO) are out of scope.
 7. Multi-year depreciation tracking assumes the prior year schedule is provided. If not, only current-year acquisitions are depreciated.
-8. If an upstream content skill cannot produce validated output, the assembly skill computes the figures directly from the intake package and flags the gap.
+8. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
 9. The package is complete only for the 2025-26 tax year; 2026-27 appears only as prospective planning.
 
 ### Change log

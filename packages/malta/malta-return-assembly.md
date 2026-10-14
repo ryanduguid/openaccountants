@@ -5,13 +5,16 @@ version: 0.1
 jurisdiction: MT
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # MT Return Assembly
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 ## Malta Return Assembly Skill v0.1
 
@@ -23,15 +26,15 @@ Specifically:
 
 - **Do NOT ask the user "how deep do you want me to go"** or "do you want the full package" or any variant. The user asked for their tax returns. They want their tax returns. Produce them.
 - **Do NOT announce how many tokens or tool calls this will take.** Execute.
-- **Do NOT ask which deliverables to prioritise.** Produce all deliverables listed in Section 8. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why.
+- **Do NOT ask which deliverables to prioritise.** Produce all deliverables listed in Section 8. If context is exhausted, preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish.
 - **Do NOT re-validate scope that intake already validated.** If `mt-freelance-intake` produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about residency, business structure, or anything else intake already captured.
 - **Do NOT pause between content skills to check in.** Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine.
-- **Self-checks are targets, not blockers.** If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check had an ambiguous answer.
+- **Check failure handling.** Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - **Primary source citations go in the final reviewer brief, not in intermediate computation steps.**
 
 **The user has already been told (by the intake skill) that the final package requires warranted accountant signoff before filing. State it once in the final output and move on.**
 
-**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
+**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. Resolve routine pacing choices within the confirmed scope. A missing fact, rule or failed check requires the input or refusal handling above; a reviewer flag cannot replace it.
 
 ## What this file is
 
@@ -52,9 +55,9 @@ Produces the complete Malta filing package for:
 0. **malta-vat-return** — Malta VAT return (quarterly for Article 10, annual declaration for Article 11) -- Runs first because VAT turnover figures feed into the TA24. For Article 10: prepare Q4 2025 VAT return if not yet filed; verify Q1-Q3 figures. For Article 11: prepare annual declaration; verify turnover remains under EUR 35,000. Output: VAT return box values, input VAT recovered/blocked, turnover (ex-VAT)
 0. **malta-income-tax** — TA24 self-employed return (annual) -- Depends on VAT output: gross income (Box 1) must use ex-VAT turnover for Article 10 clients. Depends on VAT output: blocked input VAT becomes a deductible expense in Box 2. Output: TA24 box values (Box 1 through Box 40), chargeable income, tax liability
 0. **malta-ssc** — Class 2 social security contributions (quarterly payments, annual reconciliation) -- Depends on TA24: SSC paid enters Box 20 of the TA24. Depends on prior year TA24 net income: SSC amount is based on prior year, not current. Output: annual SSC amount, category (SA/SB/SC), payments made vs amount due, any shortfall
-0. **mt-estimated-tax** — Provisional tax schedule (2026 forward-looking) -- Depends on TA24: provisional tax is based on the current year's final tax liability for next year. Status check: mt-estimated-tax is currently a Q4 stub. If the stub has substantive computation content, use it. If it is still a placeholder, compute provisional tax using the rules documented in malta-income-tax Step 5 (ITMA Chapter 372: 20%/30%/50% split) and flag in the reviewer brief that the dedicated skill was not available. Output: three instalment amounts and dates for 2026
+0. **mt-estimated-tax** — Provisional tax schedule (2026 forward-looking) -- Depends on TA24: provisional tax is based on the current year's final tax liability for next year. Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output. Output: three instalment amounts and dates for 2026
 
-- **Upstream failure handling** — If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.  _(Section 2)_
+- **Upstream failure handling** — If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.  _(Section 2)_
 
 ## Section 3 -- Cross-skill reconciliation
 
@@ -183,7 +186,7 @@ A EUR 500 printer: depreciated for income tax (25% x EUR 500 = EUR 125/year in B
 - Deductibility confirmed (Box 20)
 
 ## Provisional Tax (2026)
-[Content from mt-estimated-tax output, or computed from malta-income-tax Step 5 if stub]
+[Validated output from mt-estimated-tax; hold this component and dependent totals if unavailable]
 - Based on 2025 final tax liability (Box 35 minus Box 37)
 - 1st instalment: 20% -- due 30 April 2026
 - 2nd instalment: 30% -- due 31 August 2026
@@ -256,15 +259,15 @@ A EUR 500 printer: depreciated for income tax (25% x EUR 500 = EUR 125/year in B
 
 ## Section 5 -- Refusals
 
-- **R-MT-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(Section 5)_
-- **R-MT-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(Section 5)_
-- **R-MT-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(Section 5)_
+- **R-MT-1** — Upstream skill did not run. Name the missing skill and hold its dependent calculations and the complete filing package. Independent supported preparation may continue with its limited scope stated.  _(Section 5)_
+- **R-MT-2** — Upstream self-check failed. Name the failed check, correct it and rerun before using the affected result. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5)_
+- **R-MT-3** — Cross-skill reconciliation failed. Name the reconciliation and discrepancy, correct it and rerun. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5)_
 - **R-MT-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(Section 5)_
 - **R-MT-5** — Out-of-scope item discovered during assembly. E.g., rental income requiring supplementary forms, foreign source income, or partnership income. Flag and exclude from computation.  _(Section 5)_
 
 ## Section 6 -- Self-checks
 
-- **Check MT1** — All upstream skills executed. malta-vat-return, malta-income-tax, malta-ssc all produced output. mt-estimated-tax produced output or was computed from malta-income-tax Step 5.  _(Section 6)_
+- **Check MT1** - Every upstream result required for the confirmed scope is supported and passes its producer checks. Record an evidenced reason for each inapplicable obligation. A missing, placeholder, refused, Needs Input or invalid result fails this check and holds its dependent results and the complete filing package.  _(Section 6)_
 - **Check MT2** — VAT turnover matches TA24 Box 1. Within EUR 1 tolerance.  _(Section 6)_
 - **Check MT3** — SSC uses correct prior-year base. Prior year net income matches the figure used for SSC category determination.  _(Section 6)_
 - **Check MT4** — Provisional tax matches prior-year liability. 20%+30%+50% = 100% of prior year final tax.  _(Section 6)_
@@ -287,7 +290,7 @@ The final output is **three files**:
 
 3. **`client_action_list.md`** -- Single markdown file with step-by-step actions: immediate filings and payments, quarterly calendar for 2026, ongoing compliance reminders.
 
-**If execution runs out of context mid-build:** produce whatever is complete, then state at the end which of the three files were not produced or are partial.
+**If context is exhausted:** preserve the supported calculations and evidence for resumption, identify incomplete deliverables and withhold the complete filing package until every mandatory output and check is complete.
 
 **All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.**
 
@@ -298,7 +301,7 @@ The final output is **three files**:
 - `malta-vat-return` -- VAT return box values and classification output
 - `malta-income-tax` -- TA24 box values and computation output
 - `malta-ssc` -- Class 2 reconciliation output
-- `mt-estimated-tax` -- Provisional tax schedule (or fallback computation)
+- `mt-estimated-tax` -- Provisional tax schedule (validated output required)
 
 **Outputs:** The final reviewer package. No downstream skill.
 
@@ -309,7 +312,7 @@ The final output is **three files**:
 3. Payment execution is the client's responsibility; the skill only provides instructions and amounts.
 4. TA22 (part-time self-employment) assembly is not fully supported -- if TA22 applies, the skill flags it but the TA22 form is simpler (flat 10%) and may be completed manually by the reviewer.
 5. Multi-year capital allowance tracking assumes the prior year schedule is provided. If not, only current-year acquisitions are depreciated.
-6. mt-estimated-tax is a Q4 stub. Until it is fleshed out, provisional tax is computed using the rules in malta-income-tax Step 5. This is a redundancy, not a gap -- the rules are deterministic (ITMA Chapter 372).
+6. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
 7. Foreign source income is out of scope (no double taxation relief computation).
 8. Rental income supplementary forms are out of scope.
 9. The package is complete only for the 2025 tax year; 2026 appears only as prospective planning.

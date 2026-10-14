@@ -4,7 +4,7 @@ description: Final orchestrator skill that assembles the complete federal and Te
 version: 1.1
 jurisdiction: US-TX
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-15
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -15,6 +15,9 @@ depends_on:
 
 # US Tx Return Assembly
 
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
+
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
 **When this skill is invoked, you have already passed through intake. The user has consented to the full workflow. Execute all steps without pausing for permission.**
@@ -24,7 +27,7 @@ depends_on:
 - Do NOT ask which deliverables to prioritize.
 - Do NOT re-validate scope that intake already validated.
 - Do NOT pause between content skills to check in.
-- Self-checks are targets, not blockers. Flag failures for reviewer and continue.
+- Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - Texas has no income tax return. This skill focuses on: (1) Federal return completeness, (2) Texas franchise tax compliance, (3) Texas sales tax compliance.
 
 ## Section 1 — Scope

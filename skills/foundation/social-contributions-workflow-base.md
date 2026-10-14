@@ -5,7 +5,10 @@ version: 1.0
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-10-14
+last_updated: 2026-10-15
+depends_on:
+  - workflow-base
+review_status: pending_review
 ---
 
 # Social Contributions Workflow Base Skill v1.0
@@ -13,6 +16,8 @@ last_updated: 2026-10-14
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
+
+**Shared controls.** Load `workflow-base` with this domain base and the required country or regional companions. Its source and period gates, profile confirmation, refusal handling, reviewer delivery, four universal outputs and 18 checks govern this workflow. This domain adds every intake/content slot, output and check specified below. Combine identifiable output components only as the universal base permits. Every default listed below requires established applicable law and explicit permission in the country guide for that missing fact; otherwise use Needs Input. A missing required source condition, slot, refusal message or runtime capability prevents a deliverable financial result. Preserve any exact tool-unavailable stop message below.
 
 **This file contains workflow architecture only.** It defines how Claude should approach a statutory social contributions task — pension, health, unemployment, accident, family, and similar programmes — for employees, employers, the self-employed, and voluntary contributors: the order of operations, how to establish who contributes to what, how to determine the contribution base and apply floors and ceilings, how to split employee and employer shares, how to reconcile what was computed against what was remitted, what to produce, and what to check before delivering. It contains no contribution rates, no bases, no floors, no ceilings, no programme names specific to any country, no filing deadlines, no form names.
 
@@ -88,7 +93,7 @@ For every contributor, period, and programme, establish the base before touching
 - **Self-employed:** use the base rule the country skill states — actual profit, prior-year income, a declared or chosen base, a notional or class-based amount, or a provisional base trued up later. Record which rule applied and whether the figure is provisional.
 - **Floors:** where the base is below the country skill's minimum base for that programme and status, apply the floor rule the country skill states (gross up to the minimum, or exempt) — never silently ignore it.
 - **Ceilings:** where the base exceeds the maximum, cap it per programme. Ceilings may be per period or annual; apply exactly the basis the country skill states, and pro-rate for part periods only where it says so.
-- **Multiple employments or statuses:** apply the ceiling per employment or per person exactly as the country skill states. If it is silent, do not aggregate.
+- **Multiple employments or statuses:** apply the ceiling per employment or per person exactly as the verified country rule states. An unknown aggregation scope requires Needs Input before the affected calculation.
 
 Record every base with its components, the floor or ceiling applied, and the rule.
 
@@ -98,7 +103,7 @@ For every base established in Step 5:
 
 - Apply the country skill's rate for each **share** — employee share, employer share, or self-employed rate — separately. Fixed amounts (per person, per period) are applied as fixed amounts, not as rates.
 - Where several programmes stack on the same base, compute each programme as its own line item. Do not apply a blended rate unless the country skill publishes one and states it is the only rate.
-- Apply the cumulative or period-based method the country skill states. If year-to-date figures are provided, use the cumulative method for annual ceilings regardless of the default.
+- Apply the country's verified cumulative or period method and annual-limit basis. Year-to-date figures supply evidence for an annual limit; their availability does not change the prescribed computation method or aggregation scope.
 - Apply reduced rates, exemptions, and reliefs only where the evidence for eligibility was sighted in Step 3 or confirmed in Step 4.
 - Round per the country skill's rules (Section 4).
 
@@ -139,15 +144,15 @@ The documents provide clues but not certainty. A competent administrator would m
 
 **Action:** Apply the conservative default (below), flag it in the reviewer brief with the alternative treatment and its cash impact, and record the assumption in the schedule.
 
-Conservative defaults for social contributions — always the treatment that produces **more** contribution, or shows **more** outstanding:
+The following missing-fact defaults require established law and explicit country-guide permission. Apply its lawful liability ordering and disclose the alternative and impact; otherwise return Needs Input:
 
 - **Pay component of uncertain character:** inside the base.
-- **Floor applicability unknown:** the floor applies.
-- **Ceiling basis unknown (per period or annual, per employment or per person):** the treatment that yields the higher contribution; do not aggregate across employments.
+- **Floor applicability unknown:** Needs Input until the applicable floor and status are established; a higher contribution cannot establish the rule.
+- **Ceiling basis unknown (per period or annual, per employment or per person):** Needs Input until the country rule establishes the basis and aggregation scope.
 - **Reduced rate, exemption, or relief without evidence:** full rate.
 - **Self-employed base unknown:** the higher of actual profit and the country skill's default or minimum base.
 - **Bundled remittance (contributions and income tax in one payment) without a split:** nothing credited against contributions; the full amount shown as outstanding and flagged.
-- **Remittance without a period reference:** allocated to the oldest open period, flagged.
+- **Remittance without a period reference:** unmatched until its period is evidenced or a verified allocation rule and the evidence it requires establish the match. Do not create a credit merely by choosing the oldest open period.
 - **Registration status unknown:** treated as required and outstanding.
 - **Start or end date within a period unknown:** the full period is contributable.
 
@@ -155,7 +160,7 @@ Conservative defaults for social contributions — always the treatment that pro
 
 The computation cannot proceed without information only the user possesses, and a conservative default would be a guess about the person rather than about a figure.
 
-**Action:** Queue for the user question in Step 4. Do not guess. Do not apply a default until the user has been asked and either answered or said "don't know" — then apply the conservative default and disclose it.
+**Action:** Queue the missing factual question for Step 4. Use an evidenced answer or an expressly permitted factual default under established law. A "don't know" answer does not create permission to default; keep the item as Needs Input when the required fact remains unresolved. Obtain primary authority for a legal gap, not the user's guess about the rule.
 
 Examples:
 
@@ -275,7 +280,7 @@ Age-based, apprenticeship, start-up, regional, sector, and disability reliefs ap
 
 ### Reconciliation
 
-A remittance is matched to a period and programme by reference first, amount second, date last. Partial payments are matched to the oldest open period unless the reference says otherwise. Overpayments are shown, not netted against future periods, unless the country skill's authority does so automatically.
+Match a remittance to its evidenced period and programme. Amount and date may help identify evidence but do not establish the allocation alone. Match a partial payment to the oldest open period only when verified authority rules and required evidence establish that allocation. Keep other amounts unmatched. Show overpayments separately and net them against another period only under the verified authority rule.
 
 ### Interaction with income tax and payroll
 
@@ -287,7 +292,7 @@ A person covered by another country's legislation for a period (certificate of c
 
 ### Currency and rounding
 
-Compute in the currency the authority is paid in. Round each programme's contribution per the country skill's rules; if it is silent, round each programme-share amount to two decimal places and compute totals as the exact sum of the rounded lines.
+Compute in the verified remittance currency and apply the country's programme-share rounding rules. Totals equal the rounded lines. An unknown currency-conversion or rounding rule requires Needs Input; do not infer a two-decimal rule.
 
 ---
 
@@ -299,11 +304,11 @@ Run these twelve checks against all outputs. If any fails, fix and re-run all tw
 
 **Check 1 — Every base is within its limits.** For every contributor, period, and programme, the base used is at or above the floor and at or below the ceiling the country skill states for that status and basis, or the row records why the limit does not apply.
 
-**Check 2 — Share arithmetic.** For every row, share equals base used times rate (or the fixed amount), and employee share plus employer share equals the total. Not approximately — exactly.
+**Check 2 — Share arithmetic.** Recompute every share from its base and rate or fixed amount using the verified rounding rule and order. Each recorded share equals that prescribed result, and the rounded employee and employer shares sum exactly to the recorded total.
 
-**Check 3 — Effective rate within bounds.** For every contributor and period, total contributions divided by the base before limits is no more than the sum of the applicable programme rates, and equals it exactly when no floor, ceiling, or relief applied.
+**Check 3 — Programme contributions reconcile.** Recompute each share from its own assessable base after applicable floors, ceilings and relief, using the verified rate or fixed amount and rounding. Sum the shares and programmes. A floor or fixed contribution may make contributions divided by the raw pre-limit base exceed the sum of percentage rates; this ratio is diagnostic and does not invalidate correctly applied rules.
 
-**Check 4 — Annual ceilings respected cumulatively.** Where a ceiling is annual, year-to-date contributions per programme never exceed the ceiling times the rate; the period in which the ceiling is reached contributes only the remainder.
+**Check 4 — Annual limits respected cumulatively.** Distinguish assessable-base ceilings from monetary contribution caps. Apply cumulative base limits on the country's specified contributor, employment and programme basis, then compute each period's share using its effective rate and rounding. Apply a monetary cap directly only where the country defines one. A ceiling multiplied by one rate is not a valid annual check when rates, periods or contribution methods differ.
 
 **Check 5 — Reconciliation balances.** For every period, computed due less matched remittances equals the variance, and the sum of variances equals the outstanding or overpaid total in the reviewer brief.
 
@@ -323,7 +328,7 @@ Run these twelve checks against all outputs. If any fails, fix and re-run all tw
 
 **Check 11 — Tier 2 and Tier 3 disclosure complete.** Every decision marked Tier 2 or Tier 3 in the schedule or register has an entry in the reviewer brief. Counts on both sides match.
 
-**Check 12 — Status consistency.** No contributor is computed under two statuses for the same period unless the country skill aggregates them; every employee-status row has an employer share; no self-employed row has one.
+**Check 12 — Status consistency.** Concurrent statuses follow Step 2: compute them separately or aggregate them only as the country rule requires. Each row's contributor status, programme, employee and employer shares, exemptions and any zero share agree with the verified rules. Do not require an employer share for every programme solely because the contributor is an employee.
 
 ### Failure handling
 

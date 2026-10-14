@@ -5,13 +5,16 @@ version: 0.1
 jurisdiction: GB
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # UK Return Assembly
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 ## UK Return Assembly Skill v0.1
 
@@ -27,15 +30,15 @@ Specifically:
 
 - Do NOT ask the user "how deep do you want me to go" or "do you want the full package" or any variant. The user asked for their tax returns. They want their tax returns. Produce them.
 - Do NOT announce how many tokens or tool calls this will take. Execute.
-- Do NOT ask which deliverables to prioritise. Produce all deliverables listed in Section 4. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why.
+- Do NOT ask which deliverables to prioritise. Produce all deliverables listed in Section 4. If context is exhausted, preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish.
 - Do NOT re-validate scope that intake already validated. If uk-freelance-intake produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about residency, business structure, or anything else intake already captured.
 - Do NOT pause between content skills to check in. Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine.
-- Self-checks are targets, not blockers. If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check had an ambiguous answer.
+- Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - Primary source citations go in the final reviewer brief, not in intermediate computation steps.
 
 The user has already been told (by the intake skill) that the final package requires chartered accountant signoff before filing. State it once in the final output and move on.
 
-Failure mode to avoid: The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
+Failure mode to avoid: The skill halts mid-execution and asks the user a meta-question about workflow pacing. Resolve routine pacing choices within the confirmed scope. A missing fact, rule or failed check requires the input or refusal handling above; a reviewer flag cannot replace it.
 
 ## What this file is
 
@@ -59,10 +62,10 @@ The skill enforces the following execution order:
 0. **Step 2** — uk-self-employment-sa103 -- SA103 self-employment pages (trading income). Depends on VAT output: turnover on SA103 must be ex-VAT for VAT-registered traders. Covers: turnover (Box 15/16), allowable expenses (Boxes 17-30), net profit (Box 31), capital allowances (Box 34), adjustments. Cash basis vs accruals: affects timing of income and expense recognition. Output: SA103 box values, net profit for tax computation, capital allowances schedule.
 0. **Step 3** — uk-income-tax-sa100 -- SA100 main return (personal tax computation). Depends on SA103: net self-employment profit enters the SA100 as self-employment income. Depends on P60: employment income and PAYE tax deducted. Covers: total income, personal allowance (GBP 12,570, tapered above GBP 100,000), tax computation at applicable rates (rUK or Scottish), marriage allowance. Output: total income, taxable income, income tax liability, tax already paid (PAYE + POA), balancing payment/refund.
 0. **Step 4** — uk-national-insurance -- Class 2 + Class 4 NIC. Depends on SA103: net self-employment profit feeds Class 4 NIC computation. Class 2: flat rate GBP 3.45/week (GBP 179.40/year) if profits above Small Profits Threshold (GBP 6,725) -- voluntary below threshold. Class 4: 6% on profits between GBP 12,570 and GBP 50,270; 2% above GBP 50,270. Output: Class 2 amount, Class 4 amount, total NIC due via Self Assessment.
-0. **Step 5** — uk-student-loan-repayment -- Student loan repayment via Self Assessment (if applicable). Depends on SA100: total income determines repayment amount. Plan 1: 9% above GBP 22,015; Plan 2: 9% above GBP 27,295; Plan 4: 9% above GBP 27,660; Plan 5: 9% above GBP 25,000; Postgraduate: 6% above GBP 21,000. Deduct repayments already made via PAYE. Status check: uk-student-loan-repayment may be a Q4 stub. If the stub has substantive content, use it. If placeholder, compute using the thresholds above and flag in the reviewer brief. Output: total repayment due, amount via PAYE, amount via SA.
-0. **Step 6** — uk-payments-on-account -- Payments on account for 2026/27. Depends on SA100: payments on account are based on current year's SA liability. Status check: uk-payments-on-account is currently a Q4 stub. If the stub has substantive content, use it. If placeholder, compute: each POA = 50% of current year SA liability (income tax + Class 4 NIC, excluding PAYE, Class 2, student loan, capital gains tax). Due 31 January 2027 (1st POA) and 31 July 2027 (2nd POA). Flag in the reviewer brief. If SA liability < GBP 1,000, or > 80% was collected at source (PAYE), no POA required. Output: two POA amounts and dates for 2026/27.
+0. **Step 5** — uk-student-loan-repayment -- Student loan repayment via Self Assessment (if applicable). Depends on SA100: total income determines repayment amount. Plan 1: 9% above GBP 22,015; Plan 2: 9% above GBP 27,295; Plan 4: 9% above GBP 27,660; Plan 5: 9% above GBP 25,000; Postgraduate: 6% above GBP 21,000. Deduct repayments already made via PAYE. Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output. Output: total repayment due, amount via PAYE, amount via SA.
+0. **Step 6** — uk-payments-on-account -- Payments on account for 2026/27. Depends on SA100: payments on account are based on current year's SA liability. Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output. Output: two POA amounts and dates for 2026/27.
 
-- **Upstream failure handling** — If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
+- **Upstream failure handling** — If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.
 
 ## Section 3 -- Cross-skill reconciliation
 
@@ -205,7 +208,7 @@ The skill enforces the following execution order:
 - Class 1 already paid via PAYE (informational): GBP X
 
 ## Student Loan (if applicable)
-[Content from uk-student-loan-repayment output, or computed if stub]
+[Validated output from uk-student-loan-repayment; hold this component and dependent totals if unavailable]
 - Plan type: [Plan 1/2/4/5/Postgraduate]
 - Repayment threshold: GBP X
 - Total repayment due: GBP X
@@ -213,7 +216,7 @@ The skill enforces the following execution order:
 - Net repayment via SA: GBP X
 
 ## Payments on Account (2026/27)
-[Content from uk-payments-on-account output, or computed if stub]
+[Validated output from uk-payments-on-account; hold this component and dependent totals if unavailable]
 - Based on 2025/26 SA liability (income tax + Class 4 NIC, less PAYE)
 - 1st POA: 31 January 2027 -- GBP X (50%)
 - 2nd POA: 31 July 2027 -- GBP X (50%)
@@ -292,15 +295,15 @@ The skill enforces the following execution order:
 
 ## Section 5 -- Refusals
 
-- **R-UK-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(R-UK-1)_
-- **R-UK-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(R-UK-2)_
-- **R-UK-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(R-UK-3)_
+- **R-UK-1** — Upstream skill did not run. Name the missing skill and hold its dependent calculations and the complete filing package. Independent supported preparation may continue with its limited scope stated.  _(R-UK-1)_
+- **R-UK-2** — Upstream self-check failed. Name the failed check, correct it and rerun before using the affected result. If unresolved, hold dependent calculations and the complete filing package.  _(R-UK-2)_
+- **R-UK-3** — Cross-skill reconciliation failed. Name the reconciliation and discrepancy, correct it and rerun. If unresolved, hold dependent calculations and the complete filing package.  _(R-UK-3)_
 - **R-UK-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(R-UK-4)_
 - **R-UK-5** — Out-of-scope item discovered during assembly. E.g., rental income requiring SA105, capital gains requiring SA108, foreign income requiring SA106. Flag and exclude from computation.  _(R-UK-5)_
 
 ## Section 6 -- Self-checks
 
-- **Check UK1 -- All upstream skills executed** — uk-vat-return (if VAT registered), uk-self-employment-sa103, uk-income-tax-sa100, uk-national-insurance all produced output. uk-student-loan-repayment produced output or was computed or was skipped (no loan). uk-payments-on-account produced output or was computed from SA liability.
+- **Check UK1 -- All upstream skills executed** - Every upstream result required for the confirmed scope is supported and passes its producer checks. Record an evidenced reason for each inapplicable obligation. A missing, placeholder, refused, Needs Input or invalid result fails this check and holds its dependent results and the complete filing package.
 - **Check UK2 -- SA103 net profit matches SA100 self-employment income** — Exact match required.
 - **Check UK3 -- SA103 net profit feeds Class 4 NIC** — Class 4 computed on correct profit figure.
 - **Check UK4 -- Payments on account correctly computed** — Each POA = 50% of (income tax + Class 4 NIC - PAYE). Exclusions: Class 2, student loan, CGT.
@@ -325,7 +328,7 @@ The final output is three files:
 
 3. client_action_list.md -- Single markdown file with step-by-step actions: immediate filings and payments, POA schedule, quarterly VAT calendar for 2026/27, ongoing compliance reminders.
 
-If execution runs out of context mid-build: produce whatever is complete, then state at the end which of the three files were not produced or are partial.
+If context is exhausted, preserve the supported calculations and evidence for resumption, identify incomplete deliverables and withhold the complete filing package until every mandatory output and check is complete.
 
 All files are placed in /mnt/user-data/outputs/ and presented to the user via the present_files tool at the end.
 
@@ -337,8 +340,8 @@ Inputs:
 - uk-self-employment-sa103 -- SA103 box values and computation output
 - uk-income-tax-sa100 -- SA100 computation output
 - uk-national-insurance -- Class 2 + Class 4 NIC output
-- uk-student-loan-repayment -- Student loan computation output (or fallback, or N/A)
-- uk-payments-on-account -- POA schedule (or fallback computation)
+- uk-student-loan-repayment -- Student loan computation output (validated output, or evidenced N/A)
+- uk-payments-on-account -- POA schedule (validated output required)
 
 Outputs: The final reviewer package. No downstream skill.
 
@@ -349,8 +352,8 @@ Outputs: The final reviewer package. No downstream skill.
 3. Payment execution is the client's responsibility; the skill only provides instructions and amounts.
 4. SA102 (employment supplement) is partially supported -- employment income from P60 is included in SA100, but detailed SA102 boxes (benefits in kind, expenses) are not fully automated. Flag for chartered accountant.
 5. Multi-year capital allowances tracking assumes the prior year pool balance is provided. If not, only current-year acquisitions are depreciated.
-6. uk-student-loan-repayment is a Q4 stub. Until fleshed out, student loan is computed using the thresholds in Section 2 step 5. Deterministic per the Education (Student Loans) (Repayment) Regulations 2009.
-7. uk-payments-on-account is a Q4 stub. Until fleshed out, POA is computed as 50% of SA liability. Deterministic per TMA 1970 s59A.
+6. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+7. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
 8. Foreign source income is out of scope (no SA106 / DTA relief).
 9. Rental income (SA105) is out of scope.
 10. Capital gains (SA108) are out of scope.

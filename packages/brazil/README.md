@@ -30,6 +30,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 - [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+- [`workflow-base.md`](../_shared/workflow-base.md)
 
 
 ## Also known as

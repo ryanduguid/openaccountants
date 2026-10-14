@@ -5,13 +5,16 @@ version: 0.1
 jurisdiction: ES
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # ES Return Assembly
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 ## Spain Return Assembly Skill v0.1
 
@@ -23,15 +26,15 @@ Specifically:
 
 - **Do NOT ask the user "how deep do you want me to go"** or "do you want the full package" or any variant. The user asked for their tax returns. They want their tax returns. Produce them.
 - **Do NOT announce how many tokens or tool calls this will take.** Execute.
-- **Do NOT ask which deliverables to prioritise.** Produce all deliverables listed in Section 4. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why.
+- **Do NOT ask which deliverables to prioritise.** Produce all deliverables listed in Section 4. If context is exhausted, preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish.
 - **Do NOT re-validate scope that intake already validated.** If `es-freelance-intake` produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about residency, business structure, or anything else intake already captured.
 - **Do NOT pause between content skills to check in.** Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine.
-- **Self-checks are targets, not blockers.** If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check had an ambiguous answer.
+- **Check failure handling.** Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - **Primary source citations go in the final reviewer brief, not in intermediate computation steps.**
 
 **The user has already been told (by the intake skill) that the final package requires asesor fiscal signoff before filing. State it once in the final output and move on.**
 
-**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
+**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. Resolve routine pacing choices within the confirmed scope. A missing fact, rule or failed check requires the input or refusal handling above; a reviewer flag cannot replace it.
 
 ## What this file is
 
@@ -48,7 +51,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 - **spain-vat-return step (Modelo 303)** — Runs first because IVA base imponible feeds into the IRPF. For Q4 2025: prepare Modelo 303 if not yet filed; verify Q1-Q3 figures. Reconcile facturas emitidas (output IVA) with facturas recibidas (input IVA). Handle intracomunitarias (reverse charge, Modelo 349). Output: Modelo 303 box values, IVA devengado, IVA soportado deducible, result (a ingresar / a compensar / a devolver)  _(Section 2 -- Execution order and dependency chain)_
 - **es-income-tax step (IRPF Modelo 100)** — Depends on IVA output: rendimiento íntegro de actividades económicas must use base imponible (ex-IVA) from Modelo 303. Compute rendimiento neto: ingresos - gastos deducibles - amortización - RETA cuotas. Apply gastos de difícil justificación (5%, max EUR 2,000) for simplificada. Apply reducciones (if applicable). Compute base imponible general + base del ahorro. Apply escala estatal + autonómica. Deduct retenciones, pagos fraccionados (Modelo 130). Output: Modelo 100 key boxes, cuota líquida, resultado de la declaración  _(Section 2 -- Execution order and dependency chain)_
 - **es-social-contributions step (RETA)** — Depends on IRPF: RETA cuotas are a gasto deducible in the rendimiento neto computation. Reconcile actual cuotas paid vs the new income-based contribution system (since 2023). Verify base de cotización is appropriate for income level. Flag if regularisation is expected (TGSS adjusts RETA based on actual income, with potential refund or additional payment). Output: annual RETA paid, base de cotización, regularisation estimate, deductibility confirmation  _(Section 2 -- Execution order and dependency chain)_
-- **es-estimated-tax step (Modelo 130)** — Depends on IRPF: pagos fraccionados are computed as 20% of rendimiento neto acumulado minus retenciones acumuladas. Status check: es-estimated-tax is currently a Q4 stub. If the stub has substantive computation content, use it. If it is still a placeholder, compute Modelo 130 using the standard formula (Art. 110 LIRPF: 20% x rendimiento neto acumulado - retenciones - pagos fraccionados anteriores) and flag in the reviewer brief that the dedicated skill was not available. Output: Q4 2025 Modelo 130 computation, and 2026 quarterly schedule. If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.  _(Section 2 -- Execution order and dependency chain, Art. 110 LIRPF)_
+- **es-estimated-tax step (Modelo 130)** — Depends on IRPF: pagos fraccionados are computed as 20% of rendimiento neto acumulado minus retenciones acumuladas. Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output. Output: Q4 2025 Modelo 130 computation, and 2026 quarterly schedule. If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.  _(Section 2 -- Execution order and dependency chain, Art. 110 LIRPF)_
 
 ## Section 3 -- Cross-skill reconciliation
 
@@ -174,7 +177,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 - Deductibility confirmed in IRPF
 
 ## Estimated Tax (Modelo 130)
-[Content from es-estimated-tax output, or computed from standard formula if stub]
+[Validated output from es-estimated-tax; hold this component and dependent totals if unavailable]
 - Q4 2025 computation: 20% x rendimiento neto acumulado - retenciones acumuladas - pagos anteriores
 - Check: if retenciones > 70% of ingresos, Modelo 130 not required
 - 2026 quarterly schedule based on 2025 results
@@ -262,15 +265,15 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Section 5 -- Refusals
 
-- **R-ES-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(R-ES-1)_
-- **R-ES-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(R-ES-2)_
-- **R-ES-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(R-ES-3)_
+- **R-ES-1** — Upstream skill did not run. Name the missing skill and hold its dependent calculations and the complete filing package. Independent supported preparation may continue with its limited scope stated.  _(R-ES-1)_
+- **R-ES-2** — Upstream self-check failed. Name the failed check, correct it and rerun before using the affected result. If unresolved, hold dependent calculations and the complete filing package.  _(R-ES-2)_
+- **R-ES-3** — Cross-skill reconciliation failed. Name the reconciliation and discrepancy, correct it and rerun. If unresolved, hold dependent calculations and the complete filing package.  _(R-ES-3)_
 - **R-ES-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(R-ES-4)_
 - **R-ES-5** — Out-of-scope item discovered during assembly. E.g., rental income requiring separate rendimiento del capital inmobiliario computation, capital gains requiring ganancias patrimoniales schedule, or imputación de rentas inmobiliarias for empty properties. Flag and exclude from computation.  _(R-ES-5)_
 
 ## Section 6 -- Self-checks
 
-- **Check ES-A1** — All upstream skills executed. spain-vat-return, es-income-tax, es-social-contributions all produced output. es-estimated-tax produced output or was computed from standard formula.  _(Check ES-A1)_
+- **Check ES-A1** - Every upstream result required for the confirmed scope is supported and passes its producer checks. Record an evidenced reason for each inapplicable obligation. A missing, placeholder, refused, Needs Input or invalid result fails this check and holds its dependent results and the complete filing package.  _(Check ES-A1)_
 - **Check ES-A2** — Modelo 303 base imponible matches IRPF ingresos. Within EUR 1 tolerance.  _(Check ES-A2)_
 - **Check ES-A3** — RETA cuotas deducted in IRPF match actual payments. Exact match.  _(Check ES-A3)_
 - **Check ES-A4** — Retenciones in IRPF match sum of all retenciones from sources. Retenciones from professional activity + employment + capital = total deducted.  _(Check ES-A4)_
@@ -285,18 +288,18 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Section 7 -- Output files
 
-- **Output files list** — The final output is three files: 1. `[client_slug]_2025_spain_master.xlsx` -- Single master workbook containing every worksheet and computation. Sheets include: Cover, Modelo 303 (Q4 or annual reconciliation), IRPF Modelo 100 (rendimiento neto, base imponible, escala, cuota, resultado), Amortisation Schedule, Gastos Detail, RETA Reconciliation, Modelo 130 (Q4 2025 + 2026 schedule), Cross-Check Summary. Use live formulas where possible -- e.g., IRPF ingresos cell references the Modelo 303 base imponible cell; RETA gasto references the RETA sheet total; Modelo 130 references IRPF rendimiento neto. Verify no #REF! errors. Verify computed values match within EUR 1 before shipping. 2. `reviewer_brief.md` -- Single markdown file covering all sections from Section 4 above: executive summary, IVA return, IRPF, RETA, Modelo 130, cross-skill reconciliation, flags, positions, planning notes. 3. `client_action_list.md` -- Single markdown file with step-by-step actions: immediate filings and payments, quarterly calendar for 2026, ongoing compliance reminders. If execution runs out of context mid-build: produce whatever is complete, then state at the end which of the three files were not produced or are partial. All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.  _(Section 7 -- Output files)_
+- **Output files list** — The final output is three files: 1. `[client_slug]_2025_spain_master.xlsx` -- Single master workbook containing every worksheet and computation. Sheets include: Cover, Modelo 303 (Q4 or annual reconciliation), IRPF Modelo 100 (rendimiento neto, base imponible, escala, cuota, resultado), Amortisation Schedule, Gastos Detail, RETA Reconciliation, Modelo 130 (Q4 2025 + 2026 schedule), Cross-Check Summary. Use live formulas where possible -- e.g., IRPF ingresos cell references the Modelo 303 base imponible cell; RETA gasto references the RETA sheet total; Modelo 130 references IRPF rendimiento neto. Verify no #REF! errors. Verify computed values match within EUR 1 before shipping. 2. `reviewer_brief.md` -- Single markdown file covering all sections from Section 4 above: executive summary, IVA return, IRPF, RETA, Modelo 130, cross-skill reconciliation, flags, positions, planning notes. 3. `client_action_list.md` -- Single markdown file with step-by-step actions: immediate filings and payments, quarterly calendar for 2026, ongoing compliance reminders. If context is exhausted, preserve the supported calculations and evidence for resumption, identify incomplete deliverables and withhold the complete filing package until every mandatory output and check is complete. All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.  _(Section 7 -- Output files)_
 
 ## Section 8 -- Cross-skill references
 
-- **Inputs and outputs** — Inputs: es-freelance-intake -- structured intake package (JSON); spain-vat-return -- Modelo 303 box values and classification output; es-income-tax -- IRPF Modelo 100 computation output; es-social-contributions -- RETA reconciliation output; es-estimated-tax -- Modelo 130 computation (or fallback computation). Outputs: The final reviewer package. No downstream skill.  _(Section 8 -- Cross-skill references)_
+- **Inputs and outputs** — Inputs: es-freelance-intake -- structured intake package (JSON); spain-vat-return -- Modelo 303 box values and classification output; es-income-tax -- IRPF Modelo 100 computation output; es-social-contributions -- RETA reconciliation output; es-estimated-tax -- Modelo 130 computation (validated output required). Outputs: The final reviewer package. No downstream skill.  _(Section 8 -- Cross-skill references)_
 
 ## Section 9 -- Known gaps
 
 1. PDF form filling is not automated. The reviewer uses the worksheets to fill official AEAT forms on the Sede Electrónica.
 2. E-filing is handled by the reviewer via AEAT Sede Electrónica (with certificado digital or Cl@ve), not by this skill.
 3. Payment execution is the client's responsibility; the skill only provides instructions and amounts.
-4. es-estimated-tax is a Q4 stub. Until it is fleshed out, Modelo 130 is computed using the standard formula (Art. 110 LIRPF). This is a redundancy, not a gap -- the formula is deterministic.
+4. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
 5. Multi-year amortisation tracking assumes the prior year schedule is provided. If not, only current-year acquisitions are amortised.
 6. Rental income (rendimiento del capital inmobiliario) is out of scope.
 7. Capital gains (ganancias patrimoniales) are out of scope beyond noting them as other income.

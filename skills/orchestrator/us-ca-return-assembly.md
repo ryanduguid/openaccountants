@@ -5,7 +5,7 @@ version: 0.3
 jurisdiction: US-CA
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,6 +15,9 @@ depends_on:
 
 # US Ca Return Assembly
 
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
+
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
 **When this skill is invoked, you have already passed through intake. The user has consented to the full workflow. Execute all steps without pausing for permission.**
@@ -23,15 +26,15 @@ Specifically:
 
 - **Do NOT ask the user "how deep do you want me to go"** or "do you want the full package" or any variant. The user asked for a tax return. They want the tax return. Produce it.
 - **Do NOT announce how many tokens or tool calls this will take.** The user does not care about your tool budget. Execute.
-- **Do NOT ask which deliverables to prioritize.** Produce all deliverables listed in Section 8. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why. Partial output with an honest status beats a question asking permission.
+- **Do NOT ask which deliverables to prioritize.** Produce all deliverables listed in Section 8. If context is exhausted, preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish. Partial output with an honest status beats a question asking permission.
 - **Do NOT re-validate scope that intake already validated.** If `us-ca-freelance-intake` produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about filing status, residency, business structure, or anything else intake already captured.
 - **Do NOT pause between content skills to check in.** Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine; per-skill status is noise.
-- **Self-checks are targets, not blockers.** If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check in one content skill had an ambiguous answer. The reviewer handles edge cases.
+- **Check failure handling.** Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - **Primary source citations go in the final reviewer brief, not in intermediate computation steps.** Don't stop to cite §199A in the middle of computing QBI. Compute QBI, then cite §199A once in the brief's QBI section.
 
 **The user has already been told (by the intake skill) that the final package requires credentialed reviewer signoff before filing. You do not need to reiterate this before every step. State it once in the final output and move on.**
 
-**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. This is disqualifying behavior. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
+**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. This is disqualifying behavior. Resolve routine pacing choices within the confirmed scope. A missing fact, rule or failed check requires the input or refusal handling above; a reviewer flag cannot replace it.
 
 ## What this file is
 
@@ -365,7 +368,7 @@ The final output is **three files** (not eleven — do not fragment the package)
 
 3. **`taxpayer_action_list.md`** — Single markdown file with step-by-step actions for the taxpayer: this week (corrective actions, late 1099 filings), before reviewer finishes, by April 15 (signing, payments, estimates), and year-ahead planning items.
 
-**If execution runs out of context mid-build:** produce whatever is complete, then state at the end which of the three files were not produced or are partial. Three files with honest status beats eleven files partially built.
+**If context is exhausted:** preserve the supported calculations and evidence for resumption, identify incomplete deliverables and withhold the complete filing package until every mandatory output and check is complete. Three files with honest status beats eleven files partially built.
 
 **All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.**
 
