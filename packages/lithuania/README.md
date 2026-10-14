@@ -23,6 +23,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
 
 
 ## How to use

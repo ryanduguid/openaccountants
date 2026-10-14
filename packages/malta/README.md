@@ -41,6 +41,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 - [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
 - [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
 
 
 ## Also known as

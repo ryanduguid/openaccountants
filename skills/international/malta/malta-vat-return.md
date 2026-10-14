@@ -5,7 +5,10 @@ version: 2.1
 jurisdiction: MT
 category: international
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-15
+depends_on:
+  - vat-workflow-base
+  - eu-vat-directive
 reviewed_by: Michael Cutajar, CPA (Malta)
 review_status: pending_review
 tier: 2

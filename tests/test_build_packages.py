@@ -305,6 +305,41 @@ class DeclaredBasesTests(SyntheticTreeCase):
         self.assertEqual(self.bases("# Not a guide\n\n---\n\ndepends_on: vat-workflow-base\n"), [])
         self.assertEqual(self.bases(frontmatter("p", "depends_on: [unclosed\n")), [], "malformed frontmatter declares nothing")
 
+    def test_transitive_dependencies_are_sorted_and_shared_once(self) -> None:
+        self.write({
+            "skills/foundation/vat-workflow-base.md": frontmatter(
+                "vat-workflow-base", "depends_on: [workflow-base, social-contributions-workflow-base]\n"
+            ),
+            "skills/foundation/social-contributions-workflow-base.md": frontmatter(
+                "social-contributions-workflow-base", "depends_on: [workflow-base]\n"
+            ),
+            "skills/foundation/workflow-base.md": frontmatter("workflow-base"),
+        })
+        expected = ["social-contributions-workflow-base.md", "vat-workflow-base.md", "workflow-base.md"]
+        self.assertEqual(self.bases(GUIDE), expected)
+        self.build()
+        self.assertEqual(self.bundles()["packages"]["zzland"]["shared"], ["foundation.md", *expected])
+        for name in expected:
+            self.assertEqual((self.packages / "_shared" / name).read_bytes(), (self.skills / "foundation" / name).read_bytes())
+
+    def test_cyclic_dependencies_terminate_without_duplicate_files(self) -> None:
+        self.write({
+            "skills/foundation/vat-workflow-base.md": frontmatter("vat-workflow-base", "depends_on: [workflow-base]\n"),
+            "skills/foundation/workflow-base.md": frontmatter("workflow-base", "depends_on: [vat-workflow-base]\n"),
+        })
+        self.assertEqual(self.bases(GUIDE), ["vat-workflow-base.md", "workflow-base.md"])
+
+    def test_filename_selected_bases_load_their_declared_dependencies(self) -> None:
+        self.write({
+            "skills/international/zzland/zz-payroll.md": GUIDE.replace("zz-vat", "zz-payroll").replace("depends_on:\n  - vat-workflow-base\n", ""),
+            "skills/foundation/payroll-workflow-base.md": frontmatter("payroll-workflow-base", "depends_on: [workflow-base]\n"),
+            "skills/foundation/workflow-base.md": frontmatter("workflow-base"),
+        })
+        self.build()
+        self.assertEqual(self.bundles()["packages"]["zzland"]["shared"], [
+            "foundation.md", "payroll-workflow-base.md", "vat-workflow-base.md", "workflow-base.md"
+        ])
+
 
 class PackagingCompletenessTests(SyntheticTreeCase):
     """Every guide under skills/ reaches a package.
