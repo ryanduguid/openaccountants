@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T01:01:41+00:00",
+ "generated_at": "2026-10-14T19:57:30+00:00",
  "counts": {
   "guides": 1889,
   "jurisdictions": 245,
@@ -4827,7 +4827,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "bf-company-formation",
@@ -6933,7 +6933,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "dk-capital-gains",
@@ -8610,7 +8610,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "leaving-france-exit-tax",
@@ -9130,7 +9130,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "germany-references",
@@ -11093,7 +11093,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "italy-references",
@@ -12393,7 +12393,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "lv-company-formation",
@@ -12848,7 +12848,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "lt-company-formation",
@@ -13602,7 +13602,7 @@
    "reviewed_by": "Michael Cutajar, CPA (Malta)",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "moving-to-malta-tax-residence",
@@ -18711,7 +18711,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "sri-lanka-betting-gaming-excise",

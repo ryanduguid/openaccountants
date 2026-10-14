@@ -1172,7 +1172,7 @@ _LEGACY_DEPENDS_ON_RE = re.compile(r"^(depends_on):[ \t]+(- .+)$", re.MULTILINE)
 
 
 def declared_foundation_bases(skill_paths):
-    """Foundation bases the given skills name in `depends_on`, as filenames.
+    """Foundation dependencies of the given guides, including other bases.
 
     Every content skill declares the workflow base it loads on top of
     (docs/skill-template.md). The keyword tables in the builders catch the
@@ -1183,10 +1183,17 @@ def declared_foundation_bases(skill_paths):
     dependency. Only slugs that exist under skills/foundation/ qualify: a slug
     naming another country skill (already in the package) or nothing at all is
     validate-guides.py's business. The legacy single-line `depends_on: - x`
-    form is folded the way the validator folds it. Sorted, without duplicates.
+    form is folded the way the validator folds it. Follow each selected base's
+    own dependencies once, including cycles. Sorted, without duplicates.
     """
     bases = set()
-    for path in skill_paths:
+    pending = list(skill_paths)
+    visited = set()
+    while pending:
+        path = pending.pop()
+        if path in visited:
+            continue
+        visited.add(path)
         with open(path, encoding="utf-8", errors="replace") as fh:
             block = extract_frontmatter(fh.read())
         if block is None:
@@ -1200,8 +1207,10 @@ def declared_foundation_bases(skill_paths):
             slug = slug.strip()
             if not slug or "/" in slug or slug.startswith("."):
                 continue
-            if os.path.isfile(os.path.join(SKILLS_DIR, "foundation", f"{slug}.md")):
+            base_path = os.path.join(SKILLS_DIR, "foundation", f"{slug}.md")
+            if os.path.isfile(base_path):
                 bases.add(f"{slug}.md")
+                pending.append(base_path)
     return sorted(bases)
 
 
@@ -1352,8 +1361,10 @@ def verticals_readme(files):
 
 
 def share_declared_bases(skill_paths, shared):
-    """Register the bases `skill_paths` declare as shared files of this package."""
-    for base_file in declared_foundation_bases(skill_paths):
+    """Share declared dependencies of content guides and already selected bases."""
+    base_paths = [os.path.join(SKILLS_DIR, "foundation", name) for name in shared]
+    roots = [*skill_paths, *(path for path in base_paths if os.path.isfile(path))]
+    for base_file in declared_foundation_bases(roots):
         if base_file not in shared:
             shared.append(share(base_file, os.path.join(SKILLS_DIR, "foundation", base_file)))
 

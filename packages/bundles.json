@@ -786,7 +786,8 @@
     "foundation.md",
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
-    "social-contributions-workflow-base.md"
+    "social-contributions-workflow-base.md",
+    "vat-workflow-base.md"
    ]
   },
   "burkina-faso": {
@@ -1699,7 +1700,8 @@
    "shared": [
     "eu-vat-directive.md",
     "foundation.md",
-    "income-tax-workflow-base.md"
+    "income-tax-workflow-base.md",
+    "vat-workflow-base.md"
    ]
   },
   "djibouti": {
@@ -2040,7 +2042,8 @@
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
-    "transfer-pricing-workflow-base.md"
+    "transfer-pricing-workflow-base.md",
+    "vat-workflow-base.md"
    ]
   },
   "gabon": {
@@ -2143,7 +2146,8 @@
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
-    "transfer-pricing-workflow-base.md"
+    "transfer-pricing-workflow-base.md",
+    "vat-workflow-base.md"
    ]
   },
   "ghana": {
@@ -2560,7 +2564,8 @@
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
-    "transfer-pricing-workflow-base.md"
+    "transfer-pricing-workflow-base.md",
+    "vat-workflow-base.md"
    ]
   },
   "ivory-coast": {
@@ -2847,7 +2852,8 @@
     "foundation.md",
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
-    "social-contributions-workflow-base.md"
+    "social-contributions-workflow-base.md",
+    "vat-workflow-base.md"
    ]
   },
   "lebanon": {
@@ -2964,7 +2970,8 @@
     "eu-vat-directive.md",
     "foundation.md",
     "income-tax-workflow-base.md",
-    "payroll-workflow-base.md"
+    "payroll-workflow-base.md",
+    "vat-workflow-base.md"
    ]
   },
   "luxembourg": {
@@ -3140,7 +3147,8 @@
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
-    "transfer-pricing-workflow-base.md"
+    "transfer-pricing-workflow-base.md",
+    "vat-workflow-base.md"
    ]
   },
   "mauritania": {
@@ -4247,7 +4255,8 @@
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
-    "transfer-pricing-workflow-base.md"
+    "transfer-pricing-workflow-base.md",
+    "vat-workflow-base.md"
    ]
   },
   "sri-lanka": {
