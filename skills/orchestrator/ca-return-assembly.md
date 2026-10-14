@@ -140,7 +140,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 ### Reviewer brief contents
 
 ```markdown
-# Complete Return Package: [Client Name] -- Tax Year 2025
+# Complete Return Package: [stable redacted client reference] -- Tax Year 2025
 
 ## Executive Summary
 - Filing status: [Single / Married / Common-law]

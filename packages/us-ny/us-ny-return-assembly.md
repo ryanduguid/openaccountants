@@ -167,7 +167,7 @@ Produces the complete federal + New York filing package for:
 ### Reviewer brief structure
 
 ```markdown
-# Complete Return Package: [Taxpayer Name] — Tax Year 2025
+# Complete Return Package: [stable redacted taxpayer reference] — Tax Year 2025
 
 ## Executive Summary
 - Filing status: [X]

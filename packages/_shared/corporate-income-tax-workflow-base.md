@@ -72,11 +72,11 @@ This base assumes:
 
 ### Step 3 — Apply credits and offsets
 
-0. **Credits and offsets** — - R&D credits (see `rd-tax-credits-matrix.md`) - Patent / IP box benefit (see `ip-patent-box-matrix.md`) - Foreign tax credits - Group relief utilisation - Withholding tax credits on receipts - Anti-double taxation relief
+0. **Credits and offsets** - Determine eligibility, limits and the required order under the verified country rules for R&D credits (`rd-tax-credits-matrix.md`), patent/IP box benefits (`ip-patent-box-matrix.md`), foreign tax credits, group relief, withholding credits and anti-double-taxation relief. Apply each benefit at its prescribed base, rate or credit stage exactly once. Record eligible and utilised credit amounts and carryforwards separately. A benefit already included in Step 1 or 2 is not deducted again here. Record the resulting tax liability after credits before reconciling payments.
 
 ### Step 4 — Compute and reconcile
 
-0. **Compute and reconcile** — - Tax liability before payments - Less: provisional / advance payments made during the year - Less: foreign tax credit utilisation - Net tax payable / refundable Reconcile to the corporation's accounting tax provision (current + deferred). Document material variances.
+0. **Compute and reconcile** - Start from the tax liability after credits recorded in Step 3, then reconcile evidenced provisional/advance payments to the payable or refundable balance under the country rules. Foreign tax and withholding credits already utilised in Step 3 are not deducted a second time. Trace every utilised credit and payment exactly once. Reconcile to the corporation's current/deferred tax provision and document material variances.
 
 ### Step 5 — Pillar Two overlay (if applicable)
 

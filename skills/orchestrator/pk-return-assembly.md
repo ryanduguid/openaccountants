@@ -198,8 +198,8 @@ The reviewer is an ICAP CA (Institute of Chartered Accountants of Pakistan), ICM
 | Identification | Redacted taxpayer/representative references, registration-status confirmations, necessary location facts and principal activity; reviewer completes identifying fields outside the agent |
 | Computation — Income | Head-by-head income with section references |
 | Computation — Tax | Slab application, super tax, minimum tax, ACT (companies) |
-| Adjustable Tax | All section 149–158 / 231 series withholdings with CPR references |
-| Advance Tax (Section 147) | Quarterly instalments paid, CPR references |
+| Adjustable Tax | All section 149–158 / 231 series withholdings with stable redacted CPR evidence references; reviewer retains the CPR numbers |
+| Advance Tax (Section 147) | Quarterly instalments paid with stable redacted CPR evidence references; reviewer retains the CPR numbers |
 | Tax Credits | Charitable donations (s.61), foreign tax credit (s.103), other |
 | Wealth Statement (Individuals) | Assets, liabilities, reconciliation of net wealth — section 116 |
 | Wealth Reconciliation | Opening net wealth + income + gifts received − expenses − gifts paid = closing net wealth |
@@ -207,7 +207,7 @@ The reviewer is an ICAP CA (Institute of Chartered Accountants of Pakistan), ICM
 | Depreciation (Companies) | Third Schedule rates, initial allowance, WDV roll-forward |
 | Salary Schedule | Per-employee detail (companies / AOPs with employees) |
 | Sales Tax Cross-check | Federal STR-7 turnover vs. financial statements revenue; provincial sales tax on services |
-| PSID Register | Every payment with head, period, amount, PSID number, CPR number, payment date |
+| PSID Register | Every payment with head, period, amount, stable redacted payment and CPR evidence references, payment date; reviewer retains the PSID and CPR numbers |
 | Cross-Check Summary | Pass/fail for each reconciliation item |
 | 2026-27 Planning | Quarterly advance tax forecast, ATL implications, withholding agent obligations |
 
@@ -544,7 +544,7 @@ If the taxpayer (especially a company) is a withholding agent under sections 153
 The reviewer brief contains an attestation block:
 
 ```markdown
-# Reviewer Attestation — [Taxpayer Name] — TY 2026
+# Reviewer Attestation — [stable redacted taxpayer reference] — TY 2026
 
 Reviewer name: ____________________________________
 Membership body: [ ] ICAP CA   [ ] ICMAP   [ ] ACCA-PK with Pakistan practising rights
@@ -571,7 +571,7 @@ I confirm the return is ready for IRIS submission and that the taxpayer / author
 ## Section 11 — Final taxpayer action list template
 
 ```markdown
-# Action List — [Taxpayer Name] — TY 2026
+# Action List — [stable redacted taxpayer reference] — TY 2026
 
 ## Immediate (before s.114 return filing)
 

@@ -60,7 +60,7 @@ The skill enforces the following execution order:
 0. **india-gst step** — GSTR-3B + GSTR-1 reconciliation (Q2 skill) - Runs first because GST turnover figures feed into the ITR - Reconcile GSTR-3B monthly/quarterly summaries with books - Verify GSTR-1 outward supply details match invoices - Reconcile ITC claimed with GSTR-2B auto-populated data - Output: GST turnover, output tax, ITC utilised, cash GST paid, reverse charge
 0. **in-income-tax step** — ITR-3 or ITR-4 return (Q2 skill) - Depends on GST output: gross receipts must match GST turnover (ex-GST for regular taxpayer) - For ITR-4 (presumptive 44ADA): 50% deemed profit on gross receipts, no expense schedule - For ITR-3 (actual profit): full P&L with expense deductions, depreciation schedule, balance sheet - Output: total income, tax liability at applicable slab rates, regime comparison if requested
 0. **in-advance-tax step** — Quarterly advance tax reconciliation (Q2 skill) - Depends on ITR: final tax liability determines whether advance tax was sufficient - Reconcile advance tax paid (from Form 26AS) against liability - Compute s.234B interest (default on advance tax shortfall -- if paid < 90% of assessed tax) - Compute s.234C interest (deferment -- quarterly shortfall in instalments: 15%/45%/75%/100%) - Output: advance tax schedule, shortfall computation, interest liability
-0. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. **in-tds-freelance step** - TDS credit reconciliation - Depends on ITR: TDS credits offset final tax liability - Reconcile Form 26AS TDS entries with income declared in ITR - Flag mismatches (TDS claimed but income not shown, or income shown but TDS not reflected) - Producer readiness: verify this guide has complete source conditions, content and checks for the requested period. If this producer cannot supply validated output, return Needs Input and hold its dependent results and the complete filing package. Do not substitute an assembler computation. - Output: TDS credit summary, mismatches, Form 26AS vs ITR reconciliation
 
 - **Upstream failure handling** — If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.
 
@@ -147,7 +147,7 @@ The skill enforces the following execution order:
 ### Reviewer brief contents
 
 ```markdown
-# Complete Return Package: [Client Name] -- FY 2025-26 (AY 2026-27)
+# Complete Return Package: [stable redacted client reference] -- FY 2025-26 (AY 2026-27)
 
 ## Executive Summary
 - Filing status: [Individual -- Resident]

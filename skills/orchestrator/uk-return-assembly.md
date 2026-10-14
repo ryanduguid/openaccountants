@@ -146,7 +146,7 @@ The skill enforces the following execution order:
 ### Reviewer brief contents
 
 ```markdown
-# Complete Return Package: [Client Name] -- Tax Year 2025/26
+# Complete Return Package: [stable redacted client reference] -- Tax Year 2025/26
 
 ## Executive Summary
 - Filing status: [Single / Married / Civil partner]

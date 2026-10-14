@@ -137,7 +137,7 @@ If any of the above has not produced validated output, the skill refuses with a 
 ### Reviewer brief contents
 
 ```markdown
-# Complete Return Package: [Taxpayer Name] — Tax Year 2025
+# Complete Return Package: [stable redacted taxpayer reference] — Tax Year 2025
 
 ## Executive Summary
 - Filing status: [X]

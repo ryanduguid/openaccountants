@@ -63,7 +63,7 @@ If the pay period is ambiguous, ask the user: "Which pay period are you computin
 
 For each employee, produce a one-line summary:
 
-> "[Name] — [employment type], [base pay] [frequency], [overtime status], [benefits if any], [tax code/status if provided]"
+> "[Stable employee reference] - [employment type], [base pay] [frequency], [overtime status], [benefits if any], [tax code/status if provided]"
 
 Present all summaries to the user:
 
@@ -197,7 +197,7 @@ Five outputs per payroll run. All five are mandatory. Never produce one without 
 One payslip per employee. Format:
 
 ```
-[Employer name]
+[Stable employer reference]
 Pay Period: [start date] to [end date]
 Payment Date: [date]
 Employee reference: [stable redacted reference]
@@ -260,7 +260,7 @@ Per-employee and total cost breakdown:
 
 | Employee | Cash Gross | Actual Benefit Cost | Employer SS | Employer Pension | Other Employer | Total Cost |
 |---|---|---|---|---|---|---|
-| [Name] | [amount] | [amount] | [amount] | [amount] | [amount] | [amount] |
+| [Stable employee reference] | [amount] | [amount] | [amount] | [amount] | [amount] | [amount] |
 | ... | | | | | | |
 | **TOTAL** | **[amount]** | **[amount]** | **[amount]** | **[amount]** | **[amount]** | **[amount]** |
 
@@ -303,13 +303,13 @@ uncertainty. Each: one sentence what, one sentence why it matters,
 one sentence what the reviewer should do.]
 
 ## Assumptions made (Tier 2 defaults)
-[For each Tier 2 decision: employee name, the decision point,
+[For each Tier 2 decision: stable employee reference, the decision point,
 the default applied, the alternative, and the cash impact of
 the alternative.]
 
 ## Questions asked and user answers (Tier 3)
 [For each Tier 3 item: the question, the user's answer or
-"don't know — default applied", and the resulting treatment.]
+"don't know - Needs Input; dependent calculation held", and the resulting treatment.]
 
 ## Withholding verification
 [For each employee: gross pay, tax withheld, effective rate,

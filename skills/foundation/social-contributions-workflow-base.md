@@ -65,7 +65,7 @@ If any of these cannot be established from the documents, queue the question for
 
 The user will provide payslips, payroll summaries, contribution statements or assessments from the authority, bank statements showing remittances, invoices or profit figures for a self-employed contributor, registration confirmations, prior declarations, or a combination. Read every document provided. Do not skim.
 
-Extract: gross pay per person per period and its components; declared or assessed bases; contributions already withheld or declared; every remittance to a contribution authority (date, amount, reference); self-employed income or profit for the base; registration numbers; and any exemption, reduced-rate, or start-up relief evidence.
+Extract: gross pay per person per period and its components; declared or assessed bases; contributions already withheld or declared; every remittance to a contribution authority (date, amount, reference); self-employed income or profit for the base; registration status and reviewer-held identifier readiness confirmations; and any exemption, reduced-rate, or start-up relief evidence.
 
 If no documents are provided at all, stop and tell the user what is needed.
 
@@ -73,7 +73,7 @@ If no documents are provided at all, stop and tell the user what is needed.
 
 Produce a one-line summary per contributor:
 
-> "[Name or reference] — [status], [programmes], period(s) [from–to], base source: [payslips / declared base / profit], coverage: [domestic / certificate held]"
+> "[Stable contributor reference] - [status], [programmes], period(s) [from–to], base source: [payslips / declared base / profit], coverage: [domestic / certificate held]"
 
 Present all summaries, then in the same message ask **only** the questions the documents did not answer — typically whether a director is treated as an employee, whether a self-employed person has chosen a base or class, which periods a remittance without a reference belongs to, and whether any reduced-rate eligibility applies:
 
@@ -234,7 +234,7 @@ what the reviewer should do.]
 alternative, and the cash impact of the alternative.]
 
 ## Questions asked and user answers (Tier 3)
-[For each: the question, the answer or "don't know — default applied",
+[For each: the question, the answer or "don't know - Needs Input; dependent calculation held",
 and the resulting treatment.]
 
 ## Base and limit verification

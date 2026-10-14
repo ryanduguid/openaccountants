@@ -136,7 +136,7 @@ If VL opted in but RFR N-2 exceeds threshold: VL is void. Income reverts to prog
 ### Reviewer brief contents
 
 ```markdown
-# Complete Return Package: [Client Name] -- Revenus 2025
+# Complete Return Package: [stable redacted client reference] -- Revenus 2025
 
 ## Executive Summary
 - Filing status: [Single / Married-joint / PACSé / Single parent]

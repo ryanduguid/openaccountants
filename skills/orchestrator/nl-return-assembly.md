@@ -140,12 +140,12 @@ Produces the complete Netherlands filing package for:
 ### Reviewer brief contents
 
 ```markdown
-# Complete Return Package: [Client Name] -- Tax Year 2025
+# Complete Return Package: [stable redacted client reference] -- Tax Year 2025
 
 ## Executive Summary
 - Filing status: [Single / Fiscal partner]
 - Residence: Netherlands (full-year)
-- Business: ZZP / eenmanszaak (KvK [number])
+- Business: ZZP / eenmanszaak, [stable redacted business reference]; reviewer confirms holding the KvK number outside agent inputs and outputs
 - BTW registration: Regular / KOR
 - BTW-aangifte position (Q4 or annual): EUR X te betalen / EUR X terug
 - Winst uit onderneming (before aftrekken): EUR X

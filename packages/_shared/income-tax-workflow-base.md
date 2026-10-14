@@ -280,7 +280,7 @@ what the reviewer should do.]
 cash impact of the alternative.]
 
 ## Questions asked and user answers (Tier 3)
-[For each: the question, the answer or "don't know — default applied",
+[For each: the question, the answer or "don't know - Needs Input; dependent calculation held",
 and the resulting treatment.]
 
 ## Decisions for the taxpayer or reviewer

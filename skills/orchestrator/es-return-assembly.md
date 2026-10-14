@@ -120,7 +120,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 9. **Client action list** -- what the client needs to do, with dates and amounts
 
 ```markdown
-# Complete Return Package: [Client Name] -- Tax Year 2025
+# Complete Return Package: [stable redacted client reference] -- Tax Year 2025
 
 ## Executive Summary
 - Filing status: [Individual -- Resident]

@@ -153,7 +153,7 @@ If an upstream skill is missing, refused, returned Needs Input or failed validat
 
 ### Reviewer brief contents
 
-# Complete Return Package: [Client Name] -- 令和7年分 (Tax Year 2025)
+# Complete Return Package: [stable redacted client reference] -- 令和7年分 (Tax Year 2025)
 
 ## Executive Summary
 - Filing status: [Single / Married with 配偶者控除 / etc.]

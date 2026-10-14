@@ -306,7 +306,7 @@ Sheets:
 ### Artifact 2: Reviewer brief (`[taxpayer]_2025_reviewer_brief.md`)
 
 Sections:
-1. **Taxpayer summary** — name, filing status, scope confirmation, refusals triggered (none if assembly completed)
+1. **Taxpayer summary** — stable redacted taxpayer reference, filing status, scope confirmation, refusals triggered (none if assembly completed)
 2. **Schedule C summary** — gross receipts, major expense categories, net profit
 3. **SE tax** — net SE earnings, SE tax, deductible half
 4. **Retirement contributions** — plan type, amount, Schedule 1 Line 16

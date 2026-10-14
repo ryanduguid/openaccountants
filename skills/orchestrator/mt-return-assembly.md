@@ -137,7 +137,7 @@ A EUR 500 printer: depreciated for income tax (25% x EUR 500 = EUR 125/year in B
 ### Reviewer brief contents
 
 ```markdown
-# Complete Return Package: [Client Name] -- Tax Year 2025
+# Complete Return Package: [stable redacted client reference] -- Tax Year 2025
 
 ## Executive Summary
 - Filing status: [Single / Married / Parent]

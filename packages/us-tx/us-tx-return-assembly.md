@@ -142,10 +142,10 @@ Produces the complete federal + Texas compliance package for:
 9. **Texas franchise tax worksheet:**
    - Total revenue computation
    - Threshold determination ($2.47M)
-   - If below threshold: Form 05-102 data (entity name, SOS file number, NAICS code, principal office, registered agent)
+   - If below threshold: Form 05-102 preparation data (stable redacted entity and registered-agent references, reviewer-held SOS identifier confirmation, NAICS code and necessary principal-office location facts); the reviewer completes identifying form fields outside agent outputs
    - If above threshold: margin computation, rate determination, tax due
 10. **Texas sales tax compliance summary** (if applicable):
-    - Permit number and filing frequency
+    - Permit/registration status and filing frequency; reviewer confirms holding the permit identifier outside agent inputs and outputs
     - Taxable vs exempt sales analysis
     - Sales tax collected and remitted by period
     - Outstanding returns (if any)
@@ -156,7 +156,7 @@ Produces the complete federal + Texas compliance package for:
 ### Reviewer brief structure
 
 ```markdown
-# Complete Return Package: [Taxpayer Name] — Tax Year 2025
+# Complete Return Package: [stable redacted taxpayer reference] — Tax Year 2025
 
 ## Executive Summary
 - Filing status: [X]
@@ -174,7 +174,7 @@ Produces the complete federal + Texas compliance package for:
 [Federal assembly content]
 
 ## Texas Franchise Tax
-- Entity: [LLC name] (SOS file number: XXXXXXXXXX)
+- Entity: LLC, [stable redacted entity reference]; reviewer confirms holding the SOS file number outside agent inputs and outputs
 - Accounting year end: December 31, 2025
 - Total revenue: $X
 - No-tax-due threshold: $2,470,000
@@ -184,7 +184,7 @@ Produces the complete federal + Texas compliance package for:
 - Extension available: November 15, 2026
 
 ## Texas Sales Tax (if applicable)
-- Permit: [number] / Filing frequency: [monthly/quarterly/annually]
+- Permit status: [confirmed / Needs Input]; reviewer confirms holding the permit identifier outside agent inputs and outputs. Filing frequency: [monthly/quarterly/annually]
 - Taxable sales: $X
 - Tax collected: $X
 - Tax remitted: $X
@@ -235,7 +235,7 @@ Produces the complete federal + Texas compliance package for:
 
 ## Texas Franchise Tax
 
-- Entity: [LLC name] (SOS file number: XXXXXXXXXX)
+- Entity: LLC, [stable redacted entity reference]; reviewer confirms holding the SOS file number outside agent inputs and outputs
 - Accounting year end: December 31, 2025
 - Total revenue: $X
 - No-tax-due threshold: $2,470,000
@@ -246,7 +246,7 @@ Produces the complete federal + Texas compliance package for:
 
 ## Texas Sales Tax (if applicable)
 
-- Permit: [number] / Filing frequency: [monthly/quarterly/annually]
+- Permit status: [confirmed / Needs Input]; reviewer confirms holding the permit identifier outside agent inputs and outputs. Filing frequency: [monthly/quarterly/annually]
 - Taxable sales: $X
 - Tax collected: $X
 - Tax remitted: $X

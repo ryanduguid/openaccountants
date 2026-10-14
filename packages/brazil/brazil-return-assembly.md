@@ -177,7 +177,7 @@ A partir de 2026, contribuintes fora do Simples Nacional precisam reconciliar CB
 
 ### Conteúdo do reviewer brief
 
-# Pacote Completo de Declaração: [Nome do Cliente] -- Ano-calendário 2025 / Exercício 2026
+# Pacote Completo de Declaração: [referência estável anonimizada do cliente] -- Ano-calendário 2025 / Exercício 2026
 
 ## Sumário Executivo
 - Situação: [Solteiro / Casado / União estável]

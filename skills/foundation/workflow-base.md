@@ -232,7 +232,7 @@ The review checklist is the structured sign-off document that the reviewing prac
 
 ```
 REVIEW CHECKLIST — [Obligation] [Period]
-Client: [name]  |  Prepared by: Claude + [skill name] [version]
+Client reference: [stable redacted reference]  |  Prepared by: Claude + [skill name] [version]
 Reviewer: ____________  |  Credential: ____________  |  Date: ____________
 
 ═══════════════════════════════════════════════════════════════
