@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-16 | [Finland: 2025 income, contribution and business corrections](2026-10-16-finland-2025-income-corrections.md) |
 | 2026-10-16 | [Åland charges and Finland collection corrections](2026-10-16-aland-charges-finland-collection.md) |
 | 2026-10-16 | [Åland income tax: separate bases and statutory settlement](2026-10-16-aland-income-bases.md) |
 | 2026-10-16 | [Åland: territorial exceptions and operative periods](2026-10-16-aland-tax-scope.md) |

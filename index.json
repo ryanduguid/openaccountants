@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T18:56:36+00:00",
+ "generated_at": "2026-10-15T19:44:24+00:00",
  "counts": {
   "guides": 1893,
   "jurisdictions": 246,
@@ -8402,7 +8402,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "finland-vat-return",
