@@ -124,7 +124,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | IR | Iran (Islamic Republic of) | 6 | 0 |
 | IS | Iceland | 8 | 0 |
 | IT | Italy | 15 | 0 |
-| JE | Jersey | 13 | 0 |
+| JE | Jersey | 14 | 0 |
 | JM | Jamaica | 6 | 0 |
 | JO | Jordan | 6 | 0 |
 | JP | Japan | 18 | 0 |

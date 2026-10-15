@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-16 | [Jersey: annual parish rates, assessed quarters and liability](2026-10-16-jersey-parish-rates.md) |
 | 2026-10-16 | [Jersey: property transaction and probate mechanisms](2026-10-16-jersey-property-transactions.md) |
 | 2026-10-15 | [Jersey: Class 1 earnings, rounding and ITIS conditions](2026-10-15-jersey-class1-earnings.md) |
 | 2026-10-15 | [Jersey: GST recovery, enacted Pillar Two and formation conditions](2026-10-15-jersey-gst-mcit-formation.md) |

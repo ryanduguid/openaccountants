@@ -1,23 +1,13 @@
 ---
 name: je-property-transactions
 description: >
-  Jersey property transaction and probate reference for 2026. Covers share-transfer
-  land transaction tax, ordinary and higher dwelling stamp duty, borrowing,
-  contract leases, enveloped property transaction tax and probate duty. Use for
-  Jersey property purchases, LTT, EPTT, refinancing, first-buyer relief or estate
-  charges. Includes ordinary transfer bands, temporary 2026 higher
-  bands, conditional worked positions, statement duties and small-estate
-  distinctions. Preserves statutory drafting qualifications, valuation and
-  eligibility conditions. Annual parish rates, trading and rental income,
-  specialist reliefs and disputed applications need additional sources. This
-  source-cited draft awaits professional review and does not certify an
-  engagement calculation or a complete Jersey tax pack.
+  Jersey property transaction and probate reference for 2026. Covers share-transfer land transaction tax, ordinary and higher dwelling stamp duty, borrowing, contract leases, enveloped property transaction tax and probate duty. Use for Jersey property purchases, LTT, EPTT, refinancing, first-buyer relief or estate charges. Includes transfer bands, conditional worked positions, statement duties and small-estate distinctions. Preserves statutory drafting qualifications, valuation and eligibility conditions. Annual parish rates have a separate companion. Trading and rental income, specialist reliefs and disputed applications need additional sources. This source-cited draft awaits professional review and does not certify an engagement calculation or a complete Jersey tax pack.
 jurisdiction: JE
 category: international
 tax_year: 2026
 tier: 2
 last_updated: 2026-10-16
-version: 1.1
+version: 1.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -29,7 +19,7 @@ depends_on:
 
 Select the legal transaction before calculating a charge. Load workflow-base and read this whole guide before using a table. Establish applicable law and facts for the transaction or duty date; unresolved source conditions require Needs Input. Hypothetical arithmetic does not establish eligibility or professional sign-off.
 
-The [taxable income guidance](https://www.gov.je/TaxesMoney/IncomeTax/Individuals/TypesTaxableIncome/Pages/TaxableNonTaxableIncome.aspx) lists capital gains as non-taxable unless the activity is trading. The [migration overview](https://www.gov.je/lifeevents/movingtojersey/livinginjersey/pages/moneytax.aspx) states that Jersey has no capital gains or inheritance tax. Trading, development and [rental income](https://www.gov.je/taxesmoney/incometax/individuals/typestaxableincome/pages/propertyincome.aspx), GST, transaction charges and probate need separate treatment. This guide does not compute income tax, GST or annual parish rates.
+The [taxable income guidance](https://www.gov.je/TaxesMoney/IncomeTax/Individuals/TypesTaxableIncome/Pages/TaxableNonTaxableIncome.aspx) lists capital gains as non-taxable unless the activity is trading. The [migration overview](https://www.gov.je/lifeevents/movingtojersey/livinginjersey/pages/moneytax.aspx) states that Jersey has no capital gains or inheritance tax. Trading, development and [rental income](https://www.gov.je/taxesmoney/incometax/individuals/typestaxableincome/pages/propertyincome.aspx), GST, transaction charges and probate need separate treatment. This guide does not compute income tax, GST or annual parish rates. For dated annual property rates, load je-parish-rates separately with its own assessment, liability and demand conditions.
 
 Primary source library, inspected on 15 October 2026 UTC; editing date 16 October in Australia/Sydney:
 
@@ -244,9 +234,9 @@ Check scope/exclusions; applicable date and temporary 2026 provision; every elig
 
 ## Remaining coverage and revision
 
-Annual parish rates, complete trading/development/property-income/GST interactions, all specialist conveyance/lease/charity/group/trust reliefs, contentious valuation, complete succession/foreign-domicile procedures, portal behaviour and actual consumer/workbook execution remain unverified. These gaps keep the country pack partial. LTT group relief has combined ownership/control and profit-right conditions; ordinary company connection does not establish it.
+Annual parish rates are addressed separately in je-parish-rates, within its stated limits. Complete trading/development/property-income/GST interactions, all specialist conveyance/lease/charity/group/trust reliefs, contentious valuation, complete succession/foreign-domicile procedures, portal behaviour and actual consumer/workbook execution remain unverified. These gaps keep the country pack partial. LTT group relief has combined ownership/control and profit-right conditions; ordinary company connection does not establish it.
 
-Version 1.1, 16 October 2026: expanded transfer bands, borrowing distinctions, stamp/EPTT leases, statements and probate; added hypothetical arithmetic, source qualifications and companion controls. Version 1.0, 11 October 2026: initial boundaries and selected LTT examples. Source register: references.md; dated verification record: docs/verification-log/2026-10-16-jersey-property-transactions.md in the repository. Tier 2 and pending professional review.
+Version 1.2, 16 October 2026: linked the separate annual parish-rates companion without changing transaction/probate calculations. Version 1.1, 16 October 2026: expanded transfer bands, borrowing distinctions, stamp/EPTT leases, statements and probate; added hypothetical arithmetic, source qualifications and companion controls. Version 1.0, 11 October 2026: initial boundaries and selected LTT examples. Source register: references.md; dated verification record: docs/verification-log/2026-10-16-jersey-property-transactions.md in the repository. Tier 2 and pending professional review.
 
 <!-- openaccountants-cta-block -->
 
