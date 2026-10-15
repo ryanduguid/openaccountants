@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Calendar 2026 source reference; 2027 amendments and earlier-year guidance are identified separately"
 tier: 2
 last_updated: 2026-10-16
-version: 0.2
+version: 0.3
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -274,9 +274,59 @@ separate municipal taxable earned-income base before applicable credits.
 | Jomala | 17.50% | Sund | 19.00% |
 | Kumlinge | 19.30% | Vårdö | 19.00% |
 
-Church tax requires confirmed membership, parish, relevant date and applicable
-exceptions before using a church column in that decision. Unknown membership
-does not mean no church tax. The complete church-law conditions remain open.
+### Church membership and parish
+
+[Act 1013/2012, section 1](https://www.finlex.fi/sv/lagstiftning/2012/1013)
+charges an individual who belonged to an Evangelical Lutheran parish at the end
+of the preceding year on municipal taxable income. For 2026, establish membership
+at 31 December 2025. [Vero's church-tax guidance](https://www.vero.fi/sv/skatteforvaltningen/nyhetsrummet/presentations_och_undervisningsmateria/kyrkoskat/)
+uses the preceding-year-end membership test for both the Lutheran and Orthodox
+churches. [Orthodox Church Act 985/2006, section 77](https://www.finlex.fi/sv/lagstiftning/2006/985)
+also bases church tax on municipal taxable income. Use the lawful Åland municipal
+base, not the state base or gross wages, before applicable tax credits.
+
+The following church columns come from the same [2026 annual decision 1012/2025](https://www.finlex.fi/sv/lagstiftning/2025/1012).
+They cover the ordinary geographical parish branch. Vero identifies different
+rules for members of Olaus Petri and the German parish, and possible liability
+for membership of another Evangelical Lutheran church abroad. Hold those cases
+until their membership, parish and applicable rate are established.
+
+| Municipality | 2026 Lutheran rate | 2026 Orthodox rate |
+|---|---|---|
+| Brändö | 2.00% | 1.75% |
+| Eckerö | 1.80% | 1.75% |
+| Finström | 1.95% | 1.75% |
+| Föglö | 2.00% | 1.75% |
+| Geta | 1.95% | 1.75% |
+| Hammarland | 1.80% | 1.75% |
+| Jomala | 1.70% | 1.75% |
+| Kumlinge | 2.00% | 1.75% |
+| Kökar | 2.00% | 1.75% |
+| Lemland | 1.70% | 1.75% |
+| Lumparland | 1.70% | 1.75% |
+| Mariehamn | 1.55% | 1.75% |
+| Saltvik | 1.75% | 1.75% |
+| Sottunga | 2.00% | 1.75% |
+| Sund | 1.95% | 1.75% |
+| Vårdö | 1.95% | 1.75% |
+
+Unknown membership is Needs Input, not zero tax. Record the church, parish and
+effective membership dates and check any conflicting prefilled information.
+The Vero page, updated 4 January 2022, states both the year-end membership test
+and a separate exit-notification deadline on the next-to-last calendar day.
+This draft does not resolve that notice wording or prescribe an exit deadline.
+Establish the legally effective membership status from the relevant evidence.
+
+[Church Law 652/2023, chapter 6 section 2](https://www.finlex.fi/sv/lagstiftning/2023/652)
+governs the Lutheran church-tax funding and relief decision. Its chapter 13
+repeals the former Church Law 1054/1993 from 1 July 2023, although Act 1013/2012
+section 3 still displays that older cross-reference. Sections 2 of Act 1013/2012
+and 78 of the Orthodox Act provide corresponding municipal-tax relief and
+separate application-based relief. An unresolved relief claim is not an
+exemption. Estate, foreign-membership, contested effective-date and relief or
+appeal cases require their complete conditions; the table alone cannot clear them.
+
+### Capital income
 
 [Income Tax Act section 124(2)](https://www.finlex.fi/sv/lagstiftning/1992/1535)
 taxes ordinary taxable capital income at 30% up to EUR 30,000 and 34% above it.
@@ -313,6 +363,35 @@ Deficit credits, household/oil-heating credits, student-loan credits and
 maintenance relief require their own eligibility, ordering and spouse rules.
 
 ## Contributions, media fee and collection
+
+### Establish insured status
+
+[Health Insurance Act 1224/2004, chapter 1 sections 2–3](https://www.finlex.fi/fi/lainsaadanto/2004/1224)
+links insured status to the work, entrepreneurial and residence routes in
+[Act 16/2019, sections 4–10](https://www.finlex.fi/fi/lainsaadanto/2019/16),
+and the treated-as-resident routes in sections 11–13. Kela determines health
+insurance status. For the ordinary residence branch, sections 4–5 require
+lawful presence, a valid residence permit where required, an actual dwelling
+and home in Finland, and continuous predominant presence there. If a permit
+applied for in Finland is granted, section 4 treats the requirement as met from
+the application date. Record the statutory route, relevant period and evidence.
+
+[Vero's insured-person guidance, section 1.2](https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/338472/vakuutetun-sairausvakuutusmaksu2/)
+expressly distinguishes social-insurance residence from income-tax residence.
+An Åland fiscal municipality or Finnish taxable income does not establish
+insured status. Meeting a statutory route gives coverage without purchasing a
+policy, but each benefit has additional entitlement conditions. This is not a
+verification of every Åland public-health-service entitlement.
+
+The Health Insurance Act's specified diplomatic and related exclusions, EU
+coordination, social-security agreements, foreign coverage and pension routes
+require separate checks. Migration, temporary or repeated absence, student and
+special residence cases remain held. [Amendment 22/2019](https://www.finlex.fi/fi/lainsaadanto/saadoskokoelma/2019/22)
+introduced the reviewed scope reference from 1 April 2019. [Amendment 66/2026](https://www.finlex.fi/fi/lainsaadanto/saadoskokoelma/2026/66)
+changes Act 16/2019's worker route from 1 May 2026; it does not replace the
+ordinary residence test with a worker earnings threshold.
+
+### Separate contribution bases
 
 [Vero's insured-person health guidance](https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/338472/vakuutetun-sairausvakuutusmaksu2/)
 distinguishes the deductible daily-allowance premium from the non-deductible
@@ -359,12 +438,51 @@ Chapter 18 section 5 starts daily-allowance liability at the beginning of the
 month after turning 16 and ends it after the month of turning 68. It exempts
 a person who dies during the tax year from the insured person's health
 contribution. Special bases, age-transition allocations, international coverage
-and becoming insured remain subject to their own conditions.
+and changes in insured status remain subject to their own conditions.
+
+### Personal media fee
+
+[Regional Media Fee Act 2019:103, section 2](https://www.regeringen.ax/alandsk-lagstiftning/alex/2019103)
+requires general Finnish tax liability, an Åland home municipality and turning
+18 no later than the end of the tax year. The personal fee applies when the
+statutory income measure **exceeds EUR 14,000**. Equality does not meet that
+test. Compare state net earned income plus state net capital income with
+confirmed YEL plus MYEL work income and use the higher amount. Without confirmed
+work income, use the combined state net amounts. This is not municipal taxable
+income, gross receipts or the final state base after personal deductions.
+
+[Vero's 2026 media-fee guidance, sections 2.1–2.3 and appendix](https://www.vero.fi/sv/Detaljerade_skatteanvisningar/anvisningar/89754/medieavgift-i-landskapet-%C3%A5land4/)
+and [ÅFS 2025:54, section 1](https://www.regeringen.ax/node/219674) fix the charge
+at EUR 128 for tax year 2026. It is a fixed annual amount once the test is met,
+not a percentage of the excess. Natural earning expenses enter the state net
+income calculation; employee pension premiums, acquisition-debt interest and
+the pension-income deduction are not natural deductions for this comparison.
+Ordinary work-income or household tax credits do not reduce the fee, and the
+fee is not an income deduction. Foreign-tax relief has separate treaty conditions
+and remains held.
+
+The fee is personal, so several members of a household can owe it. Ownership,
+use or ability to use a radio, television or the service does not remove
+liability. The reviewed Act and personal guidance provide no disability-specific
+exemption. Unlike the insured health contribution, the media fee remains payable
+for the death year by the estate; later estate years are excluded. Full estate,
+part-year, migration and cross-border calculations remain outside this draft's
+ordinary resident branch.
+
+There is a commencement discrepancy to resolve before any affected collection
+instruction. ÅFS 2025:54 was issued on 19 June 2025 and printed on 29 August
+2025. Its section 2 expressly starts on **1 October 2026**, while section 1
+fixes the tax-2026 fee. Vero's guidance is effective from 1 January 2026 and
+cites that decision. No official correction or complete treatment of collection
+before 1 October 2026 was verified. Preserve both dates; do not silently change
+the original to 2025 or infer an exemption for the earlier period.
+
+### Advance collection reference
 
 The [2026 withholding/prepayment decision, sections 3.3–3.4 and 7](https://www.vero.fi/syventavat-vero-ohjeet/paatokset/47363/verohallinnon-paatos-ennakonpidatysprosenttien-laskentaperusteista-palkkatuloa-varten-ja-ennakonkannossa-maarattavan-ennakkoveron-laskentaperusteista-vuodelle-2026/)
-corroborates the separate calculations within advance collection. It also gives
-a EUR 128 Åland media fee above the specified EUR 14,000 income measure; final
-media-fee authority and eligibility remain open. Do not add employee pension or
+corroborates the separate calculations within advance collection, including
+the EUR 128 media-fee amount. It does not resolve the original decision's
+commencement discrepancy. Do not add employee pension or
 unemployment deductions twice to the authority-collected income-tax balance.
 
 The same decision applies from 1 January 2026. Its automatic initial estimates
@@ -617,6 +735,9 @@ contract. Monetary results described as unrounded remain intermediate values.
 | Advance band boundary | Ordinary in-year total EUR 500 versus EUR 500.01, no variation requested | Two versus three instalments; the upper boundary is inclusive |
 | Residual band boundary | Residual principal EUR 169.99 versus EUR 170, no changed assessment | One versus two instalments; the separate non-imposition and interest rules still apply |
 | Ordinary increase component | Added income EUR 5,000; reviewer establishes the ordinary 2% branch, no non-imposition ground or other failure | EUR 100, exceeding the EUR 75 individual minimum; no liability or actual penalty decision is certified |
+| Ordinary church component | Municipal taxable income EUR 20,000; confirmed 31 December 2025 membership and ordinary Mariehamn geographical parish; no relief or credit yet | Lutheran EUR 310 or Orthodox EUR 350 before credit allocation; unknown membership holds the component |
+| Media threshold | Ordinary 2026 resident aged 18 by year-end; no confirmed YEL/MYEL income or foreign relief; state net sum EUR 14,000 versus EUR 14,000.01 | EUR 0 versus fixed EUR 128 under the annual amount rule; commencement discrepancy remains recorded |
+| Media insured-income comparison | State net sum EUR 5,900; confirmed YEL EUR 17,000 and no MYEL; ordinary resident age conditions met, no foreign relief | EUR 17,000 is the higher measure, giving the fixed EUR 128 annual fee; a low taxable business profit alone does not remove it |
 
 ### Full-ladder example work still required
 
@@ -629,7 +750,9 @@ contract. Monetary results described as unrounded remain intermediate values.
 ## Intake, defaults and reviewer controls
 
 Add fiscal municipality evidence, national residence branch, accounting period,
-income categories, church membership/parish, age and guardian/spouse status,
+income categories, church/parish and effective membership dates, health-insurance
+route/period evidence, state net amounts and confirmed YEL/MYEL income for the
+media comparison, age and guardian/spouse status,
 commuting method and qualifying months, pension/contribution certificates,
 business net-asset/wage/election schedules, losses, credit evidence and the
 authority collection statement to the bases' intake. Use taxpayer references
@@ -677,17 +800,17 @@ presence, a passing linter or an assumed zero.
 |---|---|---|
 | 1. Year, basis, filing unit, residence | Calendar/accounting-period mapping, separate spouse taxation and resident/municipality distinctions | Permitted business accounting basis and specialist taxpayer exceptions |
 | 2. Income categories | Earned/capital separation, source schedules, business allocation framework | Complete receipt-specific exemptions, business adjustments and special categories |
-| 3. Rates and charges | Adjusted state scale, 16 municipal rates, capital rates; contribution collection references | Complete church, health and media charge conditions and final bases |
+| 3. Rates and charges | Adjusted state scale, 16 municipal/church rate rows, ordinary membership and media conditions, capital rates | Special church/health cases, media commencement discrepancy and final bases/credit allocation |
 | 4. Deductions and credits | Separate ordinary wage/basic rules and work-credit ordering | Complete specialist/other-credit eligibility, allocation, refundability and spouse rules |
 | 5. Expenses and capital | Ordinary wage/home/commuting distinctions | Business deductions, depreciation, valuations and final 2026 mileage decision |
 | 6. Losses | Assessed earned/business ten-year carry-forward, oldest first; separate capital-income election route | Full capital-loss, cessation and specialist conditions; personal loss balances |
 | 7. Collection and advances | Imposed/paid/reduced advances, ordinary advance bands, residual instalments and interest-period/rate framework | Dated personal estimates/notices, final interest rounding, offsets and complete special cases |
-| 8. Contributions | Ordinary municipal healthcare bridge, YEL/MYEL substitution/exclusion, separate daily base and annual rates | Complete insurance eligibility, special/age-transition bases and applicable companion outputs |
+| 8. Contributions | Ordinary insured-residence route, municipal healthcare bridge, YEL/MYEL substitution/exclusion, separate daily base and annual rates | Special/cross-border eligibility, coverage changes, age-transition bases and applicable companion outputs |
 | 9. Filing/payment | Return duties, Form 5/17 identities, ordinary instalment/date rules and conditional filing-penalty branches | 2026 form fields, personal notices, complete bank-day calendar, disputed/special penalty and remedy processes |
 | 10. Transaction patterns | Source categories and exclusions above | Validate document/statement field maps and remaining receipt patterns |
 | 11. Refusals/defaults | Exact catalogue, lawful factual holds and review thresholds | Check against the final content and observable consumer behaviour |
 | 12. Currency/rounding | EUR, cent reporting rule and historical precision explanation | Current final rounding/credit allocation and foreign conversion rules |
-| 13. Worked examples | Twelve hypothetical component positions | Employee, self-employed and mixed cases through the full settlement ladder |
+| 13. Worked examples | Fifteen hypothetical component positions | Employee, self-employed and mixed cases through the full settlement ladder |
 
 Before any eventual financial delivery, run both bases' checks and also verify:
 
@@ -721,6 +844,11 @@ complete operative chain for an engagement. Numerical examples are invented
 component checks; consumer, full-workbook, portal and professional validation
 remain unverified. The guide is Tier 2/pending_review and gives no comprehensive
 country-coverage credit.
+
+Version 0.3 adds ordinary church membership and sixteen parish-rate rows,
+the ordinary insured-residence test, the personal media-fee comparison and
+three component positions. The original media decision's commencement date
+remains an explicit source issue. Annual rounding is still unproved.
 
 Version 0.2 adds ordinary advance/residual collection, interest-period rules and
 conditional filing penalties. Four additional component positions test

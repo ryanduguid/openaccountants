@@ -1,10 +1,10 @@
 ---
 name: fi-income-tax
 description: Use this skill whenever asked about Finland income tax for self-employed individuals or freelancers. Trigger on phrases like "Finland income tax", "Finnish tax", "Verohallinto", "OmaVero", "vero.fi", "elinkeinotulo", "pääomatulo", "ansiotulo", "Finnish tax return", "ennakkoperintä", "municipal tax Finland", "capital income Finland", "state tax Finland", or any question about Finnish income tax filing, rates, or deductions for self-employed persons. Covers progressive state tax, municipal tax, capital income tax, church tax, deductions, and filing via OmaVero. ALWAYS read this skill before touching any Finland income tax work.
-version: 1.1
+version: 1.2
 jurisdiction: FI
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-16
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -14,6 +14,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # FI Income Tax
+
+This Tier 2 draft retains 2025 rate, deduction and calculation material that
+still needs period-specific verification before a complete financial output.
+Version 1.2 corrects the church-membership default and the natural-person
+filing-penalty framework using the cited primary rules. It does not verify the
+remaining income-tax examples or supply final annual rounding. Hold dependent
+amounts under the income-tax workflow base until their rules and inputs are proved.
 
 ## Section 1 -- Quick Reference
 
@@ -32,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Self-employed: 1 April of the following year. Employees: one of several April dates, assigned per taxpayer and printed on the return and in MyTax -- **1, 14, 21 or 28 April 2026** for tax year 2025 (they were 15, 22 and 29 April in the previous season, so do not carry a year forward) |
 | Validated by | Pending -- requires sign-off by a Finnish KHT/HT auditor or tax adviser |
 | Validation date | Pending |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 ### Earned Income -- State Tax Brackets (2025)
 
@@ -56,6 +63,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Church Tax (kirkollisvero)
 
 - **Church tax rate range** — 1.0% -- 2.2% (Applicable only to members of the Evangelical Lutheran Church or Orthodox Church, depending on parish)
+
+Establish the church, parish and legally effective membership at the end of
+the preceding year before selecting a parish rate. [Act 1013/2012, section 1](https://www.finlex.fi/sv/lagstiftning/2012/1013)
+provides the Lutheran membership test and municipal taxable-income base;
+[Vero's general church-tax guidance](https://www.vero.fi/sv/skatteforvaltningen/nyhetsrummet/presentations_och_undervisningsmateria/kyrkoskat/)
+uses the preceding-year-end test for Lutheran and Orthodox members. Special
+parishes, foreign membership, estates and disputed effective dates need their
+own checks. An unknown membership status does not establish zero church tax.
+The 2025 parish-rate range above was not reverified in this correction.
 
 ### Capital Income Tax (pääomatulovero)
 
@@ -88,7 +104,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Ambiguity | Default |
 | --- | --- |
 | Unknown municipality | STOP -- municipal tax rate required |
-| Unknown church membership | No church tax |
+| Unknown church membership | Needs Input; hold church tax and any dependent credit allocation or total until membership, parish and effective dates are established |
 | Unknown capital income split election | 20% of net assets (statutory default) |
 | Unknown business-use % (vehicle, phone, home) | 0% deduction |
 | Unknown expense category | Not deductible |
@@ -104,12 +120,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Ideal** -- complete bookkeeping (single-entry or double-entry), balance sheet if double-entry, prepayment tax (ennakkovero) payment confirmations, travel expense records.
 
+For church tax, obtain the applicable church/parish, effective membership dates
+and the relevant prefilled or authority record. Resolve conflicting information
+before choosing a zero charge or parish rate.
+
 ### Refusal Catalogue
 
 - **R-FI-1 -- Municipality unknown** — "Municipal tax rate varies from 4.73% to 10.86%. Cannot compute total tax without knowing the client's municipality. Please confirm."
 - **R-FI-2 -- Company or partnership** — "This skill covers sole traders (toiminimi) and freelancers (ammatinharjoittaja) only. Oy (osakeyhtiö), Ky (kommandiittiyhtiö), and Ay (avoin yhtiö) have different rules. Escalate to a Finnish tax adviser."
 - **R-FI-3 -- Non-resident taxation** — "Non-resident and dual-resident taxation has separate rules (e.g., flat 35% withholding on employment income). Out of scope."
 - **R-FI-4 -- International income / tax treaty** — "Cross-border income subject to Finland's extensive double tax treaty network requires specialist analysis. Escalate."
+- **R-FI-CHURCH -- Membership or parish unresolved**: "I need the applicable church, parish and effective membership status at the end of the preceding year. Church tax and dependent credit allocations or totals remain held until these are established."
 
 ## Section 3 -- Deductions
 
@@ -204,21 +225,57 @@ State tax = €10,837.93
 Self-employed persons must pay prepayment tax during the tax year. See the **fi-prepayments** skill for full details.
 
 - Based on estimated income or prior year assessment
-- Paid in monthly or bimonthly instalments via OmaVero
+- The ordinary schedule has 2, 3, 6 or 12 instalments according to the assessed advance; see the source-linked bands in **fi-prepayments**
 - Adjustable during the year through OmaVero
 - Residual tax (jäännösvero) due if prepayments insufficient
 
 ### 5.3 Penalties
 
-**5.3 Penalties**
+[Assessment Procedure Act 1558/1995, sections 32–33](https://www.finlex.fi/sv/lagstiftning/1995/1558),
+introduced by [15/2018](https://www.finlex.fi/sv/lagstiftning/forfattningssamling/2018/15)
+from tax year 2018, distinguishes a natural person's EUR 50 annual late-filing
+fee from a tax increase. An individual sole trader uses this branch. A complete
+required main return filed late before assessment ends comes within the fee
+branch even after a request. A correction of an existing or deemed prefilled
+return uses that substitution only on the taxpayer's own initiative before
+completion. Separate errors can still attract an increase. The fee is once
+per tax year, not EUR 50 plus a percentage of tax.
 
-| Offence | Penalty |
-| --- | --- |
-| Late filing | Late filing surcharge (myöhästymismaksu): €50 base + 2% of tax due (max varies) |
-| Failure to file | Estimated assessment (arvioverotus) + penalty up to 30% of added tax |
-| Late payment of residual tax | Interest: base rate + 7 percentage points (Vero publishes annually) |
-| Negligent error | Tax increase (veronkorotus): 2-10% of additional tax |
-| Intentional error | Tax increase: 10-40% of additional tax |
+First establish the disclosure failure and any non-imposition ground. The
+statute addresses minor failures, valid reasons and the applicable
+unreasonableness test; the fee has additional outside-control and special-reason
+grounds. A missing taxpayer-favourable item normally attracts neither charge,
+subject to the repeated-failure/clear-indifference exception. That does not
+excuse an entirely late required return or an unfounded deduction.
+
+| Qualifying increase branch | Percentage of added income | Percentage of increased tax where section 32b applies |
+|---|---|---|
+| Ordinary | 2% | 10% |
+| Repeated failure or clear indifference | 3% to 10% | 15% to 50% |
+| Estimated assessment | 5% | 25% |
+| Statutory interpretive uncertainty or qualifying unreasonableness | 1% | 5% |
+| Foreign income satisfying section 32a(5), excluding the aggravated branch | 1% | 5% |
+| Own-initiative correction after completion with the explanation duty fulfilled | 0.5% | 2% |
+
+Added income is the primary base, including a qualifying reduction of an
+assessed loss. Increased tax is the alternative base when the income base
+cannot be used or income was placed in the wrong category. The natural-person
+minimum is EUR 75 when an increase is imposed, after non-imposition grounds
+have been considered. Do not apply an income percentage to additional tax or
+classify a failure from an informal label such as 'negligent' alone.
+
+[Vero's guidance dated 20 May 2026](https://www.vero.fi/sv/Detaljerade_skatteanvisningar/anvisningar/66816/pofoljdsavgifter-for-inkomstbeskattningen/)
+contains apparent wording conflicts in sections 3.2.5 and 3.2.12: the former
+uses added-income wording for the 15% to 50% increased-tax branch; the latter
+states a EUR 150 minimum without qualifying the taxpayer category. Sections
+32a–32b and the guidance's section 3.2.9 support the natural-person base and
+EUR 75 minimum above. The 2026 guidance is interpretive material, not a change
+of this guide's 2025 tax year. Disputed facts, special formal failures, foreign
+credits, criminal-process safeguards and remedies need their complete rules.
+
+Payment interest is separate. Use **fi-prepayments** for reduced settlement
+interest and interest starting the day after an overdue amount's due date;
+an honest shortfall in advances alone does not establish a disclosure penalty.
 
 ## Section 6 -- Interaction with Other Finnish Taxes
 
@@ -270,21 +327,21 @@ Self-employed persons must pay prepayment tax during the tax year. See the **fi-
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
 <!-- openaccountants-cta-block -->
 
 ---
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

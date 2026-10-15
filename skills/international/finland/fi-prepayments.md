@@ -1,10 +1,10 @@
 ---
 name: fi-prepayments
 description: Use this skill whenever asked about Finland prepayment tax (ennakkovero) for self-employed individuals. Trigger on phrases like "ennakkovero", "ennakkoverot", "prepayment tax Finland", "Finnish tax prepayments", "residual tax Finland", "jäännösvero", "tax instalments Finland", "OmaVero prepayment", "prepayment certificate", "ennakkoperintä", or any question about paying tax during the year as a Finnish self-employed person. Covers prepayment calculation, payment schedules, adjustment requests, residual tax, and penalties. ALWAYS read this skill before advising on Finnish tax prepayments.
-version: 1.0
+version: 1.1
 jurisdiction: FI
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-16
 review_status: pending_review
 depends_on:
   - fi-income-tax
@@ -14,6 +14,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # FI Prepayments
+
+This Tier 2 guide covers ordinary resident individuals, including sole traders.
+Load fi-income-tax and its workflow dependencies. This correction verifies
+selected collection rules; the inherited 2025 income-tax rates, deductions and
+examples still require checking before a complete financial output. Estates,
+corporations, partnerships, non-residents and disputed or specialist collection
+cases need their complete rules. Keep tax year, collection calendar year and
+assessment-completion date distinct. Final annual and interest rounding remain
+unverified.
 
 ## Section 1 -- Quick Reference
 
@@ -31,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Applies to | Self-employed (elinkeinonharjoittaja / ammatinharjoittaja), rental income, capital gains, other income not subject to withholding |
 | Validated by | Pending |
 | Validation date | Pending |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Key Terms
 
@@ -58,22 +67,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Freelancers (ammatinharjoittaja) | Must pay ennakkovero on estimated professional income |
 | Rental income recipients | Must pay if rental income not covered by employer withholding adjustment |
 | Capital gains recipients | Must pay on estimated gains if significant |
-| Partners in partnerships (Ay/Ky) | Must pay on estimated share of partnership income |
 
-### 2.2 Not Required
+### 2.2 Withholding and first-year checks
 
-**2.2 Not Required**
+**2.2 Withholding and first-year checks**
 
 | Category | Reason |
 | --- | --- |
-| Employees (only wage income) | Employer withholding (ennakonpidätys) covers tax |
-| First-year entrepreneurs with no prior estimate | Verohallinto cannot assess; must request prepayment registration |
+| Employees with wage withholding | Check withholding adequacy against the whole verified tax position; wages alone do not prove no advance is needed |
+| First-year entrepreneurs | No automatic exemption; provide an estimate and obtain the applicable advance decision |
+
+[Prepayment Act 1118/1996, sections 6 and 23–24](https://www.finlex.fi/sv/lagstiftning/1996/1118)
+authorises advances and their amendment or cancellation. Missing prior-year
+figures do not remove the authority's power to assess an advance. An individual
+can request a new or changed advance until assessment ends. Keep the decision,
+imposed amount, due dates and payment evidence separately.
 
 ## Section 3 -- How Ennakkovero Is Calculated
 
 ### 3.1 Basis of Calculation
 
-- **Prior year final assessment** — If you filed a tax return for the prior year, Verohallinto uses that as the baseline and adjusts for inflation and any known changes.  _(Section 3.1)_
+- **Prior year final assessment** — If you filed a tax return for the prior year, record which earlier-year figures the authority used and reconcile changes; do not assume the old figures match current income.  _(Section 3.1)_
 - **Estimated income** — For new entrepreneurs, you provide an estimate of expected annual income and expenses to Verohallinto via OmaVero.  _(Section 3.1)_
 - **Taxpayer request** — You can request a change at any time during the year if your income projection changes.  _(Section 3.1)_
 
@@ -93,10 +107,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 3.3 New Entrepreneurs
 
-- Register for prepayment via OmaVero or contact Verohallinto
+- Request an advance decision using the current official service instructions or contact Verohallinto
 - Provide estimated annual revenue and expenses
 - Verohallinto issues a prepayment decision (ennakkoveropäätös) with amounts and due dates
-- If no estimate provided, Verohallinto may set prepayments based on industry averages
+- Use the issued decision and verified annual information; do not invent an industry-average estimate
 
 ## Section 4 -- Payment Schedule
 
@@ -104,15 +118,32 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **4.1 Standard Schedule**
 
-| Total Annual Ennakkovero | Number of Instalments | Typical Due Dates |
-| --- | --- | --- |
-| Under €170 | 1 instalment | March |
-| €170 -- €500 | 2 instalments | March and September |
-| Over €500 | Up to 12 monthly instalments | 23rd of each month (or next business day) |
+[Decision VH/6503/00.01.00/2022, sections 1–6](https://vero.fi/syventavat-vero-ohjeet/paatokset/47497/verohallinnon-p%C3%A4%C3%A4t%C3%B6s--luonnollisen-henkil%C3%B6n-ja-kuolinpes%C3%A4n-ennakonkannon--alarajasta-ja-kantoerist%C3%A4/)
+applies from 1 January 2023 until further notice. The ordinary initial total
+advance must reach EUR 170 before division. A smaller total is not imposed
+under this minimum rule; the underlying income remains subject to final taxation.
 
-Prepayments are divided into instalments across the tax year. The number of instalments depends on the total amount:
+| Total ordinary advance, EUR | Instalments | Collection months |
+|---|---|---|
+| 170 to 500 inclusive | 2 | March and September |
+| Over 500 to 1,700 inclusive | 3 | February, July and November |
+| Over 1,700 to 10,000 inclusive | 6 | February, April, June, August, October and December |
+| Over 10,000 | 12 | January to December |
 
-Most self-employed with meaningful income pay monthly instalments, typically due on the 23rd of each month.
+Instalments are equal to cent precision. [Tax Collection Decree 1010/2019,
+section 1(1)](https://www.finlex.fi/fi/lainsaadanto/2019/1010) puts the division
+remainder in the first instalment. A taxpayer-requested remaining-month schedule
+can change the ordinary pattern. After year-end the advance is collected in one
+instalment. For an amended advance, subtract instalments already due before
+dividing the remaining amount; a remainder below EUR 170 is collected in one
+instalment. Reductions affect not-yet-due instalments first, then already-due
+instalments from latest to oldest.
+
+[Tax Collection Act 11/2018, section 12](https://www.finlex.fi/sv/lagstiftning/2018/11)
+uses the date in the decision. Decree 1010/2019 section 10 moves a non-bank due
+day to the next bank day. Verify the actual advance due date before preparing
+a calendar; the bands above identify collection months, not the person's notice.
+Do not infer twelve instalments from a general description of business income.
 
 ### 4.2 Payment Methods
 
@@ -122,8 +153,9 @@ Most self-employed with meaningful income pay monthly instalments, typically due
 | --- | --- |
 | OmaVero | View amounts, due dates, and pay directly |
 | Bank transfer | Using the reference number from OmaVero / prepayment decision |
-| Direct debit (suoramaksu) | Can be set up via OmaVero for automatic monthly payments |
-| e-Invoice | Available through some banks |
+
+Live payment methods, bank interfaces and portal screens were not verified.
+Follow the current official instructions and the operative decision.
 
 ## Section 5 -- Adjusting Prepayments During the Year
 
@@ -137,33 +169,41 @@ Most self-employed with meaningful income pay monthly instalments, typically due
 
 ### 5.2 How to Adjust
 
-1. Log in to OmaVero
-2. Navigate to "Prepayment tax" (Ennakkovero)
-3. Submit a new estimate of annual income and expenses
-4. Verohallinto recalculates and issues a revised prepayment decision
+1. Review the operative advance decision and current official application instructions
+2. Prepare the revised annual income, expense and withholding evidence
+3. Request an amended advance under Prepayment Act section 24
+4. Check the authority’s resulting decision, amounts and due dates
 5. Remaining instalments are adjusted; already-paid amounts are credited
-6. No fee or penalty for requesting an adjustment
+6. Reconcile the changed decision and payments; the request alone is not a revised schedule
 
 ### 5.3 Important Notes
 
 - Adjustments can be made multiple times during the year
 - Reducing prepayments too aggressively may result in residual tax + interest
-- Increasing prepayments voluntarily is always possible
-- Changes typically take effect within a few business days
+- Obtain the required additional-advance decision before paying; payment alone is not an application
+- No processing-time promise is verified here; continue using the operative decision until the change is established
 
 ## Section 6 -- Residual Tax and Refunds
 
 ### 6.1 After Filing
 
-After the annual tax return is filed and assessed (typically by October-November):
+[Assessment Procedure Act 1558/1995, sections 34, 34a, 49 and 50](https://www.finlex.fi/sv/lagstiftning/1995/1558)
+distinguishes assessment credits from cash paid. Reported or reliably evidenced
+withholding and advances imposed by the authority are normally credited in
+assessment. Track actual advance payments, unpaid instalments and later
+reductions separately. Foreign transfers, accounting-period mismatches and
+collusive unpaid withholding have specific exceptions outside this ordinary branch.
 
-**6.1 After Filing**
+Excess credits first reduce advances from the latest due date backwards.
+Paid amounts of reduced advances and other refundable credits are returned with
+applicable interest. Insufficient assessment credits produce residual tax plus
+interest; residual principal below EUR 10 is not imposed. Annual liability minus
+cash paid is therefore not always residual tax.
 
-| Scenario | Outcome |
-| --- | --- |
-| Prepayments < final tax liability | Residual tax (jäännösvero) is due |
-| Prepayments > final tax liability | Tax refund (veronpalautus) is issued |
-| Prepayments = final tax liability | No further action |
+Use the completion date on the latest assessment decision. Corrections or
+continued control can change it, and spouses' assessments finish together.
+Ordinary individuals' assessments end by the end of October following the tax
+year. Filing a return does not itself establish completion or a payment date.
 
 ### 6.2 Residual Tax (Jäännösvero)
 
@@ -172,9 +212,16 @@ After the annual tax return is filed and assessed (typically by October-November
 | Item | Detail |
 | --- | --- |
 | Notification | Via OmaVero and/or mail |
-| Payment deadline | Typically December of the assessment year or February of the following year (in two instalments if >€170) |
-| Interest | Late payment interest at base rate + 7 percentage points (Verohallinto publishes the annual rate) |
-| Penalty-free threshold | Minor residual tax (under certain limits) may not incur interest |
+| Instalments | Residual principal of at least EUR 170 has two; below that amount it has one, subject to the separate EUR 10 non-imposition rule |
+| Payment dates | Day 1 of the second month after the completion month; second instalment on day 1 of the fourth month; non-bank days move to the next bank day |
+| Division | Equal instalments, with any cent remainder in the first |
+| Authority | Tax Collection Decree 1010/2019, sections 1–3 and 10 |
+
+[Decree 1010/2019](https://www.finlex.fi/fi/lainsaadanto/2019/1010) has separate
+changed-assessment rules, including its EUR 85 remaining-collection rule. Do not
+use that threshold for the original assessment. [Vero's payment guidance](https://www.vero.fi/sv/privatpersoner/betalning/betalning-av-kvarskatt/sa-har-betalar-du/)
+shows calendar-2026 dates; check the latest notice and applicable bank-day
+calendar instead of assuming December/February for everyone.
 
 ### 6.3 Tax Refund (Veronpalautus)
 
@@ -182,9 +229,40 @@ After the annual tax return is filed and assessed (typically by October-November
 
 | Item | Detail |
 | --- | --- |
-| Timing | Typically paid in August-December of the year following the tax year |
+| Timing | Decree 1010/2019 sections 9–10: day 3 of the second month after the completion month, moved to the next bank day if required |
 | Method | Direct deposit to bank account registered in OmaVero |
 | Interest on refund | Verohallinto pays a small credit interest on overpaid amounts |
+
+The refund is deemed paid when the authority's account is debited, which does
+not promise receipt that day. [Tax Collection Act sections 22–24 and 30–32](https://www.finlex.fi/sv/lagstiftning/2018/11)
+has offset and payout rules; unused funds must reach EUR 10 in aggregate for
+payout. Final refund interest and offsets need their full rules and statement.
+
+### 6.4 Reduced settlement interest and overdue interest
+
+[Tax Interest Act 1556/1995, sections 5a–5c](https://www.finlex.fi/sv/lagstiftning/1995/1556)
+uses the [Interest Act section 12](https://www.finlex.fi/sv/lagstiftning/1982/633)
+reference for the half-year preceding the collection calendar year. Ordinary
+overdue interest adds 7 percentage points; reduced interest adds 2 points with
+a 0.5% floor. [Vero's guidance](https://www.vero.fi/sv/foretag-och-samfund/skatter-och-avgifter/forskottsskatt/tillaggsforskott/nedsatt-dr%C3%B6jsm%C3%A5lsr%C3%A4nta/)
+confirms calendar-2026 rates of 9.5% overdue and 4.5% reduced interest. These
+collection-year rates can apply to tax-2025 settlement; they are not permanent
+rates for every payment of 2025 tax or a calendar-2027 rate announcement.
+
+For ordinary calendar-year residual tax, reduced interest runs from 1 February
+following the tax year through the first instalment's due date. Use actual days
+in the period and year. Deduct EUR 20, capped at the interest amount, from this
+residual interest. Additional advances due after January accrue reduced interest
+from the same February start through their due date, without the EUR 20 deduction.
+Early cash payment does not shorten these due-date-based periods. A January due
+date shifted into February can therefore produce interest.
+
+Overdue interest starts the day after the due date and runs through payment.
+Do not compound it on late/reduced interest or a tax supplement. No reduced
+interest is calculated on a tax increase or late-filing fee. The EUR 3 minimum
+in the Act's separate sections 2 and 4 is not an ordinary section 5a minimum.
+Section 10 disallows deduction of these interest charges. Final rounding,
+multiple rate years, allocations and remission remain held until fully verified.
 
 ## Section 7 -- Penalties for Underpayment
 
@@ -192,30 +270,26 @@ After the annual tax return is filed and assessed (typically by October-November
 
 | Situation | Consequence |
 | --- | --- |
-| Insufficient prepayments (honest estimate) | Residual tax + interest at prescribed rate |
-| No prepayment registration at all | Verohallinto may impose prepayments retrospectively; penalty interest applies |
-| Deliberate underestimation | Tax increase (veronkorotus) of 2-10% on additional tax may apply |
-| Late payment of instalment | Interest accrues from due date; persistent non-payment may lead to enforcement (ulosotto) |
+| Insufficient prepayments (honest estimate) | Reconcile final assessment credits; any residual and reduced interest follow section 6, without an automatic disclosure penalty |
+| Missing first-year advance estimate | No automatic disclosure penalty follows from this fact alone; obtain the applicable decision and assess the actual duty/failure |
+| Incorrect or missing required return disclosure | Apply the failure-specific natural-person rules in fi-income-tax section 5.3; added-income and increased-tax percentages have distinct bases |
+| Late payment of instalment | Overdue interest starts the day after the due date; use the authority statement and verified collection rules |
+
+[Assessment Procedure Act sections 32–33](https://www.finlex.fi/sv/lagstiftning/1995/1558)
+requires the failure, correct base and non-imposition grounds to be established.
+An honest shortfall in advances alone does not establish a tax increase.
 
 ## Section 8 -- Worked Examples
 
-### Example 1 -- Standard Annual Cycle
+These invented inputs test collection components. They are not complete annual
+income-tax calculations, final interest or client payment instructions.
 
-**Situation:** Freelance designer, second year of business. Prior year final tax was €12,000.
-
-1. **January:** Verohallinto issues 2025 prepayment decision based on 2024 final tax. Monthly instalments of ~€1,000, due 23rd of each month.
-2. **June:** Business is slower than expected. Designer estimates 2025 income will be 30% lower. Submits adjustment via OmaVero.
-3. **July:** Revised decision: remaining monthly instalments reduced to ~€583.
-4. **April 2026:** Files 2025 tax return showing final tax of €9,500.
-5. **Assessment:** Total prepayments made = €8,498 (6 × €1,000 + 6 × €583). Residual tax = €1,002, due in two instalments.
-
-### Example 2 -- First-Year Entrepreneur
-
-**Situation:** Software consultant starts business in March 2025. Estimates €50,000 gross revenue, €10,000 expenses.
-
-1. **March:** Registers for ennakkovero via OmaVero. Provides estimate: net income €40,000.
-2. **March:** Verohallinto issues prepayment decision: approximately €10,000-€12,000 total for the year, payable in 10 monthly instalments (March-December).
-3. **Filing 2026:** Actual net income was €45,000. Small residual tax due.
+| Case | Hypothetical inputs | Result |
+|---|---|---|
+| Ordinary schedule | EUR 1,200 initial advance, no requested variation | Three EUR 400 instalments in February, July and November |
+| Lower band division | EUR 170.01 initial advance, no variation | EUR 85.01 first and EUR 85.00 second, in March and September |
+| Imposed versus paid | Verified liability EUR 9,500; imposed advances EUR 9,000, cash paid EUR 8,500; no other credits or special exception | Residual principal EUR 500; unpaid advances EUR 500 remain a separate collection item, subject to the authority statement. The EUR 1,000 cash shortfall is not all residual tax |
+| Completion-month dates | Latest ordinary assessment completes in May 2026; residual EUR 500 | First principal EUR 250 on 1 July and second EUR 250 on 1 September, before bank-day and interest checks |
 
 ## Section 9 -- Interaction with Other Taxes
 
@@ -225,7 +299,7 @@ After the annual tax return is filed and assessed (typically by October-November
 | --- | --- |
 | Employer withholding (ennakonpidätys) | If self-employed person also has employment income, employer withholding reduces the amount of ennakkovero needed |
 | YEL pension insurance | Paid separately; not included in ennakkovero but is tax-deductible |
-| VAT (ALV) | Completely separate system; VAT payments and refunds do not affect ennakkovero |
+| VAT (ALV) | Reconcile separately; determine the correct VAT treatment of business receipts/expenses before using the profit estimate |
 | Municipal tax | Included in ennakkovero calculation |
 
 ## Section 10 -- OmaVero Quick Guide
@@ -234,20 +308,16 @@ After the annual tax return is filed and assessed (typically by October-November
 
 **Key Actions in OmaVero for Prepayments**
 
-| Action | Path |
-| --- | --- |
-| View prepayment decision | OmaVero → Ennakkovero → Current year |
-| Request adjustment | OmaVero → Ennakkovero → Muuta ennakkoveroa (Change prepayment) |
-| View payment schedule | OmaVero → Ennakkovero → Maksuerät (Instalments) |
-| Pay ennakkovero | OmaVero → Maksaminen (Payments) |
-| Set up direct debit | OmaVero → Maksaminen → Suoramaksu |
-| View residual tax | OmaVero → Verotuspäätös (Tax assessment decision) |
-| Check refund status | OmaVero → Veronpalautus (Tax refund) |
+Use the current official OmaVero instructions and the actual advance/assessment
+notice to review decisions, request changes and check the collection statement.
+Live menu paths, direct-debit availability and portal behaviour were not tested.
+Keep missing evidence, unresolved source conditions and final rounding held in
+the workbook, reviewer brief, calendar, action list and review checklist.
 
 ## Prohibitions
 
 - NEVER treat ennakkovero payments as a deductible expense -- they are a credit against final tax liability
-- NEVER advise skipping prepayment registration -- penalties and interest will apply
+- Obtain the applicable advance decision; do not infer a first-year exemption or an automatic disclosure penalty
 - NEVER assume prior year amounts are correct for current year without checking
 - NEVER ignore the possibility of adjusting prepayments when income changes significantly
 - NEVER present calculations as definitive -- always label as estimated
@@ -257,21 +327,21 @@ After the annual tax return is filed and assessed (typically by October-November
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
 <!-- openaccountants-cta-block -->
 
 ---
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a
