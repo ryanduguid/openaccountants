@@ -171,6 +171,20 @@
     "workflow-base.md"
    ]
   },
+  "aland": {
+   "jurisdiction": "AX",
+   "name": "Aland",
+   "files": [
+    "intake.md",
+    "ax-tax-scope.md",
+    "references.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "albania": {
    "jurisdiction": "AL",
    "name": "Albania",
