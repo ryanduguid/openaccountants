@@ -14,12 +14,13 @@
 7. `je-gst.md`
 8. `je-income-tax-compliance.md`
 9. `je-income-tax.md`
-10. `je-payroll.md`
-11. `je-pension-contributions.md`
-12. `je-pillar-two.md`
-13. `je-property-transactions.md`
-14. `je-social-contributions.md`
-15. `references.md`
+10. `je-parish-rates.md`
+11. `je-payroll.md`
+12. `je-pension-contributions.md`
+13. `je-pillar-two.md`
+14. `je-property-transactions.md`
+15. `je-social-contributions.md`
+16. `references.md`
 
 ## Shared files this package needs
 

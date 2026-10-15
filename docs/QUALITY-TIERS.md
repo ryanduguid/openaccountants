@@ -2,7 +2,7 @@
 
 How we measure whether a skill is ready for production use.
 
-We use **two tiers**. No drafts, no stubs — every published skill is one of these:
+Every published guide uses one of **two tiers**: accountant-reviewed or source-cited draft.
 
 ---
 
@@ -75,7 +75,7 @@ Key rules:
 
 ## Current inventory
 
-**1,890 Guides** across **245 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,891 Guides** across **245 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 

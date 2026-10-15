@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-15T14:25:21+00:00",
+ "generated_at": "2026-10-15T15:00:24+00:00",
  "counts": {
-  "guides": 1890,
+  "guides": 1891,
   "jurisdictions": 245,
   "accountant_reviewed": 164
  },
@@ -11549,6 +11549,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-11"
+  },
+  {
+   "slug": "je-parish-rates",
+   "path": "skills/international/jersey/je-parish-rates.md",
+   "name": "je-parish-rates",
+   "jurisdiction": "JE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "je-payroll",

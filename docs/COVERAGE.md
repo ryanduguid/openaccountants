@@ -24,16 +24,16 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,890** |
+| Guide files indexed | **1,891** |
 | Distinct `jurisdiction` codes | **245** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,726** |
+| `tier: 2` (source-cited draft) | **1,727** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
 | Country directories under `skills/international/` | **186** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
 | Generated bundles under `packages/` | **257** |
 
-US coverage is complete at state level: all 50 states plus DC are present.
+Guides are present for all 50 US states and DC.
 Accountant-reviewed guides exist in 24 of the 245 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
