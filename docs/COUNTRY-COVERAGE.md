@@ -28,7 +28,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AT | Austria | 6 | 0 |
 | AU | Australia | 48 | 0 |
 | AW | Aruba | 0 | 0 |
-| AX | Åland Islands | 1 | 0 |
+| AX | Åland Islands | 2 | 0 |
 | AZ | Azerbaijan | 8 | 0 |
 | BA | Bosnia and Herzegovina | 8 | 0 |
 | BB | Barbados | 6 | 0 |

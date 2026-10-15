@@ -6,14 +6,16 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `ax-tax-scope.md`
-3. `references.md`
+2. `ax-income-tax.md`
+3. `ax-tax-scope.md`
+4. `references.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 
 
