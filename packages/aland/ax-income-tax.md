@@ -4,8 +4,8 @@ description: >
   Prepare the 2026 individual income-tax analysis for an Åland fiscal resident.
   Use for Aland personal income tax, separate state and municipal deductions,
   the adjusted state scale, municipal rates, work-income credits, sole-trader
-  income and withholding reconciliation. Supplies source-linked classification
-  rules, deduction ordering, hypothetical component examples and a completion
+  income, advance collection, interest and filing penalties. Supplies source-linked
+  classification rules, deduction ordering, component examples and a completion
   register for the reviewing practitioner. This Tier 2 draft remains incomplete
   as an operational income-tax companion: final rounding, specialist conditions,
   contribution bases and the full settlement examples require further checks.
@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Calendar 2026 source reference; 2027 amendments and earlier-year guidance are identified separately"
 tier: 2
 last_updated: 2026-10-16
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -414,9 +414,171 @@ from liability does not reproduce this statutory process in every case.
 uses the due date in the tax-imposition decision. Sections 22–24 and 30–32
 provide for refund offsets and payout; unused refund/payment funds must reach
 EUR 10 in aggregate for payout. Use the person's current assessment notice,
-collection statement and dates. Interest calculations, instalment counts and
-thresholds, penalties and date-shifting rules remain unverified here. Hold any
-calendar or balance depending on them; do not invent a common 2027 due date.
+collection statement and dates. The ordinary collection rules below do not
+establish an individual's notice, final liability or a common 2027 due date.
+
+### Advances and ordinary payment dates
+
+[Prepayment Act 1118/1996, sections 6 and 23–24](https://www.finlex.fi/sv/lagstiftning/1996/1118)
+provides for assessed advances and their amendment. A taxpayer can request a
+new, amended or cancelled advance until assessment ends. Payment without the
+required decision is not an application for an additional advance. Keep the
+decision, imposed amount, due dates and payment evidence separately.
+
+[Advance decision VH/6503/00.01.00/2022, sections 1–6](https://vero.fi/syventavat-vero-ohjeet/paatokset/47497/verohallinnon-p%C3%A4%C3%A4t%C3%B6s--luonnollisen-henkil%C3%B6n-ja-kuolinpes%C3%A4n-ennakonkannon--alarajasta-ja-kantoerist%C3%A4/)
+applies from 1 January 2023 until further notice to the ordinary individual
+branch, including a sole trader. Its minimum total advance before division is
+EUR 170. The ordinary in-year schedule is:
+
+| Total advance, EUR | Instalments | Collection months |
+|---|---|---|
+| 170 to 500 inclusive | 2 | March and September |
+| Over 500 to 1,700 inclusive | 3 | February, July and November |
+| Over 1,700 to 10,000 inclusive | 6 | February, April, June, August, October and December |
+| Over 10,000 | 12 | January to December |
+
+Instalments are equal to cent precision. A taxpayer-requested remaining-month
+schedule and changes during the year can alter the ordinary pattern. After
+year-end, the advance is collected in one instalment. For an amended advance,
+subtract instalments already due before dividing the remaining amount; a
+remaining amount below EUR 170 is collected in one instalment. Reductions
+first affect instalments not yet due, then those already due from latest to
+oldest. Do not substitute the residual-tax instalment rules for this schedule.
+
+[Tax Collection Decree 1010/2019, sections 1–3 and 9–10](https://www.finlex.fi/fi/lainsaadanto/2019/1010)
+supplies the following ordinary individual residual/refund rules:
+
+- Residual tax of at least EUR 170 has two instalments; below that amount it
+  has one, subject to the separate EUR 10 non-imposition rule above.
+- Equal instalments place any division remainder in the first instalment.
+  The first residual instalment falls on day 1 of the second month after the
+  assessment-completion month; the second falls on day 1 of the fourth month.
+- The ordinary refund payment date is day 3 of the second month after the
+  completion month. It is deemed paid when the Tax Administration's account
+  is debited; this does not promise receipt in the taxpayer's account that day.
+- A due date or refund payment date that is not a bank day moves to the next
+  bank day. Verify the applicable calendar and current decision before use.
+
+Section 2 separately addresses changed assessments: a new amount imposed on
+reassessment or appeal is payable in one instalment; a reduction of tax already
+in two instalments affects the second first. Its EUR 85 remaining-collection
+rule belongs to that changed-tax context. It is not the initial two-instalment
+threshold. Section 7's changed-assessment dates and exit-tax deferrals require
+their own notice and specialist checks.
+
+[Vero's residual-payment page](https://www.vero.fi/sv/privatpersoner/betalning/betalning-av-kvarskatt/sa-har-betalar-du/)
+shows a calendar for payments in 2026. It does not establish the calendar for
+2026 income settled in 2027. Corrections, including a spouse's corrections,
+can change completion and payment dates. Use the latest notice. [Vero's
+additional-advance instructions](https://www.vero.fi/sv/foretag-och-samfund/skatter-och-avgifter/forskottsskatt/tillaggsforskott/)
+likewise display the tax-2025/2026 settlement cycle. Their dated application
+opening and year-end receipt dates cannot be copied into the 2026-income cycle.
+
+### Reduced interest and late-payment interest
+
+[Tax Interest Act 1556/1995, sections 5a–5c](https://www.finlex.fi/sv/lagstiftning/1995/1556)
+distinguishes interest included in ordinary settlement from interest on overdue
+tax. The ordinary late-payment annual rate is the [Interest Act section 12](https://www.finlex.fi/sv/lagstiftning/1982/633)
+reference for the half-year preceding the calendar year, plus 7 percentage
+points. The reduced rate uses that reference plus 2 points, with a 0.5% floor.
+[Vero's current guidance](https://www.vero.fi/sv/foretag-och-samfund/skatter-och-avgifter/forskottsskatt/tillaggsforskott/nedsatt-dr%C3%B6jsm%C3%A5lsr%C3%A4nta/)
+confirms 4.5% reduced interest and 9.5% ordinary late interest for calendar 2026.
+These are collection-year rates, not permanent rates attached to 2026 income.
+The [Bank of Finland's 30 June 2026 release](https://www.suomenpankki.fi/fi/ajankohtaista/lehdistotiedotteet-ja-uutiset/tiedotteet/2026/korkolain-mukainen-viitekorko-ja-viivastyskorot-1.7.31.12.2026)
+establishes the second-half-2026 reference as 2.5%. That is the retained input
+for the statutory calendar-2027 formula; verify the law and applicable rate
+announcement before preparing a 2027 collection calculation.
+
+For ordinary calendar-year individual residual tax, reduced interest starts
+on 1 February following the tax year and runs through the first instalment's
+due date. For an additional advance due after January, it runs from that same
+start through the advance due date. The authority guidance uses actual days
+in the period and year. Deduct EUR 20, capped at the interest amount, only from
+reduced interest on residual tax imposed at completion of annual assessment.
+There is no corresponding EUR 20 deduction from additional-advance interest.
+Paying early does not shorten these due-date-based reduced-interest periods.
+A January date shifted into February can therefore create interest despite
+an earlier cash payment. Obtain the additional-advance decision before payment.
+
+Ordinary overdue interest runs from the day after the due date through payment.
+Do not compound late interest on a tax supplement or on late/reduced interest.
+No reduced interest is calculated on a tax increase or late-filing fee. The
+EUR 3 minimum in the Act's separate sections 2 and 4 is not an ordinary
+income-tax section 5a minimum. Section 10 disallows an income-tax deduction for
+these interest charges. Sections 6–7 address tax reductions and qualifying
+interest relief; an unresolved application is not an assumed waiver. Refund
+offsets, payment allocation, changed assessments and periods spanning rate
+years require their complete rules. Final monetary rounding remains held.
+
+### Late filing and tax increases
+
+[Assessment Procedure Act sections 32–33](https://www.finlex.fi/sv/lagstiftning/1995/1558),
+introduced by [amendment 15/2018](https://www.finlex.fi/sv/lagstiftning/forfattningssamling/2018/15)
+from tax year 2018, and [Vero's guidance of 20 May 2026](https://www.vero.fi/sv/Detaljerade_skatteanvisningar/anvisningar/66816/pofoljdsavgifter-for-inkomstbeskattningen/)
+distinguish the ordinary natural person's EUR 50 annual late-filing fee from
+a tax increase. An individual sole trader uses the natural-person branch.
+Corporate and partnership-share amounts require separate rules.
+
+A complete required main return filed late but before assessment ends comes
+within the fee branch even if the authority requested it. A late correction
+of an existing or deemed prefilled return qualifies for that substitution only
+on the taxpayer's own initiative. An issue-specific authority request or
+awareness of control can end own initiative; a general public announcement of
+sector checks alone does not. Separate errors in the same return may still
+attract a tax increase. The fee is once per tax year, not once per form, and
+is not deductible. Both charges are imposed after statutory tax credits.
+
+An omitted taxpayer-favourable item ordinarily attracts neither charge, subject
+to the repeated-failure/clear-indifference exception. This does not excuse an
+entirely late required return that reports only a loss or deductions, or an
+unfounded deduction claimed. Apply the statutory non-imposition grounds before
+any minimum: a minor failure, valid reason or the applicable unreasonableness
+test; the fee also has outside-control and other-special-reason grounds.
+Vero's EUR 2,000 income/EUR 500 tax and three-day minor-failure criteria are
+conditional administrative interpretations. Repeated or clearly deliberate
+failures are excluded; a small income or loss alone does not excuse a wholly
+late return. Record the evidence and reviewer decision instead of treating
+these criteria as automatic safe harbours.
+
+For an incomplete, incorrect or missing required disclosure, first establish
+the failure, applicable exemption and correct penalty base. Added income is
+the primary base, including a qualifying reduction of an assessed loss. Where
+that base cannot be used, or income was reported in the wrong income category,
+section 32b uses increased tax. Do not apply an added-income percentage to tax
+or net unrelated failures together automatically.
+
+| Qualifying branch | Percentage of added income | Percentage of increased tax |
+|---|---|---|
+| Ordinary | 2% | 10% |
+| Repeated failure or clear indifference | 3% to 10% | 15% to 50% |
+| Estimated assessment | 5% | 25% |
+| Statutory interpretive uncertainty or qualifying unreasonableness | 1% | 5% |
+| Foreign income satisfying section 32a(5), excluding the aggravated branch | 1% | 5% |
+| Own-initiative correction after completion with the explanation duty fulfilled | 0.5% | 2% |
+
+The natural-person minimum is EUR 75 when an increase is imposed; guidance
+applies it to the aggregate percentage increases in the same assessment
+decision. Non-minor formal failures may attract a minimum even without added
+income. Qualifying post-completion correction requires cooperation and evidence;
+filing a missing return after estimated assessment is not automatically that
+branch. The EUR 25,000 cap in section 32a(8) concerns the specific failures
+listed in section 32(1)(2–4), not every ordinary income-tax increase.
+
+The guidance contains two apparent wording conflicts. Section 3.2.5 describes
+the 15% to 50% increased-tax range using added-income wording, whereas section
+32b makes increased tax the base. Section 3.2.12 states a EUR 150 minimum without
+qualifying the taxpayer category, although section 32a(9) and guidance section
+3.2.9 give EUR 75 for natural persons. Preserve both discrepancies for the
+reviewer and follow the statutory category and base. Do not infer a blanket
+corporate-only scope for the foreign-credit guidance.
+
+Disputed culpability, trust protection, foreign-credit penalties, remission,
+criminal referrals and appeals require a qualified review of the complete
+applicable process. [Act 781/2013](https://www.finlex.fi/sv/lagstiftning/2013/781)
+has separate-decision and parallel-criminal-process safeguards; this guide does
+not certify that whole chain. Non-imposition under sections 32–33 and later
+collection remission are distinct. Hold the affected charge and remedy calendar
+when facts, competence, service dates or applicable law are unresolved.
 
 ## Currency and monetary precision
 
@@ -451,6 +613,10 @@ contract. Monetary results described as unrounded remain intermediate values.
 | Work-credit family maximum | Age 65 before 2026; two minor children, guardian at year-end; no sole-guardian doubling; sufficient qualifying income and net earned income at most EUR 35,000 | Maximum EUR 3,430 + EUR 1,200 + 2 × EUR 105 = EUR 4,840, subject to accrual and available taxes |
 | Prospective repeal | Eligible collective supplementary pension contribution paid in 2026; the 2027 repeal is displayed in the source | Test the 2026 section and all its eligibility conditions; the future repeal alone is not a disallowance |
 | Unknown municipality | An Åland address is shown but the section 5 municipality evidence is missing | R-AX-I-PROFILE fires; no municipal rate or adjusted state scale is selected |
+| Advance division | Ordinary advance EUR 170.01, two instalments, no schedule variation | EUR 85.01 first and EUR 85.00 second; the cent remainder rule does not establish annual tax rounding |
+| Advance band boundary | Ordinary in-year total EUR 500 versus EUR 500.01, no variation requested | Two versus three instalments; the upper boundary is inclusive |
+| Residual band boundary | Residual principal EUR 169.99 versus EUR 170, no changed assessment | One versus two instalments; the separate non-imposition and interest rules still apply |
+| Ordinary increase component | Added income EUR 5,000; reviewer establishes the ordinary 2% branch, no non-imposition ground or other failure | EUR 100, exceeding the EUR 75 individual minimum; no liability or actual penalty decision is certified |
 
 ### Full-ladder example work still required
 
@@ -498,7 +664,7 @@ fired code; a refusal is not evidence that the underlying tax is zero.
 | R-AX-I-BUSINESS | Business status, period, expenses, valuation, capital allowance, loss or split/election is unverified | "The business-income calculation or earned/capital allocation is not established. Obtain [specific accounts, valuation, election or authority] before computing the affected personal-tax amounts." |
 | R-AX-I-CONTRIBUTIONS | Insurance coverage, health base, contributions, church membership or media-fee conditions are unresolved | "The separate contribution, church or media-fee calculation requires [missing evidence or rule]. It cannot be replaced with a flat percentage or an assumed exemption." |
 | R-AX-I-ROUNDING | Conversion, intermediate rounding, credit allocation or final money rule is missing | "The required conversion or rounding rule is unverified for [stage]. I have preserved the supported inputs and held the dependent calculation." |
-| R-AX-I-SETTLEMENT | Collection, return/date, advance reduction, interest or residual/refund treatment is unverified | "The filing or settlement position is not established. Reconcile [specific statement, notice or rule] before giving a balance, payment date or client instruction." |
+| R-AX-I-SETTLEMENT | Collection, return/date, advance reduction, interest, penalty or residual/refund treatment is unverified | "The filing or settlement position is not established. Reconcile [specific statement, notice or rule] before giving a balance, payment date or client instruction." |
 | R-AX-I-SPECIALIST | Estate, partnership return, special pension/maritime/forestry regime, disputed classification or omitted credit mechanics | "This specialist position requires its complete period-specific rules and a qualified review. The unsupported items are [list]; they remain outside this calculation." |
 
 ## Completion register and self-check additions
@@ -515,13 +681,13 @@ presence, a passing linter or an assumed zero.
 | 4. Deductions and credits | Separate ordinary wage/basic rules and work-credit ordering | Complete specialist/other-credit eligibility, allocation, refundability and spouse rules |
 | 5. Expenses and capital | Ordinary wage/home/commuting distinctions | Business deductions, depreciation, valuations and final 2026 mileage decision |
 | 6. Losses | Assessed earned/business ten-year carry-forward, oldest first; separate capital-income election route | Full capital-loss, cessation and specialist conditions; personal loss balances |
-| 7. Collection and advances | Tax-card distinction and imposed/paid/reduced advance settlement | Dated future estimates, interest and complete special cases |
+| 7. Collection and advances | Imposed/paid/reduced advances, ordinary advance bands, residual instalments and interest-period/rate framework | Dated personal estimates/notices, final interest rounding, offsets and complete special cases |
 | 8. Contributions | Ordinary municipal healthcare bridge, YEL/MYEL substitution/exclusion, separate daily base and annual rates | Complete insurance eligibility, special/age-transition bases and applicable companion outputs |
-| 9. Filing/payment | Prefilled/business return duties, Form 5/17 identities and notice-based dates | 2026 form fields, interest, penalties, instalments and applicable personal notices |
+| 9. Filing/payment | Return duties, Form 5/17 identities, ordinary instalment/date rules and conditional filing-penalty branches | 2026 form fields, personal notices, complete bank-day calendar, disputed/special penalty and remedy processes |
 | 10. Transaction patterns | Source categories and exclusions above | Validate document/statement field maps and remaining receipt patterns |
 | 11. Refusals/defaults | Exact catalogue, lawful factual holds and review thresholds | Check against the final content and observable consumer behaviour |
 | 12. Currency/rounding | EUR, cent reporting rule and historical precision explanation | Current final rounding/credit allocation and foreign conversion rules |
-| 13. Worked examples | Eight hypothetical component positions | Employee, self-employed and mixed cases through the full settlement ladder |
+| 13. Worked examples | Twelve hypothetical component positions | Employee, self-employed and mixed cases through the full settlement ladder |
 
 Before any eventual financial delivery, run both bases' checks and also verify:
 
@@ -535,6 +701,9 @@ Before any eventual financial delivery, run both bases' checks and also verify:
   match the source year. Prospective repeals and historical examples are excluded.
 - Every collection amount reconciles to the authority statement and evidence;
   imposed advances are distinguished from paid cash and later reductions.
+- Collection year, tax year and completion month are explicit. The correct
+  interest base/period, EUR 20 residual-only reduction, advance/residual bands
+  and penalty classification are checked before any balance or calendar.
 - Every held figure remains held in the workbook, reviewer brief, calendar,
   action list and review checklist. All mandatory output components must pass.
 
@@ -552,6 +721,11 @@ complete operative chain for an engagement. Numerical examples are invented
 component checks; consumer, full-workbook, portal and professional validation
 remain unverified. The guide is Tier 2/pending_review and gives no comprehensive
 country-coverage credit.
+
+Version 0.2 adds ordinary advance/residual collection, interest-period rules and
+conditional filing penalties. Four additional component positions test
+thresholds, division and a classified penalty. Final annual rounding and the
+complete settlement examples remain open.
 
 Version 0.1: initial 2026 income reference covering the separate bases, ordinary
 deductions, state/municipal schedules, work credit, business-allocation framework
