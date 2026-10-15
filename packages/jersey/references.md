@@ -1,6 +1,6 @@
 # Jersey pack: sources and coverage
 
-This pack contains thirteen source-cited guides. Core topics were checked against the stated primary sections on 11 October 2026; the corporate, income-tax compliance, GST, Pillar Two and formation additions were checked on 15 October 2026. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
+This pack contains thirteen source-cited guides. Core topics were checked against the stated primary sections on 11 October 2026; the corporate, income-tax compliance, GST, Pillar Two, formation and selected payroll/Class 1 additions were checked on 15 October 2026. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
 
 ## Coverage and remaining work
 
@@ -13,8 +13,8 @@ Every row is partial. A sourced overview or bounded example does not close the o
 | Corporate tax | Residence/sector/retail classification; ordinary deductions, capital allowances, losses, group-relief conditions, distribution statements and company payments | Complete distribution allocations, foreign-tax credits, anti-avoidance, specialist asset transfers and operational rounding |
 | Pillar Two | Enacted MCIT/IIR scope and selected computations, elections, registration, returns, payments and civil administration; selected Model Rules | Complete GloBE computation/elections/safe harbours, active exchange relationships, operative interest instruments, rounding and operational outputs |
 | Consumption/imports | Statutory classification, selected partial exemption, input restrictions, bad-debt adjustments, retail/ISE conditions and import valuation/relief | Conflicting percentage rounding, complete attribution/prescription instruments, operational schemes, enforcement and customs tariff/excise mechanics |
-| Payroll | ITIS notice, LTC separation, ordinary Class 1 example, monthly return | Gross-pay inclusion, benefits, special workers and operational rounding |
-| Social contributions | Dated Class 1 rates/caps; statutory Class 2 relief branches and startup reconciliation with conditional examples | Complete Class 2 income mapping, grant conditions, rounding, credits, non-monthly conversion and LTC assessment |
+| Payroll | Dated ITIS notices, conditional tax-only/combined defaults, separate Class 1 bases, selected statutory reporting and hypothetical positions | Complete minimum wage/overtime, benefits, pensions, termination, special workers, monetary rounding and operational outputs |
+| Social contributions | Class 1 rates/caps, selected earnings/attribution and downward earnings rounding; selected Class 2 relief/startup mechanics | Monetary/fund rounding, complete non-monthly mapping, classifications/credits, Class 2 income/grant conditions, penalties/remittance patterns and LTC assessment |
 | Formation/reporting | Ordinary incorporation procedure, selected final 2026 fees, statutory small-hours/status rules, annual confirmation and retained accounts/audit/substance checks | Complete entity catalogue/capital/licensing, disputed fee category, direct data-protection rules, regulated and partnership reporting |
 | Cross-border/withholding | Article 118B categories, landlord collection, treaty relief procedure | Dividend deduction detail, treaty-specific benefits, transfer pricing |
 | Capital/property | Trading boundary, LTT examples, stamp/EPTT/probate distinctions | Full schedules, parish rates, EPTT scope and transaction deadlines |
@@ -121,6 +121,11 @@ The table records captured primary sources used by guide citations. SHA-256 iden
 | S15.08 | [Licences and Exemptions Order 2026](https://www.jerseylaw.je/laws/current/ro_40_2026) | `9b153678ac8e1ddf8b77e951a17b83594d316bca5696e15484b6458aa157230f` |
 | S15.09 | [Residential and Employment Status Regulations 2025](https://www.jerseylaw.je/laws/current/ro_16_2025) | `d02cdac6af39a0657a83da0fd56e7ef3cdef1c4869c46a92385776c0ed26356e` |
 | S15.10 | [Disclosure and Provision of Information Regulations 2020](https://www.jerseylaw.je/laws/current/ro_138_2020) | `d33e6e3fa8648ac53ab29ebf267b475d9831f11c3a5044da44b75217a0aa8fd9` |
+| S16.01 | [Contributions Order: fresh unchanged 15 October capture](https://www.jerseylaw.je/laws/current/ro_6108) | `2815a5bd29066b2698d1a35777991594d76bf76419608750d9db56acc4942f0d` |
+| S16.02 | [2026 employer rates and calculator guidance: 15 October capture](https://www.gov.je/Working/Contributions/Employers/pages/tables.aspx) | `196d6d99c1b75830bad7532302912cb499404ca7f4185852482b69b04e712f82` |
+| S16.03 | [Social Security Law: 15 October capture](https://www.jerseylaw.je/laws/current/l_22_1974) | `7b616036fe345df90155721bc018939db5326e813ef9bf7af14c34d313815258` |
+| S16.04 | [Class 1 employer guidance: 15 October capture](https://www.gov.je/Working/Contributions/Employers/Pages/ScheduleGuide.aspx) | `d089251abc642c84ff48562ad934d114a2387f7ec0f7560d7bc580de7eb5f51c` |
+| S16.05 | [ITIS employer guidance: 15 October capture](https://www.gov.je/TaxesMoney/IncomeTax/Employers/Returns/Pages/EmployingStaff.aspx) | `63316bda78c6d0c43912be8baa7c02bd09a783144964b76d44a0db2e4b6deb09` |
 
 ## Material source decisions
 
@@ -156,7 +161,14 @@ The table records captured primary sources used by guide citations. SHA-256 iden
 - MCIT's introductory page has apparently inconsistent top-up wording; no ordering or effective-tax formula is taken from it. The new enacted and Model Rule sources replace the preliminary-only treatment, without completing the full operational computation.
 - Crypto classification uses the published tax guidance; it does not settle staking, DeFi or licensing. The CARF page combines a 2026 reportable list with conditional implementation wording. Enacted rules must be checked before an operational reporting instruction.
 
+- Selected Class 1 additions use Contributions Order Article A2/Schedule 1 and Social Security Law Articles 3 to 7/Schedule 1A. Fresh Order bytes match the prior capture. Earnings attribution, reimbursement agreements, payment type and benefit value must be established before using a base. A post-month payment in lieu of notice is not automatically assigned to the exit month by the guidance shorthand.
+- Monthly contribution earnings round down to pounds and weekly earnings to 25p under the current guidance. This does not establish deduction-penny/fund allocation rounding or complete non-monthly statutory mapping. The employer page retains a GBP 5,450 SEL example alongside a correct 2026 GBP 6,062 example; only the dated/current limit is used.
+- Income Tax Law Article 41B gives a 20% tax-only missing-notice default; Article 49B and Schedule 1A Part 1 paragraph 3 prescribe 22% for the insured-employee combined branch. A red card or pension age does not itself remove LTC. Article 41CC controls notice dates; Article 41CD retains the existing rate during an appeal. Complete rate generation is not implemented.
+- Employer registration, ordinary reporting, summaries and estimates retain their distinct statutory conditions. Article 20 annual company filing requires application, qualifying ownership by each relevant employee and Comptroller agreement. Article 41BB notices specify payment at least fifteen days after notice and a separate service-based appeal period; the guidance says pay immediately. No unverified annual-payment calendar or enforcement route is inferred.
+
 ## Period and verification limits
+
+S16 repeats the Contributions Order from 22 April 2025 and Social Security Law from 1 January 2026; its government guidance amounts are calendar-2026 figures. The selected Income Tax Law provisions reuse S12's 17 June 2026 consolidation.
 
 The S13 GST Law applies from 6 April 2026, GST/ISE Regulations from 1 January 2025 and the captured Tariff Order from 31 December 2020. S14 MCIT current law applies from 1 January 2026, its earlier version covers 2025, and IIR/Threshold Order apply from 1 January 2025. S15 CHWL Law/status apply from 14 September 2026, Licences Order from 2 October 2026 and disclosure Regulations from 1 June 2026. The JFSC notice is limited to calendar 2026; OECD recognition is limited to its stated 1 May 2026 record.
 
