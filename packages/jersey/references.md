@@ -1,6 +1,6 @@
 # Jersey pack: sources and coverage
 
-This pack contains thirteen source-cited guides. Core topics were checked against the stated primary sections on 11 October 2026; the corporate, income-tax compliance, GST, Pillar Two, formation and selected payroll/Class 1 additions were checked on 15 October 2026. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
+This pack contains thirteen source-cited guides. Core topics were checked against the stated primary sections on 11 October 2026; the corporate, income-tax compliance, GST, Pillar Two, formation and selected payroll/Class 1 additions were checked on 15 October 2026. Property additions were prepared on 16 October using 15 October UTC captures. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
 
 ## Coverage and remaining work
 
@@ -17,7 +17,7 @@ Every row is partial. A sourced overview or bounded example does not close the o
 | Social contributions | Class 1 rates/caps, selected earnings/attribution and downward earnings rounding; selected Class 2 relief/startup mechanics | Monetary/fund rounding, complete non-monthly mapping, classifications/credits, Class 2 income/grant conditions, penalties/remittance patterns and LTC assessment |
 | Formation/reporting | Ordinary incorporation procedure, selected final 2026 fees, statutory small-hours/status rules, annual confirmation and retained accounts/audit/substance checks | Complete entity catalogue/capital/licensing, disputed fee category, direct data-protection rules, regulated and partnership reporting |
 | Cross-border/withholding | Article 118B categories, landlord collection, treaty relief procedure | Dividend deduction detail, treaty-specific benefits, transfer pricing |
-| Capital/property | Trading boundary, LTT examples, stamp/EPTT/probate distinctions | Full schedules, parish rates, EPTT scope and transaction deadlines |
+| Capital/property | Ordinary and temporary 2026 transfer bands, selected borrowing/lease charges, EPTT control/valuation and statements, probate duty and recovery distinctions | Parish rates, complete income/GST interactions, specialist reliefs, disputed methods/authority and operational outputs |
 | Digital assets | Published crypto classification, sterling/GST valuation and CARF boundary | Staking/DeFi/tokens, complete trading analysis and enacted reporting detail |
 | Compliance | Ordinary income-tax return/penalty categories, personal abatements, corrections, assessment/waiver appeals and payment surcharge conditions; distinct registry calendars | Complete personal instalment formula, delegated provisions, enforcement/court procedures and all other regimes |
 
@@ -126,6 +126,23 @@ The table records captured primary sources used by guide citations. SHA-256 iden
 | S16.03 | [Social Security Law: 15 October capture](https://www.jerseylaw.je/laws/current/l_22_1974) | `7b616036fe345df90155721bc018939db5326e813ef9bf7af14c34d313815258` |
 | S16.04 | [Class 1 employer guidance: 15 October capture](https://www.gov.je/Working/Contributions/Employers/Pages/ScheduleGuide.aspx) | `d089251abc642c84ff48562ad934d114a2387f7ec0f7560d7bc580de7eb5f51c` |
 | S16.05 | [ITIS employer guidance: 15 October capture](https://www.gov.je/TaxesMoney/IncomeTax/Employers/Returns/Pages/EmployingStaff.aspx) | `63316bda78c6d0c43912be8baa7c02bd09a783144964b76d44a0db2e4b6deb09` |
+| S17.01 | [Stamp Duties Law: 15 October capture](https://www.jerseylaw.je/laws/current/l_8_1998) | `454eb8b52ebd7e50e4dc72e305f5259076abe3f7131b610f18cf4dfaecc108c6` |
+| S17.02 | [LTT Law: 15 October capture](https://www.jerseylaw.je/laws/current/l_10_2009) | `4b36e633efaa908548a30d09b9823a5083a5bc635405adf768e92bae373c9b9e` |
+| S17.03 | [EPTT Law: 15 October capture](https://www.jerseylaw.je/laws/current/l_18_2022) | `fdce50f3b209f7792b577da0cc034f22cd0615f0ae6af3212bec5247f99311c0` |
+| S17.04 | [LTT calculation guidance: 15 October capture](https://www.gov.je/TaxesMoney/PropertyTransactionTaxes/LandTransaction/Pages/LandTransactionTaxRates.aspx) | `e72d068be10d2ae9a77c0507f9716bae931c1bfd6450d1520e35705f36979148` |
+| S17.05 | [LTT Statements and Receipts Order](https://www.jerseylaw.je/laws/current/ro_131_2019) | `9a6826301834791351730c3ab1871d34a281cf118c3dbf0f5b7bb6b9ea89a95a` |
+| S17.06 | [EPTT Statements Order](https://www.jerseylaw.je/laws/current/ro_32_2022) | `6a1b26004fe826f3c3f49f16bb0ba0c2807b488eb5714209a8087fb53df5563b` |
+| S17.07 | [EPTT rates: 15 October capture](https://www.gov.je/TaxesMoney/PropertyTransactionTaxes/EnvelopedPropertyTransactionTax/pages/epttrates.aspx) | `2ffb4546dabd0331b6e33288f5cc685238a3dc1537e70f08a0a594bdf67633cc` |
+| S17.08 | [Probate Law](https://www.jerseylaw.je/laws/current/l_16_1998) | `6d857ec6c28d18ff21e3ded6cdd883b4fd07881b817aabd83cd30ff8a7a661aa` |
+| S17.09 | [Probate Forms and Particular Holders Order](https://www.jerseylaw.je/laws/current/ro_90_2023) | `cd7633b575e360477b0606a13068e8862833fa00ea82bab59eea185debc4e995` |
+| S17.10 | [Courts probate exemptions](https://www.courts.je/judicial-greffe/probate-and-protection/probate-registry/exemptions-under-the-probate-law/) | `359aca12dc8b173f29a15c36672786ceb851819ee30c3e66934747ea3acc633f` |
+| S17.11 | [Courts probate fees](https://www.courts.je/judicial-greffe/probate-and-protection/probate-registry/probate-registry-services-and-fees/) | `c4ee9699acf255f2f4c6381618db7be1f363a1e577a685e72ffd95302aea0587` |
+| S17.12 | [Finance Law 2023](https://www.jerseylaw.je/laws/enacted/Pages/L-03-2023.aspx) | `3511698977123f330e76e6b88558ea2251d9bde4a5acf5bd326a630a84aa5594` |
+| S17.13 | [Finance Law 2026](https://www.jerseylaw.je/laws/enacted/Pages/L-12-2026.aspx) | `134f94fb02174b0c53165346dcf2fc63dc07d37e9995cdd674fbc9020030262a` |
+| S17.14 | [2023 Budget immediate-effect Act](https://www.jerseylaw.je/laws/enacted/Pages/RO-112-2022.aspx) | `c106554325e2d59f168a354ee846520b673911aa5bf6d51c7d6c455fd595a76b` |
+| S17.15 | [2026 Budget immediate-effect Act](https://www.jerseylaw.je/laws/enacted/Pages/RO-095-2025.aspx) | `35df037a9bec12a80bdaa9087f2db1c29f81000f77c0353f8e5739759ac9b433` |
+| S17.16 | [2024 Budget immediate-effect Act](https://www.jerseylaw.je/laws/enacted/Pages/RO-120-2023.aspx) | `b9fe26975ad3bf2d4f381785c722eece16038c69a96aff7f05d90197476363a4` |
+| S17.17 | [Finance Law 2024](https://www.jerseylaw.je/laws/enacted/Pages/L-01-2024.aspx) | `8348b16f2ace085e9f2733b41612449a75409db2fdd201416e520a6535d4110f` |
 
 ## Material source decisions
 
@@ -157,7 +174,9 @@ The table records captured primary sources used by guide citations. SHA-256 iden
 - GST retains the earlier domestic business/return/place-of-supply guidance and Direction 2026/03. The personal GBP 60 relief excludes business imports. New S13 sources expand the selected mechanics, with the remaining holds above.
 - Accounts use Companies Law Articles 103 to 105, 108 and 113 in the snapshot effective from 30 September 2026. The substance outline uses Articles 3 to 5A; published specialist guidance and partnership law still need investigation.
 - Non-resident categories use Income Tax Law Article 118B. Broader generic non-resident wording does not override the statutory dividend-profit conditions or short-term visitor test. The landlord deduction example assumes an ordinary managing agent, established net rent and no clearance or special notice.
-- Property examples reproduce and recompute the LTT guidance's ordinary and higher-rate share-transfer cases. The Budget summary and Stamp Duties Law's 2026 schedule establish the temporary higher-rate period. Freehold and probate charges remain separate, with no payable amount computed here.
+- Property v1.1 adds complete ordinary transfer bands and temporary 2026 higher bands, with GBP 100-or-part units and separate fixed fees. LTT parish classification differs from the Stamp Law dwelling test. First-buyer, acknowledgement, simple-hypothec and refinance conditions remain distinct; inexact tapered monetary rounding is held.
+- EPTT uses strict control/value thresholds, exclusions and unencumbered/capitalised value. Specific 2026 higher and lease provisions support conditional examples; the general column, annual-rental/market-value and overlapping domestic/lease wording is disclosed. Enacted 2023/2024/2026 texts and immediate-effect Acts were checked. The consolidation history’s 2022 date for the 2024 Budget Act conflicts with the original 14 December 2023 Act.
+- Probate item 9 variable duty and professional/non-professional additions are separate from other court fees and asset-release authority. Article 19A holder scope differs from the Courts total-Jersey summary. Article 19B requires a worldwide-value declaration despite the Order form’s domicile qualification. Disputed multi-holder and succession cases remain held.
 - MCIT's introductory page has apparently inconsistent top-up wording; no ordering or effective-tax formula is taken from it. The new enacted and Model Rule sources replace the preliminary-only treatment, without completing the full operational computation.
 - Crypto classification uses the published tax guidance; it does not settle staking, DeFi or licensing. The CARF page combines a 2026 reportable list with conditional implementation wording. Enacted rules must be checked before an operational reporting instruction.
 
@@ -167,6 +186,8 @@ The table records captured primary sources used by guide citations. SHA-256 iden
 - Employer registration, ordinary reporting, summaries and estimates retain their distinct statutory conditions. Article 20 annual company filing requires application, qualifying ownership by each relevant employee and Comptroller agreement. Article 41BB notices specify payment at least fifteen days after notice and a separate service-based appeal period; the guidance says pay immediately. No unverified annual-payment calendar or enforcement route is inferred.
 
 ## Period and verification limits
+
+S17 LTT/Stamp/EPTT consolidations apply from 1 January 2026, Probate Law from 12 June 2026 and its Forms Order from 27 October 2023. Both transaction Statements Orders apply from 1 January 2023. Only selected operative sections were inspected; the Stamp judicial-fee corpus and Probate Law were not read in full. Stamp duty’s higher replacement applies to duty payable in 2026; no future-year extension is inferred.
 
 S16 repeats the Contributions Order from 22 April 2025 and Social Security Law from 1 January 2026; its government guidance amounts are calendar-2026 figures. The selected Income Tax Law provisions reuse S12's 17 June 2026 consolidation.
 
