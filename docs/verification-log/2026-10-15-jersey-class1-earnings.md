@@ -12,6 +12,8 @@ Current guidance rounds monthly contribution earnings down to whole pounds and w
 
 I read Income Tax Law Articles 19A/20, 41B to 41BC, 41CC/41CD, 49B and Schedule 1A Part 1. Article 41B's tax-only missing-notice default is 20%; the insured-employee combined tax/LTC branch prescribes 22%. A primary-contribution exemption does not by itself select tax-only treatment. Notice dates, employer receipt and statutory status control the branch. No effective rate is generated here.
 
+Independent financial review identified an inherited sentence that described every valid ITIS rate as including LTC. I qualified it by the Article 49B insured-employee condition and retained the separate tax-only branch. This correction changes no worked amount or source assumption.
+
 Ordinary monthly returns, annual company concessions, employee summaries, deduction records and estimated notices have separate conditions. Article 41BB requires its stated payment date to be at least fifteen days after notice; its appeal period runs from service. The government summary says pay immediately. The guide preserves the statutory distinction and holds complete annual-payment/enforcement mechanics.
 
 ## Limits

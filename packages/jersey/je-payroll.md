@@ -34,7 +34,7 @@ The reused [Income Tax Law](https://www.jerseylaw.je/laws/current/l_29_1961) cap
 
 Register as an employer with Revenue Jersey and establish employment, insured status, contribution classification and exemptions separately. [Income Tax Law Article 19A](https://www.jerseylaw.je/laws/current/l_29_1961) requires written notification within seven days of becoming an employer. Obtain the current employee Income Tax Instalment Scheme (ITIS) notice and any later Revenue Jersey instruction. Article 41CC states the applicable day and ends a notice on the earliest of its stated end, a replacement rate taking effect or year end. See the [employer guidance](https://www.gov.je/TaxesMoney/IncomeTax/Employers/Returns/Pages/EmployingStaff.aspx).
 
-ITIS collects amounts towards the employee's annual liability. It is not the final personal tax rate. A valid ITIS effective rate includes long-term care contributions. Class 1 social contributions are a separate deduction and employer liability; see `je-social-contributions`.
+ITIS collects amounts towards the employee's annual liability. It is not the final personal tax rate. For an employee who is an insured person under Article 49B(5), a valid combined ITIS effective rate includes LTC contributions. A tax-only rate outside that combined branch does not itself include LTC. Class 1 social contributions are a separate deduction and employer liability; see `je-social-contributions`.
 
 ## Calculation
 
