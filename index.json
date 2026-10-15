@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-15T15:30:21+00:00",
+ "generated_at": "2026-10-15T16:02:32+00:00",
  "counts": {
-  "guides": 1891,
-  "jurisdictions": 245,
+  "guides": 1892,
+  "jurisdictions": 246,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -1877,6 +1877,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-04"
+  },
+  {
+   "slug": "ax-tax-scope",
+   "path": "skills/international/aland/ax-tax-scope.md",
+   "name": "ax-tax-scope",
+   "jurisdiction": "AX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "albania-income-tax",
@@ -8389,7 +8402,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "fr-business-accounting",
