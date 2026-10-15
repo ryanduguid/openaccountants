@@ -1,7 +1,7 @@
 ---
 name: au-return-assembly
 description: Final orchestrator skill that assembles the complete Australian filing package for Australian-resident sole traders. Consumes outputs from all Australian content skills (australia-gst for BAS, au-individual-return for ITR, au-super-guarantee for voluntary contributions, au-medicare-levy for levy and surcharge, au-payg-instalments for instalment schedule) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Australian content skills listed above. Australian full-year residents only. Sole traders only.
-version: 0.6
+version: 0.7
 jurisdiction: AU
 category: orchestrator
 tax_year: 2025
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
-## Australia Return Assembly Skill v0.6
+## Australia Return Assembly Skill v0.7
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -225,7 +225,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
   - Q4 (Apr-Jun): due 28 Jul 2027
 
 ## Cross-skill Reconciliation
-- BAS G1 vs ITR business income: [pass/fail]
+- BAS G1-to-income bridge vs final ITR business income: [pass/fail]
 - Super within concessional cap: [pass/fail]
 - MLS correctly assessed: [pass/fail]
 - PAYG credits reconciled: [pass/fail]
