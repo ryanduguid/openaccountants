@@ -21,6 +21,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`workflow-base.md`](../_shared/workflow-base.md)
 
 
 ## Also known as

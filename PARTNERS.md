@@ -4,7 +4,7 @@
 
 Every row is derived from the guides' frontmatter with one rule: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name in `reviewed_by` (or the legacy `verified_by`), and a reviewer is on this roster when at least one guide names them that way. A name on a `tier: 2` guide is attribution, not review, and does not count. The rule is `reviewer_of` in `scripts/oa_tools/roster.py`; `index.json`, the README headline and the coverage gate use the same one, so these figures agree with them by construction.
 
-**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 245 jurisdictions · 21 reviewed guides edited since their review.**
+**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 245 jurisdictions · 22 reviewed guides edited since their review.**
 
 ## Reviewers
 
@@ -13,7 +13,7 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | James Power | GB | 15 | 2 | 2026-09-29 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
 | A licensed accountant (name withheld at their request) | US (10), US-IL (4) | 14 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
 | Miguel Lantigua | DO | 14 | — | 2026-10-11 | — |
-| Mayur Deokar | IN | 13 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
+| Mayur Deokar | IN | 13 | 1 | 2026-10-15 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
 | Edgar Lautsyus | CA | 11 | 1 | 2026-09-29 | — |
 | Christopher Aryee, CPA | US | 9 | 2 | 2026-10-04 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
 | Mehran Habib | SA (5), AE (3), BH (1) | 9 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |

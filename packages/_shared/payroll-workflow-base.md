@@ -5,7 +5,10 @@ version: 1.0.1
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-10-14
+last_updated: 2026-10-15
+depends_on:
+  - workflow-base
+review_status: pending_review
 ---
 
 # Payroll Workflow Base Skill v1.0.1
@@ -13,6 +16,8 @@ last_updated: 2026-10-14
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
+
+**Shared controls.** Load `workflow-base` with this domain base and the required country or regional companions. Its source and period gates, profile confirmation, refusal handling, reviewer delivery, four universal outputs and 18 checks govern this workflow. This domain adds every intake/content slot, output and check specified below. Combine identifiable output components only as the universal base permits. Every default listed below requires established applicable law and explicit permission in the country guide for that missing fact; otherwise use Needs Input. A missing required source condition, slot, refusal message or runtime capability prevents a deliverable financial result. Preserve any exact tool-unavailable stop message below.
 
 **This file contains workflow architecture only.** It defines how Claude should approach a payroll computation task: the order of operations, how to calculate gross-to-net pay, how to handle statutory deductions, how to produce payslips and payroll journals, what to check before delivering. It contains no tax brackets, no social security rates, no employer contribution percentages, no minimum wage figures, no overtime multipliers, no filing deadlines, no return form names.
 
@@ -38,7 +43,7 @@ If a bookkeeping workflow skill is also loaded, note its presence — the payrol
 
 ### Step 2 — Read the employee data
 
-The user will provide employment contracts, salary details, timesheets, benefit elections, or a combination. Read every document provided. Do not skim. For each employee, identify: full name and ID, employment start/end dates, employment type (full-time, part-time, casual, contractor — flag contractors separately), contract type, base salary or hourly rate and basis, pay frequency, agreed working hours, overtime eligibility, bonus/commission components, benefits-in-kind, pension elections, tax code or withholding status, bank details (note presence, do not store), salary sacrifice arrangements, and garnishment or court-ordered deduction instructions.
+The user will provide employment contracts, salary details, timesheets, benefit elections, or a combination. Read every document provided. Do not skim. For each employee, identify: stable employee reference; the reviewer retains names and identity values, employment start/end dates, employment type (full-time, part-time, casual, contractor — flag contractors separately), contract type, base salary or hourly rate and basis, pay frequency, agreed working hours, overtime eligibility, bonus/commission components, benefits-in-kind, pension elections, tax code or withholding status, reviewer confirmation that payment details are held outside the agent, salary sacrifice arrangements, and garnishment or court-ordered deduction instructions.
 
 If any employee record is incomplete to the point where gross pay cannot be determined, queue for Step 4 clarification. If no employee data is provided at all, stop and tell the user what is needed.
 
@@ -58,7 +63,7 @@ If the pay period is ambiguous, ask the user: "Which pay period are you computin
 
 For each employee, produce a one-line summary:
 
-> "[Name] — [employment type], [base pay] [frequency], [overtime status], [benefits if any], [tax code/status if provided]"
+> "[Stable employee reference] - [employment type], [base pay] [frequency], [overtime status], [benefits if any], [tax code/status if provided]"
 
 Present all summaries to the user:
 
@@ -72,7 +77,7 @@ Wait for confirmation. If the user corrects anything, update and re-confirm. For
 
 ### Step 5 — Gross pay computation
 
-For every employee, compute total gross pay for the period. Gross pay is the sum of all components before any deductions:
+For every employee, list all earnings before employee deductions. Separate cash gross earnings from noncash taxable benefit values and record the statutory base for each charge under the verified country rules:
 
 **Base pay.** For salaried employees, divide annual salary by the number of pay periods per year (or use the monthly/weekly rate as stated). For hourly employees, multiply hourly rate by hours worked. For part-time employees, pro-rate according to contracted hours vs. full-time equivalent.
 
@@ -80,9 +85,9 @@ For every employee, compute total gross pay for the period. Gross pay is the sum
 
 **Bonuses and commissions.** Include any bonus or commission payable in this period. Determine the tax treatment per the country skill's rules (flat supplemental rate vs. aggregation with regular pay).
 
-**Benefits-in-kind.** Compute the taxable value per the country skill's benefit valuation rules. Add to gross pay for withholding purposes. The benefit value is included in gross for tax computation but not in cash pay — it appears on the payslip as a non-cash component.
+**Benefits-in-kind.** Compute taxable value using the verified country valuation rules. Include it only in each statutory base that requires it, and show it separately on the payslip. It does not increase cash earnings. Record actual employer benefit costs from expense evidence for the cost summary and journal.
 
-**Salary sacrifice.** If applicable, reduce gross pay by the sacrifice amount before computing deductions, per the country skill's rules. Record pre-sacrifice and post-sacrifice gross separately.
+**Salary sacrifice.** Apply an evidenced valid arrangement using the country's rules for cash earnings and each statutory base. Record the cash reduction and resulting benefit or pension component separately. A reduction in cash salary does not establish an equal reduction in every tax or contribution base.
 
 **Back-pay.** If this period includes back-pay (e.g., a backdated salary increase), compute arrears separately and include in this period's gross. Flag for the reviewer.
 
@@ -90,13 +95,13 @@ For every employee, compute total gross pay for the period. Gross pay is the sum
 
 ### Step 6 — Statutory deductions (employee share)
 
-For every employee, compute all mandatory deductions from gross pay, in the order specified by the country skill (order matters — some deductions are computed on gross, others on gross-after-prior-deductions):
+For every employee, compute all mandatory deductions from their respective statutory bases in the country's specified order. Keep cash earnings, taxable noncash benefits and any deduction from a later base identifiable:
 
 **Income tax withholding.** Apply the country skill's withholding method. The country skill's method governs; the shapes below describe the common ones and never replace what the country skill prescribes:
 
-- If cumulative/year-to-date method: compute total tax liability for the year to date based on cumulative gross, subtract tax already withheld in prior periods, the remainder is this period's withholding.
-- If period-based method: annualize the period gross, apply the annual tax table, de-annualize the result to get the period withholding.
-- If effective-rate table method (a rate looked up from the period's gross pay and the employee's status, such as Indonesia's TER): withholding = period gross × the table rate, with no annualization and no cumulative adjustment; the annual true-up against the progressive brackets happens only in the period the country skill names (typically the last month of the year or of employment).
+- If cumulative/year-to-date method: compute liability from the verified cumulative statutory base and prescribed adjustments, then subtract prior withholding as the country rule requires.
+- If period-based annualisation method: annualise the verified period statutory base, apply the prescribed table and adjustments, then convert the result to period withholding as the country rule requires.
+- If effective-rate table method (such as Indonesia's TER): use the country's defined period base and employee status to select and apply the rate. Perform any annual adjustment only in the period and manner the country rule specifies.
 - If flat-rate supplemental method (for bonuses): apply the flat rate specified by the country skill to the supplemental payment.
 - Apply the employee's tax code or status as provided. If no tax code is available, apply the country skill's default code for a new employee.
 - Apply any tax-free allowance, personal allowance, or threshold per the country skill's tables.
@@ -125,17 +130,17 @@ Record every employer contribution as a separate line item. These appear on the 
 
 ### Step 8 — Net pay computation and payslip generation
 
-**Net pay.** For every employee: Net pay = Gross pay − Total employee deductions (from Step 6). This is the amount to be paid to the employee's bank account.
+**Cash net pay.** Keep cash gross earnings separate from the taxable value of noncash benefits. For every employee: cash net wages = cash gross earnings minus total employee deductions from Step 6. Noncash benefit value affects the statutory bases where the country requires it and does not increase cash payable. Record any separate cash reimbursements or other authorised payments in the bank-payment reconciliation. If deductions exceed available cash, stop the affected payment and obtain the country's required handling; do not invent a negative bank transfer.
 
-Verify: Gross pay − (income tax + social security employee + pension employee + other statutory + court-ordered) = Net pay. If the arithmetic does not balance, stop and find the error.
+Verify: cash gross earnings minus income tax, employee social security, employee pension, other statutory and court-ordered deductions equals cash net wages. Show noncash benefit valuation and each statutory base separately. If the arithmetic does not balance, stop and find the error.
 
 **Payslip.** Produce one payslip per employee in the format specified in Section 3. Every gross component listed, every deduction itemized, net pay prominent. Year-to-date totals included if the country skill requires them.
 
 ### Step 9 — Produce payroll summary, journal entries, and filing reminders
 
-**Payroll summary.** Employer-facing summary: total gross pay, total of each deduction type, total net pay, total employer contributions, total cost (gross + employer contributions).
+**Payroll summary.** For reviewer approval, show cash gross earnings, noncash taxable benefit values, each statutory base, each deduction type, cash net wages, employer contributions and evidenced benefit costs. Employer cost comprises cash earnings, actual benefit costs for the period and employer contributions. Taxable benefit valuation is not proof of the employer's expense. An unknown benefit cost leaves the cost summary incomplete.
 
-**Payroll journal entries.** Double-entry: debit salary/wage expense (gross), debit employer social security/pension/other contribution expenses; credit income tax payable, social security payable (employee + employer shares), pension payable (employee + employer shares), other deductions payable, net wages payable/bank. Total debits must equal total credits. If a bookkeeping skill is loaded, use its nominal codes.
+**Payroll journal entries.** Debit salary/wage expense for cash earnings and the separate employer contribution expenses; credit income tax payable, social security payable (employee + employer shares), pension payable (employee + employer shares), other deductions payable and cash net wages payable/bank. Record actual benefit expense with the appropriate payable or settlement account, or link its existing posting so it is not posted twice. Do not post taxable benefit valuation as additional salary expense solely because it enters a tax base. Total debits must equal credits. Use the loaded bookkeeping skill's nominal codes and applicable accounting basis.
 
 **Filing calendar.** List upcoming payroll filings per the country skill's deadlines: income tax remittance, social security remittance, pension remittance, periodic returns, annual reconciliation filings, and employee annual tax certificates — each with amount, due date, and filing body.
 
@@ -159,21 +164,21 @@ The data provides clues but not certainty for a payroll computation decision. A 
 
 **Action:** Apply the conservative default (below), flag in the reviewer brief with the alternative treatment and cash impact, and record the assumption.
 
-Conservative defaults for payroll:
+The following missing-fact defaults require established law and explicit country-guide permission. Preserve the employee's lawful pay entitlement and disclose the alternative and impact; otherwise return Needs Input:
 
 - **Overtime eligibility unknown:** Treat as non-exempt (eligible for overtime). Excluding overtime pay for an eligible employee is an underpayment risk.
 - **Benefit taxable value ambiguous:** Use the higher taxable value. Undertaxing a benefit creates a liability for the employer.
 - **Tax code not provided:** Apply the country skill's default emergency/standard code for a new employee. This typically results in higher withholding, which the employee recovers via their annual return.
 - **Pension opt-in/out unclear:** Assume opted in at the statutory minimum rate. Failing to enroll creates a compliance risk.
 - **Salary sacrifice validity unclear:** Do not apply the sacrifice (compute on full gross). Applying an invalid sacrifice creates a tax liability.
-- **Working hours ambiguous for part-timer:** Use the lower hour figure (less pay, less employer cost). Overpaying requires recovery; underpaying is correctable in the next run.
+- **Working hours ambiguous for part-timer:** Obtain the hours and contractual basis before calculating pay. Use Needs Input unless established law and the country guide expressly permit a factual default that meets the employee's pay entitlement.
 - **Bonus tax treatment unclear:** Aggregate with regular pay rather than applying a supplemental flat rate. Aggregation typically produces higher withholding.
 
 ### Tier 3 — Needs Input
 
 The computation cannot proceed without information only the user possesses. The data provides insufficient basis for even a conservative assumption.
 
-**Action:** Queue for user question in Step 4. Do not guess. Do not apply a default until the user has been asked and either answered or selected "don't know."
+**Action:** Queue the missing factual question for Step 4. Use an evidenced answer or an expressly permitted factual default under established law. A "don't know" answer does not create permission to default; keep the item as Needs Input when the required fact remains unresolved. Obtain primary authority for a legal gap, not the user's guess about the rule.
 
 Examples:
 - Employee classified as "contractor" — is this person genuinely self-employed or should they be on payroll? (Misclassification risk is severe.)
@@ -192,10 +197,10 @@ Five outputs per payroll run. All five are mandatory. Never produce one without 
 One payslip per employee. Format:
 
 ```
-[Employer name]
+[Stable employer reference]
 Pay Period: [start date] to [end date]
 Payment Date: [date]
-Employee: [name]    Employee ID: [id]
+Employee reference: [stable redacted reference]
 
 EARNINGS                          This Period    Year to Date
   Base salary / wages             [amount]       [amount]
@@ -204,7 +209,9 @@ EARNINGS                          This Period    Year to Date
   Benefits-in-kind (taxable)      [amount]       [amount]
   [Other components]              [amount]       [amount]
                                   ----------     ----------
-  GROSS PAY                       [amount]       [amount]
+  CASH GROSS EARNINGS              [amount]       [amount]
+  NONCASH TAXABLE BENEFIT VALUE    [amount]       [amount]
+  TAXABLE PAY / CONTRIBUTION BASES [separate amounts per country rules]
 
 DEDUCTIONS
   Income tax                      [amount]       [amount]
@@ -215,7 +222,7 @@ DEDUCTIONS
                                   ----------     ----------
   TOTAL DEDUCTIONS                [amount]       [amount]
 
-NET PAY                           [amount]       [amount]
+CASH NET WAGES                    [amount]       [amount]
 
 Employer contributions (for information):
   Social security (employer)      [amount]
@@ -234,13 +241,15 @@ Double-entry journal entries as specified in Step 9. Tabular format:
 
 | Account | Debit | Credit |
 |---|---|---|
-| Salary expense | [total gross] | |
+| Salary expense | [cash gross earnings] | |
+| Benefit expense, if not already posted | [evidenced actual cost] | |
+| Benefit payable / settlement account | | [same actual cost] |
 | Employer social security expense | [amount] | |
 | Employer pension expense | [amount] | |
 | Income tax payable | | [amount] |
 | Social security payable | | [employee + employer shares] |
 | Pension payable | | [employee + employer shares] |
-| Net wages payable / bank | | [total net pay] |
+| Net wages payable / bank | | [cash net wages] |
 | **TOTAL** | **[amount]** | **[amount]** |
 
 Debits must equal credits. If a bookkeeping skill is loaded, use its nominal codes and account names.
@@ -249,13 +258,13 @@ Debits must equal credits. If a bookkeeping skill is loaded, use its nominal cod
 
 Per-employee and total cost breakdown:
 
-| Employee | Gross Pay | Employer SS | Employer Pension | Other Employer | Total Cost |
-|---|---|---|---|---|---|
-| [Name] | [amount] | [amount] | [amount] | [amount] | [amount] |
-| ... | | | | | |
-| **TOTAL** | **[amount]** | **[amount]** | **[amount]** | **[amount]** | **[amount]** |
+| Employee | Cash Gross | Actual Benefit Cost | Employer SS | Employer Pension | Other Employer | Total Cost |
+|---|---|---|---|---|---|---|
+| [Stable employee reference] | [amount] | [amount] | [amount] | [amount] | [amount] | [amount] |
+| ... | | | | | | |
+| **TOTAL** | **[amount]** | **[amount]** | **[amount]** | **[amount]** | **[amount]** | **[amount]** |
 
-Total cost = Gross pay + All employer contributions. This is the true cost of each employee to the business.
+Total cost = cash gross earnings + evidenced actual benefit costs + all employer contributions. Show taxable benefit valuation separately and identify costs already posted elsewhere. Reconcile the period and accounting basis of each cost; do not substitute tax valuation for missing expense evidence.
 
 ### Output 4 — Filing calendar
 
@@ -294,13 +303,13 @@ uncertainty. Each: one sentence what, one sentence why it matters,
 one sentence what the reviewer should do.]
 
 ## Assumptions made (Tier 2 defaults)
-[For each Tier 2 decision: employee name, the decision point,
+[For each Tier 2 decision: stable employee reference, the decision point,
 the default applied, the alternative, and the cash impact of
 the alternative.]
 
 ## Questions asked and user answers (Tier 3)
 [For each Tier 3 item: the question, the user's answer or
-"don't know — default applied", and the resulting treatment.]
+"don't know - Needs Input; dependent calculation held", and the resulting treatment.]
 
 ## Withholding verification
 [For each employee: gross pay, tax withheld, effective rate,
@@ -339,7 +348,7 @@ Apply the country skill's rules for secondary employment (often a higher tax rat
 
 ### Rounding rules
 
-Apply the country skill's rounding rules for each component. If the country skill is silent, round each deduction to the currency's smallest denomination (two decimal places for a currency with a minor unit, whole units for one without, such as the rupiah or the yen) and compute net pay as the exact difference — gross minus the sum of the rounded deductions — with no further rounding, so that Check 1 holds by construction.
+Apply the country's verified rounding rules to each deduction and compute cash net wages as cash gross earnings minus the sum of the rounded deductions, with no additional rounding unless the rule requires it. An unknown rounding rule requires Needs Input; currency minor units alone do not establish statutory rounding.
 
 ---
 
@@ -349,13 +358,13 @@ Run these twelve checks against all outputs. If any fails, fix and re-run. Do no
 
 ### Arithmetic integrity
 
-**Check 1 — Gross minus deductions equals net.** For every employee: Gross pay − Total deductions = Net pay. Not approximately — exactly. A difference of even 0.01 means a computation error.
+**Check 1 — Cash wages reconcile.** For every employee, cash gross earnings minus employee deductions equals cash net wages exactly. Noncash benefit valuation is excluded from cash earnings, and separate cash payments reconcile to the bank-payment total. Resolve insufficient cash under the country's rules before payment.
 
 **Check 2 — Employer contributions computed separately.** No employer contribution appears as a deduction on any employee's payslip. Employer contributions are additional costs, not deductions from pay. Scan every payslip's deductions section; none should contain employer-share items.
 
-**Check 3 — Tax withholding within valid brackets.** For every employee, the effective tax rate (tax withheld ÷ gross pay) falls within the range of the lowest and highest marginal rates in the country skill's tax table. An effective rate of 0% is valid only where the country skill's tables give a zero rate for that pay: at or below a tax-free threshold, or inside a zero-rate band of an effective-rate table, with band endpoints read as inclusively as the table states them. An effective rate above the highest marginal rate is always wrong.
+**Check 3 — Withholding follows the applicable method.** Recompute withholding from the country's statutory base, allowances, credits, cumulative or period method and any effective-rate table. Confirm band endpoints and rounding. An average rate may fall below a marginal rate because of allowances or credits; a zero amount must trace to an authorised rule. Compare any statutory bound using its specified base, including taxable noncash benefits where required.
 
-**Check 4 — Social security respects its ceiling.** Where the country skill states an annual ceiling, verify for every employee that year-to-date social security contributions (employee share) do not exceed it; if contributions in this period would push the total above the ceiling, the contribution for this period must be reduced to the ceiling remainder. Where the country skill states a per-period ceiling (a maximum monthly wage base), verify that each period's earnings base is capped at that amount and that no later period was stopped.
+**Check 4 — Social security respects its specified limits.** Distinguish an earnings-base ceiling from a monetary contribution cap. Apply annual earnings ceilings to cumulative assessable earnings on the country's stated person, employment and programme basis; calculate this period's contribution on the eligible remainder using its applicable rate. Apply per-period base ceilings to each period independently. Limit contribution amounts directly only where the country defines a monetary cap. Preserve effective-date, rate-change and rounding rules.
 
 **Check 5 — Payroll journal entries balance.** Total debits in the payroll journal equal total credits. Not approximately — exactly.
 
@@ -363,9 +372,9 @@ Run these twelve checks against all outputs. If any fails, fix and re-run. Do no
 
 ### Cross-output consistency
 
-**Check 7 — Payslip totals match summary.** The sum of all individual payslips' gross pay equals the total gross pay on the employer cost summary. The sum of all net pays on payslips equals the total net pay on the summary.
+**Check 7 — Payslip totals match summary.** Cash gross earnings, noncash taxable benefit values, statutory bases and cash net wages each reconcile from individual payslips to their named summary fields. Keep tax valuation separate from actual benefit expense.
 
-**Check 8 — Employer cost summary adds up.** For every employee: Gross pay + Employer SS + Employer pension + Other employer contributions = Total cost. The total row is the sum of all employee rows.
+**Check 8 — Employer cost summary adds up.** For every employee, cash gross earnings plus evidenced actual benefit costs and employer contributions equals period employer cost. Total rows equal the employee rows, and benefits already posted elsewhere are traced without duplicate expense. Missing expense evidence prevents a complete cost total.
 
 **Check 9 — Filing calendar amounts reconcile.** The income tax remittance amount equals the sum of all employees' income tax withholding. The social security remittance equals the sum of all employees' SS (employee share + employer share). The pension remittance equals the sum of all employees' pension (employee share + employer share).
 

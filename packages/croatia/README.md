@@ -25,6 +25,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 - [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+- [`workflow-base.md`](../_shared/workflow-base.md)
 
 
 ## How to use

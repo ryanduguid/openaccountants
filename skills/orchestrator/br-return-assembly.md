@@ -1,10 +1,10 @@
 ---
 name: br-return-assembly
 description: Final orchestrator skill that assembles the complete Brazil filing package for Brazil-resident self-employed individuals (MEI, Simples Nacional, autônomo/pessoa física). Consumes outputs from all Brazil content skills (br-irpf for Declaração de Ajuste Anual, br-simples for DAS/DASN reconciliation, br-inss for INSS contributions, br-iss for ISS municipal) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Brazil content skills listed above. Brazil full-year residents only. Self-employed individuals only.
-version: 1.0
+version: 1.1
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-15
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -12,6 +12,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # BR Return Assembly
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 ## Brasil — Montagem do Working Paper Tributário — Skill v1.1
 
@@ -23,10 +26,10 @@ Especificamente:
 
 - **NÃO pergunte ao usuário "até que profundidade você quer que eu vá"** ou "você quer o pacote completo" ou qualquer variação. O usuário pediu suas declarações. Ele quer suas declarações. Produza-as.
 - **NÃO anuncie quantos tokens ou chamadas de ferramenta isso vai consumir.** Execute.
-- **NÃO pergunte quais entregáveis devem ser priorizados.** Produza todos os entregáveis listados na Seção 4. Se ficar sem contexto no meio da execução, finalize primeiro o trabalho de cálculo (números, posições, flags), depois produza os outputs formatados possíveis, e ao final declare claramente quais entregáveis não foram produzidos e por quê.
+- **Produce every mandatory deliverable in Section 4.** If context is exhausted, preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish.
 - **NÃO revalide o escopo que o intake já validou.** Se o `br-freelance-intake` produziu um pacote de intake, confie nele. Você pode conferir números específicos durante a reconciliação, mas não re-interrogue o usuário sobre residência, tipo de atividade, ou qualquer outro item que o intake já capturou.
 - **NÃO pause entre content skills para checar com o usuário.** Rode-os na ordem de dependência (Seção 2) sem mensagens de status entre cada um. Uma única mensagem de status no final é aceitável.
-- **Self-checks são metas, não bloqueios.** Se um self-check falhar, anote-o na seção de open flags do reviewer brief e continue. NÃO interrompa o workflow inteiro porque um self-check teve resposta ambígua.
+- **Check failure handling.** Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - **Citações de fonte primária vão no reviewer brief final, não nos passos intermediários de cálculo.**
 
 **O usuário já foi informado (pelo intake skill) que o pacote final exige assinatura de contador antes do envio. Declare isso uma vez no output final e siga em frente.**
@@ -174,13 +177,13 @@ A partir de 2026, contribuintes fora do Simples Nacional precisam reconciliar CB
 
 ### Conteúdo do reviewer brief
 
-# Pacote Completo de Declaração: [Nome do Cliente] -- Ano-calendário 2025 / Exercício 2026
+# Pacote Completo de Declaração: [referência estável anonimizada do cliente] -- Ano-calendário 2025 / Exercício 2026
 
 ## Sumário Executivo
 - Situação: [Solteiro / Casado / União estável]
 - Residência: Brasil (ano inteiro), [município] - [UF]
 - Tipo de atividade: MEI / Simples Nacional (Anexo [X]) / Autônomo PF
-- CNPJ: [número] (ou somente CPF para autônomo)
+- Taxpayer reference: [stable redacted reference]; reviewer confirms holding the applicable CNPJ or CPF outside agent inputs and outputs
 - Total rendimentos tributáveis: R$ X
 - Total deduções: R$ X
 - Base de cálculo IRPF: R$ X
@@ -384,9 +387,9 @@ A partir de 2026, contribuintes fora do Simples Nacional precisam reconciliar CB
 
 ## Seção 6 -- Recusas
 
-- **R-BR-1** — Skill upstream não rodou. Nomear o skill específico. Observação: este é um aviso, não um hard stop. Continuar com os dados disponíveis e sinalizar a lacuna.  _(Seção 6)_
-- **R-BR-2** — Self-check upstream falhou. Nomear o check específico e anotá-lo no reviewer brief. Continuar.  _(Seção 6)_
-- **R-BR-3** — Reconciliação cross-skill falhou. Nomear a reconciliação específica e descrever a discrepância. Sinalizar para o revisor mas continuar.  _(Seção 6)_
+- **R-BR-1** — Upstream skill did not run. Name the missing skill and hold its dependent calculations and the complete filing package. Independent supported preparation may continue with its limited scope stated.  _(Seção 6)_
+- **R-BR-2** — Upstream self-check failed. Name the failed check, correct it and rerun before using the affected result. If unresolved, hold dependent calculations and the complete filing package.  _(Seção 6)_
+- **R-BR-3** — Cross-skill reconciliation failed. Name the reconciliation and discrepancy, correct it and rerun. If unresolved, hold dependent calculations and the complete filing package.  _(Seção 6)_
 - **R-BR-4** — Intake incompleto. Itens específicos faltantes do intake impedem o cálculo. Listar o que está faltando e pedir ao usuário o dado específico.  _(Seção 6)_
 - **R-BR-5** — Item fora do escopo descoberto durante a montagem. Ex.: ganhos de capital (GCAP), rendimentos do exterior exigindo carnê-leão sobre fonte estrangeira, ou rendimentos de aluguel exigindo DARF separado. Sinalizar e excluir do cálculo.  _(Seção 6)_
 

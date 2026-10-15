@@ -72,6 +72,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`us-state-payroll-matrix.md`](../_shared/us-state-payroll-matrix.md)
 - [`us-tax-residency.md`](../_shared/us-tax-residency.md)
 - [`us-tax-workflow-base.md`](../_shared/us-tax-workflow-base.md)
+- [`workflow-base.md`](../_shared/workflow-base.md)
 
 
 ## How to use

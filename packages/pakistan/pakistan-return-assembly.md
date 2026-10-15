@@ -4,7 +4,7 @@ description: Use this skill whenever asked to assemble, finalize, or package a P
 version: 0.1
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-15
 review_status: pending_review
 depends_on:
   - pk-freelance-intake
@@ -15,6 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Return Assembly
 
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
+
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
 **When this skill is invoked, the user has already passed through intake and the relevant content skills. They want their finished IRIS working paper. Execute all steps without pausing for permission.**
@@ -23,11 +26,11 @@ Specifically:
 
 - **Do NOT ask "do you want me to assemble the full package".** The user asked for the return. Produce it.
 - **Do NOT re-interrogate the user about residency, NTN, CNIC, or business structure** — intake already captured this; trust the upstream packages.
-- **Do NOT pause between reconciliation steps to check in.** Run all cross-checks in sequence; flag failures in the reviewer brief and continue.
-- **Self-checks are targets, not blockers.** If a check fails, note it under "Reviewer Attention Flags" and continue.
+- **Do NOT pause between reconciliation steps for pacing questions.** Run all cross-checks in sequence and apply the failure handling below before using a result or delivering the package.
+- **Check failure handling.** Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - **Do NOT submit anything to FBR IRIS.** This skill produces a working paper plus filing instructions. A credentialed reviewer (ICAP CA, ICMAP, or ACCA-PK with Pakistan practising rights) must review, and the taxpayer (or authorised filer / e-intermediary) submits via IRIS.
 
-**If you feel the urge to ask "how should I proceed", pick the most defensible path, proceed, and flag the decision for the reviewer.**
+**If you feel the urge to ask "how should I proceed", resolve the pacing choice within the confirmed scope and controls; hold any unresolved evidence, rule or failed check for the required input or refusal.**
 
 ## What this file is
 
@@ -72,7 +75,7 @@ A single reviewer-ready package containing:
 
 ## Section 2 — Required inputs from upstream PK skills
 
-The assembly skill does not recompute anything. It expects structured outputs from the following upstream skills. If an upstream skill did not run, the assembly notes the gap and continues with available data.
+The assembly skill does not recompute anything. It expects structured outputs from the following upstream skills. If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.
 
 ### 2.1 Individual / AOP return — inputs
 
@@ -86,7 +89,7 @@ The assembly skill does not recompute anything. It expects structured outputs fr
 | `pk-sales-tax-services` | Provincial sales tax on services (PRA / SRB / KPRA / BRA) — cross-check vs. service revenue | Cross-check only |
 | `pk-payroll-eobi` | EOBI contributions, salary tax withheld, monthly statements u/s 165 | Cross-check to Annex A (Salary) and to amounts withheld disclosure |
 | `pk-cgt` | Capital gains on securities (section 37A), immovable property (section 37(1A)), other capital assets | Annex D (Capital gains) |
-| `pk-formation` | Entity structure, NTN, CNIC, AOP partnership deed, partner share ratios | Identification block; AOP partner share allocation |
+| `pk-formation` | Entity structure, redacted taxpayer/partner references, confirmed reviewer-held NTN/CNIC, redacted AOP partnership terms, partner share ratios | Identification block; AOP partner share allocation |
 
 ### 2.2 Company return — inputs
 
@@ -100,25 +103,25 @@ The assembly skill does not recompute anything. It expects structured outputs fr
 | `pk-sales-tax-services` | Provincial sales tax on services across PRA / SRB / KPRA / BRA | Cross-check only |
 | `pk-payroll-eobi` | Employee salary expense, salary tax withheld u/s 149, EOBI contributions, monthly statements u/s 165 | Schedule of employees; cross-check to financial statements salary expense |
 | `pk-cgt` | Capital gains on disposals; treatment of listed securities (section 37A) vs. other assets (section 37) | Capital gains schedule |
-| `pk-formation` | NTN, incorporation details, share capital, directors, registered address; SECP CUIN | Identification block; directors schedule |
+| `pk-formation` | Redacted business/director references, incorporation details, share capital, necessary location facts; confirmation of reviewer-held NTN and SECP CUIN | Identification block; directors schedule |
 
-### 2.3 Intake-required identifiers
+### 2.3 Reviewer-held identifiers and required calculation facts
 
-**Intake-required identifiers table**
+**Readiness confirmations and calculation facts table**
 
-| Identifier | Required for |
+| Reviewer confirmation or calculation fact | Required for |
 | --- | --- |
-| NTN (National Tax Number) — 7 digits + check digit, or 13-digit CNIC-as-NTN for individuals | All returns |
-| CNIC (Computerized National Identity Card) — 13 digits | Individual returns; AOP partners; company directors |
-| CUIN (Corporate Universal Identification Number) — SECP | Company returns |
-| IRIS user ID and password | All electronic submissions |
-| STRN (Sales Tax Registration Number) — 13 digits | Sales tax cross-checks |
-| Provincial registrations: PRA / SRB / KPRA / BRA reference numbers | Provincial sales tax on services cross-checks |
+| Reviewer confirms holding the applicable NTN; use a stable redacted taxpayer reference | All returns |
+| Reviewer confirms holding the applicable CNIC; use redacted person references | Individual returns; AOP partners; company directors |
+| Reviewer confirms holding the applicable SECP CUIN | Company returns |
+| Reviewer confirms IRIS access readiness; user ID and password remain outside the agent | All electronic submissions |
+| Reviewer confirms holding the applicable STRN | Sales tax cross-checks |
+| Evidenced provincial registration status; reviewer holds PRA / SRB / KPRA / BRA identifiers | Provincial sales tax on services cross-checks |
 | Tax year (normal 1 Jul – 30 Jun, or approved special year-end) | Determines deadline |
 | Residency status (resident / non-resident under section 82) | All returns |
 | Filing status (salaried / non-salaried individual / AOP / company) | Determines IRIS form and deadline |
 
-- **Missing identifier handling** — If any identifier is missing, the assembly skill flags it as "Needs Input" and produces the working paper with placeholders rather than halting.
+- **Missing identification readiness** - Use stable redacted references and reviewer-held identifier confirmations. If a required confirmation or calculation fact is missing, return Needs Input and hold the complete filing package. Independently supported preparation remains an incomplete draft until the required outputs and checks finish. Do not request identifier values or credentials to resolve the gap.
 
 ## Section 3 — Assembly workflow
 
@@ -191,12 +194,12 @@ The reviewer is an ICAP CA (Institute of Chartered Accountants of Pakistan), ICM
 
 | Sheet | Contents |
 | --- | --- |
-| Cover | Taxpayer name, NTN, CNIC, CUIN (if company), tax year, return type, reviewer name, sign-off block |
-| Identification | NTN, STRN, provincial sales tax numbers, business address, principal activity, NIC of representative |
+| Cover | Stable redacted taxpayer/business reference, reviewer-held identifier confirmations, tax year, return type, reviewer name, sign-off block |
+| Identification | Redacted taxpayer/representative references, registration-status confirmations, necessary location facts and principal activity; reviewer completes identifying fields outside the agent |
 | Computation — Income | Head-by-head income with section references |
 | Computation — Tax | Slab application, super tax, minimum tax, ACT (companies) |
-| Adjustable Tax | All section 149–158 / 231 series withholdings with CPR references |
-| Advance Tax (Section 147) | Quarterly instalments paid, CPR references |
+| Adjustable Tax | All section 149–158 / 231 series withholdings with stable redacted CPR evidence references; reviewer retains the CPR numbers |
+| Advance Tax (Section 147) | Quarterly instalments paid with stable redacted CPR evidence references; reviewer retains the CPR numbers |
 | Tax Credits | Charitable donations (s.61), foreign tax credit (s.103), other |
 | Wealth Statement (Individuals) | Assets, liabilities, reconciliation of net wealth — section 116 |
 | Wealth Reconciliation | Opening net wealth + income + gifts received − expenses − gifts paid = closing net wealth |
@@ -204,7 +207,7 @@ The reviewer is an ICAP CA (Institute of Chartered Accountants of Pakistan), ICM
 | Depreciation (Companies) | Third Schedule rates, initial allowance, WDV roll-forward |
 | Salary Schedule | Per-employee detail (companies / AOPs with employees) |
 | Sales Tax Cross-check | Federal STR-7 turnover vs. financial statements revenue; provincial sales tax on services |
-| PSID Register | Every payment with head, period, amount, PSID number, CPR number, payment date |
+| PSID Register | Every payment with head, period, amount, stable redacted payment and CPR evidence references, payment date; reviewer retains the PSID and CPR numbers |
 | Cross-Check Summary | Pass/fail for each reconciliation item |
 | 2026-27 Planning | Quarterly advance tax forecast, ATL implications, withholding agent obligations |
 
@@ -541,7 +544,7 @@ If the taxpayer (especially a company) is a withholding agent under sections 153
 The reviewer brief contains an attestation block:
 
 ```markdown
-# Reviewer Attestation — [Taxpayer Name] — TY 2026
+# Reviewer Attestation — [stable redacted taxpayer reference] — TY 2026
 
 Reviewer name: ____________________________________
 Membership body: [ ] ICAP CA   [ ] ICMAP   [ ] ACCA-PK with Pakistan practising rights
@@ -568,7 +571,7 @@ I confirm the return is ready for IRIS submission and that the taxpayer / author
 ## Section 11 — Final taxpayer action list template
 
 ```markdown
-# Action List — [Taxpayer Name] — TY 2026
+# Action List — [stable redacted taxpayer reference] — TY 2026
 
 ## Immediate (before s.114 return filing)
 
@@ -650,18 +653,18 @@ Records must be kept in Pakistan or in a manner accessible to the Commissioner. 
 
 ## Section 12 — Refusals
 
-- **R-PK-ASM-1** — Upstream skill did not run. Name the missing skill. Continue with available data; flag the gap; do not fabricate the missing computation.
-- **R-PK-ASM-2** — Upstream self-check failed. Note the specific check; continue but flag.
+- **R-PK-ASM-1** — Upstream skill did not run. Name the missing skill and hold its dependent calculations and the complete filing package. Independent supported preparation may continue with its limited scope stated.
+- **R-PK-ASM-2** — Upstream self-check failed. Name the failed check, correct it and rerun before using the affected result. If unresolved, hold dependent calculations and the complete filing package.
 - **R-PK-ASM-3** — Cross-skill reconciliation > PKR 10,000. Raise as "Needs Input"; do not silently round.
 - **R-PK-ASM-4** — Out of scope: petroleum exploration (Fifth Schedule), insurance (Fourth Schedule), banking (specialised rules), modarabas, mutual funds, oil & gas concession agreements, group taxation under section 59AA / 59B, controlled foreign company rules (section 109A), tax holidays under Second Schedule clauses, special zones (Gwadar Free Zone, Khyber Pakhtunkhwa Special Economic Zones), agricultural income (provincial), provincial taxes other than sales tax on services. Flag for human specialist; do not attempt.
 - **R-PK-ASM-5** — Out of scope: non-resident individuals, mixed-residency years, expatriate package taxation under section 12(2), Pakistan-source income for non-residents requiring section 152 final tax analysis. Refer to a specialist; this skill assumes full-year Pakistani tax residency unless explicitly handled by pk-income-tax with non-resident schedules.
-- **R-PK-ASM-6** — Intake incomplete. Name the missing intake field (NTN, CNIC, CUIN, STRN, IRIS credentials, residency status). Cannot finalise the return until provided.
+- **R-PK-ASM-6** — Intake incomplete. Name the missing calculation fact or reviewer readiness confirmation, such as residency or applicable registration/access status. Hold the complete package until resolved. Do not request NTN, CNIC, CUIN, STRN or IRIS credentials; the reviewer retains them.
 - **R-PK-ASM-7** — Asked to submit to IRIS. This skill produces a working paper. Submission is the taxpayer's (or their authorised filer's / e-intermediary's) action, after credentialed reviewer sign-off. Decline politely; provide the filing instructions instead.
 - **R-PK-ASM-8** — Asked to confirm rates / brackets / thresholds against Finance Act 2025 without verification. Defer to pk-income-tax / pk-corporate-tax which carry the verified Finance Act 2025 figures. Flag any figure used here as "verify against current upstream skill output".
 
 ## Section 13 — Self-checks
 
-**Check PK-ASM-1** — All upstream skills required for the chosen form have produced output, or the gap is flagged.
+**Check PK-ASM-1** — All upstream skills required for the chosen form have produced supported output and passed their checks. An unresolved gap prevents this check from passing and holds the complete filing package.
 
 **Check PK-ASM-2** — Revenue reconciles between pk-corporate-tax / pk-income-tax, pk-sales-tax-federal, and pk-sales-tax-services within tolerance.
 
@@ -709,7 +712,7 @@ The final output is **three files**:
 
 All three files are placed in `/mnt/user-data/outputs/` and presented to the user at the end.
 
-If execution runs out of context mid-build, complete the computation work first and produce whichever formatted outputs are finished, then state clearly which deliverables are partial.
+If context is exhausted, preserve supported calculations and evidence for resumption. Identify incomplete deliverables and withhold the complete filing package until every mandatory output and check is complete.
 
 ## Section 15 — Known gaps
 
