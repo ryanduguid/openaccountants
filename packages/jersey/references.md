@@ -126,7 +126,6 @@ The table records captured primary sources used by guide citations. SHA-256 iden
 | S16.03 | [Social Security Law: 15 October capture](https://www.jerseylaw.je/laws/current/l_22_1974) | `7b616036fe345df90155721bc018939db5326e813ef9bf7af14c34d313815258` |
 | S16.04 | [Class 1 employer guidance: 15 October capture](https://www.gov.je/Working/Contributions/Employers/Pages/ScheduleGuide.aspx) | `d089251abc642c84ff48562ad934d114a2387f7ec0f7560d7bc580de7eb5f51c` |
 | S16.05 | [ITIS employer guidance: 15 October capture](https://www.gov.je/TaxesMoney/IncomeTax/Employers/Returns/Pages/EmployingStaff.aspx) | `63316bda78c6d0c43912be8baa7c02bd09a783144964b76d44a0db2e4b6deb09` |
-
 | S17.01 | [Stamp Duties Law: 15 October capture](https://www.jerseylaw.je/laws/current/l_8_1998) | `454eb8b52ebd7e50e4dc72e305f5259076abe3f7131b610f18cf4dfaecc108c6` |
 | S17.02 | [LTT Law: 15 October capture](https://www.jerseylaw.je/laws/current/l_10_2009) | `4b36e633efaa908548a30d09b9823a5083a5bc635405adf768e92bae373c9b9e` |
 | S17.03 | [EPTT Law: 15 October capture](https://www.jerseylaw.je/laws/current/l_18_2022) | `fdce50f3b209f7792b577da0cc034f22cd0615f0ae6af3212bec5247f99311c0` |
