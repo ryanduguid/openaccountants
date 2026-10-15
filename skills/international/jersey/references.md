@@ -1,6 +1,6 @@
 # Jersey pack: sources and coverage
 
-This pack contains twelve source-cited guides checked against the stated primary sections on 11 October 2026. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
+This pack contains thirteen source-cited guides. Core topics were checked against the stated primary sections on 11 October 2026; the corporate additions and income-tax compliance guide were checked on 15 October 2026. All remain `tier: 2` and `pending_review`. Jersey now has guide presence; comprehensive topic coverage and professional sign-off remain outstanding.
 
 ## Coverage and remaining work
 
@@ -10,7 +10,7 @@ Every row is partial. A sourced overview or bounded example does not close the o
 |---|---|---|
 | Tax-system scope | Personal and corporate residence and source rules | Special residence concessions and complete entity source rules |
 | Personal income tax | 2026 comparison, eligible threshold outline, ordinary Article 131I holder-contribution deduction, bounded examples | Other reliefs, scheme approval and special pension cases, credits and rounding |
-| Corporate tax | Sector classification, statutory standalone retailer calculation, returns | General deductions, distributions, losses and payment mechanics |
+| Corporate tax | Residence/sector/retail classification; ordinary deductions, capital allowances, losses, group-relief conditions, distribution statements and company payments | Complete distribution allocations, foreign-tax credits, anti-avoidance, specialist asset transfers and operational rounding |
 | Pillar Two | Preliminary scope, regime distinction and payment framework | Legislation, elections, technical computation and return deadlines |
 | Consumption/imports | Registration, ordinary GST return, place-of-supply checks, personal import relief | Full exemption/zero-rate schedules, partial exemption, excise and tariffs |
 | Payroll | ITIS notice, LTC separation, ordinary Class 1 example, monthly return | Gross-pay inclusion, benefits, special workers and operational rounding |
@@ -19,7 +19,7 @@ Every row is partial. A sourced overview or bounded example does not close the o
 | Cross-border/withholding | Article 118B categories, landlord collection, treaty relief procedure | Dividend deduction detail, treaty-specific benefits, transfer pricing |
 | Capital/property | Trading boundary, LTT examples, stamp/EPTT/probate distinctions | Full schedules, parish rates, EPTT scope and transaction deadlines |
 | Digital assets | Published crypto classification, sterling/GST valuation and CARF boundary | Staking/DeFi/tokens, complete trading analysis and enacted reporting detail |
-| Compliance | Distinct return/registry calendars and records for stated scopes | Complete penalties, corrections, appeals and all payment obligations |
+| Compliance | Ordinary income-tax return/penalty categories, personal abatements, corrections, assessment/waiver appeals and payment surcharge conditions; distinct registry calendars | Complete personal instalment formula, delegated provisions, enforcement/court procedures and all other regimes |
 
 ## Source register
 
@@ -72,7 +72,25 @@ The table records successful, untruncated captures used by guide citations. SHA-
 | S11.07 | [Long Term Incapacity Allowance: 2026 LEL corroboration](https://www.gov.je/Benefits/SicknessInjury/pages/longtermincapacityallowance.aspx) | `b4680b90ac1556280ad4387927804b2f467555fa3c77e20b33c2976f7372692e` |
 | S11.08 | [Self-employment tax return help](https://www.gov.je/taxesmoney/incometax/individuals/yourtaxreturn/helpguides/pages/selfemploymenttaxformhelp.aspx) | `521e524067c61452dc82866979afaa673e51f7718cbe37b7a1aa76e66b36449b` |
 
+| S12.01 | [Income Tax (Jersey) Law 1961: fresh 15 October capture](https://www.jerseylaw.je/laws/current/l_29_1961) | `ca86688f6f9aa6f15432c044fcc9065d323a0e14e9d0c6a1377ede5f6305f6c3` |
+| S12.02 | [Penalties for late personal tax returns](https://www.gov.je/taxesmoney/incometax/individuals/yourtaxreturn/pages/personallatefilingfee.aspx) | `cde60f083c321fe30c4d5bf59bcb8dd602fd11c95723e434e24b9dfe72930af2` |
+| S12.03 | [How to appeal a tax assessment](https://www.gov.je/taxesmoney/incometax/technical/guidelines/pages/howtoappeal.aspx) | `24e248f692884b3e7fe5a7f9bb913ede933f99fa08e86be2c881cfc8151a713a` |
+| S12.04 | [Appealing a company tax assessment](https://www.gov.je/TaxesMoney/IncomeTax/Companies/ReportingCompanies/Pages/AppealCompanyAssessment.aspx) | `3dbf4fb0085da7319a84551cdf43ecc885c788db38cbbdce7efdc63a38bf662a` |
+| S12.05 | [Correcting errors on your personal tax return](https://www.gov.je/taxesmoney/incometax/individuals/yourtaxreturn/pages/correctingerrorspersonaltaxreturn.aspx) | `602cf2ce619a5451a3677e0ce7f2921b2c0b932212c052038bd4071b216b8e94` |
+| S12.06 | [Corporate return online filing](https://www.gov.je/TaxesMoney/IncomeTax/Companies/CompanyTaxGuidance/Pages/OnlineCompanyReturn.aspx) | `aa0e67cfeae0a354c5f9fe1baef4cfb743473671b23bd167bed3c18badad3ea4` |
+| S12.07 | [Company tax payment dates](https://www.gov.je/TaxesMoney/IncomeTax/Companies/ReportingCompanies/Pages/CompanyTaxPaymentDates.aspx) | `2ff396aba09c82c76966cbcc804a53a76f5a7609f453433274abc2c2acfa7af1` |
+| S12.08 | [Capital allowances for tax explained](https://www.gov.je/TaxesMoney/IncomeTax/BusinessesSelfEmployed/CapitalAllowances/pages/explanation.aspx) | `57fb4ad7a6f2794f8e000ee7af532500f9b0daaa7a5f8dd33cfdc5eb37f3900a` |
+| S12.09 | [Taxation of company distributions](https://www.gov.je/taxesmoney/incometax/companies/reportingcompanies/pages/distributionsextension.aspx) | `0177f17094afc8e064265d49adedfc82c5eceb73ae274c8106530aa5c2960981` |
+| S12.10 | [Applying for a late return penalty to be cancelled or waived](https://www.gov.je/TaxesMoney/IncomeTax/Companies/ReportingCompanies/Pages/HowToAppealAPenalty.aspx) | `e5af622ab521e9829ccc2d6d70105204e1f929fb821f5d0d78c99b098be83b43` |
+| S12.11 | [Late payment of personal tax](https://www.gov.je/taxesmoney/incometax/individuals/yourtaxassessment/pages/latepaymentsurcharge.aspx) | `469cc2d08307d6fd634c2587ddf6291028aa84dc0d586e295c25672c626e88d1` |
+
 ## Material source decisions
+
+- The 15 October corporate additions use Income Tax Law Articles 3AF, 70, 70E, 70F, 106A to 106C, 107, 107A, 108, 110B, 123F, 123P and 123S. The regulatory-compliance enhancement is restricted to the Article 3AF eligible entity and activities; it is not an ordinary-business IT allowance. Group control combines the listed more-than-50% powers with profit rights and period/category conditions. Complete operational corporate slots remain outstanding.
+- Company payments use Articles 39 and 41AB. The current guidance describes a strict GBP 500,000 threshold and a different look-back year; the statute includes equality and refers to the assessment year in which the instalment is payable. Its second historical example changes the final assessment-year label and is not used for period mapping.
+- Articles 3AE, 78 and 81Q to 81S qualify broad capital-distribution wording. Articles 88 and 89 establish the cited deduction/voucher conditions. The guidance penalty concession for statements is kept separate from the statutory deadline. Full distribution allocation and MCIT credits remain uncomputed.
+- Income-tax compliance uses Articles 17A, 23 to 29, 36 to 41AB and 41I within the cited scopes. Personal initial and monthly abatements require the specified person/return categories and Comptroller satisfaction. Article 23 default assessments have a return route, not a Part 6 appeal. Authority amendment limits, taxpayer error claims and ordinary appeals are distinct. The Article 41A formulas were absent from the text extraction; instalment amounts remain blocked pending complete formula evidence.
+- The personal payment page describes non-application of a surcharge to balances of GBP 500 or less. Article 41I instead expresses a discretionary waiver of a surcharge of GBP 50 or less and has a prior-year earnings exclusion. Administrative practice is labelled separately; no unconditional statutory exemption or automatic waiver is inferred.
 
 - Pension deductions use Income Tax Law Articles 4, 130, 130C, 131H and 131I with the complete official pension-contribution guidance. The holder's deduction aggregates actual approved contributions and uses total income before all approved pension contributions. The official subscription example is reproduced using its stated expense assumption; it supplies no general subscription deduction rule. The illustrative zero floor represents no positive deduction when a ceiling is exhausted. Scheme approval, other pension provisions and professional sign-off remain separate.
 
@@ -94,6 +112,6 @@ The table records successful, untruncated captures used by guide citations. SHA-
 
 ## Period and verification limits
 
-Numerical schedules are labelled 2026. The captured current Income Tax and company substance laws apply from 17 June 2026, Companies Law from 30 September 2026 and Stamp Duties Law from 1 January 2026. Social Security Law and Residence Order apply from 1 January 2026, Contributions Order from 22 April 2025, Classification Order from 1 January 2022 and Collection Order from 1 January 2024. Earlier events require their own point-in-time version. Current personal return guidance offers the 2025 assessment return in the 2026 filing cycle; future filing timetables require confirmation. No future-year rate is inferred.
+The fresh S12.01 Income Tax Law capture has a different text hash from S3.01; the 15 October banner and selected provisions were checked directly, with no claim that the complete captures are identical. Numerical schedules are labelled 2026. The captured current Income Tax and company substance laws apply from 17 June 2026, Companies Law from 30 September 2026 and Stamp Duties Law from 1 January 2026. Social Security Law and Residence Order apply from 1 January 2026, Contributions Order from 22 April 2025, Classification Order from 1 January 2022 and Collection Order from 1 January 2024. Earlier events require their own point-in-time version. Current personal return guidance offers the 2025 assessment return in the 2026 filing cycle; future filing timetables require confirmation. No future-year rate is inferred.
 
 Worked examples use synthetic inputs and exact arithmetic. Eligibility comparisons use fractions and integer cross multiplication. Calculation checks, repository gates and consultation do not confer professional review or certify the outstanding topics. The dated verification entry is in `docs/verification-log/2026-10-11-jersey-core-pack.md` in the repository.

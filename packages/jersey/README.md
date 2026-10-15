@@ -12,13 +12,14 @@
 5. `je-cross-border-withholding.md`
 6. `je-crypto-tax.md`
 7. `je-gst.md`
-8. `je-income-tax.md`
-9. `je-payroll.md`
-10. `je-pension-contributions.md`
-11. `je-pillar-two.md`
-12. `je-property-transactions.md`
-13. `je-social-contributions.md`
-14. `references.md`
+8. `je-income-tax-compliance.md`
+9. `je-income-tax.md`
+10. `je-payroll.md`
+11. `je-pension-contributions.md`
+12. `je-pillar-two.md`
+13. `je-property-transactions.md`
+14. `je-social-contributions.md`
+15. `references.md`
 
 ## Shared files this package needs
 
