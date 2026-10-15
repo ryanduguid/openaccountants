@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T10:30:17+00:00",
+ "generated_at": "2026-10-15T11:33:06+00:00",
  "counts": {
   "guides": 1890,
   "jurisdictions": 245,
@@ -11470,7 +11470,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-corporate-income-tax",
@@ -11522,7 +11522,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-income-tax-compliance",
@@ -11587,7 +11587,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-property-transactions",
