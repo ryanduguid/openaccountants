@@ -176,7 +176,6 @@ Check residence, income source, sector classification, period length, associatio
 
 Revision 1.2 adds the above statutory rules and controls on 15 October 2026; version 1.1 covered residence, sector and retail classification.
 
-
 Core residence, sector and retail provisions were checked on 11 October 2026. The added deduction, allowance, loss, distribution-statement and payment provisions and cited guidance were checked on 15 October 2026 against the current Income Tax Law snapshot effective from 17 June 2026. Use the applicable historical version for an earlier period or transaction. See `references.md`; this draft has no professional sign-off.
 
 <!-- openaccountants-cta-block -->

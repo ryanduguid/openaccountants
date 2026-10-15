@@ -71,7 +71,6 @@ The table records successful, untruncated captures used by guide citations. SHA-
 | S11.06 | [About contributions](https://www.gov.je/Working/Contributions/Payments/pages/aboutcontributions.aspx) | `75906800b1b05f21439c5993effd55c0575ef4b49b85f44988c17ea53724fa5d` |
 | S11.07 | [Long Term Incapacity Allowance: 2026 LEL corroboration](https://www.gov.je/Benefits/SicknessInjury/pages/longtermincapacityallowance.aspx) | `b4680b90ac1556280ad4387927804b2f467555fa3c77e20b33c2976f7372692e` |
 | S11.08 | [Self-employment tax return help](https://www.gov.je/taxesmoney/incometax/individuals/yourtaxreturn/helpguides/pages/selfemploymenttaxformhelp.aspx) | `521e524067c61452dc82866979afaa673e51f7718cbe37b7a1aa76e66b36449b` |
-
 | S12.01 | [Income Tax (Jersey) Law 1961: fresh 15 October capture](https://www.jerseylaw.je/laws/current/l_29_1961) | `ca86688f6f9aa6f15432c044fcc9065d323a0e14e9d0c6a1377ede5f6305f6c3` |
 | S12.02 | [Penalties for late personal tax returns](https://www.gov.je/taxesmoney/incometax/individuals/yourtaxreturn/pages/personallatefilingfee.aspx) | `cde60f083c321fe30c4d5bf59bcb8dd602fd11c95723e434e24b9dfe72930af2` |
 | S12.03 | [How to appeal a tax assessment](https://www.gov.je/taxesmoney/incometax/technical/guidelines/pages/howtoappeal.aspx) | `24e248f692884b3e7fe5a7f9bb913ede933f99fa08e86be2c881cfc8151a713a` |

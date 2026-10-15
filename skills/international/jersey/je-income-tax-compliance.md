@@ -109,7 +109,7 @@ All amounts are GBP. These examples assume the stated statutory category, confir
 
 | Position | Calculation or route | Result |
 |---|---|---|
-| Personal initial and monthly abatement | Article 16/17 non-body taxpayer; late return delivered; tax 40; 2 monthly penalties confirmed; Article 17A(4)/(4B) conditions satisfied | Initial 40 plus 2 x 40 = 120, before any separately granted waiver |
+| Personal initial and monthly abatement | Article 16/17 non-body taxpayer; late return delivered; tax 40; 2 monthly penalties confirmed; Article 17A(4)/(4B) conditions satisfied | 40 + 2 x 40 = 120, before any separately granted waiver |
 | Company with zero tax | Required Article 16 company return; initial penalty and 9 monthly penalties confirmed | 300 + 9 x 100 = 1,200; personal zero-tax exception/abatements do not apply |
 | Personal zero liability | Article 16/17 non-body taxpayer; Comptroller satisfied no tax is payable for the period | No Article 17A penalty under paragraph (3), despite late filing |
 | Surcharge base | Person within Article 41I; unpaid tax 10,000 plus return penalty 300 at the specified time; no waiver | Surcharge 10,000 x 10% = 1,000; penalty is excluded, so combined unpaid tax/penalty/surcharge is 11,300 |
