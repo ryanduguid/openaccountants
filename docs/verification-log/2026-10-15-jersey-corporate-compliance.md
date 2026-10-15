@@ -1,0 +1,21 @@
+# Jersey: corporate adjustments, company payments and income-tax compliance
+
+I checked the added corporate and income-tax compliance rules against the current [Income Tax (Jersey) Law 1961](https://www.jerseylaw.je/laws/current/l_29_1961) and the linked official guidance on 15 October 2026. The law's point-in-time banner runs from 17 June 2026. The fresh captured text differs in hash from the 11 October capture; I checked the selected provisions directly and do not infer whole-document identity. The source register in [Jersey references](../../skills/international/jersey/references.md) records the fresh hashes.
+
+The corporate guide now covers ordinary deduction restrictions, accounting fees, plant/machinery allowances and balancing adjustments, loss carryforward and restricted carryback, group-relief conditions, distribution statements and company instalments. The regulatory-compliance enhancement requires the Article 3AF eligible financial-services entity and activities. It does not extend to ordinary IT purchases. Mixed use, grants, prior relief, period lengths and disposals require separate treatment.
+
+Two statutory qualifications change how the guidance must be read. Article 123F control combines more-than-50% share/vote/constitutional powers with more-than-50% profit rights; shares alone do not establish the group. Article 41AB(7) includes company liability equal to GBP 500,000 and tests the two assessment years preceding the assessment year in which the instalment is payable. The government payment page uses a broad strict-threshold description and a different look-back phrase. Its second historical example also switches assessment-year labels. The guide uses the statutory conditions and its own explicitly hypothetical payment example.
+
+The new [income-tax compliance guide](../../skills/international/jersey/je-income-tax-compliance.md) distinguishes ordinary returns, initial/monthly penalties, personal abatements, default assessments, corrections, ordinary appeals and late-payment surcharges. The personal monthly abatement is not shown in the short penalty summary but is in Article 17A(4A)/(4B). The personal no-tax and abatement rules do not extend to companies. Return penalties are non-deductible and excluded from the payment-surcharge base.
+
+Article 23 provides a required-return route within 12 months after the assessment date and excludes a Part 6 appeal against the default assessment. Article 24's authority amendment periods are separate from Article 38's taxpayer error-relief claim and Article 27's ordinary appeal. The estimated tax remains payable during an appeal. Waiver applications and appeals of refusals have distinct notice periods; discretionary relief is not treated as already granted.
+
+The personal payment guidance states an administrative practice for balances of GBP 500 or less. Article 41I provides a discretionary waiver of a surcharge of GBP 50 or less and a separate prior-year earnings scope test. The guide records that distinction. The distribution-statement penalty concession likewise does not replace the Article 89 statutory deadline or establish that every capital distribution is exempt.
+
+## Verification limits
+
+All 10 added official guidance captures succeeded over plain HTTP without truncation. The law and cited sections were read as native text. The Article 41A mathematical formulas were absent from that extraction, so the guide gives no personal instalment amount and holds the unsupported branch. No OCR or PDF formula verification was performed.
+
+Examples use synthetic inputs and exact arithmetic. They do not execute a model workflow, produce or recalculate a workbook, establish taxpayer eligibility, constitute practitioner sign-off or prove current-law completeness. Full distribution allocation, foreign-tax credits, anti-avoidance, specialist assets, delegated provisions, enforcement/court procedures and other regimes remain open. Both guides retain Tier 2/pending_review. Every Jersey coverage row remains partial and this change earns no comprehensive-country completion credit.
+
+This entry records source verification. Repository checks, independent financial review and publication disposition are recorded on the associated pull request; they do not extend this source scope.

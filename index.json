@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-15T09:36:27+00:00",
+ "generated_at": "2026-10-15T10:30:17+00:00",
  "counts": {
-  "guides": 1889,
+  "guides": 1890,
   "jurisdictions": 245,
   "accountant_reviewed": 164
  },
@@ -11483,7 +11483,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-cross-border-withholding",
@@ -11523,6 +11523,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-11"
+  },
+  {
+   "slug": "je-income-tax-compliance",
+   "path": "skills/international/jersey/je-income-tax-compliance.md",
+   "name": "je-income-tax-compliance",
+   "jurisdiction": "JE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-income-tax",

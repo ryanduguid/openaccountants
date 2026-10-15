@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-15 | [Jersey: corporate adjustments, company payments and income-tax compliance](2026-10-15-jersey-corporate-compliance.md) |
 | 2026-10-15 | [Palau: land-fee scope and filing sources remain unresolved](2026-10-15-palau-land-fee-source-boundaries.md) |
 | 2026-10-15 | [Palau: corporation regulations and commencement sources](2026-10-15-palau-corporations-source-chain.md) |
 | 2026-10-14 | [Foundation guides: fork provenance and review status](2026-10-14-foundation-provenance.md) |
