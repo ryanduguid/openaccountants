@@ -1,7 +1,7 @@
 ---
 name: in-return-assembly
 description: Final orchestrator skill that assembles the complete India filing package for India-resident self-employed individuals and professionals. Consumes outputs from all India content skills (india-gst for GSTR-3B/GSTR-1, in-income-tax for ITR-3/ITR-4, in-advance-tax for quarterly instalments, in-tds-freelance for TDS reporting) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all India content skills listed above. India full-year residents only. Self-employed individuals and professionals only.
-version: 0.1
+version: 0.2
 jurisdiction: IN
 category: orchestrator
 tax_year: 2025
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
-## India Return Assembly Skill v0.1
+## India Return Assembly Skill v0.2
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The figures the review covered — both regimes' slabs, the surcharge tiers and cess, the standard deductions, the s 87A rebate, the s 44AD and s 44ADA presumptive limits and the ITR deadlines — are those of the content guides this capstone consumes: `in-income-tax` states them with their sources, and this file repeats only what its own checks apply (the s 87A threshold and the surcharge tiers in Section 6, the ITR deadlines in the client action list). The separate "Verified rates & thresholds" list that restated them here was removed on 2026-09-29. Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -59,7 +59,7 @@ The skill enforces the following execution order:
 
 0. **india-gst step** — GSTR-3B + GSTR-1 reconciliation (Q2 skill) - Runs first because GST turnover figures feed into the ITR - Reconcile GSTR-3B monthly/quarterly summaries with books - Verify GSTR-1 outward supply details match invoices - Reconcile ITC claimed with GSTR-2B auto-populated data - Output: GST turnover, output tax, ITC utilised, cash GST paid, reverse charge
 0. **in-income-tax step** — ITR-3 or ITR-4 return (Q2 skill) - Depends on GST output: gross receipts must match GST turnover (ex-GST for regular taxpayer) - For ITR-4 (presumptive 44ADA): 50% deemed profit on gross receipts, no expense schedule - For ITR-3 (actual profit): full P&L with expense deductions, depreciation schedule, balance sheet - Output: total income, tax liability at applicable slab rates, regime comparison if requested
-0. **in-advance-tax step** — Quarterly advance tax reconciliation (Q2 skill) - Depends on ITR: final tax liability determines whether advance tax was sufficient - Reconcile advance tax paid (from Form 26AS) against liability - Compute s.234B interest (default on advance tax shortfall -- if paid < 90% of assessed tax) - Compute s.234C interest (deferment -- quarterly shortfall in instalments: 15%/45%/75%/100%) - Output: advance tax schedule, shortfall computation, interest liability
+0. **in-advance-tax step** - Quarterly advance tax reconciliation (Q2 skill) - Use the current validated ITR, evidenced payments and TDS inputs. The producer establishes the applicable assessed-tax definition, credit treatment, instalment triggers, interest periods and exceptions. - Output: advance tax schedule, shortfall computation, interest liability
 0. **in-tds-freelance step** - TDS credit reconciliation - Depends on ITR: TDS credits offset final tax liability - Reconcile Form 26AS TDS entries with income declared in ITR - Flag mismatches (TDS claimed but income not shown, or income shown but TDS not reflected) - Producer readiness: verify this guide has complete source conditions, content and checks for the requested period. If this producer cannot supply validated output, return Needs Input and hold its dependent results and the complete filing package. Do not substitute an assembler computation. - Output: TDS credit summary, mismatches, Form 26AS vs ITR reconciliation
 
 - **Upstream failure handling** — If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.
@@ -103,8 +103,8 @@ The skill enforces the following execution order:
 | Total tax liability | ITR computation | Tax on total income + surcharge + cess |
 | Tax payable / refund | Liability minus (advance tax + TDS + self-assessment) | Positive = payable; negative = refund |
 
-- **s.234B interest condition** — If advance tax + TDS < 90% of assessed tax: s.234B interest applies at 1% per month (simple) from April of AY to date of filing or date of assessment.
-- **s.234C interest condition** — If quarterly advance tax instalments fell short: s.234C interest applies at 1% per month for 3 months per shortfall quarter.
+- **Interest reconciliation** - Reconcile s.234B and s.234C dispositions and amounts to the validated `in-advance-tax` output, including its assessed-tax definition, TDS treatment, applicable quarterly triggers, interest periods and exceptions. Retain the producer's interest schedule and supporting inputs in the reviewer package.
+- **Final TDS propagation** - Complete the validated `in-tds-freelance` reconciliation. If it changes an income or credit input used by `in-income-tax` or `in-advance-tax`, rerun each affected producer and its checks before accepting dependent interest or settlement results. Unresolved TDS evidence or validation returns Needs Input and holds affected interest, settlement and the complete filing package; do not substitute zero.
 
 **Quarterly cumulative advance tax percentages**
 
@@ -115,7 +115,7 @@ The skill enforces the following execution order:
 | Q3 | 15 December | 75% |
 | Q4 | 15 March | 100% |
 
-- **44ADA single instalment exception** — For 44ADA presumptive: entire advance tax can be paid by 15 March (single instalment). s.234C does not apply if 100% paid by 15 March.
+- **Schedule applicability** - Reconcile the cumulative targets above and any 44ADA single-instalment exception to the validated `in-advance-tax` output for the confirmed scope. Cumulative payment targets alone do not establish s.234C interest triggers or periods.
 
 ### Cross-check 4: Form 26AS TDS vs ITR income declaration
 
@@ -291,8 +291,8 @@ The skill enforces the following execution order:
 - **Check IN-A2** — GST turnover matches ITR gross receipts. Within INR 100 tolerance.
 - **Check IN-A3** — If 44ADA: 50% deemed profit, no expense deductions claimed. Deemed profit = exactly 50% of gross receipts (or higher if voluntarily declared higher).
 - **Check IN-A4** — Advance tax + TDS reconciled against final liability. Total credits (advance tax + TDS + self-assessment tax) match the payment/refund position.
-- **Check IN-A5** — s.234B interest computed correctly. If advance tax paid < 90% of assessed tax, 1% simple interest per month from April AY to date of payment/assessment.
-- **Check IN-A6** — s.234C interest computed correctly. Quarterly shortfall interest at 1% for 3 months per deficient quarter.
+- **Check IN-A5** - The s.234B disposition and amount match the validated `in-advance-tax` result using the final reconciled ITR and TDS inputs. Any changed input has passed the affected producer's rerun and checks; unresolved evidence holds dependent results and the complete filing package.
+- **Check IN-A6** - The s.234C schedule and amount match the validated `in-advance-tax` result, including applicable quarterly triggers, periods and exceptions. Apply the same final-input and hold conditions as IN-A5.
 - **Check IN-A7** — Form 26AS TDS matches ITR. Every TDS entry in 26AS has corresponding income in ITR. Credits claimed match 26AS amounts.
 - **Check IN-A8** — Tax regime correctly applied. New regime: s.115BAC rates, no Ch VI-A deductions (except NPS 80CCD(2)). Old regime: regular slab rates, all deductions claimed.
 - **Check IN-A9** — s.87A rebate applied if eligible. New regime: if total income <= INR 12,00,000 (after standard deduction), rebate up to INR 25,000.

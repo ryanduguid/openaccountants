@@ -1,7 +1,7 @@
 ---
 name: au-return-assembly
 description: Final orchestrator skill that assembles the complete Australian filing package for Australian-resident sole traders. Consumes outputs from all Australian content skills (australia-gst for BAS, au-individual-return for ITR, au-super-guarantee for voluntary contributions, au-medicare-levy for levy and surcharge, au-payg-instalments for instalment schedule) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Australian content skills listed above. Australian full-year residents only. Sole traders only.
-version: 0.5
+version: 0.6
 jurisdiction: AU
 category: orchestrator
 tax_year: 2025
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
-## Australia Return Assembly Skill v0.5
+## Australia Return Assembly Skill v0.6
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -59,7 +59,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Section 3 -- Cross-skill reconciliation
 
-### Cross-check 1: BAS G1 taxable sales = ITR business income (ex-GST)
+### Cross-check 1: Reconcile the BAS G1-to-income bridge to final ITR business income
 
 **If mismatch:** Flag for reviewer. Common causes: timing differences (cash vs accrual), private sales included in bank deposits, GST-free supplies, input-taxed supplies.
 
@@ -301,7 +301,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 ## Section 6 -- Self-checks
 
 - **Check AU1 -- All upstream skills executed** - Every upstream result required for the confirmed scope is supported and passes its producer checks. Record an evidenced reason for each inapplicable obligation. A missing, placeholder, refused, Needs Input or invalid result fails this check and holds its dependent results and the complete filing package.  _(Section 6 -- Self-checks)_
-- **Check AU2 -- BAS G1 matches ITR business income** — Within $1 tolerance.  _(Section 6 -- Self-checks)_
+- **Check AU2 -- BAS G1-to-income bridge reconciles to final ITR business income** - The documented Section 3 bridge reconciles within $1. Raw G1 need not equal ex-GST income. An unexplained residual fails this check and holds dependent results and the complete filing package.  _(Section 6 -- Self-checks)_
 - **Check AU3 -- Super within concessional cap** — Total concessional contributions do not exceed $30,000 for 2025-26 (or the cap plus carry-forward unused amounts).  _(Section 6 -- Self-checks)_
 - **Check AU4 -- Medicare levy surcharge correctly assessed** — MLS applied only if no adequate PHI and income above threshold; MLS not applied if PHI held for full year.  _(Section 6 -- Self-checks)_
 - **Check AU5 -- PAYG instalments correctly credited** — Total instalments paid during 2025-26 credited against final tax liability.  _(Section 6 -- Self-checks)_
