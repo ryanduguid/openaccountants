@@ -1,7 +1,7 @@
 ---
 name: in-return-assembly
 description: Final orchestrator skill that assembles the complete India filing package for India-resident self-employed individuals and professionals. Consumes outputs from all India content skills (india-gst for GSTR-3B/GSTR-1, in-income-tax for ITR-3/ITR-4, in-advance-tax for quarterly instalments, in-tds-freelance for TDS reporting) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all India content skills listed above. India full-year residents only. Self-employed individuals and professionals only.
-version: 0.2
+version: 0.3
 jurisdiction: IN
 category: orchestrator
 tax_year: 2025
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
-## India Return Assembly Skill v0.2
+## India Return Assembly Skill v0.3
 
 > **Accountant-reviewed.** Rates and thresholds reviewed against the cited authorities by **Mayur Deokar** on 2026-06-06; the sign-off is recorded in the frontmatter (`reviewed_by`) and on the roster in `PARTNERS.md`. The figures the review covered — both regimes' slabs, the surcharge tiers and cess, the standard deductions, the s 87A rebate, the s 44AD and s 44ADA presumptive limits and the ITR deadlines — are those of the content guides this capstone consumes: `in-income-tax` states them with their sources, and this file repeats only what its own checks apply (the s 87A threshold and the surcharge tiers in Section 6, the ITR deadlines in the client action list). The separate "Verified rates & thresholds" list that restated them here was removed on 2026-09-29. Items the review flagged for clarification are excluded from that sign-off and remain marked in the text.
 
@@ -91,20 +91,25 @@ The skill enforces the following execution order:
 
 **If violation:** If the computation claims actual expenses AND declares 50% deemed profit, check fails. It is one or the other.
 
-### Cross-check 3: Advance tax paid + TDS credits against final tax liability
+### Cross-check 3: Validated credits and interest reconcile to final settlement
 
-**Cross-check 3: Advance tax paid + TDS credits against final tax liability**
+**Cross-check 3: Validated credits and interest reconcile to final settlement**
 
 | Component | Source | Rule |
 | --- | --- | --- |
-| Advance tax paid | Form 26AS Part C / challans | Sum of all advance tax payments during FY |
-| TDS credits | Form 26AS Part A / TDS certificates | Sum of all TDS deducted and deposited |
-| Self-assessment tax (if any) | Challan 280 | Paid before filing ITR |
+| Advance tax paid | Validated advance-tax reconciliation and payment evidence | Tax payments accepted by the producer for the confirmed period |
+| TDS credits | Validated `in-tds-freelance` reconciliation | Eligible TDS credit after the producer's evidence and allocation checks |
+| TCS credits, if applicable | Validated applicable upstream credit reconciliation | Separate eligible TCS credit; a statement entry alone does not establish entitlement or allocation |
+| Self-assessment tax paid | Evidenced payment allocation | Tax component only; record any allocation to interest separately |
 | Total tax liability | ITR computation | Tax on total income + surcharge + cess |
-| Tax payable / refund | Liability minus (advance tax + TDS + self-assessment) | Positive = payable; negative = refund |
+| Tax balance before interest | Tax liability minus (advance tax + TDS + TCS + self-assessment tax) | Each validated tax credit or payment appears once |
+| Interest balance | Validated `in-advance-tax` schedule and evidenced payment allocation | Outstanding s.234B/234C interest after validated payments allocated to those charges; retain gross charges and allocations |
+| Final settlement payable / refund | Tax balance before interest + interest balance + any other required validated settlement charges | Positive = payable; negative = refund; reconcile every component once |
+
+Use the same final settlement in the workbook, IN-A4, executive summary and client payment instructions. Validate the eligibility, period and allocation of each required credit, payment and charge through its applicable producer and checks. If TCS validation, an interest-payment allocation or another required settlement component is unsupported or unresolved, return Needs Input and hold dependent settlement, payment instructions and the complete filing package. Do not substitute zero for missing validation.
 
 - **Interest reconciliation** - Reconcile s.234B and s.234C dispositions and amounts to the validated `in-advance-tax` output, including its assessed-tax definition, TDS treatment, applicable quarterly triggers, interest periods and exceptions. Retain the producer's interest schedule and supporting inputs in the reviewer package.
-- **Final TDS propagation** - Complete the validated `in-tds-freelance` reconciliation. If it changes an income or credit input used by `in-income-tax` or `in-advance-tax`, rerun each affected producer and its checks before accepting dependent interest or settlement results. Unresolved TDS evidence or validation returns Needs Input and holds affected interest, settlement and the complete filing package; do not substitute zero.
+- **Final credit propagation** - Complete the validated `in-tds-freelance` reconciliation and required validation of any applicable TCS credit. If a final income, credit or payment input changes one used by `in-income-tax` or `in-advance-tax`, rerun each affected producer and its checks before accepting dependent interest or settlement results. Unresolved evidence or validation returns Needs Input and holds affected interest, settlement and the complete filing package; do not substitute zero.
 
 **Quarterly cumulative advance tax percentages**
 
@@ -124,9 +129,9 @@ The skill enforces the following execution order:
 | Check | Rule |
 | --- | --- |
 | Every TDS entry in 26AS Part A | Corresponding income must appear in ITR |
-| TDS credit claimed in ITR | Must match 26AS (or AIS) within INR 1 |
+| TDS credit claimed in ITR | Must satisfy the validated producer's Form 26AS evidence requirements and match the accepted amount within INR 1; AIS alone cannot replace required evidence |
 | Mismatch entries | Flag: either TDS not deposited by deductor, or income not declared |
-| TCS entries (26AS Part C) | If applicable, credit against tax liability |
+| Applicable TCS entries | Reconcile the separately validated eligible credit to settlement; unresolved entitlement or allocation holds dependent results |
 
 **If mismatch:** Common causes: deductor filed TDS return late, wrong PAN quoted, income accounted in different FY. Flag for reviewer with specific entries.
 
@@ -134,7 +139,7 @@ The skill enforces the following execution order:
 
 ### Documents
 
-1. **Executive summary** -- one-page overview: filing status, income, tax liability, GST position, advance tax, TDS credits, refund/balance due
+1. **Executive summary** -- one-page overview: filing status, income, tax liability, GST position, advance tax, separate TDS/TCS credits, tax balance before interest, validated interest and final settlement
 2. **GST reconciliation worksheet** -- GSTR-3B vs books, GSTR-1 vs invoices, ITC reconciliation
 3. **ITR computation worksheet** -- ITR-3 or ITR-4 schedule with all heads of income, deductions, tax computation
 4. **Depreciation schedule** -- asset register with block, cost, date, rate, annual allowance, WDV (ITR-3 only)
@@ -163,10 +168,15 @@ The skill enforces the following execution order:
 - Tax liability (including surcharge + cess): INR X
 - Advance tax paid: INR X
 - TDS credits: INR X
-- Self-assessment tax paid: INR X
-- Balance due / refund: INR X
-- s.234B interest (if any): INR X
-- s.234C interest (if any): INR X
+- Validated TCS credits (if applicable): INR X
+- Self-assessment payments allocated to tax: INR X
+- Tax balance before interest: INR X
+- Validated s.234B interest charge (if any): INR X
+- Validated s.234C interest charge (if any): INR X
+- Payments allocated to interest: INR X
+- Outstanding interest balance: INR X
+- Other required validated settlement charges (or evidenced N/A): INR X
+- Final settlement payable / refund, matching the workbook and action list: INR X
 - GST annual position: Output INR X, ITC INR X, cash paid INR X
 
 ## GST Returns
@@ -208,12 +218,12 @@ The skill enforces the following execution order:
 - Section-wise TDS summary (194J, 194C, etc.)
 - Form 26AS vs ITR reconciliation
 - Mismatches and resolution notes
-- TCS credits (if any)
+- Separately validated TCS credits (if applicable), eligibility, period and allocation evidence; hold dependent settlement if unavailable
 
 ## Cross-skill Reconciliation
 - GST turnover vs ITR gross receipts: [pass/fail]
 - 44ADA deemed profit -- no expense deduction: [pass/fail or N/A]
-- Advance tax + TDS vs final liability: [pass/fail]
+- Tax credits, payments and validated interest vs final settlement (IN-A4): [pass/fail]
 - Form 26AS TDS vs ITR income: [pass/fail]
 
 ## Reviewer Attention Flags
@@ -247,7 +257,7 @@ The skill enforces the following execution order:
 
 ### Immediate (before 31 July 2026 -- ITR filing deadline):
 1. Review this return package with your Chartered Accountant
-2. Pay self-assessment tax of INR X via Challan 280 (if balance due)
+2. Pay the validated positive final settlement of INR X via Challan 280 after reviewer sign-off; the amount must match the workbook, executive summary and IN-A4, including the validated interest balance
 3. File ITR on incometax.gov.in
 4. E-verify ITR within 30 days of filing (Aadhaar OTP / net banking / DSC)
 
@@ -290,8 +300,8 @@ The skill enforces the following execution order:
 - **Check IN-A1** - Every upstream result required for the confirmed scope is supported and passes its producer checks. Record an evidenced reason for each inapplicable obligation. A missing, placeholder, refused, Needs Input or invalid result fails this check and holds its dependent results and the complete filing package.
 - **Check IN-A2** — GST turnover matches ITR gross receipts. Within INR 100 tolerance.
 - **Check IN-A3** — If 44ADA: 50% deemed profit, no expense deductions claimed. Deemed profit = exactly 50% of gross receipts (or higher if voluntarily declared higher).
-- **Check IN-A4** — Advance tax + TDS reconciled against final liability. Total credits (advance tax + TDS + self-assessment tax) match the payment/refund position.
-- **Check IN-A5** - The s.234B disposition and amount match the validated `in-advance-tax` result using the final reconciled ITR and TDS inputs. Any changed input has passed the affected producer's rerun and checks; unresolved evidence holds dependent results and the complete filing package.
+- **Check IN-A4** - Reconcile tax liability, separate validated advance-tax/TDS/TCS credits and self-assessment tax, the validated outstanding interest balance and any other required validated settlement charges. Each credit, charge and payment allocation appears once. The workbook, executive summary and client action list use the same final payable/refund amount. Unsupported or unresolved components hold dependent settlement and the complete filing package.
+- **Check IN-A5** - The s.234B disposition and amount match the validated `in-advance-tax` result using the final reconciled income, credit and payment inputs. Any changed input has passed the affected producer's rerun and checks; unresolved evidence holds dependent results and the complete filing package.
 - **Check IN-A6** - The s.234C schedule and amount match the validated `in-advance-tax` result, including applicable quarterly triggers, periods and exceptions. Apply the same final-input and hold conditions as IN-A5.
 - **Check IN-A7** — Form 26AS TDS matches ITR. Every TDS entry in 26AS has corresponding income in ITR. Credits claimed match 26AS amounts.
 - **Check IN-A8** — Tax regime correctly applied. New regime: s.115BAC rates, no Ch VI-A deductions (except NPS 80CCD(2)). Old regime: regular slab rates, all deductions claimed.
@@ -304,7 +314,7 @@ The skill enforces the following execution order:
 
 The final output is **three files**:
 
-1. **`[client_slug]_2025-26_india_master.xlsx`** -- Single master workbook containing every worksheet and computation. Sheets include: Cover, GST Reconciliation (GSTR-3B vs books), ITR Computation (ITR-3 or ITR-4), Depreciation Schedule (if ITR-3), Advance Tax Reconciliation, TDS Credit Reconciliation, s.234B/234C Interest, Cross-Check Summary. Use live formulas where possible -- e.g., ITR gross receipts cell references the GST turnover cell; advance tax shortfall references the ITR final liability. Verify no `#REF!` errors. Verify computed values match within INR 1 before shipping.
+1. **`[client_slug]_2025-26_india_master.xlsx`** -- Single master workbook containing every worksheet and computation. Sheets include: Cover, GST Reconciliation (GSTR-3B vs books), ITR Computation (ITR-3 or ITR-4), Depreciation Schedule (if ITR-3), Advance Tax Reconciliation, TDS Credit Reconciliation, s.234B/234C Interest, Cross-Check Summary. Retain separate validated TDS/TCS credits, payment allocations, the tax balance before interest and final settlement. Use live formulas where possible -- e.g., ITR gross receipts references validated GST turnover; advance-tax shortfall and interest reference the validated producer's applicable base and schedule; final settlement references the validated credit and outstanding-interest components from Cross-check 3. Verify no `#REF!` errors. Verify computed values match within INR 1 before shipping.
 
 2. **`reviewer_brief.md`** -- Single markdown file covering all sections from Section 4 above: executive summary, GST returns, ITR, advance tax, TDS, cross-skill reconciliation, flags, positions, planning notes.
 
