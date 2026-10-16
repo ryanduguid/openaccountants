@@ -7,7 +7,7 @@ description: >
   group relief and retention. Distinguishes ordinary accepted reporting norms,
   the IASB regime and articles-based opt-ins. Adds full IFRS statement-set,
   tax-location and depreciation-allocation controls to the shared workflow.
-  Provides primary sources and hypothetical review positions. This draft holds
+  Provides primary sources and hypothetical review positions. This draft lacks
   complete framework policies, disclosures, local tax calculations and actual
   filing procedures. It cannot yet produce a complete operational set of
   accounts or establish comprehensive country coverage.
@@ -16,8 +16,8 @@ category: financial-statements
 tax_year: 2026
 tax_year_notes: "2026 company-reporting reference; framework and financial-year applicability must be established separately"
 tier: 2
-last_updated: 2026-10-16
-version: 0.1
+last_updated: 2026-10-17
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -160,6 +160,14 @@ to the prescribed insight in the notes. The annual report addresses balance-date
 condition, the year's business, significant subsequent events and expected
 developments; it must agree with the accounts. [J2, article 120]
 
+Within the applicable article 120(1) preparation period, including any lawful
+extension, make both the accounts and annual report available to all
+shareholders at the company office. Without delay after that period expires,
+offer the annual report to the general meeting and present the prepared
+accounts for approval at the same time. Include each event in the filing
+checklist. These article 120(1) and (6) duties are separate from article 122's
+public-availability events. [J2]
+
 The external expert examines article 120(3) compliance and the annual report's
 compatibility. Article 121(6) defines eligible Dutch register-accountants,
 qualifying accountant-administratieconsulenten, US certified public accountants
@@ -249,10 +257,10 @@ method and timing rules before posting depreciation. This reference supplies
 no default lives, rates or first-year convention. The [identified IAS 16
 paragraphs quoted in the 2015 staff paper][A6] illustrate that a charge may
 enter profit or loss or another asset's carrying amount. Reconcile total
-depreciation to both destinations, including later releases where applicable;
-do not force all depreciation into current-period profit or loss to satisfy
-the domain base's generic equality check. The paper's separate testing-proceeds
-discussion and proposals are not adopted here.
+depreciation to its initial destinations and separately track later releases
+from capitalised balances. Apply the domain base's allocation check without
+double counting amounts subsequently expensed. The paper's separate
+testing-proceeds discussion and proposals are not adopted here.
 
 Determine each levy's scope before preparing a tax provision. The [IAS 12
 overview][A7] concerns taxes based on taxable profits. BES incorporation and
@@ -340,6 +348,9 @@ Amounts are USD unless stated otherwise.
 3. **Unapproved large-NV accounts.** A qualifying NV's year ends on
    31 December 2025. Under the stipulated unchanged rules and with no
    extension, preparation is due within six months, ending 30 June 2026.
+   Both accounts and annual report must be available to all shareholders
+   at the office within that period. Without delay after it expires, submit
+   the annual report and prepared accounts to the meeting under article 120(6).
    Two further months end on 31 August 2026. If still unapproved then, the
    prepared accounts must be available immediately under article 122(2),
    with prompt registry notice. It cannot wait for a planned September
@@ -413,6 +424,7 @@ with the professional, outside agent inputs and outputs.
 - Verify the legal form, period, articles, sector and every cumulative large-NV condition.
 - Establish BV/smaller-NV opt-in and any justified alternative framework.
 - Apply preparation, extension, signature and meeting-approval duties separately.
+- Track shareholder inspection and meeting submission under article 120 separately from article 122 public availability.
 - Verify qualified examination and every condition of any group exemption.
 - Distinguish office availability, unapproved accounts, registry notice and alternative deposit.
 - Include the complete framework statement set and required comparatives.
@@ -463,10 +475,11 @@ certify complete current standard coverage or an entity's compliance.
 
 ## Revision and assurance
 
-Version 0.1, 16 October 2026: selected company-reporting, audit, inspection and
-retention reference, with seven hypothetical positions and full-set/allocation
-controls. Mandatory domain, framework and operational conditions remain open;
-no country-complete or accountant-reviewed status is claimed.
+Version 0.2, 17 October 2026: adds shareholder inspection and meeting-submission
+timing under article 120 and aligns depreciation reconciliation with the shared
+workflow. Retains seven hypothetical positions. Mandatory domain, framework
+and operational conditions remain open; no country-complete or
+accountant-reviewed status is claimed.
 
 This guide supports professional review and does not constitute tax, legal or
 financial advice. The reviewer verifies the sources, framework, accounts,

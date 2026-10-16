@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T12:13:01+00:00",
+ "generated_at": "2026-10-16T13:09:25+00:00",
  "counts": {
   "guides": 1896,
   "jurisdictions": 247,
@@ -1499,7 +1499,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "income-tax-workflow-base",
@@ -5893,7 +5893,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-16"
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "bq-formation",

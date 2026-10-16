@@ -1,14 +1,14 @@
 ---
 name: financial-statements-workflow-base
 description: Universal financial statements preparation workflow base that defines the trial balance review, year-end adjustments, income statement and balance sheet preparation, notes to accounts, and filing runbook for all jurisdictions. Contains no jurisdiction-specific content — no local GAAP rules, no filing portals, no reporting thresholds, no specific account formats. This skill MUST be loaded alongside a country-specific financial statements skill that provides the reporting framework, format requirements, and local filing rules. This skill alone cannot produce any output.
-version: 1.0
+version: 1.1
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-16
 ---
 
-# Financial Statements Workflow Base Skill v1.0
+# Financial Statements Workflow Base Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -18,7 +18,7 @@ last_updated: 2026-09-28
 
 **This file must always be loaded with a country-specific financial statements skill** that provides the reporting framework, P&L and balance sheet formats, notes requirements, and filing rules (e.g., `uk-financial-statements`, `au-financial-statements`, `de-financial-statements`). This file alone cannot produce a set of accounts. Loading it without a companion is a configuration error and Claude must refuse to proceed.
 
-**This file is the contract.** When a country financial statements skill says it conforms to v1.0 of this base, it means: it fills the country slots specified in Section 5, it produces outputs in the format specified in Section 3, its outputs can be validated by the self-checks in Section 4, and it participates in the workflow in Section 1.
+**This file is the contract.** When a country financial statements skill says it conforms to v1.1 of this base, it means: it fills the country slots specified in Section 5, it produces outputs in the format specified in Section 3, its outputs can be validated by the self-checks in Section 4, and it participates in the workflow in Section 1.
 
 ---
 
@@ -83,7 +83,7 @@ Review the trial balance and the user's supporting information for year-end adju
 
 **Deferred income.** Revenue received before the year-end for services or goods to be delivered after the year-end. For each: debit the revenue account, credit deferred income (current liability).
 
-**Depreciation.** For every fixed asset on the balance sheet, compute the depreciation charge for the period using the method specified by the country skill (straight-line, reducing balance, units of production). Apply the rates from the country skill's depreciation schedule. For assets acquired or disposed of during the period, pro-rate. Debit depreciation expense, credit accumulated depreciation.
+**Depreciation.** Establish the assets and components subject to depreciation under the country framework. Compute each charge using its depreciable amount, method, useful life or rate, residual value, recognition dates and applicable part-period convention. Allocate the charge to profit or loss or a qualifying other asset's carrying amount as that framework requires, with the corresponding accumulated depreciation entry. Record each initial destination and separately track any later release of capitalised amounts to profit or loss.
 
 **Amortization.** For intangible assets, compute amortization using the method and useful life specified by the country skill. Debit amortization expense, credit accumulated amortization.
 
@@ -220,11 +220,11 @@ This section provides the universal mechanics for each adjustment type. The coun
 
 **Methods** (the country skill specifies which to use):
 
-- *Straight-line:* (Cost − Residual value) ÷ Useful life = Annual charge. Pro-rate for part-year ownership.
-- *Reducing balance:* Net book value at start of period × Rate = Annual charge. Pro-rate for part-year ownership.
+- *Straight-line:* (Cost − Residual value) ÷ Useful life = Annual charge. Apply the country framework's recognition dates and part-period convention.
+- *Reducing balance:* Net book value at start of period × Rate = Annual charge. Apply the country framework's recognition dates and part-period convention.
 - *Units of production:* (Cost − Residual value) × (Units produced this period ÷ Total estimated units) = Period charge.
 
-**First-year and disposal-year treatment:** The country skill specifies whether assets acquired or disposed of during the year receive a full year's depreciation, a half-year charge, or a pro-rated charge based on months of ownership.
+**First-year and disposal-year treatment:** Use the recognition start and stop dates and any part-period convention established by the country framework. Ownership dates alone do not establish when depreciation begins or ends.
 
 ### Provisions
 
@@ -364,7 +364,7 @@ Run these fourteen checks against all outputs. If any fails, fix and re-run. Do 
 
 **Check 9 — Comparative figures are consistent.** If comparative figures are presented: the prior year figures on the current year's income statement and balance sheet match the published figures from the prior year. If the user provided prior year accounts, verify. If not, flag as unverified in the reviewer brief.
 
-**Check 10 — Depreciation in notes matches P&L.** The total depreciation charge disclosed in the fixed assets note equals the depreciation expense on the income statement.
+**Check 10 — Depreciation allocation reconciles.** Reconcile the period's total depreciation charge to its initial allocations to profit or loss and other assets' carrying amounts under the country framework. Separately reconcile later releases of capitalised depreciation, including amounts from opening balances, without counting the same current-period charge twice. Agree the resulting journals, statements and notes.
 
 ### Completeness
 
@@ -415,7 +415,7 @@ Every country-specific financial statements skill loaded alongside this workflow
 
 ### Validation status
 
-This file is v1.0 of `financial-statements-workflow-base`, drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0.
+This file is v1.1 of `financial-statements-workflow-base`. The original workflow was drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0.
 
 ### Design decisions
 
@@ -437,6 +437,7 @@ This file is v1.0 of `financial-statements-workflow-base`, drafted as part of th
 
 ### Change log
 
+- **v1.1 (16 October 2026):** Make depreciation timing and allocation conditional on the country framework. Reconcile initial expense and asset allocations separately from later releases of capitalised amounts.
 - **v1.0 (May 2026):** Initial release. Establishes the universal financial statements workflow, adjustment type reference, six-output specification, 14 self-checks, and country skill contract.
 
 ---
@@ -445,21 +446,21 @@ This file is v1.0 of `financial-statements-workflow-base`, drafted as part of th
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
 <!-- openaccountants-cta-block -->
 
 ---
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a
