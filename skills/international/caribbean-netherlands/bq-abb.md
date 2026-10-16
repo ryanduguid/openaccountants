@@ -51,18 +51,19 @@ export, entrepot, real-estate and place-of-service branches require their comple
 applicable authority and facts. Their identification here is a referral, not a
 completed treatment.
 
-The source comparison covers the Belastingwet BES consolidations for 1 January
-to 20 February, 21 February to 10 April and from 11 April 2026. Article 6.22's
+The source comparison covers the Belastingwet BES consolidations for [1 January
+to 20 February][B2], [21 February to 10 April][B3] and [from 11 April 2026][B1].
+Article 6.22's
 USD 32,000 amount applies retrospectively from 1 January 2026 under the correction
-in Staatscourant 2026/3708, articles IV and V(d). Do not apply the obsolete
+in [Staatscourant 2026/3708, articles IV and V(d)][C1]. Do not apply the obsolete
 USD 30,000 text displayed in the first snapshot. The same instrument corrects
-2025 to USD 31,000; this guide does not calculate a 2025 return. [B1–B3, C1]
+2025 to USD 31,000; this guide does not calculate a 2025 return.
 
-Articles 6.10a and 6.19a retain an undated proposed-repeal annotation. The original
-repeal and its delayed commencement were removed by Staatsblad 2018/504,
-articles XXXI and XLIV(1)(k). Staatsblad 2023/500, article I(I), (M), subsequently
+Articles 6.10a and 6.19a retain an undated proposed-repeal annotation. The [original
+repeal and its delayed commencement][H1] were removed by [Staatsblad 2018/504,
+articles XXXI and XLIV(1)(k)][H2]. [Staatsblad 2023/500, article I(I), (M)][H3] subsequently
 amended these island rules from 1 January 2024 under article VI(1). Apply the
-operative island provisions, not the abandoned repeal. [H1–H3]
+operative island provisions, not the abandoned repeal.
 
 Before an engagement calculation, verify applicable amendments and delegated
 rules for the requested period. An editing date does not establish legal
