@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-16T11:18:48+00:00",
+ "generated_at": "2026-10-16T12:13:01+00:00",
  "counts": {
-  "guides": 1894,
+  "guides": 1896,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -5875,6 +5875,32 @@
    "name": "bq-abb",
    "jurisdiction": "BQ",
    "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-16"
+  },
+  {
+   "slug": "bq-financial-statements",
+   "path": "skills/international/caribbean-netherlands/bq-financial-statements.md",
+   "name": "bq-financial-statements",
+   "jurisdiction": "BQ",
+   "category": "financial-statements",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-16"
+  },
+  {
+   "slug": "bq-formation",
+   "path": "skills/international/caribbean-netherlands/bq-formation.md",
+   "name": "bq-formation",
+   "jurisdiction": "BQ",
+   "category": "formation",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,

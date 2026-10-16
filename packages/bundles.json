@@ -1505,9 +1505,13 @@
    "files": [
     "intake.md",
     "bq-abb.md",
+    "bq-financial-statements.md",
+    "bq-formation.md",
     "README.md"
    ],
    "shared": [
+    "company-formation-workflow-base.md",
+    "financial-statements-workflow-base.md",
     "foundation.md",
     "workflow-base.md"
    ]
