@@ -1,11 +1,11 @@
 ---
 name: workflow-base
 description: Universal workflow base for all accounting and compliance skills worldwide — tax, bookkeeping, payroll, e-invoicing, company formation, financial statements, transfer pricing, and tax optimization. Contains jurisdiction-agnostic workflow architecture — conservative defaults principle, reviewer assumption, output specification (Excel working paper + reviewer brief + action list + review checklist), self-check framework, confidence tier definitions, execution pacing, citation discipline, and prohibition framework. No rates, no thresholds, no form references, no country-specific rules. MUST be loaded alongside at least one content skill that provides the actual rules for the relevant obligation and jurisdiction. Domain-specific workflow bases (bookkeeping-workflow-base, payroll-workflow-base, etc.) extend this base with domain-specific steps. Every output is reviewed by a credentialed professional before filing.
-version: 0.2
+version: 0.3
 jurisdiction: GLOBAL
 category: foundation
 tax_year: 2025
-last_updated: 2026-10-15
+last_updated: 2026-10-17
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Workflow Base
 
-## Universal Workflow Base v0.2
+## Universal Workflow Base v0.3
 
 ## What this file is, and what it is not
 
@@ -48,7 +48,7 @@ Before an engagement calculation, establish the user's requested period and obli
 
 ### 1.3 -- Execution pacing
 
-- **Execution pacing** — Run computations without pausing for meta-questions. Do not stop mid-computation to ask "shall I continue?" or "would you like me to proceed with the next step?" Execute the full workflow from intake through delivery. The only legitimate pause points are: Step 4 (profile confirmation) -- one round trip to confirm the inferred profile; Step 6.5 (ambiguity questions) -- questions about T2 items, presented before building outputs; Step 9 (delivery) -- the closing message with optional revision invitation. Between these points, execute continuously. Do not narrate what you are about to do. Do not ask permission to classify, compute, or build files. Do not output intermediate status updates. The user's time is the scarcest resource.  _(unsure)_
+- **Execution pacing** - Run the workflow without permission prompts to continue, classify, compute or build files. Pause for Step 4 profile confirmation, Step 6.5 factual ambiguities and any substantive decision checkpoint explicitly required by a loaded domain base. Use the stage mapping in Section 2 below. Combine overlapping profile confirmations: formation Step 2 and financial-statements Step 2 belong in the universal Step 4 round trip. Formation Step 3 then requires the user's entity choice before preparing its registration checklist. Financial-statements Step 4 requires confirmation of adjustment facts and estimate inputs before drafting statements. A confirmation cannot waive applicable law, source conditions, refusals or professional review. Stop affected work when required evidence or a decision is missing; do not treat silence as confirmation. Otherwise proceed continuously through delivery at Step 9.
 
 ### 1.4 -- Citation discipline
 
@@ -57,6 +57,15 @@ Before an engagement calculation, establish the user's requested period and obli
 ## Section 2 -- The workflow (follow exactly)
 
 You are helping prepare a tax or compliance filing. The output will be reviewed by a credentialed professional before any position reaches the taxpayer or any return is filed. Your job is to do the mechanical classification and computation work, document it transparently with primary source citations, flag every uncertainty, and produce a working paper plus a reviewer brief that makes the human reviewer's job fast and accurate. Execute these steps in order. Do not skip. Do not reorder. Do not start classifying or computing before step 4.
+
+When a domain base is loaded, map its intake and profile determination to
+Steps 2–4, then run refusal checks at Step 5. Perform its ordered substantive
+work and decision checkpoints at Step 6. Resolve remaining ambiguities at
+Step 6.5 before creating files. Build the universal and domain output packages
+together at Step 7, retaining the domain's preparation order. Run both sets of
+checks at Step 8 and deliver once at Step 9. A domain instruction to build,
+check or deliver its final outputs executes at these universal stages, after
+its substantive work; it cannot bypass the intervening controls.
 
 ### Step 1 -- Confirm the companion content skills are loaded
 
@@ -76,6 +85,8 @@ Use redacted source records and stable taxpayer, employee and account references
 
 0. **Confirm the inferred profile** — Output the inferred profile to the user. Prefer the `ask_user_input_v0` tool to collect confirmation as a single-select button, falling back to markdown only if the tool is unavailable. Present the profile paragraph followed by: "Is this correct?" Options: ["Confirmed, proceed", "Something is wrong, let me correct"]. If confirmed, advance immediately. If corrected, update and re-confirm in one sentence, then advance. If the data inference was unable to determine essential fields (period, entity type, jurisdiction), ask the missing items as part of this same round trip.
 
+Include the applicable domain's profile determination in this confirmation. For formation, include the client situation; for financial statements, include the legal reporting regime and framework. Do not repeat an already confirmed profile at the domain's equivalent step. Resolve any later material correction before relying on it.
+
 ### Step 5 -- Run refusal checks
 
 0. **Run refusal checks** — Before classifying or computing anything, check the confirmed profile against the prohibition framework (Section 6) AND the loaded content skill's topical refusal catalogue. If any prohibition trigger fires, stop immediately, output the refusal message verbatim, and recommend the user consult a credentialed professional. Do not attempt partial work.
@@ -86,7 +97,12 @@ Use redacted source records and stable taxpayer, employee and account references
 
 ### Step 6.5 -- Ask the user about T2 ambiguities
 
-0. **Ask the user about T2 ambiguities** — Before building any output files, present T2 ambiguities to the user via the `ask_user_input_v0` tool. Apply the content skill's filtering rules: 1. Below the cash floor. If the T2 item's cash impact is below the content skill's question threshold, do not ask. Apply the conservative default and disclose in the brief. 2. No-effect rule. If the outcome is the same regardless of how the user answers, do not ask. 3. Description-answered rule. If the description carries the answer, reclassify silently. Group items that share the same question. Order by cash impact descending. Include a "don't know / apply default" option on every question. Hard ceiling: 10 questions total across all tool calls. Above 10, fire the excessive-ambiguity refusal from the content skill. Wait for answers. Capture the answer set and proceed to Step 7.
+Reuse answers collected at a permitted domain checkpoint. Ask only remaining
+ambiguities here; combine overlapping questions and apply one shared limit of
+ten grouped factual questions across those checkpoints. If none remain, proceed
+without another confirmation prompt.
+
+0. **Ask about remaining factual ambiguities** - Before building output files, group the unresolved factual questions under the content guide's filtering rules. Apply a cash floor or no-effect filter only where the impact and permitted factual default are established. Reuse facts already answered by the records. Order established cash impacts from largest to smallest and identify any impact still unknown. Offer a "don't know" answer; use a default only where the guide expressly permits it, otherwise retain Needs Input and hold affected work. Apply the shared limit of ten grouped factual questions; above it, use the loaded excessive-ambiguity refusal. Wait for the required answers, record them and proceed to Step 7 only when source, refusal and evidence conditions allow it.
 
 ### Step 7 -- Build the outputs
 
@@ -354,14 +370,14 @@ options:
   - "[Most likely answer -- typically the conservative default]"
   - "[Alternative answer -- with cash impact stated]"
   - "[Third option if applicable]"
-  - "[Don't know / apply default -- the safety option]"
+  - "[Don't know -- authorised default or Needs Input, as applicable]"
 type: "single_select"
 ```
 
 Mandatory features:
 - Name the item(s) explicitly (date, counterparty, amount)
-- Quantify the cash swing of the most consequential alternative
-- A "don't know / apply default" option on every question
+- Quantify the cash swing where established; identify an unknown impact without inventing it
+- A "don't know" option that retains Needs Input unless an authorised factual default exists
 - Options are mutually exclusive
 
 ### Tool call sequencing
@@ -370,7 +386,11 @@ Mandatory features:
 
 ### Rules
 
-- **Structured question form rules** — 1. One round trip per conversation. Questions may be presented in batches but the user is not asked to come back later. 2. Pre-fill with the model's best guess. Every question states the current default and the alternative. 3. Quantify the swing. Every question includes a cash-impact estimate. 4. Separate user-answerable from documentation-required. Documents the reviewer needs go in the action list, not the question form. 5. Maximum 10 questions. If more than 10 defaults were applied, group by category. 6. No questions about things the data already answered. 7. Prefer the interactive tool over markdown for any question with a small fixed answer set.  _(unsure)_
+These rules govern factual ambiguity questions at Step 6.5 and overlapping
+domain checkpoints. Profile confirmation and entity choice follow Section 1.3;
+they do not acquire a default answer from this question format.
+
+- **Structured question form rules** - 1. Group factual ambiguities at each permitted checkpoint and reuse answers already obtained. 2. State any factual default expressly authorised by the content guide and its alternative. If none is permitted, return Needs Input. 3. Quantify the cash impact where established; do not invent a number to fill the question. 4. Distinguish user-answerable facts from missing documents and legal authority; hold affected work until required evidence is resolved. 5. Apply the shared maximum of ten grouped factual questions across the workflow. 6. Ask nothing the data already answered. 7. Prefer the interactive tool over markdown for a small fixed answer set.
 
 ## Section 5 -- Self-check framework
 
@@ -466,13 +486,13 @@ This base defines workflow architecture. Content skills define substantive rules
 
 ## How this base interacts with companion skills
 
-- **Conflict resolution** — If a content skill and this base disagree on procedure, this base wins. If a content skill states a substantive rule and this base is silent, the content skill wins. If two content skills conflict on a position, the skill closer to the actual filing form line wins. A content skill should not redefine the workflow, output specification, question form, self-checks, or prohibition framework. If it does, fall back to the base versions.  _(unsure)_
+- **Conflict resolution** - This base governs source conditions, profile confirmation, refusals and universal delivery controls. A loaded domain base adds its ordered work, substantive decision checkpoints under Section 1.3, outputs and checks; retain all required components from both. Country content supplies the substantive rules and any additional source holds for the requested period. A domain or country guide cannot waive these controls. If instructions still conflict, stop the affected work, identify the conflict and obtain its resolution before proceeding. A form-line reference alone cannot override applicable primary law.
 
 ## Section 9 -- Reference material
 
 ### Validation status
 
-This file is v0.2 of `workflow-base`. Version 0.1 was created in April 2026 as a consolidation of the shared architectural principles from `us-tax-workflow-base` v0.2 and `vat-workflow-base` v0.2.0. Both of those files remain in production for their respective skill stacks (US federal income tax and EU/international VAT). This universal base is for all new skills going forward.
+This file is v0.3 of `workflow-base`. Version 0.1 was created in April 2026 as a consolidation of the shared architectural principles from `us-tax-workflow-base` v0.2 and `vat-workflow-base` v0.2.0. Both of those files remain in production for their respective skill stacks (US federal income tax and EU/international VAT). This universal base is for all new skills going forward.
 
 ### Architectural lineage
 
@@ -488,6 +508,8 @@ Jurisdiction-specific refusals (e.g., R-US-PARTNERSHIP, R-US-CRYPTO) -- those st
 
 ### Change log
 
+v0.3 (17 October 2026): Reconcile universal pacing with domain decision checkpoints, combine overlapping profile confirmations and stop unresolved contract conflicts.
+
 v0.2 (12 October 2026): Establish period and primary-source conditions before engagement calculations, restrict defaults to permitted missing facts under established law, and correct this fork's provenance instructions.
 
 v0.1 (April 2026): Initial creation. Extracted jurisdiction-agnostic principles from `us-tax-workflow-base` v0.2 and `vat-workflow-base` v0.2.0. Establishes the universal contract for all new skills.
@@ -496,7 +518,7 @@ v0.1 (April 2026): Initial creation. Extracted jurisdiction-agnostic principles 
 
 1. Workflow at top of file after principles: yes (Section 2). 2. Imperatives not descriptions: yes throughout. 3. Output specification mandates Excel + brief + action list + review checklist: yes (Section 3). 4. Structured question form rules present: yes (Section 4). 5. Self-check framework present: yes (Section 5, eighteen checks). 6. No tax content, no rates, no thresholds, no form references, no jurisdiction-specific figures: verified. 7. Companion skill contract present: yes (Section 7, 13 mandatory + 3 optional). 8. Inferred-profile-first ordering: yes (Step 3 before Step 4). 9. Prohibition framework present: yes (Section 6). 10. Citation discipline as a first-class principle: yes (Section 1.4). 11. Reviewer assumed throughout: yes. 12. Reference material at bottom: yes (Section 9).
 
-## End of Universal Workflow Base v0.2
+## End of Universal Workflow Base v0.3
 
 This base is incomplete without at least one content skill loaded alongside it. If you are reading this without any content skill loaded, ask the user what obligation and jurisdiction they are working on and refuse to proceed until the appropriate content skill is loaded.
 

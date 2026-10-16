@@ -16,8 +16,8 @@ category: formation
 tax_year: 2026
 tax_year_notes: "2026 formation reference; selected NV/BV rules compared across the July consolidation change"
 tier: 2
-last_updated: 2026-10-16
-version: 0.1
+last_updated: 2026-10-17
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -35,8 +35,9 @@ formation workflow.
 
 Load `workflow-base` and `company-formation-workflow-base`. The universal base
 governs source conditions, inferred-profile confirmation, refusals and its four
-outputs. Preserve the domain's entity-selection confirmation, five outputs and
-ten checks as well. Reference examples below do not constitute an engagement
+outputs. Combine its profile confirmation with the domain's situation check,
+then retain the separate entity choice before the registration checklist.
+Preserve the domain's five outputs and ten checks as well. Reference examples below do not constitute an engagement
 recommendation, a complete registration checklist or a filing.
 
 ## Scope, period and completion conditions
@@ -272,6 +273,13 @@ NV size figures; article 219 requires an articles-based opt-in. Sector duties
 can apply separately. Group relief requires every condition in articles
 123–124, not merely ownership by a parent. [J2, articles 116–124 and 216–219]
 
+Preserve ordinary NV/BV shareholders' and bearer-debenture holders' access to
+retained accounts documents for two years from preparation and approval,
+respectively. Track those events separately from ten-year retention and the
+article 122 public-availability regime. Use `bq-financial-statements` for the
+selected reporting distinctions; its full operational conditions remain open.
+[J2, articles 116(5)–(6) and 216(5)–(6)]
+
 Keep legal-person accounting records for ten years under article 15. Maintain
 the event-notification calendar and actual tax/employer invitations separately.
 Do not turn a preparation deadline into a universal Chamber accounts-filing
@@ -386,6 +394,7 @@ confirmation of the selected entity before its registration workflow.
 - Distinguish internal ownership records, regulated-provider UBO checks and any central filing duty.
 - Resolve BES tax status and ABB eligibility independently of incorporation and turnover alone.
 - Build the complete company, tax, employer and sector calendar without inventing filing duties or penalties.
+- Include ordinary NV/BV two-year inspection rights separately from public availability and ten-year retention.
 - Reconcile all contribution and cost components, every required output and the professional sign-off.
 
 ## Primary source library
@@ -436,7 +445,8 @@ Unexamined cross-references and later amendments remain source conditions.
 
 ## Revision and assurance
 
-Version 0.1, 16 October 2026: selected 2026 NV/BV formation, capital,
+Version 0.2, 17 October 2026: adds ordinary NV/BV inspection rights and reconciles
+situation and entity-choice checkpoints. Version 0.1 introduced selected 2026 NV/BV formation, capital,
 registration, licensing and ownership-record reference, with six hypothetical
 positions. Mandatory domain and operational conditions remain open; no
 country-complete or accountant-reviewed status is claimed.

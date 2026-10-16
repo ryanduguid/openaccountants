@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "2026 company-reporting reference; framework and financial-year applicability must be established separately"
 tier: 2
 last_updated: 2026-10-17
-version: 0.2
+version: 0.3
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -38,6 +38,10 @@ recalculation requirements, together with the domain's six outputs and fourteen
 checks. The full-IFRS statement extensions and depreciation reconciliation
 below are necessary when those substantive rules apply. A source hold prevents
 delivery of a partial set labelled complete or IFRS compliant.
+
+Combine regime/framework confirmation with the universal profile round trip.
+The domain's later adjustment checkpoint confirms supporting facts and estimate
+inputs; it cannot waive a required entry or an unresolved source condition.
 
 ## Scope, period and completion conditions
 
@@ -113,6 +117,7 @@ the NV size test alone does not move a BV into this regime. [J2, articles
 | Signatures | All directors and serving supervisors; explain a missing signature | Same | J2, articles 116(2), 120(4), 216(2) |
 | Approval | Submit accounts to general meeting | General meeting must first be able to consider attached expert statement | J2, articles 116(3), 121(7), 216(3) |
 | External expert | Articles 117/217 permit appointment; no blanket sector exemption follows | Qualified external examination required, subject to article 124 conditions | J2, articles 117, 121, 124, 217 |
+| Ordinary inspection right | Every shareholder and bearer-debenture holder may inspect retained documents for two years after preparation or approval, respectively | Establish the applicable article 120 and 122 duties separately | J2, articles 116(5)–(6), 216(5)–(6) |
 | Public availability | Do not infer article 122 from the ordinary regime | Within eight days of approval; copy available for two years; unapproved-accounts branch below | J2, article 122 |
 | Accounting retention | Ten years | Ten years, including annual report and associated documents | J2, articles 15(3), 116(5), 120(7), 216(5) |
 
@@ -121,6 +126,15 @@ account and notes. They must give the prescribed insight into assets, result,
 solvency and liquidity, to the extent appropriate to accounts. The generic
 workflow cannot itself establish a different mandatory local framework.
 [J2, articles 116 and 216]
+
+For ordinary NVs and BVs, preserve the inspection right of every shareholder
+and every bearer-debenture holder over the documents retained under articles
+116(5) and 216(5). The two-year period runs from preparation for the prepared
+accounts and from approval for the approved accounts, respectively. Record
+both events and the associated documents. This access right does not depend
+on an article 219 opt-in or impose article 122's eight-day public-availability
+duty on an ordinary BV. The ten-year retention duty is separate from the
+two-year inspection periods. [J2, articles 15(3), 116(5)–(6) and 216(5)–(6)]
 
 Other legal persons require their own provisions. Article 15 gives the general
 records and eight-month accounts duty. Article 89 covers associations, including
@@ -424,6 +438,7 @@ with the professional, outside agent inputs and outputs.
 - Verify the legal form, period, articles, sector and every cumulative large-NV condition.
 - Establish BV/smaller-NV opt-in and any justified alternative framework.
 - Apply preparation, extension, signature and meeting-approval duties separately.
+- Preserve ordinary NV/BV shareholder and bearer-debenture-holder inspection rights for the two years following preparation and approval, respectively.
 - Track shareholder inspection and meeting submission under article 120 separately from article 122 public availability.
 - Verify qualified examination and every condition of any group exemption.
 - Distinguish office availability, unapproved accounts, registry notice and alternative deposit.
@@ -475,7 +490,8 @@ certify complete current standard coverage or an entity's compliance.
 
 ## Revision and assurance
 
-Version 0.2, 17 October 2026: adds shareholder inspection and meeting-submission
+Version 0.3, 17 October 2026: adds ordinary NV/BV inspection rights and aligns
+confirmation checkpoints with the shared contracts. Version 0.2 added shareholder inspection and meeting-submission
 timing under article 120 and aligns depreciation reconciliation with the shared
 workflow. Retains seven hypothetical positions. Mandatory domain, framework
 and operational conditions remain open; no country-complete or

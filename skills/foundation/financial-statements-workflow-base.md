@@ -1,14 +1,14 @@
 ---
 name: financial-statements-workflow-base
 description: Universal financial statements preparation workflow base that defines the trial balance review, year-end adjustments, income statement and balance sheet preparation, notes to accounts, and filing runbook for all jurisdictions. Contains no jurisdiction-specific content — no local GAAP rules, no filing portals, no reporting thresholds, no specific account formats. This skill MUST be loaded alongside a country-specific financial statements skill that provides the reporting framework, format requirements, and local filing rules. This skill alone cannot produce any output.
-version: 1.1
+version: 1.2
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-10-16
+last_updated: 2026-10-17
 ---
 
-# Financial Statements Workflow Base Skill v1.1
+# Financial Statements Workflow Base Skill v1.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -18,7 +18,7 @@ last_updated: 2026-10-16
 
 **This file must always be loaded with a country-specific financial statements skill** that provides the reporting framework, P&L and balance sheet formats, notes requirements, and filing rules (e.g., `uk-financial-statements`, `au-financial-statements`, `de-financial-statements`). This file alone cannot produce a set of accounts. Loading it without a companion is a configuration error and Claude must refuse to proceed.
 
-**This file is the contract.** When a country financial statements skill says it conforms to v1.1 of this base, it means: it fills the country slots specified in Section 5, it produces outputs in the format specified in Section 3, its outputs can be validated by the self-checks in Section 4, and it participates in the workflow in Section 1.
+**This file is the contract.** A country financial statements skill conforming to this base fills the country slots in Section 5, produces the outputs in Section 3, applies the self-checks in Section 4 and follows Section 1. When loaded with `workflow-base`, retain its source conditions, refusals, four universal outputs and checks as well. The confirmation sequence follows its Section 1.3.
 
 ---
 
@@ -41,21 +41,21 @@ If a bookkeeping workflow skill is also loaded, note its presence — the trial 
 From the country skill and the client's details, establish:
 
 - **Entity type.** The legal form determines which reporting framework and exemptions apply.
-- **Entity size classification.** Apply the country skill's size thresholds (revenue, balance sheet total, employees) to classify as micro, small, medium, or large. This drives the level of detail required.
+- **Legal reporting regime.** Apply the country skill's actual eligibility tests, including legal form, any size thresholds, sector status and valid opt-ins. Use micro, small, medium or large labels only where that country's rules establish them. Record the resulting preparation, signature, approval, examination and publication duties with their responsible bodies.
 - **Applicable reporting framework.** Full local GAAP, simplified small-entity framework, micro-entity regime, or IFRS per the country skill. If the entity has a choice, present options and implications.
 - **Reporting period.** Confirm financial year dates. Flag first accounting periods or changes of accounting date.
-- **Comparative period.** Determine whether required (almost always above micro level) and whether available.
+- **Comparative period.** Establish the applicable framework's comparative requirements and whether the required information is available.
 - **Going concern status.** Ask about indicators of going concern doubt. If present, this affects basis of preparation and requires specific disclosures.
 
 Present the framework determination to the user:
 
 > "Based on the entity details, here is the reporting framework I will apply:
 >
-> [Entity type, size classification, applicable framework, reporting period, comparative requirement, going concern assumption.]
+> [Entity type, legal reporting regime, applicable framework, reporting period, comparative requirement, going concern assessment.]
 >
 > Is this correct? If anything needs adjusting, tell me before I begin reviewing the trial balance."
 
-Wait for confirmation.
+Combine this determination with `workflow-base` Step 4 when both bases are loaded. Wait for that confirmation once, before reviewing the trial balance. Resolve later material corrections before relying on them.
 
 ### Step 3 — Trial balance review
 
@@ -100,20 +100,20 @@ Review the trial balance and the user's supporting information for year-end adju
 
 **Tax provision.** Compute the current tax charge for the period:
 
-- Apply the country skill's corporate tax rate to the taxable profit (which may differ from accounting profit due to disallowable expenses and capital allowances).
-- If a tax skill is loaded, use its computation. If not, apply the country skill's headline rate to accounting profit as an approximation and flag for the reviewer.
+- Establish the entity's tax status, applicable levies, period law and complete computation rules before calculating. Use the applicable country tax skill or other verified primary authority and the required facts; loading a tax skill alone does not establish those conditions.
+- If the tax status, source conditions or computation are incomplete, return Needs Input or the loaded refusal and hold the affected entry. Do not substitute a headline rate applied to accounting profit. Use an estimate only where verified framework and tax authority support its basis and treatment, and disclose its method, inputs and limits for professional review.
 - Determine where the related transaction is recognised under the country framework before assigning current or deferred tax to profit or loss, other comprehensive income or directly to equity. Check separate business-combination rules where applicable. A tax payable or deferred tax balance does not by itself determine the corresponding recognition location.
-- If the country skill requires deferred tax: identify temporary differences between asset or liability carrying amounts and their tax bases, then apply that framework's recognition conditions, exceptions and measurement rules. Differences between accounting profit and taxable profit alone are not a deferred-tax calculation. Record the asset or liability and its corresponding tax entry in the recognition location established above.
+- If the country skill requires deferred tax, establish that framework's difference basis, recognition conditions, exceptions and measurement rules. Identify temporary differences between carrying amounts and tax bases where that framework requires them; do not substitute this basis for a different established framework's method. Differences between accounting profit and taxable profit alone are not a deferred-tax calculation. Record the asset or liability and its corresponding tax entry in the recognition location established above.
 
-For every adjustment, record: the adjustment type, the accounts affected, the debit amount, the credit amount, and the rationale. Record current and deferred tax components separately by recognition location; identify that location in the rationale. Present the full list of adjustments to the user before proceeding:
+For every adjustment, record: the adjustment type, the accounts affected, the debit amount, the credit amount, and the rationale. Record current and deferred tax components separately by recognition location; identify that location in the rationale. Present the full list and its factual and estimate inputs before proceeding:
 
 > "I have identified the following year-end adjustments:
 >
 > [Numbered list with one line per adjustment: type, amount, accounts affected.]
 >
-> Are there any additional adjustments I should include, or any of these you want to remove or modify?"
+> Please confirm the supporting facts and estimate inputs, or identify corrections and additional evidence. Applicable accounting and tax rules determine which entries are required."
 
-Wait for confirmation.
+Wait for confirmation of those inputs before drafting statements. This is the adjustment checkpoint permitted by `workflow-base` Section 1.3; group overlapping ambiguity questions here and count them under the universal question limit. A user's preference cannot remove a required adjustment. Return Needs Input or the applicable refusal where a necessary fact, estimate basis or source remains unresolved.
 
 ### Step 5 — Prepare the income statement (P&L)
 
@@ -188,13 +188,13 @@ Prepare the notes in the order and format specified by the country skill. Univer
 
 13. **Commitments and contingencies.** Capital commitments, operating lease commitments, contingent liabilities.
 
-The country skill specifies which notes are mandatory for the entity's size classification, the exact format, and any additional jurisdiction-specific notes. Micro-entity regimes often require minimal or no notes — follow the country skill's guidance.
+The country skill specifies the mandatory notes, exact format and any exemptions for the applicable legal reporting regime. Apply a reduced disclosure regime only after verifying its eligibility and conditions.
 
 ### Step 8 — Filing and approval
 
 Produce a filing checklist:
 
-- **Director / owner approval.** The statements must be approved by the directors (or owner for sole traders) before filing. Note the approval requirement.
+- **Preparation, signature and approval.** Identify each required act, responsible body, sequence and deadline under the country rules and entity's governing documents. Distinguish board preparation and signatures from approval by a meeting or another authorised body. Record any publication or filing duty triggered before approval; do not impose a universal director-approval prerequisite.
 - **Filing with the registrar.** If the jurisdiction requires filing accounts with a company registrar, list the filing requirements (which version of accounts: full, abbreviated, abridged), the filing portal, and the deadline.
 - **Filing with the tax authority.** If the accounts accompany the tax return, note the tax filing deadline and any format requirements.
 - **Audit requirement.** If the entity exceeds audit thresholds or is otherwise required to be audited, note this. If the entity qualifies for audit exemption, note the exemption and its conditions.
@@ -249,9 +249,9 @@ All three conditions must be met. If condition 3 fails but 1 and 2 are met, disc
 
 ### Tax provision — current and deferred
 
-**Current tax:** Taxable profit × Tax rate = Current tax charge. Taxable profit starts from accounting profit and is adjusted for: disallowable expenses (entertaining, fines, depreciation replaced by capital allowances), non-taxable income (exempt dividends, capital gains taxed separately), and timing differences that create deferred tax.
+**Current tax:** Apply the established levy and computation under Step 4, including the entity's verified tax status, taxable base, applicable rates, adjustments, reliefs and credits. A taxable-profit-times-rate formula applies only where those rules support it. Neither accounting profit nor an example rate establishes a provision. Hold an unsupported computation instead of estimating it by default.
 
-**Deferred tax:** Apply the temporary-difference calculation, recognition conditions, exceptions and measurement rules in Step 4 using the country framework. Differences between an asset's accounting carrying amount and tax base can arise from depreciation, capital allowances or revaluation. Retain the recognition location of each tax component through the statements, notes and adjustment schedule.
+**Deferred tax:** Apply the country framework's established difference basis and the recognition, exception and measurement rules in Step 4. Where the framework requires temporary differences, compare the relevant carrying amounts and tax bases, including applicable depreciation, capital allowance and revaluation effects. Retain the recognition location of each tax component through the statements, notes and adjustment schedule. Hold an unresolved framework method instead of importing another framework's calculation.
 
 ---
 
@@ -284,7 +284,7 @@ Total debits must equal total credits across all adjustments.
 
 ### Output 5 — Filing checklist
 
-Per Step 8. Includes director approval, registrar filing, tax authority filing, audit status, and publication requirements. Each item with a deadline and status (pending/complete).
+Per Step 8. Include applicable preparation, signature and approval acts, registrar and tax filing, examination and publication duties. Identify each responsible body, event or deadline and status (pending/complete); record a verified non-applicability where relevant.
 
 ### Output 6 — Reviewer brief
 
@@ -293,7 +293,7 @@ Per Step 8. Includes director approval, registrar filing, tax authority filing, 
 **Entity:** [name and type]
 **Period:** [year-end date]
 **Framework:** [applicable reporting framework]
-**Size classification:** [micro/small/medium/large]
+**Legal reporting regime:** [country-defined regime and eligibility; size label only if applicable]
 **Generated:** [date]
 
 ## Summary
@@ -368,7 +368,7 @@ Run these fourteen checks against all outputs. If any fails, fix and re-run. Do 
 
 ### Completeness
 
-**Check 11 — All mandatory notes present.** The country skill specifies the mandatory notes for the entity's size classification. Every mandatory note is present. No mandatory note is omitted.
+**Check 11 — All mandatory notes present.** Verify the mandatory notes for the entity's legal reporting regime under the country framework. Every required note is present, and each exemption has an established basis.
 
 **Check 12 — All accounts classified.** Every account on the adjusted trial balance appears on either the income statement or the balance sheet. No account is orphaned (present on the TB but absent from the statements).
 
@@ -388,13 +388,13 @@ Every country-specific financial statements skill loaded alongside this workflow
 
 ### Mandatory slots
 
-1. **Reporting framework specification** — which GAAP/standard applies per entity size (full local GAAP, small entity framework, micro-entity regime, IFRS) and the size thresholds (revenue, balance sheet total, employee count).
+1. **Reporting framework specification** - the legal reporting regimes, eligibility tests and permitted frameworks for each entity form, including applicable size tests, sector rules and valid opt-ins. Identify the bodies and sequence for preparation, signature, approval and publication.
 2. **Income statement format** — single-step or multi-step, category groupings, subtotal points, terminology, exceptional item presentation.
 3. **Balance sheet format** — vertical or horizontal, order of liquidity, current/non-current split, net current assets subtotal, local terminology.
 4. **Chart of accounts mapping** — how trial balance codes map to income statement and balance sheet line items and groupings.
-5. **Notes requirements by size** — for each classification (micro, small, medium, large): mandatory notes, content/format, and exemptions.
+5. **Notes requirements by reporting regime** - mandatory notes, content, format and verified exemptions for each applicable country-defined regime.
 6. **Depreciation schedule** — permitted methods under local GAAP, typical useful lives and rates, first-year and disposal-year treatment.
-7. **Tax provision rules** — corporate tax rate, computation method (adjustments for disallowable items, capital allowances), deferred tax requirements and method.
+7. **Tax provision rules** - applicable levy and entity-status tests, period law, computation and measurement rules, recognition locations and current/deferred tax requirements. Identify source conditions and hold unsupported computations.
 8. **Filing requirements** — where to file (registrar, tax authority, both), deadline rules, form of accounts required, penalties for late filing.
 9. **Audit thresholds** — criteria for mandatory audit and available exemptions.
 10. **Directors' report requirements** — whether required, contents, size exemptions.
@@ -415,13 +415,13 @@ Every country-specific financial statements skill loaded alongside this workflow
 
 ### Validation status
 
-This file is v1.1 of `financial-statements-workflow-base`. The original workflow was drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0.
+This file is v1.2 of `financial-statements-workflow-base`. The original workflow was drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0.
 
 ### Design decisions
 
 1. **Trial balance as input, not raw transactions.** The bookkeeping-workflow-base handles transaction-to-TB. This separation keeps each workflow focused.
 
-2. **Year-end adjustments as an interactive step.** Adjustments are presented for confirmation because many involve estimates only the user can confirm.
+2. **Adjustment input confirmation.** Confirm supporting facts and estimate inputs at the permitted domain checkpoint. The applicable rules determine the entries; user preference cannot waive a required adjustment.
 
 3. **Framework determination before any work.** The framework determines format, notes, disclosures, and filing requirements. Getting it wrong wastes all subsequent work.
 
@@ -437,6 +437,7 @@ This file is v1.1 of `financial-statements-workflow-base`. The original workflow
 
 ### Change log
 
+- **v1.2 (17 October 2026):** Use country-defined reporting regimes, approval actors and deferred-tax methods, hold unsupported tax computations and reconcile profile and adjustment confirmations with the universal base.
 - **v1.1 (16 October 2026):** Make depreciation timing and allocation conditional on the country framework. Reconcile initial expense and asset allocations separately from later releases of capitalised amounts.
 - **v1.0 (May 2026):** Initial release. Establishes the universal financial statements workflow, adjustment type reference, six-output specification, 14 self-checks, and country skill contract.
 
