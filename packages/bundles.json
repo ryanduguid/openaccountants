@@ -176,12 +176,14 @@
    "name": "Aland",
    "files": [
     "intake.md",
+    "ax-income-tax.md",
     "ax-tax-scope.md",
     "references.md",
     "README.md"
    ],
    "shared": [
     "foundation.md",
+    "income-tax-workflow-base.md",
     "workflow-base.md"
    ]
   },
