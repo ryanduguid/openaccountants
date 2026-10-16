@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-16T10:13:28+00:00",
+ "generated_at": "2026-10-16T11:04:11+00:00",
  "counts": {
-  "guides": 1893,
-  "jurisdictions": 246,
+  "guides": 1894,
+  "jurisdictions": 247,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -5868,6 +5868,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-11"
+  },
+  {
+   "slug": "bq-abb",
+   "path": "skills/international/caribbean-netherlands/bq-abb.md",
+   "name": "bq-abb",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "cayman-tax",
