@@ -40,7 +40,7 @@ unverified.
 | Applies to | Self-employed (elinkeinonharjoittaja / ammatinharjoittaja), rental income, capital gains, other income not subject to withholding |
 | Validated by | Pending |
 | Validation date | Pending |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 ### Key Terms
 
