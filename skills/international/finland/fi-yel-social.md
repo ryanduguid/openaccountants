@@ -1,7 +1,7 @@
 ---
 name: fi-yel-social
 description: Use this skill whenever asked about Finland YEL pension insurance or social security for self-employed persons. Trigger on phrases like "YEL", "YEL insurance", "yrittäjän eläkelaki", "self-employed pension Finland", "Finnish pension insurance", "entrepreneur pension", "YEL income", "YEL contribution", "sickness allowance Finland", "disability pension self-employed Finland", "new entrepreneur discount", or any question about mandatory social insurance obligations for Finnish self-employed. Covers YEL contribution rates, income thresholds, provider selection, tax deductibility, and social security benefits. ALWAYS read this skill before advising on Finnish self-employed social insurance.
-version: 1.1
+version: 1.2
 jurisdiction: FI
 tax_year: 2025
 last_updated: 2026-10-16
@@ -15,7 +15,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # FI Yel Social
 
-Version 1.1 corrects the YEL premium deduction route in this Tier 2 draft.
+Version 1.2 corrects the YEL premium deduction route and one inherited
+illustrative multiplication in this Tier 2 draft.
 The other inherited 2025 insurance figures, eligibility and benefit claims
 were not certified by this correction. Establish their applicable sources and
 facts before using them for an operational result.
@@ -35,7 +36,7 @@ facts before using them for an operational result.
 | Key bodies | Pension insurance companies: Varma, Ilmarinen, Elo, Veritas |
 | Validated by | Pending |
 | Validation date | Pending |
-| Skill version | 1.1 |
+| Skill version | 1.2 |
 
 ### YEL Contribution Rates (2025)
 
@@ -151,11 +152,17 @@ YEL insurance is mandatory if ALL of the following apply:
 | Scenario | YEL Income | Age | Rate | Annual Contribution | Monthly Equivalent |
 | --- | --- | --- | --- | --- | --- |
 | Minimum, standard | €9,208.43 | 35 | 24.10% | €2,219.23 | €184.94 |
-| Minimum, new entrepreneur | €9,208.43 | 35 | 18.798% | €1,731.03 | €144.25 |
+| Minimum, new entrepreneur | €9,208.43 | 35 | 18.798% | €1,731.00 | €144.25 |
 | Median | €28,000 | 40 | 24.10% | €6,748.00 | €562.33 |
 | Median, new entrepreneur | €28,000 | 40 | 18.798% | €5,263.44 | €438.62 |
 | Unemployment threshold | €15,128 | 30 | 24.10% | €3,645.85 | €303.82 |
 | Higher income | €60,000 | 55 | 25.60% | €15,360.00 | €1,280.00 |
+
+The minimum new-entrepreneur row illustrates EUR 9,208.43 × 24.10% × 78% =
+EUR 1,731.0006714, displayed as EUR 1,731.00 annually and EUR 144.25 monthly.
+This arithmetic correction does not certify the inherited rate, discount,
+eligibility, billing adjustments or statutory premium-rounding rules. Establish
+those sources before using an amount as a payable contribution.
 
 ### 4.3 Flexible Contributions
 

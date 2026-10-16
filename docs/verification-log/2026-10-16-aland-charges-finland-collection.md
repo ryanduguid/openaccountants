@@ -71,6 +71,27 @@ six EUR 583 payments as EUR 8,498. Their sum is EUR 9,498. The replacement uses
 explicit hypothetical decision inputs and separates imposed, paid and unpaid
 amounts instead of deriving an unsupported whole annual tax estimate.
 
+## Pension, healthcare and small-advance clarification
+
+The retained [Income Tax Act section 124(1), (4)](https://www.finlex.fi/sv/lagstiftning/1992/1535)
+also establishes a 5.85% additional state charge on pension income after the
+pension deduction above EUR 60,000 for 2026. The previous EUR 47,000 threshold
+is kept separate. The Åland guide now states this component beside the
+progressive scale and continues to hold a complete pension assessment.
+
+[Health Insurance Act chapter 18 section 20(3)–(4)](https://www.finlex.fi/fi/lainsaadanto/2004/1224)
+requires a qualifying income trigger and excludes section 14(2) income from
+the additional healthcare charge. Its 0.39% component uses the positive
+healthcare-base minus daily-base difference. The guide now states that
+condition and tests positive, zero, negative and excluded-income branches.
+The 1.49% combined rate cannot be applied indiscriminately to a mixed base.
+
+Both collection guides also distinguish [Prepayment Act section 24](https://www.finlex.fi/sv/lagstiftning/1996/1118)'s
+below-EUR-10 non-imposition condition from the ordinary EUR 170 initial
+minimum and the amended-advance division rule. An existing small balance
+does not establish the amount imposed by the amendment decision. Unresolved
+decision attribution remains held; no existing debt is automatically cancelled.
+
 ## Remaining verification
 
 A further six-document source pass did not establish annual money rounding.

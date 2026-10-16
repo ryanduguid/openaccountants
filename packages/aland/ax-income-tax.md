@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Calendar 2026 source reference; 2027 amendments and earlier-year guidance are identified separately"
 tier: 2
 last_updated: 2026-10-16
-version: 0.3
+version: 0.4
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -256,6 +256,16 @@ At a boundary, the preceding slice and the next row give the same amount.
 The table is before work-income and other tax credits. A zero first state
 band does not establish zero municipal tax, contributions or media fee.
 
+[Income Tax Act section 124(1), (4)](https://www.finlex.fi/sv/lagstiftning/1992/1535),
+as amended from 1 January 2026 by Act 1141/2025, also charges an additional
+5.85% on pension income after the pension-income deduction to the extent that
+this distinct base exceeds EUR 60,000. The former EUR 47,000 threshold applies
+to the earlier wording, including 2025; do not carry it into 2026. The Åland
+12.64 percentage-point reduction applies to the progressive scale, not this
+additional rate. A pensioner's full state liability requires this separate
+component, the lawful pension deduction and all applicable credit and rounding
+rules. Keep the complete pension result held until those conditions are verified.
+
 ### Municipal and capital income tax
 
 Use the fiscal municipality established above. The [Tax Administration's 2026
@@ -430,9 +440,21 @@ applies for 2026 and establishes these insured-person rates:
 | 2026 charge | Rate and base condition |
 |---|---|
 | Ordinary healthcare | 1.10% of the applicable municipal or special base |
-| Increased healthcare | 1.49% for the specified other earned income, subject to the exceptions in chapter 18 section 20 |
+| Increased healthcare | Ordinary 1.10% plus the conditional 0.39% differential component below; 1.49% is the combined rate only on a base to which both components apply |
 | Ordinary daily allowance | 0.88% of the whole applicable base once annual relevant wages/entrepreneur income reach EUR 17,255; zero below that threshold |
 | YEL entrepreneur financing supplement | 0.23% of confirmed YEL income, including below the ordinary threshold; not a MYEL supplement |
+
+[Chapter 18 section 20(3)–(4)](https://www.finlex.fi/fi/lainsaadanto/2004/1224)
+requires the 0.39% additional component where the insured person receives earned
+income outside sections 15–18, subject to the exclusion for income in section
+14(2). Calculate it from the applicable positive difference between the
+healthcare-contribution base and the daily-allowance-contribution base. No
+additional component is collected when the daily base exceeds the healthcare
+base; equality also gives zero. Establish both bases, the income trigger and
+the section 14(2) exclusion separately. A YEL/MYEL substitution is not itself
+permission to charge the supplement, and a mixed-income case does not permit
+1.49% on the entire healthcare base. Missing attribution or coverage holds the
+dependent component and the full contribution result.
 
 Chapter 18 section 5 starts daily-allowance liability at the beginning of the
 month after turning 16 and ends it after the month of turning 68. It exempts
@@ -562,6 +584,15 @@ subtract instalments already due before dividing the remaining amount; a
 remaining amount below EUR 170 is collected in one instalment. Reductions
 first affect instalments not yet due, then those already due from latest to
 oldest. Do not substitute the residual-tax instalment rules for this schedule.
+
+[Prepayment Act section 24](https://www.finlex.fi/sv/lagstiftning/1996/1118)
+separately prevents imposing tax below EUR 10 as a consequence of determining
+or amending an advance. This tests the tax imposed by that decision; the
+EUR 170 initial minimum and amended-advance division rule do different jobs.
+An existing unpaid or remaining instalment below EUR 10 is not, by itself,
+evidence that the decision imposes tax below EUR 10. Verify the decision's
+assessed amount and already-due instalments before applying either rule;
+hold an unresolved small amendment instead of cancelling an existing debt.
 
 [Tax Collection Decree 1010/2019, sections 1–3 and 9–10](https://www.finlex.fi/fi/lainsaadanto/2019/1010)
 supplies the following ordinary individual residual/refund rules:
@@ -725,6 +756,9 @@ contract. Monetary results described as unrounded remain intermediate values.
 |---|---|---|
 | State scale at EUR 32,600 | EUR 10,600 above EUR 22,000 × 6.36% | EUR 674.16 before credits; municipal and other charges are separate |
 | State scale at EUR 52,100 | EUR 1,994.91 + EUR 12,000 × 20.61% | EUR 4,468.11 before credits |
+| Pension additional-tax boundary | Established 2026 pension income after the pension deduction of EUR 60,000 versus EUR 60,100 | Additional component EUR 0 versus EUR 5.85 before annual rounding; the full pension liability remains held |
+| Healthcare differential | Confirmed ordinary healthcare base EUR 30,000, daily base EUR 20,000 and qualifying non-excluded income under chapter 18 section 20(3) | EUR 330 ordinary plus EUR 39 additional = EUR 369 unrounded; no flat EUR 447 charge |
+| Healthcare supplement exclusions | Daily base equals or exceeds the healthcare base, or the only purported trigger is excluded section 14(2) income | No 0.39% additional component on that basis; verify the ordinary charge separately |
 | Separate basic deductions | R = EUR 20,000 after preceding deductions. State: EUR 4,265 − 18% × EUR 15,735. Municipal: EUR 3,925 − 8.4% × EUR 16,075 | State deduction EUR 1,432.70 and base EUR 18,567.30; municipal deduction EUR 2,574.70 and base EUR 17,425.30, before prior losses |
 | Public-transport commuting | Eligible costs EUR 2,000, all public transport. State cheapest-method conditions satisfied, no benefit-month relief | State deduction EUR 1,100; regional section 10 exception gives municipal deduction EUR 2,000; neither uses a mileage estimate |
 | Work-credit taper plateau | Qualifying income sufficient for the base maximum; net earned income EUR 60,000; no age/child increase | EUR 3,430 − 2% × EUR 15,550 = EUR 3,119; reduction stops at EUR 50,550; allocation still requires each tax |
@@ -733,6 +767,7 @@ contract. Monetary results described as unrounded remain intermediate values.
 | Unknown municipality | An Åland address is shown but the section 5 municipality evidence is missing | R-AX-I-PROFILE fires; no municipal rate or adjusted state scale is selected |
 | Advance division | Ordinary advance EUR 170.01, two instalments, no schedule variation | EUR 85.01 first and EUR 85.00 second; the cent remainder rule does not establish annual tax rounding |
 | Advance band boundary | Ordinary in-year total EUR 500 versus EUR 500.01, no variation requested | Two versus three instalments; the upper boundary is inclusive |
+| Small advance decision | The authority establishes the tax imposed under section 24 as EUR 9.99 versus EUR 10 | Below EUR 10 is not imposed; at EUR 10 this rule alone does not prevent imposition. A EUR 9.99 balance left from an earlier assessment does not establish the first condition |
 | Residual band boundary | Residual principal EUR 169.99 versus EUR 170, no changed assessment | One versus two instalments; the separate non-imposition and interest rules still apply |
 | Ordinary increase component | Added income EUR 5,000; reviewer establishes the ordinary 2% branch, no non-imposition ground or other failure | EUR 100, exceeding the EUR 75 individual minimum; no liability or actual penalty decision is certified |
 | Ordinary church component | Municipal taxable income EUR 20,000; confirmed 31 December 2025 membership and ordinary Mariehamn geographical parish; no relief or credit yet | Lutheran EUR 310 or Orthodox EUR 350 before credit allocation; unknown membership holds the component |
@@ -810,7 +845,7 @@ presence, a passing linter or an assumed zero.
 | 10. Transaction patterns | Source categories and exclusions above | Validate document/statement field maps and remaining receipt patterns |
 | 11. Refusals/defaults | Exact catalogue, lawful factual holds and review thresholds | Check against the final content and observable consumer behaviour |
 | 12. Currency/rounding | EUR, cent reporting rule and historical precision explanation | Current final rounding/credit allocation and foreign conversion rules |
-| 13. Worked examples | Fifteen hypothetical component positions | Employee, self-employed and mixed cases through the full settlement ladder |
+| 13. Worked examples | Nineteen hypothetical component positions | Employee, self-employed and mixed cases through the full settlement ladder |
 
 Before any eventual financial delivery, run both bases' checks and also verify:
 

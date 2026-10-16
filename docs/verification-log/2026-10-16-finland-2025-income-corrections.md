@@ -89,6 +89,15 @@ requests and mandatory gain treatment. The old example's simple split omitted
 these conditions. Seven synthetic component positions now replace the former
 estimated personal total; none is a complete employee, trader or mixed ladder.
 
+## Inherited YEL example arithmetic
+
+The minimum new-entrepreneur example in fi-yel-social previously displayed
+EUR 1,731.03 annually. Its own stated inputs give EUR 9,208.43 × 24.10% × 78% =
+EUR 1,731.0006714, or EUR 1,731.00 at illustrative two-decimal precision.
+The monthly display remains EUR 144.25. Fixed-integer checks verify that
+multiplication and display only. The inherited statutory rates, eligibility,
+discount, billing adjustments and legal premium rounding remain unverified.
+
 ## Verification limits
 
 The two source passes acquired eight and seven distinct public documents.

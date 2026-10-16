@@ -1,7 +1,7 @@
 ---
 name: fi-prepayments
 description: Use this skill whenever asked about Finland prepayment tax (ennakkovero) for self-employed individuals. Trigger on phrases like "ennakkovero", "ennakkoverot", "prepayment tax Finland", "Finnish tax prepayments", "residual tax Finland", "jäännösvero", "tax instalments Finland", "OmaVero prepayment", "prepayment certificate", "ennakkoperintä", or any question about paying tax during the year as a Finnish self-employed person. Covers prepayment calculation, payment schedules, adjustment requests, residual tax, and penalties. ALWAYS read this skill before advising on Finnish tax prepayments.
-version: 1.1
+version: 1.2
 jurisdiction: FI
 tax_year: 2025
 last_updated: 2026-10-16
@@ -138,6 +138,16 @@ instalment. For an amended advance, subtract instalments already due before
 dividing the remaining amount; a remainder below EUR 170 is collected in one
 instalment. Reductions affect not-yet-due instalments first, then already-due
 instalments from latest to oldest.
+
+[Prepayment Act 1118/1996, section 24](https://www.finlex.fi/sv/lagstiftning/1996/1118)
+separately prevents imposing tax below EUR 10 as a consequence of determining
+or amending an advance. Check the amount imposed by the decision, distinct
+from the EUR 170 initial minimum and the amended-advance division rule.
+An existing unpaid or remaining instalment below EUR 10 does not by itself
+establish this non-imposition condition. For an authority-established section
+24 amount of EUR 9.99, the tax is not imposed; at EUR 10 this condition alone
+does not prevent imposition. Verify the assessment and already-due instalments;
+hold an unresolved small amendment instead of cancelling an existing debt.
 
 [Tax Collection Act 11/2018, section 12](https://www.finlex.fi/sv/lagstiftning/2018/11)
 uses the date in the decision. Decree 1010/2019 section 10 moves a non-bank due
