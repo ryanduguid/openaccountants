@@ -57,7 +57,8 @@
    "shared": [
     "cross-border-workflow-base.md",
     "financial-statements-workflow-base.md",
-    "us-circular-230-disclosure.md"
+    "us-circular-230-disclosure.md",
+    "workflow-base.md"
    ]
   },
   "_financial-reporting": {
@@ -1522,6 +1523,7 @@
    "shared": [
     "company-formation-workflow-base.md",
     "corporate-income-tax-workflow-base.md",
+    "cross-border-workflow-base.md",
     "financial-statements-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
