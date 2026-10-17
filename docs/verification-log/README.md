@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-17 | [Norfolk Island individual income tax, deductions and zone offset](2026-10-17-norfolk-income-tax.md) |
 | 2026-10-17 | [Norfolk Island GST: connection, registration and exports](2026-10-17-norfolk-gst.md) |
 | 2026-10-17 | [Norfolk Island tax application and employer super](2026-10-17-norfolk-tax-scope-super.md) |
 | 2026-10-17 | [BES warehouses and HDE: permissions, tax bridges and export pointers](2026-10-17-bes-warehouses-hde.md) |

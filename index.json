@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T10:35:31+00:00",
+ "generated_at": "2026-10-17T10:52:39+00:00",
  "counts": {
-  "guides": 1919,
+  "guides": 1920,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -15779,6 +15779,19 @@
    "slug": "nf-gst",
    "path": "skills/international/norfolk-island/nf-gst.md",
    "name": "nf-gst",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-income-tax",
+   "path": "skills/international/norfolk-island/nf-income-tax.md",
+   "name": "nf-income-tax",
    "jurisdiction": "NF",
    "category": "international",
    "tier": 2,
