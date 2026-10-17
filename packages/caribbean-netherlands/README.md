@@ -7,11 +7,15 @@
 
 1. `intake.md`
 2. `bq-abb.md`
+3. `bq-financial-statements.md`
+4. `bq-formation.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 

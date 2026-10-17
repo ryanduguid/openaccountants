@@ -1,6 +1,7 @@
 # OpenAccountants — Skill Quality Tiers
 
-How we measure whether a skill is ready for production use.
+Quality tiers record a guide's review status. Check its scope, period, sources
+and unresolved conditions before deciding whether it supports the intended use.
 
 Every published guide uses one of **two tiers**: accountant-reviewed or source-cited draft.
 
@@ -10,72 +11,49 @@ Every published guide uses one of **two tiers**: accountant-reviewed or source-c
 
 | Tier | Label | What it means | Legacy identifier |
 |------|-------|--------------|-------------------|
-| **1** | **Accountant-reviewed** | A licensed practitioner has reviewed the skill, run it against real (or representative) data, and signed off. Errors found during use have been corrected. The skill is current with the latest tax-year rates and filing forms. | `accountant-verified` |
-| **2** | **Source-cited draft** | Every rate, threshold, form number, and deadline has been drafted from authoritative sources — tax-authority publications and the relevant statutes. Format matches the accountant-reviewed standard. Awaiting a full review by an accountant. | `research-verified` |
-
-That's it. If a skill is published, it is one of those two.
+| **1** | **Accountant-reviewed** | The guide records a practitioner's sign-off. Read its scope, date, reviewer attribution and separate `review_status`; substantive edits may await renewed review. The tier alone does not establish current law or suitability for an engagement. | `accountant-verified` |
+| **2** | **Source-cited draft** | The guide provides cited research within its declared scope and identifies unresolved conditions. It awaits full accountant review. Bounded references may leave mandatory operational requirements unresolved. | `research-verified` |
 
 > **Display label vs. stored identifier.** The machine identifiers do not change: frontmatter still uses `tier: 1|2` and `verified_by:`, and legacy badges/enums still say `accountant-verified` / `research-verified`. What changed is the **display language**: Tier 1 is written as **"accountant-reviewed"** and Tier 2 as **"source-cited draft"** everywhere a human reads it. This doc is the mapping between the two.
 
 ---
 
-## What each tier guarantees
+## What the tiers record
 
 ### Accountant-reviewed (Tier 1)
 
-- A real licensed practitioner (CPA, EA, CA, Steuerberater, expert-comptable, commercialista, asesor fiscal, or equivalent for the jurisdiction) has reviewed it and is named on it in `reviewed_by`, unless they asked for their name to be withheld. Credentials are checked during Partner onboarding at openaccountants.com, outside this repository, and credential numbers are published only when the practitioner opts in (see [PARTNERS.md](../PARTNERS.md)).
-- The skill has been used against real client data and refined through filing cycles.
-- The contributor is publicly credited on the skill and at [openaccountants.com](https://www.openaccountants.com).
-- The skill is reviewed at least annually for rate / threshold / form changes.
+- The guide records a reviewer in `reviewed_by` or the legacy `verified_by` field, including a withheld-name attribution where applicable. [PARTNERS.md](../PARTNERS.md) lists the recorded reviewers. Verify credentials and the engagement scope independently; this fork does not certify upstream onboarding.
+- Read the recorded sign-off and any test evidence for the text and period it covers. The tier does not prove that every guide was used with client data, filed repeatedly or reviewed annually.
+- A substantive edit can leave a Tier 1 guide at `pending_review`. Its previous sign-off does not certify the changed text or every later change to a shared dependency.
 
 ### Source-cited draft (Tier 2)
 
-- The skill follows the accountant-reviewed format (Step 0 onboarding → Step N output).
-- Every figure carries a primary-source citation (statute, regulation, tax authority notice).
-- Deep research against the tax authority's published guidance has been completed.
-- It is **not** a substitute for accountant review of an actual filing. The reviewer brief always says so.
-- It is the right tier to use *as a starting point* — your accountant reviews and signs off before you file.
+- Follow the canonical template and applicable workflow contracts below.
+- Material rates, thresholds, forms, deadlines and legal positions require period-appropriate primary sources. Secondary summaries can corroborate those sources.
+- Research supports only the guide's declared scope. Read its source limits, completion register and operational holds; publication does not establish comprehensive research or country coverage.
+- The professional reviewer must resolve applicable source, fact and delivery conditions before filing or acting on an output. A draft cannot replace that review.
 
 ---
 
 ## The standard skill format
 
-Every published skill, in either tier, must use this section order:
+Use [skill-template.md](skill-template.md) for frontmatter and body requirements,
+with [CONTRIBUTING.md](../CONTRIBUTING.md) for the applicable foundation bases.
+The loaded universal and domain contracts govern execution order, confirmation,
+refusals, outputs and checks. Country content supplies the substantive rules and
+source conditions. A VAT return outline does not prescribe formation or
+financial-statement sections.
 
-```
-## Skill Metadata                          ← who, what, where
-## Confidence Tier Definitions             ← T1 / T2 / T3 rules within the skill
-## Step 0: Client Onboarding Questions     ← FIRST — gate before any work
-## Step 1: Transaction Classification      ← sale/purchase, location, rate
-## Step 2: Box/Line Assignment             ← deterministic lookup tables
-## Step 3: Reverse Charge Mechanics        ← cross-border rules
-## Step 4: Deductibility Check             ← blocked categories
-## Step 5: Derived Calculations            ← computed boxes/totals
-## Step 6: Key Thresholds                  ← registration, filing, penalties
-## Step 7: Filing Deadlines                ← dates, frequencies
-## Step 8: [Country-specific section]      ← e.g., Article 11, Kleinunternehmer
-## PROHIBITIONS                            ← hard stops
-## Edge Case Registry                      ← numbered EC1, EC2, etc.
-## Test Suite                              ← numbered tests with expected output
-## Reviewer Escalation Protocol            ← T2/T3 output templates
-## Contribution Notes                      ← how to adapt for other jurisdictions
-## Disclaimer                              ← standard liability + openaccountants.com
-```
-
-Key rules:
-
-- Step 0 (onboarding) is ALWAYS first — never buried at the end.
-- Box / line assignments are **deterministic lookup tables**, not narrative text.
-- Classification matrices use **tables**, not paragraphs.
-- No "Overview" or "What is VAT?" sections — this is an execution skill, not a textbook.
-- Every rule tagged with confidence tier `[T1]`, `[T2]`, or `[T3]` (these are *within-skill* rule confidence, not the overall quality tier).
-- PROHIBITIONS section comes before edge cases.
+State the supported scope, period and primary sources. Include reproducible
+examples, edge cases, checks and the required disclaimer and canonical contact
+block. Identify incomplete mandatory slots and hold unsupported operational
+work. Within-guide rule confidence is separate from the overall quality tier.
 
 ---
 
 ## Current inventory
 
-**1,894 Guides** across **247 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,896 Guides** across **247 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -93,7 +71,11 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-Everything else in this repo — 1,711 of the 1,875 indexed guides, covering 184 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
+There are 1,732 Tier 2 guides among the 1,896 indexed guides. These inventory
+counts do not establish comprehensive country coverage or a completed source
+chain for every draft. Read each guide's date, cited sources, scope and open
+conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
+[COUNTRY-COVERAGE.md](COUNTRY-COVERAGE.md) for country-presence limits.
 
 ---
 
@@ -124,20 +106,23 @@ Everything else in this repo — 1,711 of the 1,875 indexed guides, covering 184
 
 ## How a skill moves from source-cited draft to accountant-reviewed
 
-1. A credentialed practitioner in the jurisdiction picks up the skill.
-2. They review the rates, thresholds, forms, and deadlines against current law.
-3. They run the skill against representative or real client data.
-4. They submit corrections (web form at openaccountants.com or GitHub PR).
-5. A skill maintainer merges the corrections; the skill is tagged with the practitioner's name and credential.
-6. The skill is bumped to **accountant-reviewed** in the next release.
-
-The practitioner is credited publicly. Their profile lists all the skills they've signed off.
+Follow [CONTRIBUTING.md, Review](../CONTRIBUTING.md#review). A named, licensed
+practitioner reviews the complete guide and its applicable sources, makes any
+corrections, tests representative cases and signs it off in a pull request
+setting `tier: 1` and their name and credential in `reviewed_by`. Maintainers
+review and merge that contribution; they do not set Tier 1 on a practitioner's
+behalf. A name on a Tier 2 guide or corrections submitted without that complete
+sign-off do not promote it. Use redacted representative records for agent work;
+do not submit private client data as repository or model inputs.
 
 ---
 
 ## Authoritative research sources
 
-These are the sources a source-cited draft must be drafted and cross-checked against. The same sources are recommended to practitioners reviewing their jurisdiction.
+Use applicable statutes, regulations and tax-authority publications as primary
+authority for the requested period. The directories below are starting points;
+commercial summaries provide corroboration and cannot replace missing primary
+law. Verify the actual source and its scope before relying on it.
 
 ### Global / multi-jurisdiction
 
