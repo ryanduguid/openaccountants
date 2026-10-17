@@ -275,8 +275,9 @@ top-up computation or blanket zero conclusion. [MIN-TAX, articles 1.2 and 2.1–
 Keep tax returns/payments separate from the top-up information return and
 notification. BES article 7b.2 generally uses a tax-return deadline set no earlier
 than seventeen months after period-end and payment within seventeen months.
-Article 7b.8 provides conditional transition rules with twenty months for
-tax return/payment and eighteen months for information/notification. Paragraph
+Article 7b.8 conditionally sets the transition tax-return deadline no earlier
+than twenty months after period-end, payment within twenty months, and
+information/notification within eighteen months. Paragraph
 4 limits that transition route; article 7b.9 adds specific rules for the
 specified early-ending years. Establish the entity's reporting year and
 complete exceptions before selecting a calendar or treating a deadline as met.
@@ -306,7 +307,7 @@ was tested. This guide does not establish comprehensive country coverage.
 ## Primary sources and read scope
 
 Read on 17 October 2026. The complete BES distribution-tax chapter was read and
-compared across the January, February and April 2026 texts and a fresh current
+compared across the [January][B-JAN], [February][B-FEB] and [April][B1] 2026 texts and a fresh current
 capture: after removing explicit interface labels and whitespace, it matches.
 Selected general provisions and the complete BES minimum-tax chapter were read.
 The European Netherlands Acts were read only for the cited residence and
