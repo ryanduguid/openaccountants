@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T08:15:59+00:00",
+ "generated_at": "2026-10-17T08:23:43+00:00",
  "counts": {
-  "guides": 1908,
+  "guides": 1909,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -6016,6 +6016,19 @@
    "slug": "bq-social-contributions",
    "path": "skills/international/caribbean-netherlands/bq-social-contributions.md",
    "name": "bq-social-contributions",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-statia-tourist-tax",
+   "path": "skills/international/caribbean-netherlands/bq-statia-tourist-tax.md",
+   "name": "bq-statia-tourist-tax",
    "jurisdiction": "BQ",
    "category": "international",
    "tier": 2,

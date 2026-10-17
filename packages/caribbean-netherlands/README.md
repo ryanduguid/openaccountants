@@ -18,9 +18,10 @@
 11. `bq-payroll.md`
 12. `bq-property-tax.md`
 13. `bq-social-contributions.md`
-14. `bq-tax-compliance.md`
-15. `bq-tax-system.md`
-16. `bq-transfer-tax.md`
+14. `bq-statia-tourist-tax.md`
+15. `bq-tax-compliance.md`
+16. `bq-tax-system.md`
+17. `bq-transfer-tax.md`
 
 ## Shared files this package needs
 
