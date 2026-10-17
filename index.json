@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T07:43:05+00:00",
+ "generated_at": "2026-10-17T08:15:59+00:00",
  "counts": {
-  "guides": 1906,
+  "guides": 1908,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -5974,6 +5974,19 @@
    "last_updated": "2026-10-17"
   },
   {
+   "slug": "bq-inheritance-gifts",
+   "path": "skills/international/caribbean-netherlands/bq-inheritance-gifts.md",
+   "name": "bq-inheritance-gifts",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
    "slug": "bq-payroll",
    "path": "skills/international/caribbean-netherlands/bq-payroll.md",
    "name": "bq-payroll",
@@ -6016,6 +6029,19 @@
    "slug": "bq-tax-compliance",
    "path": "skills/international/caribbean-netherlands/bq-tax-compliance.md",
    "name": "bq-tax-compliance",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-tax-system",
+   "path": "skills/international/caribbean-netherlands/bq-tax-system.md",
+   "name": "bq-tax-system",
    "jurisdiction": "BQ",
    "category": "international",
    "tier": 2,
