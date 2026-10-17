@@ -9,21 +9,22 @@
 2. `bq-abb.md`
 3. `bq-bonaire-ground-tax.md`
 4. `bq-corporate-tax.md`
-5. `bq-customs-valuation.md`
-6. `bq-double-tax-relief.md`
-7. `bq-excise.md`
-8. `bq-financial-statements.md`
-9. `bq-formation.md`
-10. `bq-gambling-tax.md`
-11. `bq-income-tax.md`
-12. `bq-inheritance-gifts.md`
-13. `bq-payroll.md`
-14. `bq-property-tax.md`
-15. `bq-social-contributions.md`
-16. `bq-statia-tourist-tax.md`
-17. `bq-tax-compliance.md`
-18. `bq-tax-system.md`
-19. `bq-transfer-tax.md`
+5. `bq-customs-clearance.md`
+6. `bq-customs-valuation.md`
+7. `bq-double-tax-relief.md`
+8. `bq-excise.md`
+9. `bq-financial-statements.md`
+10. `bq-formation.md`
+11. `bq-gambling-tax.md`
+12. `bq-income-tax.md`
+13. `bq-inheritance-gifts.md`
+14. `bq-payroll.md`
+15. `bq-property-tax.md`
+16. `bq-social-contributions.md`
+17. `bq-statia-tourist-tax.md`
+18. `bq-tax-compliance.md`
+19. `bq-tax-system.md`
+20. `bq-transfer-tax.md`
 
 ## Shared files this package needs
 
