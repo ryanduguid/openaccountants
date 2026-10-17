@@ -16,7 +16,7 @@ tax_year: 2026
 tax_year_notes: "System-scope reference checked on 17 October 2026; establish the version applicable to each event"
 tier: 2
 last_updated: 2026-10-17
-version: 0.6
+version: 0.7
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -70,7 +70,7 @@ Act. Determine each applicable charge independently. [B1]; [START]
 | Personal income, own home, business or non-resident income | `bq-income-tax`; establish chargeable income, deductions, year and taxpayer status. |
 | Entity residence, distributions, deemed European Netherlands treatment or minimum tax | `bq-corporate-tax`; incorporation alone does not establish exemption from profit taxation elsewhere. |
 | Employer withholding and social or health charges | `bq-payroll` and `bq-social-contributions`; withholding and insurance coverage have different tests. |
-| Supplies, services, imports and recovery | `bq-abb`, `bq-customs-valuation` and `bq-excise`; establish each separate charge and its operative conditions. An ABB exemption does not establish a customs exemption. |
+| Supplies, services, imports, warehousing and recovery | `bq-abb`, `bq-customs-valuation`, `bq-excise` and `bq-warehouses-hde`; establish each separate charge, regime and operative condition. An ABB exemption does not establish a customs exemption or HDE admission. |
 | Annual property, ground tax or acquisition | `bq-property-tax`, `bq-bonaire-ground-tax` and `bq-transfer-tax`; separate annual liability, island additions and transaction tax. |
 | Gaming operator or prize | `bq-gambling-tax`; establish the licence, statutory taxpayer, base and period. |
 | Inheritance, gift or personal goods arriving on an island | `bq-inheritance-gifts` for succession/gift-tax scope and `bq-personal-import-relief` for selected moving, inherited/student goods, parcels, gifts and baggage exemptions. Relief from one charge does not establish relief from another. |

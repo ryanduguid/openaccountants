@@ -28,6 +28,7 @@
 21. `bq-tax-compliance.md`
 22. `bq-tax-system.md`
 23. `bq-transfer-tax.md`
+24. `bq-warehouses-hde.md`
 
 ## Shared files this package needs
 

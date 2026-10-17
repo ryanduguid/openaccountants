@@ -1527,6 +1527,7 @@
     "bq-tax-compliance.md",
     "bq-tax-system.md",
     "bq-transfer-tax.md",
+    "bq-warehouses-hde.md",
     "README.md"
    ],
    "shared": [
