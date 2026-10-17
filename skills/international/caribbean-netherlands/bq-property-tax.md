@@ -18,7 +18,7 @@ tax_year: 2026
 tax_year_notes: "Calendar 2026 national vastgoedbelasting reference; individual valuation and relief decisions require separate verification"
 tier: 2
 last_updated: 2026-10-17
-version: 0.2
+version: 0.3
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -175,10 +175,32 @@ articles 1.5 and 4.4(k); I1, article 4; L2, article 43]
 The captured 2025 and 2026 article 4 and 6 texts match. The official article
 histories identify the 2025 amendment as their latest displayed change. That
 amendment added article 4's main-residence words from 1 January 2025. The
-separately listed own-home costs instrument and the original 2010 commencement
-instruments were not read for this reference. Do not infer vacant-home,
-former-home or construction concessions beyond article 4.4's express rules.
+original 2010 commencement instruments were not read for this reference.
 [H1, article II(A)–(B); H2; I1–I3]
+
+The separately listed own-home policy is now read. It uses the Belastingwet BES
+article 8.19 hardship power for two distinct income-tax approvals. Section 2.1
+treats a home under construction or a building plot as an own home once concrete
+construction steps have been taken. It identifies the new-build purchase and
+construction agreement and, once building work has started on a plot, a
+presumption that concrete steps began at least six months earlier. [O1–O2,
+section 2.1]
+
+Section 3.1 concerns personal deductions where the own home is empty or under
+construction. It requires evidence of exclusive intended main-residence use in
+the year first treated as an own home or one of the following two years, plus
+the other article 16(1)(h) conditions. That deduction window has a different
+starting event from article 4.4(k)'s 24 months after construction starts.
+[O1–O2, section 3.1]
+
+This 2020 policy predates the 2025 article 4 amendment. Its income-tax approvals
+do not themselves establish how the amended definition and separate property
+conditions apply to an actual object. Article 4.4(a) expressly requires
+main-residence availability; article 4.4(k) has its own land and construction
+conditions. For a case relying on the policy, keep the post-amendment
+interaction as a source condition rather than importing a vacant-home,
+former-home or construction exemption. [B1, article 4.4(a), (k); H1,
+article II(A); O1–O3]
 
 ## Determine the value and relief components
 
@@ -440,6 +462,7 @@ authentication material with the professional, outside agent inputs/outputs.
 - **L2:** [Wet financiën openbare lichamen BES][L2], articles 43–44a, establishing separate local charging powers.
 - **I1:** [Wet inkomstenbelasting BES, from 1 January 2026][I1], articles 1, 4 and 6, for the selected national exemption cross-references. Enterprise status and asset attribution remain unresolved for any actual property.
 - **I2–I3:** Official [article 4][I2] and [article 6][I3] histories, inspected on 16 October 2026; the latest displayed changes are from 1 January 2025. A complete historical force chain is not established.
+- **O1–O3:** [Own-home policy][O1], sections 2.1 and 3.1, its [original official publication][O2] and [publication metadata][O3], read on 17 October 2026. The 10 December 2020 publication and next-day commencement agree with the register's 11 December 2020 start. The income-tax approvals' interaction with the 2025 amendment and separate property conditions remains unresolved.
 - **G1:** [BCN rate guidance][G1]. Historical hotel/Bonaire examples remain on the page; use operative legislation and the current ordinance.
 - **G2:** [BCN valuation announcement, 28 July 2025][G2], identifying the national 2026–2030 programme.
 - **G3:** [Selected BCN FAQ][G3], including valuation, notifications and opcenten. Its old valuation-index and simplified vacant-land wording do not replace current statutory conditions.
@@ -459,6 +482,9 @@ authentication material with the professional, outside agent inputs/outputs.
 [I1]: https://wetten.overheid.nl/BWBR0029281/2026-01-01
 [I2]: https://wetten.overheid.nl/BWBR0029281/2026-01-01/0/HoofdstukII/Artikel4/informatie
 [I3]: https://wetten.overheid.nl/BWBR0029281/2026-01-01/0/HoofdstukII/Artikel6/informatie
+[O1]: https://wetten.overheid.nl/BWBR0044462/2020-12-11
+[O2]: https://zoek.officielebekendmakingen.nl/stcrt-2020-62994.html
+[O3]: https://zoek.officielebekendmakingen.nl/stcrt-2020-62994/metadata.xml
 [G1]: https://www.belastingdienst-cn.nl/onderwerpen/belastingzaken-particulieren/vastgoedbelasting/tarief-vastgoedbelasting
 [G2]: https://www.belastingdienst-cn.nl/actueel/nieuws/2025/juli/28/belastingdienst-caribisch-nederland-voert-vastgoedtaxaties-uit-op-bonaire-sint-eustatius-en-saba
 [G3]: https://www.belastingdienst-cn.nl/onderwerpen/belastingzaken-particulieren/vastgoedbelasting/veel-gestelde-vragen
@@ -467,11 +493,12 @@ authentication material with the professional, outside agent inputs/outputs.
 
 ## Revision and assurance
 
-Version 0.2, 17 October 2026: adds the selected main-home, enterprise-asset and
-bare-land exemption conditions to the national property tax reference and
-its seven hypothetical positions. Principal rounding, complete local property
-taxes, remaining exemption prerequisites and operational procedures remain open. This
-draft does not establish comprehensive property-topic or country coverage.
+Version 0.3, 17 October 2026: records the own-home policy's separate income-tax
+approvals and their unresolved interaction with the amended property rules.
+The seven hypothetical positions are unchanged. Principal rounding, complete
+local property taxes, remaining exemption prerequisites and operational
+procedures remain open. This draft does not establish comprehensive
+property-topic or country coverage.
 
 This guide supports professional review and does not constitute tax, legal
 or financial advice. The professional verifies the sources, decisions,

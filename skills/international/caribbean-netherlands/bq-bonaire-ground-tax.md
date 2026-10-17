@@ -16,7 +16,7 @@ tax_year: 2026
 tax_year_notes: "2026 Bonaire local grondbelasting reference; no operative Saba or Sint Eustatius local ground-tax regime established"
 tier: 2
 last_updated: 2026-10-17
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -78,6 +78,16 @@ other than temporarily, with ownership of the dwelling, its land held in
 branch does not establish a general exemption or charging rule for every
 rented dwelling. Resolve the right, residence, enterprise-asset attribution
 and any mixed use for the actual object. [I1, article 4; L1, article 1]
+
+The 2020 own-home policy separately describes construction-related own-home
+treatment and conditional personal deductions for an empty or unfinished
+future main home. It predates the 2025 main-residence amendment to article 4.
+Those income-tax approvals do not by themselves establish the local own-home
+charging branch, which expressly requires main-residence availability. For a
+case relying on that policy, resolve its post-amendment interaction before
+selecting an assessment or nil levy. Do not import the policy's deduction
+window as a local valuation or payment period. [L1, article 1; I1, article 4;
+O1–O2, sections 2.1 and 3.1]
 
 An object can be built property, unbuilt property, an independently usable
 part, or a qualifying combination used by the same taxpayer and belonging
@@ -261,6 +271,7 @@ the professional, outside agent inputs and outputs.
 - **L1–L2:** [Eilandsverordening grondbelasting Bonaire][L1] and its [official metadata/history][L2], current displayed text from 1 January 2011, inspected on 17 October 2026. Authentic original and exhaustive amendment chain remain unverified.
 - **F1:** [Wet financiën openbare lichamen Bonaire, Sint Eustatius en Saba][F1], articles 43–52, 67, 83–84 and selected 101a–101e transition provisions.
 - **I1:** [Wet inkomstenbelasting BES, from 1 January 2026][I1], articles 4 and 6. Actual enterprise, residence and asset attribution require separate determination.
+- **O1–O3:** [Own-home policy][O1], sections 2.1 and 3.1, its [original publication][O2] and [publication metadata][O3], read on 17 October 2026. These are income-tax approvals, not a verified local ground-tax concession. Their interaction with the amended article 4 and local main-residence condition remains open.
 - **P1:** [Bonaire liable-person selection policy][P1], articles I–II, current displayed text from 29 September 2011.
 - **L4:** [Uitvoeringsregeling eilandsbelastingen Bonaire][L4], articles 1–5 and annex headings; no actual form was opened or adopted as a ground-tax filing method.
 - **L5:** [Legacy fifteen-opcenten ordinance][L5], read with F1's transition provisions; not selected as an additional 2026 charge.
@@ -270,6 +281,9 @@ the professional, outside agent inputs and outputs.
 [L2]: https://lokaleregelgeving.overheid.nl/CVDR355362?show-wti=true
 [F1]: https://wetten.overheid.nl/BWBR0028151/2023-01-01
 [I1]: https://wetten.overheid.nl/BWBR0029281/2026-01-01
+[O1]: https://wetten.overheid.nl/BWBR0044462/2020-12-11
+[O2]: https://zoek.officielebekendmakingen.nl/stcrt-2020-62994.html
+[O3]: https://zoek.officielebekendmakingen.nl/stcrt-2020-62994/metadata.xml
 [P1]: https://lokaleregelgeving.overheid.nl/CVDR357428/1
 [L4]: https://lokaleregelgeving.overheid.nl/CVDR361286/1
 [L5]: https://lokaleregelgeving.overheid.nl/CVDR795
@@ -277,10 +291,10 @@ the professional, outside agent inputs and outputs.
 
 ## Revision and assurance
 
-Version 0.1, 17 October 2026: selected Bonaire local ground-tax reference and
-five hypothetical positions. The operational completion conditions remain
-open. This unpublished draft does not establish
-comprehensive property-topic or country coverage.
+Version 0.2, 17 October 2026: adds the own-home policy's scope and preserves the
+unresolved local charging interaction. The five hypothetical positions and
+operational completion conditions are unchanged. This source-cited draft does
+not establish comprehensive property-topic or country coverage.
 
 This guide supports professional review and does not constitute tax, legal or
 financial advice. The professional verifies the sources, decisions,
