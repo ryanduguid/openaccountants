@@ -8,8 +8,9 @@
 1. `intake.md`
 2. `nf-gst.md`
 3. `nf-income-tax.md`
-4. `nf-super-guarantee.md`
-5. `nf-tax-system.md`
+4. `nf-medicare.md`
+5. `nf-super-guarantee.md`
+6. `nf-tax-system.md`
 
 ## Shared files this package needs
 

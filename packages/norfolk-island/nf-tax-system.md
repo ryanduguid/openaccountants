@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 17 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-17
-version: 0.3
+version: 0.4
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -60,7 +60,8 @@ applicable Australian law; income character and source; the income year;
 available deductions and offsets; and the relevant rates and relief.
 Treat company, trust, partnership and sole-trader positions separately.
 Use `nf-income-tax` for selected individual residence, ordinary 2026–27
-rates, work-expense deductions and zone offset rules. This scope guide
+rates, work-expense deductions, low income and zone offset rules, and
+`nf-medicare` for selected levy and surcharge rules. This scope guide
 supplies no income-tax, company-tax or Medicare rate table.
 An administering state's general table must be checked for the actual
 Norfolk facts and period before use.
