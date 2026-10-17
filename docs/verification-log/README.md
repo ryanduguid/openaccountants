@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-17 | [Norfolk Island tax application and employer super](2026-10-17-norfolk-tax-scope-super.md) |
 | 2026-10-17 | [BES warehouses and HDE: permissions, tax bridges and export pointers](2026-10-17-bes-warehouses-hde.md) |
 | 2026-10-17 | [BES penalties: statutory ceilings, policy and correction boundaries](2026-10-17-bes-penalties-corrections.md) |
 | 2026-10-17 | [BES personal imports: separate reliefs, ages and indivisible goods](2026-10-17-bes-personal-import-relief.md) |

@@ -3731,6 +3731,21 @@
     "workflow-base.md"
    ]
   },
+  "norfolk-island": {
+   "jurisdiction": "NF",
+   "name": "Norfolk Island",
+   "files": [
+    "intake.md",
+    "nf-super-guarantee.md",
+    "nf-tax-system.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "north-macedonia": {
    "jurisdiction": "MK",
    "name": "North Macedonia",
