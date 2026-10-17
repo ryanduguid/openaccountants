@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 17 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-17
-version: 0.6
+version: 0.7
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -100,6 +100,11 @@ contractor description is not a finding that
 every contractor is outside super: the SG Act expands employee status to
 specified labour contracts. Use `nf-super-guarantee`. [WORKERS];
 [SG, section 12][SG]
+
+Use `nf-employment-pay` for selected wage floors, ongoing Norfolk service
+modifications, leave, notice/redundancy and payslip/record requirements.
+Employment pay, tax withholding and employer super require their own bases
+and conditions; together these references still leave payroll slots open.
 
 ## Island transactions and mainland GST connections
 
@@ -199,7 +204,7 @@ branches, comprehensive consumption/imports,
 full payroll and employment standards, social programmes beyond selected
 SG/Medicare rules, entity formation and
 reporting, withholding/treaties/transfer pricing, property and transaction
-charges, compliance and other special regimes open. No complete-country
+charges, compliance and other special regimes remain open. No complete-country
 credit, practitioner sign-off or engagement output package is claimed.
 
 [REFORM]: https://www.legislation.gov.au/C2015A00053/asmade

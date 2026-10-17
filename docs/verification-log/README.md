@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-17 | [Norfolk Island employment pay, leave and payslips](2026-10-17-norfolk-employment-pay.md) |
 | 2026-10-17 | [Norfolk Island PAYG withholding and payroll reporting](2026-10-17-norfolk-payg-withholding.md) |
 | 2026-10-17 | [Norfolk Island company rates, losses and franking](2026-10-17-norfolk-company-tax.md) |
 | 2026-10-17 | [Norfolk Island Medicare levy, surcharge and low income offset](2026-10-17-norfolk-medicare-offsets.md) |

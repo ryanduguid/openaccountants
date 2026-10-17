@@ -18,7 +18,7 @@ tax_year: 2026
 tax_year_notes: "Selected PAYG instrument applies from 1 July 2026; reporting and payment periods must be established separately; checked 17 October 2026"
 tier: 2
 last_updated: 2026-10-17
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -32,6 +32,10 @@ exceptions. Norfolk income-tax inclusion does not mean that every
 mainland indirect-tax rule applies. This reference concerns selected PAYG
 rules, not a separate Norfolk income-tax system. [TAA, sections 3 and
 3AA][TAA]; [DICT, section 960-505][DICT]
+
+Use `nf-employment-pay` for selected wage floors, Norfolk service rules,
+leave, notice/redundancy and payslip/record duties. Neither reference fills
+every payroll country slot or establishes an actual gross wage entitlement.
 
 Load `workflow-base` and `payroll-workflow-base`. Preserve their source and
 period gates, confirmed profile, refusal messages, four universal outputs
@@ -355,9 +359,8 @@ scopes and fictional checks are recorded in the dated verification log.
 [TAA-LATEST]; [REFORM2]; [WITHHOLD-LATEST]
 
 Special-payment and variation calculations, all SG/social programmes,
-FBT, employment classification disputes, minimum wages/awards, overtime,
-mandatory benefits, leave/termination entitlements, payslip fields,
-recordkeeping, pay frequency, court deductions, workers compensation,
+FBT, employment classification disputes, actual awards, overtime,
+unaddressed employment standards and benefits, court deductions, workers compensation,
 state/local payroll charges and the full payroll country contract remain
 open. No blanket absence of another charge, professional sign-off, model
 engagement benchmark or comprehensive-country acceptance is claimed.

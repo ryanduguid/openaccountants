@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T11:55:27+00:00",
+ "generated_at": "2026-10-17T12:11:32+00:00",
  "counts": {
-  "guides": 1923,
+  "guides": 1924,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -15781,6 +15781,19 @@
    "name": "nf-company-tax",
    "jurisdiction": "NF",
    "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-employment-pay",
+   "path": "skills/international/norfolk-island/nf-employment-pay.md",
+   "name": "nf-employment-pay",
+   "jurisdiction": "NF",
+   "category": "payroll",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
