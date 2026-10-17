@@ -1505,8 +1505,10 @@
    "files": [
     "intake.md",
     "bq-abb.md",
+    "bq-bonaire-ground-tax.md",
     "bq-financial-statements.md",
     "bq-formation.md",
+    "bq-property-tax.md",
     "README.md"
    ],
    "shared": [

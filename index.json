@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-16T14:29:30+00:00",
+ "generated_at": "2026-10-17T00:27:48+00:00",
  "counts": {
-  "guides": 1896,
+  "guides": 1898,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -5883,6 +5883,19 @@
    "last_updated": "2026-10-16"
   },
   {
+   "slug": "bq-bonaire-ground-tax",
+   "path": "skills/international/caribbean-netherlands/bq-bonaire-ground-tax.md",
+   "name": "bq-bonaire-ground-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
    "slug": "bq-financial-statements",
    "path": "skills/international/caribbean-netherlands/bq-financial-statements.md",
    "name": "bq-financial-statements",
@@ -5901,6 +5914,19 @@
    "name": "bq-formation",
    "jurisdiction": "BQ",
    "category": "formation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-property-tax",
+   "path": "skills/international/caribbean-netherlands/bq-property-tax.md",
+   "name": "bq-property-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
