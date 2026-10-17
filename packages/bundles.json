@@ -3736,6 +3736,7 @@
    "name": "Norfolk Island",
    "files": [
     "intake.md",
+    "nf-gst.md",
     "nf-super-guarantee.md",
     "nf-tax-system.md",
     "README.md"
@@ -3743,6 +3744,7 @@
    "shared": [
     "foundation.md",
     "social-contributions-workflow-base.md",
+    "vat-workflow-base.md",
     "workflow-base.md"
    ]
   },

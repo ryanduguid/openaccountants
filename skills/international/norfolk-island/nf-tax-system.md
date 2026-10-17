@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 17 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-17
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -109,6 +109,9 @@ supplies, and any input-credit conditions. Registration does not by itself
 make its Norfolk sales taxable. Mainland suppliers' goods may be sold
 GST-free only when the export conditions are met; a Norfolk destination
 alone is not proof of export or an automatic refund. [GST]
+
+Use `nf-gst` for selected connection, registration, export and credit rules.
+Its examples and source gates do not complete an actual GST return.
 
 The ATO mainland-transactions page contains separate refund, voluntary
 registration, credit, backdating and BAS branches. This guide does not
