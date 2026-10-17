@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-17 | [BES personal income tax: tariff, credits and unresolved home relief](2026-10-17-bes-personal-income-reference.md) |
 | 2026-10-17 | [BES property references: accepted revision and own-home policy scope](2026-10-17-bes-property-references.md) |
 | 2026-10-17 | [BES company references: accepted revision and verification limits](2026-10-17-bes-company-references.md) |
 | 2026-10-16 | [Finland: 2025 income, contribution and business corrections](2026-10-16-finland-2025-income-corrections.md) |
