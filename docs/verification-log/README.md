@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-17 | [Cross-border coordination: source precedence and unresolved conditions](2026-10-17-cross-border-source-contract.md) |
 | 2026-10-17 | [BES gambling tax: distinct persons, bases and collection branches](2026-10-17-bes-gambling-tax.md) |
 | 2026-10-17 | [BES double-tax relief: separate instruments and directional methods](2026-10-17-bes-double-tax-relief.md) |
 | 2026-10-17 | [BES compliance: distinct deadlines and older collection policy](2026-10-17-bes-tax-compliance.md) |

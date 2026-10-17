@@ -17,10 +17,11 @@ tax_year: 2026
 tax_year_notes: "2026 reference using BRN current from 2025 and unilateral decree current from 2011; verify each source country and relevant period"
 tier: 2
 last_updated: 2026-10-17
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
+  - cross-border-workflow-base
 ---
 
 # Bonaire, Sint Eustatius and Saba: double-tax relief in 2026
@@ -33,7 +34,8 @@ the circumstances. USD means United States dollar. Belastingwet BES articles
 relief. A geographical connection alone does not establish a tax or exemption.
 [B1, articles 1.1–1.5 and 8.120–8.121][B1]
 
-Load `workflow-base` and every applicable BES tax/domain companion, including
+Load `workflow-base`, `cross-border-workflow-base` and every applicable BES
+tax/domain companion, including
 `bq-income-tax`, `bq-corporate-tax`, `bq-payroll`, `bq-social-contributions` and
 `bq-tax-compliance`. Preserve source gates, confirmed profile, refusals, the
 four universal outputs and all applicable domain outputs/checks. This Tier 2

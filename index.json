@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-17T07:33:30+00:00",
+ "generated_at": "2026-10-17T07:43:05+00:00",
  "counts": {
   "guides": 1906,
   "jurisdictions": 247,
@@ -1432,9 +1432,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "crypto-tax-workflow-base",
