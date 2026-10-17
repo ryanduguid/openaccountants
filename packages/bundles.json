@@ -3737,12 +3737,14 @@
    "files": [
     "intake.md",
     "nf-gst.md",
+    "nf-income-tax.md",
     "nf-super-guarantee.md",
     "nf-tax-system.md",
     "README.md"
    ],
    "shared": [
     "foundation.md",
+    "income-tax-workflow-base.md",
     "social-contributions-workflow-base.md",
     "vat-workflow-base.md",
     "workflow-base.md"
