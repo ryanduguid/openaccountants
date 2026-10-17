@@ -6,8 +6,9 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `nf-super-guarantee.md`
-3. `nf-tax-system.md`
+2. `nf-gst.md`
+3. `nf-super-guarantee.md`
+4. `nf-tax-system.md`
 
 ## Shared files this package needs
 
@@ -15,6 +16,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`foundation.md`](../_shared/foundation.md)
 - [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 
 
