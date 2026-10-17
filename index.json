@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T08:23:43+00:00",
+ "generated_at": "2026-10-17T08:39:40+00:00",
  "counts": {
-  "guides": 1909,
+  "guides": 1911,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -5909,9 +5909,35 @@
    "last_updated": "2026-10-17"
   },
   {
+   "slug": "bq-customs-valuation",
+   "path": "skills/international/caribbean-netherlands/bq-customs-valuation.md",
+   "name": "bq-customs-valuation",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
    "slug": "bq-double-tax-relief",
    "path": "skills/international/caribbean-netherlands/bq-double-tax-relief.md",
    "name": "bq-double-tax-relief",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-excise",
+   "path": "skills/international/caribbean-netherlands/bq-excise.md",
+   "name": "bq-excise",
    "jurisdiction": "BQ",
    "category": "international",
    "tier": 2,
