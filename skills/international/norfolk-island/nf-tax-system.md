@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 17 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-17
-version: 0.5
+version: 0.6
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -92,9 +92,11 @@ identifiers through this guide; record reviewer-held readiness instead.
 [WORKERS]
 
 The worker page says STP reports are due on or before payday and separates
-payments outside STP. Actual withholding tables, reporting concessions,
-finalisation, remittance periods, forms and corrections require a current
-payroll analysis. Its general contractor description is not a finding that
+payments outside STP. Use `nf-payg-withholding` for selected current
+coefficients, declaration rules, supplier territorial tests, remittance and
+reporting. Actual concessions, special calculations, forms and corrections
+still require their applicable rules and facts. The worker page's general
+contractor description is not a finding that
 every contractor is outside super: the SG Act expands employee status to
 specified labour contracts. Use `nf-super-guarantee`. [WORKERS];
 [SG, section 12][SG]
@@ -194,7 +196,8 @@ does not establish that every Australian state tax or local Norfolk
 ordinance applies, or that any omitted charge is absent. The linked
 references supply selected substantive rules. Remaining individual/corporate
 branches, comprehensive consumption/imports,
-payroll, social programmes beyond selected SG/Medicare rules, entity formation and
+full payroll and employment standards, social programmes beyond selected
+SG/Medicare rules, entity formation and
 reporting, withholding/treaties/transfer pricing, property and transaction
 charges, compliance and other special regimes open. No complete-country
 credit, practitioner sign-off or engagement output package is claimed.

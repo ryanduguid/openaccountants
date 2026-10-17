@@ -3740,6 +3740,7 @@
     "nf-gst.md",
     "nf-income-tax.md",
     "nf-medicare.md",
+    "nf-payg-withholding.md",
     "nf-super-guarantee.md",
     "nf-tax-system.md",
     "README.md"
@@ -3748,6 +3749,7 @@
     "corporate-income-tax-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
     "vat-workflow-base.md",
     "workflow-base.md"
