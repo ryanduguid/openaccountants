@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T09:30:02+00:00",
+ "generated_at": "2026-10-17T09:44:18+00:00",
  "counts": {
-  "guides": 1915,
+  "guides": 1916,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -5880,7 +5880,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-16"
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "bq-bonaire-ground-tax",
@@ -6146,6 +6146,19 @@
    "slug": "bq-transfer-tax",
    "path": "skills/international/caribbean-netherlands/bq-transfer-tax.md",
    "name": "bq-transfer-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-warehouses-hde",
+   "path": "skills/international/caribbean-netherlands/bq-warehouses-hde.md",
+   "name": "bq-warehouses-hde",
    "jurisdiction": "BQ",
    "category": "international",
    "tier": 2,

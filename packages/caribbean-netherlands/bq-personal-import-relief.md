@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Selected personal-import relief checked on 17 October 2026; actual event, island, goods and operative conditions required"
 tier: 2
 last_updated: 2026-10-17
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -52,13 +52,21 @@ include the student provisions 3.39–3.40. Do not infer excise relief merely
 because an ABB/duty branch applies. Excise's island/goods scope remains
 separate in `bq-excise`. [B1]; [RULES]
 
-Regulation 3.15(1)(a) excludes its ABB relief where goods exported from an
+Regulation 3.15(1)(a) describes an exclusion from ABB relief where goods exported from an
 island's free circulation are re-imported into that same island after the
 specified zero-rated export treatment. Distilled spirits imported by
 travellers under eighteen have the separate 3.14/3.15 exclusion. The other
 motor-vehicle, fish and packaging exceptions in 3.15 concern their named
 branches, rather than a general override of every personal exemption.
 [RULES]
+
+Its numerical export pointer needs verification: regulation 3.15(1)(a)
+still names B1 6.10(2)(c), while the current Act places its specified
+producer/export/HDE goods zero-rate branch in (d) and uses (c) for the
+specified cars/vans without CO2 emissions. Tax regulation 6.6(1) also retains the (c)
+goods pointer. Hold actual same-island re-import/zero-rate application
+until the mapping is verified; do not silently rewrite either rule.
+Use `bq-warehouses-hde` for the related source comparison. [B1]; [RULES]; [TAX-RULES]
 
 DAB 3.25 defines personal goods by personal/household use and defines
 foreign territory for this title as everything outside the importing
@@ -257,6 +265,7 @@ or practitioner sign-off was used. No comprehensive-area credit is claimed.
 [DAB]: https://wetten.overheid.nl/BWBR0029236/2025-01-01
 [RULES]: https://wetten.overheid.nl/BWBR0029309/2025-01-01
 [B1]: https://wetten.overheid.nl/BWBR0029244/2026-04-11
+[TAX-RULES]: https://wetten.overheid.nl/BWBR0029332/2025-01-01
 [G-TRAVEL]: https://www.belastingdienst-cn.nl/onderwerpen/douanezaken-particulieren/reizigersbagage/reizigersvrijstelling
 [G-MOVE]: https://www.belastingdienst-cn.nl/onderwerpen/douanezaken-particulieren/verhuizen/verhuizen-naar-caribisch-nederland
 [G-GIFT]: https://www.belastingdienst-cn.nl/onderwerpen/belastingzaken-particulieren/abb-algemene-bestedingsbelasting-particulieren/familielid-kennis-heeft-goederen-toegezonden

@@ -16,8 +16,8 @@ category: international
 tax_year: 2026
 tax_year_notes: "Calendar 2026 ABB reference; retrospective threshold correction included"
 tier: 2
-last_updated: 2026-10-16
-version: 0.1
+last_updated: 2026-10-17
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -137,6 +137,14 @@ and 6.19a]
 
 There is no factual default for island, establishment, producer status, place,
 vehicle status or exemption eligibility. Missing evidence produces Needs Input.
+
+Use `bq-warehouses-hde` for selected warehouse/HDE controls. The current Act
+places its specified producer/export/HDE goods zero-rate branch in 6.10(2)(d),
+while R1 6.6(1) retains a goods pointer to (c). The customs re-import rule
+has the same letter mismatch. Hold actual export/re-import application
+until the legal mapping is verified, preserving records and the full
+financial output-package hold. This source comparison does not newly
+revalidate the other figures in this reference. [B1, R1]
 
 ### Determine the liable person, base and tax point
 
