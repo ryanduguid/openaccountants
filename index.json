@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T05:10:11+00:00",
+ "generated_at": "2026-10-17T05:46:44+00:00",
  "counts": {
-  "guides": 1899,
+  "guides": 1901,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -5935,9 +5935,35 @@
    "last_updated": "2026-10-17"
   },
   {
+   "slug": "bq-payroll",
+   "path": "skills/international/caribbean-netherlands/bq-payroll.md",
+   "name": "bq-payroll",
+   "jurisdiction": "BQ",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
    "slug": "bq-property-tax",
    "path": "skills/international/caribbean-netherlands/bq-property-tax.md",
    "name": "bq-property-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-social-contributions",
+   "path": "skills/international/caribbean-netherlands/bq-social-contributions.md",
+   "name": "bq-social-contributions",
    "jurisdiction": "BQ",
    "category": "international",
    "tier": 2,

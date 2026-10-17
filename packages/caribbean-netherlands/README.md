@@ -11,7 +11,9 @@
 4. `bq-financial-statements.md`
 5. `bq-formation.md`
 6. `bq-income-tax.md`
-7. `bq-property-tax.md`
+7. `bq-payroll.md`
+8. `bq-property-tax.md`
+9. `bq-social-contributions.md`
 
 ## Shared files this package needs
 
@@ -21,6 +23,8 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 
 
