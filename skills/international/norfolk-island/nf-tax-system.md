@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 17 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-17
-version: 0.4
+version: 0.5
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -61,7 +61,9 @@ available deductions and offsets; and the relevant rates and relief.
 Treat company, trust, partnership and sole-trader positions separately.
 Use `nf-income-tax` for selected individual residence, ordinary 2026–27
 rates, work-expense deductions, low income and zone offset rules, and
-`nf-medicare` for selected levy and surcharge rules. This scope guide
+`nf-medicare` for selected levy and surcharge rules. Use `nf-company-tax`
+for ordinary company rates, selected losses, franking and minimum-tax
+screening. This scope guide
 supplies no income-tax, company-tax or Medicare rate table.
 An administering state's general table must be checked for the actual
 Norfolk facts and period before use.
@@ -189,9 +191,10 @@ one collection download is not a single uniform law revision.
 
 The ATO guidance supports Australian tax application with exceptions. It
 does not establish that every Australian state tax or local Norfolk
-ordinance applies, or that any omitted charge is absent. This batch leaves
-substantive individual/corporate tax, comprehensive consumption/imports,
-payroll, social programmes beyond selected SG rules, entity formation and
+ordinance applies, or that any omitted charge is absent. The linked
+references supply selected substantive rules. Remaining individual/corporate
+branches, comprehensive consumption/imports,
+payroll, social programmes beyond selected SG/Medicare rules, entity formation and
 reporting, withholding/treaties/transfer pricing, property and transaction
 charges, compliance and other special regimes open. No complete-country
 credit, practitioner sign-off or engagement output package is claimed.
