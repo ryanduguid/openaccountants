@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "2026 national procedure; tax-specific periods, decisions and transitional rules established separately"
 tier: 2
 last_updated: 2026-10-17
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -159,6 +159,10 @@ even though 31 October is Saturday. Establish the actual year, notice and any
 special decision before applying this pattern. [B1]
 
 ## Objection, court appeal and enforcement opposition
+
+Use `bq-penalties-corrections` for selected administrative-penalty ceilings,
+current policy and correction/reduction routes. An actual culpability finding
+or a statutory maximum is not an automatically imposed amount.
 
 Article 8.92 generally permits a reasoned objection within two months after
 the assessment notice date or the stated posted/delivered decision copy's date.
