@@ -8,18 +8,20 @@
 1. `intake.md`
 2. `bq-abb.md`
 3. `bq-bonaire-ground-tax.md`
-4. `bq-financial-statements.md`
-5. `bq-formation.md`
-6. `bq-income-tax.md`
-7. `bq-payroll.md`
-8. `bq-property-tax.md`
-9. `bq-social-contributions.md`
+4. `bq-corporate-tax.md`
+5. `bq-financial-statements.md`
+6. `bq-formation.md`
+7. `bq-income-tax.md`
+8. `bq-payroll.md`
+9. `bq-property-tax.md`
+10. `bq-social-contributions.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
