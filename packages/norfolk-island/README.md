@@ -6,16 +6,18 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `nf-gst.md`
-3. `nf-income-tax.md`
-4. `nf-medicare.md`
-5. `nf-super-guarantee.md`
-6. `nf-tax-system.md`
+2. `nf-company-tax.md`
+3. `nf-gst.md`
+4. `nf-income-tax.md`
+5. `nf-medicare.md`
+6. `nf-super-guarantee.md`
+7. `nf-tax-system.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
