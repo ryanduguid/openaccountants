@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T09:05:56+00:00",
+ "generated_at": "2026-10-17T09:14:12+00:00",
  "counts": {
-  "guides": 1913,
+  "guides": 1914,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -6044,6 +6044,19 @@
    "name": "bq-payroll",
    "jurisdiction": "BQ",
    "category": "payroll",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-personal-import-relief",
+   "path": "skills/international/caribbean-netherlands/bq-personal-import-relief.md",
+   "name": "bq-personal-import-relief",
+   "jurisdiction": "BQ",
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
