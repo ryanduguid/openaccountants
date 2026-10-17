@@ -7,12 +7,13 @@
 
 1. `intake.md`
 2. `nf-company-tax.md`
-3. `nf-gst.md`
-4. `nf-income-tax.md`
-5. `nf-medicare.md`
-6. `nf-payg-withholding.md`
-7. `nf-super-guarantee.md`
-8. `nf-tax-system.md`
+3. `nf-employment-pay.md`
+4. `nf-gst.md`
+5. `nf-income-tax.md`
+6. `nf-medicare.md`
+7. `nf-payg-withholding.md`
+8. `nf-super-guarantee.md`
+9. `nf-tax-system.md`
 
 ## Shared files this package needs
 
