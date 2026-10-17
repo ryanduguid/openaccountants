@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-17 | [BES compliance: distinct deadlines and older collection policy](2026-10-17-bes-tax-compliance.md) |
 | 2026-10-17 | [BES transfers: market value, ABB and document registration](2026-10-17-bes-transfer-tax.md) |
 | 2026-10-17 | [BES entities: residence decisions, distributions and minimum-tax scope](2026-10-17-bes-corporate-distributions.md) |
 | 2026-10-17 | [BES contributions and payroll: separate bases and source discrepancies](2026-10-17-bes-social-payroll.md) |

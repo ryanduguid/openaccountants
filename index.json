@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T06:44:33+00:00",
+ "generated_at": "2026-10-17T07:09:42+00:00",
  "counts": {
-  "guides": 1903,
+  "guides": 1904,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -5977,6 +5977,19 @@
    "slug": "bq-social-contributions",
    "path": "skills/international/caribbean-netherlands/bq-social-contributions.md",
    "name": "bq-social-contributions",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-tax-compliance",
+   "path": "skills/international/caribbean-netherlands/bq-tax-compliance.md",
+   "name": "bq-tax-compliance",
    "jurisdiction": "BQ",
    "category": "international",
    "tier": 2,
