@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-17 | [BES personal imports: separate reliefs, ages and indivisible goods](2026-10-17-bes-personal-import-relief.md) |
 | 2026-10-17 | [BES customs debt and remedies: events, permissions and separate clocks](2026-10-17-bes-customs-debt-remedies.md) |
 | 2026-10-17 | [BES customs clearance: separate declarations, storage and permissions](2026-10-17-bes-customs-clearance.md) |
 | 2026-10-17 | [BES customs valuation and excise: distinct bases and delegated controls](2026-10-17-bes-customs-excise.md) |

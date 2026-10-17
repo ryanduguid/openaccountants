@@ -20,12 +20,13 @@
 13. `bq-income-tax.md`
 14. `bq-inheritance-gifts.md`
 15. `bq-payroll.md`
-16. `bq-property-tax.md`
-17. `bq-social-contributions.md`
-18. `bq-statia-tourist-tax.md`
-19. `bq-tax-compliance.md`
-20. `bq-tax-system.md`
-21. `bq-transfer-tax.md`
+16. `bq-personal-import-relief.md`
+17. `bq-property-tax.md`
+18. `bq-social-contributions.md`
+19. `bq-statia-tourist-tax.md`
+20. `bq-tax-compliance.md`
+21. `bq-tax-system.md`
+22. `bq-transfer-tax.md`
 
 ## Shared files this package needs
 

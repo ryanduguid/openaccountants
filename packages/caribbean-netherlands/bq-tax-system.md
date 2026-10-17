@@ -16,7 +16,7 @@ tax_year: 2026
 tax_year_notes: "System-scope reference checked on 17 October 2026; establish the version applicable to each event"
 tier: 2
 last_updated: 2026-10-17
-version: 0.4
+version: 0.5
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -73,7 +73,7 @@ Act. Determine each applicable charge independently. [B1]; [START]
 | Supplies, services, imports and recovery | `bq-abb`, `bq-customs-valuation` and `bq-excise`; establish each separate charge and its operative conditions. An ABB exemption does not establish a customs exemption. |
 | Annual property, ground tax or acquisition | `bq-property-tax`, `bq-bonaire-ground-tax` and `bq-transfer-tax`; separate annual liability, island additions and transaction tax. |
 | Gaming operator or prize | `bq-gambling-tax`; establish the licence, statutory taxpayer, base and period. |
-| Inheritance or gift | `bq-inheritance-gifts`; the end of the former succession tax does not resolve other taxes or foreign residence connections. |
+| Inheritance, gift or personal goods arriving on an island | `bq-inheritance-gifts` for succession/gift-tax scope and `bq-personal-import-relief` for selected moving, inherited/student goods, parcels, gifts and baggage exemptions. Relief from one charge does not establish relief from another. |
 | Foreign income, allocation or double-tax relief | `bq-double-tax-relief`; establish the actual instrument, covered tax, direction and relief conditions. |
 | Registration, records, filing, payment or remedies | `bq-tax-compliance` for general tax procedure, `bq-customs-clearance` for declarations and release, and `bq-customs-debt-remedies` for selected customs debt, security, refund and remedy controls; establish the actual branch, decision, event and clock. Local-tax adaptations still apply. |
 | Entity creation or accounts | `bq-formation` and `bq-financial-statements`; a tax computation does not complete legal formation or reporting. |
