@@ -16,7 +16,7 @@ tax_year: 2026
 tax_year_notes: "System-scope reference checked on 17 October 2026; establish the version applicable to each event"
 tier: 2
 last_updated: 2026-10-17
-version: 0.2
+version: 0.3
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -75,7 +75,7 @@ Act. Determine each applicable charge independently. [B1]; [START]
 | Gaming operator or prize | `bq-gambling-tax`; establish the licence, statutory taxpayer, base and period. |
 | Inheritance or gift | `bq-inheritance-gifts`; the end of the former succession tax does not resolve other taxes or foreign residence connections. |
 | Foreign income, allocation or double-tax relief | `bq-double-tax-relief`; establish the actual instrument, covered tax, direction and relief conditions. |
-| Registration, records, filing, payment or remedies | `bq-tax-compliance`; check the actual decision, event, return and payment clock. Local-tax adaptations still apply. |
+| Registration, records, filing, payment or remedies | `bq-tax-compliance` for general tax procedure and `bq-customs-clearance` for its selected customs controls; establish the actual branch, decision, event and clock. Local-tax adaptations still apply. |
 | Entity creation or accounts | `bq-formation` and `bq-financial-statements`; a tax computation does not complete legal formation or reporting. |
 
 These references carry their own verification limits. Loading every named

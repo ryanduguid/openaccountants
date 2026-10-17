@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-17 | [BES customs clearance: separate declarations, storage and permissions](2026-10-17-bes-customs-clearance.md) |
 | 2026-10-17 | [BES customs valuation and excise: distinct bases and delegated controls](2026-10-17-bes-customs-excise.md) |
 | 2026-10-17 | [Sint Eustatius tourism tax: separate branches, exemptions and clocks](2026-10-17-bes-statia-tourist-tax.md) |
 | 2026-10-17 | [BES tax-system scope, local powers and inheritance connections](2026-10-17-bes-system-inheritance-scope.md) |
