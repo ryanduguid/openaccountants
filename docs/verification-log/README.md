@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-17 | [BES entities: residence decisions, distributions and minimum-tax scope](2026-10-17-bes-corporate-distributions.md) |
 | 2026-10-17 | [BES contributions and payroll: separate bases and source discrepancies](2026-10-17-bes-social-payroll.md) |
 | 2026-10-17 | [BES personal income tax: tariff, credits and unresolved home relief](2026-10-17-bes-personal-income-reference.md) |
 | 2026-10-17 | [BES property references: accepted revision and own-home policy scope](2026-10-17-bes-property-references.md) |
