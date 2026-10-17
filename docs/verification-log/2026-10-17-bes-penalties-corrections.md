@@ -1,7 +1,8 @@
 # BES penalties: statutory ceilings, policy and correction boundaries
 
 On 17 October 2026 I read Belastingwet 8.6a and 8.19–8.37 including
-insertions; DAB 2.107–2.125; customs regulation 2.76–2.80; decree 2.53;
+insertions; DAB 2.107–2.125; customs regulation 2.76–2.80; decree 2.15,
+2.17, 2.43, 2.47–2.49 and 2.53;
 all current penalty-policy articles; and the complete original 2015 and
 2023 amendment publications in HTML for the
 [penalties reference](../../skills/international/caribbean-netherlands/bq-penalties-corrections.md).
@@ -27,6 +28,14 @@ replacement wording. The original publication contains that wording;
 the 2023 amendment changes scope and the accounts reference. Actual
 assessment-correction classification and policy rates for new statutory
 branches remain held. No legal reconciliation is invented.
+
+Before merge I found and corrected a decree cross-reference error: 2.53
+concerns the decree's own warehouse prohibitions, not the Act's document
+provision. I read the underlying clauses, added the related delegated
+origin/warehouse defaults and froze four repair criteria before editing.
+Administrative/criminal concurrence and actual charging remain distinct.
+The initial manual review did not catch that reference error; its earlier
+passing technical checks did not establish source accuracy.
 
 Twenty-two manual criteria were frozen before drafting. The conditional
 amounts were recomputed and compared with the cited rules by the implementing

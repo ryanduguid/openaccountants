@@ -16,7 +16,7 @@ tax_year: 2026
 tax_year_notes: "Selected administrative penalties and correction controls checked on 17 October 2026; actual conduct, decision and applicable period required"
 tier: 2
 last_updated: 2026-10-17
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -201,9 +201,19 @@ persons. Nil duty does not remove every formal-declaration default. [DAB]
 DAB 2.115 permits delegated defaults with stated ceilings. Customs
 regulation 2.76–2.80 names particular notice, permission and other failures
 with USD 140 ceilings; identify the exact underlying obligation rather
-than fining every procedural irregularity under every row. Decree 2.53
-instead labels its specified document-rule breach a criminal offence;
-criminal liability is outside these administrative components.
+than fining every procedural irregularity under every row. Decree
+2.47–2.49 separately provide USD 2,800 ceilings for their specified
+origin-data and warehouse-prohibition defaults. The first two concern
+incorrect/incomplete origin information for the named certificates under
+decree 2.15(5) and 2.17(3). The third concerns decree 2.43(1)'s prohibited
+warehouse storage/possession: specified public-order, safety, environmental,
+health, veterinary/phytosanitary and intellectual-property risks.
+
+Decree 2.53 also designates breach of that **decree's warehouse rule** a
+criminal offence. It does not refer to the customs Act's identically
+numbered document provision. Preserve the administrative/criminal
+concurrence rules and hold the actual charging decision; criminal liability
+is outside these administrative amount components.
 [DAB]; [RULES]; [DECREE]
 
 Article 2.116 gives a three-year penalty-power term after the default or
@@ -256,7 +266,8 @@ Needs Input or holds with every workflow output and reviewer question.
 The practitioner retains original private records and identifiers.
 
 Read on 17 October 2026: B1 8.6a and 8.19–8.37 including inserted articles;
-DAB 2.107–2.125; customs regulation 2.76–2.80; decree 2.53; all operative
+DAB 2.107–2.125; customs regulation 2.76–2.80; decree 2.15, 2.17, 2.43,
+2.47–2.49 and 2.53; all operative
 current policy articles 1–11 including 6a/6b; and the complete 2015 and
 2023 policy publications in HTML. Authentic PDFs were not examined.
 
