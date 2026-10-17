@@ -1509,7 +1509,9 @@
     "bq-financial-statements.md",
     "bq-formation.md",
     "bq-income-tax.md",
+    "bq-payroll.md",
     "bq-property-tax.md",
+    "bq-social-contributions.md",
     "README.md"
    ],
    "shared": [
@@ -1517,6 +1519,8 @@
     "financial-statements-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
+    "social-contributions-workflow-base.md",
     "workflow-base.md"
    ]
   },
