@@ -12,12 +12,13 @@
 5. `bq-double-tax-relief.md`
 6. `bq-financial-statements.md`
 7. `bq-formation.md`
-8. `bq-income-tax.md`
-9. `bq-payroll.md`
-10. `bq-property-tax.md`
-11. `bq-social-contributions.md`
-12. `bq-tax-compliance.md`
-13. `bq-transfer-tax.md`
+8. `bq-gambling-tax.md`
+9. `bq-income-tax.md`
+10. `bq-payroll.md`
+11. `bq-property-tax.md`
+12. `bq-social-contributions.md`
+13. `bq-tax-compliance.md`
+14. `bq-transfer-tax.md`
 
 ## Shared files this package needs
 
