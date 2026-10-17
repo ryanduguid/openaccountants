@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-17T09:44:18+00:00",
+ "generated_at": "2026-10-17T10:19:40+00:00",
  "counts": {
-  "guides": 1916,
-  "jurisdictions": 247,
+  "guides": 1918,
+  "jurisdictions": 248,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -15774,6 +15774,32 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "nf-super-guarantee",
+   "path": "skills/international/norfolk-island/nf-super-guarantee.md",
+   "name": "nf-super-guarantee",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-tax-system",
+   "path": "skills/international/norfolk-island/nf-tax-system.md",
+   "name": "nf-tax-system",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "mk-company-formation",

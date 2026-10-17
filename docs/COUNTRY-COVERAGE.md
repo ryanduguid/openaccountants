@@ -4,7 +4,7 @@ Generated from `country-catalogue.json` and `index.json`. Regenerate with `pytho
 
 The target contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 
-188 of 250 target areas have at least one indexed guide; 62 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+189 of 250 target areas have at least one indexed guide; 61 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -176,7 +176,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NA | Namibia | 6 | 0 |
 | NC | New Caledonia | 0 | 0 |
 | NE | Niger | 5 | 0 |
-| NF | Norfolk Island | 0 | 0 |
+| NF | Norfolk Island | 2 | 0 |
 | NG | Nigeria | 13 | 2 |
 | NI | Nicaragua | 7 | 0 |
 | NL | Netherlands (Kingdom of the) | 19 | 0 |
