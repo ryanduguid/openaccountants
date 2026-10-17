@@ -14,11 +14,13 @@
 7. `bq-formation.md`
 8. `bq-gambling-tax.md`
 9. `bq-income-tax.md`
-10. `bq-payroll.md`
-11. `bq-property-tax.md`
-12. `bq-social-contributions.md`
-13. `bq-tax-compliance.md`
-14. `bq-transfer-tax.md`
+10. `bq-inheritance-gifts.md`
+11. `bq-payroll.md`
+12. `bq-property-tax.md`
+13. `bq-social-contributions.md`
+14. `bq-tax-compliance.md`
+15. `bq-tax-system.md`
+16. `bq-transfer-tax.md`
 
 ## Shared files this package needs
 
