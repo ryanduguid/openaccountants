@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T04:14:44+00:00",
+ "generated_at": "2026-10-17T05:10:11+00:00",
  "counts": {
-  "guides": 1898,
+  "guides": 1899,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -5914,6 +5914,19 @@
    "name": "bq-formation",
    "jurisdiction": "BQ",
    "category": "formation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-income-tax",
+   "path": "skills/international/caribbean-netherlands/bq-income-tax.md",
+   "name": "bq-income-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,

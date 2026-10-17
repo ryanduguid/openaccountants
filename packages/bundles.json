@@ -1508,6 +1508,7 @@
     "bq-bonaire-ground-tax.md",
     "bq-financial-statements.md",
     "bq-formation.md",
+    "bq-income-tax.md",
     "bq-property-tax.md",
     "README.md"
    ],
@@ -1515,6 +1516,7 @@
     "company-formation-workflow-base.md",
     "financial-statements-workflow-base.md",
     "foundation.md",
+    "income-tax-workflow-base.md",
     "workflow-base.md"
    ]
   },
