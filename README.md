@@ -29,7 +29,7 @@ Named, licensed accountants put their name, credential and review date on the gu
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-047857)](LICENSE)
 
 <!-- oa-stats:start -->
-**1,896 Guides** across **247 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,898 Guides** across **247 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 <sub>Derived from `index.json` in this checkout and verified by
 `scripts/check-coverage-claims.py`. "Accountant-reviewed" and "named

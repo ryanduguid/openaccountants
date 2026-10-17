@@ -7,8 +7,10 @@
 
 1. `intake.md`
 2. `bq-abb.md`
-3. `bq-financial-statements.md`
-4. `bq-formation.md`
+3. `bq-bonaire-ground-tax.md`
+4. `bq-financial-statements.md`
+5. `bq-formation.md`
+6. `bq-property-tax.md`
 
 ## Shared files this package needs
 
