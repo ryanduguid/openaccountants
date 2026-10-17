@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T11:32:30+00:00",
+ "generated_at": "2026-10-17T11:55:27+00:00",
  "counts": {
-  "guides": 1922,
+  "guides": 1923,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -15820,6 +15820,19 @@
    "name": "nf-medicare",
    "jurisdiction": "NF",
    "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-payg-withholding",
+   "path": "skills/international/norfolk-island/nf-payg-withholding.md",
+   "name": "nf-payg-withholding",
+   "jurisdiction": "NF",
+   "category": "payroll",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,

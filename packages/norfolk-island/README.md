@@ -10,8 +10,9 @@
 3. `nf-gst.md`
 4. `nf-income-tax.md`
 5. `nf-medicare.md`
-6. `nf-super-guarantee.md`
-7. `nf-tax-system.md`
+6. `nf-payg-withholding.md`
+7. `nf-super-guarantee.md`
+8. `nf-tax-system.md`
 
 ## Shared files this package needs
 
@@ -20,6 +21,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 - [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 - [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
 - [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
