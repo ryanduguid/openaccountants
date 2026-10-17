@@ -5,7 +5,7 @@ description: >
   deductions before applying the Australian ordinary personal rates for
   2026–27. Covers territorial application, worldwide income, full-year and
   part-year thresholds, the conditional standard work-expense deduction,
-  and Norfolk zone offset eligibility and limitations. Use for Norfolk
+  the low income tax offset, and Norfolk zone offset conditions. Use for Norfolk
   personal tax, resident rates, work deductions, mainland moves or zone
   offset questions. Includes statutory citations, fictional computations,
   classification patterns and reviewer checks. This source-cited reference
@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Primary rate table: Australian 2026–27 income year, 1 July 2026 to 30 June 2027; selected adjacent-year changes separately labelled"
 tier: 2
 last_updated: 2026-10-17
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -194,6 +194,47 @@ the standard rule as permission to omit all records. Associated asset,
 low-value-pool and salary-packaging amendments require their own analysis.
 [REFORM1, Schedule 4 items 8–20][REFORM1]
 
+## Low income tax offset and priority
+
+Section 61-110 provides the low income tax offset (LITO) from 2020–21
+onward for an individual who is an Australian resident at any time in the
+year and whose taxable income does not exceed $66,667. This is a
+taxable-income test, not a test of gross wages or zone residence. The Act
+has separate trustee/beneficiary rules. [OFFSETS]
+
+Section 61-115's ordinary individual schedule is:
+
+| Relevant taxable income | Statutory LITO amount before applicable caps |
+|---|---|
+| At or below $37,500 | $700 |
+| Over $37,500 to $45,000 | $700 less 5% of the excess over $37,500 |
+| Over $45,000 to $66,667 | $325 less 1.5% of the excess over $45,000 |
+| Above $66,667 | No entitlement under section 61-110 |
+
+At $40,000 the formula gives **$575**; at $45,000 it gives **$325**;
+at $60,000 it gives **$100**. These examples assume an eligible adult
+ordinary case. Sections 61-115(2)–(4) cap specified minors' and trustee
+cases and address the section 160AAA benefit-offset interaction. Do not
+give those cases an unrestricted adult offset. [OFFSETS]
+
+Section 63-10 applies offsets in their statutory order. Its residual
+category does not permit a refund, transfer or carry-forward of unused
+LITO. The ATO works it out after lodgement and identifies it as a
+non-refundable reduction to income tax, not a separate payment. Apply it
+against available basic income tax; it does not automatically discharge
+Medicare levy. Other offsets have different rules. [OFFSETS]; [ATO-LITO]
+
+Near the upper cutoff, confirm assessment precision and rounding before
+delivering an amount. Do not turn a cent-level formula residual into
+negative relief or alter the statutory eligibility cutoff. This reference
+does not supply the exact assessment-rounding method. The future working
+Australians offset has its own conditions and applies from **2027–28**;
+do not add it to a 2026–27 computation. [REFORM1, Schedule 3 item 4][REFORM1]
+
+Use `nf-medicare` for selected levy and surcharge rules. All remaining
+income, offset, credit, prepayment and filing conditions still require
+resolution before a final return balance.
+
 ## Norfolk zone tax offset
 
 Schedule 2 Part I of the 1936 Act lists Norfolk Island in Zone A. The ATO
@@ -284,7 +325,8 @@ statutory rule. Its general 31 October lodging statement does not settle
 an actual year's due date, weekend rule, agent programme or deferral.
 [INDIVIDUAL]
 
-Medicare levy and surcharge, low-income and other offsets, temporary
+Use `nf-medicare` alongside this reference for selected levy and surcharge
+rules. Other offsets, temporary
 residence/treaties, foreign credits, income-specific regimes, CGT beyond
 the scope guide's transition, rentals/business losses/assets, forms,
 lodging/payment deadlines, amendments and complete workflow country slots
@@ -300,6 +342,8 @@ identifiers, documents, a return or payment through this guide.
 [REFORM1]: https://www.legislation.gov.au/C2026A00049/asmade
 [REFORM2]: https://www.legislation.gov.au/C2026A00071/asmade
 [INDIVIDUAL]: https://www.ato.gov.au/norfolk-island/norfolk-island-residents-and-individual-tax
+[OFFSETS]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_2/document_2.html
+[ATO-LITO]: https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/low-income-tax-offset
 
 <!-- openaccountants-cta-block -->
 
