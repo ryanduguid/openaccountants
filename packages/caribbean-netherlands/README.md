@@ -9,14 +9,15 @@
 2. `bq-abb.md`
 3. `bq-bonaire-ground-tax.md`
 4. `bq-corporate-tax.md`
-5. `bq-financial-statements.md`
-6. `bq-formation.md`
-7. `bq-income-tax.md`
-8. `bq-payroll.md`
-9. `bq-property-tax.md`
-10. `bq-social-contributions.md`
-11. `bq-tax-compliance.md`
-12. `bq-transfer-tax.md`
+5. `bq-double-tax-relief.md`
+6. `bq-financial-statements.md`
+7. `bq-formation.md`
+8. `bq-income-tax.md`
+9. `bq-payroll.md`
+10. `bq-property-tax.md`
+11. `bq-social-contributions.md`
+12. `bq-tax-compliance.md`
+13. `bq-transfer-tax.md`
 
 ## Shared files this package needs
 

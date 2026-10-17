@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-17T07:09:42+00:00",
+ "generated_at": "2026-10-17T07:19:40+00:00",
  "counts": {
-  "guides": 1904,
+  "guides": 1905,
   "jurisdictions": 247,
   "accountant_reviewed": 164
  },
@@ -5899,6 +5899,19 @@
    "slug": "bq-corporate-tax",
    "path": "skills/international/caribbean-netherlands/bq-corporate-tax.md",
    "name": "bq-corporate-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-double-tax-relief",
+   "path": "skills/international/caribbean-netherlands/bq-double-tax-relief.md",
+   "name": "bq-double-tax-relief",
    "jurisdiction": "BQ",
    "category": "international",
    "tier": 2,
