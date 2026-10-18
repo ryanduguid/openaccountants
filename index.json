@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-18T08:54:20+00:00",
+ "generated_at": "2026-10-18T09:34:52+00:00",
  "counts": {
-  "guides": 1935,
+  "guides": 1936,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -2656,7 +2656,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "au-medicare-levy",
@@ -15987,6 +15987,19 @@
    "slug": "nf-tax-amendments-objections",
    "path": "skills/international/norfolk-island/nf-tax-amendments-objections.md",
    "name": "nf-tax-amendments-objections",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-tax-interest",
+   "path": "skills/international/norfolk-island/nf-tax-interest.md",
+   "name": "nf-tax-interest",
    "jurisdiction": "NF",
    "category": "international",
    "tier": 2,

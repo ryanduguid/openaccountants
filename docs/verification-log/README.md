@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-18 | [Norfolk tax interest and shared Australian compliance corrections](2026-10-18-norfolk-tax-interest.md) |
 | 2026-10-18 | [Norfolk Island tax penalties, disclosure and remission](2026-10-18-norfolk-tax-penalties-remission.md) |
 | 2026-10-18 | [Norfolk assessment amendments, objections and shared Australian routing](2026-10-18-norfolk-tax-amendments-objections.md) |
 | 2026-10-18 | [Norfolk Island annual income-tax returns and filing controls](2026-10-18-norfolk-return-filing.md) |

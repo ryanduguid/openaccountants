@@ -23,8 +23,9 @@
 16. `nf-return-filing.md`
 17. `nf-super-guarantee.md`
 18. `nf-tax-amendments-objections.md`
-19. `nf-tax-penalties-remission.md`
-20. `nf-tax-system.md`
+19. `nf-tax-interest.md`
+20. `nf-tax-penalties-remission.md`
+21. `nf-tax-system.md`
 
 ## Shared files this package needs
 
