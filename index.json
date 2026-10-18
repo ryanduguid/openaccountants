@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-18T07:30:14+00:00",
+ "generated_at": "2026-10-18T07:54:23+00:00",
  "counts": {
-  "guides": 1932,
+  "guides": 1933,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -15948,6 +15948,19 @@
    "slug": "nf-property-transfers",
    "path": "skills/international/norfolk-island/nf-property-transfers.md",
    "name": "nf-property-transfers",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-return-filing",
+   "path": "skills/international/norfolk-island/nf-return-filing.md",
+   "name": "nf-return-filing",
    "jurisdiction": "NF",
    "category": "international",
    "tier": 2,
