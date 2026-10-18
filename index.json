@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-18T05:49:32+00:00",
+ "generated_at": "2026-10-18T06:07:36+00:00",
  "counts": {
-  "guides": 1928,
+  "guides": 1929,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -15826,6 +15826,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-fbt",
+   "path": "skills/international/norfolk-island/nf-fbt.md",
+   "name": "nf-fbt",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "nf-gst",

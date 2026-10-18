@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.11
+version: 0.12
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -105,6 +105,13 @@ Use `nf-employment-pay` for selected wage floors, ongoing Norfolk service
 modifications, leave, notice/redundancy and payslip/record requirements.
 Employment pay, tax withholding and employer super require their own bases
 and conditions; together these references still leave payroll slots open.
+
+Use `nf-fbt` for selected ordinary-employer benefits, GST-creditable
+gross-up, employee reporting, annual returns, instalments and records.
+It distinguishes the FBT year from the income year and preserves the
+work-item and vehicle application transitions. Actual benefit valuation,
+specialist employers, elections and full payroll/country requirements
+still need their applicable rules and evidence.
 
 ## Island transactions and mainland GST connections
 
