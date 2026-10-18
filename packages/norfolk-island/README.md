@@ -12,15 +12,16 @@
 5. `nf-company-tax.md`
 6. `nf-employment-pay.md`
 7. `nf-fbt.md`
-8. `nf-gst.md`
-9. `nf-imports.md`
-10. `nf-income-tax.md`
-11. `nf-investment-withholding.md`
-12. `nf-medicare.md`
-13. `nf-payg-withholding.md`
-14. `nf-property-transfers.md`
-15. `nf-super-guarantee.md`
-16. `nf-tax-system.md`
+8. `nf-foreign-income.md`
+9. `nf-gst.md`
+10. `nf-imports.md`
+11. `nf-income-tax.md`
+12. `nf-investment-withholding.md`
+13. `nf-medicare.md`
+14. `nf-payg-withholding.md`
+15. `nf-property-transfers.md`
+16. `nf-super-guarantee.md`
+17. `nf-tax-system.md`
 
 ## Shared files this package needs
 
@@ -28,6 +29,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
 - [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
+- [`cross-border-workflow-base.md`](../_shared/cross-border-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
 - [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
