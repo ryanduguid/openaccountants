@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.12
+version: 0.13
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -201,6 +201,13 @@ the **Cocos subsection (1)**, not an election to disapply Norfolk subsection
 (2). Actual disposals, improvements/separate assets, succession, ordinary
 income, other CGT rules and relief remain subject to further analysis.
 [TRANS]
+
+Use `nf-cgt` for selected 2026–27 disposals, proceeds, bases, capital-loss
+ordering, discount and home/asset-class gates. It reads the Norfolk
+transition with the current CGT rules and the October foreign-resident
+amendments, including the conditional renewable-energy concession.
+Actual treaty, withholding, valuation and specialised-event outcomes,
+future-year changes and full capital/property compliance remain open.
 
 ## Classification examples and review checks
 

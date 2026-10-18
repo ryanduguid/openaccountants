@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-18 | [Norfolk Island capital gains, losses and foreign-resident property](2026-10-18-norfolk-cgt.md) |
 | 2026-10-18 | [Norfolk Island employer fringe benefits tax](2026-10-18-norfolk-fbt.md) |
 | 2026-10-18 | [Norfolk Island ordinary rates and annual waste charges](2026-10-18-norfolk-annual-rates.md) |
 | 2026-10-18 | [Norfolk Island local and federal review routes](2026-10-18-norfolk-review-routes.md) |

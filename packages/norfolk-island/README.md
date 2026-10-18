@@ -7,18 +7,19 @@
 
 1. `intake.md`
 2. `nf-annual-rates.md`
-3. `nf-company-administration.md`
-4. `nf-company-tax.md`
-5. `nf-employment-pay.md`
-6. `nf-fbt.md`
-7. `nf-gst.md`
-8. `nf-imports.md`
-9. `nf-income-tax.md`
-10. `nf-medicare.md`
-11. `nf-payg-withholding.md`
-12. `nf-property-transfers.md`
-13. `nf-super-guarantee.md`
-14. `nf-tax-system.md`
+3. `nf-cgt.md`
+4. `nf-company-administration.md`
+5. `nf-company-tax.md`
+6. `nf-employment-pay.md`
+7. `nf-fbt.md`
+8. `nf-gst.md`
+9. `nf-imports.md`
+10. `nf-income-tax.md`
+11. `nf-medicare.md`
+12. `nf-payg-withholding.md`
+13. `nf-property-transfers.md`
+14. `nf-super-guarantee.md`
+15. `nf-tax-system.md`
 
 ## Shared files this package needs
 
