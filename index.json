@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-18T09:59:52+00:00",
+ "generated_at": "2026-10-18T10:08:04+00:00",
  "counts": {
-  "guides": 1936,
+  "guides": 1937,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -16013,6 +16013,19 @@
    "slug": "nf-tax-penalties-remission",
    "path": "skills/international/norfolk-island/nf-tax-penalties-remission.md",
    "name": "nf-tax-penalties-remission",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-tax-records",
+   "path": "skills/international/norfolk-island/nf-tax-records.md",
+   "name": "nf-tax-records",
    "jurisdiction": "NF",
    "category": "international",
    "tier": 2,
