@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.9
+version: 0.10
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -146,6 +146,13 @@ review obligations. It distinguishes transferred companies from new
 registrations and preserves director-ID transitions, full formation
 streams, accounting standards and other unresolved conditions. Company
 registration does not decide tax residence or complete all country topics.
+
+Use `nf-property-transfers` for selected land registration fees and
+business transaction levies: separate value bases, statutory fee units,
+rounding, exemptions, lodgement and assessment objections. Company
+land/share application, annual rates, approved fees, current tribunal
+procedure and complete property compliance remain open. The property
+reference does not establish that other local charges are absent.
 
 ## Capital gains: preserve the amended transition
 
