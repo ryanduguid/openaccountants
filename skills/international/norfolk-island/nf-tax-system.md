@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.16
+version: 0.17
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -227,6 +227,12 @@ business-day adjustments, declarations and confirmed agent arrangements.
 Its 2026 return concerns 2025-26, separately from 2026-27 tax planning.
 Actual forms, returns, payment dates, general disputes and penalties retain
 their own source, fact and workflow requirements.
+
+Use `nf-tax-amendments-objections` for selected assessment amendment
+periods, eligible business self-amendments, retained regulations, objection
+grounds and clocks, delayed decisions and external review. It distinguishes
+filing, payment and recovery, and holds actual deadlines, complex disputes,
+penalties and full compliance pending their own sources and facts.
 
 ## Classification examples and review checks
 
