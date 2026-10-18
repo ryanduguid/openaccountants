@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.18
+version: 0.19
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -239,6 +239,12 @@ shortfall and default-assessment penalties, agent safe harbour, disclosure
 reductions, notices and remission. It separates period-specific units,
 entity multipliers and objection rights; actual special regimes, interest,
 submissions and complete compliance retain their own evidence requirements.
+
+Use `nf-tax-interest` for selected GIC/SIC liability, calendar-quarter
+rates, compounding, payment receipt/allocation, incurred-income-year
+and substituted-period deduction treatment, recoupments and remission.
+Actual notices, historical/special regimes, posting rules, credit interest
+and complete compliance retain their own source and fact requirements.
 
 ## Classification examples and review checks
 
