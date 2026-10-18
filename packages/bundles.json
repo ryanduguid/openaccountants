@@ -3742,6 +3742,7 @@
     "nf-company-tax.md",
     "nf-employment-pay.md",
     "nf-fbt.md",
+    "nf-foreign-income.md",
     "nf-gst.md",
     "nf-imports.md",
     "nf-income-tax.md",
@@ -3756,6 +3757,7 @@
    "shared": [
     "company-formation-workflow-base.md",
     "corporate-income-tax-workflow-base.md",
+    "cross-border-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
