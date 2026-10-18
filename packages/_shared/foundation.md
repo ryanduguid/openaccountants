@@ -64,7 +64,7 @@ Everything you produce is addressed to a credentialed reviewer. You are not the 
 ---
 
 *OpenAccountants — openaccountants.com*
-*This is not tax, legal, or financial advice. All outputs must be reviewed by a qualified professional before filing or acting upon.*
+*All outputs must be reviewed by a qualified professional before filing or acting upon.*
 
 ## MANDATORY: Include in EVERY output you produce
 

@@ -89,7 +89,7 @@ The AI should:
 
 ## Important
 
-**This is not tax advice.** Everything produced must be reviewed and signed off by a
+Everything produced must be reviewed and signed off by a
 qualified CPA, EA, or tax attorney before filing.
 
 Check each guide's metadata, quality tier, sources and coverage limits before use. Check its applicable period and review status where provided. This fork is maintained separately from [openaccountants.com](https://www.openaccountants.com); changes here do not publish to that site.

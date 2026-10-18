@@ -4,7 +4,7 @@ description: Use this skill whenever asked about payroll in Russia — how an in
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-10-18
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -249,7 +249,7 @@ Employee, 250,000 ₽/month gross, resident. By month 10 cumulative income = 2,5
 
 ## Disclaimer
 
-This skill is **research-verified** against ФНС (nalog.gov.ru), СФР, and reputable Russian payroll sources for tax year 2026, but it is **pending sign-off by a qualified Russian accountant**. Russian payroll, tax, and contribution rules — including МРОТ, the единая предельная база, the progressive НДФЛ thresholds, the травматизм tariff table, the SME priority-sector list, and report forms and deadlines — change frequently and by law. Always re-verify current figures at nalog.gov.ru and sfr.gov.ru, and have a credentialed Russian accountant or payroll specialist review every computation and return before it is filed or relied upon. Provided for educational purposes by openaccountants.com; not a substitute for professional advice.
+This skill is **research-verified** against ФНС (nalog.gov.ru), СФР, and reputable Russian payroll sources for tax year 2026, but it is **pending sign-off by a qualified Russian accountant**. Russian payroll, tax, and contribution rules — including МРОТ, the единая предельная база, the progressive НДФЛ thresholds, the травматизм tariff table, the SME priority-sector list, and report forms and deadlines — change frequently and by law. Always re-verify current figures at nalog.gov.ru and sfr.gov.ru, and have a credentialed Russian accountant or payroll specialist review every computation and return before it is filed or relied upon. Provided by openaccountants.com.
 
 <!-- openaccountants-cta-block -->
 

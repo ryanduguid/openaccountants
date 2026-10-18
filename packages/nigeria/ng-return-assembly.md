@@ -4,7 +4,7 @@ description: Use this skill whenever asked to assemble, finalize, or package a N
 jurisdiction: NG
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-18
 version: 1.1
 reviewed_by: Omolola Fasasi
 review_status: pending_review
@@ -1057,7 +1057,7 @@ If execution runs out of context mid-build, complete the computation work first 
 ## OpenAccountants footer disclaimer
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed and signed off by a Chartered Accountant in Nigeria (ICAN or ANAN member, and where tax-specific opinions are required, also CITN-registered) before filing via FIRS Tax Pro-Max or the relevant State Internal Revenue Service portal.*
+*All outputs must be reviewed and signed off by a Chartered Accountant in Nigeria (ICAN or ANAN member, and where tax-specific opinions are required, also CITN-registered) before filing via FIRS Tax Pro-Max or the relevant State Internal Revenue Service portal.*
 
 <!-- openaccountants-cta-block -->
 

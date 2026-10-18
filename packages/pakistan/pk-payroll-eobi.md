@@ -4,7 +4,7 @@ description: ALWAYS read this skill before touching any Pakistan payroll work. U
 jurisdiction: PK
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-18
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -381,7 +381,7 @@ Not run through this payslip — computed annually on profit-before-tax in the c
 ## Footer disclaimer
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed by a qualified Pakistani payroll professional or tax consultant before any payslip is issued or any remittance is made.*
+*All outputs must be reviewed by a qualified Pakistani payroll professional or tax consultant before any payslip is issued or any remittance is made.*
 
 <!-- openaccountants-cta-block -->
 

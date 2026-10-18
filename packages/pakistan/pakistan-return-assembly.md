@@ -4,7 +4,7 @@ description: Use this skill whenever asked to assemble, finalize, or package a P
 version: 0.1
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-10-15
+last_updated: 2026-10-18
 review_status: pending_review
 depends_on:
   - pk-freelance-intake
@@ -761,7 +761,7 @@ If context is exhausted, preserve supported calculations and evidence for resump
 ## Disclaimer footer
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed and signed off by a credentialed reviewer (ICAP CA, ICMAP, or ACCA-PK member with Pakistan practising rights) before filing via FBR IRIS.*
+*All outputs must be reviewed and signed off by a credentialed reviewer (ICAP CA, ICMAP, or ACCA-PK member with Pakistan practising rights) before filing via FBR IRIS.*
 
 <!-- openaccountants-cta-block -->
 

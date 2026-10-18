@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 1.0
 jurisdiction: CN
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-18
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -207,7 +207,7 @@ If monthly withholding totaled ¥18,500 during the year → refund of **¥620**.
 ## Footer
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed by a qualified professional before filing.*
+*All outputs must be reviewed by a qualified professional before filing.*
 
 <!-- openaccountants-cta-block -->
 

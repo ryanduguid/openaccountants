@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 1.1
 jurisdiction: GH
 tax_year: 2026
-last_updated: 2026-10-06
+last_updated: 2026-10-18
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -204,7 +204,7 @@ Annualised at the September 2026 bands: GHS 2,494.50 × 12 = **GHS 29,934**. For
 ## Footer disclaimer
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed by a qualified professional before filing.*
+*All outputs must be reviewed by a qualified professional before filing.*
 
 <!-- openaccountants-cta-block -->
 

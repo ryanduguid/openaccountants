@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Ukrainian electronic invoicing 
 version: 1.1
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-18
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -242,7 +242,7 @@ Registration is temporarily permitted on weekends during martial law (so a deadl
 
 This skill is **research-verified** open-source guidance produced by the Open Accountants Community for use by AI agents assisting self-employed people. It reflects Ukrainian rules as understood for **tax year 2026 as of May 2026**, under martial law. Ukrainian e-invoicing and digital-reporting rules — ЄРПН deadlines, СМКОР criteria, ПРРО thresholds, penalties, and the SAF-T UA timeline — change frequently and are affected by martial-law measures. Figures and deadlines must be verified against the State Tax Service (tax.gov.ua / dps.gov.ua) before any filing.
 
-It is **pending sign-off by a qualified Ukrainian accountant or auditor** and is **not** a substitute for professional advice or for credentialed review of any specific filing. Use at your own risk. Part of the openaccountants.com open-source skill library.
+It is **pending sign-off by a qualified Ukrainian accountant or auditor** and is **not** a substitute for professional advice or for credentialed review of any specific filing. Part of the openaccountants.com open-source skill library.
 
 <!-- openaccountants-cta-block -->
 

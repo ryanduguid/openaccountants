@@ -449,7 +449,7 @@ Everything you produce is addressed to a credentialed reviewer. You are not the 
 ---
 
 *OpenAccountants — openaccountants.com*
-*This is not tax, legal, or financial advice. All outputs must be reviewed by a qualified professional before filing or acting upon.*
+*All outputs must be reviewed by a qualified professional before filing or acting upon.*
 
 ## MANDATORY: Include in EVERY output you produce
 
@@ -625,7 +625,7 @@ The AI should:
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified {practitioner_title.removeprefix("qualified ")} before filing or acting upon.
+Everything produced must be reviewed and signed off by a qualified {practitioner_title.removeprefix("qualified ")} before filing or acting upon.
 
 {PACKAGE_NOTICE}
 
@@ -889,7 +889,7 @@ The AI should:
 
 ## Important
 
-**This is not tax advice.** Everything produced must be reviewed and signed off by a
+Everything produced must be reviewed and signed off by a
 qualified CPA, EA, or tax attorney before filing.
 
 {PACKAGE_NOTICE}
@@ -1052,7 +1052,7 @@ The AI should:
 
 ## Important
 
-**This is not tax advice.** Everything produced must be reviewed and signed off by a
+Everything produced must be reviewed and signed off by a
 qualified Canadian CPA before filing.
 
 {PACKAGE_NOTICE}

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T09:34:52+00:00",
+ "generated_at": "2026-10-18T09:59:52+00:00",
  "counts": {
   "guides": 1936,
   "jurisdictions": 248,
@@ -3371,7 +3371,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2024",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "bangladesh-vat",
@@ -6504,7 +6504,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "china-to-singapore-relocation-tax",
@@ -8727,7 +8727,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-capital-gains",
@@ -8740,7 +8740,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-cfe",
@@ -8766,7 +8766,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-income-tax",
@@ -8792,7 +8792,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-rental-income",
@@ -8805,7 +8805,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-social-contributions",
@@ -8831,7 +8831,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "france-bookkeeping",
@@ -9533,7 +9533,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-06"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ghana-vat",
@@ -10963,7 +10963,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ie-preliminary-tax",
@@ -11002,7 +11002,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ie-usc",
@@ -13186,7 +13186,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "lithuania-vat-return",
@@ -15058,7 +15058,7 @@
    "reviewed_by": "Ashish Bista",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "nepal-income-tax",
@@ -15097,7 +15097,7 @@
    "reviewed_by": "Ashish Bista",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "nepal-vat",
@@ -15682,7 +15682,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ng-personal-income-tax",
@@ -15708,7 +15708,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ng-vat-return",
@@ -16462,7 +16462,7 @@
    "reviewed_by": "Ibrar Ali",
    "review_status": "current",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "pk-payroll",
@@ -17528,7 +17528,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ru-self-employed-npd",
@@ -18022,7 +18022,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "sa-withholding-tax",
@@ -18594,7 +18594,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "slovakia-vat-registration-4-7-7a",
@@ -20141,7 +20141,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2024",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "thailand-vat",
@@ -20635,7 +20635,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "turkey-vat",
@@ -21168,7 +21168,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ua-financial-statements",
@@ -22390,7 +22390,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-15"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ru-freelance-intake",
@@ -22481,7 +22481,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "us-ca-return-assembly",
@@ -22936,7 +22936,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "us-ca-pte-elective-tax",

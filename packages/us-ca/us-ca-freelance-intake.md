@@ -5,7 +5,7 @@ version: 0.2
 jurisdiction: US-CA
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-18
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -176,7 +176,7 @@ The downstream skill (`us-ca-return-assembly`) consumes this JSON structure. It 
 
 Stop — you're a multi-member LLC. I'm set up for single-owner freelancers only. Multi-member LLCs file as partnerships on Form 1065, which is a different skill set I don't have. You need a CPA familiar with partnership returns. Expect $1,500-$3,000 for a typical small partnership return.
 
-I can't help with this one. Sorry for the false start.
+This case needs a qualified practitioner.
 
 ## Section 10 — Plain-English translation reference
 
