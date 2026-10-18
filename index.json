@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-18T07:54:23+00:00",
+ "generated_at": "2026-10-18T08:24:18+00:00",
  "counts": {
-  "guides": 1933,
+  "guides": 1934,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -2435,7 +2435,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "au-bas-preparation",
@@ -15982,6 +15982,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-tax-amendments-objections",
+   "path": "skills/international/norfolk-island/nf-tax-amendments-objections.md",
+   "name": "nf-tax-amendments-objections",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "nf-tax-system",
