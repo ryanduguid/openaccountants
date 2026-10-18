@@ -14,8 +14,9 @@
 7. `nf-income-tax.md`
 8. `nf-medicare.md`
 9. `nf-payg-withholding.md`
-10. `nf-super-guarantee.md`
-11. `nf-tax-system.md`
+10. `nf-property-transfers.md`
+11. `nf-super-guarantee.md`
+12. `nf-tax-system.md`
 
 ## Shared files this package needs
 
