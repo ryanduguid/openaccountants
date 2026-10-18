@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-18 | [Norfolk Island ordinary rates and annual waste charges](2026-10-18-norfolk-annual-rates.md) |
 | 2026-10-18 | [Norfolk Island local and federal review routes](2026-10-18-norfolk-review-routes.md) |
 | 2026-10-18 | [Norfolk Island land fees and business transaction levies](2026-10-18-norfolk-property-transfers.md) |
 | 2026-10-18 | [Norfolk Island company registration, records and reporting](2026-10-18-norfolk-company-administration.md) |

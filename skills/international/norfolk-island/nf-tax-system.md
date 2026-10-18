@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.10
+version: 0.11
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -153,6 +153,13 @@ rounding, exemptions, lodgement and assessment objections. Company
 land/share application, annual rates, approved fees, current tribunal
 procedure and complete property compliance remain open. The property
 reference does not establish that other local charges are absent.
+
+Use `nf-annual-rates` for the adopted 2026–27 ordinary rates and annual
+waste charges, valuation and category gates, selected instalment and review
+rules, and the separate waste importer and historical absentee levies.
+Actual notices, later amendments, relief, interest authority and other
+local service fees still need their applicable evidence. This reference
+does not complete the property or country pack.
 
 ## Capital gains: preserve the amended transition
 

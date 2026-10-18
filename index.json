@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-18T05:21:30+00:00",
+ "generated_at": "2026-10-18T05:49:32+00:00",
  "counts": {
-  "guides": 1927,
+  "guides": 1928,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -15774,6 +15774,19 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "nf-annual-rates",
+   "path": "skills/international/norfolk-island/nf-annual-rates.md",
+   "name": "nf-annual-rates",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "nf-company-administration",
