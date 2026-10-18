@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.13
+version: 0.14
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -208,6 +208,12 @@ transition with the current CGT rules and the October foreign-resident
 amendments, including the conditional renewable-energy concession.
 Actual treaty, withholding, valuation and specialised-event outcomes,
 future-year changes and full capital/property compliance remain open.
+
+Use `nf-investment-withholding` for selected dividend, interest and royalty
+liability and payer triggers, domestic amounts and rounding, remittance
+and annual reporting distinctions. Residence, exemptions, treaty outcomes,
+special arrangements, actual forms and calendars require their own
+evidence; the reference does not complete cross-border coverage.
 
 ## Classification examples and review checks
 
