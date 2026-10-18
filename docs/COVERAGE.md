@@ -24,10 +24,10 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,936** |
+| Guide files indexed | **1,937** |
 | Distinct `jurisdiction` codes | **248** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,772** |
+| `tier: 2` (source-cited draft) | **1,773** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
 | Country directories under `skills/international/` | **189** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
@@ -60,7 +60,7 @@ Regenerate this list with:
 python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] for g in d['guides'] if str(g.get('tax_year')) <= '2024' and g.get('tax_year')))"
 ```
 
-The other guides carry `tax_year` 2025 (1,592), 2026 (264), or no year (75).
+The other guides carry `tax_year` 2025 (1,592), 2026 (265), or no year (75).
 
 > **Names on tier-2 guides.** 99 guides carry a named `reviewed_by` while
 > marked `tier: 2`. The name records corrections an accountant contributed
