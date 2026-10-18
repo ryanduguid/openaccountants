@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Sources checked 18 October 2026; current statutory compilations and Continued Laws Ordinance read together; annual 2026-27 council charges not determined"
 tier: 2
 last_updated: 2026-10-18
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -162,11 +162,12 @@ within the other exclusions before deciding any approved fee. [LAND];
 [CONTINUED, Schedule 1 items 190H–190RB][CONTINUED]
 
 Section 8 permits review of a section 4(2) fee-calculation decision by the
-local Administrative Review Tribunal. This guide has not established the
-current tribunal procedure or time limit. Do not import the business levy
-objection clock, or assume a similarly named Commonwealth tribunal has
-jurisdiction. Obtain the decision and applicable review rules promptly.
-[LAND]
+local Administrative Review Tribunal. That is distinct from the federal
+regulations' listed review of a **section 5** decision. Do not substitute
+the section 5 discretionary share-fee exemption for a section 8 calculation
+review. Establish the exact decision, review route and applicable period;
+neither a common tribunal name nor the business levy objection clock
+settles those questions. [LAND]; [FEDREG, section 27 item 18][FEDREG]
 
 ## Company landholding and share-transfer hold
 
@@ -290,6 +291,56 @@ showing an excessive assessment. Under section 52, a pending appeal does
 **not** suspend liability or recovery; later adjustment is separate.
 Confirm current procedure, service and any specific extension. [ADMIN]
 
+## Local and federal tribunal routes
+
+The local **Administrative Review Tribunal Act 1996 (NI)** remains in
+force. Its sections 14–16 govern reviewable decisions and affected
+interests; section 14(7) permits another enactment to add to, exclude or
+modify its procedure. Section 22 contains application/time rules, including
+written reasons, deemed decisions, Gazette notices and extensions. Do not
+replace the specific Administration Act section 51 route above with a
+universal 28-day local rule. [LOCALART]
+
+There is also a **Commonwealth** Administrative Review Tribunal under the
+2024 Act. Section 297(2) authorises regulations for Norfolk enactment
+decisions. Current Regulations section 27 lists, among other decisions:
+
+| Item | Decision covered by the federal list |
+|---|---|
+| 10 | A decision under the Business Transactions (Administration) Act 2006. |
+| 11 | A decision under subsection 9(2) of the Business Transactions (Levy Imposition) Act 2006. |
+| 18 | A decision under section 5 of the Land Administration Fees Act 1996. |
+| 19 | The specified Land Titles Act decisions in paragraph 138(1)(a), (b) or (c), or paragraph 146(2)(f). |
+| 20 | A decision under subsection 79(1) of the Land Valuation Act 2012. |
+
+The federal list is not a statement that every Norfolk decision, or every
+land-fee provision, has the same review route. Regulations section 28
+modifies references to instruments for listed Norfolk decisions; it does
+not say that the local tribunal has been abolished or that every reference
+to it becomes a reference to the federal tribunal. Preserve the decision
+and power, decision-maker, standing and any internal-review/specific
+procedure requirements. [FEDACT, sections 12, 17 and 297][FEDACT]; [FEDREG]
+
+For the federal route, section 18 refers to the period prescribed by the
+Rules; its note recognises that the decision's legislation may specify a
+different period. Rule 5's general written-notice branch ends **28 days
+after the applicant is given notice**, with separate statements-of-reasons,
+refusal and inadequate-reasons branches. Rule 6 separately addresses deemed
+decisions and a subsequent written decision. Section 19 permits the
+Tribunal to extend a period in the stated circumstances, including after
+expiry; an extension is not automatic. Do not use the decision date,
+notice date, reasons date or section 51's service trigger interchangeably.
+These are selected rules, not a choice of the applicable clock for an
+actual application. [FEDACT]; [FEDRULES, sections 5 and 6][FEDRULES]
+
+An application itself does not stay operation or implementation under
+federal section 32 or local section 33. An actual stay order has its own
+conditions and duration. Record the precise review route, legal basis,
+trigger and last day, service/reasons evidence and any actual extension or
+stay. The interaction of routes, actual forum/period, fees and complete
+procedure remain held for the particular case; do not let a longer period
+on one route stand in for another route's deadline. [FEDACT]; [LOCALART]
+
 ## Fictional computation and boundary checks
 
 These October 2026 examples stipulate classification, sufficient valuation
@@ -357,6 +408,10 @@ complete-country acceptance or engagement output package is claimed.
 [CONTINUED]: https://www.legislation.gov.au/F2015L00835/2023-02-08/text
 [CORPORATIONS]: https://www.legislation.gov.au/C2004A00818/2026-09-19/text/6
 [REFORM]: https://www.legislation.gov.au/C2020A00154/2021-09-15/text
+[LOCALART]: https://www.legislation.gov.au/C2015Q00073/2022-01-01/text
+[FEDACT]: https://www.legislation.gov.au/C2024A00040/2026-05-18/text
+[FEDREG]: https://www.legislation.gov.au/F2024L01166/2026-01-01/text
+[FEDRULES]: https://www.legislation.gov.au/F2024L01179/2026-07-01/text
 [FEESPAGE]: https://www.nirc.gov.au/Corporate-finance/Fees-and-charges
 [RATES]: https://www.nirc.gov.au/Corporate-finance/Rates
 [PLANS]: https://www.nirc.gov.au/Your-council/Council-documents/Operational-Plans
