@@ -9,11 +9,12 @@
 2. `nf-company-tax.md`
 3. `nf-employment-pay.md`
 4. `nf-gst.md`
-5. `nf-income-tax.md`
-6. `nf-medicare.md`
-7. `nf-payg-withholding.md`
-8. `nf-super-guarantee.md`
-9. `nf-tax-system.md`
+5. `nf-imports.md`
+6. `nf-income-tax.md`
+7. `nf-medicare.md`
+8. `nf-payg-withholding.md`
+9. `nf-super-guarantee.md`
+10. `nf-tax-system.md`
 
 ## Shared files this package needs
 

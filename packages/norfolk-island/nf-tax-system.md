@@ -14,10 +14,10 @@ description: >
 jurisdiction: NF
 category: international
 tax_year: 2026
-tax_year_notes: "Scope checked on 17 October 2026; Australian financial years and event-specific transition dates must be identified separately"
+tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
-last_updated: 2026-10-17
-version: 0.7
+last_updated: 2026-10-18
+version: 0.8
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -132,6 +132,13 @@ refund route for an actual transaction. It also does not establish customs,
 excise, biosecurity, tourist refund or island tariff treatment. Acquire the
 applicable primary rules and transaction evidence before computing or
 describing any of those charges as absent.
+
+Use `nf-imports` for the affirmative ordinary customs-duty exclusion,
+selected entry thresholds, current goods-notice conditions and separate
+Norfolk biosecurity charge and fee exemptions. Actual goods conditions,
+valuation, forms, clearance, mainland preferences and other costs require
+their own sources and facts. The import reference does not establish that
+all border or local services are free.
 
 ## Capital gains: preserve the amended transition
 
