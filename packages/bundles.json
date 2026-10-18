@@ -3736,6 +3736,7 @@
    "name": "Norfolk Island",
    "files": [
     "intake.md",
+    "nf-company-administration.md",
     "nf-company-tax.md",
     "nf-employment-pay.md",
     "nf-gst.md",
@@ -3748,6 +3749,7 @@
     "README.md"
    ],
    "shared": [
+    "company-formation-workflow-base.md",
     "corporate-income-tax-workflow-base.md",
     "foundation.md",
     "income-tax-workflow-base.md",
