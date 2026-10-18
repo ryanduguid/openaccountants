@@ -2,7 +2,7 @@
 name: au-foreign-income
 description: >
   Use this skill whenever asked about how Australian tax residents are taxed on foreign income -- the worldwide assessable income rule, the foreign income tax offset (FITO) and its offset limit, foreign employment income and the narrowed section 23AG exemption, foreign rental/business/investment income, foreign capital gains and Division 775 forex gains, foreign pensions (UK/US), temporary residents under Subdiv 768-R, overseas HELP debtor worldwide income reporting, return labels 20/20T/20U/20O, currency conversion, and record keeping. Trigger on "foreign income", "overseas income", "FITO", "foreign tax credit", "double tax", "UK pension", "Wise income", "foreign rental", or any GL showing offshore receipts.
-version: 1.1
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -12,7 +12,7 @@ category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
-# Australia Foreign Income -- Resident Taxpayers Skill v1.1
+# Australia Foreign Income -- Resident Taxpayers Skill v1.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -40,18 +40,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
 
-**Conservative defaults:**
+**Missing facts and source conditions:**
+
+For engagement work, load `workflow-base`, `income-tax-workflow-base` and
+the applicable cross-border workflow and country content. Preserve their
+source and period gates, confirmed profile, refusals, four universal outputs
+and all applicable domain outputs and checks. Establish residence and
+temporary-residence status before selecting the income base. Missing
+mandatory facts remain **Needs Input** and unresolved law remains held;
+a higher-tax assumption does not establish the correct treatment.
+Labelled hypothetical examples retain their stipulated assumptions.
 
 | Ambiguity | Default |
 |---|---|
-| Unknown residency status | Treat as Australian resident taxed on worldwide income; STOP and escalate if genuinely unclear (residency is threshold -- see au-tax-residency) |
-| Foreign tax "paid" unclear (withheld vs assessed vs final) | Treat only tax actually paid (or deemed paid) and evidenced as FITO-eligible; accrued/unpaid foreign tax does NOT count |
-| Unknown exchange rate evidence | Use ATO annual average rate for the income year; flag that transaction-date rates may be required (e.g. capital gains, one-off receipts) |
-| Foreign employment exemption (s 23AG) claimed | Assume NOT exempt unless the facts map exactly to the confined 2026-27 categories AND 91+ continuous days |
-| Overseas asset holding >= $50,000 unclear | Answer "Yes" at 20P and keep the supporting schedule |
-| Temporary resident status unclear | Assume NOT a temporary resident (worldwide income assessable) until visa + Social Security Act tests confirmed |
-| Foreign pension with possible UPP | Include gross; claim UPP deductible amount ONLY with an ATO determination or solid computation; escalate valuation questions |
-| Foreign tax year straddles two Australian years | Apportion to the Australian income years the income aligns with; flag both years |
+| Unknown residency status | Needs Input. Establish the applicable residence facts and law using `au-tax-residency`; hold the affected worldwide-income calculation and disclosure. |
+| Foreign tax "paid" unclear (withheld vs assessed vs final) | Needs Input on payment or deemed payment, the relevant income and eligibility. Hold the affected FITO claim; do not turn missing evidence into an eligible amount or an established zero. |
+| Unknown exchange rate evidence | Needs Input on the permitted translation method, relevant dates and rate evidence. Hold affected Australian-dollar amounts; an annual average requires its own applicable conditions. |
+| Foreign employment exemption (s 23AG) claimed | Establish the applicable law and required employer, service, duration and other conditions. Unknown eligibility remains Needs Input; unresolved claims follow the refusal catalogue. |
+| Overseas asset holding >= $50,000 unclear | Needs Input. Establish the applicable return year, asset facts, valuation and question-19 interaction before answering the disclosure; do not fill Yes or No from uncertainty. |
+| Temporary resident status unclear | Needs Input on the applicable visa, residence and other legal conditions. Hold the affected income inclusion or concession; do not assume either status. |
+| Foreign pension with possible UPP | Keep the documented gross receipt in a preliminary register. Hold the affected tax computation until the applicable pension treatment and UPP conditions are established; preserve the valuation refusal. |
+| Foreign tax year straddles two Australian years | Establish the income-recognition and tax-payment facts for each Australian income year. Unknown allocation remains Needs Input; do not apportion only by the foreign year label. |
 
 ## Section 2 -- Refusal catalogue
 
@@ -67,20 +76,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 3 -- GL sweep library
 
-Foreign income hides in bank feeds, e-wallet exports and platform statements -- never trust the client's "I have no overseas income".
+Review the available transaction evidence for possible foreign items. A
+bank or platform label is a lead; establish income character, residence,
+period, translation and relief conditions before an engagement result.
+An unresolved receipt stays unclassified in a preliminary register.
 
 | GL pattern | Likely issue | Action |
 |---|---|---|
-| Foreign bank interest credits (UK, US, NZ, SG accounts) | Assessable interest income | Convert at average rate; gross before foreign withholding; FITO for foreign tax withheld |
-| Dividend credits from overseas brokers (IBKR, Stake, Computershare US) | Assessable dividends (no franking; NZ imputation NOT claimable) | Gross-up to pre-withholding amount; FITO for withholding; check treaty rates |
-| WISE / REVOLUT / PAYONEER receipts | Mixed: own transfers vs foreign income vs client payments | Characterise per transaction -- client payments are business/employment income; own-account transfers are NOT income |
-| Overseas payroll deposits (foreign employer, no PAYG) | Foreign employment income | Assessable in full; PAYG instalments flag; FITO for foreign tax; s 23AG screen |
-| AIRBNB / BOOKING.COM / VRBO payouts for overseas property | Foreign rental income | Gross rent assessable; deductions at Australian rules (interest, rates, repairs, depreciation); FITO for foreign tax on net rent |
-| Foreign super/pension periodic payments (UK SIPP, US 401k/IRA, NZ KiwiSaver) | Foreign pension income -- assessable | Report pensions before UPP at question 20; claim eligible UPP once at D11. Lump sums escalate (R-AU-FI-4) |
-| RSU/ESPP vesting from a foreign employer | ESS discount income (question 12) + foreign tax creditable | Not question 20 income, but FITO at 20O can include foreign tax on ESS discounts |
-| Crypto exchange withdrawals to AUD (foreign exchange) | CGT events, not "foreign income" per se | Route to CGT schedule (question 18); FITO possible for foreign tax on the gain |
-| Regular small foreign transfers labelled "family support" | Possible foreign income vs gifts/loans | Evidence of gift/loan or treat as income; escalate remittance structuring |
-| Foreign currency account balance movements | Div 775 forex realisation events | Check $250k balance election eligibility (s 775-230); otherwise gains assessable/losses deductible |
+| Foreign bank interest credits (UK, US, NZ, SG accounts) | Potential foreign interest | Establish the assessable gross amount, permitted translation method and rate evidence, then test FITO eligibility separately; hold unknown inputs. |
+| Dividend credits from overseas brokers (IBKR, Stake, Computershare US) | Potential dividend income | Establish residence/temporary-residence status, the gross amount and translation. Test any franking, NZ imputation and FITO treatment separately under the applicable rules; hold unresolved eligibility and treaty conditions. |
+| WISE / REVOLUT / PAYONEER receipts | Possible transfers, income, gifts or loans | Establish each transaction's character before tax treatment. Missing character, residence, period or translation facts remain Needs Input. |
+| Overseas payroll deposits (foreign employer, no PAYG) | Potential foreign employment income | Establish residence/temporary-residence status and the section 23AG screen, then the assessable amount, translation and any PAYG instalment obligation. Hold FITO until its separate conditions are established. |
+| AIRBNB / BOOKING.COM / VRBO payouts for overseas property | Potential foreign rental income | Establish residence/temporary-residence status, gross rent, Australian deduction conditions and translation. Hold unknown income, expense and FITO treatment. |
+| Foreign super/pension periodic payments (UK SIPP, US 401k/IRA, NZ KiwiSaver) | Potential foreign pension income | Establish residence/temporary-residence status, pension and treaty treatment, translation and UPP eligibility before tax computation or question 20/D11 entries. Hold unknown eligibility; lump sums and valuations retain R-AU-FI-4. |
+| RSU/ESPP vesting from a foreign employer | Potential ESS discount income | Establish the ESS event, residence, period, translation and applicable return labels before classification or question 12/20O entries. FITO remains subject to its separate eligibility conditions. |
+| Crypto exchange withdrawals to AUD (foreign exchange) | Potential disposal, income or transfer requiring classification | Establish the transaction and applicable capital/ordinary-income rules before choosing a CGT schedule or question 18 entry. Hold unknown tax character, translation and foreign-tax eligibility. |
+| Regular small foreign transfers labelled "family support" | Possible foreign income vs gifts/loans | Establish the payment's character. Missing evidence remains Needs Input; do not classify it as income, gift or loan by default. Preserve the structuring refusal. |
+| Foreign currency account balance movements | Potential Div 775 forex realisation events | Establish the actual event, residence, translation and applicable exclusions/elections. Verify $250k balance election eligibility (s 775-230); do not assume an election or gain/loss treatment from missing facts. |
 | Journal reclassifying foreign income as "loan from relative" | Concealment risk | Refuse without documentation; escalate |
 
 ---
@@ -328,11 +340,25 @@ REVIEWER FLAGS: [list Tier 2 flags and escalation items]
 
 If the client provides only bank/e-wallet statements:
 
-1. Sweep all accounts per Section 3; build the foreign income register with exchange-rate assumptions listed per line.
-2. Characterise every foreign-currency inflow (income vs transfer vs gift vs loan) -- undocumented items default to income.
-3. Compute FITO at the actual foreign tax evidenced, with the limit worksheet; flag missing foreign tax receipts.
-4. Run the s 23AG, temporary resident, question 19, 20P and HELP screens and record PASS/FAIL/UNKNOWN.
-5. **Flag:** "Register built from bank/e-wallet data only. Foreign tax receipts, residency facts, visa status, foreign assessments and treaty positions not sighted. Reviewer must confirm before any position is taken."
+1. Build a preliminary foreign-item register from the available evidence.
+   Record original currency, dates, documented amounts and missing inputs;
+   leave unsupported Australian-dollar amounts uncomputed.
+2. Classify only supported income, transfers, gifts or loans. Record
+   undocumented items as unclassified and request the missing facts.
+3. Record evidenced foreign tax separately from an allowable FITO. Hold
+   the affected claim until payment, inclusion, eligibility, translation
+   and limit conditions are established.
+4. Screen residence, section 23AG, temporary residence, question 19, 20P
+   and HELP as applicable. Record UNKNOWN without substituting PASS, FAIL
+   or a return answer. Apply the existing refusals where triggered.
+5. Identify the missing facts and affected work for review. A preliminary
+   register does not clear the profile or source gates, or authorise a
+   completed tax computation, disclosure or financial output package.
+
+Guard revision v1.2 (18 October 2026): replace unsupported residence,
+translation, disclosure and receipt-character defaults with Needs Input,
+and make the preliminary-register boundary explicit. This revision does
+not reverify the guide's unchanged tax figures, examples or form labels.
 
 ---
 
