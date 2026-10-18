@@ -4,7 +4,7 @@ description: Use this skill whenever asked to assemble, finalize, or package an 
 jurisdiction: IE
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-18
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -734,7 +734,7 @@ If execution runs out of context mid-build, complete the computation work first 
 ## Footer disclaimer
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed and signed off by a credentialed Irish reviewer — Chartered Accountants Ireland (CAI), ACCA-IE, or a Chartered Tax Adviser (CTA, Irish Tax Institute) — before filing via the Revenue Online Service (ROS).*
+*All outputs must be reviewed and signed off by a credentialed Irish reviewer — Chartered Accountants Ireland (CAI), ACCA-IE, or a Chartered Tax Adviser (CTA, Irish Tax Institute) — before filing via the Revenue Online Service (ROS).*
 
 ## Section 2 — Required inputs from upstream skills
 

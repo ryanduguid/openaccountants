@@ -5,7 +5,7 @@ jurisdiction: US-CA
 category: payroll
 tax_year: 2025
 version: 1.2
-last_updated: 2026-10-04
+last_updated: 2026-10-18
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -580,7 +580,7 @@ The skill is reviewer-oriented and assumes downstream reconciliation and self-ch
 2. **SDI uncapped wage base** — payroll system configuration drift continues to produce errors in 2025 prior-period audits.
 3. **CalSavers mandate** — the December 31, 2025 1+ employee deadline arrives during the engagement window for many small businesses; non-registration is a $750/employee penalty.
 
-A taxpayer or employer relying on this skill without credentialed review proceeds at their own risk. The skill is current as of November 15, 2025 and is subject to change with new EDD publications, FTB rate adjustments, court decisions affecting AB5, and statutory amendments.
+The skill is current as of November 15, 2025 and is subject to change with new EDD publications, FTB rate adjustments, court decisions affecting AB5, and statutory amendments.
 
 <!-- openaccountants-cta-block -->
 

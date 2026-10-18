@@ -4,7 +4,7 @@ description: Use this skill whenever asked to compute, review, or advise on end-
 jurisdiction: NG
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-18
 reviewed_by: Omolola Fasasi
 review_status: pending_review
 tier: 2
@@ -390,7 +390,7 @@ Minimum tax check: 1% × 500,000 = 5,000 → not binding (computed PAYE is highe
 
 ## *OpenAccountants — open-source accounting skills for AI*
 
-*This is not tax advice. All outputs must be reviewed by a qualified Nigerian payroll professional or tax consultant before any payslip is issued or any remittance is made.*
+*All outputs must be reviewed by a qualified Nigerian payroll professional or tax consultant before any payslip is issued or any remittance is made.*
 
 <!-- openaccountants-cta-block -->
 
