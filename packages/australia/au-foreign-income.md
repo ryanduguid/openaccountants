@@ -84,15 +84,15 @@ An unresolved receipt stays unclassified in a preliminary register.
 | GL pattern | Likely issue | Action |
 |---|---|---|
 | Foreign bank interest credits (UK, US, NZ, SG accounts) | Potential foreign interest | Establish the assessable gross amount, permitted translation method and rate evidence, then test FITO eligibility separately; hold unknown inputs. |
-| Dividend credits from overseas brokers (IBKR, Stake, Computershare US) | Assessable dividends (no franking; NZ imputation NOT claimable) | Gross-up to pre-withholding amount; FITO for withholding; check treaty rates |
-| WISE / REVOLUT / PAYONEER receipts | Mixed: own transfers vs foreign income vs client payments | Characterise per transaction -- client payments are business/employment income; own-account transfers are NOT income |
-| Overseas payroll deposits (foreign employer, no PAYG) | Foreign employment income | Assessable in full; PAYG instalments flag; FITO for foreign tax; s 23AG screen |
-| AIRBNB / BOOKING.COM / VRBO payouts for overseas property | Foreign rental income | Gross rent assessable; deductions at Australian rules (interest, rates, repairs, depreciation); FITO for foreign tax on net rent |
-| Foreign super/pension periodic payments (UK SIPP, US 401k/IRA, NZ KiwiSaver) | Foreign pension income -- assessable | Report pensions before UPP at question 20; claim eligible UPP once at D11. Lump sums escalate (R-AU-FI-4) |
-| RSU/ESPP vesting from a foreign employer | ESS discount income (question 12) + foreign tax creditable | Not question 20 income, but FITO at 20O can include foreign tax on ESS discounts |
-| Crypto exchange withdrawals to AUD (foreign exchange) | CGT events, not "foreign income" per se | Route to CGT schedule (question 18); FITO possible for foreign tax on the gain |
+| Dividend credits from overseas brokers (IBKR, Stake, Computershare US) | Potential dividend income | Establish residence/temporary-residence status, the gross amount and translation. Test any franking, NZ imputation and FITO treatment separately under the applicable rules; hold unresolved eligibility and treaty conditions. |
+| WISE / REVOLUT / PAYONEER receipts | Possible transfers, income, gifts or loans | Establish each transaction's character before tax treatment. Missing character, residence, period or translation facts remain Needs Input. |
+| Overseas payroll deposits (foreign employer, no PAYG) | Potential foreign employment income | Establish residence/temporary-residence status and the section 23AG screen, then the assessable amount, translation and any PAYG instalment obligation. Hold FITO until its separate conditions are established. |
+| AIRBNB / BOOKING.COM / VRBO payouts for overseas property | Potential foreign rental income | Establish residence/temporary-residence status, gross rent, Australian deduction conditions and translation. Hold unknown income, expense and FITO treatment. |
+| Foreign super/pension periodic payments (UK SIPP, US 401k/IRA, NZ KiwiSaver) | Potential foreign pension income | Establish residence/temporary-residence status, pension and treaty treatment, translation and UPP eligibility before tax computation or question 20/D11 entries. Hold unknown eligibility; lump sums and valuations retain R-AU-FI-4. |
+| RSU/ESPP vesting from a foreign employer | Potential ESS discount income | Establish the ESS event, residence, period, translation and applicable return labels before classification or question 12/20O entries. FITO remains subject to its separate eligibility conditions. |
+| Crypto exchange withdrawals to AUD (foreign exchange) | Potential disposal, income or transfer requiring classification | Establish the transaction and applicable capital/ordinary-income rules before choosing a CGT schedule or question 18 entry. Hold unknown tax character, translation and foreign-tax eligibility. |
 | Regular small foreign transfers labelled "family support" | Possible foreign income vs gifts/loans | Establish the payment's character. Missing evidence remains Needs Input; do not classify it as income, gift or loan by default. Preserve the structuring refusal. |
-| Foreign currency account balance movements | Div 775 forex realisation events | Check $250k balance election eligibility (s 775-230); otherwise gains assessable/losses deductible |
+| Foreign currency account balance movements | Potential Div 775 forex realisation events | Establish the actual event, residence, translation and applicable exclusions/elections. Verify $250k balance election eligibility (s 775-230); do not assume an election or gain/loss treatment from missing facts. |
 | Journal reclassifying foreign income as "loan from relative" | Concealment risk | Refuse without documentation; escalate |
 
 ---

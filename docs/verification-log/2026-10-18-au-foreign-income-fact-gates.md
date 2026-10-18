@@ -13,6 +13,12 @@ receipts and missing inputs, but it does not clear the profile/source
 gates or produce a completed financial package. The GL sweep and onboarding
 routes follow the same rule. Existing refusals remain in force.
 
+The hosted review found that sibling GL rows still gave unconditional
+dividend, payroll and pension instructions. I qualified the remaining
+GL classification and claim routes as well, including rental, ESS,
+crypto and forex leads, so the row-level actions retain the same missing
+input and eligibility gates.
+
 I checked these changes against the universal, income-tax and cross-border
 workflow controls and reviewed the missing-fact scenarios in context.
 Version 1.2 records this scoped correction; the earlier financial source
