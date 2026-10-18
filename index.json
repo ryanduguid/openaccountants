@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-18T06:29:26+00:00",
+ "generated_at": "2026-10-18T06:48:33+00:00",
  "counts": {
-  "guides": 1930,
+  "guides": 1931,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -15891,6 +15891,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-investment-withholding",
+   "path": "skills/international/norfolk-island/nf-investment-withholding.md",
+   "name": "nf-investment-withholding",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "nf-medicare",
