@@ -176,7 +176,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NA | Namibia | 6 | 0 |
 | NC | New Caledonia | 0 | 0 |
 | NE | Niger | 5 | 0 |
-| NF | Norfolk Island | 9 | 0 |
+| NF | Norfolk Island | 10 | 0 |
 | NG | Nigeria | 13 | 2 |
 | NI | Nicaragua | 7 | 0 |
 | NL | Netherlands (Kingdom of the) | 19 | 0 |

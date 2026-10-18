@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.8
+version: 0.9
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -139,6 +139,13 @@ Norfolk biosecurity charge and fee exemptions. Actual goods conditions,
 valuation, forms, clearance, mainland preferences and other costs require
 their own sources and facts. The import reference does not establish that
 all border or local services are free.
+
+Use `nf-company-administration` for selected ASIC company registration,
+officer/member records, company-size tests, financial reporting and annual
+review obligations. It distinguishes transferred companies from new
+registrations and preserves director-ID transitions, full formation
+streams, accounting standards and other unresolved conditions. Company
+registration does not decide tax residence or complete all country topics.
 
 ## Capital gains: preserve the amended transition
 

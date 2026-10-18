@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-18T00:41:08+00:00",
+ "generated_at": "2026-10-18T01:10:42+00:00",
  "counts": {
-  "guides": 1925,
+  "guides": 1926,
   "jurisdictions": 248,
   "accountant_reviewed": 164
  },
@@ -15774,6 +15774,19 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "nf-company-administration",
+   "path": "skills/international/norfolk-island/nf-company-administration.md",
+   "name": "nf-company-administration",
+   "jurisdiction": "NF",
+   "category": "formation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "nf-company-tax",
