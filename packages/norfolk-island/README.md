@@ -10,14 +10,15 @@
 3. `nf-company-administration.md`
 4. `nf-company-tax.md`
 5. `nf-employment-pay.md`
-6. `nf-gst.md`
-7. `nf-imports.md`
-8. `nf-income-tax.md`
-9. `nf-medicare.md`
-10. `nf-payg-withholding.md`
-11. `nf-property-transfers.md`
-12. `nf-super-guarantee.md`
-13. `nf-tax-system.md`
+6. `nf-fbt.md`
+7. `nf-gst.md`
+8. `nf-imports.md`
+9. `nf-income-tax.md`
+10. `nf-medicare.md`
+11. `nf-payg-withholding.md`
+12. `nf-property-transfers.md`
+13. `nf-super-guarantee.md`
+14. `nf-tax-system.md`
 
 ## Shared files this package needs
 
