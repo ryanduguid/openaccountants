@@ -16,7 +16,7 @@ jurisdiction: AU
 version: 1.3
 category: international
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-18
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
