@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-18 | [Norfolk Island annual income-tax returns and filing controls](2026-10-18-norfolk-return-filing.md) |
 | 2026-10-18 | [Norfolk Island capital gains, losses and foreign-resident property](2026-10-18-norfolk-cgt.md) |
 | 2026-10-18 | [Norfolk Island dividend, interest and royalty withholding](2026-10-18-norfolk-investment-withholding.md) |
 | 2026-10-18 | [Australian foreign-income mandatory fact gates](2026-10-18-au-foreign-income-fact-gates.md) |

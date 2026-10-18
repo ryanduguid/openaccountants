@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.15
+version: 0.16
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -220,6 +220,13 @@ temporary-resident and foreign-service conditions, eligible foreign tax,
 the ordinary credit limit, currency translation, amendments and records.
 Actual treaties, corporate special regimes, transfer pricing and completed
 returns retain their own source, fact and workflow requirements.
+
+Use `nf-return-filing` for selected 2026 annual income-tax return triggers,
+exceptions, child-support filing, ordinary and substituted-period deadlines,
+business-day adjustments, declarations and confirmed agent arrangements.
+Its 2026 return concerns 2025-26, separately from 2026-27 tax planning.
+Actual forms, returns, payment dates, general disputes and penalties retain
+their own source, fact and workflow requirements.
 
 ## Classification examples and review checks
 
