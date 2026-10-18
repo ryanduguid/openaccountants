@@ -6,17 +6,18 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `nf-company-administration.md`
-3. `nf-company-tax.md`
-4. `nf-employment-pay.md`
-5. `nf-gst.md`
-6. `nf-imports.md`
-7. `nf-income-tax.md`
-8. `nf-medicare.md`
-9. `nf-payg-withholding.md`
-10. `nf-property-transfers.md`
-11. `nf-super-guarantee.md`
-12. `nf-tax-system.md`
+2. `nf-annual-rates.md`
+3. `nf-company-administration.md`
+4. `nf-company-tax.md`
+5. `nf-employment-pay.md`
+6. `nf-gst.md`
+7. `nf-imports.md`
+8. `nf-income-tax.md`
+9. `nf-medicare.md`
+10. `nf-payg-withholding.md`
+11. `nf-property-transfers.md`
+12. `nf-super-guarantee.md`
+13. `nf-tax-system.md`
 
 ## Shared files this package needs
 
