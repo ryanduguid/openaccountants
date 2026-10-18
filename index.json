@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T10:08:04+00:00",
+ "generated_at": "2026-10-18T10:55:13+00:00",
  "counts": {
   "guides": 1937,
   "jurisdictions": 248,
@@ -1564,7 +1564,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "us-circular-230-disclosure",
