@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
 last_updated: 2026-10-18
-version: 0.17
+version: 0.18
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -233,6 +233,12 @@ periods, eligible business self-amendments, retained regulations, objection
 grounds and clocks, delayed decisions and external review. It distinguishes
 filing, payment and recovery, and holds actual deadlines, complex disputes,
 penalties and full compliance pending their own sources and facts.
+
+Use `nf-tax-penalties-remission` for selected late-filing, false-statement,
+shortfall and default-assessment penalties, agent safe harbour, disclosure
+reductions, notices and remission. It separates period-specific units,
+entity multipliers and objection rights; actual special regimes, interest,
+submissions and complete compliance retain their own evidence requirements.
 
 ## Classification examples and review checks
 
