@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T10:55:13+00:00",
+ "generated_at": "2026-10-19T07:00:54+00:00",
  "counts": {
   "guides": 1937,
   "jurisdictions": 248,
@@ -15056,7 +15056,7 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Ashish Bista",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-18"
   },
@@ -15095,7 +15095,7 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Ashish Bista",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-18"
   },
@@ -16473,7 +16473,7 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-18"
   },
