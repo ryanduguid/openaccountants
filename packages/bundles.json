@@ -1652,6 +1652,32 @@
     "workflow-base.md"
    ]
   },
+  "christmas-island": {
+   "jurisdiction": "CX",
+   "name": "Christmas Island",
+   "files": [
+    "intake.md",
+    "cx-tax-system.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
+  "cocos-keeling-islands": {
+   "jurisdiction": "CC",
+   "name": "Cocos Keeling Islands",
+   "files": [
+    "intake.md",
+    "cc-tax-system.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "colombia": {
    "jurisdiction": "CO",
    "name": "Colombia",
