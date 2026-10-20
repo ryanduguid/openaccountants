@@ -26,7 +26,13 @@ or irregular contractor invoice is insufficient. Fund choice, fund
 receipt and allocation require separate evidence. Old-quarter/new-QE-day
 contribution allocation follows the transition without double use.
 
-Each companion has 25 fictional amount or classification cases, covering
+The current ATO payment guide, updated 20 October 2026, makes automatic
+allocation to the earliest unpaid QE day explicit. The companions retain
+prior base-shortfall history and distinguish statutory carry-forward from
+additional contractual super. Selected deduction categories/exclusions
+are identified without calculating an income-tax claim.
+
+Each companion has 26 fictional amount or classification cases, covering
 ordinary and low pay, weekly exclusions, labour invoices, sacrifice,
 same-day payments, annual-cap boundaries, multiple employers, certificates,
 sole traders, shortfalls, receipt, unused allocation, extensions and

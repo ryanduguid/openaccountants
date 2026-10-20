@@ -18,7 +18,7 @@ tax_year: 2026
 tax_year_notes: "Primarily QE days from 1 July 2026 to 30 June 2027; saved old quarterly liabilities remain separate"
 tier: 2
 last_updated: 2026-10-21
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -191,8 +191,9 @@ For an ordinary covered accumulation-fund case with all facts established:
    without double counting overlapping categories.
 4. Apply the annual-base crossing rule using the verified earnings ledger.
 5. Multiply the resulting QE by **12%** for the individual SG amount.
-6. Allocate eligible employer contributions under section 18C in receipt
-   order, without reusing amounts applied to another QE day.
+6. Apply eligible contributions to the earliest unpaid QE day in receipt
+   order under the statutory rules. Do not choose a later payday or reuse
+   an amount already applied to an earlier QE day.
 7. Reconcile any base shortfall, late allocation and remaining final
    shortfall separately from notional earnings, uplift and choice loading.
 8. Verify fund choice, allocation information, actual receipt, calendar
@@ -257,6 +258,20 @@ conditions. Apply contributions in receipt order and prevent double use
 across QE days or late-period allocations. A contribution exceeding one
 payday's amount is not a refund or automatically available credit for
 every later payday. [SG, section 18C(1)][SG]
+
+The ATO confirms that eligible contributions apply automatically to the
+earliest QE day whose minimum SG remains unpaid. A payment received in
+time for the current payday can therefore discharge an older unpaid
+QE day first and leave the current day short. The employer cannot elect
+a different allocation merely by labelling the remittance. Preserve
+earlier base shortfalls and late-period history after principal is paid.
+[SG, sections 18C-18D][SG]; [HOWTO]
+
+Additional super required by an award, enterprise agreement or contract
+remains payable under that instrument. Carrying an excess amount forward
+for statutory minimum SG does not cancel the separate contractual amount
+for a later payday. Verify those obligations before reducing a remittance
+because an SG credit or annual-base limit is available. [HOWTO]
 
 ## Deadline calendar and longer periods
 
@@ -381,6 +396,13 @@ non-deductibility rule into every post-July QE-day charge or infer that
 every charge, penalty and interest amount is deductible. No deduction is
 calculated by this companion. [PAYDAY, items 80, 92 and 183][PAYDAY]
 
+Current ATO guidance identifies deductions for on-time and late eligible
+contributions and payment of SGC for QE days from 1 July 2026. It excludes
+late-payment penalties, general interest accruing on unpaid SGC and
+quarterly-period SGC assessments. Keep those categories separate, and
+verify all applicable income-tax deduction conditions before a claim.
+This is a classification route, not a computed deduction. [HOWTO]
+
 ## Worked component examples and classification patterns
 
 All examples are fictional AUD for **2026-27**. Worker, earnings and
@@ -408,6 +430,7 @@ not completed engagements. Any unresolved required input remains a hold.
 | Individual SG amount 240; on-time eligible contribution 200 | Base shortfall 40. If a later eligible 40 is applied before assessment, final shortfall can become nil; this does not establish nil total SGC. |
 | Correct 240 sent to clearing house on the last permitted day; fund receipt unknown | Timing and compliance unresolved; no presumed timely receipt. |
 | Unused eligible receipt 300; applied to first QE day's SG amount 240 | Remainder 60 can be considered under the statutory period/allocation conditions; it cannot be reused as 300 for a later day. |
+| Earlier QE day has base/final shortfall 120; current day has SG amount 120; eligible receipt 120 is late for the earlier day but timely for the current day | Apply to the earlier unpaid day first: its final shortfall becomes nil, its base/history remain 120 and the current base shortfall is 120. Do not elect the current day or infer nil total SGC. |
 | Off-cycle bonus 500 between established scheduled paydays; all determination conditions met | Individual SG amount 60; receipt deadline follows the first subsequent standard QE day's usual period. |
 | Same bonus label, but next scheduled standard payment not made | The determination condition fails; do not assume the out-of-cycle extension. |
 | New employee's first eligible contribution qualifies for item 1 | Use the 20-business-day endpoint; later paydays require their own item 4 or other extension evidence. |
@@ -462,7 +485,7 @@ or to delete records automatically at that point. [SG, section 79][SG]
 | 5. Registration | Reviewer-held employer/fund readiness and choice evidence required. Complete registration identifiers, portals and authority procedures remain unverified. |
 | 6. Declarations and payment | Selected receipt deadlines, extensions, voluntary disclosure and assessment distinction supplied. Current forms, actual holiday mapping, STP and all operational filing requirements remain open. |
 | 7. Penalties and interest | Selected SGC structure, uplift and choice controls supplied. Actual daily rates, complete penalty/notice machinery and remedies remain open. |
-| 8. Income-tax interaction | No automatic deduction inferred; transition and separate income-tax source gate supplied. Actual deduction/cap calculations remain open. |
+| 8. Income-tax interaction | Selected ATO deduction categories and exclusions, transition and separate income-tax source gate supplied. Actual deduction/cap calculations remain open. |
 | 9. Payment patterns | Selected fund/clearing-house/refund/charge patterns supplied; ambiguous remittances require evidence. |
 | 10. Refusals and defaults | Missing law, QE, annual history, certificate, fund, receipt or deadline inputs require Needs Input/hold. No country default is authorised. |
 | 11. Currency and rounding | Examples use AUD and exact cents; statutory annual base rounds down to AUD 10. Operational fractional-cent contribution/charge rules and any foreign-currency conversion remain unverified. |
@@ -483,7 +506,8 @@ territory/definitions, employee/QE status, annual base, contributions,
 shortfalls, choice, disclosure, assessments and records. The out-of-cycle
 determination was read in full. ATO eligibility was updated **15 July
 2026**, rate/base guidance **17 April 2026**, deadline guidance **29 September
-2026** and current-charge guidance **21 June 2026**. Do not use a mixed-year
+2026** and current-charge guidance **21 June 2026**. The payment/allocation and deduction guide was updated
+**20 October 2026** and read in full. Do not use a mixed-year
 ATO illustration to override the Act's payment-day commencement.
 
 The historical territory Acts and dictionary limits are stated above.
@@ -499,6 +523,7 @@ volatile law and operational guidance before engagement use.
 [RATES]: https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee
 [DEADLINES]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/payment-deadlines-for-payday-super
 [ELIGIBILITY]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/work-out-if-you-have-to-pay-super
+[HOWTO]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/how-to-work-out-and-pay-super
 [CHARGE]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/missed-or-late-payday-super-payments/what-happens-if-you-dont-pay-super-correctly
 [TERRITORY]: https://www.legislation.gov.au/C1955A00034/2020-12-18/2020-12-18/text/original/epub/OEBPS/document_1/document_1.html
 [DICT]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_10/document_10.html
