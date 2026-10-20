@@ -19,7 +19,7 @@ tax_year: 2026
 tax_year_notes: "Primarily QE days from 1 July 2026 to 30 June 2027; saved old quarterly liabilities remain separate"
 tier: 2
 last_updated: 2026-10-21
-version: 0.3
+version: 0.4
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -321,6 +321,7 @@ location instead. [REG, regulation 16][REG]; [NEWFUND]; [STREAM]
 | Ordinary fund and member | Fund identity, ABN/USI, member account readiness, compliance and ability to accept this employer's contribution. Check Super Fund Lookup and the applicable statutory trustee evidence. |
 | SMSF | Reviewer-held ABN, electronic service address, payment-detail readiness and ATO-regulated/compliance evidence. An SMSF label alone supplies neither allocatability nor a SuperStream exemption. |
 | Employer default | Eligible complying/default fund, authorised MySuper product, applicable insurance conditions, current registration and required form particulars. A default selection alone cannot override a chosen or notified stapled fund. |
+| Quoted TFN hand-off | Reviewer-held quotation basis/date, applicable statutory deadline and confirmation/evidence that the relevant trustee was informed. Keep the actual TFN outside this workflow; see the conditional test below. |
 | Software/service | SuperStream-compliant data and payment path, expected processing time, MVR support, STP/QE capability and authorised access. A data-only product also needs a compliant electronic payment arrangement. |
 
 [SG, sections 18A-18B and 32C-32D][SG]; [REG, regulations 14 and 16][REG];
@@ -328,6 +329,53 @@ location instead. [REG, regulation 16][REG]; [NEWFUND]; [STREAM]
 These are selected readiness checks, not a complete employer, PAYG, payroll
 or special-scheme registration manual. Do not invent a separate SG
 registration requirement from this table.
+
+### Quoted TFN hand-off
+
+The SIS Act extends to all external territories. For an employee within
+its section 15A meaning and a contribution to an eligible superannuation
+entity, confirm whether a TFN was quoted in the manner or circumstances
+covered by sections 299A, 299C and 299P, including a PAYG quotation on
+or after 1 July 2007 and a deemed section 202CG disclosure. An eligible
+entity here is a regulated superannuation fund or approved deposit fund.
+Do not assume every informal identifier reference is an approved quotation.
+[SIS1, sections 8, 10 and 15A][SIS1]; [SIS2, sections 299A, 299C and 299P][SIS2]
+
+Where the employer then contributes for the employee and has not already
+informed that entity's trustee, section 299C requires the employer to
+inform the trustee of the quoted TFN before the required time:
+
+- Quotation **more than 14 days before** the contribution: by the end of
+  the contribution day.
+- Otherwise: by the end of the **14th day after** the quotation day.
+
+These are calendar-day conditions, distinct from SG's business-day receipt
+rule. Establish the contribution date for this provision; a payroll entry
+or attempted bank debit alone does not establish it. Section 299C(3) makes contravention a strict liability offence with
+a stated penalty of **10 penalty units**; no AUD penalty assessment is
+computed here. If the relevant trustee was already informed, section
+299C(1)(c) does not require the same notification again. If no TFN was
+quoted, do not fabricate one or treat section 299C as proof that a fund
+can accept every contribution. Check the actual fund/channel conditions.
+[SIS2, section 299C][SIS2]; [NEWFUND]
+
+The employer or authorised practitioner records the quotation basis/date,
+contribution date, applicable deadline, trustee-notification status and
+secure evidence reference. They transmit through their authorised channel,
+confirm any service-provider authority to share the TFN and keep the
+actual number outside this workflow. An unresolved notification check
+prevents certifying that hand-off as complete; it does **not** authorise
+delaying an otherwise due SG contribution. For an RSA or special scheme,
+verify its separate TFN provisions before certifying compliance. [NEWFUND];
+[SIS2, section 299C][SIS2]
+
+The current ATO page describes TFN notification using both a general
+14-day instruction and a new-employee instruction to provide it more than
+14 days before the first contribution. Those statements do not reproduce
+section 299C's conditional test above. Escalate an apparent conflict to
+the authorised practitioner with the exact dates and source versions; do
+not invent a 14-day lead time or postpone a statutory SG deadline.
+[NEWFUND]; [SIS2, section 299C][SIS2]
 
 The current ATO form channel identifies **Superannuation standard choice
 form, NAT 13080**. Complete the employer/default section before providing
@@ -666,9 +714,14 @@ portal submission, bank transfer or completed payroll engagement.
 | Pay event from 1 July 2027 omits QE or super liability | The ATO says it rejects the report; no extension of the 2026-27 reporting acceptance. Recheck the later year's substantive figures separately. |
 | Update event with no QE YTD change and no actual new pay | Do not create a new QE day or SG amount from the event alone; retain the event and reconcile to actual pay. |
 | Earlier QE was 2,500 but lodged as 2,000; other facts unchanged; no cap or rounding difference | Correct the earlier records/report: SG component rises from 240 to 300, difference 60. The correction does not make the earnings newly paid or reset their receipt deadline. |
+| Approved quotation 1 July 2026; contribution 20 July 2026; same eligible entity; trustee not previously informed | Quotation was 19 days earlier, so section 299C's required time is the end of 20 July 2026. Retain secure notification evidence; no actual TFN belongs in this working paper. |
+| Approved quotation 10 July 2026; contribution 15 July 2026; same conditions | Quotation was 5 days earlier, so the required time is the end of 24 July 2026, the 14th day after quotation. The SG receipt endpoint remains separately determined. |
+| Approved quotation 1 July 2026; contribution 15 July 2026; same conditions | Exactly 14 days is not more than 14. The otherwise branch gives the end of 15 July 2026; do not add another 14 days from contribution. |
+| No TFN quoted; otherwise due SG contribution | Section 299C's quotation condition is not established. Resolve lawful fund/channel acceptance without inventing a TFN or an SG extension; no complete notification certification. |
+| Approved quotation and contribution, but evidence proves the same entity's trustee was already informed | Section 299C(1)(c) is false; no repeated notification under this provision. Retain the prior evidence and test any changed recipient separately. |
 
 [SG]; [REG]; [WHERE]; [CHOICE]; [FORM]; [STAPLED]; [NEWFUND]; [STREAM];
-[UPGRADE]; [STP]; [STPFIX].
+[UPGRADE]; [STP]; [STPFIX]; [SIS1]; [SIS2].
 
 ## Reviewer outputs, checks and remaining slots
 
@@ -682,7 +735,7 @@ percentage supplies the whole engagement:
 | Remittance reconciliation | Expected amount, actual eligible receipt, allocation order, clearing-house status, refunds, unused credits, base/final shortfalls and unmatched items. |
 | Filing and payment calendar | Actual QE day, normal endpoint, each evidenced extension, holiday sources, receipt status and any assessment/disclosure event. |
 | Reviewer brief | Source versions, unresolved eligibility, other programmes, missing facts, assumptions, charge/choice/deduction holds and decisions required. |
-| Contribution register | Contributor status, employer, programme, confirmed periods, certificate, choice/form dates, effective fund, latest stapled notification and reviewer-held registration/identifier readiness; no sensitive identifiers. |
+| Contribution register | Contributor status, employer, programme, confirmed periods, certificate, choice/form dates, effective fund, latest stapled notification and reviewer-held registration/identifier readiness, TFN quotation/deadline and notification-evidence status; no sensitive identifiers. |
 
 Check every amount against source and year; age/hours; employee/contractor
 status; geography/residence; QE and exclusions; annual limit per employer;
@@ -692,7 +745,8 @@ order and no double use; deadlines/extensions; separate shortfall/charge;
 changeover; currency/rounding; all outputs and outstanding slots.
 
 Keep the earnings and contribution ledgers, choice notices/forms and
-exceptions, stapled outcomes, MVR and error responses, payment/data PRNs,
+exceptions, secure TFN-notification evidence references, stapled outcomes,
+MVR and error responses, payment/data PRNs,
 fund receipts/returns and each STP lodged event, correction and response.
 The ATO specifically calls for evidence of first contributions, changed
 funds, out-of-cycle payments, exceptional determinations, overpayments,
@@ -714,9 +768,9 @@ or to delete records automatically at that point. [SG, section 79][SG]
 | 2. Bases | Selected QE/OTE, employee and exclusion rules supplied. Personal/voluntary and other programme bases remain open. |
 | 3. Floors and ceilings | Selected earnings-floor, annual SG base and employer separation supplied. Cross-border, certificate application and special-scheme interactions need case-specific sources. |
 | 4. Contributor categories | Ordinary employees, selected contractors/directors, age/domestic exclusions and self-employed distinction supplied. Full foreign-worker and special-scheme determinations remain conditional. |
-| 5. Registration | Selected ABN/WPN, fund/member, SMSF, default and authorised-channel readiness supplied. Full employer/PAYG registration and special-scheme procedures remain open; actual identifiers stay reviewer-held. |
+| 5. Registration | Selected ABN/WPN, fund/member, SMSF, default, quoted-TFN hand-off and authorised-channel readiness supplied. Full employer/PAYG registration and special-scheme procedures remain open; actual identifiers stay reviewer-held. |
 | 6. Declarations and payment | Selected choice/stapled form channels, SuperStream, MVR, STP YTD/transition/corrections, receipt deadlines, extensions and disclosure/assessment distinction supplied. Actual holiday mapping, complete filing/exemption/SGC forms and other programmes remain open. |
-| 7. Penalties and interest | Selected SGC structure, uplift and choice controls supplied. Actual daily rates, complete penalty/notice machinery and remedies remain open. |
+| 7. Penalties and interest | Selected SGC structure, uplift, choice controls and section 299C TFN-notification offence supplied. Actual daily rates, complete penalty/notice machinery and remedies remain open. |
 | 8. Income-tax interaction | Selected ATO deduction categories and exclusions, transition and separate income-tax source gate supplied. Actual deduction/cap calculations remain open. |
 | 9. Payment patterns | Selected fund/clearing-house/refund/charge patterns supplied; ambiguous remittances require evidence. |
 | 10. Refusals and defaults | Missing law, QE, annual history, certificate, fund, receipt or deadline inputs require Needs Input/hold. No country default is authorised. |
@@ -761,10 +815,18 @@ operational issue to resolve, not a statutory payment extension. The
 form number and channels above use HTML instructions; the PDF itself and
 all DSP-specific fields/technical specifications were not audited.
 
+The SIS Act was checked separately: the live Register identified compilation
+**131**, effective **10 August 2026**, as latest. Selected volume 1 sections
+8, 10 and 15A establish territorial/entity/employee scope; volume 2 sections
+299A, 299C, 299P and 299W supply the selected quotation control. The full
+SIS Act, RSA regime and complete TFN rules were not audited. The ATO timing
+wording difference is preserved above for practitioner resolution.
+[SIS1]; [SIS2]; [NEWFUND]
+
 The historical territory Acts and dictionary limits are stated above.
 No full delegated-instrument inventory, all-programme survey, actual
 employer determination, return, payroll, declaration, bank transaction,
-professional sign-off or completed financial review is claimed. Recheck
+professional sign-off or complete-country financial review is claimed. Recheck
 volatile law and operational guidance before engagement use.
 
 [SG]: https://www.legislation.gov.au/C2004A04402/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
@@ -791,6 +853,8 @@ volatile law and operational guidance before engagement use.
 [UPGRADE]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/superstream-for-employers/superstream-changes-for-employers
 [STPFIX]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/single-touch-payroll-reporting-under-payday-super/fixing-single-touch-payroll-errors-in-payday-super
 [FORM]: https://www.ato.gov.au/forms-and-instructions/superannuation-standard-choice-form
+[SIS1]: https://www.legislation.gov.au/C2004A04633/2026-08-10/2026-08-10/text/original/epub/OEBPS/document_1/document_1.html
+[SIS2]: https://www.legislation.gov.au/C2004A04633/2026-08-10/2026-08-10/text/original/epub/OEBPS/document_2/document_2.html
 [WPN]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/setting-up-super-for-your-business/withholding-payer-number-super-obligations
 
 <!-- openaccountants-cta-block -->
