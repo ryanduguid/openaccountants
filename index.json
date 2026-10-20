@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-19T07:00:54+00:00",
+ "generated_at": "2026-10-20T14:12:22+00:00",
  "counts": {
-  "guides": 1937,
-  "jurisdictions": 248,
+  "guides": 1939,
+  "jurisdictions": 250,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -6661,6 +6661,32 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "cx-tax-system",
+   "path": "skills/international/christmas-island/cx-tax-system.md",
+   "name": "cx-tax-system",
+   "jurisdiction": "CX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "cc-tax-system",
+   "path": "skills/international/cocos-keeling-islands/cc-tax-system.md",
+   "name": "cc-tax-system",
+   "jurisdiction": "CC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
   },
   {
    "slug": "co-company-formation",
