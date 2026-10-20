@@ -4,8 +4,9 @@ description: >
   Selected Christmas Island employer superannuation guarantee rules for
   2026-27. Covers territorial application, employee and labour-contractor
   status, qualifying earnings and exclusions, annual employer ceiling,
-  salary sacrifice, fund choice, contribution receipt, conditional deadlines
-  and the Payday Super changeover. Use for island employer super, low
+  salary sacrifice, fund choice, employer readiness, SuperStream, STP
+  transition/corrections, contribution receipt, conditional deadlines and the
+  Payday Super changeover. Use for island employer super, low
   earnings, annual-base crossings, new funds, out-of-cycle payments or
   late-contribution questions. Includes primary legislation, ATO guidance,
   fictional component calculations, remittance patterns and reviewer
@@ -18,7 +19,7 @@ tax_year: 2026
 tax_year_notes: "Primarily QE days from 1 July 2026 to 30 June 2027; saved old quarterly liabilities remain separate"
 tier: 2
 last_updated: 2026-10-21
-version: 0.2
+version: 0.3
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -273,6 +274,132 @@ for statutory minimum SG does not cancel the separate contractual amount
 for a later payday. Verify those obligations before reducing a remittance
 because an SG credit or annual-base limit is available. [HOWTO]
 
+### Act on a valid choice without delaying SG
+
+For the ordinary accumulation-fund route, record when the employee or
+Commissioner gave the written/approved choice notice to the employer.
+The fund becomes a chosen fund **2 months after that notice**, or earlier
+if the employer determines an earlier time. It must be an eligible choice
+fund able to accept that employee's contributions. An employer may refuse
+a direct employee notice lacking the prescribed information and acceptance
+evidence, or a further choice where another fund was chosen within the
+previous **12 months**. That is permission to refuse, not a prohibition on
+accepting another valid choice. Defined-benefit restrictions remain
+separate. [SG, sections 32D and 32F-32H][SG]; [REG, regulation 16][REG]
+
+The 2-month implementation period does not postpone a contribution's
+receipt deadline. Until the new choice takes effect, establish the fund
+that lawfully satisfies the applicable choice branch. For a new employee
+who commenced **on or after 1 November 2021**, the ATO directs employers
+unable yet to pay to the chosen fund to use the stapled fund, or the
+eligible default route if the ATO advises there is no stapled fund. Do not
+bypass a still-effective existing choice when an established employee
+requests a change. For employees who commenced before that date, the ATO
+says a stapled request is not required: use their valid chosen fund or the
+lawful default route. [SG, sections 32C and 32F-32H][SG]; [WHERE]; [FORM]
+
+A written request for a choice form normally requires provision within
+28 days, but section 32N(3) disregards that request if a form was given in
+the previous 12 months. Further 28-day triggers include awareness that a
+chosen fund cannot accept contributions or ceases to be eligible, a
+covered employer default-fund change and discovery that the specified
+default cannot accept contributions. Apply the section 32NA exceptions
+before treating a form as overdue. [SG, sections 32N-32NA][SG]; [CHOICE]
+
+### Employer and fund readiness
+
+Keep a readiness register using stable employer, contributor and fund
+references. The employer or authorised practitioner retains actual
+identifiers and supporting documents in their controlled system. This
+workflow does not request, receive or submit TFNs, bank details or identity
+documents. Record evidence availability, its date and the reviewer-held
+location instead. [REG, regulation 16][REG]; [NEWFUND]; [STREAM]
+
+| Readiness item | Evidence to establish before the relevant action |
+|---|---|
+| Employer and reporting channel | Correct legal employer and ABN where eligible; an ineligible employer may use its WPN for SuperStream. The WPN comes from PAYG withholding registration advice or the activity statement. Verify that registration and channel with the ATO; an island address or payroll installation does not establish readiness. |
+| Ordinary fund and member | Fund identity, ABN/USI, member account readiness, compliance and ability to accept this employer's contribution. Check Super Fund Lookup and the applicable statutory trustee evidence. |
+| SMSF | Reviewer-held ABN, electronic service address, payment-detail readiness and ATO-regulated/compliance evidence. An SMSF label alone supplies neither allocatability nor a SuperStream exemption. |
+| Employer default | Eligible complying/default fund, authorised MySuper product, applicable insurance conditions, current registration and required form particulars. A default selection alone cannot override a chosen or notified stapled fund. |
+| Software/service | SuperStream-compliant data and payment path, expected processing time, MVR support, STP/QE capability and authorised access. A data-only product also needs a compliant electronic payment arrangement. |
+
+[SG, sections 18A-18B and 32C-32D][SG]; [REG, regulations 14 and 16][REG];
+[DEFAULT]; [NEWFUND]; [STREAM]; [WPN]; [UPGRADE]; [STP].
+These are selected readiness checks, not a complete employer, PAYG, payroll
+or special-scheme registration manual. Do not invent a separate SG
+registration requirement from this table.
+
+The current ATO form channel identifies **Superannuation standard choice
+form, NAT 13080**. Complete the employer/default section before providing
+it. The employee may use the downloadable form, a pre-filled ATO online
+services/myGov summary returned to the employer, or enabled payroll
+software capturing the required information. An alternative must contain
+the required equivalent information. Keep the completed form/summary;
+**do not send it to the ATO or the fund**. This guide checked the current
+HTML instructions, not every field of the downloadable PDF. [FORM]; [CHOICE]
+
+For stapled requests, establish authorised ATO online-services access and
+the employment-relationship link described by the ATO, ordinarily through
+a processed TFN declaration or STP pay event. The current guidance allows
+a new-employee request after acceptance of the employment offer and until
+the employee chooses a fund, subject to the channel's prerequisites.
+A request does not remove a required choice-form obligation. Retain the
+latest ATO notification; the employer does not select its own stapled
+fund from an account list. [SG, sections 32Q-32R][SG]; [REG, regulations
+17A-17C][REG]; [STAPLED]; [WHERE]
+
+For a qualifying labour contractor not included in STP, the ATO describes
+a separate secure-mail request with the signed contract and **Contractor
+stapled super fund request form, NAT 75404**. Have the authorised employer
+or practitioner follow the current instructions in their controlled
+system. No actual form or contract is requested here. If the employment
+link cannot be established before payment is due, use the ATO assistance
+route in the cited guidance. Do not manufacture a pay event or defer SG
+merely to create a link. [STAPLED]
+
+If the notified stapled account cannot accept the contribution, obtain
+a valid alternative choice or request an alternative stapled fund through
+the ATO. The ATO directs an employer receiving the same account again, or
+no alternative result, to contact it for assistance. A rejection is not
+an automatic instruction to use the default fund. Preserve each response
+and resolve the applicable choice branch before payment. [WHERE]; [STAPLED]
+
+### SuperStream, verification and errors
+
+SuperStream requires electronic payment and related contribution data in
+the standard format. Send the payment and data on the **same day**, linked
+by the service's payment reference number (PRN). EFT/BPAY alone or an
+emailed spreadsheet does not establish compliant electronic data. Check
+the fund's direct-payment agreement where using that route. Personal
+contributions and contributions to a related SMSF have specific excepted
+contribution treatment; do not extend that exception to every SMSF or
+unrelated employee. [STREAM]
+
+The ATO's new-employee/fund guidance requires an MVR before a first SG
+contribution to a fund where the software supports it. Its upgrade guide
+states that funds must respond within **24 hours**, allowing confirmation
+that the member matches an active account and contributions can be
+accepted. Check with the provider how to use MVR, including changed
+employee details or a prior rejection. Do not send it before every
+unchanged regular contribution. If the feature is unavailable or a
+response cannot be resolved, record the operational gap and obtain
+provider/fund assistance; this does not create a payment extension.
+[NEWFUND]; [UPGRADE]
+
+An MVR success is not payment or proof of fund receipt. Reconcile the
+payment and data, PRN, fund acceptance, employee allocation, rejected or
+returned amounts and actual receipt date. Resolve errors and resubmit
+promptly: the deadline does **not reset or extend because of an error**.
+Apply only an independently established statutory extension. [SG,
+sections 18A and 18C][SG]; [DEADLINES]; [UPGRADE]
+
+The ATO Small Business Superannuation Clearing House **closed from
+1 July 2026**. It is not a payment channel for this guide's QE days.
+Do not reuse its historical receipt concession or a quarterly deadline
+from older text. A commercial clearing-house receipt still requires
+proof of timely, allocatable receipt by the employee's fund. [STREAM];
+[SG, sections 18A and 18C][SG]
+
 ## Deadline calendar and longer periods
 
 The usual period ends on the **7th business day after the QE day**.
@@ -403,6 +530,71 @@ quarterly-period SGC assessments. Keep those categories separate, and
 verify all applicable income-tax deduction conditions before a claim.
 This is a classification route, not a computed deduction. [HOWTO]
 
+## STP reporting, transition and correction controls
+
+For an employer/pay event required to use STP, report on or before each
+payday through STP-enabled software. Keep any verified exemption or
+special reporting arrangement separate; this guide does not establish
+all such cases. Ordinary reporting includes salary/wages, PAYG withholding
+and super liability. From 1 July 2026 the Payday Super requirements add
+QE reporting. An independent contractor who is an SG employee only under
+the labour-contract extension is not mandatorily brought into STP merely
+by that status. If the employer voluntarily reports those payments, the
+reporting requirements apply. [PAYDAY, Schedule 1 item 178][PAYDAY]; [STP]
+
+### Reconcile 2 distinct year-to-date amounts
+
+| Reported amount | Control |
+|---|---|
+| QE year to date (YTD) | Reconcile actual QE to the earnings ledger and prior YTD. The increase ordinarily identifies that payday's QE. Exclude non-QE reimbursements/fringe benefits; do not use total taxable pay as a substitute. |
+| Annual employer base | After the verified 2026-27 base of AUD 270,830 is reached, the ATO permits QE YTD to remain at that amount for the rest of the year. Keep the unmodified earnings ledger and any separate award/contract obligations. |
+| Valid opt-out certificate | A full-year covered employer/employee certificate yields QE YTD of zero from the start. If coverage begins part way through the year, hold the reported QE YTD from the start of the covered period. Verify employer, employee and dates; do not keep it frozen after coverage ends without a lawful basis. |
+| Super liability YTD | Report the liability, which includes minimum SG and applicable additional award/enterprise-agreement super. It can include super on a payment excluded from QE, such as stipulated award-covered parental leave. It is not the amount received by the fund. |
+
+[SG, sections 10A and 17B][SG]; [RATES]; [STP].
+Preserve the distinction between statutory minimum SG, other contractual
+super, reported liability and actual fund receipts. A zero SG amount after
+the annual base or during certificate coverage does not cancel every
+employment obligation.
+
+### 2026-27 software transition
+
+Ask the digital service provider how to configure QE and super liability.
+If the product is not yet updated, **still calculate and pay SG using QE**
+and keep each payday's records. Start reporting QE as soon as possible,
+including YTD amounts when reporting starts. The ATO accepts super
+liability with OTE in pay events until **30 June 2027**, but **once QE
+reporting starts, OTE reporting is no longer accepted**. This is a
+conditional reporting transition, not a contribution-payment deferral
+or permission to treat OTE as the new QE base. [STP]
+
+The ATO says no deferral request is needed where QE reporting can start
+during 2026-27; failure to report it during that year increases compliance
+risk. From **1 July 2027**, reports missing either QE or super liability
+will be rejected and penalties may apply. Confirm the applicable period
+and the provider's implementation; do not carry the 2026-27 acceptance
+into a later year. [STP]
+
+### Correct reporting without inventing a new payment
+
+Use the provider's STP correction process to fix a lodged YTD amount in
+the next pay event or an update event. An omitted/late original report
+is not a correction merely because a later report is submitted. Keep
+the original QE days, corrected amounts, reason, lodged event/response
+and affected contribution/shortfall history. Correcting data does not
+change the day earnings were actually paid or reset an SG deadline.
+[SG, sections 10A and 18C][SG]; [STPFIX]
+
+For ATO data reconciliation, an update event is not ordinarily a pay
+event. The ATO identifies a finalisation-indicator exception when QE
+corrections supply the final reported amount. With no change in QE YTD,
+no new QE/SG amount is inferred from that event; after a reduction, its
+guidance calculates no new QE until a later increase. Reconcile these
+data effects to actual pay and corrected records. Do not infer a cash
+refund, a fresh 20-business-day period or an election to reallocate older
+contributions. Recompute affected liability and retain reviewer holds
+where historical corrections remain unresolved. [STPFIX]; [SG]; [HOWTO]
+
 ## Worked component examples and classification patterns
 
 All examples are fictional AUD for **2026-27**. Worker, earnings and
@@ -447,6 +639,37 @@ and unrelated PAYG/Medicare or insurance payment. Match using stable
 references, amount, date, fund and contributor evidence. An amount or bank
 narrative alone does not establish programme, employee or QE-day allocation.
 
+### Additional employer-operation cases
+
+The following fictional cases test the operational branches above. Receipt
+and choice facts are stipulated only where stated; none is an actual
+portal submission, bank transfer or completed payroll engagement.
+
+| Fictional facts | Recomputed result or required disposition |
+|---|---|
+| Valid direct choice notice received 15 October 2026; employer determines no earlier effective date | Chosen-fund effective date 15 December 2026. Earlier SG receipt deadlines still apply through the then-lawful fund route. |
+| Another fund was chosen 6 months earlier; otherwise valid new notice | Employer may refuse under section 32FA(2), or accept. Record the decision; do not declare a universal ban on a second choice. |
+| Written request for another standard form; form already supplied 6 months earlier | Section 32N(3) disregards this request. Test other triggers and exceptions separately. |
+| New employee commenced in 2026; no choice; no ATO stapled response yet | Default-fund authority not established. Resolve the request and payment deadline; no invented default or extension. |
+| New employee has no choice; latest ATO response says no stapled fund; default/form/MySuper/insurance conditions all proved | The stipulated ordinary default branch is available. Receipt and amount still need separate proof. |
+| Stapled account rejects payment; alternate request returns the same account | Obtain ATO assistance or a valid alternative choice; do not automatically pay a different default account. |
+| Employee commenced in 2020; no valid chosen fund; lawful default conditions proved | Current ATO guidance does not require a stapled request merely because Payday Super began. |
+| MVR confirms active account; employer debit 240; actual fund receipt unknown | Verification is not remittance. Timeliness/allocatability remain unresolved. |
+| EFT 240 sent; employee data only emailed to fund | No demonstrated SuperStream-compliant electronic data. Correct the process without resetting the statutory receipt deadline. |
+| Employer proposes the ATO Small Business Superannuation Clearing House for an October 2026 payment | Channel closed from 1 July 2026; choose a current compliant route and verify actual fund receipt. |
+| Qualifying labour contractor has QE 600; no other STP status; employer does not report voluntarily | SG amount 72 remains due under the stipulated facts; SG status alone does not make this contractor payment mandatory STP. |
+| Verified prior QE YTD 270,000; current otherwise qualifying earnings 2,000; cap reporting option used | Current SG base 830 and amount 99.60. QE YTD reported at 270,830; preserve uncapped earnings ledger 272,000. |
+| Valid certificate begins midyear at reported QE YTD 20,000 | Hold QE YTD at 20,000 during the covered period for that employer. Recheck when coverage ends; no other employer is exempted. |
+| QE 2,000 plus non-QE paid parental leave 1,000; enterprise agreement expressly requires 12% super on that leave | Minimum SG 240, additional agreement super 120 and super liability 360. Increase QE YTD by 2,000; do not add the leave to QE merely because liability includes its super. |
+| Product has not yet switched to QE reporting in 2026-27; valid transition otherwise established | OTE plus super liability can still be accepted until 30 June 2027; actual SG is calculated and paid using QE. Keep YTD and each payday's records. |
+| Employer has started QE reporting, then sends OTE in another 2026-27 pay event | OTE reporting is no longer accepted under the stated transition. Correct the report and preserve actual QE-day history. |
+| Pay event from 1 July 2027 omits QE or super liability | The ATO says it rejects the report; no extension of the 2026-27 reporting acceptance. Recheck the later year's substantive figures separately. |
+| Update event with no QE YTD change and no actual new pay | Do not create a new QE day or SG amount from the event alone; retain the event and reconcile to actual pay. |
+| Earlier QE was 2,500 but lodged as 2,000; other facts unchanged; no cap or rounding difference | Correct the earlier records/report: SG component rises from 240 to 300, difference 60. The correction does not make the earnings newly paid or reset their receipt deadline. |
+
+[SG]; [REG]; [WHERE]; [CHOICE]; [FORM]; [STAPLED]; [NEWFUND]; [STREAM];
+[UPGRADE]; [STP]; [STPFIX].
+
 ## Reviewer outputs, checks and remaining slots
 
 Preserve all universal and social-domain outputs. For a supported component
@@ -459,7 +682,7 @@ percentage supplies the whole engagement:
 | Remittance reconciliation | Expected amount, actual eligible receipt, allocation order, clearing-house status, refunds, unused credits, base/final shortfalls and unmatched items. |
 | Filing and payment calendar | Actual QE day, normal endpoint, each evidenced extension, holiday sources, receipt status and any assessment/disclosure event. |
 | Reviewer brief | Source versions, unresolved eligibility, other programmes, missing facts, assumptions, charge/choice/deduction holds and decisions required. |
-| Contribution register | Contributor status, employer, programme, confirmed periods, certificate and reviewer-held readiness references; no sensitive identifiers. |
+| Contribution register | Contributor status, employer, programme, confirmed periods, certificate, choice/form dates, effective fund, latest stapled notification and reviewer-held registration/identifier readiness; no sensitive identifiers. |
 
 Check every amount against source and year; age/hours; employee/contractor
 status; geography/residence; QE and exclusions; annual limit per employer;
@@ -467,6 +690,15 @@ same-day totals; sacrifice included once but excluded as eligible employer
 funding; certificates; fund choice; receipt/allocatability; contribution
 order and no double use; deadlines/extensions; separate shortfall/charge;
 changeover; currency/rounding; all outputs and outstanding slots.
+
+Keep the earnings and contribution ledgers, choice notices/forms and
+exceptions, stapled outcomes, MVR and error responses, payment/data PRNs,
+fund receipts/returns and each STP lodged event, correction and response.
+The ATO specifically calls for evidence of first contributions, changed
+funds, out-of-cycle payments, exceptional determinations, overpayments,
+corrections and failed/incomplete reporting. A clearing house does not
+replace the employer's own records. Keep electronic records accessible.
+[RECORDS]; [CHOICE]; [STPFIX]
 
 Section 79 requires records explaining transactions and acts, including
 shortfall documents. Keep them in English or readily convertible into
@@ -482,14 +714,14 @@ or to delete records automatically at that point. [SG, section 79][SG]
 | 2. Bases | Selected QE/OTE, employee and exclusion rules supplied. Personal/voluntary and other programme bases remain open. |
 | 3. Floors and ceilings | Selected earnings-floor, annual SG base and employer separation supplied. Cross-border, certificate application and special-scheme interactions need case-specific sources. |
 | 4. Contributor categories | Ordinary employees, selected contractors/directors, age/domestic exclusions and self-employed distinction supplied. Full foreign-worker and special-scheme determinations remain conditional. |
-| 5. Registration | Reviewer-held employer/fund readiness and choice evidence required. Complete registration identifiers, portals and authority procedures remain unverified. |
-| 6. Declarations and payment | Selected receipt deadlines, extensions, voluntary disclosure and assessment distinction supplied. Current forms, actual holiday mapping, STP and all operational filing requirements remain open. |
+| 5. Registration | Selected ABN/WPN, fund/member, SMSF, default and authorised-channel readiness supplied. Full employer/PAYG registration and special-scheme procedures remain open; actual identifiers stay reviewer-held. |
+| 6. Declarations and payment | Selected choice/stapled form channels, SuperStream, MVR, STP YTD/transition/corrections, receipt deadlines, extensions and disclosure/assessment distinction supplied. Actual holiday mapping, complete filing/exemption/SGC forms and other programmes remain open. |
 | 7. Penalties and interest | Selected SGC structure, uplift and choice controls supplied. Actual daily rates, complete penalty/notice machinery and remedies remain open. |
 | 8. Income-tax interaction | Selected ATO deduction categories and exclusions, transition and separate income-tax source gate supplied. Actual deduction/cap calculations remain open. |
 | 9. Payment patterns | Selected fund/clearing-house/refund/charge patterns supplied; ambiguous remittances require evidence. |
 | 10. Refusals and defaults | Missing law, QE, annual history, certificate, fund, receipt or deadline inputs require Needs Input/hold. No country default is authorised. |
 | 11. Currency and rounding | Examples use AUD and exact cents; statutory annual base rounds down to AUD 10. Operational fractional-cent contribution/charge rules and any foreign-currency conversion remain unverified. |
-| 12. Worked cases | Employee, low earnings, annual ceiling, self-employed and remittance boundary components supplied. No model-executed full contribution engagement, multi-programme or filing test is claimed. |
+| 12. Worked cases | Employee, low earnings, annual ceiling, self-employed, remittance and employer-operation/STP boundaries supplied. No model-executed full contribution engagement, multi-programme or filing test is claimed. |
 
 The selected rules do not satisfy every mandatory slot. Obtain the missing
 primary law, facts, forms and capabilities before a complete financial
@@ -510,6 +742,25 @@ determination was read in full. ATO eligibility was updated **15 July
 **20 October 2026** and read in full. Do not use a mixed-year
 ATO illustration to override the Act's payment-day commencement.
 
+Current ATO operational pages were checked on the same date. Choice was
+updated **17 September 2026**, stapled requests **2 September 2026**,
+SuperStream **16 July 2026** and its upgrade guide **21 June 2026**. The
+new-employee/fund, STP, correction, record and form instructions are dated
+**27 June 2026**. Default-fund guidance is dated **2 December 2024** and
+WPN guidance **26 May 2021**; their selected readiness points were checked
+against current payment guidance and the relevant SG provisions.
+[NEWFUND]; [WHERE]; [STREAM]; [STP]; [DEFAULT]; [CHOICE]; [STAPLED];
+[RECORDS]; [UPGRADE]; [STPFIX]; [FORM]; [WPN]
+
+Do not use the older quarterly wording or historical clearing-house
+concession retained on the SuperStream page for post-commencement QE
+days. Its SMSF/default shorthand also does not displace the current
+chosen/stapled/default ordering. MVR's software-support condition is
+express in the new-employee/fund page; unavailable software is an
+operational issue to resolve, not a statutory payment extension. The
+form number and channels above use HTML instructions; the PDF itself and
+all DSP-specific fields/technical specifications were not audited.
+
 The historical territory Acts and dictionary limits are stated above.
 No full delegated-instrument inventory, all-programme survey, actual
 employer determination, return, payroll, declaration, bank transaction,
@@ -529,6 +780,18 @@ volatile law and operational guidance before engagement use.
 [DICT]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_10/document_10.html
 [AMEND71]: https://www.legislation.gov.au/C2026A00071/asmade/2026-08-26/text/original/epub/OEBPS/document_1/document_1.html
 [AMEND86]: https://www.legislation.gov.au/C2026A00086/asmade/2026-09-15/text/original/epub/OEBPS/document_1/document_1.html
+[NEWFUND]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/paying-super-for-a-new-employee-or-fund
+[WHERE]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/where-to-pay-super
+[STREAM]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/superstream-for-employers
+[STP]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/single-touch-payroll-reporting-under-payday-super
+[DEFAULT]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/setting-up-super-for-your-business/select-your-default-super-fund
+[CHOICE]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/setting-up-super-for-your-business/offer-employees-a-choice-of-super-fund
+[STAPLED]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/setting-up-super-for-your-business/offer-employees-a-choice-of-super-fund/stapled-super-funds-for-employers
+[RECORDS]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/setting-up-super-for-your-business/record-keeping-for-payday-super
+[UPGRADE]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/superstream-for-employers/superstream-changes-for-employers
+[STPFIX]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/single-touch-payroll-reporting-under-payday-super/fixing-single-touch-payroll-errors-in-payday-super
+[FORM]: https://www.ato.gov.au/forms-and-instructions/superannuation-standard-choice-form
+[WPN]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/setting-up-super-for-your-business/withholding-payer-number-super-obligations
 
 <!-- openaccountants-cta-block -->
 
