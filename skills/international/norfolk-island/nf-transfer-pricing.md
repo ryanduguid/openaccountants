@@ -44,7 +44,7 @@ income-tax exemption was repealed under the 2015 reforms; use nf-tax-system
 and nf-foreign-income for the separate residence, historical and income
 conditions. NF is a catalogue identifier, not evidence that a dealing is
 international for income tax. GST territory and a treaty's geographical
-scope require their own rules. [ITAA10, 960-505]; [REFORM]
+scope require their own rules. [ITAA10, 960-505][ITAA10]; [REFORM]
 
 Subdivision 815-B requires actual conditions differing from arm's length
 conditions, the section 815-120 cross-border test and the specified benefit
@@ -55,7 +55,7 @@ PE conditions, with special international tax-sharing and treaty
 residence rules. Apply the whole test. A foreign counterparty, group
 relationship or transaction value alone is insufficient, and an NF to
 mainland address difference alone is not a cross-border test. [ITAA9,
-815-105 to 815-120]
+815-105 to 815-120][ITAA9]
 
 Select the most appropriate and reliable method or combination under
 815-125 from actual functions, assets, risks, contracts, the property or
@@ -70,7 +70,7 @@ the actual transaction. Traditional methods over profit methods, or CUP
 over another method, have the OECD preference only where equally reliable.
 Missing comparable data is not a reason to choose TNMM automatically.
 Select a tested party by reliable application and comparables, usually
-rather than invariably the less complex party. [OECD, 2.2-2.5, 3.18-3.19]
+rather than invariably the less complex party. [OECD, 2.2-2.5, 3.18-3.19][OECD]
 
 Subdivision 815-C treats PE attribution separately from dealings between
 entities. It allocates actual income/expenditure under its statutory
@@ -80,7 +80,7 @@ case and prioritises the pre-**22 July 2010** Article 7/commentary in
 Thin capitalisation interacts under 815-140; CFC attribution, debt deduction
 creation, anti-avoidance, treaties, customs and indirect taxes retain their
 own source and fact gates. A TP result alone does not establish a deduction
-or every other tax. [ITAA9, 815-140, 815-205 to 815-310]
+or every other tax. [ITAA9, 815-140, 815-205 to 815-310][ITAA9]
 
 ## Evidence, benchmarking and currency
 
@@ -90,7 +90,7 @@ filters, rejections and reliable adjustments. Obtain actual comparable
 data. Foreign comparables are not automatically unsuitable; their economic
 and other comparability must be evaluated. A database name does not prove
 acceptability. Neither an industry label nor CbC aggregates supply an
-arm's length benchmark. [ITAA9, 815-125]; [OECD, 3.34-3.38, 5.25]
+arm's length benchmark. [ITAA9, 815-125][ITAA9]; [OECD, 3.34-3.38, 5.25][OECD]
 
 A supported point or full reliable range can be appropriate. IQR narrowing
 is conditional on residual comparability defects and enough observations;
@@ -98,7 +98,7 @@ a median is not automatic. Review documentation annually. OECD permission
 for a tax administration to allow a **3-year** unchanged-conditions search
 cycle, with annual financial updates, is not an automatic Australian
 entitlement. Hold missing search or comparability evidence. [OECD,
-3.55-3.62, 5.37-5.38]
+3.55-3.62, 5.37-5.38][OECD]
 
 For selected ordinary tax amounts, use AUD and translate underlying
 amounts before netting, subject to the applicable exceptions. ITAA 1997
@@ -133,7 +133,7 @@ accounting-group and exception conditions. Section 815-355 uses status in
 a period overlapping the **previous income year**, a specified current-year
 residence/trust/partnership/PE connection and exemption/regulation gates.
 Foreign parent filing alone cannot clear a Norfolk entity's obligations.
-[ITAA9, 815-355, 815-370 to 815-380]; [ITAA10, 960-555 to 960-575]
+[ITAA9, 815-355, 815-370 to 815-380][ITAA9]; [ITAA10, 960-555 to 960-575][ITAA10]
 
 Where required, Master File, Australian Local File and CbC statements are
 due within **12 months after the relevant reporting period**. Written
@@ -141,7 +141,7 @@ replacement-period, entity/statement exemption, class exemption and
 deferral rules are distinct. Establish the current approved schema, short
 form eligibility, actual reporting entity, filing route and any permitted
 exchange arrangement. An internal workflow Local File is not evidence
-of a statutory filing. [ITAA9, 815-355 to 815-365]
+of a statutory filing. [ITAA9, 815-355 to 815-365][ITAA9]
 
 The **2026 IDS**, concerning 2025-26, forms part of the relevant entity's
 return. The instructions cover companies, trusts, partnerships, AMITs and
@@ -159,7 +159,7 @@ AUD 5 million** and **no more than 50% of aggregated turnover**. These
 conditions do not establish a blanket IDS exemption, no substantive TP
 liability or PCG eligibility. Use current instructions for every actual
 field and the actual return due date. Public CBC and RTP schedules are
-separate. [IDS-A, questions 1-2]; [IDS-NEW]
+separate. [IDS-A, questions 1-2][IDS-A]; [IDS-NEW]
 
 ## Compliance options, adjustments and penalties
 
@@ -169,7 +169,7 @@ chosen option's conditions, contemporaneous evidence, self-assessed
 284-E or create a statutory safe harbour. For example, small-taxpayer
 turnover **below AUD 50 million** alone is insufficient; loss/restructure,
 royalty/R&D, service, distributor and transaction exclusions also matter.
-Use the full relevant PCG option. [PCG, 1-23, 76-103]
+Use the full relevant PCG option. [PCG, 1-23, 76-103][PCG]
 
 Low-value service conditions include qualifying activities, aggregate
 charges of **no more than AUD 2 million**, or, above that, the separate
@@ -179,7 +179,7 @@ mark-up **at least 5%**; and the other loss/restructure/compliance
 conditions. Relevant direct and indirect costs exclude pass-through
 costs from the mark-up base. These are cumulative conditions, not an
 unconditional OECD 5% price. Other PCG options and annual loan rates need
-their own selected rules. [PCG, 24-43, 76-103]; [OECD, 7.43-7.65]
+their own selected rules. [PCG, 24-43, 76-103][PCG]; [OECD, 7.43-7.65][OECD]
 
 A consequential adjustment under 815-145 is a separate decision.
 Sections 815-150 and 815-240 have special **7-year** assessment-amendment
@@ -196,7 +196,7 @@ reasonably arguable threshold. The ordinary threshold is the greater of
 threshold is the greater of **AUD 20,000 and 2% of return-basis net income**.
 Apply separate statutory branches and the additional trust/partnership
 net-income/loss-adjustment exceptions, including equality and nil rules.
-[TAA2, 284-90(3), 284-145 to 284-165]
+[TAA2, 284-90(3), 284-145 to 284-165][TAA2]
 
 Once liability remains, 284-160(3) applies **50% non-RAP / 25% RAP** to the
 relevant portions where the sole/dominant TP-benefit purpose branch
@@ -218,7 +218,7 @@ application and compliance monitoring, with agreed plans, critical
 assumptions and annual reporting. This selected evidence does not establish
 a universal fee or processing deadline. Actual treaty access, application,
 rollback, renewal and cancellation require their complete procedure and
-facts. [APA-PS, 1A-3C, 9A-10E]; [APA]
+facts. [APA-PS, 1A-3C, 9A-10E][APA-PS]; [APA]
 
 The detailed Australian reference is australia-transfer-pricing. Before an
 engagement package, verify the domain's remaining country requirements:

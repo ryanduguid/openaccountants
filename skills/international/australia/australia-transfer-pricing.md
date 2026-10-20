@@ -44,7 +44,7 @@ The benefit can involve taxable income, a tax loss, a tax offset or interest
 or royalty withholding tax. Apply every section 815-120 condition,
 including its residence/PE cross-border table and dual-resident treaty
 rule. A related-party label, a foreign address or a transaction amount
-alone does not prove liability or an exemption. [ITAA9, 815-105 to 815-120]
+alone does not prove liability or an exemption. [ITAA9, 815-105 to 815-120][ITAA9]
 
 Section 815-125 requires the most appropriate and reliable method, or
 combination, having regard to the actual functions, assets, risks,
@@ -62,7 +62,7 @@ select TNMM. A tested party follows reliable application and comparables,
 usually the less complex party, rather than a fixed business label.
 Section 815-135 identifies the OECD guidance last amended on **20 January
 2022** and any prescribed documents; check the applicable regulations and
-period before use. [ITAA9, 815-125 to 815-135]; [OECD, 2.2-2.5, 3.18-3.19]
+period before use. [ITAA9, 815-125 to 815-135][ITAA9]; [OECD, 2.2-2.5, 3.18-3.19][OECD]
 
 Subdivision 815-C addresses PE attribution from the entity's actual income
 and expenditure on the statutory distinct-and-separate-entity basis.
@@ -71,7 +71,7 @@ priority to the pre-**22 July 2010** Article 7/commentary material it
 specifies, then the section 815-135 documents subject to prescribed rules.
 Do not automatically use the later OECD functionally separate entity
 approach. Subdivision 815-D modifies application to trusts' net income and
-partnership net income or loss. [ITAA9, 815-205 to 815-310]
+partnership net income or loss. [ITAA9, 815-205 to 815-310][ITAA9]
 
 Section 815-140's thin-capitalisation interaction is conditional. Do not
 infer that TP establishes deductibility under Division 820 or that a debt
@@ -102,7 +102,7 @@ CBC and SGE status are different tests. The section 815-355 trigger uses
 CBC status during a period overlapping the **previous income year**, a
 specified Australian residence/trust/partnership/PE connection during the
 reporting year, and the exemption/regulation conditions. [ITAA9, 815-355,
-815-370 to 815-380]; [ITAA10, 960-555 to 960-575]
+815-370 to 815-380][ITAA9]; [ITAA10, 960-555 to 960-575][ITAA10]
 
 Where required, the 3 statements correspond to the Master File, Local File
 and CbC report and are due within **12 months after the reporting period**.
@@ -111,7 +111,7 @@ class exemption and lodgement deferral have separate conditions. Establish
 the approved form, current Australian Local File schema/short form,
 electronic route and any exchange/exemption arrangement for each actual
 statement. An internal workflow Local File is not proof that a statutory
-Local File has been filed. [ITAA9, 815-355 to 815-365]
+Local File has been filed. [ITAA9, 815-355 to 815-365][ITAA9]
 
 The IDS can be triggered for companies, partnerships, trusts, AMITs and
 attribution CCIV sub-funds. The instructions include overseas interest or
@@ -132,7 +132,7 @@ small-taxpayer test. Use the actual return deadline and all applicable
 sections. The 2026 instructions remove specified 2024-25 transitional
 reporting concessions; do not copy the old edition. Actual IDS fields,
 RTP schedules and public CBC reporting remain separate source gates.
-[IDS-A, questions 1-2]; [IDS-NEW]
+[IDS-A, questions 1-2][IDS-A]; [IDS-NEW]
 
 ## Benchmarking and currency
 
@@ -142,7 +142,7 @@ adjustments and financial reconciliation. Geography is one comparability
 factor: foreign comparables are not automatically unsuitable, and a
 particular commercial database is not made acceptable by its name alone.
 Obtain actual reproducible data. Never invent entities, ratios or an
-industry margin. [ITAA9, 815-125]; [OECD, 3.18-3.19, 3.34-3.38]
+industry margin. [ITAA9, 815-125][ITAA9]; [OECD, 3.18-3.19, 3.34-3.38][OECD]
 
 A single reliable point or full reliable range may be appropriate.
 Interquartile narrowing is conditional on residual comparability defects
@@ -152,7 +152,7 @@ administration to permit searches every **3 years** where conditions are
 unchanged, whilst requiring annual comparable financial updates. It is
 not an automatic Australian entitlement to reuse a search for 3 years.
 CbC aggregates do not replace transaction-level benchmarking. [OECD,
-3.55-3.62, 5.25, 5.37-5.38]
+3.55-3.62, 5.25, 5.37-5.38][OECD]
 
 Use AUD for the selected Australian tax computations. Translate underlying
 amounts before calculating a net amount except where the applicable rule
@@ -165,7 +165,7 @@ provides otherwise. Under the ordinary section 960-50 table:
 
 Use section 960-55's commencement/transitional conditions. These selections
 do not resolve every table item, functional currency choice, forex gain,
-accounting translation or reporting-form field. [ITAA10, 960-50, 960-55]
+accounting translation or reporting-form field. [ITAA10, 960-50, 960-55][ITAA10]
 
 The ATO FX page directs daily rates to the RBA and identifies its monthly
 and annual data. It permits a reasonable external source for an unlisted
@@ -180,20 +180,20 @@ PCG 2017/2 is an ATO resource-allocation approach. Eligible dealings still
 need self-assessed compliance with 815-B/C/D and eligibility evidence.
 The PCG does not itself satisfy Subdivision 284-E or create a statutory
 safe harbour. Elect/disclose the option as instructed for the relevant
-IDS/CBC reporting and retain the general records. [PCG, 1-15]
+IDS/CBC reporting and retain the general records. [PCG, 1-15][PCG]
 
 | Selected option | Conditions to check together |
 |---|---|
-| Small taxpayers | Australian economic group turnover **below AUD 50 million**, no sustained loss/restructure, combined royalty/licence/R&D dealings **no more than AUD 500,000**, specified services **no more than 15% of turnover**, not a distributor and self-assessed compliance. Excluded royalty/R&D, financial and capital transactions retain their own analysis. [PCG, 16-19, 76-103] |
-| Distributors | Turnover **below AUD 50 million**, the required **3%** weighted profit-before-tax ratio over the specified **3 years**, no restructure, the royalty/R&D conditions and self-assessed compliance. Apply all exclusions and definitions. [PCG, 22-27, 76-103] |
-| Low-value services | Actual qualifying supportive services; combined received/provided charges **no more than AUD 2 million**, or, above that, received charges **no more than 15% of group expenses** and provided charges **no more than 15% of group revenue**. Service expenses must not exceed **25% of pre-service profit**. Received mark-up **no more than 5%** and provided mark-up **at least 5%**, with the other loss/restructure, compliance and eligibility conditions. [PCG, 28-43, 76-103] |
+| Small taxpayers | Australian economic group turnover **below AUD 50 million**, no sustained loss/restructure, combined royalty/licence/R&D dealings **no more than AUD 500,000**, specified services **no more than 15% of turnover**, not a distributor and self-assessed compliance. Excluded royalty/R&D, financial and capital transactions retain their own analysis. [PCG, 16-19, 76-103][PCG] |
+| Distributors | Turnover **below AUD 50 million**, the required **3%** weighted profit-before-tax ratio over the specified **3 years**, no restructure, the royalty/R&D conditions and self-assessed compliance. Apply all exclusions and definitions. [PCG, 22-27, 76-103][PCG] |
+| Low-value services | Actual qualifying supportive services; combined received/provided charges **no more than AUD 2 million**, or, above that, received charges **no more than 15% of group expenses** and provided charges **no more than 15% of group revenue**. Service expenses must not exceed **25% of pre-service profit**. Received mark-up **no more than 5%** and provided mark-up **at least 5%**, with the other loss/restructure, compliance and eligibility conditions. [PCG, 28-43, 76-103][PCG] |
 
 Use all relevant direct and indirect service costs, excluding pass-through
 costs from the mark-up base. For the selected expenses test, pre-service
 profit is total income minus (total expenses minus all intra-group service
 expenses). Identify the Australian economic group and the PCG definitions;
 an isolated entity's turnover or a 5% label alone does not establish eligibility.
-[PCG, 39-43, 76-103]
+[PCG, 39-43, 76-103][PCG]
 
 The OECD low-value services approach is separately conditional on adoption,
 benefit tests, service/cost-pool eligibility, allocation keys and supporting
@@ -201,7 +201,7 @@ documentation. OECD encouragement about withholding on a mark-up does not
 itself change Australian withholding law. Annual loan rates, materiality,
 technical services and other PCG options require the relevant option and
 year to be checked; this reference supplies no loan safe-harbour rate.
-[OECD, 7.43-7.65]; [PCG]
+[OECD, 7.43-7.65][OECD]; [PCG]
 
 ## TP penalties: establish liability before calculating
 
@@ -253,7 +253,7 @@ processing guarantee. The 3 stages are early engagement, application and
 monitoring compliance. The taxpayer submits an early engagement form;
 formal application follows invitation. Plans are agreed for engagement and
 conclusion. An APA depends on agreed conditions, critical assumptions and
-annual compliance reporting. [APA-PS, 1A-3C, 9A-10E]; [APA]
+annual compliance reporting. [APA-PS, 1A-3C, 9A-10E][APA-PS]; [APA]
 
 Use the actual programme, treaty and case requirements for acceptance,
 rollback, fees, timing, renewals and cancellation. This selected review
