@@ -1657,11 +1657,13 @@
    "name": "Christmas Island",
    "files": [
     "intake.md",
+    "cx-income-tax.md",
     "cx-tax-system.md",
     "README.md"
    ],
    "shared": [
     "foundation.md",
+    "income-tax-workflow-base.md",
     "workflow-base.md"
    ]
   },
@@ -1670,11 +1672,13 @@
    "name": "Cocos Keeling Islands",
    "files": [
     "intake.md",
+    "cc-income-tax.md",
     "cc-tax-system.md",
     "README.md"
    ],
    "shared": [
     "foundation.md",
+    "income-tax-workflow-base.md",
     "workflow-base.md"
    ]
   },
