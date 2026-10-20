@@ -14,10 +14,10 @@ description: >
 jurisdiction: NF
 category: international
 tax_year: 2026
-tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
+tax_year_notes: "Scope checked on 21 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
-last_updated: 2026-10-18
-version: 0.20
+last_updated: 2026-10-21
+version: 0.21
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -214,6 +214,12 @@ liability and payer triggers, domestic amounts and rounding, remittance
 and annual reporting distinctions. Residence, exemptions, treaty outcomes,
 special arrangements, actual forms and calendars require their own
 evidence; the reference does not complete cross-border coverage.
+
+Use `nf-uk-treaty-relief` for selected Australia-UK treaty territory,
+residence and transparent-entity conditions, MLI matching, payment ceilings,
+PE screening, credit coordination and MAP timing. Other partners, actual
+entitlement, UK domestic computations, refund/claim procedures and complete
+cross-border outputs retain their own source and workflow requirements.
 
 Use `nf-foreign-income` for selected foreign-income inclusion,
 temporary-resident and foreign-service conditions, eligible foreign tax,

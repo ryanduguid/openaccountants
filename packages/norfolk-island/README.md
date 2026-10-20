@@ -27,6 +27,7 @@
 20. `nf-tax-penalties-remission.md`
 21. `nf-tax-records.md`
 22. `nf-tax-system.md`
+23. `nf-uk-treaty-relief.md`
 
 ## Shared files this package needs
 
