@@ -19,7 +19,7 @@ tax_year: 2026
 tax_year_notes: "Primarily QE days from 1 July 2026 to 30 June 2027; saved old quarterly liabilities remain separate"
 tier: 2
 last_updated: 2026-10-21
-version: 0.4
+version: 0.5
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -351,17 +351,20 @@ inform the trustee of the quoted TFN before the required time:
 
 These are calendar-day conditions, distinct from SG's business-day receipt
 rule. Establish the contribution date for this provision; a payroll entry
-or attempted bank debit alone does not establish it. Section 299C(3) makes contravention a strict liability offence with
-a stated penalty of **10 penalty units**; no AUD penalty assessment is
-computed here. If the relevant trustee was already informed, section
-299C(1)(c) does not require the same notification again. If no TFN was
-quoted, do not fabricate one or treat section 299C as proof that a fund
-can accept every contribution. Check the actual fund/channel conditions.
+or attempted bank debit alone does not establish it. Section 299C(3) makes
+contravention a strict liability offence with a stated penalty of **10 penalty units**; no AUD penalty assessment is
+computed here. If **this employer** previously informed a trustee of the
+**same eligible entity** of **this employee’s TFN**, section 299C(1)(c)
+does not require that employer to notify again. The trustee merely knowing
+the TFN from another employer or the member does not satisfy that test.
+If no TFN was quoted, do not fabricate one or treat section 299C as proof
+that a fund can accept every contribution. Check the actual fund/channel conditions.
 [SIS2, section 299C][SIS2]; [NEWFUND]
 
 The employer or authorised practitioner records the quotation basis/date,
 contribution date, applicable deadline, trustee-notification status and
-secure evidence reference. They transmit through their authorised channel,
+secure evidence reference identifying the notifying employer, entity and
+employee reference. They transmit through their authorised channel,
 confirm any service-provider authority to share the TFN and keep the
 actual number outside this workflow. An unresolved notification check
 prevents certifying that hand-off as complete; it does **not** authorise
@@ -714,14 +717,15 @@ portal submission, bank transfer or completed payroll engagement.
 | Pay event from 1 July 2027 omits QE or super liability | The ATO says it rejects the report; no extension of the 2026-27 reporting acceptance. Recheck the later year's substantive figures separately. |
 | Update event with no QE YTD change and no actual new pay | Do not create a new QE day or SG amount from the event alone; retain the event and reconcile to actual pay. |
 | Earlier QE was 2,500 but lodged as 2,000; other facts unchanged; no cap or rounding difference | Correct the earlier records/report: SG component rises from 240 to 300, difference 60. The correction does not make the earnings newly paid or reset their receipt deadline. |
-| Approved quotation 1 July 2026; contribution 20 July 2026; same eligible entity; trustee not previously informed | Quotation was 19 days earlier, so section 299C's required time is the end of 20 July 2026. Retain secure notification evidence; no actual TFN belongs in this working paper. |
+| Approved quotation 1 July 2026; contribution 20 July 2026; same eligible entity; this employer has not previously informed a trustee of that entity | Quotation was 19 days earlier, so section 299C's required time is the end of 20 July 2026. Retain secure notification evidence; no actual TFN belongs in this working paper. |
 | Approved quotation 10 July 2026; contribution 15 July 2026; same conditions | Quotation was 5 days earlier, so the required time is the end of 24 July 2026, the 14th day after quotation. The SG receipt endpoint remains separately determined. |
 | Approved quotation 1 July 2026; contribution 15 July 2026; same conditions | Exactly 14 days is not more than 14. The otherwise branch gives the end of 15 July 2026; do not add another 14 days from contribution. |
 | No TFN quoted; otherwise due SG contribution | Section 299C's quotation condition is not established. Resolve lawful fund/channel acceptance without inventing a TFN or an SG extension; no complete notification certification. |
-| Approved quotation and contribution, but evidence proves the same entity's trustee was already informed | Section 299C(1)(c) is false; no repeated notification under this provision. Retain the prior evidence and test any changed recipient separately. |
+| Approved quotation and contribution; evidence proves this employer previously informed a trustee of the same eligible entity of this employee’s TFN | Section 299C(1)(c) is false; no repeated notification by this employer under this provision. Retain evidence of the notifying employer, entity and employee reference; test a different employer or entity separately. |
+| Approved quotation to the current employer and subsequent eligible contribution; the trustee knows the TFN from another employer or the member, but this employer has never informed a trustee of that entity | Mere trustee knowledge does not satisfy the current employer’s prior-notification condition. Its section 299C hand-off obligation remains, subject to the other statutory conditions and deadline. |
 
 [SG]; [REG]; [WHERE]; [CHOICE]; [FORM]; [STAPLED]; [NEWFUND]; [STREAM];
-[UPGRADE]; [STP]; [STPFIX]; [SIS1]; [SIS2].
+[UPGRADE]; [STP]; [STPFIX]; [SIS1]; [SIS2]; [SISJULY].
 
 ## Reviewer outputs, checks and remaining slots
 
@@ -819,9 +823,11 @@ The SIS Act was checked separately: the live Register identified compilation
 **131**, effective **10 August 2026**, as latest. Selected volume 1 sections
 8, 10 and 15A establish territorial/entity/employee scope; volume 2 sections
 299A, 299C, 299P and 299W supply the selected quotation control. The full
-SIS Act, RSA regime and complete TFN rules were not audited. The ATO timing
-wording difference is preserved above for practitioner resolution.
-[SIS1]; [SIS2]; [NEWFUND]
+SIS Act, RSA regime and complete TFN rules were not audited. Section 299C
+in compilation **130**, effective **1 July 2026**, was also checked and is
+identical for the fictional July cases. The ATO timing wording difference
+is preserved above for practitioner resolution.
+[SIS1]; [SIS2]; [SISJULY]; [NEWFUND]
 
 The historical territory Acts and dictionary limits are stated above.
 No full delegated-instrument inventory, all-programme survey, actual
@@ -854,6 +860,7 @@ volatile law and operational guidance before engagement use.
 [STPFIX]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/paying-super-on-payday/single-touch-payroll-reporting-under-payday-super/fixing-single-touch-payroll-errors-in-payday-super
 [FORM]: https://www.ato.gov.au/forms-and-instructions/superannuation-standard-choice-form
 [SIS1]: https://www.legislation.gov.au/C2004A04633/2026-08-10/2026-08-10/text/original/epub/OEBPS/document_1/document_1.html
+[SISJULY]: https://www.legislation.gov.au/C2004A04633/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_2/document_2.html
 [SIS2]: https://www.legislation.gov.au/C2004A04633/2026-08-10/2026-08-10/text/original/epub/OEBPS/document_2/document_2.html
 [WPN]: https://www.ato.gov.au/businesses-and-organisations/super-for-employers/setting-up-super-for-your-business/withholding-payer-number-super-obligations
 

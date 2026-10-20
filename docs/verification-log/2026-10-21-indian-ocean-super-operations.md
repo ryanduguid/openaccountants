@@ -40,7 +40,7 @@ dates and contribution history; an update event does not create new cash
 pay merely because it is lodged. The ATO's finalisation data exception is
 stated separately.
 
-Each guide adds 24 fictional operational cases to its 26 existing cases,
+Each guide adds 25 fictional operational cases to its 26 existing cases,
 including cap/YTD crossings, separate agreement liability, labour
 contractors, fund changes, rejection and correction boundaries. Local
 component checks and repository tests do not establish an executed model,
@@ -53,14 +53,19 @@ Financial review recovered one readiness omission: quoted-TFN notification.
 I verified SIS Act compilation 131, effective 10 August 2026, at sections
 8, 10, 15A, 299A, 299C, 299P and 299W and added a controlled hand-off check.
 It preserves the statutory quotation/contribution timing, prior-notification
-exception, strict liability offence and identifier boundary. Five additional
-fictional cases cover early, late and exact-14-day quotation, no quotation
-and a previously informed trustee. The current ATO wording differs from
+exception, strict liability offence and identifier boundary. Six additional
+fictional cases cover early, late and exact-14-day quotation, no quotation,
+prior notification by this employer and mere trustee knowledge from a
+different employer or the member. The current ATO wording differs from
 the conditional Act test; that difference is explicit and never extends
-SG receipt time. The amendment awaits its financial repair review.
+SG receipt time. The financial repair review required prior-notification
+wording that identifies this employer expressly. I made that correction and added the
+negative case with targeted notifying-party checks. Section 299C in
+compilation 130, effective 1 July 2026, matches compilation 131 for
+the fictional July dates.
 
 I regenerated packages, index, partner roster and full text and checked
 the country report. Guide inventory counts are unchanged. The qualified
-financial review identified the omission above. Its repair
-review remains outstanding; independent repository review does not replace
-it.
+financial review identified the omission and notifying-employer
+qualification above. Both amendments and targeted cases are included.
+Independent repository review does not replace financial source judgement.
