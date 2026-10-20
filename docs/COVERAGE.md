@@ -24,7 +24,7 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,941** |
+| Guide files indexed | **1,943** |
 | Distinct `jurisdiction` codes | **250** |
 | `tier: 1` (accountant-reviewed) | **164** |
 | `tier: 2` (source-cited draft) | **1,777** |

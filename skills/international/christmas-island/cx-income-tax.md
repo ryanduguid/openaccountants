@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Selected ordinary personal rates for 1 July 2026 to 30 June 2027; adjacent years and Medicare conditions require their separately identified sources"
 tier: 2
 last_updated: 2026-10-21
-version: 0.2
+version: 0.3
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -69,6 +69,10 @@ For an ordinary individual using the standard year, **2026-27 runs from
 4-10 must be read with any permitted substituted accounting period under
 1936 Act section 18. Do not derive a return or payment deadline from the
 year end. [CORE]; [DICT, section 995-1][DICT]; [RESIDENCE]
+
+Use `cx-super-guarantee` for selected 2026-27 employer SG rules. SG
+computation is separate from taxable-income and Medicare calculations;
+that companion preserves its own missing programme and operational slots.
 
 ## Period figures and ordinary personal rates
 
