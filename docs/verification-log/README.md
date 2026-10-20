@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-21 | [Christmas Island and Cocos work expenses and zone relief](2026-10-21-indian-ocean-deductions-zone.md) |
 | 2026-10-21 | [Christmas Island and Cocos selected individual income tax](2026-10-21-indian-ocean-income-tax.md) |
 | 2026-10-21 | [Christmas Island and Cocos tax-system boundaries](2026-10-21-indian-ocean-tax-scope.md) |
 | 2026-10-18 | [Shared transfer-pricing method selection and evidence gates](2026-10-18-transfer-pricing-workflow.md) |
