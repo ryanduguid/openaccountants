@@ -43,7 +43,7 @@ a 30 June 1991 deemed acquisition and first cost-base element, and permits
 a conditional choice to disapply it. It differs from the Norfolk date
 substitution and does not arise solely from current Christmas Island residence.
 
-The guides include 9 and 11 fictional classification cases respectively,
+The guides include 10 and 12 fictional classification cases respectively,
 no authorised factual defaults, topical refusals, reviewer flags without a
 cash floor, the 4 universal output components and supplemental checks. I
 recomputed the AUD24,000 income-inclusion component, checked the cutoff
@@ -61,3 +61,19 @@ Required independent financial review is outstanding. The existing Calvino
 selector qualification failure has no demonstrated recovery; this batch
 must remain draft and unmerged until a qualified review and any resulting
 repairs are complete. Technical checks cannot confer professional sign-off.
+
+## GST delivery clarification
+
+Independent financial-rule review found an ambiguity in case 4: customer
+residence does not establish where goods are delivered. Version 0.1.1
+states a mainland delivery location within the indirect tax zone and adds
+the same mainland-resident customer collecting goods on the island. The
+paired cases preserve the remaining charging conditions and do not compute
+a GST liability. GST Act section 9-25(1) supplies the distinction.
+
+The review found no demonstrated material misstatement in the selected
+substantive rules. End-to-end model refusal and output behaviour remains
+unverified, as do operative-law completeness and professional sign-off.
+Those gaps prevent operational reliance or comprehensive acceptance; they
+do not establish an exemption or a zero liability. Final repair review and
+publication checks remain outstanding.
