@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Selected scope checked on 21 October 2026; identify each income year, event date and operative source separately"
 tier: 2
 last_updated: 2026-10-21
-version: 0.1
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -41,7 +41,7 @@ No comprehensive-country acceptance or professional sign-off is claimed.
 
 ## Period, figures and source conditions
 
-This is a dated reference checked on **21 October 2026**, with v0.1 source
+This is a dated reference checked on **21 October 2026**, with v0.2 source
 metadata. Verify amendments, regulations, modifications and application
 provisions for the requested period before an engagement result. An unknown
 legal condition requires Needs Input and a hold on the affected work.
@@ -92,6 +92,10 @@ identify the applied law, current territory modification, responsible body,
 charge period and exemptions. This guide has not verified a complete
 territorial revenue-law inventory. Record the unresolved charge instead of
 asserting either mainland liability or a blanket exemption.
+
+Use `cx-income-tax` for selected 2026-27 ordinary personal rates, LITO
+and Medicare screening. Its incomplete income-tax slots still prevent a
+complete individual-return result.
 
 ## Income tax, residence, period and Medicare
 
