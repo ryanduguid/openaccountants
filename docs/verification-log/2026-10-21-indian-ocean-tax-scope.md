@@ -57,10 +57,11 @@ not reviewed clause by clause. Complete individual/entity computations,
 payroll/social rules, formation/reporting, cross-border rules, property and
 local charges, compliance and special regimes remain open.
 
-Required independent financial review is outstanding. The existing Calvino
-selector qualification failure has no demonstrated recovery; this batch
-must remain draft and unmerged until a qualified review and any resulting
-repairs are complete. Technical checks cannot confer professional sign-off.
+At original draft preparation, independent financial review had not been
+submitted because selector qualification was unavailable. The clarification
+below records the completed review and its reliance limits. Publication
+still requires any resulting repairs and final checks. Technical checks
+cannot confer professional sign-off.
 
 ## GST delivery clarification
 
@@ -76,4 +77,4 @@ substantive rules. End-to-end model refusal and output behaviour remains
 unverified, as do operative-law completeness and professional sign-off.
 Those gaps prevent operational reliance or comprehensive acceptance; they
 do not establish an exemption or a zero liability. Final repair review and
-publication checks remain outstanding.
+publication checks are tracked on the pull request.
