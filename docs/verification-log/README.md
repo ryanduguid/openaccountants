@@ -7,6 +7,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 | Date | Entry |
 |---|---|
 | 2026-10-21 | [Norfolk Island: selected UK treaty conditions and MLI matching](2026-10-21-norfolk-uk-treaty-relief.md) |
+| 2026-10-21 | [Christmas Island and Cocos tax-system boundaries](2026-10-21-indian-ocean-tax-scope.md) |
 | 2026-10-18 | [Shared transfer-pricing method selection and evidence gates](2026-10-18-transfer-pricing-workflow.md) |
 | 2026-10-18 | [Norfolk Island tax records and retention](2026-10-18-norfolk-tax-records.md) |
 | 2026-10-18 | [Norfolk tax interest and shared Australian compliance corrections](2026-10-18-norfolk-tax-interest.md) |
