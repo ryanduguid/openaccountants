@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (1941 guides, 250 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (1943 guides, 250 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -638,8 +638,10 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - cn-withholding | CN | tier 2 | reviewed_by -
 - china-references | CN | tier 2 | reviewed_by -
 - cx-income-tax | CX | tier 2 | reviewed_by -
+- cx-super-guarantee | CX | tier 2 | reviewed_by -
 - cx-tax-system | CX | tier 2 | reviewed_by -
 - cc-income-tax | CC | tier 2 | reviewed_by -
+- cc-super-guarantee | CC | tier 2 | reviewed_by -
 - cc-tax-system | CC | tier 2 | reviewed_by -
 - co-company-formation | CO | tier 2 | reviewed_by -
 - co-corporate-income-tax | CO | tier 2 | reviewed_by -

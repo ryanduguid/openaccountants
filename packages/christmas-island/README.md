@@ -7,7 +7,8 @@
 
 1. `intake.md`
 2. `cx-income-tax.md`
-3. `cx-tax-system.md`
+3. `cx-super-guarantee.md`
+4. `cx-tax-system.md`
 
 ## Shared files this package needs
 
@@ -15,6 +16,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 
 
