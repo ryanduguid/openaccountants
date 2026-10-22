@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-23 | [Christmas Island and Cocos: reportable super input reconciliation](2026-10-23-indian-ocean-reportable-super.md) |
 | 2026-10-23 | [Christmas Island and Cocos: surviving-spouse Medicare surcharge](2026-10-23-indian-ocean-survivor-surcharge.md) |
 | 2026-10-23 | [Christmas Island and Cocos: family and period Medicare surcharge](2026-10-23-indian-ocean-family-surcharge.md) |
 | 2026-10-23 | [Christmas Island and Cocos: ordinary single-person Medicare surcharge](2026-10-23-indian-ocean-surcharge.md) |

@@ -7,7 +7,7 @@ description: >
   part-year threshold, low income tax offset, standard work-expense deduction,
   substantiation changes, special-area zone relief and ordinary Medicare
   reductions, single-person, family/period and ordinary surviving spouse
-  surcharge components. Use for
+  surcharge components, plus a bounded reportable-super input worksheet. Use for
   Cocos (Keeling) Islands personal tax, ordinary annual rates, mainland moves or
   levy-exemption questions. Includes primary legislation, fictional component
   calculations, required intake, refusals and reviewer checks. This source-cited
@@ -19,7 +19,7 @@ tax_year: 2026
 tax_year_notes: "Selected ordinary personal rates for 1 July 2026 to 30 June 2027; adjacent years and Medicare conditions require their separately identified sources"
 tier: 2
 last_updated: 2026-10-23
-version: 0.8
+version: 0.9
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -512,7 +512,7 @@ residence nor exemption. [MLS-FB, sections 3/9/10][MLS-FB]; [DICT, section
 Keep 3 amounts separate, with their evidence and reconciliation:
 
 - **I:** annual income for surcharge purposes under section 995-1. For the
-  selected ordinary case, with all special adjustments established absent,
+  selected ordinary case, with all other special adjustments established absent,
   this is taxable income plus reportable fringe benefits, reportable
   superannuation contributions and total net investment loss. It selects
   the annual threshold and rate, rather than the charge base.
@@ -524,8 +524,9 @@ Keep 3 amounts separate, with their evidence and reconciliation:
   sections 10-16 of the fringe-benefits surcharge Act.
 
 For these ordinary inputs, require non-negative amounts and an I worksheet
-reconciling C + B + the separately established reportable-super and
-investment-loss amounts. An unexplained difference is Needs Input. Unknown
+reconciling C + B + separately established reportable super (RSC) + total net
+investment loss. Use the bounded RSC worksheet below for that subcomponent.
+An unexplained difference is Needs Input. Unknown
 classifications cannot be supplied as zero.
 
 The statutory I definition adjusts taxable income for assessable FHSS
@@ -536,14 +537,18 @@ statutory excess-concessional-contribution adjustment. Do not equate I, C,
 B, gross pay, cash received or ordinary levy income. [DICT, section 995-1][DICT];
 [LEVY, sections 3/8B][LEVY]; [MLS-FB, sections 3/10-12][MLS-FB]
 
-This branch requires independently reconciled I, C and B and evidence that
-foreign employment/exempt foreign income, FHSS releases, trust-distribution
-adjustments, arrears, special superannuation benefits and excess concessional
-contributions do not require a further rule. Unknown or applicable special
-items are **Needs Input** for this computation. The ATO's foreign-employment
-qualification and its historical super lump-sum qualification must not be
-silently omitted or imported into 2026-27 without the operative law.
-This section does not calculate those branches. [MLS-ATO]; [DICT]
+This branch requires independently reconciled I, C and B. Independently
+established DedSuper and ECC may enter the bounded RSC worksheet only when
+their taxable-income effects are already reconciled in C. Unknown deduction
+entitlement, cap, excess or reconciliation remains **Needs Input**. Foreign
+employment/exempt foreign income, FHSS releases, trust-distribution
+adjustments, arrears and special superannuation benefits still require
+evidence that no further rule applies. Unknown or applicable unresolved
+special items are **Needs Input** for this computation. The ATO's
+foreign-employment qualification and its historical super lump-sum
+qualification must not be silently omitted or imported into 2026-27 without
+the operative law. This section does not calculate those branches.
+[MLS-ATO]; [DICT]; [IT97-SUPER]
 
 Obtain each employer's actual income statement/reporting reconciliation and
 confirm the FBT year ending on 31 March within the income year. Section
@@ -555,6 +560,62 @@ reported benefits with salary packaging deductions. Underlying valuation,
 exclusion, gross-up-rate and reporting-precision questions require the
 complete applicable rules before B is accepted. [FBT-REPORTING, sections
 135N-Q][FBT-REPORTING]; [FBT-VALUES, sections 5E/5F][FBT-VALUES]
+
+### Reconcile reportable superannuation contributions
+
+For the corresponding income and financial year, independently establish:
+
+- **RESC:** reportable employer superannuation contributions under TAA
+  Schedule 1 section 16-182. Establish the employer or associate, fund or
+  RSA, benefit, influence and exclusion conditions. Amounts assessable to
+  the individual are excluded to that extent. The industrial instrument or
+  fund rule exception addresses paragraph (1)(c), not paragraph (1)(d).
+  Apply the expanded SGAA section 12 employer meaning with subsection
+  12(11) disregarded. Disregard whether benefits are payable to a SIS
+  dependant if the individual dies before or after entitlement. A gross
+  deposit or SG label alone does not establish RESC. [TAA, Schedule 1
+  section 16-182][TAA]
+- **DedSuper:** the actual allowable Subdivision 290-C deduction, after all
+  applicable conditions and limitations. For a claimed deduction, establish
+  the contribution year,
+  fund conditions, age and work conditions, excluded contribution types,
+  valid timely notice, acknowledgment, variations and other denial or
+  reduction provisions. The notice amount is an upper bound; a deposit,
+  notice or acknowledgment alone does not establish the deduction. This
+  worksheet does not determine DedSuper or resolve the section 26-55 limit.
+  [IT97-SUPER, sections 290-150 to 290-180][IT97-SUPER]; [CORE, section 26-55][CORE]
+- **ECC:** final statutory excess concessional contributions for the
+  corresponding financial year, after the applicable cap, carry-forward,
+  contribution classification, defined benefit and Commissioner rules.
+  Neither an assumed cap nor gross deposits establish ECC. Contributions
+  for cap purposes have their own section 291-25 classification; they are
+  not necessarily RESC + DedSuper. ECC can exceed that sum. Unknown or
+  provisional inputs remain held. [IT97-SUPER, Division 291][IT97-SUPER]
+
+These names do not replace R for the ordinary Medicare reduction or D for
+surcharge days. Calculate:
+
+**RSC = max(0, RESC + DedSuper - ECC).**
+
+Keep the input evidence, year correspondence and zero floor. Unknown
+classifications or amounts, including an unproved zero, are **Needs Input**.
+[DICT, section 995-1][DICT]
+
+Section 291-15 separately includes ECC in assessable income and provides a
+15% offset that cannot be refunded, transferred or carried forward. Use C
+already reconciled with actual DedSuper and assessable ECC: do not deduct
+DedSuper or include ECC again, subtract ECC from C, or treat the offset as a
+deduction. The fictional pre-adjustment amount in the examples illustrates
+those effects; it is not a replacement method for establishing taxable
+income. Add RSC when reconciling I, without adding RSC itself to C or B.
+A known RSC does not clear a missing C, B or other I adjustment.
+[IT97-SUPER, section 291-15][IT97-SUPER]; [DICT]
+
+This worksheet calculates the RSC subcomponent from established statutory
+inputs. It does not determine deduction entitlement, an individual's cap or
+ECC, complete offset ordering, release instructions or a final assessment.
+Every other income, benefit, relationship, cover, day and complete-output
+gate remains. [IT97-SUPER]; [TAA]; [DICT]
 
 ### Annual single thresholds and charge periods
 
@@ -817,8 +878,9 @@ applies to the survivor; separately
 verified SAPTO/qualifying-child entitlements, dependant maintenance, Medicare
 entitlement/certificate and full/half prescribed and cover periods;
 separate surcharge I/C/B worksheets, every employer's reportable-benefits
-reconciliation, super/investment-loss classifications, actual hospital
-policy/excess/suspension records, each relevant dependant's status and
+reconciliation, RESC classification, actual allowable DedSuper, final ECC,
+RSC/C year correspondence and investment-loss classifications, actual
+hospital policy/excess/suspension records, each relevant dependant's status and
 distinct surcharge day sets for both charges, with each income screen;
 qualifying labour-income/withholding categories, allowable reducing expenses,
 asset use and pool history, usual zone residence dates, prior zone claims,
@@ -929,14 +991,46 @@ offsets, surcharge and any return balance. [LEVY]; [MEDICARE]; [LEVY-AMEND]
 | Paragraph (1)(f) certificate for the year, but dependant condition unresolved | Needs Input. Do not infer full exemption or apply the category-limited half fallback. |
 | Required SAPTO, child, family, certificate, period or final-rounding evidence is absent | Hold the affected component or final result; do not choose a higher-tax factual default. |
 
+### Reportable-super input component boundaries
+
+These fictional 2026-27 cases stipulate independently established RESC,
+DedSuper and ECC. The ordinary taxable amount before DedSuper and assessable
+ECC is $100,000, with no other taxable adjustments. B and total net
+investment loss are nil unless stated. Thus C = $100,000 - DedSuper + ECC
+for these cases only, and I = C + B + RSC + total net investment loss.
+They test the dictionary add-back and reconciliation, not entitlement,
+actual cap/excess, surcharge rates or days, offset ordering or final tax.
+[DICT, section 995-1][DICT]; [IT97-SUPER, sections 290-150/291-15][IT97-SUPER]
+
+| Independently established fictional inputs | RSC, C and I |
+|---|---|
+| RESC = $0; DedSuper = $5,000; ECC = $0 | RSC **$5,000**; C **$95,000**; I **$100,000**. |
+| RESC = $10,000; DedSuper = $5,000; ECC = $0 | RSC **$15,000**; C **$95,000**; I **$110,000**. |
+| RESC = $10,000; DedSuper = $5,000; ECC = $2,000 | RSC **$13,000**; C **$97,000**; I **$110,000**. |
+| RESC = $10,000; DedSuper = $5,000; ECC = $15,000 | RSC **nil**; C **$110,000**; I **$110,000**. |
+| RESC = $10,000; DedSuper = $5,000; ECC = $20,000 | RSC **nil**, with no negative add-back; C **$115,000**; I **$115,000**. |
+| RESC = $0; DedSuper = $0; ECC = $2,000 | RSC **nil**; C **$102,000**; I **$102,000**. |
+| RESC = $12,000; DedSuper = $8,000; ECC = $5,000 | RSC **$15,000**; C **$97,000**; I **$112,000**. |
+| RESC = $12,000; DedSuper = $8,000; ECC = $25,000 | RSC **nil**; C **$117,000**; I **$117,000**. |
+| Gross personal deposit and notice each $10,000; actual DedSuper independently established as $6,000; RESC = ECC = $0 | RSC **$6,000**; C **$94,000**; I **$100,000**. Neither gross amount replaces DedSuper. |
+| Gross employer deposits $19,000, independently classified as RESC $6,000 and nonreportable remainder $13,000; DedSuper = ECC = $0 | RSC **$6,000**; C **$100,000**; I **$106,000**. Gross deposits do not establish RESC. |
+| RESC = $12,000; DedSuper = $8,000; ECC = $5,000; B = $3,000; total net investment loss = $4,000 | RSC **$15,000**; C **$97,000**; I **$119,000**. Neither B nor the loss add-back is added to stipulated C. |
+| Gross employer deposits or an SG label, with influence/exclusion classification unresolved | **Needs Input** for RESC; no automatic zero or gross-deposit substitution. |
+| Personal deposit, notice or acknowledgment without actual allowable deduction, including an unresolved section 26-55 limit | **Needs Input** for DedSuper; the notice is not an entitlement calculation. |
+| Provisional ECC, unknown cap/carry-forward/balance or unresolved defined benefit/Commissioner modification | **Needs Input** for ECC; no assumed cap or zero excess. |
+| Known RSC, but C/B or another I adjustment is unreconciled | **Needs Input** for downstream surcharge; do not deduct DedSuper or include ECC twice. |
+| Contribution income year and corresponding excess financial year are unproved or mismatched | **Needs Input** for the affected year and input; no cross-year netting. |
+| Complete deduction, cap/excess determination, final offset/payment or country return requested from these examples | **Needs Input** for the remaining law, mandatory slots and qualified review. |
+
 ### Single-person surcharge component boundaries
 
 All numeric cases below stipulate the 2026-27 full-year resident adult,
 no spouse/dependants throughout, separately reconciled I/C/B, absence of
 special adjustments and established surcharge cover/prescribed day sets.
 They test unrounded components, rather than a complete return or final
-assessed amount. Reportable super and investment losses affect I only;
-they are not added to C or B as charge bases. [DICT]; [LEVY, section 8B][LEVY];
+assessed amount. RSC and investment-loss add-backs are not themselves added
+to C or B; underlying allowable deductions and assessable excess must
+already be reflected in C. [DICT]; [LEVY, section 8B][LEVY];
 [MLS-FB, sections 10-12][MLS-FB]; [MLS-ATO]
 
 | Established fictional inputs or failed gate | Selected surcharge component result |
@@ -948,8 +1042,8 @@ they are not added to C or B as charge bases. [DICT]; [LEVY, section 8B][LEVY];
 | I = C = $164,000; B = $0; D = 365 | Rate 1.25%; taxable-income component **$2,050**. |
 | I = C = $164,001; B = $0; D = 365 | Rate 1.5%; exact taxable-income component **$2,460.015** before unresolved final assessment rounding. |
 | C = $90,000; B = $27,000; I = $117,000; D = 365 | Rate 1%; components **$900 + $270 = $1,170**. The benefits are separately charged. |
-| C = $90,000; B = $0; independently reconciled reportable super $20,000; I = $110,000; D = 365 | Rate 1%; component **$900**, rather than $1,100. The added super selects the tier only. |
-| C = $90,000; B = $0; independently reconciled total net investment loss $20,000; I = $110,000; D = 365 | Rate 1%; component **$900**. The loss add-back selects the tier only. |
+| C = $90,000; B = $0; independently reconciled reportable super $20,000; I = $110,000; D = 365 | Rate 1%; component **$900**, rather than $1,100. RSC enters the I threshold/rate tests; it is not added to stipulated C. |
+| C = $90,000; B = $0; independently reconciled total net investment loss $20,000; I = $110,000; D = 365 | Rate 1%; component **$900**. The loss enters the I threshold/rate tests; it is not added to stipulated C. |
 | C = $95,001; B = $10,000; I = $105,001; D = 365 | Rate 1%; components **$950.01 + $100 = $1,050.01**. C below the singles threshold does not alone establish nil surcharge. |
 | C = $109,500; B = $10,950; I = $120,450; D = 100 | Rate 1%; components **$300 + $30 = $330** after the exact day fractions. |
 | Same annual amounts; 200 qualifying-cover days and 20 prescribed days, with 10 days in both sets | D = 365 - (200 + 20 - 10) = 155; components **$465 + $46.50 = $511.50**. |
@@ -1058,7 +1152,7 @@ be filled with a fictional calendar or a bank-label inference.
 |---|---|
 | 1. Year, filing unit and residence | Ordinary individual year and residence screening; complex residence/periods held. |
 | 2. Income categories | General inclusion framework only; receipt-specific derivation/exemptions remain open. |
-| 3. Rates and levies | Selected ordinary tables, section 7/8/9 levy reductions and ordinary single/family/period and supported survivor surcharge components; special adjustments, benefit entitlements and held relationship/child-count branches remain incomplete. |
+| 3. Rates and levies | Selected ordinary tables, section 7/8/9 levy reductions and ordinary single/family/period and supported survivor surcharge components, plus the bounded RSC input worksheet; unresolved special adjustments, benefit entitlements and held relationship/child-count branches remain incomplete. |
 | 4. Allowances and credits | Ordinary LITO and selected special-area zone eligibility/base; dependant/service branches, other offsets and complete ordering remain open. |
 | 5. Expenses | General connection, standard work-expense deduction and selected evidence/asset-transition rules; full expense/asset methods and remaining deductions stay open. |
 | 6. Loss relief | Open; no utilisation determination. |
@@ -1080,7 +1174,9 @@ substantiation, travel nights, retention and asset history; distinguish zone
 classification from usual residence and check allowances/service overlap;
 recompute individual caps, family allocation and excess transfers before day
 reductions; reconcile annual surcharge I/C/B, annual tier selection and each
-period's separate income screen; verify year-end marriage, any-day non-spouse
+period's separate income screen; verify the RSC zero floor, corresponding
+income/financial years and C reconciliation without duplicate deduction or
+excess inclusion; verify year-end marriage, any-day non-spouse
 dependants, child thresholds and the whole/part-year marriage distinction;
 check statutory endpoints, relevant-person uninsured unions, limited cover
 deeming and each dated cover/prescribed intersection for both charges; verify benefit
@@ -1129,6 +1225,20 @@ timeline; historical thresholds and Example 10's overlapping 15 December
 endpoints are not adopted. Current legislation governs the 2026-27 statutory
 application. [MLS-DEATH-DAYS]; [LEVY]; [MLS-FB]
 
+The RSC worksheet uses TAA compilation 227 of 1 October 2026, Schedule 1
+section 16-182, and selected Subdivisions 290-C and 291-B/291-C of ITAA97
+compilation 268. Current official HTML and native PDF both omit paragraph
+26-55(2)(b); no assumed text or deduction-limit formula is restored here.
+Actual DedSuper, ECC and their underlying entitlement/amount conditions
+remain independently established inputs. [TAA]; [CORE]; [IT97-SUPER]; [DICT]
+
+Version 0.9, 23 October 2026: adds the bounded RSC zero-floor worksheet,
+11 fictional input/reconciliation instances and 6 held-input rows. Distinct
+RESC/DedSuper/ECC names preserve existing levy and day notation. Known
+inputs may feed I only after their taxable effects are reconciled in C;
+unknown deduction/excess entitlement, other special adjustments and all
+complete-return/country holds remain.
+
 Version 0.8, 23 October 2026: adds ordinary surviving spouse surcharge
 mechanics, statutory cover-deeming exclusions, post-death child qualification
 and 16 numeric boundary instances. Actual annual deceased spouse income is
@@ -1157,6 +1267,7 @@ selected substantiation/asset transitions and verified local special-area
 zone rules. Version 0.1 introduced the selected personal-rate, LITO and
 Medicare reference. Both retain explicit incomplete-domain holds.
 
+[IT97-SUPER]: https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_6/document_6.html
 [MLS-DEATH-DAYS]: https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2026/medicare-and-private-health-insurance/medicare-levy-surcharge/mytax-2026-number-of-days-you-dont-have-to-pay-the-mls
 [MLS-FB]: https://www.legislation.gov.au/C2004A00412/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
 [PHI]: https://www.legislation.gov.au/C2007A00031/2026-09-19/2026-09-19/text/original/epub/OEBPS/document_1/document_1.html
