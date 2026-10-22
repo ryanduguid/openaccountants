@@ -17,8 +17,8 @@ WHAT THIS IS, AND WHAT IT IS NOT
 
 It is a blast-radius ranking. It reports instruments cited many times in exactly
 one guide and nowhere else in the corpus, ordered by count. It is NOT a defect
-detector, and the distinction matters enough to put in the exit status: this
-always exits 0 and must never gate CI.
+detector, and the distinction matters enough to put in the exit status: its
+reports exit 0 and must never gate CI. Invalid arguments exit 2.
 
 The reasoning is only this. A guide leaning 25 times on an instrument no sibling
 guide has ever mentioned has no corroboration inside the corpus. That is not
@@ -58,7 +58,12 @@ the conflict would have been mechanical.
 
 Usage: python3 scripts/list-solo-citations.py [--selftest] [--min N]
 """
+import argparse
 import os, re, sys, collections
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import non_negative_integer
+from oa_tools.guides import markdown_files
 
 # An instrument word followed by a number that looks like a legislative
 # reference. Deliberately narrow: matching bare four-digit years or section
@@ -81,17 +86,13 @@ def citations_in(text):
     return found
 
 
-def scan(root='skills'):
+def scan(root=None):
     """Return {citation: {path: count}}."""
     out = collections.defaultdict(collections.Counter)
-    for dp, _, fns in os.walk(root):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            path = os.path.join(dp, fn)
-            with open(path, encoding='utf-8', errors='replace') as fh:
-                for cite, n in citations_in(fh.read()).items():
-                    out[cite][path] += n
+    for path, source_path in markdown_files(root):
+        with open(source_path, encoding='utf-8', errors='replace') as fh:
+            for cite, n in citations_in(fh.read()).items():
+                out[cite][path] += n
     return out
 
 
@@ -139,10 +140,13 @@ def main(minimum=DEFAULT_MIN):
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(prog='list-solo-citations.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    parser.add_argument('--min', type=non_negative_integer, default=DEFAULT_MIN, metavar='N',
+                        help='minimum citation count (default: 8; 0 lists all)')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
     else:
-        n = DEFAULT_MIN
-        if '--min' in sys.argv:
-            n = int(sys.argv[sys.argv.index('--min') + 1])
-        sys.exit(main(n))
+        sys.exit(main(args.min))

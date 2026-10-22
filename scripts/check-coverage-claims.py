@@ -70,8 +70,8 @@ def normalise(name):
 
 def actual(index):
     guides = index['guides']
-    reviewers = {g['reviewed_by'].strip() for g in guides
-                 if g.get('reviewed_by') and str(g['reviewed_by']).strip().lower() not in roster.UNREVIEWED_MARKERS}
+    reviewers = {roster.reviewer_value(g.get('reviewed_by')) for g in guides}
+    reviewers.discard(None)
     return {
         'Guide files indexed': len(guides),
         'Distinct `jurisdiction` codes': len({g['jurisdiction'] for g in guides if g.get('jurisdiction')}),
@@ -102,11 +102,21 @@ def main(argv=None):
         return report.finish()
     index = roster.load_index('index.json')
 
+    index_integrity(problem, index)
     derived_table(problem, index)
     headline_claims(problem, index)
     partners_fresh(problem, index)
     report.note('claims disagreeing with the tree: %d' % len(report.findings))
     return report.finish()
+
+
+def index_integrity(problem, index):
+    """Raw tier counts must not describe rows without a reviewer as reviewed."""
+    for guide in index['guides']:
+        if guide.get('tier') == 1 and roster.reviewer_of(guide) is None:
+            path = guide.get('path') or guide.get('slug') or '<unknown guide>'
+            problem('index.json', 'tier 1 without reviewer: ' + path,
+                    f'index.json: {path}: tier 1 requires a real reviewer', guide=path)
 
 
 def derived_table(problem, index):

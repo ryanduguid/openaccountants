@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -12,12 +13,16 @@ def run_script(script, guides, root="international", extra_args=()):
     """Run a checker against a throwaway corpus. (returncode, stdout, stderr)."""
     with tempfile.TemporaryDirectory() as directory:
         Path(directory, "docs").mkdir()
+        scripts = Path(directory, "scripts")
+        shutil.copytree(SCRIPTS / "oa_tools", scripts / "oa_tools",
+                        ignore=shutil.ignore_patterns("__pycache__"))
+        shutil.copyfile(SCRIPTS / script, scripts / script)
         for name, text in guides.items():
             path = Path(directory, "skills", root, name)
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(text, encoding="utf-8")
         result = subprocess.run(
-            [sys.executable, "-X", "utf8", str(SCRIPTS / script), *extra_args],
+            [sys.executable, "-X", "utf8", str(scripts / script), *extra_args],
             cwd=directory, capture_output=True, text=True, encoding="utf-8",
             timeout=30,
         )
@@ -766,7 +771,7 @@ class CitationRotTests(unittest.TestCase):
             cwd = os.getcwd()
             try:
                 os.chdir(directory)
-                found = self.rot.cited_hosts()
+                found = self.rot.cited_hosts(root="skills")
             finally:
                 os.chdir(cwd)
         self.assertEqual(sorted(found), ["revenue.example.gov"])

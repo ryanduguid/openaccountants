@@ -175,7 +175,13 @@ Still open: 201 jurisdictions state a deadline and 24 have been checked.
 
 Usage: python3 scripts/list-filing-deadlines.py [--selftest]
 """
+import argparse
 import os, re, sys, collections
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files
 
 MONTH = ('January|February|March|April|May|June|July|August|September|'
          'October|November|December')
@@ -354,26 +360,22 @@ def selftest():
 
 def main():
     out = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
-    for dp, _, fns in os.walk('skills'):
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            p = os.path.join(dp, fn)
-            parts = p.split(os.sep)
-            if len(parts) < 3:
-                continue
-            # skills/international/<jur>/x.md is a jurisdiction; skills/federal/x.md
-            # is one too, and taking parts[2] blindly filed it under its own
-            # filename. `us-pte-state-matrix.md` appeared as a country.
-            jur = parts[2] if len(parts) >= 4 else parts[1]
-            # These folders carry many jurisdictions' dates on purpose, so they
-            # always disagree with themselves and never mean anything by it.
-            if jur in ('orchestrator', 'cross-border', 'verticals', 'integrations'):
-                continue
-            for line in open(p, encoding='utf-8', errors='replace'):
-                got = deadline_in(line, fn[:-3])
-                if got:
-                    out[jur][got[0]][got[1]] += 1
+    for p, source in markdown_files():
+        parts = p.split(os.sep)
+        if len(parts) < 3:
+            continue
+        # skills/international/<jur>/x.md is a jurisdiction; skills/federal/x.md
+        # is one too, and taking parts[2] blindly filed it under its own
+        # filename. `us-pte-state-matrix.md` appeared as a country.
+        jur = parts[2] if len(parts) >= 4 else parts[1]
+        # These folders carry many jurisdictions' dates on purpose, so they
+        # always disagree with themselves and never mean anything by it.
+        if jur in ('orchestrator', 'cross-border', 'verticals', 'integrations'):
+            continue
+        for line in open(source, encoding='utf-8', errors='replace'):
+            got = deadline_in(line, os.path.basename(p)[:-3])
+            if got:
+                out[jur][got[0]][got[1]] += 1
 
     for juris in sorted(out):
         for k in ('personal', 'corporate', 'unspecified'):
@@ -388,7 +390,11 @@ def main():
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(prog='list-filing-deadlines.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
     else:
-        main()
+        sys.exit(main())

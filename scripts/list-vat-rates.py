@@ -142,21 +142,31 @@ figure. A number here is a claim to verify, not a finding.
 
 Usage: python3 scripts/list-vat-rates.py
 """
-import os, re, collections
+import argparse
+import os, re, sys, collections
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(prog='list-vat-rates.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.parse_args()
 
 PAT = re.compile(r'(?:standard(?:\s+VAT|\s+GST)?\s+rate|VAT\s+standard\s+rate|'
                  r'standard\s+rate\s+of\s+(?:VAT|GST))[^.\n|]{0,60}?(\d{1,2}(?:\.\d+)?)\s?%', re.I)
 
 out = collections.defaultdict(collections.Counter)
-for dp, _, fns in os.walk(os.path.join('skills', 'international')):
-    for fn in fns:
-        if not fn.endswith('.md'):
-            continue
-        p = os.path.join(dp, fn)
-        juris = p.split(os.sep)[2]
-        for line in open(p, encoding='utf-8', errors='replace'):
-            for m in PAT.finditer(line):
-                out[juris][m.group(1)] += 1
+for p, source in markdown_files(sort_filenames=False):
+    parts = p.split(os.sep)
+    if len(parts) < 3 or parts[1] != 'international':
+        continue
+    juris = parts[2]
+    for line in open(source, encoding='utf-8', errors='replace'):
+        for m in PAT.finditer(line):
+            out[juris][m.group(1)] += 1
 
 for juris in sorted(out):
     counts = out[juris]

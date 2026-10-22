@@ -47,8 +47,11 @@ not trip it.
 
 Usage: python3 scripts/check-effective-dates.py [skills]
 """
+import argparse
 import os, re, sys, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from oa_tools.cli import directory
+from oa_tools.guides import markdown_files, jurisdiction_group
 from oa_tools.frontmatter import FrontmatterError, read_frontmatter, split_frontmatter
 
 MONTHS = 'January|February|March|April|May|June|July|August|September|October|November|December'
@@ -60,19 +63,16 @@ YR = re.compile(r'\b(20[2-3]\d)\b')
 
 
 def walk(root):
-    for dp, _, fns in os.walk(root):
-        for fn in sorted(fns):
-            if fn.endswith('.md'):
-                p = os.path.join(dp, fn)
-                parts = p.split(os.sep)
-                if len(parts) >= 3:
-                    yield p, parts[2]
+    for p, source_path in markdown_files(root):
+        jur = jurisdiction_group(p, root)
+        if jur is not None:
+            yield p, jur, source_path
 
 
 def rate_dates(root):
     pairs = collections.defaultdict(lambda: collections.defaultdict(set))
-    for p, jur in walk(root):
-        text = open(p, encoding='utf-8', errors='replace').read()
+    for p, jur, source_path in walk(root):
+        text = open(source_path, encoding='utf-8', errors='replace').read()
         for s in re.split(r'(?<=[.!?])\s+|\n|\|', text):
             if not EFFECT.search(s):
                 continue
@@ -92,8 +92,8 @@ def rate_dates(root):
 
 def declared_vs_worked(root):
     rows = []
-    for p, _ in walk(root):
-        txt = open(p, encoding='utf-8', errors='replace').read()
+    for p, _, source_path in walk(root):
+        txt = open(source_path, encoding='utf-8', errors='replace').read()
         try:
             fmd = read_frontmatter(txt, strict=True)
         except FrontmatterError:
@@ -120,7 +120,11 @@ def declared_vs_worked(root):
 
 
 if __name__ == '__main__':
-    root = sys.argv[1] if len(sys.argv) > 1 else 'skills'
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('root', nargs='?', type=directory, metavar='DIR',
+                        help="directory to scan (default: this checkout's skills)")
+    args = parser.parse_args()
+    root = args.root
     print('== A. rates dated two ways within one jurisdiction')
     a = rate_dates(root)
     print('\n== B. declared tax_year vs the year the guide works in')
