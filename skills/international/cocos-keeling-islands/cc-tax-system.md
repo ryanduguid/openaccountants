@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Selected scope checked on 21 October 2026; identify each income year, event date and operative source separately"
 tier: 2
 last_updated: 2026-10-21
-version: 0.3
+version: 0.2
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -96,10 +96,6 @@ asserting either mainland liability or a blanket exemption.
 Use `cc-income-tax` for selected 2026-27 ordinary personal rates, LITO
 and Medicare screening. Its incomplete income-tax slots still prevent a
 complete individual-return result.
-
-Use `cc-super-guarantee` with the social contributions base for selected
-2026-27 employer SG, annual-base and fund-receipt rules. It does not
-complete the payroll or all-programme social contribution slots.
 
 ## Income tax, residence, period and Medicare
 
