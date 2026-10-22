@@ -6,7 +6,7 @@ description: >
   gates, ordinary resident and foreign-resident personal rates, conditional
   part-year threshold, low income tax offset, standard work-expense deduction,
   substantiation changes, special-area zone relief and ordinary Medicare
-  reductions. Use for
+  reductions and a bounded single-person surcharge component. Use for
   Christmas Island personal tax, ordinary annual rates, mainland moves or
   levy-exemption questions. Includes primary legislation, fictional component
   calculations, required intake, refusals and reviewer checks. This source-cited
@@ -18,7 +18,7 @@ tax_year: 2026
 tax_year_notes: "Selected ordinary personal rates for 1 July 2026 to 30 June 2027; adjacent years and Medicare conditions require their separately identified sources"
 tier: 2
 last_updated: 2026-10-23
-version: 0.5
+version: 0.6
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -480,11 +480,141 @@ rounding stage remain an engagement source condition here. The examples
 below are unrounded components, not approved assessment amounts.
 [TAA]; [TAA-SCHEDULE]; [RESIDENCE, section 6(1)][RESIDENCE]
 
-Surcharge, private hospital cover, surcharge income, fringe-benefit
-surcharge, arrears and special superannuation adjustments remain unresolved.
+The bounded ordinary single-person surcharge component follows below.
+Family/part-year relationship branches, special surcharge income/benefit
+adjustments, arrears and special superannuation adjustments remain unresolved.
 Unknown cover does not mean no cover, and nil ordinary levy does not prove
 nil surcharge. Do not use historical island guidance to override the
 checked current charge and conditional exemption rules.
+
+## Medicare surcharge: ordinary single adult
+
+This section supports a 2026-27 component working paper for an adult who
+is an Australian tax resident, unmarried and without surcharge dependants
+throughout the income year. Establish those facts for every day before using
+this branch. A spouse or dependant at any time requires the complete annual
+tier and period rules, even if the person is single at year end. Registered
+and genuine domestic relationships can count as marriage; living separately
+and apart and a spouse's death have statutory consequences. A return label
+of 'single' alone does not settle them. [MEDICARE, sections 251R/251V][MEDICARE];
+[LEVY, sections 3/3A/8B][LEVY]; [MLS-FB, sections 5-8/12][MLS-FB]
+
+The separate benefits charge extends to the external Territories in the
+imported geographical Australia definition and uses the section 6(1)
+residence definition. The territorial bridge above therefore also needs
+verification for this charge; an island address alone settles neither
+residence nor exemption. [MLS-FB, sections 3/9/10][MLS-FB]; [DICT, section
+960-505][DICT]; [RESIDENCE, section 6(1)][RESIDENCE]
+
+### Annual inputs and special-branch gates
+
+Keep 3 amounts separate, with their evidence and reconciliation:
+
+- **I:** annual income for surcharge purposes under section 995-1. For the
+  selected ordinary case, with all special adjustments established absent,
+  this is taxable income plus reportable fringe benefits, reportable
+  superannuation contributions and total net investment loss. It selects
+  the annual threshold and rate, rather than the charge base.
+- **C:** annual taxable income for the section 8B charge. Section 3(2A)
+  disregards Schedule 2F subsection 271-105(1); do not simply copy a return's
+  taxable-income label where a trust-distribution adjustment applies.
+- **B:** annual reportable fringe benefits total, independently reconciled
+  across employers under FBTAA section 135N. It has a separate charge under
+  sections 10-12 of the fringe-benefits surcharge Act.
+
+For these ordinary inputs, require non-negative amounts and an I worksheet
+reconciling C + B + the separately established reportable-super and
+investment-loss amounts. An unexplained difference is Needs Input. Unknown
+classifications cannot be supplied as zero.
+
+The statutory I definition adjusts taxable income for assessable FHSS
+released amounts and the specified trust rule, adds the separately defined
+superannuation and investment-loss amounts and retains a conditional
+section 301-20 reduction. Reportable super is itself subject to the
+statutory excess-concessional-contribution adjustment. Do not equate I, C,
+B, gross pay, cash received or ordinary levy income. [DICT, section 995-1][DICT];
+[LEVY, sections 3/8B][LEVY]; [MLS-FB, sections 3/10-12][MLS-FB]
+
+This branch requires independently reconciled I, C and B and evidence that
+foreign employment/exempt foreign income, FHSS releases, trust-distribution
+adjustments, arrears, special superannuation benefits and excess concessional
+contributions do not require a further rule. Unknown or applicable special
+items are **Needs Input** for this computation. The ATO's foreign-employment
+qualification and its historical super lump-sum qualification must not be
+silently omitted or imported into 2026-27 without the operative law.
+This section does not calculate those branches. [MLS-ATO]; [DICT]
+
+Obtain each employer's actual income statement/reporting reconciliation and
+confirm the FBT year ending on 31 March within the income year. Section
+135P's greater-than-$2,000 individual-benefits test is a reporting condition,
+not a deduction from B; section 135Q supplies a separate special-employer
+path. An employer's FBT exemption or an island address does not prove nil B.
+Do not gross up a supplied taxable value with an assumed factor or replace
+reported benefits with salary packaging deductions. Underlying valuation,
+exclusion, gross-up-rate and reporting-precision questions require the
+complete applicable rules before B is accepted. [FBT-REPORTING, sections
+135N-Q][FBT-REPORTING]; [FBT-VALUES, sections 5E/5F][FBT-VALUES]
+
+### Annual single thresholds and charge periods
+
+The ATO expressly labels the following thresholds for **2026-27**. The
+statutory comparisons are 'exceeds' and 'does not exceed'; preserve exact
+intermediates and the applicable assessment precision rather than assuming
+that an administrative whole-dollar range fills every precision question.
+[MLS-ATO]; [PHI, sections 22-30/22-35/22-45][PHI]
+
+| Annual I for this full-year single/no-dependant branch | Surcharge rate r |
+|---|---|
+| I no more than $105,000 | 0% |
+| I above $105,000 and no more than $123,000 | 1% |
+| I above $123,000 and no more than $164,000 | 1.25% |
+| I above $164,000 | 1.5% |
+
+This is a flat rate on the relevant charge bases once the annual threshold
+is exceeded, not a marginal charge only on the excess. Sections 3A and 6
+modify the PHI family test for surcharge. The singles table here assumes no
+spouse or surcharge dependant throughout the year; family thresholds and
+married/dependant periods remain outside this component. [LEVY, sections
+3A/8B][LEVY]; [MLS-FB, sections 6/12][MLS-FB]; [PHI, section 22-30][PHI]
+
+For each day, establish both qualifying private patient hospital cover and
+prescribed-person status. Qualifying cover requires a complying policy
+covering hospital treatment, with the applicable excess no more than $750
+for a policy insuring only one person or $1,500 otherwise in any 12 month
+period. Compliance includes the PHI requirements and applicable Rules; this
+guide does not certify an insurer's product. Confirm the actual insurer,
+policy, insured people, excess terms, start/end dates and suspensions.
+Extras alone, travel insurance and an overseas fund do not establish
+qualifying hospital cover. [LEVY, section 3(5)][LEVY]; [MLS-FB, section 4][MLS-FB];
+[PHI, sections 45-1/63-10/69-1/69-5/121-5][PHI]; [MLS-COVER]
+
+Prescribed-person status requires the actual section 251U conditions and
+applicable evidence, including any required certificate and dependant
+condition. Sections 251V/251VA and the fringe-benefits Act's sections 5/8
+reverse specified ordinary-levy dependant and half-period concessions.
+Do not copy the ordinary levy's full/half-day count into the surcharge.
+An unproved exemption, unknown cover or missing date is Needs Input.
+[MEDICARE, sections 251R/251U/251V/251VA][MEDICARE]; [MLS-FB, sections 5/8][MLS-FB]
+
+For this branch let D be the number of distinct days on which the person is
+both without qualifying cover and not a surcharge prescribed person.
+Build the dated day sets and their intersection; overlapping cover and
+prescribed days are excluded once, rather than deducted twice. The selected
+2026-27 year has 365 days. Use the same independently established annual
+rate and charge bases for the statutory day fractions:
+
+- Taxable-income surcharge component: **C × r × D / 365**.
+- Reportable-benefits surcharge component: **B × r × D / 365**.
+- Combined unrounded surcharge component: their sum, kept separate from
+  ordinary levy, income tax, offsets, private health rebate and withholding.
+
+At the base tier, or with D = 0 after all conditions are proved, these
+selected surcharge components are nil. For D = 365 the full annual amounts
+apply. Do not allocate C or B to the dates salary or benefits happened to be
+received. Preserve each exact fraction before the still-unresolved final
+assessment rounding stage. The separate charging provisions, including
+their formula image alternatives, support these fractions. [LEVY, section
+8B][LEVY]; [MLS-FB, sections 10-12][MLS-FB]
 
 ## Intake, patterns, defaults and refusals
 
@@ -495,6 +625,9 @@ and losses; special-rate components; all offsets; withholding and prepayments;
 year-end family status, both spouses' annual taxable incomes, separately
 verified SAPTO/qualifying-child entitlements, dependant maintenance, Medicare
 entitlement/certificate and full/half prescribed and cover periods;
+separate surcharge I/C/B worksheets, every employer's reportable-benefits
+reconciliation, super/investment-loss classifications, actual hospital
+policy/excess/suspension records and distinct surcharge day sets;
 qualifying labour-income/withholding categories, allowable reducing expenses,
 asset use and pool history, usual zone residence dates, prior zone claims,
 remote area allowances and overlapping service; foreign currency records;
@@ -509,6 +642,7 @@ and the actual filing/payment calendar.
 | Island-to-mainland move | Establish tax residence continuously; do not automatically prorate the threshold. |
 | Unknown residence, income source or special-rate status | Needs Input; no rate table selected. |
 | Unknown labour-income category, reducing expense, zone residence, allowance, offset or levy condition | Needs Input; hold that component rather than assume entitlement or nil. |
+| Unknown surcharge I/C/B, special adjustment, relationship/dependant history, policy or day set | Needs Input; no assumed nil income, cover or exemption and no annual-tier/charge-base shortcut. |
 | Missing withholding, credit or due date | Hold the balance and calendar. No refund or payment instruction. |
 | Missing exchange rate or rounding rule | Retain original amounts and hold the affected final number. |
 
@@ -603,6 +737,39 @@ offsets, surcharge and any return balance. [LEVY]; [MEDICARE]; [LEVY-AMEND]
 | Paragraph (1)(f) certificate for the year, but dependant condition unresolved | Needs Input. Do not infer full exemption or apply the category-limited half fallback. |
 | Required SAPTO, child, family, certificate, period or final-rounding evidence is absent | Hold the affected component or final result; do not choose a higher-tax factual default. |
 
+### Single-person surcharge component boundaries
+
+All numeric cases below stipulate the 2026-27 full-year resident adult,
+no spouse/dependants throughout, separately reconciled I/C/B, absence of
+special adjustments and established surcharge cover/prescribed day sets.
+They test unrounded components, rather than a complete return or final
+assessed amount. Reportable super and investment losses affect I only;
+they are not added to C or B as charge bases. [DICT]; [LEVY, section 8B][LEVY];
+[MLS-FB, sections 10-12][MLS-FB]; [MLS-ATO]
+
+| Established fictional inputs or failed gate | Selected surcharge component result |
+|---|---|
+| I = C = $105,000; B = $0; D = 365 | **Nil** at the base-tier upper boundary. |
+| I = C = $105,001; B = $0; D = 365 | Rate 1%; taxable-income component **$1,050.01**. The charge is not 1% of $1. |
+| I = C = $123,000; B = $0; D = 365 | Rate 1%; taxable-income component **$1,230**. |
+| I = C = $123,001; B = $0; D = 365 | Rate 1.25%; exact taxable-income component **$1,537.5125** before unresolved final assessment rounding. |
+| I = C = $164,000; B = $0; D = 365 | Rate 1.25%; taxable-income component **$2,050**. |
+| I = C = $164,001; B = $0; D = 365 | Rate 1.5%; exact taxable-income component **$2,460.015** before unresolved final assessment rounding. |
+| C = $90,000; B = $27,000; I = $117,000; D = 365 | Rate 1%; components **$900 + $270 = $1,170**. The benefits are separately charged. |
+| C = $90,000; B = $0; independently reconciled reportable super $20,000; I = $110,000; D = 365 | Rate 1%; component **$900**, rather than $1,100. The added super selects the tier only. |
+| C = $90,000; B = $0; independently reconciled total net investment loss $20,000; I = $110,000; D = 365 | Rate 1%; component **$900**. The loss add-back selects the tier only. |
+| C = $95,001; B = $10,000; I = $105,001; D = 365 | Rate 1%; components **$950.01 + $100 = $1,050.01**. C below the singles threshold does not alone establish nil surcharge. |
+| C = $109,500; B = $10,950; I = $120,450; D = 100 | Rate 1%; components **$300 + $30 = $330** after the exact day fractions. |
+| Same annual amounts; 200 qualifying-cover days and 20 prescribed days, with 10 days in both sets | D = 365 - (200 + 20 - 10) = 155; components **$465 + $46.50 = $511.50**. |
+| Same annual amounts; qualifying cover established for every day; D = 0 | Both selected surcharge components **nil**. Ordinary levy and private health rebate remain separate. |
+| Same annual amounts; no qualifying cover or prescribed days; D = 365 | Components **$1,095 + $109.50 = $1,204.50**. Extras alone do not change D. |
+| Same annual amounts; D = 1 after the dated-set reconciliation | Exact components **$3 + $0.30 = $3.30**; annual amounts are not reassigned by receipt date. |
+| I = C = $150,000; B = $0; D = 146 | Rate 1.25%; component **$750**. |
+| I = C = $180,000; B = $0; D = 146 | Rate 1.5%; component **$1,080**. |
+| I, B, actual policy terms/dates or prescribed status unknown | **Needs Input**. No assumed zero, no assumed uninsured period and no final component. |
+| A spouse or surcharge dependant existed at any time, including a domestic/registered relationship or relevant spouse-death period | **Needs Input** for the complete family/period rules; this singles branch cannot determine the annual tier or full surcharge. |
+| FHSS, trust-distribution, exempt foreign employment or special super/arrears condition unresolved | **Needs Input** for the relevant adjustment law, annual inputs and charge bases. |
+
 ## Outputs, contract coverage and checks
 
 The universal workbook must identify source/version, territory, period,
@@ -621,7 +788,7 @@ be filled with a fictional calendar or a bank-label inference.
 |---|---|
 | 1. Year, filing unit and residence | Ordinary individual year and residence screening; complex residence/periods held. |
 | 2. Income categories | General inclusion framework only; receipt-specific derivation/exemptions remain open. |
-| 3. Rates and levies | Selected ordinary tables and section 7/8/9 levy reductions; special adjustments, benefit entitlements and surcharge remain incomplete. |
+| 3. Rates and levies | Selected ordinary tables, section 7/8/9 levy reductions and the bounded single/no-dependant surcharge component; special adjustments, benefit entitlements and other surcharge branches remain incomplete. |
 | 4. Allowances and credits | Ordinary LITO and selected special-area zone eligibility/base; dependant/service branches, other offsets and complete ordering remain open. |
 | 5. Expenses | General connection, standard work-expense deduction and selected evidence/asset-transition rules; full expense/asset methods and remaining deductions stay open. |
 | 6. Loss relief | Open; no utilisation determination. |
@@ -642,7 +809,10 @@ reconcile each section 25-130 reducing branch and its exceptions; verify
 substantiation, travel nights, retention and asset history; distinguish zone
 classification from usual residence and check allowances/service overlap;
 recompute individual caps, family allocation and excess transfers before day
-reductions; keep levy, surcharge and other offsets separate; substantiate every exemption
+reductions; reconcile annual surcharge I/C/B, the statutory threshold
+endpoints and each dated cover/prescribed intersection; verify benefit
+reporting inputs before applying the separate charge bases; keep levy,
+surcharge and other offsets separate; substantiate every exemption
 period and dependant condition; preserve missing-slot holds; reconcile
 withholding/credits without inventing a refund; verify currency/rounding;
 and inspect all output components before reviewer delivery.
@@ -669,6 +839,21 @@ filing regime is certified.
 Use `cx-tax-system` for GST/customs geography and historical asset gates.
 Other country topics remain open under `docs/country-coverage-plan.md`.
 
+The surcharge reference uses PHI compilation 42 of 19 September 2026,
+fringe-benefits surcharge Act compilation 42 of 1 July 2026 and selected
+FBTAA compilation 97 provisions of 1 July 2026. The ATO threshold page,
+updated 22 June 2026, explicitly labels 2026-27; the cover page was updated
+30 April 2026. The statutory index mechanism was checked, but immutable
+first-publication provenance for its ABS inputs is not established here.
+The stated amounts therefore rely on the authoritative administration table,
+not a claim of independently proven first-published index inputs.
+[PHI]; [MLS-FB]; [FBT-REPORTING]; [MLS-ATO]; [MLS-COVER]
+
+Version 0.6, 23 October 2026: adds the ordinary full-year resident single
+adult surcharge component, distinct annual income/charge bases, hospital
+cover and surcharge day gates, plus 20 component boundary/refusal cases.
+Family, special-adjustment, final-precision and complete-return holds remain.
+
 Version 0.5, 23 October 2026: adds ordinary Medicare reduction order, family
 allocation, prescribed-period mechanics and component boundaries; retains
 SAPTO/child eligibility, special-adjustment, rounding and complete-return
@@ -678,6 +863,13 @@ Version 0.2, 21 October 2026: adds the standard work-expense deduction,
 selected substantiation/asset transitions and verified local special-area
 zone rules. Version 0.1 introduced the selected personal-rate, LITO and
 Medicare reference. Both retain explicit incomplete-domain holds.
+
+[MLS-FB]: https://www.legislation.gov.au/C2004A00412/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
+[PHI]: https://www.legislation.gov.au/C2007A00031/2026-09-19/2026-09-19/text/original/epub/OEBPS/document_1/document_1.html
+[MLS-ATO]: https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates
+[MLS-COVER]: https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/paying-the-medicare-levy-surcharge/appropriate-level-of-private-patient-hospital-cover
+[FBT-REPORTING]: https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_2/document_2.html
+[FBT-VALUES]: https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
 
 [TERRITORY]: https://www.legislation.gov.au/C1958A00041/2020-12-18/2020-12-18/text/original/epub/OEBPS/document_1/document_1.html
 [RESIDENCE]: https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html
