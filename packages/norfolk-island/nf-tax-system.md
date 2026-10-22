@@ -14,9 +14,9 @@ description: >
 jurisdiction: NF
 category: international
 tax_year: 2026
-tax_year_notes: "Scope checked on 21 October 2026; Australian financial years and event-specific transition dates must be identified separately"
+tax_year_notes: "Scope checked on 20 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
-last_updated: 2026-10-21
+last_updated: 2026-10-20
 version: 0.21
 review_status: pending_review
 depends_on:
@@ -215,12 +215,6 @@ and annual reporting distinctions. Residence, exemptions, treaty outcomes,
 special arrangements, actual forms and calendars require their own
 evidence; the reference does not complete cross-border coverage.
 
-Use `nf-uk-treaty-relief` for selected Australia-UK treaty territory,
-residence and transparent-entity conditions, MLI matching, payment ceilings,
-PE screening, credit coordination and MAP timing. Other partners, actual
-entitlement, UK domestic computations, refund/claim procedures and complete
-cross-border outputs retain their own source and workflow requirements.
-
 Use `nf-foreign-income` for selected foreign-income inclusion,
 temporary-resident and foreign-service conditions, eligible foreign tax,
 the ordinary credit limit, currency translation, amendments and records.
@@ -258,6 +252,13 @@ clocks, review extensions, evidence quality and record-failure consequences.
 It preserves the limited Norfolk acquisition-date exception and separates
 statutory dispute rules from broader ATO guidance. Actual records, notices,
 special regimes and disposal decisions remain with the reviewer.
+
+
+Use nf-transfer-pricing for selected Australian arm's length, benchmarking,
+currency, TP documentation, IDS/CBC reporting and penalty rules. It separates
+income-tax geography from catalogue/treaty/GST territory and preserves
+actual data, source and specialist-country gates. It does not establish a
+completed documentation package or comprehensive cross-border coverage.
 
 ## Classification examples and review checks
 
