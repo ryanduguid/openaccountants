@@ -6,7 +6,8 @@ description: >
   gates, ordinary resident and foreign-resident personal rates, conditional
   part-year threshold, low income tax offset, standard work-expense deduction,
   substantiation changes, special-area zone relief and ordinary Medicare
-  reductions, single-person and family/period surcharge components. Use for
+  reductions, single-person, family/period and ordinary surviving spouse
+  surcharge components. Use for
   Christmas Island personal tax, ordinary annual rates, mainland moves or
   levy-exemption questions. Includes primary legislation, fictional component
   calculations, required intake, refusals and reviewer checks. This source-cited
@@ -18,7 +19,7 @@ tax_year: 2026
 tax_year_notes: "Selected ordinary personal rates for 1 July 2026 to 30 June 2027; adjacent years and Medicare conditions require their separately identified sources"
 tier: 2
 last_updated: 2026-10-23
-version: 0.7
+version: 0.8
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -623,8 +624,9 @@ established ordinary I/C/B as above, an established relationship/dependant
 history and proved hospital-cover and prescribed-person facts. It supports
 unmarried dependant periods, marriage throughout the year and marriage for
 part of the year, including an established separation/reunion timeline with
-one identified spouse. It does not calculate the special income/base or
-benefit-valuation branches held above, a deceased person's return, competing
+one identified spouse. The supported surviving-spouse branch below retains
+whole-year marriage only with its complete facts. It does not calculate the
+special income/base or benefit-valuation branches held above, a deceased person's return, competing
 or successive spouse cases or unresolved changing child-count thresholds.
 Those cases require the missing rules and evidence before computation.
 
@@ -637,9 +639,10 @@ relationship provisions can displace a legal/registered relationship. If the
 last spouse dies while they are married, MLA section 3(3A) and the benefits
 Act section 7(3) continue marriage through 30 June. Do not create unmarried
 post-death days or substitute MLA's general last-day death deeming for the
-benefits Act definition used by the annual PHI test. A death or competing/
-successive relationship remains Needs Input here for the complete timeline,
-dependant/cover treatment and computation. [MEDICARE, section 251R(2)/(2A)][MEDICARE];
+benefits Act definition used by the annual PHI test. The ordinary survivor
+branch below applies only with its complete timeline, statutory cover and
+input facts. Other death or competing/successive cases remain Needs Input.
+[MEDICARE, section 251R(2)/(2A)][MEDICARE];
 [LEVY, section 3(3)/(3A)][LEVY]; [MLS-FB, section 7][MLS-FB]; [MLS-FAMILY]
 
 A surcharge dependant requires Australian residence, maintenance and the
@@ -745,6 +748,60 @@ counts. Do not double count overlapping uninsured people or assign annual
 income to receipt dates. Preserve exact fractions and the final assessment
 rounding hold. [LEVY, sections 8B-8D][LEVY]; [MLS-FB, sections 11-16][MLS-FB]
 
+### Surviving spouse: established whole-year marriage and own uncovered status
+
+This ordinary branch applies only when all of the following are independently
+established for the survivor:
+
+- The same statutory marriage existed on 1 July and continued until the spouse
+  died whilst they were married. They were not living separately and apart,
+  and there is no competing relationship or later spouse in the income year.
+- The full-year resident adult, territorial and ordinary I/C/B gates above
+  hold. Own annual I/C/B and the deceased spouse's actual annual I are proved.
+  Do not annualise the deceased's income or replace an unknown amount with nil.
+- The survivor is nonprescribed and uncovered under **both statutory cover
+  tests on every day**. Neither section 251VA/MLA 8D(2) nor benefits Act
+  14(2)(a) deems the survivor covered. Physical lack of a policy alone is
+  insufficient. Ordinary half-period status is not proof of this condition.
+- The qualifying-child threshold basis is proved throughout: a constant
+  qualifying count, or a dated count proved never to exceed 1. Each child's
+  relationship, residence, maintenance and age/study qualification must remain
+  proved after death. Do not infer continuing qualification solely because
+  the child was the deceased spouse's child. Changing counts involving 2 or
+  more remain held.
+
+MLA 3(3A) and benefits Act 7(3) continue that existing marriage from the death
+through 30 June. The survivor is therefore married throughout the year and
+on 30 June for the PHI test. Use the family table, own annual I plus the
+deceased spouse's actual annual I, and the supported child thresholds above.
+Do not create a single-person period or end the survivor's chargeable period
+on the spouse's death. [LEVY, sections 3(2)/(3A)/8D][LEVY]; [MLS-FB, sections
+5/7(3)/14-16][MLS-FB]; [PHI, sections 22-30/22-40][PHI]
+
+The survivor's own statutory uncovered status satisfies the cover condition
+throughout. These facts do not require an assumption about the deceased's
+post-death status as a cover-test dependant. There are 365 potential days
+before income screening. Apply both strict whole-year-marriage screens:
+**combined annual I > own F1 and own annual I > $28,011**. If either fails,
+record **D-C = D-B = 0** and both selected components are nil. If both pass,
+record **D-C = D-B = 365** and compute C × r and B × r separately, using the
+annual conditional rate above. Retain exact amounts and the final assessment
+rounding hold. [LEVY, section 8D(1)-(4B)][LEVY]; [MLS-FB, sections 14/15][MLS-FB]
+
+The ATO day instructions for **2025-26** corroborate whole-year spouse
+treatment where there was a spouse on 1 July and no replacement spouse.
+Their historical thresholds do not supply the 2026-27 amounts here; the
+current Acts and expressly labelled 2026-27 table do. This is a statutory
+application, not an ATO worked death example or a deceased person's return.
+[MLS-DEATH-DAYS]; [LEVY]; [MLS-FB]; [MLS-ATO]
+
+If the marriage started later, separation preceded death, a later/competing
+spouse exists or the survivor's statutory cover status is unknown or covered,
+this shortcut cannot establish the whole-year charge. Obtain the complete
+relationship, dependant, cover and income evidence and separately supported
+rules; do not choose a higher-tax default or assume nil. The deceased's
+return, special adjustments and final assessment remain outside this branch.
+
 ## Intake, patterns, defaults and refusals
 
 Confirm the person's legal capacity, year and accounting period; residence
@@ -753,7 +810,10 @@ questions; income categories, sources and derivation; complete deductions
 and losses; special-rate components; all offsets; withholding and prepayments;
 year-end family status, both spouses' annual taxable incomes and separate
 surcharge I amounts, actual marriage/separation and dependant timelines,
-qualifying-child count/threshold worksheet, separately
+qualifying-child count/threshold worksheet, including post-death qualification;
+for a survivor, marriage on 1 July through death, no later/competing spouse,
+actual deceased spouse annual I and proof that no taxpayer cover deeming
+applies to the survivor; separately
 verified SAPTO/qualifying-child entitlements, dependant maintenance, Medicare
 entitlement/certificate and full/half prescribed and cover periods;
 separate surcharge I/C/B worksheets, every employer's reportable-benefits
@@ -946,9 +1006,39 @@ screen; it is not a substitute for that screen. [LEVY, sections 3A/8B-8D][LEVY];
 | C = $219,000; B = $21,900; I = $240,900; unmarried with one child throughout; taxpayer independently established within the listed half-period category, but not prescribed because the child is non-prescribed; child covered except 100 days | Limited deeming covers taxpayer for the family test, but the child's 100 uncovered days give **$600 + $60 = $660**. |
 | Same annual amounts and status; child covered throughout | Both components **nil** from the proved cover test, not a global prescribed exemption. |
 | Unmarried throughout; I = C = $219,000; one qualifying child throughout independently proved prescribed apart from 251U(2); taxpayer non-prescribed, uncovered 100 days and otherwise covered | Child remains in annual family classification but is disregarded for cover; taxpayer's 100 days give **$600**. |
-| Changing qualifying-child counts involving 2 or more, unresolved relationship/death classification or unproved maintenance/residence/education | **Needs Input** for the affected threshold, period or classification; no assumed annual count or unmarried post-death days. |
+| Changing qualifying-child counts involving 2 or more, unresolved relationship/death classification outside the supported survivor branch or unproved maintenance/residence/education | **Needs Input** for the affected threshold, period or classification; no assumed annual count or unmarried post-death days. |
 | Unknown spouse I, I/C/B reconciliation, policy/member/excess/dates, prescribed entitlement or special adjustment | **Needs Input**; no zero-income, covered, exempt or whole-year-marriage assumption. |
 | Complete return, final assessed rounding or trustee/special-income computation requested from these cases | **Needs Input** for the remaining sources, mandatory slots and qualified review. |
+
+### Surviving spouse surcharge component boundaries
+
+All cases stipulate the supported ordinary survivor branch above: the same
+spouse from 1 July 2026 until death whilst married on 31 December 2026, no
+other spouse, full-year residence, no special adjustments and the survivor
+nonprescribed and statutorily uncovered for all 365 days, with neither
+taxpayer cover deeming rule applying. Own I/C/B and actual deceased spouse
+annual I are independently established; the deceased's I is not annualised.
+Unless stated otherwise, there are no qualifying children, B = $0 and I = C.
+Any stated child count qualifies throughout, including after death. The
+365 potential days become zero chargeable days when an income screen fails.
+These are fictional unrounded components, not a complete or deceased return.
+[LEVY, sections 3(3A)/8D][LEVY]; [MLS-FB, sections 7(3)/14/15][MLS-FB];
+[PHI, sections 22-30/22-40][PHI]; [MLS-ATO]
+
+| Established fictional survivor inputs or failed gate | Selected component result |
+|---|---|
+| Own I = C = $100,000; actual deceased annual I = $150,000 | Annual family A $250,000, r 1.25%; both screens pass: **$1,250**. No single period arises on death. |
+| Own I = C = $28,011 / $28,012; actual deceased annual I = $221,989 / $221,988 | A $250,000 and r 1.25% in both cases; own-I screen gives D-C = D-B **0 / 365** and **nil / $350.15**. |
+| Own I = C = $100,000; actual deceased annual I = $110,000 / $110,001 | A equals / exceeds F1 $210,000; D-C = D-B **0 / 365** and **nil / $1,000**. |
+| Same own amounts; actual deceased annual I = $146,000 / $146,001 | A equals / exceeds F2 $246,000; r 1% / 1.25% gives **$1,000 / $1,250**. |
+| Same own amounts; actual deceased annual I = $228,000 / $228,001 | A equals / exceeds F3 $328,000; r 1.25% / 1.5% gives **$1,250 / $1,500**. |
+| C = $219,000; B = $21,900; own I = $240,900; actual deceased annual I = $9,100 | A $250,000, r 1.25%; separate components **$2,737.50 + $273.75 = $3,011.25**. Do not charge I as either base. |
+| Own I = C = $100,000; 2 qualifying children throughout; actual deceased annual I = $111,500 / $111,501 | F1 $211,500; D-C = D-B **0 / 365** and **nil / $1,000**. |
+| Same own amounts and 2 children; actual deceased annual I = $147,500 / $147,501 | F2 $247,500; r 1% / 1.25% gives **$1,000 / $1,250**. |
+| Same own amounts; 3 qualifying children throughout; actual deceased annual I = $231,000 / $231,001 | F3 $331,000; r 1.25% / 1.5% gives **$1,250 / $1,500**. |
+| Own/deceased annual I, C/B, actual prescription or statutory cover facts are unknown; or taxpayer cover deeming applies | **Needs Input** for this shortcut. Physical non-insurance does not prove statutory uncovered days, and an unknown deceased income is not nil. |
+| Marriage starts after 1 July, separation precedes death or a later/competing spouse exists | **Needs Input** for separately supported relationship/period treatment; do not infer whole-year marriage or an automatic single period. |
+| Post-death child qualification is unproved, counts involving 2 or more change or special adjustments apply | **Needs Input** for the affected threshold/input; marriage continuation alone proves none of those facts. |
 
 ## Outputs, contract coverage and checks
 
@@ -968,7 +1058,7 @@ be filled with a fictional calendar or a bank-label inference.
 |---|---|
 | 1. Year, filing unit and residence | Ordinary individual year and residence screening; complex residence/periods held. |
 | 2. Income categories | General inclusion framework only; receipt-specific derivation/exemptions remain open. |
-| 3. Rates and levies | Selected ordinary tables, section 7/8/9 levy reductions and ordinary single/family/period surcharge components; special adjustments, benefit entitlements and held relationship/child-count branches remain incomplete. |
+| 3. Rates and levies | Selected ordinary tables, section 7/8/9 levy reductions and ordinary single/family/period and supported survivor surcharge components; special adjustments, benefit entitlements and held relationship/child-count branches remain incomplete. |
 | 4. Allowances and credits | Ordinary LITO and selected special-area zone eligibility/base; dependant/service branches, other offsets and complete ordering remain open. |
 | 5. Expenses | General connection, standard work-expense deduction and selected evidence/asset-transition rules; full expense/asset methods and remaining deductions stay open. |
 | 6. Loss relief | Open; no utilisation determination. |
@@ -1033,6 +1123,18 @@ The stated amounts therefore rely on the authoritative administration table,
 not a claim of independently proven first-published index inputs.
 [PHI]; [MLS-FB]; [FBT-REPORTING]; [MLS-ATO]; [MLS-COVER]; [MLS-FAMILY]
 
+The ATO day worksheet, published 1 June 2026, applies to 2025-26. Its
+condition of a spouse on 1 July with no replacement spouse corroborates the selected survivor
+timeline; historical thresholds and Example 10's overlapping 15 December
+endpoints are not adopted. Current legislation governs the 2026-27 statutory
+application. [MLS-DEATH-DAYS]; [LEVY]; [MLS-FB]
+
+Version 0.8, 23 October 2026: adds ordinary surviving spouse surcharge
+mechanics, statutory cover-deeming exclusions, post-death child qualification
+and 16 numeric boundary instances. Actual annual deceased spouse income is
+not annualised; potential and post-screen days remain distinct. Other
+relationship, special-input, final-precision and complete-return holds remain.
+
 Version 0.7, 23 October 2026: adds ordinary family and relationship-period
 surcharge mechanics, separate annual-tier and period-income screens,
 constant-child thresholds, relevant-dependant cover unions and limited
@@ -1055,6 +1157,7 @@ selected substantiation/asset transitions and verified local special-area
 zone rules. Version 0.1 introduced the selected personal-rate, LITO and
 Medicare reference. Both retain explicit incomplete-domain holds.
 
+[MLS-DEATH-DAYS]: https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2026/medicare-and-private-health-insurance/medicare-levy-surcharge/mytax-2026-number-of-days-you-dont-have-to-pay-the-mls
 [MLS-FB]: https://www.legislation.gov.au/C2004A00412/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
 [PHI]: https://www.legislation.gov.au/C2007A00031/2026-09-19/2026-09-19/text/original/epub/OEBPS/document_1/document_1.html
 [MLS-ATO]: https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates
