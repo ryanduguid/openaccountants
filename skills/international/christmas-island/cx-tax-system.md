@@ -16,8 +16,8 @@ category: international
 tax_year: 2026
 tax_year_notes: "Selected scope checked on 21 October 2026; identify each income year, event date and operative source separately"
 tier: 2
-last_updated: 2026-10-21
-version: 0.2
+last_updated: 2026-10-23
+version: 0.4
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -41,7 +41,7 @@ No comprehensive-country acceptance or professional sign-off is claimed.
 
 ## Period, figures and source conditions
 
-This is a dated reference checked on **21 October 2026**, with v0.2 source
+This is a dated reference checked on **21 October 2026**, with v0.4 source
 metadata. Verify amendments, regulations, modifications and application
 provisions for the requested period before an engagement result. An unknown
 legal condition requires Needs Input and a hold on the affected work.
@@ -96,6 +96,10 @@ asserting either mainland liability or a blanket exemption.
 Use `cx-income-tax` for selected 2026-27 ordinary personal rates, LITO
 and Medicare screening. Its incomplete income-tax slots still prevent a
 complete individual-return result.
+
+Use `cx-super-guarantee` with the social contributions base for selected
+2026-27 employer SG, annual-base and fund-receipt rules. It does not
+complete the payroll or all-programme social contribution slots.
 
 ## Income tax, residence, period and Medicare
 
@@ -277,7 +281,8 @@ files, complete computations, model execution results or benchmark evidence.
 | 1. A person gives only an island address and asks whether foreign interest is exempt | The address establishes neither residence nor the receipt's treatment. Record residence, character, source and exclusions as Needs Input; no zero-tax conclusion. [IT36]; [IT97] |
 | 2. For hypothetical 2026-27, a stipulated Australian-resident individual derives AUD20,000 of local ordinary wages and AUD4,000 of foreign ordinary interest, with both amounts stipulated non-exempt and not non-assessable non-exempt, and all applicable source conditions established | AUD24,000 enters the selected ordinary-income inclusion analysis: AUD20,000 + AUD4,000. This is not taxable income or tax payable; deductions, other income, exemptions and period law still need verification. [IT97, sections 6-5 and 6-15][IT97] |
 | 3. A registered supplier delivers ordinary goods entirely on the island, with no other connection stipulated | The island is outside the indirect tax zone; registration does not supply the missing connection. The wholly-within-zone branch is not met. Check any applicable special branch before a final GST result. [GST1, sections 9-5 and 9-25(1)][GST1]; [GST2] |
-| 4. The same supplier delivers goods to a mainland recipient | Section 9-25(1)'s delivery branch can connect the supply. Apply the remaining charging, registration and GST-free/input-taxed rules; do not reuse the island-only conclusion. [GST1] |
+| 4. The same supplier delivers goods to a mainland-resident customer at a mainland Australian location within the indirect tax zone | Section 9-25(1)'s delivery branch can connect the supply. Apply the remaining charging, registration and GST-free/input-taxed rules; do not reuse the island-only conclusion. [GST1] |
+| 4a. The same mainland-resident customer instead collects the goods physically on the island, with no other connection stipulated | Customer residence alone does not establish section 9-25(1)'s delivery connection: the goods are delivered outside the indirect tax zone. Check other applicable connection branches and the remaining section 9-5 conditions separately; no final GST liability is determined. [GST1, sections 9-5 and 9-25(1)][GST1]; [GST2] |
 | 5. Goods move between Christmas Island and Cocos | The inserted local application provision excludes this import/export from that applied Customs Act. Do not extend that result to biosecurity or a mainland shipment. [CUSTOMS-LOCAL, Schedule 1 item 1][CUSTOMS-LOCAL] |
 | 6. Imported foreign goods are stored on the island and sent to the mainland with no evidence of island production | Storage alone does not establish the territory-produce/manufacture requirement. Hold the exemption; do not claim all goods sent from the island are duty-free. [TERRITORY, section 21][TERRITORY] |
 | 7. A resident cites an old territorial Medicare exemption, with no current exemption evidence | Test current sections 251S-251U and the Levy Acts; the historic statement does not establish present exemption. Hold the amount. [MEDICARE] |
@@ -340,6 +345,11 @@ state-type charges; returns, payments, amendments, objections, penalties and
 recordkeeping; and applicable industry and digital-asset rules. Shared
 Australian references require a verified territory and period bridge for
 each topic. An omitted topic or charge is not certified inapplicable.
+
+**Revision 0.4, 23 October 2026:** restored the previously reviewed GST
+delivery examples and SG companion routing after later integration removed
+them. The original GST clarification was v0.1.1 on 21 October 2026.
+Source-law verification dates and the outstanding coverage remain unchanged.
 
 **Change log:** v0.1, 21 October 2026, selected territorial boundaries,
 classification cases and explicit outstanding coverage. Tier 2,
