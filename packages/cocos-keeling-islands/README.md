@@ -6,13 +6,17 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `cc-tax-system.md`
+2. `cc-income-tax.md`
+3. `cc-super-guarantee.md`
+4. `cc-tax-system.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 
 
