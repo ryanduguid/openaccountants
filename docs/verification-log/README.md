@@ -7,6 +7,10 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 | Date | Entry |
 |---|---|
 | 2026-10-20 | [Norfolk Island and Australian transfer pricing](2026-10-20-norfolk-transfer-pricing.md) |
+| 2026-10-21 | [Christmas Island and Cocos employer super operations](2026-10-21-indian-ocean-super-operations.md) |
+| 2026-10-21 | [Christmas Island and Cocos employer super guarantee](2026-10-21-indian-ocean-super-guarantee.md) |
+| 2026-10-21 | [Christmas Island and Cocos work expenses and zone relief](2026-10-21-indian-ocean-deductions-zone.md) |
+| 2026-10-21 | [Christmas Island and Cocos selected individual income tax](2026-10-21-indian-ocean-income-tax.md) |
 | 2026-10-21 | [Christmas Island and Cocos tax-system boundaries](2026-10-21-indian-ocean-tax-scope.md) |
 | 2026-10-18 | [Shared transfer-pricing method selection and evidence gates](2026-10-18-transfer-pricing-workflow.md) |
 | 2026-10-18 | [Norfolk Island tax records and retention](2026-10-18-norfolk-tax-records.md) |
