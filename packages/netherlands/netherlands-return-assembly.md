@@ -4,7 +4,7 @@ description: Final orchestrator skill that assembles the complete Netherlands fi
 version: 1.1
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-15
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -12,6 +12,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # NL Return Assembly
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 ## Netherlands Return Assembly Skill v1.1
 
@@ -23,15 +26,15 @@ Specifically:
 
 - Do NOT ask the user "how deep do you want me to go" or "do you want the full package" or any variant. The user asked for their tax returns. They want their tax returns. Produce them.
 - Do NOT announce how many tokens or tool calls this will take. Execute.
-- Do NOT ask which deliverables to prioritise. Produce all deliverables listed in Section 4. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why.
+- Do NOT ask which deliverables to prioritise. Produce all deliverables listed in Section 4. If context is exhausted, preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish.
 - Do NOT re-validate scope that intake already validated. If `nl-freelance-intake` produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about residency, business structure, or anything else intake already captured.
 - Do NOT pause between content skills to check in. Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine.
-- Self-checks are targets, not blockers. If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check had an ambiguous answer.
+- Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - Primary source citations go in the final reviewer brief, not in intermediate computation steps.
 
 The user has already been told (by the intake skill) that the final package requires belastingadviseur signoff before filing. State it once in the final output and move on.
 
-Failure mode to avoid: The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
+Failure mode to avoid: The skill halts mid-execution and asks the user a meta-question about workflow pacing. Resolve routine pacing choices within the confirmed scope. A missing fact, rule or failed check requires the input or refusal handling above; a reviewer flag cannot replace it.
 
 ## What this file is
 
@@ -52,7 +55,7 @@ Produces the complete Netherlands filing package for:
 0. **BTW-aangifte** — BTW-aangifte (quarterly/monthly for regular registration, annual KOR declaration). Runs first because BTW turnover figures feed into the IB-aangifte. For regular BTW: prepare Q4 2025 BTW-aangifte if not yet filed; verify Q1-Q3 figures; check ICP opgave completeness. For KOR: verify turnover remains under EUR 20,000; prepare annual KOR declaration if required. Output: BTW-aangifte box values (rubrieken 1a through 5e), voorbelasting recovered/blocked, omzet (ex-BTW), ICP opgave data.
 0. **Aangifte inkomstenbelasting** — Depends on BTW output: omzet (rubriek 1a) must use ex-BTW turnover for regular BTW clients. Depends on BTW output: blocked voorbelasting becomes a deductible bedrijfskost. Computes winst uit onderneming, ondernemersaftrek (zelfstandigenaftrek + startersaftrek), MKB-winstvrijstelling. Computes eigen woning (eigenwoningforfait minus hypotheekrenteaftrek) in Box 1. Computes Box 3 vermogensrendementsheffing. Applies heffingskortingen (algemene heffingskorting, arbeidskorting). Output: IB-aangifte values, belastbaar inkomen per box, verschuldigde inkomstenbelasting, heffingskortingen, te betalen/terug te ontvangen.
 0. **Zorgverzekeringswet bijdrage** — Depends on IB: bijdrage-inkomen is based on Box 1 inkomen (winst uit onderneming + employment income). ZVW bijdrage for self-employed: 5.32% of bijdrage-inkomen up to EUR 71,628 (2025 maximum bijdrage-inkomen). Output: annual ZVW bijdrage, voorlopige aanslag ZVW paid, shortfall/overpayment.
-0. **Voorlopige aanslag 2026 recommendation (forward-looking)** — Based on 2025 final IB + ZVW liability. Recommendation to request/adjust voorlopige aanslag via MijnBelastingdienst. Output: recommended voorlopige aanslag amounts for IB and ZVW. If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
+0. **Voorlopige aanslag 2026 recommendation (forward-looking)** — Based on 2025 final IB + ZVW liability. Recommendation to request/adjust voorlopige aanslag via MijnBelastingdienst. Output: recommended voorlopige aanslag amounts for IB and ZVW. If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.
 
 ## Section 3 -- Cross-skill reconciliation
 
@@ -137,12 +140,12 @@ Produces the complete Netherlands filing package for:
 ### Reviewer brief contents
 
 ```markdown
-# Complete Return Package: [Client Name] -- Tax Year 2025
+# Complete Return Package: [stable redacted client reference] -- Tax Year 2025
 
 ## Executive Summary
 - Filing status: [Single / Fiscal partner]
 - Residence: Netherlands (full-year)
-- Business: ZZP / eenmanszaak (KvK [number])
+- Business: ZZP / eenmanszaak, [stable redacted business reference]; reviewer confirms holding the KvK number outside agent inputs and outputs
 - BTW registration: Regular / KOR
 - BTW-aangifte position (Q4 or annual): EUR X te betalen / EUR X terug
 - Winst uit onderneming (before aftrekken): EUR X
@@ -312,9 +315,9 @@ Produces the complete Netherlands filing package for:
 
 ## Section 5 -- Refusals
 
-- **R-NL-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(Section 5)_
-- **R-NL-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(Section 5)_
-- **R-NL-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(Section 5)_
+- **R-NL-1** — Upstream skill did not run. Name the missing skill and hold its dependent calculations and the complete filing package. Independent supported preparation may continue with its limited scope stated.  _(Section 5)_
+- **R-NL-2** — Upstream self-check failed. Name the failed check, correct it and rerun before using the affected result. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5)_
+- **R-NL-3** — Cross-skill reconciliation failed. Name the reconciliation and discrepancy, correct it and rerun. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5)_
 - **R-NL-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(Section 5)_
 - **R-NL-5** — Out-of-scope item discovered during assembly. E.g., Box 2 aanmerkelijk belang income, foreign source income requiring voorkoming dubbele belasting, or partnership income. Flag and exclude from computation.  _(Section 5)_
 
@@ -343,7 +346,7 @@ The final output is three files:
 
 3. `client_action_list.md` -- Single markdown file with step-by-step actions: immediate filings and payments, quarterly BTW calendar for 2026, ongoing compliance reminders.
 
-If execution runs out of context mid-build: produce whatever is complete, then state at the end which of the three files were not produced or are partial.
+If context is exhausted, preserve the supported calculations and evidence for resumption, identify incomplete deliverables and withhold the complete filing package until every mandatory output and check is complete.
 
 All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.
 

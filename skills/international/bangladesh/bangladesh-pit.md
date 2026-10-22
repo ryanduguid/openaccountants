@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 1.0
 jurisdiction: BD
 tax_year: 2024
-last_updated: 2026-09-28
+last_updated: 2026-10-18
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -202,7 +202,7 @@ Rebate: 15% × 2,25,000 = ৳33,750
 ## *OpenAccountants — open-source accounting skills for AI*
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed by a qualified professional before filing.*
+*All outputs must be reviewed by a qualified professional before filing.*
 
 <!-- openaccountants-cta-block -->
 

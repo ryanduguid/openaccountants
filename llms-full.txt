@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**1,886 Guides** across **244 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,945 Guides** across **250 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (1886 guides, 244 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (1945 guides, 250 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -269,6 +269,8 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - af-payroll-social | AF | tier 2 | reviewed_by -
 - af-tax-overview | AF | tier 2 | reviewed_by -
 - af-vat-gst | AF | tier 2 | reviewed_by -
+- ax-income-tax | AX | tier 2 | reviewed_by -
+- ax-tax-scope | AX | tier 2 | reviewed_by -
 - albania-income-tax | AL | tier 2 | reviewed_by -
 - albania-payroll | AL | tier 2 | reviewed_by -
 - albania-social-contributions | AL | tier 2 | reviewed_by -
@@ -290,6 +292,8 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - ao-payroll-social | AO | tier 2 | reviewed_by -
 - ao-tax-overview | AO | tier 2 | reviewed_by -
 - ao-vat-gst | AO | tier 2 | reviewed_by -
+- ai-gst | AI | tier 2 | reviewed_by -
+- ai-payroll | AI | tier 2 | reviewed_by -
 - ar-company-formation | AR | tier 2 | reviewed_by Maria Valeria Benvenuti
 - ar-corporate-income-tax | AR | tier 2 | reviewed_by Maria Valeria Benvenuti
 - ar-income-tax | AR | tier 2 | reviewed_by -
@@ -572,6 +576,29 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - cv-payroll-social | CV | tier 2 | reviewed_by -
 - cv-tax-overview | CV | tier 2 | reviewed_by -
 - cv-vat-gst | CV | tier 2 | reviewed_by -
+- bq-abb | BQ | tier 2 | reviewed_by -
+- bq-bonaire-ground-tax | BQ | tier 2 | reviewed_by -
+- bq-corporate-tax | BQ | tier 2 | reviewed_by -
+- bq-customs-clearance | BQ | tier 2 | reviewed_by -
+- bq-customs-debt-remedies | BQ | tier 2 | reviewed_by -
+- bq-customs-valuation | BQ | tier 2 | reviewed_by -
+- bq-double-tax-relief | BQ | tier 2 | reviewed_by -
+- bq-excise | BQ | tier 2 | reviewed_by -
+- bq-financial-statements | BQ | tier 2 | reviewed_by -
+- bq-formation | BQ | tier 2 | reviewed_by -
+- bq-gambling-tax | BQ | tier 2 | reviewed_by -
+- bq-income-tax | BQ | tier 2 | reviewed_by -
+- bq-inheritance-gifts | BQ | tier 2 | reviewed_by -
+- bq-payroll | BQ | tier 2 | reviewed_by -
+- bq-penalties-corrections | BQ | tier 2 | reviewed_by -
+- bq-personal-import-relief | BQ | tier 2 | reviewed_by -
+- bq-property-tax | BQ | tier 2 | reviewed_by -
+- bq-social-contributions | BQ | tier 2 | reviewed_by -
+- bq-statia-tourist-tax | BQ | tier 2 | reviewed_by -
+- bq-tax-compliance | BQ | tier 2 | reviewed_by -
+- bq-tax-system | BQ | tier 2 | reviewed_by -
+- bq-transfer-tax | BQ | tier 2 | reviewed_by -
+- bq-warehouses-hde | BQ | tier 2 | reviewed_by -
 - cayman-tax | KY | tier 2 | reviewed_by -
 - ky-company-formation | KY | tier 2 | reviewed_by -
 - ky-corporate-income-tax | KY | tier 2 | reviewed_by -
@@ -610,6 +637,12 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - cn-stamp-tax | CN | tier 2 | reviewed_by -
 - cn-withholding | CN | tier 2 | reviewed_by -
 - china-references | CN | tier 2 | reviewed_by -
+- cx-income-tax | CX | tier 2 | reviewed_by -
+- cx-super-guarantee | CX | tier 2 | reviewed_by -
+- cx-tax-system | CX | tier 2 | reviewed_by -
+- cc-income-tax | CC | tier 2 | reviewed_by -
+- cc-super-guarantee | CC | tier 2 | reviewed_by -
+- cc-tax-system | CC | tier 2 | reviewed_by -
 - co-company-formation | CO | tier 2 | reviewed_by -
 - co-corporate-income-tax | CO | tier 2 | reviewed_by -
 - co-income-tax | CO | tier 2 | reviewed_by -
@@ -1003,12 +1036,15 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - jp-nonpermanent-resident | JP | tier 2 | reviewed_by -
 - jp-social-insurance | JP | tier 2 | reviewed_by -
 - japan-references | JP | tier 2 | reviewed_by -
+- je-class2-contributions | JE | tier 2 | reviewed_by -
 - je-company-formation | JE | tier 2 | reviewed_by -
 - je-corporate-income-tax | JE | tier 2 | reviewed_by -
 - je-cross-border-withholding | JE | tier 2 | reviewed_by -
 - je-crypto-tax | JE | tier 2 | reviewed_by -
 - je-gst | JE | tier 2 | reviewed_by -
+- je-income-tax-compliance | JE | tier 2 | reviewed_by -
 - je-income-tax | JE | tier 2 | reviewed_by -
+- je-parish-rates | JE | tier 2 | reviewed_by -
 - je-payroll | JE | tier 2 | reviewed_by -
 - je-pension-contributions | JE | tier 2 | reviewed_by -
 - je-pillar-two | JE | tier 2 | reviewed_by -
@@ -1308,6 +1344,29 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - ng-wht | NG | tier 1 | reviewed_by Omolola Fasasi
 - nigeria-vat | NG | tier 2 | reviewed_by -
 - nigeria-references | NG | tier 2 | reviewed_by -
+- nf-annual-rates | NF | tier 2 | reviewed_by -
+- nf-cgt | NF | tier 2 | reviewed_by -
+- nf-company-administration | NF | tier 2 | reviewed_by -
+- nf-company-tax | NF | tier 2 | reviewed_by -
+- nf-employment-pay | NF | tier 2 | reviewed_by -
+- nf-fbt | NF | tier 2 | reviewed_by -
+- nf-foreign-income | NF | tier 2 | reviewed_by -
+- nf-gst | NF | tier 2 | reviewed_by -
+- nf-imports | NF | tier 2 | reviewed_by -
+- nf-income-tax | NF | tier 2 | reviewed_by -
+- nf-investment-withholding | NF | tier 2 | reviewed_by -
+- nf-medicare | NF | tier 2 | reviewed_by -
+- nf-payg-withholding | NF | tier 2 | reviewed_by -
+- nf-property-transfers | NF | tier 2 | reviewed_by -
+- nf-return-filing | NF | tier 2 | reviewed_by -
+- nf-super-guarantee | NF | tier 2 | reviewed_by -
+- nf-tax-amendments-objections | NF | tier 2 | reviewed_by -
+- nf-tax-interest | NF | tier 2 | reviewed_by -
+- nf-tax-penalties-remission | NF | tier 2 | reviewed_by -
+- nf-tax-records | NF | tier 2 | reviewed_by -
+- nf-tax-system | NF | tier 2 | reviewed_by -
+- nf-transfer-pricing | NF | tier 2 | reviewed_by -
+- nf-uk-treaty-relief | NF | tier 2 | reviewed_by -
 - mk-company-formation | MK | tier 2 | reviewed_by -
 - mk-corporate-income-tax | MK | tier 2 | reviewed_by -
 - mk-tax-overview | MK | tier 2 | reviewed_by -
@@ -2033,9 +2092,10 @@ Pick the row that matches you. Every link below points at something in this chec
 
 # OpenAccountants — Skill Quality Tiers
 
-How we measure whether a skill is ready for production use.
+Quality tiers record a guide's review status. Check its scope, period, sources
+and unresolved conditions before deciding whether it supports the intended use.
 
-We use **two tiers**. No drafts, no stubs — every published skill is one of these:
+Every published guide uses one of **two tiers**: accountant-reviewed or source-cited draft.
 
 ---
 
@@ -2043,72 +2103,49 @@ We use **two tiers**. No drafts, no stubs — every published skill is one of th
 
 | Tier | Label | What it means | Legacy identifier |
 |------|-------|--------------|-------------------|
-| **1** | **Accountant-reviewed** | A licensed practitioner has reviewed the skill, run it against real (or representative) data, and signed off. Errors found during use have been corrected. The skill is current with the latest tax-year rates and filing forms. | `accountant-verified` |
-| **2** | **Source-cited draft** | Every rate, threshold, form number, and deadline has been drafted from authoritative sources — tax-authority publications and the relevant statutes. Format matches the accountant-reviewed standard. Awaiting a full review by an accountant. | `research-verified` |
-
-That's it. If a skill is published, it is one of those two.
+| **1** | **Accountant-reviewed** | The guide records a practitioner's sign-off. Read its scope, date, reviewer attribution and separate `review_status`; substantive edits may await renewed review. The tier alone does not establish current law or suitability for an engagement. | `accountant-verified` |
+| **2** | **Source-cited draft** | The guide provides cited research within its declared scope and identifies unresolved conditions. It awaits full accountant review. Bounded references may leave mandatory operational requirements unresolved. | `research-verified` |
 
 > **Display label vs. stored identifier.** The machine identifiers do not change: frontmatter still uses `tier: 1|2` and `verified_by:`, and legacy badges/enums still say `accountant-verified` / `research-verified`. What changed is the **display language**: Tier 1 is written as **"accountant-reviewed"** and Tier 2 as **"source-cited draft"** everywhere a human reads it. This doc is the mapping between the two.
 
 ---
 
-## What each tier guarantees
+## What the tiers record
 
 ### Accountant-reviewed (Tier 1)
 
-- A real licensed practitioner (CPA, EA, CA, Steuerberater, expert-comptable, commercialista, asesor fiscal, or equivalent for the jurisdiction) has reviewed it and is named on it in `reviewed_by`, unless they asked for their name to be withheld. Credentials are checked during Partner onboarding at openaccountants.com, outside this repository, and credential numbers are published only when the practitioner opts in (see [PARTNERS.md](../PARTNERS.md)).
-- The skill has been used against real client data and refined through filing cycles.
-- The contributor is publicly credited on the skill and at [openaccountants.com](https://www.openaccountants.com).
-- The skill is reviewed at least annually for rate / threshold / form changes.
+- The guide records a reviewer in `reviewed_by` or the legacy `verified_by` field, including a withheld-name attribution where applicable. [PARTNERS.md](../PARTNERS.md) lists the recorded reviewers. Verify credentials and the engagement scope independently; this fork does not certify upstream onboarding.
+- Read the recorded sign-off and any test evidence for the text and period it covers. The tier does not prove that every guide was used with client data, filed repeatedly or reviewed annually.
+- A substantive edit can leave a Tier 1 guide at `pending_review`. Its previous sign-off does not certify the changed text or every later change to a shared dependency.
 
 ### Source-cited draft (Tier 2)
 
-- The skill follows the accountant-reviewed format (Step 0 onboarding → Step N output).
-- Every figure carries a primary-source citation (statute, regulation, tax authority notice).
-- Deep research against the tax authority's published guidance has been completed.
-- It is **not** a substitute for accountant review of an actual filing. The reviewer brief always says so.
-- It is the right tier to use *as a starting point* — your accountant reviews and signs off before you file.
+- Follow the canonical template and applicable workflow contracts below.
+- Material rates, thresholds, forms, deadlines and legal positions require period-appropriate primary sources. Secondary summaries can corroborate those sources.
+- Research supports only the guide's declared scope. Read its source limits, completion register and operational holds; publication does not establish comprehensive research or country coverage.
+- The professional reviewer must resolve applicable source, fact and delivery conditions before filing or acting on an output. A draft cannot replace that review.
 
 ---
 
 ## The standard skill format
 
-Every published skill, in either tier, must use this section order:
+Use [skill-template.md](skill-template.md) for frontmatter and body requirements,
+with [CONTRIBUTING.md](../CONTRIBUTING.md) for the applicable foundation bases.
+The loaded universal and domain contracts govern execution order, confirmation,
+refusals, outputs and checks. Country content supplies the substantive rules and
+source conditions. A VAT return outline does not prescribe formation or
+financial-statement sections.
 
-```
-## Skill Metadata                          ← who, what, where
-## Confidence Tier Definitions             ← T1 / T2 / T3 rules within the skill
-## Step 0: Client Onboarding Questions     ← FIRST — gate before any work
-## Step 1: Transaction Classification      ← sale/purchase, location, rate
-## Step 2: Box/Line Assignment             ← deterministic lookup tables
-## Step 3: Reverse Charge Mechanics        ← cross-border rules
-## Step 4: Deductibility Check             ← blocked categories
-## Step 5: Derived Calculations            ← computed boxes/totals
-## Step 6: Key Thresholds                  ← registration, filing, penalties
-## Step 7: Filing Deadlines                ← dates, frequencies
-## Step 8: [Country-specific section]      ← e.g., Article 11, Kleinunternehmer
-## PROHIBITIONS                            ← hard stops
-## Edge Case Registry                      ← numbered EC1, EC2, etc.
-## Test Suite                              ← numbered tests with expected output
-## Reviewer Escalation Protocol            ← T2/T3 output templates
-## Contribution Notes                      ← how to adapt for other jurisdictions
-## Disclaimer                              ← standard liability + openaccountants.com
-```
-
-Key rules:
-
-- Step 0 (onboarding) is ALWAYS first — never buried at the end.
-- Box / line assignments are **deterministic lookup tables**, not narrative text.
-- Classification matrices use **tables**, not paragraphs.
-- No "Overview" or "What is VAT?" sections — this is an execution skill, not a textbook.
-- Every rule tagged with confidence tier `[T1]`, `[T2]`, or `[T3]` (these are *within-skill* rule confidence, not the overall quality tier).
-- PROHIBITIONS section comes before edge cases.
+State the supported scope, period and primary sources. Include reproducible
+examples, edge cases, checks and the required disclaimer and canonical contact
+block. Identify incomplete mandatory slots and hold unsupported operational
+work. Within-guide rule confidence is separate from the overall quality tier.
 
 ---
 
 ## Current inventory
 
-**1,886 Guides** across **244 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,945 Guides** across **250 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2126,7 +2163,11 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-Everything else in this repo — 1,711 of the 1,875 indexed guides, covering 184 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
+There are 1,774 Tier 2 guides among the 1,938 indexed guides. These inventory
+counts do not establish comprehensive country coverage or a completed source
+chain for every draft. Read each guide's date, cited sources, scope and open
+conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
+[COUNTRY-COVERAGE.md](COUNTRY-COVERAGE.md) for country-presence limits.
 
 ---
 
@@ -2157,20 +2198,23 @@ Everything else in this repo — 1,711 of the 1,875 indexed guides, covering 184
 
 ## How a skill moves from source-cited draft to accountant-reviewed
 
-1. A credentialed practitioner in the jurisdiction picks up the skill.
-2. They review the rates, thresholds, forms, and deadlines against current law.
-3. They run the skill against representative or real client data.
-4. They submit corrections (web form at openaccountants.com or GitHub PR).
-5. A skill maintainer merges the corrections; the skill is tagged with the practitioner's name and credential.
-6. The skill is bumped to **accountant-reviewed** in the next release.
-
-The practitioner is credited publicly. Their profile lists all the skills they've signed off.
+Follow [CONTRIBUTING.md, Review](../CONTRIBUTING.md#review). A named, licensed
+practitioner reviews the complete guide and its applicable sources, makes any
+corrections, tests representative cases and signs it off in a pull request
+setting `tier: 1` and their name and credential in `reviewed_by`. Maintainers
+review and merge that contribution; they do not set Tier 1 on a practitioner's
+behalf. A name on a Tier 2 guide or corrections submitted without that complete
+sign-off do not promote it. Use redacted representative records for agent work;
+do not submit private client data as repository or model inputs.
 
 ---
 
 ## Authoritative research sources
 
-These are the sources a source-cited draft must be drafted and cross-checked against. The same sources are recommended to practitioners reviewing their jurisdiction.
+Use applicable statutes, regulations and tax-authority publications as primary
+authority for the requested period. The directories below are starting points;
+commercial summaries provide corroboration and cannot replace missing primary
+law. Verify the actual source and its scope before relying on it.
 
 ### Global / multi-jurisdiction
 
@@ -2244,7 +2288,7 @@ Quality tiers describe the review status of a skill, not a guarantee that any sp
 
 Every row is derived from the guides' frontmatter with one rule: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name in `reviewed_by` (or the legacy `verified_by`), and a reviewer is on this roster when at least one guide names them that way. A name on a `tier: 2` guide is attribution, not review, and does not count. The rule is `reviewer_of` in `scripts/oa_tools/roster.py`; `index.json`, the README headline and the coverage gate use the same one, so these figures agree with them by construction.
 
-**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 244 jurisdictions · 21 reviewed guides edited since their review.**
+**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 250 jurisdictions · 25 reviewed guides edited since their review.**
 
 ## Reviewers
 
@@ -2253,7 +2297,7 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | James Power | GB | 15 | 2 | 2026-09-29 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
 | A licensed accountant (name withheld at their request) | US (10), US-IL (4) | 14 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
 | Miguel Lantigua | DO | 14 | — | 2026-10-11 | — |
-| Mayur Deokar | IN | 13 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
+| Mayur Deokar | IN | 13 | 1 | 2026-10-15 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
 | Edgar Lautsyus | CA | 11 | 1 | 2026-09-29 | — |
 | Christopher Aryee, CPA | US | 9 | 2 | 2026-10-04 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
 | Mehran Habib | SA (5), AE (3), BH (1) | 9 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
@@ -2262,11 +2306,11 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | Mário Jorge da costa Vale | PT | 8 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
 | RILIA PUTRI | ID | 8 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
 | Baraka Cassian | TZ | 6 | 3 | 2026-10-11 | — |
-| Ashish Bista | NP | 5 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
+| Ashish Bista | NP | 5 | 2 | 2026-10-18 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
 | Christos Thoma | CY | 5 | 3 | 2026-10-11 | — |
 | Jose Padilla | VE | 5 | 4 | 2026-10-11 | — |
 | Rob Hoffman | US-FL | 5 | — | 2026-09-28 | — |
-| Ibrar Ali | PK | 4 | 1 | 2026-09-29 | — |
+| Ibrar Ali | PK | 4 | 2 | 2026-10-18 | — |
 | Maria Clemencia Valverde Rios | PE | 4 | — | 2026-10-11 | — |
 | Werner Britz | ZA | 4 | 2 | 2026-09-29 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
 | Maria Valeria Benvenuti | AR | 3 | — | 2026-09-28 | — |
@@ -2305,7 +2349,7 @@ Jurisdiction codes are the guides' `jurisdiction` values: ISO 3166 country codes
 | NG | 2 | Omolola Fasasi (2) |
 | BH | 1 | Mehran Habib (1) |
 
-The other 220 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
+The other 226 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
 
 ## How a name gets here
 

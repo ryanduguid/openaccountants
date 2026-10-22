@@ -1,14 +1,14 @@
 ---
 name: transfer-pricing-workflow-base
 description: Universal transfer pricing documentation and analysis workflow base that defines the related-party transaction identification, method selection, arm's length analysis, and documentation preparation runbook for all jurisdictions. Contains no jurisdiction-specific content — no local TP thresholds, no penalty regimes, no specific documentation filing portals. This skill MUST be loaded alongside a country-specific transfer pricing skill that provides the local TP rules, documentation requirements, and filing deadlines. This skill alone cannot produce any output.
-version: 1.0
+version: 1.1
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-18
 ---
 
-# Transfer Pricing Workflow Base Skill v1.0
+# Transfer Pricing Workflow Base Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -16,9 +16,9 @@ last_updated: 2026-09-28
 
 **This file contains workflow architecture only.** It defines how Claude should approach a transfer pricing documentation task: the order of operations, how to identify related-party transactions, how to select and apply a transfer pricing method, how to structure documentation per the OECD three-tiered approach, what to check before delivering. It contains no local TP thresholds, no penalty rates, no documentation filing portals, no specific safe harbor rules, no country-specific materiality limits.
 
-**This file must always be loaded with a country-specific transfer pricing skill** that provides the local TP rules, documentation requirements, filing deadlines, and penalty regimes (e.g., `uk-transfer-pricing`, `au-transfer-pricing`, `de-transfer-pricing`). This file alone cannot produce a TP documentation package. Loading it without a companion is a configuration error and Claude must refuse to proceed.
+**This file must always be loaded with a country-specific transfer pricing skill** that provides the local TP rules, documentation requirements, filing deadlines, and penalty regimes (e.g., `uk-transfer-pricing`, `australia-transfer-pricing`, `germany-transfer-pricing`). This file alone cannot produce a TP documentation package. Loading it without a companion is a configuration error and Claude must refuse to proceed.
 
-**This file is the contract.** When a country transfer pricing skill says it conforms to v1.0 of this base, it means: it fills the country slots specified in Section 6, it produces outputs in the format specified in Section 4, its analysis can be validated by the self-checks in Section 5, and it participates in the workflow in Section 1.
+**This file is the contract.** When a country transfer pricing skill says it conforms to v1.1 of this base, it means: it fills the country slots specified in Section 6, it produces outputs in the format specified in Section 4, its analysis can be validated by the self-checks in Section 5, and it participates in the workflow in Section 1.
 
 ---
 
@@ -68,7 +68,7 @@ Wait for confirmation. If the user identifies additional transactions, add them 
 
 ### Step 3 — Determine the applicable TP method
 
-For each related-party transaction (or group of similar transactions), select the most appropriate transfer pricing method from the five OECD-approved methods described in Section 2. The selection process:
+For each related-party transaction (or properly supported group of transactions), establish the methods accepted under the applicable country rules and period. Use the selection criteria in Section 2, including any supported local method or preference. The selection process:
 
 1. **Characterize the transaction.** What is being transferred (goods, services, intangibles, money)? What functions does each party perform? What assets does each party employ? What risks does each party assume?
 
@@ -78,10 +78,7 @@ For each related-party transaction (or group of similar transactions), select th
    - Risks assumed (market risk, credit risk, inventory risk, foreign exchange risk, product liability)
    - The economically significant characteristics that determine the allocation of profit between the parties
 
-3. **Select the method.** Apply the OECD hierarchy:
-   - The Comparable Uncontrolled Price (CUP) method is preferred when reliable comparable uncontrolled transactions exist.
-   - If CUP is not reliably applicable, apply the method most appropriate to the transaction type and the available data: Resale Price Method for distributors, Cost Plus Method for service providers and contract manufacturers, TNMM for routine functions, Profit Split for highly integrated transactions involving unique intangibles on both sides.
-   - Document why the selected method is the most appropriate and why the rejected methods are less appropriate.
+3. **Select the method.** Apply Section 2’s method-selection criteria to the functional analysis and available evidence. Record why the chosen method is appropriate and reliable, the material comparability adjustments, and why alternatives are less suitable. Hold the conclusion if the country rule or necessary evidence is missing.
 
 4. **Identify comparability factors.** For the selected method, determine what comparable data is needed:
    - Characteristics of the goods, services, or intangibles
@@ -100,26 +97,19 @@ Wait for confirmation before proceeding to Step 4.
 
 For each transaction with a confirmed method, perform the arm's length analysis:
 
-**Benchmarking.** Describe the benchmarking approach: the database or source used (the user typically provides this — Claude cannot access commercial databases like Orbis or Capital IQ directly), the search strategy (SIC/NACE codes, geographic and independence filters), the comparable companies identified, the financial indicator used (gross margin for RPM, markup for CPM, net margin for TNMM, profit share for PSM), the arm's length range (interquartile range), and where the tested party's result falls.
+**Benchmarking.** Describe the benchmarking approach: the database or source used (the user typically provides this — Claude cannot access commercial databases like Orbis or Capital IQ directly), the search strategy (SIC/NACE codes, geographic and independence filters), the comparable companies identified, the financial indicator used (gross margin for RPM, markup for CPM, net margin for TNMM, profit share for PSM), the supported arm's length result or range and its basis, and where the tested party's result falls. Explain any statistical narrowing under the applicable guidance; an interquartile range is not an automatic requirement. [OECD, paragraphs 3.55–3.62][OECD-2022]
 
 If the user has not provided comparable data, explain what is needed and ask them to provide search results. Do not fabricate comparable data or financial ratios. If no benchmarking data is available, state this limitation explicitly and note the documentation will need completion before filing.
 
-**Reasonableness check.** Even without formal benchmarking, assess whether the intercompany pricing is directionally reasonable:
-
-- Is a cost-plus markup within a plausible range for the function performed? (A contract manufacturer at 50% markup is unusual; at 5-15% it is typical.)
-- Is a royalty rate within a plausible range for the intangible type? (A trademark royalty of 25% of revenue is unusual for most industries; 1-5% is more common.)
-- Is an intercompany loan rate within the range of what an unrelated lender would charge, given the borrower's creditworthiness and the loan terms?
-- Does the profit allocation leave each entity with a return commensurate with its functions, assets, and risks?
-
-Flag any pricing that appears outside plausible ranges as a high-priority item in the reviewer brief.
+**Reasonableness check.** Compare the documented pricing with reliable evidence for the actual functions, assets, risks, terms and market. Explain inconsistencies and their supporting facts in the reviewer brief. Where evidence is missing, identify the gap and hold an unsupported arm’s-length conclusion. A business label or an unsourced “typical” margin supplies no benchmark or safe harbour.
 
 ### Step 5 — Documentation preparation
 
 Prepare the TP documentation following the OECD three-tiered structure described in Section 3. The country skill specifies which tiers are required and any local modifications to the OECD structure:
 
-**Master File.** If the country skill requires a Master File (and the group exceeds the country skill's Master File threshold), prepare the group-level overview. If the user has not provided sufficient group-level information, list the specific information needed.
+**Master File.** Apply the country skill’s entity, group, period, exemption and threshold conditions. Prepare the required group-level overview or record why a Master File is not required. If group information is missing, identify what is needed and hold the obligation assessment.
 
-**Local File.** Prepare the entity-specific TP analysis for the jurisdiction in question. This is the core deliverable and is required in virtually all jurisdictions with TP documentation rules. Include:
+**Local File.** Prepare the entity-specific TP analysis as the workflow’s review document. The country rules determine whether it is also a statutory Local File and whether it must be filed, retained or produced on request. Identify that status explicitly. Include:
 
 - Entity description and functional profile
 - Transaction-by-transaction analysis (or grouped if transactions are sufficiently similar)
@@ -128,7 +118,7 @@ Prepare the TP documentation following the OECD three-tiered structure described
 - Arm's length conclusion for each transaction
 - Financial data supporting the analysis
 
-**Country-by-Country Report (CbCR) assessment.** Determine whether the group is required to file a CbCR based on the country skill's consolidated revenue threshold. If required, note the filing obligation. Claude does not prepare the CbCR itself (it requires group-wide financial data that is typically assembled by the group's head office), but flags the obligation and deadline.
+**Country-by-Country Report (CbCR) assessment.** Apply the country skill’s entity, group, status-period, threshold and exemption conditions. Identify the reporting entity, required statement, deadline and any permitted foreign filing or exchange arrangement. The assessment remains required even when the report itself is prepared elsewhere; missing group information leaves the affected conclusion pending.
 
 ### Step 6 — Risk assessment and output delivery
 
@@ -158,7 +148,7 @@ This section describes the five OECD-approved transfer pricing methods. The coun
 
 ### Comparable Uncontrolled Price (CUP) method
 
-Compares the price in the controlled transaction to the price in a comparable uncontrolled transaction. Preferred when reliable comparables exist — internal (same entity transacting with unrelated parties) or external (unrelated parties transacting with each other). Requires a high degree of comparability in goods/services, contractual terms, and economic circumstances. Adjustments for differences are permitted but must be reliable. **Financial indicator:** the transaction price itself.
+Compares the price in the controlled transaction to the price in a comparable uncontrolled transaction. Use the selection criteria below for internal comparables (the same entity transacting with unrelated parties) or external comparables (unrelated parties transacting with each other). Requires a high degree of comparability in goods/services, contractual terms, and economic circumstances. Adjustments for differences are permitted but must be reliable. **Financial indicator:** the transaction price itself.
 
 ### Resale Price Method (RPM)
 
@@ -170,20 +160,22 @@ Starts with costs incurred by the supplier and adds an appropriate markup reflec
 
 ### Transactional Net Margin Method (TNMM)
 
-Examines the net profit margin from a controlled transaction relative to an appropriate base (costs, revenue, or assets), compared to margins of comparable unrelated enterprises. The most commonly applied method in practice — less sensitive to transactional differences than CUP, RPM, or CPM. Appropriate when the tested party performs routine functions and one-sided analysis is sufficient. The tested party must be the less complex party whose functions can be reliably benchmarked. **Financial indicator:** net profit margin relative to an appropriate base.
+Examines the net profit margin from a controlled transaction relative to an appropriate base (costs, revenue, or assets), compared to margins of comparable unrelated enterprises. A one-sided analysis needs a supported net profit indicator and reliable comparables. Choose the tested party to which the method can be applied most reliably and for which reliable comparables can be found; relative complexity is relevant evidence, not an automatic selection rule. **Financial indicator:** net profit margin relative to an appropriate base.
 
 ### Profit Split Method (PSM)
 
-Allocates combined profit from a controlled transaction between related parties based on each party's contributions. Two approaches: contribution analysis (allocates based on relative value of contributions) and residual analysis (first allocates routine returns, then splits residual profit based on unique intangible contributions). Appropriate for highly integrated transactions where both parties contribute unique and valuable intangibles. The most data-intensive and judgment-intensive method. **Financial indicator:** each party's share of combined profit.
+Allocates combined profit from a controlled transaction between related parties based on each party's contributions. Two approaches: contribution analysis (allocates based on relative value of contributions) and residual analysis (first allocates routine returns, then splits residual profit based on unique intangible contributions). Appropriate for highly integrated transactions where both parties contribute unique and valuable intangibles. **Financial indicator:** each party's share of combined profit.
 
-### Method selection hierarchy
+### Method selection
 
-1. Use CUP when reliable comparables exist.
-2. If CUP is not applicable, choose from RPM, CPM, TNMM, or PSM based on the transaction type and functional profile.
-3. RPM and CPM are preferred when the tested party's profile closely matches their assumptions (distributor for RPM, cost-based for CPM).
-4. TNMM is the fallback for routine functions when RPM or CPM comparables are insufficient.
-5. PSM is reserved for transactions where both parties contribute unique value.
-6. The country skill may specify a local preference or override this hierarchy.
+Apply the country’s operative rules and preferences first. Under the OECD approach:
+
+1. Select the most appropriate method or supported combination using functional analysis, data availability, comparability and adjustment reliability.
+2. Where traditional and transactional profit methods are equally reliable, prefer the traditional method. Where CUP and another method are equally reliable, prefer CUP.
+3. Treat business profiles as evidence, not mandatory method assignments. Missing gross-margin data alone does not establish a reliable TNMM analysis.
+4. Explain the selection and alternatives using the actual evidence. Retain missing-law or missing-data holds.
+
+[OECD, paragraphs 2.2–2.5][OECD-2022]
 
 ---
 
@@ -193,7 +185,7 @@ The OECD BEPS Action 13 establishes a three-tiered documentation structure. The 
 
 ### Master File
 
-The Master File provides an overview of the multinational group, filed in each jurisdiction where the group has entities (subject to local thresholds). It covers five areas: (1) organizational structure (group chart, entities, jurisdictions, ownership), (2) business description (profit drivers, supply chains for the five largest products/services, service arrangements, geographic markets), (3) intangibles (strategy for development/ownership/exploitation, list of important intangibles and their owners, related-party IP agreements), (4) intercompany financial activities (group financing, central treasury functions, TP policies for financial transactions), and (5) financial and tax positions (consolidated financial statements, existing APAs and rulings).
+The Master File provides an overview of the multinational group. Apply each country’s rules to establish whether it must be filed, retained or produced on request. It covers five areas: (1) organizational structure (group chart, entities, jurisdictions, ownership), (2) business description (profit drivers, supply chains for the five largest products/services, service arrangements, geographic markets), (3) intangibles (strategy for development/ownership/exploitation, list of important intangibles and their owners, related-party IP agreements), (4) intercompany financial activities (group financing, central treasury functions, TP policies for financial transactions), and (5) financial and tax positions (consolidated financial statements, existing APAs and rulings).
 
 ### Local File
 
@@ -215,12 +207,12 @@ The Local File provides detailed TP analysis for the specific entity. It is the 
 
 ### Country-by-Country Report (CbCR)
 
-The CbCR is filed by the ultimate parent entity of the group (or a surrogate parent) if the group's consolidated revenue exceeds the threshold (€750 million in OECD guidelines; the country skill provides the local implementation). Contents:
+The country skill establishes who must file or provide a CbCR, for which period, and under which group, threshold, exemption or exchange conditions. A parent’s report does not by itself clear another entity’s local obligation. Contents:
 
 1. **Aggregate information** for each jurisdiction where the group operates: revenue (related and unrelated), profit/loss before tax, income tax paid (cash basis), income tax accrued, stated capital, accumulated earnings, number of employees, tangible assets other than cash.
 2. **List of all constituent entities** of the group, their jurisdictions of incorporation and residence, and their main business activities.
 
-Claude's role with respect to CbCR is limited: assess whether the filing obligation is triggered (based on the group's consolidated revenue versus the country skill's threshold), note the filing deadline, and flag the obligation. The CbCR itself is assembled from group-wide data that is beyond the scope of a single-entity TP documentation engagement.
+Claude’s role is to document the country-specific CbCR obligation assessment, deadline and unresolved evidence. Preparation of the report itself requires the relevant group-wide data and is outside this single-entity documentation workflow.
 
 ---
 
@@ -319,7 +311,7 @@ Run these ten checks against all outputs. If any fails, fix and re-run. Do not d
 
 **Check 5 — Transaction values reconcile.** The transaction values in the transaction matrix match the values in the Local File's transaction descriptions. If the user provided financial statements, the intercompany transaction values in the documentation are consistent with the related-party disclosures in those statements.
 
-**Check 6 — Method justification consistent with functional analysis.** For every transaction, the selected method is consistent with the functional profile. A distributor is tested with RPM or TNMM, not Cost Plus. A contract manufacturer is tested with Cost Plus or TNMM, not RPM. A transaction involving unique intangibles on both sides uses Profit Split, not a one-sided method. If a method is inconsistent with the functional profile, either the method or the functional analysis is wrong.
+**Check 6 — Method justification consistent with evidence.** For each transaction, reconcile the chosen method with the functional analysis, applicable country rules and Section 2’s reliability criteria. Explain any apparent inconsistency. A distributor, manufacturer or intangible-owner label alone neither selects nor excludes a method.
 
 **Check 7 — Risk assessment consistent with analysis.** Transactions flagged as high risk in the reviewer brief have substantive reasons (pricing outside range, losses, low-tax jurisdiction, unique intangibles). Transactions flagged as low risk have supporting evidence (within arm's length range, safe harbor applicable, low-value-adding services). No transaction is flagged as low risk while having characteristics that should make it high risk.
 
@@ -327,7 +319,7 @@ Run these ten checks against all outputs. If any fails, fix and re-run. Do not d
 
 **Check 8 — No jurisdiction-specific content from this base.** Verify that all thresholds, deadlines, penalty amounts, and filing portal names come from the country skill. This base provides the framework; the country skill provides the jurisdiction-specific content.
 
-**Check 9 — OECD method descriptions accurate.** The method applied to each transaction aligns with the OECD description in Section 2. The financial indicator used matches the method (gross margin for RPM, markup on costs for CPM, net margin for TNMM, profit share for PSM, price for CUP).
+**Check 9 — Method and indicator accurate.** For an OECD method, verify its description and financial indicator against Section 2. For an additional locally accepted method, verify both against the operative country source. Reconcile the data and calculations to the selected method.
 
 **Check 10 — Reviewer brief disclosure complete.** Every assumption, every documentation gap, and every high-risk finding is documented in the reviewer brief. No material issue is buried in the Local File without being surfaced in the brief.
 
@@ -366,7 +358,7 @@ Every country-specific transfer pricing skill loaded alongside this workflow bas
 
 ### Validation status
 
-This file is v1.0 of `transfer-pricing-workflow-base`, drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0 and `vat-workflow-base` v0.2.0.
+The original v1.0 of `transfer-pricing-workflow-base` was drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0 and `vat-workflow-base` v0.2.0.
 
 ### Design decisions
 
@@ -388,6 +380,8 @@ This file is v1.0 of `transfer-pricing-workflow-base`, drafted as part of the Op
 
 ### Change log
 
+- **v1.1 (18 October 2026):** Replace forced method assignments, unsupported typical margins and automatic interquartile ranges with source and evidence conditions. Clarify country-specific documentation and CbCR obligation assessments; preserve the five outputs and ten checks.
+
 - **v1.0 (May 2026):** Initial release. Establishes the universal transfer pricing documentation workflow, five OECD methods reference, three-tiered documentation structure, five-output specification, 10 self-checks, and country skill contract.
 
 ---
@@ -396,7 +390,9 @@ This file is v1.0 of `transfer-pricing-workflow-base`, drafted as part of the Op
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+Selected method and range guidance was checked against OECD paragraphs 2.2–2.5, 3.18–3.19 and 3.55–3.62 on 18 October 2026. This is a scoped workflow correction, not professional sign-off or verification of every country companion.
+
+[OECD-2022]: https://www.oecd.org/en/publications/oecd-transfer-pricing-guidelines-for-multinational-enterprises-and-tax-administrations-2022_0e655865-en.html
 
 <!-- openaccountants-cta-block -->
 
@@ -404,13 +400,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

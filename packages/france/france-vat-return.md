@@ -5,7 +5,10 @@ version: 2.0
 jurisdiction: FR
 category: international
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-10-15
+depends_on:
+  - vat-workflow-base
+  - eu-vat-directive
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

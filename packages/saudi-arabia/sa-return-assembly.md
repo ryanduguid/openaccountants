@@ -4,7 +4,7 @@ description: Use this skill whenever asked to assemble, finalize, or package a S
 jurisdiction: SA
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-18
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -689,7 +689,7 @@ If execution runs out of context mid-build, complete the computation work first 
 ## Footer disclaimer
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed and signed off by a credentialed reviewer (SOCPA member, or recognised ICAEW / ACCA / US CPA practising in KSA) before filing via the ZATCA portal.*
+*All outputs must be reviewed and signed off by a credentialed reviewer (SOCPA member, or recognised ICAEW / ACCA / US CPA practising in KSA) before filing via the ZATCA portal.*
 
 <!-- openaccountants-cta-block -->
 

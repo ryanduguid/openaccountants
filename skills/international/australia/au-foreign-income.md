@@ -2,7 +2,7 @@
 name: au-foreign-income
 description: >
   Use this skill whenever asked about how Australian tax residents are taxed on foreign income -- the worldwide assessable income rule, the foreign income tax offset (FITO) and its offset limit, foreign employment income and the narrowed section 23AG exemption, foreign rental/business/investment income, foreign capital gains and Division 775 forex gains, foreign pensions (UK/US), temporary residents under Subdiv 768-R, overseas HELP debtor worldwide income reporting, return labels 20/20T/20U/20O, currency conversion, and record keeping. Trigger on "foreign income", "overseas income", "FITO", "foreign tax credit", "double tax", "UK pension", "Wise income", "foreign rental", or any GL showing offshore receipts.
-version: 1.1
+version: 1.3
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
@@ -12,7 +12,7 @@ category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
-# Australia Foreign Income -- Resident Taxpayers Skill v1.1
+# Australia Foreign Income -- Resident Taxpayers Skill v1.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -29,8 +29,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Australian Taxation Office (ATO) |
 | Income year | 2026-27 (1 July 2026 -- 30 June 2027) |
 | Core rule | Residents: assessable on worldwide income (s 6-5(2)) -- ordinary + statutory income from ALL sources |
-| FITO cap | Australian tax payable on the foreign-taxed and other foreign income (the "offset limit", s 770-75) -- lesser of foreign tax paid or the limit; excess never refunded or carried forward |
-| FITO de minimis | Foreign tax paid <= $1,000: claim the actual amount, no limit computation needed |
+| FITO cap | The ordinary section 770-75 limit is the greater of $1,000 and the statutory tax difference, with any applicable section 770-80 increase considered separately. The gross offset is limited to eligible foreign tax and the limit; actual use is non-refundable. [Current ATO limit guidance](https://www.ato.gov.au/forms-and-instructions/foreign-income-tax-offset-rules-guide-2026/calculate-your-fito-or-offset-limit) |
+| FITO short calculation | If the intended claim is $1,000 or less, the full limit working is not required. Eligibility and non-refundable use still apply; it is not an automatic $1,000 credit. This option can also be used when eligible foreign tax exceeds $1,000. |
 | s 23AG scope (2026-27) | Confined to: delivery of Australian official development assistance (ODA) by non-government employers; developing-country relief funds; public disaster relief funds; certain prescribed charitable/religious institutions; disciplined force deployment -- 91+ continuous days required; NOT available to Australian government agency employees delivering ODA |
 | Temporary residents (Subdiv 768-R) | Most foreign-source income NANE; overseas employment/services income may still be assessable; CGT limited to taxable Australian property; CGT discount apportioned for post-8 May 2012 assets |
 | Individual return labels | Question 20 -- foreign source income. The 2026 supplementary return (for 2025-26) uses 20T other net foreign employment income, 20U employment shown on foreign-employment payment summaries or income statements, 20N exempt foreign employment income, 20L and 20D foreign pensions without and with a UPP, 20R net foreign rent, 20M other net foreign income, 20E total, 20O FITO and 20P overseas assets >= $50,000; check the 2027 form for 2026-27. Foreign capital gains go at question 18, not 20 |
@@ -40,18 +40,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
 
-**Conservative defaults:**
+**Missing facts and source conditions:**
+
+For engagement work, load `workflow-base`, `income-tax-workflow-base` and
+the applicable cross-border workflow and country content. Preserve their
+source and period gates, confirmed profile, refusals, four universal outputs
+and all applicable domain outputs and checks. Establish residence and
+temporary-residence status before selecting the income base. Missing
+mandatory facts remain **Needs Input** and unresolved law remains held;
+a higher-tax assumption does not establish the correct treatment.
+Labelled hypothetical examples retain their stipulated assumptions.
 
 | Ambiguity | Default |
 |---|---|
-| Unknown residency status | Treat as Australian resident taxed on worldwide income; STOP and escalate if genuinely unclear (residency is threshold -- see au-tax-residency) |
-| Foreign tax "paid" unclear (withheld vs assessed vs final) | Treat only tax actually paid (or deemed paid) and evidenced as FITO-eligible; accrued/unpaid foreign tax does NOT count |
-| Unknown exchange rate evidence | Use ATO annual average rate for the income year; flag that transaction-date rates may be required (e.g. capital gains, one-off receipts) |
-| Foreign employment exemption (s 23AG) claimed | Assume NOT exempt unless the facts map exactly to the confined 2026-27 categories AND 91+ continuous days |
-| Overseas asset holding >= $50,000 unclear | Answer "Yes" at 20P and keep the supporting schedule |
-| Temporary resident status unclear | Assume NOT a temporary resident (worldwide income assessable) until visa + Social Security Act tests confirmed |
-| Foreign pension with possible UPP | Include gross; claim UPP deductible amount ONLY with an ATO determination or solid computation; escalate valuation questions |
-| Foreign tax year straddles two Australian years | Apportion to the Australian income years the income aligns with; flag both years |
+| Unknown residency status | Needs Input. Establish the applicable residence facts and law using `au-tax-residency`; hold the affected worldwide-income calculation and disclosure. |
+| Foreign tax "paid" unclear (withheld vs assessed vs final) | Needs Input on payment or deemed payment, the relevant income and eligibility. Hold the affected FITO claim; do not turn missing evidence into an eligible amount or an established zero. |
+| Unknown exchange rate evidence | Needs Input on the permitted translation method, relevant dates and rate evidence. Hold affected Australian-dollar amounts; an annual average requires its own applicable conditions. |
+| Foreign employment exemption (s 23AG) claimed | Establish the applicable law and required employer, service, duration and other conditions. Unknown eligibility remains Needs Input; unresolved claims follow the refusal catalogue. |
+| Overseas asset holding >= $50,000 unclear | Needs Input. Establish the applicable return year, asset facts, valuation and question-19 interaction before answering the disclosure; do not fill Yes or No from uncertainty. |
+| Temporary resident status unclear | Needs Input on the applicable visa, residence and other legal conditions. Hold the affected income inclusion or concession; do not assume either status. |
+| Foreign pension with possible UPP | Keep the documented gross receipt in a preliminary register. Hold the affected tax computation until the applicable pension treatment and UPP conditions are established; preserve the valuation refusal. |
+| Foreign tax year straddles two Australian years | Establish the income-recognition and tax-payment facts for each Australian income year. Unknown allocation remains Needs Input; do not apportion only by the foreign year label. |
 
 ## Section 2 -- Refusal catalogue
 
@@ -67,20 +76,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 3 -- GL sweep library
 
-Foreign income hides in bank feeds, e-wallet exports and platform statements -- never trust the client's "I have no overseas income".
+Review the available transaction evidence for possible foreign items. A
+bank or platform label is a lead; establish income character, residence,
+period, translation and relief conditions before an engagement result.
+An unresolved receipt stays unclassified in a preliminary register.
 
 | GL pattern | Likely issue | Action |
 |---|---|---|
-| Foreign bank interest credits (UK, US, NZ, SG accounts) | Assessable interest income | Convert at average rate; gross before foreign withholding; FITO for foreign tax withheld |
-| Dividend credits from overseas brokers (IBKR, Stake, Computershare US) | Assessable dividends (no franking; NZ imputation NOT claimable) | Gross-up to pre-withholding amount; FITO for withholding; check treaty rates |
-| WISE / REVOLUT / PAYONEER receipts | Mixed: own transfers vs foreign income vs client payments | Characterise per transaction -- client payments are business/employment income; own-account transfers are NOT income |
-| Overseas payroll deposits (foreign employer, no PAYG) | Foreign employment income | Assessable in full; PAYG instalments flag; FITO for foreign tax; s 23AG screen |
-| AIRBNB / BOOKING.COM / VRBO payouts for overseas property | Foreign rental income | Gross rent assessable; deductions at Australian rules (interest, rates, repairs, depreciation); FITO for foreign tax on net rent |
-| Foreign super/pension periodic payments (UK SIPP, US 401k/IRA, NZ KiwiSaver) | Foreign pension income -- assessable | Report pensions before UPP at question 20; claim eligible UPP once at D11. Lump sums escalate (R-AU-FI-4) |
-| RSU/ESPP vesting from a foreign employer | ESS discount income (question 12) + foreign tax creditable | Not question 20 income, but FITO at 20O can include foreign tax on ESS discounts |
-| Crypto exchange withdrawals to AUD (foreign exchange) | CGT events, not "foreign income" per se | Route to CGT schedule (question 18); FITO possible for foreign tax on the gain |
-| Regular small foreign transfers labelled "family support" | Possible foreign income vs gifts/loans | Evidence of gift/loan or treat as income; escalate remittance structuring |
-| Foreign currency account balance movements | Div 775 forex realisation events | Check $250k balance election eligibility (s 775-230); otherwise gains assessable/losses deductible |
+| Foreign bank interest credits (UK, US, NZ, SG accounts) | Potential foreign interest | Establish the assessable gross amount, permitted translation method and rate evidence, then test FITO eligibility separately; hold unknown inputs. |
+| Dividend credits from overseas brokers (IBKR, Stake, Computershare US) | Potential dividend income | Establish residence/temporary-residence status, the gross amount and translation. Test any franking, NZ imputation and FITO treatment separately under the applicable rules; hold unresolved eligibility and treaty conditions. |
+| WISE / REVOLUT / PAYONEER receipts | Possible transfers, income, gifts or loans | Establish each transaction's character before tax treatment. Missing character, residence, period or translation facts remain Needs Input. |
+| Overseas payroll deposits (foreign employer, no PAYG) | Potential foreign employment income | Establish residence/temporary-residence status and the section 23AG screen, then the assessable amount, translation and any PAYG instalment obligation. Hold FITO until its separate conditions are established. |
+| AIRBNB / BOOKING.COM / VRBO payouts for overseas property | Potential foreign rental income | Establish residence/temporary-residence status, gross rent, Australian deduction conditions and translation. Hold unknown income, expense and FITO treatment. |
+| Foreign super/pension periodic payments (UK SIPP, US 401k/IRA, NZ KiwiSaver) | Potential foreign pension income | Establish residence/temporary-residence status, pension and treaty treatment, translation and UPP eligibility before tax computation or question 20/D11 entries. Hold unknown eligibility; lump sums and valuations retain R-AU-FI-4. |
+| RSU/ESPP vesting from a foreign employer | Potential ESS discount income | Establish the ESS event, residence, period, translation and applicable return labels before classification or question 12/20O entries. FITO remains subject to its separate eligibility conditions. |
+| Crypto exchange withdrawals to AUD (foreign exchange) | Potential disposal, income or transfer requiring classification | Establish the transaction and applicable capital/ordinary-income rules before choosing a CGT schedule or question 18 entry. Hold unknown tax character, translation and foreign-tax eligibility. |
+| Regular small foreign transfers labelled "family support" | Possible foreign income vs gifts/loans | Establish the payment's character. Missing evidence remains Needs Input; do not classify it as income, gift or loan by default. Preserve the structuring refusal. |
+| Foreign currency account balance movements | Potential Div 775 forex realisation events | Establish the actual event, residence, translation and applicable exclusions/elections. Verify $250k balance election eligibility (s 775-230); do not assume an election or gain/loss treatment from missing facts. |
 | Journal reclassifying foreign income as "loan from relative" | Concealment risk | Refuse without documentation; escalate |
 
 ---
@@ -187,12 +199,12 @@ An Australian resident's assessable income includes ordinary and statutory incom
 
 A taxpayer is entitled to a FITO for an income year for foreign income tax PAID (or deemed paid) on an amount included in assessable income (or in NANE income under s 23AI/23AK ITAA 1936). "Paid" means actually paid -- withheld or assessed and settled. The offset is claimed in the year the foreign income is included in Australian income; if the foreign tax is paid later (different foreign tax year), amend the earlier Australian assessment -- special amendment rules allow this outside the normal s 170 windows, but ONLY for changes in foreign tax paid.
 
-### Rule 3 -- The offset limit (s 770-75): the lesser-of cap
+### Rule 3 -- The offset limit (s 770-75): floor, cap and usable credit
 
 ```
 FITO = LESSER of:
   (a) foreign income tax paid that counts towards the offset, and
-  (b) the offset limit = Step 1 - Step 2, where
+  (b) the ordinary offset limit = GREATER of $1,000 and Step 1 - Step 2, where
       Step 1 = Australian income tax payable for the year
                (incl. Medicare levy + MLS, excluding penalties/interest,
                DISREGARDING all tax offsets), and
@@ -203,8 +215,17 @@ FITO = LESSER of:
                related to those amounts were disallowed
                (debt deductions only where attributable to an overseas PE;
                gifts/super/tax-agent fees are NOT reasonably related).
-De minimis: foreign tax paid <= $1,000 -> claim the actual amount; no limit computation.
+Intended claim <= $1,000: no full limit working, but no more than eligible foreign tax.
 ```
+
+This ordinary working assumes no section 770-80 increase for eligible
+section 23AI/23AK amounts. Special attribution and transitional amounts
+require their own analysis. Apply the non-refundable offset ordering to
+determine how much credit is usable against the remaining tax; the gross
+offset is not automatically a cash refund. The $1,000 floor can matter
+even where eligible foreign tax exceeds $1,000 and the tax difference is
+smaller. [ITAA 1997 sections 770-70–770-80](https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_9/document_9.html);
+[ATO 2026 limit guidance](https://www.ato.gov.au/forms-and-instructions/foreign-income-tax-offset-rules-guide-2026/calculate-your-fito-or-offset-limit).
 
 FITO applies AFTER all other non-refundable, non-transferable offsets. Unused offset is NOT refundable and CANNOT be carried forward -- there is no pooling of foreign tax credits across years. Foreign losses reduce the foreign income entering the computation (and net foreign losses quarantine as tax losses; a current-year deferred non-commercial foreign business loss is added back before step 2 -- escalate that computation).
 
@@ -238,7 +259,26 @@ Foreign income is inside taxable income, so it attracts the 2% Medicare levy and
 
 ### Rule 11 -- Records and currency conversion
 
-Keep: foreign tax receipts/assessments/withholding certificates (per country, per income type); payslips and foreign payroll summaries; exchange rate evidence (ATO/RBA daily, monthly or annual average rates as applicable); bank statements showing foreign balances; the FITO limit worksheet; any $250k forex election. Five-year retention from lodgment. Conversion: translate at the rate prevailing at the time of the transaction OR an applicable average rate per the translation rules (s 960-50); from 1 Jan 2020 ATO publishes RBA-sourced daily/monthly/annual rates; an unlisted currency may use any reasonable externally sourced rate. Capital gains and one-off receipts generally need transaction-date rates; recurring salary/pension streams suit average rates -- state the convention used in the working papers.
+Keep evidence of gross foreign income, the foreign year, tax type and
+amount, payment date and advance/instalment/final status, plus income
+matching, rate evidence, the FITO working and relevant elections. An
+assessment that does not show payment may need separate payment proof.
+The ATO generally requires records for five years after preparation or
+obtaining them, or completion of the relevant transactions or acts,
+whichever is later; applicable extended review periods can require longer
+retention. [ATO 2026 recordkeeping guidance](https://www.ato.gov.au/forms-and-instructions/foreign-income-tax-offset-rules-guide-2026/record-keeping-for-fito).
+
+Translate each relevant element before calculating totals under section
+960-50 and regulation 960-50.01. Ordinary income, statutory income,
+deductions, CGT elements and foreign tax payments have their own timing
+rules. Foreign tax paid later does not automatically use the income-date
+rate. An average rate requires the Schedule 2 conditions, including a
+period no longer than 12 months, reasonable approximation and the required
+external source and consistency. A recurring receipt alone does not
+establish those conditions. Functional currency, special accrual and forex
+elections remain subject to their own source and fact gates.
+[ITAA 1997 section 960-50](https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_10/document_10.html);
+[current translation regulations, section 960-50.01 and Schedule 2](https://www.legislation.gov.au/F2021L00206/2026-06-27/2026-06-27/text/original/epub/OEBPS/document_1/document_1.html).
 
 ### Rule 12 -- Temporary residents vs part-year residents
 
@@ -292,13 +332,17 @@ Prepared: [date]
   Foreign tax paid (FCY) | Rate used | Foreign tax AUD
   Return-year form and labels (2026: 20T with 20E / 20U with primary employment labels / 20N exempt / 20L or 20D pension before UPP / 20R rent / 20M other / D11 UPP once / q18)
 
-2. FITO LIMIT WORKSHEET (skip if total foreign tax <= $1,000)
+2. ORDINARY FITO LIMIT WORKSHEET (full limit working optional for intended claim <= $1,000)
+  Foreign income tax that counts after eligibility tests: A$[____]
   Step 1 tax payable (incl. levy + MLS, before offsets):  A$[____]
-  Step 2 tax payable disregarding foreign-taxed and other
-    foreign-source income and reasonably related deductions: A$[____]
-  Offset limit (Step 1 - Step 2):                          A$[____]
-  FITO claimed = lesser of foreign tax paid and limit:     A$[____]  (label 20O)
-  Excess foreign tax lost:                                 A$[____]
+  Step 2 tax under the statutory income exclusions and related
+    non-debt / overseas-PE debt-deduction assumptions:      A$[____]
+  Ordinary limit = greater of $1,000 and Step 1 - Step 2: A$[____]
+  Any section 770-80 increase (special case; verify):      A$[____]
+  Gross offset = lesser of eligible foreign tax and limit: A$[____]
+  Usable offset after applicable non-refundable ordering: A$[____]
+  Above-limit foreign tax / unused offset (no carry/refund): A$[____]
+  Verify the return-year label before entering the allowable claim.
 
 3. SCREENS
   s 23AG screen (employer type / 91 days / attribution / non-exemption): [PASS/FAIL/ESC]
@@ -317,7 +361,7 @@ REVIEWER FLAGS: [list Tier 2 flags and escalation items]
 
 1. Residency first. Worldwide taxation follows from s 6-5(2); nothing else in this skill matters until residency (and temporary-residency) is settled.
 2. Gross, then convert, then offset. Always bring in the gross foreign amount at the correct rate; never net off foreign tax before assessing.
-3. The offset limit is a lesser-of test. Foreign tax above the Australian tax on that income is permanently lost -- compute the limit before promising relief.
+3. Separate eligible foreign tax, the statutory limit and usable credit. The ordinary limit has a $1,000 floor; apply any special increase and non-refundable use conditions before promising relief.
 4. Labels matter: foreign capital gains at question 18, employment at 20T or 20U with the required primary labels, FITO at 20O, asset disclosure at 20P.
 5. s 23AG is now a narrow gate -- employer type and foreign taxability decide it, not the fact of working overseas.
 6. Medicare levy and HELP follow the income, not the offset: foreign income feeds both bases.
@@ -328,11 +372,31 @@ REVIEWER FLAGS: [list Tier 2 flags and escalation items]
 
 If the client provides only bank/e-wallet statements:
 
-1. Sweep all accounts per Section 3; build the foreign income register with exchange-rate assumptions listed per line.
-2. Characterise every foreign-currency inflow (income vs transfer vs gift vs loan) -- undocumented items default to income.
-3. Compute FITO at the actual foreign tax evidenced, with the limit worksheet; flag missing foreign tax receipts.
-4. Run the s 23AG, temporary resident, question 19, 20P and HELP screens and record PASS/FAIL/UNKNOWN.
-5. **Flag:** "Register built from bank/e-wallet data only. Foreign tax receipts, residency facts, visa status, foreign assessments and treaty positions not sighted. Reviewer must confirm before any position is taken."
+1. Build a preliminary foreign-item register from the available evidence.
+   Record original currency, dates, documented amounts and missing inputs;
+   leave unsupported Australian-dollar amounts uncomputed.
+2. Classify only supported income, transfers, gifts or loans. Record
+   undocumented items as unclassified and request the missing facts.
+3. Record evidenced foreign tax separately from an allowable FITO. Hold
+   the affected claim until payment, inclusion, eligibility, translation
+   and limit conditions are established.
+4. Screen residence, section 23AG, temporary residence, question 19, 20P
+   and HELP as applicable. Record UNKNOWN without substituting PASS, FAIL
+   or a return answer. Apply the existing refusals where triggered.
+5. Identify the missing facts and affected work for review. A preliminary
+   register does not clear the profile or source gates, or authorise a
+   completed tax computation, disclosure or financial output package.
+
+Guard revision v1.2 (18 October 2026): replace unsupported residence,
+translation, disclosure and receipt-character defaults with Needs Input,
+and make the preliminary-register boundary explicit. This revision does
+not reverify the guide's unchanged tax figures, examples or form labels.
+
+Revision v1.3 (18 October 2026): verify and correct the ordinary FITO
+floor/short calculation, the worksheet, selected translation conditions
+and recordkeeping against the cited current sources. The other tax
+figures, examples and form labels retain their earlier provenance and
+require their own source and period checks before engagement use.
 
 ---
 
@@ -344,7 +408,7 @@ If the client provides only bank/e-wallet statements:
 |---|---|
 | Resident rates | 0% to $18,200; 15% $18,201-$45,000; $4,020 + 30% $45,001-$135,000; $31,020 + 37% $135,001-$190,000; $51,370 + 45% over $190,000 |
 | Medicare levy | 2% of taxable income (worldwide for residents) |
-| FITO de minimis | $1,000 |
+| FITO ordinary floor / optional short claim | $1,000, subject to eligible foreign tax and non-refundable use |
 | Overseas assets disclosure (20P) | A$50,000 |
 | Forex balance election | $250,000 (s 775-230) |
 | HELP 2026-27 thresholds | Nil to $69,528; 15c/$1 to $129,717; $9,028 + 17c/$1 to $186,050; 10% of total repayment income above |
@@ -355,7 +419,7 @@ If the client provides only bank/e-wallet statements:
 | Topic | Source |
 |---|---|
 | Worldwide assessable income | ITAA 1997 ss 6-5(2), 6-10(4); ato.gov.au -- Australian resident foreign and worldwide income (QC72091, updated 15 June 2026) |
-| FITO entitlement and limit | ITAA 1997 Div 770 (s 770-75); ato.gov.au -- Claiming a FITO (QC72205, 8 June 2026); Guide to foreign income tax offset rules 2026, "Calculate your FITO or offset limit" (QC101688) |
+| FITO entitlement and limit | ITAA 1997 Div 770, including ss 770-75 and 770-80; [ATO 2026 limit guidance](https://www.ato.gov.au/forms-and-instructions/foreign-income-tax-offset-rules-guide-2026/calculate-your-fito-or-offset-limit), updated 30 May 2026 (QC107174); selected limit, record and translation correction checked 18 October 2026 |
 | s 23AG scope | ITAA 1936 s 23AG; ato.gov.au -- Exempt income from foreign service / Exemption under 23AG (8 June 2026); TR 2013/7 |
 | Return labels | [Individual supplementary tax return instructions 2026, question 20](https://www.ato.gov.au/forms-and-instructions/individual-supplementary-tax-return-2026-instructions/income-questions-13-24-supplementary-tax-return-2026/20-foreign-source-income-and-foreign-assets-or-property-2026) (checked 11 October 2026) and D11 UPP |
 | Foreign pensions / UPP | ato.gov.au -- UPP of a foreign pension or annuity; myTax 2026 foreign pensions and annuities |
@@ -388,6 +452,18 @@ If the client provides only bank/e-wallet statements:
 **Test 9:** HELP debtor overseas 200 days, worldwide income A$91,111. -> Overseas levy ($91,111 - $69,528) x 15% = $3,237.45.
 
 **Test 10:** Foreign-currency transaction account, balance always < $250k, written election made. -> Disregard FRE2 gains/losses on the account while eligible.
+
+**Test 11:** Ordinary eligible foreign tax A$1,500; actual tax before offsets
+A$12,000; statutory counterfactual tax A$11,500. -> Difference A$500;
+ordinary limit A$1,000; gross offset A$1,000, assuming sufficient remaining
+tax and no special increase. A difference-only cap would be wrong.
+
+**Test 12:** Eligible/gross offset A$800 and remaining tax available under
+the ordering rules A$300. -> Use A$300; unused A$500 is not refunded or
+carried forward as a FITO. This does not calculate a prepayment refund.
+
+**Test 13:** Eligible tax A$1,200; intended claim only A$1,000. -> The full
+limit working can be omitted, subject to eligibility and non-refundable use.
 
 ### Prohibitions
 

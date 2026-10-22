@@ -267,6 +267,86 @@ class ReviewStatusTests(ToolTreeCase):
                         self.assertIs(type(response[key]), type(expected), key)
 
 
+class ApplicationScopeTests(ToolTreeCase):
+    def test_full_and_section_responses_preserve_source_year_and_warnings(self) -> None:
+        warning = "Do not calculate a payable amount without verified period law."
+        self.write({"xx/xx-source.md": _skill(
+            "xx-source", "Dated source", body=f"## Period coverage\n{warning}",
+            extra="tax_year: 2022\ntax_year_notes: Unofficial consolidation as at 31 December 2022\n",
+        )})
+        server._index.cache_clear()
+        for response in (server.get_skill("xx-source"), server.get_skill_sections("xx-source")):
+            self.assertIs(type(response["tax_year"]), int)
+            self.assertEqual(response["tax_year"], 2022)
+            self.assertEqual(response["tax_year_notes"], "Unofficial consolidation as at 31 December 2022")
+            self.assertEqual(response["last_updated"], "2026-01-02")
+            action = response["next_action"]
+            for condition in ("requested period", "primary law", "source conditions", "Needs Input", "hypothetical"):
+                self.assertIn(condition, action)
+            self.assertIn("do not certify operative law", action)
+        self.assertIn(warning, server.get_skill("xx-source")["markdown"])
+        self.assertIn(warning, "\n".join(s["content"] for s in server.get_skill_sections("xx-source")["sections"]))
+        listed = next(r for r in server.list_skills()["skills"] if r["slug"] == "xx-source")
+        searched = server.search_skills("payable amount")["results"][0]
+        for summary in (listed, searched):
+            self.assertNotIn("tax_year", summary)
+            self.assertNotIn("tax_year_notes", summary)
+
+    def test_missing_or_invalid_source_year_does_not_use_the_editing_year(self) -> None:
+        for value in (None, "true", "2022.0", '"2022"', "2014", "2036"):
+            with self.subTest(value=value):
+                extra = "" if value is None else f"tax_year: {value}\n"
+                self.write({"xx/xx-source.md": _skill("xx-source", "Source", extra=extra)})
+                server._index.cache_clear()
+                for response in (server.get_skill("xx-source"), server.get_skill_sections("xx-source")):
+                    self.assertIsNone(response["tax_year"])
+                    self.assertIs(type(response["tax_year_notes"]), str)
+                    self.assertEqual(response["tax_year_notes"], "")
+
+    def test_retrieval_provenance_records_a_pending_review_without_claiming_computation(self) -> None:
+        text = _skill("xx-source", "Source", extra="reviewed_by: Alex Example, CPA\nreview_status: pending_review\n")
+        self.write({"xx/xx-source.md": text.replace("tier: 2\n", "tier: 1\n")})
+        server._index.cache_clear()
+        response = server.get_skill("xx-source")
+        self.assertEqual(response["quality_tier"], "accountant-verified")
+        self.assertEqual(response["verified_by"], "Alex Example, CPA")
+        self.assertEqual(response["review_status"], "pending_review")
+        self.assertIn("packages/xx/xx-source.md", response["markdown"])
+        self.assertIn("pending_review", response["markdown"])
+        self.assertIn("renewed professional review", response["markdown"])
+        self.assertNotIn("Computed using", response["markdown"])
+        self.assertNotIn("openaccountants.com/skills", response["markdown"])
+        self.write({"xx/xx-source.md": text})
+        server._index.cache_clear()
+        draft = server.get_skill("xx-source")
+        self.assertEqual(draft["quality_tier"], "research-verified")
+        self.assertNotIn("renewed professional review", draft["markdown"])
+
+    def test_all_calculation_prompts_and_start_deliver_period_and_document_conditions(self) -> None:
+        prompts = (
+            server.skill_review("xx-income-tax", "A hypothetical enquiry"),
+            server.tax_return("XX"),
+            server.vat_check("XX"),
+            server.find_deductions("XX"),
+            server.compare_jurisdictions("XX, YY", "1000 in the stated currency"),
+        )
+        for prompt in prompts:
+            for condition in ("requested period", "primary law", "Needs Input", "redacted", "identity documents"):
+                self.assertIn(condition, prompt)
+            self.assertNotIn("assume MORE tax", prompt)
+            self.assertNotIn("skills verified by [verifier name]", prompt)
+            self.assertNotIn("rules from openaccountants.com", prompt)
+        self.assertIn("default argument is not confirmation", server.tax_return("XX"))
+        self.assertIn("Resolve a label such as 'the current period'", server.vat_check("XX"))
+        plan = server.start(intent="taxes", jurisdiction="XX")
+        self.assertEqual(plan["status"], "ready")
+        self.assertIn("ready to load", plan["next_action"])
+        guardrails = "\n".join(plan["guardrails"])
+        self.assertIn("unknown law", guardrails)
+        self.assertIn("missing fact", guardrails)
+        self.assertIn("redacted", guardrails)
+
+
 class SearchSkillsTests(ToolTreeCase):
     def test_search_requires_the_full_guide_before_applying_rules(self) -> None:
         action = server.search_skills("reverse charge")["next_action"]

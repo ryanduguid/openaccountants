@@ -5,9 +5,9 @@ description: "ALWAYS read this skill before touching any Nepal corporate income 
 jurisdiction: NP
 category: international
 tax_year: 2025
-last_updated: 2026-09-29
+last_updated: 2026-10-18
 reviewed_by: Ashish Bista
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -110,7 +110,7 @@ Research-grade, FY 2082/83. **Secondary firm publications — re-anchor to prima
 
 ## Disclaimer
 
-For informational and computational purposes only; not tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Nepali professional (CA / registered tax practitioner) before filing or acting upon. Latest verified version at [openaccountants.com](https://openaccountants.com).
+All outputs must be reviewed and signed off by a qualified Nepali professional (CA / registered tax practitioner) before filing or acting upon. Latest verified version at [openaccountants.com](https://openaccountants.com).
 
 <!-- openaccountants-cta-block -->
 

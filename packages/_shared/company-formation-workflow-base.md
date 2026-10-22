@@ -1,14 +1,14 @@
 ---
 name: company-formation-workflow-base
 description: Universal company formation and entity selection workflow base that defines the entity comparison, registration checklist, and ongoing compliance runbook for all jurisdictions. Contains no jurisdiction-specific content — no entity type names, no registration fees, no filing portals. This skill MUST be loaded alongside a country-specific formation skill that provides the entity types, registration authorities, and local requirements. This skill alone cannot produce any output.
-version: 1.1
+version: 1.2
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-17
 ---
 
-# Company Formation Workflow Base Skill v1.1
+# Company Formation Workflow Base Skill v1.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -18,7 +18,7 @@ last_updated: 2026-09-28
 
 **This file must always be loaded with a country-specific formation skill** that provides the available entity types, registration authorities, capital requirements, and local compliance rules (e.g., `uk-formation`, `australia-formation`, `germany-formation`). This file alone cannot produce an entity comparison, a registration checklist, or a compliance calendar. Loading it without a companion is a configuration error and Claude must refuse to proceed.
 
-**This file is the contract.** When a country formation skill says it conforms to v1.0 of this base, it means: it fills the country slots specified in Section 5, it produces outputs in the format specified in Section 3, its recommendations can be validated by the self-checks in Section 4, and it participates in the workflow in Section 1.
+**This file is the contract.** A country formation skill conforming to this base fills the country slots in Section 5, produces the outputs in Section 3, applies the self-checks in Section 4 and follows Section 1. When loaded with `workflow-base`, retain its source conditions, refusals, four universal outputs and checks as well. The confirmation sequence follows its Section 1.3.
 
 ---
 
@@ -58,7 +58,7 @@ Present the extracted situation to the user:
 >
 > Is this correct? If anything is wrong, tell me and I will adjust before I start comparing entity types."
 
-Wait for confirmation.
+Combine this situation confirmation with `workflow-base` Step 4 when both bases are loaded. Wait for that confirmation once; do not repeat an already confirmed situation before Step 3. Resolve later material corrections before relying on them.
 
 ### Step 3 — Entity type selection
 
@@ -72,7 +72,7 @@ After the table, provide a recommendation:
 
 The recommendation is advisory — the reviewer and the user make the final decision. State this explicitly.
 
-Wait for the user to confirm the entity type before proceeding to Step 4.
+Wait for the user to confirm the entity type before proceeding to Step 4. This substantive decision checkpoint is permitted by `workflow-base` Section 1.3 and is separate from confirmation of the client's situation. A choice cannot waive eligibility, source conditions or the professional's final review. If the choice is unresolved, return Needs Input and hold the entity-specific checklist.
 
 ### Step 4 — Registration checklist
 
@@ -367,13 +367,13 @@ Every country-specific formation skill loaded alongside this workflow base MUST 
 
 ### Validation status
 
-This file is v1.0 of `company-formation-workflow-base`, drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0.
+This file is v1.2 of `company-formation-workflow-base`, drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0.
 
 ### Design decisions
 
 1. **Advisory, not filing.** This workflow produces a comparison and checklist for professional review. It does not file anything — formation filings are high-stakes and often require identity verification that an AI cannot perform.
 
-2. **Three-step confirmation.** Three user checkpoints (situation, entity type, final delivery) prevent wasted work from misunderstood situations.
+2. **Confirmation sequence.** Confirm the situation once, combining it with the universal profile when loaded. After comparison, obtain the entity choice before preparing its registration checklist. Deliver the reviewed output package after the required checks.
 
 3. **First-year calendar, not perpetual.** Covers 12-18 months — the critical period. Ongoing calendars are the domain of bookkeeping and tax skills.
 
@@ -389,6 +389,7 @@ This file is v1.0 of `company-formation-workflow-base`, drafted as part of the O
 
 ### Change log
 
+- **v1.2 (17 October 2026):** Combine situation and universal profile confirmation, preserve the separate entity decision and reconcile shared output and source controls.
 - **v1.0 (May 2026):** Initial release. Establishes the universal company formation workflow, entity comparison framework, five-output specification, 10 self-checks, and country skill contract.
 
 ---
@@ -397,21 +398,21 @@ This file is v1.0 of `company-formation-workflow-base`, drafted as part of the O
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
 <!-- openaccountants-cta-block -->
 
 ---
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

@@ -4,7 +4,7 @@ Generated from `country-catalogue.json` and `index.json`. Regenerate with `pytho
 
 The target contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 
-185 of 250 target areas have at least one indexed guide; 65 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+191 of 250 target areas have at least one indexed guide; 59 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -18,7 +18,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AE | United Arab Emirates | 7 | 3 |
 | AF | Afghanistan | 6 | 0 |
 | AG | Antigua and Barbuda | 0 | 0 |
-| AI | Anguilla | 0 | 0 |
+| AI | Anguilla | 2 | 0 |
 | AL | Albania | 5 | 0 |
 | AM | Armenia | 8 | 0 |
 | AO | Angola | 6 | 0 |
@@ -28,7 +28,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AT | Austria | 6 | 0 |
 | AU | Australia | 48 | 0 |
 | AW | Aruba | 0 | 0 |
-| AX | Åland Islands | 0 | 0 |
+| AX | Åland Islands | 2 | 0 |
 | AZ | Azerbaijan | 8 | 0 |
 | BA | Bosnia and Herzegovina | 8 | 0 |
 | BB | Barbados | 6 | 0 |
@@ -43,7 +43,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BM | Bermuda | 7 | 0 |
 | BN | Brunei Darussalam | 7 | 0 |
 | BO | Bolivia (Plurinational State of) | 5 | 0 |
-| BQ | Bonaire, Sint Eustatius and Saba | 0 | 0 |
+| BQ | Bonaire, Sint Eustatius and Saba | 23 | 0 |
 | BR | Brazil | 13 | 8 |
 | BS | Bahamas | 6 | 0 |
 | BT | Bhutan | 6 | 0 |
@@ -52,7 +52,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BY | Belarus | 8 | 0 |
 | BZ | Belize | 6 | 0 |
 | CA | Canada | 50 | 11 |
-| CC | Cocos (Keeling) Islands | 0 | 0 |
+| CC | Cocos (Keeling) Islands | 3 | 0 |
 | CD | Democratic Republic of the Congo | 6 | 0 |
 | CF | Central African Republic | 6 | 0 |
 | CG | Congo | 6 | 0 |
@@ -67,7 +67,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CU | Cuba | 6 | 0 |
 | CV | Cabo Verde | 6 | 0 |
 | CW | Curaçao | 6 | 0 |
-| CX | Christmas Island | 0 | 0 |
+| CX | Christmas Island | 3 | 0 |
 | CY | Cyprus | 6 | 5 |
 | CZ | Czechia | 7 | 0 |
 | DE | Germany | 22 | 0 |
@@ -124,7 +124,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | IR | Iran (Islamic Republic of) | 6 | 0 |
 | IS | Iceland | 8 | 0 |
 | IT | Italy | 15 | 0 |
-| JE | Jersey | 11 | 0 |
+| JE | Jersey | 14 | 0 |
 | JM | Jamaica | 6 | 0 |
 | JO | Jordan | 6 | 0 |
 | JP | Japan | 18 | 0 |
@@ -176,7 +176,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NA | Namibia | 6 | 0 |
 | NC | New Caledonia | 0 | 0 |
 | NE | Niger | 5 | 0 |
-| NF | Norfolk Island | 0 | 0 |
+| NF | Norfolk Island | 22 | 0 |
 | NG | Nigeria | 13 | 2 |
 | NI | Nicaragua | 7 | 0 |
 | NL | Netherlands (Kingdom of the) | 19 | 0 |

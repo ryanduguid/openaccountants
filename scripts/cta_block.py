@@ -38,20 +38,23 @@ ANY_HEADING_RE = re.compile(r"^#{1,6}(?:[ \t]|$)", re.MULTILINE)
 #: stamped, so the normalizer leaves it alone and reports it.
 SECTION_LINK_RE = re.compile(r"calendly\.com|openaccountants\.com", re.IGNORECASE)
 
-#: The block itself, exactly as 1,806 guides already carry it.
+#: The referral block for new and substantively edited guides. Existing stamped
+#: guides are migrated in reviewed batches.
 CANONICAL_BLOCK = """<!-- openaccountants-cta-block -->
 
 ---
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

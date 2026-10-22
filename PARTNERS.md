@@ -4,7 +4,7 @@
 
 Every row is derived from the guides' frontmatter with one rule: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name in `reviewed_by` (or the legacy `verified_by`), and a reviewer is on this roster when at least one guide names them that way. A name on a `tier: 2` guide is attribution, not review, and does not count. The rule is `reviewer_of` in `scripts/oa_tools/roster.py`; `index.json`, the README headline and the coverage gate use the same one, so these figures agree with them by construction.
 
-**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 244 jurisdictions · 21 reviewed guides edited since their review.**
+**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 250 jurisdictions · 25 reviewed guides edited since their review.**
 
 ## Reviewers
 
@@ -13,7 +13,7 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | James Power | GB | 15 | 2 | 2026-09-29 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
 | A licensed accountant (name withheld at their request) | US (10), US-IL (4) | 14 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
 | Miguel Lantigua | DO | 14 | — | 2026-10-11 | — |
-| Mayur Deokar | IN | 13 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
+| Mayur Deokar | IN | 13 | 1 | 2026-10-15 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
 | Edgar Lautsyus | CA | 11 | 1 | 2026-09-29 | — |
 | Christopher Aryee, CPA | US | 9 | 2 | 2026-10-04 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
 | Mehran Habib | SA (5), AE (3), BH (1) | 9 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
@@ -22,11 +22,11 @@ Every row is derived from the guides' frontmatter with one rule: a guide is acco
 | Mário Jorge da costa Vale | PT | 8 | — | 2026-10-04 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
 | RILIA PUTRI | ID | 8 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
 | Baraka Cassian | TZ | 6 | 3 | 2026-10-11 | — |
-| Ashish Bista | NP | 5 | — | 2026-09-29 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
+| Ashish Bista | NP | 5 | 2 | 2026-10-18 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
 | Christos Thoma | CY | 5 | 3 | 2026-10-11 | — |
 | Jose Padilla | VE | 5 | 4 | 2026-10-11 | — |
 | Rob Hoffman | US-FL | 5 | — | 2026-09-28 | — |
-| Ibrar Ali | PK | 4 | 1 | 2026-09-29 | — |
+| Ibrar Ali | PK | 4 | 2 | 2026-10-18 | — |
 | Maria Clemencia Valverde Rios | PE | 4 | — | 2026-10-11 | — |
 | Werner Britz | ZA | 4 | 2 | 2026-09-29 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
 | Maria Valeria Benvenuti | AR | 3 | — | 2026-09-28 | — |
@@ -65,7 +65,7 @@ Jurisdiction codes are the guides' `jurisdiction` values: ISO 3166 country codes
 | NG | 2 | Omolola Fasasi (2) |
 | BH | 1 | Mehran Habib (1) |
 
-The other 220 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
+The other 226 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
 
 ## How a name gets here
 

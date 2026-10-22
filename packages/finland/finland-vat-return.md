@@ -1,11 +1,11 @@
 ---
 name: finland-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Finland VAT return (ALV-ilmoitus) for any client. Trigger on phrases like "prepare VAT return", "do the ALV", "fill in ALV", "Finnish VAT", "OmaVero", or any request involving Finland VAT filing. This skill covers Finland only and standard ALV registration. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Finnish VAT work.
-version: 2.0
+version: 2.1
 jurisdiction: FI
 category: international
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-16
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -93,7 +93,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **R-FI-1 — Non-registered below threshold** — Non-registered entities do not file ALV returns. (Trigger: turnover below EUR 15,000 (from 2025), not registered.)
 - **R-FI-2 — Partial exemption** — Partial exemption under AVL Section 117 requires reviewer. (Trigger: mixed supplies.)  _(AVL Section 117)_
 - **R-FI-3 — Construction reverse charge (AVL Section 8c)** — Construction reverse charge requires specialist classification. (Trigger: construction services.)  _(AVL Section 8c)_
-- **R-FI-4 — Aland Islands goods trade** — Aland is outside EU VAT territory for goods. Special import/export treatment required. (Trigger: goods imported/exported to Aland.)
+- **R-FI-4 — Åland tax border and service exceptions** — "Åland transactions require the applicable territorial, exemption and reporting rules to be verified before classification. Hold the affected transactions for review." Trigger: goods crossing the Åland tax border, or Åland services whose applicable place-of-supply, VAT-number or reporting treatment has not been established. Use the sources in Section 5.12; the default classifications cannot resolve an unknown territorial rule.
 - **R-FI-5 — Special schemes** — Margin/travel agent schemes out of scope.
 
 ## Section 3 — Supplier pattern library
@@ -315,9 +315,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Representation 50% rule** — Entertainment/representation: 50% of input ALV deductible (AVL Section 114). Requires documented business purpose.  _(AVL Section 114)_
 
-### 5.12 Aland Islands (AVL Section 68a)
+### 5.12 Åland tax border and services
 
-- **Aland Islands treatment** — Goods to/from Aland treated as import/export. Services follow normal place-of-supply rules.  _(AVL Section 68a)_
+Goods crossing the Åland tax border require their applicable import/export rules.
+Services follow national place-of-supply rules subject to the exceptions in
+[Act 1266/1996](https://www.finlex.fi/sv/lagstiftning/1996/1266), including section 7
+for the intangible services identified in VAT Act section 69h(2). Section 7 includes
+a specified other-EU supplier to Åland non-business-customer branch; a blanket
+normal-place-of-supply statement is insufficient.
+
+[Vero's Åland tax-border guidance, sections 4, 4.4 and 4.9](https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48654/ahvenanmaan-veroraja--arvonlisaverotuksessa3/)
+also distinguishes FI VAT-number use and EU-services reporting, including mainland
+fixed-establishment exceptions. Establish the actual supplying/receiving
+establishments, customer status and service category before selecting a treatment
+or return field. Use [ax-tax-scope](../aland/ax-tax-scope.md) for the national/regional
+scope checks. If the required treatment is unresolved, fire R-FI-4 and hold the
+affected classification. No default in this guide establishes unknown Åland law.
+
+This correction verifies that territorial exception, not this legacy guide's
+remaining rates, thresholds, default table or return-field mapping for 2026.
+Those require a separate period-specific review before application. The Vero
+source itself warns that its older examples do not all reflect the 2026 rate change.
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
@@ -416,10 +434,11 @@ Per `vat-workflow-base` Section 3. Column H accepts Finnish ALV field codes. Bot
 
 ### Change log
 
+- **v2.1 (16 October 2026):** Qualify Åland services and VAT-number/reporting rules against the separate Act and Vero guidance; hold unresolved classifications under R-FI-4. Other legacy figures and mappings need separate period-specific review.
 - **v2.0 (April 2026):** Full rewrite. Finnish banks (Nordea FI, OP, Danske FI). 25.5% rate.
 - **v1.0 (April 2026):** Initial skill.
 
-## End of Finland VAT Return Skill v2.0
+## End of Finland VAT Return Skill v2.1
 
 This skill is incomplete without BOTH companion files: `vat-workflow-base` v0.1+ AND `eu-vat-directive` v0.1+.
 

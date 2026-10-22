@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 1.1
 jurisdiction: LT
 tax_year: 2025
-last_updated: 2026-10-04
+last_updated: 2026-10-18
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -225,7 +225,7 @@ Per `sarunas/income-tax-calculator` (MIT):
 ## *OpenAccountants — open-source accounting skills for AI*
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed by a qualified professional before filing.*
+*All outputs must be reviewed by a qualified professional before filing.*
 
 <!-- openaccountants-cta-block -->
 

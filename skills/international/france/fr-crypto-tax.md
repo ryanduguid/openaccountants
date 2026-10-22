@@ -4,7 +4,7 @@ description: French cryptocurrency and digital asset taxation for individuals. T
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-18
 review_status: pending_review
 category: crypto
 tier: 2
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Based on work by [Romain Simon (@romainsimon)](https://github.com/romainsimon/paperasse)**, licensed under MIT. Adapted for the OpenAccountants format.
 
-> **Disclaimer:** This skill is for informational purposes only and does not constitute tax advice. All positions must be reviewed and signed off by a qualified expert-comptable or avocat fiscaliste before filing. Get this reviewed at **openaccountants.com**.
+> **Professional review:** All positions must be reviewed and signed off by a qualified expert-comptable or avocat fiscaliste before filing. Get this reviewed at **openaccountants.com**.
 
 ## Section 1 — Quick Reference
 

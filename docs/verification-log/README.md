@@ -6,6 +6,77 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+<<<<<<< HEAD
+| 2026-10-20 | [Norfolk Island and Australian transfer pricing](2026-10-20-norfolk-transfer-pricing.md) |
+=======
+>>>>>>> origin/main
+| 2026-10-21 | [Norfolk Island: selected UK treaty conditions and MLI matching](2026-10-21-norfolk-uk-treaty-relief.md) |
+| 2026-10-21 | [Christmas Island and Cocos employer super operations](2026-10-21-indian-ocean-super-operations.md) |
+| 2026-10-21 | [Christmas Island and Cocos employer super guarantee](2026-10-21-indian-ocean-super-guarantee.md) |
+| 2026-10-21 | [Christmas Island and Cocos work expenses and zone relief](2026-10-21-indian-ocean-deductions-zone.md) |
+| 2026-10-21 | [Christmas Island and Cocos selected individual income tax](2026-10-21-indian-ocean-income-tax.md) |
+| 2026-10-21 | [Christmas Island and Cocos tax-system boundaries](2026-10-21-indian-ocean-tax-scope.md) |
+| 2026-10-18 | [Shared transfer-pricing method selection and evidence gates](2026-10-18-transfer-pricing-workflow.md) |
+| 2026-10-18 | [Norfolk Island tax records and retention](2026-10-18-norfolk-tax-records.md) |
+| 2026-10-18 | [Norfolk tax interest and shared Australian compliance corrections](2026-10-18-norfolk-tax-interest.md) |
+| 2026-10-18 | [Norfolk Island tax penalties, disclosure and remission](2026-10-18-norfolk-tax-penalties-remission.md) |
+| 2026-10-18 | [Norfolk assessment amendments, objections and shared Australian routing](2026-10-18-norfolk-tax-amendments-objections.md) |
+| 2026-10-18 | [Norfolk Island annual income-tax returns and filing controls](2026-10-18-norfolk-return-filing.md) |
+| 2026-10-18 | [Norfolk Island capital gains, losses and foreign-resident property](2026-10-18-norfolk-cgt.md) |
+| 2026-10-18 | [Norfolk Island dividend, interest and royalty withholding](2026-10-18-norfolk-investment-withholding.md) |
+| 2026-10-18 | [Australian foreign-income mandatory fact gates](2026-10-18-au-foreign-income-fact-gates.md) |
+| 2026-10-18 | [Norfolk foreign income and shared Australian offset corrections](2026-10-18-norfolk-foreign-income.md) |
+| 2026-10-18 | [Norfolk Island employer fringe benefits tax](2026-10-18-norfolk-fbt.md) |
+| 2026-10-18 | [Norfolk Island ordinary rates and annual waste charges](2026-10-18-norfolk-annual-rates.md) |
+| 2026-10-18 | [Norfolk Island local and federal review routes](2026-10-18-norfolk-review-routes.md) |
+| 2026-10-18 | [Norfolk Island land fees and business transaction levies](2026-10-18-norfolk-property-transfers.md) |
+| 2026-10-18 | [Norfolk Island company registration, records and reporting](2026-10-18-norfolk-company-administration.md) |
+| 2026-10-18 | [Norfolk Island imports, entry and biosecurity costs](2026-10-18-norfolk-imports.md) |
+| 2026-10-17 | [Norfolk Island employment pay, leave and payslips](2026-10-17-norfolk-employment-pay.md) |
+| 2026-10-17 | [Norfolk Island PAYG withholding and payroll reporting](2026-10-17-norfolk-payg-withholding.md) |
+| 2026-10-17 | [Norfolk Island company rates, losses and franking](2026-10-17-norfolk-company-tax.md) |
+| 2026-10-17 | [Norfolk Island Medicare levy, surcharge and low income offset](2026-10-17-norfolk-medicare-offsets.md) |
+| 2026-10-17 | [Norfolk Island individual income tax, deductions and zone offset](2026-10-17-norfolk-income-tax.md) |
+| 2026-10-17 | [Norfolk Island GST: connection, registration and exports](2026-10-17-norfolk-gst.md) |
+| 2026-10-17 | [Norfolk Island tax application and employer super](2026-10-17-norfolk-tax-scope-super.md) |
+| 2026-10-17 | [BES warehouses and HDE: permissions, tax bridges and export pointers](2026-10-17-bes-warehouses-hde.md) |
+| 2026-10-17 | [BES penalties: statutory ceilings, policy and correction boundaries](2026-10-17-bes-penalties-corrections.md) |
+| 2026-10-17 | [BES personal imports: separate reliefs, ages and indivisible goods](2026-10-17-bes-personal-import-relief.md) |
+| 2026-10-17 | [BES customs debt and remedies: events, permissions and separate clocks](2026-10-17-bes-customs-debt-remedies.md) |
+| 2026-10-17 | [BES customs clearance: separate declarations, storage and permissions](2026-10-17-bes-customs-clearance.md) |
+| 2026-10-17 | [BES customs valuation and excise: distinct bases and delegated controls](2026-10-17-bes-customs-excise.md) |
+| 2026-10-17 | [Sint Eustatius tourism tax: separate branches, exemptions and clocks](2026-10-17-bes-statia-tourist-tax.md) |
+| 2026-10-17 | [BES tax-system scope, local powers and inheritance connections](2026-10-17-bes-system-inheritance-scope.md) |
+| 2026-10-17 | [Cross-border coordination: source precedence and unresolved conditions](2026-10-17-cross-border-source-contract.md) |
+| 2026-10-17 | [BES gambling tax: distinct persons, bases and collection branches](2026-10-17-bes-gambling-tax.md) |
+| 2026-10-17 | [BES double-tax relief: separate instruments and directional methods](2026-10-17-bes-double-tax-relief.md) |
+| 2026-10-17 | [BES compliance: distinct deadlines and older collection policy](2026-10-17-bes-tax-compliance.md) |
+| 2026-10-17 | [BES transfers: market value, ABB and document registration](2026-10-17-bes-transfer-tax.md) |
+| 2026-10-17 | [BES entities: residence decisions, distributions and minimum-tax scope](2026-10-17-bes-corporate-distributions.md) |
+| 2026-10-17 | [BES contributions and payroll: separate bases and source discrepancies](2026-10-17-bes-social-payroll.md) |
+| 2026-10-17 | [BES personal income tax: tariff, credits and unresolved home relief](2026-10-17-bes-personal-income-reference.md) |
+| 2026-10-17 | [BES property references: accepted revision and own-home policy scope](2026-10-17-bes-property-references.md) |
+| 2026-10-17 | [BES company references: accepted revision and verification limits](2026-10-17-bes-company-references.md) |
+| 2026-10-16 | [Finland: 2025 income, contribution and business corrections](2026-10-16-finland-2025-income-corrections.md) |
+| 2026-10-16 | [Åland charges and Finland collection corrections](2026-10-16-aland-charges-finland-collection.md) |
+| 2026-10-16 | [Åland income tax: separate bases and statutory settlement](2026-10-16-aland-income-bases.md) |
+| 2026-10-16 | [Åland: territorial exceptions and operative periods](2026-10-16-aland-tax-scope.md) |
+| 2026-10-16 | [Jersey: annual parish rates, assessed quarters and liability](2026-10-16-jersey-parish-rates.md) |
+| 2026-10-16 | [Jersey: property transaction and probate mechanisms](2026-10-16-jersey-property-transactions.md) |
+| 2026-10-15 | [Jersey: Class 1 earnings, rounding and ITIS conditions](2026-10-15-jersey-class1-earnings.md) |
+| 2026-10-15 | [Jersey: GST recovery, enacted Pillar Two and formation conditions](2026-10-15-jersey-gst-mcit-formation.md) |
+| 2026-10-15 | [Jersey: corporate adjustments, company payments and income-tax compliance](2026-10-15-jersey-corporate-compliance.md) |
+| 2026-10-15 | [Palau: land-fee scope and filing sources remain unresolved](2026-10-15-palau-land-fee-source-boundaries.md) |
+| 2026-10-15 | [Palau: corporation regulations and commencement sources](2026-10-15-palau-corporations-source-chain.md) |
+| 2026-10-14 | [Foundation guides: fork provenance and review status](2026-10-14-foundation-provenance.md) |
+| 2026-10-13 | [Palau: investment and reporting source boundaries](2026-10-13-palau-investment-source-boundaries.md) |
+| 2026-10-12 | [Falkland Islands: correction order and defence-employment source chain](2026-10-12-falkland-correction-designation-sources.md) |
+| 2026-10-12 | [Anguilla: registration references and publication controls](2026-10-12-anguilla-publication-controls.md) |
+| 2026-10-12 | [Falkland Islands: payroll formula and Medical Services Tax source limits](2026-10-12-falkland-payroll-formula-sources.md) |
+| 2026-10-12 | [Falkland Islands: pension wording, dated amounts and applied company law](2026-10-12-falkland-source-boundaries.md) |
+| 2026-10-12 | [Palau: healthcare and pension source boundaries](2026-10-12-palau-healthcare-pension-sources.md) |
+| 2026-10-12 | [Source evidence: PDF omissions and document identity](2026-10-12-source-evidence-limits.md) |
+| 2026-10-11 | [Jersey: Class 2 contribution branches and startup reconciliation](2026-10-11-jersey-class2.md) |
 | 2026-10-11 | [Jersey: ordinary pension-holder contribution deduction](2026-10-11-jersey-pension-deduction.md) |
 | 2026-10-11 | [Jersey: first sourced tax-topic pack](2026-10-11-jersey-core-pack.md) |
 | 2026-10-08 | [Digital services tax: repeal, cut-offs and UK mechanics](2026-10-08-digital-services-tax-status.md) |
@@ -137,3 +208,6 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 | 2026-09-12 | [12 September 2026: Pakistan, UK and Ireland repeal and transition checks](2026-09-12-12-september-2026-pakistan-uk-and-ireland-repeal-and.md) |
 | 2026-09-12 | [Kuwait Zakat consistency correction, 13 September 2026](2026-09-12-kuwait-zakat-consistency-correction-13-september-2026.md) |
 | 2026-09-29 | [South Africa: the reviewed 2026/27 table did not match SARS](2026-09-29-south-africa-the-reviewed-2026-27-table-did-not-match-sars.md) |
+| 2026-10-11 | [Anguilla: GST and monthly employer/employee Universal Social Levy](2026-10-11-anguilla-gst-usl.md) |
+| 2026-10-12 | [Country source readiness: Cook Islands, Niue and Caribbean Netherlands](2026-10-12-country-source-readiness.md) |
+| 2026-10-12 | [Palau, Solomon Islands and Turks and Caicos: source readiness](2026-10-12-palau-solomon-tci-source-readiness.md) |

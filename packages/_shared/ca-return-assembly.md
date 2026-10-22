@@ -5,13 +5,16 @@ version: 0.1
 jurisdiction: CA
 category: orchestrator
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-10-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # CA Return Assembly
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 ## Canada Return Assembly Skill v0.1
 
@@ -23,15 +26,15 @@ Specifically:
 
 - **Do NOT ask the user "how deep do you want me to go"** or "do you want the full package" or any variant. The user asked for their tax returns. They want their tax returns. Produce them.
 - **Do NOT announce how many tokens or tool calls this will take.** Execute.
-- **Do NOT ask which deliverables to prioritise.** Produce all deliverables listed in Section 4. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why.
+- **Do NOT ask which deliverables to prioritise.** Produce all deliverables listed in Section 4. If context is exhausted, preserve the supported calculations, evidence and unresolved conditions for resumption. State which mandatory deliverables are incomplete and withhold the complete filing package until preparation and checks finish.
 - **Do NOT re-validate scope that intake already validated.** If `ca-freelance-intake` produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about residency, business structure, or anything else intake already captured.
 - **Do NOT pause between content skills to check in.** Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine.
-- **Self-checks are targets, not blockers.** If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check had an ambiguous answer.
+- **Check failure handling.** Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - **Primary source citations go in the final reviewer brief, not in intermediate computation steps.**
 
 **The user has already been told (by the intake skill) that the final package requires CPA/professional signoff before filing. State it once in the final output and move on.**
 
-**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
+**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. Resolve routine pacing choices within the confirmed scope. A missing fact, rule or failed check requires the input or refusal handling above; a reviewer flag cannot replace it.
 
 ## What this file is
 
@@ -45,12 +48,12 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Section 2 -- Execution order and dependency chain
 
-0. **canada-gst-hst -- GST/HST return (GST34)** — Runs first because GST/HST revenue figures feed into the T2125. For registered filers: prepare annual or outstanding quarterly/monthly GST34. Output: line 101 revenue, line 105 GST/HST collected, line 108 ITCs, line 109 net tax. Status check: canada-gst-hst is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute GST34 figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
-0. **ca-fed-t2125 -- Statement of Business or Professional Activities** — Depends on GST34 output: gross business income must be reported net of GST/HST for registered filers. Computes business expenses, CCA/immediate expensing, home office (Part 7), motor vehicle (Part 8). Output: T2125 line values -- gross revenue (line 8299), total expenses (line 9368), net income/loss (line 9946). Status check: ca-fed-t2125 is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute T2125 figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
-0. **ca-fed-t1-return -- Federal T1 individual return** — Depends on T2125: net business income flows to T1 line 13500 (gross self-employment income) and line 13700 (net self-employment income). Incorporates employment income (T4), other income, RRSP deduction, total income, taxable income, federal tax. Output: T1 line values through line 43500 (total payable) and line 48500 (balance owing/refund). Status check: ca-fed-t1-return is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute T1 figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
-0. **ca-fed-cpp-ei -- CPP, CPP2, and EI self-employed** — Depends on T2125: CPP pensionable earnings = T2125 net income (line 9946) minus CPP basic exemption ($3,500). Self-employed pay both employee and employer portions of CPP (2 x 5.95% = 11.90% for 2025, on pensionable earnings up to YMPE minus basic exemption). CPP2: second ceiling earnings between YMPE and YAMPE (2 x 4% for 2025). EI: optional for self-employed (special benefits only); if opted in, pay employee rate only. Half of CPP (employee portion) is deducted from net income on T1 line 22200; the other half (employer portion) is a non-refundable credit on Schedule 8. Output: total CPP owing, CPP2 owing, EI (if opted in), deduction amount, credit amount. Status check: ca-fed-cpp-ei is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute CPP/EI figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
-0. **ca-fed-instalments -- Instalment schedule for 2026** — Depends on T1: instalment base = net tax owing minus amounts withheld at source. If net tax owing exceeds $3,000 ($1,800 for Quebec), CRA will require instalments for the following year. Two methods: no-calculation option (use CRA's instalment reminders from NOA) or prior-year / current-year calculation. Output: quarterly instalment amounts and due dates for 2026 (March 15, June 15, September 15, December 15). Status check: ca-fed-instalments is currently a Q4 stub. If the stub has substantive computation content, use it. If it is still a placeholder, compute instalment figures using the prior-year method and flag in the reviewer brief that the dedicated skill was not available.
-0. **Provincial return** — For all provinces except Quebec: provincial tax is calculated on the federal T1 (Form 428 for the province). For Quebec: separate TP-1 provincial return is required -- flag as Q4 stub. If the user is in Quebec, compute federal figures only and flag that the TP-1 must be prepared separately. Output: provincial tax payable, provincial credits, surtaxes (Ontario surtax if applicable). Status check: Provincial returns are Q4 stubs. Compute provincial tax using the province's rate schedule and flag in the reviewer brief that the dedicated skill was not available. If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
+0. **canada-gst-hst -- GST/HST return (GST34)** — Runs first because GST/HST revenue figures feed into the T2125. For registered filers: prepare annual or outstanding quarterly/monthly GST34. Output: line 101 revenue, line 105 GST/HST collected, line 108 ITCs, line 109 net tax. Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. **ca-fed-t2125 -- Statement of Business or Professional Activities** — Depends on GST34 output: gross business income must be reported net of GST/HST for registered filers. Computes business expenses, CCA/immediate expensing, home office (Part 7), motor vehicle (Part 8). Output: T2125 line values -- gross revenue (line 8299), total expenses (line 9368), net income/loss (line 9946). Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. **ca-fed-t1-return -- Federal T1 individual return** — Depends on T2125: net business income flows to T1 line 13500 (gross self-employment income) and line 13700 (net self-employment income). Incorporates employment income (T4), other income, RRSP deduction, total income, taxable income, federal tax. Output: T1 line values through line 43500 (total payable) and line 48500 (balance owing/refund). Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. **ca-fed-cpp-ei -- CPP, CPP2, and EI self-employed** — Depends on T2125: CPP pensionable earnings = T2125 net income (line 9946) minus CPP basic exemption ($3,500). Self-employed pay both employee and employer portions of CPP (2 x 5.95% = 11.90% for 2025, on pensionable earnings up to YMPE minus basic exemption). CPP2: second ceiling earnings between YMPE and YAMPE (2 x 4% for 2025). EI: optional for self-employed (special benefits only); if opted in, pay employee rate only. Half of CPP (employee portion) is deducted from net income on T1 line 22200; the other half (employer portion) is a non-refundable credit on Schedule 8. Output: total CPP owing, CPP2 owing, EI (if opted in), deduction amount, credit amount. Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. **ca-fed-instalments -- Instalment schedule for 2026** — Depends on T1: instalment base = net tax owing minus amounts withheld at source. If net tax owing exceeds $3,000 ($1,800 for Quebec), CRA will require instalments for the following year. Two methods: no-calculation option (use CRA's instalment reminders from NOA) or prior-year / current-year calculation. Output: quarterly instalment amounts and due dates for 2026 (March 15, June 15, September 15, December 15). Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+0. **Provincial return** — For all provinces except Quebec: provincial tax is calculated on the federal T1 (Form 428 for the province). For Quebec: separate TP-1 provincial return is required. Prepare supported federal work independently and hold the complete Canadian package until the required TP-1 output is validated. Output: provincial tax payable, provincial credits, surtaxes (Ontario surtax if applicable). Producer readiness: verify the named guide has the required source conditions, content and checks for the requested period. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
 
 ## Section 3 -- Cross-skill reconciliation
 
@@ -137,7 +140,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 ### Reviewer brief contents
 
 ```markdown
-# Complete Return Package: [Client Name] -- Tax Year 2025
+# Complete Return Package: [stable redacted client reference] -- Tax Year 2025
 
 ## Executive Summary
 - Filing status: [Single / Married / Common-law]
@@ -314,16 +317,16 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Section 5 -- Refusals
 
-- **R-CA-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(Section 5 -- Refusals)_
-- **R-CA-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(Section 5 -- Refusals)_
-- **R-CA-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(Section 5 -- Refusals)_
+- **R-CA-1** — Upstream skill did not run. Name the missing skill and hold its dependent calculations and the complete filing package. Independent supported preparation may continue with its limited scope stated.  _(Section 5 -- Refusals)_
+- **R-CA-2** — Upstream self-check failed. Name the failed check, correct it and rerun before using the affected result. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5 -- Refusals)_
+- **R-CA-3** — Cross-skill reconciliation failed. Name the reconciliation and discrepancy, correct it and rerun. If unresolved, hold dependent calculations and the complete filing package.  _(Section 5 -- Refusals)_
 - **R-CA-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(Section 5 -- Refusals)_
 - **R-CA-5** — Out-of-scope item discovered during assembly. E.g., rental income requiring Form T776, capital gains requiring Schedule 3, foreign income requiring Form T2209. Flag and exclude from computation.  _(Section 5 -- Refusals)_
-- **R-CA-6** — Quebec resident. TP-1 provincial return is required but is a Q4 stub. Federal return is computed; provincial return must be prepared separately by the reviewer.  _(Section 5 -- Refusals)_
+- **R-CA-6** — Quebec resident. TP-1 provincial return is required but is a Q4 stub. Supported federal preparation may continue independently; the complete Canadian package is held until the required TP-1 output is prepared and validated.  _(Section 5 -- Refusals)_
 
 ## Section 6 -- Self-checks
 
-- **Check CA1** — All upstream skills executed. canada-gst-hst, ca-fed-t2125, ca-fed-t1-return, ca-fed-cpp-ei all produced output. ca-fed-instalments produced output or was computed from T1 figures. Provincial tax was computed or flagged as stub.  _(Section 6 -- Self-checks)_
+- **Check CA1** - Every upstream result required for the confirmed scope is supported and passes its producer checks. Record an evidenced reason for each inapplicable obligation. A missing, placeholder, refused, Needs Input or invalid result fails this check and holds its dependent results and the complete filing package.  _(Section 6 -- Self-checks)_
 - **Check CA2** — GST34 revenue matches T2125 gross income. Within $1 tolerance.  _(Section 6 -- Self-checks)_
 - **Check CA3** — T2125 net income feeds CPP correctly. Pensionable earnings = T2125 line 9946 minus $3,500 basic exemption, capped at YMPE minus any employment pensionable earnings.  _(Section 6 -- Self-checks)_
 - **Check CA4** — CPP split correct. Half (employee portion) deducted at line 22200; half (employer portion) credited via Schedule 8 at line 31000.  _(Section 6 -- Self-checks)_
@@ -347,7 +350,7 @@ The final output is **three files**:
 
 3. **`client_action_list.md`** -- Single markdown file with step-by-step actions: immediate filings and payments, quarterly instalment calendar for 2026, ongoing compliance reminders.
 
-**If execution runs out of context mid-build:** produce whatever is complete, then state at the end which of the three files were not produced or are partial.
+**If context is exhausted:** preserve the supported calculations and evidence for resumption, identify incomplete deliverables and withhold the complete filing package until every mandatory output and check is complete.
 
 **All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.**
 
@@ -359,7 +362,7 @@ The final output is **three files**:
 - `ca-fed-t2125` -- T2125 line values and computation output
 - `ca-fed-t1-return` -- T1 line values and computation output
 - `ca-fed-cpp-ei` -- CPP/CPP2/EI calculation output
-- `ca-fed-instalments` -- Instalment schedule (or fallback computation)
+- `ca-fed-instalments` -- Instalment schedule (validated output required)
 - Provincial return -- Form 428 or TP-1 (Quebec)
 
 **Outputs:** The final reviewer package. No downstream skill.
@@ -369,14 +372,14 @@ The final output is **three files**:
 1. PDF form filling is not automated. The reviewer uses the worksheets to file via NETFILE, EFILE, or paper.
 2. E-filing is handled by the reviewer via certified tax software, not by this skill.
 3. Payment execution is the client's responsibility; the skill only provides instructions and amounts.
-4. Quebec TP-1 provincial return is a Q4 stub. Quebec residents get the federal package only; TP-1 must be prepared separately.
+4. Quebec TP-1 is a separate required output. Supported federal preparation has that limited scope; the complete Canadian package remains held until TP-1 is prepared and validated.
 5. Rental income (T776) is not supported -- if rental income exists, the skill flags it but the T776 must be completed separately by the reviewer.
 6. Capital gains (Schedule 3) are not supported -- if capital gains exist, the skill flags it but Schedule 3 must be completed separately.
 7. Foreign income and foreign tax credit (T2209) are out of scope.
 8. Multi-year CCA tracking assumes the prior year schedule is provided. If not, only current-year acquisitions are depreciated.
-9. Several upstream content skills are Q2 skills. If any are still stubs, the assembly skill computes the figures directly and flags the gap.
-10. ca-fed-instalments is a Q4 stub. Until it is fleshed out, instalments are computed using the prior-year method. This is a redundancy, not a gap -- the rules are deterministic.
-11. Provincial returns for all provinces except Quebec are computed from the federal rate schedules. Dedicated provincial skills are Q4 stubs.
+9. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+10. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
+11. Verify the required upstream producer has complete source conditions, content and checks. If the required producer is incomplete or unavailable, return Needs Input and hold its dependent results and the complete filing package. The assembler must not substitute its own computation for validated producer output.
 12. The package is complete only for the 2025 tax year; 2026 appears only as prospective planning.
 13. EI self-employed opt-in is flagged but not deeply modelled -- if the taxpayer has opted in, the reviewer should verify special benefit eligibility.
 

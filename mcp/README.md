@@ -2,9 +2,9 @@
 
 <!-- mcp-name: io.github.openaccountants/openaccountants-mcp -->
 
-A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to the open-source accounting skills in a checkout of this repository — at the time of writing 1,854 skills from 182 country packages, 51 US state packages (50 states + DC) sharing the federal set in `packages/_shared/`, 13 Canadian province/territory packages, and six domain bundles (`_cross-border`, `_verticals`, `_integrations`, `_financial-reporting`, `_patterns`, `_intelligence`), across tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border and more — no manual file uploads.
+A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor and other MCP clients on-demand access to source-available accounting guides in a configured checkout of this repository. The catalogue covers tax, bookkeeping, payroll, formation, financial statements and cross-border obligations.
 
-> **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown in a checkout of this repository. The **hosted server** at `https://www.openaccountants.com/api/mcp` belongs to the upstream project: it reads the production database and exposes a larger surface that includes the **accountant-reviewed** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is upstream's product; this self-hosted one is the open research base.
+> **Separate services.** This self-hosted server reads the Markdown guides in a configured checkout. The hosted endpoint at `https://www.openaccountants.com/api/mcp` belongs to the upstream project and is not operated from this fork. Its content, capabilities and review services must be checked separately.
 
 > **This fork.** The hosted endpoint is not operated from this fork (see the [root README](../README.md)), and a wheel built from `mcp/` here ships **only the server code — no guides**. Point `OPENACCOUNTANTS_ROOT` at a checkout of this repository, or install the server editable from one (`pip install -e ./mcp`); the working directory is not consulted. If it cannot find `packages/`, it logs a warning when it first builds the catalogue and every tool says so explicitly — an `error` field from `list_skills` / `search_skills`, `status: "error"` from `start`, a raised error from `get_skill` — instead of answering with an empty catalogue as if that were the corpus.
 
@@ -27,7 +27,7 @@ Install once, configure once — skills are available in every conversation from
 US states work the same way. Federal guides carry `jurisdiction: US`, so `US-CA` returns only the California package's own skills; ask for `US` separately:
 
 ```
-You:    "Help me with my California taxes. Here's my bank statement."
+You:    "Help me with my California taxes. Here are my relevant redacted invoices."
           ↓
 Claude: calls list_skills(jurisdiction="US-CA") → us-ca-540-individual-return, us-ca-sales-tax, us-ca-payroll, …
 Claude: calls list_skills(jurisdiction="US")    → us-form-1040-individual-return, us-quarterly-estimated-tax, …
@@ -51,11 +51,11 @@ Special packages are also available:
 
 ## Tools
 
-The self-hosted server exposes 6 read-only tools below. The hosted server at `https://www.openaccountants.com/api/mcp` is a superset — it adds `get_rates`, `list_jurisdictions`, `list_verifiers`, `compare_jurisdictions`, `plan_cross_border`, and the `request_accountant_review` handoff. Install the hosted MCP if you want the AI-to-human routing; install this one if you want the open research base.
+The self-hosted server exposes the six tools below. Upstream services are separate and do not publish or verify this fork's changes.
 
 | Tool | Description |
 |------|-------------|
-| `start` | **Front door.** Call first whenever a user asks for tax/accounting help. Takes optional `intent` (free text — e.g. `"taxes"`, `"VAT return"`, `"set up a company"`) and `jurisdiction` (e.g. `"MT"`, `"GB"`, `"US-CA"`). Returns either a clarification question or a ready-to-execute plan (`skills_to_load`, `expectations`, `next_action`, `guardrails`). |
+| `start` | **Front door.** Call first whenever a user asks for tax/accounting help. Takes optional `intent` (free text, such as `"taxes"`, `"VAT return"`, `"set up a company"`) and `jurisdiction` (such as `"MT"`, `"GB"`, `"US-CA"`). Returns either a clarification question or a plan ready to load guides (`skills_to_load`, `expectations`, `next_action`, `guardrails`). Engagement calculations still require the source and period checks. |
 | `list_skills` | List published skills with quality tier and reviewing accountant, a page at a time. Optional `jurisdiction` (ISO code, e.g. `MT`, `GB`, `US-CA`) and `category` (case-insensitive; the names used before 2026-09-29, `state`, `us-states`, `federal-tax`, `financial-reporting` and `patterns`, still select the guides in their canonical categories) filters; `limit` (1 to 1,000, default 100) and `offset` page through the matches, and the response carries `total`, `returned` and `next_offset` (None on the last page). |
 | `get_skill` | Given a skill `slug`, returns the full markdown plus a provenance/attribution footer. |
 | `get_skill_sections` | Given a `slug`, returns the skill parsed into sections (`heading`, `content`, `level`) with its guide review metadata. |
@@ -68,7 +68,11 @@ Named assurance requires an unambiguous safe YAML mapping, the repository reader
 
 Valid `current` and `pending_review` strings are trimmed. A supplied blank, unknown or non-string status is withheld, and `current` requires usable tier-1 sign-off. An empty status means absent or untrustworthy; it never implies current review. These checks describe the cached metadata snapshot. The server rereads guide bodies and does not atomically revalidate their relationship to cached sign-off.
 
-Search snippets can omit conditions. Fetch the full guide with `get_skill(slug)` before applying a rule. The server provides metadata and retrieval instructions; external clients must use them. Clients that reject additional response keys need to accept these four fields.
+Full and section responses also expose `tax_year` as an integer from 2015 to 2035 or `null`, and `tax_year_notes` as a string (empty if absent). These describe the guide's source or figure coverage, not assured applicability to an engagement period. An editing date cannot fill a missing source year. These fields do not appear in list or search summaries; clients that reject additional response keys must accept them on the two retrieval routes.
+
+Search snippets can omit conditions. Fetch the full guide with `get_skill(slug)` before applying a rule or using a section separately. Establish the requested period, scope, applicable primary law and guide-specific source conditions before calculating an engagement liability. Unknown law requires `Needs Input` or the guide's refusal. Factual defaults are permitted only under established law and the guide's stated conditions. Dated reference explanations and labelled hypothetical examples remain usable within their assumptions.
+
+Full-guide provenance identifies the configured `packages/` catalogue and recorded review status; it does not certify a calculation or identify the loaded Git revision. The fork repository and upstream services are separate. Document requests require relevant redacted records, preserving accounting facts while excluding bank/account identifiers, tax file numbers, credentials and actual identity documents. These are delivered instructions and metadata; live client adherence remains unverified.
 
 Skill access is **read-only** and **path-sandboxed** to the `packages/` directory; `submit_feedback` does not call GitHub itself, it only constructs a URL.
 
@@ -83,7 +87,7 @@ Model:   start(intent="taxes", jurisdiction="MT")
           → { status: "ready",
               skills_to_load: [mt-freelance-intake, malta-income-tax, …],
               expectations: "I'll help you build a working paper for your accountant…",
-              next_action: "Run the intake skill first, then classify transactions",
+              next_action: "Load the full guides, establish the requested period and applicable sources, then run the intake",
               guardrails: [...] }
           ↓
 Model:   get_skill("mt-freelance-intake")  →  scope-check questions
@@ -123,7 +127,7 @@ Point any remote-capable MCP client at:
 https://www.openaccountants.com/api/mcp
 ```
 
-The hosted server is the upstream project's full product surface (live database, accountant-reviewed tier, `request_accountant_review`, `get_rates`, and more — see the note at the top). It is not run from this fork, and its behaviour may differ from the code in this tree.
+The hosted endpoint belongs to the upstream project. Check its current capabilities and review terms with that service; its behaviour may differ from this fork.
 
 ### Option 2 — Install from PyPI (upstream's package)
 
@@ -232,7 +236,7 @@ Run `openaccountants-mcp` (or `python -m openaccountants_mcp`) as a **stdio** tr
 
 ### Start chatting
 
-> Help me with my 2025 taxes. Here's my bank statement.
+> Help me with my 2025 taxes. Here are my relevant redacted transaction records.
 
 or:
 

@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-11T08:13:44+00:00",
+ "generated_at": "2026-10-22T00:33:11+00:00",
  "counts": {
-  "guides": 1886,
-  "jurisdictions": 244,
+  "guides": 1945,
+  "jurisdictions": 250,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -1408,7 +1408,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "corporate-income-tax-workflow-base",
@@ -1421,7 +1421,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "cross-border-workflow-base",
@@ -1432,9 +1432,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "crypto-tax-workflow-base",
@@ -1499,7 +1499,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "income-tax-workflow-base",
@@ -1510,9 +1510,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "payroll-workflow-base",
@@ -1523,9 +1523,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "social-contributions-workflow-base",
@@ -1536,9 +1536,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "statutory-audit-workflow-base",
@@ -1564,7 +1564,7 @@
    "reviewed_by": null,
    "review_status": null,
    "tax_year": null,
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "us-circular-230-disclosure",
@@ -1603,7 +1603,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "wealth-estate-tax-workflow-base",
@@ -1629,7 +1629,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-17"
   },
   {
    "slug": "amazon-seller-integration",
@@ -1877,6 +1877,32 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-04"
+  },
+  {
+   "slug": "ax-income-tax",
+   "path": "skills/international/aland/ax-income-tax.md",
+   "name": "ax-income-tax",
+   "jurisdiction": "AX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-16"
+  },
+  {
+   "slug": "ax-tax-scope",
+   "path": "skills/international/aland/ax-tax-scope.md",
+   "name": "ax-tax-scope",
+   "jurisdiction": "AX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "albania-income-tax",
@@ -2152,6 +2178,32 @@
    "last_updated": "2026-10-11"
   },
   {
+   "slug": "ai-gst",
+   "path": "skills/international/anguilla/ai-gst.md",
+   "name": "ai-gst",
+   "jurisdiction": "AI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-10-12"
+  },
+  {
+   "slug": "ai-payroll",
+   "path": "skills/international/anguilla/ai-payroll.md",
+   "name": "ai-payroll",
+   "jurisdiction": "AI",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2022",
+   "last_updated": "2026-10-12"
+  },
+  {
    "slug": "ar-company-formation",
    "path": "skills/international/argentina/ar-company-formation.md",
    "name": "ar-company-formation",
@@ -2383,7 +2435,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "au-bas-preparation",
@@ -2604,7 +2656,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "au-medicare-levy",
@@ -2941,8 +2993,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "tax_year": "2026",
+   "last_updated": "2026-10-20"
   },
   {
    "slug": "leaving-australia-tax-residency-cgt",
@@ -3319,7 +3371,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2024",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "bangladesh-vat",
@@ -4801,7 +4853,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "bf-company-formation",
@@ -5818,6 +5870,305 @@
    "last_updated": "2026-10-11"
   },
   {
+   "slug": "bq-abb",
+   "path": "skills/international/caribbean-netherlands/bq-abb.md",
+   "name": "bq-abb",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-bonaire-ground-tax",
+   "path": "skills/international/caribbean-netherlands/bq-bonaire-ground-tax.md",
+   "name": "bq-bonaire-ground-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-corporate-tax",
+   "path": "skills/international/caribbean-netherlands/bq-corporate-tax.md",
+   "name": "bq-corporate-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-customs-clearance",
+   "path": "skills/international/caribbean-netherlands/bq-customs-clearance.md",
+   "name": "bq-customs-clearance",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-customs-debt-remedies",
+   "path": "skills/international/caribbean-netherlands/bq-customs-debt-remedies.md",
+   "name": "bq-customs-debt-remedies",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-customs-valuation",
+   "path": "skills/international/caribbean-netherlands/bq-customs-valuation.md",
+   "name": "bq-customs-valuation",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-double-tax-relief",
+   "path": "skills/international/caribbean-netherlands/bq-double-tax-relief.md",
+   "name": "bq-double-tax-relief",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-excise",
+   "path": "skills/international/caribbean-netherlands/bq-excise.md",
+   "name": "bq-excise",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-financial-statements",
+   "path": "skills/international/caribbean-netherlands/bq-financial-statements.md",
+   "name": "bq-financial-statements",
+   "jurisdiction": "BQ",
+   "category": "financial-statements",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-formation",
+   "path": "skills/international/caribbean-netherlands/bq-formation.md",
+   "name": "bq-formation",
+   "jurisdiction": "BQ",
+   "category": "formation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-gambling-tax",
+   "path": "skills/international/caribbean-netherlands/bq-gambling-tax.md",
+   "name": "bq-gambling-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-income-tax",
+   "path": "skills/international/caribbean-netherlands/bq-income-tax.md",
+   "name": "bq-income-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-inheritance-gifts",
+   "path": "skills/international/caribbean-netherlands/bq-inheritance-gifts.md",
+   "name": "bq-inheritance-gifts",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-payroll",
+   "path": "skills/international/caribbean-netherlands/bq-payroll.md",
+   "name": "bq-payroll",
+   "jurisdiction": "BQ",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-penalties-corrections",
+   "path": "skills/international/caribbean-netherlands/bq-penalties-corrections.md",
+   "name": "bq-penalties-corrections",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-personal-import-relief",
+   "path": "skills/international/caribbean-netherlands/bq-personal-import-relief.md",
+   "name": "bq-personal-import-relief",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-property-tax",
+   "path": "skills/international/caribbean-netherlands/bq-property-tax.md",
+   "name": "bq-property-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-social-contributions",
+   "path": "skills/international/caribbean-netherlands/bq-social-contributions.md",
+   "name": "bq-social-contributions",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-statia-tourist-tax",
+   "path": "skills/international/caribbean-netherlands/bq-statia-tourist-tax.md",
+   "name": "bq-statia-tourist-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-tax-compliance",
+   "path": "skills/international/caribbean-netherlands/bq-tax-compliance.md",
+   "name": "bq-tax-compliance",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-tax-system",
+   "path": "skills/international/caribbean-netherlands/bq-tax-system.md",
+   "name": "bq-tax-system",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-transfer-tax",
+   "path": "skills/international/caribbean-netherlands/bq-transfer-tax.md",
+   "name": "bq-transfer-tax",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "bq-warehouses-hde",
+   "path": "skills/international/caribbean-netherlands/bq-warehouses-hde.md",
+   "name": "bq-warehouses-hde",
+   "jurisdiction": "BQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
    "slug": "cayman-tax",
    "path": "skills/international/cayman-islands/cayman-tax.md",
    "name": "cayman-tax",
@@ -6153,7 +6504,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "china-to-singapore-relocation-tax",
@@ -6310,6 +6661,84 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "cx-income-tax",
+   "path": "skills/international/christmas-island/cx-income-tax.md",
+   "name": "cx-income-tax",
+   "jurisdiction": "CX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "cx-super-guarantee",
+   "path": "skills/international/christmas-island/cx-super-guarantee.md",
+   "name": "cx-super-guarantee",
+   "jurisdiction": "CX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "cx-tax-system",
+   "path": "skills/international/christmas-island/cx-tax-system.md",
+   "name": "cx-tax-system",
+   "jurisdiction": "CX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "cc-income-tax",
+   "path": "skills/international/cocos-keeling-islands/cc-income-tax.md",
+   "name": "cc-income-tax",
+   "jurisdiction": "CC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "cc-super-guarantee",
+   "path": "skills/international/cocos-keeling-islands/cc-super-guarantee.md",
+   "name": "cc-super-guarantee",
+   "jurisdiction": "CC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "cc-tax-system",
+   "path": "skills/international/cocos-keeling-islands/cc-tax-system.md",
+   "name": "cc-tax-system",
+   "jurisdiction": "CC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
   },
   {
    "slug": "co-company-formation",
@@ -6907,7 +7336,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "dk-capital-gains",
@@ -8311,7 +8740,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "fi-prepayments",
@@ -8324,7 +8753,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "fi-tax-overview",
@@ -8350,7 +8779,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "finland-vat-return",
@@ -8363,7 +8792,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "fr-business-accounting",
@@ -8376,7 +8805,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-capital-gains",
@@ -8389,7 +8818,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-cfe",
@@ -8415,7 +8844,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-income-tax",
@@ -8441,7 +8870,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-rental-income",
@@ -8454,7 +8883,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "fr-social-contributions",
@@ -8480,7 +8909,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "france-bookkeeping",
@@ -8584,7 +9013,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-10"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "leaving-france-exit-tax",
@@ -9104,7 +9533,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "germany-references",
@@ -9182,7 +9611,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-06"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ghana-vat",
@@ -10612,7 +11041,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ie-preliminary-tax",
@@ -10651,7 +11080,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ie-usc",
@@ -11067,7 +11496,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "italy-references",
@@ -11421,6 +11850,19 @@
    "last_updated": "2026-09-28"
   },
   {
+   "slug": "je-class2-contributions",
+   "path": "skills/international/jersey/je-class2-contributions.md",
+   "name": "je-class2-contributions",
+   "jurisdiction": "JE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-11"
+  },
+  {
    "slug": "je-company-formation",
    "path": "skills/international/jersey/je-company-formation.md",
    "name": "je-company-formation",
@@ -11431,7 +11873,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-corporate-income-tax",
@@ -11444,7 +11886,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-cross-border-withholding",
@@ -11483,7 +11925,20 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
+  },
+  {
+   "slug": "je-income-tax-compliance",
+   "path": "skills/international/jersey/je-income-tax-compliance.md",
+   "name": "je-income-tax-compliance",
+   "jurisdiction": "JE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-income-tax",
@@ -11499,6 +11954,19 @@
    "last_updated": "2026-10-11"
   },
   {
+   "slug": "je-parish-rates",
+   "path": "skills/international/jersey/je-parish-rates.md",
+   "name": "je-parish-rates",
+   "jurisdiction": "JE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-16"
+  },
+  {
    "slug": "je-payroll",
    "path": "skills/international/jersey/je-payroll.md",
    "name": "je-payroll",
@@ -11509,7 +11977,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-pension-contributions",
@@ -11535,7 +12003,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "je-property-transactions",
@@ -11548,7 +12016,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-16"
   },
   {
    "slug": "je-social-contributions",
@@ -11561,7 +12029,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "jo-company-formation",
@@ -12354,7 +12822,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "lv-company-formation",
@@ -12796,7 +13264,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "lithuania-vat-return",
@@ -12809,7 +13277,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "lt-company-formation",
@@ -13563,7 +14031,7 @@
    "reviewed_by": "Michael Cutajar, CPA (Malta)",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "moving-to-malta-tax-residence",
@@ -14666,9 +15134,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Ashish Bista",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "nepal-income-tax",
@@ -14705,9 +15173,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Ashish Bista",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "nepal-vat",
@@ -15292,7 +15760,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ng-personal-income-tax",
@@ -15318,7 +15786,7 @@
    "reviewed_by": "Omolola Fasasi",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ng-vat-return",
@@ -15384,6 +15852,305 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "nf-annual-rates",
+   "path": "skills/international/norfolk-island/nf-annual-rates.md",
+   "name": "nf-annual-rates",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-cgt",
+   "path": "skills/international/norfolk-island/nf-cgt.md",
+   "name": "nf-cgt",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-company-administration",
+   "path": "skills/international/norfolk-island/nf-company-administration.md",
+   "name": "nf-company-administration",
+   "jurisdiction": "NF",
+   "category": "formation",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-company-tax",
+   "path": "skills/international/norfolk-island/nf-company-tax.md",
+   "name": "nf-company-tax",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-employment-pay",
+   "path": "skills/international/norfolk-island/nf-employment-pay.md",
+   "name": "nf-employment-pay",
+   "jurisdiction": "NF",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-fbt",
+   "path": "skills/international/norfolk-island/nf-fbt.md",
+   "name": "nf-fbt",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-foreign-income",
+   "path": "skills/international/norfolk-island/nf-foreign-income.md",
+   "name": "nf-foreign-income",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-gst",
+   "path": "skills/international/norfolk-island/nf-gst.md",
+   "name": "nf-gst",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-imports",
+   "path": "skills/international/norfolk-island/nf-imports.md",
+   "name": "nf-imports",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-income-tax",
+   "path": "skills/international/norfolk-island/nf-income-tax.md",
+   "name": "nf-income-tax",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-investment-withholding",
+   "path": "skills/international/norfolk-island/nf-investment-withholding.md",
+   "name": "nf-investment-withholding",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-medicare",
+   "path": "skills/international/norfolk-island/nf-medicare.md",
+   "name": "nf-medicare",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-payg-withholding",
+   "path": "skills/international/norfolk-island/nf-payg-withholding.md",
+   "name": "nf-payg-withholding",
+   "jurisdiction": "NF",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-property-transfers",
+   "path": "skills/international/norfolk-island/nf-property-transfers.md",
+   "name": "nf-property-transfers",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-return-filing",
+   "path": "skills/international/norfolk-island/nf-return-filing.md",
+   "name": "nf-return-filing",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-super-guarantee",
+   "path": "skills/international/norfolk-island/nf-super-guarantee.md",
+   "name": "nf-super-guarantee",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-17"
+  },
+  {
+   "slug": "nf-tax-amendments-objections",
+   "path": "skills/international/norfolk-island/nf-tax-amendments-objections.md",
+   "name": "nf-tax-amendments-objections",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-tax-interest",
+   "path": "skills/international/norfolk-island/nf-tax-interest.md",
+   "name": "nf-tax-interest",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-tax-penalties-remission",
+   "path": "skills/international/norfolk-island/nf-tax-penalties-remission.md",
+   "name": "nf-tax-penalties-remission",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-tax-records",
+   "path": "skills/international/norfolk-island/nf-tax-records.md",
+   "name": "nf-tax-records",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-18"
+  },
+  {
+   "slug": "nf-tax-system",
+   "path": "skills/international/norfolk-island/nf-tax-system.md",
+   "name": "nf-tax-system",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-20"
+  },
+  {
+   "slug": "nf-transfer-pricing",
+   "path": "skills/international/norfolk-island/nf-transfer-pricing.md",
+   "name": "nf-transfer-pricing",
+   "jurisdiction": "NF",
+   "category": "transfer-pricing",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-20"
+  },
+  {
+   "slug": "nf-uk-treaty-relief",
+   "path": "skills/international/norfolk-island/nf-uk-treaty-relief.md",
+   "name": "nf-uk-treaty-relief",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
   },
   {
    "slug": "mk-company-formation",
@@ -15810,9 +16577,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "pk-payroll",
@@ -16878,7 +17645,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ru-self-employed-npd",
@@ -17372,7 +18139,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "sa-withholding-tax",
@@ -17944,7 +18711,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "slovakia-vat-registration-4-7-7a",
@@ -18672,7 +19439,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "sri-lanka-betting-gaming-excise",
@@ -19491,7 +20258,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2024",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "thailand-vat",
@@ -19985,7 +20752,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "turkey-vat",
@@ -20518,7 +21285,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ua-financial-statements",
@@ -21337,7 +22104,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "bd-freelance-intake",
@@ -21389,7 +22156,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "ca-freelance-intake",
@@ -21415,7 +22182,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "de-freelance-intake",
@@ -21441,7 +22208,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "eg-freelance-intake",
@@ -21467,7 +22234,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-11"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "es-freelance-intake",
@@ -21493,7 +22260,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "fr-freelance-intake",
@@ -21519,7 +22286,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "global-router",
@@ -21556,9 +22323,9 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "Mayur Deokar",
-   "review_status": "current",
+   "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-29"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "jp-freelance-intake",
@@ -21584,7 +22351,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "kz-freelance-intake",
@@ -21634,9 +22401,9 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "review_status": null,
+   "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "mt-freelance-intake",
@@ -21662,7 +22429,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "mx-freelance-intake",
@@ -21714,7 +22481,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "pk-freelance-intake",
@@ -21740,7 +22507,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "ru-freelance-intake",
@@ -21818,7 +22585,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "us-ca-freelance-intake",
@@ -21831,7 +22598,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "us-ca-return-assembly",
@@ -21844,7 +22611,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "us-federal-return-assembly",
@@ -21857,7 +22624,7 @@
    "reviewed_by": "James Wallach",
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "us-ny-freelance-intake",
@@ -21883,7 +22650,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "us-tx-freelance-intake",
@@ -21909,7 +22676,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-09-28"
+   "last_updated": "2026-10-15"
   },
   {
    "slug": "global-ad-platforms",
@@ -22286,7 +23053,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-04"
+   "last_updated": "2026-10-18"
   },
   {
    "slug": "us-ca-pte-elective-tax",

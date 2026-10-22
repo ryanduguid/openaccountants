@@ -5,7 +5,10 @@ version: 1.0
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-09-28
+last_updated: 2026-10-15
+depends_on:
+  - workflow-base
+review_status: pending_review
 ---
 
 # Income Tax Workflow Base Skill v1.0
@@ -13,6 +16,8 @@ last_updated: 2026-09-28
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
+
+**Shared controls.** Load `workflow-base` with this domain base and the required country or regional companions. Its source and period gates, profile confirmation, refusal handling, reviewer delivery, four universal outputs and 18 checks govern this workflow. This domain adds every intake/content slot, output and check specified below. Combine identifiable output components only as the universal base permits. Every default listed below requires established applicable law and explicit permission in the country guide for that missing fact; otherwise use Needs Input. A missing required source condition, slot, refusal message or runtime capability prevents a deliverable financial result. Preserve any exact tool-unavailable stop message below.
 
 **This file contains workflow architecture only.** It defines how Claude should approach an income tax computation for an individual, sole trader, freelancer, landlord, investor, or any other taxpayer whose income is taxed at the personal level: the order of operations, how to classify income and expenses from the documents provided, how to move from gross income to the balance due or refundable, how to handle ambiguity, what to produce, and what to check before delivering. It contains no tax rates, no brackets, no allowances, no thresholds, no deduction rules, no filing deadlines, no form names, no year-specific figures of any kind.
 
@@ -149,7 +154,7 @@ The documents provide clues but not certainty. A competent preparer would make a
 
 **Action:** Apply the conservative default (below), flag it in the reviewer brief with the alternative treatment and its cash impact, and record the assumption in the working paper.
 
-Conservative defaults for income tax — always the treatment that produces **more** tax:
+The following missing-fact defaults require established law and explicit country-guide permission. Apply its lawful liability ordering and disclose the alternative and impact; otherwise return Needs Input:
 
 - **Receipt of uncertain character:** taxable, in the highest-taxed category the facts allow.
 - **Expense of uncertain character:** personal — not deducted.
@@ -166,7 +171,7 @@ Conservative defaults for income tax — always the treatment that produces **mo
 
 The computation cannot proceed without information only the user possesses, and a conservative default would be a guess about the person rather than about a transaction.
 
-**Action:** Queue for the user question in Step 4. Do not guess. Do not apply a default until the user has been asked and either answered or said "don't know" — then apply the conservative default and disclose it.
+**Action:** Queue the missing factual question for Step 4. Use an evidenced answer or an expressly permitted factual default under established law. A "don't know" answer does not create permission to default; keep the item as Needs Input when the required fact remains unresolved. Obtain primary authority for a legal gap, not the user's guess about the rule.
 
 Examples:
 
@@ -275,7 +280,7 @@ what the reviewer should do.]
 cash impact of the alternative.]
 
 ## Questions asked and user answers (Tier 3)
-[For each: the question, the answer or "don't know — default applied",
+[For each: the question, the answer or "don't know - Needs Input; dependent calculation held",
 and the resulting treatment.]
 
 ## Decisions for the taxpayer or reviewer
@@ -289,7 +294,7 @@ evidence, prior-year figures to confirm. Not generic "check everything."]
 
 ### Output 5 — Action list for the taxpayer
 
-What to do, when, and how much: file, pay, register, retain records, obtain missing certificates, and make the decisions listed in the reviewer brief. Every payment and filing in Output 3 appears here with its date and amount.
+Prepare the taxpayer's proposed actions for the credentialed reviewer to approve: file, pay, register, retain records, obtain missing certificates, and make the decisions listed in the brief. Every payment and filing in Output 3 appears here with its date and amount. Delivery remains addressed to the reviewer; the reviewer approves any client instructions before reliance.
 
 ---
 
@@ -331,7 +336,7 @@ Every foreign-source receipt, foreign account, and foreign tax paid is flagged. 
 
 ### Currency and rounding
 
-Compute in the filing currency. Convert foreign amounts at the rate and date the country skill specifies. Round as the country skill instructs; if it is silent, carry full precision through the ladder and round only the final tax figures to the currency's smallest unit.
+Compute in the verified filing currency. Convert foreign amounts using the country's specified rate basis and date, and apply its verified rounding rules in the required order. An unresolved conversion or rounding rule requires Needs Input before the affected calculation.
 
 ### Mid-year changes
 
@@ -351,7 +356,7 @@ Run these twelve checks against all outputs. If any fails, fix and re-run all tw
 
 **Check 3 — Band slices sum.** The slices in section C of the working paper sum to the amount subject to the progressive schedule. No slice exceeds its band's width.
 
-**Check 4 — Effective rate within bounds.** Tax liability divided by taxable income lies between zero and the top marginal rate (plus surcharges the country skill adds). A 0% effective rate is valid only if taxable income is below the first threshold.
+**Check 4 — Rate and credit ladder is valid.** Recompute gross tax using the applicable progressive, flat, schedular or minimum-tax rules, then apply the evidenced allowances, credits and surcharges in the country's required order. A zero liability above the first threshold can be valid when authorised relief or credits reduce tax to zero. Calculate an effective rate only for a positive denominator and compare any statutory bound using its specified base; an effective rate alone cannot replace this reconciliation.
 
 **Check 5 — Credits do not go negative.** Non-refundable credits reduce gross tax to no less than zero. Only credits the country skill marks refundable can produce a refund.
 
@@ -439,21 +444,21 @@ This file is v1.0 of `income-tax-workflow-base`, drafted in September 2026 as pa
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
 <!-- openaccountants-cta-block -->
 
 ---
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

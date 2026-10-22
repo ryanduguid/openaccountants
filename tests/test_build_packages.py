@@ -86,6 +86,24 @@ class SyntheticTreeCase(unittest.TestCase):
 
 
 class RebuildTests(SyntheticTreeCase):
+    def test_package_instructions_match_this_forks_review_and_licence_process(self) -> None:
+        self.build()
+        for package in ("zzland", "us-ca", "ca-on"):
+            with self.subTest(package=package):
+                readme = (self.packages / package / "README.md").read_text(encoding="utf-8")
+                self.assertIn("source-available OA Guide License", readme)
+                self.assertIn("https://github.com/ryanduguid/openaccountants/blob/main/LICENSING.md", readme)
+                self.assertIn("https://github.com/ryanduguid/openaccountants/blob/main/CONTRIBUTING.md#review", readme)
+                self.assertIn("submit a pull request to this fork", readme)
+                self.assertIn("review status where provided", readme)
+                self.assertIn("period shown in these documents", readme)
+                for unsupported in (
+                    "Verified by accountants.", "verified version", "Free and open source",
+                    "info@openaccountants.com", "credit you publicly", "Your name goes on",
+                    "your 2025 bank statement", "my 2025 taxes", "Help me set up a company",
+                ):
+                    self.assertNotIn(unsupported, readme)
+
     def test_intake_and_readme_request_the_users_period(self) -> None:
         self.build()
         intake = (self.packages / "zzland" / "intake.md").read_text(encoding="utf-8")
@@ -120,6 +138,35 @@ class RebuildTests(SyntheticTreeCase):
                     content = path.read_bytes()
                     content.decode("utf-8")
                     self.assertNotIn(b"\r\n", content)
+
+    def test_document_requests_require_relevant_redacted_records(self) -> None:
+        self.build()
+        outputs = [
+            (self.packages / "zzland" / "intake.md").read_text(encoding="utf-8"),
+            (self.packages / "zzland" / "README.md").read_text(encoding="utf-8"),
+            build_packages.build_us_state_readme("Example State", "zz", ["example.md"]),
+            build_packages.build_canada_province_readme("Example Province", "zz", ["example.md"]),
+        ]
+        for output in outputs:
+            with self.subTest(heading=output.splitlines()[0]):
+                for requirement in ("relevant", "redacted", "bank/account identifiers", "tax file numbers", "identity documents"):
+                    self.assertIn(requirement, output)
+                self.assertNotIn("Accept ANY documents", output)
+                self.assertNotIn("Drop all your documents", output)
+                self.assertNotIn("Here's my bank statement.", output)
+        intake = outputs[0]
+        self.assertIn("Do NOT insist on bank statements", intake)
+        self.assertIn("only has invoices", intake)
+        self.assertIn("transaction dates, amounts, tax charged", intake)
+
+    def test_compressed_foundation_stops_for_unknown_law_before_factual_defaults(self) -> None:
+        self.build()
+        foundation = (self.packages / "_shared" / "foundation.md").read_text(encoding="utf-8")
+        for requirement in ("requested period", "applicable primary law", "source conditions", "unknown law", "missing fact"):
+            self.assertIn(requirement, foundation)
+        self.assertIn("Needs Input", foundation)
+        self.assertIn("hypothetical", foundation)
+        self.assertNotIn("When uncertain about any position, choose", foundation)
 
     def test_hand_authored_packages_survive_and_stale_output_is_removed(self) -> None:
         output = self.build()
@@ -395,6 +442,41 @@ class DeclaredBasesTests(SyntheticTreeCase):
         self.assertEqual(self.bases(frontmatter("p", "depends_on:\n  - no-such-base\n  - ../vat-workflow-base\n")), [])
         self.assertEqual(self.bases("# Not a guide\n\n---\n\ndepends_on: vat-workflow-base\n"), [])
         self.assertEqual(self.bases(frontmatter("p", "depends_on: [unclosed\n")), [], "malformed frontmatter declares nothing")
+
+    def test_transitive_dependencies_are_sorted_and_shared_once(self) -> None:
+        self.write({
+            "skills/foundation/vat-workflow-base.md": frontmatter(
+                "vat-workflow-base", "depends_on: [workflow-base, social-contributions-workflow-base]\n"
+            ),
+            "skills/foundation/social-contributions-workflow-base.md": frontmatter(
+                "social-contributions-workflow-base", "depends_on: [workflow-base]\n"
+            ),
+            "skills/foundation/workflow-base.md": frontmatter("workflow-base"),
+        })
+        expected = ["social-contributions-workflow-base.md", "vat-workflow-base.md", "workflow-base.md"]
+        self.assertEqual(self.bases(GUIDE), expected)
+        self.build()
+        self.assertEqual(self.bundles()["packages"]["zzland"]["shared"], ["foundation.md", *expected])
+        for name in expected:
+            self.assertEqual((self.packages / "_shared" / name).read_bytes(), (self.skills / "foundation" / name).read_bytes())
+
+    def test_cyclic_dependencies_terminate_without_duplicate_files(self) -> None:
+        self.write({
+            "skills/foundation/vat-workflow-base.md": frontmatter("vat-workflow-base", "depends_on: [workflow-base]\n"),
+            "skills/foundation/workflow-base.md": frontmatter("workflow-base", "depends_on: [vat-workflow-base]\n"),
+        })
+        self.assertEqual(self.bases(GUIDE), ["vat-workflow-base.md", "workflow-base.md"])
+
+    def test_filename_selected_bases_load_their_declared_dependencies(self) -> None:
+        self.write({
+            "skills/international/zzland/zz-payroll.md": GUIDE.replace("zz-vat", "zz-payroll").replace("depends_on:\n  - vat-workflow-base\n", ""),
+            "skills/foundation/payroll-workflow-base.md": frontmatter("payroll-workflow-base", "depends_on: [workflow-base]\n"),
+            "skills/foundation/workflow-base.md": frontmatter("workflow-base"),
+        })
+        self.build()
+        self.assertEqual(self.bundles()["packages"]["zzland"]["shared"], [
+            "foundation.md", "payroll-workflow-base.md", "vat-workflow-base.md", "workflow-base.md"
+        ])
 
 
 class PackagingCompletenessTests(SyntheticTreeCase):

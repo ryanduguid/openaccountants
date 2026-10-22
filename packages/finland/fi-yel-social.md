@@ -1,10 +1,10 @@
 ---
 name: fi-yel-social
 description: Use this skill whenever asked about Finland YEL pension insurance or social security for self-employed persons. Trigger on phrases like "YEL", "YEL insurance", "yrittäjän eläkelaki", "self-employed pension Finland", "Finnish pension insurance", "entrepreneur pension", "YEL income", "YEL contribution", "sickness allowance Finland", "disability pension self-employed Finland", "new entrepreneur discount", or any question about mandatory social insurance obligations for Finnish self-employed. Covers YEL contribution rates, income thresholds, provider selection, tax deductibility, and social security benefits. ALWAYS read this skill before advising on Finnish self-employed social insurance.
-version: 1.0
+version: 1.2
 jurisdiction: FI
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-16
 review_status: pending_review
 depends_on:
   - fi-income-tax
@@ -14,6 +14,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # FI Yel Social
+
+Version 1.2 corrects the YEL premium deduction route and one inherited
+illustrative multiplication in this Tier 2 draft.
+The other inherited 2025 insurance figures, eligibility and benefit claims
+were not certified by this correction. Establish their applicable sources and
+facts before using them for an operational result.
 
 ## Section 1 -- Quick Reference
 
@@ -30,7 +36,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key bodies | Pension insurance companies: Varma, Ilmarinen, Elo, Veritas |
 | Validated by | Pending |
 | Validation date | Pending |
-| Skill version | 1.0 |
+| Skill version | 1.2 |
 
 ### YEL Contribution Rates (2025)
 
@@ -146,11 +152,17 @@ YEL insurance is mandatory if ALL of the following apply:
 | Scenario | YEL Income | Age | Rate | Annual Contribution | Monthly Equivalent |
 | --- | --- | --- | --- | --- | --- |
 | Minimum, standard | €9,208.43 | 35 | 24.10% | €2,219.23 | €184.94 |
-| Minimum, new entrepreneur | €9,208.43 | 35 | 18.798% | €1,731.03 | €144.25 |
+| Minimum, new entrepreneur | €9,208.43 | 35 | 18.798% | €1,731.00 | €144.25 |
 | Median | €28,000 | 40 | 24.10% | €6,748.00 | €562.33 |
 | Median, new entrepreneur | €28,000 | 40 | 18.798% | €5,263.44 | €438.62 |
 | Unemployment threshold | €15,128 | 30 | 24.10% | €3,645.85 | €303.82 |
 | Higher income | €60,000 | 55 | 25.60% | €15,360.00 | €1,280.00 |
+
+The minimum new-entrepreneur row illustrates EUR 9,208.43 × 24.10% × 78% =
+EUR 1,731.0006714, displayed as EUR 1,731.00 annually and EUR 144.25 monthly.
+This arithmetic correction does not certify the inherited rate, discount,
+eligibility, billing adjustments or statutory premium-rounding rules. Establish
+those sources before using an amount as a payable contribution.
 
 ### 4.3 Flexible Contributions
 
@@ -173,14 +185,20 @@ Self-employed can temporarily adjust contributions:
 
 | Item | Treatment |
 | --- | --- |
-| YEL contributions paid by self-employed person | Fully deductible from personal income taxation |
-| Deduction location | Personal tax return (not business income deduction) |
-| Can be allocated to spouse | Yes, if both agree -- can be deducted from either spouse's income |
-| Effect on business income | Reduces total taxable income; does NOT reduce business net profit |
+| Compulsory YEL premiums | Deduct in business taxation or the permitted personal own/spouse route, once only |
+| Personal/spouse route | Claim before assessment ends; do not also deduct the same insurance premiums in business or agriculture |
+| Business route | Compulsory premiums reduce business profit; establish the route before computing the business and personal bases |
+| Booked business cost claimed personally | Add back the booked expense through the appropriate non-deductible business adjustment |
 
-### 5.2 Important Distinction
+### 5.2 Sources and once-only treatment
 
-- **YEL deduction location** — YEL contributions are deducted from the self-employed person's personal taxes, not from business profits. They appear on the personal tax return, not the income statement (tuloslaskelma) of the business.
+[Income Tax Act section 96](https://www.finlex.fi/sv/lagstiftning/1992/1535),
+[Vero's 2025 calculation guidance, sections 3.1.2–3.1.4](https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/49038/verotettavan-tulon-laskeminen-henkiloverotuksessa8/)
+and [Vero's YEL deduction instructions](https://www.vero.fi/yritykset-ja-yhteisot/verot-ja-maksut/liikkeen-tai-ammatinharjoittaja/vahennykset/yel-maksut/)
+support these alternative routes. Section 96 supplies the fallback if a
+requested spouse allocation cannot be made. See **fi-income-tax** for the
+income-base interaction. Separate premiums paid from confirmed YEL work income;
+neither a route choice nor a premium payment changes confirmed work income.
 
 ## Section 6 -- Benefits Linked to YEL Income
 
@@ -284,7 +302,7 @@ If a self-employed person fails to arrange mandatory YEL insurance:
 ## Prohibitions
 
 - NEVER advise setting YEL income at minimum to "save money" without explaining the consequences for pension, sickness allowance, and unemployment benefits
-- NEVER treat YEL contributions as a business expense -- they are a personal tax deduction
+- Never deduct the same YEL insurance premiums in both business/agriculture and personal taxation; establish the permitted route and make any required bookkeeping adjustment
 - NEVER ignore the 6-month deadline for arranging YEL insurance
 - NEVER assume light entrepreneurs (laskutuspalvelu users) are exempt -- status depends on actual work arrangement
 - NEVER present YEL income as equivalent to business revenue or profit
@@ -294,7 +312,6 @@ If a self-employed person fails to arrange mandatory YEL insurance:
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
@@ -302,13 +319,15 @@ The most up-to-date, verified version of this skill is maintained at [openaccoun
 
 ## Talk to a verified accountant
 
-This guide is maintained by the OpenAccountants network — accountants who put
-their name behind the tax answers AI gives people. The live, always-current
-version (and the professional behind it) is at
-[openaccountants.com](https://www.openaccountants.com).
+This guide is maintained in the
+[ryanduguid/openaccountants fork](https://github.com/ryanduguid/openaccountants).
+Check its quality tier, recorded review status and cited sources before use.
+Choose a practitioner whose credentials and engagement scope you have verified.
+The links below are optional upstream services; they do not publish or verify
+this fork's changes.
 
-- Use it in your AI: https://www.openaccountants.com/connect
-- Meet the accountants: https://www.openaccountants.com/network
+- Upstream connection service: https://www.openaccountants.com/connect
+- Upstream accountant network: https://www.openaccountants.com/network
 
 > **General reference only.** This document does not constitute tax, legal, or
 > financial advice. Verify figures against the cited primary sources or with a

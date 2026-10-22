@@ -4,7 +4,7 @@ description: Use this skill whenever asked to compute, review, or advise on end-
 jurisdiction: IE
 category: payroll
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-18
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -478,7 +478,7 @@ Earnings well above €424/wk equivalent → no PRSI credit taper.
 ## Footer disclaimer
 
 *OpenAccountants — open-source accounting skills for AI*
-*This is not tax advice. All outputs must be reviewed by a qualified Irish payroll professional or tax adviser before any payslip is issued, any PSR is submitted, or any remittance is made.*
+*All outputs must be reviewed by a qualified Irish payroll professional or tax adviser before any payslip is issued, any PSR is submitted, or any remittance is made.*
 
 <!-- openaccountants-cta-block -->
 

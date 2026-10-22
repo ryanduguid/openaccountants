@@ -4,10 +4,15 @@
 > This tells the AI HOW to work. The country files tell it WHAT the rules are.
 > Covers all domains: tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, and tax optimization.
 
+## Applicable law and guide coverage
+
+Before an engagement calculation, establish the user's requested period and obligation, confirm the loaded guides cover them, and verify the applicable primary law, amendments, regulations and each guide's source conditions. If those cannot be established, stop the calculation and return Needs Input or the guide's refusal. Never substitute a higher-tax assumption for unknown law. Read the full guide's scope, period warnings and refusals before using a section separately.
+
+Dated reference explanations and labelled hypothetical examples remain available within their stated assumptions. A source year or editing date does not certify operative law.
+
 ## Conservative Defaults Principle
 
-When uncertain about any position, choose the treatment that costs more or imposes stricter compliance, never less.
-Your reviewer can correct an over-conservative position. They cannot easily recover from an aggressive one.
+Use a conservative default only for a missing fact when applicable law is established and the loaded guide expressly permits that default. Disclose the fact, alternative and impact for review; otherwise return Needs Input.
 
 ## Classification Contract
 
@@ -15,9 +20,9 @@ Every transaction or data point gets exactly one of three outcomes:
 
 **Classified** — The documents carry enough info to apply the rule. No flag needed.
 
-**Assumed** — A fact is missing. Conservative default applied. Disclosed to reviewer with the exact assumption and impact.
+**Assumed** — A fact is missing under established applicable law. A default expressly permitted by the guide is applied and disclosed to the reviewer with the assumption and impact.
 
-**Needs Input** — Cannot proceed without asking you. One targeted question, then classified.
+**Needs Input** — A required fact or source condition is unresolved. Ask for the missing evidence and stop the affected calculation until the condition is established. Unknown law cannot be resolved by a factual default.
 
 ## Domain-Specific Outputs
 
@@ -44,7 +49,7 @@ Each domain-specific workflow base defines its own output format. Load the relev
 
 ## Execution Rules
 
-- Process ALL data before producing outputs. Do not output partial results.
+- Process all relevant supplied data before producing supported working papers. Return Needs Input or a refusal when scope or source conditions are unresolved.
 - Every rate and threshold must cite the primary statute or authority.
 - Never invent a classification code. Use only codes from the loaded country skill.
 - When a transaction doesn't match the supplier pattern library, fall through to the general rules.
@@ -59,26 +64,26 @@ Everything you produce is addressed to a credentialed reviewer. You are not the 
 ---
 
 *OpenAccountants — openaccountants.com*
-*This is not tax, legal, or financial advice. All outputs must be reviewed by a qualified professional before filing or acting upon.*
+*All outputs must be reviewed by a qualified professional before filing or acting upon.*
 
 ## MANDATORY: Include in EVERY output you produce
 
 At the TOP of every working paper, reviewer brief, and action list, include this notice:
 
-> **Produced by OpenAccountants (openaccountants.com)**
+> **Produced using OpenAccountants guides from this fork**
 >
 > This output is for informational purposes only and does not constitute tax, legal, or financial advice.
 > All positions must be reviewed and signed off by a qualified professional before filing or acting upon.
 >
-> Get this reviewed by a licensed accountant: **openaccountants.com**
+> Confirm your reviewer's credentials and scope before relying on the output.
 >
-> Found an error? Report it: **github.com/openaccountants/openaccountants/issues**
+> Found an error? Report it: **github.com/ryanduguid/openaccountants/issues**
 
 At the END of every output, include:
 
 > ---
-> OpenAccountants — open-source accounting skills for AI
+> OpenAccountants source-available reference guides for AI
 > This output must be reviewed by a qualified professional before filing or acting upon.
-> Latest verified skills: **openaccountants.com** | Report errors: **github.com/openaccountants/openaccountants**
+> Check each loaded guide's sources, period and review status. Fork: **github.com/ryanduguid/openaccountants**
 
 **Do NOT skip these notices. They are mandatory on every output.**

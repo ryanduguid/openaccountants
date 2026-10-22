@@ -4,7 +4,7 @@ description: Final orchestrator skill that assembles the complete federal and Te
 version: 1.1
 jurisdiction: US-TX
 tax_year: 2025
-last_updated: 2026-09-28
+last_updated: 2026-10-15
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -15,6 +15,9 @@ depends_on:
 
 # US Tx Return Assembly
 
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
+
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
 **When this skill is invoked, you have already passed through intake. The user has consented to the full workflow. Execute all steps without pausing for permission.**
@@ -24,7 +27,7 @@ depends_on:
 - Do NOT ask which deliverables to prioritize.
 - Do NOT re-validate scope that intake already validated.
 - Do NOT pause between content skills to check in.
-- Self-checks are targets, not blockers. Flag failures for reviewer and continue.
+- Self-checks are delivery conditions. Correct a failed check and rerun it before using the affected result. If the required evidence or rule cannot be established, return Needs Input and withhold dependent calculations and the complete filing package. Independent supported preparation may continue, with its limited scope stated.
 - Texas has no income tax return. This skill focuses on: (1) Federal return completeness, (2) Texas franchise tax compliance, (3) Texas sales tax compliance.
 
 ## Section 1 — Scope
@@ -139,10 +142,10 @@ Produces the complete federal + Texas compliance package for:
 9. **Texas franchise tax worksheet:**
    - Total revenue computation
    - Threshold determination ($2.47M)
-   - If below threshold: Form 05-102 data (entity name, SOS file number, NAICS code, principal office, registered agent)
+   - If below threshold: Form 05-102 preparation data (stable redacted entity and registered-agent references, reviewer-held SOS identifier confirmation, NAICS code and necessary principal-office location facts); the reviewer completes identifying form fields outside agent outputs
    - If above threshold: margin computation, rate determination, tax due
 10. **Texas sales tax compliance summary** (if applicable):
-    - Permit number and filing frequency
+    - Permit/registration status and filing frequency; reviewer confirms holding the permit identifier outside agent inputs and outputs
     - Taxable vs exempt sales analysis
     - Sales tax collected and remitted by period
     - Outstanding returns (if any)
@@ -153,7 +156,7 @@ Produces the complete federal + Texas compliance package for:
 ### Reviewer brief structure
 
 ```markdown
-# Complete Return Package: [Taxpayer Name] — Tax Year 2025
+# Complete Return Package: [stable redacted taxpayer reference] — Tax Year 2025
 
 ## Executive Summary
 - Filing status: [X]
@@ -171,7 +174,7 @@ Produces the complete federal + Texas compliance package for:
 [Federal assembly content]
 
 ## Texas Franchise Tax
-- Entity: [LLC name] (SOS file number: XXXXXXXXXX)
+- Entity: LLC, [stable redacted entity reference]; reviewer confirms holding the SOS file number outside agent inputs and outputs
 - Accounting year end: December 31, 2025
 - Total revenue: $X
 - No-tax-due threshold: $2,470,000
@@ -181,7 +184,7 @@ Produces the complete federal + Texas compliance package for:
 - Extension available: November 15, 2026
 
 ## Texas Sales Tax (if applicable)
-- Permit: [number] / Filing frequency: [monthly/quarterly/annually]
+- Permit status: [confirmed / Needs Input]; reviewer confirms holding the permit identifier outside agent inputs and outputs. Filing frequency: [monthly/quarterly/annually]
 - Taxable sales: $X
 - Tax collected: $X
 - Tax remitted: $X
@@ -232,7 +235,7 @@ Produces the complete federal + Texas compliance package for:
 
 ## Texas Franchise Tax
 
-- Entity: [LLC name] (SOS file number: XXXXXXXXXX)
+- Entity: LLC, [stable redacted entity reference]; reviewer confirms holding the SOS file number outside agent inputs and outputs
 - Accounting year end: December 31, 2025
 - Total revenue: $X
 - No-tax-due threshold: $2,470,000
@@ -243,7 +246,7 @@ Produces the complete federal + Texas compliance package for:
 
 ## Texas Sales Tax (if applicable)
 
-- Permit: [number] / Filing frequency: [monthly/quarterly/annually]
+- Permit status: [confirmed / Needs Input]; reviewer confirms holding the permit identifier outside agent inputs and outputs. Filing frequency: [monthly/quarterly/annually]
 - Taxable sales: $X
 - Tax collected: $X
 - Tax remitted: $X

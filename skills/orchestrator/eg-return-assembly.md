@@ -4,7 +4,7 @@ description: Use this skill as the final orchestrator that assembles the complet
 version: 0.2
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-10-11
+last_updated: 2026-10-15
 review_status: pending_review
 depends_on:
   - eg-freelance-intake
@@ -14,6 +14,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # EG Return Assembly
+
+
+**Assembly preconditions.** Apply the source, scope, refusal and required-output controls of the active upstream workflows. Intake consent permits the scoped preparation; it cannot waive source verification, missing facts, a fired refusal, failed validation or a mandatory output. A referenced refusal requires a loaded trigger and exact message. Report an unresolved dependency as Needs Input or the loaded refusal and identify the affected outputs. Guidance to continue or use a stub applies only to independently supported work within those controls. Use stable redacted references for identifying fields; the reviewer holds and completes identity, tax and account values outside agent inputs and outputs. Portal access, authentication, signing, submission and payment steps are reviewer instructions after sign-off. Request readiness confirmations only, never passwords, signing tokens or identifiers.
 
 ## Egypt Return Assembly — Filing Package Orchestrator (تجميع الإقرار الضريبي المصري)
 
@@ -37,16 +40,16 @@ Collect these from `eg-freelance-intake` before assembling. Do not re-interrogat
 | --- | --- | --- |
 | Residency confirmation, activity type (professional vs commercial) | `eg-freelance-intake` | Routing the return |
 | Annual turnover (إجمالي الأعمال) in EGP | `eg-freelance-intake` / `egypt-vat` | Simplified vs general decision; VAT registration |
-| ETA Tax Registration Number (رقم التسجيل الضريبي) | intake | All ETA filings |
-| National ID (الرقم القومي) | intake | ETA portal account |
+| Redacted taxpayer reference; reviewer confirms holding the ETA Tax Registration Number (رقم التسجيل الضريبي) | intake confirmation only | Reviewer completes identifying fields outside agent outputs |
+| Reviewer confirms holding the National ID (الرقم القومي) | confirmation only; do not request the value or document | Reviewer manages ETA portal account |
 | Net profit on commercial/professional activity | `eg-income-tax` | General return |
 | Turnover-based liability figures | `eg-sme-tax` | Simplified return |
 | VAT output/input position, e-invoice UUIDs | `egypt-vat` | VAT return(s) |
 | Social insurance contribution wage & status | `eg-social-insurance` | NOSI filing |
 | e-invoice / e-receipt registration status | `egypt-vat` / intake | Precondition gate |
-| ETA portal credentials, digital signature (token) | intake | Submission |
+| Reviewer confirms ETA access and signing readiness | confirmation only; credentials and signing token remain outside the agent | Reviewer submission |
 
-- **Missing content skill output handling** — If a content skill did not run or returned no validated output, note the gap in the reviewer brief and continue with available data rather than halting.  _(Section 2, Egypt Return Assembly)_
+- **Missing content skill output handling** — If an upstream skill is missing, refused, returned Needs Input or failed validation, record its disposition and missing evidence. Hold every calculation, form line, payment instruction and filing total that depends on that result; do not substitute zero or an estimate. Independent supported preparation may continue, but withhold the complete filing package until its required upstream results and checks pass.  _(Section 2, Egypt Return Assembly)_
 
 ## 3. Decision tree — which return applies
 
@@ -109,6 +112,8 @@ All filings are electronic via the ETA portal; payment is electronic at the time
 
 ## 5. Submission (ETA portal & digital signature)
 
+The following steps are a checklist for the credentialed reviewer after sign-off. The agent prepares the package and does not collect credentials or identifiers, authenticate, sign, submit or pay. Record only redacted confirmation references supplied by the reviewer.
+
 0. **Account login** — Account — log in to the ETA online portal (eta.gov.eg) using the National ID (الرقم القومي) or the Tax Registration Number (رقم التسجيل الضريبي). Electronic filing is mandatory for these taxpayers.
 0. **Select the correct form** — Select the correct form — general individual return or the simplified turnover-based return (do not file both); plus the VAT return at the correct frequency for the chosen regime.
 0. **Attach schedules** — Attach schedules — activity accounts / P&L, VAT reconciliation, and any supporting workpapers produced by the content skills.
@@ -130,7 +135,7 @@ All filings are electronic via the ETA portal; payment is electronic at the time
       quarterly = simplified) and all e-invoice UUIDs present.
 - [ ] Social insurance (NOSI) registration current and contributions reconciled.
 - [ ] Deadlines mapped to dates (Section 4); VAT monthly deadline confirmed.
-- [ ] Digital signature certificate valid; ETA portal credentials working.
+- [ ] Reviewer confirms valid signing certificate and working ETA access without sharing credentials or tokens.
 - [ ] Payment method ready; expected tax due figure available from content skills.
 - [ ] All open flags (VAT deadline, simplified due date, any data gaps) listed in
       the reviewer brief.
