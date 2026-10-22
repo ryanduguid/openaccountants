@@ -5,7 +5,8 @@ description: >
   Establishes the Australian territorial bridge, residence and income-year
   gates, ordinary resident and foreign-resident personal rates, conditional
   part-year threshold, low income tax offset, standard work-expense deduction,
-  substantiation changes, special-area zone relief and Medicare screening. Use for
+  substantiation changes, special-area zone relief and ordinary Medicare
+  reductions. Use for
   Christmas Island personal tax, ordinary annual rates, mainland moves or
   levy-exemption questions. Includes primary legislation, fictional component
   calculations, required intake, refusals and reviewer checks. This source-cited
@@ -17,7 +18,7 @@ tax_year: 2026
 tax_year_notes: "Selected ordinary personal rates for 1 July 2026 to 30 June 2027; adjacent years and Medicare conditions require their separately identified sources"
 tier: 2
 last_updated: 2026-10-23
-version: 0.4
+version: 0.5
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -340,35 +341,150 @@ create a refund. Seniors, foreign-tax, franking, small-business and other
 offsets, dependant additions and the complete return balance still need
 their own rules. [OFFSETS, section 63-10][OFFSETS]
 
-## Medicare: establish liability and exemption separately
+## Medicare: ordinary levy, reductions and prescribed periods
 
-Section 251S generally brings an individual resident at any time in the
-income year within the levy charge, subject to Part VIIB. Section 251T's
-whole-year prescribed-person exemption concerns ordinary levy and expressly
-distinguishes the specified surcharge increases. Section 251U contains
-conditional categories, periods and dependant rules. [MEDICARE]
+Establish the charge under section 251S before calculating a levy. A
+whole-year prescribed person can have no ordinary levy under section 251T,
+but an island address alone does not establish that status. These rules
+cover an ordinary adult individual only. Trustees, special superannuation
+adjustments under section 251S(1A), arrears under Levy Act section 9A and
+surcharge require their complete separate rules. [MEDICARE]; [LEVY]
 
-In particular, section 251U(1)(f) requires the Health Minister's stated
-certificate concerning absence of entitlement to Medicare benefits. A
-remote address, limited local services, travel expense or assertion of no
-benefits does not establish that certificate or the complete exemption.
-Check subsection (2)'s dependant condition and subsection (3)'s specified
-half-period rule; the latter does not apply to every exemption category.
-Sections 251V and 251VA distinguish surcharge treatment. [MEDICARE]
+### Source period and individual reduction
 
-The Medicare Levy Act 1986 compilation 53 of 1 July 2026 was shown as latest.
-Sections 5 and 6 impose the ordinary **2%** rate where payable. Section 7
-provides low-income exemption/phase-in rules; sections 8 and 9 deal with
-family and prescribed-person reductions. A 2% multiplication alone cannot
-establish the final levy. Verify the applicable year's thresholds,
-amendment/application provisions and family/exempt periods. No low-income
-threshold or surcharge rate is supplied here. [LEVY-RECORD]; [LEVY]
+The Medicare Levy Act compilation 53 of 1 July 2026 was checked on
+**23 October 2026**. Act 58 of 2026, Schedule 5, commenced on 1 July 2026;
+item 14 applies its threshold amendments to **2025-26 assessments and later
+years**. The following are the amounts in that checked law for the selected
+2026-27 reference, subject to subsequent amendments and the engagement
+source gate. The ATO reduction pages corroborate these figures but expressly
+label their guidance **2025-26**; their year label is not changed here.
+[LEVY-RECORD]; [LEVY]; [LEVY-AMEND]; [ATO-LEVY-SINGLE]; [ATO-LEVY-FAMILY]
 
-Surcharge, private hospital cover, family definitions, surcharge income,
-fringe-benefit surcharge and any relevant lump-sum or pension adjustment
-remain separate unresolved branches. Unknown cover does not mean no cover.
-Do not use historical Cocos or Christmas Island guidance to override the
-checked current statutory charge and conditional exemption rules.
+| Individual branch | Lower threshold H | Statutory phase-in limit U |
+|---|---|---|
+| Entitled to the section 160AAAA seniors and pensioners rebate | $44,268 | $55,335 |
+| Every other ordinary individual | $28,011 | $35,013 |
+
+Use the higher branch only after actual section 160AAAA entitlement is
+established. Age or general pension eligibility alone is insufficient.
+That entitlement includes the statutory conditions, rebate-income rules,
+regulations and section 160AAA interaction. This guide does not compute
+SAPTO; an unresolved entitlement is Needs Input. [SAPTO]; [LEVY, section 3][LEVY]
+
+Let x be the established ordinary taxable income. Sections 6 and 7 give
+the amount B before family and prescribed-period reductions:
+
+- If x is at or below H, B is nil.
+- If H < x <= U, B is the smaller of 2% of x and 10% of (x minus H).
+- If x > U, B is 2% of x.
+
+Use the statutory U, not an extrapolated algebraic crossing point. Apply
+section 8 next and section 9 last. Do not reduce taxable income by an
+exempt-day fraction or offset basic income tax against this levy.
+[LEVY, sections 6-9][LEVY]
+
+### Family reduction and allocation
+
+Section 8 applies where the person was married on the last day of the year,
+or has the specified child offset under Subdivision 61-A or sole-parent
+notional offset under Subdivision 961-B. Registered and genuine domestic
+couple relationships can count under section 251R(2)-(2A). Levy Act section
+3(3) addresses living separately and apart and the death of the last spouse
+during the year. Establish that statutory status and the complete dates;
+do not equate the filing unit with a joint income-tax return. [MEDICARE];
+[LEVY]; [OFFSETS, Subdivision 61-A][OFFSETS]; [DICT, Subdivision 961-B][DICT]
+
+For a person married at year end, family income F is the sum of both
+spouses' annual taxable incomes. Otherwise F is the relevant person's
+taxable income. The family threshold T is **$47,238**, or **$61,623** for
+a person actually entitled to the section 160AAAA rebate, plus **$4,338**
+for each qualifying person under section 8(5). [LEVY, section 8(5)-(7)][LEVY]
+
+A child is not automatically a qualifying threshold addition. Establish
+section 961-5(1)(c), the relevant person's or spouse's Subdivision 961-A
+notional entitlement, age/student status, residence or domicile, maintenance,
+apportionment and adjusted-taxable-income conditions. For a person not
+married at year end, section 8(6) also requires family tax benefit payable
+for the child during at least part of the year. Sole-parent and invalid/carer
+eligibility have their own complete rules. Those entitlement computations,
+including the underlying benefit and ATI rules, remain held here unless
+separately verified; an unknown qualifying-child count is not zero.
+[LEVY]; [DICT, Subdivisions 961-A and 961-B][DICT]; [OFFSETS, Subdivision 61-A][OFFSETS]
+
+For an established section 8 case:
+
+1. If F <= T, the person's ordinary levy is nil.
+2. If F > T, calculate the available reduction R as
+   max(0, 0.02 × T minus 0.08 × (F minus T)). This is a subtraction from
+   the post-section-7 levy, not a 10% levy on combined family income.
+3. Where both spouses would owe levy before sections 8 and 9, section 8(3)
+   allocates the relevant person's R in the proportion x/F. Otherwise a
+   leviable person uses the full applicable R. Calculate each spouse's
+   entitlement and threshold separately; SAPTO can make them different.
+4. Apply section 8(4): where that allocated reduction exceeds the person's
+   pre-section-8 levy, transfer the excess to reduce the spouse's levy.
+   Reconcile both computations together and floor levy at nil. A spouse
+   whose section 7 levy is already nil does not create another transferable
+   reduction. Do not apply the full reduction independently to both spouses.
+
+The statutory formula is an image in the official HTML; its alternative
+text supplies the expression above. The plain-text extraction omits it.
+The ATO family page's introductory individual-income screen must not become
+an additional statutory prerequisite: its own Ashton example applies a
+family reduction below the SAPTO phase-in limit. Sections 7 and 8 and that
+worked example support the sequence above. [LEVY, section 8][LEVY]; [ATO-LEVY-FAMILY]
+
+### Whole and part-year prescribed persons
+
+Resolve section 251U's category, evidence, dates and dependant conditions
+before counting any prescribed period. In particular, paragraph (1)(f)
+requires the Health Minister's stated certificate concerning absence of
+Medicare-benefit entitlement. A remote address, limited local services or
+an assertion of no benefits is insufficient. Subsection (2) generally
+requires every dependant to be prescribed, or to qualify but for that
+subsection. [MEDICARE, sections 251R and 251U][MEDICARE]
+
+Section 251R(3)-(6) addresses resident dependants, maintenance, student
+notional entitlement and shared care. Subsections (6B)-(6D) can remove
+specified dependants where the levy-payability conditions and, for (6D),
+the family agreement are met. An agreement must meet the lodgement timing
+and retention conditions in (6E)-(6H). Obtain the records and complete
+applicable eligibility rules before accepting the period; a certificate
+alone does not settle a dependant condition. [MEDICARE]
+
+The half-period fallback in section 251U(3) applies only to categories
+(1)(a), (b), (ca), (caa) and (cb) when its conditions are met. It does not
+extend to (cc), non-residence, diplomatic status or the paragraph (f)
+certificate. For disjoint fully prescribed periods f and eligible
+half-treated periods h, count P = f + h/2. Preserve an exact half-day
+fraction; do not invent a whole-day rounding rule. [MEDICARE]
+
+A person prescribed for the whole year is exempt from ordinary levy under
+section 251T. Otherwise section 9 reduces the amount L after section 8 to
+L × (D minus P) / D, where D is the actual number of days in that income
+year. Do not apply a second reduction to a levy already nil. This does not
+resolve surcharge: sections 251V and 251VA reverse specified dependant and
+half-period concessions for that separate calculation. [MEDICARE]; [LEVY]
+
+### Precision and remaining levy branches
+
+Retain exact fractions or sufficient decimal precision through section 7,
+family allocation, excess transfer and the prescribed-period calculation.
+TAA section 16B decreases an applicable assessed or penalty tax-related
+liability to a multiple of 5 cents, with stated exclusions. Schedule 1
+sections 90-1 and 255-1 and the assessment definition provide context;
+section 16B is not permission to round every Medicare intermediate to
+5 cents. The final assessment liability unit, processing precision and
+rounding stage remain an engagement source condition here. The examples
+below are unrounded components, not approved assessment amounts.
+[TAA]; [TAA-SCHEDULE]; [RESIDENCE, section 6(1)][RESIDENCE]
+
+Surcharge, private hospital cover, surcharge income, fringe-benefit
+surcharge, arrears and special superannuation adjustments remain unresolved.
+Unknown cover does not mean no cover, and nil ordinary levy does not prove
+nil surcharge. Do not use historical island guidance to override the
+checked current charge and conditional exemption rules.
 
 ## Intake, patterns, defaults and refusals
 
@@ -376,7 +492,9 @@ Confirm the person's legal capacity, year and accounting period; residence
 history and evidence under each relevant test; treaty/temporary-resident
 questions; income categories, sources and derivation; complete deductions
 and losses; special-rate components; all offsets; withholding and prepayments;
-family, dependants, Medicare entitlement/certificate and cover periods;
+year-end family status, both spouses' annual taxable incomes, separately
+verified SAPTO/qualifying-child entitlements, dependant maintenance, Medicare
+entitlement/certificate and full/half prescribed and cover periods;
 qualifying labour-income/withholding categories, allowable reducing expenses,
 asset use and pool history, usual zone residence dates, prior zone claims,
 remote area allowances and overlapping service; foreign currency records;
@@ -457,6 +575,34 @@ allowable under their governing rules. [CORE]; [REFORM]; [RESIDENCE];
 | Asset already allocated to a low-value pool for 2025-26 | Act 49 item 17(2) preserves that earlier allocation from the new item 8 restriction. It does not settle other pool rules. |
 | Salary-packaged benefit provided in the FBT year starting 1 April 2026 | Do not apply Schedule 4 Part 2 merely because the individual income year is 2026-27; Part 2 starts with FBT years from 1 April 2027. |
 
+### Ordinary Medicare component boundaries
+
+These fictional cases use the checked statutory thresholds and the ordinary
+2026-27 year of 365 days. Unless stated otherwise, the adult is resident,
+not entitled to SAPTO, has no qualifying children or prescribed days and
+has no arrears or special adjustments. Taxable income and every stated
+eligibility fact are established. Results precede final assessment rounding,
+offsets, surcharge and any return balance. [LEVY]; [MEDICARE]; [LEVY-AMEND]
+
+| Established facts | Unrounded ordinary component or required hold |
+|---|---|
+| Single; x = $28,011 | Nil under section 7(1). |
+| Single; x = $28,012 | 10% × $1 = **$0.10**. |
+| Single; x = $35,013 | min($700.26, $700.20) = **$700.20**. |
+| Single; x = $35,014 | Above the statutory phase-in limit: 2% × $35,014 = **$700.28**. |
+| Married at year end; taxable incomes $40,000 and $15,000 | F = $55,000; R = $944.76 minus $620.96 = $323.80. Components **$476.20 and nil**. The lower earner has no section 7 levy and creates no second reduction. |
+| Married; taxable incomes $40,000 and $10,000 | R = $723.80; components **$76.20 and nil**. |
+| Married; taxable incomes $40,000 and $18,000 | R = $83.80; components **$716.20 and nil**. |
+| Married; taxable incomes $30,000 and $28,012; both have positive section 7 levy | B amounts $198.90 and $0.10; F = $58,012; R = $82.84. Allocate under section 8(3), then transfer the low earner's excess under (4). Components **$116.16 and nil**. Preserve exact fractions during allocation. |
+| Married; taxable incomes $30,000 and $17,238 | F equals $47,238: both ordinary components **nil** under section 8(1). |
+| Married; taxable incomes $40,000 and $11,000; one child separately established to qualify under section 8(5) | T = $51,576 and F = $51,000: ordinary component **nil**. An unverified child entitlement instead requires Needs Input. |
+| Section 160AAAA entitlement separately established; taxable income $49,700; year-end spouse taxable income $21,700; no qualifying children | B = $543.20; T = $61,623; F = $71,400; R = $450.30. Component **$92.90**, even though x is below $55,335. This reproduces the ATO's labelled 2025-26 Ashton example using the same checked thresholds; it does not compute SAPTO entitlement. |
+| The $476.20 post-family component; 200 fully prescribed days, no overlaps | $476.20 × 165/365 = **$215.2684931506849...**, retained as the exact fraction **$78,573/365**. Hold final assessment rounding. |
+| The same $476.20 component; half-period fallback lawfully applies throughout the year | P = 365/2; component **$238.10**. |
+| Actual prescribed-person status established for the whole year | Ordinary levy **nil** under section 251T; surcharge remains separate. |
+| Paragraph (1)(f) certificate for the year, but dependant condition unresolved | Needs Input. Do not infer full exemption or apply the category-limited half fallback. |
+| Required SAPTO, child, family, certificate, period or final-rounding evidence is absent | Hold the affected component or final result; do not choose a higher-tax factual default. |
+
 ## Outputs, contract coverage and checks
 
 The universal workbook must identify source/version, territory, period,
@@ -475,7 +621,7 @@ be filled with a fictional calendar or a bank-label inference.
 |---|---|
 | 1. Year, filing unit and residence | Ordinary individual year and residence screening; complex residence/periods held. |
 | 2. Income categories | General inclusion framework only; receipt-specific derivation/exemptions remain open. |
-| 3. Rates and levies | Selected ordinary tables and 2% levy; special rates, reductions and surcharge incomplete. |
+| 3. Rates and levies | Selected ordinary tables and section 7/8/9 levy reductions; special adjustments, benefit entitlements and surcharge remain incomplete. |
 | 4. Allowances and credits | Ordinary LITO and selected special-area zone eligibility/base; dependant/service branches, other offsets and complete ordering remain open. |
 | 5. Expenses | General connection, standard work-expense deduction and selected evidence/asset-transition rules; full expense/asset methods and remaining deductions stay open. |
 | 6. Loss relief | Open; no utilisation determination. |
@@ -484,7 +630,7 @@ be filled with a fictional calendar or a bank-label inference.
 | 9. Filing | Open; no approved calendar, form mapping or payment instruction. |
 | 10. Transaction patterns | Selected intake clues only; full receipt/expense library remains open. |
 | 11. Refusals and defaults | Explicit above; no missing-fact tax assumptions authorised. |
-| 12. Currency and rounding | AUD and conversion gate only; exact engagement rounding remains open. |
+| 12. Currency and rounding | AUD and exact levy intermediates; conversion and the final assessed-liability rounding stage remain open. |
 | 13. Full examples | Component cases only; complete employee, self-employed and mixed-return ladders remain open. |
 
 Additional checks: verify the territorial bridge and exact income year;
@@ -495,7 +641,8 @@ periods/months/exclusions; verify LITO eligibility, caps and non-refundability;
 reconcile each section 25-130 reducing branch and its exceptions; verify
 substantiation, travel nights, retention and asset history; distinguish zone
 classification from usual residence and check allowances/service overlap;
-keep levy, surcharge and other offsets separate; substantiate every exemption
+recompute individual caps, family allocation and excess transfers before day
+reductions; keep levy, surcharge and other offsets separate; substantiate every exemption
 period and dependant condition; preserve missing-slot holds; reconcile
 withholding/credits without inventing a refund; verify currency/rounding;
 and inspect all output components before reviewer delivery.
@@ -503,24 +650,29 @@ and inspect all output components before reviewer delivery.
 ## Primary sources, currency and remaining work
 
 The territory Act compilation 13 is dated 18 December 2020; the 1936 Act
-compilation 193 is dated 1 October 2026. The checked 1997 Act compilation
-267 has a **closed interval of 27 August to 30 September 2026** and is not
-a complete current consolidation. Selected October-commencing amendment
-targets in Acts 71 and 86 of 2026 do not replace the core inclusion,
-geography, residence, LITO or priority provisions used here. Their other
-changes can affect an actual income or deduction; reconcile operative law
-before accepting taxable income or any engagement result. [IT97-RECORD];
-[AMEND71]; [AMEND86]
+compilation 193 is dated 1 October 2026. The 1997 Act latest Register
+record checked on 23 October 2026 identifies
+compilation **268 of 1 October 2026**, C2026C00471. The selected core,
+standard-deduction, capital, LITO, offset-ordering, substantiation, geography
+and dependant provisions cited here were compared with compilation 267
+and are unchanged in the retained current text. This selected comparison
+does not verify every income, deduction, definition or operative amendment
+for an engagement. [IT97-RECORD]; [CORE]; [OFFSETS]; [DICT]
 
 Only selected provisions were read, not every clause of these Acts. The ATO
 LITO and zone-eligibility pages were updated 8 June 2026. The current zone
 list was updated 1 July 2026. Act 49 supplies the reform's assessment and
 FBT application dates. An old ATO myTax PDF and an incomplete large PDF
 download were excluded; no entitlement relies on either. No complete
-expense, levy, zone/dependant, foreign-income, CGT, payroll, social or
+expense, surcharge, zone/dependant, foreign-income, CGT, payroll, social or
 filing regime is certified.
 Use `cx-tax-system` for GST/customs geography and historical asset gates.
 Other country topics remain open under `docs/country-coverage-plan.md`.
+
+Version 0.5, 23 October 2026: adds ordinary Medicare reduction order, family
+allocation, prescribed-period mechanics and component boundaries; retains
+SAPTO/child eligibility, special-adjustment, rounding and complete-return
+holds. Updates the selected 1997 Act citations to compilation 268.
 
 Version 0.2, 21 October 2026: adds the standard work-expense deduction,
 selected substantiation/asset transitions and verified local special-area
@@ -529,13 +681,19 @@ Medicare reference. Both retain explicit incomplete-domain holds.
 
 [TERRITORY]: https://www.legislation.gov.au/C1958A00041/2020-12-18/2020-12-18/text/original/epub/OEBPS/document_1/document_1.html
 [RESIDENCE]: https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html
-[CORE]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_1/document_1.html
-[DICT]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_10/document_10.html
+[CORE]: https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html
+[DICT]: https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_10/document_10.html
 [RATES-RECORD]: https://www.legislation.gov.au/C2004A03348/latest/text
 [RATES]: https://www.legislation.gov.au/C2004A03348/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
-[OFFSETS]: https://www.legislation.gov.au/C2004A05138/2026-08-27/2026-08-27/text/original/epub/OEBPS/document_2/document_2.html
+[OFFSETS]: https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html
 [ATO-LITO]: https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/low-income-tax-offset
 [MEDICARE]: https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_4/document_4.html
+[LEVY-AMEND]: https://www.legislation.gov.au/C2026A00058/asmade/2026-06-30/text/original/epub/OEBPS/document_1/document_1.html
+[ATO-LEVY-SINGLE]: https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-for-low-income-earners
+[ATO-LEVY-FAMILY]: https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy/medicare-levy-reduction/medicare-levy-reduction-family-income
+[SAPTO]: https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_3/document_3.html
+[TAA]: https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_1/document_1.html
+[TAA-SCHEDULE]: https://www.legislation.gov.au/C1953A00001/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_2/document_2.html
 [LEVY-RECORD]: https://www.legislation.gov.au/C2004A03351/latest/text
 [LEVY]: https://www.legislation.gov.au/C2004A03351/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
 [IT97-RECORD]: https://www.legislation.gov.au/C2004A05138/latest/text
