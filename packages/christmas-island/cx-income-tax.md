@@ -7,7 +7,8 @@ description: >
   part-year threshold, low income tax offset, standard work-expense deduction,
   substantiation changes, special-area zone relief and ordinary Medicare
   reductions, single-person, family/period and ordinary surviving spouse
-  surcharge components, plus a bounded reportable-super input worksheet. Use for
+  surcharge components, bounded reportable-super inputs and ordinary concessional
+  cap/carry-forward excess worksheets. Use for
   Christmas Island personal tax, ordinary annual rates, mainland moves or
   levy-exemption questions. Includes primary legislation, fictional component
   calculations, required intake, refusals and reviewer checks. This source-cited
@@ -19,7 +20,7 @@ tax_year: 2026
 tax_year_notes: "Selected ordinary personal rates for 1 July 2026 to 30 June 2027; adjacent years and Medicare conditions require their separately identified sources"
 tier: 2
 last_updated: 2026-10-23
-version: 0.9
+version: 1.0
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -590,7 +591,9 @@ For the corresponding income and financial year, independently establish:
   Neither an assumed cap nor gross deposits establish ECC. Contributions
   for cap purposes have their own section 291-25 classification; they are
   not necessarily RESC + DedSuper. ECC can exceed that sum. Unknown or
-  provisional inputs remain held. [IT97-SUPER, Division 291][IT97-SUPER]
+  provisional inputs remain held. The ordinary cap worksheet below can
+  establish this component when all its applicable prerequisites are met.
+  [IT97-SUPER, Division 291][IT97-SUPER]
 
 These names do not replace R for the ordinary Medicare reduction or D for
 surcharge days. Calculate:
@@ -611,11 +614,79 @@ income. Add RSC when reconciling I, without adding RSC itself to C or B.
 A known RSC does not clear a missing C, B or other I adjustment.
 [IT97-SUPER, section 291-15][IT97-SUPER]; [DICT]
 
-This worksheet calculates the RSC subcomponent from established statutory
-inputs. It does not determine deduction entitlement, an individual's cap or
-ECC, complete offset ordering, release instructions or a final assessment.
-Every other income, benefit, relationship, cover, day and complete-output
-gate remains. [IT97-SUPER]; [TAA]; [DICT]
+This RSC worksheet takes established statutory inputs. The ordinary
+2026-27 cap/excess worksheet below can supply ECC only after its own
+applicable prerequisites are met. Neither worksheet determines actual
+DedSuper entitlement, special-case ECC, complete offset ordering, release
+instructions or a final assessment. Every other income, benefit,
+relationship, cover, day and complete-output gate remains.
+[IT97-SUPER]; [TAA]; [DICT]
+
+### Ordinary 2026-27 concessional-cap and excess worksheet
+
+This worksheet calculates the ordinary ECC subcomponent for 1 July 2026 to
+30 June 2027. Independently establish **Q**, the total statutory concessional
+contributions for that financial year under section 291-25, across relevant
+funds. Q has its own contribution, complying-plan, provider-assessability,
+exclusion, refund and allocation conditions; it is not gross deposits,
+RESC + DedSuper or a notice amount. A supplied fund total does not settle
+those conditions. [IT97-SUPER, section 291-25][IT97-SUPER]
+
+Use this ordinary worksheet only after establishing that defined-benefit,
+constitutionally protected fund, notional/transitional contribution and
+Commissioner disregard or reallocation rules do not modify the computation.
+Unknown applicability, an unresolved determination or a disputed financial
+year is **Needs Input**, even when a gross contribution total is known.
+This worksheet does not calculate those special branches. [IT97-SUPER,
+sections 291-165/291-370/291-465][IT97-SUPER]
+
+For 2026-27 the general cap **G is $32,500**, as expressly published by the
+ATO from 1 July 2026. The statutory base is $25,000 for 2017-18, indexed
+under section 960-285, with rounding down to a $2,500 multiple. Keep the
+period-labelled source with the working paper; do not import another year's
+cap. [CC-CAP-ATO]; [IT97-SUPER, section 291-20(2)][IT97-SUPER];
+[DICT, sections 960-265/960-285][DICT]
+
+1. Calculate the ordinary excess before carry-forward, **X = max(0, Q - G)**.
+   If Q is at or below G, **ECC is nil** and no unused prior cap is applied.
+   Prior balance and unused-cap evidence are not needed to establish that
+   narrow result. It does not establish either ledger or any other input.
+2. If Q exceeds G but all 5 eligible previous-year unused amounts are
+   independently proved nil, no carry-forward can apply: **ECC = X**.
+   The prior balance is not needed for that narrow result. Otherwise,
+   establish the statutory total superannuation balance
+   immediately before the financial year, at 30 June 2026. If it is
+   **$500,000 or more**, carry-forward is unavailable: no prior cap is applied
+   and **ECC = X**. An unused-cap ledger is unnecessary for this result.
+   If the required balance is unknown, hold ECC; do not assume ineligibility.
+3. If Q exceeds G and the proved balance is **less than $500,000**, establish
+   the previously unapplied unused-cap amounts for each of **2021-22,
+   2022-23, 2023-24, 2024-25 and 2025-26**. Reconcile the original yearly
+   entitlement and earlier use; an unexplained or unproved zero is not a
+   complete ledger. Unused 2020-21 amounts have expired for this year.
+   Current-year or future amounts are not part of the previous 5 years.
+4. Apply eligible amounts from the **earliest year first**, stopping when X
+   is covered or the eligible ledger is exhausted. Do not apply more than X.
+   Record the amount applied from each year and its unapplied remainder.
+   If their applied total is A, the effective cap is **G + A** and
+   **ECC = max(0, Q - (G + A))**. A missing required ledger holds this step;
+   gross contributions and an assumed unused balance cannot replace it.
+
+These steps apply section 291-20(1), (3)-(7). Ledger remainders are recorded
+before expiry; they are not a promise of availability next year. In
+particular, a remaining 2021-22 amount is outside the previous 5 years for
+2027-28. Future balance and eligibility conditions also need their own
+evidence. [IT97-SUPER, section 291-20][IT97-SUPER]; [CC-CAP-ATO]
+
+Keep Q, G, the required balance evidence, eligible-year ledger, per-year
+application, effective cap and ECC in the working paper. Only a completed
+ordinary calculation with these applicable prerequisites can supply ECC to
+the RSC worksheet. Independently establish DedSuper and reconcile the actual
+assessable excess and deduction in C exactly once. An ECC result does not
+establish RESC, personal-deduction entitlement, B, another I adjustment,
+complete offset ordering, release procedure or final assessment. [IT97-SUPER,
+sections 290-150/291-15/291-20][IT97-SUPER]; [DICT]
+
 
 ### Annual single thresholds and charge periods
 
@@ -879,7 +950,8 @@ verified SAPTO/qualifying-child entitlements, dependant maintenance, Medicare
 entitlement/certificate and full/half prescribed and cover periods;
 separate surcharge I/C/B worksheets, every employer's reportable-benefits
 reconciliation, RESC classification, actual allowable DedSuper, final ECC,
-RSC/C year correspondence and investment-loss classifications, actual
+RSC/C year correspondence, ordinary statutory Q and any required prior
+balance/eligible unused-year ledger, investment-loss classifications, actual
 hospital policy/excess/suspension records, each relevant dependant's status and
 distinct surcharge day sets for both charges, with each income screen;
 qualifying labour-income/withholding categories, allowable reducing expenses,
@@ -1017,10 +1089,62 @@ actual cap/excess, surcharge rates or days, offset ordering or final tax.
 | RESC = $12,000; DedSuper = $8,000; ECC = $5,000; B = $3,000; total net investment loss = $4,000 | RSC **$15,000**; C **$97,000**; I **$119,000**. Neither B nor the loss add-back is added to stipulated C. |
 | Gross employer deposits or an SG label, with influence/exclusion classification unresolved | **Needs Input** for RESC; no automatic zero or gross-deposit substitution. |
 | Personal deposit, notice or acknowledgment without actual allowable deduction, including an unresolved section 26-55 limit | **Needs Input** for DedSuper; the notice is not an entitlement calculation. |
-| Provisional ECC, unknown cap/carry-forward/balance or unresolved defined benefit/Commissioner modification | **Needs Input** for ECC; no assumed cap or zero excess. |
+| Provisional ECC, unknown required cap/carry-forward/balance evidence or unresolved defined benefit/Commissioner modification | **Needs Input** for ECC; no assumed cap or zero excess. |
 | Known RSC, but C/B or another I adjustment is unreconciled | **Needs Input** for downstream surcharge; do not deduct DedSuper or include ECC twice. |
 | Contribution income year and corresponding excess financial year are unproved or mismatched | **Needs Input** for the affected year and input; no cross-year netting. |
-| Complete deduction, cap/excess determination, final offset/payment or country return requested from these examples | **Needs Input** for the remaining law, mandatory slots and qualified review. |
+| Complete deduction, special-case excess determination, final offset/payment or country return requested from these input examples | **Needs Input** for the remaining law, mandatory slots and qualified review. |
+
+### Ordinary concessional-cap and carry-forward boundaries
+
+These fictional 2026-27 cases stipulate independently classified ordinary Q
+and that no defined-benefit, protected/notional/transitional or Commissioner
+modification applies. G is $32,500. A listed unused amount is proved eligible
+and previously unapplied unless expressly expired; every other amount in
+the previous-five-year ledger is established nil where that ledger is
+required. Missing balance or ledger evidence is marked explicitly, rather
+than silently supplied as zero. These are cap/ECC components, not deduction
+entitlement, release instructions or final tax. [IT97-SUPER, section
+291-20][IT97-SUPER]; [CC-CAP-ATO]
+
+| Established ordinary inputs | Applied prior cap, effective cap and ECC |
+|---|---|
+| Q = $32,000; prior balance and ledger unknown | Apply **nil**; cap **$32,500**; ECC **nil**. The unknown ledger is not determined or consumed. |
+| Q = $32,500; prior balance and ledger unknown | Apply **nil**; cap **$32,500**; ECC **nil** at equality. |
+| Q = $32,500.01; prior balance exactly $500,000; ledger unknown | Apply **nil**; cap **$32,500**; ECC **$0.01**. No rounding of Q to whole dollars is assumed. |
+| Q = $32,501; prior balance $600,000; ledger unknown | Apply **nil**; cap **$32,500**; ECC **$1**. |
+| Q = $40,000; prior balance $499,999; unused 2021-22 $3,000 and 2022-23 $5,000 | Apply **$3,000 then $4,500**; cap **$40,000**; ECC **nil**. The 2022-23 remainder is **$500** before expiry. |
+| Q = $40,500; same proved balance and unused amounts | Apply **$3,000 then $5,000**; cap **$40,500**; ECC **nil** at exact exhaustion. |
+| Q = $41,000; same proved balance and unused amounts | Apply **$3,000 then $5,000**; cap **$40,500**; ECC **$500**. |
+| Q = $40,000; prior balance exactly $500,000; ledger unknown | Apply **nil**; cap **$32,500**; ECC **$7,500**. Equality fails the less-than condition. |
+| Q = $40,000; prior balance unknown; all 5 eligible previous-year unused amounts proved nil | Apply **nil**; cap **$32,500**; ECC **$7,500**. A proved nil ledger makes the balance immaterial to this component. |
+| Q = $40,000; prior balance $499,999; only an expired 2020-21 record of $10,000, with the previous 5 years proved nil | Apply **nil**; cap **$32,500**; ECC **$7,500**. The expired record cannot increase the cap. |
+| Q = $34,000; prior balance $499,999; unused 2021-22 $3,000 and 2022-23 $5,000 | Apply **$1,500 from 2021-22 only**; cap **$34,000**; ECC **nil**. The 2021-22 remainder **$1,500** expires after this year; the 2022-23 remainder is **$5,000** before its own expiry. |
+| Q = $40,000; prior balance $499,999; expired 2020-21 record $10,000 and eligible 2025-26 amount $7,500 | Apply **$7,500 from 2025-26 only**; cap **$40,000**; ECC **nil**. |
+| Q = $32,501; prior balance $499,999; eligible unused 2021-22 amount $1 | Apply **$1 from 2021-22**; cap **$32,501**; ECC **nil**. |
+
+The following 2 fictional reconciliation cases also independently establish
+RESC = $12,000 and actual allowable DedSuper = $8,000. Their classified
+Q = $40,000 includes a further $20,000 of ordinary concessional contributions
+that are not RESC or DedSuper. The taxable amount before DedSuper and
+assessable ECC is $100,000, with all other C/I adjustments and B nil. Thus
+C = $100,000 - $8,000 + ECC for these cases only. [DICT]; [IT97-SUPER,
+sections 290-150/291-15/291-25][IT97-SUPER]
+
+| Additional established balance/ledger facts | ECC and RSC/C/I reconciliation |
+|---|---|
+| Prior balance $600,000; no carry-forward available | ECC **$7,500**; RSC **$12,500**; C **$99,500**; I **$112,000**. Do not substitute RESC + DedSuper = $20,000 for Q. |
+| Prior balance $499,999; eligible unused 2021-22 $3,000 and 2022-23 $5,000 | Apply **$3,000 then $4,500**; ECC **nil**; RSC **$20,000**; C **$92,000**; I **$112,000**. |
+
+| Missing or unresolved input | Required hold |
+|---|---|
+| Gross deposits, an SG label or RESC + DedSuper without statutory Q classification | **Needs Input** for Q; do not substitute that total. |
+| Defined-benefit, protected/notional/transitional or Commissioner modification is unknown or unresolved | **Needs Input** for the applicable excess computation; the ordinary worksheet cannot settle it. |
+| Q exceeds G, the eligible ledger is not proved nil and required prior total superannuation balance is unknown | **Needs Input**; do not default to the higher-tax no-carry result. |
+| Q exceeds G, prior balance is below $500,000 and a required unused-year entitlement, zero or prior-use record is unproved | **Needs Input** for the eligible ledger and ECC; do not count current/future amounts or use a provisional carry-forward figure. |
+| Contribution year, prior-balance date or ledger year cannot be reconciled | **Needs Input** for the affected input; no cross-year substitution. |
+| ECC is computed but actual DedSuper, RESC, C/B or another I adjustment remains unknown | **Needs Input** for the downstream RSC/surcharge result; a known ECC clears none of those gaps. |
+| A complete deduction, special-case excess, offset/release/payment or country return is requested | **Needs Input** for remaining operative rules, mandatory outputs and qualified review. |
+
 
 ### Single-person surcharge component boundaries
 
@@ -1152,7 +1276,7 @@ be filled with a fictional calendar or a bank-label inference.
 |---|---|
 | 1. Year, filing unit and residence | Ordinary individual year and residence screening; complex residence/periods held. |
 | 2. Income categories | General inclusion framework only; receipt-specific derivation/exemptions remain open. |
-| 3. Rates and levies | Selected ordinary tables, section 7/8/9 levy reductions and ordinary single/family/period and supported survivor surcharge components, plus the bounded RSC input worksheet; unresolved special adjustments, benefit entitlements and held relationship/child-count branches remain incomplete. |
+| 3. Rates and levies | Selected ordinary tables, section 7/8/9 levy reductions and ordinary single/family/period and supported survivor surcharge components, plus bounded RSC and ordinary cap/carry-forward excess worksheets; unresolved special adjustments, benefit entitlements and held relationship/child-count branches remain incomplete. |
 | 4. Allowances and credits | Ordinary LITO and selected special-area zone eligibility/base; dependant/service branches, other offsets and complete ordering remain open. |
 | 5. Expenses | General connection, standard work-expense deduction and selected evidence/asset-transition rules; full expense/asset methods and remaining deductions stay open. |
 | 6. Loss relief | Open; no utilisation determination. |
@@ -1176,7 +1300,10 @@ recompute individual caps, family allocation and excess transfers before day
 reductions; reconcile annual surcharge I/C/B, annual tier selection and each
 period's separate income screen; verify the RSC zero floor, corresponding
 income/financial years and C reconciliation without duplicate deduction or
-excess inclusion; verify year-end marriage, any-day non-spouse
+excess inclusion; verify statutory Q, the period-labelled general cap, any
+required prior balance and eligible unapplied ledger, the strict balance
+limit, oldest-first application only to the excess and remaining-year expiry;
+verify year-end marriage, any-day non-spouse
 dependants, child thresholds and the whole/part-year marriage distinction;
 check statutory endpoints, relevant-person uninsured unions, limited cover
 deeming and each dated cover/prescribed intersection for both charges; verify benefit
@@ -1229,8 +1356,32 @@ The RSC worksheet uses TAA compilation 227 of 1 October 2026, Schedule 1
 section 16-182, and selected Subdivisions 290-C and 291-B/291-C of ITAA97
 compilation 268. Current official HTML and native PDF both omit paragraph
 26-55(2)(b); no assumed text or deduction-limit formula is restored here.
-Actual DedSuper, ECC and their underlying entitlement/amount conditions
-remain independently established inputs. [TAA]; [CORE]; [IT97-SUPER]; [DICT]
+Actual DedSuper and special-case ECC remain independently established
+inputs. Ordinary ECC can instead be calculated from independently
+established Q and the applicable balance/ledger facts under the bounded
+worksheet above. [TAA]; [CORE]; [IT97-SUPER]; [DICT]
+
+The ordinary cap worksheet uses ITAA97 sections 291-20/291-25 and the
+section 960-285 index, together with the ATO page updated 2 July 2026 that
+expressly publishes $32,500 from 1 July 2026. The selected Original ABS
+full-time adult ordinary-time earnings series A85002148L gives $2,051.10
+for November 2025 and $1,533.40 for November 2016. Their ratio rounds to
+1.338; $25,000 multiplied by 1.338 is $33,450, rounded down to the $2,500
+multiple $32,500. The release-specific Table 3 workbooks and pre-release
+internal timestamps corroborate these inputs; no explicit numerical revision
+history was found, and timestamps alone do not prove immutability. The
+stated cap relies on the current authoritative ATO amount, with this
+statutory reproduction as corroboration. The page's adjacent quarterly SG
+payment text is not adopted as a 2026-27 payment rule. [CC-CAP-ATO];
+[ABS-CC-2016]; [ABS-CC-2025]; [DICT, sections 960-265/960-280/960-285][DICT]
+
+Version 1.0, 23 October 2026: adds the ordinary concessional-cap,
+carry-forward and ECC worksheet, 13 numeric cap cases, 2 RSC/C/I
+reconciliations and 7 held-input rows. Carry-forward uses only eligible
+previous-five-year amounts, oldest first and only to the extent needed.
+Unknown required facts and all special-branch, deduction, final-output and
+comprehensive-country holds remain.
+
 
 Version 0.9, 23 October 2026: adds the bounded RSC zero-floor worksheet,
 11 fictional input/reconciliation instances and 6 held-input rows. Distinct
@@ -1267,6 +1418,9 @@ selected substantiation/asset transitions and verified local special-area
 zone rules. Version 0.1 introduced the selected personal-rate, LITO and
 Medicare reference. Both retain explicit incomplete-domain holds.
 
+[CC-CAP-ATO]: https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/concessional-contributions-cap
+[ABS-CC-2016]: https://www.ausstats.abs.gov.au/ausstats/meisubs.nsf/0/BF933648CF3B3FF5CA2580CF000D5066/$File/6302003.xls
+[ABS-CC-2025]: https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/average-weekly-earnings-australia/nov-2025/6302003.xlsx
 [IT97-SUPER]: https://www.legislation.gov.au/C2004A05138/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_6/document_6.html
 [MLS-DEATH-DAYS]: https://www.ato.gov.au/individuals-and-families/your-tax-return/instructions-to-complete-your-tax-return/mytax-instructions/2026/medicare-and-private-health-insurance/medicare-levy-surcharge/mytax-2026-number-of-days-you-dont-have-to-pay-the-mls
 [MLS-FB]: https://www.legislation.gov.au/C2004A00412/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
