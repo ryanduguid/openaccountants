@@ -28,6 +28,7 @@
 21. `nf-tax-records.md`
 22. `nf-tax-system.md`
 23. `nf-transfer-pricing.md`
+24. `nf-uk-treaty-relief.md`
 
 ## Shared files this package needs
 
