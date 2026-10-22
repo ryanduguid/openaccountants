@@ -6,7 +6,7 @@ description: >
   gates, ordinary resident and foreign-resident personal rates, conditional
   part-year threshold, low income tax offset, standard work-expense deduction,
   substantiation changes, special-area zone relief and ordinary Medicare
-  reductions and a bounded single-person surcharge component. Use for
+  reductions, single-person and family/period surcharge components. Use for
   Cocos (Keeling) Islands personal tax, ordinary annual rates, mainland moves or
   levy-exemption questions. Includes primary legislation, fictional component
   calculations, required intake, refusals and reviewer checks. This source-cited
@@ -18,7 +18,7 @@ tax_year: 2026
 tax_year_notes: "Selected ordinary personal rates for 1 July 2026 to 30 June 2027; adjacent years and Medicare conditions require their separately identified sources"
 tier: 2
 last_updated: 2026-10-23
-version: 0.6
+version: 0.7
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -480,9 +480,9 @@ rounding stage remain an engagement source condition here. The examples
 below are unrounded components, not approved assessment amounts.
 [TAA]; [TAA-SCHEDULE]; [RESIDENCE, section 6(1)][RESIDENCE]
 
-The bounded ordinary single-person surcharge component follows below.
-Family/part-year relationship branches, special surcharge income/benefit
-adjustments, arrears and special superannuation adjustments remain unresolved.
+The ordinary single-person and family/relationship-period surcharge
+components follow below. Special surcharge income/benefit adjustments,
+arrears and special superannuation adjustments remain unresolved.
 Unknown cover does not mean no cover, and nil ordinary levy does not prove
 nil surcharge. Do not use historical island guidance to override the
 checked current charge and conditional exemption rules.
@@ -492,8 +492,8 @@ checked current charge and conditional exemption rules.
 This section supports a 2026-27 component working paper for an adult who
 is an Australian tax resident, unmarried and without surcharge dependants
 throughout the income year. Establish those facts for every day before using
-this branch. A spouse or dependant at any time requires the complete annual
-tier and period rules, even if the person is single at year end. Registered
+this branch. A spouse or dependant at any time routes to the family/period
+section below, even if the person is single at year end. Registered
 and genuine domestic relationships can count as marriage; living separately
 and apart and a spouse's death have statutory consequences. A return label
 of 'single' alone does not settle them. [MEDICARE, sections 251R/251V][MEDICARE];
@@ -515,12 +515,12 @@ Keep 3 amounts separate, with their evidence and reconciliation:
   this is taxable income plus reportable fringe benefits, reportable
   superannuation contributions and total net investment loss. It selects
   the annual threshold and rate, rather than the charge base.
-- **C:** annual taxable income for the section 8B charge. Section 3(2A)
+- **C:** annual taxable income for the sections 8B-8D charge. Section 3(2A)
   disregards Schedule 2F subsection 271-105(1); do not simply copy a return's
   taxable-income label where a trust-distribution adjustment applies.
 - **B:** annual reportable fringe benefits total, independently reconciled
   across employers under FBTAA section 135N. It has a separate charge under
-  sections 10-12 of the fringe-benefits surcharge Act.
+  sections 10-16 of the fringe-benefits surcharge Act.
 
 For these ordinary inputs, require non-negative amounts and an I worksheet
 reconciling C + B + the separately established reportable-super and
@@ -573,8 +573,8 @@ that an administrative whole-dollar range fills every precision question.
 This is a flat rate on the relevant charge bases once the annual threshold
 is exceeded, not a marginal charge only on the excess. Sections 3A and 6
 modify the PHI family test for surcharge. The singles table here assumes no
-spouse or surcharge dependant throughout the year; family thresholds and
-married/dependant periods remain outside this component. [LEVY, sections
+spouse or surcharge dependant throughout the year; use the family/period
+section for other established relationship/dependant histories. [LEVY, sections
 3A/8B][LEVY]; [MLS-FB, sections 6/12][MLS-FB]; [PHI, section 22-30][PHI]
 
 For each day, establish both qualifying private patient hospital cover and
@@ -616,18 +616,150 @@ assessment rounding stage. The separate charging provisions, including
 their formula image alternatives, support these fractions. [LEVY, section
 8B][LEVY]; [MLS-FB, sections 10-12][MLS-FB]
 
+## Medicare surcharge: family and relationship periods
+
+Use this component for a 2026-27 full-year resident adult with independently
+established ordinary I/C/B as above, an established relationship/dependant
+history and proved hospital-cover and prescribed-person facts. It supports
+unmarried dependant periods, marriage throughout the year and marriage for
+part of the year, including an established separation/reunion timeline with
+one identified spouse. It does not calculate the special income/base or
+benefit-valuation branches held above, a deceased person's return, competing
+or successive spouse cases or unresolved changing child-count thresholds.
+Those cases require the missing rules and evidence before computation.
+
+### Establish relationships, dependants and annual classification
+
+Record the actual dates of legal marriage, prescribed registered relationship,
+genuine domestic relationship and living separately and apart. A temporary
+absence or different address alone does not prove separation. The competing
+relationship provisions can displace a legal/registered relationship. If the
+last spouse dies while they are married, MLA section 3(3A) and the benefits
+Act section 7(3) continue marriage through 30 June. Do not create unmarried
+post-death days or substitute MLA's general last-day death deeming for the
+benefits Act definition used by the annual PHI test. A death or competing/
+successive relationship remains Needs Input here for the complete timeline,
+dependant/cover treatment and computation. [MEDICARE, section 251R(2)/(2A)][MEDICARE];
+[LEVY, section 3(3)/(3A)][LEVY]; [MLS-FB, section 7][MLS-FB]; [MLS-FAMILY]
+
+A surcharge dependant requires Australian residence, maintenance and the
+specified relationship: spouse, child under 21 or child aged 21 to 24 receiving
+full-time education at a school, college or university. Establish the statutory
+child relationship; an insurance policy's dependent-person label is not enough.
+Cohabitation creates a rebuttable maintenance rule. For surcharge, disregard
+ordinary-levy subsections 251R(4), (5), (6B), (6C) and (6D): do not remove a
+student for lack of the ordinary notional offset, prorate shared care by the
+ordinary FTB rule or import an ordinary family-agreement removal. A working
+spouse can still be maintained. [MEDICARE, sections 251R/251V][MEDICARE];
+[MLS-FB, section 5][MLS-FB]; [DICT, sections 995-1/960-255][DICT]; [MLS-FAMILY]
+
+First select the **annual** tier 2/tier 3 classification, separately from the
+charging tests below:
+
+1. If married on 30 June under the benefits Act definition, use the family
+   table and add that spouse's full annual I to own annual I. Do not allocate
+   the spouse's income only to married days.
+2. Otherwise, if a non-spouse surcharge dependant existed on any day, use the
+   family table with own annual I. This is the surcharge modification to PHI
+   section 22-30(1)(b), not its unmodified private-health-rebate test.
+3. Otherwise use the singles table with own annual I, even if there were
+   married days earlier in the year. [LEVY, section 3A][LEVY]; [MLS-FB, section
+   6][MLS-FB]; [PHI, section 22-30][PHI]
+
+For the established constant number n of qualifying dependant children,
+**F1 = $210,000 + $1,500 × max(n - 1, 0)**, **F2 = $246,000 + the same
+increment** and **F3 = $328,000 + the same increment**. Thus 0 or 1 child
+leaves the thresholds unchanged; 2 gives $211,500/$247,500/$329,500 and 3
+gives $213,000/$249,000/$331,000. A proved timeline with no more than one
+identified qualifying child also leaves the thresholds unchanged. Where
+changing counts involving 2 or more children affect the increment, hold the
+threshold until its temporal application is resolved; do not invent a maximum,
+year-end or daily-prorated counting rule. These are surcharge dependants, not
+ordinary levy qualifying children or everyone on the policy. [PHI, section
+22-40][PHI]; [MLS-ATO]
+
+Let A be the annual classification income from steps 1-3. Use F2/F3 if the
+family table applies, or $123,000/$164,000 if the singles table applies.
+The **conditional charging rate r is 1.5% if A exceeds the applicable tier 3
+threshold, 1.25% if A exceeds tier 2 but not tier 3, otherwise 1%**. The
+last case includes annual income below the family tier 1 threshold. It does
+not establish a charge by itself: each period must pass its own income test.
+In particular, do not apply a global 0% merely because A is below F1; a
+child-free unmarried period can still pass the singles charging test.
+[LEVY, sections 8B(2)-(4)/8C(3)-(5)/8D(3)-(4B)][LEVY]; [MLS-FB, sections
+12-16][MLS-FB]; [PHI, section 22-30][PHI]
+
+### Apply each period's income, cover and prescribed-person tests
+
+Partition the year into disjoint dated sets. For each set use the actual
+relationship/dependant classification and the following annual-income screen.
+All comparisons are strict: equality fails that screen.
+
+| Period classification | Annual-income screen before any component can be charged |
+|---|---|
+| Unmarried, no surcharge dependants: MLA 8B / benefits Act 12 | Own I > $105,000. |
+| Unmarried, at least one surcharge dependant: MLA 8C / benefits Act 13 | Own I > own F1. |
+| Married, with marriage throughout the entire income year: MLA 8D(3)/(4)(a) / benefits Act 15/16(2) | Combined spouses' annual I > own F1 **and** own annual I > $28,011. |
+| Married for only part of the income year: MLA 8D(4)(b) / benefits Act 16(3) | Own annual I > own F1; combined income alone does not pass this test. |
+
+A whole-year marriage with only some chargeable cover days still uses the
+whole-year-marriage screen. The $28,011 screen is own **I**, not C, ordinary
+levy taxable income or a SAPTO threshold. Act 58's amendments apply for
+2025-26 and later assessments. Spouse-income tests have specific section 98
+trust-share inclusions and trust-rule modifications; do not compute an actual
+trust case from these ordinary inputs. [LEVY, sections 8B-8D][LEVY]; [MLS-FB,
+sections 12-16][MLS-FB]; [LEVY-AMEND, Schedule 5 items 1/10/11/14][LEVY-AMEND]
+
+For unmarried/no-dependant days, cover fails when the taxpayer is uncovered.
+For the dependant and married branches, it fails when the taxpayer **or at
+least one relevant dependant** is uncovered. Form the union of those uncovered
+day sets, rather than adding overlaps or checking only the taxpayer's policy.
+For this cover test only, disregard a dependant who is prescribed or would
+be prescribed apart from section 251U(2). That exclusion does not remove the
+dependant from annual family classification or the qualifying-child count.
+Prove each person's status and dates, including residence, maintenance and
+any certificate/underlying entitlement. Unknown status is Needs Input.
+[LEVY, sections 8B(1)/8C(1)/8D(1)][LEVY]; [MLS-FB, sections 12-14][MLS-FB]
+
+The taxpayer must also be non-prescribed under the surcharge rules. There
+is a limited further cover deeming: where ITAA36 section 251VA removes an
+ordinary half-period prescribed concession, MLA sections 8C(2)/8D(2) deem
+that taxpayer covered **only for the family cover test**. The benefits Act
+sections 13(2)(a)/14(2)(a) expressly list the corresponding section 251U(1)(a),
+(b), (ca), (caa) and (cb) categories, apart from the dependant condition in
+251U(2). This does not create a global prescribed exemption: an uncovered
+non-excluded dependant can still cause chargeable days. Do not extend the
+listed cover deeming to every exemption category or copy the ordinary half-day
+concession. Actual entitlement must be independently established; the category
+name alone is insufficient. [MEDICARE, sections 251U/251VA][MEDICARE]; [LEVY,
+sections 8C(2)/8D(2)][LEVY]; [MLS-FB, sections 8/13(2)/14(2)][MLS-FB]
+
+For each branch j, retain separate supported day counts D-C-j and D-B-j for
+the taxable-income and benefits charges after all relationship, dependant,
+cover and prescribed-person conditions. A failed income screen contributes
+zero. Where it passes, compute **C × r × D-C-j / 365** and **B × r × D-B-j /
+365**. Sum each charge's disjoint branch components, then report both and
+their combined unrounded component separately from ordinary levy and other
+taxes/offsets. Reconcile both statutory day ledgers before using identical
+counts. Do not double count overlapping uninsured people or assign annual
+income to receipt dates. Preserve exact fractions and the final assessment
+rounding hold. [LEVY, sections 8B-8D][LEVY]; [MLS-FB, sections 11-16][MLS-FB]
+
 ## Intake, patterns, defaults and refusals
 
 Confirm the person's legal capacity, year and accounting period; residence
 history and evidence under each relevant test; treaty/temporary-resident
 questions; income categories, sources and derivation; complete deductions
 and losses; special-rate components; all offsets; withholding and prepayments;
-year-end family status, both spouses' annual taxable incomes, separately
+year-end family status, both spouses' annual taxable incomes and separate
+surcharge I amounts, actual marriage/separation and dependant timelines,
+qualifying-child count/threshold worksheet, separately
 verified SAPTO/qualifying-child entitlements, dependant maintenance, Medicare
 entitlement/certificate and full/half prescribed and cover periods;
 separate surcharge I/C/B worksheets, every employer's reportable-benefits
 reconciliation, super/investment-loss classifications, actual hospital
-policy/excess/suspension records and distinct surcharge day sets;
+policy/excess/suspension records, each relevant dependant's status and
+distinct surcharge day sets for both charges, with each income screen;
 qualifying labour-income/withholding categories, allowable reducing expenses,
 asset use and pool history, usual zone residence dates, prior zone claims,
 remote area allowances and overlapping service; foreign currency records;
@@ -767,8 +899,56 @@ they are not added to C or B as charge bases. [DICT]; [LEVY, section 8B][LEVY];
 | I = C = $150,000; B = $0; D = 146 | Rate 1.25%; component **$750**. |
 | I = C = $180,000; B = $0; D = 146 | Rate 1.5%; component **$1,080**. |
 | I, B, actual policy terms/dates or prescribed status unknown | **Needs Input**. No assumed zero, no assumed uninsured period and no final component. |
-| A spouse or surcharge dependant existed at any time, including a domestic/registered relationship or relevant spouse-death period | **Needs Input** for the complete family/period rules; this singles branch cannot determine the annual tier or full surcharge. |
+| A spouse or surcharge dependant existed at any time, including a domestic/registered relationship or relevant spouse-death period | Route to the family/period section. This singles-only shortcut cannot select the annual tier or full surcharge; unresolved or held family cases remain **Needs Input**. |
 | FHSS, trust-distribution, exempt foreign employment or special super/arrears condition unresolved | **Needs Input** for the relevant adjustment law, annual inputs and charge bases. |
+
+### Family and period surcharge component boundaries
+
+These cases stipulate the ordinary annual inputs, full-year resident adult,
+proved classifications and cover/prescribed day sets above. All special
+adjustments are established absent. Amounts are unrounded components, not
+complete returns. Unless stated otherwise, there are no qualifying children,
+the same relevant maintained resident spouse exists throughout the year,
+neither person is prescribed, B = $0 and all 365 days pass the cover test.
+The spouse's figure is annual I. r is conditional on the separate income
+screen; it is not a substitute for that screen. [LEVY, sections 3A/8B-8D][LEVY];
+[MLS-FB, sections 5-8/11-16][MLS-FB]; [PHI, sections 22-30/22-40][PHI]; [MLS-ATO]
+
+| Established fictional inputs or failed gate | Selected component result |
+|---|---|
+| Own I = C = $100,000; spouse I = $110,000 | Combined $210,000 equals F1: **nil**. |
+| Same own amounts; spouse I = $110,001 | Combined $210,001; r 1%: **$1,000**. |
+| Same own amounts; spouse I = $146,000 | Combined $246,000; r 1%: **$1,000**. |
+| Same own amounts; spouse I = $146,001 | Combined $246,001; r 1.25%: **$1,250**. |
+| Same own amounts; spouse I = $228,000 | Combined $328,000; r 1.25%: **$1,250**. |
+| Same own amounts; spouse I = $228,001 | Combined $328,001; r 1.5%: **$1,500**. |
+| Own I = C = $28,011; spouse I = $200,000 | Combined exceeds F1, but own I equals the individual screen: **nil**. |
+| Own I = C = $28,012; spouse I = $200,000 | r 1%; taxable-income component **$280.12**. |
+| C = $26,000; independently established reportable super $2,012; own I = $28,012; spouse I = $200,000 | r 1%; component **$260**. I, rather than C, passes the individual screen. |
+| C = $109,500; B = $10,950; own I = $120,450; spouse I = $109,550 | r 1%; components **$1,095 + $109.50 = $1,204.50**. |
+| Same annual amounts; only 100 days pass both charges' cover/prescribed tests | Whole-year marriage screen retained; **$300 + $30 = $330**. |
+| Same annual amounts; taxpayer and all relevant dependants covered throughout | Both components **nil**. |
+| Same annual amounts; taxpayer uninsured 20 days, spouse uninsured 15, overlap 5 | Distinct union 30 days; **$90 + $9 = $99**. |
+| Same annual amounts; taxpayer covered throughout, relevant spouse uncovered 100 days | **$300 + $30 = $330**; personal cover alone does not remove liability. |
+| Own I = C = $100,000; 2 qualifying children throughout; spouse I = $111,500 / $111,501 | F1 $211,500: **nil / $1,000**. |
+| Same own amounts and 2 children; spouse I = $147,500 / $147,501 | F2 $247,500: r 1% / 1.25%; **$1,000 / $1,250**. |
+| Same own amounts; 3 qualifying children throughout; spouse I = $231,000 / $231,001 | F3 $331,000: r 1.25% / 1.5%; **$1,250 / $1,500**. |
+| Unmarried throughout; one qualifying child throughout; I = C = $210,000 / $210,001; all uncovered | Own F1 screen: **nil / $2,100.01**. |
+| Same unmarried/one-child conditions; I = C = $246,000 / $246,001 | r 1% / 1.25%; **$2,460 / $3,075.0125**. |
+| Same unmarried/one-child conditions; I = C = $328,001 | r 1.5%; **$4,920.015**. |
+| Unmarried throughout; I = C = $150,000; one qualifying child only for 219 days; all uncovered | Annual family classification below F1 gives no uplift, rather than global 0%. The 146 child-free days pass 8B/12: **$600**; dependant days fail own F1 screen. |
+| I = C = $150,000; married for 219 days including 30 June; spouse annual I = $100,000; no dependants in the other 146 unmarried days; all uncovered | Annual family A $250,000 gives r 1.25%; unmarried component **$750**. Married days fail own I > F1 despite combined income exceeding F1. |
+| Same amounts and day split, but separated for the final 146 days; no non-spouse dependant on any day | Annual singles A $150,000 gives r 1.25%; unmarried component **$750**. Prior spouse income is not added to A. |
+| I = C = $219,000; spouse I = $0; married only 100 days including 30 June; remaining unmarried days covered | Own I > F1 and annual family r 1%; married-period component **$600**. |
+| I = C = $210,000; spouse I = $200,000; married only 100 days including 30 June; remaining unmarried days covered | Annual family r 1.5%, but own I equals F1: both selected components **nil**. Combined income alone does not pass the married-period screen. |
+| Unmarried throughout; one maintained resident 22-year-old child in full-time university education throughout; no ordinary notional student offset; I = C = $210,001; all uncovered | Surcharge disregards 251R(4); child remains a dependant, F1 $210,000: **$2,100.01**. |
+| Unmarried throughout; one qualifying maintained resident child throughout; parents separated, ordinary FTB care share 50%; I = C = $219,000; all uncovered | Do not halve the surcharge dependant period under 251R(5); 365 days gives **$2,190**. |
+| C = $219,000; B = $21,900; I = $240,900; unmarried with one child throughout; taxpayer independently established within the listed half-period category, but not prescribed because the child is non-prescribed; child covered except 100 days | Limited deeming covers taxpayer for the family test, but the child's 100 uncovered days give **$600 + $60 = $660**. |
+| Same annual amounts and status; child covered throughout | Both components **nil** from the proved cover test, not a global prescribed exemption. |
+| Unmarried throughout; I = C = $219,000; one qualifying child throughout independently proved prescribed apart from 251U(2); taxpayer non-prescribed, uncovered 100 days and otherwise covered | Child remains in annual family classification but is disregarded for cover; taxpayer's 100 days give **$600**. |
+| Changing qualifying-child counts involving 2 or more, unresolved relationship/death classification or unproved maintenance/residence/education | **Needs Input** for the affected threshold, period or classification; no assumed annual count or unmarried post-death days. |
+| Unknown spouse I, I/C/B reconciliation, policy/member/excess/dates, prescribed entitlement or special adjustment | **Needs Input**; no zero-income, covered, exempt or whole-year-marriage assumption. |
+| Complete return, final assessed rounding or trustee/special-income computation requested from these cases | **Needs Input** for the remaining sources, mandatory slots and qualified review. |
 
 ## Outputs, contract coverage and checks
 
@@ -788,7 +968,7 @@ be filled with a fictional calendar or a bank-label inference.
 |---|---|
 | 1. Year, filing unit and residence | Ordinary individual year and residence screening; complex residence/periods held. |
 | 2. Income categories | General inclusion framework only; receipt-specific derivation/exemptions remain open. |
-| 3. Rates and levies | Selected ordinary tables, section 7/8/9 levy reductions and the bounded single/no-dependant surcharge component; special adjustments, benefit entitlements and other surcharge branches remain incomplete. |
+| 3. Rates and levies | Selected ordinary tables, section 7/8/9 levy reductions and ordinary single/family/period surcharge components; special adjustments, benefit entitlements and held relationship/child-count branches remain incomplete. |
 | 4. Allowances and credits | Ordinary LITO and selected special-area zone eligibility/base; dependant/service branches, other offsets and complete ordering remain open. |
 | 5. Expenses | General connection, standard work-expense deduction and selected evidence/asset-transition rules; full expense/asset methods and remaining deductions stay open. |
 | 6. Loss relief | Open; no utilisation determination. |
@@ -809,8 +989,11 @@ reconcile each section 25-130 reducing branch and its exceptions; verify
 substantiation, travel nights, retention and asset history; distinguish zone
 classification from usual residence and check allowances/service overlap;
 recompute individual caps, family allocation and excess transfers before day
-reductions; reconcile annual surcharge I/C/B, the statutory threshold
-endpoints and each dated cover/prescribed intersection; verify benefit
+reductions; reconcile annual surcharge I/C/B, annual tier selection and each
+period's separate income screen; verify year-end marriage, any-day non-spouse
+dependants, child thresholds and the whole/part-year marriage distinction;
+check statutory endpoints, relevant-person uninsured unions, limited cover
+deeming and each dated cover/prescribed intersection for both charges; verify benefit
 reporting inputs before applying the separate charge bases; keep levy,
 surcharge and other offsets separate; substantiate every exemption
 period and dependant condition; preserve missing-slot holds; reconcile
@@ -843,11 +1026,19 @@ The surcharge reference uses PHI compilation 42 of 19 September 2026,
 fringe-benefits surcharge Act compilation 42 of 1 July 2026 and selected
 FBTAA compilation 97 provisions of 1 July 2026. The ATO threshold page,
 updated 22 June 2026, explicitly labels 2026-27; the cover page was updated
-30 April 2026. The statutory index mechanism was checked, but immutable
+30 April 2026. The family/dependant page was updated 21 August 2026.
+The statutory index mechanism was checked, but immutable
 first-publication provenance for its ABS inputs is not established here.
 The stated amounts therefore rely on the authoritative administration table,
 not a claim of independently proven first-published index inputs.
-[PHI]; [MLS-FB]; [FBT-REPORTING]; [MLS-ATO]; [MLS-COVER]
+[PHI]; [MLS-FB]; [FBT-REPORTING]; [MLS-ATO]; [MLS-COVER]; [MLS-FAMILY]
+
+Version 0.7, 23 October 2026: adds ordinary family and relationship-period
+surcharge mechanics, separate annual-tier and period-income screens,
+constant-child thresholds, relevant-dependant cover unions and limited
+cover deeming. Component boundaries include below-family-base unmarried
+periods. Special adjustments, uncertain changing child counts, death/competing
+relationships, final precision and complete-return holds remain.
 
 Version 0.6, 23 October 2026: adds the ordinary full-year resident single
 adult surcharge component, distinct annual income/charge bases, hospital
@@ -867,6 +1058,7 @@ Medicare reference. Both retain explicit incomplete-domain holds.
 [MLS-FB]: https://www.legislation.gov.au/C2004A00412/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
 [PHI]: https://www.legislation.gov.au/C2007A00031/2026-09-19/2026-09-19/text/original/epub/OEBPS/document_1/document_1.html
 [MLS-ATO]: https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates
+[MLS-FAMILY]: https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/family-and-dependants-for-medicare-levy-surcharge-purposes
 [MLS-COVER]: https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/paying-the-medicare-levy-surcharge/appropriate-level-of-private-patient-hospital-cover
 [FBT-REPORTING]: https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_2/document_2.html
 [FBT-VALUES]: https://www.legislation.gov.au/C2004A03280/2026-07-01/2026-07-01/text/original/epub/OEBPS/document_1/document_1.html
