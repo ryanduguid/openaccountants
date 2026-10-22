@@ -1,0 +1,13 @@
+# Christmas Island and Cocos: restore reviewed examples and companion routing
+
+The current main branch had lost the reviewed GST delivery cases from PR #328. The SG integration in PR #334 replaced the explicit mainland-delivery example and removed the paired island-collection case. PR #329 subsequently removed SG companion routing from both tax-system guides and both income-tax guides and lowered their versions from 0.3 to 0.2.
+
+I restored the 2 GST cases verbatim from reviewed commit 6e8b86cf669d6baa52544e503250977f413c0640. The customer remains mainland-resident in both cases; physical delivery at a mainland location and physical collection on an island produce different section 9-25(1) connection conclusions. Other connection and charging conditions remain separate. These are component examples, not final GST liabilities.
+
+I restored the 4 SG routing paragraphs from parent 51e12f8fb182ae82eb0370a5da0e16c6a2fb99da. The published SG companions remain at v0.5 and retain their own source, operational and professional limits. Their substantive rules are unchanged. The repaired guides advance to v0.4, beyond the previously published v0.3. Scope-guide body metadata matches. The tax-system guides again contain 10 and 12 fictional cases respectively.
+
+The repository's existing strict metadata check reproduces the version regression on the actual PR #329 parent and published result: 4 version-regression errors and 4 unversioned-body-change errors. This is an integration error, not a missing checker. Future integration checks must examine the actual proposed destination tree against its current base. The verification index already retained all relevant rows; no old verification entry was removed or rewritten by this repair.
+
+This restoration introduces no new rate, threshold, deadline or calculation. It reuses the captured GST provisions and their review evidence; it does not reverify all operative law on 23 October 2026. Source-law verification dates, closed compilation intervals and outstanding coverage remain explicit. No model behaviour, complete return, complete payroll, comprehensive country acceptance or accountant sign-off is established. All 4 guides remain Tier 2, pending_review, with verified_by: pending.
+
+Packages and the index are regenerated from the repaired source guides. The stale country report is also regenerated: each island has 3 indexed guides and Norfolk Island has 23; these counts do not establish complete coverage. Required local checks, assembled-bundle comparisons, independent review and publication checks are recorded on the repair PR against its exact candidate revision.

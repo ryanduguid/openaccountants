@@ -16,8 +16,8 @@ category: international
 tax_year: 2026
 tax_year_notes: "Selected ordinary personal rates for 1 July 2026 to 30 June 2027; adjacent years and Medicare conditions require their separately identified sources"
 tier: 2
-last_updated: 2026-10-21
-version: 0.2
+last_updated: 2026-10-23
+version: 0.4
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -69,6 +69,10 @@ For an ordinary individual using the standard year, **2026-27 runs from
 4-10 must be read with any permitted substituted accounting period under
 1936 Act section 18. Do not derive a return or payment deadline from the
 year end. [CORE]; [DICT, section 995-1][DICT]; [RESIDENCE]
+
+Use `cx-super-guarantee` for selected 2026-27 employer SG rules. SG
+computation is separate from taxable-income and Medicare calculations;
+that companion preserves its own missing programme and operational slots.
 
 ## Period figures and ordinary personal rates
 
@@ -542,6 +546,11 @@ Medicare reference. Both retain explicit incomplete-domain holds.
 [ZONES]: https://www.legislation.gov.au/C1936A00027/2026-10-01/2026-10-01/text/original/epub/OEBPS/document_5/document_5.html
 [ATO-ZONES]: https://www.ato.gov.au/calculators-and-tools/tax-offsets-australian-zones/western-australia
 [ATO-ZONE]: https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-offsets/zone-or-overseas-forces-tax-offsets/zone-tax-offset
+
+**Revision 0.4, 23 October 2026:** restored routing to the published SG
+companion after integration removed it. The version advances beyond the
+previously published v0.3. Income-tax rules, source-law verification dates
+and outstanding coverage remain unchanged.
 
 ## Disclaimer
 

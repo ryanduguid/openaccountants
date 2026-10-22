@@ -52,7 +52,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | BY | Belarus | 8 | 0 |
 | BZ | Belize | 6 | 0 |
 | CA | Canada | 50 | 11 |
-| CC | Cocos (Keeling) Islands | 2 | 0 |
+| CC | Cocos (Keeling) Islands | 3 | 0 |
 | CD | Democratic Republic of the Congo | 6 | 0 |
 | CF | Central African Republic | 6 | 0 |
 | CG | Congo | 6 | 0 |
@@ -67,7 +67,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CU | Cuba | 6 | 0 |
 | CV | Cabo Verde | 6 | 0 |
 | CW | Curaçao | 6 | 0 |
-| CX | Christmas Island | 2 | 0 |
+| CX | Christmas Island | 3 | 0 |
 | CY | Cyprus | 6 | 5 |
 | CZ | Czechia | 7 | 0 |
 | DE | Germany | 22 | 0 |
@@ -176,7 +176,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | NA | Namibia | 6 | 0 |
 | NC | New Caledonia | 0 | 0 |
 | NE | Niger | 5 | 0 |
-| NF | Norfolk Island | 22 | 0 |
+| NF | Norfolk Island | 23 | 0 |
 | NG | Nigeria | 13 | 2 |
 | NI | Nicaragua | 7 | 0 |
 | NL | Netherlands (Kingdom of the) | 19 | 0 |
