@@ -14,10 +14,10 @@ description: >
 jurisdiction: NF
 category: international
 tax_year: 2026
-tax_year_notes: "Scope checked on 18 October 2026; Australian financial years and event-specific transition dates must be identified separately"
+tax_year_notes: "Scope checked on 20 October 2026; Australian financial years and event-specific transition dates must be identified separately"
 tier: 2
-last_updated: 2026-10-18
-version: 0.20
+last_updated: 2026-10-20
+version: 0.21
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -252,6 +252,13 @@ clocks, review extensions, evidence quality and record-failure consequences.
 It preserves the limited Norfolk acquisition-date exception and separates
 statutory dispute rules from broader ATO guidance. Actual records, notices,
 special regimes and disposal decisions remain with the reviewer.
+
+
+Use nf-transfer-pricing for selected Australian arm's length, benchmarking,
+currency, TP documentation, IDS/CBC reporting and penalty rules. It separates
+income-tax geography from catalogue/treaty/GST territory and preserves
+actual data, source and specialist-country gates. It does not establish a
+completed documentation package or comprehensive cross-border coverage.
 
 ## Classification examples and review checks
 

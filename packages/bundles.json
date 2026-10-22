@@ -3791,6 +3791,8 @@
     "nf-tax-penalties-remission.md",
     "nf-tax-records.md",
     "nf-tax-system.md",
+    "nf-transfer-pricing.md",
+    "nf-uk-treaty-relief.md",
     "README.md"
    ],
    "shared": [
@@ -3801,6 +3803,7 @@
     "income-tax-workflow-base.md",
     "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
+    "transfer-pricing-workflow-base.md",
     "vat-workflow-base.md",
     "workflow-base.md"
    ]

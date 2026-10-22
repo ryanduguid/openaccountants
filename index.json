@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-22T00:20:00+00:00",
+ "generated_at": "2026-10-22T00:32:19+00:00",
  "counts": {
-  "guides": 1943,
+  "guides": 1945,
   "jurisdictions": 250,
   "accountant_reviewed": 164
  },
@@ -2993,8 +2993,8 @@
    "verified_by": null,
    "reviewed_by": null,
    "review_status": "pending_review",
-   "tax_year": "2025",
-   "last_updated": "2026-10-11"
+   "tax_year": "2026",
+   "last_updated": "2026-10-20"
   },
   {
    "slug": "leaving-australia-tax-residency-cgt",
@@ -16124,7 +16124,33 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-18"
+   "last_updated": "2026-10-20"
+  },
+  {
+   "slug": "nf-transfer-pricing",
+   "path": "skills/international/norfolk-island/nf-transfer-pricing.md",
+   "name": "nf-transfer-pricing",
+   "jurisdiction": "NF",
+   "category": "transfer-pricing",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-20"
+  },
+  {
+   "slug": "nf-uk-treaty-relief",
+   "path": "skills/international/norfolk-island/nf-uk-treaty-relief.md",
+   "name": "nf-uk-treaty-relief",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
   },
   {
    "slug": "mk-company-formation",
