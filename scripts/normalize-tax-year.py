@@ -36,6 +36,12 @@ import os
 import re
 import sys
 
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+
+from oa_tools.cli import metadata_arguments
+
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD_INDEX = os.path.join(REPO_ROOT, "scripts", "build-index.py")
 
@@ -195,8 +201,11 @@ def process_file(rel, apply_changes):
     return result
 
 
-def main():
-    apply_changes = "--apply" in sys.argv[1:]
+def main(argv=None):
+    args = metadata_arguments("Normalise guide tax year metadata.", argv)
+    if args.help:
+        return
+    apply_changes = args.apply
     bi = load_build_index()
 
     results = []

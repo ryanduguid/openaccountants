@@ -7,7 +7,13 @@ jurisdiction does not establish that it has no registration threshold.
 
 Usage: python3 scripts/list-registration-thresholds.py [--selftest]
 """
+import argparse
 import os, re, sys, collections
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.guides import markdown_files, jurisdiction_group
 
 LABEL = re.compile(
     r'\bregistration threshold\b|\bVAT threshold\b|\bGST threshold\b'
@@ -213,19 +219,15 @@ def selftest():
 
 def main():
     out = collections.defaultdict(collections.Counter)
-    for dp, _, fns in os.walk('skills'):
-        parts = dp.split(os.sep)
-        jur = parts[2] if len(parts) >= 3 else ''
+    for path, source in markdown_files():
+        jur = jurisdiction_group(path)
         if jur in ('orchestrator', 'cross-border', 'verticals', 'integrations') or not jur:
             continue
-        for fn in sorted(fns):
-            if not fn.endswith('.md'):
-                continue
-            for line in open(os.path.join(dp, fn), encoding='utf-8', errors='replace'):
-                got = threshold_in(line, fn[:-3])
-                if got:
-                    for a in got:
-                        out[jur][a] += 1
+        for line in open(source, encoding='utf-8', errors='replace'):
+            got = threshold_in(line, os.path.basename(path)[:-3])
+            if got:
+                for a in got:
+                    out[jur][a] += 1
 
     for jur in sorted(out):
         counts = out[jur]
@@ -236,7 +238,11 @@ def main():
 
 
 if __name__ == '__main__':
-    if '--selftest' in sys.argv:
+    parser = argparse.ArgumentParser(prog='list-registration-thresholds.py',
+                                     description=__doc__.split('\n\n')[0], allow_abbrev=False)
+    parser.add_argument('--selftest', action='store_true', help='run offline extraction tests')
+    args = parser.parse_args()
+    if args.selftest:
         selftest()
     else:
-        main()
+        sys.exit(main())

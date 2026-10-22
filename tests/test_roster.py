@@ -39,6 +39,7 @@ def _load(name: str, filename: str):
 
 build_partners = _load("build_partners_for_roster_tests", "build-partners.py")
 build_index = _load("build_index_for_roster_tests", "build-index.py")
+coverage = _load("coverage_for_roster_tests", "check-coverage-claims.py")
 
 
 def g(slug, tier, reviewed_by=None, verified_by=None, jurisdiction="ZZ", last_updated="2026-01-02",
@@ -82,9 +83,12 @@ class RuleTests(unittest.TestCase):
         self.assertEqual(roster.reviewer_name(g("a", 2, reviewed_by="Bob Attribution")), "Bob Attribution")
 
     def test_placeholders_are_nobody(self) -> None:
-        for marker in ("pending", "None", "no", "FALSE", "-", "n/a", "tbd", "", None):
+        for marker in ("pending", "pending_review", "None", "no", "FALSE", "-", "n/a", "tbd",
+                       "", " \t\n", None, True, 42, ["Alex"], {"name": "Alex"}):
             self.assertIsNone(roster.reviewer_of(g("a", 1, reviewed_by=marker)), marker)
             self.assertIsNone(roster.reviewer_of(g("a", 1, verified_by=marker)), marker)
+            self.assertEqual(roster.reviewer_of(g("a", 1, reviewed_by=marker, verified_by="Ann Legacy")),
+                             "Ann Legacy", marker)
 
     def test_the_withheld_reviewer_counts_as_a_reviewer_but_not_a_person(self) -> None:
         self.assertEqual(roster.reviewer_of(g("a", 1, reviewed_by=WITHHELD)), WITHHELD)
@@ -124,6 +128,217 @@ class RuleTests(unittest.TestCase):
         self.assertEqual(index["counts"]["accountant_reviewed"], 1)
         self.assertEqual(index["counts"]["accountant_reviewed"], roster.headline(index["guides"])["accountant-reviewed"])
 
+    def test_index_publishes_yaml_reviewer_values_to_roster_and_coverage(self) -> None:
+        cases = {
+            "tab": ('"\\t"', None),
+            "space": ('"\\u0020"', None),
+            "pending": ('"p\\x65nding"', "pending"),
+            "pending-review": ('"pending_review"', "pending_review"),
+            "name": ('"Alex\\x20Example, CPA"', "Alex Example, CPA"),
+            "folded": (">\n  Alex Example,\n  CPA", "Alex Example, CPA"),
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            (tree / "skills").mkdir()
+            for slug, (raw, _) in cases.items():
+                (tree / "skills" / f"{slug}.md").write_text(
+                    f"---\nname: {slug}\njurisdiction: ZZ\ntier: 1\nreviewed_by: {raw}\n"
+                    "last_updated: 2026-01-02\n---\n# Body\n", encoding="utf-8")
+            with mock.patch.object(build_index, "REPO_ROOT", str(tree)):
+                index = build_index.build_index()
+        rows = {row["slug"]: row for row in index["guides"]}
+        self.assertEqual({slug: row["reviewed_by"] for slug, row in rows.items()},
+                         {slug: expected for slug, (_, expected) in cases.items()})
+        self.assertEqual(index["counts"]["accountant_reviewed"], 2)
+        self.assertEqual(roster.headline(index["guides"])["named accountants"], 1)
+        self.assertEqual([row["reviewer"] for row in roster.roster(index["guides"])], ["Alex Example, CPA"])
+        metrics, people = coverage.actual(index)
+        self.assertEqual(metrics["Distinct `reviewed_by` values"], 1)
+        self.assertEqual(len(people), 1)
+        rendered, _ = roster.render_partners(index, {"Alex Example, CPA": {"public_record": "https://example.test/alex"}})
+        self.assertIn("| Alex Example, CPA | ZZ | 2 |", rendered)
+        self.assertIn("[profile](https://example.test/alex)", rendered)
+
+    def test_index_keeps_invalid_rows_without_reviewer_claims(self) -> None:
+        cases = ("reviewed_by: pending\nreviewed_by: Alex Example, CPA",
+                 "reviewed_by: Alex Example, CPA\nreviewed_by: pending",
+                 "reviewed_by: true", "reviewed_by: 42", "reviewed_by: [Alex]",
+                 "reviewed_by: {name: Alex}", "reviewed_by: Alex\nqualifier: bad: colon",
+                 "reviewed_by: Alex Example, CPA\nextra: !!set\n  repeated:\n  repeated:")
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            (tree / "skills").mkdir()
+            for i, fields in enumerate(cases):
+                (tree / "skills" / f"bad-{i}.md").write_text(
+                    f"---\nname: bad-{i}\njurisdiction: ZZ\ntier: 1\nreview_status: current\n{fields}\n---\n# Body\n",
+                    encoding="utf-8")
+            stderr = io.StringIO()
+            with mock.patch.object(build_index, "REPO_ROOT", str(tree)), contextlib.redirect_stderr(stderr):
+                index = build_index.build_index()
+        self.assertEqual(index["counts"]["guides"], len(cases))
+        self.assertEqual(index["counts"]["accountant_reviewed"], 0)
+        self.assertTrue(all(row["reviewed_by"] is None and row["verified_by"] is None for row in index["guides"]))
+        self.assertEqual(stderr.getvalue().count("omitting reviewer claims"), len(cases))
+        problems = []
+        coverage.index_integrity(lambda *args, **kwargs: problems.append((args, kwargs)), index)
+        self.assertEqual(len(problems), len(cases))
+        self.assertEqual(coverage.actual(index)[0]["`tier: 1` (accountant-reviewed)"], len(cases))
+
+    def test_index_preserves_reviewers_for_shared_keys_and_recursive_extensions(self) -> None:
+        cases = ('first: !!str\n  ? &default =\n  : kept-one\n'
+                 'second: !!str\n  ? *default\n  : kept-two\n',
+                 'extra: !!str\n  =: kept\n  ignored: &loop [*loop]\nretained: *loop\n',
+                 'extra: !!str\n  =: kept\n  ignored: &loop {self: *loop}\nretained: *loop\n')
+        for fields in cases:
+            with self.subTest(fields=fields), tempfile.TemporaryDirectory() as tmp:
+                tree = Path(tmp)
+                (tree / 'skills').mkdir()
+                texts = {}
+                for slug, extra in (('extension', fields), ('neighbour', '')):
+                    text = (f'---\nname: {slug}\njurisdiction: ZZ\ntier: 1\n'
+                            'reviewed_by: Alex Example, CPA\nreview_status: current\n'
+                            + extra + f'---\n# {slug}\n')
+                    path = tree / 'skills' / (slug + '.md')
+                    path.write_text(text, encoding='utf-8')
+                    texts[path] = text
+                diagnostics = io.StringIO()
+                with mock.patch.object(build_index, 'REPO_ROOT', str(tree)), contextlib.redirect_stderr(diagnostics):
+                    index = build_index.build_index()
+                rows = {row['slug']: row for row in index['guides']}
+                self.assertEqual(set(rows), {'extension', 'neighbour'})
+                self.assertEqual(index['counts']['accountant_reviewed'], 2)
+                self.assertEqual(diagnostics.getvalue(), '')
+                for slug, row in rows.items():
+                    self.assertEqual(row['reviewed_by'], 'Alex Example, CPA')
+                    self.assertEqual(row['path'], f'skills/{slug}.md')
+                self.assertEqual({path: path.read_text(encoding='utf-8') for path in texts}, texts)
+
+    def test_index_withholds_merged_projections_and_contains_projection_cycles(self) -> None:
+        cases = ('extra: !!str\n  <<: {=: kept}\n',
+                 'anchor: &a\n  <<: {=: kept}\nlater:\n  extra: !!str\n    =: *a\n',
+                 'extra: !!str\n  =: &loop\n    =: *loop\n',
+                 'extra: ' + '[' * 1000 + ']' * 1000 + '\n')
+        for fields in cases:
+            with self.subTest(fields=fields), tempfile.TemporaryDirectory() as tmp:
+                tree = Path(tmp)
+                (tree / 'skills').mkdir()
+                for slug, extra in (('invalid', fields), ('neighbour', '')):
+                    (tree / 'skills' / (slug + '.md')).write_text(
+                        f'---\nname: {slug}\njurisdiction: ZZ\ntier: 1\n'
+                        'reviewed_by: Alex Example, CPA\nreview_status: current\n'
+                        + extra + f'---\n# {slug}\n', encoding='utf-8')
+                diagnostics = io.StringIO()
+                with mock.patch.object(build_index, 'REPO_ROOT', str(tree)), contextlib.redirect_stderr(diagnostics):
+                    index = build_index.build_index()
+                rows = {row['slug']: row for row in index['guides']}
+                self.assertEqual(set(rows), {'invalid', 'neighbour'})
+                self.assertEqual(index['counts']['accountant_reviewed'], 1)
+                self.assertIsNone(rows['invalid']['reviewed_by'])
+                self.assertIsNone(rows['invalid']['verified_by'])
+                self.assertEqual(rows['neighbour']['reviewed_by'], 'Alex Example, CPA')
+                self.assertIn('omitting reviewer claims', diagnostics.getvalue())
+
+    def test_index_retains_scalar_failures_and_the_valid_reviewed_row(self) -> None:
+        cases = ("last_updated: 2026-02-30", "extra: !!bool nonsense", 'extra: !!int ""',
+                 'extra: !!float ""', "last_updated: !!timestamp nonsense",
+                 'extra: !!timestamp\n  =: "2026-01-02"', 'extra: "bad\x00value"',
+                 'extra: "bad\x01value"')
+        for invalid in cases:
+            with self.subTest(invalid=invalid), tempfile.TemporaryDirectory() as tmp:
+                tree = Path(tmp)
+                (tree / "skills").mkdir()
+                for slug, fields in (("bad-scalar", invalid), ("good-date", "last_updated: 2026-02-28")):
+                    (tree / "skills" / f"{slug}.md").write_text(
+                        f"---\nname: {slug}\njurisdiction: MT\ntier: 1\n"
+                        f"reviewed_by: Alex Example, CPA\n{fields}\n---\n# Body\n", encoding="utf-8")
+                stderr = io.StringIO()
+                with mock.patch.object(build_index, "REPO_ROOT", str(tree)), contextlib.redirect_stderr(stderr):
+                    index = build_index.build_index()
+                rows = {row["slug"]: row for row in index["guides"]}
+                self.assertEqual(set(rows), {"bad-scalar", "good-date"})
+                self.assertIsNone(rows["bad-scalar"]["reviewed_by"])
+                self.assertIsNone(rows["bad-scalar"]["verified_by"])
+                self.assertEqual(rows["good-date"]["reviewed_by"], "Alex Example, CPA")
+                self.assertEqual(index["counts"]["accountant_reviewed"], 1)
+                self.assertIn("skills/bad-scalar.md", stderr.getvalue())
+                self.assertEqual(stderr.getvalue().count("omitting reviewer claims"), 1)
+                if invalid == cases[0]:
+                    self.assertRegex(stderr.getvalue(), "day.*range")
+
+    def test_coverage_reviewed_by_metric_remains_distinct_from_signoff_and_legacy(self) -> None:
+        guides = [g("attribution", 2, reviewed_by="Alex Example, CPA"),
+                  g("legacy", 1, reviewed_by="pending_review", verified_by="Ann Legacy"),
+                  g("bad", 1, reviewed_by=["Alex"])]
+        metrics, people = coverage.actual({"guides": guides})
+        self.assertEqual(metrics["Distinct `reviewed_by` values"], 1)
+        self.assertEqual(people, {coverage.normalise("Alex Example, CPA")})
+        self.assertEqual(metrics["`tier: 1` (accountant-reviewed)"], 2)
+        self.assertEqual(roster.headline(guides)["accountant-reviewed"], 1)
+
+    def test_index_only_converts_canonical_tier_values(self) -> None:
+        values = ("1", '"1"', "2", '"2"', "01", "1.0", "true", "[1]", "3")
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            (tree / "skills").mkdir()
+            for i, value in enumerate(values):
+                (tree / "skills" / f"tier-{i}.md").write_text(
+                    f"---\nname: tier-{i}\ntier: {value}\nreviewed_by: Alex Example, CPA\n---\n# Body\n",
+                    encoding="utf-8")
+            with mock.patch.object(build_index, "REPO_ROOT", str(tree)):
+                index = build_index.build_index()
+        self.assertEqual([row["tier"] for row in index["guides"]],
+                         [1, 1, 2, 2, "01", "1.0", "true", "[1]", "3"])
+        self.assertEqual(index["counts"]["accountant_reviewed"], 2)
+
+    def test_constructor_failures_keep_diagnostic_rows_and_valid_neighbour(self) -> None:
+        cases = ('extra: !!str\n  =: kept\n  repeated: first\n  repeated: second',
+                 'extra: !!str\n  =: kept\n  ignored: {repeated: first, repeated: second}',
+                 'extra: !!omap\n  - repeated: first\n  - repeated: second',
+                 'extra: !!set [x]', 'extra: !!set []', 'extra: !!map [x]',
+                 'anchor: &a {first: 1}\nextra: !!str\n  =: kept\n  ignored: !!omap\n    - *a: one\n    - {first: 1}: two',
+                 'left: &left {self: *left, marker: 1}\nright: &right {self: *right, marker: 2}\n'
+                 'extra: !!omap\n  - *left: one\n  - *right: two')
+        for extra in cases:
+            with self.subTest(extra=extra), tempfile.TemporaryDirectory() as tmp:
+                tree = Path(tmp)
+                (tree / "skills").mkdir()
+                for slug, fields in (("bad", extra), ("neighbour", "extra: {valid: true}")):
+                    (tree / "skills" / f"{slug}.md").write_text(
+                        f"---\nname: {slug}\njurisdiction: MT\ntier: 1\n"
+                        f"reviewed_by: Alex Example, CPA\nreview_status: current\n{fields}\n---\n# Body\n",
+                        encoding="utf-8")
+                stderr = io.StringIO()
+                with mock.patch.object(build_index, "REPO_ROOT", str(tree)), contextlib.redirect_stderr(stderr):
+                    index = build_index.build_index()
+                rows = {row["slug"]: row for row in index["guides"]}
+                self.assertEqual(set(rows), {"bad", "neighbour"})
+                self.assertIsNone(rows["bad"]["reviewed_by"])
+                self.assertIsNone(rows["bad"]["verified_by"])
+                self.assertEqual(rows["neighbour"]["reviewed_by"], "Alex Example, CPA")
+                self.assertEqual(index["counts"]["accountant_reviewed"], 1)
+                self.assertEqual(stderr.getvalue().count("omitting reviewer claims"), 1)
+
+    def test_index_tier_comes_from_the_mapping_not_quoted_continuation_text(self) -> None:
+        for actual, expected in (("2", 2), (None, None), ("01", "01"), ("0x1", "0x1"),
+                                 ('"1"', 1), ('"1" # comment', '"1" # comment'),
+                                 ("1\n  extra", None), ("2\n  extra", None),
+                                 ("&review-tier 1", "&review-tier 1"), ("!!int 1", "!!int 1")):
+            with self.subTest(actual=actual), tempfile.TemporaryDirectory() as tmp:
+                tree = Path(tmp)
+                (tree / "skills").mkdir()
+                text = ('---\nname: synthetic\ndescription: "Synthetic description.\n'
+                        'tier: 1\nContinued description."\nreviewed_by: Alex Example, CPA\n')
+                if actual is not None:
+                    text += f"tier: {actual}\n"
+                (tree / "skills/synthetic.md").write_text(text + "---\n# Body\n", encoding="utf-8")
+                with mock.patch.object(build_index, "REPO_ROOT", str(tree)):
+                    index = build_index.build_index()
+                self.assertEqual(index["guides"][0]["tier"], expected)
+                reviewed = int(expected == 1)
+                self.assertEqual(index["counts"]["accountant_reviewed"], reviewed)
+                partners, _ = roster.render_partners(index, {})
+                self.assertEqual("| Alex Example, CPA |" in partners, bool(reviewed))
+
 
 class RosterTests(unittest.TestCase):
     def test_rows_are_per_reviewer_most_guides_first(self) -> None:
@@ -146,6 +361,18 @@ class RosterTests(unittest.TestCase):
 
 
 class RenderTests(unittest.TestCase):
+    def test_reviewer_table_cells_escape_multiline_and_pipe_names(self) -> None:
+        name = "Alex | Example\\Practice\nCPA"
+        guides = [g("synthetic", 1, reviewed_by=name)]
+        index = {"guides": guides, "counts": {"jurisdictions": 1}}
+        text, unused = roster.render_partners(index, {name: {"public_record": "https://example.test/alex"}})
+        self.assertEqual(unused, [])
+        escaped = "Alex \\| Example\\\\Practice<br>CPA"
+        self.assertIn(f"| {escaped} | ZZ | 1 |", text)
+        self.assertIn(f"| ZZ | 1 | {escaped} (1) |", text)
+        self.assertNotIn("\nCPA |", text)
+        self.assertIn("[profile](https://example.test/alex)", text)
+
     def test_render_is_derived_from_the_index_and_the_profiles(self) -> None:
         text, unused = roster.render_partners(INDEX, PROFILES)
         self.assertEqual(unused, [])

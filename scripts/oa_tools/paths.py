@@ -1,9 +1,8 @@
 """Where the repository is and which of its trees hold guides.
 
-Every path is absolute and derived from this file's location, so a script
-gives the same answer whatever the working directory. (Many of the review aids
-under ``scripts/`` still glob relative to the working directory; they are the
-ones ``CLAUDE.md`` says to run from the repository root.)
+Every path is absolute and derived from this file's location. Review aids use
+this checkout for default scans. Explicit directory arguments are resolved
+from the caller's working directory.
 """
 
 import os

@@ -48,9 +48,15 @@ find a rate that every guide in the jurisdiction agrees on and that is wrong --
 that needs an outside source, which is what list-vat-rates.py exists to feed.
 
 Usage: python3 scripts/check-headline-cit.py [--show-skipped]
-Exit status is always 0: this is a review aid, not a gate.
+Review findings exit 0; invalid arguments exit 2.
 """
+import argparse
 import glob, io, os, re, sys, collections
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.insert(0, _HERE)
+from oa_tools.paths import REPO_ROOT
 
 # label must be the unqualified standard rate
 LABEL_OK = re.compile(r'^(standard|headline|regular|main)\b.*\b(corporate income tax|corporate tax|CIT)\b.*\brate\b', re.I)
@@ -76,14 +82,13 @@ CITE = re.compile(r'_\(.*?\)_\s*$')
 # That is the same mistake, in the checker, that the docstring above describes.
 PCT = re.compile(r'(?<![\d.])(\d{1,2}(?:\.\d+)?)\s?(?:%|percent\b)')
 
-def main():
-    show_skipped = '--show-skipped' in sys.argv
+def main(show_skipped=False):
     stated = collections.defaultdict(list)      # juris -> [(rate, path, lineno)]
     skipped = collections.defaultdict(list)
 
-    for p in sorted(glob.glob('skills/international/*/*.md')):
+    for p in sorted(glob.glob('skills/international/*/*.md', root_dir=REPO_ROOT)):
         juris = os.path.basename(os.path.dirname(p))
-        for n, line in enumerate(io.open(p, encoding='utf-8', errors='replace'), 1):
+        for n, line in enumerate(io.open(os.path.join(REPO_ROOT, p), encoding='utf-8', errors='replace'), 1):
             m = LINE.match(line)
             if not m:
                 continue
@@ -122,4 +127,8 @@ def main():
                 print('%-20s %-46s %s:%d' % (juris, label[:46], p, n))
                 print('%-20s   %s' % ('', rest))
 
-main()
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0], allow_abbrev=False)
+    parser.add_argument('--show-skipped', action='store_true', help='show qualified rate lines')
+    args = parser.parse_args()
+    main(args.show_skipped)
