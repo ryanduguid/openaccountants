@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-20T20:20:26+00:00",
+ "generated_at": "2026-10-20T16:41:50+00:00",
  "counts": {
-  "guides": 1939,
+  "guides": 1943,
   "jurisdictions": 250,
   "accountant_reviewed": 164
  },
@@ -6663,10 +6663,62 @@
    "last_updated": "2026-09-28"
   },
   {
+   "slug": "cx-income-tax",
+   "path": "skills/international/christmas-island/cx-income-tax.md",
+   "name": "cx-income-tax",
+   "jurisdiction": "CX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "cx-super-guarantee",
+   "path": "skills/international/christmas-island/cx-super-guarantee.md",
+   "name": "cx-super-guarantee",
+   "jurisdiction": "CX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
    "slug": "cx-tax-system",
    "path": "skills/international/christmas-island/cx-tax-system.md",
    "name": "cx-tax-system",
    "jurisdiction": "CX",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "cc-income-tax",
+   "path": "skills/international/cocos-keeling-islands/cc-income-tax.md",
+   "name": "cc-income-tax",
+   "jurisdiction": "CC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "cc-super-guarantee",
+   "path": "skills/international/cocos-keeling-islands/cc-super-guarantee.md",
+   "name": "cc-super-guarantee",
+   "jurisdiction": "CC",
    "category": "international",
    "tier": 2,
    "verified_by": "pending",
