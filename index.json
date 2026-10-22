@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-20T16:41:50+00:00",
+ "generated_at": "2026-10-22T00:19:09+00:00",
  "counts": {
-  "guides": 1943,
+  "guides": 1944,
   "jurisdictions": 250,
   "accountant_reviewed": 164
  },
@@ -16124,7 +16124,20 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2026",
-   "last_updated": "2026-10-18"
+   "last_updated": "2026-10-21"
+  },
+  {
+   "slug": "nf-uk-treaty-relief",
+   "path": "skills/international/norfolk-island/nf-uk-treaty-relief.md",
+   "name": "nf-uk-treaty-relief",
+   "jurisdiction": "NF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-21"
   },
   {
    "slug": "mk-company-formation",

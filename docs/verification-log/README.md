@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-21 | [Norfolk Island: selected UK treaty conditions and MLI matching](2026-10-21-norfolk-uk-treaty-relief.md) |
 | 2026-10-21 | [Christmas Island and Cocos employer super operations](2026-10-21-indian-ocean-super-operations.md) |
 | 2026-10-21 | [Christmas Island and Cocos employer super guarantee](2026-10-21-indian-ocean-super-guarantee.md) |
 | 2026-10-21 | [Christmas Island and Cocos work expenses and zone relief](2026-10-21-indian-ocean-deductions-zone.md) |
