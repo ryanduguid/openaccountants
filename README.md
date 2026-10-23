@@ -1,9 +1,12 @@
 # OpenAccountants
 
+<div align="center">
+
 **Fork status**
 
-[![Fork code quality](https://img.shields.io/codacy/grade/aae907e043db42b1ad1791f8a4d64028/main?style=flat&labelColor=000000)](https://app.codacy.com/gh/ryanduguid/openaccountants/dashboard)
-[![Fork Validate Guides](https://img.shields.io/github/actions/workflow/status/ryanduguid/openaccountants/validate.yml?branch=main&label=Fork%20Validate%20Guides&style=flat&labelColor=000000)](https://github.com/ryanduguid/openaccountants/actions/workflows/validate.yml)
+[![Fork code quality](https://img.shields.io/codacy/grade/aae907e043db42b1ad1791f8a4d64028/main?style=flat&labelColor=000000)](https://app.codacy.com/gh/ryanduguid/openaccountants/dashboard) [![Fork Validate Guides](https://img.shields.io/github/actions/workflow/status/ryanduguid/openaccountants/validate.yml?branch=main&label=Fork%20Validate%20Guides&style=flat&labelColor=000000)](https://github.com/ryanduguid/openaccountants/actions/workflows/validate.yml)
+
+</div>
 
 > [!NOTE]
 > **This is a maintained fork.** `ryanduguid/openaccountants` carries the guide
@@ -26,7 +29,11 @@
 
 Named, licensed accountants put their name, credential and review date on the guides they reviewed. Those names travelled with the guides into this tree and are the basis of every "accountant-reviewed" count below. No review is re-performed here: a guide only becomes accountant-reviewed in this fork when a named, licensed accountant signs it off in a pull request.
 
+<div align="center">
+
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-66023C?style=flat&labelColor=000000)](LICENSE)
+
+</div>
 
 <!-- oa-stats:start -->
 **1,945 Guides** across **250 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
