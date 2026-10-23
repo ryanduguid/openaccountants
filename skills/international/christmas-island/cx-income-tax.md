@@ -8,7 +8,7 @@ description: >
   substantiation changes, special-area zone relief and ordinary Medicare
   reductions, single-person, family/period and ordinary surviving spouse
   surcharge components, bounded reportable-super inputs and ordinary concessional
-  cap/carry-forward excess worksheets. Use for
+  cap/carry-forward excess and ordinary personal-super deduction worksheets. Use for
   Christmas Island personal tax, ordinary annual rates, mainland moves or
   levy-exemption questions. Includes primary legislation, fictional component
   calculations, required intake, refusals and reviewer checks. This source-cited
@@ -20,7 +20,7 @@ tax_year: 2026
 tax_year_notes: "Selected ordinary personal rates for 1 July 2026 to 30 June 2027; adjacent years and Medicare conditions require their separately identified sources"
 tier: 2
 last_updated: 2026-10-23
-version: 1.0
+version: 1.1
 review_status: pending_review
 depends_on:
   - workflow-base
@@ -582,8 +582,9 @@ For the corresponding income and financial year, independently establish:
   fund conditions, age and work conditions, excluded contribution types,
   valid timely notice, acknowledgment, variations and other denial or
   reduction provisions. The notice amount is an upper bound; a deposit,
-  notice or acknowledgment alone does not establish the deduction. This
-  worksheet does not determine DedSuper or resolve the section 26-55 limit.
+  notice or acknowledgment alone does not establish the deduction.
+  The ordinary personal-super worksheet below can establish DedSuper only
+  within its stated branch, including the section 26-55 limit.
   [IT97-SUPER, sections 290-150 to 290-180][IT97-SUPER]; [CORE, section 26-55][CORE]
 - **ECC:** final statutory excess concessional contributions for the
   corresponding financial year, after the applicable cap, carry-forward,
@@ -616,8 +617,9 @@ A known RSC does not clear a missing C, B or other I adjustment.
 
 This RSC worksheet takes established statutory inputs. The ordinary
 2026-27 cap/excess worksheet below can supply ECC only after its own
-applicable prerequisites are met. Neither worksheet determines actual
-DedSuper entitlement, special-case ECC, complete offset ordering, release
+applicable prerequisites are met. The personal-super worksheet below can
+establish bounded DedSuper entitlement. Neither of these input worksheets
+determines special-case ECC, complete offset ordering, release
 instructions or a final assessment. Every other income, benefit,
 relationship, cover, day and complete-output gate remains.
 [IT97-SUPER]; [TAA]; [DICT]
@@ -687,6 +689,131 @@ establish RESC, personal-deduction entitlement, B, another I adjustment,
 complete offset ordering, release procedure or final assessment. [IT97-SUPER,
 sections 290-150/291-15/291-20][IT97-SUPER]; [DICT]
 
+
+### Ordinary personal-super deduction: validate a chosen claim
+
+For 1 July 2026 to 30 June 2027, this worksheet can establish an ordinary
+personal deduction, **DedSuper**, for a chosen claim that passes every gate
+below. It covers direct personal cash or electronic contributions to one
+complying superannuation fund, for the individual's own benefits. It does
+not cover RSAs, employer or spouse contributions, in-specie contributions,
+rollovers, foreign-super amounts, KiwiSaver transfers or other special
+transfers. Section 290-10 supplies no alternative general deduction for a
+failed contribution. [IT97-SUPER, sections 290-5/290-10/290-150/312-15][IT97-SUPER]
+
+#### Establish entitlement and the original notice
+
+1. Record the contribution amount **P**, fund identity, receipt evidence and
+   contribution year. Cash must actually reach the provider; an electronic
+   payment must be credited to its account. Initiating a transfer before
+   30 June does not establish that year's contribution. Keep the receipt
+   date, not only the payment instruction. [TR-CONTRIB, paragraphs 12-13][TR-CONTRIB]
+2. Establish that the individual was **at least 18 at income-year end** and
+   **under 67 when contributing**. An individual turning 67 later in that
+   year is not excluded from this branch for an earlier contribution.
+   Under-18 and contributions from age 67 require their separate statutory
+   conditions and remain held here. [IT97-SUPER, section 290-165][IT97-SUPER]
+3. Establish actual complying status for the **fund's income year** in which
+   it received the contribution. Resolve all section 290-155 exclusions:
+   the Commonwealth public-sector/defined-benefit exclusion; a fund that
+   would not include the contribution under section 295-190, disregarding
+   Subdivision 295-D; and both prescribed-fund/contribution elections.
+   A public complying-fund record or reasonable belief alone is insufficient.
+   [IT97-SUPER, section 290-155][IT97-SUPER]
+4. For regulation 290-155.01, check whether **any member** has a defined
+   benefit interest and the trustee made the qualifying fund-wide election.
+   The taxpayer's accumulation interest does not clear that gate. Separately
+   resolve regulation 290-155.05 for contributions to a defined benefit
+   interest. Check each applicable election's approved notification,
+   making/revocation dates before the start of the fund's relevant income
+   year and qualifying old-regulation elections saved by section 1000-1.04.
+   Unknown election facts hold entitlement; absence from a public list is
+   not proof of no election. [SUPER-REGS, sections 290-155.01/290-155.05/1000-1.04][SUPER-REGS]
+5. Establish that no section 290-150(4) CGT retirement-exemption attribution
+   applies. Its under-55 tests refer respectively to immediately before the
+   individual's exemption choice or the company/trust contribution; they
+   are not the worksheet's ordinary age gate. Hold all such cases here.
+   Prove that P is not a downsizer, notified FHSS re-contribution or COVID-19
+   re-contribution under sections 290-167 to 290-169. Resolve any other
+   applicable denial or reduction provision before continuing.
+   [IT97-SUPER, sections 290-150/290-167/290-168/290-169][IT97-SUPER]
+6. Obtain the original **approved-form** notice for this contribution and
+   its amount **N**. Verify required information and actual delivery to the
+   trustee. For this branch there is no earlier overlapping notice, notice
+   variation, attempted revocation or additional notice. The notice alone
+   does not prove entitlement. [IT97-SUPER, sections 290-170/290-175/290-180][IT97-SUPER]; [SUPER-NOTICE]
+7. Establish the statutory endpoint: if the contribution-year return was
+   lodged before the end of the next income year, give the notice **before
+   the end of that lodgment day**; otherwise give it **before the end of the
+   next income year**. For an ordinary 30 June 2027 year end with no earlier
+   lodgment, that endpoint is the end of **30 June 2028**. Preserve the
+   actual dates and sequence. The ATO instructs taxpayers to give notice
+   and receive acknowledgment before claiming; an already-claimed return
+   without these facts needs separate correction work and is held here.
+   [IT97-SUPER, section 290-170(1)][IT97-SUPER]; [SUPER-NOTICE]
+8. At notice delivery, prove continued membership, the fund still holding
+   the whole contribution and no income stream based wholly or partly on
+   it. Also recheck section 290-155. This branch holds every withdrawal,
+   rollover, release, transfer, successor fund, changed interest and
+   contributions-splitting application. Statutory splitting invalidity
+   concerns a prior application that has **not been rejected**; a rejected
+   application still needs separate work outside this branch.
+   [IT97-SUPER, section 290-170(2)/(5)][IT97-SUPER]; [TR-CONTRIB, paragraphs 67-72][TR-CONTRIB]; [SUPER-REGS, section 290-170.01][SUPER-REGS]
+9. Obtain the fund's **actual acknowledgment** before accepting the claim.
+   A fund may refuse acknowledgment if the end-of-receipt-day interest value
+   is below the tax arising on the contribution; a sent notice or assumed
+   acknowledgment cannot pass this gate. Hold returned/refunded contributions
+   and direct or indirect returns of deductible contributions or earnings:
+   section 290-100 can separately include a non-superannuation-benefit return
+   in assessable income. [IT97-SUPER, sections 290-100/290-170(1)/(4)][IT97-SUPER]; [SUPER-NOTICE]
+
+#### Check the chosen amount and reconcile it
+
+Record a taxpayer-chosen whole-dollar claim **S**. In this first branch,
+**N must equal S**: a notice greater than the chosen claim needs separate
+fund-assessability and contribution-classification work. A notice exceeding
+an allowance is not automatically varied or withdrawn by this worksheet.
+[IT97-SUPER, sections 290-175/290-180/295-190/292-90][IT97-SUPER]
+
+Establish **AI**, assessable income for the contribution year, and **OD**,
+allowable deductions outside the section 26-55 specified pool. Independently
+prove that the other specified-pool deductions, tax losses and farm management
+deposit deductions are nil. Mixed pools, losses and FMDs remain held.
+Under that bounded construction, calculate **H = max(0, AI - OD)**.
+Paragraph 26-55(2)(b) was expressly repealed in 1999: do not restore it or
+subtract the specified pool from itself and halve H. [CORE, section 26-55][CORE];
+[SUPER-REPEAL, Schedule 3 items 1/7][SUPER-REPEAL]; [SUPER-REPEAL-EM]
+
+AI must identify any assessable **ECC** already included. Independently
+classify statutory **Q** for this same chosen notice/claim and establish
+ordinary ECC under the preceding worksheet, or separately resolve every
+applicable special rule. A fund's assessable contribution and Q do not
+follow automatically from RESC + S. Unknown or circular AI/Q/ECC inputs hold
+the claim. Changing S or the notice requires rechecking fund assessability,
+Q, ECC and AI; do not reuse inconsistent amounts or optimise the claim by
+an assumed cap. [IT97-SUPER, sections 291-15/291-25/295-190][IT97-SUPER]
+
+With all entitlement gates met, calculate the whole-dollar bound
+**W = floor(min(P, N, H))** and accept **DedSuper = S** only when S is a
+nonnegative whole dollar, **S = N** and **S <= W**, with every other
+applicable limit established. A failed bound holds the proposed deduction;
+it does not silently replace S or change a valid notice. Retain cents in P,
+AI, OD, H, Q and ECC. Whole-dollar claiming is the ATO notice/claim instruction,
+not a rule to round an allowance upwards or a final-assessment rounding
+rule. Residual contribution cents remain subject to their separately
+established non-concessional classification and cap. [SUPER-NOTICE];
+[IT97-SUPER, sections 290-150/290-175][IT97-SUPER]; [CORE]
+
+The concessional cap is **not automatically a deduction ceiling**. A claim
+above it can satisfy these deduction gates whilst producing ECC. Keep the
+cap, carry-forward, contribution classification and deduction workings
+separate. After accepting the deduction, reconcile **C = max(0, AI - OD - DedSuper)**
+only for this established ordinary no-other-pool/no-loss fixture; AI already
+contains any assessable ECC. For real C, independently reconcile every
+remaining taxable-income item. Feed DedSuper and ECC into RSC exactly once,
+then reconcile I with its remaining adjustments. Unknown RESC, B or another
+I item still holds the downstream result. No offset, release, final return,
+filing or payment decision is supplied here. [CORE, sections 4-15/26-55][CORE]; [IT97-SUPER, sections 290-150/291-15][IT97-SUPER]; [DICT]
 
 ### Annual single thresholds and charge periods
 
@@ -949,7 +1076,10 @@ applies to the survivor; separately
 verified SAPTO/qualifying-child entitlements, dependant maintenance, Medicare
 entitlement/certificate and full/half prescribed and cover periods;
 separate surcharge I/C/B worksheets, every employer's reportable-benefits
-reconciliation, RESC classification, actual allowable DedSuper, final ECC,
+reconciliation, RESC classification, actual allowable DedSuper (receipt, age,
+fund-income-year status, both prescribed elections and saved elections, excluded
+contribution types, original approved notice, delivery, acknowledgment, chosen
+claim and precise single-pool headroom), final ECC,
 RSC/C year correspondence, ordinary statutory Q and any required prior
 balance/eligible unused-year ledger, investment-loss classifications, actual
 hospital policy/excess/suspension records, each relevant dependant's status and
@@ -1146,6 +1276,57 @@ sections 290-150/291-15/291-25][IT97-SUPER]
 | A complete deduction, special-case excess, offset/release/payment or country return is requested | **Needs Input** for remaining operative rules, mandatory outputs and qualified review. |
 
 
+### Ordinary personal-super deduction boundaries
+
+These hypothetical fixtures use dollars. Every unmentioned entitlement,
+receipt, original approved-form notice, acknowledgment and ordinary-branch
+gate above is independently satisfied, including nil other specified-pool
+deductions, losses and FMDs. N equals the chosen S in every numeric row.
+AI is the established assessable amount **including any ECC**; Q/ECC have
+been independently reconciled for that exact notice/claim. All other limits
+are proved inapplicable. W is a bound for these inputs, not a claim optimiser.
+
+| P | N = S | AI | OD | H | W | Proposed deduction result |
+|---:|---:|---:|---:|---:|---:|---|
+| $5,000.00 | $5,000 | $100,000.00 | $10,000.00 | $90,000.00 | $5,000 | DedSuper **$5,000**. |
+| $5,000.99 | $5,000 | $100,000.00 | $10,000.00 | $90,000.00 | $5,000 | DedSuper **$5,000**; retain the $0.99 contribution remainder. |
+| $5,000.99 | $4,000 | $100,000.00 | $10,000.00 | $90,000.00 | $4,000 | DedSuper **$4,000**; the chosen notice is below P. |
+| $10,000.00 | $6,000 | $10,000.75 | $4,000.00 | $6,000.75 | $6,000 | DedSuper **$6,000**; H cents are preserved. |
+| $10,000.00 | $6,001 | $10,000.75 | $4,000.00 | $6,000.75 | $6,000 | **Needs Input**; S exceeds precise headroom. |
+| $1.99 | $1 | $2.00 | $0.01 | $1.99 | $1 | DedSuper **$1**; no upward rounding. |
+| $0.99 | $1 | $100.00 | $0.00 | $100.00 | $0 | **Needs Input**; S exceeds P. |
+| $100.00 | $1 | $100.00 | $100.00 | $0.00 | $0 | **Needs Input**; no headroom. |
+| $100.00 | $1 | $99.99 | $100.00 | $0.00 | $0 | **Needs Input**; floor negative headroom at nil. |
+| $10,000.00 | $6,000 | $10,000.00 | $4,000.00 | $6,000.00 | $6,000 | DedSuper **$6,000**; equality is allowed. |
+| $10,000.00 | $6,000 | $9,999.99 | $4,000.00 | $5,999.99 | $5,999 | **Needs Input**; one cent below the required headroom. |
+| $40,000.00 | $40,000 | $117,500.00 | $10,000.00 | $107,500.00 | $40,000 | DedSuper **$40,000**; the general cap does not truncate this deduction. |
+
+For the last row, independently classified Q is $50,000, comprising the
+$40,000 personal contribution included in fund assessable income and $10,000
+of other statutory concessional contributions. RESC is separately established
+as $10,000. The prior balance is $600,000, so no carry-forward applies:
+ECC is $17,500 against the $32,500 general cap. AI comprises $100,000 of other
+assessable income plus that $17,500, with OD $10,000. Thus C is **$67,500**,
+RSC is **$32,500** and I is **$100,000** when B and all other I adjustments
+are independently nil. Include ECC in AI once and deduct DedSuper once.
+
+| Other established facts or gap | Required result |
+|---|---|
+| Electronic payment initiated 30 June 2027; fund credit 1 July 2027 | Not a 2026-27 contribution; hold the requested 2026-27 deduction and establish 2027-28 separately. |
+| No earlier return lodgment; notice delivered 30 June 2028 before day end, acknowledged before claim | Notice timing gate passes; all other gates still apply. |
+| No earlier return lodgment; notice first delivered 1 July 2028 | Fails the ordinary 2026-27 notice deadline; no accepted deduction here. |
+| Return lodged 31 August 2027; no valid notice delivered before end of that day | Fails statutory timing; do not use the later 30 June 2028 endpoint. |
+| Individual turns 67 on 2 July 2027; contribution on 30 June 2027; at least 18 at year end | Ordinary age gate passes; a later birthday does not impose the 67-plus work test on this contribution. |
+| Contribution on the 67th birthday, or individual under 18 at year end | Outside this branch; establish the separate age/work conditions. |
+| Accumulation member; fund has another member with a defined benefit interest and a qualifying fund-wide election, including an effective saved old election | Section 290-155 exclusion applies; no deduction under this worksheet. |
+| Public complying status known, prescribed-election status unknown | **Needs Input**; public status does not prove eligibility. |
+| Receipt, approved form, notice delivery, retained contribution or actual acknowledgment unknown | **Needs Input**; no assumed receipt or acknowledgment. |
+| P $5,000; N $5,000; chosen S $4,000 | **Needs Input**; unequal notice/claim classification is outside this branch. Do not assume the difference is non-concessional or automatically vary the notice. |
+| Any rejected or pending splitting application, variation, withdrawal, rollover, release, transfer, changed interest or income stream | **Needs Input** for this branch; resolve the actual statutory result separately. |
+| Downsizer, FHSS/COVID re-contribution, CGT retirement-exemption attribution, foreign-super transfer or other denial unresolved | **Needs Input** for entitlement; no automatic nil classification. |
+| Other specified-pool deduction, tax loss or FMD deduction exists or is unknown | **Needs Input**; do not apply the single-pool headroom construction. |
+| S $40,000; AI $40,000; OD $10,000; Q/ECC not reconciled for that S | **Needs Input**; unproved ECC cannot be used to manufacture headroom. |
+
 ### Single-person surcharge component boundaries
 
 All numeric cases below stipulate the 2026-27 full-year resident adult,
@@ -1303,7 +1484,9 @@ income/financial years and C reconciliation without duplicate deduction or
 excess inclusion; verify statutory Q, the period-labelled general cap, any
 required prior balance and eligible unapplied ledger, the strict balance
 limit, oldest-first application only to the excess and remaining-year expiry;
-verify year-end marriage, any-day non-spouse
+verify the personal deduction intake, original notice/claim equality, exact
+headroom, whole-dollar bound and consistent Q/ECC/AI inputs before accepting
+DedSuper; verify year-end marriage, any-day non-spouse
 dependants, child thresholds and the whole/part-year marriage distinction;
 check statutory endpoints, relevant-person uninsured unions, limited cover
 deeming and each dated cover/prescribed intersection for both charges; verify benefit
@@ -1354,9 +1537,10 @@ application. [MLS-DEATH-DAYS]; [LEVY]; [MLS-FB]
 
 The RSC worksheet uses TAA compilation 227 of 1 October 2026, Schedule 1
 section 16-182, and selected Subdivisions 290-C and 291-B/291-C of ITAA97
-compilation 268. Current official HTML and native PDF both omit paragraph
-26-55(2)(b); no assumed text or deduction-limit formula is restored here.
-Actual DedSuper and special-case ECC remain independently established
+compilation 268. Paragraph 26-55(2)(b) was expressly repealed by the 1999 amending Act.
+The ordinary personal deduction worksheet applies the bounded combined-pool
+construction with other pool deductions, losses and FMDs proved nil.
+DedSuper outside that branch and special-case ECC remain independently established
 inputs. Ordinary ECC can instead be calculated from independently
 established Q and the applicable balance/ledger facts under the bounded
 worksheet above. [TAA]; [CORE]; [IT97-SUPER]; [DICT]
@@ -1374,6 +1558,18 @@ stated cap relies on the current authoritative ATO amount, with this
 statutory reproduction as corroboration. The page's adjacent quarterly SG
 payment text is not adopted as a 2026-27 payment rule. [CC-CAP-ATO];
 [ABS-CC-2016]; [ABS-CC-2025]; [DICT, sections 960-265/960-280/960-285][DICT]
+
+Version 1.1, 23 October 2026: adds chosen-claim personal-super deduction
+validation, complete ordinary Division 290 intake, prescribed and saved
+election gates, precise section 26-55 headroom and notice/claim controls.
+The selected receipt/notice passages were compared with ATO's complete
+62-page authorised consolidated TR 2010/1 PDF; the current HTML history
+identifies the selected consolidation as 24 September 2025. Regulations
+compilation 16 of 27 June 2026 supplies the election gates. Appendix
+explanations are not part of the ruling's legally binding section.
+Unequal notice/claim, special contributions, changed interests, mixed pools
+and unresolved statutory inputs remain held. [TR-CONTRIB]; [SUPER-REGS];
+[SUPER-REPEAL]; [SUPER-REPEAL-EM]
 
 Version 1.0, 23 October 2026: adds the ordinary concessional-cap,
 carry-forward and ECC worksheet, 13 numeric cap cases, 2 RSC/C/I
@@ -1418,6 +1614,11 @@ selected substantiation/asset transitions and verified local special-area
 zone rules. Version 0.1 introduced the selected personal-rate, LITO and
 Medicare reference. Both retain explicit incomplete-domain holds.
 
+[TR-CONTRIB]: https://www.ato.gov.au/law/view/pdf/pbr/tr2010-001c5.pdf
+[SUPER-NOTICE]: https://www.ato.gov.au/print/section/070cfb0b-0299-47a3-a81c-c222280ebe90
+[SUPER-REGS]: https://www.legislation.gov.au/F2021L00206/2026-06-27/2026-06-27/text/original/epub/OEBPS/document_1/document_1.html
+[SUPER-REPEAL]: https://www.legislation.gov.au/C2004A00560/asmade/1999-12-10/text/original/epub/OEBPS/document_1/document_1.html
+[SUPER-REPEAL-EM]: https://www.ato.gov.au/law/view/document?DocID=NEM%2FEM99039%2FNAT%2FATO%2F00005
 [CC-CAP-ATO]: https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/concessional-contributions-cap
 [ABS-CC-2016]: https://www.ausstats.abs.gov.au/ausstats/meisubs.nsf/0/BF933648CF3B3FF5CA2580CF000D5066/$File/6302003.xls
 [ABS-CC-2025]: https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/average-weekly-earnings-australia/nov-2025/6302003.xlsx
