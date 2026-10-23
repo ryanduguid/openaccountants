@@ -6,6 +6,12 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-23 | [Christmas Island and Cocos: ordinary concessional-cap and excess worksheet](2026-10-23-indian-ocean-concessional-cap.md) |
+| 2026-10-23 | [Christmas Island and Cocos: reportable super input reconciliation](2026-10-23-indian-ocean-reportable-super.md) |
+| 2026-10-23 | [Christmas Island and Cocos: surviving-spouse Medicare surcharge](2026-10-23-indian-ocean-survivor-surcharge.md) |
+| 2026-10-23 | [Christmas Island and Cocos: family and period Medicare surcharge](2026-10-23-indian-ocean-family-surcharge.md) |
+| 2026-10-23 | [Christmas Island and Cocos: ordinary single-person Medicare surcharge](2026-10-23-indian-ocean-surcharge.md) |
+| 2026-10-23 | [Christmas Island and Cocos: ordinary Medicare levy reductions](2026-10-23-indian-ocean-medicare.md) |
 | 2026-10-23 | [Christmas Island and Cocos: restored reviewed examples and SG routing](2026-10-23-indian-ocean-restored-review.md) |
 | 2026-10-20 | [Norfolk Island and Australian transfer pricing](2026-10-20-norfolk-transfer-pricing.md) |
 | 2026-10-21 | [Norfolk Island: selected UK treaty conditions and MLI matching](2026-10-21-norfolk-uk-treaty-relief.md) |
