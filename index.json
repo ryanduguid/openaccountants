@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-24T00:23:19+00:00",
+ "generated_at": "2026-10-24T01:17:18+00:00",
  "counts": {
-  "guides": 1947,
-  "jurisdictions": 250,
+  "guides": 1948,
+  "jurisdictions": 251,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -6856,6 +6856,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-07-25"
+  },
+  {
+   "slug": "ck-company-registry-reporting",
+   "path": "skills/international/cook-islands/ck-company-registry-reporting.md",
+   "name": "ck-company-registry-reporting",
+   "jurisdiction": "CK",
+   "category": "formation",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-24"
   },
   {
    "slug": "costa-rica-income-tax",
