@@ -36,7 +36,7 @@ Named, licensed accountants put their name, credential and review date on the gu
 </div>
 
 <!-- oa-stats:start -->
-**1,957 Guides** across **256 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,958 Guides** across **257 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 <sub>Derived from `index.json` in this checkout and verified by
 `scripts/check-coverage-claims.py`. "Accountant-reviewed" and "named
