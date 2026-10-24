@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-24 | [Saint Lucia monthly National Insurance administrative reference](2026-10-24-saint-lucia-national-insurance-reference.md) |
 | 2026-10-24 | [Saint Kitts and Nevis monthly Social Security source reconciliation](2026-10-24-saint-kitts-social-security-reconciliation.md) |
 | 2026-10-24 | [Antigua and Barbuda monthly medical-benefits reference](2026-10-24-antigua-medical-benefits-reference.md) |
 | 2026-10-24 | [Antigua and Barbuda monthly Social Security reference](2026-10-24-antigua-social-security-reference.md) |

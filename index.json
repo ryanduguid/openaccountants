@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-24T07:21:24+00:00",
+ "generated_at": "2026-10-24T08:00:33+00:00",
  "counts": {
-  "guides": 1956,
-  "jurisdictions": 255,
+  "guides": 1957,
+  "jurisdictions": 256,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -17931,6 +17931,19 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2017",
+   "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "lc-national-insurance-reference",
+   "path": "skills/international/saint-lucia/lc-national-insurance-reference.md",
+   "name": "lc-national-insurance-reference",
+   "jurisdiction": "LC",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2022",
    "last_updated": "2026-10-24"
   },
   {

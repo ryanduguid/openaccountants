@@ -4260,6 +4260,20 @@
     "workflow-base.md"
    ]
   },
+  "saint-lucia": {
+   "jurisdiction": "LC",
+   "name": "Saint Lucia",
+   "files": [
+    "intake.md",
+    "lc-national-insurance-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "samoa": {
    "jurisdiction": "WS",
    "name": "Samoa",
