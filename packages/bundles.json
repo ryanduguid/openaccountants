@@ -4246,6 +4246,20 @@
     "workflow-base.md"
    ]
   },
+  "saint-kitts-and-nevis": {
+   "jurisdiction": "KN",
+   "name": "Saint Kitts And Nevis",
+   "files": [
+    "intake.md",
+    "kn-social-security-reconciliation.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "samoa": {
    "jurisdiction": "WS",
    "name": "Samoa",

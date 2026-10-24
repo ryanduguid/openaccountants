@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-24T06:49:45+00:00",
+ "generated_at": "2026-10-24T07:21:24+00:00",
  "counts": {
-  "guides": 1955,
-  "jurisdictions": 254,
+  "guides": 1956,
+  "jurisdictions": 255,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -17919,6 +17919,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "kn-social-security-reconciliation",
+   "path": "skills/international/saint-kitts-and-nevis/kn-social-security-reconciliation.md",
+   "name": "kn-social-security-reconciliation",
+   "jurisdiction": "KN",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2017",
+   "last_updated": "2026-10-24"
   },
   {
    "slug": "ws-company-formation",
