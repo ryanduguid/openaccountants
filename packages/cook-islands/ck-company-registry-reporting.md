@@ -158,9 +158,10 @@ procedure before actual filing. Fees are due when the transaction occurs;
 a waiver requires the Registrar's written exercise of discretion.
 [Online filing][ONLINE]; [forms][FORMS]; [payment][PAYMENT]; [waiver][WAIVER]
 
-The Registrar enters a compliant application and issues a certificate as
-soon as practicable under section 8. This is not a verified same-day or
-fixed turnaround promise. The certificate establishes incorporation and
+Section 8 requires the Registrar to enter the company and issue a certificate
+as soon as the Registrar receives an application that complies with section 7.
+No fixed administrative turnaround has been independently verified.
+The certificate establishes incorporation and
 its stated date. Separate legal personality and capacity under section 10
 do not replace tax, employer, foreign-investment, land or activity-specific
 permissions. [Registration][REGISTER]; [certificate][CERT]; [personality][PERSON]
