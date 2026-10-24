@@ -1718,12 +1718,14 @@
     "intake.md",
     "ck-company-registry-reporting.md",
     "ck-company-tax-vat.md",
+    "ck-social-contributions.md",
     "README.md"
    ],
    "shared": [
     "company-formation-workflow-base.md",
     "corporate-income-tax-workflow-base.md",
     "foundation.md",
+    "social-contributions-workflow-base.md",
     "vat-workflow-base.md",
     "workflow-base.md"
    ]
