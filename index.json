@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-23T00:40:14+00:00",
+ "generated_at": "2026-10-24T00:23:19+00:00",
  "counts": {
-  "guides": 1945,
+  "guides": 1947,
   "jurisdictions": 250,
   "accountant_reviewed": 164
  },
@@ -6676,6 +6676,19 @@
    "last_updated": "2026-10-23"
   },
   {
+   "slug": "cx-payg-withholding",
+   "path": "skills/international/christmas-island/cx-payg-withholding.md",
+   "name": "cx-payg-withholding",
+   "jurisdiction": "CX",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-24"
+  },
+  {
    "slug": "cx-super-guarantee",
    "path": "skills/international/christmas-island/cx-super-guarantee.md",
    "name": "cx-super-guarantee",
@@ -6713,6 +6726,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-23"
+  },
+  {
+   "slug": "cc-payg-withholding",
+   "path": "skills/international/cocos-keeling-islands/cc-payg-withholding.md",
+   "name": "cc-payg-withholding",
+   "jurisdiction": "CC",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-24"
   },
   {
    "slug": "cc-super-guarantee",
