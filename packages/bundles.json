@@ -1711,6 +1711,20 @@
     "workflow-base.md"
    ]
   },
+  "cook-islands": {
+   "jurisdiction": "CK",
+   "name": "Cook Islands",
+   "files": [
+    "intake.md",
+    "ck-company-registry-reporting.md",
+    "README.md"
+   ],
+   "shared": [
+    "company-formation-workflow-base.md",
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "costa-rica": {
    "jurisdiction": "CR",
    "name": "Costa Rica",
