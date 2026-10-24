@@ -3790,6 +3790,20 @@
     "workflow-base.md"
    ]
   },
+  "niue": {
+   "jurisdiction": "NU",
+   "name": "Niue",
+   "files": [
+    "intake.md",
+    "nu-company-reporting.md",
+    "README.md"
+   ],
+   "shared": [
+    "company-formation-workflow-base.md",
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "norfolk-island": {
    "jurisdiction": "NF",
    "name": "Norfolk Island",
