@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-24T04:29:40+00:00",
+ "generated_at": "2026-10-24T05:27:26+00:00",
  "counts": {
-  "guides": 1951,
-  "jurisdictions": 251,
+  "guides": 1952,
+  "jurisdictions": 252,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -15930,6 +15930,19 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "nu-company-reporting",
+   "path": "skills/international/niue/nu-company-reporting.md",
+   "name": "nu-company-reporting",
+   "jurisdiction": "NU",
+   "category": "formation",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-24"
   },
   {
    "slug": "nf-annual-rates",
