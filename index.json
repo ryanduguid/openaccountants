@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-24T09:15:43+00:00",
+ "generated_at": "2026-10-24T10:52:24+00:00",
  "counts": {
-  "guides": 1958,
+  "guides": 1959,
   "jurisdictions": 257,
   "accountant_reviewed": 164
  },
@@ -8735,6 +8735,19 @@
    "name": "fk-annual-employment-income",
    "jurisdiction": "FK",
    "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "fk-retirement-pensions-weekly-reference",
+   "path": "skills/international/falkland-islands/fk-retirement-pensions-weekly-reference.md",
+   "name": "fk-retirement-pensions-weekly-reference",
+   "jurisdiction": "FK",
+   "category": "payroll",
    "tier": 2,
    "verified_by": "pending",
    "reviewed_by": null,

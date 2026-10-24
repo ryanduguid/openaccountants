@@ -85,7 +85,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | ET | Ethiopia | 7 | 0 |
 | FI | Finland | 7 | 0 |
 | FJ | Fiji | 6 | 0 |
-| FK | Falkland Islands (Malvinas) | 1 | 0 |
+| FK | Falkland Islands (Malvinas) | 2 | 0 |
 | FM | Micronesia (Federated States of) | 0 | 0 |
 | FO | Faroe Islands | 0 | 0 |
 | FR | France | 21 | 0 |

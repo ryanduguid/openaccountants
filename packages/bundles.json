@@ -2171,11 +2171,13 @@
    "files": [
     "intake.md",
     "fk-annual-employment-income.md",
+    "fk-retirement-pensions-weekly-reference.md",
     "README.md"
    ],
    "shared": [
     "foundation.md",
     "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
     "workflow-base.md"
    ]
   },
