@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-24T01:23:47+00:00",
+ "generated_at": "2026-10-24T02:33:47+00:00",
  "counts": {
-  "guides": 1948,
+  "guides": 1949,
   "jurisdictions": 251,
   "accountant_reviewed": 164
  },
@@ -6863,6 +6863,19 @@
    "name": "ck-company-registry-reporting",
    "jurisdiction": "CK",
    "category": "formation",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "ck-company-tax-vat",
+   "path": "skills/international/cook-islands/ck-company-tax-vat.md",
+   "name": "ck-company-tax-vat",
+   "jurisdiction": "CK",
+   "category": "international",
    "tier": 2,
    "verified_by": "pending",
    "reviewed_by": null,

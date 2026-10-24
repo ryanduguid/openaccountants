@@ -1717,11 +1717,14 @@
    "files": [
     "intake.md",
     "ck-company-registry-reporting.md",
+    "ck-company-tax-vat.md",
     "README.md"
    ],
    "shared": [
     "company-formation-workflow-base.md",
+    "corporate-income-tax-workflow-base.md",
     "foundation.md",
+    "vat-workflow-base.md",
     "workflow-base.md"
    ]
   },

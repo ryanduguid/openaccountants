@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-24 | [Cook Islands: ordinary company tax and VAT components](2026-10-24-cook-islands-company-tax-vat.md) |
 | 2026-10-24 | [Cook Islands: domestic company registry and reporting](2026-10-24-cook-islands-company-registry.md) |
 | 2026-10-24 | [Christmas Island and Cocos: ordinary PAYG withholding and reporting](2026-10-24-indian-ocean-payg-withholding.md) |
 | 2026-10-23 | [Christmas Island and Cocos: ordinary personal-super deduction worksheet](2026-10-23-indian-ocean-personal-super-deduction.md) |

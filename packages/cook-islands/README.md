@@ -7,13 +7,16 @@
 
 1. `intake.md`
 2. `ck-company-registry-reporting.md`
+3. `ck-company-tax-vat.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`corporate-income-tax-workflow-base.md`](../_shared/corporate-income-tax-workflow-base.md)
 - [`foundation.md`](../_shared/foundation.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 
 
