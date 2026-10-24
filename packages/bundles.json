@@ -283,6 +283,20 @@
     "workflow-base.md"
    ]
   },
+  "antigua-and-barbuda": {
+   "jurisdiction": "AG",
+   "name": "Antigua And Barbuda",
+   "files": [
+    "intake.md",
+    "ag-social-security.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "argentina": {
    "jurisdiction": "AR",
    "name": "Argentina",

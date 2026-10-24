@@ -1,0 +1,13 @@
+# Antigua and Barbuda: selected monthly Social Security reference
+
+This batch adds a bounded contribution reference for already registered ordinary local employment outside the public service, with an established full-month period, complete insurable cash wages and no age, benefit, irregular-pay or special-arrangement issue. It does not establish current law, complete payroll or actual deduction/filing authority.
+
+Eight complete official PDFs are retained with byte counts and hashes, including the Act, principal contribution regulations, the intervening 2014 amendment, 2016 Act/rate/pension instruments and registration material. The 2 principal copies have different page layouts. Native extraction and local OCR preserve their limits. One Legal Affairs Act copy failed native parsing and was excluded in favour of the separately published ABSSB copy. Original SI 60 pages 5–6 were visually compared after OCR to resolve damaged table column order.
+
+The selected 2025 endpoint is 7% employee and 9% employer on the established monthly wage base capped at 6,500 source units. Cases preserve the separate shares, one cap for included same-month payments, independent monthly periods and exact unrounded fractions. Employer share recovery is prohibited. Selected employee correction/recovery conditions and the distinct prosecution-recovery restriction are preserved; all actual corrections remain held.
+
+The component check covers 24 worked/held positions, 12 textual hold rows, 29 numeric/logical cases, 45 computed holds and 78 rejected mutations. It reconciles all 8 PDF hashes. These fixtures are outside the repository and do not demonstrate a deployed payroll engine or accepted financial output.
+
+Independent draft review prompted 3 repairs: primary-figure year 2025 with an explicit 2026 review limit, regulation 9(3)'s same-year correction condition and the current payroll contract's Needs Input rounding rule. The unresolved allocation-proviso references after SI 45 renumbering are explicit and affected allocations remain held. The live FAQ's 2021 rate/age paragraphs do not set current rates or ages; the 2025 authority announcement does not establish every later instrument.
+
+The complete operative law/commencement chain, prescribed age/benefit coverage, other contribution/payroll programmes, current forms, currency/rounding, calendars, actual remittances, full outputs and professional sign-off remain open. All universal/payroll outputs, checks and 12 mandatory country slots remain binding. Tier 2, pending_review and verified_by pending remain; guide presence does not establish comprehensive country or worldwide acceptance.
