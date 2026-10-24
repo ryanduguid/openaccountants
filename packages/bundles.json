@@ -1658,6 +1658,7 @@
    "files": [
     "intake.md",
     "cx-income-tax.md",
+    "cx-payg-withholding.md",
     "cx-super-guarantee.md",
     "cx-tax-system.md",
     "README.md"
@@ -1665,6 +1666,7 @@
    "shared": [
     "foundation.md",
     "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
     "workflow-base.md"
    ]
@@ -1675,6 +1677,7 @@
    "files": [
     "intake.md",
     "cc-income-tax.md",
+    "cc-payg-withholding.md",
     "cc-super-guarantee.md",
     "cc-tax-system.md",
     "README.md"
@@ -1682,6 +1685,7 @@
    "shared": [
     "foundation.md",
     "income-tax-workflow-base.md",
+    "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
     "workflow-base.md"
    ]
