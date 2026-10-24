@@ -6,7 +6,8 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `ag-social-security.md`
+2. `ag-medical-benefits.md`
+3. `ag-social-security.md`
 
 ## Shared files this package needs
 
