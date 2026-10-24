@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-24T05:51:03+00:00",
+ "generated_at": "2026-10-24T06:20:42+00:00",
  "counts": {
-  "guides": 1953,
-  "jurisdictions": 253,
+  "guides": 1954,
+  "jurisdictions": 254,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -2202,6 +2202,19 @@
    "review_status": "pending_review",
    "tax_year": "2022",
    "last_updated": "2026-10-12"
+  },
+  {
+   "slug": "ag-social-security",
+   "path": "skills/international/antigua-and-barbuda/ag-social-security.md",
+   "name": "ag-social-security",
+   "jurisdiction": "AG",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-10-24"
   },
   {
    "slug": "ar-company-formation",
