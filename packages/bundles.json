@@ -4625,6 +4625,20 @@
     "workflow-base.md"
    ]
   },
+  "st-helena": {
+   "jurisdiction": "SH",
+   "name": "St Helena",
+   "files": [
+    "intake.md",
+    "sh-employment-income-tax.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "sudan": {
    "jurisdiction": "SD",
    "name": "Sudan",

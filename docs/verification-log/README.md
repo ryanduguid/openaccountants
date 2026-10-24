@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-24 | [St Helena island conditional annual salary reference](2026-10-24-st-helena-employment-income-reference.md) |
 | 2026-10-24 | [Niue private company annual reporting reference](2026-10-24-niue-company-reporting-reference.md) |
 | 2026-10-24 | [Cook Islands ordinary PAYE reference](2026-10-24-cook-islands-paye-reference.md) |
 | 2026-10-24 | [Cook Islands: ordinary CINSF contribution reference](2026-10-24-cook-islands-cinsf-reference.md) |
