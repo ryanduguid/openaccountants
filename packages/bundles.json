@@ -1718,6 +1718,7 @@
     "intake.md",
     "ck-company-registry-reporting.md",
     "ck-company-tax-vat.md",
+    "ck-paye.md",
     "ck-social-contributions.md",
     "README.md"
    ],
@@ -1725,6 +1726,7 @@
     "company-formation-workflow-base.md",
     "corporate-income-tax-workflow-base.md",
     "foundation.md",
+    "payroll-workflow-base.md",
     "social-contributions-workflow-base.md",
     "vat-workflow-base.md",
     "workflow-base.md"

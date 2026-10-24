@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-24T03:32:05+00:00",
+ "generated_at": "2026-10-24T04:29:40+00:00",
  "counts": {
-  "guides": 1950,
+  "guides": 1951,
   "jurisdictions": 251,
   "accountant_reviewed": 164
  },
@@ -6876,6 +6876,19 @@
    "name": "ck-company-tax-vat",
    "jurisdiction": "CK",
    "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "ck-paye",
+   "path": "skills/international/cook-islands/ck-paye.md",
+   "name": "ck-paye",
+   "jurisdiction": "CK",
+   "category": "payroll",
    "tier": 2,
    "verified_by": "pending",
    "reviewed_by": null,
