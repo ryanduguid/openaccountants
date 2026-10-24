@@ -24,24 +24,24 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,955** |
-| Distinct `jurisdiction` codes | **254** |
+| Guide files indexed | **1,956** |
+| Distinct `jurisdiction` codes | **255** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,791** |
+| `tier: 2` (source-cited draft) | **1,792** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **195** |
+| Country directories under `skills/international/` | **196** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **266** |
+| Generated bundles under `packages/` | **267** |
 
 Guides are present for all 50 US states and DC.
-Accountant-reviewed guides exist in 24 of the 254 jurisdiction codes;
+Accountant-reviewed guides exist in 24 of the 255 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
 jurisdiction.
 
 ### Guides with earlier period labels
 
-Five guides carry a `tax_year` of 2024 or earlier. These are the indexed
+Six guides carry a `tax_year` of 2024 or earlier. These are the indexed
 period labels; they do not establish current law or complete topic coverage.
 The Anguilla payroll draft explicitly requires verification of the applicable
 law before calculating an engagement liability from its 2022 baseline.
@@ -52,6 +52,7 @@ law before calculating an engagement liability from its 2022 baseline.
 | `bangladesh-pit` | 2024 | Personal income tax |
 | `hk-mpf` | 2024 | Mandatory Provident Fund |
 | `hk-salaries-tax` | 2024 | Salaries tax |
+| `kn-social-security-reconciliation` | 2017 | Statutory schedule compared with a distinct 2018 Board profile; operative employer amount remains held |
 | `thailand-pit` | 2024 | Personal income tax |
 
 Regenerate this list with:
