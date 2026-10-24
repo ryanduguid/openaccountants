@@ -58,7 +58,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | CG | Congo | 6 | 0 |
 | CH | Switzerland | 9 | 0 |
 | CI | Côte d’Ivoire | 4 | 0 |
-| CK | Cook Islands | 3 | 0 |
+| CK | Cook Islands | 4 | 0 |
 | CL | Chile | 7 | 0 |
 | CM | Cameroon | 4 | 0 |
 | CN | China | 13 | 0 |
