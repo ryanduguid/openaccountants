@@ -24,24 +24,24 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,956** |
-| Distinct `jurisdiction` codes | **255** |
+| Guide files indexed | **1,957** |
+| Distinct `jurisdiction` codes | **256** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,792** |
+| `tier: 2` (source-cited draft) | **1,793** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **196** |
+| Country directories under `skills/international/` | **197** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **267** |
+| Generated bundles under `packages/` | **268** |
 
 Guides are present for all 50 US states and DC.
-Accountant-reviewed guides exist in 24 of the 255 jurisdiction codes;
+Accountant-reviewed guides exist in 24 of the 256 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
 jurisdiction.
 
 ### Guides with earlier period labels
 
-Six guides carry a `tax_year` of 2024 or earlier. These are the indexed
+Seven guides carry a `tax_year` of 2024 or earlier. These are the indexed
 period labels; they do not establish current law or complete topic coverage.
 The Anguilla payroll draft explicitly requires verification of the applicable
 law before calculating an engagement liability from its 2022 baseline.
@@ -53,6 +53,7 @@ law before calculating an engagement liability from its 2022 baseline.
 | `hk-mpf` | 2024 | Mandatory Provident Fund |
 | `hk-salaries-tax` | 2024 | Salaries tax |
 | `kn-social-security-reconciliation` | 2017 | Statutory schedule compared with a distinct 2018 Board profile; operative employer amount remains held |
+| `lc-national-insurance-reference` | 2022 | Statutory rates and annual exemption with a separate observed monthly administrative profile; operative monthly authority remains held |
 | `thailand-pit` | 2024 | Personal income tax |
 
 Regenerate this list with:
