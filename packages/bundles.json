@@ -2165,6 +2165,20 @@
     "workflow-base.md"
    ]
   },
+  "falkland-islands": {
+   "jurisdiction": "FK",
+   "name": "Falkland Islands",
+   "files": [
+    "intake.md",
+    "fk-annual-employment-income.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "fiji": {
    "jurisdiction": "FJ",
    "name": "Fiji",

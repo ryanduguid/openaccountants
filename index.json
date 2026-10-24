@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-24T08:00:33+00:00",
+ "generated_at": "2026-10-24T09:15:43+00:00",
  "counts": {
-  "guides": 1957,
-  "jurisdictions": 256,
+  "guides": 1958,
+  "jurisdictions": 257,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -8728,6 +8728,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-09-29"
+  },
+  {
+   "slug": "fk-annual-employment-income",
+   "path": "skills/international/falkland-islands/fk-annual-employment-income.md",
+   "name": "fk-annual-employment-income",
+   "jurisdiction": "FK",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-24"
   },
   {
    "slug": "fiji-vat",
