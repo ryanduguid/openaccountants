@@ -227,6 +227,21 @@
     "workflow-base.md"
    ]
   },
+  "american-samoa": {
+   "jurisdiction": "AS",
+   "name": "American Samoa",
+   "files": [
+    "intake.md",
+    "as-oasdi-annual-wage-base-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "us-circular-230-disclosure.md",
+    "workflow-base.md"
+   ]
+  },
   "andorra": {
    "jurisdiction": "AD",
    "name": "Andorra",
