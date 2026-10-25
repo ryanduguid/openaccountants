@@ -3623,6 +3623,20 @@
     "workflow-base.md"
    ]
   },
+  "montserrat": {
+   "jurisdiction": "MS",
+   "name": "Montserrat",
+   "files": [
+    "intake.md",
+    "ms-monthly-social-security-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "morocco": {
    "jurisdiction": "MA",
    "name": "Morocco",
