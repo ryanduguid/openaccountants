@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-25T14:52:39+00:00",
+ "generated_at": "2026-10-25T16:14:00+00:00",
  "counts": {
-  "guides": 1974,
-  "jurisdictions": 264,
+  "guides": 1975,
+  "jurisdictions": 265,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -16931,6 +16931,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "pw-corporate-records-annual-report-reference",
+   "path": "skills/international/palau/pw-corporate-records-annual-report-reference.md",
+   "name": "pw-corporate-records-annual-report-reference",
+   "jurisdiction": "PW",
+   "category": "formation",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-26"
   },
   {
    "slug": "panama-income-tax",

@@ -4061,6 +4061,20 @@
     "workflow-base.md"
    ]
   },
+  "palau": {
+   "jurisdiction": "PW",
+   "name": "Palau",
+   "files": [
+    "intake.md",
+    "pw-corporate-records-annual-report-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "company-formation-workflow-base.md",
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "panama": {
    "jurisdiction": "PA",
    "name": "Panama",
