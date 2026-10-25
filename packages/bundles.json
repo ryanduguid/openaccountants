@@ -2449,6 +2449,21 @@
     "workflow-base.md"
    ]
   },
+  "guam": {
+   "jurisdiction": "GU",
+   "name": "Guam",
+   "files": [
+    "intake.md",
+    "gu-oasdi-annual-wage-base-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "us-circular-230-disclosure.md",
+    "workflow-base.md"
+   ]
+  },
   "guatemala": {
    "jurisdiction": "GT",
    "name": "Guatemala",
@@ -3931,6 +3946,21 @@
     "workflow-base.md"
    ]
   },
+  "northern-mariana-islands": {
+   "jurisdiction": "MP",
+   "name": "Northern Mariana Islands",
+   "files": [
+    "intake.md",
+    "mp-oasdi-annual-wage-base-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "us-circular-230-disclosure.md",
+    "workflow-base.md"
+   ]
+  },
   "norway": {
    "jurisdiction": "NO",
    "name": "Norway",
@@ -5163,6 +5193,21 @@
     "company-formation-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "united-states-virgin-islands": {
+   "jurisdiction": "VI",
+   "name": "United States Virgin Islands",
+   "files": [
+    "intake.md",
+    "vi-oasdi-annual-wage-base-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "us-circular-230-disclosure.md",
     "workflow-base.md"
    ]
   },

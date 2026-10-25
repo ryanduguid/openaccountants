@@ -4,7 +4,7 @@ Generated from `country-catalogue.json` and `index.json`. Regenerate with `pytho
 
 The target contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 
-200 of 250 target areas have at least one indexed guide; 50 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+203 of 250 target areas have at least one indexed guide; 47 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -105,7 +105,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | GR | Greece | 7 | 0 |
 | GS | South Georgia and the South Sandwich Islands | 0 | 0 |
 | GT | Guatemala | 7 | 0 |
-| GU | Guam | 0 | 0 |
+| GU | Guam | 1 | 0 |
 | GW | Guinea-Bissau | 6 | 0 |
 | GY | Guyana | 6 | 0 |
 | HK | China, Hong Kong Special Administrative Region | 7 | 0 |
@@ -162,7 +162,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MM | Myanmar | 6 | 0 |
 | MN | Mongolia | 5 | 0 |
 | MO | China, Macao Special Administrative Region | 5 | 0 |
-| MP | Northern Mariana Islands | 0 | 0 |
+| MP | Northern Mariana Islands | 1 | 0 |
 | MQ | Martinique | 0 | 0 |
 | MR | Mauritania | 6 | 0 |
 | MS | Montserrat | 0 | 0 |
@@ -253,7 +253,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | VC | Saint Vincent and the Grenadines | 0 | 0 |
 | VE | Venezuela (Bolivarian Republic of) | 5 | 5 |
 | VG | British Virgin Islands | 6 | 0 |
-| VI | United States Virgin Islands | 0 | 0 |
+| VI | United States Virgin Islands | 1 | 0 |
 | VN | Viet Nam | 7 | 0 |
 | VU | Vanuatu | 6 | 0 |
 | WF | Wallis and Futuna Islands | 0 | 0 |
