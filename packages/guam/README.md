@@ -7,14 +7,16 @@
 
 1. `intake.md`
 2. `gu-additional-medicare-annual-reference.md`
-3. `gu-medicare-ordinary-share-reference.md`
-4. `gu-oasdi-annual-wage-base-reference.md`
+3. `gu-additional-medicare-employer-payment-reference.md`
+4. `gu-medicare-ordinary-share-reference.md`
+5. `gu-oasdi-annual-wage-base-reference.md`
 
 ## Shared files this package needs
 
 These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`foundation.md`](../_shared/foundation.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 - [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
 - [`us-circular-230-disclosure.md`](../_shared/us-circular-230-disclosure.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)

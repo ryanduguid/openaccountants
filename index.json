@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-25T16:14:00+00:00",
+ "generated_at": "2026-10-25T17:42:13+00:00",
  "counts": {
-  "guides": 1975,
+  "guides": 1978,
   "jurisdictions": 265,
   "accountant_reviewed": 164
  },
@@ -9913,6 +9913,19 @@
    "last_updated": "2026-10-25"
   },
   {
+   "slug": "gu-additional-medicare-employer-payment-reference",
+   "path": "skills/international/guam/gu-additional-medicare-employer-payment-reference.md",
+   "name": "gu-additional-medicare-employer-payment-reference",
+   "jurisdiction": "GU",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-26"
+  },
+  {
    "slug": "gu-medicare-ordinary-share-reference",
    "path": "skills/international/guam/gu-medicare-ordinary-share-reference.md",
    "name": "gu-medicare-ordinary-share-reference",
@@ -16504,6 +16517,19 @@
    "last_updated": "2026-10-25"
   },
   {
+   "slug": "mp-additional-medicare-employer-payment-reference",
+   "path": "skills/international/northern-mariana-islands/mp-additional-medicare-employer-payment-reference.md",
+   "name": "mp-additional-medicare-employer-payment-reference",
+   "jurisdiction": "MP",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-26"
+  },
+  {
    "slug": "mp-medicare-ordinary-share-reference",
    "path": "skills/international/northern-mariana-islands/mp-medicare-ordinary-share-reference.md",
    "name": "mp-medicare-ordinary-share-reference",
@@ -21858,6 +21884,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-25"
+  },
+  {
+   "slug": "vi-additional-medicare-employer-payment-reference",
+   "path": "skills/international/united-states-virgin-islands/vi-additional-medicare-employer-payment-reference.md",
+   "name": "vi-additional-medicare-employer-payment-reference",
+   "jurisdiction": "VI",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-26"
   },
   {
    "slug": "vi-medicare-ordinary-share-reference",
