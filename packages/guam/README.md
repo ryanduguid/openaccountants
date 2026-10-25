@@ -6,8 +6,9 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `gu-medicare-ordinary-share-reference.md`
-3. `gu-oasdi-annual-wage-base-reference.md`
+2. `gu-additional-medicare-annual-reference.md`
+3. `gu-medicare-ordinary-share-reference.md`
+4. `gu-oasdi-annual-wage-base-reference.md`
 
 ## Shared files this package needs
 

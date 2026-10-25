@@ -105,7 +105,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | GR | Greece | 7 | 0 |
 | GS | South Georgia and the South Sandwich Islands | 0 | 0 |
 | GT | Guatemala | 7 | 0 |
-| GU | Guam | 2 | 0 |
+| GU | Guam | 3 | 0 |
 | GW | Guinea-Bissau | 6 | 0 |
 | GY | Guyana | 6 | 0 |
 | HK | China, Hong Kong Special Administrative Region | 7 | 0 |
@@ -162,7 +162,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MM | Myanmar | 6 | 0 |
 | MN | Mongolia | 5 | 0 |
 | MO | China, Macao Special Administrative Region | 5 | 0 |
-| MP | Northern Mariana Islands | 2 | 0 |
+| MP | Northern Mariana Islands | 3 | 0 |
 | MQ | Martinique | 0 | 0 |
 | MR | Mauritania | 6 | 0 |
 | MS | Montserrat | 0 | 0 |
@@ -253,7 +253,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | VC | Saint Vincent and the Grenadines | 0 | 0 |
 | VE | Venezuela (Bolivarian Republic of) | 5 | 5 |
 | VG | British Virgin Islands | 6 | 0 |
-| VI | United States Virgin Islands | 2 | 0 |
+| VI | United States Virgin Islands | 3 | 0 |
 | VN | Viet Nam | 7 | 0 |
 | VU | Vanuatu | 6 | 0 |
 | WF | Wallis and Futuna Islands | 0 | 0 |
