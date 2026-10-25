@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-25T08:05:58+00:00",
+ "generated_at": "2026-10-25T09:12:14+00:00",
  "counts": {
-  "guides": 1964,
+  "guides": 1967,
   "jurisdictions": 262,
   "accountant_reviewed": 164
  },
@@ -9887,6 +9887,19 @@
    "last_updated": "2026-09-13"
   },
   {
+   "slug": "gu-medicare-ordinary-share-reference",
+   "path": "skills/international/guam/gu-medicare-ordinary-share-reference.md",
+   "name": "gu-medicare-ordinary-share-reference",
+   "jurisdiction": "GU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-25"
+  },
+  {
    "slug": "gu-oasdi-annual-wage-base-reference",
    "path": "skills/international/guam/gu-oasdi-annual-wage-base-reference.md",
    "name": "gu-oasdi-annual-wage-base-reference",
@@ -16439,6 +16452,19 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "mp-medicare-ordinary-share-reference",
+   "path": "skills/international/northern-mariana-islands/mp-medicare-ordinary-share-reference.md",
+   "name": "mp-medicare-ordinary-share-reference",
+   "jurisdiction": "MP",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-25"
+  },
+  {
    "slug": "mp-oasdi-annual-wage-base-reference",
    "path": "skills/international/northern-mariana-islands/mp-oasdi-annual-wage-base-reference.md",
    "name": "mp-oasdi-annual-wage-base-reference",
@@ -21728,6 +21754,19 @@
    "review_status": "current",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "vi-medicare-ordinary-share-reference",
+   "path": "skills/international/united-states-virgin-islands/vi-medicare-ordinary-share-reference.md",
+   "name": "vi-medicare-ordinary-share-reference",
+   "jurisdiction": "VI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-25"
   },
   {
    "slug": "vi-oasdi-annual-wage-base-reference",
