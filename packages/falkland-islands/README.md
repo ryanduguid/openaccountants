@@ -7,6 +7,7 @@
 
 1. `intake.md`
 2. `fk-annual-employment-income.md`
+3. `fk-retirement-pensions-weekly-reference.md`
 
 ## Shared files this package needs
 
@@ -14,6 +15,7 @@ These are part of this package and live once in [`../_shared/`](../_shared/):
 
 - [`foundation.md`](../_shared/foundation.md)
 - [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
 - [`workflow-base.md`](../_shared/workflow-base.md)
 
 
