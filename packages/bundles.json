@@ -4201,6 +4201,22 @@
     "workflow-base.md"
    ]
   },
+  "puerto-rico": {
+   "jurisdiction": "PR",
+   "name": "Puerto Rico",
+   "files": [
+    "intake.md",
+    "pr-medicare-ordinary-share-reference.md",
+    "pr-oasdi-annual-wage-base-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "us-circular-230-disclosure.md",
+    "workflow-base.md"
+   ]
+  },
   "qatar": {
    "jurisdiction": "QA",
    "name": "Qatar",
