@@ -24,7 +24,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AO | Angola | 6 | 0 |
 | AQ | Antarctica | 0 | 0 |
 | AR | Argentina | 9 | 3 |
-| AS | American Samoa | 1 | 0 |
+| AS | American Samoa | 2 | 0 |
 | AT | Austria | 6 | 0 |
 | AU | Australia | 48 | 0 |
 | AW | Aruba | 0 | 0 |

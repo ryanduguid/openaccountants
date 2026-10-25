@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-25 | [American Samoa: ordinary Medicare reference](2026-10-25-american-samoa-ordinary-medicare-reference.md) |
 | 2026-10-25 | [Guam, NMI and US Virgin Islands: ordinary Medicare references](2026-10-25-guam-nmi-usvi-ordinary-medicare-references.md) |
 | 2026-10-25 | [Guam, NMI and US Virgin Islands: ordinary OASDI references](2026-10-25-guam-nmi-usvi-oasdi-annual-wage-base-references.md) |
 | 2026-10-25 | [American Samoa: ordinary OASDI annual wage-base reference](2026-10-25-american-samoa-oasdi-annual-wage-base-reference.md) |
