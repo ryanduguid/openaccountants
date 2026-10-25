@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-25T07:21:13+00:00",
+ "generated_at": "2026-10-25T08:05:58+00:00",
  "counts": {
-  "guides": 1961,
-  "jurisdictions": 259,
+  "guides": 1964,
+  "jurisdictions": 262,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -9887,6 +9887,19 @@
    "last_updated": "2026-09-13"
   },
   {
+   "slug": "gu-oasdi-annual-wage-base-reference",
+   "path": "skills/international/guam/gu-oasdi-annual-wage-base-reference.md",
+   "name": "gu-oasdi-annual-wage-base-reference",
+   "jurisdiction": "GU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-25"
+  },
+  {
    "slug": "gt-company-formation",
    "path": "skills/international/guatemala/gt-company-formation.md",
    "name": "gt-company-formation",
@@ -16426,6 +16439,19 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "mp-oasdi-annual-wage-base-reference",
+   "path": "skills/international/northern-mariana-islands/mp-oasdi-annual-wage-base-reference.md",
+   "name": "mp-oasdi-annual-wage-base-reference",
+   "jurisdiction": "MP",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-25"
+  },
+  {
    "slug": "no-capital-gains",
    "path": "skills/international/norway/no-capital-gains.md",
    "name": "no-capital-gains",
@@ -21702,6 +21728,19 @@
    "review_status": "current",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "vi-oasdi-annual-wage-base-reference",
+   "path": "skills/international/united-states-virgin-islands/vi-oasdi-annual-wage-base-reference.md",
+   "name": "vi-oasdi-annual-wage-base-reference",
+   "jurisdiction": "VI",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-25"
   },
   {
    "slug": "uruguay-income-tax",
