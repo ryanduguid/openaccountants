@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-24T10:52:24+00:00",
+ "generated_at": "2026-10-25T01:24:53+00:00",
  "counts": {
-  "guides": 1959,
-  "jurisdictions": 257,
+  "guides": 1960,
+  "jurisdictions": 258,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -9768,6 +9768,19 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "gi-weekly-social-insurance-reference",
+   "path": "skills/international/gibraltar/gi-weekly-social-insurance-reference.md",
+   "name": "gi-weekly-social-insurance-reference",
+   "jurisdiction": "GI",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-24"
   },
   {
    "slug": "gr-company-formation",
