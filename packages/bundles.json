@@ -2455,6 +2455,7 @@
    "name": "Guam",
    "files": [
     "intake.md",
+    "gu-additional-medicare-annual-reference.md",
     "gu-medicare-ordinary-share-reference.md",
     "gu-oasdi-annual-wage-base-reference.md",
     "README.md"
@@ -3953,6 +3954,7 @@
    "name": "Northern Mariana Islands",
    "files": [
     "intake.md",
+    "mp-additional-medicare-annual-reference.md",
     "mp-medicare-ordinary-share-reference.md",
     "mp-oasdi-annual-wage-base-reference.md",
     "README.md"
@@ -5220,6 +5222,7 @@
    "name": "United States Virgin Islands",
    "files": [
     "intake.md",
+    "vi-additional-medicare-annual-reference.md",
     "vi-medicare-ordinary-share-reference.md",
     "vi-oasdi-annual-wage-base-reference.md",
     "README.md"
