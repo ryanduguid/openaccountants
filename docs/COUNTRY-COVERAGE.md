@@ -4,7 +4,7 @@ Generated from `country-catalogue.json` and `index.json`. Regenerate with `pytho
 
 The target contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 
-204 of 250 target areas have at least one indexed guide; 46 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+205 of 250 target areas have at least one indexed guide; 45 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -165,7 +165,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MP | Northern Mariana Islands | 3 | 0 |
 | MQ | Martinique | 0 | 0 |
 | MR | Mauritania | 6 | 0 |
-| MS | Montserrat | 0 | 0 |
+| MS | Montserrat | 1 | 0 |
 | MT | Malta | 20 | 0 |
 | MU | Mauritius | 6 | 0 |
 | MV | Maldives | 6 | 0 |

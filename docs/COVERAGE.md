@@ -24,17 +24,17 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,973** |
-| Distinct `jurisdiction` codes | **263** |
+| Guide files indexed | **1,974** |
+| Distinct `jurisdiction` codes | **264** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,809** |
+| `tier: 2` (source-cited draft) | **1,810** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **204** |
+| Country directories under `skills/international/` | **205** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **275** |
+| Generated bundles under `packages/` | **276** |
 
 Guides are present for all 50 US states and DC.
-Accountant-reviewed guides exist in 24 of the 263 jurisdiction codes;
+Accountant-reviewed guides exist in 24 of the 264 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
 jurisdiction.
@@ -62,7 +62,7 @@ Regenerate this list with:
 python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] for g in d['guides'] if str(g.get('tax_year')) <= '2024' and g.get('tax_year')))"
 ```
 
-The other guides carry `tax_year` 2025 (1,592), 2026 (298), or no year (76).
+The other guides carry `tax_year` 2025 (1,592), 2026 (299), or no year (76).
 
 > **Names on tier-2 guides.** 99 guides carry a named `reviewed_by` while
 > marked `tier: 2`. The name records corrections an accountant contributed
