@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-25 | [Gibraltar: ordinary weekly Social Insurance published-profile reference](2026-10-25-gibraltar-weekly-social-insurance-reference.md) |
 | 2026-10-24 | [Falkland Islands: ordinary weekly retirement-pension reference](2026-10-24-falkland-retirement-pensions-weekly-reference.md) |
 | 2026-10-24 | [Falkland Islands: ordinary annual employment income reference](2026-10-24-falkland-annual-employment-income.md) |
 | 2026-10-24 | [Saint Lucia monthly National Insurance administrative reference](2026-10-24-saint-lucia-national-insurance-reference.md) |

@@ -2397,6 +2397,20 @@
     "workflow-base.md"
    ]
   },
+  "gibraltar": {
+   "jurisdiction": "GI",
+   "name": "Gibraltar",
+   "files": [
+    "intake.md",
+    "gi-weekly-social-insurance-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "greece": {
    "jurisdiction": "GR",
    "name": "Greece",
