@@ -2451,6 +2451,20 @@
     "workflow-base.md"
    ]
   },
+  "grenada": {
+   "jurisdiction": "GD",
+   "name": "Grenada",
+   "files": [
+    "intake.md",
+    "gd-annual-employment-income-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "guam": {
    "jurisdiction": "GU",
    "name": "Guam",
