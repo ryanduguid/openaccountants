@@ -3734,6 +3734,20 @@
     "workflow-base.md"
    ]
   },
+  "nauru": {
+   "jurisdiction": "NR",
+   "name": "Nauru",
+   "files": [
+    "intake.md",
+    "nr-corporate-annual-return-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "company-formation-workflow-base.md",
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "nepal": {
    "jurisdiction": "NP",
    "name": "Nepal",

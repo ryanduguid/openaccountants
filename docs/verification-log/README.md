@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-27 | [Nauru: conditional corporate annual-return date reference](2026-10-27-nauru-corporate-annual-return-reference.md) |
 | 2026-10-27 | [Antigua and Barbuda: annual Education Levy source worksheet](2026-10-27-antigua-education-levy-reference.md) |
 | 2026-10-26 | [Guam, NMI and US Virgin Islands: ordinary employer Additional Medicare payment reference](2026-10-26-territorial-additional-medicare-payment-reference.md) |
 | 2026-10-26 | [Palau: conditional corporate records and annual report reference](2026-10-26-palau-corporate-records-annual-report-reference.md) |
