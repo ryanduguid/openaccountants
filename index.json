@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-25T17:42:13+00:00",
+ "generated_at": "2026-10-26T21:04:40+00:00",
  "counts": {
-  "guides": 1978,
+  "guides": 1979,
   "jurisdictions": 265,
   "accountant_reviewed": 164
  },
@@ -2228,6 +2228,19 @@
    "review_status": "pending_review",
    "tax_year": "2022",
    "last_updated": "2026-10-12"
+  },
+  {
+   "slug": "ag-education-levy",
+   "path": "skills/international/antigua-and-barbuda/ag-education-levy.md",
+   "name": "ag-education-levy",
+   "jurisdiction": "AG",
+   "category": "payroll",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": null,
+   "last_updated": "2026-10-27"
   },
   {
    "slug": "ag-medical-benefits",
