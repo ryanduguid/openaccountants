@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-26T21:48:45+00:00",
+ "generated_at": "2026-10-26T22:24:01+00:00",
  "counts": {
-  "guides": 1980,
-  "jurisdictions": 266,
+  "guides": 1981,
+  "jurisdictions": 267,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -9911,6 +9911,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-09-13"
+  },
+  {
+   "slug": "gd-annual-employment-income-reference",
+   "path": "skills/international/grenada/gd-annual-employment-income-reference.md",
+   "name": "gd-annual-employment-income-reference",
+   "jurisdiction": "GD",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2019",
+   "last_updated": "2026-10-27"
   },
   {
    "slug": "gu-additional-medicare-annual-reference",
