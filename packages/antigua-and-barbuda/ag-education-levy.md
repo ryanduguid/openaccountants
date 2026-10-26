@@ -1,6 +1,6 @@
 ---
 name: ag-education-levy
-version: 0.1
+version: 0.2
 description: Bounded annual Education Levy source worksheet for qualified reviewers examining ordinary employee salary and wages in Antigua and Barbuda. Explains the retained annual exemption and marginal bands, overtime inclusion, historical charging amendments, exact unrounded examples and the difference between annual source arithmetic and payroll deductions. Use for education levy band, threshold and source reconciliation questions under independently established premises. Requires the universal and payroll workflow bases. Holds operative current law, annual period, wage exceptions, payment dates, rounding, adjustments, full payroll outputs and comprehensive country acceptance until missing evidence and professional review requirements are satisfied.
 category: payroll
 jurisdiction: AG
@@ -92,7 +92,7 @@ With established ordinary salary of 20,000 and included overtime of 4,000, A is 
 
 ## Payroll, calendar and adjustment holds
 
-Section 14 says the levy is paid monthly and addresses weekly or monthly employer deductions. That does not establish the annual period, annualisation, cumulative computation or lawful division of this annual curve. Do not derive accepted withholding by dividing the exact annual amount by 12, 52 or another assumed count.
+Section 14(2) says the levy is paid monthly or weekly as the case may be; section 14(5) addresses weekly or monthly employer deductions. That does not establish the annual period, annualisation, cumulative computation or lawful division of this annual curve. Do not derive accepted withholding by dividing the exact annual amount by 12, 52 or another assumed count.
 
 For the Board's weekly 250 example, 2.5% of the stated 125 difference is exactly 3.125; the page displays 3.13 and a 4-week total of 12.52. For its daily 60, 3-day example, 2.5% of the stated 35 difference is exactly 0.875; the page displays 0.88 but an aggregate of 2.63. These displays do not supply a consistent rule for rounding each component versus the aggregate. The monthly exemption display of 541.67 does not replace the statutory annual 6,500. Obtain the lawful precision and ordering before actual deductions.
 
