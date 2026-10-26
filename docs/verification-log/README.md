@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-26 | [Guam, NMI and US Virgin Islands: ordinary employer Additional Medicare payment reference](2026-10-26-territorial-additional-medicare-payment-reference.md) |
 | 2026-10-26 | [Palau: conditional corporate records and annual report reference](2026-10-26-palau-corporate-records-annual-report-reference.md) |
 | 2026-10-26 | [Montserrat: nominal monthly Social Security reference](2026-10-26-montserrat-monthly-social-security-reference.md) |
 | 2026-10-25 | [Guam, NMI and US Virgin Islands: annual Additional Medicare references](2026-10-25-territorial-additional-medicare-references.md) |
