@@ -2465,6 +2465,20 @@
     "workflow-base.md"
    ]
   },
+  "guadeloupe": {
+   "jurisdiction": "GP",
+   "name": "Guadeloupe",
+   "files": [
+    "intake.md",
+    "gp-overseas-income-tax-reduction-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "guam": {
    "jurisdiction": "GU",
    "name": "Guam",

@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-26T22:24:01+00:00",
+ "generated_at": "2026-10-26T23:46:29+00:00",
  "counts": {
-  "guides": 1981,
-  "jurisdictions": 267,
+  "guides": 1982,
+  "jurisdictions": 268,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -9923,6 +9923,19 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2019",
+   "last_updated": "2026-10-27"
+  },
+  {
+   "slug": "gp-overseas-income-tax-reduction-reference",
+   "path": "skills/international/guadeloupe/gp-overseas-income-tax-reduction-reference.md",
+   "name": "gp-overseas-income-tax-reduction-reference",
+   "jurisdiction": "GP",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
    "last_updated": "2026-10-27"
   },
   {
