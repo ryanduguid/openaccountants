@@ -17,7 +17,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | AD | Andorra | 6 | 0 |
 | AE | United Arab Emirates | 7 | 3 |
 | AF | Afghanistan | 6 | 0 |
-| AG | Antigua and Barbuda | 2 | 0 |
+| AG | Antigua and Barbuda | 3 | 0 |
 | AI | Anguilla | 2 | 0 |
 | AL | Albania | 5 | 0 |
 | AM | Armenia | 8 | 0 |
