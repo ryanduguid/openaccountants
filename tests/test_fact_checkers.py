@@ -175,6 +175,19 @@ class FactCheckerTests(CheckerCase):
                             else "citations: 0 authority, 1 secondary")
                 self.assertIn(expected, output)
 
+    def test_source_mix_recognises_faroe_publishers_without_trusting_lookalikes(self):
+        for host, authority in (("www.taks.fo", True), ("taks.fo", True),
+                                ("www.logir.fo", True), ("logir.fo", True),
+                                ("www.taks.fo.example.com", False),
+                                ("logir-fo.example", False)):
+            with self.subTest(host=host):
+                output = self.run_checker("list-source-mix.py", {
+                    "fo/table.md": f"- **Rate** - 13% _(https://{host}/table)_\n",
+                })
+                expected = ("citations: 1 authority, 0 secondary" if authority
+                            else "citations: 0 authority, 1 secondary")
+                self.assertIn(expected, output)
+
     def test_unclassified_lists_what_a_zero_authority_jurisdiction_cites(self):
         # The candidate filters — three citations, a two-letter TLD — hid every
         # authority found this session. So for a jurisdiction the script is

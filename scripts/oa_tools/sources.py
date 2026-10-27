@@ -116,6 +116,8 @@ NON_GOV_AUTHORITY = frozenset((
     'riigiteataja.ee',    # Riigi Teataja, Estonia's official gazette and the
                           # publisher of its consolidated acts and their English
                           # translations. Bare .ee.
+    'logir.fo',          # Faroe Islands official legislation and gazette publisher;
+                          # TAKS links its applicable laws here. Bare .fo.
     'ohada.org',          # OHADA itself — the Journal Officiel and the digital
                           # library that carries it. Supranational rather than
                           # national, so no country suffix to recognise it by;
@@ -125,6 +127,8 @@ NON_GOV_AUTHORITY = frozenset((
     # Revenue and tax administrations
     'impuesto.aw',        # Aruba Departamento di Impuesto; publishes the official
                           # annual income and wage tax tables on this bare .aw.
+    'taks.fo',            # Faroe Islands tax administration; publishes its official
+                          # national and municipal tax tables on this bare .fo.
     'emta.ee',            # Estonian Tax and Customs Board
     'frcs.org.fj',        # Fiji Revenue and Customs Service
     'rsl.org.ls',         # Revenue Services Lesotho
