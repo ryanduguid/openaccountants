@@ -163,6 +163,18 @@ class FactCheckerTests(CheckerCase):
         self.assertIn("citing no authority domain at all: 0", output)
         self.assertIn("citations: 1 authority, 0 secondary", output)
 
+    def test_source_mix_recognises_aruba_authority_without_trusting_lookalikes_or_cdn(self):
+        for host, authority in (("www.impuesto.aw", True), ("impuesto.aw", True),
+                                ("www.impuesto.aw.example.com", False),
+                                ("impuesto-aw.example", False), ("cuatro.sim-cdn.nl", False)):
+            with self.subTest(host=host):
+                output = self.run_checker("list-source-mix.py", {
+                    "aw/table.md": f"- **Rate** - 21% _(https://{host}/table)_\n",
+                })
+                expected = ("citations: 1 authority, 0 secondary" if authority
+                            else "citations: 0 authority, 1 secondary")
+                self.assertIn(expected, output)
+
     def test_unclassified_lists_what_a_zero_authority_jurisdiction_cites(self):
         # The candidate filters — three citations, a two-letter TLD — hid every
         # authority found this session. So for a jurisdiction the script is

@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**1,986 Guides** across **272 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,987 Guides** across **273 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (1986 guides, 272 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (1987 guides, 273 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -316,6 +316,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - armenia-social-contributions | AM | tier 2 | reviewed_by -
 - armenia-tax-optimization | AM | tier 2 | reviewed_by -
 - armenia-vat | AM | tier 2 | reviewed_by -
+- aw-annual-income-tax-table-reference | AW | tier 2 | reviewed_by -
 - au-amending-individual-income-tax-return-period | AU | tier 2 | reviewed_by -
 - au-bas-preparation | AU | tier 2 | reviewed_by -
 - au-capital-gains | AU | tier 2 | reviewed_by -
@@ -2186,7 +2187,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**1,986 Guides** across **272 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,987 Guides** across **273 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2329,7 +2330,7 @@ Quality tiers describe the review status of a skill, not a guarantee that any sp
 
 Every row is derived from the guides' frontmatter with one rule: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name in `reviewed_by` (or the legacy `verified_by`), and a reviewer is on this roster when at least one guide names them that way. A name on a `tier: 2` guide is attribution, not review, and does not count. The rule is `reviewer_of` in `scripts/oa_tools/roster.py`; `index.json`, the README headline and the coverage gate use the same one, so these figures agree with them by construction.
 
-**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 272 jurisdictions · 25 reviewed guides edited since their review.**
+**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 273 jurisdictions · 25 reviewed guides edited since their review.**
 
 ## Reviewers
 
@@ -2390,7 +2391,7 @@ Jurisdiction codes are the guides' `jurisdiction` values: ISO 3166 country codes
 | NG | 2 | Omolola Fasasi (2) |
 | BH | 1 | Mehran Habib (1) |
 
-The other 248 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
+The other 249 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
 
 ## How a name gets here
 

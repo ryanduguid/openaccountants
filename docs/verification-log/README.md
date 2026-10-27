@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-27 | [Aruba: conditional annual income tax table reference](2026-10-27-aruba-annual-income-tax-table-reference.md) |
 | 2026-10-27 | [French overseas reductions: retained statutory bodies and amendment reconciliation](2026-10-27-french-overseas-statutory-sources.md) |
 | 2026-10-27 | [French Guiana, Martinique, Mayotte and Réunion: conditional overseas income tax reduction references](2026-10-27-other-dom-overseas-income-tax-reduction-references.md) |
 | 2026-10-27 | [Guadeloupe: conditional overseas income tax reduction reference](2026-10-27-guadeloupe-overseas-income-tax-reduction-reference.md) |

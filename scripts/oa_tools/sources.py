@@ -123,6 +123,8 @@ NON_GOV_AUTHORITY = frozenset((
                           # member states. Note ohada.com is a different body
                           # (the UNIDA association) and is deliberately absent.
     # Revenue and tax administrations
+    'impuesto.aw',        # Aruba Departamento di Impuesto; publishes the official
+                          # annual income and wage tax tables on this bare .aw.
     'emta.ee',            # Estonian Tax and Customs Board
     'frcs.org.fj',        # Fiji Revenue and Customs Service
     'rsl.org.ls',         # Revenue Services Lesotho

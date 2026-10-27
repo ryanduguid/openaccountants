@@ -363,6 +363,20 @@
     "workflow-base.md"
    ]
   },
+  "aruba": {
+   "jurisdiction": "AW",
+   "name": "Aruba",
+   "files": [
+    "intake.md",
+    "aw-annual-income-tax-table-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "australia": {
    "jurisdiction": "AU",
    "name": "Australia",
