@@ -17,7 +17,7 @@ tax_year: 2025
 tax_year_notes: "2025 income, 2026 assessment; exact hypothetical component arithmetic, no actual tax or filing result accepted"
 tier: 2
 last_updated: 2026-10-27
-version: 0.1
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -25,7 +25,7 @@ depends_on:
   - income-tax-workflow-base
 ---
 
-# French Guiana: overseas income tax reduction reference v0.1
+# French Guiana: overseas income tax reduction reference v0.2
 
 > **General reference only.** This source-cited Tier 2 conditional draft illustrates one annual tax reduction. It does not complete an income tax engagement. Actual tax, statutory precision, filing and payment outputs remain unaccepted. Guide presence, source preparation and passing component checks do not establish comprehensive jurisdiction acceptance.
 
@@ -37,7 +37,7 @@ The fictional branch stipulates an individual income tax filing unit domiciled i
 
 Only the reduction and exact remainder before decote are illustrated. Non-residents, dual or uncertain domicile, transfers during the year, other territories, foreign or treaty matters, proportional-rate income, professional capital gains, exceptional-income quotient calculations, business reliefs and unresolved upstream adjustments remain held. Neither wages nor taxable income may be substituted for the input tax amount.
 
-The figures below concern 2025 income in the retained 2026 tax-authority instructions. Do not apply them automatically to 2026 income or another period. Before an engagement calculation, establish the applicable legislation, amendments, commencement, doctrine, residence facts and procedures for the requested period. The retained administrative instructions do not establish a complete consolidated statutory chain or comprehensive current-law acceptance.
+The figures below concern 2025 income in the retained 2026 tax-authority instructions. Do not apply them automatically to 2026 income or another period. Before an engagement calculation, establish the applicable legislation, amendments, commencement, doctrine, residence facts and procedures for the requested period. The retained administrative instructions and the dated statutory texts below do not establish a complete later amendment chain or comprehensive current-law acceptance.
 
 French Guiana is named Guyane in the retained French sources.
 
@@ -48,8 +48,11 @@ French Guiana is named Guyane in the retained French sources.
 | [L1: DGFiP, Brochure pratique 2026, declaration of 2025 income](https://www.impots.gouv.fr/www2/fichiers/documentation/brochure/ir_2026/pdf_integral/Brochure-IR-2026.pdf) | Physical page 62, printed 61, identifies the 2025 column and the French Guiana reduction cap. Physical page 373, printed 372, states the rate, cap, domicile distinction and general nearest-euro rule. Physical page 382, printed 381, calculation sheet page 3, places the DOM reduction after family quotient capping and applicable complementary relief, before decote. These selected pages were compared with the originals. This is not a substantive review of all 442 pages; other pages retain OCR or encoding issues. The brochure says it does not replace the administration's official documentation. |
 | [L2: BOI-IR-LIQ-20-30-10, published 26 February 2019](https://bofip.impots.gouv.fr/bofip/4618-PGP.html/identifiant=BOI-IR-LIQ-20-30-10-20190226) | Paragraphs 20 and 40 give the order, 40% rate and EUR 4,050 cap for French Guiana. Paragraph 40 states the caps apply from taxation of 2018 income. Paragraphs 50-140 distinguish domicile and transfer branches. All 4 pages of the retained official PDF export were compared with their originals. Export on 27 October 2026 is a retrieval date, not a new doctrinal commencement date. |
 | [L3: DGFiP, specific tax advantages for activities in the DOM](https://www.impots.gouv.fr/professionnel/questions/puis-je-beneficier-davantages-fiscaux-specifiques-en-exercant-une-activite) | Corroborates the French Guiana rate, cap and distinction between full-year and transfer situations. Its business focus does not establish eligibility for every individual or business regime. |
+| [L4: CGI article 197, version beginning 21 February 2026](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053542636) | Complete article body and preceding version retained from the official [DILA LEGI update of 23 February 2026](https://echanges.dila.gouv.fr/OPENDATA/LEGI/LEGI_20260223-224003.tar.gz). I.3 supplies both territorial rate/cap groups after I.2 and before I.4. This dated snapshot does not establish the absence of later amendments or settle every intermediate rounding point. |
+| [L5: Finance Act 2026-103, original article 4](https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000053508182) | Original text retained from the official [DILA JORF update of 20 February 2026](https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20260220-221620.tar.gz). I.B changes amounts in article 197 I.1, I.2 and I.4.a, leaving I.3 unchanged. II.A applies I.A and I.B to tax due for 2025 and subsequent years; II.B separately governs I.C. All 11 monetary substitutions reconstruct the new article body from its predecessor after whitespace normalisation. |
+| [L6: Finance Act 2026-103, rectificatif published 10 October 2026](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054969274) | Complete rectification retained from the official [DILA JORF update of 10 October 2026](https://echanges.dila.gouv.fr/OPENDATA/JORF/JORF_20261010-002617.tar.gz). It corrects a reference in Finance Act article 198 I.4°.a, from L. 2122-8 to L. 2122-28. It does not correct article 4 or CGI article 197. That finding does not exclude other amendments. |
 
-CGI article 197 I.3 is the statutory reference identified by L1 and L2. Its complete applicable statutory body and amendment chain were not retained for this draft. L1 and L2 are primary tax-authority materials, not an acquired consolidated statute. Their selected mechanics support labelled hypothetical arithmetic; actual application remains subject to the source conditions above.
+The complete selected article bodies, the identified original amendment and its application clause are now retained and reconciled. Article 197 I.3 corroborates the component's rates, caps and position in the tax sequence. Exhaustive later amendment history, all applicable cross-references, domicile, special provisions, statutory precision and actual application remain unresolved. These acquired texts narrow the earlier acquisition gap; they do not establish comprehensive current-law or jurisdiction acceptance.
 
 ## Intake and component mechanics
 
@@ -57,8 +60,8 @@ Reuse redacted records before grouped questions. Establish the requested income 
 
 1. **Establish the stage.** Let G be the independently established ordinary progressive income tax amount entering the DOM reduction, after family quotient capping and all applicable complementary family quotient relief. L1's calculation sheet shows I2 = I1 - H where complementary relief H applies. Establish that H is already applied or independently nil; never default unknown H to zero. A raw post-cap I1, post-decote amount, final tax, taxable income or payroll deduction is not an interchangeable input. _(L1, physical page 382)_
 2. **Validate the hypothetical input.** These fixtures accept a non-negative finite base-10 EUR amount expressed in whole euros or cents. Preserve its exact decimal value. Reject negative, missing, non-finite, malformed, mixed-currency or ambiguous amounts; hold unsupported precision for reconciliation rather than silently rounding it. This is the fixture input contract, not a rule that every legally valid intermediate must have 2 decimal places.
-3. **Calculate the uncapped amount.** U = 0.40 x G. The rate is 40% of the established tax amount, not 40% of wages or taxable income. _(L1, physical pages 62 and 373; L2, paragraph 40)_
-4. **Apply the cap once.** D = min(U, EUR 4,050). The cap limits the reduction, not G or the remaining tax. This component neither multiplies the cap by household parts nor treats it as a personal allowance. _(L1, physical pages 62 and 373; L2, paragraph 40)_
+3. **Calculate the uncapped amount.** U = 0.40 x G. The rate is 40% of the established tax amount, not 40% of wages or taxable income. _(L1, physical pages 62 and 373; L2, paragraph 40; L4, I.3)_
+4. **Apply the cap once.** D = min(U, EUR 4,050). The cap limits the reduction, not G or the remaining tax. This component neither multiplies the cap by household parts nor treats it as a personal allowance. _(L1, physical pages 62 and 373; L2, paragraph 40; L4, I.3)_
 5. **Reconcile the remainder.** P = G - D, so G = D + P. P corresponds to the amount after the DOM reduction and before decote, shown as I3 on L1's calculation sheet. Neither D nor P is the final tax, a refund, withholding credit or payment instruction. _(L1, physical page 382)_
 
 L1 physical page 373 states nearest-euro rounding for the taxable base and tax, with fractions below EUR 0.50 discarded and EUR 0.50 or above counted as another euro, citing CGI articles 193 and 1657-1. This passage does not independently settle every rounding point for G, U, D and P. The following fixtures preserve exact arithmetic before any statutory rounding. They do not establish that a fractional fixture is a permissible actual return intermediate. Obtain and apply the required stage-specific precision before an actual result; do not independently round each intermediate, truncate fractions or use banker's rounding by inference.
@@ -128,7 +131,7 @@ The 13 universal slots are addressed only within this conditional scope: scope, 
 |---|---|
 | 1. Year, basis, unit and residence | 2025 income and stipulated full-year French Guiana domicile; actual residence, unit, territorial scope and complete applicable law held. |
 | 2. Income categories | Established ordinary progressive-tax input only; all classifications, aggregation and proportional or special branches held. |
-| 3. Rates and effective dates | One period-specific DOM reduction in primary tax-authority instructions; upstream rate schedule, other charges and complete statutory currency held. |
+| 3. Rates and effective dates | One period-specific DOM reduction in retained article 197 I.3 and tax-authority instructions; upstream rate schedule, other charges and complete statutory currency held. |
 | 4. Allowances, deductions and credits | Capped DOM component only; all prior relief must be independently established and all later adjustments held. |
 | 5. Expenses and capital | No expense, capital, business or investment relief determination; complete rules held. |
 | 6. Loss relief | No loss classification, offset, ordering or carry determination; complete rules held. |
@@ -143,6 +146,8 @@ The 13 universal slots are addressed only within this conditional scope: scope, 
 Optional regimes, international matters, local obligations and integrations remain incomplete. No actual income tax or comprehensive French Guiana acceptance follows.
 
 ## Revision and disclaimer
+
+27 October 2026, v0.2: retain complete article 197 bodies, reconcile Finance Act article 4 and its 2025 application, and inspect the identified October rectification. Later statutory currency, lawful precision and actual-work acceptance remain held.
 
 27 October 2026, v0.1: 2025-income DOM reduction reference, post-complementary-relief input, capped exact arithmetic and actual-work holds. Tier 2, pending_review and verified_by pending remain.
 
