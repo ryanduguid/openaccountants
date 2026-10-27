@@ -24,24 +24,24 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,986** |
-| Distinct `jurisdiction` codes | **272** |
+| Guide files indexed | **1,987** |
+| Distinct `jurisdiction` codes | **273** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,822** |
+| `tier: 2` (source-cited draft) | **1,823** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **213** |
+| Country directories under `skills/international/` | **214** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **284** |
+| Generated bundles under `packages/` | **285** |
 
 Guides are present for all 50 US states and DC.
-Accountant-reviewed guides exist in 24 of the 272 jurisdiction codes;
+Accountant-reviewed guides exist in 24 of the 273 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
 jurisdiction.
 
 ### Guides with earlier period labels
 
-Seven guides carry a `tax_year` of 2024 or earlier. These are the indexed
+Eight guides carry a `tax_year` of 2024 or earlier. These are the indexed
 period labels; they do not establish current law or complete topic coverage.
 The Anguilla payroll draft explicitly requires verification of the applicable
 law before calculating an engagement liability from its 2022 baseline.
@@ -50,6 +50,7 @@ law before calculating an engagement liability from its 2022 baseline.
 |---|---|---|
 | `ai-payroll` | 2022 | Statutory consolidation as at 31 December 2022 |
 | `bangladesh-pit` | 2024 | Personal income tax |
+| `gd-annual-employment-income-reference` | 2019 | Conditional resident cash-employment table; historical/current amendment chain and actual liability held |
 | `hk-mpf` | 2024 | Mandatory Provident Fund |
 | `hk-salaries-tax` | 2024 | Salaries tax |
 | `kn-social-security-reconciliation` | 2017 | Statutory schedule compared with a distinct 2018 Board profile; operative employer amount remains held |
@@ -62,7 +63,7 @@ Regenerate this list with:
 python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] for g in d['guides'] if str(g.get('tax_year')) <= '2024' and g.get('tax_year')))"
 ```
 
-The other guides carry `tax_year` 2025 (1,592), 2026 (303), or no year (77).
+The other guides carry `tax_year` 2025 (1,597), 2026 (305), or no year (77).
 
 > **Names on tier-2 guides.** 99 guides carry a named `reviewed_by` while
 > marked `tier: 2`. The name records corrections an accountant contributed
