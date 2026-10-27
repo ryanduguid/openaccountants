@@ -188,6 +188,19 @@ class FactCheckerTests(CheckerCase):
                             else "citations: 0 authority, 1 secondary")
                 self.assertIn(expected, output)
 
+    def test_source_mix_recognises_greenland_publishers_without_trusting_lookalikes(self):
+        for host, authority in (("www.aka.gl", True), ("aka.gl", True),
+                                ("www.nalunaarutit.gl", True), ("nalunaarutit.gl", True),
+                                ("www.aka.gl.example.com", False),
+                                ("nalunaarutit-gl.example", False)):
+            with self.subTest(host=host):
+                output = self.run_checker("list-source-mix.py", {
+                    "gl/base.md": f"- **Base rounding** - 100 kr _(https://{host}/law)_\n",
+                })
+                expected = ("citations: 1 authority, 0 secondary" if authority
+                            else "citations: 0 authority, 1 secondary")
+                self.assertIn(expected, output)
+
     def test_unclassified_lists_what_a_zero_authority_jurisdiction_cites(self):
         # The candidate filters — three citations, a two-letter TLD — hid every
         # authority found this session. So for a jurisdiction the script is

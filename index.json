@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-27T02:05:36+00:00",
+ "generated_at": "2026-10-27T02:56:12+00:00",
  "counts": {
-  "guides": 1988,
-  "jurisdictions": 274,
+  "guides": 1989,
+  "jurisdictions": 275,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -9950,6 +9950,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-09-13"
+  },
+  {
+   "slug": "gl-scale-income-reference",
+   "path": "skills/international/greenland/gl-scale-income-reference.md",
+   "name": "gl-scale-income-reference",
+   "jurisdiction": "GL",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-27"
   },
   {
    "slug": "gd-annual-employment-income-reference",

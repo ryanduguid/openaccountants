@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-27 | [Greenland: conditional scale income reference](2026-10-27-greenland-scale-income-reference.md) |
 | 2026-10-27 | [Faroe Islands: conditional national income tax table reference](2026-10-27-faroe-national-income-tax-table-reference.md) |
 | 2026-10-27 | [Aruba: conditional annual income tax table reference](2026-10-27-aruba-annual-income-tax-table-reference.md) |
 | 2026-10-27 | [French overseas reductions: retained statutory bodies and amendment reconciliation](2026-10-27-french-overseas-statutory-sources.md) |
