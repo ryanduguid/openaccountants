@@ -2493,6 +2493,20 @@
     "workflow-base.md"
    ]
   },
+  "greenland": {
+   "jurisdiction": "GL",
+   "name": "Greenland",
+   "files": [
+    "intake.md",
+    "gl-scale-income-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "grenada": {
    "jurisdiction": "GD",
    "name": "Grenada",
