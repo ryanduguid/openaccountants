@@ -2284,6 +2284,20 @@
     "workflow-base.md"
    ]
   },
+  "french-guiana": {
+   "jurisdiction": "GF",
+   "name": "French Guiana",
+   "files": [
+    "intake.md",
+    "gf-overseas-income-tax-reduction-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "gabon": {
    "jurisdiction": "GA",
    "name": "Gabon",
@@ -3499,6 +3513,20 @@
     "workflow-base.md"
    ]
   },
+  "martinique": {
+   "jurisdiction": "MQ",
+   "name": "Martinique",
+   "files": [
+    "intake.md",
+    "mq-overseas-income-tax-reduction-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "mauritania": {
    "jurisdiction": "MR",
    "name": "Mauritania",
@@ -3536,6 +3564,20 @@
     "company-formation-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "mayotte": {
+   "jurisdiction": "YT",
+   "name": "Mayotte",
+   "files": [
+    "intake.md",
+    "yt-overseas-income-tax-reduction-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
     "workflow-base.md"
    ]
   },
@@ -4331,6 +4373,20 @@
     "company-formation-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "reunion": {
+   "jurisdiction": "RE",
+   "name": "Reunion",
+   "files": [
+    "intake.md",
+    "re-overseas-income-tax-reduction-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
     "workflow-base.md"
    ]
   },

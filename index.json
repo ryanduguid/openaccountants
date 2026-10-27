@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-26T23:46:29+00:00",
+ "generated_at": "2026-10-27T00:16:41+00:00",
  "counts": {
-  "guides": 1982,
-  "jurisdictions": 268,
+  "guides": 1986,
+  "jurisdictions": 272,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -9211,6 +9211,19 @@
    "last_updated": "2026-09-28"
   },
   {
+   "slug": "gf-overseas-income-tax-reduction-reference",
+   "path": "skills/international/french-guiana/gf-overseas-income-tax-reduction-reference.md",
+   "name": "gf-overseas-income-tax-reduction-reference",
+   "jurisdiction": "GF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-10-27"
+  },
+  {
    "slug": "ga-company-formation",
    "path": "skills/international/gabon/ga-company-formation.md",
    "name": "ga-company-formation",
@@ -14385,6 +14398,19 @@
    "last_updated": "2026-07-22"
   },
   {
+   "slug": "mq-overseas-income-tax-reduction-reference",
+   "path": "skills/international/martinique/mq-overseas-income-tax-reduction-reference.md",
+   "name": "mq-overseas-income-tax-reduction-reference",
+   "jurisdiction": "MQ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-10-27"
+  },
+  {
    "slug": "mr-company-formation",
    "path": "skills/international/mauritania/mr-company-formation.md",
    "name": "mr-company-formation",
@@ -14539,6 +14565,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-04"
+  },
+  {
+   "slug": "yt-overseas-income-tax-reduction-reference",
+   "path": "skills/international/mayotte/yt-overseas-income-tax-reduction-reference.md",
+   "name": "yt-overseas-income-tax-reduction-reference",
+   "jurisdiction": "YT",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-10-27"
   },
   {
    "slug": "mexico-crypto-tax",
@@ -17828,6 +17867,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-11"
+  },
+  {
+   "slug": "re-overseas-income-tax-reduction-reference",
+   "path": "skills/international/reunion/re-overseas-income-tax-reduction-reference.md",
+   "name": "re-overseas-income-tax-reduction-reference",
+   "jurisdiction": "RE",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-10-27"
   },
   {
    "slug": "romania-references",
