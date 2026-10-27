@@ -4,7 +4,7 @@ Generated from `country-catalogue.json` and `index.json`. Regenerate with `pytho
 
 The target contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 
-209 of 250 target areas have at least one indexed guide; 41 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+213 of 250 target areas have at least one indexed guide; 37 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -93,7 +93,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | GB | United Kingdom of Great Britain and Northern Ireland | 26 | 15 |
 | GD | Grenada | 1 | 0 |
 | GE | Georgia | 8 | 0 |
-| GF | French Guiana | 0 | 0 |
+| GF | French Guiana | 1 | 0 |
 | GG | Guernsey | 0 | 0 |
 | GH | Ghana | 7 | 0 |
 | GI | Gibraltar | 1 | 0 |
@@ -163,7 +163,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | MN | Mongolia | 5 | 0 |
 | MO | China, Macao Special Administrative Region | 5 | 0 |
 | MP | Northern Mariana Islands | 4 | 0 |
-| MQ | Martinique | 0 | 0 |
+| MQ | Martinique | 1 | 0 |
 | MR | Mauritania | 6 | 0 |
 | MS | Montserrat | 1 | 0 |
 | MT | Malta | 20 | 0 |
@@ -201,7 +201,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | PW | Palau | 1 | 0 |
 | PY | Paraguay | 4 | 0 |
 | QA | Qatar | 6 | 0 |
-| RE | Réunion | 0 | 0 |
+| RE | Réunion | 1 | 0 |
 | RO | Romania | 9 | 0 |
 | RS | Serbia | 7 | 0 |
 | RU | Russian Federation | 14 | 0 |
@@ -260,7 +260,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | WS | Samoa | 6 | 0 |
 | XK | Kosovo | 5 | 0 |
 | YE | Yemen | 0 | 0 |
-| YT | Mayotte | 0 | 0 |
+| YT | Mayotte | 1 | 0 |
 | ZA | South Africa | 8 | 4 |
 | ZM | Zambia | 6 | 0 |
 | ZW | Zimbabwe | 6 | 0 |
