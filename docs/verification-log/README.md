@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-27 | [Guadeloupe: conditional overseas income tax reduction reference](2026-10-27-guadeloupe-overseas-income-tax-reduction-reference.md) |
 | 2026-10-27 | [Grenada: conditional annual employment income reference](2026-10-27-grenada-annual-employment-income-reference.md) |
 | 2026-10-27 | [Nauru: conditional corporate annual-return date reference](2026-10-27-nauru-corporate-annual-return-reference.md) |
 | 2026-10-27 | [Antigua and Barbuda: annual Education Levy source worksheet](2026-10-27-antigua-education-levy-reference.md) |
