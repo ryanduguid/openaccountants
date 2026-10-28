@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-28T09:04:47+00:00",
+ "generated_at": "2026-10-29T10:44:16+00:00",
  "counts": {
-  "guides": 1991,
-  "jurisdictions": 277,
+  "guides": 1992,
+  "jurisdictions": 278,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -10132,6 +10132,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "gg-personal-allowance-reference",
+   "path": "skills/international/guernsey/gg-personal-allowance-reference.md",
+   "name": "gg-personal-allowance-reference",
+   "jurisdiction": "GG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-28"
   },
   {
    "slug": "gw-company-formation",

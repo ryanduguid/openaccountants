@@ -2577,6 +2577,20 @@
     "workflow-base.md"
    ]
   },
+  "guernsey": {
+   "jurisdiction": "GG",
+   "name": "Guernsey",
+   "files": [
+    "intake.md",
+    "gg-personal-allowance-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "guinea": {
    "jurisdiction": "GN",
    "name": "Guinea",
