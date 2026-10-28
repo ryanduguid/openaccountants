@@ -4993,6 +4993,20 @@
     "workflow-base.md"
    ]
   },
+  "svalbard-and-jan-mayen": {
+   "jurisdiction": "SJ",
+   "name": "Svalbard And Jan Mayen",
+   "files": [
+    "intake.md",
+    "sj-svalbard-wage-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "sweden": {
    "jurisdiction": "SE",
    "name": "Sweden",

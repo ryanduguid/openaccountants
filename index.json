@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-27T02:56:12+00:00",
+ "generated_at": "2026-10-27T03:41:26+00:00",
  "counts": {
-  "guides": 1989,
-  "jurisdictions": 275,
+  "guides": 1990,
+  "jurisdictions": 276,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -20246,6 +20246,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-04"
+  },
+  {
+   "slug": "sj-svalbard-wage-reference",
+   "path": "skills/international/svalbard-and-jan-mayen/sj-svalbard-wage-reference.md",
+   "name": "sj-svalbard-wage-reference",
+   "jurisdiction": "SJ",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-27"
   },
   {
    "slug": "sweden-references",
