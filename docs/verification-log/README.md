@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-28 | [Solomon Islands: conditional monthly NPF contribution reference](2026-10-28-solomon-npf-contribution-reference.md) |
 | 2026-10-27 | [Svalbard: conditional annual wage-band reference](2026-10-27-svalbard-annual-wage-reference.md) |
 | 2026-10-27 | [Greenland: conditional scale income reference](2026-10-27-greenland-scale-income-reference.md) |
 | 2026-10-27 | [Faroe Islands: conditional national income tax table reference](2026-10-27-faroe-national-income-tax-table-reference.md) |

@@ -2,7 +2,7 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
-**1,990 Guides** across **276 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,991 Guides** across **277 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 ## What this repo is
 
@@ -123,7 +123,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 
 ========================================================================
 
-## Guide inventory (1990 guides, 276 jurisdictions, 164 accountant-reviewed)
+## Guide inventory (1991 guides, 277 jurisdictions, 164 accountant-reviewed)
 
 - cbam-carbon-border-adjustment | EU-27 | tier 2 | reviewed_by -
 - cross-border-invoicing-compliance | INTL | tier 2 | reviewed_by -
@@ -1613,6 +1613,7 @@ Licensed practitioners can review guides for their jurisdiction and put their na
 - slovenia-social-contributions | SI | tier 2 | reviewed_by -
 - slovenia-tax-optimization | SI | tier 2 | reviewed_by -
 - slovenia-vat-return | SI | tier 2 | reviewed_by -
+- sb-npf-contribution-reference | SB | tier 2 | reviewed_by -
 - so-company-formation | SO | tier 2 | reviewed_by -
 - so-corporate-income-tax | SO | tier 2 | reviewed_by -
 - so-income-tax | SO | tier 2 | reviewed_by -
@@ -2190,7 +2191,7 @@ work. Within-guide rule confidence is separate from the overall quality tier.
 
 ## Current inventory
 
-**1,990 Guides** across **276 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+**1,991 Guides** across **277 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
 
 Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
 
@@ -2208,7 +2209,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-There are 1,826 Tier 2 guides among the 1,990 indexed guides. These inventory
+There are 1,827 Tier 2 guides among the 1,991 indexed guides. These inventory
 counts do not establish comprehensive country coverage or a completed source
 chain for every draft. Read each guide's date, cited sources, scope and open
 conditions. See [COVERAGE.md](COVERAGE.md) for the derived inventory and
@@ -2333,7 +2334,7 @@ Quality tiers describe the review status of a skill, not a guarantee that any sp
 
 Every row is derived from the guides' frontmatter with one rule: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name in `reviewed_by` (or the legacy `verified_by`), and a reviewer is on this roster when at least one guide names them that way. A name on a `tier: 2` guide is attribution, not review, and does not count. The rule is `reviewer_of` in `scripts/oa_tools/roster.py`; `index.json`, the README headline and the coverage gate use the same one, so these figures agree with them by construction.
 
-**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 276 jurisdictions · 25 reviewed guides edited since their review.**
+**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 277 jurisdictions · 25 reviewed guides edited since their review.**
 
 ## Reviewers
 
@@ -2394,7 +2395,7 @@ Jurisdiction codes are the guides' `jurisdiction` values: ISO 3166 country codes
 | NG | 2 | Omolola Fasasi (2) |
 | BH | 1 | Mehran Habib (1) |
 
-The other 252 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
+The other 253 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
 
 ## How a name gets here
 
