@@ -6,7 +6,8 @@
 ## What's in this folder
 
 1. `intake.md`
-2. `fo-national-income-tax-table-reference.md`
+2. `fo-municipal-income-tax-reference.md`
+3. `fo-national-income-tax-table-reference.md`
 
 ## Shared files this package needs
 

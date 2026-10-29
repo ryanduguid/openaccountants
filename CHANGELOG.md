@@ -4,6 +4,8 @@ All notable changes to this repository, newest first, in the [Keep a Changelog](
 
 ## [Unreleased]
 
+- Add a conditional Faroe Islands municipal income tax reference with all 29 published 2026 municipal percentages, the income floor to a multiple of 100, the untaxed first 30,000 and exact raw examples. Relief, combined-tax coordination and actual-work acceptance remain held.
+
 - Extend the 5 French overseas income tax reduction drafts with a separate rounded DOM-to-decote component, independently established assessment categories, whole-difference rounding and boundary checks. Preserve the original unrounded illustrations and all actual-work holds.
 
 - Add a Tier 2 Marshall Islands Retirement Fund reference for selected 2017 amended text, with a conditional quarterly ceiling, separate worker and employer products and explicit actual-law, precision and operational holds.
