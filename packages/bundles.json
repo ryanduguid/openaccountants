@@ -3946,6 +3946,20 @@
     "workflow-base.md"
    ]
   },
+  "new-caledonia": {
+   "jurisdiction": "NC",
+   "name": "New Caledonia",
+   "files": [
+    "intake.md",
+    "nc-ordinary-irpp-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "new-zealand": {
    "jurisdiction": "NZ",
    "name": "New Zealand",
