@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-29T11:17:56+00:00",
+ "generated_at": "2026-10-29T11:25:17+00:00",
  "counts": {
-  "guides": 1994,
+  "guides": 1995,
   "jurisdictions": 280,
   "accountant_reviewed": 164
  },
@@ -8806,6 +8806,19 @@
    "review_status": "pending_review",
    "tax_year": "2026",
    "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "fo-municipal-income-tax-reference",
+   "path": "skills/international/faroe-islands/fo-municipal-income-tax-reference.md",
+   "name": "fo-municipal-income-tax-reference",
+   "jurisdiction": "FO",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-29"
   },
   {
    "slug": "fo-national-income-tax-table-reference",

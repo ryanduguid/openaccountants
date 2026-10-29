@@ -87,7 +87,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | FJ | Fiji | 6 | 0 |
 | FK | Falkland Islands (Malvinas) | 2 | 0 |
 | FM | Micronesia (Federated States of) | 0 | 0 |
-| FO | Faroe Islands | 1 | 0 |
+| FO | Faroe Islands | 2 | 0 |
 | FR | France | 21 | 0 |
 | GA | Gabon | 5 | 0 |
 | GB | United Kingdom of Great Britain and Northern Ireland | 26 | 15 |
