@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T11:12:02+00:00",
+ "generated_at": "2026-10-29T11:17:56+00:00",
  "counts": {
   "guides": 1994,
   "jurisdictions": 280,
@@ -9247,7 +9247,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-27"
+   "last_updated": "2026-10-29"
   },
   {
    "slug": "ga-company-formation",
@@ -9988,7 +9988,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-27"
+   "last_updated": "2026-10-29"
   },
   {
    "slug": "gu-additional-medicare-annual-reference",
@@ -14473,7 +14473,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-27"
+   "last_updated": "2026-10-29"
   },
   {
    "slug": "mr-company-formation",
@@ -14642,7 +14642,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-27"
+   "last_updated": "2026-10-29"
   },
   {
    "slug": "mexico-crypto-tax",
@@ -17944,7 +17944,7 @@
    "reviewed_by": null,
    "review_status": "pending_review",
    "tax_year": "2025",
-   "last_updated": "2026-10-27"
+   "last_updated": "2026-10-29"
   },
   {
    "slug": "romania-references",

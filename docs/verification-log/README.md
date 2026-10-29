@@ -10,6 +10,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 | 2026-10-28 | [Solomon Islands: conditional monthly NPF contribution reference](2026-10-28-solomon-npf-contribution-reference.md) |
 | 2026-10-28 | [Tuvalu: conditional ordinary monthly NPF contribution reference](2026-10-28-tuvalu-npf-contribution-reference.md) |
 | 2026-10-28 | [Marshall Islands: selected amended Retirement Fund reference](2026-10-28-marshall-retirement-contribution-reference.md) |
+| 2026-10-29 | [French overseas DOM and decote: separate rounded component](2026-10-29-french-dom-decote-rounded-component.md) |
 | 2026-10-27 | [Svalbard: conditional annual wage-band reference](2026-10-27-svalbard-annual-wage-reference.md) |
 | 2026-10-27 | [Greenland: conditional scale income reference](2026-10-27-greenland-scale-income-reference.md) |
 | 2026-10-27 | [Faroe Islands: conditional national income tax table reference](2026-10-27-faroe-national-income-tax-table-reference.md) |
