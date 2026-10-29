@@ -1,0 +1,11 @@
+# Saint Pierre and Miquelon: conditional social contributions reference
+
+30 October 2026. I checked the captured financing and collection sources for the new PM reference. The complete July 2025 LEGI archive passed its compressed-byte, gzip CRC/EOF and traversal checks. All 342 selected XML pins matched, and an independent raw-XML check confirmed the 3 dated instrument structures. The complete law 87-563 article 4 and ordinance 77-1102 article 8-1 bodies are retained with their separate commencement notes. These checks establish snapshot capture, not complete current law.
+
+The national decree 2025-1446 was captured from 2 official JORF archives. All 16 retained XML pins matched and the 8 corresponding records were byte-identical. Both structures resolve all 6 articles. The complete national D242-4 table and its commencement provisions agree with the separately captured public article. This does not independently establish PM applicability. The CPS January 2026 salary tables were compared in their rendered layout.
+
+The guide keeps national and CPS rows distinct, preserves capped and total remuneration bases, retains the operative July collection amendment and holds the complete legal bridge and actual-period selection. It distinguishes the tax-code compilation cutoff, generic annual-filing wording, blank salary form, year-inconsistent CPS notice and dated inclusive DSF receipt campaign. No filing or remittance recipient is inferred from a national cross-reference.
+
+Seven exact integer-product checks passed for the 2 fictional pension components and the published monthly/annual numeric relationship. These checks establish documentary arithmetic only. They do not validate local eligibility, legal precision, all contribution programmes, complete workflow outputs or a consuming system. Complete employee, below-floor, above-ceiling and self-employed ladders through total due remain required and unproduced.
+
+The guide is Tier 2, pending_review and verified_by: pending. Full repository verification and the independent financial publication review are pending at this draft stage. Actual-period law, complete intake, programme bases, precision, registration, filing, payment, reconciliation and professional acceptance remain held. Guide presence does not establish comprehensive PM coverage.

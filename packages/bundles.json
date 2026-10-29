@@ -4586,6 +4586,20 @@
     "workflow-base.md"
    ]
   },
+  "saint-pierre-and-miquelon": {
+   "jurisdiction": "PM",
+   "name": "Saint Pierre And Miquelon",
+   "files": [
+    "intake.md",
+    "pm-social-contributions-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "samoa": {
    "jurisdiction": "WS",
    "name": "Samoa",
