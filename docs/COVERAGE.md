@@ -24,24 +24,24 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **1,992** |
-| Distinct `jurisdiction` codes | **278** |
+| Guide files indexed | **1,993** |
+| Distinct `jurisdiction` codes | **279** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,828** |
+| `tier: 2` (source-cited draft) | **1,829** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **219** |
+| Country directories under `skills/international/` | **220** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **290** |
+| Generated bundles under `packages/` | **291** |
 
 Guides are present for all 50 US states and DC.
-Accountant-reviewed guides exist in 24 of the 278 jurisdiction codes;
+Accountant-reviewed guides exist in 24 of the 279 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
 jurisdiction.
 
 ### Guides with earlier period labels
 
-Nine guides carry a `tax_year` of 2024 or earlier. These are the indexed
+Ten guides carry a `tax_year` of 2024 or earlier. These are the indexed
 period labels; they do not establish current law or complete topic coverage.
 The Anguilla payroll draft explicitly requires verification of the applicable
 law before calculating an engagement liability from its 2022 baseline.
@@ -57,6 +57,7 @@ law before calculating an engagement liability from its 2022 baseline.
 | `lc-national-insurance-reference` | 2022 | Statutory rates and annual exemption with a separate observed monthly administrative profile; operative monthly authority remains held |
 | `sb-npf-contribution-reference` | 2024 | Conditional ordinary monthly NPF contribution mechanics; current law, actual coverage, recovery and operation held |
 | `thailand-pit` | 2024 | Personal income tax |
+| `tv-npf-contribution-reference` | 2022 | Conditional ordinary monthly NPF contribution mechanics; current law, actual coverage, deductions, special branches and operation held |
 
 Regenerate this list with:
 
