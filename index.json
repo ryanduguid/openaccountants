@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-29T11:25:17+00:00",
+ "generated_at": "2026-10-29T11:32:24+00:00",
  "counts": {
-  "guides": 1995,
-  "jurisdictions": 280,
+  "guides": 1996,
+  "jurisdictions": 281,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -15813,6 +15813,19 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "nc-ordinary-irpp-reference",
+   "path": "skills/international/new-caledonia/nc-ordinary-irpp-reference.md",
+   "name": "nc-ordinary-irpp-reference",
+   "jurisdiction": "NC",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2025",
+   "last_updated": "2026-10-29"
   },
   {
    "slug": "new-zealand-crypto-tax",
