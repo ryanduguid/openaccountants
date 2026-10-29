@@ -4,6 +4,8 @@ All notable changes to this repository, newest first, in the [Keep a Changelog](
 
 ## [Unreleased]
 
+- Add a Tier 2 Marshall Islands Retirement Fund reference for selected 2017 amended text, with a conditional quarterly ceiling, separate worker and employer products and explicit actual-law, precision and operational holds.
+
 The roadmap work that followed the September 2026 evaluation of this fork (pull requests #38 to #54): one source tree and one generated tree, gates instead of advice, and documentation that agrees with the corpus. Slugs and the `packages/` layout changed, so the next release is a major one.
 
 ### Added
