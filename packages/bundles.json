@@ -4787,6 +4787,20 @@
     "workflow-base.md"
    ]
   },
+  "solomon-islands": {
+   "jurisdiction": "SB",
+   "name": "Solomon Islands",
+   "files": [
+    "intake.md",
+    "sb-npf-contribution-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "somalia": {
    "jurisdiction": "SO",
    "name": "Somalia",
