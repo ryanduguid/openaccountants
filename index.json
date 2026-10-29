@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-29T11:32:24+00:00",
+ "generated_at": "2026-10-29T21:31:16+00:00",
  "counts": {
-  "guides": 1996,
-  "jurisdictions": 281,
+  "guides": 1997,
+  "jurisdictions": 282,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -19596,6 +19596,19 @@
    "review_status": "current",
    "tax_year": "2026",
    "last_updated": "2026-09-29"
+  },
+  {
+   "slug": "gs-ordinary-income-tax-reference",
+   "path": "skills/international/south-georgia-and-south-sandwich-islands/gs-ordinary-income-tax-reference.md",
+   "name": "gs-ordinary-income-tax-reference",
+   "jurisdiction": "GS",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-30"
   },
   {
    "slug": "kr-income-tax",
