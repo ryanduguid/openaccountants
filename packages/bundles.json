@@ -3569,6 +3569,20 @@
     "workflow-base.md"
    ]
   },
+  "marshall-islands": {
+   "jurisdiction": "MH",
+   "name": "Marshall Islands",
+   "files": [
+    "intake.md",
+    "mh-retirement-contribution-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "social-contributions-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "martinique": {
    "jurisdiction": "MQ",
    "name": "Martinique",

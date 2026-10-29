@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-29T11:02:42+00:00",
+ "generated_at": "2026-10-29T11:12:02+00:00",
  "counts": {
-  "guides": 1993,
-  "jurisdictions": 279,
+  "guides": 1994,
+  "jurisdictions": 280,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -14448,6 +14448,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-07-22"
+  },
+  {
+   "slug": "mh-retirement-contribution-reference",
+   "path": "skills/international/marshall-islands/mh-retirement-contribution-reference.md",
+   "name": "mh-retirement-contribution-reference",
+   "jurisdiction": "MH",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2017",
+   "last_updated": "2026-10-28"
   },
   {
    "slug": "mq-overseas-income-tax-reduction-reference",
