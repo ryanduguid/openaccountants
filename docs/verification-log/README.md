@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-30 | [South Georgia and South Sandwich Islands: conditional ordinary income tax reference](2026-10-30-south-georgia-ordinary-income-tax-reference.md) |
 | 2026-10-28 | [Guernsey: conditional personal allowance withdrawal reference](2026-10-28-guernsey-personal-allowance-reference.md) |
 | 2026-10-28 | [Solomon Islands: conditional monthly NPF contribution reference](2026-10-28-solomon-npf-contribution-reference.md) |
 | 2026-10-28 | [Tuvalu: conditional ordinary monthly NPF contribution reference](2026-10-28-tuvalu-npf-contribution-reference.md) |

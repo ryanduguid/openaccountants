@@ -17,7 +17,7 @@ tax_year: 2026
 tax_year_notes: "Selected 2026 conditional reference to the 2016 Ordinance and Regulations; unrounded annual charge only, actual applicability and operational completion held"
 tier: 2
 last_updated: 2026-10-30
-version: 0.1
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -25,7 +25,7 @@ depends_on:
   - income-tax-workflow-base
 ---
 
-# South Georgia and South Sandwich Islands: ordinary income tax reference v0.1
+# South Georgia and South Sandwich Islands: ordinary income tax reference v0.2
 
 > **Conditional Tier 2 draft.** This is a source and intake reference with fictional annual-charge examples. It is not a completed return, payslip, withholding calculation, payment demand or professional sign-off. Load `workflow-base` and `income-tax-workflow-base`; their source gates, confirmed profile, refusals, outputs and checks remain mandatory.
 
@@ -68,7 +68,7 @@ These source rules form an intake/control reference. They do not provide a compl
 
 | Stage | Statutory control | Remaining operational gate |
 |---|---|---|
-| Employer notification | Before intended work, section 10 requires the employee's name, address and email, expected arrival/departure, expected return in the same year and other prescribed information. Expected liability includes other employment; changed expectations must be notified as soon as reasonably practicable. | Current prescribed information, complete employment history, actual notice and submission route. |
+| Employer notification | Before intended work, section 10 requires the employee's name, address and email, expected arrival/departure, expected return in the same year and other prescribed information. Section 10(3) requires the expected liability or increased liability to be stated, taking other employment into account. If an initial section 10(3)(a) notice states no expected liability or increase, but liability or increased liability later arises by reason of that employment, section 10(4) requires notification as soon as reasonably practicable. L2 page 3 calls for broader information updates; distinguish that guidance from the statutory trigger. | Current prescribed information, complete employment history, actual notice and submission route. |
 | Tax quarters | Section 4 defines January-March, April-June, July-September and October-December. | Verified quarter allocation and earning/expectation premises; do not divide annual T by 4 automatically. |
 | Employer return/payment | Following notification of expected liability, section 11 requires a quarterly return and payment on account of expected liability within the period of 14 days beginning with quarter-end. The return states expected income, deductions and other prescribed information. | Current form, expected liability, lawful precision, actual payment and calendar computation. |
 | Deduction from employee | Section 11(3) permits the employer to deduct its payment on account under arrangements made by it. Section 11(7) bars deduction of late interest under that provision. | Actual lawful arrangements and evidenced deduction; no automatic per-payslip withholding or net-pay formula. |
@@ -174,7 +174,7 @@ Optional regimes, cross-border relief, local obligations and integrations remain
 
 ## Revision and disclaimer
 
-Version 0.1, 30 October 2026: first conditional source, presence, exemption and ordinary annual-charge reference. Retain `tier: 2`, `pending_review` and `verified_by: pending` until the repository's professional sign-off requirements are met. Source preparation, arithmetic checks, model review and publication cannot establish comprehensive jurisdiction acceptance.
+Version 0.2, 30 October 2026: conditional source, presence, exemption and ordinary annual-charge reference, with the section 10(4) statutory notification trigger distinguished from the guidance's broader information updates. Retain `tier: 2`, `pending_review` and `verified_by: pending` until the repository's professional sign-off requirements are met. Source preparation, arithmetic checks, model review and publication cannot establish comprehensive jurisdiction acceptance.
 
 <!-- openaccountants-cta-block -->
 

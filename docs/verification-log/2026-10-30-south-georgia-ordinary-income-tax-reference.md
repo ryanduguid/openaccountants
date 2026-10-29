@@ -1,0 +1,13 @@
+# South Georgia and South Sandwich Islands: ordinary income tax reference
+
+30 October 2026. I checked the retained source and verification receipts for `gs-ordinary-income-tax-reference`. The substantive source review addressed commit `7f376efbbcf05c107293f621c0d6a61364aa5494`, with guide SHA-256 `d22b918b55bff9e05f978326102e593e7628d1b7f35e3541481120a6adf6cce9`. All 18 original-source files still match their recorded hashes. The selected original tax, guidance and currency pages had received independent comparison; the later Gazette audit covered 266 native pages and 10 OCR supplements. These checks do not establish a complete current-law certificate.
+
+The conditional guide preserves the calendar-year presence test, territorial-work condition, all statutory exemption classes and the exact unrounded annual charge. It separates the charge from quarterly expectations, employer arrangements, written demands, refunds and interest. The source review's Crown armed-forces exemption finding was repaired before the pinned content revision.
+
+The retained documentary checks cover 10 charge rows, 6 presence rows, 6 integration and collection rows, 18 held cases, 10,001 arithmetic cases and 10 rejected mutations. They do not qualify a consuming LLM or a deployed financial workflow. The guide and its package mirror are byte-identical; the assembled package has 6 reconciled files.
+
+All 4 generators and 15 repository check groups passed on the pinned candidate. The raw root-test log records 519 tests run, comprising 510 passes and 9 skips; the earlier summary overstated the passes. All 121 MCP tests passed after installation of the unchanged local command. Baseline findings remain unresolved.
+
+The financial review approved bounded conditional publication without a publication blocker. Its notification-wording finding is clarified in version 0.2: section 10(4)'s mandatory trigger follows an initial section 10(3)(a) notice and liability or increased liability later arising by reason of that employment, taking other employment into account. The government guidance's broader information-update wording is identified separately. I checked that clarification against sections 10(3)-(4) and guidance page 3. The dated record and clarification are later documentation changes; the publication evidence records their checks separately.
+
+The guide remains Tier 2, `pending_review` and `verified_by: pending`. Actual-period applicability, complete intake, currency conversion, lawful precision, collection, filing, complete workflow outputs and professional acceptance remain held. The financial review's current-law and operational findings are prerequisites for actual work. Guide presence cannot establish comprehensive jurisdiction coverage.
