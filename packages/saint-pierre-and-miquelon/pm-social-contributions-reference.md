@@ -18,7 +18,7 @@ tax_year: 2026
 tax_year_notes: "Selected January 2026 CPS figures and dated statutory references; July 2025 snapshot and later captured amendments, operational application held"
 tier: 2
 last_updated: 2026-10-30
-version: 0.1
+version: 0.2
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -26,7 +26,7 @@ depends_on:
   - social-contributions-workflow-base
 ---
 
-# Saint Pierre and Miquelon: social contributions reference v0.1
+# Saint Pierre and Miquelon: social contributions reference v0.2
 
 > **Conditional Tier 2 draft.** Load workflow-base and social-contributions-workflow-base. Their source gates, confirmed profile, refusals, outputs, checks and professional review remain mandatory. The fictional pension components below are not total contributions due, payslips, returns or payment instructions.
 
@@ -50,6 +50,9 @@ The official July 2025 consolidated dataset supplied complete bodies and closed 
 | S8 | [Blank tax salary form](https://www.services-fiscaux975.fr/files/file/Formulaires/Generique/DA-FORM-DADS-VERSEMENTS_SALAIRES-Mod%C3%A8le%202025.pdf), both pages | DADS 975; 1/2 and 2/2 are page numbers. Printed reporting year is blank. The 2025 filename does not fix its operative year or establish correspondence to bulletin 2470. |
 | S9 | [CPS DADS filling notice](https://www.secuspm.com/images/PDF/ENTREPRISES/employeurs/fomulaires/aideDADS25.pdf), both pages | Headings say DADS 2025, but item 13 prints a 2024 ceiling and item 25 refers to no employees in 2024. These are source inconsistencies. No filing deadline or submission route appears. |
 | S10 | [DSF home-page campaign](https://www.services-fiscaux975.fr/), dated 5 January 2026, captured 30 October 2026 | Receipt by 31 January 2026 inclusively for the identified 2025 DADS/salary/honorarium and rent filings. Preserve campaign year, receipt wording and listed forms; do not generalise to later years or all CPS declarations. |
+| S11 | [CSS L241-3, LEGIARTI000051289018](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051289018), complete body and NOTA in S1 dataset | Metadata begins 1 January 2026 and says VIGUEUR_DIFF in the July 2025 snapshot. NOTA cites law 2025-199 article 24 XXIII B. Preserves the paragraph structure; no current amendment certificate follows from its open-ended date. |
+| S12 | [CPS first-employer flyer](https://www.secuspm.com/images/PDF/ENTREPRISES/Flyer/FlyerJecreemonpremieremploi.pdf), both pages | Footer dates it June 2023. Dated account-opening, declaration/payment and annual-adjustment guidance; contains unfinished link placeholders. Predates S5 and does not establish current 2026 procedures. |
+| S13 | [Law 87-563 article 5, LEGIARTI000054477924](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000054477924), retained July 2026 LEGI body | Metadata begins 23 July 2026; paragraph 3° e concerns annual professional income used to calculate a pension. Its winter-date decree remains uncaptured. |
 
 ## Selected figures and statutory distinctions
 
@@ -63,7 +66,15 @@ These are dated source observations. Select no actual rate, base or liability un
 
 S6 article 1 states monthly EUR 4,005 and daily EUR 220 for activity periods from 1 January 2026. S2 page 2 displays monthly EUR 4,005 and annual EUR 48,060. These amounts do not establish a universal cap, annual-to-monthly allocation, daily proration, partial-period adjustment, multiple-employer allocation or every programme's base.
 
-S1 law article 4 distinguishes contributions within the L241-3 ceiling in I from contributions on total specified remuneration/income in II. III supplies a self-employed rate relationship, not an income-base or assessment-period rule. IV refers capped rates from 1 January 2026 to L241-3's second paragraph and total-base rates from 1 January 2030 to its fourth paragraph, with decree-set transition periods. V provides for a decree-set majoration in its stated sector context. S3 and S1 decree articles 6-2/6-3 preserve dated transition tables and the majoration provision. Do not extend a 2025 row, infer zero from a missing 2026 row, project future rates or import the national total-base row automatically. The CPS display alone does not resolve the full statutory chain.
+S1 law article 4 distinguishes contributions within the L241-3 ceiling in I from contributions on total specified remuneration/income in II. III supplies a self-employed rate relationship, not an income-base or assessment-period rule. IV refers capped rates from 1 January 2026 to L241-3's second paragraph and total-base rates from 1 January 2030 to its fourth paragraph, with decree-set transition periods. V links a decree-set majoration to the financing of sector-specific pension-base adaptations. S3 and S1 decree articles 6-2/6-3 preserve dated transition tables and the majoration provision. Do not extend a 2025 row, infer zero from a missing 2026 row, project future rates or import the national total-base row automatically. The CPS display alone does not resolve the full statutory chain.
+
+S1 law article 3 makes affiliation, including whether another basic old-age scheme applies, a separate question from a salary sheet's private-sector label. Article 4 V names sectors when explaining the financing reason for the majoration; its contribution wording refers to I. Decree article 6-3 expressly refers to employer/employee contributions under article 4 I 1° and displays a 0.10% increment for each share on remuneration paid from 1 January 2025. Neither retained provision expressly limits that increment to workers in the named sectors. Do not invent such a restriction or infer that every private employee belongs to this regime. Preserve S3's pension-effect qualification; its interaction with the remuneration-date table remains unresolved.
+
+The S4 capped rates plus those increments are arithmetically consistent with S2: 8.55 + 0.10 = 8.65 and 6.90 + 0.10 = 7.00 percentage points. This comparison is not a determination of applicable rates. Affiliation, commencement, category and requested-period amendment completeness remain required.
+
+S11 paragraph 1 contains the capped-base/ceiling provision and paragraph 2 delegates its rate to decree. Paragraph 3 contains the total-income contribution and rate delegation; paragraph 4 introduces other financing resources. S1 law article 4 IV nevertheless refers to paragraphs 2 and 4, respectively. Retain this literal mismatch: do not replace 4 with 3, import the national uncapped row or resolve a future 2030 liability by assumption.
+
+S13 article 5 3° e concerns unemployment benefits included in annual professional income for calculating the pension, with recurring winter interruptions between decree-fixed dates. This benefit calculation provision does not itself establish article 4's contribution assessment base, a contribution exemption or a sector restriction on the majoration. The uncaptured winter-date decree remains a benefit-calculation gap.
 
 Keep old-age/widowhood separate from ordinance article 7-2, whose captured scope excludes those risks. S5 article 2(3°) changes its ceiling reference. Later sickness/base cross-references and programme consequences remain held; do not restore earlier wording silently or apply one ceiling to every risk.
 
@@ -82,6 +93,8 @@ Reuse redacted records before grouped questions. Establish programme, contributo
 
 S1's captured article 8-1 excludes declaration dematerialisation from its L133-5-5 reference. S5 article 2(6°) removes that exception and replaces the second sentence with CPS collection under the rules, guarantees and sanctions implemented by the L213-1/L752-4 bodies, subject to regulatory adaptations. Preserve this operative change over stale consolidation. The sentence says the caisse collects; referencing national bodies' rules does not itself redirect a PM remittance to a mainland Urssaf account. Article 2(6°) is not amongst article 6's listed deferred article-2 provisions. Confirm requested-period effect, adaptations and current procedures before a filing instruction.
 
+S12 supplies historical operating observations only. Page 1 asks for a DPAE to CPS and describes the earliest transmission window as within the 8 days preceding expected hiring; it does not establish an unprinted latest deadline. Page 2 describes monthly or quarterly declarations according to the choice made when opening the contributor account, with declaration and payment by the 15th of the month following the remuneration period, or the month following the quarter, respectively. It does not establish an unrestricted later choice of frequency. It also names an annual summary bordereau and DADS for checking contributions and determining the definitive annual adjustment. Preserve its June 2023 date and unfinished DPAE/payment-link placeholders. Reconcile S5, regulatory adaptations and current CPS procedures before treating any of this as an operative deadline, route or payment instruction.
+
 S7 article 57 describes a DADS common to tax and social security, lodged with the territorial DSF before 31 January each year, accompanied by bulletin 2470 per beneficiary. It separately names bulletin 2472 for pension payers. S8's DADS 975 and S10's dated inclusive receipt campaign are distinct sources. Establish their correspondence, recipient, period, current forms and legal/administrative deadline treatment. A DSF receipt alone does not prove every CPS declaration or payment complete. S9 is a filling aid with unresolved years, not a filing procedure. S2 page 3 is a dated 2026 declaration calendar, not proof that declaration and payment share a deadline or that later years repeat it.
 
 ## Fictional components and source-control positions
@@ -97,6 +110,7 @@ All amounts below are invented EUR facts for January 2026 unless otherwise state
 | PM05 | A 2025 decree row offered for January 2026 because the document remains online | Stop rate selection. Establish law article 4's dated national-reference chain and category; do not extend the old row or treat an absent row as zero. |
 | PM06 | Listed 2025 salary filing received on 31 January 2026 under the captured DSF campaign; CPS evidence absent | Preserve the campaign's inclusive receipt statement for that listed filing only. Hold CPS completion, payment timeliness and later-year deadlines; obtain relevant evidence and procedures. |
 | PM07 | July 2026 declaration proposal relies on old article 8-1's dematerialisation exception | Reject that shortcut. Reconcile S5 article 2(6°), commencement and adaptations, then establish the permitted route. No exemption or alternative route is invented. |
+| PM08 | A private employee outside the named sectors is assumed exempt from the majoration; a 2023 flyer is offered as the current filing procedure | Reject both shortcuts. Establish affiliation and the operative contribution chain without inventing a sector exclusion. Treat S12 as dated guidance; obtain current procedure and deadline evidence. |
 
 These positions do not complete the social base's employee-below-floor, employee-above-ceiling and self-employed ladders through total due. They demonstrate source controls and selected raw components; full ladders remain a delivery hold.
 
@@ -134,20 +148,20 @@ The 13 universal slots are addressed only within this conditional scope: scope, 
 | 2. Contribution bases | Capped/total distinction and fictional employee components; full inclusions/exclusions and self-employed assessment basis held. |
 | 3. Floors and ceilings | Dated order and CPS display; programme application, floors, proration, cumulative and multiple-employer rules held. |
 | 4. Contributor categories | Private row distinguished; actual eligibility, exemptions and reduced/special regimes held. |
-| 5. Registration and identifiers | Authority, procedure, evidence and required identifiers unestablished. |
-| 6. Declaration and payment | Collection amendment, DADS and calendar distinguished; forms, frequency, deadlines, portals, references and acceptance held. |
+| 5. Registration and identifiers | S12 gives dated account-opening/DPAE observations; current authority, complete procedure, latest deadline and required identifiers held. |
+| 6. Declaration and payment | Collection amendment, DADS, 2026 calendar and 2023 flyer distinguished; current forms, frequency, deadlines, portals, references and acceptance held. |
 | 7. Penalties and interest | Collection sanctions reference captured; triggers, rates, computation, notices and contest procedures held. |
 | 8. Income-tax interaction | No deduction/credit treatment established; complete applicable rules and income-tax skill required. |
 | 9. Payment patterns | No bank-line pattern or reference format established; reconcile complete remittances without guessed exclusions. |
 | 10. Refusals and defaults | Shared and 4 topical refusals; no unsupported default or amount-based suppression. |
 | 11. Currency and rounding | Source EUR figures and exact fictional products only; lawful input, contribution, conversion and settlement precision held. |
-| 12. Worked examples | 2 raw components and 5 source-control positions; full required programme/status ladders through total due remain unproduced. |
+| 12. Worked examples | 2 raw components and 6 source-control positions; full required programme/status ladders through total due remain unproduced. |
 
 Optional coordination, voluntary contributions, benefit entitlement, sector regimes and integrations remain incomplete. No full social-contribution, payroll, other-domain or comprehensive PM acceptance follows.
 
 ## Revision and disclaimer
 
-Checked 30 October 2026, v0.1: captured statutory bodies and dated structures, national decree, January CPS display, July collection amendment and conflicting annual-filing sources. Operational source holds remain explicit. This source-cited draft awaits qualified professional review.
+Checked 30 October 2026, v0.2: added the exact dated national L241-3 body and literal paragraph mismatch, majoration/affiliation and pension-benefit distinctions, and dated June 2023 CPS procedure observations. Preserved commencement, current-law, operational and full-workflow holds. This source-cited draft awaits qualified professional review.
 
 <!-- openaccountants-cta-block -->
 
