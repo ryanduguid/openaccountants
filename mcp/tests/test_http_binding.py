@@ -168,7 +168,8 @@ class LiveServerTests(unittest.TestCase):
                     [str(Path(executable).resolve(strict=True)), "/PID", str(proc.pid), "/T", "/F"],
                     capture_output=True,
                     check=True,
-                    timeout=10,
+                    # Allow slower Windows process-tree shutdowns to complete.
+                    timeout=30,
                 )
                 proc.wait(timeout=10)
                 return
