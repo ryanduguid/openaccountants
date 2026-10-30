@@ -5,7 +5,7 @@ version: 1.0
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-10-15
+last_updated: 2026-10-31
 depends_on:
   - workflow-base
 review_status: pending_review
@@ -264,7 +264,7 @@ The base is defined per programme and per status, never assumed to be "gross pay
 
 ### Floors and ceilings
 
-A floor raises the base to a minimum; a ceiling caps it at a maximum. Both are per programme (health is often uncapped where pension is capped), per status, and per the basis the country skill states — per period or annual. Pro-rate floors and ceilings for part periods only where the country skill says so. Under an annual ceiling, track year-to-date base and stop contributing when the ceiling is reached; under a period ceiling, cap each period independently.
+Apply each floor or ceiling to the contribution base or contribution amount specified by the verified country rule, per programme, status and aggregation scope. Pro-rate for part periods only where the country skill says so. Track the relevant year-to-date base or contributions for an annual limit; apply a period limit within each prescribed period. An annual limit does not, by itself, require cumulative recomputation.
 
 ### Programme stacking and shares
 
@@ -272,7 +272,7 @@ Each programme is its own line: its own base treatment, its own rate per share, 
 
 ### Cumulative vs. period-based
 
-Where the country skill uses an annual ceiling or a cumulative method, each period considers all prior periods in the year and self-corrects; year-to-date figures are required inputs. Where it uses period-based computation, each period stands alone. If the user provides year-to-date figures, use the cumulative method for the annual limits regardless of the default.
+Use the country's verified cumulative or period-based method, including its required prior-period figures and correction rules. Under a period-based method, compute each prescribed period separately whilst applying any verified annual-limit rule. Year-to-date figures are evidence for that rule; their availability does not change the computation method or permit aggregation across employments, contributors or programmes. An unknown method, annual-limit basis or aggregation scope requires Needs Input before the affected calculation.
 
 ### Reduced rates, exemptions, and reliefs
 
