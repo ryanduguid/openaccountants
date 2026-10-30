@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-31 | [IO, UM and HM: conditional territorial source references](2026-10-31-absent-territory-scope-references.md) |
 | 2026-10-30 | [Saint-Martin: conditional individual investment reference](2026-10-30-saint-martin-individual-investment-reference.md) |
 | 2026-10-30 | [French Polynesia: conditional salary CST reference](2026-10-30-polynesia-salary-cst-reference.md) |
 | 2026-10-30 | [Saint Pierre and Miquelon: recovered employer declaration sources](2026-10-30-saint-pierre-recovered-employer-sources.md) |

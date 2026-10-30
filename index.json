@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-30T11:44:24+00:00",
+ "generated_at": "2026-10-30T14:27:36+00:00",
  "counts": {
-  "guides": 2000,
-  "jurisdictions": 285,
+  "guides": 2003,
+  "jurisdictions": 288,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -4659,6 +4659,19 @@
    "review_status": null,
    "tax_year": null,
    "last_updated": "2026-09-28"
+  },
+  {
+   "slug": "io-tax-scope-reference",
+   "path": "skills/international/british-indian-ocean-territory/io-tax-scope-reference.md",
+   "name": "io-tax-scope-reference",
+   "jurisdiction": "IO",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2020",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "bvi-tax",
@@ -10405,6 +10418,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-11"
+  },
+  {
+   "slug": "hm-tax-scope-reference",
+   "path": "skills/international/heard-island-and-mcdonald-islands/hm-tax-scope-reference.md",
+   "name": "hm-tax-scope-reference",
+   "jurisdiction": "HM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "hn-company-formation",
@@ -22157,6 +22183,19 @@
    "review_status": "current",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "um-tax-scope-reference",
+   "path": "skills/international/united-states-minor-outlying-islands/um-tax-scope-reference.md",
+   "name": "um-tax-scope-reference",
+   "jurisdiction": "UM",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-31"
   },
   {
    "slug": "vi-additional-medicare-annual-reference",

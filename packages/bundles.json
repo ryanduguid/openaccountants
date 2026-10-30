@@ -814,6 +814,19 @@
     "workflow-base.md"
    ]
   },
+  "british-indian-ocean-territory": {
+   "jurisdiction": "IO",
+   "name": "British Indian Ocean Territory",
+   "files": [
+    "intake.md",
+    "io-tax-scope-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "workflow-base.md"
+   ]
+  },
   "british-virgin-islands": {
    "jurisdiction": "VG",
    "name": "British Virgin Islands",
@@ -2663,6 +2676,19 @@
     "company-formation-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "heard-island-and-mcdonald-islands": {
+   "jurisdiction": "HM",
+   "name": "Heard Island And Mcdonald Islands",
+   "files": [
+    "intake.md",
+    "hm-tax-scope-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
     "workflow-base.md"
    ]
   },
@@ -5528,6 +5554,20 @@
     "company-formation-workflow-base.md",
     "foundation.md",
     "payroll-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
+  "united-states-minor-outlying-islands": {
+   "jurisdiction": "UM",
+   "name": "United States Minor Outlying Islands",
+   "files": [
+    "intake.md",
+    "um-tax-scope-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "us-circular-230-disclosure.md",
     "workflow-base.md"
    ]
   },
