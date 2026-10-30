@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-30 | [Saint Pierre and Miquelon: annual contribution reconciliation](2026-10-30-saint-pierre-annual-reconciliation.md) |
 | 2026-10-30 | [Saint Pierre and Miquelon: pension references and dated CPS procedures](2026-10-30-saint-pierre-contribution-mechanics.md) |
 | 2026-10-30 | [Saint Pierre and Miquelon: conditional social contributions reference](2026-10-30-saint-pierre-social-contributions-reference.md) |
 | 2026-10-30 | [South Georgia and South Sandwich Islands: conditional ordinary income tax reference](2026-10-30-south-georgia-ordinary-income-tax-reference.md) |
