@@ -1,0 +1,15 @@
+# Saint-Martin: conditional individual investment reference
+
+Checked 30 October 2026. I added the [individual investment reference](../../skills/international/saint-martin/mf-individual-investment-reference.md) as a Tier 2 source-cited draft pending qualified professional review. It explains selected local article 199 undecies D wording and fictional raw components, with an explicit operational hold and mandatory-slot completion register.
+
+The official 514-page CGI compilation takes account of deliberations through 5 June 2026. Its PDF SHA256 is `0e7ed0d696106f659023c5c16f54b93ce319f3c74d3f1738757316d7e111b88c`. All 8 paragraphs of D on printed/physical pages 186–188 were read in native text and original images. The cover makes editorial notes indicative and reserves authority to deliberations. Complete underlying enactments, commencement, later amendments and incorporated provisions remain separate gates.
+
+The reference preserves the literal annual 20% base alongside the 10-year principal-residence schedule, distinct 25% and 30% component rates, no carryforward/refund, area and equipment distinctions and the separate sector-approval and strictly-above-EUR-500,000 notification routes. It computes 5 fictional raw components and provides 2 boundary/input controls. It supplies no total lifetime saving, current entitlement, final tax or filing field.
+
+The complete 20-page official booklet, edition 1 January 2026, was read in native text and original images. Its SHA256 is `17600fb482b0c47690df25d540969b0e450c163f0e9b246a727a2d86ff8fac6b`. It names SA.108971 without a duration, conflicts internally on payment methods and simplifies retention conditions. It expressly disclaims replacing legislation. Neither conflicting payment instruction is adopted.
+
+Original French and English Commission summaries and the captured SA.108971 case body give 31 August 2026, while complete provider-extracted government scheme-description text gives 31 December 2026. Original image fidelity of that description remains unqualified. The reference preserves the conflict without selecting an expiry, inferring illegality or assuming coverage through 2030.
+
+The separate national social-housing decision SA.120535, C(2025) 8511 final, was reviewed in full across all 7 original pages, 36 recitals and 11 footnotes. Its SHA256 is `8ae53f6b013f40b23a66f20e65b51e9865d5b1a54caf71d75d2f8c1a19ffecfd`. It concerns State CGI articles 199 undecies C and 244 quater Y, with an express notification condition. It supplies no extension of the local scheme. Actual notification, incorporated earlier decisions and complete current national implementation remain held.
+
+All 13 universal and 13 income-tax companion slots remain mandatory. Employee, self-employed and mixed full ladders, current source chain, precision, professional sign-off and all other country topics remain incomplete. One indexed guide establishes presence only, not comprehensive coverage. No maintained software or dependency changed.

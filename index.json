@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-30T05:11:35+00:00",
+ "generated_at": "2026-10-30T11:44:24+00:00",
  "counts": {
-  "guides": 1999,
-  "jurisdictions": 284,
+  "guides": 2000,
+  "jurisdictions": 285,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -18374,6 +18374,19 @@
    "review_status": "pending_review",
    "tax_year": "2022",
    "last_updated": "2026-10-24"
+  },
+  {
+   "slug": "mf-individual-investment-reference",
+   "path": "skills/international/saint-martin/mf-individual-investment-reference.md",
+   "name": "mf-individual-investment-reference",
+   "jurisdiction": "MF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-30"
   },
   {
    "slug": "pm-social-contributions-reference",
