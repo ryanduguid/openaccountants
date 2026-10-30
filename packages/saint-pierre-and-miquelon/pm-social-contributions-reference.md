@@ -6,7 +6,7 @@ description: >
   remuneration bases, national rate references and the CPS salary sheet.
   Use for PM pensions, CPS contributions, contribution ceilings, July 2026
   collection changes, dated annual reconciliation, professional income provisionals,
-  DSI intake and periodicity source questions.
+  DSI intake, territorial versions and programme assessment branches.
   Requires the universal
   and social contributions workflow bases. Preserves source dates, separate
   commencement notes and fictional component arithmetic. Current law, category
@@ -20,7 +20,7 @@ tax_year: 2026
 tax_year_notes: "Selected January 2026 CPS figures, 2025-income DSI with May 2026 footer and dated statutory references; snapshot and requested-period applicability held"
 tier: 2
 last_updated: 2026-10-30
-version: 0.5
+version: 0.6
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -28,7 +28,7 @@ depends_on:
   - social-contributions-workflow-base
 ---
 
-# Saint Pierre and Miquelon: social contributions reference v0.5
+# Saint Pierre and Miquelon: social contributions reference v0.6
 
 > **Conditional Tier 2 draft.** Load workflow-base and social-contributions-workflow-base. Their source gates, confirmed profile, refusals, outputs, checks and professional review remain mandatory. The fictional pension components below are not total contributions due, payslips, returns or payment instructions.
 
@@ -65,12 +65,46 @@ The official July 2025 consolidated dataset supplied complete bodies and closed 
 | S21 | [CSS L131-6, LEGIARTI000048683707](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000048683707), complete body/NOTA retained from S1 dataset | Metadata begins 28 December 2023. National non-agricultural independent-worker base refers to L136-3, with stated adjustments and exclusion of the L613-7 regime. NOTA specifies periods from 1 January 2025. Territorial operation, exceptions, specific scope and current amendments are not closed by capture. |
 | S22 | [CGCT LO6413-1, LEGIARTI000006394293](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006394293), complete body retained from S1 dataset | General application of laws/regulations from 1 January 2008, including prior provisions subject to contrary wording; exceptions for organic-law matters and S23 II competences, with adaptations preserved. Absence of a named PM import alone does not establish non-applicability. |
 | S23 | [CGCT LO6414-1, LEGIARTI000006394300](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006394300), complete body retained from S1 dataset | Metadata begins 22 February 2007. II specifies local competences including taxation/cadastre, customs, planning/construction/housing and local services/public establishments; IV refers adaptation powers to LO6461-5. Reconcile these exceptions and specific social-security scope; neither a blanket exclusion nor a complete assessment follows. |
+| S24 | [CSS L111-2 before the July amendment, LEGIARTI000033714808](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033714808/2026-05-22), complete body/metadata from the official 24 July 2026 daily archive | MODIFIE, 25 December 2016 to 23 July 2026; no PM extension sentence. The preceding daily snapshot still marks this body VIGUEUR with an open end. That stale status is not current-law evidence. |
+| S25 | [CSS L111-2 July version, LEGIARTI000054477767](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000054477767), complete body/NOTA from the same daily archive | ABROGE_DIFF, 23 July 2026 to 1 January 2028; NOTA expressly confirms immediate commencement on 23 July 2026. Adds the specific PM extension; metadata does not establish its cessation in the succeeding version. |
+| S26 | [CSS L111-2 succeeding version, LEGIARTI000054478377](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000054478377), complete body/NOTA from the same daily archive | VIGUEUR_DIFF from 1 January 2028; its body adds Mayotte whilst preserving the PM sentence. NOTA cites ordinance 2026-647 article 4 and Mayotte application from that date. Future metadata is not an earlier commencement rule. |
 
 ## Territorial operation and specific rules
 
 S22 provides general application of legislation and regulations in PM from 1 January 2008, subject to its organic-law and S23 II competence exceptions, contrary provisions and adaptations. A named PM import is not a universal prerequisite. References below to establishing a local chain or territorial operation include this general rule; absence of a named import alone does not exclude a national provision.
 
-Reconcile the general rule with the applicable CSS scope, PM programme-specific assessment provisions and adaptations. S5 article 1(1°) specifies selected CSS parts under book VII title V bis and takes effect immediately under article 7, on publication on 23 July 2026. Article 6 phases specified other provisions; programme-specific commencement and current amendments remain to be reconciled. S23's local tax competence matters when a base refers to local taxable income, but does not itself settle the scope of all social contributions. Neither the general rule nor a selected-code list alone proves the complete calculation or filing procedure.
+S24-S26 supply the complete preceding, July and succeeding L111-2 bodies. S25 adds the S5 article 1(1°) sentence to S24's first paragraph and preserves the agricultural/forestry paragraph. Its NOTA confirms immediate effect on publication on 23 July 2026 under article 7. The succeeding body changes the general territorial list by adding Mayotte and preserves the PM extension. Do not treat S25's ABROGE_DIFF label or 1 January 2028 end date as abolition of PM coverage. These dated daily records do not certify that no later amendment exists.
+
+### Express CSS extension
+
+The following is the positive list in S25. Every row remains subject to the PM-specific conditions identified there as title V bis of book VII.
+
+| CSS part expressly named | Additional qualification in the extension sentence |
+|---|---|
+| Book I, titles I, II and V | No separate L111-1 paragraph 2 charge qualifier is attached to this initial group. |
+| Book I, title VI, chapter I, section 1, subsection 1 | Same initial group. |
+| Book I, title VI, chapter VIII bis | Same initial group. |
+| Book VIII, titles I-IV | Same initial group. |
+| Book I, title VI, preliminary chapter | For coverage of the charges mentioned in L111-1 paragraph 2. |
+| Book II, title II, chapter III bis | Same charge qualification. |
+| Book V | Same charge qualification. |
+
+The particular charge qualification belongs to the final 3 rows; do not extend it backwards over the initial list or omit it from those rows. The sentence does not expressly list book I title III or book II title IV chapter II. This does not establish that every provision outside the list is inapplicable: reconcile general territorial operation, specific references, local assessment rules and adaptations. In particular, the list alone neither imports nor excludes the complete L131-6/L136-3 or L242-1 assessment chains.
+
+S5 article 1 creates or transfers PM institutional and benefit provisions as well as amending L111-2. Its article 1(1°) says title V bis, whilst article 1(4°) literally inserts a chapter V bis after chapter V. Preserve that original drafting discrepancy for comparison with complete consolidation; the amendment text is not itself every transferred article's complete body. The bounded daily selections contain no selected L760-* body and establish no structural closure or global absence. Article 6 phases specified provisions separately. Immediate L111-2 commencement does not prove that each programme transition has occurred.
+
+### Separate assessment branches
+
+Keep these captured source branches separate before selecting a contribution base. Their requested-period operation, exclusions, applicable rates, floor/ceiling mechanics, precision and complete programme coverage still require verification.
+
+| Programme/status | Captured assessment branch | Required distinction |
+|---|---|---|
+| Old age/widowhood, employees and employers | S1 law article 4 I 1° refers remuneration/gains to L242-1's meaning, within the L241-3 ceiling; II separately addresses the total base. | The capped and total-base branches and their dated rate transitions remain distinct. |
+| Old age/widowhood, self-employed | S1 law article 4 I 2° refers non-salaried activity income taken into account for taxable income under PM rules; II and III separately address total-base contributions and the rate relationship. | The rate sum does not determine local taxable income or import a national micro-activity allowance. |
+| Other risks under the captured ordinance, employees/assimilated workers | S1 ordinance article 7-1 refers remuneration to L242-1's meaning and determination, with employer-only family/occupational-injury contributions and possible category-specific forfaits. | Article 7-1 expressly excludes old age/widowhood; a single source branch cannot determine every share or category. |
+| Professional income under S17 article 2 | The captured provision refers employers and self-employed persons to professional income retained for income-tax calculation within the PM ceiling, for the ordinance article 3 risks. | Preserve the literal category wording and reconcile the preceding employee/old-age branches; it is not a profit-based ordinary employee payroll rule. |
+
+S23's local tax competence matters when a base refers to local taxable income; it does not settle every social contribution rule. Collection imports and assessment imports are separate questions. Neither the general territorial rule, the express extension nor a collection bridge proves a complete contribution algorithm or filing procedure.
 
 ## Selected figures and statutory distinctions
 
@@ -165,7 +199,7 @@ S17 article 3 describes CPS income forms sent by 1 April and completed, signed r
 
 ## Fictional components and source-control positions
 
-All amounts below are invented EUR facts for January 2026 unless otherwise stated. PM01-PM02 assume an independent qualified review has established S2's private old-age rates for the fictional category and a lawful monthly capped-base rule with no proration, cumulative or multiple-employer adjustment. Those premises remain unproved for any real case. Other programmes and settlement remain held. PM09-PM11 instead concern the dated 2025 annual campaign. They assume independently verified complete annual liabilities, declared contribution totals and lawful precision; their integer inputs do not establish a rounding rule. PM13-PM17 instead assume an independently established dated S17 category/programme and operative chain. Their regularisation year K is established before the applicable third/fourth-quarter dates; definitive contributions, qualifying provisional totals, fraction amounts and precision are independently verified. These premises are not established for a real contributor. PM18-PM24 instead test S19's 2025-income intake and source controls only; their invented integer facts do not establish social contribution bases, precision or a filed/accepted return.
+All amounts below are invented EUR facts for January 2026 unless otherwise stated. PM01-PM02 assume an independent qualified review has established S2's private old-age rates for the fictional category and a lawful monthly capped-base rule with no proration, cumulative or multiple-employer adjustment. Those premises remain unproved for any real case. Other programmes and settlement remain held. PM09-PM11 instead concern the dated 2025 annual campaign. They assume independently verified complete annual liabilities, declared contribution totals and lawful precision; their integer inputs do not establish a rounding rule. PM13-PM17 instead assume an independently established dated S17 category/programme and operative chain. Their regularisation year K is established before the applicable third/fourth-quarter dates; definitive contributions, qualifying provisional totals, fraction amounts and precision are independently verified. These premises are not established for a real contributor. PM18-PM24 instead test S19's 2025-income intake and source controls only; their invented integer facts do not establish social contribution bases, precision or a filed/accepted return. PM25-PM27 test dated territorial versions and scope only.
 
 | ID | Fictional facts | Component result or complete hold disposition |
 |---|---|---|
@@ -193,6 +227,9 @@ All amounts below are invented EUR facts for January 2026 unless otherwise state
 | PM22 | S19 footer 05/2026 treated as income year 2026 or a May filing deadline; contact email treated as an accepted channel | Reject those inferences. The form identifies income 2025; obtain the actual deadline, permitted route and receipt/acceptance evidence before filing. |
 | PM23 | S19's national citation used to import an income algorithm, or an unresolved national citation used to abolish the CPS return | Reject both shortcuts. Establish the national version, general operation/exceptions, specific CSS scope and local assessment rules; confirm CPS procedure. A form citation does not settle either conclusion. |
 | PM24 | A national CSS rule is rejected solely because no clause names PM, or general operation is treated as proof of every calculation premise | Apply S22's general rule with its exceptions and adaptations, then reconcile specific CSS scope and PM programme rules. Neither shortcut establishes applicability, exclusions, a complete base or a filed return. |
+| PM25 | A July23 daily record marks pre-amendment L111-2 VIGUEUR/open-ended and is used to deny the later PM extension | Reconcile S24 with S25 and S5's original clause/commencement. The complete July24 records close the preceding interval and capture the added sentence; the older status cannot determine current scope. |
+| PM26 | S25's ABROGE_DIFF/end date is treated as PM coverage ending on 1 January 2028, or S26's future Mayotte wording is applied in 2026 | Read both complete successor body and NOTA. S26 preserves the PM extension and adds Mayotte from its separate future date; establish requested-period amendments without either shortcut. |
+| PM27 | The final-group charge qualifier is applied to every listed CSS part, or an omitted assessment chapter is automatically excluded | Preserve the 7-part list and its scoped qualifier, then reconcile general operation, specific programme/base references and adaptations. An express positive list is not a complete universal non-applicability test. |
 
 These positions do not complete the social base's employee-below-floor, employee-above-ceiling and self-employed ladders through total due. They demonstrate source controls and selected raw components; full ladders remain a delivery hold.
 
@@ -239,13 +276,13 @@ The 13 universal slots are addressed only within this conditional scope: scope, 
 | 9. Payment patterns | No bank-line pattern or reference format established; reconcile complete remittances without guessed exclusions. |
 | 10. Refusals and defaults | Shared and 4 topical refusals; no unsupported default or amount-based suppression. |
 | 11. Currency and rounding | Source EUR figures, raw pension products and fictional annual differences; rounded form labels do not establish numerical precision. Lawful input, contribution, conversion and settlement precision held. |
-| 12. Worked examples | 2 raw pension components, 3 annual employee components, 4 professional income components and 15 source controls; full required programme/status ladders through total due remain unproduced. |
+| 12. Worked examples | 2 raw pension components, 3 annual employee components, 4 professional income components and 18 source controls; full required programme/status ladders through total due remain unproduced. |
 
 Optional coordination, voluntary contributions, benefit entitlement, sector regimes and integrations remain incomplete. No full social-contribution, payroll, other-domain or comprehensive PM acceptance follows.
 
 ## Revision and disclaimer
 
-Checked 30 October 2026, v0.5: added the dated 2025-income DSI, A-D field/source mapping, redacted preparation and correction controls, 7 fictional intake/source cases and separate filing evidence states and captured national citation status/commencement and general territorial-operation controls. Preserved territorial application checks, current programme/base/precision and procedure gaps, actual-settlement holds and full-workflow requirements. This source-cited draft awaits qualified professional review.
+Checked 30 October 2026, v0.6: captured complete preceding, July and succeeding L111-2 bodies/NOTA, the express 7-part PM extension and its scoped qualifier. Added a separate programme/status assessment-branch map and 3 version/scope controls. Preserved current amendment, complete consolidation, calculation/precision, filing and professional-acceptance holds. This source-cited draft awaits qualified professional review.
 
 <!-- openaccountants-cta-block -->
 
