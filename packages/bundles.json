@@ -2327,6 +2327,20 @@
     "workflow-base.md"
    ]
   },
+  "french-polynesia": {
+   "jurisdiction": "PF",
+   "name": "French Polynesia",
+   "files": [
+    "intake.md",
+    "pf-salary-cst-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "gabon": {
    "jurisdiction": "GA",
    "name": "Gabon",

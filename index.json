@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-30T03:20:43+00:00",
+ "generated_at": "2026-10-30T05:11:35+00:00",
  "counts": {
-  "guides": 1998,
-  "jurisdictions": 283,
+  "guides": 1999,
+  "jurisdictions": 284,
   "accountant_reviewed": 164
  },
  "guides": [
@@ -9261,6 +9261,19 @@
    "review_status": "pending_review",
    "tax_year": "2025",
    "last_updated": "2026-10-29"
+  },
+  {
+   "slug": "pf-salary-cst-reference",
+   "path": "skills/international/french-polynesia/pf-salary-cst-reference.md",
+   "name": "pf-salary-cst-reference",
+   "jurisdiction": "PF",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "review_status": "pending_review",
+   "tax_year": "2026",
+   "last_updated": "2026-10-30"
   },
   {
    "slug": "ga-company-formation",
