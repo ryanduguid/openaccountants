@@ -30,7 +30,7 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 | Trigger | Response |
 |---------|----------|
 | Part-year, non-resident or uncertain residence status | "Part-year residence and non-residence require different treatment. Personalised return preparation through this intake requires confirmed full-year Panama residence. Ask a qualified tax professional to establish your status and the applicable rules." |
-| Partnership tax return | "Partnership tax returns file separately. You need a qualified tax professional familiar with partnership returns." |
+| Partnership tax return | "Partnership return preparation is outside this intake's scope. A qualified tax professional must verify the applicable partnership filing treatment." |
 | Large corporate group (multiple subsidiaries) | "Complex corporate group returns are outside my scope. You need a qualified tax professional." |
 
 If all checks pass, continue.
@@ -75,15 +75,17 @@ Ask ONLY about things the documents don't answer:
 
 ## Step 5: Decisions
 
+Before classification or cash-impact comparisons, require a complete domain companion for the requested work and verify its applicable law, period and source conditions. A dated scope reference alone is insufficient. If either requirement is unresolved, return Needs Input or the guide's refusal without classification or calculated financial amounts.
+
 After classification, present any decisions the user or their qualified tax professional needs to make:
 
 > **Decisions for you / your qualified tax professional:**
 > 1. [Decision] — [Option A: effect] vs [Option B: effect]
 > 2. [Decision] — [Option A: effect] vs [Option B: effect]
 
-These are items where the accounting treatment depends on a choice (cash vs accrual, simplified vs actual, capitalise vs expense). Present the options with the cash impact of each.
+These are items where the accounting treatment depends on a choice (cash vs accrual, simplified vs actual, capitalise vs expense). For a supported decision, present only source-verified options and their cash impacts.
 
-Then proceed to classification using the loaded country skills.
+Proceed with classification using the loaded country skills only if these conditions are satisfied.
 
 ---
 

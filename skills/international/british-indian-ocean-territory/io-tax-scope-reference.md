@@ -99,7 +99,7 @@ Check requested-period law and commencement; each provision's own geographic def
 
 ## Completion register and revision
 
-Universal mandatory slots are addressed for this **bounded reference** by the scope statement, dated source library, stated numeric conditions, selected position rules, exact refusal catalogue, no-default policy, all-amount reviewer flags, fictional scope cases, output extensions, intake, self-checks and this revision record. This does not establish an operational companion for any tax.
+These sections map the mandatory slots for this dated reference only. They do not complete the universal base's operational companion contract. Mandatory requested-period figures, fully worked financial positions and required outputs remain missing; keep Needs Input or the guide's refusal until a complete, source-verified domain companion supports the requested work.
 
 All 13 income-tax delivery slots remain incomplete: tax year/basis period, tax unit and residence; complete income classification; rates and surcharges; allowances/deductions/credits; expenses and capital treatment; losses; withholding/prepayments and reconciliation; social interactions; filing/payment/penalties; complete transaction patterns; domain refusals/defaults; currency/conversion/rounding; and full employee, self-employed and mixed ladders through balance due. The reference contributes selected territorial decisions only. Payroll, social, corporate, consumption, formation, reporting, cross-border, property and compliance companions need their own complete sources and contracts.
 

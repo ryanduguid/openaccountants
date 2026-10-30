@@ -159,6 +159,28 @@ class RebuildTests(SyntheticTreeCase):
         self.assertIn("only has invoices", intake)
         self.assertIn("transaction dates, amounts, tax charged", intake)
 
+    def test_intake_refuses_partnership_work_without_asserting_a_filing_rule(self) -> None:
+        self.build()
+        intake = (self.packages / "zzland" / "intake.md").read_text(encoding="utf-8")
+        self.assertNotIn("Partnership tax returns file separately", intake)
+        self.assertIn("Partnership return preparation is outside this intake's scope", intake)
+        self.assertIn("verify the applicable partnership filing treatment", intake)
+
+    def test_intake_gates_classification_and_cash_impacts_on_a_complete_companion(self) -> None:
+        self.build()
+        intake = (self.packages / "zzland" / "intake.md").read_text(encoding="utf-8")
+        for requirement in (
+            "Before classification or cash-impact comparisons",
+            "complete domain companion", "applicable law, period and source conditions",
+            "A dated scope reference alone is insufficient",
+            "return Needs Input or the guide's refusal",
+            "without classification or calculated financial amounts",
+            "only if these conditions are satisfied",
+        ):
+            self.assertIn(requirement, intake)
+        self.assertLess(intake.index("Before classification"), intake.index("After classification"))
+        self.assertNotIn("Present the options with the cash impact of each.", intake)
+
     def test_compressed_foundation_stops_for_unknown_law_before_factual_defaults(self) -> None:
         self.build()
         foundation = (self.packages / "_shared" / "foundation.md").read_text(encoding="utf-8")
