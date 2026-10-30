@@ -24,24 +24,24 @@ of `index.json` carries the first three rows, and the gate checks every row.
 
 | Measure | This tree |
 |---|---|
-| Guide files indexed | **2,000** |
-| Distinct `jurisdiction` codes | **285** |
+| Guide files indexed | **2,003** |
+| Distinct `jurisdiction` codes | **288** |
 | `tier: 1` (accountant-reviewed) | **164** |
-| `tier: 2` (source-cited draft) | **1,836** |
+| `tier: 2` (source-cited draft) | **1,839** |
 | Distinct `reviewed_by` values | **29** (one spelling each; Aryee, Amiridze and Mat Hussin were previously recorded two ways and are now normalised to `Name, Credential`) |
-| Country directories under `skills/international/` | **226** |
+| Country directories under `skills/international/` | **229** |
 | US jurisdiction codes (`US` + 50 states + DC) | **52** |
-| Generated bundles under `packages/` | **297** |
+| Generated bundles under `packages/` | **300** |
 
 Guides are present for all 50 US states and DC.
-Accountant-reviewed guides exist in 24 of the 285 jurisdiction codes;
+Accountant-reviewed guides exist in 24 of the 288 jurisdiction codes;
 [PARTNERS.md](../PARTNERS.md), generated from the index with the one counting
 rule (`tier: 1` plus a named reviewer), lists them per reviewer and per
 jurisdiction.
 
 ### Guides with earlier period labels
 
-Eleven guides carry a `tax_year` of 2024 or earlier. These are the indexed
+Twelve guides carry a `tax_year` of 2024 or earlier. These are the indexed
 period labels; they do not establish current law or complete topic coverage.
 The Anguilla payroll draft explicitly requires verification of the applicable
 law before calculating an engagement liability from its 2022 baseline.
@@ -53,6 +53,7 @@ law before calculating an engagement liability from its 2022 baseline.
 | `gd-annual-employment-income-reference` | 2019 | Conditional resident cash-employment table; historical/current amendment chain and actual liability held |
 | `hk-mpf` | 2024 | Mandatory Provident Fund |
 | `hk-salaries-tax` | 2024 | Salaries tax |
+| `io-tax-scope-reference` | 2020 | Selected BIOT revised ordinances as at 1 September 2020; later law and operational application held |
 | `kn-social-security-reconciliation` | 2017 | Statutory schedule compared with a distinct 2018 Board profile; operative employer amount remains held |
 | `lc-national-insurance-reference` | 2022 | Statutory rates and annual exemption with a separate observed monthly administrative profile; operative monthly authority remains held |
 | `mh-retirement-contribution-reference` | 2017 | Selected amended statutory text; conditional exact-cent examples, with actual law, contribution precision and operational outputs held |
@@ -66,7 +67,7 @@ Regenerate this list with:
 python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] for g in d['guides'] if str(g.get('tax_year')) <= '2024' and g.get('tax_year')))"
 ```
 
-The other guides carry `tax_year` 2025 (1,598), 2026 (311), or no year (77).
+The other guides carry `tax_year` 2025 (1,598), 2026 (316), or no year (77).
 
 > **Names on tier-2 guides.** 99 guides carry a named `reviewed_by` while
 > marked `tier: 2`. The name records corrections an accountant contributed

@@ -4,7 +4,7 @@ Generated from `country-catalogue.json` and `index.json`. Regenerate with `pytho
 
 The target contains the country-or-area rows in the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/overview/) captured on 2026-10-11, plus the repository's existing Taiwan and Kosovo jurisdictions. This is a guide inventory; it makes no determination about sovereignty.
 
-226 of 250 target areas have at least one indexed guide; 24 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
+229 of 250 target areas have at least one indexed guide; 21 have none. US states, cross-border labels and global workflow guides do not increase this country-and-territory count.
 
 A present guide does not establish comprehensive topic coverage, current law, primary-source verification or professional sign-off. Accountant-reviewed counts use the repository's existing tier-and-named-reviewer rule; review freshness is recorded separately in each guide and in `PARTNERS.md`.
 
@@ -109,7 +109,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | GW | Guinea-Bissau | 6 | 0 |
 | GY | Guyana | 6 | 0 |
 | HK | China, Hong Kong Special Administrative Region | 7 | 0 |
-| HM | Heard Island and McDonald Islands | 0 | 0 |
+| HM | Heard Island and McDonald Islands | 1 | 0 |
 | HN | Honduras | 7 | 0 |
 | HR | Croatia | 8 | 0 |
 | HT | Haiti | 0 | 0 |
@@ -119,7 +119,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | IL | Israel | 10 | 0 |
 | IM | Isle of Man | 6 | 0 |
 | IN | India | 18 | 13 |
-| IO | British Indian Ocean Territory | 0 | 0 |
+| IO | British Indian Ocean Territory | 1 | 0 |
 | IQ | Iraq | 7 | 0 |
 | IR | Iran (Islamic Republic of) | 6 | 0 |
 | IS | Iceland | 8 | 0 |
@@ -245,7 +245,7 @@ Comprehensive pack acceptance is recorded in [the coverage plan](COUNTRY-COVERAG
 | TZ | United Republic of Tanzania | 6 | 6 |
 | UA | Ukraine | 15 | 0 |
 | UG | Uganda | 6 | 0 |
-| UM | United States Minor Outlying Islands | 0 | 0 |
+| UM | United States Minor Outlying Islands | 1 | 0 |
 | US | United States of America | 62 | 20 |
 | UY | Uruguay | 7 | 0 |
 | UZ | Uzbekistan | 8 | 0 |
