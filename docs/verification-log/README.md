@@ -6,6 +6,7 @@ To add an entry, write `YYYY-MM-DD-<topic>.md` in this directory with the entry'
 
 | Date | Entry |
 |---|---|
+| 2026-10-30 | [French Polynesia: conditional salary CST reference](2026-10-30-polynesia-salary-cst-reference.md) |
 | 2026-10-30 | [Saint Pierre and Miquelon: territorial versions and assessment branches](2026-10-30-saint-pierre-territorial-assessment.md) |
 | 2026-10-30 | [Saint Pierre and Miquelon: self-employed income declaration intake](2026-10-30-saint-pierre-independent-income-intake.md) |
 | 2026-10-30 | [Saint Pierre and Miquelon: professional income provisional contributions](2026-10-30-saint-pierre-professional-income.md) |
