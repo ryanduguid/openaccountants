@@ -4600,6 +4600,20 @@
     "workflow-base.md"
    ]
   },
+  "saint-martin": {
+   "jurisdiction": "MF",
+   "name": "Saint Martin",
+   "files": [
+    "intake.md",
+    "mf-individual-investment-reference.md",
+    "README.md"
+   ],
+   "shared": [
+    "foundation.md",
+    "income-tax-workflow-base.md",
+    "workflow-base.md"
+   ]
+  },
   "saint-pierre-and-miquelon": {
    "jurisdiction": "PM",
    "name": "Saint Pierre And Miquelon",
