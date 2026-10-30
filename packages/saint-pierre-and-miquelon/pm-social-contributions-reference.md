@@ -6,7 +6,8 @@ description: >
   remuneration bases, national rate references and the CPS salary sheet.
   Use for PM pensions, CPS contributions, contribution ceilings, July 2026
   collection changes, dated annual reconciliation, professional income provisionals,
-  DSI intake, territorial versions and programme assessment branches.
+  DSI intake, territorial versions, programme assessment branches and dated
+  employer declaration calendars and sending routes.
   Requires the universal
   and social contributions workflow bases. Preserves source dates, separate
   commencement notes and fictional component arithmetic. Current law, category
@@ -17,10 +18,10 @@ description: >
 jurisdiction: PM
 category: international
 tax_year: 2026
-tax_year_notes: "Selected January 2026 CPS figures, 2025-income DSI with May 2026 footer and dated statutory references; snapshot and requested-period applicability held"
+tax_year_notes: "Selected January/June 2026 CPS sources, 2025-income DSI with May 2026 footer and dated statutory references; requested-period applicability held"
 tier: 2
 last_updated: 2026-10-30
-version: 0.6
+version: 0.7
 review_status: pending_review
 verified_by: pending
 depends_on:
@@ -28,13 +29,13 @@ depends_on:
   - social-contributions-workflow-base
 ---
 
-# Saint Pierre and Miquelon: social contributions reference v0.6
+# Saint Pierre and Miquelon: social contributions reference v0.7
 
 > **Conditional Tier 2 draft.** Load workflow-base and social-contributions-workflow-base. Their source gates, confirmed profile, refusals, outputs, checks and professional review remain mandatory. The fictional pension components below are not total contributions due, payslips, returns or payment instructions.
 
 ## Scope and source limits
 
-This reference preserves selected employee old-age sources, annual reporting interfaces, professional income provisionals and self-employed declaration intake for Saint Pierre and Miquelon. It does not establish a complete contribution regime or certify the law applicable to an actual period. The CPS January 2026 sheet includes other programmes and categories whose complete legal bases, eligibility and later changes have not been reconciled here. Full payroll, income tax, cross-border coordination, formation, financial reporting and property obligations require separate investigation.
+This reference preserves selected employee old-age sources, annual reporting interfaces, dated employer declaration calendars and sending routes, professional income provisionals and self-employed declaration intake for Saint Pierre and Miquelon. It does not establish a complete contribution regime or certify the law applicable to an actual period. The CPS January and June 2026 sheets include other programmes and categories whose complete legal bases, eligibility and later changes have not been reconciled here. Full payroll, income tax, cross-border coordination, formation, financial reporting and property obligations require separate investigation.
 
 The official July 2025 consolidated dataset supplied complete bodies and closed dated structures for law 87-563, ordinance 77-1102 and decree 2017-1000. Their selected structures contained 10, 64 and 13 date-active article references respectively. This is snapshot source capture, not proof of present legal effect: dated links can include abrogated records. Later July 2026 captures disclose material changes. No complete amendment search through an actual requested period, current national cross-reference certificate or operational CPS acceptance is established. An open-ended metadata date, current link label or successful download does not close that gap.
 
@@ -68,6 +69,9 @@ The official July 2025 consolidated dataset supplied complete bodies and closed 
 | S24 | [CSS L111-2 before the July amendment, LEGIARTI000033714808](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033714808/2026-05-22), complete body/metadata from the official 24 July 2026 daily archive | MODIFIE, 25 December 2016 to 23 July 2026; no PM extension sentence. The preceding daily snapshot still marks this body VIGUEUR with an open end. That stale status is not current-law evidence. |
 | S25 | [CSS L111-2 July version, LEGIARTI000054477767](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000054477767), complete body/NOTA from the same daily archive | ABROGE_DIFF, 23 July 2026 to 1 January 2028; NOTA expressly confirms immediate commencement on 23 July 2026. Adds the specific PM extension; metadata does not establish its cessation in the succeeding version. |
 | S26 | [CSS L111-2 succeeding version, LEGIARTI000054478377](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000054478377), complete body/NOTA from the same daily archive | VIGUEUR_DIFF from 1 January 2028; its body adds Mayotte whilst preserving the PM sentence. NOTA cites ordinance 2026-647 article 4 and Mayotte application from that date. Future metadata is not an earlier commencement rule. |
+| S27 | [URSSAF unemployment and AGS guidance](https://www.urssaf.fr/accueil/employeur/cotisations/liste-cotisations/assurance-chomage-ags.html), complete PM FAQ answer captured 30 October 2026 | Page labelled updated 20 March 2026. The PM employer question expressly names CPS as recipient; neighbouring questions have different answers. Does not establish every category exception, rate, base, filing route or payment reference. |
+| S28 | [CPS salary parameters, June 2026](https://www.secuspm.com/images/PDF/ENTREPRISES/Parametres-Salaires-CPS-juin2026.pdf), all 3 pages | Footer 06/2026; native text and rendered pages checked. Page 3 gives the dated employer declaration calendar, nil-return instruction and explicit sending routes. Tables require their rendered row/column layout. Later source capture does not close July amendments or current requested-period law. |
+| S29 | [Ordinance 2026-648, consolidated presentation at 30 October 2026](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000054456926/2026-10-30) | Page labels its data update 24 July 2026, but article 1 displays 'En cours de traitement.' It supplies neither that article's complete consolidated content nor complete L760-* bodies; a successful page read does not close structural or current-law gaps. |
 
 ## Territorial operation and specific rules
 
@@ -151,6 +155,42 @@ S12 supplies historical operating observations only. Page 1 asks for a DPAE to C
 
 S7 article 57 describes a DADS common to tax and social security, lodged with the territorial DSF before 31 January each year, accompanied by bulletin 2470 per beneficiary. It separately names bulletin 2472 for pension payers. S8's DADS 975 and S10's dated inclusive receipt campaign are distinct sources. Establish their correspondence, recipient, period, current forms and legal/administrative deadline treatment. A DSF receipt alone does not prove every CPS declaration or payment complete. S9 is a filling aid with unresolved years, not a filing procedure. S2 page 3 is a dated 2026 declaration calendar, not proof that declaration and payment share a deadline or that later years repeat it.
 
+### Employer declaration calendar and sending routes, June 2026
+
+S27's exact PM question names CPS as the recipient of PM employers' unemployment contributions and AGS. Keep this answer separate from the page's general Urssaf introduction and neighbouring answers for other categories. It resolves the captured recipient question, not every category-specific exception, assessment rule or payment instruction.
+
+S28 page 3 asks for a dated, signed contribution declaration returned to CPS before the stated deadline. It says contributions are payable monthly or quarterly but does not establish which frequency applies to an account. The following are its printed **declaration dates**, not a complete payment-due rule or a later-year recurrence rule. Preserve its 'before' wording; deadline inclusivity, weekend/holiday adjustment and postal dispatch-date treatment are not established.
+
+| Contribution month | Printed declaration date |
+|---|---|
+| January 2026 | 15 February 2026 |
+| February 2026 | 15 March 2026 |
+| March 2026 | 15 April 2026 |
+| April 2026 | 15 May 2026 |
+| May 2026 | 15 June 2026 |
+| June 2026 | 15 July 2026 |
+| July 2026 | 15 August 2026 |
+| August 2026 | 15 September 2026 |
+| September 2026 | 15 October 2026 |
+| October 2026 | 15 November 2026 |
+| November 2026 | 15 December 2026 |
+| December 2026 | 15 January 2027 |
+
+| Contribution quarter | Printed declaration date |
+|---|---|
+| First quarter 2026 | 15 April 2026 |
+| Second quarter 2026 | 15 July 2026 |
+| Third quarter 2026 | 15 October 2026 |
+| Fourth quarter 2026 | 15 January 2027 |
+
+Where no personnel were employed in the month or quarter, S28 asks for 'NÉANT' on the declaration and its return to CPS's Service Recouvrement & Relation aux Entreprises before the deadline. This is a nil-employment declaration instruction, not proof of zero debt or an exemption from every programme.
+
+Its 'Envoyer vos déclarations' panel explicitly lists post to CPS Recouvrement & Relation aux Entreprises, BP 4 220, 97500 StPierre & Miquelon; email to cotisations@secuspm.com; and deposit at the Saint-Pierre headquarters, angle des boulevards Colmay et Thélot, or the Miquelon annex, rue Antoine Soucy. These are supported sending routes for these employer contribution declarations. A contact address alone would not establish this instruction; the explicit sending panel does. It does not establish an accepted electronic-signature method or prove actual receipt, processing/acceptance or discharge.
+
+Keep account frequency, preparation/signature, transmission route/date, CPS receipt/acceptance, declared liability and actual payment evidence separately. The page links declaration default to assessment/penalties and unpaid contributions at exigibility to surcharges without supplying a complete trigger/penalty algorithm. Do not transfer this calendar or these routes automatically to S19's self-employed DSI, annual DADS/BRA or another return. Reconcile subsequent July legislation and requested-period procedure before operational use.
+
+S28 pages 1/2 repeat the displayed private capped old-age shares of 8.65%/7.00% and display EUR 4,005 monthly, EUR 12,015 quarterly and EUR 48,060 annually. They corroborate those source observations without establishing complete programme bases, cap construction, precision or total contributions due.
+
 ### Annual 2025 reconciliation component
 
 Use this component only after the independently established programme liabilities, category, period and lawful precision are complete. S14's 2025 campaign requested the BRA, DADS 2025 and LOPOM exemption table, dated and signed, by receipt on 31 January 2026. Keep its recipient separate from the DSF campaign and reconcile the required forms rather than treating one receipt as full discharge. The form's reference to R243-13 does not validate that provision's applicable version: S16's captured 2020 text concerns declaration penalties. Do not replace the form's citation or infer a national annual-return rule from it.
@@ -199,7 +239,7 @@ S17 article 3 describes CPS income forms sent by 1 April and completed, signed r
 
 ## Fictional components and source-control positions
 
-All amounts below are invented EUR facts for January 2026 unless otherwise stated. PM01-PM02 assume an independent qualified review has established S2's private old-age rates for the fictional category and a lawful monthly capped-base rule with no proration, cumulative or multiple-employer adjustment. Those premises remain unproved for any real case. Other programmes and settlement remain held. PM09-PM11 instead concern the dated 2025 annual campaign. They assume independently verified complete annual liabilities, declared contribution totals and lawful precision; their integer inputs do not establish a rounding rule. PM13-PM17 instead assume an independently established dated S17 category/programme and operative chain. Their regularisation year K is established before the applicable third/fourth-quarter dates; definitive contributions, qualifying provisional totals, fraction amounts and precision are independently verified. These premises are not established for a real contributor. PM18-PM24 instead test S19's 2025-income intake and source controls only; their invented integer facts do not establish social contribution bases, precision or a filed/accepted return. PM25-PM27 test dated territorial versions and scope only.
+All amounts below are invented EUR facts for January 2026 unless otherwise stated. PM01-PM02 assume an independent qualified review has established S2's private old-age rates for the fictional category and a lawful monthly capped-base rule with no proration, cumulative or multiple-employer adjustment. Those premises remain unproved for any real case. Other programmes and settlement remain held. PM09-PM11 instead concern the dated 2025 annual campaign. They assume independently verified complete annual liabilities, declared contribution totals and lawful precision; their integer inputs do not establish a rounding rule. PM13-PM17 instead assume an independently established dated S17 category/programme and operative chain. Their regularisation year K is established before the applicable third/fourth-quarter dates; definitive contributions, qualifying provisional totals, fraction amounts and precision are independently verified. These premises are not established for a real contributor. PM18-PM24 instead test S19's 2025-income intake and source controls only; their invented integer facts do not establish social contribution bases, precision or a filed/accepted return. PM25-PM27 test dated territorial versions and scope only. PM28-PM32 test the dated employer calendar, sending/recipient instructions and incomplete-consolidation controls only; no payment liability or accepted filing follows.
 
 | ID | Fictional facts | Component result or complete hold disposition |
 |---|---|---|
@@ -230,6 +270,11 @@ All amounts below are invented EUR facts for January 2026 unless otherwise state
 | PM25 | A July23 daily record marks pre-amendment L111-2 VIGUEUR/open-ended and is used to deny the later PM extension | Reconcile S24 with S25 and S5's original clause/commencement. The complete July24 records close the preceding interval and capture the added sentence; the older status cannot determine current scope. |
 | PM26 | S25's ABROGE_DIFF/end date is treated as PM coverage ending on 1 January 2028, or S26's future Mayotte wording is applied in 2026 | Read both complete successor body and NOTA. S26 preserves the PM extension and adds Mayotte from its separate future date; establish requested-period amendments without either shortcut. |
 | PM27 | The final-group charge qualifier is applied to every listed CSS part, or an omitted assessment chapter is automatically excluded | Preserve the 7-part list and its scoped qualifier, then reconcile general operation, specific programme/base references and adaptations. An express positive list is not a complete universal non-applicability test. |
+| PM28 | July 2026 employer contribution period; S28 prints 15 August 2026 | Preserve that printed declaration date and the source's before-deadline wording. Do not invent a weekend extension, treat it as a complete payment-due rule or repeat it for 2027. |
+| PM29 | No personnel employed in the fourth quarter of 2026 | S28 requests a dated, signed 'NÉANT' declaration returned to CPS; its printed fourth-quarter date is 15 January 2027. Hold account frequency, timely receipt/acceptance and payment reconciliation separately; no personnel does not prove zero debt. |
+| PM30 | S28's email panel is used as authority for a self-employed DSI deadline, electronic-signature validity or accepted filing | Reject those extensions. The panel expressly supports sending these employer contribution declarations by email; establish the other return's rules, signature requirements and actual receipt/acceptance separately. |
+| PM31 | The general URSSAF introduction or a neighbouring FAQ answer is substituted for the exact PM employer unemployment/AGS answer | S27's exact PM answer names CPS. Preserve category-specific exceptions and establish actual remittance details; do not redirect from a different question's answer. |
+| PM32 | S29's 200 response, page date or article 1 placeholder is treated as complete consolidation or proof that no L760-* rule exists | Article 1 says 'En cours de traitement.' Preserve the original enacted text, missing complete consolidation/structure and requested-period amendment holds; page availability is not substantive closure. |
 
 These positions do not complete the social base's employee-below-floor, employee-above-ceiling and self-employed ladders through total due. They demonstrate source controls and selected raw components; full ladders remain a delivery hold.
 
@@ -253,13 +298,14 @@ Every shared refusal applies. Missing law or facts have no authorised default. F
 | Stale collection exception, presumed mainland recipient, DADS year conflict or deadline imported to another period | R-PM-SC-1 and R-PM-SC-3; reconcile operative sources and current procedures. |
 | Y-2 confused with Y, arbitrary K, equal provisionals assumed, automatic first activity/refund or cessation cancellation | R-PM-SC-1, R-PM-SC-2 and R-PM-SC-3; establish programme, temporal rules, qualifying fractions, precise allocation and settlement evidence. |
 | DSI turnover treated as profit/base, entity income copied without allocation, deficit suppressed, footer treated as deadline or preparation treated as accepted filing | R-PM-SC-1, R-PM-SC-2 and R-PM-SC-3; reconcile complete income, category/field meaning, requested-period authority and filing evidence. |
+| Calendar date treated as payment exigibility, contact/sending route treated as accepted filing, or employer instructions transferred to DSI | R-PM-SC-1 and R-PM-SC-3; preserve source scope, frequency, actual receipt/acceptance and separate declaration/payment rules. |
 | Mandatory slot, full ladder, output, tool, check or reviewer missing | R-PM-SC-4; hold financial delivery and comprehensive acceptance. |
 
 ## Outputs, checks and country contract
 
-Retain all 4 universal logical outputs: working paper, reviewer brief, action list and practitioner checklist. Retain all 5 social-contribution outputs: computation schedule, remittance reconciliation, filing/payment calendar, reviewer brief and contribution register. Preserve identifiable components when combined as the bases permit. Mark unresolved amounts and calendar/settlement fields held, not zero or not applicable by default. For S19, add a redacted field/source mapping and preparation checklist to the working paper, unresolved allocation/citation issues to the reviewer brief, and the verified filing route/deadline or explicit hold to the calendar/action list. Preserve transmission and CPS receipt/acceptance references in the contribution register separately from cash reconciliation.
+Retain all 4 universal logical outputs: working paper, reviewer brief, action list and practitioner checklist. Retain all 5 social-contribution outputs: computation schedule, remittance reconciliation, filing/payment calendar, reviewer brief and contribution register. Preserve identifiable components when combined as the bases permit. Mark unresolved amounts and calendar/settlement fields held, not zero or not applicable by default. For S19, add a redacted field/source mapping and preparation checklist to the working paper, unresolved allocation/citation issues to the reviewer brief, and the verified filing route/deadline or explicit hold to the calendar/action list. Preserve transmission and CPS receipt/acceptance references in the contribution register separately from cash reconciliation. For S28, retain the exact period/date mapping, account frequency, nil-employment fact, source-supported sending route and signature/receipt holds; record S27 recipient scope separately.
 
-Add a source/position ledger containing programme/share/status, activity/assessment period, source/version and operative chain, base inclusions/exclusions, floor/cap/allocation, exact input/raw product, separate precision rules, declarations/remittances, held stages, refusal, missing evidence and reviewer disposition. Run every universal and social-base check, plus version/NOTA preservation, national/local row separation, programme-specific caps, category/base mapping, exact PM01-PM02 products, malformed-input holds, dated annual positive/negative/zero adjustments, professional income Y/Y-2/K separation, unequal provisional fractions, residual credit timing, first activity exclusions and request conditions, separate cash reconciliation, frequency-request versus acceptance, source-year conflicts, stale-collection and dated-DADS controls, DSI A-D field mapping, loss/unmapped-income preservation, activity/form/deadline separation, R131-1 repeal and L131-6 NOTA/category controls, national citation/application control, correction tracking, receipt/acceptance separation and complete held-delivery trace. Component checks do not complete the contribution workflow.
+Add a source/position ledger containing programme/share/status, activity/assessment period, source/version and operative chain, base inclusions/exclusions, floor/cap/allocation, exact input/raw product, separate precision rules, declarations/remittances, held stages, refusal, missing evidence and reviewer disposition. Run every universal and social-base check, plus version/NOTA preservation, national/local row separation, programme-specific caps, category/base mapping, exact PM01-PM02 products, malformed-input holds, dated annual positive/negative/zero adjustments, professional income Y/Y-2/K separation, unequal provisional fractions, residual credit timing, first activity exclusions and request conditions, separate cash reconciliation, frequency-request versus acceptance, source-year conflicts, stale-collection and dated-DADS controls, DSI A-D field mapping, loss/unmapped-income preservation, activity/form/deadline separation, R131-1 repeal and L131-6 NOTA/category controls, national citation/application control, correction tracking, receipt/acceptance separation, S28 monthly/quarterly calendar mapping, nil-return scope, explicit sending-route versus actual receipt, exact PM FAQ recipient, incomplete-consolidation controls and complete held-delivery trace. Component checks do not complete the contribution workflow.
 
 The 13 universal slots are addressed only within this conditional scope: scope, period/source limits, selected figures, primary library, position rules, refusals, no unsupported defaults, material-issue flags, fictional positions, source/position ledger, redacted intake, additional checks and revision metadata. They remain incomplete for actual work; none is waived.
 
@@ -270,19 +316,19 @@ The 13 universal slots are addressed only within this conditional scope: scope, 
 | 3. Floors and ceilings | Dated order and CPS display; programme application, floors, proration, cumulative and multiple-employer rules held. |
 | 4. Contributor categories | Private row distinguished; DSI A-D intake labels captured; actual social eligibility, exemptions and reduced/special regimes held. |
 | 5. Registration and identifiers | S12 gives dated account-opening/DPAE observations; S19 lists contributor/activity fields for a redacted presence check; current authority, compulsory-field rules, complete registration procedure and latest deadline held. |
-| 6. Declaration and payment | Dated employee annual and professional income provisional/regularisation components, plus frequency request and S19's completed/signed CPS return preparation; operative category, current deadlines, permitted routes, correction procedure and acceptance still required. |
+| 6. Declaration and payment | Dated employee annual and professional income provisional/regularisation components, plus frequency request and S19's completed/signed CPS return preparation; S28 supplies dated employer calendar/routes and S27 the PM unemployment/AGS recipient; operative category, subsequent changes, other-return deadlines/routes, correction procedure and actual acceptance still required. |
 | 7. Penalties and interest | Collection references and S17 article 4's dated 3%/maximum-provisional text captured with its literal cross-reference; applicable triggers, precision, notices, computation and contest procedures held. |
 | 8. Income-tax interaction | No deduction/credit treatment established; complete applicable rules and income-tax skill required. |
 | 9. Payment patterns | No bank-line pattern or reference format established; reconcile complete remittances without guessed exclusions. |
 | 10. Refusals and defaults | Shared and 4 topical refusals; no unsupported default or amount-based suppression. |
 | 11. Currency and rounding | Source EUR figures, raw pension products and fictional annual differences; rounded form labels do not establish numerical precision. Lawful input, contribution, conversion and settlement precision held. |
-| 12. Worked examples | 2 raw pension components, 3 annual employee components, 4 professional income components and 18 source controls; full required programme/status ladders through total due remain unproduced. |
+| 12. Worked examples | 2 raw pension components, 3 annual employee components, 4 professional income components and 23 source controls; full required programme/status ladders through total due remain unproduced. |
 
 Optional coordination, voluntary contributions, benefit entitlement, sector regimes and integrations remain incomplete. No full social-contribution, payroll, other-domain or comprehensive PM acceptance follows.
 
 ## Revision and disclaimer
 
-Checked 30 October 2026, v0.6: captured complete preceding, July and succeeding L111-2 bodies/NOTA, the express 7-part PM extension and its scoped qualifier. Added a separate programme/status assessment-branch map and 3 version/scope controls. Preserved current amendment, complete consolidation, calculation/precision, filing and professional-acceptance holds. This source-cited draft awaits qualified professional review.
+Checked 30 October 2026, v0.7: recovered the exact PM unemployment/AGS recipient answer, June CPS employer declaration calendar and explicit sending routes. Added 5 source/procedure controls, preserving declaration/payment, employer/DSI, sending/acceptance and incomplete-consolidation distinctions. Current amendments, complete assessment/precision, other-return procedures and professional acceptance remain held. This source-cited draft awaits qualified professional review.
 
 <!-- openaccountants-cta-block -->
 
