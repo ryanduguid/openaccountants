@@ -101,7 +101,7 @@ Start from the tax profit under the EStG (KStG s 8(1)); all income of a GmbH or 
 
 **Not deductible for KSt and, through the profit base, for GewSt:**
 
-- Hidden distributions do not reduce income. Hidden contributions do not increase income, unless they reduced the shareholder's income or rest on a related person's hidden distribution that was not taken into account in the shareholder's taxation; a reviewer tests these exceptions (KStG s 8(3) sentences 2 to 5).
+- Hidden distributions do not reduce income. Hidden contributions do not increase income, unless they reduced the shareholder's income or rest on a related person's hidden distribution that was not taken into account in the shareholder's taxation, unless that distribution did not reduce the distributing corporation's income; a reviewer tests these exceptions (KStG s 8(3) sentences 2 to 5).
 - KSt, SolZ and other income taxes and their ancillary amounts; criminal fines; half of supervisory board pay; costs of purposes set by the articles (KStG s 10).
 - Trade tax and its ancillary amounts (EStG s 4(5b)).
 - Gifts to a non-employee, in full, where the year's total to that recipient exceeds EUR 50; 30% of business meals, with the required records; fines and related costs (EStG s 4(5) nos 1, 2, 8).
